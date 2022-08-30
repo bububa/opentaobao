@@ -1,8 +1,4 @@
 {
-	"id": 24698,
-	"name": "m-kvstore.aliyuncs.com.CreateInstance.2015-03-01",
-	"apiChineseName": "创建OCS实例",
-	"description": "创建OCS实例",
 	"requestParams": [
 		{
 			"name": "InstanceName",
@@ -135,5 +131,9 @@
 			"type": "String",
 			"description": "NetworkType为vpc时OCS实例所属vpc内由用户指定或系统分配的私网IP地址。NetworkType为classic时忽略此返回参数。"
 		}
-	]
+	],
+	"name": "m-kvstore.aliyuncs.com.CreateInstance.2015-03-01",
+	"apiChineseName": "创建OCS实例",
+	"description": "创建OCS实例",
+	"id": 24698
 }

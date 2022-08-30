@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_point",
+					"type": "String",
+					"description": "消费积分"
+				},
+				{
+					"name": "expire_time",
+					"type": "Number",
+					"description": "过期时间，单位毫秒"
+				},
+				{
+					"name": "scene_code",
+					"type": "String",
+					"description": "场景码，对接时业务分配",
+					"required": true
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "操作类型 添加：1 消费：2 回滚：3"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "level_point",
+					"type": "String",
+					"description": "等级积分"
+				},
+				{
+					"name": "serial_no",
+					"type": "String",
+					"description": "操作序列号，需要唯一",
+					"required": true
+				},
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "user_site",
+					"type": "String",
+					"description": "用户站点",
+					"required": true
+				},
+				{
+					"name": "open_user_id",
+					"type": "String",
+					"description": "开放用户id",
+					"required": true
+				}
+			],
+			"name": "point_operate_request",
+			"type": "PointOperateDto",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token"
+						}
+					],
+					"name": "data",
+					"type": "PointOperateResponseDto",
+					"description": "json格式"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
+		}
+	],
+	"name": "alibaba.member.point.operate",
+	"apiChineseName": "积分操作",
+	"description": "消费会员积分",
+	"id": 57831
+}

@@ -1,14 +1,6 @@
 {
-	"id": 27435,
-	"name": "tmall.service.settleadjustment.request",
-	"apiChineseName": "创建结算调整单",
-	"description": "提供给服务商在对结算有异议时，发起结算调整单。\n通过说明工单ID，调整费用值，调整原因进行新建结算调整单。",
 	"requestParams": [
 		{
-			"name": "param_settle_adjustment_request",
-			"type": "SettleAdjustmentRequest",
-			"description": "父节点",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cost",
@@ -25,14 +17,9 @@
 				{
 					"name": "picture_urls",
 					"type": "String",
-					"description": "调整原因图片url,最后不用加分号，最多三条",
-					"required": true
+					"description": "调整原因图片url,最后不用加分号，最多三条"
 				},
 				{
-					"name": "price_factors",
-					"type": "SettlementPriceFactor[]",
-					"description": "计价因子，填写规则：1、有计价因子场景：{name:计价因子名称 ,value:数量｝如示例；2、没有计价因子场景：填默认值：｛name:计价因子,value:0｝",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -50,12 +37,10 @@
 							"type": "String",
 							"description": "计价因子说明"
 						}
-					]
-				},
-				{
-					"name": "type",
-					"type": "String",
-					"description": "调整单分类类型；1,配件费;2,不符单费;3,拆旧费;4,二次上门;5,胶费;6,打孔费;7,层高费;8,远程费;9,单外费;10,其他",
+					],
+					"name": "price_factors",
+					"type": "SettlementPriceFactor[]",
+					"description": "计价因子，填写规则：1、有计价因子场景：{name:计价因子名称 ,value:数量｝如示例；2、没有计价因子场景：填默认值：｛name:计价因子,value:0｝",
 					"required": true
 				},
 				{
@@ -63,57 +48,75 @@
 					"type": "Number",
 					"description": "工单ID",
 					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "调整单分类类型；1,配件费;2,不符单费;3,拆旧费;4,二次上门;5,胶费;6,打孔费;7,层高费;8,远程费;9,单外费;10,其他",
+					"required": true
+				},
+				{
+					"name": "tp_settle_flag",
+					"type": "Number",
+					"description": "服务商结算标记 1-服务商 2-商家"
+				},
+				{
+					"name": "real_tp_nick",
+					"type": "String",
+					"description": "真实服务商nick，仅限isv服务商对接接口时使用，其余服务商勿使用此字段"
 				}
-			]
+			],
+			"name": "param_settle_adjustment_request",
+			"type": "SettleAdjustmentRequest",
+			"description": "父节点",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data_module",
-					"type": "SettleAdjustmentResp",
-					"description": "dataModule",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "结算调整单ID",
-							"required": true
+							"description": "结算调整单ID"
 						}
-					]
+					],
+					"name": "data_module",
+					"type": "SettleAdjustmentResp",
+					"description": "dataModule"
 				},
 				{
-					"name": "error_message",
-					"type": "ErrorMessage",
-					"description": "errorMessage",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "errorMsg",
-							"required": true
+							"description": "errorMsg"
 						}
-					]
+					],
+					"name": "error_message",
+					"type": "ErrorMessage",
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true：查询成功，false：失败",
-					"required": true
+					"description": "true：查询成功，false：失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.service.settleadjustment.request",
+	"apiChineseName": "创建结算调整单",
+	"description": "提供给服务商在对结算有异议时，发起结算调整单。\n通过说明工单ID，调整费用值，调整原因进行新建结算调整单。",
+	"id": 27435
 }

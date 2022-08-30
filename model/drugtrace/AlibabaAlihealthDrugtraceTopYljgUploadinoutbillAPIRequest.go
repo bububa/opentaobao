@@ -13,7 +13,7 @@ import (
 // 不包括对个人的零售出库，疫苗接种，领药出库。
 type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	model.Params
-	// 追溯码[多个时用逗号分开]
+	// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 	_traceCodes []string
 	// 单据编码
 	_billCode string
@@ -33,6 +33,10 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	_operIcCode string
 	// 单据提交者姓名
 	_operIcName string
+	// 仓号
+	_warehouseId string
+	// 药品ID[企业自已系统的药品ID]
+	_drugId string
 	// 客户端类型[必须填2]
 	_clientType string
 	// 退货原因代码[退货入出库时填写]
@@ -51,10 +55,6 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	_superviserName string
 	// 监督人证件号【销毁出库时填写】
 	_superviserCode string
-	// 仓号
-	_warehouseId string
-	// 药品ID[企业自已系统的药品ID]
-	_drugId string
 	// （协同平台数据合规）发货地址【必选】
 	_fromAddress string
 	// （协同平台数据合规）收货地址【必选】
@@ -67,9 +67,9 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	_fromPerson string
 	// （协同平台数据合规）收货人【必选】
 	_toPerson string
-	// （协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】
+	// （协同平台数据合规）药品配送企业【添写ref_ent_id】
 	_disRefEntId string
-	// （协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】
+	// （协同平台数据合规）药品配送企业entId【添写ent_id】
 	_disEntId string
 	// （协同平台数据合规）是否验证，0：未通过验证，1：已验证
 	_xtIsCheck string
@@ -77,7 +77,7 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest struct {
 	_xtCheckCode string
 	// （协同平台数据合规）未验证通过原因描述【验证未通过时填写】
 	_xtCheckCodeDesc string
-	// （协同平台数据合规）药品列表Json
+	// （协同平台数据合规）药品列表Json[可不填写]
 	_drugListJson string
 	// （协同平台数据合规）单据委托企业refEntId【疫苗药品出库单填写】
 	_assRefEntId string
@@ -113,7 +113,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetApiParams(
 }
 
 // SetTraceCodes is TraceCodes Setter
-// 追溯码[多个时用逗号分开]
+// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
 	r.Set("trace_codes", _traceCodes)
@@ -242,6 +242,32 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetOperIcName
 	return r._operIcName
 }
 
+// SetWarehouseId is WarehouseId Setter
+// 仓号
+func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// GetWarehouseId WarehouseId Getter
+func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetWarehouseId() string {
+	return r._warehouseId
+}
+
+// SetDrugId is DrugId Setter
+// 药品ID[企业自已系统的药品ID]
+func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
+	r._drugId = _drugId
+	r.Set("drug_id", _drugId)
+	return nil
+}
+
+// GetDrugId DrugId Getter
+func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetDrugId() string {
+	return r._drugId
+}
+
 // SetClientType is ClientType Setter
 // 客户端类型[必须填2]
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetClientType(_clientType string) error {
@@ -359,32 +385,6 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetSuperviser
 	return r._superviserCode
 }
 
-// SetWarehouseId is WarehouseId Setter
-// 仓号
-func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
-	r._warehouseId = _warehouseId
-	r.Set("warehouse_id", _warehouseId)
-	return nil
-}
-
-// GetWarehouseId WarehouseId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetWarehouseId() string {
-	return r._warehouseId
-}
-
-// SetDrugId is DrugId Setter
-// 药品ID[企业自已系统的药品ID]
-func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
-	r._drugId = _drugId
-	r.Set("drug_id", _drugId)
-	return nil
-}
-
-// GetDrugId DrugId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetDrugId() string {
-	return r._drugId
-}
-
 // SetFromAddress is FromAddress Setter
 // （协同平台数据合规）发货地址【必选】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetFromAddress(_fromAddress string) error {
@@ -464,7 +464,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetToPerson()
 }
 
 // SetDisRefEntId is DisRefEntId Setter
-// （协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】
+// （协同平台数据合规）药品配送企业【添写ref_ent_id】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetDisRefEntId(_disRefEntId string) error {
 	r._disRefEntId = _disRefEntId
 	r.Set("dis_ref_ent_id", _disRefEntId)
@@ -477,7 +477,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetDisRefEntI
 }
 
 // SetDisEntId is DisEntId Setter
-// （协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】
+// （协同平台数据合规）药品配送企业entId【添写ent_id】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetDisEntId(_disEntId string) error {
 	r._disEntId = _disEntId
 	r.Set("dis_ent_id", _disEntId)
@@ -529,7 +529,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) GetXtCheckCod
 }
 
 // SetDrugListJson is DrugListJson Setter
-// （协同平台数据合规）药品列表Json
+// （协同平台数据合规）药品列表Json[可不填写]
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillAPIRequest) SetDrugListJson(_drugListJson string) error {
 	r._drugListJson = _drugListJson
 	r.Set("drug_list_json", _drugListJson)

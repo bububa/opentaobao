@@ -1,18 +1,6 @@
 {
-	"id": 46786,
-	"name": "alibaba.nrs.item.pricetag.recognize",
-	"apiChineseName": "价签识别",
-	"description": "商品价签识别，用于识别RT上传的竞品分析照片，返回价签内容",
 	"requestParams": [
 		{
-			"name": "img_byte_arr",
-			"type": "byte[]",
-			"description": "图片数据"
-		},
-		{
-			"name": "price_tag_param",
-			"type": "PriceTagReqParam",
-			"description": "价签识别参数",
 			"subParams": [
 				{
 					"name": "obj_key_name",
@@ -36,134 +24,128 @@
 				},
 				{
 					"name": "extend_info_map",
+					"type": "String",
 					"description": "扩展信息"
 				}
-			]
+			],
+			"name": "price_tag_param",
+			"type": "PriceTagReqParam",
+			"description": "价签识别参数"
+		},
+		{
+			"name": "img_byte_arr",
+			"type": "byte[]",
+			"description": "图片数据"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "nrs_result",
-			"type": "NrsResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "RecongnizeItemInfo",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "origin_place",
 							"type": "String",
-							"description": "原产地",
-							"required": true
+							"description": "原产地"
 						},
 						{
 							"name": "ext_map",
-							"type": "Json",
-							"description": "扩展信息",
-							"required": true
+							"type": "String",
+							"description": "扩展信息"
 						},
 						{
 							"name": "promotion_end_time",
 							"type": "String",
-							"description": "优惠结束时间",
-							"required": true
+							"description": "优惠结束时间"
 						},
 						{
 							"name": "promotion_start_time",
 							"type": "String",
-							"description": "优惠开始时间",
-							"required": true
+							"description": "优惠开始时间"
 						},
 						{
 							"name": "spec_desc",
 							"type": "String",
-							"description": "规格描述",
-							"required": true
+							"description": "规格描述"
 						},
 						{
 							"name": "rt_item_no",
 							"type": "String",
-							"description": "rt货号",
-							"required": true
+							"description": "rt货号"
 						},
 						{
 							"name": "promotion_desc",
 							"type": "String",
-							"description": "优惠描述",
-							"required": true
+							"description": "优惠描述"
 						},
 						{
 							"name": "promotion_type",
 							"type": "Number",
-							"description": "促销类型",
-							"required": true
+							"description": "促销类型"
 						},
 						{
 							"name": "in_promotion",
 							"type": "Boolean",
-							"description": "是否促销中",
-							"required": true
+							"description": "是否促销中"
 						},
 						{
 							"name": "promotion_price",
 							"type": "Number",
-							"description": "促销价",
-							"required": true
+							"description": "促销价"
 						},
 						{
 							"name": "sale_price",
 							"type": "Number",
-							"description": "销售价",
-							"required": true
+							"description": "销售价"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "品牌",
-							"required": true
+							"description": "品牌"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "品名",
-							"required": true
+							"description": "品名"
 						},
 						{
 							"name": "bar_code",
 							"type": "String",
-							"description": "条码",
-							"required": true
+							"description": "条码"
 						},
 						{
 							"name": "serial_no",
 							"type": "String",
-							"description": "流水号",
-							"required": true
+							"description": "流水号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "RecongnizeItemInfo",
+					"description": "返回数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用标志",
-					"required": true
+					"description": "接口调用标志"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "nrs_result",
+			"type": "NrsResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.nrs.item.pricetag.recognize",
+	"apiChineseName": "价签识别",
+	"description": "商品价签识别，用于识别RT上传的竞品分析照片，返回价签内容",
+	"id": 46786
 }

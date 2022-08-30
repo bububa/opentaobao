@@ -1,0 +1,112 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间ID",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token"
+				}
+			],
+			"name": "shutdown_room_request",
+			"type": "ShutdownRoomRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "创建者用户ID"
+								},
+								{
+									"name": "mix_game_id",
+									"type": "String",
+									"description": "游戏ID"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "游戏名称"
+								},
+								{
+									"name": "total_player_num",
+									"type": "Number",
+									"description": "游戏总人数"
+								},
+								{
+									"name": "player_num",
+									"type": "Number",
+									"description": "游戏当前人数"
+								}
+							],
+							"name": "game",
+							"type": "OpenGameDTO",
+							"description": "游戏详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "player_index",
+									"type": "Number",
+									"description": "玩家位置索引"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户ID"
+								}
+							],
+							"name": "player_list",
+							"type": "OpenGamePlayerDTO[]",
+							"description": "游戏当前剩余玩家列表"
+						},
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间号"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						}
+					],
+					"name": "data",
+					"type": "ShutdownRoomResponse",
+					"description": "强制停止房间返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.room.shutdown",
+	"apiChineseName": "强制关闭房间",
+	"description": "强制关闭房间",
+	"id": 62958
+}

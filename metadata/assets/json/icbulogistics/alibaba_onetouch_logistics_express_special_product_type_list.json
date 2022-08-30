@@ -1,93 +1,81 @@
 {
-	"id": 47847,
-	"name": "alibaba.onetouch.logistics.express.special.product.type.list",
-	"apiChineseName": "获取商品类型配置项",
-	"description": "获取商品类型配置项",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "返回结果描述",
-					"required": true
+					"description": "返回结果描述"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "Number",
-					"description": "返回结果编码",
-					"required": true
-				},
-				{
-					"name": "values",
-					"type": "SpecialProductTypeDTO[]",
-					"description": "列表对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "商品类型code",
-							"required": true
+							"description": "商品类型code"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "商品类型",
-							"required": true
+							"description": "商品类型"
 						},
 						{
-							"name": "childrens",
-							"type": "SpecialProductTypeDTO[]",
-							"description": "列表对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "商品类型code",
-									"required": true
+									"description": "商品类型code"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "商品类型",
-									"required": true
+									"description": "商品类型"
 								},
 								{
-									"name": "childrens",
-									"type": "SpecialProductTypeDTO[]",
-									"description": "列表对象",
-									"required": true,
 									"subParams": [
 										{
 											"name": "code",
 											"type": "String",
-											"description": "商品类型code",
-											"required": true
+											"description": "商品类型code"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "商品类型",
-											"required": true
+											"description": "商品类型"
 										}
-									]
+									],
+									"name": "childrens",
+									"type": "SpecialProductTypeDTO[]",
+									"description": "列表对象"
 								}
-							]
+							],
+							"name": "childrens",
+							"type": "SpecialProductTypeDTO[]",
+							"description": "列表对象"
 						}
-					]
+					],
+					"name": "values",
+					"type": "SpecialProductTypeDTO[]",
+					"description": "列表对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回结果编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.onetouch.logistics.express.special.product.type.list",
+	"apiChineseName": "获取商品类型配置项",
+	"description": "获取商品类型配置项",
+	"id": 47847
 }

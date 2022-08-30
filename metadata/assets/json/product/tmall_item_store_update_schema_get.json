@@ -1,8 +1,4 @@
 {
-	"id": 50090,
-	"name": "tmall.item.store.update.schema.get",
-	"apiChineseName": "天猫门店商品修改规则获取",
-	"description": "天猫门店商品修改规则获取",
 	"requestParams": [
 		{
 			"name": "main_item_id",
@@ -19,41 +15,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "无",
 			"subParams": [
 				{
 					"name": "er_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "er_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "商品标题，价格，图片等商品数据的schema xml",
-					"required": true
+					"description": "商品标题，价格，图片等商品数据的schema xml"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "mapped_error_messages",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "无"
 		}
-	]
+	],
+	"name": "tmall.item.store.update.schema.get",
+	"apiChineseName": "天猫门店商品修改规则获取",
+	"description": "天猫门店商品修改规则获取",
+	"id": 50090
 }

@@ -1,8 +1,4 @@
 {
-	"id": 45980,
-	"name": "taobao.wlb.crossborder.waybill.get",
-	"apiChineseName": "集货商家pdf和云打印面单获取，pdf需要配置白名单",
-	"description": "【TOF】欧洲供应商PDF格式电子面单渲染下发\n 需求链接：https://aone.alibaba-inc.com/req/21210808",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -12,67 +8,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "result",
-					"type": "WayBillDTO",
-					"description": "面单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cloud_print_data",
 							"type": "String",
-							"description": "云打印数据",
-							"required": true
+							"description": "云打印数据"
 						},
 						{
 							"name": "pdf_way_bill_url",
 							"type": "String",
-							"description": "云打印pdf",
-							"required": true
+							"description": "云打印pdf"
 						}
-					]
+					],
+					"name": "result",
+					"type": "WayBillDTO",
+					"description": "面单信息"
 				},
 				{
 					"name": "sub_error_code",
 					"type": "String",
-					"description": "子错误信息",
-					"required": true
+					"description": "子错误信息"
 				},
 				{
 					"name": "sub_error_msg",
 					"type": "String",
-					"description": "子错误码",
-					"required": true
+					"description": "子错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果数",
-					"required": true
+					"description": "结果数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "taobao.wlb.crossborder.waybill.get",
+	"apiChineseName": "集货商家pdf和云打印面单获取，pdf需要配置白名单",
+	"description": "【TOF】欧洲供应商PDF格式电子面单渲染下发\n 需求链接：https://aone.alibaba-inc.com/req/21210808",
+	"id": 45980
 }

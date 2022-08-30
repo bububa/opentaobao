@@ -1,8 +1,4 @@
 {
-	"id": 49254,
-	"name": "alibaba.ssc.supplyplatform.servicestore.offline",
-	"apiChineseName": "网点下线",
-	"description": "网点下线功能",
 	"requestParams": [
 		{
 			"name": "service_store_code_list",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "成功或失败",
-					"required": true
-				},
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.servicestore.offline",
+	"apiChineseName": "网点下线",
+	"description": "网点下线功能",
+	"id": 49254
 }

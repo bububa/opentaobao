@@ -1,13 +1,6 @@
 {
-	"id": 55955,
-	"name": "taobao.alitrip.axin.trans.pay.register.reapply",
-	"apiChineseName": "阿信支付入驻重新申请",
-	"description": "阿信支付入驻重新申请\n用于支付平台驳回，商户提交时的业务场景",
 	"requestParams": [
 		{
-			"name": "axin_pay_register_create_d_t_o",
-			"type": "AxinPayRegisterCreateDto",
-			"description": "阿信支付入驻重新申请参数",
 			"subParams": [
 				{
 					"name": "alias_name",
@@ -26,9 +19,6 @@
 					"description": "支付签约账号"
 				},
 				{
-					"name": "business_address",
-					"type": "AxinPayRegisterAddress",
-					"description": "地址",
 					"subParams": [
 						{
 							"name": "address",
@@ -55,7 +45,10 @@
 							"type": "String",
 							"description": "省code"
 						}
-					]
+					],
+					"name": "business_address",
+					"type": "AxinPayRegisterAddress",
+					"description": "地址"
 				},
 				{
 					"name": "cert_image",
@@ -129,9 +122,6 @@
 					"description": "商户姓名"
 				},
 				{
-					"name": "qualifications",
-					"type": "AxinPayRegisterQualification[]",
-					"description": "行业资格证",
 					"subParams": [
 						{
 							"name": "image_id",
@@ -143,7 +133,10 @@
 							"type": "String",
 							"description": "证类型"
 						}
-					]
+					],
+					"name": "qualifications",
+					"type": "AxinPayRegisterQualification[]",
+					"description": "行业资格证"
 				},
 				{
 					"name": "service",
@@ -156,9 +149,6 @@
 					"description": "客服电话"
 				},
 				{
-					"name": "sites",
-					"type": "AxinPayRegisterSiteInfo[]",
-					"description": "站点信息",
 					"subParams": [
 						{
 							"name": "site_name",
@@ -175,68 +165,70 @@
 							"type": "String",
 							"description": "站点url"
 						}
-					]
+					],
+					"name": "sites",
+					"type": "AxinPayRegisterSiteInfo[]",
+					"description": "站点信息"
 				}
-			]
+			],
+			"name": "axin_pay_register_create_d_t_o",
+			"type": "AxinPayRegisterCreateDto",
+			"description": "阿信支付入驻重新申请参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResultDto",
-			"description": "结果对象",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "AxinPayRegisterCreateResDto",
-					"description": "结果数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_order_id",
 							"type": "String",
-							"description": "支付入驻域申请单记录id",
-							"required": true
+							"description": "支付入驻域申请单记录id"
 						},
 						{
 							"name": "pay_register_order_no",
 							"type": "String",
-							"description": "支付平台申请单号",
-							"required": true
+							"description": "支付平台申请单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinPayRegisterCreateResDto",
+					"description": "结果数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.pay.register.reapply",
+	"apiChineseName": "阿信支付入驻重新申请",
+	"description": "阿信支付入驻重新申请\n用于支付平台驳回，商户提交时的业务场景",
+	"id": 55955
 }

@@ -36,4 +36,8 @@ type OpenItineraryInfo struct {
 	InvoiceId int64 `json:"invoice_id,omitempty" xml:"invoice_id,omitempty"`
 	// 商旅成本中心id，若不填则第三方成本中心id必填
 	CostCenterId int64 `json:"cost_center_id,omitempty" xml:"cost_center_id,omitempty"`
+	// 行程是否需要预定酒店，不传默认需要
+	NeedHotel bool `json:"need_hotel,omitempty" xml:"need_hotel,omitempty"`
+	// 行程是否需要预定交通工具，不传默认需要
+	NeedTraffic bool `json:"need_traffic,omitempty" xml:"need_traffic,omitempty"`
 }

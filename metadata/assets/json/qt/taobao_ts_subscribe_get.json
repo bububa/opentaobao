@@ -1,29 +1,22 @@
 {
-	"id": 10900,
-	"name": "taobao.ts.subscribe.get",
-	"apiChineseName": "淘宝服务订购关系查询",
-	"description": "ts订购关系状态查询. 暂只支持1口价服务.",
 	"requestParams": [
 		{
 			"name": "servcie_item_code",
 			"type": "String",
 			"description": "服务收费项code",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "nick",
 			"type": "String",
 			"description": "订购用户昵称",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_subscribe",
-			"type": "ServiceSubscribe",
-			"description": "订购关系对象",
 			"subParams": [
 				{
 					"name": "service_item_code",
@@ -52,13 +45,15 @@
 				},
 				{
 					"name": "future_price",
-					"type": "Price",
+					"type": "String",
 					"description": "将要被使用的那条质检订单的价格"
 				},
 				{
-					"name": "usage_detail_list",
-					"type": "QualityUsageDetail[]",
-					"description": "该用户该收费项目下面的所有的订购记录详情",
+					"name": "future_sub_id",
+					"type": "Number",
+					"description": "将要被消耗的质检订单ID"
+				},
+				{
 					"subParams": [
 						{
 							"name": "sub_id",
@@ -91,6 +86,11 @@
 							"description": "质检服务的收费项目码"
 						},
 						{
+							"name": "price",
+							"type": "String",
+							"description": "该订单中每个质检服务的价格"
+						},
+						{
 							"name": "start_date",
 							"type": "Date",
 							"description": "该订单的开通时间"
@@ -99,25 +99,25 @@
 							"name": "end_date",
 							"type": "Date",
 							"description": "该订单的到期时间"
-						},
-						{
-							"name": "price",
-							"type": "Price",
-							"description": "该订单中每个质检服务的价格"
 						}
-					]
-				},
-				{
-					"name": "future_sub_id",
-					"type": "Number",
-					"description": "将要被消耗的质检订单ID"
+					],
+					"name": "usage_detail_list",
+					"type": "QualityUsageDetail[]",
+					"description": "该用户该收费项目下面的所有的订购记录详情"
 				},
 				{
 					"name": "avaliable_num",
 					"type": "Number",
 					"description": "可用数量"
 				}
-			]
+			],
+			"name": "service_subscribe",
+			"type": "ServiceSubscribe",
+			"description": "订购关系对象"
 		}
-	]
+	],
+	"name": "taobao.ts.subscribe.get",
+	"apiChineseName": "淘宝服务订购关系查询",
+	"description": "ts订购关系状态查询. 暂只支持1口价服务.",
+	"id": 10900
 }

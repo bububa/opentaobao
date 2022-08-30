@@ -20,8 +20,8 @@ type AlibabaNlifeB2cTradePayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_nlife_b2c_trade_pay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 扩展参数
-	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 	// gmtPayment
 	GmtPayment string `json:"gmt_payment,omitempty" xml:"gmt_payment,omitempty"`
+	// 扩展参数
+	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 }

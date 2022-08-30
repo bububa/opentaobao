@@ -1,19 +1,8 @@
 {
-	"id": 56281,
-	"name": "taobao.miniapp.cloud.picture.token",
-	"apiChineseName": "云存储上传token获取",
-	"description": "获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。\n\n上传的html示例代码为：\n\u0026lt;form action=\u0026quot;http://upload.cloud.tmall.com/api/proxy/upload\u0026quot; method=\u0026quot;post\u0026quot; enctype=\u0026quot;multipart/form-data\u0026quot;\u0026gt;\n\t上传token: \u0026lt;input type=\u0026quot;text\u0026quot; name=\u0026quot;Authorization\u0026quot; value=\u0026quot;\u0026quot; /\u0026gt;\u0026lt;br/\u0026gt;\n\t上传文件:\u0026lt;input type=\u0026quot;file\u0026quot; name=\u0026quot;content\u0026quot; /\u0026gt;\u0026lt;br/\u0026gt;\n\t\u0026lt;input type=\u0026quot;submit\u0026quot; value=\u0026quot;Submit \u0026quot;/\u0026gt;\n\u0026lt;/form\u0026gt;",
 	"requestParams": [
 		{
-			"name": "generate_token_request",
-			"type": "GenerateTokenRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "upload_policy",
-					"type": "UploadPolicy",
-					"description": "请求策略",
 					"subParams": [
 						{
 							"name": "size_limit",
@@ -25,9 +14,16 @@
 							"type": "String",
 							"description": "限制用户上传文件的类型，多个值用；分隔。 可设置的值为：image/jpeg,image/png,image/webp等。 若用户上传文件的mime类型不在mime_limit范围内，无法上传成功。"
 						}
-					]
+					],
+					"name": "upload_policy",
+					"type": "UploadPolicy",
+					"description": "请求策略"
 				}
-			]
+			],
+			"name": "generate_token_request",
+			"type": "GenerateTokenRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "返回的token"
 		}
-	]
+	],
+	"name": "taobao.miniapp.cloud.picture.token",
+	"apiChineseName": "云存储上传token获取",
+	"description": "获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。\n\n上传的html示例代码为：\n\u0026lt;form action=\u0026quot;http://upload.cloud.tmall.com/api/proxy/upload\u0026quot; method=\u0026quot;post\u0026quot; enctype=\u0026quot;multipart/form-data\u0026quot;\u0026gt;\n\t上传token: \u0026lt;input type=\u0026quot;text\u0026quot; name=\u0026quot;Authorization\u0026quot; value=\u0026quot;\u0026quot; /\u0026gt;\u0026lt;br/\u0026gt;\n\t上传文件:\u0026lt;input type=\u0026quot;file\u0026quot; name=\u0026quot;content\u0026quot; /\u0026gt;\u0026lt;br/\u0026gt;\n\t\u0026lt;input type=\u0026quot;submit\u0026quot; value=\u0026quot;Submit \u0026quot;/\u0026gt;\n\u0026lt;/form\u0026gt;",
+	"id": 56281
 }

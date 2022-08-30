@@ -1,8 +1,4 @@
 {
-	"id": 25671,
-	"name": "taobao.wlb.wms.cainiao.bill.query",
-	"apiChineseName": "查询单据列表",
-	"description": "查询单据列表",
 	"requestParams": [
 		{
 			"name": "start_modified_time",
@@ -41,14 +37,8 @@
 			"description": "总条数"
 		},
 		{
-			"name": "order_info_list",
-			"type": "CainiaoBillQueryOrderinfolist []",
-			"description": "订单列表信息",
 			"subParams": [
 				{
-					"name": "order_info",
-					"type": "CainiaoBillQueryOrderinfo",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "cn_order_code",
@@ -95,9 +85,19 @@
 							"type": "String[]",
 							"description": "交易订单号"
 						}
-					]
+					],
+					"name": "order_info",
+					"type": "CainiaoBillQueryOrderinfo",
+					"description": "订单信息"
 				}
-			]
+			],
+			"name": "order_info_list",
+			"type": "CainiaoBillQueryOrderinfolist []",
+			"description": "订单列表信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.cainiao.bill.query",
+	"apiChineseName": "查询单据列表",
+	"description": "查询单据列表",
+	"id": 25671
 }

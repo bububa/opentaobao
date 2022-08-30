@@ -1,13 +1,6 @@
 {
-	"id": 38094,
-	"name": "taobao.alitrip.ie.agent.refund.new.getdetail",
-	"apiChineseName": "查询申请单详情(新版)",
-	"description": "查询申请单详情",
 	"requestParams": [
 		{
-			"name": "param_refund_order_query_detail_rq",
-			"type": "RefundOrderQueryDetailRq",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -19,558 +12,479 @@
 					"type": "Number",
 					"description": "申请单ID"
 				}
-			]
+			],
+			"name": "param_refund_order_query_detail_rq",
+			"type": "RefundOrderQueryDetailRq",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefundOrderQueryDetailRs",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "api_error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "api_error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "err_trace",
 					"type": "String",
-					"description": "错误trace",
-					"required": true
+					"description": "错误trace"
 				},
 				{
 					"name": "failure",
 					"type": "Boolean",
-					"description": "失败",
-					"required": true
+					"description": "失败"
 				},
 				{
 					"name": "host_name",
 					"type": "String",
-					"description": "机器名称",
-					"required": true
+					"description": "机器名称"
 				},
 				{
-					"name": "refund_order_vo",
-					"type": "RefundOrderVo",
-					"description": "申请单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "agent_id",
 							"type": "Number",
-							"description": "代理商ID",
-							"required": true
+							"description": "代理商ID"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "正向订单ID",
-							"required": true
+							"description": "正向订单ID"
 						},
 						{
 							"name": "refund_biz_status",
 							"type": "Number",
-							"description": "业务状态(INIT(10, \"已提交待处理\"),     WAIT_ADMIN_PROCESS(20, \"待人工处理\")),配合主状态使用",
-							"required": true
+							"description": "业务状态(INIT(10, \"已提交待处理\"),     WAIT_ADMIN_PROCESS(20, \"待人工处理\")),配合主状态使用"
 						},
 						{
-							"name": "refund_item_vo",
-							"type": "RefundItemVo",
-							"description": "退商品信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "passenger_type_prices",
-									"type": "RefundPassengerTypePrice[]",
-									"description": "乘机人类型价格信息",
-									"required": true,
 									"subParams": [
 										{
-											"name": "flight_price",
-											"type": "RefundFlightPrice",
-											"description": "机票价格信息",
-											"required": true,
 											"subParams": [
 												{
 													"name": "tax_price",
 													"type": "Number",
-													"description": "税费价格(单位：分)",
-													"required": true
+													"description": "税费价格(单位：分)"
 												},
 												{
 													"name": "ticket_price",
 													"type": "Number",
-													"description": "机票价格(单位:分)",
-													"required": true
+													"description": "机票价格(单位:分)"
 												}
-											]
+											],
+											"name": "flight_price",
+											"type": "RefundFlightPrice",
+											"description": "机票价格信息"
 										},
 										{
 											"name": "passenger_type",
 											"type": "Number",
-											"description": "乘机人类型(Adult(0, \"成人\"),     Child(1, \"儿童\"),     StudentAbroad(2, \"留学生\"),     Infant(3, \"婴儿\")",
-											"required": true
+											"description": "乘机人类型(Adult(0, \"成人\"),     Child(1, \"儿童\"),     StudentAbroad(2, \"留学生\"),     Infant(3, \"婴儿\")"
 										}
-									]
+									],
+									"name": "passenger_type_prices",
+									"type": "RefundPassengerTypePrice[]",
+									"description": "乘机人类型价格信息"
 								},
 								{
-									"name": "refund_itinerary_flights",
-									"type": "RefundItineraryVo[]",
-									"description": "行程信息",
-									"required": true,
 									"subParams": [
+										{
+											"name": "arr_airport_code",
+											"type": "String",
+											"description": "到达机场"
+										},
 										{
 											"name": "dep_airport_code",
 											"type": "String",
-											"description": "出发机场",
-											"required": true
+											"description": "出发机场"
 										},
 										{
 											"name": "dep_date",
 											"type": "Date",
-											"description": "出发时间",
-											"required": true
+											"description": "出发时间"
 										},
 										{
 											"name": "index",
 											"type": "Number",
-											"description": "行程序号",
-											"required": true
+											"description": "行程序号"
 										},
 										{
-											"name": "refund_flight_segment_vos",
-											"type": "RefundFlightSegmentVo[]",
-											"description": "航班列表",
-											"required": true,
 											"subParams": [
 												{
 													"name": "arr_airport",
 													"type": "String",
-													"description": "到达机场",
-													"required": true
+													"description": "到达机场"
 												},
 												{
 													"name": "arr_city",
 													"type": "String",
-													"description": "到达城市",
-													"required": true
+													"description": "到达城市"
 												},
 												{
 													"name": "arr_terminal",
 													"type": "String",
-													"description": "到达航站楼",
-													"required": true
+													"description": "到达航站楼"
 												},
 												{
 													"name": "arr_time",
 													"type": "Date",
-													"description": "到达时间",
-													"required": true
+													"description": "到达时间"
 												},
 												{
 													"name": "code_share",
 													"type": "Boolean",
-													"description": "共享编码",
-													"required": true
+													"description": "共享编码"
 												},
 												{
 													"name": "dep_airport",
 													"type": "String",
-													"description": "出发机场",
-													"required": true
+													"description": "出发机场"
 												},
 												{
 													"name": "dep_city",
 													"type": "String",
-													"description": "出发城市",
-													"required": true
+													"description": "出发城市"
 												},
 												{
 													"name": "dep_terminal",
 													"type": "String",
-													"description": "出发航站楼",
-													"required": true
+													"description": "出发航站楼"
 												},
 												{
 													"name": "dep_time",
 													"type": "Date",
-													"description": "出发时间",
-													"required": true
+													"description": "出发时间"
 												},
 												{
 													"name": "id",
 													"type": "Number",
-													"description": "航段ID",
-													"required": true
+													"description": "航段ID"
 												},
 												{
 													"name": "itinerary_index",
 													"type": "Number",
-													"description": "行程序号",
-													"required": true
+													"description": "行程序号"
 												},
 												{
 													"name": "main_segment",
 													"type": "Boolean",
-													"description": "主航段",
-													"required": true
+													"description": "主航段"
 												},
 												{
 													"name": "marketing_airline",
 													"type": "String",
-													"description": "市场方航司",
-													"required": true
+													"description": "市场方航司"
 												},
 												{
 													"name": "marketing_flight_number",
 													"type": "String",
-													"description": "市场方航班号",
-													"required": true
-												},
-												{
-													"name": "operating_flight_number",
-													"type": "String",
-													"description": "执行航班号",
-													"required": true
-												},
-												{
-													"name": "segment_index",
-													"type": "Number",
-													"description": "航段序号",
-													"required": true
+													"description": "市场方航班号"
 												},
 												{
 													"name": "operating_airline",
 													"type": "String",
-													"description": "执行方航班号",
-													"required": true
+													"description": "执行方航班号"
+												},
+												{
+													"name": "operating_flight_number",
+													"type": "String",
+													"description": "执行航班号"
+												},
+												{
+													"name": "segment_index",
+													"type": "Number",
+													"description": "航段序号"
 												}
-											]
-										},
-										{
-											"name": "arr_airport_code",
-											"type": "String",
-											"description": "到达机场",
-											"required": true
+											],
+											"name": "refund_flight_segment_vos",
+											"type": "RefundFlightSegmentVo[]",
+											"description": "航班列表"
 										}
-									]
+									],
+									"name": "refund_itinerary_flights",
+									"type": "RefundItineraryVo[]",
+									"description": "行程信息"
 								}
-							]
+							],
+							"name": "refund_item_vo",
+							"type": "RefundItemVo",
+							"description": "退商品信息"
 						},
 						{
-							"name": "refund_order_detail_vo",
-							"type": "RefundOrderDetailVo",
-							"description": "申请单详情",
-							"required": true,
 							"subParams": [
 								{
 									"name": "agree_answer",
 									"type": "String",
-									"description": "商家回复",
-									"required": true
+									"description": "商家回复"
 								},
 								{
 									"name": "agree_time",
 									"type": "Date",
-									"description": "同意时间",
-									"required": true
+									"description": "同意时间"
 								},
 								{
 									"name": "bui_tui",
 									"type": "Boolean",
-									"description": "是否补退",
-									"required": true
+									"description": "是否补退"
 								},
 								{
 									"name": "instant_type",
 									"type": "Number",
-									"description": "极速类型",
-									"required": true
+									"description": "极速类型"
 								},
 								{
 									"name": "latest_process_time",
 									"type": "Date",
-									"description": "最晚处理时间",
-									"required": true
+									"description": "最晚处理时间"
 								},
 								{
 									"name": "multi_refund_index",
 									"type": "Number",
-									"description": "多次退次数",
-									"required": true
+									"description": "多次退次数"
 								},
 								{
 									"name": "receive_answer",
 									"type": "String",
-									"description": "接受回复",
-									"required": true
+									"description": "接受回复"
 								},
 								{
 									"name": "receive_time",
 									"type": "Date",
-									"description": "接受退票时间",
-									"required": true
+									"description": "接受退票时间"
 								},
 								{
 									"name": "refund_ticket_dimension",
 									"type": "Number",
-									"description": "申请单退商品粒度",
-									"required": true
+									"description": "申请单退商品粒度"
 								},
 								{
 									"name": "refuse_answer",
 									"type": "String",
-									"description": "拒绝答复",
-									"required": true
+									"description": "拒绝答复"
 								},
 								{
 									"name": "refuse_time",
 									"type": "Date",
-									"description": "拒绝时间",
-									"required": true
+									"description": "拒绝时间"
 								},
 								{
 									"name": "time_limit_refund",
 									"type": "Boolean",
-									"description": "限时免费退",
-									"required": true
+									"description": "限时免费退"
 								},
 								{
 									"name": "apply_time",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "model_version",
 									"type": "String",
-									"description": "模型版本",
-									"required": true
+									"description": "模型版本"
 								}
-							]
+							],
+							"name": "refund_order_detail_vo",
+							"type": "RefundOrderDetailVo",
+							"description": "申请单详情"
 						},
 						{
 							"name": "refund_order_id",
 							"type": "Number",
-							"description": "退票申请单ID",
-							"required": true
+							"description": "退票申请单ID"
 						},
 						{
 							"name": "refund_order_status",
 							"type": "Number",
-							"description": "申请单状态(WAIT(1,\"待处理\"), AGREED(2, \"已同意\"),REFUSE(3, \"已拒绝\"),PROCESS(6, \"已受理\"), SUCCESS(7, \"已退款\")",
-							"required": true
+							"description": "申请单状态(WAIT(1,\"待处理\"), AGREED(2, \"已同意\"),REFUSE(3, \"已拒绝\"),PROCESS(6, \"已受理\"), SUCCESS(7, \"已退款\")"
 						},
 						{
-							"name": "refund_passenger_fee_vos",
-							"type": "RefundPassengerFeeVo[]",
-							"description": "乘机人费用列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "already_used_total_pirce",
 									"type": "Number",
-									"description": "已使用票总价(单位:分)",
-									"required": true
+									"description": "已使用票总价(单位:分)"
 								},
 								{
 									"name": "non_refundable_change_service_fee",
 									"type": "Number",
-									"description": "改签不可退服务费(单位：分)",
-									"required": true
+									"description": "改签不可退服务费(单位：分)"
 								},
 								{
 									"name": "non_refundable_change_upgrade_fee",
 									"type": "Number",
-									"description": "改签不可退升舱费(单位:分)",
-									"required": true
+									"description": "改签不可退升舱费(单位:分)"
 								},
 								{
 									"name": "non_refundable_tax_price",
 									"type": "Number",
-									"description": "机票不可退税费(单位:分)",
-									"required": true
+									"description": "机票不可退税费(单位:分)"
 								},
 								{
 									"name": "non_refundable_ticket_price",
 									"type": "Number",
-									"description": "机票不可退票价(单位:分)",
-									"required": true
+									"description": "机票不可退票价(单位:分)"
 								},
 								{
 									"name": "passenger_id",
 									"type": "Number",
-									"description": "乘机人ID",
-									"required": true
+									"description": "乘机人ID"
 								},
 								{
-									"name": "refund_activity_vos",
-									"type": "RefundActivityVo[]",
-									"description": "活动列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "name",
 											"type": "String",
-											"description": "活动名称",
-											"required": true
+											"description": "活动名称"
 										},
 										{
 											"name": "take_back_price",
 											"type": "Number",
-											"description": "活动收回金额(单位：分)",
-											"required": true
+											"description": "活动收回金额(单位：分)"
 										}
-									]
+									],
+									"name": "refund_activity_vos",
+									"type": "RefundActivityVo[]",
+									"description": "活动列表"
 								},
 								{
 									"name": "refund_to_buyer_money",
 									"type": "Number",
-									"description": "乘机人退总金额(单位:分)",
-									"required": true
+									"description": "乘机人退总金额(单位:分)"
 								},
 								{
 									"name": "take_back_activity_money",
 									"type": "Number",
-									"description": "乘机人红包收回(单位:分)",
-									"required": true
+									"description": "乘机人红包收回(单位:分)"
 								}
-							]
+							],
+							"name": "refund_passenger_fee_vos",
+							"type": "RefundPassengerFeeVo[]",
+							"description": "乘机人费用列表"
 						},
 						{
-							"name": "refund_passenger_vos",
-							"type": "RefundPassengerVo[]",
-							"description": "退票乘机人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "passener_id",
 									"type": "Number",
-									"description": "乘机人ID",
-									"required": true
+									"description": "乘机人ID"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
+									"description": "乘机人姓名"
 								},
 								{
 									"name": "passenger_type",
 									"type": "Number",
-									"description": "乘机人类型(Adult(0, \"成人\"),     Child(1, \"儿童\"),     StudentAbroad(2, \"留学生\"),     Infant(3, \"婴儿\")",
-									"required": true
+									"description": "乘机人类型(Adult(0, \"成人\"),     Child(1, \"儿童\"),     StudentAbroad(2, \"留学生\"),     Infant(3, \"婴儿\")"
 								}
-							]
+							],
+							"name": "refund_passenger_vos",
+							"type": "RefundPassengerVo[]",
+							"description": "退票乘机人列表"
 						},
 						{
 							"name": "refund_pay_status",
 							"type": "Number",
-							"description": "支付状态(INIT(1, \"初始化\"),     REFUND_FAIL(2, \"退款失败\"),     REFUND_SUCCESS(3, \"退款成功\")",
-							"required": true
+							"description": "支付状态(INIT(1, \"初始化\"),     REFUND_FAIL(2, \"退款失败\"),     REFUND_SUCCESS(3, \"退款成功\")"
 						},
 						{
-							"name": "refund_reason_do",
-							"type": "IeRefundReasonDo",
-							"description": "原因",
-							"required": true,
 							"subParams": [
 								{
 									"name": "reason",
 									"type": "String",
-									"description": "原因描述",
-									"required": true
+									"description": "原因描述"
 								},
 								{
 									"name": "reason_type",
 									"type": "Number",
-									"description": "原因类型",
-									"required": true
+									"description": "原因类型"
 								}
-							]
+							],
+							"name": "refund_reason_do",
+							"type": "IeRefundReasonDo",
+							"description": "原因"
 						},
 						{
 							"name": "total_refund_to_buyer_money",
 							"type": "Number",
-							"description": "总退给买家金额(单位:分)",
-							"required": true
+							"description": "总退给买家金额(单位:分)"
 						},
 						{
 							"name": "total_take_back_activity_money",
 							"type": "Number",
-							"description": "总活动收回金额(单位:分)",
-							"required": true
+							"description": "总活动收回金额(单位:分)"
 						},
 						{
-							"name": "change_simple_vo",
-							"type": "ChangeSimpleVo",
-							"description": "改签信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "passenger_change_fee_vos",
-									"type": "PassengerChangeFeeVo",
-									"description": "乘机人改签费用(单位:分)",
-									"required": true,
 									"subParams": [
 										{
 											"name": "change_upgrade_fee",
 											"type": "Number",
-											"description": "改签升舱费(单位:分）",
-											"required": true
+											"description": "改签升舱费(单位:分）"
 										},
 										{
 											"name": "change_service_fee",
 											"type": "Number",
-											"description": "改签服务费(单位:分）",
-											"required": true
+											"description": "改签服务费(单位:分）"
 										},
 										{
 											"name": "passenger_id",
 											"type": "Number",
-											"description": "乘机人ID",
-											"required": true
+											"description": "乘机人ID"
 										}
-									]
+									],
+									"name": "passenger_change_fee_vos",
+									"type": "PassengerChangeFeeVo",
+									"description": "乘机人改签费用(单位:分)"
 								},
 								{
 									"name": "total_change_service_fee",
 									"type": "String",
-									"description": "总改签服务费(单位:分）",
-									"required": true
+									"description": "总改签服务费(单位:分）"
 								},
 								{
 									"name": "total_change_upgrade_fee",
 									"type": "Number",
-									"description": "总改签升舱费(单位:分)",
-									"required": true
+									"description": "总改签升舱费(单位:分)"
 								},
 								{
 									"name": "had_changed",
 									"type": "Boolean",
-									"description": "是否有成功改签过",
-									"required": true
+									"description": "是否有成功改签过"
 								}
-							]
+							],
+							"name": "change_simple_vo",
+							"type": "ChangeSimpleVo",
+							"description": "改签信息"
 						}
-					]
+					],
+					"name": "refund_order_vo",
+					"type": "RefundOrderVo",
+					"description": "申请单详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefundOrderQueryDetailRs",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.refund.new.getdetail",
+	"apiChineseName": "查询申请单详情(新版)",
+	"description": "查询申请单详情",
+	"id": 38094
 }

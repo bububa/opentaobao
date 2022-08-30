@@ -12,11 +12,11 @@ import (
 // 单据处理状态查询
 type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest struct {
 	model.Params
-	// 企业ID
+	// 企业ref_ent_id
 	_refEntId string
-	// 开始日期
+	// 开始日期（没有时分秒，【单据创建时间】）
 	_beginDate string
-	// 结束日期
+	// 结束日期（没有时分秒，【单据创建时间】）
 	_endDate string
 	// 单据类型 A：全部 AI：全部入库 AO：全部出库
 	_billType string
@@ -26,9 +26,9 @@ type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest struct {
 	_drugType string
 	// 状态  0, 上传成功     3, 处理成功     4, 处理失败
 	_dealStatus string
-	// 发货商
+	// 发货企业【注：是ent_id,不是ref_ent_id】
 	_fromUserId string
-	// 收货商
+	// 收货企业【注：是ent_id,不是ref_ent_id】
 	_toUserId string
 	// 代理商
 	_agentRefUserId string
@@ -60,7 +60,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetApiParams(
 }
 
 // SetRefEntId is RefEntId Setter
-// 企业ID
+// 企业ref_ent_id
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
@@ -73,7 +73,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetRefEntId()
 }
 
 // SetBeginDate is BeginDate Setter
-// 开始日期
+// 开始日期（没有时分秒，【单据创建时间】）
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
 	r.Set("begin_date", _beginDate)
@@ -86,7 +86,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetBeginDate(
 }
 
 // SetEndDate is EndDate Setter
-// 结束日期
+// 结束日期（没有时分秒，【单据创建时间】）
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
@@ -151,7 +151,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetDealStatus
 }
 
 // SetFromUserId is FromUserId Setter
-// 发货商
+// 发货企业【注：是ent_id,不是ref_ent_id】
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetFromUserId(_fromUserId string) error {
 	r._fromUserId = _fromUserId
 	r.Set("from_user_id", _fromUserId)
@@ -164,7 +164,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) GetFromUserId
 }
 
 // SetToUserId is ToUserId Setter
-// 收货商
+// 收货企业【注：是ent_id,不是ref_ent_id】
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryBillstatusAPIRequest) SetToUserId(_toUserId string) error {
 	r._toUserId = _toUserId
 	r.Set("to_user_id", _toUserId)

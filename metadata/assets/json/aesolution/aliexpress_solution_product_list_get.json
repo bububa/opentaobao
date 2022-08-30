@@ -1,13 +1,6 @@
 {
-	"id": 42384,
-	"name": "aliexpress.solution.product.list.get",
-	"apiChineseName": "Get product list",
-	"description": "Get product list",
 	"requestParams": [
 		{
-			"name": "aeop_a_e_product_list_query",
-			"type": "ItemListQuery",
-			"description": "request parameters to query",
 			"subParams": [
 				{
 					"name": "current_page",
@@ -90,14 +83,14 @@
 					"type": "String",
 					"description": "merchant sku code"
 				}
-			]
+			],
+			"name": "aeop_a_e_product_list_query",
+			"type": "ItemListQuery",
+			"description": "request parameters to query"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemListResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -142,10 +135,6 @@
 					"required": true
 				},
 				{
-					"name": "aeop_a_e_product_display_d_t_o_list",
-					"type": "ItemDisplayDto[]",
-					"description": "product list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ws_offline_date",
@@ -249,9 +238,20 @@
 							"description": "Coupon end date, GMT+8",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_a_e_product_display_d_t_o_list",
+					"type": "ItemDisplayDto[]",
+					"description": "product list",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemListResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.product.list.get",
+	"apiChineseName": "Get product list",
+	"description": "Get product list",
+	"id": 42384
 }

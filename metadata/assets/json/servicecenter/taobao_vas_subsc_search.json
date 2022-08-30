@@ -1,20 +1,5 @@
 {
-	"id": 10588,
-	"name": "taobao.vas.subsc.search",
-	"apiChineseName": "订购记录导出",
-	"description": "用于ISV查询自己名下的应用及收费项目的订购记录",
 	"requestParams": [
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "一页包含的记录数",
-			"maxValue": 200
-		},
-		{
-			"name": "page_no",
-			"type": "Number",
-			"description": "页码"
-		},
 		{
 			"name": "article_code",
 			"type": "String",
@@ -52,6 +37,16 @@
 			"description": "是否到期提醒，true=到期提醒 false=非到期提醒 空=全部"
 		},
 		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "一页包含的记录数"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
 			"name": "nick",
 			"type": "String",
 			"description": "淘宝会员名"
@@ -59,9 +54,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "article_subs",
-			"type": "ArticleSub []",
-			"description": "订购关系对象",
 			"subParams": [
 				{
 					"name": "nick",
@@ -108,12 +100,19 @@
 					"type": "Boolean",
 					"description": "是否到期提醒"
 				}
-			]
+			],
+			"name": "article_subs",
+			"type": "ArticleSub []",
+			"description": "订购关系对象"
 		},
 		{
 			"name": "total_item",
 			"type": "Number",
 			"description": "总记录数"
 		}
-	]
+	],
+	"name": "taobao.vas.subsc.search",
+	"apiChineseName": "订购记录导出",
+	"description": "用于ISV查询自己名下的应用及收费项目的订购记录",
+	"id": 10588
 }

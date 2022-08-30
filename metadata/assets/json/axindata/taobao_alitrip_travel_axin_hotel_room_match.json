@@ -1,0 +1,132 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "room_name_en",
+							"type": "String",
+							"description": "房型英文名称"
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "对应标准酒店id",
+							"required": true
+						},
+						{
+							"name": "room_name",
+							"type": "String",
+							"description": "房型中文名称",
+							"required": true
+						},
+						{
+							"name": "bed_type",
+							"type": "String",
+							"description": "床型类型"
+						}
+					],
+					"name": "hotel_room_match_d_t_o_list",
+					"type": "HotelRoomMatchDTO[]",
+					"description": "要匹配的房型参数列表",
+					"required": true
+				},
+				{
+					"name": "distributor_tid",
+					"type": "Number",
+					"description": "分销商淘宝账号id",
+					"required": true
+				}
+			],
+			"name": "req",
+			"type": "MatchedRoomRequestDTO",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店id"
+								},
+								{
+									"name": "room_name",
+									"type": "String",
+									"description": "房型名称"
+								},
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "当前房型的匹配是否成功"
+								},
+								{
+									"name": "er_code",
+									"type": "String",
+									"description": "错误code"
+								},
+								{
+									"name": "er_msg",
+									"type": "String",
+									"description": "错误信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "匹配结果标准房型id"
+										},
+										{
+											"name": "score",
+											"type": "String",
+											"description": "分值,越高可信度越高"
+										}
+									],
+									"name": "matched_room_data_list",
+									"type": "MatchedRoomDataDTO[]",
+									"description": "当前房型匹配最终结果列表，"
+								}
+							],
+							"name": "matched_room_result_list",
+							"type": "MatchedRoomResultDTO[]",
+							"description": "每个房型匹配结果封装对象"
+						}
+					],
+					"name": "data",
+					"type": "MatchedRoomBatchResultDTO",
+					"description": "匹配结果DTO"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "调用是否成功,true为成功"
+				},
+				{
+					"name": "er_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "er_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.room.match",
+	"apiChineseName": "阿信酒店房型匹配",
+	"description": "阿信酒店房型匹配",
+	"id": 61659
+}

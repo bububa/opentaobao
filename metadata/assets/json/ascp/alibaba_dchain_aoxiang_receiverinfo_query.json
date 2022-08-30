@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "收件人",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "淘系交易单号"
+				},
+				{
+					"name": "delivery_order_code",
+					"type": "String",
+					"description": "翱象强控出库单号 主场景：翱象下发的WMS出库单号  与交易单号必须二选一"
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "使用场景。3001，即时配发货",
+					"required": true
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间，Unix timestamp ，毫秒",
+					"required": true
+				},
+				{
+					"name": "shop_nick",
+					"type": "String",
+					"description": "店铺名称"
+				}
+			],
+			"name": "order_privacy_receiver_query",
+			"type": "OrderPrivacyReceiverQuery",
+			"description": "收件人查询条件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "移动电话隐私"
+						},
+						{
+							"name": "country_code",
+							"type": "String",
+							"description": "国家二字码"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收件人所在城市"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "收件人所在区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收件人所在街道"
+						}
+					],
+					"name": "data",
+					"type": "OrderReceiverPrivacyData",
+					"description": "用户信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "order_receiver_privacy_response",
+			"type": "OrderReceiverPrivacyResponse",
+			"description": "用户信息"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.receiverinfo.query",
+	"apiChineseName": "供应链优仓即时配隐私小号查询",
+	"description": "供应链优仓即时配隐私小号查询",
+	"id": 60650
+}

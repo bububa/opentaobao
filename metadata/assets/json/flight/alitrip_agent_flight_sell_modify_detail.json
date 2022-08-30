@@ -1,8 +1,4 @@
 {
-	"id": 54269,
-	"name": "alitrip.agent.flight.sell.modify.detail",
-	"apiChineseName": "销售改签详情",
-	"description": "销售改签详情",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -12,342 +8,293 @@
 		{
 			"name": "domestic_intl",
 			"type": "Number",
-			"description": "国内国际标识"
+			"description": "国内国际标识:1:国内,2:国际"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "ModifyDetailDto",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "String",
-							"description": "申请单号",
-							"required": true
-						},
-						{
-							"name": "reason",
-							"type": "String",
-							"description": "申请原因",
-							"required": true
-						},
-						{
-							"name": "domestic_intl",
-							"type": "Number",
-							"description": "国际国内标识",
-							"required": true
-						},
-						{
-							"name": "order_id",
-							"type": "String",
-							"description": "关联飞猪订单号",
-							"required": true
-						},
-						{
-							"name": "pay_time",
-							"type": "Date",
-							"description": "支付时间",
-							"required": true
-						},
-						{
-							"name": "change_list",
-							"type": "ChangeList[]",
-							"description": "改签数据",
-							"required": true,
-							"subParams": [
-								{
-									"name": "cert_no",
-									"type": "String",
-									"description": "证件号",
-									"required": true
-								},
-								{
-									"name": "passenger_name",
-									"type": "String",
-									"description": "乘客姓名",
-									"required": true
-								},
-								{
-									"name": "cert_type",
-									"type": "Number",
-									"description": "证件类型",
-									"required": true
-								},
-								{
-									"name": "passenger_type",
-									"type": "Number",
-									"description": "乘客类型",
-									"required": true
-								},
-								{
-									"name": "tickets",
-									"type": "String[]",
-									"description": "票号",
-									"required": true
-								},
-								{
-									"name": "promotion",
-									"type": "Number",
-									"description": "优惠",
-									"required": true
-								},
-								{
-									"name": "before_change_segments",
-									"type": "BeforeChangeSegments[]",
-									"description": "改签前数据",
-									"required": true,
-									"subParams": [
-										{
-											"name": "cabin_class",
-											"type": "String",
-											"description": "舱等",
-											"required": true
-										},
-										{
-											"name": "flight_no",
-											"type": "String",
-											"description": "航班号",
-											"required": true
-										},
-										{
-											"name": "dep_time",
-											"type": "Date",
-											"description": "起飞时间",
-											"required": true
-										},
-										{
-											"name": "arr_city",
-											"type": "String",
-											"description": "到达城市",
-											"required": true
-										},
-										{
-											"name": "dep_city",
-											"type": "String",
-											"description": "起飞城市",
-											"required": true
-										},
-										{
-											"name": "cabin",
-											"type": "String",
-											"description": "舱位",
-											"required": true
-										},
-										{
-											"name": "segment_index",
-											"type": "Number",
-											"description": "航段序号",
-											"required": true
-										},
-										{
-											"name": "arr_airport",
-											"type": "String",
-											"description": "到达机场",
-											"required": true
-										},
-										{
-											"name": "dep_airport",
-											"type": "String",
-											"description": "起飞机场",
-											"required": true
-										},
-										{
-											"name": "arr_time",
-											"type": "Date",
-											"description": "到达时间",
-											"required": true
-										},
-										{
-											"name": "od_index",
-											"type": "Number",
-											"description": "航程序号",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "after_change_segments",
-									"type": "AfterChangeSegments[]",
-									"description": "改签后数据",
-									"required": true,
-									"subParams": [
-										{
-											"name": "cabin_class",
-											"type": "String",
-											"description": "舱等",
-											"required": true
-										},
-										{
-											"name": "flight_no",
-											"type": "String",
-											"description": "航班号",
-											"required": true
-										},
-										{
-											"name": "dep_time",
-											"type": "Date",
-											"description": "起飞时间",
-											"required": true
-										},
-										{
-											"name": "arr_city",
-											"type": "String",
-											"description": "到达城市",
-											"required": true
-										},
-										{
-											"name": "dep_city",
-											"type": "String",
-											"description": "起飞城市",
-											"required": true
-										},
-										{
-											"name": "cabin",
-											"type": "String",
-											"description": "舱位",
-											"required": true
-										},
-										{
-											"name": "segment_index",
-											"type": "Number",
-											"description": "航段序号",
-											"required": true
-										},
-										{
-											"name": "arr_airport",
-											"type": "String",
-											"description": "到达机场",
-											"required": true
-										},
-										{
-											"name": "dep_airport",
-											"type": "String",
-											"description": "起飞机场",
-											"required": true
-										},
-										{
-											"name": "arr_time",
-											"type": "Date",
-											"description": "到达时间",
-											"required": true
-										},
-										{
-											"name": "od_index",
-											"type": "Number",
-											"description": "航程序号",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "ticket_price",
-									"type": "Number",
-									"description": "票面价",
-									"required": true
-								},
-								{
-									"name": "change_fee",
-									"type": "Number",
-									"description": "改签费",
-									"required": true
-								},
-								{
-									"name": "upgrade_fee",
-									"type": "Number",
-									"description": "升舱费",
-									"required": true
-								},
-								{
-									"name": "pnr",
-									"type": "String",
-									"description": "改签后pnr",
-									"required": true
-								},
-								{
-									"name": "before_change_tickets",
-									"type": "String[]",
-									"description": "改签前票号",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "sla",
-							"type": "String",
-							"description": "sla",
-							"required": true
-						},
-						{
-							"name": "currency",
-							"type": "String",
-							"description": "币种",
-							"required": true
-						},
-						{
-							"name": "apply_time",
-							"type": "Date",
-							"description": "申请时间",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "改签单状态",
-							"required": true
-						},
-						{
-							"name": "commission",
-							"type": "Number",
-							"description": "佣金",
-							"required": true
+							"description": "申请单号"
 						},
 						{
 							"name": "voluntary",
 							"type": "Number",
-							"description": "是否自愿",
-							"required": true
+							"description": "是否自愿:0:非自愿，1:自愿"
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "申请原因"
+						},
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国际国内标识:1:国内,2:国际"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "关联飞猪订单号"
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件号"
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客姓名"
+								},
+								{
+									"name": "cert_type",
+									"type": "Number",
+									"description": "证件类型:0:身份证, 1:护照, 2:学生证, 3:军官证, 4:回乡证, 5:台胞证, 6:港澳通行证, 7:国际海员, 8:外国人永久居留证, 9:其他证件, 10:警官证, 11:士兵证件, 12:台湾通行证, 13:入台证, 14:户口簿, 15:出生证, 16:驾驶证, 17:港澳居民居住证, 18:台湾居民居住证,"
+								},
+								{
+									"name": "passenger_type",
+									"type": "Number",
+									"description": "乘客类型: 1:成人, 2:儿童, 3:婴儿, 4:留学生"
+								},
+								{
+									"name": "tickets",
+									"type": "String[]",
+									"description": "票号"
+								},
+								{
+									"name": "promotion",
+									"type": "Number",
+									"description": "优惠;单位:分"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "舱等:  F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱"
+										},
+										{
+											"name": "flight_no",
+											"type": "String",
+											"description": "航班号"
+										},
+										{
+											"name": "dep_time",
+											"type": "Date",
+											"description": "起飞时间"
+										},
+										{
+											"name": "arr_city",
+											"type": "String",
+											"description": "到达城市"
+										},
+										{
+											"name": "dep_city",
+											"type": "String",
+											"description": "起飞城市"
+										},
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "舱位"
+										},
+										{
+											"name": "segment_index",
+											"type": "Number",
+											"description": "航段序号"
+										},
+										{
+											"name": "arr_airport",
+											"type": "String",
+											"description": "到达机场"
+										},
+										{
+											"name": "dep_airport",
+											"type": "String",
+											"description": "起飞机场"
+										},
+										{
+											"name": "arr_time",
+											"type": "Date",
+											"description": "到达时间"
+										},
+										{
+											"name": "od_index",
+											"type": "Number",
+											"description": "航程序号"
+										}
+									],
+									"name": "before_change_segments",
+									"type": "BeforeChangeSegments[]",
+									"description": "改签前数据"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "舱等: F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱"
+										},
+										{
+											"name": "flight_no",
+											"type": "String",
+											"description": "航班号"
+										},
+										{
+											"name": "dep_time",
+											"type": "Date",
+											"description": "起飞时间"
+										},
+										{
+											"name": "arr_city",
+											"type": "String",
+											"description": "到达城市"
+										},
+										{
+											"name": "dep_city",
+											"type": "String",
+											"description": "起飞城市"
+										},
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "舱位"
+										},
+										{
+											"name": "segment_index",
+											"type": "Number",
+											"description": "航段序号"
+										},
+										{
+											"name": "arr_airport",
+											"type": "String",
+											"description": "到达机场"
+										},
+										{
+											"name": "dep_airport",
+											"type": "String",
+											"description": "起飞机场"
+										},
+										{
+											"name": "arr_time",
+											"type": "Date",
+											"description": "到达时间"
+										},
+										{
+											"name": "od_index",
+											"type": "Number",
+											"description": "航程序号"
+										}
+									],
+									"name": "after_change_segments",
+									"type": "AfterChangeSegments[]",
+									"description": "改签后数据"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票面价;单位:分"
+								},
+								{
+									"name": "change_fee",
+									"type": "Number",
+									"description": "改签费;单位:分"
+								},
+								{
+									"name": "upgrade_fee",
+									"type": "Number",
+									"description": "升舱费;单位:分"
+								},
+								{
+									"name": "pnr",
+									"type": "String",
+									"description": "改签后pnr"
+								},
+								{
+									"name": "before_change_tickets",
+									"type": "String[]",
+									"description": "改签前票号"
+								}
+							],
+							"name": "change_list",
+							"type": "ChangeList[]",
+							"description": "改签数据"
+						},
+						{
+							"name": "sla",
+							"type": "String",
+							"description": "sla"
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种:CNY:人民币, USD:美元, HKD:港元"
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "改签单状态: 1:待回填, 2:待用户支付, 3:待出票, 4:已完成, 5:已拒绝"
+						},
+						{
+							"name": "commission",
+							"type": "Number",
+							"description": "佣金;单位:分"
 						},
 						{
 							"name": "refuse_reason",
 							"type": "String",
-							"description": "拒绝原因",
-							"required": true
+							"description": "拒绝原因"
 						},
 						{
 							"name": "tags",
 							"type": "String[]",
-							"description": "订单标签",
-							"required": true
+							"description": "订单标签:REASSURING_TICKET:安心票"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ModifyDetailDto",
+					"description": "结果对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.modify.detail",
+	"apiChineseName": "销售改签详情",
+	"description": "销售改签详情",
+	"id": 54269
 }

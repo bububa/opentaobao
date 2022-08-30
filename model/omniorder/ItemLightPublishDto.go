@@ -8,6 +8,8 @@ type ItemLightPublishDto struct {
 	Skus []ItemLightPublishSkuDto `json:"skus,omitempty" xml:"skus>item_light_publish_sku_dto,omitempty"`
 	// 商品条形码
 	Barcode string `json:"barcode,omitempty" xml:"barcode,omitempty"`
+	// 商品描述
+	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// extendAttr
 	ExtendAttr string `json:"extend_attr,omitempty" xml:"extend_attr,omitempty"`
 	// outerId
@@ -20,8 +22,6 @@ type ItemLightPublishDto struct {
 	Subtitle string `json:"subtitle,omitempty" xml:"subtitle,omitempty"`
 	// 标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 商品描述
-	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 操作人
 	Operator string `json:"operator,omitempty" xml:"operator,omitempty"`
 	// 叶子类目ID

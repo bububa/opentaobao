@@ -1,13 +1,6 @@
 {
-	"id": 45955,
-	"name": "alibaba.alsc.crm.customer.updateppw",
-	"apiChineseName": "修改支付密码",
-	"description": "修改支付密码",
 	"requestParams": [
 		{
-			"name": "update_pay_passwd_req",
-			"type": "UpdatePayPasswdReq",
-			"description": "修改密码",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -49,46 +42,48 @@
 					"type": "String",
 					"description": "请求id"
 				}
-			]
+			],
+			"name": "update_pay_passwd_req",
+			"type": "UpdatePayPasswdReq",
+			"description": "修改密码"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "返回描述",
-					"required": true
+					"description": "返回描述"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "返回描述",
-					"required": true
+					"description": "返回描述"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "返回code",
-					"required": true
+					"description": "返回code"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "调用成功",
-					"required": true
+					"description": "调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.customer.updateppw",
+	"apiChineseName": "修改支付密码",
+	"description": "修改支付密码",
+	"id": 45955
 }

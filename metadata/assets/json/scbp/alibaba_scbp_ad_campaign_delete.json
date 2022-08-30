@@ -1,36 +1,6 @@
 {
-	"id": 55179,
-	"name": "alibaba.scbp.ad.campaign.delete",
-	"apiChineseName": "删除计划",
-	"description": "删除计划",
 	"requestParams": [
 		{
-			"name": "batch_operation",
-			"type": "CampaignBatchOperationDto",
-			"description": "操作对象",
-			"required": true,
-			"subParams": [
-				{
-					"name": "campaign_operation_list",
-					"type": "Campaignoperationlist[]",
-					"description": "具体操作实例",
-					"required": true,
-					"subParams": [
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "计划id",
-							"required": true
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_line_id",
@@ -43,7 +13,33 @@
 					"type": "Number",
 					"description": "产品id"
 				}
-			]
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "计划id",
+							"required": true
+						}
+					],
+					"name": "campaign_operation_list",
+					"type": "Campaignoperationlist[]",
+					"description": "具体操作实例",
+					"required": true
+				}
+			],
+			"name": "batch_operation",
+			"type": "CampaignBatchOperationDto",
+			"description": "操作对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -52,5 +48,9 @@
 			"type": "Number",
 			"description": "删除成功条数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.campaign.delete",
+	"apiChineseName": "删除计划",
+	"description": "删除计划",
+	"id": 55179
 }

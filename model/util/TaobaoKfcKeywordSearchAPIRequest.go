@@ -14,10 +14,10 @@ type TaobaoKfcKeywordSearchAPIRequest struct {
 	model.Params
 	// 发布信息的淘宝会员名，可以不传
 	_nick string
-	// 需要过滤的文本信息
-	_content string
 	// 应用点，分为一级应用点、二级应用点。其中一级应用点通常是指某一个系统或产品，比如淘宝的商品应用（taobao_auction）；二级应用点，是指一级应用点下的具体的分类，比如商品标题(title)、商品描述(content)。不同的二级应用可以设置不同关键词。<br/><br/>这里的apply参数是由一级应用点与二级应用点合起来的字符（一级应用点+"."+二级应用点），如taobao_auction.title。<br/><br/><br/>通常apply参数是不需要传递的。如有特殊需求（比如特殊的过滤需求，需要自己维护一套自己词库），需传递此参数。
 	_apply string
+	// 需要过滤的文本信息
+	_content string
 }
 
 // NewTaobaoKfcKeywordSearchRequest 初始化TaobaoKfcKeywordSearchAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoKfcKeywordSearchAPIRequest) GetNick() string {
 	return r._nick
 }
 
-// SetContent is Content Setter
-// 需要过滤的文本信息
-func (r *TaobaoKfcKeywordSearchAPIRequest) SetContent(_content string) error {
-	r._content = _content
-	r.Set("content", _content)
-	return nil
-}
-
-// GetContent Content Getter
-func (r TaobaoKfcKeywordSearchAPIRequest) GetContent() string {
-	return r._content
-}
-
 // SetApply is Apply Setter
 // 应用点，分为一级应用点、二级应用点。其中一级应用点通常是指某一个系统或产品，比如淘宝的商品应用（taobao_auction）；二级应用点，是指一级应用点下的具体的分类，比如商品标题(title)、商品描述(content)。不同的二级应用可以设置不同关键词。<br/><br/>这里的apply参数是由一级应用点与二级应用点合起来的字符（一级应用点+"."+二级应用点），如taobao_auction.title。<br/><br/><br/>通常apply参数是不需要传递的。如有特殊需求（比如特殊的过滤需求，需要自己维护一套自己词库），需传递此参数。
 func (r *TaobaoKfcKeywordSearchAPIRequest) SetApply(_apply string) error {
@@ -78,4 +65,17 @@ func (r *TaobaoKfcKeywordSearchAPIRequest) SetApply(_apply string) error {
 // GetApply Apply Getter
 func (r TaobaoKfcKeywordSearchAPIRequest) GetApply() string {
 	return r._apply
+}
+
+// SetContent is Content Setter
+// 需要过滤的文本信息
+func (r *TaobaoKfcKeywordSearchAPIRequest) SetContent(_content string) error {
+	r._content = _content
+	r.Set("content", _content)
+	return nil
+}
+
+// GetContent Content Getter
+func (r TaobaoKfcKeywordSearchAPIRequest) GetContent() string {
+	return r._content
 }

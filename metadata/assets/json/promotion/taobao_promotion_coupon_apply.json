@@ -1,8 +1,4 @@
 {
-	"id": 25253,
-	"name": "taobao.promotion.coupon.apply",
-	"apiChineseName": "优惠券领取",
-	"description": "优惠券领取",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -38,5 +34,9 @@
 			"type": "String",
 			"description": "调用错误码，只有调用失败的时候才会有"
 		}
-	]
+	],
+	"name": "taobao.promotion.coupon.apply",
+	"apiChineseName": "优惠券领取",
+	"description": "优惠券领取",
+	"id": 25253
 }

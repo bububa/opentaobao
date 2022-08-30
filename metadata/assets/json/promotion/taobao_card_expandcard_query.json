@@ -1,163 +1,141 @@
 {
-	"id": 52121,
-	"name": "taobao.card.expandcard.query",
-	"apiChineseName": "购物金卡查询",
-	"description": "购物金充值信息查询接口，会返回余额等信息。",
 	"requestParams": [
-		{
-			"name": "used_scope_code",
-			"type": "String",
-			"description": "卡使用范围，不传则会查询所有"
-		},
 		{
 			"name": "account_no",
 			"type": "String",
 			"description": "支付宝accountNo"
+		},
+		{
+			"name": "used_scope_code",
+			"type": "String",
+			"description": "卡使用范围，不传则会查询所有"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "0为成功，其他为失败",
-					"required": true
+					"description": "0为成功，其他为失败"
 				},
 				{
-					"name": "models",
-					"type": "ExpandCardVo[]",
-					"description": "卡信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "shop_info_vo",
-							"type": "ShopInfoVo",
-							"description": "店铺信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "seller_id",
 									"type": "Number",
-									"description": "商家id",
-									"required": true
+									"description": "商家id"
 								},
 								{
 									"name": "shop_url",
 									"type": "String",
-									"description": "店铺链接",
-									"required": true
+									"description": "店铺链接"
 								},
 								{
 									"name": "shop_icon_url",
 									"type": "String",
-									"description": "店铺icon链接",
-									"required": true
+									"description": "店铺icon链接"
 								},
 								{
 									"name": "shop_name",
 									"type": "String",
-									"description": "店铺名称",
-									"required": true
+									"description": "店铺名称"
 								},
 								{
 									"name": "shop_id",
 									"type": "Number",
-									"description": "店铺id",
-									"required": true
+									"description": "店铺id"
 								}
-							]
+							],
+							"name": "shop_info_vo",
+							"type": "ShopInfoVo",
+							"description": "店铺信息"
 						},
 						{
 							"name": "brand_color",
 							"type": "String",
-							"description": "品牌色",
-							"required": true
+							"description": "品牌色"
 						},
 						{
 							"name": "target_url",
 							"type": "String",
-							"description": "目标跳转链接",
-							"required": true
+							"description": "目标跳转链接"
 						},
 						{
 							"name": "card_create_date",
 							"type": "Date",
-							"description": "聚合的卡当中第一张卡的开卡时间",
-							"required": true
+							"description": "聚合的卡当中第一张卡的开卡时间"
 						},
 						{
 							"name": "card_valid_desc",
 							"type": "String",
-							"description": "最近要过期的余额有效期描述",
-							"required": true
+							"description": "最近要过期的余额有效期描述"
 						},
 						{
 							"name": "card_valid_date",
 							"type": "Date",
-							"description": "聚合的卡当中最近要过期的卡的有效期",
-							"required": true
+							"description": "聚合的卡当中最近要过期的卡的有效期"
 						},
 						{
 							"name": "card_remain_expand_money",
 							"type": "String",
-							"description": "卡膨胀金余额，买家在该店铺下该卡类型的所有卡实例的总膨胀金余额",
-							"required": true
+							"description": "卡膨胀金余额，买家在该店铺下该卡类型的所有卡实例的总膨胀金余额"
 						},
 						{
 							"name": "card_remain_basic_money",
 							"type": "String",
-							"description": "卡本金余额，买家在该店铺下该卡类型的所有卡实例的总本金余额",
-							"required": true
+							"description": "卡本金余额，买家在该店铺下该卡类型的所有卡实例的总本金余额"
 						},
 						{
 							"name": "card_remain_money",
 							"type": "String",
-							"description": "卡余额，买家在该店铺下该卡类型的所有卡实例的总余额",
-							"required": true
+							"description": "卡余额，买家在该店铺下该卡类型的所有卡实例的总余额"
 						},
 						{
 							"name": "card_icon_url",
 							"type": "String",
-							"description": "购物金店铺icon",
-							"required": true
+							"description": "购物金店铺icon"
 						},
 						{
 							"name": "card_name",
 							"type": "String",
-							"description": "卡名称",
-							"required": true
+							"description": "卡名称"
 						},
 						{
 							"name": "card_used_scope",
 							"type": "String",
-							"description": "卡使用范围",
-							"required": true
+							"description": "卡使用范围"
 						}
-					]
+					],
+					"name": "models",
+					"type": "ExpandCardVo[]",
+					"description": "卡信息"
 				},
 				{
 					"name": "debug_info",
 					"type": "String",
-					"description": "debugInfo",
-					"required": true
+					"description": "debugInfo"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.card.expandcard.query",
+	"apiChineseName": "购物金卡查询",
+	"description": "购物金充值信息查询接口，会返回余额等信息。",
+	"id": 52121
 }

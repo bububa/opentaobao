@@ -1,8 +1,4 @@
 {
-	"id": 31753,
-	"name": "alibaba.retail.shorturl.get",
-	"apiChineseName": "短链接获取",
-	"description": "短链接获取",
 	"requestParams": [
 		{
 			"name": "source_url",
@@ -11,71 +7,68 @@
 			"required": true
 		},
 		{
-			"name": "options",
-			"type": "ShortUrlOption",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "biz_name",
 					"type": "String",
 					"description": "bizName"
 				}
-			]
+			],
+			"name": "options",
+			"type": "ShortUrlOption",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "ShortUrlDto",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "short_url",
 							"type": "String",
-							"description": "shortUrl",
-							"required": true
+							"description": "shortUrl"
 						}
-					]
+					],
+					"name": "module",
+					"type": "ShortUrlDto",
+					"description": "module"
 				},
 				{
-					"name": "error_infos",
-					"type": "ErrorInfo[]",
-					"description": "errorInfos",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "sub_error_code",
 							"type": "String",
-							"description": "subErrorCode",
-							"required": true
+							"description": "subErrorCode"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "errorMessage",
-							"required": true
+							"description": "errorMessage"
 						}
-					]
+					],
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.retail.shorturl.get",
+	"apiChineseName": "短链接获取",
+	"description": "短链接获取",
+	"id": 31753
 }

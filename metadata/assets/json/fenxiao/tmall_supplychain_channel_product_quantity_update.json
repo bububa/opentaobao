@@ -1,8 +1,4 @@
 {
-	"id": 49550,
-	"name": "tmall.supplychain.channel.product.quantity.update",
-	"apiChineseName": "渠道无仓库存更新接口",
-	"description": "渠道无仓库存更新接口",
 	"requestParams": [
 		{
 			"name": "quantity",
@@ -29,61 +25,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
-					"name": "module",
-					"type": "TopProductQuantityResult",
-					"description": "更新内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品数字ID",
-							"required": true
+							"description": "产品数字ID"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "SKU ID",
-							"required": true
+							"description": "SKU ID"
 						},
 						{
 							"name": "result",
 							"type": "String",
-							"description": "更新后库存数量",
-							"required": true
+							"description": "更新后库存数量"
 						},
 						{
 							"name": "modified_time",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						}
-					]
+					],
+					"name": "module",
+					"type": "TopProductQuantityResult",
+					"description": "更新内容"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.quantity.update",
+	"apiChineseName": "渠道无仓库存更新接口",
+	"description": "渠道无仓库存更新接口",
+	"id": 49550
 }

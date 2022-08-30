@@ -16,6 +16,8 @@ type AlibabaRetailMarketingItempoolActivityDeleteAPIRequest struct {
 	_creatorId string
 	// 操作人名称
 	_creatorName string
+	// erp外部活动id
+	_outActId string
 	// 同城零售活动Id
 	_actId int64
 }
@@ -65,6 +67,19 @@ func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetCreatorName(
 // GetCreatorName CreatorName Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetCreatorName() string {
 	return r._creatorName
+}
+
+// SetOutActId is OutActId Setter
+// erp外部活动id
+func (r *AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) SetOutActId(_outActId string) error {
+	r._outActId = _outActId
+	r.Set("out_act_id", _outActId)
+	return nil
+}
+
+// GetOutActId OutActId Getter
+func (r AlibabaRetailMarketingItempoolActivityDeleteAPIRequest) GetOutActId() string {
+	return r._outActId
 }
 
 // SetActId is ActId Setter

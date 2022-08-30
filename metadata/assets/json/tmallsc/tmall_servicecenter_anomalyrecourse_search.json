@@ -1,8 +1,4 @@
 {
-	"id": 27176,
-	"name": "tmall.servicecenter.anomalyrecourse.search",
-	"apiChineseName": "天猫服务平台服务商一键求助单查询",
-	"description": "天猫服务平台服务商一键求助单查询",
 	"requestParams": [
 		{
 			"name": "start",
@@ -17,47 +13,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "value",
-					"type": "Json",
-					"description": "value",
-					"required": true
+					"type": "String",
+					"description": "value"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.search",
+	"apiChineseName": "天猫服务平台服务商一键求助单查询",
+	"description": "天猫服务平台服务商一键求助单查询",
+	"id": 27176
 }

@@ -1,8 +1,4 @@
 {
-	"id": 45452,
-	"name": "alibaba.seaking.servicepack",
-	"apiChineseName": "获取海王用户权限包",
-	"description": "获取海王用户权限包",
 	"requestParams": [
 		{
 			"name": "identify_type",
@@ -19,29 +15,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "service_pack_list",
-			"type": "Result []",
-			"description": "权限包列表",
 			"subParams": [
 				{
 					"name": "validate_to",
 					"type": "Date",
-					"description": "到期时间",
-					"required": true
+					"description": "到期时间"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "权限包名称",
-					"required": true
+					"description": "权限包名称"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "权限包id",
-					"required": true
+					"description": "权限包id"
 				}
-			]
+			],
+			"name": "service_pack_list",
+			"type": "Result []",
+			"description": "权限包列表"
 		}
-	]
+	],
+	"name": "alibaba.seaking.servicepack",
+	"apiChineseName": "获取海王用户权限包",
+	"description": "获取海王用户权限包",
+	"id": 45452
 }

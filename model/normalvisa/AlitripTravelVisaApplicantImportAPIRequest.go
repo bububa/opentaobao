@@ -20,10 +20,10 @@ type AlitripTravelVisaApplicantImportAPIRequest struct {
 	_photoFileType string
 	// 申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大);3.daibanTypeId(代办类型):1(越南一个月单次入境),2(越南一个月多次入境),3(越南三个月单次入境),4(越南三个月多次入境)
 	_formDataJson string
-	// 国家id。目前支持越南(27027)
-	_nationId int64
 	// 证件照文件字节流
 	_photoFile *model.File
+	// 国家id。目前支持越南(27027)
+	_nationId int64
 	// 护照文件字节流
 	_passportFile *model.File
 }
@@ -101,19 +101,6 @@ func (r AlitripTravelVisaApplicantImportAPIRequest) GetFormDataJson() string {
 	return r._formDataJson
 }
 
-// SetNationId is NationId Setter
-// 国家id。目前支持越南(27027)
-func (r *AlitripTravelVisaApplicantImportAPIRequest) SetNationId(_nationId int64) error {
-	r._nationId = _nationId
-	r.Set("nation_id", _nationId)
-	return nil
-}
-
-// GetNationId NationId Getter
-func (r AlitripTravelVisaApplicantImportAPIRequest) GetNationId() int64 {
-	return r._nationId
-}
-
 // SetPhotoFile is PhotoFile Setter
 // 证件照文件字节流
 func (r *AlitripTravelVisaApplicantImportAPIRequest) SetPhotoFile(_photoFile *model.File) error {
@@ -125,6 +112,19 @@ func (r *AlitripTravelVisaApplicantImportAPIRequest) SetPhotoFile(_photoFile *mo
 // GetPhotoFile PhotoFile Getter
 func (r AlitripTravelVisaApplicantImportAPIRequest) GetPhotoFile() *model.File {
 	return r._photoFile
+}
+
+// SetNationId is NationId Setter
+// 国家id。目前支持越南(27027)
+func (r *AlitripTravelVisaApplicantImportAPIRequest) SetNationId(_nationId int64) error {
+	r._nationId = _nationId
+	r.Set("nation_id", _nationId)
+	return nil
+}
+
+// GetNationId NationId Getter
+func (r AlitripTravelVisaApplicantImportAPIRequest) GetNationId() int64 {
+	return r._nationId
 }
 
 // SetPassportFile is PassportFile Setter

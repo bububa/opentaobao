@@ -1,8 +1,4 @@
 {
-	"id": 43360,
-	"name": "taobao.simba.salestar.creative.add",
-	"apiChineseName": "（新）新建创意",
-	"description": "创建一个创意",
 	"requestParams": [
 		{
 			"name": "adgroup_id",
@@ -14,8 +10,8 @@
 			"name": "title",
 			"type": "String",
 			"description": "创意标题，最多20个汉字",
-			"required": true,
-			"maxLength": 40
+			"maxLength": 40,
+			"required": true
 		},
 		{
 			"name": "img_url",
@@ -27,13 +23,15 @@
 			"name": "nick",
 			"type": "String",
 			"description": "主人昵称"
+		},
+		{
+			"name": "ad_examination_code",
+			"type": "String",
+			"description": "创意广审编号"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "creative",
-			"type": "Creative",
-			"description": "新增加的创意对象",
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -80,7 +78,14 @@
 					"type": "Number",
 					"description": "创意id"
 				}
-			]
+			],
+			"name": "creative",
+			"type": "Creative",
+			"description": "新增加的创意对象"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.creative.add",
+	"apiChineseName": "（新）新建创意",
+	"description": "创建一个创意",
+	"id": 43360
 }

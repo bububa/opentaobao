@@ -26,10 +26,10 @@ type AlitripTravelVisaApplicantUpdateAPIRequest struct {
 	_hotelBookingFormType string
 	// 机票预订文件类型
 	_flightBookingFormType string
-	// 必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)
-	_operType int64
 	// 特殊必填，签证申请人进度推进操作（目前只支持对单个申请人状态进行推进）。当operType为3时必填
 	_applicantOp *NormalVisaApplicantOperation
+	// 必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)
+	_operType int64
 	// 特殊必填，pdf文件字节流。用于上传电子签pdf结果 或者 预约面试信pdf文件。
 	_fileBytes *model.File
 	// 特殊必填，文件字节流，用于上传证件照，必须和photoType同时传
@@ -154,19 +154,6 @@ func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetFlightBookingFormType() s
 	return r._flightBookingFormType
 }
 
-// SetOperType is OperType Setter
-// 必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)
-func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetOperType(_operType int64) error {
-	r._operType = _operType
-	r.Set("oper_type", _operType)
-	return nil
-}
-
-// GetOperType OperType Getter
-func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetOperType() int64 {
-	return r._operType
-}
-
 // SetApplicantOp is ApplicantOp Setter
 // 特殊必填，签证申请人进度推进操作（目前只支持对单个申请人状态进行推进）。当operType为3时必填
 func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantOp(_applicantOp *NormalVisaApplicantOperation) error {
@@ -178,6 +165,19 @@ func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetApplicantOp(_applicantOp
 // GetApplicantOp ApplicantOp Getter
 func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetApplicantOp() *NormalVisaApplicantOperation {
 	return r._applicantOp
+}
+
+// SetOperType is OperType Setter
+// 必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)
+func (r *AlitripTravelVisaApplicantUpdateAPIRequest) SetOperType(_operType int64) error {
+	r._operType = _operType
+	r.Set("oper_type", _operType)
+	return nil
+}
+
+// GetOperType OperType Getter
+func (r AlitripTravelVisaApplicantUpdateAPIRequest) GetOperType() int64 {
+	return r._operType
 }
 
 // SetFileBytes is FileBytes Setter

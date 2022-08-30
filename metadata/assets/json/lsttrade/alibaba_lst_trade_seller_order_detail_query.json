@@ -1,18 +1,16 @@
 {
-	"id": 45487,
-	"name": "alibaba.lst.trade.seller.order.detail.query",
-	"apiChineseName": "订单详情查看(卖家视角)",
-	"description": "订单详情查看(卖家视角)",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "LstTradeGetSellerOrderListParam",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "buyer_member_id",
 					"type": "String",
 					"description": "买家id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
 				},
 				{
 					"name": "order_status",
@@ -25,6 +23,11 @@
 					"description": "退款状态，支持：     \"waitselleragree\"(等待卖家同意),     \"refundsuccess\"(退款成功),     \"refundclose\"(退款关闭),     \"waitbuyermodify\"(待买家修改),     \"waitbuyersend\"(等待买家退货),     \"waitsellerreceive\"(等待卖家确认收货)"
 				},
 				{
+					"name": "trade_end_time",
+					"type": "Date",
+					"description": "交易订单时间"
+				},
+				{
 					"name": "product_name",
 					"type": "String",
 					"description": "商品名称"
@@ -33,31 +36,6 @@
 					"name": "create_start_time",
 					"type": "Date",
 					"description": "查询下单开始时间"
-				},
-				{
-					"name": "is_his",
-					"type": "Boolean",
-					"description": "是否查询历史"
-				},
-				{
-					"name": "create_end_time",
-					"type": "Date",
-					"description": "查询下单开始时间，时间间隔一个月内"
-				},
-				{
-					"name": "main_order_id",
-					"type": "Number",
-					"description": "主订单号"
-				},
-				{
-					"name": "page_size",
-					"type": "Number",
-					"description": "页面大小"
-				},
-				{
-					"name": "trade_end_time",
-					"type": "Date",
-					"description": "交易订单时间"
 				},
 				{
 					"name": "trade_start_time",
@@ -70,478 +48,446 @@
 					"description": "子订单"
 				},
 				{
+					"name": "is_his",
+					"type": "Boolean",
+					"description": "是否查询历史"
+				},
+				{
+					"name": "create_end_time",
+					"type": "Date",
+					"description": "查询下单开始时间，时间间隔一个月内"
+				},
+				{
 					"name": "page",
 					"type": "Number",
 					"description": "当前页"
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "主订单号"
 				}
-			]
+			],
+			"name": "param",
+			"type": "LstTradeGetSellerOrderListParam",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content",
-					"type": "Content",
-					"description": "返回值",
-					"required": true,
 					"subParams": [
 						{
-							"name": "base_info",
-							"type": "BaseInfo",
-							"description": "备注信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "all_delivered_time",
 									"type": "Date",
-									"description": "到达时间",
-									"required": true
+									"description": "到达时间"
 								},
 								{
 									"name": "buyer_remark_icon",
 									"type": "String",
-									"description": "备注",
-									"required": true
+									"description": "备注"
 								},
 								{
 									"name": "pay_time",
 									"type": "Date",
-									"description": "支付时间",
-									"required": true
+									"description": "支付时间"
 								},
 								{
-									"name": "receiver_info",
-									"type": "ReceiverInfo",
-									"description": "接收信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "to_division_code",
 											"type": "String",
-											"description": "收货人地址区域编码",
-											"required": true
+											"description": "收货人地址区域编码"
 										},
 										{
 											"name": "to_town_code",
 											"type": "String",
-											"description": "收货人街道或镇区域编码，可能为空",
-											"required": true
+											"description": "收货人街道或镇区域编码，可能为空"
 										},
 										{
 											"name": "to_detail_area",
 											"type": "String",
-											"description": "详情收货地址（到门牌号）",
-											"required": true
+											"description": "详情收货地址（到门牌号）"
 										},
 										{
 											"name": "to_full_name",
 											"type": "String",
-											"description": "收件人",
-											"required": true
+											"description": "收件人"
 										},
 										{
 											"name": "to_mobile",
 											"type": "String",
-											"description": "移动电话",
-											"required": true
+											"description": "移动电话"
 										},
 										{
 											"name": "to_phone",
 											"type": "String",
-											"description": "固定电话",
-											"required": true
+											"description": "固定电话"
 										},
 										{
 											"name": "to_post",
 											"type": "String",
-											"description": "邮编",
-											"required": true
+											"description": "邮编"
 										}
-									]
+									],
+									"name": "receiver_info",
+									"type": "ReceiverInfo",
+									"description": "接收信息"
 								},
 								{
 									"name": "seller_name",
 									"type": "String",
-									"description": "供应商名称",
-									"required": true
+									"description": "供应商名称"
 								},
 								{
 									"name": "discount",
 									"type": "Number",
-									"description": "折扣信息-优惠信息，（含优惠券-不包含买家红包）",
-									"required": true
+									"description": "折扣信息-优惠信息，（含优惠券-不包含买家红包）"
 								},
 								{
 									"name": "refund_status",
 									"type": "String",
-									"description": "订单的售中退款状态，等待卖家同意：waitselleragree ，待买家修改：waitbuyermodify，等待买家退货：waitbuyersend，等待卖家确认收货：waitsellerreceive，退款成功：refundsuccess，退款失败：refundclose",
-									"required": true
+									"description": "订单的售中退款状态，等待卖家同意：waitselleragree ，待买家修改：waitbuyermodify，等待买家退货：waitbuyersend，等待卖家确认收货：waitsellerreceive，退款成功：refundsuccess，退款失败：refundclose"
 								},
 								{
 									"name": "alipay_trade_id",
 									"type": "String",
-									"description": "外部支付交易Id",
-									"required": true
+									"description": "外部支付交易Id"
 								},
 								{
 									"name": "seller_login_id",
 									"type": "String",
-									"description": "卖家loginId",
-									"required": true
+									"description": "卖家loginId"
 								},
 								{
 									"name": "sum_product_payment",
 									"type": "Number",
-									"description": "货品金额",
-									"required": true
+									"description": "货品金额"
 								},
 								{
 									"name": "buyer_feedback",
 									"type": "String",
-									"description": "买家留言，不超过500字",
-									"required": true
+									"description": "买家留言，不超过500字"
 								},
 								{
 									"name": "flow_template_code",
 									"type": "String",
-									"description": "4.0交易流程模板code",
-									"required": true
+									"description": "4.0交易流程模板code"
 								},
 								{
 									"name": "buyer_login_id",
 									"type": "String",
-									"description": "买家loginId，旺旺Id",
-									"required": true
+									"description": "买家loginId，旺旺Id"
 								},
 								{
 									"name": "modify_time",
 									"type": "Date",
-									"description": "修改时间",
-									"required": true
+									"description": "修改时间"
 								},
 								{
 									"name": "confirmed_time",
 									"type": "String",
-									"description": "确认时间",
-									"required": true
+									"description": "确认时间"
 								},
 								{
 									"name": "store_name",
 									"type": "String",
-									"description": "store_name小店名称",
-									"required": true
+									"description": "store_name小店名称"
 								},
 								{
 									"name": "main_order_id",
 									"type": "Number",
-									"description": "主订单id",
-									"required": true
+									"description": "主订单id"
 								},
 								{
 									"name": "close_reason",
 									"type": "String",
-									"description": "关闭原因。buyerCancel:买家取消订单，sellerGoodsLack:卖家库存不足，other:其它",
-									"required": true
+									"description": "关闭原因。buyerCancel:买家取消订单，sellerGoodsLack:卖家库存不足，other:其它"
 								},
 								{
 									"name": "trade_type",
 									"type": "String",
-									"description": "1:担保交易 2:预存款交易 3:ETC境外收单交易 4:即时到帐交易 5:保障金安全交易 6:统一交易流程 7:分阶段付款 8.货到付款交易 9.信用凭证支付交易 10.账期支付交易，50060 交易4.0",
-									"required": true
+									"description": "1:担保交易 2:预存款交易 3:ETC境外收单交易 4:即时到帐交易 5:保障金安全交易 6:统一交易流程 7:分阶段付款 8.货到付款交易 9.信用凭证支付交易 10.账期支付交易，50060 交易4.0"
 								},
 								{
+									"subParams": [
+										{
+											"name": "phone",
+											"type": "String",
+											"description": "电话"
+										},
+										{
+											"name": "company_name",
+											"type": "String",
+											"description": "公司名称"
+										},
+										{
+											"name": "mobile",
+											"type": "String",
+											"description": "移动电话"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "姓名"
+										},
+										{
+											"name": "email",
+											"type": "String",
+											"description": "邮件地址"
+										}
+									],
 									"name": "seller_contact",
 									"type": "SellerContact",
-									"description": "卖家联系人信息",
-									"required": true,
-									"subParams": [
-										{
-											"name": "phone",
-											"type": "String",
-											"description": "电话",
-											"required": true
-										},
-										{
-											"name": "company_name",
-											"type": "String",
-											"description": "公司名称",
-											"required": true
-										},
-										{
-											"name": "mobile",
-											"type": "String",
-											"description": "移动电话",
-											"required": true
-										},
-										{
-											"name": "name",
-											"type": "String",
-											"description": "姓名",
-											"required": true
-										},
-										{
-											"name": "email",
-											"type": "String",
-											"description": "邮件地址",
-											"required": true
-										}
-									]
+									"description": "卖家联系人信息"
 								},
 								{
-									"name": "buyer_contact",
-									"type": "BuyerContact",
-									"description": "买家信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "phone",
 											"type": "String",
-											"description": "买家电话",
-											"required": true
+											"description": "买家电话"
 										},
 										{
 											"name": "company_name",
 											"type": "String",
-											"description": "公司名称",
-											"required": true
+											"description": "公司名称"
 										},
 										{
 											"name": "mobile",
 											"type": "String",
-											"description": "移动电话",
-											"required": true
+											"description": "移动电话"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "姓名",
-											"required": true
+											"description": "姓名"
 										},
 										{
 											"name": "email",
 											"type": "String",
-											"description": "邮件地址",
-											"required": true
+											"description": "邮件地址"
 										}
-									]
+									],
+									"name": "buyer_contact",
+									"type": "BuyerContact",
+									"description": "买家信息"
 								},
 								{
 									"name": "shipping_fee",
 									"type": "Number",
-									"description": "运费",
-									"required": true
+									"description": "运费"
 								},
 								{
 									"name": "total_amount",
 									"type": "Number",
-									"description": "实际支付金额",
-									"required": true
+									"description": "实际支付金额"
 								},
 								{
 									"name": "order_status",
 									"type": "String",
-									"description": "订单状态交易状态，waitbuyerpay:等待买家付款;waitsellersend:",
-									"required": true
+									"description": "订单状态交易状态，waitbuyerpay:等待买家付款;waitsellersend:"
 								},
 								{
 									"name": "create_time",
 									"type": "Date",
-									"description": "订单创建时间",
-									"required": true
+									"description": "订单创建时间"
 								},
 								{
 									"name": "leads_id",
 									"type": "Number",
-									"description": "小店id",
-									"required": true
+									"description": "小店id"
+								},
+								{
+									"name": "offline_order",
+									"type": "Boolean",
+									"description": "是否线下订单"
+								},
+								{
+									"name": "offline_car_order",
+									"type": "Boolean",
+									"description": "是否车销订单"
+								},
+								{
+									"name": "offline_yd_id",
+									"type": "String",
+									"description": "线下订单业务员id"
+								},
+								{
+									"name": "offline_yd_name",
+									"type": "String",
+									"description": "线下订单业务员name"
 								}
-							]
+							],
+							"name": "base_info",
+							"type": "BaseInfo",
+							"description": "备注信息"
 						},
 						{
-							"name": "sub_orders",
-							"type": "ProductItems[]",
-							"description": "子订单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sub_order_id",
 									"type": "Number",
-									"description": "子订单号",
-									"required": true
+									"description": "子订单号"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "以unit为单位的数量，例如多少个、多少件、多少箱、多少吨",
-									"required": true
+									"description": "以unit为单位的数量，例如多少个、多少件、多少箱、多少吨"
 								},
 								{
 									"name": "cspu_id",
 									"type": "String",
-									"description": "cspuID",
-									"required": true
+									"description": "cspuID"
 								},
 								{
 									"name": "cargo_number",
 									"type": "String",
-									"description": "指定单品货号，国际站无需关注。该字段不一定有值，仅仅在下单时才会把货号记录(如果卖家设置了单品货号的话)。别的订单类型的货号只能通过商品接口去获取。请注意：通过商品接口获取时的货号和下单时的货号可能不一致，因为下单完成后卖家可能修改商品信息，改变了货号。",
-									"required": true
+									"description": "指定单品货号，国际站无需关注。该字段不一定有值，仅仅在下单时才会把货号记录(如果卖家设置了单品货号的话)。别的订单类型的货号只能通过商品接口去获取。请注意：通过商品接口获取时的货号和下单时的货号可能不一致，因为下单完成后卖家可能修改商品信息，改变了货号。"
 								},
 								{
 									"name": "product_snapshot_url",
 									"type": "String",
-									"description": "产品快照url，交易订单产生时会自动记录下当时的商品快照，供后续纠纷时参考",
-									"required": true
+									"description": "产品快照url，交易订单产生时会自动记录下当时的商品快照，供后续纠纷时参考"
 								},
 								{
 									"name": "unit",
 									"type": "String",
-									"description": "售卖单位 例如：个、件、箱、吨",
-									"required": true
+									"description": "售卖单位 例如：个、件、箱、吨"
 								},
 								{
 									"name": "item_amount",
 									"type": "Number",
-									"description": "实付金额，单位分",
-									"required": true
+									"description": "实付金额，单位分"
 								},
 								{
 									"name": "price",
 									"type": "Number",
-									"description": "原始单价，单位分",
-									"required": true
+									"description": "原始单价，单位分"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "barcode",
 									"type": "String",
-									"description": "条形码",
-									"required": true
+									"description": "条形码"
 								},
 								{
 									"name": "product_type",
 									"type": "String",
-									"description": "商品类型，common：普通品，hg：赠品",
-									"required": true
+									"description": "商品类型，common：普通品，hg：赠品"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "skuID",
-									"required": true
+									"description": "skuID"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "子订单状态",
-									"required": true
+									"description": "子订单状态"
 								},
 								{
 									"name": "is_mix_set",
 									"type": "Boolean",
-									"description": "是否组合品",
-									"required": true
+									"description": "是否组合品"
 								},
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "商品的唯一标识",
-									"required": true
+									"description": "商品的唯一标识"
 								},
 								{
 									"name": "warehouse_code",
 									"type": "String",
-									"description": "发货仓库code",
-									"required": true
+									"description": "发货仓库code"
 								},
 								{
 									"name": "warehouse_name",
 									"type": "String",
-									"description": "发货仓库名称",
-									"required": true
+									"description": "发货仓库名称"
 								},
 								{
 									"name": "lst_warehouse_type",
 									"type": "String",
-									"description": "零售通仓库类型。customer：虚仓；cainiao：实仓",
-									"required": true
+									"description": "零售通仓库类型。customer：虚仓；cainiao：实仓"
 								},
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "virtual_warehouse_type",
 									"type": "String",
-									"description": "本云订单：local，异云订单：remote，如果是实仓订单本字段为空",
-									"required": true
+									"description": "本云订单：local，异云订单：remote，如果是实仓订单本字段为空"
 								}
-							]
+							],
+							"name": "sub_orders",
+							"type": "ProductItems[]",
+							"description": "子订单信息"
 						},
 						{
-							"name": "order_biz_info",
-							"type": "OrderBizInfo",
-							"description": "仓库类信息，此字段将会废弃，请看sub_orders下lst_warehouse_type、warehouse_code、warehouse_name",
-							"required": true,
 							"subParams": [
 								{
 									"name": "warehouse_name",
 									"type": "String",
-									"description": "仓库名称",
-									"required": true
+									"description": "仓库名称"
 								},
 								{
 									"name": "warehouse_code",
 									"type": "String",
-									"description": "仓库编码",
-									"required": true
+									"description": "仓库编码"
 								},
 								{
 									"name": "lst_warehouse_type",
 									"type": "String",
-									"description": "零售通仓库类型。customer：虚仓；cainiao：实仓",
-									"required": true
+									"description": "零售通仓库类型。customer：虚仓；cainiao：实仓"
 								}
-							]
+							],
+							"name": "order_biz_info",
+							"type": "OrderBizInfo",
+							"description": "仓库类信息，此字段将会废弃，请看sub_orders下lst_warehouse_type、warehouse_code、warehouse_name"
 						},
 						{
 							"name": "ext_attributes",
-							"type": "Json",
-							"description": "扩展字段，暂不使用",
-							"required": true
+							"type": "String",
+							"description": "扩展字段，暂不使用"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Content",
+					"description": "返回值"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.seller.order.detail.query",
+	"apiChineseName": "订单详情查看(卖家视角)",
+	"description": "订单详情查看(卖家视角)",
+	"id": 45487
 }

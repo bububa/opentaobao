@@ -20,14 +20,14 @@ type TopOrderVo struct {
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// SKU的值。如：机身颜色:黑色;手机套餐:官方标配
 	SkuPropertiesName string `json:"sku_properties_name,omitempty" xml:"sku_properties_name,omitempty"`
+	// 商品SKUID
+	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 订单状态。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易，暂无) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用，暂无) TRADE_FINISHED(交易成功) TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易) PAY_PENDING(国际信用卡支付付款确认中，暂无)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 商品标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 商品SKUID
-	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 	// 物流公司名称
 	LogisticsCompany string `json:"logistics_company,omitempty" xml:"logistics_company,omitempty"`
 	// 子订单包裹运输号

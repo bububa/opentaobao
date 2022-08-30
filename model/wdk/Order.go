@@ -2,10 +2,10 @@ package wdk
 
 // Order 结构体
 type Order struct {
-	// 子订单列表
-	SubOrders []SubOrder `json:"sub_orders,omitempty" xml:"sub_orders>sub_order,omitempty"`
 	// 支付渠道列表
 	PayChannels []PayChannel `json:"pay_channels,omitempty" xml:"pay_channels>pay_channel,omitempty"`
+	// 子订单列表
+	SubOrders []SubOrder `json:"sub_orders,omitempty" xml:"sub_orders>sub_order,omitempty"`
 	// 成交时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 门店编码
@@ -16,10 +16,10 @@ type Order struct {
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
 	// 收银员名字
 	OperatorName string `json:"operator_name,omitempty" xml:"operator_name,omitempty"`
-	// orderStatus
-	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// merchantCode
 	MerchantCode string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
+	// orderStatus
+	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// memberPoint
 	MemberPoint string `json:"member_point,omitempty" xml:"member_point,omitempty"`
 	// 打包时间

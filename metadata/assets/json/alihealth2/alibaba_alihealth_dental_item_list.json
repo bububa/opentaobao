@@ -1,8 +1,4 @@
 {
-	"id": 43391,
-	"name": "alibaba.alihealth.dental.item.list",
-	"apiChineseName": "ISV获取口腔标品列表",
-	"description": "ISV获取口腔标品列表",
 	"requestParams": [
 		{
 			"name": "need_test_item",
@@ -12,61 +8,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "goods",
-					"type": "NormalGoodsVo[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "标品ID",
-							"required": true
+							"description": "标品ID"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "标品名称",
-							"required": true
+							"description": "标品名称"
 						},
 						{
 							"name": "cost_price",
 							"type": "String",
-							"description": "成本价，单位元",
-							"required": true
+							"description": "成本价，单位元"
 						},
 						{
 							"name": "sold_price",
 							"type": "String",
-							"description": "售价，单位元",
-							"required": true
+							"description": "售价，单位元"
 						}
-					]
+					],
+					"name": "goods",
+					"type": "NormalGoodsVo[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "200",
-					"required": true
+					"description": "200"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true",
-					"required": true
+					"description": "true"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.item.list",
+	"apiChineseName": "ISV获取口腔标品列表",
+	"description": "ISV获取口腔标品列表",
+	"id": 43391
 }

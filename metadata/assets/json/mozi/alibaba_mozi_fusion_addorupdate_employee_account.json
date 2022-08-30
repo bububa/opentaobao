@@ -1,13 +1,6 @@
 {
-	"id": 40880,
-	"name": "alibaba.mozi.fusion.addorupdate.employee.account",
-	"apiChineseName": "添加人员和账号复合接口",
-	"description": "添加人员和账号复合接口",
 	"requestParams": [
 		{
-			"name": "employee_account",
-			"type": "AddOrUpdateTenantEmployeeAndAccountRequest",
-			"description": "人员账号",
 			"subParams": [
 				{
 					"name": "tenant_id",
@@ -17,6 +10,7 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "附加属性"
 				},
 				{
@@ -95,52 +89,53 @@
 					"type": "String",
 					"description": "头像URL地址"
 				}
-			]
+			],
+			"name": "employee_account",
+			"type": "AddOrUpdateTenantEmployeeAndAccountRequest",
+			"description": "人员账号"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AddOrUpdateTenantEmployeeAndAccountResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "返回状态描述",
-					"required": true
+					"description": "返回状态描述"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "返回附加信息",
-					"required": true
+					"type": "String",
+					"description": "返回附加信息"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "返回的状态码",
-					"required": true
+					"description": "返回的状态码"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求的UUID",
-					"required": true
+					"description": "请求的UUID"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "返回的人员和账号的绑定对象",
-					"required": true
+					"type": "String",
+					"description": "返回的人员和账号的绑定对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AddOrUpdateTenantEmployeeAndAccountResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mozi.fusion.addorupdate.employee.account",
+	"apiChineseName": "添加人员和账号复合接口",
+	"description": "添加人员和账号复合接口",
+	"id": 40880
 }

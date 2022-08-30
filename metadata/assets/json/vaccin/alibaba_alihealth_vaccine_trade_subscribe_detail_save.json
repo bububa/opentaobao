@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "isv_subscribe_id",
+					"type": "String",
+					"description": "外部商家预约单主键",
+					"required": true
+				},
+				{
+					"name": "injection_num",
+					"type": "Number",
+					"description": "针次(1,2,3,4)"
+				},
+				{
+					"name": "subscribe_time",
+					"type": "Date",
+					"description": "商家给用户安排预约时间",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "业务订单号",
+					"required": true
+				},
+				{
+					"name": "merchant_id",
+					"type": "String",
+					"description": "商家ID",
+					"required": true
+				},
+				{
+					"name": "shop_name",
+					"type": "String",
+					"description": "门店名称"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因"
+				},
+				{
+					"name": "social_credit_code",
+					"type": "String",
+					"description": "统一社会信用编码"
+				},
+				{
+					"name": "subscribe_start_time",
+					"type": "Date",
+					"description": "商家预约接种开始时间",
+					"required": true
+				},
+				{
+					"name": "subscribe_end_time",
+					"type": "Date",
+					"description": "商家预约接种结束时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "预约单状态"
+				}
+			],
+			"name": "trade_subscribe_detail_save_top_request",
+			"type": "TradeSubscribeDetailSaveTopRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务响应code"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "响应结果"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "业务成功状态"
+		},
+		{
+			"name": "biz_message",
+			"type": "String",
+			"description": "业务错误信息描述"
+		}
+	],
+	"name": "alibaba.alihealth.vaccine.trade.subscribe.detail.save",
+	"apiChineseName": "私立疫苗交易-预约详情更新或保存",
+	"description": "私立疫苗交易-预约详情更新或保存",
+	"id": 64126
+}

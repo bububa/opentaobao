@@ -1,8 +1,4 @@
 {
-	"id": 43351,
-	"name": "taobao.simba.salestar.campaign.budget.update",
-	"apiChineseName": "销量明星跟新预算相关接口",
-	"description": "更新一个推广计划的日限额",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -20,9 +16,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_budget",
-			"type": "CampaignBudget",
-			"description": "修改后的推广计划日限额",
 			"subParams": [
 				{
 					"name": "nick",
@@ -49,7 +42,14 @@
 					"type": "Date",
 					"description": "最后修改时间"
 				}
-			]
+			],
+			"name": "campaign_budget",
+			"type": "CampaignBudget",
+			"description": "修改后的推广计划日限额"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.campaign.budget.update",
+	"apiChineseName": "销量明星跟新预算相关接口",
+	"description": "更新一个推广计划的日限额",
+	"id": 43351
 }

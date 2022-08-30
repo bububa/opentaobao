@@ -1,8 +1,4 @@
 {
-	"id": 24073,
-	"name": "odps.aliyuncs.com.DescribeOdpsService.2014-12-15",
-	"apiChineseName": "查询ODPS服务",
-	"description": "查询ODPS服务",
 	"responseParams": [
 		{
 			"name": "RequestId",
@@ -24,5 +20,9 @@
 			"type": "String",
 			"description": "业务锁定状态，例如：欠费，安全等。"
 		}
-	]
+	],
+	"name": "odps.aliyuncs.com.DescribeOdpsService.2014-12-15",
+	"apiChineseName": "查询ODPS服务",
+	"description": "查询ODPS服务",
+	"id": 24073
 }

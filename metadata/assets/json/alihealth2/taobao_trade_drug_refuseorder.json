@@ -1,8 +1,4 @@
 {
-	"id": 51676,
-	"name": "taobao.trade.drug.refuseorder",
-	"apiChineseName": "阿里健康020拒单",
-	"description": "阿里健康020拒单",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -19,41 +15,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "LifeResultDo",
-			"description": "life的返回值",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是不是成功！",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "ret_code",
 					"type": "String",
-					"description": "1代表成功！",
-					"required": true
-				},
-				{
-					"name": "info",
-					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "1代表成功！"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "RT",
-					"required": true
+					"description": "RT"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是不是成功！"
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "描述信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "LifeResultDo",
+			"description": "life的返回值"
 		}
-	]
+	],
+	"name": "taobao.trade.drug.refuseorder",
+	"apiChineseName": "阿里健康020拒单",
+	"description": "阿里健康020拒单",
+	"id": 51676
 }

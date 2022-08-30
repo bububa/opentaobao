@@ -1,8 +1,4 @@
 {
-	"id": 26263,
-	"name": "alibaba.scbp.account.status.update",
-	"apiChineseName": "修改账户级别关键词推广状态",
-	"description": "修改账户级别关键词推广状态",
 	"requestParams": [
 		{
 			"name": "status",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "修改成功"
 		}
-	]
+	],
+	"name": "alibaba.scbp.account.status.update",
+	"apiChineseName": "修改账户级别关键词推广状态",
+	"description": "修改账户级别关键词推广状态",
+	"id": 26263
 }

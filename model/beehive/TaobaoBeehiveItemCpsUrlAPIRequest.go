@@ -16,12 +16,12 @@ type TaobaoBeehiveItemCpsUrlAPIRequest struct {
 	_platform string
 	// 业务方，新浪为sina
 	_bizType string
+	// 商品ID
+	_itemId int64
 	// 达人ID
 	_adUserId int64
 	// 站外是1
 	_sourceType int64
-	// 商品ID
-	_itemId int64
 }
 
 // NewTaobaoBeehiveItemCpsUrlRequest 初始化TaobaoBeehiveItemCpsUrlAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetBizType() string {
 	return r._bizType
 }
 
+// SetItemId is ItemId Setter
+// 商品ID
+func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetItemId() int64 {
+	return r._itemId
+}
+
 // SetAdUserId is AdUserId Setter
 // 达人ID
 func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetAdUserId(_adUserId int64) error {
@@ -95,17 +108,4 @@ func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetSourceType(_sourceType int64) err
 // GetSourceType SourceType Getter
 func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetSourceType() int64 {
 	return r._sourceType
-}
-
-// SetItemId is ItemId Setter
-// 商品ID
-func (r *TaobaoBeehiveItemCpsUrlAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TaobaoBeehiveItemCpsUrlAPIRequest) GetItemId() int64 {
-	return r._itemId
 }

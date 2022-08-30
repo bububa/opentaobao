@@ -1,8 +1,4 @@
 {
-	"id": 25972,
-	"name": "taobao.alitrip.travel.trade.memo.add",
-	"apiChineseName": "添加一笔交易备注",
-	"description": "对一笔交易添加备注",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "memo_add",
-			"type": "MemoCreate",
-			"description": "交易添加备注返回值",
 			"subParams": [
 				{
 					"name": "created",
@@ -38,7 +31,14 @@
 					"type": "Number",
 					"description": "交易ID"
 				}
-			]
+			],
+			"name": "memo_add",
+			"type": "MemoCreate",
+			"description": "交易添加备注返回值"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.trade.memo.add",
+	"apiChineseName": "添加一笔交易备注",
+	"description": "对一笔交易添加备注",
+	"id": 25972
 }

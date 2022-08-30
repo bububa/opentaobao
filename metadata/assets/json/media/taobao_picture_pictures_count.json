@@ -1,13 +1,9 @@
 {
-	"id": 25592,
-	"name": "taobao.picture.pictures.count",
-	"apiChineseName": "图片总数查询",
-	"description": "图片总数查询",
 	"requestParams": [
 		{
-			"name": "start_date",
-			"type": "Date",
-			"description": "查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss"
+			"name": "picture_id",
+			"type": "Number",
+			"description": "图片ID"
 		},
 		{
 			"name": "picture_category_id",
@@ -15,14 +11,9 @@
 			"description": "图片分类"
 		},
 		{
-			"name": "title",
+			"name": "deleted",
 			"type": "String",
-			"description": "文件名"
-		},
-		{
-			"name": "end_date",
-			"type": "Date",
-			"description": "查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss"
+			"description": "是否删除,undeleted代表没有删除,deleted表示删除"
 		},
 		{
 			"name": "start_modified_date",
@@ -30,19 +21,24 @@
 			"description": "图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。"
 		},
 		{
-			"name": "deleted",
-			"type": "String",
-			"description": "是否删除,undeleted代表没有删除,deleted表示删除"
+			"name": "start_date",
+			"type": "Date",
+			"description": "查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss"
 		},
 		{
-			"name": "picture_id",
-			"type": "Number",
-			"description": "图片ID"
+			"name": "end_date",
+			"type": "Date",
+			"description": "查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss"
 		},
 		{
 			"name": "client_type",
 			"type": "String",
 			"description": "图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "文件名"
 		}
 	],
 	"responseParams": [
@@ -51,5 +47,9 @@
 			"type": "Number",
 			"description": "查询的文件总数"
 		}
-	]
+	],
+	"name": "taobao.picture.pictures.count",
+	"apiChineseName": "图片总数查询",
+	"description": "图片总数查询",
+	"id": 25592
 }

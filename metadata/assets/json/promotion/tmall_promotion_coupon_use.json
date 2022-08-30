@@ -1,14 +1,5 @@
 {
-	"id": 38483,
-	"name": "tmall.promotion.coupon.use",
-	"apiChineseName": "券核销接口",
-	"description": "核销用户的一张优惠券，返回核销结果",
 	"requestParams": [
-		{
-			"name": "extra",
-			"type": "Json",
-			"description": "扩展字段"
-		},
 		{
 			"name": "biz_type",
 			"type": "String",
@@ -33,21 +24,25 @@
 			"name": "coupon_id",
 			"type": "String",
 			"description": "优惠券id"
+		},
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "扩展字段"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "UseResultDo",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "is_used",
 					"type": "Boolean",
-					"description": "isUsed",
-					"required": true
+					"description": "isUsed"
 				}
-			]
+			],
+			"name": "data",
+			"type": "UseResultDo",
+			"description": "data"
 		},
 		{
 			"name": "result_code",
@@ -59,5 +54,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "tmall.promotion.coupon.use",
+	"apiChineseName": "券核销接口",
+	"description": "核销用户的一张优惠券，返回核销结果",
+	"id": 38483
 }

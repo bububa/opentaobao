@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "服务交易订单号",
+			"required": true
+		},
+		{
+			"name": "agreement_number",
+			"type": "String",
+			"description": "电子保单协议号",
+			"required": true
+		},
+		{
+			"name": "expiration_time",
+			"type": "String",
+			"description": "电子保单到期时间（包含时分秒）",
+			"required": true
+		},
+		{
+			"name": "device_serial_number",
+			"type": "String",
+			"description": "设备序列号",
+			"required": true
+		},
+		{
+			"name": "product_model",
+			"type": "String",
+			"description": "产品型号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "系统异常时，返回相应的错误编码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "系统异常时，返回相应的错误文本"
+				}
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.servicecenter.spserviceorder.epoc.receive",
+	"apiChineseName": "电子保单数据接口",
+	"description": "电子保单数据回传接口",
+	"id": 61994
+}

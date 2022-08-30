@@ -1,13 +1,6 @@
 {
-	"id": 46460,
-	"name": "alibaba.alsc.crm.voucher.send",
-	"apiChineseName": "发送券给指定用户",
-	"description": "发送券给指定用户",
 	"requestParams": [
 		{
-			"name": "param_voucher_send_open_req",
-			"type": "VoucherSendOpenReq",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "out_brand_id",
@@ -57,46 +50,48 @@
 					"description": "发券数量",
 					"required": true
 				}
-			]
+			],
+			"name": "param_voucher_send_open_req",
+			"type": "VoucherSendOpenReq",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "业务成功",
-					"required": true
+					"description": "业务成功"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.voucher.send",
+	"apiChineseName": "发送券给指定用户",
+	"description": "发送券给指定用户",
+	"id": 46460
 }

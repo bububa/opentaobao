@@ -1,8 +1,4 @@
 {
-	"id": 327,
-	"name": "taobao.fenxiao.productcats.get",
-	"apiChineseName": "查询产品线列表",
-	"description": "查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -17,10 +13,12 @@
 			"description": "查询结果记录数"
 		},
 		{
-			"name": "productcats",
-			"type": "ProductCat []",
-			"description": "产品线列表。返回 ProductCat 包含的字段信息。",
 			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "产品线ID"
+				},
 				{
 					"name": "name",
 					"type": "String",
@@ -32,31 +30,33 @@
 					"description": "产品数量"
 				},
 				{
-					"name": "id",
-					"type": "Number",
-					"description": "产品线ID"
-				},
-				{
 					"name": "retail_low_percent",
 					"type": "String",
-					"description": "最低零售价百分比"
+					"description": "产品最低零售价"
 				},
 				{
 					"name": "retail_high_percent",
 					"type": "String",
-					"description": "最高零食价百分比"
+					"description": "产品最高零售价"
 				},
 				{
 					"name": "cost_percent_agent",
 					"type": "String",
-					"description": "代销采购价百分比"
+					"description": "产品代销采购价"
 				},
 				{
 					"name": "cost_percent_dealer",
 					"type": "String",
-					"description": "经销采购价百分比"
+					"description": "产品经销采购价"
 				}
-			]
+			],
+			"name": "productcats",
+			"type": "ProductCat []",
+			"description": "产品线列表。返回 ProductCat 包含的字段信息。"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.productcats.get",
+	"apiChineseName": "查询产品线列表",
+	"description": "查询供应商的所有产品线数据。根据登陆用户来查询，不需要其他入参",
+	"id": 327
 }

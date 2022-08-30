@@ -1,13 +1,6 @@
 {
-	"id": 43040,
-	"name": "alibaba.legal.suit.court.before.push",
-	"apiChineseName": "更新或保存庭前信息",
-	"description": "更新或者保存庭前信息",
 	"requestParams": [
 		{
-			"name": "before_court_model",
-			"type": "BeforeCourtModel",
-			"description": "庭前信息",
 			"subParams": [
 				{
 					"name": "attachment_count",
@@ -80,6 +73,11 @@
 					"description": "调用时间"
 				},
 				{
+					"name": "before_court_id",
+					"type": "Number",
+					"description": "庭前ID"
+				},
+				{
 					"name": "suit_id",
 					"type": "Number",
 					"description": "案件ID"
@@ -95,9 +93,23 @@
 					"description": "操作类型"
 				},
 				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "文件key"
+						}
+					],
 					"name": "feedback_attachment_list",
 					"type": "FileModel[]",
-					"description": "反馈附件信息",
+					"description": "反馈附件信息"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -109,29 +121,12 @@
 							"type": "String",
 							"description": "文件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "attachment_list",
 					"type": "FileModel[]",
-					"description": "庭前附件信息",
-					"subParams": [
-						{
-							"name": "name",
-							"type": "String",
-							"description": "文件名称"
-						},
-						{
-							"name": "key",
-							"type": "String",
-							"description": "文件key"
-						}
-					]
+					"description": "庭前附件信息"
 				},
 				{
-					"name": "communicate_list",
-					"type": "CommunicateModel[]",
-					"description": "庭前沟通",
 					"subParams": [
 						{
 							"name": "communicate_aim",
@@ -178,47 +173,48 @@
 							"type": "String",
 							"description": "下一步动作"
 						}
-					]
-				},
-				{
-					"name": "before_court_id",
-					"type": "Number",
-					"description": "庭前ID"
+					],
+					"name": "communicate_list",
+					"type": "CommunicateModel[]",
+					"description": "庭前沟通"
 				}
-			]
+			],
+			"name": "before_court_model",
+			"type": "BeforeCourtModel",
+			"description": "庭前信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Number",
-					"description": "保存成功的数据ID",
-					"required": true
+					"description": "保存成功的数据ID"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.court.before.push",
+	"apiChineseName": "更新或保存庭前信息",
+	"description": "更新或者保存庭前信息",
+	"id": 43040
 }

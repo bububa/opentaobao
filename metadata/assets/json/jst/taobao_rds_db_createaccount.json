@@ -1,13 +1,6 @@
 {
-	"id": 28878,
-	"name": "taobao.rds.db.createaccount",
-	"apiChineseName": "rds创建数据库账户",
-	"description": "rds创建数据库账户",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "RequestDbAccountModel",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "account_desc",
@@ -34,46 +27,48 @@
 					"type": "String",
 					"description": "账户密码"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "RequestDbAccountModel",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "results",
-					"type": "Json[]",
-					"description": "results",
-					"required": true
+					"type": "String[]",
+					"description": "results"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "totalResults",
-					"required": true
+					"description": "totalResults"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "exception",
-					"required": true
+					"type": "String",
+					"description": "exception"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rds.db.createaccount",
+	"apiChineseName": "rds创建数据库账户",
+	"description": "rds创建数据库账户",
+	"id": 28878
 }

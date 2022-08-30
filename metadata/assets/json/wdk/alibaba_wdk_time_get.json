@@ -1,8 +1,4 @@
 {
-	"id": 35625,
-	"name": "alibaba.wdk.time.get",
-	"apiChineseName": "获得当前系统时间",
-	"description": "获得当前系统时间",
 	"responseParams": [
 		{
 			"name": "date_time",
@@ -14,5 +10,9 @@
 			"type": "Date",
 			"description": "date"
 		}
-	]
+	],
+	"name": "alibaba.wdk.time.get",
+	"apiChineseName": "获得当前系统时间",
+	"description": "获得当前系统时间",
+	"id": 35625
 }

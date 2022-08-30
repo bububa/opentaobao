@@ -1,8 +1,4 @@
 {
-	"id": 39231,
-	"name": "alibaba.campus.guard.data.sync",
-	"apiChineseName": "卡巴数据同步",
-	"description": "数据同步门禁系统",
 	"requestParams": [
 		{
 			"name": "data_type",
@@ -22,53 +18,50 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "content",
-					"required": true
+					"type": "String",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_ext_info",
-					"type": "Json",
-					"description": "errorExtInfo",
-					"required": true
+					"type": "String",
+					"description": "errorExtInfo"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.guard.data.sync",
+	"apiChineseName": "卡巴数据同步",
+	"description": "数据同步门禁系统",
+	"id": 39231
 }

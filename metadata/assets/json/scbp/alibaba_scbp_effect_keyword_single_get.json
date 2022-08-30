@@ -1,13 +1,6 @@
 {
-	"id": 24999,
-	"name": "alibaba.scbp.effect.keyword.single.get",
-	"apiChineseName": "单个关键词效果报表",
-	"description": "单个关键词效果报表",
 	"requestParams": [
 		{
-			"name": "p4p_keyword_report_query",
-			"type": "IKeywordQuery",
-			"description": "IKeywordQuery",
 			"subParams": [
 				{
 					"name": "per_page_size",
@@ -40,14 +33,14 @@
 					"type": "String",
 					"description": "开始时间 当inteval=7或者30的时候不需要填写"
 				}
-			]
+			],
+			"name": "p4p_keyword_report_query",
+			"type": "IKeywordQuery",
+			"description": "IKeywordQuery"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "keyword_effect_list",
-			"type": "SingleAdKeywordEffectDto []",
-			"description": "单个关键词报表",
 			"subParams": [
 				{
 					"name": "keyword",
@@ -89,7 +82,10 @@
 					"type": "String",
 					"description": "百分比，保留两位小数，例如3.75表示3.75%"
 				}
-			]
+			],
+			"name": "keyword_effect_list",
+			"type": "SingleAdKeywordEffectDto []",
+			"description": "单个关键词报表"
 		},
 		{
 			"name": "total_num",
@@ -101,5 +97,9 @@
 			"type": "Number",
 			"description": "总页数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.effect.keyword.single.get",
+	"apiChineseName": "单个关键词效果报表",
+	"description": "单个关键词效果报表",
+	"id": 24999
 }

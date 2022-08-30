@@ -4,10 +4,10 @@ package ieagency
 type IePassengerTicketVO struct {
 	// 票号
 	TicketNos []string `json:"ticket_nos,omitempty" xml:"ticket_nos>string,omitempty"`
-	// 乘机人姓名（英文）
-	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 证件号码
 	CertNo string `json:"cert_no,omitempty" xml:"cert_no,omitempty"`
+	// 乘机人姓名（英文）
+	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
 	// 代理人pnr
 	Cpnr string `json:"cpnr,omitempty" xml:"cpnr,omitempty"`
 	// 航空公司pnr

@@ -12,8 +12,10 @@ import (
 // 获取类目ID，必需是叶子类目ID；调用taobao.itemcats.get.v2获取 <br/>传入关键属性,结构:pid:vid;pid:vid.调用taobao.itemprops.get.v2获取pid,<br/>调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.<br/>新增：套装产品发布，目前支持单件多个即 A*2 形式的套装
 type TaobaoProductAddAPIRequest struct {
 	model.Params
-	// native_unkeyprops
-	_nativeUnkeyprops string
+	// 产品名称,最大30个字符.
+	_name string
+	// 产品市场价.精确到2位小数;单位为元.如：200.07
+	_price string
 	// 外部产品ID
 	_outerId string
 	// 关键属性 结构:pid:vid;pid:vid.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.
@@ -24,12 +26,10 @@ type TaobaoProductAddAPIRequest struct {
 	_saleProps string
 	// 用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”<br><font color=red>注：包含所有自定义属性的传入</font>
 	_customerProps string
-	// 产品市场价.精确到2位小数;单位为元.如：200.07
-	_price string
-	// 产品名称,最大30个字符.
-	_name string
 	// 产品描述.最大不超过25000个字符
 	_desc string
+	// native_unkeyprops
+	_nativeUnkeyprops string
 	// 上市时间。目前只支持鞋城类目传入此参数
 	_marketTime string
 	// 销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。只有少数销售属性值支持传入别名，比如颜色和尺寸
@@ -63,17 +63,30 @@ func (r TaobaoProductAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetNativeUnkeyprops is NativeUnkeyprops Setter
-// native_unkeyprops
-func (r *TaobaoProductAddAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops string) error {
-	r._nativeUnkeyprops = _nativeUnkeyprops
-	r.Set("native_unkeyprops", _nativeUnkeyprops)
+// SetName is Name Setter
+// 产品名称,最大30个字符.
+func (r *TaobaoProductAddAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
 	return nil
 }
 
-// GetNativeUnkeyprops NativeUnkeyprops Getter
-func (r TaobaoProductAddAPIRequest) GetNativeUnkeyprops() string {
-	return r._nativeUnkeyprops
+// GetName Name Getter
+func (r TaobaoProductAddAPIRequest) GetName() string {
+	return r._name
+}
+
+// SetPrice is Price Setter
+// 产品市场价.精确到2位小数;单位为元.如：200.07
+func (r *TaobaoProductAddAPIRequest) SetPrice(_price string) error {
+	r._price = _price
+	r.Set("price", _price)
+	return nil
+}
+
+// GetPrice Price Getter
+func (r TaobaoProductAddAPIRequest) GetPrice() string {
+	return r._price
 }
 
 // SetOuterId is OuterId Setter
@@ -141,32 +154,6 @@ func (r TaobaoProductAddAPIRequest) GetCustomerProps() string {
 	return r._customerProps
 }
 
-// SetPrice is Price Setter
-// 产品市场价.精确到2位小数;单位为元.如：200.07
-func (r *TaobaoProductAddAPIRequest) SetPrice(_price string) error {
-	r._price = _price
-	r.Set("price", _price)
-	return nil
-}
-
-// GetPrice Price Getter
-func (r TaobaoProductAddAPIRequest) GetPrice() string {
-	return r._price
-}
-
-// SetName is Name Setter
-// 产品名称,最大30个字符.
-func (r *TaobaoProductAddAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
-	return nil
-}
-
-// GetName Name Getter
-func (r TaobaoProductAddAPIRequest) GetName() string {
-	return r._name
-}
-
 // SetDesc is Desc Setter
 // 产品描述.最大不超过25000个字符
 func (r *TaobaoProductAddAPIRequest) SetDesc(_desc string) error {
@@ -178,6 +165,19 @@ func (r *TaobaoProductAddAPIRequest) SetDesc(_desc string) error {
 // GetDesc Desc Getter
 func (r TaobaoProductAddAPIRequest) GetDesc() string {
 	return r._desc
+}
+
+// SetNativeUnkeyprops is NativeUnkeyprops Setter
+// native_unkeyprops
+func (r *TaobaoProductAddAPIRequest) SetNativeUnkeyprops(_nativeUnkeyprops string) error {
+	r._nativeUnkeyprops = _nativeUnkeyprops
+	r.Set("native_unkeyprops", _nativeUnkeyprops)
+	return nil
+}
+
+// GetNativeUnkeyprops NativeUnkeyprops Getter
+func (r TaobaoProductAddAPIRequest) GetNativeUnkeyprops() string {
+	return r._nativeUnkeyprops
 }
 
 // SetMarketTime is MarketTime Setter

@@ -1,0 +1,95 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "外部经纪人ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "point_factor",
+							"type": "String",
+							"description": "经纪人积分因素"
+						},
+						{
+							"name": "point_score",
+							"type": "Number",
+							"description": "经纪人积分分值"
+						}
+					],
+					"name": "points_factors",
+					"type": "PointsFactorDTO[]",
+					"description": "经纪人积分因素列表",
+					"required": true
+				},
+				{
+					"name": "business_time",
+					"type": "String",
+					"description": "业务数据归属时间"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0默认不是测试，1是测试数据"
+				}
+			],
+			"name": "broker_points_list",
+			"type": "SyncBrokerPointsDTO",
+			"description": "经纪人积分列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "1"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "1"
+						}
+					],
+					"name": "data",
+					"type": "BrokerPointResultDTO[]",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.broker.points.sync",
+	"apiChineseName": "经纪人积分同步",
+	"description": "经纪人积分",
+	"id": 61397
+}

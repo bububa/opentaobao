@@ -1,0 +1,132 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_sid",
+					"type": "String",
+					"description": "外部配套id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘、小区、公寓ID",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1-新房楼盘 2-小区 3-公寓",
+					"required": true
+				},
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "0-无效 1-有效",
+					"required": true
+				},
+				{
+					"name": "support_type",
+					"type": "String",
+					"description": "配套类型",
+					"required": true
+				},
+				{
+					"name": "point_code",
+					"type": "String",
+					"description": "点位编码"
+				},
+				{
+					"name": "support_name",
+					"type": "String",
+					"description": "配套名称",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "配套地址",
+					"required": true
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "配套经度",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "配套纬度",
+					"required": true
+				},
+				{
+					"name": "linear_distance",
+					"type": "String",
+					"description": "直线距离(单位：米)",
+					"required": true
+				},
+				{
+					"name": "walking_distance",
+					"type": "String",
+					"description": "步行距离(单位：米)"
+				},
+				{
+					"name": "car_distance",
+					"type": "String",
+					"description": "车行距离(单位：米)"
+				},
+				{
+					"name": "prov_id",
+					"type": "Number",
+					"description": "所属省份id",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "所属城市id",
+					"required": true
+				}
+			],
+			"name": "base_supporting_dto",
+			"type": "BaseSupportingDto",
+			"description": "周边设施入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.support.sync",
+	"apiChineseName": "周边配套数据同步",
+	"description": "周边配套数据同步",
+	"id": 59946
+}

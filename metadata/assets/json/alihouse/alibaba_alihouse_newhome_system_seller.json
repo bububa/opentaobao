@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "授权码",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试(1-是测试 0-不是测试)",
+					"required": true
+				}
+			],
+			"name": "token_create_dto",
+			"type": "TokenCreateDto",
+			"description": "请求实体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.system.seller",
+	"apiChineseName": "商品发布授权",
+	"description": "商品发布授权",
+	"id": 61639
+}

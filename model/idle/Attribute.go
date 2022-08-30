@@ -36,10 +36,10 @@ type Attribute struct {
 	CloseReason string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
 	// 质检金额（拍卖底价），单位为分，精确到元。orderSubStatus=31时上送
 	ConfirmAmt string `json:"confirm_amt,omitempty" xml:"confirm_amt,omitempty"`
-	// 实际支付金额，单位分，精确到元。orderStatus=5时必须上送
-	PayAmt string `json:"pay_amt,omitempty" xml:"pay_amt,omitempty"`
 	// 快递单号，orderSubStatus=21表示服务商取件快递单号，orderSubStatus =101时表示服务商退货快递单号
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
+	// 实际支付金额，单位分，精确到元。orderStatus=5时必须上送
+	PayAmt string `json:"pay_amt,omitempty" xml:"pay_amt,omitempty"`
 	// 历史最高成交金额，单位分，精确到元。orderSubStatus=31时上送
 	MaxDealAmt string `json:"max_deal_amt,omitempty" xml:"max_deal_amt,omitempty"`
 	// 评价内容。order_status=7时候填写
@@ -58,7 +58,7 @@ type Attribute struct {
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 卖家逆向收货地址id
 	SellerReceiptAddressId string `json:"seller_receipt_address_id,omitempty" xml:"seller_receipt_address_id,omitempty"`
-	// order_status=103时候填写 关闭原因
+	// order_status=103、101时候填写 关闭原因描述
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// order_status=104时填写卖家还欠费金额单位分
 	ArrearageFee string `json:"arrearage_fee,omitempty" xml:"arrearage_fee,omitempty"`
@@ -76,4 +76,14 @@ type Attribute struct {
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 联系人电话，上门回收填写,order_status=1
 	ContactMobile string `json:"contact_mobile,omitempty" xml:"contact_mobile,omitempty"`
+	// 手淘商家的淘宝账号id
+	RecycleSupplierId string `json:"recycle_supplier_id,omitempty" xml:"recycle_supplier_id,omitempty"`
+	// 商家收到货品时间
+	IsvReceiveTime string `json:"isv_receive_time,omitempty" xml:"isv_receive_time,omitempty"`
+	// 质检型号名称（若存在不一致情况，需要了解实际检测的质检型号，若实际型号在已挂载的spuid中则传spuid，否则传"其他"）
+	RealModel string `json:"real_model,omitempty" xml:"real_model,omitempty"`
+	// 提交型号和质检型号是否一致
+	SpuMatch string `json:"spu_match,omitempty" xml:"spu_match,omitempty"`
+	// order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME("质检员未上门取件"), SELLER_CAN_NOT_CONTACT("用户无法联系"), SELLER_NOT_COME_STORE_AT_TIME("用户未按时到店"), CANCEL_BY_SELLER_DEMAND("用户要求不回收了"), QA_NOT_QUALIFIED("不符合服务商质检要求"), OTHER("其他原因")
+	CloseReasonCode string `json:"close_reason_code,omitempty" xml:"close_reason_code,omitempty"`
 }

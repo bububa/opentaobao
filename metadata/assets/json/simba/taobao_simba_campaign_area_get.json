@@ -1,8 +1,4 @@
 {
-	"id": 10555,
-	"name": "taobao.simba.campaign.area.get",
-	"apiChineseName": "取得一个推广计划的投放地域设置",
-	"description": "取得一个推广计划的投放地域设置",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_area",
-			"type": "CampaignArea",
-			"description": "推广计划的投放地域配置",
 			"subParams": [
 				{
 					"name": "nick",
@@ -47,7 +40,14 @@
 					"type": "Date",
 					"description": "最后修改时间"
 				}
-			]
+			],
+			"name": "campaign_area",
+			"type": "CampaignArea",
+			"description": "推广计划的投放地域配置"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.area.get",
+	"apiChineseName": "取得一个推广计划的投放地域设置",
+	"description": "取得一个推广计划的投放地域设置",
+	"id": 10555
 }

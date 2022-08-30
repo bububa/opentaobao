@@ -1,8 +1,4 @@
 {
-	"id": 53702,
-	"name": "taobao.openmall.trade.batch.get",
-	"apiChineseName": "批量获取openmall订单",
-	"description": "批量获取openmall订单\n注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取",
 	"requestParams": [
 		{
 			"name": "end_created",
@@ -14,16 +10,13 @@
 			"name": "page_index",
 			"type": "Number",
 			"description": "查询页码，从1开始",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页面大小，不超过100",
-			"required": true,
-			"maxValue": 100,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "distributor",
@@ -40,58 +33,55 @@
 	],
 	"responseParams": [
 		{
-			"name": "entities",
-			"type": "TopTradeDetailVo []",
-			"description": "订单列表",
 			"subParams": [
 				{
 					"name": "tid",
 					"type": "Number",
-					"description": "订单ID",
-					"required": true
+					"description": "订单ID"
 				},
 				{
 					"name": "out_id",
 					"type": "String",
-					"description": "外部outid",
-					"required": true
+					"description": "外部outid"
 				},
 				{
 					"name": "payment",
 					"type": "String",
-					"description": "实付金额",
-					"required": true
+					"description": "实付金额"
 				},
 				{
 					"name": "post_fee",
 					"type": "String",
-					"description": "邮费",
-					"required": true
+					"description": "邮费"
 				},
 				{
 					"name": "num_iid",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "num",
 					"type": "Number",
-					"description": "商品数量",
-					"required": true
+					"description": "商品数量"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "订单状态，该字段存在延迟，请参考taoboa.openmall.trade.get",
-					"required": true
+					"description": "订单状态，该字段存在延迟，请参考taoboa.openmall.trade.get"
 				}
-			]
+			],
+			"name": "entities",
+			"type": "TopTradeDetailVo []",
+			"description": "订单列表"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "范围内总订单数"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.batch.get",
+	"apiChineseName": "批量获取openmall订单",
+	"description": "批量获取openmall订单\n注意：该接口数据存在延迟，实时数据请通过taobao.openmall.trade.get获取",
+	"id": 53702
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28162,
-	"name": "alibaba.nlife.b2c.trade.get",
-	"apiChineseName": "零售+平台查询订单",
-	"description": "查询零售+平台创建出来的订单详情",
 	"requestParams": [
 		{
 			"name": "trade_no",
@@ -59,65 +55,56 @@
 			"description": "导购员ID"
 		},
 		{
-			"name": "goods_list",
-			"type": "Goods []",
-			"description": "购买的商品列表",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "String",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "price",
 					"type": "Number",
-					"description": "商品价格，基础单位，比如人民币 分",
-					"required": true
+					"description": "商品价格，基础单位，比如人民币 分"
 				},
 				{
 					"name": "currency",
 					"type": "String",
-					"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");",
-					"required": true
+					"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");"
 				},
 				{
 					"name": "guider",
 					"type": "String",
-					"description": "导购员",
-					"required": true
+					"description": "导购员"
 				},
 				{
 					"name": "quantity",
 					"type": "Number",
-					"description": "货物数量",
-					"required": true
+					"description": "货物数量"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "商品标题",
-					"required": true
+					"description": "商品标题"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "商品skuId",
-					"required": true
+					"description": "商品skuId"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品itemId",
-					"required": true
+					"description": "商品itemId"
 				},
 				{
 					"name": "custom_codes",
 					"type": "String",
-					"description": "商家自用编码集合，对应该item_sku. 逗号分隔字符串",
-					"required": true
+					"description": "商家自用编码集合，对应该item_sku. 逗号分隔字符串"
 				}
-			]
+			],
+			"name": "goods_list",
+			"type": "Goods []",
+			"description": "购买的商品列表"
 		},
 		{
 			"name": "total_amount",
@@ -125,65 +112,56 @@
 			"description": "订单总金额 基础单位，人民币 分"
 		},
 		{
-			"name": "fund_bill_list",
-			"type": "FundBill []",
-			"description": "支付资金渠道列表",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "String",
-					"description": "资金渠道的id:     * 1. type=CASH：为空；      * 2. type=UNIONPAY：银联流水号；      * 3. type=ALIPAY：支付宝订单号；      * 4. type=WECHAT_PAY：微信支付订单号；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠id。      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡id      * 8. type=MALING：为空",
-					"required": true
+					"description": "资金渠道的id:     * 1. type=CASH：为空；      * 2. type=UNIONPAY：银联流水号；      * 3. type=ALIPAY：支付宝订单号；      * 4. type=WECHAT_PAY：微信支付订单号；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠id。      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡id      * 8. type=MALING：为空"
 				},
 				{
 					"name": "type",
 					"type": "String",
-					"description": "资金渠道类型:     CASH(\"现金支付\"),     UNIONPAY(\"银联刷卡支付\"),     ALIPAY(\"支付宝支付\"),     WECHAT_PAY(\"微信支付\"),     PROMOTION(\"零售+平台的优惠\"),     CUSTOM_PROMOTION(\"零售商自有优惠\"),     CUSTOM_PREPAY_CARD(\"零售商自有储值卡\"),     MALING(\"支付时抹零\");",
-					"required": true
+					"description": "资金渠道类型:     CASH(\"现金支付\"),     UNIONPAY(\"银联刷卡支付\"),     ALIPAY(\"支付宝支付\"),     WECHAT_PAY(\"微信支付\"),     PROMOTION(\"零售+平台的优惠\"),     CUSTOM_PROMOTION(\"零售商自有优惠\"),     CUSTOM_PREPAY_CARD(\"零售商自有储值卡\"),     MALING(\"支付时抹零\");"
 				},
 				{
 					"name": "buyer_id",
 					"type": "String",
-					"description": "用户ID",
-					"required": true
+					"description": "用户ID"
 				},
 				{
 					"name": "buyer_id_type",
 					"type": "String",
-					"description": "买家类型： TAOBAO_OPENID(\"经阿里百川淘宝登陆获取到的用户ID\"),     ALIPAY_OPENID(\"经蚂蚁金服开放平台支付宝App登陆获得的用户ID\"),     WECHAT_OPENID(\"经微信开放平台微信App登陆获得的用户id\"),     PHONE_NUMBER(\"通过手机号码登陆\"),     APP_USERID(\"商户自由的用户ID\"),     ANONYMOUS_USER(\"匿名用户\");",
-					"required": true
+					"description": "买家类型： TAOBAO_OPENID(\"经阿里百川淘宝登陆获取到的用户ID\"),     ALIPAY_OPENID(\"经蚂蚁金服开放平台支付宝App登陆获得的用户ID\"),     WECHAT_OPENID(\"经微信开放平台微信App登陆获得的用户id\"),     PHONE_NUMBER(\"通过手机号码登陆\"),     APP_USERID(\"商户自由的用户ID\"),     ANONYMOUS_USER(\"匿名用户\");"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "标题：     * 1. type=CASH：现金支付；      * 2. type=UNIONPAY：银联刷卡支付；      * 3. type=ALIPAY：支付宝支付；      * 4. type=WECHAT_PAY：微信支付；      * 5. type=PROMOTION: 零售+平台的优惠名称；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠名称；      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡；      * 8. type=MALING：抹零      *",
-					"required": true
+					"description": "标题：     * 1. type=CASH：现金支付；      * 2. type=UNIONPAY：银联刷卡支付；      * 3. type=ALIPAY：支付宝支付；      * 4. type=WECHAT_PAY：微信支付；      * 5. type=PROMOTION: 零售+平台的优惠名称；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠名称；      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡；      * 8. type=MALING：抹零      *"
 				},
 				{
 					"name": "amount",
 					"type": "Number",
-					"description": "金额/优惠抵扣金额，单位：分",
-					"required": true
+					"description": "金额/优惠抵扣金额，单位：分"
 				},
 				{
 					"name": "currency",
 					"type": "String",
-					"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");",
-					"required": true
+					"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");"
 				},
 				{
 					"name": "extend_params",
 					"type": "String",
-					"description": "扩展参数，JSON格式",
-					"required": true
+					"description": "扩展参数，JSON格式"
 				},
 				{
 					"name": "attachment",
 					"type": "String",
-					"description": "附加数据，在查询订单中原样返回，该字段主要用于商户携带订单的自定义数据",
-					"required": true
+					"description": "附加数据，在查询订单中原样返回，该字段主要用于商户携带订单的自定义数据"
 				}
-			]
+			],
+			"name": "fund_bill_list",
+			"type": "FundBill []",
+			"description": "支付资金渠道列表"
 		},
 		{
 			"name": "picking_up",
@@ -206,91 +184,83 @@
 			"description": "订单取消时间"
 		},
 		{
-			"name": "refund_list",
-			"type": "Refund []",
-			"description": "退款列表",
 			"subParams": [
 				{
 					"name": "refund_time",
 					"type": "Date",
-					"description": "refundTime",
-					"required": true
+					"description": "refundTime"
 				},
 				{
 					"name": "out_request_no",
 					"type": "String",
-					"description": "outRequestNo",
-					"required": true
+					"description": "outRequestNo"
 				},
 				{
-					"name": "refund_bill_list",
-					"type": "FundBill[]",
-					"description": "退款渠道列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "String",
-							"description": "资金渠道的id:     * 1. type=CASH：为空；      * 2. type=UNIONPAY：银联流水号；      * 3. type=ALIPAY：支付宝订单号；      * 4. type=WECHAT_PAY：微信支付订单号；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠id。      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡id      * 8. type=MALING：为空",
-							"required": true
+							"description": "资金渠道的id:     * 1. type=CASH：为空；      * 2. type=UNIONPAY：银联流水号；      * 3. type=ALIPAY：支付宝订单号；      * 4. type=WECHAT_PAY：微信支付订单号；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠id。      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡id      * 8. type=MALING：为空"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "资金渠道类型:     CASH(\"现金支付\"),     UNIONPAY(\"银联刷卡支付\"),     ALIPAY(\"支付宝支付\"),     WECHAT_PAY(\"微信支付\"),     PROMOTION(\"零售+平台的优惠\"),     CUSTOM_PROMOTION(\"零售商自有优惠\"),     CUSTOM_PREPAY_CARD(\"零售商自有储值卡\"),     MALING(\"支付时抹零\");",
-							"required": true
+							"description": "资金渠道类型:     CASH(\"现金支付\"),     UNIONPAY(\"银联刷卡支付\"),     ALIPAY(\"支付宝支付\"),     WECHAT_PAY(\"微信支付\"),     PROMOTION(\"零售+平台的优惠\"),     CUSTOM_PROMOTION(\"零售商自有优惠\"),     CUSTOM_PREPAY_CARD(\"零售商自有储值卡\"),     MALING(\"支付时抹零\");"
 						},
 						{
 							"name": "buyer_id",
 							"type": "String",
-							"description": "用户ID",
-							"required": true
+							"description": "用户ID"
 						},
 						{
 							"name": "buyer_id_type",
 							"type": "String",
-							"description": "买家类型： TAOBAO_OPENID(\"经阿里百川淘宝登陆获取到的用户ID\"),     ALIPAY_OPENID(\"经蚂蚁金服开放平台支付宝App登陆获得的用户ID\"),     WECHAT_OPENID(\"经微信开放平台微信App登陆获得的用户id\"),     PHONE_NUMBER(\"通过手机号码登陆\"),     APP_USERID(\"商户自由的用户ID\"),     ANONYMOUS_USER(\"匿名用户\");",
-							"required": true
+							"description": "买家类型： TAOBAO_OPENID(\"经阿里百川淘宝登陆获取到的用户ID\"),     ALIPAY_OPENID(\"经蚂蚁金服开放平台支付宝App登陆获得的用户ID\"),     WECHAT_OPENID(\"经微信开放平台微信App登陆获得的用户id\"),     PHONE_NUMBER(\"通过手机号码登陆\"),     APP_USERID(\"商户自由的用户ID\"),     ANONYMOUS_USER(\"匿名用户\");"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "标题：     * 1. type=CASH：现金支付；      * 2. type=UNIONPAY：银联刷卡支付；      * 3. type=ALIPAY：支付宝支付；      * 4. type=WECHAT_PAY：微信支付；      * 5. type=PROMOTION: 零售+平台的优惠名称；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠名称；      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡；      * 8. type=MALING：抹零      *",
-							"required": true
+							"description": "标题：     * 1. type=CASH：现金支付；      * 2. type=UNIONPAY：银联刷卡支付；      * 3. type=ALIPAY：支付宝支付；      * 4. type=WECHAT_PAY：微信支付；      * 5. type=PROMOTION: 零售+平台的优惠名称；      * 6. type=CUSTOM_PROMOTION：零售商自有优惠名称；      * 7. type=CUSTOM_PREPAY_CARD：零售商自有储值卡；      * 8. type=MALING：抹零      *"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "退款金额，单位：分",
-							"required": true
+							"description": "退款金额，单位：分"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");",
-							"required": true
+							"description": "货币种类：    CYN(\"人民币\"),     USD(\"美元\"),     HKD(\"港币\");"
 						},
 						{
 							"name": "extend_params",
 							"type": "String",
-							"description": "扩展参数，JSON格式",
-							"required": true
+							"description": "扩展参数，JSON格式"
 						},
 						{
 							"name": "attachment",
 							"type": "String",
-							"description": "附加数据，在查询订单中原样返回，该字段主要用于商户携带订单的自定义数据",
-							"required": true
+							"description": "附加数据，在查询订单中原样返回，该字段主要用于商户携带订单的自定义数据"
 						}
-					]
+					],
+					"name": "refund_bill_list",
+					"type": "FundBill[]",
+					"description": "退款渠道列表"
 				},
 				{
 					"name": "refund_goods",
 					"type": "String",
-					"description": "退货的商品，逗号分隔元素，商品和数量冒号分隔",
-					"required": true
+					"description": "退货的商品，逗号分隔元素，商品和数量冒号分隔"
 				}
-			]
+			],
+			"name": "refund_list",
+			"type": "Refund []",
+			"description": "退款列表"
+		},
+		{
+			"name": "pay_status",
+			"type": "String",
+			"description": "payStatus"
 		},
 		{
 			"name": "refund_status",
@@ -303,67 +273,58 @@
 			"description": "物流状态:    WAIT_FOR_CONSIGN(\"有待发货商品\"),     WAIT_FOR_SIGN(\"全部商品已发货\"),     SIGNED(\"全部商品已签收\"),     REJECTED(\"全部商品已拒收\");"
 		},
 		{
-			"name": "logistics_status_list",
-			"type": "LogisticsStatus []",
-			"description": "物流状态列表",
 			"subParams": [
 				{
 					"name": "goods_id",
 					"type": "String",
-					"description": "该物流单里面的商品，商品和商品之间逗号分隔，商品和数量冒号分隔",
-					"required": true
+					"description": "该物流单里面的商品，商品和商品之间逗号分隔，商品和数量冒号分隔"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "物流状态:    WAIT_FOR_CONSIGN(\"有待发货商品\"),     WAIT_FOR_SIGN(\"全部商品已发货\"),     SIGNED(\"全部商品已签收\"),     REJECTED(\"全部商品已拒收\");",
-					"required": true
+					"description": "物流状态:    WAIT_FOR_CONSIGN(\"有待发货商品\"),     WAIT_FOR_SIGN(\"全部商品已发货\"),     SIGNED(\"全部商品已签收\"),     REJECTED(\"全部商品已拒收\");"
 				},
 				{
 					"name": "logistics_company_name",
 					"type": "String",
-					"description": "物流公司名称",
-					"required": true
+					"description": "物流公司名称"
 				},
 				{
 					"name": "logistics_company_id",
 					"type": "String",
-					"description": "物流公司ID",
-					"required": true
+					"description": "物流公司ID"
 				},
 				{
 					"name": "logistics_id",
 					"type": "String",
-					"description": "物流单号",
-					"required": true
+					"description": "物流单号"
 				},
 				{
 					"name": "modifyed_time",
 					"type": "Date",
-					"description": "更新时间",
-					"required": true
+					"description": "更新时间"
 				},
 				{
-					"name": "logistics_log_list",
-					"type": "LogisticsLog[]",
-					"description": "更新日志列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "time",
 							"type": "Date",
-							"description": "time",
-							"required": true
+							"description": "time"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "内容",
-							"required": true
+							"description": "内容"
 						}
-					]
+					],
+					"name": "logistics_log_list",
+					"type": "LogisticsLog[]",
+					"description": "更新日志列表"
 				}
-			]
+			],
+			"name": "logistics_status_list",
+			"type": "LogisticsStatus []",
+			"description": "物流状态列表"
 		},
 		{
 			"name": "extend_params",
@@ -374,11 +335,6 @@
 			"name": "attachment",
 			"type": "String",
 			"description": "透传参数，格式自定，查询时原样返回"
-		},
-		{
-			"name": "pay_status",
-			"type": "String",
-			"description": "payStatus"
 		},
 		{
 			"name": "trade_no",
@@ -410,5 +366,9 @@
 			"type": "byte",
 			"description": "0：门店订单；1：全渠道订单；3：网直供订单"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.trade.get",
+	"apiChineseName": "零售+平台查询订单",
+	"description": "查询零售+平台创建出来的订单详情",
+	"id": 28162
 }

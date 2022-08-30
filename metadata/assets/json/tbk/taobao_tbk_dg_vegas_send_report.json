@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_date",
+			"type": "String",
+			"description": "统计日期",
+			"required": true
+		},
+		{
+			"name": "relation_id",
+			"type": "Number",
+			"description": "渠道关系id"
+		},
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "红包活动id：1462",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "biz_date",
+									"type": "String",
+									"description": "日期"
+								},
+								{
+									"name": "relation_id",
+									"type": "Number",
+									"description": "渠道关系id"
+								},
+								{
+									"name": "fund_num",
+									"type": "Number",
+									"description": "红包发放数量"
+								}
+							],
+							"name": "relation_rpt_list",
+							"type": "RightsSendRelationRptDto[]",
+							"description": "渠道关系id的发放数据"
+						}
+					],
+					"name": "model",
+					"type": "RightsSendRptDTO",
+					"description": "model"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.tbk.dg.vegas.send.report",
+	"apiChineseName": "淘宝客-推广者-查询红包发放个数",
+	"description": "查询账号下的红包发放个数。",
+	"id": 47593
+}

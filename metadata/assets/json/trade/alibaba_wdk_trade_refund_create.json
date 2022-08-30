@@ -1,18 +1,8 @@
 {
-	"id": 36172,
-	"name": "alibaba.wdk.trade.refund.create",
-	"apiChineseName": "外部渠道逆向订单创建",
-	"description": "该接口是创建退货订单的服务。当外部渠道发起退款后，调用此接口可以完成五道口底层交易、履约、配送等一系列流程进行退货。",
 	"requestParams": [
 		{
-			"name": "refund_goods_create_request",
-			"type": "RefundGoodsCreateRequest",
-			"description": "退货请求",
 			"subParams": [
 				{
-					"name": "refund_goods_sub_orders",
-					"type": "RefundGoodsSubOrder[]",
-					"description": "退货商品列表",
 					"subParams": [
 						{
 							"name": "sub_biz_order_id",
@@ -74,7 +64,10 @@
 							"type": "String",
 							"description": "退款单id"
 						}
-					]
+					],
+					"name": "refund_goods_sub_orders",
+					"type": "RefundGoodsSubOrder[]",
+					"description": "退货商品列表"
 				},
 				{
 					"name": "sub_biz_order_id",
@@ -136,14 +129,14 @@
 					"type": "Number",
 					"description": "渠道来源，欧尚外卖默认是19"
 				}
-			]
+			],
+			"name": "refund_goods_create_request",
+			"type": "RefundGoodsCreateRequest",
+			"description": "退货请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefundGoodsCreateResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "refund_goods_id",
@@ -169,7 +162,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefundGoodsCreateResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.trade.refund.create",
+	"apiChineseName": "外部渠道逆向订单创建",
+	"description": "该接口是创建退货订单的服务。当外部渠道发起退款后，调用此接口可以完成五道口底层交易、履约、配送等一系列流程进行退货。",
+	"id": 36172
 }

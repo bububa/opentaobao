@@ -1,9 +1,25 @@
 {
-	"id": 55193,
-	"name": "alibaba.scbp.ad.keyword.update.keyword.price.batch",
-	"apiChineseName": "修改关键词价格",
-	"description": "修改关键词价格",
 	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
 		{
 			"name": "campaign_id",
 			"type": "Number",
@@ -11,21 +27,14 @@
 			"required": true
 		},
 		{
-			"name": "keyword_update_query",
-			"type": "KeywordUpdateQuery",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "update_type",
 					"type": "String",
-					"description": "更新类型"
+					"description": "更新类型：add_price（批量修改成不同价格，keywordList中price不能为空）update_price(批量修改成相同价格，updateInfo中price不能为空)",
+					"required": true
 				},
 				{
-					"name": "update_info",
-					"type": "KeywordInfo",
-					"description": "更新信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -35,16 +44,14 @@
 						{
 							"name": "price",
 							"type": "String",
-							"description": "价格",
-							"required": true
+							"description": "价格"
 						}
-					]
+					],
+					"name": "update_info",
+					"type": "KeywordInfo",
+					"description": "更新信息"
 				},
 				{
-					"name": "keyword_list",
-					"type": "KeywordInfo[]",
-					"description": "关键词集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -62,56 +69,45 @@
 							"type": "String",
 							"description": "价格"
 						}
-					]
-				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id",
+					],
+					"name": "keyword_list",
+					"type": "KeywordInfo[]",
+					"description": "关键词集合",
 					"required": true
 				}
-			]
+			],
+			"name": "keyword_update_query",
+			"type": "KeywordUpdateQuery",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "ErrorKeyword []",
-			"description": "错误信息集合",
 			"subParams": [
 				{
 					"name": "keyword",
 					"type": "String",
-					"description": "关键词",
-					"required": true
+					"description": "关键词"
 				},
 				{
 					"name": "type",
 					"type": "String",
-					"description": "类型",
-					"required": true
+					"description": "类型"
 				},
 				{
 					"name": "repeat_keyword",
 					"type": "String",
-					"description": "重复关键词",
-					"required": true
+					"description": "重复关键词"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "ErrorKeyword []",
+			"description": "错误信息集合"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.update.keyword.price.batch",
+	"apiChineseName": "修改关键词价格",
+	"description": "修改关键词价格",
+	"id": 55193
 }

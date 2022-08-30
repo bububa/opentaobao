@@ -12,8 +12,6 @@ import (
 // 房型添加或更新
 type TaobaoXhotelRoomtypeAddAPIRequest struct {
 	model.Params
-	// 卖家房型ID，不能重复建议格式是:酒店code_房型code
-	_outerId string
 	// 房型名称。不能超过30字
 	_name string
 	// 具体面积大小，请按照正确格式填写。两种格式，例如：40或者 10-20
@@ -30,10 +28,12 @@ type TaobaoXhotelRoomtypeAddAPIRequest struct {
 	_service string
 	// 不要使用
 	_extend string
-	// （必传）商家酒店ID，指明该房型属于哪家酒店
-	_outHid string
+	// 卖家房型ID，不能重复建议格式是:酒店code_房型code
+	_outerId string
 	// 系统商，无申请不可使用
 	_vendor string
+	// （必传）商家酒店ID，指明该房型属于哪家酒店
+	_outHid string
 	// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
 	_pics string
 	// 卖家房型英文名称
@@ -75,19 +75,6 @@ func (r TaobaoXhotelRoomtypeAddAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetOuterId is OuterId Setter
-// 卖家房型ID，不能重复建议格式是:酒店code_房型code
-func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetOuterId(_outerId string) error {
-	r._outerId = _outerId
-	r.Set("outer_id", _outerId)
-	return nil
-}
-
-// GetOuterId OuterId Getter
-func (r TaobaoXhotelRoomtypeAddAPIRequest) GetOuterId() string {
-	return r._outerId
 }
 
 // SetName is Name Setter
@@ -194,17 +181,17 @@ func (r TaobaoXhotelRoomtypeAddAPIRequest) GetExtend() string {
 	return r._extend
 }
 
-// SetOutHid is OutHid Setter
-// （必传）商家酒店ID，指明该房型属于哪家酒店
-func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetOutHid(_outHid string) error {
-	r._outHid = _outHid
-	r.Set("out_hid", _outHid)
+// SetOuterId is OuterId Setter
+// 卖家房型ID，不能重复建议格式是:酒店code_房型code
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
 	return nil
 }
 
-// GetOutHid OutHid Getter
-func (r TaobaoXhotelRoomtypeAddAPIRequest) GetOutHid() string {
-	return r._outHid
+// GetOuterId OuterId Getter
+func (r TaobaoXhotelRoomtypeAddAPIRequest) GetOuterId() string {
+	return r._outerId
 }
 
 // SetVendor is Vendor Setter
@@ -218,6 +205,19 @@ func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelRoomtypeAddAPIRequest) GetVendor() string {
 	return r._vendor
+}
+
+// SetOutHid is OutHid Setter
+// （必传）商家酒店ID，指明该房型属于哪家酒店
+func (r *TaobaoXhotelRoomtypeAddAPIRequest) SetOutHid(_outHid string) error {
+	r._outHid = _outHid
+	r.Set("out_hid", _outHid)
+	return nil
+}
+
+// GetOutHid OutHid Getter
+func (r TaobaoXhotelRoomtypeAddAPIRequest) GetOutHid() string {
+	return r._outHid
 }
 
 // SetPics is Pics Setter

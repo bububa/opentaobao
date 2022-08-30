@@ -14,6 +14,8 @@ type OpenTicketDo struct {
 	AirlineCode string `json:"airline_code,omitempty" xml:"airline_code,omitempty"`
 	// 出发时间
 	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
+	// 到达时间
+	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
 	// 出发城市
 	DepCityName string `json:"dep_city_name,omitempty" xml:"dep_city_name,omitempty"`
 	// 到达城市
@@ -46,8 +48,6 @@ type OpenTicketDo struct {
 	InsureStatus string `json:"insure_status,omitempty" xml:"insure_status,omitempty"`
 	// 乘机人(保险人)姓名
 	InsureName string `json:"insure_name,omitempty" xml:"insure_name,omitempty"`
-	// 到达时间
-	ArrTime string `json:"arr_time,omitempty" xml:"arr_time,omitempty"`
 	// 保险费（分）
 	InsuranceFee int64 `json:"insurance_fee,omitempty" xml:"insurance_fee,omitempty"`
 	// 燃油费（分）

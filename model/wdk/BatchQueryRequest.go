@@ -2,10 +2,10 @@ package wdk
 
 // BatchQueryRequest 结构体
 type BatchQueryRequest struct {
-	// 订单状态: PAID / PACKAGED / SUCCESS，非必填
-	OrderStatus []string `json:"order_status,omitempty" xml:"order_status>string,omitempty"`
 	// 店铺号列表，order_from=4时必填，其他非必填
 	StoreIds []string `json:"store_ids,omitempty" xml:"store_ids>string,omitempty"`
+	// 订单状态: PAID / PACKAGED / SUCCESS，非必填
+	OrderStatus []string `json:"order_status,omitempty" xml:"order_status>string,omitempty"`
 	// 下单终端: APP / POS，非必填
 	OrderClient string `json:"order_client,omitempty" xml:"order_client,omitempty"`
 	// 废弃字段

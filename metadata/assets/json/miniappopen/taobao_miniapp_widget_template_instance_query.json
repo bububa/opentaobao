@@ -1,0 +1,120 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "模版id"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "分页"
+				}
+			],
+			"name": "param0",
+			"type": "MiniAppInstantiateAppOpenQuery",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "实例id"
+								},
+								{
+									"name": "appkey",
+									"type": "String",
+									"description": "小部件appkey"
+								},
+								{
+									"name": "app_name",
+									"type": "String",
+									"description": "小部件名称"
+								}
+							],
+							"name": "mini_app_entity_template_dto",
+							"type": "MiniAppEntityTemplateDTO",
+							"description": "实体信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "version",
+									"type": "String",
+									"description": "实例版本"
+								},
+								{
+									"name": "client",
+									"type": "String",
+									"description": "端"
+								},
+								{
+									"name": "app_id",
+									"type": "String",
+									"description": "小部件id"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "版本状态"
+								},
+								{
+									"name": "template_id",
+									"type": "String",
+									"description": "模版id"
+								},
+								{
+									"name": "template_version",
+									"type": "String",
+									"description": "模版版本"
+								}
+							],
+							"name": "app_version_list",
+							"type": "MiniAppInstanceVersionDTO[]",
+							"description": "版本信息"
+						}
+					],
+					"name": "model",
+					"type": "MiniappInstanceAppAllVersionsDTO[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.miniapp.widget.template.instance.query",
+	"apiChineseName": "小部件实例化版本查询",
+	"description": "小部件实例化版本查询",
+	"id": 60388
+}

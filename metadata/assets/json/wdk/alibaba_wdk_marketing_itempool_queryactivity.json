@@ -1,14 +1,6 @@
 {
-	"id": 31785,
-	"name": "alibaba.wdk.marketing.itempool.queryactivity",
-	"apiChineseName": "查找商品池活动",
-	"description": "查找商品池活动",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "CommonActivityParam",
-			"description": "查询商品池活动入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -21,226 +13,200 @@
 					"type": "String",
 					"description": "商家活动id"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "CommonActivityParam",
+			"description": "查询商品池活动入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "查询返回结果",
 			"subParams": [
-				{
-					"name": "message",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "ItemPoolActivity",
-					"description": "返回的商品池活动信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "rule_stairs",
-							"type": "Rulestairs[]",
-							"description": "商品池活动的梯度列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "discount_rate",
-									"type": "Number",
-									"description": "打几折[单位为分，传入900，代表打9折]，discount为true时，必须设置",
-									"required": true
-								},
-								{
-									"name": "discount",
-									"type": "Boolean",
-									"description": "是否使用打折功能，不能与减钱功能同时使用，此选项为true时，decrease必须为false",
-									"required": true
-								},
-								{
-									"name": "decrease_money",
-									"type": "Number",
-									"description": "减多少元[单位为分，传入700，代表减7元]，decrease为true时，必须设置",
-									"required": true
-								},
-								{
-									"name": "decrease",
-									"type": "Boolean",
-									"description": "是否使用减钱功能，不能与打折功能同时使用，此选项为true时，discount必须为false",
-									"required": true
-								},
-								{
-									"name": "count",
-									"type": "Number",
-									"description": "满多少件或者第多少件开始参与活动[传入4，代表满4件打折或者第4件打折]。该值与countBegin和countAt相关，如果countBegin为true，则为N件Y折活动，如果countAt为true，则为满件活动",
-									"required": true
-								},
-								{
-									"name": "count_begin",
-									"type": "Boolean",
-									"description": "是否使用N件Y折，不能与满元、满件同时使用。此选项为true时，countAt和amountAt必须为false",
-									"required": true
-								},
-								{
-									"name": "count_at",
-									"type": "Boolean",
-									"description": "是否使用满件条件，不能与满元、N件Y折同时使用。此选项为true时，countBegin和amountAt必须为false",
-									"required": true
-								},
-								{
-									"name": "amount",
-									"type": "Number",
-									"description": "满多少元[单位为分，传入700，代表满7元]，amountAt为true时，必须设置",
-									"required": true
-								},
-								{
-									"name": "amount_at",
-									"type": "Boolean",
-									"description": "是否使用满元条件，不能与满件、N件Y折同时使用。此选项为true时，countAt和countBegin必须为false",
-									"required": true
-								},
-								{
-									"name": "enable_multiple",
-									"type": "Boolean",
-									"description": "活动是否上不封顶[只有满元活动可以使用上不封顶，且使用此功能时，只能有一个梯度]。如果活动设置为满10元减1元，传true代表满10元减1元，满20减2元，以此类推；传false代表满10元减1元，满20也减1元，以此类推",
-									"required": true
-								},
-								{
-									"name": "is_exchange",
-									"type": "Boolean",
-									"description": "是否为换购阶梯",
-									"required": true
-								},
-								{
-									"name": "can_extra_item_num",
-									"type": "Number",
-									"description": "如果为换购活动，则代表此阶梯可换购的商品数量",
-									"required": true
-								},
-								{
-									"name": "fix_price_amount",
-									"type": "Number",
-									"description": "一口价价格[单位为分]",
-									"required": true
-								},
-								{
-									"name": "fix_price",
-									"type": "Boolean",
-									"description": "一口价",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "limit_info",
-							"type": "LimitInfo",
-							"description": "通用限购信息，-1为不限制，默认为不限制",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_limit_cnt",
 									"type": "Number",
-									"description": "每人活动期间总限购",
-									"required": true
+									"description": "每人活动期间总限购"
 								},
 								{
 									"name": "user_daily_limit_cnt",
 									"type": "Number",
-									"description": "每人每日限购",
-									"required": true
+									"description": "每人每日限购"
 								},
 								{
 									"name": "daily_limit_cnt",
 									"type": "Number",
-									"description": "活动每日总限购",
-									"required": true
+									"description": "活动每日总限购"
 								}
-							]
+							],
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制"
+						},
+						{
+							"subParams": [
+								{
+									"name": "enable_multiple",
+									"type": "Boolean",
+									"description": "活动是否上不封顶[只有满元活动可以使用上不封顶，且使用此功能时，只能有一个梯度]。如果活动设置为满10元减1元，传true代表满10元减1元，满20减2元，以此类推；传false代表满10元减1元，满20也减1元，以此类推"
+								},
+								{
+									"name": "amount_at",
+									"type": "Boolean",
+									"description": "是否使用满元条件，不能与满件、N件Y折同时使用。此选项为true时，countAt和countBegin必须为false"
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "满多少元[单位为分，传入700，代表满7元]，amountAt为true时，必须设置"
+								},
+								{
+									"name": "count_at",
+									"type": "Boolean",
+									"description": "是否使用满件条件，不能与满元、N件Y折同时使用。此选项为true时，countBegin和amountAt必须为false"
+								},
+								{
+									"name": "count_begin",
+									"type": "Boolean",
+									"description": "是否使用N件Y折，不能与满元、满件同时使用。此选项为true时，countAt和amountAt必须为false"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "满多少件或者第多少件开始参与活动[传入4，代表满4件打折或者第4件打折]。该值与countBegin和countAt相关，如果countBegin为true，则为N件Y折活动，如果countAt为true，则为满件活动"
+								},
+								{
+									"name": "decrease_money",
+									"type": "Number",
+									"description": "减多少元[单位为分，传入700，代表减7元]，decrease为true时，必须设置"
+								},
+								{
+									"name": "decrease",
+									"type": "Boolean",
+									"description": "是否使用减钱功能，不能与打折功能同时使用，此选项为true时，discount必须为false"
+								},
+								{
+									"name": "discount",
+									"type": "Boolean",
+									"description": "是否使用打折功能，不能与减钱功能同时使用，此选项为true时，decrease必须为false"
+								},
+								{
+									"name": "discount_rate",
+									"type": "Number",
+									"description": "打几折[单位为分，传入900，代表打9折]，discount为true时，必须设置"
+								},
+								{
+									"name": "is_exchange",
+									"type": "Boolean",
+									"description": "是否为换购阶梯"
+								},
+								{
+									"name": "can_extra_item_num",
+									"type": "Number",
+									"description": "如果为换购活动，则代表此阶梯可换购的商品数量"
+								},
+								{
+									"name": "fix_price_amount",
+									"type": "Number",
+									"description": "一口价价格[单位为分]"
+								},
+								{
+									"name": "fix_price",
+									"type": "Boolean",
+									"description": "一口价"
+								}
+							],
+							"name": "rule_stairs",
+							"type": "Rulestairs[]",
+							"description": "商品池活动的梯度列表"
 						},
 						{
 							"name": "out_act_id",
 							"type": "String",
-							"description": "商家活动id",
-							"required": true
+							"description": "商家活动id"
 						},
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "报名活动Id",
-							"required": true
+							"description": "报名活动Id"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "活动描述",
-							"required": true
+							"description": "活动描述"
 						},
 						{
 							"name": "start_time",
 							"type": "Number",
-							"description": "startTime",
-							"required": true
+							"description": "startTime"
 						},
 						{
 							"name": "end_time",
 							"type": "Number",
-							"description": "endTime",
-							"required": true
+							"description": "endTime"
 						},
 						{
 							"name": "terminals",
 							"type": "Number[]",
-							"description": "优惠适用场景:APP|POS|POS+APP 分别对应的值为1|2|1,2",
-							"required": true
+							"description": "优惠适用场景:APP|POS|POS+APP 分别对应的值为1|2|1,2"
 						},
 						{
 							"name": "member_limit",
 							"type": "Number",
-							"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享",
-							"required": true
+							"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
 						},
 						{
 							"name": "shop_ids",
 							"type": "String[]",
-							"description": "shopIds",
-							"required": true
+							"description": "shopIds"
 						},
 						{
 							"name": "merchant_crowd_code",
 							"type": "String",
-							"description": "merchantCrowdCode",
-							"required": true
+							"description": "merchantCrowdCode"
 						},
 						{
 							"name": "txd_crowd_code",
 							"type": "String",
-							"description": "txdCrowdCode",
-							"required": true
+							"description": "txdCrowdCode"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemPoolActivity",
+					"description": "返回的商品池活动信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询商品是否成功",
-					"required": true
+					"description": "查询商品是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.queryactivity",
+	"apiChineseName": "查找商品池活动",
+	"description": "查找商品池活动",
+	"id": 31785
 }

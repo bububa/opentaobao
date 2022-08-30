@@ -1,13 +1,6 @@
 {
-	"id": 43913,
-	"name": "cainiao.refund.refundactions.judgement",
-	"apiChineseName": "判断当前用户是否能对订单执行一些逆向操作，比如退货操作",
-	"description": "判断当前用户是否能对订单执行一些逆向操作，比如退货操作",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OrderRefundOperationJudgementReq",
-			"description": "操作请求",
 			"subParams": [
 				{
 					"name": "refund_order_action_type",
@@ -21,78 +14,75 @@
 					"description": "订单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OrderRefundOperationJudgementReq",
+			"description": "操作请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BizResult",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "status_code",
 					"type": "String",
-					"description": "调用时错误码",
-					"required": true
+					"description": "调用时错误码"
 				},
 				{
-					"name": "data",
-					"type": "OrderRefundOperationResponse",
-					"description": "是否能对某一个订单进行退货退款操作的返回值",
-					"required": true,
 					"subParams": [
 						{
 							"name": "message",
 							"type": "String",
-							"description": "不能对某一个订单进行操作时的原因描述",
-							"required": true
+							"description": "不能对某一个订单进行操作时的原因描述"
 						},
 						{
 							"name": "operation_result_code",
 							"type": "String",
-							"description": "不能对某一个订单进行操作时的错误Code",
-							"required": true
+							"description": "不能对某一个订单进行操作时的错误Code"
 						},
 						{
 							"name": "can_operate",
 							"type": "Boolean",
-							"description": "是否能对某一个订单进行操作",
-							"required": true
+							"description": "是否能对某一个订单进行操作"
 						},
 						{
 							"name": "order_refund_action_type",
 							"type": "String",
-							"description": "退款退货操作的Code，由系统定义，目前支持的方式有：refundFeeOnly(仅退款)，refundFeeWithGoods(退货退款),swithGoods(换货)",
-							"required": true
+							"description": "退款退货操作的Code，由系统定义，目前支持的方式有：refundFeeOnly(仅退款)，refundFeeWithGoods(退货退款),swithGoods(换货)"
 						},
 						{
 							"name": "operation_user_id",
 							"type": "String",
-							"description": "操作的用户ID",
-							"required": true
+							"description": "操作的用户ID"
 						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						}
-					]
+					],
+					"name": "data",
+					"type": "OrderRefundOperationResponse",
+					"description": "是否能对某一个订单进行退货退款操作的返回值"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true表示成功，false表示失败",
-					"required": true
+					"description": "true表示成功，false表示失败"
 				},
 				{
 					"name": "status_message",
 					"type": "String",
-					"description": "调用时错误描述",
-					"required": true
+					"description": "调用时错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "cainiao.refund.refundactions.judgement",
+	"apiChineseName": "判断当前用户是否能对订单执行一些逆向操作，比如退货操作",
+	"description": "判断当前用户是否能对订单执行一些逆向操作，比如退货操作",
+	"id": 43913
 }

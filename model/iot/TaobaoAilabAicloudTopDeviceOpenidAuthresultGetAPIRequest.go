@@ -14,8 +14,6 @@ type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest struct {
 	model.Params
 	// authcode list
 	_authCodes []string
-	// 淘宝openid
-	_openId string
 	// 账户体系隔离
 	_schema string
 	// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
@@ -24,6 +22,8 @@ type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest struct {
 	_userId string
 	// 扩展信息，用于存放APP类型等
 	_ext string
+	// 淘宝openid
+	_openId string
 }
 
 // NewTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest 初始化TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest对象
@@ -58,19 +58,6 @@ func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) SetAuthCodes(
 // GetAuthCodes AuthCodes Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) GetAuthCodes() []string {
 	return r._authCodes
-}
-
-// SetOpenId is OpenId Setter
-// 淘宝openid
-func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) SetOpenId(_openId string) error {
-	r._openId = _openId
-	r.Set("open_id", _openId)
-	return nil
-}
-
-// GetOpenId OpenId Getter
-func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) GetOpenId() string {
-	return r._openId
 }
 
 // SetSchema is Schema Setter
@@ -123,4 +110,17 @@ func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) SetExt(_ext s
 // GetExt Ext Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) GetExt() string {
 	return r._ext
+}
+
+// SetOpenId is OpenId Setter
+// 淘宝openid
+func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) SetOpenId(_openId string) error {
+	r._openId = _openId
+	r.Set("open_id", _openId)
+	return nil
+}
+
+// GetOpenId OpenId Getter
+func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIRequest) GetOpenId() string {
+	return r._openId
 }

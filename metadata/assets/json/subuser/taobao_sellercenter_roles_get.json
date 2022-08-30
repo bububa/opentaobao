@@ -1,22 +1,15 @@
 {
-	"id": 10816,
-	"name": "taobao.sellercenter.roles.get",
-	"apiChineseName": "获取指定卖家的角色列表",
-	"description": "获取指定卖家的角色列表，只能获取属于登陆者自己的信息。",
 	"requestParams": [
 		{
 			"name": "nick",
 			"type": "String",
 			"description": "卖家昵称(只允许查询自己的信息：当前登陆者)",
-			"required": true,
-			"maxLength": 500
+			"maxLength": 500,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "roles",
-			"type": "Role []",
-			"description": "卖家子账号角色列表。\u003cbr/\u003e返回对象为 role数据对象中的role_id，role_name，description，seller_id，create_time，modified_time。不包含permissions(权限点)",
 			"subParams": [
 				{
 					"name": "role_id",
@@ -24,19 +17,14 @@
 					"description": "角色id"
 				},
 				{
-					"name": "role_name",
-					"type": "String",
-					"description": "角色名"
-				},
-				{
 					"name": "description",
 					"type": "String",
 					"description": "角色描述"
 				},
 				{
-					"name": "seller_id",
-					"type": "Number",
-					"description": "卖家Id"
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
 				},
 				{
 					"name": "create_time",
@@ -44,11 +32,23 @@
 					"description": "创建时间"
 				},
 				{
-					"name": "modified_time",
-					"type": "Date",
-					"description": "修改时间"
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家Id"
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "角色名"
 				}
-			]
+			],
+			"name": "roles",
+			"type": "Role []",
+			"description": "卖家子账号角色列表。\u003cbr/\u003e返回对象为 role数据对象中的role_id，role_name，description，seller_id，create_time，modified_time。不包含permissions(权限点)"
 		}
-	]
+	],
+	"name": "taobao.sellercenter.roles.get",
+	"apiChineseName": "获取指定卖家的角色列表",
+	"description": "获取指定卖家的角色列表，只能获取属于登陆者自己的信息。",
+	"id": 10816
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43417,
-	"name": "alibaba.alihealth.drug.kyt.dr.storageupload",
-	"apiChineseName": "疫苗存储温度上传",
-	"description": "疫苗存储温度上传",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -35,35 +31,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.storageupload",
+	"apiChineseName": "疫苗存储温度上传",
+	"description": "疫苗存储温度上传",
+	"id": 43417
 }

@@ -1,20 +1,16 @@
 {
-	"id": 10558,
-	"name": "taobao.simba.campaign.add",
-	"apiChineseName": "创建一个推广计划",
-	"description": "创建一个推广计划",
 	"requestParams": [
-		{
-			"name": "title",
-			"type": "String",
-			"description": "推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。",
-			"required": true,
-			"maxLength": 20
-		},
 		{
 			"name": "nick",
 			"type": "String",
 			"description": "主人昵称"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。",
+			"maxLength": 20,
+			"required": true
 		},
 		{
 			"name": "type",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign",
-			"type": "Campaign",
-			"description": "创建的推广计划",
 			"subParams": [
 				{
 					"name": "nick",
@@ -42,11 +35,6 @@
 					"name": "title",
 					"type": "String",
 					"description": "推广计划名称，不能多余20个汉字"
-				},
-				{
-					"name": "settle_status",
-					"type": "String",
-					"description": "推广计划结算状态，offline-下线；online-上线，"
 				},
 				{
 					"name": "settle_reason",
@@ -67,8 +55,20 @@
 					"name": "online_status",
 					"type": "String",
 					"description": "用户设置的上下限状态；offline-下线；online-上线；"
+				},
+				{
+					"name": "settle_status",
+					"type": "String",
+					"description": "推广计划结算状态，offline-下线；online-上线，"
 				}
-			]
+			],
+			"name": "campaign",
+			"type": "Campaign",
+			"description": "创建的推广计划"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.add",
+	"apiChineseName": "创建一个推广计划",
+	"description": "创建一个推广计划",
+	"id": 10558
 }

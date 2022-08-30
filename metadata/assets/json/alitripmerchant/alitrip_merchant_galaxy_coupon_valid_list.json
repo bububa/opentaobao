@@ -1,0 +1,139 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户Id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户Token"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "instance_id",
+									"type": "Number",
+									"description": "实例id"
+								},
+								{
+									"name": "discount_amount",
+									"type": "String",
+									"description": "折扣"
+								},
+								{
+									"name": "condition_amount",
+									"type": "String",
+									"description": "门槛"
+								},
+								{
+									"name": "detail_desc",
+									"type": "String",
+									"description": "描述"
+								},
+								{
+									"name": "coupon_name",
+									"type": "String",
+									"description": "优惠券名字"
+								},
+								{
+									"name": "expired_time_min",
+									"type": "String",
+									"description": "过期时间"
+								},
+								{
+									"name": "coupon_type",
+									"type": "String",
+									"description": "优惠券类型"
+								},
+								{
+									"name": "coupon_template_id",
+									"type": "Number",
+									"description": "模板id"
+								},
+								{
+									"name": "condition_desc",
+									"type": "String",
+									"description": "描述"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态"
+								}
+							],
+							"name": "coupon_info_v_o",
+							"type": "CouponInfoVO[]",
+							"description": "优惠券实例对象"
+						},
+						{
+							"name": "sign",
+							"type": "String",
+							"description": "加密串"
+						},
+						{
+							"name": "send_coupon_merchant",
+							"type": "String",
+							"description": "商户号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "stock_id",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "out_request_no",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "coupon_code",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "send_coupon_params",
+							"type": "SendCouponParams[]",
+							"description": "1"
+						}
+					],
+					"name": "content",
+					"type": "WeChatCouponVO",
+					"description": "优惠券实例"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.coupon.valid.list",
+	"apiChineseName": "用户有效优惠券列表",
+	"description": "雅高小程序用户有效优惠券列表",
+	"id": 57536
+}

@@ -1,14 +1,6 @@
 {
-	"id": 45842,
-	"name": "alibaba.alsc.crm.customer.resetppw",
-	"apiChineseName": "重置支付密码",
-	"description": "重置支付密码",
 	"requestParams": [
 		{
-			"name": "reset_pay_pwd_request",
-			"type": "ResetPayPasswdOpenReq",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -42,46 +34,49 @@
 					"type": "String",
 					"description": "外部品牌id"
 				}
-			]
+			],
+			"name": "reset_pay_pwd_request",
+			"type": "ResetPayPasswdOpenReq",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "调用结果",
-					"required": true
+					"description": "调用结果"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "重置支付密码是否成功",
-					"required": true
+					"description": "重置支付密码是否成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "错误码简介",
-					"required": true
+					"description": "错误码简介"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误码描述",
-					"required": true
+					"description": "错误码描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.customer.resetppw",
+	"apiChineseName": "重置支付密码",
+	"description": "重置支付密码",
+	"id": 45842
 }

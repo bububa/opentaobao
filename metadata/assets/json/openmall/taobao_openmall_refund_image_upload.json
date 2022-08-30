@@ -1,8 +1,4 @@
 {
-	"id": 53646,
-	"name": "taobao.openmall.refund.image.upload",
-	"apiChineseName": "OpenMall退款图片上传",
-	"description": "OpenMall退款图片上传",
 	"requestParams": [
 		{
 			"name": "image",
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "图片上传对应Token，用于提交留言接口"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.image.upload",
+	"apiChineseName": "OpenMall退款图片上传",
+	"description": "OpenMall退款图片上传",
+	"id": 53646
 }

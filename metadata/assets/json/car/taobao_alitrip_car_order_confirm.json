@@ -1,14 +1,6 @@
 {
-	"id": 25925,
-	"name": "taobao.alitrip.car.order.confirm",
-	"apiChineseName": "司机应答API",
-	"description": "航旅事业群-度假事业部-旅行用车项目组对外部服务商提供的司机应答回调接口",
 	"requestParams": [
 		{
-			"name": "param_order_confirm",
-			"type": "OrderConfirm",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "confirm_time",
@@ -45,8 +37,7 @@
 				{
 					"name": "driver_tel",
 					"type": "String",
-					"description": "司机联系方式。格式：加号+国家区号+空格+当地电话号码",
-					"required": true
+					"description": "司机联系方式。格式：加号+国家区号+空格+当地电话号码"
 				},
 				{
 					"name": "order_id",
@@ -119,8 +110,42 @@
 					"name": "sub_key",
 					"type": "String",
 					"description": "下游供应商唯一标识(高德专用)"
+				},
+				{
+					"name": "driver_car_color",
+					"type": "String",
+					"description": "车辆颜色"
+				},
+				{
+					"name": "car_brand",
+					"type": "String",
+					"description": "车品牌"
+				},
+				{
+					"name": "car_model",
+					"type": "String",
+					"description": "车型名称"
+				},
+				{
+					"name": "car_age",
+					"type": "String",
+					"description": "车龄"
+				},
+				{
+					"name": "deriver_gender",
+					"type": "String",
+					"description": "性别"
+				},
+				{
+					"name": "feature",
+					"type": "String[]",
+					"description": "打标能力集合 核酸检测KEY"
 				}
-			]
+			],
+			"name": "param_order_confirm",
+			"type": "OrderConfirm",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -139,5 +164,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.confirm",
+	"apiChineseName": "司机应答API",
+	"description": "航旅事业群-度假事业部-旅行用车项目组对外部服务商提供的司机应答回调接口",
+	"id": 25925
 }

@@ -1,18 +1,8 @@
 {
-	"id": 40201,
-	"name": "tmall.traceplatform.awdc.info.upload",
-	"apiChineseName": "AWDC提交溯源信息",
-	"description": "天猫溯源-AWDC-上传溯源信息",
 	"requestParams": [
 		{
-			"name": "trace_info",
-			"type": "AwdcInfo",
-			"description": "入参traceInfo",
 			"subParams": [
 				{
-					"name": "hrd",
-					"type": "AwdcHrd",
-					"description": "hrd info",
 					"subParams": [
 						{
 							"name": "ext_info",
@@ -38,7 +28,10 @@
 							"type": "String",
 							"description": "参数reportNo"
 						}
-					]
+					],
+					"name": "hrd",
+					"type": "AwdcHrd",
+					"description": "hrd info"
 				},
 				{
 					"name": "item_id",
@@ -46,9 +39,6 @@
 					"description": "货品ID"
 				},
 				{
-					"name": "ngtc",
-					"type": "AwdcNgtc",
-					"description": "ngtc info",
 					"subParams": [
 						{
 							"name": "in",
@@ -70,7 +60,10 @@
 							"type": "String",
 							"description": "参数reportNo"
 						}
-					]
+					],
+					"name": "ngtc",
+					"type": "AwdcNgtc",
+					"description": "ngtc info"
 				},
 				{
 					"name": "order_no",
@@ -83,9 +76,6 @@
 					"description": "商品ID"
 				},
 				{
-					"name": "shipment",
-					"type": "AwdcShipment",
-					"description": "shipment",
 					"subParams": [
 						{
 							"name": "arrival_city",
@@ -137,7 +127,10 @@
 							"type": "String",
 							"description": "押运公司"
 						}
-					]
+					],
+					"name": "shipment",
+					"type": "AwdcShipment",
+					"description": "shipment"
 				},
 				{
 					"name": "sub_order_no",
@@ -154,14 +147,14 @@
 					"type": "Date",
 					"description": "溯源码镭射时间"
 				}
-			]
+			],
+			"name": "trace_info",
+			"type": "AwdcInfo",
+			"description": "入参traceInfo"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
@@ -178,7 +171,14 @@
 					"type": "Boolean",
 					"description": "是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.awdc.info.upload",
+	"apiChineseName": "AWDC提交溯源信息",
+	"description": "天猫溯源-AWDC-上传溯源信息",
+	"id": 40201
 }

@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "template_type",
+					"type": "Number",
+					"description": "0--验证码 1--短信通知 2-- 推广短信 3--国际/港澳台消息",
+					"required": true
+				},
+				{
+					"name": "template_type_class",
+					"type": "String",
+					"description": "NORMAL -- 普通模板  DIGITAL--数字短信模板",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小"
+						},
+						{
+							"name": "file_suffix",
+							"type": "String",
+							"description": "文件后缀名"
+						},
+						{
+							"name": "file_contents",
+							"type": "String",
+							"description": "文件Base64转码后的字符串"
+						}
+					],
+					"name": "template_infos",
+					"type": "DigitalSmsTemplateContentDTO[]",
+					"description": "上传文件"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "使用场景说明",
+					"required": true
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "模板名称",
+					"required": true
+				},
+				{
+					"name": "template_content",
+					"type": "String",
+					"description": "模板内容，占位符用${}标识",
+					"required": true
+				}
+			],
+			"name": "sms_template_for_isv_request",
+			"type": "AddSmsTemplateForIsvRequest",
+			"description": "申请模板入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "模板CODE"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "失败原因"
+		}
+	],
+	"name": "taobao.jst.sms.template.create",
+	"apiChineseName": "淘宝短信模板创建",
+	"description": "聚石塔短信模板创建",
+	"id": 60274
+}

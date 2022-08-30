@@ -1,8 +1,4 @@
 {
-	"id": 21676,
-	"name": "taobao.simba.adgroupsbycampaignid.get",
-	"apiChineseName": "批量得到推广计划下的推广单元",
-	"description": "根据推广计划ID分页获取推广计划下的推广单元信息",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,23 +14,20 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码",
-			"required": true,
 			"maxValue": 200,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "页码，从1开始",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "adgroups",
-			"type": "ADGroupPage",
-			"description": "返回的推广组分页对象",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -55,10 +48,6 @@
 					"required": true
 				},
 				{
-					"name": "adgroup_list",
-					"type": "ADGroup[]",
-					"description": "商品对象列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "nick",
@@ -162,9 +151,20 @@
 							"description": "废弃",
 							"required": true
 						}
-					]
+					],
+					"name": "adgroup_list",
+					"type": "ADGroup[]",
+					"description": "商品对象列表",
+					"required": true
 				}
-			]
+			],
+			"name": "adgroups",
+			"type": "ADGroupPage",
+			"description": "返回的推广组分页对象"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroupsbycampaignid.get",
+	"apiChineseName": "批量得到推广计划下的推广单元",
+	"description": "根据推广计划ID分页获取推广计划下的推广单元信息",
+	"id": 21676
 }

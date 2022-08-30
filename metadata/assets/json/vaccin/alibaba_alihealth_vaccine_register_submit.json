@@ -1,0 +1,128 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "register_id",
+					"type": "String",
+					"description": "cdc侧的登记单id",
+					"required": true
+				},
+				{
+					"name": "province_code",
+					"type": "Number",
+					"description": "省编码",
+					"required": true
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "市编码",
+					"required": true
+				},
+				{
+					"name": "area_code",
+					"type": "Number",
+					"description": "区编码",
+					"required": true
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省中文名称",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "市中文名称",
+					"required": true
+				},
+				{
+					"name": "area_name",
+					"type": "String",
+					"description": "区中文名称",
+					"required": true
+				},
+				{
+					"name": "pov_id",
+					"type": "Number",
+					"description": "健康侧的povId",
+					"required": true
+				},
+				{
+					"name": "alipay_user_id",
+					"type": "String",
+					"description": "健康侧的用户支付宝id",
+					"required": true
+				},
+				{
+					"name": "vaccine_id",
+					"type": "String",
+					"description": "健康侧的疫苗id",
+					"required": true
+				},
+				{
+					"name": "vaccine_name",
+					"type": "Number",
+					"description": "cdc侧的疫苗名称",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "String",
+					"description": "登记时间，会校验格式"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "登记人联系电话",
+					"required": true
+				},
+				{
+					"name": "app_channel",
+					"type": "String",
+					"description": "预约渠道",
+					"required": true
+				}
+			],
+			"name": "top_request",
+			"type": "SubmitVcRegisterRequest",
+			"description": "无",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "是否回传成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误提示"
+				}
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.alihealth.vaccine.register.submit",
+	"apiChineseName": "cdc回传疫苗登记数据",
+	"description": "cdc回传疫苗登记信息",
+	"id": 58792
+}

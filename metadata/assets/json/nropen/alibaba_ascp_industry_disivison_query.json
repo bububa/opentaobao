@@ -1,8 +1,4 @@
 {
-	"id": 50091,
-	"name": "alibaba.ascp.industry.disivison.query",
-	"apiChineseName": "查询服务支持地区列表",
-	"description": "商家获取服务支持地区",
 	"requestParams": [
 		{
 			"name": "service_code",
@@ -13,55 +9,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "division_infos",
-					"type": "Divisioninfos[]",
-					"description": "区域信息了列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "division_id",
 							"type": "Number",
-							"description": "区域id",
-							"required": true
+							"description": "区域id"
 						},
 						{
 							"name": "feature",
 							"type": "String",
-							"description": "扩展字段JSON字符串",
-							"required": true
+							"description": "扩展字段JSON字符串"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "国家",
-							"required": true
+							"description": "国家"
 						},
 						{
 							"name": "province_name",
 							"type": "String",
-							"description": "省份",
-							"required": true
+							"description": "省份"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "城市",
-							"required": true
+							"description": "城市"
 						},
 						{
 							"name": "district_name",
 							"type": "String",
-							"description": "区县",
-							"required": true
+							"description": "区县"
 						}
-					]
+					],
+					"name": "division_infos",
+					"type": "Divisioninfos[]",
+					"description": "区域信息了列表"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.industry.disivison.query",
+	"apiChineseName": "查询服务支持地区列表",
+	"description": "商家获取服务支持地区",
+	"id": 50091
 }

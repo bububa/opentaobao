@@ -1,8 +1,4 @@
 {
-	"id": 40938,
-	"name": "alibaba.scbp.showcase.list",
-	"apiChineseName": "橱窗查询",
-	"description": "橱窗查询",
 	"requestParams": [
 		{
 			"name": "per_page_size",
@@ -17,41 +13,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Showcase []",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "橱窗id",
-					"required": true
+					"description": "橱窗id"
 				},
 				{
 					"name": "product_id",
 					"type": "Number",
-					"description": "产品id",
-					"required": true
+					"description": "产品id"
 				},
 				{
 					"name": "subject",
 					"type": "String",
-					"description": "产品描述",
-					"required": true
+					"description": "产品描述"
 				},
 				{
 					"name": "image_url",
 					"type": "String",
-					"description": "产品主图",
-					"required": true
+					"description": "产品主图"
 				},
 				{
 					"name": "valid",
 					"type": "Boolean",
-					"description": "valid",
-					"required": true
+					"description": "valid"
 				}
-			]
+			],
+			"name": "results",
+			"type": "Showcase []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.scbp.showcase.list",
+	"apiChineseName": "橱窗查询",
+	"description": "橱窗查询",
+	"id": 40938
 }

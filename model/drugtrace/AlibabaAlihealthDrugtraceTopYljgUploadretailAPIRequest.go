@@ -9,10 +9,10 @@ import (
 // AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest 零售单据上传接口 API请求
 // alibaba.alihealth.drugtrace.top.yljg.uploadretail
 //
-// 快易通多融零售上传接口
+// 医疗机构零售上传接口
 type AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest struct {
 	model.Params
-	// 20位追溯码（多个时用半角逗号分隔）
+	// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 	_traceCodes []string
 	// 单据编号（唯一）
 	_billCode string
@@ -44,7 +44,7 @@ type AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest struct {
 	_userAgent string
 	// 单据类型[321,零售出库][322,疫苗接种]
 	_billType int64
-	// 药品类型[2,特药，3,普药]
+	// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 	_physicType int64
 }
 
@@ -70,7 +70,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) GetApiParams() u
 }
 
 // SetTraceCodes is TraceCodes Setter
-// 20位追溯码（多个时用半角逗号分隔）
+// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
 	r.Set("trace_codes", _traceCodes)
@@ -278,7 +278,7 @@ func (r AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) GetBillType() in
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型[2,特药，3,普药]
+// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 func (r *AlibabaAlihealthDrugtraceTopYljgUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)

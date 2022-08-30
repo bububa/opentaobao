@@ -1,8 +1,4 @@
 {
-	"id": 37287,
-	"name": "taobao.lbs.message.upload",
-	"apiChineseName": "lbs数据采集",
-	"description": "lbs数据采集",
 	"requestParams": [
 		{
 			"name": "topic",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "subMsg"
 		}
-	]
+	],
+	"name": "taobao.lbs.message.upload",
+	"apiChineseName": "lbs数据采集",
+	"description": "lbs数据采集",
+	"id": 37287
 }

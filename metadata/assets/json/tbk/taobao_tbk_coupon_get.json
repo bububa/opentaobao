@@ -1,8 +1,4 @@
 {
-	"id": 31106,
-	"name": "taobao.tbk.coupon.get",
-	"apiChineseName": "淘宝客-公用-阿里妈妈推广券详情查询",
-	"description": "传入商品ID+券ID(券ID已知情况下)，或者传入me参数，均可查询阿里妈妈推广券详细信息。",
 	"requestParams": [
 		{
 			"name": "me",
@@ -11,7 +7,7 @@
 		},
 		{
 			"name": "item_id",
-			"type": "Number",
+			"type": "String",
 			"description": "商品ID"
 		},
 		{
@@ -22,65 +18,60 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "MapData",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "coupon_start_fee",
 					"type": "String",
-					"description": "优惠券门槛金额",
-					"required": true
+					"description": "优惠券门槛金额"
 				},
 				{
 					"name": "coupon_remain_count",
 					"type": "Number",
-					"description": "优惠券剩余量",
-					"required": true
+					"description": "优惠券剩余量"
 				},
 				{
 					"name": "coupon_total_count",
 					"type": "Number",
-					"description": "优惠券总量",
-					"required": true
+					"description": "优惠券总量"
 				},
 				{
 					"name": "coupon_end_time",
 					"type": "String",
-					"description": "优惠券结束时间",
-					"required": true
+					"description": "优惠券结束时间"
 				},
 				{
 					"name": "coupon_start_time",
 					"type": "String",
-					"description": "优惠券开始时间",
-					"required": true
+					"description": "优惠券开始时间"
 				},
 				{
 					"name": "coupon_amount",
 					"type": "String",
-					"description": "优惠券金额",
-					"required": true
+					"description": "优惠券金额"
 				},
 				{
 					"name": "coupon_src_scene",
 					"type": "Number",
-					"description": "券类型，1 表示全网公开券，4 表示妈妈渠道券",
-					"required": true
+					"description": "券类型，1 表示全网公开券，4 表示妈妈渠道券"
 				},
 				{
 					"name": "coupon_type",
 					"type": "Number",
-					"description": "券属性，0表示店铺券，1表示单品券",
-					"required": true
+					"description": "券属性，0表示店铺券，1表示单品券"
 				},
 				{
 					"name": "coupon_activity_id",
 					"type": "String",
-					"description": "券ID",
-					"required": true
+					"description": "券ID"
 				}
-			]
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "data"
 		}
-	]
+	],
+	"name": "taobao.tbk.coupon.get",
+	"apiChineseName": "淘宝客-公用-阿里妈妈推广券详情查询",
+	"description": "传入商品ID+券ID(券ID已知情况下)，或者传入me参数，均可查询阿里妈妈推广券详细信息。",
+	"id": 31106
 }

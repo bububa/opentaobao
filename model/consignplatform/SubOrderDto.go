@@ -4,10 +4,10 @@ package consignplatform
 type SubOrderDto struct {
 	// 外部子订单id
 	OuterOrderId string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
-	// 商品图片链接
-	PictureUrl string `json:"picture_url,omitempty" xml:"picture_url,omitempty"`
 	// 商品名称
 	GoodsName string `json:"goods_name,omitempty" xml:"goods_name,omitempty"`
+	// 商品图片链接
+	PictureUrl string `json:"picture_url,omitempty" xml:"picture_url,omitempty"`
 	// 商品id
 	GoodsId string `json:"goods_id,omitempty" xml:"goods_id,omitempty"`
 	// 商品数量

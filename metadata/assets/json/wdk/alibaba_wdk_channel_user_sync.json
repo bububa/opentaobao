@@ -1,14 +1,6 @@
 {
-	"id": 43568,
-	"name": "alibaba.wdk.channel.user.sync",
-	"apiChineseName": "会员同步",
-	"description": "会员同步",
 	"requestParams": [
 		{
-			"name": "user_sync_info",
-			"type": "UserSyncInfo",
-			"description": "会员信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "user_id",
@@ -52,28 +44,34 @@
 					"description": "操作类型 （create/update/delete）",
 					"required": true
 				}
-			]
+			],
+			"name": "user_sync_info",
+			"type": "UserSyncInfo",
+			"description": "会员信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "String",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回内容"
 		}
-	]
+	],
+	"name": "alibaba.wdk.channel.user.sync",
+	"apiChineseName": "会员同步",
+	"description": "会员同步",
+	"id": 43568
 }

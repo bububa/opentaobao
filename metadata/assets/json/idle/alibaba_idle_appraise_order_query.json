@@ -1,8 +1,4 @@
 {
-	"id": 50520,
-	"name": "alibaba.idle.appraise.order.query",
-	"apiChineseName": "闲鱼验货担保订单详情查询V1",
-	"description": "鉴定商调用该接口获取订单状态",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -13,265 +9,227 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
-					"name": "module",
-					"type": "AppraiseOrderInfoDto",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
-						{
-							"name": "app_key",
-							"type": "String",
-							"description": "服务商appkey",
-							"required": true
-						},
-						{
-							"name": "biz_order_id",
-							"type": "String",
-							"description": "订单号",
-							"required": true
-						},
-						{
-							"name": "buyer_address",
-							"type": "String",
-							"description": "买家收货地址。主状态\u003e=6，买家确认购买时填写",
-							"required": true
-						},
-						{
-							"name": "buyer_close_reason",
-							"type": "String",
-							"description": "买家关闭原因",
-							"required": true
-						},
-						{
-							"name": "channel",
-							"type": "String",
-							"description": "渠道",
-							"required": true
-						},
-						{
-							"name": "channel_data",
-							"type": "String",
-							"description": "预留 JSON 格式渠道业务数据",
-							"required": true
-						},
-						{
-							"name": "env",
-							"type": "String",
-							"description": "订单环境 'online'：线上环境；'pre'：测试环境",
-							"required": true
-						},
-						{
-							"name": "gmt_create",
-							"type": "String",
-							"description": "订单创建时间",
-							"required": true
-						},
-						{
-							"name": "order_status",
-							"type": "String",
-							"description": "订单主状态。(主状态,子状态,状态说明)示例如下： (\"1\", \"1\", \"买家拍下未付款\") (\"2\", \"1\", \"买家拍下已付款\") (\"3\", \"1\", \"卖家已发货\") 等。详情参考对接文档",
-							"required": true
-						},
-						{
-							"name": "seller_close_reason",
-							"type": "String",
-							"description": "卖家关闭原因",
-							"required": true
-						},
-						{
-							"name": "seller_phone",
-							"type": "String",
-							"description": "卖家手机号码。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值",
-							"required": true
-						},
-						{
-							"name": "seller_receipt_address",
-							"type": "String",
-							"description": "逆向流程卖家收货地址。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值",
-							"required": true
-						},
-						{
-							"name": "seller2ac_mail_no",
-							"type": "String",
-							"description": "卖家发货给验货中心的单号。主状态\u003e=3，卖家已发货时有值",
-							"required": true
-						},
-						{
-							"name": "seller_receipt_name",
-							"type": "String",
-							"description": "卖家收货姓名，逆向退货用。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值",
-							"required": true
-						},
 						{
 							"name": "ac2buyer_mail_no",
 							"type": "String",
-							"description": "鉴定商发货给买家的单号 主状态\u003e=7，验货中心已发货时填写",
-							"required": true
+							"description": "鉴定商发货给买家的单号 主状态\u003e=7，验货中心已发货时填写"
 						},
 						{
 							"name": "ac2seller_mail_no",
 							"type": "String",
-							"description": "逆向流程鉴定商发货给卖家的单号 逆向流程中，主状态\u003e=103卖家已发货后发起逆向时填写",
-							"required": true
+							"description": "逆向流程鉴定商发货给卖家的单号 逆向流程中，主状态\u003e=103卖家已发货后发起逆向时填写"
 						},
 						{
-							"name": "idle_appraise_scene",
+							"name": "app_key",
 							"type": "String",
-							"description": "鉴定场景：1表示新品鉴定，2表示旧品鉴定",
-							"required": true
-						},
-						{
-							"name": "spu_info",
-							"type": "String",
-							"description": "spu信息jsonStr",
-							"required": true
-						},
-						{
-							"name": "buyer_alipay_user_id",
-							"type": "String",
-							"description": "买家支付宝ID，用于卖家责任时赔付买家 逆向流程中，主状态105鉴定为赝品时填写",
-							"required": true
-						},
-						{
-							"name": "order_sub_status",
-							"type": "String",
-							"description": "订单子状态，说明见order_status",
-							"required": true
-						},
-						{
-							"name": "buyer_phone",
-							"type": "String",
-							"description": "买家手机号。主状态\u003e=6，买家确认购买时有值",
-							"required": true
-						},
-						{
-							"name": "buyer_receipt_name",
-							"type": "String",
-							"description": "买家收货姓名。主状态\u003e=6，买家确认购买时有值",
-							"required": true
-						},
-						{
-							"name": "compensation2buyer",
-							"type": "Number",
-							"description": "需付给买家的赔付金额，单位分。状态为：已付款后发货超时（101-1 101-2）、卖家取消订单（101-3 101-4）、鉴定为赝品（主状态105）时有值。",
-							"required": true
-						},
-						{
-							"name": "idle_appraise_checkpoints",
-							"type": "String",
-							"description": "二手卖家承诺验货项。数组，每条记录的keyId代表验货项id，比如1001可能代表内存。valueId和valueName分别代表验货项值的id和描述。keyId、valueId的取值参考对接文档",
-							"required": true
-						},
-						{
-							"name": "brand_id",
-							"type": "String",
-							"description": "品牌Id",
-							"required": true
-						},
-						{
-							"name": "spu_id",
-							"type": "String",
-							"description": "spuId",
-							"required": true
-						},
-						{
-							"name": "supplier_charge_fee_cent",
-							"type": "Number",
-							"description": "服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。",
-							"required": true
-						},
-						{
-							"name": "item_detail_info",
-							"type": "String",
-							"description": "商品详情页",
-							"required": true
-						},
-						{
-							"name": "buyer_country",
-							"type": "String",
-							"description": "买家村庄",
-							"required": true
-						},
-						{
-							"name": "buyer_area",
-							"type": "String",
-							"description": "买家区",
-							"required": true
-						},
-						{
-							"name": "buyer_city",
-							"type": "String",
-							"description": "买家城市",
-							"required": true
-						},
-						{
-							"name": "buyer_province",
-							"type": "String",
-							"description": "买家省份",
-							"required": true
-						},
-						{
-							"name": "seller_country",
-							"type": "String",
-							"description": "卖家村庄",
-							"required": true
-						},
-						{
-							"name": "seller_area",
-							"type": "String",
-							"description": "卖家区",
-							"required": true
-						},
-						{
-							"name": "seller_city",
-							"type": "String",
-							"description": "卖家城市",
-							"required": true
-						},
-						{
-							"name": "seller_province",
-							"type": "String",
-							"description": "卖家省份",
-							"required": true
+							"description": "服务商appkey"
 						},
 						{
 							"name": "appraise_from_new_publisher",
 							"type": "Boolean",
-							"description": "是否是经主发发布/编辑的验货宝商品",
-							"required": true
+							"description": "是否是经主发发布/编辑的验货宝商品"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "订单号"
+						},
+						{
+							"name": "brand_id",
+							"type": "String",
+							"description": "品牌Id"
+						},
+						{
+							"name": "buyer_address",
+							"type": "String",
+							"description": "买家收货地址。主状态\u003e=6，买家确认购买时填写"
+						},
+						{
+							"name": "buyer_alipay_user_id",
+							"type": "String",
+							"description": "买家支付宝ID，用于卖家责任时赔付买家 逆向流程中，主状态105鉴定为赝品时填写"
+						},
+						{
+							"name": "buyer_area",
+							"type": "String",
+							"description": "买家区"
+						},
+						{
+							"name": "buyer_city",
+							"type": "String",
+							"description": "买家城市"
+						},
+						{
+							"name": "buyer_close_reason",
+							"type": "String",
+							"description": "买家关闭原因"
+						},
+						{
+							"name": "buyer_country",
+							"type": "String",
+							"description": "买家村庄"
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "买家手机号。主状态\u003e=6，买家确认购买时有值"
+						},
+						{
+							"name": "buyer_province",
+							"type": "String",
+							"description": "买家省份"
+						},
+						{
+							"name": "buyer_receipt_name",
+							"type": "String",
+							"description": "买家收货姓名。主状态\u003e=6，买家确认购买时有值"
 						},
 						{
 							"name": "cate_agg_scene",
 							"type": "String",
-							"description": "类目聚合场景,如\"YHB_3C\"",
-							"required": true
+							"description": "类目聚合场景,如\"YHB_3C\""
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道"
+						},
+						{
+							"name": "channel_data",
+							"type": "String",
+							"description": "预留 JSON 格式渠道业务数据"
+						},
+						{
+							"name": "compensation2buyer",
+							"type": "Number",
+							"description": "需付给买家的赔付金额，单位分。状态为：已付款后发货超时（101-1 101-2）、卖家取消订单（101-3 101-4）、鉴定为赝品（主状态105）时有值。"
+						},
+						{
+							"name": "env",
+							"type": "String",
+							"description": "订单环境 'online'：线上环境；'pre'：测试环境"
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "idle_appraise_checkpoints",
+							"type": "String",
+							"description": "二手卖家承诺验货项。数组，每条记录的keyId代表验货项id，比如1001可能代表内存。valueId和valueName分别代表验货项值的id和描述。keyId、valueId的取值参考对接文档"
+						},
+						{
+							"name": "idle_appraise_scene",
+							"type": "String",
+							"description": "鉴定场景：1表示新品鉴定，2表示旧品鉴定"
+						},
+						{
+							"name": "item_detail_info",
+							"type": "String",
+							"description": "商品详情页"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单主状态。(主状态,子状态,状态说明)示例如下： (\"1\", \"1\", \"买家拍下未付款\") (\"2\", \"1\", \"买家拍下已付款\") (\"3\", \"1\", \"卖家已发货\") 等。详情参考对接文档"
+						},
+						{
+							"name": "order_sub_status",
+							"type": "String",
+							"description": "订单子状态，说明见order_status"
+						},
+						{
+							"name": "seller2ac_mail_no",
+							"type": "String",
+							"description": "卖家发货给验货中心的单号。主状态\u003e=3，卖家已发货时有值"
+						},
+						{
+							"name": "seller_area",
+							"type": "String",
+							"description": "卖家区"
+						},
+						{
+							"name": "seller_city",
+							"type": "String",
+							"description": "卖家城市"
+						},
+						{
+							"name": "seller_close_reason",
+							"type": "String",
+							"description": "卖家关闭原因"
+						},
+						{
+							"name": "seller_country",
+							"type": "String",
+							"description": "卖家村庄"
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家手机号码。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值"
+						},
+						{
+							"name": "seller_province",
+							"type": "String",
+							"description": "卖家省份"
+						},
+						{
+							"name": "seller_receipt_address",
+							"type": "String",
+							"description": "逆向流程卖家收货地址。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值"
+						},
+						{
+							"name": "seller_receipt_name",
+							"type": "String",
+							"description": "卖家收货姓名，逆向退货用。逆向流程中，主状态\u003e=102卖家已发货后发起逆向时有值"
+						},
+						{
+							"name": "spu_id",
+							"type": "String",
+							"description": "spuId"
+						},
+						{
+							"name": "spu_info",
+							"type": "String",
+							"description": "spu信息jsonStr"
+						},
+						{
+							"name": "supplier_charge_fee_cent",
+							"type": "Number",
+							"description": "服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。"
 						}
-					]
+					],
+					"name": "module",
+					"type": "AppraiseOrderInfoDto",
+					"description": "订单信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.appraise.order.query",
+	"apiChineseName": "闲鱼验货担保订单详情查询V1",
+	"description": "鉴定商调用该接口获取订单状态",
+	"id": 50520
 }

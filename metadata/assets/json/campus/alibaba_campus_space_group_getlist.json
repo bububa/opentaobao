@@ -1,14 +1,12 @@
 {
-	"id": 31922,
-	"name": "alibaba.campus.space.group.getlist",
-	"apiChineseName": "多条件查询空间分组信息",
-	"description": "多条件查询空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getList",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "查询条件封装",
 			"subParams": [
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				},
 				{
 					"name": "company_id",
 					"type": "Number",
@@ -19,18 +17,13 @@
 					"type": "Number",
 					"description": "园区ID",
 					"required": true
-				},
-				{
-					"name": "campus_code",
-					"type": "String",
-					"description": "\"\""
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "查询条件封装"
 		},
 		{
-			"name": "param1",
-			"type": "SpaceGroupQuery",
-			"description": "查询参数封装",
 			"subParams": [
 				{
 					"name": "limit",
@@ -98,266 +91,232 @@
 					"type": "String",
 					"description": "分组名称或者code"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "SpaceGroupQuery",
+			"description": "查询参数封装"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "SpaceGroup[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "building_name",
 							"type": "String",
-							"description": "buildingName",
-							"required": true
+							"description": "buildingName"
 						},
 						{
 							"name": "building_id",
 							"type": "Number",
-							"description": "buildingId",
-							"required": true
+							"description": "buildingId"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "big_type_name",
 							"type": "String",
-							"description": "空间分组大类别",
-							"required": true
+							"description": "空间分组大类别"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "空间分组类别",
-							"required": true
+							"description": "空间分组类别"
 						},
 						{
 							"name": "big_type_id",
 							"type": "Number",
-							"description": "空间分组大类别",
-							"required": true
+							"description": "空间分组大类别"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "typeName",
-							"required": true
+							"description": "typeName"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "campusName",
-							"required": true
+							"description": "campusName"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "空间分组类别",
-							"required": true
+							"description": "空间分组类别"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "campusId",
-							"required": true
+							"description": "campusId"
 						},
 						{
 							"name": "modifier",
 							"type": "String",
-							"description": "modifier",
-							"required": true
+							"description": "modifier"
 						},
 						{
 							"name": "creator",
 							"type": "String",
-							"description": "creator",
-							"required": true
+							"description": "creator"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "gmtModified",
-							"required": true
+							"description": "gmtModified"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "gmtCreate",
-							"required": true
+							"description": "gmtCreate"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "floorName",
-							"required": true
+							"description": "floorName"
 						},
 						{
 							"name": "floor_id",
 							"type": "Number",
-							"description": "floorId",
-							"required": true
+							"description": "floorId"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "description",
-							"required": true
+							"description": "description"
 						},
 						{
-							"name": "type_wrap",
-							"type": "PoiTypeWrap",
-							"description": "空间类型包装",
-							"required": true,
 							"subParams": [
 								{
 									"name": "is_delete",
 									"type": "Boolean",
-									"description": "isDelete",
-									"required": true
+									"description": "isDelete"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "description",
-									"required": true
+									"description": "description"
 								},
 								{
 									"name": "full_name",
 									"type": "String",
-									"description": "fullName",
-									"required": true
+									"description": "fullName"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "name",
-									"required": true
+									"description": "name"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "code",
-									"required": true
+									"description": "code"
 								},
 								{
 									"name": "second_type_name",
 									"type": "String",
-									"description": "secondTypeName",
-									"required": true
+									"description": "secondTypeName"
 								},
 								{
 									"name": "second_type_code",
 									"type": "String",
-									"description": "secondTypeCode",
-									"required": true
+									"description": "secondTypeCode"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								},
 								{
 									"name": "second_type_id",
 									"type": "Number",
-									"description": "secondTypeId",
-									"required": true
+									"description": "secondTypeId"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "gmtModified",
-									"required": true
+									"description": "gmtModified"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "gmtCreate",
-									"required": true
+									"description": "gmtCreate"
 								},
 								{
 									"name": "modifier",
 									"type": "String",
-									"description": "modifier",
-									"required": true
+									"description": "modifier"
 								},
 								{
 									"name": "creator",
 									"type": "String",
-									"description": "creator",
-									"required": true
+									"description": "creator"
 								}
-							]
+							],
+							"name": "type_wrap",
+							"type": "PoiTypeWrap",
+							"description": "空间类型包装"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "isDelete",
-							"required": true
+							"description": "isDelete"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "code",
-							"required": true
+							"description": "code"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "SpaceGroup[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.group.getlist",
+	"apiChineseName": "多条件查询空间分组信息",
+	"description": "多条件查询空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getList",
+	"id": 31922
 }

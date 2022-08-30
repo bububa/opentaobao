@@ -1,8 +1,4 @@
 {
-	"id": 10717,
-	"name": "taobao.ump.activity.update",
-	"apiChineseName": "修改活动信息",
-	"description": "修改营销活动",
 	"requestParams": [
 		{
 			"name": "act_id",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.ump.activity.update",
+	"apiChineseName": "修改活动信息",
+	"description": "修改营销活动",
+	"id": 10717
 }

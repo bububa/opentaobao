@@ -30,6 +30,12 @@ type ServiceReceiptInfo4IsvDto struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 工单附加信息
 	Extension string `json:"extension,omitempty" xml:"extension,omitempty"`
+	// 选定的门店ID
+	ChosenOuterStoreId string `json:"chosen_outer_store_id,omitempty" xml:"chosen_outer_store_id,omitempty"`
+	// DOOR2DOOR:上门服务，INSTORE:到店服务
+	ServiceType string `json:"service_type,omitempty" xml:"service_type,omitempty"`
+	// GUARANTEE:维修，INSTALL:安装
+	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 工单号
 	ReceiptId int64 `json:"receipt_id,omitempty" xml:"receipt_id,omitempty"`
 }

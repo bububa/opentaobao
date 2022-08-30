@@ -1,8 +1,4 @@
 {
-	"id": 38039,
-	"name": "alibaba.pictures.dengta.order.status.change",
-	"apiChineseName": "天下秀订单状态变更通知",
-	"description": "天下秀订单状态变更通知",
 	"requestParams": [
 		{
 			"name": "remark",
@@ -35,15 +31,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiGeneralResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "message",
-					"type": "ReturnMessage",
-					"description": "message",
-					"required": true,
 					"subParams": [
 						{
 							"name": "dev",
@@ -57,7 +46,11 @@
 							"description": "cust",
 							"required": true
 						}
-					]
+					],
+					"name": "message",
+					"type": "ReturnMessage",
+					"description": "message",
+					"required": true
 				},
 				{
 					"name": "trace_id",
@@ -77,7 +70,14 @@
 					"description": "code",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiGeneralResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.pictures.dengta.order.status.change",
+	"apiChineseName": "天下秀订单状态变更通知",
+	"description": "天下秀订单状态变更通知",
+	"id": 38039
 }

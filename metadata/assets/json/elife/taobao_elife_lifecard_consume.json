@@ -1,14 +1,6 @@
 {
-	"id": 26189,
-	"name": "taobao.elife.lifecard.consume",
-	"apiChineseName": "品牌惠卡券核销",
-	"description": "用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作",
 	"requestParams": [
 		{
-			"name": "consume_request",
-			"type": "ConsumeRequest",
-			"description": "交易请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "amount",
@@ -44,7 +36,11 @@
 					"type": "String",
 					"description": "小票信息"
 				}
-			]
+			],
+			"name": "consume_request",
+			"type": "ConsumeRequest",
+			"description": "交易请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -73,5 +69,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.elife.lifecard.consume",
+	"apiChineseName": "品牌惠卡券核销",
+	"description": "用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作",
+	"id": 26189
 }

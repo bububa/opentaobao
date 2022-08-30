@@ -1,16 +1,12 @@
 {
-	"id": 10481,
-	"name": "taobao.trade.amount.get",
-	"apiChineseName": "交易帐务查询",
-	"description": "卖家查询该笔交易的资金帐务相关的数据；\n1. 只供卖家使用，买家不可使用\n2. 可查询所有的状态的交易，但不同状态时交易的相关数据可能会有不同",
 	"requestParams": [
 		{
 			"name": "tid",
 			"type": "Number",
 			"description": "交易编号",
-			"required": true,
 			"maxValue": 9223372036854775807,
-			"minValue": -9223372036854775808
+			"minValue": -9223372036854775808,
+			"required": true
 		},
 		{
 			"name": "fields",
@@ -21,9 +17,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade_amount",
-			"type": "TradeAmount",
-			"description": "主订单的财务信息详情",
 			"subParams": [
 				{
 					"name": "tid",
@@ -76,9 +69,6 @@
 					"description": "交易佣金。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
-					"name": "promotion_details",
-					"type": "PromotionDetail[]",
-					"description": "主交易订单的系统级优惠详情",
 					"subParams": [
 						{
 							"name": "id",
@@ -100,12 +90,12 @@
 							"type": "String",
 							"description": "满就送商品时，所送商品的名称"
 						}
-					]
+					],
+					"name": "promotion_details",
+					"type": "PromotionDetail[]",
+					"description": "主交易订单的系统级优惠详情"
 				},
 				{
-					"name": "order_amounts",
-					"type": "OrderAmount[]",
-					"description": "子订单的帐务金额详情列表",
 					"subParams": [
 						{
 							"name": "oid",
@@ -172,7 +162,10 @@
 							"type": "String",
 							"description": "优惠分摊"
 						}
-					]
+					],
+					"name": "order_amounts",
+					"type": "OrderAmount[]",
+					"description": "子订单的帐务金额详情列表"
 				},
 				{
 					"name": "buyer_obtain_point_fee",
@@ -194,7 +187,14 @@
 					"type": "String",
 					"description": "快递代收款。精确到2位小数;单位:元。如:212.07，表示:212元7分"
 				}
-			]
+			],
+			"name": "trade_amount",
+			"type": "TradeAmount",
+			"description": "主订单的财务信息详情"
 		}
-	]
+	],
+	"name": "taobao.trade.amount.get",
+	"apiChineseName": "交易帐务查询",
+	"description": "卖家查询该笔交易的资金帐务相关的数据；\n1. 只供卖家使用，买家不可使用\n2. 可查询所有的状态的交易，但不同状态时交易的相关数据可能会有不同",
+	"id": 10481
 }

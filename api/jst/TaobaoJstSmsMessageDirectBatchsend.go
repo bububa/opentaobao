@@ -5,10 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/jst"
 )
 
-// TaobaoJstSmsMessageDirectBatchsend 聚石塔新短信发送接口
+// TaobaoJstSmsMessageDirectBatchsend OAID批量发送，支持明文手机号发送
 // taobao.jst.sms.message.direct.batchsend
 //
-// 聚石塔所见即所得的短信发送接口
+// OAID批量发送，支持明文手机号发送
 func TaobaoJstSmsMessageDirectBatchsend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageDirectBatchsendAPIRequest, session string) (*jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse, error) {
 	var resp jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -60,6 +60,8 @@ type AlibabaAlihealthNrTradeOrderGetAPIResponseModel struct {
 	RxType string `json:"rx_type,omitempty" xml:"rx_type,omitempty"`
 	// 高德、本地商户
 	OutStoreId string `json:"out_store_id,omitempty" xml:"out_store_id,omitempty"`
+	// 包含医保结算ID，就诊ID，统筹医保金额，医保个账金额，现金金额，就诊人员编号，退款结算ID（按照字段排列顺序）。支付成功后，退款成功之前有六个字段，退款成功之后该字符串变成七个字段
+	MiCheckParam string `json:"mi_check_param,omitempty" xml:"mi_check_param,omitempty"`
 	// 淘宝订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 订单状态：1-等待买家付款；2-等待商家接单；4-退款中；12-商家配送中；20-订单关闭；22-订单关闭；21-交易完成；

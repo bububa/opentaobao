@@ -36,6 +36,10 @@ type BaseInfo struct {
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
+	// 线下订单业务员id
+	OfflineYdId string `json:"offline_yd_id,omitempty" xml:"offline_yd_id,omitempty"`
+	// 线下订单业务员name
+	OfflineYdName string `json:"offline_yd_name,omitempty" xml:"offline_yd_name,omitempty"`
 	// 接收信息
 	ReceiverInfo *ReceiverInfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 折扣信息-优惠信息，（含优惠券-不包含买家红包）
@@ -54,4 +58,8 @@ type BaseInfo struct {
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 小店id
 	LeadsId int64 `json:"leads_id,omitempty" xml:"leads_id,omitempty"`
+	// 是否线下订单
+	OfflineOrder bool `json:"offline_order,omitempty" xml:"offline_order,omitempty"`
+	// 是否车销订单
+	OfflineCarOrder bool `json:"offline_car_order,omitempty" xml:"offline_car_order,omitempty"`
 }

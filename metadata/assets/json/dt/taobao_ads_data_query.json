@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "TaskDataImportSeqQry",
+			"description": "查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id"
+				},
+				{
+					"name": "record_type",
+					"type": "String",
+					"description": "LABEL/MINE/TRAIL"
+				},
+				{
+					"name": "data_type",
+					"type": "String",
+					"description": "导入时的数据来源"
+				},
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "文件名"
+				},
+				{
+					"name": "job_status",
+					"type": "String",
+					"description": "导入状态"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "导入时间"
+				}
+			],
+			"name": "ret_value",
+			"type": "ExternalTaskDataImportDto []",
+			"description": "导入数据信息"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0:成功/-1:失败"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "返回信息"
+		}
+	],
+	"name": "taobao.ads.data.query",
+	"apiChineseName": "导入数据查询",
+	"description": "导入数据查询",
+	"id": 60269
+}

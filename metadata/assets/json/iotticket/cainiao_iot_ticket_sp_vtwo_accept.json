@@ -1,13 +1,6 @@
 {
-	"id": 55883,
-	"name": "cainiao.iot.ticket.sp.vtwo.accept",
-	"apiChineseName": "IoT售后服务商确认接单",
-	"description": "IoT售后服务商确认接单",
 	"requestParams": [
 		{
-			"name": "accept_ticket_top_request",
-			"type": "AcceptTicketV2TopRequest",
-			"description": "受理接口请求参数",
 			"subParams": [
 				{
 					"name": "maintenance_mode_code",
@@ -80,6 +73,7 @@
 				},
 				{
 					"name": "feature",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -98,34 +92,38 @@
 					"type": "Number",
 					"description": "工单Id"
 				}
-			]
+			],
+			"name": "accept_ticket_top_request",
+			"type": "AcceptTicketV2TopRequest",
+			"description": "受理接口请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "异常描述",
-					"required": true
+					"description": "异常描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.sp.vtwo.accept",
+	"apiChineseName": "IoT售后服务商确认接单",
+	"description": "IoT售后服务商确认接单",
+	"id": 55883
 }

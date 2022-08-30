@@ -1,12 +1,6 @@
 {
-	"id": 29229,
-	"name": "taobao.qimen.transferorder.report",
-	"apiChineseName": "调拨单通知",
-	"description": "调拨单通知",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "transferOrderCode",
@@ -64,9 +58,6 @@
 					"description": "orderStatus"
 				},
 				{
-					"name": "items",
-					"type": "Items[]",
-					"description": "项目集",
 					"subParams": [
 						{
 							"name": "scItemCode",
@@ -93,15 +84,18 @@
 							"type": "String",
 							"description": "计划调拨数量"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Items[]",
+					"description": "项目集"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "flag",
@@ -121,7 +115,13 @@
 					"description": "响应信息,invalid appkey,string(100),,",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Struct"
 		}
-	]
+	],
+	"name": "taobao.qimen.transferorder.report",
+	"apiChineseName": "调拨单通知",
+	"description": "调拨单通知",
+	"id": 29229
 }

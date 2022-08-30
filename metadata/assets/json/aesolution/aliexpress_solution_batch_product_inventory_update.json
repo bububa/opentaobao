@@ -1,15 +1,6 @@
 {
-	"id": 45135,
-	"name": "aliexpress.solution.batch.product.inventory.update",
-	"apiChineseName": "aliexpress.solution.batch.product.inventory.update",
-	"description": "batch product inventory update API for oversea sellers. Sellers could update multiple skus among multiple products in a single call. Maximum 20 products could be updated at the same time and maximum 200 skus could be updated within one product.",
 	"requestParams": [
 		{
-			"name": "mutiple_product_update_list",
-			"type": "SynchronizeProductRequestDto[]",
-			"description": "The product list, in which the inventory needs to be updated. Maximum 20 products.",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "product_id",
@@ -18,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "multiple_sku_update_list",
-					"type": "SynchronizeSkuRequestDto[]",
-					"description": "The sku list, in which the inventory needs to be updated within the same product id. Maximum 200 skus.",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
@@ -35,9 +22,18 @@
 							"description": "inventory",
 							"required": true
 						}
-					]
+					],
+					"name": "multiple_sku_update_list",
+					"type": "SynchronizeSkuRequestDto[]",
+					"description": "The sku list, in which the inventory needs to be updated within the same product id. Maximum 200 skus.",
+					"required": true
 				}
-			]
+			],
+			"name": "mutiple_product_update_list",
+			"type": "SynchronizeProductRequestDto[]",
+			"description": "The product list, in which the inventory needs to be updated. Maximum 20 products.",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -57,9 +53,6 @@
 			"description": "Indicates the update result is successful or not. Only all the products in mutiple_product_update_list have been updated successfully will make the success to be true, otherwise false."
 		},
 		{
-			"name": "update_failed_list",
-			"type": "SynchronizeProductResponseDto []",
-			"description": "update failed list",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -79,12 +72,12 @@
 					"description": "product id",
 					"required": true
 				}
-			]
+			],
+			"name": "update_failed_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update failed list"
 		},
 		{
-			"name": "update_successful_list",
-			"type": "SynchronizeProductResponseDto []",
-			"description": "update succesful list",
 			"subParams": [
 				{
 					"name": "product_id",
@@ -92,7 +85,14 @@
 					"description": "product id",
 					"required": true
 				}
-			]
+			],
+			"name": "update_successful_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update succesful list"
 		}
-	]
+	],
+	"name": "aliexpress.solution.batch.product.inventory.update",
+	"apiChineseName": "aliexpress.solution.batch.product.inventory.update",
+	"description": "batch product inventory update API for oversea sellers. Sellers could update multiple skus among multiple products in a single call. Maximum 20 products could be updated at the same time and maximum 200 skus could be updated within one product.",
+	"id": 45135
 }

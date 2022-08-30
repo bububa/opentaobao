@@ -1,13 +1,6 @@
 {
-	"id": 55296,
-	"name": "alibaba.alihealth.examination.report.diagnose.tempmessage.receive",
-	"apiChineseName": "导医通报告解读临时消息接收",
-	"description": "导医通报告解读临时消息接收",
 	"requestParams": [
 		{
-			"name": "report_diagnose_im_message_request",
-			"type": "ReportDiagnoseImMessageRequest",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "message_media_url",
@@ -59,40 +52,43 @@
 					"type": "String",
 					"description": "顺序号"
 				}
-			]
+			],
+			"name": "report_diagnose_im_message_request",
+			"type": "ReportDiagnoseImMessageRequest",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错信信息",
-					"required": true
+					"description": "错信信息"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "调用返回",
-					"required": true
+					"description": "调用返回"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.tempmessage.receive",
+	"apiChineseName": "导医通报告解读临时消息接收",
+	"description": "导医通报告解读临时消息接收",
+	"id": 55296
 }

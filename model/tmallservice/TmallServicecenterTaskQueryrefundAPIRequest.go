@@ -13,7 +13,7 @@ import (
 type TmallServicecenterTaskQueryrefundAPIRequest struct {
 	model.Params
 	// 工单id列表
-	_workcardList []int64
+	_workcardList []string
 }
 
 // NewTmallServicecenterTaskQueryrefundRequest 初始化TmallServicecenterTaskQueryrefundAPIRequest对象
@@ -39,13 +39,13 @@ func (r TmallServicecenterTaskQueryrefundAPIRequest) GetApiParams() url.Values {
 
 // SetWorkcardList is WorkcardList Setter
 // 工单id列表
-func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardList []int64) error {
+func (r *TmallServicecenterTaskQueryrefundAPIRequest) SetWorkcardList(_workcardList []string) error {
 	r._workcardList = _workcardList
 	r.Set("workcard_list", _workcardList)
 	return nil
 }
 
 // GetWorkcardList WorkcardList Getter
-func (r TmallServicecenterTaskQueryrefundAPIRequest) GetWorkcardList() []int64 {
+func (r TmallServicecenterTaskQueryrefundAPIRequest) GetWorkcardList() []string {
 	return r._workcardList
 }

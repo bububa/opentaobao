@@ -1,0 +1,279 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "check_in",
+			"type": "Date",
+			"description": "入住日期",
+			"required": true
+		},
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "离店日期",
+			"required": true
+		},
+		{
+			"name": "shid",
+			"type": "Number",
+			"description": "酒店id",
+			"required": true
+		},
+		{
+			"name": "srid",
+			"type": "Number",
+			"description": "房型id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "rate_plan_id",
+			"type": "Number",
+			"description": "rpid",
+			"required": true
+		},
+		{
+			"name": "room_number",
+			"type": "Number",
+			"description": "房间数",
+			"required": true
+		},
+		{
+			"name": "rate_id",
+			"type": "Number",
+			"description": "rate_id"
+		},
+		{
+			"name": "total_fee",
+			"type": "Number",
+			"description": "总价"
+		},
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道"
+		},
+		{
+			"name": "number_of_adults_per_room",
+			"type": "String",
+			"description": "每间房入住人数"
+		},
+		{
+			"name": "invoke_scene",
+			"type": "String",
+			"description": "NORMAL-正常场景，SPECIAL-特殊场景"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "latest_check_out_time",
+									"type": "String",
+									"description": "最晚到店时间"
+								},
+								{
+									"name": "max_booking_num",
+									"type": "Number",
+									"description": "最大订购数量"
+								},
+								{
+									"name": "max_occupancy_num",
+									"type": "Number",
+									"description": "每间房最大可入住人数"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "date",
+													"type": "String",
+													"description": "日期"
+												},
+												{
+													"subParams": [
+														{
+															"name": "board_type",
+															"type": "Number",
+															"description": "餐食类型"
+														},
+														{
+															"name": "board_num",
+															"type": "Number",
+															"description": "餐食份数"
+														}
+													],
+													"name": "board",
+													"type": "Board",
+													"description": "餐食"
+												},
+												{
+													"name": "cny_price",
+													"type": "Number",
+													"description": "房间价格（人民币元）"
+												},
+												{
+													"name": "price",
+													"type": "Number",
+													"description": "原币种金额"
+												}
+											],
+											"name": "daily_price_info_list",
+											"type": "DailyPriceInfoDto[]",
+											"description": "房间价格"
+										}
+									],
+									"name": "rate_unit_list",
+									"type": "RateUnitDto[]",
+									"description": "每间房rate信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cancel_policy_type",
+											"type": "Number",
+											"description": "取消政策类型"
+										},
+										{
+											"subParams": [
+												{
+													"name": "hour",
+													"type": "Number",
+													"description": "提前小时"
+												},
+												{
+													"name": "value",
+													"type": "Number",
+													"description": "规则对应的值，可能是百分比、数值等"
+												}
+											],
+											"name": "policy_info_list",
+											"type": "CancelPolicyInfoDto[]",
+											"description": "详细规则"
+										}
+									],
+									"name": "cancel_policy",
+									"type": "CancelPolicyDto",
+									"description": "取消政策"
+								},
+								{
+									"name": "total_room_price",
+									"type": "String",
+									"description": "总房价"
+								},
+								{
+									"name": "bed_type_desc",
+									"type": "String",
+									"description": "床型描述"
+								},
+								{
+									"name": "earliest_check_in_time",
+									"type": "String",
+									"description": "最早可以办理入住时间"
+								},
+								{
+									"name": "max_inventory",
+									"type": "Number",
+									"description": "最大库存量"
+								},
+								{
+									"name": "instant_confirm",
+									"type": "Boolean",
+									"description": "是否即时确认"
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "币种"
+								},
+								{
+									"name": "cny_total_price",
+									"type": "Number",
+									"description": "人民币总金额"
+								},
+								{
+									"name": "exchange_rate",
+									"type": "BigDecimal",
+									"description": "汇率"
+								}
+							],
+							"name": "rate_plan_info",
+							"type": "RatePlanInfoApiDto",
+							"description": "售卖政策"
+						},
+						{
+							"name": "rate_plan_id",
+							"type": "Number",
+							"description": "售卖政策id"
+						},
+						{
+							"name": "create_key",
+							"type": "String",
+							"description": "创建订单需要的key"
+						},
+						{
+							"name": "promotion_total_price",
+							"type": "Number",
+							"description": "优惠总金额，单位为分"
+						},
+						{
+							"name": "commission_fee_rate",
+							"type": "String",
+							"description": "后返佣金费率"
+						},
+						{
+							"name": "resource_tag",
+							"type": "String",
+							"description": "资源标签"
+						},
+						{
+							"name": "distribute_mode",
+							"type": "String",
+							"description": "分销模式 FP-底价模式 SP-卖家模式"
+						}
+					],
+					"name": "data",
+					"type": "HotelOrderValidateRes",
+					"description": "返回参数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "出参"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.order.validate",
+	"apiChineseName": "阿信酒店订单数据校验",
+	"description": "阿信酒店订单下单前的数据校验，包括酒店、房型、售卖政策、入离日期等参数的校验",
+	"id": 56913
+}

@@ -1,8 +1,4 @@
 {
-	"id": 37271,
-	"name": "youku.ott.pay.order.queryorder",
-	"apiChineseName": "查询订单",
-	"description": "通过订单号查询订单信息",
 	"requestParams": [
 		{
 			"name": "order_no",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvOrderQueryResultDTO",
-			"description": "status",
 			"subParams": [
 				{
 					"name": "cp_order_no",
 					"type": "String",
-					"description": "cpOrderNo",
-					"required": true
+					"description": "cpOrderNo"
 				},
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "orderNo",
-					"required": true
+					"description": "orderNo"
 				},
 				{
 					"name": "price",
 					"type": "String",
-					"description": "price",
-					"required": true
+					"description": "price"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "status",
-					"required": true
+					"description": "status"
 				},
 				{
 					"name": "status_desc",
 					"type": "String",
-					"description": "statusDesc",
-					"required": true
+					"description": "statusDesc"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvOrderQueryResultDTO",
+			"description": "status"
 		}
-	]
+	],
+	"name": "youku.ott.pay.order.queryorder",
+	"apiChineseName": "查询订单",
+	"description": "通过订单号查询订单信息",
+	"id": 37271
 }

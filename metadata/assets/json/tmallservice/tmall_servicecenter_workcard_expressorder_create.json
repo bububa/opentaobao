@@ -1,15 +1,11 @@
 {
-	"id": 51611,
-	"name": "tmall.servicecenter.workcard.expressorder.create",
-	"apiChineseName": "物流订单创建API",
-	"description": "天猫服务寄送类业务，服务商履约完成后寄回操作时，提供的物流寄件单创建API",
 	"requestParams": [
 		{
 			"name": "workcard_id_list",
 			"type": "Number[]",
 			"description": "物流单关联的工单List",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "real_tp_nick",
@@ -24,73 +20,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "创建结果",
 			"subParams": [
 				{
-					"name": "msg_info",
-					"type": "String",
-					"description": "错误描述",
-					"required": true
-				},
-				{
-					"name": "msg_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "true 成功  false  失败",
-					"required": true
-				},
-				{
-					"name": "result_data",
-					"type": "ExpressDto",
-					"description": "返回信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "express_order_id",
 							"type": "String",
-							"description": "寄件单号（废弃）",
-							"required": true
+							"description": "寄件单号（废弃）"
 						},
 						{
 							"name": "mail_no",
 							"type": "String",
-							"description": "快递单号",
-							"required": true
+							"description": "快递单号"
 						},
 						{
 							"name": "company_name",
 							"type": "String",
-							"description": "物流服务商账号名称",
-							"required": true
+							"description": "物流服务商账号名称"
 						},
 						{
 							"name": "print_info",
 							"type": "String",
-							"description": "打印免单信息",
-							"required": true
+							"description": "打印免单信息"
 						},
 						{
 							"name": "logistics_order_id",
 							"type": "Number",
-							"description": "物流订单号",
-							"required": true
+							"description": "物流订单号"
 						},
 						{
 							"name": "logistics_tp_id",
 							"type": "Number",
-							"description": "物流商账号ID（（ERP服务商依据不同的账号ID，走不同的物流系统对接方式））",
-							"required": true
+							"description": "物流商账号ID（（ERP服务商依据不同的账号ID，走不同的物流系统对接方式））"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "ExpressDto",
+					"description": "返回信息"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 成功  false  失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "创建结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.expressorder.create",
+	"apiChineseName": "物流订单创建API",
+	"description": "天猫服务寄送类业务，服务商履约完成后寄回操作时，提供的物流寄件单创建API",
+	"id": 51611
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29306,
-	"name": "cainiao.smartdelivery.strategy.warehouse.i.delete",
-	"apiChineseName": "删除智能发货引擎仓策略",
-	"description": "删除智能发货引擎仓策略",
 	"requestParams": [
 		{
 			"name": "warehouse_id",
@@ -16,5 +12,9 @@
 			"type": "Boolean",
 			"description": "data"
 		}
-	]
+	],
+	"name": "cainiao.smartdelivery.strategy.warehouse.i.delete",
+	"apiChineseName": "删除智能发货引擎仓策略",
+	"description": "删除智能发货引擎仓策略",
+	"id": 29306
 }

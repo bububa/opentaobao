@@ -14,6 +14,8 @@ type TaobaoXhotelOrderUpdateAPIRequest struct {
 	model.Params
 	// 是否把代理直签的订单同步到酒店，Y为同步，N不同步
 	_syncToHotel string
+	// 外部订单号（酒店确认号）
+	_confirmCode string
 	// 订单号
 	_tid int64
 	// 操作的类型：1.确认无房（取消预订，710发送短信提醒买家申请退款）2.确认预订 3.入住 4.离店 5.noshow 6.关单
@@ -58,6 +60,19 @@ func (r *TaobaoXhotelOrderUpdateAPIRequest) SetSyncToHotel(_syncToHotel string) 
 // GetSyncToHotel SyncToHotel Getter
 func (r TaobaoXhotelOrderUpdateAPIRequest) GetSyncToHotel() string {
 	return r._syncToHotel
+}
+
+// SetConfirmCode is ConfirmCode Setter
+// 外部订单号（酒店确认号）
+func (r *TaobaoXhotelOrderUpdateAPIRequest) SetConfirmCode(_confirmCode string) error {
+	r._confirmCode = _confirmCode
+	r.Set("confirm_code", _confirmCode)
+	return nil
+}
+
+// GetConfirmCode ConfirmCode Getter
+func (r TaobaoXhotelOrderUpdateAPIRequest) GetConfirmCode() string {
+	return r._confirmCode
 }
 
 // SetTid is Tid Setter

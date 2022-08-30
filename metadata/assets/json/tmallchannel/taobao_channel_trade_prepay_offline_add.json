@@ -1,14 +1,6 @@
 {
-	"id": 40706,
-	"name": "taobao.channel.trade.prepay.offline.add",
-	"apiChineseName": "渠道分销供应商上传线下流水预存款（增加）",
-	"description": "渠道分销供应商上传线下流水预存款（增加）",
 	"requestParams": [
 		{
-			"name": "offline_add_prepay_param",
-			"type": "TopOfflineAddPrepayDto",
-			"description": "增加流水",
-			"required": true,
 			"subParams": [
 				{
 					"name": "flow_type",
@@ -90,22 +82,29 @@
 					"type": "String",
 					"description": "付款行全称"
 				}
-			]
+			],
+			"name": "offline_add_prepay_param",
+			"type": "TopOfflineAddPrepayDto",
+			"description": "增加流水",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultTopDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultTopDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.channel.trade.prepay.offline.add",
+	"apiChineseName": "渠道分销供应商上传线下流水预存款（增加）",
+	"description": "渠道分销供应商上传线下流水预存款（增加）",
+	"id": 40706
 }

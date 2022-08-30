@@ -24,12 +24,12 @@ type TaobaoInventoryStoreManageAPIRequest struct {
 	_aliasName string
 	// 仓库的物理地址，可更新
 	_address string
-	// 仓库区域名，可更新
-	_addressAreaName string
 	// 联系人，可更新
 	_contact string
 	// 联系电话，可更新
 	_phone string
+	// 仓库区域名，可更新
+	_addressAreaName string
 	// 邮编，可更新
 	_postcode int64
 }
@@ -133,19 +133,6 @@ func (r TaobaoInventoryStoreManageAPIRequest) GetAddress() string {
 	return r._address
 }
 
-// SetAddressAreaName is AddressAreaName Setter
-// 仓库区域名，可更新
-func (r *TaobaoInventoryStoreManageAPIRequest) SetAddressAreaName(_addressAreaName string) error {
-	r._addressAreaName = _addressAreaName
-	r.Set("address_area_name", _addressAreaName)
-	return nil
-}
-
-// GetAddressAreaName AddressAreaName Getter
-func (r TaobaoInventoryStoreManageAPIRequest) GetAddressAreaName() string {
-	return r._addressAreaName
-}
-
 // SetContact is Contact Setter
 // 联系人，可更新
 func (r *TaobaoInventoryStoreManageAPIRequest) SetContact(_contact string) error {
@@ -170,6 +157,19 @@ func (r *TaobaoInventoryStoreManageAPIRequest) SetPhone(_phone string) error {
 // GetPhone Phone Getter
 func (r TaobaoInventoryStoreManageAPIRequest) GetPhone() string {
 	return r._phone
+}
+
+// SetAddressAreaName is AddressAreaName Setter
+// 仓库区域名，可更新
+func (r *TaobaoInventoryStoreManageAPIRequest) SetAddressAreaName(_addressAreaName string) error {
+	r._addressAreaName = _addressAreaName
+	r.Set("address_area_name", _addressAreaName)
+	return nil
+}
+
+// GetAddressAreaName AddressAreaName Getter
+func (r TaobaoInventoryStoreManageAPIRequest) GetAddressAreaName() string {
+	return r._addressAreaName
 }
 
 // SetPostcode is Postcode Setter

@@ -1,8 +1,4 @@
 {
-	"id": 24993,
-	"name": "taobao.simba.rpt.targetingtagbase.get",
-	"apiChineseName": "定向基础报表",
-	"description": "获取定向基础报表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -44,9 +40,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "RptBaseEntityDTO []",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "thedate",
@@ -108,7 +101,14 @@
 					"type": "String",
 					"description": "人群id"
 				}
-			]
+			],
+			"name": "results",
+			"type": "RptBaseEntityDTO []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.targetingtagbase.get",
+	"apiChineseName": "定向基础报表",
+	"description": "获取定向基础报表",
+	"id": 24993
 }

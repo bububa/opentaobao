@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "enum_class_name",
+			"type": "String",
+			"description": "枚举名"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "enum_name",
+							"type": "String",
+							"description": "枚举值名称"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "枚举代码"
+						},
+						{
+							"name": "order",
+							"type": "Number",
+							"description": "排序"
+						},
+						{
+							"name": "other",
+							"type": "String",
+							"description": "其他备注"
+						}
+					],
+					"name": "content",
+					"type": "EnumVO[]",
+					"description": "枚举"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "携带优惠券试单结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.common.get.enumsbyname",
+	"apiChineseName": "小程序公共枚举类获取接口",
+	"description": "通过枚举名称获取枚举类实例内容",
+	"id": 62224
+}

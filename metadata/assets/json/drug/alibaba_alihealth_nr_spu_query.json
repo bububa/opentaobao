@@ -1,13 +1,6 @@
 {
-	"id": 48557,
-	"name": "alibaba.alihealth.nr.spu.query",
-	"apiChineseName": "获取标品库标品信息",
-	"description": "提供给ERP使用的，获取健康标品库信息",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "TopAlihealthSpuQuery",
-			"description": "标品查询条件",
 			"subParams": [
 				{
 					"name": "barcode",
@@ -69,220 +62,196 @@
 					"type": "Number",
 					"description": "药品SPUID"
 				}
-			]
+			],
+			"name": "query",
+			"type": "TopAlihealthSpuQuery",
+			"description": "标品查询条件"
 		},
 		{
-			"name": "options",
-			"type": "TopAlihealthSpuQueryOptions",
-			"description": "查询选择器",
 			"subParams": [
 				{
 					"name": "include_instruction",
 					"type": "Boolean",
 					"description": "查询选择器，是否查询说明书信息"
 				}
-			]
+			],
+			"name": "options",
+			"type": "TopAlihealthSpuQueryOptions",
+			"description": "查询选择器"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResponseResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "result",
-					"type": "PageResponse",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页码",
-							"required": true
+							"description": "当前页码"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
-							"name": "spus",
-							"type": "TopAlihealthSpuQuery[]",
-							"description": "结果列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "open_id",
 									"type": "Number",
-									"description": "开放id",
-									"required": true
+									"description": "开放id"
 								},
 								{
 									"name": "barcode",
 									"type": "String",
-									"description": "69码",
-									"required": true
+									"description": "69码"
 								},
 								{
 									"name": "approval_number",
 									"type": "String",
-									"description": "国药准字",
-									"required": true
+									"description": "国药准字"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "通用名称",
-									"required": true
+									"description": "通用名称"
 								},
 								{
 									"name": "product_title",
 									"type": "String",
-									"description": "spu标题",
-									"required": true
+									"description": "spu标题"
 								},
 								{
 									"name": "title_alias",
 									"type": "String",
-									"description": "别名，也就是商品名称",
-									"required": true
+									"description": "别名，也就是商品名称"
 								},
 								{
 									"name": "specification",
 									"type": "String",
-									"description": "规格",
-									"required": true
+									"description": "规格"
 								},
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "manufacturer",
 									"type": "String",
-									"description": "生产厂商",
-									"required": true
+									"description": "生产厂商"
 								},
 								{
-									"name": "alihealth_drug_instruction_d_t_o",
-									"type": "TopAlihealthDrugInstructionDto",
-									"description": "药物说明书信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "purpose",
 											"type": "String",
-											"description": "功能主治",
-											"required": true
+											"description": "功能主治"
 										},
 										{
 											"name": "taboo",
 											"type": "String",
-											"description": "禁忌",
-											"required": true
+											"description": "禁忌"
 										},
 										{
 											"name": "notes",
 											"type": "String",
-											"description": "注意事项",
-											"required": true
+											"description": "注意事项"
 										},
 										{
 											"name": "child_reminder",
 											"type": "String",
-											"description": "儿童提醒",
-											"required": true
+											"description": "儿童提醒"
 										},
 										{
 											"name": "gravida_reminder",
 											"type": "String",
-											"description": "孕妇提醒",
-											"required": true
+											"description": "孕妇提醒"
 										},
 										{
 											"name": "old_man_reminder",
 											"type": "String",
-											"description": "老人提醒",
-											"required": true
+											"description": "老人提醒"
 										},
 										{
 											"name": "adr",
 											"type": "String",
-											"description": "不良反应",
-											"required": true
+											"description": "不良反应"
 										},
 										{
 											"name": "ingredient",
 											"type": "String",
-											"description": "药物成分",
-											"required": true
+											"description": "药物成分"
 										},
 										{
 											"name": "traits",
 											"type": "String",
-											"description": "药品性状",
-											"required": true
+											"description": "药品性状"
 										},
 										{
 											"name": "interaction",
 											"type": "String",
-											"description": "药物相互作用",
-											"required": true
+											"description": "药物相互作用"
 										},
 										{
 											"name": "pharmacological_effects",
 											"type": "String",
-											"description": "药理作用",
-											"required": true
+											"description": "药理作用"
 										},
 										{
 											"name": "dosage",
 											"type": "String",
-											"description": "用法用量",
-											"required": true
+											"description": "用法用量"
 										}
-									]
+									],
+									"name": "alihealth_drug_instruction_d_t_o",
+									"type": "TopAlihealthDrugInstructionDto",
+									"description": "药物说明书信息"
 								},
 								{
 									"name": "spu_id",
 									"type": "Number",
-									"description": "药品SPUid",
-									"required": true
+									"description": "药品SPUid"
 								}
-							]
+							],
+							"name": "spus",
+							"type": "TopAlihealthSpuQuery[]",
+							"description": "结果列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "PageResponse",
+					"description": "结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResponseResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.nr.spu.query",
+	"apiChineseName": "获取标品库标品信息",
+	"description": "提供给ERP使用的，获取健康标品库信息",
+	"id": 48557
 }

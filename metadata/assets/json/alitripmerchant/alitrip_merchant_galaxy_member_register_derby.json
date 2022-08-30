@@ -1,0 +1,146 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"subParams": [
+				{
+					"name": "country",
+					"type": "String",
+					"description": "城市"
+				},
+				{
+					"name": "last_name",
+					"type": "String",
+					"description": "用户名"
+				},
+				{
+					"name": "first_name",
+					"type": "String",
+					"description": "用户姓"
+				},
+				{
+					"name": "civility",
+					"type": "String",
+					"description": "称呼"
+				},
+				{
+					"name": "phone_pre",
+					"type": "String",
+					"description": "手机号前缀"
+				},
+				{
+					"name": "phone_num",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言(枚举：Language)"
+				},
+				{
+					"name": "accepted_tand_c",
+					"type": "Boolean",
+					"description": "是否接受协议"
+				},
+				{
+					"name": "subscription",
+					"type": "Boolean",
+					"description": "是否接受广告通知"
+				},
+				{
+					"name": "user_register_type",
+					"type": "String",
+					"description": "用户注册类型（1.新用户注册  2.老用户注册）"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "optin_all",
+					"type": "Boolean",
+					"description": "用户是否勾选短信收取优惠邮件"
+				},
+				{
+					"name": "data_export_agreement",
+					"type": "Boolean",
+					"description": "是否统一向境外提供个人信息"
+				}
+			],
+			"name": "member_param",
+			"type": "MemberParam",
+			"description": "用户注册信息"
+		},
+		{
+			"name": "scene_source",
+			"type": "String",
+			"description": "场景来源，记录什么场景调用什么接口"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "pop_up_verification",
+							"type": "Boolean",
+							"description": "是否需要弹验证码弹框"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "在雅高官网注册时的手机号"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "在雅高官网注册时的邮箱"
+						},
+						{
+							"name": "register_status",
+							"type": "Boolean",
+							"description": "注册状态"
+						}
+					],
+					"name": "content",
+					"type": "RegisterProgressVO",
+					"description": "试单结果"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "携带优惠券试单结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.member.register.derby",
+	"apiChineseName": "会员注册(新版注册接口对接德比)",
+	"description": "会员注册(新版注册接口对接德比)，返回手机号/邮箱/注册状态",
+	"id": 62146
+}

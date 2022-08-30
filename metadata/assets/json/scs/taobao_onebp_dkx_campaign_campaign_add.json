@@ -1,0 +1,234 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码，adStrategyDkx 拉新快，adStrategyShangXin 上新快，adStrategyProductSpeed 货品加速，adStrategyRuHui 入会快，adStrategyYuRe 预热蓄水"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "campaign_name",
+							"type": "String",
+							"description": "计划名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "day_budget",
+									"type": "String",
+									"description": "持续推广计划日预算"
+								}
+							],
+							"name": "day_budget",
+							"type": "DayBudgetTopDto",
+							"description": "持续推广计划需要填的预算"
+						},
+						{
+							"name": "life_cycle",
+							"type": "Number",
+							"description": "生命周期"
+						},
+						{
+							"subParams": [
+								{
+									"name": "market_scene",
+									"type": "Number",
+									"description": "子场景，拉新快adStrategyDkx：1023拉新快，1079首单直降，1113派样拉新；入会快adStrategyRuHui：1095入会拉新，1096老会员激活；adStrategyShangXin：1023行业新品，1098新品首降；adStrategyProductSpeed：1203货品加速；活动预热 adStrategyYuRe ： 1114 活动预热"
+								},
+								{
+									"name": "market_aim",
+									"type": "Number",
+									"description": "优化目标，1036,促进购买;1037,促进进店;1038,促进收藏加购；入会快新会员场景只能使用1041 促进入会量；入会快老会员场景只能使用1036 1038；"
+								}
+							],
+							"name": "marketing",
+							"type": "MarketingTopDto",
+							"description": "场景相关信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "begin_time",
+									"type": "String",
+									"description": "计划开始时间,需要为0点的时间，大于今天"
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "计划结束时间,需要为0点的时间"
+								},
+								{
+									"name": "launch_forever",
+									"type": "Boolean",
+									"description": "是否永远持续，持续推广为true"
+								}
+							],
+							"name": "launch_time",
+							"type": "LaunchTimeTopDto",
+							"description": "计划时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "market_scene",
+									"type": "String",
+									"description": "子场景"
+								},
+								{
+									"name": "market_aim",
+									"type": "String",
+									"description": "优化目标，1036,促进购买;1037,促进进店;1038,促进收藏加购；入会快新会员场景只能使用1041 促进入会量；入会快老会员场景只能使用1036 1038；"
+								},
+								{
+									"name": "order_amount",
+									"type": "String",
+									"description": "套餐包模式计划需要填的预算，最小值2000"
+								},
+								{
+									"name": "budget",
+									"type": "String",
+									"description": "套餐包模式计划需要填的预算，最小值2000"
+								},
+								{
+									"name": "predict_cycle",
+									"type": "Number",
+									"description": "预估周期"
+								},
+								{
+									"name": "item_ids",
+									"type": "Number[]",
+									"description": "商品列表，小于等于10个"
+								},
+								{
+									"name": "init_dmp_crowd_id_list",
+									"type": "Number[]",
+									"description": "达摩盘人群列表"
+								},
+								{
+									"name": "init_template_id_list",
+									"type": "Number[]",
+									"description": "模板列表"
+								},
+								{
+									"name": "behavior_windows_list",
+									"type": "String[]",
+									"description": "拉新快场景中的新客定义，支持\"1,365\",\"1,500\"等"
+								},
+								{
+									"name": "crowd_mode",
+									"type": "Number",
+									"description": "侧重人群开关，默认为1"
+								},
+								{
+									"name": "launch_strategy_type",
+									"type": "String",
+									"description": "投放模式，效率优先effect_first，消耗优先cost_first"
+								}
+							],
+							"name": "ad_strategy_info",
+							"type": "AdStrategyInfoTopDto",
+							"description": "计划策略信息"
+						},
+						{
+							"name": "promotion_model",
+							"type": "String",
+							"description": "推广计划的计费类型，套餐包为order，持续推广为daily"
+						},
+						{
+							"subParams": [
+								{
+									"name": "topic_id",
+									"type": "Number",
+									"description": "接口查询得到的topicId，需一一对应"
+								},
+								{
+									"name": "template_id",
+									"type": "Number",
+									"description": "接口查询得到的templateId，需一一对应"
+								}
+							],
+							"name": "new_dmp_template_crowd",
+							"type": "NewDmpTemplateCrowdTopDTO[]",
+							"description": "新达摩盘精选人群信息"
+						}
+					],
+					"name": "campaign_view",
+					"type": "CampaignSolutionTopDto",
+					"description": "计划信息"
+				}
+			],
+			"name": "solution_result",
+			"type": "SolutionTopDto",
+			"description": "创建计划入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "campaignId"
+						}
+					],
+					"name": "solution_result_top_d_t_o",
+					"type": "SolutionResultTopDto",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.campaign.campaign.add",
+	"apiChineseName": "添加计划",
+	"description": "添加计划\n套餐包计划： {\"campaign_view\":{\"ad_strategy_info\":{\"budget\":\"2000\",\"item_ids\":[617764134830],\"launch_strategy_type\":\"cost_first\",\"order_amount\":\"2000\"},\"campaign_name\":\"新建byTop测试\",\"launch_time\":{\"begin_time\":\"2021-09-27 00:00:01\",\"end_time\":\"2021-09-31 00:00:01\"},\"marketing\":{\"market_aim\":1041,\"market_scene\":1095},\"promotion_model\":\"order\"}}\n持续推广计划：\n{\"campaignViewDTO\":{\"adStrategyInfo\":{\"hide\":false,\"itemIds\":[45031793073],\"launchStrategyType\":\"cost_first\"},\"campaignName\":\"新建byTop\",\"dayBudget\":{\"dayBudget\":\"100\",\"dmcType\":1},\"marketing\":{\"marketAim\":1037,\"marketScene\":1023},\"promotionModel\":\"daily\"}}",
+	"id": 58967
+}

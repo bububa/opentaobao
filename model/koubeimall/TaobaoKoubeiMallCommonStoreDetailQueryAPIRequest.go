@@ -12,12 +12,12 @@ import (
 // 查询口碑综合体内的门店详情信息
 type TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest struct {
 	model.Params
-	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-	_dataSetId string
 	// 商圈ID
 	_mallId string
 	// 商圈内的门店ID
 	_storeId string
+	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+	_dataSetId string
 	// 口碑城市编码（示例：杭州市330100）
 	_cityCode string
 	// 经度（终端设备地理位置）
@@ -53,19 +53,6 @@ func (r TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetDataSetId is DataSetId Setter
-// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-func (r *TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) SetDataSetId(_dataSetId string) error {
-	r._dataSetId = _dataSetId
-	r.Set("data_set_id", _dataSetId)
-	return nil
-}
-
-// GetDataSetId DataSetId Getter
-func (r TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) GetDataSetId() string {
-	return r._dataSetId
-}
-
 // SetMallId is MallId Setter
 // 商圈ID
 func (r *TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) SetMallId(_mallId string) error {
@@ -90,6 +77,19 @@ func (r *TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) SetStoreId(_storeId s
 // GetStoreId StoreId Getter
 func (r TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) GetStoreId() string {
 	return r._storeId
+}
+
+// SetDataSetId is DataSetId Setter
+// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+func (r *TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) SetDataSetId(_dataSetId string) error {
+	r._dataSetId = _dataSetId
+	r.Set("data_set_id", _dataSetId)
+	return nil
+}
+
+// GetDataSetId DataSetId Getter
+func (r TaobaoKoubeiMallCommonStoreDetailQueryAPIRequest) GetDataSetId() string {
+	return r._dataSetId
 }
 
 // SetCityCode is CityCode Setter

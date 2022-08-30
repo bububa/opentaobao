@@ -1,21 +1,17 @@
 {
-	"id": 46430,
-	"name": "cainiao.global.handover.commit",
-	"apiChineseName": "提交发布交接单",
-	"description": "提供给ISV通过该接口提交发布交接单",
 	"requestParams": [
 		{
-			"name": "user_info",
-			"type": "UserInfoDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "top_user_key",
 					"type": "String",
 					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
 				}
-			]
+			],
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "remark",
@@ -23,14 +19,8 @@
 			"description": "大包备注"
 		},
 		{
-			"name": "return_info",
-			"type": "ReturnerDto",
-			"description": "退件信息",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "退件地址",
 					"subParams": [
 						{
 							"name": "zip_code",
@@ -73,7 +63,10 @@
 							"description": "国家",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "退件地址"
 				},
 				{
 					"name": "email",
@@ -100,18 +93,14 @@
 					"type": "Number",
 					"description": "AE后台维护的退件地址ID"
 				}
-			]
+			],
+			"name": "return_info",
+			"type": "ReturnerDto",
+			"description": "退件信息"
 		},
 		{
-			"name": "pickup_info",
-			"type": "PickupDto",
-			"description": "揽收信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "揽收地址",
 					"subParams": [
 						{
 							"name": "zip_code",
@@ -154,7 +143,10 @@
 							"description": "国家",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "揽收地址"
 				},
 				{
 					"name": "email",
@@ -181,7 +173,11 @@
 					"type": "Number",
 					"description": "AE后台维护的发件地址ID"
 				}
-			]
+			],
+			"name": "pickup_info",
+			"type": "PickupDto",
+			"description": "揽收信息",
+			"required": true
 		},
 		{
 			"name": "weight",
@@ -201,7 +197,7 @@
 		{
 			"name": "type",
 			"type": "String",
-			"description": "交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)"
+			"description": "交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)、self_send(自送)"
 		},
 		{
 			"name": "client",
@@ -213,8 +209,8 @@
 			"name": "order_code_list",
 			"type": "String[]",
 			"description": "要创建交接单的小包编码集合，数量上限1000",
-			"required": true,
-			"maxListSize": 1000
+			"maxListSize": 1000,
+			"required": true
 		},
 		{
 			"name": "locale",
@@ -222,9 +218,6 @@
 			"description": "多语言"
 		},
 		{
-			"name": "features",
-			"type": "Features",
-			"description": "扩展字段",
 			"subParams": [
 				{
 					"name": "gmt_ready_to_ship",
@@ -240,21 +233,42 @@
 					"name": "container_type",
 					"type": "String",
 					"description": "容器类型(1、托盘;2、大包或盒子3、散装)"
+				},
+				{
+					"name": "pre_package",
+					"type": "String",
+					"description": "是否预先组大包，true：是。false：否"
 				}
-			]
+			],
+			"name": "features",
+			"type": "Features",
+			"description": "扩展字段"
+		},
+		{
+			"name": "appointment_type",
+			"type": "String",
+			"description": "预约交货方式（bigbag：大包预约，batch：批次预约））"
+		},
+		{
+			"name": "domestic_tracking_no",
+			"type": "String",
+			"description": "国内运单号（交接单类型type为self_post(自寄)时必填）"
+		},
+		{
+			"name": "domestic_logistics_company_id",
+			"type": "Number",
+			"description": "国内物流公司id（交接单类型type为self_post(自寄)时必填）"
+		},
+		{
+			"name": "domestic_logistics_company",
+			"type": "String",
+			"description": "国内物流公司名称（交接单类型type为self_post(自寄)时必填）"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HsfResult",
-			"description": "请求结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OpenHandoverCommitResponse",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "handover_order_id",
@@ -274,7 +288,11 @@
 							"description": "交接物id，即大包id",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "OpenHandoverCommitResponse",
+					"description": "响应数据",
+					"required": true
 				},
 				{
 					"name": "error_msg",
@@ -294,7 +312,14 @@
 					"description": "请求处理是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.handover.commit",
+	"apiChineseName": "提交发布交接单",
+	"description": "提供给ISV通过该接口提交发布交接单",
+	"id": 46430
 }

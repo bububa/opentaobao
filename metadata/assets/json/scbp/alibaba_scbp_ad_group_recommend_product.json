@@ -1,0 +1,166 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页数",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页数量",
+					"required": true
+				},
+				{
+					"name": "tag_list",
+					"type": "String[]",
+					"description": "TESTING：新发产品 HOT：优质转化品 WIN： 橱窗产品 PRE： 优先推广品 HIGH_VIDEO_PROD：优质视频品 PRODTAG_HOTSALE,PRODTAG_STRENGTH: 优品 SITE_NEW: 平台新品 DIRECT_PROD: 行业定征新品"
+				},
+				{
+					"name": "tag_query_type",
+					"type": "String",
+					"description": "优品必填\"or\""
+				},
+				{
+					"name": "sub_type",
+					"type": "String",
+					"description": "新品必填：“NEW_PROD”"
+				},
+				{
+					"name": "create_days",
+					"type": "Number",
+					"description": "品创建天数,新品必传“90/180”"
+				}
+			],
+			"name": "recommend_query",
+			"type": "ProductRecommendQueryDTO",
+			"description": "推品查询条件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "品id"
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "品标题"
+				},
+				{
+					"name": "ads_impr_cnt",
+					"type": "Number",
+					"description": "曝光数"
+				},
+				{
+					"name": "ads_click_cnt",
+					"type": "Number",
+					"description": "点击数"
+				},
+				{
+					"name": "ads_cost_amt",
+					"type": "String",
+					"description": "消耗"
+				},
+				{
+					"name": "ads_ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "ads_cpc",
+					"type": "String",
+					"description": "平均点击价格"
+				},
+				{
+					"name": "web_impr_cnt",
+					"type": "Number",
+					"description": "网页曝光数"
+				},
+				{
+					"name": "web_click_cnt",
+					"type": "Number",
+					"description": "网页点击数"
+				},
+				{
+					"name": "web_ctr",
+					"type": "String",
+					"description": "网页点击率"
+				},
+				{
+					"name": "web_rank",
+					"type": "Number",
+					"description": "网页排名"
+				},
+				{
+					"name": "ads_rank",
+					"type": "Number",
+					"description": "排名"
+				},
+				{
+					"name": "prod_score",
+					"type": "String",
+					"description": "产品分数"
+				},
+				{
+					"name": "power_score",
+					"type": "String",
+					"description": "权力分数"
+				},
+				{
+					"name": "blue_sea_score",
+					"type": "String",
+					"description": "蓝海指数"
+				},
+				{
+					"name": "gmt_posting_create",
+					"type": "String",
+					"description": "品创建时间"
+				},
+				{
+					"name": "promotion_status",
+					"type": "Number",
+					"description": "商品推广状态"
+				},
+				{
+					"name": "superior_prod",
+					"type": "Number",
+					"description": "优越品"
+				}
+			],
+			"name": "result_list",
+			"type": "RecommendProductDTO []",
+			"description": "推品返回实体类"
+		}
+	],
+	"name": "alibaba.scbp.ad.group.recommend.product",
+	"apiChineseName": "推品",
+	"description": "推品",
+	"id": 63331
+}

@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_agree",
+					"type": "Number",
+					"description": "同意",
+					"required": true
+				},
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "履约单id",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "同意备注",
+					"required": true
+				},
+				{
+					"name": "house_order_no",
+					"type": "String",
+					"description": "统一的订单号"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id"
+				}
+			],
+			"name": "audit_order_dto",
+			"type": "AuditOrderDto",
+			"description": "审核退款",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "结果说明"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.alihouse.trade.coupon.order.audit.refund",
+	"apiChineseName": "ETC审核电商券退款",
+	"description": "ETC审核电商券退款",
+	"id": 58620
+}

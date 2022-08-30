@@ -1,14 +1,6 @@
 {
-	"id": 49413,
-	"name": "taobao.train.agent.grab.account",
-	"apiChineseName": "代购抢代理商回传12306账号",
-	"description": "火车票业务代购抢功能，代理商回传12306账号，用于自营抢票链路出票",
 	"requestParams": [
 		{
-			"name": "account_param",
-			"type": "AccountParam",
-			"description": "12306账户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -34,14 +26,18 @@
 					"description": "12306账户密码",
 					"required": true
 				}
-			]
+			],
+			"name": "account_param",
+			"type": "AccountParam",
+			"description": "12306账户信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_msg",
-			"type": "String",
-			"description": "resultMsg"
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
 		},
 		{
 			"name": "result_code",
@@ -49,9 +45,13 @@
 			"description": "resultCode"
 		},
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "success"
+			"name": "result_msg",
+			"type": "String",
+			"description": "resultMsg"
 		}
-	]
+	],
+	"name": "taobao.train.agent.grab.account",
+	"apiChineseName": "代购抢代理商回传12306账号",
+	"description": "火车票业务代购抢功能，代理商回传12306账号，用于自营抢票链路出票",
+	"id": 49413
 }

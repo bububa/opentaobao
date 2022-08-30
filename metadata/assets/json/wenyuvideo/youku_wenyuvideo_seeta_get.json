@@ -1,8 +1,4 @@
 {
-	"id": 43306,
-	"name": "youku.wenyuvideo.seeta.get",
-	"apiChineseName": "只看TA",
-	"description": "只看Ta对外输出",
 	"requestParams": [
 		{
 			"name": "video_str_id",
@@ -13,75 +9,69 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "values",
-					"type": "Model[]",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "logos",
-							"type": "Json[]",
-							"description": "logo数组",
-							"required": true
+							"type": "String[]",
+							"description": "logo数组"
 						},
 						{
 							"name": "names",
-							"type": "Json[]",
-							"description": "名字数组",
-							"required": true
+							"type": "String[]",
+							"description": "名字数组"
 						},
 						{
-							"name": "segments",
-							"type": "Segments[]",
-							"description": "片段数组",
-							"required": true,
 							"subParams": [
 								{
 									"name": "from",
 									"type": "Number",
-									"description": "开始时间点",
-									"required": true
+									"description": "开始时间点"
 								},
 								{
 									"name": "to",
 									"type": "Number",
-									"description": "结束时间点",
-									"required": true
+									"description": "结束时间点"
 								}
-							]
+							],
+							"name": "segments",
+							"type": "Segments[]",
+							"description": "片段数组"
 						}
-					]
+					],
+					"name": "values",
+					"type": "Model[]",
+					"description": "返回数据"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "结果代码",
-					"required": true
+					"description": "结果代码"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "youku.wenyuvideo.seeta.get",
+	"apiChineseName": "只看TA",
+	"description": "只看Ta对外输出",
+	"id": 43306
 }

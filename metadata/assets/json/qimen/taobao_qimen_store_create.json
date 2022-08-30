@@ -1,8 +1,4 @@
 {
-	"id": 26690,
-	"name": "taobao.qimen.store.create",
-	"apiChineseName": "门店新增接口",
-	"description": "isv调用接口来讲线下门店同步到线上",
 	"requestParams": [
 		{
 			"name": "store_name",
@@ -45,9 +41,6 @@
 			"description": "商户介绍"
 		},
 		{
-			"name": "address",
-			"type": "Address",
-			"description": "地址信息",
 			"subParams": [
 				{
 					"name": "region",
@@ -88,7 +81,10 @@
 					"description": "城市",
 					"required": true
 				}
-			]
+			],
+			"name": "address",
+			"type": "Address",
+			"description": "地址信息"
 		},
 		{
 			"name": "shop_id",
@@ -96,9 +92,6 @@
 			"description": "需要关联的线上店铺ID"
 		},
 		{
-			"name": "store_keeper",
-			"type": "StoreKeeper",
-			"description": "门店所有者信息",
 			"subParams": [
 				{
 					"name": "fax",
@@ -127,7 +120,10 @@
 					"description": "移动电话",
 					"required": true
 				}
-			]
+			],
+			"name": "store_keeper",
+			"type": "StoreKeeper",
+			"description": "门店所有者信息"
 		},
 		{
 			"name": "store_type",
@@ -168,5 +164,9 @@
 			"type": "Number",
 			"description": "返回的门店id"
 		}
-	]
+	],
+	"name": "taobao.qimen.store.create",
+	"apiChineseName": "门店新增接口",
+	"description": "isv调用接口来讲线下门店同步到线上",
+	"id": 26690
 }

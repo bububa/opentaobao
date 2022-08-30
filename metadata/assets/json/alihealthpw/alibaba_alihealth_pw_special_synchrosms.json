@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名"
+				},
+				{
+					"name": "sms_phone",
+					"type": "String",
+					"description": "短信通知手机号"
+				},
+				{
+					"name": "treat_hospital",
+					"type": "String",
+					"description": "就诊医院"
+				},
+				{
+					"name": "user_unique_code",
+					"type": "String",
+					"description": "唯一编码",
+					"required": true
+				},
+				{
+					"name": "project_third_id",
+					"type": "String",
+					"description": "申请项目"
+				},
+				{
+					"name": "hospital_addressee",
+					"type": "String",
+					"description": "医院收件人"
+				},
+				{
+					"name": "hospital_ems_phone",
+					"type": "String",
+					"description": "医院收件电话"
+				},
+				{
+					"name": "hospital_ems_address",
+					"type": "String",
+					"description": "医院收件地址"
+				},
+				{
+					"name": "hospital_address",
+					"type": "String",
+					"description": "医院地址"
+				},
+				{
+					"name": "hospital_phone",
+					"type": "String",
+					"description": "医院电话"
+				}
+			],
+			"name": "body",
+			"type": "SynchroSmsDto",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResponseMessage",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihealth.pw.special.synchrosms",
+	"apiChineseName": "同步短信信息至阿里健康",
+	"description": "同步短信信息至阿里健康",
+	"id": 58952
+}

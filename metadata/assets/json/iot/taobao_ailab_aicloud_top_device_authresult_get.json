@@ -1,8 +1,4 @@
 {
-	"id": 33060,
-	"name": "taobao.ailab.aicloud.top.device.authresult.get",
-	"apiChineseName": "获取设备授权码验证结果",
-	"description": "获取设备授权码验证结果",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -32,35 +28,36 @@
 			"name": "auth_codes",
 			"type": "String[]",
 			"description": "authCodes信息",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "uuids",
 					"type": "String[]",
-					"description": "uuid 32位",
-					"required": true
+					"description": "uuid 32位"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo错误码信息，成功返回null",
-					"required": true
+					"description": "msgInfo错误码信息，成功返回null"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.authresult.get",
+	"apiChineseName": "获取设备授权码验证结果",
+	"description": "获取设备授权码验证结果",
+	"id": 33060
 }

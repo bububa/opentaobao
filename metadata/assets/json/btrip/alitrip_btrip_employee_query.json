@@ -1,13 +1,6 @@
 {
-	"id": 56259,
-	"name": "alitrip.btrip.employee.query",
-	"apiChineseName": "企业员工查询",
-	"description": "企业员工查询",
 	"requestParams": [
 		{
-			"name": "param_open_employee_query_request",
-			"type": "OpenEmployeeQueryRequest",
-			"description": "入参对象。",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -35,86 +28,82 @@
 					"type": "String",
 					"description": "员工更新时间大于等于值，该值格式yyyy-MM-dd HH:mm:ss。"
 				}
-			]
+			],
+			"name": "param_open_employee_query_request",
+			"type": "OpenEmployeeQueryRequest",
+			"description": "入参对象。"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtmsResult",
-			"description": "结果对象。",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "PagingResult",
-					"description": "分页结果对象。",
-					"required": true,
 					"subParams": [
 						{
 							"name": "has_more",
 							"type": "Boolean",
-							"description": "是否还有更多数据项。",
-							"required": true
+							"description": "是否还有更多数据项。"
 						},
 						{
-							"name": "items",
-							"type": "OpenEmployeeInfo[]",
-							"description": "员工数组。",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "员工昵称。",
-									"required": true
+									"description": "员工昵称。"
 								},
 								{
 									"name": "third_part_user_id",
 									"type": "String",
-									"description": "第三方员工ID。",
-									"required": true
+									"description": "第三方员工ID。"
 								},
 								{
 									"name": "third_part_job_no",
 									"type": "String",
-									"description": "第三方员工工号。",
-									"required": true
+									"description": "第三方员工工号。"
 								}
-							]
+							],
+							"name": "items",
+							"type": "OpenEmployeeInfo[]",
+							"description": "员工数组。"
 						},
 						{
 							"name": "page_token",
 							"type": "String",
-							"description": "游标分页下一页游标page_token值，当has_more为true时，会同时返回新的page_token，否则不返回page_token。",
-							"required": true
+							"description": "游标分页下一页游标page_token值，当has_more为true时，会同时返回新的page_token，否则不返回page_token。"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "本次请求条件下的数据项总量。",
-							"required": true
+							"description": "本次请求条件下的数据项总量。"
 						}
-					]
+					],
+					"name": "module",
+					"type": "PagingResult",
+					"description": "分页结果对象。"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "结果码；0：成功，非0：失败。",
-					"required": true
+					"description": "结果码；0：成功，非0：失败。"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果描述。",
-					"required": true
+					"description": "结果描述。"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功。",
-					"required": true
+					"description": "请求是否成功。"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtmsResult",
+			"description": "结果对象。"
 		}
-	]
+	],
+	"name": "alitrip.btrip.employee.query",
+	"apiChineseName": "企业员工查询",
+	"description": "企业员工查询",
+	"id": 56259
 }

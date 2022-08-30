@@ -1,8 +1,4 @@
 {
-	"id": 33687,
-	"name": "tmall.servicecenter.servicestore.createservicestorecapacity",
-	"apiChineseName": "新增网点容量",
-	"description": "新增网点容量，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点容量已存在，会新增失败。\n网点容量包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、类目区域和容量",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -31,47 +27,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "value",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicestore.createservicestorecapacity",
+	"apiChineseName": "新增网点容量",
+	"description": "新增网点容量，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点容量已存在，会新增失败。\n网点容量包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、类目区域和容量",
+	"id": 33687
 }

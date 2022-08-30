@@ -1,8 +1,4 @@
 {
-	"id": 33055,
-	"name": "alitrip.freetour.product.upload",
-	"apiChineseName": "自由行商品发布及编辑接口",
-	"description": "自由行 产品维护接口。\n接口同时支持新商品发布 和 现有商品编辑：\n1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。\n2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。",
 	"requestParams": [
 		{
 			"name": "go_traffic_type",
@@ -10,10 +6,6 @@
 			"description": "新发布商品时必填。去程交通。1-飞机，2-火车，3-汽，4-船，100-其他"
 		},
 		{
-			"name": "free_tour_package_info",
-			"type": "FreeTourPackageInfo[]",
-			"description": "套餐信息,数组类型，支持上传多个套餐信息",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "out_product_id",
@@ -21,9 +13,6 @@
 					"description": "必须传，套餐对应的商家编码"
 				},
 				{
-					"name": "free_tour_scenic_info_list",
-					"type": "FreeTourScenicInfo[]",
-					"description": "包含元素-景区门票，如果该套餐包含景区门票，则需要传这个参数",
 					"subParams": [
 						{
 							"name": "cn_name",
@@ -40,7 +29,10 @@
 							"type": "String",
 							"description": "必填，景点所在城市"
 						}
-					]
+					],
+					"name": "free_tour_scenic_info_list",
+					"type": "FreeTourScenicInfo[]",
+					"description": "包含元素-景区门票，如果该套餐包含景区门票，则需要传这个参数"
 				},
 				{
 					"name": "package_name",
@@ -53,9 +45,6 @@
 					"description": "发布商品时必填。套餐对应的目的地，套餐对应的目的地必须是商品的目的地的子集，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称 ）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性 批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124\u003e）会根据映射关系自动转换成飞猪标准地址"
 				},
 				{
-					"name": "back_traffic_info_list",
-					"type": "FreeTourTrafficInfo[]",
-					"description": "返程交通，交通工具必须与商品上的返程交通一致",
 					"subParams": [
 						{
 							"name": "day",
@@ -122,7 +111,10 @@
 							"type": "String",
 							"description": "经停城市"
 						}
-					]
+					],
+					"name": "back_traffic_info_list",
+					"type": "FreeTourTrafficInfo[]",
+					"description": "返程交通，交通工具必须与商品上的返程交通一致"
 				},
 				{
 					"name": "fee_exclude",
@@ -135,9 +127,6 @@
 					"description": "门票说明"
 				},
 				{
-					"name": "go_traffic_info_list",
-					"type": "FreeTourTrafficInfo[]",
-					"description": "去程交通，交通工具的类型必须与商品上的去程交通一致",
 					"subParams": [
 						{
 							"name": "day",
@@ -204,7 +193,10 @@
 							"type": "String",
 							"description": "经停城市"
 						}
-					]
+					],
+					"name": "go_traffic_info_list",
+					"type": "FreeTourTrafficInfo[]",
+					"description": "去程交通，交通工具的类型必须与商品上的去程交通一致"
 				},
 				{
 					"name": "order_info",
@@ -212,9 +204,6 @@
 					"description": "买家预定须知"
 				},
 				{
-					"name": "item_resource_info_list",
-					"type": "ItemResourceInfo[]",
-					"description": "当包含元素选择了餐饮，自驾租车，保险服务，其他费用时，该项必填",
 					"subParams": [
 						{
 							"name": "desc",
@@ -226,7 +215,10 @@
 							"type": "Number",
 							"description": "1-保险 2-餐饮 3-租车 4-签证 5-购物点，预留  6-赠品，预留 7-券，预留  8-其他费用"
 						}
-					]
+					],
+					"name": "item_resource_info_list",
+					"type": "ItemResourceInfo[]",
+					"description": "当包含元素选择了餐饮，自驾租车，保险服务，其他费用时，该项必填"
 				},
 				{
 					"name": "from_locations",
@@ -239,9 +231,6 @@
 					"description": "新发布商品时必填。费用包含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔"
 				},
 				{
-					"name": "free_tour_hotel_info_list",
-					"type": "FreeTourHotelInfo[]",
-					"description": "当包含元素选择了酒店的时候，该项必填",
 					"subParams": [
 						{
 							"name": "hotel_desc",
@@ -278,14 +267,21 @@
 							"type": "String",
 							"description": "酒店名称"
 						}
-					]
+					],
+					"name": "free_tour_hotel_info_list",
+					"type": "FreeTourHotelInfo[]",
+					"description": "当包含元素选择了酒店的时候，该项必填"
 				},
 				{
 					"name": "package_operation",
 					"type": "Number",
 					"description": "套餐操作类型，(0:套餐覆盖修改,1:增加套餐,2:删除套餐)===默认为0==="
 				}
-			]
+			],
+			"name": "free_tour_package_info",
+			"type": "FreeTourPackageInfo[]",
+			"description": "套餐信息,数组类型，支持上传多个套餐信息",
+			"maxListSize": 20
 		},
 		{
 			"name": "trip_day",
@@ -423,35 +419,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopTravelItem",
-			"description": "firstResult",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "itemId",
-					"required": true
+					"description": "itemId"
 				},
 				{
 					"name": "out_product_id",
 					"type": "String",
-					"description": "outProductId",
-					"required": true
+					"description": "outProductId"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "modified",
-					"required": true
+					"description": "modified"
 				},
 				{
 					"name": "extend",
 					"type": "String",
-					"description": "扩展信息",
-					"required": true
+					"description": "扩展信息"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "firstResult"
 		}
-	]
+	],
+	"name": "alitrip.freetour.product.upload",
+	"apiChineseName": "自由行商品发布及编辑接口",
+	"description": "自由行 产品维护接口。\n接口同时支持新商品发布 和 现有商品编辑：\n1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。\n2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。",
+	"id": 33055
 }

@@ -14,24 +14,26 @@ type TaobaoCrmMembersGetAPIRequest struct {
 	model.Params
 	// 买家的昵称
 	_buyerNick string
-	// 最早上次交易时间
-	_minLastTradeTime string
 	// 最迟上次交易时间
 	_maxLastTradeTime string
+	// 最早上次交易时间
+	_minLastTradeTime string
+	// 用户的ouid
+	_openUid string
 	// 会员等级,如果不传入值则默认为全部等级。
 	_grade int64
-	// 最小交易额,单位为元
-	_minTradeAmount float64
-	// 最大交易额，单位为元
-	_maxTradeAmount float64
-	// 最小交易量
-	_minTradeCount int64
-	// 最大交易量
-	_maxTradeCount int64
 	// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
 	_pageSize int64
 	// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000
 	_currentPage int64
+	// 最大交易额，单位为元
+	_maxTradeAmount float64
+	// 最小交易额,单位为元
+	_minTradeAmount float64
+	// 最小交易量
+	_minTradeCount int64
+	// 最大交易量
+	_maxTradeCount int64
 }
 
 // NewTaobaoCrmMembersGetRequest 初始化TaobaoCrmMembersGetAPIRequest对象
@@ -68,19 +70,6 @@ func (r TaobaoCrmMembersGetAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
 }
 
-// SetMinLastTradeTime is MinLastTradeTime Setter
-// 最早上次交易时间
-func (r *TaobaoCrmMembersGetAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
-	r._minLastTradeTime = _minLastTradeTime
-	r.Set("min_last_trade_time", _minLastTradeTime)
-	return nil
-}
-
-// GetMinLastTradeTime MinLastTradeTime Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMinLastTradeTime() string {
-	return r._minLastTradeTime
-}
-
 // SetMaxLastTradeTime is MaxLastTradeTime Setter
 // 最迟上次交易时间
 func (r *TaobaoCrmMembersGetAPIRequest) SetMaxLastTradeTime(_maxLastTradeTime string) error {
@@ -94,6 +83,32 @@ func (r TaobaoCrmMembersGetAPIRequest) GetMaxLastTradeTime() string {
 	return r._maxLastTradeTime
 }
 
+// SetMinLastTradeTime is MinLastTradeTime Setter
+// 最早上次交易时间
+func (r *TaobaoCrmMembersGetAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
+	r._minLastTradeTime = _minLastTradeTime
+	r.Set("min_last_trade_time", _minLastTradeTime)
+	return nil
+}
+
+// GetMinLastTradeTime MinLastTradeTime Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMinLastTradeTime() string {
+	return r._minLastTradeTime
+}
+
+// SetOpenUid is OpenUid Setter
+// 用户的ouid
+func (r *TaobaoCrmMembersGetAPIRequest) SetOpenUid(_openUid string) error {
+	r._openUid = _openUid
+	r.Set("open_uid", _openUid)
+	return nil
+}
+
+// GetOpenUid OpenUid Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetOpenUid() string {
+	return r._openUid
+}
+
 // SetGrade is Grade Setter
 // 会员等级,如果不传入值则默认为全部等级。
 func (r *TaobaoCrmMembersGetAPIRequest) SetGrade(_grade int64) error {
@@ -105,58 +120,6 @@ func (r *TaobaoCrmMembersGetAPIRequest) SetGrade(_grade int64) error {
 // GetGrade Grade Getter
 func (r TaobaoCrmMembersGetAPIRequest) GetGrade() int64 {
 	return r._grade
-}
-
-// SetMinTradeAmount is MinTradeAmount Setter
-// 最小交易额,单位为元
-func (r *TaobaoCrmMembersGetAPIRequest) SetMinTradeAmount(_minTradeAmount float64) error {
-	r._minTradeAmount = _minTradeAmount
-	r.Set("min_trade_amount", _minTradeAmount)
-	return nil
-}
-
-// GetMinTradeAmount MinTradeAmount Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMinTradeAmount() float64 {
-	return r._minTradeAmount
-}
-
-// SetMaxTradeAmount is MaxTradeAmount Setter
-// 最大交易额，单位为元
-func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeAmount(_maxTradeAmount float64) error {
-	r._maxTradeAmount = _maxTradeAmount
-	r.Set("max_trade_amount", _maxTradeAmount)
-	return nil
-}
-
-// GetMaxTradeAmount MaxTradeAmount Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeAmount() float64 {
-	return r._maxTradeAmount
-}
-
-// SetMinTradeCount is MinTradeCount Setter
-// 最小交易量
-func (r *TaobaoCrmMembersGetAPIRequest) SetMinTradeCount(_minTradeCount int64) error {
-	r._minTradeCount = _minTradeCount
-	r.Set("min_trade_count", _minTradeCount)
-	return nil
-}
-
-// GetMinTradeCount MinTradeCount Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMinTradeCount() int64 {
-	return r._minTradeCount
-}
-
-// SetMaxTradeCount is MaxTradeCount Setter
-// 最大交易量
-func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeCount(_maxTradeCount int64) error {
-	r._maxTradeCount = _maxTradeCount
-	r.Set("max_trade_count", _maxTradeCount)
-	return nil
-}
-
-// GetMaxTradeCount MaxTradeCount Getter
-func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeCount() int64 {
-	return r._maxTradeCount
 }
 
 // SetPageSize is PageSize Setter
@@ -183,4 +146,56 @@ func (r *TaobaoCrmMembersGetAPIRequest) SetCurrentPage(_currentPage int64) error
 // GetCurrentPage CurrentPage Getter
 func (r TaobaoCrmMembersGetAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+// SetMaxTradeAmount is MaxTradeAmount Setter
+// 最大交易额，单位为元
+func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeAmount(_maxTradeAmount float64) error {
+	r._maxTradeAmount = _maxTradeAmount
+	r.Set("max_trade_amount", _maxTradeAmount)
+	return nil
+}
+
+// GetMaxTradeAmount MaxTradeAmount Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeAmount() float64 {
+	return r._maxTradeAmount
+}
+
+// SetMinTradeAmount is MinTradeAmount Setter
+// 最小交易额,单位为元
+func (r *TaobaoCrmMembersGetAPIRequest) SetMinTradeAmount(_minTradeAmount float64) error {
+	r._minTradeAmount = _minTradeAmount
+	r.Set("min_trade_amount", _minTradeAmount)
+	return nil
+}
+
+// GetMinTradeAmount MinTradeAmount Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMinTradeAmount() float64 {
+	return r._minTradeAmount
+}
+
+// SetMinTradeCount is MinTradeCount Setter
+// 最小交易量
+func (r *TaobaoCrmMembersGetAPIRequest) SetMinTradeCount(_minTradeCount int64) error {
+	r._minTradeCount = _minTradeCount
+	r.Set("min_trade_count", _minTradeCount)
+	return nil
+}
+
+// GetMinTradeCount MinTradeCount Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMinTradeCount() int64 {
+	return r._minTradeCount
+}
+
+// SetMaxTradeCount is MaxTradeCount Setter
+// 最大交易量
+func (r *TaobaoCrmMembersGetAPIRequest) SetMaxTradeCount(_maxTradeCount int64) error {
+	r._maxTradeCount = _maxTradeCount
+	r.Set("max_trade_count", _maxTradeCount)
+	return nil
+}
+
+// GetMaxTradeCount MaxTradeCount Getter
+func (r TaobaoCrmMembersGetAPIRequest) GetMaxTradeCount() int64 {
+	return r._maxTradeCount
 }

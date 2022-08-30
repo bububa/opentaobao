@@ -1,8 +1,4 @@
 {
-	"id": 40658,
-	"name": "taobao.ailab.aicloud.top.like.filter",
-	"apiChineseName": "过滤列表歌曲存在于收藏列表的",
-	"description": "过滤出传入列表歌曲存在于收藏列表的",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -33,10 +29,6 @@
 			"required": true
 		},
 		{
-			"name": "media_items",
-			"type": "MediaItem[]",
-			"description": "传入的歌曲列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "content",
@@ -75,72 +67,71 @@
 					"type": "String",
 					"description": "扩展字段"
 				}
-			]
+			],
+			"name": "media_items",
+			"type": "MediaItem[]",
+			"description": "传入的歌曲列表",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "msg_code",
-					"type": "String",
-					"description": "msgCode",
-					"required": true
-				},
-				{
-					"name": "msg_info",
-					"type": "String",
-					"description": "msgInfo",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
-					"name": "likes",
-					"type": "Like[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "source",
 							"type": "String",
-							"description": "收藏音频源",
-							"required": true
+							"description": "收藏音频源"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "收藏音频id",
-							"required": true
+							"description": "收藏音频id"
 						},
 						{
 							"name": "album",
 							"type": "String",
-							"description": "收藏音频专辑名",
-							"required": true
+							"description": "收藏音频专辑名"
 						},
 						{
 							"name": "author",
 							"type": "String",
-							"description": "收藏音频演唱者",
-							"required": true
+							"description": "收藏音频演唱者"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "收藏音频名",
-							"required": true
+							"description": "收藏音频名"
 						}
-					]
+					],
+					"name": "likes",
+					"type": "Like[]",
+					"description": "model"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.like.filter",
+	"apiChineseName": "过滤列表歌曲存在于收藏列表的",
+	"description": "过滤出传入列表歌曲存在于收藏列表的",
+	"id": 40658
 }

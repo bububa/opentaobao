@@ -18,6 +18,8 @@ type NrtCrmActivityDto struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 活动规则
 	Rule string `json:"rule,omitempty" xml:"rule,omitempty"`
+	// 权益信息
+	CertificateRights string `json:"certificate_rights,omitempty" xml:"certificate_rights,omitempty"`
 	// 同城站ID
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 活动状态
@@ -28,4 +30,10 @@ type NrtCrmActivityDto struct {
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 站外页面ID
 	PageId int64 `json:"page_id,omitempty" xml:"page_id,omitempty"`
+	// 电子凭证ID
+	TmpCertificateId int64 `json:"tmp_certificate_id,omitempty" xml:"tmp_certificate_id,omitempty"`
+	// 直播信息
+	NrtCrmLiveDto *NrtCrmLiveDto `json:"nrt_crm_live_dto,omitempty" xml:"nrt_crm_live_dto,omitempty"`
+	// 卖场ID
+	MallId int64 `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
 }

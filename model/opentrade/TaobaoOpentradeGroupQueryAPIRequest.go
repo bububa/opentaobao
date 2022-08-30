@@ -14,14 +14,14 @@ type TaobaoOpentradeGroupQueryAPIRequest struct {
 	model.Params
 	// 用户openId
 	_openUserId string
-	// 商品id
-	_itemId int64
-	// 0 返回未成团列表，1 返回已成团列表
-	_orderBy int64
-	// 页数
-	_pageIndex int64
 	// 每页展示条数，不能超过100
 	_pageSize int64
+	// 页数
+	_pageIndex int64
+	// 0 返回未成团列表，1 返回已成团列表
+	_orderBy int64
+	// 商品id
+	_itemId int64
 	// 组团活动id
 	_groupActivityId int64
 	// 是否返回已过期的团，true 返回，false 不返回
@@ -62,30 +62,17 @@ func (r TaobaoOpentradeGroupQueryAPIRequest) GetOpenUserId() string {
 	return r._openUserId
 }
 
-// SetItemId is ItemId Setter
-// 商品id
-func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
+// SetPageSize is PageSize Setter
+// 每页展示条数，不能超过100
+func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetItemId ItemId Getter
-func (r TaobaoOpentradeGroupQueryAPIRequest) GetItemId() int64 {
-	return r._itemId
-}
-
-// SetOrderBy is OrderBy Setter
-// 0 返回未成团列表，1 返回已成团列表
-func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOrderBy(_orderBy int64) error {
-	r._orderBy = _orderBy
-	r.Set("order_by", _orderBy)
-	return nil
-}
-
-// GetOrderBy OrderBy Getter
-func (r TaobaoOpentradeGroupQueryAPIRequest) GetOrderBy() int64 {
-	return r._orderBy
+// GetPageSize PageSize Getter
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }
 
 // SetPageIndex is PageIndex Setter
@@ -101,17 +88,30 @@ func (r TaobaoOpentradeGroupQueryAPIRequest) GetPageIndex() int64 {
 	return r._pageIndex
 }
 
-// SetPageSize is PageSize Setter
-// 每页展示条数，不能超过100
-func (r *TaobaoOpentradeGroupQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
+// SetOrderBy is OrderBy Setter
+// 0 返回未成团列表，1 返回已成团列表
+func (r *TaobaoOpentradeGroupQueryAPIRequest) SetOrderBy(_orderBy int64) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
 	return nil
 }
 
-// GetPageSize PageSize Getter
-func (r TaobaoOpentradeGroupQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetOrderBy OrderBy Getter
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetOrderBy() int64 {
+	return r._orderBy
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *TaobaoOpentradeGroupQueryAPIRequest) SetItemId(_itemId int64) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetItemId() int64 {
+	return r._itemId
 }
 
 // SetGroupActivityId is GroupActivityId Setter

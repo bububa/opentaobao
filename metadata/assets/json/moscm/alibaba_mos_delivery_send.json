@@ -1,14 +1,6 @@
 {
-	"id": 41072,
-	"name": "alibaba.mos.delivery.send",
-	"apiChineseName": "发货",
-	"description": "订单发货填写快递单",
 	"requestParams": [
 		{
-			"name": "delivery_dto",
-			"type": "DeliveryDto",
-			"description": "发货信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_name",
@@ -40,10 +32,6 @@
 					"required": true
 				},
 				{
-					"name": "ship_items",
-					"type": "ShipItemDto[]",
-					"description": "商品明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "quantity",
@@ -63,41 +51,50 @@
 							"description": "唯一标识",
 							"required": true
 						}
-					]
+					],
+					"name": "ship_items",
+					"type": "ShipItemDto[]",
+					"description": "商品明细",
+					"required": true
 				},
 				{
 					"name": "remark",
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "delivery_dto",
+			"type": "DeliveryDto",
+			"description": "发货信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "sub_msg",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "sub_code",
 					"type": "String",
-					"description": "编码",
-					"required": true
+					"description": "编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.delivery.send",
+	"apiChineseName": "发货",
+	"description": "订单发货填写快递单",
+	"id": 41072
 }

@@ -1,29 +1,25 @@
 {
-	"id": 22260,
-	"name": "taobao.promotionmisc.item.activity.list.get",
-	"apiChineseName": "查询无条件单品优惠活动列表",
-	"description": "查询无条件单品优惠活动列表",
 	"requestParams": [
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "页码。",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页记录数，最大支持50 。",
-			"required": true,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "item_promotion_list",
-			"type": "ItemPromotion []",
-			"description": "只包含活动的主要信息，如activity_id，name，description，start_time，end_time，participate_range。优惠的其他详细信息，请通过taobao.promotionmisc.item.activity.get获取。",
+			"name": "total_count",
+			"type": "Number",
+			"description": "记录总条数。"
+		},
+		{
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -55,12 +51,14 @@
 					"type": "Date",
 					"description": "活动结束时间。"
 				}
-			]
-		},
-		{
-			"name": "total_count",
-			"type": "Number",
-			"description": "记录总条数。"
+			],
+			"name": "item_promotion_list",
+			"type": "ItemPromotion []",
+			"description": "只包含活动的主要信息，如activity_id，name，description，start_time，end_time，participate_range。优惠的其他详细信息，请通过taobao.promotionmisc.item.activity.get获取。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.item.activity.list.get",
+	"apiChineseName": "查询无条件单品优惠活动列表",
+	"description": "查询无条件单品优惠活动列表",
+	"id": 22260
 }

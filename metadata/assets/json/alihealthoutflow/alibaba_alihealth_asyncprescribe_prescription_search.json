@@ -1,13 +1,6 @@
 {
-	"id": 43511,
-	"name": "alibaba.alihealth.asyncprescribe.prescription.search",
-	"apiChineseName": "异步开方处方查询",
-	"description": "异步开方处方查询",
 	"requestParams": [
 		{
-			"name": "search_request",
-			"type": "AsyncPrescribeSearchRequest",
-			"description": "查询入参",
 			"subParams": [
 				{
 					"name": "end_time",
@@ -34,78 +27,75 @@
 					"type": "Number",
 					"description": "第几页"
 				}
-			]
+			],
+			"name": "search_request",
+			"type": "AsyncPrescribeSearchRequest",
+			"description": "查询入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
-					"name": "data",
-					"type": "AsyncPrescribeSearchResponse",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "rx_nos",
 							"type": "String[]",
-							"description": "处方号列表",
-							"required": true
+							"description": "处方号列表"
 						},
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "第几页",
-							"required": true
+							"description": "第几页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页多少条",
-							"required": true
+							"description": "每页多少条"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总数量",
-							"required": true
+							"description": "总数量"
 						},
 						{
 							"name": "start_time",
 							"type": "Number",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "end_time",
 							"type": "Number",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AsyncPrescribeSearchResponse",
+					"description": "返回数据对象"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.asyncprescribe.prescription.search",
+	"apiChineseName": "异步开方处方查询",
+	"description": "异步开方处方查询",
+	"id": 43511
 }

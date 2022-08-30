@@ -1,8 +1,4 @@
 {
-	"id": 29139,
-	"name": "alibaba.wdk.item.storesku.update",
-	"apiChineseName": "五道口商品中心门店商品修改",
-	"description": "五道口商品中心门店商品修改",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -24,29 +20,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.storesku.update",
+	"apiChineseName": "五道口商品中心门店商品修改",
+	"description": "五道口商品中心门店商品修改",
+	"id": 29139
 }

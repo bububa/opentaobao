@@ -1,14 +1,6 @@
 {
-	"id": 30996,
-	"name": "alibaba.scbp.ad.keyword.status.batchupdate",
-	"apiChineseName": "批量启动暂停推广词状态",
-	"description": "批量启动暂停关键词推广状态",
 	"requestParams": [
 		{
-			"name": "keyword_update_dto_list",
-			"type": "KeywordUpdateDto[]",
-			"description": "系统自动生成",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "value",
@@ -22,34 +14,39 @@
 					"description": "词id",
 					"required": true
 				}
-			]
+			],
+			"name": "keyword_update_dto_list",
+			"type": "KeywordUpdateDto[]",
+			"description": "系统自动生成",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "keyword_error_result_list",
-			"type": "KeywordErrorResultDto []",
-			"description": "修改失败关键词列表",
 			"subParams": [
 				{
 					"name": "reason",
 					"type": "String",
-					"description": "reason",
-					"required": true
+					"description": "reason"
 				},
 				{
 					"name": "value",
 					"type": "String",
-					"description": "value",
-					"required": true
+					"description": "value"
 				},
 				{
 					"name": "keyword_id",
 					"type": "Number",
-					"description": "keywordId",
-					"required": true
+					"description": "keywordId"
 				}
-			]
+			],
+			"name": "keyword_error_result_list",
+			"type": "KeywordErrorResultDto []",
+			"description": "修改失败关键词列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.status.batchupdate",
+	"apiChineseName": "批量启动暂停推广词状态",
+	"description": "批量启动暂停关键词推广状态",
+	"id": 30996
 }

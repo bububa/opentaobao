@@ -1,13 +1,6 @@
 {
-	"id": 46071,
-	"name": "alibaba.damai.mev.open.push.paperformat",
-	"apiChineseName": "大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat",
-	"description": "pushPaperFormat",
 	"requestParams": [
 		{
-			"name": "push_paper_format_param",
-			"type": "ThirdPaperFormatPushOpenParam",
-			"description": "入参pushPaperFormatParam",
 			"subParams": [
 				{
 					"name": "paper_format_id",
@@ -39,40 +32,43 @@
 					"type": "Number",
 					"description": "系统id"
 				}
-			]
+			],
+			"name": "push_paper_format_param",
+			"type": "ThirdPaperFormatPushOpenParam",
+			"description": "入参pushPaperFormatParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.push.paperformat",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat",
+	"description": "pushPaperFormat",
+	"id": 46071
 }

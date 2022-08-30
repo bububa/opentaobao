@@ -1,8 +1,4 @@
 {
-	"id": 29393,
-	"name": "taobao.alitrip.car.driver.status.update",
-	"apiChineseName": "司机服务状态更新接口",
-	"description": "飞猪用车业务回调接口，用于服务商实时回传更新司机当前服务状态",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -60,5 +56,9 @@
 			"type": "Json",
 			"description": "其它数据，预留，暂不使用"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.driver.status.update",
+	"apiChineseName": "司机服务状态更新接口",
+	"description": "飞猪用车业务回调接口，用于服务商实时回传更新司机当前服务状态",
+	"id": 29393
 }

@@ -1,8 +1,4 @@
 {
-	"id": 22615,
-	"name": "taobao.weitao.feed.isrelation",
-	"apiChineseName": "是否关注",
-	"description": "判断用户是否关注对应的公共账号",
 	"requestParams": [
 		{
 			"name": "fans_nick",
@@ -23,5 +19,9 @@
 			"type": "Number",
 			"description": "是否关注"
 		}
-	]
+	],
+	"name": "taobao.weitao.feed.isrelation",
+	"apiChineseName": "是否关注",
+	"description": "判断用户是否关注对应的公共账号",
+	"id": 22615
 }

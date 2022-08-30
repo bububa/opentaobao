@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "submit_time",
+							"type": "String",
+							"description": "提交时间"
+						},
+						{
+							"name": "lack_num",
+							"type": "String",
+							"description": "缺货数量"
+						},
+						{
+							"name": "detail_id",
+							"type": "Number",
+							"description": "明细id"
+						},
+						{
+							"name": "submit_num",
+							"type": "String",
+							"description": "提交数量"
+						},
+						{
+							"name": "container_code",
+							"type": "String",
+							"description": "容器号"
+						},
+						{
+							"name": "user_account_code",
+							"type": "String",
+							"description": "明细操作人员code"
+						}
+					],
+					"name": "detail_request_list",
+					"type": "DpsCallBackSortDetailMtopRequest[]",
+					"description": "明细列表"
+				},
+				{
+					"name": "task_code",
+					"type": "String",
+					"description": "任务号"
+				},
+				{
+					"name": "user_account",
+					"type": "String",
+					"description": "账号"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓code"
+				}
+			],
+			"name": "param0",
+			"type": "DpsCallBackSortMtopRequest",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述消息"
+				}
+			],
+			"name": "result",
+			"type": "UmsResult",
+			"description": "结果"
+		}
+	],
+	"name": "wdk.ums.outbound.sorting.callback.taskdetail",
+	"apiChineseName": "dps分货，明细回传",
+	"description": "dps分货-分货明细回传",
+	"id": 60088
+}

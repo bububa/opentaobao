@@ -1,8 +1,4 @@
 {
-	"id": 25120,
-	"name": "taobao.baichuan.orderurl.get",
-	"apiChineseName": "百川订单详情",
-	"description": "百川订单详情",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.orderurl.get",
+	"apiChineseName": "百川订单详情",
+	"description": "百川订单详情",
+	"id": 25120
 }

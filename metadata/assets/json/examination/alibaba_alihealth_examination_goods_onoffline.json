@@ -1,60 +1,56 @@
 {
-	"id": 38545,
-	"name": "alibaba.alihealth.examination.goods.onoffline",
-	"apiChineseName": "上线/下线 体检产品",
-	"description": "第三方体检机构对接钉钉体检中的产品 上线／下线",
 	"requestParams": [
 		{
 			"name": "group_id",
 			"type": "String",
 			"description": "商品组code，机构保证唯一",
-			"required": true,
-			"maxLength": 100
-		},
-		{
-			"name": "type",
-			"type": "String",
-			"description": "操作类型: online=上线，offline=下线",
-			"required": true,
-			"maxLength": 10
+			"maxLength": 100,
+			"required": true
 		},
 		{
 			"name": "hospital_codes",
 			"type": "String",
 			"description": "门店code列表"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "操作类型: online=上线，offline=下线",
+			"maxLength": 10,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "返回数据,一般为空",
-					"required": true
+					"type": "String",
+					"description": "返回数据,一般为空"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行是否成功",
-					"required": true
+					"description": "执行是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.goods.onoffline",
+	"apiChineseName": "上线/下线 体检产品",
+	"description": "第三方体检机构对接钉钉体检中的产品 上线／下线",
+	"id": 38545
 }

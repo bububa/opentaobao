@@ -1,8 +1,4 @@
 {
-	"id": 27161,
-	"name": "taobao.eticket.merchant.ma.send",
-	"apiChineseName": "码商发码成功回调接口",
-	"description": "码商发码成功回调接口",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -10,11 +6,6 @@
 			"description": "业务类型"
 		},
 		{
-			"name": "isv_ma_list",
-			"type": "IsvMa[]",
-			"description": "需要发送的码列表",
-			"required": true,
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "code",
@@ -33,7 +24,12 @@
 					"type": "String",
 					"description": "二维码图片文件名。已经申请了上传二维码的码商必填，其它码商无需关心。这个值是taobao.eticket.merchant.img.upload调用后的file_name"
 				}
-			]
+			],
+			"name": "isv_ma_list",
+			"type": "IsvMa[]",
+			"description": "需要发送的码列表",
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "outer_id",
@@ -50,9 +46,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "SendMaCallbackResp",
-			"description": "回复参数",
 			"subParams": [
 				{
 					"name": "attribute_map",
@@ -60,7 +53,10 @@
 					"description": "业务参数KV",
 					"required": true
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "SendMaCallbackResp",
+			"description": "回复参数"
 		},
 		{
 			"name": "ret_code",
@@ -72,5 +68,9 @@
 			"type": "String",
 			"description": "子结果信息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.send",
+	"apiChineseName": "码商发码成功回调接口",
+	"description": "码商发码成功回调接口",
+	"id": 27161
 }

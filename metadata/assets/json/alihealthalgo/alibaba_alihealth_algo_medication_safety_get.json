@@ -1,13 +1,6 @@
 {
-	"id": 48492,
-	"name": "alibaba.alihealth.algo.medication.safety.get",
-	"apiChineseName": "合理用药api",
-	"description": "合理用药规则引擎服务",
 	"requestParams": [
 		{
-			"name": "param_solution_request_top_support",
-			"type": "SolutionRequestTopSupport",
-			"description": "业务请求对象",
 			"subParams": [
 				{
 					"name": "app_id",
@@ -16,6 +9,7 @@
 				},
 				{
 					"name": "params",
+					"type": "String",
 					"description": "业务参数"
 				},
 				{
@@ -23,34 +17,38 @@
 					"type": "String",
 					"description": "用户id"
 				}
-			]
+			],
+			"name": "param_solution_request_top_support",
+			"type": "SolutionRequestTopSupport",
+			"description": "业务请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SolutionResultTopSupport",
-			"description": "系统自动生成",
 			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
 				{
 					"name": "data_list",
 					"type": "String[]",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "状态码",
-					"required": true
-				},
-				{
-					"name": "message",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "状态码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SolutionResultTopSupport",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.algo.medication.safety.get",
+	"apiChineseName": "合理用药api",
+	"description": "合理用药规则引擎服务",
+	"id": 48492
 }

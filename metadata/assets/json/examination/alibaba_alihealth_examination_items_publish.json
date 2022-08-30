@@ -1,8 +1,4 @@
 {
-	"id": 42985,
-	"name": "alibaba.alihealth.examination.items.publish",
-	"apiChineseName": "单项/加项包信息同步",
-	"description": "体检机构对接_单项/加项包信息发布／更新",
 	"requestParams": [
 		{
 			"name": "group_id",
@@ -10,11 +6,6 @@
 			"description": "商品id，机构保证全局唯一"
 		},
 		{
-			"name": "isv_packages",
-			"type": "IsvPackage[]",
-			"description": "套餐列表",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "package_code",
@@ -38,13 +29,37 @@
 					"description": "套餐基础项id列表",
 					"required": true
 				}
-			]
+			],
+			"name": "isv_packages",
+			"type": "IsvPackage[]",
+			"description": "套餐列表",
+			"maxListSize": 100,
+			"required": true
 		},
 		{
-			"name": "isv_item_relation_d_t_o_s",
-			"type": "IsvItemRelationDto[]",
-			"description": "单项之间关系",
-			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "isv_pack_id",
+					"type": "String",
+					"description": "加项包id"
+				},
+				{
+					"name": "rel_isv_pack_id",
+					"type": "String",
+					"description": "关联加项包id"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "关系：1、互斥."
+				}
+			],
+			"name": "isv_pack_relation_d_t_o_s",
+			"type": "IsvPackRelationDto[]",
+			"description": "加项包关系列表",
+			"maxListSize": 2000
+		},
+		{
 			"subParams": [
 				{
 					"name": "isv_item_id",
@@ -61,7 +76,11 @@
 					"type": "Number",
 					"description": "关系：1、互斥 2、重复"
 				}
-			]
+			],
+			"name": "isv_item_relation_d_t_o_s",
+			"type": "IsvItemRelationDto[]",
+			"description": "单项之间关系",
+			"maxListSize": 1000
 		},
 		{
 			"name": "hospital_codes",
@@ -70,10 +89,6 @@
 			"maxListSize": 500
 		},
 		{
-			"name": "isv_item_pack_d_t_o_s",
-			"type": "IsvItemPackDto[]",
-			"description": "加项包列表",
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "isv_pack_id",
@@ -110,14 +125,13 @@
 					"type": "String",
 					"description": "结算价，单位分"
 				}
-			]
+			],
+			"name": "isv_item_pack_d_t_o_s",
+			"type": "IsvItemPackDto[]",
+			"description": "加项包列表",
+			"maxListSize": 1000
 		},
 		{
-			"name": "isv_item_d_t_o_s",
-			"type": "IsvItemDto[]",
-			"description": "单项信息列表",
-			"required": true,
-			"maxListSize": 2000,
 			"subParams": [
 				{
 					"name": "isv_item_id",
@@ -146,71 +160,52 @@
 					"type": "String",
 					"description": "售价，单位分"
 				}
-			]
-		},
-		{
-			"name": "isv_pack_relation_d_t_o_s",
-			"type": "IsvPackRelationDto[]",
-			"description": "加项包关系列表",
+			],
+			"name": "isv_item_d_t_o_s",
+			"type": "IsvItemDto[]",
+			"description": "单项信息列表",
 			"maxListSize": 2000,
-			"subParams": [
-				{
-					"name": "isv_pack_id",
-					"type": "String",
-					"description": "加项包id"
-				},
-				{
-					"name": "rel_isv_pack_id",
-					"type": "String",
-					"description": "关联加项包id"
-				},
-				{
-					"name": "type",
-					"type": "Number",
-					"description": "关系：1、互斥."
-				}
-			]
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "详细错误信息",
-					"required": true
+					"description": "详细错误信息"
 				},
 				{
-					"name": "data",
-					"type": "ItemsPublishResponse",
-					"description": "返回结果说明信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "msg",
 							"type": "String",
-							"description": "结果说明",
-							"required": true
+							"description": "结果说明"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemsPublishResponse",
+					"description": "返回结果说明信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行成功标示",
-					"required": true
+					"description": "执行成功标示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.items.publish",
+	"apiChineseName": "单项/加项包信息同步",
+	"description": "体检机构对接_单项/加项包信息发布／更新",
+	"id": 42985
 }

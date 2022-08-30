@@ -1,14 +1,6 @@
 {
-	"id": 31987,
-	"name": "alibaba.campus.device.openapi.operatedevice",
-	"apiChineseName": "根据uuid操作设备",
-	"description": "根据uuid操作设备",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "请求发送端信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,7 +13,11 @@
 					"description": "所属园区Id",
 					"required": true
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true
 		},
 		{
 			"name": "uuid",
@@ -44,35 +40,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "下达操作设备的命令是否成功",
-					"required": true
+					"description": "下达操作设备的命令是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.operatedevice",
+	"apiChineseName": "根据uuid操作设备",
+	"description": "根据uuid操作设备",
+	"id": 31987
 }

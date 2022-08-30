@@ -9,7 +9,7 @@ import (
 // AlibabaAlihealthDrugtraceTopYljgUploadretailAPIResponse 零售单据上传接口 API返回值
 // alibaba.alihealth.drugtrace.top.yljg.uploadretail
 //
-// 快易通多融零售上传接口
+// 医疗机构零售上传接口
 type AlibabaAlihealthDrugtraceTopYljgUploadretailAPIResponse struct {
 	model.CommonResponse
 	AlibabaAlihealthDrugtraceTopYljgUploadretailAPIResponseModel

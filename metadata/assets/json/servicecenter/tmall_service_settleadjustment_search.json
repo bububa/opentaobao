@@ -1,8 +1,4 @@
 {
-	"id": 27437,
-	"name": "tmall.service.settleadjustment.search",
-	"apiChineseName": "服务商15分钟获取数据",
-	"description": "天猫服务平台，按修改时间，时间间隔在15中内（包含15分钟），获取调整单数据",
 	"requestParams": [
 		{
 			"name": "end_time",
@@ -19,135 +15,119 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "settle_adjustment_list",
-					"type": "SettleAdjustmentResponse[]",
-					"description": "dataModule",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "bizOrderId",
-							"required": true
+							"description": "bizOrderId"
 						},
 						{
 							"name": "comments",
 							"type": "String",
-							"description": "comments",
-							"required": true
+							"description": "comments"
 						},
 						{
 							"name": "cost",
 							"type": "Number",
-							"description": "费用，单位分",
-							"required": true
+							"description": "费用，单位分"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "description",
-							"required": true
+							"description": "description"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "gmtCreate",
-							"required": true
+							"description": "gmtCreate"
 						},
 						{
 							"name": "modified_time",
 							"type": "Date",
-							"description": "gmtModified",
-							"required": true
+							"description": "gmtModified"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "parent_biz_order_id",
 							"type": "Number",
-							"description": "parentBizOrderId",
-							"required": true
+							"description": "parentBizOrderId"
 						},
 						{
 							"name": "picture_urls",
 							"type": "String",
-							"description": "pictureUrls",
-							"required": true
+							"description": "pictureUrls"
 						},
 						{
 							"name": "price_factors",
 							"type": "String",
-							"description": "priceFactors",
-							"required": true
+							"description": "priceFactors"
 						},
 						{
 							"name": "service_code",
 							"type": "String",
-							"description": "serviceCode",
-							"required": true
+							"description": "serviceCode"
 						},
 						{
 							"name": "service_order_id",
 							"type": "Number",
-							"description": "serviceOrderId",
-							"required": true
+							"description": "serviceOrderId"
 						},
 						{
 							"name": "workcard_id",
 							"type": "Number",
-							"description": "workcardId",
-							"required": true
+							"description": "workcardId"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "调整单态。 待商家确认:1, 商家已确认:2,  待小二判定:3,  小二判定有效:4,  小二判定无效:5,  小二无法判定:6, 服务商取消:7, 超时确认:8, 完成:9",
-							"required": true
+							"description": "调整单态。 待商家确认:1, 商家已确认:2,  待小二判定:3,  小二判定有效:4,  小二判定无效:5,  小二无法判定:6, 服务商取消:7, 超时确认:8, 完成:9"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "type",
-							"required": true
+							"description": "type"
 						}
-					]
+					],
+					"name": "settle_adjustment_list",
+					"type": "SettleAdjustmentResponse[]",
+					"description": "dataModule"
 				},
 				{
-					"name": "error_message",
-					"type": "ErrorMessage",
-					"description": "errorMessage",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "errorMsg",
-							"required": true
+							"description": "errorMsg"
 						}
-					]
+					],
+					"name": "error_message",
+					"type": "ErrorMessage",
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.service.settleadjustment.search",
+	"apiChineseName": "服务商15分钟获取数据",
+	"description": "天猫服务平台，按修改时间，时间间隔在15中内（包含15分钟），获取调整单数据",
+	"id": 27437
 }

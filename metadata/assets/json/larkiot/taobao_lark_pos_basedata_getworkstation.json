@@ -1,8 +1,4 @@
 {
-	"id": 51150,
-	"name": "taobao.lark.pos.basedata.getworkstation",
-	"apiChineseName": "根据影城id工作站和macId获取工作站",
-	"description": "获取单独工作站",
 	"requestParams": [
 		{
 			"name": "cinema_link_id",
@@ -21,5 +17,9 @@
 			"type": "Json",
 			"description": "响应结果"
 		}
-	]
+	],
+	"name": "taobao.lark.pos.basedata.getworkstation",
+	"apiChineseName": "根据影城id工作站和macId获取工作站",
+	"description": "获取单独工作站",
+	"id": 51150
 }

@@ -1,13 +1,6 @@
 {
-	"id": 37347,
-	"name": "alibaba.mj.mos.fund.cancelbill",
-	"apiChineseName": "取消付款单",
-	"description": "取消付款单",
 	"requestParams": [
 		{
-			"name": "cancel_bill_d_t_o",
-			"type": "CancelBillDto",
-			"description": "取消入参",
 			"subParams": [
 				{
 					"name": "cancel_comments",
@@ -38,7 +31,10 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "cancel_bill_d_t_o",
+			"type": "CancelBillDto",
+			"description": "取消入参"
 		}
 	],
 	"responseParams": [
@@ -47,5 +43,9 @@
 			"type": "Boolean",
 			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.mj.mos.fund.cancelbill",
+	"apiChineseName": "取消付款单",
+	"description": "取消付款单",
+	"id": 37347
 }

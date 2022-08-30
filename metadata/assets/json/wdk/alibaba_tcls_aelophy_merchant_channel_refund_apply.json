@@ -1,15 +1,18 @@
 {
-	"id": 55832,
-	"name": "alibaba.tcls.aelophy.merchant.channel.refund.apply",
-	"apiChineseName": "翱象商家自有渠道 逆向单申请",
-	"description": "翱象小程序 用户逆向单申请",
 	"requestParams": [
 		{
-			"name": "refund_apply_info",
-			"type": "RefundApplyInfo",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主单号",
+					"required": true
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部渠道店ID(与shop_id必选其一)"
+				},
 				{
 					"name": "out_refund_id",
 					"type": "String",
@@ -38,11 +41,13 @@
 					"description": "退的包装费"
 				},
 				{
-					"name": "sub_refund_orders",
-					"type": "SubRefundOrder[]",
-					"description": "逆向子单列表",
-					"required": true,
 					"subParams": [
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "外部子单号",
+							"required": true
+						},
 						{
 							"name": "refund_quantity",
 							"type": "Number",
@@ -54,61 +59,61 @@
 							"type": "Number",
 							"description": "退款金额，单位：分",
 							"required": true
-						},
-						{
-							"name": "sub_out_order_id",
-							"type": "String",
-							"description": "外部子单号",
-							"required": true
 						}
-					]
-				},
-				{
-					"name": "out_order_id",
-					"type": "String",
-					"description": "外部主单号",
-					"required": true
-				},
-				{
-					"name": "out_shop_id",
-					"type": "String",
-					"description": "外部渠道店ID",
+					],
+					"name": "sub_refund_orders",
+					"type": "SubRefundOrder[]",
+					"description": "逆向子单列表",
 					"required": true
 				},
 				{
 					"name": "order_from",
 					"type": "Number",
-					"description": "订单来源",
-					"required": true
+					"description": "渠道来源(选填out_shop_id时该值必填)"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id(与out_shop_id必选其一)"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退款类型，1:仅退款。2.仅退货。3.退货退款"
 				}
-			]
+			],
+			"name": "refund_apply_info",
+			"type": "RefundApplyInfo",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.merchant.channel.refund.apply",
+	"apiChineseName": "翱象商家自有渠道 逆向单申请",
+	"description": "翱象小程序 用户逆向单申请",
+	"id": 55832
 }

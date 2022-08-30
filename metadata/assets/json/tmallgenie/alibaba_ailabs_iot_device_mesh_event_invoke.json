@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链接id",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "payload",
+					"type": "String",
+					"description": "事件内容",
+					"required": true
+				},
+				{
+					"name": "namespace",
+					"type": "String",
+					"description": "事件命名空间",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "命名",
+					"required": true
+				}
+			],
+			"name": "event",
+			"type": "LivingGenericEventDTO",
+			"description": "事件",
+			"required": true
+		},
+		{
+			"name": "server_event_request_id",
+			"type": "String",
+			"description": "事件服务请求id",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "音箱uuid",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "事件链路id"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "成功还是失败"
+		},
+		{
+			"name": "ret_value",
+			"type": "String",
+			"description": "响应值"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.ailabs.iot.device.mesh.event.invoke",
+	"apiChineseName": "弹内设备中心事件调用",
+	"description": "弹内设备中心事件调用",
+	"id": 61810
+}

@@ -2,6 +2,8 @@ package ascpchannel
 
 // ExternalCreateRefundOrderDetailRequest 结构体
 type ExternalCreateRefundOrderDetailRequest struct {
+	// 退款举证图片列表
+	ProofPicUrls []string `json:"proof_pic_urls,omitempty" xml:"proof_pic_urls>string,omitempty"`
 	// 币种
 	CurrencyType string `json:"currency_type,omitempty" xml:"currency_type,omitempty"`
 	// 子销售单号
@@ -16,6 +18,8 @@ type ExternalCreateRefundOrderDetailRequest struct {
 	OutSubOrderNo string `json:"out_sub_order_no,omitempty" xml:"out_sub_order_no,omitempty"`
 	// 外部订单号
 	OutOrderNo string `json:"out_order_no,omitempty" xml:"out_order_no,omitempty"`
+	// 退款原因
+	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 退款金额
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退款类型

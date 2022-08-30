@@ -1,8 +1,4 @@
 {
-	"id": 25902,
-	"name": "taobao.mobile.promotion.coupon.seller.search",
-	"apiChineseName": "查询绑定卖家优惠券相关信息(手淘专用)",
-	"description": "查询绑定卖家相关优惠券信息 如isv 百川 等外部业务方",
 	"requestParams": [
 		{
 			"name": "trace_id",
@@ -27,9 +23,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "coupon_search_result",
-			"type": "CouponSearchResult",
-			"description": "优惠券查询结果",
 			"subParams": [
 				{
 					"name": "total_count",
@@ -42,9 +35,6 @@
 					"description": "排查调用id"
 				},
 				{
-					"name": "seller_coupon_details",
-					"type": "AllsparkSellerCouponDetail[]",
-					"description": "优惠券详情列表",
 					"subParams": [
 						{
 							"name": "coupon_type",
@@ -141,9 +131,19 @@
 							"type": "Number",
 							"description": "已领取数量"
 						}
-					]
+					],
+					"name": "seller_coupon_details",
+					"type": "AllsparkSellerCouponDetail[]",
+					"description": "优惠券详情列表"
 				}
-			]
+			],
+			"name": "coupon_search_result",
+			"type": "CouponSearchResult",
+			"description": "优惠券查询结果"
 		}
-	]
+	],
+	"name": "taobao.mobile.promotion.coupon.seller.search",
+	"apiChineseName": "查询绑定卖家优惠券相关信息(手淘专用)",
+	"description": "查询绑定卖家相关优惠券信息 如isv 百川 等外部业务方",
+	"id": 25902
 }

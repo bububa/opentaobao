@@ -1,8 +1,4 @@
 {
-	"id": 45916,
-	"name": "alibaba.damai.maitix.project.distribution.detail.query",
-	"apiChineseName": "大麦分销项目内容详情查询",
-	"description": "大麦分销项目内容详情查询，提供项目的内容详情",
 	"requestParams": [
 		{
 			"name": "project_id",
@@ -13,205 +9,177 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "model",
-					"type": "OpenProjectDetailDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
-						{
-							"name": "project_id",
-							"type": "Number",
-							"description": "项目id",
-							"required": true
-						},
-						{
-							"name": "project_name",
-							"type": "String",
-							"description": "项目名称",
-							"required": true
-						},
-						{
-							"name": "classify_code",
-							"type": "Number",
-							"description": "项目分类编码",
-							"required": true
-						},
-						{
-							"name": "classify_name",
-							"type": "String",
-							"description": "项目分类名称",
-							"required": true
-						},
-						{
-							"name": "sub_classify_code",
-							"type": "Number",
-							"description": "二级项目分类编码",
-							"required": true
-						},
-						{
-							"name": "sub_classify_name",
-							"type": "String",
-							"description": "二级项目分类名称",
-							"required": true
-						},
-						{
-							"name": "show_pic",
-							"type": "String",
-							"description": "演出海报图",
-							"required": true
-						},
-						{
-							"name": "show_detail",
-							"type": "String",
-							"description": "演出详情",
-							"required": true
-						},
-						{
-							"name": "show_start_time",
-							"type": "Date",
-							"description": "演出开售时间",
-							"required": true
-						},
-						{
-							"name": "show_end_time",
-							"type": "Date",
-							"description": "演出销售结束时间",
-							"required": true
-						},
-						{
-							"name": "limit_notice",
-							"type": "String",
-							"description": "限购说明",
-							"required": true
-						},
-						{
-							"name": "choice_seat_notice",
-							"type": "String",
-							"description": "是否支持选座",
-							"required": true
-						},
-						{
-							"name": "real_name_notice",
-							"type": "String",
-							"description": "实名制购票",
-							"required": true
-						},
 						{
 							"name": "children_notice",
 							"type": "String",
-							"description": "儿童购票说明",
-							"required": true
-						},
-						{
-							"name": "policy_of_return",
-							"type": "String",
-							"description": "退换政策",
-							"required": true
-						},
-						{
-							"name": "entrance_notice",
-							"type": "String",
-							"description": "入场说明",
-							"required": true
-						},
-						{
-							"name": "eticket_notice",
-							"type": "String",
-							"description": "电子票入场提示",
-							"required": true
+							"description": "儿童购票说明"
 						},
 						{
 							"name": "self_get_ticket_notice",
 							"type": "String",
-							"description": "自助取票",
-							"required": true
+							"description": "自助取票"
+						},
+						{
+							"name": "show_start_time",
+							"type": "Date",
+							"description": "演出开售时间"
+						},
+						{
+							"name": "limit_notice",
+							"type": "String",
+							"description": "限购说明"
 						},
 						{
 							"name": "deposit_info",
 							"type": "String",
-							"description": "寄存说明",
-							"required": true
+							"description": "寄存说明"
+						},
+						{
+							"name": "show_detail",
+							"type": "String",
+							"description": "演出详情"
+						},
+						{
+							"name": "real_name_notice",
+							"type": "String",
+							"description": "实名制购票"
 						},
 						{
 							"name": "prohibited_items",
 							"type": "String",
-							"description": "禁止携带物品说明",
-							"required": true
+							"description": "禁止携带物品说明"
+						},
+						{
+							"name": "show_pic",
+							"type": "String",
+							"description": "演出海报图"
+						},
+						{
+							"name": "policy_of_return",
+							"type": "String",
+							"description": "退换政策"
+						},
+						{
+							"name": "entrance_notice",
+							"type": "String",
+							"description": "入场说明"
+						},
+						{
+							"name": "project_name",
+							"type": "String",
+							"description": "项目名称"
+						},
+						{
+							"name": "classify_code",
+							"type": "Number",
+							"description": "项目分类编码"
+						},
+						{
+							"name": "sub_classify_name",
+							"type": "String",
+							"description": "二级项目分类名称"
+						},
+						{
+							"name": "choice_seat_notice",
+							"type": "String",
+							"description": "是否支持选座"
+						},
+						{
+							"name": "eticket_notice",
+							"type": "String",
+							"description": "电子票入场提示"
+						},
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目id"
+						},
+						{
+							"name": "show_end_time",
+							"type": "Date",
+							"description": "演出销售结束时间"
+						},
+						{
+							"name": "classify_name",
+							"type": "String",
+							"description": "项目分类名称"
+						},
+						{
+							"name": "sub_classify_code",
+							"type": "Number",
+							"description": "二级项目分类编码"
 						},
 						{
 							"name": "artists",
 							"type": "String",
-							"description": "艺人JSON",
-							"required": true
+							"description": "艺人JSON"
 						},
 						{
 							"name": "ip_card",
 							"type": "String",
-							"description": "品牌JSON",
-							"required": true
+							"description": "品牌JSON"
 						},
 						{
 							"name": "show_time",
 							"type": "String",
-							"description": "演出时间",
-							"required": true
+							"description": "演出时间"
 						},
 						{
 							"name": "delivery_types",
 							"type": "String",
-							"description": "取票类型1-无纸化,2-快递票,3-自助换票,4-门店自取。1、3属于电子票换票方式,2、4属于纸质票取票方式",
-							"required": true
+							"description": "取票类型1-无纸化,2-快递票,3-自助换票,4-门店自取。1、3属于电子票换票方式,2、4属于纸质票取票方式"
 						},
 						{
 							"name": "post_city",
 							"type": "String",
-							"description": "发货城市，国标http://www.mca.gov.cn/article/sj/xzqh/2019/2019/201912251506.html",
-							"required": true
+							"description": "发货城市，国标http://www.mca.gov.cn/article/sj/xzqh/2019/2019/201912251506.html"
 						},
 						{
 							"name": "pickup_address_list",
 							"type": "String",
-							"description": "上门自取地址",
-							"required": true
+							"description": "上门自取地址"
 						},
 						{
 							"name": "perform_time_detail_list",
 							"type": "String",
-							"description": "演出时间说明",
-							"required": true
+							"description": "演出时间说明"
 						},
 						{
 							"name": "purchase_limitation_once",
 							"type": "Number",
-							"description": "项目单次限购数量",
-							"required": true
+							"description": "项目单次限购数量"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OpenProjectDetailDto",
+					"description": "model"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.project.distribution.detail.query",
+	"apiChineseName": "大麦分销项目内容详情查询",
+	"description": "大麦分销项目内容详情查询，提供项目的内容详情",
+	"id": 45916
 }

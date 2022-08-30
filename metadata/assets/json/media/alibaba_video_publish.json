@@ -1,0 +1,38 @@
+{
+	"requestParams": [
+		{
+			"name": "file_id",
+			"type": "String",
+			"description": "文件id",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "视频标题",
+			"required": true
+		},
+		{
+			"name": "cover_url",
+			"type": "String",
+			"description": "封面图",
+			"required": true
+		},
+		{
+			"name": "tags",
+			"type": "String",
+			"description": "视频标签"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "视频id"
+		}
+	],
+	"name": "alibaba.video.publish",
+	"apiChineseName": "发布视频",
+	"description": "发布视频。\n说明：发布视频5s后再查询视频信息，否则可能无法获取播放链接",
+	"id": 61576
+}

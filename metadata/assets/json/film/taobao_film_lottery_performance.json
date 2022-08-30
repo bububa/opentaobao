@@ -1,0 +1,136 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_user_id",
+					"type": "String",
+					"description": "用户对外开放ID",
+					"required": true
+				},
+				{
+					"name": "spread_id",
+					"type": "String",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "platform",
+					"type": "Number",
+					"description": "平台",
+					"required": true
+				},
+				{
+					"name": "biz_ext_info",
+					"type": "String",
+					"description": "拓展参数"
+				}
+			],
+			"name": "lottery_performance_top_param",
+			"type": "LotteryPerformanceTopParam",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果状态码（1：全部成功；2：全部失败；3：部分成功需要重试；4：部分成功无需重试(需人工介入处理)）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "reward_title",
+							"type": "String",
+							"description": "奖品主标题"
+						},
+						{
+							"name": "reward_sub_title",
+							"type": "String",
+							"description": "奖品副标题"
+						},
+						{
+							"name": "reward_type",
+							"type": "Number",
+							"description": "奖品类型（1：淘票票优惠券；2：大麦优惠券；14：会员权益）"
+						},
+						{
+							"name": "reward_sub_type",
+							"type": "Number",
+							"description": "优惠券子类型（1：兑换券 2：代金券）会员权益子类型（5：会员积分；7：普通会员；8：黑钻会员）"
+						},
+						{
+							"name": "reward_count",
+							"type": "Number",
+							"description": "奖品数量"
+						},
+						{
+							"name": "reward_unit",
+							"type": "String",
+							"description": "奖品单位"
+						},
+						{
+							"name": "cost_price",
+							"type": "Number",
+							"description": "奖品面额(单位分)"
+						},
+						{
+							"name": "gmt_expire",
+							"type": "String",
+							"description": "奖品过期时间(格式: yyyy-MM-dd HH:mm:ss)"
+						},
+						{
+							"name": "reward_ext",
+							"type": "String",
+							"description": "拓展参数"
+						}
+					],
+					"name": "rewards",
+					"type": "LotteryPerformanceRewardDTO[]",
+					"description": "奖品列表"
+				}
+			],
+			"name": "return_value",
+			"type": "LotteryPerformanceResult",
+			"description": "返回值"
+		},
+		{
+			"name": "return_error_stack_trace",
+			"type": "String",
+			"description": "returnErrorStackTrace"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "return_error_oper",
+			"type": "String",
+			"description": "returnErrorOper"
+		},
+		{
+			"name": "return_error_solution",
+			"type": "String",
+			"description": "returnErrorSolution"
+		}
+	],
+	"name": "taobao.film.lottery.performance",
+	"apiChineseName": "淘票票履约发放权益",
+	"description": "对外第三方合作渠道通过抽奖形式发放权益",
+	"id": 62971
+}

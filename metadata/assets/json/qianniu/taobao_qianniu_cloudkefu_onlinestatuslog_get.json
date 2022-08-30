@@ -1,15 +1,11 @@
 {
-	"id": 39606,
-	"name": "taobao.qianniu.cloudkefu.onlinestatuslog.get",
-	"apiChineseName": "查询客服在线状态",
-	"description": "按天查询客服账号的在线状态记录。如：登录，下线，挂起等\n有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询",
 	"requestParams": [
 		{
 			"name": "account_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "子帐号列表，最多10个",
-			"required": true,
-			"maxListSize": 5
+			"maxListSize": 5,
+			"required": true
 		},
 		{
 			"name": "start_date",
@@ -26,59 +22,51 @@
 	],
 	"responseParams": [
 		{
-			"name": "record_list",
-			"type": "RecordList []",
-			"description": "module",
 			"subParams": [
+				{
+					"name": "main_account_id",
+					"type": "Number",
+					"description": "mainAccountId"
+				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "操作记录，1在线，-1离线，2挂起，3解挂",
-					"required": true
+					"description": "操作记录，1在线，-1离线，2挂起，3解挂"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "记录类型，PC上下线：8；移动上下线：4；挂起类型：5",
-					"required": true
-				},
-				{
-					"name": "domain",
-					"type": "String",
-					"description": "登陆域",
-					"required": true
-				},
-				{
-					"name": "main_account_id",
-					"type": "Number",
-					"description": "mainAccountId",
-					"required": true
+					"description": "记录类型，PC上下线：8；移动上下线：4；挂起类型：5"
 				},
 				{
 					"name": "account_id",
 					"type": "Number",
-					"description": "查询记录的帐号ID",
-					"required": true
+					"description": "查询记录的帐号ID"
 				},
 				{
 					"name": "change_time_ts",
 					"type": "Number",
-					"description": "变更时间戳",
-					"required": true
+					"description": "变更时间戳"
 				},
 				{
 					"name": "change_time",
 					"type": "Date",
-					"description": "变更时间",
-					"required": true
+					"description": "变更时间"
+				},
+				{
+					"name": "domain",
+					"type": "String",
+					"description": "登陆域"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				}
-			]
+			],
+			"name": "record_list",
+			"type": "RecordList []",
+			"description": "module"
 		},
 		{
 			"name": "cause",
@@ -105,5 +93,9 @@
 			"type": "Number",
 			"description": "version"
 		}
-	]
+	],
+	"name": "taobao.qianniu.cloudkefu.onlinestatuslog.get",
+	"apiChineseName": "查询客服在线状态",
+	"description": "按天查询客服账号的在线状态记录。如：登录，下线，挂起等\n有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询",
+	"id": 39606
 }

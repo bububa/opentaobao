@@ -1,0 +1,103 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "finance_plan_id",
+					"type": "String",
+					"description": "金融方案id"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "淘宝订单号id",
+					"required": true
+				},
+				{
+					"name": "monthly_payment",
+					"type": "Number",
+					"description": "月供"
+				},
+				{
+					"name": "periods",
+					"type": "Number",
+					"description": "期数"
+				},
+				{
+					"name": "ws_bank_order_id",
+					"type": "String",
+					"description": "网商订单id",
+					"required": true
+				},
+				{
+					"name": "down_payment_amount",
+					"type": "Number",
+					"description": "首付金额"
+				},
+				{
+					"name": "credit_amount",
+					"type": "Number",
+					"description": "贷款金额"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态值",
+					"required": true
+				},
+				{
+					"name": "loan_amount",
+					"type": "Number",
+					"description": "放款金额"
+				},
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "代扣参数"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "交易场景码"
+				}
+			],
+			"name": "param0",
+			"type": "CreditLoanStatusSyncReq",
+			"description": "状态同步数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "succeed",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否重试"
+				}
+			],
+			"name": "data",
+			"type": "CreditLoanStatusSyncResp",
+			"description": "同步结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "tmall.car.finance.status.sync",
+	"apiChineseName": "汽车金融状态同步",
+	"description": "汽车金融状态同步",
+	"id": 60511
+}

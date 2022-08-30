@@ -1,14 +1,6 @@
 {
-	"id": 55375,
-	"name": "alibaba.idle.isv.refund.query",
-	"apiChineseName": "闲鱼已验货交易订单退款信息查询",
-	"description": "闲鱼服务商交易订单退款信息查询-单个退款查询",
 	"requestParams": [
 		{
-			"name": "param_appraise_isv_order_query",
-			"type": "AppraiseIsvOrderQuery",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_order_id",
@@ -16,232 +8,215 @@
 					"description": "交易订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param_appraise_isv_order_query",
+			"type": "AppraiseIsvOrderQuery",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "AppraiseIsvRefundDto",
-					"description": "退款信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "buy_amount",
 							"type": "Number",
-							"description": "商品购买数量",
-							"required": true
+							"description": "商品购买数量"
 						},
 						{
 							"name": "buyer_apply_reason",
 							"type": "String",
-							"description": "买家申请退款原因",
-							"required": true
+							"description": "买家申请退款原因"
 						},
 						{
 							"name": "buyer_apply_sub_reason",
 							"type": "String",
-							"description": "买家退款说明,买家申请退款二级原因",
-							"required": true
+							"description": "买家退款说明,买家申请退款二级原因"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "买家昵称",
-							"required": true
+							"description": "买家昵称（不唯一且用户可以自己更改）"
 						},
 						{
 							"name": "goods_status",
 							"type": "Number",
-							"description": "货物状态",
-							"required": true
+							"description": "货物状态"
 						},
 						{
-							"name": "item",
-							"type": "AppraiseIsvItemDto",
-							"description": "商品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "商品Id",
-									"required": true
+									"description": "商品Id"
 								},
 								{
 									"name": "pic_url",
 									"type": "String",
-									"description": "商品图片,绝对途径",
-									"required": true
+									"description": "商品图片,绝对途径"
 								},
 								{
 									"name": "price",
 									"type": "Number",
-									"description": "商品价格，单位分",
-									"required": true
+									"description": "商品价格，单位分"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "商品标题",
-									"required": true
+									"description": "商品标题"
 								}
-							]
+							],
+							"name": "item",
+							"type": "AppraiseIsvItemDto",
+							"description": "商品信息"
 						},
 						{
 							"name": "need_return_goods",
 							"type": "Boolean",
-							"description": "买家是否需要退货",
-							"required": true
+							"description": "买家是否需要退货"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "payment",
 							"type": "Number",
-							"description": "订单实付金额,单位分",
-							"required": true
-						},
-						{
-							"name": "refund_create_time",
-							"type": "Number",
-							"description": "退款申请时间,时间戳,单位分",
-							"required": true
-						},
-						{
-							"name": "refund_fee",
-							"type": "Number",
-							"description": "退还金额(退还给买家的金额),单位分",
-							"required": true
-						},
-						{
-							"name": "refund_id",
-							"type": "Number",
-							"description": "退款订单号",
-							"required": true
-						},
-						{
-							"name": "refund_post_company",
-							"type": "String",
-							"description": "退货-快递公司",
-							"required": true
-						},
-						{
-							"name": "refund_post_no",
-							"type": "String",
-							"description": "退货-快递单号",
-							"required": true
-						},
-						{
-							"name": "refund_status",
-							"type": "Number",
-							"description": "退款订单状态",
-							"required": true
-						},
-						{
-							"name": "seller_agree_msg",
-							"type": "String",
-							"description": "卖家同意退货说明",
-							"required": true
-						},
-						{
-							"name": "seller_nick",
-							"type": "String",
-							"description": "卖家昵称",
-							"required": true
-						},
-						{
-							"name": "seller_refuse_reason",
-							"type": "String",
-							"description": "卖家拒绝退款原因",
-							"required": true
+							"description": "订单实付金额,单位分"
 						},
 						{
 							"name": "buyer_apply_desc",
 							"type": "String",
-							"description": "买家申请退款描述",
-							"required": true
+							"description": "买家申请退款描述"
+						},
+						{
+							"name": "refund_create_time",
+							"type": "Number",
+							"description": "退款申请时间,时间戳,单位分"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退还金额(退还给买家的金额),单位分"
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "退款订单号"
+						},
+						{
+							"name": "refund_post_company",
+							"type": "String",
+							"description": "退货-快递公司"
+						},
+						{
+							"name": "refund_post_no",
+							"type": "String",
+							"description": "退货-快递单号"
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款订单状态"
 						},
 						{
 							"name": "refund_modify_time",
 							"type": "Number",
-							"description": "退款最新修改时间,时间戳,单位分",
-							"required": true
+							"description": "退款最新修改时间,时间戳,单位分"
+						},
+						{
+							"name": "seller_agree_msg",
+							"type": "String",
+							"description": "卖家同意退货说明"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称（不唯一且用户可以自己更改）"
 						},
 						{
 							"name": "seller_refuse_msg",
 							"type": "String",
-							"description": "卖家拒绝退款说明",
-							"required": true
+							"description": "卖家拒绝退款说明"
 						},
 						{
-							"name": "timeout_data",
-							"type": "IsvRefundTimeoutDto",
-							"description": "退款超时信息",
-							"required": true,
+							"name": "seller_refuse_reason",
+							"type": "String",
+							"description": "卖家拒绝退款原因"
+						},
+						{
 							"subParams": [
 								{
 									"name": "create",
 									"type": "Number",
-									"description": "退款超时创建时间，时间戳，毫秒",
-									"required": true
+									"description": "退款超时创建时间，时间戳，毫秒"
 								},
 								{
 									"name": "modified",
 									"type": "Number",
-									"description": "退款超时修改时间，时间戳，毫秒",
-									"required": true
+									"description": "退款超时修改时间，时间戳，毫秒"
 								},
 								{
 									"name": "duration",
 									"type": "Number",
-									"description": "退款超时时长，时间长度(毫秒)",
-									"required": true
+									"description": "退款超时时长，时间长度(毫秒)"
 								},
 								{
 									"name": "timeout",
 									"type": "Number",
-									"description": "退款超时时间点(自动触发状态变更的超时时间点)，时间戳，毫秒",
-									"required": true
+									"description": "退款超时时间点(自动触发状态变更的超时时间点)，时间戳，毫秒"
 								},
 								{
 									"name": "timeout_status",
 									"type": "Number",
-									"description": "退款超时运行状态 0:超时创建完成, 1:超时运行中, 2:超时暂停, 3:超时关闭, 4:超时失败, 5:超时成功",
-									"required": true
+									"description": "退款超时运行状态 0:超时创建完成, 1:超时运行中, 2:超时暂停, 3:超时关闭, 4:超时失败, 5:超时成功"
 								},
 								{
 									"name": "timeout_action_type",
 									"type": "String",
-									"description": "退款超时动作类型",
-									"required": true
+									"description": "退款超时动作类型"
 								}
-							]
+							],
+							"name": "timeout_data",
+							"type": "IsvRefundTimeoutDto",
+							"description": "退款超时信息"
+						},
+						{
+							"name": "encryption_buyer_id",
+							"type": "String",
+							"description": "加密的买家id（唯一且不会改变）"
+						},
+						{
+							"name": "encryption_seller_id",
+							"type": "String",
+							"description": "加密的卖家id（唯一且不会改变）"
 						}
-					]
+					],
+					"name": "module",
+					"type": "AppraiseIsvRefundDto",
+					"description": "退款信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.isv.refund.query",
+	"apiChineseName": "闲鱼已验货交易订单退款信息查询",
+	"description": "闲鱼服务商交易订单退款信息查询-单个退款查询",
+	"id": 55375
 }

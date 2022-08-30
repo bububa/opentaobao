@@ -1,13 +1,6 @@
 {
-	"id": 44182,
-	"name": "alibaba.alihealth.dental.store.insertorupdate",
-	"apiChineseName": "ISV新增/修改口腔门店",
-	"description": "ISV新增/修改口腔门店",
 	"requestParams": [
 		{
-			"name": "store",
-			"type": "DentalOuterStoreRequest",
-			"description": "门店",
 			"subParams": [
 				{
 					"name": "logo",
@@ -104,72 +97,70 @@
 					"type": "String[]",
 					"description": "门店图片"
 				}
-			]
+			],
+			"name": "store",
+			"type": "DentalOuterStoreRequest",
+			"description": "门店"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "StoreAuditVo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "门店ID",
-							"required": true
+							"description": "门店ID"
 						},
 						{
 							"name": "store_audit_id",
 							"type": "Number",
-							"description": "门店审核ID",
-							"required": true
+							"description": "门店审核ID"
 						},
 						{
 							"name": "reason",
 							"type": "String",
-							"description": "审核原因",
-							"required": true
+							"description": "审核原因"
 						},
 						{
 							"name": "check_status",
 							"type": "Number",
-							"description": "审核状态码",
-							"required": true
+							"description": "审核状态码"
 						},
 						{
 							"name": "check_status_string",
 							"type": "String",
-							"description": "审核状态",
-							"required": true
+							"description": "审核状态"
 						}
-					]
+					],
+					"name": "model",
+					"type": "StoreAuditVo",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msg_code",
-					"required": true
+					"description": "msg_code"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msg_info",
-					"required": true
+					"description": "msg_info"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true",
-					"required": true
+					"description": "true"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.store.insertorupdate",
+	"apiChineseName": "ISV新增/修改口腔门店",
+	"description": "ISV新增/修改口腔门店",
+	"id": 44182
 }

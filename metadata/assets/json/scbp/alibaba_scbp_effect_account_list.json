@@ -1,14 +1,6 @@
 {
-	"id": 24979,
-	"name": "alibaba.scbp.effect.account.list",
-	"apiChineseName": "账户-报表",
-	"description": "账户-报表,支持最近7天，最近30天，以及180天内时间区间。",
 	"requestParams": [
 		{
-			"name": "p4p_account_report_query",
-			"type": "AccountQuery",
-			"description": "AccountQuery",
-			"required": true,
 			"subParams": [
 				{
 					"name": "inteval",
@@ -35,14 +27,15 @@
 					"type": "String",
 					"description": "开始时间 inteval=7或30不用指定"
 				}
-			]
+			],
+			"name": "p4p_account_report_query",
+			"type": "AccountQuery",
+			"description": "AccountQuery",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "account_report_list",
-			"type": "AccountEffectDto []",
-			"description": "账户效果数据列表",
 			"subParams": [
 				{
 					"name": "impression_cnt",
@@ -79,7 +72,10 @@
 					"type": "String",
 					"description": "点击量"
 				}
-			]
+			],
+			"name": "account_report_list",
+			"type": "AccountEffectDto []",
+			"description": "账户效果数据列表"
 		},
 		{
 			"name": "total_num",
@@ -91,5 +87,9 @@
 			"type": "Number",
 			"description": "总页数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.effect.account.list",
+	"apiChineseName": "账户-报表",
+	"description": "账户-报表,支持最近7天，最近30天，以及180天内时间区间。",
+	"id": 24979
 }

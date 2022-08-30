@@ -1,8 +1,4 @@
 {
-	"id": 27296,
-	"name": "taobao.simba.searchtagtemplate.get",
-	"apiChineseName": "获取搜索人群TOP用户可添加人群信息",
-	"description": "获取搜索人群用户可添加人群信息",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -17,21 +13,10 @@
 	],
 	"responseParams": [
 		{
-			"name": "template_list",
-			"type": "Result []",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "dim_list",
-					"type": "DimDtOs[]",
-					"description": "DimDtOs",
-					"required": true,
 					"subParams": [
 						{
-							"name": "tag_list",
-							"type": "TagOptions[]",
-							"description": "tagList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "tag_name",
@@ -57,7 +42,11 @@
 									"description": "标签id",
 									"required": true
 								}
-							]
+							],
+							"name": "tag_list",
+							"type": "TagOptions[]",
+							"description": "tagList",
+							"required": true
 						},
 						{
 							"name": "name",
@@ -71,7 +60,11 @@
 							"description": "维度id,如性别年龄的id",
 							"required": true
 						}
-					]
+					],
+					"name": "dim_list",
+					"type": "DimDtOs[]",
+					"description": "DimDtOs",
+					"required": true
 				},
 				{
 					"name": "id",
@@ -91,7 +84,14 @@
 					"description": "人群类型",
 					"required": true
 				}
-			]
+			],
+			"name": "template_list",
+			"type": "Result []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.simba.searchtagtemplate.get",
+	"apiChineseName": "获取搜索人群TOP用户可添加人群信息",
+	"description": "获取搜索人群用户可添加人群信息",
+	"id": 27296
 }

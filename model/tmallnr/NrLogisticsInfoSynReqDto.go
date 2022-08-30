@@ -4,6 +4,8 @@ package tmallnr
 type NrLogisticsInfoSynReqDto struct {
 	// 站点名称
 	FacilityName string `json:"facility_name,omitempty" xml:"facility_name,omitempty"`
+	// 配送日期，周期送业务必传
+	PlanDate string `json:"plan_date,omitempty" xml:"plan_date,omitempty"`
 	// 流转节点的详细地址及操作描述
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 快递员的姓名
@@ -28,20 +30,18 @@ type NrLogisticsInfoSynReqDto struct {
 	MailCp string `json:"mail_cp,omitempty" xml:"mail_cp,omitempty"`
 	// 业务类型（oneHour:一小时达,zqs:周期送,dss:定时送，周期送业务:zqs）如果自配送传入：other
 	BizIdentity string `json:"biz_identity,omitempty" xml:"biz_identity,omitempty"`
-	// 配送日期，周期送业务必传
-	PlanDate string `json:"plan_date,omitempty" xml:"plan_date,omitempty"`
 	// 运力类型，0: 第三方快递员,  1:商家自动
 	DeliveryUserType int64 `json:"delivery_user_type,omitempty" xml:"delivery_user_type,omitempty"`
 	// 快递员id
 	DeliveryUserId int64 `json:"delivery_user_id,omitempty" xml:"delivery_user_id,omitempty"`
 	// 淘系交易主订单号
 	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
+	// 淘宝交易子订单号，周期送业务必传
+	SubBizOrderId int64 `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
 	// 事件编码,10:已下发等待接单,20:骑手已接单，待提货,40:揽收,999:妥投,50:拒收,-999:取消
 	Event int64 `json:"event,omitempty" xml:"event,omitempty"`
 	// 操作人类型:1寄件人,3客服小二,4快递员,5CP,6收件人,100系统
 	EventOperType int64 `json:"event_oper_type,omitempty" xml:"event_oper_type,omitempty"`
-	// 淘宝交易子订单号，周期送业务必传
-	SubBizOrderId int64 `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
 	// 配送序号
 	SequenceNo int64 `json:"sequence_no,omitempty" xml:"sequence_no,omitempty"`
 }

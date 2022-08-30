@@ -1,13 +1,6 @@
 {
-	"id": 42633,
-	"name": "tmall.servicecenter.servicestore.create",
-	"apiChineseName": "创建门店",
-	"description": "用于创建门店/网点。多个业务共用",
 	"requestParams": [
 		{
-			"name": "service_store",
-			"type": "ServiceStoreDTO",
-			"description": "网点/门店",
 			"subParams": [
 				{
 					"name": "address_city",
@@ -82,7 +75,7 @@
 				},
 				{
 					"name": "latitude",
-					"type": "String",
+					"type": "BigDecimal",
 					"description": "纬度"
 				},
 				{
@@ -97,7 +90,7 @@
 				},
 				{
 					"name": "longitude",
-					"type": "String",
+					"type": "BigDecimal",
 					"description": "经度"
 				},
 				{
@@ -169,55 +162,61 @@
 					"name": "license_photo",
 					"type": "String",
 					"description": "营业执照照片"
+				},
+				{
+					"name": "alipay_account_id",
+					"type": "String",
+					"description": "支付宝账户id"
 				}
-			]
+			],
+			"name": "service_store",
+			"type": "ServiceStoreDTO",
+			"description": "网点/门店"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "方法调用结果",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "result_data",
-					"type": "ServiceStoreCreateResp",
-					"description": "门店数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "门店id",
-							"required": true
+							"description": "门店id"
 						},
 						{
 							"name": "secret",
 							"type": "String",
-							"description": "门店密钥",
-							"required": true
+							"description": "门店密钥"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "ServiceStoreCreateResp",
+					"description": "门店数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "方法调用结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicestore.create",
+	"apiChineseName": "创建门店",
+	"description": "用于创建门店/网点。多个业务共用",
+	"id": 42633
 }

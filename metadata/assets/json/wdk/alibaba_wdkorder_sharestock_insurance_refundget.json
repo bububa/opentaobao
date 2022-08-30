@@ -1,8 +1,4 @@
 {
-	"id": 51984,
-	"name": "alibaba.wdkorder.sharestock.insurance.refundget",
-	"apiChineseName": "共享库存投保业务售后逆向订单数据获取",
-	"description": "共享库存投保业务售后逆向订单数据获取",
 	"requestParams": [
 		{
 			"name": "tb_sub_order_id",
@@ -19,115 +15,107 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MaochaoOrderInsuranceRefundQueryResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
-				},
-				{
-					"name": "return_code",
-					"type": "String",
-					"description": "返回码",
-					"required": true
-				},
-				{
-					"name": "return_msg",
-					"type": "String",
-					"description": "返回码说明",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "InsuranceRefundOrder",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_reason",
 							"type": "String",
-							"description": "退货原因",
-							"required": true
+							"description": "退货原因"
 						},
 						{
 							"name": "refund_success_time",
 							"type": "String",
-							"description": "退款完成时间",
-							"required": true
+							"description": "退款完成时间"
 						},
 						{
 							"name": "delivery_address",
 							"type": "String",
-							"description": "收货地址",
-							"required": true
+							"description": "收货地址"
 						},
 						{
 							"name": "send_address",
 							"type": "String",
-							"description": "发货地址",
-							"required": true
+							"description": "发货地址"
 						},
 						{
 							"name": "refund_amount",
 							"type": "String",
-							"description": "退货金额",
-							"required": true
+							"description": "退货金额"
 						},
 						{
 							"name": "item_category",
 							"type": "String",
-							"description": "商品类目名称(从root到叶子节点)",
-							"required": true
+							"description": "商品类目名称(从root到叶子节点)"
 						},
 						{
 							"name": "item_price",
 							"type": "String",
-							"description": "货物单价",
-							"required": true
+							"description": "货物单价"
 						},
 						{
 							"name": "item_quantity",
 							"type": "String",
-							"description": "货物数量(下单销售数量)",
-							"required": true
+							"description": "货物数量(下单销售数量)"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "货物名称",
-							"required": true
+							"description": "货物名称"
 						},
 						{
 							"name": "refund_id",
 							"type": "String",
-							"description": "退货单ID",
-							"required": true
+							"description": "退货单ID"
 						},
 						{
 							"name": "tb_sub_order_id",
 							"type": "Number",
-							"description": "交易子订单ID",
-							"required": true
+							"description": "交易子订单ID"
 						},
 						{
 							"name": "refund_create_time",
 							"type": "String",
-							"description": "退款发起时间",
-							"required": true
+							"description": "退款发起时间"
 						},
 						{
 							"name": "sign_time",
 							"type": "String",
-							"description": "签收时间",
-							"required": true
+							"description": "签收时间"
+						},
+						{
+							"name": "reverse_type",
+							"type": "String",
+							"description": "售后退=2，售中退=1"
 						}
-					]
+					],
+					"name": "model",
+					"type": "WdkRefundToInsuranceBO",
+					"description": "返回结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopBaseResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdkorder.sharestock.insurance.refundget",
+	"apiChineseName": "共享库存投保业务售后逆向订单数据获取",
+	"description": "共享库存投保业务售后逆向订单数据获取",
+	"id": 51984
 }

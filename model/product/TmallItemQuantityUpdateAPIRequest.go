@@ -16,10 +16,10 @@ type TmallItemQuantityUpdateAPIRequest struct {
 	_skuQuantities []UpdateSkuQuantity
 	// 商品id
 	_itemId int64
-	// 商品库存更新时候的可选参数
-	_options *UpdateItemQuantityOption
 	// 商品库存数；增量编辑方式支持正数、负数。（无SKU商品使用这个字段）
 	_itemQuantity int64
+	// 商品库存更新时候的可选参数
+	_options *UpdateItemQuantityOption
 }
 
 // NewTmallItemQuantityUpdateRequest 初始化TmallItemQuantityUpdateAPIRequest对象
@@ -69,19 +69,6 @@ func (r TmallItemQuantityUpdateAPIRequest) GetItemId() int64 {
 	return r._itemId
 }
 
-// SetOptions is Options Setter
-// 商品库存更新时候的可选参数
-func (r *TmallItemQuantityUpdateAPIRequest) SetOptions(_options *UpdateItemQuantityOption) error {
-	r._options = _options
-	r.Set("options", _options)
-	return nil
-}
-
-// GetOptions Options Getter
-func (r TmallItemQuantityUpdateAPIRequest) GetOptions() *UpdateItemQuantityOption {
-	return r._options
-}
-
 // SetItemQuantity is ItemQuantity Setter
 // 商品库存数；增量编辑方式支持正数、负数。（无SKU商品使用这个字段）
 func (r *TmallItemQuantityUpdateAPIRequest) SetItemQuantity(_itemQuantity int64) error {
@@ -93,4 +80,17 @@ func (r *TmallItemQuantityUpdateAPIRequest) SetItemQuantity(_itemQuantity int64)
 // GetItemQuantity ItemQuantity Getter
 func (r TmallItemQuantityUpdateAPIRequest) GetItemQuantity() int64 {
 	return r._itemQuantity
+}
+
+// SetOptions is Options Setter
+// 商品库存更新时候的可选参数
+func (r *TmallItemQuantityUpdateAPIRequest) SetOptions(_options *UpdateItemQuantityOption) error {
+	r._options = _options
+	r.Set("options", _options)
+	return nil
+}
+
+// GetOptions Options Getter
+func (r TmallItemQuantityUpdateAPIRequest) GetOptions() *UpdateItemQuantityOption {
+	return r._options
 }

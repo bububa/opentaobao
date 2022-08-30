@@ -1,8 +1,4 @@
 {
-	"id": 41315,
-	"name": "alibaba.alisports.passport.account.bindthirdid",
-	"apiChineseName": "阿里体育三方ID绑定接口",
-	"description": "阿里体育三方ID绑定接口",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -51,5 +47,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.bindthirdid",
+	"apiChineseName": "阿里体育三方ID绑定接口",
+	"description": "阿里体育三方ID绑定接口",
+	"id": 41315
 }

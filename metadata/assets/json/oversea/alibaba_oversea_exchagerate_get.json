@@ -1,8 +1,4 @@
 {
-	"id": 28703,
-	"name": "alibaba.oversea.exchagerate.get",
-	"apiChineseName": "汇率信息获取",
-	"description": "提供外部汇率查询接口",
 	"requestParams": [
 		{
 			"name": "biz_code",
@@ -24,35 +20,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "查询结果描述",
 			"subParams": [
 				{
 					"name": "exchange_rate",
 					"type": "String",
-					"description": "查到的税率信息",
-					"required": true
+					"description": "查到的税率信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询结果是否成功",
-					"required": true
+					"description": "查询结果是否成功"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "查询结果描述"
 		}
-	]
+	],
+	"name": "alibaba.oversea.exchagerate.get",
+	"apiChineseName": "汇率信息获取",
+	"description": "提供外部汇率查询接口",
+	"id": 28703
 }

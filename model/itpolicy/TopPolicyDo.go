@@ -20,8 +20,6 @@ type TopPolicyDo struct {
 	ExcludeDepCities string `json:"exclude_dep_cities,omitempty" xml:"exclude_dep_cities,omitempty"`
 	// 例外目的地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市
 	ExcludeArrCities string `json:"exclude_arr_cities,omitempty" xml:"exclude_arr_cities,omitempty"`
-	// 是否允许1/2RT组合销售规则，允许、不允许空表示：不允许
-	IsSupportRt string `json:"is_support_rt,omitempty" xml:"is_support_rt,omitempty"`
 	// 中转点，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市
 	TransferCities string `json:"transfer_cities,omitempty" xml:"transfer_cities,omitempty"`
 	// 备注信息，销售规则备注,最多300个字符
@@ -64,6 +62,10 @@ type TopPolicyDo struct {
 	ChildSaleRetention string `json:"child_sale_retention,omitempty" xml:"child_sale_retention,omitempty"`
 	// 儿童留钱，非必输;为整型;支持负数;单位元
 	ChildSaleRebase string `json:"child_sale_rebase,omitempty" xml:"child_sale_rebase,omitempty"`
+	// 是否允许1/2RT组合销售规则，允许、不允许空表示：不允许
+	IsSupportRt string `json:"is_support_rt,omitempty" xml:"is_support_rt,omitempty"`
+	// 不同航司联运，非必输；可输入允许或不允许，空表示不允许
+	IsAllowUnionAirline string `json:"is_allow_union_airline,omitempty" xml:"is_allow_union_airline,omitempty"`
 	// （已废除字段）退票规定，非必输长度小于300字符请同时录入 退票规定、改签规定和行李额规定
 	RefundRule string `json:"refund_rule,omitempty" xml:"refund_rule,omitempty"`
 	// （已废除字段）改签规定，非必输长度小于300字符请同时录入 退票规定、改签规定和行李额规定
@@ -74,12 +76,10 @@ type TopPolicyDo struct {
 	LuggageRule string `json:"luggage_rule,omitempty" xml:"luggage_rule,omitempty"`
 	// 购票须知，非必输长度小于300字符只在退票规定不为空时才会生效
 	BuyTicketNotice string `json:"buy_ticket_notice,omitempty" xml:"buy_ticket_notice,omitempty"`
-	// 商品类型，非必输；默认为普通可填写为金牌或普通
-	ProductType string `json:"product_type,omitempty" xml:"product_type,omitempty"`
-	// 不同航司联运，非必输；可输入允许或不允许，空表示不允许
-	IsAllowUnionAirline string `json:"is_allow_union_airline,omitempty" xml:"is_allow_union_airline,omitempty"`
 	// 非必输；09:00-18:00表示每一天的早上9点到下午6点，09:00MON-18:00FRI表示周一到周五的每天早上9点到下午6点最多录入三个时间段用逗号隔开表示或的关系可以为空，表示不限制，即工作时间为09:00-18:00
 	WorkingTime string `json:"working_time,omitempty" xml:"working_time,omitempty"`
+	// 商品类型，非必输；默认为普通可填写为金牌或普通
+	ProductType string `json:"product_type,omitempty" xml:"product_type,omitempty"`
 	// 渠道名称，非必输，不同的接入方可选值不一样
 	ChannelIdDesc string `json:"channel_id_desc,omitempty" xml:"channel_id_desc,omitempty"`
 	// 扩展字段，预留
@@ -108,14 +108,6 @@ type TopPolicyDo struct {
 	DepChangeCurrency string `json:"dep_change_currency,omitempty" xml:"dep_change_currency,omitempty"`
 	// 去程改期费用收取方式,按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)
 	DepChangeFeeType string `json:"dep_change_fee_type,omitempty" xml:"dep_change_fee_type,omitempty"`
-	// 回程可否改期，可输入是或否
-	CanRetChange string `json:"can_ret_change,omitempty" xml:"can_ret_change,omitempty"`
-	// 回程改期费用，格式同【去程改期费用】，【回程可否改期】为是时为必填
-	RetChangeFee string `json:"ret_change_fee,omitempty" xml:"ret_change_fee,omitempty"`
-	// 回程改期币种，可录入币种三字码，默认值CNY
-	RetChangeCurrency string `json:"ret_change_currency,omitempty" xml:"ret_change_currency,omitempty"`
-	// 回程改期费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)
-	RetChangeFeeType string `json:"ret_change_fee_type,omitempty" xml:"ret_change_fee_type,omitempty"`
 	// NOSHOW是否有限制，可输入是或否
 	NoshowRestrict string `json:"noshow_restrict,omitempty" xml:"noshow_restrict,omitempty"`
 	// NOSHOW时限,只能录入整数，【NOSHOW是否有限制】为是时，此项为必填项
@@ -128,16 +120,24 @@ type TopPolicyDo struct {
 	NoshowFee string `json:"noshow_fee,omitempty" xml:"noshow_fee,omitempty"`
 	// NOSHOW币种,可录入币种三字码，默认值CNY
 	NoshowCurrency string `json:"noshow_currency,omitempty" xml:"noshow_currency,omitempty"`
+	// 回程可否改期，可输入是或否
+	CanRetChange string `json:"can_ret_change,omitempty" xml:"can_ret_change,omitempty"`
+	// 回程改期费用，格式同【去程改期费用】，【回程可否改期】为是时为必填
+	RetChangeFee string `json:"ret_change_fee,omitempty" xml:"ret_change_fee,omitempty"`
+	// 回程改期币种，可录入币种三字码，默认值CNY
+	RetChangeCurrency string `json:"ret_change_currency,omitempty" xml:"ret_change_currency,omitempty"`
+	// 回程改期费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)
+	RetChangeFeeType string `json:"ret_change_fee_type,omitempty" xml:"ret_change_fee_type,omitempty"`
 	// 开票大客户编码，最大长度50
 	VipCode string `json:"vip_code,omitempty" xml:"vip_code,omitempty"`
+	// 是否适用小团，可选值是、否。空表示不限
+	Gv2ChildRule string `json:"gv2_child_rule,omitempty" xml:"gv2_child_rule,omitempty"`
 	// 国籍限制，可输入国家二字码，多个用逗号分隔，最多不超过20个
 	Nationality string `json:"nationality,omitempty" xml:"nationality,omitempty"`
 	// 除外国籍限制，可输入国家二字码，多个用逗号分隔，最多不超过20个
 	ExcludeNationality string `json:"exclude_nationality,omitempty" xml:"exclude_nationality,omitempty"`
 	// 年龄限制，可录入值范围12-99, 并且最低年龄不可超过70
 	PassengerAge string `json:"passenger_age,omitempty" xml:"passenger_age,omitempty"`
-	// 是否适用小团，可选值是、否。空表示不限
-	Gv2ChildRule string `json:"gv2_child_rule,omitempty" xml:"gv2_child_rule,omitempty"`
 	// 提前销售天数限制
 	PresalePeriod string `json:"presale_period,omitempty" xml:"presale_period,omitempty"`
 	// 必填项 赋值范围: 电子行程单,旅行发票,差额行程单发票,等额行程单

@@ -1,0 +1,184 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "活动ID"
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "商品编码列表"
+				},
+				{
+					"name": "bar_codes",
+					"type": "String[]",
+					"description": "商品条码列表"
+				},
+				{
+					"name": "exchange_sku",
+					"type": "Boolean",
+					"description": "换购品标识"
+				},
+				{
+					"subParams": [
+						{
+							"name": "current",
+							"type": "Number",
+							"description": "当前页码，从1开始",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页面大小",
+							"required": true
+						}
+					],
+					"name": "page_info",
+					"type": "ActivitySkuQueryDTO",
+					"description": "分页查询参数",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "erp外部活动id"
+				}
+			],
+			"name": "param0",
+			"type": "ItemDiscountActivitySkuQueryRequest",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "营销活动ID"
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID"
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人姓名"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码"
+				},
+				{
+					"name": "bar_code",
+					"type": "String",
+					"description": "商品条码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动商品总限购"
+						},
+						{
+							"name": "daily_total_limit_cnt",
+							"type": "Number",
+							"description": "每日总限购"
+						},
+						{
+							"name": "user_total_limit_cnt",
+							"type": "Number",
+							"description": "用户总限购"
+						},
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "用户每日限购"
+						},
+						{
+							"name": "order_limit_cnt",
+							"type": "Number",
+							"description": "每单限购"
+						}
+					],
+					"name": "limit",
+					"type": "LimitDTO",
+					"description": "商品限购"
+				},
+				{
+					"name": "decrease_money",
+					"type": "Number",
+					"description": "减钱金额(分为单位)"
+				},
+				{
+					"name": "discount_rate",
+					"type": "Number",
+					"description": "打几折 例如9折，该值为 900"
+				},
+				{
+					"name": "fix_price_money",
+					"type": "Number",
+					"description": "一口价金额 -- (分为单位)"
+				}
+			],
+			"name": "data",
+			"type": "SkuActivityElementDTO []",
+			"description": "响应体"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "成功标识"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "err_number",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "pages",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页数"
+				}
+			],
+			"name": "page_info",
+			"type": "PageInfoDTO",
+			"description": "分页信息"
+		}
+	],
+	"name": "alibaba.retail.marketing.itemdiscount.sku.query",
+	"apiChineseName": "查询单品特价活动商品【同城零售】",
+	"description": "查询单品特价活动商品【同城零售】",
+	"id": 60028
+}

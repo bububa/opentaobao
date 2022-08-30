@@ -1,5 +1,5 @@
 {
-  "id": 10239,
   "name": "天猫服务商品API",
-  "pkg": "tmallservice"
+  "pkg": "tmallservice",
+  "id": 10239
 }

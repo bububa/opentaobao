@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"name": "is_test",
+			"type": "byte",
+			"description": "是否测试 0-否 1-是"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "KA名称"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "旗舰店nick"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部旗舰店ID"
+		},
+		{
+			"name": "store_type",
+			"type": "Number",
+			"description": "店铺类型：1-渠道店 2-官店"
+		},
+		{
+			"name": "store_phone",
+			"type": "String",
+			"description": "店铺电话"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.merchant.enterprise.entry",
+	"apiChineseName": "机构入驻",
+	"description": "机构入驻",
+	"id": 58027
+}

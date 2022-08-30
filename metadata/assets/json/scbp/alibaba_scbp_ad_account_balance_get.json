@@ -1,13 +1,13 @@
 {
-	"id": 31021,
-	"name": "alibaba.scbp.ad.account.balance.get",
-	"apiChineseName": "查询账户余额",
-	"description": "查询推广账户余额",
 	"responseParams": [
 		{
 			"name": "balance",
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.account.balance.get",
+	"apiChineseName": "查询账户余额",
+	"description": "查询推广账户余额",
+	"id": 31021
 }

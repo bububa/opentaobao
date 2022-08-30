@@ -1,13 +1,6 @@
 {
-	"id": 33656,
-	"name": "taobao.ailab.aicloud.top.device.control.hibernation",
-	"apiChineseName": "定时休眠",
-	"description": "定时休眠",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpenBaseInfo",
-			"description": "用户信息",
 			"subParams": [
 				{
 					"name": "schema",
@@ -29,7 +22,10 @@
 					"type": "String",
 					"description": "扩展信息，用于存放APP类型等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息"
 		},
 		{
 			"name": "param1",
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "网络请求是否成功"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.control.hibernation",
+	"apiChineseName": "定时休眠",
+	"description": "定时休眠",
+	"id": 33656
 }

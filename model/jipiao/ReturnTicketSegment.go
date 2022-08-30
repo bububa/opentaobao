@@ -10,12 +10,12 @@ type ReturnTicketSegment struct {
 	DepAirportCode string `json:"dep_airport_code,omitempty" xml:"dep_airport_code,omitempty"`
 	// 出发城市
 	DepCity string `json:"dep_city,omitempty" xml:"dep_city,omitempty"`
+	// 起飞时间
+	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
 	// 航班号
 	FlightNo string `json:"flight_no,omitempty" xml:"flight_no,omitempty"`
 	// 票号信息
 	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
-	// 起飞时间
-	DepTime string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
 	// 单个航段机场建设费用（分）
 	BuildFee int64 `json:"build_fee,omitempty" xml:"build_fee,omitempty"`
 	// 航段ID

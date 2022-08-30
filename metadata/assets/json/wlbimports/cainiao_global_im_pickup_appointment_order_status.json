@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "appointment_order_id",
+					"type": "Number",
+					"description": "预约单id",
+					"required": true
+				}
+			],
+			"name": "appointment_order_status_request",
+			"type": "AppointmentOrderStatusRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键id"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "商家id"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "预约单code"
+						},
+						{
+							"name": "status_code",
+							"type": "String",
+							"description": "状态code"
+						},
+						{
+							"name": "status_name",
+							"type": "String",
+							"description": "状态名称"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间"
+						}
+					],
+					"name": "appointment_order_status_response",
+					"type": "AppointmentOrderStatusResponse",
+					"description": "响应体"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否响应正常"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常code"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常消息"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "hsfResult"
+		}
+	],
+	"name": "cainiao.global.im.pickup.appointment.order.status",
+	"apiChineseName": "预约单状态查询",
+	"description": "预约单状态查询",
+	"id": 60754
+}

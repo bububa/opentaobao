@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单号"
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生id"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因"
+				}
+			],
+			"name": "param",
+			"type": "RefundForAikangDoctorRequest",
+			"description": "退款入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "data"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.doctor.refund",
+	"apiChineseName": "报告解读订单-医生退款",
+	"description": "报告解读订单医生退款",
+	"id": 59047
+}

@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户Id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "activity_ids",
+			"type": "String",
+			"description": "活动Id集合(逗号分隔)"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "是否参与活动成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.receive.coupon.by.activity",
+	"apiChineseName": "按活动Id领取优惠券",
+	"description": "雅高小程序按活动Id领取优惠券",
+	"id": 57610
+}

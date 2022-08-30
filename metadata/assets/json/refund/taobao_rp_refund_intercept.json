@@ -1,0 +1,20 @@
+{
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "refund_version",
+			"type": "Number",
+			"description": "退款版本号",
+			"required": true
+		}
+	],
+	"name": "taobao.rp.refund.intercept",
+	"apiChineseName": "卖家发起拦截",
+	"description": "卖家发起拦截",
+	"id": 64009
+}

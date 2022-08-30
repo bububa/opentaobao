@@ -9,7 +9,7 @@ import (
 // TaobaoTopOnceTokenGetAPIRequest 网关一次性token获取 API请求
 // taobao.top.once.token.get
 //
-// 网关一次性token获取
+// 网关一次性token获取，对接文档:
 type TaobaoTopOnceTokenGetAPIRequest struct {
 	model.Params
 	// sec_token

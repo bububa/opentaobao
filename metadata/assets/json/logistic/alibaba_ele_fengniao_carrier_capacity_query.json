@@ -1,14 +1,6 @@
 {
-	"id": 46733,
-	"name": "alibaba.ele.fengniao.carrier.capacity.query",
-	"apiChineseName": "按照门店查询骑手运力状态查询",
-	"description": "提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "store_codes",
@@ -16,14 +8,15 @@
 					"description": "门店编码，对应大润发deliveryDockCode",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Capacities []",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "delivery_knight_amount",
@@ -73,7 +66,14 @@
 					"description": "门店编码，对应大润发deliveryDockCode",
 					"required": true
 				}
-			]
+			],
+			"name": "results",
+			"type": "Capacities []",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.carrier.capacity.query",
+	"apiChineseName": "按照门店查询骑手运力状态查询",
+	"description": "提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量",
+	"id": 46733
 }

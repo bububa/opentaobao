@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"name": "data_type",
+			"type": "String",
+			"description": "1-刷卡流水"
+		},
+		{
+			"name": "supplier_name",
+			"type": "String",
+			"description": "供应商名称"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "json串"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "error_ext_info",
+					"type": "String",
+					"description": "errorExtInfo"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.campus.guardant.data.sync",
+	"apiChineseName": "刷卡数据同步",
+	"description": "数据同步门禁系统",
+	"id": 60967
+}

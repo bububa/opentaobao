@@ -1,23 +1,10 @@
 {
-	"id": 48720,
-	"name": "taobao.xhotel.intl.rate.update",
-	"apiChineseName": "不落库商家推送更新酒店rate",
-	"description": "商家主动推送不落库商品的酒店信息",
 	"requestParams": [
 		{
-			"name": "update_rate_param",
-			"type": "UpdateRateParam",
-			"description": "rate更新参数",
 			"subParams": [
 				{
-					"name": "update_rate_d_o_list",
-					"type": "UpdateRateDo[]",
-					"description": "rate更新列表",
 					"subParams": [
 						{
-							"name": "check_date_d_o_list",
-							"type": "CheckDateDo[]",
-							"description": "入离日期",
 							"subParams": [
 								{
 									"name": "check_out",
@@ -31,18 +18,21 @@
 									"description": "离店时间",
 									"required": true
 								}
-							]
+							],
+							"name": "check_date_d_o_list",
+							"type": "CheckDateDo[]",
+							"description": "入离日期"
+						},
+						{
+							"name": "adults",
+							"type": "Number",
+							"description": "成人数"
 						},
 						{
 							"name": "out_hid",
 							"type": "String",
 							"description": "酒店id",
 							"required": true
-						},
-						{
-							"name": "adults",
-							"type": "Number",
-							"description": "成人数"
 						},
 						{
 							"name": "children",
@@ -54,7 +44,10 @@
 							"type": "String",
 							"description": "儿童年龄，多个儿童年龄用竖线分割：4|5，默认儿童年龄为5岁"
 						}
-					]
+					],
+					"name": "update_rate_d_o_list",
+					"type": "UpdateRateDo[]",
+					"description": "rate更新列表"
 				},
 				{
 					"name": "expire_time",
@@ -67,58 +60,58 @@
 					"description": "供应商",
 					"required": true
 				}
-			]
+			],
+			"name": "update_rate_param",
+			"type": "UpdateRateParam",
+			"description": "rate更新参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "total_results",
-					"required": true
+					"description": "total_results"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "sub_error_msg",
 					"type": "String",
-					"description": "sub_error_msg",
-					"required": true
+					"description": "sub_error_msg"
 				},
 				{
 					"name": "sub_error_code",
 					"type": "String",
-					"description": "sub_error_code",
-					"required": true
+					"description": "sub_error_code"
 				},
 				{
 					"name": "detail_msg_info",
 					"type": "String",
-					"description": "detail_msg_info",
-					"required": true
+					"description": "detail_msg_info"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总记录条数",
-					"required": true
+					"description": "总记录条数"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "taobao.xhotel.intl.rate.update",
+	"apiChineseName": "不落库商家推送更新酒店rate",
+	"description": "商家主动推送不落库商品的酒店信息",
+	"id": 48720
 }

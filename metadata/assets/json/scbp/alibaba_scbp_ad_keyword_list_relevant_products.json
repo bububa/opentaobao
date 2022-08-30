@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "品图片链接"
+				},
+				{
+					"name": "qs_star",
+					"type": "Number",
+					"description": "星级"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "品id"
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "品名称"
+				},
+				{
+					"name": "reason_list",
+					"type": "String[]",
+					"description": "推荐理由"
+				},
+				{
+					"name": "is_preferential",
+					"type": "Boolean",
+					"description": "是否优推"
+				},
+				{
+					"name": "ad_group_id",
+					"type": "Number",
+					"description": "操作优推品得主键id"
+				}
+			],
+			"name": "result_list",
+			"type": "RelevantProductDTO []",
+			"description": "优推品信息返回"
+		}
+	],
+	"name": "alibaba.scbp.ad.keyword.list.relevant.products",
+	"apiChineseName": "查询和词匹配的推广产品",
+	"description": "查询和词匹配的推广产品",
+	"id": 60539
+}

@@ -1,8 +1,4 @@
 {
-	"id": 43501,
-	"name": "alibaba.einvoice.income.certificate.return",
-	"apiChineseName": "服务商回传进项认证结果",
-	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",
 	"requestParams": [
 		{
 			"name": "error_code",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "接口是否调用成功"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.income.certificate.return",
+	"apiChineseName": "服务商回传进项认证结果",
+	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",
+	"id": 43501
 }

@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "isv_user_info_map",
+					"type": "String",
+					"description": "isv用户信息(userId、phone)",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "circle_content",
+							"type": "String",
+							"description": "圈选内容",
+							"required": true
+						},
+						{
+							"name": "circle_id",
+							"type": "Number",
+							"description": "圈选标识,由采销系统分配",
+							"required": true
+						}
+					],
+					"name": "circle_info",
+					"type": "PurchaseCircleInfoForOuterDTO",
+					"description": "圈选对象",
+					"required": true
+				},
+				{
+					"name": "isv_id",
+					"type": "Number",
+					"description": "isvId,由采销系统分配",
+					"required": true
+				},
+				{
+					"name": "send_plan_id",
+					"type": "Number",
+					"description": "通过查询返回",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "PurchaseForOuterDTO",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "status",
+					"type": "Boolean",
+					"description": "成功状态"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "map",
+					"type": "String",
+					"description": "其他数据"
+				}
+			],
+			"name": "ret_value",
+			"type": "PurchaseReceiveReturnDTO",
+			"description": "返回对象"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.ai.content.business.send.plan.receive",
+	"apiChineseName": "天猫精灵商业化采销发放计划领取",
+	"description": "天猫精灵商业化采销发放计划领取",
+	"id": 58488
+}

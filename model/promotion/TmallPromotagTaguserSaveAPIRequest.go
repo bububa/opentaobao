@@ -12,7 +12,11 @@ import (
 // 给用户载体打标
 type TmallPromotagTaguserSaveAPIRequest struct {
 	model.Params
-	// 买家昵称
+	// 用户ID
+	_ouid string
+	// 用户ID
+	_openid string
+	// 昵称
 	_nick string
 	// 标签ID
 	_tagId int64
@@ -39,8 +43,34 @@ func (r TmallPromotagTaguserSaveAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetOuid is Ouid Setter
+// 用户ID
+func (r *TmallPromotagTaguserSaveAPIRequest) SetOuid(_ouid string) error {
+	r._ouid = _ouid
+	r.Set("ouid", _ouid)
+	return nil
+}
+
+// GetOuid Ouid Getter
+func (r TmallPromotagTaguserSaveAPIRequest) GetOuid() string {
+	return r._ouid
+}
+
+// SetOpenid is Openid Setter
+// 用户ID
+func (r *TmallPromotagTaguserSaveAPIRequest) SetOpenid(_openid string) error {
+	r._openid = _openid
+	r.Set("openid", _openid)
+	return nil
+}
+
+// GetOpenid Openid Getter
+func (r TmallPromotagTaguserSaveAPIRequest) GetOpenid() string {
+	return r._openid
+}
+
 // SetNick is Nick Setter
-// 买家昵称
+// 昵称
 func (r *TmallPromotagTaguserSaveAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)

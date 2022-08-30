@@ -6,7 +6,7 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoSimbaCreativeUpdateAPIResponse 修改创意与 API返回值
+// TaobaoSimbaCreativeUpdateAPIResponse 修改创意 API返回值
 // taobao.simba.creative.update
 //
 // 更新一个创意的信息，可以设置创意标题、创意图片
@@ -15,7 +15,7 @@ type TaobaoSimbaCreativeUpdateAPIResponse struct {
 	TaobaoSimbaCreativeUpdateAPIResponseModel
 }
 
-// TaobaoSimbaCreativeUpdateAPIResponseModel is 修改创意与 成功返回结果
+// TaobaoSimbaCreativeUpdateAPIResponseModel is 修改创意 成功返回结果
 type TaobaoSimbaCreativeUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_creative_update_response"`
 	// 平台颁发的每次请求访问的唯一标识

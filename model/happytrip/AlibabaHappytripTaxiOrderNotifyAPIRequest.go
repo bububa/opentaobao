@@ -16,9 +16,11 @@ type AlibabaHappytripTaxiOrderNotifyAPIRequest struct {
 	_notifyDesc string
 	// 订单id
 	_orderId string
+	// 工单id（通知投诉处理完成时传递）
+	_caseId string
 	// 返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数
 	_time int64
-	// 通知类型: 1-订单中间状态流转 2-订单终态通知 3-支付确认通知 4-订单退款通知 5-订单改价通知 6-客服关单通知。参考：https://open-hatrip.alibaba.com/doc/car/order_status_callback.html
+	// 通知类型: 1-订单中间状态流转 2-订单终态通知 3-支付确认通知 4-订单退款通知 5-订单改价通知 6-客服关单通知 7-投诉处理通知。
 	_notifyType int64
 }
 
@@ -69,6 +71,19 @@ func (r AlibabaHappytripTaxiOrderNotifyAPIRequest) GetOrderId() string {
 	return r._orderId
 }
 
+// SetCaseId is CaseId Setter
+// 工单id（通知投诉处理完成时传递）
+func (r *AlibabaHappytripTaxiOrderNotifyAPIRequest) SetCaseId(_caseId string) error {
+	r._caseId = _caseId
+	r.Set("case_id", _caseId)
+	return nil
+}
+
+// GetCaseId CaseId Getter
+func (r AlibabaHappytripTaxiOrderNotifyAPIRequest) GetCaseId() string {
+	return r._caseId
+}
+
 // SetTime is Time Setter
 // 返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数
 func (r *AlibabaHappytripTaxiOrderNotifyAPIRequest) SetTime(_time int64) error {
@@ -83,7 +98,7 @@ func (r AlibabaHappytripTaxiOrderNotifyAPIRequest) GetTime() int64 {
 }
 
 // SetNotifyType is NotifyType Setter
-// 通知类型: 1-订单中间状态流转 2-订单终态通知 3-支付确认通知 4-订单退款通知 5-订单改价通知 6-客服关单通知。参考：https://open-hatrip.alibaba.com/doc/car/order_status_callback.html
+// 通知类型: 1-订单中间状态流转 2-订单终态通知 3-支付确认通知 4-订单退款通知 5-订单改价通知 6-客服关单通知 7-投诉处理通知。
 func (r *AlibabaHappytripTaxiOrderNotifyAPIRequest) SetNotifyType(_notifyType int64) error {
 	r._notifyType = _notifyType
 	r.Set("notify_type", _notifyType)

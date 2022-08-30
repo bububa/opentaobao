@@ -1,8 +1,4 @@
 {
-	"id": 49181,
-	"name": "alibaba.wdk.item.futureprice.query",
-	"apiChineseName": "单个商品未来价查询接口",
-	"description": "查询单个商品未来价，融合了未来基础售价+未来促销价",
 	"requestParams": [
 		{
 			"name": "shop_id",
@@ -37,351 +33,300 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "models",
-					"type": "Model[]",
-					"description": "商品未来价",
-					"required": true,
 					"subParams": [
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家code",
-							"required": true
+							"description": "商家code"
 						},
 						{
 							"name": "member_price",
 							"type": "Number",
-							"description": "会员价，单位为分。对应IC标memberPrice的价格，如果没有对应的标，该价格为空。",
-							"required": true
+							"description": "会员价，单位为分。对应IC标memberPrice的价格，如果没有对应的标，该价格为空。"
 						},
 						{
 							"name": "final_price",
 							"type": "Number",
-							"description": "促销执行价格，单位为分",
-							"required": true
+							"description": "促销执行价格，单位为分"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店Code",
-							"required": true
+							"description": "经营店Code"
 						},
 						{
-							"name": "mz_promotion_d_t_o",
-							"type": "MzPromotionDto",
-							"description": "买赠活动信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "act_id",
 									"type": "Number",
-									"description": "活动ID",
-									"required": true
+									"description": "活动ID"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "活动名称",
-									"required": true
+									"description": "活动名称"
 								},
 								{
 									"name": "mz_display_text",
 									"type": "String",
-									"description": "买赠活动文案",
-									"required": true
+									"description": "买赠活动文案"
 								},
 								{
 									"name": "start_time",
 									"type": "String",
-									"description": "活动开始时间",
-									"required": true
+									"description": "活动开始时间"
 								},
 								{
 									"name": "end_time",
 									"type": "String",
-									"description": "活动结束时间",
-									"required": true
+									"description": "活动结束时间"
 								}
-							]
+							],
+							"name": "mz_promotion_d_t_o",
+							"type": "MzPromotionDto",
+							"description": "买赠活动信息"
 						},
 						{
 							"name": "bar_code",
 							"type": "String",
-							"description": "条码",
-							"required": true
+							"description": "条码"
 						},
 						{
 							"name": "member_final_price",
 							"type": "Number",
-							"description": "会员促销执行价，单位为分。",
-							"required": true
+							"description": "会员促销执行价，单位为分。"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "IC的商品ID",
-							"required": true
+							"description": "IC的商品ID"
 						},
 						{
-							"name": "item_promotion_list",
-							"type": "PromotionInfoDto[]",
-							"description": "单品促销，finalPrice对应的促销活动",
-							"required": true,
 							"subParams": [
 								{
 									"name": "display_text",
 									"type": "String",
-									"description": "展示文案",
-									"required": true
+									"description": "展示文案"
 								},
 								{
 									"name": "promotion_type",
 									"type": "String",
-									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠",
-									"required": true
+									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠"
 								},
 								{
 									"name": "discount_fee",
 									"type": "Number",
-									"description": "优惠金额，单位为分",
-									"required": true
+									"description": "优惠金额，单位为分"
 								},
 								{
 									"name": "create_date_time",
 									"type": "String",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "activity_id",
 									"type": "Number",
-									"description": "活动ID",
-									"required": true
+									"description": "活动ID"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "活动名",
-									"required": true
+									"description": "活动名"
 								},
 								{
 									"name": "start_time",
 									"type": "String",
-									"description": "活动开始时间",
-									"required": true
+									"description": "活动开始时间"
 								},
 								{
 									"name": "limit_info",
 									"type": "String",
-									"description": "限购信息",
-									"required": true
+									"description": "限购信息"
 								},
 								{
 									"name": "end_time",
 									"type": "String",
-									"description": "活动结束时间",
-									"required": true
+									"description": "活动结束时间"
 								},
 								{
 									"name": "activity_type",
 									"type": "Number",
-									"description": "活动类型, 1:单品活动,3:商品池活动",
-									"required": true
+									"description": "活动类型, 1:单品活动,3:商品池活动"
 								}
-							]
+							],
+							"name": "item_promotion_list",
+							"type": "PromotionInfoDto[]",
+							"description": "单品促销，finalPrice对应的促销活动"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "auction_price",
 							"type": "Number",
-							"description": "基础售价,单位为分",
-							"required": true
+							"description": "基础售价,单位为分"
 						},
 						{
 							"name": "shop_id",
 							"type": "Number",
-							"description": "渠道店ID",
-							"required": true
+							"description": "渠道店ID"
 						},
 						{
+							"subParams": [
+								{
+									"name": "display_text",
+									"type": "String",
+									"description": "展示文案"
+								},
+								{
+									"name": "promotion_type",
+									"type": "String",
+									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠"
+								},
+								{
+									"name": "discount_fee",
+									"type": "Number",
+									"description": "优惠金额，单位为分"
+								},
+								{
+									"name": "create_date_time",
+									"type": "String",
+									"description": "创建时间"
+								},
+								{
+									"name": "activity_id",
+									"type": "Number",
+									"description": "活动ID"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "活动名"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "活动开始时间"
+								},
+								{
+									"name": "limit_info",
+									"type": "String",
+									"description": "限购信息"
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "活动结束时间"
+								},
+								{
+									"name": "activity_type",
+									"type": "Number",
+									"description": "活动类型, 1:单品活动,3:商品池活动"
+								}
+							],
 							"name": "shop_promotion_list",
 							"type": "PromotionInfoDto[]",
-							"description": "商品池促销",
-							"required": true,
-							"subParams": [
-								{
-									"name": "display_text",
-									"type": "String",
-									"description": "展示文案",
-									"required": true
-								},
-								{
-									"name": "promotion_type",
-									"type": "String",
-									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠",
-									"required": true
-								},
-								{
-									"name": "discount_fee",
-									"type": "Number",
-									"description": "优惠金额，单位为分",
-									"required": true
-								},
-								{
-									"name": "create_date_time",
-									"type": "String",
-									"description": "创建时间",
-									"required": true
-								},
-								{
-									"name": "activity_id",
-									"type": "Number",
-									"description": "活动ID",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "活动名",
-									"required": true
-								},
-								{
-									"name": "start_time",
-									"type": "String",
-									"description": "活动开始时间",
-									"required": true
-								},
-								{
-									"name": "limit_info",
-									"type": "String",
-									"description": "限购信息",
-									"required": true
-								},
-								{
-									"name": "end_time",
-									"type": "String",
-									"description": "活动结束时间",
-									"required": true
-								},
-								{
-									"name": "activity_type",
-									"type": "Number",
-									"description": "活动类型, 1:单品活动,3:商品池活动",
-									"required": true
-								}
-							]
+							"description": "商品池促销"
 						},
 						{
-							"name": "member_item_promotion_list",
-							"type": "PromotionInfoDto[]",
-							"description": "会员单品促销活动，memberFinalPrice对应的促销活动",
-							"required": true,
 							"subParams": [
 								{
 									"name": "display_text",
 									"type": "String",
-									"description": "展示文案",
-									"required": true
+									"description": "展示文案"
 								},
 								{
 									"name": "promotion_type",
 									"type": "String",
-									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠",
-									"required": true
+									"description": "优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠"
 								},
 								{
 									"name": "discount_fee",
 									"type": "Number",
-									"description": "优惠金额，单位为分",
-									"required": true
+									"description": "优惠金额，单位为分"
 								},
 								{
 									"name": "create_date_time",
 									"type": "String",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "activity_id",
 									"type": "Number",
-									"description": "活动ID",
-									"required": true
+									"description": "活动ID"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "活动名",
-									"required": true
+									"description": "活动名"
 								},
 								{
 									"name": "start_time",
 									"type": "String",
-									"description": "活动开始时间",
-									"required": true
+									"description": "活动开始时间"
 								},
 								{
 									"name": "limit_info",
 									"type": "String",
-									"description": "限购信息",
-									"required": true
+									"description": "限购信息"
 								},
 								{
 									"name": "end_time",
 									"type": "String",
-									"description": "活动结束时间",
-									"required": true
+									"description": "活动结束时间"
 								},
 								{
 									"name": "activity_type",
 									"type": "Number",
-									"description": "活动类型, 1:单品活动,3:商品池活动",
-									"required": true
+									"description": "活动类型, 1:单品活动,3:商品池活动"
 								}
-							]
+							],
+							"name": "member_item_promotion_list",
+							"type": "PromotionInfoDto[]",
+							"description": "会员单品促销活动，memberFinalPrice对应的促销活动"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "order_channel_code",
 							"type": "String",
-							"description": "渠道，APP／POS",
-							"required": true
+							"description": "渠道，APP／POS"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Model[]",
+					"description": "商品未来价"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.futureprice.query",
+	"apiChineseName": "单个商品未来价查询接口",
+	"description": "查询单个商品未来价，融合了未来基础售价+未来促销价",
+	"id": 49181
 }

@@ -1,8 +1,4 @@
 {
-	"id": 32288,
-	"name": "alibaba.auth.cert.get",
-	"apiChineseName": "获取证书数据",
-	"description": "获取证书数据",
 	"requestParams": [
 		{
 			"name": "provider",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
@@ -47,7 +40,14 @@
 					"description": "msg",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.auth.cert.get",
+	"apiChineseName": "获取证书数据",
+	"description": "获取证书数据",
+	"id": 32288
 }

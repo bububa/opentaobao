@@ -1,8 +1,4 @@
 {
-	"id": 49705,
-	"name": "yunos.service.cmns.coa.message.get",
-	"apiChineseName": "消息详情查询",
-	"description": "第三方应用开发者调用此接口查询消息详情，只能查询此appKey发的消息",
 	"requestParams": [
 		{
 			"name": "mid",
@@ -12,113 +8,96 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "MessageDetailResult",
-			"description": "消息内容",
 			"subParams": [
 				{
 					"name": "ack_cnt",
 					"type": "Number",
-					"description": "消息到达数",
-					"required": true
+					"description": "消息到达数"
 				},
 				{
 					"name": "action",
 					"type": "String",
-					"description": "消息侦听通道",
-					"required": true
+					"description": "消息侦听通道"
 				},
 				{
 					"name": "app_key",
 					"type": "String",
-					"description": "appKey",
-					"required": true
+					"description": "appKey"
 				},
 				{
 					"name": "app_name",
 					"type": "String",
-					"description": "应用名称",
-					"required": true
+					"description": "应用名称"
 				},
 				{
 					"name": "audit",
 					"type": "Number",
-					"description": "消息审核状态",
-					"required": true
+					"description": "消息审核状态"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "通知消息内容",
-					"required": true
+					"description": "通知消息内容"
 				},
 				{
 					"name": "exipired_time",
 					"type": "Date",
-					"description": "消息失效时间",
-					"required": true
+					"description": "消息失效时间"
 				},
 				{
 					"name": "gmt_create_time",
 					"type": "Date",
-					"description": "消息创建时间",
-					"required": true
+					"description": "消息创建时间"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "消息id",
-					"required": true
+					"description": "消息id"
 				},
 				{
 					"name": "parameter",
 					"type": "String",
-					"description": "消息参数",
-					"required": true
+					"description": "消息参数"
 				},
 				{
 					"name": "predict_send_cnt",
 					"type": "Number",
-					"description": "预计发送数",
-					"required": true
+					"description": "预计发送数"
 				},
 				{
 					"name": "priority",
 					"type": "Number",
-					"description": "消息优先级",
-					"required": true
+					"description": "消息优先级"
 				},
 				{
 					"name": "receiver",
 					"type": "String",
-					"description": "消息接收者json string",
-					"required": true
+					"description": "消息接收者json string"
 				},
 				{
 					"name": "send_status",
 					"type": "Number",
-					"description": "消息发送状态 0:发送中，1:发送完成，2:发送过期",
-					"required": true
+					"description": "消息发送状态 0:发送中，1:发送完成，2:发送过期"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "通知消息标题",
-					"required": true
+					"description": "通知消息标题"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "消息类型，1为透传，2为通知",
-					"required": true
+					"description": "消息类型，1为透传，2为通知"
 				},
 				{
 					"name": "uri",
 					"type": "String",
-					"description": "消息uri,yunos4.x系统专用",
-					"required": true
+					"description": "消息uri,yunos4.x系统专用"
 				}
-			]
+			],
+			"name": "data",
+			"type": "MessageDetailResult",
+			"description": "消息内容"
 		},
 		{
 			"name": "message",
@@ -130,5 +109,9 @@
 			"type": "Number",
 			"description": "200表示查询成功"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.message.get",
+	"apiChineseName": "消息详情查询",
+	"description": "第三方应用开发者调用此接口查询消息详情，只能查询此appKey发的消息",
+	"id": 49705
 }

@@ -1,15 +1,11 @@
 {
-	"id": 52984,
-	"name": "taobao.miniapp.template.rollback",
-	"apiChineseName": "回滚实例化应用",
-	"description": "将实例化小程序回滚到指定版本",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "要回滚的投放端,目前可投放： taobao,tmall",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "app_id",
@@ -38,48 +34,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "online_results",
-			"type": "MiniappInstanceAppOnlineDto []",
-			"description": "分端回滚结果",
-			"subParams": [
-				{
-					"name": "client",
-					"type": "String",
-					"description": "端信息",
-					"required": true
-				},
-				{
-					"name": "fail_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "String",
-					"description": "是否成功",
-					"required": true
-				}
-			]
-		},
-		{
-			"name": "app_info",
-			"type": "MiniAppEntityTemplateDto",
-			"description": "基本信息",
 			"subParams": [
 				{
 					"name": "app_id",
 					"type": "String",
-					"description": "小程序app_id",
-					"required": true
+					"description": "小程序app_id"
 				},
 				{
 					"name": "online_url",
 					"type": "String",
-					"description": "线上正式版本的链接",
-					"required": true
+					"description": "线上正式版本的链接"
 				}
-			]
+			],
+			"name": "app_info",
+			"type": "MiniAppEntityTemplateDto",
+			"description": "基本信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "client",
+					"type": "String",
+					"description": "端信息"
+				},
+				{
+					"name": "fail_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "online_results",
+			"type": "MiniappInstanceAppOnlineDto []",
+			"description": "分端回滚结果"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.rollback",
+	"apiChineseName": "回滚实例化应用",
+	"description": "将实例化小程序回滚到指定版本",
+	"id": 52984
 }

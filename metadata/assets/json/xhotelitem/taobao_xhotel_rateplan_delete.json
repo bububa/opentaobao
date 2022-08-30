@@ -1,8 +1,4 @@
 {
-	"id": 27769,
-	"name": "taobao.xhotel.rateplan.delete",
-	"apiChineseName": "价格计划rateplan删除",
-	"description": "酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用",
 	"requestParams": [
 		{
 			"name": "rp_id",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -50,7 +43,14 @@
 					"description": "results",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rateplan.delete",
+	"apiChineseName": "价格计划rateplan删除",
+	"description": "酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用",
+	"id": 27769
 }

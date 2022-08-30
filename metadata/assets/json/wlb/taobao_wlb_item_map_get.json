@@ -1,8 +1,4 @@
 {
-	"id": 10614,
-	"name": "taobao.wlb.item.map.get",
-	"apiChineseName": "根据物流宝商品ID查询商品映射关系",
-	"description": "根据物流宝商品ID查询商品映射关系",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,9 +9,11 @@
 	],
 	"responseParams": [
 		{
-			"name": "out_entity_item_list",
-			"type": "OutEntityItem []",
-			"description": "外部商品实体",
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
 			"subParams": [
 				{
 					"name": "entity_type",
@@ -27,12 +25,14 @@
 					"type": "String",
 					"description": "entity_type对应的实体类型的id：\u003cbr/\u003e当entity_type为IC_ITEM时，entity_id为ic的商品id"
 				}
-			]
-		},
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否成功"
+			],
+			"name": "out_entity_item_list",
+			"type": "OutEntityItem []",
+			"description": "外部商品实体"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.map.get",
+	"apiChineseName": "根据物流宝商品ID查询商品映射关系",
+	"description": "根据物流宝商品ID查询商品映射关系",
+	"id": 10614
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27967,
-	"name": "alibaba.einvoice.invoiceapply.update",
-	"apiChineseName": "商家开票申请单状态回传",
-	"description": "开票服务商更新商家开票申请单状态",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -31,5 +27,9 @@
 			"type": "Number",
 			"description": "totalCount"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.invoiceapply.update",
+	"apiChineseName": "商家开票申请单状态回传",
+	"description": "开票服务商更新商家开票申请单状态",
+	"id": 27967
 }

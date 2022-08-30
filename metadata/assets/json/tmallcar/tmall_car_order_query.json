@@ -1,0 +1,126 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页个数"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号"
+				}
+			],
+			"name": "top_order_query",
+			"type": "TopOrderQuery",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单id"
+						},
+						{
+							"name": "consume_time",
+							"type": "String",
+							"description": "核销时间"
+						},
+						{
+							"name": "consume_store",
+							"type": "String",
+							"description": "核销门店"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "预约门店"
+						},
+						{
+							"name": "sku_feature1",
+							"type": "String",
+							"description": "sku属性：颜色分类"
+						},
+						{
+							"name": "sku_feature2",
+							"type": "String",
+							"description": "sku属性：套餐名称"
+						},
+						{
+							"name": "sku_feature_x",
+							"type": "String",
+							"description": "sku_feature_x"
+						}
+					],
+					"name": "models",
+					"type": "TopOrderDTO[]",
+					"description": "返回数据"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "一共多少页 结果"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页多少条记录"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "记录总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "分页结果"
+		}
+	],
+	"name": "tmall.car.order.query",
+	"apiChineseName": "天猫汽车整车订单查询",
+	"description": "天猫汽车商家通过该接口查看整车订单信息",
+	"id": 55537
+}

@@ -1,8 +1,4 @@
 {
-	"id": 28370,
-	"name": "alibaba.happytrip.taxi.order.cancel",
-	"apiChineseName": "取消叫车",
-	"description": "取消叫车订单,行程中的订单不能取消",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -33,9 +29,6 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "data",
-			"type": "OrderCancelResult",
-			"description": "订单取消结果",
 			"subParams": [
 				{
 					"name": "cost",
@@ -43,7 +36,14 @@
 					"description": "（非必返回字段）扣费金额，如果传force=false且此订单已被司机抢单，就会返回cost字段（此订单未被取消，有可能产生扣费，需要确认），这时如果要强制取消订单,需要再次请求此接口且传force=true,这时此订单会发生扣款（此订单强制取消）",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "OrderCancelResult",
+			"description": "订单取消结果"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.cancel",
+	"apiChineseName": "取消叫车",
+	"description": "取消叫车订单,行程中的订单不能取消",
+	"id": 28370
 }

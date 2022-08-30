@@ -1,13 +1,6 @@
 {
-	"id": 44992,
-	"name": "alibaba.alihealth.outflow.prescription.create",
-	"apiChineseName": "处方外流-创建处方",
-	"description": "阿里健康-处方外流-对外提供保存处方功能",
 	"requestParams": [
 		{
-			"name": "create_request",
-			"type": "PrescriptionOutflowUpdateRequest",
-			"description": "保存处方入参",
 			"subParams": [
 				{
 					"name": "patient_name",
@@ -48,6 +41,11 @@
 					"name": "visit_type",
 					"type": "String",
 					"description": "就诊类型（首诊、复诊）(可空)"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道、医院(非空)"
 				},
 				{
 					"name": "detp_id",
@@ -100,9 +98,11 @@
 					"description": "医生嘱言(可空)"
 				},
 				{
-					"name": "diagnoses",
-					"type": "Diagnose[]",
-					"description": "诊断(非空)",
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方编号(非空)"
+				},
+				{
 					"subParams": [
 						{
 							"name": "diagnose_code",
@@ -124,12 +124,12 @@
 							"type": "String",
 							"description": "icd9/icd10编码(his、icd10二选一) - 纳里必传"
 						}
-					]
+					],
+					"name": "diagnoses",
+					"type": "Diagnose[]",
+					"description": "诊断(非空)"
 				},
 				{
-					"name": "drugs",
-					"type": "Drugs[]",
-					"description": "药品",
 					"subParams": [
 						{
 							"name": "spec",
@@ -211,12 +211,10 @@
 							"type": "String",
 							"description": "spuid (drug_id、spuid二选一) - 纳里必传"
 						}
-					]
-				},
-				{
-					"name": "rx_no",
-					"type": "String",
-					"description": "处方编号(非空)"
+					],
+					"name": "drugs",
+					"type": "Drugs[]",
+					"description": "药品"
 				},
 				{
 					"name": "rx_type",
@@ -237,11 +235,6 @@
 					"name": "card_number",
 					"type": "String",
 					"description": "处方流转医保备案编号(医保支付时必填)"
-				},
-				{
-					"name": "channel_code",
-					"type": "String",
-					"description": "渠道、医院(非空)"
 				},
 				{
 					"name": "platform_code",
@@ -293,40 +286,43 @@
 					"type": "String",
 					"description": "医保结算发生地(可空)：医保中心代码（行政区域代码）"
 				}
-			]
+			],
+			"name": "create_request",
+			"type": "PrescriptionOutflowUpdateRequest",
+			"description": "保存处方入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "ServiceResult",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "标识",
-					"required": true
+					"description": "标识"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.prescription.create",
+	"apiChineseName": "处方外流-创建处方",
+	"description": "阿里健康-处方外流-对外提供保存处方功能",
+	"id": 44992
 }

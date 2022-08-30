@@ -1,8 +1,4 @@
 {
-	"id": 46825,
-	"name": "alibaba.ailabs.aligenie.skill.entity.import",
-	"apiChineseName": "实体动态更新",
-	"description": "根据用户上传的实体信息，进行制定技能实体的动态变更",
 	"requestParams": [
 		{
 			"name": "skill_id",
@@ -21,10 +17,9 @@
 			"description": "测试，目前没有此功能，此参数无效"
 		},
 		{
-			"name": "file_data",
-			"type": "byte[]",
-			"description": "文件内容",
-			"required": true
+			"name": "type",
+			"type": "String",
+			"description": "固定值，ISV"
 		},
 		{
 			"name": "entity_name",
@@ -33,56 +28,55 @@
 			"required": true
 		},
 		{
-			"name": "type",
-			"type": "String",
-			"description": "固定值，ISV"
+			"name": "file_data",
+			"type": "byte[]",
+			"description": "文件内容",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
-					"name": "ret_value",
-					"type": "SimpleTextImportResult",
-					"description": "实体更新结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "num_exist",
 							"type": "Number",
-							"description": "已存在或重复的实体数",
-							"required": true
+							"description": "已存在或重复的实体数"
 						},
 						{
 							"name": "num_failed",
 							"type": "Number",
-							"description": "上传失败的实体数",
-							"required": true
+							"description": "上传失败的实体数"
 						},
 						{
 							"name": "num_successful",
 							"type": "Number",
-							"description": "上传成功的实体数",
-							"required": true
+							"description": "上传成功的实体数"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "SimpleTextImportResult",
+					"description": "实体更新结果对象"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "服务返回错误码",
-					"required": true
+					"description": "服务返回错误码"
 				},
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "服务返回错误信息",
-					"required": true
+					"description": "服务返回错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.skill.entity.import",
+	"apiChineseName": "实体动态更新",
+	"description": "根据用户上传的实体信息，进行制定技能实体的动态变更",
+	"id": 46825
 }

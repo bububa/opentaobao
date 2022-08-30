@@ -12,12 +12,12 @@ import (
 // 删除推广单元
 type AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest struct {
 	model.Params
+	// 用户信息
+	_topContext *TopContextDto
 	// 计划id
 	_campaignId int64
 	// 请求参数
 	_adGroupBatchOperation *AdGroupBatchOperationDto
-	// 用户信息
-	_topContext *TopContextDto
 }
 
 // NewAlibabaScbpAdGroupDeleteAdGroupBatchRequest 初始化AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetApiParams() url.Value
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTopContext is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// GetTopContext TopContext Getter
+func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetAdGroupBatchOperatio
 // GetAdGroupBatchOperation AdGroupBatchOperation Getter
 func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
 	return r._adGroupBatchOperation
-}
-
-// SetTopContext is TopContext Setter
-// 用户信息
-func (r *AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
-	r._topContext = _topContext
-	r.Set("top_context", _topContext)
-	return nil
-}
-
-// GetTopContext TopContext Getter
-func (r AlibabaScbpAdGroupDeleteAdGroupBatchAPIRequest) GetTopContext() *TopContextDto {
-	return r._topContext
 }

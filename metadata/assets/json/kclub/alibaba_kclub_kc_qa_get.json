@@ -1,8 +1,4 @@
 {
-	"id": 38842,
-	"name": "alibaba.kclub.kc.qa.get",
-	"apiChineseName": "知识云-查询单个知识详情",
-	"description": "知识云-查询单个知识详情。通过租户id、问题id查询问题详情",
 	"requestParams": [
 		{
 			"name": "question_id",
@@ -11,9 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "filter",
-			"type": "KcQaFilter",
-			"description": "过滤条件",
 			"subParams": [
 				{
 					"name": "need_child_knowledge",
@@ -22,22 +15,21 @@
 				},
 				{
 					"name": "views",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "视角",
 					"required": true
 				},
 				{
 					"name": "statuses",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "状态"
 				}
-			]
+			],
+			"name": "filter",
+			"type": "KcQaFilter",
+			"description": "过滤条件"
 		},
 		{
-			"name": "auth",
-			"type": "TenancyAuth",
-			"description": "鉴权",
-			"required": true,
 			"subParams": [
 				{
 					"name": "secret_key",
@@ -51,342 +43,297 @@
 					"description": "鉴权",
 					"required": true
 				}
-			]
+			],
+			"name": "auth",
+			"type": "TenancyAuth",
+			"description": "鉴权",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "KcQaRead",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "child_qas",
-							"type": "KcQaRead[]",
-							"description": "子知识",
-							"required": true,
 							"subParams": [
 								{
-									"name": "solutions",
-									"type": "KcQaSolution[]",
-									"description": "子知识答案",
-									"required": true,
 									"subParams": [
 										{
 											"name": "summary",
 											"type": "String",
-											"description": "子知识答案摘要",
-											"required": true
+											"description": "子知识答案摘要"
 										},
 										{
 											"name": "type",
 											"type": "Number",
-											"description": "子知识答案视角",
-											"required": true
+											"description": "子知识答案视角"
 										},
 										{
 											"name": "extra_content",
 											"type": "String",
-											"description": "子知识答案额外内容",
-											"required": true
+											"description": "子知识答案额外内容"
 										},
 										{
 											"name": "content_view",
 											"type": "String",
-											"description": "子知识答案视角,逗号分隔",
-											"required": true
+											"description": "子知识答案视角,逗号分隔"
 										},
 										{
 											"name": "content_type",
 											"type": "Number",
-											"description": "子知识答案类型",
-											"required": true
+											"description": "子知识答案类型"
 										},
 										{
 											"name": "content",
 											"type": "String",
-											"description": "子知识答案",
-											"required": true
+											"description": "子知识答案"
 										},
 										{
 											"name": "question_id",
 											"type": "Number",
-											"description": "子知识问题id",
-											"required": true
+											"description": "子知识问题id"
 										},
 										{
 											"name": "gmt_modified",
 											"type": "Date",
-											"description": "子知识答案编辑时间",
-											"required": true
+											"description": "子知识答案编辑时间"
 										},
 										{
 											"name": "gmt_create",
 											"type": "Date",
-											"description": "子知识答案创建时间",
-											"required": true
+											"description": "子知识答案创建时间"
 										},
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "子知识答案id",
-											"required": true
+											"description": "子知识答案id"
 										},
 										{
 											"name": "plain_text",
 											"type": "String",
-											"description": "子知识答案纯文本",
-											"required": true
+											"description": "子知识答案纯文本"
 										}
-									]
+									],
+									"name": "solutions",
+									"type": "KcQaSolution[]",
+									"description": "子知识答案"
 								},
 								{
 									"name": "context",
 									"type": "Number",
-									"description": "子知识context(原kbs context)",
-									"required": true
+									"description": "子知识context(原kbs context)"
 								},
 								{
 									"name": "question_type",
 									"type": "Number",
-									"description": "子知识问题类型",
-									"required": true
+									"description": "子知识问题类型"
 								},
 								{
 									"name": "entity_code",
 									"type": "String",
-									"description": "子知识关联实体code",
-									"required": true
+									"description": "子知识关联实体code"
 								},
 								{
 									"name": "parent_cats",
 									"type": "Number[]",
-									"description": "子知识父类目id列表",
-									"required": true
+									"description": "子知识父类目id列表"
 								},
 								{
 									"name": "cat_path",
 									"type": "String",
-									"description": "子知识类目路径",
-									"required": true
+									"description": "子知识类目路径"
 								},
 								{
 									"name": "cat_id",
 									"type": "Number",
-									"description": "子知识类目id",
-									"required": true
+									"description": "子知识类目id"
 								},
 								{
 									"name": "tenant_id",
 									"type": "Number",
-									"description": "子知识租户",
-									"required": true
+									"description": "子知识租户"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "子知识状态",
-									"required": true
+									"description": "子知识状态"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "子知识标题",
-									"required": true
+									"description": "子知识标题"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "子知识编辑时间",
-									"required": true
+									"description": "子知识编辑时间"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "子知识创建时间",
-									"required": true
+									"description": "子知识创建时间"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "子知识id",
-									"required": true
+									"description": "子知识id"
 								}
-							]
+							],
+							"name": "child_qas",
+							"type": "KcQaRead[]",
+							"description": "子知识"
 						},
 						{
-							"name": "solutions",
-							"type": "KcQaSolution[]",
-							"description": "问题答案",
-							"required": true,
 							"subParams": [
 								{
 									"name": "plain_text",
 									"type": "String",
-									"description": "答案纯文本",
-									"required": true
+									"description": "答案纯文本"
 								},
 								{
 									"name": "summary",
 									"type": "String",
-									"description": "答案摘要",
-									"required": true
+									"description": "答案摘要"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "答案视角",
-									"required": true
+									"description": "答案视角"
 								},
 								{
 									"name": "extra_content",
 									"type": "String",
-									"description": "答案额外信息",
-									"required": true
+									"description": "答案额外信息"
 								},
 								{
 									"name": "content_view",
 									"type": "String",
-									"description": "答案视角",
-									"required": true
+									"description": "答案视角"
 								},
 								{
 									"name": "content_type",
 									"type": "Number",
-									"description": "答案类型",
-									"required": true
+									"description": "答案类型"
 								},
 								{
 									"name": "content",
 									"type": "String",
-									"description": "答案内容",
-									"required": true
+									"description": "答案内容"
 								},
 								{
 									"name": "question_id",
 									"type": "Number",
-									"description": "问题id",
-									"required": true
+									"description": "问题id"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "答案编辑时间",
-									"required": true
+									"description": "答案编辑时间"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "答案创建时间",
-									"required": true
+									"description": "答案创建时间"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "答案id",
-									"required": true
+									"description": "答案id"
 								}
-							]
+							],
+							"name": "solutions",
+							"type": "KcQaSolution[]",
+							"description": "问题答案"
 						},
 						{
 							"name": "context",
 							"type": "Number",
-							"description": "问题context",
-							"required": true
+							"description": "问题context"
 						},
 						{
 							"name": "question_type",
 							"type": "Number",
-							"description": "问题类型",
-							"required": true
+							"description": "问题类型"
 						},
 						{
 							"name": "entity_code",
 							"type": "String",
-							"description": "问题关联实体code",
-							"required": true
+							"description": "问题关联实体code"
 						},
 						{
 							"name": "parent_cats",
 							"type": "Number[]",
-							"description": "问题父类目列表",
-							"required": true
+							"description": "问题父类目列表"
 						},
 						{
 							"name": "cat_path",
 							"type": "String",
-							"description": "问题类目路径",
-							"required": true
+							"description": "问题类目路径"
 						},
 						{
 							"name": "cat_id",
 							"type": "Number",
-							"description": "问题类目id",
-							"required": true
+							"description": "问题类目id"
 						},
 						{
 							"name": "tenant_id",
 							"type": "Number",
-							"description": "问题租户id",
-							"required": true
+							"description": "问题租户id"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "问题状态",
-							"required": true
+							"description": "问题状态"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "问题标题",
-							"required": true
+							"description": "问题标题"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "问题编辑时间",
-							"required": true
+							"description": "问题编辑时间"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "问题创建时间",
-							"required": true
+							"description": "问题创建时间"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "问题id",
-							"required": true
+							"description": "问题id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "KcQaRead",
+					"description": "返回数据"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.kclub.kc.qa.get",
+	"apiChineseName": "知识云-查询单个知识详情",
+	"description": "知识云-查询单个知识详情。通过租户id、问题id查询问题详情",
+	"id": 38842
 }

@@ -1,0 +1,177 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部主键",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "descr",
+					"type": "String",
+					"description": "副标题",
+					"required": true
+				},
+				{
+					"name": "city_codes",
+					"type": "String",
+					"description": "城市编码,逗号隔开",
+					"required": true
+				},
+				{
+					"name": "detail_data_source",
+					"type": "Number",
+					"description": "数据来源",
+					"required": true
+				},
+				{
+					"name": "detail_image",
+					"type": "String",
+					"description": "详情头图",
+					"required": true
+				},
+				{
+					"name": "detail_show_title",
+					"type": "String",
+					"description": "是否在头图展示标题与副标题 1：不展示 2：展示 \u0000",
+					"required": true
+				},
+				{
+					"name": "detail_color_val",
+					"type": "String",
+					"description": "详情色值",
+					"required": true
+				},
+				{
+					"name": "detail_selector_is_show",
+					"type": "Number",
+					"description": "是否展示筛选器 \u00001展示 0不展示",
+					"required": true
+				},
+				{
+					"name": "detail_theme_template_id",
+					"type": "Number",
+					"description": "主题模板id（cardType为主题详情卡片） \u0000",
+					"required": true
+				},
+				{
+					"name": "detail_show_fetch_info_component",
+					"type": "Number",
+					"description": "是否展示留资组件（0: 否 1：是）",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "分类(1:价格，2：面积，3:户型 4: 居住体验，5:人群，6:销售状态，7:优选好房，8:周边配套，9:价格+面积，10:价格+户型，11:面积+户型，12:榜单城市化，13:楼盘时刻，14:楼盘属性，15:需求类型，16:权益，17:城市化)",
+					"required": true
+				},
+				{
+					"name": "min_content_num",
+					"type": "Number",
+					"description": "主题最小内容数量。内容大于等于此值的主题才会被透出到场景中",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "业务id",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "类型(1:楼盘 2:房源 3:文章 4:视频 5:评测 6:banner 7:品牌 8:抽奖 9:二手房小区 10:其他 11:租房 12:内容 13: \"交易商品\" 14: 二手房委托云主题 15: 租房委托云主题",
+							"required": true
+						},
+						{
+							"name": "outer_project_id",
+							"type": "String",
+							"description": "外部小区id"
+						},
+						{
+							"name": "project_type",
+							"type": "Number",
+							"description": "10-集中式模式 11-分散式模式"
+						},
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "排序",
+							"required": true
+						}
+					],
+					"name": "theme_detail_excels",
+					"type": "EtcThemeDetailExcelDTO[]",
+					"description": "手动导入的商品信息",
+					"required": true
+				},
+				{
+					"name": "selection_id",
+					"type": "Number",
+					"description": "选品ID",
+					"required": true
+				}
+			],
+			"name": "etc_theme_dto",
+			"type": "EtcThemeDTO",
+			"description": "请求云主题参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.admin.theme.create",
+	"apiChineseName": "创建云主题",
+	"description": "创建云主题",
+	"id": 61783
+}

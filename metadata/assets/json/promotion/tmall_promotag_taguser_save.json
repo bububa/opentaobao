@@ -1,8 +1,4 @@
 {
-	"id": 21775,
-	"name": "tmall.promotag.taguser.save",
-	"apiChineseName": "给用户打上优惠标签",
-	"description": "给用户载体打标",
 	"requestParams": [
 		{
 			"name": "tag_id",
@@ -11,10 +7,19 @@
 			"required": true
 		},
 		{
+			"name": "ouid",
+			"type": "String",
+			"description": "用户ID"
+		},
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "用户ID"
+		},
+		{
 			"name": "nick",
 			"type": "String",
-			"description": "买家昵称",
-			"required": true
+			"description": "昵称"
 		}
 	],
 	"responseParams": [
@@ -23,5 +28,9 @@
 			"type": "Boolean",
 			"description": "打标结果是否成功"
 		}
-	]
+	],
+	"name": "tmall.promotag.taguser.save",
+	"apiChineseName": "给用户打上优惠标签",
+	"description": "给用户载体打标",
+	"id": 21775
 }

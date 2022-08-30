@@ -1,8 +1,4 @@
 {
-	"id": 39408,
-	"name": "taobao.wdk.equipment.deviceadmin.deviceinfo.get",
-	"apiChineseName": "获取五道口设备管理信息",
-	"description": "通过仓编码获取五道口设备管理信息",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -19,15 +15,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HmResult",
-			"description": "返回值",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "DeviceInfoDto[]",
-					"description": "设备列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_id",
@@ -95,7 +84,11 @@
 							"description": "分组中设备索引号",
 							"required": true
 						}
-					]
+					],
+					"name": "models",
+					"type": "DeviceInfoDto[]",
+					"description": "设备列表",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -115,7 +108,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "HmResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.deviceadmin.deviceinfo.get",
+	"apiChineseName": "获取五道口设备管理信息",
+	"description": "通过仓编码获取五道口设备管理信息",
+	"id": 39408
 }

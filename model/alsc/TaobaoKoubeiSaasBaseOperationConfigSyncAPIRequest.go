@@ -16,12 +16,12 @@ type TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest struct {
 	_merchantId string
 	// 请求ID
 	_requestId string
+	// 操作员ID
+	_outerOperatorId string
 	// 业务类型。支付方式：payment_method
 	_bizType string
 	// 经营设置json串
 	_operationConfig string
-	// 操作员ID
-	_outerOperatorId string
 }
 
 // NewTaobaoKoubeiSaasBaseOperationConfigSyncRequest 初始化TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetRequestId() string
 	return r._requestId
 }
 
+// SetOuterOperatorId is OuterOperatorId Setter
+// 操作员ID
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOuterOperatorId(_outerOperatorId string) error {
+	r._outerOperatorId = _outerOperatorId
+	r.Set("outer_operator_id", _outerOperatorId)
+	return nil
+}
+
+// GetOuterOperatorId OuterOperatorId Getter
+func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOuterOperatorId() string {
+	return r._outerOperatorId
+}
+
 // SetBizType is BizType Setter
 // 业务类型。支付方式：payment_method
 func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetBizType(_bizType string) error {
@@ -95,17 +108,4 @@ func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOperationConfig(_
 // GetOperationConfig OperationConfig Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOperationConfig() string {
 	return r._operationConfig
-}
-
-// SetOuterOperatorId is OuterOperatorId Setter
-// 操作员ID
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) SetOuterOperatorId(_outerOperatorId string) error {
-	r._outerOperatorId = _outerOperatorId
-	r.Set("outer_operator_id", _outerOperatorId)
-	return nil
-}
-
-// GetOuterOperatorId OuterOperatorId Getter
-func (r TaobaoKoubeiSaasBaseOperationConfigSyncAPIRequest) GetOuterOperatorId() string {
-	return r._outerOperatorId
 }

@@ -1,0 +1,202 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "town_code",
+					"type": "Number",
+					"description": "街道编码"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份"
+				},
+				{
+					"name": "short_address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "old_store_ding_dept_id",
+					"type": "Number",
+					"description": "老摊位钉钉部门"
+				},
+				{
+					"name": "lat",
+					"type": "Number",
+					"description": "经度"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "town_name",
+					"type": "String",
+					"description": "街道名称"
+				},
+				{
+					"name": "lng",
+					"type": "Number",
+					"description": "纬度"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省份名称"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "摊位编码"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "合同状态"
+				},
+				{
+					"name": "mall_name",
+					"type": "String",
+					"description": "卖场名称"
+				},
+				{
+					"name": "old_store_contract_code",
+					"type": "String",
+					"description": "老摊位编码"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "合同号"
+				},
+				{
+					"name": "district_code",
+					"type": "Number",
+					"description": "区编码"
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "市编码"
+				},
+				{
+					"name": "agency_code",
+					"type": "String",
+					"description": "经销商编码"
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市名称"
+				},
+				{
+					"name": "mall_ding_dept_id",
+					"type": "Number",
+					"description": "卖场钉钉部门id"
+				},
+				{
+					"name": "mall_code",
+					"type": "String",
+					"description": "卖场编码"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "摊位名称"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "合同开始时间"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "幂等id"
+				},
+				{
+					"name": "district_name",
+					"type": "String",
+					"description": "区名称"
+				},
+				{
+					"name": "store_ding_dept_id",
+					"type": "Number",
+					"description": "摊位钉钉部门id"
+				},
+				{
+					"name": "province_code",
+					"type": "Number",
+					"description": "省编码"
+				},
+				{
+					"name": "agency_name",
+					"type": "String",
+					"description": "经销商名称"
+				},
+				{
+					"name": "old_code",
+					"type": "String",
+					"description": "老合同号"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "合同结束时间"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系电话"
+				},
+				{
+					"name": "op_type",
+					"type": "String",
+					"description": "操作类型"
+				}
+			],
+			"name": "ea_store_contract_dto",
+			"type": "NrtStoreContractDTO",
+			"description": "合同参数对象"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "摊位id"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "成功与否"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "tmall.nrt.store.contract.syn",
+	"apiChineseName": "喵零合同同步",
+	"description": "喵零合同同步",
+	"id": 62217
+}

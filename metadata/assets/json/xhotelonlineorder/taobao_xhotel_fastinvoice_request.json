@@ -1,14 +1,6 @@
 {
-	"id": 29553,
-	"name": "taobao.xhotel.fastinvoice.request",
-	"apiChineseName": "极速开票开票请求回传",
-	"description": "极速开票开票请求回传,用于记录航信开票请求数据",
 	"requestParams": [
 		{
-			"name": "invoice_info_param",
-			"type": "InvoiceInfoParam",
-			"description": "无",
-			"required": true,
 			"subParams": [
 				{
 					"name": "post_type",
@@ -65,6 +57,11 @@
 					"required": true
 				},
 				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户名"
+				},
+				{
 					"name": "tax_num",
 					"type": "String",
 					"description": "酒店开票点税号",
@@ -81,9 +78,6 @@
 					"description": "酒店外部订单号(从查询pms账单接口中获取)"
 				},
 				{
-					"name": "value_added_info",
-					"type": "ValueAddedInfo",
-					"description": "专票信息",
 					"subParams": [
 						{
 							"name": "register_addr",
@@ -110,14 +104,16 @@
 							"type": "String",
 							"description": "电话"
 						}
-					]
-				},
-				{
-					"name": "user_nick",
-					"type": "String",
-					"description": "用户名"
+					],
+					"name": "value_added_info",
+					"type": "ValueAddedInfo",
+					"description": "专票信息"
 				}
-			]
+			],
+			"name": "invoice_info_param",
+			"type": "InvoiceInfoParam",
+			"description": "无",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -136,5 +132,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "taobao.xhotel.fastinvoice.request",
+	"apiChineseName": "极速开票开票请求回传",
+	"description": "极速开票开票请求回传,用于记录航信开票请求数据",
+	"id": 29553
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25062,
-	"name": "taobao.tanx.audit.creative.add",
-	"apiChineseName": "创意预审新增接口",
-	"description": "创意预审新增接口",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -23,10 +19,6 @@
 			"required": true
 		},
 		{
-			"name": "creative",
-			"type": "CreativeParamDTO",
-			"description": "预审核创意对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "creative_id",
@@ -83,7 +75,11 @@
 					"type": "String",
 					"description": "模板Id"
 				}
-			]
+			],
+			"name": "creative",
+			"type": "CreativeParamDTO",
+			"description": "预审核创意对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -102,5 +98,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.tanx.audit.creative.add",
+	"apiChineseName": "创意预审新增接口",
+	"description": "创意预审新增接口",
+	"id": 25062
 }

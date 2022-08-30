@@ -1,14 +1,6 @@
 {
-	"id": 31989,
-	"name": "alibaba.campus.device.openapi.getdevicerealtimelog",
-	"apiChineseName": "根据设备uuid获取设备采集信息",
-	"description": "根据设备uuid获取设备采集信息",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "请求发送端信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,7 +13,11 @@
 					"description": "所属园区Id",
 					"required": true
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true
 		},
 		{
 			"name": "uuid",
@@ -32,117 +28,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "RunTimeDataDto",
-					"description": "设备实时参数信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_id",
 							"type": "String",
-							"description": "设备id",
-							"required": true
+							"description": "设备id"
 						},
 						{
 							"name": "event_time",
 							"type": "Number",
-							"description": "事件时间",
-							"required": true
+							"description": "事件时间"
 						},
 						{
 							"name": "msg_id",
 							"type": "String",
-							"description": "消息id",
-							"required": true
+							"description": "消息id"
 						},
 						{
-							"name": "run_time_datas",
-							"type": "RunDataDto[]",
-							"description": "runTimeData",
-							"required": true,
 							"subParams": [
 								{
 									"name": "property_code",
 									"type": "String",
-									"description": "参数编码",
-									"required": true
+									"description": "参数编码"
 								},
 								{
 									"name": "property_name",
 									"type": "String",
-									"description": "参数名称",
-									"required": true
+									"description": "参数名称"
 								},
 								{
 									"name": "value",
 									"type": "String",
-									"description": "实时参数值",
-									"required": true
+									"description": "实时参数值"
 								},
 								{
 									"name": "property_kind",
 									"type": "Number",
-									"description": "参数在数据字典所属分类，如30600代表character",
-									"required": true
+									"description": "参数在数据字典所属分类，如30600代表character"
 								},
 								{
 									"name": "unit_code",
 									"type": "String",
-									"description": "unitCode",
-									"required": true
+									"description": "unitCode"
 								},
 								{
 									"name": "ref_device_id",
 									"type": "String",
-									"description": "被关联物理设备编码",
-									"required": true
+									"description": "被关联物理设备编码"
 								},
 								{
 									"name": "ref_property_code",
 									"type": "String",
-									"description": "被关联参数点编码",
-									"required": true
+									"description": "被关联参数点编码"
 								}
-							]
+							],
+							"name": "run_time_datas",
+							"type": "RunDataDto[]",
+							"description": "runTimeData"
 						},
 						{
 							"name": "be_logic",
 							"type": "Boolean",
-							"description": "是否是逻辑设备",
-							"required": true
+							"description": "是否是逻辑设备"
 						}
-					]
+					],
+					"name": "content",
+					"type": "RunTimeDataDto",
+					"description": "设备实时参数信息"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.getdevicerealtimelog",
+	"apiChineseName": "根据设备uuid获取设备采集信息",
+	"description": "根据设备uuid获取设备采集信息",
+	"id": 31989
 }

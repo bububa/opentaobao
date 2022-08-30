@@ -1,14 +1,6 @@
 {
-	"id": 55698,
-	"name": "taobao.alitrip.axin.trans.refund.create",
-	"apiChineseName": "阿信创建退款单",
-	"description": "阿信供销平台-创建退款单服务",
 	"requestParams": [
 		{
-			"name": "axin_refund_create_d_t_o",
-			"type": "AxinRefundCreateDto",
-			"description": "阿信创建退款单入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "attributes",
@@ -45,78 +37,76 @@
 					"description": "外部订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "axin_refund_create_d_t_o",
+			"type": "AxinRefundCreateDto",
+			"description": "阿信创建退款单入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "AxinRefundCreateResDto",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_fee",
 							"type": "Number",
-							"description": "实退金额",
-							"required": true
+							"description": "实退金额"
 						},
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退款金额",
-							"required": true
+							"description": "退款金额"
 						},
 						{
 							"name": "req_version",
 							"type": "String",
-							"description": "请求版本号，用于幂等校验",
-							"required": true
+							"description": "请求版本号，用于幂等校验"
 						},
 						{
 							"name": "outer_order_id",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinRefundCreateResDto",
+					"description": "返回素材id"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "提示信息",
-					"required": true
+					"description": "提示信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.refund.create",
+	"apiChineseName": "阿信创建退款单",
+	"description": "阿信供销平台-创建退款单服务",
+	"id": 55698
 }

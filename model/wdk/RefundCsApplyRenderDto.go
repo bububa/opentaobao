@@ -8,4 +8,6 @@ type RefundCsApplyRenderDto struct {
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 商家经营店ID
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
+	// 渠道来源
+	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 32461,
-	"name": "taobao.wireless.share.tpwd.query",
-	"apiChineseName": "查询解析淘口令",
-	"description": "查询解析淘口令",
 	"requestParams": [
 		{
 			"name": "password_content",
@@ -52,5 +48,9 @@
 			"type": "String",
 			"description": "thumbPicUrl"
 		}
-	]
+	],
+	"name": "taobao.wireless.share.tpwd.query",
+	"apiChineseName": "查询解析淘口令",
+	"description": "查询解析淘口令",
+	"id": 32461
 }

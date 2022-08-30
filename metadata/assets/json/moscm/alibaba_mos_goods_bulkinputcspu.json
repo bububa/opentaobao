@@ -1,15 +1,6 @@
 {
-	"id": 35598,
-	"name": "alibaba.mos.goods.bulkinputcspu",
-	"apiChineseName": "批量录入商品信息",
-	"description": "用于商品信息的批量导入到银泰商品中台",
 	"requestParams": [
 		{
-			"name": "cspu_input_dto_list",
-			"type": "CspuInputDto[]",
-			"description": "录入商品信息列表（最大列表长度：20）",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "art_no",
@@ -29,10 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "properties",
-					"type": "PropertyDto[]",
-					"description": "销售属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "p_alias",
@@ -91,13 +78,13 @@
 							"type": "String",
 							"description": "属性类型（sale, nonCritical, critical, tmallItem）"
 						}
-					]
+					],
+					"name": "properties",
+					"type": "PropertyDto[]",
+					"description": "销售属性",
+					"required": true
 				},
 				{
-					"name": "spu_input_dto",
-					"type": "SpuInputDto",
-					"description": "标准商品信息（款）",
-					"required": true,
 					"subParams": [
 						{
 							"name": "barcode_str",
@@ -167,9 +154,6 @@
 							"description": "产品ID"
 						},
 						{
-							"name": "product_imgs",
-							"type": "ProductImgDto[]",
-							"description": "产品的子图片.目前最多支持50张。",
 							"subParams": [
 								{
 									"name": "id",
@@ -186,12 +170,12 @@
 									"type": "String",
 									"description": "url地址（以http或https开头的绝对路径）"
 								}
-							]
+							],
+							"name": "product_imgs",
+							"type": "ProductImgDto[]",
+							"description": "产品的子图片.目前最多支持50张。"
 						},
 						{
-							"name": "props",
-							"type": "PropertyDto[]",
-							"description": "产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性",
 							"subParams": [
 								{
 									"name": "p_alias",
@@ -248,7 +232,10 @@
 									"type": "String",
 									"description": "属性类型（sale, nonCritical, critical, tmallItem）"
 								}
-							]
+							],
+							"name": "props",
+							"type": "PropertyDto[]",
+							"description": "产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性"
 						},
 						{
 							"name": "sell_pt",
@@ -267,6 +254,7 @@
 						},
 						{
 							"name": "tags",
+							"type": "String",
 							"description": "brand是银泰品牌Id，colorName（颜色名称）、colorCode(颜色编码)、sizeCode(尺码编码)、sizeName(尺码名称):商品销售属性，标签一些在属性里找不到id的属性存放在这里"
 						},
 						{
@@ -289,7 +277,11 @@
 							"type": "Number",
 							"description": "天猫ItemId"
 						}
-					]
+					],
+					"name": "spu_input_dto",
+					"type": "SpuInputDto",
+					"description": "标准商品信息（款）",
+					"required": true
 				},
 				{
 					"name": "sub_title",
@@ -304,6 +296,7 @@
 				},
 				{
 					"name": "tags",
+					"type": "String",
 					"description": "brand是银泰品牌Id，colorName（颜色名称）、colorCode(颜色编码)、sizeCode(尺码编码)、sizeName(尺码名称):商品销售属性，标签一些在属性里找不到id的属性存放在这里",
 					"required": true
 				},
@@ -318,48 +311,52 @@
 					"type": "Number",
 					"description": "天猫Sku"
 				}
-			]
+			],
+			"name": "cspu_input_dto_list",
+			"type": "CspuInputDto[]",
+			"description": "录入商品信息列表（最大列表长度：20）",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "BulkInputCspuResult",
-			"description": "返回数据",
 			"subParams": [
 				{
-					"name": "cspu_result_list",
-					"type": "InputCspuResult[]",
-					"description": "录入结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cspu_id",
 							"type": "String",
-							"description": "中台商品id",
-							"required": true
+							"description": "中台商品id"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "供应商商品id",
-							"required": true
+							"description": "供应商商品id"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "是否录入成功，true：成功 false：失败",
-							"required": true
+							"description": "是否录入成功，true：成功 false：失败"
 						}
-					]
+					],
+					"name": "cspu_result_list",
+					"type": "InputCspuResult[]",
+					"description": "录入结果对象"
 				}
-			]
+			],
+			"name": "data",
+			"type": "BulkInputCspuResult",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.mos.goods.bulkinputcspu",
+	"apiChineseName": "批量录入商品信息",
+	"description": "用于商品信息的批量导入到银泰商品中台",
+	"id": 35598
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28676,
-	"name": "taobao.qimen.trade.user.add",
-	"apiChineseName": "添加奇门订单链路用户",
-	"description": "添加奇门订单链路用户",
 	"requestParams": [
 		{
 			"name": "memo",
@@ -26,5 +22,9 @@
 			"type": "String",
 			"description": "卖家备注"
 		}
-	]
+	],
+	"name": "taobao.qimen.trade.user.add",
+	"apiChineseName": "添加奇门订单链路用户",
+	"description": "添加奇门订单链路用户",
+	"id": 28676
 }

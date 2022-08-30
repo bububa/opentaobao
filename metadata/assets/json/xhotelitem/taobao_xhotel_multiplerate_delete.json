@@ -1,8 +1,4 @@
 {
-	"id": 27972,
-	"name": "taobao.xhotel.multiplerate.delete",
-	"apiChineseName": "复杂价格删除",
-	"description": "酒店产品库rate删除",
 	"requestParams": [
 		{
 			"name": "vendor",
@@ -34,29 +30,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "out_rid_rateplan_code_occupancy_lengthofstay",
 					"type": "String",
-					"description": "房型编码_房价编码_入住人数_连住天数",
-					"required": true
+					"description": "房型编码_房价编码_入住人数_连住天数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.multiplerate.delete",
+	"apiChineseName": "复杂价格删除",
+	"description": "酒店产品库rate删除",
+	"id": 27972
 }

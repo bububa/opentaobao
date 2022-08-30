@@ -1,8 +1,4 @@
 {
-	"id": 27522,
-	"name": "taobao.xhotel.baseinfo.get",
-	"apiChineseName": "酒店基础信息查询接口",
-	"description": "酒店基础信息(酒店/房型/房价定义)查询接口， 包括 酒店房型可售, 以及 hid 下 的标准房型列表",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -49,9 +45,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -66,16 +59,8 @@
 					"required": true
 				},
 				{
-					"name": "xhotel_base_info",
-					"type": "XHotelBaseInfo",
-					"description": "酒店基础信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "room_type_list",
-							"type": "RoomType[]",
-							"description": "房型基础信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
@@ -107,13 +92,13 @@
 									"description": "商家房型ID",
 									"required": true
 								}
-							]
+							],
+							"name": "room_type_list",
+							"type": "RoomType[]",
+							"description": "房型基础信息",
+							"required": true
 						},
 						{
-							"name": "rate_plan_list",
-							"type": "RatePlan[]",
-							"description": "房价基础信息(需要新增rp时绑定酒店)",
-							"required": true,
 							"subParams": [
 								{
 									"name": "vendor",
@@ -145,13 +130,13 @@
 									"description": "1：开启2：关闭。",
 									"required": true
 								}
-							]
+							],
+							"name": "rate_plan_list",
+							"type": "RatePlan[]",
+							"description": "房价基础信息(需要新增rp时绑定酒店)",
+							"required": true
 						},
 						{
-							"name": "hotel",
-							"type": "Hotel",
-							"description": "卖家酒店对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "hid",
@@ -459,13 +444,13 @@
 									"description": "开业时间",
 									"required": true
 								}
-							]
+							],
+							"name": "hotel",
+							"type": "Hotel",
+							"description": "卖家酒店对象",
+							"required": true
 						},
 						{
-							"name": "s_room_type_list",
-							"type": "Sroomtypelist[]",
-							"description": "标准房型列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "window_type",
@@ -629,7 +614,11 @@
 									"description": "外部id",
 									"required": true
 								}
-							]
+							],
+							"name": "s_room_type_list",
+							"type": "Sroomtypelist[]",
+							"description": "标准房型列表",
+							"required": true
 						},
 						{
 							"name": "total_hotel_dynamic_info",
@@ -638,10 +627,6 @@
 							"required": true
 						},
 						{
-							"name": "hotel_dynamic_info_list",
-							"type": "Hoteldynamicinfo[]",
-							"description": "酒店房型可售详情查",
-							"required": true,
 							"subParams": [
 								{
 									"name": "unsale_reason",
@@ -763,7 +748,11 @@
 									"description": "酒店外部ID",
 									"required": true
 								}
-							]
+							],
+							"name": "hotel_dynamic_info_list",
+							"type": "Hoteldynamicinfo[]",
+							"description": "酒店房型可售详情查",
+							"required": true
 						},
 						{
 							"name": "tag_json",
@@ -771,7 +760,11 @@
 							"description": "酒店维度特殊标签含义, json: {\"pure-direct-hotel\":0,\"direct-manual-order-hotel\":1,\"ebk-direct-hotel\":0,\"non-direct-hotel\":1,\"allow-dingding-business-travel-hotel\":1,\"willing-dingding-bussiness-travel-hotel\":0,\"calendar-room-package-hotel\":1,\"dijiajiajia-hotel\":0,\"ebk-number-of-confirm-room-hotel\":1} , key含义: pure-direct-hotel 表示纯直连酒店, direct-manual-order-hotel 和 ebk-direct-hotel 和 non-direct-hotel 这三个key对应value都是0 . direct-manual-order-hotel 表示 人工承接失败订单的酒店标签。如果某个直连酒店打了该标签，那么直连下单失败以后，允许人工承接订单，由人工跟进 . ebk-direct-hotel 表示 ebk直连酒店标。如果某个酒店打了该标签，那么这个酒店下允许通过ebk发布直连rp . non-direct-hotel 表示 卖家非直连酒店标签。如果某个酒店打了该标签，那么该酒店下单不会走直连交易。 allow-dingding-business-travel-hotel 表示 允许进入阿里商旅渠道（钉钉）售卖信用住的单体酒店 willing-dingding-bussiness-travel-hotel 表示 已签协议愿意加入阿里商旅渠道售卖信用住的单体酒店 . calendar-room-package-hotel 表示 酒店可以参加日历房套餐活动包括创建，修改，删除活动信息（高星集团GMV项目） dijiajiajia-hotel 表示 底价加价酒店权限标。只有打了该标的酒店才允许维护底价加价规则和包房rp . ebk-number-of-confirm-room-hotel 表示ebk确认订单，是否要输入外部确认号",
 							"required": true
 						}
-					]
+					],
+					"name": "xhotel_base_info",
+					"type": "XHotelBaseInfo",
+					"description": "酒店基础信息",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -779,7 +772,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.baseinfo.get",
+	"apiChineseName": "酒店基础信息查询接口",
+	"description": "酒店基础信息(酒店/房型/房价定义)查询接口， 包括 酒店房型可售, 以及 hid 下 的标准房型列表",
+	"id": 27522
 }

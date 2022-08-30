@@ -1,8 +1,4 @@
 {
-	"id": 43682,
-	"name": "alibaba.damai.maitix.project.distribution.query",
-	"apiChineseName": "分销单个项目信息查询",
-	"description": "发布分销项目查询单个项目信息接口",
 	"requestParams": [
 		{
 			"name": "project_id",
@@ -12,505 +8,430 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "ext_map",
-					"type": "Json",
-					"description": "扩展信息",
-					"required": true
+					"type": "String",
+					"description": "扩展信息"
 				},
 				{
-					"name": "model_list",
-					"type": "ProjectInfoDto[]",
-					"description": "项目信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "city",
-							"type": "IdNameDto",
-							"description": "演出城市",
-							"required": true,
 							"subParams": [
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "城市id",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "城市名称",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "classify_code",
-							"type": "String",
-							"description": "项目大类编码-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "classify_name",
-							"type": "String",
-							"description": "项目大类名称-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "country",
-							"type": "IdNameDto",
-							"description": "国家",
-							"required": true,
-							"subParams": [
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "国家id",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "国家名称",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "introduce",
-							"type": "String",
-							"description": "项目介绍",
-							"required": true
-						},
-						{
-							"name": "is_has_seat",
-							"type": "Number",
-							"description": "是否有座： 0=无座 1=有座",
-							"required": true
-						},
-						{
-							"name": "perform_info_list",
-							"type": "PerformInfoDto[]",
-							"description": "场次",
-							"required": true,
-							"subParams": [
-								{
-									"name": "change_reason",
-									"type": "String",
-									"description": "延改期原因",
-									"required": true
-								},
-								{
-									"name": "end_time",
-									"type": "Date",
-									"description": "演出结束时间",
-									"required": true
-								},
-								{
-									"name": "is_change_perform_time",
-									"type": "Number",
-									"description": "是否修改了场次时间 0或null：否 1：是",
-									"required": true
-								},
 								{
 									"name": "perform_id",
 									"type": "Number",
-									"description": "场次ID",
-									"required": true
+									"description": "场次ID"
 								},
 								{
 									"name": "perform_name",
 									"type": "String",
-									"description": "场次名称",
-									"required": true
-								},
-								{
-									"name": "perform_setting",
-									"type": "PerformSettingDto",
-									"description": "场次设置",
-									"required": true,
-									"subParams": [
-										{
-											"name": "card_type",
-											"type": "Json",
-											"description": "证件类型(\"身份证\"-\"id_card\",\"护照\"-\"passport\",\"港澳居民来往内地通行证\"-\"hk_macao_pass\",\"台湾居民来往大陆通行证\"-\"taiwan_compatriot_card\",\"士兵／军官\"-\"soldier_officer_card\")",
-											"required": true
-										},
-										{
-											"name": "is_one_order_one_card",
-											"type": "Number",
-											"description": "一单一证 0：不是，1：是",
-											"required": true
-										},
-										{
-											"name": "is_one_ticket_one_card",
-											"type": "Number",
-											"description": "一票一证 0：不是，1：是",
-											"required": true
-										},
-										{
-											"name": "is_real_name_enter",
-											"type": "Number",
-											"description": "是否实名制入场 0：不是，1：是",
-											"required": true
-										},
-										{
-											"name": "issue_enter_modes_list",
-											"type": "Number[]",
-											"description": "入场方式 1纸质票入场 2电子票入场",
-											"required": true
-										},
-										{
-											"name": "issue_ticket_modes_list",
-											"type": "Number[]",
-											"description": "出票方式 1纸质票 2静态二维码电子票 3动态二维码电子票 4身份证电子票 5 短信码电子票",
-											"required": true
-										},
-										{
-											"name": "perform_id",
-											"type": "Number",
-											"description": "场次id",
-											"required": true
-										},
-										{
-											"name": "take_ticket_types",
-											"type": "Number[]",
-											"description": "取票方式,1-无纸化,2-快递票,3-自助换票,4-门店自取,这个决定了下单页用户看到的取票方式,如果是多个,可以让用户自由选择,可以参考大麦网提交订单后的页面",
-											"required": true
-										},
-										{
-											"name": "sale_type",
-											"type": "Number",
-											"description": "销售设置 0开票 1预售",
-											"required": true
-										},
-										{
-											"name": "seat_select_type_list",
-											"type": "Number[]",
-											"description": "选座类型0-立即购买 1-选座购买,当是有座项目并且是列表有1.就可以h5选座",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "perform_status",
-									"type": "Number",
-									"description": "场次状态(0：创建中 10：已创建 20：待销售 30：销售中 40：场次取消 50：场次结束)一般不会透出30之前的状态给渠道",
-									"required": true
-								},
-								{
-									"name": "perform_type",
-									"type": "Number",
-									"description": "场次类型(1 单场次，2 多次通票，3 单次通票)-暂时没用,可以认为都是普通场次",
-									"required": true
-								},
-								{
-									"name": "price_info_list",
-									"type": "PriceInfoDto[]",
-									"description": "价格",
-									"required": true,
-									"subParams": [
-										{
-											"name": "max_stock",
-											"type": "Number",
-											"description": "售卖最大库存数量,没有含义,以是否可售为准",
-											"required": true
-										},
-										{
-											"name": "perform_id",
-											"type": "Number",
-											"description": "场次ID",
-											"required": true
-										},
-										{
-											"name": "price",
-											"type": "Money",
-											"description": "票价",
-											"required": true,
-											"subParams": [
-												{
-													"name": "cent",
-													"type": "Number",
-													"description": "票价 单位：分",
-													"required": true
-												}
-											]
-										},
-										{
-											"name": "price_id",
-											"type": "Number",
-											"description": "价格ID",
-											"required": true
-										},
-										{
-											"name": "price_name",
-											"type": "String",
-											"description": "价格名称",
-											"required": true
-										},
-										{
-											"name": "price_type",
-											"type": "Number",
-											"description": "票品的类型 0普通单票 1固定套票  2 自由组合套票",
-											"required": true
-										},
-										{
-											"name": "project_id",
-											"type": "Number",
-											"description": "项目id",
-											"required": true
-										},
-										{
-											"name": "able_sell",
-											"type": "Boolean",
-											"description": "是否可售 true可售 false不可售",
-											"required": true
-										},
-										{
-											"name": "open_combine_prices",
-											"type": "OpenCombinePriceDto[]",
-											"description": "套票构成",
-											"required": true,
-											"subParams": [
-												{
-													"name": "price_id",
-													"type": "Number",
-													"description": "子票品ID",
-													"required": true
-												},
-												{
-													"name": "price_name",
-													"type": "String",
-													"description": "子票品名称",
-													"required": true
-												},
-												{
-													"name": "price",
-													"type": "Number",
-													"description": "子票品价格，单位分",
-													"required": true
-												},
-												{
-													"name": "count",
-													"type": "Number",
-													"description": "套票的子票数量",
-													"required": true
-												}
-											]
-										},
-										{
-											"name": "sub_status",
-											"type": "Number",
-											"description": "票品子状态0 缺货登记,1开售提醒,2 售馨,只有able_sell为false里这个才可能有值",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "remark",
-									"type": "String",
-									"description": "备注",
-									"required": true
-								},
-								{
-									"name": "reserve_seat",
-									"type": "Number",
-									"description": "是否对号入座 0：不对号入座 1：对号入座 2：对区入座",
-									"required": true
+									"description": "场次名称"
 								},
 								{
 									"name": "start_time",
 									"type": "Date",
-									"description": "演出开始时间",
-									"required": true
+									"description": "演出开始时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "演出结束时间"
+								},
+								{
+									"name": "perform_status",
+									"type": "Number",
+									"description": "场次状态(0：创建中 10：已创建 20：待销售 30：销售中 40：场次取消 50：场次结束)一般不会透出30之前的状态给渠道"
+								},
+								{
+									"name": "perform_type",
+									"type": "Number",
+									"description": "场次类型(1 单场次，2 多次通票，3 单次通票)-暂时没用,可以认为都是普通场次"
 								},
 								{
 									"name": "sub_perform_list",
-									"type": "Json[]",
-									"description": "子场次列表-暂时没用",
-									"required": true
+									"type": "String[]",
+									"description": "子场次列表-暂时没用"
 								},
 								{
 									"name": "weekly_list",
 									"type": "Number[]",
-									"description": "场次有效期规则 每周周几可以",
-									"required": true
+									"description": "场次有效期规则 每周周几可以"
+								},
+								{
+									"name": "change_reason",
+									"type": "String",
+									"description": "延改期原因"
+								},
+								{
+									"name": "is_change_perform_time",
+									"type": "Number",
+									"description": "是否修改了场次时间 0或null：否 1：是"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "reserve_seat",
+									"type": "Number",
+									"description": "是否对号入座 0：不对号入座 1：对号入座 2：对区入座"
+								},
+								{
+									"subParams": [
+										{
+											"name": "perform_id",
+											"type": "Number",
+											"description": "场次id"
+										},
+										{
+											"name": "card_type",
+											"type": "String",
+											"description": "证件类型(\"身份证\"-\"id_card\",\"护照\"-\"passport\",\"港澳居民来往内地通行证\"-\"hk_macao_pass\",\"台湾居民来往大陆通行证\"-\"taiwan_compatriot_card\",\"士兵／军官\"-\"soldier_officer_card\")"
+										},
+										{
+											"name": "is_one_order_one_card",
+											"type": "Number",
+											"description": "一单一证 0：不是，1：是"
+										},
+										{
+											"name": "is_one_ticket_one_card",
+											"type": "Number",
+											"description": "一票一证 0：不是，1：是"
+										},
+										{
+											"name": "is_real_name_enter",
+											"type": "Number",
+											"description": "是否实名制入场 0：不是，1：是"
+										},
+										{
+											"name": "issue_enter_modes_list",
+											"type": "Number[]",
+											"description": "入场方式 1纸质票入场 2电子票入场"
+										},
+										{
+											"name": "issue_ticket_modes_list",
+											"type": "Number[]",
+											"description": "出票方式 1纸质票 2静态二维码电子票 3动态二维码电子票 4身份证电子票 5 短信码电子票"
+										},
+										{
+											"name": "take_ticket_types",
+											"type": "Number[]",
+											"description": "取票方式,1-无纸化,2-快递票,3-自助换票,4-门店自取,这个决定了下单页用户看到的取票方式,如果是多个,可以让用户自由选择,可以参考大麦网提交订单后的页面"
+										},
+										{
+											"name": "sale_type",
+											"type": "Number",
+											"description": "销售设置 0开票 1预售"
+										},
+										{
+											"name": "seat_select_type_list",
+											"type": "Number[]",
+											"description": "选座类型0-立即购买 1-选座购买,当是有座项目并且是列表有1.就可以h5选座"
+										}
+									],
+									"name": "perform_setting",
+									"type": "PerformSettingDto",
+									"description": "场次设置"
+								},
+								{
+									"subParams": [
+										{
+											"name": "price_id",
+											"type": "Number",
+											"description": "价格ID"
+										},
+										{
+											"name": "price_name",
+											"type": "String",
+											"description": "价格名称"
+										},
+										{
+											"name": "price_type",
+											"type": "Number",
+											"description": "票品的类型 0普通单票 1固定套票  2 自由组合套票"
+										},
+										{
+											"subParams": [
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "票价 单位：分"
+												}
+											],
+											"name": "price",
+											"type": "Money",
+											"description": "票价"
+										},
+										{
+											"name": "max_stock",
+											"type": "Number",
+											"description": "售卖最大库存数量,没有含义,以是否可售为准"
+										},
+										{
+											"name": "project_id",
+											"type": "Number",
+											"description": "项目id"
+										},
+										{
+											"name": "perform_id",
+											"type": "Number",
+											"description": "场次ID"
+										},
+										{
+											"name": "able_sell",
+											"type": "Boolean",
+											"description": "是否可售 true可售 false不可售"
+										},
+										{
+											"subParams": [
+												{
+													"name": "price_id",
+													"type": "Number",
+													"description": "子票品ID"
+												},
+												{
+													"name": "price_name",
+													"type": "String",
+													"description": "子票品名称"
+												},
+												{
+													"name": "price",
+													"type": "Number",
+													"description": "子票品价格，单位分"
+												},
+												{
+													"name": "count",
+													"type": "Number",
+													"description": "套票的子票数量"
+												}
+											],
+											"name": "open_combine_prices",
+											"type": "OpenCombinePriceDto[]",
+											"description": "套票构成"
+										},
+										{
+											"name": "sub_status",
+											"type": "Number",
+											"description": "票品子状态0 缺货登记,1开售提醒,2 售馨,只有able_sell为false里这个才可能有值"
+										}
+									],
+									"name": "price_info_list",
+									"type": "PriceInfoDto[]",
+									"description": "价格"
 								}
-							]
-						},
-						{
-							"name": "poster_url",
-							"type": "String",
-							"description": "项目海报图片地址-没用。取项目详情接口的内容",
-							"required": true
+							],
+							"name": "perform_info_list",
+							"type": "PerformInfoDto[]",
+							"description": "场次"
 						},
 						{
 							"name": "project_id",
 							"type": "Number",
-							"description": "项目ID",
-							"required": true
+							"description": "项目ID"
 						},
 						{
 							"name": "project_name",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
 						},
 						{
 							"name": "project_status",
 							"type": "Number",
-							"description": "项目状态，0：创建中 10：已创建 20：待销售 30：销售中 40：项目取消 50：项目结束 60 定时开售",
-							"required": true
+							"description": "项目状态，0：创建中 10：已创建 20：待销售 30：销售中 40：项目取消 50：项目结束 60 定时开售"
 						},
 						{
 							"name": "project_type",
 							"type": "Number",
-							"description": "项目类型 0:普通项目 1:预售项目 2:先付先抢-先付项目 3:先付先抢-先抢项目 4:搭售项目 5:超级票-暂时没用",
-							"required": true
+							"description": "项目类型 0:普通项目 1:预售项目 2:先付先抢-先付项目 3:先付先抢-先抢项目 4:搭售项目 5:超级票-暂时没用"
 						},
 						{
-							"name": "province",
-							"type": "IdNameDto",
-							"description": "省",
-							"required": true,
-							"subParams": [
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "省id",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "省名称",
-									"required": true
-								}
-							]
+							"name": "introduce",
+							"type": "String",
+							"description": "项目介绍"
+						},
+						{
+							"name": "is_has_seat",
+							"type": "Number",
+							"description": "是否有座： 0=无座 1=有座"
+						},
+						{
+							"name": "poster_url",
+							"type": "String",
+							"description": "项目海报图片地址-没用。取项目详情接口的内容"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "备注-没用",
-							"required": true
+							"description": "备注-没用"
 						},
 						{
-							"name": "sub_classify_code",
-							"type": "String",
-							"description": "项目子类编码-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "sub_classify_name",
-							"type": "String",
-							"description": "项目子类名称-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "third_classify_code",
-							"type": "String",
-							"description": "项目三级分类编码-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "third_classify_name",
-							"type": "String",
-							"description": "项目三级分类名称-取项目详情的值-废弃",
-							"required": true
-						},
-						{
-							"name": "ticket_agency_fee",
-							"type": "String",
-							"description": "票务代理费（单位：百分比）",
-							"required": true
-						},
-						{
-							"name": "trader_id_list",
-							"type": "Number[]",
-							"description": "主办方ID",
-							"required": true
-						},
-						{
-							"name": "trader_name_list",
-							"type": "String[]",
-							"description": "主办方名称",
-							"required": true
-						},
-						{
-							"name": "venue",
-							"type": "VenueDTO",
-							"description": "场馆",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "场馆id",
-									"required": true
+									"description": "国家id"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "场馆名称",
-									"required": true
+									"description": "国家名称"
+								}
+							],
+							"name": "country",
+							"type": "IdNameDto",
+							"description": "国家"
+						},
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "省id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "省名称"
+								}
+							],
+							"name": "province",
+							"type": "IdNameDto",
+							"description": "省"
+						},
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "城市id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "城市名称"
+								}
+							],
+							"name": "city",
+							"type": "IdNameDto",
+							"description": "演出城市"
+						},
+						{
+							"name": "classify_code",
+							"type": "String",
+							"description": "项目大类编码-取项目详情的值-废弃"
+						},
+						{
+							"name": "classify_name",
+							"type": "String",
+							"description": "项目大类名称-取项目详情的值-废弃"
+						},
+						{
+							"name": "sub_classify_code",
+							"type": "String",
+							"description": "项目子类编码-取项目详情的值-废弃"
+						},
+						{
+							"name": "sub_classify_name",
+							"type": "String",
+							"description": "项目子类名称-取项目详情的值-废弃"
+						},
+						{
+							"name": "third_classify_code",
+							"type": "String",
+							"description": "项目三级分类编码-取项目详情的值-废弃"
+						},
+						{
+							"name": "third_classify_name",
+							"type": "String",
+							"description": "项目三级分类名称-取项目详情的值-废弃"
+						},
+						{
+							"name": "ticket_agency_fee",
+							"type": "String",
+							"description": "票务代理费（单位：百分比）"
+						},
+						{
+							"name": "trader_id_list",
+							"type": "Number[]",
+							"description": "主办方ID"
+						},
+						{
+							"name": "trader_name_list",
+							"type": "String[]",
+							"description": "主办方名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "场馆id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "场馆名称"
 								},
 								{
 									"name": "lng",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "lat",
 									"type": "String",
-									"description": "纬度",
-									"required": true
+									"description": "纬度"
 								},
 								{
 									"name": "venue_address",
 									"type": "String",
-									"description": "场馆地址",
-									"required": true
+									"description": "场馆地址"
 								}
-							]
+							],
+							"name": "venue",
+							"type": "VenueDTO",
+							"description": "场馆"
 						},
 						{
 							"name": "is_general_agent",
 							"type": "Number",
-							"description": "是否总票代",
-							"required": true
+							"description": "是否总票代"
 						},
 						{
 							"name": "is_test",
 							"type": "Number",
-							"description": "是否测试项目 0-正式项目 1-测试项目",
-							"required": true
+							"description": "是否测试项目 0-正式项目 1-测试项目"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "ProjectInfoDto[]",
+					"description": "项目信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口返回是否成功 true成功 false失败",
-					"required": true
+					"description": "接口返回是否成功 true成功 false失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.project.distribution.query",
+	"apiChineseName": "分销单个项目信息查询",
+	"description": "发布分销项目查询单个项目信息接口",
+	"id": 43682
 }

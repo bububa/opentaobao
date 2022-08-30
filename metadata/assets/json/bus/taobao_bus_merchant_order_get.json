@@ -1,0 +1,177 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "飞猪订单号或商家订单号，多个以“,”分割",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "飞猪订单号"
+						},
+						{
+							"name": "agent_order_id",
+							"type": "String",
+							"description": "商家订单号"
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "订单状态，待支付：01；已取消：02；待出票：03；出票成功：04；已关闭：05"
+						},
+						{
+							"name": "alipay_trade_id",
+							"type": "String",
+							"description": "商家侧支付宝流水号"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "总金额，单位分"
+						},
+						{
+							"name": "start_station",
+							"type": "String",
+							"description": "出发站"
+						},
+						{
+							"name": "end_station",
+							"type": "String",
+							"description": "到达站"
+						},
+						{
+							"name": "ticket_count",
+							"type": "Number",
+							"description": "票数"
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "创建时间"
+						},
+						{
+							"name": "issue_time",
+							"type": "String",
+							"description": "出票时间"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间"
+						},
+						{
+							"name": "is_self_sale_order",
+							"type": "Boolean",
+							"description": "是否是阿斯兰模式"
+						},
+						{
+							"name": "is_wechat",
+							"type": "Boolean",
+							"description": "是否是微信渠道"
+						},
+						{
+							"name": "trans_type",
+							"type": "String",
+							"description": "交易类型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "agent_route_id",
+									"type": "Number",
+									"description": "商家路线id"
+								},
+								{
+									"name": "bus_number",
+									"type": "String",
+									"description": "车次编号"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "预计到达时间"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "depard_date",
+									"type": "String",
+									"description": "发车时间"
+								},
+								{
+									"name": "last_place_name",
+									"type": "String",
+									"description": "目的地"
+								},
+								{
+									"name": "arrive_station_name",
+									"type": "String",
+									"description": "终点站"
+								},
+								{
+									"name": "end_city_name",
+									"type": "String",
+									"description": "目的城市"
+								},
+								{
+									"name": "start_station_address",
+									"type": "String",
+									"description": "出发站地址"
+								},
+								{
+									"name": "start_station_name",
+									"type": "String",
+									"description": "出发站"
+								},
+								{
+									"name": "start_city_name",
+									"type": "String",
+									"description": "出发城市"
+								}
+							],
+							"name": "bus_line_info",
+							"type": "MerchantBusLineInfo",
+							"description": "车次信息"
+						}
+					],
+					"name": "merchant_bus_order_info_list",
+					"type": "Merchantbusorderinfo[]",
+					"description": "订单详情集合"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "param_agent_query_order_r_p",
+			"type": "AgentQueryOrderRp",
+			"description": "出参"
+		}
+	],
+	"name": "taobao.bus.merchant.order.get",
+	"apiChineseName": "商家侧查询订单详情",
+	"description": "商家侧查询订单详情",
+	"id": 57422
+}

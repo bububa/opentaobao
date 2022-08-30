@@ -1,0 +1,60 @@
+{
+	"requestParams": [
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "会员手机号码"
+		},
+		{
+			"name": "point",
+			"type": "Number",
+			"description": "会员积分"
+		},
+		{
+			"name": "level",
+			"type": "Number",
+			"description": "会员等级"
+		},
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "会员拓展信息"
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "该次同步的版本信息（建议使用时间戳）"
+		},
+		{
+			"name": "ouid",
+			"type": "String",
+			"description": "ouid"
+		},
+		{
+			"name": "level_point",
+			"type": "String",
+			"description": "成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传"
+		},
+		{
+			"name": "level_expire_time",
+			"type": "Number",
+			"description": "毫秒级别时间戳，可不传，表示会员等级有效期"
+		},
+		{
+			"name": "level_type",
+			"type": "Number",
+			"description": "1(表示传统等级模式), 2(成长值等级模式)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "mei_extra_info",
+			"type": "Json",
+			"description": "处理的其他信息"
+		}
+	],
+	"name": "tmall.mei.crm.member.sync.privy",
+	"apiChineseName": "同步推送会员信息(隐私号版本)",
+	"description": "品牌方通过该api主动推送会员信息。使用场景包括\n1.用户在线上注册后，线下补充信息后，同步到线上。\n2.其他情况的主动推送变更。",
+	"id": 57716
+}

@@ -1,8 +1,4 @@
 {
-	"id": 46981,
-	"name": "alibaba.damai.maitix.seat.token.query",
-	"apiChineseName": "分销商选座获取qtoken",
-	"description": "选座分销，分销商查询token",
 	"requestParams": [
 		{
 			"name": "perform_id",
@@ -31,35 +27,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "token",
-					"required": true
+					"description": "token"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.seat.token.query",
+	"apiChineseName": "分销商选座获取qtoken",
+	"description": "选座分销，分销商查询token",
+	"id": 46981
 }

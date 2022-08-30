@@ -1,8 +1,4 @@
 {
-	"id": 10617,
-	"name": "taobao.wlb.inventorylog.query",
-	"apiChineseName": "根据商品ID查询所有库存变更记录",
-	"description": "通过商品ID等几个条件来分页查询库存变更记录",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -57,9 +53,6 @@
 			"description": "记录数"
 		},
 		{
-			"name": "inventory_log_list",
-			"type": "WlbItemInventoryLog []",
-			"description": "库存变更记录",
 			"subParams": [
 				{
 					"name": "id",
@@ -131,7 +124,14 @@
 					"type": "String",
 					"description": "VENDIBLE  1-可销售;FREEZE  201-冻结库存;ONWAY  301-在途库存;DEFECT  101-残存品;ENGINE_DAMAGE 102-机损;BOX_DAMAGE 103-箱损"
 				}
-			]
+			],
+			"name": "inventory_log_list",
+			"type": "WlbItemInventoryLog []",
+			"description": "库存变更记录"
 		}
-	]
+	],
+	"name": "taobao.wlb.inventorylog.query",
+	"apiChineseName": "根据商品ID查询所有库存变更记录",
+	"description": "通过商品ID等几个条件来分页查询库存变更记录",
+	"id": 10617
 }

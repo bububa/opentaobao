@@ -1,0 +1,476 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "operate_by",
+					"type": "String",
+					"description": "操作人"
+				},
+				{
+					"subParams": [
+						{
+							"name": "invoice_remark",
+							"type": "String",
+							"description": "发票备注"
+						},
+						{
+							"name": "seller_country_code",
+							"type": "String",
+							"description": "销方国家代码"
+						},
+						{
+							"name": "purchaser_bank_info",
+							"type": "String",
+							"description": "购方银行信息"
+						},
+						{
+							"name": "seller_bank_info",
+							"type": "String",
+							"description": "销方银行信息"
+						},
+						{
+							"name": "purchaser_region_code",
+							"type": "String",
+							"description": "购方地区编码"
+						},
+						{
+							"name": "purchaser_code",
+							"type": "String",
+							"description": "购方公司代码"
+						},
+						{
+							"name": "cipher_text",
+							"type": "String",
+							"description": "发票密文（字符200位）"
+						},
+						{
+							"name": "qr_code_cipher_text",
+							"type": "String",
+							"description": "二维码密文"
+						},
+						{
+							"name": "invoice_type",
+							"type": "String",
+							"description": "发票类型"
+						},
+						{
+							"name": "paper_own_certify_flag",
+							"type": "Boolean",
+							"description": "纸票是否到票才认证"
+						},
+						{
+							"name": "invoice_no",
+							"type": "String",
+							"description": "发票号码"
+						},
+						{
+							"name": "file_download_http_url",
+							"type": "String",
+							"description": "文件下载http地址（优先级高于fileContent）"
+						},
+						{
+							"name": "machine_code",
+							"type": "String",
+							"description": "机器编码"
+						},
+						{
+							"name": "image_id",
+							"type": "String",
+							"description": "影像id"
+						},
+						{
+							"name": "invoice_code",
+							"type": "String",
+							"description": "发票代码"
+						},
+						{
+							"name": "purchaser_name",
+							"type": "String",
+							"description": "购方名称"
+						},
+						{
+							"name": "scan_account",
+							"type": "String",
+							"description": "扫描账号"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						},
+						{
+							"name": "electronic_type",
+							"type": "String",
+							"description": "电子发票类型"
+						},
+						{
+							"name": "seller_tax_no",
+							"type": "String",
+							"description": "销方税号"
+						},
+						{
+							"name": "issue_country_type",
+							"type": "String",
+							"description": "开票国家类型"
+						},
+						{
+							"name": "reg_time",
+							"type": "Date",
+							"description": "登记成功时间"
+						},
+						{
+							"name": "related_order",
+							"type": "String",
+							"description": "关联单据号"
+						},
+						{
+							"name": "purchaser_tax_no",
+							"type": "String",
+							"description": "购方税号"
+						},
+						{
+							"name": "image_file_name",
+							"type": "String",
+							"description": "影像原始文件名称"
+						},
+						{
+							"name": "register_channel",
+							"type": "String",
+							"description": "登记渠道"
+						},
+						{
+							"name": "check_sum",
+							"type": "String",
+							"description": "校验码"
+						},
+						{
+							"name": "tax_amount",
+							"type": "String",
+							"description": "税额"
+						},
+						{
+							"name": "issued_seller_name",
+							"type": "String",
+							"description": "代开销方名称"
+						},
+						{
+							"name": "excluding_tax_amount",
+							"type": "String",
+							"description": "不含税金额"
+						},
+						{
+							"name": "reg_platform_code",
+							"type": "String",
+							"description": "所属平台"
+						},
+						{
+							"name": "qr_code_flag",
+							"type": "String",
+							"description": "二维码标识"
+						},
+						{
+							"name": "reg_biz_identity_ou",
+							"type": "String",
+							"description": "登记的OU"
+						},
+						{
+							"name": "seller_name",
+							"type": "String",
+							"description": "销方名称"
+						},
+						{
+							"name": "reg_user",
+							"type": "String",
+							"description": "登记人"
+						},
+						{
+							"name": "seller_code",
+							"type": "String",
+							"description": "销方code"
+						},
+						{
+							"name": "purchaser_country_code",
+							"type": "String",
+							"description": "购方国家代码"
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "issued_tax_no",
+							"type": "String",
+							"description": "代开单位税号"
+						},
+						{
+							"name": "effective_tax_amount",
+							"type": "String",
+							"description": "有效税额"
+						},
+						{
+							"name": "purchaser_contact_info",
+							"type": "String",
+							"description": "购方地址及电话"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "发票总金额"
+						},
+						{
+							"name": "seller_region_code",
+							"type": "String",
+							"description": "销方地区编码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "row_no",
+									"type": "Number",
+									"description": "行号"
+								},
+								{
+									"name": "invoice_line_type",
+									"type": "String",
+									"description": "发票行类型"
+								},
+								{
+									"name": "quantity_unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "goods_source_country",
+									"type": "String",
+									"description": "货物来源国"
+								},
+								{
+									"name": "tax_category2",
+									"type": "String",
+									"description": "税种2"
+								},
+								{
+									"name": "duty_free_memo",
+									"type": "String",
+									"description": "免税注释"
+								},
+								{
+									"name": "exchange_rate",
+									"type": "String",
+									"description": "汇率"
+								},
+								{
+									"name": "local_currency_tax_amount2",
+									"type": "String",
+									"description": "本币税额2"
+								},
+								{
+									"name": "local_currency_tax_amount1",
+									"type": "String",
+									"description": "本币税额1"
+								},
+								{
+									"name": "model",
+									"type": "String",
+									"description": "规格型号"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种"
+								},
+								{
+									"name": "tax_categories",
+									"type": "String",
+									"description": "税种"
+								},
+								{
+									"name": "tax_rate2",
+									"type": "String",
+									"description": "税率2"
+								},
+								{
+									"name": "goods_desc",
+									"type": "String",
+									"description": "货物名称"
+								},
+								{
+									"name": "place_of_supply",
+									"type": "String",
+									"description": "供货地点"
+								},
+								{
+									"name": "unit_price",
+									"type": "String",
+									"description": "单价"
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "含税金额"
+								},
+								{
+									"name": "local_currency_tax_amount",
+									"type": "String",
+									"description": "本币税额"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量"
+								},
+								{
+									"name": "local_currency_excluding_tax_amount",
+									"type": "String",
+									"description": "本币不含税金额"
+								},
+								{
+									"name": "local_currency_amount",
+									"type": "String",
+									"description": "本币含税总金额"
+								},
+								{
+									"name": "tax_amount1",
+									"type": "String",
+									"description": "税额1"
+								},
+								{
+									"name": "tax_amount2",
+									"type": "String",
+									"description": "税额2"
+								},
+								{
+									"name": "local_currency_code",
+									"type": "String",
+									"description": "本币币种"
+								},
+								{
+									"name": "supply_date",
+									"type": "Date",
+									"description": "服务日期/供货日期"
+								},
+								{
+									"name": "service_accounting_code",
+									"type": "String",
+									"description": "服务核算代码"
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "税率"
+								},
+								{
+									"name": "reverse_charge",
+									"type": "String",
+									"description": "是否海外发票"
+								},
+								{
+									"name": "local_currency_price",
+									"type": "String",
+									"description": "本币单价"
+								},
+								{
+									"name": "zero_rate_flag",
+									"type": "String",
+									"description": "零税率类型"
+								},
+								{
+									"name": "tax_amount",
+									"type": "String",
+									"description": "税额"
+								},
+								{
+									"name": "excluding_tax_amount",
+									"type": "String",
+									"description": "不含税金额"
+								}
+							],
+							"name": "line_list",
+							"type": "RegisterInvoiceLineDTO[]",
+							"description": "发票行列表"
+						},
+						{
+							"name": "invoice_date",
+							"type": "Date",
+							"description": "开票日期"
+						},
+						{
+							"name": "invoice_material",
+							"type": "String",
+							"description": "发票介质类型"
+						},
+						{
+							"name": "seller_contact_info",
+							"type": "String",
+							"description": "销方地址及电话"
+						},
+						{
+							"name": "authorized_dealer",
+							"type": "String",
+							"description": "是否海外某些国家的发票使用"
+						},
+						{
+							"name": "reg_biz_identity_id",
+							"type": "Number",
+							"description": "登记时，最终所选的bizId"
+						},
+						{
+							"name": "reg_biz_identity_code",
+							"type": "String",
+							"description": "登记时，所属的业务身份"
+						},
+						{
+							"name": "waybill_no",
+							"type": "String",
+							"description": "运单号"
+						}
+					],
+					"name": "invoice_d_t_o",
+					"type": "RegisterInvoiceDTO",
+					"description": "发票信息"
+				},
+				{
+					"name": "request_no",
+					"type": "String",
+					"description": "业务请求号【必填】"
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "业务平台代码【必填】"
+				}
+			],
+			"name": "invoice_register_request",
+			"type": "InvoiceRegisterRequest",
+			"description": "发票登记请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "发票Id"
+		},
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"name": "response_msg",
+			"type": "String",
+			"description": "响应消息"
+		}
+	],
+	"name": "alibaba.cfo.incoming.invoice.register",
+	"apiChineseName": "发票登记接口",
+	"description": "发票登记接口",
+	"id": 64038
+}

@@ -1,8 +1,4 @@
 {
-	"id": 38899,
-	"name": "alibaba.idle.apprize.order.fulfillment",
-	"apiChineseName": "鉴定担保资金订单履约",
-	"description": "服务商针对自己的服务订单进行履约",
 	"requestParams": [
 		{
 			"name": "action",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "支付宝流水订单号"
 		}
-	]
+	],
+	"name": "alibaba.idle.apprize.order.fulfillment",
+	"apiChineseName": "鉴定担保资金订单履约",
+	"description": "服务商针对自己的服务订单进行履约",
+	"id": 38899
 }

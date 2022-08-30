@@ -1,0 +1,113 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "经营店code",
+					"required": true
+				}
+			],
+			"name": "query_request",
+			"type": "AxStoreQueryRequest",
+			"description": "查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口返回成功失败"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用接口返回错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用接口返回错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "principal_name",
+							"type": "String",
+							"description": "负责人姓名"
+						},
+						{
+							"name": "principal",
+							"type": "String",
+							"description": "负责人"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "门店经营状态 1营业 0闭店"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区编码"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市编码"
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "省编码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名字"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "门店编码"
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家code"
+						}
+					],
+					"name": "model",
+					"type": "AxStoreQueryResponse",
+					"description": "查询接口返回对象"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "查询接口返回结果"
+		}
+	],
+	"name": "alibaba.wdk.ax.store.query",
+	"apiChineseName": "翱象经营店查询接口",
+	"description": "翱象经营店查询接口",
+	"id": 61690
+}

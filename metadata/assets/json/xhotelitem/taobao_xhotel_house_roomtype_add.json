@@ -1,16 +1,5 @@
 {
-	"id": 34792,
-	"name": "taobao.xhotel.house.roomtype.add",
-	"apiChineseName": "民宿房型信息添加",
-	"description": "房型添加或更新",
 	"requestParams": [
-		{
-			"name": "outer_id",
-			"type": "String",
-			"description": "卖家房型ID，不能重复建议格式是:酒店code_房型code",
-			"required": true,
-			"maxLength": 64
-		},
 		{
 			"name": "hid",
 			"type": "Number",
@@ -20,8 +9,8 @@
 			"name": "name",
 			"type": "String",
 			"description": "房型名称。不能超过30字",
-			"required": true,
-			"maxLength": 30
+			"maxLength": 30,
+			"required": true
 		},
 		{
 			"name": "max_occupancy",
@@ -58,6 +47,13 @@
 			"maxLength": 500
 		},
 		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "卖家房型ID，不能重复建议格式是:酒店code_房型code",
+			"maxLength": 64,
+			"required": true
+		},
+		{
 			"name": "window_type",
 			"type": "Number",
 			"description": "0:无窗/1:有窗/2:部分有窗/3:暗窗/4:部分暗窗"
@@ -68,15 +64,15 @@
 			"description": "该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。"
 		},
 		{
-			"name": "out_hid",
-			"type": "String",
-			"description": "（必传）商家酒店ID，指明该房型属于哪家酒店",
-			"maxLength": 50
-		},
-		{
 			"name": "vendor",
 			"type": "String",
 			"description": "系统商，无申请不可使用",
+			"maxLength": 50
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "（必传）商家酒店ID，指明该房型属于哪家酒店",
 			"maxLength": 50
 		},
 		{
@@ -137,9 +133,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "xroomtype",
-			"type": "XRoomType",
-			"description": "房型信息",
 			"subParams": [
 				{
 					"name": "rid",
@@ -162,14 +155,76 @@
 					"description": "修改时间"
 				},
 				{
+					"name": "match_status",
+					"type": "Number",
+					"description": "匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo; 6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo; 7:已系统匹配，但是匹配重复，待人工确认"
+				},
+				{
 					"name": "status",
 					"type": "Number",
 					"description": "房型状态。0:正常，-1:删除，-2:停售"
 				},
 				{
-					"name": "s_roomtype",
-					"type": "SRoomType",
-					"description": "标准房型信息",
+					"name": "error_info",
+					"type": "String",
+					"description": "出错原因,没有匹配上标准房型时，小二拒绝的理由"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "卖家系统id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "房型名称"
+				},
+				{
+					"name": "max_occupancy",
+					"type": "Number",
+					"description": "最大入住人数"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "可选值：A,B,C,D。分别代表： A：15平米以下，B：16－30平米，C：31－50平米，D：50平米以上 2）也可以自己定义，比如：40平方米"
+				},
+				{
+					"name": "floor",
+					"type": "String",
+					"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层"
+				},
+				{
+					"name": "bed_type",
+					"type": "String",
+					"description": "床型。按自己定义存储，比如：高低床、上下床"
+				},
+				{
+					"name": "bed_size",
+					"type": "String",
+					"description": "床宽。"
+				},
+				{
+					"name": "internet",
+					"type": "String",
+					"description": "宽带服务。A,B,C,D。分别代表： A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带"
+				},
+				{
+					"name": "service",
+					"type": "String",
+					"description": "设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {\u0026quot;bar\u0026quot;:false,\u0026quot;catv\u0026quot;:false,\u0026quot;ddd\u0026quot;:false,\u0026quot;idd\u0026quot;:false,\u0026quot;pubtoilet\u0026quot;:false,\u0026quot;toilet\u0026quot;:false}"
+				},
+				{
+					"name": "window_type",
+					"type": "Number",
+					"description": "窗型,0：无窗/1：有窗"
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展信息的JSON。 注：此字段的值需要ISV在接入前与淘宝沟通，且确认能解析"
+				},
+				{
 					"subParams": [
 						{
 							"name": "srid",
@@ -246,79 +301,24 @@
 							"type": "Number",
 							"description": "状态。0:正常;-1:删除"
 						}
-					]
-				},
-				{
-					"name": "match_status",
-					"type": "Number",
-					"description": "匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo; 6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo; 7:已系统匹配，但是匹配重复，待人工确认"
-				},
-				{
-					"name": "error_info",
-					"type": "String",
-					"description": "出错原因,没有匹配上标准房型时，小二拒绝的理由"
-				},
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "卖家系统id"
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "房型名称"
-				},
-				{
-					"name": "max_occupancy",
-					"type": "Number",
-					"description": "最大入住人数"
-				},
-				{
-					"name": "area",
-					"type": "String",
-					"description": "可选值：A,B,C,D。分别代表： A：15平米以下，B：16－30平米，C：31－50平米，D：50平米以上 2）也可以自己定义，比如：40平方米"
-				},
-				{
-					"name": "floor",
-					"type": "String",
-					"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层"
-				},
-				{
-					"name": "bed_type",
-					"type": "String",
-					"description": "床型。按自己定义存储，比如：高低床、上下床"
-				},
-				{
-					"name": "bed_size",
-					"type": "String",
-					"description": "床宽。"
-				},
-				{
-					"name": "internet",
-					"type": "String",
-					"description": "宽带服务。A,B,C,D。分别代表： A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带"
-				},
-				{
-					"name": "service",
-					"type": "String",
-					"description": "设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {\u0026quot;bar\u0026quot;:false,\u0026quot;catv\u0026quot;:false,\u0026quot;ddd\u0026quot;:false,\u0026quot;idd\u0026quot;:false,\u0026quot;pubtoilet\u0026quot;:false,\u0026quot;toilet\u0026quot;:false}"
-				},
-				{
-					"name": "extend",
-					"type": "String",
-					"description": "扩展信息的JSON。 注：此字段的值需要ISV在接入前与淘宝沟通，且确认能解析"
-				},
-				{
-					"name": "window_type",
-					"type": "Number",
-					"description": "窗型,0：无窗/1：有窗"
+					],
+					"name": "s_roomtype",
+					"type": "SRoomType",
+					"description": "标准房型信息"
 				},
 				{
 					"name": "name_e",
 					"type": "String",
 					"description": "卖家房型英文名称"
 				}
-			]
+			],
+			"name": "xroomtype",
+			"type": "XRoomType",
+			"description": "房型信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.house.roomtype.add",
+	"apiChineseName": "民宿房型信息添加",
+	"description": "房型添加或更新",
+	"id": 34792
 }

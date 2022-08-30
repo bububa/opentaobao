@@ -1,8 +1,4 @@
 {
-	"id": 50167,
-	"name": "taobao.place.store.update.label",
-	"apiChineseName": "商户门店标签更新接口",
-	"description": "更新商户门店标签（服务、权益、标签）接口",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -11,7 +7,7 @@
 		},
 		{
 			"name": "label_id_list",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "标签id",
 			"maxListSize": 999
 		},
@@ -28,91 +24,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UpdateResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "count",
 					"type": "Number",
-					"description": "成功数量",
-					"required": true
+					"description": "成功数量"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "failured",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "failured_list",
 					"type": "Number[]",
-					"description": "失败的标签id集合",
-					"required": true
+					"description": "失败的标签id集合"
 				},
 				{
 					"name": "full_error_msg",
 					"type": "String",
-					"description": "完整错误信息",
-					"required": true
+					"description": "完整错误信息"
 				},
 				{
-					"name": "models",
-					"type": "Models",
-					"description": "模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "是否为空",
-							"required": true
+							"description": "是否为空"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Models",
+					"description": "模型"
 				},
 				{
 					"name": "pri_key",
 					"type": "String",
-					"description": "关键主键",
-					"required": true
+					"description": "关键主键"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否请求成功",
-					"required": true
+					"description": "是否请求成功"
 				},
 				{
 					"name": "success_list",
 					"type": "Number[]",
-					"description": "成功的标签id集合",
-					"required": true
+					"description": "成功的标签id集合"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "请求更新的总数量(已废弃)",
-					"required": true
+					"description": "请求更新的总数量(已废弃)"
 				}
-			]
+			],
+			"name": "result",
+			"type": "UpdateResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.place.store.update.label",
+	"apiChineseName": "商户门店标签更新接口",
+	"description": "更新商户门店标签（服务、权益、标签）接口",
+	"id": 50167
 }

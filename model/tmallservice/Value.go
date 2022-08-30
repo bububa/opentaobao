@@ -23,13 +23,13 @@ type Value struct {
 	// 状态编码
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
 	// 预约信息
-	Reservation *Reservation `json:"reservation,omitempty" xml:"reservation,omitempty"`
+	Reservation *ReservationDto `json:"reservation,omitempty" xml:"reservation,omitempty"`
 	// 原因编码
 	ReasonCode int64 `json:"reason_code,omitempty" xml:"reason_code,omitempty"`
 	// 核销单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 买家信息
-	Buyer *Buyer `json:"buyer,omitempty" xml:"buyer,omitempty"`
+	Buyer *BuyerDto `json:"buyer,omitempty" xml:"buyer,omitempty"`
 	// 服务提供者信息
-	ServiceProvider *ServiceProvider `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
+	ServiceProvider *ServiceProviderDto `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
 }

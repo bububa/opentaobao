@@ -13,7 +13,7 @@ import (
 type AlibabaEinvoiceBillEinvoiceListAPIRequest struct {
 	model.Params
 	// 开票状态：0=未开票，1=开票中，3=开蓝成功，4=开蓝失败。不填获取全部
-	_einvoiceType []int64
+	_einvoiceType []string
 	// 结算单同步的ERP平台系统
 	_platform string
 	// 收款方税号
@@ -45,14 +45,14 @@ func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetApiParams() url.Values {
 
 // SetEinvoiceType is EinvoiceType Setter
 // 开票状态：0=未开票，1=开票中，3=开蓝成功，4=开蓝失败。不填获取全部
-func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetEinvoiceType(_einvoiceType []int64) error {
+func (r *AlibabaEinvoiceBillEinvoiceListAPIRequest) SetEinvoiceType(_einvoiceType []string) error {
 	r._einvoiceType = _einvoiceType
 	r.Set("einvoice_type", _einvoiceType)
 	return nil
 }
 
 // GetEinvoiceType EinvoiceType Getter
-func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetEinvoiceType() []int64 {
+func (r AlibabaEinvoiceBillEinvoiceListAPIRequest) GetEinvoiceType() []string {
 	return r._einvoiceType
 }
 

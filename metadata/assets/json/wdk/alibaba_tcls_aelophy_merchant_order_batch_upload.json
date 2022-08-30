@@ -1,0 +1,289 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_info",
+					"type": "String",
+					"description": "作用在父订单的活动信息"
+				},
+				{
+					"name": "actual_amt",
+					"type": "Number",
+					"description": "实付金额，单位分",
+					"required": true
+				},
+				{
+					"name": "channel_order_id",
+					"type": "String",
+					"description": "渠道订单id"
+				},
+				{
+					"name": "channel_user_id",
+					"type": "String",
+					"description": "渠道用户ID"
+				},
+				{
+					"name": "coupon_info",
+					"type": "String",
+					"description": "作用在父订单的优惠券信息"
+				},
+				{
+					"name": "customize_order_channel",
+					"type": "String",
+					"description": "订单来源渠道细粒度分类"
+				},
+				{
+					"name": "discount_amt",
+					"type": "Number",
+					"description": "优惠金额，单位分"
+				},
+				{
+					"name": "extend_property",
+					"type": "String",
+					"description": "扩项属性，键值对的json"
+				},
+				{
+					"name": "member_card_num",
+					"type": "String",
+					"description": "会员卡号"
+				},
+				{
+					"name": "member_id",
+					"type": "String",
+					"description": "商家会员ID"
+				},
+				{
+					"name": "order_channel",
+					"type": "String",
+					"description": "渠道（分类）",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID，商家订单流水号",
+					"required": true
+				},
+				{
+					"name": "origin_whole_data",
+					"type": "String",
+					"description": "isv系统中完整的订单信息"
+				},
+				{
+					"name": "out_store_id",
+					"type": "String",
+					"description": "外部门店编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "付款金额",
+							"required": true
+						},
+						{
+							"name": "ouid",
+							"type": "String",
+							"description": "其他支付方式支付后获得userId，例如：微信平台的openId"
+						},
+						{
+							"name": "serial_num",
+							"type": "String",
+							"description": "线上支付订单号，线下流水号，代金券/优惠券为优惠券实例id",
+							"required": true
+						},
+						{
+							"name": "tuid",
+							"type": "String",
+							"description": "支付宝支付方式后获得的userId"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "支付类型",
+							"required": true
+						}
+					],
+					"name": "pay_channel_list",
+					"type": "MerchantOrderPaymentInfo[]",
+					"description": "支付方式",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "pos_no",
+					"type": "String",
+					"description": "pos机号"
+				},
+				{
+					"name": "post_fee",
+					"type": "Number",
+					"description": "履约邮费"
+				},
+				{
+					"name": "real_phone",
+					"type": "String",
+					"description": "真实手机号"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店"
+				},
+				{
+					"subParams": [
+						{
+							"name": "activity_info",
+							"type": "String",
+							"description": "作用在单品的活动信息"
+						},
+						{
+							"name": "actual_amt",
+							"type": "Number",
+							"description": "实付金额",
+							"required": true
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "coupon_info",
+							"type": "String",
+							"description": "作用在单品的优惠券信息"
+						},
+						{
+							"name": "discount_amt",
+							"type": "Number",
+							"description": "优惠金额"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "购买数量"
+						},
+						{
+							"name": "quantity_unit",
+							"type": "String",
+							"description": "购买数量单位"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子订单流水号",
+							"required": true
+						},
+						{
+							"name": "total_amt",
+							"type": "Number",
+							"description": "子订单总金额",
+							"required": true
+						}
+					],
+					"name": "sub_order_list",
+					"type": "MerchantSubOrderInfo[]",
+					"description": "子订单信息"
+				},
+				{
+					"name": "total_amt",
+					"type": "Number",
+					"description": "订单总金额",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "投放跟踪id"
+				},
+				{
+					"name": "union_user_id",
+					"type": "String",
+					"description": "商家侧统一用户标识ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "batch_count",
+							"type": "Number",
+							"description": "批次总量"
+						},
+						{
+							"name": "batch_no",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "begin_time",
+							"type": "Date",
+							"description": "该批次数据的时间范围-起始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "该批次数据的时间范围-结束时间"
+						}
+					],
+					"name": "upload_batch_info",
+					"type": "UploadBatchInfo",
+					"description": "上传数据统计信息"
+				}
+			],
+			"name": "order_info_list",
+			"type": "MerchantOrderInfo[]",
+			"description": "商家订单信息",
+			"maxListSize": 10,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.merchant.order.batch.upload",
+	"apiChineseName": "商家订单数据批量上传",
+	"description": "商家订单数据上传",
+	"id": 57399
+}

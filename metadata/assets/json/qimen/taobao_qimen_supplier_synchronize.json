@@ -1,12 +1,6 @@
 {
-	"id": 47278,
-	"name": "taobao.qimen.supplier.synchronize",
-	"apiChineseName": "供应商同步接口",
-	"description": "这个接口用来同步供应商信息",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "actionType",
@@ -78,13 +72,13 @@
 					"type": "String",
 					"description": "备注, string (500)"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -104,7 +98,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.supplier.synchronize",
+	"apiChineseName": "供应商同步接口",
+	"description": "这个接口用来同步供应商信息",
+	"id": 47278
 }

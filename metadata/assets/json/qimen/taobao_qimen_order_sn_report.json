@@ -1,12 +1,6 @@
 {
-	"id": 27962,
-	"name": "taobao.qimen.order.sn.report",
-	"apiChineseName": "订单SN通知接口",
-	"description": "WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "totalPage",
@@ -27,9 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "order",
-					"type": "Order",
-					"description": "单据列表",
 					"subParams": [
 						{
 							"name": "orderCode",
@@ -59,17 +50,14 @@
 							"type": "String",
 							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不会被重复处理;条件必填;条件为一单需要多次确认时)"
 						}
-					]
+					],
+					"name": "order",
+					"type": "Order",
+					"description": "单据列表"
 				},
 				{
-					"name": "items",
-					"type": "Items",
-					"description": "商品列表",
 					"subParams": [
 						{
-							"name": "item",
-							"type": "Item",
-							"description": "商品信息",
 							"subParams": [
 								{
 									"name": "itemCode",
@@ -88,22 +76,28 @@
 									"description": "商品序列号",
 									"required": true
 								}
-							]
+							],
+							"name": "item",
+							"type": "Item",
+							"description": "商品信息"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Items",
+					"description": "商品列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -123,7 +117,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.order.sn.report",
+	"apiChineseName": "订单SN通知接口",
+	"description": "WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表",
+	"id": 27962
 }

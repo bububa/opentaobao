@@ -1,0 +1,162 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部退票申请单号",
+					"required": true
+				},
+				{
+					"name": "is_voluntary",
+					"type": "Number",
+					"description": "是否自愿",
+					"required": true
+				},
+				{
+					"name": "reaso_type",
+					"type": "Number",
+					"description": "退票原因类型",
+					"required": true
+				},
+				{
+					"name": "refund_voucher_info",
+					"type": "String[]",
+					"description": "退票凭证"
+				},
+				{
+					"name": "reason_detail",
+					"type": "String",
+					"description": "退票理由"
+				},
+				{
+					"name": "total_refund_price",
+					"type": "Number",
+					"description": "订单退款总金额"
+				},
+				{
+					"name": "corp_refund_price",
+					"type": "Number",
+					"description": "企业退款金额"
+				},
+				{
+					"name": "personal_refund_price",
+					"type": "Number",
+					"description": "个人退款金额"
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "item_unit_ids",
+					"type": "String",
+					"description": "商品单元",
+					"required": true
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "会话id",
+					"required": true
+				},
+				{
+					"name": "display_refund_money",
+					"type": "String",
+					"description": "订单退款总金额(单位元)",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "航班号"
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户编号"
+						}
+					],
+					"name": "passenger_segment_info_list",
+					"type": "PassengerSegmentInfo[]",
+					"description": "乘客航段列表"
+				}
+			],
+			"name": "param_btrip_flight_refund_apply_rq",
+			"type": "BtripFlightRefundApplyRq",
+			"description": "退票申请入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "分销外部订单号"
+						},
+						{
+							"name": "dis_sub_order_id",
+							"type": "String",
+							"description": "分销外部子订单号"
+						},
+						{
+							"name": "refund_apply_id",
+							"type": "Number",
+							"description": "创建的退票申请单号"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightRefundApplyRs",
+					"description": "退票申请响应信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应结果"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.refund.newapply",
+	"apiChineseName": "商旅机票分销-退票申请",
+	"description": "商旅机票分销-退票申请",
+	"id": 63084
+}

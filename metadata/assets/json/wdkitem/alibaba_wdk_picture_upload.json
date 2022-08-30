@@ -1,8 +1,4 @@
 {
-	"id": 32686,
-	"name": "alibaba.wdk.picture.upload",
-	"apiChineseName": "图片上传接口",
-	"description": "上传图片",
 	"requestParams": [
 		{
 			"name": "picture_category_id",
@@ -29,103 +25,92 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "apiresult",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "model",
-					"type": "PictureDo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "picture_id",
 							"type": "Number",
-							"description": "图片ID",
-							"required": true
+							"description": "图片ID"
 						},
 						{
 							"name": "picture_category_id",
 							"type": "Number",
-							"description": "图片分类ID",
-							"required": true
+							"description": "图片分类ID"
 						},
 						{
 							"name": "picture_path",
 							"type": "String",
-							"description": "返回的是相对路劲",
-							"required": true
+							"description": "返回的是相对路劲"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "图片标题",
-							"required": true
+							"description": "图片标题"
 						},
 						{
 							"name": "sizes",
 							"type": "Number",
-							"description": "图片大小,bite单位",
-							"required": true
+							"description": "图片大小,bite单位"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过",
-							"required": true
+							"description": "图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过"
 						},
 						{
 							"name": "deleted",
 							"type": "String",
-							"description": "图片是否删除的标记",
-							"required": true
+							"description": "图片是否删除的标记"
 						},
 						{
 							"name": "created",
 							"type": "String",
-							"description": "图片的创建时间",
-							"required": true
+							"description": "图片的创建时间"
 						},
 						{
 							"name": "modified",
 							"type": "String",
-							"description": "图片的修改时间",
-							"required": true
+							"description": "图片的修改时间"
 						},
 						{
 							"name": "pixel",
 							"type": "String",
-							"description": "图片相素,格式:长x宽，如450x150",
-							"required": true
+							"description": "图片相素,格式:长x宽，如450x150"
 						},
 						{
 							"name": "full_url",
 							"type": "String",
-							"description": "完整的路劲",
-							"required": true
+							"description": "完整的路劲"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PictureDo",
+					"description": "model"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误原因",
-					"required": true
+					"description": "错误原因"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "apiresult"
 		}
-	]
+	],
+	"name": "alibaba.wdk.picture.upload",
+	"apiChineseName": "图片上传接口",
+	"description": "上传图片",
+	"id": 32686
 }

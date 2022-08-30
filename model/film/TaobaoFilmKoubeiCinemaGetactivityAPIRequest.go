@@ -13,7 +13,7 @@ import (
 type TaobaoFilmKoubeiCinemaGetactivityAPIRequest struct {
 	model.Params
 	// 影院ID集合
-	_cinemaIds []int64
+	_cinemaIds []string
 	// 用户账号
 	_userId string
 	// 账号类型
@@ -49,14 +49,14 @@ func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetApiParams() url.Values {
 
 // SetCinemaIds is CinemaIds Setter
 // 影院ID集合
-func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCinemaIds(_cinemaIds []int64) error {
+func (r *TaobaoFilmKoubeiCinemaGetactivityAPIRequest) SetCinemaIds(_cinemaIds []string) error {
 	r._cinemaIds = _cinemaIds
 	r.Set("cinema_ids", _cinemaIds)
 	return nil
 }
 
 // GetCinemaIds CinemaIds Getter
-func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetCinemaIds() []int64 {
+func (r TaobaoFilmKoubeiCinemaGetactivityAPIRequest) GetCinemaIds() []string {
 	return r._cinemaIds
 }
 

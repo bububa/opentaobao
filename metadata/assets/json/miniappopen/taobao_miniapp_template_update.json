@@ -1,15 +1,11 @@
 {
-	"id": 46661,
-	"name": "taobao.miniapp.template.update",
-	"apiChineseName": "（已废弃）更新实例化应用",
-	"description": "商家应用c端模板实例化小程序更新",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "id",
@@ -37,9 +33,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "err_code",
@@ -54,10 +47,6 @@
 					"required": true
 				},
 				{
-					"name": "model",
-					"type": "MiniAppEntityTemplateDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_description",
@@ -101,7 +90,11 @@
 							"description": "线上码",
 							"required": true
 						}
-					]
+					],
+					"name": "model",
+					"type": "MiniAppEntityTemplateDto",
+					"description": "model",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -109,7 +102,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.update",
+	"apiChineseName": "（已废弃）更新实例化应用",
+	"description": "商家应用c端模板实例化小程序更新",
+	"id": 46661
 }

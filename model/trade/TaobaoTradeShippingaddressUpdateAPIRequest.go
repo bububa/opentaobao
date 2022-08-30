@@ -14,9 +14,9 @@ type TaobaoTradeShippingaddressUpdateAPIRequest struct {
 	model.Params
 	// 收货人全名。最大长度为50个字节。
 	_receiverName string
-	// 固定电话。最大长度为30个字节。
+	// 座机号码。最大长度为30个字节。传-1表示删除
 	_receiverPhone string
-	// 移动电话。最大长度为11个字节。
+	// 移动电话。最大长度为11个字节。传-1表示删除
 	_receiverMobile string
 	// 省份。最大长度为32个字节。如：浙江
 	_receiverState string
@@ -26,7 +26,7 @@ type TaobaoTradeShippingaddressUpdateAPIRequest struct {
 	_receiverDistrict string
 	// 收货地址。最大长度为228个字节。
 	_receiverAddress string
-	// 邮政编码。必须由6个数字组成。
+	// 邮政编码。必须由6个数字组成。注：邮政编码根据地址信息自动填入，不可单独修改
 	_receiverZip string
 	// 四级地址。最大长度为32个字节。如：五常街道
 	_receiverTown string
@@ -69,7 +69,7 @@ func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetReceiverName() string {
 }
 
 // SetReceiverPhone is ReceiverPhone Setter
-// 固定电话。最大长度为30个字节。
+// 座机号码。最大长度为30个字节。传-1表示删除
 func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetReceiverPhone(_receiverPhone string) error {
 	r._receiverPhone = _receiverPhone
 	r.Set("receiver_phone", _receiverPhone)
@@ -82,7 +82,7 @@ func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetReceiverPhone() string {
 }
 
 // SetReceiverMobile is ReceiverMobile Setter
-// 移动电话。最大长度为11个字节。
+// 移动电话。最大长度为11个字节。传-1表示删除
 func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetReceiverMobile(_receiverMobile string) error {
 	r._receiverMobile = _receiverMobile
 	r.Set("receiver_mobile", _receiverMobile)
@@ -147,7 +147,7 @@ func (r TaobaoTradeShippingaddressUpdateAPIRequest) GetReceiverAddress() string 
 }
 
 // SetReceiverZip is ReceiverZip Setter
-// 邮政编码。必须由6个数字组成。
+// 邮政编码。必须由6个数字组成。注：邮政编码根据地址信息自动填入，不可单独修改
 func (r *TaobaoTradeShippingaddressUpdateAPIRequest) SetReceiverZip(_receiverZip string) error {
 	r._receiverZip = _receiverZip
 	r.Set("receiver_zip", _receiverZip)

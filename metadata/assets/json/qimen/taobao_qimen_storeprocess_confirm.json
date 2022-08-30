@@ -1,12 +1,6 @@
 {
-	"id": 27270,
-	"name": "taobao.qimen.storeprocess.confirm",
-	"apiChineseName": "仓内加工单确认接口",
-	"description": "WMS调用奇门的接口,回传仓内加工单创建情况",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "StoreProcessConfirmRequest",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -53,63 +47,60 @@
 					"description": "备注"
 				},
 				{
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "erp系统商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					],
 					"name": "materialitems",
 					"type": "MaterialItem[]",
-					"description": "加工商品列表",
-					"subParams": [
-						{
-							"name": "itemCode",
-							"type": "String",
-							"description": "erp系统商品编码",
-							"required": true
-						},
-						{
-							"name": "itemId",
-							"type": "String",
-							"description": "仓储系统商品ID"
-						},
-						{
-							"name": "inventoryType",
-							"type": "String",
-							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
-						},
-						{
-							"name": "quantity",
-							"type": "Number",
-							"description": "数量",
-							"required": true
-						},
-						{
-							"name": "productDate",
-							"type": "String",
-							"description": "商品生产日期(YYYY-MM-DD)"
-						},
-						{
-							"name": "expireDate",
-							"type": "String",
-							"description": "商品过期日期(YYYY-MM-DD)"
-						},
-						{
-							"name": "produceCode",
-							"type": "String",
-							"description": "生产批号"
-						},
-						{
-							"name": "batchCode",
-							"type": "String",
-							"description": "批次编码"
-						},
-						{
-							"name": "remark",
-							"type": "String",
-							"description": "备注"
-						}
-					]
+					"description": "加工商品列表"
 				},
 				{
-					"name": "productitems",
-					"type": "ProductItem[]",
-					"description": "加工商品列表",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -158,20 +149,23 @@
 							"type": "String",
 							"description": "备注"
 						}
-					]
+					],
+					"name": "productitems",
+					"type": "ProductItem[]",
+					"description": "加工商品列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "StoreProcessConfirmRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -191,7 +185,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.storeprocess.confirm",
+	"apiChineseName": "仓内加工单确认接口",
+	"description": "WMS调用奇门的接口,回传仓内加工单创建情况",
+	"id": 27270
 }

@@ -1,13 +1,6 @@
 {
-	"id": 48314,
-	"name": "alibaba.lst.vas.tradeflow.save",
-	"apiChineseName": "交易信息回流",
-	"description": "自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。",
 	"requestParams": [
 		{
-			"name": "trade_flow_model_list",
-			"type": "TradeFlowModel",
-			"description": "交易流水信息",
 			"subParams": [
 				{
 					"name": "gmt_modified",
@@ -41,9 +34,6 @@
 					"description": "创建时间"
 				},
 				{
-					"name": "trade_flow_goods_detail_model_list",
-					"type": "TradeFlowGoodsDetailModel[]",
-					"description": "交易流水信息-商品详情",
 					"subParams": [
 						{
 							"name": "remaining_quantity",
@@ -113,7 +103,10 @@
 							"type": "Number",
 							"description": "货道编码，方向：从左到右，编码：从1开始"
 						}
-					]
+					],
+					"name": "trade_flow_goods_detail_model_list",
+					"type": "TradeFlowGoodsDetailModel[]",
+					"description": "交易流水信息-商品详情"
 				},
 				{
 					"name": "equipment_type",
@@ -121,9 +114,6 @@
 					"description": "设备类型"
 				},
 				{
-					"name": "trade_flow_payment_model_list",
-					"type": "TradeFlowPaymentModel[]",
-					"description": "支付信息",
 					"subParams": [
 						{
 							"name": "pay_amount",
@@ -171,7 +161,10 @@
 							"type": "Date",
 							"description": "支付修改时间(如果不传将和订单时间相同)"
 						}
-					]
+					],
+					"name": "trade_flow_payment_model_list",
+					"type": "TradeFlowPaymentModel[]",
+					"description": "支付信息"
 				},
 				{
 					"name": "operator_user_id",
@@ -210,40 +203,43 @@
 					"description": "交易类型：1购买，2退款",
 					"required": true
 				}
-			]
+			],
+			"name": "trade_flow_model_list",
+			"type": "TradeFlowModel",
+			"description": "交易流水信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.lst.vas.tradeflow.save",
+	"apiChineseName": "交易信息回流",
+	"description": "自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。",
+	"id": 48314
 }

@@ -18,6 +18,8 @@ type OpenIsvSearchRq struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 申请人Id（第三方用户id）
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
+	// 第三方关联单号
+	UnionNo string `json:"union_no,omitempty" xml:"union_no,omitempty"`
 	// 阿里商旅审批单id
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 1、老版本2、isv对外版本

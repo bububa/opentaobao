@@ -12,10 +12,10 @@ import (
 // 传入应用的id,  获得用户授权的园区
 type AlibabaCampusCoreAppGetappusagesAPIRequest struct {
 	model.Params
-	// 应用id
-	_appid int64
 	// WorkBenchContext
 	_workBenchContext *WorkBenchContext
+	// 应用id
+	_appid int64
 }
 
 // NewAlibabaCampusCoreAppGetappusagesRequest 初始化AlibabaCampusCoreAppGetappusagesAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAppid is Appid Setter
-// 应用id
-func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) error {
-	r._appid = _appid
-	r.Set("appid", _appid)
-	return nil
-}
-
-// GetAppid Appid Getter
-func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetAppid() int64 {
-	return r._appid
-}
-
 // SetWorkBenchContext is WorkBenchContext Setter
 // WorkBenchContext
 func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetWorkBenchContext(_workBe
 // GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
+}
+
+// SetAppid is Appid Setter
+// 应用id
+func (r *AlibabaCampusCoreAppGetappusagesAPIRequest) SetAppid(_appid int64) error {
+	r._appid = _appid
+	r.Set("appid", _appid)
+	return nil
+}
+
+// GetAppid Appid Getter
+func (r AlibabaCampusCoreAppGetappusagesAPIRequest) GetAppid() int64 {
+	return r._appid
 }

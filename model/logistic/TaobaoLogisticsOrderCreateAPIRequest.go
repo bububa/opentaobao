@@ -12,20 +12,22 @@ import (
 // 用户调用该接口可以创建物流订单。目前仅支持手工订单的创建，创建完毕后默认自动使用“自己联系”的方式发货并且初始状态为”已发货“。也可以通过可选参数选择是否发货以及何种方式进行发货。
 type TaobaoLogisticsOrderCreateAPIRequest struct {
 	model.Params
-	// 发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。
-	_logisType string
-	// 发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。
-	_logisCompanyCode string
-	// 发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。
-	_mailNo string
+	// 运送货物的单价列表(注意：单位为分），用|号隔开
+	_itemValues string
 	// 运送的货物名称列表，用|号隔开
 	_goodsNames string
 	// 运送货物的数量列表，用|号隔开
 	_goodsQuantities string
-	// 运送货物的单价列表(注意：单位为分），用|号隔开
-	_itemValues string
+	// 发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。
+	_mailNo string
 	// 卖家旺旺号
 	_sellerWangwangId string
+	// 发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。
+	_logisCompanyCode string
+	// 发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。
+	_logisType string
+	// 物流发货类型：1-普通订单<br/>不填为默认类型 1-普通订单
+	_orderType int64
 	// 订单的交易号码
 	_tradeId int64
 	// 运费承担方式。1为买家承担运费，2为卖家承担运费，其他值为错误参数。
@@ -55,43 +57,17 @@ func (r TaobaoLogisticsOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetLogisType is LogisType Setter
-// 发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。
-func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisType(_logisType string) error {
-	r._logisType = _logisType
-	r.Set("logis_type", _logisType)
+// SetItemValues is ItemValues Setter
+// 运送货物的单价列表(注意：单位为分），用|号隔开
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetItemValues(_itemValues string) error {
+	r._itemValues = _itemValues
+	r.Set("item_values", _itemValues)
 	return nil
 }
 
-// GetLogisType LogisType Getter
-func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisType() string {
-	return r._logisType
-}
-
-// SetLogisCompanyCode is LogisCompanyCode Setter
-// 发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。
-func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisCompanyCode(_logisCompanyCode string) error {
-	r._logisCompanyCode = _logisCompanyCode
-	r.Set("logis_company_code", _logisCompanyCode)
-	return nil
-}
-
-// GetLogisCompanyCode LogisCompanyCode Getter
-func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisCompanyCode() string {
-	return r._logisCompanyCode
-}
-
-// SetMailNo is MailNo Setter
-// 发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。
-func (r *TaobaoLogisticsOrderCreateAPIRequest) SetMailNo(_mailNo string) error {
-	r._mailNo = _mailNo
-	r.Set("mail_no", _mailNo)
-	return nil
-}
-
-// GetMailNo MailNo Getter
-func (r TaobaoLogisticsOrderCreateAPIRequest) GetMailNo() string {
-	return r._mailNo
+// GetItemValues ItemValues Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetItemValues() string {
+	return r._itemValues
 }
 
 // SetGoodsNames is GoodsNames Setter
@@ -120,17 +96,17 @@ func (r TaobaoLogisticsOrderCreateAPIRequest) GetGoodsQuantities() string {
 	return r._goodsQuantities
 }
 
-// SetItemValues is ItemValues Setter
-// 运送货物的单价列表(注意：单位为分），用|号隔开
-func (r *TaobaoLogisticsOrderCreateAPIRequest) SetItemValues(_itemValues string) error {
-	r._itemValues = _itemValues
-	r.Set("item_values", _itemValues)
+// SetMailNo is MailNo Setter
+// 发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetMailNo(_mailNo string) error {
+	r._mailNo = _mailNo
+	r.Set("mail_no", _mailNo)
 	return nil
 }
 
-// GetItemValues ItemValues Getter
-func (r TaobaoLogisticsOrderCreateAPIRequest) GetItemValues() string {
-	return r._itemValues
+// GetMailNo MailNo Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetMailNo() string {
+	return r._mailNo
 }
 
 // SetSellerWangwangId is SellerWangwangId Setter
@@ -144,6 +120,45 @@ func (r *TaobaoLogisticsOrderCreateAPIRequest) SetSellerWangwangId(_sellerWangwa
 // GetSellerWangwangId SellerWangwangId Getter
 func (r TaobaoLogisticsOrderCreateAPIRequest) GetSellerWangwangId() string {
 	return r._sellerWangwangId
+}
+
+// SetLogisCompanyCode is LogisCompanyCode Setter
+// 发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisCompanyCode(_logisCompanyCode string) error {
+	r._logisCompanyCode = _logisCompanyCode
+	r.Set("logis_company_code", _logisCompanyCode)
+	return nil
+}
+
+// GetLogisCompanyCode LogisCompanyCode Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisCompanyCode() string {
+	return r._logisCompanyCode
+}
+
+// SetLogisType is LogisType Setter
+// 发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetLogisType(_logisType string) error {
+	r._logisType = _logisType
+	r.Set("logis_type", _logisType)
+	return nil
+}
+
+// GetLogisType LogisType Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisType() string {
+	return r._logisType
+}
+
+// SetOrderType is OrderType Setter
+// 物流发货类型：1-普通订单<br/>不填为默认类型 1-普通订单
+func (r *TaobaoLogisticsOrderCreateAPIRequest) SetOrderType(_orderType int64) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoLogisticsOrderCreateAPIRequest) GetOrderType() int64 {
+	return r._orderType
 }
 
 // SetTradeId is TradeId Setter

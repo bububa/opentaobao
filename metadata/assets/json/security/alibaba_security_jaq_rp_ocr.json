@@ -1,8 +1,4 @@
 {
-	"id": 26879,
-	"name": "alibaba.security.jaq.rp.ocr",
-	"apiChineseName": "聚安全实人认证证件OCR识别功能接口",
-	"description": "聚安全实人认证证件OCR识别功能接口",
 	"requestParams": [
 		{
 			"name": "verify_token",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RpidCardBo",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "card_type",
@@ -54,10 +47,6 @@
 					"required": true
 				},
 				{
-					"name": "sex",
-					"type": "RpSex",
-					"description": "性别",
-					"required": true,
 					"subParams": [
 						{
 							"name": "type",
@@ -65,7 +54,11 @@
 							"description": "性别",
 							"required": true
 						}
-					]
+					],
+					"name": "sex",
+					"type": "RpSex",
+					"description": "性别",
+					"required": true
 				},
 				{
 					"name": "name",
@@ -80,10 +73,6 @@
 					"required": true
 				},
 				{
-					"name": "r_p_i_d_card_image",
-					"type": "RpidCardImage",
-					"description": "RPIDCardImage",
-					"required": true,
 					"subParams": [
 						{
 							"name": "back_image_url",
@@ -103,9 +92,20 @@
 							"description": "frontImageUrl",
 							"required": true
 						}
-					]
+					],
+					"name": "r_p_i_d_card_image",
+					"type": "RpidCardImage",
+					"description": "RPIDCardImage",
+					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "RpidCardBo",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.ocr",
+	"apiChineseName": "聚安全实人认证证件OCR识别功能接口",
+	"description": "聚安全实人认证证件OCR识别功能接口",
+	"id": 26879
 }

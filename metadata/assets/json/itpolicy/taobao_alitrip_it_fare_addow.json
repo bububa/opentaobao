@@ -1,8 +1,4 @@
 {
-	"id": 25494,
-	"name": "taobao.alitrip.it.fare.addow",
-	"apiChineseName": "【国际机票自有政策】单条单程添加",
-	"description": "自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel",
 	"requestParams": [
 		{
 			"name": "outFileCode",
@@ -160,9 +156,9 @@
 			"name": "ticketPrice",
 			"type": "Number",
 			"description": "销售票面价,1.不得为空 2.价格区间为【0-999999】 3、销售票面价为10的整数倍(向下取整，如录入3002，则实际录入数值为3000)",
-			"required": true,
 			"maxValue": 999999,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "adultTax",
@@ -472,5 +468,9 @@
 			"type": "String",
 			"description": "json格式的字符串，扩展属性，预留"
 		}
-	]
+	],
+	"name": "taobao.alitrip.it.fare.addow",
+	"apiChineseName": "【国际机票自有政策】单条单程添加",
+	"description": "自有政策单程添加接口，重复的老数据会被删除，重复判断规则同excel",
+	"id": 25494
 }

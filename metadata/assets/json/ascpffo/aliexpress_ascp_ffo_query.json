@@ -1,14 +1,6 @@
 {
-	"id": 56318,
-	"name": "aliexpress.ascp.ffo.query",
-	"apiChineseName": "AliExpress发货单查询API",
-	"description": "AE 履约发货单分页查询接口",
 	"requestParams": [
 		{
-			"name": "fulfillment_forward_order_query",
-			"type": "FulfillmentForwardOrderQueryDto",
-			"description": "dto",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -36,156 +28,141 @@
 					"type": "Number",
 					"description": "分页大小"
 				}
-			]
+			],
+			"name": "fulfillment_forward_order_query",
+			"type": "FulfillmentForwardOrderQueryDto",
+			"description": "dto",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageQueryResult",
-			"description": "dto",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "ErpFulfillmentForwardDto[]",
-					"description": "dto list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trade_create_time",
 							"type": "Number",
-							"description": "订单产生时间戳",
-							"required": true
+							"description": "订单产生时间戳"
 						},
 						{
 							"name": "package_paid_fee",
 							"type": "String",
-							"description": "发货金额",
-							"required": true
+							"description": "发货金额"
 						},
 						{
 							"name": "receiver_country",
 							"type": "String",
-							"description": "收货地区",
-							"required": true
+							"description": "收货地区"
 						},
 						{
 							"name": "receiver_phone",
 							"type": "String",
-							"description": "收货人电话",
-							"required": true
+							"description": "收货人电话"
 						},
 						{
 							"name": "receiver_mobile",
 							"type": "String",
-							"description": "收货人手机",
-							"required": true
+							"description": "收货人手机"
 						},
 						{
 							"name": "receiver_name",
 							"type": "String",
-							"description": "收货人姓名",
-							"required": true
+							"description": "收货人姓名"
 						},
 						{
 							"name": "buyer_name",
 							"type": "String",
-							"description": "买家昵称",
-							"required": true
+							"description": "买家昵称"
 						},
 						{
 							"name": "tracking_no",
 							"type": "String",
-							"description": "运单号",
-							"required": true
+							"description": "运单号"
 						},
 						{
 							"name": "lbx_no",
 							"type": "String",
-							"description": "物流单号",
-							"required": true
+							"description": "物流单号"
 						},
 						{
 							"name": "fulfillment_order_no",
 							"type": "String",
-							"description": "履约单号",
-							"required": true
+							"description": "履约单号"
 						},
 						{
 							"name": "trade_order_no",
 							"type": "String",
-							"description": "用户订单号",
-							"required": true
+							"description": "用户订单号"
 						},
 						{
 							"name": "warehouse_name",
 							"type": "String",
-							"description": "仓名称",
-							"required": true
+							"description": "仓名称"
 						},
 						{
 							"name": "out_bound_time",
 							"type": "Number",
-							"description": "出库时间戳",
-							"required": true
+							"description": "出库时间戳"
 						},
 						{
 							"name": "send_fulfill_time",
 							"type": "Number",
-							"description": "下发到仓时间戳",
-							"required": true
+							"description": "下发到仓时间戳"
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "扩展字段"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
-						},
-						{
-							"name": "extend_fields",
-							"type": "Json",
-							"description": "扩展字段",
-							"required": true
+							"description": "订单状态"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "ErpFulfillmentForwardDto[]",
+					"description": "dto list"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "分页页码",
-					"required": true
+					"description": "分页页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "分页大小",
-					"required": true
+					"description": "分页大小"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "数量",
-					"required": true
+					"description": "数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "dto"
 		}
-	]
+	],
+	"name": "aliexpress.ascp.ffo.query",
+	"apiChineseName": "AliExpress发货单查询API",
+	"description": "AE 履约发货单分页查询接口",
+	"id": 56318
 }

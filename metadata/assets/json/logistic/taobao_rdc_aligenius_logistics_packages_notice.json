@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "goods_quantity",
+							"type": "Number",
+							"description": "商品数量",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						}
+					],
+					"name": "commodity_infos",
+					"type": "CommodityInfo[]",
+					"description": "商品信息",
+					"required": true
+				},
+				{
+					"name": "import_type",
+					"type": "Number",
+					"description": "导入类型(1-订单拆包；2-赠品；3-补发；99-以上类型都不是可填写99)",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "parent_order_id",
+					"type": "Number",
+					"description": "主交易单号",
+					"required": true
+				},
+				{
+					"name": "tp_code",
+					"type": "String",
+					"description": "快递公司编码",
+					"required": true
+				}
+			],
+			"name": "param_logistics_notice_d_t_o",
+			"type": "LogisticsNoticeDto",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "异常信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "parent_order_id",
+							"type": "Number",
+							"description": "主交易单号"
+						}
+					],
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "taobao.rdc.aligenius.logistics.packages.notice",
+	"apiChineseName": "物流多包裹通知",
+	"description": "订单发货之后，如果订单拆包、补发、赠品等场景，需要将多余包裹信息触达消费者",
+	"id": 48358
+}

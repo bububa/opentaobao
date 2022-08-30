@@ -1,13 +1,6 @@
 {
-	"id": 44899,
-	"name": "alitrip.hotel.hstdf.hotelroomstatic.get",
-	"apiChineseName": "根据类型查询静态字段",
-	"description": "根据类型查询分页静态字段",
 	"requestParams": [
 		{
-			"name": "param_get_hotel_room_static_param",
-			"type": "GetHotelRoomStaticParam",
-			"description": "参数封装",
 			"subParams": [
 				{
 					"name": "page",
@@ -24,150 +17,135 @@
 					"type": "Number",
 					"description": "字典类型"
 				}
-			]
+			],
+			"name": "param_get_hotel_room_static_param",
+			"type": "GetHotelRoomStaticParam",
+			"description": "参数封装"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultSet",
-			"description": "top返回结果",
 			"subParams": [
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "当前页之后是否还有数据,true--还有，可以继续请求",
-					"required": true
+					"description": "当前页之后是否还有数据,true--还有，可以继续请求"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "module_list",
-					"type": "HotelRoomStaticDo[]",
-					"description": "结果集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "字典code,收费停车场",
-							"required": true
+							"description": "字典code,收费停车场"
 						},
 						{
 							"name": "data_bank_brand_id",
 							"type": "String",
-							"description": "数据银行id，酒店集团字典才有值",
-							"required": true
+							"description": "数据银行id，酒店集团字典才有值"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "描述，不一定有值",
-							"required": true
+							"description": "描述，不一定有值"
 						},
 						{
 							"name": "display_name",
 							"type": "String",
-							"description": "展示名称",
-							"required": true
+							"description": "展示名称"
 						},
 						{
 							"name": "en_name",
 							"type": "String",
-							"description": "英文名",
-							"required": true
+							"description": "英文名"
 						},
 						{
 							"name": "extend_info",
 							"type": "String",
-							"description": "暂不使用",
-							"required": true
+							"description": "暂不使用"
 						},
 						{
 							"name": "hot",
 							"type": "Number",
-							"description": "热度",
-							"required": true
+							"description": "热度"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "logo_url",
 							"type": "String",
-							"description": "log图片",
-							"required": true
+							"description": "log图片"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "中文名",
-							"required": true
+							"description": "中文名"
 						},
 						{
 							"name": "parent_id",
 							"type": "Number",
-							"description": "父id",
-							"required": true
+							"description": "父id"
 						},
 						{
 							"name": "priority",
 							"type": "Number",
-							"description": "优先级",
-							"required": true
+							"description": "优先级"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态，0--生效，-4--失效，接口返回一般均为生效数据",
-							"required": true
+							"description": "状态，0--生效，-4--失效，接口返回一般均为生效数据"
 						},
 						{
 							"name": "sub_type",
 							"type": "Number",
-							"description": "二级分类",
-							"required": true
+							"description": "二级分类"
 						},
 						{
 							"name": "tag",
 							"type": "Number",
-							"description": "暂不使用",
-							"required": true
+							"description": "暂不使用"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "字典类型，10--预订须知，116--酒店设施，117--娱乐设施，118--酒店服务，119--房间设施",
-							"required": true
+							"description": "字典类型，10--预订须知，116--酒店设施，117--娱乐设施，118--酒店服务，119--房间设施"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "HotelRoomStaticDo[]",
+					"description": "结果集合"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "暂不使用",
-					"required": true
+					"description": "暂不使用"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "请求失败时返回的错误信息，一般success=false时有值",
-					"required": true
+					"description": "请求失败时返回的错误信息，一般success=false时有值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "当前查询条件下的数据总数；判断是否需要继续查询时，可以使用已请求数据量对比该值，但建议对结果集合进行判空，为空即停止",
-					"required": true
+					"description": "当前查询条件下的数据总数；判断是否需要继续查询时，可以使用已请求数据量对比该值，但建议对结果集合进行判空，为空即停止"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultSet",
+			"description": "top返回结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hstdf.hotelroomstatic.get",
+	"apiChineseName": "根据类型查询静态字段",
+	"description": "根据类型查询分页静态字段",
+	"id": 44899
 }

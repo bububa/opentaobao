@@ -1,0 +1,309 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间(毫秒数)",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "begin_time",
+							"type": "Number",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "结束时间",
+							"required": true
+						}
+					],
+					"name": "last_modified_period",
+					"type": "Period",
+					"description": "发货单最后修改时间区间",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量，不大于100",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				}
+			],
+			"name": "batch_query_consignorder_request",
+			"type": "BatchQueryConsignorderRequest",
+			"description": "批量查询发货单入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "页码"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页数量，不大于100"
+						},
+						{
+							"name": "has_next",
+							"type": "Boolean",
+							"description": "是否有下一页"
+						},
+						{
+							"subParams": [
+								{
+									"name": "trade_id",
+									"type": "String",
+									"description": "淘系交易主单号"
+								},
+								{
+									"name": "consign_order_code",
+									"type": "String",
+									"description": "翱象的发货单号"
+								},
+								{
+									"name": "wms_order_code",
+									"type": "String",
+									"description": "仓储单号，推送到仓内的单号，自动流转订单才有"
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "物流单状态，0=待审核/1=仓接单/2=取消"
+								},
+								{
+									"name": "shop_code",
+									"type": "String",
+									"description": "店铺，交易成单的店铺ID"
+								},
+								{
+									"name": "owner_code",
+									"type": "String",
+									"description": "货主，发货的货主ID信息"
+								},
+								{
+									"name": "auto_flow",
+									"type": "Number",
+									"description": "是否自动流转，0=否，1=是"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "发货仓"
+								},
+								{
+									"name": "delivery_cps",
+									"type": "String",
+									"description": "发货配"
+								},
+								{
+									"name": "plan_delivery_time",
+									"type": "Number",
+									"description": "要求的发货时间"
+								},
+								{
+									"name": "plan_sign_time",
+									"type": "Number",
+									"description": "要求的送达时间"
+								},
+								{
+									"name": "asdp_ads",
+									"type": "String",
+									"description": "物流服务；里面多个值时用英文逗号隔开 201为驿站送货上门服务 202为顺丰配送服务"
+								},
+								{
+									"name": "buyer_message",
+									"type": "String",
+									"description": "买家留言"
+								},
+								{
+									"name": "seller_message",
+									"type": "String",
+									"description": "卖家留言"
+								},
+								{
+									"name": "assembly_type",
+									"type": "String",
+									"description": "0=无拆合，1=拆单，2=合单，3=拆合单"
+								},
+								{
+									"name": "merge_trade_ids",
+									"type": "String",
+									"description": "合单包含的交易单号，多交易单号逗号隔开"
+								},
+								{
+									"name": "erp_hold",
+									"type": "String",
+									"description": "异常场景：value=-1；鲲鹏店铺的订单ERP需要进行Hold单； value=0；ERP无需做任何特殊处理 value=1；交易状态：禁止发货；ERP需要进行Hold单； value=2；交易状态：待卖家发货；ERP需要进行Hold单； value=3；交易状态：待卖家发货；ERP开发进行发货处理；"
+								},
+								{
+									"name": "create_time",
+									"type": "Number",
+									"description": "发货单创建时间"
+								},
+								{
+									"name": "update_time",
+									"type": "Number",
+									"description": "发货单修改时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "trade_id",
+											"type": "String",
+											"description": "交易子单ID"
+										},
+										{
+											"name": "item_id",
+											"type": "String",
+											"description": "商品宝贝ID"
+										},
+										{
+											"name": "sku_id",
+											"type": "String",
+											"description": "商品的最小库存单位Sku的id"
+										},
+										{
+											"name": "combine_sc_item_ratio",
+											"type": "String",
+											"description": "组合货品比例"
+										},
+										{
+											"name": "combine_sc_item_code",
+											"type": "String",
+											"description": "组合货品code"
+										},
+										{
+											"name": "order_source",
+											"type": "String",
+											"description": "子订单类型:标示该子交易单来源交易，还是翱象增加的，枚举值(00=交易，10=翱象绑定)"
+										},
+										{
+											"name": "item_consign_type",
+											"type": "String",
+											"description": "主赠品标识，主品=0，赠品=1"
+										},
+										{
+											"name": "activity_id",
+											"type": "String",
+											"description": "活动ID，赠品绑赠的活动，赠品回滚需要字段"
+										},
+										{
+											"name": "sc_item_code",
+											"type": "String",
+											"description": "货品仓储code"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "应发数量"
+										},
+										{
+											"name": "currency",
+											"type": "String",
+											"description": "币种，USD-美元，CNY-人民币，RUB-卢布，JPY-日元，EUR-欧元，GBP-英镑，HKD-港币，NZD-新西兰元，SGD-新加坡元，AUD-澳元，KRW-韩元，THB-泰铢"
+										},
+										{
+											"name": "payment",
+											"type": "Number",
+											"description": "子单金额；单位:分，如:20007，表示:20元7分"
+										},
+										{
+											"name": "consign_type",
+											"type": "String",
+											"description": "发货类型CN=菜鸟发货，SC的商家仓发货"
+										},
+										{
+											"name": "gift_id",
+											"type": "String",
+											"description": "赠品ID，赠品回滚需要字段"
+										},
+										{
+											"name": "parent_trade_id",
+											"type": "String",
+											"description": "交易子单的来源主交易单号。如果是赠品行则表示赠品的来源主交易单号"
+										},
+										{
+											"name": "gift_order_id",
+											"type": "String",
+											"description": "赠品子单号。如果有值的话与tradeId相同"
+										},
+										{
+											"name": "warehouse_sc_item_code",
+											"type": "String",
+											"description": "仓库货品编码"
+										},
+										{
+											"name": "sc_item_bar_code",
+											"type": "String",
+											"description": "货品条码"
+										},
+										{
+											"name": "activity_name",
+											"type": "String",
+											"description": "活动名称"
+										}
+									],
+									"name": "sub_trade_orders",
+									"type": "SubTradeOrder[]",
+									"description": "交易子单列表"
+								}
+							],
+							"name": "list",
+							"type": "ConsignOrder[]",
+							"description": "发货单列表"
+						}
+					],
+					"name": "data",
+					"type": "PageData",
+					"description": "分页数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "batch_query_consignorder_response",
+			"type": "BatchQueryConsignOrderResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.consignorder.batch.query",
+	"apiChineseName": "发货单批量查询",
+	"description": "发货单批量查询",
+	"id": 60397
+}

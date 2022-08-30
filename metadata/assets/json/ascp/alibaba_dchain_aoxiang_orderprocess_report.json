@@ -1,0 +1,208 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "ERP单号",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "WMS单号",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "单据类型, string (50) ,必填 , JYCK= 一般交易出库单，HHCK= 换货出库 ，BFCK= 补发出库，PTCK=普通出库单，DBCK=调拨出库 ，B2BRK=B2B入库，B2BCK=B2B出库，QTCK=其他出库，SCRK=生产入库，LYRK=领用入库，CCRK=残次品入库，CGRK=采购入库 ，DBRK= 调拨入库 ，QTRK= 其他入库 ，XTRK= 销退入库，HHRK= 换货入库，CNJG= 仓内加工单，BIGTOBCK=大B2B出库",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "source_platform_code",
+							"type": "String",
+							"description": "订单来源平台编码(TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、TGC=淘工厂、POS=POS门店、MIA=蜜芽、GW=商家官网、CT=村淘、YJWD=云集微店、PDD=拼多多、YZ=有赞、DY=抖音、KS=快手、TXP=淘小铺、FX=分销、XHS=小红书、DW=得物、DWZF=得物直发、TMGJ=天猫国际、TMCS=天猫超市、OTHERS=其他)",
+							"required": true
+						},
+						{
+							"name": "source_platform_name",
+							"type": "String",
+							"description": "订单来源平台名称",
+							"required": true
+						},
+						{
+							"name": "shop_nick",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Number",
+							"description": "创建时间（时间戳）",
+							"required": true
+						}
+					],
+					"name": "order",
+					"type": "Order",
+					"description": "单据信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "process_status",
+							"type": "String",
+							"description": "作业状态，ACCEPT(接单)、PRINT(打印)、PICK(拣货)、CHECK(复核)、PACKAGE(打包)、CONFIRM(确认出库)",
+							"required": true
+						},
+						{
+							"name": "operate_time",
+							"type": "Number",
+							"description": "操作时间（时间戳）",
+							"required": true
+						},
+						{
+							"name": "logistics_code",
+							"type": "String",
+							"description": "创建发货单时的配编码",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "logistics_code",
+									"type": "String",
+									"description": "实际发货的配编码",
+									"required": true
+								},
+								{
+									"name": "express_code",
+									"type": "String",
+									"description": "运单号",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "货品编码",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "发货数量",
+									"required": true
+								}
+							],
+							"name": "packages",
+							"type": "Package[]",
+							"description": "包裹确认出库的时候必填"
+						}
+					],
+					"name": "process",
+					"type": "Process",
+					"description": "单据作业信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "source_order_code",
+							"type": "String",
+							"description": "交易主单号",
+							"required": true
+						},
+						{
+							"name": "sub_source_order_code",
+							"type": "String",
+							"description": "交易子单号",
+							"required": true
+						},
+						{
+							"name": "owner_code",
+							"type": "String",
+							"description": "货主编码。ERP对接场景下，传ERP内部的商家编码或者淘系的sellerId",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货品编码",
+							"required": true
+						},
+						{
+							"name": "plan_qty",
+							"type": "Number",
+							"description": "应发货品数量",
+							"required": true
+						}
+					],
+					"name": "order_lines",
+					"type": "OrderLine[]",
+					"description": "单据行",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间（时间戳）",
+					"required": true
+				}
+			],
+			"name": "orderprocess_report_request",
+			"type": "OrderProcessReportRequest",
+			"description": "单据作业状态回传参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId，类似于requestId"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "orderprocess_report_response",
+			"type": "OrderProcessReportResponse",
+			"description": "回传结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.orderprocess.report",
+	"apiChineseName": "回传仓内作业节点",
+	"description": "回传仓内作业节点",
+	"id": 62695
+}

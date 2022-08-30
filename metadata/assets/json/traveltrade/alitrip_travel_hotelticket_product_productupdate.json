@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "系统商分配给飞猪卖家的账号",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "extend_params",
+					"type": "Json",
+					"description": "扩展参数"
+				},
+				{
+					"name": "notify_type",
+					"type": "Number",
+					"description": "产品变更通知类型 1：价格，2：库存，3：价库",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "系统商商品码",
+					"required": true
+				},
+				{
+					"name": "session_ids",
+					"type": "String[]",
+					"description": "场次ID信息"
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "产品变更开始时间 yyyy-MM-dd"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "产品变更结束时间 yyyy-MM-dd"
+				}
+			],
+			"name": "product_updates",
+			"type": "ProductUpdateDTO",
+			"description": "变更的产品信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.travel.hotelticket.product.productupdate",
+	"apiChineseName": "产品批量变更通知",
+	"description": "产品批量变更通知",
+	"id": 62578
+}

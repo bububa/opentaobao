@@ -1,8 +1,4 @@
 {
-	"id": 11091,
-	"name": "taobao.simba.keywords.qscore.get",
-	"apiChineseName": "取得一个推广组的所有关键词的质量得分或者根据关键词Id列表取得一组关键词的质量得分",
-	"description": "取得一个推广组的所有关键词的质量得分列表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "keyword_qscore_list",
-			"type": "KeywordQscore []",
-			"description": "取得的关键词质量得分列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -53,16 +46,6 @@
 					"description": "质量总分"
 				},
 				{
-					"name": "rele_score",
-					"type": "String",
-					"description": "相关性"
-				},
-				{
-					"name": "cvr_score",
-					"type": "String",
-					"description": "买家体验分"
-				},
-				{
 					"name": "cust_score",
 					"type": "String",
 					"description": "基础分"
@@ -71,8 +54,25 @@
 					"name": "creative_score",
 					"type": "String",
 					"description": "创意得分"
+				},
+				{
+					"name": "rele_score",
+					"type": "String",
+					"description": "相关性"
+				},
+				{
+					"name": "cvr_score",
+					"type": "String",
+					"description": "买家体验分"
 				}
-			]
+			],
+			"name": "keyword_qscore_list",
+			"type": "KeywordQscore []",
+			"description": "取得的关键词质量得分列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.qscore.get",
+	"apiChineseName": "取得一个推广组的所有关键词的质量得分或者根据关键词Id列表取得一组关键词的质量得分",
+	"description": "取得一个推广组的所有关键词的质量得分列表",
+	"id": 11091
 }

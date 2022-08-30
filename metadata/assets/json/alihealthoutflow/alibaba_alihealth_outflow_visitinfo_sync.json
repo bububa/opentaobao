@@ -1,13 +1,6 @@
 {
-	"id": 46938,
-	"name": "alibaba.alihealth.outflow.visitinfo.sync",
-	"apiChineseName": "处方外流-问诊、处方同步",
-	"description": "阿里健康-处方外流-对外提供问诊、处方功能",
 	"requestParams": [
 		{
-			"name": "sync_visit_info_request",
-			"type": "SyncVisitInfoRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "create_time",
@@ -74,40 +67,43 @@
 					"type": "String",
 					"description": "首次回复时间(可空)"
 				}
-			]
+			],
+			"name": "sync_visit_info_request",
+			"type": "SyncVisitInfoRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "ServiceResult",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "标识",
-					"required": true
+					"description": "标识"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.visitinfo.sync",
+	"apiChineseName": "处方外流-问诊、处方同步",
+	"description": "阿里健康-处方外流-对外提供问诊、处方功能",
+	"id": 46938
 }

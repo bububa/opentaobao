@@ -20,8 +20,8 @@ type RetValue struct {
 	DeviceCategory string `json:"device_category,omitempty" xml:"device_category,omitempty"`
 	// 品牌
 	DeviceBrand string `json:"device_brand,omitempty" xml:"device_brand,omitempty"`
-	// 设备id
-	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 	// 位置
 	DeviceZone string `json:"device_zone,omitempty" xml:"device_zone,omitempty"`
+	// 设备id
+	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 }

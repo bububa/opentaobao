@@ -1,8 +1,4 @@
 {
-	"id": 24986,
-	"name": "alibaba.scbp.ad.keyword.add",
-	"apiChineseName": "外贸直通车加词",
-	"description": "外贸直通车加词服务",
 	"requestParams": [
 		{
 			"name": "ad_keyword",
@@ -43,5 +39,9 @@
 			"type": "String",
 			"description": "系统中存在归一化重复的词"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.add",
+	"apiChineseName": "外贸直通车加词",
+	"description": "外贸直通车加词服务",
+	"id": 24986
 }

@@ -1,8 +1,4 @@
 {
-	"id": 48175,
-	"name": "alitrip.ship.product.syncnunber",
-	"apiChineseName": "船票班次变更回调",
-	"description": "船票班次变更回调",
 	"requestParams": [
 		{
 			"name": "city_name",
@@ -41,5 +37,9 @@
 			"type": "Boolean",
 			"description": "成功状态"
 		}
-	]
+	],
+	"name": "alitrip.ship.product.syncnunber",
+	"apiChineseName": "船票班次变更回调",
+	"description": "船票班次变更回调",
+	"id": 48175
 }

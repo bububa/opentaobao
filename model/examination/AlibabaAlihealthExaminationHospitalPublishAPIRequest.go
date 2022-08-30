@@ -50,7 +50,7 @@ type AlibabaAlihealthExaminationHospitalPublishAPIRequest struct {
 	_reportWayOnline string
 	// 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）
 	_envImgsUrl string
-	// 免费停车场,绿色VIP通道,免费早餐,3天出报告,1V1导检,接待引导,独家签约,专家会诊,当天出报告；多个逗号分隔
+	// T10001:免费停车,T10002:电子报告立即出,T10003:24小时前台,T10006:24小时热水,T10007:专家咨询,T10008:支持医保,T10009:免费停车场,T10011:绿色VIP通道,T10012:1V1导检,T10014:免费早餐,T10017:3天出报告,T10018:专家会诊,T10019:独家签约,T10020:接待引导,T10022:当天出报告,T10023:周末可约
 	_specialTagsCode string
 	// 通知信息
 	_notify string
@@ -339,7 +339,7 @@ func (r AlibabaAlihealthExaminationHospitalPublishAPIRequest) GetEnvImgsUrl() st
 }
 
 // SetSpecialTagsCode is SpecialTagsCode Setter
-// 免费停车场,绿色VIP通道,免费早餐,3天出报告,1V1导检,接待引导,独家签约,专家会诊,当天出报告；多个逗号分隔
+// T10001:免费停车,T10002:电子报告立即出,T10003:24小时前台,T10006:24小时热水,T10007:专家咨询,T10008:支持医保,T10009:免费停车场,T10011:绿色VIP通道,T10012:1V1导检,T10014:免费早餐,T10017:3天出报告,T10018:专家会诊,T10019:独家签约,T10020:接待引导,T10022:当天出报告,T10023:周末可约
 func (r *AlibabaAlihealthExaminationHospitalPublishAPIRequest) SetSpecialTagsCode(_specialTagsCode string) error {
 	r._specialTagsCode = _specialTagsCode
 	r.Set("special_tags_code", _specialTagsCode)

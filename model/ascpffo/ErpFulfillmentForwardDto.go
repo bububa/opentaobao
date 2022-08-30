@@ -24,10 +24,10 @@ type ErpFulfillmentForwardDto struct {
 	TradeOrderNo string `json:"trade_order_no,omitempty" xml:"trade_order_no,omitempty"`
 	// 仓名称
 	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
-	// 订单状态
-	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 扩展字段
 	ExtendFields string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
+	// 订单状态
+	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单产生时间戳
 	TradeCreateTime int64 `json:"trade_create_time,omitempty" xml:"trade_create_time,omitempty"`
 	// 出库时间戳

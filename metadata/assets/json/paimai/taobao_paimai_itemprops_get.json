@@ -1,8 +1,4 @@
 {
-	"id": 38618,
-	"name": "taobao.paimai.itemprops.get",
-	"apiChineseName": "拍卖相关类目属性",
-	"description": "读取拍卖相关类目属性",
 	"requestParams": [
 		{
 			"name": "type",
@@ -80,9 +76,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item_props",
-			"type": "ItemProp []",
-			"description": "类目属性信息(如果是取全量或者增量，不包括属性值),根据fields传入的参数返回相应的结果",
 			"subParams": [
 				{
 					"name": "pid",
@@ -140,8 +133,6 @@
 					"description": "发布产品或商品时是否可以多选。可选值:true(是),false(否)"
 				},
 				{
-					"name": "prop_values",
-					"type": "PropValue[]",
 					"subParams": [
 						{
 							"name": "cid",
@@ -199,9 +190,6 @@
 							"description": "三种枚举类型：modify，add，delete (增量类目专用)"
 						},
 						{
-							"name": "features",
-							"type": "Feature[]",
-							"description": "属性值feature",
 							"subParams": [
 								{
 									"name": "attr_key",
@@ -213,9 +201,14 @@
 									"type": "String",
 									"description": "属性值"
 								}
-							]
+							],
+							"name": "features",
+							"type": "Feature[]",
+							"description": "属性值feature"
 						}
-					]
+					],
+					"name": "prop_values",
+					"type": "PropValue[]"
 				},
 				{
 					"name": "status",
@@ -243,9 +236,6 @@
 					"description": "在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。\u003cb\u003e对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。\u003c/b\u003e"
 				},
 				{
-					"name": "features",
-					"type": "Feature[]",
-					"description": "属性的feature列表",
 					"subParams": [
 						{
 							"name": "attr_key",
@@ -257,7 +247,10 @@
 							"type": "String",
 							"description": "属性值"
 						}
-					]
+					],
+					"name": "features",
+					"type": "Feature[]",
+					"description": "属性的feature列表"
 				},
 				{
 					"name": "is_taosir",
@@ -265,14 +258,8 @@
 					"description": "是否度量衡属性项"
 				},
 				{
-					"name": "taosir_do",
-					"type": "ItemTaosirDO",
-					"description": "度量衡相关信息",
 					"subParams": [
 						{
-							"name": "std_unit_list",
-							"type": "Feature[]",
-							"description": "卖家可选单位List\u003c单位id，单位名\u003e",
 							"subParams": [
 								{
 									"name": "attr_key",
@@ -284,12 +271,12 @@
 									"type": "String",
 									"description": "属性值"
 								}
-							]
+							],
+							"name": "std_unit_list",
+							"type": "Feature[]",
+							"description": "卖家可选单位List\u003c单位id，单位名\u003e"
 						},
 						{
-							"name": "expr_el_list",
-							"type": "ItemTaoSirElDO[]",
-							"description": "表达式元素list",
 							"subParams": [
 								{
 									"name": "type",
@@ -316,7 +303,10 @@
 									"type": "Boolean",
 									"description": "是否输入框"
 								}
-							]
+							],
+							"name": "expr_el_list",
+							"type": "ItemTaoSirElDO[]",
+							"description": "表达式元素list"
 						},
 						{
 							"name": "type",
@@ -328,7 +318,10 @@
 							"type": "Number",
 							"description": "数值小数点精度"
 						}
-					]
+					],
+					"name": "taosir_do",
+					"type": "ItemTaosirDO",
+					"description": "度量衡相关信息"
 				},
 				{
 					"name": "is_material",
@@ -336,14 +329,8 @@
 					"description": "是否是材质 属性项"
 				},
 				{
-					"name": "material_do",
-					"type": "ItemMaterialProp",
-					"description": "材质属性信息",
 					"subParams": [
 						{
-							"name": "materials",
-							"type": "ItemMateriaValueDO[]",
-							"description": "材质值列表",
 							"subParams": [
 								{
 									"name": "name",
@@ -355,16 +342,29 @@
 									"type": "Boolean",
 									"description": "当前材质值，是否需要填写含量值。比如：棉 是需要填写含量值，而牛皮 是不需要填写含量值的"
 								}
-							]
+							],
+							"name": "materials",
+							"type": "ItemMateriaValueDO[]",
+							"description": "材质值列表"
 						}
-					]
+					],
+					"name": "material_do",
+					"type": "ItemMaterialProp",
+					"description": "材质属性信息"
 				}
-			]
+			],
+			"name": "item_props",
+			"type": "ItemProp []",
+			"description": "类目属性信息(如果是取全量或者增量，不包括属性值),根据fields传入的参数返回相应的结果"
 		},
 		{
 			"name": "last_modified",
 			"type": "String",
 			"description": "lastModified"
 		}
-	]
+	],
+	"name": "taobao.paimai.itemprops.get",
+	"apiChineseName": "拍卖相关类目属性",
+	"description": "读取拍卖相关类目属性",
+	"id": 38618
 }

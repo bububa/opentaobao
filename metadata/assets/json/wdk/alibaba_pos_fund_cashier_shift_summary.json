@@ -1,14 +1,6 @@
 {
-	"id": 51205,
-	"name": "alibaba.pos.fund.cashier.shift.summary",
-	"apiChineseName": "收银换班数据同步",
-	"description": "收银换班数据同步，将每天收银换班的数据回流给商家。",
 	"requestParams": [
 		{
-			"name": "cashier_shift_fund_request",
-			"type": "CashierShiftFundRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "shop_code",
@@ -35,120 +27,111 @@
 					"type": "String",
 					"description": "结束时间 yyyy-MM-dd HH:mm:ss(可选，bizDate为空时使用endTime)"
 				}
-			]
+			],
+			"name": "cashier_shift_fund_request",
+			"type": "CashierShiftFundRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "扩展字段",
-					"required": true
+					"type": "String",
+					"description": "扩展字段"
 				},
 				{
-					"name": "model",
-					"type": "CashierShiftFundSummaryDTO[]",
-					"description": "模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商户编号",
-							"required": true
+							"description": "商户编号"
 						},
 						{
 							"name": "shop_code",
 							"type": "String",
-							"description": "门店编号",
-							"required": true
+							"description": "门店编号"
 						},
 						{
 							"name": "biz_date",
 							"type": "String",
-							"description": "业务日期",
-							"required": true
+							"description": "业务日期"
 						},
 						{
 							"name": "pos_no",
 							"type": "String",
-							"description": "POS机编号",
-							"required": true
+							"description": "POS机编号"
 						},
 						{
 							"name": "shift_no",
 							"type": "String",
-							"description": "值班编号",
-							"required": true
+							"description": "值班编号"
 						},
 						{
 							"name": "cashier_name",
 							"type": "String",
-							"description": "收银员姓名",
-							"required": true
+							"description": "收银员姓名"
 						},
 						{
 							"name": "pay_method",
 							"type": "String",
-							"description": "支付方式",
-							"required": true
+							"description": "支付方式"
 						},
 						{
 							"name": "system_amount",
 							"type": "String",
-							"description": "系统统计金额",
-							"required": true
+							"description": "系统统计金额"
 						},
 						{
 							"name": "input_amount",
 							"type": "String",
-							"description": "输入金额",
-							"required": true
+							"description": "输入金额"
 						},
 						{
 							"name": "settle_status",
 							"type": "String",
-							"description": "单据状态",
-							"required": true
+							"description": "单据状态"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
 							"name": "extra",
 							"type": "String",
-							"description": "扩展字段",
-							"required": true
+							"description": "扩展字段"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CashierShiftFundSummaryDTO[]",
+					"description": "模型"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回"
 		}
-	]
+	],
+	"name": "alibaba.pos.fund.cashier.shift.summary",
+	"apiChineseName": "收银换班数据同步",
+	"description": "收银换班数据同步，将每天收银换班的数据回流给商家。",
+	"id": 51205
 }

@@ -1,18 +1,8 @@
 {
-	"id": 54758,
-	"name": "alibaba.tmallgenie.scp.plan.netdemand.raw.upload",
-	"apiChineseName": "二级物料净需求回传(TL+1)",
-	"description": "二级物料净需求回传(TL+1)",
 	"requestParams": [
 		{
-			"name": "net_demand_raw_request",
-			"type": "NetDemandRawRequest",
-			"description": "对象",
 			"subParams": [
 				{
-					"name": "net_demand_d_t_os",
-					"type": "NetDemandRawDto[]",
-					"description": "对象",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -30,28 +20,34 @@
 							"description": "关键日期值"
 						},
 						{
-							"name": "locid",
-							"type": "String",
-							"description": "地点"
-						},
-						{
 							"name": "net_demand_raw",
 							"type": "Number",
 							"description": "二级物料净需求"
+						},
+						{
+							"name": "locid",
+							"type": "String",
+							"description": "地点"
 						},
 						{
 							"name": "material_code",
 							"type": "String",
 							"description": "二级物料-物料编码"
 						}
-					]
+					],
+					"name": "net_demand_d_t_os",
+					"type": "NetDemandRawDto[]",
+					"description": "对象"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "net_demand_raw_request",
+			"type": "NetDemandRawRequest",
+			"description": "对象"
 		}
 	],
 	"responseParams": [
@@ -70,5 +66,9 @@
 			"type": "String",
 			"description": "返回码"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.netdemand.raw.upload",
+	"apiChineseName": "二级物料净需求回传(TL+1)",
+	"description": "二级物料净需求回传(TL+1)",
+	"id": 54758
 }

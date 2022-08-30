@@ -14,16 +14,22 @@ type SkuDo struct {
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
 	// 商家后台类目编码
 	CategoryCode string `json:"category_code,omitempty" xml:"category_code,omitempty"`
+	// 门店或DC编码
+	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
 	// 高度（高）
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
 	// 库存单位
 	InventoryUnit string `json:"inventory_unit,omitempty" xml:"inventory_unit,omitempty"`
 	// 长度(深)
 	Length string `json:"length,omitempty" xml:"length,omitempty"`
+	// 主图图片地址
+	MainPicUrls string `json:"main_pic_urls,omitempty" xml:"main_pic_urls,omitempty"`
 	// 生产商地址
 	ManufacturerAddress string `json:"manufacturer_address,omitempty" xml:"manufacturer_address,omitempty"`
 	// 生产商名称
 	ManufacturerName string `json:"manufacturer_name,omitempty" xml:"manufacturer_name,omitempty"`
+	// 详情图片地址
+	DetailPicUrls string `json:"detail_pic_urls,omitempty" xml:"detail_pic_urls,omitempty"`
 	// 产地，商品生产地点的描述，用于APP和电子价签展示，如果是可售，则必填
 	ProducerPlace string `json:"producer_place,omitempty" xml:"producer_place,omitempty"`
 	// 商品唯一编码
@@ -40,10 +46,6 @@ type SkuDo struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// 宽度（宽）
 	Width string `json:"width,omitempty" xml:"width,omitempty"`
-	// 主图图片地址
-	MainPicUrls string `json:"main_pic_urls,omitempty" xml:"main_pic_urls,omitempty"`
-	// 详情图片地址
-	DetailPicUrls string `json:"detail_pic_urls,omitempty" xml:"detail_pic_urls,omitempty"`
 	// 平台后台类目编码
 	HmCategoryCode string `json:"hm_category_code,omitempty" xml:"hm_category_code,omitempty"`
 	// 商品短标题
@@ -54,8 +56,6 @@ type SkuDo struct {
 	InvoiceContent string `json:"invoice_content,omitempty" xml:"invoice_content,omitempty"`
 	// 输入开票内容
 	InputInvoiceContent string `json:"input_invoice_content,omitempty" xml:"input_invoice_content,omitempty"`
-	// 门店或DC编码
-	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
 	// 财务核算分类
 	AccountingCategory string `json:"accounting_category,omitempty" xml:"accounting_category,omitempty"`
 	// 净含量
@@ -122,6 +122,8 @@ type SkuDo struct {
 	PurchaseUnit string `json:"purchase_unit,omitempty" xml:"purchase_unit,omitempty"`
 	// 标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议淘鲜达商家填默认值“无价签”
 	LabelStyleType string `json:"label_style_type,omitempty" xml:"label_style_type,omitempty"`
+	// 文描,（同字段txt_desc）；优先使用本字段
+	RichText string `json:"rich_text,omitempty" xml:"rich_text,omitempty"`
 	// 平台类目编码（同字段hm_category_code），需要商家把自己的类目对应到平台的类目上，此字段暂时只能支持3、4级类目修改；优先使用本字段
 	BackCatCode string `json:"back_cat_code,omitempty" xml:"back_cat_code,omitempty"`
 	// 门店商品售价（同字段sale_price），单位:元；优先使用本字段
@@ -130,8 +132,6 @@ type SkuDo struct {
 	MerchantCatCode string `json:"merchant_cat_code,omitempty" xml:"merchant_cat_code,omitempty"`
 	// 在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段
 	SkuPicUrls string `json:"sku_pic_urls,omitempty" xml:"sku_pic_urls,omitempty"`
-	// 文描,（同字段txt_desc）；优先使用本字段
-	RichText string `json:"rich_text,omitempty" xml:"rich_text,omitempty"`
 	// 税收编码
 	TaxCode string `json:"tax_code,omitempty" xml:"tax_code,omitempty"`
 	// 配送条件；填常温、冷藏、冷冻
@@ -142,12 +142,18 @@ type SkuDo struct {
 	ProductIdentity string `json:"product_identity,omitempty" xml:"product_identity,omitempty"`
 	// 业务类型：txd淘鲜达，elm饿了么，shareStore共享库存，默认txd
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
-	// 渠道店id
-	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 1一品多码（只支持非称重品）
+	SpecType string `json:"spec_type,omitempty" xml:"spec_type,omitempty"`
+	// 与母商品的库存转换系数，例如10，则转换到母商品的库存为10*此商品的库存，可空，当新增一品多规格品的时候不能为空
+	TransRatio string `json:"trans_ratio,omitempty" xml:"trans_ratio,omitempty"`
+	// 母商品的sku_code可空，当新增一品多规格品的时候不能为空
+	ParentSkuCode string `json:"parent_sku_code,omitempty" xml:"parent_sku_code,omitempty"`
 	// 线上生效开始时间
 	AppEffectBeginTime string `json:"app_effect_begin_time,omitempty" xml:"app_effect_begin_time,omitempty"`
 	// 线上生效过期时间
 	AppEffectEndTime string `json:"app_effect_end_time,omitempty" xml:"app_effect_end_time,omitempty"`
+	// 渠道店id
+	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 机构编号
 	OrgNo string `json:"org_no,omitempty" xml:"org_no,omitempty"`
 	// 商品别名
@@ -258,6 +264,8 @@ type SkuDo struct {
 	FragileFlag int64 `json:"fragile_flag,omitempty" xml:"fragile_flag,omitempty"`
 	// 是否现制现卖，0否1是；比如蛋糕只有下了单才能开始制作
 	TemporaryFlag int64 `json:"temporary_flag,omitempty" xml:"temporary_flag,omitempty"`
+	// 是否线上的品 1:是  0:否
+	IsOnline int64 `json:"is_online,omitempty" xml:"is_online,omitempty"`
 	// 商品价格（单位分）和字段sale_price两者只能选其一
 	SalePriceUnitCent int64 `json:"sale_price_unit_cent,omitempty" xml:"sale_price_unit_cent,omitempty"`
 	// 1、普通商品 2、预售商品

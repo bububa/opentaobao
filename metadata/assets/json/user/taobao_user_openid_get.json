@@ -1,0 +1,13 @@
+{
+	"responseParams": [
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "对应账号的OpenUID"
+		}
+	],
+	"name": "taobao.user.openid.get",
+	"apiChineseName": "查询用户openId",
+	"description": "查询用户openId",
+	"id": 62301
+}

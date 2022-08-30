@@ -1,8 +1,4 @@
 {
-	"id": 50577,
-	"name": "alibaba.alihealth.drug.kyt.smyx.uploadinoutbill",
-	"apiChineseName": "药店出入库信息上传",
-	"description": "药店上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）, \n不包括对个人的零售出库，疫苗接种，领药出库。",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -69,6 +65,23 @@
 			"required": true
 		},
 		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID[企业自已系统的药品ID]"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"maxListSize": 800,
+			"required": true
+		},
+		{
 			"name": "client_type",
 			"type": "String",
 			"description": "客户端类型[必须填2]",
@@ -113,23 +126,6 @@
 			"name": "superviser_code",
 			"type": "String",
 			"description": "监督人证件号【销毁出库时填写】"
-		},
-		{
-			"name": "warehouse_id",
-			"type": "String",
-			"description": "仓号"
-		},
-		{
-			"name": "drug_id",
-			"type": "String",
-			"description": "药品ID[企业自已系统的药品ID]"
-		},
-		{
-			"name": "trace_codes",
-			"type": "String[]",
-			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 800
 		}
 	],
 	"responseParams": [
@@ -153,5 +149,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 false 失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.smyx.uploadinoutbill",
+	"apiChineseName": "药店出入库信息上传",
+	"description": "药店上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）, \n不包括对个人的零售出库，疫苗接种，领药出库。",
+	"id": 50577
 }

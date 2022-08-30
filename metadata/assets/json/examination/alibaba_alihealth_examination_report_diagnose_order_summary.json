@@ -1,18 +1,8 @@
 {
-	"id": 55122,
-	"name": "alibaba.alihealth.examination.report.diagnose.order.summary",
-	"apiChineseName": "体检报告人工解读总结回传",
-	"description": "记录体检报告人工解读总结",
 	"requestParams": [
 		{
-			"name": "report_order_summary_request",
-			"type": "ReportOrderSummaryRequest",
-			"description": "入参对象",
 			"subParams": [
 				{
-					"name": "report_diagnose_message_list",
-					"type": "Reportdiagnosemessagelist[]",
-					"description": "咨询聊天记录",
 					"subParams": [
 						{
 							"name": "send_time",
@@ -59,12 +49,12 @@
 							"type": "String",
 							"description": "序列号"
 						}
-					]
+					],
+					"name": "report_diagnose_message_list",
+					"type": "Reportdiagnosemessagelist[]",
+					"description": "咨询聊天记录"
 				},
 				{
-					"name": "abnormal_item_list",
-					"type": "Abnormalitemlist[]",
-					"description": "异常项指标",
 					"subParams": [
 						{
 							"name": "item_detail",
@@ -76,7 +66,10 @@
 							"type": "String",
 							"description": "异常项指标详情"
 						}
-					]
+					],
+					"name": "abnormal_item_list",
+					"type": "Abnormalitemlist[]",
+					"description": "异常项指标"
 				},
 				{
 					"name": "re_inspect_item",
@@ -105,40 +98,43 @@
 					"description": "报告解读ID",
 					"required": true
 				}
-			]
+			],
+			"name": "report_order_summary_request",
+			"type": "ReportOrderSummaryRequest",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.summary",
+	"apiChineseName": "体检报告人工解读总结回传",
+	"description": "记录体检报告人工解读总结",
+	"id": 55122
 }

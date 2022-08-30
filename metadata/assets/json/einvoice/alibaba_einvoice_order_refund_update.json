@@ -1,14 +1,6 @@
 {
-	"id": 54615,
-	"name": "alibaba.einvoice.order.refund.update",
-	"apiChineseName": "回传订单退款审核结果",
-	"description": "ISV回传订单退款审核结果",
 	"requestParams": [
 		{
-			"name": "order_refund_result_dto",
-			"type": "InvoiceOrderRefundResultDto",
-			"description": "退款审核结果DTO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "reason",
@@ -27,7 +19,11 @@
 					"description": "退款工单流程ID",
 					"required": true
 				}
-			]
+			],
+			"name": "order_refund_result_dto",
+			"type": "InvoiceOrderRefundResultDto",
+			"description": "退款审核结果DTO",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -36,5 +32,9 @@
 			"type": "Boolean",
 			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.order.refund.update",
+	"apiChineseName": "回传订单退款审核结果",
+	"description": "ISV回传订单退款审核结果",
+	"id": 54615
 }

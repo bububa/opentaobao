@@ -1,13 +1,6 @@
 {
-	"id": 27925,
-	"name": "taobao.bus.busnumber.set",
-	"apiChineseName": "商家汽车票车次更新通知接口",
-	"description": "商家汽车票车次更新后，调用该接口通知平台。",
 	"requestParams": [
 		{
-			"name": "push_param",
-			"type": "TopBusNumerPushRq",
-			"description": "车次更新通知参数",
 			"subParams": [
 				{
 					"name": "last_place_name",
@@ -24,7 +17,10 @@
 					"type": "String",
 					"description": "出发城市"
 				}
-			]
+			],
+			"name": "push_param",
+			"type": "TopBusNumerPushRq",
+			"description": "车次更新通知参数"
 		}
 	],
 	"responseParams": [
@@ -48,5 +44,9 @@
 			"type": "Boolean",
 			"description": "接口调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.bus.busnumber.set",
+	"apiChineseName": "商家汽车票车次更新通知接口",
+	"description": "商家汽车票车次更新后，调用该接口通知平台。",
+	"id": 27925
 }

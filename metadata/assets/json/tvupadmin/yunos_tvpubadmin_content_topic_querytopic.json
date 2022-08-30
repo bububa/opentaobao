@@ -1,8 +1,4 @@
 {
-	"id": 28590,
-	"name": "yunos.tvpubadmin.content.topic.querytopic",
-	"apiChineseName": "迎客松专题查询",
-	"description": "迎客松专题查询",
 	"requestParams": [
 		{
 			"name": "topic_audit_query",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "专题列表"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.topic.querytopic",
+	"apiChineseName": "迎客松专题查询",
+	"description": "迎客松专题查询",
+	"id": 28590
 }

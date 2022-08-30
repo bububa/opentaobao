@@ -1,13 +1,6 @@
 {
-	"id": 50316,
-	"name": "alibaba.alihealth.dental.store.invisible.consume.update",
-	"apiChineseName": "门店无隐形消费签约",
-	"description": "门店无隐形消费签约",
 	"requestParams": [
 		{
-			"name": "store",
-			"type": "DentalOuterStoreNicRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "expire_time",
@@ -29,40 +22,43 @@
 					"type": "Number",
 					"description": "签约状态(0 未签约，1 已签约)"
 				}
-			]
+			],
+			"name": "store",
+			"type": "DentalOuterStoreNicRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.store.invisible.consume.update",
+	"apiChineseName": "门店无隐形消费签约",
+	"description": "门店无隐形消费签约",
+	"id": 50316
 }

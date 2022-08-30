@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_sub_type",
+					"type": "Number",
+					"description": "子业务类型",
+					"required": true
+				},
+				{
+					"name": "broker_id",
+					"type": "String",
+					"description": "子账号",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "内容",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "顾问类型 1-置业顾问 2-经纪人",
+					"required": true
+				}
+			],
+			"name": "message_info_dto",
+			"type": "MessageInfoDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "消息记录id"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.message.workorder.push",
+	"apiChineseName": "工单消息推送",
+	"description": "工单消息推送",
+	"id": 58717
+}

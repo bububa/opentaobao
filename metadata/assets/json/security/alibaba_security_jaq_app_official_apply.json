@@ -1,30 +1,11 @@
 {
-	"id": 28414,
-	"name": "alibaba.security.jaq.app.official.apply",
-	"apiChineseName": "聚安全官方应用申请",
-	"description": "官方应用申请接口",
 	"requestParams": [
 		{
-			"name": "official_app_apply_request",
-			"type": "OfficialAppApplyRequest",
-			"description": "官方应用申请入参",
 			"subParams": [
 				{
 					"name": "app_url",
 					"type": "String",
 					"description": "应用下载地址",
-					"required": true
-				},
-				{
-					"name": "app_hash",
-					"type": "String",
-					"description": "应用安装包的MD5或SHA1",
-					"required": true
-				},
-				{
-					"name": "official_type",
-					"type": "Number",
-					"description": "官方版本类型 1-官方正式 2-官方开发版本",
 					"required": true
 				},
 				{
@@ -48,44 +29,59 @@
 					"description": "开发者名称，企业开发者为公司名称"
 				},
 				{
+					"name": "app_hash",
+					"type": "String",
+					"description": "应用安装包的MD5或SHA1",
+					"required": true
+				},
+				{
 					"name": "cert_md5",
 					"type": "String",
 					"description": "应用证书指纹的MD5"
+				},
+				{
+					"name": "official_type",
+					"type": "Number",
+					"description": "官方版本类型 1-官方正式 2-官方开发版本",
+					"required": true
 				}
-			]
+			],
+			"name": "official_app_apply_request",
+			"type": "OfficialAppApplyRequest",
+			"description": "官方应用申请入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OfficialAppApplyResponse",
-			"description": "申请结果",
 			"subParams": [
-				{
-					"name": "submit_status",
-					"type": "Number",
-					"description": "提交状态 0- 提交成功 400-提交错误",
-					"required": true
-				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码0-成功 400-参数错误 500-服务错误",
-					"required": true
+					"description": "错误码0-成功 400-参数错误 500-服务错误"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
+				},
+				{
+					"name": "submit_status",
+					"type": "Number",
+					"description": "提交状态 0- 提交成功 400-提交错误"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OfficialAppApplyResponse",
+			"description": "申请结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.official.apply",
+	"apiChineseName": "聚安全官方应用申请",
+	"description": "官方应用申请接口",
+	"id": 28414
 }

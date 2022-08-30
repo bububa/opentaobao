@@ -1,0 +1,132 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_community_id",
+			"type": "String",
+			"description": "外部小区id",
+			"required": true
+		},
+		{
+			"name": "outer_house_id",
+			"type": "String",
+			"description": "外部房源id",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"subParams": [
+						{
+							"name": "entrust_item_id",
+							"type": "Number",
+							"description": "房源商品id"
+						},
+						{
+							"name": "entrust_version",
+							"type": "String",
+							"description": "房源委托版本"
+						},
+						{
+							"name": "entrust_id",
+							"type": "Number",
+							"description": "委托id"
+						},
+						{
+							"name": "inside_area",
+							"type": "String",
+							"description": "房源套内面积"
+						},
+						{
+							"name": "building_area",
+							"type": "String",
+							"description": "房源建筑面积"
+						},
+						{
+							"name": "room_no",
+							"type": "String",
+							"description": "房号"
+						},
+						{
+							"name": "unit_no",
+							"type": "String",
+							"description": "单元号"
+						},
+						{
+							"name": "building_no",
+							"type": "String",
+							"description": "楼栋号"
+						},
+						{
+							"name": "house_address",
+							"type": "String",
+							"description": "房源详细地址"
+						},
+						{
+							"name": "community_name",
+							"type": "String",
+							"description": "小区名称"
+						},
+						{
+							"name": "community_item_id",
+							"type": "Number",
+							"description": "小区商品id"
+						},
+						{
+							"name": "community_id",
+							"type": "Number",
+							"description": "小区id"
+						},
+						{
+							"name": "trade_status",
+							"type": "Number",
+							"description": "交易状态"
+						},
+						{
+							"name": "is_exist",
+							"type": "Boolean",
+							"description": "是否存在房源商品"
+						},
+						{
+							"name": "is_commission",
+							"type": "Boolean",
+							"description": "是否存在委托"
+						}
+					],
+					"name": "data",
+					"type": "StoreEntrustDto",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.storeentrust.query",
+	"apiChineseName": "门店委托信息查询",
+	"description": "门店委托信息查询",
+	"id": 57270
+}

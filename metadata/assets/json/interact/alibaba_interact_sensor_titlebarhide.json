@@ -1,13 +1,13 @@
 {
-	"id": 23758,
-	"name": "alibaba.interact.sensor.titlebarhide",
-	"apiChineseName": "隐藏titleBar",
-	"description": "隐藏titleBar",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "return=0表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.titlebarhide",
+	"apiChineseName": "隐藏titleBar",
+	"description": "隐藏titleBar",
+	"id": 23758
 }

@@ -1,14 +1,6 @@
 {
-	"id": 49134,
-	"name": "taobao.bus.agent.multiple.refund.confirm",
-	"apiChineseName": "综合交通多次退款接口",
-	"description": "此接口支持多次按照单客进行多次退款操作，只进行退款操作。",
 	"requestParams": [
 		{
-			"name": "param_agent_multiple_refund_r_q",
-			"type": "AgentMultipleRefundRq",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "agent_order_id",
@@ -35,10 +27,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_ticket_detail_list",
-					"type": "AgentMultipleRefundTicketInfo[]",
-					"description": "退款明细数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "agent_ticket_id",
@@ -60,7 +48,11 @@
 							"type": "Number",
 							"description": "退服务费金额(分)"
 						}
-					]
+					],
+					"name": "refund_ticket_detail_list",
+					"type": "AgentMultipleRefundTicketInfo[]",
+					"description": "退款明细数据",
+					"required": true
 				},
 				{
 					"name": "total_refund_amount",
@@ -72,8 +64,22 @@
 					"name": "total_service_charge_refund_amount",
 					"type": "Number",
 					"description": "退服务费总金额(分)"
+				},
+				{
+					"name": "refund_scene",
+					"type": "String",
+					"description": "选择不可抗力场景后飞猪平台会发送停运短信给用户"
+				},
+				{
+					"name": "refund_scene_official_reason_code",
+					"type": "String",
+					"description": "通知用户停运原因"
 				}
-			]
+			],
+			"name": "param_agent_multiple_refund_r_q",
+			"type": "AgentMultipleRefundRq",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -92,5 +98,9 @@
 			"type": "Boolean",
 			"description": "退款成功"
 		}
-	]
+	],
+	"name": "taobao.bus.agent.multiple.refund.confirm",
+	"apiChineseName": "综合交通多次退款接口",
+	"description": "此接口支持多次按照单客进行多次退款操作，只进行退款操作。",
+	"id": 49134
 }

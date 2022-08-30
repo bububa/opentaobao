@@ -1,13 +1,6 @@
 {
-	"id": 45858,
-	"name": "alibaba.alsc.crm.recharge.unchargecheck.get",
-	"apiChineseName": "储值账户退充值校验",
-	"description": "储值账户退充值校验接口",
 	"requestParams": [
 		{
-			"name": "param_uncharge_check_open_req",
-			"type": "UnchargeCheckOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -51,46 +44,48 @@
 					"description": "CS是辰森，KRY是客如云",
 					"required": true
 				}
-			]
+			],
+			"name": "param_uncharge_check_open_req",
+			"type": "UnchargeCheckOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "是否验证成功",
-					"required": true
+					"description": "是否验证成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.recharge.unchargecheck.get",
+	"apiChineseName": "储值账户退充值校验",
+	"description": "储值账户退充值校验接口",
+	"id": 45858
 }

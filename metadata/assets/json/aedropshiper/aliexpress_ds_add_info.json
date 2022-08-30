@@ -1,0 +1,37 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_url",
+					"type": "String",
+					"description": "Store address"
+				}
+			],
+			"name": "param0",
+			"type": "DropShipperReq",
+			"description": "Request object"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "Result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "Error message"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "Error code"
+		}
+	],
+	"name": "aliexpress.ds.add.info",
+	"apiChineseName": "上报DS信息",
+	"description": "ISV用户上报下游DS信息",
+	"id": 57188
+}

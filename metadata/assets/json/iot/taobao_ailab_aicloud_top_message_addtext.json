@@ -1,13 +1,6 @@
 {
-	"id": 34208,
-	"name": "taobao.ailab.aicloud.top.message.addtext",
-	"apiChineseName": "精灵代说",
-	"description": "精灵代说",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpenBaseInfo",
-			"description": "用户信息",
 			"subParams": [
 				{
 					"name": "schema",
@@ -29,7 +22,10 @@
 					"type": "String",
 					"description": "扩展信息，用于存放APP类型等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息"
 		},
 		{
 			"name": "param1",
@@ -49,35 +45,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "业务是否成功",
-					"required": true
+					"description": "业务是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "网络请求是否成功",
-					"required": true
+					"description": "网络请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.message.addtext",
+	"apiChineseName": "精灵代说",
+	"description": "精灵代说",
+	"id": 34208
 }

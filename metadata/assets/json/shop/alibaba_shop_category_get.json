@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "分类id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "分类总数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "分类id"
+						},
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "分类名称"
+						},
+						{
+							"name": "category_image",
+							"type": "String",
+							"description": "分类主图"
+						},
+						{
+							"subParams": [
+								{
+									"name": "category_id",
+									"type": "Number",
+									"description": "分类id"
+								},
+								{
+									"name": "category_name",
+									"type": "String",
+									"description": "分类名称"
+								},
+								{
+									"name": "category_image",
+									"type": "String",
+									"description": "分类主图"
+								}
+							],
+							"name": "sub_shop_category_list",
+							"type": "OpenCategoryDto[]",
+							"description": "子分类对象"
+						}
+					],
+					"name": "module",
+					"type": "OpenCategoryDto",
+					"description": "分类对象"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "分类返回结果"
+		}
+	],
+	"name": "alibaba.shop.category.get",
+	"apiChineseName": "指定店铺分类信息查询接口",
+	"description": "按照卖家身份查询指定分类信息",
+	"id": 60991
+}

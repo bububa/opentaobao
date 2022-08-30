@@ -1,8 +1,4 @@
 {
-	"id": 49661,
-	"name": "taobao.banamadpc.item.add",
-	"apiChineseName": "新发商品",
-	"description": "巴拿马供应商通过此接口新发商品",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "无",
 			"subParams": [
 				{
 					"name": "er_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "er_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result",
 					"type": "Number",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "无"
 		}
-	]
+	],
+	"name": "taobao.banamadpc.item.add",
+	"apiChineseName": "新发商品",
+	"description": "巴拿马供应商通过此接口新发商品",
+	"id": 49661
 }

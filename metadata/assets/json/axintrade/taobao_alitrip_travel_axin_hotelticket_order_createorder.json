@@ -1,0 +1,168 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_order_id",
+			"type": "String",
+			"description": "分销商订单号",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品id",
+			"required": true
+		},
+		{
+			"name": "service_start_time",
+			"type": "String",
+			"description": "出行日期 格式： yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "service_end_time",
+			"type": "String",
+			"description": "结束日期 格式： yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "use_time",
+			"type": "String",
+			"description": "门票游玩日期 只能选择出行和结束之间日期  格式： yyyy-MM-dd"
+		},
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "联系人手机号"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "联系人邮箱"
+				},
+				{
+					"name": "certificates",
+					"type": "String",
+					"description": "联系人证件号"
+				},
+				{
+					"name": "certificates_type",
+					"type": "Number",
+					"description": "联系人证件类型"
+				}
+			],
+			"name": "contact_info",
+			"type": "TravelerDTO",
+			"description": "联系人信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "联系人手机号"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "联系人邮箱"
+				},
+				{
+					"name": "certificates",
+					"type": "String",
+					"description": "联系人证件号"
+				},
+				{
+					"name": "certificates_type",
+					"type": "Number",
+					"description": "联系人证件类型"
+				}
+			],
+			"name": "traveler_info_list",
+			"type": "TravelerDTO",
+			"description": "出行人信息",
+			"required": true
+		},
+		{
+			"name": "buy_amount",
+			"type": "Number",
+			"description": "购买数量",
+			"required": true
+		},
+		{
+			"name": "product_price",
+			"type": "Number",
+			"description": "产品单价",
+			"required": true
+		},
+		{
+			"name": "total_price",
+			"type": "Number",
+			"description": "订单总金额，单位为分",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商ID(淘系)",
+			"required": true
+		},
+		{
+			"name": "biz_line",
+			"type": "String",
+			"description": "产品线",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "purchase_sub_order_id",
+							"type": "Number",
+							"description": "采购单号"
+						}
+					],
+					"name": "data",
+					"type": "TopOrderCreateApiResDTO",
+					"description": "创单返回参数"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "结果返回类"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotelticket.order.createorder",
+	"apiChineseName": "阿信度假业务创单并支付接口",
+	"description": "阿信度假业务创单并支付接口",
+	"id": 62022
+}

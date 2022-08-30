@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "crowd_value",
+							"type": "String",
+							"description": "达摩盘生成的人群id"
+						},
+						{
+							"name": "target_type",
+							"type": "Number",
+							"description": "达摩盘人群传128，平台精选人群传4194304"
+						},
+						{
+							"name": "crowd_name",
+							"type": "String",
+							"description": "传对应的人群名称"
+						}
+					],
+					"name": "crowd",
+					"type": "CrowdTopDTO",
+					"description": "人群信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "溢价信息，范围5-300，不在范围内会默认设置为5"
+						}
+					],
+					"name": "price_top_d_t_o",
+					"type": "PriceTopDTO",
+					"description": "溢价相关信息"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "需要添加到的计划id"
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "推广传1，暂停传0"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "需要添加到的单元id"
+				}
+			],
+			"name": "crowd_ref_d_t_os",
+			"type": "CrowdRefTopDTO",
+			"description": "需要绑定的人群列表, 达摩盘人群一次最多绑定8个,平台精选人群一次最多绑定10个"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "新增成功的单元"
+				}
+			],
+			"name": "result",
+			"type": "CrowdBindTopResultDTO []",
+			"description": "绑定结果数据"
+		},
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误妈code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误码描述"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.subway.crowd.dmp.crowd.bind",
+	"apiChineseName": "直通车绑定达摩盘人群",
+	"description": "直通车绑定达摩盘人群",
+	"id": 61875
+}

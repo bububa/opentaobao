@@ -1,8 +1,4 @@
 {
-	"id": 51443,
-	"name": "alibaba.alihealth.lab.item.sync",
-	"apiChineseName": "阿里健康检验检测商品发布",
-	"description": "iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU",
 	"requestParams": [
 		{
 			"name": "isv_item_code",
@@ -41,10 +37,6 @@
 			"description": "报告产出预计需要的时长，单位毫秒"
 		},
 		{
-			"name": "sub_items",
-			"type": "LabSubItemBrief[]",
-			"description": "打包的子项目",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "name",
@@ -56,7 +48,11 @@
 					"type": "String",
 					"description": "子项目isv侧编码"
 				}
-			]
+			],
+			"name": "sub_items",
+			"type": "LabSubItemBrief[]",
+			"description": "打包的子项目",
+			"maxListSize": 999
 		},
 		{
 			"name": "isv_item_status",
@@ -92,5 +88,9 @@
 			"type": "String",
 			"description": "可读的结果码（错误码）"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.lab.item.sync",
+	"apiChineseName": "阿里健康检验检测商品发布",
+	"description": "iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU",
+	"id": 51443
 }

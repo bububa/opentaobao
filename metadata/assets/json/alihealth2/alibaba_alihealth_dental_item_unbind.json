@@ -1,8 +1,4 @@
 {
-	"id": 43393,
-	"name": "alibaba.alihealth.dental.item.unbind",
-	"apiChineseName": "ISV解绑商品",
-	"description": "ISV解绑商品",
 	"requestParams": [
 		{
 			"name": "sp_store_id",
@@ -17,35 +13,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "true",
-					"required": true
+					"description": "true"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "200",
-					"required": true
+					"description": "200"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true",
-					"required": true
+					"description": "true"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.item.unbind",
+	"apiChineseName": "ISV解绑商品",
+	"description": "ISV解绑商品",
+	"id": 43393
 }

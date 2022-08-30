@@ -1,14 +1,6 @@
 {
-	"id": 25572,
-	"name": "taobao.openim.tribe.quit",
-	"apiChineseName": "OPENIM群成员退出",
-	"description": "OPENIM群成员退出",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -27,7 +19,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tribe_id",
@@ -42,5 +38,9 @@
 			"type": "Number",
 			"description": "群服务code"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.quit",
+	"apiChineseName": "OPENIM群成员退出",
+	"description": "OPENIM群成员退出",
+	"id": 25572
 }

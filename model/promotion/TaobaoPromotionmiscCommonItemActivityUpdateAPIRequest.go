@@ -14,14 +14,14 @@ import (
 // 2、使用该接口时需要把未做修改的字段值也传入
 type TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest struct {
 	model.Params
-	// 活动名称，不能超过32字符
-	_name string
 	// 活动描述，不能超过100字符
 	_description string
-	// 活动开始时间
-	_startTime string
 	// 活动结束时间
 	_endTime string
+	// 活动名称，不能超过32字符
+	_name string
+	// 活动开始时间
+	_startTime string
 	// 用户标签。当is_user_tag为true时，该值才有意义。
 	_userTag string
 	// 优惠活动ID
@@ -51,19 +51,6 @@ func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetApiParams() ur
 	return params
 }
 
-// SetName is Name Setter
-// 活动名称，不能超过32字符
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
-	return nil
-}
-
-// GetName Name Getter
-func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetName() string {
-	return r._name
-}
-
 // SetDescription is Description Setter
 // 活动描述，不能超过100字符
 func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetDescription(_description string) error {
@@ -77,19 +64,6 @@ func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetDescription() 
 	return r._description
 }
 
-// SetStartTime is StartTime Setter
-// 活动开始时间
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetStartTime(_startTime string) error {
-	r._startTime = _startTime
-	r.Set("start_time", _startTime)
-	return nil
-}
-
-// GetStartTime StartTime Getter
-func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetStartTime() string {
-	return r._startTime
-}
-
 // SetEndTime is EndTime Setter
 // 活动结束时间
 func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetEndTime(_endTime string) error {
@@ -101,6 +75,32 @@ func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetEndTime(_endT
 // GetEndTime EndTime Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetEndTime() string {
 	return r._endTime
+}
+
+// SetName is Name Setter
+// 活动名称，不能超过32字符
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// GetName Name Getter
+func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetName() string {
+	return r._name
+}
+
+// SetStartTime is StartTime Setter
+// 活动开始时间
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) SetStartTime(_startTime string) error {
+	r._startTime = _startTime
+	r.Set("start_time", _startTime)
+	return nil
+}
+
+// GetStartTime StartTime Getter
+func (r TaobaoPromotionmiscCommonItemActivityUpdateAPIRequest) GetStartTime() string {
+	return r._startTime
 }
 
 // SetUserTag is UserTag Setter

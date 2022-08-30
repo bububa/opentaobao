@@ -1,8 +1,4 @@
 {
-	"id": 32240,
-	"name": "alibaba.campus.acl.checkemprole",
-	"apiChineseName": "校验用户是否有该角色",
-	"description": "校验用户是否有该权限",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -36,41 +32,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.checkemprole",
+	"apiChineseName": "校验用户是否有该角色",
+	"description": "校验用户是否有该权限",
+	"id": 32240
 }

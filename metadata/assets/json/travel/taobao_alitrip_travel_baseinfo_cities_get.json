@@ -1,8 +1,4 @@
 {
-	"id": 25760,
-	"name": "taobao.alitrip.travel.baseinfo.cities.get",
-	"apiChineseName": "【API3.0】度假线路商品发布时基础信息获取接口：地址数据查询",
-	"description": "旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。",
 	"requestParams": [
 		{
 			"name": "ioc_type",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "地区级联城市列表，返回数据为json数组结构的字符串"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.baseinfo.cities.get",
+	"apiChineseName": "【API3.0】度假线路商品发布时基础信息获取接口：地址数据查询",
+	"description": "旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。",
+	"id": 25760
 }

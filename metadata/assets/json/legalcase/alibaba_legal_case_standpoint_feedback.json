@@ -1,14 +1,6 @@
 {
-	"id": 55575,
-	"name": "alibaba.legal.case.standpoint.feedback",
-	"apiChineseName": "新增或更新 反馈口径(采纳口径/不采纳口径)",
-	"description": "新增或更新 反馈口径(采纳口径/不采纳口径)",
 	"requestParams": [
 		{
-			"name": "feedback_request_model",
-			"type": "FeedbackRequestModel",
-			"description": "反馈对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "defense_caliber",
@@ -50,7 +42,11 @@
 					"type": "String",
 					"description": "提交人"
 				}
-			]
+			],
+			"name": "feedback_request_model",
+			"type": "FeedbackRequestModel",
+			"description": "反馈对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -74,5 +70,9 @@
 			"type": "String",
 			"description": "错误信息描述"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.standpoint.feedback",
+	"apiChineseName": "新增或更新 反馈口径(采纳口径/不采纳口径)",
+	"description": "新增或更新 反馈口径(采纳口径/不采纳口径)",
+	"id": 55575
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28159,
-	"name": "alibaba.nlife.b2c.trade.cancel",
-	"apiChineseName": "零售+平台取消订单",
-	"description": "零售+平台取消订单接口",
 	"requestParams": [
 		{
 			"name": "trade_no",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "扩展参数JSON"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.trade.cancel",
+	"apiChineseName": "零售+平台取消订单",
+	"description": "零售+平台取消订单接口",
+	"id": 28159
 }

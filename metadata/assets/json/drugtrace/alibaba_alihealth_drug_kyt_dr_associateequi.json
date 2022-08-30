@@ -1,8 +1,4 @@
 {
-	"id": 43441,
-	"name": "alibaba.alihealth.drug.kyt.dr.associateequi",
-	"apiChineseName": "疫苗单据与设备绑定",
-	"description": "疫苗单据与设备绑定",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -25,35 +21,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.associateequi",
+	"apiChineseName": "疫苗单据与设备绑定",
+	"description": "疫苗单据与设备绑定",
+	"id": 43441
 }

@@ -1,8 +1,4 @@
 {
-	"id": 40562,
-	"name": "tmall.device.store.followurl.get",
-	"apiChineseName": "获取店铺关注链接",
-	"description": "获取智能硬件上的关注店铺的URL",
 	"requestParams": [
 		{
 			"name": "device_code",
@@ -42,5 +38,9 @@
 			"type": "String",
 			"description": "二维码图片URL"
 		}
-	]
+	],
+	"name": "tmall.device.store.followurl.get",
+	"apiChineseName": "获取店铺关注链接",
+	"description": "获取智能硬件上的关注店铺的URL",
+	"id": 40562
 }

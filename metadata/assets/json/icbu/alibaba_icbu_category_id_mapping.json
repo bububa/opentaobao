@@ -1,8 +1,4 @@
 {
-	"id": 52043,
-	"name": "alibaba.icbu.category.id.mapping",
-	"apiChineseName": "新旧属性的映射",
-	"description": "商品发布接口升级，需要传入新的类目。这个接口 根据旧的类目id，获取新的类目id",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -32,5 +28,9 @@
 			"type": "Number",
 			"description": "转化的类目id"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.id.mapping",
+	"apiChineseName": "新旧属性的映射",
+	"description": "商品发布接口升级，需要传入新的类目。这个接口 根据旧的类目id，获取新的类目id",
+	"id": 52043
 }

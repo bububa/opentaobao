@@ -1,13 +1,6 @@
 {
-	"id": 33768,
-	"name": "taobao.ailab.aicloud.top.feedlist.get",
-	"apiChineseName": "获取对话流列表",
-	"description": "获取指定应用的对话流信息",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpenBaseInfo",
-			"description": "用户信息",
 			"subParams": [
 				{
 					"name": "schema",
@@ -29,7 +22,10 @@
 					"type": "String",
 					"description": "扩展信息，用于存放APP类型等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息"
 		},
 		{
 			"name": "param1",
@@ -49,35 +45,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "models",
-					"type": "Json[]",
-					"description": "对话流列表数据",
-					"required": true
+					"type": "String[]",
+					"description": "对话流列表数据"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "网络请求是否成功",
-					"required": true
+					"description": "网络请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.feedlist.get",
+	"apiChineseName": "获取对话流列表",
+	"description": "获取指定应用的对话流信息",
+	"id": 33768
 }

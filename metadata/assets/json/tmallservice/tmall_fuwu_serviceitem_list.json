@@ -1,8 +1,4 @@
 {
-	"id": 36961,
-	"name": "tmall.fuwu.serviceitem.list",
-	"apiChineseName": "获取服务商品扩展信息",
-	"description": "获取服务商品扩展信息",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -11,48 +7,47 @@
 		},
 		{
 			"name": "itemids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "商品id列表，有数量限制",
 			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result_data",
-					"type": "Json",
-					"description": "服务商品信息列表的json对象",
-					"required": true
+					"type": "String",
+					"description": "服务商品信息列表的json对象"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "error_type",
 					"type": "Number",
-					"description": "errorType",
-					"required": true
+					"description": "errorType"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.fuwu.serviceitem.list",
+	"apiChineseName": "获取服务商品扩展信息",
+	"description": "获取服务商品扩展信息",
+	"id": 36961
 }

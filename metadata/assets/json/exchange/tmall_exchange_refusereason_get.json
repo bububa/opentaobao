@@ -1,8 +1,4 @@
 {
-	"id": 31214,
-	"name": "tmall.exchange.refusereason.get",
-	"apiChineseName": "获取拒绝换货原因列表",
-	"description": "获取拒绝换货原因列表",
 	"requestParams": [
 		{
 			"name": "dispute_id",
@@ -11,69 +7,66 @@
 			"required": true
 		},
 		{
-			"name": "fields",
-			"type": "String[]",
-			"description": "返回字段",
-			"required": true,
-			"maxListSize": 20
-		},
-		{
 			"name": "dispute_type",
 			"type": "Number",
 			"description": "换货申请类型：0-任意类型；1-售中；2-售后"
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "返回字段",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "Reason[]",
-					"description": "拒绝原因列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "reason_id",
 							"type": "Number",
-							"description": "拒绝原因ID",
-							"required": true
+							"description": "拒绝原因ID"
 						},
 						{
 							"name": "reason_text",
 							"type": "String",
-							"description": "拒绝原因内容",
-							"required": true
+							"description": "拒绝原因内容"
 						}
-					]
+					],
+					"name": "results",
+					"type": "Reason[]",
+					"description": "拒绝原因列表"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "拒绝原因总数",
-					"required": true
+					"description": "拒绝原因总数"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常信息",
-					"required": true
+					"type": "String",
+					"description": "异常信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.exchange.refusereason.get",
+	"apiChineseName": "获取拒绝换货原因列表",
+	"description": "获取拒绝换货原因列表",
+	"id": 31214
 }

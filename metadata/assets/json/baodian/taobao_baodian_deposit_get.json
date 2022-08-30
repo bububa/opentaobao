@@ -1,13 +1,6 @@
 {
-	"id": 22800,
-	"name": "taobao.baodian.deposit.get",
-	"apiChineseName": "宝点用户帐户查询（已迁移）",
-	"description": "查询用户宝点帐户信息及当前宝点价格",
 	"responseParams": [
 		{
-			"name": "user_coin_deposit",
-			"type": "UserCoinDeposit",
-			"description": "用户宝点帐户信息",
 			"subParams": [
 				{
 					"name": "userAuthCode",
@@ -69,7 +62,14 @@
 					"type": "Number",
 					"description": "用户积分数量"
 				}
-			]
+			],
+			"name": "user_coin_deposit",
+			"type": "UserCoinDeposit",
+			"description": "用户宝点帐户信息"
 		}
-	]
+	],
+	"name": "taobao.baodian.deposit.get",
+	"apiChineseName": "宝点用户帐户查询（已迁移）",
+	"description": "查询用户宝点帐户信息及当前宝点价格",
+	"id": 22800
 }

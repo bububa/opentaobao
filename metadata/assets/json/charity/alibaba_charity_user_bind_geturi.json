@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"name": "features",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "跳转平台的类型"
+		},
+		{
+			"name": "timeout",
+			"type": "Number",
+			"description": "链接超时时间"
+		},
+		{
+			"name": "user_key",
+			"type": "String",
+			"description": "三方用户id",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "三方用户昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "uri",
+							"type": "String",
+							"description": "跳转uri"
+						}
+					],
+					"name": "data",
+					"type": "JumpAddressDTO",
+					"description": "结果"
+				},
+				{
+					"name": "fail",
+					"type": "String",
+					"description": "是否失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.user.bind.geturi",
+	"apiChineseName": "获取用户绑定uri",
+	"description": "获取用户绑定uri",
+	"id": 59467
+}

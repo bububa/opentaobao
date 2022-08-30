@@ -12,12 +12,12 @@ import (
 // 用户中奖记录
 type TaobaoDegoperationShowUserRecordsAPIRequest struct {
 	model.Params
+	// 系统信息
+	_degAccessToken string
 	// 活动后台配置
 	_degAppKey string
 	// 活动后台配置
 	_eventKey string
-	// 系统信息
-	_degAccessToken string
 	// 第几页
 	_pageNumber int64
 	// 分页尺寸
@@ -45,6 +45,19 @@ func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetDegAccessToken is DegAccessToken Setter
+// 系统信息
+func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAccessToken string) error {
+	r._degAccessToken = _degAccessToken
+	r.Set("deg_access_token", _degAccessToken)
+	return nil
+}
+
+// GetDegAccessToken DegAccessToken Getter
+func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAccessToken() string {
+	return r._degAccessToken
+}
+
 // SetDegAppKey is DegAppKey Setter
 // 活动后台配置
 func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAppKey(_degAppKey string) error {
@@ -69,19 +82,6 @@ func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetEventKey(_eventKey stri
 // GetEventKey EventKey Getter
 func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetEventKey() string {
 	return r._eventKey
-}
-
-// SetDegAccessToken is DegAccessToken Setter
-// 系统信息
-func (r *TaobaoDegoperationShowUserRecordsAPIRequest) SetDegAccessToken(_degAccessToken string) error {
-	r._degAccessToken = _degAccessToken
-	r.Set("deg_access_token", _degAccessToken)
-	return nil
-}
-
-// GetDegAccessToken DegAccessToken Getter
-func (r TaobaoDegoperationShowUserRecordsAPIRequest) GetDegAccessToken() string {
-	return r._degAccessToken
 }
 
 // SetPageNumber is PageNumber Setter

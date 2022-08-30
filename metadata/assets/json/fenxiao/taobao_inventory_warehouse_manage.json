@@ -1,14 +1,6 @@
 {
-	"id": 27167,
-	"name": "taobao.inventory.warehouse.manage",
-	"apiChineseName": "创建商家仓或者更新商家仓信息",
-	"description": "创建商家仓或者更新商家仓信息",
 	"requestParams": [
 		{
-			"name": "ware_house_dto",
-			"type": "WareHouseDto",
-			"description": "仓库信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "address",
@@ -60,40 +52,44 @@
 					"description": "操作类型，新增:ADD;修改:UPDATE",
 					"required": true
 				}
-			]
+			],
+			"name": "ware_house_dto",
+			"type": "WareHouseDto",
+			"description": "仓库信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "errorCode",
-					"required": true
-				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.inventory.warehouse.manage",
+	"apiChineseName": "创建商家仓或者更新商家仓信息",
+	"description": "创建商家仓或者更新商家仓信息",
+	"id": 27167
 }

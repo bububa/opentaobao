@@ -1,13 +1,6 @@
 {
-	"id": 54867,
-	"name": "alibaba.einvoice.tax.opt.salaryrequest.acceptpayment",
-	"apiChineseName": "受理发薪",
-	"description": "发薪受理接口",
 	"requestParams": [
 		{
-			"name": "param_tax_optimization_salary_payment_access_req_d_t_o",
-			"type": "TaxOptimizationSalaryPaymentAccessReqDto",
-			"description": "请求入参",
 			"subParams": [
 				{
 					"name": "account_date",
@@ -52,46 +45,48 @@
 					"description": "请求id",
 					"required": true
 				}
-			]
+			],
+			"name": "param_tax_optimization_salary_payment_access_req_d_t_o",
+			"type": "TaxOptimizationSalaryPaymentAccessReqDto",
+			"description": "请求入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaxOptimizationSalaryPaymentAccessResultDto",
-			"description": "服务出参",
 			"subParams": [
 				{
 					"name": "fail_count",
 					"type": "Number",
-					"description": "失败的个数",
-					"required": true
+					"description": "失败的个数"
 				},
 				{
 					"name": "processing_count",
 					"type": "Number",
-					"description": "正在处理的个数",
-					"required": true
+					"description": "正在处理的个数"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "发薪状态",
-					"required": true
+					"description": "发薪状态"
 				},
 				{
 					"name": "success_count",
 					"type": "Number",
-					"description": "成功的个数",
-					"required": true
+					"description": "成功的个数"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总的发薪个数",
-					"required": true
+					"description": "总的发薪个数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaxOptimizationSalaryPaymentAccessResultDto",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.tax.opt.salaryrequest.acceptpayment",
+	"apiChineseName": "受理发薪",
+	"description": "发薪受理接口",
+	"id": 54867
 }

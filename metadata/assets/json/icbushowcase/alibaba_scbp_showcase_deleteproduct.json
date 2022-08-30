@@ -1,15 +1,11 @@
 {
-	"id": 40963,
-	"name": "alibaba.scbp.showcase.deleteproduct",
-	"apiChineseName": "批量删除橱窗商品",
-	"description": "批量删除橱窗商品",
 	"requestParams": [
 		{
 			"name": "window_id_list",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "橱窗idList",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -18,5 +14,9 @@
 			"type": "Boolean",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.scbp.showcase.deleteproduct",
+	"apiChineseName": "批量删除橱窗商品",
+	"description": "批量删除橱窗商品",
+	"id": 40963
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10615,
-	"name": "taobao.wlb.item.combination.get",
-	"apiChineseName": "根据商品id查询商品组合关系",
-	"description": "根据商品id查询商品组合关系",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -17,5 +13,9 @@
 			"type": "Number []",
 			"description": "组合子商品id列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.combination.get",
+	"apiChineseName": "根据商品id查询商品组合关系",
+	"description": "根据商品id查询商品组合关系",
+	"id": 10615
 }

@@ -1,8 +1,4 @@
 {
-	"id": 33757,
-	"name": "taobao.omniorder.store.collectconfig.get",
-	"apiChineseName": "查询门店自提配置内容",
-	"description": "查询门店自提配置内容",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -18,61 +14,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "data",
-					"type": "StoreCollectConfig",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_end_time",
 							"type": "Date",
-							"description": "当activity为true时返回，活动结束时间",
-							"required": true
+							"description": "当activity为true时返回，活动结束时间"
 						},
 						{
 							"name": "working_time",
 							"type": "String",
-							"description": "接单时间段，格式为 \"09:00-12:00\", \"\" 表示一直开启",
-							"required": true
+							"description": "接单时间段，格式为 \"09:00-12:00\", \"\" 表示一直开启"
 						},
 						{
 							"name": "collect_threshold",
 							"type": "Number",
-							"description": "每日接单阈值",
-							"required": true
+							"description": "每日接单阈值"
 						},
 						{
 							"name": "activity_start_time",
 							"type": "Date",
-							"description": "当activity为true时返回,活动开始时间",
-							"required": true
+							"description": "当activity为true时返回,活动开始时间"
 						},
 						{
 							"name": "activity",
 							"type": "Boolean",
-							"description": "是否是活动期",
-							"required": true
+							"description": "是否是活动期"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StoreCollectConfig",
+					"description": "data"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.collectconfig.get",
+	"apiChineseName": "查询门店自提配置内容",
+	"description": "查询门店自提配置内容",
+	"id": 33757
 }

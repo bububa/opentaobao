@@ -22,6 +22,8 @@ type PrescriptionOutflowUpdateRequest struct {
 	VisitId string `json:"visit_id,omitempty" xml:"visit_id,omitempty"`
 	// 就诊类型（首诊、复诊）(可空)
 	VisitType string `json:"visit_type,omitempty" xml:"visit_type,omitempty"`
+	// 渠道、医院(非空)
+	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 就诊科室id(可空)
 	DetpId string `json:"detp_id,omitempty" xml:"detp_id,omitempty"`
 	// 就诊科室名称(非空)
@@ -52,8 +54,6 @@ type PrescriptionOutflowUpdateRequest struct {
 	FeeType string `json:"fee_type,omitempty" xml:"fee_type,omitempty"`
 	// 处方流转医保备案编号(医保支付时必填)
 	CardNumber string `json:"card_number,omitempty" xml:"card_number,omitempty"`
-	// 渠道、医院(非空)
-	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 浙江省平台(可空)
 	PlatformCode string `json:"platform_code,omitempty" xml:"platform_code,omitempty"`
 	// 扩展属性JSON

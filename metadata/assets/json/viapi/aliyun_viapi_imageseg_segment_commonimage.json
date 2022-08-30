@@ -1,8 +1,4 @@
 {
-	"id": 50734,
-	"name": "aliyun.viapi.imageseg.segment.commonimage",
-	"apiChineseName": "通用分割",
-	"description": "识别输入图像中的视觉中心物体轮廓，与背景进行分离，返回分割后的前景物体图（4通道png透明图）。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -17,9 +13,6 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "image_url",
@@ -27,7 +20,14 @@
 					"description": "抠图结果（png透明图）有效期半个小时",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.imageseg.segment.commonimage",
+	"apiChineseName": "通用分割",
+	"description": "识别输入图像中的视觉中心物体轮廓，与背景进行分离，返回分割后的前景物体图（4通道png透明图）。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50734
 }

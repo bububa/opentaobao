@@ -1,8 +1,4 @@
 {
-	"id": 36660,
-	"name": "taobao.xhotel.future.softmodify",
-	"apiChineseName": "未来酒店信息下发",
-	"description": "未来酒店信息下发，包含PMS订单查询和自助入住",
 	"requestParams": [
 		{
 			"name": "expire_time",
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "请求报文示例：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.Q8jazn\u0026docType=1\u0026articleId=104398中的自助入住请求示例(升级版)和酒店PMS信息查询 响应报文示例：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=106153中的自助checkIn订单信息上传和通用PMS结果查询结果"
 		}
-	]
+	],
+	"name": "taobao.xhotel.future.softmodify",
+	"apiChineseName": "未来酒店信息下发",
+	"description": "未来酒店信息下发，包含PMS订单查询和自助入住",
+	"id": 36660
 }

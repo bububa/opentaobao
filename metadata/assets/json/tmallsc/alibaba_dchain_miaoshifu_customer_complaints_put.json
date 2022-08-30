@@ -1,13 +1,6 @@
 {
-	"id": 53341,
-	"name": "alibaba.dchain.miaoshifu.customer.complaints.put",
-	"apiChineseName": "服务商工人客诉数据上传",
-	"description": "数字服务供应链平台提供给服务商上传工人客诉数据",
 	"requestParams": [
 		{
-			"name": "worker_customer_complaint_save_cmd",
-			"type": "WorkerCustomerComplaintSaveCmd",
-			"description": "服务工人客诉对象",
 			"subParams": [
 				{
 					"name": "seller_nick",
@@ -81,7 +74,10 @@
 					"type": "String",
 					"description": "扩展字段，json对象字符串，如：{\"serviceCode\":\"浴霸安装\"}"
 				}
-			]
+			],
+			"name": "worker_customer_complaint_save_cmd",
+			"type": "WorkerCustomerComplaintSaveCmd",
+			"description": "服务工人客诉对象"
 		}
 	],
 	"responseParams": [
@@ -110,5 +106,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.dchain.miaoshifu.customer.complaints.put",
+	"apiChineseName": "服务商工人客诉数据上传",
+	"description": "数字服务供应链平台提供给服务商上传工人客诉数据",
+	"id": 53341
 }

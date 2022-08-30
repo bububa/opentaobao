@@ -1,13 +1,6 @@
 {
-	"id": 55947,
-	"name": "taobao.alitrip.axin.trans.pay.sign.check",
-	"apiChineseName": "阿信支付宝验签服务",
-	"description": "阿信支付宝验签服务",
 	"requestParams": [
 		{
-			"name": "axin_pay_check_sign_dto",
-			"type": "AxinPayCheckSignDto",
-			"description": "验签对象",
 			"subParams": [
 				{
 					"name": "biz_scene",
@@ -20,52 +13,53 @@
 					"description": "验签数据",
 					"required": true
 				}
-			]
+			],
+			"name": "axin_pay_check_sign_dto",
+			"type": "AxinPayCheckSignDto",
+			"description": "验签对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResultDto",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "验签结果",
-					"required": true
+					"description": "验签结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "验签异常code",
-					"required": true
+					"description": "验签异常code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "提示信息",
-					"required": true
+					"description": "提示信息"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.pay.sign.check",
+	"apiChineseName": "阿信支付宝验签服务",
+	"description": "阿信支付宝验签服务",
+	"id": 55947
 }

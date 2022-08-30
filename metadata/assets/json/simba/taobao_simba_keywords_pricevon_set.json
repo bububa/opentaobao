@@ -1,8 +1,4 @@
 {
-	"id": 21685,
-	"name": "taobao.simba.keywords.pricevon.set",
-	"apiChineseName": "设置一批关键词的信息",
-	"description": "设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "Keyword []",
-			"description": "成功设置关键词价格的关键词列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -97,7 +90,14 @@
 					"type": "Number",
 					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "成功设置关键词价格的关键词列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.pricevon.set",
+	"apiChineseName": "设置一批关键词的信息",
+	"description": "设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式",
+	"id": 21685
 }

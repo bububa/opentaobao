@@ -13,7 +13,7 @@ import (
 type AlibabaAlihealthDentalStoreAuditQueryAPIRequest struct {
 	model.Params
 	// 审核ID列表
-	_storeAuditIds []int64
+	_storeAuditIds []string
 }
 
 // NewAlibabaAlihealthDentalStoreAuditQueryRequest 初始化AlibabaAlihealthDentalStoreAuditQueryAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetApiParams() url.Valu
 
 // SetStoreAuditIds is StoreAuditIds Setter
 // 审核ID列表
-func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_storeAuditIds []int64) error {
+func (r *AlibabaAlihealthDentalStoreAuditQueryAPIRequest) SetStoreAuditIds(_storeAuditIds []string) error {
 	r._storeAuditIds = _storeAuditIds
 	r.Set("store_audit_ids", _storeAuditIds)
 	return nil
 }
 
 // GetStoreAuditIds StoreAuditIds Getter
-func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetStoreAuditIds() []int64 {
+func (r AlibabaAlihealthDentalStoreAuditQueryAPIRequest) GetStoreAuditIds() []string {
 	return r._storeAuditIds
 }

@@ -1,0 +1,87 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_user_id",
+					"type": "String",
+					"description": "云游戏MixUserId",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "API版本号, 可选"
+				}
+			],
+			"name": "request_dto",
+			"type": "TopQueryUserBodyDressRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "trace_id",
+							"type": "String",
+							"description": "装扮traceId"
+						},
+						{
+							"name": "face_data_json",
+							"type": "String",
+							"description": "装扮数据"
+						},
+						{
+							"name": "avatar_icons",
+							"type": "String[]",
+							"description": "头像icons"
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "形象性别 1-男, 2-女"
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "top请求id"
+						},
+						{
+							"name": "mix_user_id",
+							"type": "String",
+							"description": "云游戏mixUserId"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展数据"
+						}
+					],
+					"name": "data",
+					"type": "TopAvatarBodyDTO",
+					"description": "返回数据体"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.cgame.liteplay.avatar.body.query",
+	"apiChineseName": "新氢玩Avatar脸部装扮数据查询",
+	"description": "云游戏, 新氢玩, 围观互动,自研游戏包, 需要查询Avatar虚拟形象捏脸和装扮数据, 用来初始化游戏包形象.",
+	"id": 57835
+}

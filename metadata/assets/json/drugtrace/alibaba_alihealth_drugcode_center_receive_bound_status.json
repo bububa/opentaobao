@@ -1,8 +1,4 @@
 {
-	"id": 52194,
-	"name": "alibaba.alihealth.drugcode.center.receive.bound.status",
-	"apiChineseName": "接收中央随机化系统和临床研究机构的绑定确认状态",
-	"description": "临床用药试验-接收中央随机化系统和临床研究机构的绑定确认状态",
 	"requestParams": [
 		{
 			"name": "project_id",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "提示信息"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.center.receive.bound.status",
+	"apiChineseName": "接收中央随机化系统和临床研究机构的绑定确认状态",
+	"description": "临床用药试验-接收中央随机化系统和临床研究机构的绑定确认状态",
+	"id": 52194
 }

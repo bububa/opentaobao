@@ -1,8 +1,4 @@
 {
-	"id": 47702,
-	"name": "alibaba.wdk.sku.scroll.query",
-	"apiChineseName": "门店商品批量游标方式查询接口",
-	"description": "通过游标方式批量获取门店商品信息，包括商品条码，商品名称，价格，会员价等信息。",
 	"requestParams": [
 		{
 			"name": "merchant_cat_code",
@@ -27,241 +23,207 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiScrollPageResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "page_count",
 					"type": "Number",
-					"description": "商品商量总页数：分页大小20",
-					"required": true
+					"description": "商品商量总页数：分页大小20"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "商品总数",
-					"required": true
+					"description": "商品总数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "异常信息编码",
-					"required": true
+					"description": "异常信息编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "分页大小",
-					"required": true
+					"description": "分页大小"
 				},
 				{
-					"name": "model_list",
-					"type": "ModelList[]",
-					"description": "返回的结果集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "life_status",
 							"type": "String",
-							"description": "商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡",
-							"required": true
+							"description": "商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡"
 						},
 						{
 							"name": "barcodes",
 							"type": "String",
-							"description": "条码：多个条码用英文逗号分割",
-							"required": true
+							"description": "条码：多个条码用英文逗号分割"
 						},
 						{
 							"name": "sale_price",
 							"type": "String",
-							"description": "价格：单位元",
-							"required": true
+							"description": "价格：单位元"
 						},
 						{
 							"name": "member_price",
 							"type": "String",
-							"description": "会员价：单位元",
-							"required": true
+							"description": "会员价：单位元"
 						},
 						{
 							"name": "sale_unit",
 							"type": "String",
-							"description": "售卖单位",
-							"required": true
+							"description": "售卖单位"
 						},
 						{
 							"name": "weight_flag",
 							"type": "String",
-							"description": "是否称重品：1称重品0非称重品",
-							"required": true
+							"description": "是否称重品：1称重品0非称重品"
 						},
 						{
 							"name": "merchant_cat_code",
 							"type": "String",
-							"description": "商家类目编码",
-							"required": true
+							"description": "商家类目编码"
 						},
 						{
 							"name": "org_no",
 							"type": "String",
-							"description": "子公司编码",
-							"required": true
+							"description": "子公司编码"
 						},
 						{
 							"name": "ou_code",
 							"type": "String",
-							"description": "门店编码",
-							"required": true
+							"description": "门店编码"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店编码",
-							"required": true
+							"description": "渠道店编码"
 						},
 						{
 							"name": "channel_codes",
 							"type": "String",
-							"description": "渠道店类型：4淘宝",
-							"required": true
+							"description": "渠道店类型：4淘宝"
 						},
 						{
 							"name": "tax_class_no",
 							"type": "String",
-							"description": "税收编码(查询返回使用)",
-							"required": true
+							"description": "税收编码(查询返回使用)"
 						},
 						{
 							"name": "business_type",
 							"type": "Number",
-							"description": "业务类型 1：盒饭  2：生鲜",
-							"required": true
+							"description": "业务类型 1：盒饭  2：生鲜"
 						},
 						{
 							"name": "test_flag",
 							"type": "Number",
-							"description": "是否测试商品",
-							"required": true
+							"description": "是否测试商品"
 						},
 						{
 							"name": "service_flag",
 							"type": "Number",
-							"description": "是否服务商品",
-							"required": true
+							"description": "是否服务商品"
 						},
 						{
 							"name": "modified_time",
 							"type": "String",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "商家编码"
 						},
 						{
 							"name": "supplier_no",
 							"type": "String",
-							"description": "默认供应商",
-							"required": true
+							"description": "默认供应商"
 						},
 						{
 							"name": "short_title",
 							"type": "String",
-							"description": "短标题",
-							"required": true
+							"description": "短标题"
 						},
 						{
 							"name": "online_sale_flag",
 							"type": "Number",
-							"description": "是否线上可售 是 0：否 1：是",
-							"required": true
+							"description": "是否线上可售 是 0：否 1：是"
 						},
 						{
 							"name": "sale_spec",
 							"type": "String",
-							"description": "销售规格描述",
-							"required": true
+							"description": "销售规格描述"
 						},
 						{
 							"name": "processing_time",
 							"type": "Number",
-							"description": "加工时间 单位：分钟",
-							"required": true
+							"description": "加工时间 单位：分钟"
 						},
 						{
 							"name": "back_cat_code",
 							"type": "String",
-							"description": "后台平台类目编码",
-							"required": true
+							"description": "后台平台类目编码"
 						},
 						{
 							"name": "input_tax_rate",
 							"type": "String",
-							"description": "进项税率",
-							"required": true
+							"description": "进项税率"
 						},
 						{
 							"name": "tax_rate",
 							"type": "String",
-							"description": "销项税率",
-							"required": true
+							"description": "销项税率"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "品牌名称",
-							"required": true
+							"description": "品牌名称"
 						},
 						{
 							"name": "brand_code",
 							"type": "String",
-							"description": "品牌编码",
-							"required": true
+							"description": "品牌编码"
 						},
 						{
 							"name": "shelf_life",
 							"type": "String",
-							"description": "保质期天数，商品的保质期（单位：天）,0表示没有保质期",
-							"required": true
+							"description": "保质期天数，商品的保质期（单位：天）,0表示没有保质期"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "ModelList[]",
+					"description": "返回的结果集"
 				},
 				{
 					"name": "scroll_id",
 					"type": "String",
-					"description": "游标：作为下一次请求数据的参数",
-					"required": true
+					"description": "游标：作为下一次请求数据的参数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiScrollPageResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.scroll.query",
+	"apiChineseName": "门店商品批量游标方式查询接口",
+	"description": "通过游标方式批量获取门店商品信息，包括商品条码，商品名称，价格，会员价等信息。",
+	"id": 47702
 }

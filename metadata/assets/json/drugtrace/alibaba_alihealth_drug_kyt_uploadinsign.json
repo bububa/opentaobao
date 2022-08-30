@@ -1,8 +1,4 @@
 {
-	"id": 41653,
-	"name": "alibaba.alihealth.drug.kyt.uploadinsign",
-	"apiChineseName": "仓库批量扫码回传接口",
-	"description": "连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -36,8 +32,8 @@
 			"name": "trace_codes",
 			"type": "String[]",
 			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 4000
+			"maxListSize": 4000,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -61,5 +57,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 false 失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.uploadinsign",
+	"apiChineseName": "仓库批量扫码回传接口",
+	"description": "连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。",
+	"id": 41653
 }

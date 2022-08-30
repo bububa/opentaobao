@@ -1,8 +1,4 @@
 {
-	"id": 27333,
-	"name": "alibaba.alihealth.examination.reserve.confirm",
-	"apiChineseName": "体检机构对接_体检套餐预定确认",
-	"description": "向体检机构确认用户购买的体检套餐信息",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -80,10 +76,6 @@
 			"description": "报告邮寄地址"
 		},
 		{
-			"name": "add_items",
-			"type": "AddItem[]",
-			"description": "加项列表",
-			"maxListSize": 50,
 			"subParams": [
 				{
 					"name": "version",
@@ -95,13 +87,13 @@
 					"type": "String",
 					"description": "加项id"
 				}
-			]
+			],
+			"name": "add_items",
+			"type": "AddItem[]",
+			"description": "加项列表",
+			"maxListSize": 50
 		},
 		{
-			"name": "add_packs",
-			"type": "AddPack[]",
-			"description": "加项包列表",
-			"maxListSize": 50,
 			"subParams": [
 				{
 					"name": "isv_pack_id",
@@ -113,7 +105,11 @@
 					"type": "Number",
 					"description": "版本号，isv需要进行校验版本号是否过期，判断加项包信息是否已更改，健康未同步"
 				}
-			]
+			],
+			"name": "add_packs",
+			"type": "AddPack[]",
+			"description": "加项包列表",
+			"maxListSize": 50
 		},
 		{
 			"name": "hava_report",
@@ -131,9 +127,6 @@
 			"description": "服务类型，ONSITE_SERVICE（到店检测）、DOOR_TO_DOOR_SERVICE（上门检测）"
 		},
 		{
-			"name": "service_address",
-			"type": "AddAddress",
-			"description": "上门服务的上门地址",
 			"subParams": [
 				{
 					"name": "address",
@@ -180,7 +173,10 @@
 					"type": "String",
 					"description": "省份名称（高德标准）"
 				}
-			]
+			],
+			"name": "service_address",
+			"type": "AddAddress",
+			"description": "上门服务的上门地址"
 		},
 		{
 			"name": "reserve_time_start",
@@ -208,6 +204,15 @@
 			"name": "response_code",
 			"type": "String",
 			"description": "返回结果编码"
+		},
+		{
+			"name": "voucher_code",
+			"type": "String",
+			"description": "预约电子凭证码值，若返回凭证码值，会展示在订单详情。用户到店/上门后，可以通过该码值来验证订单，不同预约码值不能重复。长度不超过64位"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.confirm",
+	"apiChineseName": "体检机构对接_体检套餐预定确认",
+	"description": "向体检机构确认用户购买的体检套餐信息",
+	"id": 27333
 }

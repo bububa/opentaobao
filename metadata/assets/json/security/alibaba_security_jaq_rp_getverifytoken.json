@@ -1,8 +1,4 @@
 {
-	"id": 26728,
-	"name": "alibaba.security.jaq.rp.getverifytoken",
-	"apiChineseName": "聚安全实人认证获取认证会话token",
-	"description": "聚安全实人认证获取认证会话token",
 	"requestParams": [
 		{
 			"name": "account_id",
@@ -34,9 +30,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RpInitResultBo",
-			"description": "token信息",
 			"subParams": [
 				{
 					"name": "expire",
@@ -50,7 +43,14 @@
 					"description": "token",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "RpInitResultBo",
+			"description": "token信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.getverifytoken",
+	"apiChineseName": "聚安全实人认证获取认证会话token",
+	"description": "聚安全实人认证获取认证会话token",
+	"id": 26728
 }

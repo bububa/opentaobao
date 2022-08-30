@@ -1,8 +1,4 @@
 {
-	"id": 45449,
-	"name": "taobao.koubei.tribe.open.user.query",
-	"apiChineseName": "获取用户openId",
-	"description": "口碑综合体通过手机号码获取加密后的用户openId",
 	"requestParams": [
 		{
 			"name": "verify_code",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
@@ -36,10 +29,6 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "UserInfoDto",
-					"description": "用户信息DTO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "open_id",
@@ -48,10 +37,6 @@
 							"required": true
 						},
 						{
-							"name": "user_result_code",
-							"type": "UserResultCode",
-							"description": "用户结果code",
-							"required": true,
 							"subParams": [
 								{
 									"name": "result_code",
@@ -71,9 +56,17 @@
 									"description": "结果描述",
 									"required": true
 								}
-							]
+							],
+							"name": "user_result_code",
+							"type": "UserResultCode",
+							"description": "用户结果code",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "UserInfoDto",
+					"description": "用户信息DTO",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -87,7 +80,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.koubei.tribe.open.user.query",
+	"apiChineseName": "获取用户openId",
+	"description": "口碑综合体通过手机号码获取加密后的用户openId",
+	"id": 45449
 }

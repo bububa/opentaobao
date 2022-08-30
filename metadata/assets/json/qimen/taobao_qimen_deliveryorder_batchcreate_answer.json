@@ -1,17 +1,8 @@
 {
-	"id": 27267,
-	"name": "taobao.qimen.deliveryorder.batchcreate.answer",
-	"apiChineseName": "发货单创建结果通知接口(批量)",
-	"description": "WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "DeliveryOrderBatchCreateAnswerRequest",
 			"subParams": [
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "发货单列表",
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -19,9 +10,6 @@
 							"description": "发货单号"
 						},
 						{
-							"name": "orderInfo",
-							"type": "OrderInfo",
-							"description": "单据详情",
 							"subParams": [
 								{
 									"name": "createTime",
@@ -43,12 +31,12 @@
 									"type": "String",
 									"description": "物流公司编码(统仓统配使用)"
 								}
-							]
+							],
+							"name": "orderInfo",
+							"type": "OrderInfo",
+							"description": "单据详情"
 						},
 						{
-							"name": "deliveryOrders",
-							"type": "DeliveryOrder[]",
-							"description": "拆单情况",
 							"subParams": [
 								{
 									"name": "deliveryOrderId",
@@ -66,9 +54,6 @@
 									"description": "物流公司编码(统仓统配使用)"
 								},
 								{
-									"name": "orderLines",
-									"type": "OrderLine[]",
-									"description": "单据列表",
 									"subParams": [
 										{
 											"name": "orderLineNo",
@@ -90,14 +75,20 @@
 											"type": "String",
 											"description": "数量"
 										}
-									]
+									],
+									"name": "orderLines",
+									"type": "OrderLine[]",
+									"description": "单据列表"
 								},
 								{
 									"name": "createTime",
 									"type": "String",
 									"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)"
 								}
-							]
+							],
+							"name": "deliveryOrders",
+							"type": "DeliveryOrder[]",
+							"description": "拆单情况"
 						},
 						{
 							"name": "flag",
@@ -114,20 +105,23 @@
 							"type": "String",
 							"description": "响应信息"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "发货单列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "DeliveryOrderBatchCreateAnswerRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -147,7 +141,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.deliveryorder.batchcreate.answer",
+	"apiChineseName": "发货单创建结果通知接口(批量)",
+	"description": "WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）",
+	"id": 27267
 }

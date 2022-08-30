@@ -1,8 +1,4 @@
 {
-	"id": 48525,
-	"name": "taobao.jym.member.realname.verify.withoutuid",
-	"apiChineseName": "用户实名认证",
-	"description": "开放用户实名认证接口使用",
 	"requestParams": [
 		{
 			"name": "encrypt_name",
@@ -17,55 +13,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "实名认证结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "RealNameVerifyTopDto",
-					"description": "1",
-					"required": true,
 					"subParams": [
 						{
 							"name": "verify_msg",
 							"type": "String",
-							"description": "实名校验结果信息",
-							"required": true
+							"description": "实名校验结果信息"
 						},
 						{
 							"name": "verify_code",
 							"type": "Number",
-							"description": "实名校验结果信息",
-							"required": true
+							"description": "实名校验结果信息"
 						},
 						{
 							"name": "identity_code",
 							"type": "String",
-							"description": "实名校验结果信息",
-							"required": true
+							"description": "实名校验结果信息"
 						}
-					]
+					],
+					"name": "result",
+					"type": "RealNameVerifyTopDto",
+					"description": "1"
 				},
 				{
 					"name": "succ",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "state_code",
 					"type": "String",
-					"description": "调用接口结果编码",
-					"required": true
+					"description": "调用接口结果编码"
 				},
 				{
 					"name": "extra_err_msg",
 					"type": "String",
-					"description": "调用接口异常信息明细",
-					"required": true
+					"description": "调用接口异常信息明细"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "实名认证结果"
 		}
-	]
+	],
+	"name": "taobao.jym.member.realname.verify.withoutuid",
+	"apiChineseName": "用户实名认证",
+	"description": "开放用户实名认证接口使用",
+	"id": 48525
 }

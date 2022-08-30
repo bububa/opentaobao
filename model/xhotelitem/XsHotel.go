@@ -2,12 +2,12 @@ package xhotelitem
 
 // XsHotel 结构体
 type XsHotel struct {
-	// 国家编码
-	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// 酒店地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 商圈
 	Business string `json:"business,omitempty" xml:"business,omitempty"`
+	// 国家编码
+	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// 门店名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 英文名称
@@ -34,18 +34,18 @@ type XsHotel struct {
 	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 精度
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
+	// 区域编码
+	District int64 `json:"district,omitempty" xml:"district,omitempty"`
+	// 城市编码
+	City int64 `json:"city,omitempty" xml:"city,omitempty"`
+	// 省份编码
+	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
+	// 0:国内;1:国外
+	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 系统自动生成
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 门店状态：0: 正常;-2:停售；-1：删除
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 省份编码
-	Province int64 `json:"province,omitempty" xml:"province,omitempty"`
-	// 城市编码
-	City int64 `json:"city,omitempty" xml:"city,omitempty"`
-	// 区域编码
-	District int64 `json:"district,omitempty" xml:"district,omitempty"`
-	// 0:国内;1:国外
-	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
 	// 房间数
 	Rooms int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
 	// position_type

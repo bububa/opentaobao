@@ -1,8 +1,4 @@
 {
-	"id": 55336,
-	"name": "alibaba.idle.isv.pv.list",
-	"apiChineseName": "闲鱼已验货pv查询",
-	"description": "根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择",
 	"requestParams": [
 		{
 			"name": "channel_cat_id",
@@ -10,10 +6,6 @@
 			"description": "闲鱼渠道类目的id"
 		},
 		{
-			"name": "brand_model_info",
-			"type": "IdleNewPubValueDo[]",
-			"description": "系统自动生成",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "value_id",
@@ -40,104 +32,98 @@
 					"type": "String",
 					"description": "属性的id"
 				}
-			]
+			],
+			"name": "brand_model_info",
+			"type": "IdleNewPubValueDo[]",
+			"description": "系统自动生成",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "property_list",
-					"type": "IdleNewPubPropertyValueDo[]",
-					"description": "品牌/型号两级属性",
-					"required": true,
 					"subParams": [
 						{
-							"name": "values_list",
-							"type": "IdleNewPubValueDo[]",
-							"description": "属性下所有的值",
-							"required": true,
 							"subParams": [
 								{
 									"name": "value_id",
 									"type": "String",
-									"description": "值的id，保存时需回传",
-									"required": true
+									"description": "值的id，保存时需回传"
 								},
 								{
 									"name": "value_name",
 									"type": "String",
-									"description": "值的名称，显示。保存时需回传",
-									"required": true
+									"description": "值的名称，显示。保存时需回传"
 								},
 								{
 									"name": "property_name",
 									"type": "String",
-									"description": "属性的名称，保存时需回传",
-									"required": true
+									"description": "属性的名称，保存时需回传"
 								},
 								{
 									"name": "channel_cat_id",
 									"type": "String",
-									"description": "渠道类目id，保存时需回传",
-									"required": true
+									"description": "渠道类目id，保存时需回传"
 								},
 								{
 									"name": "property_id",
 									"type": "String",
-									"description": "属性的key，保存时需回传",
-									"required": true
+									"description": "属性的key，保存时需回传"
 								}
-							]
+							],
+							"name": "values_list",
+							"type": "IdleNewPubValueDo[]",
+							"description": "属性下所有的值"
 						},
 						{
 							"name": "property_name",
 							"type": "String",
-							"description": "属性的名称，显示",
-							"required": true
+							"description": "属性的名称，显示"
 						},
 						{
 							"name": "is_multiple",
 							"type": "Boolean",
-							"description": "是否多选",
-							"required": true
+							"description": "是否多选"
 						},
 						{
 							"name": "input_word",
 							"type": "String",
-							"description": "输入提示文本",
-							"required": true
+							"description": "输入提示文本"
 						},
 						{
 							"name": "property_id",
 							"type": "String",
-							"description": "属性的key",
-							"required": true
+							"description": "属性的key"
 						}
-					]
+					],
+					"name": "property_list",
+					"type": "IdleNewPubPropertyValueDo[]",
+					"description": "品牌/型号两级属性"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.isv.pv.list",
+	"apiChineseName": "闲鱼已验货pv查询",
+	"description": "根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择",
+	"id": 55336
 }

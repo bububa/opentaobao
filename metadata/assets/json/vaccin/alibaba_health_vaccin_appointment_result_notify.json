@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"name": "appoint_result",
+			"type": "Boolean",
+			"description": "预约结果",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "预约单id",
+			"required": true
+		},
+		{
+			"name": "period_seq_no",
+			"type": "Number",
+			"description": "时间段内序号"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "鹿苗预约单外部id",
+			"required": true
+		},
+		{
+			"name": "fail_reason",
+			"type": "String",
+			"description": "预约失败原因"
+		},
+		{
+			"name": "success_code",
+			"type": "String",
+			"description": "预约成功码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.health.vaccin.appointment.result.notify",
+	"apiChineseName": "通知预约结果",
+	"description": "和ISV合作，需ISV回传预约结果。",
+	"id": 61405
+}

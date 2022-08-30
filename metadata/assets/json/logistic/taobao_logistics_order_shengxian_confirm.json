@@ -1,8 +1,4 @@
 {
-	"id": 23039,
-	"name": "taobao.logistics.order.shengxian.confirm",
-	"apiChineseName": "物流宝生鲜冷链的发货",
-	"description": "优鲜送，生鲜业务使用该接口发货，交易订单状态会直接变成卖家已发货。不支持货到付款、在线下单类型的订单。",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -56,9 +52,6 @@
 			"description": "是否成功"
 		},
 		{
-			"name": "ship_fresh",
-			"type": "ShipFresh",
-			"description": "发货成功后，返回承运商的信息",
 			"subParams": [
 				{
 					"name": "delivery_name",
@@ -80,7 +73,14 @@
 					"type": "String",
 					"description": "返回的地址信息"
 				}
-			]
+			],
+			"name": "ship_fresh",
+			"type": "ShipFresh",
+			"description": "发货成功后，返回承运商的信息"
 		}
-	]
+	],
+	"name": "taobao.logistics.order.shengxian.confirm",
+	"apiChineseName": "物流宝生鲜冷链的发货",
+	"description": "优鲜送，生鲜业务使用该接口发货，交易订单状态会直接变成卖家已发货。不支持货到付款、在线下单类型的订单。",
+	"id": 23039
 }

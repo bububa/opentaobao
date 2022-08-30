@@ -1,0 +1,112 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "淘宝频道",
+			"required": true
+		},
+		{
+			"name": "scenario_type",
+			"type": "Number",
+			"description": "标的类型",
+			"required": true
+		},
+		{
+			"name": "outer_creative_id",
+			"type": "String",
+			"description": "渠道-创意id",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "长文案"
+		},
+		{
+			"name": "img_url",
+			"type": "String",
+			"description": "图片url"
+		},
+		{
+			"name": "h5_url",
+			"type": "String",
+			"description": "H5落地页链接"
+		},
+		{
+			"name": "ad_type",
+			"type": "Number",
+			"description": "广告类型",
+			"required": true
+		},
+		{
+			"name": "video_url",
+			"type": "String",
+			"description": "视频url"
+		},
+		{
+			"name": "sub_title",
+			"type": "String",
+			"description": "短文案"
+		},
+		{
+			"name": "creative_type",
+			"type": "Number",
+			"description": "创意类型"
+		},
+		{
+			"name": "dp_url",
+			"type": "String",
+			"description": "dp链接"
+		},
+		{
+			"name": "app_id",
+			"type": "Number",
+			"description": "应用id",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "创意id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "鹰眼id"
+		},
+		{
+			"name": "response_code",
+			"type": "Number",
+			"description": "参数错误"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "更新创意的id"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "请求结果"
+		}
+	],
+	"name": "taobao.usergrowth.ad.material.update",
+	"apiChineseName": "素材更新",
+	"description": "素材更新",
+	"id": 60597
+}

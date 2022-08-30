@@ -1,8 +1,4 @@
 {
-	"id": 49977,
-	"name": "alibaba.ailabs.iot.business.recipe.getpage",
-	"apiChineseName": "分页查询食谱",
-	"description": "分页查询食谱数据",
 	"requestParams": [
 		{
 			"name": "open_account_id",
@@ -23,93 +19,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				},
 				{
-					"name": "ret_value",
-					"type": "PageInfo",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
 							"name": "page_num",
 							"type": "Number",
-							"description": "分页页码",
-							"required": true
+							"description": "分页页码"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
-							"name": "list",
-							"type": "BusinessRecipeOpenDto[]",
-							"description": "数据集",
-							"required": true,
 							"subParams": [
 								{
 									"name": "description",
 									"type": "String",
-									"description": "食谱描述",
-									"required": true
+									"description": "食谱描述"
 								},
 								{
 									"name": "recipe_type",
 									"type": "Number",
-									"description": "食谱类型 0视频菜谱 1图文菜谱",
-									"required": true
-								},
-								{
-									"name": "function_type",
-									"type": "String",
-									"description": "菜谱功能类型 1 普通食谱 2 智能食谱",
-									"required": true
-								},
-								{
-									"name": "business_recipe_id",
-									"type": "String",
-									"description": "行业食谱id",
-									"required": true
+									"description": "食谱类型 0视频菜谱 1图文菜谱"
 								},
 								{
 									"name": "recipe_name_cn",
 									"type": "String",
-									"description": "食谱中文名",
-									"required": true
+									"description": "食谱中文名"
+								},
+								{
+									"name": "function_type",
+									"type": "String",
+									"description": "菜谱功能类型 1 普通食谱 2 智能食谱"
+								},
+								{
+									"name": "business_recipe_id",
+									"type": "String",
+									"description": "行业食谱id"
 								}
-							]
+							],
+							"name": "list",
+							"type": "BusinessRecipeOpenDto[]",
+							"description": "数据集"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "PageInfo",
+					"description": "返回结果"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "追踪id",
-					"required": true
+					"description": "追踪id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.business.recipe.getpage",
+	"apiChineseName": "分页查询食谱",
+	"description": "分页查询食谱数据",
+	"id": 49977
 }

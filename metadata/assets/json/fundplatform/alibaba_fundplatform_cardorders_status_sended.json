@@ -1,8 +1,4 @@
 {
-	"id": 28546,
-	"name": "alibaba.fundplatform.cardorders.status.sended",
-	"apiChineseName": "制卡商通知实体卡发货完成",
-	"description": "当制卡商将实体卡发货完成后，需要调用该接口，通知我们已发货。",
 	"requestParams": [
 		{
 			"name": "card_order_id",
@@ -25,17 +21,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CardMakingInformResponse",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CardMakingInformResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.cardorders.status.sended",
+	"apiChineseName": "制卡商通知实体卡发货完成",
+	"description": "当制卡商将实体卡发货完成后，需要调用该接口，通知我们已发货。",
+	"id": 28546
 }

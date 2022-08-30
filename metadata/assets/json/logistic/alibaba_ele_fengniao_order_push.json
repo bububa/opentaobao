@@ -1,14 +1,6 @@
 {
-	"id": 39571,
-	"name": "alibaba.ele.fengniao.order.push",
-	"apiChineseName": "推送订单",
-	"description": "推送淘宝订单至蜂鸟开放平台配送",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "参数param",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_id",
@@ -25,7 +17,11 @@
 					"type": "String",
 					"description": "渠道code"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "参数param",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -34,5 +30,9 @@
 			"type": "String",
 			"description": "msg"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.order.push",
+	"apiChineseName": "推送订单",
+	"description": "推送淘宝订单至蜂鸟开放平台配送",
+	"id": 39571
 }

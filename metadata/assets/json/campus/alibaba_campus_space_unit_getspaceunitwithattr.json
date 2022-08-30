@@ -1,13 +1,6 @@
 {
-	"id": 33368,
-	"name": "alibaba.campus.space.unit.getspaceunitwithattr",
-	"apiChineseName": "空间单元id查业务属性实例",
-	"description": "空间单元id查业务属性实例",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "操作用户上下文",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -30,7 +23,10 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文"
 		},
 		{
 			"name": "space_unit_id",
@@ -41,15 +37,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "PoiInfo",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "uuid",
@@ -160,10 +149,6 @@
 							"required": true
 						},
 						{
-							"name": "attrs",
-							"type": "TypeAttrInstance[]",
-							"description": "业务属性",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type_attr_ref_id",
@@ -201,7 +186,11 @@
 									"description": "值类型",
 									"required": true
 								}
-							]
+							],
+							"name": "attrs",
+							"type": "TypeAttrInstance[]",
+							"description": "业务属性",
+							"required": true
 						},
 						{
 							"name": "ft_id",
@@ -216,10 +205,6 @@
 							"required": true
 						},
 						{
-							"name": "central",
-							"type": "Point",
-							"description": "中心点坐标",
-							"required": true,
 							"subParams": [
 								{
 									"name": "lng",
@@ -233,7 +218,11 @@
 									"description": "纬度",
 									"required": true
 								}
-							]
+							],
+							"name": "central",
+							"type": "Point",
+							"description": "中心点坐标",
+							"required": true
 						},
 						{
 							"name": "area",
@@ -247,7 +236,11 @@
 							"description": "heightStr",
 							"required": true
 						}
-					]
+					],
+					"name": "content",
+					"type": "PoiInfo",
+					"description": "返回内容",
+					"required": true
 				},
 				{
 					"name": "request_id",
@@ -279,7 +272,14 @@
 					"description": "错误级别",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.unit.getspaceunitwithattr",
+	"apiChineseName": "空间单元id查业务属性实例",
+	"description": "空间单元id查业务属性实例",
+	"id": 33368
 }

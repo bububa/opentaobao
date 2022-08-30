@@ -1,0 +1,363 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "arr_city",
+					"type": "String",
+					"description": "到达城市三字码",
+					"required": true
+				},
+				{
+					"name": "dep_city",
+					"type": "String",
+					"description": "出发城市三字码",
+					"required": true
+				},
+				{
+					"name": "is_voluntary",
+					"type": "Number",
+					"description": "是否自愿",
+					"required": true
+				},
+				{
+					"name": "modify_depart_date",
+					"type": "String",
+					"description": "改签出发时间",
+					"required": true
+				},
+				{
+					"name": "modify_flight_no",
+					"type": "String",
+					"description": "改签航班号",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "改签乘客姓名",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_modify_flight_info_rq",
+			"type": "BtripFlightModifyFlightInfoRq",
+			"description": "改签询价入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "airline_code",
+											"type": "String",
+											"description": "航司编码"
+										},
+										{
+											"name": "airline_name",
+											"type": "String",
+											"description": "航司名称"
+										},
+										{
+											"name": "airline_simple_name",
+											"type": "String",
+											"description": "航司简称"
+										}
+									],
+									"name": "airline_info",
+									"type": "AirlineInfo",
+									"description": "航司信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "airport_code",
+											"type": "String",
+											"description": "到达机场编码"
+										},
+										{
+											"name": "airport_name",
+											"type": "String",
+											"description": "到达机场名称"
+										},
+										{
+											"name": "city_code",
+											"type": "String",
+											"description": "城市三字码"
+										},
+										{
+											"name": "city_name",
+											"type": "String",
+											"description": "城市名称"
+										},
+										{
+											"name": "terminal",
+											"type": "String",
+											"description": "航站楼"
+										}
+									],
+									"name": "arr_airport_info",
+									"type": "AirportInfo",
+									"description": "到达机场信息"
+								},
+								{
+									"name": "build_price",
+									"type": "Number",
+									"description": "机建费"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "舱等"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "舱位"
+										},
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "舱等"
+										},
+										{
+											"name": "cabin_desc",
+											"type": "String",
+											"description": "舱位描述"
+										},
+										{
+											"name": "child_cabin",
+											"type": "String",
+											"description": "子舱位"
+										},
+										{
+											"name": "left_num",
+											"type": "String",
+											"description": "剩余数量"
+										},
+										{
+											"subParams": [
+												{
+													"name": "passenger_type",
+													"type": "Number",
+													"description": "乘客类型"
+												},
+												{
+													"name": "upgrade_fee",
+													"type": "Number",
+													"description": "升舱费"
+												},
+												{
+													"name": "modify_price",
+													"type": "Number",
+													"description": "改签费"
+												}
+											],
+											"name": "modify_price_list",
+											"type": "ModifyPrice[]",
+											"description": "改签价格列表"
+										}
+									],
+									"name": "cabin_list",
+									"type": "CabinInfo[]",
+									"description": "舱位列表"
+								},
+								{
+									"name": "carrier_airline",
+									"type": "String",
+									"description": "共享航班"
+								},
+								{
+									"name": "carrier_no",
+									"type": "String",
+									"description": "共享航班号"
+								},
+								{
+									"subParams": [
+										{
+											"name": "airport_code",
+											"type": "String",
+											"description": "机场编码"
+										},
+										{
+											"name": "airport_name",
+											"type": "String",
+											"description": "机场名称"
+										},
+										{
+											"name": "city_code",
+											"type": "String",
+											"description": "城市编码"
+										},
+										{
+											"name": "city_name",
+											"type": "String",
+											"description": "城市名称"
+										},
+										{
+											"name": "terminal",
+											"type": "String",
+											"description": "航站楼"
+										}
+									],
+									"name": "dep_airport_info",
+									"type": "AirportInfo",
+									"description": "出发机场信息"
+								},
+								{
+									"name": "dep_city_code",
+									"type": "String",
+									"description": "出发城市三字码"
+								},
+								{
+									"name": "dep_date",
+									"type": "Date",
+									"description": "出发日期"
+								},
+								{
+									"name": "discount",
+									"type": "Number",
+									"description": "折扣"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "is_share",
+									"type": "Boolean",
+									"description": "是否共享"
+								},
+								{
+									"name": "is_stop",
+									"type": "Boolean",
+									"description": "是否经停"
+								},
+								{
+									"name": "lowest_cabin",
+									"type": "String",
+									"description": "最低舱位"
+								},
+								{
+									"name": "lowest_cabin_class",
+									"type": "String",
+									"description": "最低舱等"
+								},
+								{
+									"name": "lowest_cabin_num",
+									"type": "String",
+									"description": "最低舱数量"
+								},
+								{
+									"subParams": [
+										{
+											"name": "passenger_type",
+											"type": "Number",
+											"description": "乘客类型"
+										},
+										{
+											"name": "upgrade_fee",
+											"type": "Number",
+											"description": "升舱费用"
+										},
+										{
+											"name": "modify_price",
+											"type": "Number",
+											"description": "改签费"
+										}
+									],
+									"name": "lowest_cabin_price_list",
+									"type": "ModifyPrice[]",
+									"description": "最低舱位价格列表"
+								},
+								{
+									"name": "oil_price",
+									"type": "Number",
+									"description": "燃油费用"
+								},
+								{
+									"name": "stop_arr_time",
+									"type": "String",
+									"description": "经停到达时间"
+								},
+								{
+									"name": "stop_city",
+									"type": "String",
+									"description": "经停城市"
+								},
+								{
+									"name": "stop_dep_time",
+									"type": "String",
+									"description": "经停出发时间"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价"
+								},
+								{
+									"name": "total_price",
+									"type": "String",
+									"description": "总价"
+								}
+							],
+							"name": "flight_info_list",
+							"type": "FlightInfoDto[]",
+							"description": "改签航班信息列表"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightModifyFlightInfoRs",
+					"description": "响应子模块"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应结果"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.change.query",
+	"apiChineseName": "改签航班询价",
+	"description": "商旅机票改签航班询价",
+	"id": 57657
+}

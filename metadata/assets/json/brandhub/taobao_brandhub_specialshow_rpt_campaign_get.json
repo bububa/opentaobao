@@ -1,8 +1,4 @@
 {
-	"id": 43976,
-	"name": "taobao.brandhub.specialshow.rpt.campaign.get",
-	"apiChineseName": "品牌号品牌特秀计划报表数据查询",
-	"description": "获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -39,65 +35,60 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "campaign_rpt_list",
-			"type": "Result []",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "thedate",
 					"type": "String",
-					"description": "日期",
-					"required": true
+					"description": "日期"
 				},
 				{
 					"name": "solution_id",
 					"type": "Number",
-					"description": "计划id",
-					"required": true
+					"description": "计划id"
 				},
 				{
 					"name": "solution_name",
 					"type": "String",
-					"description": "计划名称",
-					"required": true
+					"description": "计划名称"
 				},
 				{
 					"name": "impression",
 					"type": "String",
-					"description": "展现",
-					"required": true
+					"description": "展现"
 				},
 				{
 					"name": "click",
 					"type": "String",
-					"description": "点击",
-					"required": true
+					"description": "点击"
 				},
 				{
 					"name": "uv",
 					"type": "String",
-					"description": "访客数",
-					"required": true
+					"description": "访客数"
 				},
 				{
 					"name": "click_uv",
 					"type": "String",
-					"description": "点击访客数",
-					"required": true
+					"description": "点击访客数"
 				},
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "点击率",
-					"required": true
+					"description": "点击率"
 				},
 				{
 					"name": "uv_ctr",
 					"type": "String",
-					"description": "访客点击率",
-					"required": true
+					"description": "访客点击率"
 				}
-			]
+			],
+			"name": "campaign_rpt_list",
+			"type": "Result []",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.brandhub.specialshow.rpt.campaign.get",
+	"apiChineseName": "品牌号品牌特秀计划报表数据查询",
+	"description": "获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
+	"id": 43976
 }

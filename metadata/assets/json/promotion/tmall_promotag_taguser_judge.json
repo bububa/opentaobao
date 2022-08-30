@@ -1,8 +1,4 @@
 {
-	"id": 21773,
-	"name": "tmall.promotag.taguser.judge",
-	"apiChineseName": "用户标签判断接口",
-	"description": "查询用户是否有标签",
 	"requestParams": [
 		{
 			"name": "tag_id",
@@ -11,10 +7,19 @@
 			"required": true
 		},
 		{
+			"name": "ouid",
+			"type": "String",
+			"description": "买家ID"
+		},
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "买家ID"
+		},
+		{
 			"name": "nick",
 			"type": "String",
-			"description": "买家昵称",
-			"required": true
+			"description": "昵称"
 		}
 	],
 	"responseParams": [
@@ -28,5 +33,9 @@
 			"type": "Boolean",
 			"description": "用户是否有标签"
 		}
-	]
+	],
+	"name": "tmall.promotag.taguser.judge",
+	"apiChineseName": "用户标签判断接口",
+	"description": "查询用户是否有标签",
+	"id": 21773
 }

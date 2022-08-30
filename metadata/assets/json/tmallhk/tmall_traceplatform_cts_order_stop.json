@@ -1,13 +1,6 @@
 {
-	"id": 40205,
-	"name": "tmall.traceplatform.cts.order.stop",
-	"apiChineseName": "CTS截断订单",
-	"description": "截断CTS订单",
 	"requestParams": [
 		{
-			"name": "trace_info",
-			"type": "TraceInfo",
-			"description": "入参traceInfo",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -34,14 +27,14 @@
 					"type": "String",
 					"description": "溯源码"
 				}
-			]
+			],
+			"name": "trace_info",
+			"type": "TraceInfo",
+			"description": "入参traceInfo"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
@@ -58,7 +51,14 @@
 					"type": "Boolean",
 					"description": "是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.cts.order.stop",
+	"apiChineseName": "CTS截断订单",
+	"description": "截断CTS订单",
+	"id": 40205
 }

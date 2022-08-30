@@ -1,13 +1,6 @@
 {
-	"id": 48600,
-	"name": "taobao.xhotel.info.list.get.for.hello",
-	"apiChineseName": "哈罗获取酒店详情",
-	"description": "哈罗合作项目，供哈罗合作方批量和增量两种场景下查询已开通城市下的标准酒店及房型信息，不涉及用户登录信息",
 	"requestParams": [
 		{
-			"name": "hotel_info_param",
-			"type": "HotelInfoParam",
-			"description": "参数封装模型",
 			"subParams": [
 				{
 					"name": "city_code",
@@ -39,14 +32,14 @@
 					"type": "String",
 					"description": "经过混淆的userId"
 				}
-			]
+			],
+			"name": "hotel_info_param",
+			"type": "HotelInfoParam",
+			"description": "参数封装模型"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
 					"name": "channel_id",
@@ -97,10 +90,6 @@
 					"required": true
 				},
 				{
-					"name": "results",
-					"type": "SHotelVo[]",
-					"description": "每个标准酒店及房型信息集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "address",
@@ -193,10 +182,6 @@
 							"required": true
 						},
 						{
-							"name": "level",
-							"type": "NameValuePair",
-							"description": "档次",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
@@ -210,7 +195,11 @@
 									"description": "档次名称",
 									"required": true
 								}
-							]
+							],
+							"name": "level",
+							"type": "NameValuePair",
+							"description": "档次",
+							"required": true
 						},
 						{
 							"name": "lng",
@@ -279,16 +268,8 @@
 							"required": true
 						},
 						{
-							"name": "shotel_properties_vo",
-							"type": "ShotelPropertiesSetVo",
-							"description": "服务设施集合类",
-							"required": true,
 							"subParams": [
 								{
-									"name": "shotel_booking_notics",
-									"type": "ShotelPropertiesVo[]",
-									"description": "预订须知",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -338,13 +319,13 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_booking_notics",
+									"type": "ShotelPropertiesVo[]",
+									"description": "预订须知",
+									"required": true
 								},
 								{
-									"name": "shotel_fun_facilities",
-									"type": "ShotelPropertiesVo[]",
-									"description": "娱乐设施",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -394,13 +375,13 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_fun_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "娱乐设施",
+									"required": true
 								},
 								{
-									"name": "shotel_hotel_facilities",
-									"type": "ShotelPropertiesVo[]",
-									"description": "酒店设施",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -450,13 +431,13 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_hotel_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店设施",
+									"required": true
 								},
 								{
-									"name": "shotel_hotel_services",
-									"type": "ShotelPropertiesVo[]",
-									"description": "酒店服务",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -506,13 +487,13 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_hotel_services",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店服务",
+									"required": true
 								},
 								{
-									"name": "shotel_nomal_pictures",
-									"type": "ShotelPropertiesVo[]",
-									"description": "酒店普通图",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -562,13 +543,13 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_nomal_pictures",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店普通图",
+									"required": true
 								},
 								{
-									"name": "shotel_room_facilities",
-									"type": "ShotelPropertiesVo[]",
-									"description": "酒店维度的房间设施",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
@@ -618,15 +599,19 @@
 											"description": "实际内容",
 											"required": true
 										}
-									]
+									],
+									"name": "shotel_room_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店维度的房间设施",
+									"required": true
 								}
-							]
+							],
+							"name": "shotel_properties_vo",
+							"type": "ShotelPropertiesSetVo",
+							"description": "服务设施集合类",
+							"required": true
 						},
 						{
-							"name": "sroom_types",
-							"type": "SRoomTypeVo[]",
-							"description": "标准房型列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "add_bed",
@@ -683,22 +668,10 @@
 									"required": true
 								},
 								{
-									"name": "room_type_bed_info",
-									"type": "RoomTypeBedInfoVo",
-									"description": "床型结构化信息",
-									"required": true,
 									"subParams": [
 										{
-											"name": "bed_info_groups",
-											"type": "BedInfoGroupVo[]",
-											"description": "或关系床型集合",
-											"required": true,
 											"subParams": [
 												{
-													"name": "bed_infos",
-													"type": "BedInfoVo[]",
-													"description": "和关系床型集合",
-													"required": true,
 													"subParams": [
 														{
 															"name": "bed_num",
@@ -730,7 +703,11 @@
 															"description": "长款",
 															"required": true
 														}
-													]
+													],
+													"name": "bed_infos",
+													"type": "BedInfoVo[]",
+													"description": "和关系床型集合",
+													"required": true
 												},
 												{
 													"name": "bed_num",
@@ -774,7 +751,11 @@
 													"description": "简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示",
 													"required": true
 												}
-											]
+											],
+											"name": "bed_info_groups",
+											"type": "BedInfoGroupVo[]",
+											"description": "或关系床型集合",
+											"required": true
 										},
 										{
 											"name": "brief_desc",
@@ -812,7 +793,11 @@
 											"description": "简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示",
 											"required": true
 										}
-									]
+									],
+									"name": "room_type_bed_info",
+									"type": "RoomTypeBedInfoVo",
+									"description": "床型结构化信息",
+									"required": true
 								},
 								{
 									"name": "shid",
@@ -845,16 +830,8 @@
 									"required": true
 								},
 								{
-									"name": "sroom_type_properties",
-									"type": "SRoomTypePropertiesSetVo",
-									"description": "房型附加属性集合",
-									"required": true,
 									"subParams": [
 										{
-											"name": "sroom_type_nomal_pictures",
-											"type": "ShotelPropertiesVo[]",
-											"description": "标准房型普通图集合",
-											"required": true,
 											"subParams": [
 												{
 													"name": "id",
@@ -904,13 +881,13 @@
 													"description": "属性值，图片类型为url",
 													"required": true
 												}
-											]
+											],
+											"name": "sroom_type_nomal_pictures",
+											"type": "ShotelPropertiesVo[]",
+											"description": "标准房型普通图集合",
+											"required": true
 										},
 										{
-											"name": "sroom_type_room_facilities",
-											"type": "ShotelPropertiesVo[]",
-											"description": "房间设施集合",
-											"required": true,
 											"subParams": [
 												{
 													"name": "id",
@@ -960,11 +937,23 @@
 													"description": "房间设施名称",
 													"required": true
 												}
-											]
+											],
+											"name": "sroom_type_room_facilities",
+											"type": "ShotelPropertiesVo[]",
+											"description": "房间设施集合",
+											"required": true
 										}
-									]
+									],
+									"name": "sroom_type_properties",
+									"type": "SRoomTypePropertiesSetVo",
+									"description": "房型附加属性集合",
+									"required": true
 								}
-							]
+							],
+							"name": "sroom_types",
+							"type": "SRoomTypeVo[]",
+							"description": "标准房型列表",
+							"required": true
 						},
 						{
 							"name": "star",
@@ -996,7 +985,11 @@
 							"description": "客房数",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "SHotelVo[]",
+					"description": "每个标准酒店及房型信息集合",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -1028,7 +1021,14 @@
 					"description": "分页查询结果中最后一个id，配合hasNext进行分页查询的性能优化",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "taobao.xhotel.info.list.get.for.hello",
+	"apiChineseName": "哈罗获取酒店详情",
+	"description": "哈罗合作项目，供哈罗合作方批量和增量两种场景下查询已开通城市下的标准酒店及房型信息，不涉及用户登录信息",
+	"id": 48600
 }

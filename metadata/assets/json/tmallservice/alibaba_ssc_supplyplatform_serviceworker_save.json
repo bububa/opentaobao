@@ -1,13 +1,6 @@
 {
-	"id": 55413,
-	"name": "alibaba.ssc.supplyplatform.serviceworker.save",
-	"apiChineseName": "服务商绑定工人",
-	"description": "服务商将上传工人与服务商自己建立关系，需要将工人的服务区域和住址回传",
 	"requestParams": [
 		{
-			"name": "worker_save_for_top_req_dto",
-			"type": "WorkerSaveForTopReqDto",
-			"description": "工人保存参数",
 			"subParams": [
 				{
 					"name": "id_number",
@@ -30,68 +23,71 @@
 					"description": "真实姓名"
 				},
 				{
-					"name": "worker_service_ability",
-					"type": "WorkerServiceAbility",
-					"description": "工人技能参数",
 					"subParams": [
 						{
 							"name": "area_code_list",
 							"type": "Number[]",
 							"description": "工人可服务区域"
 						}
-					]
+					],
+					"name": "worker_service_ability",
+					"type": "WorkerServiceAbility",
+					"description": "工人技能参数"
 				},
 				{
-					"name": "joined_store",
-					"type": "JoinedStore",
-					"description": "加入的网点参数",
 					"subParams": [
 						{
 							"name": "service_store_code",
 							"type": "String",
 							"description": "网点code"
 						}
-					]
+					],
+					"name": "joined_store",
+					"type": "JoinedStore",
+					"description": "加入的网点参数"
 				},
 				{
 					"name": "phone",
 					"type": "String",
 					"description": "手机号"
 				}
-			]
+			],
+			"name": "worker_save_for_top_req_dto",
+			"type": "WorkerSaveForTopReqDto",
+			"description": "工人保存参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "String",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "展示信息",
-					"required": true
+					"description": "展示信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.save",
+	"apiChineseName": "服务商绑定工人",
+	"description": "服务商将上传工人与服务商自己建立关系，需要将工人的服务区域和住址回传",
+	"id": 55413
 }

@@ -1,13 +1,6 @@
 {
-	"id": 46113,
-	"name": "alibaba.wdk.coupon.sku.remove",
-	"apiChineseName": "优惠券商品删除",
-	"description": "优惠券商品删除",
 	"requestParams": [
 		{
-			"name": "param_coupon_template_item_request",
-			"type": "CouponTemplateItemRequest",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "id",
@@ -15,9 +8,6 @@
 					"description": "模板表主键id"
 				},
 				{
-					"name": "prom_act_sku_list",
-					"type": "PromActSku[]",
-					"description": "券圈品设置",
 					"subParams": [
 						{
 							"name": "logic_group_number",
@@ -39,7 +29,10 @@
 							"type": "Number",
 							"description": "参与者类型 SKU_CODE(1, \"商品skuCode\"), SHOP(2, \"店铺\"), CATEGORY(3, \"品类\")"
 						}
-					]
+					],
+					"name": "prom_act_sku_list",
+					"type": "PromActSku[]",
+					"description": "券圈品设置"
 				},
 				{
 					"name": "source_id",
@@ -47,9 +40,6 @@
 					"description": "ump模板ID"
 				},
 				{
-					"name": "user_info",
-					"type": "UserInfo",
-					"description": "用户信息",
 					"subParams": [
 						{
 							"name": "source",
@@ -66,82 +56,82 @@
 							"type": "String",
 							"description": "用户名称"
 						}
-					]
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息"
 				}
-			]
+			],
+			"name": "param_coupon_template_item_request",
+			"type": "CouponTemplateItemRequest",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "CouponTemplateOperateResponse",
-					"description": "返回",
-					"required": true,
 					"subParams": [
 						{
-							"name": "id",
-							"type": "Number",
-							"description": "模板表主键",
-							"required": true
-						},
-						{
-							"name": "source_id",
-							"type": "Number",
-							"description": "ump模板ID",
-							"required": true
-						},
-						{
-							"name": "fail_elements",
-							"type": "FailElement[]",
-							"description": "创建结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "error_msg",
 									"type": "String",
-									"description": "错误信息",
-									"required": true
+									"description": "错误信息"
 								},
 								{
 									"name": "participate_id",
 									"type": "String",
-									"description": "参与者id",
-									"required": true
+									"description": "参与者id"
 								},
 								{
 									"name": "participate_name",
 									"type": "String",
-									"description": "参与者名称",
-									"required": true
+									"description": "参与者名称"
 								}
-							]
+							],
+							"name": "fail_elements",
+							"type": "FailElement[]",
+							"description": "创建结果"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "模板表主键"
+						},
+						{
+							"name": "source_id",
+							"type": "Number",
+							"description": "ump模板ID"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CouponTemplateOperateResponse",
+					"description": "返回"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.sku.remove",
+	"apiChineseName": "优惠券商品删除",
+	"description": "优惠券商品删除",
+	"id": 46113
 }

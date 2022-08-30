@@ -1,0 +1,87 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)"
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主编码"
+				},
+				{
+					"name": "consign_order_code",
+					"type": "String",
+					"description": "翱象的发货单号（翱象发货单号、交易主单号两个字段必须填一个）"
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易主单号（翱象发货单号、交易主单号两个字段必须填一个）"
+				},
+				{
+					"name": "sub_trade_ids",
+					"type": "String[]",
+					"description": "交易子单号"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因"
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求Id，用于幂等",
+					"required": true
+				}
+			],
+			"name": "cancel_consignorder_request",
+			"type": "CancelConsignOrderRequest",
+			"description": "取消仓内发货入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "cancel_consignorder_response",
+			"type": "CancelConsignOrderResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.consignorder.cancel",
+	"apiChineseName": "自动流转单据取消仓内发货",
+	"description": "自动流转单据取消仓内发货",
+	"id": 60342
+}

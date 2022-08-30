@@ -1,8 +1,4 @@
 {
-	"id": 45255,
-	"name": "alibaba.alihealth.drug.kyt.querybatchprod",
-	"apiChineseName": "批次产品查询(根据企业名和批次号查询产品信息)",
-	"description": "根据企业名和批次号查询药品信息，支持使用更名之前的老企业名查询，支持批次号大小写模糊，应用于药店或医院入库环节，通过在入库环节获取赋码的产品目录，可强制要求对相应的产品必须进行扫码入库；",
 	"requestParams": [
 		{
 			"name": "product_ent_name",
@@ -43,115 +39,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "models",
-					"type": "BatchProductInfoDTO[]",
-					"description": "批次产品信息DTO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ent_name",
 							"type": "String",
-							"description": "生产企业名称",
-							"required": true
+							"description": "生产企业名称"
 						},
 						{
 							"name": "pkg_spec",
 							"type": "String",
-							"description": "包装规格",
-							"required": true
+							"description": "包装规格"
 						},
 						{
 							"name": "product_date",
 							"type": "String",
-							"description": "生产日期",
-							"required": true
+							"description": "生产日期"
 						},
 						{
 							"name": "produce_batch_no",
 							"type": "String",
-							"description": "生产批号",
-							"required": true
+							"description": "生产批号"
 						},
 						{
 							"name": "drug_ent_base_id",
 							"type": "String",
-							"description": "药品唯一ID",
-							"required": true
+							"description": "药品唯一ID"
 						},
 						{
 							"name": "physic_name",
 							"type": "String",
-							"description": "药品通用名",
-							"required": true
+							"description": "药品通用名"
 						},
 						{
 							"name": "expire_date",
 							"type": "String",
-							"description": "失效日期",
-							"required": true
+							"description": "失效日期"
 						},
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "生产企业唯一ID",
-							"required": true
+							"description": "生产企业唯一ID"
 						},
 						{
 							"name": "curr_ent_id",
 							"type": "String",
-							"description": "生产企业流水ID",
-							"required": true
+							"description": "生产企业流水ID"
 						},
 						{
 							"name": "prepn_type",
 							"type": "String",
-							"description": "剂型",
-							"required": true
+							"description": "剂型"
 						},
 						{
 							"name": "sdc_code",
 							"type": "String",
-							"description": "药品本位码",
-							"required": true
+							"description": "药品本位码"
 						},
 						{
 							"name": "prepn_spec",
 							"type": "String",
-							"description": "制剂规格",
-							"required": true
+							"description": "制剂规格"
 						},
 						{
 							"name": "approval_licence_no",
 							"type": "String",
-							"description": "批准文号",
-							"required": true
+							"description": "批准文号"
 						}
-					]
+					],
+					"name": "models",
+					"type": "BatchProductInfoDTO[]",
+					"description": "批次产品信息DTO"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.querybatchprod",
+	"apiChineseName": "批次产品查询(根据企业名和批次号查询产品信息)",
+	"description": "根据企业名和批次号查询药品信息，支持使用更名之前的老企业名查询，支持批次号大小写模糊，应用于药店或医院入库环节，通过在入库环节获取赋码的产品目录，可强制要求对相应的产品必须进行扫码入库；",
+	"id": 45255
 }

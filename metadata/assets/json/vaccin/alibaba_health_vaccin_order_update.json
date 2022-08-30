@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"name": "action_time",
+			"type": "Number",
+			"description": "时间戳"
+		},
+		{
+			"name": "action_type",
+			"type": "String",
+			"description": "操作类型"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "预约单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "1"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.health.vaccin.order.update",
+	"apiChineseName": "回传取号状态",
+	"description": "回传取号状态",
+	"id": 61404
+}

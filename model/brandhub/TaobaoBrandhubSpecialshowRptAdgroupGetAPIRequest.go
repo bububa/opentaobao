@@ -14,12 +14,12 @@ type TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest struct {
 	model.Params
 	// 开始时间(最多可查询最近90天)
 	_startDate string
-	// 截至时间(最晚到昨天)
-	_endDate string
 	// 指定计划id
 	_solutionId string
 	// 指定任务id
 	_taskId string
+	// 截至时间(最晚到昨天)
+	_endDate string
 	// 当前页数
 	_pageIndex string
 	// 可选页数
@@ -60,19 +60,6 @@ func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetStartDate() string 
 	return r._startDate
 }
 
-// SetEndDate is EndDate Setter
-// 截至时间(最晚到昨天)
-func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetEndDate(_endDate string) error {
-	r._endDate = _endDate
-	r.Set("end_date", _endDate)
-	return nil
-}
-
-// GetEndDate EndDate Getter
-func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetEndDate() string {
-	return r._endDate
-}
-
 // SetSolutionId is SolutionId Setter
 // 指定计划id
 func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetSolutionId(_solutionId string) error {
@@ -97,6 +84,19 @@ func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetTaskId(_taskId str
 // GetTaskId TaskId Getter
 func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetTaskId() string {
 	return r._taskId
+}
+
+// SetEndDate is EndDate Setter
+// 截至时间(最晚到昨天)
+func (r *TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// GetEndDate EndDate Getter
+func (r TaobaoBrandhubSpecialshowRptAdgroupGetAPIRequest) GetEndDate() string {
+	return r._endDate
 }
 
 // SetPageIndex is PageIndex Setter

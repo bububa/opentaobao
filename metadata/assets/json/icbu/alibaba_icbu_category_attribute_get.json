@@ -1,8 +1,4 @@
 {
-	"id": 25348,
-	"name": "alibaba.icbu.category.attribute.get",
-	"apiChineseName": "类目属性获取",
-	"description": "根据类目ID获取系统定义的属性",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "attributes",
-			"type": "Attribute []",
-			"description": "类目下的属性和属性值信息",
 			"subParams": [
 				{
 					"name": "attr_id",
@@ -23,50 +16,7 @@
 					"description": "属性id"
 				},
 				{
-					"name": "en_name",
-					"type": "String",
-					"description": "英文名字"
-				},
-				{
-					"name": "show_type",
-					"type": "String",
-					"description": "展示类型；input；group"
-				},
-				{
-					"name": "required",
-					"type": "Boolean",
-					"description": "是否必填属性"
-				},
-				{
-					"name": "units",
-					"type": "String[]",
-					"description": "该属性的单位"
-				},
-				{
-					"name": "sku_attribute",
-					"type": "Boolean",
-					"description": "该属性能否当成SKU属性"
-				},
-				{
-					"name": "customize_image",
-					"type": "Boolean",
-					"description": "用成SKU属性时，是否支持自定义图片展示"
-				},
-				{
-					"name": "attribute_values",
-					"type": "AttributeValue[]",
-					"description": "属性可选的属性值",
 					"subParams": [
-						{
-							"name": "attr_id",
-							"type": "Number",
-							"description": "属性id"
-						},
-						{
-							"name": "en_name",
-							"type": "String",
-							"description": "英文名字"
-						},
 						{
 							"name": "attr_value_id",
 							"type": "Number",
@@ -74,20 +24,38 @@
 						},
 						{
 							"name": "child_attrs",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "该属性值的子属性id"
 						},
 						{
-							"name": "cat_id",
-							"type": "Number",
-							"description": "所属类目id"
+							"name": "en_name",
+							"type": "String",
+							"description": "英文名字"
 						},
 						{
 							"name": "sku_value",
 							"type": "Boolean",
 							"description": "是否SKU属性值"
 						}
-					]
+					],
+					"name": "attribute_values",
+					"type": "AttributeValue[]",
+					"description": "属性可选的属性值"
+				},
+				{
+					"name": "customize_image",
+					"type": "Boolean",
+					"description": "用成SKU属性时，是否支持自定义图片展示"
+				},
+				{
+					"name": "customize_value",
+					"type": "Boolean",
+					"description": "用成SKU属性时，是否支持自定义属性值名称"
+				},
+				{
+					"name": "en_name",
+					"type": "String",
+					"description": "英文名字"
 				},
 				{
 					"name": "input_type",
@@ -95,9 +63,24 @@
 					"description": "输入类型"
 				},
 				{
-					"name": "customize_value",
+					"name": "required",
 					"type": "Boolean",
-					"description": "用成SKU属性时，是否支持自定义属性值名称"
+					"description": "是否必填属性"
+				},
+				{
+					"name": "show_type",
+					"type": "String",
+					"description": "展示类型"
+				},
+				{
+					"name": "sku_attribute",
+					"type": "Boolean",
+					"description": "该属性能否当成SKU属性"
+				},
+				{
+					"name": "units",
+					"type": "String[]",
+					"description": "该属性的单位"
 				},
 				{
 					"name": "value_type",
@@ -109,7 +92,14 @@
 					"type": "Boolean",
 					"description": "表示是否车型库属性，如果是，则需要从分层属性接口里获取下一级属性"
 				}
-			]
+			],
+			"name": "attributes",
+			"type": "Attribute []",
+			"description": "类目下的属性和属性值信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.attribute.get",
+	"apiChineseName": "类目属性获取",
+	"description": "根据类目ID获取系统定义的属性",
+	"id": 25348
 }

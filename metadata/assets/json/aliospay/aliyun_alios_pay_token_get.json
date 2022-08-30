@@ -1,14 +1,12 @@
 {
-	"id": 43983,
-	"name": "aliyun.alios.pay.token.get",
-	"apiChineseName": "获取支付token",
-	"description": "商户用来获取支付的授权token",
 	"requestParams": [
 		{
-			"name": "get_token_request",
-			"type": "GetTokenRequest",
-			"description": "请求参数",
 			"subParams": [
+				{
+					"name": "original_amount",
+					"type": "Number",
+					"description": "CP的商品原始金额，不参与任何计算，仅用于展示原始金额"
+				},
 				{
 					"name": "trace_id",
 					"type": "String",
@@ -16,10 +14,29 @@
 					"required": true
 				},
 				{
-					"name": "lang",
+					"name": "token_type",
 					"type": "String",
-					"description": "语言,en表示英文，zh表示中文",
-					"required": true
+					"description": "ORDER订单token，OTHER其他token"
+				},
+				{
+					"name": "discountable_amount",
+					"type": "Number",
+					"description": "参与优惠计算的金额，用此字段用于让订单中部分金额不参与优惠的计算"
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "订单总金额"
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "订单标题"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "业务订单号"
 				},
 				{
 					"name": "time",
@@ -28,72 +45,55 @@
 					"required": true
 				},
 				{
-					"name": "biz_order_id",
+					"name": "lang",
 					"type": "String",
-					"description": "业务订单号"
-				},
-				{
-					"name": "subject",
-					"type": "String",
-					"description": "订单标题"
-				},
-				{
-					"name": "total_amount",
-					"type": "Number",
-					"description": "订单总金额"
-				},
-				{
-					"name": "discountable_amount",
-					"type": "Number",
-					"description": "参与优惠计算的金额，用此字段用于让订单中部分金额不参与优惠的计算"
-				},
-				{
-					"name": "token_type",
-					"type": "String",
-					"description": "ORDER订单token，OTHER其他token"
+					"description": "语言,en表示英文，zh表示中文",
+					"required": true
 				}
-			]
+			],
+			"name": "get_token_request",
+			"type": "GetTokenRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "aliospay_response",
-			"type": "AliOSPayResponse",
-			"description": "响应参数",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
-					"required": true
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "GetTokenResponse",
-					"description": "业务数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pay_token",
 							"type": "String",
-							"description": "支付token",
-							"required": true
+							"description": "支付token"
 						}
-					]
+					],
+					"name": "data",
+					"type": "GetTokenResponse",
+					"description": "业务数据"
 				}
-			]
+			],
+			"name": "aliospay_response",
+			"type": "AliOSPayResponse",
+			"description": "响应参数"
 		}
-	]
+	],
+	"name": "aliyun.alios.pay.token.get",
+	"apiChineseName": "获取支付token",
+	"description": "商户用来获取支付的授权token",
+	"id": 43983
 }

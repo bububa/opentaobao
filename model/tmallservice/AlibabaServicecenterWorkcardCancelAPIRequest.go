@@ -16,10 +16,16 @@ type AlibabaServicecenterWorkcardCancelAPIRequest struct {
 	_memo string
 	// 真实服务商昵称
 	_realTpNick string
+	// 原因desc
+	_reasonDesc string
 	// 工单id
 	_workcardId int64
 	// 服务单id
 	_serviceOrderId int64
+	// 请求来源类型
+	_type int64
+	// 原因code
+	_reasonCode int64
 }
 
 // NewAlibabaServicecenterWorkcardCancelRequest 初始化AlibabaServicecenterWorkcardCancelAPIRequest对象
@@ -69,6 +75,19 @@ func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetRealTpNick() string {
 	return r._realTpNick
 }
 
+// SetReasonDesc is ReasonDesc Setter
+// 原因desc
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetReasonDesc(_reasonDesc string) error {
+	r._reasonDesc = _reasonDesc
+	r.Set("reason_desc", _reasonDesc)
+	return nil
+}
+
+// GetReasonDesc ReasonDesc Getter
+func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetReasonDesc() string {
+	return r._reasonDesc
+}
+
 // SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetWorkcardId(_workcardId int64) error {
@@ -93,4 +112,30 @@ func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetServiceOrderId(_servic
 // GetServiceOrderId ServiceOrderId Getter
 func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetServiceOrderId() int64 {
 	return r._serviceOrderId
+}
+
+// SetType is Type Setter
+// 请求来源类型
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetType() int64 {
+	return r._type
+}
+
+// SetReasonCode is ReasonCode Setter
+// 原因code
+func (r *AlibabaServicecenterWorkcardCancelAPIRequest) SetReasonCode(_reasonCode int64) error {
+	r._reasonCode = _reasonCode
+	r.Set("reason_code", _reasonCode)
+	return nil
+}
+
+// GetReasonCode ReasonCode Getter
+func (r AlibabaServicecenterWorkcardCancelAPIRequest) GetReasonCode() int64 {
+	return r._reasonCode
 }

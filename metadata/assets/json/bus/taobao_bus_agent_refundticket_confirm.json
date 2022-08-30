@@ -1,13 +1,6 @@
 {
-	"id": 37857,
-	"name": "taobao.bus.agent.refundticket.confirm",
-	"apiChineseName": "商家top回调退款明细",
-	"description": "商家通过top回调告知平台退款明细",
 	"requestParams": [
 		{
-			"name": "param_agent_confirm_refund_r_q",
-			"type": "AgentConfirmRefundRq",
-			"description": "退款入参",
 			"subParams": [
 				{
 					"name": "agent_order_id",
@@ -61,7 +54,10 @@
 					"type": "Number",
 					"description": "退款类型 0-退票"
 				}
-			]
+			],
+			"name": "param_agent_confirm_refund_r_q",
+			"type": "AgentConfirmRefundRq",
+			"description": "退款入参"
 		}
 	],
 	"responseParams": [
@@ -80,5 +76,9 @@
 			"type": "Boolean",
 			"description": "退款回调是否收到"
 		}
-	]
+	],
+	"name": "taobao.bus.agent.refundticket.confirm",
+	"apiChineseName": "商家top回调退款明细",
+	"description": "商家通过top回调告知平台退款明细",
+	"id": 37857
 }

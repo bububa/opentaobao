@@ -1,13 +1,6 @@
 {
-	"id": 46070,
-	"name": "alibaba.damai.mev.open.pushfloor",
-	"apiChineseName": "大麦换验平台-第三方对外开放-楼层接口pushFloor",
-	"description": "pushFloor",
 	"requestParams": [
 		{
-			"name": "push_floor_param",
-			"type": "ThirdFloorPushOpenParam",
-			"description": "入参pushFloorParam",
 			"subParams": [
 				{
 					"name": "floor_id",
@@ -44,40 +37,43 @@
 					"type": "Number",
 					"description": "场馆id"
 				}
-			]
+			],
+			"name": "push_floor_param",
+			"type": "ThirdFloorPushOpenParam",
+			"description": "入参pushFloorParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.pushfloor",
+	"apiChineseName": "大麦换验平台-第三方对外开放-楼层接口pushFloor",
+	"description": "pushFloor",
+	"id": 46070
 }

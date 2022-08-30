@@ -28,6 +28,14 @@ type OrderDto struct {
 	RoomPhotoUrl string `json:"room_photo_url,omitempty" xml:"room_photo_url,omitempty"`
 	// 酒店外部id
 	HotelId string `json:"hotel_id,omitempty" xml:"hotel_id,omitempty"`
+	// 下单类型
+	PlaceOrderType string `json:"place_order_type,omitempty" xml:"place_order_type,omitempty"`
+	// 通用券id
+	UniversalCouponId string `json:"universal_coupon_id,omitempty" xml:"universal_coupon_id,omitempty"`
+	// 差价
+	Spread string `json:"spread,omitempty" xml:"spread,omitempty"`
+	// 代金券名称
+	VoucherName string `json:"voucher_name,omitempty" xml:"voucher_name,omitempty"`
 	// 支付剩余时间
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
 	// 房间数量
@@ -38,4 +46,8 @@ type OrderDto struct {
 	AdultNumber int64 `json:"adult_number,omitempty" xml:"adult_number,omitempty"`
 	// 儿童数量
 	ChildrenNumber int64 `json:"children_number,omitempty" xml:"children_number,omitempty"`
+	// 外币信息
+	ForeignCurrency *ForeignCurrencyInfo `json:"foreign_currency,omitempty" xml:"foreign_currency,omitempty"`
+	// 是否为外币支付
+	ForeignCurrencyPayment bool `json:"foreign_currency_payment,omitempty" xml:"foreign_currency_payment,omitempty"`
 }

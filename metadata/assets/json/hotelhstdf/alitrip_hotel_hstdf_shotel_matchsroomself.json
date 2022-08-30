@@ -1,13 +1,6 @@
 {
-	"id": 42711,
-	"name": "alitrip.hotel.hstdf.shotel.matchsroomself",
-	"apiChineseName": "匹配标准房型以及卖家房型",
-	"description": "匹配卖家房型以及标准房型，返回匹配结果",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "SroomTypeMatchParam",
-			"description": "SroomTypeMatchParam",
 			"subParams": [
 				{
 					"name": "srid",
@@ -21,7 +14,10 @@
 					"description": "卖家房型id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "SroomTypeMatchParam",
+			"description": "SroomTypeMatchParam"
 		}
 	],
 	"responseParams": [
@@ -40,5 +36,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hstdf.shotel.matchsroomself",
+	"apiChineseName": "匹配标准房型以及卖家房型",
+	"description": "匹配卖家房型以及标准房型，返回匹配结果",
+	"id": 42711
 }

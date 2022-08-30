@@ -1,8 +1,4 @@
 {
-	"id": 52621,
-	"name": "alibaba.idle.parttime.notify",
-	"apiChineseName": "兼职通知接口",
-	"description": "服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)",
 	"requestParams": [
 		{
 			"name": "type",
@@ -51,5 +47,9 @@
 			"type": "Boolean",
 			"description": "响应是否成功"
 		}
-	]
+	],
+	"name": "alibaba.idle.parttime.notify",
+	"apiChineseName": "兼职通知接口",
+	"description": "服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)",
+	"id": 52621
 }

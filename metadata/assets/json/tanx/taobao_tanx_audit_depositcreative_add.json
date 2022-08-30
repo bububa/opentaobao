@@ -1,8 +1,4 @@
 {
-	"id": 25061,
-	"name": "taobao.tanx.audit.depositcreative.add",
-	"apiChineseName": "dsp托管创意新增接口",
-	"description": "dsp托管创意新增接口",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -23,16 +19,11 @@
 			"required": true
 		},
 		{
-			"name": "creative",
-			"type": "CreativeInfoDTO",
-			"description": "托管创意信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "creative_id",
+					"name": "creative_category_id",
 					"type": "String",
-					"description": "dsp系统中的创意id",
-					"required": true
+					"description": "创意的类目，多个值用逗号\u0026ldquo;，\u0026rdquo;分隔"
 				},
 				{
 					"name": "creative_size",
@@ -40,50 +31,19 @@
 					"description": "创意尺寸，长高中间用小写英文x"
 				},
 				{
-					"name": "creative_category_id",
-					"type": "String",
-					"description": "创意的类目，多个值用逗号\u0026ldquo;，\u0026rdquo;分隔"
-				},
-				{
-					"name": "creative_format",
-					"type": "String",
-					"description": "创意类型 1:文字 2:图片 3:Flash 4:视频贴片"
-				},
-				{
-					"name": "creative_name",
-					"type": "String",
-					"description": "托管创意的名称"
-				},
-				{
-					"name": "api_framework",
-					"type": "String",
-					"description": "创意支持的apiFramework协议,1:VPAID1.0;2:VPAID2.0;3:MARID-1;4:ORMMA;5:1MRAID-2,只能单选，不能多选"
-				},
-				{
-					"name": "file_type",
-					"type": "String",
-					"description": "文件格式, 视频类型：flv、avi、mp4, 图片类型：jpg、png、gif, flash类型：swf等"
-				},
-				{
 					"name": "creative_url",
 					"type": "String",
 					"description": "创意存储地址"
 				},
 				{
-					"name": "click_url",
-					"type": "String",
-					"description": "广告跳转的最终目标页面地址",
-					"required": true
-				},
-				{
-					"name": "duration",
-					"type": "Number",
-					"description": "创意时长，单位是毫秒"
-				},
-				{
 					"name": "advertiser_ids",
 					"type": "String",
 					"description": "广告主Id，多值使用\u0026ldquo;,\u0026rdquo;分隔"
+				},
+				{
+					"name": "api_framework",
+					"type": "String",
+					"description": "创意支持的apiFramework协议,1:VPAID1.0;2:VPAID2.0;3:MARID-1;4:ORMMA;5:1MRAID-2,只能单选，不能多选"
 				},
 				{
 					"name": "click_through_url",
@@ -94,25 +54,65 @@
 					"name": "click_track_url",
 					"type": "String",
 					"description": "(选填)点击监控地址，最多3个，多个值用逗号\u0026ldquo;，\u0026rdquo;分隔"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "广告跳转的最终目标页面地址",
+					"required": true
+				},
+				{
+					"name": "creative_id",
+					"type": "String",
+					"description": "dsp系统中的创意id",
+					"required": true
+				},
+				{
+					"name": "creative_name",
+					"type": "String",
+					"description": "托管创意的名称"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "创意时长，单位是毫秒"
+				},
+				{
+					"name": "file_type",
+					"type": "String",
+					"description": "文件格式, 视频类型：flv、avi、mp4, 图片类型：jpg、png、gif, flash类型：swf等"
+				},
+				{
+					"name": "creative_format",
+					"type": "String",
+					"description": "创意类型 1:文字 2:图片 3:Flash 4:视频贴片"
 				}
-			]
+			],
+			"name": "creative",
+			"type": "CreativeInfoDTO",
+			"description": "托管创意信息",
+			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "message",
-			"type": "String",
-			"description": "调用的成功信息或失败信息"
-		},
 		{
 			"name": "tanx_error_code",
 			"type": "Number",
 			"description": "调用返回码"
 		},
 		{
+			"name": "message",
+			"type": "String",
+			"description": "调用的成功信息或失败信息"
+		},
+		{
 			"name": "is_ok",
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.tanx.audit.depositcreative.add",
+	"apiChineseName": "dsp托管创意新增接口",
+	"description": "dsp托管创意新增接口",
+	"id": 25061
 }

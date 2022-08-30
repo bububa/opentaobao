@@ -1,0 +1,605 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "订单编号"
+								},
+								{
+									"name": "pms_code",
+									"type": "String",
+									"description": "PMS订单号"
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态"
+								},
+								{
+									"name": "order_status_desc",
+									"type": "String",
+									"description": "订单状态描述"
+								},
+								{
+									"name": "pay_remain_time",
+									"type": "Number",
+									"description": "支付剩余多少秒"
+								},
+								{
+									"name": "book_date",
+									"type": "String",
+									"description": "预订时间"
+								},
+								{
+									"name": "payment_channel",
+									"type": "String",
+									"description": "支付渠道"
+								},
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "支付类型"
+								},
+								{
+									"name": "total_price",
+									"type": "String",
+									"description": "总价格"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "货币类型"
+								},
+								{
+									"name": "refund_cost_amount",
+									"type": "String",
+									"description": "扣款价格"
+								},
+								{
+									"name": "breakfast_type",
+									"type": "String",
+									"description": "早餐类型"
+								},
+								{
+									"name": "breakfast_dec",
+									"type": "String",
+									"description": "早餐描述"
+								},
+								{
+									"name": "contact_last_name",
+									"type": "String",
+									"description": "订单人姓"
+								},
+								{
+									"name": "contact_first_name",
+									"type": "String",
+									"description": "订单人名"
+								},
+								{
+									"name": "contact_phone",
+									"type": "String",
+									"description": "订单人电话"
+								},
+								{
+									"name": "contact_email",
+									"type": "String",
+									"description": "订单人邮箱"
+								},
+								{
+									"name": "voucher_name",
+									"type": "String",
+									"description": "套餐卷名字"
+								},
+								{
+									"name": "place_order_type",
+									"type": "String",
+									"description": "下单方式"
+								},
+								{
+									"name": "voucher_id",
+									"type": "String",
+									"description": "套餐卷Id"
+								}
+							],
+							"name": "voucher_order",
+							"type": "VoucherOrderVO",
+							"description": "套餐订单详情信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "contact_first_name",
+									"type": "String",
+									"description": "联系人姓名"
+								},
+								{
+									"name": "child_roomer_number",
+									"type": "Number",
+									"description": "未成年人数"
+								},
+								{
+									"name": "contact_last_name",
+									"type": "String",
+									"description": "联系人姓氏"
+								},
+								{
+									"name": "adult_roomer_number",
+									"type": "String",
+									"description": "成人数"
+								}
+							],
+							"name": "guest_by_room",
+							"type": "GuestByRoomDto[]",
+							"description": "订单入住宾客信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "hotel_id",
+									"type": "String",
+									"description": "租户酒店ID"
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "外部酒店id"
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名"
+								},
+								{
+									"name": "hotel_phone",
+									"type": "String",
+									"description": "酒店电话"
+								},
+								{
+									"name": "hotel_picture",
+									"type": "String",
+									"description": "酒店图片"
+								},
+								{
+									"name": "hotel_address",
+									"type": "String",
+									"description": "酒店位置"
+								},
+								{
+									"name": "lon",
+									"type": "String",
+									"description": "经度"
+								},
+								{
+									"name": "lat",
+									"type": "String",
+									"description": "维度"
+								},
+								{
+									"name": "room_number",
+									"type": "Number",
+									"description": "房间数量"
+								},
+								{
+									"name": "check_in_notice",
+									"type": "String",
+									"description": "入住须知"
+								},
+								{
+									"name": "cancel_rule",
+									"type": "Number",
+									"description": "取消规则"
+								},
+								{
+									"name": "cancel_dec",
+									"type": "String",
+									"description": "取消描述"
+								},
+								{
+									"name": "check_in_date",
+									"type": "String",
+									"description": "入住时间"
+								},
+								{
+									"name": "days",
+									"type": "Number",
+									"description": "入住天数"
+								},
+								{
+									"name": "check_out_date",
+									"type": "String",
+									"description": "离店时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "facility_name",
+											"type": "String",
+											"description": "设施类型名称"
+										},
+										{
+											"subParams": [
+												{
+													"name": "summary",
+													"type": "String",
+													"description": "文案表达"
+												},
+												{
+													"name": "icon",
+													"type": "String",
+													"description": "设施图标URL"
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "设施名字"
+												},
+												{
+													"name": "description",
+													"type": "String",
+													"description": "补充说明"
+												},
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "设施Id"
+												}
+											],
+											"name": "facility_list",
+											"type": "FacilityVO[]",
+											"description": "设施Vo对象"
+										}
+									],
+									"name": "hotel_facility_list_v_o_list",
+									"type": "FacilityListVO[]",
+									"description": "房型设施"
+								},
+								{
+									"subParams": [
+										{
+											"name": "room_name",
+											"type": "String",
+											"description": "房型名称"
+										},
+										{
+											"name": "rp_name",
+											"type": "String",
+											"description": "价格定义名"
+										},
+										{
+											"name": "room_area",
+											"type": "String",
+											"description": "房间面积大小"
+										},
+										{
+											"name": "bed_type_desc",
+											"type": "String",
+											"description": "房间床型描述"
+										},
+										{
+											"name": "max_check_in_number",
+											"type": "Number",
+											"description": "房型最大入住人数"
+										}
+									],
+									"name": "room",
+									"type": "Room",
+									"description": "酒店内房型信息"
+								},
+								{
+									"name": "check_in",
+									"type": "String",
+									"description": "最早入住时间"
+								},
+								{
+									"name": "check_out",
+									"type": "String",
+									"description": "最晚离店时间"
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市code"
+								}
+							],
+							"name": "voucher_hotel",
+							"type": "VoucherHotelVO",
+							"description": "酒店详情信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "room_num",
+									"type": "Number",
+									"description": "房间数量"
+								},
+								{
+									"name": "days",
+									"type": "Number",
+									"description": "入住天数"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "货币类型"
+								},
+								{
+									"subParams": [
+										{
+											"name": "date",
+											"type": "String",
+											"description": "日期"
+										},
+										{
+											"name": "really_price",
+											"type": "String",
+											"description": "不含税价格"
+										},
+										{
+											"name": "out_really_price",
+											"type": "String",
+											"description": "不含税外币价格"
+										}
+									],
+									"name": "daily_prices",
+									"type": "DailyPrice[]",
+									"description": "日期以及价格"
+								},
+								{
+									"name": "total_room_price",
+									"type": "String",
+									"description": "总房价(不含税)"
+								},
+								{
+									"name": "total_tax",
+									"type": "String",
+									"description": "总税价"
+								},
+								{
+									"name": "total_price",
+									"type": "String",
+									"description": "总费用（税费+房价）"
+								},
+								{
+									"name": "spread",
+									"type": "Number",
+									"description": "差价"
+								},
+								{
+									"name": "markup_desc",
+									"type": "String",
+									"description": "加价描述"
+								},
+								{
+									"subParams": [
+										{
+											"name": "total_amount",
+											"type": "String",
+											"description": "外币支付金额，含税"
+										},
+										{
+											"name": "total_price",
+											"type": "String",
+											"description": "外币基础价格,不包含税费等"
+										},
+										{
+											"name": "total_tax",
+											"type": "String",
+											"description": "外币总税价"
+										},
+										{
+											"subParams": [
+												{
+													"name": "date",
+													"type": "String",
+													"description": "日期"
+												},
+												{
+													"name": "really_price",
+													"type": "String",
+													"description": "不含税价格"
+												},
+												{
+													"name": "out_really_price",
+													"type": "String",
+													"description": "不含税外币价格"
+												}
+											],
+											"name": "daily_price_list",
+											"type": "DailyPrice[]",
+											"description": "外币每日价格"
+										},
+										{
+											"name": "currency",
+											"type": "String",
+											"description": "外币币种"
+										}
+									],
+									"name": "foreign_currency",
+									"type": "ForeignCurrencyInfo",
+									"description": "外币信息"
+								},
+								{
+									"name": "foreign_currency_payment",
+									"type": "Boolean",
+									"description": "是否为外币支付"
+								}
+							],
+							"name": "price_detail_dto",
+							"type": "VoucherHotelVO",
+							"description": "费用明细对象"
+						},
+						{
+							"subParams": [
+								{
+									"name": "room_name",
+									"type": "String",
+									"description": "房型名称"
+								},
+								{
+									"name": "rp_name",
+									"type": "String",
+									"description": "夏季限时优惠信息"
+								},
+								{
+									"name": "pics",
+									"type": "String[]",
+									"description": "房型图片集合"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "summary",
+													"type": "String",
+													"description": "文案表达"
+												},
+												{
+													"name": "icon",
+													"type": "String",
+													"description": "设施图标URL"
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "设施名字"
+												},
+												{
+													"name": "description",
+													"type": "String",
+													"description": "补充说明"
+												},
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "设施Id"
+												}
+											],
+											"name": "facility_list",
+											"type": "FacilityVO[]",
+											"description": "设施Vo对象"
+										},
+										{
+											"name": "facility_name",
+											"type": "String",
+											"description": "设施类型名称"
+										}
+									],
+									"name": "facility_group_list",
+									"type": "FacilityListVO[]",
+									"description": "房型设施"
+								},
+								{
+									"subParams": [
+										{
+											"name": "area",
+											"type": "String",
+											"description": "面积"
+										},
+										{
+											"name": "bed_type_icon",
+											"type": "String",
+											"description": "床型图标"
+										},
+										{
+											"name": "max_occupancy_icon",
+											"type": "String",
+											"description": "入住人数图标"
+										},
+										{
+											"name": "max_occupancy",
+											"type": "Number",
+											"description": "最大入住人数"
+										},
+										{
+											"name": "floor",
+											"type": "String",
+											"description": "楼层"
+										},
+										{
+											"name": "floor_icon",
+											"type": "String",
+											"description": "楼层图标"
+										},
+										{
+											"name": "area_icon",
+											"type": "String",
+											"description": "面积图标"
+										},
+										{
+											"name": "window_type_icon",
+											"type": "String",
+											"description": "床型图标"
+										},
+										{
+											"name": "window_type",
+											"type": "String",
+											"description": "窗型"
+										}
+									],
+									"name": "room_property",
+									"type": "DailyPrice",
+									"description": "房间属性"
+								}
+							],
+							"name": "order_room_detail",
+							"type": "PriceDetailDto",
+							"description": "房间信息详情"
+						}
+					],
+					"name": "content",
+					"type": "VoucherOrderDetailVO",
+					"description": "订单详情页对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息展示"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.order.query.info",
+	"apiChineseName": "订单详情改版",
+	"description": "订单页详情查询",
+	"id": 58985
+}

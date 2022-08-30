@@ -14,10 +14,10 @@ type TaobaoFuwuScoresGetAPIRequest struct {
 	model.Params
 	// 评价日期，查询某一天的评价
 	_date string
-	// 当前页
-	_currentPage int64
 	// 每页获取条数。默认值40，最小值1，最大值100。
 	_pageSize int64
+	// 当前页
+	_currentPage int64
 }
 
 // NewTaobaoFuwuScoresGetRequest 初始化TaobaoFuwuScoresGetAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoFuwuScoresGetAPIRequest) GetDate() string {
 	return r._date
 }
 
-// SetCurrentPage is CurrentPage Setter
-// 当前页
-func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoFuwuScoresGetAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
-}
-
 // SetPageSize is PageSize Setter
 // 每页获取条数。默认值40，最小值1，最大值100。
 func (r *TaobaoFuwuScoresGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoFuwuScoresGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoFuwuScoresGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 当前页
+func (r *TaobaoFuwuScoresGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoFuwuScoresGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }

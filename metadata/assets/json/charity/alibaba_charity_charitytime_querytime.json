@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间，不包含"
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "开始时间，包含"
+		},
+		{
+			"name": "user_key",
+			"type": "String",
+			"description": "用户ID",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "公益时，单位为分钟"
+				},
+				{
+					"name": "fail",
+					"type": "String",
+					"description": "是否失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.charitytime.querytime",
+	"apiChineseName": "外部查询公益时",
+	"description": "外部查询公益时",
+	"id": 59741
+}

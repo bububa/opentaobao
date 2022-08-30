@@ -1,8 +1,4 @@
 {
-	"id": 52204,
-	"name": "alibaba.ailabs.aligenie.openvideo.scenepush",
-	"apiChineseName": "视频单集场景接入API",
-	"description": "视频单集场景接入API",
 	"requestParams": [
 		{
 			"name": "scene_type",
@@ -15,10 +11,6 @@
 			"description": "挂靠的应用id,在智能应用平台的地址栏可见"
 		},
 		{
-			"name": "param_list",
-			"type": "RawSingleVideo[]",
-			"description": "待推送的视频数据",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "v_cover_url",
@@ -54,7 +46,7 @@
 				{
 					"name": "charge_type",
 					"type": "Number",
-					"description": "付费类型 0-免费、1-VIP免费、2-单点、3-用券",
+					"description": "付费类型 0-免费、1-VIP免费、2-单点、3-天猫超级会员 务必和所属专辑保持一致",
 					"required": true
 				},
 				{
@@ -106,6 +98,7 @@
 				},
 				{
 					"name": "extend_info",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -157,6 +150,7 @@
 				},
 				{
 					"name": "play_url",
+					"type": "String",
 					"description": "播放链接，Map，key为support_definition的值"
 				},
 				{
@@ -215,7 +209,11 @@
 					"type": "Number",
 					"description": "生效时间,unix时间戳,单位:毫秒,为空则立即生效"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "RawSingleVideo[]",
+			"description": "待推送的视频数据",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
@@ -229,5 +227,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.openvideo.scenepush",
+	"apiChineseName": "视频单集场景接入API",
+	"description": "视频单集场景接入API",
+	"id": 52204
 }

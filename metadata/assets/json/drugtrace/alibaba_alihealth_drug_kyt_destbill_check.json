@@ -1,8 +1,4 @@
 {
-	"id": 51651,
-	"name": "alibaba.alihealth.drug.kyt.destbill.check",
-	"apiChineseName": "直调审批",
-	"description": "为药企提供直调单据审批操作",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "返回结果标识"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.destbill.check",
+	"apiChineseName": "直调审批",
+	"description": "为药企提供直调单据审批操作",
+	"id": 51651
 }

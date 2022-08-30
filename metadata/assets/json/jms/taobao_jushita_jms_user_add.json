@@ -1,8 +1,4 @@
 {
-	"id": 25344,
-	"name": "taobao.jushita.jms.user.add",
-	"apiChineseName": "添加ONS消息同步用户",
-	"description": "添加ONS消息同步用户",
 	"requestParams": [
 		{
 			"name": "topic_names",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "是否成功，如果失败请看错误信息"
 		}
-	]
+	],
+	"name": "taobao.jushita.jms.user.add",
+	"apiChineseName": "添加ONS消息同步用户",
+	"description": "添加ONS消息同步用户",
+	"id": 25344
 }

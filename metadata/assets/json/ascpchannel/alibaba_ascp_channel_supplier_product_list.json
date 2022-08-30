@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页号，从1开始",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "sales_mode",
+					"type": "String[]",
+					"description": "经营模式,agent 表示代销，dealer 表示经销",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "ProductListQueryRequestForSupplier",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "执行结果是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "product_title",
+							"type": "String",
+							"description": "产品标题名称"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品 id"
+						},
+						{
+							"name": "out_no",
+							"type": "String",
+							"description": "外部商家编码"
+						},
+						{
+							"name": "sales_mode_list",
+							"type": "String[]",
+							"description": "经营模式"
+						},
+						{
+							"name": "sub_channel_code",
+							"type": "String",
+							"description": "二级渠道编码"
+						},
+						{
+							"name": "picture_list",
+							"type": "String[]",
+							"description": "图片"
+						},
+						{
+							"name": "product_type",
+							"type": "Number",
+							"description": "产品类型"
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "渠道编码"
+						}
+					],
+					"name": "product_list",
+					"type": "ProductList[]",
+					"description": "产品列表"
+				}
+			],
+			"name": "module",
+			"type": "ProductListQueryResponseForSupplier",
+			"description": "返回结果"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "alibaba.ascp.channel.supplier.product.list",
+	"apiChineseName": "供应商渠道产品列表查询",
+	"description": "供应商查询渠道产品列表",
+	"id": 55120
+}

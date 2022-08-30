@@ -20,6 +20,8 @@ type WdkOrderSyncBo struct {
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 期望送达时间段
 	ExpectArriveTime string `json:"expect_arrive_time,omitempty" xml:"expect_arrive_time,omitempty"`
+	// 订单小号
+	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 五道口订单ID
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 订单来源, 如 TAOBAO (4, "TC自营渠道"),
@@ -36,4 +38,10 @@ type WdkOrderSyncBo struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 配送方式, 如InTime(1, "即时达"), SetTime(2, "定时达"),TopSpeed(3,"极速达"),NoNeedSend(4,"无需配送")
 	ArriveType int64 `json:"arrive_type,omitempty" xml:"arrive_type,omitempty"`
+	// 商家优惠分摊
+	DiscountMerchantFee int64 `json:"discount_merchant_fee,omitempty" xml:"discount_merchant_fee,omitempty"`
+	// 平台优惠分摊
+	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
+	// 包装费
+	PackageFee int64 `json:"package_fee,omitempty" xml:"package_fee,omitempty"`
 }

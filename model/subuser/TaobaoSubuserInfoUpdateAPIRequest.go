@@ -14,10 +14,10 @@ type TaobaoSubuserInfoUpdateAPIRequest struct {
 	model.Params
 	// 子账号ID
 	_subId int64
-	// 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
-	_isDisableSubaccount bool
 	// 子账号是否参与分流 true:参与分流 false:不参与分流
 	_isDispatch bool
+	// 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
+	_isDisableSubaccount bool
 }
 
 // NewTaobaoSubuserInfoUpdateRequest 初始化TaobaoSubuserInfoUpdateAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoSubuserInfoUpdateAPIRequest) GetSubId() int64 {
 	return r._subId
 }
 
-// SetIsDisableSubaccount is IsDisableSubaccount Setter
-// 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
-func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDisableSubaccount(_isDisableSubaccount bool) error {
-	r._isDisableSubaccount = _isDisableSubaccount
-	r.Set("is_disable_subaccount", _isDisableSubaccount)
-	return nil
-}
-
-// GetIsDisableSubaccount IsDisableSubaccount Getter
-func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDisableSubaccount() bool {
-	return r._isDisableSubaccount
-}
-
 // SetIsDispatch is IsDispatch Setter
 // 子账号是否参与分流 true:参与分流 false:不参与分流
 func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDispatch(_isDispatch bool) error {
@@ -78,4 +65,17 @@ func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDispatch(_isDispatch bool) erro
 // GetIsDispatch IsDispatch Getter
 func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDispatch() bool {
 	return r._isDispatch
+}
+
+// SetIsDisableSubaccount is IsDisableSubaccount Setter
+// 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
+func (r *TaobaoSubuserInfoUpdateAPIRequest) SetIsDisableSubaccount(_isDisableSubaccount bool) error {
+	r._isDisableSubaccount = _isDisableSubaccount
+	r.Set("is_disable_subaccount", _isDisableSubaccount)
+	return nil
+}
+
+// GetIsDisableSubaccount IsDisableSubaccount Getter
+func (r TaobaoSubuserInfoUpdateAPIRequest) GetIsDisableSubaccount() bool {
+	return r._isDisableSubaccount
 }

@@ -1,0 +1,238 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				}
+			],
+			"name": "query",
+			"type": "SingleOrderDetailQuery",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "商家昵称"
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单id"
+						},
+						{
+							"name": "actual_paid_fee",
+							"type": "Number",
+							"description": "实付金额，单位分"
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态：1买家申请退款，等待卖家同意；2卖家已同意退款，等待买家退货；3买家已退货，等待卖家确认收货；4退款关闭；5退款成功；6卖家拒绝退款；9没有申请退款"
+						},
+						{
+							"subParams": [
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "商家昵称"
+								},
+								{
+									"name": "buyer_nick",
+									"type": "String",
+									"description": "买家昵称"
+								},
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "订单id"
+								},
+								{
+									"name": "actual_paid_fee",
+									"type": "Number",
+									"description": "实付金额，单位分"
+								},
+								{
+									"name": "refund_status",
+									"type": "Number",
+									"description": "退款状态：1买家申请退款，等待卖家同意；2卖家已同意退款，等待买家退货；3买家已退货，等待卖家确认收货；4退款关闭；5退款成功；6卖家拒绝退款；9没有申请退款"
+								},
+								{
+									"name": "et_shop_id",
+									"type": "String",
+									"description": "预约门店id"
+								},
+								{
+									"name": "pay_status",
+									"type": "Number",
+									"description": "支付状态：1未付款；2已付款；4已退款(交易关闭)；6交易成功；8未支付订单关闭"
+								},
+								{
+									"name": "seller_definition_field",
+									"type": "String",
+									"description": "商家自定义参数"
+								},
+								{
+									"name": "et_shop_name",
+									"type": "String",
+									"description": "预约门店名称"
+								},
+								{
+									"name": "consume_shop_name",
+									"type": "String",
+									"description": "核销门店名称"
+								},
+								{
+									"name": "consume_shop_id",
+									"type": "String",
+									"description": "核销门店id"
+								},
+								{
+									"name": "consume_time",
+									"type": "Date",
+									"description": "核销时间"
+								}
+							],
+							"name": "sub_orders",
+							"type": "CarSubOrderDetailDto[]",
+							"description": "子订单列表"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态：1未付款；2已付款；4已退款(交易关闭)；6交易成功；8未支付订单关闭"
+						},
+						{
+							"subParams": [
+								{
+									"name": "pay_order_id",
+									"type": "Number",
+									"description": "支付单id"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "支付总金额，单位分"
+								},
+								{
+									"subParams": [
+										{
+											"name": "step_no",
+											"type": "Number",
+											"description": "阶段号"
+										},
+										{
+											"name": "pay_fee",
+											"type": "Number",
+											"description": "需要付款的金额，单位分"
+										},
+										{
+											"name": "step_name",
+											"type": "String",
+											"description": "阶段名称"
+										},
+										{
+											"name": "actual_pay_fee",
+											"type": "Number",
+											"description": "实际付款金额，单位分"
+										},
+										{
+											"name": "pay_status",
+											"type": "Number",
+											"description": "支付状态"
+										},
+										{
+											"name": "sub_pay_order_id",
+											"type": "Number",
+											"description": "子支付单id"
+										}
+									],
+									"name": "sub_pay_orders",
+									"type": "CarSubPayOrderDto[]",
+									"description": "子支付单列表"
+								},
+								{
+									"name": "actual_total_fee",
+									"type": "Number",
+									"description": "买家实际支付给卖家的金额，单位分"
+								},
+								{
+									"name": "pay_status",
+									"type": "Number",
+									"description": "支付状态"
+								}
+							],
+							"name": "pay_order",
+							"type": "CarPayOrderDto",
+							"description": "支付单"
+						},
+						{
+							"name": "buyer_name_collect",
+							"type": "String",
+							"description": "用户填写购车人信息"
+						},
+						{
+							"name": "buyer_identity_collect",
+							"type": "String",
+							"description": "用户填写购车身份证信息"
+						},
+						{
+							"name": "buyer_mobile",
+							"type": "String",
+							"description": "用户填写手机号"
+						},
+						{
+							"name": "car_delivery",
+							"type": "String",
+							"description": "交付服务地址"
+						}
+					],
+					"name": "data",
+					"type": "CarOrderDetailDto",
+					"description": "订单详情对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.trade.car.order.get",
+	"apiChineseName": "整车订单详情查询",
+	"description": "整车订单详情查询接口",
+	"id": 57870
+}

@@ -1,13 +1,6 @@
 {
-	"id": 49119,
-	"name": "alibaba.damai.maitix.distribution.cmb.paramencrypt",
-	"apiChineseName": "加密招商一网能支付入参",
-	"description": "encryptParam4Cmb",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "DisEncrypt4CmbParam",
-			"description": "入参param",
 			"subParams": [
 				{
 					"name": "amount",
@@ -39,108 +32,100 @@
 					"type": "String",
 					"description": "支付成功返回的地址"
 				}
-			]
+			],
+			"name": "param",
+			"type": "DisEncrypt4CmbParam",
+			"description": "入参param"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
-					"name": "model",
-					"type": "DisEncrypt4CmbResult",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "订单金额",
-							"required": true
+							"description": "订单金额"
 						},
 						{
 							"name": "branch_no",
 							"type": "String",
-							"description": "分行号",
-							"required": true
+							"description": "分行号"
 						},
 						{
 							"name": "date",
 							"type": "String",
-							"description": "订单日期",
-							"required": true
+							"description": "订单日期"
 						},
 						{
 							"name": "date_time",
 							"type": "String",
-							"description": "请求日间",
-							"required": true
+							"description": "请求日间"
 						},
 						{
 							"name": "expire_time_span",
 							"type": "String",
-							"description": "过期时间跨度",
-							"required": true
+							"description": "过期时间跨度"
 						},
 						{
 							"name": "merchant_no",
 							"type": "String",
-							"description": "商户号",
-							"required": true
+							"description": "商户号"
 						},
 						{
 							"name": "order_no",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "pay_notice_para",
 							"type": "String",
-							"description": "支付成功通知的参数,这里传的是大麦的订单号",
-							"required": true
+							"description": "支付成功通知的参数,这里传的是大麦的订单号"
 						},
 						{
 							"name": "pay_notice_url",
 							"type": "String",
-							"description": "支付成功通知的地址",
-							"required": true
+							"description": "支付成功通知的地址"
 						},
 						{
 							"name": "return_url",
 							"type": "String",
-							"description": "支付成功返回的地址",
-							"required": true
+							"description": "支付成功返回的地址"
 						},
 						{
 							"name": "sign",
 							"type": "String",
-							"description": "加密结果",
-							"required": true
+							"description": "加密结果"
 						}
-					]
+					],
+					"name": "model",
+					"type": "DisEncrypt4CmbResult",
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.distribution.cmb.paramencrypt",
+	"apiChineseName": "加密招商一网能支付入参",
+	"description": "encryptParam4Cmb",
+	"id": 49119
 }

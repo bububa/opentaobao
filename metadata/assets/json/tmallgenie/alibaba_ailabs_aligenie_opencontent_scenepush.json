@@ -1,8 +1,4 @@
 {
-	"id": 52000,
-	"name": "alibaba.ailabs.aligenie.opencontent.scenepush",
-	"apiChineseName": "音频场景接入接口",
-	"description": "天猫精灵音频挂靠场景接入",
 	"requestParams": [
 		{
 			"name": "scene_type",
@@ -15,9 +11,6 @@
 			"description": "如果关联应用此字段为应用id"
 		},
 		{
-			"name": "batch_content",
-			"type": "BatchContent",
-			"description": "详细内容列表",
 			"subParams": [
 				{
 					"name": "category_id",
@@ -26,9 +19,6 @@
 					"required": true
 				},
 				{
-					"name": "open_contents",
-					"type": "OpenContent[]",
-					"description": "内容信息",
 					"subParams": [
 						{
 							"name": "album_description",
@@ -46,9 +36,6 @@
 							"description": "内容所属专辑或分类名称/标题,这里如果专辑标题是空则不同步专辑信息"
 						},
 						{
-							"name": "author",
-							"type": "Author",
-							"description": "作者信息",
 							"subParams": [
 								{
 									"name": "content_author",
@@ -60,12 +47,15 @@
 									"type": "String",
 									"description": "主播，演唱者，演播者"
 								}
-							]
+							],
+							"name": "author",
+							"type": "Author",
+							"description": "作者信息"
 						},
 						{
 							"name": "charge_type",
 							"type": "Number",
-							"description": "0-免费、1-单篇售卖，2-专辑售卖，3-商业化一期类型",
+							"description": "商业化类型请先和平台小二确认再调用！ 0-免费、1-一号两端鉴权单篇售卖、2-一号两端鉴权专辑售卖、3-天猫精灵侧分销零售专辑售卖、4-天猫精灵超级会员售卖 当取4时s_super_vip_free必须为true否则为false",
 							"required": true
 						},
 						{
@@ -90,10 +80,6 @@
 							"description": "其他扩展字段，不同类型内容有不同要求，具体请参加详细说明文档extend_info字段部分"
 						},
 						{
-							"name": "image_url",
-							"type": "ImageUrl",
-							"description": "封面图片信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "large",
@@ -115,12 +101,16 @@
 									"type": "String",
 									"description": "如果不知道放那个就传默认图片"
 								}
-							]
+							],
+							"name": "image_url",
+							"type": "ImageUrl",
+							"description": "封面图片信息",
+							"required": true
 						},
 						{
 							"name": "operation",
 							"type": "String",
-							"description": "操作方式，支持新增和删除操作(ADD/DELETE)",
+							"description": "操作方式，支持新增和下线操作(ADD/OFFLINE)",
 							"required": true
 						},
 						{
@@ -136,9 +126,6 @@
 							"required": true
 						},
 						{
-							"name": "play_urls",
-							"type": "PlayUrl[]",
-							"description": "播放链接",
 							"subParams": [
 								{
 									"name": "bitrate",
@@ -155,7 +142,10 @@
 									"type": "String",
 									"description": "可播放链接"
 								}
-							]
+							],
+							"name": "play_urls",
+							"type": "PlayUrl[]",
+							"description": "播放链接"
 						},
 						{
 							"name": "product_desc",
@@ -224,10 +214,21 @@
 							"name": "is_audition",
 							"type": "Boolean",
 							"description": "内容分集是否支持试听,默认为false"
+						},
+						{
+							"name": "is_super_vip_free",
+							"type": "Boolean",
+							"description": "是否仅大会员内容"
 						}
-					]
+					],
+					"name": "open_contents",
+					"type": "OpenContent[]",
+					"description": "内容信息"
 				}
-			]
+			],
+			"name": "batch_content",
+			"type": "BatchContent",
+			"description": "详细内容列表"
 		}
 	],
 	"responseParams": [
@@ -241,5 +242,9 @@
 			"type": "String",
 			"description": "返回信息"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.opencontent.scenepush",
+	"apiChineseName": "音频场景接入接口",
+	"description": "天猫精灵音频挂靠场景接入",
+	"id": 52000
 }

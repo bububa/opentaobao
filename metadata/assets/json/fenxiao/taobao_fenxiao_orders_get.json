@@ -1,28 +1,24 @@
 {
-	"id": 180,
-	"name": "taobao.fenxiao.orders.get",
-	"apiChineseName": "查询采购单信息",
-	"description": "分销商或供应商均可用此接口查询采购单信息（代销）； (发货请调用物流API中的发货接口taobao.logistics.offline.send 进行发货，需要注意的是这里是供应商发货，因此调发货接口时需要传人供应商账号对应的sessionkey，tid 需传入供销平台的采购单（即fenxiao_id  分销流水号）)。",
 	"requestParams": [
 		{
 			"name": "status",
 			"type": "String",
-			"description": "交易状态，不传默认查询所有采购单根据身份选择自身状态可选值: *供应商： WAIT_SELLER_SEND_GOODS(等待发货) WAIT_SELLER_CONFIRM_PAY(待确认收款) WAIT_BUYER_PAY(等待付款) WAIT_BUYER_CONFIRM_GOODS(已发货) TRADE_REFUNDING(退款中) TRADE_FINISHED(采购成功) TRADE_CLOSED(已关闭) *分销商： WAIT_BUYER_PAY(等待付款) WAIT_BUYER_CONFIRM_GOODS(待收货确认) TRADE_FOR_PAY(已付款) TRADE_REFUNDING(退款中) TRADE_FINISHED(采购成功) TRADE_CLOSED(已关闭)"
+			"description": "交易状态，不传默认查询所有采购单 根据用户角色选择自身状态可选值:  * 供应商： WAIT_SELLER_SEND_GOODS(等待发货)  WAIT_SELLER_CONFIRM_PAY(待确认收款)  WAIT_BUYER_PAY(等待付款)  WAIT_BUYER_CONFIRM_GOODS(已发货)  TRADE_REFUNDING(退款中)  TRADE_FINISHED(采购成功)  TRADE_CLOSED(已关闭)  * 分销商： WAIT_BUYER_PAY(等待付款)  WAIT_BUYER_CONFIRM_GOODS(待收货确认)   TRADE_FOR_PAY(已付款)  TRADE_REFUNDING(退款中)  TRADE_FINISHED(采购成功)  TRADE_CLOSED(已关闭)"
 		},
 		{
 			"name": "start_created",
 			"type": "Date",
-			"description": "起始时间 格式 yyyy-MM-dd HH:mm:ss.支持到秒的查询。若不传时分秒，默认为0时0分0秒。若purchase_order_id没传，则此参数必传。"
+			"description": "起始时间，格式 yyyy-MM-dd HH:mm:ss 支持到秒的查询。若不传时分秒，默认为0时0分0秒。当指定了purchase_order_id或者tc_order_id时，此值可选，否则此参数必传。 结束时间和开始时间的时间间隔不能超过7天，精确到秒。"
 		},
 		{
 			"name": "end_created",
 			"type": "Date",
-			"description": "结束时间 格式 yyyy-MM-dd HH:mm:ss.支持到秒的查询。若不传时分秒，默认为0时0分0秒。若purchase_order_id没传，则此参数必传。"
+			"description": "结束时间，格式 yyyy-MM-dd HH:mm:ss 支持到秒的查询。若不传时分秒，默认为0时0分0秒。当指定了purchase_order_id或者tc_order_id时，此值可选，否则此参数必传。 结束时间和开始时间的时间间隔不能超过7天，精确到秒。"
 		},
 		{
 			"name": "time_type",
 			"type": "String",
-			"description": "可选值：trade_time_type(采购单按照成交时间范围查询),update_time_type(采购单按照更新时间范围查询)"
+			"description": "时间类型： trade_time_type(默认类型，按照采购单创建时间范围查询，推荐按照此时间类型查询) update_time_type(采购单按照更新时间范围查询)"
 		},
 		{
 			"name": "page_no",
@@ -41,35 +37,35 @@
 		{
 			"name": "purchase_order_id",
 			"type": "Number",
-			"description": "采购单编号或分销流水号，若其它参数没传，则此参数必传。",
+			"description": "采购单编号或分销流水号。 当指定此参数后，其他可选参数可以为空",
 			"maxValue": 9223372036854775807,
 			"minValue": -9223372036854775808
 		},
 		{
 			"name": "fields",
 			"type": "String",
-			"description": "多个字段用\",\"分隔。\u003cbr/\u003e\u003cbr/\u003efields\u003cbr/\u003e如果为空：返回所有采购单对象(purchase_orders)字段。\u003cbr/\u003e如果不为空：返回指定采购单对象(purchase_orders)字段。\u003cbr/\u003e\u003cbr/\u003e例1：\u003cbr/\u003esub_purchase_orders.tc_order_id 表示只返回tc_order_id \u003cbr/\u003e例2：\u003cbr/\u003esub_purchase_orders表示只返回子采购单列表"
+			"description": "指定返回的字段（废弃该参数） 多个字段用\",\"分隔。  fields 如果为空：返回所有采购单对象(purchase_orders)字段。 如果不为空：返回指定采购单对象(purchase_orders)字段。  例1： sub_purchase_orders.tc_order_id 表示只返回tc_order_id 例2： sub_purchase_orders表示只返回子采购单列表"
 		},
 		{
 			"name": "tc_order_id",
 			"type": "Number",
-			"description": "采购单下游买家订单id"
+			"description": "消费者交易单号（采购单下游买家订单id）。 当在代销、寄售交易中，此单号存在。"
 		},
 		{
 			"name": "channel_codes",
 			"type": "Number[]",
-			"description": "渠道code，可批量 查询老供销：999",
+			"description": "渠道市场编码，可批量指定。 当不指定时，按照配置的分销市场生效 渠道编码枚举：1-供销平台（淘宝）；2-供销平台（天猫）；3-供销平台（天猫超市）；5-供销平台（淘乡甜）；110001-供销平台（全球购）；110007-淘分销；200002-消费电子市场",
 			"maxListSize": 999
 		},
 		{
 			"name": "user_role_type",
 			"type": "Number",
-			"description": "角色，供应商：2，分销商：1"
+			"description": "当前查询用户的角色 当不指定时，默认为供应商 供应商：2，分销商：1"
 		},
 		{
 			"name": "trade_types",
 			"type": "Number[]",
-			"description": "代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6",
+			"description": "查询的经营模式，当不指定时，默认查询代销订单 代销：1  经销：2  寄售（自营寄售）：5  平台寄售：6",
 			"maxListSize": 999
 		}
 	],
@@ -77,29 +73,26 @@
 		{
 			"name": "total_results",
 			"type": "Number",
-			"description": "搜索到的采购单记录总数"
+			"description": "查询到的采购单记录总数"
 		},
 		{
-			"name": "purchase_orders",
-			"type": "TopDpOrderDo []",
-			"description": "采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。",
 			"subParams": [
 				{
 					"name": "supplier_from",
 					"type": "String",
-					"description": "供应商来源网站, values: taobao, alibaba",
+					"description": "供应商来源网站。 入驻时定义供应商来源的外部系统编码, values: taobao, alibaba",
 					"required": true
 				},
 				{
 					"name": "supplier_username",
 					"type": "String",
-					"description": "供应商在来源网站的帐号名。",
+					"description": "供应商昵称（在来源网站的帐号名）",
 					"required": true
 				},
 				{
 					"name": "distributor_username",
 					"type": "String",
-					"description": "分销商在来源网站的帐号名。",
+					"description": "分销商昵称（在来源网站的帐号名）。",
 					"required": true
 				},
 				{
@@ -111,56 +104,52 @@
 				{
 					"name": "alipay_no",
 					"type": "String",
-					"description": "支付宝交易号。",
+					"description": "支付宝交易号，在分销商使用担保交易支付时存在。 来源主订单的payOrderId。",
 					"required": true
 				},
 				{
 					"name": "total_fee",
 					"type": "String",
-					"description": "采购单总额（不含邮费,精确到2位小数;单位:元。如:200.07，表示:200元7分 )",
+					"description": "应付采购单总额（不含邮费,精确到2位小数;单位:元。如:200.07，表示:200元7分 ) 计算公式： SUM(子单采购价 * 子单采购数量 - 子单折扣）+ 主单调整金额 - 主单折扣",
 					"required": true
 				},
 				{
 					"name": "post_fee",
 					"type": "String",
-					"description": "采购单邮费。(精确到2位小数;单位:元。如:200.07，表示:200元7分 )",
+					"description": "采购单邮费。(改价后最新邮费，精确到2位小数;单位:元。如:8.07，表示:8元7分 )",
 					"required": true
 				},
 				{
 					"name": "distributor_payment",
 					"type": "String",
-					"description": "分销商实付金额。(精确到2位小数;单位:元。如:200.07，表示:200元7分 )",
+					"description": "分销商实付金额。(精确到2位小数;单位:元。如:208.14，表示:208元1角4分 )",
 					"required": true
 				},
 				{
 					"name": "snapshot_url",
 					"type": "String",
-					"description": "订单快照URL",
+					"description": "交易订单快照URL（该字段废弃）",
 					"required": true
 				},
 				{
 					"name": "pay_time",
 					"type": "Date",
-					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss",
+					"description": "采购单付款时间。格式:yyyy-MM-dd HH:mm:ss",
 					"required": true
 				},
 				{
 					"name": "consign_time",
 					"type": "Date",
-					"description": "物流发货时间。格式:yyyy-MM-dd HH:mm:ss",
+					"description": "采购单物流发货时间。格式:yyyy-MM-dd HH:mm:ss",
 					"required": true
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "交易修改时间。格式:yyyy-MM-dd HH:mm:ss",
+					"description": "采购单最后修改时间（包括订单状态变更和订单操作）。格式:yyyy-MM-dd HH:mm:ss",
 					"required": true
 				},
 				{
-					"name": "receiver",
-					"type": "TopReceiverDo",
-					"description": "买家详细信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -209,19 +198,29 @@
 							"type": "String",
 							"description": "收货人所在省份",
 							"required": true
+						},
+						{
+							"name": "oaid",
+							"type": "String",
+							"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+							"required": true
 						}
-					]
+					],
+					"name": "receiver",
+					"type": "TopReceiverDo",
+					"description": "买家详细信息",
+					"required": true
 				},
 				{
 					"name": "supplier_memo",
 					"type": "String",
-					"description": "供应商备注",
+					"description": "供应商备注信息。 只有供应商身份查询输出此新信息",
 					"required": true
 				},
 				{
 					"name": "fenxiao_id",
 					"type": "Number",
-					"description": "分销流水号，分销平台产生的主键",
+					"description": "分销采购单号（分销流水号）",
 					"required": true
 				},
 				{
@@ -233,55 +232,55 @@
 				{
 					"name": "trade_type",
 					"type": "String",
-					"description": "分销方式：AGENT（代销）、DEALER（经销）",
+					"description": "交易模式（分销方式）：AGENT（代销）、DEALER（经销）、INSTEAD_SALE（代售）、CONSIGNMENT（自营寄售）、PLATFORM_CONSIGNMENT（平台寄售）",
 					"required": true
 				},
 				{
 					"name": "distributor_from",
 					"type": "String",
-					"description": "分销商来源网站（taobao）。",
+					"description": "建议废弃： 分销商来源网站。 入驻时定义分销商来源的外部系统编码, 目前固定值: taobao",
 					"required": true
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "供应商交易ID 非采购单ID，如果改发货状态 是需要该ID，ID在用户未付款前为0，付款后有具体值（发货时使用该ID）",
+					"description": "废弃：如果是担保交易此值是TP800的交易单号，其他情况是采购单单号",
 					"required": true
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "采购单交易状态。可选值： \u003cbr\u003eWAIT_BUYER_PAY(等待付款)\u003cbr\u003e WAIT_SELLER_SEND_GOODS(已付款，待发货）\u003cbr\u003e WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)\u003cbr\u003e PAID_FORBID_CONSIGN(已付款，禁止发货 ps:只有大快消行业的才有)\u003cbr\u003e TRADE_FINISHED(交易成功)\u003cbr\u003e TRADE_CLOSED(交易关闭)\u003cbr\u003e WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持)\u003cbr\u003e PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功）\u003cbr\u003e PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）",
+					"description": "采购单交易状态。 可选值： WAIT_BUYER_PAY(等待付款) WAIT_SELLER_SEND_GOODS(已付款，待发货） WAIT_BUYER_CONFIRM_GOODS(已付款，已发货) PAID_FORBID_CONSIGN(已付款，禁止发货 ps:只有大快消行业的才有) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持) PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功） PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）",
 					"required": true
 				},
 				{
 					"name": "buyer_nick",
 					"type": "String",
-					"description": "买家nick，供应商查询不会返回买家昵称，分销商查询才会返回。",
+					"description": "消费者（买家）nick，供应商查询不会返回买家昵称，分销商查询才会返回。",
 					"required": true
 				},
 				{
 					"name": "memo",
 					"type": "String",
-					"description": "采购单留言。（代销模式下信息包括买家留言和分销商留言）",
+					"description": "采购单留言，默认是分销商留言。在代销模式下信息包括消费者（买家）留言和分销商留言信息",
 					"required": true
 				},
 				{
 					"name": "tc_order_id",
 					"type": "Number",
-					"description": "主订单ID （经销不显示）",
+					"description": "消费者主订单ID （经销模式下，不存在该单号）",
 					"required": true
 				},
 				{
 					"name": "shipping",
 					"type": "String",
-					"description": "配送方式，FAST(快速)、EMS、ORDINARY(平邮)、SELLER(卖家包邮)",
+					"description": "物流配送方式，发货后有此数据。 对应的值：FAST(快速)、EMS、ORDINARY(平邮)、SELLER(卖家包邮)",
 					"required": true
 				},
 				{
 					"name": "logistics_company_name",
 					"type": "String",
-					"description": "物流公司",
+					"description": "物流公司名称",
 					"required": true
 				},
 				{
@@ -293,38 +292,34 @@
 				{
 					"name": "isv_custom_key",
 					"type": "String[]",
-					"description": "自定义key",
+					"description": "ISV自定义key，通过taobao.fenxiao.order.customfield.update 写入。目前禁用",
 					"required": true
 				},
 				{
 					"name": "isv_custom_value",
 					"type": "String[]",
-					"description": "自定义值",
+					"description": "ISV自定义值，通过taobao.fenxiao.order.customfield.update 写入。目前禁用",
 					"required": true
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "交易结束时间",
+					"description": "交易结束时间。 如果交易成功此时间表示交易成功时间，如果交易关闭，此时间表示交易关闭时间。",
 					"required": true
 				},
 				{
 					"name": "supplier_flag",
 					"type": "Number",
-					"description": "返回供应商备注旗帜vlaue在1-5之间。非1-5之间，都采用1作为默认。 1:红色 2:黄色 3:绿色 4:蓝色 5:粉红色",
+					"description": "供应商备注旗帜vlaue在1-5之间。 非1-5之间，都采用1作为默认。 1:红色 2:黄色 3:绿色 4:蓝色 5:粉红色 供应商角色查询返回",
 					"required": true
 				},
 				{
 					"name": "buyer_payment",
 					"type": "String",
-					"description": "买家支付给分销商的总金额。注意买家购买的商品可能不是全部来自同一供货商，请同时参考子单上的相关金额。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
+					"description": "消费者（买家）支付给分销商的主单的实际总金额。 注意买家购买的商品可能不是全部来自同一供货商，所以此金额不代表供应商销售商品消费者的实付款。请同时参考子单上的相关金额。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
 					"required": true
 				},
 				{
-					"name": "order_messages",
-					"type": "OrderMessages[]",
-					"description": "采购单留言列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "message_time",
@@ -350,24 +345,24 @@
 							"description": "留言时的图片地址",
 							"required": true
 						}
-					]
+					],
+					"name": "order_messages",
+					"type": "OrderMessages[]",
+					"description": "采购单留言列表，如果是代销，包含消费者留言。",
+					"required": true
 				},
 				{
-					"name": "sub_purchase_orders",
-					"type": "SubOrderDetail[]",
-					"description": "子订单的详细信息列表。",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_outer_id",
 							"type": "String",
-							"description": "分销平台上商品商家编码。",
+							"description": "商品商家编码，供应商发布产品是定义的产品编码",
 							"required": true
 						},
 						{
 							"name": "sku_outer_id",
 							"type": "String",
-							"description": "SKU商家编码。",
+							"description": "SKU商家编码，供应商发布产品SKU是定义的编码",
 							"required": true
 						},
 						{
@@ -379,67 +374,67 @@
 						{
 							"name": "snapshot_url",
 							"type": "String",
-							"description": "快照地址。",
+							"description": "废弃： 产品快照地址",
 							"required": true
 						},
 						{
 							"name": "created",
 							"type": "Date",
-							"description": "创建时间。格式 yyyy-MM-dd HH:mm:ss 。",
+							"description": "子单创建时间。格式 yyyy-MM-dd HH:mm:ss 。",
 							"required": true
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "交易状态。可选值： \u003cbr\u003eWAIT_BUYER_PAY(等待付款)\u003cbr\u003e WAIT_SELLER_SEND_GOODS(已付款，待发货）\u003cbr\u003e WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)\u003cbr\u003e PAID_FORBID_CONSIGN(已付款，禁止发货 ps:只有大快消行业的才有)\u003cbr\u003e TRADE_FINISHED(交易成功)\u003cbr\u003e TRADE_CLOSED(交易关闭)\u003cbr\u003e WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持)\u003cbr\u003e PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功）\u003cbr\u003e PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）",
+							"description": "采购单交易状态。 可选值： WAIT_BUYER_PAY(等待付款) WAIT_SELLER_CONFIRM(付款信息待确认，待发货) WAIT_SELLER_SEND_GOODS(已付款，待发货） WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)  TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_REFUNDING(退款中) TRADE_REFUNDED(已退款) PAID_FORBID_CONSIGN(已付款, 禁止发货(大快消行业)) WAIT_BUYER_CONFIRM_GOODS_ACOUNTED(已付款（已分账），已发货。只对代销分账支持) PAY_ACOUNTED_GOODS_CONFIRM （已分账发货成功） PAY_WAIT_ACOUNT_GOODS_CONFIRM（已付款，确认收货）",
 							"required": true
 						},
 						{
 							"name": "refund_fee",
 							"type": "String",
-							"description": "退款金额",
+							"description": "退款金额，单位元。（精确到2位小数;单位:元。如:12.23，表示:12元2角3分）",
 							"required": true
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "子采购单id，淘宝交易主键，采购单未付款时为0.（只有支付宝 付款才有这个id，其余付款形式该字段为0）",
+							"description": "建议废弃：只有当担保交易支付时存在，为TP800的订单编号 子采购单id，淘宝交易主键，采购单未付款时为0.（只有支付宝 付款才有这个id，其余付款形式该字段为0）",
 							"required": true
 						},
 						{
 							"name": "fenxiao_id",
 							"type": "Number",
-							"description": "分销平台的子采购单主键",
+							"description": "子采购单编号",
 							"required": true
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "分销产品的SKU id。当存在时才会有值，建议使用sku_outer_id，sku_properties这两个值",
+							"description": "分销产品的SKU ID。 当存在时才会有值，建议使用sku_outer_id，sku_properties这两个值",
 							"required": true
 						},
 						{
 							"name": "tc_order_id",
 							"type": "Number",
-							"description": "TC子订单ID（经销不显示）",
+							"description": "消费者订单子订单ID（经销模式下不存在该值）",
 							"required": true
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "分销平台上的产品id，同FenxiaoProduct 的pid",
+							"description": "分销平台上的产品id",
 							"required": true
 						},
 						{
 							"name": "order_200_status",
 							"type": "String",
-							"description": "代销采购单对应下游200订单状态。可选值：WAIT_SELLER_SEND_GOODS(已付款，待发货)WAIT_BUYER_CONFIRM_GOODS(已付款，已发货)TRADE_CLOSED(已退款成功)TRADE_REFUNDING(退款中)TRADE_FINISHED(交易成功)TRADE_CLOSED_BY_TAOBAO(交易关闭)",
+							"description": "消费者的交易订单状态（代销采购单对应下游200订单状态）。 可选值： WAIT_SELLER_SEND_GOODS(已付款，待发货) WAIT_BUYER_CONFIRM_GOODS(已付款，已发货) TRADE_CLOSED(已退款成功) TRADE_REFUNDING(退款中) TRADE_FINISHED(交易成功) TRADE_CLOSED_BY_TAOBAO(交易关闭)",
 							"required": true
 						},
 						{
 							"name": "auction_price",
 							"type": "String",
-							"description": "分销商店铺中宝贝一口价",
+							"description": "分销商店铺中宝贝一口价，消费者看见的宝贝价格。单位元 代销场景下存在，此价格不是实付款的价格。",
 							"required": true
 						},
 						{
@@ -463,25 +458,25 @@
 						{
 							"name": "total_fee",
 							"type": "String",
-							"description": "分销商应付金额=num(采购数量)*price(采购价)。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
+							"description": "分销商应付金额。 计算公式：num(采购数量)*price(采购价) - 折扣。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
 							"required": true
 						},
 						{
 							"name": "distributor_payment",
 							"type": "String",
-							"description": "分销商实付金额=total_fee（分销商应付金额）+改价-优惠。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
+							"description": "分销商实付金额。 total_fee（分销商应付金额）+ 改价。（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
 							"required": true
 						},
 						{
 							"name": "buyer_payment",
 							"type": "String",
-							"description": "买家订单上对应的子单零售金额，除以num（数量）后等于最终宝贝的零售价格（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
+							"description": "买家订单上对应的子单零售金额。 计算公式：消费者订单的成交价 * 购买数量 + 调整金额 - 优惠折扣（精确到2位小数;单位:元。如:200.07，表示:200元7分）",
 							"required": true
 						},
 						{
 							"name": "bill_fee",
 							"type": "String",
-							"description": "发票应开金额。根据买家实际付款去除邮费后，按各个子单(商品)金额比例进行分摊后的金额，仅供开发票时做票面金额参考。",
+							"description": "发票应开金额。 子单的消费者实付分摊金额。根据买家实际付款去除邮费后，按各个子单(商品)金额比例进行分摊后的金额，仅供开发票时做票面金额参考。",
 							"required": true
 						},
 						{
@@ -511,20 +506,16 @@
 						{
 							"name": "discount_fee",
 							"type": "String",
-							"description": "优惠活动的折扣金额",
+							"description": "消费者订单优惠金额，始终为正数，单位是分，不带小数",
 							"required": true
 						},
 						{
 							"name": "promotion_type",
 							"type": "String",
-							"description": "优惠活动类型0=无优惠1=限时折",
+							"description": "采购子订单优惠活动类型。0=无优惠；1=限时折",
 							"required": true
 						},
 						{
-							"name": "features",
-							"type": "FeatureDo[]",
-							"description": "Feature对象列表目前已有的属性：attr_key为 www，attr_value为1 表示是www子订单；attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码；attr_key为 isWt，attr_value为1 表示是网厅子订单；attr_key为wtInfo,attr_value为网厅相关合约信息；attr_key为shipper,attr_value为cn表示菜鸟发货；attr_key为 storeCode，attr_value为仓库信息； attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；",
-							"required": true,
 							"subParams": [
 								{
 									"name": "attr_key",
@@ -538,59 +529,63 @@
 									"description": "属性值",
 									"required": true
 								}
-							]
+							],
+							"name": "features",
+							"type": "FeatureDo[]",
+							"description": "建议废弃 Feature对象列表目前已有的属性： attr_key为 www，attr_value为1 表示是www子订单； attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码； attr_key为 isWt，attr_value为1 表示是网厅子订单； attr_key为wtInfo,attr_value为网厅相关合约信息； attr_key为shipper,attr_value为cn表示菜鸟发货； attr_key为 storeCode，attr_value为仓库信息；  attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；",
+							"required": true
 						},
 						{
 							"name": "auction_sku_id",
 							"type": "Number",
-							"description": "前台商品SKU ID，不存在时为0。2015年3月15日之前创建的采购单该字段都是0。",
+							"description": "消费者购买宝贝SKU ID，不存在时为0。 2015年3月15日之前创建的采购单该字段都是0。",
 							"required": true
 						},
 						{
 							"name": "auction_id",
 							"type": "Number",
-							"description": "前台分销商品的宝贝ID，不存在时为0。2015年4月15日之前创建的采购单该字段都是0。",
+							"description": "消费者购买宝贝ID，不存在时为0。 2015年4月15日之前创建的采购单该字段都是0。",
 							"required": true
 						},
 						{
-							"name": "top_memo",
-							"type": "TopMemoDto",
-							"description": "topMemoDTO",
-							"required": true,
 							"subParams": [
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "remark",
+									"description": "子订单备注内容",
 									"required": true
 								},
 								{
 									"name": "operate_user_nick",
 									"type": "String",
-									"description": "operateUserNick",
+									"description": "操作者昵称",
 									"required": true
 								},
 								{
-									"name": "attachments",
-									"type": "TopMemoAttachment[]",
-									"description": "attachments",
-									"required": true,
 									"subParams": [
 										{
 											"name": "url",
 											"type": "String",
-											"description": "url",
+											"description": "附件地址",
 											"required": true
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "name",
+											"description": "附件名称",
 											"required": true
 										}
-									]
+									],
+									"name": "attachments",
+									"type": "TopMemoAttachment[]",
+									"description": "附件",
+									"required": true
 								}
-							]
+							],
+							"name": "top_memo",
+							"type": "TopMemoDto",
+							"description": "子订单留言信息",
+							"required": true
 						},
 						{
 							"name": "old_sku_properties",
@@ -598,19 +593,19 @@
 							"description": "老的SKU属性值。如: 颜色:红色:别名;尺码:L:别名",
 							"required": true
 						}
-					]
+					],
+					"name": "sub_purchase_orders",
+					"type": "SubOrderDetail[]",
+					"description": "子订单的详细信息列表",
+					"required": true
 				},
 				{
 					"name": "buyer_taobao_id",
 					"type": "String",
-					"description": "加密后的买家淘宝ID，长度为32位",
+					"description": "加密后的消费者淘宝ID，长度为32",
 					"required": true
 				},
 				{
-					"name": "features",
-					"type": "FeatureDo[]",
-					"description": "主订单属性信息，key-value形式：\u003cbr/\u003eorderNovice ：订单发票抬头；\u003cbr/\u003eorderNoviceContent ：代表发票明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "attr_key",
@@ -624,13 +619,13 @@
 							"description": "属性值",
 							"required": true
 						}
-					]
+					],
+					"name": "features",
+					"type": "FeatureDo[]",
+					"description": "建议废弃 Feature对象列表目前已有的属性： attr_key为 www，attr_value为1 表示是www子订单； attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码； attr_key为 isWt，attr_value为1 表示是网厅子订单； attr_key为wtInfo,attr_value为网厅相关合约信息； attr_key为shipper,attr_value为cn表示菜鸟发货； attr_key为 storeCode，attr_value为仓库信息；  attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；",
+					"required": true
 				},
 				{
-					"name": "logistics_infos",
-					"type": "ErpLogisticsInfo[]",
-					"description": "[架海金梁独有字段，非架海金梁用户请勿关心]子单物流发货信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "consign_type",
@@ -709,28 +704,99 @@
 							"type": "Number",
 							"description": "组合货品比例",
 							"required": true
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "货品条码",
+							"required": true
+						},
+						{
+							"name": "delivery_cps",
+							"type": "String",
+							"description": "推荐配送公司编码",
+							"required": true
+						},
+						{
+							"name": "biz_store_code",
+							"type": "String",
+							"description": "仓商家编码",
+							"required": true
+						},
+						{
+							"name": "biz_delivery_code",
+							"type": "String",
+							"description": "推荐配送erp编码",
+							"required": true
+						},
+						{
+							"name": "biz_sd_type",
+							"type": "String",
+							"description": "仓配建议类型",
+							"required": true
 						}
-					]
+					],
+					"name": "logistics_infos",
+					"type": "ErpLogisticsInfo[]",
+					"description": "[架海金梁独有字段，非架海金梁用户请勿关心]子单物流发货信息",
+					"required": true
 				},
 				{
 					"name": "alipay_order_no",
 					"type": "String",
-					"description": "支付宝交易号，国际担保交易用",
+					"description": "支付宝交易号，担保交易使用。",
 					"required": true
 				},
 				{
 					"name": "confirm_paid_fee_yuan",
 					"type": "String",
-					"description": "已执行确认收货的金额",
+					"description": "已执行确认收货的金额，单位：元",
 					"required": true
 				},
 				{
 					"name": "channel_code",
 					"type": "Number",
-					"description": "渠道编码，市场",
+					"description": "渠道(市场)编码，例如消费电子的编码为200002",
+					"required": true
+				},
+				{
+					"name": "open_buyer_uid",
+					"type": "String",
+					"description": "消费者淘宝id被加密后的唯一标识",
+					"required": true
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "计划出库时间",
+					"required": true
+				},
+				{
+					"name": "sign_time",
+					"type": "String",
+					"description": "计划送达时间",
+					"required": true
+				},
+				{
+					"name": "asdp_ads",
+					"type": "String",
+					"description": "配送服务,201为驿站送货上门服务,202为顺丰配送服务,里面多个值时用英文逗号隔开",
+					"required": true
+				},
+				{
+					"name": "delivery_cps",
+					"type": "String",
+					"description": "推荐配送公司编码",
 					"required": true
 				}
-			]
+			],
+			"name": "purchase_orders",
+			"type": "TopDpOrderDo []",
+			"description": "采购单及子采购单信息。 返回 PurchaseOrder 包含的字段信息。"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.orders.get",
+	"apiChineseName": "查询采购单信息",
+	"description": "查询代销采购单单据。\n\n1. 支持商家按照供应商、分销商两种角色来查询数据。如果没有指定角色角色，系统会自动判断，此时如果商家存在供应商、分销商两种角色时，按照供应商角色查询。\n2. 同时此接口还可以查询除供销经销外的其他经营模式的数据。如果需要查询供销经销单据请参考接口：taobao.fenxiao.dealer.requisitionorder.query\n\n3. 发货请调用物流API中的发货接口taobao.logistics.offline.send 进行发货，需要注意的是这里是供应商发货，因此调发货接口时需要传人供应商账号对应的sessionkey，tid 需传入供销平台的采购单（即fenxiao_id  分销流水号）)。",
+	"id": 180
 }

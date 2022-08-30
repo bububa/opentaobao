@@ -1,8 +1,4 @@
 {
-	"id": 27430,
-	"name": "alibaba.wt.cif.coop.osstoken.get",
-	"apiChineseName": "获取oss签名接口",
-	"description": "商家合作上传oss图片获取token接口",
 	"requestParams": [
 		{
 			"name": "app_name",
@@ -22,79 +18,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "OssTokenResponse",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "expiration",
 							"type": "String",
-							"description": "失效时间",
-							"required": true
+							"description": "失效时间"
 						},
 						{
 							"name": "security_token",
 							"type": "String",
-							"description": "token",
-							"required": true
+							"description": "token"
 						},
 						{
 							"name": "access_key_secret",
 							"type": "String",
-							"description": "accessKeySecret",
-							"required": true
+							"description": "accessKeySecret"
 						},
 						{
 							"name": "access_key_id",
 							"type": "String",
-							"description": "accessKeyId",
-							"required": true
+							"description": "accessKeyId"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "status",
-							"required": true
+							"description": "status"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OssTokenResponse",
+					"description": "model"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "desc",
-					"required": true
+					"description": "desc"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wt.cif.coop.osstoken.get",
+	"apiChineseName": "获取oss签名接口",
+	"description": "商家合作上传oss图片获取token接口",
+	"id": 27430
 }

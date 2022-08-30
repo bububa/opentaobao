@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型 1-指定专家 2-系统认定专家"
+						},
+						{
+							"name": "outer_consultant_id",
+							"type": "String",
+							"description": "外部经纪人ID"
+						},
+						{
+							"name": "is_test",
+							"type": "Number",
+							"description": "是否测试 0-否 1-是"
+						}
+					],
+					"name": "out_consulatant_infos",
+					"type": "CommunityAgentRelationDto[]",
+					"description": "专家列表"
+				},
+				{
+					"name": "outer_community_id",
+					"type": "String",
+					"description": "外部小区ID"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务域"
+				}
+			],
+			"name": "relation_dto",
+			"type": "SubmitCommunityAgentRelationDto",
+			"description": "小区专家关系"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.community.broker.submit",
+	"apiChineseName": "提交小区专家",
+	"description": "提交小区专家",
+	"id": 56722
+}

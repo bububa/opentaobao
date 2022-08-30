@@ -1,13 +1,6 @@
 {
-	"id": 50853,
-	"name": "alibaba.mozi.acl.role.remove",
-	"apiChineseName": "删除角色",
-	"description": "根据传入的角色code、租户id，删除租户内对应的角色",
 	"requestParams": [
 		{
-			"name": "delete_roles_request",
-			"type": "DeleteRolesRequest",
-			"description": "删除角色请求对象",
 			"subParams": [
 				{
 					"name": "names",
@@ -15,9 +8,6 @@
 					"description": "要删除的角色code列表"
 				},
 				{
-					"name": "principal_param",
-					"type": "BucUserPrincipalParam",
-					"description": "操作主体",
 					"subParams": [
 						{
 							"name": "tenant_id",
@@ -29,9 +19,15 @@
 							"type": "Number",
 							"description": "应用管理员accountId"
 						}
-					]
+					],
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体"
 				}
-			]
+			],
+			"name": "delete_roles_request",
+			"type": "DeleteRolesRequest",
+			"description": "删除角色请求对象"
 		}
 	],
 	"responseParams": [
@@ -60,5 +56,9 @@
 			"type": "String",
 			"description": "如果success为true，则返回0，否则此段返回详细的错误code"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.role.remove",
+	"apiChineseName": "删除角色",
+	"description": "根据传入的角色code、租户id，删除租户内对应的角色",
+	"id": 50853
 }

@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "entrusted_status",
+					"type": "Number",
+					"description": "委托状态",
+					"required": true
+				},
+				{
+					"name": "butler_service_id",
+					"type": "Number",
+					"description": "管家ID",
+					"required": true
+				},
+				{
+					"name": "entrust_selling_id",
+					"type": "Number",
+					"description": "委托业务主ID",
+					"required": true
+				}
+			],
+			"name": "customer_entrust_selling_req",
+			"type": "CustomerEntrustSellingReq",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.entrustselling.update",
+	"apiChineseName": "管家状态及房源信息接口",
+	"description": "管家状态及房源信息接口",
+	"id": 58291
+}

@@ -1,8 +1,4 @@
 {
-	"id": 50465,
-	"name": "alibaba.alihealth.nr.rx.queryimage",
-	"apiChineseName": "o2o查看处方图片",
-	"description": "o2o商家查看处方图片，包括电子图片与纸质图片",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -31,5 +27,9 @@
 			"type": "String",
 			"description": "处方图片url，多张图片用逗号分隔"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.nr.rx.queryimage",
+	"apiChineseName": "o2o查看处方图片",
+	"description": "o2o商家查看处方图片，包括电子图片与纸质图片",
+	"id": 50465
 }

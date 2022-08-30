@@ -1,135 +1,118 @@
 {
-	"id": 37387,
-	"name": "alibaba.mos.onsite.trade.queryrefund",
-	"apiChineseName": "退款查询",
-	"description": "商户可使用该接口查询退款请求是否执行成功。",
 	"requestParams": [
-		{
-			"name": "out_request_no",
-			"type": "String",
-			"description": "退款外部流水号",
-			"required": true,
-			"maxLength": 64
-		},
 		{
 			"name": "order_no",
 			"type": "String",
 			"description": "订单号。可能为外部订单号，也可能为喵街订单号"
+		},
+		{
+			"name": "out_request_no",
+			"type": "String",
+			"description": "退款外部流水号",
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OnsiteRefundResponse",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trade_no",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "out_trade_no",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "out_request_no",
 							"type": "String",
-							"description": "外部退款流水号",
-							"required": true
-						},
-						{
-							"name": "refund_amount",
-							"type": "Number",
-							"description": "本次退款请求，对应的退款金额（分）",
-							"required": true
+							"description": "外部退款流水号"
 						},
 						{
 							"name": "refund_status",
 							"type": "String",
-							"description": "退款状态。FAIL退款失败，REFUNDING表示退款请求中，SUCCESS退款成功",
-							"required": true
+							"description": "退款状态。FAIL退款失败，REFUNDING表示退款请求中，SUCCESS退款成功"
 						},
 						{
 							"name": "buyer_alipay_id",
 							"type": "String",
-							"description": "buyerAlipayId",
-							"required": true
+							"description": "buyerAlipayId"
 						},
 						{
-							"name": "fund_bill_list",
-							"type": "FundBillDo[]",
-							"description": "fundBillList",
-							"required": true,
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "本次退款请求，对应的退款金额（分）"
+						},
+						{
 							"subParams": [
 								{
 									"name": "amount",
 									"type": "Number",
-									"description": "金额。单位为人民币（分）。必然返回",
-									"required": true
+									"description": "金额。单位为人民币（分）。必然返回"
 								},
 								{
 									"name": "extend_params",
 									"type": "String",
-									"description": "业务扩展参数，json格式",
-									"required": true
+									"description": "业务扩展参数，json格式"
 								},
 								{
 									"name": "sub_fund_channel",
 									"type": "String",
-									"description": "子资金渠道。必然返回。取值为支付宝红包：alipay_coupon 支付宝余额：alipay_account 支付宝集分宝：alipay_point 支付宝余额宝：alipay_financeaccount 蚂蚁花呗：alipay_pcredit 支付宝预付卡：alipay_pcard 喵街储值卡（经支付宝打款）：alipay_mj_vcard 喵街购物券（经支付宝打款）：alipay_mj_voucher 喵街补贴（经支付宝打款）：alipay_mj_subsidy 其它（经支付宝打款）：alipay_other",
-									"required": true
+									"description": "子资金渠道。必然返回。取值为支付宝红包：alipay_coupon 支付宝余额：alipay_account 支付宝集分宝：alipay_point 支付宝余额宝：alipay_financeaccount 蚂蚁花呗：alipay_pcredit 支付宝预付卡：alipay_pcard 喵街储值卡（经支付宝打款）：alipay_mj_vcard 喵街购物券（经支付宝打款）：alipay_mj_voucher 喵街补贴（经支付宝打款）：alipay_mj_subsidy 其它（经支付宝打款）：alipay_other"
 								},
 								{
 									"name": "fund_channel",
 									"type": "String",
-									"description": "打款类型。必然返回。取值为alipay，代表打款类型为支付宝（打款到商户的支付宝账号）",
-									"required": true
+									"description": "打款类型。必然返回。取值为alipay，代表打款类型为支付宝（打款到商户的支付宝账号）"
 								}
-							]
+							],
+							"name": "fund_bill_list",
+							"type": "FundBillDo[]",
+							"description": "fundBillList"
 						},
 						{
 							"name": "auth_code_source",
 							"type": "String",
-							"description": "授权码来源。MJ：喵街，M_TAO：手淘，ALIPAY：支付宝",
-							"required": true
+							"description": "授权码来源。MJ：喵街，M_TAO：手淘，ALIPAY：支付宝"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "消费者喵街昵称",
-							"required": true
+							"description": "消费者喵街昵称"
 						}
-					]
+					],
+					"name": "data",
+					"type": "OnsiteRefundResponse",
+					"description": "data"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mos.onsite.trade.queryrefund",
+	"apiChineseName": "退款查询",
+	"description": "商户可使用该接口查询退款请求是否执行成功。",
+	"id": 37387
 }

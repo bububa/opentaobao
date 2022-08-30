@@ -1,8 +1,4 @@
 {
-	"id": 54934,
-	"name": "alibaba.ascp.logistics.offline.send",
-	"apiChineseName": "自己联系物流发货",
-	"description": "用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货",
 	"requestParams": [
 		{
 			"name": "sender_id",
@@ -24,14 +20,9 @@
 			"name": "sub_tid",
 			"type": "String",
 			"description": "需要拆单发货的子订单集合，针对的是一笔交易下有多个子订单需要分开发货的场景；1次可传人多个子订单号，子订单间用逗号隔开；为空表示不做拆单发货。",
-			"maxLength": 500
+			"maxLength": 1000
 		},
 		{
-			"name": "consign_pkgs",
-			"type": "TopConsignPkgRequest[]",
-			"description": "包裹信息",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "out_sid",
@@ -45,7 +36,12 @@
 					"description": "物流公司代码.如\"POST\"就代表中国邮政,\"ZJS\"就代表宅急送.调用 taobao.logistics.companies.get 获取",
 					"required": true
 				}
-			]
+			],
+			"name": "consign_pkgs",
+			"type": "TopConsignPkgRequest[]",
+			"description": "包裹信息",
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "cancel_id",
@@ -55,17 +51,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.logistics.offline.send",
+	"apiChineseName": "自己联系物流发货",
+	"description": "用户调用该接口可实现自己联系发货，使用该接口发货，交易订单状态会直接变成卖家已发货",
+	"id": 54934
 }

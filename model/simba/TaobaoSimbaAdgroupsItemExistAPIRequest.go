@@ -14,12 +14,12 @@ type TaobaoSimbaAdgroupsItemExistAPIRequest struct {
 	model.Params
 	// 主人昵称
 	_nick string
+	// 产品类型 101001005 代表普通推广，101001014代表销量明星
+	_productId int64
 	// 推广计划Id
 	_campaignId int64
 	// 商品Id
 	_itemId int64
-	// 产品类型 101001005 代表普通推广，101001014代表销量明星
-	_productId int64
 }
 
 // NewTaobaoSimbaAdgroupsItemExistRequest 初始化TaobaoSimbaAdgroupsItemExistAPIRequest对象
@@ -56,6 +56,19 @@ func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetProductId is ProductId Setter
+// 产品类型 101001005 代表普通推广，101001014代表销量明星
+func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetProductId(_productId int64) error {
+	r._productId = _productId
+	r.Set("product_id", _productId)
+	return nil
+}
+
+// GetProductId ProductId Getter
+func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetProductId() int64 {
+	return r._productId
+}
+
 // SetCampaignId is CampaignId Setter
 // 推广计划Id
 func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetCampaignId(_campaignId int64) error {
@@ -80,17 +93,4 @@ func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetItemId(_itemId int64) error 
 // GetItemId ItemId Getter
 func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetItemId() int64 {
 	return r._itemId
-}
-
-// SetProductId is ProductId Setter
-// 产品类型 101001005 代表普通推广，101001014代表销量明星
-func (r *TaobaoSimbaAdgroupsItemExistAPIRequest) SetProductId(_productId int64) error {
-	r._productId = _productId
-	r.Set("product_id", _productId)
-	return nil
-}
-
-// GetProductId ProductId Getter
-func (r TaobaoSimbaAdgroupsItemExistAPIRequest) GetProductId() int64 {
-	return r._productId
 }

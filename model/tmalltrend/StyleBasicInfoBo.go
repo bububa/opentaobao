@@ -30,6 +30,8 @@ type StyleBasicInfoBo struct {
 	ContourCate string `json:"contour_cate,omitempty" xml:"contour_cate,omitempty"`
 	// 辅料
 	MinorMaterial string `json:"minor_material,omitempty" xml:"minor_material,omitempty"`
+	// 核心属性项，英文分号分割，最多3个，必须按照给定备选项设置，否则强校验会不通过
+	KeyProperties string `json:"key_properties,omitempty" xml:"key_properties,omitempty"`
 	// 款式价格，单位元
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 授权证明，图片链接，当版权方不是凌迪时
@@ -44,8 +46,6 @@ type StyleBasicInfoBo struct {
 	VideoSourceUrl string `json:"video_source_url,omitempty" xml:"video_source_url,omitempty"`
 	// 下线操作时说明详细下线原因
 	OfflineReasonDetail string `json:"offline_reason_detail,omitempty" xml:"offline_reason_detail,omitempty"`
-	// 核心属性项，英文分号分割，最多3个，必须按照给定备选项设置，否则强校验会不通过
-	KeyProperties string `json:"key_properties,omitempty" xml:"key_properties,omitempty"`
 	// 服装模型信息
 	Clothings string `json:"clothings,omitempty" xml:"clothings,omitempty"`
 	// 人台模型信息

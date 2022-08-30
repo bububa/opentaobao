@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "调用接口的企业ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true：接口调用成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "文件下载地址"
+						}
+					],
+					"name": "model",
+					"type": "JSONObject",
+					"description": "返回值"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "接口调用失败具体信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "接口调用失败具体code"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.getdruginfo.downloadurl",
+	"apiChineseName": "药品全量数据下载",
+	"description": "药品全量数据下载",
+	"id": 62385
+}

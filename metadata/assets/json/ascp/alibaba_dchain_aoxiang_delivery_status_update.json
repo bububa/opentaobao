@@ -1,0 +1,111 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "erp_code",
+							"type": "String",
+							"description": "erp配资源唯一编码，卖家唯一",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "0 停用/1启用",
+							"required": true
+						}
+					],
+					"name": "delivery_infos",
+					"type": "DeliveryInfo[]",
+					"description": "快递信息数组；最多50条",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				}
+			],
+			"name": "delivery_status_update_request",
+			"type": "DeliveryStatusUpdateRequest",
+			"description": "启用/停用配资源入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "0=全部失败，1=全部成功，2=部分成功"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "true|false"
+								},
+								{
+									"name": "erp_code",
+									"type": "String",
+									"description": "erp配资源唯一编码，卖家唯一"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "响应码"
+								},
+								{
+									"name": "message",
+									"type": "String",
+									"description": "响应信息"
+								}
+							],
+							"name": "detail",
+							"type": "DetailItem[]",
+							"description": "详情"
+						}
+					],
+					"name": "data",
+					"type": "DataDetail",
+					"description": "详细"
+				}
+			],
+			"name": "delivery_status_update_response",
+			"type": "DeliveryStatusUpdateResponse",
+			"description": "启用/停用配资源出参"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.delivery.status.update",
+	"apiChineseName": "启用/停用配资源",
+	"description": "启用/停用配资源",
+	"id": 63261
+}

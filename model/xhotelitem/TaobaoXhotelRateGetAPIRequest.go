@@ -12,12 +12,12 @@ import (
 // 酒店产品库rate查询
 type TaobaoXhotelRateGetAPIRequest struct {
 	model.Params
-	// 卖家房型ID, 这是卖家自己系统中的房型ID 注意：需要按照规则组合
-	_outRid string
-	// 卖家自己系统的Code，简称RateCode
-	_rateplanCode string
 	// 用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。
 	_vendor string
+	// 卖家自己系统的Code，简称RateCode
+	_rateplanCode string
+	// 卖家房型ID, 这是卖家自己系统中的房型ID 注意：需要按照规则组合
+	_outRid string
 	// gid酒店商品id
 	_gid int64
 	// 酒店RPID
@@ -47,17 +47,17 @@ func (r TaobaoXhotelRateGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOutRid is OutRid Setter
-// 卖家房型ID, 这是卖家自己系统中的房型ID 注意：需要按照规则组合
-func (r *TaobaoXhotelRateGetAPIRequest) SetOutRid(_outRid string) error {
-	r._outRid = _outRid
-	r.Set("out_rid", _outRid)
+// SetVendor is Vendor Setter
+// 用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。
+func (r *TaobaoXhotelRateGetAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
 	return nil
 }
 
-// GetOutRid OutRid Getter
-func (r TaobaoXhotelRateGetAPIRequest) GetOutRid() string {
-	return r._outRid
+// GetVendor Vendor Getter
+func (r TaobaoXhotelRateGetAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetRateplanCode is RateplanCode Setter
@@ -73,17 +73,17 @@ func (r TaobaoXhotelRateGetAPIRequest) GetRateplanCode() string {
 	return r._rateplanCode
 }
 
-// SetVendor is Vendor Setter
-// 用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。
-func (r *TaobaoXhotelRateGetAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
+// SetOutRid is OutRid Setter
+// 卖家房型ID, 这是卖家自己系统中的房型ID 注意：需要按照规则组合
+func (r *TaobaoXhotelRateGetAPIRequest) SetOutRid(_outRid string) error {
+	r._outRid = _outRid
+	r.Set("out_rid", _outRid)
 	return nil
 }
 
-// GetVendor Vendor Getter
-func (r TaobaoXhotelRateGetAPIRequest) GetVendor() string {
-	return r._vendor
+// GetOutRid OutRid Getter
+func (r TaobaoXhotelRateGetAPIRequest) GetOutRid() string {
+	return r._outRid
 }
 
 // SetGid is Gid Setter

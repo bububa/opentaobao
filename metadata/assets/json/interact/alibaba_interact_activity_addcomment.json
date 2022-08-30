@@ -1,8 +1,4 @@
 {
-	"id": 25768,
-	"name": "alibaba.interact.activity.addcomment",
-	"apiChineseName": "微淘评论接口",
-	"description": "发表评论，并返回楼层",
 	"requestParams": [
 		{
 			"name": "content",
@@ -34,5 +30,9 @@
 			"type": "Number",
 			"description": "评论的楼层数"
 		}
-	]
+	],
+	"name": "alibaba.interact.activity.addcomment",
+	"apiChineseName": "微淘评论接口",
+	"description": "发表评论，并返回楼层",
+	"id": 25768
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27563,
-	"name": "taobao.alitrip.travel.item.element.manage",
-	"apiChineseName": "【API3.0】资源元素管理接口",
-	"description": "资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享",
 	"requestParams": [
 		{
 			"name": "operation",
@@ -44,9 +40,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopElementResult",
-			"description": "firstResult",
 			"subParams": [
 				{
 					"name": "element_outer_id",
@@ -72,7 +65,14 @@
 					"description": "删除时间",
 					"required": true
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopElementResult",
+			"description": "firstResult"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.item.element.manage",
+	"apiChineseName": "【API3.0】资源元素管理接口",
+	"description": "资源元素管理接口：提供商家管理（增删改）基本资源元素信息。基本资源元素可供多个商品共享",
+	"id": 27563
 }

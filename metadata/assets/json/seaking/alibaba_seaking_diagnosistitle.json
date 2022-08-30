@@ -1,8 +1,4 @@
 {
-	"id": 48725,
-	"name": "alibaba.seaking.diagnosistitle",
-	"apiChineseName": "标题诊断",
-	"description": "标题诊断",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -11,9 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "extra",
-			"type": "Extra",
-			"description": "扩展信息",
 			"subParams": [
 				{
 					"name": "platform",
@@ -35,7 +28,10 @@
 					"type": "String",
 					"description": "店铺所在平台"
 				}
-			]
+			],
+			"name": "extra",
+			"type": "Extra",
+			"description": "扩展信息"
 		},
 		{
 			"name": "identifier",
@@ -114,5 +110,9 @@
 			"type": "String []",
 			"description": "拼写错误的单词"
 		}
-	]
+	],
+	"name": "alibaba.seaking.diagnosistitle",
+	"apiChineseName": "标题诊断",
+	"description": "标题诊断",
+	"id": 48725
 }

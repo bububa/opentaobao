@@ -1,8 +1,4 @@
 {
-	"id": 22293,
-	"name": "taobao.crm.member.group.get",
-	"apiChineseName": "获取买家身上的标签",
-	"description": "获取买家身上的标签，不返回标签的总人数",
 	"requestParams": [
 		{
 			"name": "buyer_nick",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "groups",
-			"type": "Group []",
-			"description": "查询到的当前卖家的当前页的会员",
 			"subParams": [
 				{
 					"name": "group_id",
@@ -47,7 +40,14 @@
 					"type": "Number",
 					"description": "分组所拥有的会员数量,如果返回值为-1，表示当前服务忙或数据在初始化。"
 				}
-			]
+			],
+			"name": "groups",
+			"type": "Group []",
+			"description": "查询到的当前卖家的当前页的会员"
 		}
-	]
+	],
+	"name": "taobao.crm.member.group.get",
+	"apiChineseName": "获取买家身上的标签",
+	"description": "获取买家身上的标签，不返回标签的总人数",
+	"id": 22293
 }

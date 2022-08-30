@@ -1,14 +1,6 @@
 {
-	"id": 41476,
-	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
-	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
-	"description": "Receives information about reverse logistics tracking info",
 	"requestParams": [
 		{
-			"name": "logistics_order_creation_request",
-			"type": "LogisticOrderCreationForRmaRequest",
-			"description": "Logistic's order creation request",
-			"required": true,
 			"subParams": [
 				{
 					"name": "dispute_id",
@@ -40,7 +32,11 @@
 					"description": "Carrier name",
 					"required": true
 				}
-			]
+			],
+			"name": "logistics_order_creation_request",
+			"type": "LogisticOrderCreationForRmaRequest",
+			"description": "Logistic's order creation request",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "String",
 			"description": "Error description"
 		}
-	]
+	],
+	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
+	"description": "Receives information about reverse logistics tracking info",
+	"id": 41476
 }

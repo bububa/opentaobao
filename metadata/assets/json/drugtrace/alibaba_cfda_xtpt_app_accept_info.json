@@ -1,8 +1,4 @@
 {
-	"id": 46294,
-	"name": "alibaba.cfda.xtpt.app.accept.info",
-	"apiChineseName": "协同平台数据下行接口",
-	"description": "协同平台数据下行接口",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -50,29 +46,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息编码",
-					"required": true
+					"description": "消息编码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "结果信息",
-					"required": true
+					"description": "结果信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.cfda.xtpt.app.accept.info",
+	"apiChineseName": "协同平台数据下行接口",
+	"description": "协同平台数据下行接口",
+	"id": 46294
 }

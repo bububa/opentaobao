@@ -12,10 +12,10 @@ import (
 // 单码关联关系查询
 type AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest struct {
 	model.Params
-	// 追溯码
-	_code string
 	// 接口调用企业的唯一标识（接口调用者）
 	_refEntId string
+	// 追溯码
+	_code string
 	// 目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）
 	_desRefEntId string
 }
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetApiParams() 
 	return params
 }
 
-// SetCode is Code Setter
-// 追溯码
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetCode(_code string) error {
-	r._code = _code
-	r.Set("code", _code)
-	return nil
-}
-
-// GetCode Code Getter
-func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetCode() string {
-	return r._code
-}
-
 // SetRefEntId is RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
 func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetRefEntId(_refEntId string) error {
@@ -65,6 +52,19 @@ func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetRefEntId(_r
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+// SetCode is Code Setter
+// 追溯码
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) SetCode(_code string) error {
+	r._code = _code
+	r.Set("code", _code)
+	return nil
+}
+
+// GetCode Code Getter
+func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationAPIRequest) GetCode() string {
+	return r._code
 }
 
 // SetDesRefEntId is DesRefEntId Setter

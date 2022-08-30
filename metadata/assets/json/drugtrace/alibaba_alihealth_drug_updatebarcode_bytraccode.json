@@ -1,8 +1,4 @@
 {
-	"id": 40718,
-	"name": "alibaba.alihealth.drug.updatebarcode.bytraccode",
-	"apiChineseName": "根据追溯码修改69码",
-	"description": "根据追溯码修改69码",
 	"requestParams": [
 		{
 			"name": "trace_code",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "msgInfo"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.updatebarcode.bytraccode",
+	"apiChineseName": "根据追溯码修改69码",
+	"description": "根据追溯码修改69码",
+	"id": 40718
 }

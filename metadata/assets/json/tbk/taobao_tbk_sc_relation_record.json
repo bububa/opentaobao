@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "external_id",
+			"type": "String",
+			"description": "淘宝客自有私域用户自定义标记，如自有私域系统账号标记等",
+			"required": true
+		},
+		{
+			"name": "external_type",
+			"type": "Number",
+			"description": "淘宝客其他平台私域用户自定义标记，1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他",
+			"required": true
+		},
+		{
+			"name": "op_type",
+			"type": "Number",
+			"description": "授权类型，选2时可用于更新外部用户标记，默认1：1-新绑，2-更新",
+			"required": true
+		},
+		{
+			"name": "redirect_url",
+			"type": "String",
+			"description": "会员备案授权后，跳转的目标页地址",
+			"required": true
+		},
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "人群标签ID，用户备案授权后会自动添加到该人群"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "带授权的备案链接"
+				},
+				{
+					"name": "password_simple",
+					"type": "String",
+					"description": "已废弃，请调用淘口令生成接口"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "已废弃，请调用淘口令生成接口"
+				}
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.relation.record",
+	"apiChineseName": "淘宝客-服务商-私域会员标记",
+	"description": "服务商使用。支持淘宝客通过入参私域外部ID，获得待私域会员可标记的链接，会员打开该链接后，可帮助媒体自动生成会员运营id进行标记，同时自动跳转到推广落地页。",
+	"id": 53880
+}

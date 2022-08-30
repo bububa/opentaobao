@@ -1,19 +1,8 @@
 {
-	"id": 45959,
-	"name": "alibaba.ailabs.iot.device.control.notify",
-	"apiChineseName": "天猫精灵IoT异步控制回调接口",
-	"description": "用于天猫精灵IoT云云接入控制结果的异步回调",
 	"requestParams": [
 		{
-			"name": "notify_control_params",
-			"type": "NotifyVehicleControlParams",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "payload",
-					"type": "Payload",
-					"description": "标准控制协议中的payload",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
@@ -31,13 +20,13 @@
 							"description": "设备id",
 							"required": true
 						}
-					]
+					],
+					"name": "payload",
+					"type": "Payload",
+					"description": "标准控制协议中的payload",
+					"required": true
 				},
 				{
-					"name": "header",
-					"type": "IotCommonHeader",
-					"description": "标准控制协议中的header",
-					"required": true,
 					"subParams": [
 						{
 							"name": "namespace",
@@ -63,12 +52,13 @@
 							"description": "标准控制协议中的payLoadVersion",
 							"required": true
 						}
-					]
+					],
+					"name": "header",
+					"type": "IotCommonHeader",
+					"description": "标准控制协议中的header",
+					"required": true
 				},
 				{
-					"name": "exceptions",
-					"type": "IotCommonDeviceProperty[]",
-					"description": "标准查询协议中的exceptions，异常检测项，如果有则返回，没有则不返回",
 					"subParams": [
 						{
 							"name": "name",
@@ -80,12 +70,12 @@
 							"type": "String",
 							"description": "异常检测项值"
 						}
-					]
+					],
+					"name": "exceptions",
+					"type": "IotCommonDeviceProperty[]",
+					"description": "标准查询协议中的exceptions，异常检测项，如果有则返回，没有则不返回"
 				},
 				{
-					"name": "properties",
-					"type": "IotCommonDeviceProperty[]",
-					"description": "标准查询协议中的properties，异常检测项，如果有则返回，没有则不返回",
 					"subParams": [
 						{
 							"name": "name",
@@ -97,9 +87,15 @@
 							"type": "String",
 							"description": "查询的属性值"
 						}
-					]
+					],
+					"name": "properties",
+					"type": "IotCommonDeviceProperty[]",
+					"description": "标准查询协议中的properties，异常检测项，如果有则返回，没有则不返回"
 				}
-			]
+			],
+			"name": "notify_control_params",
+			"type": "NotifyVehicleControlParams",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -108,5 +104,9 @@
 			"type": "Boolean",
 			"description": "是否通知成功"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.device.control.notify",
+	"apiChineseName": "天猫精灵IoT异步控制回调接口",
+	"description": "用于天猫精灵IoT云云接入控制结果的异步回调",
+	"id": 45959
 }

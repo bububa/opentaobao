@@ -1,8 +1,4 @@
 {
-	"id": 43689,
-	"name": "alibaba.lst.bm.store.emp.save",
-	"apiChineseName": "保存品牌商自有门店和内部业代之间的关系",
-	"description": "保存品牌商自有门店和内部业代之间的关系",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -21,5 +17,9 @@
 			"type": "Boolean",
 			"description": "true表示执行成功，false表示执行失败"
 		}
-	]
+	],
+	"name": "alibaba.lst.bm.store.emp.save",
+	"apiChineseName": "保存品牌商自有门店和内部业代之间的关系",
+	"description": "保存品牌商自有门店和内部业代之间的关系",
+	"id": 43689
 }

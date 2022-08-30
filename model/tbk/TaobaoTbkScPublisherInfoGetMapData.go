@@ -8,7 +8,7 @@ type TaobaoTbkScPublisherInfoGetMapData struct {
 	CreateDate string `json:"create_date,omitempty" xml:"create_date,omitempty"`
 	// 渠道独有 - 渠道昵称
 	AccountName string `json:"account_name,omitempty" xml:"account_name,omitempty"`
-	// 渠道独有 - 渠道姓名
+	// 渠道独有 - 渠道名称
 	RealName string `json:"real_name,omitempty" xml:"real_name,omitempty"`
 	// 渠道独有 - 线下场景信息，1 - 门店，2- 学校，3 - 工厂，4 - 其他
 	OfflineScene string `json:"offline_scene,omitempty" xml:"offline_scene,omitempty"`
@@ -22,7 +22,7 @@ type TaobaoTbkScPublisherInfoGetMapData struct {
 	Rtag string `json:"rtag,omitempty" xml:"rtag,omitempty"`
 	// 渠道独有 - 处罚状态
 	PunishStatus string `json:"punish_status,omitempty" xml:"punish_status,omitempty"`
-	// 淘宝客外部用户标记，如自身系统账户ID；微信ID等
+	// 淘宝客外部用户标记
 	ExternalId string `json:"external_id,omitempty" xml:"external_id,omitempty"`
 	// 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他
 	ExternalType string `json:"external_type,omitempty" xml:"external_type,omitempty"`

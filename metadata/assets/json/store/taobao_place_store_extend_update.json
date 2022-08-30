@@ -1,17 +1,10 @@
 {
-	"id": 50163,
-	"name": "taobao.place.store.extend.update",
-	"apiChineseName": "商户门店拓展信息更新接口",
-	"description": "更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口",
 	"requestParams": [
 		{
-			"name": "param_update_store_extend_d_t_o",
-			"type": "UpdateStoreExtendDto",
-			"description": "更新数据",
 			"subParams": [
 				{
 					"name": "add_tags",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "需要添加的TAGS"
 				},
 				{
@@ -36,7 +29,7 @@
 				},
 				{
 					"name": "remove_tags",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "需要删除的TAGS"
 				},
 				{
@@ -44,78 +37,75 @@
 					"type": "Number",
 					"description": "门店id"
 				}
-			]
+			],
+			"name": "param_update_store_extend_d_t_o",
+			"type": "UpdateStoreExtendDto",
+			"description": "更新数据"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "failured",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "full_error_msg",
 					"type": "String",
-					"description": "完整错误信息",
-					"required": true
+					"description": "完整错误信息"
 				},
 				{
-					"name": "models",
-					"type": "Models",
-					"description": "模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "是否为空",
-							"required": true
+							"description": "是否为空"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Models",
+					"description": "模型"
 				},
 				{
 					"name": "pri_key",
 					"type": "String",
-					"description": "关键主键",
-					"required": true
+					"description": "关键主键"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "总数量",
-					"required": true
+					"description": "总数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.place.store.extend.update",
+	"apiChineseName": "商户门店拓展信息更新接口",
+	"description": "更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口",
+	"id": 50163
 }

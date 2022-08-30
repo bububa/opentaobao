@@ -1,21 +1,6 @@
 {
-	"id": 27012,
-	"name": "taobao.alitrip.travel.normalvisa.storeuser",
-	"apiChineseName": "代填办理人信息",
-	"description": "卖家代填买家填写办理人信息",
 	"requestParams": [
 		{
-			"name": "biz_order_id",
-			"type": "Number",
-			"description": "订单id",
-			"required": true
-		},
-		{
-			"name": "normal_visa_user_unit_list",
-			"type": "NormalVisaUserUnit[]",
-			"description": "列表：签证人信息列表",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "last_name",
@@ -35,52 +20,61 @@
 					"description": "名",
 					"required": true
 				}
-			]
+			],
+			"name": "normal_visa_user_unit_list",
+			"type": "NormalVisaUserUnit[]",
+			"description": "列表：签证人信息列表",
+			"maxListSize": 100,
+			"required": true
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "结果：包含results数组代表成功",
 			"subParams": [
 				{
 					"name": "results",
 					"type": "Number[]",
-					"description": "结果：数字数组",
-					"required": true
+					"description": "结果：数字数组"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果数",
-					"required": true
+					"description": "结果数"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否包含下一个",
-					"required": true
+					"description": "是否包含下一个"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常",
-					"required": true
+					"type": "String",
+					"description": "异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果：包含results数组代表成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.normalvisa.storeuser",
+	"apiChineseName": "代填办理人信息",
+	"description": "卖家代填买家填写办理人信息",
+	"id": 27012
 }

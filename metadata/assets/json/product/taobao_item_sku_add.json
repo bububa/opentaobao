@@ -1,15 +1,10 @@
 {
-	"id": 27,
-	"name": "taobao.item.sku.add",
-	"apiChineseName": "添加SKU",
-	"description": "新增一个sku到num_iid指定的商品中 \u003cbr/\u003e传入的iid所对应的商品必须属于当前会话的用户",
 	"requestParams": [
 		{
 			"name": "num_iid",
 			"type": "Number",
 			"description": "Sku所属商品数字id。必选",
-			"required": true,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "properties",
@@ -21,8 +16,7 @@
 			"name": "quantity",
 			"type": "Number",
 			"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)。取值范围:大于零的整数",
-			"required": true,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "price",
@@ -36,14 +30,14 @@
 			"description": "Sku的商家外部id"
 		},
 		{
-			"name": "item_price",
-			"type": "Price",
-			"description": "sku所属商品的价格。当用户新增sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够添加成功"
-		},
-		{
 			"name": "lang",
 			"type": "String",
 			"description": "Sku文字的版本。可选值:zh_HK(繁体),zh_CN(简体);默认值:zh_CN"
+		},
+		{
+			"name": "item_price",
+			"type": "Price",
+			"description": "sku所属商品的价格。当用户新增sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够添加成功"
 		},
 		{
 			"name": "ignorewarning",
@@ -53,15 +47,7 @@
 	],
 	"responseParams": [
 		{
-			"name": "sku",
-			"type": "Sku",
-			"description": "sku",
 			"subParams": [
-				{
-					"name": "sku_id",
-					"type": "Number",
-					"description": "sku的id"
-				},
 				{
 					"name": "iid",
 					"type": "String",
@@ -76,8 +62,20 @@
 					"name": "created",
 					"type": "String",
 					"description": "sku创建日期 时间格式：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "sku的id"
 				}
-			]
+			],
+			"name": "sku",
+			"type": "Sku",
+			"description": "sku"
 		}
-	]
+	],
+	"name": "taobao.item.sku.add",
+	"apiChineseName": "添加SKU",
+	"description": "新增一个sku到num_iid指定的商品中 \u003cbr/\u003e传入的iid所对应的商品必须属于当前会话的用户",
+	"id": 27
 }

@@ -1,0 +1,140 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ttp_order_id",
+							"type": "Number",
+							"description": "主单号",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子单号",
+							"required": true
+						},
+						{
+							"name": "sequence_no",
+							"type": "String",
+							"description": "12306订单号",
+							"required": true
+						},
+						{
+							"name": "seat_no",
+							"type": "String",
+							"description": "座席号",
+							"required": true
+						},
+						{
+							"name": "coach_no",
+							"type": "String",
+							"description": "车厢号",
+							"required": true
+						},
+						{
+							"name": "batch_no",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "ticket_type_code",
+							"type": "String",
+							"description": "票类型（1 成人票 2 儿童 3 学生 4 残、军）",
+							"required": true
+						},
+						{
+							"name": "ttp_sub_order_id",
+							"type": "Number",
+							"description": "ttp子单号",
+							"required": true
+						},
+						{
+							"name": "real_seat_type_code",
+							"type": "String",
+							"description": "真实座席编码",
+							"required": true
+						},
+						{
+							"name": "real_ticket_price",
+							"type": "Number",
+							"description": "真实票价 单位 分",
+							"required": true
+						}
+					],
+					"name": "tickets",
+					"type": "TicketDTO[]",
+					"description": "票信息",
+					"required": true
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "主单号",
+					"required": true
+				},
+				{
+					"name": "vip_settlement_mode_code",
+					"type": "Number",
+					"description": "支付方式 CASH(0),ELECTRONIC(1)",
+					"required": true
+				},
+				{
+					"name": "ali_pay_trade_no",
+					"type": "String",
+					"description": "支付宝交易流水号"
+				},
+				{
+					"name": "ali_pay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "can_change",
+					"type": "Boolean",
+					"description": "是否支持线上退改签",
+					"required": true
+				},
+				{
+					"name": "flat_msg",
+					"type": "String",
+					"description": "检票口信息"
+				}
+			],
+			"name": "param",
+			"type": "BookTicketConfirmRQ",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "返回code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回msg"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.order.confirm",
+	"apiChineseName": "确认出票",
+	"description": "确认出票",
+	"id": 60356
+}

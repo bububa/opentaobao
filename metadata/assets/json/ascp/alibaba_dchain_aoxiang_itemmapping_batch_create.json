@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品Id",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "sku id"
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "货品商家编码",
+							"required": true
+						},
+						{
+							"name": "need_sync_sc_item_inv_to_item",
+							"type": "Number",
+							"description": "是否同步可售库存到商品，0表示否，1表示是",
+							"required": true
+						},
+						{
+							"name": "forbid_no_sc_item_inv_sync_to_item",
+							"type": "Number",
+							"description": "是否禁止无库存货品同步库存给上架中商品，0-否，1-是 默认值为1"
+						}
+					],
+					"name": "item_mappings",
+					"type": "ItemMapping[]",
+					"description": "商货品关联列表，批量数量不可超过30",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				}
+			],
+			"name": "batch_create_item_mapping_request",
+			"type": "BatchCreateItemMappingRequest",
+			"description": "创建/更新商货品关联入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "0=全部失败，1=全部成功，2=部分成功"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "成功或者失败"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "sku id"
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "货品商家编码"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "返回信息码"
+								},
+								{
+									"name": "message",
+									"type": "String",
+									"description": "返回信息"
+								}
+							],
+							"name": "detail",
+							"type": "DetailItem[]",
+							"description": "结果明细"
+						}
+					],
+					"name": "data",
+					"type": "BatchCreateItemMappingResult",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "batch_create_item_mapping_response",
+			"type": "BatchCreateItemMappingResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.itemmapping.batch.create",
+	"apiChineseName": "新建商货品关联",
+	"description": "新建商货品关联",
+	"id": 60382
+}

@@ -1,0 +1,184 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "owner_code",
+							"type": "String",
+							"description": "货主编码；优仓分配，长度不会超过32位，不含特殊字符",
+							"required": true
+						},
+						{
+							"name": "combine_sc_item_code",
+							"type": "String",
+							"description": "组合货品商家编码",
+							"required": true
+						},
+						{
+							"name": "combine_sc_item_name",
+							"type": "String",
+							"description": "组合货品名称",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称"
+						},
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "retail_price",
+							"type": "Number",
+							"description": "零售价（人民币-分）"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "子货品商家编码",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "子货品数量",
+									"required": true
+								},
+								{
+									"name": "retail_price",
+									"type": "Number",
+									"description": "子货品零售价（人民币-分）",
+									"required": true
+								},
+								{
+									"name": "fixed_price",
+									"type": "Number",
+									"description": "固定价格，1=是，0=否"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种，USD-美元，CNY-人民币，RUB-卢布，JPY-日元，EUR-欧元，GBP-英镑，HKD-港币，NZD-新西兰元，SGD-新加坡元，AUD-澳元，KRW-韩元，THB-泰铢",
+									"required": true
+								}
+							],
+							"name": "sub_sc_items",
+							"type": "SubScItem[]",
+							"description": "子货品列表",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种，USD-美元，CNY-人民币，RUB-卢布，JPY-日元，EUR-欧元，GBP-英镑，HKD-港币，NZD-新西兰元，SGD-新加坡元，AUD-澳元，KRW-韩元，THB-泰铢"
+						}
+					],
+					"name": "combine_sc_items",
+					"type": "CombineScItem[]",
+					"description": "组合货品列表;批量数量不大于30",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID",
+					"required": true
+				}
+			],
+			"name": "batch_create_combine_scitem_request",
+			"type": "BatchCreateCombineScItemRequest",
+			"description": "批量新建组合货品入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "0=全部失败，1=全部成功，2=部分成功"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "成功或者失败"
+								},
+								{
+									"name": "combine_sc_item_code",
+									"type": "String",
+									"description": "组合货品商家编码"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "返回信息码"
+								},
+								{
+									"name": "message",
+									"type": "String",
+									"description": "返回信息"
+								},
+								{
+									"name": "combine_sc_item_id",
+									"type": "String",
+									"description": "组合货品翱象Id"
+								}
+							],
+							"name": "detail",
+							"type": "DetailItem[]",
+							"description": "结果明细"
+						}
+					],
+					"name": "data",
+					"type": "BatchCreateCombineScItemResult",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "batch_create_combine_scitem_response",
+			"type": "BatchCreateCombineScItemResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.combinescitem.batch.create",
+	"apiChineseName": "新建组合货品",
+	"description": "新建组合货品",
+	"id": 60380
+}

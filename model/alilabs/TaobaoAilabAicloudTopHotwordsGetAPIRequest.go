@@ -12,12 +12,12 @@ import (
 // 获取ASR热词
 type TaobaoAilabAicloudTopHotwordsGetAPIRequest struct {
 	model.Params
+	// schemeKey
+	_schema string
 	// 三方用户id
 	_userId string
 	// 业务类型
 	_bizClass string
-	// schemeKey
-	_schema string
 }
 
 // NewTaobaoAilabAicloudTopHotwordsGetRequest 初始化TaobaoAilabAicloudTopHotwordsGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSchema is Schema Setter
+// schemeKey
+func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
+	return nil
+}
+
+// GetSchema Schema Getter
+func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetSchema() string {
+	return r._schema
 }
 
 // SetUserId is UserId Setter
@@ -65,17 +78,4 @@ func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetBizClass(_bizClass strin
 // GetBizClass BizClass Getter
 func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetBizClass() string {
 	return r._bizClass
-}
-
-// SetSchema is Schema Setter
-// schemeKey
-func (r *TaobaoAilabAicloudTopHotwordsGetAPIRequest) SetSchema(_schema string) error {
-	r._schema = _schema
-	r.Set("schema", _schema)
-	return nil
-}
-
-// GetSchema Schema Getter
-func (r TaobaoAilabAicloudTopHotwordsGetAPIRequest) GetSchema() string {
-	return r._schema
 }

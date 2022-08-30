@@ -1,8 +1,4 @@
 {
-	"id": 38249,
-	"name": "taobao.degoperation.check.addr.status",
-	"apiChineseName": "地址",
-	"description": "激励",
 	"requestParams": [
 		{
 			"name": "sequence_no",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BonusResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "updateAddress=是否填写了收货地址",
-					"required": true
+					"type": "String",
+					"description": "updateAddress=是否填写了收货地址"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.degoperation.check.addr.status",
+	"apiChineseName": "地址",
+	"description": "激励",
+	"id": 38249
 }

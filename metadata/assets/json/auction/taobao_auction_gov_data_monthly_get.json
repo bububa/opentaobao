@@ -1,8 +1,4 @@
 {
-	"id": 40550,
-	"name": "taobao.auction.gov.data.monthly.get",
-	"apiChineseName": "按月统计法院拍卖数据",
-	"description": "按月统计法院拍卖数据 \n包含：\n标的件数统计：发布标的件数、结束标的件数、开拍标的件数\n竞价实况：预计成交金额、出价次数、报名人数\n在线标的：在线标的件数、意向用户数、网拍围观人次\n\n最长12个月，月的起始时间不能早于2017年3月",
 	"requestParams": [
 		{
 			"name": "court_name",
@@ -31,103 +27,92 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "CourtsBidStatMonthlyList []",
-			"description": "按月统计结果列表",
 			"subParams": [
 				{
-					"name": "courts_bid_stat_sum",
-					"type": "CourtsBidStatSum",
-					"description": "法院按月维度标的统计汇总",
-					"required": true,
 					"subParams": [
 						{
 							"name": "publish_count",
 							"type": "Number",
-							"description": "发拍次数",
-							"required": true
+							"description": "发拍次数"
 						},
 						{
 							"name": "start_count_dist",
 							"type": "Number",
-							"description": "开拍件数（去重）",
-							"required": true
+							"description": "开拍件数（去重）"
 						},
 						{
 							"name": "hammer_price",
 							"type": "Number",
-							"description": "成交金额（成交标的）",
-							"required": true
+							"description": "成交金额（成交标的）"
 						},
 						{
 							"name": "hammer_count",
 							"type": "Number",
-							"description": "成交件数",
-							"required": true
+							"description": "成交件数"
 						},
 						{
 							"name": "bid_count",
 							"type": "Number",
-							"description": "出价次数",
-							"required": true
+							"description": "出价次数"
 						},
 						{
 							"name": "end_count",
 							"type": "Number",
-							"description": "结束标的数",
-							"required": true
+							"description": "结束标的数"
 						},
 						{
 							"name": "end_count_dist",
 							"type": "Number",
-							"description": "结束标的件数（去重）",
-							"required": true
+							"description": "结束标的件数（去重）"
 						},
 						{
 							"name": "start_price",
 							"type": "Number",
-							"description": "起拍价（成交标的）",
-							"required": true
+							"description": "起拍价（成交标的）"
 						},
 						{
 							"name": "interest_count",
 							"type": "Number",
-							"description": "意向用户数（交保数+订阅数）",
-							"required": true
+							"description": "意向用户数（交保数+订阅数）"
 						},
 						{
 							"name": "start_count",
 							"type": "Number",
-							"description": "开拍数",
-							"required": true
+							"description": "开拍数"
 						},
 						{
 							"name": "avg_addv_percent",
 							"type": "Number",
-							"description": "平均溢价率(万分位)",
-							"required": true
+							"description": "平均溢价率(万分位)"
 						},
 						{
 							"name": "publish_count_dist",
 							"type": "Number",
-							"description": "发拍件数（去重）",
-							"required": true
+							"description": "发拍件数（去重）"
 						},
 						{
 							"name": "apply_count",
 							"type": "Number",
-							"description": "报名人数（含交保失败）",
-							"required": true
+							"description": "报名人数（含交保失败）"
 						}
-					]
+					],
+					"name": "courts_bid_stat_sum",
+					"type": "CourtsBidStatSum",
+					"description": "法院按月维度标的统计汇总"
 				},
 				{
 					"name": "period",
 					"type": "String",
-					"description": "时间区间(月份)",
-					"required": true
+					"description": "时间区间(月份)"
 				}
-			]
+			],
+			"name": "results",
+			"type": "CourtsBidStatMonthlyList []",
+			"description": "按月统计结果列表"
 		}
-	]
+	],
+	"name": "taobao.auction.gov.data.monthly.get",
+	"apiChineseName": "按月统计法院拍卖数据",
+	"description": "按月统计法院拍卖数据 \n包含：\n标的件数统计：发布标的件数、结束标的件数、开拍标的件数\n竞价实况：预计成交金额、出价次数、报名人数\n在线标的：在线标的件数、意向用户数、网拍围观人次\n\n最长12个月，月的起始时间不能早于2017年3月",
+	"id": 40550
 }

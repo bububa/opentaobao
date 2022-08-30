@@ -1,13 +1,6 @@
 {
-	"id": 32438,
-	"name": "alibaba.idle.recycle.inspection.report",
-	"apiChineseName": "鉴定报告",
-	"description": "回收商鉴定报告",
 	"requestParams": [
 		{
-			"name": "inspection_report",
-			"type": "InspectionReport",
-			"description": "鉴定报告",
 			"subParams": [
 				{
 					"name": "price",
@@ -55,38 +48,57 @@
 					"description": "对此商品的质检描述"
 				},
 				{
+					"name": "recycle_supplier_id",
+					"type": "Number",
+					"description": "手淘商家的淘宝账号id，通过 spuId 和 recycleSupplierId 定位到唯一的回收模板"
+				},
+				{
 					"name": "explanation",
 					"type": "String",
-					"description": "特别说明，Json串,一个字符串存储特别说明的文字描述,一个字符串列表存储上传的图片url:json形式:"
+					"description": "/**      * Json串:desc存储特别说明的文字描述,images存储上传的图片url;      * 形如:      * {      *   \"desc\":\"desc\",      *   \"images\":[      *      \"imageUrl1\",      *      \"imageUrl2\"      *   ]      * };      */"
+				},
+				{
+					"name": "appraise_type",
+					"type": "Number",
+					"description": "质检类型（1第一次直接;2二次复检）"
+				},
+				{
+					"name": "imei",
+					"type": "String",
+					"description": "设备imei号"
 				}
-			]
+			],
+			"name": "inspection_report",
+			"type": "InspectionReport",
+			"description": "鉴定报告"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RecycleResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RecycleResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.recycle.inspection.report",
+	"apiChineseName": "鉴定报告",
+	"description": "回收商鉴定报告",
+	"id": 32438
 }

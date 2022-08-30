@@ -13,7 +13,7 @@ import (
 type TaobaoAlitripItPolicyBatchdeleteAPIRequest struct {
 	model.Params
 	// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-	_statusList []int64
+	_statusList []string
 	// 航司二字码，完整匹配
 	_airline string
 	// 到达，，完整匹配
@@ -49,14 +49,14 @@ func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetApiParams() url.Values {
 
 // SetStatusList is StatusList Setter
 // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
+func (r *TaobaoAlitripItPolicyBatchdeleteAPIRequest) SetStatusList(_statusList []string) error {
 	r._statusList = _statusList
 	r.Set("status_list", _statusList)
 	return nil
 }
 
 // GetStatusList StatusList Getter
-func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetStatusList() []int64 {
+func (r TaobaoAlitripItPolicyBatchdeleteAPIRequest) GetStatusList() []string {
 	return r._statusList
 }
 

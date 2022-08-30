@@ -1,13 +1,6 @@
 {
-	"id": 55918,
-	"name": "alibaba.alihouse.newhome.project.phone.submit",
-	"apiChineseName": "提交楼盘电话",
-	"description": "提交楼盘电话",
 	"requestParams": [
 		{
-			"name": "project_phone_dto",
-			"type": "ProjectPhoneDto",
-			"description": "楼盘电话",
 			"subParams": [
 				{
 					"name": "sub_phone",
@@ -29,40 +22,43 @@
 					"type": "String",
 					"description": "外部楼盘ID"
 				}
-			]
+			],
+			"name": "project_phone_dto",
+			"type": "ProjectPhoneDto",
+			"description": "楼盘电话"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.project.phone.submit",
+	"apiChineseName": "提交楼盘电话",
+	"description": "提交楼盘电话",
+	"id": 55918
 }

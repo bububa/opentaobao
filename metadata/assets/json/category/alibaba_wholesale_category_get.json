@@ -1,13 +1,6 @@
 {
-	"id": 24365,
-	"name": "alibaba.wholesale.category.get",
-	"apiChineseName": "获取类目信息",
-	"description": "获取类目信息",
 	"responseParams": [
 		{
-			"name": "wholesale_category_result",
-			"type": "WholesaleCategoryOpenResult",
-			"description": "类目结果",
 			"subParams": [
 				{
 					"name": "result_memo",
@@ -20,9 +13,6 @@
 					"description": "result_code 返回码 例如200表示成功"
 				},
 				{
-					"name": "result",
-					"type": "WholesaleCategory",
-					"description": "具体类目信息",
 					"subParams": [
 						{
 							"name": "paths",
@@ -34,9 +24,19 @@
 							"type": "Json",
 							"description": "类目节点map"
 						}
-					]
+					],
+					"name": "result",
+					"type": "WholesaleCategory",
+					"description": "具体类目信息"
 				}
-			]
+			],
+			"name": "wholesale_category_result",
+			"type": "WholesaleCategoryOpenResult",
+			"description": "类目结果"
 		}
-	]
+	],
+	"name": "alibaba.wholesale.category.get",
+	"apiChineseName": "获取类目信息",
+	"description": "获取类目信息",
+	"id": 24365
 }

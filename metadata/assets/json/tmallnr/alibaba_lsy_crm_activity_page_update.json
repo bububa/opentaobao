@@ -1,14 +1,12 @@
 {
-	"id": 55780,
-	"name": "alibaba.lsy.crm.activity.page.update",
-	"apiChineseName": "ISV活动页面创建修改",
-	"description": "ISV活动页面创建修改",
 	"requestParams": [
 		{
-			"name": "nrt_crm_activity_page_create_req",
-			"type": "NrtCrmActivityPageCreateReq",
-			"description": "入参",
 			"subParams": [
+				{
+					"name": "page_id",
+					"type": "Number",
+					"description": "页面ID"
+				},
 				{
 					"name": "isv_code",
 					"type": "String",
@@ -57,46 +55,44 @@
 					"name": "biz_code",
 					"type": "String",
 					"description": "业务code"
-				},
-				{
-					"name": "page_id",
-					"type": "Number",
-					"description": "页面ID"
 				}
-			]
+			],
+			"name": "nrt_crm_activity_page_create_req",
+			"type": "NrtCrmActivityPageCreateReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "活动ID",
-					"required": true
+					"description": "活动ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.activity.page.update",
+	"apiChineseName": "ISV活动页面创建修改",
+	"description": "ISV活动页面创建修改",
+	"id": 55780
 }

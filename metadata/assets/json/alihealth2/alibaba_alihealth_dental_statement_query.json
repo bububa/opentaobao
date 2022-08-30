@@ -1,8 +1,4 @@
 {
-	"id": 48740,
-	"name": "alibaba.alihealth.dental.statement.query",
-	"apiChineseName": "ISV查询对账单",
-	"description": "ISV查询对账单",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -17,55 +13,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "statement_detail_vos",
-					"type": "StatementDetailVo[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
+						{
+							"name": "consume_status",
+							"type": "Number",
+							"description": "核销状态 0 未核销 1已核销"
+						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						},
 						{
 							"name": "settlement_price",
 							"type": "String",
-							"description": "结算价，单位分",
-							"required": true
+							"description": "结算价，单位分"
 						},
 						{
 							"name": "cost_price",
 							"type": "String",
-							"description": "成本，单位分",
-							"required": true
+							"description": "成本，单位分"
 						},
 						{
 							"name": "profit_price",
 							"type": "String",
-							"description": "利润，单位分",
-							"required": true
-						},
-						{
-							"name": "consume_status",
-							"type": "Number",
-							"description": "核销状态 0 未核销 1已核销",
-							"required": true
+							"description": "利润，单位分"
 						}
-					]
+					],
+					"name": "statement_detail_vos",
+					"type": "StatementDetailVo[]",
+					"description": "model"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.statement.query",
+	"apiChineseName": "ISV查询对账单",
+	"description": "ISV查询对账单",
+	"id": 48740
 }

@@ -1,14 +1,6 @@
 {
-	"id": 45437,
-	"name": "alibaba.charity.useraction.sync",
-	"apiChineseName": "用户公益行为同步",
-	"description": "外部公益活动，用户公益行为同步",
 	"requestParams": [
 		{
-			"name": "channel_user_action_dto",
-			"type": "ChannelUserActionDto",
-			"description": "用户公益行为",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -25,8 +17,7 @@
 				{
 					"name": "tb_user_id",
 					"type": "Number",
-					"description": "淘宝ID",
-					"required": true
+					"description": "淘宝ID"
 				},
 				{
 					"name": "timestamp_long",
@@ -45,6 +36,7 @@
 				},
 				{
 					"name": "features_map",
+					"type": "String",
 					"description": "扩展属性"
 				},
 				{
@@ -62,55 +54,67 @@
 					"name": "ori_content",
 					"type": "String",
 					"description": "原生公益行为内容，JSON"
+				},
+				{
+					"name": "third_user_key",
+					"type": "String",
+					"description": "三方用户标识"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "版本"
 				}
-			]
+			],
+			"name": "channel_user_action_dto",
+			"type": "ChannelUserActionDto",
+			"description": "用户公益行为",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ThreehoursResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "UserActionSyncResult",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "event_id",
 							"type": "String",
-							"description": "唯一的事件ID",
-							"required": true
+							"description": "唯一的事件ID"
 						},
 						{
 							"name": "charity_hours",
 							"type": "String",
-							"description": "本次同步获得的公益时",
-							"required": true
+							"description": "本次同步获得的公益时"
 						}
-					]
+					],
+					"name": "data",
+					"type": "UserActionSyncResult",
+					"description": "结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.charity.useraction.sync",
+	"apiChineseName": "用户公益行为同步",
+	"description": "外部公益活动，用户公益行为同步",
+	"id": 45437
 }

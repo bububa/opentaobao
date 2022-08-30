@@ -1,9 +1,10 @@
 {
-	"id": 48871,
-	"name": "alibaba.ssc.supplyplatform.serviceability.save",
-	"apiChineseName": "保存服务能力",
-	"description": "保存服务能力",
 	"requestParams": [
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id"
+		},
 		{
 			"name": "provider_type",
 			"type": "String",
@@ -11,24 +12,23 @@
 			"required": true
 		},
 		{
-			"name": "provider_id",
-			"type": "Number",
-			"description": "服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id",
-			"required": true
+			"name": "provider_code",
+			"type": "String",
+			"description": "服务提供者code。外部与天猫对接时，自己定义的code用这个字段"
 		},
 		{
 			"name": "fulfil_type_list",
 			"type": "String[]",
 			"description": "目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "service_sku_code_list",
 			"type": "String[]",
 			"description": "服务sku，具体的sku列表可以从服务商工作台的类目树获取",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "area_code_list",
@@ -39,35 +39,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "对外展示的错误信息",
-					"required": true
+					"description": "对外展示的错误信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceability.save",
+	"apiChineseName": "保存服务能力",
+	"description": "保存服务能力",
+	"id": 48871
 }

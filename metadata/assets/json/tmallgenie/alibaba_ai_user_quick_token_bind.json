@@ -1,8 +1,4 @@
 {
-	"id": 38603,
-	"name": "alibaba.ai.user.quick.token.bind",
-	"apiChineseName": "人工智能实验室精灵用户绑定第三方Token接口",
-	"description": "人工智能实验室精灵用户绑定第三方Token接口",
 	"requestParams": [
 		{
 			"name": "access_token_value",
@@ -52,5 +48,9 @@
 			"type": "Number",
 			"description": "statusCode"
 		}
-	]
+	],
+	"name": "alibaba.ai.user.quick.token.bind",
+	"apiChineseName": "人工智能实验室精灵用户绑定第三方Token接口",
+	"description": "人工智能实验室精灵用户绑定第三方Token接口",
+	"id": 38603
 }

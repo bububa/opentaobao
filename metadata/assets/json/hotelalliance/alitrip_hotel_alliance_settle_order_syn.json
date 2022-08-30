@@ -1,14 +1,6 @@
 {
-	"id": 49859,
-	"name": "alitrip.hotel.alliance.settle.order.syn",
-	"apiChineseName": "菲住联盟分账成功订单同步",
-	"description": "用于菲住联盟分账成功订单同步",
 	"requestParams": [
 		{
-			"name": "order_info",
-			"type": "AllianceSettleOrderInfo",
-			"description": "订单信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "seller_nick",
@@ -95,40 +87,44 @@
 					"type": "Number",
 					"description": "底价金额（单位：分）"
 				}
-			]
+			],
+			"name": "order_info",
+			"type": "AllianceSettleOrderInfo",
+			"description": "订单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "hms_top_result_set",
-			"type": "HmsTopResultSet",
-			"description": "返回的结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "是否同步订单信息成功",
-					"required": true
+					"description": "是否同步订单信息成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否服务调用成功",
-					"required": true
+					"description": "是否服务调用成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回的结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.alliance.settle.order.syn",
+	"apiChineseName": "菲住联盟分账成功订单同步",
+	"description": "用于菲住联盟分账成功订单同步",
+	"id": 49859
 }

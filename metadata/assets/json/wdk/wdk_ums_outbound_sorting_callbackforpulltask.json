@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "task_code_list",
+					"type": "String[]",
+					"description": "任务列表"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓code"
+				}
+			],
+			"name": "param0",
+			"type": "DpsCallBackForPullTaskMtopRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "UmsResult",
+			"description": "返回值"
+		}
+	],
+	"name": "wdk.ums.outbound.sorting.callbackforpulltask",
+	"apiChineseName": "dps分货-任务拉取确定接口",
+	"description": "dps分货-任务拉取确定接口",
+	"id": 60068
+}

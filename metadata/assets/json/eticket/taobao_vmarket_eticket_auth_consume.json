@@ -1,8 +1,4 @@
 {
-	"id": 22174,
-	"name": "taobao.vmarket.eticket.auth.consume",
-	"apiChineseName": "核销放行的核销接口",
-	"description": "针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口",
 	"requestParams": [
 		{
 			"name": "verify_code",
@@ -11,15 +7,15 @@
 			"required": true
 		},
 		{
-			"name": "consume_num",
-			"type": "Number",
-			"description": "核销份数",
-			"required": true
-		},
-		{
 			"name": "operatorid",
 			"type": "String",
 			"description": "核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID",
+			"required": true
+		},
+		{
+			"name": "consume_num",
+			"type": "Number",
+			"description": "核销份数",
 			"required": true
 		},
 		{
@@ -60,5 +56,9 @@
 			"type": "String",
 			"description": "淘宝卖家旺旺名称"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.auth.consume",
+	"apiChineseName": "核销放行的核销接口",
+	"description": "针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销接口",
+	"id": 22174
 }

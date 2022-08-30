@@ -1,8 +1,4 @@
 {
-	"id": 50841,
-	"name": "taobao.openmall.refund.submit",
-	"apiChineseName": "提交OpenMall退款单物流",
-	"description": "提交OpenMall退款单物流",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -41,5 +37,9 @@
 			"type": "Boolean",
 			"description": "提交物流单成功"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.submit",
+	"apiChineseName": "提交OpenMall退款单物流",
+	"description": "提交OpenMall退款单物流",
+	"id": 50841
 }

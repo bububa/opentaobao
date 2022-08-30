@@ -1,8 +1,4 @@
 {
-	"id": 42260,
-	"name": "taobao.fivee.innerproduct.publish",
-	"apiChineseName": "国产商品发布",
-	"description": "资质共享平台国产商品发布",
 	"requestParams": [
 		{
 			"name": "param_bucode",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "param_inner_product",
-			"type": "InnerProduct",
-			"description": "国产商品",
-			"required": true,
 			"subParams": [
 				{
 					"name": "auth_code",
@@ -28,9 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "licences",
-					"type": "Licence[]",
-					"description": "证照信息",
 					"subParams": [
 						{
 							"name": "certification_body",
@@ -70,7 +59,10 @@
 							"type": "String[]",
 							"description": "下载地址列表"
 						}
-					]
+					],
+					"name": "licences",
+					"type": "Licence[]",
+					"description": "证照信息"
 				},
 				{
 					"name": "name",
@@ -79,9 +71,6 @@
 					"required": true
 				},
 				{
-					"name": "produce_companies",
-					"type": "Company[]",
-					"description": "生产商信息",
 					"subParams": [
 						{
 							"name": "established_date",
@@ -89,9 +78,6 @@
 							"description": "成立时间"
 						},
 						{
-							"name": "licences",
-							"type": "Licence[]",
-							"description": "证照信息",
 							"subParams": [
 								{
 									"name": "certification_body",
@@ -133,7 +119,10 @@
 									"type": "String[]",
 									"description": "下载地址列表"
 								}
-							]
+							],
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息"
 						},
 						{
 							"name": "name",
@@ -151,12 +140,12 @@
 							"description": "统一社会信用代码",
 							"required": true
 						}
-					]
+					],
+					"name": "produce_companies",
+					"type": "Company[]",
+					"description": "生产商信息"
 				},
 				{
-					"name": "provider_companies",
-					"type": "Company[]",
-					"description": "供应商信息",
 					"subParams": [
 						{
 							"name": "established_date",
@@ -164,9 +153,6 @@
 							"description": "成立时间"
 						},
 						{
-							"name": "licences",
-							"type": "Licence[]",
-							"description": "证照信息",
 							"subParams": [
 								{
 									"name": "certification_body",
@@ -206,7 +192,10 @@
 									"type": "String[]",
 									"description": "下载地址列表"
 								}
-							]
+							],
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息"
 						},
 						{
 							"name": "name",
@@ -224,7 +213,10 @@
 							"description": "统一社会信用代码",
 							"required": true
 						}
-					]
+					],
+					"name": "provider_companies",
+					"type": "Company[]",
+					"description": "供应商信息"
 				},
 				{
 					"name": "inner_code",
@@ -236,7 +228,11 @@
 					"type": "String",
 					"description": "业务方备注"
 				}
-			]
+			],
+			"name": "param_inner_product",
+			"type": "InnerProduct",
+			"description": "国产商品",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -260,5 +256,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.fivee.innerproduct.publish",
+	"apiChineseName": "国产商品发布",
+	"description": "资质共享平台国产商品发布",
+	"id": 42260
 }

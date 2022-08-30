@@ -1,13 +1,6 @@
 {
-	"id": 25947,
-	"name": "taobao.antifraud.riskuser.get",
-	"apiChineseName": "反欺诈用户风险查询",
-	"description": "根据用户基础信息，核实平台上的用户是否存在欺诈风险",
 	"requestParams": [
 		{
-			"name": "param_account_query",
-			"type": "ParamAccountQuery",
-			"description": "风险用户查询条件",
 			"subParams": [
 				{
 					"name": "app_key",
@@ -50,7 +43,10 @@
 					"type": "String",
 					"description": "透传参数，是一个json形式的字符串"
 				}
-			]
+			],
+			"name": "param_account_query",
+			"type": "ParamAccountQuery",
+			"description": "风险用户查询条件"
 		}
 	],
 	"responseParams": [
@@ -70,16 +66,20 @@
 			"description": "风险结果, 为reject, review, pass三者之一"
 		},
 		{
-			"name": "detail_list",
-			"type": "AccountRiskDetail []",
-			"description": "风险结果详情列表，包含多个风险结果单项",
 			"subParams": [
 				{
 					"name": "name",
 					"type": "String",
 					"description": "表示一个具体的用户风险详情"
 				}
-			]
+			],
+			"name": "detail_list",
+			"type": "AccountRiskDetail []",
+			"description": "风险结果详情列表，包含多个风险结果单项"
 		}
-	]
+	],
+	"name": "taobao.antifraud.riskuser.get",
+	"apiChineseName": "反欺诈用户风险查询",
+	"description": "根据用户基础信息，核实平台上的用户是否存在欺诈风险",
+	"id": 25947
 }

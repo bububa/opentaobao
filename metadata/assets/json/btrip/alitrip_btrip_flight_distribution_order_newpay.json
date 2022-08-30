@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "total_pay_price",
+					"type": "Number",
+					"description": "订单支付总金额",
+					"required": true
+				},
+				{
+					"name": "corp_pay_price",
+					"type": "Number",
+					"description": "企业支付金额",
+					"required": true
+				},
+				{
+					"name": "personal_pay_price",
+					"type": "Number",
+					"description": "个人支付金额",
+					"required": true
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_pay_order_rq",
+			"type": "BtripFlightPayOrderRq",
+			"description": "支付参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "alipay_trade_no",
+							"type": "Number",
+							"description": "支付宝流水号（现付支付宝不为空）"
+						},
+						{
+							"name": "actual_pay_price",
+							"type": "Number",
+							"description": "实际支付金额"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态"
+						},
+						{
+							"name": "last_pay_time",
+							"type": "Date",
+							"description": "最晚支付时间"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightPayOrderRs",
+					"description": "支付响应信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "响应错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "响应提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "支付结果"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应结果"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.order.newpay",
+	"apiChineseName": "商旅机票分销-订单支付V2",
+	"description": "商旅机票分销-订单支付V2",
+	"id": 63077
+}

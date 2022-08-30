@@ -1,8 +1,4 @@
 {
-	"id": 30268,
-	"name": "alibaba.wdk.merchant.category.query",
-	"apiChineseName": "三江erp对接类目查询接口",
-	"description": "三江erp对接类目查询接口",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchant.category.query",
+	"apiChineseName": "三江erp对接类目查询接口",
+	"description": "三江erp对接类目查询接口",
+	"id": 30268
 }

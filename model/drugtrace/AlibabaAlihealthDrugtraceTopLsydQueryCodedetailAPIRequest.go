@@ -14,9 +14,9 @@ import (
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 type AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest struct {
 	model.Params
-	// 码列表
+	// 码列表【多个码用逗号拼接的字符串。要求数量在1000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 	_codes []string
-	// 企业唯一标识（或appkey）
+	// 企业ref_ent_id
 	_refEntId string
 }
 
@@ -42,7 +42,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetApiParams(
 }
 
 // SetCodes is Codes Setter
-// 码列表
+// 码列表【多个码用逗号拼接的字符串。要求数量在1000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetCodes(_codes []string) error {
 	r._codes = _codes
 	r.Set("codes", _codes)
@@ -55,7 +55,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) GetCodes() []
 }
 
 // SetRefEntId is RefEntId Setter
-// 企业唯一标识（或appkey）
+// 企业ref_ent_id
 func (r *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)

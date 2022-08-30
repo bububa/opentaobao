@@ -1,9 +1,10 @@
 {
-	"id": 47346,
-	"name": "alibaba.ailabs.aligenie.skill.message.push",
-	"apiChineseName": "天猫精灵消息推送标准接口",
-	"description": "用于AliGenie技能开发者在技能内主动向音响推送消息的标准服务接口，只有订阅过该消息的用户才能收到消息；",
 	"requestParams": [
+		{
+			"name": "auth_account_type",
+			"type": "String",
+			"description": "鉴权用户类型"
+		},
 		{
 			"name": "content",
 			"type": "String",
@@ -41,11 +42,6 @@
 			"name": "uuid",
 			"type": "String",
 			"description": "接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送"
-		},
-		{
-			"name": "auth_account_type",
-			"type": "String",
-			"description": "鉴权用户类型"
 		}
 	],
 	"responseParams": [
@@ -69,5 +65,9 @@
 			"type": "Boolean",
 			"description": "接口调用是否成功"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.skill.message.push",
+	"apiChineseName": "天猫精灵消息推送标准接口",
+	"description": "用于AliGenie技能开发者在技能内主动向音响推送消息的标准服务接口，只有订阅过该消息的用户才能收到消息；",
+	"id": 47346
 }

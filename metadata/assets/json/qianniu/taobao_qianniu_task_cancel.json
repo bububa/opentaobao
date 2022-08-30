@@ -1,8 +1,4 @@
 {
-	"id": 22595,
-	"name": "taobao.qianniu.task.cancel",
-	"apiChineseName": "取消轻任务",
-	"description": "由任务发起者调用",
 	"requestParams": [
 		{
 			"name": "meta_id",
@@ -22,5 +18,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.qianniu.task.cancel",
+	"apiChineseName": "取消轻任务",
+	"description": "由任务发起者调用",
+	"id": 22595
 }

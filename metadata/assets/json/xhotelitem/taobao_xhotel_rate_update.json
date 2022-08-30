@@ -1,8 +1,4 @@
 {
-	"id": 22673,
-	"name": "taobao.xhotel.rate.update",
-	"apiChineseName": "价格推送接口（全量更新）",
-	"description": "酒店产品库rate更新",
 	"requestParams": [
 		{
 			"name": "inventory_price",
@@ -54,5 +50,9 @@
 			"type": "String",
 			"description": "酒店商品ID-酒店RPid"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rate.update",
+	"apiChineseName": "价格推送接口（全量更新）",
+	"description": "酒店产品库rate更新",
+	"id": 22673
 }

@@ -1,14 +1,6 @@
 {
-	"id": 54161,
-	"name": "taobao.jst.sms.task.create",
-	"apiChineseName": "聚石塔短信任务创建接口",
-	"description": "聚石塔短信的任务创建接口，用于创建数字短信、公众号短信、权益短信的AB测试任务。",
 	"requestParams": [
 		{
-			"name": "param_create_sms_task_request",
-			"type": "CreateSmsTaskRequest",
-			"description": "创建任务的入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "task_code",
@@ -44,14 +36,15 @@
 					"description": "公众号短信必须是两个签名，其他类型短信为一个签名，普通短信的签名在第一个，公众号短信的签名在第二个，请严格按照顺序提交",
 					"required": true
 				}
-			]
+			],
+			"name": "param_create_sms_task_request",
+			"type": "CreateSmsTaskRequest",
+			"description": "创建任务的入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SmsResponse",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "code",
@@ -66,10 +59,6 @@
 					"required": true
 				},
 				{
-					"name": "module",
-					"type": "SmsTaskModel",
-					"description": "出参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_key",
@@ -137,7 +126,11 @@
 							"description": "商品或店铺详情页H5长链地址",
 							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "SmsTaskModel",
+					"description": "出参",
+					"required": true
 				},
 				{
 					"name": "request_id",
@@ -151,7 +144,14 @@
 					"description": "请求成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "SmsResponse",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "taobao.jst.sms.task.create",
+	"apiChineseName": "聚石塔短信任务创建接口",
+	"description": "聚石塔短信的任务创建接口，用于创建数字短信、公众号短信、权益短信的AB测试任务。",
+	"id": 54161
 }

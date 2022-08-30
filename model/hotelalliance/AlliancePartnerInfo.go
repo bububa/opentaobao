@@ -2,6 +2,8 @@ package hotelalliance
 
 // AlliancePartnerInfo 结构体
 type AlliancePartnerInfo struct {
+	// 公司名称
+	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 合作商联系人电话
 	ContactPhone string `json:"contact_phone,omitempty" xml:"contact_phone,omitempty"`
 	// 结算账户名
@@ -10,8 +12,6 @@ type AlliancePartnerInfo struct {
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
 	// 结算账号
 	AccountNum string `json:"account_num,omitempty" xml:"account_num,omitempty"`
-	// 公司名称
-	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 公司联系邮箱
 	ContactEmail string `json:"contact_email,omitempty" xml:"contact_email,omitempty"`
 	// 公司地址

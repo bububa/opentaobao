@@ -1,97 +1,85 @@
 {
-	"id": 44184,
-	"name": "alibaba.alihealth.dental.bind.audit.query",
-	"apiChineseName": "ISV查询绑定审核状态",
-	"description": "ISV查询绑定审核状态",
 	"requestParams": [
 		{
 			"name": "bind_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "绑定ID列表",
 			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "storeitemrelvo_list",
-					"type": "StoreItemRelVo[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "门店ID",
-							"required": true
+							"description": "门店ID"
 						},
 						{
 							"name": "bind_id",
 							"type": "Number",
-							"description": "绑定ID",
-							"required": true
+							"description": "绑定ID"
 						},
 						{
 							"name": "reason",
 							"type": "String",
-							"description": "审核原因",
-							"required": true
+							"description": "审核原因"
 						},
 						{
 							"name": "check_status",
 							"type": "Number",
-							"description": "审核状态码",
-							"required": true
+							"description": "审核状态码"
 						},
 						{
 							"name": "check_status_string",
 							"type": "String",
-							"description": "审核状态信息",
-							"required": true
+							"description": "审核状态信息"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品ID",
-							"required": true
+							"description": "商品ID"
 						},
 						{
 							"name": "sp_store_id",
 							"type": "String",
-							"description": "ISV门店ID",
-							"required": true
+							"description": "ISV门店ID"
 						},
 						{
 							"name": "sp_item_id",
 							"type": "String",
-							"description": "ISV商品ID",
-							"required": true
+							"description": "ISV商品ID"
 						}
-					]
+					],
+					"name": "storeitemrelvo_list",
+					"type": "StoreItemRelVo[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.bind.audit.query",
+	"apiChineseName": "ISV查询绑定审核状态",
+	"description": "ISV查询绑定审核状态",
+	"id": 44184
 }

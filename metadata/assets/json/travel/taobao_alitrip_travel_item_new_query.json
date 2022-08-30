@@ -1,8 +1,4 @@
 {
-	"id": 46791,
-	"name": "taobao.alitrip.travel.item.new.query",
-	"apiChineseName": "【API3.0】新版度假单个商品查询接口",
-	"description": "新版旅行度假新商品查询接口（单个商品查询）",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -17,15 +13,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "travel_item",
-			"type": "FullTravelItem",
-			"description": "商品查询结果",
 			"subParams": [
 				{
-					"name": "base_info",
-					"type": "ItemBaseInfo",
-					"description": "商品基本信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_tag_content",
@@ -129,13 +118,13 @@
 							"description": "行程晚数",
 							"required": true
 						}
-					]
+					],
+					"name": "base_info",
+					"type": "ItemBaseInfo",
+					"description": "商品基本信息",
+					"required": true
 				},
 				{
-					"name": "booking_rules",
-					"type": "BookingRuleInfo[]",
-					"description": "预定规则",
-					"required": true,
 					"subParams": [
 						{
 							"name": "rule_list",
@@ -155,7 +144,11 @@
 							"description": "规则说明，1500个字符",
 							"required": true
 						}
-					]
+					],
+					"name": "booking_rules",
+					"type": "BookingRuleInfo[]",
+					"description": "预定规则",
+					"required": true
 				},
 				{
 					"name": "created",
@@ -164,16 +157,78 @@
 					"required": true
 				},
 				{
-					"name": "freedom_item_ext",
-					"type": "FreedomItemExt",
-					"description": "自由行相关信息",
-					"required": true,
 					"subParams": [
 						{
+							"subParams": [
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "related_package_id",
+											"type": "Number",
+											"description": "关联的套餐id",
+											"required": true
+										},
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "交通公司名，飞机选填",
+											"required": true
+										},
+										{
+											"name": "traffic_no",
+											"type": "String",
+											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填",
+											"required": true
+										},
+										{
+											"name": "plane_type",
+											"type": "String",
+											"description": "飞机机型，飞机选填",
+											"required": true
+										},
+										{
+											"name": "destination",
+											"type": "String",
+											"description": "到达城市",
+											"required": true
+										},
+										{
+											"name": "departure_time",
+											"type": "String",
+											"description": "出发时间，当地时间HH:mm",
+											"required": true
+										},
+										{
+											"name": "departure",
+											"type": "String",
+											"description": "出发城市",
+											"required": true
+										},
+										{
+											"name": "arrival_time",
+											"type": "String",
+											"description": "到达时间，当地时间HH:mm",
+											"required": true
+										}
+									],
+									"name": "traffics",
+									"type": "ItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"required": true
+								}
+							],
 							"name": "back_traffic_info",
 							"type": "ItemTrafficInfo",
 							"description": "回程交通信息",
-							"required": true,
+							"required": true
+						},
+						{
 							"subParams": [
 								{
 									"name": "traffic_type",
@@ -182,10 +237,6 @@
 									"required": true
 								},
 								{
-									"name": "traffics",
-									"type": "ItemTraffic[]",
-									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
-									"required": true,
 									"subParams": [
 										{
 											"name": "related_package_id",
@@ -235,91 +286,21 @@
 											"description": "到达时间，当地时间HH:mm",
 											"required": true
 										}
-									]
+									],
+									"name": "traffics",
+									"type": "ItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"required": true
 								}
-							]
-						},
-						{
+							],
 							"name": "go_traffic_info",
 							"type": "ItemTrafficInfo",
 							"description": "去程交通信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "traffic_type",
-									"type": "Number",
-									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船",
-									"required": true
-								},
-								{
-									"name": "traffics",
-									"type": "ItemTraffic[]",
-									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
-									"required": true,
-									"subParams": [
-										{
-											"name": "related_package_id",
-											"type": "Number",
-											"description": "关联的套餐id",
-											"required": true
-										},
-										{
-											"name": "vendor",
-											"type": "String",
-											"description": "交通公司名，飞机选填",
-											"required": true
-										},
-										{
-											"name": "traffic_no",
-											"type": "String",
-											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填",
-											"required": true
-										},
-										{
-											"name": "plane_type",
-											"type": "String",
-											"description": "飞机机型，飞机选填",
-											"required": true
-										},
-										{
-											"name": "destination",
-											"type": "String",
-											"description": "到达城市",
-											"required": true
-										},
-										{
-											"name": "departure_time",
-											"type": "String",
-											"description": "出发时间，当地时间HH:mm",
-											"required": true
-										},
-										{
-											"name": "departure",
-											"type": "String",
-											"description": "出发城市",
-											"required": true
-										},
-										{
-											"name": "arrival_time",
-											"type": "String",
-											"description": "到达时间，当地时间HH:mm",
-											"required": true
-										}
-									]
-								}
-							]
+							"required": true
 						},
 						{
-							"name": "hotel_infos",
-							"type": "ItemHotelInfo",
-							"description": "酒店信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "hotel_list",
-									"type": "ItemHotel[]",
-									"description": "结构化酒店信息 酒店结构化信息和文本描述二选一",
-									"required": true,
 									"subParams": [
 										{
 											"name": "related_package_id",
@@ -375,15 +356,19 @@
 											"description": "必填，所在城市",
 											"required": true
 										}
-									]
+									],
+									"name": "hotel_list",
+									"type": "ItemHotel[]",
+									"description": "结构化酒店信息 酒店结构化信息和文本描述二选一",
+									"required": true
 								}
-							]
+							],
+							"name": "hotel_infos",
+							"type": "ItemHotelInfo",
+							"description": "酒店信息",
+							"required": true
 						},
 						{
-							"name": "other_infos",
-							"type": "ItemResourceInfo[]",
-							"description": "其他资源信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "related_package_id",
@@ -403,19 +388,15 @@
 									"description": "小于1500字符",
 									"required": true
 								}
-							]
+							],
+							"name": "other_infos",
+							"type": "ItemResourceInfo[]",
+							"description": "其他资源信息",
+							"required": true
 						},
 						{
-							"name": "scenic_infos",
-							"type": "ItemScenicInfo",
-							"description": "景点信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "scenic_list",
-									"type": "ItemScenic[]",
-									"description": "结构化景点信息 景点结构化信息和文本描述二选一",
-									"required": true,
 									"subParams": [
 										{
 											"name": "related_package_id",
@@ -453,9 +434,17 @@
 											"description": "必填，景点所在城市",
 											"required": true
 										}
-									]
+									],
+									"name": "scenic_list",
+									"type": "ItemScenic[]",
+									"description": "结构化景点信息 景点结构化信息和文本描述二选一",
+									"required": true
 								}
-							]
+							],
+							"name": "scenic_infos",
+							"type": "ItemScenicInfo",
+							"description": "景点信息",
+							"required": true
 						},
 						{
 							"name": "traffic_desc",
@@ -463,19 +452,15 @@
 							"description": "自由行交通信息详细描述",
 							"required": true
 						}
-					]
+					],
+					"name": "freedom_item_ext",
+					"type": "FreedomItemExt",
+					"description": "自由行相关信息",
+					"required": true
 				},
 				{
-					"name": "group_item_ext",
-					"type": "GroupItemExt",
-					"description": "跟团游相关信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "back_traffic_info",
-							"type": "ItemTrafficInfo",
-							"description": "必填，回程交通信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "traffic_type",
@@ -484,10 +469,6 @@
 									"required": true
 								},
 								{
-									"name": "traffics",
-									"type": "ItemTraffic[]",
-									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
-									"required": true,
 									"subParams": [
 										{
 											"name": "vendor",
@@ -531,9 +512,17 @@
 											"description": "到达时间，当地时间HH:mm",
 											"required": true
 										}
-									]
+									],
+									"name": "traffics",
+									"type": "ItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"required": true
 								}
-							]
+							],
+							"name": "back_traffic_info",
+							"type": "ItemTrafficInfo",
+							"description": "必填，回程交通信息",
+							"required": true
 						},
 						{
 							"name": "electronic",
@@ -542,10 +531,6 @@
 							"required": true
 						},
 						{
-							"name": "gather_places",
-							"type": "GatherPlaceInfo",
-							"description": "集合地信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "poi_resource",
@@ -565,19 +550,15 @@
 									"description": "地点名称",
 									"required": true
 								}
-							]
+							],
+							"name": "gather_places",
+							"type": "GatherPlaceInfo",
+							"description": "集合地信息",
+							"required": true
 						},
 						{
-							"name": "go_traffic_info",
-							"type": "ItemTrafficInfo",
-							"description": "必填，去程交通信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "traffics",
-									"type": "ItemTraffic[]",
-									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
-									"required": true,
 									"subParams": [
 										{
 											"name": "vendor",
@@ -621,7 +602,11 @@
 											"description": "到达时间，当地时间HH:mm",
 											"required": true
 										}
-									]
+									],
+									"name": "traffics",
+									"type": "ItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"required": true
 								},
 								{
 									"name": "traffic_type",
@@ -629,7 +614,11 @@
 									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船",
 									"required": true
 								}
-							]
+							],
+							"name": "go_traffic_info",
+							"type": "ItemTrafficInfo",
+							"description": "必填，去程交通信息",
+							"required": true
 						},
 						{
 							"name": "route_type",
@@ -637,7 +626,11 @@
 							"description": "必填，线路类型，0 为目的地参团 \t1为出发地参团",
 							"required": true
 						}
-					]
+					],
+					"name": "group_item_ext",
+					"type": "GroupItemExt",
+					"description": "跟团游相关信息",
+					"required": true
 				},
 				{
 					"name": "item_type",
@@ -658,10 +651,6 @@
 					"required": true
 				},
 				{
-					"name": "itineraries",
-					"type": "ItemItineraryInfo[]",
-					"description": "行程信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "title",
@@ -681,7 +670,11 @@
 							"description": "必填，1.可选择纯文本 2.使用xml标签（img和txt）进行图文混排，目前仅支持一段文字和多张图片，如果文件有多段，将会被合并 3.每段行程文字总和小于1500字",
 							"required": true
 						}
-					]
+					],
+					"name": "itineraries",
+					"type": "ItemItineraryInfo[]",
+					"description": "行程信息",
+					"required": true
 				},
 				{
 					"name": "modified",
@@ -690,10 +683,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_info",
-					"type": "ItemRefundInfo",
-					"description": "退改规则信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_type",
@@ -707,19 +696,15 @@
 							"description": "退改规则 1）格式：标准规则 或 自定义规则：a_a_num  2）规则：自定义规则里最多可含5组规则",
 							"required": true
 						}
-					]
+					],
+					"name": "refund_info",
+					"type": "ItemRefundInfo",
+					"description": "退改规则信息",
+					"required": true
 				},
 				{
-					"name": "sale_info",
-					"type": "ItemSaleInfo",
-					"description": "销售属性信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_ele_cert_info",
-							"type": "ItemEleCertInfo",
-							"description": "新版电子凭证参数结构",
-							"required": true,
 							"subParams": [
 								{
 									"name": "expired_refund_rate",
@@ -763,7 +748,11 @@
 									"description": "电子凭证有效期 过期类型。1：xxxx-xx-xx 到 xxxx-xx-xx； 2：购买成功日 至 xxxx-xx-xx； 3：购买成功 xx 天内有效",
 									"required": true
 								}
-							]
+							],
+							"name": "item_ele_cert_info",
+							"type": "ItemEleCertInfo",
+							"description": "新版电子凭证参数结构",
+							"required": true
 						},
 						{
 							"name": "confirm_time",
@@ -861,7 +850,11 @@
 							"description": "预约商品必填，普通商品不填。预约商品开始时间，格式：yyyy-MM-dd HH:mm",
 							"required": true
 						}
-					]
+					],
+					"name": "sale_info",
+					"type": "ItemSaleInfo",
+					"description": "销售属性信息",
+					"required": true
 				},
 				{
 					"name": "seller_nick",
@@ -876,16 +869,8 @@
 					"required": true
 				},
 				{
-					"name": "sku_infos",
-					"type": "ItemSkuInfo[]",
-					"description": "sku信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "products",
-							"type": "Product[]",
-							"description": "套餐关联的产品元素信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "package_id",
@@ -917,7 +902,11 @@
 									"description": "资源元素的外部商家编码",
 									"required": true
 								}
-							]
+							],
+							"name": "products",
+							"type": "Product[]",
+							"description": "套餐关联的产品元素信息",
+							"required": true
 						},
 						{
 							"name": "package_id",
@@ -932,10 +921,6 @@
 							"required": true
 						},
 						{
-							"name": "prices",
-							"type": "Prices[]",
-							"description": "套餐的日历价格库存。如果是预约商品，只需要填写一个Price，并且，不需要填写Price中的date字段不填，且预约商品只有成人价格和库存。",
-							"required": true,
 							"subParams": [
 								{
 									"name": "date",
@@ -967,7 +952,11 @@
 									"description": "价格类型。price_type 取：1-成人价，2-儿童价，3-单房差",
 									"required": true
 								}
-							]
+							],
+							"name": "prices",
+							"type": "Prices[]",
+							"description": "套餐的日历价格库存。如果是预约商品，只需要填写一个Price，并且，不需要填写Price中的date字段不填，且预约商品只有成人价格和库存。",
+							"required": true
 						},
 						{
 							"name": "package_name",
@@ -1017,19 +1006,15 @@
 							"description": "邮轮下单是否限制人数和房型人数一致",
 							"required": true
 						}
-					]
+					],
+					"name": "sku_infos",
+					"type": "ItemSkuInfo[]",
+					"description": "sku信息",
+					"required": true
 				},
 				{
-					"name": "tcwl_item_ext",
-					"type": "TcwlItemExt",
-					"description": "同城活动商品相关信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "gather_places",
-							"type": "GatherPlaceInfo[]",
-							"description": "集合地信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "poi_resource",
@@ -1049,7 +1034,11 @@
 									"description": "地点名称",
 									"required": true
 								}
-							]
+							],
+							"name": "gather_places",
+							"type": "GatherPlaceInfo[]",
+							"description": "集合地信息",
+							"required": true
 						},
 						{
 							"name": "activity_time",
@@ -1105,13 +1094,13 @@
 							"description": "玩乐主题",
 							"required": true
 						}
-					]
+					],
+					"name": "tcwl_item_ext",
+					"type": "TcwlItemExt",
+					"description": "同城活动商品相关信息",
+					"required": true
 				},
 				{
-					"name": "cruise_item_ext",
-					"type": "CruiseItemExt",
-					"description": "航旅度假TOP API3.0 邮轮扩展信息结构",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ship_fee_include",
@@ -1161,7 +1150,11 @@
 							"description": "邮轮具体航线",
 							"required": true
 						}
-					]
+					],
+					"name": "cruise_item_ext",
+					"type": "CruiseItemExt",
+					"description": "航旅度假TOP API3.0 邮轮扩展信息结构",
+					"required": true
 				},
 				{
 					"name": "features",
@@ -1176,10 +1169,6 @@
 					"required": true
 				},
 				{
-					"name": "high_lights",
-					"type": "ProductHighLights[]",
-					"description": "产品亮点",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pic_urls",
@@ -1199,9 +1188,20 @@
 							"description": "亮点标题",
 							"required": true
 						}
-					]
+					],
+					"name": "high_lights",
+					"type": "ProductHighLights[]",
+					"description": "产品亮点",
+					"required": true
 				}
-			]
+			],
+			"name": "travel_item",
+			"type": "FullTravelItem",
+			"description": "商品查询结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.item.new.query",
+	"apiChineseName": "【API3.0】新版度假单个商品查询接口",
+	"description": "新版旅行度假新商品查询接口（单个商品查询）",
+	"id": 46791
 }

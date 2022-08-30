@@ -1,14 +1,6 @@
 {
-	"id": 55957,
-	"name": "alibaba.alihouse.newhome.business.sync",
-	"apiChineseName": "商圈数据同步",
-	"description": "商圈数据同步",
 	"requestParams": [
 		{
-			"name": "base_business_dto",
-			"type": "BaseBusinessDto",
-			"description": "入参数据",
-			"required": true,
 			"subParams": [
 				{
 					"name": "fencing",
@@ -71,50 +63,59 @@
 					"required": true
 				},
 				{
+					"name": "outer_business_id",
+					"type": "String",
+					"description": "外部ID -- 唯一",
+					"required": true
+				},
+				{
 					"name": "is_deleted",
 					"type": "String",
 					"description": "是否删除 1 删除 0 不删（默认为0）"
 				},
 				{
-					"name": "outer_business_id",
-					"type": "String",
-					"description": "外部ID -- 唯一",
-					"required": true
+					"name": "source_type",
+					"type": "Number",
+					"description": "数据源类型（1-新房 2-二手房）"
 				}
-			]
+			],
+			"name": "base_business_dto",
+			"type": "BaseBusinessDto",
+			"description": "入参数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "外部ID",
-					"required": true
+					"description": "外部ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.business.sync",
+	"apiChineseName": "商圈数据同步",
+	"description": "商圈数据同步",
+	"id": 55957
 }

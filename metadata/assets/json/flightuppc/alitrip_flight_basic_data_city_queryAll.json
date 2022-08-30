@@ -1,167 +1,142 @@
 {
-	"id": 42575,
-	"name": "alitrip.flight.basic.data.city.queryAll",
-	"apiChineseName": "机票基础数据城市数据查询",
-	"description": "机票基础数据城市数据查询top接口",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "数据实体",
-					"required": true,
 					"subParams": [
-						{
-							"name": "city_name",
-							"type": "String",
-							"description": "城市名称",
-							"required": true
-						},
-						{
-							"name": "city_code",
-							"type": "String",
-							"description": "城市三字码",
-							"required": true
-						},
-						{
-							"name": "navigable_status",
-							"type": "Number",
-							"description": "城市通航状态",
-							"required": true
-						},
-						{
-							"name": "search_heat",
-							"type": "Number",
-							"description": "搜索热度",
-							"required": true
-						},
 						{
 							"name": "air_zone",
 							"type": "String",
-							"description": "航空大区",
-							"required": true
+							"description": "航空大区"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "城市对应国家",
-							"required": true
+							"description": "城市对应国家"
 						},
 						{
 							"name": "city_jp",
 							"type": "String",
-							"description": "城市简拼",
-							"required": true
+							"description": "城市简拼"
 						},
 						{
 							"name": "time_zone_summer_period",
 							"type": "String",
-							"description": "夏日时区区间",
-							"required": true
+							"description": "夏日时区区间"
 						},
 						{
 							"name": "time_zone_summer",
 							"type": "String",
-							"description": "夏日时区",
-							"required": true
+							"description": "夏日时区"
 						},
 						{
 							"name": "time_zone_standard",
 							"type": "String",
-							"description": "标准时区",
-							"required": true
+							"description": "标准时区"
 						},
 						{
 							"name": "continent",
 							"type": "String",
-							"description": "大洲",
-							"required": true
+							"description": "大洲"
 						},
 						{
 							"name": "province_name",
 							"type": "String",
-							"description": "省/州名称",
-							"required": true
+							"description": "省/州名称"
 						},
 						{
 							"name": "country_code",
 							"type": "String",
-							"description": "国家二字码",
-							"required": true
+							"description": "国家二字码"
 						},
 						{
 							"name": "province_code",
 							"type": "String",
-							"description": "省/州二字码",
-							"required": true
+							"description": "省/州二字码"
 						},
 						{
 							"name": "city_capital",
 							"type": "String",
-							"description": "首字母",
-							"required": true
+							"description": "首字母"
 						},
 						{
 							"name": "english_name",
 							"type": "String",
-							"description": "英文名称",
-							"required": true
+							"description": "英文名称"
 						},
 						{
 							"name": "city_py",
 							"type": "String",
-							"description": "城市全拼",
-							"required": true
+							"description": "城市全拼"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称"
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市三字码"
 						},
 						{
 							"name": "iata_code",
 							"type": "String",
-							"description": "次区代码",
-							"required": true
+							"description": "次区代码"
 						},
 						{
 							"name": "secd_zone",
 							"type": "String",
-							"description": "次区",
-							"required": true
+							"description": "次区"
 						},
 						{
 							"name": "oag_summer_period",
 							"type": "String",
-							"description": "OAG来源的夏令时",
-							"required": true
+							"description": "OAG来源的夏令时"
 						},
 						{
 							"name": "mini_iata_code",
 							"type": "String",
-							"description": "小次区",
-							"required": true
+							"description": "小次区"
+						},
+						{
+							"name": "search_heat",
+							"type": "Number",
+							"description": "搜索热度"
+						},
+						{
+							"name": "navigable_status",
+							"type": "Number",
+							"description": "城市通航状态"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "数据实体"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "结果码 0成功",
-					"required": true
+					"description": "结果码 0成功"
 				},
 				{
 					"name": "query_id",
 					"type": "String",
-					"description": "请求唯一标识",
-					"required": true
+					"description": "请求唯一标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alitrip.flight.basic.data.city.queryAll",
+	"apiChineseName": "机票基础数据城市数据查询",
+	"description": "机票基础数据城市数据查询top接口",
+	"id": 42575
 }

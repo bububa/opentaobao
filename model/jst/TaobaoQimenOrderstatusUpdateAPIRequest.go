@@ -13,7 +13,7 @@ import (
 type TaobaoQimenOrderstatusUpdateAPIRequest struct {
 	model.Params
 	// 淘系子订单号
-	_orderCodes []int64
+	_orderCodes []string
 	// 星盘派单号
 	_allocationCode string
 	// 业务类型，（枚举值：FAHUO、ZITI）
@@ -51,14 +51,14 @@ func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetApiParams() url.Values {
 
 // SetOrderCodes is OrderCodes Setter
 // 淘系子订单号
-func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOrderCodes(_orderCodes []int64) error {
+func (r *TaobaoQimenOrderstatusUpdateAPIRequest) SetOrderCodes(_orderCodes []string) error {
 	r._orderCodes = _orderCodes
 	r.Set("order_codes", _orderCodes)
 	return nil
 }
 
 // GetOrderCodes OrderCodes Getter
-func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetOrderCodes() []int64 {
+func (r TaobaoQimenOrderstatusUpdateAPIRequest) GetOrderCodes() []string {
 	return r._orderCodes
 }
 

@@ -1,8 +1,4 @@
 {
-	"id": 52105,
-	"name": "alibaba.lsy.miniapp.user.get",
-	"apiChineseName": "零售云小程序获取登录用户信息",
-	"description": "零售云小程序，通过授权码获取登录的卖家账号信息",
 	"requestParams": [
 		{
 			"name": "time_stamp",
@@ -31,93 +27,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MiniAppResult",
-			"description": "响应内容",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "succ",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data",
-					"type": "UserInfoDto",
-					"description": "用户数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "signature",
 							"type": "String",
-							"description": "返回数据签名，signature = sha1（raw_data 下所有字段 + appSecret，按字符串升级排列），用于校验关键数据是否被篡改",
-							"required": true
+							"description": "返回数据签名，signature = sha1（raw_data 下所有字段 + appSecret，按字符串升级排列），用于校验关键数据是否被篡改"
 						},
 						{
-							"name": "raw_data",
-							"type": "UserInfoBaseDto",
-							"description": "用户相关的原始数据",
-							"required": true,
 							"subParams": [
 								{
 									"name": "union_id",
 									"type": "String",
-									"description": "同一个开放平台帐号下，用户的 UnionID 是唯一的",
-									"required": true
+									"description": "同一个开放平台帐号下，用户的 UnionID 是唯一的"
 								},
 								{
 									"name": "open_uid",
 									"type": "String",
-									"description": "小程序用户唯一识别",
-									"required": true
+									"description": "小程序用户唯一识别"
 								},
 								{
 									"name": "app_id",
 									"type": "String",
-									"description": "小程序ID",
-									"required": true
+									"description": "小程序ID"
 								},
 								{
 									"name": "corp_id",
 									"type": "String",
-									"description": "小程序开发主体ID",
-									"required": true
+									"description": "小程序开发主体ID"
 								},
 								{
 									"name": "login_type",
 									"type": "String",
-									"description": "登录类型",
-									"required": true
+									"description": "登录类型"
 								},
 								{
 									"name": "extra_info",
 									"type": "String",
-									"description": "不同业务/登录方式的扩展字段",
-									"required": true
+									"description": "不同业务/登录方式的扩展字段"
 								},
 								{
 									"name": "user_nick",
 									"type": "String",
-									"description": "登录用户昵称",
-									"required": true
+									"description": "登录用户昵称"
 								}
-							]
+							],
+							"name": "raw_data",
+							"type": "UserInfoBaseDto",
+							"description": "用户相关的原始数据"
 						}
-					]
+					],
+					"name": "data",
+					"type": "UserInfoDto",
+					"description": "用户数据"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MiniAppResult",
+			"description": "响应内容"
 		}
-	]
+	],
+	"name": "alibaba.lsy.miniapp.user.get",
+	"apiChineseName": "零售云小程序获取登录用户信息",
+	"description": "零售云小程序，通过授权码获取登录的卖家账号信息",
+	"id": 52105
 }

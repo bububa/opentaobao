@@ -8,6 +8,8 @@ type TradeOrderInfoDto struct {
 	ObjectId string `json:"object_id,omitempty" xml:"object_id,omitempty"`
 	// 云打印标准模板URL（组装云打印结果使用，值格式http://cloudprint.cainiao.com/template/standard/${模板ID}）
 	TemplateUrl string `json:"template_url,omitempty" xml:"template_url,omitempty"`
+	// 带面单号模式取号，目前仅顺丰支持
+	WaybillCode string `json:"waybill_code,omitempty" xml:"waybill_code,omitempty"`
 	// 订单信息
 	OrderInfo *OrderInfoDto `json:"order_info,omitempty" xml:"order_info,omitempty"`
 	// 包裹信息

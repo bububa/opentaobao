@@ -1,13 +1,6 @@
 {
-	"id": 27822,
-	"name": "taobao.alitrip.flightchange.get",
-	"apiChineseName": "获取航变信息",
-	"description": "查询航变是为了两个目的，阿里旅行抓取到未确认航变的航变信息源时可以由代理确认航变，同时对于确认航变的航变信息也共享给代理人做本体业务使用。",
 	"requestParams": [
 		{
-			"name": "search_option",
-			"type": "FlightChangeDataQueryOption",
-			"description": "查询信息封装",
 			"subParams": [
 				{
 					"name": "end_flight_change_time_str",
@@ -68,40 +61,43 @@
 					"type": "Number",
 					"description": "第几页"
 				}
-			]
+			],
+			"name": "search_option",
+			"type": "FlightChangeDataQueryOption",
+			"description": "查询信息封装"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_d_o",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "results",
-					"type": "Json[]",
-					"description": "results",
-					"required": true
+					"type": "String[]",
+					"description": "results"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result_d_o",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.flightchange.get",
+	"apiChineseName": "获取航变信息",
+	"description": "查询航变是为了两个目的，阿里旅行抓取到未确认航变的航变信息源时可以由代理确认航变，同时对于确认航变的航变信息也共享给代理人做本体业务使用。",
+	"id": 27822
 }

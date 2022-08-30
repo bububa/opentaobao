@@ -1,8 +1,4 @@
 {
-	"id": 56275,
-	"name": "taobao.miniapp.cloud.store.relation.add",
-	"apiChineseName": "云存储添加",
-	"description": "用于用户上传文件之后回写云存储的关联关系",
 	"requestParams": [
 		{
 			"name": "env",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "云存储文件唯一ID"
 		}
-	]
+	],
+	"name": "taobao.miniapp.cloud.store.relation.add",
+	"apiChineseName": "云存储添加",
+	"description": "用于用户上传文件之后回写云存储的关联关系",
+	"id": 56275
 }

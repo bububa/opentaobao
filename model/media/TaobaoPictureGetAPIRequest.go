@@ -14,18 +14,18 @@ type TaobaoPictureGetAPIRequest struct {
 	model.Params
 	// 是否删除,unfroze代表没有删除
 	_deleted string
+	// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
+	_modifiedTime string
 	// 图片标题,最大长度50字符,中英文都算一字符
 	_title string
-	// 图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc
-	_orderBy string
 	// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
 	_startDate string
 	// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
 	_endDate string
-	// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
-	_modifiedTime string
 	// 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 	_clientType string
+	// 图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc
+	_orderBy string
 	// 图片url查询接口
 	_urls string
 	// 图片ID
@@ -74,6 +74,19 @@ func (r TaobaoPictureGetAPIRequest) GetDeleted() string {
 	return r._deleted
 }
 
+// SetModifiedTime is ModifiedTime Setter
+// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
+func (r *TaobaoPictureGetAPIRequest) SetModifiedTime(_modifiedTime string) error {
+	r._modifiedTime = _modifiedTime
+	r.Set("modified_time", _modifiedTime)
+	return nil
+}
+
+// GetModifiedTime ModifiedTime Getter
+func (r TaobaoPictureGetAPIRequest) GetModifiedTime() string {
+	return r._modifiedTime
+}
+
 // SetTitle is Title Setter
 // 图片标题,最大长度50字符,中英文都算一字符
 func (r *TaobaoPictureGetAPIRequest) SetTitle(_title string) error {
@@ -85,19 +98,6 @@ func (r *TaobaoPictureGetAPIRequest) SetTitle(_title string) error {
 // GetTitle Title Getter
 func (r TaobaoPictureGetAPIRequest) GetTitle() string {
 	return r._title
-}
-
-// SetOrderBy is OrderBy Setter
-// 图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc
-func (r *TaobaoPictureGetAPIRequest) SetOrderBy(_orderBy string) error {
-	r._orderBy = _orderBy
-	r.Set("order_by", _orderBy)
-	return nil
-}
-
-// GetOrderBy OrderBy Getter
-func (r TaobaoPictureGetAPIRequest) GetOrderBy() string {
-	return r._orderBy
 }
 
 // SetStartDate is StartDate Setter
@@ -126,19 +126,6 @@ func (r TaobaoPictureGetAPIRequest) GetEndDate() string {
 	return r._endDate
 }
 
-// SetModifiedTime is ModifiedTime Setter
-// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
-func (r *TaobaoPictureGetAPIRequest) SetModifiedTime(_modifiedTime string) error {
-	r._modifiedTime = _modifiedTime
-	r.Set("modified_time", _modifiedTime)
-	return nil
-}
-
-// GetModifiedTime ModifiedTime Getter
-func (r TaobaoPictureGetAPIRequest) GetModifiedTime() string {
-	return r._modifiedTime
-}
-
 // SetClientType is ClientType Setter
 // 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 func (r *TaobaoPictureGetAPIRequest) SetClientType(_clientType string) error {
@@ -150,6 +137,19 @@ func (r *TaobaoPictureGetAPIRequest) SetClientType(_clientType string) error {
 // GetClientType ClientType Getter
 func (r TaobaoPictureGetAPIRequest) GetClientType() string {
 	return r._clientType
+}
+
+// SetOrderBy is OrderBy Setter
+// 图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc
+func (r *TaobaoPictureGetAPIRequest) SetOrderBy(_orderBy string) error {
+	r._orderBy = _orderBy
+	r.Set("order_by", _orderBy)
+	return nil
+}
+
+// GetOrderBy OrderBy Getter
+func (r TaobaoPictureGetAPIRequest) GetOrderBy() string {
+	return r._orderBy
 }
 
 // SetUrls is Urls Setter

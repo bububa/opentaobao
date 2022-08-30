@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		},
+		{
+			"name": "outer_creative_id",
+			"type": "String",
+			"description": "渠道-创意id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "鹰眼id"
+		},
+		{
+			"name": "response_code",
+			"type": "Number",
+			"description": "参数错误"
+		},
+		{
+			"subParams": [
+				{
+					"name": "outer_creative_id",
+					"type": "String",
+					"description": "渠道-创意id"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "审核结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "rule_id",
+							"type": "Number",
+							"description": "违规一级分类id"
+						},
+						{
+							"name": "rule_desc",
+							"type": "String",
+							"description": "违规一级分类描述"
+						},
+						{
+							"name": "sub_rule_id",
+							"type": "Number",
+							"description": "违规二级分类id"
+						},
+						{
+							"name": "sub_rule_desc",
+							"type": "String",
+							"description": "违规二级分类描述"
+						},
+						{
+							"name": "reject_memo",
+							"type": "String",
+							"description": "驳回原因"
+						}
+					],
+					"name": "material_reject_info",
+					"type": "MaterialRejectInfo",
+					"description": "拒绝信息"
+				}
+			],
+			"name": "data",
+			"type": "CreativeAuditResultDTO",
+			"description": "返回信息"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "请求结果"
+		}
+	],
+	"name": "taobao.usergrowth.ad.material.query",
+	"apiChineseName": "素材审核结果查询",
+	"description": "素材审核结果查询",
+	"id": 60598
+}

@@ -1,14 +1,6 @@
 {
-	"id": 25686,
-	"name": "taobao.fuwu.sp.confirm.apply",
-	"apiChineseName": "内购服务确认单申请接口",
-	"description": "isv能通过该接口发起确认申请单",
 	"requestParams": [
 		{
-			"name": "param_income_confirm_d_t_o",
-			"type": "IncomeConfirmDto",
-			"description": "确认单申请",
-			"required": true,
 			"subParams": [
 				{
 					"name": "fee",
@@ -49,7 +41,11 @@
 					"description": "外部确认账单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_income_confirm_d_t_o",
+			"type": "IncomeConfirmDto",
+			"description": "确认单申请",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -58,5 +54,9 @@
 			"type": "Number",
 			"description": "返回的是服务市场的确认单ID"
 		}
-	]
+	],
+	"name": "taobao.fuwu.sp.confirm.apply",
+	"apiChineseName": "内购服务确认单申请接口",
+	"description": "isv能通过该接口发起确认申请单",
+	"id": 25686
 }

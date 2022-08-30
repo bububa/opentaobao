@@ -1,8 +1,4 @@
 {
-	"id": 38036,
-	"name": "taobao.ailab.aicloud.top.music.search",
-	"apiChineseName": "对外音乐搜索服务",
-	"description": "供厂商获取音乐列表",
 	"requestParams": [
 		{
 			"name": "bot_id",
@@ -27,29 +23,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "models",
-					"type": "Json[]",
-					"description": "返回item列表",
-					"required": true
+					"type": "String[]",
+					"description": "返回item列表"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.music.search",
+	"apiChineseName": "对外音乐搜索服务",
+	"description": "供厂商获取音乐列表",
+	"id": 38036
 }

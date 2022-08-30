@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id，阿信分配",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "城市名称"
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "城市编码"
+						}
+					],
+					"name": "data_list",
+					"type": "HotelCityVo[]",
+					"description": "城市信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.city.get",
+	"apiChineseName": "城市列表信息查询-阿信",
+	"description": "阿信城市列表信息查询",
+	"id": 56861
+}

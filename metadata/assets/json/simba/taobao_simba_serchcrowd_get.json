@@ -1,8 +1,4 @@
 {
-	"id": 27294,
-	"name": "taobao.simba.serchcrowd.get",
-	"apiChineseName": "根据推广单元id获取搜索溢价人群",
-	"description": "根据推广单元id获取搜索溢价人群",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -19,91 +15,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "adgrouptargetingtags",
-			"type": "Result []",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "price_mode",
 					"type": "Number",
-					"description": "出价方式1:溢价;0:出价",
-					"required": true
+					"description": "出价方式1:溢价;0:出价"
 				},
 				{
 					"name": "discount",
 					"type": "Number",
-					"description": "返回的溢价比例,乘的关系,discount=121,代表溢价21%",
-					"required": true
+					"description": "返回的溢价比例,乘的关系,discount=121,代表溢价21%"
 				},
 				{
-					"name": "crowd",
-					"type": "CrowdDto",
-					"description": "人群信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "业务类型",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "cust_id",
 							"type": "Number",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
 						},
 						{
 							"name": "crowd_id",
 							"type": "Number",
-							"description": "人群id ,报表用",
-							"required": true
+							"description": "人群id ,报表用"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "人群名称",
-							"required": true
+							"description": "人群名称"
 						},
 						{
 							"name": "template_id",
 							"type": "Number",
-							"description": "人群包模版ID",
-							"required": true
+							"description": "人群包模版ID"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "人群类型",
-							"required": true
+							"description": "人群类型"
 						},
 						{
 							"name": "fit_discount",
 							"type": "Number",
-							"description": "人群建议溢价,取值范围[5,300]",
-							"required": true
+							"description": "人群建议溢价,取值范围[5,300]"
 						}
-					]
+					],
+					"name": "crowd",
+					"type": "CrowdDto",
+					"description": "人群信息"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "定向id,出价删除 改价,修改状态时用",
-					"required": true
+					"description": "定向id,出价删除 改价,修改状态时用"
 				},
 				{
 					"name": "is_default_price",
 					"type": "Number",
-					"description": "人群是否溢价1:不溢价;0:溢价",
-					"required": true
+					"description": "人群是否溢价1:不溢价;0:溢价"
 				},
 				{
 					"name": "online_status",
 					"type": "Number",
-					"description": "人群上下线状态0:暂停, 1:启用",
-					"required": true
+					"description": "人群上下线状态0:暂停, 1:启用"
 				}
-			]
+			],
+			"name": "adgrouptargetingtags",
+			"type": "Result []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.simba.serchcrowd.get",
+	"apiChineseName": "根据推广单元id获取搜索溢价人群",
+	"description": "根据推广单元id获取搜索溢价人群",
+	"id": 27294
 }

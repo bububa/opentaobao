@@ -1,8 +1,4 @@
 {
-	"id": 53383,
-	"name": "alibaba.tmallgenie.scp.plan.sale.qty.get",
-	"apiChineseName": "12-同步销售数据",
-	"description": "同步销售数据",
 	"requestParams": [
 		{
 			"name": "request_extend_json",
@@ -12,85 +8,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果msg",
-					"required": true
+					"description": "结果msg"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果code",
-					"required": true
+					"description": "结果code"
 				},
 				{
-					"name": "data_list",
-					"type": "IbpSaleDto[]",
-					"description": "对象列表",
-					"required": true,
 					"subParams": [
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值"
+						},
 						{
 							"name": "activation_quantity",
 							"type": "Number",
-							"description": "激活数量",
-							"required": true
+							"description": "激活数量"
 						},
 						{
 							"name": "sell_in_quantity",
 							"type": "Number",
-							"description": "实际进货数量",
-							"required": true
+							"description": "实际进货数量"
 						},
 						{
 							"name": "sell_out_quantity",
 							"type": "Number",
-							"description": "实际出货数量",
-							"required": true
+							"description": "实际出货数量"
 						},
 						{
 							"name": "channel_id",
 							"type": "String",
-							"description": "渠道号",
-							"required": true
+							"description": "渠道号"
 						},
 						{
 							"name": "materiel_code",
 							"type": "String",
-							"description": "物料号",
-							"required": true
+							"description": "物料号"
 						},
 						{
 							"name": "extend_json",
 							"type": "String",
-							"description": "扩展参数",
-							"required": true
+							"description": "扩展参数"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "租户",
-							"required": true
-						},
-						{
-							"name": "key_figure_date",
-							"type": "Date",
-							"description": "关键日期值",
-							"required": true
+							"description": "租户"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "IbpSaleDto[]",
+					"description": "对象列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.sale.qty.get",
+	"apiChineseName": "12-同步销售数据",
+	"description": "同步销售数据",
+	"id": 53383
 }

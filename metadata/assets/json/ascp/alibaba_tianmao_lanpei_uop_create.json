@@ -1,0 +1,259 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "out_order_code",
+							"type": "String",
+							"description": "外部订单号，唯一标识",
+							"required": true
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道，比如213",
+							"required": true
+						},
+						{
+							"name": "owner_id",
+							"type": "Number",
+							"description": "货主ID",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "out_seller_nick",
+							"type": "String",
+							"description": "外部店铺名称"
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "交易ID，非淘系订单，填写外部平台交易ID"
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "订单类型，目前只支持销售单，取值为0",
+							"required": true
+						},
+						{
+							"name": "order_time",
+							"type": "String",
+							"description": "下单时间，为空则取接口调用时间"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间，为空则取接口调用时间"
+						},
+						{
+							"name": "cipher_text",
+							"type": "Boolean",
+							"description": "是否加密，默认为false"
+						},
+						{
+							"name": "buyer_memo",
+							"type": "String",
+							"description": "买家留言"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码， 揽配业务必填"
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段，json格式"
+						},
+						{
+							"name": "seller_message",
+							"type": "String",
+							"description": "卖家备注"
+						}
+					],
+					"name": "hi_erp_order_dto",
+					"type": "HiErpOrderDTO",
+					"description": "主单信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收件人姓名",
+							"required": true
+						},
+						{
+							"name": "cell_phone",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "tele_phone",
+							"type": "String",
+							"description": "电话号码"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市，市和区二选一必填"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区，市和区二选一必填"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段，json格式",
+							"required": true
+						}
+					],
+					"name": "hi_erp_receiver_dto",
+					"type": "HiErpReceiverDTO",
+					"description": "收件人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_order_item_id",
+							"type": "String",
+							"description": "外部订单明细唯一标识"
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "String",
+							"description": "子交易单号"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "后端货品ID， 货品id和货品编码二选一必填，优先取货品ID"
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "后端货品编码， 货品id和货品编码二选一必填，优先取货品ID"
+						},
+						{
+							"name": "item_amount",
+							"type": "Number",
+							"description": "货品金额",
+							"required": true
+						},
+						{
+							"name": "item_qty",
+							"type": "Number",
+							"description": "货品数量",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段，json格式",
+							"required": true
+						}
+					],
+					"name": "hi_erp_item_dto_list",
+					"type": "HiErpItemDTO[]",
+					"description": "货品明细",
+					"required": true
+				}
+			],
+			"name": "hi_erp_order_event",
+			"type": "HiErpOrderEvent",
+			"description": "ERP推单模型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "false: 失败   true: 成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_order_code",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "scp_order_code",
+							"type": "String",
+							"description": "SCP单号，履约单号"
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段，json格式"
+						}
+					],
+					"name": "result",
+					"type": "HiErpOrderResp",
+					"description": "数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "通常用于success为false时的页面错误类型判定"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "通常用于success为false时的页面错误信息提示"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "通常用于success为true时的页面提示"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.tianmao.lanpei.uop.create",
+	"apiChineseName": "阿里巴巴.天猫家装.揽配.履约订单.创建",
+	"description": "阿里巴巴.天猫家装.揽配.履约订单.创建",
+	"id": 61801
+}

@@ -1,0 +1,516 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "tag_id",
+					"type": "Number",
+					"description": "各个场景的对应值为：各个场景对应的值为：拉新快--拉新快204，首单直降205，派样拉新216，入会快--入会拉新213，老会员激活213，货品加速--货品加速211，上新快--行业新品207，新品首降214，预热蓄水--预热蓄水219"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "material_query",
+			"type": "MaterialQueryTopDto",
+			"description": "创意数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "material_id",
+							"type": "Number",
+							"description": "materialId"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "title"
+						},
+						{
+							"name": "link_url",
+							"type": "String",
+							"description": "linkUrl"
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "imgUrl"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "status"
+						},
+						{
+							"name": "material_type",
+							"type": "Number",
+							"description": "materialType"
+						},
+						{
+							"name": "content_entity_type",
+							"type": "Number",
+							"description": "contentEntityType"
+						},
+						{
+							"name": "live_start_time",
+							"type": "String",
+							"description": "liveStartTime"
+						},
+						{
+							"name": "live_end_time",
+							"type": "String",
+							"description": "liveEndTime"
+						},
+						{
+							"name": "publish_time",
+							"type": "String",
+							"description": "publishTime"
+						},
+						{
+							"name": "item_id_list_in_live_list",
+							"type": "Number[]",
+							"description": "itemIdListInLive"
+						},
+						{
+							"name": "daren_name",
+							"type": "String",
+							"description": "darenName"
+						},
+						{
+							"name": "timing_start",
+							"type": "Boolean",
+							"description": "timingStart"
+						},
+						{
+							"name": "content_biz_type",
+							"type": "Number",
+							"description": "contentBizType"
+						},
+						{
+							"name": "multi_image_u_r_l_list",
+							"type": "String[]",
+							"description": "multiImageURL"
+						},
+						{
+							"name": "wireless_long_image_url",
+							"type": "String",
+							"description": "wirelessLongImageURL"
+						},
+						{
+							"name": "category_id",
+							"type": "String",
+							"description": "categoryId"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "price"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "quantity"
+						},
+						{
+							"name": "bid_count",
+							"type": "Number",
+							"description": "bidCount"
+						},
+						{
+							"name": "starts",
+							"type": "String",
+							"description": "starts"
+						},
+						{
+							"name": "category_level1",
+							"type": "Number",
+							"description": "categoryLevel1"
+						},
+						{
+							"name": "recommend_score",
+							"type": "Number",
+							"description": "recommendScore"
+						},
+						{
+							"name": "recommend_tag_list",
+							"type": "String[]",
+							"description": "recommendTagList"
+						},
+						{
+							"subParams": [
+								{
+									"name": "tag_id",
+									"type": "Number",
+									"description": "tagId"
+								},
+								{
+									"name": "order",
+									"type": "Number",
+									"description": "order"
+								},
+								{
+									"name": "color",
+									"type": "String",
+									"description": "color"
+								},
+								{
+									"name": "show_tag",
+									"type": "String",
+									"description": "showTag"
+								},
+								{
+									"name": "tips",
+									"type": "String",
+									"description": "tips"
+								},
+								{
+									"name": "skip",
+									"type": "Boolean",
+									"description": "skip"
+								}
+							],
+							"name": "show_tag_info_list",
+							"type": "ShowTagTopDto[]",
+							"description": "showTagInfoList"
+						},
+						{
+							"name": "media_type_names_list",
+							"type": "String[]",
+							"description": "mediaTypeNames"
+						},
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "createTime"
+						},
+						{
+							"name": "modify_time",
+							"type": "String",
+							"description": "modifyTime"
+						},
+						{
+							"name": "video_duration",
+							"type": "Number",
+							"description": "videoDuration"
+						},
+						{
+							"subParams": [
+								{
+									"name": "hour_id",
+									"type": "Number",
+									"description": "按小时维度划分的小时ID"
+								},
+								{
+									"name": "log_date",
+									"type": "String",
+									"description": "按天维度划分的日期"
+								},
+								{
+									"name": "ad_pv",
+									"type": "Number",
+									"description": "展现数"
+								},
+								{
+									"name": "click",
+									"type": "Number",
+									"description": "点击数"
+								},
+								{
+									"name": "ctr",
+									"type": "String",
+									"description": "点击率"
+								},
+								{
+									"name": "ecpm",
+									"type": "String",
+									"description": "千次展现成本"
+								},
+								{
+									"name": "charge",
+									"type": "String",
+									"description": "消耗"
+								},
+								{
+									"name": "ecpc",
+									"type": "String",
+									"description": "点击成本"
+								},
+								{
+									"name": "car_num",
+									"type": "Number",
+									"description": "加购量"
+								},
+								{
+									"name": "dir_car_num",
+									"type": "Number",
+									"description": "直接加购量"
+								},
+								{
+									"name": "indir_car_num",
+									"type": "Number",
+									"description": "间接加购量"
+								},
+								{
+									"name": "inshop_item_col_num",
+									"type": "Number",
+									"description": "收藏量"
+								},
+								{
+									"name": "inshop_item_col_car_num_cost",
+									"type": "Number",
+									"description": "收藏加购成本"
+								},
+								{
+									"name": "alipay_inshop_amt",
+									"type": "String",
+									"description": "成交金额"
+								},
+								{
+									"name": "alipay_inshop_num",
+									"type": "Number",
+									"description": "成交笔数"
+								},
+								{
+									"name": "cvr",
+									"type": "String",
+									"description": "成交转化率"
+								},
+								{
+									"name": "roi",
+									"type": "String",
+									"description": "ROI"
+								},
+								{
+									"name": "prepay_inshop_amt",
+									"type": "String",
+									"description": "预售成交笔数"
+								},
+								{
+									"name": "prepay_inshop_num",
+									"type": "Number",
+									"description": "预售成交金额"
+								},
+								{
+									"name": "no_lalipay_inshop_amt_proprtion",
+									"type": "String",
+									"description": "新客成交金额贡献占比"
+								},
+								{
+									"name": "dir_alipay_inshop_num",
+									"type": "Number",
+									"description": "直接成交笔数"
+								},
+								{
+									"name": "dir_alipay_inshop_amt",
+									"type": "String",
+									"description": "直接成交金额"
+								},
+								{
+									"name": "indir_alipay_inshop_num",
+									"type": "Number",
+									"description": "间接成交笔数"
+								},
+								{
+									"name": "indir_alipay_inshop_amt",
+									"type": "String",
+									"description": "间接成交金额"
+								},
+								{
+									"name": "sample_alipay_num",
+									"type": "Number",
+									"description": "派样量"
+								},
+								{
+									"name": "sample_alipay_amt",
+									"type": "String",
+									"description": "派样成交金额"
+								},
+								{
+									"name": "car_num_kuan",
+									"type": "Number",
+									"description": "加购量"
+								},
+								{
+									"name": "dir_car_num_kuan",
+									"type": "Number",
+									"description": "直接加购量"
+								},
+								{
+									"name": "indir_car_num_kuan",
+									"type": "Number",
+									"description": "间接加购量"
+								},
+								{
+									"name": "inshop_item_col_num_kuan",
+									"type": "Number",
+									"description": "收藏量"
+								},
+								{
+									"name": "inshop_item_col_car_num_cost_kuan",
+									"type": "Number",
+									"description": "收藏加购成本"
+								},
+								{
+									"name": "alipay_inshop_amt_kuan",
+									"type": "String",
+									"description": "成交金额"
+								},
+								{
+									"name": "alipay_inshop_num_kuan",
+									"type": "Number",
+									"description": "成交笔数"
+								},
+								{
+									"name": "cvr_kuan",
+									"type": "String",
+									"description": "成交转化率"
+								},
+								{
+									"name": "roi_kuan",
+									"type": "String",
+									"description": "ROI"
+								},
+								{
+									"name": "prepay_inshop_amt_kuan",
+									"type": "String",
+									"description": "预售成交笔数"
+								},
+								{
+									"name": "prepay_inshop_num_kuan",
+									"type": "Number",
+									"description": "预售成交金额"
+								},
+								{
+									"name": "no_lalipay_inshop_amt_proprtion_kuan",
+									"type": "String",
+									"description": "新客成交金额贡献占比"
+								},
+								{
+									"name": "dir_alipay_inshop_num_kuan",
+									"type": "Number",
+									"description": "直接成交笔数"
+								},
+								{
+									"name": "dir_alipay_inshop_amt_kuan",
+									"type": "String",
+									"description": "直接成交金额"
+								},
+								{
+									"name": "indir_alipay_inshop_num_kuan",
+									"type": "Number",
+									"description": "间接成交笔数"
+								},
+								{
+									"name": "indir_alipay_inshop_amt_kuan",
+									"type": "String",
+									"description": "间接成交金额"
+								},
+								{
+									"name": "sample_alipay_num_kuan",
+									"type": "Number",
+									"description": "派样量"
+								},
+								{
+									"name": "sample_alipay_amt_kuan",
+									"type": "String",
+									"description": "派样成交金额"
+								},
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划ID"
+								}
+							],
+							"name": "report_info_list",
+							"type": "ReportResultTopDto[]",
+							"description": "reportInfoList"
+						},
+						{
+							"name": "launch_count",
+							"type": "Number",
+							"description": "launchCount"
+						},
+						{
+							"name": "total_order_amount",
+							"type": "String",
+							"description": "totalOrderAmount"
+						},
+						{
+							"name": "unlock_rpt_index",
+							"type": "Boolean",
+							"description": "unlockRptIndex"
+						}
+					],
+					"name": "material_result_top_d_t_o_list",
+					"type": "MaterialResultTopDto[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.material.material.findpage",
+	"apiChineseName": "获取商品池",
+	"description": "获取商品池。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa。",
+	"id": 58939
+}

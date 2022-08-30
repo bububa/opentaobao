@@ -1,8 +1,4 @@
 {
-	"id": 40656,
-	"name": "aliexpress.logistics.ds.trackinginfo.query",
-	"apiChineseName": "查询物流追踪信息",
-	"description": "Dropshipper查询物流追踪信息",
 	"requestParams": [
 		{
 			"name": "logistics_no",
@@ -37,9 +33,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "details",
-			"type": "Details []",
-			"description": "追踪详细信息列表",
 			"subParams": [
 				{
 					"name": "event_desc",
@@ -71,7 +64,10 @@
 					"description": "eventDate",
 					"required": true
 				}
-			]
+			],
+			"name": "details",
+			"type": "Details []",
+			"description": "追踪详细信息列表"
 		},
 		{
 			"name": "official_website",
@@ -88,5 +84,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "aliexpress.logistics.ds.trackinginfo.query",
+	"apiChineseName": "查询物流追踪信息",
+	"description": "Dropshipper查询物流追踪信息",
+	"id": 40656
 }

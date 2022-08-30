@@ -1,0 +1,141 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务编码",
+					"required": true
+				},
+				{
+					"name": "service_sku_code",
+					"type": "String",
+					"description": "服务skuCode",
+					"required": true
+				},
+				{
+					"name": "service_store_code",
+					"type": "String",
+					"description": "网点code",
+					"required": true
+				},
+				{
+					"name": "area_code",
+					"type": "Number",
+					"description": "地址编码",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "服务容量查询开始日期。使用场景预约开始时间"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "服务容量查询结束日期。使用场景预约结束时间"
+				}
+			],
+			"name": "available_worker_query_for_top_req_dto",
+			"type": "AvailableWorkerQueryForTopReqDTO",
+			"description": "查询可用工人model",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "worker_id",
+							"type": "Number",
+							"description": "工人ID"
+						},
+						{
+							"name": "real_name",
+							"type": "String",
+							"description": "工人姓名"
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "镇"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "profile_picture_url",
+							"type": "String",
+							"description": "头像图片url"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					],
+					"name": "value",
+					"type": "WorkerDTO[]",
+					"description": "可用工人列表"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统内部错误信息"
+				},
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "统一响应对象模型"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.availableworker",
+	"apiChineseName": "查询可用工人",
+	"description": "可用工人查询",
+	"id": 60130
+}

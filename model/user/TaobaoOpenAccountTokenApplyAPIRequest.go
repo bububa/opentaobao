@@ -18,12 +18,12 @@ type TaobaoOpenAccountTokenApplyAPIRequest struct {
 	_uuid string
 	// 用于透传一些业务附加参数
 	_ext string
-	// 时间戳单位是毫秒
-	_tokenTimestamp int64
-	// open account id
-	_openAccountId int64
 	// ISV APP的登录态时长单位是秒
 	_loginStateExpireIn int64
+	// open account id
+	_openAccountId int64
+	// 时间戳单位是毫秒
+	_tokenTimestamp int64
 }
 
 // NewTaobaoOpenAccountTokenApplyRequest 初始化TaobaoOpenAccountTokenApplyAPIRequest对象
@@ -86,17 +86,17 @@ func (r TaobaoOpenAccountTokenApplyAPIRequest) GetExt() string {
 	return r._ext
 }
 
-// SetTokenTimestamp is TokenTimestamp Setter
-// 时间戳单位是毫秒
-func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetTokenTimestamp(_tokenTimestamp int64) error {
-	r._tokenTimestamp = _tokenTimestamp
-	r.Set("token_timestamp", _tokenTimestamp)
+// SetLoginStateExpireIn is LoginStateExpireIn Setter
+// ISV APP的登录态时长单位是秒
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetLoginStateExpireIn(_loginStateExpireIn int64) error {
+	r._loginStateExpireIn = _loginStateExpireIn
+	r.Set("login_state_expire_in", _loginStateExpireIn)
 	return nil
 }
 
-// GetTokenTimestamp TokenTimestamp Getter
-func (r TaobaoOpenAccountTokenApplyAPIRequest) GetTokenTimestamp() int64 {
-	return r._tokenTimestamp
+// GetLoginStateExpireIn LoginStateExpireIn Getter
+func (r TaobaoOpenAccountTokenApplyAPIRequest) GetLoginStateExpireIn() int64 {
+	return r._loginStateExpireIn
 }
 
 // SetOpenAccountId is OpenAccountId Setter
@@ -112,15 +112,15 @@ func (r TaobaoOpenAccountTokenApplyAPIRequest) GetOpenAccountId() int64 {
 	return r._openAccountId
 }
 
-// SetLoginStateExpireIn is LoginStateExpireIn Setter
-// ISV APP的登录态时长单位是秒
-func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetLoginStateExpireIn(_loginStateExpireIn int64) error {
-	r._loginStateExpireIn = _loginStateExpireIn
-	r.Set("login_state_expire_in", _loginStateExpireIn)
+// SetTokenTimestamp is TokenTimestamp Setter
+// 时间戳单位是毫秒
+func (r *TaobaoOpenAccountTokenApplyAPIRequest) SetTokenTimestamp(_tokenTimestamp int64) error {
+	r._tokenTimestamp = _tokenTimestamp
+	r.Set("token_timestamp", _tokenTimestamp)
 	return nil
 }
 
-// GetLoginStateExpireIn LoginStateExpireIn Getter
-func (r TaobaoOpenAccountTokenApplyAPIRequest) GetLoginStateExpireIn() int64 {
-	return r._loginStateExpireIn
+// GetTokenTimestamp TokenTimestamp Getter
+func (r TaobaoOpenAccountTokenApplyAPIRequest) GetTokenTimestamp() int64 {
+	return r._tokenTimestamp
 }

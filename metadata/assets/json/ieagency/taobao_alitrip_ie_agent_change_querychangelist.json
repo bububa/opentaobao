@@ -1,8 +1,4 @@
 {
-	"id": 29842,
-	"name": "taobao.alitrip.ie.agent.change.querychangelist",
-	"apiChineseName": "卖家查询改签列表",
-	"description": "提供B2B卖家查看改签列表服务",
 	"requestParams": [
 		{
 			"name": "change_biz_status_enum",
@@ -52,685 +48,580 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "QueryChangeAgentListRs",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "api_error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "api_error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "change_order_d_os",
-					"type": "IeChangeOrderVo[]",
-					"description": "改签单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "agent_id",
 							"type": "Number",
-							"description": "代理商ID",
-							"required": true
+							"description": "代理商ID"
 						},
 						{
 							"name": "alipay_trade_n_o",
 							"type": "String",
-							"description": "支付宝交易号",
-							"required": true
+							"description": "支付宝交易号"
 						},
 						{
 							"name": "apply_time",
 							"type": "Date",
-							"description": "申请支付时间",
-							"required": true
+							"description": "申请支付时间"
 						},
 						{
 							"name": "buyer_id",
 							"type": "Number",
-							"description": "买家ID",
-							"required": true
+							"description": "买家ID"
 						},
 						{
 							"name": "buyer_intension_memo",
 							"type": "String",
-							"description": "买家改签意向备注",
-							"required": true
+							"description": "买家改签意向备注"
 						},
 						{
-							"name": "change_item",
-							"type": "IeChangeItemVo",
-							"description": "改签产品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "adult_service_fee",
 									"type": "Number",
-									"description": "成人改签手续费",
-									"required": true
+									"description": "成人改签手续费"
 								},
 								{
 									"name": "adult_upgrade_fee",
 									"type": "Number",
-									"description": "成人升舱费用",
-									"required": true
+									"description": "成人升舱费用"
 								},
 								{
 									"name": "baggage_rule",
 									"type": "String",
-									"description": "行李额",
-									"required": true
+									"description": "行李额"
 								},
 								{
 									"name": "child_service_fee",
 									"type": "Number",
-									"description": "儿童改签手续费",
-									"required": true
+									"description": "儿童改签手续费"
 								},
 								{
 									"name": "child_upgrade_fee",
 									"type": "Number",
-									"description": "儿童升舱费用",
-									"required": true
+									"description": "儿童升舱费用"
 								},
 								{
+									"subParams": [
+										{
+											"name": "arr_air_port_code",
+											"type": "String",
+											"description": "到达机场码"
+										},
+										{
+											"name": "arr_city_code",
+											"type": "String",
+											"description": "到达城市码"
+										},
+										{
+											"name": "arr_city_name",
+											"type": "String",
+											"description": "到达城市名称"
+										},
+										{
+											"subParams": [
+												{
+													"name": "arr_airport",
+													"type": "String",
+													"description": "到达机场码"
+												},
+												{
+													"name": "arr_city",
+													"type": "String",
+													"description": "到达城市码"
+												},
+												{
+													"name": "arr_terminal",
+													"type": "String",
+													"description": "到达航站楼"
+												},
+												{
+													"name": "arr_time",
+													"type": "Date",
+													"description": "到达日期"
+												},
+												{
+													"name": "cabin_class_code",
+													"type": "String",
+													"description": "舱位等级"
+												},
+												{
+													"name": "cabin_code",
+													"type": "String",
+													"description": "舱位代码"
+												},
+												{
+													"name": "code_share",
+													"type": "Boolean",
+													"description": "是否共享"
+												},
+												{
+													"name": "dep_airport",
+													"type": "String",
+													"description": "出发机场码"
+												},
+												{
+													"name": "dep_city",
+													"type": "String",
+													"description": "出发城市码"
+												},
+												{
+													"name": "dep_terminal",
+													"type": "String",
+													"description": "出发航站楼"
+												},
+												{
+													"name": "dep_time",
+													"type": "Date",
+													"description": "出发时间"
+												},
+												{
+													"name": "marketing_flight_number",
+													"type": "String",
+													"description": "市场承运航班号"
+												},
+												{
+													"name": "operating_flight_number",
+													"type": "String",
+													"description": "实际承运航班号"
+												},
+												{
+													"name": "segment_index",
+													"type": "Number",
+													"description": "航段序号"
+												}
+											],
+											"name": "change_flights",
+											"type": "IeChangeFlightSegmentVo[]",
+											"description": "改签航班信息"
+										},
+										{
+											"name": "dep_airport_code",
+											"type": "String",
+											"description": "出发机场码"
+										},
+										{
+											"name": "dep_city_code",
+											"type": "String",
+											"description": "出发城市码"
+										},
+										{
+											"name": "dep_city_name",
+											"type": "String",
+											"description": "出发城市名称"
+										},
+										{
+											"name": "dep_date",
+											"type": "Date",
+											"description": "出发日期"
+										},
+										{
+											"name": "index",
+											"type": "Number",
+											"description": "航程序号"
+										}
+									],
 									"name": "destination_itinerarys",
 									"type": "IeChangeItineraryVo[]",
-									"description": "目标行程信息",
-									"required": true,
-									"subParams": [
-										{
-											"name": "arr_air_port_code",
-											"type": "String",
-											"description": "到达机场码",
-											"required": true
-										},
-										{
-											"name": "arr_city_code",
-											"type": "String",
-											"description": "到达城市码",
-											"required": true
-										},
-										{
-											"name": "arr_city_name",
-											"type": "String",
-											"description": "到达城市名称",
-											"required": true
-										},
-										{
-											"name": "change_flights",
-											"type": "IeChangeFlightSegmentVo[]",
-											"description": "改签航班信息",
-											"required": true,
-											"subParams": [
-												{
-													"name": "arr_airport",
-													"type": "String",
-													"description": "到达机场码",
-													"required": true
-												},
-												{
-													"name": "arr_city",
-													"type": "String",
-													"description": "到达城市码",
-													"required": true
-												},
-												{
-													"name": "arr_terminal",
-													"type": "String",
-													"description": "到达航站楼",
-													"required": true
-												},
-												{
-													"name": "arr_time",
-													"type": "Date",
-													"description": "到达日期",
-													"required": true
-												},
-												{
-													"name": "cabin_class_code",
-													"type": "String",
-													"description": "舱位等级",
-													"required": true
-												},
-												{
-													"name": "cabin_code",
-													"type": "String",
-													"description": "舱位代码",
-													"required": true
-												},
-												{
-													"name": "code_share",
-													"type": "Boolean",
-													"description": "是否共享",
-													"required": true
-												},
-												{
-													"name": "dep_airport",
-													"type": "String",
-													"description": "出发机场码",
-													"required": true
-												},
-												{
-													"name": "dep_city",
-													"type": "String",
-													"description": "出发城市码",
-													"required": true
-												},
-												{
-													"name": "dep_terminal",
-													"type": "String",
-													"description": "出发航站楼",
-													"required": true
-												},
-												{
-													"name": "dep_time",
-													"type": "Date",
-													"description": "出发时间",
-													"required": true
-												},
-												{
-													"name": "marketing_flight_number",
-													"type": "String",
-													"description": "市场承运航班号",
-													"required": true
-												},
-												{
-													"name": "operating_flight_number",
-													"type": "String",
-													"description": "实际承运航班号",
-													"required": true
-												},
-												{
-													"name": "segment_index",
-													"type": "Number",
-													"description": "航段序号",
-													"required": true
-												}
-											]
-										},
-										{
-											"name": "dep_airport_code",
-											"type": "String",
-											"description": "出发机场码",
-											"required": true
-										},
-										{
-											"name": "dep_city_code",
-											"type": "String",
-											"description": "出发城市码",
-											"required": true
-										},
-										{
-											"name": "dep_city_name",
-											"type": "String",
-											"description": "出发城市名称",
-											"required": true
-										},
-										{
-											"name": "dep_date",
-											"type": "Date",
-											"description": "出发日期",
-											"required": true
-										},
-										{
-											"name": "index",
-											"type": "Number",
-											"description": "航程序号",
-											"required": true
-										}
-									]
+									"description": "目标行程信息"
 								},
 								{
-									"name": "source_itinerarys",
-									"type": "IeChangeItineraryVo[]",
-									"description": "原始改签行程",
-									"required": true,
 									"subParams": [
 										{
 											"name": "arr_air_port_code",
 											"type": "String",
-											"description": "到达机场码",
-											"required": true
+											"description": "到达机场码"
 										},
 										{
 											"name": "arr_city_code",
 											"type": "String",
-											"description": "到达城市码",
-											"required": true
+											"description": "到达城市码"
 										},
 										{
 											"name": "arr_city_name",
 											"type": "String",
-											"description": "到达城市名称",
-											"required": true
+											"description": "到达城市名称"
 										},
 										{
-											"name": "change_flights",
-											"type": "IeChangeFlightSegmentVo[]",
-											"description": "改签航班信息",
-											"required": true,
 											"subParams": [
 												{
 													"name": "arr_airport",
 													"type": "String",
-													"description": "到达机场码",
-													"required": true
+													"description": "到达机场码"
 												},
 												{
 													"name": "arr_city",
 													"type": "String",
-													"description": "到达城市码",
-													"required": true
+													"description": "到达城市码"
 												},
 												{
 													"name": "arr_terminal",
 													"type": "String",
-													"description": "到达航站楼",
-													"required": true
+													"description": "到达航站楼"
 												},
 												{
 													"name": "arr_time",
 													"type": "Date",
-													"description": "到达时间",
-													"required": true
+													"description": "到达时间"
 												},
 												{
 													"name": "cabin_class_code",
 													"type": "String",
-													"description": "舱位等级",
-													"required": true
+													"description": "舱位等级"
 												},
 												{
 													"name": "cabin_code",
 													"type": "String",
-													"description": "舱位代码",
-													"required": true
+													"description": "舱位代码"
 												},
 												{
 													"name": "code_share",
 													"type": "Boolean",
-													"description": "是否共享",
-													"required": true
+													"description": "是否共享"
 												},
 												{
 													"name": "dep_airport",
 													"type": "String",
-													"description": "出发机场码",
-													"required": true
+													"description": "出发机场码"
 												},
 												{
 													"name": "dep_city",
 													"type": "String",
-													"description": "出发城市码",
-													"required": true
+													"description": "出发城市码"
 												},
 												{
 													"name": "dep_terminal",
 													"type": "String",
-													"description": "出发航站楼",
-													"required": true
+													"description": "出发航站楼"
 												},
 												{
 													"name": "dep_time",
 													"type": "Date",
-													"description": "出发时间",
-													"required": true
+													"description": "出发时间"
 												},
 												{
 													"name": "marketing_flight_number",
 													"type": "String",
-													"description": "市场承运航班号",
-													"required": true
+													"description": "市场承运航班号"
 												},
 												{
 													"name": "operating_flight_number",
 													"type": "String",
-													"description": "实际承运航班号",
-													"required": true
+													"description": "实际承运航班号"
 												},
 												{
 													"name": "segment_index",
 													"type": "Number",
-													"description": "航段序号",
-													"required": true
+													"description": "航段序号"
 												}
-											]
+											],
+											"name": "change_flights",
+											"type": "IeChangeFlightSegmentVo[]",
+											"description": "改签航班信息"
 										},
 										{
 											"name": "dep_airport_code",
 											"type": "String",
-											"description": "出发机场码",
-											"required": true
+											"description": "出发机场码"
 										},
 										{
 											"name": "dep_city_code",
 											"type": "String",
-											"description": "出发城市码",
-											"required": true
+											"description": "出发城市码"
 										},
 										{
 											"name": "dep_city_name",
 											"type": "String",
-											"description": "出发城市名称",
-											"required": true
+											"description": "出发城市名称"
 										},
 										{
 											"name": "dep_date",
 											"type": "Date",
-											"description": "出发日期",
-											"required": true
+											"description": "出发日期"
 										},
 										{
 											"name": "index",
 											"type": "Number",
-											"description": "航程序号",
-											"required": true
+											"description": "航程序号"
 										}
-									]
+									],
+									"name": "source_itinerarys",
+									"type": "IeChangeItineraryVo[]",
+									"description": "原始改签行程"
 								},
 								{
 									"name": "trip_type",
 									"type": "Number",
-									"description": "航程类型 0－单程,1－去程,2－回程,3－往返,4－多程",
-									"required": true
+									"description": "航程类型 0－单程,1－去程,2－回程,3－往返,4－多程"
 								},
 								{
 									"name": "infant_upgrade_fee",
 									"type": "Number",
-									"description": "婴儿改签升舱费",
-									"required": true
+									"description": "婴儿改签升舱费"
 								},
 								{
 									"name": "infant_service_fee",
 									"type": "Number",
-									"description": "婴儿改签费",
-									"required": true
+									"description": "婴儿改签费"
 								}
-							]
+							],
+							"name": "change_item",
+							"type": "IeChangeItemVo",
+							"description": "改签产品信息"
 						},
 						{
-							"name": "change_passenger_v_o_s",
-							"type": "IeChangePassengerVo[]",
-							"description": "乘机人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "birth_date",
 									"type": "Date",
-									"description": "出生日期",
-									"required": true
+									"description": "出生日期"
 								},
 								{
 									"name": "document_expire_date",
 									"type": "Date",
-									"description": "证件过期日期",
-									"required": true
+									"description": "证件过期日期"
 								},
 								{
 									"name": "document_holder_nationality",
 									"type": "String",
-									"description": "持有人国际",
-									"required": true
+									"description": "持有人国际"
 								},
 								{
 									"name": "document_i_d",
 									"type": "String",
-									"description": "证件号",
-									"required": true
+									"description": "证件号"
 								},
 								{
 									"name": "document_issue_country",
 									"type": "String",
-									"description": "发证国际",
-									"required": true
+									"description": "发证国际"
 								},
 								{
 									"name": "document_type",
 									"type": "Number",
-									"description": "证件类型",
-									"required": true
+									"description": "证件类型"
 								},
 								{
 									"name": "gender",
 									"type": "Number",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
 									"name": "passenger_id",
 									"type": "Number",
-									"description": "乘机人编号",
-									"required": true
+									"description": "乘机人编号"
 								},
 								{
 									"name": "passenger_type",
 									"type": "Number",
-									"description": "乘机人类型 0-成人,1-儿童,2-留学生",
-									"required": true
+									"description": "乘机人类型 0-成人,1-儿童,2-留学生"
 								}
-							]
+							],
+							"name": "change_passenger_v_o_s",
+							"type": "IeChangePassengerVo[]",
+							"description": "乘机人信息"
 						},
 						{
 							"name": "change_reason_type",
 							"type": "Number",
-							"description": "改签申请类型 0－因乘客个人原因(自愿改签) ,1－因航班取消/延误(非自愿)",
-							"required": true
+							"description": "改签申请类型 0－因乘客个人原因(自愿改签) ,1－因航班取消/延误(非自愿)"
 						},
 						{
-							"name": "change_ticket_v_o_s",
-							"type": "IeChangeTicketVo[]",
-							"description": "改签票信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "document_i_d",
 									"type": "String",
-									"description": "证件号",
-									"required": true
+									"description": "证件号"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
+									"description": "乘机人姓名"
 								},
 								{
 									"name": "passenger_type",
 									"type": "Number",
-									"description": "乘机人类型  0-成人,1-儿童,2-留学生",
-									"required": true
+									"description": "乘机人类型  0-成人,1-儿童,2-留学生"
 								},
 								{
 									"name": "ticket_n_o",
 									"type": "String",
-									"description": "票号",
-									"required": true
+									"description": "票号"
 								}
-							]
+							],
+							"name": "change_ticket_v_o_s",
+							"type": "IeChangeTicketVo[]",
+							"description": "改签票信息"
 						},
 						{
 							"name": "checking_pass_time",
 							"type": "Date",
-							"description": "验真通过时间",
-							"required": true
+							"description": "验真通过时间"
 						},
 						{
 							"name": "close_memo",
 							"type": "String",
-							"description": "关单原因",
-							"required": true
+							"description": "关单原因"
 						},
 						{
 							"name": "close_time",
 							"type": "Date",
-							"description": "改签关单时间",
-							"required": true
+							"description": "改签关单时间"
 						},
 						{
 							"name": "close_type",
 							"type": "Number",
-							"description": "关单类型 关单类型 -1-未关闭,0-买家主动关闭,1-买家支付超时,10-卖家确认处理超时,11-卖家拒绝,99-其他原因",
-							"required": true
+							"description": "关单类型 关单类型 -1-未关闭,0-买家主动关闭,1-买家支付超时,10-卖家确认处理超时,11-卖家拒绝,99-其他原因"
 						},
 						{
 							"name": "gmt_create_time",
 							"type": "Date",
-							"description": "申请单改签时间",
-							"required": true
+							"description": "申请单改签时间"
 						},
 						{
 							"name": "gmt_modified_time",
 							"type": "Date",
-							"description": "改签修改时间",
-							"required": true
+							"description": "改签修改时间"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "改签单ID",
-							"required": true
+							"description": "改签单ID"
 						},
 						{
 							"name": "latest_agent_issue_time",
 							"type": "Date",
-							"description": "代理商最晚出票时间",
-							"required": true
+							"description": "代理商最晚出票时间"
 						},
 						{
 							"name": "latest_agent_processing_time",
 							"type": "Date",
-							"description": "代理商最迟确认时间",
-							"required": true
+							"description": "代理商最迟确认时间"
 						},
 						{
 							"name": "latest_buyer_pay_time",
 							"type": "Date",
-							"description": "买家最迟支付时间",
-							"required": true
+							"description": "买家最迟支付时间"
 						},
 						{
 							"name": "order_biz_status",
 							"type": "Number",
-							"description": "改签单业务状态 10－卖家待确认,20-卖家已确认,30-卖家待出票,40-出票超时冻结,50-出票成功,60-验真失败,61-验真成功,70-卖家已拒绝",
-							"required": true
+							"description": "改签单业务状态 10－卖家待确认,20-卖家已确认,30-卖家待出票,40-出票超时冻结,50-出票成功,60-验真失败,61-验真成功,70-卖家已拒绝"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "改签订单状态 0－初始状态,1－待支付,2－付款成功,3-改签成功 ,4－改签关闭",
-							"required": true
+							"description": "改签订单状态 0－初始状态,1－待支付,2－付款成功,3-改签成功 ,4－改签关闭"
 						},
 						{
 							"name": "pay_status",
 							"type": "Number",
-							"description": "支付状态 0-初始状态,1-待支付,2-支付成功,3-转交易成功(打款给卖家),4-关闭已支付订单成功,5-关闭未支付订单成功",
-							"required": true
+							"description": "支付状态 0-初始状态,1-待支付,2-支付成功,3-转交易成功(打款给卖家),4-关闭已支付订单成功,5-关闭未支付订单成功"
 						},
 						{
 							"name": "pay_success_time",
 							"type": "Date",
-							"description": "支付成功时间",
-							"required": true
+							"description": "支付成功时间"
 						},
 						{
 							"name": "total_price",
 							"type": "Number",
-							"description": "订单总金额",
-							"required": true
+							"description": "订单总金额"
 						},
 						{
 							"name": "change_intensions",
 							"type": "String",
-							"description": "改签意向",
-							"required": true
+							"description": "改签意向"
 						},
 						{
-							"name": "change_contact_v_o",
-							"type": "IeChangeContactVo",
-							"description": "改签联系人",
-							"required": true,
 							"subParams": [
 								{
 									"name": "mobile_country_code",
 									"type": "String",
-									"description": "电话国际区号",
-									"required": true
+									"description": "电话国际区号"
 								},
 								{
 									"name": "mobile_phone_number",
 									"type": "String",
-									"description": "电话号",
-									"required": true
+									"description": "电话号"
 								},
 								{
 									"name": "email",
 									"type": "String",
-									"description": "邮箱",
-									"required": true
+									"description": "邮箱"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "姓名",
-									"required": true
+									"description": "姓名"
 								}
-							]
+							],
+							"name": "change_contact_v_o",
+							"type": "IeChangeContactVo",
+							"description": "改签联系人"
 						}
-					]
+					],
+					"name": "change_order_d_os",
+					"type": "IeChangeOrderVo[]",
+					"description": "改签单信息"
 				},
 				{
-					"name": "page_info_d_o",
-					"type": "BasePageDo",
-					"description": "分页信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "第几页",
-							"required": true
+							"description": "第几页"
 						},
 						{
 							"name": "pageindex",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总纪录数",
-							"required": true
+							"description": "总纪录数"
 						}
-					]
+					],
+					"name": "page_info_d_o",
+					"type": "BasePageDo",
+					"description": "分页信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "QueryChangeAgentListRs",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.change.querychangelist",
+	"apiChineseName": "卖家查询改签列表",
+	"description": "提供B2B卖家查看改签列表服务",
+	"id": 29842
 }

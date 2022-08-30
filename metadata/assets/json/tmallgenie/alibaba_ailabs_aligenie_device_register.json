@@ -1,8 +1,4 @@
 {
-	"id": 40411,
-	"name": "alibaba.ailabs.aligenie.device.register",
-	"apiChineseName": "天猫精灵开放平台获取设备秘钥",
-	"description": "向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -19,41 +15,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "device_secret_infos",
-			"type": "DeviceSecretInfo []",
-			"description": "设备秘钥信息",
 			"subParams": [
 				{
 					"name": "reason",
 					"type": "String",
-					"description": "错误原因",
-					"required": true
+					"description": "错误原因"
 				},
 				{
 					"name": "sucess",
 					"type": "Boolean",
-					"description": "获取秘钥是否成功",
-					"required": true
+					"description": "获取秘钥是否成功"
 				},
 				{
 					"name": "secret",
 					"type": "String",
-					"description": "秘钥",
-					"required": true
+					"description": "秘钥"
 				},
 				{
 					"name": "mac",
 					"type": "String",
-					"description": "mac地址",
-					"required": true
+					"description": "mac地址"
 				},
 				{
 					"name": "md5",
 					"type": "String",
-					"description": "md5",
-					"required": true
+					"description": "md5"
 				}
-			]
+			],
+			"name": "device_secret_infos",
+			"type": "DeviceSecretInfo []",
+			"description": "设备秘钥信息"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.device.register",
+	"apiChineseName": "天猫精灵开放平台获取设备秘钥",
+	"description": "向天猫精灵inside平台注册设备mac地址，并获取设备的唯一密钥",
+	"id": 40411
 }

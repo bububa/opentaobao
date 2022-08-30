@@ -1,13 +1,6 @@
 {
-	"id": 48971,
-	"name": "alibaba.seller.vendor.order.list",
-	"apiChineseName": "国际站服务市场订单列表接口",
-	"description": "返回服务商在服务市场的客户订单",
 	"requestParams": [
 		{
-			"name": "query_trade_dto",
-			"type": "QueryTradeDto",
-			"description": "查询参数",
 			"subParams": [
 				{
 					"name": "fire_time_start",
@@ -79,14 +72,14 @@
 					"type": "Number",
 					"description": "每页显示数量"
 				}
-			]
+			],
+			"name": "query_trade_dto",
+			"type": "QueryTradeDto",
+			"description": "查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回",
 			"subParams": [
 				{
 					"name": "exec_description",
@@ -107,10 +100,6 @@
 					"required": true
 				},
 				{
-					"name": "page_dto",
-					"type": "PageDto",
-					"description": "分页对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_item",
@@ -136,13 +125,13 @@
 							"description": "当前页码",
 							"required": true
 						}
-					]
+					],
+					"name": "page_dto",
+					"type": "PageDto",
+					"description": "分页对象",
+					"required": true
 				},
 				{
-					"name": "dtos",
-					"type": "Dto[]",
-					"description": "返回对象集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_type",
@@ -258,9 +247,20 @@
 							"description": "用户购买sku",
 							"required": true
 						}
-					]
+					],
+					"name": "dtos",
+					"type": "Dto[]",
+					"description": "返回对象集合",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回"
 		}
-	]
+	],
+	"name": "alibaba.seller.vendor.order.list",
+	"apiChineseName": "国际站服务市场订单列表接口",
+	"description": "返回服务商在服务市场的客户订单",
+	"id": 48971
 }

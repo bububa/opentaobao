@@ -12,6 +12,8 @@ import (
 // 快易通健康检查
 type AlibabaAlihealthDrugKytRecordinfoAPIRequest struct {
 	model.Params
+	// 级别
+	_logLevel string
 	// 服务名
 	_serviceName string
 	// 类型
@@ -20,8 +22,6 @@ type AlibabaAlihealthDrugKytRecordinfoAPIRequest struct {
 	_inputParam string
 	// 其他参数
 	_otherParam string
-	// 级别
-	_logLevel string
 }
 
 // NewAlibabaAlihealthDrugKytRecordinfoRequest 初始化AlibabaAlihealthDrugKytRecordinfoAPIRequest对象
@@ -43,6 +43,19 @@ func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetLogLevel is LogLevel Setter
+// 级别
+func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetLogLevel(_logLevel string) error {
+	r._logLevel = _logLevel
+	r.Set("log_level", _logLevel)
+	return nil
+}
+
+// GetLogLevel LogLevel Getter
+func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetLogLevel() string {
+	return r._logLevel
 }
 
 // SetServiceName is ServiceName Setter
@@ -95,17 +108,4 @@ func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetOtherParam(_otherParam 
 // GetOtherParam OtherParam Getter
 func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetOtherParam() string {
 	return r._otherParam
-}
-
-// SetLogLevel is LogLevel Setter
-// 级别
-func (r *AlibabaAlihealthDrugKytRecordinfoAPIRequest) SetLogLevel(_logLevel string) error {
-	r._logLevel = _logLevel
-	r.Set("log_level", _logLevel)
-	return nil
-}
-
-// GetLogLevel LogLevel Getter
-func (r AlibabaAlihealthDrugKytRecordinfoAPIRequest) GetLogLevel() string {
-	return r._logLevel
 }

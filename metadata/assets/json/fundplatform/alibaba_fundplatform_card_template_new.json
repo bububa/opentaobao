@@ -1,8 +1,4 @@
 {
-	"id": 28729,
-	"name": "alibaba.fundplatform.card.template.new",
-	"apiChineseName": "新增实体卡模板",
-	"description": "该接口由制卡商实现，当新增一个实体卡模板的时候，需要调用该接口，通知制卡商同步新增卡模板信息。",
 	"requestParams": [
 		{
 			"name": "template_no",
@@ -56,5 +52,9 @@
 			"type": "Boolean",
 			"description": "是否调用成功"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.card.template.new",
+	"apiChineseName": "新增实体卡模板",
+	"description": "该接口由制卡商实现，当新增一个实体卡模板的时候，需要调用该接口，通知制卡商同步新增卡模板信息。",
+	"id": 28729
 }

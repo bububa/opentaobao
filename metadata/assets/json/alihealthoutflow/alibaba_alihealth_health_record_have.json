@@ -1,14 +1,6 @@
 {
-	"id": 49843,
-	"name": "alibaba.alihealth.health.record.have",
-	"apiChineseName": "判断用户的慢健康健康档案是否建设完成",
-	"description": "判断用户的慢健康健康档案是否建设完成",
 	"requestParams": [
 		{
-			"name": "request1",
-			"type": "HaveRecordRequest",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "disease_code",
@@ -27,66 +19,66 @@
 					"type": "String",
 					"description": "支付宝id"
 				}
-			]
+			],
+			"name": "request1",
+			"type": "HaveRecordRequest",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result1",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model",
-					"type": "HaveRecordResponse",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "update_time",
 							"type": "String",
-							"description": "档案修改时间",
-							"required": true
+							"description": "档案修改时间"
 						},
 						{
 							"name": "create_time",
 							"type": "String",
-							"description": "档案创建时间",
-							"required": true
+							"description": "档案创建时间"
 						},
 						{
 							"name": "valid_status",
 							"type": "Boolean",
-							"description": "是否有效",
-							"required": true
+							"description": "是否有效"
 						},
 						{
 							"name": "exist_status",
 							"type": "Boolean",
-							"description": "是否存在",
-							"required": true
+							"description": "是否存在"
 						}
-					]
+					],
+					"name": "model",
+					"type": "HaveRecordResponse",
+					"description": "返回结果"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "result1",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.health.record.have",
+	"apiChineseName": "判断用户的慢健康健康档案是否建设完成",
+	"description": "判断用户的慢健康健康档案是否建设完成",
+	"id": 49843
 }

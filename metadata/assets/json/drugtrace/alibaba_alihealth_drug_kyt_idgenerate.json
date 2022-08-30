@@ -1,8 +1,4 @@
 {
-	"id": 41920,
-	"name": "alibaba.alihealth.drug.kyt.idgenerate",
-	"apiChineseName": "终端(医疗机构|零售药店)ID生成接口",
-	"description": "终端(医疗机构|零售药店)ID生成接口",
 	"requestParams": [
 		{
 			"name": "region_code",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "返回的结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.idgenerate",
+	"apiChineseName": "终端(医疗机构|零售药店)ID生成接口",
+	"description": "终端(医疗机构|零售药店)ID生成接口",
+	"id": 41920
 }

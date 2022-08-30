@@ -20,10 +20,10 @@ type AlibabaMjOcPayAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_mj_oc_pay_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// errMsg
-	ExMsg string `json:"ex_msg,omitempty" xml:"ex_msg,omitempty"`
 	// POS交易号
 	OutTradeNo string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
+	// errMsg
+	ExMsg string `json:"ex_msg,omitempty" xml:"ex_msg,omitempty"`
 	// errCode
 	ExCode int64 `json:"ex_code,omitempty" xml:"ex_code,omitempty"`
 	// success

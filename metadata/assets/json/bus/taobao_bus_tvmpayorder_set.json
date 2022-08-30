@@ -1,8 +1,4 @@
 {
-	"id": 28932,
-	"name": "taobao.bus.tvmpayorder.set",
-	"apiChineseName": "自助机条形码被动支付",
-	"description": "汽车票线下自助机条形码支付",
 	"requestParams": [
 		{
 			"name": "alipay_auth_code",
@@ -38,5 +34,9 @@
 			"type": "String",
 			"description": "payTime"
 		}
-	]
+	],
+	"name": "taobao.bus.tvmpayorder.set",
+	"apiChineseName": "自助机条形码被动支付",
+	"description": "汽车票线下自助机条形码支付",
+	"id": 28932
 }

@@ -1,0 +1,118 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "有SKU情况下必填；无SKU情况下为空（同一个itemid不可以同时既传有sku又传空的情况）"
+						}
+					],
+					"name": "item_mappings",
+					"type": "ItemMapping[]",
+					"description": "商货品关联关系",
+					"required": true
+				}
+			],
+			"name": "item_mapping_delete_request",
+			"type": "ItemMappingDeleteRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "响应码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "响应信息"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "true|false"
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "卖家ID"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "货品ID"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP货品id（包括组合货品和原子货品）"
+						}
+					],
+					"name": "data",
+					"type": "DataItem[]",
+					"description": "业务处理结果"
+				}
+			],
+			"name": "item_mapping_delete_response",
+			"type": "ItemMappingDeleteResponse",
+			"description": "请求出参"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.itemmapping.delete",
+	"apiChineseName": "删除商货品关联关系",
+	"description": "删除商货品关联关系",
+	"id": 63307
+}

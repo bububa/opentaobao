@@ -20,7 +20,7 @@ type TaobaoItempropvaluesGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"itempropvalues_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 属性值,根据fields传入的参数返回相应的结果
+	// 属性值
 	PropValues []PropValue `json:"prop_values,omitempty" xml:"prop_values>prop_value,omitempty"`
 	// 最近修改时间。格式:yyyy-MM-dd HH:mm:ss
 	LastModified string `json:"last_modified,omitempty" xml:"last_modified,omitempty"`

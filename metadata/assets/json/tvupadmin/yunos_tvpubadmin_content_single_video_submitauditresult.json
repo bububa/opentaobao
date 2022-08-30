@@ -1,8 +1,4 @@
 {
-	"id": 28812,
-	"name": "yunos.tvpubadmin.content.single.video.submitauditresult",
-	"apiChineseName": "单视频审核提交审核结果",
-	"description": "单视频审核提交审核结果",
 	"requestParams": [
 		{
 			"name": "auditor",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.single.video.submitauditresult",
+	"apiChineseName": "单视频审核提交审核结果",
+	"description": "单视频审核提交审核结果",
+	"id": 28812
 }

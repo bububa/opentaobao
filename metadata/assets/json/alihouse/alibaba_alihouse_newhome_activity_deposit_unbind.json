@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_sales_activity_id",
+					"type": "String",
+					"description": "外部活动id",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "预存金淘宝商品id",
+					"required": true
+				}
+			],
+			"name": "pre_deposit_gold_unbind_dto",
+			"type": "PreDepositGoldUnbindDTO",
+			"description": "销售活动解绑预存金报文"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否保存成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回报文属性"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.activity.deposit.unbind",
+	"apiChineseName": "销售活动解绑预存金商品",
+	"description": "销售活动解绑预存金商品",
+	"id": 62869
+}

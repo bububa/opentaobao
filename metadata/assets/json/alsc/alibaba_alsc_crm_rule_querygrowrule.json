@@ -1,14 +1,6 @@
 {
-	"id": 45773,
-	"name": "alibaba.alsc.crm.rule.querygrowrule",
-	"apiChineseName": "查询品牌下的会员成长规则",
-	"description": "查询品牌下的会员成长规则",
 	"requestParams": [
 		{
-			"name": "param_plan_rule_query_open_req",
-			"type": "PlanRuleQueryOpenReq",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -16,208 +8,187 @@
 					"description": "品牌ID"
 				},
 				{
-					"name": "last_update_time",
-					"type": "Date",
-					"description": "最后更新时间"
-				},
-				{
 					"name": "deleted",
 					"type": "Boolean",
 					"description": "是否包含删除的数据"
+				},
+				{
+					"name": "last_update_time",
+					"type": "Date",
+					"description": "最后更新时间"
 				},
 				{
 					"name": "out_brand_id",
 					"type": "String",
 					"description": "外部品牌ID"
 				}
-			]
+			],
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "GrowRuleOpenInfo",
-					"description": "会员成长规则",
-					"required": true,
 					"subParams": [
 						{
 							"name": "common_consume_grow_support",
 							"type": "Boolean",
-							"description": "普通消费能否获取成长值",
-							"required": true
-						},
-						{
-							"name": "decrease_support",
-							"type": "Boolean",
-							"description": "退款是否扣除成长值",
-							"required": true
-						},
-						{
-							"name": "deleted",
-							"type": "Boolean",
-							"description": "是否已删除",
-							"required": true
-						},
-						{
-							"name": "ext_info",
-							"type": "Json",
-							"description": "扩展信息",
-							"required": true
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创建时间",
-							"required": true
-						},
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "修改时间",
-							"required": true
-						},
-						{
-							"name": "grow_rule_id",
-							"type": "String",
-							"description": "规则id",
-							"required": true
-						},
-						{
-							"name": "grow_support",
-							"type": "Boolean",
-							"description": "是否支持成长值获取(总开关)",
-							"required": true
-						},
-						{
-							"name": "recharge_consume_grow_support",
-							"type": "Boolean",
-							"description": "储值消费能否获取成长值",
-							"required": true
-						},
-						{
-							"name": "recharge_grow_support",
-							"type": "Boolean",
-							"description": "储值能否获取成长值",
-							"required": true
+							"description": "普通消费能否获取成长值"
 						},
 						{
 							"name": "create_by",
 							"type": "String",
-							"description": "创建人",
-							"required": true
+							"description": "创建人"
 						},
 						{
-							"name": "level_consume_grow_rule_open_info_list",
-							"type": "LevelConsumeGrowRuleOpenInfo[]",
-							"description": "不同等级消费获取成长值规则模型",
-							"required": true,
+							"name": "decrease_support",
+							"type": "Boolean",
+							"description": "退款是否扣除成长值"
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否已删除"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "grow_rule_id",
+							"type": "String",
+							"description": "规则id"
+						},
+						{
+							"name": "grow_support",
+							"type": "Boolean",
+							"description": "是否支持成长值获取(总开关)"
+						},
+						{
 							"subParams": [
 								{
 									"name": "create_by",
 									"type": "String",
-									"description": "创建人",
-									"required": true
+									"description": "创建人"
 								},
 								{
 									"name": "deleted",
 									"type": "Boolean",
-									"description": "是否已经删除",
-									"required": true
+									"description": "是否已经删除"
 								},
 								{
 									"name": "ext_info",
-									"type": "Json",
-									"description": "扩展字段",
-									"required": true
+									"type": "String",
+									"description": "扩展字段"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "修改时间",
-									"required": true
+									"description": "修改时间"
 								},
 								{
 									"name": "level_id",
 									"type": "String",
-									"description": "等级ID",
-									"required": true
+									"description": "等级ID"
 								},
 								{
 									"name": "level_name",
 									"type": "String",
-									"description": "等级名称",
-									"required": true
+									"description": "等级名称"
 								},
 								{
 									"name": "level_no",
 									"type": "String",
-									"description": "等级编码",
-									"required": true
+									"description": "等级编码"
 								},
 								{
 									"name": "per_consume",
 									"type": "Number",
-									"description": "每消费金额，单位：分",
-									"required": true
+									"description": "每消费金额，单位：分"
 								},
 								{
 									"name": "per_growth",
 									"type": "Number",
-									"description": "每消费金额对应可获得的成长值",
-									"required": true
+									"description": "每消费金额对应可获得的成长值"
 								},
 								{
 									"name": "update_by",
 									"type": "String",
-									"description": "更新人",
-									"required": true
+									"description": "更新人"
 								}
-							]
+							],
+							"name": "level_consume_grow_rule_open_info_list",
+							"type": "LevelConsumeGrowRuleOpenInfo[]",
+							"description": "不同等级消费获取成长值规则模型"
+						},
+						{
+							"name": "recharge_consume_grow_support",
+							"type": "Boolean",
+							"description": "储值消费能否获取成长值"
+						},
+						{
+							"name": "recharge_grow_support",
+							"type": "Boolean",
+							"description": "储值能否获取成长值"
 						},
 						{
 							"name": "update_by",
 							"type": "String",
-							"description": "更新人",
-							"required": true
+							"description": "更新人"
 						}
-					]
+					],
+					"name": "result",
+					"type": "GrowRuleOpenInfo",
+					"description": "会员成长规则"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.rule.querygrowrule",
+	"apiChineseName": "查询品牌下的会员成长规则",
+	"description": "查询品牌下的会员成长规则",
+	"id": 45773
 }

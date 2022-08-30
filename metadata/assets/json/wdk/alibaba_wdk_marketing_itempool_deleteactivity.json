@@ -1,14 +1,6 @@
 {
-	"id": 31784,
-	"name": "alibaba.wdk.marketing.itempool.deleteactivity",
-	"apiChineseName": "删除商品池活动",
-	"description": "删除商品池活动",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CommonActivityParam",
-			"description": "需要删除的活动的信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -21,40 +13,44 @@
 					"type": "String",
 					"description": "商家的活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CommonActivityParam",
+			"description": "需要删除的活动的信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "删除活动返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "删除活动是否成功",
-					"required": true
+					"description": "删除活动是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "删除活动是否成功",
-					"required": true
+					"description": "删除活动是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "删除活动返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.deleteactivity",
+	"apiChineseName": "删除商品池活动",
+	"description": "删除商品池活动",
+	"id": 31784
 }

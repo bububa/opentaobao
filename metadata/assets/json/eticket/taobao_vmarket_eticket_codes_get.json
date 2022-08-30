@@ -1,8 +1,4 @@
 {
-	"id": 21429,
-	"name": "taobao.vmarket.eticket.codes.get",
-	"apiChineseName": "电子凭证码列表查询",
-	"description": "查询某个订单的所有码的列表",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -18,19 +14,11 @@
 	],
 	"responseParams": [
 		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "记录总数"
-		},
-		{
-			"name": "eticket_codes",
-			"type": "EticketCode []",
-			"description": "电子凭证码列表",
 			"subParams": [
 				{
-					"name": "order_id",
+					"name": "num",
 					"type": "Number",
-					"description": "订单ID"
+					"description": "可用数量"
 				},
 				{
 					"name": "code",
@@ -38,9 +26,9 @@
 					"description": "电子凭证码"
 				},
 				{
-					"name": "num",
+					"name": "order_id",
 					"type": "Number",
-					"description": "可用数量"
+					"description": "订单ID"
 				},
 				{
 					"name": "status",
@@ -52,7 +40,19 @@
 					"type": "String",
 					"description": "二维码的图片地址"
 				}
-			]
+			],
+			"name": "eticket_codes",
+			"type": "EticketCode []",
+			"description": "电子凭证码列表"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "记录总数"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.codes.get",
+	"apiChineseName": "电子凭证码列表查询",
+	"description": "查询某个订单的所有码的列表",
+	"id": 21429
 }

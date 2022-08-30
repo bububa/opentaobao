@@ -12,10 +12,10 @@ import (
 // 单个关键词报告
 type AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest struct {
 	model.Params
-	// 返回详情
-	_keywordReportOperation *KeywordReportOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 返回详情
+	_keywordReportOperation *KeywordReportOperationDto
 }
 
 // NewAlibabaScbpAdReportQuerySingleKeywordEffectRequest 初始化AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) GetApiParams() ur
 	return params
 }
 
-// SetKeywordReportOperation is KeywordReportOperation Setter
-// 返回详情
-func (r *AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
-	r._keywordReportOperation = _keywordReportOperation
-	r.Set("keyword_report_operation", _keywordReportOperation)
-	return nil
-}
-
-// GetKeywordReportOperation KeywordReportOperation Getter
-func (r AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
-	return r._keywordReportOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) SetTopContext(_t
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetKeywordReportOperation is KeywordReportOperation Setter
+// 返回详情
+func (r *AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
+	r._keywordReportOperation = _keywordReportOperation
+	r.Set("keyword_report_operation", _keywordReportOperation)
+	return nil
+}
+
+// GetKeywordReportOperation KeywordReportOperation Getter
+func (r AlibabaScbpAdReportQuerySingleKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
+	return r._keywordReportOperation
 }

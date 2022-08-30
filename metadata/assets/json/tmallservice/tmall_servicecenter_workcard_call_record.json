@@ -1,14 +1,6 @@
 {
-	"id": 52603,
-	"name": "tmall.servicecenter.workcard.call.record",
-	"apiChineseName": "回访记录回传API",
-	"description": "客满回访信息登记",
 	"requestParams": [
 		{
-			"name": "busi_request",
-			"type": "UpdateAttributeRequest",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "call_record",
@@ -17,57 +9,61 @@
 					"required": true
 				},
 				{
-					"name": "request_source",
-					"type": "WorkcardRequestSource",
-					"description": "请求来源",
-					"required": true,
 					"subParams": [
 						{
 							"name": "real_tp_nick",
 							"type": "String",
 							"description": "入驻服务平台淘宝账号"
 						}
-					]
+					],
+					"name": "request_source",
+					"type": "WorkcardRequestSource",
+					"description": "请求来源",
+					"required": true
 				},
 				{
 					"name": "workcard_id",
 					"type": "Number",
 					"description": "工单ID"
 				}
-			]
+			],
+			"name": "busi_request",
+			"type": "UpdateAttributeRequest",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "处理结果 true 成功 false 失败",
-					"required": true
+					"description": "处理结果 true 成功 false 失败"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误表述",
-					"required": true
+					"description": "错误表述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_data",
 					"type": "Number",
-					"description": "通话记录ID",
-					"required": true
+					"description": "通话记录ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.call.record",
+	"apiChineseName": "回访记录回传API",
+	"description": "客满回访信息登记",
+	"id": 52603
 }

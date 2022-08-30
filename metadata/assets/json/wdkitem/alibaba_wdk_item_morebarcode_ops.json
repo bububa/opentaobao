@@ -1,14 +1,6 @@
 {
-	"id": 31191,
-	"name": "alibaba.wdk.item.morebarcode.ops",
-	"apiChineseName": "商品一品多码维护操作",
-	"description": "商品一品多码维护操作",
 	"requestParams": [
 		{
-			"name": "update_more_bar_code_request_bean",
-			"type": "UpdateMoreBarCodeRequestBean",
-			"description": "bean",
-			"required": true,
 			"subParams": [
 				{
 					"name": "org_code",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "bar_code_bo_list",
-					"type": "Barcodebolist[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "barcode",
@@ -40,36 +28,45 @@
 							"description": "规格",
 							"required": true
 						}
-					]
+					],
+					"name": "bar_code_bo_list",
+					"type": "Barcodebolist[]",
+					"description": "list",
+					"required": true
 				}
-			]
+			],
+			"name": "update_more_bar_code_request_bean",
+			"type": "UpdateMoreBarCodeRequestBean",
+			"description": "bean",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.morebarcode.ops",
+	"apiChineseName": "商品一品多码维护操作",
+	"description": "商品一品多码维护操作",
+	"id": 31191
 }

@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "template_type",
+					"type": "Number",
+					"description": "不能修改",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "使用场景说明，可以修改",
+					"required": true
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "不能修改",
+					"required": true
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "模板名称，可以修改",
+					"required": true
+				},
+				{
+					"name": "template_content",
+					"type": "String",
+					"description": "模板内容，占位符用${}标识，可以修改",
+					"required": true
+				}
+			],
+			"name": "modify_sms_template_request",
+			"type": "TopModifySmsTemplateRequest",
+			"description": "修改模板的入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "修改成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.jst.sms.template.modify",
+	"apiChineseName": "淘宝短信模板修改",
+	"description": "淘宝短信模板修改",
+	"id": 60277
+}

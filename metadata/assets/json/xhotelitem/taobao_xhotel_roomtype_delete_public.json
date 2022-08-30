@@ -1,8 +1,4 @@
 {
-	"id": 43195,
-	"name": "taobao.xhotel.roomtype.delete.public",
-	"apiChineseName": "商家删除房型数据接口",
-	"description": "房型删除TOP接口",
 	"requestParams": [
 		{
 			"name": "rid",
@@ -28,35 +24,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "delete_result",
 					"type": "String",
-					"description": "deleteResult",
-					"required": true
+					"description": "deleteResult"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.roomtype.delete.public",
+	"apiChineseName": "商家删除房型数据接口",
+	"description": "房型删除TOP接口",
+	"id": 43195
 }

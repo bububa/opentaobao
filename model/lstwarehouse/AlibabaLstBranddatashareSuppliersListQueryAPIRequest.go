@@ -12,8 +12,6 @@ import (
 // 品牌商查询品牌数据授权的供应商列表
 type AlibabaLstBranddatashareSuppliersListQueryAPIRequest struct {
 	model.Params
-	// 入参
-	_query *LstBmSupplierQuery
 }
 
 // NewAlibabaLstBranddatashareSuppliersListQueryRequest 初始化AlibabaLstBranddatashareSuppliersListQueryAPIRequest对象
@@ -35,17 +33,4 @@ func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetApiParams() url
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetQuery is Query Setter
-// 入参
-func (r *AlibabaLstBranddatashareSuppliersListQueryAPIRequest) SetQuery(_query *LstBmSupplierQuery) error {
-	r._query = _query
-	r.Set("query", _query)
-	return nil
-}
-
-// GetQuery Query Getter
-func (r AlibabaLstBranddatashareSuppliersListQueryAPIRequest) GetQuery() *LstBmSupplierQuery {
-	return r._query
 }

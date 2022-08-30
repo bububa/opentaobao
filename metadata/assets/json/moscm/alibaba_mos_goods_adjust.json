@@ -1,18 +1,13 @@
 {
-	"id": 35786,
-	"name": "alibaba.mos.goods.adjust",
-	"apiChineseName": "调整库存",
-	"description": "库存调整接口",
 	"requestParams": [
 		{
-			"name": "param_isv_stock_adjust_request_d_t_o",
-			"type": "IsvStockAdjustRequestDto",
-			"description": "库存调整入参",
 			"subParams": [
 				{
-					"name": "inbound_items",
-					"type": "IsvInboundRequestItemDto[]",
-					"description": "入库项（最大列表长度：20）",
+					"name": "counter_id",
+					"type": "String",
+					"description": "专柜Id"
+				},
+				{
 					"subParams": [
 						{
 							"name": "location_id",
@@ -26,7 +21,7 @@
 						},
 						{
 							"name": "quantity",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "获取或设置货物数量计量单位"
 						},
 						{
@@ -36,10 +31,18 @@
 						},
 						{
 							"name": "unit_price",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "单价"
 						}
-					]
+					],
+					"name": "inbound_items",
+					"type": "IsvInboundRequestItemDto[]",
+					"description": "入库项（最大列表长度：20）"
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "外部专柜Id（两个专柜id字段至少填写一个，如果同时填写，已counter_id为准）"
 				},
 				{
 					"name": "out_id",
@@ -47,9 +50,6 @@
 					"description": "外部单号"
 				},
 				{
-					"name": "outbound_items",
-					"type": "IsvOutboundRequestItemDto[]",
-					"description": "出库项（最大列表长度：20）",
 					"subParams": [
 						{
 							"name": "out_id",
@@ -58,42 +58,41 @@
 						},
 						{
 							"name": "quantity",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "数量"
 						}
-					]
+					],
+					"name": "outbound_items",
+					"type": "IsvOutboundRequestItemDto[]",
+					"description": "出库项（最大列表长度：20）"
 				},
 				{
 					"name": "remarks",
 					"type": "String",
 					"description": "备注"
-				},
-				{
-					"name": "counter_id",
-					"type": "String",
-					"description": "专柜Id"
-				},
-				{
-					"name": "out_counter_id",
-					"type": "String",
-					"description": "外部专柜Id（两个专柜id字段至少填写一个，如果同时填写，已counter_id为准）"
 				}
-			]
+			],
+			"name": "param_isv_stock_adjust_request_d_t_o",
+			"type": "IsvStockAdjustRequestDto",
+			"description": "库存调整入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "库存调整单号",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回生成的单据号",
-					"required": true
+					"description": "返回生成的单据号"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "库存调整单号"
 		}
-	]
+	],
+	"name": "alibaba.mos.goods.adjust",
+	"apiChineseName": "调整库存",
+	"description": "库存调整接口",
+	"id": 35786
 }

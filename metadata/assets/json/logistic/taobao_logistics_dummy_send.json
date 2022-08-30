@@ -1,8 +1,4 @@
 {
-	"id": 10691,
-	"name": "taobao.logistics.dummy.send",
-	"apiChineseName": "无需物流（虚拟）发货处理",
-	"description": "用户调用该接口可实现无需物流（虚拟）发货,使用该接口发货，交易订单状态会直接变成卖家已发货",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -23,16 +19,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "shipping",
-			"type": "Shipping",
-			"description": "返回发货是否成功is_success",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
 					"description": "返回发货是否成功。"
 				}
-			]
+			],
+			"name": "shipping",
+			"type": "Shipping",
+			"description": "返回发货是否成功is_success"
 		}
-	]
+	],
+	"name": "taobao.logistics.dummy.send",
+	"apiChineseName": "无需物流（虚拟）发货处理",
+	"description": "用户调用该接口可实现无需物流（虚拟）发货,使用该接口发货，交易订单状态会直接变成卖家已发货",
+	"id": 10691
 }

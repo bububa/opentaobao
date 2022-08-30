@@ -1,24 +1,20 @@
 {
-	"id": 21772,
-	"name": "tmall.promotag.tag.find",
-	"apiChineseName": "查询标签接口",
-	"description": "查询用户创建的所有标签",
 	"requestParams": [
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "当前页码",
-			"required": true,
-			"maxLength": 10
+			"maxLength": 10,
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页显示个数",
-			"required": true,
 			"maxLength": 100,
 			"maxValue": 100,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "tag_name",
@@ -33,14 +29,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "query_result",
-			"type": "PromotionTagQuery",
-			"description": "查询结果类型",
 			"subParams": [
 				{
-					"name": "tag_list",
-					"type": "PromotionTag[]",
-					"description": "标签结果列表",
 					"subParams": [
 						{
 							"name": "tag_id",
@@ -67,14 +57,24 @@
 							"type": "Date",
 							"description": "标签结束时间"
 						}
-					]
+					],
+					"name": "tag_list",
+					"type": "PromotionTag[]",
+					"description": "标签结果列表"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
 					"description": "总记录数"
 				}
-			]
+			],
+			"name": "query_result",
+			"type": "PromotionTagQuery",
+			"description": "查询结果类型"
 		}
-	]
+	],
+	"name": "tmall.promotag.tag.find",
+	"apiChineseName": "查询标签接口",
+	"description": "查询用户创建的所有标签",
+	"id": 21772
 }

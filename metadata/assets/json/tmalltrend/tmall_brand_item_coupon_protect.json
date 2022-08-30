@@ -1,8 +1,4 @@
 {
-	"id": 54824,
-	"name": "tmall.brand.item.coupon.protect",
-	"apiChineseName": "全域新品店铺优惠券免除",
-	"description": "全域新品店铺优惠券免除申请打标接口",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -25,11 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "value",
-			"type": "String",
-			"description": "返回结果"
-		},
-		{
 			"name": "resp_success",
 			"type": "Boolean",
 			"description": "店铺优惠券保护期设置是否成功"
@@ -40,9 +31,18 @@
 			"description": "错误信息"
 		},
 		{
+			"name": "value",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
 			"name": "resp_error_code",
 			"type": "String",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "tmall.brand.item.coupon.protect",
+	"apiChineseName": "全域新品店铺优惠券免除",
+	"description": "全域新品店铺优惠券免除申请打标接口",
+	"id": 54824
 }

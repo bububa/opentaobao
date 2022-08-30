@@ -16,18 +16,18 @@ type TaobaoVasOrderSearchAPIRequest struct {
 	_articleCode string
 	// 收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码
 	_itemCode string
-	// 淘宝会员名
-	_nick string
 	// 订单创建时间（订购时间）起始值（当start_created和end_created都不填写时，默认返回最近90天的数据）
 	_startCreated string
 	// 订单创建时间（订购时间）结束值
 	_endCreated string
-	// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
-	_bizType int64
+	// 淘宝会员名
+	_nick string
 	// 订单号
 	_bizOrderId int64
 	// 子订单号
 	_orderId int64
+	// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
+	_bizType int64
 	// 一页包含的记录数
 	_pageSize int64
 	// 页码
@@ -81,19 +81,6 @@ func (r TaobaoVasOrderSearchAPIRequest) GetItemCode() string {
 	return r._itemCode
 }
 
-// SetNick is Nick Setter
-// 淘宝会员名
-func (r *TaobaoVasOrderSearchAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoVasOrderSearchAPIRequest) GetNick() string {
-	return r._nick
-}
-
 // SetStartCreated is StartCreated Setter
 // 订单创建时间（订购时间）起始值（当start_created和end_created都不填写时，默认返回最近90天的数据）
 func (r *TaobaoVasOrderSearchAPIRequest) SetStartCreated(_startCreated string) error {
@@ -120,17 +107,17 @@ func (r TaobaoVasOrderSearchAPIRequest) GetEndCreated() string {
 	return r._endCreated
 }
 
-// SetBizType is BizType Setter
-// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
-func (r *TaobaoVasOrderSearchAPIRequest) SetBizType(_bizType int64) error {
-	r._bizType = _bizType
-	r.Set("biz_type", _bizType)
+// SetNick is Nick Setter
+// 淘宝会员名
+func (r *TaobaoVasOrderSearchAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
 	return nil
 }
 
-// GetBizType BizType Getter
-func (r TaobaoVasOrderSearchAPIRequest) GetBizType() int64 {
-	return r._bizType
+// GetNick Nick Getter
+func (r TaobaoVasOrderSearchAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetBizOrderId is BizOrderId Setter
@@ -157,6 +144,19 @@ func (r *TaobaoVasOrderSearchAPIRequest) SetOrderId(_orderId int64) error {
 // GetOrderId OrderId Getter
 func (r TaobaoVasOrderSearchAPIRequest) GetOrderId() int64 {
 	return r._orderId
+}
+
+// SetBizType is BizType Setter
+// 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
+func (r *TaobaoVasOrderSearchAPIRequest) SetBizType(_bizType int64) error {
+	r._bizType = _bizType
+	r.Set("biz_type", _bizType)
+	return nil
+}
+
+// GetBizType BizType Getter
+func (r TaobaoVasOrderSearchAPIRequest) GetBizType() int64 {
+	return r._bizType
 }
 
 // SetPageSize is PageSize Setter

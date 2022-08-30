@@ -1,14 +1,6 @@
 {
-	"id": 55694,
-	"name": "taobao.alitrip.axin.trans.fund.update",
-	"apiChineseName": "修改资金单接口",
-	"description": "阿信供销平台-修改资金单接口",
 	"requestParams": [
 		{
-			"name": "axin_fund_update_d_t_o",
-			"type": "AxinFundUpdateDto",
-			"description": "更新资金单接口入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "req_version",
@@ -44,52 +36,54 @@
 					"type": "String",
 					"description": "订单ID"
 				}
-			]
+			],
+			"name": "axin_fund_update_d_t_o",
+			"type": "AxinFundUpdateDto",
+			"description": "更新资金单接口入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "提示信息",
-					"required": true
+					"description": "提示信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "成功数量",
-					"required": true
+					"description": "成功数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.fund.update",
+	"apiChineseName": "修改资金单接口",
+	"description": "阿信供销平台-修改资金单接口",
+	"id": 55694
 }

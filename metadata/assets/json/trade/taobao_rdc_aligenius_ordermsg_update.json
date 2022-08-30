@@ -1,8 +1,4 @@
 {
-	"id": 39964,
-	"name": "taobao.rdc.aligenius.ordermsg.update",
-	"apiChineseName": "订单消息状态回传",
-	"description": "用于订单消息处理状态回传",
 	"requestParams": [
 		{
 			"name": "oid",
@@ -25,35 +21,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result_data",
-					"type": "Json",
-					"description": "resultData",
-					"required": true
+					"type": "String",
+					"description": "resultData"
 				},
 				{
 					"name": "error_info",
 					"type": "String",
-					"description": "errorInfo",
-					"required": true
+					"description": "errorInfo"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.ordermsg.update",
+	"apiChineseName": "订单消息状态回传",
+	"description": "用于订单消息处理状态回传",
+	"id": 39964
 }

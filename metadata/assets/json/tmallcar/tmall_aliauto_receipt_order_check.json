@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_shop_id",
+			"type": "String",
+			"description": "服务商自定义门店编码"
+		},
+		{
+			"name": "receipt_id",
+			"type": "Number",
+			"description": "工单号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_shop_id",
+					"type": "String",
+					"description": "门店自定义编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "actual_total_fee",
+							"type": "String",
+							"description": "实际支付金额"
+						},
+						{
+							"name": "extension",
+							"type": "String",
+							"description": "扩展属性"
+						},
+						{
+							"name": "in_guarantee",
+							"type": "Boolean",
+							"description": "是否在三包期内"
+						},
+						{
+							"name": "item_head_img",
+							"type": "String",
+							"description": "商品头图"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "订单商品原价"
+						}
+					],
+					"name": "paid_order_items",
+					"type": "OrderItem4IsvDto[]",
+					"description": "无"
+				},
+				{
+					"name": "receipt_id",
+					"type": "Number",
+					"description": "工单id"
+				}
+			],
+			"name": "data",
+			"type": "CheckReceiptOrderIsPaid4IsvDto",
+			"description": "返回的数据实体"
+		}
+	],
+	"name": "tmall.aliauto.receipt.order.check",
+	"apiChineseName": "查看工单查询订单是否已付款",
+	"description": "查看工单查询订单是否已付款",
+	"id": 57228
+}

@@ -1,8 +1,4 @@
 {
-	"id": 22652,
-	"name": "tmall.product.specs.ticket.get",
-	"apiChineseName": "产品规格审核信息获取接口",
-	"description": "批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等",
 	"requestParams": [
 		{
 			"name": "spec_ids",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "tickets",
-			"type": "Ticket []",
-			"description": "产品规格审核单信息",
 			"subParams": [
 				{
 					"name": "spec_id",
@@ -57,7 +50,14 @@
 					"type": "Date",
 					"description": "产品规格审核单最后修改时间"
 				}
-			]
+			],
+			"name": "tickets",
+			"type": "Ticket []",
+			"description": "产品规格审核单信息"
 		}
-	]
+	],
+	"name": "tmall.product.specs.ticket.get",
+	"apiChineseName": "产品规格审核信息获取接口",
+	"description": "批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等",
+	"id": 22652
 }

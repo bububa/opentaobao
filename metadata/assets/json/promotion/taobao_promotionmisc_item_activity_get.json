@@ -1,22 +1,14 @@
 {
-	"id": 22259,
-	"name": "taobao.promotionmisc.item.activity.get",
-	"apiChineseName": "查询无条件单品优惠活动",
-	"description": "查询无条件单品优惠活动",
 	"requestParams": [
 		{
 			"name": "activity_id",
 			"type": "Number",
 			"description": "活动id。",
-			"required": true,
-			"minValue": 0
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "item_promotion",
-			"type": "ItemPromotion",
-			"description": "单品优惠活动信息。",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -78,7 +70,14 @@
 					"type": "Number",
 					"description": "折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。"
 				}
-			]
+			],
+			"name": "item_promotion",
+			"type": "ItemPromotion",
+			"description": "单品优惠活动信息。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.item.activity.get",
+	"apiChineseName": "查询无条件单品优惠活动",
+	"description": "查询无条件单品优惠活动",
+	"id": 22259
 }

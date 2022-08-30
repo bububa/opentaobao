@@ -1,13 +1,6 @@
 {
-	"id": 33876,
-	"name": "taobao.ailab.aicloud.top.device.getstatus",
-	"apiChineseName": "获取设备状态",
-	"description": "获取设备状态",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpenBaseInfo",
-			"description": "用户信息",
 			"subParams": [
 				{
 					"name": "schema",
@@ -29,7 +22,10 @@
 					"type": "String",
 					"description": "扩展信息，用于存放APP类型等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息"
 		},
 		{
 			"name": "param1",
@@ -39,35 +35,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "设备信息",
-					"required": true
+					"type": "String",
+					"description": "设备信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "业务请求结果",
-					"required": true
+					"description": "业务请求结果"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "网络请求是否成功",
-					"required": true
+					"description": "网络请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.getstatus",
+	"apiChineseName": "获取设备状态",
+	"description": "获取设备状态",
+	"id": 33876
 }

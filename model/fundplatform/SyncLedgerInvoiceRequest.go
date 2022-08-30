@@ -12,6 +12,8 @@ type SyncLedgerInvoiceRequest struct {
 	CertifyFlag string `json:"certify_flag,omitempty" xml:"certify_flag,omitempty"`
 	// 校验码
 	CheckSum string `json:"check_sum,omitempty" xml:"check_sum,omitempty"`
+	// 勾选时间
+	CheckCertifyTime string `json:"check_certify_time,omitempty" xml:"check_certify_time,omitempty"`
 	// 密码区
 	CipherText string `json:"cipher_text,omitempty" xml:"cipher_text,omitempty"`
 	// 不含税金额
@@ -26,6 +28,8 @@ type SyncLedgerInvoiceRequest struct {
 	InvoiceStatus string `json:"invoice_status,omitempty" xml:"invoice_status,omitempty"`
 	// 发票类型
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
+	// 勾选状态
+	CheckCertifyStatus string `json:"check_certify_status,omitempty" xml:"check_certify_status,omitempty"`
 	// 机器编码
 	MachineCode string `json:"machine_code,omitempty" xml:"machine_code,omitempty"`
 	// 购方银行信息
@@ -50,10 +54,6 @@ type SyncLedgerInvoiceRequest struct {
 	TaxAmount string `json:"tax_amount,omitempty" xml:"tax_amount,omitempty"`
 	// 所属期
 	TaxPeriod string `json:"tax_period,omitempty" xml:"tax_period,omitempty"`
-	// 勾选时间
-	CheckCertifyTime string `json:"check_certify_time,omitempty" xml:"check_certify_time,omitempty"`
-	// 勾选状态
-	CheckCertifyStatus string `json:"check_certify_status,omitempty" xml:"check_certify_status,omitempty"`
 	// 有效税额
 	EffectiveTaxAmount string `json:"effective_tax_amount,omitempty" xml:"effective_tax_amount,omitempty"`
 	// 认证方式标识

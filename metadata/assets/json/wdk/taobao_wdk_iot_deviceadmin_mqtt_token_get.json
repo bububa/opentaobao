@@ -1,8 +1,4 @@
 {
-	"id": 33673,
-	"name": "taobao.wdk.iot.deviceadmin.mqtt.token.get",
-	"apiChineseName": "获取MQTT访问令牌",
-	"description": "智能硬件设备动态注册和获取mqtt设备信息",
 	"requestParams": [
 		{
 			"name": "access_key",
@@ -19,61 +15,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HmResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "MqttDeviceInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "access_key",
 							"type": "String",
-							"description": "accessKey",
-							"required": true
+							"description": "accessKey"
 						},
 						{
 							"name": "access_token",
 							"type": "String",
-							"description": "accessToken",
-							"required": true
+							"description": "accessToken"
 						},
 						{
 							"name": "expire_time",
 							"type": "Number",
-							"description": "expireTime",
-							"required": true
+							"description": "expireTime"
 						},
 						{
 							"name": "timestamp",
 							"type": "Number",
-							"description": "创建令牌的服务端时间戳",
-							"required": true
+							"description": "创建令牌的服务端时间戳"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
+					],
+					"name": "model",
+					"type": "MqttDeviceInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HmResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wdk.iot.deviceadmin.mqtt.token.get",
+	"apiChineseName": "获取MQTT访问令牌",
+	"description": "智能硬件设备动态注册和获取mqtt设备信息",
+	"id": 33673
 }

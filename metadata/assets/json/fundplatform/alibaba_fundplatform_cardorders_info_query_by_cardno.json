@@ -1,14 +1,6 @@
 {
-	"id": 30347,
-	"name": "alibaba.fundplatform.cardorders.info.query.by.cardno",
-	"apiChineseName": "通过卡号查询卡信息",
-	"description": "该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息",
 	"requestParams": [
 		{
-			"name": "parameters",
-			"type": "CardMakingInfoQueryRequest",
-			"description": "请求结构体",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_size",
@@ -34,28 +26,34 @@
 					"description": "卡号列表",
 					"required": true
 				}
-			]
+			],
+			"name": "parameters",
+			"type": "CardMakingInfoQueryRequest",
+			"description": "请求结构体",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CardMakingInfoQueryResponse",
-			"description": "result",
 			"subParams": [
+				{
+					"name": "card_making_infos",
+					"type": "String[]",
+					"description": "卡信息列表"
+				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "card_making_infos",
-					"type": "Json[]",
-					"description": "卡信息列表",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CardMakingInfoQueryResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.cardorders.info.query.by.cardno",
+	"apiChineseName": "通过卡号查询卡信息",
+	"description": "该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息",
+	"id": 30347
 }

@@ -1,8 +1,4 @@
 {
-	"id": 48048,
-	"name": "alibaba.damai.maitix.distribution.exchangepoint.query",
-	"apiChineseName": "分销查询取票点接口",
-	"description": "分销查询取票点接口",
 	"requestParams": [
 		{
 			"name": "project_id",
@@ -12,91 +8,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "model_list",
-					"type": "OpenExchangePointDto[]",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "point_id",
 							"type": "Number",
-							"description": "换票点id",
-							"required": true
+							"description": "换票点id"
 						},
 						{
 							"name": "point_name",
 							"type": "String",
-							"description": "换票点名称",
-							"required": true
+							"description": "换票点名称"
 						},
 						{
 							"name": "point_addr",
 							"type": "String",
-							"description": "详细地址",
-							"required": true
+							"description": "详细地址"
 						},
 						{
 							"name": "longitude",
 							"type": "String",
-							"description": "经度",
-							"required": true
+							"description": "经度"
 						},
 						{
 							"name": "latitude",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "biz_time_show",
 							"type": "String",
-							"description": "营业时间描述",
-							"required": true
+							"description": "营业时间描述"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "提示信息备注",
-							"required": true
+							"description": "提示信息备注"
 						},
 						{
 							"name": "point_type",
 							"type": "String",
-							"description": "类型 1临时换票点 2固定换票点",
-							"required": true
+							"description": "类型 1临时换票点 2固定换票点"
 						},
 						{
 							"name": "exchange_type",
 							"type": "String",
-							"description": "换票形式 1 pc 2 自助机",
-							"required": true
+							"description": "换票形式 1 pc 2 自助机"
 						},
 						{
 							"name": "valid_period",
 							"type": "String",
-							"description": "有效期",
-							"required": true
+							"description": "有效期"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "OpenExchangePointDto[]",
+					"description": "结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.distribution.exchangepoint.query",
+	"apiChineseName": "分销查询取票点接口",
+	"description": "分销查询取票点接口",
+	"id": 48048
 }

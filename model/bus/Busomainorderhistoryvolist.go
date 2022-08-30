@@ -30,8 +30,12 @@ type Busomainorderhistoryvolist struct {
 	ExtAttr string `json:"ext_attr,omitempty" xml:"ext_attr,omitempty"`
 	// alipayTradeId 支付宝交易号
 	AlipayTradeId string `json:"alipay_trade_id,omitempty" xml:"alipay_trade_id,omitempty"`
-	// refundAmount 退款金额（分）
-	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+	// 订单来源 window:窗口  self:自助机
+	TradeSource string `json:"trade_source,omitempty" xml:"trade_source,omitempty"`
+	// 支付方式：alipay：支付宝 wechat：微信
+	PayMode string `json:"pay_mode,omitempty" xml:"pay_mode,omitempty"`
+	// 自助机机器编号
+	MachineNumber string `json:"machine_number,omitempty" xml:"machine_number,omitempty"`
 	// agentId 代理商编号
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// canRefund 是否可退 1 可退 0 不可退
@@ -42,6 +46,8 @@ type Busomainorderhistoryvolist struct {
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// discountAmount 折扣优惠价格
 	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
+	// refundAmount 退款金额（分）
+	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 	// payStatus 支付状态 	支付状态(10:初始支付状态,20:创建担保交易成功,30:买家付款成功,60:已打款给卖家,100:关闭已支付订单成功,101:关闭未支付订单成功)
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// ticketCount 票数

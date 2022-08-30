@@ -1,8 +1,4 @@
 {
-	"id": 39720,
-	"name": "alitrip.uppc.member.gain",
-	"apiChineseName": "航司权益数据回流",
-	"description": "航司权益数据回流",
 	"requestParams": [
 		{
 			"name": "request_id",
@@ -30,41 +26,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDO",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "是否回流成功",
-					"required": true
+					"description": "是否回流成功"
 				},
 				{
 					"name": "msg_for_client",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回code",
-					"required": true
+					"description": "返回code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行回流成功",
-					"required": true
+					"description": "是否执行回流成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.uppc.member.gain",
+	"apiChineseName": "航司权益数据回流",
+	"description": "航司权益数据回流",
+	"id": 39720
 }

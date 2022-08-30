@@ -60,6 +60,10 @@ type AlibabaAlihealthNrTradeOrderGetorderdetailAPIResponseModel struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 单店单日订单唯一序号
 	SerialNo string `json:"serial_no,omitempty" xml:"serial_no,omitempty"`
+	//
+	NewOaid string `json:"new_oaid,omitempty" xml:"new_oaid,omitempty"`
+	// 包含医保结算ID，就诊ID，统筹医保金额，医保个账金额，现金金额，就诊人员编号，退款结算ID（按照字段排列顺序）。支付成功后，退款成功之前有六个字段，退款成功之后该字符串变成七个字段
+	MiCheckParam string `json:"mi_check_param,omitempty" xml:"mi_check_param,omitempty"`
 	// 自提标识
 	DrugTake int64 `json:"drug_take,omitempty" xml:"drug_take,omitempty"`
 	// 处方药标示

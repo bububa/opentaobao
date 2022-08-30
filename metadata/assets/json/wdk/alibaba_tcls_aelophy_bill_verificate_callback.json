@@ -1,13 +1,6 @@
 {
-	"id": 56480,
-	"name": "alibaba.tcls.aelophy.bill.verificate.callback",
-	"apiChineseName": "翱象ERP核销回调",
-	"description": "翱象ERP核销回调",
 	"requestParams": [
 		{
-			"name": "module",
-			"type": "VerificateCallbackDto",
-			"description": "回调对象",
 			"subParams": [
 				{
 					"name": "remark",
@@ -48,34 +41,38 @@
 					"type": "String",
 					"description": "商家编码"
 				}
-			]
+			],
+			"name": "module",
+			"type": "VerificateCallbackDto",
+			"description": "回调对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "处理结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "回调是否处理成功",
-					"required": true
+					"description": "回调是否处理成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误说明",
-					"required": true
+					"description": "错误说明"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "处理结果"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.bill.verificate.callback",
+	"apiChineseName": "翱象ERP核销回调",
+	"description": "翱象ERP核销回调",
+	"id": 56480
 }

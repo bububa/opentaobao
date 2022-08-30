@@ -1,13 +1,6 @@
 {
-	"id": 49978,
-	"name": "alibaba.ailabs.iot.business.recipe.insertorupdate",
-	"apiChineseName": "插入和更新食谱",
-	"description": "插入和更新食谱，将isv的食谱添加到云端进行存储",
 	"requestParams": [
 		{
-			"name": "param_business_recipe_open_param",
-			"type": "BusinessRecipeOpenParam",
-			"description": "行业食谱开放参数",
 			"subParams": [
 				{
 					"name": "description",
@@ -32,9 +25,6 @@
 					"required": true
 				},
 				{
-					"name": "recipe_image",
-					"type": "ImageUrlParam",
-					"description": "食谱图片",
 					"subParams": [
 						{
 							"name": "img",
@@ -56,12 +46,12 @@
 							"type": "String",
 							"description": "小图"
 						}
-					]
+					],
+					"name": "recipe_image",
+					"type": "ImageUrlParam",
+					"description": "食谱图片"
 				},
 				{
-					"name": "recipe_ingredient_list",
-					"type": "RecipeIngredientParam[]",
-					"description": "重量及单位",
 					"subParams": [
 						{
 							"name": "name",
@@ -73,7 +63,10 @@
 							"type": "String",
 							"description": "重量及单位"
 						}
-					]
+					],
+					"name": "recipe_ingredient_list",
+					"type": "RecipeIngredientParam[]",
+					"description": "重量及单位"
 				},
 				{
 					"name": "recipe_name_cn",
@@ -88,14 +81,8 @@
 					"required": true
 				},
 				{
-					"name": "recipe_video",
-					"type": "VideoUrlParam",
-					"description": "食谱视频",
 					"subParams": [
 						{
-							"name": "cover",
-							"type": "ImageUrlParam",
-							"description": "视频封面图",
 							"subParams": [
 								{
 									"name": "img",
@@ -117,7 +104,10 @@
 									"type": "String",
 									"description": "小图"
 								}
-							]
+							],
+							"name": "cover",
+							"type": "ImageUrlParam",
+							"description": "视频封面图"
 						},
 						{
 							"name": "default_url",
@@ -149,7 +139,10 @@
 							"type": "Number",
 							"description": "视频宽度"
 						}
-					]
+					],
+					"name": "recipe_video",
+					"type": "VideoUrlParam",
+					"description": "食谱视频"
 				},
 				{
 					"name": "tag_id_list",
@@ -161,7 +154,10 @@
 					"type": "String",
 					"description": "菜谱提示信息"
 				}
-			]
+			],
+			"name": "param_business_recipe_open_param",
+			"type": "BusinessRecipeOpenParam",
+			"description": "行业食谱开放参数"
 		}
 	],
 	"responseParams": [
@@ -185,5 +181,9 @@
 			"type": "String",
 			"description": "追踪id"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.business.recipe.insertorupdate",
+	"apiChineseName": "插入和更新食谱",
+	"description": "插入和更新食谱，将isv的食谱添加到云端进行存储",
+	"id": 49978
 }

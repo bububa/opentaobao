@@ -1,19 +1,8 @@
 {
-	"id": 37669,
-	"name": "yunos.admarket.ad.bid",
-	"apiChineseName": "广告竞价服务",
-	"description": "广告竞价服务",
 	"requestParams": [
 		{
-			"name": "bid_request",
-			"type": "BidRequest",
-			"description": "竞价请求",
-			"required": true,
 			"subParams": [
 				{
-					"name": "app_info",
-					"type": "AppInfo",
-					"description": "应用信息",
 					"subParams": [
 						{
 							"name": "app_name",
@@ -35,12 +24,12 @@
 							"type": "String",
 							"description": "app版本名"
 						}
-					]
+					],
+					"name": "app_info",
+					"type": "AppInfo",
+					"description": "应用信息"
 				},
 				{
-					"name": "sdk_info",
-					"type": "SdkInfo",
-					"description": "sdk信息",
 					"subParams": [
 						{
 							"name": "version_name",
@@ -52,13 +41,12 @@
 							"type": "Number",
 							"description": "sdk版本号"
 						}
-					]
+					],
+					"name": "sdk_info",
+					"type": "SdkInfo",
+					"description": "sdk信息"
 				},
 				{
-					"name": "device_info",
-					"type": "DeviceInfo",
-					"description": "设备信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "model",
@@ -108,13 +96,13 @@
 							"type": "String",
 							"description": "屏幕类型(VENDING_MACHINE)"
 						}
-					]
+					],
+					"name": "device_info",
+					"type": "DeviceInfo",
+					"description": "设备信息",
+					"required": true
 				},
 				{
-					"name": "udid",
-					"type": "Udid",
-					"description": "设备id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "imei",
@@ -166,12 +154,13 @@
 							"type": "String",
 							"description": "设备id"
 						}
-					]
+					],
+					"name": "udid",
+					"type": "Udid",
+					"description": "设备id",
+					"required": true
 				},
 				{
-					"name": "user_info",
-					"type": "UserInfo",
-					"description": "用户信息",
 					"subParams": [
 						{
 							"name": "id",
@@ -182,7 +171,10 @@
 							"name": "info",
 							"description": "补充信息"
 						}
-					]
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息"
 				},
 				{
 					"name": "channel",
@@ -191,9 +183,6 @@
 					"required": true
 				},
 				{
-					"name": "network",
-					"type": "Network",
-					"description": "网络信息",
 					"subParams": [
 						{
 							"name": "cellular_id",
@@ -216,7 +205,10 @@
 							"description": "ip地址",
 							"required": true
 						}
-					]
+					],
+					"name": "network",
+					"type": "Network",
+					"description": "网络信息"
 				},
 				{
 					"name": "version",
@@ -225,9 +217,6 @@
 					"required": true
 				},
 				{
-					"name": "location",
-					"type": "Location",
-					"description": "定位信息",
 					"subParams": [
 						{
 							"name": "coordinate_type",
@@ -244,13 +233,12 @@
 							"type": "String",
 							"description": "纬度"
 						}
-					]
+					],
+					"name": "location",
+					"type": "Location",
+					"description": "定位信息"
 				},
 				{
-					"name": "ad_slots",
-					"type": "AdSlot[]",
-					"description": "广告位列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ad_slot_id",
@@ -266,14 +254,22 @@
 							"type": "Number",
 							"description": "个数"
 						}
-					]
+					],
+					"name": "ad_slots",
+					"type": "AdSlot[]",
+					"description": "广告位列表",
+					"required": true
 				},
 				{
 					"name": "batch_id",
 					"type": "String",
 					"description": "批次id"
 				}
-			]
+			],
+			"name": "bid_request",
+			"type": "BidRequest",
+			"description": "竞价请求",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -288,15 +284,8 @@
 			"description": "返回结果描述"
 		},
 		{
-			"name": "result",
-			"type": "BidResponse",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "ad_slots",
-					"type": "AdSlots[]",
-					"description": "广告位列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ad_slot_id",
@@ -305,10 +294,6 @@
 							"required": true
 						},
 						{
-							"name": "ads",
-							"type": "Ad[]",
-							"description": "广告集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "template_id",
@@ -329,10 +314,6 @@
 									"required": true
 								},
 								{
-									"name": "target",
-									"type": "Target",
-									"description": "广告目标对象",
-									"required": true,
 									"subParams": [
 										{
 											"name": "target_type",
@@ -346,13 +327,13 @@
 											"description": "广告目标值",
 											"required": true
 										}
-									]
+									],
+									"name": "target",
+									"type": "Target",
+									"description": "广告目标对象",
+									"required": true
 								},
 								{
-									"name": "monitor",
-									"type": "Monitor",
-									"description": "监控对象",
-									"required": true,
 									"subParams": [
 										{
 											"name": "view_url_list",
@@ -384,13 +365,28 @@
 											"description": "事件上报地址",
 											"required": true
 										}
-									]
+									],
+									"name": "monitor",
+									"type": "Monitor",
+									"description": "监控对象",
+									"required": true
 								}
-							]
+							],
+							"name": "ads",
+							"type": "Ad[]",
+							"description": "广告集合",
+							"required": true
 						}
-					]
+					],
+					"name": "ad_slots",
+					"type": "AdSlots[]",
+					"description": "广告位列表",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BidResponse",
+			"description": "返回结果"
 		},
 		{
 			"name": "result_code",
@@ -402,5 +398,9 @@
 			"type": "Boolean",
 			"description": "是否操作成功"
 		}
-	]
+	],
+	"name": "yunos.admarket.ad.bid",
+	"apiChineseName": "广告竞价服务",
+	"description": "广告竞价服务",
+	"id": 37669
 }

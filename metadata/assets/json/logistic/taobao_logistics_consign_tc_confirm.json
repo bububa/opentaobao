@@ -1,8 +1,4 @@
 {
-	"id": 25147,
-	"name": "taobao.logistics.consign.tc.confirm",
-	"apiChineseName": "通知交易确认发货接口",
-	"description": "下述业务场景可以使用此接口通知相关的交易订单发货：\n1、发货过程分为多段操作，在确定发货之前，不需要通知交易，当货确认已发出之后，才通知交易发货。\n2、发货过程涉及到多个订单，其中一个订单是跟实操的发货操作同步的，剩下的订单，需要在实操的订单发货之后，一并通知交易发货。",
 	"requestParams": [
 		{
 			"name": "provider_id",
@@ -22,10 +18,6 @@
 			"description": "扩展字段 K:V;"
 		},
 		{
-			"name": "goods_list",
-			"type": "ConfirmConsignGoodsDto[]",
-			"description": "发货的包裹",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "item_id",
@@ -42,7 +34,11 @@
 					"type": "Number",
 					"description": "待发货商品的子交易号"
 				}
-			]
+			],
+			"name": "goods_list",
+			"type": "ConfirmConsignGoodsDto[]",
+			"description": "发货的包裹",
+			"maxListSize": 20
 		},
 		{
 			"name": "out_trade_no",
@@ -79,5 +75,9 @@
 			"type": "String",
 			"description": "单次调用流程唯一id"
 		}
-	]
+	],
+	"name": "taobao.logistics.consign.tc.confirm",
+	"apiChineseName": "通知交易确认发货接口",
+	"description": "下述业务场景可以使用此接口通知相关的交易订单发货：\n1、发货过程分为多段操作，在确定发货之前，不需要通知交易，当货确认已发出之后，才通知交易发货。\n2、发货过程涉及到多个订单，其中一个订单是跟实操的发货操作同步的，剩下的订单，需要在实操的订单发货之后，一并通知交易发货。",
+	"id": 25147
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43363,
-	"name": "taobao.simba.salestar.creative.delete",
-	"apiChineseName": "(新)销量明星删除创意相关接口",
-	"description": "删除一个创意",
 	"requestParams": [
 		{
 			"name": "creative_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "creative",
-			"type": "Creative",
-			"description": "被删除的创意对象",
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -62,7 +55,14 @@
 					"type": "Number",
 					"description": "创意id"
 				}
-			]
+			],
+			"name": "creative",
+			"type": "Creative",
+			"description": "被删除的创意对象"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.creative.delete",
+	"apiChineseName": "(新)销量明星删除创意相关接口",
+	"description": "删除一个创意",
+	"id": 43363
 }

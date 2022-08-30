@@ -1,18 +1,8 @@
 {
-	"id": 47254,
-	"name": "alibaba.wdk.hrworkbench.moka.entry.receipt.write",
-	"apiChineseName": "摩卡确认入职后往入职单据表写数据接口",
-	"description": "摩卡确认入职后往入职单据表写数据接口",
 	"requestParams": [
 		{
-			"name": "param_sync_entry_receipt_request",
-			"type": "SyncEntryReceiptRequest",
-			"description": "确认入职后入职单据请求",
 			"subParams": [
 				{
-					"name": "address_info",
-					"type": "AddressInfo[]",
-					"description": "地址信息",
 					"subParams": [
 						{
 							"name": "address_type",
@@ -39,12 +29,12 @@
 							"type": "String",
 							"description": "详细地址"
 						}
-					]
+					],
+					"name": "address_info",
+					"type": "AddressInfo[]",
+					"description": "地址信息"
 				},
 				{
-					"name": "contact_info",
-					"type": "ContactInfo[]",
-					"description": "联系人信息",
 					"subParams": [
 						{
 							"name": "contact_name",
@@ -61,12 +51,12 @@
 							"type": "String",
 							"description": "联系人手机号"
 						}
-					]
+					],
+					"name": "contact_info",
+					"type": "ContactInfo[]",
+					"description": "联系人信息"
 				},
 				{
-					"name": "education_exp_info",
-					"type": "EducationExpInfo[]",
-					"description": "教育经历",
 					"subParams": [
 						{
 							"name": "education",
@@ -98,12 +88,12 @@
 							"type": "String",
 							"description": "学制年数"
 						}
-					]
+					],
+					"name": "education_exp_info",
+					"type": "EducationExpInfo[]",
+					"description": "教育经历"
 				},
 				{
-					"name": "employee_basic",
-					"type": "EmployeeBasic",
-					"description": "员工主要信息",
 					"subParams": [
 						{
 							"name": "e_mail",
@@ -410,12 +400,12 @@
 							"type": "String",
 							"description": "餐补"
 						}
-					]
+					],
+					"name": "employee_basic",
+					"type": "EmployeeBasic",
+					"description": "员工主要信息"
 				},
 				{
-					"name": "family_info",
-					"type": "FamilyInfo[]",
-					"description": "家庭信息",
 					"subParams": [
 						{
 							"name": "contact",
@@ -442,12 +432,12 @@
 							"type": "String",
 							"description": "工作单位"
 						}
-					]
+					],
+					"name": "family_info",
+					"type": "FamilyInfo[]",
+					"description": "家庭信息"
 				},
 				{
-					"name": "job_exp_info",
-					"type": "JobExpInfo[]",
-					"description": "工作履历",
 					"subParams": [
 						{
 							"name": "department",
@@ -484,12 +474,12 @@
 							"type": "String",
 							"description": "工作单位"
 						}
-					]
+					],
+					"name": "job_exp_info",
+					"type": "JobExpInfo[]",
+					"description": "工作履历"
 				},
 				{
-					"name": "offer_license_info",
-					"type": "OfferLicenseInfo[]",
-					"description": "证件信息",
 					"subParams": [
 						{
 							"name": "first",
@@ -521,12 +511,12 @@
 							"type": "String",
 							"description": "证件号码"
 						}
-					]
+					],
+					"name": "offer_license_info",
+					"type": "OfferLicenseInfo[]",
+					"description": "证件信息"
 				},
 				{
-					"name": "related_party_info",
-					"type": "RelatedPartyInfo[]",
-					"description": "关联方申报信息",
 					"subParams": [
 						{
 							"name": "department",
@@ -553,12 +543,12 @@
 							"type": "String",
 							"description": "关系"
 						}
-					]
+					],
+					"name": "related_party_info",
+					"type": "RelatedPartyInfo[]",
+					"description": "关联方申报信息"
 				},
 				{
-					"name": "language_info",
-					"type": "LanguageInfo[]",
-					"description": "语言信息",
 					"subParams": [
 						{
 							"name": "language",
@@ -570,9 +560,15 @@
 							"type": "String",
 							"description": "程度"
 						}
-					]
+					],
+					"name": "language_info",
+					"type": "LanguageInfo[]",
+					"description": "语言信息"
 				}
-			]
+			],
+			"name": "param_sync_entry_receipt_request",
+			"type": "SyncEntryReceiptRequest",
+			"description": "确认入职后入职单据请求"
 		}
 	],
 	"responseParams": [
@@ -606,5 +602,9 @@
 			"type": "String",
 			"description": "trace_id"
 		}
-	]
+	],
+	"name": "alibaba.wdk.hrworkbench.moka.entry.receipt.write",
+	"apiChineseName": "摩卡确认入职后往入职单据表写数据接口",
+	"description": "摩卡确认入职后往入职单据表写数据接口",
+	"id": 47254
 }

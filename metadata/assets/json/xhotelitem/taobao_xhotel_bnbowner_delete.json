@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "对接系统商名称：可为空不要乱填，需要申请后使用，默认taobao"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "房东Id，系统商outer_id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "是否出错"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统自动生成"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
+		}
+	],
+	"name": "taobao.xhotel.bnbowner.delete",
+	"apiChineseName": "民宿房东删除接口",
+	"description": "民宿房东删除接口，删除房东后，对应的门店及房源会同步删除，请谨慎使用",
+	"id": 58239
+}

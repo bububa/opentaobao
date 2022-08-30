@@ -1,14 +1,6 @@
 {
-	"id": 26113,
-	"name": "alibaba.interact.lotteryactivity.register",
-	"apiChineseName": "回传抽奖相关参数",
-	"description": "提供接口供三方应用将数据回传到平台",
 	"requestParams": [
 		{
-			"name": "param_top_update_activity_lottery_info_param",
-			"type": "TopUpdateActivityLotteryInfoParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_biz_id",
@@ -148,74 +140,73 @@
 					"description": "商家创建的isv活动的开始时间",
 					"required": true
 				}
-			]
+			],
+			"name": "param_top_update_activity_lottery_info_param",
+			"type": "TopUpdateActivityLotteryInfoParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "ActivityLotteryWriteResult",
-					"description": "返回的数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "isv活动的id",
-							"required": true
+							"description": "isv活动的id"
 						},
 						{
 							"name": "h5_url",
 							"type": "String",
-							"description": "isv活动url",
-							"required": true
+							"description": "isv活动url"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ActivityLotteryWriteResult",
+					"description": "返回的数据"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "module_map",
-					"type": "Modulemap",
-					"description": "xxx",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "false",
-							"required": true
+							"description": "false"
 						}
-					]
+					],
+					"name": "module_map",
+					"type": "Modulemap",
+					"description": "xxx"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "注册抽奖活动失败",
-					"required": true
+					"description": "注册抽奖活动失败"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "方便追踪请求的唯一标识",
-					"required": true
+					"description": "方便追踪请求的唯一标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.interact.lotteryactivity.register",
+	"apiChineseName": "回传抽奖相关参数",
+	"description": "提供接口供三方应用将数据回传到平台",
+	"id": 26113
 }

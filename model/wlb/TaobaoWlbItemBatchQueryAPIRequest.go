@@ -12,10 +12,10 @@ import (
 // 根据用户id，item id list和store code来查询商品库存信息和批次信息
 type TaobaoWlbItemBatchQueryAPIRequest struct {
 	model.Params
-	// 仓库编号
-	_storeCode string
 	// 需要查询的商品ID列表，以字符串表示，ID间以;隔开
 	_itemIds string
+	// 仓库编号
+	_storeCode string
 	// 分页查询参数，指定查询页数，默认为1
 	_pageNo int64
 	// 分页查询参数，每页查询数量，默认20，最大值50,大于50时按照50条查询
@@ -43,19 +43,6 @@ func (r TaobaoWlbItemBatchQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStoreCode is StoreCode Setter
-// 仓库编号
-func (r *TaobaoWlbItemBatchQueryAPIRequest) SetStoreCode(_storeCode string) error {
-	r._storeCode = _storeCode
-	r.Set("store_code", _storeCode)
-	return nil
-}
-
-// GetStoreCode StoreCode Getter
-func (r TaobaoWlbItemBatchQueryAPIRequest) GetStoreCode() string {
-	return r._storeCode
-}
-
 // SetItemIds is ItemIds Setter
 // 需要查询的商品ID列表，以字符串表示，ID间以;隔开
 func (r *TaobaoWlbItemBatchQueryAPIRequest) SetItemIds(_itemIds string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoWlbItemBatchQueryAPIRequest) SetItemIds(_itemIds string) error {
 // GetItemIds ItemIds Getter
 func (r TaobaoWlbItemBatchQueryAPIRequest) GetItemIds() string {
 	return r._itemIds
+}
+
+// SetStoreCode is StoreCode Setter
+// 仓库编号
+func (r *TaobaoWlbItemBatchQueryAPIRequest) SetStoreCode(_storeCode string) error {
+	r._storeCode = _storeCode
+	r.Set("store_code", _storeCode)
+	return nil
+}
+
+// GetStoreCode StoreCode Getter
+func (r TaobaoWlbItemBatchQueryAPIRequest) GetStoreCode() string {
+	return r._storeCode
 }
 
 // SetPageNo is PageNo Setter

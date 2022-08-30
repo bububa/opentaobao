@@ -1,8 +1,4 @@
 {
-	"id": 41184,
-	"name": "alibaba.alihealth.drug.kyt.synonymauths",
-	"apiChineseName": "物流企业查询货主企业信息",
-	"description": "物流企业查询货主企业信息",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -35,117 +31,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Page",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
-							"name": "result_list",
-							"type": "Result[]",
-							"description": "返回列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ent_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "city_desc",
 									"type": "String",
-									"description": "市",
-									"required": true
+									"description": "市"
 								},
 								{
 									"name": "prov_desc",
 									"type": "String",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "area_desc",
 									"type": "String",
-									"description": "区",
-									"required": true
+									"description": "区"
 								},
 								{
 									"name": "ent_id",
 									"type": "String",
-									"description": "企业主键",
-									"required": true
+									"description": "企业主键"
 								},
 								{
 									"name": "dict_region_code",
 									"type": "String",
-									"description": "区域编码",
-									"required": true
+									"description": "区域编码"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业唯一标识",
-									"required": true
+									"description": "企业唯一标识"
 								},
 								{
 									"name": "syn_own_ent_id",
 									"type": "String",
-									"description": "货主",
-									"required": true
+									"description": "货主"
 								},
 								{
 									"name": "user_ent_id",
 									"type": "String",
-									"description": "货主标识",
-									"required": true
+									"description": "货主标识"
 								},
 								{
 									"name": "crt_date",
 									"type": "String",
-									"description": "创建日期",
-									"required": true
+									"description": "创建日期"
 								},
 								{
 									"name": "user_role_type",
 									"type": "String",
-									"description": "角色",
-									"required": true
+									"description": "角色"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "Result[]",
+							"description": "返回列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Page",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "状态值",
-					"required": true
+					"description": "状态值"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.synonymauths",
+	"apiChineseName": "物流企业查询货主企业信息",
+	"description": "物流企业查询货主企业信息",
+	"id": 41184
 }

@@ -14,6 +14,8 @@ type AliexpressSolutionSchemaProductFullUpdateAPIRequest struct {
 	model.Params
 	// Product full update request. To learn how to generate the content, please refer to https://developers.aliexpress.com/en/doc.htm?docId=109760&docType=1.  Be aware that the aliexpress_product_id field should be replaced by the product ID belonged to the seller.
 	_schemaFullUpdateRequest string
+	// More information of the request.
+	_developerFeatures string
 }
 
 // NewAliexpressSolutionSchemaProductFullUpdateRequest 初始化AliexpressSolutionSchemaProductFullUpdateAPIRequest对象
@@ -48,4 +50,17 @@ func (r *AliexpressSolutionSchemaProductFullUpdateAPIRequest) SetSchemaFullUpdat
 // GetSchemaFullUpdateRequest SchemaFullUpdateRequest Getter
 func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetSchemaFullUpdateRequest() string {
 	return r._schemaFullUpdateRequest
+}
+
+// SetDeveloperFeatures is DeveloperFeatures Setter
+// More information of the request.
+func (r *AliexpressSolutionSchemaProductFullUpdateAPIRequest) SetDeveloperFeatures(_developerFeatures string) error {
+	r._developerFeatures = _developerFeatures
+	r.Set("developer_features", _developerFeatures)
+	return nil
+}
+
+// GetDeveloperFeatures DeveloperFeatures Getter
+func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetDeveloperFeatures() string {
+	return r._developerFeatures
 }

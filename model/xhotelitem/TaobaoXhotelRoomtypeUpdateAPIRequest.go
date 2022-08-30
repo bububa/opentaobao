@@ -12,7 +12,7 @@ import (
 // 酒店房型更新或添加
 type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	model.Params
-	// 房型名称。不能超过30字；添加房型时为必须
+	// 房型名称。不能超过30字(30个汉字或者60个英文字符)；添加房型时为必须
 	_name string
 	// 具体面积大小，请按照正确格式填写。两种格式，例如：40 或者 10-20
 	_area string
@@ -46,10 +46,10 @@ type TaobaoXhotelRoomtypeUpdateAPIRequest struct {
 	_newOuterId string
 	// 房间设施
 	_standardRoomFacilities string
-	// 最大入住人数，默认2（1-99）
-	_maxOccupancy int64
 	// （已废弃）
 	_rid int64
+	// 最大入住人数，默认2（1-99）
+	_maxOccupancy int64
 	// 0:无窗/1:有窗
 	_windowType int64
 	// 该字段只有确定的时候，才允许填入。用于标示和淘宝房型的匹配关系。目前尚未启动该字段。
@@ -84,7 +84,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetApiParams() url.Values {
 }
 
 // SetName is Name Setter
-// 房型名称。不能超过30字；添加房型时为必须
+// 房型名称。不能超过30字(30个汉字或者60个英文字符)；添加房型时为必须
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetName(_name string) error {
 	r._name = _name
 	r.Set("name", _name)
@@ -304,19 +304,6 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetStandardRoomFacilities() string
 	return r._standardRoomFacilities
 }
 
-// SetMaxOccupancy is MaxOccupancy Setter
-// 最大入住人数，默认2（1-99）
-func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetMaxOccupancy(_maxOccupancy int64) error {
-	r._maxOccupancy = _maxOccupancy
-	r.Set("max_occupancy", _maxOccupancy)
-	return nil
-}
-
-// GetMaxOccupancy MaxOccupancy Getter
-func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetMaxOccupancy() int64 {
-	return r._maxOccupancy
-}
-
 // SetRid is Rid Setter
 // （已废弃）
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetRid(_rid int64) error {
@@ -328,6 +315,19 @@ func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetRid(_rid int64) error {
 // GetRid Rid Getter
 func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetRid() int64 {
 	return r._rid
+}
+
+// SetMaxOccupancy is MaxOccupancy Setter
+// 最大入住人数，默认2（1-99）
+func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetMaxOccupancy(_maxOccupancy int64) error {
+	r._maxOccupancy = _maxOccupancy
+	r.Set("max_occupancy", _maxOccupancy)
+	return nil
+}
+
+// GetMaxOccupancy MaxOccupancy Getter
+func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetMaxOccupancy() int64 {
+	return r._maxOccupancy
 }
 
 // SetWindowType is WindowType Setter

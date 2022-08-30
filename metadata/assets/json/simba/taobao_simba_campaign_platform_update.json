@@ -1,8 +1,4 @@
 {
-	"id": 10542,
-	"name": "taobao.simba.campaign.platform.update",
-	"apiChineseName": "更新一个推广计划的平台设置",
-	"description": "更新一个推广计划的平台设置",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -14,10 +10,10 @@
 			"name": "search_channels",
 			"type": "Number[]",
 			"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索",
-			"required": true,
 			"maxListSize": 10,
 			"maxValue": 128,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		},
 		{
 			"name": "nonsearch_channels",
@@ -47,9 +43,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_platform",
-			"type": "CampaignPlatform",
-			"description": "修改后的推广计划投放平台设置",
 			"subParams": [
 				{
 					"name": "nick",
@@ -91,7 +84,14 @@
 					"type": "Number",
 					"description": "已经废弃了"
 				}
-			]
+			],
+			"name": "campaign_platform",
+			"type": "CampaignPlatform",
+			"description": "修改后的推广计划投放平台设置"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.platform.update",
+	"apiChineseName": "更新一个推广计划的平台设置",
+	"description": "更新一个推广计划的平台设置",
+	"id": 10542
 }

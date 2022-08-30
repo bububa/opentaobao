@@ -16,14 +16,14 @@ type TopRefundVo struct {
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 退款阶段，可选值：onsale/aftersale
 	RefundPhase string `json:"refund_phase,omitempty" xml:"refund_phase,omitempty"`
+	// 卖家退货地址
+	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 创建交易时的物流方式。 可选值：ems, express, post, free
 	ShippingType string `json:"shipping_type,omitempty" xml:"shipping_type,omitempty"`
 	// 商品SKU信息
 	Sku string `json:"sku,omitempty" xml:"sku,omitempty"`
 	// 交易总金额
 	TotalFee string `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 卖家退货地址
-	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 退货运单号
 	Sid string `json:"sid,omitempty" xml:"sid,omitempty"`
 	// 物流公司名称

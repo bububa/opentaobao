@@ -1,8 +1,4 @@
 {
-	"id": 48598,
-	"name": "aliexpress.affiliate.hotproduct.download",
-	"apiChineseName": "联盟营销爆品下载接口",
-	"description": "查询联盟爆品API",
 	"requestParams": [
 		{
 			"name": "tracking_id",
@@ -57,9 +53,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -74,10 +67,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficProductResultDto",
-					"description": "返回结果状态详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page_no",
@@ -92,10 +81,6 @@
 							"required": true
 						},
 						{
-							"name": "products",
-							"type": "Product[]",
-							"description": "返回商品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "app_sale_price",
@@ -290,10 +275,6 @@
 									"required": true
 								},
 								{
-									"name": "promo_code_info",
-									"type": "PromoCodeDto",
-									"description": "code信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "promo_code",
@@ -343,13 +324,32 @@
 											"description": "品code合一url",
 											"required": true
 										}
-									]
+									],
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code信息",
+									"required": true
 								}
-							]
+							],
+							"name": "products",
+							"type": "Product[]",
+							"description": "返回商品列表",
+							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficProductResultDto",
+					"description": "返回结果状态详情",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.hotproduct.download",
+	"apiChineseName": "联盟营销爆品下载接口",
+	"description": "查询联盟爆品API",
+	"id": 48598
 }

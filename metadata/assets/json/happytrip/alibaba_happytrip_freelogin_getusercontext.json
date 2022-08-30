@@ -1,47 +1,44 @@
 {
-	"id": 47501,
-	"name": "alibaba.happytrip.freelogin.getusercontext",
-	"apiChineseName": "提供给外部系统的免登校验",
-	"description": "免登融合，提供免登相关接口给外部供应商做登录验证",
 	"requestParams": [
 		{
-			"name": "req",
-			"type": "SsoParamDto",
-			"description": "请求入参",
 			"subParams": [
 				{
 					"name": "ticket",
 					"type": "String",
 					"description": "免登验证ticket"
 				}
-			]
+			],
+			"name": "req",
+			"type": "SsoParamDto",
+			"description": "请求入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "rep",
-			"type": "Result",
-			"description": "请求响应",
 			"subParams": [
 				{
 					"name": "errno",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "errmsg",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "返回的结果值",
-					"required": true
+					"type": "String",
+					"description": "返回的结果值"
 				}
-			]
+			],
+			"name": "rep",
+			"type": "Result",
+			"description": "请求响应"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.freelogin.getusercontext",
+	"apiChineseName": "提供给外部系统的免登校验",
+	"description": "免登融合，提供免登相关接口给外部供应商做登录验证",
+	"id": 47501
 }

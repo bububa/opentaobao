@@ -1,0 +1,110 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部改签单号",
+					"required": true
+				},
+				{
+					"name": "total_pay_price",
+					"type": "Number",
+					"description": "支付总金额",
+					"required": true
+				},
+				{
+					"name": "corp_pay_price",
+					"type": "Number",
+					"description": "企业支付金额"
+				},
+				{
+					"name": "personal_pay_price",
+					"type": "Number",
+					"description": "个人支付金额"
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "额外信息"
+				}
+			],
+			"name": "param_btrip_flight_modify_pay_rq",
+			"type": "BtripFlightModifyPayRq",
+			"description": "改签支付入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "pay_price",
+							"type": "Number",
+							"description": "支付价格"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "支付状态"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间"
+						},
+						{
+							"name": "trade_no",
+							"type": "String",
+							"description": "支付宝交易流水号"
+						},
+						{
+							"name": "can_retry",
+							"type": "Boolean",
+							"description": "能否重试"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightModifyPayRs",
+					"description": "子模块"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.change.pay",
+	"apiChineseName": "商旅机票改签支付",
+	"description": "改签订单支付",
+	"id": 57655
+}

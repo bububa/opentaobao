@@ -1,8 +1,4 @@
 {
-	"id": 27286,
-	"name": "taobao.region.price.cancle",
-	"apiChineseName": "取消区域价格",
-	"description": "取消区域价格",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -41,7 +34,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.region.price.cancle",
+	"apiChineseName": "取消区域价格",
+	"description": "取消区域价格",
+	"id": 27286
 }

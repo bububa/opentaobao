@@ -1,8 +1,4 @@
 {
-	"id": 11044,
-	"name": "taobao.vmarket.eticket.consume",
-	"apiChineseName": "电子票券消费通知",
-	"description": "外部合作商家电子票券消费回调接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -66,14 +62,14 @@
 			"description": "0:失败，1:成功"
 		},
 		{
-			"name": "item_title",
-			"type": "String",
-			"description": "宝贝标题"
-		},
-		{
 			"name": "left_num",
 			"type": "Number",
 			"description": "整个订单剩余的可核销数量"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "宝贝标题"
 		},
 		{
 			"name": "sms_tpl",
@@ -95,5 +91,9 @@
 			"type": "Number",
 			"description": "该核销码在核销后剩余的可核销份数，如果传了new_code来重新生成码，那么这些可核销份数会累积到新的码上"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.consume",
+	"apiChineseName": "电子票券消费通知",
+	"description": "外部合作商家电子票券消费回调接口",
+	"id": 11044
 }

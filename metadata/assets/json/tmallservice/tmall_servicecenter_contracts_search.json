@@ -1,8 +1,4 @@
 {
-	"id": 11121,
-	"name": "tmall.servicecenter.contracts.search",
-	"apiChineseName": "获取合同类的服务工单信息",
-	"description": "获取合同类的服务工单信息",
 	"requestParams": [
 		{
 			"name": "start",
@@ -19,84 +15,28 @@
 	],
 	"responseParams": [
 		{
-			"name": "service_contract_packet",
-			"type": "ServiceContractPacket",
-			"description": "和同类服务包装类",
 			"subParams": [
-				{
-					"name": "name",
-					"type": "String",
-					"description": "服务名字"
-				},
 				{
 					"name": "desc",
 					"type": "String",
 					"description": "描述"
 				},
 				{
-					"name": "service_list",
-					"type": "ServiceContractDO[]",
-					"description": "合同类服务列表",
 					"subParams": [
-						{
-							"name": "contract_type",
-							"type": "Number",
-							"description": "合同类型"
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "合同id"
-						},
-						{
-							"name": "order_relation_id",
-							"type": "Number",
-							"description": "订购关系id"
-						},
-						{
-							"name": "parent_biz_order_id",
-							"type": "Number",
-							"description": "主交易订单编号"
-						},
-						{
-							"name": "biz_order_id",
-							"type": "Number",
-							"description": "交易订单编号"
-						},
-						{
-							"name": "service_order_id",
-							"type": "Number",
-							"description": "服务订单编号"
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "合同名称"
-						},
-						{
-							"name": "content",
-							"type": "String",
-							"description": "合同内容"
-						},
-						{
-							"name": "contract_memo",
-							"type": "String",
-							"description": "合同描述"
-						},
 						{
 							"name": "contract_status",
 							"type": "Number",
 							"description": "合同状态"
 						},
 						{
-							"name": "service_name",
-							"type": "String",
-							"description": "服务名称"
+							"name": "service_count",
+							"type": "Number",
+							"description": "服务次数"
 						},
 						{
-							"name": "service_product",
-							"type": "String",
-							"description": "服务产品"
+							"name": "buy_amount",
+							"type": "Number",
+							"description": "购买数量"
 						},
 						{
 							"name": "service_phone",
@@ -104,14 +44,64 @@
 							"description": "服务电话"
 						},
 						{
-							"name": "tp_id",
-							"type": "Number",
-							"description": "服务商编号"
+							"name": "service_name",
+							"type": "String",
+							"description": "服务名称"
 						},
 						{
-							"name": "tp_name",
+							"name": "contract_price",
+							"type": "Number",
+							"description": "商品价格"
+						},
+						{
+							"name": "auction_price",
+							"type": "Number",
+							"description": "商品价格"
+						},
+						{
+							"name": "buyer_mobile",
 							"type": "String",
-							"description": "供应商名称"
+							"description": "买家手机"
+						},
+						{
+							"name": "contract_type",
+							"type": "Number",
+							"description": "合同类型"
+						},
+						{
+							"name": "buyer_address",
+							"type": "String",
+							"description": "买家地址"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家nick"
+						},
+						{
+							"name": "ext_price",
+							"type": "Number",
+							"description": "扩展价格"
+						},
+						{
+							"name": "tp_feedback_info",
+							"type": "String",
+							"description": "服务反馈信息"
+						},
+						{
+							"name": "auction_serial_num",
+							"type": "String",
+							"description": "商品序列号"
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家电话"
+						},
+						{
+							"name": "receive_time",
+							"type": "Date",
+							"description": "收货日期"
 						},
 						{
 							"name": "pay_time",
@@ -124,129 +114,9 @@
 							"description": "付款时间"
 						},
 						{
-							"name": "auction_id",
-							"type": "Number",
-							"description": "商品编号"
-						},
-						{
-							"name": "auction_name",
+							"name": "content",
 							"type": "String",
-							"description": "商品名称"
-						},
-						{
-							"name": "auction_price",
-							"type": "Number",
-							"description": "商品价格"
-						},
-						{
-							"name": "contract_price",
-							"type": "Number",
-							"description": "商品价格"
-						},
-						{
-							"name": "ext_price",
-							"type": "Number",
-							"description": "扩展价格"
-						},
-						{
-							"name": "model_number",
-							"type": "String",
-							"description": "型号"
-						},
-						{
-							"name": "category",
-							"type": "String",
-							"description": "类目"
-						},
-						{
-							"name": "brand",
-							"type": "String",
-							"description": "品牌"
-						},
-						{
-							"name": "auction_serial_num",
-							"type": "String",
-							"description": "商品序列号"
-						},
-						{
-							"name": "service_count",
-							"type": "Number",
-							"description": "服务次数"
-						},
-						{
-							"name": "receive_time",
-							"type": "Date",
-							"description": "收货日期"
-						},
-						{
-							"name": "receive_time_number",
-							"type": "Number",
-							"description": "收货日期"
-						},
-						{
-							"name": "seller_id",
-							"type": "Number",
-							"description": "卖家id"
-						},
-						{
-							"name": "shop_name",
-							"type": "String",
-							"description": "店铺名称"
-						},
-						{
-							"name": "seller_nick",
-							"type": "String",
-							"description": "卖家nick"
-						},
-						{
-							"name": "seller_phone",
-							"type": "String",
-							"description": "卖家电话"
-						},
-						{
-							"name": "seller_mobile",
-							"type": "String",
-							"description": "卖家手机"
-						},
-						{
-							"name": "buyer_id",
-							"type": "Number",
-							"description": "买家id"
-						},
-						{
-							"name": "buyer_nick",
-							"type": "String",
-							"description": "买家nick"
-						},
-						{
-							"name": "buyer_name",
-							"type": "String",
-							"description": "买家姓名"
-						},
-						{
-							"name": "buyer_address",
-							"type": "String",
-							"description": "买家地址"
-						},
-						{
-							"name": "buyer_zip_code",
-							"type": "String",
-							"description": "买家邮编"
-						},
-						{
-							"name": "buyer_phone",
-							"type": "String",
-							"description": "买家电话"
-						},
-						{
-							"name": "buyer_mobile",
-							"type": "String",
-							"description": "买家手机"
-						},
-						{
-							"name": "buyer_mail",
-							"type": "String",
-							"description": "买家有限"
+							"description": "合同内容"
 						},
 						{
 							"name": "effect_date",
@@ -254,34 +124,14 @@
 							"description": "生效时间"
 						},
 						{
-							"name": "effect_date_number",
-							"type": "Number",
-							"description": "生效时间"
-						},
-						{
-							"name": "expire_date",
+							"name": "gmt_create",
 							"type": "Date",
-							"description": "失效时间"
+							"description": "创建时间"
 						},
 						{
-							"name": "expire_date_number",
-							"type": "Number",
-							"description": "失效时间"
-						},
-						{
-							"name": "life_cycle",
-							"type": "Number",
-							"description": "有效期"
-						},
-						{
-							"name": "contract_no",
-							"type": "Number",
-							"description": "电子合同编号"
-						},
-						{
-							"name": "contract_url",
+							"name": "category",
 							"type": "String",
-							"description": "电子合同url"
+							"description": "类目"
 						},
 						{
 							"name": "flag",
@@ -289,34 +139,14 @@
 							"description": "异常标识"
 						},
 						{
-							"name": "memo",
+							"name": "auction_id",
+							"type": "Number",
+							"description": "商品编号"
+						},
+						{
+							"name": "tp_name",
 							"type": "String",
-							"description": "备注"
-						},
-						{
-							"name": "tp_feedback_info",
-							"type": "String",
-							"description": "服务反馈信息"
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创建时间"
-						},
-						{
-							"name": "gmt_modify",
-							"type": "Date",
-							"description": "修改时间"
-						},
-						{
-							"name": "canceler",
-							"type": "String",
-							"description": "服务取消人"
-						},
-						{
-							"name": "cancel_date",
-							"type": "Date",
-							"description": "服务取消日期"
+							"description": "供应商名称"
 						},
 						{
 							"name": "cancel_memo",
@@ -324,18 +154,178 @@
 							"description": "服务取消备注"
 						},
 						{
+							"name": "contract_url",
+							"type": "String",
+							"description": "电子合同url"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id"
+						},
+						{
+							"name": "canceler",
+							"type": "String",
+							"description": "服务取消人"
+						},
+						{
+							"name": "service_product",
+							"type": "String",
+							"description": "服务产品"
+						},
+						{
+							"name": "expire_date",
+							"type": "Date",
+							"description": "失效时间"
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "contract_no",
+							"type": "Number",
+							"description": "电子合同编号"
+						},
+						{
+							"name": "order_relation_id",
+							"type": "Number",
+							"description": "订购关系id"
+						},
+						{
 							"name": "attribute",
 							"type": "String",
 							"description": "属性"
 						},
 						{
-							"name": "buy_amount",
+							"name": "receive_time_number",
 							"type": "Number",
-							"description": "购买数量"
+							"description": "收货日期"
+						},
+						{
+							"name": "buyer_zip_code",
+							"type": "String",
+							"description": "买家邮编"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "合同id"
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "买家电话"
+						},
+						{
+							"name": "gmt_modify",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "合同名称"
+						},
+						{
+							"name": "effect_date_number",
+							"type": "Number",
+							"description": "生效时间"
+						},
+						{
+							"name": "expire_date_number",
+							"type": "Number",
+							"description": "失效时间"
+						},
+						{
+							"name": "auction_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "life_cycle",
+							"type": "Number",
+							"description": "有效期"
+						},
+						{
+							"name": "buyer_name",
+							"type": "String",
+							"description": "买家姓名"
+						},
+						{
+							"name": "buyer_mail",
+							"type": "String",
+							"description": "买家有限"
+						},
+						{
+							"name": "contract_memo",
+							"type": "String",
+							"description": "合同描述"
+						},
+						{
+							"name": "parent_biz_order_id",
+							"type": "Number",
+							"description": "主交易订单编号"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "交易订单编号"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "model_number",
+							"type": "String",
+							"description": "型号"
+						},
+						{
+							"name": "seller_mobile",
+							"type": "String",
+							"description": "卖家手机"
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "service_order_id",
+							"type": "Number",
+							"description": "服务订单编号"
+						},
+						{
+							"name": "tp_id",
+							"type": "Number",
+							"description": "服务商编号"
+						},
+						{
+							"name": "cancel_date",
+							"type": "Date",
+							"description": "服务取消日期"
 						}
-					]
+					],
+					"name": "service_list",
+					"type": "ServiceContractDO[]",
+					"description": "合同类服务列表"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "服务名字"
 				}
-			]
+			],
+			"name": "service_contract_packet",
+			"type": "ServiceContractPacket",
+			"description": "和同类服务包装类"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.contracts.search",
+	"apiChineseName": "获取合同类的服务工单信息",
+	"description": "获取合同类的服务工单信息",
+	"id": 11121
 }

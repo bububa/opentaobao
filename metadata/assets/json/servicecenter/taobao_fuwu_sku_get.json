@@ -1,8 +1,4 @@
 {
-	"id": 25685,
-	"name": "taobao.fuwu.sku.get",
-	"apiChineseName": "获取内购服务及SKU详情",
-	"description": "通过服务code和用户nick，获取该服务对应的收费项目的sku信息，包括价格、可购买周期、用户能否购买等信息",
 	"requestParams": [
 		{
 			"name": "article_code",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ArticleViewResult",
-			"description": "内购服务及SKU详情",
 			"subParams": [
 				{
 					"name": "article_code",
@@ -59,9 +52,6 @@
 					"description": "错误消息"
 				},
 				{
-					"name": "article_item_view_units",
-					"type": "ArticleItemViewUnit[]",
-					"description": "sku详情列表",
 					"subParams": [
 						{
 							"name": "item_code",
@@ -118,9 +108,19 @@
 							"type": "String",
 							"description": "错误文案"
 						}
-					]
+					],
+					"name": "article_item_view_units",
+					"type": "ArticleItemViewUnit[]",
+					"description": "sku详情列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ArticleViewResult",
+			"description": "内购服务及SKU详情"
 		}
-	]
+	],
+	"name": "taobao.fuwu.sku.get",
+	"apiChineseName": "获取内购服务及SKU详情",
+	"description": "通过服务code和用户nick，获取该服务对应的收费项目的sku信息，包括价格、可购买周期、用户能否购买等信息",
+	"id": 25685
 }

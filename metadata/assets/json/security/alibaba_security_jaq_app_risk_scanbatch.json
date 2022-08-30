@@ -1,14 +1,6 @@
 {
-	"id": 26126,
-	"name": "alibaba.security.jaq.app.risk.scanbatch",
-	"apiChineseName": "应用风险扫描批量提交接口",
-	"description": "批量提交应用进行风险扫描(含漏洞扫描、恶意代码检测),扫描完成后可通过对应的查询接口查询扫描结果",
 	"requestParams": [
 		{
-			"name": "app_info",
-			"type": "AppInfoBatch",
-			"description": "APP信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_os_type",
@@ -28,10 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "scan_infos",
-					"type": "AppInfoBatchItem[]",
-					"description": "需要扫描的应用的具体信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data",
@@ -49,37 +37,47 @@
 							"type": "Number",
 							"description": "应用的大小(单位byte)，dataType＝4时必填"
 						}
-					]
+					],
+					"name": "scan_infos",
+					"type": "AppInfoBatchItem[]",
+					"description": "需要扫描的应用的具体信息列表",
+					"required": true
 				}
-			]
+			],
+			"name": "app_info",
+			"type": "AppInfoBatch",
+			"description": "APP信息",
+			"required": true
 		},
 		{
 			"name": "scan_types",
 			"type": "String[]",
 			"description": "扫描类型",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaskInfo",
-			"description": "扫描任务信息",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "String",
-					"description": "任务唯一标识",
-					"required": true
+					"description": "任务唯一标识"
 				},
 				{
 					"name": "progress",
 					"type": "Number",
-					"description": "任务处理进度: 1-处理完成 (可立即通过对应的查询接口查询处理结果), 2-异步处理中(需等待app_info.callback_url接收到反向通知后再查询结果) ; 对于app_info.data_type为4目前都是异步处理，此字段返回2; 对于app_info.data_type为3目前都是同步处理，此字段返回1",
-					"required": true
+					"description": "任务处理进度: 1-处理完成 (可立即通过对应的查询接口查询处理结果), 2-异步处理中(需等待app_info.callback_url接收到反向通知后再查询结果) ; 对于app_info.data_type为4目前都是异步处理，此字段返回2; 对于app_info.data_type为3目前都是同步处理，此字段返回1"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaskInfo",
+			"description": "扫描任务信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.risk.scanbatch",
+	"apiChineseName": "应用风险扫描批量提交接口",
+	"description": "批量提交应用进行风险扫描(含漏洞扫描、恶意代码检测),扫描完成后可通过对应的查询接口查询扫描结果",
+	"id": 26126
 }

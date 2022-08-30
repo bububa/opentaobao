@@ -1,8 +1,4 @@
 {
-	"id": 32966,
-	"name": "alibaba.security.jaq.rp.cloud.event",
-	"apiChineseName": "事件上报",
-	"description": "事件上报接口",
 	"requestParams": [
 		{
 			"name": "verify_token",
@@ -24,17 +20,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RpEventResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "verify_limited_flag",
 					"type": "Boolean",
-					"description": "verifyLimitedFlag",
-					"required": true
+					"description": "verifyLimitedFlag"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RpEventResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.cloud.event",
+	"apiChineseName": "事件上报",
+	"description": "事件上报接口",
+	"id": 32966
 }

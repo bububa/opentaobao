@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_order_id",
+					"type": "Number[]",
+					"description": "子单号 （不填默认全部忽略）"
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "主单号",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "IgnoreOrderRQ",
+			"description": "rq",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回msg"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.order.ignore",
+	"apiChineseName": "忽略订单",
+	"description": "忽略订单",
+	"id": 60354
+}

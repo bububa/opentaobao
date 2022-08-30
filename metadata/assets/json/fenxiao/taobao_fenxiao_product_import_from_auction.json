@@ -1,8 +1,4 @@
 {
-	"id": 32941,
-	"name": "taobao.fenxiao.product.import.from.auction",
-	"apiChineseName": "导入商品生成产品",
-	"description": "供应商选择关联店铺的前台宝贝，导入生成产品",
 	"requestParams": [
 		{
 			"name": "trade_type",
@@ -34,5 +30,9 @@
 			"type": "Date",
 			"description": "操作时间"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.import.from.auction",
+	"apiChineseName": "导入商品生成产品",
+	"description": "供应商选择关联店铺的前台宝贝，导入生成产品",
+	"id": 32941
 }

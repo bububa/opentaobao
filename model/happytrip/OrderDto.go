@@ -40,6 +40,8 @@ type OrderDto struct {
 	OutOrderStatus string `json:"out_order_status,omitempty" xml:"out_order_status,omitempty"`
 	// 外系统订单号状态描述
 	OutOrderStatusDesc string `json:"out_order_status_desc,omitempty" xml:"out_order_status_desc,omitempty"`
+	// 关联的差旅申请单的数据同步关联id
+	OuterTravelHeadId string `json:"outer_travel_head_id,omitempty" xml:"outer_travel_head_id,omitempty"`
 	// 支付状态  -1, "未知状态"  1, "未付款"  2, "待付款"  3, "已付款"  4, "支付超时"
 	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 支付状态描述
@@ -58,8 +60,6 @@ type OrderDto struct {
 	TotalPriceCurrencyCode string `json:"total_price_currency_code,omitempty" xml:"total_price_currency_code,omitempty"`
 	// 总金额小数点位数
 	TotalPriceDecimalPlaces string `json:"total_price_decimal_places,omitempty" xml:"total_price_decimal_places,omitempty"`
-	// 关联的差旅申请单的数据同步关联id
-	OuterTravelHeadId string `json:"outer_travel_head_id,omitempty" xml:"outer_travel_head_id,omitempty"`
 	// 是否B2G的标记位0不是 1是
 	B2gFlag int64 `json:"b2g_flag,omitempty" xml:"b2g_flag,omitempty"`
 	// 订单业务类型，各个业务自定义使用

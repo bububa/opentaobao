@@ -1,14 +1,6 @@
 {
-	"id": 26525,
-	"name": "taobao.openim.tribe.sendmsg",
-	"apiChineseName": "发送群消息",
-	"description": "发送群消息，目前支持发送4种类型的群消息，普通文本，图片，语音，自定义消息",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "User",
-			"description": "群消息发送者，只有该群的成员才可以发送群消息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "appkey",
@@ -26,7 +18,11 @@
 					"description": "用户id",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "User",
+			"description": "群消息发送者，只有该群的成员才可以发送群消息",
+			"required": true
 		},
 		{
 			"name": "tribe_id",
@@ -35,10 +31,6 @@
 			"required": true
 		},
 		{
-			"name": "msg",
-			"type": "TribeMsg",
-			"description": "发送群消息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "at_flag",
@@ -47,9 +39,6 @@
 					"required": true
 				},
 				{
-					"name": "atmembers",
-					"type": "User[]",
-					"description": "当at_flag=1时，必须指定at的用户",
 					"subParams": [
 						{
 							"name": "appkey",
@@ -66,7 +55,10 @@
 							"type": "String",
 							"description": "用户id"
 						}
-					]
+					],
+					"name": "atmembers",
+					"type": "User[]",
+					"description": "当at_flag=1时，必须指定at的用户"
 				},
 				{
 					"name": "custom_push",
@@ -95,7 +87,11 @@
 					"type": "Boolean",
 					"description": "该消息是否需要push"
 				}
-			]
+			],
+			"name": "msg",
+			"type": "TribeMsg",
+			"description": "发送群消息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -109,5 +105,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.sendmsg",
+	"apiChineseName": "发送群消息",
+	"description": "发送群消息，目前支持发送4种类型的群消息，普通文本，图片，语音，自定义消息",
+	"id": 26525
 }

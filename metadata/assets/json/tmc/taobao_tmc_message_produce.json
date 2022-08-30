@@ -1,22 +1,18 @@
 {
-	"id": 21987,
-	"name": "taobao.tmc.message.produce",
-	"apiChineseName": "发布单条消息",
-	"description": "发布单条消息",
 	"requestParams": [
 		{
 			"name": "content",
 			"type": "String",
 			"description": "消息内容的JSON表述，必须按照topic的定义来填充",
-			"required": true,
-			"maxLength": 122880
+			"maxLength": 122880,
+			"required": true
 		},
 		{
 			"name": "topic",
 			"type": "String",
 			"description": "消息类型",
-			"required": true,
-			"maxLength": 256
+			"maxLength": 256,
+			"required": true
 		},
 		{
 			"name": "media_content",
@@ -52,6 +48,16 @@
 			"name": "target_group",
 			"type": "String",
 			"description": "目标分组，一般为default"
+		},
+		{
+			"name": "delay_millis",
+			"type": "Number",
+			"description": "延时参数 时间戳 预期发送时间"
+		},
+		{
+			"name": "expires_millis",
+			"type": "Number",
+			"description": "提前过期 相对时间差 毫秒"
 		}
 	],
 	"responseParams": [
@@ -70,5 +76,9 @@
 			"type": "String []",
 			"description": "消息ID"
 		}
-	]
+	],
+	"name": "taobao.tmc.message.produce",
+	"apiChineseName": "发布单条消息",
+	"description": "发布单条消息",
+	"id": 21987
 }

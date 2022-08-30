@@ -1,13 +1,6 @@
 {
-	"id": 44682,
-	"name": "alibaba.alicom.order.preauthorize.query.fund",
-	"apiChineseName": "资金流水查询",
-	"description": "预授权-资金流水查询",
 	"requestParams": [
 		{
-			"name": "pre_authorize_model",
-			"type": "PreAuthorizeModel",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "tid",
@@ -20,14 +13,14 @@
 					"type": "String",
 					"description": "扩展json"
 				}
-			]
+			],
+			"name": "pre_authorize_model",
+			"type": "PreAuthorizeModel",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "model",
@@ -53,7 +46,14 @@
 					"description": "接口返回成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alicom.order.preauthorize.query.fund",
+	"apiChineseName": "资金流水查询",
+	"description": "预授权-资金流水查询",
+	"id": 44682
 }

@@ -1,8 +1,4 @@
 {
-	"id": 44743,
-	"name": "taobao.ailab.aicloud.top.earthquake.send",
-	"apiChineseName": "地震局发送地震消息",
-	"description": "地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "响应错误码"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.earthquake.send",
+	"apiChineseName": "地震局发送地震消息",
+	"description": "地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户",
+	"id": 44743
 }

@@ -1,13 +1,6 @@
 {
-	"id": 38662,
-	"name": "alibaba.wdk.refund.aggregate",
-	"apiChineseName": "淘鲜达退款单按门店聚合查询",
-	"description": "淘鲜达退款单按门店聚合查询",
 	"requestParams": [
 		{
-			"name": "refund_aggregate_query_request",
-			"type": "RefundAggregateQueryRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "start_time",
@@ -44,58 +37,58 @@
 					"type": "Number",
 					"description": "分页size"
 				}
-			]
+			],
+			"name": "refund_aggregate_query_request",
+			"type": "RefundAggregateQueryRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefundAggregateQueryResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "接口返回码. 如果返回 HM05038888888006 需重试(数据查询失败，请重试，注意限定重试次数)",
-					"required": true
+					"description": "接口返回码. 如果返回 HM05038888888006 需重试(数据查询失败，请重试，注意限定重试次数)"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "接口返回码描述",
-					"required": true
+					"description": "接口返回码描述"
 				},
 				{
 					"name": "refund_id_list",
 					"type": "Number[]",
-					"description": "退款单id列表",
-					"required": true
+					"description": "退款单id列表"
 				},
 				{
 					"name": "biz_id_list",
 					"type": "Number[]",
-					"description": "淘鲜达子订单id列表",
-					"required": true
+					"description": "淘鲜达子订单id列表"
 				},
 				{
 					"name": "tb_biz_id_list",
 					"type": "Number[]",
-					"description": "淘宝子订单id列表",
-					"required": true
+					"description": "淘宝子订单id列表"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "结果数量",
-					"required": true
+					"description": "结果数量"
 				},
 				{
 					"name": "next_index",
 					"type": "Number",
-					"description": "下一页序号",
-					"required": true
+					"description": "下一页序号"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefundAggregateQueryResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.refund.aggregate",
+	"apiChineseName": "淘鲜达退款单按门店聚合查询",
+	"description": "淘鲜达退款单按门店聚合查询",
+	"id": 38662
 }

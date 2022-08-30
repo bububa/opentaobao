@@ -1,15 +1,11 @@
 {
-	"id": 23577,
-	"name": "taobao.simba.insight.wordssubdata.get",
-	"apiChineseName": "获取关键词按流量细分的数据",
-	"description": "获取关键词按流量进行细分的数据，返回结果中network表示流量的来源，意义如下：1-\u003ePC站内，2-\u003ePC站外,4-\u003e无线站内 5-\u003e无线站外",
 	"requestParams": [
 		{
 			"name": "bidword_list",
 			"type": "String[]",
 			"description": "关键词列表",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "start_date",
@@ -26,14 +22,21 @@
 	],
 	"responseParams": [
 		{
-			"name": "word_subdata_list",
-			"type": "InsightWordSubDataDTO []",
-			"description": "关键词按流量细分的数据",
 			"subParams": [
 				{
 					"name": "impression",
 					"type": "Number",
 					"description": "展现量"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "Number",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "mechanism",
+					"type": "Number",
+					"description": "投放机制:0:关键词推广 2：定向推广 3：通用定向"
 				},
 				{
 					"name": "click",
@@ -46,24 +49,14 @@
 					"description": "花费，单位（分）"
 				},
 				{
+					"name": "network",
+					"type": "Number",
+					"description": "流量来源：1:PC站内，2：PC站外,4:无线站内 5：无线站外"
+				},
+				{
 					"name": "directtransaction",
 					"type": "Number",
 					"description": "直接成交金额"
-				},
-				{
-					"name": "indirecttransaction",
-					"type": "Number",
-					"description": "间接成交金额"
-				},
-				{
-					"name": "directtransactionshipping",
-					"type": "Number",
-					"description": "直接成交笔数"
-				},
-				{
-					"name": "indirecttransactionshipping",
-					"type": "Number",
-					"description": "间接成交笔数"
 				},
 				{
 					"name": "favitemtotal",
@@ -71,44 +64,9 @@
 					"description": "宝贝搜藏数"
 				},
 				{
-					"name": "favshoptotal",
-					"type": "Number",
-					"description": "店铺搜藏数"
-				},
-				{
 					"name": "transactionshippingtotal",
 					"type": "Number",
 					"description": "总的成交笔数"
-				},
-				{
-					"name": "transactiontotal",
-					"type": "Number",
-					"description": "成交总金额"
-				},
-				{
-					"name": "favtotal",
-					"type": "Number",
-					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
-				},
-				{
-					"name": "competition",
-					"type": "Number",
-					"description": "竞争度"
-				},
-				{
-					"name": "ctr",
-					"type": "String",
-					"description": "点击率"
-				},
-				{
-					"name": "cpc",
-					"type": "String",
-					"description": "平均点击花费"
-				},
-				{
-					"name": "roi",
-					"type": "String",
-					"description": "投入产出比"
 				},
 				{
 					"name": "coverage",
@@ -116,21 +74,63 @@
 					"description": "点击转化率"
 				},
 				{
+					"name": "cpc",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "favtotal",
+					"type": "Number",
+					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "Number",
+					"description": "成交总金额"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "Number",
+					"description": "间接成交笔数"
+				},
+				{
 					"name": "bidword",
 					"type": "String",
 					"description": "关键词"
 				},
 				{
-					"name": "network",
+					"name": "directtransactionshipping",
 					"type": "Number",
-					"description": "流量来源：1:PC站内，2：PC站外,4:无线站内 5：无线站外"
+					"description": "直接成交笔数"
 				},
 				{
-					"name": "mechanism",
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "favshoptotal",
 					"type": "Number",
-					"description": "投放机制:0:关键词推广 2：定向推广 3：通用定向"
+					"description": "店铺搜藏数"
+				},
+				{
+					"name": "competition",
+					"type": "Number",
+					"description": "竞争度"
 				}
-			]
+			],
+			"name": "word_subdata_list",
+			"type": "InsightWordSubDataDTO []",
+			"description": "关键词按流量细分的数据"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.wordssubdata.get",
+	"apiChineseName": "获取关键词按流量细分的数据",
+	"description": "获取关键词按流量进行细分的数据，返回结果中network表示流量的来源，意义如下：1-\u003ePC站内，2-\u003ePC站外,4-\u003e无线站内 5-\u003e无线站外",
+	"id": 23577
 }

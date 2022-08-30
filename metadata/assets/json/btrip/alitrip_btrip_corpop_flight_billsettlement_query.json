@@ -1,0 +1,468 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据量，默认10，最高100"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "1、老版本2、isv对外版本"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数，从1开始"
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "类目，1：机票；2：酒店；4：用车；6：新火车票；"
+				},
+				{
+					"name": "period_start",
+					"type": "String",
+					"description": "记账更新开始日期"
+				},
+				{
+					"name": "period_end",
+					"type": "String",
+					"description": "记账更新结束日期"
+				}
+			],
+			"name": "rq",
+			"type": "OpenIsvBillSettlementSearchRq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "第三方企业id"
+						},
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总数据量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "traveler_name",
+									"type": "String",
+									"description": "出行人名称"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "舱位"
+								},
+								{
+									"name": "build_fee",
+									"type": "String",
+									"description": "基建费"
+								},
+								{
+									"name": "refund_fee",
+									"type": "String",
+									"description": "退款手续费"
+								},
+								{
+									"name": "arr_date",
+									"type": "String",
+									"description": "到达日期"
+								},
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "订单号"
+								},
+								{
+									"name": "department_id",
+									"type": "String",
+									"description": "部门id"
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "折扣率"
+								},
+								{
+									"name": "change_fee",
+									"type": "String",
+									"description": "改签手续费"
+								},
+								{
+									"name": "primary_id",
+									"type": "Number",
+									"description": "主键id，遇到相同id，已最新为准（数据会更新）"
+								},
+								{
+									"name": "upgrade_cost",
+									"type": "String",
+									"description": "改签差价"
+								},
+								{
+									"name": "over_apply_id",
+									"type": "String",
+									"description": "超标审批单号"
+								},
+								{
+									"name": "apply_id",
+									"type": "String",
+									"description": "审批单号"
+								},
+								{
+									"name": "booker_id",
+									"type": "String",
+									"description": "预订人use id"
+								},
+								{
+									"name": "most_difference_price",
+									"type": "String",
+									"description": "低价提醒(与最低价差额)"
+								},
+								{
+									"name": "cost_center_number",
+									"type": "String",
+									"description": "成本中心编码"
+								},
+								{
+									"name": "itinerary_num",
+									"type": "String",
+									"description": "行程单打印序号"
+								},
+								{
+									"name": "invoice_title",
+									"type": "String",
+									"description": "发票抬头"
+								},
+								{
+									"name": "service_fee",
+									"type": "String",
+									"description": "服务费，仅在feeType  11001、11002中展示"
+								},
+								{
+									"name": "itinerary_price",
+									"type": "String",
+									"description": "行程单金额"
+								},
+								{
+									"name": "arr_station",
+									"type": "String",
+									"description": "到达机场"
+								},
+								{
+									"name": "cost_center",
+									"type": "String",
+									"description": "成本中心名称"
+								},
+								{
+									"name": "settlement_fee",
+									"type": "String",
+									"description": "结算金额"
+								},
+								{
+									"name": "index",
+									"type": "String",
+									"description": "序号"
+								},
+								{
+									"name": "book_time",
+									"type": "String",
+									"description": "预定时间"
+								},
+								{
+									"name": "fee_type",
+									"type": "String",
+									"description": "费用类型，枚举详见语雀"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "corp_pay_order_fee",
+									"type": "String",
+									"description": "订单金额"
+								},
+								{
+									"name": "oil_fee",
+									"type": "String",
+									"description": "燃油费"
+								},
+								{
+									"name": "btrip_coupon_fee",
+									"type": "String",
+									"description": "商旅价优惠金额"
+								},
+								{
+									"name": "repeat_refund",
+									"type": "String",
+									"description": "是否重复退"
+								},
+								{
+									"name": "dept_city",
+									"type": "String",
+									"description": "起飞城市"
+								},
+								{
+									"name": "project_name",
+									"type": "String",
+									"description": "项目名称"
+								},
+								{
+									"name": "arr_airport_code",
+									"type": "String",
+									"description": "到达机场航司三字码"
+								},
+								{
+									"name": "ticket_id",
+									"type": "String",
+									"description": "行程单号"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "入账状态，枚举详见语雀"
+								},
+								{
+									"name": "airline_corp_code",
+									"type": "String",
+									"description": "航司二字码"
+								},
+								{
+									"name": "dept_station",
+									"type": "String",
+									"description": "起飞机场"
+								},
+								{
+									"name": "dept_time",
+									"type": "String",
+									"description": "起飞时间"
+								},
+								{
+									"name": "most_price",
+									"type": "String",
+									"description": "低价航班价格"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位代码"
+								},
+								{
+									"name": "dep_airport_code",
+									"type": "String",
+									"description": "起飞机场航司三字码"
+								},
+								{
+									"name": "project_code",
+									"type": "String",
+									"description": "项目编码"
+								},
+								{
+									"name": "cascade_department",
+									"type": "String",
+									"description": "级联部门"
+								},
+								{
+									"name": "advance_day",
+									"type": "Number",
+									"description": "提前预定天数"
+								},
+								{
+									"name": "department",
+									"type": "String",
+									"description": "末级部门"
+								},
+								{
+									"name": "most_difference_discount",
+									"type": "String",
+									"description": "低价提醒（折扣）"
+								},
+								{
+									"name": "settlement_type",
+									"type": "String",
+									"description": "结算类型，枚举详见语雀"
+								},
+								{
+									"name": "coupon",
+									"type": "String",
+									"description": "优惠券"
+								},
+								{
+									"name": "alipay_trade_no",
+									"type": "String",
+									"description": "支付流水号"
+								},
+								{
+									"name": "airline_corp_name",
+									"type": "String",
+									"description": "航司名称"
+								},
+								{
+									"name": "most_difference_flight_no",
+									"type": "String",
+									"description": "低价提醒(航班号)"
+								},
+								{
+									"name": "booker_name",
+									"type": "String",
+									"description": "预订人名称"
+								},
+								{
+									"name": "refund_upgrade_cost",
+									"type": "String",
+									"description": "改签退票手续费"
+								},
+								{
+									"name": "traveler_id",
+									"type": "String",
+									"description": "出行人use id"
+								},
+								{
+									"name": "capital_direction",
+									"type": "String",
+									"description": "资金方向，枚举详见语雀"
+								},
+								{
+									"name": "insurance_fee",
+									"type": "String",
+									"description": "保险费"
+								},
+								{
+									"name": "seal_price",
+									"type": "String",
+									"description": "销售金额"
+								},
+								{
+									"name": "settlement_time",
+									"type": "String",
+									"description": "结算时间"
+								},
+								{
+									"name": "most_difference_dept_time",
+									"type": "String",
+									"description": "低价提醒（起飞时间）"
+								},
+								{
+									"name": "most_difference_reason",
+									"type": "String",
+									"description": "不选低价原因"
+								},
+								{
+									"name": "negotiation_coupon_fee",
+									"type": "String",
+									"description": "协议价优惠金额"
+								},
+								{
+									"name": "arr_time",
+									"type": "String",
+									"description": "到达时间"
+								},
+								{
+									"name": "dept_date",
+									"type": "String",
+									"description": "起飞日期"
+								},
+								{
+									"name": "booker_job_no",
+									"type": "String",
+									"description": "预订人工号"
+								},
+								{
+									"name": "traveler_job_no",
+									"type": "String",
+									"description": "出行人工号"
+								},
+								{
+									"name": "voucher_type",
+									"type": "Number",
+									"description": "票据类型，枚举详见语雀"
+								},
+								{
+									"name": "bill_record_time",
+									"type": "Date",
+									"description": "入账时间"
+								},
+								{
+									"name": "settlement_grant_fee",
+									"type": "String",
+									"description": "预存赠送金额消费"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "data_list",
+							"type": "OpenIsvBillSettlementFlightRs[]",
+							"description": "数据集合"
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "类目，枚举详见语雀"
+						},
+						{
+							"name": "period_start",
+							"type": "String",
+							"description": "记账更新开始时间"
+						},
+						{
+							"name": "period_end",
+							"type": "String",
+							"description": "记账更新结束时间"
+						}
+					],
+					"name": "module",
+					"type": "OpenIsvBillSettlementRs",
+					"description": "module"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果code"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg"
+				}
+			],
+			"name": "result",
+			"type": "HisvResultSupport",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.btrip.corpop.flight.billsettlement.query",
+	"apiChineseName": "机票结算记账查询接口",
+	"description": "机票结算记账查询接口",
+	"id": 59320
+}

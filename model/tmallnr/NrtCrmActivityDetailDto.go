@@ -18,6 +18,10 @@ type NrtCrmActivityDetailDto struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 摊位地址
 	StoreAddress string `json:"store_address,omitempty" xml:"store_address,omitempty"`
+	// 头图
+	BannerUrl string `json:"banner_url,omitempty" xml:"banner_url,omitempty"`
+	// 有价礼包List
+	TmpSceneActivityIdList string `json:"tmp_scene_activity_id_list,omitempty" xml:"tmp_scene_activity_id_list,omitempty"`
 	// 留资人数
 	GuiderCustomerNum int64 `json:"guider_customer_num,omitempty" xml:"guider_customer_num,omitempty"`
 	// 总留资人数
@@ -34,4 +38,6 @@ type NrtCrmActivityDetailDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 100:已发布，-100:失效，200:已结束
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 直播对象
+	NrtCrmLiveDTO *NrtCrmLiveDto `json:"nrt_crm_live_d_t_o,omitempty" xml:"nrt_crm_live_d_t_o,omitempty"`
 }

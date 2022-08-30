@@ -1,8 +1,4 @@
 {
-	"id": 41081,
-	"name": "alibaba.alihealth.drug.kyt.getbyrefentid",
-	"apiChineseName": "根据企业唯一标识查看企业详细信息",
-	"description": "根据企业唯一标识查看企业详细信息",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -19,145 +15,127 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PUserEntInfoDto",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ent_id",
 							"type": "String",
-							"description": "企业id",
-							"required": true
+							"description": "企业id"
 						},
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "企业唯一标识",
-							"required": true
+							"description": "企业唯一标识"
 						},
 						{
 							"name": "is_network",
 							"type": "String",
-							"description": "是否入网",
-							"required": true
+							"description": "是否入网"
 						},
 						{
 							"name": "ent_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "direct_manage",
 							"type": "String",
-							"description": "所属管理机构",
-							"required": true
+							"description": "所属管理机构"
 						},
 						{
 							"name": "legal_org_flag",
 							"type": "String",
-							"description": "是否法人",
-							"required": true
+							"description": "是否法人"
 						},
 						{
 							"name": "org_code",
 							"type": "String",
-							"description": "机构代码",
-							"required": true
+							"description": "机构代码"
 						},
 						{
 							"name": "reg_region_code",
 							"type": "String",
-							"description": "注册地编码",
-							"required": true
+							"description": "注册地编码"
 						},
 						{
 							"name": "reg_region_detail",
 							"type": "String",
-							"description": "注册地明细",
-							"required": true
+							"description": "注册地明细"
 						},
 						{
 							"name": "dict_region_code",
 							"type": "String",
-							"description": "所在地编码",
-							"required": true
+							"description": "所在地编码"
 						},
 						{
 							"name": "dict_region_detail",
 							"type": "String",
-							"description": "所在地明细",
-							"required": true
+							"description": "所在地明细"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "状态1.使用中0.已废除",
-							"required": true
+							"description": "状态1.使用中0.已废除"
 						},
 						{
 							"name": "user_role_type_str",
 							"type": "String",
-							"description": "企业类型[1,生产企业 2批发企业 3医疗机构 4药店 5物流]",
-							"required": true
+							"description": "企业类型[1,生产企业 2批发企业 3医疗机构 4药店 5物流]"
 						},
 						{
 							"name": "user_role_type",
 							"type": "String",
-							"description": "企业类型编码",
-							"required": true
+							"description": "企业类型编码"
 						},
 						{
 							"name": "ent_org_type",
 							"type": "String",
-							"description": "企业机构详细类别",
-							"required": true
+							"description": "企业机构详细类别"
 						},
 						{
 							"name": "prov_name",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "area_name",
 							"type": "String",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "县",
-							"required": true
+							"description": "县"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PUserEntInfoDto",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.getbyrefentid",
+	"apiChineseName": "根据企业唯一标识查看企业详细信息",
+	"description": "根据企业唯一标识查看企业详细信息",
+	"id": 41081
 }

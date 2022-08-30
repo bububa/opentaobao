@@ -1,14 +1,6 @@
 {
-	"id": 40711,
-	"name": "alibaba.wdk.ums.inventory.publish",
-	"apiChineseName": "初始化覆盖实物库存",
-	"description": "先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充",
 	"requestParams": [
 		{
-			"name": "wdk_erp_arrival_notice",
-			"type": "WdkErpArrivalNoticeDto",
-			"description": "1",
-			"required": true,
 			"subParams": [
 				{
 					"name": "bypass",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "item_list",
-					"type": "ErpArrivalNoticeDetailDto[]",
-					"description": "1",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cabinet_code",
@@ -47,7 +35,7 @@
 						},
 						{
 							"name": "spec",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "规格",
 							"required": true
 						},
@@ -59,12 +47,12 @@
 						},
 						{
 							"name": "price",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "商品 价格单位分"
 						},
 						{
 							"name": "plan_package_quantity",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "库存单位",
 							"required": true
 						},
@@ -90,7 +78,11 @@
 							"description": "商品code，盒马系统中的商品编码",
 							"required": true
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "ErpArrivalNoticeDetailDto[]",
+					"description": "1",
+					"required": true
 				},
 				{
 					"name": "contact_info",
@@ -137,40 +129,44 @@
 					"description": "单据号",
 					"required": true
 				}
-			]
+			],
+			"name": "wdk_erp_arrival_notice",
+			"type": "WdkErpArrivalNoticeDto",
+			"description": "1",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "调用服务返回结果",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "调用服务返回结果对象",
-					"required": true
+					"description": "调用服务返回结果对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "调用服务返回错误码",
-					"required": true
+					"description": "调用服务返回错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "调用服务返回错误信息",
-					"required": true
+					"description": "调用服务返回错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用服务返回成功失败",
-					"required": true
+					"description": "调用服务返回成功失败"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用服务返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.inventory.publish",
+	"apiChineseName": "初始化覆盖实物库存",
+	"description": "先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充",
+	"id": 40711
 }

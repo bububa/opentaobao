@@ -12,10 +12,10 @@ import (
 // 分页查询计划
 type AlibabaScbpAdCampaignFindCampaignPageAPIRequest struct {
 	model.Params
-	// 请求实体类
-	_campaignQuery *CampaignQueryDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 请求实体类
+	_campaignQuery *CampaignQueryDto
 }
 
 // NewAlibabaScbpAdCampaignFindCampaignPageRequest 初始化AlibabaScbpAdCampaignFindCampaignPageAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetCampaignQuery is CampaignQuery Setter
-// 请求实体类
-func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
-	r._campaignQuery = _campaignQuery
-	r.Set("campaign_query", _campaignQuery)
-	return nil
-}
-
-// GetCampaignQuery CampaignQuery Getter
-func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
-	return r._campaignQuery
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetTopContext(_topCont
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetCampaignQuery is CampaignQuery Setter
+// 请求实体类
+func (r *AlibabaScbpAdCampaignFindCampaignPageAPIRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
+	r._campaignQuery = _campaignQuery
+	r.Set("campaign_query", _campaignQuery)
+	return nil
+}
+
+// GetCampaignQuery CampaignQuery Getter
+func (r AlibabaScbpAdCampaignFindCampaignPageAPIRequest) GetCampaignQuery() *CampaignQueryDto {
+	return r._campaignQuery
 }

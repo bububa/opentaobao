@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否备货成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回结果对象"
+		}
+	],
+	"name": "taobao.omni.order.goods.ready",
+	"apiChineseName": "备货完成",
+	"description": "备货完成",
+	"id": 63585
+}

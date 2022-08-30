@@ -26,8 +26,12 @@ type Datalist struct {
 	ServiceStoreCode string `json:"service_store_code,omitempty" xml:"service_store_code,omitempty"`
 	// 支付宝交易订单号
 	AlipayOrderId string `json:"alipay_order_id,omitempty" xml:"alipay_order_id,omitempty"`
+	// 支付时间
+	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 入款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台
 	InUserRole string `json:"in_user_role,omitempty" xml:"in_user_role,omitempty"`
+	// 创建时间
+	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 门店名称
 	ServiceStoreName string `json:"service_store_name,omitempty" xml:"service_store_name,omitempty"`
 	// 扩展信息；json格式
@@ -46,10 +50,6 @@ type Datalist struct {
 	MasterTradeOrderId int64 `json:"master_trade_order_id,omitempty" xml:"master_trade_order_id,omitempty"`
 	// 交易主订单号
 	ParentTradeOrderId int64 `json:"parent_trade_order_id,omitempty" xml:"parent_trade_order_id,omitempty"`
-	// 创建时间，单位毫秒
-	PayTime int64 `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
-	// 创建时间，单位毫秒
-	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
 	// 服务单号
 	ServiceOrderId int64 `json:"service_order_id,omitempty" xml:"service_order_id,omitempty"`
 	// 门店Id

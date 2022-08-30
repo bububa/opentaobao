@@ -1,8 +1,4 @@
 {
-	"id": 31283,
-	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor",
-	"apiChineseName": "容器被悬挂链扫描",
-	"description": "容器被悬挂链扫描",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -27,64 +23,60 @@
 			"description": "errorMsg"
 		},
 		{
-			"name": "list",
-			"type": "WcsContainerScannedByConveyorDto []",
-			"description": "list",
 			"subParams": [
 				{
 					"name": "warehouse_code",
 					"type": "String",
-					"description": "warehouseCode",
-					"required": true
+					"description": "warehouseCode"
 				},
 				{
 					"name": "warehouse_id",
-					"type": "Json",
-					"description": "warehouseId",
-					"required": true
+					"type": "String",
+					"description": "warehouseId"
 				},
 				{
 					"name": "batch_code",
 					"type": "String",
-					"description": "batchCode",
-					"required": true
+					"description": "batchCode"
 				},
 				{
 					"name": "container_code",
 					"type": "String",
-					"description": "containerCode",
-					"required": true
+					"description": "containerCode"
 				},
 				{
 					"name": "wave_code",
 					"type": "String",
-					"description": "waveCode",
-					"required": true
+					"description": "waveCode"
 				},
 				{
 					"name": "conveyor_id",
-					"type": "Json",
-					"description": "conveyorId",
-					"required": true
+					"type": "String",
+					"description": "conveyorId"
 				},
 				{
 					"name": "scanned_time",
 					"type": "Date",
-					"description": "scannedTime",
-					"required": true
+					"description": "scannedTime"
 				},
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "uuid",
-					"required": true
+					"description": "uuid"
 				}
-			]
+			],
+			"name": "list",
+			"type": "WcsContainerScannedByConveyorDto []",
+			"description": "list"
 		},
 		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor",
+	"apiChineseName": "容器被悬挂链扫描",
+	"description": "容器被悬挂链扫描",
+	"id": 31283
 }

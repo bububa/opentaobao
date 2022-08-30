@@ -1,8 +1,4 @@
 {
-	"id": 42725,
-	"name": "alitrip.hotel.hstdf.shotel.exportsroomtype",
-	"apiChineseName": "导出一个卖家房型下的所有标准房型",
-	"description": "导出一个卖家酒店下的所有标准房型",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -13,73 +9,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultSet",
-			"description": "top返回结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "SroomTypePo[]",
-					"description": "SroomTypePo",
-					"required": true,
 					"subParams": [
 						{
 							"name": "srid",
 							"type": "Number",
-							"description": "标准房型id",
-							"required": true
+							"description": "标准房型id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "标准房型名称",
-							"required": true
+							"description": "标准房型名称"
 						},
 						{
 							"name": "name_e",
 							"type": "String",
-							"description": "标准房型英文名称",
-							"required": true
+							"description": "标准房型英文名称"
 						},
 						{
 							"name": "bed_type",
 							"type": "String",
-							"description": "标准房型床型",
-							"required": true
+							"description": "标准房型床型"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "标准房型面积",
-							"required": true
+							"description": "标准房型面积"
 						},
 						{
 							"name": "window_type",
 							"type": "Number",
-							"description": "窗型，0:无窗,1:有窗,2:部分有窗,3:暗窗,4:部分暗窗",
-							"required": true
+							"description": "窗型，0:无窗,1:有窗,2:部分有窗,3:暗窗,4:部分暗窗"
 						}
-					]
+					],
+					"name": "results",
+					"type": "SroomTypePo[]",
+					"description": "SroomTypePo"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "error_code",
-					"required": true
+					"description": "error_code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "error_msg",
-					"required": true
+					"description": "error_msg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultSet",
+			"description": "top返回结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hstdf.shotel.exportsroomtype",
+	"apiChineseName": "导出一个卖家房型下的所有标准房型",
+	"description": "导出一个卖家酒店下的所有标准房型",
+	"id": 42725
 }

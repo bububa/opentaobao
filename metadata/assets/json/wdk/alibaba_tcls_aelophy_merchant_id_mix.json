@@ -1,8 +1,4 @@
 {
-	"id": 56818,
-	"name": "alibaba.tcls.aelophy.merchant.id.mix",
-	"apiChineseName": "商家用户id混淆",
-	"description": "商家用户id混淆",
 	"requestParams": [
 		{
 			"name": "union_uid",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "获取mixId成功",
-					"required": true
+					"description": "获取mixId成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "返回混淆id",
-					"required": true
+					"description": "返回混淆id"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.merchant.id.mix",
+	"apiChineseName": "商家用户id混淆",
+	"description": "商家用户id混淆",
+	"id": 56818
 }

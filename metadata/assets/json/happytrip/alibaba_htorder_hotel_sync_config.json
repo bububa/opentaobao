@@ -1,20 +1,16 @@
 {
-	"id": 51178,
-	"name": "alibaba.htorder.hotel.sync.config",
-	"apiChineseName": "同步配置信息",
-	"description": "同步配置信息",
 	"requestParams": [
 		{
-			"name": "data_entity",
-			"type": "HotelMessageConfigDto",
-			"description": "配置信息",
 			"subParams": [
 				{
 					"name": "segments",
-					"type": "null[]",
+					"type": "String[]",
 					"description": "配置信息"
 				}
-			]
+			],
+			"name": "data_entity",
+			"type": "HotelMessageConfigDto",
+			"description": "配置信息"
 		}
 	],
 	"responseParams": [
@@ -43,5 +39,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.htorder.hotel.sync.config",
+	"apiChineseName": "同步配置信息",
+	"description": "同步配置信息",
+	"id": 51178
 }

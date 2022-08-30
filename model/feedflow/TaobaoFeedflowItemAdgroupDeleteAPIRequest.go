@@ -13,7 +13,7 @@ import (
 type TaobaoFeedflowItemAdgroupDeleteAPIRequest struct {
 	model.Params
 	// 单元id列表
-	_adgroupIdList []int64
+	_adgroupIdList []string
 	// 计划id
 	_campaignId int64
 }
@@ -41,14 +41,14 @@ func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetApiParams() url.Values {
 
 // SetAdgroupIdList is AdgroupIdList Setter
 // 单元id列表
-func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdList []int64) error {
+func (r *TaobaoFeedflowItemAdgroupDeleteAPIRequest) SetAdgroupIdList(_adgroupIdList []string) error {
 	r._adgroupIdList = _adgroupIdList
 	r.Set("adgroup_id_list", _adgroupIdList)
 	return nil
 }
 
 // GetAdgroupIdList AdgroupIdList Getter
-func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetAdgroupIdList() []int64 {
+func (r TaobaoFeedflowItemAdgroupDeleteAPIRequest) GetAdgroupIdList() []string {
 	return r._adgroupIdList
 }
 

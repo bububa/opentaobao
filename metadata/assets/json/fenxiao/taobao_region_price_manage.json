@@ -1,8 +1,4 @@
 {
-	"id": 27253,
-	"name": "taobao.region.price.manage",
-	"apiChineseName": "编辑区域价格",
-	"description": "编辑区域价格",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -16,11 +12,6 @@
 			"description": "无sku传0"
 		},
 		{
-			"name": "regional_price_dtos",
-			"type": "RegionalPriceDto[]",
-			"description": "列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "city",
@@ -40,7 +31,12 @@
 					"description": "省",
 					"required": true
 				}
-			]
+			],
+			"name": "regional_price_dtos",
+			"type": "RegionalPriceDto[]",
+			"description": "列表",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "is_full",
@@ -54,5 +50,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.region.price.manage",
+	"apiChineseName": "编辑区域价格",
+	"description": "编辑区域价格",
+	"id": 27253
 }

@@ -1,8 +1,4 @@
 {
-	"id": 36939,
-	"name": "tmall.nr.fulfill.order.query",
-	"apiChineseName": "零售商获取品牌商的单笔订单",
-	"description": "零售商获取品牌商的单笔订单，后端服务有零售商和品牌商的绑定关系，存在开关控制；返回值存在品牌方用户的电话号码，当前电话号码是屏蔽中间四位",
 	"requestParams": [
 		{
 			"name": "biz_identity",
@@ -22,237 +18,204 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "返回",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "TradeOrderDetailDto",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "order_d_t_os",
-							"type": "NrOrderDto[]",
-							"description": "子订单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "create_time",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "buyer_nick",
 									"type": "String",
-									"description": "买家昵称",
-									"required": true
+									"description": "买家昵称"
 								},
 								{
 									"name": "seller_nick",
 									"type": "String",
-									"description": "卖家昵称",
-									"required": true
+									"description": "卖家昵称"
 								},
 								{
 									"name": "refund_status",
 									"type": "String",
-									"description": "退款状态退款状态。退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，SELLER_REFUSE_BUYER(卖家拒绝退款)，CLOSED(退款关闭)，SUCCESS(退款成功)",
-									"required": true
+									"description": "退款状态退款状态。退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，SELLER_REFUSE_BUYER(卖家拒绝退款)，CLOSED(退款关闭)，SUCCESS(退款成功)"
 								},
 								{
 									"name": "num",
 									"type": "Number",
-									"description": "购买数量",
-									"required": true
+									"description": "购买数量"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "skuId",
-									"required": true
+									"description": "skuId"
 								},
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "商品ID",
-									"required": true
+									"description": "商品ID"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "商品标题",
-									"required": true
+									"description": "商品标题"
 								},
 								{
 									"name": "order_id",
 									"type": "Number",
-									"description": "子订单号",
-									"required": true
+									"description": "子订单号"
 								},
 								{
 									"name": "adjust_fee",
 									"type": "Number",
-									"description": "修改价格修改的金额",
-									"required": true
+									"description": "修改价格修改的金额"
 								},
 								{
 									"name": "discount_fee",
 									"type": "Number",
-									"description": "店铺优惠的分摊",
-									"required": true
+									"description": "店铺优惠的分摊"
 								},
 								{
 									"name": "actual_paid_fee",
 									"type": "Number",
-									"description": "实际付款金额",
-									"required": true
+									"description": "实际付款金额"
 								},
 								{
 									"name": "auction_price",
 									"type": "Number",
-									"description": "商品价格",
-									"required": true
+									"description": "商品价格"
 								},
 								{
 									"name": "out_id_item_code",
 									"type": "String",
-									"description": "outIdItemCode",
-									"required": true
+									"description": "outIdItemCode"
 								}
-							]
+							],
+							"name": "order_d_t_os",
+							"type": "NrOrderDto[]",
+							"description": "子订单列表"
 						},
 						{
 							"name": "store_code",
 							"type": "String",
-							"description": "门店编码",
-							"required": true
+							"description": "门店编码"
 						},
 						{
 							"name": "appoint_end_time",
 							"type": "String",
-							"description": "预约结束时间",
-							"required": true
+							"description": "预约结束时间"
 						},
 						{
 							"name": "appoint_start_time",
 							"type": "String",
-							"description": "预约开始时间",
-							"required": true
+							"description": "预约开始时间"
 						},
 						{
 							"name": "receiver_address",
 							"type": "String",
-							"description": "收货详细地址_商家没有入塔不提供",
-							"required": true
+							"description": "收货详细地址_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_town",
 							"type": "String",
-							"description": "镇_商家没有入塔不提供",
-							"required": true
+							"description": "镇_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_district",
 							"type": "String",
-							"description": "区_商家没有入塔不提供",
-							"required": true
+							"description": "区_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_city",
 							"type": "String",
-							"description": "城市_商家没有入塔不提供",
-							"required": true
+							"description": "城市_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_province",
 							"type": "String",
-							"description": "省_商家没有入塔不提供",
-							"required": true
+							"description": "省_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_phone",
 							"type": "String",
-							"description": "电话_商家没有入塔不提供",
-							"required": true
+							"description": "电话_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_mobile",
 							"type": "String",
-							"description": "手机_商家没有入塔不提供",
-							"required": true
+							"description": "手机_商家没有入塔不提供"
 						},
 						{
 							"name": "receiver_name",
 							"type": "String",
-							"description": "收货人_商家没有入塔不提供",
-							"required": true
+							"description": "收货人_商家没有入塔不提供"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "交易状态可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
-							"required": true
+							"description": "交易状态可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "主订单",
-							"required": true
+							"description": "主订单"
 						},
 						{
 							"name": "create_time",
 							"type": "String",
-							"description": "createTime",
-							"required": true
+							"description": "createTime"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "买家昵称",
-							"required": true
+							"description": "买家昵称"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "卖家昵称",
-							"required": true
+							"description": "卖家昵称"
 						},
 						{
 							"name": "out_id_store_code",
 							"type": "String",
-							"description": "门店的外部编号",
-							"required": true
+							"description": "门店的外部编号"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "TradeOrderDetailDto",
+					"description": "返回数据"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.order.query",
+	"apiChineseName": "零售商获取品牌商的单笔订单",
+	"description": "零售商获取品牌商的单笔订单，后端服务有零售商和品牌商的绑定关系，存在开关控制；返回值存在品牌方用户的电话号码，当前电话号码是屏蔽中间四位",
+	"id": 36939
 }

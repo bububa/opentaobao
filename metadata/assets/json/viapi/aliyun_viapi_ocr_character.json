@@ -1,8 +1,4 @@
 {
-	"id": 50730,
-	"name": "aliyun.viapi.ocr.character",
-	"apiChineseName": "通用文字识别",
-	"description": "获取通用的文字信息。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -35,21 +31,10 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "Result[]",
-					"description": "返回识别信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "text_rectangle",
-							"type": "TextRectangle",
-							"description": "文字区域",
-							"required": true,
 							"subParams": [
 								{
 									"name": "left",
@@ -81,7 +66,11 @@
 									"description": "文字区域宽度",
 									"required": true
 								}
-							]
+							],
+							"name": "text_rectangle",
+							"type": "TextRectangle",
+							"description": "文字区域",
+							"required": true
 						},
 						{
 							"name": "probability",
@@ -95,9 +84,20 @@
 							"description": "文字内容",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "Result[]",
+					"description": "返回识别信息",
+					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.ocr.character",
+	"apiChineseName": "通用文字识别",
+	"description": "获取通用的文字信息。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50730
 }

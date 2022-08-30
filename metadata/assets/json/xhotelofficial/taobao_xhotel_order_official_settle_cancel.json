@@ -1,8 +1,4 @@
 {
-	"id": 26070,
-	"name": "taobao.xhotel.order.official.settle.cancel",
-	"apiChineseName": "官网信用住取消结账",
-	"description": "用于官网信用住取消结账",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "返回信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.official.settle.cancel",
+	"apiChineseName": "官网信用住取消结账",
+	"description": "用于官网信用住取消结账",
+	"id": 26070
 }

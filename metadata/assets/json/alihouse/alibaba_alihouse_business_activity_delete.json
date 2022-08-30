@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_activity_id",
+					"type": "String",
+					"description": "外部活动ID",
+					"required": true
+				}
+			],
+			"name": "bai_yi_activity_data_dto",
+			"type": "BusinessActivityDataDto",
+			"description": "数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "主体公司ID"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.business.activity.delete",
+	"apiChineseName": "电商券活动删除",
+	"description": "电商券活动删除",
+	"id": 58583
+}

@@ -1,13 +1,6 @@
 {
-	"id": 23431,
-	"name": "taobao.mtop.upload.token.get",
-	"apiChineseName": "获取文件上传授权",
-	"description": "获取mtop文件上传授权",
 	"requestParams": [
 		{
-			"name": "param_upload_token_request",
-			"type": "UploadTokenRequestV",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "file_size",
@@ -44,7 +37,10 @@
 					"type": "String",
 					"description": "多媒体中心分配的业务码, mtopupload或其他"
 				}
-			]
+			],
+			"name": "param_upload_token_request",
+			"type": "UploadTokenRequestV",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
@@ -83,5 +79,9 @@
 			"type": "String",
 			"description": "颁发的上传令牌"
 		}
-	]
+	],
+	"name": "taobao.mtop.upload.token.get",
+	"apiChineseName": "获取文件上传授权",
+	"description": "获取mtop文件上传授权",
+	"id": 23431
 }

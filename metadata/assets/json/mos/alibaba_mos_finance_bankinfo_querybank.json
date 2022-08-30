@@ -1,8 +1,4 @@
 {
-	"id": 43618,
-	"name": "alibaba.mos.finance.bankinfo.querybank",
-	"apiChineseName": "供应商银行账号查询",
-	"description": "查询供应商对应的银行账号信息",
 	"requestParams": [
 		{
 			"name": "supplier_id",
@@ -22,211 +18,182 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总量",
-					"required": true
+					"description": "总量"
 				},
 				{
 					"name": "extra",
-					"type": "Json",
-					"description": "扩展",
-					"required": true
+					"type": "String",
+					"description": "扩展"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "全链路追踪id",
-					"required": true
+					"description": "全链路追踪id"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "描述",
-					"required": true
+					"description": "描述"
 				},
 				{
-					"name": "data",
-					"type": "SupplierBankInfoDto",
-					"description": "是否成功",
-					"required": true,
 					"subParams": [
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "国家名",
-							"required": true
+							"description": "国家名"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "地区名",
-							"required": true
+							"description": "地区名"
 						},
 						{
 							"name": "province_code",
 							"type": "String",
-							"description": "省代码",
-							"required": true
+							"description": "省代码"
 						},
 						{
 							"name": "city_code",
 							"type": "String",
-							"description": "城市代码",
-							"required": true
+							"description": "城市代码"
 						},
 						{
 							"name": "province_name",
 							"type": "String",
-							"description": "省名",
-							"required": true
+							"description": "省名"
 						},
 						{
 							"name": "co_code",
 							"type": "String",
-							"description": "门店号",
-							"required": true
+							"description": "门店号"
 						},
 						{
 							"name": "receive_account",
 							"type": "String",
-							"description": "收款银行账号",
-							"required": true
+							"description": "收款银行账号"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "主键",
-							"required": true
+							"description": "主键"
 						},
 						{
 							"name": "bank_branch_name",
 							"type": "String",
-							"description": "支行名",
-							"required": true
+							"description": "支行名"
 						},
 						{
 							"name": "cnaps_code",
 							"type": "String",
-							"description": "联行号",
-							"required": true
+							"description": "联行号"
 						},
 						{
 							"name": "approval_status",
 							"type": "Number",
-							"description": "审核状态",
-							"required": true
+							"description": "审核状态"
 						},
 						{
 							"name": "receive_name",
 							"type": "String",
-							"description": "收款账户名",
-							"required": true
+							"description": "收款账户名"
 						},
 						{
 							"name": "co_name",
 							"type": "String",
-							"description": "门店名",
-							"required": true
+							"description": "门店名"
 						},
 						{
 							"name": "bank_branch_code",
 							"type": "String",
-							"description": "支行号",
-							"required": true
+							"description": "支行号"
 						},
 						{
 							"name": "supplier_id",
 							"type": "String",
-							"description": "供应商号",
-							"required": true
+							"description": "供应商号"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "country_code",
 							"type": "String",
-							"description": "国家号",
-							"required": true
+							"description": "国家号"
 						},
 						{
 							"name": "business_type",
 							"type": "Number",
-							"description": "业务乐行",
-							"required": true
+							"description": "业务乐行"
 						},
 						{
 							"name": "bank_name",
 							"type": "String",
-							"description": "银行名",
-							"required": true
+							"description": "银行名"
 						},
 						{
 							"name": "relation_account_id",
 							"type": "Number",
-							"description": "关联账号id",
-							"required": true
+							"description": "关联账号id"
 						},
 						{
 							"name": "bank_code",
 							"type": "String",
-							"description": "银行号",
-							"required": true
+							"description": "银行号"
 						},
 						{
 							"name": "account_type",
 							"type": "Number",
-							"description": "类型, 个人, 企业",
-							"required": true
+							"description": "类型, 个人, 企业"
 						},
 						{
 							"name": "approval_type",
 							"type": "Number",
-							"description": "操作类型",
-							"required": true
+							"description": "操作类型"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SupplierBankInfoDto",
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "result_code",
-					"type": "Json",
-					"description": "返回值",
-					"required": true
+					"type": "String",
+					"description": "返回值"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.finance.bankinfo.querybank",
+	"apiChineseName": "供应商银行账号查询",
+	"description": "查询供应商对应的银行账号信息",
+	"id": 43618
 }

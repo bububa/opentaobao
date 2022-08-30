@@ -16,6 +16,8 @@ type TaobaoOmniDealerOdersGetData struct {
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 多级时效预约单结束预约时间
 	ExpectEnd string `json:"expect_end,omitempty" xml:"expect_end,omitempty"`
+	// 履约门店的商家门店编码
+	FulfillmentStoreOutId string `json:"fulfillment_store_out_id,omitempty" xml:"fulfillment_store_out_id,omitempty"`
 	// 门店履约类型，可选值：PICKED_UP_IN_STORES(门店自提), STORE_DELIVERY(门店发货)
 	FulfillmentType string `json:"fulfillment_type,omitempty" xml:"fulfillment_type,omitempty"`
 	// 市
@@ -54,12 +56,14 @@ type TaobaoOmniDealerOdersGetData struct {
 	BuyerMemo string `json:"buyer_memo,omitempty" xml:"buyer_memo,omitempty"`
 	// 订单状态，可选值：WAIT_BUYER_PAY(等待买家付款),  WAIT_SELLER_SEND_GOODS(等待卖家发货),  SELLER_CONSIGNED_PART(卖家部分发货),  WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货]),  TRADE_BUYER_SIGNED(买家已签收（货到付款专用）),  TRADE_FINISHED(交易成功),  TRADE_CLOSED(交易关闭),  TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭),  TRADE_NO_CREATE_PAY(没有创建外部交易（支付宝交易）)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 履约门店的商家门店编码
-	FulfillmentStoreOutId string `json:"fulfillment_store_out_id,omitempty" xml:"fulfillment_store_out_id,omitempty"`
 	// 优惠金额，单位：分
 	DiscountFee int64 `json:"discount_fee,omitempty" xml:"discount_fee,omitempty"`
+	// 履约门店ID
+	FulfillmentStoreId int64 `json:"fulfillment_store_id,omitempty" xml:"fulfillment_store_id,omitempty"`
 	// 主订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 买家实际支付给卖家的金额，单位：分
+	ActualTotalFee int64 `json:"actual_total_fee,omitempty" xml:"actual_total_fee,omitempty"`
 	// 卖家ID
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 手工调整金额，单位：分
@@ -68,12 +72,8 @@ type TaobaoOmniDealerOdersGetData struct {
 	DealerSellerId int64 `json:"dealer_seller_id,omitempty" xml:"dealer_seller_id,omitempty"`
 	// 邮费单位分
 	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
-	// 总金额，单价×数量，不包含运费和折扣，单位：分
-	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 买家实际支付给卖家的金额，单位：分
-	ActualTotalFee int64 `json:"actual_total_fee,omitempty" xml:"actual_total_fee,omitempty"`
-	// 履约门店ID
-	FulfillmentStoreId int64 `json:"fulfillment_store_id,omitempty" xml:"fulfillment_store_id,omitempty"`
 	// 购物金信息输出
 	ExpandCardInfo *ExpandCardInfo `json:"expand_card_info,omitempty" xml:"expand_card_info,omitempty"`
+	// 总金额，单价×数量，不包含运费和折扣，单位：分
+	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 }

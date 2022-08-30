@@ -1,14 +1,6 @@
 {
-	"id": 44810,
-	"name": "alibaba.alihealth.alidoc.drug.store.add",
-	"apiChineseName": "gsk新增药店",
-	"description": "GSK上传药店信息",
 	"requestParams": [
 		{
-			"name": "drug_store_add_top_request",
-			"type": "DrugStoreAddTopRequest",
-			"description": "新增药店",
-			"required": true,
 			"subParams": [
 				{
 					"name": "drug_store_address",
@@ -51,7 +43,11 @@
 					"description": "药店名称",
 					"required": true
 				}
-			]
+			],
+			"name": "drug_store_add_top_request",
+			"type": "DrugStoreAddTopRequest",
+			"description": "新增药店",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -70,5 +66,9 @@
 			"type": "String",
 			"description": "errMessage"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.alidoc.drug.store.add",
+	"apiChineseName": "gsk新增药店",
+	"description": "GSK上传药店信息",
+	"id": 44810
 }

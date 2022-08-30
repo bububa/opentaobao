@@ -12,16 +12,16 @@ import (
 // ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种时可提供接种点详情。
 type AlibabaHealthVaccinPovUpdateAPIRequest struct {
 	model.Params
+	// 接种点编码
+	_povNo string
+	// 接种点名称
+	_povName string
 	// 接种点联系电话
 	_telephone string
 	// 接种点具体地址
 	_address string
 	// 接种点介绍
 	_description string
-	// 接种点编码
-	_povNo string
-	// 接种点名称
-	_povName string
 	// 服务时间
 	_businessTime string
 }
@@ -45,6 +45,32 @@ func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetPovNo is PovNo Setter
+// 接种点编码
+func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovNo(_povNo string) error {
+	r._povNo = _povNo
+	r.Set("pov_no", _povNo)
+	return nil
+}
+
+// GetPovNo PovNo Getter
+func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovNo() string {
+	return r._povNo
+}
+
+// SetPovName is PovName Setter
+// 接种点名称
+func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovName(_povName string) error {
+	r._povName = _povName
+	r.Set("pov_name", _povName)
+	return nil
+}
+
+// GetPovName PovName Getter
+func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovName() string {
+	return r._povName
 }
 
 // SetTelephone is Telephone Setter
@@ -84,32 +110,6 @@ func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetDescription(_description str
 // GetDescription Description Getter
 func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetDescription() string {
 	return r._description
-}
-
-// SetPovNo is PovNo Setter
-// 接种点编码
-func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovNo(_povNo string) error {
-	r._povNo = _povNo
-	r.Set("pov_no", _povNo)
-	return nil
-}
-
-// GetPovNo PovNo Getter
-func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovNo() string {
-	return r._povNo
-}
-
-// SetPovName is PovName Setter
-// 接种点名称
-func (r *AlibabaHealthVaccinPovUpdateAPIRequest) SetPovName(_povName string) error {
-	r._povName = _povName
-	r.Set("pov_name", _povName)
-	return nil
-}
-
-// GetPovName PovName Getter
-func (r AlibabaHealthVaccinPovUpdateAPIRequest) GetPovName() string {
-	return r._povName
 }
 
 // SetBusinessTime is BusinessTime Setter

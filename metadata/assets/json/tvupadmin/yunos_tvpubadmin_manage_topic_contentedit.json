@@ -1,8 +1,4 @@
 {
-	"id": 31190,
-	"name": "yunos.tvpubadmin.manage.topic.contentedit",
-	"apiChineseName": "专题关联内容编辑",
-	"description": "编辑专题关联的内容",
 	"requestParams": [
 		{
 			"name": "content_json",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "操作返回结果"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.manage.topic.contentedit",
+	"apiChineseName": "专题关联内容编辑",
+	"description": "编辑专题关联的内容",
+	"id": 31190
 }

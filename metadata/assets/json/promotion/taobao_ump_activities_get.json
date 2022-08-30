@@ -1,8 +1,4 @@
 {
-	"id": 10720,
-	"name": "taobao.ump.activities.get",
-	"apiChineseName": "查询活动列表",
-	"description": "查询活动列表",
 	"requestParams": [
 		{
 			"name": "tool_id",
@@ -14,16 +10,13 @@
 			"name": "page_no",
 			"type": "Number",
 			"description": "分页的页码",
-			"required": true,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页的最大条数",
-			"required": true,
-			"maxValue": 50,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -37,5 +30,9 @@
 			"type": "Number",
 			"description": "记录总数"
 		}
-	]
+	],
+	"name": "taobao.ump.activities.get",
+	"apiChineseName": "查询活动列表",
+	"description": "查询活动列表",
+	"id": 10720
 }

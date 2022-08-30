@@ -1,13 +1,6 @@
 {
-	"id": 44335,
-	"name": "alibaba.damai.maitix.project.distribution.querybypage",
-	"apiChineseName": "分销项目分页查询项目列表服务",
-	"description": "分销项目分页查询项目列表服务",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ProjectPageParam",
-			"description": "入参param",
 			"subParams": [
 				{
 					"name": "page_no",
@@ -21,280 +14,245 @@
 					"description": "每页数据大小，可以稍微大一点",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "ProjectPageParam",
+			"description": "入参param"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "ext_map",
-					"type": "Json",
-					"description": "扩展信息",
-					"required": true
+					"type": "String",
+					"description": "扩展信息"
 				},
 				{
-					"name": "model",
-					"type": "Page",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页码",
-							"required": true
+							"description": "当前页码"
 						},
 						{
-							"name": "data_arr_list",
-							"type": "ProjectDto[]",
-							"description": "数据对象",
-							"required": true,
 							"subParams": [
 								{
-									"name": "city",
-									"type": "IdNameDto",
-									"description": "城市信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "城市id",
-											"required": true
+											"description": "城市id"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "城市名称",
-											"required": true
+											"description": "城市名称"
 										}
-									]
+									],
+									"name": "city",
+									"type": "IdNameDto",
+									"description": "城市信息"
 								},
 								{
 									"name": "classify_code",
 									"type": "String",
-									"description": "项目大类编码-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目大类编码-废弃,使用项目详情结果的内容"
 								},
 								{
 									"name": "classify_name",
 									"type": "String",
-									"description": "项目大类名称-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目大类名称-废弃,使用项目详情结果的内容"
 								},
 								{
-									"name": "country",
-									"type": "IdNameDto",
-									"description": "国家",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "城市id",
-											"required": true
+											"description": "城市id"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "城市名称",
-											"required": true
+											"description": "城市名称"
 										}
-									]
+									],
+									"name": "country",
+									"type": "IdNameDto",
+									"description": "国家"
 								},
 								{
 									"name": "introduce",
 									"type": "String",
-									"description": "项目介绍，目前该字段废弃",
-									"required": true
+									"description": "项目介绍，目前该字段废弃"
 								},
 								{
 									"name": "is_has_seat",
 									"type": "Number",
-									"description": "是否有座： 0=无座 1=有座",
-									"required": true
+									"description": "是否有座： 0=无座 1=有座"
 								},
 								{
 									"name": "poster_url",
 									"type": "String",
-									"description": "项目海报图片地址，目前该字段废弃",
-									"required": true
+									"description": "项目海报图片地址，目前该字段废弃"
 								},
 								{
 									"name": "project_id",
 									"type": "Number",
-									"description": "项目ID",
-									"required": true
+									"description": "项目ID"
 								},
 								{
 									"name": "project_name",
 									"type": "String",
-									"description": "项目名称",
-									"required": true
+									"description": "项目名称"
 								},
 								{
 									"name": "project_status",
 									"type": "Number",
-									"description": "项目状态，0：创建中 10：已创建 20：待销售 30：销售中 40：项目取消 50：项目结束 60:定时开售，一般30之前的状态不会透出给渠道",
-									"required": true
+									"description": "项目状态，0：创建中 10：已创建 20：待销售 30：销售中 40：项目取消 50：项目结束 60:定时开售，一般30之前的状态不会透出给渠道"
 								},
 								{
 									"name": "project_type",
 									"type": "Number",
-									"description": "项目类型 0:普通项目-废弃",
-									"required": true
+									"description": "项目类型 0:普通项目-废弃"
 								},
 								{
-									"name": "province",
-									"type": "IdNameDto",
-									"description": "省",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "省id",
-											"required": true
+											"description": "省id"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "省名称",
-											"required": true
+											"description": "省名称"
 										}
-									]
+									],
+									"name": "province",
+									"type": "IdNameDto",
+									"description": "省"
 								},
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "备注-废弃",
-									"required": true
+									"description": "备注-废弃"
 								},
 								{
 									"name": "sub_classify_code",
 									"type": "String",
-									"description": "项目子类编码-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目子类编码-废弃,使用项目详情结果的内容"
 								},
 								{
 									"name": "sub_classify_name",
 									"type": "String",
-									"description": "项目子类名称-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目子类名称-废弃,使用项目详情结果的内容"
 								},
 								{
 									"name": "third_classify_code",
 									"type": "String",
-									"description": "项目三级分类编码-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目三级分类编码-废弃,使用项目详情结果的内容"
 								},
 								{
 									"name": "third_classify_name",
 									"type": "String",
-									"description": "项目三级分类名称-废弃,使用项目详情结果的内容",
-									"required": true
+									"description": "项目三级分类名称-废弃,使用项目详情结果的内容"
 								},
 								{
 									"name": "trader_ids_arr_list",
 									"type": "Number[]",
-									"description": "主办方ID",
-									"required": true
+									"description": "主办方ID"
 								},
 								{
 									"name": "trader_names_arr_list",
 									"type": "String[]",
-									"description": "主办方名称",
-									"required": true
+									"description": "主办方名称"
 								},
 								{
-									"name": "venue",
-									"type": "VenueDto",
-									"description": "场馆",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "场馆id",
-											"required": true
+											"description": "场馆id"
 										},
 										{
 											"name": "lat",
 											"type": "String",
-											"description": "纬度",
-											"required": true
+											"description": "纬度"
 										},
 										{
 											"name": "lng",
 											"type": "String",
-											"description": "经度",
-											"required": true
+											"description": "经度"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "场馆名称",
-											"required": true
+											"description": "场馆名称"
 										},
 										{
 											"name": "venue_address",
 											"type": "String",
-											"description": "场馆地址",
-											"required": true
+											"description": "场馆地址"
 										}
-									]
+									],
+									"name": "venue",
+									"type": "VenueDto",
+									"description": "场馆"
 								},
 								{
 									"name": "is_test",
 									"type": "Number",
-									"description": "是否测试项目 0-正式项目 1-测试项目",
-									"required": true
+									"description": "是否测试项目 0-正式项目 1-测试项目"
 								}
-							]
+							],
+							"name": "data_arr_list",
+							"type": "ProjectDto[]",
+							"description": "数据对象"
 						},
 						{
 							"name": "page_count",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总项目数",
-							"required": true
+							"description": "总项目数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Page",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口返回是否成功 true成功 false失败",
-					"required": true
+					"description": "接口返回是否成功 true成功 false失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.project.distribution.querybypage",
+	"apiChineseName": "分销项目分页查询项目列表服务",
+	"description": "分销项目分页查询项目列表服务",
+	"id": 44335
 }

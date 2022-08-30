@@ -1,8 +1,4 @@
 {
-	"id": 22288,
-	"name": "taobao.wlb.orderdetail.date.get",
-	"apiChineseName": "按照日期范围查询物流订单详情",
-	"description": "外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -29,19 +25,16 @@
 	],
 	"responseParams": [
 		{
-			"name": "order_detail_list",
-			"type": "WlbOrderDetail []",
-			"description": "物流宝订单，并且包含订单详情",
 			"subParams": [
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "出库或者入库，IN表示入库，OUT表示出库"
+				},
 				{
 					"name": "order_code",
 					"type": "String",
 					"description": "订单编码"
-				},
-				{
-					"name": "order_source_code",
-					"type": "String",
-					"description": "对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用"
 				},
 				{
 					"name": "order_source",
@@ -49,9 +42,9 @@
 					"description": "订单来源:\u003cbr/\u003e产生物流订单的原因，比如:\u003cbr/\u003e\u003cbr/\u003e订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS"
 				},
 				{
-					"name": "store_code",
+					"name": "order_source_code",
 					"type": "String",
-					"description": "仓库编码"
+					"description": "对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用"
 				},
 				{
 					"name": "order_type",
@@ -64,9 +57,19 @@
 					"description": "(1)其它:    OTHER\u003cbr/\u003e(2)淘宝交易: TAOBAO\u003cbr/\u003e(3)301:调拨: ALLOCATION\u003cbr/\u003e(4)401:盘点:CHECK\u003cbr/\u003e(5)501:销售采购:PRUCHASE"
 				},
 				{
-					"name": "operate_type",
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
+				},
+				{
+					"name": "user_nick",
 					"type": "String",
-					"description": "出库或者入库，IN表示入库，OUT表示出库"
+					"description": "卖家NICK"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
 				},
 				{
 					"name": "order_status",
@@ -79,60 +82,22 @@
 					"description": "订单备注"
 				},
 				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "卖家ID"
-				},
-				{
-					"name": "user_nick",
-					"type": "String",
-					"description": "卖家NICK"
-				},
-				{
 					"name": "buyer_nick",
 					"type": "String",
 					"description": "如果是交易单，则显示交易中买家昵称"
 				},
 				{
-					"name": "order_item_list",
-					"type": "WlbOrderItem[]",
-					"description": "物流宝订单对应的商品详情",
+					"name": "modify_time",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "订单最后一次修改时间"
+				},
+				{
 					"subParams": [
-						{
-							"name": "order_code",
-							"type": "String",
-							"description": "物流宝订单编码"
-						},
-						{
-							"name": "item_name",
-							"type": "String",
-							"description": "订单商品名称"
-						},
-						{
-							"name": "item_code",
-							"type": "String",
-							"description": "订单商品编码"
-						},
-						{
-							"name": "plan_quantity",
-							"type": "Number",
-							"description": "计划数量"
-						},
-						{
-							"name": "real_quantity",
-							"type": "Number",
-							"description": "实际数量"
-						},
-						{
-							"name": "confirm_status",
-							"type": "String",
-							"description": "物流宝订单确认状态：\u003cbr/\u003eNO_NEED_CONFIRM--不需要确认\u003cbr/\u003eWAIT_CONFIRM--待确认\u003cbr/\u003eCONFIRMED--已确认"
-						},
-						{
-							"name": "order_id",
-							"type": "Number",
-							"description": "物流宝订单id"
-						},
 						{
 							"name": "id",
 							"type": "Number",
@@ -147,6 +112,21 @@
 							"name": "user_nick",
 							"type": "String",
 							"description": "订单商品用户昵称"
+						},
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "INVENTORY_TYPE_SELL 可销库存\u003cbr/\u003eINVENTORY_TYPE_IMPERFECTIONS 残次库存\u003cbr/\u003eINVENTORY_TYPE_FREEZE 冻结库存\u003cbr/\u003eINVENTORY_TYPE_ON_PASSAGE 在途库存\u003cbr/\u003eINVENTORY_TYPE_ENGINE_DAMAGE 机损\u003cbr/\u003eINVENTORY_TYPE_BOX_DAMAGE 箱损"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "物流宝订单id"
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "物流宝订单编码"
 						},
 						{
 							"name": "order_sub_type",
@@ -169,6 +149,16 @@
 							"description": "物流宝订单商品的物流宝商品id"
 						},
 						{
+							"name": "item_name",
+							"type": "String",
+							"description": "订单商品名称"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "订单商品编码"
+						},
+						{
 							"name": "provider_tp_id",
 							"type": "Number",
 							"description": "货主id"
@@ -179,14 +169,24 @@
 							"description": "货主nick"
 						},
 						{
+							"name": "plan_quantity",
+							"type": "Number",
+							"description": "计划数量"
+						},
+						{
+							"name": "real_quantity",
+							"type": "Number",
+							"description": "实际数量"
+						},
+						{
 							"name": "item_price",
 							"type": "Number",
 							"description": "商品价格"
 						},
 						{
-							"name": "publish_version",
-							"type": "Number",
-							"description": "商品发布版本号"
+							"name": "confirm_status",
+							"type": "String",
+							"description": "物流宝订单确认状态：\u003cbr/\u003eNO_NEED_CONFIRM--不需要确认\u003cbr/\u003eWAIT_CONFIRM--待确认\u003cbr/\u003eCONFIRMED--已确认"
 						},
 						{
 							"name": "remark",
@@ -199,48 +199,38 @@
 							"description": "批次号备注"
 						},
 						{
-							"name": "picture_url",
-							"type": "String",
-							"description": "订单商品图片url"
-						},
-						{
-							"name": "ext_entity_type",
-							"type": "String",
-							"description": "外部实体类型"
-						},
-						{
 							"name": "ext_entity_id",
 							"type": "String",
 							"description": "外部实体id"
-						},
-						{
-							"name": "inventory_type",
-							"type": "String",
-							"description": "INVENTORY_TYPE_SELL 可销库存\u003cbr/\u003eINVENTORY_TYPE_IMPERFECTIONS 残次库存\u003cbr/\u003eINVENTORY_TYPE_FREEZE 冻结库存\u003cbr/\u003eINVENTORY_TYPE_ON_PASSAGE 在途库存\u003cbr/\u003eINVENTORY_TYPE_ENGINE_DAMAGE 机损\u003cbr/\u003eINVENTORY_TYPE_BOX_DAMAGE 箱损"
 						},
 						{
 							"name": "flag",
 							"type": "Number",
 							"description": "第一位标示是否为赠品"
 						}
-					]
+					],
+					"name": "order_item_list",
+					"type": "WlbOrderItem[]",
+					"description": "物流宝订单商品"
 				},
 				{
-					"name": "create_time",
-					"type": "Date",
-					"description": "订单创建时间"
-				},
-				{
-					"name": "modify_time",
-					"type": "Date",
-					"description": "订单最后一次修改时间"
+					"name": "open_uid",
+					"type": "String",
+					"description": "买家openId"
 				}
-			]
+			],
+			"name": "order_detail_list",
+			"type": "WlbOrderDetail []",
+			"description": "物流宝订单，并且包含订单详情"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "总数"
 		}
-	]
+	],
+	"name": "taobao.wlb.orderdetail.date.get",
+	"apiChineseName": "按照日期范围查询物流订单详情",
+	"description": "外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情",
+	"id": 22288
 }

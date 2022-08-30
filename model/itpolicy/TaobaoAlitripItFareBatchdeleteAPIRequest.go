@@ -13,7 +13,9 @@ import (
 type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 	model.Params
 	// 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-	_statusList []int64
+	_statusList []string
+	// json格式的字符串，扩展属性，预留
+	_extendAttributes string
 	// 航空公司
 	_airline string
 	// 到达城市 可传多个 AND关系
@@ -24,6 +26,8 @@ type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 	_depCity string
 	// 最晚修改时间
 	_endModifyDate string
+	// 去程适用结束日期
+	_endRestrictGoDate string
 	// 文件编号
 	_fileCode string
 	// 维护方式，可选值（UI：后台界面录入；EXCEL：后台excel批量导入；API：top接口添加）
@@ -34,10 +38,6 @@ type TaobaoAlitripItFareBatchdeleteAPIRequest struct {
 	_startModifyDate string
 	// 去程适用开始日期
 	_startRestrictGoDate string
-	// 去程适用结束日期
-	_endRestrictGoDate string
-	// json格式的字符串，扩展属性，预留
-	_extendAttributes string
 	// 运价类型，1单程 2往返
 	_fareType int64
 	// 是否能够混舱
@@ -67,15 +67,28 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiParams() url.Values {
 
 // SetStatusList is StatusList Setter
 // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []int64) error {
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStatusList(_statusList []string) error {
 	r._statusList = _statusList
 	r.Set("statusList", _statusList)
 	return nil
 }
 
 // GetStatusList StatusList Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStatusList() []int64 {
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStatusList() []string {
 	return r._statusList
+}
+
+// SetExtendAttributes is ExtendAttributes Setter
+// json格式的字符串，扩展属性，预留
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
+	r._extendAttributes = _extendAttributes
+	r.Set("extendAttributes", _extendAttributes)
+	return nil
+}
+
+// GetExtendAttributes ExtendAttributes Getter
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetExtendAttributes() string {
+	return r._extendAttributes
 }
 
 // SetAirline is Airline Setter
@@ -143,6 +156,19 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndModifyDate() string {
 	return r._endModifyDate
 }
 
+// SetEndRestrictGoDate is EndRestrictGoDate Setter
+// 去程适用结束日期
+func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndRestrictGoDate(_endRestrictGoDate string) error {
+	r._endRestrictGoDate = _endRestrictGoDate
+	r.Set("endRestrictGoDate", _endRestrictGoDate)
+	return nil
+}
+
+// GetEndRestrictGoDate EndRestrictGoDate Getter
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndRestrictGoDate() string {
+	return r._endRestrictGoDate
+}
+
 // SetFileCode is FileCode Setter
 // 文件编号
 func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetFileCode(_fileCode string) error {
@@ -206,32 +232,6 @@ func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetStartRestrictGoDate(_start
 // GetStartRestrictGoDate StartRestrictGoDate Getter
 func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetStartRestrictGoDate() string {
 	return r._startRestrictGoDate
-}
-
-// SetEndRestrictGoDate is EndRestrictGoDate Setter
-// 去程适用结束日期
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetEndRestrictGoDate(_endRestrictGoDate string) error {
-	r._endRestrictGoDate = _endRestrictGoDate
-	r.Set("endRestrictGoDate", _endRestrictGoDate)
-	return nil
-}
-
-// GetEndRestrictGoDate EndRestrictGoDate Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetEndRestrictGoDate() string {
-	return r._endRestrictGoDate
-}
-
-// SetExtendAttributes is ExtendAttributes Setter
-// json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareBatchdeleteAPIRequest) SetExtendAttributes(_extendAttributes string) error {
-	r._extendAttributes = _extendAttributes
-	r.Set("extendAttributes", _extendAttributes)
-	return nil
-}
-
-// GetExtendAttributes ExtendAttributes Getter
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetExtendAttributes() string {
-	return r._extendAttributes
 }
 
 // SetFareType is FareType Setter

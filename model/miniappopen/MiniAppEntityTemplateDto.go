@@ -20,4 +20,10 @@ type MiniAppEntityTemplateDto struct {
 	OnlineVersion string `json:"online_version,omitempty" xml:"online_version,omitempty"`
 	// 线上码
 	OnlineCode string `json:"online_code,omitempty" xml:"online_code,omitempty"`
+	// 小部件别名
+	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
+	// 预览码
+	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
+	// 小部件版本
+	NewVersion string `json:"new_version,omitempty" xml:"new_version,omitempty"`
 }

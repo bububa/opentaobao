@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "user_name",
+			"type": "String",
+			"description": "二级节点用户名",
+			"maxLength": 100
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"maxLength": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	],
+	"name": "alibaba.alihealth.secondard.node.code.showurl",
+	"apiChineseName": "查询码信息url",
+	"description": "二级节点查询码信息url",
+	"id": 57663
+}

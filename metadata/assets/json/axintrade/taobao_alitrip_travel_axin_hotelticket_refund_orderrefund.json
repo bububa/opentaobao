@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商ID",
+			"required": true
+		},
+		{
+			"name": "purchase_sub_order_id",
+			"type": "Number",
+			"description": "采购单号",
+			"required": true
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "退款原因"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "退款ID"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "结果返回类"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotelticket.refund.orderrefund",
+	"apiChineseName": "阿信度假业务申请退款",
+	"description": "阿信度假业务申请退款",
+	"id": 62023
+}

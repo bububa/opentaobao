@@ -1,13 +1,6 @@
 {
-	"id": 39543,
-	"name": "alibaba.wdk.oldpos.refund.create",
-	"apiChineseName": "五道口外部商户老pos机产生的退款单同步进盒马",
-	"description": "淘鲜达外部商户老pos机产生的退款单同步进淘鲜达",
 	"requestParams": [
 		{
-			"name": "pos_refund_create_request",
-			"type": "PosRefundCreateRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "out_order_id",
@@ -74,34 +67,38 @@
 					"type": "Boolean",
 					"description": "是否称重商品"
 				}
-			]
+			],
+			"name": "pos_refund_create_request",
+			"type": "PosRefundCreateRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PosRefundCreateResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "returnCode",
-					"required": true
+					"description": "returnCode"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "returnMsg",
-					"required": true
+					"description": "returnMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PosRefundCreateResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.oldpos.refund.create",
+	"apiChineseName": "五道口外部商户老pos机产生的退款单同步进盒马",
+	"description": "淘鲜达外部商户老pos机产生的退款单同步进淘鲜达",
+	"id": 39543
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25454,
-	"name": "alibaba.security.jaq.spamregisterprevention.result.fetch",
-	"apiChineseName": "获取垃圾注册防控结果",
-	"description": "获取垃圾注册防控结果",
 	"requestParams": [
 		{
 			"name": "phone_number",
@@ -106,9 +102,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "jaq_account_risk_result",
-			"type": "JaqAccountRiskResult",
-			"description": "账号风控返回结果",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -116,14 +109,8 @@
 					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "JaqAccountRiskData",
-					"description": "风控结果的真正数据内容",
 					"subParams": [
 						{
-							"name": "detail_list",
-							"type": "JaqAccountRiskDetailItem[]",
-							"description": "详情列表",
 							"subParams": [
 								{
 									"name": "id",
@@ -145,7 +132,10 @@
 									"type": "Number",
 									"description": "分数"
 								}
-							]
+							],
+							"name": "detail_list",
+							"type": "JaqAccountRiskDetailItem[]",
+							"description": "详情列表"
 						},
 						{
 							"name": "event_id",
@@ -167,14 +157,24 @@
 							"type": "Number",
 							"description": "最终决定。0：可以接受；1：应该拒绝；2：需要人工审核"
 						}
-					]
+					],
+					"name": "data",
+					"type": "JaqAccountRiskData",
+					"description": "风控结果的真正数据内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
 					"description": "错误信息"
 				}
-			]
+			],
+			"name": "jaq_account_risk_result",
+			"type": "JaqAccountRiskResult",
+			"description": "账号风控返回结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.spamregisterprevention.result.fetch",
+	"apiChineseName": "获取垃圾注册防控结果",
+	"description": "获取垃圾注册防控结果",
+	"id": 25454
 }

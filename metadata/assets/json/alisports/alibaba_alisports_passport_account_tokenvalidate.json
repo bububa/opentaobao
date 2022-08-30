@@ -1,8 +1,4 @@
 {
-	"id": 28561,
-	"name": "alibaba.alisports.passport.account.tokenvalidate",
-	"apiChineseName": "阿里体育会员系统帐号登录注册token验证接口",
-	"description": "阿里体育会员系统帐号登录注册token验证接口",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -60,9 +56,6 @@
 			"description": "返回状态信息"
 		},
 		{
-			"name": "alisp_data",
-			"type": "String",
-			"description": "返回数据结果",
 			"subParams": [
 				{
 					"name": "secret",
@@ -70,7 +63,14 @@
 					"description": "secret",
 					"required": true
 				}
-			]
+			],
+			"name": "alisp_data",
+			"type": "String",
+			"description": "返回数据结果"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.tokenvalidate",
+	"apiChineseName": "阿里体育会员系统帐号登录注册token验证接口",
+	"description": "阿里体育会员系统帐号登录注册token验证接口",
+	"id": 28561
 }

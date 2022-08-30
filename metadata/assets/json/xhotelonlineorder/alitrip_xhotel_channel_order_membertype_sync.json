@@ -1,14 +1,6 @@
 {
-	"id": 55525,
-	"name": "alitrip.xhotel.channel.order.membertype.sync",
-	"apiChineseName": "酒店分销渠道会员类型同步",
-	"description": "酒店分销渠道会员类型同步",
 	"requestParams": [
 		{
-			"name": "channel_sync_order_member_type",
-			"type": "ChannelSyncOrderMemberType",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "member_type",
@@ -22,46 +14,49 @@
 					"description": "订单TID",
 					"required": true
 				}
-			]
+			],
+			"name": "channel_sync_order_member_type",
+			"type": "ChannelSyncOrderMemberType",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HbsResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否同步成功",
-					"required": true
+					"description": "是否同步成功"
 				},
 				{
 					"name": "result_msg4_dev",
 					"type": "String",
-					"description": "给开发用的错误信息",
-					"required": true
+					"description": "给开发用的错误信息"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "module",
 					"type": "Number",
-					"description": "插入成功",
-					"required": true
+					"description": "插入成功"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HbsResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alitrip.xhotel.channel.order.membertype.sync",
+	"apiChineseName": "酒店分销渠道会员类型同步",
+	"description": "酒店分销渠道会员类型同步",
+	"id": 55525
 }

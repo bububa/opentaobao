@@ -1,8 +1,4 @@
 {
-	"id": 32207,
-	"name": "alitrip.btrip.train.city.suggest",
-	"apiChineseName": "火车票城市搜索",
-	"description": "阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -25,57 +21,54 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtripApplyResult",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "SuggestRs",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
-							"name": "cities",
-							"type": "CityVo[]",
-							"description": "城市列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "城市码",
-									"required": true
+									"description": "城市码"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "城市名",
-									"required": true
+									"description": "城市名"
 								}
-							]
+							],
+							"name": "cities",
+							"type": "CityVo[]",
+							"description": "城市列表"
 						}
-					]
+					],
+					"name": "module",
+					"type": "SuggestRs",
+					"description": "结果对象"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtripApplyResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.btrip.train.city.suggest",
+	"apiChineseName": "火车票城市搜索",
+	"description": "阿里商旅提供火车票搜索接口，方便OA厂商更精准的对接",
+	"id": 32207
 }

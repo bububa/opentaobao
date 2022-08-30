@@ -1,8 +1,4 @@
 {
-	"id": 28522,
-	"name": "alibaba.aliqin.fc.iot.modbind",
-	"apiChineseName": "物联网绑定/换绑API",
-	"description": "支持用户的设备的换绑和解绑操作",
 	"requestParams": [
 		{
 			"name": "opion_type",
@@ -48,35 +44,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.iot.modbind",
+	"apiChineseName": "物联网绑定/换绑API",
+	"description": "支持用户的设备的换绑和解绑操作",
+	"id": 28522
 }

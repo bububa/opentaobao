@@ -1,14 +1,6 @@
 {
-	"id": 41300,
-	"name": "alibaba.scbp.target.ad.plan.operation",
-	"apiChineseName": "定向推广-计划开启/暂停/删除",
-	"description": "定向推广-计划开启/暂停/删除",
 	"requestParams": [
 		{
-			"name": "top_p4p_modify_quick_campaign_d_t_o",
-			"type": "TopP4pModifyQuickCampaignDto",
-			"description": "TopP4pModifyQuickCampaignDTO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "action",
@@ -22,7 +14,11 @@
 					"description": "计划ID",
 					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_modify_quick_campaign_d_t_o",
+			"type": "TopP4pModifyQuickCampaignDto",
+			"description": "TopP4pModifyQuickCampaignDTO",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -31,5 +27,9 @@
 			"type": "Number",
 			"description": "修改成功记录数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.operation",
+	"apiChineseName": "定向推广-计划开启/暂停/删除",
+	"description": "定向推广-计划开启/暂停/删除",
+	"id": 41300
 }

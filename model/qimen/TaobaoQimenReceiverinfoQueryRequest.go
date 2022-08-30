@@ -8,4 +8,8 @@ type TaobaoQimenReceiverinfoQueryRequest struct {
 	DeliveryOrderCode string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
 	// 货主ID
 	OwnerCode string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
+	// 仓库编码
+	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
+	// 使用场景。1001，顺丰电子面单发货；1002，4通一达电子面单发货；1003，EMS电子面单发货；1004，其他电子面单发货；2001，客户售后服务
+	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
 }

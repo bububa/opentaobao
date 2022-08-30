@@ -1,59 +1,52 @@
 {
-	"id": 41744,
-	"name": "taobao.miniapp.userInfo.get",
-	"apiChineseName": "用户开放信息获取",
-	"description": "获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "OpenUserInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "open_id",
 							"type": "String",
-							"description": "混淆字符串",
-							"required": true
+							"description": "混淆字符串"
 						},
 						{
 							"name": "avatar",
 							"type": "String",
-							"description": "头像链接",
-							"required": true
+							"description": "头像链接"
 						},
 						{
 							"name": "nick",
 							"type": "String",
-							"description": "snsNick",
-							"required": true
+							"description": "snsNick"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OpenUserInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.miniapp.userInfo.get",
+	"apiChineseName": "用户开放信息获取",
+	"description": "获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接",
+	"id": 41744
 }

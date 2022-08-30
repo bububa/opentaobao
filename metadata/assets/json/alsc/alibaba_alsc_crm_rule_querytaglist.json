@@ -1,14 +1,6 @@
 {
-	"id": 45775,
-	"name": "alibaba.alsc.crm.rule.querytaglist",
-	"apiChineseName": "查询标签列表",
-	"description": "查询标签列表",
 	"requestParams": [
 		{
-			"name": "param_plan_rule_query_open_req",
-			"type": "PlanRuleQueryOpenReq",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -41,108 +33,101 @@
 					"type": "String",
 					"description": "外部品牌ID"
 				}
-			]
+			],
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "分页返回模型",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页数量",
-					"required": true
+					"description": "每页数量"
 				},
 				{
-					"name": "result_list",
-					"type": "CrmTagOpenInfo[]",
-					"description": "商家标签模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deleted",
 							"type": "Boolean",
-							"description": "是否已删除",
-							"required": true
+							"description": "是否已删除"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "plan_id",
 							"type": "String",
-							"description": "会员计划ID",
-							"required": true
+							"description": "会员计划ID"
 						},
 						{
 							"name": "tag_id",
 							"type": "String",
-							"description": "标签ID",
-							"required": true
+							"description": "标签ID"
 						},
 						{
 							"name": "tag_name",
 							"type": "String",
-							"description": "标签名称",
-							"required": true
+							"description": "标签名称"
 						},
 						{
 							"name": "tag_type",
 							"type": "String",
-							"description": "标签类型",
-							"required": true
+							"description": "标签类型"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "CrmTagOpenInfo[]",
+					"description": "商家标签模型"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				},
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "总数量",
-					"required": true
+					"description": "总数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.rule.querytaglist",
+	"apiChineseName": "查询标签列表",
+	"description": "查询标签列表",
+	"id": 45775
 }

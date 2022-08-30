@@ -1,8 +1,4 @@
 {
-	"id": 30897,
-	"name": "alibaba.data.item.get",
-	"apiChineseName": "获取商品",
-	"description": "获取商品信息，作为客户端Weex鉴权的虚拟api",
 	"requestParams": [
 		{
 			"name": "un_named",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "获取商品信息，作为客户端Weex鉴权的虚拟api"
 		}
-	]
+	],
+	"name": "alibaba.data.item.get",
+	"apiChineseName": "获取商品",
+	"description": "获取商品信息，作为客户端Weex鉴权的虚拟api",
+	"id": 30897
 }

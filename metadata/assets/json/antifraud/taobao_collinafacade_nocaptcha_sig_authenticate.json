@@ -1,14 +1,6 @@
 {
-	"id": 24871,
-	"name": "taobao.collinafacade.nocaptcha.sig.authenticate",
-	"apiChineseName": "人机识别",
-	"description": "人机识别颁发签名串后,本接口负责向ISV提供签名串校验服务",
 	"requestParams": [
 		{
-			"name": "sig_authenticate_context",
-			"type": "SigAuthenticateContext",
-			"description": "签名串校验接口入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "access_key",
@@ -17,15 +9,9 @@
 					"required": true
 				},
 				{
-					"name": "token",
+					"name": "app_key",
 					"type": "String",
-					"description": "会话标识,由sip提供的tokenutil工具类生成",
-					"required": true
-				},
-				{
-					"name": "session_id",
-					"type": "String",
-					"description": "collinaface JS分配的会话id",
+					"description": "接入应用标识",
 					"required": true
 				},
 				{
@@ -35,18 +21,28 @@
 					"required": true
 				},
 				{
+					"name": "session_id",
+					"type": "String",
+					"description": "collinaface JS分配的会话id",
+					"required": true
+				},
+				{
 					"name": "sig",
 					"type": "String",
 					"description": "签名串",
 					"required": true
 				},
 				{
-					"name": "app_key",
+					"name": "token",
 					"type": "String",
-					"description": "接入应用标识",
+					"description": "会话标识,由sip提供的tokenutil工具类生成",
 					"required": true
 				}
-			]
+			],
+			"name": "sig_authenticate_context",
+			"type": "SigAuthenticateContext",
+			"description": "签名串校验接口入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -56,35 +52,35 @@
 			"description": "服务出参"
 		},
 		{
-			"name": "ret_detail",
-			"type": "SigAuthenticateResult",
-			"description": "返回authenticateResult",
 			"subParams": [
 				{
-					"name": "timestamp",
-					"type": "Number",
-					"description": "签名串生成的毫秒值(System.currentTimeMillis()).使用方自行判断此签名串是否已过期",
-					"required": true
-				},
-				{
 					"name": "code",
-					"type": "Json",
-					"description": "100\t验证通过\t验证通过 200\t服务器故障,此时ResultWrapper的success=false\t服务自身正确识别的服务器故障行为，请视同验证通过处理  900\t验证不通过\t预留9XX做为扩展，901:NOPASS_USER_APP，应用方传入参数有误,如appkey与access_key不匹配等",
-					"required": true
+					"type": "String",
+					"description": "100\t验证通过\t验证通过 200\t服务器故障,此时ResultWrapper的success=false\t服务自身正确识别的服务器故障行为，请视同验证通过处理  900\t验证不通过\t预留9XX做为扩展，901:NOPASS_USER_APP，应用方传入参数有误,如appkey与access_key不匹配等"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误描述消息",
-					"required": true
+					"description": "错误描述消息"
+				},
+				{
+					"name": "timestamp",
+					"type": "Number",
+					"description": "签名串生成的毫秒值(System.currentTimeMillis()).使用方自行判断此签名串是否已过期"
 				},
 				{
 					"name": "detail",
 					"type": "String",
-					"description": "detail",
-					"required": true
+					"description": "detail"
 				}
-			]
+			],
+			"name": "ret_detail",
+			"type": "SigAuthenticateResult",
+			"description": "返回authenticateResult"
 		}
-	]
+	],
+	"name": "taobao.collinafacade.nocaptcha.sig.authenticate",
+	"apiChineseName": "人机识别",
+	"description": "人机识别颁发签名串后,本接口负责向ISV提供签名串校验服务",
+	"id": 24871
 }

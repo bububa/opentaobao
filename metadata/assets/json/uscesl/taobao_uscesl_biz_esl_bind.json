@@ -1,8 +1,4 @@
 {
-	"id": 39108,
-	"name": "taobao.uscesl.biz.esl.bind",
-	"apiChineseName": "电子价签绑定接口",
-	"description": "电子价签商品绑定接口",
 	"requestParams": [
 		{
 			"name": "esl_bar_code",
@@ -40,5 +36,9 @@
 			"type": "Json",
 			"description": "成功与否看result.success，返回true或者false"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.esl.bind",
+	"apiChineseName": "电子价签绑定接口",
+	"description": "电子价签商品绑定接口",
+	"id": 39108
 }

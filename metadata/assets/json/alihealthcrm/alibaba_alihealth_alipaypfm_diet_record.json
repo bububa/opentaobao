@@ -1,8 +1,4 @@
 {
-	"id": 46015,
-	"name": "alibaba.alihealth.alipaypfm.diet.record",
-	"apiChineseName": "用户每日摄入卡路里总量回传接口",
-	"description": "用户每日摄入卡路里总量回传接口",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -11,43 +7,44 @@
 			"required": true
 		},
 		{
-			"name": "date",
-			"type": "String",
-			"description": "记录日期，format：yyyy-MM-dd",
-			"required": true
-		},
-		{
 			"name": "energy",
 			"type": "Number",
 			"description": "累积摄入卡路里",
+			"required": true
+		},
+		{
+			"name": "date",
+			"type": "String",
+			"description": "记录日期，format：yyyy-MM-dd",
 			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作码说明",
-					"required": true
+					"description": "操作码说明"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.alipaypfm.diet.record",
+	"apiChineseName": "用户每日摄入卡路里总量回传接口",
+	"description": "用户每日摄入卡路里总量回传接口",
+	"id": 46015
 }

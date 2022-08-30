@@ -18,4 +18,6 @@ type MiniAppInstanceVersionDto struct {
 	ExtJson string `json:"ext_json,omitempty" xml:"ext_json,omitempty"`
 	// 版本链接。上线状态为线上地址，预览状态为预览地址，下线状态为空。
 	AppUrl string `json:"app_url,omitempty" xml:"app_url,omitempty"`
+	// 实例版本
+	Version string `json:"version,omitempty" xml:"version,omitempty"`
 }

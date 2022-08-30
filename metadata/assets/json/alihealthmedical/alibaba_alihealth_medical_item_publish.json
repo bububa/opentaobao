@@ -1,13 +1,6 @@
 {
-	"id": 51276,
-	"name": "alibaba.alihealth.medical.item.publish",
-	"apiChineseName": "三方入驻-开通服务",
-	"description": "三方入驻-开通服务",
 	"requestParams": [
 		{
-			"name": "request1",
-			"type": "ItemPublishRequest",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -44,48 +37,50 @@
 					"description": "每日库存上限",
 					"required": true
 				}
-			]
+			],
+			"name": "request1",
+			"type": "ItemPublishRequest",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result1",
-			"type": "ServiceResult",
-			"description": "系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "ItemInfoVo",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemInfoVo",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result1",
+			"type": "ServiceResult",
+			"description": "系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.medical.item.publish",
+	"apiChineseName": "三方入驻-开通服务",
+	"description": "三方入驻-开通服务",
+	"id": 51276
 }

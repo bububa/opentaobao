@@ -1,8 +1,4 @@
 {
-	"id": 30650,
-	"name": "alibaba.wdk.item.storesku.query",
-	"apiChineseName": "门店商品信息查询",
-	"description": "门店商品信息查询",
 	"requestParams": [
 		{
 			"name": "sku_code",
@@ -19,41 +15,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "result",
-					"type": "Json",
-					"description": "result",
-					"required": true
+					"type": "String",
+					"description": "result"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.storesku.query",
+	"apiChineseName": "门店商品信息查询",
+	"description": "门店商品信息查询",
+	"id": 30650
 }

@@ -1,14 +1,6 @@
 {
-	"id": 50862,
-	"name": "alibaba.retail.marketing.itemdiscount.activity.create",
-	"apiChineseName": "创建单品特价活动【同城零售】",
-	"description": "同城零售单品特价活动创建",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemDiscountActivityOperateRequest",
-			"description": "创建活动参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_name",
@@ -36,7 +28,7 @@
 				},
 				{
 					"name": "terminals",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "活动终端：1-APP，2-POS",
 					"required": true
 				},
@@ -72,42 +64,56 @@
 				{
 					"name": "member_crowd_code",
 					"type": "String[]",
-					"description": "活动人群编码，NEW_USER：新用户，OLD_USER：老用户，LIGHT_NEW_USER：闪购新客"
+					"description": "活动人群编码，NEW_USER：新用户，OLD_USER：老用户，LIGHT_NEW_USER：闪购新客，MERCHANT_NEW_USER：商家新用户，MERCHANT_OLD_USER：商家老用户"
+				},
+				{
+					"name": "channels",
+					"type": "String[]",
+					"description": "枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达 32 翱象共享库存"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展信息，json串"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemDiscountActivityOperateRequest",
+			"description": "创建活动参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "活动ID",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "活动ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "操作是否成功",
-					"required": true
+					"description": "操作是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itemdiscount.activity.create",
+	"apiChineseName": "创建单品特价活动【同城零售】",
+	"description": "同城零售单品特价活动创建",
+	"id": 50862
 }

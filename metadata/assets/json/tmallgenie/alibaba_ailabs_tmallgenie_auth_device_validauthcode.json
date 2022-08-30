@@ -1,0 +1,38 @@
+{
+	"requestParams": [
+		{
+			"name": "authcode",
+			"type": "String",
+			"description": "authcode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "uuid"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.validauthcode",
+	"apiChineseName": "根据authcode查询绑定结果",
+	"description": "根据authcode查询绑定结果",
+	"id": 57739
+}

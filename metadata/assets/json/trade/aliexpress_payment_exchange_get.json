@@ -1,13 +1,6 @@
 {
-	"id": 49985,
-	"name": "aliexpress.payment.exchange.get",
-	"apiChineseName": "getExchange",
-	"description": "提供国际汇率服务",
 	"requestParams": [
 		{
-			"name": "checkout_exchange_request",
-			"type": "CheckoutExchangeRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "base_currency",
@@ -21,14 +14,14 @@
 					"description": "报价币种(买家看到的）",
 					"required": true
 				}
-			]
+			],
+			"name": "checkout_exchange_request",
+			"type": "CheckoutExchangeRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "not_success",
@@ -43,10 +36,6 @@
 					"required": true
 				},
 				{
-					"name": "module",
-					"type": "Module",
-					"description": "返汇率相关数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "quote_currency",
@@ -102,13 +91,13 @@
 							"description": "汇率号",
 							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "Module",
+					"description": "返汇率相关数据",
+					"required": true
 				},
 				{
-					"name": "error_code",
-					"type": "ErrorCode",
-					"description": "错误信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "display_message",
@@ -128,7 +117,11 @@
 							"description": "错误详情",
 							"required": true
 						}
-					]
+					],
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "错误信息",
+					"required": true
 				},
 				{
 					"name": "repeated",
@@ -142,7 +135,14 @@
 					"description": "是否重试",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "aliexpress.payment.exchange.get",
+	"apiChineseName": "getExchange",
+	"description": "提供国际汇率服务",
+	"id": 49985
 }

@@ -1,8 +1,4 @@
 {
-	"id": 31278,
-	"name": "alibaba.campus.topology.getall",
-	"apiChineseName": "获取管理园区的规则拓扑接口",
-	"description": "获取所属园区的所有规则拓扑图",
 	"requestParams": [
 		{
 			"name": "campus_id",
@@ -23,9 +19,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "content_list",
@@ -75,7 +68,14 @@
 					"description": "错误扩展信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.topology.getall",
+	"apiChineseName": "获取管理园区的规则拓扑接口",
+	"description": "获取所属园区的所有规则拓扑图",
+	"id": 31278
 }

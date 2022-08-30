@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"name": "community_outer_id",
+			"type": "String",
+			"description": "外部小区id",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部房源ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败成功信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "entrust_item_id",
+							"type": "Number",
+							"description": "委托商品id"
+						},
+						{
+							"name": "community_outer_id",
+							"type": "String",
+							"description": "外部小区id"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部房源id"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "上下架状态"
+						},
+						{
+							"name": "update_time",
+							"type": "String",
+							"description": "更新时间"
+						},
+						{
+							"name": "merchant_open_id",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "bill_pay_item_id",
+							"type": "Number",
+							"description": "1"
+						}
+					],
+					"name": "data",
+					"type": "SyncHouseStatusDTO",
+					"description": "返回结果对象"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回接口对象"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.trade.query.status",
+	"apiChineseName": "查询房源状态接口",
+	"description": "查询房源状态接口",
+	"id": 62393
+}

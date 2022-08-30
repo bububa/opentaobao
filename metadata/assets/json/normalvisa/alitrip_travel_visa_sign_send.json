@@ -1,8 +1,4 @@
 {
-	"id": 44424,
-	"name": "alitrip.travel.visa.sign.send",
-	"apiChineseName": "签证批量申请人送签接口",
-	"description": "签证批量申请人送签接口，用于商家批量送签。",
 	"requestParams": [
 		{
 			"name": "nation_id",
@@ -20,48 +16,48 @@
 			"name": "apply_ids",
 			"type": "String[]",
 			"description": "申请人ids",
-			"required": true,
-			"maxListSize": 500
+			"maxListSize": 500,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "batch_infos",
-			"type": "BatchInfo []",
-			"description": "批次信息",
 			"subParams": [
 				{
 					"name": "batch_id",
 					"type": "String",
-					"description": "批次id",
-					"required": true
+					"description": "批次id"
 				},
 				{
 					"name": "apply_ids",
 					"type": "String[]",
-					"description": "每批次的申请人id",
-					"required": true
+					"description": "每批次的申请人id"
 				}
-			]
+			],
+			"name": "batch_infos",
+			"type": "BatchInfo []",
+			"description": "批次信息"
 		},
 		{
-			"name": "fail_infos",
-			"type": "SendSignFailInfo []",
-			"description": "失败信息",
 			"subParams": [
 				{
 					"name": "apply_id",
 					"type": "String",
-					"description": "申请人id",
-					"required": true
+					"description": "申请人id"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "fail_infos",
+			"type": "SendSignFailInfo []",
+			"description": "失败信息"
 		}
-	]
+	],
+	"name": "alitrip.travel.visa.sign.send",
+	"apiChineseName": "签证批量申请人送签接口",
+	"description": "签证批量申请人送签接口，用于商家批量送签。",
+	"id": 44424
 }

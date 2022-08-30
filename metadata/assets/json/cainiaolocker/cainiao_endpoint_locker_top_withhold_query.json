@@ -1,8 +1,4 @@
 {
-	"id": 29851,
-	"name": "cainiao.endpoint.locker.top.withhold.query",
-	"apiChineseName": "查询能否代扣",
-	"description": "查询是否有代扣欠款，是否签署代扣协议。",
 	"requestParams": [
 		{
 			"name": "company_code",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResult",
-			"description": "response",
 			"subParams": [
 				{
 					"name": "success",
@@ -47,7 +40,14 @@
 					"description": "errorDesc",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResult",
+			"description": "response"
 		}
-	]
+	],
+	"name": "cainiao.endpoint.locker.top.withhold.query",
+	"apiChineseName": "查询能否代扣",
+	"description": "查询是否有代扣欠款，是否签署代扣协议。",
+	"id": 29851
 }

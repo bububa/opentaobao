@@ -1,14 +1,6 @@
 {
-	"id": 52273,
-	"name": "tmall.servicecenter.workcard.refuse",
-	"apiChineseName": "买家拒收",
-	"description": "买家拒收通知接口",
 	"requestParams": [
 		{
-			"name": "buyer_refuse_accept_request",
-			"type": "BuyerRefuseAcceptRequest",
-			"description": "买家拒收信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "workcard_id",
@@ -22,7 +14,11 @@
 					"description": "拒收备注",
 					"required": true
 				}
-			]
+			],
+			"name": "buyer_refuse_accept_request",
+			"type": "BuyerRefuseAcceptRequest",
+			"description": "买家拒收信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -41,5 +37,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.refuse",
+	"apiChineseName": "买家拒收",
+	"description": "买家拒收通知接口",
+	"id": 52273
 }

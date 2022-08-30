@@ -1,13 +1,6 @@
 {
-	"id": 52456,
-	"name": "alibaba.idle.transferpay.query",
-	"apiChineseName": "闲鱼转账结果查询",
-	"description": "商家业务 转账支付的结果查询",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "PayQueryRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "biz_order_id",
@@ -15,72 +8,70 @@
 					"description": "业务订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "PayQueryRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "module",
-					"type": "Serializable",
-					"description": "详情数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "alipay_order_id",
 							"type": "String",
-							"description": "支付宝交易号",
-							"required": true
+							"description": "支付宝交易号"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "金额",
-							"required": true
+							"description": "金额"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "外部业务ID",
-							"required": true
+							"description": "外部业务ID"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "业务订单号",
-							"required": true
+							"description": "业务订单号"
 						},
 						{
 							"name": "pay_status",
 							"type": "String",
-							"description": "状态 1待支付，2已付款 6交易成功，8交易关闭",
-							"required": true
+							"description": "状态 1待支付，2已付款 6交易成功，8交易关闭"
 						}
-					]
+					],
+					"name": "module",
+					"type": "Serializable",
+					"description": "详情数据"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.transferpay.query",
+	"apiChineseName": "闲鱼转账结果查询",
+	"description": "商家业务 转账支付的结果查询",
+	"id": 52456
 }

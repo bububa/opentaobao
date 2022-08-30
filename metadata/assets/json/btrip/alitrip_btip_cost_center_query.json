@@ -1,14 +1,6 @@
 {
-	"id": 33169,
-	"name": "alitrip.btip.cost.center.query",
-	"apiChineseName": "查询外部成本中心",
-	"description": "查询外部成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterQueryRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "thirdpart_id",
@@ -36,116 +28,108 @@
 					"type": "String",
 					"description": "成本中心名称"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterQueryRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
-					"name": "cost_center_list",
-					"type": "OpenCostCenterQueryRs[]",
-					"description": "返回值对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "商旅成本中心id",
-							"required": true
+							"description": "商旅成本中心id"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "企业id",
-							"required": true
+							"description": "企业id"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "成本中心名称",
-							"required": true
+							"description": "成本中心名称"
 						},
 						{
 							"name": "number",
 							"type": "String",
-							"description": "成本中心编号",
-							"required": true
+							"description": "成本中心编号"
 						},
 						{
 							"name": "thirdpart_id",
 							"type": "String",
-							"description": "第三方成本中心id",
-							"required": true
+							"description": "第三方成本中心id"
 						},
 						{
 							"name": "scope",
 							"type": "Number",
-							"description": "适用范围: 1全员，2部分员工",
-							"required": true
+							"description": "适用范围: 1全员，2部分员工"
 						},
 						{
-							"name": "entity_list",
-							"type": "OpenOrgEntityDo[]",
-							"description": "绑定人员信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "用户/部门/角色名称",
-									"required": true
+									"description": "用户/部门/角色名称"
 								},
 								{
 									"name": "entity_id",
 									"type": "String",
-									"description": "用户/部门/角色id",
-									"required": true
+									"description": "用户/部门/角色id"
 								},
 								{
 									"name": "entity_type",
 									"type": "String",
-									"description": "人员类型：1用户，2部门，3角色",
-									"required": true
+									"description": "人员类型：1用户，2部门，3角色"
 								},
 								{
 									"name": "corp_id",
 									"type": "String",
-									"description": "企业id",
-									"required": true
+									"description": "企业id"
 								},
 								{
 									"name": "user_num",
 									"type": "Number",
-									"description": "角色/部门下面员工人数",
-									"required": true
+									"description": "角色/部门下面员工人数"
 								}
-							]
+							],
+							"name": "entity_list",
+							"type": "OpenOrgEntityDo[]",
+							"description": "绑定人员信息"
 						}
-					]
+					],
+					"name": "cost_center_list",
+					"type": "OpenCostCenterQueryRs[]",
+					"description": "返回值对象"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.btip.cost.center.query",
+	"apiChineseName": "查询外部成本中心",
+	"description": "查询外部成本中心",
+	"id": 33169
 }

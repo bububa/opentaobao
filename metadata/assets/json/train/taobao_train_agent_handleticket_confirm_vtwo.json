@@ -1,8 +1,4 @@
 {
-	"id": 29819,
-	"name": "taobao.train.agent.handleticket.confirm.vtwo",
-	"apiChineseName": "代理商出票中v2--增加鉴权校验",
-	"description": "代理商出票中",
 	"requestParams": [
 		{
 			"name": "extend_params",
@@ -22,11 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否成功"
-		},
-		{
 			"name": "train_error_code",
 			"type": "String",
 			"description": "错误码"
@@ -40,6 +31,15 @@
 			"name": "extend_params",
 			"type": "String",
 			"description": "暂无"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.train.agent.handleticket.confirm.vtwo",
+	"apiChineseName": "代理商出票中v2--增加鉴权校验",
+	"description": "代理商出票中",
+	"id": 29819
 }

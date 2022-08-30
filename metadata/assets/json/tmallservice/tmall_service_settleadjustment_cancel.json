@@ -1,8 +1,4 @@
 {
-	"id": 27440,
-	"name": "tmall.service.settleadjustment.cancel",
-	"apiChineseName": "取消结算调整单",
-	"description": "提供给服务商在对取消已经发起的结算调整单。\n通过说明调整单ID进行结算调整单取消。",
 	"requestParams": [
 		{
 			"name": "id",
@@ -19,15 +15,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "error_message",
-					"type": "ErrorMessage",
-					"description": "errorMessage",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
@@ -41,7 +30,11 @@
 							"description": "errorMsg",
 							"required": true
 						}
-					]
+					],
+					"name": "error_message",
+					"type": "ErrorMessage",
+					"description": "errorMessage",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -49,7 +42,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.service.settleadjustment.cancel",
+	"apiChineseName": "取消结算调整单",
+	"description": "提供给服务商在对取消已经发起的结算调整单。\n通过说明调整单ID进行结算调整单取消。",
+	"id": 27440
 }

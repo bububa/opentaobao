@@ -1,13 +1,6 @@
 {
-	"id": 54020,
-	"name": "alibaba.ascp.aic.supplier.aicinventory.channel.inventory.query",
-	"apiChineseName": "供应商直发-商家仓库存查询服务",
-	"description": "提供商家基于货品、供应商、仓，查询ascp 实时商家仓库存查询数据。",
 	"requestParams": [
 		{
-			"name": "merchant_inventory_query_request",
-			"type": "MerchantInventoryQuery",
-			"description": "商家仓库存查询请求参数",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -33,78 +26,80 @@
 					"description": "供应链货主id list 单次\u003c=20",
 					"required": true
 				}
-			]
+			],
+			"name": "merchant_inventory_query_request",
+			"type": "MerchantInventoryQuery",
+			"description": "商家仓库存查询请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "merchant_inventory_query_response",
-			"type": "ResultWrapper",
-			"description": "响应结果",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "Datas[]",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
-						{
-							"name": "inventory_type",
-							"type": "Number",
-							"description": "1-良品 101 -在库残次",
-							"required": true
-						},
 						{
 							"name": "lock_quantity",
 							"type": "String",
-							"description": "占用库存",
-							"required": true
+							"description": "占用库存"
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "渠道编码"
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "1-良品 101 -在库残次"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "总库存",
-							"required": true
+							"description": "总库存"
 						},
 						{
 							"name": "sc_item_id",
 							"type": "Number",
-							"description": "供应链中台货品ID",
-							"required": true
+							"description": "供应链中台货品ID"
 						},
 						{
 							"name": "source_user_id",
 							"type": "Number",
-							"description": "供应链中台货主ID",
-							"required": true
+							"description": "供应链中台货主ID"
 						},
 						{
 							"name": "store_code",
 							"type": "String",
-							"description": "供应链中台货仓code",
-							"required": true
+							"description": "供应链中台货仓code"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "Datas[]",
+					"description": "响应数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "merchant_inventory_query_response",
+			"type": "ResultWrapper",
+			"description": "响应结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.aic.supplier.aicinventory.channel.inventory.query",
+	"apiChineseName": "供应商直发-商家仓库存查询服务",
+	"description": "提供商家基于货品、供应商、仓，查询ascp 实时商家仓库存查询数据。",
+	"id": 54020
 }

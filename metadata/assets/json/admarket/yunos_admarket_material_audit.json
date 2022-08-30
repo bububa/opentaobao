@@ -1,17 +1,10 @@
 {
-	"id": 40155,
-	"name": "yunos.admarket.material.audit",
-	"apiChineseName": "广告平台创意审核",
-	"description": "用于厂商上报广告平台审核结果",
 	"requestParams": [
 		{
-			"name": "ssp_material_audit_result",
-			"type": "SspMaterialAuditResult",
-			"description": "创意审核结果",
-			"required": true,
 			"subParams": [
 				{
 					"name": "reason",
+					"type": "String",
 					"description": "原因"
 				},
 				{
@@ -27,9 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "exclude_devices",
-					"type": "ExcludeDevice[]",
-					"description": "排除设备",
 					"subParams": [
 						{
 							"name": "start_time",
@@ -46,7 +36,10 @@
 							"type": "String[]",
 							"description": "排他设备id"
 						}
-					]
+					],
+					"name": "exclude_devices",
+					"type": "ExcludeDevice[]",
+					"description": "排除设备"
 				},
 				{
 					"name": "channel",
@@ -54,40 +47,44 @@
 					"description": "渠道",
 					"required": true
 				}
-			]
+			],
+			"name": "ssp_material_audit_result",
+			"type": "SspMaterialAuditResult",
+			"description": "创意审核结果",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "result",
-					"type": "Json",
-					"description": "结果",
-					"required": true
+					"type": "String",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "返回状态码",
-					"required": true
+					"description": "返回状态码"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "yunos.admarket.material.audit",
+	"apiChineseName": "广告平台创意审核",
+	"description": "用于厂商上报广告平台审核结果",
+	"id": 40155
 }

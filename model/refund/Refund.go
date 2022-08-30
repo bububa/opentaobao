@@ -60,7 +60,9 @@ type Refund struct {
 	OperationContraint string `json:"operation_contraint,omitempty" xml:"operation_contraint,omitempty"`
 	// 买家账号的OpenUID
 	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
-	// 逆向特殊部分退类型：价保服务、退差返现
+	// ouid
+	Ouid string `json:"ouid,omitempty" xml:"ouid,omitempty"`
+	// 逆向特殊部分退类型：价保服务（priceProtect）、退差返现(cashBack)
 	SpecialRefundType string `json:"special_refund_type,omitempty" xml:"special_refund_type,omitempty"`
 	// 不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成 4;客服主管复审失败5;客服处理完成6;
 	CsStatus int64 `json:"cs_status,omitempty" xml:"cs_status,omitempty"`

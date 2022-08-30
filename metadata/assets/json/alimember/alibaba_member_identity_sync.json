@@ -1,14 +1,6 @@
 {
-	"id": 48007,
-	"name": "alibaba.member.identity.sync",
-	"apiChineseName": "会员身份信息同步",
-	"description": "会员身份信息同步",
 	"requestParams": [
 		{
-			"name": "sync_dto",
-			"type": "SyncMemberIdentityDto",
-			"description": "会员身份同步信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "time_stamp",
@@ -23,10 +15,12 @@
 					"required": true
 				},
 				{
-					"name": "identity_model",
-					"type": "IdentityModel",
-					"description": "付费会员时间信息",
-					"required": true,
+					"name": "identity_template_id",
+					"type": "String",
+					"description": "身份模板id",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "start_time",
@@ -40,7 +34,11 @@
 							"description": "结束时间",
 							"required": true
 						}
-					]
+					],
+					"name": "identity_model",
+					"type": "IdentityModel",
+					"description": "付费会员时间信息",
+					"required": true
 				},
 				{
 					"name": "open_merchant_id",
@@ -49,10 +47,6 @@
 					"required": true
 				},
 				{
-					"name": "order_model",
-					"type": "OrderModel",
-					"description": "签约单据信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_type",
@@ -78,18 +72,16 @@
 							"description": "该单据对应付费会员结束时间",
 							"required": true
 						}
-					]
+					],
+					"name": "order_model",
+					"type": "OrderModel",
+					"description": "签约单据信息",
+					"required": true
 				},
 				{
 					"name": "isv_sync_operate_type",
 					"type": "String",
 					"description": "同步操作类型",
-					"required": true
-				},
-				{
-					"name": "identity_template_id",
-					"type": "String",
-					"description": "身份模板id",
 					"required": true
 				},
 				{
@@ -102,28 +94,34 @@
 					"type": "String",
 					"description": "手机号"
 				}
-			]
+			],
+			"name": "sync_dto",
+			"type": "SyncMemberIdentityDto",
+			"description": "会员身份同步信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code，返回码",
-					"required": true
+					"description": "code，返回码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message，返回信息",
-					"required": true
+					"description": "message，返回信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.member.identity.sync",
+	"apiChineseName": "会员身份信息同步",
+	"description": "会员身份信息同步",
+	"id": 48007
 }

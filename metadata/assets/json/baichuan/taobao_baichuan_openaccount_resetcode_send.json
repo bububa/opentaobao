@@ -1,8 +1,4 @@
 {
-	"id": 25132,
-	"name": "taobao.baichuan.openaccount.resetcode.send",
-	"apiChineseName": "百川发送找回密码验证码",
-	"description": "百川发送找回密码验证码",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.openaccount.resetcode.send",
+	"apiChineseName": "百川发送找回密码验证码",
+	"description": "百川发送找回密码验证码",
+	"id": 25132
 }

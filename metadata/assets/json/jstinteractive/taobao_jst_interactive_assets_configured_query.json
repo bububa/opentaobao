@@ -1,8 +1,4 @@
 {
-	"id": 53919,
-	"name": "taobao.jst.interactive.assets.configured.query",
-	"apiChineseName": "查询已配置的任务素材列表接口",
-	"description": "查询已配置任务素材列表",
 	"requestParams": [
 		{
 			"name": "mini_app_id",
@@ -13,101 +9,90 @@
 	],
 	"responseParams": [
 		{
-			"name": "assets_list",
-			"type": "AssetsConfig []",
-			"description": "可配置任务素材列表",
 			"subParams": [
-				{
-					"name": "action",
-					"type": "String",
-					"description": "商品详情页地址或直播间地址",
-					"required": true
-				},
 				{
 					"name": "shop_comp_title",
 					"type": "String",
-					"description": "任务浮标标题，浏览商品为【浏览10秒得奖励】，观看直播为【观看30秒得奖励】，暂不支持自定义",
-					"required": true
+					"description": "任务浮标标题，浏览商品为【浏览10秒得奖励】，观看直播为【观看30秒得奖励】，暂不支持自定义"
 				},
 				{
 					"name": "icon",
 					"type": "String",
-					"description": "任务图标",
-					"required": true
+					"description": "任务图标"
 				},
 				{
 					"name": "video_id",
 					"type": "String",
-					"description": "直播间id",
-					"required": true
+					"description": "直播间id"
 				},
 				{
 					"name": "init_btn",
 					"type": "String",
-					"description": "领取任务按钮",
-					"required": true
+					"description": "领取任务按钮"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "任务标题",
-					"required": true
+					"description": "任务标题"
 				},
 				{
 					"name": "award_btn",
 					"type": "String",
-					"description": "待领奖按钮",
-					"required": true
+					"description": "待领奖按钮"
 				},
 				{
 					"name": "duration",
 					"type": "String",
-					"description": "任务浏览时长，商品详情页10秒，直播间30秒，暂不支持自定义",
-					"required": true
+					"description": "任务浏览时长，商品详情页10秒，直播间30秒，暂不支持自定义"
 				},
 				{
 					"name": "accept_btn",
 					"type": "String",
-					"description": "做任务按钮",
-					"required": true
+					"description": "做任务按钮"
 				},
 				{
 					"name": "item_id",
 					"type": "String",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				},
 				{
 					"name": "task_type",
 					"type": "Number",
-					"description": "任务类型，1=浏览商品，1=观看直播",
-					"required": true
+					"description": "任务类型，1=浏览商品，1=观看直播"
 				},
 				{
 					"name": "sub_title",
 					"type": "String",
-					"description": "任务副标题",
-					"required": true
+					"description": "任务副标题"
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "商品详情页地址或直播间地址"
 				},
 				{
 					"name": "task_id",
 					"type": "String",
-					"description": "任务id，配置任务素材时需要",
-					"required": true
+					"description": "任务id，配置任务素材时需要"
 				},
 				{
 					"name": "complete_btn",
 					"type": "String",
-					"description": "任务完成按钮",
-					"required": true
+					"description": "任务完成按钮"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "任务描述",
-					"required": true
+					"description": "任务描述"
 				}
-			]
+			],
+			"name": "assets_list",
+			"type": "AssetsConfig []",
+			"description": "可配置任务素材列表"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.assets.configured.query",
+	"apiChineseName": "查询已配置的任务素材列表接口",
+	"description": "查询已配置任务素材列表",
+	"id": 53919
 }

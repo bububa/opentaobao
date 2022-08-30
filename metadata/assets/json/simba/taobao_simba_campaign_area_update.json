@@ -1,8 +1,4 @@
 {
-	"id": 10550,
-	"name": "taobao.simba.campaign.area.update",
-	"apiChineseName": "更新一个推广计划的投放地域",
-	"description": "更新一个推广计划的投放地域",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_area",
-			"type": "CampaignArea",
-			"description": "修改后的推广计划投放地域",
 			"subParams": [
 				{
 					"name": "nick",
@@ -53,7 +46,14 @@
 					"type": "Date",
 					"description": "最后修改时间"
 				}
-			]
+			],
+			"name": "campaign_area",
+			"type": "CampaignArea",
+			"description": "修改后的推广计划投放地域"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.area.update",
+	"apiChineseName": "更新一个推广计划的投放地域",
+	"description": "更新一个推广计划的投放地域",
+	"id": 10550
 }

@@ -1,13 +1,6 @@
 {
-	"id": 45484,
-	"name": "alibaba.mozi.acl.app.getpermisspkgs",
-	"apiChineseName": "分页获取应用的权限套餐",
-	"description": "分页查询应用下的权限套餐列表",
 	"requestParams": [
 		{
-			"name": "get_app_permission_packages_request",
-			"type": "GetAppPermissionPackageRequest",
-			"description": "获取应用的权限套餐请求对象",
 			"subParams": [
 				{
 					"name": "show_realm_info",
@@ -20,10 +13,6 @@
 					"description": "是否返回数据总量"
 				},
 				{
-					"name": "principal_param",
-					"type": "BucUserPrincipalParam",
-					"description": "操作主体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -37,7 +26,11 @@
 							"description": "操作人所在租户Id",
 							"required": true
 						}
-					]
+					],
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"required": true
 				},
 				{
 					"name": "target_app_name",
@@ -56,6 +49,7 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "请求扩展字段"
 				},
 				{
@@ -68,178 +62,159 @@
 					"type": "Number",
 					"description": "查询第几页"
 				}
-			]
+			],
+			"name": "get_app_permission_packages_request",
+			"type": "GetAppPermissionPackageRequest",
+			"description": "获取应用的权限套餐请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AppPermissionPackageResult",
-			"description": "获取应用的权限套餐列表结果对象",
 			"subParams": [
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "应用下套餐总数",
-					"required": true
+					"description": "应用下套餐总数"
 				},
 				{
-					"name": "datas",
-					"type": "PermissionPackageEntity[]",
-					"description": "套权限餐数据列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
 							"type": "String",
-							"description": "权限套餐code",
-							"required": true
+							"description": "权限套餐code"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "权限套餐中文名",
-							"required": true
+							"description": "权限套餐中文名"
 						},
 						{
 							"name": "name_e_n",
 							"type": "String",
-							"description": "权限套餐英文名",
-							"required": true
+							"description": "权限套餐英文名"
 						},
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "权限套餐所属应用名",
-							"required": true
+							"description": "权限套餐所属应用名"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "权限套餐中文描述",
-							"required": true
+							"description": "权限套餐中文描述"
 						},
 						{
 							"name": "description_e_n",
 							"type": "String",
-							"description": "权限套餐英文描述",
-							"required": true
+							"description": "权限套餐英文描述"
 						},
 						{
 							"name": "ext_str",
 							"type": "String",
-							"description": "扩展字段",
-							"required": true
+							"description": "扩展字段"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "permission_count",
 							"type": "Number",
-							"description": "包含功能权限数量",
-							"required": true
+							"description": "包含功能权限数量"
 						},
 						{
 							"name": "role_count",
 							"type": "Number",
-							"description": "包含角色数量",
-							"required": true
+							"description": "包含角色数量"
 						},
 						{
 							"name": "data_permission_count",
 							"type": "Number",
-							"description": "包含数据权限数量",
-							"required": true
+							"description": "包含数据权限数量"
 						},
 						{
-							"name": "regist_realm_list",
-							"type": "RealmEntity[]",
-							"description": "注册的租户列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "租户id",
-									"required": true
+									"description": "租户id"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "租户名称",
-									"required": true
+									"description": "租户名称"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "租户描述",
-									"required": true
+									"description": "租户描述"
 								}
-							]
+							],
+							"name": "regist_realm_list",
+							"type": "RealmEntity[]",
+							"description": "注册的租户列表"
 						},
 						{
-							"name": "creator",
-							"type": "BucUser",
-							"description": "权限套餐创建人",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "Number",
-									"description": "userId",
-									"required": true
+									"description": "userId"
 								}
-							]
+							],
+							"name": "creator",
+							"type": "BucUser",
+							"description": "权限套餐创建人"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "PermissionPackageEntity[]",
+					"description": "套权限餐数据列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否处理成功，成功则为true",
-					"required": true
+					"description": "是否处理成功，成功则为true"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页数据条数",
-					"required": true
+					"description": "每页数据条数"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "查询第几页",
-					"required": true
+					"description": "查询第几页"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "响应message，若失败则返回失败原因",
-					"required": true
+					"description": "响应message，若失败则返回失败原因"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "扩展字段，与入参扩展字段值相同",
-					"required": true
+					"type": "String",
+					"description": "扩展字段，与入参扩展字段值相同"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AppPermissionPackageResult",
+			"description": "获取应用的权限套餐列表结果对象"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.app.getpermisspkgs",
+	"apiChineseName": "分页获取应用的权限套餐",
+	"description": "分页查询应用下的权限套餐列表",
+	"id": 45484
 }

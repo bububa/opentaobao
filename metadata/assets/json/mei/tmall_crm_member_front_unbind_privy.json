@@ -1,0 +1,21 @@
+{
+	"requestParams": [
+		{
+			"name": "ouid",
+			"type": "String",
+			"description": "ouid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		}
+	],
+	"name": "tmall.crm.member.front.unbind.privy",
+	"apiChineseName": "品牌会员解绑(隐私号版）",
+	"description": "品牌会员解绑功能",
+	"id": 57650
+}

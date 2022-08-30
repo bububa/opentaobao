@@ -1,8 +1,4 @@
 {
-	"id": 33932,
-	"name": "tmall.servicecenter.servicemonitormessage.search",
-	"apiChineseName": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
-	"description": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
 	"requestParams": [
 		{
 			"name": "start",
@@ -19,109 +15,97 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "value_list",
-					"type": "ServiceMonitorMessage[]",
-					"description": "服务预警消息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "消息id",
-							"required": true
+							"description": "消息id"
 						},
 						{
 							"name": "content",
 							"type": "String",
-							"description": "提醒文本",
-							"required": true
+							"description": "提醒文本"
 						},
 						{
 							"name": "level",
 							"type": "Number",
-							"description": "预警消息级别 1、预警 2、警告 3、严重",
-							"required": true
+							"description": "预警消息级别 1、预警 2、警告 3、严重"
 						},
 						{
 							"name": "memo",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "消息创建时间",
-							"required": true
+							"description": "消息创建时间"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态 0、已生成 1、已预警 2、已收到 3、已读",
-							"required": true
+							"description": "状态 0、已生成 1、已预警 2、已收到 3、已读"
 						},
 						{
 							"name": "rule_id",
 							"type": "String",
-							"description": "规则类型",
-							"required": true
+							"description": "规则类型"
 						},
 						{
 							"name": "service_code",
 							"type": "String",
-							"description": "服务类型",
-							"required": true
+							"description": "服务类型"
 						},
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "bizId的业务实体类型，如果为1，则bizId为工单id",
-							"required": true
+							"description": "bizId的业务实体类型，如果为1，则bizId为工单id"
 						},
 						{
 							"name": "biz_id",
 							"type": "Number",
-							"description": "业务实体id",
-							"required": true
+							"description": "业务实体id"
 						}
-					]
+					],
+					"name": "value_list",
+					"type": "ServiceMonitorMessage[]",
+					"description": "服务预警消息列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicemonitormessage.search",
+	"apiChineseName": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
+	"description": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
+	"id": 33932
 }

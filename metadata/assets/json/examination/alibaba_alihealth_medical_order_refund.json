@@ -1,0 +1,110 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子单id",
+							"required": true
+						},
+						{
+							"name": "refund_note",
+							"type": "String",
+							"description": "子单退款备注"
+						},
+						{
+							"name": "refund_amount",
+							"type": "String",
+							"description": "子单退款金额",
+							"required": true
+						}
+					],
+					"name": "sub_order_list",
+					"type": "SubOrderRequest[]",
+					"description": "子单信息",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "主订单id",
+					"required": true
+				}
+			],
+			"name": "order_refund_request",
+			"type": "OrderRefundRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_status",
+					"type": "String",
+					"description": "SUCCESS:成功; FAIL:失败; UNKNOWN:未知;"
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "主订单"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sub_order_id",
+									"type": "String",
+									"description": "子订单id"
+								},
+								{
+									"name": "refund_amount",
+									"type": "String",
+									"description": "子订单退款金额"
+								},
+								{
+									"name": "refund_note",
+									"type": "String",
+									"description": "子订单退款备注"
+								}
+							],
+							"name": "sub_order_list",
+							"type": "SubOrderRequest[]",
+							"description": "子订单信息"
+						},
+						{
+							"name": "refund_order_id",
+							"type": "String",
+							"description": "退款id"
+						}
+					],
+					"name": "data",
+					"type": "OrderRefundVO",
+					"description": "返回数据"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.medical.order.refund",
+	"apiChineseName": "退款接口",
+	"description": "退款接口",
+	"id": 62680
+}

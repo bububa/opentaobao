@@ -1,13 +1,6 @@
 {
-	"id": 54079,
-	"name": "alibaba.ascp.purchase.price.create",
-	"apiChineseName": "ascp采购价写入接口",
-	"description": "供应链平台采购价创建或修改接口",
 	"requestParams": [
 		{
-			"name": "create_request",
-			"type": "Request",
-			"description": "采购价创建/更新请求",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -35,6 +28,12 @@
 					"name": "sc_item_id",
 					"type": "Number",
 					"description": "货品id",
+					"required": true
+				},
+				{
+					"name": "purchase_price",
+					"type": "BigDecimal",
+					"description": "采购价（含税）（单位：元)",
 					"required": true
 				},
 				{
@@ -78,41 +77,39 @@
 					"name": "port_of_loading",
 					"type": "String",
 					"description": "起运港代码"
-				},
-				{
-					"name": "purchase_price",
-					"type": "String",
-					"description": "采购价（含税）（单位：元)",
-					"required": true
 				}
-			]
+			],
+			"name": "create_request",
+			"type": "Request",
+			"description": "采购价创建/更新请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultWrapper",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误文案",
-					"required": true
+					"description": "错误文案"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true-接口处理成功，false-接口处理失败",
-					"required": true
+					"description": "true-接口处理成功，false-接口处理失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ascp.purchase.price.create",
+	"apiChineseName": "ascp采购价写入接口",
+	"description": "供应链平台采购价创建或修改接口",
+	"id": 54079
 }

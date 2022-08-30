@@ -1,8 +1,4 @@
 {
-	"id": 33115,
-	"name": "tmall.nr.fulfill.cancel.reason.query",
-	"apiChineseName": "查询取消履约的原因列表",
-	"description": "新零售门店业务查询取消上门揽件的原因列表",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "result_data",
@@ -45,7 +38,14 @@
 					"description": "isSuccess",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.cancel.reason.query",
+	"apiChineseName": "查询取消履约的原因列表",
+	"description": "新零售门店业务查询取消上门揽件的原因列表",
+	"id": 33115
 }

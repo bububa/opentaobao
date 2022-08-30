@@ -1,8 +1,4 @@
 {
-	"id": 45572,
-	"name": "tmall.txcs.finance.invoice.input",
-	"apiChineseName": "供应商发票录入",
-	"description": "提供天猫超市外部合作商家财务：供应商发票录入",
 	"requestParams": [
 		{
 			"name": "ou_code",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "invoice_input_d_t_o1",
-			"type": "InvoiceInputDto[]",
-			"description": "发票内容",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "settlement_company_code",
@@ -95,100 +86,96 @@
 					"description": "操作人员ID",
 					"required": true
 				}
-			]
+			],
+			"name": "invoice_input_d_t_o1",
+			"type": "InvoiceInputDto[]",
+			"description": "发票内容",
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AccessBaseResult",
-			"description": "返回内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用状态",
-					"required": true
+					"description": "调用状态"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误原因",
-					"required": true
+					"description": "错误原因"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
-					"name": "model",
-					"type": "BatchOperateResultDto",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "status",
 							"type": "String",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
+							"subParams": [
+								{
+									"name": "msg",
+									"type": "String",
+									"description": "失败原因"
+								},
+								{
+									"name": "invoice_code",
+									"type": "String",
+									"description": "发票代码"
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "发票号码"
+								}
+							],
 							"name": "fail_list",
 							"type": "InvoiceInputResultDto[]",
-							"description": "失败列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "msg",
-									"type": "String",
-									"description": "失败原因",
-									"required": true
-								},
-								{
-									"name": "invoice_code",
-									"type": "String",
-									"description": "发票代码",
-									"required": true
-								},
-								{
-									"name": "invoice_no",
-									"type": "String",
-									"description": "发票号码",
-									"required": true
-								}
-							]
+							"description": "失败列表"
 						},
 						{
-							"name": "success_list",
-							"type": "InvoiceInputResultDto[]",
-							"description": "成功列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "msg",
 									"type": "String",
-									"description": "原因",
-									"required": true
+									"description": "原因"
 								},
 								{
 									"name": "invoice_code",
 									"type": "String",
-									"description": "发票代码",
-									"required": true
+									"description": "发票代码"
 								},
 								{
 									"name": "invoice_no",
 									"type": "String",
-									"description": "发票号码",
-									"required": true
+									"description": "发票号码"
 								}
-							]
+							],
+							"name": "success_list",
+							"type": "InvoiceInputResultDto[]",
+							"description": "成功列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "BatchOperateResultDto",
+					"description": "返回内容"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AccessBaseResult",
+			"description": "返回内容"
 		}
-	]
+	],
+	"name": "tmall.txcs.finance.invoice.input",
+	"apiChineseName": "供应商发票录入",
+	"description": "提供天猫超市外部合作商家财务：供应商发票录入",
+	"id": 45572
 }

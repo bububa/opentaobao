@@ -1,15 +1,10 @@
 {
-	"id": 22253,
-	"name": "taobao.promotionmisc.activity.range.remove",
-	"apiChineseName": "去除活动参与的商品",
-	"description": "去除活动参与的商品",
 	"requestParams": [
 		{
 			"name": "activity_id",
 			"type": "Number",
 			"description": "活动id。",
-			"required": true,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "ids",
@@ -24,5 +19,9 @@
 			"type": "Boolean",
 			"description": "去除活动参与的商品是否成功。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.activity.range.remove",
+	"apiChineseName": "去除活动参与的商品",
+	"description": "去除活动参与的商品",
+	"id": 22253
 }

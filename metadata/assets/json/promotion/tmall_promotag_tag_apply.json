@@ -1,9 +1,17 @@
 {
-	"id": 21771,
-	"name": "tmall.promotag.tag.apply",
-	"apiChineseName": "优惠标签申请",
-	"description": "创建优惠标签",
 	"requestParams": [
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "标签结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "标签开始时间",
+			"required": true
+		},
 		{
 			"name": "tag_name",
 			"type": "String",
@@ -14,18 +22,6 @@
 			"name": "tag_desc",
 			"type": "String",
 			"description": "标签用途描述",
-			"required": true
-		},
-		{
-			"name": "start_time",
-			"type": "Date",
-			"description": "标签开始时间",
-			"required": true
-		},
-		{
-			"name": "end_time",
-			"type": "Date",
-			"description": "标签结束时间",
 			"required": true
 		}
 	],
@@ -40,5 +36,9 @@
 			"type": "Number",
 			"description": "优惠标签ID"
 		}
-	]
+	],
+	"name": "tmall.promotag.tag.apply",
+	"apiChineseName": "优惠标签申请",
+	"description": "创建优惠标签",
+	"id": 21771
 }

@@ -1,14 +1,6 @@
 {
-	"id": 55370,
-	"name": "alitrip.btrip.city.car.apply.add",
-	"apiChineseName": "三方市内用车申请单同步",
-	"description": "三方市内用车申请单同步",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "CityCarApplyAddRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cause",
@@ -103,7 +95,11 @@
 					"type": "Date",
 					"description": "用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "CityCarApplyAddRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -122,5 +118,9 @@
 			"type": "Number",
 			"description": "商旅内部审批单ID"
 		}
-	]
+	],
+	"name": "alitrip.btrip.city.car.apply.add",
+	"apiChineseName": "三方市内用车申请单同步",
+	"description": "三方市内用车申请单同步",
+	"id": 55370
 }

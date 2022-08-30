@@ -1,8 +1,4 @@
 {
-	"id": 26591,
-	"name": "alibaba.security.jaq.captcha.verify",
-	"apiChineseName": "聚安全安全验证检查接口",
-	"description": "聚安全安全验证检查",
 	"requestParams": [
 		{
 			"name": "captcha_type",
@@ -14,6 +10,12 @@
 			"name": "extend_data",
 			"type": "String",
 			"description": "扩展字段，格式为JSON字符串，用于传递“短信验证”等验证方式所需的额外入参，例如用户输入的验证码等，格式及JSON字段key定义请参考示例"
+		},
+		{
+			"name": "info_token",
+			"type": "String",
+			"description": "风险识别接口返回的信息口令",
+			"required": true
 		},
 		{
 			"name": "protocol_version",
@@ -42,65 +44,56 @@
 			"type": "String",
 			"description": "UMID token",
 			"required": true
-		},
-		{
-			"name": "info_token",
-			"type": "String",
-			"description": "风险识别接口返回的信息口令",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "JaqVerifyCaptchaResult",
-			"description": "出参结构体",
 			"subParams": [
 				{
-					"name": "jaq_dispatch_param",
-					"type": "JaqDispatchParam",
-					"description": "安全验证前向化下发参数结构体",
-					"required": true,
+					"name": "extend_data",
+					"type": "String",
+					"description": "扩展字段，格式为JSON字符串，当前为预留字段"
+				},
+				{
 					"subParams": [
 						{
 							"name": "event_id",
 							"type": "String",
-							"description": "事件ID",
-							"required": true
+							"description": "事件ID"
 						},
 						{
 							"name": "protocol_version",
 							"type": "String",
-							"description": "协议版本号",
-							"required": true
+							"description": "协议版本号"
 						},
 						{
 							"name": "rtken",
 							"type": "String",
-							"description": "下发的软token密文",
-							"required": true
+							"description": "下发的软token密文"
 						},
 						{
 							"name": "rtken_index",
 							"type": "String",
-							"description": "下发的软token索引",
-							"required": true
+							"description": "下发的软token索引"
 						}
-					]
+					],
+					"name": "jaq_dispatch_param",
+					"type": "JaqDispatchParam",
+					"description": "安全验证前向化下发参数结构体"
 				},
 				{
 					"name": "verify_status",
 					"type": "Number",
-					"description": "验证检查请求是否调用成功（及状态），约定正值为成功，负值为失败",
-					"required": true
-				},
-				{
-					"name": "extend_data",
-					"type": "String",
-					"description": "扩展字段，格式为JSON字符串，当前为预留字段",
-					"required": true
+					"description": "验证检查请求是否调用成功（及状态），约定正值为成功，负值为失败"
 				}
-			]
+			],
+			"name": "data",
+			"type": "JaqVerifyCaptchaResult",
+			"description": "出参结构体"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.captcha.verify",
+	"apiChineseName": "聚安全安全验证检查接口",
+	"description": "聚安全安全验证检查",
+	"id": 26591
 }

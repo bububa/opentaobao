@@ -1,8 +1,4 @@
 {
-	"id": 25683,
-	"name": "taobao.wlb.wms.inventory.profitloss.get",
-	"apiChineseName": "通过订单列表批量获取库存损益单信息",
-	"description": "通过订单列表批量获取库存损益单信息",
 	"requestParams": [
 		{
 			"name": "cn_order_code",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "profit_loss_info",
-			"type": "CainiaoInventoryProfitlossProfitlossinfo",
-			"description": "损益信息",
 			"subParams": [
 				{
 					"name": "store_code",
@@ -33,14 +26,8 @@
 					"description": "订单类型： 701 盘点出库 702 盘点入库"
 				},
 				{
-					"name": "order_item_list",
-					"type": "CainiaoInventoryProfitlossOrderitemlist[]",
-					"description": "商品信息列表",
 					"subParams": [
 						{
-							"name": "order_item",
-							"type": "CainiaoInventoryProfitlossOrderitem",
-							"description": "损益详情",
 							"subParams": [
 								{
 									"name": "item_id",
@@ -87,9 +74,15 @@
 									"type": "String",
 									"description": "批次号"
 								}
-							]
+							],
+							"name": "order_item",
+							"type": "CainiaoInventoryProfitlossOrderitem",
+							"description": "损益详情"
 						}
-					]
+					],
+					"name": "order_item_list",
+					"type": "CainiaoInventoryProfitlossOrderitemlist[]",
+					"description": "商品信息列表"
 				},
 				{
 					"name": "remark",
@@ -101,7 +94,14 @@
 					"type": "Date",
 					"description": "单据生成时间"
 				}
-			]
+			],
+			"name": "profit_loss_info",
+			"type": "CainiaoInventoryProfitlossProfitlossinfo",
+			"description": "损益信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.inventory.profitloss.get",
+	"apiChineseName": "通过订单列表批量获取库存损益单信息",
+	"description": "通过订单列表批量获取库存损益单信息",
+	"id": 25683
 }

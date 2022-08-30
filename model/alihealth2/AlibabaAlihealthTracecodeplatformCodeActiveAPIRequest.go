@@ -12,12 +12,12 @@ import (
 // 用于正大鸡蛋激活追溯码
 type AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest struct {
 	model.Params
-	// 文件信息（对文件内容16进制编码）
-	_fileInfo string
 	// 回调url
 	_callbackUrl string
 	// 文件名
 	_fileName string
+	// 文件信息（对文件内容16进制编码）
+	_fileInfo string
 	// 商品id
 	_prodId int64
 }
@@ -41,19 +41,6 @@ func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetApiParams() ur
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetFileInfo is FileInfo Setter
-// 文件信息（对文件内容16进制编码）
-func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileInfo(_fileInfo string) error {
-	r._fileInfo = _fileInfo
-	r.Set("file_info", _fileInfo)
-	return nil
-}
-
-// GetFileInfo FileInfo Getter
-func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetFileInfo() string {
-	return r._fileInfo
 }
 
 // SetCallbackUrl is CallbackUrl Setter
@@ -80,6 +67,19 @@ func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileName(_fil
 // GetFileName FileName Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetFileName() string {
 	return r._fileName
+}
+
+// SetFileInfo is FileInfo Setter
+// 文件信息（对文件内容16进制编码）
+func (r *AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) SetFileInfo(_fileInfo string) error {
+	r._fileInfo = _fileInfo
+	r.Set("file_info", _fileInfo)
+	return nil
+}
+
+// GetFileInfo FileInfo Getter
+func (r AlibabaAlihealthTracecodeplatformCodeActiveAPIRequest) GetFileInfo() string {
+	return r._fileInfo
 }
 
 // SetProdId is ProdId Setter

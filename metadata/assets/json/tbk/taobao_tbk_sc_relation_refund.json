@@ -1,0 +1,230 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "pagesize",
+					"required": true
+				},
+				{
+					"name": "search_type",
+					"type": "Number",
+					"description": "1-维权发起时间，2-订单结算时间（正向订单），3-维权完成时间，4-订单创建时间，5-订单更新时间",
+					"required": true
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "1 表示2方，2表示3方，0表示不限",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "pagenumber",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "1代表渠道关系id，2代表会员关系id",
+					"required": true
+				}
+			],
+			"name": "search_option",
+			"type": "TopApiRefundRptOption",
+			"description": "参数option",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "pageNo"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "pageSize"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总值"
+						},
+						{
+							"subParams": [
+								{
+									"name": "tb_trade_parent_id",
+									"type": "Number",
+									"description": "淘宝订单编号"
+								},
+								{
+									"name": "special_id",
+									"type": "Number",
+									"description": "会员关系id"
+								},
+								{
+									"name": "relation_id",
+									"type": "Number",
+									"description": "渠道关系id"
+								},
+								{
+									"name": "tk3rd_pub_id",
+									"type": "Number",
+									"description": "第三方推广者memberid"
+								},
+								{
+									"name": "tk_pub_id",
+									"type": "Number",
+									"description": "推广者memberid"
+								},
+								{
+									"name": "tk_subsidy_fee_refund3rd_pub",
+									"type": "String",
+									"description": "第三方应该返还的补贴"
+								},
+								{
+									"name": "tk_commission_fee_refund3rd_pub",
+									"type": "String",
+									"description": "第三方应该返还的佣金"
+								},
+								{
+									"name": "tk_subsidy_fee_refund_pub",
+									"type": "String",
+									"description": "第二方应该返还的补贴(不包括技术服务费)"
+								},
+								{
+									"name": "tk_commission_fee_refund_pub",
+									"type": "String",
+									"description": "第二方应该返还的佣金(不包括技术服务费)"
+								},
+								{
+									"name": "tk_refund_suit_time",
+									"type": "Date",
+									"description": "维权完成时间"
+								},
+								{
+									"name": "tk_refund_time",
+									"type": "Date",
+									"description": "维权创建时间"
+								},
+								{
+									"name": "earning_time",
+									"type": "Date",
+									"description": "订单结算时间"
+								},
+								{
+									"name": "tb_trade_create_time",
+									"type": "Date",
+									"description": "订单创建时间"
+								},
+								{
+									"name": "refund_status",
+									"type": "Number",
+									"description": "维权创建(淘客结算回执) 4,维权成功(淘客结算回执) 2,维权失败(淘客结算回执) 3,发生多次维权，待处理      11,从淘客处补扣（钱已结给淘客） 等待扣款 12,从淘客处补扣（钱已结给淘客） 扣款成功 13,从卖家处补扣（钱已结给卖家） 等待扣款 14,从卖家处补扣（钱已结给卖家） 扣款成功 15"
+								},
+								{
+									"name": "tb_auction_title",
+									"type": "String",
+									"description": "宝贝标题"
+								},
+								{
+									"name": "tb_trade_id",
+									"type": "Number",
+									"description": "淘宝子订单编号"
+								},
+								{
+									"name": "refund_fee",
+									"type": "String",
+									"description": "维权金额"
+								},
+								{
+									"name": "tb_trade_finish_price",
+									"type": "String",
+									"description": "结算金额"
+								},
+								{
+									"name": "tk_pub_show_return_fee",
+									"type": "String",
+									"description": "应返商家金额(二方)"
+								},
+								{
+									"name": "tk3rd_pub_show_return_fee",
+									"type": "String",
+									"description": "应返商家金额(三方)"
+								},
+								{
+									"name": "refund_type",
+									"type": "Number",
+									"description": "1 表示2方，2表示3方"
+								},
+								{
+									"name": "alsc_pid",
+									"type": "String",
+									"description": "（口碑订单）口碑父订单号"
+								},
+								{
+									"name": "alsc_id",
+									"type": "String",
+									"description": "（口碑订单）口碑子订单号"
+								},
+								{
+									"name": "modified_time",
+									"type": "Date",
+									"description": "更新时间"
+								}
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "订单列表"
+						}
+					],
+					"name": "data",
+					"type": "PageResult",
+					"description": "真正的业务数据结构"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "接口返回值信息，跟rpc架构保持一致"
+				},
+				{
+					"name": "biz_error_desc",
+					"type": "String",
+					"description": "业务错误信息"
+				},
+				{
+					"name": "biz_error_code",
+					"type": "Number",
+					"description": "业务错误码 101, 102,103"
+				}
+			],
+			"name": "result",
+			"type": "RpcResult",
+			"description": "返回结果封装对象"
+		}
+	],
+	"name": "taobao.tbk.sc.relation.refund",
+	"apiChineseName": "淘宝客-服务商-维权退款订单查询",
+	"description": "淘宝客维权退款订单查询-渠道管理和会员运营管理专用",
+	"id": 43874
+}

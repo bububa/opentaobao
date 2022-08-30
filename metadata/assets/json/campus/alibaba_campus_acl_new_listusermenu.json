@@ -1,13 +1,6 @@
 {
-	"id": 37471,
-	"name": "alibaba.campus.acl.new.listusermenu",
-	"apiChineseName": "查询用户有权限的菜单树",
-	"description": "查询用户有权限的菜单树",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -27,7 +20,10 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
 			"name": "user_id",
@@ -38,41 +34,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "contents",
-					"type": "Json[]",
-					"description": "content",
-					"required": true
+					"type": "String[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总计数",
-					"required": true
+					"description": "总计数"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.listusermenu",
+	"apiChineseName": "查询用户有权限的菜单树",
+	"description": "查询用户有权限的菜单树",
+	"id": 37471
 }

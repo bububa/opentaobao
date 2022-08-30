@@ -1,13 +1,13 @@
 {
-	"id": 23863,
-	"name": "alibaba.interact.sensor.gmedia",
-	"apiChineseName": "gmedia",
-	"description": "媒体功能",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0 表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.gmedia",
+	"apiChineseName": "gmedia",
+	"description": "媒体功能",
+	"id": 23863
 }

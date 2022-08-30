@@ -1,14 +1,6 @@
 {
-	"id": 28556,
-	"name": "alibaba.fundplatform.cardorders.info.query",
-	"apiChineseName": "根据制卡单分页查询卡信息",
-	"description": "该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息",
 	"requestParams": [
 		{
-			"name": "parameters",
-			"type": "CardMakingInfoQueryRequest",
-			"description": "请求结构体",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_size",
@@ -34,28 +26,34 @@
 					"description": "子制卡单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "parameters",
+			"type": "CardMakingInfoQueryRequest",
+			"description": "请求结构体",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CardMakingInfoQueryResponse",
-			"description": "result",
 			"subParams": [
+				{
+					"name": "card_making_infos",
+					"type": "String[]",
+					"description": "卡信息列表。cardNo卡号,cardPassword卡密,qrCode二维码链接,shortQrCode短连接二维码,templateNo卡商品编码,status卡状态"
+				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "card_making_infos",
-					"type": "Json[]",
-					"description": "卡信息列表。cardNo卡号,cardPassword卡密,qrCode二维码链接,shortQrCode短连接二维码,templateNo卡商品编码,status卡状态",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CardMakingInfoQueryResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.cardorders.info.query",
+	"apiChineseName": "根据制卡单分页查询卡信息",
+	"description": "该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息",
+	"id": 28556
 }

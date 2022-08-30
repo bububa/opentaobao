@@ -1,8 +1,4 @@
 {
-	"id": 25401,
-	"name": "taobao.xhotel.multiplerate.get",
-	"apiChineseName": "复杂房价查询接口",
-	"description": "查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询",
 	"requestParams": [
 		{
 			"name": "nod",
@@ -42,9 +38,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "rates",
-			"type": "MultipleRate []",
-			"description": "复杂价格返回结果类",
 			"subParams": [
 				{
 					"name": "occupancy",
@@ -91,7 +84,14 @@
 					"type": "String",
 					"description": "价格和库存信息,包括加床价，加人价等信息。date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复price 价格 int类型 取值范围1-99999999 单位为分quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)addPerson 加人价addBed 加床价"
 				}
-			]
+			],
+			"name": "rates",
+			"type": "MultipleRate []",
+			"description": "复杂价格返回结果类"
 		}
-	]
+	],
+	"name": "taobao.xhotel.multiplerate.get",
+	"apiChineseName": "复杂房价查询接口",
+	"description": "查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询",
+	"id": 25401
 }

@@ -1,13 +1,6 @@
 {
-	"id": 39164,
-	"name": "alibaba.lst.shiporder.create",
-	"apiChineseName": "零售通发货单创建",
-	"description": "通过该接口可以创建零售通运保保发货单，并处理相关业务流程。",
 	"requestParams": [
 		{
-			"name": "ship_order",
-			"type": "LstThirdPartMainShipOrderCreateDto",
-			"description": "创建发货单入参",
 			"subParams": [
 				{
 					"name": "receiver_district",
@@ -57,10 +50,6 @@
 					"required": true
 				},
 				{
-					"name": "details",
-					"type": "LstThirdPartDetailShipOrderCreateDto[]",
-					"description": "货品明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sale_quantity",
@@ -114,7 +103,11 @@
 							"type": "String",
 							"description": "订单明细id，可用来标注唯一的订单明细行。当其他无法唯一标识的时候，可用此字段。"
 						}
-					]
+					],
+					"name": "details",
+					"type": "LstThirdPartDetailShipOrderCreateDto[]",
+					"description": "货品明细",
+					"required": true
 				},
 				{
 					"name": "pay_fee",
@@ -149,40 +142,43 @@
 					"type": "String",
 					"description": "电话"
 				}
-			]
+			],
+			"name": "ship_order",
+			"type": "LstThirdPartMainShipOrderCreateDto",
+			"description": "创建发货单入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "model",
 					"type": "Number",
-					"description": "发货单ID",
-					"required": true
+					"description": "发货单ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.lst.shiporder.create",
+	"apiChineseName": "零售通发货单创建",
+	"description": "通过该接口可以创建零售通运保保发货单，并处理相关业务流程。",
+	"id": 39164
 }

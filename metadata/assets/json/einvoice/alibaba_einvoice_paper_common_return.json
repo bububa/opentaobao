@@ -1,8 +1,4 @@
 {
-	"id": 31519,
-	"name": "alibaba.einvoice.paper.common.return",
-	"apiChineseName": "纸票通用回传接口",
-	"description": "纸票通用回传接口（打印回传、注册回传等），只返回成功or失败",
 	"requestParams": [
 		{
 			"name": "req_index",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "回传接收结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.paper.common.return",
+	"apiChineseName": "纸票通用回传接口",
+	"description": "纸票通用回传接口（打印回传、注册回传等），只返回成功or失败",
+	"id": 31519
 }

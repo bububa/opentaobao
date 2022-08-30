@@ -2,6 +2,8 @@ package car
 
 // OrderConfirm 结构体
 type OrderConfirm struct {
+	// 打标能力集合 核酸检测KEY
+	Feature []string `json:"feature,omitempty" xml:"feature>string,omitempty"`
 	// 确认时间
 	ConfirmTime string `json:"confirm_time,omitempty" xml:"confirm_time,omitempty"`
 	// 车辆描述,车辆颜色,候车地点等
@@ -36,6 +38,16 @@ type OrderConfirm struct {
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 下游供应商唯一标识(高德专用)
 	SubKey string `json:"sub_key,omitempty" xml:"sub_key,omitempty"`
+	// 车辆颜色
+	DriverCarColor string `json:"driver_car_color,omitempty" xml:"driver_car_color,omitempty"`
+	// 车品牌
+	CarBrand string `json:"car_brand,omitempty" xml:"car_brand,omitempty"`
+	// 车型名称
+	CarModel string `json:"car_model,omitempty" xml:"car_model,omitempty"`
+	// 车龄
+	CarAge string `json:"car_age,omitempty" xml:"car_age,omitempty"`
+	// 性别
+	DeriverGender string `json:"deriver_gender,omitempty" xml:"deriver_gender,omitempty"`
 	// 0应答1改派
 	ConfirmType int64 `json:"confirm_type,omitempty" xml:"confirm_type,omitempty"`
 	// 0:接送机 1：实时打车 2：租车(不传值默认为0)

@@ -1,19 +1,73 @@
 {
-	"id": 56453,
-	"name": "taobao.xhotel.bnbroomtype.add",
-	"apiChineseName": "民宿新增房源",
-	"description": "添加民宿房源",
 	"requestParams": [
 		{
-			"name": "vendor",
-			"type": "String",
-			"description": "销售渠道,默认taobao"
+			"name": "rent_size",
+			"type": "Number",
+			"description": "单间面积，单位平方米"
 		},
 		{
-			"name": "outer_id",
+			"name": "support_im",
+			"type": "Number",
+			"description": "是否支持IM聊天 0不支持 1支持"
+		},
+		{
+			"name": "outer_tags",
 			"type": "String",
-			"description": "房型id, 这是卖家自己系统中的ID",
+			"description": "房源外部标签 标签信息，逗号(,)分隔，最多1000字符",
+			"maxLength": 1000
+		},
+		{
+			"name": "cleaning_charge",
+			"type": "Number",
+			"description": "清洁费是否收取 0：否 1：是"
+		},
+		{
+			"name": "invoice",
+			"type": "Number",
+			"description": "发票，0：卖家提供发票，1：房东提供发票",
 			"required": true
+		},
+		{
+			"name": "decorate_level",
+			"type": "Number",
+			"description": "装修等级 1 精装；2普通；3简装"
+		},
+		{
+			"subParams": [
+				{
+					"name": "start_reception_time",
+					"type": "String",
+					"description": "开始接待时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "end_reception_time",
+					"type": "String",
+					"description": "结束接待时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "earliest_check_in_time",
+					"type": "String",
+					"description": "最早入住时间 hh:mm,24小时时间格式;默认值: 14:00"
+				},
+				{
+					"name": "latest_booking_time",
+					"type": "String",
+					"description": "最晚预订时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "latest_check_in_time",
+					"type": "String",
+					"description": "最晚入住时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "latest_check_out_time",
+					"type": "String",
+					"description": "最晚离店时间 hh:mm,24小时时间格式;默认值: 12:00"
+				}
+			],
+			"name": "bnb_booking_time",
+			"type": "BnbBookingTimeDto",
+			"description": "民宿入住要求\u0026附加信息"
 		},
 		{
 			"name": "out_hid",
@@ -22,160 +76,29 @@
 			"required": true
 		},
 		{
-			"name": "name",
-			"type": "String",
-			"description": "房型名",
-			"required": true
-		},
-		{
-			"name": "name_e",
-			"type": "String",
-			"description": "房型英文名"
-		},
-		{
-			"name": "product_type",
-			"type": "Number",
-			"description": "房型类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "has_license",
-			"type": "Number",
-			"description": "有无资质执照 0 没有 1有",
-			"required": true
-		},
-		{
-			"name": "house_size",
-			"type": "Number",
-			"description": "单间面积，单位平方米",
-			"required": true
-		},
-		{
-			"name": "floor",
-			"type": "String",
-			"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层"
-		},
-		{
-			"name": "introduction",
-			"type": "String",
-			"description": "房型介绍"
-		},
-		{
-			"name": "brightspot",
-			"type": "String",
-			"description": "亮点描述"
-		},
-		{
-			"name": "local_info",
-			"type": "String",
-			"description": "位置描述"
-		},
-		{
-			"name": "surround_info",
-			"type": "String",
-			"description": "周边描述"
-		},
-		{
-			"name": "brand",
-			"type": "String",
-			"description": "品牌名称"
-		},
-		{
-			"name": "opening_time",
-			"type": "String",
-			"description": "开业时间，格式为2015-01-01"
-		},
-		{
-			"name": "decorate_time",
-			"type": "String",
-			"description": "装修时间，格式为2015-01-01装修时间"
-		},
-		{
-			"name": "decorate_level",
-			"type": "Number",
-			"description": "装修等级 1 精装；2普通；3简装"
-		},
-		{
-			"name": "decorate_style",
-			"type": "Number",
-			"description": "装修风格https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "scenic_feature",
-			"type": "Number",
-			"description": "风景类型(枚举)https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "rent_type",
-			"type": "Number",
-			"description": "出租类型，1整租；2分租。3床位 默认整租，该字段不能更新",
-			"required": true
-		},
-		{
-			"name": "rent_size",
-			"type": "Number",
-			"description": "单间面积，单位平方米"
-		},
-		{
-			"name": "has_landlord",
-			"type": "Number",
-			"description": "是否与房东同住 0 不同住 1同住"
-		},
-		{
 			"name": "tel",
 			"type": "String",
 			"description": "酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
 			"required": true
 		},
 		{
-			"name": "real_tel",
-			"type": "String",
-			"description": "真实联系方式",
-			"required": true
-		},
-		{
-			"name": "status",
-			"type": "byte",
-			"description": "状态 0：在线 -1：不在线 -2:停售",
-			"required": true
-		},
-		{
-			"name": "settlement_currency",
-			"type": "String",
-			"description": "结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用"
-		},
-		{
-			"name": "support_im",
+			"name": "receive_foreigners",
 			"type": "Number",
-			"description": "是否支持IM聊天 0不支持 1支持"
+			"description": "是否可接待外宾 0：否 1：是；默认值: 0"
 		},
 		{
-			"name": "quick_order",
-			"type": "Number",
-			"description": "是否开启闪订 0不开启 1开启"
-		},
-		{
-			"name": "bed_info",
+			"name": "local_info",
 			"type": "String",
-			"description": "床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn\u0026docType=1\u0026articleId=108347",
-			"required": true
+			"description": "位置描述",
+			"maxLength": 1000
 		},
 		{
-			"name": "house_model",
+			"name": "brand",
 			"type": "String",
-			"description": "房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空",
-			"required": true
+			"description": "品牌名称，最多100字符",
+			"maxLength": 100
 		},
 		{
-			"name": "window_type",
-			"type": "Number",
-			"description": "窗型-1.有窗；2.无窗；3.部分有窗"
-		},
-		{
-			"name": "pics",
-			"type": "BnbPictureDTO[]",
-			"description": "房型图片只支持远程图片，格式如下：[{\"url\":\"http://taobao.com/123.jpg\",\"ismain\":\"true\"},{\"url\":\"http://taobao.com/456.jpg\",\"ismain\":\"false\"},{\"url\":\"http://taobao.com/789.jpg\",\"ismain\":\"false\"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "attribute",
@@ -206,196 +129,17 @@
 					"description": "图片地址",
 					"required": true
 				}
-			]
+			],
+			"name": "pics",
+			"type": "BnbPictureDTO[]",
+			"description": "房源图片只支持远程图片，格式如下：[{\"url\":\"http://taobao.com/123.jpg\",\"ismain\":\"true\"},{\"url\":\"http://taobao.com/456.jpg\",\"ismain\":\"false\"},{\"url\":\"http://taobao.com/789.jpg\",\"ismain\":\"false\"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。",
+			"maxListSize": 999,
+			"required": true
 		},
 		{
-			"name": "outer_tags",
-			"type": "String",
-			"description": "房型外部标签 标签信息，逗号(,)分隔"
-		},
-		{
-			"name": "is_use_shoot_image",
+			"name": "cleaning_type",
 			"type": "Number",
-			"description": "是否使用实拍图片 0不使用 1使用"
-		},
-		{
-			"name": "video_url",
-			"type": "String",
-			"description": "视频地址"
-		},
-		{
-			"name": "location",
-			"type": "BnbLocationDto",
-			"description": "民宿房源位置信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "country",
-					"type": "String",
-					"description": "domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "address",
-					"type": "String",
-					"description": "地址"
-				},
-				{
-					"name": "business",
-					"type": "String",
-					"description": "商圈"
-				},
-				{
-					"name": "city",
-					"type": "Number",
-					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）",
-					"required": true
-				},
-				{
-					"name": "latitude",
-					"type": "String",
-					"description": "纬度",
-					"required": true
-				},
-				{
-					"name": "domestic",
-					"type": "Number",
-					"description": "是否国内酒店。0:国内;1:国外。默认是国内",
-					"required": true
-				},
-				{
-					"name": "province",
-					"type": "Number",
-					"description": "省份编码http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "district",
-					"type": "Number",
-					"description": "区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "doorplate",
-					"type": "String",
-					"description": "门牌号"
-				},
-				{
-					"name": "longitude",
-					"type": "String",
-					"description": "经度",
-					"required": true
-				},
-				{
-					"name": "timezone",
-					"type": "String",
-					"description": "时区0到+11或者0到-11",
-					"required": true
-				},
-				{
-					"name": "en_address",
-					"type": "String",
-					"description": "英文地址"
-				},
-				{
-					"name": "reception_address",
-					"type": "String",
-					"description": "接待地址"
-				},
-				{
-					"name": "position_type",
-					"type": "String",
-					"description": "坐标类型，现在支持：G – Google; B – 百度; A – 高德; M – Mapbar; L – 灵图 开芯",
-					"required": true
-				}
-			]
-		},
-		{
-			"name": "max_occupancy",
-			"type": "Number",
-			"description": "最大入住人数 1-50"
-		},
-		{
-			"name": "bnb_booking_time",
-			"type": "BnbBookingTimeDto",
-			"description": "民宿入住要求\u0026附加信息",
-			"subParams": [
-				{
-					"name": "start_reception_time",
-					"type": "String",
-					"description": "开始接待时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "end_reception_time",
-					"type": "String",
-					"description": "结束接待时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "earliest_check_in_time",
-					"type": "String",
-					"description": "最早入住时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "latest_booking_time",
-					"type": "String",
-					"description": "最晚预订时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "latest_check_in_time",
-					"type": "String",
-					"description": "最晚入住时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "latest_check_out_time",
-					"type": "String",
-					"description": "最晚离店时间 hh:mm,24小时时间格式"
-				}
-			]
-		},
-		{
-			"name": "check_in_notes",
-			"type": "String",
-			"description": "入住须知"
-		},
-		{
-			"name": "guest_gender",
-			"type": "Number",
-			"description": "0：不限制，1：只限男性，2：只限女性'"
-		},
-		{
-			"name": "guest_age",
-			"type": "Number",
-			"description": "是否接待儿童、老人；成年人必接待，详见“可接待客人”https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "receive_foreigners",
-			"type": "Number",
-			"description": "是否可接待外宾 0：否 1：是"
-		},
-		{
-			"name": "cleaning_frequency",
-			"type": "Number",
-			"description": "“打扫类型1(1客1扫/换),2(1天1扫/换),https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "activities_allowed",
-			"type": "String",
-			"description": "详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
-		},
-		{
-			"name": "extra_beds_num",
-			"type": "Number",
-			"description": "0-n；若不可加床，值为0"
-		},
-		{
-			"name": "deposit_type",
-			"type": "Number",
-			"description": "押金类型0.线下；1.线上"
-		},
-		{
-			"name": "supportcredit",
-			"type": "Number",
-			"description": "是否信用免押金0：否 1：是"
+			"description": "清洁费类型 0.线下；1.线上"
 		},
 		{
 			"name": "deposit_amount",
@@ -403,9 +147,171 @@
 			"description": "押金金额"
 		},
 		{
-			"name": "charge",
-			"type": "BnbChargeDto",
-			"description": "加人收费信息",
+			"name": "name_e",
+			"type": "String",
+			"description": "房源英文名",
+			"maxLength": 128
+		},
+		{
+			"name": "decorate_time",
+			"type": "String",
+			"description": "装修时间，格式为2015-01-01装修时间"
+		},
+		{
+			"name": "extra_beds_num",
+			"type": "Number",
+			"description": "0-n；若不可加床，值为0"
+		},
+		{
+			"name": "invoice_type",
+			"type": "Number",
+			"description": "可提供发票类型，1.专票 2.纸质普票 3.电子普票",
+			"required": true
+		},
+		{
+			"name": "has_front_desk",
+			"type": "Number",
+			"description": "是否有前台 0没有 1有"
+		},
+		{
+			"name": "guest_age",
+			"type": "Number",
+			"description": "是否接待儿童、老人；成年人必接待，详见“可接待客人”https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
+		},
+		{
+			"name": "settlement_currency",
+			"type": "String",
+			"description": "结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用"
+		},
+		{
+			"name": "name",
+			"type": "String[]",
+			"description": "房源名",
+			"maxLength": 60,
+			"maxListSize": 60,
+			"required": true
+		},
+		{
+			"name": "surround_info",
+			"type": "String",
+			"description": "周边描述",
+			"maxLength": 1000
+		},
+		{
+			"name": "max_occupancy",
+			"type": "Number",
+			"description": "最大入住人数 1-99"
+		},
+		{
+			"name": "is_use_shoot_image",
+			"type": "Number",
+			"description": "是否使用实拍图片 0不使用 1使用"
+		},
+		{
+			"name": "status",
+			"type": "byte",
+			"description": "状态 0：在线 -1：不在线 -2:停售",
+			"required": true
+		},
+		{
+			"name": "guest_gender",
+			"type": "Number",
+			"description": "0：不限制，1：只限男性，2：只限女性'"
+		},
+		{
+			"name": "activities_allowed",
+			"type": "String",
+			"description": "详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1  ，最多500字符",
+			"maxLength": 500
+		},
+		{
+			"name": "extra_cleaning_charge",
+			"type": "Number",
+			"description": "清洁费金额；整数[1，9999999]"
+		},
+		{
+			"name": "opening_time",
+			"type": "String",
+			"description": "开业时间，格式为2015-01-01"
+		},
+		{
+			"name": "rent_type",
+			"type": "Number",
+			"description": "出租类型，1整租；2分租。3床位 默认整租，该字段不能更新",
+			"required": true
+		},
+		{
+			"name": "new_outer_id",
+			"type": "String",
+			"description": "如果要变更商品房源编码请使用该字段。"
+		},
+		{
+			"name": "house_model",
+			"type": "String",
+			"description": "房屋户型， bedroom: 室, bathroom: 卫, livingroom: 厅, study: 书房, balcony: 阳台,kitchen: 厨房,bedroom和livingroom不能为空",
+			"required": true
+		},
+		{
+			"name": "window_type",
+			"type": "Number",
+			"description": "0-无窗  1-有窗  2-部分有窗 3-暗窗 4-部分暗窗  5-落地窗"
+		},
+		{
+			"name": "has_license",
+			"type": "Number",
+			"description": "有无资质执照 0 没有 1有",
+			"required": true
+		},
+		{
+			"name": "video_url",
+			"type": "String",
+			"description": "视频地址，最多1000字符",
+			"maxLength": 1000
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "销售渠道,默认taobao"
+		},
+		{
+			"name": "brightspot",
+			"type": "String",
+			"description": "亮点描述，最多1000字符",
+			"maxLength": 1000
+		},
+		{
+			"name": "quick_order",
+			"type": "Number",
+			"description": "是否开启闪订 0不开启 1开启"
+		},
+		{
+			"name": "floor",
+			"type": "String",
+			"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层"
+		},
+		{
+			"name": "house_size",
+			"type": "Number",
+			"description": "单间面积，单位平方米",
+			"required": true
+		},
+		{
+			"name": "product_type",
+			"type": "Number",
+			"description": "房源类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
+		},
+		{
+			"name": "introduction",
+			"type": "String",
+			"description": "房源介绍,最多2000字符",
+			"maxLength": 2000
+		},
+		{
+			"name": "has_landlord",
+			"type": "Number",
+			"description": "是否与房东同住 0 不同住 1同住"
+		},
+		{
 			"subParams": [
 				{
 					"name": "num",
@@ -427,142 +333,263 @@
 					"type": "Number",
 					"description": "最小收费年龄"
 				}
-			]
+			],
+			"name": "charge",
+			"type": "BnbChargeDto",
+			"description": "加人收费信息"
 		},
 		{
-			"name": "cleaning_charge",
+			"name": "decorate_style",
 			"type": "Number",
-			"description": "清洁费是否收取 0：否 1：是"
+			"description": "装修风格https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
 		},
 		{
-			"name": "cleaning_type",
+			"name": "supportcredit",
 			"type": "Number",
-			"description": "清洁费类型 0.线下；1.线上"
+			"description": "是否信用免押金0：否 1：是"
 		},
 		{
-			"name": "extra_cleaning_charge",
-			"type": "Number",
-			"description": "清洁费金额；整数[1，9999999]"
-		},
-		{
-			"name": "invoice",
-			"type": "Number",
-			"description": "发票，0：卖家提供发票，1：房东提供发票",
-			"required": true
-		},
-		{
-			"name": "invoice_type",
-			"type": "Number",
-			"description": "可提供发票类型，1.专票 2.纸质普票 3.电子普票",
-			"required": true
-		},
-		{
-			"name": "has_front_desk",
-			"type": "Number",
-			"description": "是否有前台 0没有 1有"
-		},
-		{
-			"name": "new_outer_id",
+			"name": "check_in_notes",
 			"type": "String",
-			"description": "如果要变更商品房型编码请使用该字段。"
+			"description": "入住须知，最多2000字符",
+			"maxLength": 2000
+		},
+		{
+			"name": "real_tel",
+			"type": "String",
+			"description": "真实联系方式",
+			"required": true
 		},
 		{
 			"name": "service",
-			"type": "Json",
-			"description": "设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {\"bar\":false,\"catv\":false,\"ddd\":false,\"idd\":false,\"pubtoilet\":false,\"toilet\":false}，见https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
+			"type": "String",
+			"description": "设施服务。json格式示例值：{\"24152\":true,\"24149\":true,\"24150\":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks\u0026docType=1\u0026articleId=108416\u0026previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类"
+		},
+		{
+			"name": "cleaning_frequency",
+			"type": "Number",
+			"description": "“打扫类型1(1客1扫/换),2(1天1扫/换),https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "房源id, 这是卖家自己系统中的ID",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "country",
+					"type": "String",
+					"description": "domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址，最多200字符"
+				},
+				{
+					"name": "business",
+					"type": "String",
+					"description": "商圈，最多64字符"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新酒店时为可选）",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度",
+					"required": true
+				},
+				{
+					"name": "position_type",
+					"type": "String",
+					"description": "坐标类型，现在支持：G – Google; B – 百度; A – 高德; M – Mapbar; L – 灵图 开芯",
+					"required": true
+				},
+				{
+					"name": "domestic",
+					"type": "Number",
+					"description": "是否国内酒店。0:国内;1:国外。默认是国内",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "省份编码http://hotel.alitrip.com/area.htm",
+					"required": true
+				},
+				{
+					"name": "en_address",
+					"type": "String",
+					"description": "英文地址，最多500字符"
+				},
+				{
+					"name": "reception_address",
+					"type": "String",
+					"description": "接待地址，最多200字符"
+				},
+				{
+					"name": "district",
+					"type": "Number",
+					"description": "区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm",
+					"required": true
+				},
+				{
+					"name": "timezone",
+					"type": "String",
+					"description": "时区0到+11或者0到-11",
+					"required": true
+				},
+				{
+					"name": "doorplate",
+					"type": "String",
+					"description": "门牌号，最多200字符"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				}
+			],
+			"name": "location",
+			"type": "BnbLocationDto",
+			"description": "民宿房源位置信息",
+			"required": true
+		},
+		{
+			"name": "scenic_feature",
+			"type": "Number",
+			"description": "风景类型(枚举)https://fliggy.open.taobao.com/doc.htm?docId=120148\u0026docType=1"
+		},
+		{
+			"name": "deposit_type",
+			"type": "Number",
+			"description": "押金类型0.线下；1.线上"
+		},
+		{
+			"name": "bed_info",
+			"type": "String",
+			"description": "床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn\u0026docType=1\u0026articleId=108347",
+			"required": true
+		},
+		{
+			"name": "extra_fee",
+			"type": "String",
+			"description": "额外收费",
+			"maxLength": 2000
+		},
+		{
+			"name": "extra_beds_fee",
+			"type": "Number",
+			"description": "加床费,分为单位"
+		},
+		{
+			"name": "bnb_name",
+			"type": "String[]",
+			"description": "民宿名称，默认取bnbName",
+			"maxLength": 60,
+			"maxListSize": 60
+		},
+		{
+			"name": "srid",
+			"type": "Number",
+			"description": "添加标准房源匹配"
+		},
+		{
+			"name": "standard_room_facilities",
+			"type": "String",
+			"description": "标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362\u0026docType=1",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "xroomtype",
-			"type": "XRoomType",
-			"description": "房源信息",
 			"subParams": [
-				{
-					"name": "rid",
-					"type": "Number",
-					"description": "飞猪房源id",
-					"required": true
-				},
 				{
 					"name": "hid",
 					"type": "Number",
-					"description": "飞猪门店id",
-					"required": true
+					"description": "飞猪门店id"
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "飞猪房源id"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "房源状态",
-					"required": true
+					"description": "房源状态"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "修改时间",
-					"required": true
+					"description": "修改时间"
 				},
 				{
 					"name": "match_status",
 					"type": "Number",
-					"description": "匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo; 6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo; 7:已系统匹配，但是匹配重复，待人工确认",
-					"required": true
+					"description": "匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo; 6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo; 7:已系统匹配，但是匹配重复，待人工确认"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "卖家系统id",
-					"required": true
+					"description": "卖家系统id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "房型名称",
-					"required": true
-				},
-				{
-					"name": "floor",
-					"type": "String",
-					"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层",
-					"required": true
+					"description": "房源名称"
 				},
 				{
 					"name": "max_occupancy",
 					"type": "Number",
-					"description": "最大入住人数",
-					"required": true
+					"description": "最大入住人数"
 				},
 				{
 					"name": "area",
 					"type": "String",
-					"description": "面积",
-					"required": true
-				},
-				{
-					"name": "service",
-					"type": "String",
-					"description": "设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {\u0026quot;bar\u0026quot;:false,\u0026quot;catv\u0026quot;:false,\u0026quot;ddd\u0026quot;:false,\u0026quot;idd\u0026quot;:false,\u0026quot;pubtoilet\u0026quot;:false,\u0026quot;toilet\u0026quot;:false}",
-					"required": true
+					"description": "面积"
 				},
 				{
 					"name": "window_type",
 					"type": "Number",
-					"description": "窗型,0：无窗/1：有窗",
-					"required": true
+					"description": "窗型,0：无窗/1：有窗"
+				},
+				{
+					"name": "service",
+					"type": "String",
+					"description": "设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {\u0026quot;bar\u0026quot;:false,\u0026quot;catv\u0026quot;:false,\u0026quot;ddd\u0026quot;:false,\u0026quot;idd\u0026quot;:false,\u0026quot;pubtoilet\u0026quot;:false,\u0026quot;toilet\u0026quot;:false}"
 				},
 				{
 					"name": "internet",
 					"type": "String",
-					"description": "宽带服务。A,B,C,D。分别代表： A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带",
-					"required": true
+					"description": "宽带服务。A,B,C,D。分别代表： A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带"
+				},
+				{
+					"name": "floor",
+					"type": "String",
+					"description": "客房在建筑的第几层，隔层为1-2层，4-5层，7-8层"
 				}
-			]
+			],
+			"name": "xroomtype",
+			"type": "XRoomType",
+			"description": "房源信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.bnbroomtype.add",
+	"apiChineseName": "民宿新增房源",
+	"description": "添加民宿房源",
+	"id": 56453
 }

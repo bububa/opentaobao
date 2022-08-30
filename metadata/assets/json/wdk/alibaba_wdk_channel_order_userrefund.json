@@ -1,14 +1,6 @@
 {
-	"id": 43564,
-	"name": "alibaba.wdk.channel.order.userrefund",
-	"apiChineseName": "用户发起售后退款(整单/部分)",
-	"description": "用户发起售后退款(整单/部分)",
 	"requestParams": [
 		{
-			"name": "order_user_refund_info",
-			"type": "OrderUserRefundInfo",
-			"description": "退款信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "refund_reason",
@@ -45,10 +37,6 @@
 					"required": true
 				},
 				{
-					"name": "sub_refund_orders",
-					"type": "SubRefundOrder[]",
-					"description": "退款子单",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_biz_order_id",
@@ -74,30 +62,40 @@
 							"description": "退款金额",
 							"required": true
 						}
-					]
+					],
+					"name": "sub_refund_orders",
+					"type": "SubRefundOrder[]",
+					"description": "退款子单",
+					"required": true
 				}
-			]
+			],
+			"name": "order_user_refund_info",
+			"type": "OrderUserRefundInfo",
+			"description": "退款信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.channel.order.userrefund",
+	"apiChineseName": "用户发起售后退款(整单/部分)",
+	"description": "用户发起售后退款(整单/部分)",
+	"id": 43564
 }

@@ -1,8 +1,4 @@
 {
-	"id": 39311,
-	"name": "alibaba.lst.shiporder.cancel",
-	"apiChineseName": "零售通发货单取消",
-	"description": "通过该接口可以取消零售通运保保发货单，并处理相关业务流程。",
 	"requestParams": [
 		{
 			"name": "reason",
@@ -24,29 +20,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.lst.shiporder.cancel",
+	"apiChineseName": "零售通发货单取消",
+	"description": "通过该接口可以取消零售通运保保发货单，并处理相关业务流程。",
+	"id": 39311
 }

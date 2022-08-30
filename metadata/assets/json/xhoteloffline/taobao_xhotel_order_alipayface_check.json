@@ -1,8 +1,4 @@
 {
-	"id": 25623,
-	"name": "taobao.xhotel.order.alipayface.check",
-	"apiChineseName": "线下信用住买家资格校验接口",
-	"description": "接口用于校验买家是否具有使用酒店信用住的资格",
 	"requestParams": [
 		{
 			"name": "total_fee",
@@ -79,5 +75,9 @@
 			"type": "Boolean",
 			"description": "existAlipayOrder"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.alipayface.check",
+	"apiChineseName": "线下信用住买家资格校验接口",
+	"description": "接口用于校验买家是否具有使用酒店信用住的资格",
+	"id": 25623
 }

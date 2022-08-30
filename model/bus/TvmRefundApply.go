@@ -14,4 +14,6 @@ type TvmRefundApply struct {
 	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 	// 退款状态 10(处理中) 20(已拒绝) 30(已同意) 40(已退款) 50(已受理)
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
+	// 淘宝退款申请单id
+	RpApplyId int64 `json:"rp_apply_id,omitempty" xml:"rp_apply_id,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29456,
-	"name": "alibaba.alisports.passport.account.ssotokenrefresh",
-	"apiChineseName": "sso_token刷新",
-	"description": "sso_token刷新",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -31,9 +27,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "alisp_data",
-			"type": "AlispData",
-			"description": "alisp_data",
 			"subParams": [
 				{
 					"name": "sso_token",
@@ -41,7 +34,10 @@
 					"description": "sso_token",
 					"required": true
 				}
-			]
+			],
+			"name": "alisp_data",
+			"type": "AlispData",
+			"description": "alisp_data"
 		},
 		{
 			"name": "alisp_code",
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "提示信息"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.ssotokenrefresh",
+	"apiChineseName": "sso_token刷新",
+	"description": "sso_token刷新",
+	"id": 29456
 }

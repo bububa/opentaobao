@@ -1,8 +1,4 @@
 {
-	"id": 50194,
-	"name": "alibaba.idle.recycle.order.show",
-	"apiChineseName": "闲鱼回收订单查询V1.1",
-	"description": "查询回收订单",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_msg",
@@ -30,10 +23,6 @@
 					"required": true
 				},
 				{
-					"name": "module",
-					"type": "Serializable",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_key",
@@ -286,10 +275,27 @@
 							"type": "String",
 							"description": "spuid",
 							"required": true
+						},
+						{
+							"name": "ship_time_end",
+							"type": "String",
+							"description": "取件截止时间",
+							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "Serializable",
+					"description": "订单信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.recycle.order.show",
+	"apiChineseName": "闲鱼回收订单查询V1.1",
+	"description": "查询回收订单",
+	"id": 50194
 }

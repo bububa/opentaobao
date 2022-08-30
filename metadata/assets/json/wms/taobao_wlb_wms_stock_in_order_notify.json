@@ -1,8 +1,4 @@
 {
-	"id": 24483,
-	"name": "taobao.wlb.wms.stock.in.order.notify",
-	"apiChineseName": "入库通知单",
-	"description": "入库通知单",
 	"requestParams": [
 		{
 			"name": "store_code",
@@ -84,9 +80,6 @@
 			"description": "预期送达结束时间"
 		},
 		{
-			"name": "receiver_info",
-			"type": "Receiverinfowlbwmsstockinordernotifywl",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "receiver_city",
@@ -133,12 +126,12 @@
 					"type": "String",
 					"description": "收件人镇"
 				}
-			]
+			],
+			"name": "receiver_info",
+			"type": "Receiverinfowlbwmsstockinordernotifywl",
+			"description": "系统自动生成"
 		},
 		{
-			"name": "sender_info",
-			"type": "Senderinfowlbwmsstockinordernotifywl",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "sender_zip_code",
@@ -190,20 +183,14 @@
 					"type": "String",
 					"description": "发件方电话"
 				}
-			]
+			],
+			"name": "sender_info",
+			"type": "Senderinfowlbwmsstockinordernotifywl",
+			"description": "系统自动生成"
 		},
 		{
-			"name": "order_item_list",
-			"type": "Orderitemlistwlbwmsstockinordernotifywl[]",
-			"description": "系统自动生成",
-			"required": true,
-			"maxListSize": 5000,
 			"subParams": [
 				{
-					"name": "order_item",
-					"type": "Orderitemwlbwmsstockinordernotifywl",
-					"description": "订单商品",
-					"required": true,
 					"subParams": [
 						{
 							"name": "produce_code",
@@ -259,9 +246,18 @@
 							"type": "Date",
 							"description": "生产日期"
 						}
-					]
+					],
+					"name": "order_item",
+					"type": "Orderitemwlbwmsstockinordernotifywl",
+					"description": "订单商品",
+					"required": true
 				}
-			]
+			],
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsstockinordernotifywl[]",
+			"description": "系统自动生成",
+			"maxListSize": 5000,
+			"required": true
 		},
 		{
 			"name": "extend_fields",
@@ -295,5 +291,9 @@
 			"type": "String",
 			"description": "仓储订单编码"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.stock.in.order.notify",
+	"apiChineseName": "入库通知单",
+	"description": "入库通知单",
+	"id": 24483
 }

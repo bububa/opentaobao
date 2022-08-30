@@ -1,8 +1,4 @@
 {
-	"id": 31351,
-	"name": "taobao.singletreasure.activity.delete",
-	"apiChineseName": "删除活动接口",
-	"description": "删除优惠活动",
 	"requestParams": [
 		{
 			"name": "activity_id",
@@ -32,5 +28,9 @@
 			"type": "Boolean",
 			"description": "系统执行是否成功"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.delete",
+	"apiChineseName": "删除活动接口",
+	"description": "删除优惠活动",
+	"id": 31351
 }

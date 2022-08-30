@@ -1,0 +1,194 @@
+{
+	"requestParams": [
+		{
+			"name": "target_language",
+			"type": "String",
+			"description": "target_language:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN"
+		},
+		{
+			"name": "target_currency",
+			"type": "String",
+			"description": "target_currency:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW"
+		},
+		{
+			"name": "product_cnt",
+			"type": "Number",
+			"description": "count of products， max 150."
+		},
+		{
+			"name": "sort",
+			"type": "String",
+			"description": "SALE_PRICE_ASC, SALE_PRICE_DESC, LAST_VOLUME_ASC, LAST_VOLUME_DESC"
+		},
+		{
+			"name": "shpt_to",
+			"type": "String",
+			"description": "optional  Ship to Country"
+		},
+		{
+			"name": "image_file_bytes",
+			"type": "byte[]",
+			"description": "image name in fileserver，max size 100 KB"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "error code"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "product_small_image_urls",
+							"type": "String[]",
+							"description": "commodity thumbnail address list"
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "original price"
+						},
+						{
+							"name": "original_price_currency",
+							"type": "String",
+							"description": "original price currency"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "discount"
+						},
+						{
+							"name": "lastest_volume",
+							"type": "String",
+							"description": "latest volume"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "seller id"
+						},
+						{
+							"name": "target_sale_price",
+							"type": "String",
+							"description": "target sale price"
+						},
+						{
+							"name": "evaluate_rate",
+							"type": "String",
+							"description": "evaluate rate"
+						},
+						{
+							"name": "target_original_price",
+							"type": "String",
+							"description": "target original price"
+						},
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "shop id"
+						},
+						{
+							"name": "second_level_category_name",
+							"type": "String",
+							"description": "second level category name"
+						},
+						{
+							"name": "first_level_category_id",
+							"type": "String",
+							"description": "first level category id"
+						},
+						{
+							"name": "product_video_url",
+							"type": "String",
+							"description": "product vedio url"
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "product id"
+						},
+						{
+							"name": "sale_price",
+							"type": "String",
+							"description": "sale price"
+						},
+						{
+							"name": "target_sale_price_currency",
+							"type": "String",
+							"description": "target sale price currency"
+						},
+						{
+							"name": "second_level_category_id",
+							"type": "String",
+							"description": "second level category id"
+						},
+						{
+							"name": "shop_url",
+							"type": "String",
+							"description": "shop url"
+						},
+						{
+							"name": "product_title",
+							"type": "String",
+							"description": "product title"
+						},
+						{
+							"name": "product_detail_url",
+							"type": "String",
+							"description": "product detail url"
+						},
+						{
+							"name": "first_level_category_name",
+							"type": "String",
+							"description": "first level category name"
+						},
+						{
+							"name": "product_main_image_url",
+							"type": "String",
+							"description": "product main image url"
+						},
+						{
+							"name": "platform_product_type",
+							"type": "String",
+							"description": "platform product type"
+						},
+						{
+							"name": "target_original_price_currency",
+							"type": "String",
+							"description": "target original price currency"
+						},
+						{
+							"name": "sale_price_currency",
+							"type": "String",
+							"description": "sale price currency"
+						}
+					],
+					"name": "products",
+					"type": "TrafficImageProductDTO[]",
+					"description": "products"
+				}
+			],
+			"name": "data",
+			"type": "TrafficImageSearchResultDTO",
+			"description": "result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "System Error"
+		},
+		{
+			"name": "total_record_count",
+			"type": "Number",
+			"description": "total record count"
+		}
+	],
+	"name": "aliexpress.ds.image.search",
+	"apiChineseName": "图片搜索",
+	"description": "图片搜索",
+	"id": 60453
+}

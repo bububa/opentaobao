@@ -1,8 +1,4 @@
 {
-	"id": 53333,
-	"name": "alibaba.legal.case.court.time.update",
-	"apiChineseName": "开庭时间变更",
-	"description": "修改案件的开庭时间",
 	"requestParams": [
 		{
 			"name": "case_id",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "success",
@@ -53,7 +46,14 @@
 					"description": "msg",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.court.time.update",
+	"apiChineseName": "开庭时间变更",
+	"description": "修改案件的开庭时间",
+	"id": 53333
 }

@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_instance_id",
+					"type": "String",
+					"description": "消息实例ID，在控制台申请到",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "对应着商家C端APPID",
+					"required": true
+				},
+				{
+					"name": "msg_data",
+					"description": "消息自定义消息占位符"
+				},
+				{
+					"name": "url_params",
+					"description": "自定义参数"
+				}
+			],
+			"name": "msg_request",
+			"type": "MiniappBcChatMsgRequest",
+			"description": "请求参数"
+		},
+		{
+			"name": "top_recource_token",
+			"type": "String",
+			"description": "资源授权token",
+			"required": true
+		},
+		{
+			"name": "top_recource_id",
+			"type": "String",
+			"description": "资源点"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "SERVICE_ERROR",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg_err_message",
+					"type": "String",
+					"description": "SERVICE_ERROR",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.bc.chat.message.send",
+	"apiChineseName": "小程序资源授权-BC客服消息",
+	"description": "小程序资源授权-消息订阅",
+	"id": 62215
+}

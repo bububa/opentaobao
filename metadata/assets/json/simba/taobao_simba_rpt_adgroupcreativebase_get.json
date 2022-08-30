@@ -1,8 +1,4 @@
 {
-	"id": 10962,
-	"name": "taobao.simba.rpt.adgroupcreativebase.get",
-	"apiChineseName": "推广组下创意报表基础数据查询(汇总数据，不分类型)",
-	"description": "推广组下创意报表基础数据查询(汇总数据，不分类型)",
 	"requestParams": [
 		{
 			"name": "subway_token",
@@ -70,5 +66,9 @@
 			"type": "String",
 			"description": "推广组下的创意基础数据列表"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.adgroupcreativebase.get",
+	"apiChineseName": "推广组下创意报表基础数据查询(汇总数据，不分类型)",
+	"description": "推广组下创意报表基础数据查询(汇总数据，不分类型)",
+	"id": 10962
 }

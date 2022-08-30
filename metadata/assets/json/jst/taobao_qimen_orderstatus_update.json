@@ -1,8 +1,4 @@
 {
-	"id": 27028,
-	"name": "taobao.qimen.orderstatus.update",
-	"apiChineseName": "订单状态更新接口",
-	"description": "星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。",
 	"requestParams": [
 		{
 			"name": "allocation_code",
@@ -12,10 +8,10 @@
 		},
 		{
 			"name": "order_codes",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "淘系子订单号",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "store_id",
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.qimen.orderstatus.update",
+	"apiChineseName": "订单状态更新接口",
+	"description": "星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。",
+	"id": 27028
 }

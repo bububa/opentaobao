@@ -1,16 +1,12 @@
 {
-	"id": 36836,
-	"name": "taobao.tbk.dg.newuser.order.sum",
-	"apiChineseName": "淘宝客-推广者-拉新活动对应数据查询",
-	"description": "拉新活动汇总API",
 	"requestParams": [
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页大小，默认20，1~100",
-			"required": true,
 			"maxValue": 100,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "adzone_id",
@@ -42,15 +38,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Data",
-			"description": "data",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_no",
@@ -71,10 +60,6 @@
 							"required": true
 						},
 						{
-							"name": "results",
-							"type": "Data[]",
-							"description": "resultList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "activity_id",
@@ -160,11 +145,26 @@
 									"description": "渠道关系id",
 									"required": true
 								}
-							]
+							],
+							"name": "results",
+							"type": "Data[]",
+							"description": "resultList",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "data",
+					"required": true
 				}
-			]
+			],
+			"name": "results",
+			"type": "Data",
+			"description": "data"
 		}
-	]
+	],
+	"name": "taobao.tbk.dg.newuser.order.sum",
+	"apiChineseName": "淘宝客-推广者-拉新活动对应数据查询",
+	"description": "拉新活动汇总API",
+	"id": 36836
 }

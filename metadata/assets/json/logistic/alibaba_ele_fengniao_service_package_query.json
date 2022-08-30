@@ -1,14 +1,6 @@
 {
-	"id": 40494,
-	"name": "alibaba.ele.fengniao.service.package.query",
-	"apiChineseName": "预采购服务包查询接口",
-	"description": "查询门店所在经纬度可用服务包的接口",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_id",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "chainstores",
-					"type": "ChainStore[]",
-					"description": "门店列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "chainstore_code",
@@ -46,16 +34,21 @@
 							"description": "纬度",
 							"required": true
 						}
-					]
+					],
+					"name": "chainstores",
+					"type": "ChainStore[]",
+					"description": "门店列表",
+					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_packages",
-			"type": "Result []",
-			"description": "servicePackages",
 			"subParams": [
 				{
 					"name": "chainstore_code",
@@ -64,10 +57,6 @@
 					"required": true
 				},
 				{
-					"name": "service_package_codes",
-					"type": "ServicePackage[]",
-					"description": "servicePackageCodes",
-					"required": true,
 					"subParams": [
 						{
 							"name": "service_package_code",
@@ -75,9 +64,20 @@
 							"description": "服务包code",
 							"required": true
 						}
-					]
+					],
+					"name": "service_package_codes",
+					"type": "ServicePackage[]",
+					"description": "servicePackageCodes",
+					"required": true
 				}
-			]
+			],
+			"name": "service_packages",
+			"type": "Result []",
+			"description": "servicePackages"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.service.package.query",
+	"apiChineseName": "预采购服务包查询接口",
+	"description": "查询门店所在经纬度可用服务包的接口",
+	"id": 40494
 }

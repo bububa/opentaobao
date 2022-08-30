@@ -1,8 +1,4 @@
 {
-	"id": 66,
-	"name": "taobao.sellercats.list.add",
-	"apiChineseName": "添加卖家自定义类目",
-	"description": "此API添加卖家店铺内自定义类目 \u003cbr/\u003e父类目parent_cid值等于0：表示此类目为店铺下的一级类目，值不等于0：表示此类目有父类目 \u003cbr/\u003e注：因为缓存的关系,添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布",
 	"requestParams": [
 		{
 			"name": "name",
@@ -28,16 +24,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "seller_cat",
-			"type": "SellerCat",
-			"description": "返回seller_cat数据结构中的：cid,created",
 			"subParams": [
 				{
 					"name": "cid",
 					"type": "Number",
 					"description": "卖家自定义类目编号"
 				}
-			]
+			],
+			"name": "seller_cat",
+			"type": "SellerCat",
+			"description": "返回seller_cat数据结构中的：cid,created"
 		}
-	]
+	],
+	"name": "taobao.sellercats.list.add",
+	"apiChineseName": "添加卖家自定义类目",
+	"description": "此API添加卖家店铺内自定义类目 \u003cbr/\u003e父类目parent_cid值等于0：表示此类目为店铺下的一级类目，值不等于0：表示此类目有父类目 \u003cbr/\u003e注：因为缓存的关系,添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布",
+	"id": 66
 }

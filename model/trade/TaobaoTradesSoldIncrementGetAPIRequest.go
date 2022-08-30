@@ -32,6 +32,8 @@ type TaobaoTradesSoldIncrementGetAPIRequest struct {
 	_extType string
 	// 卖家对交易的自定义分组标签，目前可选值为：time_card（点卡软件代充），fee_card（话费软件代充）
 	_tag string
+	// 买家openId
+	_buyerOpenUid string
 	// 页码。取值范围:大于零的整数;默认值:1。<span style="color:red;font-weight: bold;">注：必须采用倒序的分页方式（从最后一页往回取）才能避免漏单问题。</span>
 	_pageNo int64
 	// 每页条数。取值范围：1~100，默认值：40。<span style="color:red;font-weight: bold;">建议使用40~50，可以提高成功率，减少超时数量</span>。
@@ -163,6 +165,19 @@ func (r *TaobaoTradesSoldIncrementGetAPIRequest) SetTag(_tag string) error {
 // GetTag Tag Getter
 func (r TaobaoTradesSoldIncrementGetAPIRequest) GetTag() string {
 	return r._tag
+}
+
+// SetBuyerOpenUid is BuyerOpenUid Setter
+// 买家openId
+func (r *TaobaoTradesSoldIncrementGetAPIRequest) SetBuyerOpenUid(_buyerOpenUid string) error {
+	r._buyerOpenUid = _buyerOpenUid
+	r.Set("buyer_open_uid", _buyerOpenUid)
+	return nil
+}
+
+// GetBuyerOpenUid BuyerOpenUid Getter
+func (r TaobaoTradesSoldIncrementGetAPIRequest) GetBuyerOpenUid() string {
+	return r._buyerOpenUid
 }
 
 // SetPageNo is PageNo Setter

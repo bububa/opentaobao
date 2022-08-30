@@ -1,8 +1,4 @@
 {
-	"id": 49044,
-	"name": "alibaba.mallitemcenter.entitledservice.supplier.query",
-	"apiChineseName": "根据天猫id查询门店服务授权",
-	"description": "根据天猫id查询门店服务授权",
 	"requestParams": [
 		{
 			"name": "id",
@@ -22,89 +18,81 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "统一返回结果",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "ResultData",
-					"description": "接口返回model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "页面大小",
-							"required": true
+							"description": "页面大小"
 						},
 						{
-							"name": "one_paged_data_list",
-							"type": "OnePagedDataList[]",
-							"description": "数据",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_code",
 									"type": "String",
-									"description": "服务编码",
-									"required": true
+									"description": "服务编码"
 								},
 								{
 									"name": "display_name",
 									"type": "String",
-									"description": "服务名称",
-									"required": true
+									"description": "服务名称"
 								},
 								{
 									"name": "user_id",
 									"type": "Number",
-									"description": "用户ID",
-									"required": true
+									"description": "用户ID"
 								},
 								{
 									"name": "user_nick",
 									"type": "String",
-									"description": "用户昵称",
-									"required": true
+									"description": "用户昵称"
 								},
 								{
-									"name": "status",
-									"type": "Number",
-									"description": "状态",
-									"required": true
-								},
-								{
-									"name": "service_ability_code_list",
-									"type": "ServiceSkuPriceList[]",
-									"description": "服务sku封装",
-									"required": true,
 									"subParams": [
 										{
 											"name": "price",
 											"type": "Number",
-											"description": "价格",
-											"required": true
+											"description": "价格"
 										},
 										{
 											"name": "service_ability_code",
 											"type": "String",
-											"description": "服务sku",
-											"required": true
+											"description": "服务sku"
 										}
-									]
+									],
+									"name": "service_ability_code_list",
+									"type": "ServiceSkuPriceList[]",
+									"description": "服务sku封装"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态"
 								}
-							]
+							],
+							"name": "one_paged_data_list",
+							"type": "OnePagedDataList[]",
+							"description": "数据"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总数量",
-							"required": true
+							"description": "总数量"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "ResultData",
+					"description": "接口返回model"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "统一返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mallitemcenter.entitledservice.supplier.query",
+	"apiChineseName": "根据天猫id查询门店服务授权",
+	"description": "根据天猫id查询门店服务授权",
+	"id": 49044
 }

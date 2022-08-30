@@ -30,10 +30,10 @@ type TmallExchangeReceiveGetAPIRequest struct {
 	_startCreatedTime string
 	// 查询申请时间段的结束时间点
 	_endCreatedTime string
+	// 买家的openId
+	_buyerOpenUid string
 	// 每页条数
 	_pageSize int64
-	// 买家id
-	_buyerId int64
 	// 页码
 	_pageNo int64
 	// 正向订单号
@@ -178,6 +178,19 @@ func (r TmallExchangeReceiveGetAPIRequest) GetEndCreatedTime() string {
 	return r._endCreatedTime
 }
 
+// SetBuyerOpenUid is BuyerOpenUid Setter
+// 买家的openId
+func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerOpenUid(_buyerOpenUid string) error {
+	r._buyerOpenUid = _buyerOpenUid
+	r.Set("buyer_open_uid", _buyerOpenUid)
+	return nil
+}
+
+// GetBuyerOpenUid BuyerOpenUid Getter
+func (r TmallExchangeReceiveGetAPIRequest) GetBuyerOpenUid() string {
+	return r._buyerOpenUid
+}
+
 // SetPageSize is PageSize Setter
 // 每页条数
 func (r *TmallExchangeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -189,19 +202,6 @@ func (r *TmallExchangeReceiveGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TmallExchangeReceiveGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetBuyerId is BuyerId Setter
-// 买家id
-func (r *TmallExchangeReceiveGetAPIRequest) SetBuyerId(_buyerId int64) error {
-	r._buyerId = _buyerId
-	r.Set("buyer_id", _buyerId)
-	return nil
-}
-
-// GetBuyerId BuyerId Getter
-func (r TmallExchangeReceiveGetAPIRequest) GetBuyerId() int64 {
-	return r._buyerId
 }
 
 // SetPageNo is PageNo Setter

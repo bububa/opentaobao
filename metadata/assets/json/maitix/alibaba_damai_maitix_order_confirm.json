@@ -1,14 +1,6 @@
 {
-	"id": 38104,
-	"name": "alibaba.damai.maitix.order.confirm",
-	"apiChineseName": "大麦-出票",
-	"description": "出票",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "MoaConfirmOrderParam",
-			"description": "出票入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -16,54 +8,56 @@
 					"description": "大麦订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "MoaConfirmOrderParam",
+			"description": "出票入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MxResult",
-			"description": "返回结果集",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "model",
-					"type": "T",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "pay_status",
 							"type": "Number",
-							"description": "支付状态：0:失败,1:成功",
-							"required": true
+							"description": "支付状态：0:失败,1:成功"
 						}
-					]
+					],
+					"name": "model",
+					"type": "T",
+					"description": "结果对象"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "结果code，0代表成功，负数代表异常情况",
-					"required": true
+					"description": "结果code，0代表成功，负数代表异常情况"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功，true：成功，false:失败",
-					"required": true
+					"description": "是否成功，true：成功，false:失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MxResult",
+			"description": "返回结果集"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.order.confirm",
+	"apiChineseName": "大麦-出票",
+	"description": "出票",
+	"id": 38104
 }

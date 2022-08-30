@@ -1,8 +1,4 @@
 {
-	"id": 29767,
-	"name": "taobao.alitrip.car.order.query",
-	"apiChineseName": "飞猪订单状态查询接口",
-	"description": "提供给直连商家查询在飞猪平台上产生的订单",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,23 +9,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "OrderQueryRsp",
-			"description": "订单结果",
 			"subParams": [
 				{
 					"name": "order_id",
 					"type": "String",
-					"description": "订单id",
-					"required": true
+					"description": "订单id"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "订单状态。21-等待商家确认接单，22-商家已确认接单（未派司机），23-商家已确认接单（已派司机），24-司机服务已完成，25-司机已出发，26-司机已到达目的地，27-司机开始服务，60-订单已关闭，70-订单已完成。其他状态可不必关心。",
-					"required": true
+					"description": "订单状态。21-等待商家确认接单，22-商家已确认接单（未派司机），23-商家已确认接单（已派司机），24-司机服务已完成，25-司机已出发，26-司机已到达目的地，27-司机开始服务，60-订单已关闭，70-订单已完成。其他状态可不必关心。"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "OrderQueryRsp",
+			"description": "订单结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.query",
+	"apiChineseName": "飞猪订单状态查询接口",
+	"description": "提供给直连商家查询在飞猪平台上产生的订单",
+	"id": 29767
 }

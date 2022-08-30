@@ -40,4 +40,10 @@ type MaillingAddressRequestDto struct {
 	ForeignerPassportNo string `json:"foreigner_passport_no,omitempty" xml:"foreigner_passport_no,omitempty"`
 	// 是否是外籍
 	IsForeigner string `json:"is_foreigner,omitempty" xml:"is_foreigner,omitempty"`
+	// vat税号
+	VatNo string `json:"vat_no,omitempty" xml:"vat_no,omitempty"`
+	// 公司名称
+	TaxCompany string `json:"tax_company,omitempty" xml:"tax_company,omitempty"`
+	// 地址树ID
+	LocationTreeAddressId string `json:"location_tree_address_id,omitempty" xml:"location_tree_address_id,omitempty"`
 }

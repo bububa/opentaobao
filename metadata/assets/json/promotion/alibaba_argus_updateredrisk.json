@@ -1,13 +1,6 @@
 {
-	"id": 50923,
-	"name": "alibaba.argus.updateredrisk",
-	"apiChineseName": "更新红线价格",
-	"description": "商品健康中心新增红线价格规则",
 	"requestParams": [
 		{
-			"name": "red_risk_update_factor",
-			"type": "RedRiskUpdateFactor",
-			"description": "红线价格参数",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -27,9 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "sku_risk_factors",
-					"type": "SkuRedRiskFactor[]",
-					"description": "新增sku级别红线价格",
 					"subParams": [
 						{
 							"name": "amount_at",
@@ -41,13 +31,12 @@
 							"type": "String",
 							"description": "skuId"
 						}
-					]
+					],
+					"name": "sku_risk_factors",
+					"type": "SkuRedRiskFactor[]",
+					"description": "新增sku级别红线价格"
 				},
 				{
-					"name": "risk_levels",
-					"type": "RiskLevelParam[]",
-					"description": "风险等级设置",
-					"required": true,
 					"subParams": [
 						{
 							"name": "key",
@@ -67,9 +56,16 @@
 							"description": "风险等级比例右边值",
 							"required": true
 						}
-					]
+					],
+					"name": "risk_levels",
+					"type": "RiskLevelParam[]",
+					"description": "风险等级设置",
+					"required": true
 				}
-			]
+			],
+			"name": "red_risk_update_factor",
+			"type": "RedRiskUpdateFactor",
+			"description": "红线价格参数"
 		}
 	],
 	"responseParams": [
@@ -93,5 +89,9 @@
 			"type": "Number",
 			"description": "总数"
 		}
-	]
+	],
+	"name": "alibaba.argus.updateredrisk",
+	"apiChineseName": "更新红线价格",
+	"description": "商品健康中心新增红线价格规则",
+	"id": 50923
 }

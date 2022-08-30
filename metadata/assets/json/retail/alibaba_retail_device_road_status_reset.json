@@ -1,8 +1,4 @@
 {
-	"id": 41298,
-	"name": "alibaba.retail.device.road.status.reset",
-	"apiChineseName": "贩卖机货道解锁",
-	"description": "贩卖机货道解锁",
 	"requestParams": [
 		{
 			"name": "device_uuid",
@@ -32,5 +28,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.retail.device.road.status.reset",
+	"apiChineseName": "贩卖机货道解锁",
+	"description": "贩卖机货道解锁",
+	"id": 41298
 }

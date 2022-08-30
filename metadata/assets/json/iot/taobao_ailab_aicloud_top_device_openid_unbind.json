@@ -1,19 +1,5 @@
 {
-	"id": 41319,
-	"name": "taobao.ailab.aicloud.top.device.openid.unbind",
-	"apiChineseName": "openTaoBaoId解绑设备",
-	"description": "openTaoBaoId解绑设备",
 	"requestParams": [
-		{
-			"name": "open_id",
-			"type": "String",
-			"description": "淘宝openId"
-		},
-		{
-			"name": "uuid",
-			"type": "String",
-			"description": "设备uuid"
-		},
 		{
 			"name": "schema",
 			"type": "String",
@@ -33,33 +19,44 @@
 			"name": "utd_id",
 			"type": "String",
 			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "淘宝openId"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "解绑是否成功",
-					"required": true
+					"description": "解绑是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "Boolean",
-					"description": "msgInfo错误码信息，成功返回null",
-					"required": true
+					"description": "msgInfo错误码信息，成功返回null"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.openid.unbind",
+	"apiChineseName": "openTaoBaoId解绑设备",
+	"description": "openTaoBaoId解绑设备",
+	"id": 41319
 }

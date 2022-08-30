@@ -1,13 +1,6 @@
 {
-	"id": 56009,
-	"name": "alibaba.alihealth.pw.applynode.update",
-	"apiChineseName": "申请节点变更回调",
-	"description": "基金会回调阿里健康更新药品援助申请单的状态",
 	"requestParams": [
 		{
-			"name": "body",
-			"type": "AuditRollbackRo",
-			"description": "回调入参",
 			"subParams": [
 				{
 					"name": "receipt_date",
@@ -35,6 +28,16 @@
 					"description": "跳转url"
 				},
 				{
+					"name": "receipt_name",
+					"type": "String",
+					"description": "收款人"
+				},
+				{
+					"name": "receipt_account",
+					"type": "String",
+					"description": "收款账户"
+				},
+				{
 					"name": "apply_audit_status",
 					"type": "String",
 					"description": "审核状态"
@@ -51,20 +54,55 @@
 				},
 				{
 					"name": "hospitals_desc",
-					"type": "null[]",
+					"type": "String[]",
 					"description": "医院列表"
 				},
 				{
-					"name": "receipt_name",
+					"name": "patient_name",
 					"type": "String",
-					"description": "收款人"
+					"description": "患者姓名"
 				},
 				{
-					"name": "receipt_account",
-					"type": "String",
-					"description": "收款账户"
+					"subParams": [
+						{
+							"name": "hospital_phone",
+							"type": "String",
+							"description": "医院联系方式"
+						},
+						{
+							"name": "hospital_name",
+							"type": "String",
+							"description": "医院名称"
+						},
+						{
+							"name": "hospital_address",
+							"type": "String",
+							"description": "医院地址"
+						},
+						{
+							"name": "hospital_logo",
+							"type": "String",
+							"description": "医院logo"
+						},
+						{
+							"name": "hospital_grade",
+							"type": "String",
+							"description": "医院等级"
+						},
+						{
+							"name": "hospital_code",
+							"type": "String",
+							"description": "医院编码"
+						}
+					],
+					"name": "hospital_info",
+					"type": "HospitalInfoDto",
+					"description": "选择医院"
 				}
-			]
+			],
+			"name": "body",
+			"type": "AuditRollbackRo",
+			"description": "回调入参"
 		}
 	],
 	"responseParams": [
@@ -78,5 +116,9 @@
 			"type": "String",
 			"description": "pap项目状态描述"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.pw.applynode.update",
+	"apiChineseName": "申请节点变更回调",
+	"description": "基金会回调阿里健康更新药品援助申请单的状态",
+	"id": 56009
 }

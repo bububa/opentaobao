@@ -1,13 +1,6 @@
 {
-	"id": 33667,
-	"name": "alibaba.wdk.marketing.itempool.stair.additem",
-	"apiChineseName": "商品池阶梯商品添加",
-	"description": "添加商品池阶梯商品",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ItemPoolSku",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "sku_code",
@@ -26,12 +19,12 @@
 					"type": "Number",
 					"description": "换购商品总数限制"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ItemPoolSku",
+			"description": "系统自动生成"
 		},
 		{
-			"name": "param1",
-			"type": "CommonActivityParam",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "out_act_id",
@@ -44,66 +37,65 @@
 					"description": "报名活动Id",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "添加商品返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "结果信息",
-					"required": true
+					"description": "结果信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "data",
-					"type": "ItemPoolSku",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "skuName",
-							"required": true
+							"description": "skuName"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "skuCode",
-							"required": true
+							"description": "skuCode"
 						},
 						{
 							"name": "exchange_price",
 							"type": "Number",
-							"description": "换购价（分）",
-							"required": true
+							"description": "换购价（分）"
 						},
 						{
 							"name": "exchange_total_limit",
 							"type": "Number",
-							"description": "换购商品总数限制",
-							"required": true
+							"description": "换购商品总数限制"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemPoolSku",
+					"description": "data"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "添加商品返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.stair.additem",
+	"apiChineseName": "商品池阶梯商品添加",
+	"description": "添加商品池阶梯商品",
+	"id": 33667
 }

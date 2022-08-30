@@ -1,15 +1,11 @@
 {
-	"id": 46006,
-	"name": "tmall.servicecenter.identifytask.create",
-	"apiChineseName": "服务商创建核销单",
-	"description": "服务商调用该接口进行创建核销单操作",
 	"requestParams": [
 		{
 			"name": "workcard_ids",
 			"type": "Number[]",
 			"description": "工单列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "reassign",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "-",
 			"subParams": [
 				{
 					"name": "display_msg",
@@ -53,7 +46,14 @@
 					"description": "消息代码",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "-"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.identifytask.create",
+	"apiChineseName": "服务商创建核销单",
+	"description": "服务商调用该接口进行创建核销单操作",
+	"id": 46006
 }

@@ -1,13 +1,6 @@
 {
-	"id": 47658,
-	"name": "alibaba.imap.pv.autofill",
-	"apiChineseName": "属性回填接口",
-	"description": "根据用户传入的标题、目标渠道id，目标渠道叶子类目，预测其对应的pv信息，返回给业务方，供其自动填充属性项属性值信息",
 	"requestParams": [
 		{
-			"name": "top_imap_item_do",
-			"type": "TopImapItemDo",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -35,9 +28,6 @@
 					"description": "源渠道ID"
 				},
 				{
-					"name": "pv_pair_do_list",
-					"type": "TopPVPairDO[]",
-					"description": "商品PV信息",
 					"subParams": [
 						{
 							"name": "value_id",
@@ -59,7 +49,10 @@
 							"type": "Number",
 							"description": "属性项ID"
 						}
-					]
+					],
+					"name": "pv_pair_do_list",
+					"type": "TopPVPairDO[]",
+					"description": "商品PV信息"
 				},
 				{
 					"name": "barcode_list",
@@ -81,60 +74,60 @@
 					"type": "Number",
 					"description": "源叶子类目ID"
 				}
-			]
+			],
+			"name": "top_imap_item_do",
+			"type": "TopImapItemDo",
+			"description": "系统入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopImapResultDo",
-			"description": "imap通用返回DO",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true表示调用成功",
-					"required": true
+					"description": "true表示调用成功"
 				},
 				{
-					"name": "top_pv_pair_do_list",
-					"type": "TopPvPairDo[]",
-					"description": "返回的pv对列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "value_id",
 							"type": "Number",
-							"description": "属性值ID",
-							"required": true
-						},
-						{
-							"name": "value_name",
-							"type": "String",
-							"description": "属性值名称",
-							"required": true
+							"description": "属性值ID"
 						},
 						{
 							"name": "property_name",
 							"type": "String",
-							"description": "属性项名称",
-							"required": true
+							"description": "属性项名称"
+						},
+						{
+							"name": "value_name",
+							"type": "String",
+							"description": "属性值名称"
 						},
 						{
 							"name": "property_id",
 							"type": "Number",
-							"description": "属性值名称",
-							"required": true
+							"description": "属性值名称"
 						}
-					]
+					],
+					"name": "top_pv_pair_do_list",
+					"type": "TopPvPairDo[]",
+					"description": "返回的pv对列表"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopImapResultDo",
+			"description": "imap通用返回DO"
 		}
-	]
+	],
+	"name": "alibaba.imap.pv.autofill",
+	"apiChineseName": "属性回填接口",
+	"description": "根据用户传入的标题、目标渠道id，目标渠道叶子类目，预测其对应的pv信息，返回给业务方，供其自动填充属性项属性值信息",
+	"id": 47658
 }

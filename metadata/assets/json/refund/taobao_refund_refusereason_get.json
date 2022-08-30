@@ -1,9 +1,11 @@
 {
-	"id": 26204,
-	"name": "taobao.refund.refusereason.get",
-	"apiChineseName": "获取拒绝原因列表",
-	"description": "获取商家拒绝原因列表",
 	"requestParams": [
+		{
+			"name": "refund_phase",
+			"type": "String",
+			"description": "售中或售后",
+			"required": true
+		},
 		{
 			"name": "refund_id",
 			"type": "Number",
@@ -15,33 +17,30 @@
 			"type": "String",
 			"description": "返回参数",
 			"required": true
-		},
-		{
-			"name": "refund_phase",
-			"type": "String",
-			"description": "售中或售后",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "reasons",
-			"type": "Reason []",
-			"description": "卖家拒绝原因对象",
 			"subParams": [
 				{
 					"name": "reason_id",
-					"type": "Number"
+					"type": "Number",
+					"description": "原因编号"
 				},
 				{
 					"name": "reason_text",
-					"type": "String"
+					"type": "String",
+					"description": "已经影响商品完好"
 				},
 				{
 					"name": "reason_tips",
-					"type": "String"
+					"type": "String",
+					"description": "已经影响商品完好"
 				}
-			]
+			],
+			"name": "reasons",
+			"type": "Reason []",
+			"description": "卖家拒绝原因对象"
 		},
 		{
 			"name": "total_results",
@@ -53,5 +52,9 @@
 			"type": "Boolean",
 			"description": "是否存在下一页"
 		}
-	]
+	],
+	"name": "taobao.refund.refusereason.get",
+	"apiChineseName": "获取拒绝原因列表",
+	"description": "获取商家拒绝原因列表",
+	"id": 26204
 }

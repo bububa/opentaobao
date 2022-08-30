@@ -1,8 +1,4 @@
 {
-	"id": 26009,
-	"name": "taobao.wlb.order.jz.consign",
-	"apiChineseName": "家装发货接口",
-	"description": "家装类订单使用该接口发货",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -16,9 +12,6 @@
 			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址"
 		},
 		{
-			"name": "jz_receiver_to",
-			"type": "JzReceiverTo",
-			"description": "家装收货人信息,如果为空,则取默认收货信息",
 			"subParams": [
 				{
 					"name": "tele_phone",
@@ -70,12 +63,12 @@
 					"type": "String",
 					"description": "国家"
 				}
-			]
+			],
+			"name": "jz_receiver_to",
+			"type": "JzReceiverTo",
+			"description": "家装收货人信息,如果为空,则取默认收货信息"
 		},
 		{
-			"name": "jz_top_args",
-			"type": "JzTopArgs",
-			"description": "发货参数",
 			"subParams": [
 				{
 					"name": "mail_no",
@@ -117,13 +110,30 @@
 					"type": "String",
 					"description": "包裹数量"
 				}
-			]
+			],
+			"name": "jz_top_args",
+			"type": "JzTopArgs",
+			"description": "发货参数"
 		},
 		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公司编码"
+				}
+			],
 			"name": "lg_tp_dto",
 			"type": "Tpdto",
 			"description": "物流公司信息",
-			"required": true,
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "name",
@@ -135,29 +145,12 @@
 					"type": "String",
 					"description": "公司编码"
 				}
-			]
-		},
-		{
+			],
 			"name": "ins_tp_dto",
 			"type": "Tpdto",
-			"description": "安装公司信息,需要安装时,才填写",
-			"subParams": [
-				{
-					"name": "name",
-					"type": "String",
-					"description": "公司名称"
-				},
-				{
-					"name": "code",
-					"type": "String",
-					"description": "公司编码"
-				}
-			]
+			"description": "安装公司信息,需要安装时,才填写"
 		},
 		{
-			"name": "ins_receiver_to",
-			"type": "JzReceiverTo",
-			"description": "安装收货人信息,如果为空,则取默认收货人信息",
 			"subParams": [
 				{
 					"name": "tele_phone",
@@ -209,7 +202,10 @@
 					"type": "String",
 					"description": "国家"
 				}
-			]
+			],
+			"name": "ins_receiver_to",
+			"type": "JzReceiverTo",
+			"description": "安装收货人信息,如果为空,则取默认收货人信息"
 		}
 	],
 	"responseParams": [
@@ -228,5 +224,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.wlb.order.jz.consign",
+	"apiChineseName": "家装发货接口",
+	"description": "家装类订单使用该接口发货",
+	"id": 26009
 }

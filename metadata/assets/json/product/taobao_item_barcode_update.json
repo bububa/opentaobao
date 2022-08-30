@@ -1,8 +1,4 @@
 {
-	"id": 22894,
-	"name": "taobao.item.barcode.update",
-	"apiChineseName": "更新商品条形码信息",
-	"description": "通过该接口，将商品以及SKU上得条形码信息补全",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -38,9 +34,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "商品结构里的num_iid，modified",
 			"subParams": [
 				{
 					"name": "num_iid",
@@ -52,7 +45,14 @@
 					"type": "Date",
 					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "商品结构里的num_iid，modified"
 		}
-	]
+	],
+	"name": "taobao.item.barcode.update",
+	"apiChineseName": "更新商品条形码信息",
+	"description": "通过该接口，将商品以及SKU上得条形码信息补全",
+	"id": 22894
 }

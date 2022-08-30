@@ -1,8 +1,4 @@
 {
-	"id": 23579,
-	"name": "taobao.simba.insight.wordspricedata.get",
-	"apiChineseName": "关键词按竞价区间的分布数据",
-	"description": "获取关键词按竞价区间进行细分的数据",
 	"requestParams": [
 		{
 			"name": "bidword",
@@ -25,14 +21,16 @@
 	],
 	"responseParams": [
 		{
-			"name": "word_pricedata_list",
-			"type": "InsightWordPriceDistributeDataDTO []",
-			"description": "竞价区间分布数据",
 			"subParams": [
 				{
 					"name": "impression",
 					"type": "Number",
 					"description": "展现量"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "Number",
+					"description": "间接成交金额"
 				},
 				{
 					"name": "click",
@@ -50,29 +48,9 @@
 					"description": "直接成交金额"
 				},
 				{
-					"name": "indirecttransaction",
-					"type": "Number",
-					"description": "间接成交金额"
-				},
-				{
-					"name": "directtransactionshipping",
-					"type": "Number",
-					"description": "直接成交笔数"
-				},
-				{
-					"name": "indirecttransactionshipping",
-					"type": "Number",
-					"description": "间接成交笔数"
-				},
-				{
 					"name": "favitemtotal",
 					"type": "Number",
 					"description": "宝贝搜藏数"
-				},
-				{
-					"name": "favshoptotal",
-					"type": "Number",
-					"description": "店铺搜藏数"
 				},
 				{
 					"name": "transactionshippingtotal",
@@ -80,24 +58,9 @@
 					"description": "总的成交笔数"
 				},
 				{
-					"name": "transactiontotal",
-					"type": "Number",
-					"description": "成交总金额"
-				},
-				{
-					"name": "favtotal",
-					"type": "Number",
-					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
-				},
-				{
-					"name": "competition",
-					"type": "Number",
-					"description": "竞争度"
-				},
-				{
-					"name": "ctr",
+					"name": "coverage",
 					"type": "String",
-					"description": "点击率"
+					"description": "点击转化率"
 				},
 				{
 					"name": "cpc",
@@ -105,14 +68,29 @@
 					"description": "平均点击花费"
 				},
 				{
+					"name": "favtotal",
+					"type": "Number",
+					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
+				},
+				{
 					"name": "roi",
 					"type": "String",
 					"description": "投入产出比"
 				},
 				{
-					"name": "coverage",
-					"type": "String",
-					"description": "点击转化率"
+					"name": "transactiontotal",
+					"type": "Number",
+					"description": "成交总金额"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "Number",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "竞价区间"
 				},
 				{
 					"name": "bidword",
@@ -120,11 +98,33 @@
 					"description": "关键词"
 				},
 				{
-					"name": "price",
+					"name": "directtransactionshipping",
 					"type": "Number",
-					"description": "竞价区间"
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "Number",
+					"description": "店铺搜藏数"
+				},
+				{
+					"name": "competition",
+					"type": "Number",
+					"description": "竞争度"
 				}
-			]
+			],
+			"name": "word_pricedata_list",
+			"type": "InsightWordPriceDistributeDataDTO []",
+			"description": "竞价区间分布数据"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.wordspricedata.get",
+	"apiChineseName": "关键词按竞价区间的分布数据",
+	"description": "获取关键词按竞价区间进行细分的数据",
+	"id": 23579
 }

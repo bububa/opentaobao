@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "app_code",
+			"type": "String",
+			"description": "应用编码",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "结果处理消息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否处理成功"
+		}
+	],
+	"name": "alibaba.sp.open.payment.repay",
+	"apiChineseName": "智付重新打款",
+	"description": "智付重新打款",
+	"id": 60567
+}

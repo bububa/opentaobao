@@ -1,8 +1,4 @@
 {
-	"id": 22740,
-	"name": "taobao.qianniu.taskmetas.get",
-	"apiChineseName": "任务元查询接口",
-	"description": "任务元查询接口",
 	"requestParams": [
 		{
 			"name": "sender_uid",
@@ -68,20 +64,7 @@
 	],
 	"responseParams": [
 		{
-			"name": "taskmetas",
-			"type": "QTaskMetadata []",
-			"description": "taskmetas",
 			"subParams": [
-				{
-					"name": "voice_file",
-					"type": "String",
-					"description": "语音备注的文件名"
-				},
-				{
-					"name": "receiver",
-					"type": "String",
-					"description": "任务的接收人"
-				},
 				{
 					"name": "id",
 					"type": "Number",
@@ -133,19 +116,19 @@
 					"description": "提醒标志位： 0表示不需要提醒，1表示需要状态变更提醒"
 				},
 				{
+					"name": "biz_remind_time",
+					"type": "Date",
+					"description": "我的安排的任务上的提醒时间"
+				},
+				{
+					"name": "biz_remind_time_long",
+					"type": "Number",
+					"description": "是biz_remind_time的数字格式"
+				},
+				{
 					"name": "finish_strategy",
 					"type": "Number",
 					"description": "任务完成标识： 0表示只要有一个人完成任务即可，1表示所有人需要各自都完成任务"
-				},
-				{
-					"name": "task_count",
-					"type": "Number",
-					"description": "与此任务元相关的任务数"
-				},
-				{
-					"name": "priority",
-					"type": "Number",
-					"description": "优先级，0低，1中，2高"
 				},
 				{
 					"name": "memo",
@@ -153,14 +136,24 @@
 					"description": "任务元备注"
 				},
 				{
-					"name": "gmt_create",
-					"type": "Date",
-					"description": "创建时间"
+					"name": "priority",
+					"type": "Number",
+					"description": "优先级，0低，1中，2高"
+				},
+				{
+					"name": "task_count",
+					"type": "Number",
+					"description": "与此任务元相关的任务数"
 				},
 				{
 					"name": "finish_count",
 					"type": "Number",
 					"description": "完成的任务数。如果完成策略是只需要1个人完成的，则只要一个人完成就会返回总任务条数。如果是所有人都要完成的，则会返回实际完成条数。"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modified",
@@ -223,16 +216,23 @@
 					"description": "轻任务附件信息，userId_timestamp_随机字符串，例如：23434_1234458623_seresfto"
 				},
 				{
-					"name": "biz_remind_time",
-					"type": "Date",
-					"description": "我的安排的任务上的提醒时间"
+					"name": "voice_file",
+					"type": "String",
+					"description": "语音备注的文件名"
 				},
 				{
-					"name": "biz_remind_time_long",
-					"type": "Number",
-					"description": "是biz_remind_time的数字格式"
+					"name": "receiver",
+					"type": "String",
+					"description": "任务接收人的列表"
 				}
-			]
+			],
+			"name": "taskmetas",
+			"type": "QTaskMetadata []",
+			"description": "taskmetas"
 		}
-	]
+	],
+	"name": "taobao.qianniu.taskmetas.get",
+	"apiChineseName": "任务元查询接口",
+	"description": "任务元查询接口",
+	"id": 22740
 }

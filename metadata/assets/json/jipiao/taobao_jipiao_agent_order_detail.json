@@ -1,17 +1,4 @@
 {
-	"id": 22762,
-	"name": "taobao.jipiao.agent.order.detail",
-	"apiChineseName": "【机票代理商订单】订单详情",
-	"description": "根据淘宝系统订单号获取订单详情信息",
-	"requestParams": [
-		{
-			"name": "order_ids",
-			"type": "Number[]",
-			"description": "淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询",
-			"required": true,
-			"maxListSize": 1
-		}
-	],
 	"responseParams": [
 		{
 			"name": "is_success",
@@ -19,14 +6,8 @@
 			"description": "返回操作成功失败信息"
 		},
 		{
-			"name": "orders",
-			"type": "TripOrder []",
-			"description": "机票订单的详情列表，当前支持返回一个订单",
 			"subParams": [
 				{
-					"name": "base_info",
-					"type": "TripBaseInfo",
-					"description": "订单基础信息",
 					"subParams": [
 						{
 							"name": "order_id",
@@ -113,12 +94,12 @@
 							"type": "Boolean",
 							"description": "是否强制保险订单，有一张票为强制保险即为true"
 						}
-					]
+					],
+					"name": "base_info",
+					"type": "TripBaseInfo",
+					"description": "订单基础信息"
 				},
 				{
-					"name": "flight_infos",
-					"type": "TripFlightInfo[]",
-					"description": "订单航班信息（包含航班乘机人）",
 					"subParams": [
 						{
 							"name": "flight_id",
@@ -191,9 +172,6 @@
 							"description": "当前航段票面价格，单位：分"
 						},
 						{
-							"name": "passengers",
-							"type": "TripFlightPassenger[]",
-							"description": "乘机人信息列表",
 							"subParams": [
 								{
 									"name": "name",
@@ -238,7 +216,7 @@
 								{
 									"name": "extra",
 									"type": "String",
-									"description": "扩展字段"
+									"description": "扩展字段\u003cbr/\u003e目前支持外部政策id\u003cbr/\u003e\"extra\": \"{\\\"outId\\\":\\\"etwin457476275HET\\\"}\""
 								},
 								{
 									"name": "policy_id",
@@ -300,7 +278,10 @@
 									"type": "Number",
 									"description": "强制保险金额，单位：分"
 								}
-							]
+							],
+							"name": "passengers",
+							"type": "TripFlightPassenger[]",
+							"description": "乘机人信息列表"
 						},
 						{
 							"name": "extra",
@@ -312,12 +293,12 @@
 							"type": "String",
 							"description": "特殊说明"
 						}
-					]
+					],
+					"name": "flight_infos",
+					"type": "TripFlightInfo[]",
+					"description": "订单航班信息（包含航班乘机人）"
 				},
 				{
-					"name": "itinerary",
-					"type": "Itinerary",
-					"description": "订单行程单信息",
 					"subParams": [
 						{
 							"name": "type",
@@ -389,12 +370,12 @@
 							"type": "Number",
 							"description": "淘宝主键id"
 						}
-					]
+					],
+					"name": "itinerary",
+					"type": "Itinerary",
+					"description": "订单行程单信息"
 				},
 				{
-					"name": "corp_info",
-					"type": "CorpInfo",
-					"description": "订单行政购票信息",
 					"subParams": [
 						{
 							"name": "apply_name",
@@ -466,14 +447,24 @@
 							"type": "String",
 							"description": "扩展字段"
 						}
-					]
+					],
+					"name": "corp_info",
+					"type": "CorpInfo",
+					"description": "订单行政购票信息"
 				},
 				{
 					"name": "extra",
 					"type": "String",
-					"description": "扩展字段"
+					"description": "扩展字段（JSON序列化）"
 				}
-			]
+			],
+			"name": "orders",
+			"type": "TripOrder []",
+			"description": "机票订单的详情列表，当前支持返回一个订单"
 		}
-	]
+	],
+	"name": "taobao.jipiao.agent.order.detail",
+	"apiChineseName": "【机票代理商订单】订单详情",
+	"description": "根据淘宝系统订单号获取订单详情信息",
+	"id": 22762
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21433,
-	"name": "taobao.item.anchor.get",
-	"apiChineseName": "获取可用宝贝描述规范化模块",
-	"description": "根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点",
 	"requestParams": [
 		{
 			"name": "type",
@@ -24,26 +20,30 @@
 			"description": "返回的宝贝描述模板结果数目"
 		},
 		{
-			"name": "anchor_modules",
-			"type": "IdsModule []",
-			"description": "宝贝描述规范化可使用打标模块的锚点信息",
 			"subParams": [
-				{
-					"name": "id",
-					"type": "Number",
-					"description": "宝贝描述规范化模块id"
-				},
 				{
 					"name": "name",
 					"type": "String",
 					"description": "宝贝描述规范化模块名"
 				},
 				{
+					"name": "id",
+					"type": "Number",
+					"description": "宝贝描述规范化模块id"
+				},
+				{
 					"name": "type",
 					"type": "Number",
 					"description": "0为自动打标；\u003cbr/\u003e1为人工打标；"
 				}
-			]
+			],
+			"name": "anchor_modules",
+			"type": "IdsModule []",
+			"description": "宝贝描述规范化可使用打标模块的锚点信息"
 		}
-	]
+	],
+	"name": "taobao.item.anchor.get",
+	"apiChineseName": "获取可用宝贝描述规范化模块",
+	"description": "根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点",
+	"id": 21433
 }

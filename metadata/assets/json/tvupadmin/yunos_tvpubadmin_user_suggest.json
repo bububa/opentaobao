@@ -1,8 +1,4 @@
 {
-	"id": 28633,
-	"name": "yunos.tvpubadmin.user.suggest",
-	"apiChineseName": "获取关联账户列表",
-	"description": "获取关联账户列表",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "list",
-			"type": "AccountSuggestDO []",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "uid",
 					"type": "Number",
-					"description": "用户ID",
-					"required": true
+					"description": "用户ID"
 				},
 				{
 					"name": "ytid",
 					"type": "Number",
-					"description": "优酷账号ID",
-					"required": true
+					"description": "优酷账号ID"
 				},
 				{
 					"name": "nick",
 					"type": "String",
-					"description": "用户昵称",
-					"required": true
+					"description": "用户昵称"
 				},
 				{
 					"name": "yt_nick",
 					"type": "String",
-					"description": "优酷账号昵称",
-					"required": true
+					"description": "优酷账号昵称"
 				}
-			]
+			],
+			"name": "list",
+			"type": "AccountSuggestDO []",
+			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.user.suggest",
+	"apiChineseName": "获取关联账户列表",
+	"description": "获取关联账户列表",
+	"id": 28633
 }

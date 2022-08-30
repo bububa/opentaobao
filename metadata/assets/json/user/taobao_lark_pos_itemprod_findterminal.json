@@ -1,8 +1,4 @@
 {
-	"id": 51145,
-	"name": "taobao.lark.pos.itemprod.findterminal",
-	"apiChineseName": "终端配置支持",
-	"description": "终端配置支持,读取如果不存在则创建和远程的连接配置并返回",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -41,5 +37,9 @@
 			"type": "Json",
 			"description": "终端配置信息响应"
 		}
-	]
+	],
+	"name": "taobao.lark.pos.itemprod.findterminal",
+	"apiChineseName": "终端配置支持",
+	"description": "终端配置支持,读取如果不存在则创建和远程的连接配置并返回",
+	"id": 51145
 }

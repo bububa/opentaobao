@@ -1,30 +1,16 @@
 {
-	"id": 25185,
-	"name": "taobao.openim.custmsg.push",
-	"apiChineseName": "推送自定义openim消息",
-	"description": "isv通过该接口给openim用户推送自定义消息",
 	"requestParams": [
 		{
-			"name": "custmsg",
-			"type": "CustMsg",
-			"description": "自定义消息内容",
-			"required": true,
 			"subParams": [
 				{
-					"name": "from_user",
+					"name": "apns_param",
 					"type": "String",
-					"description": "发送方userid",
-					"required": true
+					"description": "apns推送的附带数据。客户端收到apns消息后，可以从apns结构体的\"d\"字段中取出该内容。aps.size() + apns_param.size() \u003c 200"
 				},
 				{
-					"name": "to_appkey",
+					"name": "data",
 					"type": "String",
-					"description": "接收方appkey，不填默认是发送方appkey，如需跨app发送，需要走审批流程，请联系技术答疑"
-				},
-				{
-					"name": "to_users",
-					"type": "String[]",
-					"description": "接受者userid列表，单次发送用户数小于100",
+					"description": "发送的自定义数据，sdk默认无法解析消息，该数据需要客户端自己解析",
 					"required": true
 				},
 				{
@@ -34,20 +20,26 @@
 					"required": true
 				},
 				{
-					"name": "data",
+					"name": "to_users",
+					"type": "String[]",
+					"description": "接受者userid列表，单次发送用户数小于100",
+					"required": true
+				},
+				{
+					"name": "to_appkey",
 					"type": "String",
-					"description": "发送的自定义数据，sdk默认无法解析消息，该数据需要客户端自己解析",
+					"description": "接收方appkey，不填默认是发送方appkey，如需跨app发送，需要走审批流程，请联系技术答疑"
+				},
+				{
+					"name": "from_user",
+					"type": "String",
+					"description": "发送方userid",
 					"required": true
 				},
 				{
 					"name": "aps",
 					"type": "String",
 					"description": "apns推送时，里面的aps结构体json字符串，aps.alert为必填字段。本字段为可选，若为空，则表示不进行apns推送。aps.size() + apns_param.size() \u003c 200"
-				},
-				{
-					"name": "apns_param",
-					"type": "String",
-					"description": "apns推送的附带数据。客户端收到apns消息后，可以从apns结构体的\"d\"字段中取出该内容。aps.size() + apns_param.size() \u003c 200"
 				},
 				{
 					"name": "invisible",
@@ -64,7 +56,11 @@
 					"type": "Number",
 					"description": "如果为1，则表示发送方是一个淘宝账号，该账号必须是本appkey绑定过的客服账号，并且只能给本appkey的用户发消息。通过该参数可以从服务端发起一个客服到用户的会话。"
 				}
-			]
+			],
+			"name": "custmsg",
+			"type": "CustMsg",
+			"description": "自定义消息内容",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -73,5 +69,9 @@
 			"type": "Number",
 			"description": "消息id，用于定位问题"
 		}
-	]
+	],
+	"name": "taobao.openim.custmsg.push",
+	"apiChineseName": "推送自定义openim消息",
+	"description": "isv通过该接口给openim用户推送自定义消息",
+	"id": 25185
 }

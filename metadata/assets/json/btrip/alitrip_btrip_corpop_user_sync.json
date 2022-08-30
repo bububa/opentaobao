@@ -1,39 +1,9 @@
 {
-	"id": 53432,
-	"name": "alitrip.btrip.corpop.user.sync",
-	"apiChineseName": "外部人员同步",
-	"description": "同步外部平台用户信息至商旅内部",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "BtripUserSyncRq",
-			"description": "人员同步请求",
-			"required": true,
 			"subParams": [
 				{
-					"name": "corp_id",
-					"type": "String",
-					"description": "第三方企业ID",
-					"required": true
-				},
-				{
-					"name": "user_list",
-					"type": "UserSyncRq[]",
-					"description": "人员列表，最大长度5000",
-					"required": true,
 					"subParams": [
-						{
-							"name": "user_id",
-							"type": "String",
-							"description": "第三方人员ID",
-							"required": true
-						},
-						{
-							"name": "user_name",
-							"type": "String",
-							"description": "姓名",
-							"required": true
-						},
 						{
 							"name": "email",
 							"type": "String",
@@ -70,6 +40,18 @@
 							"description": "英文姓名请用\"/\"分隔，中间不能含有空格。顺序：姓/名(last_name/first_name))"
 						},
 						{
+							"name": "user_name",
+							"type": "String",
+							"description": "姓名",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "第三方人员ID",
+							"required": true
+						},
+						{
 							"name": "job_no",
 							"type": "String",
 							"description": "工号"
@@ -84,9 +66,23 @@
 							"type": "String[]",
 							"description": "部门列表，depart_id | third_depart_id | third_depart_id_list只传其一，优先级为third_depart_id_list \u003e third_depart_id \u003e depart_id"
 						}
-					]
+					],
+					"name": "user_list",
+					"type": "UserSyncRq[]",
+					"description": "人员列表，最大长度5000",
+					"required": true
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "BtripUserSyncRq",
+			"description": "人员同步请求",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -101,14 +97,18 @@
 			"description": "错误码"
 		},
 		{
-			"name": "module",
-			"type": "String",
-			"description": "返回错误用户信息"
-		},
-		{
 			"name": "success_flag",
 			"type": "Boolean",
 			"description": "成功标示"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "返回错误用户信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.corpop.user.sync",
+	"apiChineseName": "外部人员同步",
+	"description": "同步外部平台用户信息至商旅内部",
+	"id": 53432
 }

@@ -1,19 +1,6 @@
 {
-	"id": 38723,
-	"name": "alibaba.campus.core.app.getappusages",
-	"apiChineseName": "根据应用ID获得应用所在的园区",
-	"description": "传入应用的id,  获得用户授权的园区",
 	"requestParams": [
 		{
-			"name": "appid",
-			"type": "Number",
-			"description": "应用id",
-			"required": true
-		},
-		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "WorkBenchContext",
 			"subParams": [
 				{
 					"name": "security_code",
@@ -65,150 +52,141 @@
 					"type": "String",
 					"description": "ip"
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "WorkBenchContext"
+		},
+		{
+			"name": "appid",
+			"type": "Number",
+			"description": "应用id",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CollectionResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content_list",
-					"type": "T[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "应用使用关系id",
-							"required": true
+							"description": "应用使用关系id"
 						},
 						{
 							"name": "app_id",
 							"type": "Number",
-							"description": "应用id",
-							"required": true
+							"description": "应用id"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "园区ID",
-							"required": true
+							"description": "园区ID"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "应用名称",
-							"required": true
+							"description": "应用名称"
 						},
 						{
 							"name": "icon",
 							"type": "String",
-							"description": "应用图标",
-							"required": true
-						},
-						{
-							"name": "admin_url",
-							"type": "String",
-							"description": "后台管理url",
-							"required": true
-						},
-						{
-							"name": "url",
-							"type": "String",
-							"description": "前台url",
-							"required": true
-						},
-						{
-							"name": "open_mode",
-							"type": "String",
-							"description": "应用打开模式",
-							"required": true
+							"description": "应用图标"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
+						},
+						{
+							"name": "open_mode",
+							"type": "String",
+							"description": "应用打开模式"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "前台url"
+						},
+						{
+							"name": "admin_url",
+							"type": "String",
+							"description": "后台管理url"
 						},
 						{
 							"name": "is_charge",
 							"type": "Boolean",
-							"description": "是否收费类应用",
-							"required": true
+							"description": "是否收费类应用"
 						},
 						{
 							"name": "app_key",
 							"type": "String",
-							"description": "应用key",
-							"required": true
+							"description": "应用key"
 						},
 						{
 							"name": "app_order",
 							"type": "Number",
-							"description": "app排序",
-							"required": true
+							"description": "app排序"
 						},
 						{
 							"name": "notify_url",
 							"type": "String",
-							"description": "notifyUrl",
-							"required": true
+							"description": "notifyUrl"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "T[]",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_ext_info",
-					"type": "Json",
-					"description": "errorExtInfo",
-					"required": true
+					"type": "String",
+					"description": "errorExtInfo"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.core.app.getappusages",
+	"apiChineseName": "根据应用ID获得应用所在的园区",
+	"description": "传入应用的id,  获得用户授权的园区",
+	"id": 38723
 }

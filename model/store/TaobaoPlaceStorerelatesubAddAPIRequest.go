@@ -13,7 +13,7 @@ import (
 type TaobaoPlaceStorerelatesubAddAPIRequest struct {
 	model.Params
 	// 子门店Id
-	_subStoreIds []int64
+	_subStoreIds []string
 	// 门店Id
 	_storeId int64
 }
@@ -41,14 +41,14 @@ func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetApiParams() url.Values {
 
 // SetSubStoreIds is SubStoreIds Setter
 // 子门店Id
-func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []int64) error {
+func (r *TaobaoPlaceStorerelatesubAddAPIRequest) SetSubStoreIds(_subStoreIds []string) error {
 	r._subStoreIds = _subStoreIds
 	r.Set("sub_store_ids", _subStoreIds)
 	return nil
 }
 
 // GetSubStoreIds SubStoreIds Getter
-func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetSubStoreIds() []int64 {
+func (r TaobaoPlaceStorerelatesubAddAPIRequest) GetSubStoreIds() []string {
 	return r._subStoreIds
 }
 

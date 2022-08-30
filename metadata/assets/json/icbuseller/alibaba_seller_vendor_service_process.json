@@ -1,8 +1,4 @@
 {
-	"id": 54661,
-	"name": "alibaba.seller.vendor.service.process",
-	"apiChineseName": "服务商客户关联信息",
-	"description": "服务商客户关联信息",
 	"requestParams": [
 		{
 			"name": "order_num",
@@ -12,361 +8,307 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
-					"name": "exec_description",
-					"type": "String",
-					"description": "异常说明",
-					"required": true
-				},
-				{
-					"name": "return_code",
-					"type": "Number",
-					"description": "状态码",
-					"required": true
-				},
-				{
-					"name": "list",
-					"type": "VendorMerchantRecordBaseDto[]",
-					"description": "返回集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "nrts6060",
 							"type": "String",
-							"description": "定制力是否双60",
-							"required": true
+							"description": "定制力是否双60"
 						},
 						{
 							"name": "road",
 							"type": "String",
-							"description": "赛道，RTS/询盘",
-							"required": true
+							"description": "赛道，RTS/询盘"
 						},
 						{
 							"name": "is_video",
 							"type": "String",
-							"description": "是否至少发布了1个良好的且非aliwood且非段灯片的视频",
-							"required": true
+							"description": "是否至少发布了1个良好的且非aliwood且非段灯片的视频"
 						},
 						{
 							"name": "is_rfq",
 							"type": "String",
-							"description": "是否至少发布了1个有效报价RFQ",
-							"required": true
+							"description": "是否至少发布了1个有效报价RFQ"
 						},
 						{
 							"name": "win_prod_ratio_std001",
 							"type": "String",
-							"description": "历史截至当日橱窗商品使用率",
-							"required": true
+							"description": "历史截至当日橱窗商品使用率"
 						},
 						{
 							"name": "is_crd_scrty",
 							"type": "String",
-							"description": "是否信保亮灯Y/N",
-							"required": true
+							"description": "是否信保亮灯Y/N"
 						},
 						{
 							"name": "pc_online_hour_rate",
 							"type": "String",
-							"description": "月PC在线时长达标率",
-							"required": true
+							"description": "月PC在线时长达标率"
 						},
 						{
 							"name": "stay_hour_pc_m",
 							"type": "String",
-							"description": "近30天PC/MA在线时长(小时)",
-							"required": true
+							"description": "近30天PC/MA在线时长(小时)"
 						},
 						{
 							"name": "pc_online_day_rate",
 							"type": "String",
-							"description": "月pc在线天数达标率",
-							"required": true
+							"description": "月pc在线天数达标率"
 						},
 						{
 							"name": "active_day_pc_m",
 							"type": "Number",
-							"description": "近30天PC/MA活跃天数",
-							"required": true
+							"description": "近30天PC/MA活跃天数"
 						},
 						{
 							"name": "active_mbr_rate",
 							"type": "String",
-							"description": "月活跃子账号达标率",
-							"required": true
+							"description": "月活跃子账号达标率"
 						},
 						{
 							"name": "active_mbr_m",
 							"type": "Number",
-							"description": "近30天活跃子账号数",
-							"required": true
+							"description": "近30天活跃子账号数"
 						},
 						{
 							"name": "mc_rate",
 							"type": "String",
-							"description": "月mc达标率",
-							"required": true
+							"description": "月mc达标率"
 						},
 						{
 							"name": "kw_rate",
 							"type": "String",
-							"description": "关键词达标率",
-							"required": true
+							"description": "关键词达标率"
 						},
 						{
 							"name": "kw200_rate",
 							"type": "String",
-							"description": "k200比率，关键词除以200的比率",
-							"required": true
+							"description": "k200比率，关键词除以200的比率"
 						},
 						{
 							"name": "prod_video_cnt",
 							"type": "Number",
-							"description": "视频数量",
-							"required": true
+							"description": "视频数量"
 						},
 						{
 							"name": "is_tort_brand",
 							"type": "String",
-							"description": "是否有侵权品牌Y/N",
-							"required": true
+							"description": "是否有侵权品牌Y/N"
 						},
 						{
 							"name": "have_price_prod",
 							"type": "String",
-							"description": "是否有价格不合理产品Y/N",
-							"required": true
+							"description": "是否有价格不合理产品Y/N"
 						},
 						{
 							"name": "have_repeat_prod",
 							"type": "String",
-							"description": "是否有重复铺货产品Y/N",
-							"required": true
+							"description": "是否有重复铺货产品Y/N"
 						},
 						{
 							"name": "rts_prod_cnt",
 							"type": "Number",
-							"description": "RTS商品数",
-							"required": true
+							"description": "RTS商品数"
 						},
 						{
 							"name": "good_prod_rate",
 							"type": "String",
-							"description": "实力优品达标率",
-							"required": true
+							"description": "实力优品达标率"
 						},
 						{
 							"name": "good_prod_cnt",
 							"type": "Number",
-							"description": "实力优品数",
-							"required": true
+							"description": "实力优品数"
 						},
 						{
 							"name": "potential_prod_rate",
 							"type": "String",
-							"description": "潜力品达标率",
-							"required": true
+							"description": "潜力品达标率"
 						},
 						{
 							"name": "potential_prod_cnt",
 							"type": "Number",
-							"description": "潜力品数",
-							"required": true
+							"description": "潜力品数"
 						},
 						{
 							"name": "prod_blue",
 							"type": "Number",
-							"description": "蓝海品数",
-							"required": true
+							"description": "蓝海品数"
 						},
 						{
 							"name": "prod45",
 							"type": "Number",
-							"description": "4.5分及以上商品数",
-							"required": true
+							"description": "4.5分及以上商品数"
 						},
 						{
 							"name": "prod40",
 							"type": "Number",
-							"description": "4.0分及以上商品数",
-							"required": true
+							"description": "4.0分及以上商品数"
 						},
 						{
 							"name": "p1504_rate",
 							"type": "String",
-							"description": "p150且4分达标率",
-							"required": true
+							"description": "p150且4分达标率"
 						},
 						{
 							"name": "p304_rate",
 							"type": "String",
-							"description": "p30且4分达标率",
-							"required": true
+							"description": "p30且4分达标率"
 						},
 						{
 							"name": "prod_cnt",
 							"type": "Number",
-							"description": "有效商品数",
-							"required": true
+							"description": "有效商品数"
 						},
 						{
 							"name": "is_comp_dec",
 							"type": "String",
-							"description": "店铺是否装修，页面最晚修改时间和旺铺创建时间差",
-							"required": true
+							"description": "店铺是否装修，页面最晚修改时间和旺铺创建时间差"
 						},
 						{
 							"name": "agency_prod_cnt",
 							"type": "Number",
-							"description": "服务商发品数",
-							"required": true
+							"description": "服务商发品数"
 						},
 						{
 							"name": "tradesuccess_time",
 							"type": "Date",
-							"description": "订单完成时间",
-							"required": true
+							"description": "订单完成时间"
 						},
 						{
 							"name": "delivered_time",
 							"type": "Date",
-							"description": "进入交付时间",
-							"required": true
+							"description": "进入交付时间"
 						},
 						{
 							"name": "pay_time",
 							"type": "Date",
-							"description": "下单时间",
-							"required": true
+							"description": "下单时间"
 						},
 						{
 							"name": "current_status",
 							"type": "String",
-							"description": "交易单当前状态",
-							"required": true
+							"description": "交易单当前状态"
 						},
 						{
 							"name": "ord_num",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "service_name",
 							"type": "String",
-							"description": "服务名称",
-							"required": true
+							"description": "服务名称"
 						},
 						{
 							"name": "service_code",
 							"type": "String",
-							"description": "服务编码",
-							"required": true
+							"description": "服务编码"
 						},
 						{
 							"name": "vendor_code",
 							"type": "String",
-							"description": "服务商编码",
-							"required": true
+							"description": "服务商编码"
 						},
 						{
 							"name": "vendor_comp_name",
 							"type": "String",
-							"description": "服务商公司名",
-							"required": true
+							"description": "服务商公司名"
 						},
 						{
 							"name": "main_cate_lv2_desc",
 							"type": "String",
-							"description": "主营二级类目描述",
-							"required": true
+							"description": "主营二级类目描述"
 						},
 						{
 							"name": "main_cate_lv2_std001",
 							"type": "Number",
-							"description": "主营二级类目ID",
-							"required": true
+							"description": "主营二级类目ID"
 						},
 						{
 							"name": "main_cate_lv1_desc",
 							"type": "String",
-							"description": "主营一级类目描述",
-							"required": true
+							"description": "主营一级类目描述"
 						},
 						{
 							"name": "main_cate_lv1_std001",
 							"type": "Number",
-							"description": "主营一级类目ID",
-							"required": true
+							"description": "主营一级类目ID"
 						},
 						{
 							"name": "admin_mbr_id",
 							"type": "String",
-							"description": "会员主账号id",
-							"required": true
+							"description": "会员主账号id"
 						},
 						{
 							"name": "dw_ins_time",
 							"type": "Date",
-							"description": "系统入库时间",
-							"required": true
+							"description": "系统入库时间"
 						},
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "统计日期",
-							"required": true
+							"description": "统计日期"
 						},
 						{
 							"name": "rts6060",
 							"type": "String",
-							"description": "RTS力是否双60",
-							"required": true
+							"description": "RTS力是否双60"
 						},
 						{
 							"name": "level_star_page",
 							"type": "Number",
-							"description": "当月星等级",
-							"required": true
+							"description": "当月星等级"
 						},
 						{
 							"name": "level_star",
 							"type": "Number",
-							"description": "预测下月星等级",
-							"required": true
+							"description": "预测下月星等级"
 						},
 						{
 							"name": "is_comp_exp_ok",
 							"type": "String",
-							"description": "最近7天店铺日均搜索曝光是否正常Y/N",
-							"required": true
+							"description": "最近7天店铺日均搜索曝光是否正常Y/N"
 						},
 						{
 							"name": "is_kw_exp_ok",
 							"type": "String",
-							"description": "关键词曝光是否正常Y/N",
-							"required": true
+							"description": "关键词曝光是否正常Y/N"
 						},
 						{
 							"name": "is_star_lower_risk",
 							"type": "String",
-							"description": "是否有降星风险Y/N",
-							"required": true
+							"description": "是否有降星风险Y/N"
 						}
-					]
+					],
+					"name": "list",
+					"type": "VendorMerchantRecordBaseDto[]",
+					"description": "返回集合"
+				},
+				{
+					"name": "exec_description",
+					"type": "String",
+					"description": "异常说明"
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "状态码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.seller.vendor.service.process",
+	"apiChineseName": "服务商客户关联信息",
+	"description": "服务商客户关联信息",
+	"id": 54661
 }

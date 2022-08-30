@@ -1,14 +1,6 @@
 {
-	"id": 27115,
-	"name": "cainiao.waybill.ii.query.by.waybillcode",
-	"apiChineseName": "通过面单号查询面单信息",
-	"description": "通过面单号查看面单号的当前状态，如签收、发货、失效等。",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "WaybillDetailQueryByWaybillCodeRequest[]",
-			"description": "系统自动生成",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "cp_code",
@@ -28,66 +20,66 @@
 					"description": "电子面单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "WaybillDetailQueryByWaybillCodeRequest[]",
+			"description": "系统自动生成",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "modules",
-			"type": "WaybillCloudPrintWithResultDescResponse []",
-			"description": "查询返回值",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "object_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求成功",
-					"required": true
+					"description": "请求成功"
 				},
 				{
-					"name": "waybill_cloud_print_response",
-					"type": "WaybillCloudPrintResponse",
-					"description": "面单查询结构体",
-					"required": true,
 					"subParams": [
-						{
-							"name": "waybill_code",
-							"type": "String",
-							"description": "面单号",
-							"required": true
-						},
 						{
 							"name": "print_data",
 							"type": "String",
-							"description": "面单信息",
-							"required": true
+							"description": "面单信息"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "面单号"
 						},
 						{
 							"name": "parent_waybill_code",
 							"type": "String",
-							"description": "快运子母件中的母单号",
-							"required": true
+							"description": "快运子母件中的母单号"
 						}
-					]
+					],
+					"name": "waybill_cloud_print_response",
+					"type": "WaybillCloudPrintResponse",
+					"description": "面单查询结构体"
 				}
-			]
+			],
+			"name": "modules",
+			"type": "WaybillCloudPrintWithResultDescResponse []",
+			"description": "查询返回值"
 		}
-	]
+	],
+	"name": "cainiao.waybill.ii.query.by.waybillcode",
+	"apiChineseName": "通过面单号查询面单打印报文",
+	"description": "通过面单号查询面单的打印报文",
+	"id": 27115
 }

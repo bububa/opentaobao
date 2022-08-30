@@ -1,14 +1,6 @@
 {
-	"id": 32103,
-	"name": "alibaba.mj.oc.outbound",
-	"apiChineseName": "零售商品发货",
-	"description": "用于接收发货的数据",
 	"requestParams": [
 		{
-			"name": "goods_outbound",
-			"type": "GoodsOutboundDTO",
-			"description": "发货信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "deliverer_name",
@@ -32,14 +24,10 @@
 					"required": true
 				},
 				{
-					"name": "outbound_details",
-					"type": "OutboundDetailDTO[]",
-					"description": "出库明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "quantity",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "数量"
 						},
 						{
@@ -47,7 +35,11 @@
 							"type": "String",
 							"description": "skuId"
 						}
-					]
+					],
+					"name": "outbound_details",
+					"type": "OutboundDetailDTO[]",
+					"description": "出库明细",
+					"required": true
 				},
 				{
 					"name": "send_out_time",
@@ -61,7 +53,11 @@
 					"description": "OC订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "goods_outbound",
+			"type": "GoodsOutboundDTO",
+			"description": "发货信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -70,5 +66,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.outbound",
+	"apiChineseName": "零售商品发货",
+	"description": "用于接收发货的数据",
+	"id": 32103
 }

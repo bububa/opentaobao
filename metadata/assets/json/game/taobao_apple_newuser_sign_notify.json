@@ -1,8 +1,4 @@
 {
-	"id": 32403,
-	"name": "taobao.apple.newuser.sign.notify",
-	"apiChineseName": "新用户签约通知接口",
-	"description": "用户付款成功后，资和信主动通知签约结果",
 	"requestParams": [
 		{
 			"name": "result_code",
@@ -16,9 +12,6 @@
 			"description": "结果信息说明"
 		},
 		{
-			"name": "main_data",
-			"type": "AppleTopNewSignNotifyDo",
-			"description": "业务参数",
 			"subParams": [
 				{
 					"name": "card_no",
@@ -60,7 +53,10 @@
 					"type": "String",
 					"description": "网关请求流水号,每次请求唯一"
 				}
-			]
+			],
+			"name": "main_data",
+			"type": "AppleTopNewSignNotifyDo",
+			"description": "业务参数"
 		}
 	],
 	"responseParams": [
@@ -74,5 +70,9 @@
 			"type": "String",
 			"description": "处理结果码"
 		}
-	]
+	],
+	"name": "taobao.apple.newuser.sign.notify",
+	"apiChineseName": "新用户签约通知接口",
+	"description": "用户付款成功后，资和信主动通知签约结果",
+	"id": 32403
 }

@@ -1,8 +1,4 @@
 {
-	"id": 47115,
-	"name": "alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get",
-	"apiChineseName": "根据三方ID查询设备注册激活信息",
-	"description": "根据三方ID查询设备注册激活信息",
 	"requestParams": [
 		{
 			"name": "client_id",
@@ -17,55 +13,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "Result",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_open_id",
 							"type": "String",
-							"description": "用户安全ID",
-							"required": true
+							"description": "用户安全ID"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "设备名称",
-							"required": true
+							"description": "设备名称"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "天猫精灵设备唯一ID",
-							"required": true
+							"description": "天猫精灵设备唯一ID"
 						},
 						{
 							"name": "device_id",
 							"type": "String",
-							"description": "设备Mac地址",
-							"required": true
+							"description": "设备Mac地址"
 						}
-					]
+					],
+					"name": "result",
+					"type": "Result",
+					"description": "结果"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get",
+	"apiChineseName": "根据三方ID查询设备注册激活信息",
+	"description": "根据三方ID查询设备注册激活信息",
+	"id": 47115
 }

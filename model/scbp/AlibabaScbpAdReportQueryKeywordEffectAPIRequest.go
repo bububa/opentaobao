@@ -12,10 +12,10 @@ import (
 // 关键词报告
 type AlibabaScbpAdReportQueryKeywordEffectAPIRequest struct {
 	model.Params
-	// 请求参数
-	_keywordReportOperation *KeywordReportOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 请求参数
+	_keywordReportOperation *KeywordReportOperationDto
 }
 
 // NewAlibabaScbpAdReportQueryKeywordEffectRequest 初始化AlibabaScbpAdReportQueryKeywordEffectAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetKeywordReportOperation is KeywordReportOperation Setter
-// 请求参数
-func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
-	r._keywordReportOperation = _keywordReportOperation
-	r.Set("keyword_report_operation", _keywordReportOperation)
-	return nil
-}
-
-// GetKeywordReportOperation KeywordReportOperation Getter
-func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
-	return r._keywordReportOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetTopContext(_topCont
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetKeywordReportOperation is KeywordReportOperation Setter
+// 请求参数
+func (r *AlibabaScbpAdReportQueryKeywordEffectAPIRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
+	r._keywordReportOperation = _keywordReportOperation
+	r.Set("keyword_report_operation", _keywordReportOperation)
+	return nil
+}
+
+// GetKeywordReportOperation KeywordReportOperation Getter
+func (r AlibabaScbpAdReportQueryKeywordEffectAPIRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
+	return r._keywordReportOperation
 }

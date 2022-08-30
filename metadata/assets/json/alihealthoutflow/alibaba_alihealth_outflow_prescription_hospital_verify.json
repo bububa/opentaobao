@@ -1,13 +1,6 @@
 {
-	"id": 47118,
-	"name": "alibaba.alihealth.outflow.prescription.hospital.verify",
-	"apiChineseName": "处方同步至医院返回校验结果",
-	"description": "处方同步至医院返回校验结果",
 	"requestParams": [
 		{
-			"name": "update_request",
-			"type": "PrescriptionOutflowUpdateRequest",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "rx_no",
@@ -24,40 +17,43 @@
 					"type": "String",
 					"description": "同步his错误信息(可空)"
 				}
-			]
+			],
+			"name": "update_request",
+			"type": "PrescriptionOutflowUpdateRequest",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "ServiceResult",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.prescription.hospital.verify",
+	"apiChineseName": "处方同步至医院返回校验结果",
+	"description": "处方同步至医院返回校验结果",
+	"id": 47118
 }

@@ -1,8 +1,4 @@
 {
-	"id": 31055,
-	"name": "alibaba.baichuan.aso.query",
-	"apiChineseName": "查询app在设备上的安装信息",
-	"description": "查询app在设备上的安装信息",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -17,17 +13,7 @@
 			"required": true
 		},
 		{
-			"name": "device_info_list",
-			"type": "ASODeviceInfoDO[]",
-			"description": "设备信息，ios为idfa ，android 为imei + imsi",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
-				{
-					"name": "idfa",
-					"type": "String",
-					"description": "idfa"
-				},
 				{
 					"name": "imei",
 					"type": "String",
@@ -37,73 +23,78 @@
 					"name": "imsi",
 					"type": "String",
 					"description": "imsi"
+				},
+				{
+					"name": "idfa",
+					"type": "String",
+					"description": "idfa"
 				}
-			]
+			],
+			"name": "device_info_list",
+			"type": "ASODeviceInfoDO[]",
+			"description": "设备信息，ios为idfa ，android 为imei + imsi",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AsoQueryDeviceResult",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "results",
-					"type": "AsoDeviceCheckResult[]",
-					"description": "result",
-					"required": true,
-					"subParams": [
-						{
-							"name": "is_new_device",
-							"type": "Boolean",
-							"description": "isNewDevice",
-							"required": true
-						},
-						{
-							"name": "imei",
-							"type": "String",
-							"description": "imei",
-							"required": true
-						},
-						{
-							"name": "imsi",
-							"type": "String",
-							"description": "imsi",
-							"required": true
-						},
-						{
-							"name": "idfa",
-							"type": "String",
-							"description": "idfa",
-							"required": true
-						},
-						{
-							"name": "is_my_channal",
-							"type": "Boolean",
-							"description": "isMyChannal",
-							"required": true
-						}
-					]
-				},
 				{
 					"name": "error_detail",
 					"type": "String",
-					"description": "errorDetail",
-					"required": true
+					"description": "errorDetail"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
+				},
+				{
+					"subParams": [
+						{
+							"name": "is_new_device",
+							"type": "Boolean",
+							"description": "isNewDevice"
+						},
+						{
+							"name": "imei",
+							"type": "String",
+							"description": "imei"
+						},
+						{
+							"name": "imsi",
+							"type": "String",
+							"description": "imsi"
+						},
+						{
+							"name": "idfa",
+							"type": "String",
+							"description": "idfa"
+						},
+						{
+							"name": "is_my_channal",
+							"type": "Boolean",
+							"description": "isMyChannal"
+						}
+					],
+					"name": "results",
+					"type": "AsoDeviceCheckResult[]",
+					"description": "result"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AsoQueryDeviceResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.aso.query",
+	"apiChineseName": "查询app在设备上的安装信息",
+	"description": "查询app在设备上的安装信息",
+	"id": 31055
 }

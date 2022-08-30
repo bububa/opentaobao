@@ -1,13 +1,6 @@
 {
-	"id": 55959,
-	"name": "taobao.alitrip.axin.trans.pay.register.audit",
-	"apiChineseName": "阿信支付入驻审核通知",
-	"description": "阿信支付入驻审核通知",
 	"requestParams": [
 		{
-			"name": "axin_pay_register_audit_dto",
-			"type": "AxinPayRegisterAuditDto",
-			"description": "支付入驻审核对象",
 			"subParams": [
 				{
 					"name": "audit_result",
@@ -49,52 +42,53 @@
 					"type": "String",
 					"description": "支付平台商家编码,smid"
 				}
-			]
+			],
+			"name": "axin_pay_register_audit_dto",
+			"type": "AxinPayRegisterAuditDto",
+			"description": "支付入驻审核对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否处理审核结果成功",
-					"required": true
+					"description": "是否处理审核结果成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "信息提示",
-					"required": true
+					"description": "信息提示"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.pay.register.audit",
+	"apiChineseName": "阿信支付入驻审核通知",
+	"description": "阿信支付入驻审核通知",
+	"id": 55959
 }

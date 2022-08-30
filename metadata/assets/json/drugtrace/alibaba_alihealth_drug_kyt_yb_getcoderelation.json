@@ -1,8 +1,4 @@
 {
-	"id": 45313,
-	"name": "alibaba.alihealth.drug.kyt.yb.getcoderelation",
-	"apiChineseName": "医保-查询码的所有子码",
-	"description": "应用于药店或医院入库环节，通过扫码获取下级码进行入库；\n通过码查询所有子码以及包装比例",
 	"requestParams": [
 		{
 			"name": "bureau_name",
@@ -37,93 +33,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model_list",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "code_relation_dto_list",
-							"type": "CodeRelationDTO[]",
-							"description": "码关联关系DTO",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "追溯码；查询的码",
-									"required": true
+									"description": "追溯码；查询的码"
 								},
 								{
 									"name": "parent_code",
 									"type": "String",
-									"description": "父码",
-									"required": true
+									"description": "父码"
 								},
 								{
 									"name": "code_level",
 									"type": "String",
-									"description": "码级别",
-									"required": true
+									"description": "码级别"
 								},
 								{
 									"name": "code_pack_level",
 									"type": "String",
-									"description": "包装级别",
-									"required": true
+									"description": "包装级别"
 								},
 								{
 									"name": "box_amount",
 									"type": "Number",
-									"description": "装箱数量;小盒码，返回1；中包码，返回实际小盒数量；大箱码，返回实际小盒数量",
-									"required": true
+									"description": "装箱数量;小盒码，返回1；中包码，返回实际小盒数量；大箱码，返回实际小盒数量"
 								},
 								{
 									"name": "box_status",
 									"type": "Number",
-									"description": "大箱或中包状态；若扫描的是小盒码，直接返回正常； 0-正常；1-拼箱；2-零箱；3-即拼箱又零箱",
-									"required": true
+									"description": "大箱或中包状态；若扫描的是小盒码，直接返回正常； 0-正常；1-拼箱；2-零箱；3-即拼箱又零箱"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "码状态",
-									"required": true
+									"description": "码状态"
 								}
-							]
+							],
+							"name": "code_relation_dto_list",
+							"type": "CodeRelationDTO[]",
+							"description": "码关联关系DTO"
 						},
 						{
 							"name": "pkg_ratio",
 							"type": "String",
-							"description": "包装比例",
-							"required": true
+							"description": "包装比例"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.yb.getcoderelation",
+	"apiChineseName": "医保-查询码的所有子码",
+	"description": "应用于药店或医院入库环节，通过扫码获取下级码进行入库；\n通过码查询所有子码以及包装比例",
+	"id": 45313
 }

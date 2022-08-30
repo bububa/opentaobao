@@ -1,8 +1,4 @@
 {
-	"id": 40123,
-	"name": "taobao.wdk.iot.conveyor.conveyorconfig.get",
-	"apiChineseName": "获取悬挂链基本配置信息",
-	"description": "用于从云端WCS获取悬挂链基本配置信息",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -19,109 +15,97 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HMResult",
-			"description": "返回值",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "ConveyorBasicConfigDTO",
-					"description": "配置信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "slideway_count",
 							"type": "Number",
-							"description": "滑道数目",
-							"required": true
+							"description": "滑道数目"
 						},
 						{
 							"name": "exception_slideway_id",
 							"type": "Number",
-							"description": "异常滑道ID",
-							"required": true
+							"description": "异常滑道ID"
 						},
 						{
 							"name": "batch_task_timeout_interval",
 							"type": "Number",
-							"description": "批次任务超时时间（分钟）",
-							"required": true
+							"description": "批次任务超时时间（分钟）"
 						},
 						{
 							"name": "enable_separator",
 							"type": "Boolean",
-							"description": "是否启用阻挡器",
-							"required": true
+							"description": "是否启用阻挡器"
 						},
 						{
 							"name": "enable_monitor",
 							"type": "Boolean",
-							"description": "是否启用监控",
-							"required": true
+							"description": "是否启用监控"
 						},
 						{
 							"name": "enable_single_slideway_light",
 							"type": "Boolean",
-							"description": "单件通道亮三色灯",
-							"required": true
+							"description": "单件通道亮三色灯"
 						},
 						{
 							"name": "max_orbiting_num",
 							"type": "Number",
-							"description": "最大转圈数目",
-							"required": true
+							"description": "最大转圈数目"
 						},
 						{
 							"name": "dispatch_slideway_policy",
 							"type": "Number",
-							"description": "分配策略",
-							"required": true
+							"description": "分配策略"
 						},
 						{
 							"name": "container_reader_box1",
 							"type": "String",
-							"description": "容器识别器1编号",
-							"required": true
+							"description": "容器识别器1编号"
 						},
 						{
 							"name": "container_reader_box2",
 							"type": "String",
-							"description": "容器识别器2编号",
-							"required": true
+							"description": "容器识别器2编号"
 						},
 						{
 							"name": "conveyor_box",
 							"type": "String",
-							"description": "悬挂链控制盒子编号",
-							"required": true
+							"description": "悬挂链控制盒子编号"
 						},
 						{
 							"name": "slideway_group_count",
 							"type": "Number",
-							"description": "滑道分组个数",
-							"required": true
+							"description": "滑道分组个数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "ConveyorBasicConfigDTO",
+					"description": "配置信息列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HMResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.wdk.iot.conveyor.conveyorconfig.get",
+	"apiChineseName": "获取悬挂链基本配置信息",
+	"description": "用于从云端WCS获取悬挂链基本配置信息",
+	"id": 40123
 }

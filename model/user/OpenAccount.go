@@ -46,6 +46,8 @@ type OpenAccount struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 记录上次更新时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 创建帐号的App Key
+	CreateAppKey string `json:"create_app_key,omitempty" xml:"create_app_key,omitempty"`
 	// 密码加密强度
 	LoginPwdIntensity int64 `json:"login_pwd_intensity,omitempty" xml:"login_pwd_intensity,omitempty"`
 	// 账号创建类型：1、通过短信创建，2、ISV批量导入，3、ISV OAuth创建
@@ -62,4 +64,6 @@ type OpenAccount struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 记录的版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+	// 数据域
+	DomainId int64 `json:"domain_id,omitempty" xml:"domain_id,omitempty"`
 }

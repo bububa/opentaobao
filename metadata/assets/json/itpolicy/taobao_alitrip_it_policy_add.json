@@ -1,8 +1,4 @@
 {
-	"id": 25772,
-	"name": "taobao.alitrip.it.policy.add",
-	"apiChineseName": "【国际机票销售规则】单条新增",
-	"description": "销售规则新增，成功返回taobaoId",
 	"requestParams": [
 		{
 			"name": "extend_attributes",
@@ -10,9 +6,6 @@
 			"description": "扩展字段"
 		},
 		{
-			"name": "top_policy_do",
-			"type": "TopPolicyDo",
-			"description": "国际机票销售规则",
 			"subParams": [
 				{
 					"name": "policy_id",
@@ -59,11 +52,6 @@
 					"name": "exclude_arr_cities",
 					"type": "String",
 					"description": "例外目的地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
-				},
-				{
-					"name": "is_support_rt",
-					"type": "String",
-					"description": "是否允许1/2RT组合销售规则，允许、不允许空表示：不允许"
 				},
 				{
 					"name": "transfer_cities",
@@ -173,6 +161,16 @@
 					"description": "儿童留钱，非必输;为整型;支持负数;单位元"
 				},
 				{
+					"name": "is_support_rt",
+					"type": "String",
+					"description": "是否允许1/2RT组合销售规则，允许、不允许空表示：不允许"
+				},
+				{
+					"name": "is_allow_union_airline",
+					"type": "String",
+					"description": "不同航司联运，非必输；可输入允许或不允许，空表示不允许"
+				},
+				{
 					"name": "refund_rule",
 					"type": "String",
 					"description": "（已废除字段）退票规定，非必输长度小于300字符请同时录入 退票规定、改签规定和行李额规定"
@@ -198,19 +196,14 @@
 					"description": "购票须知，非必输长度小于300字符只在退票规定不为空时才会生效"
 				},
 				{
-					"name": "product_type",
-					"type": "String",
-					"description": "商品类型，非必输；默认为普通可填写为金牌或普通"
-				},
-				{
-					"name": "is_allow_union_airline",
-					"type": "String",
-					"description": "不同航司联运，非必输；可输入允许或不允许，空表示不允许"
-				},
-				{
 					"name": "working_time",
 					"type": "String",
 					"description": "非必输；09:00-18:00表示每一天的早上9点到下午6点，09:00MON-18:00FRI表示周一到周五的每天早上9点到下午6点最多录入三个时间段用逗号隔开表示或的关系可以为空，表示不限制，即工作时间为09:00-18:00"
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "商品类型，非必输；默认为普通可填写为金牌或普通"
 				},
 				{
 					"name": "channel_id_desc",
@@ -283,26 +276,6 @@
 					"description": "去程改期费用收取方式,按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
 				},
 				{
-					"name": "can_ret_change",
-					"type": "String",
-					"description": "回程可否改期，可输入是或否"
-				},
-				{
-					"name": "ret_change_fee",
-					"type": "String",
-					"description": "回程改期费用，格式同【去程改期费用】，【回程可否改期】为是时为必填"
-				},
-				{
-					"name": "ret_change_currency",
-					"type": "String",
-					"description": "回程改期币种，可录入币种三字码，默认值CNY"
-				},
-				{
-					"name": "ret_change_fee_type",
-					"type": "String",
-					"description": "回程改期费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
-				},
-				{
 					"name": "noshow_restrict",
 					"type": "String",
 					"description": "NOSHOW是否有限制，可输入是或否"
@@ -333,9 +306,34 @@
 					"description": "NOSHOW币种,可录入币种三字码，默认值CNY"
 				},
 				{
+					"name": "can_ret_change",
+					"type": "String",
+					"description": "回程可否改期，可输入是或否"
+				},
+				{
+					"name": "ret_change_fee",
+					"type": "String",
+					"description": "回程改期费用，格式同【去程改期费用】，【回程可否改期】为是时为必填"
+				},
+				{
+					"name": "ret_change_currency",
+					"type": "String",
+					"description": "回程改期币种，可录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "ret_change_fee_type",
+					"type": "String",
+					"description": "回程改期费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
+				},
+				{
 					"name": "vip_code",
 					"type": "String",
 					"description": "开票大客户编码，最大长度50"
+				},
+				{
+					"name": "gv2_child_rule",
+					"type": "String",
+					"description": "是否适用小团，可选值是、否。空表示不限"
 				},
 				{
 					"name": "nationality",
@@ -351,11 +349,6 @@
 					"name": "passenger_age",
 					"type": "String",
 					"description": "年龄限制，可录入值范围12-99, 并且最低年龄不可超过70"
-				},
-				{
-					"name": "gv2_child_rule",
-					"type": "String",
-					"description": "是否适用小团，可选值是、否。空表示不限"
 				},
 				{
 					"name": "presale_period",
@@ -407,19 +400,26 @@
 					"type": "String",
 					"description": "儿童全部未使用退票费用，格式同成人，【全部未使用可否退票】为是时，此项为必填项。 可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时；退票手续费1000；飞机起飞后不予改期（输入*）； 或 10%-72-30%-48-50%-0-*，表示72小时前退票手续费为票面价的10%；48小时到72小时，退票手续费为票面价的30%；飞机起飞不足48小时；退票手续费为票面价的50%；飞机起飞后不予退票（输入*）；"
 				}
-			]
+			],
+			"name": "top_policy_do",
+			"type": "TopPolicyDo",
+			"description": "国际机票销售规则"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "taobao_id",
-			"type": "Number",
-			"description": "淘宝政策id"
-		},
-		{
 			"name": "extend_attributes",
 			"type": "String",
 			"description": "扩展字段"
+		},
+		{
+			"name": "taobao_id",
+			"type": "Number",
+			"description": "淘宝政策id"
 		}
-	]
+	],
+	"name": "taobao.alitrip.it.policy.add",
+	"apiChineseName": "【国际机票销售规则】单条新增",
+	"description": "销售规则新增，成功返回taobaoId",
+	"id": 25772
 }

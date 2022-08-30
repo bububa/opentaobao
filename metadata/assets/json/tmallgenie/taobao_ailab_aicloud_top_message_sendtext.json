@@ -1,8 +1,4 @@
 {
-	"id": 37726,
-	"name": "taobao.ailab.aicloud.top.message.sendtext",
-	"apiChineseName": "故事机发送文本留言",
-	"description": "故事机文本留言",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -32,29 +28,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.message.sendtext",
+	"apiChineseName": "故事机发送文本留言",
+	"description": "故事机文本留言",
+	"id": 37726
 }

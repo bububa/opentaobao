@@ -1,13 +1,6 @@
 {
-	"id": 31030,
-	"name": "alibaba.scbp.ad.account.level.get",
-	"apiChineseName": "查询推广账户等级",
-	"description": "查询推广账户等级",
 	"responseParams": [
 		{
-			"name": "cust_level_dto",
-			"type": "TopCustLevelDto",
-			"description": "推广账户等级",
 			"subParams": [
 				{
 					"name": "level_score",
@@ -21,7 +14,14 @@
 					"description": "growthLevel",
 					"required": true
 				}
-			]
+			],
+			"name": "cust_level_dto",
+			"type": "TopCustLevelDto",
+			"description": "推广账户等级"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.account.level.get",
+	"apiChineseName": "查询推广账户等级",
+	"description": "查询推广账户等级",
+	"id": 31030
 }

@@ -1,25 +1,11 @@
 {
-	"id": 55951,
-	"name": "alibaba.alihouse.newhome.region.sync",
-	"apiChineseName": "城区数据同步",
-	"description": "城区数据同步",
 	"requestParams": [
 		{
-			"name": "base_region_dto",
-			"type": "BaseRegionDto",
-			"description": "城区数据",
-			"required": true,
 			"subParams": [
 				{
 					"name": "fencing",
 					"type": "String",
 					"description": "高德围栏",
-					"required": true
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "名称全称",
 					"required": true
 				},
 				{
@@ -38,6 +24,12 @@
 					"name": "name_simple",
 					"type": "String",
 					"description": "名称简称",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称全称",
 					"required": true
 				},
 				{
@@ -65,6 +57,11 @@
 					"required": true
 				},
 				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父级ID"
+				},
+				{
 					"name": "outer_region_id",
 					"type": "String",
 					"description": "外部城区ID -- 唯一",
@@ -76,44 +73,48 @@
 					"description": "1或0 1删除 0不删"
 				},
 				{
-					"name": "parent_id",
+					"name": "source_type",
 					"type": "Number",
-					"description": "父级ID"
+					"description": "数据源类型（1-新房 2-二手房）"
 				}
-			]
+			],
+			"name": "base_region_dto",
+			"type": "BaseRegionDto",
+			"description": "城区数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回外部ID",
-					"required": true
+					"description": "返回外部ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.region.sync",
+	"apiChineseName": "城区数据同步",
+	"description": "城区数据同步",
+	"id": 55951
 }

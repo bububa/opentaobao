@@ -1,8 +1,4 @@
 {
-	"id": 21598,
-	"name": "taobao.scitem.map.delete",
-	"apiChineseName": "失效指定用户的商品与后端商品的映射关系",
-	"description": "根据后端商品Id，失效指定用户的商品与后端商品的映射关系",
 	"requestParams": [
 		{
 			"name": "sc_item_id",
@@ -22,5 +18,9 @@
 			"type": "Number",
 			"description": "失效条数"
 		}
-	]
+	],
+	"name": "taobao.scitem.map.delete",
+	"apiChineseName": "失效指定用户的商品与后端商品的映射关系",
+	"description": "根据后端商品Id，失效指定用户的商品与后端商品的映射关系",
+	"id": 21598
 }

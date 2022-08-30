@@ -1,19 +1,15 @@
 {
-	"id": 28674,
-	"name": "taobao.qimen.trade.users.get",
-	"apiChineseName": "获取奇门用户列表",
-	"description": "获取已开通奇门订单服务的用户列表",
 	"requestParams": [
-		{
-			"name": "page_index",
-			"type": "Number",
-			"description": "每页的数量",
-			"required": true
-		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页数",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "每页的数量",
 			"required": true
 		}
 	],
@@ -24,29 +20,30 @@
 			"description": "totalCount"
 		},
 		{
-			"name": "users",
-			"type": "QimenUser []",
-			"description": "modal",
 			"subParams": [
 				{
 					"name": "memo",
 					"type": "String",
-					"description": "memo",
-					"required": true
+					"description": "memo"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "sellerNick",
-					"required": true
+					"description": "sellerNick"
 				}
-			]
+			],
+			"name": "users",
+			"type": "QimenUser []",
+			"description": "modal"
 		}
-	]
+	],
+	"name": "taobao.qimen.trade.users.get",
+	"apiChineseName": "获取奇门用户列表",
+	"description": "获取已开通奇门订单服务的用户列表",
+	"id": 28674
 }

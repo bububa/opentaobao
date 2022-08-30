@@ -1,25 +1,14 @@
 {
-	"id": 55996,
-	"name": "taobao.life.reservation.item.order.change",
-	"apiChineseName": "生服购后预约单外部发起变更",
-	"description": "生服购后预约单外部发起变更，例如改期、取消。目前体检场景，用户会直接联系ISV改期/取消，因此开放给ISV这块的能力",
 	"requestParams": [
-		{
-			"name": "trade_no",
-			"type": "String",
-			"description": "淘宝主单号",
-			"required": true
-		},
 		{
 			"name": "ticket_id",
 			"type": "String",
-			"description": "凭证ID",
-			"required": true
+			"description": "凭证ID。与预约单号二选一，优先级低"
 		},
 		{
 			"name": "action",
 			"type": "String",
-			"description": "改期：MODIFY   取消：CANCEL",
+			"description": "改期：MODIFY ；取消：CANCEL；推进履约：PUSH_FULFILLMENT",
 			"required": true
 		},
 		{
@@ -31,53 +20,78 @@
 			"name": "reserve_end_time",
 			"type": "String",
 			"description": "改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59"
+		},
+		{
+			"name": "target_fulfillment_status",
+			"type": "String",
+			"description": "目标履约状态。 枚举值：PREPARING,PREPARED,PROCESSING,PROCESSED,DELIVERING,FINISHED。详以接入文档中描述的场景对接"
+		},
+		{
+			"name": "reservation_order_id",
+			"type": "String",
+			"description": "预约单号。与凭证ID二选一，优先级高"
+		},
+		{
+			"subParams": [
+				{
+					"name": "key",
+					"type": "String",
+					"description": "扩展key。例如：.cpCode（物流品牌）。详以接入文档中描述的场景对接"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "扩展value。例如：传运单号。详以接入文档中描述的场景对接"
+				}
+			],
+			"name": "ext_info",
+			"type": "CommonKeyValue",
+			"description": "扩展信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "内部trace 用于排查问题",
-					"required": true
+					"description": "内部trace 用于排查问题"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "error",
-					"type": "TribeError",
-					"description": "错误",
-					"required": true,
 					"subParams": [
 						{
 							"name": "view",
 							"type": "String",
-							"description": "错误可读性描述",
-							"required": true
+							"description": "错误可读性描述"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误码",
-							"required": true
+							"description": "错误码"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						}
-					]
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.life.reservation.item.order.change",
+	"apiChineseName": "生服购后预约单外部发起变更",
+	"description": "生服购后预约单外部发起变更，例如改期、取消。目前体检场景，用户会直接联系ISV改期/取消，因此开放给ISV这块的能力",
+	"id": 55996
 }

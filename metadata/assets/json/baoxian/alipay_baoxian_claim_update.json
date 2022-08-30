@@ -1,8 +1,4 @@
 {
-	"id": 29610,
-	"name": "alipay.baoxian.claim.update",
-	"apiChineseName": "更新赔案",
-	"description": "更新保险理赔单",
 	"requestParams": [
 		{
 			"name": "biz_data",
@@ -11,15 +7,11 @@
 		},
 		{
 			"name": "progress_list",
-			"type": "Json[]",
+			"type": "String[]",
 			"description": "进度列表",
 			"maxListSize": 20
 		},
 		{
-			"name": "claim_attachments",
-			"type": "ClaimAttachment[]",
-			"description": "附件列表",
-			"maxListSize": 120,
 			"subParams": [
 				{
 					"name": "type",
@@ -51,7 +43,11 @@
 					"type": "String",
 					"description": "文件类型"
 				}
-			]
+			],
+			"name": "claim_attachments",
+			"type": "ClaimAttachment[]",
+			"description": "附件列表",
+			"maxListSize": 120
 		},
 		{
 			"name": "policy_biz_no",
@@ -91,35 +87,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "model",
-					"required": true
+					"type": "String",
+					"description": "model"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alipay.baoxian.claim.update",
+	"apiChineseName": "更新赔案",
+	"description": "更新保险理赔单",
+	"id": 29610
 }

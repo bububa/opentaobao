@@ -18,13 +18,11 @@ type PublisherOrderDto struct {
 	TkEarningTime string `json:"tk_earning_time,omitempty" xml:"tk_earning_time,omitempty"`
 	// 从结算佣金中分得的收益比率
 	PubShareRate string `json:"pub_share_rate,omitempty" xml:"pub_share_rate,omitempty"`
-	// unid(本字段不对外开放)
-	Unid string `json:"unid,omitempty" xml:"unid,omitempty"`
 	// 平台给与的补贴比率，如天猫、淘宝、聚划算等
 	SubsidyRate string `json:"subsidy_rate,omitempty" xml:"subsidy_rate,omitempty"`
 	// 提成=收入比率*分成比率。指实际获得收益的比率
 	TkTotalRate string `json:"tk_total_rate,omitempty" xml:"tk_total_rate,omitempty"`
-	// 商品所属的一级类目名称
+	// 商品所属的根类目，即一级类目的名称
 	ItemCategoryName string `json:"item_category_name,omitempty" xml:"item_category_name,omitempty"`
 	// 掌柜旺旺
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
@@ -60,6 +58,8 @@ type PublisherOrderDto struct {
 	ClickTime string `json:"click_time,omitempty" xml:"click_time,omitempty"`
 	// 商品单价
 	ItemPrice string `json:"item_price,omitempty" xml:"item_price,omitempty"`
+	// 商品id
+	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 推广位管理下的自定义推广位名称
 	AdzoneName string `json:"adzone_name,omitempty" xml:"adzone_name,omitempty"`
 	// 佣金比率
@@ -70,7 +70,7 @@ type PublisherOrderDto struct {
 	SellerShopTitle string `json:"seller_shop_title,omitempty" xml:"seller_shop_title,omitempty"`
 	// 订单结算的佣金比率+平台的补贴比率
 	IncomeRate string `json:"income_rate,omitempty" xml:"income_rate,omitempty"`
-	// 佣金金额=结算金额*佣金比率
+	// 佣金金额=结算金额＊佣金比率
 	TotalCommissionFee string `json:"total_commission_fee,omitempty" xml:"total_commission_fee,omitempty"`
 	// 预估内容专项服务费：内容场景专项技术服务费，内容推广者在内容场景进行推广需要支付给阿里妈妈专项的技术服务费用。专项服务费＝付款金额＊专项服务费率。
 	TkCommissionPreFeeForMediaPlatform string `json:"tk_commission_pre_fee_for_media_platform,omitempty" xml:"tk_commission_pre_fee_for_media_platform,omitempty"`
@@ -78,12 +78,14 @@ type PublisherOrderDto struct {
 	TkCommissionFeeForMediaPlatform string `json:"tk_commission_fee_for_media_platform,omitempty" xml:"tk_commission_fee_for_media_platform,omitempty"`
 	// 内容专项服务费率：内容场景专项技术服务费率，内容推广者在内容场景进行推广需要按结算金额支付一定比例给阿里妈妈作为内容场景专项技术服务费，用于提供与内容平台实现产品技术对接等服务。
 	TkCommissionRateForMediaPlatform string `json:"tk_commission_rate_for_media_platform,omitempty" xml:"tk_commission_rate_for_media_platform,omitempty"`
-	// 预售时期，用户对预售商品支付的定金金额
-	DepositPrice string `json:"deposit_price,omitempty" xml:"deposit_price,omitempty"`
-	// 预售时期，用户对预售商品支付定金的付款时间
-	TbDepositTime string `json:"tb_deposit_time,omitempty" xml:"tb_deposit_time,omitempty"`
 	// 预售时期，用户对预售商品支付定金的付款时间，可能略晚于在淘宝付定金时间
 	TkDepositTime string `json:"tk_deposit_time,omitempty" xml:"tk_deposit_time,omitempty"`
+	// 预售时期，用户对预售商品支付定金的付款时间
+	TbDepositTime string `json:"tb_deposit_time,omitempty" xml:"tb_deposit_time,omitempty"`
+	// 预售时期，用户对预售商品支付的定金金额
+	DepositPrice string `json:"deposit_price,omitempty" xml:"deposit_price,omitempty"`
+	// 开发者调用api的appkey
+	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
 	// 口碑子订单号
 	AlscId string `json:"alsc_id,omitempty" xml:"alsc_id,omitempty"`
 	// 口碑父订单号
@@ -96,14 +98,16 @@ type PublisherOrderDto struct {
 	MarketingType string `json:"marketing_type,omitempty" xml:"marketing_type,omitempty"`
 	// 订单更新时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
+	// 管理member新商品ID后段
+	ExtraItemId string `json:"extra_item_id,omitempty" xml:"extra_item_id,omitempty"`
+	// unid(本字段不对外开放)
+	Unid string `json:"unid,omitempty" xml:"unid,omitempty"`
 	// 专用（不对外开放）
 	TalentPid string `json:"talent_pid,omitempty" xml:"talent_pid,omitempty"`
 	// 当前媒体对应契约方的分成比例
 	TkContractShareRate string `json:"tk_contract_share_rate,omitempty" xml:"tk_contract_share_rate,omitempty"`
 	// 买家拍下金额（不包含运费金额）
 	TbGmvTotalPrice string `json:"tb_gmv_total_price,omitempty" xml:"tb_gmv_total_price,omitempty"`
-	// 开发者调用api的appkey
-	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
 	// 二方：佣金收益的第一归属者； 三方：从其他淘宝客佣金中进行分成的推广者
 	TkOrderRole int64 `json:"tk_order_role,omitempty" xml:"tk_order_role,omitempty"`
 	// 推广位管理下的推广位名称对应的ID，同时也是pid=mm_1_2_3中的“3”这段数字
@@ -114,10 +118,8 @@ type PublisherOrderDto struct {
 	PubId int64 `json:"pub_id,omitempty" xml:"pub_id,omitempty"`
 	// 商品数量
 	ItemNum int64 `json:"item_num,omitempty" xml:"item_num,omitempty"`
-	// 已拍下：指订单已拍下，但还未付款 已付款：指订单已付款，但还未确认收货 已收货：指订单已确认收货，但商家佣金未支付 已结算：指订单已确认收货，且商家佣金已支付成功 已失效：指订单关闭/订单佣金小于0.01元，订单关闭主要有：1）买家超时未付款； 2）买家付款前，买家/卖家取消了订单；3）订单付款后发起售中退款成功；3：订单结算，11：拍下未付款，12：订单付款， 13：订单失效，14：订单成功
+	// 已付款：指订单已付款，但还未确认收货 已收货：指订单已确认收货，但商家佣金未支付 已结算：指订单已确认收货，且商家佣金已支付成功 已失效：指订单关闭/订单佣金小于0.01元，订单关闭主要有：1）买家超时未付款； 2）买家付款前，买家/卖家取消了订单；3）订单付款后发起售中退款成功；3：订单结算，12：订单付款， 13：订单失效，14：订单成功
 	TkStatus int64 `json:"tk_status,omitempty" xml:"tk_status,omitempty"`
-	// 商品id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 媒体管理下的ID，同时也是pid=mm_1_2_3中的“2”这段数字
 	SiteId int64 `json:"site_id,omitempty" xml:"site_id,omitempty"`
 	// 会员运营id

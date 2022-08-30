@@ -1,0 +1,135 @@
+{
+	"requestParams": [
+		{
+			"name": "counter_id",
+			"type": "String",
+			"description": "专柜ID",
+			"required": true
+		},
+		{
+			"name": "scroll_id",
+			"type": "String",
+			"description": "滚动查询ID号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "scroll_id",
+					"type": "String",
+					"description": "滚动查询id号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "counter_no",
+							"type": "String",
+							"description": "专柜号"
+						},
+						{
+							"name": "counter_name",
+							"type": "String",
+							"description": "专柜名"
+						},
+						{
+							"name": "store_no",
+							"type": "String",
+							"description": "门店号"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "outer id"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "sku id"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码"
+						},
+						{
+							"name": "sale_property",
+							"type": "String",
+							"description": "颜色/尺码/规格"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "style_no",
+							"type": "String",
+							"description": "款号"
+						},
+						{
+							"name": "warehouse_number",
+							"type": "String",
+							"description": "仓号"
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓库名称"
+						},
+						{
+							"name": "occupy_qty",
+							"type": "String",
+							"description": "占库数量"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "在库数量"
+						},
+						{
+							"name": "defective_qty",
+							"type": "String",
+							"description": "残次品数量"
+						},
+						{
+							"name": "goods_status",
+							"type": "String",
+							"description": "商品状态"
+						},
+						{
+							"name": "goods_type",
+							"type": "String",
+							"description": "商品类型"
+						},
+						{
+							"name": "art_no",
+							"type": "String",
+							"description": "货号"
+						}
+					],
+					"name": "data",
+					"type": "InventoryDetailDto[]",
+					"description": "返回数据"
+				}
+			],
+			"name": "result",
+			"type": "MosScrollQueryResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.mos.isv.inventory.scrollquery",
+	"apiChineseName": "滚动查询库存数据",
+	"description": "按专柜滚动查询有库存商品",
+	"id": 58201
+}

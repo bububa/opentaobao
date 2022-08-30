@@ -1,14 +1,6 @@
 {
-	"id": 54972,
-	"name": "alibaba.order.freight.calculate",
-	"apiChineseName": "阿里巴巴下单场景运费方案计算",
-	"description": "icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算\nalibaba Create order scenario freight calculation",
 	"requestParams": [
 		{
-			"name": "param_multi_freight_template_request",
-			"type": "MultiFreightTemplateRequest",
-			"description": "{}",
-			"required": true,
 			"subParams": [
 				{
 					"name": "e_company_id",
@@ -17,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "address",
-					"type": "AddressInfoDto",
-					"description": "Shipping address",
 					"subParams": [
 						{
 							"name": "address",
@@ -27,9 +16,6 @@
 							"description": "Shipping address"
 						},
 						{
-							"name": "city",
-							"type": "DivisionInfoDto",
-							"description": "City",
 							"subParams": [
 								{
 									"name": "code",
@@ -41,12 +27,12 @@
 									"type": "String",
 									"description": "City Name"
 								}
-							]
+							],
+							"name": "city",
+							"type": "DivisionInfoDto",
+							"description": "City"
 						},
 						{
-							"name": "country",
-							"type": "DivisionInfoDto",
-							"description": "Country",
 							"subParams": [
 								{
 									"name": "code",
@@ -58,12 +44,12 @@
 									"type": "String",
 									"description": "Country Name"
 								}
-							]
+							],
+							"name": "country",
+							"type": "DivisionInfoDto",
+							"description": "Country"
 						},
 						{
-							"name": "province",
-							"type": "DivisionInfoDto",
-							"description": "province",
 							"subParams": [
 								{
 									"name": "code",
@@ -75,14 +61,20 @@
 									"type": "String",
 									"description": "province name"
 								}
-							]
+							],
+							"name": "province",
+							"type": "DivisionInfoDto",
+							"description": "province"
 						},
 						{
 							"name": "zip",
 							"type": "String",
 							"description": "If any, please send it to us to make the freight more accurate."
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressInfoDto",
+					"description": "Shipping address"
 				},
 				{
 					"name": "destination_country",
@@ -91,10 +83,6 @@
 					"required": true
 				},
 				{
-					"name": "logistics_product_list",
-					"type": "LogisticsProduct[]",
-					"description": "Product List",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -113,80 +101,82 @@
 							"type": "Number",
 							"description": "Sku ID"
 						}
-					]
+					],
+					"name": "logistics_product_list",
+					"type": "LogisticsProduct[]",
+					"description": "Product List",
+					"required": true
 				}
-			]
+			],
+			"name": "param_multi_freight_template_request",
+			"type": "MultiFreightTemplateRequest",
+			"description": "{}",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "value",
-			"type": "LogisticsSolution []",
-			"description": "Logistics Solution List",
 			"subParams": [
 				{
 					"name": "delivery_time",
 					"type": "String",
-					"description": "delivery time (days)",
-					"required": true
+					"description": "delivery time (days)"
 				},
 				{
 					"name": "destination_country",
 					"type": "String",
-					"description": "destination country",
-					"required": true
+					"description": "destination country"
 				},
 				{
 					"name": "dispatch_country",
 					"type": "String",
-					"description": "dispatch country",
-					"required": true
+					"description": "dispatch country"
 				},
 				{
-					"name": "fee",
-					"type": "Price",
-					"description": "shipping fee",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "amount",
-							"required": true
+							"description": "amount"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "currency",
-							"required": true
+							"description": "currency"
 						}
-					]
+					],
+					"name": "fee",
+					"type": "Price",
+					"description": "shipping fee"
 				},
 				{
 					"name": "shipping_type",
 					"type": "String",
-					"description": "shipping type",
-					"required": true
+					"description": "shipping type"
 				},
 				{
 					"name": "trade_term",
 					"type": "String",
-					"description": "trade term",
-					"required": true
+					"description": "trade term"
 				},
 				{
 					"name": "vendor_code",
 					"type": "String",
-					"description": "vendor code",
-					"required": true
+					"description": "vendor code"
 				},
 				{
 					"name": "vendor_name",
 					"type": "String",
-					"description": "vendor name",
-					"required": true
+					"description": "vendor name"
 				}
-			]
+			],
+			"name": "value",
+			"type": "LogisticsSolution []",
+			"description": "Logistics Solution List"
 		}
-	]
+	],
+	"name": "alibaba.order.freight.calculate",
+	"apiChineseName": "阿里巴巴下单场景运费方案计算",
+	"description": "icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算\nalibaba Create order scenario freight calculation",
+	"id": 54972
 }

@@ -12,12 +12,12 @@ import (
 // 体检机构向阿里健康同步发票信息
 type AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest struct {
 	model.Params
+	// 阿里健康预约凭证
+	_reserveNumber string
 	// 开票状态；（have_submit已提交、invoice_done已开票）
 	_invoiceStatus string
 	// 发票访问地址；（invoice_status在已开票状态下必填）
 	_invoiceUrl string
-	// 阿里健康预约凭证
-	_reserveNumber string
 }
 
 // NewAlibabaAlihealthExaminationInvoiceInfoNotifyRequest 初始化AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetApiParams() u
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetReserveNumber is ReserveNumber Setter
+// 阿里健康预约凭证
+func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
+	r._reserveNumber = _reserveNumber
+	r.Set("reserve_number", _reserveNumber)
+	return nil
+}
+
+// GetReserveNumber ReserveNumber Getter
+func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetReserveNumber() string {
+	return r._reserveNumber
 }
 
 // SetInvoiceStatus is InvoiceStatus Setter
@@ -65,17 +78,4 @@ func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) SetInvoiceUrl(_
 // GetInvoiceUrl InvoiceUrl Getter
 func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetInvoiceUrl() string {
 	return r._invoiceUrl
-}
-
-// SetReserveNumber is ReserveNumber Setter
-// 阿里健康预约凭证
-func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) SetReserveNumber(_reserveNumber string) error {
-	r._reserveNumber = _reserveNumber
-	r.Set("reserve_number", _reserveNumber)
-	return nil
-}
-
-// GetReserveNumber ReserveNumber Getter
-func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetReserveNumber() string {
-	return r._reserveNumber
 }

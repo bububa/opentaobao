@@ -8,4 +8,8 @@ type RecycleSpuTemplate struct {
 	SpuId int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
 	// 闲鱼端的spu变化，0新增，1删除，2修改名字
 	ActionType int64 `json:"action_type,omitempty" xml:"action_type,omitempty"`
+	// 回收商类型 1专业回收商（省心卖） 2淘宝商家兼职回收
+	RecycleType int64 `json:"recycle_type,omitempty" xml:"recycle_type,omitempty"`
+	// 回收卖家的id,当 recyclerType 为2时才会有值
+	RecycleSupplierId int64 `json:"recycle_supplier_id,omitempty" xml:"recycle_supplier_id,omitempty"`
 }

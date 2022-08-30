@@ -1,9 +1,10 @@
 {
-	"id": 27160,
-	"name": "taobao.eticket.merchant.ma.failsend",
-	"apiChineseName": "码商发码失败回调接口",
-	"description": "针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证",
 	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "业务类型"
+		},
 		{
 			"name": "outer_id",
 			"type": "String",
@@ -27,26 +28,20 @@
 			"type": "String",
 			"description": "需要与发码通知获取的值一致",
 			"required": true
-		},
-		{
-			"name": "biz_type",
-			"type": "Number",
-			"description": "业务类型"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "SendFailCallbackResp",
-			"description": "回复参数",
 			"subParams": [
 				{
 					"name": "attribute_map",
-					"type": "Json",
-					"description": "回复业务KV",
-					"required": true
+					"type": "String",
+					"description": "回复业务KV"
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "SendFailCallbackResp",
+			"description": "回复参数"
 		},
 		{
 			"name": "ret_code",
@@ -58,5 +53,9 @@
 			"type": "String",
 			"description": "子结果信息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.failsend",
+	"apiChineseName": "码商发码失败回调接口",
+	"description": "针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证",
+	"id": 27160
 }

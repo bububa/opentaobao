@@ -1,28 +1,14 @@
 {
-	"id": 31518,
-	"name": "alibaba.einvoice.paper.return",
-	"apiChineseName": "纸质发票结果回传",
-	"description": "纸质发票结果回传",
 	"requestParams": [
-		{
-			"name": "ciphertext",
-			"type": "String",
-			"description": "发票密文，密码区的字符串"
-		},
-		{
-			"name": "invoice_no",
-			"type": "String",
-			"description": "发票号码"
-		},
-		{
-			"name": "invoice_date",
-			"type": "String",
-			"description": "发票日期"
-		},
 		{
 			"name": "anti_fake_code",
 			"type": "String",
 			"description": "防伪码"
+		},
+		{
+			"name": "ciphertext",
+			"type": "String",
+			"description": "发票密文，密码区的字符串"
 		},
 		{
 			"name": "device_no",
@@ -33,6 +19,16 @@
 			"name": "invoice_code",
 			"type": "String",
 			"description": "发票代码"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "发票日期"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码"
 		},
 		{
 			"name": "create_result",
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "服务端接收开票回传数据的结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.paper.return",
+	"apiChineseName": "纸质发票结果回传",
+	"description": "纸质发票结果回传",
+	"id": 31518
 }

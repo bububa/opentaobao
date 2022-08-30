@@ -1,21 +1,22 @@
 {
-	"id": 55915,
-	"name": "alibaba.alihouse.newhome.project.dynamic.submit",
-	"apiChineseName": "提交楼盘快讯",
-	"description": "提交楼盘快讯",
 	"requestParams": [
 		{
-			"name": "project_dynamics",
-			"type": "ProjectDynamicDto[]",
-			"description": "楼盘动态列表",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "outer_id",
 					"type": "String",
 					"description": "外部楼盘ID",
 					"required": true
+				},
+				{
+					"name": "outer_dynamic_id",
+					"type": "String",
+					"description": "外部快讯ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID"
 				},
 				{
 					"name": "title",
@@ -28,16 +29,6 @@
 					"type": "String",
 					"description": "快讯正文",
 					"required": true
-				},
-				{
-					"name": "outer_dynamic_id",
-					"type": "String",
-					"description": "外部快讯ID"
-				},
-				{
-					"name": "city_id",
-					"type": "Number",
-					"description": "城市ID"
 				},
 				{
 					"name": "project_tags",
@@ -54,40 +45,45 @@
 					"type": "Number",
 					"description": "状态 0-无效 1-有效"
 				}
-			]
+			],
+			"name": "project_dynamics",
+			"type": "ProjectDynamicDto[]",
+			"description": "楼盘动态列表",
+			"maxListSize": 999,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回消息",
-					"required": true
+					"description": "返回消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回对象",
-					"required": true
+					"description": "返回对象"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.project.dynamic.submit",
+	"apiChineseName": "提交楼盘快讯",
+	"description": "提交楼盘快讯",
+	"id": 55915
 }

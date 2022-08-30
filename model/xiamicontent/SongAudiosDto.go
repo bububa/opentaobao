@@ -10,4 +10,8 @@ type SongAudiosDto struct {
 	RefrainEndTime int64 `json:"refrain_end_time,omitempty" xml:"refrain_end_time,omitempty"`
 	// 副歌片段开始时间（单位:毫秒）
 	RefrainStartTime int64 `json:"refrain_start_time,omitempty" xml:"refrain_start_time,omitempty"`
+	// 热门片段开始时间（单位:毫秒）
+	VideoPartStartTime int64 `json:"video_part_start_time,omitempty" xml:"video_part_start_time,omitempty"`
+	// 热门片段结束时间（单位:毫秒）
+	VideoPartEndTime int64 `json:"video_part_end_time,omitempty" xml:"video_part_end_time,omitempty"`
 }

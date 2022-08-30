@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "key",
+									"type": "String",
+									"description": "取件码"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "取件码的值"
+								}
+							],
+							"name": "pick_up_infos",
+							"type": "Content[]",
+							"description": "取件信息"
+						}
+					],
+					"name": "data",
+					"type": "OrderDetailDTO",
+					"description": "订单详情"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.omni.order.detail",
+	"apiChineseName": "全渠道订单详情",
+	"description": "全渠道订单详情",
+	"id": 63686
+}

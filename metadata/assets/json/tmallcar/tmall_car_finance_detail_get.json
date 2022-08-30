@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "FinanceDetailQueryReq",
+			"description": "查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "订单金额"
+				},
+				{
+					"name": "earnest_paid",
+					"type": "Boolean",
+					"description": "是否支付定金"
+				},
+				{
+					"name": "valid",
+					"type": "Boolean",
+					"description": "是否有效订单"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "车系id"
+				},
+				{
+					"name": "series_name",
+					"type": "String",
+					"description": "车系名称"
+				},
+				{
+					"name": "model_id",
+					"type": "Number",
+					"description": "车型id"
+				},
+				{
+					"name": "model_name",
+					"type": "String",
+					"description": "车型名称"
+				},
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "业务内容"
+				}
+			],
+			"name": "data",
+			"type": "FinanceDetailInfoDTO",
+			"description": "查询数据对象"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "tmall.car.finance.detail.get",
+	"apiChineseName": "查询汽车金融订单信息",
+	"description": "查询汽车金融订单信息",
+	"id": 60504
+}

@@ -1,8 +1,4 @@
 {
-	"id": 37015,
-	"name": "yunos.service.cmns.coa.device.isonline",
-	"apiChineseName": "根据设备id查询设备是否在线",
-	"description": "根据设备id查询设备是否在线",
 	"requestParams": [
 		{
 			"name": "type",
@@ -31,5 +27,9 @@
 			"type": "Number",
 			"description": "status"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.device.isonline",
+	"apiChineseName": "根据设备id查询设备是否在线",
+	"description": "根据设备id查询设备是否在线",
+	"id": 37015
 }

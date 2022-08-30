@@ -1,8 +1,4 @@
 {
-	"id": 32233,
-	"name": "alibaba.campus.acl.queryallrole",
-	"apiChineseName": "查询全部角色",
-	"description": "查询全部园区",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -39,41 +35,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CollectionResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "contents",
-					"type": "Json[]",
-					"description": "content",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误描述",
-					"required": true
-				},
-				{
-					"name": "error_level",
-					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"type": "String[]",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.queryallrole",
+	"apiChineseName": "查询全部角色",
+	"description": "查询全部园区",
+	"id": 32233
 }

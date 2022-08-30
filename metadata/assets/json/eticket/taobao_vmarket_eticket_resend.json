@@ -1,8 +1,4 @@
 {
-	"id": 11045,
-	"name": "taobao.vmarket.eticket.resend",
-	"apiChineseName": "外部合作商家重发电子凭证回调接口",
-	"description": "外部合作商家重发电子凭证回调接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -39,5 +35,9 @@
 			"type": "Number",
 			"description": "0:失败，1:成功"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.resend",
+	"apiChineseName": "外部合作商家重发电子凭证回调接口",
+	"description": "外部合作商家重发电子凭证回调接口",
+	"id": 11045
 }

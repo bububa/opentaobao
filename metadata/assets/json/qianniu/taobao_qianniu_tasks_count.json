@@ -1,8 +1,4 @@
 {
-	"id": 22738,
-	"name": "taobao.qianniu.tasks.count",
-	"apiChineseName": "任务查询条数接口",
-	"description": "任务查询条数接口",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -15,24 +11,24 @@
 			"description": "子任务类型"
 		},
 		{
-			"name": "biz_ids",
-			"type": "String",
-			"description": "业务ID列表，逗号分隔"
-		},
-		{
 			"name": "task_ids",
 			"type": "String",
 			"description": "任务的ID列表，用逗号分隔"
 		},
 		{
-			"name": "sender_uid",
-			"type": "Number",
-			"description": "任务发起者用户数字ID"
+			"name": "biz_ids",
+			"type": "String",
+			"description": "业务ID列表，逗号分隔"
 		},
 		{
 			"name": "receiver_uid",
 			"type": "Number",
 			"description": "任务执行者用户数字ID"
+		},
+		{
+			"name": "sender_uid",
+			"type": "Number",
+			"description": "任务发起者用户数字ID"
 		},
 		{
 			"name": "status",
@@ -45,14 +41,14 @@
 			"description": "逗号分隔的子任务状态，由业务方自定义"
 		},
 		{
-			"name": "remind_flag",
-			"type": "Number",
-			"description": "0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒"
-		},
-		{
 			"name": "metadata_ids",
 			"type": "String",
 			"description": "任务元id，多个以逗号分隔"
+		},
+		{
+			"name": "remind_flag",
+			"type": "Number",
+			"description": "0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒"
 		},
 		{
 			"name": "biz_nick",
@@ -91,5 +87,9 @@
 			"type": "Number",
 			"description": "符合查询条件的总条数"
 		}
-	]
+	],
+	"name": "taobao.qianniu.tasks.count",
+	"apiChineseName": "任务查询条数接口",
+	"description": "任务查询条数接口",
+	"id": 22738
 }

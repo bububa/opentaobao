@@ -1,14 +1,6 @@
 {
-	"id": 47527,
-	"name": "taobao.bus.invoice.return",
-	"apiChineseName": "发票回调接口",
-	"description": "汽车票发票回调接口",
 	"requestParams": [
 		{
-			"name": "invoice_param",
-			"type": "ReceiptDo",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -36,7 +28,7 @@
 				{
 					"name": "receipt_url",
 					"type": "String",
-					"description": "发票链接.status为0时必填"
+					"description": "发票链接.status为1时必填"
 				},
 				{
 					"name": "fail_reason",
@@ -48,7 +40,11 @@
 					"type": "String",
 					"description": "失败码"
 				}
-			]
+			],
+			"name": "invoice_param",
+			"type": "ReceiptDo",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -67,5 +63,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.bus.invoice.return",
+	"apiChineseName": "发票回调接口",
+	"description": "汽车票发票回调接口",
+	"id": 47527
 }

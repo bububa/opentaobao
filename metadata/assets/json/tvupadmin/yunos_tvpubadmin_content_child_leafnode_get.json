@@ -1,13 +1,6 @@
 {
-	"id": 29093,
-	"name": "yunos.tvpubadmin.content.child.leafnode.get",
-	"apiChineseName": "获取少儿大厅二级类目列表",
-	"description": "获取少儿大厅二级类目列表的接口",
 	"responseParams": [
 		{
-			"name": "child_node_vo_list",
-			"type": "ChildNodeVo []",
-			"description": "类目列表",
 			"subParams": [
 				{
 					"name": "id",
@@ -29,7 +22,14 @@
 					"type": "String",
 					"description": "父类目名称"
 				}
-			]
+			],
+			"name": "child_node_vo_list",
+			"type": "ChildNodeVo []",
+			"description": "类目列表"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.child.leafnode.get",
+	"apiChineseName": "获取少儿大厅二级类目列表",
+	"description": "获取少儿大厅二级类目列表的接口",
+	"id": 29093
 }

@@ -1,8 +1,4 @@
 {
-	"id": 40358,
-	"name": "alibaba.alihealth.drug.getbarcode.bytraccode",
-	"apiChineseName": "根据追溯码获取69码",
-	"description": "根据追溯码获取69码",
 	"requestParams": [
 		{
 			"name": "trace_code",
@@ -13,29 +9,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "包含药品生产日期、有效期至、69码、批次号",
-					"required": true
+					"type": "String",
+					"description": "包含药品生产日期、有效期至、69码、批次号"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.getbarcode.bytraccode",
+	"apiChineseName": "根据追溯码获取69码",
+	"description": "根据追溯码获取69码",
+	"id": 40358
 }

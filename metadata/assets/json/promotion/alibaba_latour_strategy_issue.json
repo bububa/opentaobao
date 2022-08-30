@@ -1,8 +1,4 @@
 {
-	"id": 45892,
-	"name": "alibaba.latour.strategy.issue",
-	"apiChineseName": "阿里巴巴权益发放接口",
-	"description": "阿里巴巴权益平台权益发放接口",
 	"requestParams": [
 		{
 			"name": "extra_data",
@@ -60,185 +56,161 @@
 			"name": "selected_benefit_code",
 			"type": "String",
 			"description": "指定发放权益code"
+		},
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "openid"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "StrategyIssueResultDto",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "display_amount_unit",
 							"type": "String",
-							"description": "展示面额单位",
-							"required": true
+							"description": "展示面额单位"
 						},
 						{
 							"name": "extra_data",
-							"type": "Json",
-							"description": "扩展字段",
-							"required": true
+							"type": "String",
+							"description": "扩展字段"
 						},
 						{
 							"name": "issue_time",
 							"type": "Date",
-							"description": "发放时间",
-							"required": true
+							"description": "发放时间"
 						},
 						{
 							"name": "benefit_type",
 							"type": "String",
-							"description": "权益类型",
-							"required": true
+							"description": "权益类型"
 						},
 						{
 							"name": "effective_start",
 							"type": "Date",
-							"description": "生效开始时间",
-							"required": true
+							"description": "生效开始时间"
 						},
 						{
 							"name": "effective_end_timestamp",
 							"type": "Number",
-							"description": "生效结束时间戳",
-							"required": true
+							"description": "生效结束时间戳"
 						},
 						{
 							"name": "outer_instance_id",
 							"type": "String",
-							"description": "外部发放实例id",
-							"required": true
+							"description": "外部发放实例id"
 						},
 						{
 							"name": "benefit_code",
 							"type": "String",
-							"description": "权益code",
-							"required": true
+							"description": "权益code"
 						},
 						{
 							"name": "effective_end",
 							"type": "Date",
-							"description": "生效结束时间",
-							"required": true
+							"description": "生效结束时间"
 						},
 						{
 							"name": "record_id",
 							"type": "Number",
-							"description": "中奖记录id",
-							"required": true
-						},
-						{
-							"name": "user_nick",
-							"type": "String",
-							"description": "用户昵称",
-							"required": true
+							"description": "中奖记录id"
 						},
 						{
 							"name": "effective_start_timestamp",
 							"type": "Number",
-							"description": "生效开始时间戳",
-							"required": true
+							"description": "生效开始时间戳"
 						},
 						{
 							"name": "display_start_fee",
 							"type": "String",
-							"description": "展示门槛",
-							"required": true
+							"description": "展示门槛"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "面额",
-							"required": true
+							"description": "面额"
 						},
 						{
 							"name": "amount_unit",
 							"type": "String",
-							"description": "面额单位",
-							"required": true
+							"description": "面额单位"
 						},
 						{
 							"name": "tracking_data",
-							"type": "Json",
-							"description": "追踪数据",
-							"required": true
+							"type": "String",
+							"description": "追踪数据"
 						},
 						{
 							"name": "display_amount",
 							"type": "String",
-							"description": "展示面额",
-							"required": true
+							"description": "展示面额"
 						},
 						{
 							"name": "effective_time_mode",
 							"type": "String",
-							"description": "生效时间类型",
-							"required": true
+							"description": "生效时间类型"
 						},
 						{
 							"name": "benefit_title",
 							"type": "String",
-							"description": "权益标题",
-							"required": true
+							"description": "权益标题"
 						},
 						{
 							"name": "benefit_type_name",
 							"type": "String",
-							"description": "权益类型名称",
-							"required": true
+							"description": "权益类型名称"
 						},
 						{
 							"name": "start_fee",
 							"type": "Number",
-							"description": "门槛",
-							"required": true
-						},
-						{
-							"name": "user_type",
-							"type": "String",
-							"description": "用户类型",
-							"required": true
+							"description": "门槛"
 						},
 						{
 							"name": "effective_interval",
 							"type": "Number",
-							"description": "相对生效时间长度",
-							"required": true
+							"description": "相对生效时间长度"
 						},
 						{
 							"name": "interval_time_unit",
 							"type": "String",
-							"description": "相对生效时间单位",
-							"required": true
+							"description": "相对生效时间单位"
+						},
+						{
+							"name": "material",
+							"type": "String",
+							"description": "素材"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StrategyIssueResultDto",
+					"description": "返回结果"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.latour.strategy.issue",
+	"apiChineseName": "阿里巴巴权益发放接口",
+	"description": "阿里巴巴权益平台权益发放接口",
+	"id": 45892
 }

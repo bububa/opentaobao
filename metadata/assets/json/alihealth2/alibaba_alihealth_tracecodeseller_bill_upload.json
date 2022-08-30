@@ -1,8 +1,4 @@
 {
-	"id": 38015,
-	"name": "alibaba.alihealth.tracecodeseller.bill.upload",
-	"apiChineseName": "上传入出库单api",
-	"description": "上传入出库单api",
 	"requestParams": [
 		{
 			"name": "skey_code",
@@ -69,5 +65,9 @@
 			"type": "String",
 			"description": "msgInfo"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.bill.upload",
+	"apiChineseName": "上传入出库单api",
+	"description": "上传入出库单api",
+	"id": 38015
 }

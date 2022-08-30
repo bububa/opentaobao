@@ -1,8 +1,4 @@
 {
-	"id": 26115,
-	"name": "alibaba.tianji.distributor.order.submit",
-	"apiChineseName": "分销商提交受理订单",
-	"description": "分销商提交受理订单，如合约订购、充值受理等",
 	"requestParams": [
 		{
 			"name": "item_serial_no",
@@ -23,9 +19,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "code",
@@ -45,7 +38,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.tianji.distributor.order.submit",
+	"apiChineseName": "分销商提交受理订单",
+	"description": "分销商提交受理订单，如合约订购、充值受理等",
+	"id": 26115
 }

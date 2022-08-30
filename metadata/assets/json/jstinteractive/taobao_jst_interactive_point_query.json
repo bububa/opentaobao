@@ -1,26 +1,25 @@
 {
-	"id": 51836,
-	"name": "taobao.jst.interactive.point.query",
-	"apiChineseName": "互动积分查询接口",
-	"description": "查询用户的互动积分",
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "调用是否成功"
-		},
-		{
-			"name": "data",
-			"type": "InteractivePointQueryResponse",
-			"description": "查询结果",
 			"subParams": [
 				{
 					"name": "amount",
 					"type": "Number",
-					"description": "用户积分总额",
-					"required": true
+					"description": "用户积分总额"
 				}
-			]
+			],
+			"name": "data",
+			"type": "InteractivePointQueryResponse",
+			"description": "查询结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.point.query",
+	"apiChineseName": "互动积分查询接口",
+	"description": "查询用户的互动积分",
+	"id": 51836
 }

@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "主播用户id"
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间id"
+				},
+				{
+					"name": "seq",
+					"type": "Number",
+					"description": "心跳序列",
+					"required": true
+				},
+				{
+					"name": "interval",
+					"type": "Number",
+					"description": "心跳间隔(s)",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token",
+					"required": true
+				}
+			],
+			"name": "start_game_request",
+			"type": "HeartBeatRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回状态码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户id"
+						},
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间id"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "report_time",
+							"type": "Number",
+							"description": "上报时间戳"
+						},
+						{
+							"name": "seq",
+							"type": "Number",
+							"description": "上报序列"
+						}
+					],
+					"name": "data",
+					"type": "HeartBeatResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.heartbeat",
+	"apiChineseName": "游戏玩家心跳",
+	"description": "游戏玩家心跳",
+	"id": 62213
+}

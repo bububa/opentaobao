@@ -1,0 +1,141 @@
+{
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "系统商分配给飞猪卖家的账号",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "date",
+							"type": "String",
+							"description": "日期。yyyy-MM-dd",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "开始时间。HH:mm",
+									"required": true
+								},
+								{
+									"name": "session_id",
+									"type": "String",
+									"description": "场次ID",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "结束时间。HH:mm",
+									"required": true
+								},
+								{
+									"name": "stock",
+									"type": "Number",
+									"description": "场次库存"
+								},
+								{
+									"name": "wholesale_price",
+									"type": "Number",
+									"description": "产品场次结算单价。单位：分"
+								},
+								{
+									"name": "retail_price",
+									"type": "Number",
+									"description": "产品场次销售单价。单位：分"
+								}
+							],
+							"name": "sessions",
+							"type": "ProductSessionDTO[]",
+							"description": "场次价库信息"
+						},
+						{
+							"name": "can_sell",
+							"type": "Boolean",
+							"description": "是否可售卖；true：可售卖",
+							"required": true
+						},
+						{
+							"name": "stock",
+							"type": "Number",
+							"description": "库存"
+						},
+						{
+							"name": "wholesale_price",
+							"type": "Number",
+							"description": "产品结算单价。单位：分"
+						},
+						{
+							"name": "retail_price",
+							"type": "Number",
+							"description": "产品销售单价。单位：分"
+						}
+					],
+					"name": "price_stocks",
+					"type": "ProductPriceStockDTO[]",
+					"description": "日历价格库存信息  日历价格库存信息"
+				},
+				{
+					"name": "notify_type",
+					"type": "Number",
+					"description": "产品变更通知类型 1：价格，2：库存，3：价库",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "系统商商品码",
+					"required": true
+				},
+				{
+					"name": "bed_id",
+					"type": "String",
+					"description": "床型ID"
+				},
+				{
+					"name": "hotel_id",
+					"type": "String",
+					"description": "酒店ID"
+				},
+				{
+					"name": "room_id",
+					"type": "String",
+					"description": "房型ID"
+				},
+				{
+					"name": "extend_params",
+					"type": "Json",
+					"description": "扩展参数"
+				},
+				{
+					"name": "mode",
+					"type": "Number",
+					"description": "模式 默认值1；1:普通日历/预约商品（非通兑和非任选）",
+					"required": true
+				}
+			],
+			"name": "product_updates",
+			"type": "ProductUpdatePushDTO",
+			"description": "变更的产品信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.travel.hotelticket.product.productupdatepush",
+	"apiChineseName": "产品批量变更推送通知",
+	"description": "产品批量变更推送通知",
+	"id": 62579
+}

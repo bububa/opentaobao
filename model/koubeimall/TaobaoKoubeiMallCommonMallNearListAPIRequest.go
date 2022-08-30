@@ -12,24 +12,24 @@ import (
 // 通过用户/终端设备地理位置POI信息，查询附近商圈信息
 type TaobaoKoubeiMallCommonMallNearListAPIRequest struct {
 	model.Params
-	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-	_dataSetId string
-	// 经度（终端设备地理位置）
-	_longitude string
-	// 纬度（终端设备地理位置）
-	_latitude string
-	// 口碑城市编码（示例：杭州市330100）
-	_cityCode string
 	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
 	_displayChannel string
 	// 支付宝/口碑/淘宝app版本号
 	_appVersion string
 	// 终端设备描述(中、英文均可)
 	_terminalType string
-	// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
-	_radius int64
+	// 纬度（终端设备地理位置）
+	_latitude string
+	// 经度（终端设备地理位置）
+	_longitude string
+	// 口碑城市编码（示例：杭州市330100）
+	_cityCode string
+	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+	_dataSetId string
 	// 查询个数，最大查询量不能超过50个
 	_size int64
+	// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
+	_radius int64
 }
 
 // NewTaobaoKoubeiMallCommonMallNearListRequest 初始化TaobaoKoubeiMallCommonMallNearListAPIRequest对象
@@ -51,58 +51,6 @@ func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetApiParams() url.Values 
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetDataSetId is DataSetId Setter
-// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetDataSetId(_dataSetId string) error {
-	r._dataSetId = _dataSetId
-	r.Set("data_set_id", _dataSetId)
-	return nil
-}
-
-// GetDataSetId DataSetId Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetDataSetId() string {
-	return r._dataSetId
-}
-
-// SetLongitude is Longitude Setter
-// 经度（终端设备地理位置）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetLongitude(_longitude string) error {
-	r._longitude = _longitude
-	r.Set("longitude", _longitude)
-	return nil
-}
-
-// GetLongitude Longitude Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetLongitude() string {
-	return r._longitude
-}
-
-// SetLatitude is Latitude Setter
-// 纬度（终端设备地理位置）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetLatitude(_latitude string) error {
-	r._latitude = _latitude
-	r.Set("latitude", _latitude)
-	return nil
-}
-
-// GetLatitude Latitude Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetLatitude() string {
-	return r._latitude
-}
-
-// SetCityCode is CityCode Setter
-// 口碑城市编码（示例：杭州市330100）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetCityCode(_cityCode string) error {
-	r._cityCode = _cityCode
-	r.Set("city_code", _cityCode)
-	return nil
-}
-
-// GetCityCode CityCode Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetCityCode() string {
-	return r._cityCode
 }
 
 // SetDisplayChannel is DisplayChannel Setter
@@ -144,17 +92,56 @@ func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// SetRadius is Radius Setter
-// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
-func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetRadius(_radius int64) error {
-	r._radius = _radius
-	r.Set("radius", _radius)
+// SetLatitude is Latitude Setter
+// 纬度（终端设备地理位置）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetLatitude(_latitude string) error {
+	r._latitude = _latitude
+	r.Set("latitude", _latitude)
 	return nil
 }
 
-// GetRadius Radius Getter
-func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetRadius() int64 {
-	return r._radius
+// GetLatitude Latitude Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetLatitude() string {
+	return r._latitude
+}
+
+// SetLongitude is Longitude Setter
+// 经度（终端设备地理位置）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetLongitude(_longitude string) error {
+	r._longitude = _longitude
+	r.Set("longitude", _longitude)
+	return nil
+}
+
+// GetLongitude Longitude Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetLongitude() string {
+	return r._longitude
+}
+
+// SetCityCode is CityCode Setter
+// 口碑城市编码（示例：杭州市330100）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetCityCode(_cityCode string) error {
+	r._cityCode = _cityCode
+	r.Set("city_code", _cityCode)
+	return nil
+}
+
+// GetCityCode CityCode Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetCityCode() string {
+	return r._cityCode
+}
+
+// SetDataSetId is DataSetId Setter
+// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetDataSetId(_dataSetId string) error {
+	r._dataSetId = _dataSetId
+	r.Set("data_set_id", _dataSetId)
+	return nil
+}
+
+// GetDataSetId DataSetId Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetDataSetId() string {
+	return r._dataSetId
 }
 
 // SetSize is Size Setter
@@ -168,4 +155,17 @@ func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetSize(_size int64) erro
 // GetSize Size Getter
 func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetSize() int64 {
 	return r._size
+}
+
+// SetRadius is Radius Setter
+// 召回半径，单位m，最大数值不能超过10km（该字段为空，默认全城召回）
+func (r *TaobaoKoubeiMallCommonMallNearListAPIRequest) SetRadius(_radius int64) error {
+	r._radius = _radius
+	r.Set("radius", _radius)
+	return nil
+}
+
+// GetRadius Radius Getter
+func (r TaobaoKoubeiMallCommonMallNearListAPIRequest) GetRadius() int64 {
+	return r._radius
 }

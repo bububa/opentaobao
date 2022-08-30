@@ -1,14 +1,6 @@
 {
-	"id": 53617,
-	"name": "alitrip.btrip.open.cost.center.query",
-	"apiChineseName": "查询成本中心",
-	"description": "查询成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterQueryRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -41,84 +33,77 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterQueryRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "cost_center_list",
-			"type": "OpenCostCenterQueryRs []",
-			"description": "成本中心列表",
 			"subParams": [
 				{
 					"name": "alipay_no",
 					"type": "String",
-					"description": "绑定支付宝账号",
-					"required": true
+					"description": "绑定支付宝账号"
 				},
 				{
-					"name": "entity_list",
-					"type": "OpenOrgEntityDo[]",
-					"description": "绑定人员信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "entity_id",
 							"type": "String",
-							"description": "用户/部门/角色id",
-							"required": true
+							"description": "用户/部门/角色id"
 						},
 						{
 							"name": "entity_type",
 							"type": "String",
-							"description": "人员类型：1用户，2部门，3角色",
-							"required": true
+							"description": "人员类型：1用户，2部门，3角色"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "用户/部门/角色名称",
-							"required": true
+							"description": "用户/部门/角色名称"
 						},
 						{
 							"name": "user_num",
 							"type": "Number",
-							"description": "角色/部门下面员工人数",
-							"required": true
+							"description": "角色/部门下面员工人数"
 						}
-					]
+					],
+					"name": "entity_list",
+					"type": "OpenOrgEntityDo[]",
+					"description": "绑定人员信息"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "商旅成本中心id",
-					"required": true
+					"description": "商旅成本中心id"
 				},
 				{
 					"name": "number",
 					"type": "String",
-					"description": "成本中心编号",
-					"required": true
+					"description": "成本中心编号"
 				},
 				{
 					"name": "scope",
 					"type": "Number",
-					"description": "适用范围: 1全员，2部分员工",
-					"required": true
+					"description": "适用范围: 1全员，2部分员工"
 				},
 				{
 					"name": "thirdpart_id",
 					"type": "String",
-					"description": "第三方成本中心id",
-					"required": true
+					"description": "第三方成本中心id"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "成本中心名称",
-					"required": true
+					"description": "成本中心名称"
 				}
-			]
+			],
+			"name": "cost_center_list",
+			"type": "OpenCostCenterQueryRs []",
+			"description": "成本中心列表"
 		},
 		{
 			"name": "result_code",
@@ -130,5 +115,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.query",
+	"apiChineseName": "查询成本中心",
+	"description": "查询成本中心",
+	"id": 53617
 }

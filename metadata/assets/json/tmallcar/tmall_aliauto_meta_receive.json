@@ -1,13 +1,6 @@
 {
-	"id": 50430,
-	"name": "tmall.aliauto.meta.receive",
-	"apiChineseName": "汽车说明书元数据上传",
-	"description": "天猫汽车对外提供的汽车资源元数据上传接口",
 	"requestParams": [
 		{
-			"name": "command",
-			"type": "ResourceMetaCommand",
-			"description": "元数据参数集",
 			"subParams": [
 				{
 					"name": "summary",
@@ -56,42 +49,46 @@
 				},
 				{
 					"name": "resource_options",
+					"type": "String",
 					"description": "资源附属信息"
 				}
-			]
+			],
+			"name": "command",
+			"type": "ResourceMetaCommand",
+			"description": "元数据参数集"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "tmall.aliauto.meta.receive",
+	"apiChineseName": "汽车说明书元数据上传",
+	"description": "天猫汽车对外提供的汽车资源元数据上传接口",
+	"id": 50430
 }

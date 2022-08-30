@@ -1,13 +1,6 @@
 {
-	"id": 29364,
-	"name": "taobao.qimen.channelinventory.query",
-	"apiChineseName": "渠道库存查询接口",
-	"description": "渠道库存查询",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "RequestDO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -29,13 +22,14 @@
 					"type": "String[]",
 					"description": "奇门仓储字段"
 				}
-			]
+			],
+			"name": "request",
+			"type": "RequestDO",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -56,10 +50,6 @@
 					"required": true
 				},
 				{
-					"name": "itemInventories",
-					"type": "ItemInventory[]",
-					"description": "itemInventories",
-					"required": true,
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -91,9 +81,19 @@
 							"description": "奇门仓储字段,C123,string(50),,",
 							"required": true
 						}
-					]
+					],
+					"name": "itemInventories",
+					"type": "ItemInventory[]",
+					"description": "itemInventories",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.channelinventory.query",
+	"apiChineseName": "渠道库存查询接口",
+	"description": "渠道库存查询",
+	"id": 29364
 }

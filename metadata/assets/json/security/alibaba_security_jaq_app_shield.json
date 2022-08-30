@@ -1,13 +1,6 @@
 {
-	"id": 25664,
-	"name": "alibaba.security.jaq.app.shield",
-	"apiChineseName": "应用加固接口",
-	"description": "提交应用进行应用加固,加固后需通过alibaba.security.jaq.app.shieldresult.get接口查询加固结果",
 	"requestParams": [
 		{
-			"name": "app_info",
-			"type": "ScanAppInfo",
-			"description": "待加固的应用信息",
 			"subParams": [
 				{
 					"name": "data_type",
@@ -39,12 +32,12 @@
 					"type": "Number",
 					"description": "app 类型，1-apk, 2-ipa（暂不支持）"
 				}
-			]
+			],
+			"name": "app_info",
+			"type": "ScanAppInfo",
+			"description": "待加固的应用信息"
 		},
 		{
-			"name": "channel",
-			"type": "ShieldChannel",
-			"description": "渠道列表,多渠道加固时填写",
 			"subParams": [
 				{
 					"name": "values",
@@ -56,14 +49,14 @@
 					"type": "String",
 					"description": "AndroidManifest.xml 中用于表示渠道信息的meta-data标签的android:name"
 				}
-			]
+			],
+			"name": "channel",
+			"type": "ShieldChannel",
+			"description": "渠道列表,多渠道加固时填写"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ScanTaskInfo",
-			"description": "加固任务信息",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -75,7 +68,14 @@
 					"type": "Number",
 					"description": "任务处理进度: 1-处理完成 (可立即通过对应的查询接口查询处理结果), 2-异步处理中(需等待app_info.callback_url接收到反向通知后再查询结果) ; 对于app_info.data_type为1目前都是异步处理，此字段返回2; 对于app_info.data_type为2目前都是同步处理，此字段返回1"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ScanTaskInfo",
+			"description": "加固任务信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.shield",
+	"apiChineseName": "应用加固接口",
+	"description": "提交应用进行应用加固,加固后需通过alibaba.security.jaq.app.shieldresult.get接口查询加固结果",
+	"id": 25664
 }

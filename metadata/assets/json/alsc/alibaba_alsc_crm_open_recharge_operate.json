@@ -1,13 +1,6 @@
 {
-	"id": 51617,
-	"name": "alibaba.alsc.crm.open.recharge.operate",
-	"apiChineseName": "储值操作接口",
-	"description": "储值操作接口",
 	"requestParams": [
 		{
-			"name": "param_recharge_operate_open_req",
-			"type": "RechargeOperateOpenReq",
-			"description": "储值操作参数",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -79,46 +72,48 @@
 					"type": "String",
 					"description": "回退单号,operate_type为4退款时必填"
 				}
-			]
+			],
+			"name": "param_recharge_operate_open_req",
+			"type": "RechargeOperateOpenReq",
+			"description": "储值操作参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "操作是否成功",
-					"required": true
+					"description": "操作是否成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果显示",
-					"required": true
+					"description": "结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.recharge.operate",
+	"apiChineseName": "储值操作接口",
+	"description": "储值操作接口",
+	"id": 51617
 }

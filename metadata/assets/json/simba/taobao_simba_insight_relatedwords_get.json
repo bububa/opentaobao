@@ -1,54 +1,52 @@
 {
-	"id": 23573,
-	"name": "taobao.simba.insight.relatedwords.get",
-	"apiChineseName": "获取词的相关词",
-	"description": "获取给定词的若干相关词，返回结果中越相关的权重越大，排在越前面，根据number参数对返回结果进行截断。",
 	"requestParams": [
 		{
 			"name": "bidword_list",
 			"type": "String[]",
 			"description": "要查询的词列表",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "number",
 			"type": "Number",
 			"description": "表示返回数据的条数",
-			"required": true,
-			"maxValue": 100,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "related_words_result_list",
-			"type": "InsightRelatedWords []",
-			"description": "相关词列表，最多可传100个。",
 			"subParams": [
 				{
-					"name": "bidword",
-					"type": "String",
-					"description": "原词"
-				},
-				{
-					"name": "related_word_items_list",
-					"type": "InsightRelatedWord[]",
-					"description": "相关词信息列表",
 					"subParams": [
-						{
-							"name": "related_word",
-							"type": "String",
-							"description": "相关词"
-						},
 						{
 							"name": "weight",
 							"type": "String",
 							"description": "相关度"
+						},
+						{
+							"name": "related_word",
+							"type": "String",
+							"description": "相关词"
 						}
-					]
+					],
+					"name": "related_word_items_list",
+					"type": "InsightRelatedWord[]",
+					"description": "相关词信息列表"
+				},
+				{
+					"name": "bidword",
+					"type": "String",
+					"description": "原词"
 				}
-			]
+			],
+			"name": "related_words_result_list",
+			"type": "InsightRelatedWords []",
+			"description": "相关词列表，最多可传100个。"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.relatedwords.get",
+	"apiChineseName": "获取词的相关词",
+	"description": "获取给定词的若干相关词，返回结果中越相关的权重越大，排在越前面，根据number参数对返回结果进行截断。",
+	"id": 23573
 }

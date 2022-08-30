@@ -1,8 +1,4 @@
 {
-	"id": 46970,
-	"name": "taobao.film.tfavatar.bill.sale.print.query",
-	"apiChineseName": "获取影院卖品账单-核销账单",
-	"description": "获取影院卖品账单-核销账单\n返回值data属于加密字段, 并非大字段.",
 	"requestParams": [
 		{
 			"name": "open_app_key",
@@ -47,9 +43,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "return_code",
@@ -58,10 +51,6 @@
 					"required": true
 				},
 				{
-					"name": "return_value",
-					"type": "ReturnValue",
-					"description": "返回参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data",
@@ -75,7 +64,11 @@
 							"description": "数据数量",
 							"required": true
 						}
-					]
+					],
+					"name": "return_value",
+					"type": "ReturnValue",
+					"description": "返回参数",
+					"required": true
 				},
 				{
 					"name": "request_id",
@@ -89,7 +82,14 @@
 					"description": "msg",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.film.tfavatar.bill.sale.print.query",
+	"apiChineseName": "获取影院卖品账单-核销账单",
+	"description": "获取影院卖品账单-核销账单\n返回值data属于加密字段, 并非大字段.",
+	"id": 46970
 }

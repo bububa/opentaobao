@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "main_out_order_id",
+					"type": "String",
+					"description": "主单号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "sub_out_order_ids",
+					"type": "String[]",
+					"description": "子单list",
+					"required": true
+				}
+			],
+			"name": "param_query_time_slice_req",
+			"type": "QueryTimeSliceReq",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "date",
+									"type": "String",
+									"description": "日期"
+								},
+								{
+									"subParams": [
+										{
+											"name": "time_slot",
+											"type": "String",
+											"description": "时间片"
+										}
+									],
+									"name": "time_slice_list",
+									"type": "TimeSliceList[]",
+									"description": "时间片"
+								}
+							],
+							"name": "date_time_slice_collection_d_t_o_list",
+							"type": "DateTimeSliceCollectionDtoList[]",
+							"description": "时间片对象"
+						},
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "子单号"
+						}
+					],
+					"name": "model",
+					"type": "Model[]",
+					"description": "返回model"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统错误"
+				}
+			],
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.wdk.reverse.timeslice",
+	"apiChineseName": "逆向取货时间片查询",
+	"description": "逆向取货时间片查询",
+	"id": 56287
+}

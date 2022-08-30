@@ -1,0 +1,381 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "活动ID"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部活动id"
+				}
+			],
+			"name": "param0",
+			"type": "ItemPoolActivityQueryRequest",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_pool_discount_type",
+					"type": "String",
+					"description": "商品池活动类型 AMOUNT_DECREASE(\"amount_decrease\", \"满元减\"),     AMOUNT_DISCOUNT(\"amount_discount\", \"满元折\"),     COUNT_DECREASE(\"count_decrease\", \"满件减\"),     COUNT_DISCOUNT(\"count_discount\", \"满件折\"),     COUNT_N_FIXED_PRICE(\"count_n_fixed_price\", \"满N件第N件一口价\"),     COUNT_N_DISCOUNT(\"count_n_discount\", \"满N件第N件Y折\"),     AMOUNT_EXCHANGE(\"amount_exchange\", \"满元换购\"),     COUNT_EXCHANGE(\"count_exchange\", \"满件换购\"),     COUNT_ALL_FIXED_PRICE(\"count_all_fixed_price\", \"X元Y件\"),"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "营销活动ID"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述"
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "weekdays",
+					"type": "String[]",
+					"description": "活动周几生效"
+				},
+				{
+					"name": "every_day_periods",
+					"type": "String[]",
+					"description": "活动每天生效时间段"
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景:1:APP  2:POS"
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID"
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人姓名"
+				},
+				{
+					"name": "store_ids",
+					"type": "String[]",
+					"description": "门店列表"
+				},
+				{
+					"name": "outer_store_ids",
+					"type": "String[]",
+					"description": "外部门店列表"
+				},
+				{
+					"name": "member_crowd_codes",
+					"type": "String[]",
+					"description": "人群编码,saas平台人群编码:NEW_USER: 新用户, OLD_USER：老用户，LIGHT_NEW_USER：闪购新客"
+				},
+				{
+					"subParams": [
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动总限购"
+						},
+						{
+							"name": "daily_total_limit_cnt",
+							"type": "Number",
+							"description": "每日总限购"
+						},
+						{
+							"name": "user_total_limit_cnt",
+							"type": "Number",
+							"description": "用户总限购"
+						},
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "用户每日限购"
+						},
+						{
+							"name": "order_limit_cnt",
+							"type": "Number",
+							"description": "每单限购"
+						}
+					],
+					"name": "limit",
+					"type": "LimitDTO",
+					"description": "限购信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "number",
+							"type": "Number",
+							"description": "分组序号"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "分组类型 1: 普通分组  2: 换购分组  3: 买赠分组"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "分组名称"
+						},
+						{
+							"name": "effective_group",
+							"type": "Boolean",
+							"description": "是否生效分组"
+						},
+						{
+							"subParams": [
+								{
+									"name": "amount_at",
+									"type": "Boolean",
+									"description": "是否满元门槛"
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "满元门槛值 -- 单位分"
+								},
+								{
+									"name": "count_at",
+									"type": "Boolean",
+									"description": "是否满件门槛"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "件数"
+								}
+							],
+							"name": "condition",
+							"type": "ConditionDTO",
+							"description": "优惠门槛"
+						},
+						{
+							"subParams": [
+								{
+									"name": "decrease",
+									"type": "Boolean",
+									"description": "是否减钱"
+								},
+								{
+									"name": "decrease_money",
+									"type": "Number",
+									"description": "满减金额，单位分"
+								},
+								{
+									"name": "discount",
+									"type": "Boolean",
+									"description": "是否打折"
+								},
+								{
+									"name": "discount_rate",
+									"type": "Number",
+									"description": "折扣率"
+								},
+								{
+									"name": "fix_price",
+									"type": "Boolean",
+									"description": "是否一口价"
+								},
+								{
+									"name": "fix_price_money",
+									"type": "Number",
+									"description": "一口价金额，单位分"
+								},
+								{
+									"name": "fix_price_type",
+									"type": "Number",
+									"description": "一口价类型 0: 普通一口价 1: 每件或者第n件一口价 2: 整体一口价"
+								}
+							],
+							"name": "action",
+							"type": "ActionDTO",
+							"description": "优惠效果"
+						},
+						{
+							"name": "exchange",
+							"type": "Boolean",
+							"description": "换购标识"
+						},
+						{
+							"subParams": [
+								{
+									"name": "max_buy_num",
+									"type": "Number",
+									"description": "每组最大购买数量, 单次下单可换购的不同sku商品数"
+								},
+								{
+									"name": "order_num",
+									"type": "Number",
+									"description": "换购分组顺序"
+								}
+							],
+							"name": "exchange_rule",
+							"type": "ExchangeRuleDTO",
+							"description": "换购规则"
+						}
+					],
+					"name": "logic_groups",
+					"type": "LogicGroupDTO[]",
+					"description": "逻辑分组"
+				},
+				{
+					"subParams": [
+						{
+							"name": "number",
+							"type": "Number",
+							"description": "分组序号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "amount_at",
+									"type": "Boolean",
+									"description": "是否满元门槛"
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "满元门槛值 -- 单位分"
+								},
+								{
+									"name": "count_at",
+									"type": "Boolean",
+									"description": "是否满件门槛"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "件数"
+								},
+								{
+									"name": "count_begin",
+									"type": "Boolean",
+									"description": "是否指定件数"
+								},
+								{
+									"name": "appoint",
+									"type": "Boolean",
+									"description": "是否第几件"
+								}
+							],
+							"name": "condition",
+							"type": "StairConditionDTO",
+							"description": "优惠门槛"
+						},
+						{
+							"subParams": [
+								{
+									"name": "decrease",
+									"type": "Boolean",
+									"description": "是否减钱"
+								},
+								{
+									"name": "decrease_money",
+									"type": "Number",
+									"description": "满减金额，单位分"
+								},
+								{
+									"name": "discount",
+									"type": "Boolean",
+									"description": "是否打折 9.68折 = 968"
+								},
+								{
+									"name": "discount_rate",
+									"type": "Number",
+									"description": "折扣率"
+								},
+								{
+									"name": "fix_price",
+									"type": "Boolean",
+									"description": "是否一口价"
+								},
+								{
+									"name": "fix_price_money",
+									"type": "Number",
+									"description": "一口价金额，单位分"
+								},
+								{
+									"name": "fix_price_type",
+									"type": "Number",
+									"description": "一口价类型 0: 普通一口价 1: 每件或者第n件一口价 2: 整体一口价"
+								}
+							],
+							"name": "action",
+							"type": "ActionDTO",
+							"description": "优惠效果"
+						},
+						{
+							"name": "condition_express",
+							"type": "String",
+							"description": "逻辑分组1的number为1，逻辑分组2的number为2，示例值[1\u00262]：代表同时满足逻辑分组1和逻辑分组2时才可享受优惠"
+						},
+						{
+							"name": "action_express",
+							"type": "String",
+							"description": "逻辑分组1的number为1，逻辑分组2的number为2，示例值[1|2]：代表逻辑分组1或者逻辑分组2可以享受优惠"
+						}
+					],
+					"name": "stair_groups",
+					"type": "StairGroupDTO[]",
+					"description": "阶梯分组"
+				},
+				{
+					"name": "enable_multiple",
+					"type": "Boolean",
+					"description": "是否上不封顶"
+				}
+			],
+			"name": "data",
+			"type": "ItemPoolPromotionActivityDTO",
+			"description": "响应体"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "成功标识"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "err_number",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "alibaba.retail.marketing.itempool.activity.query",
+	"apiChineseName": "查询商品池活动【同城零售】",
+	"description": "查询商品池活动【同城零售】",
+	"id": 60026
+}

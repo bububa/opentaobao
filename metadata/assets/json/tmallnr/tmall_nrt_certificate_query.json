@@ -1,0 +1,151 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "显示数量"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "淘系加密ID",
+					"required": true
+				},
+				{
+					"name": "codes",
+					"type": "String",
+					"description": "电子凭证码值集合",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务编码"
+				}
+			],
+			"name": "nrt_certificate_instance_query_d_t_o",
+			"type": "NrtCertificateInstanceQueryDto",
+			"description": "查询电子凭证实例DTO"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "create_time",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "开始时间",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "结束时间",
+									"required": true
+								},
+								{
+									"name": "certificate_code",
+									"type": "String",
+									"description": "电子凭证码值",
+									"required": true
+								},
+								{
+									"name": "modified_time",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态",
+									"required": true
+								},
+								{
+									"name": "open_id",
+									"type": "String",
+									"description": "淘系加密ID",
+									"required": true
+								},
+								{
+									"name": "channel",
+									"type": "Number",
+									"description": "投放渠道",
+									"required": true
+								},
+								{
+									"name": "out_id",
+									"type": "String",
+									"description": "电子凭证模版id",
+									"required": true
+								}
+							],
+							"name": "data_list",
+							"type": "NrtCertificateInstanceResponseDto[]",
+							"description": "电子凭证实例DTO",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "String",
+							"description": "显示数量",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "String",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "total_item",
+							"type": "String",
+							"description": "总数",
+							"required": true
+						}
+					],
+					"name": "model",
+					"type": "PageData",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.nrt.certificate.query",
+	"apiChineseName": "批量查询电子凭证信息",
+	"description": "批量查询电子凭证信息",
+	"id": 57911
+}

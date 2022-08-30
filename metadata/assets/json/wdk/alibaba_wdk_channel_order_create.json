@@ -1,20 +1,8 @@
 {
-	"id": 43555,
-	"name": "alibaba.wdk.channel.order.create",
-	"apiChineseName": "创建订单",
-	"description": "外部商家创建订单",
 	"requestParams": [
 		{
-			"name": "order_info",
-			"type": "OrderInfo",
-			"description": "订单信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "buyer",
-					"type": "Buyer",
-					"description": "买家信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -40,13 +28,13 @@
 							"description": "买家电话",
 							"required": true
 						}
-					]
+					],
+					"name": "buyer",
+					"type": "Buyer",
+					"description": "买家信息",
+					"required": true
 				},
 				{
-					"name": "consignee",
-					"type": "Consignee",
-					"description": "收件人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -94,14 +82,20 @@
 							"type": "String",
 							"description": "城市名称，仅在type不为0的情况下传入"
 						}
-					]
+					],
+					"name": "consignee",
+					"type": "Consignee",
+					"description": "收件人信息",
+					"required": true
 				},
 				{
-					"name": "sub_orders",
-					"type": "SubOrder[]",
-					"description": "子订单信息",
-					"required": true,
 					"subParams": [
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "外部子单号",
+							"required": true
+						},
 						{
 							"name": "sku_code",
 							"type": "String",
@@ -139,9 +133,6 @@
 							"required": true
 						},
 						{
-							"name": "discount_infos",
-							"type": "DiscountInfo[]",
-							"description": "营销优惠明细",
 							"subParams": [
 								{
 									"name": "activity_id",
@@ -158,20 +149,21 @@
 									"type": "Number",
 									"description": "优惠金额"
 								}
-							]
-						},
-						{
-							"name": "sub_out_order_id",
-							"type": "String",
-							"description": "外部子单号",
-							"required": true
+							],
+							"name": "discount_infos",
+							"type": "DiscountInfo[]",
+							"description": "营销优惠明细"
 						},
 						{
 							"name": "handling_type",
 							"type": "String",
 							"description": "加工方式说明, 非加工品不需要填写"
 						}
-					]
+					],
+					"name": "sub_orders",
+					"type": "SubOrder[]",
+					"description": "子订单信息",
+					"required": true
 				},
 				{
 					"name": "pay_fee",
@@ -232,74 +224,73 @@
 					"description": "创单时间",
 					"required": true
 				}
-			]
+			],
+			"name": "order_info",
+			"type": "OrderInfo",
+			"description": "订单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "model",
-					"type": "OrderOperateResult",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "盒马主单号",
-							"required": true
+							"description": "盒马主单号"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部主单号",
-							"required": true
+							"description": "外部主单号"
 						},
 						{
-							"name": "sub_order_results",
-							"type": "SubOrder[]",
-							"description": "子单列表信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sub_biz_order_id",
 									"type": "String",
-									"description": "盒马子单号",
-									"required": true
+									"description": "盒马子单号"
 								},
 								{
 									"name": "sub_out_order_id",
 									"type": "String",
-									"description": "外部子单号",
-									"required": true
+									"description": "外部子单号"
 								}
-							]
+							],
+							"name": "sub_order_results",
+							"type": "SubOrder[]",
+							"description": "子单列表信息"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OrderOperateResult",
+					"description": "返回内容"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.channel.order.create",
+	"apiChineseName": "创建订单",
+	"description": "外部商家创建订单",
+	"id": 43555
 }

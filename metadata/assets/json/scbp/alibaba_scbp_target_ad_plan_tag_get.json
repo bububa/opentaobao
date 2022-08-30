@@ -1,8 +1,4 @@
 {
-	"id": 41335,
-	"name": "alibaba.scbp.target.ad.plan.tag.get",
-	"apiChineseName": "定向推广-获取计划的定向溢价数据",
-	"description": "定向推广-获取计划的定向溢价数据",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -13,145 +9,128 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopP4pCampaignTargetingTagView",
-			"description": "TopP4pCampaignTargetingTagView",
 			"subParams": [
 				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ctr",
+									"type": "String",
+									"description": "点击率"
+								},
+								{
+									"name": "cpc",
+									"type": "String",
+									"description": "平均点击花费"
+								},
+								{
+									"name": "cost",
+									"type": "String",
+									"description": "消耗金额，单位元"
+								},
+								{
+									"name": "click",
+									"type": "String",
+									"description": "点击量"
+								},
+								{
+									"name": "impr",
+									"type": "String",
+									"description": "曝光量"
+								}
+							],
+							"name": "effect",
+							"type": "Effect7d",
+							"description": "最近7天效果数据"
+						},
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "溢价百分比"
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "标签中文名"
+						},
+						{
+							"name": "tag_id",
+							"type": "String",
+							"description": "标签id"
+						}
+					],
 					"name": "country_tag_list",
 					"type": "CountryTagView[]",
-					"description": "国家溢价列表",
-					"required": true,
-					"subParams": [
-						{
-							"name": "effect",
-							"type": "Effect7d",
-							"description": "最近7天效果数据",
-							"required": true,
-							"subParams": [
-								{
-									"name": "ctr",
-									"type": "String",
-									"description": "点击率",
-									"required": true
-								},
-								{
-									"name": "cpc",
-									"type": "String",
-									"description": "平均点击花费",
-									"required": true
-								},
-								{
-									"name": "cost",
-									"type": "String",
-									"description": "消耗金额，单位元",
-									"required": true
-								},
-								{
-									"name": "click",
-									"type": "String",
-									"description": "点击量",
-									"required": true
-								},
-								{
-									"name": "impr",
-									"type": "String",
-									"description": "曝光量",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "discount",
-							"type": "Number",
-							"description": "溢价百分比",
-							"required": true
-						},
-						{
-							"name": "tag_name",
-							"type": "String",
-							"description": "标签中文名",
-							"required": true
-						},
-						{
-							"name": "tag_id",
-							"type": "String",
-							"description": "标签id",
-							"required": true
-						}
-					]
+					"description": "国家溢价列表"
 				},
 				{
-					"name": "crowd_tag_list",
-					"type": "CrowdTagView[]",
-					"description": "人群溢价列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tag_name",
 							"type": "String",
-							"description": "标签中文名",
-							"required": true
+							"description": "标签中文名"
 						},
 						{
 							"name": "tag_id",
 							"type": "String",
-							"description": "标签id(潜在访问偏好和潜在采购意向返回的是类目id，店铺老客和优选人群返回的是字符串)",
-							"required": true
+							"description": "标签id(潜在访问偏好和潜在采购意向返回的是类目id，店铺老客和优选人群返回的是字符串)"
 						},
 						{
 							"name": "discount",
 							"type": "Number",
-							"description": "溢价百分比",
-							"required": true
+							"description": "溢价百分比"
 						},
 						{
-							"name": "effect",
-							"type": "Effect7d",
-							"description": "最近7天效果数据",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ctr",
 									"type": "String",
-									"description": "点击率",
-									"required": true
+									"description": "点击率"
 								},
 								{
 									"name": "cpc",
 									"type": "String",
-									"description": "平均点击花费",
-									"required": true
+									"description": "平均点击花费"
 								},
 								{
 									"name": "cost",
 									"type": "String",
-									"description": "消耗金额，单位元",
-									"required": true
+									"description": "消耗金额，单位元"
 								},
 								{
 									"name": "click",
 									"type": "String",
-									"description": "点击量",
-									"required": true
+									"description": "点击量"
 								},
 								{
 									"name": "impr",
 									"type": "String",
-									"description": "曝光量",
-									"required": true
+									"description": "曝光量"
 								}
-							]
+							],
+							"name": "effect",
+							"type": "Effect7d",
+							"description": "最近7天效果数据"
 						},
 						{
 							"name": "crowd_type",
 							"type": "String",
-							"description": "人群类型 PRI_VISIT(访问过本店铺产品的买家) PRI_INQUIRY(给本店铺发起过询盘的买家) PUB_VISIT_CATE(潜在访问偏好) PUB_INQUIRY_CATE(潜在采购意向) PUBLIC_REGION(国家) PUB_HIGH_MOQ(高MOQ偏好买家) PUB_HIGH_RETURN(高回访买家) PUB_HIGH_POTENTIAL_ORDER(潜在交易买家) PUB_HIGH_POTENTIAL_AB(高活跃买家)",
-							"required": true
+							"description": "人群类型 PRI_VISIT(访问过本店铺产品的买家) PRI_INQUIRY(给本店铺发起过询盘的买家) PUB_VISIT_CATE(潜在访问偏好) PUB_INQUIRY_CATE(潜在采购意向) PUBLIC_REGION(国家) PUB_HIGH_MOQ(高MOQ偏好买家) PUB_HIGH_RETURN(高回访买家) PUB_HIGH_POTENTIAL_ORDER(潜在交易买家) PUB_HIGH_POTENTIAL_AB(高活跃买家)"
 						}
-					]
+					],
+					"name": "crowd_tag_list",
+					"type": "CrowdTagView[]",
+					"description": "人群溢价列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopP4pCampaignTargetingTagView",
+			"description": "TopP4pCampaignTargetingTagView"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.tag.get",
+	"apiChineseName": "定向推广-获取计划的定向溢价数据",
+	"description": "定向推广-获取计划的定向溢价数据",
+	"id": 41335
 }

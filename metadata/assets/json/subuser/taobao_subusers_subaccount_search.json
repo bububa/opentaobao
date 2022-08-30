@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"name": "main_nick",
+			"type": "String",
+			"description": "主账号登录名",
+			"required": true
+		},
+		{
+			"name": "filter_key",
+			"type": "String",
+			"description": "根据子账号冒号后缀的搜索词，支持中文单字、英文单词 分词规则搜索。该搜索词必传。如果不需要模糊搜索仅需要分页获取子账号列表，请使用taobao.sellercenter.subusers.page接口",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，大于1小于200",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码，大于等于1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "子账号id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "子账号状态， 1正常   2冻结  3处罚"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "主账号id"
+				},
+				{
+					"name": "sub_nick",
+					"type": "String",
+					"description": "子账号登录名"
+				}
+			],
+			"name": "subaccounts",
+			"type": "SubAccountInfo []",
+			"description": "子账号列表"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "isv本次调用传入的页大小"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "本次调用删选条件下的总子账号数量，除以页大小可得出最大页数"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "isv本次调用传入的页码"
+		}
+	],
+	"name": "taobao.subusers.subaccount.search",
+	"apiChineseName": "根据子账号登录名后缀模糊搜索子账号列表",
+	"description": "根据子账号冒号后缀搜索子账号列表，支持中文单字、英文单词（不支持英文单字母） 分词规则搜索，该搜索词必传。模糊搜索使用阿里云搜索引擎所以该接口增值收费，如果不需要模糊搜索仅需要分页获取子账号列表，请使用taobao.sellercenter.subusers.page接口",
+	"id": 61195
+}

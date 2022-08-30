@@ -1,8 +1,4 @@
 {
-	"id": 43660,
-	"name": "alibaba.alihealth.drug.kyt.getentlicense",
-	"apiChineseName": "获取企业资质",
-	"description": "获取企业的资质信息。",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -13,85 +9,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model_list",
-					"type": "Model[]",
-					"description": "列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
 							"type": "String",
-							"description": "资质名称",
-							"required": true
+							"description": "资质名称"
 						},
 						{
 							"name": "requisite",
 							"type": "Number",
-							"description": "是否必须",
-							"required": true
+							"description": "是否必须"
 						},
 						{
 							"name": "desc_info",
 							"type": "String",
-							"description": "资质描述",
-							"required": true
+							"description": "资质描述"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "主键ID",
-							"required": true
+							"description": "主键ID"
 						},
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "企业ID",
-							"required": true
+							"description": "企业ID"
 						},
 						{
 							"name": "expire_date",
 							"type": "Date",
-							"description": "过期时间",
-							"required": true
+							"description": "过期时间"
 						},
 						{
 							"name": "url",
 							"type": "String",
-							"description": "资质图片存储地址",
-							"required": true
+							"description": "资质图片存储地址"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "license_no",
 							"type": "String",
-							"description": "资质编号",
-							"required": true
+							"description": "资质编号"
 						},
 						{
 							"name": "license_type",
 							"type": "String",
-							"description": "资质类型",
-							"required": true
+							"description": "资质类型"
 						},
 						{
 							"name": "truth_url",
 							"type": "String",
-							"description": "资质图片访问地址",
-							"required": true
+							"description": "资质图片访问地址"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.getentlicense",
+	"apiChineseName": "获取企业资质",
+	"description": "获取企业的资质信息。",
+	"id": 43660
 }

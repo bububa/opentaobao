@@ -1,8 +1,4 @@
 {
-	"id": 50839,
-	"name": "taobao.openmall.refund.close",
-	"apiChineseName": "关闭OpenMall退款单",
-	"description": "关闭OpenMall退款单",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "是否关闭成功"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.close",
+	"apiChineseName": "关闭OpenMall退款单",
+	"description": "关闭OpenMall退款单",
+	"id": 50839
 }

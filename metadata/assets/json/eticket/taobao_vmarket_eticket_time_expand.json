@@ -1,8 +1,4 @@
 {
-	"id": 23239,
-	"name": "taobao.vmarket.eticket.time.expand",
-	"apiChineseName": "订单延时接口",
-	"description": "提供码商操作订单延期接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -23,5 +19,9 @@
 			"type": "Number",
 			"description": "0:失败；1:成功"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.time.expand",
+	"apiChineseName": "订单延时接口",
+	"description": "提供码商操作订单延期接口",
+	"id": 23239
 }

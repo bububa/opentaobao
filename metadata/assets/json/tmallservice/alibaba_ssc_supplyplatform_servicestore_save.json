@@ -1,13 +1,6 @@
 {
-	"id": 49253,
-	"name": "alibaba.ssc.supplyplatform.servicestore.save",
-	"apiChineseName": "保存网点",
-	"description": "网点创建、修改",
 	"requestParams": [
 		{
-			"name": "service_store_save_req",
-			"type": "ServiceStoreSaveForTopReqDTO",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "alipay_account_id_number",
@@ -131,6 +124,11 @@
 					"description": "营业执照照片-使用阿里图片服务"
 				},
 				{
+					"name": "phone",
+					"type": "String",
+					"description": "对外服务电话"
+				},
+				{
 					"name": "alipay_account_name",
 					"type": "String",
 					"description": "支付宝账号真实姓名"
@@ -139,66 +137,61 @@
 					"name": "service_store_id",
 					"type": "Number",
 					"description": "网点id和网点code选其一"
-				},
-				{
-					"name": "phone",
-					"type": "String",
-					"description": "对外服务电话"
 				}
-			]
+			],
+			"name": "service_store_save_req",
+			"type": "ServiceStoreSaveForTopReqDTO",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "对外展示的错误信息",
-					"required": true
+					"description": "对外展示的错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "value",
-					"type": "ServiceStoreCreateDto",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "service_store_id",
 							"type": "Number",
-							"description": "网点id",
-							"required": true
+							"description": "网点id"
 						},
 						{
 							"name": "secret",
 							"type": "String",
-							"description": "秘钥--内嵌核销页面使用",
-							"required": true
+							"description": "秘钥--内嵌核销页面使用"
 						}
-					]
+					],
+					"name": "value",
+					"type": "ServiceStoreCreateDto",
+					"description": "返回对象"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.servicestore.save",
+	"apiChineseName": "保存网点",
+	"description": "网点创建、修改",
+	"id": 49253
 }

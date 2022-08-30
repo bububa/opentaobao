@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "task_state",
+					"type": "String",
+					"description": "采集任务状态",
+					"required": true
+				},
+				{
+					"name": "task_msg",
+					"type": "String",
+					"description": "采集任务状态描述"
+				},
+				{
+					"name": "task_code",
+					"type": "String",
+					"description": "采集任务结果码",
+					"required": true
+				},
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "业务id",
+					"required": true
+				},
+				{
+					"name": "task_begin_time",
+					"type": "String",
+					"description": "采集开始时间（时间戳/秒）"
+				},
+				{
+					"name": "task_id",
+					"type": "String",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "采集结果"
+				}
+			],
+			"name": "param0",
+			"type": "CommonCallbackDTO",
+			"description": "通用回调参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "扩展信息错误"
+		}
+	],
+	"name": "alibaba.jym.industry.vmos.common.callback",
+	"apiChineseName": "vmos游戏信息采集结果回调通知",
+	"description": "vmos游戏信息采集结果回调通知",
+	"id": 60013
+}

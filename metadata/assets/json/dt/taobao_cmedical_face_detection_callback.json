@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "一次测肤接口的唯一请求id",
+			"required": true
+		},
+		{
+			"name": "identity",
+			"type": "String",
+			"description": "isv身份识别",
+			"required": true
+		},
+		{
+			"name": "scene",
+			"type": "String",
+			"description": "场景，直播：live，店铺：shop",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "测肤结果数据"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "true:成功，false：失败",
+			"required": true
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误消息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误说明"
+						}
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功，true：成功，false：失败"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.cmedical.face.detection.callback",
+	"apiChineseName": "魔镜测肤结果数据回调接口",
+	"description": "消费医疗魔镜项目，isv将异步测肤结果数据，回传给行业。",
+	"id": 56598
+}

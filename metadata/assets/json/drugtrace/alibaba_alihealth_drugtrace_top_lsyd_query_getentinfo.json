@@ -1,8 +1,4 @@
 {
-	"id": 52568,
-	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.getentinfo",
-	"apiChineseName": "通过企业名得到唯一标识ref_ent_id及企业ent_id",
-	"description": "根据企业名称查询ID",
 	"requestParams": [
 		{
 			"name": "ent_name",
@@ -13,55 +9,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PUserEntInfoDto",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "企业唯一标识【ref_ent_id】",
-							"required": true
+							"description": "企业唯一标识【ref_ent_id】"
 						},
 						{
 							"name": "ent_id",
 							"type": "String",
-							"description": "企业ID【ent_id】",
-							"required": true
+							"description": "企业ID【ent_id】"
 						},
 						{
 							"name": "network_type",
 							"type": "String",
-							"description": "入网标识【0非入网;1开头代表入网企业;200代表入驻码上放心的企业】",
-							"required": true
+							"description": "入网标识【0非入网;1开头代表入网企业;200代表入驻码上放心的企业】"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PUserEntInfoDto",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.getentinfo",
+	"apiChineseName": "通过企业名得到唯一标识ref_ent_id及企业ent_id",
+	"description": "根据企业名称查询ID",
+	"id": 52568
 }

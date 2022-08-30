@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "淘宝UID",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "淘宝NICK",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "姓名"
+		},
+		{
+			"name": "card_no",
+			"type": "String",
+			"description": "证件号码"
+		},
+		{
+			"name": "imeis",
+			"type": "String",
+			"description": "商家传入的设备号",
+			"required": true
+		},
+		{
+			"name": "mtop_imei",
+			"type": "String",
+			"description": "mtop获取的用户设备号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_status",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "响应数据"
+		}
+	],
+	"name": "alibaba.interact.order.checkuserimei",
+	"apiChineseName": "金融购机验证设备号",
+	"description": "金融购机验证用户身份信息",
+	"id": 30699
+}

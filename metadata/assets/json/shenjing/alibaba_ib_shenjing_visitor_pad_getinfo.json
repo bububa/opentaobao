@@ -1,8 +1,4 @@
 {
-	"id": 41198,
-	"name": "alibaba.ib.shenjing.visitor.pad.getinfo",
-	"apiChineseName": "获取OSS上传参数",
-	"description": "PAD 端获取OSS上传参数，向OSS服务器上传图片。",
 	"responseParams": [
 		{
 			"name": "result_code",
@@ -10,47 +6,41 @@
 			"description": "响应对象"
 		},
 		{
-			"name": "content",
-			"type": "PostObjectPolicyVo",
-			"description": "返回状态码",
 			"subParams": [
 				{
 					"name": "accessid",
 					"type": "String",
-					"description": "阿里云RAM账号的accessId",
-					"required": true
+					"description": "阿里云RAM账号的accessId"
 				},
 				{
 					"name": "policy",
 					"type": "String",
-					"description": "加密过的上传策略",
-					"required": true
+					"description": "加密过的上传策略"
 				},
 				{
 					"name": "signature",
 					"type": "String",
-					"description": "上传策略签名",
-					"required": true
+					"description": "上传策略签名"
 				},
 				{
 					"name": "dir",
 					"type": "String",
-					"description": "文件上传目录",
-					"required": true
+					"description": "文件上传目录"
 				},
 				{
 					"name": "expire",
 					"type": "String",
-					"description": "上传策略有效时间",
-					"required": true
+					"description": "上传策略有效时间"
 				},
 				{
 					"name": "host",
 					"type": "String",
-					"description": "oss的bucket访问路径",
-					"required": true
+					"description": "oss的bucket访问路径"
 				}
-			]
+			],
+			"name": "content",
+			"type": "PostObjectPolicyVo",
+			"description": "返回状态码"
 		},
 		{
 			"name": "result_msg",
@@ -67,5 +57,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.ib.shenjing.visitor.pad.getinfo",
+	"apiChineseName": "获取OSS上传参数",
+	"description": "PAD 端获取OSS上传参数，向OSS服务器上传图片。",
+	"id": 41198
 }

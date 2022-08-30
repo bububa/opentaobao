@@ -1,13 +1,6 @@
 {
-	"id": 33369,
-	"name": "alibaba.campus.space.attr.setattr",
-	"apiChineseName": "新增业务属性实例接口",
-	"description": "新增业务属性实例接口",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "操作用户上下文",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -30,13 +23,12 @@
 					"description": "园区ID",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文"
 		},
 		{
-			"name": "list",
-			"type": "TypeAttrInstanceRequest[]",
-			"description": "业务属性实例集合",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "space_id",
@@ -62,52 +54,54 @@
 					"description": "业务属性code",
 					"required": true
 				}
-			]
+			],
+			"name": "list",
+			"type": "TypeAttrInstanceRequest[]",
+			"description": "业务属性实例集合",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "content",
-					"required": true
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.attr.setattr",
+	"apiChineseName": "新增业务属性实例接口",
+	"description": "新增业务属性实例接口",
+	"id": 33369
 }

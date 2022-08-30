@@ -1,8 +1,4 @@
 {
-	"id": 24224,
-	"name": "alibaba.interact.sensor.social",
-	"apiChineseName": "社交组件",
-	"description": "赞，评论 ，关注 新增接口",
 	"requestParams": [
 		{
 			"name": "id",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "result=1"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.social",
+	"apiChineseName": "社交组件",
+	"description": "赞，评论 ，关注 新增接口",
+	"id": 24224
 }

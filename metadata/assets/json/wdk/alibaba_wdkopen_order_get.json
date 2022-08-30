@@ -1,8 +1,4 @@
 {
-	"id": 50538,
-	"name": "alibaba.wdkopen.order.get",
-	"apiChineseName": "五道口商户订单获取",
-	"description": "商户通过五道口订单id获取订单信息",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -23,239 +19,241 @@
 	],
 	"responseParams": [
 		{
-			"name": "top_base_result",
-			"type": "TopBaseResult",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "表示拆单是否成功",
-					"required": true
+					"description": "表示拆单是否成功"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
-					"name": "model",
-					"type": "WdkOrderSyncBo",
-					"description": "订单对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "五道口订单ID",
-							"required": true
+							"description": "五道口订单ID"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部订单ID",
-							"required": true
+							"description": "外部订单ID"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店ID",
-							"required": true
+							"description": "经营店ID"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店ID",
-							"required": true
+							"description": "渠道店ID"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商户编码",
-							"required": true
+							"description": "商户编码"
 						},
 						{
 							"name": "order_from",
 							"type": "Number",
-							"description": "订单来源, 如 TAOBAO (4, \"TC自营渠道\"),",
-							"required": true
+							"description": "订单来源, 如 TAOBAO (4, \"TC自营渠道\"),"
 						},
 						{
 							"name": "open_uid",
 							"type": "String",
-							"description": "买家open_uid",
-							"required": true
+							"description": "买家open_uid"
 						},
 						{
 							"name": "pay_fee",
 							"type": "Number",
-							"description": "用户订单支付金额,分",
-							"required": true
+							"description": "用户订单支付金额,分"
 						},
 						{
 							"name": "origin_fee",
 							"type": "Number",
-							"description": "订单原价,分",
-							"required": true
+							"description": "订单原价,分"
 						},
 						{
 							"name": "discount_fee",
 							"type": "Number",
-							"description": "订单优惠金额,分",
-							"required": true
+							"description": "订单优惠金额,分"
 						},
 						{
 							"name": "post_fee",
 							"type": "Number",
-							"description": "订单配送费,分",
-							"required": true
+							"description": "订单配送费,分"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态,如PAID_DONE(2, \"已付款\"), TRADE_SUCCESS(6, \"交易成功\")",
-							"required": true
+							"description": "订单状态,如PAID_DONE(2, \"已付款\"), TRADE_SUCCESS(6, \"交易成功\")"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "expect_arrive_time",
 							"type": "String",
-							"description": "期望送达时间段",
-							"required": true
+							"description": "期望送达时间段"
 						},
 						{
 							"name": "arrive_type",
 							"type": "Number",
-							"description": "配送方式, 如InTime(1, \"即时达\"), SetTime(2, \"定时达\"),TopSpeed(3,\"极速达\"),NoNeedSend(4,\"无需配送\")",
-							"required": true
+							"description": "配送方式, 如InTime(1, \"即时达\"), SetTime(2, \"定时达\"),TopSpeed(3,\"极速达\"),NoNeedSend(4,\"无需配送\")"
 						},
 						{
-							"name": "sub_orders",
-							"type": "Suborders[]",
-							"description": "子单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "biz_sub_order_id",
 									"type": "Number",
-									"description": "五道口子订单id",
-									"required": true
+									"description": "五道口子订单id"
 								},
 								{
 									"name": "out_sub_order_id",
 									"type": "String",
-									"description": "外部子订单id",
-									"required": true
+									"description": "外部子订单id"
 								},
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "商品code",
-									"required": true
+									"description": "商品code"
 								},
 								{
 									"name": "auction_title",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "auction_price",
 									"type": "Number",
-									"description": "商品价格",
-									"required": true
+									"description": "商品价格"
 								},
 								{
 									"name": "buy_amount_sale",
 									"type": "Number",
-									"description": "销售单位购买数量",
-									"required": true
+									"description": "销售单位购买数量"
 								},
 								{
 									"name": "buy_amount_stock",
 									"type": "String",
-									"description": "库存单位购买数量",
-									"required": true
+									"description": "库存单位购买数量"
 								},
 								{
 									"name": "sale_unit",
 									"type": "String",
-									"description": "销售单位",
-									"required": true
+									"description": "销售单位"
 								},
 								{
 									"name": "stock_unit",
 									"type": "String",
-									"description": "库存单位",
-									"required": true
+									"description": "库存单位"
 								},
 								{
 									"name": "pay_fee",
 									"type": "Number",
-									"description": "子订单用户支付金额",
-									"required": true
+									"description": "子订单用户支付金额"
 								},
 								{
 									"name": "origin_fee",
 									"type": "Number",
-									"description": "子订单原价",
-									"required": true
+									"description": "子订单原价"
 								},
 								{
 									"name": "discount_fee",
 									"type": "Number",
-									"description": "子订单优惠金额",
-									"required": true
+									"description": "子订单优惠金额"
+								},
+								{
+									"name": "discount_merchant_fee",
+									"type": "Number",
+									"description": "商家优惠分摊"
+								},
+								{
+									"name": "discount_platform_fee",
+									"type": "Number",
+									"description": "平台优惠分摊"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "子单价格"
 								}
-							]
+							],
+							"name": "sub_orders",
+							"type": "Suborders[]",
+							"description": "子单列表"
 						},
 						{
-							"name": "promotions",
-							"type": "Promotions[]",
-							"description": "订单优惠信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "discount_fee",
 									"type": "String",
-									"description": "活动优惠金额",
-									"required": true
+									"description": "活动优惠金额"
 								},
 								{
 									"name": "activity_name",
 									"type": "String",
-									"description": "活动名称",
-									"required": true
+									"description": "活动名称"
 								},
 								{
 									"name": "activity_type",
 									"type": "String",
-									"description": "活动类型",
-									"required": true
+									"description": "活动类型"
 								},
 								{
 									"name": "activity_id",
 									"type": "String",
-									"description": "活动id",
-									"required": true
+									"description": "活动id"
 								}
-							]
+							],
+							"name": "promotions",
+							"type": "Promotions[]",
+							"description": "订单优惠信息"
+						},
+						{
+							"name": "discount_merchant_fee",
+							"type": "Number",
+							"description": "商家优惠分摊"
+						},
+						{
+							"name": "discount_platform_fee",
+							"type": "Number",
+							"description": "平台优惠分摊"
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "订单小号"
+						},
+						{
+							"name": "package_fee",
+							"type": "Number",
+							"description": "包装费"
 						}
-					]
+					],
+					"name": "model",
+					"type": "WdkOrderSyncBo",
+					"description": "订单对象"
 				}
-			]
+			],
+			"name": "top_base_result",
+			"type": "TopBaseResult",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "alibaba.wdkopen.order.get",
+	"apiChineseName": "五道口商户订单获取",
+	"description": "商户通过五道口订单id获取订单信息",
+	"id": 50538
 }

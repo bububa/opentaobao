@@ -1,0 +1,40 @@
+{
+	"requestParams": [
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "充值账号不是手机号"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "19062837751058701652"
+		},
+		{
+			"name": "order_state",
+			"type": "String",
+			"description": "订单状态: (success:成功， processing:处理中，failed:失败， untreated:未处理)"
+		},
+		{
+			"name": "ht_order_id",
+			"type": "String",
+			"description": "欢行订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "返回码描述"
+		}
+	],
+	"name": "alibaba.htcoupon.fulu.phonecharge.callback",
+	"apiChineseName": "话费充值回调",
+	"description": "话费充值为异步操作，此接口用于充值成功后，供应商回调。",
+	"id": 57365
+}

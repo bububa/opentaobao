@@ -1,8 +1,4 @@
 {
-	"id": 25781,
-	"name": "taobao.alitrip.travel.baseinfo.scenics.get",
-	"apiChineseName": "【API3.0】基础信息获取接口：景点数据查询",
-	"description": "商品发布辅助接口，用于飞猪度假或门票商品发布时 获取可用的景点（及景点下收费项目）信息列表。",
 	"requestParams": [
 		{
 			"name": "city",
@@ -27,5 +23,9 @@
 			"type": "String",
 			"description": "返回详细景点信息，返回数据为json数组结构的字符串"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.baseinfo.scenics.get",
+	"apiChineseName": "【API3.0】基础信息获取接口：景点数据查询",
+	"description": "商品发布辅助接口，用于飞猪度假或门票商品发布时 获取可用的景点（及景点下收费项目）信息列表。",
+	"id": 25781
 }

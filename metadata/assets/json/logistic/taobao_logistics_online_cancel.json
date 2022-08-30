@@ -1,8 +1,4 @@
 {
-	"id": 10688,
-	"name": "taobao.logistics.online.cancel",
-	"apiChineseName": "取消物流订单接口",
-	"description": "调此接口取消发货的订单，重新选择物流公司发货。前提是物流公司未揽收货物。对未发货和已经被物流公司揽收的物流订单，是不能取消的。",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -13,11 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "成功与失败"
-		},
-		{
 			"name": "modify_time",
 			"type": "String",
 			"description": "修改时间"
@@ -26,6 +17,15 @@
 			"name": "recreated_order_id",
 			"type": "String",
 			"description": "重新创建物流订单id"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功与失败"
 		}
-	]
+	],
+	"name": "taobao.logistics.online.cancel",
+	"apiChineseName": "取消物流订单接口",
+	"description": "调此接口取消发货的订单，重新选择物流公司发货。前提是物流公司未揽收货物。对未发货和已经被物流公司揽收的物流订单，是不能取消的。",
+	"id": 10688
 }

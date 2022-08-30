@@ -1,8 +1,4 @@
 {
-	"id": 30647,
-	"name": "alibaba.wdk.item.merchantsku.create",
-	"apiChineseName": "商家商品信息新建",
-	"description": "商家商品信息新建",
 	"requestParams": [
 		{
 			"name": "params",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
@@ -41,7 +34,14 @@
 					"description": "code",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.merchantsku.create",
+	"apiChineseName": "商家商品信息新建",
+	"description": "商家商品信息新建",
+	"id": 30647
 }

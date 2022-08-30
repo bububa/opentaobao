@@ -1,8 +1,4 @@
 {
-	"id": 30898,
-	"name": "alibaba.data.coupon.get",
-	"apiChineseName": "获取优惠券信息",
-	"description": "获取优惠券信息，仅作客户端鉴权虚拟api使用",
 	"requestParams": [
 		{
 			"name": "un_named",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "unnamed"
 		}
-	]
+	],
+	"name": "alibaba.data.coupon.get",
+	"apiChineseName": "获取优惠券信息",
+	"description": "获取优惠券信息，仅作客户端鉴权虚拟api使用",
+	"id": 30898
 }

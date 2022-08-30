@@ -16,7 +16,7 @@ type AlitripAgentFlightSellModifyRefuseAPIRequest struct {
 	_applyId string
 	// 拒绝原因
 	_refuseReason string
-	// 国际国内标识
+	// 国际国内标识:1:国内,2:国际
 	_domesticIntl int64
 }
 
@@ -68,7 +68,7 @@ func (r AlitripAgentFlightSellModifyRefuseAPIRequest) GetRefuseReason() string {
 }
 
 // SetDomesticIntl is DomesticIntl Setter
-// 国际国内标识
+// 国际国内标识:1:国内,2:国际
 func (r *AlitripAgentFlightSellModifyRefuseAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
 	r._domesticIntl = _domesticIntl
 	r.Set("domestic_intl", _domesticIntl)

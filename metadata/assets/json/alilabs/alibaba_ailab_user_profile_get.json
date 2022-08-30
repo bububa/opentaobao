@@ -1,8 +1,4 @@
 {
-	"id": 45928,
-	"name": "alibaba.ailab.user.profile.get",
-	"apiChineseName": "查询用户信息",
-	"description": "提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用",
 	"requestParams": [
 		{
 			"name": "open_uid",
@@ -19,43 +15,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口model",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "BasicUserInfo",
-					"description": "数据model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "avatar_url",
 							"type": "String",
-							"description": "头像 url",
-							"required": true
+							"description": "头像 url"
 						},
 						{
 							"name": "nick_name",
 							"type": "String",
-							"description": "昵称",
-							"required": true
+							"description": "昵称"
 						}
-					]
+					],
+					"name": "result",
+					"type": "BasicUserInfo",
+					"description": "数据model"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "status_code",
 					"type": "Number",
-					"description": "200 成功，其他 失败",
-					"required": true
+					"description": "200 成功，其他 失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口model"
 		}
-	]
+	],
+	"name": "alibaba.ailab.user.profile.get",
+	"apiChineseName": "查询用户信息",
+	"description": "提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用",
+	"id": 45928
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27979,
-	"name": "cainiao.guoguo.cp.backup.assigncourierbyid",
-	"apiChineseName": "根据菜鸟账号ID指派小件员",
-	"description": "根据菜鸟账号ID指派小件员",
 	"requestParams": [
 		{
 			"name": "assign_reason",
@@ -49,5 +45,9 @@
 			"type": "String",
 			"description": "错误信息描述"
 		}
-	]
+	],
+	"name": "cainiao.guoguo.cp.backup.assigncourierbyid",
+	"apiChineseName": "根据菜鸟账号ID指派小件员",
+	"description": "根据菜鸟账号ID指派小件员",
+	"id": 27979
 }

@@ -6,28 +6,34 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstSmsMessageDirectBatchsendAPIRequest 聚石塔新短信发送接口 API请求
+// TaobaoJstSmsMessageDirectBatchsendAPIRequest OAID批量发送，支持明文手机号发送 API请求
 // taobao.jst.sms.message.direct.batchsend
 //
-// 聚石塔所见即所得的短信发送接口
+// OAID批量发送，支持明文手机号发送
 type TaobaoJstSmsMessageDirectBatchsendAPIRequest struct {
 	model.Params
-	// 短信签名
+	// 短信签名（如果是通过OAID发送短信则签名需要是数组格式，数组长度需要和OAID数量保持一致。）
 	_signName string
-	// 短信中带的短链，如果不传则没有短信效果数据
+	// 废弃字段
 	_url string
-	// 短信模版CODE，必须为全变量模板
+	// 短信模版Code（明文发送短信和OAID发送均不要传数组格式）
 	_smsTemplateCode string
 	// 短信接收号码，json格式，最多200个号码
 	_recNum string
-	// 短信内容，如果带${url}则会被入参url替换
+	// 模板参数替换方式："[{\"msg\":\"hello1\",\"date\":\"2021-12-03\"},{\"msg\":\"hello2\",\"date\":\"2021-12-04\"},{\"msg\":\"hello3\",\"date\":\"2021-12-05\"}]"
 	_smsContent string
 	// 短信扩展码（JSON字符串数组格式），拓展码个数需要和电话号码个数一致。
 	_extendNum string
-	// 短信任务code，没有请先创建。
+	// 废弃字段
 	_taskCode string
-	// 一个在taskcode下唯一的随机字符串，对于taskSign相同的请求平台认为是商家的同一次短信发送。
+	// 对于taskSign相同的请求平台认为是商家的同一次短信发送，可用于对OAID的明文号码去重。
 	_taskSign string
+	// OAID批量发短信的入参，传该参数的时候rec_num不需要传，最大50个。
+	_oaids string
+	// OAID批量发短信时必传，为OAID一一对应的订单ID。
+	_orderIds string
+	// 如果传，必须是一个JSON对象格式的字符串。
+	_extraData string
 }
 
 // NewTaobaoJstSmsMessageDirectBatchsendRequest 初始化TaobaoJstSmsMessageDirectBatchsendAPIRequest对象
@@ -52,7 +58,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetApiParams() url.Values 
 }
 
 // SetSignName is SignName Setter
-// 短信签名
+// 短信签名（如果是通过OAID发送短信则签名需要是数组格式，数组长度需要和OAID数量保持一致。）
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetSignName(_signName string) error {
 	r._signName = _signName
 	r.Set("sign_name", _signName)
@@ -65,7 +71,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetSignName() string {
 }
 
 // SetUrl is Url Setter
-// 短信中带的短链，如果不传则没有短信效果数据
+// 废弃字段
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetUrl(_url string) error {
 	r._url = _url
 	r.Set("url", _url)
@@ -78,7 +84,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetUrl() string {
 }
 
 // SetSmsTemplateCode is SmsTemplateCode Setter
-// 短信模版CODE，必须为全变量模板
+// 短信模版Code（明文发送短信和OAID发送均不要传数组格式）
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetSmsTemplateCode(_smsTemplateCode string) error {
 	r._smsTemplateCode = _smsTemplateCode
 	r.Set("sms_template_code", _smsTemplateCode)
@@ -104,7 +110,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetRecNum() string {
 }
 
 // SetSmsContent is SmsContent Setter
-// 短信内容，如果带${url}则会被入参url替换
+// 模板参数替换方式："[{\"msg\":\"hello1\",\"date\":\"2021-12-03\"},{\"msg\":\"hello2\",\"date\":\"2021-12-04\"},{\"msg\":\"hello3\",\"date\":\"2021-12-05\"}]"
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetSmsContent(_smsContent string) error {
 	r._smsContent = _smsContent
 	r.Set("sms_content", _smsContent)
@@ -130,7 +136,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetExtendNum() string {
 }
 
 // SetTaskCode is TaskCode Setter
-// 短信任务code，没有请先创建。
+// 废弃字段
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetTaskCode(_taskCode string) error {
 	r._taskCode = _taskCode
 	r.Set("task_code", _taskCode)
@@ -143,7 +149,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetTaskCode() string {
 }
 
 // SetTaskSign is TaskSign Setter
-// 一个在taskcode下唯一的随机字符串，对于taskSign相同的请求平台认为是商家的同一次短信发送。
+// 对于taskSign相同的请求平台认为是商家的同一次短信发送，可用于对OAID的明文号码去重。
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetTaskSign(_taskSign string) error {
 	r._taskSign = _taskSign
 	r.Set("task_sign", _taskSign)
@@ -153,4 +159,43 @@ func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetTaskSign(_taskSign str
 // GetTaskSign TaskSign Getter
 func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetTaskSign() string {
 	return r._taskSign
+}
+
+// SetOaids is Oaids Setter
+// OAID批量发短信的入参，传该参数的时候rec_num不需要传，最大50个。
+func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetOaids(_oaids string) error {
+	r._oaids = _oaids
+	r.Set("oaids", _oaids)
+	return nil
+}
+
+// GetOaids Oaids Getter
+func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetOaids() string {
+	return r._oaids
+}
+
+// SetOrderIds is OrderIds Setter
+// OAID批量发短信时必传，为OAID一一对应的订单ID。
+func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetOrderIds(_orderIds string) error {
+	r._orderIds = _orderIds
+	r.Set("order_ids", _orderIds)
+	return nil
+}
+
+// GetOrderIds OrderIds Getter
+func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetOrderIds() string {
+	return r._orderIds
+}
+
+// SetExtraData is ExtraData Setter
+// 如果传，必须是一个JSON对象格式的字符串。
+func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetExtraData(_extraData string) error {
+	r._extraData = _extraData
+	r.Set("extra_data", _extraData)
+	return nil
+}
+
+// GetExtraData ExtraData Getter
+func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetExtraData() string {
+	return r._extraData
 }

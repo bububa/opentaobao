@@ -1,8 +1,4 @@
 {
-	"id": 32315,
-	"name": "taobao.openlink.session.get",
-	"apiChineseName": "获取授权session信息",
-	"description": "帮助第三方isv生成三方session",
 	"requestParams": [
 		{
 			"name": "code",
@@ -13,61 +9,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "SessionInfo",
-					"description": "model",
-					"required": true,
 					"subParams": [
-						{
-							"name": "open_id",
-							"type": "String",
-							"description": "openId",
-							"required": true
-						},
 						{
 							"name": "skey",
 							"type": "String",
-							"description": "skey",
-							"required": true
+							"description": "skey"
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "openId"
 						},
 						{
 							"name": "access_token",
 							"type": "String",
-							"description": "accessToken",
-							"required": true
+							"description": "accessToken"
 						},
 						{
 							"name": "union_id",
 							"type": "String",
-							"description": "unionId",
-							"required": true
+							"description": "unionId"
 						}
-					]
+					],
+					"name": "model",
+					"type": "SessionInfo",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.openlink.session.get",
+	"apiChineseName": "获取授权session信息",
+	"description": "帮助第三方isv生成三方session",
+	"id": 32315
 }

@@ -1,24 +1,10 @@
 {
-	"id": 41320,
-	"name": "alibaba.retail.device.order.query",
-	"apiChineseName": "贩卖机订单查询",
-	"description": "贩卖机订单查询",
 	"requestParams": [
 		{
-			"name": "device_sn_list",
-			"type": "String[]",
-			"description": "阿里设备物理ID",
-			"maxListSize": 20
-		},
-		{
-			"name": "device_uuid",
-			"type": "String",
-			"description": "外部设备编码"
-		},
-		{
-			"name": "device_code",
-			"type": "String",
-			"description": "阿里设备编码"
+			"name": "ends",
+			"type": "Date",
+			"description": "查询订单结束时间",
+			"required": true
 		},
 		{
 			"name": "status",
@@ -27,9 +13,9 @@
 			"required": true
 		},
 		{
-			"name": "pay_type",
+			"name": "device_code",
 			"type": "String",
-			"description": "CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸"
+			"description": "阿里设备编码"
 		},
 		{
 			"name": "page_size",
@@ -44,19 +30,158 @@
 			"required": true
 		},
 		{
+			"name": "device_uuid",
+			"type": "String",
+			"description": "外部设备编码"
+		},
+		{
 			"name": "starts",
 			"type": "Date",
 			"description": "查询订单开始时间",
 			"required": true
 		},
 		{
-			"name": "ends",
-			"type": "Date",
-			"description": "查询订单结束时间",
-			"required": true
+			"name": "device_sn_list",
+			"type": "String[]",
+			"description": "阿里设备物理ID",
+			"maxListSize": 20
+		},
+		{
+			"name": "pay_type",
+			"type": "String",
+			"description": "CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸"
 		}
 	],
 	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创单时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "订单修改时间"
+						},
+						{
+							"name": "device_sn",
+							"type": "String",
+							"description": "设备编码"
+						},
+						{
+							"name": "device_name",
+							"type": "String",
+							"description": "设备名称"
+						},
+						{
+							"name": "device_address",
+							"type": "String",
+							"description": "设备地址"
+						},
+						{
+							"name": "device_uuid",
+							"type": "String",
+							"description": "外部设备ID"
+						},
+						{
+							"name": "device_code",
+							"type": "String",
+							"description": "设备Code"
+						},
+						{
+							"name": "point_name",
+							"type": "String",
+							"description": "点位名称"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "商家id"
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "金额，单位分"
+						},
+						{
+							"name": "tb_main_order_id",
+							"type": "Number",
+							"description": "淘系订单id"
+						},
+						{
+							"name": "main_outer_order_id",
+							"type": "String",
+							"description": "外部订单ID"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "-20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "status_name",
+							"type": "String",
+							"description": "支付状态"
+						},
+						{
+							"name": "pay_type",
+							"type": "String",
+							"description": "支付类型"
+						},
+						{
+							"name": "pay_type_name",
+							"type": "String",
+							"description": "支付类型名称"
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条码"
+						},
+						{
+							"name": "road_id",
+							"type": "String",
+							"description": "货道编号"
+						}
+					],
+					"name": "data_list",
+					"type": "VendingBizOrderDto[]",
+					"description": "数据"
+				}
+			],
+			"name": "data",
+			"type": "PaginationDo",
+			"description": "是否成功"
+		},
 		{
 			"name": "errcode",
 			"type": "String",
@@ -66,159 +191,10 @@
 			"name": "errmsg",
 			"type": "String",
 			"description": "系统自动生成"
-		},
-		{
-			"name": "data",
-			"type": "PaginationDo",
-			"description": "是否成功",
-			"subParams": [
-				{
-					"name": "total_num",
-					"type": "Number",
-					"description": "总数",
-					"required": true
-				},
-				{
-					"name": "page_size",
-					"type": "Number",
-					"description": "分页大小",
-					"required": true
-				},
-				{
-					"name": "page_num",
-					"type": "Number",
-					"description": "页码",
-					"required": true
-				},
-				{
-					"name": "data_list",
-					"type": "VendingBizOrderDto[]",
-					"description": "数据",
-					"required": true,
-					"subParams": [
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创单时间",
-							"required": true
-						},
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "订单修改时间",
-							"required": true
-						},
-						{
-							"name": "device_sn",
-							"type": "String",
-							"description": "设备编码",
-							"required": true
-						},
-						{
-							"name": "device_name",
-							"type": "String",
-							"description": "设备名称",
-							"required": true
-						},
-						{
-							"name": "device_address",
-							"type": "String",
-							"description": "设备地址",
-							"required": true
-						},
-						{
-							"name": "device_uuid",
-							"type": "String",
-							"description": "外部设备ID",
-							"required": true
-						},
-						{
-							"name": "device_code",
-							"type": "String",
-							"description": "设备Code",
-							"required": true
-						},
-						{
-							"name": "point_name",
-							"type": "String",
-							"description": "点位名称",
-							"required": true
-						},
-						{
-							"name": "seller_id",
-							"type": "Number",
-							"description": "商家id",
-							"required": true
-						},
-						{
-							"name": "total_fee",
-							"type": "Number",
-							"description": "金额，单位分",
-							"required": true
-						},
-						{
-							"name": "tb_main_order_id",
-							"type": "Number",
-							"description": "淘系订单id",
-							"required": true
-						},
-						{
-							"name": "main_outer_order_id",
-							"type": "String",
-							"description": "外部订单ID",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "-20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成",
-							"required": true
-						},
-						{
-							"name": "item_id",
-							"type": "Number",
-							"description": "商品ID",
-							"required": true
-						},
-						{
-							"name": "title",
-							"type": "String",
-							"description": "商品名称",
-							"required": true
-						},
-						{
-							"name": "status_name",
-							"type": "String",
-							"description": "支付状态",
-							"required": true
-						},
-						{
-							"name": "pay_type",
-							"type": "String",
-							"description": "支付类型",
-							"required": true
-						},
-						{
-							"name": "pay_type_name",
-							"type": "String",
-							"description": "支付类型名称",
-							"required": true
-						},
-						{
-							"name": "bar_code",
-							"type": "String",
-							"description": "条码",
-							"required": true
-						},
-						{
-							"name": "road_id",
-							"type": "String",
-							"description": "货道编号",
-							"required": true
-						}
-					]
-				}
-			]
 		}
-	]
+	],
+	"name": "alibaba.retail.device.order.query",
+	"apiChineseName": "贩卖机订单查询",
+	"description": "贩卖机订单查询",
+	"id": 41320
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21982,
-	"name": "taobao.tmc.group.delete",
-	"apiChineseName": "删除指定的分组或分组下的用户",
-	"description": "删除指定的分组或分组下的用户，授权消息使用",
 	"requestParams": [
 		{
 			"name": "group_name",
@@ -28,5 +24,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.tmc.group.delete",
+	"apiChineseName": "删除指定的分组或分组下的用户",
+	"description": "删除指定的分组或分组下的用户，授权消息使用",
+	"id": 21982
 }

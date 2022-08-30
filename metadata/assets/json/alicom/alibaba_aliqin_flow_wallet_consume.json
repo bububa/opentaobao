@@ -1,8 +1,4 @@
 {
-	"id": 27673,
-	"name": "alibaba.aliqin.flow.wallet.consume",
-	"apiChineseName": "流量扣减",
-	"description": "流量钱包流量扣减接口",
 	"requestParams": [
 		{
 			"name": "flow",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "true为成功"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.flow.wallet.consume",
+	"apiChineseName": "流量扣减",
+	"description": "流量钱包流量扣减接口",
+	"id": 27673
 }

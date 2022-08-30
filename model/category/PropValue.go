@@ -12,6 +12,10 @@ type PropValue struct {
 	NameAlias string `json:"name_alias,omitempty" xml:"name_alias,omitempty"`
 	// 状态。可选值:normal(正常),deleted(删除)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
+	// 修改时间（类目增量专用）
+	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
+	// 三种枚举类型：modify，add，delete (增量类目专用)
+	ModifiedType string `json:"modified_type,omitempty" xml:"modified_type,omitempty"`
 	// 类目ID
 	Cid int64 `json:"cid,omitempty" xml:"cid,omitempty"`
 	// 属性 ID

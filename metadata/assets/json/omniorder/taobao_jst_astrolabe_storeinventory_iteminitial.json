@@ -1,14 +1,6 @@
 {
-	"id": 37856,
-	"name": "taobao.jst.astrolabe.storeinventory.iteminitial",
-	"apiChineseName": "库存初始化接口",
-	"description": "ERP调用奇门的接口，对门店的库存进行初始化",
 	"requestParams": [
 		{
-			"name": "stores",
-			"type": "Store[]",
-			"description": "门店列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "warehouse_type",
@@ -23,9 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "store_inventories",
-					"type": "StoreInventory[]",
-					"description": "门店库存列表",
 					"subParams": [
 						{
 							"name": "bill_num",
@@ -62,9 +51,16 @@
 							"description": "对应类型的库存数量（正数）",
 							"required": true
 						}
-					]
+					],
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表"
 				}
-			]
+			],
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店列表",
+			"maxListSize": 20
 		},
 		{
 			"name": "operation_time",
@@ -90,23 +86,25 @@
 			"description": "响应信息"
 		},
 		{
-			"name": "error_descriptions",
-			"type": "Error []",
-			"description": "错误信息列表",
 			"subParams": [
 				{
 					"name": "descrpition",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "failed_bill_num",
 					"type": "String",
-					"description": "处理失败的流水号（有多个时，用逗号分隔）",
-					"required": true
+					"description": "处理失败的流水号（有多个时，用逗号分隔）"
 				}
-			]
+			],
+			"name": "error_descriptions",
+			"type": "Error []",
+			"description": "错误信息列表"
 		}
-	]
+	],
+	"name": "taobao.jst.astrolabe.storeinventory.iteminitial",
+	"apiChineseName": "库存初始化接口",
+	"description": "ERP调用奇门的接口，对门店的库存进行初始化",
+	"id": 37856
 }

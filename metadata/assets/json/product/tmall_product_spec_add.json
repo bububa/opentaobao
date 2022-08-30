@@ -1,8 +1,4 @@
 {
-	"id": 21443,
-	"name": "tmall.product.spec.add",
-	"apiChineseName": "添加产品规格",
-	"description": "增加产品规格",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -72,16 +68,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_spec",
-			"type": "ProductSpec",
-			"description": "产品规格对象",
 			"subParams": [
 				{
 					"name": "spec_id",
 					"type": "Number",
 					"description": "产品规格ID。"
 				}
-			]
+			],
+			"name": "product_spec",
+			"type": "ProductSpec",
+			"description": "产品规格对象"
 		}
-	]
+	],
+	"name": "tmall.product.spec.add",
+	"apiChineseName": "添加产品规格",
+	"description": "增加产品规格",
+	"id": 21443
 }

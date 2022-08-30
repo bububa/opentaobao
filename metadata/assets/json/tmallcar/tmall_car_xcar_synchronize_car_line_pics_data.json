@@ -1,14 +1,6 @@
 {
-	"id": 41169,
-	"name": "tmall.car.xcar.synchronize.car.line.pics.data",
-	"apiChineseName": "爱卡车系图片数据接入",
-	"description": "爱卡车系图片数据同步天猫汽车",
 	"requestParams": [
 		{
-			"name": "param_x_car_sys_line_pics_d_t_o",
-			"type": "XCarSysLinePicsDto",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_pid",
@@ -62,52 +54,54 @@
 					"description": "type(整体外观1、细节外观2、控件座椅3、中控区4、其他5)",
 					"required": true
 				}
-			]
+			],
+			"name": "param_x_car_sys_line_pics_d_t_o",
+			"type": "XCarSysLinePicsDto",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "耗时",
-					"required": true
+					"description": "耗时"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "执行时间",
-					"required": true
+					"description": "执行时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "接口正常时，返回对象",
-					"required": true
+					"description": "接口正常时，返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口是否正常",
-					"required": true
+					"description": "接口是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "tmall.car.xcar.synchronize.car.line.pics.data",
+	"apiChineseName": "爱卡车系图片数据接入",
+	"description": "爱卡车系图片数据同步天猫汽车",
+	"id": 41169
 }

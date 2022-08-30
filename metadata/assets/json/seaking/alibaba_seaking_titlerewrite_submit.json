@@ -1,15 +1,6 @@
 {
-	"id": 45549,
-	"name": "alibaba.seaking.titlerewrite.submit",
-	"apiChineseName": "提交标题改写任务",
-	"description": "提交标题改写任务",
 	"requestParams": [
 		{
-			"name": "title_rewrite_detail_list",
-			"type": "TitleRewriteDetailDto[]",
-			"description": "任务详情列表",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "target_lang",
@@ -58,7 +49,12 @@
 					"type": "String",
 					"description": "商品图片"
 				}
-			]
+			],
+			"name": "title_rewrite_detail_list",
+			"type": "TitleRewriteDetailDto[]",
+			"description": "任务详情列表",
+			"maxListSize": 1000,
+			"required": true
 		},
 		{
 			"name": "token_from",
@@ -79,5 +75,9 @@
 			"type": "Number",
 			"description": "任务id"
 		}
-	]
+	],
+	"name": "alibaba.seaking.titlerewrite.submit",
+	"apiChineseName": "提交标题改写任务",
+	"description": "提交标题改写任务",
+	"id": 45549
 }

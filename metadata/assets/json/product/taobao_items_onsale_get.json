@@ -1,8 +1,4 @@
 {
-	"id": 18,
-	"name": "taobao.items.onsale.get",
-	"apiChineseName": "获取当前会话用户出售中的商品列表",
-	"description": "获取当前用户作为卖家的出售中的商品列表，并能根据传入的搜索条件对出售中的商品列表进行过滤\n只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get 获取\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -89,9 +85,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "items",
-			"type": "Item []",
-			"description": "搜索到的商品列表，具体字段根据设定的fields决定，不包括desc字段",
 			"subParams": [
 				{
 					"name": "iid",
@@ -228,12 +221,19 @@
 					"type": "Boolean",
 					"description": "是否为达尔文挂接成功了的商品"
 				}
-			]
+			],
+			"name": "items",
+			"type": "Item []",
+			"description": "搜索到的商品列表，具体字段根据设定的fields决定，不包括desc字段"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "搜索到符合条件的结果总数"
 		}
-	]
+	],
+	"name": "taobao.items.onsale.get",
+	"apiChineseName": "获取当前会话用户出售中的商品列表",
+	"description": "获取当前用户作为卖家的出售中的商品列表，并能根据传入的搜索条件对出售中的商品列表进行过滤\n只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get 获取\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 18
 }

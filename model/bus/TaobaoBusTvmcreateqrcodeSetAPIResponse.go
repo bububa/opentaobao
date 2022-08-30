@@ -26,6 +26,10 @@ type TaobaoBusTvmcreateqrcodeSetAPIResponseModel struct {
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// qrCode 二维码连接
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
+	// 活动定制二维码图片base64，若为空代表无活动，取qrCode
+	CustomQrPicBase64 string `json:"custom_qr_pic_base64,omitempty" xml:"custom_qr_pic_base64,omitempty"`
+	// 活动定制二维码图片url，若为空代表无活动，取qrCode
+	CustomQrPicUrl string `json:"custom_qr_pic_url,omitempty" xml:"custom_qr_pic_url,omitempty"`
 	// success true 成功 false 失败
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

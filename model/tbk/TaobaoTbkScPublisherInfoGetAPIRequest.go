@@ -18,14 +18,14 @@ type TaobaoTbkScPublisherInfoGetAPIRequest struct {
 	_specialId string
 	// 淘宝客外部用户标记，如自身系统账户ID；微信ID等
 	_externalId string
-	// 类型，必选 1:渠道信息；2:会员信息
-	_infoType int64
 	// 渠道独占 - 渠道关系ID
 	_relationId int64
 	// 第几页
 	_pageNo int64
 	// 每页大小
 	_pageSize int64
+	// 类型，必选 1:渠道信息；2:会员信息
+	_infoType int64
 	// 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0
 	_externalType int64
 }
@@ -90,19 +90,6 @@ func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetExternalId() string {
 	return r._externalId
 }
 
-// SetInfoType is InfoType Setter
-// 类型，必选 1:渠道信息；2:会员信息
-func (r *TaobaoTbkScPublisherInfoGetAPIRequest) SetInfoType(_infoType int64) error {
-	r._infoType = _infoType
-	r.Set("info_type", _infoType)
-	return nil
-}
-
-// GetInfoType InfoType Getter
-func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetInfoType() int64 {
-	return r._infoType
-}
-
 // SetRelationId is RelationId Setter
 // 渠道独占 - 渠道关系ID
 func (r *TaobaoTbkScPublisherInfoGetAPIRequest) SetRelationId(_relationId int64) error {
@@ -140,6 +127,19 @@ func (r *TaobaoTbkScPublisherInfoGetAPIRequest) SetPageSize(_pageSize int64) err
 // GetPageSize PageSize Getter
 func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetInfoType is InfoType Setter
+// 类型，必选 1:渠道信息；2:会员信息
+func (r *TaobaoTbkScPublisherInfoGetAPIRequest) SetInfoType(_infoType int64) error {
+	r._infoType = _infoType
+	r.Set("info_type", _infoType)
+	return nil
+}
+
+// GetInfoType InfoType Getter
+func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetInfoType() int64 {
+	return r._infoType
 }
 
 // SetExternalType is ExternalType Setter

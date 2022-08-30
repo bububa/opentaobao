@@ -1,8 +1,4 @@
 {
-	"id": 51743,
-	"name": "alitrip.rail.ir.service.get",
-	"apiChineseName": "国际火车票仓位坐席查询",
-	"description": "国际火车票标准仓位坐席查询",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -18,67 +14,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "modules",
-					"type": "Modules[]",
-					"description": "仓位坐席数组",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "业务类型，6代表境外火车票",
-							"required": true
+							"description": "业务类型，6代表境外火车票"
 						},
 						{
 							"name": "seat_code",
 							"type": "String",
-							"description": "坐席code",
-							"required": true
-						},
-						{
-							"name": "seat_name",
-							"type": "String",
-							"description": "坐席名称",
-							"required": true
+							"description": "坐席code"
 						},
 						{
 							"name": "seat_detail",
 							"type": "String",
-							"description": "坐席详情",
-							"required": true
+							"description": "坐席详情"
 						},
 						{
 							"name": "seat_image",
 							"type": "String",
-							"description": "坐席图片",
-							"required": true
+							"description": "坐席图片"
+						},
+						{
+							"name": "seat_name",
+							"type": "String",
+							"description": "坐席名称"
 						}
-					]
+					],
+					"name": "modules",
+					"type": "Modules[]",
+					"description": "仓位坐席数组"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alitrip.rail.ir.service.get",
+	"apiChineseName": "国际火车票仓位坐席查询",
+	"description": "国际火车票标准仓位坐席查询",
+	"id": 51743
 }

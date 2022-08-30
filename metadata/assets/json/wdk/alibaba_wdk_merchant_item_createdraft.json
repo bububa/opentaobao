@@ -1,8 +1,4 @@
 {
-	"id": 29601,
-	"name": "alibaba.wdk.merchant.item.createdraft",
-	"apiChineseName": "新建商品草稿",
-	"description": "新建商品草稿erp接口",
 	"requestParams": [
 		{
 			"name": "params",
@@ -13,29 +9,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "suc",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "err_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchant.item.createdraft",
+	"apiChineseName": "新建商品草稿",
+	"description": "新建商品草稿erp接口",
+	"id": 29601
 }

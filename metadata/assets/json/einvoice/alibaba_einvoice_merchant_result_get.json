@@ -1,13 +1,10 @@
 {
-	"id": 28291,
-	"name": "alibaba.einvoice.merchant.result.get",
-	"apiChineseName": "商家自研ERP开票结果获取",
-	"description": "商家自研ERP开票结果获取",
 	"requestParams": [
 		{
-			"name": "serial_no",
+			"name": "payee_register_no",
 			"type": "String",
-			"description": "流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高"
+			"description": "收款方税务登记证号",
+			"required": true
 		},
 		{
 			"name": "platform_code",
@@ -20,42 +17,18 @@
 			"description": "电商平台对应的订单号"
 		},
 		{
-			"name": "payee_register_no",
+			"name": "serial_no",
 			"type": "String",
-			"description": "收款方税务登记证号",
-			"required": true
+			"description": "流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "invoice_result_list",
-			"type": "InvoiceResult []",
-			"description": "开票返回结果数据列表",
 			"subParams": [
 				{
-					"name": "invoice_date",
+					"name": "anti_fake_code",
 					"type": "String",
-					"description": "开票日期"
-				},
-				{
-					"name": "platform_code",
-					"type": "String",
-					"description": "电商平台代码。淘宝：taobao，天猫：tmall"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)"
-				},
-				{
-					"name": "file_path",
-					"type": "String",
-					"description": "发票PDF的下载地址(仅在单个查询接口上显示，批量查询不显示)"
-				},
-				{
-					"name": "invoice_amount",
-					"type": "String",
-					"description": "开票金额"
+					"description": "防伪码"
 				},
 				{
 					"name": "ciphertext",
@@ -63,9 +36,9 @@
 					"description": "发票密文，密码区的字符串"
 				},
 				{
-					"name": "payee_register_no",
+					"name": "device_no",
 					"type": "String",
-					"description": "收款方税务登记证号"
+					"description": "税控设备编号(新版电子发票有)"
 				},
 				{
 					"name": "erp_tid",
@@ -78,24 +51,14 @@
 					"description": "文件类型(pdf,jpg,png)"
 				},
 				{
-					"name": "invoice_no",
+					"name": "file_path",
 					"type": "String",
-					"description": "发票号码"
+					"description": "发票PDF的下载地址(仅在单个查询接口上显示，批量查询不显示)"
 				},
 				{
-					"name": "serial_no",
+					"name": "invoice_amount",
 					"type": "String",
-					"description": "开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。"
-				},
-				{
-					"name": "anti_fake_code",
-					"type": "String",
-					"description": "防伪码"
-				},
-				{
-					"name": "device_no",
-					"type": "String",
-					"description": "税控设备编号(新版电子发票有)"
+					"description": "开票金额"
 				},
 				{
 					"name": "invoice_code",
@@ -103,21 +66,58 @@
 					"description": "发票代码"
 				},
 				{
+					"name": "invoice_date",
+					"type": "String",
+					"description": "开票日期"
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票号码"
+				},
+				{
+					"name": "payee_register_no",
+					"type": "String",
+					"description": "收款方税务登记证号"
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "电商平台代码。淘宝：taobao，天猫：tmall"
+				},
+				{
 					"name": "platform_tid",
 					"type": "String",
 					"description": "电商平台订单号"
 				},
 				{
-					"name": "biz_error_msg",
+					"name": "serial_no",
 					"type": "String",
-					"description": "错误信息"
+					"description": "开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)"
 				},
 				{
 					"name": "biz_error_code",
 					"type": "String",
 					"description": "错误编码"
+				},
+				{
+					"name": "biz_error_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "invoice_result_list",
+			"type": "InvoiceResult []",
+			"description": "开票返回结果数据列表"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.merchant.result.get",
+	"apiChineseName": "商家自研ERP开票结果获取",
+	"description": "商家自研ERP开票结果获取",
+	"id": 28291
 }

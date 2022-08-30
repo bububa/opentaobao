@@ -1,8 +1,4 @@
 {
-	"id": 29140,
-	"name": "alibaba.wdk.item.price.update",
-	"apiChineseName": "五道口商品中心价格修改",
-	"description": "修改门店商品售价和会员价",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -29,29 +25,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "hsf_result",
-			"type": "Result",
-			"description": "hsfResult",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "hsf_result",
+			"type": "Result",
+			"description": "hsfResult"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.price.update",
+	"apiChineseName": "五道口商品中心价格修改",
+	"description": "修改门店商品售价和会员价",
+	"id": 29140
 }

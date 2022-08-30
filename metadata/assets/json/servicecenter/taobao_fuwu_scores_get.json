@@ -1,44 +1,85 @@
 {
-	"id": 22111,
-	"name": "taobao.fuwu.scores.get",
-	"apiChineseName": "服务平台评价查询接口",
-	"description": "根据日期、查询appkey对应服务评价，每次调用只能查询某一天服务评价信息，可设置分页查询，页大小最大为100，非实时接口，延迟时间为30分钟",
 	"requestParams": [
-		{
-			"name": "current_page",
-			"type": "Number",
-			"description": "当前页",
-			"required": true
-		},
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "每页获取条数。默认值40，最小值1，最大值100。",
-			"maxValue": 100,
-			"minValue": 1
-		},
 		{
 			"name": "date",
 			"type": "Date",
 			"description": "评价日期，查询某一天的评价",
 			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页获取条数。默认值40，最小值1，最大值100。"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "score_result",
-			"type": "ScoreResult []",
-			"description": "评价流水记录",
 			"subParams": [
+				{
+					"name": "is_pay",
+					"type": "Number",
+					"description": "是否实际付费 1-实际付费 2-实际未付费"
+				},
+				{
+					"name": "stability_score",
+					"type": "String",
+					"description": "稳定性评分"
+				},
+				{
+					"name": "rapid_score",
+					"type": "String",
+					"description": "交片速度"
+				},
+				{
+					"name": "avg_score",
+					"type": "String",
+					"description": "平均分"
+				},
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "是否为有效评分 1-有效评分 2-无效评分"
+				},
 				{
 					"name": "id",
 					"type": "Number",
 					"description": "评价id"
 				},
 				{
-					"name": "avg_score",
+					"name": "prof_score",
 					"type": "String",
-					"description": "平均分"
+					"description": "专业性评分"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "评价时间"
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "服务规格code"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "服务规格名称"
+				},
+				{
+					"name": "attitude_score",
+					"type": "String",
+					"description": "服务态度评分"
+				},
+				{
+					"name": "matched_score",
+					"type": "String",
+					"description": "描述相符"
 				},
 				{
 					"name": "suggestion",
@@ -56,61 +97,18 @@
 					"description": "评价人用户昵称"
 				},
 				{
-					"name": "gmt_create",
-					"type": "Date",
-					"description": "评价时间"
-				},
-				{
-					"name": "is_valid",
-					"type": "Number",
-					"description": "是否为有效评分 1-有效评分 2-无效评分"
-				},
-				{
-					"name": "item_code",
-					"type": "String",
-					"description": "服务规格code"
-				},
-				{
-					"name": "item_name",
-					"type": "String",
-					"description": "服务规格名称"
-				},
-				{
-					"name": "is_pay",
-					"type": "Number",
-					"description": "是否实际付费 1-实际付费 2-实际未付费"
-				},
-				{
-					"name": "attitude_score",
-					"type": "String",
-					"description": "服务态度评分"
-				},
-				{
-					"name": "stability_score",
-					"type": "String",
-					"description": "稳定性评分"
-				},
-				{
 					"name": "easyuse_score",
 					"type": "String",
 					"description": "易用性评分"
-				},
-				{
-					"name": "prof_score",
-					"type": "String",
-					"description": "专业性评分"
-				},
-				{
-					"name": "rapid_score",
-					"type": "String",
-					"description": "交片速度"
-				},
-				{
-					"name": "matched_score",
-					"type": "String",
-					"description": "描述相符"
 				}
-			]
+			],
+			"name": "score_result",
+			"type": "ScoreResult []",
+			"description": "评价流水记录"
 		}
-	]
+	],
+	"name": "taobao.fuwu.scores.get",
+	"apiChineseName": "服务平台评价查询接口",
+	"description": "根据日期、查询appkey对应服务评价，每次调用只能查询某一天服务评价信息，可设置分页查询，页大小最大为100，非实时接口，延迟时间为30分钟",
+	"id": 22111
 }

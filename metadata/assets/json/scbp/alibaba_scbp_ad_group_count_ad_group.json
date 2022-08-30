@@ -1,9 +1,25 @@
 {
-	"id": 55201,
-	"name": "alibaba.scbp.ad.group.count.ad.group",
-	"apiChineseName": "统计adgroup数量",
-	"description": "统计adgroup数量",
 	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
 		{
 			"name": "campaign_id",
 			"type": "Number",
@@ -11,10 +27,6 @@
 			"required": true
 		},
 		{
-			"name": "ad_group_query",
-			"type": "AdGroupQueryDto",
-			"description": "查询条件",
-			"required": true,
 			"subParams": [
 				{
 					"name": "adgroup_online_status",
@@ -36,27 +48,11 @@
 					"type": "Number",
 					"description": "新品成长 如果是1，则是爆品潜力品"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id",
-					"required": true
-				}
-			]
+			],
+			"name": "ad_group_query",
+			"type": "AdGroupQueryDto",
+			"description": "查询条件",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -65,5 +61,9 @@
 			"type": "Number",
 			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.group.count.ad.group",
+	"apiChineseName": "统计adgroup数量",
+	"description": "统计adgroup数量",
+	"id": 55201
 }

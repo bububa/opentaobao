@@ -1,14 +1,6 @@
 {
-	"id": 30630,
-	"name": "alibaba.wdk.ums.inbound",
-	"apiChineseName": "入库-ERP下发单",
-	"description": "入库-ERP下发单",
 	"requestParams": [
 		{
-			"name": "erp_arrivalnotice_dto",
-			"type": "ErpArrivalNoticeDto",
-			"description": "1",
-			"required": true,
 			"subParams": [
 				{
 					"name": "original_bill_code",
@@ -56,10 +48,6 @@
 					"description": "联系方式，门店联系电话，可以是移动电话"
 				},
 				{
-					"name": "item_list",
-					"type": "ErpArrivalNoticeDetailDto[]",
-					"description": "1",
-					"required": true,
 					"subParams": [
 						{
 							"name": "unit",
@@ -123,7 +111,11 @@
 							"type": "String",
 							"description": "可指定库位，可空（按照需求附值）"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "ErpArrivalNoticeDetailDto[]",
+					"description": "1",
+					"required": true
 				},
 				{
 					"name": "arrival_date",
@@ -137,40 +129,44 @@
 					"description": "如部分商品不存在，是否允许其他商品入库(1：允许，其他：不允许)",
 					"required": true
 				}
-			]
+			],
+			"name": "erp_arrivalnotice_dto",
+			"type": "ErpArrivalNoticeDto",
+			"description": "1",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.inbound",
+	"apiChineseName": "入库-ERP下发单",
+	"description": "入库-ERP下发单",
+	"id": 30630
 }

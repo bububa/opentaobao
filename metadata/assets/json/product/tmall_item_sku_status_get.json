@@ -1,0 +1,89 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "sku状态描述"
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "商家编码"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "outerId"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "sku状态"
+								}
+							],
+							"name": "sku_status_list",
+							"type": "SkuStatus[]",
+							"description": "sku集合"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题"
+						}
+					],
+					"name": "item_sku_status",
+					"type": "ItemSkuStatus",
+					"description": "返回内容"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "执行结果"
+				}
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
+		}
+	],
+	"name": "tmall.item.sku.status.get",
+	"apiChineseName": "商品sku上下架查询",
+	"description": "商品sku上下架状态查询",
+	"id": 59989
+}

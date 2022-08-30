@@ -1,8 +1,4 @@
 {
-	"id": 32086,
-	"name": "alibaba.icbu.rfqdetail.get",
-	"apiChineseName": "获取RFQ详情",
-	"description": "查看RFQ的详情信息",
 	"requestParams": [
 		{
 			"name": "md5key",
@@ -10,9 +6,6 @@
 			"description": "验证"
 		},
 		{
-			"name": "rfq_query_dto",
-			"type": "RfqDetailSearchQueryDto",
-			"description": "查询RFQ详情DTO",
 			"subParams": [
 				{
 					"name": "rfq_id",
@@ -20,190 +13,169 @@
 					"description": "RFQ ID",
 					"required": true
 				}
-			]
+			],
+			"name": "rfq_query_dto",
+			"type": "RfqDetailSearchQueryDto",
+			"description": "查询RFQ详情DTO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RfqRemoteServiceResult",
-			"description": "返回结果集",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回状态信息",
-					"required": true
+					"description": "返回状态信息"
 				},
 				{
-					"name": "result",
-					"type": "RfqBuyRequestSearchDetailRemoteDto",
-					"description": "RFQ详情结果集",
-					"required": true,
 					"subParams": [
 						{
-							"name": "attachments",
-							"type": "Attachedfiles[]",
-							"description": "附件列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "file_name",
 									"type": "String",
-									"description": "文件名",
-									"required": true
+									"description": "文件名"
 								},
 								{
 									"name": "file_url",
 									"type": "String",
-									"description": "文件地址",
-									"required": true
+									"description": "文件地址"
 								}
-							]
+							],
+							"name": "attachments",
+							"type": "Attachedfiles[]",
+							"description": "附件列表"
 						},
 						{
-							"name": "rfq_detail_dto",
-							"type": "BuyRequestSearchDetailRemoteDto",
-							"description": "RFQ详情",
-							"required": true,
 							"subParams": [
 								{
 									"name": "lang_src",
 									"type": "String",
-									"description": "语种",
-									"required": true
+									"description": "语种"
 								},
 								{
 									"name": "supplier_countrys",
 									"type": "String",
-									"description": "供应商国家",
-									"required": true
+									"description": "供应商国家"
 								},
 								{
 									"name": "category_id",
 									"type": "Number",
-									"description": "类目ID",
-									"required": true
+									"description": "类目ID"
 								},
 								{
 									"name": "category_name",
 									"type": "String",
-									"description": "类目名称",
-									"required": true
+									"description": "类目名称"
 								},
 								{
 									"name": "annex_names",
 									"type": "String",
-									"description": "附加名称",
-									"required": true
+									"description": "附加名称"
 								},
 								{
 									"name": "payment_terms",
 									"type": "String",
-									"description": "付款条件",
-									"required": true
+									"description": "付款条件"
 								},
 								{
 									"name": "destination_port",
 									"type": "String",
-									"description": "目的港",
-									"required": true
+									"description": "目的港"
 								},
 								{
 									"name": "fob_price_unit",
 									"type": "String",
-									"description": "价格单位",
-									"required": true
+									"description": "价格单位"
 								},
 								{
 									"name": "fob_price",
 									"type": "String",
-									"description": "价格",
-									"required": true
+									"description": "价格"
 								},
 								{
 									"name": "shipping_terms",
 									"type": "String",
-									"description": "发运条件",
-									"required": true
+									"description": "发运条件"
 								},
 								{
 									"name": "left_count",
 									"type": "Number",
-									"description": "剩余报价数量",
-									"required": true
+									"description": "剩余报价数量"
 								},
 								{
 									"name": "open_time",
 									"type": "Number",
-									"description": "开放时间",
-									"required": true
+									"description": "开放时间"
 								},
 								{
 									"name": "expirate_time",
 									"type": "Number",
-									"description": "过期值",
-									"required": true
+									"description": "过期值"
 								},
 								{
 									"name": "country_simple",
 									"type": "String",
-									"description": "国家简称",
-									"required": true
+									"description": "国家简称"
 								},
 								{
 									"name": "quantity_unit",
 									"type": "String",
-									"description": "数量单位",
-									"required": true
+									"description": "数量单位"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "状态",
-									"required": true
+									"description": "状态"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "描述",
-									"required": true
+									"description": "描述"
 								},
 								{
 									"name": "subject",
 									"type": "String",
-									"description": "标题",
-									"required": true
+									"description": "标题"
 								},
 								{
 									"name": "rfq_id",
 									"type": "String",
-									"description": "RFQ ID",
-									"required": true
+									"description": "RFQ ID"
 								}
-							]
+							],
+							"name": "rfq_detail_dto",
+							"type": "BuyRequestSearchDetailRemoteDto",
+							"description": "RFQ详情"
 						}
-					]
+					],
+					"name": "result",
+					"type": "RfqBuyRequestSearchDetailRemoteDto",
+					"description": "RFQ详情结果集"
 				},
 				{
 					"name": "error_type",
 					"type": "String",
-					"description": "错误类型",
-					"required": true
+					"description": "错误类型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "判断是否成功",
-					"required": true
+					"description": "判断是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RfqRemoteServiceResult",
+			"description": "返回结果集"
 		}
-	]
+	],
+	"name": "alibaba.icbu.rfqdetail.get",
+	"apiChineseName": "获取RFQ详情",
+	"description": "查看RFQ的详情信息",
+	"id": 32086
 }

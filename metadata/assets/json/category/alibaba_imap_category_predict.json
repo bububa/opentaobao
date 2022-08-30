@@ -1,13 +1,23 @@
 {
-	"id": 47659,
-	"name": "alibaba.imap.category.predict",
-	"apiChineseName": "类目预测接口",
-	"description": "* 类目预测接口\n     * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId\n     * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList",
 	"requestParams": [
 		{
-			"name": "top_imap_item_do",
-			"type": "TopImapItemDo",
-			"description": "入参DO",
+			"subParams": [
+				{
+					"name": "password",
+					"type": "String",
+					"description": "访问映射接口密码"
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "访问映射接口账号"
+				}
+			],
+			"name": "fixed_mapping_app_info",
+			"type": "FixedMappingAppInfo",
+			"description": "账号信息"
+		},
+		{
 			"subParams": [
 				{
 					"name": "item_id",
@@ -35,9 +45,6 @@
 					"description": "【必填】源渠道ID"
 				},
 				{
-					"name": "pv_pair_do_list",
-					"type": "TopPVPairDO[]",
-					"description": "【非必填，能填则填】商品相关pv信息",
 					"subParams": [
 						{
 							"name": "value_id",
@@ -59,7 +66,15 @@
 							"type": "Number",
 							"description": "属性项ID"
 						}
-					]
+					],
+					"name": "pv_pair_do_list",
+					"type": "TopPVPairDO[]",
+					"description": "【非必填，能填则填】商品相关pv信息"
+				},
+				{
+					"name": "barcode_list",
+					"type": "String[]",
+					"description": "非必填，能填则填】barccode列表"
 				},
 				{
 					"name": "title",
@@ -75,137 +90,106 @@
 					"name": "src_category_id",
 					"type": "Number",
 					"description": "【必填】商品所在叶子类目ID"
-				},
-				{
-					"name": "barcode_list",
-					"type": "String[]",
-					"description": "非必填，能填则填】barccode列表"
 				}
-			]
-		},
-		{
-			"name": "fixed_mapping_app_info",
-			"type": "FixedMappingAppInfo",
-			"description": "账号信息",
-			"subParams": [
-				{
-					"name": "password",
-					"type": "String",
-					"description": "访问映射接口密码"
-				},
-				{
-					"name": "app_name",
-					"type": "String",
-					"description": "访问映射接口账号"
-				}
-			]
+			],
+			"name": "top_imap_item_do",
+			"type": "TopImapItemDo",
+			"description": "入参DO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "top_imap_union_category_path_do_list",
-					"type": "TopImapUnionCategoryPathDo[]",
-					"description": "1",
-					"required": true,
 					"subParams": [
 						{
 							"name": "l5_cat_id",
 							"type": "Number",
-							"description": "五级类目ID",
-							"required": true
+							"description": "五级类目ID"
 						},
 						{
 							"name": "leaf_cat_name",
 							"type": "String",
-							"description": "叶子类目名称",
-							"required": true
+							"description": "叶子类目名称"
 						},
 						{
 							"name": "l3_cat_id",
 							"type": "Number",
-							"description": "三级类目ID",
-							"required": true
+							"description": "三级类目ID"
 						},
 						{
 							"name": "leaf",
 							"type": "Boolean",
-							"description": "是否叶子",
-							"required": true
+							"description": "是否叶子"
 						},
 						{
 							"name": "leaf_cat_id",
 							"type": "Number",
-							"description": "叶子类目ID",
-							"required": true
+							"description": "叶子类目ID"
 						},
 						{
 							"name": "l1_cat_id",
 							"type": "Number",
-							"description": "一级类目ID",
-							"required": true
+							"description": "一级类目ID"
 						},
 						{
 							"name": "l4_cat_name",
 							"type": "String",
-							"description": "四级类目名称",
-							"required": true
+							"description": "四级类目名称"
 						},
 						{
 							"name": "l2_cat_name",
 							"type": "String",
-							"description": "二级类目名称",
-							"required": true
+							"description": "二级类目名称"
 						},
 						{
 							"name": "l3_cat_name",
 							"type": "String",
-							"description": "三级类目名称",
-							"required": true
+							"description": "三级类目名称"
 						},
 						{
 							"name": "l4_cat_id",
 							"type": "Number",
-							"description": "四级类目ID",
-							"required": true
+							"description": "四级类目ID"
 						},
 						{
 							"name": "l5_cat_name",
 							"type": "String",
-							"description": "五级类目名称",
-							"required": true
+							"description": "五级类目名称"
 						},
 						{
 							"name": "l2_cat_id",
 							"type": "Number",
-							"description": "二级类目ID",
-							"required": true
+							"description": "二级类目ID"
 						},
 						{
 							"name": "l1_cat_name",
 							"type": "String",
-							"description": "一级类目名称",
-							"required": true
+							"description": "一级类目名称"
 						}
-					]
+					],
+					"name": "top_imap_union_category_path_do_list",
+					"type": "TopImapUnionCategoryPathDo[]",
+					"description": "1"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.imap.category.predict",
+	"apiChineseName": "类目预测接口",
+	"description": "* 类目预测接口\n     * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId\n     * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList",
+	"id": 47659
 }

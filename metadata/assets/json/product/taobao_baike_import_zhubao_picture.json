@@ -1,8 +1,4 @@
 {
-	"id": 30112,
-	"name": "taobao.baike.import.zhubao.picture",
-	"apiChineseName": "百科图片数据导入",
-	"description": "用于接入外部--图片--录入到商品百科中",
 	"requestParams": [
 		{
 			"name": "picture",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "message",
-					"type": "String",
-					"description": "message",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "message_code",
 					"type": "String",
-					"description": "messageCode",
-					"required": true
+					"description": "messageCode"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
 				},
 				{
 					"name": "module",
 					"type": "String",
-					"description": "module",
-					"required": true
+					"description": "module"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.baike.import.zhubao.picture",
+	"apiChineseName": "百科图片数据导入",
+	"description": "用于接入外部--图片--录入到商品百科中",
+	"id": 30112
 }

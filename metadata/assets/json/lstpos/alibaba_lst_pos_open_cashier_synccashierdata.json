@@ -1,21 +1,8 @@
 {
-	"id": 32943,
-	"name": "alibaba.lst.pos.open.cashier.synccashierdata",
-	"apiChineseName": "收银快照同步接口(最多10条订单信息)",
-	"description": "收银快照同步接口(最多10条订单信息)",
 	"requestParams": [
 		{
-			"name": "cashier_flow_d_t_o_list",
-			"type": "CashierFlowDto[]",
-			"description": "订单对象列表",
-			"required": true,
-			"maxListSize": 10,
 			"subParams": [
 				{
-					"name": "cashier_goods_detail_d_t_o_list",
-					"type": "CashierGoodsDetailDto[]",
-					"description": "收银商品快照对象列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bar_code",
@@ -57,7 +44,11 @@
 							"description": "ISV商品Id",
 							"required": true
 						}
-					]
+					],
+					"name": "cashier_goods_detail_d_t_o_list",
+					"type": "CashierGoodsDetailDto[]",
+					"description": "收银商品快照对象列表",
+					"required": true
 				},
 				{
 					"name": "pay_status",
@@ -84,6 +75,12 @@
 					"required": true
 				},
 				{
+					"name": "isv_trade_flow_num",
+					"type": "String",
+					"description": "isv订单流水号",
+					"required": true
+				},
+				{
 					"name": "gmt_modified",
 					"type": "Number",
 					"description": "最后修改 精确到毫秒"
@@ -92,12 +89,6 @@
 					"name": "gmt_create",
 					"type": "Number",
 					"description": "创建时间 精确到毫秒",
-					"required": true
-				},
-				{
-					"name": "isv_trade_flow_num",
-					"type": "String",
-					"description": "isv订单流水号",
 					"required": true
 				},
 				{
@@ -121,9 +112,6 @@
 					"description": "设备物理硬件ID（自身保证唯一性）"
 				},
 				{
-					"name": "cashier_pay_detail_d_t_o_list",
-					"type": "CashierPayDetailDto[]",
-					"description": "收银支付明细列表对象",
 					"subParams": [
 						{
 							"name": "desc_info",
@@ -165,7 +153,10 @@
 							"type": "Number",
 							"description": "业务类型  正向支付(支付)：0  缺省为：0   逆向支付(退款)：1"
 						}
-					]
+					],
+					"name": "cashier_pay_detail_d_t_o_list",
+					"type": "CashierPayDetailDto[]",
+					"description": "收银支付明细列表对象"
 				},
 				{
 					"name": "brand",
@@ -177,7 +168,12 @@
 					"type": "String",
 					"description": "设备型号"
 				}
-			]
+			],
+			"name": "cashier_flow_d_t_o_list",
+			"type": "CashierFlowDto[]",
+			"description": "订单对象列表",
+			"maxListSize": 10,
+			"required": true
 		},
 		{
 			"name": "user_id",
@@ -188,67 +184,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "响应结果",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
-					"name": "module_list",
-					"type": "ErrorResult[]",
-					"description": "单个订单处理结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "单个订单错误消息",
-							"required": true
+							"description": "单个订单错误消息"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "单个订单错误码",
-							"required": true
+							"description": "单个订单错误码"
 						},
 						{
 							"name": "key",
 							"type": "String",
-							"description": "单个订单isv业务处理关键字值",
-							"required": true
+							"description": "单个订单isv业务处理关键字值"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个订单处理结果标示  true：成功 false：失败",
-							"required": true
+							"description": "单个订单处理结果标示  true：成功 false：失败"
 						},
 						{
 							"name": "data",
-							"type": "Json",
-							"description": "业务处理数据",
-							"required": true
+							"type": "String",
+							"description": "业务处理数据"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "ErrorResult[]",
+					"description": "单个订单处理结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用成功与否标示 true：成功 false：失败",
-					"required": true
+					"description": "调用成功与否标示 true：成功 false：失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "响应结果"
 		}
-	]
+	],
+	"name": "alibaba.lst.pos.open.cashier.synccashierdata",
+	"apiChineseName": "收银快照同步接口(最多10条订单信息)",
+	"description": "收银快照同步接口(最多10条订单信息)",
+	"id": 32943
 }

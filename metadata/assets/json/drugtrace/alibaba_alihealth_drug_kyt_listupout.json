@@ -1,13 +1,9 @@
 {
-	"id": 41187,
-	"name": "alibaba.alihealth.drug.kyt.listupout",
-	"apiChineseName": "查询货主/本企业上游企业出库单据信息",
-	"description": "查询货主/本企业上游企业出库单据信息",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
 			"type": "String",
-			"description": "企业ID",
+			"description": "货主企业唯一标识（一般情况下填写自已企业）",
 			"required": true
 		},
 		{
@@ -21,6 +17,11 @@
 			"type": "String",
 			"description": "结束日期（不写时分秒）",
 			"required": true
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货单位"
 		},
 		{
 			"name": "produce_batch_no",
@@ -65,220 +66,191 @@
 			"required": true
 		},
 		{
-			"name": "from_user_id",
+			"name": "agent_ref_ent_id",
 			"type": "String",
-			"description": "发货单位"
+			"description": "第三方物流企业唯一标识（只有代查其它企业数据时填写）"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PageInfoDto",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
-							"name": "result_list",
-							"type": "BillUpOutDetailDo[]",
-							"description": "返回列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "from_ent_name",
 									"type": "String",
-									"description": "发货单位",
-									"required": true
+									"description": "发货单位"
 								},
 								{
 									"name": "code_count",
 									"type": "Number",
-									"description": "最小码量",
-									"required": true
+									"description": "最小码量"
 								},
 								{
 									"name": "exprie_date",
 									"type": "String",
-									"description": "失效日期",
-									"required": true
+									"description": "失效日期"
 								},
 								{
 									"name": "produce_ent_name",
 									"type": "String",
-									"description": "厂商",
-									"required": true
+									"description": "厂商"
 								},
 								{
 									"name": "produce_date",
 									"type": "String",
-									"description": "生产日期",
-									"required": true
+									"description": "生产日期"
 								},
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "生产批号",
-									"required": true
+									"description": "生产批号"
 								},
 								{
 									"name": "pkg_spec",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "physic_info",
 									"type": "String",
-									"description": "药品信息",
-									"required": true
+									"description": "药品信息"
 								},
 								{
 									"name": "physic_name",
 									"type": "String",
-									"description": "药品名称",
-									"required": true
+									"description": "药品名称"
 								},
 								{
 									"name": "prepn_count",
 									"type": "Number",
-									"description": "制剂数量",
-									"required": true
+									"description": "制剂数量"
 								},
 								{
 									"name": "from_ref_user_id",
 									"type": "String",
-									"description": "发货单位REF_ENT_ID",
-									"required": true
+									"description": "发货单位REF_ENT_ID"
 								},
 								{
 									"name": "to_ref_user_id",
 									"type": "String",
-									"description": "收货单位REF_ENT_ID",
-									"required": true
+									"description": "收货单位REF_ENT_ID"
 								},
 								{
 									"name": "bill_time",
 									"type": "String",
-									"description": "单据时间",
-									"required": true
+									"description": "单据时间"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据码",
-									"required": true
+									"description": "单据码"
 								},
 								{
 									"name": "bill_type",
 									"type": "String",
-									"description": "单据类型",
-									"required": true
+									"description": "单据类型"
 								},
 								{
 									"name": "to_user_name",
 									"type": "String",
-									"description": "发货企业",
-									"required": true
+									"description": "发货企业"
 								},
 								{
 									"name": "from_user_name",
 									"type": "String",
-									"description": "收货企业",
-									"required": true
+									"description": "收货企业"
 								},
 								{
 									"name": "exprie_date_format",
 									"type": "String",
-									"description": "失效日期格式化",
-									"required": true
+									"description": "失效日期格式化"
 								},
 								{
 									"name": "bill_time_format",
 									"type": "String",
-									"description": "单据时间格式化",
-									"required": true
+									"description": "单据时间格式化"
 								},
 								{
 									"name": "bill_out_id",
 									"type": "Number",
-									"description": "单据ID",
-									"required": true
+									"description": "单据ID"
 								},
 								{
 									"name": "prepn_unit",
 									"type": "Number",
-									"description": "制剂单位",
-									"required": true
+									"description": "制剂单位"
 								},
 								{
 									"name": "prepn_spec",
 									"type": "String",
-									"description": "制剂规格",
-									"required": true
+									"description": "制剂规格"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品ID",
-									"required": true
+									"description": "药品ID"
 								},
 								{
 									"name": "produce_date_format",
 									"type": "String",
-									"description": "生产日期格式化",
-									"required": true
+									"description": "生产日期格式化"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "确认状态1未确认2已确认",
-									"required": true
+									"description": "确认状态1未确认2已确认"
 								},
 								{
 									"name": "to_user_id",
 									"type": "String",
-									"description": "收货企业ent_id",
-									"required": true
+									"description": "收货企业ent_id"
 								},
 								{
 									"name": "from_user_id",
 									"type": "String",
-									"description": "发货企业ent_id",
-									"required": true
+									"description": "发货企业ent_id"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "BillUpOutDetailDo[]",
+							"description": "返回列表"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.listupout",
+	"apiChineseName": "查询货主/本企业上游企业出库单据信息",
+	"description": "查询货主/本企业上游企业出库单据信息",
+	"id": 41187
 }

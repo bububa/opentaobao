@@ -6,8 +6,8 @@ type ApplyAuthResultDo struct {
 	AuthMode string `json:"auth_mode,omitempty" xml:"auth_mode,omitempty"`
 	// 手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
-	// 二维码地址
-	QrCodeUrl string `json:"qr_code_url,omitempty" xml:"qr_code_url,omitempty"`
 	// qrcode
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
+	// 二维码地址
+	QrCodeUrl string `json:"qr_code_url,omitempty" xml:"qr_code_url,omitempty"`
 }

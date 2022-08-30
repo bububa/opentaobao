@@ -1,8 +1,4 @@
 {
-	"id": 30648,
-	"name": "alibaba.wdk.item.brand.query",
-	"apiChineseName": "品牌信息查询",
-	"description": "品牌信息查询",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -22,41 +18,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "result",
-					"required": true
+					"description": "result"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.brand.query",
+	"apiChineseName": "品牌信息查询",
+	"description": "品牌信息查询",
+	"id": 30648
 }

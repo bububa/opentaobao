@@ -1,13 +1,6 @@
 {
-	"id": 45278,
-	"name": "aliyun.alios.pay.refund",
-	"apiChineseName": "退款接口",
-	"description": "商户用来发起退款的接口",
 	"requestParams": [
 		{
-			"name": "refund_request",
-			"type": "RefundRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "trace_id",
@@ -50,34 +43,38 @@
 					"description": "标识一次退款请求，保证唯一",
 					"required": true
 				}
-			]
+			],
+			"name": "refund_request",
+			"type": "RefundRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "aliospay_response",
-			"type": "AliOSPayResponse",
-			"description": "响应参数",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
-					"required": true
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "aliospay_response",
+			"type": "AliOSPayResponse",
+			"description": "响应参数"
 		}
-	]
+	],
+	"name": "aliyun.alios.pay.refund",
+	"apiChineseName": "退款接口",
+	"description": "商户用来发起退款的接口",
+	"id": 45278
 }

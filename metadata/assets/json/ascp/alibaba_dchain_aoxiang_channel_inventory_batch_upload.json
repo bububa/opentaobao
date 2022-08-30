@@ -1,0 +1,142 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道，默认1000代表淘系渠道，预留后面可能猫超等渠道"
+						},
+						{
+							"name": "owner_code",
+							"type": "String",
+							"description": "货主编码；优仓分配，长度不会超过32位，不含特殊字符",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "商家货品编码",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存数量",
+							"required": true
+						}
+					],
+					"name": "channels_inventory",
+					"type": "ChannelInventory[]",
+					"description": "渠道库存量，批量不超过50",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "库存变动时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人，用于记录操作记录"
+				}
+			],
+			"name": "batch_upload_channel_inventory_request",
+			"type": "BatchUploadChannelInventoryRequest",
+			"description": "上传渠道库存量入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "0=全部失败，1=全部成功，2=部分成功"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "true|false"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "返回信息码"
+								},
+								{
+									"name": "message",
+									"type": "String",
+									"description": "返回信息"
+								},
+								{
+									"name": "owner_code",
+									"type": "String",
+									"description": "货主编码"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "仓库编码"
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "商家货品编码"
+								}
+							],
+							"name": "detail",
+							"type": "DetailItem[]",
+							"description": "结果明细"
+						}
+					],
+					"name": "data",
+					"type": "BatchUploadChannelInventoryResult",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "batch_upload_channel_inventory_response",
+			"type": "BatchUploadChannelInventoryResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.channel.inventory.batch.upload",
+	"apiChineseName": "ERP全量同步销售库存数量",
+	"description": "ERP全量同步销售库存数量",
+	"id": 60377
+}

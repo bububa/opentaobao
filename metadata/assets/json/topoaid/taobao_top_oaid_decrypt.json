@@ -1,15 +1,6 @@
 {
-	"id": 54714,
-	"name": "taobao.top.oaid.decrypt",
-	"apiChineseName": "OAID解密",
-	"description": "解码OAID(Open Addressee ID)，返回收件人信息。",
 	"requestParams": [
 		{
-			"name": "query_list",
-			"type": "ReceiverQuery[]",
-			"description": "解密请求列表，最多支持20个。",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "oaid",
@@ -22,15 +13,28 @@
 					"type": "String",
 					"description": "交易订单ID",
 					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "解密场景编号。不同场景，解密策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(顺丰电子面单发货)、1002(4通一达电子面单发货)、1003(EMS电子面单发货)、1004(其他电子面单发货)、1005(线下门店发货)、1006(手工单发货)、1007(代发货)、2001(客户售后服务)、2002(客户关怀)，\u003ca href=\"https://open.taobao.com/doc.htm?docId=120186\u0026docType=1\" target=\"_blank\"\u003e详情点击\u003c/a\u003e",
+					"required": true
+				},
+				{
+					"name": "secret_no_days",
+					"type": "Number",
+					"description": "隐私号绑定时间"
 				}
-			]
+			],
+			"name": "query_list",
+			"type": "ReceiverQuery[]",
+			"description": "解密请求列表，最多支持20个。",
+			"maxListSize": 999,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "receiver_list",
-			"type": "Receiver []",
-			"description": "收件人列表",
 			"subParams": [
 				{
 					"name": "name",
@@ -41,7 +45,7 @@
 				{
 					"name": "mobile",
 					"type": "String",
-					"description": "收件人的手机号",
+					"description": "收件人的手机号，privacy_protection=true是为隐私号，格式为18877771111-123",
 					"required": true
 				},
 				{
@@ -103,8 +107,27 @@
 					"type": "Boolean",
 					"description": "oaid是否和tid当前的oaid匹配。true：匹配，false：不匹配。当不匹配时，建议通过taobao.trade.fullinfo.get获取最新的oaid。",
 					"required": true
+				},
+				{
+					"name": "secret_no_expire_time",
+					"type": "Date",
+					"description": "隐私号过期时间，privacy_protection=true时有值",
+					"required": true
+				},
+				{
+					"name": "privacy_protection",
+					"type": "Boolean",
+					"description": "标记订单是否为隐私保护订单，为true时，mobile为隐私号",
+					"required": true
 				}
-			]
+			],
+			"name": "receiver_list",
+			"type": "Receiver []",
+			"description": "收件人列表"
 		}
-	]
+	],
+	"name": "taobao.top.oaid.decrypt",
+	"apiChineseName": "OAID解密",
+	"description": "解码OAID(Open Addressee ID)，返回收件人信息。",
+	"id": 54714
 }

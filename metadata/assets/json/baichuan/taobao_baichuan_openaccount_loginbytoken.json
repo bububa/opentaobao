@@ -1,8 +1,4 @@
 {
-	"id": 25123,
-	"name": "taobao.baichuan.openaccount.loginbytoken",
-	"apiChineseName": "百川TOKEN 登录",
-	"description": "百川TOKEN 登录",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.openaccount.loginbytoken",
+	"apiChineseName": "百川TOKEN 登录",
+	"description": "百川TOKEN 登录",
+	"id": 25123
 }

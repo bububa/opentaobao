@@ -1,15 +1,11 @@
 {
-	"id": 27162,
-	"name": "taobao.qimen.items.tag.query",
-	"apiChineseName": "打标结果查询-商品维度",
-	"description": "调用该接口，查询某个/某批商品上的标",
 	"requestParams": [
 		{
 			"name": "item_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "线上淘宝商品ID，long，必填",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -19,28 +15,30 @@
 			"description": "flag"
 		},
 		{
-			"name": "item_tags",
-			"type": "ItemTag []",
-			"description": "itemTags",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "itemId",
-					"required": true
+					"description": "itemId"
 				},
 				{
 					"name": "tag_type",
 					"type": "String",
-					"description": "tagType",
-					"required": true
+					"description": "tagType"
 				}
-			]
+			],
+			"name": "item_tags",
+			"type": "ItemTag []",
+			"description": "itemTags"
 		},
 		{
 			"name": "message",
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "taobao.qimen.items.tag.query",
+	"apiChineseName": "打标结果查询-商品维度",
+	"description": "调用该接口，查询某个/某批商品上的标",
+	"id": 27162
 }

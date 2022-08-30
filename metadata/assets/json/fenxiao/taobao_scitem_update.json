@@ -1,8 +1,4 @@
 {
-	"id": 21596,
-	"name": "taobao.scitem.update",
-	"apiChineseName": "根据商品ID或商家编码修改后端商品",
-	"description": "根据商品ID或商家编码修改后端商品",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -131,5 +127,9 @@
 			"type": "Number",
 			"description": "更新商品数量,1表示成功更新了一条数据，0：表示未找到匹配的数据"
 		}
-	]
+	],
+	"name": "taobao.scitem.update",
+	"apiChineseName": "根据商品ID或商家编码修改后端商品",
+	"description": "根据商品ID或商家编码修改后端商品",
+	"id": 21596
 }

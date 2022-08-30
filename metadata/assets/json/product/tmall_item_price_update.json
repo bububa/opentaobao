@@ -1,8 +1,4 @@
 {
-	"id": 24249,
-	"name": "tmall.item.price.update",
-	"apiChineseName": "天猫商品/SKU价格更新接口",
-	"description": "天猫商品/SKU价格更新接口，支持商品、SKU价格同时更新，支持同一商品下的SKU批量更新。",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -16,10 +12,6 @@
 			"description": "被更新商品价格"
 		},
 		{
-			"name": "sku_prices",
-			"type": "UpdateSkuPrice[]",
-			"description": "更新SKU价格时候的SKU价格对象；如果没有SKU或者不更新SKU价格，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！",
-			"maxListSize": 999999,
 			"subParams": [
 				{
 					"name": "sku_id",
@@ -41,12 +33,13 @@
 					"type": "String",
 					"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
 				}
-			]
+			],
+			"name": "sku_prices",
+			"type": "UpdateSkuPrice[]",
+			"description": "更新SKU价格时候的SKU价格对象；如果没有SKU或者不更新SKU价格，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！",
+			"maxListSize": 999999
 		},
 		{
-			"name": "options",
-			"type": "UpdateItemPriceOption",
-			"description": "商品价格更新时候的可选参数",
 			"subParams": [
 				{
 					"name": "ignore_fake_credit",
@@ -58,7 +51,10 @@
 					"type": "String",
 					"description": "目标币种，非必填，仅支持天猫国际官网同购商家将外币价格修改成人民币价格时使用"
 				}
-			]
+			],
+			"name": "options",
+			"type": "UpdateItemPriceOption",
+			"description": "商品价格更新时候的可选参数"
 		}
 	],
 	"responseParams": [
@@ -67,5 +63,9 @@
 			"type": "String",
 			"description": "价格更新结果"
 		}
-	]
+	],
+	"name": "tmall.item.price.update",
+	"apiChineseName": "天猫商品/SKU价格更新接口",
+	"description": "天猫商品/SKU价格更新接口，支持商品、SKU价格同时更新，支持同一商品下的SKU批量更新。",
+	"id": 24249
 }

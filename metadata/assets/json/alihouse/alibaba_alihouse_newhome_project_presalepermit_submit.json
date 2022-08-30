@@ -1,13 +1,6 @@
 {
-	"id": 55921,
-	"name": "alibaba.alihouse.newhome.project.presalepermit.submit",
-	"apiChineseName": "提交预售证",
-	"description": "提交楼盘预售证信息",
 	"requestParams": [
 		{
-			"name": "pre_sale_permit_dto",
-			"type": "ProjectPreSalePermitDto",
-			"description": "预售证对象",
 			"subParams": [
 				{
 					"name": "publicity_time",
@@ -98,41 +91,49 @@
 					"name": "pre_sale_build",
 					"type": "String",
 					"description": "预售楼幢"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
 				}
-			]
+			],
+			"name": "pre_sale_permit_dto",
+			"type": "ProjectPreSalePermitDto",
+			"description": "预售证对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回对象",
-					"required": true
+					"description": "返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.project.presalepermit.submit",
+	"apiChineseName": "提交预售证",
+	"description": "提交楼盘预售证信息",
+	"id": 55921
 }

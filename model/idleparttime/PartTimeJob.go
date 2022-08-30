@@ -4,28 +4,28 @@ package idleparttime
 type PartTimeJob struct {
 	// 岗位具体的要求和要求的类型
 	JobRequirements []PartTimeRequireSchema `json:"job_requirements,omitempty" xml:"job_requirements>part_time_require_schema,omitempty"`
-	// 工作地点
-	Location string `json:"location,omitempty" xml:"location,omitempty"`
-	// 津贴
-	Royalties string `json:"royalties,omitempty" xml:"royalties,omitempty"`
-	// 支付方式, 支付宝/微信/现金等
-	PayWay string `json:"pay_way,omitempty" xml:"pay_way,omitempty"`
-	// 工作描述
-	JobDescription string `json:"job_description,omitempty" xml:"job_description,omitempty"`
-	// 岗位名称: 该兼职岗位的名称
-	JobTitle string `json:"job_title,omitempty" xml:"job_title,omitempty"`
-	// 招聘公司
-	Company string `json:"company,omitempty" xml:"company,omitempty"`
-	// 工作时长
-	WorkDuration string `json:"work_duration,omitempty" xml:"work_duration,omitempty"`
-	// 岗位种类: 该兼职信息的性质
-	JobType string `json:"job_type,omitempty" xml:"job_type,omitempty"`
-	// 工作时间
-	WorkTime string `json:"work_time,omitempty" xml:"work_time,omitempty"`
 	// 商品标题: 职位在 Feed 流中展示的标题,
 	JobItemTitle string `json:"job_item_title,omitempty" xml:"job_item_title,omitempty"`
+	// 岗位种类: 该兼职信息的性质
+	JobType string `json:"job_type,omitempty" xml:"job_type,omitempty"`
+	// 岗位名称: 该兼职岗位的名称
+	JobTitle string `json:"job_title,omitempty" xml:"job_title,omitempty"`
 	// 工资
 	Salary string `json:"salary,omitempty" xml:"salary,omitempty"`
+	// 支付方式, 支付宝/微信/现金等
+	PayWay string `json:"pay_way,omitempty" xml:"pay_way,omitempty"`
+	// 工作地点
+	Location string `json:"location,omitempty" xml:"location,omitempty"`
+	// 工作描述
+	JobDescription string `json:"job_description,omitempty" xml:"job_description,omitempty"`
+	// 津贴
+	Royalties string `json:"royalties,omitempty" xml:"royalties,omitempty"`
+	// 工作时长
+	WorkDuration string `json:"work_duration,omitempty" xml:"work_duration,omitempty"`
+	// 工作时间
+	WorkTime string `json:"work_time,omitempty" xml:"work_time,omitempty"`
+	// 招聘公司
+	Company string `json:"company,omitempty" xml:"company,omitempty"`
 	// 招聘公司描述
 	CompanyDescription string `json:"company_description,omitempty" xml:"company_description,omitempty"`
 	// 企业logo, 是一个图片的URL

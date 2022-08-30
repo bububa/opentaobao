@@ -1,17 +1,8 @@
 {
-	"id": 26002,
-	"name": "taobao.qimen.deliveryorder.create",
-	"apiChineseName": "发货单创建接口",
-	"description": "taobao.qimen.deliveryorder.create",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "DeliveryOrderCreateRequest",
 			"subParams": [
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "发货单信息",
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -49,7 +40,7 @@
 						{
 							"name": "sourcePlatformCode",
 							"type": "String",
-							"description": "订单来源平台编码(TB=淘宝、TM=天猫、JD=京东、DD=当当、PP=拍拍、YX= 易讯、 EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂 、MGJ=蘑菇街、 JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿 里巴巴、POS=POS门店、 MIA=蜜芽、OTHER=其他(只传英文编码))"
+							"description": "订单来源平台编码(TB=淘宝、TM=天猫、MAOCHAO =天猫超市、TMGJZY = 天猫国际直营、PTTMKLDJK = 天猫国际、TMYPDQ = 天猫优品、JD=京东、DD=当当、PP=拍拍、YX= 易讯、 EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂 、MGJ=蘑菇街、 JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、 MIA=蜜芽、KLZY = 猫享\u0026考拉自营、WPHMP=唯品会集市、KLZF=考拉直发、DYXD=抖音小店、线下店铺=OFFLINE、XHS=小红书、DW=得物、DWZF=得物直发、OTHERS=其他) )"
 						},
 						{
 							"name": "sourcePlatformName",
@@ -167,9 +158,6 @@
 							"description": "快递区域编码"
 						},
 						{
-							"name": "deliveryRequirements",
-							"type": "DeliveryRequirements",
-							"description": "发货要求列表",
 							"subParams": [
 								{
 									"name": "scheduleType",
@@ -196,12 +184,12 @@
 									"type": "String",
 									"description": "发货服务类型(PTPS:普通配送;LLPS:冷链配送;HBP:环保配)"
 								}
-							]
+							],
+							"name": "deliveryRequirements",
+							"type": "DeliveryRequirements",
+							"description": "发货要求列表"
 						},
 						{
-							"name": "senderInfo",
-							"type": "SenderInfo",
-							"description": "发件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -268,12 +256,12 @@
 									"description": "详细地址",
 									"required": true
 								}
-							]
+							],
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息"
 						},
 						{
-							"name": "receiverInfo",
-							"type": "ReceiverInfo",
-							"description": "收件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -354,8 +342,16 @@
 									"name": "oaid",
 									"type": "String",
 									"description": "收件人地址ID"
+								},
+								{
+									"name": "privacy",
+									"type": "String",
+									"description": "1"
 								}
-							]
+							],
+							"name": "receiverInfo",
+							"type": "ReceiverInfo",
+							"description": "收件人信息"
 						},
 						{
 							"name": "isUrgency",
@@ -368,9 +364,6 @@
 							"description": "是否需要发票(Y/N;默认为N)"
 						},
 						{
-							"name": "invoices",
-							"type": "Invoice[]",
-							"description": "发票信息",
 							"subParams": [
 								{
 									"name": "type",
@@ -393,14 +386,8 @@
 									"description": "发票内容(不推荐使用)"
 								},
 								{
-									"name": "detail",
-									"type": "Detail",
-									"description": "当content和detail同时存在时，优先处理detail的信息",
 									"subParams": [
 										{
-											"name": "items",
-											"type": "Item[]",
-											"description": "商品列表",
 											"subParams": [
 												{
 													"name": "itemName",
@@ -427,16 +414,25 @@
 													"type": "String",
 													"description": "金额"
 												}
-											]
+											],
+											"name": "items",
+											"type": "Item[]",
+											"description": "商品列表"
 										}
-									]
+									],
+									"name": "detail",
+									"type": "Detail",
+									"description": "当content和detail同时存在时，优先处理detail的信息"
 								},
 								{
 									"name": "taxNumber",
 									"type": "String",
 									"description": "税号"
 								}
-							]
+							],
+							"name": "invoices",
+							"type": "Invoice[]",
+							"description": "发票信息"
 						},
 						{
 							"name": "insuranceFlag",
@@ -444,9 +440,6 @@
 							"description": "是否需要保险(Y/N;默认为N)"
 						},
 						{
-							"name": "insurance",
-							"type": "Insurance",
-							"description": "保险信息",
 							"subParams": [
 								{
 									"name": "type",
@@ -458,7 +451,10 @@
 									"type": "String",
 									"description": "保险金额"
 								}
-							]
+							],
+							"name": "insurance",
+							"type": "Insurance",
+							"description": "保险信息"
 						},
 						{
 							"name": "buyerMessage",
@@ -500,12 +496,12 @@
 							"type": "String",
 							"description": "交易平台订单"
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "订单列表",
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -601,20 +597,24 @@
 							"type": "String",
 							"description": "生产批号"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "DeliveryOrderCreateRequest",
+			"description": "奇门仓储字段"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "DeliveryOrderCreateResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -659,10 +659,6 @@
 					"required": true
 				},
 				{
-					"name": "deliveryOrders",
-					"type": "DeliveryOrder[]",
-					"description": "发货单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deliveryOrderId",
@@ -683,10 +679,6 @@
 							"required": true
 						},
 						{
-							"name": "orderLines",
-							"type": "OrderLine[]",
-							"description": "订单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "orderLineNo",
@@ -712,7 +704,11 @@
 									"description": "数量",
 									"required": true
 								}
-							]
+							],
+							"name": "orderLines",
+							"type": "OrderLine[]",
+							"description": "订单信息",
+							"required": true
 						},
 						{
 							"name": "createTime",
@@ -720,9 +716,20 @@
 							"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)",
 							"required": true
 						}
-					]
+					],
+					"name": "deliveryOrders",
+					"type": "DeliveryOrder[]",
+					"description": "发货单信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "DeliveryOrderCreateResponse",
+			"description": "响应字段"
 		}
-	]
+	],
+	"name": "taobao.qimen.deliveryorder.create",
+	"apiChineseName": "发货单创建接口",
+	"description": "taobao.qimen.deliveryorder.create",
+	"id": 26002
 }

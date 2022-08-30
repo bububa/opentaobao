@@ -1,8 +1,4 @@
 {
-	"id": 31127,
-	"name": "taobao.tbk.tpwd.create",
-	"apiChineseName": "淘宝客-公用-淘口令生成",
-	"description": "提供淘口令生成接口。提交需要生成淘口令的内容、logo、url等参数，生成淘口令，其中关键信息为￥SADadW￥，后续可基于淘口令进行文案包装组装用于传播。",
 	"requestParams": [
 		{
 			"name": "url",
@@ -33,23 +29,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "MapData",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "password_simple",
 					"type": "String",
-					"description": "非苹果ios14以上版本的设备（即其他ios版本、Android系统等），可以用此淘口令正常在复制到手淘打开",
-					"required": true
+					"description": "非苹果ios14以上版本的设备（即其他ios版本、Android系统等），可以用此淘口令正常在复制到手淘打开"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "针对苹果ios14及以上版本的苹果设备，手淘将按照示例值信息格式读取淘口令(需包含：数字+羊角符+url，识别规则可能根据ios情况变更)。如需更改淘口令内文案、url等内容，请务必先验证更改后的淘口令在手淘可被识别打开！",
-					"required": true
+					"description": "针对苹果ios14及以上版本的苹果设备，手淘将按照示例值信息格式读取淘口令(需包含：数字+羊角符+url，识别规则可能根据ios情况变更)。如需更改淘口令内文案、url等内容，请务必先验证更改后的淘口令在手淘可被识别打开！"
 				}
-			]
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.tbk.tpwd.create",
+	"apiChineseName": "淘宝客-公用-淘口令生成",
+	"description": "提供淘口令生成接口。提交需要生成淘口令的内容、logo、url等参数，生成淘口令，其中关键信息为￥SADadW￥，后续可基于淘口令进行文案包装组装用于传播。",
+	"id": 31127
 }

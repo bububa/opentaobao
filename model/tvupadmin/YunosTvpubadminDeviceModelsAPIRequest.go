@@ -14,10 +14,10 @@ type YunosTvpubadminDeviceModelsAPIRequest struct {
 	model.Params
 	// 终端类型
 	_terminalType string
-	// 品牌ID
-	_brandId int64
 	// 牌照方
 	_license int64
+	// 品牌ID
+	_brandId int64
 }
 
 // NewYunosTvpubadminDeviceModelsRequest 初始化YunosTvpubadminDeviceModelsAPIRequest对象
@@ -54,19 +54,6 @@ func (r YunosTvpubadminDeviceModelsAPIRequest) GetTerminalType() string {
 	return r._terminalType
 }
 
-// SetBrandId is BrandId Setter
-// 品牌ID
-func (r *YunosTvpubadminDeviceModelsAPIRequest) SetBrandId(_brandId int64) error {
-	r._brandId = _brandId
-	r.Set("brand_id", _brandId)
-	return nil
-}
-
-// GetBrandId BrandId Getter
-func (r YunosTvpubadminDeviceModelsAPIRequest) GetBrandId() int64 {
-	return r._brandId
-}
-
 // SetLicense is License Setter
 // 牌照方
 func (r *YunosTvpubadminDeviceModelsAPIRequest) SetLicense(_license int64) error {
@@ -78,4 +65,17 @@ func (r *YunosTvpubadminDeviceModelsAPIRequest) SetLicense(_license int64) error
 // GetLicense License Getter
 func (r YunosTvpubadminDeviceModelsAPIRequest) GetLicense() int64 {
 	return r._license
+}
+
+// SetBrandId is BrandId Setter
+// 品牌ID
+func (r *YunosTvpubadminDeviceModelsAPIRequest) SetBrandId(_brandId int64) error {
+	r._brandId = _brandId
+	r.Set("brand_id", _brandId)
+	return nil
+}
+
+// GetBrandId BrandId Getter
+func (r YunosTvpubadminDeviceModelsAPIRequest) GetBrandId() int64 {
+	return r._brandId
 }

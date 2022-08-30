@@ -1,0 +1,118 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "member_card_pic",
+									"type": "String",
+									"description": "卡图片"
+								},
+								{
+									"name": "hotel_level_en",
+									"type": "String",
+									"description": "英文等级"
+								},
+								{
+									"name": "reach_condition",
+									"type": "String",
+									"description": "会员升级条件"
+								},
+								{
+									"name": "icon_color",
+									"type": "String",
+									"description": "图标颜色"
+								},
+								{
+									"name": "card_desc",
+									"type": "String",
+									"description": "会员卡描述"
+								},
+								{
+									"name": "back_ground_pic",
+									"type": "String",
+									"description": "背景图片"
+								},
+								{
+									"subParams": [
+										{
+											"name": "member_right_desc",
+											"type": "String",
+											"description": "权益名称"
+										},
+										{
+											"name": "member_right_content",
+											"type": "String",
+											"description": "权益内容"
+										},
+										{
+											"name": "icon_code_point",
+											"type": "String",
+											"description": "权益码点"
+										},
+										{
+											"name": "order",
+											"type": "Number",
+											"description": "顺序"
+										}
+									],
+									"name": "member_right_list",
+									"type": "MemberRightVo[]",
+									"description": "会员权益集合"
+								},
+								{
+									"name": "hotel_level_zh",
+									"type": "String",
+									"description": "会员等级中文名称"
+								}
+							],
+							"name": "member_card_detail_list",
+							"type": "MemberCardDetailVo[]",
+							"description": "会员卡详细信息"
+						}
+					],
+					"name": "content",
+					"type": "CardSystemVo",
+					"description": "返回内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.card.info",
+	"apiChineseName": "获取会员体系",
+	"description": "星河=根据卡类型获取当前的会员体系",
+	"id": 57579
+}

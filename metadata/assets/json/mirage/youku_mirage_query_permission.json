@@ -1,13 +1,6 @@
 {
-	"id": 43082,
-	"name": "youku.mirage.query.permission",
-	"apiChineseName": "优酷播控查询是否可播API",
-	"description": "根据节目ID或者VID查询视频或者节目是否可以播放",
 	"requestParams": [
 		{
-			"name": "permission_request_dto",
-			"type": "PermissionRequestDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "display_scene",
@@ -119,34 +112,38 @@
 					"type": "String",
 					"description": "签名"
 				}
-			]
+			],
+			"name": "permission_request_dto",
+			"type": "PermissionRequestDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "resp",
-			"type": "PermissionResponseDto",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误内容",
-					"required": true
+					"description": "错误内容"
 				},
 				{
 					"name": "permissions",
-					"type": "Json",
-					"description": "该值为MAP类型，KEY=视频或者节目ID；VALUE中包含两个值resourceId视频或者节目ID(String类型)，以及access该视频或者节目是否可播（Boolean）结果",
-					"required": true
+					"type": "String",
+					"description": "该值为MAP类型，KEY=视频或者节目ID；VALUE中包含两个值resourceId视频或者节目ID(String类型)，以及access该视频或者节目是否可播（Boolean）结果"
 				}
-			]
+			],
+			"name": "resp",
+			"type": "PermissionResponseDto",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "youku.mirage.query.permission",
+	"apiChineseName": "优酷播控查询是否可播API",
+	"description": "根据节目ID或者VID查询视频或者节目是否可以播放",
+	"id": 43082
 }

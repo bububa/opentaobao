@@ -12,22 +12,22 @@ import (
 // 图片总数查询
 type TaobaoPicturePicturesCountAPIRequest struct {
 	model.Params
-	// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
-	_startDate string
-	// 文件名
-	_title string
-	// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
-	_endDate string
-	// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
-	_startModifiedDate string
 	// 是否删除,undeleted代表没有删除,deleted表示删除
 	_deleted string
+	// 图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。
+	_startModifiedDate string
+	// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
+	_startDate string
+	// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
+	_endDate string
 	// 图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部
 	_clientType string
-	// 图片分类
-	_pictureCategoryId int64
+	// 文件名
+	_title string
 	// 图片ID
 	_pictureId int64
+	// 图片分类
+	_pictureCategoryId int64
 }
 
 // NewTaobaoPicturePicturesCountRequest 初始化TaobaoPicturePicturesCountAPIRequest对象
@@ -51,43 +51,17 @@ func (r TaobaoPicturePicturesCountAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStartDate is StartDate Setter
-// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
-func (r *TaobaoPicturePicturesCountAPIRequest) SetStartDate(_startDate string) error {
-	r._startDate = _startDate
-	r.Set("start_date", _startDate)
+// SetDeleted is Deleted Setter
+// 是否删除,undeleted代表没有删除,deleted表示删除
+func (r *TaobaoPicturePicturesCountAPIRequest) SetDeleted(_deleted string) error {
+	r._deleted = _deleted
+	r.Set("deleted", _deleted)
 	return nil
 }
 
-// GetStartDate StartDate Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetStartDate() string {
-	return r._startDate
-}
-
-// SetTitle is Title Setter
-// 文件名
-func (r *TaobaoPicturePicturesCountAPIRequest) SetTitle(_title string) error {
-	r._title = _title
-	r.Set("title", _title)
-	return nil
-}
-
-// GetTitle Title Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetTitle() string {
-	return r._title
-}
-
-// SetEndDate is EndDate Setter
-// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
-func (r *TaobaoPicturePicturesCountAPIRequest) SetEndDate(_endDate string) error {
-	r._endDate = _endDate
-	r.Set("end_date", _endDate)
-	return nil
-}
-
-// GetEndDate EndDate Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetEndDate() string {
-	return r._endDate
+// GetDeleted Deleted Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetDeleted() string {
+	return r._deleted
 }
 
 // SetStartModifiedDate is StartModifiedDate Setter
@@ -103,17 +77,30 @@ func (r TaobaoPicturePicturesCountAPIRequest) GetStartModifiedDate() string {
 	return r._startModifiedDate
 }
 
-// SetDeleted is Deleted Setter
-// 是否删除,undeleted代表没有删除,deleted表示删除
-func (r *TaobaoPicturePicturesCountAPIRequest) SetDeleted(_deleted string) error {
-	r._deleted = _deleted
-	r.Set("deleted", _deleted)
+// SetStartDate is StartDate Setter
+// 查询上传开始时间点,格式:yyyy-MM-dd HH:mm:ss
+func (r *TaobaoPicturePicturesCountAPIRequest) SetStartDate(_startDate string) error {
+	r._startDate = _startDate
+	r.Set("start_date", _startDate)
 	return nil
 }
 
-// GetDeleted Deleted Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetDeleted() string {
-	return r._deleted
+// GetStartDate StartDate Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetStartDate() string {
+	return r._startDate
+}
+
+// SetEndDate is EndDate Setter
+// 查询上传结束时间点,格式:yyyy-MM-dd HH:mm:ss
+func (r *TaobaoPicturePicturesCountAPIRequest) SetEndDate(_endDate string) error {
+	r._endDate = _endDate
+	r.Set("end_date", _endDate)
+	return nil
+}
+
+// GetEndDate EndDate Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetEndDate() string {
+	return r._endDate
 }
 
 // SetClientType is ClientType Setter
@@ -129,17 +116,17 @@ func (r TaobaoPicturePicturesCountAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
-// SetPictureCategoryId is PictureCategoryId Setter
-// 图片分类
-func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
-	r._pictureCategoryId = _pictureCategoryId
-	r.Set("picture_category_id", _pictureCategoryId)
+// SetTitle is Title Setter
+// 文件名
+func (r *TaobaoPicturePicturesCountAPIRequest) SetTitle(_title string) error {
+	r._title = _title
+	r.Set("title", _title)
 	return nil
 }
 
-// GetPictureCategoryId PictureCategoryId Getter
-func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
-	return r._pictureCategoryId
+// GetTitle Title Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetTitle() string {
+	return r._title
 }
 
 // SetPictureId is PictureId Setter
@@ -153,4 +140,17 @@ func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureId(_pictureId int64) er
 // GetPictureId PictureId Getter
 func (r TaobaoPicturePicturesCountAPIRequest) GetPictureId() int64 {
 	return r._pictureId
+}
+
+// SetPictureCategoryId is PictureCategoryId Setter
+// 图片分类
+func (r *TaobaoPicturePicturesCountAPIRequest) SetPictureCategoryId(_pictureCategoryId int64) error {
+	r._pictureCategoryId = _pictureCategoryId
+	r.Set("picture_category_id", _pictureCategoryId)
+	return nil
+}
+
+// GetPictureCategoryId PictureCategoryId Getter
+func (r TaobaoPicturePicturesCountAPIRequest) GetPictureCategoryId() int64 {
+	return r._pictureCategoryId
 }

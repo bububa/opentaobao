@@ -1,14 +1,6 @@
 {
-	"id": 56319,
-	"name": "alibaba.health.nr.cep.outorder.upload",
-	"apiChineseName": "线上订单收货验收单、出入库单据生成接口",
-	"description": "线上订单收货验收单、出入库单据生成接口",
 	"requestParams": [
 		{
-			"name": "top_war_out_dto",
-			"type": "TopWarOutDTO",
-			"description": "出库单对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "bill_no",
@@ -29,10 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "goods_list",
-					"type": "TopGoodsDTO[]",
-					"description": "商品",
-					"required": true,
 					"subParams": [
 						{
 							"name": "goods_name",
@@ -96,7 +84,11 @@
 							"description": "金额",
 							"required": true
 						}
-					]
+					],
+					"name": "goods_list",
+					"type": "TopGoodsDTO[]",
+					"description": "商品",
+					"required": true
 				},
 				{
 					"name": "tb_seller_id",
@@ -109,34 +101,39 @@
 					"description": "魔方ID",
 					"required": true
 				}
-			]
+			],
+			"name": "top_war_out_dto",
+			"type": "TopWarOutDTO",
+			"description": "出库单对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResponseResult",
-			"description": "服务出参",
 			"subParams": [
-				{
-					"name": "issuccess",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "issuccess",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResponseResult",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "alibaba.health.nr.cep.outorder.upload",
+	"apiChineseName": "线上订单收货验收单、出入库单据生成接口",
+	"description": "线上订单收货验收单、出入库单据生成接口",
+	"id": 56319
 }

@@ -5,11 +5,11 @@ type KcQaQuery struct {
 	// context列表
 	ContextList []int64 `json:"context_list,omitempty" xml:"context_list>int64,omitempty"`
 	// 问题类型列表
-	QuestionTypes []int64 `json:"question_types,omitempty" xml:"question_types>int64,omitempty"`
+	QuestionTypes []string `json:"question_types,omitempty" xml:"question_types>string,omitempty"`
 	// 状态列表
-	StatusList []int64 `json:"status_list,omitempty" xml:"status_list>int64,omitempty"`
+	StatusList []string `json:"status_list,omitempty" xml:"status_list>string,omitempty"`
 	// 视角过滤
-	Views []int64 `json:"views,omitempty" xml:"views>int64,omitempty"`
+	Views []string `json:"views,omitempty" xml:"views>string,omitempty"`
 	// 租户id
 	TenantId int64 `json:"tenant_id,omitempty" xml:"tenant_id,omitempty"`
 	// 状态

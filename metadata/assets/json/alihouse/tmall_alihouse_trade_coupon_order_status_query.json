@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "履约单id"
+				}
+			],
+			"name": "query",
+			"type": "CouponOrderQuery",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "tb_order_id",
+							"type": "String",
+							"description": "淘宝订单id"
+						},
+						{
+							"name": "finish_time",
+							"type": "String",
+							"description": "完结时间"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code码"
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id"
+						},
+						{
+							"name": "contract_order_id",
+							"type": "Number",
+							"description": "合同单id"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "电商履约单id"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "电商履约单状态"
+						},
+						{
+							"name": "cancel_status",
+							"type": "Number",
+							"description": "取消状态"
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "履约单订单号"
+						}
+					],
+					"name": "data",
+					"type": "CouponOrderStatusDto",
+					"description": "返回素材id"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "结果说明"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.alihouse.trade.coupon.order.status.query",
+	"apiChineseName": "查询电商券履约单状态",
+	"description": "查询电商券履约单状态",
+	"id": 58618
+}

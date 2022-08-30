@@ -1,8 +1,4 @@
 {
-	"id": 10582,
-	"name": "taobao.promotion.activity.get",
-	"apiChineseName": "查询某个卖家的店铺优惠券领取活动",
-	"description": "查询某个卖家的店铺优惠券领取活动\u003cbr/\u003e返回，优惠券领取活动ID，优惠券ID，总领用量，每人限领量，已领取数量\u003cbr/\u003e领取活动状态，优惠券领取链接\u003cbr/\u003e最多50个优惠券",
 	"requestParams": [
 		{
 			"name": "activity_id",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "activitys",
-			"type": "Activity []",
-			"description": "活动列表",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -56,7 +49,14 @@
 					"type": "String",
 					"description": "self代表自己创建，other他人创建"
 				}
-			]
+			],
+			"name": "activitys",
+			"type": "Activity []",
+			"description": "活动列表"
 		}
-	]
+	],
+	"name": "taobao.promotion.activity.get",
+	"apiChineseName": "查询某个卖家的店铺优惠券领取活动",
+	"description": "查询某个卖家的店铺优惠券领取活动\u003cbr/\u003e返回，优惠券领取活动ID，优惠券ID，总领用量，每人限领量，已领取数量\u003cbr/\u003e领取活动状态，优惠券领取链接\u003cbr/\u003e最多50个优惠券",
+	"id": 10582
 }

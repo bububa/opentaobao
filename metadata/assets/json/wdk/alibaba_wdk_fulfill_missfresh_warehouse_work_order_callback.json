@@ -1,14 +1,6 @@
 {
-	"id": 48891,
-	"name": "alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback",
-	"apiChineseName": "每日优鲜仓作业单回传接口",
-	"description": "家乐福仓作业单回传接口",
 	"requestParams": [
 		{
-			"name": "callback_order",
-			"type": "MissfreshO2OCallbackOrder",
-			"description": "作业单回传对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "status_change_time",
@@ -41,16 +33,8 @@
 					"required": true
 				},
 				{
-					"name": "callback_units",
-					"type": "MissfreshO2OCallbackUnit[]",
-					"description": "作业单元",
-					"required": true,
 					"subParams": [
 						{
-							"name": "callback_contents",
-							"type": "MissfreshO2OCallbackContent[]",
-							"description": "作业内容",
-							"required": true,
 							"subParams": [
 								{
 									"name": "is_shortage",
@@ -94,7 +78,11 @@
 									"description": "作业内容单号",
 									"required": true
 								}
-							]
+							],
+							"name": "callback_contents",
+							"type": "MissfreshO2OCallbackContent[]",
+							"description": "作业内容",
+							"required": true
 						},
 						{
 							"name": "work_order_unit_id",
@@ -102,7 +90,11 @@
 							"description": "作业单元单号",
 							"required": true
 						}
-					]
+					],
+					"name": "callback_units",
+					"type": "MissfreshO2OCallbackUnit[]",
+					"description": "作业单元",
+					"required": true
 				},
 				{
 					"name": "is_final",
@@ -111,9 +103,6 @@
 					"required": true
 				},
 				{
-					"name": "operator",
-					"type": "Operator",
-					"description": "操作员",
 					"subParams": [
 						{
 							"name": "operator_code",
@@ -125,12 +114,12 @@
 							"type": "String",
 							"description": "操作员姓名"
 						}
-					]
+					],
+					"name": "operator",
+					"type": "Operator",
+					"description": "操作员"
 				},
 				{
-					"name": "containers",
-					"type": "Container[]",
-					"description": "容器列表",
 					"subParams": [
 						{
 							"name": "container_type",
@@ -142,17 +131,19 @@
 							"type": "String",
 							"description": "容器code"
 						}
-					]
+					],
+					"name": "containers",
+					"type": "Container[]",
+					"description": "容器列表"
 				}
-			]
+			],
+			"name": "callback_order",
+			"type": "MissfreshO2OCallbackOrder",
+			"description": "作业单回传对象",
+			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否成功"
-		},
 		{
 			"name": "resp_message",
 			"type": "String",
@@ -162,6 +153,15 @@
 			"name": "resp_code",
 			"type": "String",
 			"description": "响应code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback",
+	"apiChineseName": "每日优鲜仓作业单回传接口",
+	"description": "家乐福仓作业单回传接口",
+	"id": 48891
 }

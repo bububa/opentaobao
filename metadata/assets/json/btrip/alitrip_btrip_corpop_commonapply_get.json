@@ -1,0 +1,120 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅审批单id",
+					"required": true
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "biz_category",
+					"type": "Number",
+					"description": "业务类型，5：机票改签审批 6：机票退票审批",
+					"required": true
+				}
+			],
+			"name": "rq",
+			"type": "OpenIsvSearchRQ",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "商旅企业id"
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅审批单id"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "审批单状态 0:审批中 1:已同意 2:已拒绝"
+						},
+						{
+							"name": "trip_cause",
+							"type": "String",
+							"description": "出差原因"
+						},
+						{
+							"name": "biz_category",
+							"type": "Number",
+							"description": "审批类型（5:机票改签审批、6:机票退票审批、3:超标审批）"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "第三方用户id"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "审批单提交时间"
+						},
+						{
+							"name": "thirdpart_corp_id",
+							"type": "String",
+							"description": "第三方企业id"
+						},
+						{
+							"name": "thirdpart_id",
+							"type": "String",
+							"description": "第三方出差审批单号"
+						},
+						{
+							"name": "extend_value",
+							"type": "String",
+							"description": "审批单扩展信息"
+						},
+						{
+							"name": "cause",
+							"type": "String",
+							"description": "申请理由"
+						}
+					],
+					"name": "module",
+					"type": "OpenIsvApplyRS",
+					"description": "审批单对象"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参对象"
+		}
+	],
+	"name": "alitrip.btrip.corpop.commonapply.get",
+	"apiChineseName": "商旅审批单通用查询接口",
+	"description": "商旅审批单通用查询接口",
+	"id": 59816
+}

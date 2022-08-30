@@ -6,22 +6,26 @@ type AppraiseIsvRefundDto struct {
 	BuyerApplyReason string `json:"buyer_apply_reason,omitempty" xml:"buyer_apply_reason,omitempty"`
 	// 买家退款说明,买家申请退款二级原因
 	BuyerApplySubReason string `json:"buyer_apply_sub_reason,omitempty" xml:"buyer_apply_sub_reason,omitempty"`
-	// 买家昵称
+	// 买家昵称（不唯一且用户可以自己更改）
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
+	// 买家申请退款描述
+	BuyerApplyDesc string `json:"buyer_apply_desc,omitempty" xml:"buyer_apply_desc,omitempty"`
 	// 退货-快递公司
 	RefundPostCompany string `json:"refund_post_company,omitempty" xml:"refund_post_company,omitempty"`
 	// 退货-快递单号
 	RefundPostNo string `json:"refund_post_no,omitempty" xml:"refund_post_no,omitempty"`
 	// 卖家同意退货说明
 	SellerAgreeMsg string `json:"seller_agree_msg,omitempty" xml:"seller_agree_msg,omitempty"`
-	// 卖家昵称
+	// 卖家昵称（不唯一且用户可以自己更改）
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
-	// 卖家拒绝退款原因
-	SellerRefuseReason string `json:"seller_refuse_reason,omitempty" xml:"seller_refuse_reason,omitempty"`
-	// 买家申请退款描述
-	BuyerApplyDesc string `json:"buyer_apply_desc,omitempty" xml:"buyer_apply_desc,omitempty"`
 	// 卖家拒绝退款说明
 	SellerRefuseMsg string `json:"seller_refuse_msg,omitempty" xml:"seller_refuse_msg,omitempty"`
+	// 卖家拒绝退款原因
+	SellerRefuseReason string `json:"seller_refuse_reason,omitempty" xml:"seller_refuse_reason,omitempty"`
+	// 加密的买家id（唯一且不会改变）
+	EncryptionBuyerId string `json:"encryption_buyer_id,omitempty" xml:"encryption_buyer_id,omitempty"`
+	// 加密的卖家id（唯一且不会改变）
+	EncryptionSellerId string `json:"encryption_seller_id,omitempty" xml:"encryption_seller_id,omitempty"`
 	// 订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 商品购买数量

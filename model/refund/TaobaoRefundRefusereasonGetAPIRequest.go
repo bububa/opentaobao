@@ -12,10 +12,10 @@ import (
 // 获取商家拒绝原因列表
 type TaobaoRefundRefusereasonGetAPIRequest struct {
 	model.Params
-	// 返回参数
-	_fields string
 	// 售中或售后
 	_refundPhase string
+	// 返回参数
+	_fields string
 	// 退款编号
 	_refundId int64
 }
@@ -41,19 +41,6 @@ func (r TaobaoRefundRefusereasonGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetFields is Fields Setter
-// 返回参数
-func (r *TaobaoRefundRefusereasonGetAPIRequest) SetFields(_fields string) error {
-	r._fields = _fields
-	r.Set("fields", _fields)
-	return nil
-}
-
-// GetFields Fields Getter
-func (r TaobaoRefundRefusereasonGetAPIRequest) GetFields() string {
-	return r._fields
-}
-
 // SetRefundPhase is RefundPhase Setter
 // 售中或售后
 func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundPhase(_refundPhase string) error {
@@ -65,6 +52,19 @@ func (r *TaobaoRefundRefusereasonGetAPIRequest) SetRefundPhase(_refundPhase stri
 // GetRefundPhase RefundPhase Getter
 func (r TaobaoRefundRefusereasonGetAPIRequest) GetRefundPhase() string {
 	return r._refundPhase
+}
+
+// SetFields is Fields Setter
+// 返回参数
+func (r *TaobaoRefundRefusereasonGetAPIRequest) SetFields(_fields string) error {
+	r._fields = _fields
+	r.Set("fields", _fields)
+	return nil
+}
+
+// GetFields Fields Getter
+func (r TaobaoRefundRefusereasonGetAPIRequest) GetFields() string {
+	return r._fields
 }
 
 // SetRefundId is RefundId Setter

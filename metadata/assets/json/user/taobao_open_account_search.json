@@ -1,8 +1,4 @@
 {
-	"id": 25157,
-	"name": "taobao.open.account.search",
-	"apiChineseName": "open account数据搜索",
-	"description": "open account数据搜索",
 	"requestParams": [
 		{
 			"name": "query",
@@ -13,14 +9,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "OpenAccountSearchResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "OpenAccount[]",
-					"description": "OpenAccount的列表",
 					"subParams": [
 						{
 							"name": "login_id",
@@ -172,7 +162,10 @@
 							"type": "Number",
 							"description": "TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "OpenAccount[]",
+					"description": "OpenAccount的列表"
 				},
 				{
 					"name": "successful",
@@ -189,7 +182,14 @@
 					"type": "String",
 					"description": "状态信息"
 				}
-			]
+			],
+			"name": "data",
+			"type": "OpenAccountSearchResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.open.account.search",
+	"apiChineseName": "open account数据搜索",
+	"description": "open account数据搜索",
+	"id": 25157
 }

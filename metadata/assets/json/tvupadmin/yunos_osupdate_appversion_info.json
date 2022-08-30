@@ -1,8 +1,4 @@
 {
-	"id": 30425,
-	"name": "yunos.osupdate.appversion.info",
-	"apiChineseName": "获取应用升级详情",
-	"description": "获取应用升级详情",
 	"requestParams": [
 		{
 			"name": "id",
@@ -13,165 +9,144 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvAppVersion",
-			"description": "data",
 			"subParams": [
 				{
-					"name": "app",
-					"type": "AppDto",
-					"description": "app",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "package_name",
 							"type": "String",
-							"description": "packageName",
-							"required": true
+							"description": "packageName"
 						}
-					]
+					],
+					"name": "app",
+					"type": "AppDto",
+					"description": "app"
 				},
 				{
 					"name": "app_zip_type",
 					"type": "String",
-					"description": "appZipType",
-					"required": true
+					"description": "appZipType"
 				},
 				{
-					"name": "device_adapter_list",
-					"type": "DeviceAdapterDto[]",
-					"description": "deviceAdapterList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "brand_id",
 							"type": "Number",
-							"description": "brandId",
-							"required": true
+							"description": "brandId"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "brandName",
-							"required": true
+							"description": "brandName"
 						},
 						{
 							"name": "highest_system_version",
 							"type": "String",
-							"description": "highestSystemVersion",
-							"required": true
+							"description": "highestSystemVersion"
 						},
 						{
 							"name": "minimum_system_version",
 							"type": "String",
-							"description": "minimumSystemVersion",
-							"required": true
+							"description": "minimumSystemVersion"
 						},
 						{
 							"name": "model_id",
 							"type": "Number",
-							"description": "modelId",
-							"required": true
+							"description": "modelId"
 						},
 						{
 							"name": "model_name",
 							"type": "String",
-							"description": "modelName",
-							"required": true
+							"description": "modelName"
 						},
 						{
 							"name": "real_type_id",
 							"type": "Number",
-							"description": "realTypeId",
-							"required": true
+							"description": "realTypeId"
 						},
 						{
 							"name": "real_type_name",
 							"type": "String",
-							"description": "realTypeName",
-							"required": true
+							"description": "realTypeName"
 						}
-					]
+					],
+					"name": "device_adapter_list",
+					"type": "DeviceAdapterDto[]",
+					"description": "deviceAdapterList"
 				},
 				{
 					"name": "download_path",
 					"type": "String",
-					"description": "downloadPath",
-					"required": true
+					"description": "downloadPath"
 				},
 				{
 					"name": "downloadmd5",
 					"type": "String",
-					"description": "downloadmd5",
-					"required": true
+					"description": "downloadmd5"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modify",
 					"type": "Date",
-					"description": "gmtModify",
-					"required": true
+					"description": "gmtModify"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "id",
-					"required": true
+					"description": "id"
 				},
 				{
 					"name": "need_restart",
 					"type": "String",
-					"description": "needRestart",
-					"required": true
+					"description": "needRestart"
 				},
 				{
 					"name": "release_note",
 					"type": "String",
-					"description": "releaseNote",
-					"required": true
+					"description": "releaseNote"
 				},
 				{
 					"name": "size",
 					"type": "String",
-					"description": "size",
-					"required": true
+					"description": "size"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "status",
-					"required": true
+					"description": "status"
 				},
 				{
 					"name": "version",
 					"type": "String",
-					"description": "version",
-					"required": true
+					"description": "version"
 				},
 				{
 					"name": "version_code",
 					"type": "Number",
-					"description": "versionCode",
-					"required": true
+					"description": "versionCode"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvAppVersion",
+			"description": "data"
 		}
-	]
+	],
+	"name": "yunos.osupdate.appversion.info",
+	"apiChineseName": "获取应用升级详情",
+	"description": "获取应用升级详情",
+	"id": 30425
 }

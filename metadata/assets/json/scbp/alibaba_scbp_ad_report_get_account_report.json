@@ -1,20 +1,26 @@
 {
-	"id": 55196,
-	"name": "alibaba.scbp.ad.report.get.account.report",
-	"apiChineseName": "账户报告",
-	"description": "账户报告",
 	"requestParams": [
 		{
-			"name": "account_report_operation",
-			"type": "AccountReportOperationDto",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "campaign_ids",
-					"type": "Number[]",
-					"description": "计划id集合"
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
 				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"subParams": [
 				{
 					"name": "date_begin",
 					"type": "String",
@@ -40,73 +46,56 @@
 					"type": "Number",
 					"description": "campaignId"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id"
-				}
-			]
+			],
+			"name": "account_report_operation",
+			"type": "AccountReportOperationDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AccountReportDto",
-			"description": "返回参数",
 			"subParams": [
 				{
-					"name": "account_effect_list",
-					"type": "AccountEffectDto[]",
-					"description": "返回数据集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "日期(yyyy-MM-dd)",
-							"required": true
+							"description": "日期(yyyy-MM-dd)"
 						},
 						{
 							"name": "impr",
 							"type": "String",
-							"description": "曝光",
-							"required": true
+							"description": "曝光"
 						},
 						{
 							"name": "click",
 							"type": "String",
-							"description": "点击",
-							"required": true
+							"description": "点击"
 						},
 						{
 							"name": "cost",
 							"type": "String",
-							"description": "消耗",
-							"required": true
+							"description": "消耗"
 						},
 						{
 							"name": "online_min",
 							"type": "String",
-							"description": "推广时长",
-							"required": true
+							"description": "推广时长"
 						}
-					]
+					],
+					"name": "account_effect_list",
+					"type": "AccountEffectDto[]",
+					"description": "返回数据集合"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AccountReportDto",
+			"description": "返回参数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.report.get.account.report",
+	"apiChineseName": "账户报告",
+	"description": "账户报告",
+	"id": 55196
 }

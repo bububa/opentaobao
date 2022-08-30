@@ -1,8 +1,4 @@
 {
-	"id": 48478,
-	"name": "alibaba.alihealth.nocov.alldiseaseinfo.get",
-	"apiChineseName": "获取全国疫情统计数据",
-	"description": "获取全国疫情统计数据",
 	"requestParams": [
 		{
 			"name": "province",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "errMessage"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.nocov.alldiseaseinfo.get",
+	"apiChineseName": "获取全国疫情统计数据",
+	"description": "获取全国疫情统计数据",
+	"id": 48478
 }

@@ -1,8 +1,4 @@
 {
-	"id": 47639,
-	"name": "alibaba.ais.assets.tag.get",
-	"apiChineseName": "基础设施资产标签获取",
-	"description": "提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code获取",
 	"requestParams": [
 		{
 			"name": "u_nonce",
@@ -13,97 +9,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseRep",
-			"description": "最外层结果",
 			"subParams": [
 				{
-					"name": "code",
-					"type": "String",
-					"description": "接口请求返回码",
-					"required": true
-				},
-				{
-					"name": "msg",
-					"type": "String",
-					"description": "接口请求返回消息",
-					"required": true
-				},
-				{
-					"name": "datas",
-					"type": "AssetQrCodeDto[]",
-					"description": "内层大对象",
-					"required": true,
 					"subParams": [
+						{
+							"name": "qr_code_string_list",
+							"type": "String[]",
+							"description": "生产二维码信息字符串"
+						},
 						{
 							"name": "mpn",
 							"type": "String",
-							"description": "阿里侧部件型号(请求参数)",
-							"required": true
+							"description": "阿里侧部件型号(请求参数)"
 						},
 						{
 							"name": "sn",
 							"type": "String",
-							"description": "实物SN(请求参数)",
-							"required": true
-						},
-						{
-							"name": "quantity",
-							"type": "String",
-							"description": "请求生产条码数量",
-							"required": true
-						},
-						{
-							"name": "manufacture",
-							"type": "String",
-							"description": "厂商代码(请求参数)",
-							"required": true
-						},
-						{
-							"name": "nonce",
-							"type": "String",
-							"description": "单批次请求唯一标识",
-							"required": true
-						},
-						{
-							"name": "qr_code_string_list",
-							"type": "String[]",
-							"description": "生产二维码信息字符串",
-							"required": true
+							"description": "实物SN(请求参数)"
 						},
 						{
 							"name": "device_brand_code",
 							"type": "String",
-							"description": "整机厂商code(请求参数)",
-							"required": true
+							"description": "整机厂商code(请求参数)"
 						},
 						{
 							"name": "spare_brand_code",
 							"type": "String",
-							"description": "配件厂商code(请求参数)",
-							"required": true
+							"description": "配件厂商code(请求参数)"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "请求生产条码数量"
 						},
 						{
 							"name": "entity_source",
 							"type": "String",
-							"description": "实物来源",
-							"required": true
+							"description": "实物来源"
 						},
 						{
 							"name": "asset_type",
 							"type": "String",
-							"description": "资产类型",
-							"required": true
+							"description": "资产类型"
+						},
+						{
+							"name": "manufacture",
+							"type": "String",
+							"description": "厂商代码(请求参数)"
 						},
 						{
 							"name": "spare_category_code",
 							"type": "String",
-							"description": "配件类型code(请求参数)",
-							"required": true
+							"description": "配件类型code(请求参数)"
+						},
+						{
+							"name": "nonce",
+							"type": "String",
+							"description": "单批次请求唯一标识"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "AssetQrCodeDto[]",
+					"description": "内层大对象"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "接口请求返回码"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "接口请求返回消息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseRep",
+			"description": "最外层结果"
 		}
-	]
+	],
+	"name": "alibaba.ais.assets.tag.get",
+	"apiChineseName": "基础设施资产标签获取",
+	"description": "提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code获取",
+	"id": 47639
 }

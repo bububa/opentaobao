@@ -1,15 +1,11 @@
 {
-	"id": 50268,
-	"name": "taobao.miniapp.distribution.items.bind",
-	"apiChineseName": "小程序投放-商品绑定/解绑",
-	"description": "提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。",
 	"requestParams": [
 		{
 			"name": "target_entity_list",
 			"type": "String[]",
 			"description": "商品id列表",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "url",
@@ -26,49 +22,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "model_list",
-			"type": "DistributionOrderBindTargetEntityOpenResultDto []",
-			"description": "绑定的结果列表",
 			"subParams": [
 				{
 					"name": "url",
 					"type": "String",
-					"description": "绑定的目标url",
-					"required": true
+					"description": "绑定的目标url"
 				},
 				{
 					"name": "scene_name",
 					"type": "String",
-					"description": "绑定投放的场景",
-					"required": true
+					"description": "绑定投放的场景"
 				},
 				{
-					"name": "bind_result_list",
-					"type": "DistributionOrderBindBaseDto[]",
-					"description": "商品列表的绑定结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "target_entity_id",
 							"type": "String",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
 							"name": "fail_msg",
 							"type": "String",
-							"description": "失败的原因",
-							"required": true
+							"description": "失败的原因"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "绑定是否成功",
-							"required": true
+							"description": "绑定是否成功"
 						}
-					]
+					],
+					"name": "bind_result_list",
+					"type": "DistributionOrderBindBaseDto[]",
+					"description": "商品列表的绑定结果"
 				}
-			]
+			],
+			"name": "model_list",
+			"type": "DistributionOrderBindTargetEntityOpenResultDto []",
+			"description": "绑定的结果列表"
 		}
-	]
+	],
+	"name": "taobao.miniapp.distribution.items.bind",
+	"apiChineseName": "【已废弃】小程序投放-商品绑定/解绑",
+	"description": "【已废弃，请使用 taobao.miniapp.distribution.order.items.bind 接口】提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。",
+	"id": 50268
 }

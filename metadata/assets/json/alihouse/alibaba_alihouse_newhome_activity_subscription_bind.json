@@ -1,0 +1,159 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_sales_activity_id",
+					"type": "String",
+					"description": "外部销售活动id",
+					"required": true
+				},
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				},
+				{
+					"name": "project_cid",
+					"type": "Number",
+					"description": "结算账户关联的主体公司id",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "认购商品id",
+					"required": true
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "认购商品名称"
+				},
+				{
+					"name": "show_title",
+					"type": "String",
+					"description": "认购商品楼盘页展示标题"
+				},
+				{
+					"name": "pre_deposit_item_id",
+					"type": "Number",
+					"description": "预存金商品id"
+				},
+				{
+					"name": "pre_deposit_item_name",
+					"type": "String",
+					"description": "预存金商品名称"
+				},
+				{
+					"name": "pre_deposit_item_title",
+					"type": "String",
+					"description": "预存金商品显示标题"
+				},
+				{
+					"name": "settle_aid",
+					"type": "Number",
+					"description": "结算账户id",
+					"required": true
+				},
+				{
+					"name": "sign_type",
+					"type": "Number",
+					"description": "1- 线上  2-线下",
+					"required": true
+				},
+				{
+					"name": "sign_timeout_time",
+					"type": "Number",
+					"description": "签约超时时间(分钟)",
+					"required": true
+				},
+				{
+					"name": "elec_signature_id",
+					"type": "Number",
+					"description": "线上签约-电子签章id"
+				},
+				{
+					"name": "elec_agreement_id",
+					"type": "Number",
+					"description": "线上签约-电子协议id"
+				},
+				{
+					"name": "seal_type",
+					"type": "Number",
+					"description": "线上签约-盖章方式"
+				},
+				{
+					"name": "sign_online_time_type",
+					"type": "Number",
+					"description": "线上签约-网签时间方式"
+				},
+				{
+					"name": "sign_online_time_val",
+					"type": "String",
+					"description": "线上签约-网签时间值"
+				},
+				{
+					"name": "buy_limit",
+					"type": "Number",
+					"description": "限制购买数量",
+					"required": true
+				},
+				{
+					"name": "outer_payment_ids",
+					"type": "String[]",
+					"description": "外部支付方式id集合",
+					"required": true
+				},
+				{
+					"name": "is_async_sell",
+					"type": "Number",
+					"description": "是否异步销控",
+					"required": true
+				}
+			],
+			"name": "subscription_item_dto",
+			"type": "SubscriptionItemDTO",
+			"description": "入参属性值"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否保存成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回报文参数"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.activity.subscription.bind",
+	"apiChineseName": "销售活动绑定认购商品",
+	"description": "销售活动绑定认购商品",
+	"id": 62501
+}

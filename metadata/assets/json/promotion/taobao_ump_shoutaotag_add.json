@@ -1,8 +1,4 @@
 {
-	"id": 24886,
-	"name": "taobao.ump.shoutaotag.add",
-	"apiChineseName": "手淘定向优惠打标接口",
-	"description": "手淘定向优惠的优惠标签打标接口\n给特定的手淘买家打上优惠标记，标记承载在自己的业务标签库中，标签有效期为7天。",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "是否打标成功"
 		}
-	]
+	],
+	"name": "taobao.ump.shoutaotag.add",
+	"apiChineseName": "手淘定向优惠打标接口",
+	"description": "手淘定向优惠的优惠标签打标接口\n给特定的手淘买家打上优惠标记，标记承载在自己的业务标签库中，标签有效期为7天。",
+	"id": 24886
 }

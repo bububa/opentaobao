@@ -1,8 +1,4 @@
 {
-	"id": 32101,
-	"name": "alibaba.icbu.quotation.post",
-	"apiChineseName": "供应商提交报价",
-	"description": "供应商对RFQ进行报价",
 	"requestParams": [
 		{
 			"name": "md5key",
@@ -10,9 +6,6 @@
 			"description": "验证"
 		},
 		{
-			"name": "dto",
-			"type": "RfqQuotationRemoteDto",
-			"description": "报价DTO",
 			"subParams": [
 				{
 					"name": "details",
@@ -26,9 +19,6 @@
 					"description": "附件file_str,请通过调用alibaba.icbu.annex.upload结果作为入参"
 				},
 				{
-					"name": "sample",
-					"type": "RfqQuotationPriceRemoteDTO",
-					"description": "样本",
 					"subParams": [
 						{
 							"name": "remark",
@@ -37,7 +27,7 @@
 						},
 						{
 							"name": "estimated_date",
-							"type": "String",
+							"type": "BigDecimal",
 							"description": "预计时间"
 						},
 						{
@@ -55,12 +45,12 @@
 							"type": "String",
 							"description": "是否提供样本"
 						}
-					]
+					],
+					"name": "sample",
+					"type": "RfqQuotationPriceRemoteDTO",
+					"description": "样本"
 				},
 				{
-					"name": "price_list",
-					"type": "PriceList[]",
-					"description": "报价列表",
 					"subParams": [
 						{
 							"name": "port",
@@ -120,7 +110,10 @@
 							"description": "价格单位",
 							"required": true
 						}
-					]
+					],
+					"name": "price_list",
+					"type": "PriceList[]",
+					"description": "报价列表"
 				},
 				{
 					"name": "rfq_id",
@@ -140,48 +133,50 @@
 					"description": "过期时间",
 					"required": true
 				}
-			]
+			],
+			"name": "dto",
+			"type": "RfqQuotationRemoteDto",
+			"description": "报价DTO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RfqRemoteServiceResult",
-			"description": "请求返回结果信息",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "result",
-					"type": "RfqQuotationRemoteDto",
-					"description": "返回结果信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "报价ID",
-							"required": true
+							"description": "报价ID"
 						}
-					]
+					],
+					"name": "result",
+					"type": "RfqQuotationRemoteDto",
+					"description": "返回结果信息"
 				},
 				{
 					"name": "err_type",
-					"type": "Json",
-					"description": "错误类型",
-					"required": true
+					"type": "String",
+					"description": "错误类型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RfqRemoteServiceResult",
+			"description": "请求返回结果信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.quotation.post",
+	"apiChineseName": "供应商提交报价",
+	"description": "供应商对RFQ进行报价",
+	"id": 32101
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27111,
-	"name": "cainiao.cloudprint.clientinfo.put",
-	"apiChineseName": "云打印客户端监控信息收集",
-	"description": "云打印客户端监控信息收集",
 	"requestParams": [
 		{
 			"name": "json_data",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
@@ -41,7 +34,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.clientinfo.put",
+	"apiChineseName": "云打印客户端监控信息收集",
+	"description": "云打印客户端监控信息收集",
+	"id": 27111
 }

@@ -1,8 +1,4 @@
 {
-	"id": 56524,
-	"name": "alibaba.alihealth.drug.code.error.report",
-	"apiChineseName": "码信息错误上报",
-	"description": "提供码信息错误上报功能，用于数据校对",
 	"requestParams": [
 		{
 			"name": "code",
@@ -71,5 +67,9 @@
 			"type": "Boolean",
 			"description": "接口调用状态"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.code.error.report",
+	"apiChineseName": "码信息错误上报",
+	"description": "提供码信息错误上报功能，用于数据校对",
+	"id": 56524
 }

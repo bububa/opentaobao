@@ -1,21 +1,19 @@
 {
-	"id": 43561,
-	"name": "aliexpress.solution.schema.product.instance.post",
-	"apiChineseName": "aliexpress.solution.schema.product.instance.post",
-	"description": "Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.",
 	"requestParams": [
 		{
 			"name": "product_instance_request",
 			"type": "String",
-			"description": "Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456\u0026docType=2",
+			"description": "Product instance data. The relative parameters description in schema json String are same as \"aliexpress.solution.product.post\" .Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456\u0026docType=2",
 			"required": true
+		},
+		{
+			"name": "developer_features",
+			"type": "String",
+			"description": "More information of the request."
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PostItemResponseDto",
-			"description": "result of the product posting",
 			"subParams": [
 				{
 					"name": "product_id",
@@ -23,7 +21,14 @@
 					"description": "product id",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PostItemResponseDto",
+			"description": "result of the product posting"
 		}
-	]
+	],
+	"name": "aliexpress.solution.schema.product.instance.post",
+	"apiChineseName": "aliexpress.solution.schema.product.instance.post",
+	"description": "Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.",
+	"id": 43561
 }

@@ -24,12 +24,12 @@ type DeviceApiQuery struct {
 	NameOrCode string `json:"name_or_code,omitempty" xml:"name_or_code,omitempty"`
 	// 根据设备code精确匹配
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 园区id
+	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 分页大小
 	Limit int64 `json:"limit,omitempty" xml:"limit,omitempty"`
 	// 当前页
 	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
-	// 园区id
-	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 楼层id
 	FloorId int64 `json:"floor_id,omitempty" xml:"floor_id,omitempty"`
 	// 空间单元id

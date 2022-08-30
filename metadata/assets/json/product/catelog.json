@@ -1,5 +1,5 @@
 {
-  "id": 4,
   "name": "商品API",
-  "pkg": "product"
+  "pkg": "product",
+  "id": 4
 }

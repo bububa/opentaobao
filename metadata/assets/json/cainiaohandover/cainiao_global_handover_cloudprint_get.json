@@ -1,22 +1,5 @@
 {
-	"id": 46427,
-	"name": "cainiao.global.handover.cloudprint.get",
-	"apiChineseName": "获取面单云打印数据",
-	"description": "提供给ISV通过该接口获取面单云打印数据",
 	"requestParams": [
-		{
-			"name": "user_info",
-			"type": "UserInfoDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "top_user_key",
-					"type": "String",
-					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
-				}
-			]
-		},
 		{
 			"name": "tracking_number",
 			"type": "String",
@@ -24,15 +7,28 @@
 			"required": true
 		},
 		{
-			"name": "client",
-			"type": "String",
-			"description": "ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
-			"required": true
-		},
-		{
 			"name": "order_code",
 			"type": "String",
 			"description": "大包物流单LP号",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "top_user_key",
+					"type": "String",
+					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
+				}
+			],
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
 			"required": true
 		},
 		{
@@ -43,49 +39,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HsfResult",
-			"description": "请求结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求处理是否成功",
-					"required": true
+					"description": "请求处理是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "异常码",
-					"required": true
+					"description": "异常码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "CloudPrintDataGetResponse",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "print_data",
 							"type": "String",
-							"description": "面单云打印数据",
-							"required": true
+							"description": "面单云打印数据"
 						},
 						{
 							"name": "print_data_md5",
 							"type": "String",
-							"description": "面单云打印数据MD5加密串",
-							"required": true
+							"description": "面单云打印数据MD5加密串"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CloudPrintDataGetResponse",
+					"description": "响应数据"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.handover.cloudprint.get",
+	"apiChineseName": "获取面单云打印数据",
+	"description": "提供给ISV通过该接口获取面单云打印数据",
+	"id": 46427
 }

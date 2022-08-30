@@ -1,13 +1,6 @@
 {
-	"id": 56179,
-	"name": "alitrip.btrip.hotel.distribution.search.static",
-	"apiChineseName": "商旅酒店api分销-酒店静态信息接口",
-	"description": "商旅酒店api分销-酒店静态信息接口",
 	"requestParams": [
 		{
-			"name": "param_hotel_info_r_q",
-			"type": "HotelInfoRq",
-			"description": "基础信息入参",
 			"subParams": [
 				{
 					"name": "city_code",
@@ -32,287 +25,265 @@
 					"type": "String",
 					"description": "渠道子ID",
 					"required": true
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店id"
+				},
+				{
+					"name": "isv_name",
+					"type": "String",
+					"description": "可选项，自定义渠道名称（用于创建渠道）"
 				}
-			]
+			],
+			"name": "param_hotel_info_r_q",
+			"type": "HotelInfoRq",
+			"description": "基础信息入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "返回报文",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "HotelInfoListRs",
-					"description": "返回报文",
-					"required": true,
 					"subParams": [
 						{
-							"name": "hotels",
-							"type": "HotelDto[]",
-							"description": "基础酒店数据列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "bnb_hotel",
 									"type": "Boolean",
-									"description": "是否是客栈",
-									"required": true
+									"description": "是否是客栈"
 								},
 								{
 									"name": "brand",
 									"type": "String",
-									"description": "品牌",
-									"required": true
+									"description": "品牌"
 								},
 								{
 									"name": "check_in_time",
 									"type": "String",
-									"description": "入住时间",
-									"required": true
+									"description": "入住时间"
 								},
 								{
 									"name": "check_out_time",
 									"type": "String",
-									"description": "离店时间",
-									"required": true
+									"description": "离店时间"
 								},
 								{
 									"name": "city",
 									"type": "Number",
-									"description": "市级代码",
-									"required": true
+									"description": "市级代码"
 								},
 								{
 									"name": "decorate_time",
 									"type": "String",
-									"description": "装修时间",
-									"required": true
+									"description": "装修时间"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "酒店描述",
-									"required": true
+									"description": "酒店描述"
 								},
 								{
 									"name": "district",
 									"type": "Number",
-									"description": "地区代码",
-									"required": true
+									"description": "地区代码"
 								},
 								{
 									"name": "h5_detail_url",
 									"type": "String",
-									"description": "h5的detail页面的url",
-									"required": true
+									"description": "h5的detail页面的url"
 								},
 								{
 									"name": "hotel_facilities",
 									"type": "String",
-									"description": "酒店设施",
-									"required": true
+									"description": "酒店设施"
 								},
 								{
 									"name": "lat",
 									"type": "String",
-									"description": "维度",
-									"required": true
+									"description": "维度"
 								},
 								{
 									"name": "lng",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "酒店名称",
-									"required": true
+									"description": "酒店名称"
 								},
 								{
 									"name": "opening_time",
 									"type": "String",
-									"description": "开业时间",
-									"required": true
+									"description": "开业时间"
 								},
 								{
 									"name": "pc_detail_url",
 									"type": "String",
-									"description": "酒店详情页的URL",
-									"required": true
+									"description": "酒店详情页的URL"
 								},
 								{
 									"name": "pic_urls",
 									"type": "String",
-									"description": "图片地址",
-									"required": true
+									"description": "图片地址"
 								},
 								{
 									"name": "province",
 									"type": "Number",
-									"description": "省级diamante",
-									"required": true
+									"description": "省级diamante"
 								},
 								{
 									"name": "rate_number",
 									"type": "Number",
-									"description": "评论数",
-									"required": true
+									"description": "评论数"
 								},
 								{
 									"name": "rate_score",
 									"type": "String",
-									"description": "评分",
-									"required": true
+									"description": "评分"
 								},
 								{
-									"name": "rooms",
-									"type": "RoomTypeDto[]",
-									"description": "房间列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "area",
 											"type": "String",
-											"description": "面积",
-											"required": true
+											"description": "面积"
 										},
 										{
 											"name": "bed",
 											"type": "String",
-											"description": "床型",
-											"required": true
+											"description": "床型"
 										},
 										{
 											"name": "facility",
 											"type": "String",
-											"description": "设施",
-											"required": true
+											"description": "设施"
 										},
 										{
 											"name": "floor",
 											"type": "String",
-											"description": "楼层",
-											"required": true
+											"description": "楼层"
 										},
 										{
 											"name": "internet",
 											"type": "String",
-											"description": "宽带类型",
-											"required": true
+											"description": "宽带类型"
 										},
 										{
 											"name": "max_occupancy",
 											"type": "Number",
-											"description": "最大入住人数",
-											"required": true
+											"description": "最大入住人数"
 										},
 										{
 											"name": "pic_url",
 											"type": "String",
-											"description": "图片地址",
-											"required": true
+											"description": "图片地址"
 										},
 										{
 											"name": "shid",
 											"type": "Number",
-											"description": "酒店Id",
-											"required": true
+											"description": "酒店Id"
 										},
 										{
 											"name": "srid",
 											"type": "Number",
-											"description": "房型Id",
-											"required": true
+											"description": "房型Id"
 										},
 										{
 											"name": "window_type",
 											"type": "String",
-											"description": "窗型",
-											"required": true
+											"description": "窗型"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "房型名称"
 										}
-									]
+									],
+									"name": "rooms",
+									"type": "RoomTypeDto[]",
+									"description": "房间列表"
 								},
 								{
 									"name": "services_str",
 									"type": "String",
-									"description": "服务设施",
-									"required": true
+									"description": "服务设施"
 								},
 								{
 									"name": "shid",
 									"type": "Number",
-									"description": "酒店标准ID",
-									"required": true
+									"description": "酒店标准ID"
 								},
 								{
 									"name": "star",
 									"type": "String",
-									"description": "星级",
-									"required": true
+									"description": "星级"
 								},
 								{
 									"name": "status",
-									"type": "byte",
-									"description": "状态，0,营业中；-1，筹建中；-2，暂停营业；-3，已停业；默认为0",
-									"required": true
+									"type": "Number",
+									"description": "状态，0,营业中；-1，筹建中；-2，暂停营业；-3，已停业；默认为0"
 								},
 								{
 									"name": "supplier_code",
 									"type": "String",
-									"description": "供应商ID",
-									"required": true
+									"description": "供应商ID"
 								},
 								{
 									"name": "supplier_name",
 									"type": "String",
-									"description": "供应商名称",
-									"required": true
+									"description": "供应商名称"
 								},
 								{
 									"name": "tel",
 									"type": "String",
-									"description": "电话",
-									"required": true
+									"description": "电话"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "酒店类型",
-									"required": true
+									"description": "酒店类型"
 								}
-							]
+							],
+							"name": "hotels",
+							"type": "HotelDto[]",
+							"description": "基础酒店数据列表"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "酒店数量",
-							"required": true
+							"description": "酒店数量"
 						}
-					]
+					],
+					"name": "module",
+					"type": "HotelInfoListRs",
+					"description": "返回报文"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回状态",
-					"required": true
+					"description": "返回状态"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误状态",
-					"required": true
+					"description": "错误状态"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "返回报文"
 		}
-	]
+	],
+	"name": "alitrip.btrip.hotel.distribution.search.static",
+	"apiChineseName": "商旅酒店api分销-酒店静态信息接口",
+	"description": "商旅酒店api分销-酒店静态信息接口",
+	"id": 56179
 }

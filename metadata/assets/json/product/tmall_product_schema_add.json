@@ -1,8 +1,4 @@
 {
-	"id": 23260,
-	"name": "tmall.product.schema.add",
-	"apiChineseName": "使用Schema文件发布一个产品",
-	"description": "Schema体系发布一个产品",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "新发产品结果"
 		}
-	]
+	],
+	"name": "tmall.product.schema.add",
+	"apiChineseName": "使用Schema文件发布一个产品",
+	"description": "Schema体系发布一个产品",
+	"id": 23260
 }

@@ -1,8 +1,4 @@
 {
-	"id": 45628,
-	"name": "alibaba.idle.rent.item.query",
-	"apiChineseName": "查询租赁商品信息",
-	"description": "查询租赁商品信息",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -12,183 +8,160 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "used_level",
 							"type": "Number",
-							"description": "新旧水平",
-							"required": true
+							"description": "新旧水平"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "库存",
-							"required": true
+							"description": "库存"
 						},
 						{
-							"name": "address",
-							"type": "AddressDto",
-							"description": "地址信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "区",
-									"required": true
+									"description": "区"
 								},
 								{
 									"name": "city",
 									"type": "String",
-									"description": "市",
-									"required": true
+									"description": "市"
 								},
 								{
 									"name": "prov",
 									"type": "String",
-									"description": "省",
-									"required": true
+									"description": "省"
 								}
-							]
+							],
+							"name": "address",
+							"type": "AddressDto",
+							"description": "地址信息"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "标题",
-							"required": true
+							"description": "标题"
 						},
 						{
-							"name": "item_sku_list",
-							"type": "ItemSkuDto[]",
-							"description": "商品sku信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "库存",
-									"required": true
+									"description": "库存"
 								},
 								{
-									"name": "prop_list",
-									"type": "ItemPvPairDto[]",
-									"description": "sku属性列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "value_text",
 											"type": "String",
-											"description": "属性值",
-											"required": true
+											"description": "属性值"
 										},
 										{
 											"name": "prop_text",
 											"type": "String",
-											"description": "属性",
-											"required": true
+											"description": "属性"
 										}
-									]
+									],
+									"name": "prop_list",
+									"type": "ItemPvPairDto[]",
+									"description": "sku属性列表"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "sku id",
-									"required": true
+									"description": "sku id"
 								}
-							]
+							],
+							"name": "item_sku_list",
+							"type": "ItemSkuDto[]",
+							"description": "商品sku信息"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
-							"name": "price_info",
-							"type": "PriceDto",
-							"description": "价格信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "reserve_price",
 									"type": "Number",
-									"description": "买断价，单位分",
-									"required": true
+									"description": "买断价，单位分"
 								},
 								{
 									"name": "original_price",
 									"type": "Number",
-									"description": "市场价，单位分",
-									"required": true
+									"description": "市场价，单位分"
 								},
 								{
 									"name": "star",
 									"type": "String",
-									"description": "星级",
-									"required": true
+									"description": "星级"
 								},
 								{
 									"name": "deposit",
 									"type": "Number",
-									"description": "押金，单位分",
-									"required": true
+									"description": "押金，单位分"
 								},
 								{
 									"name": "settle_price_per_day",
 									"type": "Number",
-									"description": "日结算价格，单位分",
-									"required": true
+									"description": "日结算价格，单位分"
 								}
-							]
+							],
+							"name": "price_info",
+							"type": "PriceDto",
+							"description": "价格信息"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "商品状态",
-							"required": true
+							"description": "商品状态"
 						},
 						{
 							"name": "template_id",
 							"type": "Number",
-							"description": "运费模板id",
-							"required": true
+							"description": "运费模板id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回素材id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "数据是否可用",
-					"required": true
+					"description": "数据是否可用"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.rent.item.query",
+	"apiChineseName": "查询租赁商品信息",
+	"description": "查询租赁商品信息",
+	"id": 45628
 }

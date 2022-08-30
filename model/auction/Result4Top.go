@@ -12,4 +12,6 @@ type Result4Top struct {
 	TotalItem int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+	// 数据接收成功为true，失败false
+	Value bool `json:"value,omitempty" xml:"value,omitempty"`
 }

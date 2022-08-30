@@ -1,13 +1,6 @@
 {
-	"id": 47786,
-	"name": "alibaba.lst.trade.shiporder.query",
-	"apiChineseName": "供应商数据开放--发货单接口",
-	"description": "供应商数据开放--发货单接口",
 	"requestParams": [
 		{
-			"name": "param_lst_ship_order_query",
-			"type": "LstShipOrderQuery",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "distributor_name",
@@ -49,246 +42,215 @@
 					"description": "每页最大主订单数，注意：返回的content_list数据按照子订单维度展开",
 					"required": true
 				}
-			]
+			],
+			"name": "param_lst_ship_order_query",
+			"type": "LstShipOrderQuery",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PagedResultDto",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "content_list",
-					"type": "LstShipOrderDto[]",
-					"description": "发货单列表子，按照子订单维度展开",
-					"required": true,
 					"subParams": [
 						{
 							"name": "main_ship_order_id",
 							"type": "String",
-							"description": "主发货单号",
-							"required": true
+							"description": "主发货单号"
 						},
 						{
 							"name": "main_order_id",
 							"type": "String",
-							"description": "交易订单号",
-							"required": true
+							"description": "交易订单号"
 						},
 						{
 							"name": "disused",
 							"type": "String",
-							"description": "发货单是否作废",
-							"required": true
+							"description": "发货单是否作废"
 						},
 						{
 							"name": "source_name",
 							"type": "String",
-							"description": "发货单来源",
-							"required": true
+							"description": "发货单来源"
 						},
 						{
 							"name": "new_main_order_id",
 							"type": "String",
-							"description": "作废后生成新主订单号",
-							"required": true
+							"description": "作废后生成新主订单号"
 						},
 						{
 							"name": "sub_order_id",
 							"type": "String",
-							"description": "子交易订单号",
-							"required": true
+							"description": "子交易订单号"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "barcode",
 							"type": "String",
-							"description": "商品条码",
-							"required": true
+							"description": "商品条码"
 						},
 						{
 							"name": "cargo_num",
 							"type": "String",
-							"description": "商品货号",
-							"required": true
+							"description": "商品货号"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "单价",
-							"required": true
+							"description": "单价"
 						},
 						{
 							"name": "item_amount",
 							"type": "String",
-							"description": "实付金额",
-							"required": true
+							"description": "实付金额"
 						},
 						{
 							"name": "refund_info",
 							"type": "String",
-							"description": "是否申请退款",
-							"required": true
+							"description": "是否申请退款"
 						},
 						{
 							"name": "gmt_create_time",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "shop_name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "门店编码或ID",
-							"required": true
+							"description": "门店编码或ID"
 						},
 						{
 							"name": "shop_alias_name",
 							"type": "String",
-							"description": "门店别名",
-							"required": true
+							"description": "门店别名"
 						},
 						{
 							"name": "province",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "区",
-							"required": true
+							"description": "区"
 						},
 						{
 							"name": "town",
 							"type": "String",
-							"description": "街道",
-							"required": true
+							"description": "街道"
 						},
 						{
 							"name": "detail_address",
 							"type": "String",
-							"description": "详细地址",
-							"required": true
+							"description": "详细地址"
 						},
 						{
 							"name": "status_name",
 							"type": "String",
-							"description": "发货单状态",
-							"required": true
+							"description": "发货单状态"
 						},
 						{
 							"name": "load_time",
 							"type": "String",
-							"description": "发货时间",
-							"required": true
+							"description": "发货时间"
 						},
 						{
 							"name": "sign_time",
 							"type": "String",
-							"description": "签收时间",
-							"required": true
+							"description": "签收时间"
 						},
 						{
 							"name": "vehicle_info",
 							"type": "String",
-							"description": "车辆信息",
-							"required": true
+							"description": "车辆信息"
 						},
 						{
 							"name": "driver_info",
 							"type": "String",
-							"description": "配送司机",
-							"required": true
+							"description": "配送司机"
 						},
 						{
 							"name": "distributor_name",
 							"type": "String",
-							"description": "配送商名称",
-							"required": true
+							"description": "配送商名称"
 						},
 						{
 							"name": "distributor_phone",
 							"type": "String",
-							"description": "钉钉手机号",
-							"required": true
+							"description": "钉钉手机号"
 						},
 						{
 							"name": "print_times",
 							"type": "String",
-							"description": "打印次数",
-							"required": true
+							"description": "打印次数"
 						},
 						{
 							"name": "gmt_update_time",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "LstShipOrderDto[]",
+					"description": "发货单列表子，按照子订单维度展开"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码，如果是100002，说明返回数据量太大，应该缩小时间范围，重新发起请求",
-					"required": true
+					"description": "错误码，如果是100002，说明返回数据量太大，应该缩小时间范围，重新发起请求"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "每页最大主订单数量",
-					"required": true
+					"description": "每页最大主订单数量"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总主订单数",
-					"required": true
+					"description": "总主订单数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PagedResultDto",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.shiporder.query",
+	"apiChineseName": "供应商数据开放--发货单接口",
+	"description": "供应商数据开放--发货单接口",
+	"id": 47786
 }

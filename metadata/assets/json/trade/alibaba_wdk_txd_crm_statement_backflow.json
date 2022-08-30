@@ -1,13 +1,6 @@
 {
-	"id": 47981,
-	"name": "alibaba.wdk.txd.crm.statement.backflow",
-	"apiChineseName": "淘鲜达商家会员账单回流",
-	"description": "淘鲜达商家会员账单回流",
 	"requestParams": [
 		{
-			"name": "param_statement_b_o",
-			"type": "StatementBo",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "amount",
@@ -56,40 +49,43 @@
 					"description": "支付方式 ALIPAY(1, \"支付宝\"),     WECHAT(2, \"微信\"),     CASH(3, \"现金\"),     VALUE_CARD(4, \"储值卡\"),     OTHER(99, \"其他\")",
 					"required": true
 				}
-			]
+			],
+			"name": "param_statement_b_o",
+			"type": "StatementBo",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误码描述",
-					"required": true
+					"description": "错误码描述"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "模型",
-					"required": true
+					"type": "String",
+					"description": "模型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.txd.crm.statement.backflow",
+	"apiChineseName": "淘鲜达商家会员账单回流",
+	"description": "淘鲜达商家会员账单回流",
+	"id": 47981
 }

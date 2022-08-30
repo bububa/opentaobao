@@ -14,10 +14,10 @@ type JaqAccountRiskData struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// umid
 	Umid string `json:"umid,omitempty" xml:"umid,omitempty"`
+	// 触发验证所需的信息
+	CaptchaCheckData *CaptchaCheckData `json:"captcha_check_data,omitempty" xml:"captcha_check_data,omitempty"`
 	// 最终决定。0：可以接受；1：应该拒绝；2：需要人工审核
 	FinalDecision int64 `json:"final_decision,omitempty" xml:"final_decision,omitempty"`
 	// 最终得分
 	FinalScore int64 `json:"final_score,omitempty" xml:"final_score,omitempty"`
-	// 触发验证所需的信息
-	CaptchaCheckData *CaptchaCheckData `json:"captcha_check_data,omitempty" xml:"captcha_check_data,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28637,
-	"name": "yunos.tvpubadmin.device.appupgradequery",
-	"apiChineseName": "应用升级查询",
-	"description": "应用升级查询",
 	"requestParams": [
 		{
 			"name": "license",
@@ -36,115 +32,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "object_list",
-			"type": "PaginationDO",
-			"description": "具体的数据结构",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "单页数量",
-					"required": true
+					"description": "单页数量"
 				},
 				{
-					"name": "list",
-					"type": "AppVersionAuditDO[]",
-					"description": "内容列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "主键ID",
-							"required": true
+							"description": "主键ID"
 						},
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "应用名",
-							"required": true
+							"description": "应用名"
 						},
 						{
 							"name": "app_package_name",
 							"type": "String",
-							"description": "引用包名",
-							"required": true
+							"description": "引用包名"
 						},
 						{
 							"name": "version_name",
 							"type": "String",
-							"description": "版本名",
-							"required": true
+							"description": "版本名"
 						},
 						{
 							"name": "version_code",
 							"type": "String",
-							"description": "版本号",
-							"required": true
+							"description": "版本号"
 						},
 						{
 							"name": "release_note",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						},
 						{
 							"name": "download_url",
 							"type": "String",
-							"description": "下载地址",
-							"required": true
+							"description": "下载地址"
 						},
 						{
 							"name": "size",
 							"type": "String",
-							"description": "包大小",
-							"required": true
+							"description": "包大小"
 						},
 						{
 							"name": "audit_status",
 							"type": "String",
-							"description": "审核状态",
-							"required": true
+							"description": "审核状态"
 						},
 						{
 							"name": "status_desc",
 							"type": "String",
-							"description": "状态描述",
-							"required": true
+							"description": "状态描述"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modify",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "gmt_audit",
 							"type": "Date",
-							"description": "审核时间",
-							"required": true
+							"description": "审核时间"
 						}
-					]
+					],
+					"name": "list",
+					"type": "AppVersionAuditDO[]",
+					"description": "内容列表"
 				}
-			]
+			],
+			"name": "object_list",
+			"type": "PaginationDO",
+			"description": "具体的数据结构"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.appupgradequery",
+	"apiChineseName": "应用升级查询",
+	"description": "应用升级查询",
+	"id": 28637
 }

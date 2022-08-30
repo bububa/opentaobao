@@ -1,8 +1,4 @@
 {
-	"id": 41224,
-	"name": "alibaba.alihealth.drug.kyt.codeprocess",
-	"apiChineseName": "关联关系处理查询",
-	"description": "关联关系处理查询",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -24,7 +20,7 @@
 		{
 			"name": "process_flag",
 			"type": "String",
-			"description": "处理状态",
+			"description": "处理状态(所有状态 A ,待处理  1 ,处理成功  3 ,处理失败  4)",
 			"required": true
 		},
 		{
@@ -35,13 +31,13 @@
 		{
 			"name": "query_flag",
 			"type": "String",
-			"description": "查询标识",
+			"description": "查询标识(处理状态查询 传0 , 关联关系个修改 传1)",
 			"required": true
 		},
 		{
 			"name": "physic_type",
 			"type": "String",
-			"description": "药品类型",
+			"description": "药品类型（所有药品  A ，未分类 9， 特殊药品原料药  1， 特殊药品制  2， 普通药品\t3）",
 			"required": true
 		},
 		{
@@ -60,6 +56,12 @@
 			"description": "包装规格"
 		},
 		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
 			"name": "page",
 			"type": "Number",
 			"description": "页数",
@@ -76,241 +78,203 @@
 			"type": "String",
 			"description": "客户端",
 			"required": true
-		},
-		{
-			"name": "ref_ent_id",
-			"type": "String",
-			"description": "企业ID",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PageInfoDto",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "result_list",
-							"type": "CodeActiveProcessDto[]",
-							"description": "返回结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "note_info",
 									"type": "String",
-									"description": "错误码信息",
-									"required": true
+									"description": "错误码信息"
 								},
 								{
 									"name": "delete_reason",
 									"type": "String",
-									"description": "删除原因",
-									"required": true
+									"description": "删除原因"
 								},
 								{
 									"name": "oper_name",
 									"type": "String",
-									"description": "操作人",
-									"required": true
+									"description": "操作人"
 								},
 								{
 									"name": "piats_code",
 									"type": "String",
-									"description": "码",
-									"required": true
+									"description": "码"
 								},
 								{
 									"name": "process_date",
 									"type": "String",
-									"description": "处理日期",
-									"required": true
+									"description": "处理日期"
 								},
 								{
 									"name": "prepn_unit",
 									"type": "Number",
-									"description": "制剂单位",
-									"required": true
+									"description": "制剂单位"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业ID",
-									"required": true
+									"description": "企业ID"
 								},
 								{
 									"name": "process_des",
 									"type": "String",
-									"description": "处理错误原因",
-									"required": true
+									"description": "处理错误原因"
 								},
 								{
 									"name": "file_name",
 									"type": "String",
-									"description": "关联关系文件名",
-									"required": true
+									"description": "关联关系文件名"
 								},
 								{
 									"name": "process_flag",
 									"type": "String",
-									"description": "处理状态",
-									"required": true
+									"description": "处理状态"
 								},
 								{
 									"name": "upload_date",
 									"type": "String",
-									"description": "上传时间",
-									"required": true
+									"description": "上传时间"
 								},
 								{
 									"name": "upload_flag",
 									"type": "String",
-									"description": "上传状态",
-									"required": true
+									"description": "上传状态"
 								},
 								{
 									"name": "exprie_date",
 									"type": "String",
-									"description": "有效期至",
-									"required": true
+									"description": "有效期至"
 								},
 								{
 									"name": "produce_date",
 									"type": "String",
-									"description": "生产时间",
-									"required": true
+									"description": "生产时间"
 								},
 								{
 									"name": "pkg_unit_code",
 									"type": "String",
-									"description": "最小赋码包装单位编码",
-									"required": true
+									"description": "最小赋码包装单位编码"
 								},
 								{
 									"name": "small_num",
 									"type": "String",
-									"description": "小码数量",
-									"required": true
+									"description": "小码数量"
 								},
 								{
 									"name": "other_num",
 									"type": "String",
-									"description": "最大包装数量",
-									"required": true
+									"description": "最大包装数量"
 								},
 								{
 									"name": "active_count",
 									"type": "String",
-									"description": "激活数量",
-									"required": true
+									"description": "激活数量"
 								},
 								{
 									"name": "prepn_spec",
 									"type": "String",
-									"description": "制剂规格",
-									"required": true
+									"description": "制剂规格"
 								},
 								{
 									"name": "pkg_ratio",
 									"type": "String",
-									"description": "包装比例",
-									"required": true
+									"description": "包装比例"
 								},
 								{
 									"name": "pkg_unit_desc",
 									"type": "String",
-									"description": "最小赋码包装单位描述",
-									"required": true
+									"description": "最小赋码包装单位描述"
 								},
 								{
 									"name": "pkg_spec",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "药品批号",
-									"required": true
+									"description": "药品批号"
 								},
 								{
 									"name": "prepn_type_desc",
 									"type": "String",
-									"description": "剂型描述",
-									"required": true
+									"description": "剂型描述"
 								},
 								{
 									"name": "physic_name",
 									"type": "String",
-									"description": "药品通用名",
-									"required": true
+									"description": "药品通用名"
 								},
 								{
 									"name": "physic_info",
 									"type": "String",
-									"description": "药品信息",
-									"required": true
+									"description": "药品信息"
 								},
 								{
 									"name": "prod_seq_no",
 									"type": "String",
-									"description": "生产企业标识",
-									"required": true
+									"description": "生产企业标识"
 								},
 								{
 									"name": "active_info_seq_no",
 									"type": "String",
-									"description": "激活信息主键",
-									"required": true
+									"description": "激活信息主键"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "CodeActiveProcessDto[]",
+							"description": "返回结果"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页几条",
-							"required": true
+							"description": "每页几条"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "第几页",
-							"required": true
+							"description": "第几页"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "返回结果"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误信息码",
-					"required": true
+					"description": "错误信息码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.codeprocess",
+	"apiChineseName": "关联关系处理查询",
+	"description": "关联关系处理查询",
+	"id": 41224
 }

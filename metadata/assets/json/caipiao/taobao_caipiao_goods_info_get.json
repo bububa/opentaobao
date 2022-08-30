@@ -1,8 +1,4 @@
 {
-	"id": 21828,
-	"name": "taobao.caipiao.goods.info.get",
-	"apiChineseName": "根据卖家id与appkey获取商品信息",
-	"description": "根据卖家id与appkey获取商品信息。",
 	"responseParams": [
 		{
 			"name": "total_results",
@@ -10,9 +6,6 @@
 			"description": "返回列表的大小"
 		},
 		{
-			"name": "results",
-			"type": "LotteryWangcaiSellerGoodsInfo []",
-			"description": "查询的结果列表",
 			"subParams": [
 				{
 					"name": "goods_id",
@@ -39,7 +32,14 @@
 					"type": "Number",
 					"description": "彩种id"
 				}
-			]
+			],
+			"name": "results",
+			"type": "LotteryWangcaiSellerGoodsInfo []",
+			"description": "查询的结果列表"
 		}
-	]
+	],
+	"name": "taobao.caipiao.goods.info.get",
+	"apiChineseName": "根据卖家id与appkey获取商品信息",
+	"description": "根据卖家id与appkey获取商品信息。",
+	"id": 21828
 }

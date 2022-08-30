@@ -6,10 +6,10 @@ type CustomerIdQueryOpenReq struct {
 	Options []string `json:"options,omitempty" xml:"options>string,omitempty"`
 	// 品牌ID 外部品牌id 2选1
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 店铺ID和外部门店ID必须一
-	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 顾客ID
 	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
+	// 店铺ID和外部门店ID必须一
+	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 手机号码
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 物理卡号

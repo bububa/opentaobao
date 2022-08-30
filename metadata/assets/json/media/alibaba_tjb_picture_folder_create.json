@@ -1,0 +1,34 @@
+{
+	"requestParams": [
+		{
+			"name": "parent_folder_id",
+			"type": "Number",
+			"description": "父文件夹id。如果是传到根文件夹，该值为0。",
+			"required": true
+		},
+		{
+			"name": "folder_name",
+			"type": "String",
+			"description": "文件夹名称，最长50个字符，仅可输入中英文、数字及!@#%^\u0026()-=_+.,~`特殊字符。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "folder_id",
+					"type": "Number",
+					"description": "创建的文件夹id"
+				}
+			],
+			"name": "data",
+			"type": "TopCreateFolderDTO",
+			"description": "创建文件夹的返回数据"
+		}
+	],
+	"name": "alibaba.tjb.picture.folder.create",
+	"apiChineseName": "淘特图片空间创建文件夹",
+	"description": "淘特图片空间创建文件夹",
+	"id": 62392
+}

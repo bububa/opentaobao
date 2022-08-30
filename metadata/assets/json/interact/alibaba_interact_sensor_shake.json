@@ -1,13 +1,13 @@
 {
-	"id": 23752,
-	"name": "alibaba.interact.sensor.shake",
-	"apiChineseName": "摇一摇",
-	"description": "摇一摇",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "0"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.shake",
+	"apiChineseName": "摇一摇",
+	"description": "摇一摇",
+	"id": 23752
 }

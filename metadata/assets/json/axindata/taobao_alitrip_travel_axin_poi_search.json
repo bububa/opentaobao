@@ -1,8 +1,4 @@
 {
-	"id": 55969,
-	"name": "taobao.alitrip.travel.axin.poi.search",
-	"apiChineseName": "景点poi搜索-阿信",
-	"description": "给阿信提供景点poi搜索",
 	"requestParams": [
 		{
 			"name": "key_word",
@@ -13,91 +9,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data_list",
-					"type": "PoiVo[]",
-					"description": "列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "poi_id",
 							"type": "Number",
-							"description": "poiId",
-							"required": true
+							"description": "poiId"
 						},
 						{
 							"name": "poi_name_en",
 							"type": "String",
-							"description": "poi英文名",
-							"required": true
+							"description": "poi英文名"
 						},
 						{
 							"name": "poi_name",
 							"type": "String",
-							"description": "poi名称",
-							"required": true
+							"description": "poi名称"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "城市名称",
-							"required": true
+							"description": "城市名称"
 						},
 						{
 							"name": "city_id",
 							"type": "String",
-							"description": "城市id",
-							"required": true
+							"description": "城市id"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "国家名称",
-							"required": true
+							"description": "国家名称"
 						},
 						{
 							"name": "country_id",
 							"type": "String",
-							"description": "国家id",
-							"required": true
+							"description": "国家id"
 						},
 						{
 							"name": "province_name",
 							"type": "String",
-							"description": "省份名称",
-							"required": true
+							"description": "省份名称"
 						},
 						{
 							"name": "province_id",
 							"type": "String",
-							"description": "省份id",
-							"required": true
+							"description": "省份id"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "PoiVo[]",
+					"description": "列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.axin.poi.search",
+	"apiChineseName": "景点poi搜索-阿信",
+	"description": "给阿信提供景点poi搜索",
+	"id": 55969
 }

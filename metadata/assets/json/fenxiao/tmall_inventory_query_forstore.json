@@ -1,15 +1,6 @@
 {
-	"id": 26481,
-	"name": "tmall.inventory.query.forstore",
-	"apiChineseName": "查询后端商品仓库库存",
-	"description": "商家查询后端商品仓库库存",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "InventoryQueryForStoreRequest[]",
-			"description": "查询列表",
-			"required": true,
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "sc_item_code",
@@ -42,20 +33,18 @@
 					"type": "Number",
 					"description": "1前端商品 2供应链货品"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "InventoryQueryForStoreRequest[]",
+			"description": "查询列表",
+			"maxListSize": 200,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "InventoryQueryResult",
-			"description": "查询结果",
 			"subParams": [
 				{
-					"name": "item_inventorys",
-					"type": "InventoryInfoDetailDto[]",
-					"description": "查询成功列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "occupy_quantity",
@@ -100,10 +89,6 @@
 							"required": true
 						},
 						{
-							"name": "sub_list",
-							"type": "InventorySubDetailDto[]",
-							"description": "subList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "reserve_quantity",
@@ -129,7 +114,11 @@
 									"description": "ONLINE_INVENTORY:线上可售卖库存。SHARE_INVENTORY：线下独享库存，门店自提可用",
 									"required": true
 								}
-							]
+							],
+							"name": "sub_list",
+							"type": "InventorySubDetailDto[]",
+							"description": "subList",
+							"required": true
 						},
 						{
 							"name": "sku_id",
@@ -143,13 +132,13 @@
 							"description": "1前端商品 2供应链货品",
 							"required": true
 						}
-					]
+					],
+					"name": "item_inventorys",
+					"type": "InventoryInfoDetailDto[]",
+					"description": "查询成功列表",
+					"required": true
 				},
 				{
-					"name": "tip_infos",
-					"type": "TipInfo[]",
-					"description": "tipInfos",
-					"required": true,
 					"subParams": [
 						{
 							"name": "errorcode",
@@ -199,9 +188,16 @@
 							"description": "1前端商品 2供应链货品",
 							"required": true
 						}
-					]
+					],
+					"name": "tip_infos",
+					"type": "TipInfo[]",
+					"description": "tipInfos",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "InventoryQueryResult",
+			"description": "查询结果"
 		},
 		{
 			"name": "errorcode",
@@ -218,5 +214,9 @@
 			"type": "Boolean",
 			"description": "整体成功或失败"
 		}
-	]
+	],
+	"name": "tmall.inventory.query.forstore",
+	"apiChineseName": "查询后端商品仓库库存",
+	"description": "商家查询后端商品仓库库存",
+	"id": 26481
 }

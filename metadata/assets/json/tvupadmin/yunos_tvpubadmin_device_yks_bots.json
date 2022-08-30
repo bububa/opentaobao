@@ -1,47 +1,42 @@
 {
-	"id": 37935,
-	"name": "yunos.tvpubadmin.device.yks.bots",
-	"apiChineseName": "获取设备列表",
-	"description": "获取设备列表",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "ret_values",
-					"type": "SimpleBotInfo[]",
-					"description": "retValue",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
 							"type": "String",
-							"description": "设备名称",
-							"required": true
+							"description": "设备名称"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "设备id",
-							"required": true
+							"description": "设备id"
 						}
-					]
+					],
+					"name": "ret_values",
+					"type": "SimpleBotInfo[]",
+					"description": "retValue"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.yks.bots",
+	"apiChineseName": "获取设备列表",
+	"description": "获取设备列表",
+	"id": 37935
 }

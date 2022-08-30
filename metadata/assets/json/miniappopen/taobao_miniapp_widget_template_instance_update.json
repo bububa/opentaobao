@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "entity_id",
+					"type": "String",
+					"description": "小部件实例id"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "小部件模版id"
+				},
+				{
+					"name": "template_version",
+					"type": "String",
+					"description": "小部件模版版本"
+				}
+			],
+			"name": "param_mini_app_instantiate_template_app_update_request",
+			"type": "MiniAppInstantiateTemplateAppUpdateRequest",
+			"description": "参数信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "app_alias",
+							"type": "String",
+							"description": "小部件别名"
+						},
+						{
+							"name": "app_description",
+							"type": "String",
+							"description": "小部件描述"
+						},
+						{
+							"name": "app_icon",
+							"type": "String",
+							"description": "小部件icon"
+						},
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "小部件名称"
+						},
+						{
+							"name": "appkey",
+							"type": "String",
+							"description": "小部件appkey"
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "小部件实例化id"
+						},
+						{
+							"name": "online_version",
+							"type": "String",
+							"description": "小部件版本id"
+						},
+						{
+							"name": "pre_view_url",
+							"type": "String",
+							"description": "预览码"
+						}
+					],
+					"name": "model",
+					"type": "MiniAppEntityTemplateDTO",
+					"description": "实体信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "返回结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回信息"
+		}
+	],
+	"name": "taobao.miniapp.widget.template.instance.update",
+	"apiChineseName": "小部件实例化版本更新",
+	"description": "小部件版本更新",
+	"id": 60387
+}

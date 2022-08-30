@@ -1,17 +1,8 @@
 {
-	"id": 26001,
-	"name": "taobao.qimen.deliveryorder.confirm",
-	"apiChineseName": "发货单确认接口",
-	"description": "taobao.qimen.deliveryorder.confirm",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "DeliveryOrderConfirmRequest",
 			"subParams": [
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "发货单信息",
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -77,9 +68,6 @@
 							"description": "仓储费用"
 						},
 						{
-							"name": "invoices",
-							"type": "Invoice[]",
-							"description": "发票信息",
 							"subParams": [
 								{
 									"name": "header",
@@ -97,14 +85,8 @@
 									"description": "发票内容"
 								},
 								{
-									"name": "detail",
-									"type": "Detail",
-									"description": "发货详情",
 									"subParams": [
 										{
-											"name": "items",
-											"type": "Item[]",
-											"description": "商品列表",
 											"subParams": [
 												{
 													"name": "itemName",
@@ -141,9 +123,15 @@
 													"type": "String",
 													"description": "商品仓储系统编码"
 												}
-											]
+											],
+											"name": "items",
+											"type": "Item[]",
+											"description": "商品列表"
 										}
-									]
+									],
+									"name": "detail",
+									"type": "Detail",
+									"description": "发货详情"
 								},
 								{
 									"name": "code",
@@ -155,14 +143,17 @@
 									"type": "String",
 									"description": "发票号码(纳税企业内部的发票号)"
 								}
-							]
+							],
+							"name": "invoices",
+							"type": "Invoice[]",
+							"description": "发票信息"
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息"
 				},
 				{
-					"name": "packages",
-					"type": "Package[]",
-					"description": "包裹信息",
 					"subParams": [
 						{
 							"name": "logisticsCode",
@@ -222,9 +213,6 @@
 							"description": "发票号"
 						},
 						{
-							"name": "packageMaterialList",
-							"type": "PackageMaterial[]",
-							"description": "包材信息",
 							"subParams": [
 								{
 									"name": "type",
@@ -236,12 +224,12 @@
 									"type": "Number",
 									"description": "包材的数量"
 								}
-							]
+							],
+							"name": "packageMaterialList",
+							"type": "PackageMaterial[]",
+							"description": "包材信息"
 						},
 						{
-							"name": "items",
-							"type": "Item[]",
-							"description": "商品列表",
 							"subParams": [
 								{
 									"name": "itemCode",
@@ -265,14 +253,17 @@
 									"type": "String",
 									"description": "单据行号"
 								}
-							]
+							],
+							"name": "items",
+							"type": "Item[]",
+							"description": "商品列表"
 						}
-					]
+					],
+					"name": "packages",
+					"type": "Package[]",
+					"description": "包裹信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "单据列表",
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -350,9 +341,6 @@
 							"description": "生产批号"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "批次列表",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -389,7 +377,10 @@
 									"type": "String",
 									"description": "货品sn编码"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次列表"
 						},
 						{
 							"name": "qrCode",
@@ -402,16 +393,16 @@
 							"description": "货品sn编码"
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "sn列表",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表"
 						},
 						{
 							"name": "supplierName",
@@ -423,20 +414,23 @@
 							"type": "String",
 							"description": "供应商编码"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "单据列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "DeliveryOrderConfirmRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -456,7 +450,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.deliveryorder.confirm",
+	"apiChineseName": "发货单确认接口",
+	"description": "taobao.qimen.deliveryorder.confirm",
+	"id": 26001
 }

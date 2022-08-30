@@ -1,8 +1,4 @@
 {
-	"id": 56065,
-	"name": "taobao.subway.marsh.land.rpt.get",
-	"apiChineseName": "获取捡漏词包分时报表数据",
-	"description": "获取捡漏词包分时报表数据",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -38,53 +34,50 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "RptResult []",
-			"description": "捡漏词包分时报表数据列表",
 			"subParams": [
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "ctr",
-					"required": true
+					"description": "ctr"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "消耗",
-					"required": true
+					"description": "消耗"
 				},
 				{
 					"name": "is_automatch",
 					"type": "String",
-					"description": "词包类型",
-					"required": true
+					"description": "词包类型"
 				},
 				{
 					"name": "cpc",
 					"type": "String",
-					"description": "cpc",
-					"required": true
+					"description": "cpc"
 				},
 				{
 					"name": "time_period",
 					"type": "String",
-					"description": "时段编号",
-					"required": true
+					"description": "时段编号"
 				},
 				{
 					"name": "impression",
 					"type": "String",
-					"description": "展现量",
-					"required": true
+					"description": "展现量"
 				},
 				{
 					"name": "click",
 					"type": "String",
-					"description": "点击量",
-					"required": true
+					"description": "点击量"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "RptResult []",
+			"description": "捡漏词包分时报表数据列表"
 		}
-	]
+	],
+	"name": "taobao.subway.marsh.land.rpt.get",
+	"apiChineseName": "获取捡漏词包分时报表数据",
+	"description": "获取捡漏词包分时报表数据",
+	"id": 56065
 }

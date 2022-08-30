@@ -1,8 +1,4 @@
 {
-	"id": 42007,
-	"name": "alibaba.health.vaccin.notice.order.cancel",
-	"apiChineseName": "福州疫苗取消预约",
-	"description": "福州疫苗用户取消预约接口",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.order.cancel",
+	"apiChineseName": "福州疫苗取消预约",
+	"description": "福州疫苗用户取消预约接口",
+	"id": 42007
 }

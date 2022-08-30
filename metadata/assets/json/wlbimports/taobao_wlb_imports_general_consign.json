@@ -1,8 +1,4 @@
 {
-	"id": 24615,
-	"name": "taobao.wlb.imports.general.consign",
-	"apiChineseName": "一般进口发货",
-	"description": "将订单信息发送到菜鸟海外转运仓；\n业务规则：\n1）交易订单为待发货状态。\n2）单笔订单多个商品，交易金额不能大于1000人民币。",
 	"requestParams": [
 		{
 			"name": "trade_order_id",
@@ -62,14 +58,18 @@
 			"description": "业务错误描述"
 		},
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否发货成功,true:成功，false：失败"
-		},
-		{
 			"name": "result_error_code",
 			"type": "String",
 			"description": "业务错误编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否发货成功,true:成功，false：失败"
 		}
-	]
+	],
+	"name": "taobao.wlb.imports.general.consign",
+	"apiChineseName": "一般进口发货",
+	"description": "将订单信息发送到菜鸟海外转运仓；\n业务规则：\n1）交易订单为待发货状态。\n2）单笔订单多个商品，交易金额不能大于1000人民币。",
+	"id": 24615
 }

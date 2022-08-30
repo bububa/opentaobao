@@ -3,11 +3,7 @@ package scbp
 // CampaignQueryDto 结构体
 type CampaignQueryDto struct {
 	// 计划类型列表
-	TypeList []int64 `json:"type_list,omitempty" xml:"type_list>int64,omitempty"`
-	// 计划子类型列表
-	SubTypeList []string `json:"sub_type_list,omitempty" xml:"sub_type_list>string,omitempty"`
-	// 方案包配置id列表
-	PkgCfgIdList []int64 `json:"pkg_cfg_id_list,omitempty" xml:"pkg_cfg_id_list>int64,omitempty"`
+	TypeList []string `json:"type_list,omitempty" xml:"type_list>string,omitempty"`
 	// 计划id集合
 	CampaignIdList []int64 `json:"campaign_id_list,omitempty" xml:"campaign_id_list>int64,omitempty"`
 	// 计划标题，配合exactMatch使用

@@ -1,14 +1,6 @@
 {
-	"id": 54063,
-	"name": "wdk.logistic.network.warehouse.delivery.relation.query",
-	"apiChineseName": "仓站（网格仓自提点）关系查询",
-	"description": "盒马集市，仓站（网格仓自提点）关系查询",
 	"requestParams": [
 		{
-			"name": "param_warehouse_delivery_relation_page_query_request",
-			"type": "WarehouseDeliveryRelationPageQueryRequest",
-			"description": "参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "from_org_resource_code",
@@ -85,146 +77,133 @@
 					"type": "Date",
 					"description": "结束时间"
 				}
-			]
+			],
+			"name": "param_warehouse_delivery_relation_page_query_request",
+			"type": "WarehouseDeliveryRelationPageQueryRequest",
+			"description": "参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "LogisticsResult",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "Pagination",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "results",
-							"type": "WarehouseDeliveryRelationDto[]",
-							"description": "数据列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "data_version",
 									"type": "Number",
-									"description": "数据版本号",
-									"required": true
+									"description": "数据版本号"
 								},
 								{
 									"name": "from_org_resource_code",
 									"type": "String",
-									"description": "网格仓外部编码",
-									"required": true
+									"description": "网格仓外部编码"
 								},
 								{
 									"name": "from_org_source",
 									"type": "String",
-									"description": "from资源来源",
-									"required": true
+									"description": "from资源来源"
 								},
 								{
 									"name": "from_resource_code",
 									"type": "String",
-									"description": "网格仓编码",
-									"required": true
+									"description": "网格仓编码"
 								},
 								{
 									"name": "from_resource_name",
 									"type": "String",
-									"description": "网格仓名称",
-									"required": true
+									"description": "网格仓名称"
 								},
 								{
 									"name": "from_resource_type",
 									"type": "String",
-									"description": "from资源类型",
-									"required": true
+									"description": "from资源类型"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "ID",
-									"required": true
+									"description": "ID"
 								},
 								{
 									"name": "merchant_code",
 									"type": "String",
-									"description": "商家",
-									"required": true
+									"description": "商家"
 								},
 								{
 									"name": "network_code",
 									"type": "String",
-									"description": "网络编码",
-									"required": true
+									"description": "网络编码"
 								},
 								{
 									"name": "relation_type",
 									"type": "String",
-									"description": "关系类型",
-									"required": true
+									"description": "关系类型"
 								},
 								{
 									"name": "to_org_resource_code",
 									"type": "String",
-									"description": "自提点外部编码",
-									"required": true
+									"description": "自提点外部编码"
 								},
 								{
 									"name": "to_org_source",
 									"type": "String",
-									"description": "资源来源",
-									"required": true
+									"description": "资源来源"
 								},
 								{
 									"name": "to_resource_code",
 									"type": "String",
-									"description": "自提点编码",
-									"required": true
+									"description": "自提点编码"
 								},
 								{
 									"name": "to_resource_name",
 									"type": "String",
-									"description": "自提点名称",
-									"required": true
+									"description": "自提点名称"
 								},
 								{
 									"name": "to_resource_type",
 									"type": "String",
-									"description": "to资源类型",
-									"required": true
+									"description": "to资源类型"
 								}
-							]
+							],
+							"name": "results",
+							"type": "WarehouseDeliveryRelationDto[]",
+							"description": "数据列表"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Pagination",
+					"description": "返回数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "异常消息",
-					"required": true
+					"description": "异常消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "LogisticsResult",
+			"description": "参数"
 		}
-	]
+	],
+	"name": "wdk.logistic.network.warehouse.delivery.relation.query",
+	"apiChineseName": "仓站（网格仓自提点）关系查询",
+	"description": "盒马集市，仓站（网格仓自提点）关系查询",
+	"id": 54063
 }

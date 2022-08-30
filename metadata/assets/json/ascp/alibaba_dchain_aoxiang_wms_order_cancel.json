@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+					"required": true
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主编码",
+					"required": true
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "单据编码",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "仓储系统单据编码"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "单据类型(JYCK=一般交易出库单;HHCK= 换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;B2BRK=B2B入库;B2BCK=B2B出库;QTCK=其他出库;SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK= 调拨入库;QTRK=其他入库;XTRK= 销退入库;THRK=退货入库;HHRK= 换货入库;CNJG= 仓内加工单;CGTH=采购退货出库单)"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因"
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sub_source_order_code",
+							"type": "String",
+							"description": "交易平台子订单编码"
+						}
+					],
+					"name": "sub_source_orders",
+					"type": "SubSourceOrder[]",
+					"description": "交易平台子订单信息"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间（时间戳）",
+					"required": true
+				}
+			],
+			"name": "order_cancel_report_request",
+			"type": "OrderCancelReportRequest",
+			"description": "单据取消回传上报请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId，类似于requestId"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "order_cancel_report_response",
+			"type": "OrderCancelReportResponse",
+			"description": "回传结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.wms.order.cancel",
+	"apiChineseName": "回传发货单取消通知",
+	"description": "回传发货单取消通知",
+	"id": 63066
+}

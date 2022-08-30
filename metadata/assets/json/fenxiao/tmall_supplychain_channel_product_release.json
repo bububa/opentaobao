@@ -1,8 +1,4 @@
 {
-	"id": 49542,
-	"name": "tmall.supplychain.channel.product.release",
-	"apiChineseName": "供应商铺货",
-	"description": "供应商渠道铺货接口",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -17,47 +13,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "链路ID",
-					"required": true
+					"description": "链路ID"
 				},
 				{
 					"name": "exp_name",
 					"type": "String",
-					"description": "异常名",
-					"required": true
+					"description": "异常名"
 				},
 				{
 					"name": "redirect_url",
 					"type": "String",
-					"description": "重定向url",
-					"required": true
+					"description": "重定向url"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.release",
+	"apiChineseName": "供应商铺货",
+	"description": "供应商渠道铺货接口",
+	"id": 49542
 }

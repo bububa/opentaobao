@@ -1,13 +1,6 @@
 {
-	"id": 45857,
-	"name": "alibaba.alsc.crm.recharge.dedutprecheck.get",
-	"apiChineseName": "储值核销预先校验",
-	"description": "储值核销预先校验接口",
 	"requestParams": [
 		{
-			"name": "param_deduct_pre_check_open_req",
-			"type": "DeductPreCheckOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -45,46 +38,48 @@
 					"type": "String",
 					"description": "外部品牌ID(不能和brandid同时为空)"
 				}
-			]
+			],
+			"name": "param_deduct_pre_check_open_req",
+			"type": "DeductPreCheckOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "是否验证成功",
-					"required": true
+					"description": "是否验证成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.recharge.dedutprecheck.get",
+	"apiChineseName": "储值核销预先校验",
+	"description": "储值核销预先校验接口",
+	"id": 45857
 }

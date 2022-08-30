@@ -1,0 +1,217 @@
+{
+	"requestParams": [
+		{
+			"name": "gmt_create_start",
+			"type": "Date",
+			"description": "订单创建时间开始"
+		},
+		{
+			"name": "trade_order_id",
+			"type": "Number",
+			"description": "交易订单号"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		},
+		{
+			"name": "warehouse_status_list",
+			"type": "String",
+			"description": "状态编码列表"
+		},
+		{
+			"name": "gmt_status_update_start",
+			"type": "Date",
+			"description": "状态变更时间开始"
+		},
+		{
+			"name": "intl_tracking_no",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "gmt_create_end",
+			"type": "Date",
+			"description": "订单创建时间结束"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "gmt_status_update_end",
+			"type": "Date",
+			"description": "状态变更时间结束"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "scheme_code",
+					"type": "String",
+					"description": "解决方案_仓编码"
+				},
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "交易单号"
+				},
+				{
+					"name": "solution_name",
+					"type": "String",
+					"description": "解决方案名称"
+				},
+				{
+					"name": "domestic_logistic_company_name",
+					"type": "String",
+					"description": "国内快递公司"
+				},
+				{
+					"name": "gmt_status_update",
+					"type": "Date",
+					"description": "状态变更时间"
+				},
+				{
+					"name": "abnormal_reason",
+					"type": "String",
+					"description": "异常原因"
+				},
+				{
+					"name": "abnormal_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "intl_tracking_no",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "warehouse_name",
+					"type": "String",
+					"description": "揽收仓名称"
+				},
+				{
+					"name": "solution_code",
+					"type": "String",
+					"description": "解决方案编码"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "揽收仓编码"
+				},
+				{
+					"name": "logistic_detail_url",
+					"type": "String",
+					"description": "物流详情链接"
+				},
+				{
+					"name": "order_status_name",
+					"type": "String",
+					"description": "订单状态名称"
+				},
+				{
+					"name": "cancel_status_code",
+					"type": "String",
+					"description": "取消状态编码"
+				},
+				{
+					"name": "payment_status_code",
+					"type": "String",
+					"description": "支付状态编码"
+				},
+				{
+					"name": "unreachable_insured",
+					"type": "Boolean",
+					"description": "不可达保险"
+				},
+				{
+					"name": "und_express_mail_no",
+					"type": "String",
+					"description": "退回运单号"
+				},
+				{
+					"name": "forbidden_audit_result",
+					"type": "String",
+					"description": "禁运审核结果"
+				},
+				{
+					"name": "order_status_code",
+					"type": "String",
+					"description": "订单状态编码"
+				},
+				{
+					"name": "cancel_status_name",
+					"type": "String",
+					"description": "取消状态名称"
+				},
+				{
+					"name": "payment_status_name",
+					"type": "String",
+					"description": "支付状态名称"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "id"
+				},
+				{
+					"name": "domestic_logistic_tracking_no",
+					"type": "String",
+					"description": "国内运单号"
+				},
+				{
+					"name": "high_value_insure",
+					"type": "Boolean",
+					"description": "高货值保险"
+				},
+				{
+					"name": "re_high_value_insure",
+					"type": "Boolean",
+					"description": "逆袭高货值保险"
+				}
+			],
+			"name": "result",
+			"type": "AeopWarehouseAbnormalOrderResult []",
+			"description": "订单详情"
+		},
+		{
+			"name": "error_desc",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总条数"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "是否成功"
+		}
+	],
+	"name": "aliexpress.logistics.abnormalorder.query",
+	"apiChineseName": "异常订单查询",
+	"description": "异常订单查询",
+	"id": 60747
+}

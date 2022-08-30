@@ -1,8 +1,4 @@
 {
-	"id": 10385,
-	"name": "taobao.kfc.keyword.search",
-	"apiChineseName": "关键词过滤匹配",
-	"description": "对输入的文本信息进行禁忌关键词匹配，返回匹配的结果",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -10,22 +6,19 @@
 			"description": "发布信息的淘宝会员名，可以不传"
 		},
 		{
+			"name": "apply",
+			"type": "String",
+			"description": "应用点，分为一级应用点、二级应用点。其中一级应用点通常是指某一个系统或产品，比如淘宝的商品应用（taobao_auction）；二级应用点，是指一级应用点下的具体的分类，比如商品标题(title)、商品描述(content)。不同的二级应用可以设置不同关键词。\u003cbr/\u003e\u003cbr/\u003e这里的apply参数是由一级应用点与二级应用点合起来的字符（一级应用点+\".\"+二级应用点），如taobao_auction.title。\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e通常apply参数是不需要传递的。如有特殊需求（比如特殊的过滤需求，需要自己维护一套自己词库），需传递此参数。"
+		},
+		{
 			"name": "content",
 			"type": "String",
 			"description": "需要过滤的文本信息",
 			"required": true
-		},
-		{
-			"name": "apply",
-			"type": "String",
-			"description": "应用点，分为一级应用点、二级应用点。其中一级应用点通常是指某一个系统或产品，比如淘宝的商品应用（taobao_auction）；二级应用点，是指一级应用点下的具体的分类，比如商品标题(title)、商品描述(content)。不同的二级应用可以设置不同关键词。\u003cbr/\u003e\u003cbr/\u003e这里的apply参数是由一级应用点与二级应用点合起来的字符（一级应用点+\".\"+二级应用点），如taobao_auction.title。\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e通常apply参数是不需要传递的。如有特殊需求（比如特殊的过滤需求，需要自己维护一套自己词库），需传递此参数。"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "kfc_search_result",
-			"type": "KfcSearchResult",
-			"description": "KFC 关键词过滤匹配结果",
 			"subParams": [
 				{
 					"name": "matched",
@@ -42,7 +35,14 @@
 					"type": "String",
 					"description": "过滤后的文本：\u003cbr/\u003e当匹配到B等级的词时，文本中的关键词被替换为*号，content即为关键词替换后的文本；\u003cbr/\u003e其他情况，content始终为null"
 				}
-			]
+			],
+			"name": "kfc_search_result",
+			"type": "KfcSearchResult",
+			"description": "KFC 关键词过滤匹配结果"
 		}
-	]
+	],
+	"name": "taobao.kfc.keyword.search",
+	"apiChineseName": "关键词过滤匹配",
+	"description": "对输入的文本信息进行禁忌关键词匹配，返回匹配的结果",
+	"id": 10385
 }

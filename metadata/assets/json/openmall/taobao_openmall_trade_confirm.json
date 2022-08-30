@@ -1,8 +1,4 @@
 {
-	"id": 50809,
-	"name": "taobao.openmall.trade.confirm",
-	"apiChineseName": "确认收货",
-	"description": "确认订单收货",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -19,17 +15,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTradeResultVo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "tid",
 					"type": "String",
-					"description": "淘宝交易单ID",
-					"required": true
+					"description": "淘宝交易单ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.confirm",
+	"apiChineseName": "确认收货",
+	"description": "确认订单收货",
+	"id": 50809
 }

@@ -14,12 +14,12 @@ type AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest struct {
 	model.Params
 	// token
 	_verifyToken string
-	// 要识别的信息
-	_imageUrls string
 	// 姓名
 	_name string
 	// 证件号
 	_identityCode string
+	// 要识别的信息
+	_imageUrls string
 }
 
 // NewAlibabaSecurityJaqRpCloudRealnameCheckRequest 初始化AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest对象
@@ -56,19 +56,6 @@ func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetVerifyToken() strin
 	return r._verifyToken
 }
 
-// SetImageUrls is ImageUrls Setter
-// 要识别的信息
-func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetImageUrls(_imageUrls string) error {
-	r._imageUrls = _imageUrls
-	r.Set("image_urls", _imageUrls)
-	return nil
-}
-
-// GetImageUrls ImageUrls Getter
-func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetImageUrls() string {
-	return r._imageUrls
-}
-
 // SetName is Name Setter
 // 姓名
 func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetName(_name string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetIdentityCode(_iden
 // GetIdentityCode IdentityCode Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetIdentityCode() string {
 	return r._identityCode
+}
+
+// SetImageUrls is ImageUrls Setter
+// 要识别的信息
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) SetImageUrls(_imageUrls string) error {
+	r._imageUrls = _imageUrls
+	r.Set("image_urls", _imageUrls)
+	return nil
+}
+
+// GetImageUrls ImageUrls Getter
+func (r AlibabaSecurityJaqRpCloudRealnameCheckAPIRequest) GetImageUrls() string {
+	return r._imageUrls
 }

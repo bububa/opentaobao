@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"name": "final_sku_id",
+			"type": "String",
+			"description": "商品skuId"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "final_outer_id",
+			"type": "String",
+			"description": "商品skuId"
+		},
+		{
+			"name": "sub_biz_order_id",
+			"type": "String",
+			"description": "子订单id"
+		},
+		{
+			"name": "oaid",
+			"type": "String",
+			"description": "地址oaid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.modifyorder.order.check",
+	"apiChineseName": "自助改单服务发货订单校验",
+	"description": "自助改单服务发货后订单回传接口",
+	"id": 60290
+}

@@ -6,6 +6,10 @@ type OpenApiApplyRq struct {
 	ItineraryList []OpenItineraryInfo `json:"itinerary_list,omitempty" xml:"itinerary_list>open_itinerary_info,omitempty"`
 	// 出行人列表
 	TravelerList []OpenUserInfo `json:"traveler_list,omitempty" xml:"traveler_list>open_user_info,omitempty"`
+	// 外部出行人列表
+	ExternalTravelerList []OpenUserInfo `json:"external_traveler_list,omitempty" xml:"external_traveler_list>open_user_info,omitempty"`
+	// 内部人员差标列表
+	TravelerStandard []InternalUserStandard `json:"traveler_standard,omitempty" xml:"traveler_standard>internal_user_standard,omitempty"`
 	// 外部申请单id
 	ThirdpartApplyId string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
 	// 用户展示的外部审批单id信息
@@ -26,6 +30,8 @@ type OpenApiApplyRq struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 用户名称，如果要传必须传真实姓名，如果不传则会以系统当前维护userId对应的名称进行预订
 	UserName string `json:"user_name,omitempty" xml:"user_name,omitempty"`
+	// 关联单号
+	UnionNo string `json:"union_no,omitempty" xml:"union_no,omitempty"`
 	// 审批单状态，不传入默认为0：0审批中，1同意，2拒绝
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 出差天数
@@ -34,4 +40,24 @@ type OpenApiApplyRq struct {
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 1：代提交 2：本人提交 注意：当申请单为代提交时，申请单提交人自己无法为自己下单
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 审批单酒店预算，单位分。注意：特殊授权人住店产生的杂费（用餐、房间内商品等）将在退房时扣款，由企业支付
+	HotelBudget int64 `json:"hotel_budget,omitempty" xml:"hotel_budget,omitempty"`
+	// 审批单机票预算，单位分
+	FlightBudget int64 `json:"flight_budget,omitempty" xml:"flight_budget,omitempty"`
+	// 审批单火车票预算，单位分。注意：例如坐席同为”硬卧“，上/中/下铺存在价格差异的情况，预订时将按照其中最高价格，校验预算余额
+	TrainBudget int64 `json:"train_budget,omitempty" xml:"train_budget,omitempty"`
+	// 审批单用车预算，单位分。注意：打车场景存在不可控因素，会超出原预估价格：1. 乘客线下修改目的地；2. 堵车等道路意外情况；3. 司机添加附加费，如过路费、高速费、等待费等
+	VehicleBudget int64 `json:"vehicle_budget,omitempty" xml:"vehicle_budget,omitempty"`
+	// 审批单总预算，单位分
+	Budget int64 `json:"budget,omitempty" xml:"budget,omitempty"`
+	// 多个申请单预算合并。1：否，【union_no】相同的【申请单(apply id)】，每个的【预算】仅对本申请单生效。2：是，所有【union_no】相同的【申请单(apply id)】，其中全部【预算】合并求和，可以混用。
+	BudgetMerge int64 `json:"budget_merge,omitempty" xml:"budget_merge,omitempty"`
+	// 0：不限制出行人，1：限申请单内的出行人。注意：不限出行人，实际出行人也不限制差标，而且传入的出行人信息也不会存储
+	LimitTraveler int64 `json:"limit_traveler,omitempty" xml:"limit_traveler,omitempty"`
+	// 同时预订(机票&火车票)规则。1：就高；2：就低。
+	TogetherBookRule int64 `json:"together_book_rule,omitempty" xml:"together_book_rule,omitempty"`
+	// 酒店合住规则
+	HotelShare *HotelShareInfo `json:"hotel_share,omitempty" xml:"hotel_share,omitempty"`
+	// 外部出行人差标
+	ExternalTravelerStandard *ExternalUserStandard `json:"external_traveler_standard,omitempty" xml:"external_traveler_standard,omitempty"`
 }

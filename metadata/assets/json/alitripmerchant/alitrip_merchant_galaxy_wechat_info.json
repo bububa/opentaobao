@@ -1,8 +1,4 @@
 {
-	"id": 55249,
-	"name": "alitrip.merchant.galaxy.wechat.info",
-	"apiChineseName": "星河-获取微信用户的信息",
-	"description": "获取微信用户的openId和unionId",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -17,49 +13,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content",
-					"type": "WechatCodeResponse",
-					"description": "返回的微信用户信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "union_id",
 							"type": "String",
-							"description": "微信union_Id",
-							"required": true
+							"description": "微信union_Id"
 						},
 						{
 							"name": "open_id",
 							"type": "String",
-							"description": "微信用户openId",
-							"required": true
+							"description": "微信用户openId"
 						}
-					]
+					],
+					"name": "content",
+					"type": "WechatCodeResponse",
+					"description": "返回的微信用户信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.wechat.info",
+	"apiChineseName": "星河-获取微信用户的信息",
+	"description": "获取微信用户的openId和unionId",
+	"id": 55249
 }

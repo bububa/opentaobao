@@ -1,14 +1,6 @@
 {
-	"id": 29540,
-	"name": "alibaba.mj.oc.writesaleslip",
-	"apiChineseName": "开票占库",
-	"description": "开票占库",
 	"requestParams": [
 		{
-			"name": "pos_sale_order",
-			"type": "PosSaleOrderDto",
-			"description": "开票占库入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "extend_params",
@@ -31,10 +23,6 @@
 					"description": "操作员"
 				},
 				{
-					"name": "sale_items",
-					"type": "PosOrderSaleItemDto[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "discount_amount",
@@ -111,7 +99,11 @@
 							"description": "专柜号",
 							"required": true
 						}
-					]
+					],
+					"name": "sale_items",
+					"type": "PosOrderSaleItemDto[]",
+					"description": "商品列表",
+					"required": true
 				},
 				{
 					"name": "sale_ticket_no",
@@ -119,7 +111,11 @@
 					"description": "开票单号",
 					"required": true
 				}
-			]
+			],
+			"name": "pos_sale_order",
+			"type": "PosSaleOrderDto",
+			"description": "开票占库入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -128,5 +124,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.writesaleslip",
+	"apiChineseName": "开票占库",
+	"description": "开票占库",
+	"id": 29540
 }

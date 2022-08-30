@@ -1,0 +1,28 @@
+{
+	"requestParams": [
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "人群标签id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "data",
+			"type": "RpcResult",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.ucrowd.delete",
+	"apiChineseName": "淘宝客-服务商-删除人群标签",
+	"description": "服务商使用。支持淘宝客删除人群标签id，被删除的人群标签id将失效，并不可重新生效。",
+	"id": 53885
+}

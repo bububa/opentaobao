@@ -1,8 +1,4 @@
 {
-	"id": 31057,
-	"name": "alibaba.baichuan.aso.activate",
-	"apiChineseName": "设备安装活动激活",
-	"description": "设备安装活动激活",
 	"requestParams": [
 		{
 			"name": "source",
@@ -23,10 +19,6 @@
 			"required": true
 		},
 		{
-			"name": "device_info",
-			"type": "AsoDeviceInfoDo",
-			"description": "设备信息，ios为idfa ，android 为imei + imsi",
-			"required": true,
 			"subParams": [
 				{
 					"name": "imei",
@@ -43,34 +35,39 @@
 					"type": "String",
 					"description": "idfa"
 				}
-			]
+			],
+			"name": "device_info",
+			"type": "AsoDeviceInfoDo",
+			"description": "设备信息，ios为idfa ，android 为imei + imsi",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AsoActivateDeviceResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_detail",
 					"type": "String",
-					"description": "errorDetail",
-					"required": true
+					"description": "errorDetail"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AsoActivateDeviceResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.aso.activate",
+	"apiChineseName": "设备安装活动激活",
+	"description": "设备安装活动激活",
+	"id": 31057
 }

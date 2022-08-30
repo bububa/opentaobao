@@ -1,25 +1,9 @@
 {
-	"id": 11123,
-	"name": "tmall.servicecenter.workcard.status.update",
-	"apiChineseName": "服务商反馈服务的执行情况",
-	"description": "1 如果服务商受理了此服务，修改合同状态为：已受理=3\u003cbr/\u003e2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10\u003cbr/\u003e3 如果服务商执行了此服务，修改合同状态为：已执行=4\u003cbr/\u003e4 如果服务商执行服务成功，修改合同状态为：已完成=5\u003cbr/\u003e5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账",
 	"requestParams": [
 		{
-			"name": "workcard_id",
-			"type": "Number",
-			"description": "工单id",
-			"required": true
-		},
-		{
-			"name": "type",
-			"type": "byte",
-			"description": "工单类型： 2（合同） 或者 1(任务）",
-			"required": true
-		},
-		{
-			"name": "status",
-			"type": "byte",
-			"description": "目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）",
+			"name": "updater",
+			"type": "String",
+			"description": "api调用者",
 			"required": true
 		},
 		{
@@ -28,9 +12,25 @@
 			"description": "买家id"
 		},
 		{
-			"name": "updater",
-			"type": "String",
-			"description": "api调用者",
+			"name": "effect_date",
+			"type": "Number",
+			"description": "服务生效时间 ：工单类型为合同工单时，必选！"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "expire_date",
+			"type": "Number",
+			"description": "服务失效时间 ：工单类型为合同工单时，必选！"
+		},
+		{
+			"name": "status",
+			"type": "byte",
+			"description": "目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）",
 			"required": true
 		},
 		{
@@ -40,14 +40,10 @@
 			"required": true
 		},
 		{
-			"name": "effect_date",
-			"type": "Number",
-			"description": "服务生效时间 ：工单类型为合同工单时，必选！"
-		},
-		{
-			"name": "expire_date",
-			"type": "Number",
-			"description": "服务失效时间 ：工单类型为合同工单时，必选！"
+			"name": "type",
+			"type": "byte",
+			"description": "工单类型： 2（合同） 或者 1(任务）",
+			"required": true
 		},
 		{
 			"name": "comments",
@@ -153,10 +149,6 @@
 			"description": "网点地址"
 		},
 		{
-			"name": "work_card_install_detail_list",
-			"type": "WorkCardInstallDetail[]",
-			"description": "一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "sn",
@@ -188,7 +180,11 @@
 					"type": "String",
 					"description": "收费金额"
 				}
-			]
+			],
+			"name": "work_card_install_detail_list",
+			"type": "WorkCardInstallDetail[]",
+			"description": "一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况",
+			"maxListSize": 20
 		},
 		{
 			"name": "service_fee_detail",
@@ -208,19 +204,28 @@
 	],
 	"responseParams": [
 		{
+			"name": "value",
+			"type": "Boolean",
+			"description": "是否执行成功"
+		},
+		{
 			"name": "rs",
 			"type": "Boolean",
 			"description": "返回结果"
 		},
 		{
-			"name": "error_code_value",
-			"type": "String",
-			"description": "错误码"
-		},
-		{
 			"name": "error_msg_info",
 			"type": "String",
 			"description": "错误信息"
+		},
+		{
+			"name": "error_code_value",
+			"type": "String",
+			"description": "错误码"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.status.update",
+	"apiChineseName": "服务商反馈服务的执行情况",
+	"description": "1 如果服务商受理了此服务，修改合同状态为：已受理=3\u003cbr/\u003e2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10\u003cbr/\u003e3 如果服务商执行了此服务，修改合同状态为：已执行=4\u003cbr/\u003e4 如果服务商执行服务成功，修改合同状态为：已完成=5\u003cbr/\u003e5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账",
+	"id": 11123
 }

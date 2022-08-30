@@ -1,8 +1,4 @@
 {
-	"id": 25987,
-	"name": "taobao.openim.snfilterword.setfilter",
-	"apiChineseName": "关键词过滤",
-	"description": "设置openim关键词过滤",
 	"requestParams": [
 		{
 			"name": "creator",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "错误原因"
 		}
-	]
+	],
+	"name": "taobao.openim.snfilterword.setfilter",
+	"apiChineseName": "关键词过滤",
+	"description": "设置openim关键词过滤",
+	"id": 25987
 }

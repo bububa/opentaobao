@@ -1,8 +1,4 @@
 {
-	"id": 46827,
-	"name": "alibaba.ailab.user.open.uid.get",
-	"apiChineseName": "access token 获取精灵用户 id",
-	"description": "access token 获取精灵用户 id",
 	"requestParams": [
 		{
 			"name": "skill_access_token",
@@ -33,5 +29,9 @@
 			"type": "Number",
 			"description": "状态码，200 成功，其他失败"
 		}
-	]
+	],
+	"name": "alibaba.ailab.user.open.uid.get",
+	"apiChineseName": "access token 获取精灵用户 id",
+	"description": "access token 获取精灵用户 id",
+	"id": 46827
 }

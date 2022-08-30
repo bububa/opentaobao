@@ -14,6 +14,4 @@ type Passenger struct {
 	TicketNo string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
 	// 改签前的票号
 	OldTicketNo string `json:"old_ticket_no,omitempty" xml:"old_ticket_no,omitempty"`
-	// 证件号码
-	CertType string `json:"cert_type,omitempty" xml:"cert_type,omitempty"`
 }

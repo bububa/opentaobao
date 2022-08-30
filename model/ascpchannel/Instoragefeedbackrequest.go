@@ -18,6 +18,8 @@ type Instoragefeedbackrequest struct {
 	TmsOrderCode string `json:"tms_order_code,omitempty" xml:"tms_order_code,omitempty"`
 	// 退回仓编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
+	// 1	一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)
+	BusinessModel string `json:"business_model,omitempty" xml:"business_model,omitempty"`
 	// 退回收件人信息(商家)
 	ReceiverInfo *Receiverinfo `json:"receiver_info,omitempty" xml:"receiver_info,omitempty"`
 	// 退回寄件人信息(消费者)

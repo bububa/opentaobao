@@ -8,6 +8,8 @@ type SavePurchasePriceRequest struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 幂等ID
 	OutId string `json:"out_id,omitempty" xml:"out_id,omitempty"`
+	// 渠道
+	ChannelCodes string `json:"channel_codes,omitempty" xml:"channel_codes,omitempty"`
 	// 2-经销，3-代销，6-寄售，默认为【6-寄售】
 	MarketingType int64 `json:"marketing_type,omitempty" xml:"marketing_type,omitempty"`
 	// 含税采购价格，单位【分】

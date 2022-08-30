@@ -1,8 +1,4 @@
 {
-	"id": 26741,
-	"name": "alibaba.security.jaq.captcha.verify.result.fetch",
-	"apiChineseName": "聚安全安全验证检查结果获取接口",
-	"description": "获取二次验证的结果",
 	"requestParams": [
 		{
 			"name": "session_id",
@@ -13,17 +9,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "JaqSecondCheckResult",
-			"description": "验证检查结果结构体",
 			"subParams": [
 				{
 					"name": "second_check_result",
 					"type": "Number",
-					"description": "验证检查结果 1-验证成功 2-验证失败",
-					"required": true
+					"description": "验证检查结果 1-验证成功 2-验证失败"
 				}
-			]
+			],
+			"name": "data",
+			"type": "JaqSecondCheckResult",
+			"description": "验证检查结果结构体"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.captcha.verify.result.fetch",
+	"apiChineseName": "聚安全安全验证检查结果获取接口",
+	"description": "获取二次验证的结果",
+	"id": 26741
 }

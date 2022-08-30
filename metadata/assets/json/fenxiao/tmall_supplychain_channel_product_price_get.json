@@ -1,8 +1,4 @@
 {
-	"id": 49548,
-	"name": "tmall.supplychain.channel.product.price.get",
-	"apiChineseName": "渠道价格查询接口",
-	"description": "渠道价格查询接口",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -29,73 +25,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
-					"name": "module",
-					"type": "TopProductPriceResult",
-					"description": "询价结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品ID",
-							"required": true
+							"description": "产品ID"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "SKU ID",
-							"required": true
+							"description": "SKU ID"
 						},
 						{
 							"name": "channel_code",
 							"type": "Number",
-							"description": "渠道编码",
-							"required": true
+							"description": "渠道编码"
 						},
 						{
 							"name": "price_type",
 							"type": "Number",
-							"description": "价格类型，区域价、指导价",
-							"required": true
+							"description": "价格类型，区域价、指导价"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "价格",
-							"required": true
+							"description": "价格"
 						},
 						{
 							"name": "currency_type",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						}
-					]
+					],
+					"name": "module",
+					"type": "TopProductPriceResult",
+					"description": "询价结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.price.get",
+	"apiChineseName": "渠道价格查询接口",
+	"description": "渠道价格查询接口",
+	"id": 49548
 }

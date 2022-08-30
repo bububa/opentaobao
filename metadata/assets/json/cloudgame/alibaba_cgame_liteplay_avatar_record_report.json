@@ -1,0 +1,166 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "bucket",
+							"type": "String",
+							"description": "oss bucket"
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "文件名, 不包含后缀"
+						},
+						{
+							"name": "endpoint",
+							"type": "String",
+							"description": "oss endpoint"
+						},
+						{
+							"name": "file_purpose",
+							"type": "String",
+							"description": "上传文件自定义key, 如energy:活力页头像"
+						},
+						{
+							"name": "file_key",
+							"type": "String",
+							"description": "oss完整filekey"
+						},
+						{
+							"name": "file_ext",
+							"type": "String",
+							"description": "oss文件后缀名"
+						},
+						{
+							"name": "file_type",
+							"type": "String",
+							"description": "文件类型, AUDIO,IMAGE, VIDEO, GIF"
+						}
+					],
+					"name": "images",
+					"type": "OssDto[]",
+					"description": "图片oss地址列表"
+				},
+				{
+					"name": "mix_user_id",
+					"type": "String",
+					"description": "云游戏mixUserId"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bucket",
+							"type": "String",
+							"description": "oss bucket"
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "文件名, 不包含后缀"
+						},
+						{
+							"name": "endpoint",
+							"type": "String",
+							"description": "oss endpoint"
+						},
+						{
+							"name": "file_purpose",
+							"type": "String",
+							"description": "上传文件自定义key, 如personal:个人页"
+						},
+						{
+							"name": "file_key",
+							"type": "String",
+							"description": "oss完整filekey"
+						},
+						{
+							"name": "file_ext",
+							"type": "String",
+							"description": "oss文件后缀名"
+						},
+						{
+							"name": "file_type",
+							"type": "String",
+							"description": "文件类型, AUDIO,IMAGE, VIDEO, GIF"
+						}
+					],
+					"name": "videos",
+					"type": "OssDto[]",
+					"description": "视频oss地址列表"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "api版本version"
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "扩展json字段"
+				}
+			],
+			"name": "request_dto",
+			"type": "TopRecordCallbackRequest",
+			"description": "请求消息体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "返回消息result"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "返回code"
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "top请求id"
+						},
+						{
+							"name": "mix_user_id",
+							"type": "String",
+							"description": "云游戏mixUserId"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "str消息"
+						}
+					],
+					"name": "data",
+					"type": "TopRecordCallbackResp",
+					"description": "返回消息体"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "str消息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.cgame.liteplay.avatar.record.report",
+	"apiChineseName": "Avatar形象保存地址回调",
+	"description": "新氢玩, 围观互动Avatar捏脸, 形象地址保存回调",
+	"id": 57846
+}

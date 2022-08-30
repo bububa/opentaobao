@@ -1,13 +1,14 @@
 {
-	"id": 43637,
-	"name": "tmall.servicecenter.workcard.reserve",
-	"apiChineseName": "工单预约",
-	"description": "服务工单更新通用接口",
 	"requestParams": [
 		{
 			"name": "workcard_id",
 			"type": "Number",
 			"description": "工单id"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "请求来源类型"
 		},
 		{
 			"name": "reserve_time_start",
@@ -63,33 +64,44 @@
 			"name": "fulfil_task_id",
 			"type": "Number",
 			"description": "核销单id"
+		},
+		{
+			"name": "reason_code",
+			"type": "Number",
+			"description": "原因code"
+		},
+		{
+			"name": "reason_desc",
+			"type": "String",
+			"description": "原因desc"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.reserve",
+	"apiChineseName": "工单预约",
+	"description": "服务工单更新通用接口",
+	"id": 43637
 }

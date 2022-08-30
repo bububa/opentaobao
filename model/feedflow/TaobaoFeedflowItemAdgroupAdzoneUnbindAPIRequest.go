@@ -13,7 +13,7 @@ import (
 type TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest struct {
 	model.Params
 	// 广告位id
-	_adzoneIdList []int64
+	_adzoneIdList []string
 	// 单元id
 	_adgroupId int64
 }
@@ -41,14 +41,14 @@ func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetApiParams() url.Valu
 
 // SetAdzoneIdList is AdzoneIdList Setter
 // 广告位id
-func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdzoneIdList(_adzoneIdList []int64) error {
+func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) SetAdzoneIdList(_adzoneIdList []string) error {
 	r._adzoneIdList = _adzoneIdList
 	r.Set("adzone_id_list", _adzoneIdList)
 	return nil
 }
 
 // GetAdzoneIdList AdzoneIdList Getter
-func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetAdzoneIdList() []int64 {
+func (r TaobaoFeedflowItemAdgroupAdzoneUnbindAPIRequest) GetAdzoneIdList() []string {
 	return r._adzoneIdList
 }
 

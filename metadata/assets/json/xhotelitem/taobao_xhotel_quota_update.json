@@ -1,8 +1,4 @@
 {
-	"id": 47006,
-	"name": "taobao.xhotel.quota.update",
-	"apiChineseName": "库存更新接口",
-	"description": "库存更新接口",
 	"requestParams": [
 		{
 			"name": "quota_type",
@@ -36,8 +32,8 @@
 			"name": "dates",
 			"type": "Date[]",
 			"description": "修改日期列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "rate_id",
@@ -61,5 +57,9 @@
 			"type": "String",
 			"description": "更新失败错误信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.quota.update",
+	"apiChineseName": "库存更新接口",
+	"description": "库存更新接口",
+	"id": 47006
 }

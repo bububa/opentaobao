@@ -1,19 +1,10 @@
 {
-	"id": 54526,
-	"name": "tmall.trend.style.bindinfo.upload",
-	"apiChineseName": "趋势词\u0026款式绑定信息同步API",
-	"description": "趋势词\u0026款式(服饰行业)绑定信息同步至平台",
 	"requestParams": [
 		{
-			"name": "trend_style_bind_info_bo_list",
-			"type": "TrendStyleBindInfoBO[]",
-			"description": "趋势词\u0026款式绑定信息列表，一次最多1000条",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "trend_word_info_list",
-					"type": "null[]",
+					"type": "String[]",
 					"description": "款式关联趋势词信息列表，趋势词信息：趋势词id+叶子类目id，单个款式最多关联3个趋势词",
 					"required": true
 				},
@@ -29,7 +20,12 @@
 					"description": "款式编号，业务唯一",
 					"required": true
 				}
-			]
+			],
+			"name": "trend_style_bind_info_bo_list",
+			"type": "TrendStyleBindInfoBO[]",
+			"description": "趋势词\u0026款式绑定信息列表，一次最多1000条",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "tmall.trend.style.bindinfo.upload",
+	"apiChineseName": "趋势词\u0026款式绑定信息同步API",
+	"description": "趋势词\u0026款式(服饰行业)绑定信息同步至平台",
+	"id": 54526
 }

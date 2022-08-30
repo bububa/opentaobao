@@ -1,8 +1,4 @@
 {
-	"id": 42124,
-	"name": "alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data",
-	"apiChineseName": "奶粉溯源-同步数据",
-	"description": "奶粉溯源-同步数据",
 	"requestParams": [
 		{
 			"name": "ent_id",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "操作说明"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data",
+	"apiChineseName": "奶粉溯源-同步数据",
+	"description": "奶粉溯源-同步数据",
+	"id": 42124
 }

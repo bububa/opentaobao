@@ -1,0 +1,134 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "是否有效 1-是 0-否"
+				},
+				{
+					"name": "is_four_account",
+					"type": "Number",
+					"description": "是否是四方监管户 1-是 0-否"
+				},
+				{
+					"name": "bank_contact_line",
+					"type": "String",
+					"description": "银联号"
+				},
+				{
+					"name": "bank_card_no",
+					"type": "String",
+					"description": "结算账户",
+					"required": true
+				},
+				{
+					"name": "bank_account_alias",
+					"type": "String",
+					"description": "结算账户别名"
+				},
+				{
+					"name": "bank_account_name",
+					"type": "String",
+					"description": "结算账户名称",
+					"required": true
+				},
+				{
+					"name": "account_use_type",
+					"type": "Number",
+					"description": "账户用途"
+				},
+				{
+					"name": "outer_bank_id",
+					"type": "String",
+					"description": "外部账户ID",
+					"required": true
+				},
+				{
+					"name": "account_type",
+					"type": "String",
+					"description": "账户类型 01对私账户 02对公账户"
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "公司进件ID",
+					"required": true
+				},
+				{
+					"name": "bank_name_simple",
+					"type": "String",
+					"description": "银行名称简称"
+				},
+				{
+					"name": "card_type",
+					"type": "Number",
+					"description": "卡类型"
+				},
+				{
+					"name": "bank_name",
+					"type": "String",
+					"description": "银行名称"
+				},
+				{
+					"name": "bank_branch_province",
+					"type": "String",
+					"description": "支行所在省份"
+				},
+				{
+					"name": "bank_branch_city",
+					"type": "String",
+					"description": "支行所在市区"
+				},
+				{
+					"name": "bank_branch_name",
+					"type": "String",
+					"description": "支行名称"
+				},
+				{
+					"name": "is_open_net_business",
+					"type": "Number",
+					"description": "是否开网商子户"
+				}
+			],
+			"name": "existing_home_bank_card_dto",
+			"type": "ExistingHomeBankCardDto",
+			"description": "结构",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "唯一id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.bankcard.sync",
+	"apiChineseName": "结算账号同步",
+	"description": "结算账号同步",
+	"id": 57269
+}

@@ -1,14 +1,6 @@
 {
-	"id": 52151,
-	"name": "alibaba.newretail.purchase.price.delete",
-	"apiChineseName": "共享库存 商户删除采购价",
-	"description": "共享库存 商户删除采购价",
 	"requestParams": [
 		{
-			"name": "delete_purchase_price_request",
-			"type": "DeletePurchasePriceRequest",
-			"description": "调用入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "out_id",
@@ -26,35 +18,45 @@
 					"type": "String",
 					"description": "门店ID",
 					"required": true
+				},
+				{
+					"name": "channel_codes",
+					"type": "String",
+					"description": "渠道"
 				}
-			]
+			],
+			"name": "delete_purchase_price_request",
+			"type": "DeletePurchasePriceRequest",
+			"description": "调用入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopBaseResult",
-			"description": "拆单结果对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "表示调用是否成功",
-					"required": true
+					"description": "表示调用是否成功"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopBaseResult",
+			"description": "拆单结果对象"
 		}
-	]
+	],
+	"name": "alibaba.newretail.purchase.price.delete",
+	"apiChineseName": "共享库存 商户删除采购价",
+	"description": "共享库存 商户删除采购价",
+	"id": 52151
 }

@@ -1,19 +1,19 @@
 {
-	"id": 51163,
-	"name": "alibaba.health.vaccin.notice.send",
-	"apiChineseName": "发送消息提醒",
-	"description": "ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。",
 	"requestParams": [
 		{
-			"name": "alipay_user_id",
+			"name": "birthday",
 			"type": "String",
-			"description": "支付宝用户 ID",
-			"required": true
+			"description": "接种人出生日期"
 		},
 		{
-			"name": "isv_user_id",
+			"name": "area",
 			"type": "String",
-			"description": "ISV 侧用户 ID"
+			"description": "区名称"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "接种点地址"
 		},
 		{
 			"name": "order_id",
@@ -21,10 +21,25 @@
 			"description": "订单 ID"
 		},
 		{
-			"name": "name",
+			"name": "pov_name",
 			"type": "String",
-			"description": "接种人姓名",
+			"description": "接种点名称",
 			"required": true
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市名称"
+		},
+		{
+			"name": "pov_no",
+			"type": "String",
+			"description": "接种点编码"
+		},
+		{
+			"name": "sex",
+			"type": "Number",
+			"description": "接种人性别:1=男,2=女"
 		},
 		{
 			"name": "mobile",
@@ -32,11 +47,6 @@
 			"description": "联系电话"
 		},
 		{
-			"name": "vaccine_list",
-			"type": "VaccineInfo[]",
-			"description": "接种的疫苗信息",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "vaccine_name",
@@ -61,33 +71,12 @@
 					"description": "阿里健康疫苗编码",
 					"required": true
 				}
-			]
-		},
-		{
-			"name": "sex",
-			"type": "Number",
-			"description": "接种人性别:1=男,2=女"
-		},
-		{
-			"name": "birthday",
-			"type": "String",
-			"description": "接种人出生日期"
-		},
-		{
-			"name": "pov_no",
-			"type": "String",
-			"description": "接种点编码"
-		},
-		{
-			"name": "pov_name",
-			"type": "String",
-			"description": "接种点名称",
+			],
+			"name": "vaccine_list",
+			"type": "VaccineInfo[]",
+			"description": "接种的疫苗信息",
+			"maxListSize": 999,
 			"required": true
-		},
-		{
-			"name": "address",
-			"type": "String",
-			"description": "接种点地址"
 		},
 		{
 			"name": "province",
@@ -95,19 +84,10 @@
 			"description": "省份名称"
 		},
 		{
-			"name": "city",
-			"type": "String",
-			"description": "城市名称"
-		},
-		{
-			"name": "area",
-			"type": "String",
-			"description": "区名称"
-		},
-		{
-			"name": "reserve_date",
-			"type": "String",
-			"description": "预约日期"
+			"name": "message_type",
+			"type": "Number",
+			"description": "消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒",
+			"required": true
 		},
 		{
 			"name": "reserve_time",
@@ -115,9 +95,25 @@
 			"description": "预约时间段"
 		},
 		{
-			"name": "message_type",
-			"type": "Number",
-			"description": "消息提醒类型：1=疫苗下一针预约提醒  2=预约成功提醒  3=接种提醒  4=补种提醒",
+			"name": "name",
+			"type": "String",
+			"description": "接种人姓名",
+			"required": true
+		},
+		{
+			"name": "isv_user_id",
+			"type": "String",
+			"description": "ISV 侧用户 ID"
+		},
+		{
+			"name": "reserve_date",
+			"type": "String",
+			"description": "预约日期"
+		},
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝用户 ID",
 			"required": true
 		},
 		{
@@ -147,5 +143,9 @@
 			"type": "String",
 			"description": "200"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.send",
+	"apiChineseName": "发送消息提醒",
+	"description": "ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。",
+	"id": 51163
 }

@@ -1,8 +1,4 @@
 {
-	"id": 53550,
-	"name": "alibaba.mj.moscarnival.receiveencrypt",
-	"apiChineseName": "根据加密手机号领券",
-	"description": "根据加密手机号领券",
 	"requestParams": [
 		{
 			"name": "mobile",
@@ -19,123 +15,109 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "调用链id",
-					"required": true
+					"description": "调用链id"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总行数",
-					"required": true
+					"description": "总行数"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "券结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "rights_list",
-							"type": "RightsList[]",
-							"description": "权益列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "coupon_amount",
 									"type": "Number",
-									"description": "券价值",
-									"required": true
+									"description": "券价值"
 								},
 								{
 									"name": "snapshot_id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								},
 								{
 									"name": "entry_amount",
 									"type": "Number",
-									"description": "券使用门槛",
-									"required": true
+									"description": "券使用门槛"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "券名称",
-									"required": true
+									"description": "券名称"
 								},
 								{
 									"name": "start_time",
 									"type": "Date",
-									"description": "开始时间",
-									"required": true
+									"description": "开始时间"
 								},
 								{
 									"name": "end_time",
 									"type": "Date",
-									"description": "结束时间",
-									"required": true
+									"description": "结束时间"
 								}
-							]
+							],
+							"name": "rights_list",
+							"type": "RightsList[]",
+							"description": "权益列表"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "是否成功",
-							"required": true
+							"description": "是否成功"
 						},
 						{
 							"name": "prize_type",
 							"type": "Number",
-							"description": "奖品类型",
-							"required": true
+							"description": "奖品类型"
 						},
 						{
 							"name": "has_prize",
 							"type": "Boolean",
-							"description": "是否有奖品",
-							"required": true
+							"description": "是否有奖品"
 						},
 						{
 							"name": "is_new_user",
 							"type": "Boolean",
-							"description": "是否新会员",
-							"required": true
+							"description": "是否新会员"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "券结果"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mj.moscarnival.receiveencrypt",
+	"apiChineseName": "根据加密手机号领券",
+	"description": "根据加密手机号领券",
+	"id": 53550
 }

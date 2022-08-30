@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "订单业务数据",
+					"required": true
+				}
+			],
+			"name": "order_request",
+			"type": "MedicalBaseTopRequestDTO",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行是否成功 true成功 false 失败"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "响应数据"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回信息"
+		}
+	],
+	"name": "alibaba.alihealth.medicalbase.third.order.sync",
+	"apiChineseName": "第三方订单同步",
+	"description": "第三方订单同步",
+	"id": 59030
+}

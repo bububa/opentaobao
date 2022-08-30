@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "0-楼盘 1-交易商品",
+					"required": true
+				},
+				{
+					"name": "tag_ids",
+					"type": "String[]",
+					"description": "外部id列表，根据type区分",
+					"required": true
+				},
+				{
+					"name": "im_model",
+					"type": "Number",
+					"description": "1-天猫好房来客通 2-千牛",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0-非测试 1-测试",
+					"required": true
+				}
+			],
+			"name": "im_receive_model_dto",
+			"type": "IMReceiveModelReqDTO",
+			"description": "IM承接方式DTO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "aaa"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "aaa"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "aaa"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "aaa"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "aaa"
+		}
+	],
+	"name": "alibaba.alihouse.im.receive.model.sync",
+	"apiChineseName": "IM承接方式同步",
+	"description": "IM承接方式同步",
+	"id": 62258
+}

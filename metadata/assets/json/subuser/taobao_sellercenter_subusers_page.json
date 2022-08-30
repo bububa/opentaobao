@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主账号登陆nick",
+			"required": true
+		},
+		{
+			"name": "account_status",
+			"type": "Number",
+			"description": "可以不传，不传的话和老接口返回数据一样。如果传则根据子账号当前状态筛选 1正常   2冻结  3处罚，如果不传默认都返回"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，大于1小于200",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码，大于等于1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_online",
+					"type": "Number",
+					"description": "是否参与分流 1不参与 2参与"
+				},
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "子账号Id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "子账号当前状态 1正常 -1删除  2冻结"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "子账号所属的主账号的唯一标识"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "子账号用户名"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "主账号昵称"
+				},
+				{
+					"name": "full_name",
+					"type": "String",
+					"description": "子账号姓名"
+				}
+			],
+			"name": "subusers",
+			"type": "SubUserInfo []",
+			"description": "子账号基本信息列表。具体信息为id、子账号用户名、主账号id、主账号昵称、当前状态值、是否分流"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "isv本次调用传入的页大小"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "本次调用删选条件下的总子账号数量，除以页大小可得出最大页数"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "isv本次调用传入的页码"
+		}
+	],
+	"name": "taobao.sellercenter.subusers.page",
+	"apiChineseName": "通过主账号登陆态分页查询子账号列表",
+	"description": "通过主账号登陆态分页查询子账号列表",
+	"id": 61172
+}

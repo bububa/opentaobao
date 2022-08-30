@@ -50,6 +50,8 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	GmtPay string `json:"gmt_pay,omitempty" xml:"gmt_pay,omitempty"`
 	// 订单取消时间
 	GmtCancel string `json:"gmt_cancel,omitempty" xml:"gmt_cancel,omitempty"`
+	// payStatus
+	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 退款状态:    REFUNED("已全额退款"),     REFUNDED_PART("已部分退货");
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 物流状态:    WAIT_FOR_CONSIGN("有待发货商品"),     WAIT_FOR_SIGN("全部商品已发货"),     SIGNED("全部商品已签收"),     REJECTED("全部商品已拒收");
@@ -58,8 +60,6 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 	// 透传参数，格式自定，查询时原样返回
 	Attachment string `json:"attachment,omitempty" xml:"attachment,omitempty"`
-	// payStatus
-	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 零售+订单号
 	TradeNo string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
 	// 外部业务方订单号

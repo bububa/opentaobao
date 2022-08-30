@@ -1,8 +1,4 @@
 {
-	"id": 33877,
-	"name": "taobao.ailab.aicloud.top.feedlist.delete",
-	"apiChineseName": "删除单条对话流信息",
-	"description": "删除指定的某一条对话流信息",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -35,19 +31,23 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "String",
-			"description": "model"
-		},
-		{
 			"name": "msg_info",
 			"type": "String",
 			"description": "msgInfo"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
 		},
 		{
 			"name": "is_success",
 			"type": "String",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.feedlist.delete",
+	"apiChineseName": "删除单条对话流信息",
+	"description": "删除指定的某一条对话流信息",
+	"id": 33877
 }

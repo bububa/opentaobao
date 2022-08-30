@@ -1,8 +1,4 @@
 {
-	"id": 49414,
-	"name": "tmall.servicecenter.workcard.updatelogistics",
-	"apiChineseName": "更新物流进度",
-	"description": "提供给外部合作服务商的物流进度更改接口",
 	"requestParams": [
 		{
 			"name": "workcard_id",
@@ -29,29 +25,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "返回信息",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误原因描述",
-					"required": true
+					"description": "错误原因描述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回信息"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.updatelogistics",
+	"apiChineseName": "更新物流进度",
+	"description": "提供给外部合作服务商的物流进度更改接口",
+	"id": 49414
 }

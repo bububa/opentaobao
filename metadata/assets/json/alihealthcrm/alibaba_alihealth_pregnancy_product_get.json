@@ -1,8 +1,4 @@
 {
-	"id": 29994,
-	"name": "alibaba.alihealth.pregnancy.product.get",
-	"apiChineseName": "备孕首页获取达人配置商品",
-	"description": "备孕首页获取达人配置商品",
 	"requestParams": [
 		{
 			"name": "scene_id",
@@ -25,99 +21,89 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "结果集",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "查询内容主题",
-					"required": true,
 					"subParams": [
 						{
-							"name": "contents",
-							"type": "Contents[]",
-							"description": "文章列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "title",
 									"type": "String",
-									"description": "文章标题",
-									"required": true
+									"description": "文章标题"
 								},
 								{
 									"name": "tags",
 									"type": "String",
-									"description": "文章标签",
-									"required": true
+									"description": "文章标签"
 								},
 								{
 									"name": "photo_url",
 									"type": "String",
-									"description": "图片",
-									"required": true
+									"description": "图片"
 								},
 								{
 									"name": "content",
 									"type": "String",
-									"description": "内容",
-									"required": true
+									"description": "内容"
 								},
 								{
 									"name": "link_url",
 									"type": "String",
-									"description": "链接",
-									"required": true
+									"description": "链接"
 								},
 								{
 									"name": "item_count",
 									"type": "Number",
-									"description": "商品计数",
-									"required": true
+									"description": "商品计数"
 								},
 								{
 									"name": "items",
-									"type": "Json[]",
-									"description": "商品列表",
-									"required": true
+									"type": "String[]",
+									"description": "商品列表"
 								},
 								{
 									"name": "publish_time",
 									"type": "String",
-									"description": "publishTime",
-									"required": true
+									"description": "publishTime"
 								}
-							]
+							],
+							"name": "contents",
+							"type": "Contents[]",
+							"description": "文章列表"
 						},
 						{
 							"name": "total_page",
 							"type": "String",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "total_count",
 							"type": "String",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "查询内容主题"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作代码",
-					"required": true
+					"description": "操作代码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "结果集"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.pregnancy.product.get",
+	"apiChineseName": "备孕首页获取达人配置商品",
+	"description": "备孕首页获取达人配置商品",
+	"id": 29994
 }

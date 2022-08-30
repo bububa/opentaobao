@@ -1,13 +1,6 @@
 {
-	"id": 47931,
-	"name": "alibaba.wdk.merchantproduct.edit",
-	"apiChineseName": "商家产品服务-编辑产品",
-	"description": "商家产品服务-编辑产品",
 	"requestParams": [
 		{
-			"name": "req",
-			"type": "MerchantProductRequest",
-			"description": "产品编辑入参",
 			"subParams": [
 				{
 					"name": "transport_weight",
@@ -50,6 +43,11 @@
 					"description": "运输: 高度(mm)"
 				},
 				{
+					"name": "barcodes",
+					"type": "String[]",
+					"description": "商品条码"
+				},
+				{
 					"name": "package_num",
 					"type": "Number",
 					"description": "箱规数/包装数"
@@ -60,9 +58,6 @@
 					"description": "销售: 高度(mm)"
 				},
 				{
-					"name": "cat_props",
-					"type": "CatProps[]",
-					"description": "类目属性信息",
 					"subParams": [
 						{
 							"name": "property_id",
@@ -84,7 +79,10 @@
 							"type": "String",
 							"description": "类目值名称"
 						}
-					]
+					],
+					"name": "cat_props",
+					"type": "CatProps[]",
+					"description": "类目属性信息"
 				},
 				{
 					"name": "length",
@@ -113,6 +111,7 @@
 				},
 				{
 					"name": "market_categories",
+					"type": "String",
 					"description": "铺货渠道类目(key: 渠道编码, value: 渠道类目)"
 				},
 				{
@@ -180,60 +179,56 @@
 					"name": "yx_category_name_path",
 					"type": "String",
 					"description": "优鲜类目名路径"
-				},
-				{
-					"name": "barcodes",
-					"type": "String[]",
-					"description": "商品条码"
 				}
-			]
+			],
+			"name": "req",
+			"type": "MerchantProductRequest",
+			"description": "产品编辑入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "产品编辑返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "MerchantProductResponse",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sc_ids",
 							"type": "Number[]",
-							"description": "货品id",
-							"required": true
+							"description": "货品id"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "[\"123\",\"456\"]",
-							"required": true
+							"description": "[\"123\",\"456\"]"
 						}
-					]
+					],
+					"name": "model",
+					"type": "MerchantProductResponse",
+					"description": "返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "产品编辑返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchantproduct.edit",
+	"apiChineseName": "商家产品服务-编辑产品",
+	"description": "商家产品服务-编辑产品",
+	"id": 47931
 }

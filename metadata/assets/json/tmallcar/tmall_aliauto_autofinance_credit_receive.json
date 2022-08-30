@@ -1,14 +1,6 @@
 {
-	"id": 49108,
-	"name": "tmall.aliauto.autofinance.credit.receive",
-	"apiChineseName": "接收授信结果通知",
-	"description": "天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.",
 	"requestParams": [
 		{
-			"name": "credit_receive_dto",
-			"type": "CreditReceiveDto",
-			"description": "授信通知描述",
-			"required": true,
 			"subParams": [
 				{
 					"name": "extension_field02",
@@ -68,7 +60,11 @@
 					"type": "String",
 					"description": "请求时间"
 				}
-			]
+			],
+			"name": "credit_receive_dto",
+			"type": "CreditReceiveDto",
+			"description": "授信通知描述",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -92,5 +88,9 @@
 			"type": "String",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "tmall.aliauto.autofinance.credit.receive",
+	"apiChineseName": "接收授信结果通知",
+	"description": "天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.",
+	"id": 49108
 }

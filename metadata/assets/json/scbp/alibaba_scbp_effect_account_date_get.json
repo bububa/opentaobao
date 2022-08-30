@@ -1,13 +1,13 @@
 {
-	"id": 24997,
-	"name": "alibaba.scbp.effect.account.date.get",
-	"apiChineseName": "获取最近报表生成时间",
-	"description": "获取最近报表生成时间,格式为yyyy-MM-dd",
 	"responseParams": [
 		{
 			"name": "report_date",
 			"type": "String",
 			"description": "最近生成报表的时间(US)"
 		}
-	]
+	],
+	"name": "alibaba.scbp.effect.account.date.get",
+	"apiChineseName": "获取最近报表生成时间",
+	"description": "获取最近报表生成时间,格式为yyyy-MM-dd",
+	"id": 24997
 }

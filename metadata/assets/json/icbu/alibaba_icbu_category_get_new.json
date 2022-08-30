@@ -1,8 +1,4 @@
 {
-	"id": 50064,
-	"name": "alibaba.icbu.category.get.new",
-	"apiChineseName": "（新）ICBU类目树获取接口",
-	"description": "获取商品发布类目",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -13,30 +9,7 @@
 	],
 	"responseParams": [
 		{
-			"name": "category",
-			"type": "PostCategory",
-			"description": "类目信息",
 			"subParams": [
-				{
-					"name": "parent_ids",
-					"type": "Number[]",
-					"description": "父类目ID数组"
-				},
-				{
-					"name": "level",
-					"type": "Number",
-					"description": "类目层级"
-				},
-				{
-					"name": "leaf_category",
-					"type": "Boolean",
-					"description": "是否叶子类目（只有叶子类目才能发布商品）"
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "类目名称"
-				},
 				{
 					"name": "category_id",
 					"type": "Number",
@@ -44,15 +17,42 @@
 				},
 				{
 					"name": "child_ids",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "子类目ID数组"
+				},
+				{
+					"name": "leaf_category",
+					"type": "Boolean",
+					"description": "是否叶子类目（只有叶子类目才能发布商品）"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "类目层级"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "parent_ids",
+					"type": "String[]",
+					"description": "父类目ID数组"
 				},
 				{
 					"name": "cn_name",
 					"type": "String",
-					"description": "类目的中文名称"
+					"description": "类目的中文名"
 				}
-			]
+			],
+			"name": "category",
+			"type": "PostCategory",
+			"description": "类目信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.get.new",
+	"apiChineseName": "（新）ICBU类目树获取接口",
+	"description": "获取商品发布类目",
+	"id": 50064
 }

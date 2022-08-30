@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "外部顾问id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				}
+			],
+			"name": "project_adviser_bind_dto",
+			"type": "ProjectAdviserBindDTO",
+			"description": "对象",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态：0无效，1有效",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_consultant_id",
+							"type": "String",
+							"description": "外部顾问id"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部楼盘id"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "失败原因"
+						}
+					],
+					"name": "data",
+					"type": "ProjectAdviserBindResultDTO[]",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.adviser.bind",
+	"apiChineseName": "置业顾问批量绑定楼盘",
+	"description": "置业顾问批量绑定楼盘",
+	"id": 60982
+}

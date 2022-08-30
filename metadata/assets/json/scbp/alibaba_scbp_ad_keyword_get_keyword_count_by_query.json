@@ -1,14 +1,6 @@
 {
-	"id": 55190,
-	"name": "alibaba.scbp.ad.keyword.get.keyword.count.by.query",
-	"apiChineseName": "计划关键词数目",
-	"description": "计划关键词数目",
 	"requestParams": [
 		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_line_id",
@@ -21,13 +13,13 @@
 					"type": "Number",
 					"description": "产品id"
 				}
-			]
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
 		},
 		{
-			"name": "campaign_keyword_query",
-			"type": "CampaignKeywordQuery",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "norm_word",
@@ -49,7 +41,11 @@
 					"type": "Number",
 					"description": "状态"
 				}
-			]
+			],
+			"name": "campaign_keyword_query",
+			"type": "CampaignKeywordQuery",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -58,5 +54,9 @@
 			"type": "Number",
 			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.get.keyword.count.by.query",
+	"apiChineseName": "计划关键词数目",
+	"description": "计划关键词数目",
+	"id": 55190
 }

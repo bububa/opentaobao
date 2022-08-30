@@ -12,7 +12,7 @@ type ReceiptBatchInfo struct {
 	BatchId string `json:"batch_id,omitempty" xml:"batch_id,omitempty"`
 	// 波次标识
 	BcFlag string `json:"bc_flag,omitempty" xml:"bc_flag,omitempty"`
-	// 扩展属性
+	// 扩展属性()
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 容器数量
 	ContainerCount int64 `json:"container_count,omitempty" xml:"container_count,omitempty"`

@@ -1,8 +1,4 @@
 {
-	"id": 23555,
-	"name": "taobao.oauth.code.create",
-	"apiChineseName": "淘宝OauthCode颁发",
-	"description": "手淘无线开放的oauthCode颁发接口",
 	"requestParams": [
 		{
 			"name": "test",
@@ -16,5 +12,9 @@
 			"type": "Number",
 			"description": "mock out params"
 		}
-	]
+	],
+	"name": "taobao.oauth.code.create",
+	"apiChineseName": "淘宝OauthCode颁发",
+	"description": "手淘无线开放的oauthCode颁发接口",
+	"id": 23555
 }

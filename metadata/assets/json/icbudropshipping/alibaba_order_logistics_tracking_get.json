@@ -1,8 +1,4 @@
 {
-	"id": 55278,
-	"name": "alibaba.order.logistics.tracking.get",
-	"apiChineseName": "阿里巴巴订单物流轨迹查询",
-	"description": "阿里巴巴订单物流轨迹查询",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -13,61 +9,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "tracking_list",
-			"type": "LogisticsTracking []",
-			"description": "logistics  tracking List",
 			"subParams": [
 				{
 					"name": "carrier",
 					"type": "String",
-					"description": "carrier",
-					"required": true
+					"description": "carrier"
 				},
 				{
 					"name": "current_event_code",
 					"type": "String",
-					"description": "The latest logistics event code",
-					"required": true
+					"description": "The latest logistics event code"
 				},
 				{
-					"name": "event_list",
-					"type": "TrackingEvent[]",
-					"description": "event list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "event_code",
 							"type": "String",
-							"description": "event code",
-							"required": true
+							"description": "event code"
 						},
 						{
 							"name": "event_location",
 							"type": "String",
-							"description": "event location",
-							"required": true
+							"description": "event location"
 						},
 						{
 							"name": "event_name",
 							"type": "String",
-							"description": "event name",
-							"required": true
+							"description": "event name"
 						},
 						{
 							"name": "event_time",
 							"type": "String",
-							"description": "event time",
-							"required": true
+							"description": "event time"
 						}
-					]
+					],
+					"name": "event_list",
+					"type": "TrackingEvent[]",
+					"description": "event list"
 				},
 				{
 					"name": "tracking_number",
 					"type": "String",
-					"description": "tracking number",
-					"required": true
+					"description": "tracking number"
+				},
+				{
+					"name": "tracking_url",
+					"type": "String",
+					"description": "tracking url"
 				}
-			]
+			],
+			"name": "tracking_list",
+			"type": "LogisticsTracking []",
+			"description": "logistics  tracking List"
 		}
-	]
+	],
+	"name": "alibaba.order.logistics.tracking.get",
+	"apiChineseName": "阿里巴巴订单物流轨迹查询",
+	"description": "阿里巴巴订单物流轨迹查询",
+	"id": 55278
 }

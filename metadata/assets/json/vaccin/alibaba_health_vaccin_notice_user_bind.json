@@ -1,8 +1,4 @@
 {
-	"id": 50348,
-	"name": "alibaba.health.vaccin.notice.user.bind",
-	"apiChineseName": "支付宝疫苗绑定接种人",
-	"description": "支付宝疫苗绑定接种人",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "bind_users",
-			"type": "AlipayVaccineUserBindDto[]",
-			"description": "绑定人信息list",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "reserve_date",
@@ -51,7 +43,11 @@
 					"type": "String",
 					"description": "接种人出生日期"
 				}
-			]
+			],
+			"name": "bind_users",
+			"type": "AlipayVaccineUserBindDto[]",
+			"description": "绑定人信息list",
+			"maxListSize": 999
 		},
 		{
 			"name": "outer_user_id",
@@ -71,11 +67,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "Boolean",
-			"description": "结果"
-		},
-		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "执行是否成功"
@@ -89,6 +80,15 @@
 			"name": "msg_info",
 			"type": "String",
 			"description": "错误描述"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.user.bind",
+	"apiChineseName": "支付宝疫苗绑定接种人",
+	"description": "支付宝疫苗绑定接种人",
+	"id": 50348
 }

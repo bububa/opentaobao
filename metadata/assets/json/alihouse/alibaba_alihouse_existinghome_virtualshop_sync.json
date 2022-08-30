@@ -1,0 +1,92 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_shop_id",
+					"type": "String",
+					"description": "外部虚拟店铺ID",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "虚拟店类型",
+					"required": true
+				},
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "目标ID",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "店铺名称",
+					"required": true
+				},
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "店铺logo",
+					"required": true
+				},
+				{
+					"name": "background_image",
+					"type": "String",
+					"description": "背景图",
+					"required": true
+				},
+				{
+					"name": "banner_image",
+					"type": "String",
+					"description": "banner图",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 0 - 否 1 - 是"
+				}
+			],
+			"name": "company_virtual_shop_dto",
+			"type": "CompanyVirtualShopDto",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.virtualshop.sync",
+	"apiChineseName": "二手房虚拟店铺数据同步",
+	"description": "二手房虚拟店铺数据同步",
+	"id": 56774
+}

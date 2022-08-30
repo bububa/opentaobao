@@ -1,8 +1,4 @@
 {
-	"id": 22385,
-	"name": "slb.aliyuncs.com.DeleteLoadBalancerListener.2013-02-21",
-	"apiChineseName": "删除 slb listener",
-	"description": "delete_vip",
 	"requestParams": [
 		{
 			"name": "loadBalancerId",
@@ -14,9 +10,9 @@
 			"name": "listenerPort",
 			"type": "Number",
 			"description": "listenerPort",
-			"required": true,
 			"maxValue": 65535,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -25,5 +21,9 @@
 			"type": "String",
 			"description": "request id"
 		}
-	]
+	],
+	"name": "slb.aliyuncs.com.DeleteLoadBalancerListener.2013-02-21",
+	"apiChineseName": "删除 slb listener",
+	"description": "delete_vip",
+	"id": 22385
 }

@@ -1,13 +1,6 @@
 {
-	"id": 26909,
-	"name": "alibaba.mydata.overview.industry.get",
-	"apiChineseName": "我的效果-获取Top行业列表",
-	"description": "获取数据管家我的效果API可以使用的行业",
 	"requestParams": [
 		{
-			"name": "date_range",
-			"type": "DateRange",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "end_date",
@@ -21,34 +14,38 @@
 					"description": "数据周期开始时间（含）",
 					"required": true
 				}
-			]
+			],
+			"name": "date_range",
+			"type": "DateRange",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "Industry []",
-			"description": "供应商Top行业列表",
 			"subParams": [
 				{
 					"name": "industry_desc",
 					"type": "String",
-					"description": "行业描述",
-					"required": true
+					"description": "行业描述"
 				},
 				{
 					"name": "industry_id",
 					"type": "Number",
-					"description": "行业ID",
-					"required": true
+					"description": "行业ID"
 				},
 				{
 					"name": "main_category",
 					"type": "Boolean",
-					"description": "是否主营行业",
-					"required": true
+					"description": "是否主营行业"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "Industry []",
+			"description": "供应商Top行业列表"
 		}
-	]
+	],
+	"name": "alibaba.mydata.overview.industry.get",
+	"apiChineseName": "我的效果-获取Top行业列表",
+	"description": "获取数据管家我的效果API可以使用的行业",
+	"id": 26909
 }

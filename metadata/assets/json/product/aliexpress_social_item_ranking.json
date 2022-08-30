@@ -1,8 +1,4 @@
 {
-	"id": 47594,
-	"name": "aliexpress.social.item.ranking",
-	"apiChineseName": "社交排行榜",
-	"description": "社交商品成交排行榜",
 	"requestParams": [
 		{
 			"name": "currency",
@@ -38,15 +34,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemPickPagingResult",
-			"description": "返回包装类型",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "ItemSearchResult[]",
-					"description": "返回类型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
@@ -162,7 +151,11 @@
 							"description": "收藏数语义化信息",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "ItemSearchResult[]",
+					"description": "返回类型",
+					"required": true
 				},
 				{
 					"name": "page_no",
@@ -200,7 +193,14 @@
 					"description": "每页条数",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "返回包装类型"
 		}
-	]
+	],
+	"name": "aliexpress.social.item.ranking",
+	"apiChineseName": "社交排行榜",
+	"description": "社交商品成交排行榜",
+	"id": 47594
 }

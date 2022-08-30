@@ -1,13 +1,6 @@
 {
-	"id": 46056,
-	"name": "alibaba.damai.mev.open.invalidticket",
-	"apiChineseName": "大麦换验平台-第三方对外开放-票单接口invalidTicket",
-	"description": "开放接口 使票无效",
 	"requestParams": [
 		{
-			"name": "ticket_id_open_param",
-			"type": "TicketIdOpenParam",
-			"description": "入参ticketIdOpenParam",
 			"subParams": [
 				{
 					"name": "perform_id",
@@ -29,40 +22,43 @@
 					"type": "String",
 					"description": "商家密钥"
 				}
-			]
+			],
+			"name": "ticket_id_open_param",
+			"type": "TicketIdOpenParam",
+			"description": "入参ticketIdOpenParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回内容",
-					"required": true
+					"description": "返回内容"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.invalidticket",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票单接口invalidTicket",
+	"description": "开放接口 使票无效",
+	"id": 46056
 }

@@ -1,9 +1,11 @@
 {
-	"id": 10629,
-	"name": "taobao.wlb.inventory.detail.get",
-	"apiChineseName": "查询库存详情",
-	"description": "查询库存详情，通过商品ID获取发送请求的卖家的库存详情",
 	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
 		{
 			"name": "inventory_type_list",
 			"type": "String[]",
@@ -14,29 +16,20 @@
 			"name": "store_code",
 			"type": "String",
 			"description": "仓库编码"
-		},
-		{
-			"name": "item_id",
-			"type": "Number",
-			"description": "商品ID",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "inventory_list",
-			"type": "WlbInventory []",
-			"description": "库存详情对象。其中包括货主ID，仓库编码，库存，库存类型等属性",
 			"subParams": [
-				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "商品ID"
-				},
 				{
 					"name": "user_id",
 					"type": "Number",
 					"description": "货主ID"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
 				},
 				{
 					"name": "store_code",
@@ -54,26 +47,33 @@
 					"description": "冻结(锁定)数量，用来跟踪库存的中间状态，比如前台销售了1件商品，这时lock加1，当商品出库的时候lock再减回去"
 				},
 				{
-					"name": "type",
-					"type": "String",
-					"description": "VENDIBLE--可销售库存\u003cbr/\u003eFREEZE--冻结库存\u003cbr/\u003eONWAY--在途库存\u003cbr/\u003eDEFECT--残次品库存"
-				},
-				{
 					"name": "reserve_quantity",
 					"type": "Number",
-					"description": "买家拍下但是没有付款的预扣数量，超过一定时间没有付款会自动释放。为防止超卖，这部分库存不可售，也暂不能出库。"
+					"description": "系统自动生成"
 				},
 				{
 					"name": "occupy_quantity",
 					"type": "Number",
-					"description": "库存占用数，两部分组成：\u003cbr/\u003e1.交易占用\u003cbr/\u003e买家付款后在仓库发货出库前会占用库存。\u003cbr/\u003e2.非交易出库占用\u003cbr/\u003e出库单创建仍未出库时会将库存占用"
+					"description": "系统自动生成"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "VENDIBLE--可销售库存\u003cbr/\u003eFREEZE--冻结库存\u003cbr/\u003eONWAY--在途库存\u003cbr/\u003eDEFECT--残次品库存"
 				}
-			]
+			],
+			"name": "inventory_list",
+			"type": "WlbInventory []",
+			"description": "库存详情对象。其中包括货主ID，仓库编码，库存，库存类型等属性"
 		},
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "入参的item_id"
 		}
-	]
+	],
+	"name": "taobao.wlb.inventory.detail.get",
+	"apiChineseName": "查询库存详情",
+	"description": "查询库存详情，通过商品ID获取发送请求的卖家的库存详情",
+	"id": 10629
 }

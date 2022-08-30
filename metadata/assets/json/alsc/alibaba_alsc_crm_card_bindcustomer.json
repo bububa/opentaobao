@@ -1,13 +1,6 @@
 {
-	"id": 46373,
-	"name": "alibaba.alsc.crm.card.bindcustomer",
-	"apiChineseName": "卡号绑定顾客",
-	"description": "为卡号绑定顾客",
 	"requestParams": [
 		{
-			"name": "param_bind_customer_open_req",
-			"type": "BindCustomerOpenReq",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "out_brand_id",
@@ -54,14 +47,14 @@
 					"type": "String",
 					"description": "操作人ID"
 				}
-			]
+			],
+			"name": "param_bind_customer_open_req",
+			"type": "BindCustomerOpenReq",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result",
@@ -93,12 +86,12 @@
 					"description": "结果详情",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		},
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result",
@@ -130,7 +123,14 @@
 					"description": "结果详情",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.bindcustomer",
+	"apiChineseName": "卡号绑定顾客",
+	"description": "为卡号绑定顾客",
+	"id": 46373
 }

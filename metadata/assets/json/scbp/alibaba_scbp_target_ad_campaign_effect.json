@@ -1,8 +1,4 @@
 {
-	"id": 41334,
-	"name": "alibaba.scbp.target.ad.campaign.effect",
-	"apiChineseName": "定向推广-获取计划维度推广效果",
-	"description": "定向推广-获取计划维度推广效果",
 	"requestParams": [
 		{
 			"name": "interval",
@@ -28,53 +24,50 @@
 	],
 	"responseParams": [
 		{
-			"name": "effect_list",
-			"type": "TopP4pQuickCampaignEffectView []",
-			"description": "数据列表",
 			"subParams": [
 				{
 					"name": "online_time",
 					"type": "String",
-					"description": "推广时长",
-					"required": true
+					"description": "推广时长"
 				},
 				{
 					"name": "cpc",
 					"type": "String",
-					"description": "平均点击花费",
-					"required": true
+					"description": "平均点击花费"
 				},
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "点击率",
-					"required": true
+					"description": "点击率"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "消耗金额，单位元",
-					"required": true
+					"description": "消耗金额，单位元"
 				},
 				{
 					"name": "click_cnt",
 					"type": "String",
-					"description": "点击量",
-					"required": true
+					"description": "点击量"
 				},
 				{
 					"name": "impression_cnt",
 					"type": "String",
-					"description": "曝光量",
-					"required": true
+					"description": "曝光量"
 				},
 				{
 					"name": "date",
 					"type": "String",
-					"description": "日期",
-					"required": true
+					"description": "日期"
 				}
-			]
+			],
+			"name": "effect_list",
+			"type": "TopP4pQuickCampaignEffectView []",
+			"description": "数据列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.campaign.effect",
+	"apiChineseName": "定向推广-获取计划维度推广效果",
+	"description": "定向推广-获取计划维度推广效果",
+	"id": 41334
 }

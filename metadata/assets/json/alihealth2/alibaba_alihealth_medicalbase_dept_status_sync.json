@@ -1,0 +1,46 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "医院ID+科室ID+状态",
+					"required": true
+				}
+			],
+			"name": "top_channel_dept_sync_d_t_o",
+			"type": "TopChannelDeptSyncDto",
+			"description": "科室状态同步",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "isvId"
+				}
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
+		}
+	],
+	"name": "alibaba.alihealth.medicalbase.dept.status.sync",
+	"apiChineseName": "挂号科室上下线",
+	"description": "挂号医院上下线",
+	"id": 58671
+}

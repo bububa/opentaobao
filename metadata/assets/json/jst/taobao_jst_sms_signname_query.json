@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sign_name",
+					"type": "String",
+					"description": "要查询的签名",
+					"required": true
+				}
+			],
+			"name": "query_sms_sign_request",
+			"type": "TopQuerySmsSignRequest",
+			"description": "签名查询的入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "sign_status",
+					"type": "Number",
+					"description": "拒绝"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "被拒绝的原因"
+				},
+				{
+					"name": "sign_name",
+					"type": "String",
+					"description": "申请的签名"
+				},
+				{
+					"name": "create_date",
+					"type": "String",
+					"description": "签名创建时间"
+				}
+			],
+			"name": "module",
+			"type": "QuerySmsSignDTO",
+			"description": "返回结果（signStatus： 0--待审核  1--通过 2--拒绝）"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "失败原因"
+		}
+	],
+	"name": "taobao.jst.sms.signname.query",
+	"apiChineseName": "淘宝短信签名查询",
+	"description": "淘宝短信签名查询",
+	"id": 60266
+}

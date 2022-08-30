@@ -1,19 +1,11 @@
 {
-	"id": 43861,
-	"name": "alibaba.txcs.brandmarketing.coupon.qrcode.get",
-	"apiChineseName": "品牌营销导购员券页面二维码获取",
-	"description": "构建券页码二维码url",
 	"requestParams": [
 		{
-			"name": "coupon_qrcode_param_do",
-			"type": "CouponQrcodeParamDO",
-			"description": "请求信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "guide_id",
+					"name": "merchant_code",
 					"type": "String",
-					"description": "导购员ID，需要保证唯一性",
+					"description": "商家编码",
 					"required": true
 				},
 				{
@@ -23,9 +15,9 @@
 					"required": true
 				},
 				{
-					"name": "merchant_code",
+					"name": "guide_id",
 					"type": "String",
-					"description": "商家编码",
+					"description": "导购员ID，需要保证唯一性",
 					"required": true
 				},
 				{
@@ -40,48 +32,51 @@
 					"description": "推广结束时间",
 					"required": true
 				}
-			]
+			],
+			"name": "coupon_qrcode_param_do",
+			"type": "CouponQrcodeParamDO",
+			"description": "请求信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "err_code",
-					"type": "String",
-					"description": "错误编码",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "CouponQrcodeResultDO",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "qrcode_url",
 							"type": "String",
-							"description": "二维码url",
-							"required": true
+							"description": "二维码url"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CouponQrcodeResultDO",
+					"description": "返回内容"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.txcs.brandmarketing.coupon.qrcode.get",
+	"apiChineseName": "品牌营销导购员券页面二维码获取",
+	"description": "构建券页码二维码url",
+	"id": 43861
 }

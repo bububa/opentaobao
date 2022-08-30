@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "全部类型（all）,人群（crowd），地域（region）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "层级（0,1,2）"
+				},
+				{
+					"name": "option_value",
+					"type": "String",
+					"description": "标签值"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "标签名（标签描述为空时，取标签名）"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "标签描述（标签名为空时，取标签描述）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "层级（0,1,2）"
+						},
+						{
+							"name": "option_value",
+							"type": "String",
+							"description": "标签值"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "标签名（标签描述为空时，取标签名）"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "标签描述（标签名为空时，取标签描述）"
+						}
+					],
+					"name": "sub_list",
+					"type": "TagDefineDto[]",
+					"description": "返回实体子级"
+				}
+			],
+			"name": "result_list",
+			"type": "AdsTargetingTagDto []",
+			"description": "返回实体"
+		}
+	],
+	"name": "alibaba.scbp.ad.target.tag.get.all.enable.tag.list",
+	"apiChineseName": "查询所有可添加标签信息",
+	"description": "查询标签数据",
+	"id": 57919
+}

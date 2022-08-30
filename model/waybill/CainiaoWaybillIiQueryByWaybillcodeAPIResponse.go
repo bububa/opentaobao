@@ -6,16 +6,16 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// CainiaoWaybillIiQueryByWaybillcodeAPIResponse 通过面单号查询面单信息 API返回值
+// CainiaoWaybillIiQueryByWaybillcodeAPIResponse 通过面单号查询面单打印报文 API返回值
 // cainiao.waybill.ii.query.by.waybillcode
 //
-// 通过面单号查看面单号的当前状态，如签收、发货、失效等。
+// 通过面单号查询面单的打印报文
 type CainiaoWaybillIiQueryByWaybillcodeAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel
 }
 
-// CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel is 通过面单号查询面单信息 成功返回结果
+// CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel is 通过面单号查询面单打印报文 成功返回结果
 type CainiaoWaybillIiQueryByWaybillcodeAPIResponseModel struct {
 	XMLName xml.Name `xml:"cainiao_waybill_ii_query_by_waybillcode_response"`
 	// 平台颁发的每次请求访问的唯一标识

@@ -1,8 +1,4 @@
 {
-	"id": 21392,
-	"name": "taobao.vmarket.eticket.reverse",
-	"apiChineseName": "电子凭证冲正接口",
-	"description": "电子凭证平台冲正接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -34,11 +30,6 @@
 			"description": "所有冲正后需要重新生成的码和对应的次数。码和次数之间用英文冒号分隔，多个码之间用英文逗号分隔。如果冲正后不需要重新生成码，留空"
 		},
 		{
-			"name": "qr_images",
-			"type": "String",
-			"description": "不需要上传二维码图片或者冲正后不需要变更码的请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数，多个文件名用逗号隔开且与参数verify_codes按从左到有的顺序一一对应。"
-		},
-		{
 			"name": "token",
 			"type": "String",
 			"description": "安全验证token，需要和该订单发码通知中的token一致",
@@ -53,6 +44,11 @@
 			"name": "posid",
 			"type": "String",
 			"description": "机具id，如果是码商必须传，如果是信任卖家不要传"
+		},
+		{
+			"name": "qr_images",
+			"type": "String",
+			"description": "不需要上传二维码图片或者冲正后不需要变更码的请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数，多个文件名用逗号隔开且与参数verify_codes按从左到有的顺序一一对应。"
 		}
 	],
 	"responseParams": [
@@ -62,14 +58,18 @@
 			"description": "0:失败，1:成功"
 		},
 		{
-			"name": "item_title",
-			"type": "String",
-			"description": "宝贝标题"
-		},
-		{
 			"name": "left_num",
 			"type": "Number",
 			"description": "整个订单的剩余可核销数量"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "宝贝标题"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.reverse",
+	"apiChineseName": "电子凭证冲正接口",
+	"description": "电子凭证平台冲正接口",
+	"id": 21392
 }

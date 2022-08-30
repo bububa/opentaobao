@@ -4,8 +4,6 @@ package drugtrace
 type BillDealStatusSearchDo struct {
 	// 出入库号
 	StoreInoutSeqNo string `json:"store_inout_seq_no,omitempty" xml:"store_inout_seq_no,omitempty"`
-	// 文件名
-	ShortFileName string `json:"short_file_name,omitempty" xml:"short_file_name,omitempty"`
 	// 药品类型
 	PhysicType string `json:"physic_type,omitempty" xml:"physic_type,omitempty"`
 	// 上传文件名
@@ -14,16 +12,24 @@ type BillDealStatusSearchDo struct {
 	FromUserName string `json:"from_user_name,omitempty" xml:"from_user_name,omitempty"`
 	// 角色类型
 	RoleType string `json:"role_type,omitempty" xml:"role_type,omitempty"`
+	// 创建日期
+	CrtDate string `json:"crt_date,omitempty" xml:"crt_date,omitempty"`
 	// IC码
 	IcCode string `json:"ic_code,omitempty" xml:"ic_code,omitempty"`
+	// 文件名
+	ShortFileName string `json:"short_file_name,omitempty" xml:"short_file_name,omitempty"`
 	// 企业名称
 	RefUserName string `json:"ref_user_name,omitempty" xml:"ref_user_name,omitempty"`
+	// 单据日期
+	BillTime string `json:"bill_time,omitempty" xml:"bill_time,omitempty"`
 	// 处理状态  0，处理中 1, 上传成功     3, 处理成功     4, 处理失败
 	ResultType string `json:"result_type,omitempty" xml:"result_type,omitempty"`
 	// 上传标识
 	UploadFlag string `json:"upload_flag,omitempty" xml:"upload_flag,omitempty"`
 	// 处理结果表状态(暂不用)
 	ProcessFlag string `json:"process_flag,omitempty" xml:"process_flag,omitempty"`
+	// 处理日期
+	ProcessDate string `json:"process_date,omitempty" xml:"process_date,omitempty"`
 	// 单号号
 	BillCode string `json:"bill_code,omitempty" xml:"bill_code,omitempty"`
 	// 单据类型
@@ -44,10 +50,4 @@ type BillDealStatusSearchDo struct {
 	UserId string `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 处理信息
 	ProcessInfo string `json:"process_info,omitempty" xml:"process_info,omitempty"`
-	// 创建日期
-	CrtDate string `json:"crt_date,omitempty" xml:"crt_date,omitempty"`
-	// 单据日期
-	BillTime string `json:"bill_time,omitempty" xml:"bill_time,omitempty"`
-	// 处理日期
-	ProcessDate string `json:"process_date,omitempty" xml:"process_date,omitempty"`
 }

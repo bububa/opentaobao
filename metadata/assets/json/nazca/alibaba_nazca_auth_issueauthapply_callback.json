@@ -1,8 +1,4 @@
 {
-	"id": 28641,
-	"name": "alibaba.nazca.auth.issueauthapply.callback",
-	"apiChineseName": "出证申请回调",
-	"description": "出证申请回调",
 	"requestParams": [
 		{
 			"name": "contract_num",
@@ -32,73 +28,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error",
 					"type": "String",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "ret_value",
-					"type": "IssueAuthCallBackDo",
-					"description": "retValue",
-					"required": true,
 					"subParams": [
 						{
 							"name": "contract_num",
 							"type": "String",
-							"description": "合同编号",
-							"required": true
+							"description": "合同编号"
 						},
 						{
 							"name": "issue_org",
 							"type": "String",
-							"description": "出证机构",
-							"required": true
+							"description": "出证机构"
 						},
 						{
 							"name": "platform_user_id",
 							"type": "String",
-							"description": "客户在1688的唯一标识",
-							"required": true
+							"description": "客户在1688的唯一标识"
 						},
 						{
 							"name": "report_url",
 							"type": "String",
-							"description": "出证报告下载地址",
-							"required": true
+							"description": "出证报告下载地址"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "出证状态 0：出证中；1：出证成功",
-							"required": true
+							"description": "出证状态 0：出证中；1：出证成功"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "IssueAuthCallBackDo",
+					"description": "retValue"
 				},
 				{
 					"name": "sub_error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.nazca.auth.issueauthapply.callback",
+	"apiChineseName": "出证申请回调",
+	"description": "出证申请回调",
+	"id": 28641
 }

@@ -1,14 +1,6 @@
 {
-	"id": 39644,
-	"name": "alibaba.wdk.sku.combinesku.update",
-	"apiChineseName": "组合商品更新接口",
-	"description": "组合商品修改接口",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "SkuDo[]",
-			"description": "请求参数",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "sku_code",
@@ -22,29 +14,24 @@
 					"description": "商品名称，对商品直观的描述，通常包含了品牌、规格等信息"
 				},
 				{
+					"name": "main_pic_urls",
+					"type": "String",
+					"description": "商品主图，请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
+				},
+				{
 					"name": "ou_code",
 					"type": "String",
 					"description": "门店或DC编码，如果填写了渠道店id，该字段会被忽略"
 				},
 				{
-					"name": "shop_id",
+					"name": "detail_pic_urls",
 					"type": "String",
-					"description": "渠道店id"
+					"description": "详情图片地址（多个图片用英文逗号分割）请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
 				},
 				{
 					"name": "sale_price",
 					"type": "String",
 					"description": "商品价格（单位元）和字段sale_price_unit_cent两者只能选其一"
-				},
-				{
-					"name": "sale_price_unit_cent",
-					"type": "Number",
-					"description": "商品价格（单位分）和字段sale_price两者只能选其一"
-				},
-				{
-					"name": "detail_pic_urls",
-					"type": "String",
-					"description": "详情图片地址（多个图片用英文逗号分割）请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
 				},
 				{
 					"name": "barcodes",
@@ -67,9 +54,6 @@
 					"description": "线上生效过期时间"
 				},
 				{
-					"name": "sub_skus",
-					"type": "SubSkuDo[]",
-					"description": "子商品信息",
 					"subParams": [
 						{
 							"name": "sub_sku_code",
@@ -81,7 +65,10 @@
 							"type": "Number",
 							"description": "子商品数量"
 						}
-					]
+					],
+					"name": "sub_skus",
+					"type": "SubSkuDo[]",
+					"description": "子商品信息"
 				},
 				{
 					"name": "category_code",
@@ -99,9 +86,14 @@
 					"description": "销售规格"
 				},
 				{
-					"name": "main_pic_urls",
+					"name": "shop_id",
 					"type": "String",
-					"description": "商品主图，请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
+					"description": "渠道店id"
+				},
+				{
+					"name": "sale_price_unit_cent",
+					"type": "Number",
+					"description": "商品价格（单位分）和字段sale_price两者只能选其一"
 				},
 				{
 					"name": "rich_text",
@@ -123,66 +115,66 @@
 					"type": "Number",
 					"description": "门店来控制本门店是否在app上让该商品可见，1可见 0不可见"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "SkuDo[]",
+			"description": "请求参数",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResults",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功",
-					"required": true
+					"description": "接口调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "接口调用异常编码",
-					"required": true
+					"description": "接口调用异常编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "接口调用异常信息",
-					"required": true
+					"description": "接口调用异常信息"
 				},
 				{
-					"name": "models",
-					"type": "ApiResult[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个商品是否更新成功",
-							"required": true
+							"description": "单个商品是否更新成功"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "单个商品更新异常编码（异常才有值）",
-							"required": true
+							"description": "单个商品更新异常编码（异常才有值）"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "单个商品更新异常信息（异常才有值）",
-							"required": true
+							"description": "单个商品更新异常信息（异常才有值）"
 						},
 						{
 							"name": "model",
 							"type": "String",
-							"description": "商品编码值",
-							"required": true
+							"description": "商品编码值"
 						}
-					]
+					],
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "商品列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.combinesku.update",
+	"apiChineseName": "组合商品更新接口",
+	"description": "组合商品修改接口",
+	"id": 39644
 }

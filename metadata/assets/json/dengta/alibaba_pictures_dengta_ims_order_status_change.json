@@ -1,8 +1,4 @@
 {
-	"id": 50715,
-	"name": "alibaba.pictures.dengta.ims.order.status.change",
-	"apiChineseName": "天下秀回传订单执行状态变动",
-	"description": "天下秀回传订单执行状态变动",
 	"requestParams": [
 		{
 			"name": "change_time",
@@ -41,29 +37,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "GeneralResult",
-			"description": "接口出参",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求标识",
-					"required": true
+					"description": "请求标识"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码,Code=0 表示成功",
-					"required": true
+					"description": "状态码,Code=0 表示成功"
 				},
 				{
 					"name": "value",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "GeneralResult",
+			"description": "接口出参"
 		}
-	]
+	],
+	"name": "alibaba.pictures.dengta.ims.order.status.change",
+	"apiChineseName": "天下秀回传订单执行状态变动",
+	"description": "天下秀回传订单执行状态变动",
+	"id": 50715
 }

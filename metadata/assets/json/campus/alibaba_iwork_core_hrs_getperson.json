@@ -1,8 +1,4 @@
 {
-	"id": 31546,
-	"name": "alibaba.iwork.core.hrs.getperson",
-	"apiChineseName": "获取神鲸用户基本信息",
-	"description": "神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询",
 	"requestParams": [
 		{
 			"name": "account_id",
@@ -27,47 +23,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "content",
-					"required": true
+					"type": "String",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.iwork.core.hrs.getperson",
+	"apiChineseName": "获取神鲸用户基本信息",
+	"description": "神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询",
+	"id": 31546
 }

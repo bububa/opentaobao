@@ -1,8 +1,4 @@
 {
-	"id": 33390,
-	"name": "alibaba.ailabs.aligenie.opencontent.push",
-	"apiChineseName": "天猫精灵内容接入标准接口",
-	"description": "第三方内容接入天猫精灵内容库，供相关技能使用",
 	"requestParams": [
 		{
 			"name": "skill_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "contents",
-			"type": "BatchContent",
-			"description": "详细内容列表",
-			"required": true,
 			"subParams": [
 				{
 					"name": "category_id",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "open_contents",
-					"type": "OpenContent[]",
-					"description": "内容信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "album_raw_id",
@@ -45,9 +33,6 @@
 							"required": true
 						},
 						{
-							"name": "image_url",
-							"type": "ImageUrl",
-							"description": "封面图片信息",
 							"subParams": [
 								{
 									"name": "mediam",
@@ -64,7 +49,10 @@
 									"type": "String",
 									"description": "大图链接(具体大小范围暂无标准，接入方自定)"
 								}
-							]
+							],
+							"name": "image_url",
+							"type": "ImageUrl",
+							"description": "封面图片信息"
 						},
 						{
 							"name": "remark",
@@ -88,9 +76,6 @@
 							"required": true
 						},
 						{
-							"name": "author",
-							"type": "Author",
-							"description": "作者信息",
 							"subParams": [
 								{
 									"name": "content_author",
@@ -102,7 +87,10 @@
 									"type": "String",
 									"description": "主播，演唱者，演播者"
 								}
-							]
+							],
+							"name": "author",
+							"type": "Author",
+							"description": "作者信息"
 						},
 						{
 							"name": "title",
@@ -133,9 +121,6 @@
 							"required": true
 						},
 						{
-							"name": "play_urls",
-							"type": "PlayUrl[]",
-							"description": "播放链接",
 							"subParams": [
 								{
 									"name": "bitrate",
@@ -152,7 +137,10 @@
 									"type": "String",
 									"description": "节目音视频类型，目前支持audio及video两种类型"
 								}
-							]
+							],
+							"name": "play_urls",
+							"type": "PlayUrl[]",
+							"description": "播放链接"
 						},
 						{
 							"name": "album_description",
@@ -174,30 +162,40 @@
 							"type": "Number",
 							"description": "三方热度分1~5"
 						}
-					]
+					],
+					"name": "open_contents",
+					"type": "OpenContent[]",
+					"description": "内容信息",
+					"required": true
 				}
-			]
+			],
+			"name": "contents",
+			"type": "BatchContent",
+			"description": "详细内容列表",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "retMsg",
-					"required": true
+					"description": "retMsg"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "retCode",
-					"required": true
+					"description": "retCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.opencontent.push",
+	"apiChineseName": "天猫精灵内容接入标准接口",
+	"description": "第三方内容接入天猫精灵内容库，供相关技能使用",
+	"id": 33390
 }

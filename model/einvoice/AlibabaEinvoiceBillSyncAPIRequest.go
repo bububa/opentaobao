@@ -20,6 +20,8 @@ type AlibabaEinvoiceBillSyncAPIRequest struct {
 	_shopName string
 	// 税务登记证号
 	_payeeRegisterNo string
+	// 结算单可开票总金额（不填=sumPrice），小数点后2两位
+	_invoicePrice string
 	// 结算单订单ID
 	_orderId string
 	// 结算单总价格，小数点后2两位
@@ -28,8 +30,6 @@ type AlibabaEinvoiceBillSyncAPIRequest struct {
 	_platform string
 	// 品牌名称，不填默认=shop_name
 	_brandName string
-	// 结算单可开票总金额（不填=sumPrice），小数点后2两位
-	_invoicePrice string
 	// 开票店铺的平台，默认等于platform
 	_shopPlatform string
 	// 结算单同步操作：=1插入，=2更新，=3废弃删除
@@ -111,6 +111,19 @@ func (r AlibabaEinvoiceBillSyncAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
+// SetInvoicePrice is InvoicePrice Setter
+// 结算单可开票总金额（不填=sumPrice），小数点后2两位
+func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoicePrice(_invoicePrice string) error {
+	r._invoicePrice = _invoicePrice
+	r.Set("invoice_price", _invoicePrice)
+	return nil
+}
+
+// GetInvoicePrice InvoicePrice Getter
+func (r AlibabaEinvoiceBillSyncAPIRequest) GetInvoicePrice() string {
+	return r._invoicePrice
+}
+
 // SetOrderId is OrderId Setter
 // 结算单订单ID
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetOrderId(_orderId string) error {
@@ -161,19 +174,6 @@ func (r *AlibabaEinvoiceBillSyncAPIRequest) SetBrandName(_brandName string) erro
 // GetBrandName BrandName Getter
 func (r AlibabaEinvoiceBillSyncAPIRequest) GetBrandName() string {
 	return r._brandName
-}
-
-// SetInvoicePrice is InvoicePrice Setter
-// 结算单可开票总金额（不填=sumPrice），小数点后2两位
-func (r *AlibabaEinvoiceBillSyncAPIRequest) SetInvoicePrice(_invoicePrice string) error {
-	r._invoicePrice = _invoicePrice
-	r.Set("invoice_price", _invoicePrice)
-	return nil
-}
-
-// GetInvoicePrice InvoicePrice Getter
-func (r AlibabaEinvoiceBillSyncAPIRequest) GetInvoicePrice() string {
-	return r._invoicePrice
 }
 
 // SetShopPlatform is ShopPlatform Setter

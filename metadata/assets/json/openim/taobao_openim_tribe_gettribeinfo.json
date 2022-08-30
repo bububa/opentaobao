@@ -1,14 +1,6 @@
 {
-	"id": 25571,
-	"name": "taobao.openim.tribe.gettribeinfo",
-	"apiChineseName": "获取群信息",
-	"description": "获取群信息",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -27,7 +19,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tribe_id",
@@ -38,9 +34,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "tribe_info",
-			"type": "TribeInfo",
-			"description": "群信息",
 			"subParams": [
 				{
 					"name": "tribe_id",
@@ -77,7 +70,14 @@
 					"type": "String",
 					"description": "群公告"
 				}
-			]
+			],
+			"name": "tribe_info",
+			"type": "TribeInfo",
+			"description": "群信息"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.gettribeinfo",
+	"apiChineseName": "获取群信息",
+	"description": "获取群信息",
+	"id": 25571
 }

@@ -1,14 +1,6 @@
 {
-	"id": 50466,
-	"name": "alitrip.platform.poi.raw.poioutbypoiids",
-	"apiChineseName": "根据poiId输出飞猪poi数据",
-	"description": "根据poiId输出飞猪poi数据",
 	"requestParams": [
 		{
-			"name": "fliggy_poiid_param",
-			"type": "FliggyPoiIdParam",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "poi_ids",
@@ -16,126 +8,116 @@
 					"description": "需要查询的poiid",
 					"required": true
 				}
-			]
+			],
+			"name": "fliggy_poiid_param",
+			"type": "FliggyPoiIdParam",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "Data[]",
-					"description": "返回poi详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "source_id",
 							"type": "String",
-							"description": "poiId",
-							"required": true
+							"description": "poiId"
 						},
 						{
 							"name": "division_tree_name",
 							"type": "String",
-							"description": "行政区划树名",
-							"required": true
+							"description": "行政区划树名"
 						},
 						{
 							"name": "division_tree_id",
 							"type": "String",
-							"description": "行政区划树",
-							"required": true
+							"description": "行政区划树"
 						},
 						{
 							"name": "open_time",
 							"type": "String",
-							"description": "开放时间",
-							"required": true
+							"description": "开放时间"
 						},
 						{
 							"name": "lat",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "lon",
 							"type": "String",
-							"description": "经度",
-							"required": true
+							"description": "经度"
 						},
 						{
 							"name": "telephone",
 							"type": "String",
-							"description": "电话",
-							"required": true
+							"description": "电话"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "地址",
-							"required": true
+							"description": "地址"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						},
 						{
 							"name": "first_category",
 							"type": "Number",
-							"description": "类目",
-							"required": true
+							"description": "类目"
 						},
 						{
 							"name": "name_en",
 							"type": "String",
-							"description": "poi英文名",
-							"required": true
+							"description": "poi英文名"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "poi名称",
-							"required": true
+							"description": "poi名称"
 						},
 						{
 							"name": "poi_id",
 							"type": "Number",
-							"description": "poiId",
-							"required": true
+							"description": "poiId"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "Data[]",
+					"description": "返回poi详情"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "total_records",
 					"type": "Number",
-					"description": "总数(不可用)",
-					"required": true
+					"description": "总数(不可用)"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alitrip.platform.poi.raw.poioutbypoiids",
+	"apiChineseName": "根据poiId输出飞猪poi数据",
+	"description": "根据poiId输出飞猪poi数据",
+	"id": 50466
 }

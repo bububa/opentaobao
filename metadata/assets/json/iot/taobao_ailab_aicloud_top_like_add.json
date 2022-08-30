@@ -1,8 +1,4 @@
 {
-	"id": 33767,
-	"name": "taobao.ailab.aicloud.top.like.add",
-	"apiChineseName": "增加收藏",
-	"description": "将制定内容加入收藏",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -67,5 +63,9 @@
 			"type": "Boolean",
 			"description": "具体的结果值"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.like.add",
+	"apiChineseName": "增加收藏",
+	"description": "将制定内容加入收藏",
+	"id": 33767
 }

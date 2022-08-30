@@ -1,8 +1,4 @@
 {
-	"id": 25201,
-	"name": "alibaba.scbp.keyword.matched.products.get",
-	"apiChineseName": "查询和词匹配的推广产品",
-	"description": "查询和词匹配的推广产品",
 	"requestParams": [
 		{
 			"name": "ad_keyword",
@@ -13,14 +9,21 @@
 	],
 	"responseParams": [
 		{
-			"name": "mached_product_list",
-			"type": "TopMatchedProductDto []",
-			"description": "匹配的产品列表",
 			"subParams": [
+				{
+					"name": "is_force_match",
+					"type": "String",
+					"description": "是否强制绑定"
+				},
 				{
 					"name": "is_preferential",
 					"type": "String",
 					"description": "是否设置优先推广"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
 				},
 				{
 					"name": "qs_star",
@@ -33,21 +36,18 @@
 					"description": "产品标题"
 				},
 				{
-					"name": "is_force_match",
-					"type": "String",
-					"description": "是否强制绑定"
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品ID"
-				},
-				{
 					"name": "is_offer",
 					"type": "String",
 					"description": "Y:产品推广中,N:产品未推广"
 				}
-			]
+			],
+			"name": "mached_product_list",
+			"type": "TopMatchedProductDto []",
+			"description": "匹配的产品列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.keyword.matched.products.get",
+	"apiChineseName": "查询和词匹配的推广产品",
+	"description": "查询和词匹配的推广产品",
+	"id": 25201
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25775,
-	"name": "tmall.servicecenter.workcard.push",
-	"apiChineseName": "推送服务工单信息",
-	"description": "服务商家推送工单信息到天猫。",
 	"requestParams": [
 		{
 			"name": "attributes",
@@ -39,9 +35,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "workcard_result",
-			"type": "ResultBase",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "value",
@@ -63,7 +56,14 @@
 					"type": "Boolean",
 					"description": "是否成功"
 				}
-			]
+			],
+			"name": "workcard_result",
+			"type": "ResultBase",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.push",
+	"apiChineseName": "推送服务工单信息",
+	"description": "服务商家推送工单信息到天猫。",
+	"id": 25775
 }

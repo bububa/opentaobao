@@ -18,6 +18,8 @@ type AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest struct {
 	_bizOrderCode string
 	// 业务请求时间
 	_bizTime string
+	// 一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)
+	_businessModel string
 }
 
 // NewAlibabaAscpUopSupplierConsignorderNotifyReceivedRequest 初始化AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest对象
@@ -78,4 +80,17 @@ func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBizTime(
 // GetBizTime BizTime Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetBizTime() string {
 	return r._bizTime
+}
+
+// SetBusinessModel is BusinessModel Setter
+// 一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)
+func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) SetBusinessModel(_businessModel string) error {
+	r._businessModel = _businessModel
+	r.Set("business_model", _businessModel)
+	return nil
+}
+
+// GetBusinessModel BusinessModel Getter
+func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedAPIRequest) GetBusinessModel() string {
+	return r._businessModel
 }

@@ -1,8 +1,4 @@
 {
-	"id": 7,
-	"name": "taobao.product.img.upload",
-	"apiChineseName": "上传单张产品非主图，如果需要传多张，可调多次",
-	"description": "1.传入产品ID \u003cbr/\u003e2.传入图片内容 \u003cbr/\u003e注意：图片最大为500K,只支持JPG,GIF格式,如果需要传多张，可调多次",
 	"requestParams": [
 		{
 			"name": "id",
@@ -19,8 +15,8 @@
 			"name": "image",
 			"type": "byte[]",
 			"description": "图片内容.图片最大为500K,只支持JPG,GIF格式.",
-			"required": true,
-			"maxLength": 1048576
+			"maxLength": 1048576,
+			"required": true
 		},
 		{
 			"name": "position",
@@ -35,9 +31,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_img",
-			"type": "ProductImg",
-			"description": "返回产品图片结构中的：url,id,created,modified",
 			"subParams": [
 				{
 					"name": "id",
@@ -59,7 +52,14 @@
 					"type": "Date",
 					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 				}
-			]
+			],
+			"name": "product_img",
+			"type": "ProductImg",
+			"description": "返回产品图片结构中的：url,id,created,modified"
 		}
-	]
+	],
+	"name": "taobao.product.img.upload",
+	"apiChineseName": "上传单张产品非主图，如果需要传多张，可调多次",
+	"description": "1.传入产品ID \u003cbr/\u003e2.传入图片内容 \u003cbr/\u003e注意：图片最大为500K,只支持JPG,GIF格式,如果需要传多张，可调多次",
+	"id": 7
 }

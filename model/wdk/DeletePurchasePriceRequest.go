@@ -8,4 +8,6 @@ type DeletePurchasePriceRequest struct {
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 门店ID
 	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
+	// 渠道
+	ChannelCodes string `json:"channel_codes,omitempty" xml:"channel_codes,omitempty"`
 }

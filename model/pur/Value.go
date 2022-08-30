@@ -28,4 +28,6 @@ type Value struct {
 	BeginDate string `json:"begin_date,omitempty" xml:"begin_date,omitempty"`
 	// 结束日期
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
+	// CPO NO
+	CpoNo string `json:"cpo_no,omitempty" xml:"cpo_no,omitempty"`
 }

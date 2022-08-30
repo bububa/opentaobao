@@ -12,8 +12,6 @@ import (
 // 核销用户的一张优惠券，返回核销结果
 type TmallPromotionCouponUseAPIRequest struct {
 	model.Params
-	// 扩展字段
-	_extra string
 	// 业务类型
 	_bizType string
 	// buyer_id、buyer_nick至少填一个， 都填写以id为准
@@ -24,6 +22,8 @@ type TmallPromotionCouponUseAPIRequest struct {
 	_sellerId string
 	// 优惠券id
 	_couponId string
+	// 扩展字段
+	_extra string
 }
 
 // NewTmallPromotionCouponUseRequest 初始化TmallPromotionCouponUseAPIRequest对象
@@ -45,19 +45,6 @@ func (r TmallPromotionCouponUseAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetExtra is Extra Setter
-// 扩展字段
-func (r *TmallPromotionCouponUseAPIRequest) SetExtra(_extra string) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
-	return nil
-}
-
-// GetExtra Extra Getter
-func (r TmallPromotionCouponUseAPIRequest) GetExtra() string {
-	return r._extra
 }
 
 // SetBizType is BizType Setter
@@ -123,4 +110,17 @@ func (r *TmallPromotionCouponUseAPIRequest) SetCouponId(_couponId string) error 
 // GetCouponId CouponId Getter
 func (r TmallPromotionCouponUseAPIRequest) GetCouponId() string {
 	return r._couponId
+}
+
+// SetExtra is Extra Setter
+// 扩展字段
+func (r *TmallPromotionCouponUseAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r TmallPromotionCouponUseAPIRequest) GetExtra() string {
+	return r._extra
 }

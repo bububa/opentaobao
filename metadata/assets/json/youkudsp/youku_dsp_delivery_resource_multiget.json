@@ -1,8 +1,4 @@
 {
-	"id": 39065,
-	"name": "youku.dsp.delivery.resource.multiget",
-	"apiChineseName": "优酷实时批量获取可投放设备资源",
-	"description": "优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取",
 	"requestParams": [
 		{
 			"name": "channel_id",
@@ -36,9 +32,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "models",
-			"type": "DeliveryList []",
-			"description": "素材列表",
 			"subParams": [
 				{
 					"name": "delivery_type",
@@ -53,10 +46,6 @@
 					"required": true
 				},
 				{
-					"name": "resource",
-					"type": "Map",
-					"description": "素材信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "imgs",
@@ -94,7 +83,11 @@
 							"description": "h5地址",
 							"required": true
 						}
-					]
+					],
+					"name": "resource",
+					"type": "Map",
+					"description": "素材信息",
+					"required": true
 				},
 				{
 					"name": "device_id_type",
@@ -114,7 +107,10 @@
 					"description": "设备id(md5加密)",
 					"required": true
 				}
-			]
+			],
+			"name": "models",
+			"type": "DeliveryList []",
+			"description": "素材列表"
 		},
 		{
 			"name": "msg_code",
@@ -136,5 +132,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "youku.dsp.delivery.resource.multiget",
+	"apiChineseName": "优酷实时批量获取可投放设备资源",
+	"description": "优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取",
+	"id": 39065
 }

@@ -1,8 +1,4 @@
 {
-	"id": 22599,
-	"name": "taobao.qianniu.task.create",
-	"apiChineseName": "创建轻任务",
-	"description": "发起一个轻任务，分配给多个执行者，并发送消息提醒，由任务发起者调用",
 	"requestParams": [
 		{
 			"name": "meta",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "QTaskMetadata",
-			"description": "创建的任务元数据",
 			"subParams": [
 				{
 					"name": "id",
@@ -79,9 +72,9 @@
 					"description": "任务完成标识： 0表示只要有一个人完成任务即可，1表示所有人需要各自都完成任务"
 				},
 				{
-					"name": "task_count",
-					"type": "Number",
-					"description": "与此任务元相关的任务数"
+					"name": "memo",
+					"type": "String",
+					"description": "任务元备注"
 				},
 				{
 					"name": "priority",
@@ -89,16 +82,23 @@
 					"description": "优先级，0低，1中，2高"
 				},
 				{
-					"name": "memo",
-					"type": "String",
-					"description": "任务元备注"
+					"name": "task_count",
+					"type": "Number",
+					"description": "与此任务元相关的任务数"
 				},
 				{
 					"name": "attachments",
 					"type": "String",
 					"description": "轻任务附件信息，userId_timestamp_随机字符串，例如：23434_1234458623_seresfto"
 				}
-			]
+			],
+			"name": "result",
+			"type": "QTaskMetadata",
+			"description": "创建的任务元数据"
 		}
-	]
+	],
+	"name": "taobao.qianniu.task.create",
+	"apiChineseName": "创建轻任务",
+	"description": "发起一个轻任务，分配给多个执行者，并发送消息提醒，由任务发起者调用",
+	"id": 22599
 }

@@ -1,8 +1,4 @@
 {
-	"id": 31200,
-	"name": "tmall.exchange.message.add",
-	"apiChineseName": "卖家创建换货留言",
-	"description": "卖家创建换货留言",
 	"requestParams": [
 		{
 			"name": "content",
@@ -25,105 +21,95 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "返回字段。目前支持id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "RefundMessage[]",
-					"description": "留言信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "refund_id",
-							"type": "Number",
-							"description": "换货单号ID",
-							"required": true
-						},
-						{
-							"name": "created",
-							"type": "Date",
-							"description": "留言创建时间",
-							"required": true
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "留言ID",
-							"required": true
-						},
-						{
-							"name": "owner_id",
-							"type": "Number",
-							"description": "留言者ID",
-							"required": true
-						},
-						{
-							"name": "owner_nick",
-							"type": "String",
-							"description": "留言者昵称",
-							"required": true
-						},
-						{
-							"name": "content",
-							"type": "String",
-							"description": "留言内容",
-							"required": true
-						},
-						{
-							"name": "pic_urls",
-							"type": "PicUrl[]",
-							"description": "凭证信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "url",
-									"type": "String",
-									"description": "图片url",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "message_type",
-							"type": "String",
-							"description": "留言类型：系统或是人工",
-							"required": true
-						},
-						{
-							"name": "owner_role",
-							"type": "String",
-							"description": "留言者橘色",
-							"required": true
-						}
-					]
-				},
-				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常信息",
-					"required": true
+					"type": "String",
+					"description": "异常信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "留言ID"
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "换货单号ID"
+						},
+						{
+							"name": "owner_id",
+							"type": "Number",
+							"description": "留言者ID"
+						},
+						{
+							"name": "owner_nick",
+							"type": "String",
+							"description": "留言者昵称"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "留言内容"
+						},
+						{
+							"subParams": [
+								{
+									"name": "url",
+									"type": "String",
+									"description": "图片url"
+								}
+							],
+							"name": "pic_urls",
+							"type": "PicUrl[]",
+							"description": "凭证信息"
+						},
+						{
+							"name": "created",
+							"type": "Date",
+							"description": "留言创建时间"
+						},
+						{
+							"name": "message_type",
+							"type": "String",
+							"description": "留言类型：系统或是人工"
+						},
+						{
+							"name": "owner_role",
+							"type": "String",
+							"description": "留言者橘色"
+						}
+					],
+					"name": "results",
+					"type": "RefundMessage[]",
+					"description": "留言信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.exchange.message.add",
+	"apiChineseName": "卖家创建换货留言",
+	"description": "卖家创建换货留言",
+	"id": 31200
 }

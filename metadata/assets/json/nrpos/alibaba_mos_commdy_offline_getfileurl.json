@@ -1,86 +1,76 @@
 {
-	"id": 42992,
-	"name": "alibaba.mos.commdy.offline.getfileurl",
-	"apiChineseName": "去前置机pos商品离线文件下载地址查询接口",
-	"description": "去前置机-pos查询离线文件下载地址接口",
 	"requestParams": [
 		{
 			"name": "file_keys",
 			"type": "String[]",
 			"description": "离线文件名称",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "headers",
-					"type": "Json",
-					"description": "返回头",
-					"required": true
+					"type": "String",
+					"description": "返回头"
 				},
 				{
 					"name": "mapping_code",
 					"type": "String",
-					"description": "null",
-					"required": true
+					"description": "null"
 				},
 				{
-					"name": "datas",
-					"type": "OfflineFileDto[]",
-					"description": "返回结果合集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "file_key",
 							"type": "String",
-							"description": "文件名称",
-							"required": true
+							"description": "文件名称"
 						},
 						{
 							"name": "url",
 							"type": "String",
-							"description": "文件下载地址",
-							"required": true
+							"description": "文件下载地址"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "OfflineFileDto[]",
+					"description": "返回结果合集"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "http请求返回码",
-					"required": true
+					"description": "http请求返回码"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "null",
-					"required": true
+					"type": "String",
+					"description": "null"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "业务返回码",
-					"required": true
+					"description": "业务返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "业务返回信息",
-					"required": true
+					"description": "业务返回信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.commdy.offline.getfileurl",
+	"apiChineseName": "去前置机pos商品离线文件下载地址查询接口",
+	"description": "去前置机-pos查询离线文件下载地址接口",
+	"id": 42992
 }

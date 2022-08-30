@@ -1,13 +1,15 @@
 {
-	"id": 37377,
-	"name": "alibaba.mos.onsite.trade.query",
-	"apiChineseName": "新商场当面付交易查询",
-	"description": "本接口提供新商场当面付订单的查询的功能，商户可以通过本接口主动查询订单状态，完成下一步的业务逻辑。\n商户系统应在两种场景下调用此接口: 商户POS系统应该在调用[条码支付请求接口]并成功返回后，调用此接口查询订单的处理状态。",
 	"requestParams": [
 		{
 			"name": "trade_no",
 			"type": "String",
 			"description": "喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  \u003e 商户支付流水号。",
+			"maxLength": 64
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 \u003e  商户支付流水号。",
 			"maxLength": 64
 		},
 		{
@@ -21,125 +23,106 @@
 			"type": "String",
 			"description": "门店号或喵街商户ID",
 			"required": true
-		},
-		{
-			"name": "out_trade_no",
-			"type": "String",
-			"description": "原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 \u003e  商户支付流水号。",
-			"maxLength": 64
 		}
 	],
 	"responseParams": [
 		{
-			"name": "onsite_trade_query_response",
-			"type": "OnsiteTradeQueryResponse",
-			"description": "查询结果对象。必然返回",
 			"subParams": [
-				{
-					"name": "trade_no",
-					"type": "String",
-					"description": "喵街交易流水号。必然返回",
-					"required": true
-				},
-				{
-					"name": "out_trade_no",
-					"type": "String",
-					"description": "原支付请求的商户支付流水号。必然返回",
-					"required": true
-				},
 				{
 					"name": "buyer_nick",
 					"type": "String",
-					"description": "消费者在喵街的昵称，将用*号屏蔽部分内容。必然返回",
-					"required": true
-				},
-				{
-					"name": "trade_status",
-					"type": "String",
-					"description": "交易目前所处的状态。必然返回。取值：WAIT_FOR_CONFIRM，待确认，此时不能申请退款，可以撤销；WAIT_BUYER_PAY，等待消费者付款\t，此时不能申请退款，可以撤销；TRADE_SUCCESS，付款成功，此时可以申请退款，可以撤销（自动申请退款）；TRADE_FINISHED，交易成功，此时可以申请退款，不可以撤销；TRADE_CLOSED，交易关闭，此时不能申请退款，不能撤销",
-					"required": true
-				},
-				{
-					"name": "total_amount",
-					"type": "Number",
-					"description": "本次交易支付的订单金额，单位为人民币（分）。必然返回",
-					"required": true
+					"description": "消费者在喵街的昵称，将用*号屏蔽部分内容。必然返回"
 				},
 				{
 					"name": "gmt_payment",
 					"type": "String",
-					"description": "消费者付款时间。在付款后才会返回，格式为 yyyy-MM-dd HH:mm:ss，时区是GMT+8",
-					"required": true
-				},
-				{
-					"name": "auth_code_source",
-					"type": "String",
-					"description": "码来源，取值：MJ、M_TAO、ALIPAY",
-					"required": true
+					"description": "消费者付款时间。在付款后才会返回，格式为 yyyy-MM-dd HH:mm:ss，时区是GMT+8"
 				},
 				{
 					"name": "buyer_total_fund_fee",
 					"type": "Number",
-					"description": "消费者实付总额。单位：分",
-					"required": true
+					"description": "消费者实付总额。单位：分"
 				},
 				{
 					"name": "buyer_total_promotion_fee",
 					"type": "Number",
-					"description": "消费者优惠总额。消费者支付的营销渠道的总金额，单位为人民币（分）。一般来讲，是通过券／权益抵扣的总金额。消费者付款成功后，才返回此值",
-					"required": true
+					"description": "消费者优惠总额。消费者支付的营销渠道的总金额，单位为人民币（分）。一般来讲，是通过券／权益抵扣的总金额。消费者付款成功后，才返回此值"
 				},
 				{
-					"name": "store_total_received_fee",
-					"type": "Number",
-					"description": "商户实收总额。商户在本次交易中实收的总金额。单位：分",
-					"required": true
+					"name": "out_trade_no",
+					"type": "String",
+					"description": "原支付请求的商户支付流水号。必然返回"
 				},
 				{
-					"name": "store_total_marketing_fee",
-					"type": "Number",
-					"description": "商户总营销成本。商户在本次交易中的营销总成本，单位为人民币（分）。",
-					"required": true
-				},
-				{
-					"name": "fund_bill_list",
-					"type": "FundBill[]",
-					"description": "商户的实收资金渠道明细信息列表。",
-					"required": true,
 					"subParams": [
-						{
-							"name": "fund_channel",
-							"type": "String",
-							"description": "打款类型。必然返回。取值为alipay，代表打款类型为支付宝（打款到商户的支付宝账号）",
-							"required": true
-						},
-						{
-							"name": "sub_fund_channel",
-							"type": "String",
-							"description": "子资金渠道。必然返回。取值为支付宝红包：alipay_coupon 支付宝余额：alipay_account 支付宝集分宝：alipay_point 支付宝余额宝：alipay_financeaccount 蚂蚁花呗：alipay_pcredit 支付宝预付卡：alipay_pcard 喵街储值卡（经支付宝打款）：alipay_mj_vcard 喵街购物券（经支付宝打款）：alipay_mj_voucher 喵街补贴（经支付宝打款）：alipay_mj_subsidy 其它（经支付宝打款）：alipay_other",
-							"required": true
-						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "金额。单位为人民币（分）。必然返回",
-							"required": true
+							"description": "金额。单位为人民币（分）。必然返回"
 						},
 						{
 							"name": "extend_params",
 							"type": "String",
-							"description": "业务扩展参数，json格式",
-							"required": true
+							"description": "业务扩展参数，json格式"
+						},
+						{
+							"name": "sub_fund_channel",
+							"type": "String",
+							"description": "子资金渠道。必然返回。取值为支付宝红包：alipay_coupon 支付宝余额：alipay_account 支付宝集分宝：alipay_point 支付宝余额宝：alipay_financeaccount 蚂蚁花呗：alipay_pcredit 支付宝预付卡：alipay_pcard 喵街储值卡（经支付宝打款）：alipay_mj_vcard 喵街购物券（经支付宝打款）：alipay_mj_voucher 喵街补贴（经支付宝打款）：alipay_mj_subsidy 其它（经支付宝打款）：alipay_other"
+						},
+						{
+							"name": "fund_channel",
+							"type": "String",
+							"description": "打款类型。必然返回。取值为alipay，代表打款类型为支付宝（打款到商户的支付宝账号）"
 						}
-					]
+					],
+					"name": "fund_bill_list",
+					"type": "FundBill[]",
+					"description": "商户的实收资金渠道明细信息列表。"
+				},
+				{
+					"name": "store_total_marketing_fee",
+					"type": "Number",
+					"description": "商户总营销成本。商户在本次交易中的营销总成本，单位为人民币（分）。"
+				},
+				{
+					"name": "store_total_received_fee",
+					"type": "Number",
+					"description": "商户实收总额。商户在本次交易中实收的总金额。单位：分"
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "本次交易支付的订单金额，单位为人民币（分）。必然返回"
+				},
+				{
+					"name": "trade_no",
+					"type": "String",
+					"description": "喵街交易流水号。必然返回"
+				},
+				{
+					"name": "trade_status",
+					"type": "String",
+					"description": "交易目前所处的状态。必然返回。取值：WAIT_FOR_CONFIRM，待确认，此时不能申请退款，可以撤销；WAIT_BUYER_PAY，等待消费者付款\t，此时不能申请退款，可以撤销；TRADE_SUCCESS，付款成功，此时可以申请退款，可以撤销（自动申请退款）；TRADE_FINISHED，交易成功，此时可以申请退款，不可以撤销；TRADE_CLOSED，交易关闭，此时不能申请退款，不能撤销"
 				},
 				{
 					"name": "extend_params",
 					"type": "String",
-					"description": "业务扩展参数，json格式",
-					"required": true
+					"description": "业务扩展参数，json格式"
+				},
+				{
+					"name": "auth_code_source",
+					"type": "String",
+					"description": "码来源，取值：MJ、M_TAO、ALIPAY"
 				}
-			]
+			],
+			"name": "onsite_trade_query_response",
+			"type": "OnsiteTradeQueryResponse",
+			"description": "查询结果对象。必然返回"
 		}
-	]
+	],
+	"name": "alibaba.mos.onsite.trade.query",
+	"apiChineseName": "新商场当面付交易查询",
+	"description": "本接口提供新商场当面付订单的查询的功能，商户可以通过本接口主动查询订单状态，完成下一步的业务逻辑。\n商户系统应在两种场景下调用此接口: 商户POS系统应该在调用[条码支付请求接口]并成功返回后，调用此接口查询订单的处理状态。",
+	"id": 37377
 }

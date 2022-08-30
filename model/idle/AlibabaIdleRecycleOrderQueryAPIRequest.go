@@ -14,6 +14,8 @@ type AlibabaIdleRecycleOrderQueryAPIRequest struct {
 	model.Params
 	// 订单号
 	_bizOrderId int64
+	// 手淘商家的淘宝账号id
+	_recycleSupplierId int64
 }
 
 // NewAlibabaIdleRecycleOrderQueryRequest 初始化AlibabaIdleRecycleOrderQueryAPIRequest对象
@@ -48,4 +50,17 @@ func (r *AlibabaIdleRecycleOrderQueryAPIRequest) SetBizOrderId(_bizOrderId int64
 // GetBizOrderId BizOrderId Getter
 func (r AlibabaIdleRecycleOrderQueryAPIRequest) GetBizOrderId() int64 {
 	return r._bizOrderId
+}
+
+// SetRecycleSupplierId is RecycleSupplierId Setter
+// 手淘商家的淘宝账号id
+func (r *AlibabaIdleRecycleOrderQueryAPIRequest) SetRecycleSupplierId(_recycleSupplierId int64) error {
+	r._recycleSupplierId = _recycleSupplierId
+	r.Set("recycle_supplier_id", _recycleSupplierId)
+	return nil
+}
+
+// GetRecycleSupplierId RecycleSupplierId Getter
+func (r AlibabaIdleRecycleOrderQueryAPIRequest) GetRecycleSupplierId() int64 {
+	return r._recycleSupplierId
 }

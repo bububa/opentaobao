@@ -1,14 +1,5 @@
 {
-	"id": 37933,
-	"name": "yunos.appstore.open.getads",
-	"apiChineseName": "获取外投广告",
-	"description": "将广告外投给外部合作伙伴",
 	"requestParams": [
-		{
-			"name": "rid",
-			"type": "String",
-			"description": "请求id"
-		},
 		{
 			"name": "cats",
 			"type": "String[]",
@@ -97,6 +88,11 @@
 			"description": "广告底价"
 		},
 		{
+			"name": "rid",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
 			"name": "options",
 			"type": "Number",
 			"description": "请求特征集"
@@ -104,14 +100,103 @@
 	],
 	"responseParams": [
 		{
-			"name": "rid",
-			"type": "String",
-			"description": "请求id"
-		},
-		{
 			"name": "rc",
 			"type": "Number",
 			"description": "响应码"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "click",
+							"type": "String",
+							"description": "点击"
+						},
+						{
+							"name": "view",
+							"type": "String",
+							"description": "曝光"
+						},
+						{
+							"name": "deal",
+							"type": "String",
+							"description": "竞价成功"
+						}
+					],
+					"name": "callbacks",
+					"type": "Callbacks",
+					"description": "回调地址"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "广告跟踪id"
+				},
+				{
+					"name": "intro",
+					"type": "String",
+					"description": "简介"
+				},
+				{
+					"name": "icon",
+					"type": "String",
+					"description": "icon"
+				},
+				{
+					"name": "ver_code",
+					"type": "Number",
+					"description": "版本号"
+				},
+				{
+					"name": "ver_name",
+					"type": "String",
+					"description": "版本名"
+				},
+				{
+					"name": "fee_type",
+					"type": "String",
+					"description": "结算类型"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称"
+				},
+				{
+					"name": "pkg",
+					"type": "String",
+					"description": "包名"
+				},
+				{
+					"name": "md5",
+					"type": "String",
+					"description": "包文件md5"
+				},
+				{
+					"name": "creatives",
+					"type": "String[]",
+					"description": "创意列表"
+				},
+				{
+					"name": "deeplink",
+					"type": "String",
+					"description": "deeplink"
+				},
+				{
+					"name": "download_url",
+					"type": "String",
+					"description": "下地地址"
+				}
+			],
+			"name": "ads",
+			"type": "AdInfo []",
+			"description": "广告集"
 		},
 		{
 			"name": "rm",
@@ -119,115 +204,13 @@
 			"description": "响应消息"
 		},
 		{
-			"name": "ads",
-			"type": "AdInfo []",
-			"description": "广告集",
-			"subParams": [
-				{
-					"name": "trace_id",
-					"type": "String",
-					"description": "广告跟踪id",
-					"required": true
-				},
-				{
-					"name": "intro",
-					"type": "String",
-					"description": "简介",
-					"required": true
-				},
-				{
-					"name": "icon",
-					"type": "String",
-					"description": "icon",
-					"required": true
-				},
-				{
-					"name": "ver_code",
-					"type": "Number",
-					"description": "版本号",
-					"required": true
-				},
-				{
-					"name": "ver_name",
-					"type": "String",
-					"description": "版本名",
-					"required": true
-				},
-				{
-					"name": "fee_type",
-					"type": "String",
-					"description": "结算类型",
-					"required": true
-				},
-				{
-					"name": "price",
-					"type": "Number",
-					"description": "价格",
-					"required": true
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "名称",
-					"required": true
-				},
-				{
-					"name": "pkg",
-					"type": "String",
-					"description": "包名",
-					"required": true
-				},
-				{
-					"name": "md5",
-					"type": "String",
-					"description": "包文件md5",
-					"required": true
-				},
-				{
-					"name": "callbacks",
-					"type": "Callbacks",
-					"description": "回调地址",
-					"required": true,
-					"subParams": [
-						{
-							"name": "click",
-							"type": "String",
-							"description": "点击",
-							"required": true
-						},
-						{
-							"name": "view",
-							"type": "String",
-							"description": "曝光",
-							"required": true
-						},
-						{
-							"name": "deal",
-							"type": "String",
-							"description": "竞价成功",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "creatives",
-					"type": "String[]",
-					"description": "创意列表",
-					"required": true
-				},
-				{
-					"name": "deeplink",
-					"type": "String",
-					"description": "deeplink",
-					"required": true
-				},
-				{
-					"name": "download_url",
-					"type": "String",
-					"description": "下地地址",
-					"required": true
-				}
-			]
+			"name": "rid",
+			"type": "String",
+			"description": "请求id"
 		}
-	]
+	],
+	"name": "yunos.appstore.open.getads",
+	"apiChineseName": "获取外投广告",
+	"description": "将广告外投给外部合作伙伴",
+	"id": 37933
 }

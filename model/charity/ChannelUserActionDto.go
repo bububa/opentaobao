@@ -14,6 +14,10 @@ type ChannelUserActionDto struct {
 	CharityTimestamp string `json:"charity_timestamp,omitempty" xml:"charity_timestamp,omitempty"`
 	// 原生公益行为内容，JSON
 	OriContent string `json:"ori_content,omitempty" xml:"ori_content,omitempty"`
+	// 三方用户标识
+	ThirdUserKey string `json:"third_user_key,omitempty" xml:"third_user_key,omitempty"`
+	// 版本
+	Version string `json:"version,omitempty" xml:"version,omitempty"`
 	// 活动ID
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 淘宝ID

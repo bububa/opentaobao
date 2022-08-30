@@ -9,7 +9,7 @@ import (
 // AliexpressTradeBuyPlaceorderAPIRequest AE下单API API请求
 // aliexpress.trade.buy.placeorder
 //
-// A006_INVALID_ACCOUNT_INFO
+// 150欧欧盟税改
 type AliexpressTradeBuyPlaceorderAPIRequest struct {
 	model.Params
 	// 下单具体参数

@@ -10,10 +10,10 @@ type Address struct {
 	Address2 string `json:"address2,omitempty" xml:"address2,omitempty"`
 	// 国家
 	Country *Country `json:"country,omitempty" xml:"country,omitempty"`
-	// 省份
-	Province *Province `json:"province,omitempty" xml:"province,omitempty"`
 	// 乡、镇名称
 	Town *Town `json:"town,omitempty" xml:"town,omitempty"`
+	// 省份
+	Province *Province `json:"province,omitempty" xml:"province,omitempty"`
 	// 城市
 	City *City `json:"city,omitempty" xml:"city,omitempty"`
 	// 地区

@@ -1,8 +1,4 @@
 {
-	"id": 25041,
-	"name": "taobao.cloudpush.notice.ios",
-	"apiChineseName": "推送通知给ios设备",
-	"description": "推送通知给ios设备",
 	"requestParams": [
 		{
 			"name": "summary",
@@ -50,5 +46,9 @@
 			"type": "String",
 			"description": "请求产生的错误信息."
 		}
-	]
+	],
+	"name": "taobao.cloudpush.notice.ios",
+	"apiChineseName": "推送通知给ios设备",
+	"description": "推送通知给ios设备",
+	"id": 25041
 }

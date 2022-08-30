@@ -1,14 +1,6 @@
 {
-	"id": 42601,
-	"name": "alibaba.wdk.merchant.routing.register",
-	"apiChineseName": "商家注册更新路由信息",
-	"description": "商家注册更新路由信息",
 	"requestParams": [
 		{
-			"name": "merchant_routing_info_register",
-			"type": "MerchantRoutingInfoRegisterDo",
-			"description": "接口入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "warehouse_code",
@@ -21,40 +13,44 @@
 					"description": "操作状态1-注册；2-删除",
 					"required": true
 				}
-			]
+			],
+			"name": "merchant_routing_info_register",
+			"type": "MerchantRoutingInfoRegisterDo",
+			"description": "接口入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "调用结果返回成功失败",
-					"required": true
+					"description": "调用结果返回成功失败"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "调用接口错误信息",
-					"required": true
+					"description": "调用接口错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "调用接口错误码",
-					"required": true
+					"description": "调用接口错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用接口成功失败",
-					"required": true
+					"description": "调用接口成功失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchant.routing.register",
+	"apiChineseName": "商家注册更新路由信息",
+	"description": "商家注册更新路由信息",
+	"id": 42601
 }

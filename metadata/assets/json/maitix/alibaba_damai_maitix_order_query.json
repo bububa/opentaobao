@@ -1,14 +1,6 @@
 {
-	"id": 38040,
-	"name": "alibaba.damai.maitix.order.query",
-	"apiChineseName": "大麦-查询分销单",
-	"description": "查询分销单",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "MoaOrderQueryParam",
-			"description": "分销单查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -21,40 +13,44 @@
 					"type": "Boolean",
 					"description": "查询是否排除取消的订单"
 				}
-			]
+			],
+			"name": "param",
+			"type": "MoaOrderQueryParam",
+			"description": "分销单查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MxResult",
-			"description": "返回结果集",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息提示",
-					"required": true
+					"description": "信息提示"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "totalAmount:总价; orderId:大麦订单ID;  subOrders:子分销单列表 seatRowName:排名称; qrCodeType:二维码类型： 1 - 静态二维码, 2 - 动态二维码; seatRowId:排ID; seatAreaId:区ID; performId:场次ID; seatType:座位类型：安保座、防涨座; qrCode:票单的二维码; subOrderId:子订单ID; performName:场次名称; standId:看台ID; seatId:座位ID; seatName:座位名称; seatAreaName:区名称; projectName:项目名称; standName:看台名称; priceName:票品名称; priceId:票品ID; projectId:项目ID; seatFloorId:楼ID;",
-					"required": true
+					"type": "String",
+					"description": "totalAmount:总价; orderId:大麦订单ID;  subOrders:子分销单列表 seatRowName:排名称; qrCodeType:二维码类型： 1 - 静态二维码, 2 - 动态二维码; seatRowId:排ID; seatAreaId:区ID; performId:场次ID; seatType:座位类型：安保座、防涨座; qrCode:票单的二维码; subOrderId:子订单ID; performName:场次名称; standId:看台ID; seatId:座位ID; seatName:座位名称; seatAreaName:区名称; projectName:项目名称; standName:看台名称; priceName:票品名称; priceId:票品ID; projectId:项目ID; seatFloorId:楼ID;hasValidated=票是否核验过 outOid=渠道订单号 certificateNo=证件号 phoneNumber=手机号 performName=场次名称 tradeStatus=交易状态，2-已下单,等支付，5-支付成功，8-交易关闭 priceName=票价名称 projectName=项目名称 projectId=项目id certificateType=证件类型1=身份证,2=护照,3=港澳通行证,4=台胞证,5=士兵／军官 ticketMode 出票方式，1 纸制票,2 证件电子票,3 二维码电子票,4 短信电子票, printCount 打印次数 printStatus 打印状态 1未打印 2已打印 validateStatus 验票状态 1 未验，2 已验 poid 大麦主订单号 performId 场次id validateCount 验票次数 priceId 价格id"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "结果code，0代表成功，负数代表异常情况",
-					"required": true
+					"description": "结果code，0代表成功，负数代表异常情况"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功，true:成功，false:失败",
-					"required": true
+					"description": "是否成功，true:成功，false:失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MxResult",
+			"description": "返回结果集"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.order.query",
+	"apiChineseName": "大麦-查询分销单",
+	"description": "查询分销单",
+	"id": 38040
 }

@@ -4,6 +4,8 @@ package promotion
 type ShowBenefitDto struct {
 	// 权益规则列表
 	ShowRules []ShowRuleDto `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
+	// 权益维度核销数据
+	ShowBenefitInstances []ShowBenefitInstanceDto `json:"show_benefit_instances,omitempty" xml:"show_benefit_instances>show_benefit_instance_dto,omitempty"`
 	// 权益code
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 权益类型

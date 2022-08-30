@@ -1,0 +1,329 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "zone_off_set",
+					"type": "String",
+					"description": "时区",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "地区id"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址（最大135个字符）"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						},
+						{
+							"name": "country_id",
+							"type": "Number",
+							"description": "国家id"
+						}
+					],
+					"name": "sender_info",
+					"type": "ContactInfoRequest",
+					"description": "发货人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "地区id"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址（最大135个字符）",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "country_id",
+							"type": "Number",
+							"description": "国家id"
+						}
+					],
+					"name": "receiver_info",
+					"type": "ContactInfoRequest",
+					"description": "收件人",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": " 数量",
+							"required": true
+						},
+						{
+							"name": "content_type",
+							"type": "String",
+							"description": "预约大包类型：TRAY：托，SACK：麻袋",
+							"required": true
+						},
+						{
+							"name": "content_type_name",
+							"type": "String",
+							"description": "预约大包类型名称：托、麻袋",
+							"required": true
+						}
+					],
+					"name": "handover_content_synopsis_list",
+					"type": "OrderHandoverContentSynopsisDTO[]",
+					"description": "预约大包信息列表",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "接收仓资源名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司",
+							"required": true
+						},
+						{
+							"name": "resource_name",
+							"type": "String",
+							"description": "资源名称"
+						},
+						{
+							"name": "country_id",
+							"type": "Number",
+							"description": "国家id",
+							"required": true
+						},
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "菜鸟地址id",
+							"required": true
+						},
+						{
+							"name": "resource_code",
+							"type": "String",
+							"description": "资源code",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址（最大135个字符）",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						}
+					],
+					"name": "pickup_info",
+					"type": "PickupInfo",
+					"description": "揽收信息",
+					"required": true
+				},
+				{
+					"name": "pickup_type",
+					"type": "String",
+					"description": "揽收方式：TRUCK（卡车）",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "接收仓资源编码",
+					"required": true
+				}
+			],
+			"name": "appointment_create_request",
+			"type": "AppointmentCreateRequest",
+			"description": "预约单创建入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "handover_order_id",
+							"type": "Number",
+							"description": "预约单id"
+						},
+						{
+							"name": "handover_order_code",
+							"type": "String",
+							"description": "预约单code"
+						}
+					],
+					"name": "appointment_create_response",
+					"type": "AppointmentCreateResponse",
+					"description": "data"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "internalErrorCode"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "hsfResult"
+		}
+	],
+	"name": "cainiao.global.im.pickup.appointment.order.info.create",
+	"apiChineseName": "首公里揽收-预约单创建",
+	"description": "预约单创建",
+	"id": 60753
+}

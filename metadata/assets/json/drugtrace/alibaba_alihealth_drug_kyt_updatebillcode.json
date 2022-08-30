@@ -1,8 +1,4 @@
 {
-	"id": 41414,
-	"name": "alibaba.alihealth.drug.kyt.updatebillcode",
-	"apiChineseName": "零售修改出入库单追溯码",
-	"description": "零售修改出入库单追溯码",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -32,8 +28,8 @@
 			"name": "code_list",
 			"type": "String[]",
 			"description": "追溯码",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -57,5 +53,9 @@
 			"type": "Boolean",
 			"description": "返回接口"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.updatebillcode",
+	"apiChineseName": "零售修改出入库单追溯码",
+	"description": "零售修改出入库单追溯码",
+	"id": 41414
 }

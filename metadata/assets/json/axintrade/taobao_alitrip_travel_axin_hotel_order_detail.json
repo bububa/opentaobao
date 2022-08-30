@@ -1,0 +1,230 @@
+{
+	"requestParams": [
+		{
+			"name": "pur_sub_order_id",
+			"type": "Number",
+			"description": "采购单id"
+		},
+		{
+			"name": "outer_order_id",
+			"type": "String",
+			"description": "外部订单id"
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "hotel_tel",
+									"type": "String",
+									"description": "酒店联系电话"
+								},
+								{
+									"name": "hotel_address",
+									"type": "String",
+									"description": "酒店地址"
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "酒店id"
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名称"
+								}
+							],
+							"name": "hotel_info",
+							"type": "HotelInfo",
+							"description": "酒店信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "room_facility_list",
+									"type": "String[]",
+									"description": "房型设施"
+								},
+								{
+									"name": "room_name",
+									"type": "String",
+									"description": "房型名称"
+								}
+							],
+							"name": "room_info",
+							"type": "RoomInfo",
+							"description": "房间信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "room_number",
+									"type": "Number",
+									"description": "房间数量"
+								},
+								{
+									"name": "check_out",
+									"type": "Date",
+									"description": "离店时间"
+								},
+								{
+									"name": "check_in",
+									"type": "Date",
+									"description": "入住时间"
+								},
+								{
+									"name": "late_arrive_time",
+									"type": "Date",
+									"description": "最晚到店时间"
+								},
+								{
+									"name": "confirm_code",
+									"type": "String",
+									"description": "酒店确认号"
+								}
+							],
+							"name": "order_fulfill_info",
+							"type": "OrderFulfillInfo",
+							"description": "订单履约信息"
+						},
+						{
+							"name": "actual_total_fee",
+							"type": "Number",
+							"description": "实际支付总金额，单位为分"
+						},
+						{
+							"subParams": [
+								{
+									"name": "cny_price",
+									"type": "Number",
+									"description": "价格，单位为分"
+								},
+								{
+									"name": "date",
+									"type": "Date",
+									"description": "日期"
+								},
+								{
+									"subParams": [
+										{
+											"name": "board_num",
+											"type": "Number",
+											"description": "餐食数量"
+										},
+										{
+											"name": "board_type",
+											"type": "Number",
+											"description": "餐食种类"
+										}
+									],
+									"name": "board_d_t_o",
+									"type": "BoardDto",
+									"description": "餐食"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "原币种价格"
+								}
+							],
+							"name": "daily_info_list",
+							"type": "DailyInfo[]",
+							"description": "每日价格信息"
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "订单状态描述"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "outer_order_id",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "purchase_order_id",
+							"type": "Number",
+							"description": "采购单id"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额，单位为分（产生退款时不为空）"
+						},
+						{
+							"name": "fliggy_order_id",
+							"type": "String",
+							"description": "飞猪订单号"
+						},
+						{
+							"name": "pay_id",
+							"type": "Number",
+							"description": "支付id"
+						},
+						{
+							"name": "exchange_rate",
+							"type": "BigDecimal",
+							"description": "汇率"
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "origin_actual_total_fee",
+							"type": "Number",
+							"description": "实际支付原币种金额"
+						}
+					],
+					"name": "data",
+					"type": "HotelOrderQueryRes",
+					"description": "返回参数"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.order.detail",
+	"apiChineseName": "阿信酒店分销-订单详情接口",
+	"description": "阿信酒店订单详情的读取接口",
+	"id": 56908
+}

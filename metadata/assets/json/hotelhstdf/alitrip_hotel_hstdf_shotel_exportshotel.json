@@ -1,8 +1,4 @@
 {
-	"id": 42713,
-	"name": "alitrip.hotel.hstdf.shotel.exportshotel",
-	"apiChineseName": "商家自主导出相似度高的标准酒店",
-	"description": "商家通过给出自己的卖家酒店信息，通过接口可以返回相似度高的标准酒店信息",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -42,115 +38,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "top_result_set",
-			"type": "TopResultSet",
-			"description": "top返回结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "HotelExportParam[]",
-					"description": "返回5个标准酒店的基础信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "shid",
 							"type": "Number",
-							"description": "标准酒店id",
-							"required": true
+							"description": "标准酒店id"
 						},
 						{
 							"name": "hid",
 							"type": "Number",
-							"description": "卖家酒店id",
-							"required": true
+							"description": "卖家酒店id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "标准酒店名称",
-							"required": true
+							"description": "标准酒店名称"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "标准酒店所在城市",
-							"required": true
+							"description": "标准酒店所在城市"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "酒店地址",
-							"required": true
+							"description": "酒店地址"
 						},
 						{
 							"name": "tel",
 							"type": "String",
-							"description": "电话号码",
-							"required": true
+							"description": "电话号码"
 						},
 						{
 							"name": "jwd",
 							"type": "String",
-							"description": "经纬度",
-							"required": true
+							"description": "经纬度"
 						},
 						{
 							"name": "score",
 							"type": "String",
-							"description": "相似度分数",
-							"required": true
+							"description": "相似度分数"
 						},
 						{
 							"name": "name_e",
 							"type": "String",
-							"description": "英文名称",
-							"required": true
+							"description": "英文名称"
 						},
 						{
 							"name": "en_addr",
 							"type": "String",
-							"description": "英文地址",
-							"required": true
+							"description": "英文地址"
 						},
 						{
 							"name": "used_name",
 							"type": "String",
-							"description": "曾用名",
-							"required": true
+							"description": "曾用名"
 						},
 						{
 							"name": "status_code",
 							"type": "Number",
-							"description": "酒店状态0,正常，有报价可在线售卖，-1，待上线，-3 下架，-1，-3需要上线时联系平台处理",
-							"required": true
+							"description": "酒店状态0,正常，有报价可在线售卖，-1，待上线，-3 下架，-1，-3需要上线时联系平台处理"
 						},
 						{
 							"name": "status_desc",
 							"type": "String",
-							"description": "酒店状态描述",
-							"required": true
+							"description": "酒店状态描述"
 						}
-					]
+					],
+					"name": "results",
+					"type": "HotelExportParam[]",
+					"description": "返回5个标准酒店的基础信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "error_code",
-					"required": true
+					"description": "error_code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "error_msg",
-					"required": true
+					"description": "error_msg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "top_result_set",
+			"type": "TopResultSet",
+			"description": "top返回结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hstdf.shotel.exportshotel",
+	"apiChineseName": "商家自主导出相似度高的标准酒店",
+	"description": "商家通过给出自己的卖家酒店信息，通过接口可以返回相似度高的标准酒店信息",
+	"id": 42713
 }

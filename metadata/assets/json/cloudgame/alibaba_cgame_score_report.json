@@ -1,13 +1,6 @@
 {
-	"id": 50608,
-	"name": "alibaba.cgame.score.report",
-	"apiChineseName": "云游戏战绩上传通用接口",
-	"description": "阿里云游戏, CP游戏合作方通用游戏结果回传接口",
 	"requestParams": [
 		{
-			"name": "report_data",
-			"type": "CpCallbackReportDto",
-			"description": "通用战绩回传数据",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -25,6 +18,11 @@
 					"description": "云游戏加密用户Id"
 				},
 				{
+					"name": "callback_biz_data",
+					"type": "String",
+					"description": "回传业务数据, 针对biztype=0, 格式包含: 过关数, 剩余生命, 每关使用生命,每关耗时."
+				},
+				{
 					"name": "game_app_key",
 					"type": "String",
 					"description": "约定的appKey"
@@ -38,40 +36,39 @@
 					"name": "report_timestamp",
 					"type": "Number",
 					"description": "时间戳, 毫秒级别"
-				},
-				{
-					"name": "callback_biz_data",
-					"type": "String",
-					"description": "回传业务数据, 针对biztype=0, 格式包含: 过关数, 剩余生命, 每关使用生命,每关耗时."
 				}
-			]
+			],
+			"name": "report_data",
+			"type": "CpCallbackReportDto",
+			"description": "通用战绩回传数据"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
-				},
-				{
-					"name": "message",
-					"type": "String",
-					"description": "返回消息",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "结果消息",
-					"required": true
+					"description": "结果消息"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.cgame.score.report",
+	"apiChineseName": "云游戏战绩上传通用接口",
+	"description": "阿里云游戏, CP游戏合作方通用游戏结果回传接口",
+	"id": 50608
 }

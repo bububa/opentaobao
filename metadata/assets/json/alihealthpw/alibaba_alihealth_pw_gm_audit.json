@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "audit_time",
+					"type": "String",
+					"description": "审核时间"
+				},
+				{
+					"name": "apply_unique_code",
+					"type": "String",
+					"description": "申请单唯一编码",
+					"required": true
+				},
+				{
+					"name": "audit_status",
+					"type": "String",
+					"description": "审核状态"
+				},
+				{
+					"name": "hospital_address",
+					"type": "String",
+					"description": "医院信息"
+				},
+				{
+					"name": "treat_time",
+					"type": "String",
+					"description": "治疗时间"
+				},
+				{
+					"name": "audit_remark",
+					"type": "String",
+					"description": "审核意见"
+				}
+			],
+			"name": "body",
+			"type": "AuditReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResponseMessage",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihealth.pw.gm.audit",
+	"apiChineseName": "同情用药审核接口",
+	"description": "同情用药审核接口，提供给合作方审核申请单",
+	"id": 57804
+}

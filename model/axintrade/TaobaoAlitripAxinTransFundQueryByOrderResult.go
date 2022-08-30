@@ -2,10 +2,10 @@ package axintrade
 
 // TaobaoAlitripAxinTransFundQueryByOrderResult 结构体
 type TaobaoAlitripAxinTransFundQueryByOrderResult struct {
-	// 错误信息
-	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+	// 错误信息
+	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 描述信息
 	InfoMsg string `json:"info_msg,omitempty" xml:"info_msg,omitempty"`
 	// 出参

@@ -1,14 +1,6 @@
 {
-	"id": 56232,
-	"name": "aliexpress.ascp.po.query",
-	"apiChineseName": "AliExpress采购单查询API",
-	"description": "AE仓发业务采购单查询",
 	"requestParams": [
 		{
-			"name": "purchase_order_query",
-			"type": "PurchaseOrderQueryDto",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -22,20 +14,17 @@
 					"description": "采购单号",
 					"required": true
 				}
-			]
+			],
+			"name": "purchase_order_query",
+			"type": "PurchaseOrderQueryDto",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "服务出参",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "ErpPurchaseOrderDto",
-					"description": "采购单DTO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_inbound_time",
@@ -151,7 +140,11 @@
 							"description": "采购单SKU数量",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "ErpPurchaseOrderDto",
+					"description": "采购单DTO",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -171,7 +164,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "aliexpress.ascp.po.query",
+	"apiChineseName": "AliExpress采购单查询API",
+	"description": "AE仓发业务采购单查询",
+	"id": 56232
 }

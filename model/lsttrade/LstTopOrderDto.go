@@ -52,6 +52,10 @@ type LstTopOrderDto struct {
 	GroupId string `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 送达时间
 	SignTime string `json:"sign_time,omitempty" xml:"sign_time,omitempty"`
+	// 线下订单业务员id
+	OfflineYdId string `json:"offline_yd_id,omitempty" xml:"offline_yd_id,omitempty"`
+	// 线下订单业务员name
+	OfflineYdName string `json:"offline_yd_name,omitempty" xml:"offline_yd_name,omitempty"`
 	// 实际支付金额
 	ActualPayFee int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
 	// 单价
@@ -68,4 +72,8 @@ type LstTopOrderDto struct {
 	Gift bool `json:"gift,omitempty" xml:"gift,omitempty"`
 	// 是否组合产品
 	CombineItem bool `json:"combine_item,omitempty" xml:"combine_item,omitempty"`
+	// 是否线下订单
+	OfflineOrder bool `json:"offline_order,omitempty" xml:"offline_order,omitempty"`
+	// 是否车销订单
+	OfflineCarOrder bool `json:"offline_car_order,omitempty" xml:"offline_car_order,omitempty"`
 }

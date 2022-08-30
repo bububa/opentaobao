@@ -16,7 +16,7 @@ type AlibabaAlihealthExaminationReserveStateNotifyAPIRequest struct {
 	_uniqReserveCode string
 	// 健康预约凭证
 	_reserveNumber string
-	// 体检状态：未到检(exam_not), 已到检(exam_done)； 上门服务中还需以下两种状态：预约确认中（reserve_confirming），预约拒绝（reserve_rejected）；
+	// 体检状态：已到检(exam_done)、确认预约(exam_not)、取消预约(exam_cancel)；
 	_reportStatus string
 	// 到检凭证，exam_done状态下，该字段必填
 	_checkNo string
@@ -70,7 +70,7 @@ func (r AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) GetReserveNumbe
 }
 
 // SetReportStatus is ReportStatus Setter
-// 体检状态：未到检(exam_not), 已到检(exam_done)； 上门服务中还需以下两种状态：预约确认中（reserve_confirming），预约拒绝（reserve_rejected）；
+// 体检状态：已到检(exam_done)、确认预约(exam_not)、取消预约(exam_cancel)；
 func (r *AlibabaAlihealthExaminationReserveStateNotifyAPIRequest) SetReportStatus(_reportStatus string) error {
 	r._reportStatus = _reportStatus
 	r.Set("report_status", _reportStatus)

@@ -1,8 +1,4 @@
 {
-	"id": 27387,
-	"name": "taobao.omniorder.allocatedinfo.sync",
-	"apiChineseName": "分单结果同步给星盘",
-	"description": "ISV分单完成，将分单结果同步给星盘",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -28,11 +24,6 @@
 			"required": true
 		},
 		{
-			"name": "sub_order_list",
-			"type": "StoreAllocatedResult[]",
-			"description": "门店的分单列表",
-			"required": true,
-			"maxListSize": 50,
 			"subParams": [
 				{
 					"name": "code",
@@ -83,7 +74,12 @@
 					"name": "attributes",
 					"description": "扩展字段"
 				}
-			]
+			],
+			"name": "sub_order_list",
+			"type": "StoreAllocatedResult[]",
+			"description": "门店的分单列表",
+			"maxListSize": 50,
+			"required": true
 		},
 		{
 			"name": "trace_id",
@@ -102,5 +98,9 @@
 			"type": "String",
 			"description": "错误内容"
 		}
-	]
+	],
+	"name": "taobao.omniorder.allocatedinfo.sync",
+	"apiChineseName": "分单结果同步给星盘",
+	"description": "ISV分单完成，将分单结果同步给星盘",
+	"id": 27387
 }

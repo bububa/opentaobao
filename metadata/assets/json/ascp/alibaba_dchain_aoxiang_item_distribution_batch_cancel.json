@@ -1,0 +1,151 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "【必传】要取消的商品itemId",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "要取消的商品skuId, 如果没有则不需要传"
+						},
+						{
+							"name": "cancel_all",
+							"type": "Boolean",
+							"description": "【必传】取消所有铺货,如果设置为false，则需要设置  distributorShopUserIdList",
+							"required": true
+						},
+						{
+							"name": "distributor_shop_user_id_list",
+							"type": "Number[]",
+							"description": "要取消铺货的分销商ID列表,如果 cancelAll = true, 则不需要设置此字段,如果 cancelAll = false， 则此字段必填"
+						}
+					],
+					"name": "cancel_distribute_info_list",
+					"type": "CancelDistributeInfo[]",
+					"description": "取消详情",
+					"required": true
+				}
+			],
+			"name": "cancel_distribute_request",
+			"type": "CancelDistributeRequest",
+			"description": "取消商品分销入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "传入的商品id"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "传入的商品skuId"
+								},
+								{
+									"name": "distributor_shop_user_id",
+									"type": "Number",
+									"description": "分销商 shopUserId "
+								},
+								{
+									"name": "distributor_company_name",
+									"type": "String",
+									"description": "分销商昵称"
+								},
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "处理结果"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "错误编码"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误信息"
+								}
+							],
+							"name": "cancel_distribute_detail_list",
+							"type": "CancelDistributeDetail[]",
+							"description": "处理结果。 打平到 item + 分销商粒度。 处理成功和处理失败都会返回"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "成功或者失败"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误内容"
+						}
+					],
+					"name": "data",
+					"type": "CancelDistributeResponse",
+					"description": "业务处理结果。"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功。调用成功之后，需要看data里面的success，才能知道业务处理是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				}
+			],
+			"name": "cancel_distribute_response",
+			"type": "TopResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.item.distribution.batch.cancel",
+	"apiChineseName": "取消商品分销",
+	"description": "取消商品分销",
+	"id": 60862
+}

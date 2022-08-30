@@ -12,12 +12,12 @@ import (
 // 获取计划关键词
 type AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest struct {
 	model.Params
+	// 用户信息
+	_topContext *TopContextDto
 	// 计划id
 	_campaignId int64
 	// 搜索条件
 	_campaignKeywordQuery *CampaignKeywordQuery
-	// 用户信息
-	_topContext *TopContextDto
 }
 
 // NewAlibabaScbpAdKeywordListCampaignKeywordsRequest 初始化AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetApiParams() url.V
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTopContext is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// GetTopContext TopContext Getter
+func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetCampaignKeywordQ
 // GetCampaignKeywordQuery CampaignKeywordQuery Getter
 func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
 	return r._campaignKeywordQuery
-}
-
-// SetTopContext is TopContext Setter
-// 用户信息
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) SetTopContext(_topContext *TopContextDto) error {
-	r._topContext = _topContext
-	r.Set("top_context", _topContext)
-	return nil
-}
-
-// GetTopContext TopContext Getter
-func (r AlibabaScbpAdKeywordListCampaignKeywordsAPIRequest) GetTopContext() *TopContextDto {
-	return r._topContext
 }

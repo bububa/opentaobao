@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "TenderItemDeleteCmd",
+			"description": "参数0",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "删除是否成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.tender.btob.item.delete",
+	"apiChineseName": "暗拍b2b商品下架/删除",
+	"description": "暗拍b2b商品下架/删除",
+	"id": 61364
+}

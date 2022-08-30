@@ -14,14 +14,14 @@ type Senderinfo struct {
 	SenderArea string `json:"sender_area,omitempty" xml:"sender_area,omitempty"`
 	// 村镇
 	SenderTown string `json:"sender_town,omitempty" xml:"sender_town,omitempty"`
+	// 详细地址
+	SenderDetailAddress string `json:"sender_detail_address,omitempty" xml:"sender_detail_address,omitempty"`
 	// 发件人
 	SenderName string `json:"sender_name,omitempty" xml:"sender_name,omitempty"`
 	// 手机号
 	SenderMobile string `json:"sender_mobile,omitempty" xml:"sender_mobile,omitempty"`
 	// 固定电话
 	SenderPhone string `json:"sender_phone,omitempty" xml:"sender_phone,omitempty"`
-	// 详细地址
-	SenderDetailAddress string `json:"sender_detail_address,omitempty" xml:"sender_detail_address,omitempty"`
 	// 发件方地址
 	SenderAddress string `json:"sender_address,omitempty" xml:"sender_address,omitempty"`
 	// 姓名

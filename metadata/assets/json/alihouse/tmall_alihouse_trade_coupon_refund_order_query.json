@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "履约单id",
+					"required": true
+				}
+			],
+			"name": "query",
+			"type": "CouponOrderQuery",
+			"description": "查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cancel_deadline_time",
+							"type": "String",
+							"description": "截止时间"
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "开始时间"
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述"
+						},
+						{
+							"name": "cancel_remark",
+							"type": "String",
+							"description": "取消原因"
+						},
+						{
+							"name": "cancel_node",
+							"type": "Number",
+							"description": "节点"
+						},
+						{
+							"name": "cancel_finished_time",
+							"type": "String",
+							"description": "取消完成时间"
+						},
+						{
+							"name": "operator_type",
+							"type": "Number",
+							"description": "角色"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "tb_refund_order_id",
+							"type": "Number",
+							"description": "淘宝退款单id"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "退款单id"
+						}
+					],
+					"name": "data",
+					"type": "CouponRefundOrderStatusDto",
+					"description": "返回素材id"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "结果说明"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.alihouse.trade.coupon.refund.order.query",
+	"apiChineseName": "查询电商券履约退款单",
+	"description": "查询电商券履约退款单",
+	"id": 58621
+}

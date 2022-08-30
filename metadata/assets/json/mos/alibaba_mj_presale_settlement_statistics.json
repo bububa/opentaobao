@@ -1,8 +1,4 @@
 {
-	"id": 32122,
-	"name": "alibaba.mj.presale.settlement.statistics",
-	"apiChineseName": "预购结算数据统计",
-	"description": "预购结算数据统计",
 	"requestParams": [
 		{
 			"name": "action_no",
@@ -19,47 +15,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "on_line_num",
 					"type": "String",
-					"description": "onLineNum",
-					"required": true
+					"description": "onLineNum"
 				},
 				{
 					"name": "ali_pay_num",
 					"type": "String",
-					"description": "aliPayNum",
-					"required": true
+					"description": "aliPayNum"
 				},
 				{
 					"name": "off_line_num",
 					"type": "String",
-					"description": "offLineNum",
-					"required": true
+					"description": "offLineNum"
 				},
 				{
 					"name": "ali_pay_price",
 					"type": "String",
-					"description": "aliPayPrice",
-					"required": true
+					"description": "aliPayPrice"
 				},
 				{
 					"name": "on_line_price",
 					"type": "String",
-					"description": "onLinePrice",
-					"required": true
+					"description": "onLinePrice"
 				},
 				{
 					"name": "off_line_price",
 					"type": "String",
-					"description": "offLinePrice",
-					"required": true
+					"description": "offLinePrice"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.mj.presale.settlement.statistics",
+	"apiChineseName": "预购结算数据统计",
+	"description": "预购结算数据统计",
+	"id": 32122
 }

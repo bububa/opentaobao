@@ -1,8 +1,4 @@
 {
-	"id": 35532,
-	"name": "alibaba.mos.store.getstorelist",
-	"apiChineseName": "根据屏编号获取专柜集",
-	"description": "根据屏编号获取专柜集",
 	"requestParams": [
 		{
 			"name": "screen_no",
@@ -13,93 +9,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "MjStoresTopVo",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_default",
 							"type": "Number",
-							"description": "默认选中的专柜，0为全部品牌",
-							"required": true
+							"description": "默认选中的专柜，0为全部品牌"
 						},
 						{
-							"name": "store_info_list",
-							"type": "StoreInfo[]",
-							"description": "storeInfoList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "store_pic",
 									"type": "String",
-									"description": "图片",
-									"required": true
+									"description": "图片"
 								},
 								{
 									"name": "store_id",
 									"type": "Number",
-									"description": "专柜ID",
-									"required": true
+									"description": "专柜ID"
 								},
 								{
 									"name": "store_name",
 									"type": "String",
-									"description": "专柜名字",
-									"required": true
+									"description": "专柜名字"
 								}
-							]
+							],
+							"name": "store_info_list",
+							"type": "StoreInfo[]",
+							"description": "storeInfoList"
 						},
 						{
 							"name": "version",
 							"type": "Number",
-							"description": "版本",
-							"required": true
+							"description": "版本"
 						},
 						{
 							"name": "screen_type",
 							"type": "Number",
-							"description": "1：普通 2：刷脸",
-							"required": true
+							"description": "1：普通 2：刷脸"
 						},
 						{
 							"name": "mall_id",
 							"type": "Number",
-							"description": "商场id",
-							"required": true
+							"description": "商场id"
 						},
 						{
 							"name": "out_mall_id",
 							"type": "String",
-							"description": "外部门店号",
-							"required": true
+							"description": "外部门店号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "MjStoresTopVo",
+					"description": "data"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mos.store.getstorelist",
+	"apiChineseName": "根据屏编号获取专柜集",
+	"description": "根据屏编号获取专柜集",
+	"id": 35532
 }

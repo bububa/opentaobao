@@ -12,12 +12,12 @@ import (
 // 商家数据-选品整体概况
 type TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest struct {
 	model.Params
-	// vendor 默认为all
-	_vendor string
 	// 日期  默认为昨天
 	_date string
 	// hid  默认为all
 	_hid string
+	// vendor 默认为all
+	_vendor string
 	// supplier 默认为all
 	_supplier string
 	// 外部酒店编码
@@ -45,19 +45,6 @@ func (r TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) GetApiParams() url
 	return params
 }
 
-// SetVendor is Vendor Setter
-// vendor 默认为all
-func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) GetVendor() string {
-	return r._vendor
-}
-
 // SetDate is Date Setter
 // 日期  默认为昨天
 func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) SetDate(_date string) error {
@@ -82,6 +69,19 @@ func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) SetHid(_hid strin
 // GetHid Hid Getter
 func (r TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) GetHid() string {
 	return r._hid
+}
+
+// SetVendor is Vendor Setter
+// vendor 默认为all
+func (r *TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelItemSelectionSellerStatSummaryAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetSupplier is Supplier Setter

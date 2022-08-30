@@ -1,8 +1,4 @@
 {
-	"id": 27751,
-	"name": "alibaba.fmhealth.pressure.report.create",
-	"apiChineseName": "血压报告接口",
-	"description": "生成用户血压测量报告",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -68,5 +64,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.fmhealth.pressure.report.create",
+	"apiChineseName": "血压报告接口",
+	"description": "生成用户血压测量报告",
+	"id": 27751
 }

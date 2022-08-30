@@ -1,8 +1,4 @@
 {
-	"id": 48148,
-	"name": "tmall.traceplatform.ticket.picture.upload",
-	"apiChineseName": "上传小票图片",
-	"description": "uploadPicture",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回值",
 			"subParams": [
-				{
-					"name": "code",
-					"type": "String",
-					"description": "参数code",
-					"required": true
-				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "参数msg",
-					"required": true
+					"description": "参数msg"
 				},
 				{
-					"name": "obj",
+					"name": "code",
 					"type": "String",
-					"description": "上传图片的url",
-					"required": true
+					"description": "参数code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "参数success",
-					"required": true
+					"description": "参数success"
+				},
+				{
+					"name": "obj",
+					"type": "String",
+					"description": "上传图片的url"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.ticket.picture.upload",
+	"apiChineseName": "上传小票图片",
+	"description": "uploadPicture",
+	"id": 48148
 }

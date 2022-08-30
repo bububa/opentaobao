@@ -1,8 +1,4 @@
 {
-	"id": 10480,
-	"name": "taobao.refund.refuse",
-	"apiChineseName": "卖家拒绝退款",
-	"description": "卖家拒绝单笔退款（包含退款和退款退货）交易，要求如下：\u003cbr/\u003e1. 传入的refund_id和相应的tid, oid必须匹配\u003cbr/\u003e2. 如果一笔订单只有一笔子订单，则tid必须与oid相同\u003cbr/\u003e3. 只有卖家才能执行拒绝退款操作\u003cbr/\u003e4. 以下三种情况不能退款：卖家未发货；7天无理由退换货；网游订单",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -14,8 +10,8 @@
 			"name": "refuse_message",
 			"type": "String",
 			"description": "拒绝退款时的说明信息，长度2-200",
-			"required": true,
-			"maxLength": 200
+			"maxLength": 200,
+			"required": true
 		},
 		{
 			"name": "refuse_proof",
@@ -41,9 +37,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "refund",
-			"type": "Refund",
-			"description": "拒绝退款成功后，会返回Refund数据结构中的refund_id, status, modified字段",
 			"subParams": [
 				{
 					"name": "refund_id",
@@ -60,12 +53,19 @@
 					"type": "String",
 					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
 				}
-			]
+			],
+			"name": "refund",
+			"type": "Refund",
+			"description": "拒绝退款成功后，会返回Refund数据结构中的refund_id, status, modified字段"
 		},
 		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "拒绝退款操作是否成功"
 		}
-	]
+	],
+	"name": "taobao.refund.refuse",
+	"apiChineseName": "卖家拒绝退款",
+	"description": "卖家拒绝单笔退款（包含退款和退款退货）交易，要求如下：\u003cbr/\u003e1. 传入的refund_id和相应的tid, oid必须匹配\u003cbr/\u003e2. 如果一笔订单只有一笔子订单，则tid必须与oid相同\u003cbr/\u003e3. 只有卖家才能执行拒绝退款操作\u003cbr/\u003e4. 以下三种情况不能退款：卖家未发货；7天无理由退换货；网游订单",
+	"id": 10480
 }

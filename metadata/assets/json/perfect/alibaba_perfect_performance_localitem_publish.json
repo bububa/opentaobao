@@ -1,20 +1,8 @@
 {
-	"id": 56940,
-	"name": "alibaba.perfect.performance.localitem.publish",
-	"apiChineseName": "同城购定制化发品",
-	"description": "同城购业务定制化发品接口，同城购业务线专用",
 	"requestParams": [
 		{
-			"name": "param_perfect_performance_item_publish_req",
-			"type": "PerfectPerformanceItemPublishReq",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "describe_info",
-					"type": "PerfectItemDescribeInfoDto",
-					"description": "商品描述信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "description",
@@ -34,13 +22,13 @@
 							"description": "商品标题",
 							"required": true
 						}
-					]
+					],
+					"name": "describe_info",
+					"type": "PerfectItemDescribeInfoDto",
+					"description": "商品描述信息",
+					"required": true
 				},
 				{
-					"name": "item_base_info",
-					"type": "PerfectItemBaseInfoDto",
-					"description": "商品基本信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_barcode",
@@ -84,17 +72,15 @@
 							"description": "销售渠道",
 							"required": true
 						}
-					]
+					],
+					"name": "item_base_info",
+					"type": "PerfectItemBaseInfoDto",
+					"description": "商品基本信息",
+					"required": true
 				},
 				{
-					"name": "item_sku_infos",
-					"type": "PerfectItemSkuInfoDto[]",
-					"description": "商品sku列表",
 					"subParams": [
 						{
-							"name": "sale_properties",
-							"type": "PerfectSalePropertyDto[]",
-							"description": "sku销售属性",
 							"subParams": [
 								{
 									"name": "sale_property_key",
@@ -107,12 +93,12 @@
 									"type": "String",
 									"description": "自定义属性值"
 								}
-							]
+							],
+							"name": "sale_properties",
+							"type": "PerfectSalePropertyDto[]",
+							"description": "sku销售属性"
 						},
 						{
-							"name": "sc_product_info",
-							"type": "PerfectScProductInfoDto",
-							"description": "sku关联货品",
 							"subParams": [
 								{
 									"name": "outer_id",
@@ -126,7 +112,10 @@
 									"description": "货品ID",
 									"required": true
 								}
-							]
+							],
+							"name": "sc_product_info",
+							"type": "PerfectScProductInfoDto",
+							"description": "sku关联货品"
 						},
 						{
 							"name": "sku_barcode",
@@ -155,12 +144,12 @@
 							"type": "Number",
 							"description": "sku数量"
 						}
-					]
+					],
+					"name": "item_sku_infos",
+					"type": "PerfectItemSkuInfoDto[]",
+					"description": "商品sku列表"
 				},
 				{
-					"name": "item_trade_info",
-					"type": "PerfectItemTradeInfoDto",
-					"description": "商品交易信息",
 					"subParams": [
 						{
 							"name": "has_invoice",
@@ -187,13 +176,12 @@
 							"type": "Boolean",
 							"description": "是否保修"
 						}
-					]
+					],
+					"name": "item_trade_info",
+					"type": "PerfectItemTradeInfoDto",
+					"description": "商品交易信息"
 				},
 				{
-					"name": "logistics_info",
-					"type": "PerfectItemLogisticsInfoDto",
-					"description": "商品物流信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "city_code",
@@ -217,13 +205,13 @@
 							"description": "门店库ID",
 							"required": true
 						}
-					]
+					],
+					"name": "logistics_info",
+					"type": "PerfectItemLogisticsInfoDto",
+					"description": "商品物流信息",
+					"required": true
 				},
 				{
-					"name": "product_info",
-					"type": "PerfectItemProductInfoDto",
-					"description": "产品信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "brand_code",
@@ -243,50 +231,57 @@
 							"description": "货号",
 							"required": true
 						}
-					]
+					],
+					"name": "product_info",
+					"type": "PerfectItemProductInfoDto",
+					"description": "产品信息",
+					"required": true
 				}
-			]
+			],
+			"name": "param_perfect_performance_item_publish_req",
+			"type": "PerfectPerformanceItemPublishReq",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回的执行状态吗",
-					"required": true
+					"description": "返回的执行状态吗"
 				},
 				{
-					"name": "data",
-					"type": "PerfectPerformanceItemPublishResp",
-					"description": "返回的数据实体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PerfectPerformanceItemPublishResp",
+					"description": "返回的数据实体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
+					"description": "是否执行成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.perfect.performance.localitem.publish",
+	"apiChineseName": "同城购定制化发品",
+	"description": "同城购业务定制化发品接口，同城购业务线专用",
+	"id": 56940
 }

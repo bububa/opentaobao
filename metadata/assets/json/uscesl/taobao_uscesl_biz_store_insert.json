@@ -1,8 +1,4 @@
 {
-	"id": 39069,
-	"name": "taobao.uscesl.biz.store.insert",
-	"apiChineseName": "新增电子价签商家门店接口",
-	"description": "新增电子价签商家门店接口",
 	"requestParams": [
 		{
 			"name": "store_name",
@@ -29,5 +25,9 @@
 			"type": "Json",
 			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.store.insert",
+	"apiChineseName": "新增电子价签商家门店接口",
+	"description": "新增电子价签商家门店接口",
+	"id": 39069
 }

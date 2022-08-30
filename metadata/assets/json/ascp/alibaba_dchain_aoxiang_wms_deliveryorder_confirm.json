@@ -1,0 +1,486 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "delivery_order_code",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "delivery_order_id",
+							"type": "String",
+							"description": "仓储系统出库单号"
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "出库单类型(JYCK=一般交易出库;HHCK=换货出库;BFCK=补发出库;QTCK=其他出库单)",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "出库单状态(NEW-未开始处理;ACCEPT-仓库接单;PARTDELIVERED-部分发货完成;DELIVERED-发货完成;EXCEPTION-异 常;CANCELED-取消;CLOSED-关闭;REJECT-拒单;CANCELEDFAIL-取消失败;只传英文编码)"
+						},
+						{
+							"name": "out_biz_code",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求 不会被重复处理;条件必填;条件为一单需要多次确认时)"
+						},
+						{
+							"name": "confirm_type",
+							"type": "String",
+							"description": "支持出库单多次发货(多次发货后确认时;0表示发货单最终状态确认;1表示发货单中间状态确认)"
+						},
+						{
+							"name": "order_confirm_time",
+							"type": "String",
+							"description": "订单完成时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "operator_code",
+							"type": "String",
+							"description": "当前状态操作员编码"
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "当前状态操作员姓名"
+						},
+						{
+							"name": "operate_time",
+							"type": "String",
+							"description": "当前状态操作时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "storage_fee",
+							"type": "String",
+							"description": "仓储费用"
+						},
+						{
+							"subParams": [
+								{
+									"name": "header",
+									"type": "String",
+									"description": "发票抬头"
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "发票金额"
+								},
+								{
+									"name": "content",
+									"type": "String",
+									"description": "发票内容"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "item_name",
+													"type": "String",
+													"description": "商品名称"
+												},
+												{
+													"name": "unit",
+													"type": "String",
+													"description": "商品单位"
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "商品单价"
+												},
+												{
+													"name": "quantity",
+													"type": "String",
+													"description": "数量"
+												},
+												{
+													"name": "amount",
+													"type": "String",
+													"description": "金额"
+												},
+												{
+													"name": "item_code",
+													"type": "String",
+													"description": "商品编码"
+												},
+												{
+													"name": "item_id",
+													"type": "String",
+													"description": "商品仓储系统编码"
+												}
+											],
+											"name": "items",
+											"type": "Item[]",
+											"description": "商品"
+										}
+									],
+									"name": "detail",
+									"type": "Detail",
+									"description": "发货详情"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "发票代码(纳税企业的标识)"
+								},
+								{
+									"name": "number",
+									"type": "String",
+									"description": "发票号码(纳税企业内部的发票号)"
+								}
+							],
+							"name": "invoices",
+							"type": "Invoice[]",
+							"description": "发票信息"
+						}
+					],
+					"name": "delivery_order",
+					"type": "DeliveryOrder",
+					"description": "发货单信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_code",
+							"type": "String",
+							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通 (ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHER=其他;只传英文编码)",
+							"required": true
+						},
+						{
+							"name": "logistics_name",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"name": "express_code",
+							"type": "String",
+							"description": "运单号",
+							"required": true
+						},
+						{
+							"name": "package_code",
+							"type": "String",
+							"description": "包裹编号"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "包裹长度(单位：厘米)"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "包裹宽度(单位：厘米)"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "包裹高度(单位：厘米)"
+						},
+						{
+							"name": "theoretical_weight",
+							"type": "String",
+							"description": "包裹理论重量(单位：千克)"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "包裹重量(单位：千克)"
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "包裹体积(单位：升)"
+						},
+						{
+							"name": "invoice_no",
+							"type": "String",
+							"description": "发票号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "包材型号"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "包材的数量"
+								}
+							],
+							"name": "package_material_list",
+							"type": "PackageMaterial[]",
+							"description": "包材信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品仓储系统编码"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "包裹内该商品的数量"
+								},
+								{
+									"name": "order_line_no",
+									"type": "String",
+									"description": "单据行号"
+								}
+							],
+							"name": "items",
+							"type": "Item[]",
+							"description": "商品列表"
+						}
+					],
+					"name": "packages",
+					"type": "DeliveryOrder[]",
+					"description": "包裹信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_line_no",
+							"type": "String",
+							"description": "单据行号"
+						},
+						{
+							"name": "order_source_code",
+							"type": "String",
+							"description": "平台交易订单编码",
+							"required": true
+						},
+						{
+							"name": "sub_source_code",
+							"type": "String",
+							"description": "平台交易子订单编码",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品仓储系统编码"
+						},
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存;默认为查所有类型的库存)"
+						},
+						{
+							"name": "owner_code",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "ext_code",
+							"type": "String",
+							"description": "交易平台商品编码"
+						},
+						{
+							"name": "plan_qty",
+							"type": "String",
+							"description": "应发商品数量"
+						},
+						{
+							"name": "actual_qty",
+							"type": "String",
+							"description": "实发商品数量"
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "批次编号"
+						},
+						{
+							"name": "product_date",
+							"type": "String",
+							"description": "生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expire_date",
+							"type": "String",
+							"description": "过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produce_code",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "batch_code",
+									"type": "String",
+									"description": "批次编号"
+								},
+								{
+									"name": "product_date",
+									"type": "String",
+									"description": "生产日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "expire_date",
+									"type": "String",
+									"description": "过期日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "produce_code",
+									"type": "String",
+									"description": "生产批号"
+								},
+								{
+									"name": "inventory_type",
+									"type": "String",
+									"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存;默认为查所有类型的库存)"
+								},
+								{
+									"name": "actual_qty",
+									"type": "String",
+									"description": "实发数量(要求batchs节点下所有的实发数量之和等于orderline中的实发数量)"
+								},
+								{
+									"name": "sn_code",
+									"type": "String",
+									"description": "货品sn编码"
+								}
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次列表"
+						},
+						{
+							"name": "qr_code",
+							"type": "String",
+							"description": "商品的二维码(类似电子产品的SN码;用来进行商品的溯源;多个二维码之间用分号;隔开)"
+						},
+						{
+							"name": "sn_code",
+							"type": "String",
+							"description": "货品sn编码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sn",
+									"type": "String[]",
+									"description": "sn"
+								}
+							],
+							"name": "sn_list",
+							"type": "SnList",
+							"description": "sn列表"
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称"
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商编码"
+						}
+					],
+					"name": "order_lines",
+					"type": "OrderLine[]",
+					"description": "单据列表"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间（时间戳）",
+					"required": true
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主ID",
+					"required": true
+				}
+			],
+			"name": "delivery_order_confirm_report_request",
+			"type": "DeliveryOrderConfirmReportRequest",
+			"description": "确认接单回传上报请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId，类似于requestId"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "delivery_order_confirm_report_response",
+			"type": "DeliveryOrderConfirmReportResponse",
+			"description": "回传结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.wms.deliveryorder.confirm",
+	"apiChineseName": "回传发货单确认",
+	"description": "回传发货单确认",
+	"id": 63061
+}

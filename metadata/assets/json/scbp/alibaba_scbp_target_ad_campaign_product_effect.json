@@ -1,14 +1,6 @@
 {
-	"id": 41333,
-	"name": "alibaba.scbp.target.ad.campaign.product.effect",
-	"apiChineseName": "定向推广-获取计划中产品推广效果",
-	"description": "定向推广-获取计划中产品推广效果",
 	"requestParams": [
 		{
-			"name": "top_p4p_quick_effect_query",
-			"type": "TopP4pQuickEffectQuery",
-			"description": "TopP4pQuickEffectQuery",
-			"required": true,
 			"subParams": [
 				{
 					"name": "end_date",
@@ -19,6 +11,12 @@
 					"name": "begin_date",
 					"type": "String",
 					"description": "开始时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）"
+				},
+				{
+					"name": "interval",
+					"type": "Number",
+					"description": "区间 只能为1 7 30",
+					"required": true
 				},
 				{
 					"name": "to_page",
@@ -46,65 +44,56 @@
 					"name": "product_name",
 					"type": "String",
 					"description": "商品名称(可以通过传入商品名称，返回指定商品的数据)"
-				},
-				{
-					"name": "interval",
-					"type": "Number",
-					"description": "区间 只能为1 7 30",
-					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_quick_effect_query",
+			"type": "TopP4pQuickEffectQuery",
+			"description": "TopP4pQuickEffectQuery",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "product_list",
-			"type": "TopP4pQuickProductEffectView []",
-			"description": "产品数据",
 			"subParams": [
 				{
 					"name": "product_name",
 					"type": "String",
-					"description": "产品名称",
-					"required": true
+					"description": "产品名称"
 				},
 				{
 					"name": "product_id",
 					"type": "Number",
-					"description": "产品id",
-					"required": true
+					"description": "产品id"
 				},
 				{
 					"name": "cpc",
 					"type": "String",
-					"description": "平均点击花费",
-					"required": true
+					"description": "平均点击花费"
 				},
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "点击率",
-					"required": true
+					"description": "点击率"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "消耗金额，单位元",
-					"required": true
+					"description": "消耗金额，单位元"
 				},
 				{
 					"name": "click_cnt",
 					"type": "String",
-					"description": "点击量",
-					"required": true
+					"description": "点击量"
 				},
 				{
 					"name": "impression_cnt",
 					"type": "String",
-					"description": "曝光量",
-					"required": true
+					"description": "曝光量"
 				}
-			]
+			],
+			"name": "product_list",
+			"type": "TopP4pQuickProductEffectView []",
+			"description": "产品数据"
 		},
 		{
 			"name": "total_page",
@@ -116,5 +105,9 @@
 			"type": "Number",
 			"description": "总个数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.campaign.product.effect",
+	"apiChineseName": "定向推广-获取计划中产品推广效果",
+	"description": "定向推广-获取计划中产品推广效果",
+	"id": 41333
 }

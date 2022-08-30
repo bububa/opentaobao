@@ -1,18 +1,9 @@
 {
-	"id": 25438,
-	"name": "alibaba.icbu.product.list",
-	"apiChineseName": "商品查询",
-	"description": "根据类目ID和商品名称查询商品概要信息。结果以修改时间倒序返回，支持分页，每页最多30个。每次调用都是独立的请求，不记录调用的上下文。",
 	"requestParams": [
 		{
 			"name": "category_id",
 			"type": "Number",
 			"description": "类目ID"
-		},
-		{
-			"name": "subject",
-			"type": "String",
-			"description": "商品名称，支持模糊匹配"
 		},
 		{
 			"name": "current_page",
@@ -23,6 +14,11 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页大小，最大30"
+		},
+		{
+			"name": "subject",
+			"type": "String",
+			"description": "商品名称，支持模糊匹配"
 		},
 		{
 			"name": "language",
@@ -63,11 +59,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "total_item",
-			"type": "Number",
-			"description": "总数"
-		},
-		{
 			"name": "current_page",
 			"type": "Number",
 			"description": "当前页"
@@ -78,20 +69,7 @@
 			"description": "每页大小"
 		},
 		{
-			"name": "products",
-			"type": "AlibabaProductBriefResponse []",
-			"description": "商品概要信息列表",
 			"subParams": [
-				{
-					"name": "id",
-					"type": "Number",
-					"description": "商品ID"
-				},
-				{
-					"name": "product_id",
-					"type": "String",
-					"description": "混淆后的商品ID"
-				},
 				{
 					"name": "group_id",
 					"type": "Number",
@@ -103,14 +81,9 @@
 					"description": "分组名称"
 				},
 				{
-					"name": "subject",
-					"type": "String",
-					"description": "商品名称"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "商品状态"
+					"name": "id",
+					"type": "Number",
+					"description": "商品明文ID"
 				},
 				{
 					"name": "keywords",
@@ -118,9 +91,6 @@
 					"description": "关键词"
 				},
 				{
-					"name": "main_image",
-					"type": "MainImage",
-					"description": "商品的主图",
 					"subParams": [
 						{
 							"name": "images",
@@ -142,37 +112,45 @@
 							"type": "String",
 							"description": "水印位置，在中间(center)或者在底部(bottom)"
 						}
-					]
+					],
+					"name": "main_image",
+					"type": "MainImage",
+					"description": "商品的主图"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "商品状态"
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "商品名称"
 				},
 				{
 					"name": "product_type",
 					"type": "String",
-					"description": "商品类型"
+					"description": "sourcing或者wholesale"
 				},
 				{
 					"name": "language",
 					"type": "String",
-					"description": "语种"
+					"description": "english"
 				},
 				{
 					"name": "display",
 					"type": "String",
-					"description": "Y为上架状态"
-				},
-				{
-					"name": "gmt_modified",
-					"type": "Date",
-					"description": "最近一次修改时间"
-				},
-				{
-					"name": "category_id",
-					"type": "Number",
-					"description": "类目ID"
+					"description": "Y表示上架，N表示下架"
 				},
 				{
 					"name": "owner_member_display_name",
 					"type": "String",
 					"description": "james"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "1234"
 				},
 				{
 					"name": "is_specific",
@@ -198,8 +176,35 @@
 					"name": "gmt_create",
 					"type": "Date",
 					"description": "2020-12-22 12:00:00"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "2020-12-22 12:00:00"
+				},
+				{
+					"name": "red_model",
+					"type": "String",
+					"description": "CK001"
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "产品混淆id"
 				}
-			]
+			],
+			"name": "products",
+			"type": "AlibabaProductBriefResponse []",
+			"description": "商品概要信息列表"
+		},
+		{
+			"name": "total_item",
+			"type": "Number",
+			"description": "总数"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.list",
+	"apiChineseName": "商品查询",
+	"description": "根据类目ID和商品名称查询商品概要信息。结果以修改时间倒序返回，支持分页，每页最多30个。每次调用都是独立的请求，不记录调用的上下文。",
+	"id": 25438
 }

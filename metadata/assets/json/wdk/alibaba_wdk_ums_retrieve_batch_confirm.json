@@ -1,8 +1,4 @@
 {
-	"id": 31310,
-	"name": "alibaba.wdk.ums.retrieve.batch.confirm",
-	"apiChineseName": "批量消息确认",
-	"description": "批量消息确认",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -18,41 +14,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "model",
-					"required": true
+					"type": "String",
+					"description": "model"
 				},
 				{
 					"name": "list",
-					"type": "Json",
-					"description": "list",
-					"required": true
+					"type": "String",
+					"description": "list"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.retrieve.batch.confirm",
+	"apiChineseName": "批量消息确认",
+	"description": "批量消息确认",
+	"id": 31310
 }

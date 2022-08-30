@@ -1,8 +1,4 @@
 {
-	"id": 25039,
-	"name": "taobao.cloudpush.notice.android",
-	"apiChineseName": "百川云推送发送通知给android",
-	"description": "百川云推送发送通知给android",
 	"requestParams": [
 		{
 			"name": "summary",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "请求的错误信息."
 		}
-	]
+	],
+	"name": "taobao.cloudpush.notice.android",
+	"apiChineseName": "百川云推送发送通知给android",
+	"description": "百川云推送发送通知给android",
+	"id": 25039
 }

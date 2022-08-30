@@ -1,8 +1,4 @@
 {
-	"id": 24462,
-	"name": "taobao.wlb.imports.resource.transferstore.get",
-	"apiChineseName": "根据指定的资源获取所有中转仓列表",
-	"description": "根据指定的资源获取所有中转仓列表",
 	"requestParams": [
 		{
 			"name": "resource_id",
@@ -19,14 +15,10 @@
 			"name": "cids",
 			"type": "Number[]",
 			"description": "商品前台叶子类目ID",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "to_address",
-			"type": "ReciverAddressDo",
-			"description": "买家收货地信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "detail_address",
@@ -60,14 +52,15 @@
 					"type": "String",
 					"description": "市级别"
 				}
-			]
+			],
+			"name": "to_address",
+			"type": "ReciverAddressDo",
+			"description": "买家收货地信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "stores",
-			"type": "TranStoreResult []",
-			"description": "符合条件的中转仓列表",
 			"subParams": [
 				{
 					"name": "store_name",
@@ -84,7 +77,14 @@
 					"type": "String",
 					"description": "中转仓代码"
 				}
-			]
+			],
+			"name": "stores",
+			"type": "TranStoreResult []",
+			"description": "符合条件的中转仓列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.imports.resource.transferstore.get",
+	"apiChineseName": "根据指定的资源获取所有中转仓列表",
+	"description": "根据指定的资源获取所有中转仓列表",
+	"id": 24462
 }

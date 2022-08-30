@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id_list",
+			"type": "Number",
+			"description": "工单IdList",
+			"required": true
+		},
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "实际履行服务商nick",
+			"required": true
+		},
+		{
+			"name": "comment",
+			"type": "String",
+			"description": "取消原因",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "失败原因"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 成功，false 失败"
+				}
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.logisticsorder.tpcancel",
+	"apiChineseName": "tp更新物流进度信息",
+	"description": "tp更新物流进度信息",
+	"id": 60721
+}

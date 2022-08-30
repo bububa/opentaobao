@@ -1,15 +1,11 @@
 {
-	"id": 22479,
-	"name": "taobao.qt.reports.get",
-	"apiChineseName": "批量查询质检报告",
-	"description": "批量查询质检报告，目前只支持查询qtType=11（天猫真假鉴定）类型的报告",
 	"requestParams": [
 		{
 			"name": "sp_name",
 			"type": "String",
 			"description": "质检服务商名",
-			"required": true,
-			"maxLength": 50
+			"maxLength": 50,
+			"required": true
 		},
 		{
 			"name": "qt_type",
@@ -42,9 +38,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "reports",
-			"type": "QtReport []",
-			"description": "质检报告列表",
 			"subParams": [
 				{
 					"name": "id",
@@ -136,7 +129,14 @@
 					"type": "Number",
 					"description": "质检报告状态\u003cbr/\u003e 0:已提交申请 1:已收到样品 2:已出检测结果 3.已出具报告"
 				}
-			]
+			],
+			"name": "reports",
+			"type": "QtReport []",
+			"description": "质检报告列表"
 		}
-	]
+	],
+	"name": "taobao.qt.reports.get",
+	"apiChineseName": "批量查询质检报告",
+	"description": "批量查询质检报告，目前只支持查询qtType=11（天猫真假鉴定）类型的报告",
+	"id": 22479
 }

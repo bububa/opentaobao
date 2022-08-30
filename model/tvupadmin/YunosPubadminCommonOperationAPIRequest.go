@@ -12,12 +12,12 @@ import (
 // 内部迎客松通用服务
 type YunosPubadminCommonOperationAPIRequest struct {
 	model.Params
-	// 入参json串
-	_parameter string
 	// 接口名
 	_interfaceName string
 	// 方法名
 	_methodName string
+	// 入参json串
+	_parameter string
 }
 
 // NewYunosPubadminCommonOperationRequest 初始化YunosPubadminCommonOperationAPIRequest对象
@@ -39,19 +39,6 @@ func (r YunosPubadminCommonOperationAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetParameter is Parameter Setter
-// 入参json串
-func (r *YunosPubadminCommonOperationAPIRequest) SetParameter(_parameter string) error {
-	r._parameter = _parameter
-	r.Set("parameter", _parameter)
-	return nil
-}
-
-// GetParameter Parameter Getter
-func (r YunosPubadminCommonOperationAPIRequest) GetParameter() string {
-	return r._parameter
 }
 
 // SetInterfaceName is InterfaceName Setter
@@ -78,4 +65,17 @@ func (r *YunosPubadminCommonOperationAPIRequest) SetMethodName(_methodName strin
 // GetMethodName MethodName Getter
 func (r YunosPubadminCommonOperationAPIRequest) GetMethodName() string {
 	return r._methodName
+}
+
+// SetParameter is Parameter Setter
+// 入参json串
+func (r *YunosPubadminCommonOperationAPIRequest) SetParameter(_parameter string) error {
+	r._parameter = _parameter
+	r.Set("parameter", _parameter)
+	return nil
+}
+
+// GetParameter Parameter Getter
+func (r YunosPubadminCommonOperationAPIRequest) GetParameter() string {
+	return r._parameter
 }

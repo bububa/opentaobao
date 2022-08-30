@@ -1,13 +1,6 @@
 {
-	"id": 33036,
-	"name": "tmall.channel.products.get",
-	"apiChineseName": "查询供应商的产品数据",
-	"description": "查询供应商的产品数据。 \n\n* 入参传入pids将优先查询，即只按这个条件查询。 \n*入参传入sku_number将优先查询(没有传入pids)，即只按这个条件查询(最多显示50条) \n* 入参fields传skus将查询sku的数据，不传该参数默认不查询，返回产品的其它信息。 \n* 入参fields传入images将查询多图数据，不传只返回主图数据。 \n* 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据） \n* 查询结果按照产品发布时间倒序，即时间近的数据在前。\n* 传入channel 渠道，会只返回相应渠道的产品",
 	"requestParams": [
 		{
-			"name": "top_query_product_d_o",
-			"type": "TopQueryProductDo",
-			"description": "top_query_product_d_o",
 			"subParams": [
 				{
 					"name": "ids",
@@ -49,263 +42,230 @@
 					"type": "Number",
 					"description": "渠道[21 零售plus]"
 				}
-			]
+			],
+			"name": "top_query_product_d_o",
+			"type": "TopQueryProductDo",
+			"description": "top_query_product_d_o"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "products",
-			"type": "TopProductDO []",
-			"description": "产品对象记录集",
 			"subParams": [
 				{
 					"name": "city",
 					"type": "String",
-					"description": "所在地：市",
-					"required": true
+					"description": "所在地：市"
 				},
 				{
 					"name": "cost_price_yuan",
 					"type": "String",
-					"description": "代销采购价格，单位：元。",
-					"required": true
+					"description": "代销采购价格，单位：元。"
 				},
 				{
 					"name": "desc_path",
 					"type": "String",
-					"description": "产品描述路径，通过http请求获取",
-					"required": true
+					"description": "产品描述路径，通过http请求获取"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "更新时间",
-					"required": true
+					"description": "更新时间"
 				},
 				{
 					"name": "have_invoice",
 					"type": "Number",
-					"description": "是否有发票，可选值：false（否）、true（是）",
-					"required": true
+					"description": "是否有发票，可选值：false（否）、true（是）"
 				},
 				{
 					"name": "have_quarantee",
 					"type": "Number",
-					"description": "是否有保修，可选值：false（否）、true（是）",
-					"required": true
+					"description": "是否有保修，可选值：false（否）、true（是）"
 				},
 				{
 					"name": "auction_id",
 					"type": "Number",
-					"description": "关联的前台宝贝id",
-					"required": true
+					"description": "关联的前台宝贝id"
 				},
 				{
 					"name": "items_count",
 					"type": "Number",
-					"description": "下载人数",
-					"required": true
+					"description": "下载人数"
 				},
 				{
 					"name": "postage_ems",
 					"type": "String",
-					"description": "ems费用，单位：元",
-					"required": true
+					"description": "ems费用，单位：元"
 				},
 				{
 					"name": "postage_fast",
 					"type": "String",
-					"description": "快递费用，单位：元",
-					"required": true
+					"description": "快递费用，单位：元"
 				},
 				{
 					"name": "postage_id",
 					"type": "Number",
-					"description": "运费模板ID",
-					"required": true
+					"description": "运费模板ID"
 				},
 				{
 					"name": "postage_ordinary",
 					"type": "String",
-					"description": "平邮费用，单位：元",
-					"required": true
+					"description": "平邮费用，单位：元"
 				},
 				{
 					"name": "postage_type",
 					"type": "Number",
-					"description": "运费类型：1（供应商承担运费）、2（分销商承担运费）可选值：seller（供应商承担运费）、buyer（分销商承担运费）",
-					"required": true
+					"description": "运费类型：1（供应商承担运费）、2（分销商承担运费）可选值：seller（供应商承担运费）、buyer（分销商承担运费）"
 				},
 				{
 					"name": "pid",
 					"type": "Number",
-					"description": "产品ID",
-					"required": true
+					"description": "产品ID"
 				},
 				{
 					"name": "product_line_id",
 					"type": "Number",
-					"description": "产品所属产品线id",
-					"required": true
+					"description": "产品所属产品线id"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "商家编码",
-					"required": true
+					"description": "商家编码"
 				},
 				{
 					"name": "prov",
 					"type": "String",
-					"description": "所在地：省",
-					"required": true
+					"description": "所在地：省"
 				},
 				{
 					"name": "quantity",
 					"type": "Number",
-					"description": "产品库存",
-					"required": true
+					"description": "产品库存"
 				},
 				{
 					"name": "retail_price_high",
 					"type": "String",
-					"description": "最高零售价，单位：元。",
-					"required": true
+					"description": "最高零售价，单位：元。"
 				},
 				{
 					"name": "retail_price_low",
 					"type": "String",
-					"description": "最低零售价，单位：元。",
-					"required": true
+					"description": "最低零售价，单位：元。"
 				},
 				{
 					"name": "sc_item_id",
 					"type": "Number",
-					"description": "scItemId",
-					"required": true
+					"description": "scItemId"
 				},
 				{
-					"name": "skus",
-					"type": "ProductSkuDo[]",
-					"description": "分销产品SKU列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "auction_sku_id",
 							"type": "Number",
-							"description": "关联的前端宝贝skuid",
-							"required": true
-						},
-						{
-							"name": "properties",
-							"type": "String",
-							"description": "sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。",
-							"required": true
-						},
-						{
-							"name": "quantity",
-							"type": "Number",
-							"description": "库存",
-							"required": true
-						},
-						{
-							"name": "quota_quantity",
-							"type": "Number",
-							"description": "配额可用库存",
-							"required": true
-						},
-						{
-							"name": "reserved_quantity",
-							"type": "Number",
-							"description": "预扣库存",
-							"required": true
-						},
-						{
-							"name": "scitem_id",
-							"type": "Number",
-							"description": "关联的后端商品id",
-							"required": true
-						},
-						{
-							"name": "sku_id",
-							"type": "Number",
-							"description": "skuId",
-							"required": true
-						},
-						{
-							"name": "outer_id",
-							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "关联的前端宝贝skuid"
 						},
 						{
 							"name": "cost_price_fen",
 							"type": "Number",
-							"description": "代销采购价:单位分",
-							"required": true
+							"description": "代销采购价:单位分"
 						},
 						{
 							"name": "price_cost_dealer_fen",
 							"type": "Number",
-							"description": "经销采购价:单位分",
-							"required": true
+							"description": "经销采购价:单位分"
+						},
+						{
+							"name": "properties",
+							"type": "String",
+							"description": "sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存"
+						},
+						{
+							"name": "quota_quantity",
+							"type": "Number",
+							"description": "配额可用库存"
+						},
+						{
+							"name": "reserved_quantity",
+							"type": "Number",
+							"description": "预扣库存"
+						},
+						{
+							"name": "scitem_id",
+							"type": "Number",
+							"description": "关联的后端商品id"
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商家编码"
 						},
 						{
 							"name": "standard_price_fen",
 							"type": "Number",
-							"description": "市场价单位分",
-							"required": true
+							"description": "市场价单位分"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "ProductSkuDo[]",
+					"description": "分销产品SKU列表"
 				},
 				{
 					"name": "spu_id",
 					"type": "Number",
-					"description": "spuId",
-					"required": true
+					"description": "spuId"
 				},
 				{
 					"name": "standard_price",
 					"type": "String",
-					"description": "市场价：单位元",
-					"required": true
+					"description": "市场价：单位元"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "发布状态： 1 上架，2 下架，3 删除",
-					"required": true
+					"description": "发布状态： 1 上架，2 下架，3 删除"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "产品名称",
-					"required": true
+					"description": "产品名称"
 				},
 				{
 					"name": "orders_count",
 					"type": "Number",
-					"description": "累计采购次数",
-					"required": true
+					"description": "累计采购次数"
 				},
 				{
 					"name": "pictures",
 					"type": "String",
-					"description": "产品图片路径列表，用“,”分隔",
-					"required": true
+					"description": "产品图片路径列表，用“,”分隔"
 				}
-			]
+			],
+			"name": "products",
+			"type": "TopProductDO []",
+			"description": "产品对象记录集"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "查询结果记录数"
 		}
-	]
+	],
+	"name": "tmall.channel.products.get",
+	"apiChineseName": "查询供应商的产品数据",
+	"description": "查询供应商的产品数据。 \n\n* 入参传入pids将优先查询，即只按这个条件查询。 \n*入参传入sku_number将优先查询(没有传入pids)，即只按这个条件查询(最多显示50条) \n* 入参fields传skus将查询sku的数据，不传该参数默认不查询，返回产品的其它信息。 \n* 入参fields传入images将查询多图数据，不传只返回主图数据。 \n* 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据） \n* 查询结果按照产品发布时间倒序，即时间近的数据在前。\n* 传入channel 渠道，会只返回相应渠道的产品",
+	"id": 33036
 }

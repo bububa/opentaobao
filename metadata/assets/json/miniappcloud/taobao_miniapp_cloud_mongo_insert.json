@@ -1,8 +1,4 @@
 {
-	"id": 46995,
-	"name": "taobao.miniapp.cloud.mongo.insert",
-	"apiChineseName": "MongoDB插入单条数据",
-	"description": "向商家应用云中插入一条记录，用于外部数据同步到应用中",
 	"requestParams": [
 		{
 			"name": "record",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "返回的数据ID，在表中为_id字段"
 		}
-	]
+	],
+	"name": "taobao.miniapp.cloud.mongo.insert",
+	"apiChineseName": "MongoDB插入单条数据",
+	"description": "向商家应用云中插入一条记录，用于外部数据同步到应用中",
+	"id": 46995
 }

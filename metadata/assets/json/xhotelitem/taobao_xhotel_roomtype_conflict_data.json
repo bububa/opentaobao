@@ -1,8 +1,4 @@
 {
-	"id": 49614,
-	"name": "taobao.xhotel.roomtype.conflict.data",
-	"apiChineseName": "商家床型冲突数据接口",
-	"description": "商家床型冲突数据接口",
 	"requestParams": [
 		{
 			"name": "current_page",
@@ -12,127 +8,112 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
 					"name": "warn_message",
 					"type": "String",
-					"description": "警告信息",
-					"required": true
+					"description": "警告信息"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否还有下一页",
-					"required": true
+					"description": "是否还有下一页"
 				},
 				{
-					"name": "results",
-					"type": "RoomTypeCheckResultDO[]",
-					"description": "结果集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bedtypecheckresult",
 							"type": "String",
-							"description": "床型数据检查结果，false代表有冲突",
-							"required": true
+							"description": "床型数据检查结果，false代表有冲突"
 						},
 						{
 							"name": "bed_type",
 							"type": "String",
-							"description": "结构化床型",
-							"required": true
+							"description": "结构化床型"
 						},
 						{
 							"name": "origin_bed_type",
 							"type": "String",
-							"description": "原始床型",
-							"required": true
+							"description": "原始床型"
 						},
 						{
 							"name": "roomtypeenname",
 							"type": "String",
-							"description": "房型英文名称",
-							"required": true
+							"description": "房型英文名称"
 						},
 						{
 							"name": "roomtypename",
 							"type": "String",
-							"description": "房型名称",
-							"required": true
+							"description": "房型名称"
 						},
 						{
 							"name": "outer_room_type_id",
 							"type": "String",
-							"description": "房型编码",
-							"required": true
+							"description": "房型编码"
 						},
 						{
 							"name": "hotelname",
 							"type": "String",
-							"description": "酒店名称",
-							"required": true
+							"description": "酒店名称"
 						},
 						{
 							"name": "outer_hotel_id",
 							"type": "String",
-							"description": "酒店编码",
-							"required": true
+							"description": "酒店编码"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "冲突数据创建时间（供商家参考，如果时间是过去三天以外的，那么可以不用关注）",
-							"required": true
+							"description": "冲突数据创建时间（供商家参考，如果时间是过去三天以外的，那么可以不用关注）"
 						},
 						{
 							"name": "ennamebedtypedesc",
 							"type": "String",
-							"description": "床型英文描叙",
-							"required": true
+							"description": "床型英文描叙"
 						},
 						{
 							"name": "namebedtypedesc",
 							"type": "String",
-							"description": "床型描叙",
-							"required": true
+							"description": "床型描叙"
 						},
 						{
 							"name": "bedtypedesc",
 							"type": "String",
-							"description": "床型描叙",
-							"required": true
+							"description": "床型描叙"
 						},
 						{
 							"name": "bedtypecheckmsg",
 							"type": "String",
-							"description": "床型检查信息",
-							"required": true
+							"description": "床型检查信息"
 						}
-					]
+					],
+					"name": "results",
+					"type": "RoomTypeCheckResultDO[]",
+					"description": "结果集"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "taobao.xhotel.roomtype.conflict.data",
+	"apiChineseName": "商家床型冲突数据接口",
+	"description": "商家床型冲突数据接口",
+	"id": 49614
 }

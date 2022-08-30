@@ -1,8 +1,4 @@
 {
-	"id": 48597,
-	"name": "aliexpress.affiliate.featuredpromo.products.get",
-	"apiChineseName": "联盟主题推广活动商品信息获取",
-	"description": "根据联盟主题推广活动或主题品库查询对应的商品。如下品库为固定品库，可长期调用。品库类型和名称如下：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -72,9 +68,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -89,10 +82,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficProductResultDto",
-					"description": "返回结果状态明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page_no",
@@ -107,10 +96,6 @@
 							"required": true
 						},
 						{
-							"name": "products",
-							"type": "Product[]",
-							"description": "返回商品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "app_sale_price",
@@ -305,10 +290,6 @@
 									"required": true
 								},
 								{
-									"name": "promo_code_info",
-									"type": "PromoCodeDto",
-									"description": "code信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "promo_code",
@@ -358,9 +339,17 @@
 											"description": "品code合一url",
 											"required": true
 										}
-									]
+									],
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code信息",
+									"required": true
 								}
-							]
+							],
+							"name": "products",
+							"type": "Product[]",
+							"description": "返回商品列表",
+							"required": true
 						},
 						{
 							"name": "total_page_no",
@@ -380,9 +369,20 @@
 							"description": "数据是否拉取完成",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficProductResultDto",
+					"description": "返回结果状态明细",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.featuredpromo.products.get",
+	"apiChineseName": "联盟主题推广活动商品信息获取",
+	"description": "根据联盟主题推广活动或主题品库查询对应的商品。如下品库为固定品库，可长期调用。品库类型和名称如下：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）",
+	"id": 48597
 }

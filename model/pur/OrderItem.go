@@ -4,7 +4,7 @@ package pur
 type OrderItem struct {
 	// 币种
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
-	// 税率
+	// 税率，如13%传13
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 供应商ID
 	SupplierId string `json:"supplier_id,omitempty" xml:"supplier_id,omitempty"`

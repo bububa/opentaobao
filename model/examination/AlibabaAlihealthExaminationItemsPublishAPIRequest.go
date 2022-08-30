@@ -14,6 +14,8 @@ type AlibabaAlihealthExaminationItemsPublishAPIRequest struct {
 	model.Params
 	// 套餐列表
 	_isvPackages []IsvPackage
+	// 加项包关系列表
+	_isvPackRelationDTOS []IsvPackRelationDto
 	// 单项之间关系
 	_isvItemRelationDTOS []IsvItemRelationDto
 	// 体检机构标识
@@ -22,8 +24,6 @@ type AlibabaAlihealthExaminationItemsPublishAPIRequest struct {
 	_isvItemPackDTOS []IsvItemPackDto
 	// 单项信息列表
 	_isvItemDTOS []IsvItemDto
-	// 加项包关系列表
-	_isvPackRelationDTOS []IsvPackRelationDto
 	// 商品id，机构保证全局唯一
 	_groupId string
 }
@@ -60,6 +60,19 @@ func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetIsvPackages(_isvP
 // GetIsvPackages IsvPackages Getter
 func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetIsvPackages() []IsvPackage {
 	return r._isvPackages
+}
+
+// SetIsvPackRelationDTOS is IsvPackRelationDTOS Setter
+// 加项包关系列表
+func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetIsvPackRelationDTOS(_isvPackRelationDTOS []IsvPackRelationDto) error {
+	r._isvPackRelationDTOS = _isvPackRelationDTOS
+	r.Set("isv_pack_relation_d_t_o_s", _isvPackRelationDTOS)
+	return nil
+}
+
+// GetIsvPackRelationDTOS IsvPackRelationDTOS Getter
+func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetIsvPackRelationDTOS() []IsvPackRelationDto {
+	return r._isvPackRelationDTOS
 }
 
 // SetIsvItemRelationDTOS is IsvItemRelationDTOS Setter
@@ -112,19 +125,6 @@ func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetIsvItemDTOS(_isvI
 // GetIsvItemDTOS IsvItemDTOS Getter
 func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetIsvItemDTOS() []IsvItemDto {
 	return r._isvItemDTOS
-}
-
-// SetIsvPackRelationDTOS is IsvPackRelationDTOS Setter
-// 加项包关系列表
-func (r *AlibabaAlihealthExaminationItemsPublishAPIRequest) SetIsvPackRelationDTOS(_isvPackRelationDTOS []IsvPackRelationDto) error {
-	r._isvPackRelationDTOS = _isvPackRelationDTOS
-	r.Set("isv_pack_relation_d_t_o_s", _isvPackRelationDTOS)
-	return nil
-}
-
-// GetIsvPackRelationDTOS IsvPackRelationDTOS Getter
-func (r AlibabaAlihealthExaminationItemsPublishAPIRequest) GetIsvPackRelationDTOS() []IsvPackRelationDto {
-	return r._isvPackRelationDTOS
 }
 
 // SetGroupId is GroupId Setter

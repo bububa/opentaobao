@@ -28,4 +28,6 @@ type SupplierPoDetailDto struct {
 	PrNo string `json:"pr_no,omitempty" xml:"pr_no,omitempty"`
 	// 注意事项
 	Comments string `json:"comments,omitempty" xml:"comments,omitempty"`
+	// cpoNo
+	CpoNo string `json:"cpo_no,omitempty" xml:"cpo_no,omitempty"`
 }

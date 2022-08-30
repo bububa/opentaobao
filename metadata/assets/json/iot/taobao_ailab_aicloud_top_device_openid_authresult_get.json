@@ -1,15 +1,5 @@
 {
-	"id": 41249,
-	"name": "taobao.ailab.aicloud.top.device.openid.authresult.get",
-	"apiChineseName": "获取openId设备授权码验证结果",
-	"description": "获取openId设备授权码验证结果",
 	"requestParams": [
-		{
-			"name": "open_id",
-			"type": "String",
-			"description": "淘宝openid",
-			"required": true
-		},
 		{
 			"name": "schema",
 			"type": "String",
@@ -32,44 +22,50 @@
 			"description": "扩展信息，用于存放APP类型等"
 		},
 		{
+			"name": "open_id",
+			"type": "String",
+			"description": "淘宝openid",
+			"required": true
+		},
+		{
 			"name": "auth_codes",
 			"type": "String[]",
 			"description": "authcode list",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "详细信息",
-					"required": true
+					"description": "详细信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "uuids",
 					"type": "String[]",
-					"description": "uuid 32位",
-					"required": true
+					"description": "uuid 32位"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "接口请求成功",
-					"required": true
+					"description": "接口请求成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.openid.authresult.get",
+	"apiChineseName": "获取openId设备授权码验证结果",
+	"description": "获取openId设备授权码验证结果",
+	"id": 41249
 }

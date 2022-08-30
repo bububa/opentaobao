@@ -1,8 +1,4 @@
 {
-	"id": 45258,
-	"name": "tmall.item.hscode.audit.results.query",
-	"apiChineseName": "商品hscode信息审核状态查询接口",
-	"description": "通过此接口查询天猫跨境商品的hscode信息审核状态，卖家可以参考返回结果判断是否需要调整商品hscode相关信息。",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "HscodeAuditInfo []",
-			"description": "商品或sku的hscode信息审核状态。",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
-				},
-				{
-					"name": "sku_id",
-					"type": "Number",
-					"description": "SKU的ID",
-					"required": true
-				},
-				{
-					"name": "hscode",
-					"type": "String",
-					"description": "商品或SKU使用的HS海关代码",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "hscode信息当前审核状态，HISTORY_ITEM：历史已上架商品，REJECT：审核未通过，AUDITING：审核中，PASS：审核通过，ERROR：获取审核状态异常",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "reason",
 					"type": "String",
-					"description": "hscode信息当前审核状态的具体说明",
-					"required": true
+					"description": "hscode信息当前审核状态的具体说明"
+				},
+				{
+					"name": "hscode",
+					"type": "String",
+					"description": "商品或SKU使用的HS海关代码"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "SKU的ID"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "hscode信息当前审核状态，HISTORY_ITEM：历史已上架商品，REJECT：审核未通过，AUDITING：审核中，PASS：审核通过，ERROR：获取审核状态异常"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "HscodeAuditInfo []",
+			"description": "商品或sku的hscode信息审核状态。"
 		}
-	]
+	],
+	"name": "tmall.item.hscode.audit.results.query",
+	"apiChineseName": "商品hscode信息审核状态查询接口",
+	"description": "通过此接口查询天猫跨境商品的hscode信息审核状态，卖家可以参考返回结果判断是否需要调整商品hscode相关信息。",
+	"id": 45258
 }

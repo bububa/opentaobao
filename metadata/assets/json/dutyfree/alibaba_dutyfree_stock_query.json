@@ -1,8 +1,4 @@
 {
-	"id": 56257,
-	"name": "alibaba.dutyfree.stock.query",
-	"apiChineseName": "对外库存查询接口",
-	"description": "对外部服务提供库存查询接口",
 	"requestParams": [
 		{
 			"name": "bar_code",
@@ -12,49 +8,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "object",
-					"type": "StockResultDto",
-					"description": "具体库存信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "stock",
 							"type": "Number",
-							"description": "库存",
-							"required": true
+							"description": "库存"
 						},
 						{
 							"name": "bar_code",
 							"type": "String",
-							"description": "条形码",
-							"required": true
+							"description": "条形码"
 						}
-					]
+					],
+					"name": "object",
+					"type": "StockResultDto",
+					"description": "具体库存信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.dutyfree.stock.query",
+	"apiChineseName": "对外库存查询接口",
+	"description": "对外部服务提供库存查询接口",
+	"id": 56257
 }

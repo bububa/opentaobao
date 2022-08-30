@@ -28,6 +28,10 @@ type TaobaoTmcMessageProduceAPIRequest struct {
 	_mediaContent4 *model.File
 	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 	_mediaContent5 *model.File
+	// 延时参数 时间戳 预期发送时间
+	_delayMillis int64
+	// 提前过期 相对时间差 毫秒
+	_expiresMillis int64
 }
 
 // NewTaobaoTmcMessageProduceRequest 初始化TaobaoTmcMessageProduceAPIRequest对象
@@ -153,4 +157,30 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent5(_mediaContent5 *mod
 // GetMediaContent5 MediaContent5 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent5() *model.File {
 	return r._mediaContent5
+}
+
+// SetDelayMillis is DelayMillis Setter
+// 延时参数 时间戳 预期发送时间
+func (r *TaobaoTmcMessageProduceAPIRequest) SetDelayMillis(_delayMillis int64) error {
+	r._delayMillis = _delayMillis
+	r.Set("delay_millis", _delayMillis)
+	return nil
+}
+
+// GetDelayMillis DelayMillis Getter
+func (r TaobaoTmcMessageProduceAPIRequest) GetDelayMillis() int64 {
+	return r._delayMillis
+}
+
+// SetExpiresMillis is ExpiresMillis Setter
+// 提前过期 相对时间差 毫秒
+func (r *TaobaoTmcMessageProduceAPIRequest) SetExpiresMillis(_expiresMillis int64) error {
+	r._expiresMillis = _expiresMillis
+	r.Set("expires_millis", _expiresMillis)
+	return nil
+}
+
+// GetExpiresMillis ExpiresMillis Getter
+func (r TaobaoTmcMessageProduceAPIRequest) GetExpiresMillis() int64 {
+	return r._expiresMillis
 }

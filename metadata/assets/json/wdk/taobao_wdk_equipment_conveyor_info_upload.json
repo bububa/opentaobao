@@ -1,8 +1,4 @@
 {
-	"id": 30481,
-	"name": "taobao.wdk.equipment.conveyor.info.upload",
-	"apiChineseName": "五道口仓库悬挂链信息上报",
-	"description": "五道口仓库悬挂链信息上传",
 	"requestParams": [
 		{
 			"name": "param0",
@@ -31,5 +27,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.info.upload",
+	"apiChineseName": "五道口仓库悬挂链信息上报",
+	"description": "五道口仓库悬挂链信息上传",
+	"id": 30481
 }

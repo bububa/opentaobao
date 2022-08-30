@@ -1,14 +1,6 @@
 {
-	"id": 47994,
-	"name": "alibaba.guard.access.auth",
-	"apiChineseName": "鉴权",
-	"description": "刷卡鉴权",
 	"requestParams": [
 		{
-			"name": "param_identify_auth_d_t_o",
-			"type": "IdentifyAuthDto",
-			"description": "请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_code",
@@ -41,10 +33,6 @@
 					"required": true
 				},
 				{
-					"name": "voucher_d_t_o_list",
-					"type": "VoucherDto[]",
-					"description": "凭证",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_voucher_type_enum",
@@ -58,74 +46,77 @@
 							"description": "卡号",
 							"required": true
 						}
-					]
+					],
+					"name": "voucher_d_t_o_list",
+					"type": "VoucherDto[]",
+					"description": "凭证",
+					"required": true
 				}
-			]
+			],
+			"name": "param_identify_auth_d_t_o",
+			"type": "IdentifyAuthDto",
+			"description": "请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "IdentifyAuthResultDto",
-					"description": "内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_code",
 							"type": "String",
-							"description": "业务id",
-							"required": true
+							"description": "业务id"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "鉴权结果码",
-							"required": true
+							"description": "鉴权结果码"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "鉴权结果消息",
-							"required": true
+							"description": "鉴权结果消息"
 						},
 						{
 							"name": "error_msg_en",
 							"type": "String",
-							"description": "鉴权结果消息英文",
-							"required": true
+							"description": "鉴权结果消息英文"
 						},
 						{
 							"name": "event_trace_id",
 							"type": "String",
-							"description": "业务流水id",
-							"required": true
+							"description": "业务流水id"
 						}
-					]
+					],
+					"name": "content",
+					"type": "IdentifyAuthResultDto",
+					"description": "内容"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "接口请求响应码",
-					"required": true
+					"description": "接口请求响应码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口是否请求成功",
-					"required": true
+					"description": "接口是否请求成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.guard.access.auth",
+	"apiChineseName": "鉴权",
+	"description": "刷卡鉴权",
+	"id": 47994
 }

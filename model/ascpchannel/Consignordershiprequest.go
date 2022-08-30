@@ -16,6 +16,8 @@ type Consignordershiprequest struct {
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
 	// 发货仓名称
 	StoreName string `json:"store_name,omitempty" xml:"store_name,omitempty"`
+	// 一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)
+	BusinessModel string `json:"business_model,omitempty" xml:"business_model,omitempty"`
 	// 发件人信息
 	SenderInfo *Senderinfo `json:"sender_info,omitempty" xml:"sender_info,omitempty"`
 	// 是否整单发货,目前只支持履约单整单发货回传

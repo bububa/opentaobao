@@ -1,23 +1,8 @@
 {
-	"id": 54755,
-	"name": "alibaba.tmallgenie.scp.plan.rawpo.gap.return",
-	"apiChineseName": "二级物料-LT内的POGAP数据回传",
-	"description": "二级物料-LT内的POGAP数据回传",
 	"requestParams": [
 		{
-			"name": "raw_pogap_request",
-			"type": "RawPurchaseOrderGapRequest",
-			"description": "请求对象",
 			"subParams": [
 				{
-					"name": "request_extend_json",
-					"type": "String",
-					"description": "扩展参数"
-				},
-				{
-					"name": "raw_purchase_order_gap_d_t_os",
-					"type": "RawPurchaseOrderGapDto[]",
-					"description": "请求对象列表",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -54,9 +39,20 @@
 							"type": "Number",
 							"description": "二级物料PO GAP数"
 						}
-					]
+					],
+					"name": "raw_purchase_order_gap_d_t_os",
+					"type": "RawPurchaseOrderGapDto[]",
+					"description": "请求对象列表"
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "raw_pogap_request",
+			"type": "RawPurchaseOrderGapRequest",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
@@ -75,5 +71,9 @@
 			"type": "String",
 			"description": "返回码"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.rawpo.gap.return",
+	"apiChineseName": "二级物料-LT内的POGAP数据回传",
+	"description": "二级物料-LT内的POGAP数据回传",
+	"id": 54755
 }

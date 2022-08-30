@@ -1,8 +1,4 @@
 {
-	"id": 52420,
-	"name": "taobao.opentrade.group.open",
-	"apiChineseName": "组团购场景开团",
-	"description": "组团购场景下，团长开团",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -25,35 +21,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenGroupResponse",
-			"description": "团信息",
 			"subParams": [
 				{
 					"name": "group_id",
 					"type": "Number",
-					"description": "团id",
-					"required": true
+					"description": "团id"
 				},
 				{
 					"name": "expiration",
 					"type": "Number",
-					"description": "成团过期时间，单位为秒",
-					"required": true
+					"description": "成团过期时间，单位为秒"
 				},
 				{
 					"name": "goal",
 					"type": "Number",
-					"description": "成团目标数",
-					"required": true
+					"description": "成团目标数"
 				},
 				{
 					"name": "group_type",
 					"type": "Number",
-					"description": "组团类型，0 拼团 1 成团",
-					"required": true
+					"description": "组团类型，0 拼团 1 成团"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenGroupResponse",
+			"description": "团信息"
 		}
-	]
+	],
+	"name": "taobao.opentrade.group.open",
+	"apiChineseName": "组团购场景开团",
+	"description": "组团购场景下，团长开团",
+	"id": 52420
 }

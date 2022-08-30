@@ -1,13 +1,6 @@
 {
-	"id": 51459,
-	"name": "taobao.jst.sms.message.send",
-	"apiChineseName": "聚石塔数据paas短信发送接口",
-	"description": "聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。",
 	"requestParams": [
 		{
-			"name": "send_message_request",
-			"type": "SendMessageRequest",
-			"description": "短信发送请求",
 			"subParams": [
 				{
 					"name": "extend_name",
@@ -76,7 +69,10 @@
 					"type": "String",
 					"description": "标记字段"
 				}
-			]
+			],
+			"name": "send_message_request",
+			"type": "SendMessageRequest",
+			"description": "短信发送请求"
 		}
 	],
 	"responseParams": [
@@ -105,5 +101,9 @@
 			"type": "String",
 			"description": "参数错误"
 		}
-	]
+	],
+	"name": "taobao.jst.sms.message.send",
+	"apiChineseName": "聚石塔数据paas短信发送接口",
+	"description": "聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。",
+	"id": 51459
 }

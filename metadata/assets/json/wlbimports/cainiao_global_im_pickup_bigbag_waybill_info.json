@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "bigbag_id",
+					"type": "Number",
+					"description": "大包id",
+					"required": true
+				}
+			],
+			"name": "bigbag_waybill_request",
+			"type": "BigbagWaybillRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "bigbag_id",
+							"type": "Number",
+							"description": "大包id"
+						},
+						{
+							"name": "bigbag_code",
+							"type": "String",
+							"description": "大包Code"
+						},
+						{
+							"name": "tracking_number",
+							"type": "String",
+							"description": "大包运单号"
+						},
+						{
+							"name": "sub_waybill_nos",
+							"type": "String",
+							"description": "大包子运单号集合（用,分隔 ）"
+						},
+						{
+							"name": "file_context",
+							"type": "String",
+							"description": "面单内荣"
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "面单文件名称"
+						},
+						{
+							"name": "image_format",
+							"type": "String",
+							"description": "面单格式"
+						}
+					],
+					"name": "bigbag_waybill_response",
+					"type": "BigbagWaybillResponse",
+					"description": "响应"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否响应正常"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常code"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常消息"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "hsfResult"
+		}
+	],
+	"name": "cainiao.global.im.pickup.bigbag.waybill.info",
+	"apiChineseName": "大包面单查询",
+	"description": "大包面单查询",
+	"id": 60869
+}

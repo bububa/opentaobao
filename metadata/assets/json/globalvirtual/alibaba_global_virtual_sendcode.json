@@ -1,8 +1,4 @@
 {
-	"id": 48538,
-	"name": "alibaba.global.virtual.sendcode",
-	"apiChineseName": "国际虚拟商品发码服务",
-	"description": "global virtual send code service",
 	"requestParams": [
 		{
 			"name": "trade_order_line_id",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "code_list",
-			"type": "VirtualCertificateDo[]",
-			"description": "code list",
-			"required": true,
-			"maxListSize": 30,
 			"subParams": [
 				{
 					"name": "gmt_modified",
@@ -72,60 +63,62 @@
 					"type": "Number",
 					"description": "trade order id"
 				}
-			]
+			],
+			"name": "code_list",
+			"type": "VirtualCertificateDo[]",
+			"description": "code list",
+			"maxListSize": 30,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "result describe",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "request result",
-					"required": true
+					"description": "request result"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "send code result",
-					"required": true
+					"description": "send code result"
 				},
 				{
-					"name": "error_code",
-					"type": "ErrorCode",
-					"description": "error code",
-					"required": true,
 					"subParams": [
 						{
 							"name": "key",
 							"type": "String",
-							"description": "error code key",
-							"required": true
+							"description": "error code key"
 						},
 						{
 							"name": "display_message",
 							"type": "String",
-							"description": "error code display message",
-							"required": true
+							"description": "error code display message"
 						}
-					]
+					],
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "error code"
 				},
 				{
 					"name": "repeated",
 					"type": "Boolean",
-					"description": "request is repeated",
-					"required": true
+					"description": "request is repeated"
 				},
 				{
 					"name": "retry",
 					"type": "Boolean",
-					"description": "request need retry",
-					"required": true
+					"description": "request need retry"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "result describe"
 		}
-	]
+	],
+	"name": "alibaba.global.virtual.sendcode",
+	"apiChineseName": "国际虚拟商品发码服务",
+	"description": "global virtual send code service",
+	"id": 48538
 }

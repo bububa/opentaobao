@@ -1,8 +1,4 @@
 {
-	"id": 26110,
-	"name": "tmall.item.vip.update.schema.get",
-	"apiChineseName": "vip商家编辑商品的规则获取接口",
-	"description": "获取vip商家编辑商品的规则",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "获取的编辑商品的规则"
 		}
-	]
+	],
+	"name": "tmall.item.vip.update.schema.get",
+	"apiChineseName": "vip商家编辑商品的规则获取接口",
+	"description": "获取vip商家编辑商品的规则",
+	"id": 26110
 }

@@ -1,8 +1,4 @@
 {
-	"id": 23258,
-	"name": "tmall.product.match.schema.get",
-	"apiChineseName": "获取匹配产品规则",
-	"description": "ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品规则入参规则",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "返回匹配product的规则文档"
 		}
-	]
+	],
+	"name": "tmall.product.match.schema.get",
+	"apiChineseName": "获取匹配产品规则",
+	"description": "ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品规则入参规则",
+	"id": 23258
 }

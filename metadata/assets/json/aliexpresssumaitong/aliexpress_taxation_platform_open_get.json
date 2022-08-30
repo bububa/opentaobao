@@ -1,19 +1,8 @@
 {
-	"id": 56215,
-	"name": "aliexpress.taxation.platform.open.get",
-	"apiChineseName": "平台固定参数获取",
-	"description": "Aliexpress开放平台固定参数获取",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "PlatformParameterDto",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "company_name",
@@ -69,7 +58,11 @@
 							"description": "IOSS 平台税号",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "PlatformParameterDto",
+					"description": "数据",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -89,7 +82,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.taxation.platform.open.get",
+	"apiChineseName": "平台固定参数获取",
+	"description": "Aliexpress开放平台固定参数获取",
+	"id": 56215
 }

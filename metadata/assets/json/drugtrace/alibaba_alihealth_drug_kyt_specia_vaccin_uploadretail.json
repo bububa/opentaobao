@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号（唯一）",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据生成时间（一般写当前时间）",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "Number",
+			"description": "单据类型[321,零售出库][322,疫苗接种]",
+			"required": true
+		},
+		{
+			"name": "physic_type",
+			"type": "Number",
+			"description": "药品类型[2,特药，3,普药]"
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "码上放心平台企业唯一编码（门店或医疗机构）",
+			"required": true
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货企业(可为空)"
+		},
+		{
+			"name": "oper_ic_code",
+			"type": "String",
+			"description": "单据提交者(appkey编号)"
+		},
+		{
+			"name": "oper_ic_name",
+			"type": "String",
+			"description": "单据提交者姓名(可为空)"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "20位追溯码（多个时用半角逗号分隔）",
+			"maxListSize": 2000,
+			"required": true
+		},
+		{
+			"name": "customer_id_type",
+			"type": "String",
+			"description": "购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】"
+		},
+		{
+			"name": "customer_id",
+			"type": "String",
+			"description": "购买人证件编号"
+		},
+		{
+			"name": "user_tel",
+			"type": "String",
+			"description": "用药人名称"
+		},
+		{
+			"name": "network_bill_flag",
+			"type": "String",
+			"description": "互联网标志 1是 0否"
+		},
+		{
+			"name": "medic_doctor",
+			"type": "String",
+			"description": "医师名称"
+		},
+		{
+			"name": "medic_dispenser",
+			"type": "String",
+			"description": "药品发药人"
+		},
+		{
+			"name": "user_name",
+			"type": "String",
+			"description": "药品使用者："
+		},
+		{
+			"name": "user_agent",
+			"type": "String",
+			"description": "药品使用者代理人"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "上传单据文件队列表标识"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码(BILL_DECODE_ERROR 单据转码失败 2.BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "操作是否成功(true 成功 ,false失败)"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.specia.vaccin.uploadretail",
+	"apiChineseName": "零售单据上传接口（疫苗）",
+	"description": "零售上传单据信息接口",
+	"id": 61894
+}

@@ -4,10 +4,10 @@ package lstlogistics
 type Content struct {
 	// 子订单列表
 	SubOrderIdList []int64 `json:"sub_order_id_list,omitempty" xml:"sub_order_id_list>int64,omitempty"`
+	// 物流编号，可用来查询物流详情
+	LogisticsId string `json:"logistics_id,omitempty" xml:"logistics_id,omitempty"`
 	// 运单编号
 	MailNo string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
-	// 物流编号
-	LogisticsId string `json:"logistics_id,omitempty" xml:"logistics_id,omitempty"`
 	// 物流公司code
 	CpCompanyCode string `json:"cp_company_code,omitempty" xml:"cp_company_code,omitempty"`
 	// 物流公司name

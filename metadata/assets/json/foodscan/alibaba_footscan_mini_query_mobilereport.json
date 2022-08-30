@@ -1,8 +1,4 @@
 {
-	"id": 50510,
-	"name": "alibaba.footscan.mini.query.mobilereport",
-	"apiChineseName": "根据scanId查询报告",
-	"description": "根据scanId查询报告",
 	"requestParams": [
 		{
 			"name": "token",
@@ -19,79 +15,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "服务出参",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "返回i数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "right_zhiwei",
 							"type": "String",
-							"description": "右脚趾围",
-							"required": true
+							"description": "右脚趾围"
 						},
 						{
 							"name": "right_fuwei",
 							"type": "String",
-							"description": "右脚跗围",
-							"required": true
+							"description": "右脚跗围"
 						},
 						{
 							"name": "right_width",
 							"type": "String",
-							"description": "右脚宽",
-							"required": true
+							"description": "右脚宽"
 						},
 						{
 							"name": "right_length",
 							"type": "String",
-							"description": "右脚长",
-							"required": true
+							"description": "右脚长"
 						},
 						{
 							"name": "left_zhiwei",
 							"type": "String",
-							"description": "左脚趾围",
-							"required": true
+							"description": "左脚趾围"
 						},
 						{
 							"name": "left_fuwei",
 							"type": "String",
-							"description": "左脚跗围",
-							"required": true
+							"description": "左脚跗围"
 						},
 						{
 							"name": "left_width",
 							"type": "String",
-							"description": "左脚宽",
-							"required": true
+							"description": "左脚宽"
 						},
 						{
 							"name": "left_length",
 							"type": "String",
-							"description": "左脚长",
-							"required": true
+							"description": "左脚长"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回i数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "alibaba.footscan.mini.query.mobilereport",
+	"apiChineseName": "根据scanId查询报告",
+	"description": "根据scanId查询报告",
+	"id": 50510
 }

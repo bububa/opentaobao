@@ -13,7 +13,7 @@ import (
 type TaobaoPlaceStoreUpdateLabelAPIRequest struct {
 	model.Params
 	// 标签id
-	_labelIdList []int64
+	_labelIdList []string
 	// 行业code
 	_businessCode string
 	// 标签类型
@@ -45,14 +45,14 @@ func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiParams() url.Values {
 
 // SetLabelIdList is LabelIdList Setter
 // 标签id
-func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelIdList(_labelIdList []int64) error {
+func (r *TaobaoPlaceStoreUpdateLabelAPIRequest) SetLabelIdList(_labelIdList []string) error {
 	r._labelIdList = _labelIdList
 	r.Set("label_id_list", _labelIdList)
 	return nil
 }
 
 // GetLabelIdList LabelIdList Getter
-func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetLabelIdList() []int64 {
+func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetLabelIdList() []string {
 	return r._labelIdList
 }
 

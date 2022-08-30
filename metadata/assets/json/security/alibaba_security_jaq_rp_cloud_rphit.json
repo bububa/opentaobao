@@ -1,8 +1,4 @@
 {
-	"id": 31245,
-	"name": "alibaba.security.jaq.rp.cloud.rphit",
-	"apiChineseName": "实人认证云服务日志打点",
-	"description": "聚安全实人认证日志打点接口",
 	"requestParams": [
 		{
 			"name": "content",
@@ -21,5 +17,9 @@
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.cloud.rphit",
+	"apiChineseName": "实人认证云服务日志打点",
+	"description": "聚安全实人认证日志打点接口",
+	"id": 31245
 }

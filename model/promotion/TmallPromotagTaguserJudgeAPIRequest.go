@@ -12,7 +12,11 @@ import (
 // 查询用户是否有标签
 type TmallPromotagTaguserJudgeAPIRequest struct {
 	model.Params
-	// 买家昵称
+	// 买家ID
+	_ouid string
+	// 买家ID
+	_openid string
+	// 昵称
 	_nick string
 	// 标签ID
 	_tagId int64
@@ -39,8 +43,34 @@ func (r TmallPromotagTaguserJudgeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetOuid is Ouid Setter
+// 买家ID
+func (r *TmallPromotagTaguserJudgeAPIRequest) SetOuid(_ouid string) error {
+	r._ouid = _ouid
+	r.Set("ouid", _ouid)
+	return nil
+}
+
+// GetOuid Ouid Getter
+func (r TmallPromotagTaguserJudgeAPIRequest) GetOuid() string {
+	return r._ouid
+}
+
+// SetOpenid is Openid Setter
+// 买家ID
+func (r *TmallPromotagTaguserJudgeAPIRequest) SetOpenid(_openid string) error {
+	r._openid = _openid
+	r.Set("openid", _openid)
+	return nil
+}
+
+// GetOpenid Openid Getter
+func (r TmallPromotagTaguserJudgeAPIRequest) GetOpenid() string {
+	return r._openid
+}
+
 // SetNick is Nick Setter
-// 买家昵称
+// 昵称
 func (r *TmallPromotagTaguserJudgeAPIRequest) SetNick(_nick string) error {
 	r._nick = _nick
 	r.Set("nick", _nick)

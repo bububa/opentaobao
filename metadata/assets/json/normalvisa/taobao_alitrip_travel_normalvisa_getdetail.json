@@ -1,8 +1,4 @@
 {
-	"id": 27019,
-	"name": "taobao.alitrip.travel.normalvisa.getdetail",
-	"apiChineseName": "获取单笔订单的详情",
-	"description": "获取单笔签证的详细记录",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -12,171 +8,149 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "NormalVisaDetailInfo[]",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "n_visa_detail_person_result_v_o_list",
-							"type": "NormalVisaPersonDetailVo[]",
-							"description": "用户信息数组",
-							"required": true,
 							"subParams": [
 								{
 									"name": "credential_card_no",
 									"type": "String",
-									"description": "证件号",
-									"required": true
+									"description": "证件号"
 								},
 								{
 									"name": "current_status_desc",
 									"type": "String",
-									"description": "当前状态：1001,1002,1003,1004,1005,1006,1007,1008,1010",
-									"required": true
+									"description": "当前状态：1001,1002,1003,1004,1005,1006,1007,1008,1010"
 								},
 								{
 									"name": "has_next_status",
 									"type": "Boolean",
-									"description": "是否有下个状态",
-									"required": true
+									"description": "是否有下个状态"
 								},
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "备注",
-									"required": true
+									"description": "备注"
 								},
 								{
 									"name": "finish_status_desc",
 									"type": "String",
-									"description": "中止状态",
-									"required": true
+									"description": "中止状态"
 								},
 								{
 									"name": "person_visa_id",
 									"type": "Number",
-									"description": "用户id",
-									"required": true
+									"description": "用户id"
 								},
 								{
 									"name": "current_status",
 									"type": "Number",
-									"description": "当前状态：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010",
-									"required": true
+									"description": "当前状态：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010"
 								},
 								{
 									"name": "finish_status",
 									"type": "Number",
-									"description": "中止状态",
-									"required": true
+									"description": "中止状态"
 								},
 								{
 									"name": "next_current_status_desc",
 									"type": "String",
-									"description": "下一个状态描述：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010",
-									"required": true
+									"description": "下一个状态描述：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010"
 								},
 								{
 									"name": "credential_card_infor",
 									"type": "String",
-									"description": "证件信息",
-									"required": true
+									"description": "证件信息"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "姓名",
-									"required": true
+									"description": "姓名"
 								},
 								{
 									"name": "biz_order_id",
 									"type": "Number",
-									"description": "订单号",
-									"required": true
+									"description": "订单号"
 								},
 								{
 									"name": "has_finish_status",
 									"type": "Boolean",
-									"description": "是否包含结束状态",
-									"required": true
+									"description": "是否包含结束状态"
 								},
 								{
 									"name": "disabled",
 									"type": "Boolean",
-									"description": "是否达到最终状态",
-									"required": true
+									"description": "是否达到最终状态"
 								},
 								{
 									"name": "next_current_status",
 									"type": "Number",
-									"description": "下一个状态：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010",
-									"required": true
+									"description": "下一个状态：无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010"
 								},
 								{
 									"name": "pass",
 									"type": "Number",
-									"description": "是否出签，为空则买家没有反馈，1 表示出签，0 表示拒签，-1 表示未办理",
-									"required": true
+									"description": "是否出签，为空则买家没有反馈，1 表示出签，0 表示拒签，-1 表示未办理"
 								}
-							]
+							],
+							"name": "n_visa_detail_person_result_v_o_list",
+							"type": "NormalVisaPersonDetailVo[]",
+							"description": "用户信息数组"
 						},
 						{
 							"name": "end_status",
 							"type": "Number",
-							"description": "结束状态",
-							"required": true
+							"description": "结束状态"
 						},
 						{
 							"name": "visa_type",
 							"type": "Number",
-							"description": "1:贴纸签 2:电子签 3:面试",
-							"required": true
+							"description": "1:贴纸签 2:电子签 3:面试"
 						},
 						{
 							"name": "end_status_desc",
 							"type": "String",
-							"description": "结束状态描述",
-							"required": true
+							"description": "结束状态描述"
 						}
-					]
+					],
+					"name": "results",
+					"type": "NormalVisaDetailInfo[]",
+					"description": "结果"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否包含下一个",
-					"required": true
+					"description": "是否包含下一个"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常",
-					"required": true
+					"type": "String",
+					"description": "异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.normalvisa.getdetail",
+	"apiChineseName": "获取单笔订单的详情",
+	"description": "获取单笔签证的详细记录",
+	"id": 27019
 }

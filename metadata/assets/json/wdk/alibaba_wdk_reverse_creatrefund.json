@@ -1,13 +1,6 @@
 {
-	"id": 54969,
-	"name": "alibaba.wdk.reverse.creatrefund",
-	"apiChineseName": "逆向提交",
-	"description": "逆向申请提交",
 	"requestParams": [
 		{
-			"name": "param_create_reverse_req",
-			"type": "CreateReverseReq",
-			"description": "CreateReverseReq",
 			"subParams": [
 				{
 					"name": "biz_order_ids",
@@ -21,10 +14,6 @@
 					"description": "礼品卡号"
 				},
 				{
-					"name": "operator",
-					"type": "OperatorVo",
-					"description": "操作人",
-					"required": true,
 					"subParams": [
 						{
 							"name": "operator_id",
@@ -42,7 +31,11 @@
 							"description": "操作人type",
 							"required": true
 						}
-					]
+					],
+					"name": "operator",
+					"type": "OperatorVo",
+					"description": "操作人",
+					"required": true
 				},
 				{
 					"name": "proofs",
@@ -68,10 +61,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_channel_list",
-					"type": "RefundChannelVo[]",
-					"description": "退款渠道",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
@@ -88,7 +77,11 @@
 							"type": "String",
 							"description": "退款渠道名"
 						}
-					]
+					],
+					"name": "refund_channel_list",
+					"type": "RefundChannelVo[]",
+					"description": "退款渠道",
+					"required": true
 				},
 				{
 					"name": "request_id",
@@ -102,72 +95,70 @@
 					"description": "门店ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_create_reverse_req",
+			"type": "CreateReverseReq",
+			"description": "CreateReverseReq"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ReverseResult",
-			"description": "ReverseResult",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "CreateReverseResponse",
-					"description": "model",
-					"required": true,
 					"subParams": [
+						{
+							"name": "out_biz_order_ids",
+							"type": "String[]",
+							"description": "外部单号"
+						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "tp单号",
-							"required": true
+							"description": "tp单号"
 						},
 						{
 							"name": "request_id",
 							"type": "String",
-							"description": "请求id",
-							"required": true
+							"description": "请求id"
 						},
 						{
 							"name": "reverse_ids",
 							"type": "Number[]",
-							"description": "逆向单ids",
-							"required": true
+							"description": "逆向单ids"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "门店id",
-							"required": true
-						},
-						{
-							"name": "out_biz_order_ids",
-							"type": "String[]",
-							"description": "外部单号",
-							"required": true
+							"description": "门店id"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CreateReverseResponse",
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "ReverseResult"
 		}
-	]
+	],
+	"name": "alibaba.wdk.reverse.creatrefund",
+	"apiChineseName": "逆向提交",
+	"description": "逆向申请提交",
+	"id": 54969
 }

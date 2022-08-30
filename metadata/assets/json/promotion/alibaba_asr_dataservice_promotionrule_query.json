@@ -1,8 +1,4 @@
 {
-	"id": 53918,
-	"name": "alibaba.asr.dataservice.promotionrule.query",
-	"apiChineseName": "星巴克优惠规则查询",
-	"description": "查询优惠规则，例如星巴克查询优惠规则",
 	"requestParams": [
 		{
 			"name": "page_no",
@@ -19,127 +15,113 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataServiceResponse",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "trace_id",
-					"type": "String",
-					"description": "鹰眼id",
-					"required": true
-				},
-				{
-					"name": "ext_map",
-					"type": "Extmap",
-					"description": "扩展map",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "empty",
-							"required": true
+							"description": "empty"
 						}
-					]
+					],
+					"name": "ext_map",
+					"type": "Extmap",
+					"description": "扩展map"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "调用结果",
-					"required": true
-				},
-				{
-					"name": "result_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "result_msg",
-					"type": "String",
-					"description": "错误描述",
-					"required": true
-				},
-				{
-					"name": "result",
-					"type": "Page",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页查询数量",
-							"required": true
+							"description": "每页查询数量"
 						},
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
-							"name": "datas",
-							"type": "Data[]",
-							"description": "结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pos_key",
 									"type": "Number",
-									"description": "poskey",
-									"required": true
+									"description": "poskey"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
-									"name": "detail_list",
-									"type": "Detaillist[]",
-									"description": "兑换详情列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "unit_point",
 											"type": "String",
-											"description": "需要消耗星星数",
-											"required": true
+											"description": "需要消耗星星数"
 										},
 										{
 											"name": "unit_price",
 											"type": "Number",
-											"description": "价格分",
-											"required": true
+											"description": "价格分"
 										},
 										{
 											"name": "num",
 											"type": "Number",
-											"description": "数量",
-											"required": true
+											"description": "数量"
 										},
 										{
 											"name": "ext_map",
 											"type": "String",
-											"description": "扩展字段",
-											"required": true
+											"description": "扩展字段"
 										}
-									]
+									],
+									"name": "detail_list",
+									"type": "Detaillist[]",
+									"description": "兑换详情列表"
 								}
-							]
+							],
+							"name": "datas",
+							"type": "Data[]",
+							"description": "结果"
 						}
-					]
+					],
+					"name": "result",
+					"type": "Page",
+					"description": "结果"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "鹰眼id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataServiceResponse",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.asr.dataservice.promotionrule.query",
+	"apiChineseName": "星巴克优惠规则查询",
+	"description": "查询优惠规则，例如星巴克查询优惠规则",
+	"id": 53918
 }

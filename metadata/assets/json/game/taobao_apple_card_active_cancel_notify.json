@@ -1,8 +1,4 @@
 {
-	"id": 45036,
-	"name": "taobao.apple.card.active.cancel.notify",
-	"apiChineseName": "苹果卡密取消激活回调接口",
-	"description": "苹果卡密取消激活回调接口",
 	"requestParams": [
 		{
 			"name": "order_no",
@@ -10,25 +6,6 @@
 			"description": "原商户申请激活时的订单号"
 		},
 		{
-			"name": "result_code",
-			"type": "String",
-			"description": "结果，000：整单取消激活成功  04： 取消激活失败（包括全部失败和部分失败，此时需以detail为准）"
-		},
-		{
-			"name": "gateway_order_no",
-			"type": "String",
-			"description": "网关订单号"
-		},
-		{
-			"name": "result_msg",
-			"type": "String",
-			"description": "描述"
-		},
-		{
-			"name": "apple_card_cancels",
-			"type": "AppleCardCancelDto[]",
-			"description": "卡信息",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "status_desc",
@@ -55,7 +32,26 @@
 					"type": "String",
 					"description": "产品编码"
 				}
-			]
+			],
+			"name": "apple_card_cancels",
+			"type": "AppleCardCancelDto[]",
+			"description": "卡信息",
+			"maxListSize": 20
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果，000：整单取消激活成功  04： 取消激活失败（包括全部失败和部分失败，此时需以detail为准）"
+		},
+		{
+			"name": "gateway_order_no",
+			"type": "String",
+			"description": "网关订单号"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "描述"
 		}
 	],
 	"responseParams": [
@@ -69,5 +65,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "taobao.apple.card.active.cancel.notify",
+	"apiChineseName": "苹果卡密取消激活回调接口",
+	"description": "苹果卡密取消激活回调接口",
+	"id": 45036
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10712,
-	"name": "taobao.ump.tools.get",
-	"apiChineseName": "查询工具列表",
-	"description": "查询工具列表",
 	"requestParams": [
 		{
 			"name": "tool_code",
@@ -16,5 +12,9 @@
 			"type": "String []",
 			"description": "工具列表，单个内容为json格式，需要通过ump的sdk提供的MarketingBuilder来进行处理"
 		}
-	]
+	],
+	"name": "taobao.ump.tools.get",
+	"apiChineseName": "查询工具列表",
+	"description": "查询工具列表",
+	"id": 10712
 }

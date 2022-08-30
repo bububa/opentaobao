@@ -1,8 +1,4 @@
 {
-	"id": 35535,
-	"name": "alibaba.mos.store.getdefautitems",
-	"apiChineseName": "获取默认状态下商品列表",
-	"description": "获取默认状态下商品列表",
 	"requestParams": [
 		{
 			"name": "screen_no",
@@ -25,135 +21,119 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "MjStoreItemsTopVo",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_list",
-							"type": "MjItemTopVo[]",
-							"description": "商品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "商品id",
-									"required": true
+									"description": "商品id"
 								},
 								{
 									"name": "item_tag365",
 									"type": "Boolean",
-									"description": "是否独享365会员",
-									"required": true
+									"description": "是否独享365会员"
 								},
 								{
 									"name": "marketing_activity_tag",
 									"type": "String",
-									"description": "活动标签",
-									"required": true
+									"description": "活动标签"
 								},
 								{
 									"name": "min_promotion_price",
 									"type": "Number",
-									"description": "最小促销价",
-									"required": true
+									"description": "最小促销价"
 								},
 								{
 									"name": "pics",
 									"type": "String[]",
-									"description": "商品图片，数组中只有一个值",
-									"required": true
+									"description": "商品图片，数组中只有一个值"
 								},
 								{
 									"name": "item_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "min_price",
 									"type": "Number",
-									"description": "minPrice",
-									"required": true
+									"description": "minPrice"
 								},
 								{
 									"name": "max_price",
 									"type": "Number",
-									"description": "maxPrice",
-									"required": true
+									"description": "maxPrice"
 								},
 								{
 									"name": "required_user_type",
 									"type": "Number",
-									"description": "活动限定人群，1：普通人群，2：365会员",
-									"required": true
+									"description": "活动限定人群，1：普通人群，2：365会员"
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "MjItemTopVo[]",
+							"description": "商品列表"
 						},
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "专柜id",
-							"required": true
+							"description": "专柜id"
 						},
 						{
 							"name": "store_name",
 							"type": "String",
-							"description": "专柜名称",
-							"required": true
+							"description": "专柜名称"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "bucket_id",
 							"type": "String",
-							"description": "bucketId",
-							"required": true
+							"description": "bucketId"
 						}
-					]
+					],
+					"name": "data",
+					"type": "MjStoreItemsTopVo",
+					"description": "data"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "total",
-					"required": true
+					"description": "total"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mos.store.getdefautitems",
+	"apiChineseName": "获取默认状态下商品列表",
+	"description": "获取默认状态下商品列表",
+	"id": 35535
 }

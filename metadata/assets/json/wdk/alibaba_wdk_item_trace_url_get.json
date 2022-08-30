@@ -1,9 +1,11 @@
 {
-	"id": 33188,
-	"name": "alibaba.wdk.item.trace.url.get",
-	"apiChineseName": "根据shopId和skuCode返回商品静态溯源url",
-	"description": "根据shopId和skuCode返回商品静态溯源url",
 	"requestParams": [
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品skuCode",
+			"required": true
+		},
 		{
 			"name": "shop_id",
 			"type": "String",
@@ -14,12 +16,6 @@
 			"name": "source_code",
 			"type": "String",
 			"description": "来源编码",
-			"required": true
-		},
-		{
-			"name": "sku_code",
-			"type": "String",
-			"description": "商品skuCode",
 			"required": true
 		}
 	],
@@ -44,5 +40,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.trace.url.get",
+	"apiChineseName": "根据shopId和skuCode返回商品静态溯源url",
+	"description": "根据shopId和skuCode返回商品静态溯源url",
+	"id": 33188
 }

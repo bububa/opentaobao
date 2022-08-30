@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "对商品的简介\t"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "report",
+					"type": "String",
+					"description": "质检报告"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "degree",
+					"type": "String",
+					"description": "等级"
+				},
+				{
+					"name": "explanation",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "quote_id",
+					"type": "String",
+					"description": "估价id"
+				}
+			],
+			"name": "param0",
+			"type": "InspectionReport",
+			"description": "回收商质检报告"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "id"
+				},
+				{
+					"name": "resp_success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "err_code_info",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "context",
+					"type": "String",
+					"description": "上下文信息"
+				},
+				{
+					"name": "err_msg_info",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "IdleCommonResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.tender.upload.report",
+	"apiChineseName": "服务商上传验货报告同步给闲鱼",
+	"description": "服务商上传验货报告同步给闲鱼",
+	"id": 58228
+}

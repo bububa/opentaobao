@@ -1,8 +1,4 @@
 {
-	"id": 55975,
-	"name": "taobao.subway.cia.get",
-	"apiChineseName": "查询单元智能出价信息",
-	"description": "查询单元智能出价信息",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CiaConfig",
-			"description": "单元智能出价信息",
 			"subParams": [
 				{
 					"name": "target_click",
@@ -58,7 +51,14 @@
 					"description": "推广组id",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CiaConfig",
+			"description": "单元智能出价信息"
 		}
-	]
+	],
+	"name": "taobao.subway.cia.get",
+	"apiChineseName": "查询单元智能出价信息",
+	"description": "查询单元智能出价信息",
+	"id": 55975
 }

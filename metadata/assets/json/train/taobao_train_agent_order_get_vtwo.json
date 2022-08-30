@@ -1,8 +1,4 @@
 {
-	"id": 29849,
-	"name": "taobao.train.agent.order.get.vtwo",
-	"apiChineseName": "代理商获取订单信息回调APIv2--增加鉴权校验",
-	"description": "代理商获取订单信息回调API",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -34,14 +30,8 @@
 			"description": "主订单id"
 		},
 		{
-			"name": "tickets",
-			"type": "ToAgentTicketInfo []",
-			"description": "火车票信息。",
 			"subParams": [
 				{
-					"name": "student_info",
-					"type": "StudentInfo",
-					"description": "学生信息",
 					"subParams": [
 						{
 							"name": "card",
@@ -93,7 +83,10 @@
 							"type": "String",
 							"description": "demo"
 						}
-					]
+					],
+					"name": "student_info",
+					"type": "StudentInfo",
+					"description": "学生信息"
 				},
 				{
 					"name": "sub_order_id",
@@ -209,7 +202,10 @@
 					"name": "real_ticket_price",
 					"type": "Number"
 				}
-			]
+			],
+			"name": "tickets",
+			"type": "ToAgentTicketInfo []",
+			"description": "火车票信息。"
 		},
 		{
 			"name": "total_price",
@@ -335,6 +331,15 @@
 			"name": "vip_custom_type",
 			"type": "Number",
 			"description": "定制票类型 1:下铺 2:下铺or中铺 3:过道 4:靠窗"
+		},
+		{
+			"name": "refund_by_passenger",
+			"type": "Boolean",
+			"description": "是否需要乘车人退款 true:需要 false:不需要"
 		}
-	]
+	],
+	"name": "taobao.train.agent.order.get.vtwo",
+	"apiChineseName": "代理商获取订单信息回调APIv2--增加鉴权校验",
+	"description": "代理商获取订单信息回调API",
+	"id": 29849
 }

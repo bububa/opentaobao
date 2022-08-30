@@ -1,14 +1,6 @@
 {
-	"id": 42139,
-	"name": "taobao.rdc.aligenius.warehouse.reverse.event.update",
-	"apiChineseName": "销退单事件回传接口",
-	"description": "用于erp回传销退单相关信息到平台",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ReverseEventInfoDto",
-			"description": "参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "id",
@@ -35,34 +27,39 @@
 					"type": "Number",
 					"description": "类型(1=销退单状态变更)"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ReverseEventInfoDto",
+			"description": "参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "fail_info",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "fail_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success_flag",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.warehouse.reverse.event.update",
+	"apiChineseName": "销退单事件回传接口",
+	"description": "用于erp回传销退单相关信息到平台",
+	"id": 42139
 }

@@ -12,10 +12,10 @@ import (
 // 更新MongoDB中的数据
 type TaobaoMiniappCloudMongoUpdateAPIRequest struct {
 	model.Params
-	// MongoDB表名
-	_collection string
 	// 更新条件
 	_filter string
+	// MongoDB表名
+	_collection string
 	// 待写入的数据
 	_record string
 	// 要操作的环境，默认是测试环境
@@ -43,19 +43,6 @@ func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCollection is Collection Setter
-// MongoDB表名
-func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetCollection(_collection string) error {
-	r._collection = _collection
-	r.Set("collection", _collection)
-	return nil
-}
-
-// GetCollection Collection Getter
-func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetCollection() string {
-	return r._collection
-}
-
 // SetFilter is Filter Setter
 // 更新条件
 func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetFilter(_filter string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetFilter(_filter string) erro
 // GetFilter Filter Getter
 func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetFilter() string {
 	return r._filter
+}
+
+// SetCollection is Collection Setter
+// MongoDB表名
+func (r *TaobaoMiniappCloudMongoUpdateAPIRequest) SetCollection(_collection string) error {
+	r._collection = _collection
+	r.Set("collection", _collection)
+	return nil
+}
+
+// GetCollection Collection Getter
+func (r TaobaoMiniappCloudMongoUpdateAPIRequest) GetCollection() string {
+	return r._collection
 }
 
 // SetRecord is Record Setter

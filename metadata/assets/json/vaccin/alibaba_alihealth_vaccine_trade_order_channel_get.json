@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "业务订单号"
+				},
+				{
+					"name": "merchant_id",
+					"type": "String",
+					"description": "卖家ID"
+				}
+			],
+			"name": "trade_vaccine_order_query_top_request",
+			"type": "TradeVaccineOrderQueryTopRequest",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务响应code"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "订单渠道"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "业务成功状态"
+		},
+		{
+			"name": "biz_message",
+			"type": "String",
+			"description": "业务错误信息描述"
+		}
+	],
+	"name": "alibaba.alihealth.vaccine.trade.order.channel.get",
+	"apiChineseName": "通过订单ID与卖家ID获取订单渠道",
+	"description": "通过订单ID与卖家ID获取订单渠道",
+	"id": 64122
+}

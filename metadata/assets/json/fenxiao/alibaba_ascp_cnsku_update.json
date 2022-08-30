@@ -1,14 +1,6 @@
 {
-	"id": 55750,
-	"name": "alibaba.ascp.cnsku.update",
-	"apiChineseName": "供应链中台货品修改接口",
-	"description": "供应链中台货品修改接口",
 	"requestParams": [
 		{
-			"name": "cnsku",
-			"type": "CnskuDto",
-			"description": "待新增的货品",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cnsku_id",
@@ -87,9 +79,6 @@
 					"description": "包装材料"
 				},
 				{
-					"name": "cnsku_extend_d_t_o",
-					"type": "CnskuExtendDto",
-					"description": "扩展字段",
 					"subParams": [
 						{
 							"name": "deliver_requirements",
@@ -271,12 +260,12 @@
 							"type": "String",
 							"description": "剂型"
 						}
-					]
+					],
+					"name": "cnsku_extend_d_t_o",
+					"type": "CnskuExtendDto",
+					"description": "扩展字段"
 				},
 				{
-					"name": "cnsku_feature_d_t_o",
-					"type": "CnskuFeatureDto",
-					"description": "feature标签",
 					"subParams": [
 						{
 							"name": "is_sn_mgt",
@@ -483,7 +472,10 @@
 							"type": "Boolean",
 							"description": "是否需要测量图片-销售单元"
 						}
-					]
+					],
+					"name": "cnsku_feature_d_t_o",
+					"type": "CnskuFeatureDto",
+					"description": "feature标签"
 				},
 				{
 					"name": "length",
@@ -514,20 +506,24 @@
 					"description": "货品类型",
 					"required": true
 				}
-			]
+			],
+			"name": "cnsku",
+			"type": "CnskuDto",
+			"description": "待新增的货品",
+			"required": true
 		},
 		{
-			"name": "option",
-			"type": "UpdateCnskuOption",
-			"description": "修改选项",
-			"required": true,
 			"subParams": [
 				{
 					"name": "sync_wms",
 					"type": "Boolean",
 					"description": "是否同步到wms, 为空时默认下发"
 				}
-			]
+			],
+			"name": "option",
+			"type": "UpdateCnskuOption",
+			"description": "修改选项",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -556,5 +552,9 @@
 			"type": "String",
 			"description": "异常信息Code"
 		}
-	]
+	],
+	"name": "alibaba.ascp.cnsku.update",
+	"apiChineseName": "供应链中台货品修改接口",
+	"description": "供应链中台货品修改接口",
+	"id": 55750
 }

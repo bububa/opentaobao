@@ -1,52 +1,35 @@
 {
-	"id": 10947,
-	"name": "taobao.fenxiao.product.skus.get",
-	"apiChineseName": "SKU查询接口",
-	"description": "产品sku查询",
 	"requestParams": [
 		{
 			"name": "product_id",
 			"type": "Number",
 			"description": "产品ID",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "skus",
-			"type": "FenxiaoSku []",
-			"description": "sku信息",
+			"name": "total_results",
+			"type": "Number",
+			"description": "记录数量"
+		},
+		{
 			"subParams": [
-				{
-					"name": "name",
-					"type": "String",
-					"description": "名称"
-				},
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "商家编码"
-				},
-				{
-					"name": "standard_price",
-					"type": "String",
-					"description": "市场价"
-				},
 				{
 					"name": "id",
 					"type": "Number",
 					"description": "SkuID"
 				},
 				{
-					"name": "quantity",
-					"type": "Number",
-					"description": "库存"
+					"name": "name",
+					"type": "String",
+					"description": "名称"
 				},
 				{
-					"name": "properties",
+					"name": "standard_price",
 					"type": "String",
-					"description": "sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。"
+					"description": "市场价"
 				},
 				{
 					"name": "cost_price",
@@ -59,9 +42,9 @@
 					"description": "经销采购价"
 				},
 				{
-					"name": "scitem_id",
+					"name": "quantity",
 					"type": "Number",
-					"description": "关联的后端商品id"
+					"description": "库存"
 				},
 				{
 					"name": "reserved_quantity",
@@ -74,16 +57,33 @@
 					"description": "配额可用库存"
 				},
 				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。"
+				},
+				{
+					"name": "scitem_id",
+					"type": "Number",
+					"description": "关联的后端商品id"
+				},
+				{
 					"name": "auction_sku_id",
 					"type": "Number",
-					"description": "关联的前端商品skuid"
+					"description": "关联的前端宝贝对应的skuid"
 				}
-			]
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "记录数量"
+			],
+			"name": "skus",
+			"type": "FenxiaoSku []",
+			"description": "sku信息"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.skus.get",
+	"apiChineseName": "SKU查询接口",
+	"description": "产品sku查询",
+	"id": 10947
 }

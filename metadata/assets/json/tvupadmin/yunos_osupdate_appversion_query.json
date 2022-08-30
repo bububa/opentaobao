@@ -1,8 +1,4 @@
 {
-	"id": 30408,
-	"name": "yunos.osupdate.appversion.query",
-	"apiChineseName": "分页获取桌面升级任务",
-	"description": "分页获取桌面升级任务",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -25,194 +21,169 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "TvAppVersion []",
-			"description": "resultList",
 			"subParams": [
 				{
-					"name": "app",
-					"type": "AppDto",
-					"description": "app",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "应用ID",
-							"required": true
+							"description": "应用ID"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "应用名称",
-							"required": true
+							"description": "应用名称"
 						},
 						{
 							"name": "package_name",
 							"type": "String",
-							"description": "应用包名",
-							"required": true
+							"description": "应用包名"
 						}
-					]
+					],
+					"name": "app",
+					"type": "AppDto",
+					"description": "app"
 				},
 				{
 					"name": "app_zip_type",
 					"type": "String",
-					"description": "应用业务类型",
-					"required": true
+					"description": "应用业务类型"
 				},
 				{
-					"name": "device_adapter_list",
-					"type": "DeviceAdapterDto[]",
-					"description": "deviceAdapterList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "brand_id",
 							"type": "Number",
-							"description": "品牌ID",
-							"required": true
+							"description": "品牌ID"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "品牌名称",
-							"required": true
+							"description": "品牌名称"
 						},
 						{
 							"name": "highest_system_version",
 							"type": "String",
-							"description": "最高系统版本",
-							"required": true
+							"description": "最高系统版本"
 						},
 						{
 							"name": "minimum_system_version",
 							"type": "String",
-							"description": "最低系统版本",
-							"required": true
+							"description": "最低系统版本"
 						},
 						{
 							"name": "model_id",
 							"type": "Number",
-							"description": "设备ID",
-							"required": true
+							"description": "设备ID"
 						},
 						{
 							"name": "model_name",
 							"type": "String",
-							"description": "设备名称",
-							"required": true
+							"description": "设备名称"
 						},
 						{
 							"name": "real_type_id",
 							"type": "Number",
-							"description": "类型ID",
-							"required": true
+							"description": "类型ID"
 						},
 						{
 							"name": "real_type_name",
 							"type": "String",
-							"description": "真实类型名称",
-							"required": true
+							"description": "真实类型名称"
 						}
-					]
+					],
+					"name": "device_adapter_list",
+					"type": "DeviceAdapterDto[]",
+					"description": "deviceAdapterList"
 				},
 				{
 					"name": "download_path",
 					"type": "String",
-					"description": "下载地址",
-					"required": true
+					"description": "下载地址"
 				},
 				{
 					"name": "downloadmd5",
 					"type": "String",
-					"description": "下载md5",
-					"required": true
+					"description": "下载md5"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modify",
 					"type": "Date",
-					"description": "更新时间",
-					"required": true
+					"description": "更新时间"
 				},
 				{
 					"name": "has_notified",
 					"type": "String",
-					"description": "是否通知",
-					"required": true
+					"description": "是否通知"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "任务ID",
-					"required": true
+					"description": "任务ID"
 				},
 				{
 					"name": "need_restart",
 					"type": "String",
-					"description": "是否重启",
-					"required": true
+					"description": "是否重启"
 				},
 				{
 					"name": "release_note",
 					"type": "String",
-					"description": "发布说明",
-					"required": true
+					"description": "发布说明"
 				},
 				{
 					"name": "restart_app_param",
 					"type": "String",
-					"description": "重启应用参数",
-					"required": true
+					"description": "重启应用参数"
 				},
 				{
 					"name": "restart_app_type",
 					"type": "String",
-					"description": "重启应用类型",
-					"required": true
+					"description": "重启应用类型"
 				},
 				{
 					"name": "restart_type",
 					"type": "String",
-					"description": "重启类型",
-					"required": true
+					"description": "重启类型"
 				},
 				{
 					"name": "size",
 					"type": "String",
-					"description": "文件大小",
-					"required": true
+					"description": "文件大小"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "状态",
-					"required": true
+					"description": "状态"
 				},
 				{
 					"name": "version",
 					"type": "String",
-					"description": "版本",
-					"required": true
+					"description": "版本"
 				},
 				{
 					"name": "version_code",
 					"type": "Number",
-					"description": "版本号",
-					"required": true
+					"description": "版本号"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "TvAppVersion []",
+			"description": "resultList"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "总数"
 		}
-	]
+	],
+	"name": "yunos.osupdate.appversion.query",
+	"apiChineseName": "分页获取桌面升级任务",
+	"description": "分页获取桌面升级任务",
+	"id": 30408
 }

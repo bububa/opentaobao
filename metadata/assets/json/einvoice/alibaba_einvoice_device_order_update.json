@@ -1,8 +1,4 @@
 {
-	"id": 51472,
-	"name": "alibaba.einvoice.device.order.update",
-	"apiChineseName": "回传/更新设备订购单",
-	"description": "更新设备订购单，同步税控设备信息",
 	"requestParams": [
 		{
 			"name": "action",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.device.order.update",
+	"apiChineseName": "回传/更新设备订购单",
+	"description": "更新设备订购单，同步税控设备信息",
+	"id": 51472
 }

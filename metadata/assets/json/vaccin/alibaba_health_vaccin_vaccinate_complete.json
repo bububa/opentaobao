@@ -1,8 +1,4 @@
 {
-	"id": 51164,
-	"name": "alibaba.health.vaccin.vaccinate.complete",
-	"apiChineseName": "接种完成反馈接口",
-	"description": "ISV 将用户完成接种的疫苗同步给免疫规划中心",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -43,11 +39,6 @@
 			"description": "接种时间"
 		},
 		{
-			"name": "vaccine_list",
-			"type": "VaccineInfo[]",
-			"description": "接种的疫苗信息",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "vaccine_name",
@@ -72,7 +63,12 @@
 					"description": "阿里健康疫苗编码",
 					"required": true
 				}
-			]
+			],
+			"name": "vaccine_list",
+			"type": "VaccineInfo[]",
+			"description": "接种的疫苗信息",
+			"maxListSize": 999,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -96,5 +92,9 @@
 			"type": "String",
 			"description": "错误信息描述"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.vaccinate.complete",
+	"apiChineseName": "接种完成反馈接口",
+	"description": "ISV 将用户完成接种的疫苗同步给免疫规划中心",
+	"id": 51164
 }

@@ -1,8 +1,4 @@
 {
-	"id": 23310,
-	"name": "taobao.qianniu.number.put",
-	"apiChineseName": "ISV上传数据接口",
-	"description": "ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。",
 	"requestParams": [
 		{
 			"name": "data",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "是否上传成功。返回的是个json串，分别表示每条记录是否成功。"
 		}
-	]
+	],
+	"name": "taobao.qianniu.number.put",
+	"apiChineseName": "ISV上传数据接口",
+	"description": "ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。",
+	"id": 23310
 }

@@ -42,4 +42,6 @@ type OrderDiscountBillBo struct {
 	TxdDiscountFee int64 `json:"txd_discount_fee,omitempty" xml:"txd_discount_fee,omitempty"`
 	// 订单渠道
 	OrderChannel int64 `json:"order_channel,omitempty" xml:"order_channel,omitempty"`
+	// 出资方 1表示平台出资  0表示品牌商出资
+	Investor int64 `json:"investor,omitempty" xml:"investor,omitempty"`
 }

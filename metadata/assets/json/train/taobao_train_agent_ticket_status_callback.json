@@ -1,0 +1,38 @@
+{
+	"requestParams": [
+		{
+			"name": "msg",
+			"type": "String",
+			"description": "描述信息",
+			"required": true
+		},
+		{
+			"name": "ticket_status",
+			"type": "Number",
+			"description": "车票状态",
+			"required": true
+		},
+		{
+			"name": "id",
+			"type": "String",
+			"description": "唯一编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功调用"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "taobao.train.agent.ticket.status.callback",
+	"apiChineseName": "代理商票状态查询回调",
+	"description": "代理商票状态查询结果回调",
+	"id": 58979
+}

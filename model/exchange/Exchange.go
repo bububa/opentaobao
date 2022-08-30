@@ -2,12 +2,12 @@ package exchange
 
 // Exchange 结构体
 type Exchange struct {
-	// 换货单状态
-	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 修改时间
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 换货单号ID
 	DisputeId string `json:"dispute_id,omitempty" xml:"dispute_id,omitempty"`
+	// 换货单状态
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 正向交易单号ID
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 买家发货物流单号
@@ -56,6 +56,10 @@ type Exchange struct {
 	BuyerName string `json:"buyer_name,omitempty" xml:"buyer_name,omitempty"`
 	// attributes
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
+	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
+	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+	// 买家openId
+	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
 	// 支付费用
 	Payment string `json:"payment,omitempty" xml:"payment,omitempty"`
 	// 先行垫付状态

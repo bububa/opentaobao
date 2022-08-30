@@ -1,5 +1,5 @@
 {
-  "id": 1,
   "name": "用户API",
-  "pkg": "user"
+  "pkg": "user",
+  "id": 1
 }

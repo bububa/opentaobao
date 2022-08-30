@@ -1,25 +1,22 @@
 {
-	"id": 54895,
-	"name": "taobao.inventory.plan.edit",
-	"apiChineseName": "设置计划库存",
-	"description": "初始化计划库存，或者编辑已经存在的计划库存",
 	"requestParams": [
 		{
-			"name": "plan_top",
-			"type": "PlanTopDto",
-			"description": "计划库存设置入参",
 			"subParams": [
 				{
-					"name": "plan_instance_list",
-					"type": "PlanInstanceTopDto[]",
-					"description": "计划详情",
-					"required": true,
+					"name": "item_id",
+					"type": "Number",
+					"description": "品id，前端宝贝id，或者后端货品id",
+					"required": true
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "品的类型，1-前端宝贝，2-后端货品",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
-							"name": "promise_list",
-							"type": "PromiseList[]",
-							"description": "服务承诺信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "delivery_time",
@@ -39,7 +36,11 @@
 									"description": "履约仓code",
 									"required": true
 								}
-							]
+							],
+							"name": "promise_list",
+							"type": "PromiseList[]",
+							"description": "服务承诺信息",
+							"required": true
 						},
 						{
 							"name": "quantity_op_type",
@@ -48,9 +49,6 @@
 							"required": true
 						},
 						{
-							"name": "relation_list",
-							"type": "RelationList[]",
-							"description": "计划库存生效的宝贝范围。对于品的后端货品情况下，才有可能设置，设置后在这个范围的宝贝才能使用计划库存。也可以不设置，代表后端货品关联的所有宝贝都生效。",
 							"subParams": [
 								{
 									"name": "item_id",
@@ -62,7 +60,10 @@
 									"type": "Number",
 									"description": "生效的前端宝贝的skuid"
 								}
-							]
+							],
+							"name": "relation_list",
+							"type": "RelationList[]",
+							"description": "计划库存生效的宝贝范围。对于品的后端货品情况下，才有可能设置，设置后在这个范围的宝贝才能使用计划库存。也可以不设置，代表后端货品关联的所有宝贝都生效。"
 						},
 						{
 							"name": "start_time",
@@ -77,10 +78,6 @@
 							"required": true
 						},
 						{
-							"name": "strategy",
-							"type": "Strategy",
-							"description": "销售策略",
-							"required": true,
 							"subParams": [
 								{
 									"name": "comb_support",
@@ -93,7 +90,11 @@
 									"description": "具体的销售策略，1-先现货库存，后计划库存；2-仅计划库存",
 									"required": true
 								}
-							]
+							],
+							"name": "strategy",
+							"type": "Strategy",
+							"description": "销售策略",
+							"required": true
 						},
 						{
 							"name": "setting_quantity",
@@ -113,18 +114,10 @@
 							"description": "操作码，用于幂等验证",
 							"required": true
 						}
-					]
-				},
-				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "品id，前端宝贝id，或者后端货品id",
-					"required": true
-				},
-				{
-					"name": "item_type",
-					"type": "Number",
-					"description": "品的类型，1-前端宝贝，2-后端货品",
+					],
+					"name": "plan_instance_list",
+					"type": "PlanInstanceTopDto[]",
+					"description": "计划详情",
 					"required": true
 				},
 				{
@@ -133,54 +126,55 @@
 					"description": "设置计划的品的skuid。对于货品，是0.",
 					"required": true
 				}
-			]
+			],
+			"name": "plan_top",
+			"type": "PlanTopDto",
+			"description": "计划库存设置入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BatchResult",
-			"description": "批量返回结果",
 			"subParams": [
 				{
 					"name": "success_result_map",
-					"type": "Json",
-					"description": "成功列表",
-					"required": true
+					"type": "String",
+					"description": "成功列表"
 				},
 				{
 					"name": "error_result_map",
-					"type": "Json",
-					"description": "失败列表",
-					"required": true
+					"type": "String",
+					"description": "失败列表"
 				},
 				{
-					"name": "result_code",
-					"type": "ResultCode",
-					"description": "有一个失败，则整体是失败",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "结果描述",
-							"required": true
+							"description": "结果描述"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "结果id",
-							"required": true
+							"description": "结果id"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "结果码",
-							"required": true
+							"description": "结果码"
 						}
-					]
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "有一个失败，则整体是失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BatchResult",
+			"description": "批量返回结果"
 		}
-	]
+	],
+	"name": "taobao.inventory.plan.edit",
+	"apiChineseName": "设置计划库存",
+	"description": "初始化计划库存，或者编辑已经存在的计划库存",
+	"id": 54895
 }

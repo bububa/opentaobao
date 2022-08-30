@@ -1,8 +1,4 @@
 {
-	"id": 25655,
-	"name": "taobao.simba.adgroup.mobilediscount.delete",
-	"apiChineseName": "批量删除adgroup的移动溢价",
-	"description": "批量删除adgroup的移动溢价",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -11,10 +7,10 @@
 		},
 		{
 			"name": "adgroup_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "adgroup主键数组（批量最多支持200个）",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -24,14 +20,18 @@
 			"description": "返回成功个数"
 		},
 		{
-			"name": "message",
-			"type": "String",
-			"description": "返回信息"
-		},
-		{
 			"name": "key",
 			"type": "String",
 			"description": "返回码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回信息"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroup.mobilediscount.delete",
+	"apiChineseName": "批量删除adgroup的移动溢价",
+	"description": "批量删除adgroup的移动溢价",
+	"id": 25655
 }

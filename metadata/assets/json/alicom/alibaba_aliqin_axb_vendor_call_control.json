@@ -1,13 +1,6 @@
 {
-	"id": 33507,
-	"name": "alibaba.aliqin.axb.vendor.call.control",
-	"apiChineseName": "转呼控制接口",
-	"description": "转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标",
 	"requestParams": [
 		{
-			"name": "start_call_request",
-			"type": "StartCallRequest",
-			"description": "转接控制接口request对象",
 			"subParams": [
 				{
 					"name": "extension",
@@ -50,178 +43,226 @@
 					"description": "供应商KEY",
 					"required": true
 				}
-			]
+			],
+			"name": "start_call_request",
+			"type": "StartCallRequest",
+			"description": "转接控制接口request对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "转呼控制接口响应",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "转呼控制msg",
-					"required": true
+					"description": "转呼控制msg"
 				},
 				{
-					"name": "code",
-					"type": "String",
-					"description": "code",
-					"required": true
-				},
-				{
-					"name": "control_resp_dto",
-					"type": "ControlRespDto",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "control_operate",
 							"type": "String",
-							"description": "接续控制信息:CONTINUE(接续),REJECT(拦截),IVR(收取用户键盘输入内容)",
-							"required": true
+							"description": "接续控制信息:CONTINUE(接续),REJECT(拦截),IVR(收取用户键盘输入内容)"
 						},
 						{
 							"name": "control_msg",
 							"type": "String",
-							"description": "controlMsg",
-							"required": true
+							"description": "controlMsg"
 						},
 						{
 							"name": "product_type",
 							"type": "String",
-							"description": "对应到小号平台的能力类型:AXB、AXN、AXN_EXTENSION_REUSE(AXN分机复用)",
-							"required": true
+							"description": "对应到小号平台的能力类型:AXB、AXN、AXN_EXTENSION_REUSE(AXN分机复用)"
 						},
 						{
 							"name": "call_no_play_code",
 							"type": "String",
-							"description": "主叫放音编码",
-							"required": true
+							"description": "主叫放音编码"
 						},
 						{
 							"name": "called_no_play_code",
 							"type": "String",
-							"description": "被叫放音编码",
-							"required": true
+							"description": "被叫放音编码"
 						},
 						{
-							"name": "subs",
-							"type": "Subs",
-							"description": "对应到阿里侧的绑定信息",
-							"required": true,
 							"subParams": [
-								{
-									"name": "called_display_no",
-									"type": "String",
-									"description": "被叫显号",
-									"required": true
-								},
 								{
 									"name": "called_no",
 									"type": "String",
-									"description": "被叫号码",
-									"required": true
+									"description": "被叫号码"
 								},
 								{
-									"name": "subs_id",
-									"type": "String",
-									"description": "订购关系ID；目前字符串长度为16位，建议预留32位",
-									"required": true
-								},
-								{
-									"name": "call_type",
-									"type": "String",
-									"description": "呼叫类型MASTER(A-\u003eX-\u003eB), CALLED(B-\u003eX-\u003eA), SMS_SENDER, SMS_RECEIVER",
-									"required": true
-								},
-								{
-									"name": "need_record",
-									"type": "Boolean",
-									"description": "是否需要录音",
-									"required": true
-								},
-								{
-									"name": "sms_channel",
-									"type": "String",
-									"description": "短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_DROP(拦截丢弃)",
-									"required": true
-								},
-								{
-									"name": "sequence_calls",
-									"type": "SequenceCalls[]",
-									"description": "顺振参数",
-									"required": true,
 									"subParams": [
 										{
 											"name": "call_no_play_code",
 											"type": "String",
-											"description": "主叫放音",
-											"required": true
+											"description": "主叫放音"
 										},
 										{
 											"name": "called_no",
 											"type": "String",
-											"description": "被叫号码",
-											"required": true
+											"description": "被叫号码"
 										},
 										{
 											"name": "called_display_no",
 											"type": "String",
-											"description": "被叫号显",
-											"required": true
+											"description": "被叫号显"
 										},
 										{
 											"name": "called_no_play_code",
 											"type": "String",
-											"description": "被叫放音",
-											"required": true
+											"description": "被叫放音"
 										}
-									]
+									],
+									"name": "sequence_calls",
+									"type": "SequenceCalls[]",
+									"description": "顺振参数"
+								},
+								{
+									"name": "sms_channel",
+									"type": "String",
+									"description": "短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_DROP(拦截丢弃)"
+								},
+								{
+									"name": "call_type",
+									"type": "String",
+									"description": "呼叫类型MASTER(A-\u003eX-\u003eB), CALLED(B-\u003eX-\u003eA), SMS_SENDER, SMS_RECEIVER"
 								},
 								{
 									"name": "rec_type",
 									"type": "String",
-									"description": "录音类型，mp3/wav",
-									"required": true
+									"description": "录音类型，mp3/wav"
+								},
+								{
+									"name": "subs_id",
+									"type": "String",
+									"description": "订购关系ID；目前字符串长度为16位，建议预留32位"
 								},
 								{
 									"name": "sequence_timeout",
 									"type": "Number",
-									"description": "顺振超时时间",
-									"required": true
+									"description": "顺振超时时间"
+								},
+								{
+									"name": "need_record",
+									"type": "Boolean",
+									"description": "是否需要录音"
+								},
+								{
+									"name": "called_display_no",
+									"type": "String",
+									"description": "被叫显号"
 								},
 								{
 									"name": "record_mode",
 									"type": "String",
-									"description": "录音模式，1：仅录制通话录音、2：放音录音+通话录音",
-									"required": true
+									"description": "录音模式，1：仅录制通话录音、2：放音录音+通话录音"
 								},
 								{
 									"name": "fast_record",
 									"type": "String",
-									"description": "是否需要优先下载录音，0：否、1：是",
-									"required": true
+									"description": "是否需要优先下载录音，0：否、1：是"
 								},
 								{
 									"name": "rrds_control",
 									"type": "Number",
-									"description": "是否开启铃音检测 0：不开启 1：开启",
-									"required": true
+									"description": "是否开启铃音检测 0：不开启 1：开启"
+								},
+								{
+									"name": "ws_addr",
+									"type": "String",
+									"description": "主叫媒体流推送地址"
+								},
+								{
+									"name": "ws_addr_called",
+									"type": "String",
+									"description": "被叫媒体流推送地址"
+								},
+								{
+									"name": "out_id",
+									"type": "String",
+									"description": "外部回传字段"
+								},
+								{
+									"name": "need_realtime_media",
+									"type": "Boolean",
+									"description": "是否实时媒体"
+								},
+								{
+									"name": "rtp_type",
+									"type": "String",
+									"description": "实时媒体类型1 彩铃  2 通话  3 彩铃和通话"
+								},
+								{
+									"subParams": [
+										{
+											"name": "end_call_ivr",
+											"type": "String",
+											"description": "挂机ivr开关"
+										},
+										{
+											"name": "step1_file",
+											"type": "String",
+											"description": "第一步放音文件"
+										},
+										{
+											"name": "step2_file",
+											"type": "String",
+											"description": "第二步放音文件"
+										},
+										{
+											"name": "valid_key",
+											"type": "String",
+											"description": "有效按键"
+										},
+										{
+											"name": "waiting_dtmf_time",
+											"type": "Number",
+											"description": "最大等待时长，单位秒"
+										},
+										{
+											"name": "max_loop",
+											"type": "Number",
+											"description": "循环次数"
+										},
+										{
+											"name": "waiting_end_call",
+											"type": "Number",
+											"description": "挂机等待时长"
+										}
+									],
+									"name": "end_call_ivr",
+									"type": "EndCallIvr",
+									"description": "挂机IVR参数"
 								}
-							]
+							],
+							"name": "subs",
+							"type": "Subs",
+							"description": "对应到阿里侧的绑定信息"
 						},
 						{
 							"name": "media_degrade",
 							"type": "Boolean",
-							"description": "是否媒体资源降级,放弃录音放音功能；接入方无此相关功能，可忽略",
-							"required": true
+							"description": "是否媒体资源降级,放弃录音放音功能；接入方无此相关功能，可忽略"
 						}
-					]
+					],
+					"name": "control_resp_dto",
+					"type": "ControlRespDto",
+					"description": "module"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "转呼控制接口响应"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.axb.vendor.call.control",
+	"apiChineseName": "转呼控制接口",
+	"description": "转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标",
+	"id": 33507
 }

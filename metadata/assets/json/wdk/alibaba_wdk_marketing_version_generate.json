@@ -1,13 +1,6 @@
 {
-	"id": 38631,
-	"name": "alibaba.wdk.marketing.version.generate",
-	"apiChineseName": "生成发布使用的版本号",
-	"description": "生成发布使用的版本号",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SeasonVersionParam",
-			"description": "档期版本号参数信息",
 			"subParams": [
 				{
 					"name": "out_season_id",
@@ -19,40 +12,43 @@
 					"type": "String[]",
 					"description": "参与换挡的门店列表"
 				}
-			]
+			],
+			"name": "param",
+			"type": "SeasonVersionParam",
+			"description": "档期版本号参数信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "result",
 			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
-				},
-				{
-					"name": "message",
-					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.version.generate",
+	"apiChineseName": "生成发布使用的版本号",
+	"description": "生成发布使用的版本号",
+	"id": 38631
 }

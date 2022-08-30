@@ -1,14 +1,6 @@
 {
-	"id": 43563,
-	"name": "alibaba.wdk.channel.order.status.update",
-	"apiChineseName": "订单状态变更",
-	"description": "订单状态变更",
 	"requestParams": [
 		{
-			"name": "order_status_info",
-			"type": "OrderStatusInfo",
-			"description": "修改信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "store_id",
@@ -34,74 +26,73 @@
 					"description": "订单状态   已支付： PAID；  TRADE_CLOSE（仅未支付订单）",
 					"required": true
 				}
-			]
+			],
+			"name": "order_status_info",
+			"type": "OrderStatusInfo",
+			"description": "修改信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "OrderOperateResult",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "盒马主单号",
-							"required": true
+							"description": "盒马主单号"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部主单号",
-							"required": true
+							"description": "外部主单号"
 						},
 						{
-							"name": "sub_order_results",
-							"type": "SubOrder[]",
-							"description": "返回子单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sub_biz_order_id",
 									"type": "String",
-									"description": "盒马子单号",
-									"required": true
+									"description": "盒马子单号"
 								},
 								{
 									"name": "sub_out_order_id",
 									"type": "String",
-									"description": "外部子单号",
-									"required": true
+									"description": "外部子单号"
 								}
-							]
+							],
+							"name": "sub_order_results",
+							"type": "SubOrder[]",
+							"description": "返回子单列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OrderOperateResult",
+					"description": "返回内容"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.channel.order.status.update",
+	"apiChineseName": "订单状态变更",
+	"description": "订单状态变更",
+	"id": 43563
 }

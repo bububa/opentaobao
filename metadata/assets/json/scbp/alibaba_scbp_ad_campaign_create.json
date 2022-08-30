@@ -1,53 +1,6 @@
 {
-	"id": 55180,
-	"name": "alibaba.scbp.ad.campaign.create",
-	"apiChineseName": "创建计划",
-	"description": "创建计划",
 	"requestParams": [
 		{
-			"name": "campaign_operation",
-			"type": "CampaignOperationDto",
-			"description": "返回数据",
-			"subParams": [
-				{
-					"name": "title",
-					"type": "String",
-					"description": "标题",
-					"required": true
-				},
-				{
-					"name": "min_price",
-					"type": "String",
-					"description": "最小价格"
-				},
-				{
-					"name": "max_price",
-					"type": "String",
-					"description": "最大价格"
-				},
-				{
-					"name": "online_status",
-					"type": "Number",
-					"description": "计划状态"
-				},
-				{
-					"name": "type",
-					"type": "Number",
-					"description": "计划类型",
-					"required": true
-				},
-				{
-					"name": "bid_type",
-					"type": "Number",
-					"description": "出价模式  * value =1 为智能出价      * value =2 为手动出价"
-				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_line_id",
@@ -60,7 +13,71 @@
 					"type": "Number",
 					"description": "产品id"
 				}
-			]
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "计划类型",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "计划状态"
+				},
+				{
+					"name": "bid_type",
+					"type": "Number",
+					"description": "出价模式  * value =1 为智能出价      * value =2 为手动出价"
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "最小价格"
+				},
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "最大价格"
+				},
+				{
+					"name": "sub_type",
+					"type": "String",
+					"description": "计划子类型"
+				},
+				{
+					"name": "budget",
+					"type": "String",
+					"description": "预算"
+				},
+				{
+					"name": "week_budget_status",
+					"type": "String",
+					"description": "周预算状态 on:开启 off:关闭"
+				},
+				{
+					"name": "sync_ext_match_conf",
+					"type": "String",
+					"description": "扩展匹配：on：开启 off：关闭",
+					"required": true
+				}
+			],
+			"name": "campaign_operation",
+			"type": "CampaignOperationDto",
+			"description": "返回数据"
 		}
 	],
 	"responseParams": [
@@ -69,5 +86,9 @@
 			"type": "Number",
 			"description": "计划id"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.campaign.create",
+	"apiChineseName": "创建计划",
+	"description": "创建计划",
+	"id": 55180
 }

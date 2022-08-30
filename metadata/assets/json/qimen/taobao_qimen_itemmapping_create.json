@@ -1,12 +1,6 @@
 {
-	"id": 29360,
-	"name": "taobao.qimen.itemmapping.create",
-	"apiChineseName": "前后端商品映射接口",
-	"description": "前后端商品映射",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "RequestDO",
 			"subParams": [
 				{
 					"name": "actionType",
@@ -43,13 +37,13 @@
 					"type": "String",
 					"description": "奇门仓储字段,C123,string(50),必填,"
 				}
-			]
+			],
+			"name": "request",
+			"type": "RequestDO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -69,7 +63,13 @@
 					"description": "响应信息,invalid appkey,string(100),,",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.itemmapping.create",
+	"apiChineseName": "前后端商品映射接口",
+	"description": "前后端商品映射",
+	"id": 29360
 }

@@ -1,14 +1,6 @@
 {
-	"id": 33654,
-	"name": "taobao.ailab.aicloud.top.device.control.playurl",
-	"apiChineseName": "点播url",
-	"description": "点播url",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpenBaseInfo",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "schema",
@@ -30,7 +22,11 @@
 					"type": "String",
 					"description": "扩展信息，用于存放APP类型等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "param1",
@@ -66,5 +62,9 @@
 			"type": "Boolean",
 			"description": "网络请求是否成功"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.control.playurl",
+	"apiChineseName": "点播url",
+	"description": "点播url",
+	"id": 33654
 }

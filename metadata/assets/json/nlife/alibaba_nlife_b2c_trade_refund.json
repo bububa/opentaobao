@@ -1,8 +1,4 @@
 {
-	"id": 28160,
-	"name": "alibaba.nlife.b2c.trade.refund",
-	"apiChineseName": "零售+请求退款",
-	"description": "零售+平台请求退款接口，在零售+平台不会有资金流变动，只是订单状态的更新",
 	"requestParams": [
 		{
 			"name": "trade_no",
@@ -14,15 +10,10 @@
 			"name": "out_request_no",
 			"type": "String",
 			"description": "外部请求号",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
-			"name": "refund_bill_list",
-			"type": "FundBill[]",
-			"description": "退款资金列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "id",
@@ -74,14 +65,19 @@
 					"type": "String",
 					"description": "透传参数，格式自定，查询时原样返回"
 				}
-			]
+			],
+			"name": "refund_bill_list",
+			"type": "FundBill[]",
+			"description": "退款资金列表",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "refund_goods_list",
 			"type": "String[]",
 			"description": "所退货物的ID列表,逗号分隔商品组，冒号分隔商品和退货数量，支持三种方式退。 条码模式：barcode1:3,barcode2:2 表示barcode1退3件，barcode2退2件。 item_sku模式:itemId1_skuId1:3,itemId2_skuId2:2 表示itemId1_skuId1这个商品退3件，itemId2_skuId2这个商品退2件。 唯一码模式：uniqeueCodeA:1,uniqeueCodeA:1,因唯一码指定到唯一一件商品，退货数量都是1。",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "out_trade_no",
@@ -111,5 +107,9 @@
 			"type": "String",
 			"description": "扩展参数"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.trade.refund",
+	"apiChineseName": "零售+请求退款",
+	"description": "零售+平台请求退款接口，在零售+平台不会有资金流变动，只是订单状态的更新",
+	"id": 28160
 }

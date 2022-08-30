@@ -1,8 +1,4 @@
 {
-	"id": 41297,
-	"name": "alibaba.retail.device.info.get",
-	"apiChineseName": "贩卖机设备信息获取",
-	"description": "贩卖机设备信息获取",
 	"requestParams": [
 		{
 			"name": "device_uuid",
@@ -26,5 +22,9 @@
 			"type": "Json",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.retail.device.info.get",
+	"apiChineseName": "贩卖机设备信息获取",
+	"description": "贩卖机设备信息获取",
+	"id": 41297
 }

@@ -1,8 +1,4 @@
 {
-	"id": 30319,
-	"name": "yunos.tvpubadmin.data.query",
-	"apiChineseName": "魔盒统计数据查询接口",
-	"description": "用于华数查询魔盒上的一些用户统计数据",
 	"requestParams": [
 		{
 			"name": "table_name",
@@ -48,89 +44,80 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DfPageResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "code_name",
 					"type": "String",
-					"description": "codeName",
-					"required": true
+					"description": "codeName"
 				},
 				{
 					"name": "detail_message",
 					"type": "String",
-					"description": "detailMessage",
-					"required": true
+					"description": "detailMessage"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "pageNo",
-					"required": true
+					"description": "pageNo"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "pageSize",
-					"required": true
+					"description": "pageSize"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "resultCode",
-					"required": true
+					"description": "resultCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "totalPage",
-					"required": true
+					"description": "totalPage"
 				},
 				{
 					"name": "values",
-					"type": "Json[]",
-					"description": "value",
-					"required": true
+					"type": "String[]",
+					"description": "value"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DfPageResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.data.query",
+	"apiChineseName": "魔盒统计数据查询接口",
+	"description": "用于华数查询魔盒上的一些用户统计数据",
+	"id": 30319
 }

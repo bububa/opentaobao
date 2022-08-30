@@ -1,18 +1,8 @@
 {
-	"id": 56227,
-	"name": "alitrip.btrip.supplychain.flight.industry.search",
-	"apiChineseName": "机票行业搜索接口",
-	"description": "【商旅】机票行业搜索",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "FlightSearchRq",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "od_info_list",
-					"type": "OdInfoRq[]",
-					"description": "查询的行程列表",
 					"subParams": [
 						{
 							"name": "arr_airport_code",
@@ -49,12 +39,12 @@
 							"type": "Date",
 							"description": "最晚起飞时间"
 						}
-					]
+					],
+					"name": "od_info_list",
+					"type": "OdInfoRq[]",
+					"description": "查询的行程列表"
 				},
 				{
-					"name": "passenger_quantity_list",
-					"type": "PassengerQuantityRq[]",
-					"description": "乘客类型和数量",
 					"subParams": [
 						{
 							"name": "passenger_type",
@@ -66,371 +56,328 @@
 							"type": "Number",
 							"description": "人员数量"
 						}
-					]
+					],
+					"name": "passenger_quantity_list",
+					"type": "PassengerQuantityRq[]",
+					"description": "乘客类型和数量"
 				},
 				{
-					"name": "trip_preference",
-					"type": "TripPreferenceRq",
-					"description": "飞机信息搜索",
 					"subParams": [
 						{
 							"name": "cabin_list",
 							"type": "String[]",
 							"description": "仓位代码"
 						}
-					]
+					],
+					"name": "trip_preference",
+					"type": "TripPreferenceRq",
+					"description": "飞机信息搜索"
 				},
 				{
 					"name": "corp_id",
 					"type": "String",
 					"description": "企业id"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "FlightSearchRq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "FlightSearchRs",
-					"description": "机票搜索结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_list",
-							"type": "GroupItemRs[]",
-							"description": "组合商品列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "route_info",
-									"type": "RouteInfoRs",
-									"description": "行程信息",
-									"required": true,
 									"subParams": [
 										{
-											"name": "journey_list",
-											"type": "JourneyRs[]",
-											"description": "组成当前线路的形成列表",
-											"required": true,
 											"subParams": [
 												{
 													"name": "arr_city",
 													"type": "String",
-													"description": "到达城市",
-													"required": true
+													"description": "到达城市"
 												},
 												{
 													"name": "arr_time",
 													"type": "Date",
-													"description": "到达时间",
-													"required": true
+													"description": "到达时间"
 												},
 												{
 													"name": "dep_city",
 													"type": "String",
-													"description": "出发城市",
-													"required": true
+													"description": "出发城市"
 												},
 												{
 													"name": "dep_time",
 													"type": "Date",
-													"description": "出发时间",
-													"required": true
+													"description": "出发时间"
 												},
 												{
 													"name": "duration",
 													"type": "Number",
-													"description": "总时长",
-													"required": true
+													"description": "总时长"
 												},
 												{
-													"name": "segment_list",
-													"type": "FlightSegmentRs[]",
-													"description": "组成当前行程的航段列表",
-													"required": true,
 													"subParams": [
 														{
 															"name": "arr_airport",
 															"type": "String",
-															"description": "航班到达机场三字码",
-															"required": true
+															"description": "航班到达机场三字码"
 														},
 														{
 															"name": "arr_city",
 															"type": "String",
-															"description": "到达城市三字码",
-															"required": true
+															"description": "到达城市三字码"
 														},
 														{
 															"name": "arr_country",
 															"type": "String",
-															"description": "到达国家",
-															"required": true
+															"description": "到达国家"
 														},
 														{
 															"name": "arr_date_int",
 															"type": "Number",
-															"description": "到达数字日期(yyyyMMdd)",
-															"required": true
+															"description": "到达数字日期(yyyyMMdd)"
 														},
 														{
 															"name": "arr_term",
 															"type": "String",
-															"description": "航班到达航站楼",
-															"required": true
+															"description": "航班到达航站楼"
 														},
 														{
 															"name": "arr_time",
 															"type": "Date",
-															"description": "到达日期时间(yyyy-MM-dd HH:mm:ss)",
-															"required": true
+															"description": "到达日期时间(yyyy-MM-dd HH:mm:ss)"
 														},
 														{
 															"name": "dep_airport",
 															"type": "String",
-															"description": "航班起飞机场三字码",
-															"required": true
+															"description": "航班起飞机场三字码"
 														},
 														{
 															"name": "dep_city",
 															"type": "String",
-															"description": "出发城市三字码",
-															"required": true
+															"description": "出发城市三字码"
 														},
 														{
 															"name": "dep_country",
 															"type": "String",
-															"description": "出发国家",
-															"required": true
+															"description": "出发国家"
 														},
 														{
 															"name": "dep_date_int",
 															"type": "Number",
-															"description": "出发数字日期(yyyyMMdd)",
-															"required": true
+															"description": "出发数字日期(yyyyMMdd)"
 														},
 														{
 															"name": "dep_term",
 															"type": "String",
-															"description": "航班出发航站楼",
-															"required": true
+															"description": "航班出发航站楼"
 														},
 														{
 															"name": "dep_time",
 															"type": "Date",
-															"description": "出发日期时间(yyyy-MM-dd HH:mm:ss)",
-															"required": true
+															"description": "出发日期时间(yyyy-MM-dd HH:mm:ss)"
 														},
 														{
 															"name": "duration",
 															"type": "Number",
-															"description": "时长(单位：分钟)",
-															"required": true
+															"description": "时长(单位：分钟)"
 														},
 														{
 															"name": "equip_type",
 															"type": "String",
-															"description": "机型",
-															"required": true
+															"description": "机型"
 														},
 														{
 															"name": "id",
 															"type": "String",
-															"description": "航班号+出发机场+达到机场+起飞时间（精确分）",
-															"required": true
+															"description": "航班号+出发机场+达到机场+起飞时间（精确分）"
 														},
 														{
 															"name": "marketing_airline",
 															"type": "String",
-															"description": "市场方航司(如：KA)",
-															"required": true
+															"description": "市场方航司(如：KA)"
 														},
 														{
 															"name": "marketing_flight_no",
 															"type": "String",
-															"description": "市场方航班号(如：KA5809)",
-															"required": true
+															"description": "市场方航班号(如：KA5809)"
 														},
 														{
 															"name": "marketing_flight_no_int",
 															"type": "Number",
-															"description": "市场方数字航班号（如：5809）",
-															"required": true
+															"description": "市场方数字航班号（如：5809）"
 														},
 														{
 															"name": "meal",
 															"type": "Number",
-															"description": "餐食类型,0:无参食；1：有餐食；2：饮品；3：茶点；4：早餐；5：正餐；",
-															"required": true
+															"description": "餐食类型,0:无参食；1：有餐食；2：饮品；3：茶点；4：早餐；5：正餐；"
 														},
 														{
 															"name": "miles",
 															"type": "Number",
-															"description": "里程",
-															"required": true
+															"description": "里程"
 														},
 														{
 															"name": "segment_show_info",
 															"type": "SegmentShowInfoRs",
-															"description": "航段展示信息",
-															"required": true
+															"description": "航段展示信息"
 														},
 														{
 															"name": "seq_id",
 															"type": "Number",
-															"description": "航段序号，从0开始",
-															"required": true
+															"description": "航段序号，从0开始"
 														},
 														{
 															"name": "stop_city",
 															"type": "String",
-															"description": "经停城市，多个值使用\",\"分隔",
-															"required": true
+															"description": "经停城市，多个值使用\",\"分隔"
 														},
 														{
 															"name": "stop_quantity",
 															"type": "Number",
-															"description": "经停次数",
-															"required": true
+															"description": "经停次数"
 														},
 														{
 															"name": "transfer_change_airport",
 															"type": "Boolean",
-															"description": "是否换机场",
-															"required": true
+															"description": "是否换机场"
 														},
 														{
 															"name": "transfer_time",
 															"type": "Number",
-															"description": "时间",
-															"required": true
+															"description": "时间"
 														}
-													]
+													],
+													"name": "segment_list",
+													"type": "FlightSegmentRs[]",
+													"description": "组成当前行程的航段列表"
 												},
 												{
 													"name": "seq_id",
 													"type": "Number",
-													"description": "航程序号，从0开始",
-													"required": true
+													"description": "航程序号，从0开始"
 												},
 												{
 													"name": "transfer_change_airport",
 													"type": "Boolean",
-													"description": "是否换机场",
-													"required": true
+													"description": "是否换机场"
 												},
 												{
 													"name": "transfer_time",
 													"type": "Number",
-													"description": "总中转时间",
-													"required": true
+													"description": "总中转时间"
 												}
-											]
+											],
+											"name": "journey_list",
+											"type": "JourneyRs[]",
+											"description": "组成当前线路的形成列表"
 										}
-									]
+									],
+									"name": "route_info",
+									"type": "RouteInfoRs",
+									"description": "行程信息"
 								},
 								{
-									"name": "shopping_items",
-									"type": "PassengerFlightShoppingItemRs[]",
-									"description": "成人、儿童、老人对应的报价信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "passenger_type",
 											"type": "String",
-											"description": "乘客类型",
-											"required": true
+											"description": "乘客类型"
 										},
 										{
-											"name": "shopping_item",
-											"type": "FlightShoppingItemRs",
-											"description": "机票报价",
-											"required": true,
 											"subParams": [
 												{
-													"name": "search_price",
-													"type": "SearchPriceRs",
-													"description": "搜索提供的报价",
-													"required": true,
 													"subParams": [
 														{
 															"name": "original_sell_price",
 															"type": "Number",
-															"description": "原始销售价，活动前的价格（单位：元）",
-															"required": true
+															"description": "原始销售价，活动前的价格（单位：元）"
 														},
 														{
 															"name": "sell_price",
 															"type": "Number",
-															"description": "销售价(单位：元)",
-															"required": true
+															"description": "销售价(单位：元)"
 														},
 														{
 															"name": "tax",
 															"type": "Number",
-															"description": "参考税(单位：元)",
-															"required": true
+															"description": "参考税(单位：元)"
 														}
-													]
+													],
+													"name": "search_price",
+													"type": "SearchPriceRs",
+													"description": "搜索提供的报价"
 												},
 												{
-													"name": "segment_cabin_prices",
-													"type": "SegmentCabinPriceRs[]",
-													"description": "每一航段对应的仓位、价格",
-													"required": true,
 													"subParams": [
 														{
 															"name": "cabin",
 															"type": "CabinRs",
-															"description": "仓位信息",
-															"required": true
+															"description": "仓位信息"
 														},
 														{
 															"name": "search_price",
 															"type": "SearchPriceRs",
-															"description": "搜索提供的价格信息",
-															"required": true
+															"description": "搜索提供的价格信息"
 														},
 														{
 															"name": "segment",
 															"type": "SegmentPositionRs",
-															"description": "航段",
-															"required": true
+															"description": "航段"
 														}
-													]
+													],
+													"name": "segment_cabin_prices",
+													"type": "SegmentCabinPriceRs[]",
+													"description": "每一航段对应的仓位、价格"
 												}
-											]
+											],
+											"name": "shopping_item",
+											"type": "FlightShoppingItemRs",
+											"description": "机票报价"
 										}
-									]
+									],
+									"name": "shopping_items",
+									"type": "PassengerFlightShoppingItemRs[]",
+									"description": "成人、儿童、老人对应的报价信息"
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "GroupItemRs[]",
+							"description": "组合商品列表"
 						}
-					]
+					],
+					"name": "module",
+					"type": "FlightSearchRs",
+					"description": "机票搜索结果"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.flight.industry.search",
+	"apiChineseName": "机票行业搜索接口",
+	"description": "【商旅】机票行业搜索",
+	"id": 56227
 }

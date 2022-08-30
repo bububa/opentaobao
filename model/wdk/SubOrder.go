@@ -4,11 +4,11 @@ package wdk
 type SubOrder struct {
 	// 营销优惠明细
 	DiscountInfos []DiscountInfo `json:"discount_infos,omitempty" xml:"discount_infos>discount_info,omitempty"`
-	// 商品编码
-	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 外部子单号
 	SubOutOrderId string `json:"sub_out_order_id,omitempty" xml:"sub_out_order_id,omitempty"`
-	// 加工方式说明, 非加工品不需要填写
+	// 商品编码
+	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
+	// 处理方式
 	HandlingType string `json:"handling_type,omitempty" xml:"handling_type,omitempty"`
 	// 盒马子单号
 	SubBizOrderId string `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
@@ -38,10 +38,10 @@ type SubOrder struct {
 	SaleUnit string `json:"sale_unit,omitempty" xml:"sale_unit,omitempty"`
 	// tradeSubAttributes
 	TradeSubAttributes string `json:"trade_sub_attributes,omitempty" xml:"trade_sub_attributes,omitempty"`
-	// 外部skucode
-	OutSkuCode string `json:"out_sku_code,omitempty" xml:"out_sku_code,omitempty"`
 	// 外部订单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
+	// 外部skucode
+	OutSkuCode string `json:"out_sku_code,omitempty" xml:"out_sku_code,omitempty"`
 	// 销售商品数量
 	SaleQuantity int64 `json:"sale_quantity,omitempty" xml:"sale_quantity,omitempty"`
 	// 销售单价
@@ -60,6 +60,8 @@ type SubOrder struct {
 	TotalWeight int64 `json:"total_weight,omitempty" xml:"total_weight,omitempty"`
 	// 业务子订单id
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+	// 促销优惠总金额
+	PromotionDiscountAmt int64 `json:"promotion_discount_amt,omitempty" xml:"promotion_discount_amt,omitempty"`
 	// 商品id
 	ItemCode int64 `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 正向：售价金额（购买数量*原售价）。逆向：退款金额
@@ -72,8 +74,6 @@ type SubOrder struct {
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 销售类型（正向销售1：逆向销售2。本接口应返回2）
 	TrdType int64 `json:"trd_type,omitempty" xml:"trd_type,omitempty"`
-	// 促销优惠总金额
-	PromotionDiscountAmt int64 `json:"promotion_discount_amt,omitempty" xml:"promotion_discount_amt,omitempty"`
 	// 会员价优惠金额
 	MemberDiscountAmt int64 `json:"member_discount_amt,omitempty" xml:"member_discount_amt,omitempty"`
 	// 其它分摊优惠金额

@@ -1,12 +1,6 @@
 {
-	"id": 24690,
-	"name": "taobao.qimen.deliveryorder.query",
-	"apiChineseName": "发货单查询接口",
-	"description": "ERP调用奇门的发货单查询接口，查询发货单详情",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "DeliveryOrderQueryRequest",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -56,13 +50,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "DeliveryOrderQueryRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "DeliveryOrderQueryResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -89,10 +83,6 @@
 					"required": true
 				},
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "发货单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -167,10 +157,6 @@
 							"required": true
 						},
 						{
-							"name": "invoices",
-							"type": "Invoice[]",
-							"description": "发票信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "header",
@@ -191,16 +177,8 @@
 									"required": true
 								},
 								{
-									"name": "detail",
-									"type": "Detail",
-									"description": "发货详情",
-									"required": true,
 									"subParams": [
 										{
-											"name": "items",
-											"type": "Item[]",
-											"description": "商品列表",
-											"required": true,
 											"subParams": [
 												{
 													"name": "itemName",
@@ -232,9 +210,17 @@
 													"description": "金额",
 													"required": true
 												}
-											]
+											],
+											"name": "items",
+											"type": "Item[]",
+											"description": "商品列表",
+											"required": true
 										}
-									]
+									],
+									"name": "detail",
+									"type": "Detail",
+									"description": "发货详情",
+									"required": true
 								},
 								{
 									"name": "code",
@@ -248,15 +234,19 @@
 									"description": "发票号码(纳税企业内部的发票号)",
 									"required": true
 								}
-							]
+							],
+							"name": "invoices",
+							"type": "Invoice[]",
+							"description": "发票信息",
+							"required": true
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息",
+					"required": true
 				},
 				{
-					"name": "packages",
-					"type": "Package[]",
-					"description": "包裹信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "logisticsCode",
@@ -325,10 +315,6 @@
 							"required": true
 						},
 						{
-							"name": "packageMaterialList",
-							"type": "PackageMaterial[]",
-							"description": "包材信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type",
@@ -342,13 +328,13 @@
 									"description": "包材的数量",
 									"required": true
 								}
-							]
+							],
+							"name": "packageMaterialList",
+							"type": "PackageMaterial[]",
+							"description": "包材信息",
+							"required": true
 						},
 						{
-							"name": "items",
-							"type": "Item[]",
-							"description": "商品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "itemCode",
@@ -368,15 +354,19 @@
 									"description": "包裹内该商品的数量",
 									"required": true
 								}
-							]
+							],
+							"name": "items",
+							"type": "Item[]",
+							"description": "商品列表",
+							"required": true
 						}
-					]
+					],
+					"name": "packages",
+					"type": "Package[]",
+					"description": "包裹信息",
+					"required": true
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "单据列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -469,10 +459,6 @@
 							"required": true
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "批次列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -510,7 +496,11 @@
 									"description": "实发数量(要求batchs节点下所有的实发数量之和等于orderline中的实发数量)",
 									"required": true
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次列表",
+							"required": true
 						},
 						{
 							"name": "qrCode",
@@ -518,9 +508,19 @@
 							"description": "商品的二维码(类似电子产品的SN码;用来进行商品的溯源;多个二维码之间用分号;隔开)",
 							"required": true
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "单据列表",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "DeliveryOrderQueryResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.deliveryorder.query",
+	"apiChineseName": "发货单查询接口",
+	"description": "ERP调用奇门的发货单查询接口，查询发货单详情",
+	"id": 24690
 }

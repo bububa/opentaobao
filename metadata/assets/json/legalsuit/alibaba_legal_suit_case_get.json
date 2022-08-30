@@ -1,8 +1,4 @@
 {
-	"id": 43036,
-	"name": "alibaba.legal.suit.case.get",
-	"apiChineseName": "获取案件信息接口v2版本",
-	"description": "获取案件信息",
 	"requestParams": [
 		{
 			"name": "id",
@@ -12,665 +8,630 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "CaseModel",
-					"description": "案件内容",
-					"required": true,
 					"subParams": [
 						{
-							"name": "accusers",
-							"type": "AccuserModel[]",
-							"description": "原告信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "lawyer_contact",
 									"type": "String",
-									"description": "承办律师联系方式",
-									"required": true
+									"description": "承办律师联系方式"
 								},
 								{
 									"name": "lawyer_name",
 									"type": "String",
-									"description": "承办律师姓名",
-									"required": true
+									"description": "承办律师姓名"
 								},
 								{
 									"name": "law_firm_name",
 									"type": "String",
-									"description": "承办律所名称",
-									"required": true
+									"description": "承办律所名称"
 								},
 								{
 									"name": "is_alibaba_company",
 									"type": "Boolean",
-									"description": "是否为集团公司",
-									"required": true
+									"description": "是否为集团公司"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "住所地",
-									"required": true
+									"description": "住所地"
 								},
 								{
 									"name": "certify_number",
 									"type": "String",
-									"description": "证件编号",
-									"required": true
+									"description": "证件编号"
 								},
 								{
 									"name": "certify_type",
 									"type": "String",
-									"description": "证件类型",
-									"required": true
+									"description": "证件类型"
 								},
 								{
 									"name": "contact",
 									"type": "String",
-									"description": "联系方式",
-									"required": true
+									"description": "联系方式"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
 									"name": "serial_number",
 									"type": "Number",
-									"description": "序号",
-									"required": true
+									"description": "序号"
 								}
-							]
+							],
+							"name": "accusers",
+							"type": "AccuserModel[]",
+							"description": "原告信息"
 						},
 						{
-							"name": "suit_fee",
-							"type": "SuitFeeModel",
-							"description": "费用信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "deposit_insurance_amount",
 									"type": "String",
-									"description": "财产保全保险费",
-									"required": true
+									"description": "财产保全保险费"
 								},
 								{
 									"name": "other_fee_amount",
 									"type": "String",
-									"description": "其他费用",
-									"required": true
+									"description": "其他费用"
 								},
 								{
 									"name": "evaluation_fee_amount",
 									"type": "String",
-									"description": "评估鉴定费",
-									"required": true
+									"description": "评估鉴定费"
 								},
 								{
 									"name": "notarial_fee_amount",
 									"type": "String",
-									"description": "公证费",
-									"required": true
+									"description": "公证费"
 								},
 								{
 									"name": "announcement_fee_amount",
 									"type": "String",
-									"description": "公告费",
-									"required": true
+									"description": "公告费"
 								},
 								{
 									"name": "security_deposit_amount",
 									"type": "String",
-									"description": "保证金金额",
-									"required": true
+									"description": "保证金金额"
 								},
 								{
 									"name": "return_court_fee_amount",
 									"type": "String",
-									"description": "退还诉讼费金额",
-									"required": true
+									"description": "退还诉讼费金额"
 								},
 								{
 									"name": "preserve_fee_amount",
 									"type": "String",
-									"description": "保全费金额",
-									"required": true
+									"description": "保全费金额"
 								},
 								{
 									"name": "makeup_pay_court_fee_amount",
 									"type": "String",
-									"description": "补缴诉讼费金额",
-									"required": true
+									"description": "补缴诉讼费金额"
 								},
 								{
 									"name": "makeup_pay_court_fee_time",
 									"type": "Date",
-									"description": "补缴诉讼费日期",
-									"required": true
+									"description": "补缴诉讼费日期"
 								},
 								{
 									"name": "prepay_court_fee_amount",
 									"type": "String",
-									"description": "预缴诉讼费金额",
-									"required": true
+									"description": "预缴诉讼费金额"
 								},
 								{
 									"name": "prepay_court_fee_time",
 									"type": "Date",
-									"description": "预缴诉讼费日期",
-									"required": true
+									"description": "预缴诉讼费日期"
 								}
-							]
+							],
+							"name": "suit_fee",
+							"type": "SuitFeeModel",
+							"description": "费用信息"
 						},
 						{
-							"name": "check_in_msg",
-							"type": "CheckInModel",
-							"description": "收案信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "undertaker_peoples",
-									"type": "Json[]",
-									"description": "内部承办人",
-									"required": true
+									"type": "String[]",
+									"description": "内部承办人"
 								},
 								{
 									"name": "jurisdiction_objection_deadline_time",
 									"type": "Date",
-									"description": "管辖异议截止时间 根据收案时间来定",
-									"required": true
+									"description": "管辖异议截止时间 根据收案时间来定"
 								},
 								{
 									"name": "proof_deadline_time",
 									"type": "Date",
-									"description": "举证截止时间 未来要自动计算",
-									"required": true
+									"description": "举证截止时间 未来要自动计算"
 								},
 								{
 									"name": "legal_checkin_time",
 									"type": "Date",
-									"description": "法务收案时间",
-									"required": true
+									"description": "法务收案时间"
 								}
-							]
+							],
+							"name": "check_in_msg",
+							"type": "CheckInModel",
+							"description": "收案信息"
 						},
 						{
-							"name": "court_model",
-							"type": "CourtModel",
-							"description": "法院信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "judge_contact",
 									"type": "String",
-									"description": "审判员联系方式",
-									"required": true
+									"description": "审判员联系方式"
 								},
 								{
 									"name": "judge_name",
 									"type": "String",
-									"description": "审判员名称",
-									"required": true
+									"description": "审判员名称"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "county_code",
 									"type": "String",
-									"description": "区/县",
-									"required": true
+									"description": "区/县"
 								},
 								{
 									"name": "city_code",
 									"type": "String",
-									"description": "市",
-									"required": true
+									"description": "市"
 								},
 								{
 									"name": "province_code",
 									"type": "String",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "受理机关的编号",
-									"required": true
+									"description": "受理机关的编号"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "受理机关ID",
-									"required": true
+									"description": "受理机关ID"
 								}
-							]
+							],
+							"name": "court_model",
+							"type": "CourtModel",
+							"description": "法院信息"
 						},
 						{
 							"name": "pre_case_number",
 							"type": "String",
-							"description": "预立案号",
-							"required": true
+							"description": "预立案号"
 						},
 						{
 							"name": "tag4",
 							"type": "String",
-							"description": "标签4",
-							"required": true
+							"description": "标签4"
 						},
 						{
 							"name": "tag3",
 							"type": "String",
-							"description": "标签3",
-							"required": true
+							"description": "标签3"
 						},
 						{
 							"name": "tag2",
 							"type": "String",
-							"description": "标签2",
-							"required": true
+							"description": "标签2"
 						},
 						{
 							"name": "tag1",
 							"type": "String",
-							"description": "标签1",
-							"required": true
+							"description": "标签1"
 						},
 						{
 							"name": "accuser_claim_legal_basis",
 							"type": "String",
-							"description": "原告主张的法律依据",
-							"required": true
+							"description": "原告主张的法律依据"
 						},
 						{
 							"name": "accuser_claim_fact",
 							"type": "String",
-							"description": "原告主张的事实",
-							"required": true
+							"description": "原告主张的事实"
 						},
 						{
 							"name": "accuser_appeal_list",
-							"type": "Json[]",
-							"description": "原告诉请",
-							"required": true
+							"type": "String[]",
+							"description": "原告诉请"
 						},
 						{
 							"name": "suit_request",
 							"type": "String",
-							"description": "诉讼请求",
-							"required": true
+							"description": "诉讼请求"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
 							"name": "followup_people_name",
 							"type": "String",
-							"description": "当前跟进人",
-							"required": true
+							"description": "当前跟进人"
 						},
 						{
 							"name": "ou_name",
 							"type": "String",
-							"description": "案件归属OU",
-							"required": true
+							"description": "案件归属OU"
 						},
 						{
 							"name": "court_time",
 							"type": "Date",
-							"description": "开庭时间",
-							"required": true
+							"description": "开庭时间"
 						},
 						{
 							"name": "sue_time",
 							"type": "Date",
-							"description": "起诉时间",
-							"required": true
+							"description": "起诉时间"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "案件的货币类型",
-							"required": true
+							"description": "案件的货币类型"
 						},
 						{
 							"name": "case_amount",
 							"type": "String",
-							"description": "标的金额",
-							"required": true
+							"description": "标的金额"
 						},
 						{
 							"name": "audit_type",
 							"type": "String",
-							"description": "审判类型",
-							"required": true
+							"description": "审判类型"
 						},
 						{
 							"name": "case_cause",
 							"type": "String",
-							"description": "案由",
-							"required": true
+							"description": "案由"
 						},
 						{
 							"name": "case_type2",
 							"type": "String",
-							"description": "案件类型2",
-							"required": true
+							"description": "案件类型2"
 						},
 						{
 							"name": "case_type1",
 							"type": "String",
-							"description": "案件类型1",
-							"required": true
+							"description": "案件类型1"
 						},
 						{
 							"name": "suit_type",
 							"type": "String",
-							"description": "诉讼类型",
-							"required": true
+							"description": "诉讼类型"
 						},
 						{
 							"name": "case_detail_description",
 							"type": "String",
-							"description": "案情描述",
-							"required": true
+							"description": "案情描述"
 						},
 						{
 							"name": "case_detail_code",
 							"type": "String",
-							"description": "案情编号",
-							"required": true
+							"description": "案情编号"
 						},
 						{
 							"name": "case_number",
 							"type": "String",
-							"description": "案号",
-							"required": true
+							"description": "案号"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "案件id",
-							"required": true
+							"description": "案件id"
 						},
 						{
+							"subParams": [
+								{
+									"name": "lawyer_name",
+									"type": "String",
+									"description": "承办律师姓名"
+								},
+								{
+									"name": "law_firm_name",
+									"type": "String",
+									"description": "承办律所名称"
+								},
+								{
+									"name": "is_alibaba_company",
+									"type": "Boolean",
+									"description": "是否为集团公司"
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "住所地"
+								},
+								{
+									"name": "certify_number",
+									"type": "String",
+									"description": "证件编号"
+								},
+								{
+									"name": "certify_type",
+									"type": "String",
+									"description": "证件类型"
+								},
+								{
+									"name": "contact",
+									"type": "String",
+									"description": "联系方式"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "serial_number",
+									"type": "Number",
+									"description": "序号"
+								},
+								{
+									"name": "lawyer_contact",
+									"type": "String",
+									"description": "承办律师联系方式"
+								}
+							],
 							"name": "defendant_list",
 							"type": "AppelleeModel[]",
-							"description": "被告",
-							"required": true,
+							"description": "被告"
+						},
+						{
 							"subParams": [
+								{
+									"name": "lawyer_contact",
+									"type": "String",
+									"description": "承办律师联系方式"
+								},
 								{
 									"name": "lawyer_name",
 									"type": "String",
-									"description": "承办律师姓名",
-									"required": true
+									"description": "承办律师姓名"
 								},
 								{
 									"name": "law_firm_name",
 									"type": "String",
-									"description": "承办律所名称",
-									"required": true
+									"description": "承办律所名称"
 								},
 								{
 									"name": "is_alibaba_company",
-									"type": "Boolean",
-									"description": "是否为集团公司",
-									"required": true
+									"type": "String",
+									"description": "是否为集团公司"
 								},
 								{
 									"name": "address",
-									"type": "String",
-									"description": "住所地",
-									"required": true
+									"type": "Boolean",
+									"description": "住所地"
 								},
 								{
 									"name": "certify_number",
 									"type": "String",
-									"description": "证件编号",
-									"required": true
+									"description": "证件编号"
 								},
 								{
 									"name": "certify_type",
 									"type": "String",
-									"description": "证件类型",
-									"required": true
+									"description": "证件类型"
 								},
 								{
 									"name": "contact",
 									"type": "String",
-									"description": "联系方式",
-									"required": true
+									"description": "联系方式"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
 									"name": "serial_number",
 									"type": "Number",
-									"description": "序号",
-									"required": true
-								},
-								{
-									"name": "lawyer_contact",
-									"type": "String",
-									"description": "承办律师联系方式",
-									"required": true
+									"description": "序号"
 								}
-							]
-						},
-						{
+							],
 							"name": "third_list",
 							"type": "LitigantThirdPartyModel[]",
-							"description": "第三人",
-							"required": true,
+							"description": "第三人"
+						},
+						{
 							"subParams": [
-								{
-									"name": "lawyer_contact",
-									"type": "String",
-									"description": "承办律师联系方式",
-									"required": true
-								},
-								{
-									"name": "lawyer_name",
-									"type": "String",
-									"description": "承办律师姓名",
-									"required": true
-								},
-								{
-									"name": "law_firm_name",
-									"type": "String",
-									"description": "承办律所名称",
-									"required": true
-								},
-								{
-									"name": "is_alibaba_company",
-									"type": "String",
-									"description": "是否为集团公司",
-									"required": true
-								},
-								{
-									"name": "address",
-									"type": "Boolean",
-									"description": "住所地",
-									"required": true
-								},
-								{
-									"name": "certify_number",
-									"type": "String",
-									"description": "证件编号",
-									"required": true
-								},
-								{
-									"name": "certify_type",
-									"type": "String",
-									"description": "证件类型",
-									"required": true
-								},
-								{
-									"name": "contact",
-									"type": "String",
-									"description": "联系方式",
-									"required": true
-								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
-									"name": "serial_number",
-									"type": "Number",
-									"description": "序号",
-									"required": true
+									"name": "key",
+									"type": "String",
+									"description": "附件Key"
 								}
-							]
-						},
-						{
+							],
 							"name": "case_fact_file_list",
 							"type": "FileModel[]",
-							"description": "案件事实调查附件",
-							"required": true,
+							"description": "案件事实调查附件"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件Key",
-									"required": true
+									"description": "附件Key"
 								}
-							]
-						},
-						{
+							],
 							"name": "other_file_list",
 							"type": "FileModel[]",
-							"description": "其他附件",
-							"required": true,
+							"description": "其他附件"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件Key",
-									"required": true
+									"description": "附件Key"
 								}
-							]
-						},
-						{
+							],
 							"name": "evidence_file_list",
 							"type": "FileModel[]",
-							"description": "证据附件",
-							"required": true,
+							"description": "证据附件"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件Key",
-									"required": true
+									"description": "附件Key"
 								}
-							]
-						},
-						{
+							],
 							"name": "court_file_list",
 							"type": "FileModel[]",
-							"description": "法院相关附件",
-							"required": true,
-							"subParams": [
-								{
-									"name": "name",
-									"type": "String",
-									"description": "附件名称",
-									"required": true
-								},
-								{
-									"name": "key",
-									"type": "String",
-									"description": "附件Key",
-									"required": true
-								}
-							]
+							"description": "法院相关附件"
 						},
 						{
-							"name": "pleading_file_list",
-							"type": "FileModel[]",
-							"description": "起诉状附件",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件Key",
-									"required": true
+									"description": "附件Key"
 								}
-							]
+							],
+							"name": "pleading_file_list",
+							"type": "FileModel[]",
+							"description": "起诉状附件"
+						},
+						{
+							"name": "case_code",
+							"type": "String",
+							"description": "案件编号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "text",
+									"type": "String",
+									"description": "案件类型中文"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "案件类型中文value"
+								}
+							],
+							"name": "case_type_label",
+							"type": "LabelOption",
+							"description": "案件类型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "text",
+									"type": "String",
+									"description": "bu中文"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "bu_code"
+								},
+								{
+									"subParams": [
+										{
+											"name": "text",
+											"type": "String",
+											"description": "text"
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "value"
+										},
+										{
+											"name": "children",
+											"type": "String",
+											"description": "子对象"
+										}
+									],
+									"name": "children",
+									"type": "LabelOption[]",
+									"description": "子对象"
+								}
+							],
+							"name": "bu_labels",
+							"type": "LabelOption[]",
+							"description": "案件bu"
+						},
+						{
+							"name": "send_time",
+							"type": "Date",
+							"description": "送达时间"
 						}
-					]
+					],
+					"name": "content",
+					"type": "CaseModel",
+					"description": "案件内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.case.get",
+	"apiChineseName": "获取案件信息接口v2版本",
+	"description": "获取案件信息",
+	"id": 43036
 }

@@ -1,52 +1,31 @@
 {
-	"id": 10833,
-	"name": "taobao.crm.groups.get",
-	"apiChineseName": "查询卖家的分组",
-	"description": "查询卖家的分组，返回查询到的分组列表，分页返回分组",
 	"requestParams": [
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页显示的记录数，其最大值不能超过100条，最小值为1，默认20条",
-			"maxLength": 3,
-			"maxValue": 100,
-			"minValue": 1
+			"maxLength": 3
 		},
 		{
 			"name": "current_page",
 			"type": "Number",
 			"description": "显示第几页的分组，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页码为1",
-			"required": true,
 			"maxLength": 3,
-			"maxValue": 1000000,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "groups",
-			"type": "Group []",
-			"description": "查询到的当前卖家的当前页的会员",
 			"subParams": [
-				{
-					"name": "group_id",
-					"type": "Number",
-					"description": "分组的id"
-				},
 				{
 					"name": "group_name",
 					"type": "String",
 					"description": "分组的名称"
 				},
 				{
-					"name": "group_create",
-					"type": "Date",
-					"description": "分组的创建时间"
-				},
-				{
-					"name": "group_modify",
-					"type": "Date",
-					"description": "分组的修改时间"
+					"name": "member_count",
+					"type": "Number",
+					"description": "分组所拥有的会员数量,如果返回值为-1，表示当前服务忙或数据在初始化。"
 				},
 				{
 					"name": "status",
@@ -54,16 +33,33 @@
 					"description": "分组的状态，1表示正常"
 				},
 				{
-					"name": "member_count",
+					"name": "group_id",
 					"type": "Number",
-					"description": "分组所拥有的会员数量,如果返回值为-1，表示当前服务忙或数据在初始化。"
+					"description": "分组的id"
+				},
+				{
+					"name": "group_modify",
+					"type": "Date",
+					"description": "分组的修改时间"
+				},
+				{
+					"name": "group_create",
+					"type": "Date",
+					"description": "分组的创建时间"
 				}
-			]
+			],
+			"name": "groups",
+			"type": "Group []",
+			"description": "查询到的当前卖家的当前页的会员"
 		},
 		{
 			"name": "total_result",
 			"type": "Number",
 			"description": "记录总数"
 		}
-	]
+	],
+	"name": "taobao.crm.groups.get",
+	"apiChineseName": "查询卖家的分组",
+	"description": "查询卖家的分组，返回查询到的分组列表，分页返回分组",
+	"id": 10833
 }

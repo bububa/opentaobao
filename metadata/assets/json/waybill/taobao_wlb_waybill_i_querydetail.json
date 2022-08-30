@@ -1,14 +1,6 @@
 {
-	"id": 23873,
-	"name": "taobao.wlb.waybill.i.querydetail",
-	"apiChineseName": "查面单号状态v1.0",
-	"description": "查看面单号的当前状态，如签收、发货、失效等。",
 	"requestParams": [
 		{
-			"name": "waybill_detail_query_request",
-			"type": "WaybillDetailQueryRequest",
-			"description": "面单查询请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "waybill_codes",
@@ -30,7 +22,11 @@
 					"type": "String[]",
 					"description": "交易订单号"
 				}
-			]
+			],
+			"name": "waybill_detail_query_request",
+			"type": "WaybillDetailQueryRequest",
+			"description": "面单查询请求",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -45,9 +41,6 @@
 			"description": "查询是否成功"
 		},
 		{
-			"name": "waybill_details",
-			"type": "WaybillDetailQueryInfo []",
-			"description": "面单详情",
 			"subParams": [
 				{
 					"name": "shipping_branch_code",
@@ -90,9 +83,6 @@
 					"description": "打印次数"
 				},
 				{
-					"name": "package_items",
-					"type": "PackageItem[]",
-					"description": "包裹里面的商品类型",
 					"subParams": [
 						{
 							"name": "item_name",
@@ -104,7 +94,10 @@
 							"type": "Number",
 							"description": "商品数量"
 						}
-					]
+					],
+					"name": "package_items",
+					"type": "PackageItem[]",
+					"description": "包裹里面的商品类型"
 				},
 				{
 					"name": "pickup_time",
@@ -172,9 +165,38 @@
 					"description": "收件人联系方式"
 				},
 				{
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区名称（三级地址）"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省名称（一级地址）"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道\\镇名称（四级地址）"
+						},
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市名称（二级地址）"
+						}
+					],
 					"name": "consignee_address",
 					"type": "WaybillAddress",
-					"description": "收货人地址",
+					"description": "收货人地址"
+				},
+				{
 					"subParams": [
 						{
 							"name": "area",
@@ -201,44 +223,12 @@
 							"type": "String",
 							"description": "市名称（二级地址）"
 						}
-					]
-				},
-				{
+					],
 					"name": "shipping_address",
 					"type": "WaybillAddress",
-					"description": "发货地址",
-					"subParams": [
-						{
-							"name": "area",
-							"type": "String",
-							"description": "区名称（三级地址）"
-						},
-						{
-							"name": "province",
-							"type": "String",
-							"description": "省名称（一级地址）"
-						},
-						{
-							"name": "town",
-							"type": "String",
-							"description": "街道\\镇名称（四级地址）"
-						},
-						{
-							"name": "address_detail",
-							"type": "String",
-							"description": "详细地址"
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "市名称（二级地址）"
-						}
-					]
+					"description": "发货地址"
 				},
 				{
-					"name": "logistics_service_list",
-					"type": "LogisticsService[]",
-					"description": "物流服务能力集合",
 					"subParams": [
 						{
 							"name": "service_value4_json",
@@ -250,7 +240,10 @@
 							"type": "String",
 							"description": "服务编码"
 						}
-					]
+					],
+					"name": "logistics_service_list",
+					"type": "LogisticsService[]",
+					"description": "物流服务能力集合"
 				},
 				{
 					"name": "product_type",
@@ -277,12 +270,19 @@
 					"type": "String",
 					"description": "打印配置项"
 				}
-			]
+			],
+			"name": "waybill_details",
+			"type": "WaybillDetailQueryInfo []",
+			"description": "面单详情"
 		},
 		{
 			"name": "error_codes",
 			"type": "String []",
 			"description": "面单查询错误编码"
 		}
-	]
+	],
+	"name": "taobao.wlb.waybill.i.querydetail",
+	"apiChineseName": "查面单号状态v1.0",
+	"description": "查看面单号的当前状态，如签收、发货、失效等。",
+	"id": 23873
 }

@@ -1,0 +1,71 @@
+{
+	"requestParams": [
+		{
+			"name": "source_order_id",
+			"type": "String",
+			"description": "淘鲜达交易单号",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "查询类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误原因"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "source_order_id",
+							"type": "String",
+							"description": "淘鲜达交易单号"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "查询类型"
+						},
+						{
+							"name": "virtual_number",
+							"type": "String",
+							"description": "返回虚拟号"
+						},
+						{
+							"name": "sub_id",
+							"type": "String",
+							"description": "订阅id"
+						}
+					],
+					"name": "result_data",
+					"type": "VirtualNumWorkResult",
+					"description": "返回结果数据"
+				}
+			],
+			"name": "result",
+			"type": "WorkResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.cityretail.txd.fulfill.order.virtualnumber",
+	"apiChineseName": "淘鲜达虚拟号服务接口",
+	"description": "虚拟小号绑定接口，只有开通了虚拟号服务的淘鲜达商家能绑定。",
+	"id": 58270
+}

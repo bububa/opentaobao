@@ -1,13 +1,13 @@
 {
-	"id": 23865,
-	"name": "alibaba.interact.sensor.glue",
-	"apiChineseName": "视频播放",
-	"description": "视频播放",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.glue",
+	"apiChineseName": "视频播放",
+	"description": "视频播放",
+	"id": 23865
 }

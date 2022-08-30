@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部房源id",
+					"required": true
+				},
+				{
+					"name": "unique_no",
+					"type": "String",
+					"description": "3D户型编码",
+					"required": true
+				},
+				{
+					"name": "cover_picture_url",
+					"type": "String",
+					"description": "封面图",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "3D数据包",
+					"required": true
+				}
+			],
+			"name": "three_dimensional_dto",
+			"type": "SyncExistingHouseThreeDimensionalDto",
+			"description": "系统自动生成",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.threedimension.sync",
+	"apiChineseName": "二手房3D户型信息同步",
+	"description": "二手房3D户型信息同步",
+	"id": 57787
+}

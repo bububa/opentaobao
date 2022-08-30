@@ -1,14 +1,25 @@
 {
-	"id": 55198,
-	"name": "alibaba.scbp.ad.report.get.product.report",
-	"apiChineseName": "产品报告",
-	"description": "产品报告",
 	"requestParams": [
 		{
-			"name": "product_report_operation",
-			"type": "ProductReportOperationDto",
-			"description": "请求参数",
-			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "key",
@@ -65,97 +76,76 @@
 					"type": "Number",
 					"description": "每页数量"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id"
-				}
-			]
+			],
+			"name": "product_report_operation",
+			"type": "ProductReportOperationDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ProductReportDto",
-			"description": "返回数据",
 			"subParams": [
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数量",
-					"required": true
+					"description": "总数量"
 				},
 				{
-					"name": "product_effect_list",
-					"type": "ProductEffectDto[]",
-					"description": "返回实体集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品id",
-							"required": true
+							"description": "产品id"
 						},
 						{
 							"name": "product_name",
 							"type": "String",
-							"description": "产品名称",
-							"required": true
+							"description": "产品名称"
 						},
 						{
 							"name": "img_url",
 							"type": "String",
-							"description": "图片url",
-							"required": true
+							"description": "图片url"
 						},
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "日期(yyyy-MM-dd)",
-							"required": true
+							"description": "日期(yyyy-MM-dd)"
 						},
 						{
 							"name": "impr",
 							"type": "Number",
-							"description": "曝光",
-							"required": true
+							"description": "曝光"
 						},
 						{
 							"name": "click",
 							"type": "Number",
-							"description": "点击",
-							"required": true
+							"description": "点击"
 						},
 						{
 							"name": "cost",
 							"type": "Number",
-							"description": "消耗",
-							"required": true
+							"description": "消耗"
 						},
 						{
 							"name": "online_min",
 							"type": "Number",
-							"description": "推广时长",
-							"required": true
+							"description": "推广时长"
 						}
-					]
+					],
+					"name": "product_effect_list",
+					"type": "ProductEffectDto[]",
+					"description": "返回实体集合"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ProductReportDto",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.report.get.product.report",
+	"apiChineseName": "产品报告",
+	"description": "产品报告",
+	"id": 55198
 }

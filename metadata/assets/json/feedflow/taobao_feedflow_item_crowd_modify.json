@@ -1,20 +1,8 @@
 {
-	"id": 43250,
-	"name": "taobao.feedflow.item.crowd.modify",
-	"apiChineseName": "覆盖单元下同类型定向人群",
-	"description": "覆盖单元下同类型定向人群",
 	"requestParams": [
 		{
-			"name": "crowds",
-			"type": "CrowdDto[]",
-			"description": "人群信息",
-			"required": true,
-			"maxListSize": 50,
 			"subParams": [
 				{
-					"name": "target_label",
-					"type": "LabelDto",
-					"description": "标签结构",
 					"subParams": [
 						{
 							"name": "target_id",
@@ -41,10 +29,6 @@
 							"required": true
 						},
 						{
-							"name": "options",
-							"type": "OptionDto[]",
-							"description": "选项结构",
-							"required": true,
 							"subParams": [
 								{
 									"name": "option_value",
@@ -52,9 +36,16 @@
 									"description": "选项值",
 									"required": true
 								}
-							]
+							],
+							"name": "options",
+							"type": "OptionDto[]",
+							"description": "选项结构",
+							"required": true
 						}
-					]
+					],
+					"name": "target_label",
+					"type": "LabelDto",
+					"description": "标签结构"
 				},
 				{
 					"name": "price",
@@ -73,7 +64,12 @@
 					"description": "人群id",
 					"required": true
 				}
-			]
+			],
+			"name": "crowds",
+			"type": "CrowdDto[]",
+			"description": "人群信息",
+			"maxListSize": 50,
+			"required": true
 		},
 		{
 			"name": "adgroup_id",
@@ -84,23 +80,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
+					"description": "调用是否成功,true-成功，false-失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.crowd.modify",
+	"apiChineseName": "覆盖单元下同类型定向人群",
+	"description": "覆盖单元下同类型定向人群",
+	"id": 43250
 }

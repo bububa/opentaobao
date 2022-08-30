@@ -6,8 +6,6 @@ type ListSearchParam struct {
 	Star string `json:"star,omitempty" xml:"star,omitempty"`
 	// 城市编码，默认上海
 	CityCode string `json:"city_code,omitempty" xml:"city_code,omitempty"`
-	// 会员等级
-	MemberLevel string `json:"member_level,omitempty" xml:"member_level,omitempty"`
 	// 儿童年龄
 	ChildrenAges string `json:"children_ages,omitempty" xml:"children_ages,omitempty"`
 	// 入店时间
@@ -18,6 +16,10 @@ type ListSearchParam struct {
 	Brand string `json:"brand,omitempty" xml:"brand,omitempty"`
 	// 用户登录信息
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+	// 会员等级
+	MemberLevel string `json:"member_level,omitempty" xml:"member_level,omitempty"`
+	// 套餐代金券id
+	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 最高价格
 	PriceMax int64 `json:"price_max,omitempty" xml:"price_max,omitempty"`
 	// 成人数

@@ -1,13 +1,6 @@
 {
-	"id": 46049,
-	"name": "alibaba.damai.mev.open.deletevenue",
-	"apiChineseName": "大麦换验平台-第三方对外开放-场馆接口deleteVenue",
-	"description": "开放接口，删除场馆",
 	"requestParams": [
 		{
-			"name": "delete_venue_param",
-			"type": "VenueIdOpenParam",
-			"description": "入参deleteVenueParam",
 			"subParams": [
 				{
 					"name": "cp_id",
@@ -44,40 +37,43 @@
 					"type": "String",
 					"description": "商家密钥，监权使用"
 				}
-			]
+			],
+			"name": "delete_venue_param",
+			"type": "VenueIdOpenParam",
+			"description": "入参deleteVenueParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误内容",
-					"required": true
+					"description": "错误内容"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.deletevenue",
+	"apiChineseName": "大麦换验平台-第三方对外开放-场馆接口deleteVenue",
+	"description": "开放接口，删除场馆",
+	"id": 46049
 }

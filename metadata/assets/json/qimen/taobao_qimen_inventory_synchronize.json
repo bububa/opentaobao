@@ -1,0 +1,151 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码,货主编码,string(50),,"
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码,仓库编码,string(50),,"
+				},
+				{
+					"name": "adjustOrderCode",
+					"type": "String",
+					"description": "调整单编码,调整单编码,string(50),,"
+				},
+				{
+					"name": "adjustTime",
+					"type": "String",
+					"description": "订单创建时间,订单创建时间,string(50),,"
+				},
+				{
+					"name": "adjustType",
+					"type": "String",
+					"description": "库存调整类型,库存调整类型,string(50),,"
+				},
+				{
+					"subParams": [
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "关联的订单类型,关联的订单类型,string(50),,"
+						},
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "关联的订单编号,关联的订单编号,string(50),,"
+						}
+					],
+					"name": "relatedOrders",
+					"type": "RelatedOrders",
+					"description": "关联订单"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注,备注,string(50),,"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "itemCode",
+									"type": "String",
+									"description": "商品编码,,string(50),,"
+								},
+								{
+									"name": "itemId",
+									"type": "String",
+									"description": "仓储系统商品ID,,string(50),,"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "库存类型,,string(50),,"
+								},
+								{
+									"name": "planQty",
+									"type": "String",
+									"description": "调整数量,,string(50),,"
+								},
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "批次编码,,string(50),,"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "商品生产日期,,string(50),,"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "商品过期日期,,string(50),,"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "生产批号,,string(50),,"
+								},
+								{
+									"name": "snCode",
+									"type": "String",
+									"description": "商品序列号,,string(50),,"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注,,string(50),,"
+								}
+							],
+							"name": "item",
+							"type": "Item",
+							"description": "商品"
+						}
+					],
+					"name": "items",
+					"type": "Items",
+					"description": "商品列表"
+				}
+			],
+			"name": "request",
+			"type": "Request"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果,success|failure,string (10),必填",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,,string (50),",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,,string (100),",
+					"required": true
+				}
+			],
+			"name": "response",
+			"type": "Response"
+		}
+	],
+	"name": "taobao.qimen.inventory.synchronize",
+	"apiChineseName": "库存状态同步接口",
+	"description": "ERP通过该接口同步指定商品的库存信息",
+	"id": 61099
+}

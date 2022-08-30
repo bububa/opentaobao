@@ -1,63 +1,50 @@
 {
-	"id": 54271,
-	"name": "alitrip.agent.flight.sell.refund.approve",
-	"apiChineseName": "销售退票确认",
-	"description": "销售退票确认",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "RefundApproveRequestDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "apply_id",
 					"type": "String",
-					"description": "申请单号"
+					"description": "申请单号,必填"
 				},
 				{
 					"name": "domestic_intl",
 					"type": "Number",
-					"description": "国内国际标识"
+					"description": "国内国际标识:1:国内,2:国际"
 				},
 				{
-					"name": "refund_list",
-					"type": "RefundList[]",
-					"description": "退票数据",
 					"subParams": [
 						{
 							"name": "passenger_name",
 							"type": "String",
-							"description": "乘客信息"
+							"description": "乘客信息,必填"
 						},
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退票费"
+							"description": "退票费,必填,单位:分"
 						},
 						{
 							"name": "tickets",
 							"type": "String[]",
-							"description": "票号"
+							"description": "票号,必填"
 						},
 						{
 							"name": "refund_upgrade_fee",
 							"type": "Number",
-							"description": "升舱退票费"
+							"description": "升舱手续费,改后退订单必填,单位:分"
 						},
 						{
 							"name": "refund_modify_fee",
 							"type": "Number",
-							"description": "改期退票费"
+							"description": "改期手续费,改后退订单必填,单位:分"
 						},
 						{
-							"name": "refund_segments",
-							"type": "RefundSegments[]",
-							"description": "退票航段",
 							"subParams": [
 								{
 									"name": "cabin_class",
 									"type": "String",
-									"description": "舱等"
+									"description": "舱等: F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱"
 								},
 								{
 									"name": "flight_no",
@@ -109,48 +96,58 @@
 									"type": "Number",
 									"description": "航程序号"
 								}
-							]
+							],
+							"name": "refund_segments",
+							"type": "RefundSegments[]",
+							"description": "退票航段"
 						},
 						{
 							"name": "passenger_type",
 							"type": "Number",
-							"description": "乘客类型"
+							"description": "乘客类型:1:成人, 2:儿童, 3:婴儿, 4:留学生"
 						}
-					]
+					],
+					"name": "refund_list",
+					"type": "RefundList[]",
+					"description": "退票数据, 必填,"
 				},
 				{
 					"name": "currency",
 					"type": "String",
-					"description": "交易币种"
+					"description": "交易币种: CNY:人民币, USD:美元, HKD:港元"
 				}
-			]
+			],
+			"name": "param",
+			"type": "RefundApproveRequestDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.refund.approve",
+	"apiChineseName": "销售退票确认",
+	"description": "销售退票确认",
+	"id": 54271
 }

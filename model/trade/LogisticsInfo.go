@@ -18,6 +18,16 @@ type LogisticsInfo struct {
 	CombineItemCode string `json:"combine_item_code,omitempty" xml:"combine_item_code,omitempty"`
 	// 组合商品id
 	CombineItemId string `json:"combine_item_id,omitempty" xml:"combine_item_id,omitempty"`
+	// 货品BarCode
+	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
+	// 择配信息
+	DeliveryCps string `json:"delivery_cps,omitempty" xml:"delivery_cps,omitempty"`
+	// 111
+	BizStoreCode string `json:"biz_store_code,omitempty" xml:"biz_store_code,omitempty"`
+	// sss
+	BizDeliveryCode string `json:"biz_delivery_code,omitempty" xml:"biz_delivery_code,omitempty"`
+	// 仓配建议类型
+	BizSdType string `json:"biz_sd_type,omitempty" xml:"biz_sd_type,omitempty"`
 	// 交易号
 	TradeId int64 `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
 	// 子交易号

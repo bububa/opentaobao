@@ -1,0 +1,103 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "核销卷商品id",
+					"required": true
+				}
+			],
+			"name": "query_dto",
+			"type": "ProjectVerifyTicketQueryDTO",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回编码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "详情信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "交易商品id"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "交易商品类型:1-房款立减  2-购房返现 3-其他权益 4-一元一平（这期忽略） 5-百亿房补 6-特价房"
+						},
+						{
+							"name": "rebate_total_amount",
+							"type": "Number",
+							"description": "返利金额（单位:分）"
+						},
+						{
+							"name": "subsidy_sponsor",
+							"type": "String",
+							"description": "补贴赞助方全称"
+						},
+						{
+							"name": "start_time",
+							"type": "Number",
+							"description": "优惠开始时间（单位:毫秒）"
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "优惠结束时间（单位:毫秒）"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "购买金额（单位:分）"
+						},
+						{
+							"name": "rebate_remark",
+							"type": "String",
+							"description": "返利优惠信息"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "排序权重"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部楼盘id"
+						}
+					],
+					"name": "data",
+					"type": "ProjectVerifyTicketDTO[]",
+					"description": "商品信息列表"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.ticket.query",
+	"apiChineseName": "根据商品id查询核销卷信息",
+	"description": "根据商品id查询核销卷信息",
+	"id": 61943
+}

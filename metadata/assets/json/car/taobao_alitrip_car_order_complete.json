@@ -1,25 +1,7 @@
 {
-	"id": 25938,
-	"name": "taobao.alitrip.car.order.complete",
-	"apiChineseName": "服务完成API",
-	"description": "用来接收服务商订单流程完成信息",
 	"requestParams": [
 		{
-			"name": "param_order_complete",
-			"type": "OrderComplete",
-			"description": "服务完成API",
 			"subParams": [
-				{
-					"name": "third_order_id",
-					"type": "String",
-					"description": "服务商生成的订单ID"
-				},
-				{
-					"name": "provider_id",
-					"type": "String",
-					"description": "服务商标识",
-					"required": true
-				},
 				{
 					"name": "complete_time",
 					"type": "String",
@@ -32,6 +14,17 @@
 					"required": true
 				},
 				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "服务商标识",
+					"required": true
+				},
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商生成的订单ID"
+				},
+				{
 					"name": "seller_id",
 					"type": "String",
 					"description": "可选，卖家id"
@@ -42,9 +35,6 @@
 					"description": "0:接送机 1：实时打车 2：租车(不传值默认为0)"
 				},
 				{
-					"name": "price_info",
-					"type": "PriceInfo",
-					"description": "价格详情",
 					"subParams": [
 						{
 							"name": "total_price",
@@ -57,9 +47,6 @@
 							"description": "原价，如果订单有折扣这里为折扣前的价格，如果没有折扣和totalPrice字段保持一致"
 						},
 						{
-							"name": "detail",
-							"type": "DetailPriceInfo[]",
-							"description": "费用明细",
 							"subParams": [
 								{
 									"name": "amount",
@@ -76,16 +63,25 @@
 									"type": "String",
 									"description": "费用类型"
 								}
-							]
+							],
+							"name": "detail",
+							"type": "DetailPriceInfo[]",
+							"description": "费用明细"
 						}
-					]
+					],
+					"name": "price_info",
+					"type": "PriceInfo",
+					"description": "价格详情"
 				},
 				{
 					"name": "distance",
 					"type": "String",
 					"description": "实际行驶公里数"
 				}
-			]
+			],
+			"name": "param_order_complete",
+			"type": "OrderComplete",
+			"description": "服务完成API"
 		}
 	],
 	"responseParams": [
@@ -104,5 +100,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.complete",
+	"apiChineseName": "服务完成API",
+	"description": "用来接收服务商订单流程完成信息",
+	"id": 25938
 }

@@ -1,0 +1,28 @@
+{
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "当前绑定状态，true为已经绑定，false为没有绑定"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "处理结果"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.idle.user.permit.query",
+	"apiChineseName": "查询服务商与卖家之间的订单消息绑定关系",
+	"description": "查询服务商与卖家之间的订单消息绑定关系",
+	"id": 60057
+}

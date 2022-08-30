@@ -1,27 +1,7 @@
 {
-	"id": 45839,
-	"name": "alibaba.alsc.crm.customer.create",
-	"apiChineseName": "创建顾客",
-	"description": "开放本地生活创建顾客功能",
 	"requestParams": [
 		{
-			"name": "param_customer_create_open_req",
-			"type": "CustomerCreateOpenReq",
-			"description": "创建顾客参数",
-			"required": true,
 			"subParams": [
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "外部ID",
-					"required": true
-				},
-				{
-					"name": "outer_type",
-					"type": "String",
-					"description": "外部ID类型",
-					"required": true
-				},
 				{
 					"name": "address",
 					"type": "String",
@@ -85,6 +65,18 @@
 					"description": "操作人ID"
 				},
 				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部ID",
+					"required": true
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部ID类型",
+					"required": true
+				},
+				{
 					"name": "phone",
 					"type": "String",
 					"description": "固定电话"
@@ -120,46 +112,49 @@
 					"type": "String",
 					"description": "外部门店id"
 				}
-			]
+			],
+			"name": "param_customer_create_open_req",
+			"type": "CustomerCreateOpenReq",
+			"description": "创建顾客参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "String",
-					"description": "顾客ID",
-					"required": true
+					"description": "顾客ID"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "返回结果码",
-					"required": true
+					"description": "返回结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "返回结果简介",
-					"required": true
+					"description": "返回结果简介"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "返回结果描述",
-					"required": true
+					"description": "返回结果描述"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.customer.create",
+	"apiChineseName": "创建顾客",
+	"description": "开放本地生活创建顾客功能",
+	"id": 45839
 }

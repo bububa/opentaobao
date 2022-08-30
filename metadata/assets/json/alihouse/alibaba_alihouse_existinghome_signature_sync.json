@@ -1,0 +1,92 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_signature_id",
+					"type": "String",
+					"description": "外部电子印章ID",
+					"required": true
+				},
+				{
+					"name": "signature_name",
+					"type": "String",
+					"description": "电子印章名称"
+				},
+				{
+					"name": "signature_type",
+					"type": "Number",
+					"description": "电子签章形状(1-圆章 2-椭圆章)"
+				},
+				{
+					"name": "signature_color",
+					"type": "Number",
+					"description": "电子签章颜色(1-红色 2-蓝色 3-黑色)"
+				},
+				{
+					"name": "center_pattern",
+					"type": "Number",
+					"description": "中心图案类型(1-圆形有五角星 2-圆形无五角星)"
+				},
+				{
+					"name": "horizontal_text",
+					"type": "String",
+					"description": "横向文"
+				},
+				{
+					"name": "backspin_text",
+					"type": "String",
+					"description": "下弦文"
+				},
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "是否生效",
+					"required": true
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "经营主体ID"
+				}
+			],
+			"name": "electric_signature_dto",
+			"type": "ElectricSignatureDto",
+			"description": "电子签章实体对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.signature.sync",
+	"apiChineseName": "二手房电子签章数据同步",
+	"description": "二手房电子签章数据同步",
+	"id": 57273
+}

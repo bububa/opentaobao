@@ -1,8 +1,4 @@
 {
-	"id": 52650,
-	"name": "aliexpress.affiliate.order.listbyindex",
-	"apiChineseName": "AE联盟推广者订单查询接口-按游标索引查询",
-	"description": "AE联盟推广者订单按游标查询接口",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -45,9 +41,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -62,10 +55,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficOrderResultDto",
-					"description": "返回结果明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_record_count",
@@ -74,10 +63,6 @@
 							"required": true
 						},
 						{
-							"name": "orders",
-							"type": "Order[]",
-							"description": "订单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "order_id",
@@ -137,6 +122,12 @@
 									"name": "is_affiliate_product",
 									"type": "String",
 									"description": "是否为联盟商品:Y或者N",
+									"required": true
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "国家标：global、ru_site、es_site、it_site",
 									"required": true
 								},
 								{
@@ -253,7 +244,11 @@
 									"description": "物流国家",
 									"required": true
 								}
-							]
+							],
+							"name": "orders",
+							"type": "Order[]",
+							"description": "订单列表",
+							"required": true
 						},
 						{
 							"name": "max_query_index_id",
@@ -267,9 +262,20 @@
 							"description": "当前返回记录的最小游标ID",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficOrderResultDto",
+					"description": "返回结果明细",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.order.listbyindex",
+	"apiChineseName": "AE联盟推广者订单查询接口-按游标索引查询",
+	"description": "AE联盟推广者订单按游标查询接口",
+	"id": 52650
 }

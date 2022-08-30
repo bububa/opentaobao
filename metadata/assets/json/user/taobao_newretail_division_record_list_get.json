@@ -1,14 +1,6 @@
 {
-	"id": 47029,
-	"name": "taobao.newretail.division.record.list.get",
-	"apiChineseName": "导购分佣明细列表",
-	"description": "提供分页查询导购分佣明细的能力",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "TopDivisionRecordReqDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_no",
@@ -32,7 +24,11 @@
 					"type": "Number",
 					"description": "结束时间(毫秒为单位)"
 				}
-			]
+			],
+			"name": "param",
+			"type": "TopDivisionRecordReqDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -52,89 +48,76 @@
 			"description": "返回代码"
 		},
 		{
-			"name": "data_list",
-			"type": "T []",
-			"description": "数据列表",
 			"subParams": [
 				{
 					"name": "buyer_nick",
 					"type": "String",
-					"description": "买家昵称",
-					"required": true
+					"description": "买家昵称"
 				},
 				{
 					"name": "commission_money",
 					"type": "Number",
-					"description": "分佣金额",
-					"required": true
+					"description": "分佣金额"
 				},
 				{
 					"name": "order_id",
 					"type": "Number",
-					"description": "主订单id",
-					"required": true
+					"description": "主订单id"
 				},
 				{
 					"name": "commission_employee_name",
 					"type": "String",
-					"description": "导购昵称",
-					"required": true
+					"description": "导购昵称"
 				},
 				{
 					"name": "order_create_time",
 					"type": "String",
-					"description": "订单创建时间",
-					"required": true
+					"description": "订单创建时间"
 				},
 				{
 					"name": "order_status",
 					"type": "Number",
-					"description": "订单状态 12-付款，13-关闭，14-确认收货，3-结算成功",
-					"required": true
+					"description": "订单状态 12-付款，13-关闭，14-确认收货，3-结算成功"
 				},
 				{
 					"name": "open_uid",
 					"type": "String",
-					"description": "对应账号的OpenUID",
-					"required": true
+					"description": "对应账号的OpenUID"
 				},
 				{
 					"name": "commission_time",
 					"type": "Number",
-					"description": "分佣时间",
-					"required": true
+					"description": "分佣时间"
 				},
 				{
 					"name": "biz_order_id",
 					"type": "Number",
-					"description": "子订单id",
-					"required": true
+					"description": "子订单id"
 				},
 				{
 					"name": "commission_employee_id",
 					"type": "Number",
-					"description": "导购id",
-					"required": true
-				},
-				{
-					"name": "order_end_time",
-					"type": "String",
-					"description": "订单结束时间",
-					"required": true
+					"description": "导购id"
 				},
 				{
 					"name": "order_pay_time",
 					"type": "Number",
-					"description": "订单支付时间",
-					"required": true
+					"description": "订单支付时间"
+				},
+				{
+					"name": "order_end_time",
+					"type": "String",
+					"description": "订单结束时间"
 				},
 				{
 					"name": "order_pay_money",
 					"type": "Number",
-					"description": "订单支付金额",
-					"required": true
+					"description": "订单支付金额"
 				}
-			]
+			],
+			"name": "data_list",
+			"type": "T []",
+			"description": "数据列表"
 		},
 		{
 			"name": "has_next_page",
@@ -161,5 +144,9 @@
 			"type": "String",
 			"description": "具体返回讯息"
 		}
-	]
+	],
+	"name": "taobao.newretail.division.record.list.get",
+	"apiChineseName": "导购分佣明细列表",
+	"description": "提供分页查询导购分佣明细的能力",
+	"id": 47029
 }

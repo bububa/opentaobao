@@ -1,13 +1,6 @@
 {
-	"id": 39695,
-	"name": "aliexpress.solution.product.edit",
-	"apiChineseName": "Edit Product API",
-	"description": "API for editing product, customized for Oversea merchants. Most of the input fields of this API is similar with aliexpress.solution.product.post. For editing, just fill in the fields you would like to edit, leave other fields to be blank.",
 	"requestParams": [
 		{
-			"name": "edit_product_request",
-			"type": "PostProductRequestDto",
-			"description": "input param",
 			"subParams": [
 				{
 					"name": "product_id",
@@ -26,9 +19,6 @@
 					"description": "extra params. Configured some special products"
 				},
 				{
-					"name": "marketing_images",
-					"type": "MarketImageDto[]",
-					"description": "marketing images for product. Currently supported 2 types: 1 represents 3:4 rectangle(resolution at least 750*1000) image while 2 represents 1:1 square image(Resolution at least 800*800). The image url needs to be obtained via uploading the image through Aliexpress API: aliexpress.photobank.redefining.uploadimageforsdk(https://developers.aliexpress.com/en/doc.htm?docId=30186\u0026docType=2)",
 					"subParams": [
 						{
 							"name": "image_url",
@@ -40,7 +30,15 @@
 							"type": "String",
 							"description": "1 represents 3:4 rectangle(resolution at least 750*1000) image while 2 represents 1:1 square image(Resolution at least 800*800)."
 						}
-					]
+					],
+					"name": "marketing_images",
+					"type": "MarketImageDto[]",
+					"description": "marketing images for product. Currently supported 2 types: 1 represents 3:4 rectangle(resolution at least 750*1000) image while 2 represents 1:1 square image(Resolution at least 800*800). The image url needs to be obtained via uploading the image through Aliexpress API: aliexpress.photobank.redefining.uploadimageforsdk(https://developers.aliexpress.com/en/doc.htm?docId=30186\u0026docType=2)"
+				},
+				{
+					"name": "developer_features",
+					"type": "String",
+					"description": "More information about the request."
 				},
 				{
 					"name": "aliexpress_category_id",
@@ -60,12 +58,9 @@
 				{
 					"name": "main_image_urls_list",
 					"type": "String[]",
-					"description": "Main image that represents the product. The url should be accesible and there is a meximum of 6 pictures. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186\u0026docType=2"
+					"description": "Main image that represents the product. The url should be accesible and there is a maximum of 6 pictures. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186\u0026docType=2"
 				},
 				{
-					"name": "attribute_list",
-					"type": "AttributeDto[]",
-					"description": "There are 4 types of how to fill in the content of each element in this attribute list. 1). When filling in the standard dropdown/multi-dropdown attributes, fill in \"aliexpress_attribute_name_id\" and \"aliexpress_attribute_value_id\"(For multi-dropdown, splitting them into multiple elements) 2). When filling in the attributes in which the value needs to be manually entered, fill in \"aliexpress_attribute_name_id\" and \"attribute_value\" in the element. 3). There exists a special kind of \"aliexpress_attribute_value_id\" of which the value represents for \"Other\". When encoutering this scenario, please fill in \"aliexpress_attribute_name_id\", \"aliexpress_attribute_value_id\" and \"attribute_value\". 4). Besides the three types mentioned above, if the seller would like to fully customized all the atttributes, fill in \"attribute name\" and \"attribute_value\" in the element.",
 					"subParams": [
 						{
 							"name": "attribute_name",
@@ -87,17 +82,14 @@
 							"type": "Number",
 							"description": "aliexpress attribute name id, which could be obtained from aliexpress.solution.sku.attribute.query"
 						}
-					]
+					],
+					"name": "attribute_list",
+					"type": "AttributeDto[]",
+					"description": "There are 4 types of how to fill in the content of each element in this attribute list. 1). When filling in the standard dropdown/multi-dropdown attributes, fill in \"aliexpress_attribute_name_id\" and \"aliexpress_attribute_value_id\"(For multi-dropdown, splitting them into multiple elements) 2). When filling in the attributes in which the value needs to be manually entered, fill in \"aliexpress_attribute_name_id\" and \"attribute_value\" in the element. 3). There exists a special kind of \"aliexpress_attribute_value_id\" of which the value represents for \"Other\". When encoutering this scenario, please fill in \"aliexpress_attribute_name_id\", \"aliexpress_attribute_value_id\" and \"attribute_value\". 4). Besides the three types mentioned above, if the seller would like to fully customized all the atttributes, fill in \"attribute name\" and \"attribute_value\" in the element."
 				},
 				{
-					"name": "sku_info_list",
-					"type": "SkuInfoDto[]",
-					"description": "If specified this field, all the previous skus will be replaced by the new skus.",
 					"subParams": [
 						{
-							"name": "sku_attributes_list",
-							"type": "SkuAttributeDto[]",
-							"description": "sku attribute list. Some categories don't have sku attributes, then sku_attributes_list should be empty.",
 							"subParams": [
 								{
 									"name": "sku_attribute_name",
@@ -107,7 +99,7 @@
 								{
 									"name": "sku_attribute_value",
 									"type": "String",
-									"description": "Customized sku attribute value by sellers, do not include these 4 symbols #:=,"
+									"description": "Customized sku attribute value by sellers, do not include these 4 symbols { # : = , }.maximum 70 characters."
 								},
 								{
 									"name": "sku_image",
@@ -124,12 +116,20 @@
 									"type": "Number",
 									"description": "Please refer to https://developers.aliexpress.com/en/doc.htm?docId=29988\u0026docType=2 to obtain the sku_attribute_name_id under specific category"
 								}
-							]
+							],
+							"name": "sku_attributes_list",
+							"type": "SkuAttributeDto[]",
+							"description": "sku attribute list. Some categories don't have sku attributes, then sku_attributes_list should be empty.When there are more than one sku in the sku_info_list, sku_attributes_list is required for each of them, please do not let them empty"
 						},
 						{
 							"name": "extra_params",
 							"type": "String",
 							"description": "extra params. Configured some special products"
+						},
+						{
+							"name": "ean_code",
+							"type": "String",
+							"description": "EAN or EAN13, stands for international product number (formerly European product number). It is an extension of UPC codes, and you will find them as barcodes on most everyday products. It will be empty if you don't fill it in"
 						},
 						{
 							"name": "inventory",
@@ -151,7 +151,10 @@
 							"type": "String",
 							"description": "discount price for the sku. discount_price should be cheaper than price."
 						}
-					]
+					],
+					"name": "sku_info_list",
+					"type": "SkuInfoDto[]",
+					"description": "If specified this field, all the previous skus will be replaced by the new skus."
 				},
 				{
 					"name": "weight",
@@ -166,32 +169,23 @@
 				{
 					"name": "package_height",
 					"type": "Number",
-					"description": "Package height measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm"
+					"description": "Package height measured in centimeters (cm). Maximum 700 cm, minumum: 1cm"
 				},
 				{
 					"name": "package_length",
 					"type": "Number",
-					"description": "Package length, measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm"
+					"description": "Package length, measured in centimeters (cm). Maximum 700 cm, minumum: 1cm"
 				},
 				{
 					"name": "package_width",
 					"type": "Number",
-					"description": "Package width measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm"
+					"description": "Package width measured in centimeters (cm). Maximum 700 cm, minumum: 1cm"
 				},
 				{
-					"name": "multi_country_price_configuration",
-					"type": "MultiCountryPriceConfigurationDto",
-					"description": "multi country price configuration",
 					"subParams": [
 						{
-							"name": "country_price_list",
-							"type": "SingleCountryPriceDto[]",
-							"description": "Price list for different countries",
 							"subParams": [
 								{
-									"name": "sku_price_by_country_list",
-									"type": "SingleSkuPriceByCountryDto[]",
-									"description": "Sku price list under the same ship_to_country",
 									"subParams": [
 										{
 											"name": "value",
@@ -206,28 +200,37 @@
 										{
 											"name": "discount_price",
 											"type": "String",
-											"description": "Value of discount_price for each country"
+											"description": "Value of discount_price for each country, should be less than the retailPrice and greater than or equal to 10% of it."
 										},
 										{
 											"name": "sku_code",
 											"type": "String",
-											"description": "sku_code, the same as the sku_code in sku_info_list"
+											"description": "sku_code, must existed in sku_info_list"
 										}
-									]
+									],
+									"name": "sku_price_by_country_list",
+									"type": "SingleSkuPriceByCountryDto[]",
+									"description": "Sku price list under the same ship_to_country"
 								},
 								{
 									"name": "ship_to_country",
 									"type": "String",
 									"description": "ISO code of the country. Currently supporting: RU, US, CA, ES, FR, UK, NL, IL, BR, CL, AU, UA, BY, JP, TH, SG, KR, ID, MY, PH, VN, IT, DE, SA, AE, PL, TR"
 								}
-							]
+							],
+							"name": "country_price_list",
+							"type": "SingleCountryPriceDto[]",
+							"description": "Price list for different countries"
 						},
 						{
 							"name": "price_type",
 							"type": "String",
 							"description": "Support absolute or delete. When filling in \"delete\", the multi_country_price_configuration will be eliminated."
 						}
-					]
+					],
+					"name": "multi_country_price_configuration",
+					"type": "MultiCountryPriceConfigurationDto",
+					"description": "multi country price configuration"
 				},
 				{
 					"name": "freight_template_id",
@@ -250,52 +253,52 @@
 					"description": "merchant's size chart id, more used in the category of shoes and clothes."
 				},
 				{
-					"name": "multi_language_subject_list",
-					"type": "SingleLanguageTitleDto[]",
-					"description": "List for multi language subject. To learn how to set this field, please refer to the document:https://developers.aliexpress.com/en/doc.htm?docId=108976\u0026docType=1",
 					"subParams": [
 						{
 							"name": "language",
 							"type": "String",
-							"description": "Support: en(English) ru(Russian) es(Spanish) fr(French) it(Italian) tr(Turkish) pt(Portuguese) de(German) nl(Dutch) in(Indonesian) ar(Arabic) ja(Japanese) ko(Korean) th(Thai) vi(Vietnamese) iw(Hebrew)"
+							"description": "Support: en(English) ru(Russian) es(Spanish) fr(French) it(Italian) tr(Turkish) pt(Portuguese) de(German) nl(Dutch) in(Indonesian) ar(Arabic) ja(Japanese) ko(Korean) th(Thai) vi(Vietnamese) iw(Hebrew).Must contains the original locale."
 						},
 						{
 							"name": "subject",
 							"type": "String",
-							"description": "subject, maximum 128 characters."
+							"description": "subject, maximum 218 characters."
 						}
-					]
+					],
+					"name": "multi_language_subject_list",
+					"type": "SingleLanguageTitleDto[]",
+					"description": "List for multi language subject. To learn how to set this field, please refer to the document:https://developers.aliexpress.com/en/doc.htm?docId=108976\u0026docType=1"
 				},
 				{
-					"name": "multi_language_description_list",
-					"type": "SingleLanguageDescriptionDto[]",
-					"description": "List for multi language description. To learn how to set this field, please refer to the document:https://developers.aliexpress.com/en/doc.htm?docId=108976\u0026docType=1",
 					"subParams": [
 						{
 							"name": "language",
 							"type": "String",
-							"description": "Support: en(English) ru(Russian) es(Spanish) fr(French) it(Italian) tr(Turkish) pt(Portuguese) de(German) nl(Dutch) in(Indonesian) ar(Arabic) ja(Japanese) ko(Korean) th(Thai) vi(Vietnamese) iw(Hebrew)"
+							"description": "Support: en(English) ru(Russian) es(Spanish) fr(French) it(Italian) tr(Turkish) pt(Portuguese) de(German) nl(Dutch) in(Indonesian) ar(Arabic) ja(Japanese) ko(Korean) th(Thai) vi(Vietnamese) iw(Hebrew).Must contains the original locale."
 						},
 						{
 							"name": "mobile_detail",
 							"type": "String",
-							"description": "mobile detail for  this language, please check the format here https://developers.aliexpress.com/en/doc.htm?docId=109534\u0026docType=1"
+							"description": "mobile detail for  this language, do not support \"html\" and \"dynamic\" type, for more information, please check the format here https://developers.aliexpress.com/en/doc.htm?docId=109534\u0026docType=1"
 						},
 						{
 							"name": "web_detail",
 							"type": "String",
 							"description": "web detail for this language, please check the format here: https://developers.aliexpress.com/en/doc.htm?docId=109534\u0026docType=1"
 						}
-					]
+					],
+					"name": "multi_language_description_list",
+					"type": "SingleLanguageDescriptionDto[]",
+					"description": "List for multi language description. To learn how to set this field, please refer to the document:https://developers.aliexpress.com/en/doc.htm?docId=108976\u0026docType=1"
 				}
-			]
+			],
+			"name": "edit_product_request",
+			"type": "PostProductRequestDto",
+			"description": "input param"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PostItemResponseDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "product_id",
@@ -303,7 +306,14 @@
 					"description": "productId",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PostItemResponseDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.product.edit",
+	"apiChineseName": "Edit Product API",
+	"description": "API for editing product, customized for Oversea merchants. Most of the input fields of this API is similar with aliexpress.solution.product.post. For editing, just fill in the fields you would like to edit, leave other fields to be blank.",
+	"id": 39695
 }

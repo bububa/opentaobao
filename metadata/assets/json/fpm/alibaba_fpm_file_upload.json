@@ -1,14 +1,6 @@
 {
-	"id": 33937,
-	"name": "alibaba.fpm.file.upload",
-	"apiChineseName": "结算单文件上传",
-	"description": "结算单文件上传",
 	"requestParams": [
 		{
-			"name": "biz_dto",
-			"type": "FileUploadRequestDto",
-			"description": "实体",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_code",
@@ -28,54 +20,56 @@
 					"description": "加密字符串",
 					"required": true
 				}
-			]
+			],
+			"name": "biz_dto",
+			"type": "FileUploadRequestDto",
+			"description": "实体",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错信信息",
-					"required": true
+					"description": "错信信息"
 				},
 				{
-					"name": "return_value",
-					"type": "FileUploadReponseDto",
-					"description": "returnValue",
-					"required": true,
 					"subParams": [
-						{
-							"name": "outer_system_encrypt_str",
-							"type": "String",
-							"description": "outerSystemEncryptStr",
-							"required": true
-						},
 						{
 							"name": "outer_system_sign_str",
 							"type": "String",
-							"description": "outerSystemSignStr",
-							"required": true
+							"description": "outerSystemSignStr"
+						},
+						{
+							"name": "outer_system_encrypt_str",
+							"type": "String",
+							"description": "outerSystemEncryptStr"
 						}
-					]
+					],
+					"name": "return_value",
+					"type": "FileUploadReponseDto",
+					"description": "returnValue"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fpm.file.upload",
+	"apiChineseName": "结算单文件上传",
+	"description": "结算单文件上传",
+	"id": 33937
 }

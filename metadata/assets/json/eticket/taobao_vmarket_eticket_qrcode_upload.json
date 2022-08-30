@@ -1,15 +1,11 @@
 {
-	"id": 22994,
-	"name": "taobao.vmarket.eticket.qrcode.upload",
-	"apiChineseName": "码商二维码图片上传",
-	"description": "电子凭证的码商可以通过这个接口，上传他们发送的二维码图片",
 	"requestParams": [
 		{
 			"name": "code_merchant_id",
 			"type": "Number",
 			"description": "码商ID",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "img_bytes",
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "图片文件名称"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.qrcode.upload",
+	"apiChineseName": "码商二维码图片上传",
+	"description": "电子凭证的码商可以通过这个接口，上传他们发送的二维码图片",
+	"id": 22994
 }

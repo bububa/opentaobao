@@ -18,8 +18,6 @@ type CainiaoGlobalSolutionInquiryAPIRequest struct {
 	_locale string
 	// 交易单参数
 	_tradeOrderParam *OpenTradeOrderParam
-	// 商家信息
-	_sellerInfoParam *OpenSellerInfoParam
 }
 
 // NewCainiaoGlobalSolutionInquiryRequest 初始化CainiaoGlobalSolutionInquiryAPIRequest对象
@@ -80,17 +78,4 @@ func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetTradeOrderParam(_tradeOrderP
 // GetTradeOrderParam TradeOrderParam Getter
 func (r CainiaoGlobalSolutionInquiryAPIRequest) GetTradeOrderParam() *OpenTradeOrderParam {
 	return r._tradeOrderParam
-}
-
-// SetSellerInfoParam is SellerInfoParam Setter
-// 商家信息
-func (r *CainiaoGlobalSolutionInquiryAPIRequest) SetSellerInfoParam(_sellerInfoParam *OpenSellerInfoParam) error {
-	r._sellerInfoParam = _sellerInfoParam
-	r.Set("seller_info_param", _sellerInfoParam)
-	return nil
-}
-
-// GetSellerInfoParam SellerInfoParam Getter
-func (r CainiaoGlobalSolutionInquiryAPIRequest) GetSellerInfoParam() *OpenSellerInfoParam {
-	return r._sellerInfoParam
 }

@@ -1,8 +1,4 @@
 {
-	"id": 37992,
-	"name": "tmall.msf.verify",
-	"apiChineseName": "喵师傅核销接口",
-	"description": "msf服务核销的top接口",
 	"requestParams": [
 		{
 			"name": "shop_id",
@@ -26,5 +22,9 @@
 			"type": "Json",
 			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.msf.verify",
+	"apiChineseName": "喵师傅核销接口",
+	"description": "msf服务核销的top接口",
+	"id": 37992
 }

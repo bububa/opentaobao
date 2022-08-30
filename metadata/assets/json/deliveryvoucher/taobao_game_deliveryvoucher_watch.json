@@ -1,14 +1,6 @@
 {
-	"id": 39949,
-	"name": "taobao.game.deliveryvoucher.watch",
-	"apiChineseName": "监控预约数据",
-	"description": "监控预约数据",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WatchAppointmentRequest",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "extend",
@@ -72,7 +64,11 @@
 					"type": "Number",
 					"description": "最终预约数量\ttype为2必填"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WatchAppointmentRequest",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -91,5 +87,9 @@
 			"type": "Boolean",
 			"description": "isSuccess"
 		}
-	]
+	],
+	"name": "taobao.game.deliveryvoucher.watch",
+	"apiChineseName": "监控预约数据",
+	"description": "监控预约数据",
+	"id": 39949
 }

@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_voluntary",
+					"type": "Number",
+					"description": "是否自愿",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "航班号",
+							"required": true
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户id",
+							"required": true
+						}
+					],
+					"name": "passenger_segment_info_list",
+					"type": "PassengerSegmentInfo[]",
+					"description": "乘客航段信息"
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "ticket_nos",
+					"type": "String[]",
+					"description": "退票票号列表"
+				}
+			],
+			"name": "param_btrip_flight_refund_pre_cal_rq",
+			"type": "BtripFlightRefundPreCalRq",
+			"description": "退票费预计算请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "flight_change",
+							"type": "Boolean",
+							"description": "是否航变"
+						},
+						{
+							"name": "pre_refund_money",
+							"type": "Number",
+							"description": "预计退票金额"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退票手续费"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightRefundPreCalRs",
+					"description": "退票费预计算响应"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.refund.precal",
+	"apiChineseName": "商旅机票分销-退票费预计算",
+	"description": "商旅机票分销-退票费预计算",
+	"id": 57682
+}

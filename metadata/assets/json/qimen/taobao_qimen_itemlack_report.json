@@ -1,12 +1,6 @@
 {
-	"id": 27275,
-	"name": "taobao.qimen.itemlack.report",
-	"apiChineseName": "发货单缺货通知接口",
-	"description": "WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "ItemLackReportRequest",
 			"subParams": [
 				{
 					"name": "warehouseCode",
@@ -38,9 +32,6 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "缺货商品列表",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -100,7 +91,10 @@
 							"type": "String",
 							"description": "备注"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "缺货商品列表"
 				},
 				{
 					"name": "extendProps",
@@ -112,13 +106,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "ItemLackReportRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -138,7 +132,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.itemlack.report",
+	"apiChineseName": "发货单缺货通知接口",
+	"description": "WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP",
+	"id": 27275
 }

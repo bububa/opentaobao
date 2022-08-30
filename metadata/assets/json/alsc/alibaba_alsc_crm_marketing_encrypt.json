@@ -1,8 +1,4 @@
 {
-	"id": 45509,
-	"name": "alibaba.alsc.crm.marketing.encrypt",
-	"apiChineseName": "加密",
-	"description": "加密",
 	"requestParams": [
 		{
 			"name": "param",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "String",
-					"description": "加密结果",
-					"required": true
+					"description": "加密结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "异常码",
-					"required": true
+					"description": "异常码"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "无",
-					"required": true
+					"description": "无"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.marketing.encrypt",
+	"apiChineseName": "加密",
+	"description": "加密",
+	"id": 45509
 }

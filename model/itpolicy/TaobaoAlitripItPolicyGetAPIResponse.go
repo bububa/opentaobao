@@ -22,10 +22,10 @@ type TaobaoAlitripItPolicyGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 扩展字段
 	ExtendAttributes string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
-	// 淘宝政策id
-	TaobaoId int64 `json:"taobao_id,omitempty" xml:"taobao_id,omitempty"`
 	// 政策状态，0-未发布，1-已发布，2-已过期
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 淘宝政策id
+	TaobaoId int64 `json:"taobao_id,omitempty" xml:"taobao_id,omitempty"`
 	// 政策信息
 	PolicyDo *TopPolicyDo `json:"policy_do,omitempty" xml:"policy_do,omitempty"`
 }

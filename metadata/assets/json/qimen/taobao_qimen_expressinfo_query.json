@@ -1,12 +1,6 @@
 {
-	"id": 27530,
-	"name": "taobao.qimen.expressinfo.query",
-	"apiChineseName": "配送公司信息查询接口",
-	"description": "配送公司信息查询",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -23,13 +17,13 @@
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -50,10 +44,6 @@
 					"required": true
 				},
 				{
-					"name": "expressInfos",
-					"type": "ExpressInfo[]",
-					"description": "奇门仓储字段",
-					"required": true,
 					"subParams": [
 						{
 							"name": "expressCode",
@@ -85,9 +75,19 @@
 							"description": "奇门仓储字段",
 							"required": true
 						}
-					]
+					],
+					"name": "expressInfos",
+					"type": "ExpressInfo[]",
+					"description": "奇门仓储字段",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.expressinfo.query",
+	"apiChineseName": "配送公司信息查询接口",
+	"description": "配送公司信息查询",
+	"id": 27530
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29912,
-	"name": "alibaba.alihealth.pregnancy.posts.data",
-	"apiChineseName": "发回帖子信息同步",
-	"description": "发回帖子信息同步",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -62,5 +58,9 @@
 			"type": "String",
 			"description": "msgCode"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.pregnancy.posts.data",
+	"apiChineseName": "发回帖子信息同步",
+	"description": "发回帖子信息同步",
+	"id": 29912
 }

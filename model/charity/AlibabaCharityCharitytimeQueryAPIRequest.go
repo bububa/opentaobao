@@ -16,14 +16,14 @@ type AlibabaCharityCharitytimeQueryAPIRequest struct {
 	_charityTypeList []string
 	// 扩展参数
 	_extParam string
+	// 活动ID
+	_activityId int64
 	// 结束时间戳-毫秒时间
 	_endDate int64
 	// 开始时间戳-毫秒时间
 	_startDate int64
 	// 淘宝Uid
 	_tbUid int64
-	// 活动ID
-	_activityId int64
 }
 
 // NewAlibabaCharityCharitytimeQueryRequest 初始化AlibabaCharityCharitytimeQueryAPIRequest对象
@@ -73,6 +73,19 @@ func (r AlibabaCharityCharitytimeQueryAPIRequest) GetExtParam() string {
 	return r._extParam
 }
 
+// SetActivityId is ActivityId Setter
+// 活动ID
+func (r *AlibabaCharityCharitytimeQueryAPIRequest) SetActivityId(_activityId int64) error {
+	r._activityId = _activityId
+	r.Set("activity_id", _activityId)
+	return nil
+}
+
+// GetActivityId ActivityId Getter
+func (r AlibabaCharityCharitytimeQueryAPIRequest) GetActivityId() int64 {
+	return r._activityId
+}
+
 // SetEndDate is EndDate Setter
 // 结束时间戳-毫秒时间
 func (r *AlibabaCharityCharitytimeQueryAPIRequest) SetEndDate(_endDate int64) error {
@@ -110,17 +123,4 @@ func (r *AlibabaCharityCharitytimeQueryAPIRequest) SetTbUid(_tbUid int64) error 
 // GetTbUid TbUid Getter
 func (r AlibabaCharityCharitytimeQueryAPIRequest) GetTbUid() int64 {
 	return r._tbUid
-}
-
-// SetActivityId is ActivityId Setter
-// 活动ID
-func (r *AlibabaCharityCharitytimeQueryAPIRequest) SetActivityId(_activityId int64) error {
-	r._activityId = _activityId
-	r.Set("activity_id", _activityId)
-	return nil
-}
-
-// GetActivityId ActivityId Getter
-func (r AlibabaCharityCharitytimeQueryAPIRequest) GetActivityId() int64 {
-	return r._activityId
 }

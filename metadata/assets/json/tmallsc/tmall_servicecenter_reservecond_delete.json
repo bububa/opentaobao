@@ -1,13 +1,6 @@
 {
-	"id": 44128,
-	"name": "tmall.servicecenter.reservecond.delete",
-	"apiChineseName": "删除主动预约开通条件",
-	"description": "删除主动预约开通条件",
 	"requestParams": [
 		{
-			"name": "reserve_open_condition_del_dto",
-			"type": "ReserveOpenConditionDelDto",
-			"description": "主动预约条件删除",
 			"subParams": [
 				{
 					"name": "city_id",
@@ -39,7 +32,10 @@
 					"type": "String",
 					"description": "区域集合ids"
 				}
-			]
+			],
+			"name": "reserve_open_condition_del_dto",
+			"type": "ReserveOpenConditionDelDto",
+			"description": "主动预约条件删除"
 		}
 	],
 	"responseParams": [
@@ -58,5 +54,9 @@
 			"type": "String",
 			"description": "返回信息"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.reservecond.delete",
+	"apiChineseName": "删除主动预约开通条件",
+	"description": "删除主动预约开通条件",
+	"id": 44128
 }

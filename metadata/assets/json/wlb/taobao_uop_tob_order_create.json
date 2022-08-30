@@ -1,29 +1,12 @@
 {
-	"id": 36089,
-	"name": "taobao.uop.tob.order.create",
-	"apiChineseName": "ToB仓储发货",
-	"description": "ToB仓储发货",
 	"requestParams": [
 		{
-			"name": "delivery_order",
-			"type": "DeliveryOrder",
-			"description": "ERP出库对象",
 			"subParams": [
-				{
-					"name": "create_time",
-					"type": "Date",
-					"description": "发货单创建时间"
-				},
 				{
 					"name": "delivery_order_code",
 					"type": "String",
 					"description": "ERP出库单号,ERP系统内本次出库的唯一标示",
 					"required": true
-				},
-				{
-					"name": "logistics_code",
-					"type": "String",
-					"description": "物流公司编码"
 				},
 				{
 					"name": "rel_in_bound_order_code",
@@ -48,6 +31,64 @@
 					"required": true
 				},
 				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "发货单创建时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "收货人移动电话",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收货人姓名",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货人详细地址",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货人镇"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货人区",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货人市",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货人省",
+							"required": true
+						}
+					],
+					"name": "receiver_info",
+					"type": "ReceiverInfo",
+					"description": "收货人信息"
+				},
+				{
+					"name": "logistics_code",
+					"type": "String",
+					"description": "物流公司编码"
+				},
+				{
 					"name": "logistics_name",
 					"type": "String",
 					"description": "物流公司名称"
@@ -58,9 +99,6 @@
 					"description": "最晚到货时间"
 				},
 				{
-					"name": "order_line",
-					"type": "OrderLine[]",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "inventory_type",
@@ -124,60 +162,15 @@
 							"description": "订单行号",
 							"required": true
 						}
-					]
+					],
+					"name": "order_line",
+					"type": "OrderLine[]",
+					"description": "订单信息"
 				},
 				{
 					"name": "extend_props",
 					"type": "String",
 					"description": "扩展信息"
-				},
-				{
-					"name": "receiver_info",
-					"type": "ReceiverInfo",
-					"description": "收货人信息",
-					"subParams": [
-						{
-							"name": "mobile",
-							"type": "String",
-							"description": "收货人移动电话",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "收货人姓名",
-							"required": true
-						},
-						{
-							"name": "detail_address",
-							"type": "String",
-							"description": "收货人详细地址",
-							"required": true
-						},
-						{
-							"name": "town",
-							"type": "String",
-							"description": "收货人镇"
-						},
-						{
-							"name": "area",
-							"type": "String",
-							"description": "收货人区",
-							"required": true
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "收货人市",
-							"required": true
-						},
-						{
-							"name": "province",
-							"type": "String",
-							"description": "收货人省",
-							"required": true
-						}
-					]
 				},
 				{
 					"name": "sign_time",
@@ -194,7 +187,10 @@
 					"type": "String",
 					"description": "配送方式，1=整车直送、2=拼车直送、3=零担、4=快递、5=自提"
 				}
-			]
+			],
+			"name": "delivery_order",
+			"type": "DeliveryOrder",
+			"description": "ERP出库对象"
 		}
 	],
 	"responseParams": [
@@ -209,61 +205,57 @@
 			"description": "message"
 		},
 		{
-			"name": "delivery_orders",
-			"type": "Deliveryorder []",
-			"description": "订单",
 			"subParams": [
 				{
 					"name": "cn_order_code",
 					"type": "String",
-					"description": "物流单号",
-					"required": true
+					"description": "物流单号"
 				},
 				{
 					"name": "warehouse_code",
 					"type": "String",
-					"description": "仓库编码",
-					"required": true
+					"description": "仓库编码"
 				},
 				{
 					"name": "create_time",
 					"type": "String",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
-					"name": "order_lines",
-					"type": "Orderline[]",
-					"description": "订单行",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_line_no",
 							"type": "String",
-							"description": "订单行号",
-							"required": true
+							"description": "订单行号"
 						},
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "商品ID",
-							"required": true
+							"description": "商品ID"
 						},
 						{
 							"name": "item_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						}
-					]
+					],
+					"name": "order_lines",
+					"type": "Orderline[]",
+					"description": "订单行"
 				}
-			]
+			],
+			"name": "delivery_orders",
+			"type": "Deliveryorder []",
+			"description": "订单"
 		}
-	]
+	],
+	"name": "taobao.uop.tob.order.create",
+	"apiChineseName": "ToB仓储发货",
+	"description": "ToB仓储发货",
+	"id": 36089
 }

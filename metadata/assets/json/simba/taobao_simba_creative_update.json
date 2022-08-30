@@ -1,9 +1,10 @@
 {
-	"id": 10532,
-	"name": "taobao.simba.creative.update",
-	"apiChineseName": "修改创意与",
-	"description": "更新一个创意的信息，可以设置创意标题、创意图片",
 	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
 		{
 			"name": "adgroup_id",
 			"type": "Number",
@@ -19,9 +20,9 @@
 		{
 			"name": "title",
 			"type": "String",
-			"description": "创意标题，最多20个汉字",
-			"required": true,
-			"maxLength": 40
+			"description": "创意标题，最多30个汉字",
+			"maxLength": 60,
+			"required": true
 		},
 		{
 			"name": "img_url",
@@ -30,21 +31,18 @@
 			"required": true
 		},
 		{
-			"name": "nick",
-			"type": "String",
-			"description": "主人昵称"
-		},
-		{
 			"name": "picture_id",
 			"type": "Number",
 			"description": "如果用户开通了创意本地上传图片功能的，可以使用该用户图片空间的图片来修改创意，pictureId为图片空间中图片的pictureId，img_url为图片空间中图片链接地址，如果是使用的主图或副图修改创意，则pictureId必须为空"
+		},
+		{
+			"name": "ad_examination_code",
+			"type": "String",
+			"description": "广审批准文号"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "creativerecord",
-			"type": "CreativeRecord",
-			"description": "创意修改记录对象",
 			"subParams": [
 				{
 					"name": "nick",
@@ -59,7 +57,7 @@
 				{
 					"name": "title",
 					"type": "String",
-					"description": "创意标题，最多20个汉字"
+					"description": "创意标题，最多30个汉字"
 				},
 				{
 					"name": "old_title",
@@ -101,7 +99,14 @@
 					"type": "Date",
 					"description": "系统记录最后修改时间"
 				}
-			]
+			],
+			"name": "creativerecord",
+			"type": "CreativeRecord",
+			"description": "创意修改记录对象"
 		}
-	]
+	],
+	"name": "taobao.simba.creative.update",
+	"apiChineseName": "修改创意",
+	"description": "更新一个创意的信息，可以设置创意标题、创意图片",
+	"id": 10532
 }

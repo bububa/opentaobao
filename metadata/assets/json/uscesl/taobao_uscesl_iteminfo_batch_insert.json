@@ -1,15 +1,6 @@
 {
-	"id": 39054,
-	"name": "taobao.uscesl.iteminfo.batch.insert",
-	"apiChineseName": "按商家批量写入商品接口",
-	"description": "【电子价签】支持按照商家-门店维度批量写入商品数据",
 	"requestParams": [
 		{
-			"name": "item_list",
-			"type": "ItemChangeBo[]",
-			"description": "商品信息集合，限制500",
-			"required": true,
-			"maxListSize": 500,
 			"subParams": [
 				{
 					"name": "source_code",
@@ -119,6 +110,7 @@
 				},
 				{
 					"name": "extra_attribute",
+					"type": "String",
 					"description": "额外扩展信息"
 				},
 				{
@@ -208,7 +200,12 @@
 					"type": "String",
 					"description": "产地"
 				}
-			]
+			],
+			"name": "item_list",
+			"type": "ItemChangeBo[]",
+			"description": "商品信息集合，限制500",
+			"maxListSize": 500,
+			"required": true
 		},
 		{
 			"name": "store_id",
@@ -229,5 +226,9 @@
 			"type": "Json",
 			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.uscesl.iteminfo.batch.insert",
+	"apiChineseName": "按商家批量写入商品接口",
+	"description": "【电子价签】支持按照商家-门店维度批量写入商品数据",
+	"id": 39054
 }

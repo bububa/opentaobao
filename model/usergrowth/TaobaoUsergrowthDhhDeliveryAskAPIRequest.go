@@ -28,10 +28,10 @@ type TaobaoUsergrowthDhhDeliveryAskAPIRequest struct {
 	_imei string
 	// 用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other
 	_os string
-	// 渠道标识，在大航海平台申请
-	_channel string
 	// 大航海广告位，在大航海平台申请
 	_advertisingSpaceId string
+	// 渠道标识，在大航海平台申请
+	_channel string
 }
 
 // NewTaobaoUsergrowthDhhDeliveryAskRequest 初始化TaobaoUsergrowthDhhDeliveryAskAPIRequest对象
@@ -159,19 +159,6 @@ func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetOs() string {
 	return r._os
 }
 
-// SetChannel is Channel Setter
-// 渠道标识，在大航海平台申请
-func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetChannel(_channel string) error {
-	r._channel = _channel
-	r.Set("channel", _channel)
-	return nil
-}
-
-// GetChannel Channel Getter
-func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetChannel() string {
-	return r._channel
-}
-
 // SetAdvertisingSpaceId is AdvertisingSpaceId Setter
 // 大航海广告位，在大航海平台申请
 func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetAdvertisingSpaceId(_advertisingSpaceId string) error {
@@ -183,4 +170,17 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetAdvertisingSpaceId(_advert
 // GetAdvertisingSpaceId AdvertisingSpaceId Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetAdvertisingSpaceId() string {
 	return r._advertisingSpaceId
+}
+
+// SetChannel is Channel Setter
+// 渠道标识，在大航海平台申请
+func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetChannel(_channel string) error {
+	r._channel = _channel
+	r.Set("channel", _channel)
+	return nil
+}
+
+// GetChannel Channel Getter
+func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetChannel() string {
+	return r._channel
 }

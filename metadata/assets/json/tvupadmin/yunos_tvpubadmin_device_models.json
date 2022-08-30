@@ -1,13 +1,9 @@
 {
-	"id": 28580,
-	"name": "yunos.tvpubadmin.device.models",
-	"apiChineseName": "获取品牌下设备列表",
-	"description": "获取品牌下设备列表",
 	"requestParams": [
 		{
-			"name": "terminal_type",
-			"type": "String",
-			"description": "终端类型",
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
 			"required": true
 		},
 		{
@@ -17,9 +13,9 @@
 			"required": true
 		},
 		{
-			"name": "license",
-			"type": "Number",
-			"description": "牌照方",
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型",
 			"required": true
 		}
 	],
@@ -29,5 +25,9 @@
 			"type": "String []",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.models",
+	"apiChineseName": "获取品牌下设备列表",
+	"description": "获取品牌下设备列表",
+	"id": 28580
 }

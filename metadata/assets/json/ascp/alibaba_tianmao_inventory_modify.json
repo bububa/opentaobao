@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "货品ID（优先读货品ID，货品ID为空才读货品编码）"
+				},
+				{
+					"name": "number",
+					"type": "Number",
+					"description": "操作数量（正数为增加库存，负数为减少库存）",
+					"required": true
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "货品编码（优先读货品ID，货品ID为空才读货品编码）"
+				},
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "货主ID",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码",
+					"required": true
+				}
+			],
+			"name": "hi_erp_modify_inventory_req",
+			"type": "HiErpModifyInventoryReq",
+			"description": "修改库存模型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "货品ID"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码"
+						},
+						{
+							"name": "current_number",
+							"type": "Number",
+							"description": "当前库存数量"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货品编码"
+						}
+					],
+					"name": "result",
+					"type": "HiErpModifyInventoryResp",
+					"description": "库存操作返回模型"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "通常用于success为true时的页面提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "false：失败    true：成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码，通常用于success字段值为false时"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因，通常用于success字段值为false时"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.tianmao.inventory.modify",
+	"apiChineseName": "阿里巴巴.天猫.aic库存.修改",
+	"description": "阿里巴巴.天猫.aic库存.修改",
+	"id": 61787
+}

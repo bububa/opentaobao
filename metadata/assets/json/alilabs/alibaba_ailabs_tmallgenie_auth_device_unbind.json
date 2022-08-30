@@ -1,8 +1,4 @@
 {
-	"id": 44767,
-	"name": "alibaba.ailabs.tmallgenie.auth.device.unbind",
-	"apiChineseName": "解绑设备",
-	"description": "通过此接口解绑天猫精灵设备",
 	"requestParams": [
 		{
 			"name": "client_id",
@@ -25,35 +21,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回包装类",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
-				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.unbind",
+	"apiChineseName": "解绑设备",
+	"description": "通过此接口解绑天猫精灵设备",
+	"id": 44767
 }

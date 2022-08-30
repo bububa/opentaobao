@@ -1,14 +1,6 @@
 {
-	"id": 44234,
-	"name": "alitrip.travel.crsdriver.arrange",
-	"apiChineseName": "CRS接送机商家派司机接口",
-	"description": "提供给CRS接送机商家派司机的API",
 	"requestParams": [
 		{
-			"name": "crs_driver_arrange_param",
-			"type": "CrsDriverArrangeParam",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "city_name",
@@ -70,7 +62,11 @@
 					"type": "String",
 					"description": "车辆品牌"
 				}
-			]
+			],
+			"name": "crs_driver_arrange_param",
+			"type": "CrsDriverArrangeParam",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -84,5 +80,9 @@
 			"type": "Number",
 			"description": "返回结果code"
 		}
-	]
+	],
+	"name": "alitrip.travel.crsdriver.arrange",
+	"apiChineseName": "CRS接送机商家派司机接口",
+	"description": "提供给CRS接送机商家派司机的API",
+	"id": 44234
 }

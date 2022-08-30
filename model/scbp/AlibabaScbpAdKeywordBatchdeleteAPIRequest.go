@@ -13,7 +13,7 @@ import (
 type AlibabaScbpAdKeywordBatchdeleteAPIRequest struct {
 	model.Params
 	// 关键词Id列表
-	_keywordIdList []int64
+	_keywordIdList []string
 }
 
 // NewAlibabaScbpAdKeywordBatchdeleteRequest 初始化AlibabaScbpAdKeywordBatchdeleteAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetApiParams() url.Values {
 
 // SetKeywordIdList is KeywordIdList Setter
 // 关键词Id列表
-func (r *AlibabaScbpAdKeywordBatchdeleteAPIRequest) SetKeywordIdList(_keywordIdList []int64) error {
+func (r *AlibabaScbpAdKeywordBatchdeleteAPIRequest) SetKeywordIdList(_keywordIdList []string) error {
 	r._keywordIdList = _keywordIdList
 	r.Set("keyword_id_list", _keywordIdList)
 	return nil
 }
 
 // GetKeywordIdList KeywordIdList Getter
-func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetKeywordIdList() []int64 {
+func (r AlibabaScbpAdKeywordBatchdeleteAPIRequest) GetKeywordIdList() []string {
 	return r._keywordIdList
 }

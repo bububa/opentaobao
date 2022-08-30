@@ -1,0 +1,206 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "airline_codes",
+					"type": "String[]",
+					"description": "航空公司"
+				},
+				{
+					"name": "trip_type",
+					"type": "Number",
+					"description": "行程类型：0，单程；1，往返；暂时仅支持单程",
+					"required": true
+				},
+				{
+					"name": "flight_no_str",
+					"type": "String",
+					"description": "航司+航班号，多个航班号用#分隔，航班号范围用-连接，例如：HU9990-HU9995#HU9999"
+				},
+				{
+					"name": "support_code_share",
+					"type": "Number",
+					"description": "共享航班：0，不支持代码共享；1，支持代码共享；2，仅支持代码共享；为空表示不限制"
+				},
+				{
+					"name": "product_types",
+					"type": "String[]",
+					"description": "产品类型：0，普通；1，小团；2，学生；3，青年；4，老年；5，地区；6，会员；10，学生认证；11，年龄；为空表示不限制"
+				},
+				{
+					"name": "cabin_code_str",
+					"type": "String",
+					"description": "舱位代码，仅可传入一个值"
+				},
+				{
+					"subParams": [
+						{
+							"name": "index",
+							"type": "Number",
+							"description": "0，去程；1，返程；暂时仅支持单程，默认为0"
+						},
+						{
+							"name": "dep_airport",
+							"type": "String",
+							"description": "起飞机场",
+							"required": true
+						},
+						{
+							"name": "arr_airport",
+							"type": "String",
+							"description": "降落机场",
+							"required": true
+						},
+						{
+							"name": "dep_start_date",
+							"type": "Date",
+							"description": "起飞开始时间",
+							"required": true
+						},
+						{
+							"name": "dep_end_date",
+							"type": "Date",
+							"description": "起飞结束时间",
+							"required": true
+						}
+					],
+					"name": "od_infos",
+					"type": "OdInfoQueryDTO[]",
+					"description": "航程信息"
+				},
+				{
+					"name": "policy_deploy_status",
+					"type": "Number",
+					"description": "政策投放情况：0，未投放；1，已投放，非最优惠；2，已投放，且为最优惠政策；为空表示不限制"
+				},
+				{
+					"name": "sale_mode_codes",
+					"type": "String[]",
+					"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装；为空表示不限制"
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "店铺id"
+				}
+			],
+			"name": "compare_dom_fare_request_d_t_o",
+			"type": "CompareDomFareRequestDTO",
+			"description": "查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "调用错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码详情"
+				},
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "返回信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "policy_id_str",
+									"type": "String",
+									"description": "政策id"
+								},
+								{
+									"name": "policy_type",
+									"type": "Number",
+									"description": "政策类型：0，普通政策；1，特殊政策；2，规则政策"
+								},
+								{
+									"name": "self_sale_price",
+									"type": "Number",
+									"description": "自己投放价格，单位：分"
+								},
+								{
+									"name": "lowest_sale_price",
+									"type": "Number",
+									"description": "最优价格，单位：分"
+								},
+								{
+									"name": "price_diff",
+									"type": "Number",
+									"description": "价差，单位：分"
+								},
+								{
+									"name": "sale_mode_code",
+									"type": "Number",
+									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装"
+								},
+								{
+									"name": "product_type",
+									"type": "Number",
+									"description": "产品类型：0，普通；1，小团；2，学生；3，青年；4，老年；5，地区；6，会员；10，学生认证；11，年龄"
+								},
+								{
+									"name": "can_sell",
+									"type": "Boolean",
+									"description": "是否销售"
+								},
+								{
+									"name": "policy_deploy_status",
+									"type": "Number",
+									"description": "政策投放情况：0，未投放；1，已投放，非最优惠；2，已投放，且为最优惠政策"
+								},
+								{
+									"name": "travel_date_str",
+									"type": "Date[]",
+									"description": "航班日期"
+								},
+								{
+									"name": "arr_dep",
+									"type": "String",
+									"description": "出发-到达"
+								},
+								{
+									"name": "flight_nos",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "carbin_list",
+									"type": "String",
+									"description": "舱位代码"
+								}
+							],
+							"name": "price_comparison_list",
+							"type": "PriceComparisonDTO[]",
+							"description": "返回政策信息"
+						}
+					],
+					"name": "data",
+					"type": "CompareDomFareReponseDTO",
+					"description": "比价结果列表"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回信息"
+		}
+	],
+	"name": "alitrip.policy.domfare.compare",
+	"apiChineseName": "比价工具",
+	"description": "比价工具",
+	"id": 61457
+}

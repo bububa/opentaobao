@@ -1,8 +1,4 @@
 {
-	"id": 25442,
-	"name": "taobao.tanx.nativetemplates.get",
-	"apiChineseName": "批量获取本地模板信息",
-	"description": "根据传入的本地模板ID批量返回本地模板",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -26,8 +22,8 @@
 			"name": "template_ids",
 			"type": "Number[]",
 			"description": "本地模板ID列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -37,9 +33,6 @@
 			"description": "是否成功"
 		},
 		{
-			"name": "native_template_list",
-			"type": "NativeTemplateDto []",
-			"description": "本地模板列表",
 			"subParams": [
 				{
 					"name": "preview",
@@ -57,9 +50,6 @@
 					"description": "模板ID"
 				},
 				{
-					"name": "areas",
-					"type": "NativeTemplateAreaDto[]",
-					"description": "区域列表",
 					"subParams": [
 						{
 							"name": "id",
@@ -72,9 +62,6 @@
 							"description": "创意个数"
 						},
 						{
-							"name": "creative",
-							"type": "NativeTemplateCreativeDto",
-							"description": "创意要求",
 							"subParams": [
 								{
 									"name": "mutlichoice_fields",
@@ -111,16 +98,29 @@
 									"type": "Number[]",
 									"description": "已经废弃，事件属性集合 1:下载 2:地图 3:电话"
 								}
-							]
+							],
+							"name": "creative",
+							"type": "NativeTemplateCreativeDto",
+							"description": "创意要求"
 						}
-					]
+					],
+					"name": "areas",
+					"type": "NativeTemplateAreaDto[]",
+					"description": "区域列表"
 				},
 				{
 					"name": "size",
 					"type": "String",
 					"description": "模板支持的广告位尺寸"
 				}
-			]
+			],
+			"name": "native_template_list",
+			"type": "NativeTemplateDto []",
+			"description": "本地模板列表"
 		}
-	]
+	],
+	"name": "taobao.tanx.nativetemplates.get",
+	"apiChineseName": "批量获取本地模板信息",
+	"description": "根据传入的本地模板ID批量返回本地模板",
+	"id": 25442
 }

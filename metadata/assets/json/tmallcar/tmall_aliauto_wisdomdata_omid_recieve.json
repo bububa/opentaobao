@@ -1,0 +1,25 @@
+{
+	"requestParams": [
+		{
+			"name": "model_config",
+			"type": "String",
+			"description": "大搜车车型参配报文"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "记录总数"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "接口调用状态信息"
+		}
+	],
+	"name": "tmall.aliauto.wisdomdata.omid.recieve",
+	"apiChineseName": "大搜车车型参配数据接入",
+	"description": "大搜车车型参配数据接入",
+	"id": 62316
+}

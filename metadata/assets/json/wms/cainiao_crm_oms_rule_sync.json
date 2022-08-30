@@ -1,8 +1,4 @@
 {
-	"id": 29647,
-	"name": "cainiao.crm.oms.rule.sync",
-	"apiChineseName": "商家ERP订单处理规则同步",
-	"description": "将商家ERP订单处理规则同步到菜鸟CRM系统",
 	"requestParams": [
 		{
 			"name": "shop_code",
@@ -59,5 +55,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "cainiao.crm.oms.rule.sync",
+	"apiChineseName": "商家ERP订单处理规则同步",
+	"description": "将商家ERP订单处理规则同步到菜鸟CRM系统",
+	"id": 29647
 }

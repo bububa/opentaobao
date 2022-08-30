@@ -1,0 +1,294 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部改签单号",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_order_operate_common_rq",
+			"type": "BtripFlightOrderOperateCommonRq",
+			"description": "获取改签单详情入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "交易流水号"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市"
+								},
+								{
+									"name": "dep_airport_code",
+									"type": "String",
+									"description": "起飞机场三字码"
+								},
+								{
+									"name": "arr_airport_code",
+									"type": "String",
+									"description": "到达机场三字码"
+								},
+								{
+									"name": "dep_time",
+									"type": "String",
+									"description": "出发时间"
+								},
+								{
+									"name": "arr_time",
+									"type": "String",
+									"description": "到达时间"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "airline_code",
+									"type": "String",
+									"description": "航司二字码"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位代码"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "舱等"
+								},
+								{
+									"name": "arr_city_code",
+									"type": "String",
+									"description": "到达城市三字码"
+								},
+								{
+									"name": "dep_city_code",
+									"type": "String",
+									"description": "出发城市三字码"
+								},
+								{
+									"name": "last_flight_no",
+									"type": "String",
+									"description": "改签前航班"
+								},
+								{
+									"name": "last_cabin",
+									"type": "String",
+									"description": "改签前舱位"
+								},
+								{
+									"name": "tuigaiqian_info",
+									"type": "String",
+									"description": "改签后的退改签文案"
+								},
+								{
+									"name": "dep_terminal",
+									"type": "String",
+									"description": "出发航站楼"
+								},
+								{
+									"name": "arr_terminal",
+									"type": "String",
+									"description": "达到航站楼"
+								},
+								{
+									"name": "arr_airport_code_name",
+									"type": "String",
+									"description": "到达机场名称"
+								},
+								{
+									"name": "dep_airport_code_name",
+									"type": "String",
+									"description": "出发机场名称"
+								},
+								{
+									"name": "carrier",
+									"type": "String",
+									"description": "承运航班"
+								},
+								{
+									"name": "airline_simple_name",
+									"type": "String",
+									"description": "航司简称"
+								},
+								{
+									"name": "airline_name",
+									"type": "String",
+									"description": "航司名称"
+								},
+								{
+									"name": "meal",
+									"type": "String",
+									"description": "餐食"
+								}
+							],
+							"name": "flight_info_list",
+							"type": "OrderFlightInfo[]",
+							"description": "航班信息"
+						},
+						{
+							"name": "last_pay_time",
+							"type": "String",
+							"description": "最迟支付时间"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "支付状态"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间"
+						},
+						{
+							"name": "settle_price",
+							"type": "Number",
+							"description": "结算费用"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "total_change_price",
+							"type": "Number",
+							"description": "总改签费用"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "总费用"
+						},
+						{
+							"name": "total_upgrade_price",
+							"type": "Number",
+							"description": "总升舱费用"
+						},
+						{
+							"subParams": [
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客名称"
+								},
+								{
+									"name": "passenger_type",
+									"type": "String",
+									"description": "乘客类型"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户编号"
+								},
+								{
+									"name": "open_ticket_status",
+									"type": "Number",
+									"description": "openTicket状态"
+								}
+							],
+							"name": "traveler_info_list",
+							"type": "OrderTravelerInfo[]",
+							"description": "乘机人信息"
+						},
+						{
+							"name": "dis_sub_order_id",
+							"type": "String",
+							"description": "分销外部改签单号"
+						},
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "分销外部订单号"
+						},
+						{
+							"name": "btrip_sub_order_id",
+							"type": "Number",
+							"description": "商旅改签单号"
+						},
+						{
+							"name": "btrip_order_id",
+							"type": "Number",
+							"description": "商旅订单号"
+						},
+						{
+							"name": "settle_type",
+							"type": "Number",
+							"description": "结算类型"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightModifyDetailInfoRs",
+					"description": "改签信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.change.newdetail",
+	"apiChineseName": "商旅机票改签详情接口",
+	"description": "商旅机票改签详情接口",
+	"id": 63081
+}

@@ -1,0 +1,164 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家编码(选填)"
+						},
+						{
+							"name": "login_id",
+							"type": "String",
+							"description": "登陆账号(必填)",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "商家id(选填)"
+						},
+						{
+							"name": "top_user_key",
+							"type": "String",
+							"description": "对应创建物流单的时候传入的top_user_key;跨店铺场景需要传入"
+						},
+						{
+							"name": "biz_source",
+							"type": "String",
+							"description": "业务类型(选填)"
+						},
+						{
+							"name": "app_user_key",
+							"type": "String",
+							"description": "用户Key(选填)"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户id(选填)"
+						}
+					],
+					"name": "user_info",
+					"type": "UserInfoDTO",
+					"description": "用户信息"
+				},
+				{
+					"name": "handover_content_code",
+					"type": "String",
+					"description": "大包号;LP开头的单号(必填)",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "小包对应的店铺id;填入相关信息性能更好"
+						},
+						{
+							"name": "login_id",
+							"type": "String",
+							"description": "小包对应的店铺账号;比如cnxxxx;填入补充相关信息性能更好"
+						},
+						{
+							"name": "lp_code",
+							"type": "String",
+							"description": "小包的LP号,必填;"
+						}
+					],
+					"name": "parcel_order_list",
+					"type": "HandoverContentUpdateParcelDTO[]",
+					"description": "新增和修改大包小包号;新增和修改的时候必填"
+				},
+				{
+					"name": "biz_source",
+					"type": "String",
+					"description": "业务类型(选填)"
+				},
+				{
+					"name": "complete_update",
+					"type": "Boolean",
+					"description": "完成更新(必填)例如传入true则代表大包已经完成修改,不能再做修改的操作",
+					"required": true
+				},
+				{
+					"name": "client",
+					"type": "String",
+					"description": "客户端标示(选填)"
+				},
+				{
+					"name": "locale",
+					"type": "String",
+					"description": "语言(选填)"
+				},
+				{
+					"name": "update_type",
+					"type": "String",
+					"description": "更新类型:add、remove、commit;add新增parcel_order_list中小包,remove删除parcel_order_list中小包;commit,忽略parcel_order_list小包,将大包设置为完成组包状态,将大包信息下发给司机上门揽收",
+					"required": true
+				}
+			],
+			"name": "open_handover_content_update_commit_request",
+			"type": "OpenHandoverContentUpdateCommitRequest",
+			"description": "修改参数对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "lp_code",
+							"type": "String",
+							"description": "小包LP号"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误文案"
+						}
+					],
+					"name": "update_error_parcel_order_list",
+					"type": "HandoverContentUpdateErrorParcelDTO[]",
+					"description": "报错小包列表"
+				}
+			],
+			"name": "data",
+			"type": "OpenHandoverContentUpdateResponse",
+			"description": "返回对象"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功同result字段"
+		},
+		{
+			"name": "internal_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "cainiao.global.commithandovercontent.update",
+	"apiChineseName": "修改已经提交的交接单",
+	"description": "修改已经提交的交接单",
+	"id": 62511
+}

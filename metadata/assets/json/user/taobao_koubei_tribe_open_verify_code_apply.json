@@ -1,8 +1,4 @@
 {
-	"id": 45448,
-	"name": "taobao.koubei.tribe.open.verify.code.apply",
-	"apiChineseName": "口碑综合体手机号获取验证码",
-	"description": "口碑综合体通过手机号获取验证码对外开放接口",
 	"requestParams": [
 		{
 			"name": "data_set_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
@@ -30,16 +23,8 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "UserInfoDto",
-					"description": "用户信息DTO",
-					"required": true,
 					"subParams": [
 						{
-							"name": "user_result_code",
-							"type": "UserResultCode",
-							"description": "用户结果code集",
-							"required": true,
 							"subParams": [
 								{
 									"name": "result_code",
@@ -59,9 +44,17 @@
 									"description": "结果描述msg",
 									"required": true
 								}
-							]
+							],
+							"name": "user_result_code",
+							"type": "UserResultCode",
+							"description": "用户结果code集",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "UserInfoDto",
+					"description": "用户信息DTO",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -75,7 +68,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.koubei.tribe.open.verify.code.apply",
+	"apiChineseName": "口碑综合体手机号获取验证码",
+	"description": "口碑综合体通过手机号获取验证码对外开放接口",
+	"id": 45448
 }

@@ -1,0 +1,557 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "酒景套餐ID"
+						},
+						{
+							"name": "package_name",
+							"type": "String",
+							"description": "套餐名称"
+						},
+						{
+							"name": "package_desc",
+							"type": "String",
+							"description": "套餐描述"
+						},
+						{
+							"subParams": [
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格，单位为分"
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "日期 格式yyyy-MM-dd"
+								}
+							],
+							"name": "prices",
+							"type": "ProductPriceDTO[]",
+							"description": "产品价格"
+						},
+						{
+							"subParams": [
+								{
+									"name": "inv_count",
+									"type": "Number",
+									"description": "库存数量"
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "日期 格式yyyy-MM-dd"
+								}
+							],
+							"name": "inventories",
+							"type": "ProductInventoryDTO[]",
+							"description": "产品库存"
+						},
+						{
+							"subParams": [
+								{
+									"name": "refund_type",
+									"type": "Number",
+									"description": "退款类型"
+								},
+								{
+									"subParams": [
+										{
+											"name": "condition_refund_type",
+											"type": "Number",
+											"description": "条件退类型"
+										},
+										{
+											"name": "days",
+											"type": "Number",
+											"description": "允许退款的最后时间点天数"
+										},
+										{
+											"name": "hours",
+											"type": "Number",
+											"description": "允许退款的最后的时间点小时"
+										},
+										{
+											"name": "minutes",
+											"type": "Number",
+											"description": "允许退款的最后的时间点分钟"
+										},
+										{
+											"name": "charge_amount",
+											"type": "Number",
+											"description": "退款手续费金额，单位分"
+										},
+										{
+											"name": "percent",
+											"type": "Number",
+											"description": "退款手续费比例"
+										}
+									],
+									"name": "condition_refund_policies",
+									"type": "ConditionRefundPolicyDTO[]",
+									"description": "条件退改规则"
+								}
+							],
+							"name": "refund_policy",
+							"type": "PackageRefundPolicyDTO",
+							"description": "退改规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "is_specify_time",
+									"type": "Boolean",
+									"description": "是否需要选择指定日期"
+								},
+								{
+									"name": "advance_booking_days",
+									"type": "Number",
+									"description": "提前预定天数"
+								},
+								{
+									"name": "advance_booking_time",
+									"type": "String",
+									"description": "提前预订时间"
+								},
+								{
+									"name": "valid_hour_limit",
+									"type": "Number",
+									"description": "出票后多少小时可用"
+								},
+								{
+									"name": "valid_minute_limit",
+									"type": "Number",
+									"description": "出票后多少分钟可用"
+								}
+							],
+							"name": "booking_policy",
+							"type": "BookingPolicyDTO",
+							"description": "预定规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "is_limit",
+									"type": "Boolean",
+									"description": "是否限购"
+								},
+								{
+									"name": "limit_type",
+									"type": "Number",
+									"description": "限购类型"
+								},
+								{
+									"name": "limit_mode",
+									"type": "Number",
+									"description": "限购模式类型"
+								},
+								{
+									"name": "limit_amount_type",
+									"type": "Number",
+									"description": "限购数量类型"
+								},
+								{
+									"name": "limit_range_type",
+									"type": "Number",
+									"description": "限购周期"
+								},
+								{
+									"name": "order_start_date",
+									"type": "String",
+									"description": "下单开始时间"
+								},
+								{
+									"name": "order_end_date",
+									"type": "String",
+									"description": "下单结束时间"
+								},
+								{
+									"name": "limit_amount",
+									"type": "Number",
+									"description": "限购数量"
+								},
+								{
+									"name": "min_amount",
+									"type": "Number",
+									"description": "订单最小限购数量"
+								},
+								{
+									"name": "max_amount",
+									"type": "Number",
+									"description": "订单最大限购数量"
+								}
+							],
+							"name": "limit_policy",
+							"type": "LimitPolicyDTO",
+							"description": "限购规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "field_types",
+									"type": "String[]",
+									"description": "游客信息填写字段"
+								},
+								{
+									"name": "certificates_types",
+									"type": "String[]",
+									"description": "证件类型"
+								}
+							],
+							"name": "tourist_policy",
+							"type": "TouristPolicyDTO",
+							"description": "游客规则"
+						},
+						{
+							"name": "cost_not_include",
+							"type": "String",
+							"description": "费用不包含"
+						},
+						{
+							"subParams": [
+								{
+									"name": "province_id",
+									"type": "Number",
+									"description": "省份id"
+								},
+								{
+									"name": "province_name",
+									"type": "String",
+									"description": "省份名称"
+								},
+								{
+									"name": "city_id",
+									"type": "Number",
+									"description": "城市id"
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "城市名称"
+								},
+								{
+									"name": "district_id",
+									"type": "Number",
+									"description": "地区id"
+								},
+								{
+									"name": "district_name",
+									"type": "String",
+									"description": "地区名称"
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度"
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度"
+								}
+							],
+							"name": "area_info",
+							"type": "ProductAreaInfoDTO",
+							"description": "套餐位置信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "hotel_name",
+											"type": "String",
+											"description": "酒店名称"
+										},
+										{
+											"name": "room_name",
+											"type": "String",
+											"description": "房型名称"
+										}
+									],
+									"name": "hotel_rate",
+									"type": "HotelRateDTO",
+									"description": "酒店rate信息"
+								},
+								{
+									"name": "bed_type",
+									"type": "String",
+									"description": "酒店床型名称"
+								},
+								{
+									"name": "room_night_num",
+									"type": "Number",
+									"description": "酒店间夜数"
+								},
+								{
+									"name": "adult_num",
+									"type": "Number",
+									"description": "成人数"
+								},
+								{
+									"name": "children_num",
+									"type": "Number",
+									"description": "儿童数"
+								}
+							],
+							"name": "hotel_rates",
+							"type": "PackageHotelRateDTO[]",
+							"description": "套餐酒店产品信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "scenic_name",
+											"type": "String",
+											"description": "景区名称"
+										},
+										{
+											"name": "spu_name",
+											"type": "String",
+											"description": "收费项目名称"
+										},
+										{
+											"name": "ticket_kind_name",
+											"type": "String",
+											"description": "票种名称"
+										},
+										{
+											"name": "session_name",
+											"type": "String",
+											"description": "场次名称"
+										},
+										{
+											"name": "region_name",
+											"type": "String",
+											"description": "区域名称"
+										}
+									],
+									"name": "ticket_info",
+									"type": "TicketInfoDTO",
+									"description": "门票产品信息"
+								},
+								{
+									"name": "ticket_num",
+									"type": "Number",
+									"description": "门票张数"
+								}
+							],
+							"name": "ticket_infos",
+							"type": "PackageTicketInfoDTO[]",
+							"description": "套餐门票产品信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "catering_name",
+									"type": "String",
+									"description": "餐饮名称"
+								},
+								{
+									"name": "catering_type",
+									"type": "Number",
+									"description": "餐饮类型"
+								},
+								{
+									"name": "catering_num_type",
+									"type": "Number",
+									"description": "餐饮份数类型"
+								},
+								{
+									"name": "catering_num",
+									"type": "Number",
+									"description": "餐饮份数"
+								},
+								{
+									"name": "catering_remark",
+									"type": "String",
+									"description": "餐饮份数为其他时，其他说明"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "catering_infos",
+							"type": "PackageCateringInfoDTO[]",
+							"description": "餐饮信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "other_id",
+									"type": "Number",
+									"description": "其他产品id"
+								},
+								{
+									"name": "other_name",
+									"type": "String",
+									"description": "其他产品名称"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "other_products",
+							"type": "PackageOtherProductDTO[]",
+							"description": "其他信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "check_in_time",
+									"type": "String",
+									"description": "入住时间"
+								},
+								{
+									"name": "check_out_time",
+									"type": "String",
+									"description": "离店时间"
+								},
+								{
+									"name": "check_in_types",
+									"type": "String[]",
+									"description": "入住方式"
+								},
+								{
+									"name": "check_in_type_remark",
+									"type": "String",
+									"description": "入住方式其他说明"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "hotel_policies",
+							"type": "PackageHotelPolicyDTO[]",
+							"description": "酒店使用须知"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ticket_rule_name",
+									"type": "String",
+									"description": "使用规则名称"
+								},
+								{
+									"name": "ticket_description",
+									"type": "String",
+									"description": "门票使用非结构化描述"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "门票使用规则备注信息"
+								}
+							],
+							"name": "ticket_policies",
+							"type": "PackageTicketPolicyDTO[]",
+							"description": "门票使用须知"
+						},
+						{
+							"subParams": [
+								{
+									"name": "catering_rule_name",
+									"type": "String",
+									"description": "餐饮使用规则名称"
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "就餐开始时间"
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "就餐截止时间"
+								},
+								{
+									"name": "catering_way",
+									"type": "String",
+									"description": "就餐方式"
+								},
+								{
+									"name": "catering_description",
+									"type": "String",
+									"description": "餐饮规则非结构化描述"
+								}
+							],
+							"name": "catering_policies",
+							"type": "PackageCateringPolicyDTO[]",
+							"description": "餐饮使用规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "other_rule_name",
+									"type": "String",
+									"description": "其他产品使用规则名称"
+								},
+								{
+									"name": "other_description",
+									"type": "String",
+									"description": "其他产品非结构化描述"
+								}
+							],
+							"name": "other_policies",
+							"type": "PackageCateringPolicyDTO[]",
+							"description": "其他产品使用须知"
+						}
+					],
+					"name": "data",
+					"type": "AttractionPackageDTO",
+					"description": "产品详情"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotelticket.product.detail",
+	"apiChineseName": "阿信酒景套餐产品详情查询",
+	"description": "阿信酒景套餐产品详情查询",
+	"id": 62020
+}

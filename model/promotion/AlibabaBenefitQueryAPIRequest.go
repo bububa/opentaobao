@@ -20,10 +20,10 @@ type AlibabaBenefitQueryAPIRequest struct {
 	model.Params
 	// 奖池编号
 	_ename string
-	// 商家来源身份标识（"promotion-"+appId）
-	_appName string
 	// 表示奖池类型（发奖奖池传1，抽奖传0）
 	_awardType string
+	// 商家来源身份标识（"promotion-"+appId）
+	_appName string
 }
 
 // NewAlibabaBenefitQueryRequest 初始化AlibabaBenefitQueryAPIRequest对象
@@ -60,19 +60,6 @@ func (r AlibabaBenefitQueryAPIRequest) GetEname() string {
 	return r._ename
 }
 
-// SetAppName is AppName Setter
-// 商家来源身份标识（"promotion-"+appId）
-func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
-	r._appName = _appName
-	r.Set("app_name", _appName)
-	return nil
-}
-
-// GetAppName AppName Getter
-func (r AlibabaBenefitQueryAPIRequest) GetAppName() string {
-	return r._appName
-}
-
 // SetAwardType is AwardType Setter
 // 表示奖池类型（发奖奖池传1，抽奖传0）
 func (r *AlibabaBenefitQueryAPIRequest) SetAwardType(_awardType string) error {
@@ -84,4 +71,17 @@ func (r *AlibabaBenefitQueryAPIRequest) SetAwardType(_awardType string) error {
 // GetAwardType AwardType Getter
 func (r AlibabaBenefitQueryAPIRequest) GetAwardType() string {
 	return r._awardType
+}
+
+// SetAppName is AppName Setter
+// 商家来源身份标识（"promotion-"+appId）
+func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
+	r._appName = _appName
+	r.Set("app_name", _appName)
+	return nil
+}
+
+// GetAppName AppName Getter
+func (r AlibabaBenefitQueryAPIRequest) GetAppName() string {
+	return r._appName
 }

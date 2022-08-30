@@ -1,15 +1,11 @@
 {
-	"id": 39744,
-	"name": "tmall.device.carturl.get",
-	"apiChineseName": "添加商品到购物车",
-	"description": "获取二维码，支持添加商品到购物车",
 	"requestParams": [
 		{
 			"name": "item_ids",
 			"type": "String[]",
 			"description": "商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "device_code",
@@ -34,5 +30,9 @@
 			"type": "String",
 			"description": "二维码图片URL"
 		}
-	]
+	],
+	"name": "tmall.device.carturl.get",
+	"apiChineseName": "添加商品到购物车",
+	"description": "获取二维码，支持添加商品到购物车",
+	"id": 39744
 }

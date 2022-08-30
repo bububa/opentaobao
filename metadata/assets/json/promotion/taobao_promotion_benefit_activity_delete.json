@@ -1,8 +1,4 @@
 {
-	"id": 25171,
-	"name": "taobao.promotion.benefit.activity.delete",
-	"apiChineseName": "删除关联的活动权益",
-	"description": "删除关联的活动权益",
 	"requestParams": [
 		{
 			"name": "relation_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "删除是否成功"
 		}
-	]
+	],
+	"name": "taobao.promotion.benefit.activity.delete",
+	"apiChineseName": "删除关联的活动权益",
+	"description": "删除关联的活动权益",
+	"id": 25171
 }

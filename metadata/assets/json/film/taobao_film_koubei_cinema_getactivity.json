@@ -1,8 +1,4 @@
 {
-	"id": 39237,
-	"name": "taobao.film.koubei.cinema.getactivity",
-	"apiChineseName": "口碑-影院营销数据查询",
-	"description": "口碑-影院营销数据查询",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -26,7 +22,7 @@
 		},
 		{
 			"name": "cinema_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "影院ID集合",
 			"maxListSize": 20
 		},
@@ -38,185 +34,161 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultGeneralModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "return_url",
 					"type": "String",
-					"description": "returnUrl",
-					"required": true
+					"description": "returnUrl"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "returnCode",
-					"required": true
+					"description": "returnCode"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
-					"name": "return_value",
-					"type": "CinemaPageResult",
-					"description": "returnValue",
-					"required": true,
 					"subParams": [
 						{
-							"name": "cinemas",
-							"type": "CinemaPageCinemaVo[]",
-							"description": "影院集合",
-							"required": true,
 							"subParams": [
 								{
-									"name": "activity_tags",
-									"type": "ActivityTagVo[]",
-									"description": "活动标",
-									"required": true,
 									"subParams": [
 										{
 											"name": "title",
 											"type": "String",
-											"description": "活动内容",
-											"required": true
+											"description": "活动内容"
 										},
 										{
 											"name": "tag_type",
 											"type": "Number",
-											"description": "tagType",
-											"required": true
+											"description": "tagType"
 										},
 										{
 											"name": "tag",
 											"type": "String",
-											"description": "活动标：新促卡惠食星节",
-											"required": true
+											"description": "活动标：新促卡惠食星节"
 										}
-									]
+									],
+									"name": "activity_tags",
+									"type": "ActivityTagVo[]",
+									"description": "活动标"
 								},
 								{
 									"name": "biz_status",
 									"type": "Number",
-									"description": "影院状态",
-									"required": true
+									"description": "影院状态"
 								},
 								{
 									"name": "special_remind",
 									"type": "String",
-									"description": "影院特殊提醒",
-									"required": true
+									"description": "影院特殊提醒"
 								},
 								{
 									"name": "schedule_count",
 									"type": "Number",
-									"description": "排期数",
-									"required": true
+									"description": "排期数"
 								},
 								{
 									"name": "schedule_close_time",
 									"type": "Number",
-									"description": "场次提前几分钟停止场次售卖",
-									"required": true
+									"description": "场次提前几分钟停止场次售卖"
 								},
 								{
 									"name": "mcard_open",
 									"type": "Boolean",
-									"description": "用户是否已开卡",
-									"required": true
+									"description": "用户是否已开卡"
 								},
 								{
 									"name": "support_mcard",
 									"type": "Boolean",
-									"description": "影城卡标",
-									"required": true
+									"description": "影城卡标"
 								},
 								{
 									"name": "always_go",
 									"type": "Boolean",
-									"description": "常去影院",
-									"required": true
+									"description": "常去影院"
 								},
 								{
 									"name": "min_price",
 									"type": "Number",
-									"description": "最低票价(分)",
-									"required": true
+									"description": "最低票价(分)"
 								},
 								{
 									"name": "distance",
 									"type": "String",
-									"description": "距离",
-									"required": true
+									"description": "距离"
 								},
 								{
 									"name": "latitude",
 									"type": "String",
-									"description": "纬度",
-									"required": true
+									"description": "纬度"
 								},
 								{
 									"name": "longitude",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "display_supports",
 									"type": "String[]",
-									"description": "特色标",
-									"required": true
+									"description": "特色标"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "cinema_name",
 									"type": "String",
-									"description": "影院名称",
-									"required": true
+									"description": "影院名称"
 								},
 								{
 									"name": "cinema_id",
 									"type": "Number",
-									"description": "影院ID",
-									"required": true
+									"description": "影院ID"
 								}
-							]
+							],
+							"name": "cinemas",
+							"type": "CinemaPageCinemaVo[]",
+							"description": "影院集合"
 						}
-					]
+					],
+					"name": "return_value",
+					"type": "CinemaPageResult",
+					"description": "returnValue"
 				},
 				{
 					"name": "return_error_oper",
 					"type": "String",
-					"description": "returnErrorOper",
-					"required": true
+					"description": "returnErrorOper"
 				},
 				{
 					"name": "return_error_solution",
 					"type": "String",
-					"description": "returnErrorSolution",
-					"required": true
+					"description": "returnErrorSolution"
 				},
 				{
 					"name": "return_message",
 					"type": "String",
-					"description": "returnMessage",
-					"required": true
+					"description": "returnMessage"
 				},
 				{
 					"name": "return_error_stack_trace",
 					"type": "String",
-					"description": "returnErrorStackTrace",
-					"required": true
+					"description": "returnErrorStackTrace"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.film.koubei.cinema.getactivity",
+	"apiChineseName": "口碑-影院营销数据查询",
+	"description": "口碑-影院营销数据查询",
+	"id": 39237
 }

@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "公寓outerid",
+			"required": true
+		},
+		{
+			"name": "e_code",
+			"type": "String",
+			"description": "公寓ecode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.apartment.outerid",
+	"apiChineseName": "公寓更新outerid",
+	"description": "公寓更新outerid",
+	"id": 62010
+}

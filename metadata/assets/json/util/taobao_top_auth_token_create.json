@@ -1,8 +1,4 @@
 {
-	"id": 25388,
-	"name": "taobao.top.auth.token.create",
-	"apiChineseName": "获取Access Token",
-	"description": "用户通过code换获取access_token，https only",
 	"requestParams": [
 		{
 			"name": "code",
@@ -22,5 +18,9 @@
 			"type": "Json",
 			"description": "返回的是json信息，和之前调用https://oauth.taobao.com/tac/token https://oauth.alibaba.com/token 换token返回的字段信息一致"
 		}
-	]
+	],
+	"name": "taobao.top.auth.token.create",
+	"apiChineseName": "获取Access Token",
+	"description": "用户通过code换获取access_token，https only",
+	"id": 25388
 }

@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "game_id",
+			"type": "Number",
+			"description": "游戏ID",
+			"required": true
+		},
+		{
+			"name": "client_id",
+			"type": "Number",
+			"description": "客户端ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "game_id",
+					"type": "Number",
+					"description": "游戏ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "服务器名称"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "服务器ID"
+				}
+			],
+			"name": "result",
+			"type": "GoodsServerDto []",
+			"description": "游戏服务器对象"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "响应码信息描述"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "是否请求成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "响应码"
+		}
+	],
+	"name": "alibaba.jym.item.game.sever.query",
+	"apiChineseName": "查询商品发布客户端下可用服务器列表",
+	"description": "查询商品发布客户端下可用服务器列表",
+	"id": 63729
+}

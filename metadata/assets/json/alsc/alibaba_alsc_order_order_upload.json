@@ -1,13 +1,6 @@
 {
-	"id": 46503,
-	"name": "alibaba.alsc.order.order.upload",
-	"apiChineseName": "订单回流",
-	"description": "第三方订单回流",
 	"requestParams": [
 		{
-			"name": "param_backflow_request",
-			"type": "BackflowRequest",
-			"description": "订单回流参数",
 			"subParams": [
 				{
 					"name": "biz_source",
@@ -16,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "order_attribute_info_list",
-					"type": "OrderAttributeInfo[]",
-					"description": "订单或子订单属性信息",
 					"subParams": [
 						{
 							"name": "attr_group",
@@ -26,61 +16,55 @@
 							"description": "属性所属组:ORDER 订单类，SUBORDER 子订单类"
 						},
 						{
-							"name": "combo_info_list",
-							"type": "ComboInfo[]",
-							"description": "套餐明细",
 							"subParams": [
 								{
+									"subParams": [
+										{
+											"name": "actual_fee",
+											"type": "Number",
+											"description": "附加商品实收金额"
+										},
+										{
+											"name": "item_count",
+											"type": "Number",
+											"description": "附加商品数量"
+										},
+										{
+											"name": "out_attach_item_id",
+											"type": "String",
+											"description": "附加商品id"
+										},
+										{
+											"name": "out_attach_item_name",
+											"type": "String",
+											"description": "附加商品名称"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "单价"
+										},
+										{
+											"name": "unit",
+											"type": "String",
+											"description": "单位"
+										},
+										{
+											"name": "weight",
+											"type": "String",
+											"description": "重量"
+										},
+										{
+											"name": "total_fee",
+											"type": "Number",
+											"description": "附加商品总金额"
+										}
+									],
 									"name": "cooking_methods_info_list",
 									"type": "AttachInfo[]",
-									"description": "套餐菜品做法明细",
-									"subParams": [
-										{
-											"name": "actual_fee",
-											"type": "Number",
-											"description": "附加商品实收金额"
-										},
-										{
-											"name": "item_count",
-											"type": "Number",
-											"description": "附加商品数量"
-										},
-										{
-											"name": "out_attach_item_id",
-											"type": "String",
-											"description": "附加商品id"
-										},
-										{
-											"name": "out_attach_item_name",
-											"type": "String",
-											"description": "附加商品名称"
-										},
-										{
-											"name": "price",
-											"type": "Number",
-											"description": "单价"
-										},
-										{
-											"name": "unit",
-											"type": "String",
-											"description": "单位"
-										},
-										{
-											"name": "weight",
-											"type": "String",
-											"description": "重量"
-										},
-										{
-											"name": "total_fee",
-											"type": "Number",
-											"description": "附加商品总金额"
-										}
-									]
+									"description": "套餐菜品做法明细"
 								},
 								{
-									"name": "ingredients_info_list",
-									"type": "AttachInfo[]",
-									"description": "套餐菜品配料明细",
 									"subParams": [
 										{
 											"name": "actual_fee",
@@ -122,7 +106,10 @@
 											"type": "Number",
 											"description": "附加商品总金额"
 										}
-									]
+									],
+									"name": "ingredients_info_list",
+									"type": "AttachInfo[]",
+									"description": "套餐菜品配料明细"
 								},
 								{
 									"name": "item_count",
@@ -164,59 +151,59 @@
 									"type": "String",
 									"description": "重量"
 								}
-							]
+							],
+							"name": "combo_info_list",
+							"type": "ComboInfo[]",
+							"description": "套餐明细"
 						},
 						{
+							"subParams": [
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "附加商品实收金额"
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "附加商品数量"
+								},
+								{
+									"name": "out_attach_item_id",
+									"type": "String",
+									"description": "附加商品id"
+								},
+								{
+									"name": "out_attach_item_name",
+									"type": "String",
+									"description": "附加商品名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "附加商品总金额"
+								}
+							],
 							"name": "cooking_methods_info_list",
 							"type": "AttachInfo[]",
-							"description": "单品做法明细",
-							"subParams": [
-								{
-									"name": "actual_fee",
-									"type": "Number",
-									"description": "附加商品实收金额"
-								},
-								{
-									"name": "item_count",
-									"type": "Number",
-									"description": "附加商品数量"
-								},
-								{
-									"name": "out_attach_item_id",
-									"type": "String",
-									"description": "附加商品id"
-								},
-								{
-									"name": "out_attach_item_name",
-									"type": "String",
-									"description": "附加商品名称"
-								},
-								{
-									"name": "price",
-									"type": "Number",
-									"description": "单价"
-								},
-								{
-									"name": "unit",
-									"type": "String",
-									"description": "单位"
-								},
-								{
-									"name": "weight",
-									"type": "String",
-									"description": "重量"
-								},
-								{
-									"name": "total_fee",
-									"type": "Number",
-									"description": "附加商品总金额"
-								}
-							]
+							"description": "单品做法明细"
 						},
 						{
-							"name": "ingredients_info_list",
-							"type": "AttachInfo[]",
-							"description": "单品配料明细",
 							"subParams": [
 								{
 									"name": "actual_fee",
@@ -258,7 +245,57 @@
 									"type": "Number",
 									"description": "附加商品总金额"
 								}
-							]
+							],
+							"name": "ingredients_info_list",
+							"type": "AttachInfo[]",
+							"description": "单品配料明细"
+						},
+						{
+							"subParams": [
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "附加商品实收金额"
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "附加商品数量"
+								},
+								{
+									"name": "out_attach_item_id",
+									"type": "String",
+									"description": "附加商品id"
+								},
+								{
+									"name": "out_attach_item_name",
+									"type": "String",
+									"description": "附加商品名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "附加商品总金额"
+								}
+							],
+							"name": "other_info_list",
+							"type": "AttachInfo[]",
+							"description": "其他附加费，如餐盒等等"
 						},
 						{
 							"name": "out_biz_id",
@@ -271,9 +308,6 @@
 							"description": "业务方订单号"
 						},
 						{
-							"name": "service_fee_info_list",
-							"type": "ServiceFeeInfo[]",
-							"description": "服务费明细",
 							"subParams": [
 								{
 									"name": "service_actual_fee",
@@ -295,68 +329,28 @@
 									"type": "Number",
 									"description": "服务费总金额"
 								}
-							]
-						},
-						{
-							"name": "other_info_list",
-							"type": "AttachInfo[]",
-							"description": "其他附加费，如餐盒等等",
-							"subParams": [
-								{
-									"name": "actual_fee",
-									"type": "Number",
-									"description": "附加商品实收金额"
-								},
-								{
-									"name": "item_count",
-									"type": "Number",
-									"description": "附加商品数量"
-								},
-								{
-									"name": "out_attach_item_id",
-									"type": "String",
-									"description": "附加商品id"
-								},
-								{
-									"name": "out_attach_item_name",
-									"type": "String",
-									"description": "附加商品名称"
-								},
-								{
-									"name": "price",
-									"type": "Number",
-									"description": "单价"
-								},
-								{
-									"name": "unit",
-									"type": "String",
-									"description": "单位"
-								},
-								{
-									"name": "weight",
-									"type": "String",
-									"description": "重量"
-								},
-								{
-									"name": "total_fee",
-									"type": "Number",
-									"description": "附加商品总金额"
-								}
-							]
+							],
+							"name": "service_fee_info_list",
+							"type": "ServiceFeeInfo[]",
+							"description": "服务费明细"
 						}
-					]
+					],
+					"name": "order_attribute_info_list",
+					"type": "OrderAttributeInfo[]",
+					"description": "订单或子订单属性信息"
 				},
 				{
-					"name": "order_info",
-					"type": "OrderInfo",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_fee",
 							"type": "Number",
 							"description": "订单实收金额，单位分",
 							"required": true
+						},
+						{
+							"name": "attach_total_fee",
+							"type": "Number",
+							"description": "附加费总金额，如餐盒，"
 						},
 						{
 							"name": "business_date",
@@ -490,6 +484,11 @@
 							"description": "整单抹零金额，单位分"
 						},
 						{
+							"name": "service_total_fee",
+							"type": "Number",
+							"description": "服务费总金额"
+						},
+						{
 							"name": "status",
 							"type": "String",
 							"description": "状态：SUCCESS已完成 REFUND已退款 REFUSED已拒绝 CANCELLED已取消 ANTI_SEELEMENT已反结账 CHARGED已挂账 CANCELLED_DEBT已销账"
@@ -498,6 +497,11 @@
 							"name": "table_number",
 							"type": "String",
 							"description": "桌号"
+						},
+						{
+							"name": "tax_total_fee",
+							"type": "Number",
+							"description": "税费总金额"
 						},
 						{
 							"name": "total_fee",
@@ -516,31 +520,17 @@
 							"description": "扩展信息"
 						},
 						{
-							"name": "attach_total_fee",
-							"type": "Number",
-							"description": "附加费总金额，如餐盒，"
-						},
-						{
-							"name": "service_total_fee",
-							"type": "Number",
-							"description": "服务费总金额"
-						},
-						{
-							"name": "tax_total_fee",
-							"type": "Number",
-							"description": "税费总金额"
-						},
-						{
 							"name": "out_org_id",
 							"type": "String",
 							"description": "外部组织id，辰森和客如云直接填out_store_id"
 						}
-					]
+					],
+					"name": "order_info",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true
 				},
 				{
-					"name": "pay_detail_info_list",
-					"type": "PayDetailInfo[]",
-					"description": "支付流水明细",
 					"subParams": [
 						{
 							"name": "out_operator_id",
@@ -612,12 +602,12 @@
 							"type": "Number",
 							"description": "支付完成时间"
 						}
-					]
+					],
+					"name": "pay_detail_info_list",
+					"type": "PayDetailInfo[]",
+					"description": "支付流水明细"
 				},
 				{
-					"name": "promo_detail_info_list",
-					"type": "PromoDetailInfo[]",
-					"description": "优惠明细",
 					"subParams": [
 						{
 							"name": "out_authorizer_id",
@@ -659,12 +649,12 @@
 							"type": "String",
 							"description": "优惠原因：COUPON券优惠  PROMO促销优惠  SALES特价商品优惠 POINTS_DEDUCT积分抵现  SALES_MEMBER会员价商品优惠 MODIFY_PRICE手动改价 OTHER其他"
 						}
-					]
+					],
+					"name": "promo_detail_info_list",
+					"type": "PromoDetailInfo[]",
+					"description": "优惠明细"
 				},
 				{
-					"name": "refund_fund_detail_info_list",
-					"type": "RefundFundDetailInfo[]",
-					"description": "退款资金流水",
 					"subParams": [
 						{
 							"name": "out_order_no",
@@ -721,12 +711,12 @@
 							"type": "String",
 							"description": "扩展信息"
 						}
-					]
+					],
+					"name": "refund_fund_detail_info_list",
+					"type": "RefundFundDetailInfo[]",
+					"description": "退款资金流水"
 				},
 				{
-					"name": "refund_item_detail_info_list",
-					"type": "RefundItemDetailInfo[]",
-					"description": "退款商品明细",
 					"subParams": [
 						{
 							"name": "out_item_id",
@@ -758,12 +748,12 @@
 							"type": "Number",
 							"description": "退款商品数"
 						}
-					]
+					],
+					"name": "refund_item_detail_info_list",
+					"type": "RefundItemDetailInfo[]",
+					"description": "退款商品明细"
 				},
 				{
-					"name": "refund_order_info_list",
-					"type": "RefundOrderInfo[]",
-					"description": "退款单数据",
 					"subParams": [
 						{
 							"name": "device_id",
@@ -830,12 +820,12 @@
 							"type": "Number",
 							"description": "退款成功时间"
 						}
-					]
+					],
+					"name": "refund_order_info_list",
+					"type": "RefundOrderInfo[]",
+					"description": "退款单数据"
 				},
 				{
-					"name": "sub_order_info_list",
-					"type": "SubOrderInfo[]",
-					"description": "子订单（商品）信息",
 					"subParams": [
 						{
 							"name": "item_attach_fee",
@@ -902,54 +892,58 @@
 							"type": "String",
 							"description": "重量"
 						}
-					]
+					],
+					"name": "sub_order_info_list",
+					"type": "SubOrderInfo[]",
+					"description": "子订单（商品）信息"
 				}
-			]
+			],
+			"name": "param_backflow_request",
+			"type": "BackflowRequest",
+			"description": "订单回流参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "fail",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "process",
 					"type": "Boolean",
-					"description": "是否处理中",
-					"required": true
+					"description": "是否处理中"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "1成功，2失败，3处理中",
-					"required": true
+					"description": "1成功，2失败，3处理中"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
+					"description": "是否执行成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.alsc.order.order.upload",
+	"apiChineseName": "订单回流",
+	"description": "第三方订单回流",
+	"id": 46503
 }

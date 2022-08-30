@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "merchant_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "invoice_org_id",
+					"type": "String",
+					"description": "公益组织id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "bill_time",
+							"type": "Number",
+							"description": "账期"
+						},
+						{
+							"name": "bill_id",
+							"type": "String",
+							"description": "账单编号"
+						}
+					],
+					"name": "bill_list",
+					"type": "BillDTO[]",
+					"description": "账单列表",
+					"required": true
+				},
+				{
+					"name": "invoice_id",
+					"type": "String",
+					"description": "开票申请id",
+					"required": true
+				}
+			],
+			"name": "account_check_query",
+			"type": "AccountCheckQuery",
+			"description": "公益宝贝开票对账信息查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fail_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "fail_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "has_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alibaba.csr.donate.invoice.querytoblockchainoss",
+	"apiChineseName": "触发odps任务离线查询公益宝贝开票对账明细",
+	"description": "提供给蚂蚁链上公益团队，用于触发odps任务离线查询公益宝贝开票对账明细",
+	"id": 59603
+}

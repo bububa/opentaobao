@@ -1,0 +1,201 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "start_time_end",
+					"type": "Date",
+					"description": "发放开始时间右值"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源",
+					"required": true
+				},
+				{
+					"name": "start_time_begin",
+					"type": "Date",
+					"description": "发放开始时间左值"
+				},
+				{
+					"name": "end_time_begin",
+					"type": "Date",
+					"description": "发放结束时间左值"
+				},
+				{
+					"name": "end_time_end",
+					"type": "Date",
+					"description": "发放结束时间右值"
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "筛选状态列表，EFFECTIVE为生效，OFFLINE为下线"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				}
+			],
+			"name": "query",
+			"type": "ActivityReadTopQuery",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "活动名称"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "活动开始时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "活动结束时间"
+								},
+								{
+									"name": "source",
+									"type": "String",
+									"description": "业务来源"
+								},
+								{
+									"name": "strategy_code",
+									"type": "String",
+									"description": "投放计划code"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "活动状态，EFFECTIVE为生效，OFFLINE为下线"
+								},
+								{
+									"name": "channel_code",
+									"type": "String",
+									"description": "渠道code"
+								},
+								{
+									"name": "feature",
+									"type": "String",
+									"description": "扩展字段"
+								},
+								{
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "权益code"
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "权益类型"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "权益名称"
+										},
+										{
+											"name": "description",
+											"type": "String",
+											"description": "权益描述"
+										},
+										{
+											"name": "status",
+											"type": "String",
+											"description": "权益状态，online为上线，offline为下线，invalid为失效"
+										},
+										{
+											"name": "start_date",
+											"type": "Date",
+											"description": "权益发放开始时间"
+										},
+										{
+											"name": "end_date",
+											"type": "Date",
+											"description": "权益发放结束时间"
+										},
+										{
+											"name": "total",
+											"type": "Number",
+											"description": "总库存"
+										},
+										{
+											"name": "bestow",
+											"type": "Number",
+											"description": "发放量"
+										},
+										{
+											"name": "feature",
+											"type": "String",
+											"description": "扩展字段"
+										}
+									],
+									"name": "benefit_list",
+									"type": "BenefitDto[]",
+									"description": "权益列表"
+								}
+							],
+							"name": "activity_list",
+							"type": "ActivityDto[]",
+							"description": "返回的活动列表"
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页的记录数"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总记录数"
+						}
+					],
+					"name": "page_data",
+					"type": "Page",
+					"description": "接口返回结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果"
+		}
+	],
+	"name": "alibaba.lafite.seller.activity.list",
+	"apiChineseName": "商家自运营活动列表",
+	"description": "商家查询自己配置的活动列表",
+	"id": 57484
+}

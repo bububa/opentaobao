@@ -1,8 +1,4 @@
 {
-	"id": 24488,
-	"name": "alibaba.aliqin.tcc.trade.identity.get",
-	"apiChineseName": "运营商获得用户身份信息",
-	"description": "天猫网厅运营商官方旗舰店获取用户身份信息",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -19,89 +15,85 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "IdentityInfo",
-			"description": "返回身份信息",
 			"subParams": [
 				{
 					"name": "back_image_url",
 					"type": "String",
-					"description": "身份证背面图片",
-					"required": true
+					"description": "身份证背面图片"
 				},
 				{
 					"name": "biz_order_id",
 					"type": "Number",
-					"description": "订单id",
-					"required": true
+					"description": "订单id"
 				},
 				{
 					"name": "card_num",
 					"type": "String",
-					"description": "身份证号码",
-					"required": true
+					"description": "身份证号码"
 				},
 				{
 					"name": "front_image_url",
 					"type": "String",
-					"description": "身份证正面图片",
-					"required": true
+					"description": "身份证正面图片"
 				},
 				{
 					"name": "hold_image_url",
 					"type": "String",
-					"description": "手持照",
-					"required": true
+					"description": "手持照"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "姓名",
-					"required": true
+					"description": "姓名"
 				},
 				{
 					"name": "address",
 					"type": "String",
-					"description": "地址",
-					"required": true
+					"description": "地址"
 				},
 				{
 					"name": "long_term",
 					"type": "Boolean",
-					"description": "是否长期有效",
-					"required": true
+					"description": "是否长期有效"
 				},
 				{
 					"name": "card_type",
 					"type": "String",
-					"description": "卡类型",
-					"required": true
+					"description": "卡类型"
 				},
 				{
 					"name": "card_expire_date",
 					"type": "Date",
-					"description": "失效时间",
-					"required": true
+					"description": "失效时间"
 				},
 				{
 					"name": "start_date",
 					"type": "String",
-					"description": "身份证生效时间",
-					"required": true
+					"description": "身份证生效时间"
 				},
 				{
 					"name": "end_date",
 					"type": "String",
-					"description": "身份证失效时间",
-					"required": true
+					"description": "身份证失效时间"
 				},
 				{
 					"name": "biometric_seq",
 					"type": "String",
-					"description": "biometricSeq",
-					"required": true
+					"description": "biometricSeq"
+				},
+				{
+					"name": "contact_info",
+					"type": "String",
+					"description": "套餐合约相关信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "IdentityInfo",
+			"description": "返回身份信息"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.tcc.trade.identity.get",
+	"apiChineseName": "运营商获得用户身份信息",
+	"description": "天猫网厅运营商官方旗舰店获取用户身份信息",
+	"id": 24488
 }

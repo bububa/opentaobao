@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "data_list",
+							"type": "Number[]",
+							"description": "标准酒店id列表"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "记录数"
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "页码"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页大小"
+						}
+					],
+					"name": "data",
+					"type": "PageDTO",
+					"description": "数据模型"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "应答模型"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.shid.list.query",
+	"apiChineseName": "阿信酒店分销-标准酒店id列表查询",
+	"description": "标准酒店id列表查询",
+	"id": 61314
+}

@@ -1,8 +1,4 @@
 {
-	"id": 35321,
-	"name": "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
-	"apiChineseName": "Dropshipper查找商品信息接口",
-	"description": "提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -22,15 +18,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AeopFindProductResultDto",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "aeop_ae_product_s_k_us",
-					"type": "AeopAeProductSku[]",
-					"description": "商品的SKU信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_stock",
@@ -69,10 +58,6 @@
 							"required": true
 						},
 						{
-							"name": "aeop_s_k_u_propertys",
-							"type": "AeopSkuProperty[]",
-							"description": "Sku属性对象list，允许1-3个sku属性对象，按sku属性顺序排放。sku属性从类目属性接口getAttributesResultByCateId获取。该项值输入sku属性，不能输入普通类目属性。注意，sku属性是有顺序的，必须按照顺序存放。",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sku_property_id",
@@ -110,7 +95,11 @@
 									"description": "属性名",
 									"required": true
 								}
-							]
+							],
+							"name": "aeop_s_k_u_propertys",
+							"type": "AeopSkuProperty[]",
+							"description": "Sku属性对象list，允许1-3个sku属性对象，按sku属性顺序排放。sku属性从类目属性接口getAttributesResultByCateId获取。该项值输入sku属性，不能输入普通类目属性。注意，sku属性是有顺序的，必须按照顺序存放。",
+							"required": true
 						},
 						{
 							"name": "barcode",
@@ -142,7 +131,11 @@
 							"description": "sku库存",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_ae_product_s_k_us",
+					"type": "AeopAeProductSku[]",
+					"description": "商品的SKU信息",
+					"required": true
 				},
 				{
 					"name": "detail",
@@ -181,16 +174,8 @@
 					"required": true
 				},
 				{
-					"name": "aeop_a_e_multimedia",
-					"type": "AeopAeMultimedia",
-					"description": "商品多媒体信息，该属性主要包含商品的视频列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "aeop_a_e_videos",
-							"type": "AeopAeVideo[]",
-							"description": "多媒体信息。",
-							"required": true,
 							"subParams": [
 								{
 									"name": "poster_url",
@@ -222,9 +207,17 @@
 									"description": "卖家主账户ID",
 									"required": true
 								}
-							]
+							],
+							"name": "aeop_a_e_videos",
+							"type": "AeopAeVideo[]",
+							"description": "多媒体信息。",
+							"required": true
 						}
-					]
+					],
+					"name": "aeop_a_e_multimedia",
+					"type": "AeopAeMultimedia",
+					"description": "商品多媒体信息，该属性主要包含商品的视频列表",
+					"required": true
 				},
 				{
 					"name": "owner_member_id",
@@ -239,10 +232,6 @@
 					"required": true
 				},
 				{
-					"name": "aeop_ae_product_propertys",
-					"type": "AeopAeProductProperty[]",
-					"description": "商品的类目属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "attr_value_unit",
@@ -286,7 +275,11 @@
 							"description": "属性名字",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_ae_product_propertys",
+					"type": "AeopAeProductProperty[]",
+					"description": "商品的类目属性",
+					"required": true
 				},
 				{
 					"name": "gross_weight",
@@ -325,10 +318,6 @@
 					"required": true
 				},
 				{
-					"name": "aeop_national_quote_configuration",
-					"type": "AeopNationalQuoteConfiguration",
-					"description": "商品分国家报价的配置",
-					"required": true,
 					"subParams": [
 						{
 							"name": "configuration_type",
@@ -342,7 +331,11 @@
 							"description": "jsonArray格式的分国家定价规则数据。 1)基于基准价格按比例配置的数据格式：[{\"shiptoCountry\":\"US\",\"percentage\":\"5\"},{\"shiptoCountry\":\"RU\",\"percentage\":\"-2\"}] 其中shiptoCountry：ISO两位的国家编码（目前支持11个国家：RU,US,CA,ES,FR,UK,NL,IL,BR,CL,AU）， percentage：相对于基准价的调价比例（百分比整数，支持负数，当前限制\u003e=-30 \u0026\u0026 \u003c=100）",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_national_quote_configuration",
+					"type": "AeopNationalQuoteConfiguration",
+					"description": "商品分国家报价的配置",
+					"required": true
 				},
 				{
 					"name": "subject",
@@ -429,10 +422,6 @@
 					"required": true
 				},
 				{
-					"name": "store_info",
-					"type": "AeopStoreInfo",
-					"description": "店铺信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "communication_rating",
@@ -464,7 +453,11 @@
 							"description": "店铺名",
 							"required": true
 						}
-					]
+					],
+					"name": "store_info",
+					"type": "AeopStoreInfo",
+					"description": "店铺信息",
+					"required": true
 				},
 				{
 					"name": "evaluation_count",
@@ -484,7 +477,14 @@
 					"description": "订单数",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "AeopFindProductResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
+	"apiChineseName": "Dropshipper查找商品信息接口",
+	"description": "提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用",
+	"id": 35321
 }

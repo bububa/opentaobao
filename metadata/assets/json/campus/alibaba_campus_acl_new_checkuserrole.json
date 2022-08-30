@@ -1,26 +1,6 @@
 {
-	"id": 37468,
-	"name": "alibaba.campus.acl.new.checkuserrole",
-	"apiChineseName": "校验用户是否有角色",
-	"description": "校验用户是否有角色",
 	"requestParams": [
 		{
-			"name": "user_id",
-			"type": "String",
-			"description": "用户账号",
-			"required": true
-		},
-		{
-			"name": "role_key",
-			"type": "String",
-			"description": "角色key",
-			"required": true
-		},
-		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "system_id",
@@ -40,40 +20,56 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户账号",
+			"required": true
+		},
+		{
+			"name": "role_key",
+			"type": "String",
+			"description": "角色key",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "接口返回结果",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "返回内容(true:表示有角色权限, false: 无角色权限)",
-					"required": true
+					"description": "返回内容(true:表示有角色权限, false: 无角色权限)"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.checkuserrole",
+	"apiChineseName": "校验用户是否有角色",
+	"description": "校验用户是否有角色",
+	"id": 37468
 }

@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调用链id,用于全链路跟踪",
+			"required": true
+		},
+		{
+			"name": "ct_partner_id",
+			"type": "String",
+			"description": "电信音箱平台分配给合作方的合作伙伴ID",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "合作方音箱唯一标识，该标识传值为音箱CTEI。",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "访问令牌，用于校验接口调用者身份，做到不可否认性",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "请求时间，格式：yyyy-MM-dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "ty_account",
+			"type": "String",
+			"description": "电信家居平台用户标识加密字符串",
+			"required": true
+		},
+		{
+			"name": "extra_param",
+			"type": "Json",
+			"description": "扩展参数，由厂家根据业务自定义内容"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "success"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.third.telecom.autoauth",
+	"apiChineseName": "电信iot自动授权",
+	"description": "电信iot自动授权",
+	"id": 61949
+}

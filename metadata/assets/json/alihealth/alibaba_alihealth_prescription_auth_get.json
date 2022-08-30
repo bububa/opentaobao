@@ -1,14 +1,6 @@
 {
-	"id": 42645,
-	"name": "alibaba.alihealth.prescription.auth.get",
-	"apiChineseName": "阿里健康处方平台获取授权码",
-	"description": "获取处方用户授权",
 	"requestParams": [
 		{
-			"name": "prescription_request",
-			"type": "PrescriptionDoctorAuthRequest",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "doctor_id",
@@ -28,40 +20,44 @@
 					"description": "医院id(非空)",
 					"required": true
 				}
-			]
+			],
+			"name": "prescription_request",
+			"type": "PrescriptionDoctorAuthRequest",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "token",
-					"required": true
+					"description": "token"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.prescription.auth.get",
+	"apiChineseName": "阿里健康处方平台获取授权码",
+	"description": "获取处方用户授权",
+	"id": 42645
 }

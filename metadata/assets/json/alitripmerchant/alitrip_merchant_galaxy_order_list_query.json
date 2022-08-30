@@ -1,8 +1,4 @@
 {
-	"id": 54784,
-	"name": "alitrip.merchant.galaxy.order.list.query",
-	"apiChineseName": "星河-订单列表查询",
-	"description": "为C端用户提供酒店预订订单列表查询服务，包括订单支付状态、订单日期",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -44,181 +40,231 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "order_dtos",
-					"type": "OrderDto[]",
-					"description": "查询结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bed_name",
 							"type": "String",
-							"description": "床型名称",
-							"required": true
+							"description": "床型名称"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						},
 						{
 							"name": "pay_remain_time",
 							"type": "Number",
-							"description": "支付剩余时间",
-							"required": true
+							"description": "支付剩余时间"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "total_amount",
 							"type": "String",
-							"description": "用户支付总价",
-							"required": true
+							"description": "用户支付总价"
 						},
 						{
 							"name": "book_date",
 							"type": "String",
-							"description": "预订日期",
-							"required": true
+							"description": "预订日期"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "入住人姓名",
-							"required": true
+							"description": "入住人姓名"
 						},
 						{
 							"name": "check_out_date",
 							"type": "String",
-							"description": "离店时间",
-							"required": true
+							"description": "离店时间"
 						},
 						{
 							"name": "check_in_date",
 							"type": "String",
-							"description": "入住时间",
-							"required": true
+							"description": "入住时间"
 						},
 						{
 							"name": "room_number",
 							"type": "Number",
-							"description": "房间数量",
-							"required": true
+							"description": "房间数量"
 						},
 						{
 							"name": "room_name",
 							"type": "String",
-							"description": "房型名称",
-							"required": true
+							"description": "房型名称"
 						},
 						{
 							"name": "hotel_name",
 							"type": "String",
-							"description": "酒店名称",
-							"required": true
+							"description": "酒店名称"
 						},
 						{
 							"name": "order_code",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "room_photo_url",
 							"type": "String",
-							"description": "房型照片",
-							"required": true
+							"description": "房型照片"
 						},
 						{
 							"name": "shid",
 							"type": "Number",
-							"description": "酒店房型id",
-							"required": true
+							"description": "酒店房型id"
 						},
 						{
 							"name": "hotel_id",
 							"type": "String",
-							"description": "酒店外部id",
-							"required": true
+							"description": "酒店外部id"
 						},
 						{
 							"name": "adult_number",
 							"type": "Number",
-							"description": "成人数量",
-							"required": true
+							"description": "成人数量"
 						},
 						{
 							"name": "children_number",
 							"type": "Number",
-							"description": "儿童数量",
-							"required": true
+							"description": "儿童数量"
+						},
+						{
+							"name": "place_order_type",
+							"type": "String",
+							"description": "下单类型"
+						},
+						{
+							"name": "universal_coupon_id",
+							"type": "String",
+							"description": "通用券id"
+						},
+						{
+							"name": "spread",
+							"type": "String",
+							"description": "差价"
+						},
+						{
+							"name": "voucher_name",
+							"type": "String",
+							"description": "代金券名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "total_amount",
+									"type": "String",
+									"description": "外币支付金额，含税"
+								},
+								{
+									"name": "total_price",
+									"type": "String",
+									"description": "外币基础价格,不包含税费等"
+								},
+								{
+									"name": "total_tax",
+									"type": "String",
+									"description": "外币总税价"
+								},
+								{
+									"subParams": [
+										{
+											"name": "date",
+											"type": "String",
+											"description": "日期"
+										},
+										{
+											"name": "really_price",
+											"type": "String",
+											"description": "不含税价格  单位元"
+										},
+										{
+											"name": "out_really_price",
+											"type": "String",
+											"description": "不含税外币价格  单位元"
+										}
+									],
+									"name": "daily_price_list",
+									"type": "DailyPrice[]",
+									"description": "外币每日价格"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "外币币种"
+								}
+							],
+							"name": "foreign_currency",
+							"type": "ForeignCurrencyInfo",
+							"description": "外币信息"
+						},
+						{
+							"name": "foreign_currency_payment",
+							"type": "Boolean",
+							"description": "是否为外币支付"
 						}
-					]
+					],
+					"name": "order_dtos",
+					"type": "OrderDto[]",
+					"description": "查询结果"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页的数量",
-					"required": true
+					"description": "每页的数量"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "当前页的数量",
-					"required": true
+					"description": "当前页的数量"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				},
 				{
 					"name": "has_next_page",
 					"type": "Boolean",
-					"description": "是否有下一页",
-					"required": true
+					"description": "是否有下一页"
 				},
 				{
 					"name": "total_page_num",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "结果总数",
-					"required": true
+					"description": "结果总数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.order.list.query",
+	"apiChineseName": "星河-订单列表查询",
+	"description": "为C端用户提供酒店预订订单列表查询服务，包括订单支付状态、订单日期",
+	"id": 54784
 }

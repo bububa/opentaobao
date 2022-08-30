@@ -1,14 +1,6 @@
 {
-	"id": 43350,
-	"name": "alibaba.pur.media.statistics",
-	"apiChineseName": "新媒体统计信息",
-	"description": "清博同步新媒体的统计信息给到采购平台",
 	"requestParams": [
 		{
-			"name": "media_statistics_d_t_o",
-			"type": "MediaStatisticsDto[]",
-			"description": "新媒体统计对象",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "summary",
@@ -195,40 +187,44 @@
 					"type": "String",
 					"description": "发布类型"
 				}
-			]
+			],
+			"name": "media_statistics_d_t_o",
+			"type": "MediaStatisticsDto[]",
+			"description": "新媒体统计对象",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "返回结果",
-					"required": true
+					"type": "String",
+					"description": "返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.media.statistics",
+	"apiChineseName": "新媒体统计信息",
+	"description": "清博同步新媒体的统计信息给到采购平台",
+	"id": 43350
 }

@@ -1,8 +1,4 @@
 {
-	"id": 30974,
-	"name": "taobao.xhotel.order.detail.search",
-	"apiChineseName": "订单详情查询",
-	"description": "提供订单详情查询",
 	"requestParams": [
 		{
 			"name": "out_oid",
@@ -17,2151 +13,1867 @@
 	],
 	"responseParams": [
 		{
-			"name": "top_order_detail",
-			"type": "TopOrderDetail",
-			"description": "订单详情对象",
 			"subParams": [
-				{
-					"name": "arrive_early",
-					"type": "Date",
-					"description": "最早到店时间",
-					"required": true
-				},
 				{
 					"name": "close_order_rest_second",
 					"type": "Number",
-					"description": "卖家没有确认直接关单剩余时间",
-					"required": true
+					"description": "卖家没有确认直接关单剩余时间"
 				},
 				{
 					"name": "hid",
 					"type": "Number",
-					"description": "飞猪酒店ID",
-					"required": true
+					"description": "飞猪酒店ID"
 				},
 				{
 					"name": "rp_name",
 					"type": "String",
-					"description": "rp名称",
-					"required": true
+					"description": "rp名称"
 				},
 				{
 					"name": "rpid",
 					"type": "Number",
-					"description": "飞猪rpid",
-					"required": true
+					"description": "飞猪rpid"
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "完结时间",
-					"required": true
+					"description": "完结时间"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "订单类型",
-					"required": true
+					"description": "订单类型"
 				},
 				{
 					"name": "pay_time",
 					"type": "Date",
-					"description": "支付时间",
-					"required": true
+					"description": "支付时间"
 				},
 				{
-					"name": "top_order_package",
-					"type": "TopOrderPackageDo",
-					"description": "订单关联包信息： topOrderPackageDO",
-					"required": true,
 					"subParams": [
 						{
-							"name": "order_package_details",
-							"type": "TopOrderPackageDetail[]",
-							"description": "套餐详情",
-							"required": true,
 							"subParams": [
 								{
 									"name": "scenic_address",
 									"type": "String",
-									"description": "景区地址",
-									"required": true
+									"description": "景区地址"
 								},
 								{
 									"name": "scenic_name",
 									"type": "String",
-									"description": "景区名称",
-									"required": true
+									"description": "景区名称"
 								},
 								{
 									"name": "how_to_play",
 									"type": "String",
-									"description": "图文详情",
-									"required": true
+									"description": "图文详情"
 								},
 								{
 									"name": "scenic_id",
 									"type": "Number",
-									"description": "景区id",
-									"required": true
+									"description": "景区id"
 								},
 								{
 									"name": "amount_unit",
 									"type": "String",
-									"description": "套餐数量单位",
-									"required": true
+									"description": "套餐数量单位"
 								},
 								{
 									"name": "amount",
 									"type": "Number",
-									"description": "套餐数量",
-									"required": true
+									"description": "套餐数量"
 								},
 								{
 									"name": "discount_price",
 									"type": "Number",
-									"description": "套餐优惠金额",
-									"required": true
+									"description": "套餐优惠金额"
 								},
 								{
 									"name": "dimension_text",
 									"type": "String",
-									"description": "附加产品使用维度   1:每间维度 2:每晚维度 3：入住人数维度",
-									"required": true
+									"description": "附加产品使用维度   1:每间维度 2:每晚维度 3：入住人数维度"
 								},
 								{
 									"name": "type_name",
 									"type": "String",
-									"description": "套餐类型名称",
-									"required": true
+									"description": "套餐类型名称"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "套餐类型",
-									"required": true
+									"description": "套餐类型"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "套餐名称",
-									"required": true
+									"description": "套餐名称"
 								},
 								{
 									"name": "package_id",
 									"type": "Number",
-									"description": "套餐ID",
-									"required": true
+									"description": "套餐ID"
 								},
 								{
 									"name": "scenic_cover_img",
 									"type": "String",
-									"description": "景点封面图",
-									"required": true
+									"description": "景点封面图"
 								}
-							]
+							],
+							"name": "order_package_details",
+							"type": "TopOrderPackageDetail[]",
+							"description": "套餐详情"
 						},
 						{
 							"name": "order_package_desc",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						}
-					]
+					],
+					"name": "top_order_package",
+					"type": "TopOrderPackageDo",
+					"description": "订单关联包信息： topOrderPackageDO"
 				},
 				{
 					"name": "out_oid",
 					"type": "String",
-					"description": "商家订单ID",
-					"required": true
+					"description": "商家订单ID"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "下单时间",
-					"required": true
-				},
-				{
-					"name": "seller_nick",
-					"type": "String",
-					"description": "商家昵称",
-					"required": true
+					"description": "下单时间"
 				},
 				{
 					"name": "hotel_name",
 					"type": "String",
-					"description": "酒店名称",
-					"required": true
-				},
-				{
-					"name": "buyer_nick",
-					"type": "String",
-					"description": "买家昵称",
-					"required": true
+					"description": "酒店名称"
 				},
 				{
 					"name": "nights",
 					"type": "Number",
-					"description": "住几晚",
-					"required": true
+					"description": "住几晚"
 				},
 				{
 					"name": "tid",
 					"type": "Number",
-					"description": "飞猪订单ID",
-					"required": true
+					"description": "飞猪订单ID"
 				},
 				{
-					"name": "top_info_map",
-					"type": "Topinfomap",
-					"description": "订单垂直属性信息",
-					"required": true,
 					"subParams": [
-						{
-							"name": "umid",
-							"type": "String",
-							"description": "umid",
-							"required": true
-						},
-						{
-							"name": "morning_buy",
-							"type": "String",
-							"description": "凌晨入住订单",
-							"required": true
-						},
-						{
-							"name": "seller_delay_confirm_time",
-							"type": "String",
-							"description": "卖家延迟确认时间，单位分钟",
-							"required": true
-						},
-						{
-							"name": "hbs_pms_order_id",
-							"type": "String",
-							"description": "pms订单号",
-							"required": true
-						},
-						{
-							"name": "hbs_card_alipay_order",
-							"type": "String",
-							"description": "身份证线下信用住",
-							"required": true
-						},
-						{
-							"name": "upset_price",
-							"type": "String",
-							"description": "底价加价",
-							"required": true
-						},
-						{
-							"name": "reserved_room",
-							"type": "String",
-							"description": "是否包房",
-							"required": true
-						},
-						{
-							"name": "block_room",
-							"type": "String",
-							"description": "是否保留房",
-							"required": true
-						},
-						{
-							"name": "hbs_direct",
-							"type": "String",
-							"description": "是否直连订单",
-							"required": true
-						},
-						{
-							"name": "online_booking_room",
-							"type": "String",
-							"description": "是否是在线预约订单",
-							"required": true
-						},
 						{
 							"name": "hbs_eg_order",
 							"type": "String",
-							"description": "hbsEgOrder",
-							"required": true
+							"description": "hbsEgOrder"
 						},
 						{
 							"name": "hbs_buyer_alipay_no",
 							"type": "String",
-							"description": "hbsBuyerAlipayNo",
-							"required": true
+							"description": "hbsBuyerAlipayNo"
 						},
 						{
 							"name": "pre_change_promotion_flag",
 							"type": "String",
-							"description": "preChangePromotionFlag",
-							"required": true
+							"description": "preChangePromotionFlag"
+						},
+						{
+							"name": "morning_buy",
+							"type": "String",
+							"description": "凌晨入住订单"
 						},
 						{
 							"name": "cancel_type",
 							"type": "String",
-							"description": "cancelType",
-							"required": true
+							"description": "cancelType"
+						},
+						{
+							"name": "seller_delay_confirm_time",
+							"type": "String",
+							"description": "卖家延迟确认时间，单位分钟"
 						},
 						{
 							"name": "currency_type",
 							"type": "String",
-							"description": "currencyType",
-							"required": true
+							"description": "currencyType"
 						},
 						{
 							"name": "hbs_bed_type",
 							"type": "String",
-							"description": "hbsBedType",
-							"required": true
+							"description": "hbsBedType"
+						},
+						{
+							"name": "umid",
+							"type": "String",
+							"description": "umid"
 						},
 						{
 							"name": "hbs_old_promotionamt",
 							"type": "String",
-							"description": "hbsOldPromotionamt",
-							"required": true
+							"description": "hbsOldPromotionamt"
 						},
 						{
 							"name": "hbs_max_other_fee",
 							"type": "String",
-							"description": "hbsMaxOtherFee",
-							"required": true
+							"description": "hbsMaxOtherFee"
 						},
 						{
 							"name": "cancel_policy_json",
 							"type": "String",
-							"description": "cancelPolicyJson",
-							"required": true
+							"description": "cancelPolicyJson"
 						},
 						{
 							"name": "hbs_alipay_mobile",
 							"type": "String",
-							"description": "hbsAlipayMobile",
-							"required": true
+							"description": "hbsAlipayMobile"
+						},
+						{
+							"name": "hbs_pms_order_id",
+							"type": "String",
+							"description": "pms订单号"
 						},
 						{
 							"name": "hbs_hotel_out_id",
 							"type": "String",
-							"description": "hbsHotelOutId",
-							"required": true
+							"description": "hbsHotelOutId"
 						},
 						{
 							"name": "hbs_credit_settle",
 							"type": "String",
-							"description": "hbsCreditSettle",
-							"required": true
+							"description": "hbsCreditSettle"
 						},
 						{
 							"name": "ebooking_direct_tag",
 							"type": "String",
-							"description": "ebookingDirectTag",
-							"required": true
+							"description": "ebookingDirectTag"
 						},
 						{
 							"name": "hbs_old_payment",
 							"type": "String",
-							"description": "hbsOldPayment",
-							"required": true
+							"description": "hbsOldPayment"
+						},
+						{
+							"name": "hbs_card_alipay_order",
+							"type": "String",
+							"description": "身份证线下信用住"
 						},
 						{
 							"name": "promotion_snap_key",
 							"type": "String",
-							"description": "promotionSnapKey",
-							"required": true
+							"description": "promotionSnapKey"
 						},
 						{
 							"name": "hbs_all_tags",
 							"type": "String",
-							"description": "hbsAllTags",
-							"required": true
+							"description": "hbsAllTags"
+						},
+						{
+							"name": "hbs_direct",
+							"type": "String",
+							"description": "是否直连订单"
+						},
+						{
+							"name": "upset_price",
+							"type": "String",
+							"description": "底价加价"
+						},
+						{
+							"name": "reserved_room",
+							"type": "String",
+							"description": "是否包房"
+						},
+						{
+							"name": "block_room",
+							"type": "String",
+							"description": "是否保留房"
 						},
 						{
 							"name": "hbs_out_source_corp_name",
 							"type": "String",
-							"description": "渠道企业名称",
-							"required": true
+							"description": "渠道企业名称"
 						},
 						{
 							"name": "hbs_scan_code_order",
 							"type": "String",
-							"description": "扫码信用住",
-							"required": true
+							"description": "扫码信用住"
 						},
 						{
 							"name": "btrip_corporate_pay",
 							"type": "String",
-							"description": "商旅企业支付订单标识，1为是",
-							"required": true
+							"description": "商旅企业支付订单标识，1为是"
+						},
+						{
+							"name": "online_booking_room",
+							"type": "String",
+							"description": "是否是在线预约订单"
 						},
 						{
 							"name": "b2g_flag",
 							"type": "String",
-							"description": "b2g标识",
-							"required": true
+							"description": "b2g标识"
 						},
 						{
 							"name": "hbs_self_help_check_in",
 							"type": "String",
-							"description": "hbsSelfHelpCheckIn",
-							"required": true
+							"description": "hbsSelfHelpCheckIn"
 						},
 						{
 							"name": "hbs_xiao_shi_fang",
 							"type": "String",
-							"description": "小时房标识 1:小时房",
-							"required": true
+							"description": "小时房标识 1:小时房"
 						},
 						{
 							"name": "hbs_hourage",
 							"type": "String",
-							"description": "小时房时长",
-							"required": true
+							"description": "小时房时长"
 						},
 						{
 							"name": "advance_invocie_tag",
 							"type": "String",
-							"description": "预约发票标识",
-							"required": true
+							"description": "预约发票标识"
 						},
 						{
 							"name": "hour_room_reserved_time",
 							"type": "String",
-							"description": "小时房可入住时间",
-							"required": true
+							"description": "小时房可入住时间"
 						},
 						{
 							"name": "hour_room_leave_time",
 							"type": "String",
-							"description": "小时房最晚离店时间",
-							"required": true
+							"description": "小时房最晚离店时间"
 						},
 						{
 							"name": "hour_room_arrive_time",
 							"type": "String",
-							"description": "小时房到店时间",
-							"required": true
+							"description": "小时房到店时间"
 						},
 						{
 							"name": "credit_pay_order",
 							"type": "String",
-							"description": "信用住升级订单",
-							"required": true
+							"description": "信用住升级订单"
 						},
 						{
 							"name": "is_fz_member_order",
 							"type": "String",
-							"description": "是否是菲住联盟会员 true or false",
-							"required": true
+							"description": "是否是菲住联盟会员 true or false"
 						},
 						{
 							"name": "booker_member_card_no",
 							"type": "String",
-							"description": "会员卡卡号",
-							"required": true
+							"description": "会员卡卡号"
 						},
 						{
 							"name": "credit_pay_cancel_fee",
 							"type": "Number",
-							"description": "信用支付因取消的扣款费用的人民币，单位：分",
-							"required": true
+							"description": "信用支付因取消的扣款费用的人民币，单位：分"
 						},
 						{
 							"name": "hbs_out_source_corp_id",
 							"type": "String",
-							"description": "渠道企业id",
-							"required": true
+							"description": "渠道企业id"
 						},
 						{
 							"name": "selling_member_price",
 							"type": "Number",
-							"description": "售卖会员价",
-							"required": true
+							"description": "售卖会员价"
 						},
 						{
 							"name": "selling_price",
 							"type": "Number",
-							"description": "售卖价",
-							"required": true
+							"description": "售卖价"
 						},
 						{
 							"name": "fliggy_member_level",
 							"type": "String",
-							"description": "飞猪会员等级",
-							"required": true
+							"description": "飞猪会员等级"
 						},
 						{
 							"name": "is_fz_member",
 							"type": "String",
-							"description": "是否是菲住会员",
-							"required": true
+							"description": "是否是菲住会员"
 						},
 						{
 							"name": "member_card_order_id",
 							"type": "String",
-							"description": "合并支付会员卡订单号",
-							"required": true
+							"description": "合并支付会员卡订单号"
+						},
+						{
+							"name": "night_promotion_detail",
+							"type": "String",
+							"description": "订单间夜优惠明细,其中其中day:日期，sellerFullReduce:当日满减卖家优惠，sellerOtherReduce:当日非满减卖家优惠，sellerFullReduceAll:总满减卖家优惠，sellerOtherReduceAll:总非满减卖家优惠"
 						}
-					]
+					],
+					"name": "top_info_map",
+					"type": "Topinfomap",
+					"description": "订单垂直属性信息"
 				},
 				{
 					"name": "out_confirm_code",
 					"type": "String",
-					"description": "外部订单的下单确认码",
-					"required": true
+					"description": "外部订单的下单确认码"
 				},
 				{
 					"name": "trade_status",
 					"type": "String",
-					"description": "交易状态",
-					"required": true
+					"description": "交易状态"
 				},
 				{
 					"name": "alipay_trade_no",
 					"type": "String",
-					"description": "支付宝交易流水号",
-					"required": true
+					"description": "支付宝交易流水号"
 				},
 				{
 					"name": "hotel_code",
 					"type": "String",
-					"description": "商家酒店Code",
-					"required": true
+					"description": "商家酒店Code"
 				},
 				{
 					"name": "rp_code",
 					"type": "String",
-					"description": "商家rpcode",
-					"required": true
+					"description": "商家rpcode"
 				},
 				{
 					"name": "reserved_room_order",
 					"type": "Boolean",
-					"description": "是否包房",
-					"required": true
+					"description": "是否包房"
 				},
 				{
-					"name": "top_relation_orders",
-					"type": "Toprelationorders[]",
-					"description": "关联子订单对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tid",
 							"type": "Number",
-							"description": "订单tid",
-							"required": true
+							"description": "订单tid"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "room_type_name",
 							"type": "String",
-							"description": "房型名称",
-							"required": true
+							"description": "房型名称"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "联系人名称",
-							"required": true
+							"description": "联系人名称"
 						},
 						{
 							"name": "check_in_date",
 							"type": "Date",
-							"description": "入住时间",
-							"required": true
+							"description": "入住时间"
 						},
 						{
 							"name": "check_out_date",
 							"type": "Date",
-							"description": "离店时间",
-							"required": true
+							"description": "离店时间"
 						},
 						{
 							"name": "contact_phone",
 							"type": "String",
-							"description": "联系手机号",
-							"required": true
+							"description": "联系手机号"
 						},
 						{
 							"name": "union_status_text",
 							"type": "String",
-							"description": "统一订单状态",
-							"required": true
+							"description": "统一订单状态"
 						},
 						{
 							"name": "union_status_value",
 							"type": "String",
-							"description": "统一订单状态",
-							"required": true
+							"description": "统一订单状态"
 						},
 						{
 							"name": "pay_status",
 							"type": "Number",
-							"description": "支付状态",
-							"required": true
+							"description": "支付状态"
 						},
 						{
 							"name": "room_number",
 							"type": "Number",
-							"description": "房间数",
-							"required": true
+							"description": "房间数"
 						},
 						{
 							"name": "nights",
 							"type": "Number",
-							"description": "入住天数",
-							"required": true
+							"description": "入住天数"
 						},
 						{
 							"name": "payment",
 							"type": "Number",
-							"description": "支付金额",
-							"required": true
+							"description": "支付金额"
 						}
-					]
+					],
+					"name": "top_relation_orders",
+					"type": "String[]",
+					"description": "关联子订单对象"
 				},
 				{
 					"name": "split_order",
 					"type": "Boolean",
-					"description": "是否拆单",
-					"required": true
+					"description": "是否拆单"
 				},
 				{
-					"name": "hotel_order_seller",
-					"type": "HotelOrderSellerDo",
-					"description": "酒店订单卖家信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "payment",
-							"type": "OrderSellerPaymentDo",
-							"description": "支付类型",
-							"required": true,
 							"subParams": [
 								{
 									"name": "promotion_create_price",
 									"type": "Number",
-									"description": "下单时刻营销后金额",
-									"required": true
+									"description": "下单时刻营销后金额"
 								},
 								{
 									"name": "after_promotion_create_price",
 									"type": "Number",
-									"description": "下单时刻营销后金额",
-									"required": true
+									"description": "下单时刻营销后金额"
 								},
 								{
 									"name": "total_room_price",
 									"type": "Number",
-									"description": "总房费",
-									"required": true
+									"description": "总房费"
 								},
 								{
-									"name": "daily_infos",
-									"type": "HbsDailyPriceDo",
-									"description": "每日价格",
-									"required": true,
 									"subParams": [
 										{
 											"name": "currency_code",
 											"type": "String",
-											"description": "币种",
-											"required": true
+											"description": "币种"
 										},
 										{
 											"name": "exchange_rate",
 											"type": "String",
-											"description": "汇率",
-											"required": true
+											"description": "汇率"
 										},
 										{
-											"name": "daily_prices",
-											"type": "DailyPriceTo[]",
-											"description": "每日价格",
-											"required": true,
 											"subParams": [
 												{
 													"name": "foreign_currency_price",
 													"type": "Number",
-													"description": "外币价格",
-													"required": true
+													"description": "外币价格"
 												},
 												{
 													"name": "point",
 													"type": "Number",
-													"description": "积分数",
-													"required": true
+													"description": "积分数"
 												},
 												{
 													"name": "mileage",
 													"type": "Number",
-													"description": "淘里程数",
-													"required": true
+													"description": "淘里程数"
 												},
 												{
 													"name": "currency_code_name",
 													"type": "String",
-													"description": "币种名称",
-													"required": true
+													"description": "币种名称"
 												},
 												{
 													"name": "price",
 													"type": "Number",
-													"description": "价格",
-													"required": true
+													"description": "价格"
 												},
 												{
 													"name": "tax_price",
 													"type": "Number",
-													"description": "税费",
-													"required": true
+													"description": "税费"
 												},
 												{
 													"name": "break_fast_count",
 													"type": "Number",
-													"description": "早餐数",
-													"required": true
+													"description": "早餐数"
 												},
 												{
 													"name": "day",
 													"type": "String",
-													"description": "日期",
-													"required": true
+													"description": "日期"
 												},
 												{
 													"name": "after_promotion_price",
 													"type": "Number",
-													"description": "优惠后金额",
-													"required": true
+													"description": "优惠后金额"
 												},
 												{
 													"name": "base_price",
 													"type": "Number",
-													"description": "基础金额",
-													"required": true
+													"description": "基础金额"
 												},
 												{
 													"name": "tax_foreign_price",
 													"type": "Number",
-													"description": "税费外币金额",
-													"required": true
+													"description": "税费外币金额"
 												},
 												{
 													"name": "service_price",
 													"type": "Number",
-													"description": "servicePrice",
-													"required": true
+													"description": "servicePrice"
 												},
 												{
 													"name": "service_foreign_price",
 													"type": "Number",
-													"description": "serviceForeignPrice",
-													"required": true
+													"description": "serviceForeignPrice"
 												},
 												{
 													"name": "base_foreign_price",
 													"type": "Number",
-													"description": "外币底价",
-													"required": true
+													"description": "外币底价"
 												}
-											]
+											],
+											"name": "daily_prices",
+											"type": "DailyPriceTo[]",
+											"description": "每日价格"
 										}
-									]
+									],
+									"name": "daily_infos",
+									"type": "HbsDailyPriceDo",
+									"description": "每日价格"
 								},
 								{
 									"name": "after_promotion_current_price",
 									"type": "Number",
-									"description": "优惠后外币金额",
-									"required": true
+									"description": "优惠后外币金额"
 								},
 								{
 									"name": "promotion_current_price",
 									"type": "Number",
-									"description": "优惠外币金额",
-									"required": true
+									"description": "优惠外币金额"
 								}
-							]
+							],
+							"name": "payment",
+							"type": "OrderSellerPaymentDo",
+							"description": "支付类型"
 						},
 						{
-							"name": "settle_payment",
-							"type": "OrderSettleDo",
-							"description": "卖家结账单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "plat_promotion_price",
 									"type": "Number",
-									"description": "平台优惠金额",
-									"required": true
+									"description": "平台优惠金额"
 								},
 								{
 									"name": "other_fee",
 									"type": "Number",
-									"description": "其他费用",
-									"required": true
+									"description": "其他费用"
 								},
 								{
 									"name": "room_price",
 									"type": "Number",
-									"description": "房费",
-									"required": true
+									"description": "房费"
 								},
 								{
 									"name": "order_settle_price",
 									"type": "Number",
-									"description": "结账金额",
-									"required": true
+									"description": "结账金额"
 								},
 								{
-									"name": "settle_daily_price",
-									"type": "HbsDailyPriceDo",
-									"description": "实际结账日历",
-									"required": true,
 									"subParams": [
 										{
 											"name": "currency_code",
 											"type": "String",
-											"description": "币种",
-											"required": true
+											"description": "币种"
 										},
 										{
 											"name": "exchange_rate",
 											"type": "String",
-											"description": "下单时汇率",
-											"required": true
+											"description": "下单时汇率"
 										},
 										{
-											"name": "daily_prices",
-											"type": "DailyPriceTo[]",
-											"description": "每日房价列表",
-											"required": true,
 											"subParams": [
 												{
 													"name": "foreign_currency_price",
 													"type": "Number",
-													"description": "外币，单位:元*100",
-													"required": true
+													"description": "外币，单位:元*100"
 												},
 												{
 													"name": "point",
 													"type": "Number",
-													"description": "使用积分数",
-													"required": true
+													"description": "使用积分数"
 												},
 												{
 													"name": "mileage",
 													"type": "Number",
-													"description": "里程数",
-													"required": true
+													"description": "里程数"
 												},
 												{
 													"name": "currency_code_name",
 													"type": "String",
-													"description": "币种名称",
-													"required": true
+													"description": "币种名称"
 												},
 												{
 													"name": "price",
 													"type": "Number",
-													"description": "价格",
-													"required": true
+													"description": "价格"
 												},
 												{
 													"name": "tax_price",
 													"type": "Number",
-													"description": "税费",
-													"required": true
+													"description": "税费"
 												},
 												{
 													"name": "break_fast_count",
 													"type": "Number",
-													"description": "早餐数",
-													"required": true
+													"description": "早餐数"
 												},
 												{
 													"name": "day",
 													"type": "String",
-													"description": "日期",
-													"required": true
+													"description": "日期"
 												},
 												{
 													"name": "after_promotion_price",
 													"type": "Number",
-													"description": "每日营销后金额",
-													"required": true
+													"description": "每日营销后金额"
 												},
 												{
 													"name": "base_price",
 													"type": "Number",
-													"description": "底价人民币价格",
-													"required": true
+													"description": "底价人民币价格"
 												},
 												{
 													"name": "tax_foreign_price",
 													"type": "Number",
-													"description": "税费外币金额，单位：元*100",
-													"required": true
+													"description": "税费外币金额，单位：元*100"
 												},
 												{
 													"name": "service_price",
 													"type": "Number",
-													"description": "servicePrice",
-													"required": true
+													"description": "servicePrice"
 												},
 												{
 													"name": "service_foreign_price",
 													"type": "Number",
-													"description": "serviceForeignPrice",
-													"required": true
+													"description": "serviceForeignPrice"
 												},
 												{
 													"name": "base_foreign_price",
 													"type": "Number",
-													"description": "外币底价",
-													"required": true
+													"description": "外币底价"
 												}
-											]
+											],
+											"name": "daily_prices",
+											"type": "DailyPriceTo[]",
+											"description": "每日房价列表"
 										}
-									]
+									],
+									"name": "settle_daily_price",
+									"type": "HbsDailyPriceDo",
+									"description": "实际结账日历"
 								},
 								{
 									"name": "promotion_price",
 									"type": "Number",
-									"description": "卖家优惠金额",
-									"required": true
+									"description": "卖家优惠金额"
 								}
-							]
+							],
+							"name": "settle_payment",
+							"type": "OrderSettleDo",
+							"description": "卖家结账单信息"
 						}
-					]
+					],
+					"name": "hotel_order_seller",
+					"type": "HotelOrderSellerDo",
+					"description": "酒店订单卖家信息"
 				},
 				{
 					"name": "contact_name",
 					"type": "String",
-					"description": "联系人名称",
-					"required": true
+					"description": "联系人名称"
 				},
 				{
 					"name": "out_source_corp_name",
 					"type": "String",
-					"description": "渠道企业名称",
-					"required": true
+					"description": "渠道企业名称"
 				},
 				{
 					"name": "booking_status",
 					"type": "Number",
-					"description": "预定状态 面付信用住有效",
-					"required": true
+					"description": "预定状态 面付信用住有效"
 				},
 				{
 					"name": "out_order_id",
 					"type": "String",
-					"description": "外部订单号",
-					"required": true
+					"description": "外部订单号"
 				},
 				{
 					"name": "room_type_code",
 					"type": "String",
-					"description": "商家房型Code",
-					"required": true
+					"description": "商家房型Code"
 				},
 				{
 					"name": "related_code",
 					"type": "String",
-					"description": "消费码 全场景消费",
-					"required": true
-				},
-				{
-					"name": "checkin_date",
-					"type": "Date",
-					"description": "入住时间",
-					"required": true
-				},
-				{
-					"name": "top_daily_infos",
-					"type": "TopDailyInfo[]",
-					"description": "List\u003cTopDailyInfo\u003e",
-					"required": true,
-					"subParams": [
-						{
-							"name": "price",
-							"type": "Number",
-							"description": "价格",
-							"required": true
-						},
-						{
-							"name": "break_fast_count",
-							"type": "Number",
-							"description": "早餐数",
-							"required": true
-						},
-						{
-							"name": "day",
-							"type": "String",
-							"description": "日期",
-							"required": true
-						},
-						{
-							"name": "extra_add_price",
-							"type": "Number",
-							"description": "加价金额",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "room_number",
-					"type": "Number",
-					"description": "房间数",
-					"required": true
-				},
-				{
-					"name": "confirm_duration",
-					"type": "Number",
-					"description": "订单确认时长",
-					"required": true
-				},
-				{
-					"name": "checkout_date",
-					"type": "Date",
-					"description": "离店时间",
-					"required": true
-				},
-				{
-					"name": "top_overseas_price_info",
-					"type": "TopOverseasPriceInfoDo",
-					"description": "海外酒店信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "currency_code",
-							"type": "String",
-							"description": "币种",
-							"required": true
-						},
-						{
-							"name": "booking_product_sale_price",
-							"type": "Number",
-							"description": "产品售价,单位(元*100),包含税服务费等",
-							"required": true
-						},
-						{
-							"name": "buyer_payment",
-							"type": "Number",
-							"description": "买家应付包含杂费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "tax_price",
-							"type": "Number",
-							"description": "税费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "seller_payment",
-							"type": "Number",
-							"description": "卖家应收包含杂费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "other_fee",
-							"type": "Number",
-							"description": "结账杂费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "booking_service_price",
-							"type": "Number",
-							"description": "服务费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "booking_rate",
-							"type": "String",
-							"description": "下单时汇率",
-							"required": true
-						},
-						{
-							"name": "rate",
-							"type": "String",
-							"description": "当前汇率",
-							"required": true
-						},
-						{
-							"name": "book_seller_payment",
-							"type": "Number",
-							"description": "下单时刻卖家应收",
-							"required": true
-						},
-						{
-							"name": "booking_tax_price",
-							"type": "Number",
-							"description": "税费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "total_payment",
-							"type": "Number",
-							"description": "总价包含杂费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "checkout_rate",
-							"type": "String",
-							"description": "离店日汇率",
-							"required": true
-						},
-						{
-							"name": "fund_price",
-							"type": "Number",
-							"description": "担保金(元*100)",
-							"required": true
-						},
-						{
-							"name": "settle_product_sale_price",
-							"type": "Number",
-							"description": "结账产品售价,单位(元*100),包含税服务费等",
-							"required": true
-						},
-						{
-							"name": "service_price",
-							"type": "Number",
-							"description": "服务费,单位(元*100)",
-							"required": true
-						},
-						{
-							"name": "create_order_daily_price",
-							"type": "HbsDailyPriceDo",
-							"description": "日历价格",
-							"required": true,
-							"subParams": [
-								{
-									"name": "daily_prices",
-									"type": "DailyPriceTo[]",
-									"description": "日历价格详情",
-									"required": true,
-									"subParams": [
-										{
-											"name": "day",
-											"type": "Date",
-											"description": "日期",
-											"required": true
-										},
-										{
-											"name": "price",
-											"type": "Number",
-											"description": "价格",
-											"required": true
-										},
-										{
-											"name": "break_fast_count",
-											"type": "Number",
-											"description": "早餐",
-											"required": true
-										},
-										{
-											"name": "tax_price",
-											"type": "Number",
-											"description": "税费人民币金额",
-											"required": true
-										},
-										{
-											"name": "foreign_currency_price",
-											"type": "Number",
-											"description": "外币金额",
-											"required": true
-										},
-										{
-											"name": "service_price",
-											"type": "Number",
-											"description": "服务费人民币金额",
-											"required": true
-										},
-										{
-											"name": "tax_foreign_price",
-											"type": "Number",
-											"description": "税费外币金额",
-											"required": true
-										},
-										{
-											"name": "service_foreign_price",
-											"type": "Number",
-											"description": "服务费外币金额",
-											"required": true
-										},
-										{
-											"name": "base_foreign_price",
-											"type": "Number",
-											"description": "外币底价",
-											"required": true
-										},
-										{
-											"name": "base_price",
-											"type": "Number",
-											"description": "人民币底价",
-											"required": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "booking_rooms_price",
-							"type": "Number",
-							"description": "bookingRoomsPrice",
-							"required": true
-						},
-						{
-							"name": "settle_order_daily_price",
-							"type": "HbsDailyPriceDo",
-							"description": "settleOrderDailyPrice",
-							"required": true,
-							"subParams": [
-								{
-									"name": "daily_prices",
-									"type": "DailyPriceTo[]",
-									"description": "dailyPrices",
-									"required": true,
-									"subParams": [
-										{
-											"name": "day",
-											"type": "Date",
-											"description": "日期",
-											"required": true
-										},
-										{
-											"name": "price",
-											"type": "Number",
-											"description": "房价",
-											"required": true
-										},
-										{
-											"name": "break_fast_count",
-											"type": "Number",
-											"description": "早餐数",
-											"required": true
-										},
-										{
-											"name": "tax_price",
-											"type": "Number",
-											"description": "税费人民币金额",
-											"required": true
-										},
-										{
-											"name": "foreign_currency_price",
-											"type": "Number",
-											"description": "外币金额",
-											"required": true
-										},
-										{
-											"name": "service_price",
-											"type": "Number",
-											"description": "服务费人民币金额",
-											"required": true
-										},
-										{
-											"name": "tax_foreign_price",
-											"type": "Number",
-											"description": "税费外币金额",
-											"required": true
-										},
-										{
-											"name": "service_foreign_price",
-											"type": "Number",
-											"description": "服务费外币金额",
-											"required": true
-										},
-										{
-											"name": "base_foreign_price",
-											"type": "Number",
-											"description": "外币底价",
-											"required": true
-										},
-										{
-											"name": "base_price",
-											"type": "Number",
-											"description": "人民币底价",
-											"required": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "rooms_price",
-							"type": "Number",
-							"description": "房费",
-							"required": true
-						},
-						{
-							"name": "base_price",
-							"type": "Number",
-							"description": "底价房费",
-							"required": true
-						},
-						{
-							"name": "booking_base_price",
-							"type": "Number",
-							"description": "下单时底价房费",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "need_confirm_no",
-					"type": "Boolean",
-					"description": "是否需要确认号",
-					"required": true
-				},
-				{
-					"name": "show_seller_delay_confirm_button",
-					"type": "Boolean",
-					"description": "是否展示“卖家延迟按钮”",
-					"required": true
-				},
-				{
-					"name": "arrive_late",
-					"type": "Date",
-					"description": "最晚到店时间",
-					"required": true
-				},
-				{
-					"name": "contact_phone",
-					"type": "String",
-					"description": "联系人电话",
-					"required": true
-				},
-				{
-					"name": "block_room_order",
-					"type": "Boolean",
-					"description": "是否保留房",
-					"required": true
-				},
-				{
-					"name": "payment",
-					"type": "Number",
-					"description": "用户支付费用",
-					"required": true
-				},
-				{
-					"name": "refund_reason",
-					"type": "String",
-					"description": "订单取消原因",
-					"required": true
-				},
-				{
-					"name": "rid",
-					"type": "Number",
-					"description": "飞猪房型ID",
-					"required": true
-				},
-				{
-					"name": "seller_id",
-					"type": "Number",
-					"description": "商家ID",
-					"required": true
-				},
-				{
-					"name": "sub_type",
-					"type": "Number",
-					"description": "子订单类型",
-					"required": true
-				},
-				{
-					"name": "total_room_price",
-					"type": "Number",
-					"description": "总房费",
-					"required": true
-				},
-				{
-					"name": "out_source",
-					"type": "String",
-					"description": "outSource",
-					"required": true
-				},
-				{
-					"name": "room_type_name",
-					"type": "String",
-					"description": "房型名称",
-					"required": true
-				},
-				{
-					"name": "top_order_guests",
-					"type": "TopOrderGuest[]",
-					"description": "List\u003cTopOrderGuest\u003e",
-					"required": true,
-					"subParams": [
-						{
-							"name": "customer_type",
-							"type": "Number",
-							"description": "住客类型",
-							"required": true
-						},
-						{
-							"name": "person_no",
-							"type": "Number",
-							"description": "住客编号",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "名称",
-							"required": true
-						},
-						{
-							"name": "age",
-							"type": "Number",
-							"description": "年龄",
-							"required": true
-						},
-						{
-							"name": "room_no",
-							"type": "Number",
-							"description": "房间编号",
-							"required": true
-						}
-					]
+					"description": "消费码 全场景消费"
 				},
 				{
 					"name": "union_status_text",
 					"type": "String",
-					"description": "统一订单状态，与union_status_value相对应。101:已下单;102:已付款;103:确认有房;104:交易成功;105:申请退款;106:卖家拒绝退款;108:订单关闭;109:退款成功;522:买家待支付;501:已下单;502:确认有房;503:确认前用户取消;504:确认无房;505:买家入住;506:系统自动核实入住成功;507:确认后用户取消;508:卖家核实未入住NoShow;601:已下单;602:确认有房;603:确认前用户取消;604:确认无房;605:买家入住;606:系统自动核实入住成功;607:确认后用户取消;608:卖家核实未入住NoShow;609:买家离店;610:结账中;611:结账成功;612:结账失败追账中;613:追账成功;614:NOSHOW结账中;615:NOSHOW结账成功;616:NOSHOW结账失败;617:NOSHOW追账成功;618:结账取消;619:系统自动核实未入住成功;620:结账失败追账失败;621:结账失败追账成功;701:已下单;702:确认有房;703:用户取消;704:确认无房;705:买家入住;709:买家离店;710:取消中",
-					"required": true
+					"description": "统一订单状态，与union_status_value相对应。101:已下单;102:已付款;103:确认有房;104:交易成功;105:申请退款;106:卖家拒绝退款;108:订单关闭;109:退款成功;522:买家待支付;501:已下单;502:确认有房;503:确认前用户取消;504:确认无房;505:买家入住;506:系统自动核实入住成功;507:确认后用户取消;508:卖家核实未入住NoShow;601:已下单;602:确认有房;603:确认前用户取消;604:确认无房;605:买家入住;606:系统自动核实入住成功;607:确认后用户取消;608:卖家核实未入住NoShow;609:买家离店;610:结账中;611:结账成功;612:结账失败追账中;613:追账成功;614:NOSHOW结账中;615:NOSHOW结账成功;616:NOSHOW结账失败;617:NOSHOW追账成功;618:结账取消;619:系统自动核实未入住成功;620:结账失败追账失败;621:结账失败追账成功;701:已下单;702:确认有房;703:用户取消;704:确认无房;705:买家入住;709:买家离店;710:取消中"
 				},
 				{
-					"name": "union_status_value",
+					"name": "checkin_date",
+					"type": "Date",
+					"description": "入住时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格"
+						},
+						{
+							"name": "break_fast_count",
+							"type": "Number",
+							"description": "早餐数"
+						},
+						{
+							"name": "day",
+							"type": "String",
+							"description": "日期"
+						},
+						{
+							"name": "extra_add_price",
+							"type": "Number",
+							"description": "加价金额"
+						}
+					],
+					"name": "top_daily_infos",
+					"type": "TopDailyInfo[]",
+					"description": "List\u003cTopDailyInfo\u003e"
+				},
+				{
+					"name": "room_number",
 					"type": "Number",
-					"description": "统一订单状态",
-					"required": true
-				},
-				{
-					"name": "invoice_title",
-					"type": "String",
-					"description": "发票抬头",
-					"required": true
-				},
-				{
-					"name": "other_fee",
-					"type": "Number",
-					"description": "其他费用",
-					"required": true
-				},
-				{
-					"name": "memo",
-					"type": "String",
-					"description": "memo",
-					"required": true
+					"description": "房间数"
 				},
 				{
 					"name": "logistics_status_text",
 					"type": "String",
-					"description": "物流状态描述",
-					"required": true
+					"description": "物流状态描述"
 				},
 				{
-					"name": "logistics_status_value",
+					"name": "confirm_duration",
 					"type": "Number",
-					"description": "物流状态值",
-					"required": true
+					"description": "订单确认时长"
 				},
 				{
-					"name": "pay_status",
-					"type": "Number",
-					"description": "支付状态",
-					"required": true
+					"name": "checkout_date",
+					"type": "Date",
+					"description": "离店时间"
 				},
 				{
-					"name": "guarantee_type",
-					"type": "Number",
-					"description": "担保类型",
-					"required": true
-				},
-				{
-					"name": "fund_id",
-					"type": "Number",
-					"description": "担保id",
-					"required": true
-				},
-				{
-					"name": "cancel_policy_desc",
-					"type": "String",
-					"description": "取消规则描述",
-					"required": true
-				},
-				{
-					"name": "top_promotion",
-					"type": "TopPromotion",
-					"description": "topPromotion",
-					"required": true,
 					"subParams": [
 						{
-							"name": "top_create_order_promotion",
-							"type": "TopOrderPromotionDetail",
-							"description": "topCreateOrderPromotion",
-							"required": true,
-							"subParams": [
-								{
-									"name": "cash_back_amount",
-									"type": "Number",
-									"description": "返现金额",
-									"required": true
-								},
-								{
-									"name": "seller_decrease",
-									"type": "Number",
-									"description": "卖家立减",
-									"required": true
-								},
-								{
-									"name": "top_hotel_promotions",
-									"type": "TopHotelPromotion[]",
-									"description": "topHotelPromotions",
-									"required": true,
-									"subParams": [
-										{
-											"name": "consume_mileage",
-											"type": "Number",
-											"description": "消費里程数",
-											"required": true
-										},
-										{
-											"name": "rule_desc",
-											"type": "String",
-											"description": "订单命中的优惠计算规则描述(由优惠计算规则解析后的文本形式)",
-											"required": true
-										},
-										{
-											"name": "promotion_desc",
-											"type": "String",
-											"description": "活动优惠描述",
-											"required": true
-										},
-										{
-											"name": "amount",
-											"type": "Number",
-											"description": "活动使用的优惠金额，以分为单位",
-											"required": true
-										},
-										{
-											"name": "seller_amount",
-											"type": "Number",
-											"description": "活动使用的卖家优惠金额，以分为单位",
-											"required": true
-										},
-										{
-											"name": "times",
-											"type": "Number",
-											"description": "活动使用优惠次数",
-											"required": true
-										},
-										{
-											"name": "priority",
-											"type": "Number",
-											"description": "活动展示优先级（越大优先级越高）",
-											"required": true
-										},
-										{
-											"name": "tid",
-											"type": "Number",
-											"description": "tid",
-											"required": true
-										},
-										{
-											"name": "activity_icon_desc",
-											"type": "String",
-											"description": "活动Icon文案描述",
-											"required": true
-										},
-										{
-											"name": "activity_group_name",
-											"type": "String",
-											"description": "活动分组名称",
-											"required": true
-										},
-										{
-											"name": "activity_code",
-											"type": "String",
-											"description": "对应的航旅平台活动规则",
-											"required": true
-										},
-										{
-											"name": "discount",
-											"type": "Number",
-											"description": "活动使用的折扣",
-											"required": true
-										},
-										{
-											"name": "rule_type",
-											"type": "Number",
-											"description": "优惠计算规则类型",
-											"required": true
-										},
-										{
-											"name": "rule_target",
-											"type": "Number",
-											"description": "优惠维度",
-											"required": true
-										},
-										{
-											"name": "integral_activity",
-											"type": "Boolean",
-											"description": "是否\"积分加钱购\"类型活动",
-											"required": true
-										},
-										{
-											"name": "rule_code",
-											"type": "String",
-											"description": "使用的活动规则code",
-											"required": true
-										},
-										{
-											"name": "activity_name",
-											"type": "String",
-											"description": "卖家系统中的活动名称",
-											"required": true
-										},
-										{
-											"name": "amount_type",
-											"type": "Number",
-											"description": "优惠的呈现方式,目前有如下定义:,1. 金额类优惠,2. 使用次数类优惠,3. 权益类优惠,4. 后返类优惠",
-											"required": true
-										},
-										{
-											"name": "investor_type",
-											"type": "Number",
-											"description": "出资方是否卖家还是平台",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "decrease",
-									"type": "Number",
-									"description": "立减金额",
-									"required": true
-								},
-								{
-									"name": "platform_decrease",
-									"type": "Number",
-									"description": "平台立减金额",
-									"required": true
-								}
-							]
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种"
 						},
 						{
-							"name": "top_current_order_promotion",
-							"type": "TopOrderPromotionDetail",
-							"description": "topCurrentOrderPromotion",
-							"required": true,
-							"subParams": [
-								{
-									"name": "cash_back_amount",
-									"type": "Number",
-									"description": "返现金额",
-									"required": true
-								},
-								{
-									"name": "seller_decrease",
-									"type": "Number",
-									"description": "卖家立减金额",
-									"required": true
-								},
-								{
-									"name": "decrease",
-									"type": "Number",
-									"description": "立减金额",
-									"required": true
-								},
-								{
-									"name": "platform_decrease",
-									"type": "Number",
-									"description": "平台立减金额",
-									"required": true
-								},
-								{
-									"name": "top_hotel_promotions",
-									"type": "TopHotelPromotion[]",
-									"description": "topHotelPromotions",
-									"required": true,
-									"subParams": [
-										{
-											"name": "rule_desc",
-											"type": "String",
-											"description": "规则描述",
-											"required": true
-										},
-										{
-											"name": "investor_type",
-											"type": "String",
-											"description": "出资方",
-											"required": true
-										},
-										{
-											"name": "amount",
-											"type": "Number",
-											"description": "金额",
-											"required": true
-										},
-										{
-											"name": "seller_amount",
-											"type": "Number",
-											"description": "卖家金额",
-											"required": true
-										},
-										{
-											"name": "times",
-											"type": "Number",
-											"description": "优惠次数",
-											"required": true
-										},
-										{
-											"name": "amount_type",
-											"type": "Number",
-											"description": "优惠类型",
-											"required": true
-										},
-										{
-											"name": "activity_code",
-											"type": "String",
-											"description": "活动编号",
-											"required": true
-										},
-										{
-											"name": "rule_type",
-											"type": "Number",
-											"description": "规则类型",
-											"required": true
-										},
-										{
-											"name": "rule_target",
-											"type": "Number",
-											"description": "优惠目标（1：订单总额，2：每间夜，3：首晚）",
-											"required": true
-										},
-										{
-											"name": "rule_code",
-											"type": "String",
-											"description": "规则编号",
-											"required": true
-										},
-										{
-											"name": "activity_name",
-											"type": "String",
-											"description": "活动名称",
-											"required": true
-										}
-									]
-								}
-							]
+							"name": "booking_product_sale_price",
+							"type": "Number",
+							"description": "产品售价,单位(元*100),包含税服务费等"
 						},
 						{
-							"name": "top_order_promotion_extend",
-							"type": "TopOrderPromotionExtend",
-							"description": "topOrderPromotionExtend",
-							"required": true,
-							"subParams": [
-								{
-									"name": "top_daily_seller_promotions",
-									"type": "TopDailySellerPromotion[]",
-									"description": "topDailySellerPromotions",
-									"required": true,
-									"subParams": [
-										{
-											"name": "date",
-											"type": "Date",
-											"description": "日期",
-											"required": true
-										},
-										{
-											"name": "seller_promotion",
-											"type": "Number",
-											"description": "卖家优惠金额",
-											"required": true
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "tag_jsqr",
-					"type": "Boolean",
-					"description": "是否即时确认",
-					"required": true
-				},
-				{
-					"name": "rate_id",
-					"type": "String",
-					"description": "房价id",
-					"required": true
-				},
-				{
-					"name": "tax_and_fee",
-					"type": "Number",
-					"description": "税和费，单位分",
-					"required": true
-				},
-				{
-					"name": "top_domestic_price_info",
-					"type": "TopDomesticPriceInfoDo",
-					"description": "topDomesticPriceInfoDO",
-					"required": true,
-					"subParams": [
-						{
-							"name": "create_order_daily_price",
-							"type": "HbsDailyPriceDo",
-							"description": "createOrderDailyPrice",
-							"required": true,
-							"subParams": [
-								{
-									"name": "daily_prices",
-									"type": "DailyPriceTo[]",
-									"description": "每日价格",
-									"required": true,
-									"subParams": [
-										{
-											"name": "tax_price",
-											"type": "Number",
-											"description": "税费",
-											"required": true
-										},
-										{
-											"name": "break_fast_count",
-											"type": "Number",
-											"description": "早餐",
-											"required": true
-										},
-										{
-											"name": "price",
-											"type": "Number",
-											"description": "价格",
-											"required": true
-										},
-										{
-											"name": "day",
-											"type": "Date",
-											"description": "日期",
-											"required": true
-										},
-										{
-											"name": "base_price",
-											"type": "Number",
-											"description": "basePrice",
-											"required": true
-										},
-										{
-											"name": "base_foreign_price",
-											"type": "Number",
-											"description": "外币底价",
-											"required": true
-										}
-									]
-								}
-							]
+							"name": "buyer_payment",
+							"type": "Number",
+							"description": "买家应付包含杂费,单位(元*100)"
 						},
 						{
 							"name": "tax_price",
 							"type": "Number",
-							"description": "taxPrice",
-							"required": true
+							"description": "税费,单位(元*100)"
 						},
 						{
-							"name": "rooms_price",
+							"name": "seller_payment",
 							"type": "Number",
-							"description": "roomsPrice",
-							"required": true
-						},
-						{
-							"name": "service_price",
-							"type": "Number",
-							"description": "servicePrice",
-							"required": true
+							"description": "卖家应收包含杂费,单位(元*100)"
 						},
 						{
 							"name": "other_fee",
 							"type": "Number",
-							"description": "otherFee",
-							"required": true
-						},
-						{
-							"name": "booking_rooms_price",
-							"type": "Number",
-							"description": "bookingRoomsPrice",
-							"required": true
-						},
-						{
-							"name": "booking_tax_price",
-							"type": "Number",
-							"description": "bookingTaxPrice",
-							"required": true
+							"description": "结账杂费,单位(元*100)"
 						},
 						{
 							"name": "booking_service_price",
 							"type": "Number",
-							"description": "bookingServicePrice",
-							"required": true
+							"description": "服务费,单位(元*100)"
 						},
 						{
-							"name": "settle_order_daily_price",
-							"type": "HbsDailyPriceDo",
-							"description": "settleOrderDailyPrice",
-							"required": true,
+							"name": "booking_rate",
+							"type": "String",
+							"description": "下单时汇率"
+						},
+						{
+							"name": "rate",
+							"type": "String",
+							"description": "当前汇率"
+						},
+						{
+							"name": "book_seller_payment",
+							"type": "Number",
+							"description": "下单时刻卖家应收"
+						},
+						{
+							"name": "booking_tax_price",
+							"type": "Number",
+							"description": "税费,单位(元*100)"
+						},
+						{
+							"name": "total_payment",
+							"type": "Number",
+							"description": "总价包含杂费,单位(元*100)"
+						},
+						{
+							"name": "checkout_rate",
+							"type": "String",
+							"description": "离店日汇率"
+						},
+						{
+							"name": "fund_price",
+							"type": "Number",
+							"description": "担保金(元*100)"
+						},
+						{
+							"name": "settle_product_sale_price",
+							"type": "Number",
+							"description": "结账产品售价,单位(元*100),包含税服务费等"
+						},
+						{
+							"name": "service_price",
+							"type": "Number",
+							"description": "服务费,单位(元*100)"
+						},
+						{
 							"subParams": [
 								{
-									"name": "daily_prices",
-									"type": "DailyPriceTo[]",
-									"description": "dailyPrices",
-									"required": true,
 									"subParams": [
 										{
-											"name": "tax_price",
-											"type": "Number",
-											"description": "税费",
-											"required": true
-										},
-										{
-											"name": "break_fast_count",
-											"type": "Number",
-											"description": "早餐数",
-											"required": true
+											"name": "day",
+											"type": "Date",
+											"description": "日期"
 										},
 										{
 											"name": "price",
 											"type": "Number",
-											"description": "房价",
-											"required": true
+											"description": "价格"
 										},
 										{
-											"name": "day",
-											"type": "Date",
-											"description": "日期",
-											"required": true
+											"name": "break_fast_count",
+											"type": "Number",
+											"description": "早餐"
+										},
+										{
+											"name": "tax_price",
+											"type": "Number",
+											"description": "税费人民币金额"
+										},
+										{
+											"name": "foreign_currency_price",
+											"type": "Number",
+											"description": "外币金额"
+										},
+										{
+											"name": "service_price",
+											"type": "Number",
+											"description": "服务费人民币金额"
+										},
+										{
+											"name": "tax_foreign_price",
+											"type": "Number",
+											"description": "税费外币金额"
+										},
+										{
+											"name": "service_foreign_price",
+											"type": "Number",
+											"description": "服务费外币金额"
+										},
+										{
+											"name": "base_foreign_price",
+											"type": "Number",
+											"description": "外币底价"
 										},
 										{
 											"name": "base_price",
 											"type": "Number",
-											"description": "basePrice",
-											"required": true
+											"description": "人民币底价"
+										}
+									],
+									"name": "daily_prices",
+									"type": "DailyPriceTo[]",
+									"description": "日历价格详情"
+								}
+							],
+							"name": "create_order_daily_price",
+							"type": "HbsDailyPriceDo",
+							"description": "日历价格"
+						},
+						{
+							"name": "booking_rooms_price",
+							"type": "Number",
+							"description": "bookingRoomsPrice"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "day",
+											"type": "Date",
+											"description": "日期"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "房价"
+										},
+										{
+											"name": "break_fast_count",
+											"type": "Number",
+											"description": "早餐数"
+										},
+										{
+											"name": "tax_price",
+											"type": "Number",
+											"description": "税费人民币金额"
+										},
+										{
+											"name": "foreign_currency_price",
+											"type": "Number",
+											"description": "外币金额"
+										},
+										{
+											"name": "service_price",
+											"type": "Number",
+											"description": "服务费人民币金额"
+										},
+										{
+											"name": "tax_foreign_price",
+											"type": "Number",
+											"description": "税费外币金额"
+										},
+										{
+											"name": "service_foreign_price",
+											"type": "Number",
+											"description": "服务费外币金额"
 										},
 										{
 											"name": "base_foreign_price",
-											"type": "String",
-											"description": "外币底价",
-											"required": true
+											"type": "Number",
+											"description": "外币底价"
+										},
+										{
+											"name": "base_price",
+											"type": "Number",
+											"description": "人民币底价"
 										}
-									]
+									],
+									"name": "daily_prices",
+									"type": "DailyPriceTo[]",
+									"description": "dailyPrices"
 								}
-							]
+							],
+							"name": "settle_order_daily_price",
+							"type": "HbsDailyPriceDo",
+							"description": "settleOrderDailyPrice"
+						},
+						{
+							"name": "rooms_price",
+							"type": "Number",
+							"description": "房费"
 						},
 						{
 							"name": "base_price",
 							"type": "Number",
-							"description": "basePrice",
-							"required": true
+							"description": "底价房费"
 						},
 						{
 							"name": "booking_base_price",
 							"type": "Number",
-							"description": "bookingBasePrice",
-							"required": true
+							"description": "下单时底价房费"
 						}
-					]
+					],
+					"name": "top_overseas_price_info",
+					"type": "TopOverseasPriceInfoDo",
+					"description": "海外酒店信息"
+				},
+				{
+					"name": "need_confirm_no",
+					"type": "Boolean",
+					"description": "是否需要确认号"
+				},
+				{
+					"name": "show_seller_delay_confirm_button",
+					"type": "Boolean",
+					"description": "是否展示“卖家延迟按钮”"
+				},
+				{
+					"name": "arrive_late",
+					"type": "Date",
+					"description": "最晚到店时间"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "block_room_order",
+					"type": "Boolean",
+					"description": "是否保留房"
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "用户支付费用"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "订单取消原因"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "cash_back_amount",
+									"type": "Number",
+									"description": "返现金额"
+								},
+								{
+									"name": "seller_decrease",
+									"type": "Number",
+									"description": "卖家立减"
+								},
+								{
+									"subParams": [
+										{
+											"name": "consume_mileage",
+											"type": "Number",
+											"description": "消費里程数"
+										},
+										{
+											"name": "rule_desc",
+											"type": "String",
+											"description": "订单命中的优惠计算规则描述(由优惠计算规则解析后的文本形式)"
+										},
+										{
+											"name": "promotion_desc",
+											"type": "String",
+											"description": "活动优惠描述"
+										},
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "活动使用的优惠金额，以分为单位"
+										},
+										{
+											"name": "seller_amount",
+											"type": "Number",
+											"description": "活动使用的卖家优惠金额，以分为单位"
+										},
+										{
+											"name": "times",
+											"type": "Number",
+											"description": "活动使用优惠次数"
+										},
+										{
+											"name": "priority",
+											"type": "Number",
+											"description": "活动展示优先级（越大优先级越高）"
+										},
+										{
+											"name": "tid",
+											"type": "Number",
+											"description": "tid"
+										},
+										{
+											"name": "amount_type",
+											"type": "Number",
+											"description": "优惠的呈现方式,目前有如下定义:,1. 金额类优惠,2. 使用次数类优惠,3. 权益类优惠,4. 后返类优惠"
+										},
+										{
+											"name": "activity_icon_desc",
+											"type": "String",
+											"description": "活动Icon文案描述"
+										},
+										{
+											"name": "activity_group_name",
+											"type": "String",
+											"description": "活动分组名称"
+										},
+										{
+											"name": "activity_code",
+											"type": "String",
+											"description": "对应的航旅平台活动规则"
+										},
+										{
+											"name": "discount",
+											"type": "Number",
+											"description": "活动使用的折扣"
+										},
+										{
+											"name": "rule_type",
+											"type": "Number",
+											"description": "优惠计算规则类型"
+										},
+										{
+											"name": "rule_target",
+											"type": "Number",
+											"description": "优惠维度"
+										},
+										{
+											"name": "integral_activity",
+											"type": "Boolean",
+											"description": "是否\"积分加钱购\"类型活动"
+										},
+										{
+											"name": "rule_code",
+											"type": "String",
+											"description": "使用的活动规则code"
+										},
+										{
+											"name": "activity_name",
+											"type": "String",
+											"description": "卖家系统中的活动名称"
+										},
+										{
+											"name": "investor_type",
+											"type": "Number",
+											"description": "出资方是否卖家还是平台"
+										}
+									],
+									"name": "top_hotel_promotions",
+									"type": "TopHotelPromotion[]",
+									"description": "topHotelPromotions"
+								},
+								{
+									"name": "decrease",
+									"type": "Number",
+									"description": "立减金额"
+								},
+								{
+									"name": "platform_decrease",
+									"type": "Number",
+									"description": "平台立减金额"
+								}
+							],
+							"name": "top_create_order_promotion",
+							"type": "TopOrderPromotionDetail",
+							"description": "topCreateOrderPromotion"
+						},
+						{
+							"subParams": [
+								{
+									"name": "cash_back_amount",
+									"type": "Number",
+									"description": "返现金额"
+								},
+								{
+									"name": "seller_decrease",
+									"type": "Number",
+									"description": "卖家立减金额"
+								},
+								{
+									"subParams": [
+										{
+											"name": "rule_desc",
+											"type": "String",
+											"description": "规则描述"
+										},
+										{
+											"name": "investor_type",
+											"type": "String",
+											"description": "出资方"
+										},
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "金额"
+										},
+										{
+											"name": "seller_amount",
+											"type": "Number",
+											"description": "卖家金额"
+										},
+										{
+											"name": "times",
+											"type": "Number",
+											"description": "优惠次数"
+										},
+										{
+											"name": "amount_type",
+											"type": "Number",
+											"description": "优惠类型"
+										},
+										{
+											"name": "activity_code",
+											"type": "String",
+											"description": "活动编号"
+										},
+										{
+											"name": "rule_type",
+											"type": "Number",
+											"description": "规则类型"
+										},
+										{
+											"name": "rule_target",
+											"type": "Number",
+											"description": "优惠目标（1：订单总额，2：每间夜，3：首晚）"
+										},
+										{
+											"name": "rule_code",
+											"type": "String",
+											"description": "规则编号"
+										},
+										{
+											"name": "activity_name",
+											"type": "String",
+											"description": "活动名称"
+										}
+									],
+									"name": "top_hotel_promotions",
+									"type": "TopHotelPromotion[]",
+									"description": "topHotelPromotions"
+								},
+								{
+									"name": "decrease",
+									"type": "Number",
+									"description": "立减金额"
+								},
+								{
+									"name": "platform_decrease",
+									"type": "Number",
+									"description": "平台立减金额"
+								}
+							],
+							"name": "top_current_order_promotion",
+							"type": "TopOrderPromotionDetail",
+							"description": "topCurrentOrderPromotion"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "date",
+											"type": "Date",
+											"description": "日期"
+										},
+										{
+											"name": "seller_promotion",
+											"type": "Number",
+											"description": "卖家优惠金额"
+										}
+									],
+									"name": "top_daily_seller_promotions",
+									"type": "TopDailySellerPromotion[]",
+									"description": "topDailySellerPromotions"
+								}
+							],
+							"name": "top_order_promotion_extend",
+							"type": "TopOrderPromotionExtend",
+							"description": "topOrderPromotionExtend"
+						}
+					],
+					"name": "top_promotion",
+					"type": "TopPromotion",
+					"description": "topPromotion"
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "飞猪房型ID"
+				},
+				{
+					"name": "arrive_early",
+					"type": "Date",
+					"description": "最早到店时间"
+				},
+				{
+					"name": "sub_type",
+					"type": "Number",
+					"description": "子订单类型"
+				},
+				{
+					"name": "total_room_price",
+					"type": "Number",
+					"description": "总房费"
+				},
+				{
+					"name": "out_source",
+					"type": "String",
+					"description": "outSource"
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "房型名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "customer_type",
+							"type": "Number",
+							"description": "住客类型"
+						},
+						{
+							"name": "person_no",
+							"type": "Number",
+							"description": "住客编号"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "age",
+							"type": "Number",
+							"description": "年龄"
+						},
+						{
+							"name": "room_no",
+							"type": "Number",
+							"description": "房间编号"
+						}
+					],
+					"name": "top_order_guests",
+					"type": "TopOrderGuest[]",
+					"description": "List\u003cTopOrderGuest\u003e"
+				},
+				{
+					"name": "union_status_value",
+					"type": "Number",
+					"description": "统一订单状态"
+				},
+				{
+					"name": "invoice_title",
+					"type": "String",
+					"description": "发票抬头"
+				},
+				{
+					"name": "other_fee",
+					"type": "Number",
+					"description": "其他费用"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "memo"
+				},
+				{
+					"name": "logistics_status_value",
+					"type": "Number",
+					"description": "物流状态值"
+				},
+				{
+					"name": "pay_status",
+					"type": "Number",
+					"description": "支付状态"
+				},
+				{
+					"name": "guarantee_type",
+					"type": "Number",
+					"description": "担保类型"
+				},
+				{
+					"name": "fund_id",
+					"type": "Number",
+					"description": "担保id"
+				},
+				{
+					"name": "cancel_policy_desc",
+					"type": "String",
+					"description": "取消规则描述"
+				},
+				{
+					"name": "tag_jsqr",
+					"type": "Boolean",
+					"description": "是否即时确认"
+				},
+				{
+					"name": "rate_id",
+					"type": "String",
+					"description": "房价id"
+				},
+				{
+					"name": "tax_and_fee",
+					"type": "Number",
+					"description": "税和费，单位分"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "tax_price",
+											"type": "Number",
+											"description": "税费"
+										},
+										{
+											"name": "break_fast_count",
+											"type": "Number",
+											"description": "早餐"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "价格"
+										},
+										{
+											"name": "day",
+											"type": "Date",
+											"description": "日期"
+										},
+										{
+											"name": "base_price",
+											"type": "Number",
+											"description": "basePrice"
+										},
+										{
+											"name": "base_foreign_price",
+											"type": "Number",
+											"description": "外币底价"
+										}
+									],
+									"name": "daily_prices",
+									"type": "DailyPriceTo[]",
+									"description": "每日价格"
+								}
+							],
+							"name": "create_order_daily_price",
+							"type": "HbsDailyPriceDo",
+							"description": "createOrderDailyPrice"
+						},
+						{
+							"name": "tax_price",
+							"type": "Number",
+							"description": "taxPrice"
+						},
+						{
+							"name": "rooms_price",
+							"type": "Number",
+							"description": "roomsPrice"
+						},
+						{
+							"name": "service_price",
+							"type": "Number",
+							"description": "servicePrice"
+						},
+						{
+							"name": "other_fee",
+							"type": "Number",
+							"description": "otherFee"
+						},
+						{
+							"name": "booking_rooms_price",
+							"type": "Number",
+							"description": "bookingRoomsPrice"
+						},
+						{
+							"name": "booking_tax_price",
+							"type": "Number",
+							"description": "bookingTaxPrice"
+						},
+						{
+							"name": "booking_service_price",
+							"type": "Number",
+							"description": "bookingServicePrice"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "tax_price",
+											"type": "Number",
+											"description": "税费"
+										},
+										{
+											"name": "break_fast_count",
+											"type": "Number",
+											"description": "早餐数"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "房价"
+										},
+										{
+											"name": "day",
+											"type": "Date",
+											"description": "日期"
+										},
+										{
+											"name": "base_price",
+											"type": "Number",
+											"description": "basePrice"
+										},
+										{
+											"name": "base_foreign_price",
+											"type": "String",
+											"description": "外币底价"
+										}
+									],
+									"name": "daily_prices",
+									"type": "DailyPriceTo[]",
+									"description": "dailyPrices"
+								}
+							],
+							"name": "settle_order_daily_price",
+							"type": "HbsDailyPriceDo",
+							"description": "settleOrderDailyPrice"
+						},
+						{
+							"name": "base_price",
+							"type": "Number",
+							"description": "basePrice"
+						},
+						{
+							"name": "booking_base_price",
+							"type": "Number",
+							"description": "bookingBasePrice"
+						}
+					],
+					"name": "top_domestic_price_info",
+					"type": "TopDomesticPriceInfoDo",
+					"description": "topDomesticPriceInfoDO"
 				},
 				{
 					"name": "user_real_payment",
 					"type": "Number",
-					"description": "用户实际支付金额",
-					"required": true
+					"description": "用户实际支付金额"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "vendor",
 					"type": "String",
-					"description": "vendor",
-					"required": true
+					"description": "vendor"
 				},
 				{
-					"name": "credit_card",
-					"type": "CreditCard",
-					"description": "信用卡vcc信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cvv_code",
 							"type": "String",
-							"description": "信用卡cvv",
-							"required": true
+							"description": "信用卡cvv"
 						},
 						{
 							"name": "card_number",
 							"type": "String",
-							"description": "信用卡卡号",
-							"required": true
+							"description": "信用卡卡号"
 						},
 						{
 							"name": "expiration_date",
 							"type": "String",
-							"description": "客人选择的有效期格式: 月/年",
-							"required": true
+							"description": "客人选择的有效期格式: 月/年"
 						},
 						{
 							"name": "card_code",
 							"type": "String",
-							"description": "卡类型,AX,MC,DC,VA",
-							"required": true
+							"description": "卡类型,AX,MC,DC,VA"
 						},
 						{
 							"name": "card_holder_name",
 							"type": "String",
-							"description": "持卡人姓名",
-							"required": true
+							"description": "持卡人姓名"
 						}
-					]
+					],
+					"name": "credit_card",
+					"type": "CreditCard",
+					"description": "信用卡vcc信息"
 				},
 				{
 					"name": "refund_status",
 					"type": "String",
-					"description": "退款状态，1：买家已经申请退款，等待卖家同意;4:退款关闭;5:退款成功;6:卖家拒绝退款;9:没有申请退款",
-					"required": true
+					"description": "退款状态，1：买家已经申请退款，等待卖家同意;4:退款关闭;5:退款成功;6:卖家拒绝退款;9:没有申请退款"
 				},
 				{
 					"name": "refund_amout",
 					"type": "Number",
-					"description": "退款金额  单位为分",
-					"required": true
+					"description": "退款金额  单位为分"
 				},
 				{
-					"name": "post_trade_refund",
-					"type": "TopPostTradeRefundDo",
-					"description": "退款信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_suc_time",
 							"type": "Date",
-							"description": "退款成功时间",
-							"required": true
+							"description": "退款成功时间"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "创建退款申请时的额外描述",
-							"required": true
+							"description": "创建退款申请时的额外描述"
 						},
 						{
 							"name": "refund_amount",
 							"type": "Number",
-							"description": "申请的退款金额（单位：分）",
-							"required": true
+							"description": "申请的退款金额（单位：分）"
 						},
 						{
 							"name": "refund_reason",
 							"type": "String",
-							"description": "引起退款申请的类型描述",
-							"required": true
+							"description": "引起退款申请的类型描述"
 						},
 						{
 							"name": "post_trade_refund_type",
 							"type": "Number",
-							"description": "售后退款类型,1:买家取消订单，创建退款申请;2:卖家发起协商取消;3:卖家用户协商一致后，小二执行退款操作;4:卖家发起协商取消退款,系统收到买家确认短信后进行退款",
-							"required": true
+							"description": "售后退款类型,1:买家取消订单，创建退款申请;2:卖家发起协商取消;3:卖家用户协商一致后，小二执行退款操作;4:卖家发起协商取消退款,系统收到买家确认短信后进行退款"
 						},
 						{
 							"name": "post_trade_refund_status",
 							"type": "Number",
-							"description": "退款状态,1:退款申请已创建;2:退款申请已拒绝;3:退款处理中;4:退款已成功;5:退款失败;6: 退款申请已取消",
-							"required": true
+							"description": "退款状态,1:退款申请已创建;2:退款申请已拒绝;3:退款处理中;4:退款已成功;5:退款失败;6: 退款申请已取消"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "退款发起时间",
-							"required": true
+							"description": "退款发起时间"
 						},
 						{
 							"name": "tid",
 							"type": "Number",
-							"description": "tid",
-							"required": true
+							"description": "tid"
 						}
-					]
+					],
+					"name": "post_trade_refund",
+					"type": "TopPostTradeRefundDo",
+					"description": "退款信息"
 				},
 				{
 					"name": "channel",
 					"type": "String",
-					"description": "销售渠道",
-					"required": true
-				},
-				{
-					"name": "buyer_id",
-					"type": "Number",
-					"description": "买家id",
-					"required": true
+					"description": "销售渠道"
 				},
 				{
 					"name": "city",
 					"type": "Number",
-					"description": "城市code",
-					"required": true
+					"description": "城市code"
 				},
 				{
 					"name": "payment_type",
 					"type": "String",
-					"description": "支付类型",
-					"required": true
+					"description": "支付类型"
 				},
 				{
 					"name": "invoice_status",
 					"type": "String",
-					"description": "发票状态",
-					"required": true
+					"description": "发票状态"
 				},
 				{
 					"name": "order_source_type",
 					"type": "String",
-					"description": "订单来源类型",
-					"required": true
+					"description": "订单来源类型"
 				},
 				{
-					"name": "top_invoice",
-					"type": "TopInvoiceDo",
-					"description": "topInvoiceDO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "provider_type",
 							"type": "Number",
-							"description": "发票提供方:0未知 1酒店前台，2卖家开具",
-							"required": true
+							"description": "发票提供方:0未知 1酒店前台，2卖家开具"
 						}
-					]
+					],
+					"name": "top_invoice",
+					"type": "TopInvoiceDo",
+					"description": "topInvoiceDO"
 				},
 				{
 					"name": "refund_reason_type",
 					"type": "Number",
-					"description": "退款原因类型如101，503之类",
-					"required": true
+					"description": "退款原因类型如101，503之类"
+				},
+				{
+					"name": "max_occupancy",
+					"type": "Number",
+					"description": "入住人数（rate维度）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "coupon_title",
+							"type": "String",
+							"description": "卡劵名称"
+						},
+						{
+							"name": "coupon_biz_type",
+							"type": "Number",
+							"description": "卡劵模块id"
+						},
+						{
+							"name": "coupon_out_biz_id",
+							"type": "String",
+							"description": "卡劵订单号"
+						},
+						{
+							"name": "can_split",
+							"type": "Boolean",
+							"description": "是否可拆分"
+						},
+						{
+							"name": "face_value",
+							"type": "String",
+							"description": "面额"
+						},
+						{
+							"name": "room_night_face_value",
+							"type": "String",
+							"description": "单间夜面额"
+						},
+						{
+							"name": "instruction",
+							"type": "String",
+							"description": "卡劵说明"
+						}
+					],
+					"name": "top_order_coupon_d_o",
+					"type": "TopOrderCouponDo",
+					"description": "com.taobao.trip.htq.top.result.TopOrderCouponDO"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "daily_hotel_promotion",
+									"type": "String",
+									"description": "优惠日历数据，如{时间:{\\\"amount\\\":每日优惠金额,},时间:{\\\"amount\\\":每日优惠金额}}"
+								},
+								{
+									"name": "seller_decrease",
+									"type": "Number",
+									"description": "总卖家优惠"
+								}
+							],
+							"name": "current_order_promotion",
+							"type": "OrderPromotionDetail",
+							"description": "OrderPromotionDetail"
+						}
+					],
+					"name": "promotion",
+					"type": "OrderPromotionDo",
+					"description": "OrderPromotionDO"
+				},
+				{
+					"name": "rp_ori_name",
+					"type": "String",
+					"description": "原始rp信息"
 				}
-			]
-		},
-		{
-			"name": "error_msg",
-			"type": "String",
-			"description": "错误描述"
+			],
+			"name": "top_order_detail",
+			"type": "TopOrderDetail",
+			"description": "订单详情对象"
 		},
 		{
 			"name": "error",
 			"type": "String",
 			"description": "错误编号"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.detail.search",
+	"apiChineseName": "订单详情查询",
+	"description": "提供订单详情查询",
+	"id": 30974
 }

@@ -1,0 +1,133 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "订单更新开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "订单更新结束时间",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页序号，从0开始",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页大小，不超过200",
+					"required": true
+				}
+			],
+			"name": "cps_order_request",
+			"type": "CpsOrderRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口成功失败"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用接口返回错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用接口返回错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付成功时间"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单ID"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态： INIT(0, \"初始化\"),CREATED(1, \"已创建\"),PAID_DONE(2, \"已付款\"),ACCEPT_ORDER(3, \"已接单\"),PICK_ORDER(4, \"已拣货\"),SHIPPED(5, \"已发货\"),TRADE_SUCCESS(6, \"交易成功\"),TRADE_CLOSE(-1, \"交易关闭\"),"
+						},
+						{
+							"name": "pay_price",
+							"type": "Number",
+							"description": "主订单付款金额（不含运费、优惠、券）"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部用户ID：由pid+siteid+adzoneid+custom四部分拼成，其中前3个参数对应拼链中淘宝联盟mm=1_2_3，第4个参数对应拼链中 custom_parameters； eg：125000304_108400334_28176750484_12345"
+						},
+						{
+							"name": "share_amount",
+							"type": "Number",
+							"description": "预估总分佣金额（仅是预估金额，实际结算仍然通过xls线下doublecheck为准）"
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "最后更新时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_sub_order_id",
+									"type": "String",
+									"description": "业务子订单ID"
+								},
+								{
+									"name": "item_title",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "购买数量"
+								}
+							],
+							"name": "cps_sub_order",
+							"type": "CpsSubOrderBO[]",
+							"description": "子单列表"
+						}
+					],
+					"name": "model",
+					"type": "CpsOrderResponse[]",
+					"description": "调用接口返回对象"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "出参"
+		}
+	],
+	"name": "alibaba.wdkorder.sharestock.cpsorder.list",
+	"apiChineseName": "cps正向分销订单批量回流",
+	"description": "cps正向分销订单批量回流",
+	"id": 61794
+}

@@ -1,13 +1,6 @@
 {
-	"id": 37323,
-	"name": "taobao.film.lottery.sendcode",
-	"apiChineseName": "淘票票外部直发券",
-	"description": "淘票票外部直发券",
 	"requestParams": [
 		{
-			"name": "param_f_code_merchant_send_code_request",
-			"type": "FCodeMerchantSendCodeRq",
-			"description": "外部商户发码请求",
 			"subParams": [
 				{
 					"name": "out_uid",
@@ -18,6 +11,12 @@
 					"name": "each_num",
 					"type": "Number",
 					"description": "每个用户发码的数量",
+					"required": true
+				},
+				{
+					"name": "mix_id",
+					"type": "String",
+					"description": "发券码商品mixId",
 					"required": true
 				},
 				{
@@ -61,111 +60,98 @@
 					"name": "user_id_list",
 					"type": "String",
 					"description": "淘宝用户ID列表，用|分割"
-				},
-				{
-					"name": "mix_id",
-					"type": "String",
-					"description": "发券码商品mixId",
-					"required": true
 				}
-			]
+			],
+			"name": "param_f_code_merchant_send_code_request",
+			"type": "FCodeMerchantSendCodeRq",
+			"description": "外部商户发码请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultGeneralModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "return_url",
 					"type": "String",
-					"description": "returnUrl",
-					"required": true
+					"description": "returnUrl"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "服务返回出参",
-					"required": true
+					"description": "服务返回出参"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
-					"name": "return_value",
-					"type": "FCodeMerchantSendCodeRp",
-					"description": "返回具体结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "f_code_merchant_info_list",
-							"type": "FCodeMerchantVo[]",
-							"description": "码对外信息描述列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "gmt_expire",
 									"type": "Date",
-									"description": "码过期时间",
-									"required": true
+									"description": "码过期时间"
 								},
 								{
 									"name": "gen_task_id",
 									"type": "Number",
-									"description": "码生成任务ID",
-									"required": true
+									"description": "码生成任务ID"
 								},
 								{
 									"name": "cost_price",
 									"type": "Number",
-									"description": "码可抵用金额",
-									"required": true
+									"description": "码可抵用金额"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "code",
-									"required": true
+									"description": "code"
 								}
-							]
+							],
+							"name": "f_code_merchant_info_list",
+							"type": "FCodeMerchantVo[]",
+							"description": "码对外信息描述列表"
 						}
-					]
+					],
+					"name": "return_value",
+					"type": "FCodeMerchantSendCodeRp",
+					"description": "返回具体结果"
 				},
 				{
 					"name": "return_error_oper",
 					"type": "String",
-					"description": "returnErrorOper",
-					"required": true
+					"description": "returnErrorOper"
 				},
 				{
 					"name": "return_error_solution",
 					"type": "String",
-					"description": "returnErrorSolution",
-					"required": true
+					"description": "returnErrorSolution"
 				},
 				{
 					"name": "return_message",
 					"type": "String",
-					"description": "调用信息",
-					"required": true
+					"description": "调用信息"
 				},
 				{
 					"name": "return_error_stack_trace",
 					"type": "String",
-					"description": "returnErrorStackTrace",
-					"required": true
+					"description": "returnErrorStackTrace"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.film.lottery.sendcode",
+	"apiChineseName": "淘票票外部直发券",
+	"description": "淘票票外部直发券",
+	"id": 37323
 }

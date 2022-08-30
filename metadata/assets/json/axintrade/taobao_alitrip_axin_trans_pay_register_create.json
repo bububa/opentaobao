@@ -1,14 +1,6 @@
 {
-	"id": 55693,
-	"name": "taobao.alitrip.axin.trans.pay.register.create",
-	"apiChineseName": "提交支付服务开通",
-	"description": "阿信供销平台-提交支付服务开通接口",
 	"requestParams": [
 		{
-			"name": "create_d_t_o",
-			"type": "AxinPayRegisterCreateDto",
-			"description": "提交支付服务开通接口入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "legal_cert_type",
@@ -17,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "sites",
-					"type": "AxinPayRegisterSiteInfo[]",
-					"description": "站点信息",
 					"subParams": [
 						{
 							"name": "site_url",
@@ -36,7 +25,10 @@
 							"type": "String",
 							"description": "网站：01APP : 02服务窗:03公众号:04其他:05支付宝小程序:06"
 						}
-					]
+					],
+					"name": "sites",
+					"type": "AxinPayRegisterSiteInfo[]",
+					"description": "站点信息"
 				},
 				{
 					"name": "alipay_logon_id",
@@ -66,9 +58,6 @@
 					"description": "客服电话"
 				},
 				{
-					"name": "business_address",
-					"type": "AxinPayRegisterAddress",
-					"description": "营业地址",
 					"subParams": [
 						{
 							"name": "address",
@@ -95,7 +84,10 @@
 							"type": "String",
 							"description": "国家code"
 						}
-					]
+					],
+					"name": "business_address",
+					"type": "AxinPayRegisterAddress",
+					"description": "营业地址"
 				},
 				{
 					"name": "legal_cert_front_image",
@@ -168,9 +160,6 @@
 					"required": true
 				},
 				{
-					"name": "qualifications",
-					"type": "AxinPayRegisterQualification[]",
-					"description": "行业资格证",
 					"subParams": [
 						{
 							"name": "image_id",
@@ -182,67 +171,71 @@
 							"type": "String",
 							"description": "类型"
 						}
-					]
+					],
+					"name": "qualifications",
+					"type": "AxinPayRegisterQualification[]",
+					"description": "行业资格证"
 				},
 				{
 					"name": "binding_alipay_logon_id",
 					"type": "String",
 					"description": "支付宝签约账号"
 				}
-			]
+			],
+			"name": "create_d_t_o",
+			"type": "AxinPayRegisterCreateDto",
+			"description": "提交支付服务开通接口入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "描述信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data",
-					"type": "AxinPayRegisterCreateResDto",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_order_id",
 							"type": "String",
-							"description": "支付宝返回的申请单号",
-							"required": true
+							"description": "支付宝返回的申请单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinPayRegisterCreateResDto",
+					"description": "返回素材id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.pay.register.create",
+	"apiChineseName": "提交支付服务开通",
+	"description": "阿信供销平台-提交支付服务开通接口",
+	"id": 55693
 }

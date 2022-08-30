@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "main_item_id",
+			"type": "Number",
+			"description": "线上商品编码"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "接口执行错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "item_ids",
+					"type": "Number[]",
+					"description": "商品集合"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
+		}
+	],
+	"name": "tmall.nrt.store.item.from.online.item",
+	"apiChineseName": "基于新模型商品id查询摊位子品id",
+	"description": "基于新模型商品id查询摊位子品id",
+	"id": 58424
+}

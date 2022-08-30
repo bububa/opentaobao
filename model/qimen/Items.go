@@ -12,6 +12,6 @@ type Items struct {
 	InCount string `json:"inCount,omitempty" xml:"inCount,omitempty"`
 	// 计划调拨数量
 	PlanCount string `json:"planCount,omitempty" xml:"planCount,omitempty"`
-	// 明细
+	// 商品
 	Item *Item `json:"item,omitempty" xml:"item,omitempty"`
 }

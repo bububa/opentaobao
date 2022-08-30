@@ -1,14 +1,6 @@
 {
-	"id": 37070,
-	"name": "tmall.car.lease.postsynchronize",
-	"apiChineseName": "天猫开新车租后信息同步",
-	"description": "商家同步天猫开新车租后方案",
 	"requestParams": [
 		{
-			"name": "scheme_dto",
-			"type": "CarLeasePostSchemeSynchronizeDto",
-			"description": "租后方案信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "can_select",
@@ -45,9 +37,6 @@
 					"description": "不能使用原因描述"
 				},
 				{
-					"name": "scheme_after_lease_list",
-					"type": "CarLeasePostSchemeDto[]",
-					"description": "租后方案",
 					"subParams": [
 						{
 							"name": "can_select",
@@ -76,9 +65,6 @@
 							"description": "不能使用原因描述"
 						},
 						{
-							"name": "renew_scheme_list",
-							"type": "CarLeasePostSchemeDto[]",
-							"description": "续租到期后可选择方案列表",
 							"subParams": [
 								{
 									"name": "can_select",
@@ -115,7 +101,10 @@
 									"type": "Number",
 									"description": "0.退车,1.买断,2.分期，3.续租"
 								}
-							]
+							],
+							"name": "renew_scheme_list",
+							"type": "CarLeasePostSchemeDto[]",
+							"description": "续租到期后可选择方案列表"
 						},
 						{
 							"name": "rest_amount",
@@ -127,54 +116,59 @@
 							"type": "Number",
 							"description": "0.退车,1.买断,2.分期，3.续租"
 						}
-					]
+					],
+					"name": "scheme_after_lease_list",
+					"type": "CarLeasePostSchemeDto[]",
+					"description": "租后方案"
 				}
-			]
+			],
+			"name": "scheme_dto",
+			"type": "CarLeasePostSchemeSynchronizeDto",
+			"description": "租后方案信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "costTime",
-					"required": true
+					"description": "costTime"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "gmtCurrentTime",
-					"required": true
+					"description": "gmtCurrentTime"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "object",
-					"required": true
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.car.lease.postsynchronize",
+	"apiChineseName": "天猫开新车租后信息同步",
+	"description": "商家同步天猫开新车租后方案",
+	"id": 37070
 }

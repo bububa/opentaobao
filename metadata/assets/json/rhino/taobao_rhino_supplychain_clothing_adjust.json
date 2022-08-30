@@ -1,13 +1,6 @@
 {
-	"id": 39534,
-	"name": "taobao.rhino.supplychain.clothing.adjust",
-	"apiChineseName": "同步成衣仓盘点数据",
-	"description": "同步成衣仓盘点数据",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "MaterialInventoryAdjustDto",
-			"description": "库存盘点对象",
 			"subParams": [
 				{
 					"name": "factory_id",
@@ -59,7 +52,10 @@
 					"type": "Date",
 					"description": "盘点日期"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "MaterialInventoryAdjustDto",
+			"description": "库存盘点对象"
 		}
 	],
 	"responseParams": [
@@ -78,5 +74,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.rhino.supplychain.clothing.adjust",
+	"apiChineseName": "同步成衣仓盘点数据",
+	"description": "同步成衣仓盘点数据",
+	"id": 39534
 }

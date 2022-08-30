@@ -1,8 +1,4 @@
 {
-	"id": 29617,
-	"name": "alibaba.wdk.merchant.storeitem.update",
-	"apiChineseName": "修改门店商品",
-	"description": "修改门店商品",
 	"requestParams": [
 		{
 			"name": "sku_code",
@@ -27,29 +23,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchant.storeitem.update",
+	"apiChineseName": "修改门店商品",
+	"description": "修改门店商品",
+	"id": 29617
 }

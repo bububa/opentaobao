@@ -1,8 +1,4 @@
 {
-	"id": 47365,
-	"name": "alitrip.rail.ir.station.get",
-	"apiChineseName": "国际火车票标准车站查询",
-	"description": "国际火车票提供给代理商用于查询标准车站信息，用于代理商对自己的车站与飞猪平台的车站做映射",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -25,103 +21,92 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RailResultList",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "success",
-					"type": "String",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "err_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "err_msg",
-					"type": "String",
-					"description": "错误描述",
-					"required": true
-				},
-				{
-					"name": "module_list",
-					"type": "RailStationRS[]",
-					"description": "车站列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "image",
 							"type": "String",
-							"description": "车站图片url，多个;号分隔",
-							"required": true
+							"description": "车站图片url，多个;号分隔"
 						},
 						{
 							"name": "detail",
 							"type": "String",
-							"description": "车站信息，多行;号分隔",
-							"required": true
+							"description": "车站信息，多行;号分隔"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "车站地址",
-							"required": true
+							"description": "车站地址"
 						},
 						{
 							"name": "latitude",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "longitude",
 							"type": "String",
-							"description": "经度",
-							"required": true
+							"description": "经度"
 						},
 						{
 							"name": "cn_name",
 							"type": "String",
-							"description": "车站中文名称",
-							"required": true
+							"description": "车站中文名称"
 						},
 						{
 							"name": "en_name",
 							"type": "String",
-							"description": "车站英文名称",
-							"required": true
+							"description": "车站英文名称"
 						},
 						{
 							"name": "division_name",
 							"type": "String",
-							"description": "所属城市名称",
-							"required": true
+							"description": "所属城市名称"
 						},
 						{
 							"name": "division_id",
 							"type": "Number",
-							"description": "所属城市id",
-							"required": true
+							"description": "所属城市id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "车站原始名称",
-							"required": true
+							"description": "车站原始名称"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "车站编码",
-							"required": true
+							"description": "车站编码"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "RailStationRS[]",
+					"description": "车站列表"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RailResultList",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.rail.ir.station.get",
+	"apiChineseName": "国际火车票标准车站查询",
+	"description": "国际火车票提供给代理商用于查询标准车站信息，用于代理商对自己的车站与飞猪平台的车站做映射",
+	"id": 47365
 }

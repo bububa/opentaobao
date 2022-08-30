@@ -1,8 +1,4 @@
 {
-	"id": 36780,
-	"name": "taobao.taotv.video.playlist.all",
-	"apiChineseName": "获取播单列表",
-	"description": "根据牌照和视频源等获取播单列表",
 	"requestParams": [
 		{
 			"name": "system_info",
@@ -12,73 +8,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model_list",
-					"type": "Model[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "play_list_id",
 							"type": "Number",
-							"description": "playListId",
-							"required": true
+							"description": "playListId"
 						},
 						{
 							"name": "play_list_name",
 							"type": "String",
-							"description": "playListName",
-							"required": true
+							"description": "playListName"
 						},
 						{
 							"name": "bg_pic",
 							"type": "String",
-							"description": "bgPic",
-							"required": true
+							"description": "bgPic"
 						},
 						{
 							"name": "modify_time",
 							"type": "Date",
-							"description": "modifyTime",
-							"required": true
+							"description": "modifyTime"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "createTime",
-							"required": true
+							"description": "createTime"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "model"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "httpStatusCode",
-					"required": true
+					"description": "httpStatusCode"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.taotv.video.playlist.all",
+	"apiChineseName": "获取播单列表",
+	"description": "根据牌照和视频源等获取播单列表",
+	"id": 36780
 }

@@ -1,8 +1,4 @@
 {
-	"id": 41389,
-	"name": "alibaba.alihealth.trace.code.search.get.drugresourcetop",
-	"apiChineseName": "根据码获取码信息",
-	"description": "根据码获取码信息",
 	"requestParams": [
 		{
 			"name": "code",
@@ -39,97 +35,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "DrugInfoDto",
-					"description": "最外层对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "is_sale",
 							"type": "String",
-							"description": "是否销售",
-							"required": true
+							"description": "是否销售"
 						},
 						{
 							"name": "sale_time",
 							"type": "String",
-							"description": "销售时间",
-							"required": true
+							"description": "销售时间"
 						},
 						{
 							"name": "drug_name",
 							"type": "String",
-							"description": "药品名称",
-							"required": true
+							"description": "药品名称"
 						},
 						{
 							"name": "ent_name",
 							"type": "String",
-							"description": "生产企业名称",
-							"required": true
+							"description": "生产企业名称"
 						},
 						{
 							"name": "expiry_date",
 							"type": "String",
-							"description": "有效期至",
-							"required": true
+							"description": "有效期至"
 						},
 						{
 							"name": "first_query",
 							"type": "String",
-							"description": "第一次查询时间",
-							"required": true
+							"description": "第一次查询时间"
 						},
 						{
 							"name": "production_date",
 							"type": "String",
-							"description": "生产日期",
-							"required": true
+							"description": "生产日期"
 						},
 						{
 							"name": "sale_ent",
 							"type": "String",
-							"description": "销售企业",
-							"required": true
+							"description": "销售企业"
 						},
 						{
 							"name": "pkg_spec",
 							"type": "String",
-							"description": "包装规格",
-							"required": true
+							"description": "包装规格"
 						},
 						{
 							"name": "code_status",
 							"type": "String",
-							"description": "追溯码状态",
-							"required": true
+							"description": "追溯码状态"
 						},
 						{
 							"name": "query_count",
 							"type": "String",
-							"description": "码查询次数",
-							"required": true
+							"description": "码查询次数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "DrugInfoDto",
+					"description": "最外层对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.trace.code.search.get.drugresourcetop",
+	"apiChineseName": "根据码获取码信息",
+	"description": "根据码获取码信息",
+	"id": 41389
 }

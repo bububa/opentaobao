@@ -1,8 +1,4 @@
 {
-	"id": 38148,
-	"name": "taobao.train.agent.tostation.confirm",
-	"apiChineseName": "线下票确认送票至车站服务",
-	"description": "送票至车站的订单，代理商确认配送到站",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.train.agent.tostation.confirm",
+	"apiChineseName": "线下票确认送票至车站服务",
+	"description": "送票至车站的订单，代理商确认配送到站",
+	"id": 38148
 }

@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "goods_id",
+									"type": "Number",
+									"description": "交易猫商品ID",
+									"required": true
+								},
+								{
+									"name": "external_goods_id",
+									"type": "String",
+									"description": "外部商品ID，用于标识外部系统每次提交过来的商品",
+									"required": true
+								}
+							],
+							"name": "external_goods_id",
+							"type": "ExternalGoodsIdDto",
+							"description": "外部商品id对象",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品价格",
+							"required": true
+						}
+					],
+					"name": "goods_price_list",
+					"type": "GoodsPriceDto[]",
+					"description": "商品价格传输对象",
+					"required": true
+				},
+				{
+					"name": "external_batch_id",
+					"type": "String",
+					"description": "外部批次ID，用于幂等",
+					"required": true
+				}
+			],
+			"name": "goods_price_modify_command",
+			"type": "GoodsPriceModifyCommandDto",
+			"description": "商品批量改价接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "batch_id",
+					"type": "Number",
+					"description": "商品改价批次ID"
+				}
+			],
+			"name": "result",
+			"type": "GoodsBatchResultDto",
+			"description": "商品批量改价接口返回"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jym.item.external.goods.batch.modifyprice",
+	"apiChineseName": "交易猫外部商家批量商品改价接口",
+	"description": "供外部B端商家接入，提交批量商品改价请求，返回批量改价任务结果",
+	"id": 58182
+}

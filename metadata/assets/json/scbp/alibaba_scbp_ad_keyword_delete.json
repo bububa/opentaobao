@@ -1,8 +1,4 @@
 {
-	"id": 24991,
-	"name": "alibaba.scbp.ad.keyword.delete",
-	"apiChineseName": "外贸直通车删除关键词",
-	"description": "外贸直通车删除关键词",
 	"requestParams": [
 		{
 			"name": "ad_keyword",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "删除关键词是否成功"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.delete",
+	"apiChineseName": "外贸直通车删除关键词",
+	"description": "外贸直通车删除关键词",
+	"id": 24991
 }

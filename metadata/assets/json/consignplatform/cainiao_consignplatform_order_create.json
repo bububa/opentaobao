@@ -1,14 +1,6 @@
 {
-	"id": 47728,
-	"name": "cainiao.consignplatform.order.create",
-	"apiChineseName": "菜鸟发货工作台创建订单",
-	"description": "菜鸟发货工作台，商家或者isv通过api进行订单写入操作",
 	"requestParams": [
 		{
-			"name": "create_request",
-			"type": "OrderCreateRequest",
-			"description": "订单创建入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "user_memo",
@@ -16,10 +8,6 @@
 					"description": "商家备注"
 				},
 				{
-					"name": "receive_address",
-					"type": "AddressDtoForTop",
-					"description": "收件地址",
-					"required": true,
 					"subParams": [
 						{
 							"name": "country_name",
@@ -56,13 +44,19 @@
 							"description": "详细地址",
 							"required": true
 						}
-					]
+					],
+					"name": "receive_address",
+					"type": "AddressDtoForTop",
+					"description": "收件地址",
+					"required": true
 				},
 				{
-					"name": "receiver",
-					"type": "PersonDto",
-					"description": "收件人",
-					"required": true,
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单id，会用来做幂等，需要保证唯一",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "phone",
@@ -81,29 +75,13 @@
 							"description": "收件人",
 							"required": true
 						}
-					]
-				},
-				{
-					"name": "buyer_memo",
-					"type": "String",
-					"description": "买家留言"
-				},
-				{
-					"name": "outer_order_id",
-					"type": "String",
-					"description": "外部订单id，会用来做幂等，需要保证唯一",
+					],
+					"name": "receiver",
+					"type": "PersonDto",
+					"description": "收件人",
 					"required": true
 				},
 				{
-					"name": "order_source",
-					"type": "String",
-					"description": "订单来源",
-					"required": true
-				},
-				{
-					"name": "sub_order_list",
-					"type": "SubOrderDto[]",
-					"description": "子订单列表",
 					"subParams": [
 						{
 							"name": "outer_order_id",
@@ -118,6 +96,12 @@
 							"required": true
 						},
 						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
 							"name": "price",
 							"type": "Number",
 							"description": "商品价格（单位分）"
@@ -128,26 +112,38 @@
 							"description": "商品图片链接"
 						},
 						{
-							"name": "category",
-							"type": "Number",
-							"description": "商品类别。1 日用品; 2 食品; 3 文件; 4 衣物; 5 数码产品; 6 其他",
-							"required": true
-						},
-						{
-							"name": "goods_name",
-							"type": "String",
-							"description": "商品名称",
-							"required": true
-						},
-						{
 							"name": "goods_id",
 							"type": "String",
 							"description": "商品id",
 							"required": true
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "商品类别。1 日用品; 2 食品; 3 文件; 4 衣物; 5 数码产品; 6 其他",
+							"required": true
 						}
-					]
+					],
+					"name": "sub_order_list",
+					"type": "SubOrderDto[]",
+					"description": "子订单列表"
+				},
+				{
+					"name": "buyer_memo",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "订单来源",
+					"required": true
 				}
-			]
+			],
+			"name": "create_request",
+			"type": "OrderCreateRequest",
+			"description": "订单创建入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -166,5 +162,9 @@
 			"type": "Boolean",
 			"description": "创建是否成功"
 		}
-	]
+	],
+	"name": "cainiao.consignplatform.order.create",
+	"apiChineseName": "菜鸟发货工作台创建订单",
+	"description": "菜鸟发货工作台，商家或者isv通过api进行订单写入操作",
+	"id": 47728
 }

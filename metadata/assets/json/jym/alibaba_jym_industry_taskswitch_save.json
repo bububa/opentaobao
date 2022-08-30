@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "game_id",
+					"type": "String",
+					"description": "游戏ID，0代表所有游戏"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "原因"
+				},
+				{
+					"name": "game_server",
+					"type": "String",
+					"description": "区服"
+				},
+				{
+					"name": "task_type",
+					"type": "Number",
+					"description": "任务类型，0-所有，1-验号，2-发布"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "客户端ID, 0代表所有客户端"
+				},
+				{
+					"name": "begin_time",
+					"type": "String",
+					"description": "开始时间，格式yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间，格式yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "operation_system",
+					"type": "Number",
+					"description": "操作系统，0-所有，1-安卓，2-IOS"
+				},
+				{
+					"name": "rule_status",
+					"type": "Number",
+					"description": "规则状态，1-生效，2-失效"
+				}
+			],
+			"name": "task_switch_req_dto",
+			"type": "TaskSwitchReqDTO",
+			"description": "开关参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true - 成功，false - 失败"
+		},
+		{
+			"name": "sub_code_type",
+			"type": "String",
+			"description": "子集错误码，提供与业务细节使用"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用结果: true/false"
+		},
+		{
+			"name": "sub_extra_err_msg",
+			"type": "String",
+			"description": "子集错误描述，提供与业务细节使用"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "错误码枚举"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误详细描述"
+		}
+	],
+	"name": "alibaba.jym.industry.taskswitch.save",
+	"apiChineseName": "行业信息系统开关",
+	"description": "VMOS回调交易猫行业信息系统",
+	"id": 63123
+}

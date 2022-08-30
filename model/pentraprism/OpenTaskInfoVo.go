@@ -6,6 +6,8 @@ type OpenTaskInfoVo struct {
 	Rewards []TaskRewardVo `json:"rewards,omitempty" xml:"rewards>task_reward_vo,omitempty"`
 	// 扩展型任务子列表对象
 	SubList []OpenTaskInfoVo `json:"sub_list,omitempty" xml:"sub_list>open_task_info_vo,omitempty"`
+	// 任务信息token，用于回流输入
+	FromToken string `json:"from_token,omitempty" xml:"from_token,omitempty"`
 	// 任务状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 任务子类型
@@ -14,8 +16,6 @@ type OpenTaskInfoVo struct {
 	TaskType string `json:"task_type,omitempty" xml:"task_type,omitempty"`
 	// 做任务时间
 	Time string `json:"time,omitempty" xml:"time,omitempty"`
-	// 任务信息token，用于回流输入
-	FromToken string `json:"from_token,omitempty" xml:"from_token,omitempty"`
 	// 任务分组ID
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// 任务分组所在位置，用户再次排序

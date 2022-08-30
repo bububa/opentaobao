@@ -1,9 +1,11 @@
 {
-	"id": 10970,
-	"name": "taobao.wlb.item.batch.query",
-	"apiChineseName": "批次库存查询接口",
-	"description": "根据用户id，item id list和store code来查询商品库存信息和批次信息",
 	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "String",
+			"description": "需要查询的商品ID列表，以字符串表示，ID间以;隔开",
+			"required": true
+		},
 		{
 			"name": "store_code",
 			"type": "String",
@@ -18,12 +20,6 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "分页查询参数，每页查询数量，默认20，最大值50,大于50时按照50条查询"
-		},
-		{
-			"name": "item_ids",
-			"type": "String",
-			"description": "需要查询的商品ID列表，以字符串表示，ID间以;隔开",
-			"required": true
 		}
 	],
 	"responseParams": [
@@ -33,14 +29,18 @@
 			"description": "返回结果记录的数量"
 		},
 		{
-			"name": "item_inventory_batch_list",
-			"type": "WlbItemBatchInventory []",
-			"description": "商品库存及批次信息查询结果",
 			"subParams": [
 				{
-					"name": "item_batch",
-					"type": "WlbItemBatch[]",
-					"description": "批次库存查询结果",
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "total_quantity",
+					"type": "Number",
+					"description": "商品在所有仓库的可销库存总数"
+				},
+				{
 					"subParams": [
 						{
 							"name": "id",
@@ -121,48 +121,13 @@
 							"name": "status",
 							"type": "String",
 							"description": "状态。item_batch_status_open:开放 item_batch_status_lock:冻结 item_batch_status_invalid:无效"
-						},
-						{
-							"name": "creator",
-							"type": "String",
-							"description": "创建者"
-						},
-						{
-							"name": "last_modifier",
-							"type": "String",
-							"description": "最后修改者"
-						},
-						{
-							"name": "version",
-							"type": "Number",
-							"description": "版本"
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创建时间"
-						},
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "最后修改时间"
-						},
-						{
-							"name": "is_deleted",
-							"type": "Boolean",
-							"description": "是否删除。0：正常 1：删除"
 						}
-					]
+					],
+					"name": "item_batch",
+					"type": "WlbItemBatch[]",
+					"description": "批次库存查询结果"
 				},
 				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "商品ID"
-				},
-				{
-					"name": "item_inventorys",
-					"type": "WlbItemInventory[]",
-					"description": "商品库存查询结果",
 					"subParams": [
 						{
 							"name": "item_id",
@@ -175,28 +140,33 @@
 							"description": "库存数量"
 						},
 						{
-							"name": "store_code",
-							"type": "String",
-							"description": "仓库编码"
-						},
-						{
 							"name": "lock_quantity",
 							"type": "Number",
 							"description": "锁定库存数量"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓库编码"
 						},
 						{
 							"name": "type",
 							"type": "String",
 							"description": "SELLALBE 可销售库存\u003cbr/\u003eDEFECTIVE 残次\u003cbr/\u003eJISHUN 机损\u003cbr/\u003eXIANGSHUN 箱损\u003cbr/\u003eFREEZE 冻结库存\u003cbr/\u003eONROAD 在途库存"
 						}
-					]
-				},
-				{
-					"name": "total_quantity",
-					"type": "Number",
-					"description": "商品在所有仓库的可销库存总数"
+					],
+					"name": "item_inventorys",
+					"type": "WlbItemInventory[]",
+					"description": "商品库存查询结果"
 				}
-			]
+			],
+			"name": "item_inventory_batch_list",
+			"type": "WlbItemBatchInventory []",
+			"description": "商品库存及批次信息查询结果"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.batch.query",
+	"apiChineseName": "批次库存查询接口",
+	"description": "根据用户id，item id list和store code来查询商品库存信息和批次信息",
+	"id": 10970
 }

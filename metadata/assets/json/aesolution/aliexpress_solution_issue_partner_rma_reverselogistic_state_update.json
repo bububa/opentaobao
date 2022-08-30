@@ -1,20 +1,8 @@
 {
-	"id": 41475,
-	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
-	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
-	"description": "Updates the reverse logistics state for after sales services",
 	"requestParams": [
 		{
-			"name": "logistic_order_state_update_request",
-			"type": "LogisticOrderStateUpdateRequest",
-			"description": "Logistic order state update request",
-			"required": true,
 			"subParams": [
 				{
-					"name": "rma_logistic_order_state",
-					"type": "RmaLogisticOrderState",
-					"description": "Logistic order state information",
-					"required": true,
 					"subParams": [
 						{
 							"name": "state_date",
@@ -33,7 +21,11 @@
 							"type": "String",
 							"description": "Logistic order detail"
 						}
-					]
+					],
+					"name": "rma_logistic_order_state",
+					"type": "RmaLogisticOrderState",
+					"description": "Logistic order state information",
+					"required": true
 				},
 				{
 					"name": "tracking_code",
@@ -41,7 +33,11 @@
 					"description": "Tracking code",
 					"required": true
 				}
-			]
+			],
+			"name": "logistic_order_state_update_request",
+			"type": "LogisticOrderStateUpdateRequest",
+			"description": "Logistic order state update request",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "Error description"
 		}
-	]
+	],
+	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
+	"description": "Updates the reverse logistics state for after sales services",
+	"id": 41475
 }

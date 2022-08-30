@@ -1,8 +1,4 @@
 {
-	"id": 56229,
-	"name": "aliexpress.taxation.calculate.open.query",
-	"apiChineseName": "关务所需的申报清关字段",
-	"description": "关务所需的申报清关字段",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,21 +9,10 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "HjTaxCalculateResultDto",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "lines",
-							"type": "Lines[]",
-							"description": "交易行计税结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "quantity",
@@ -44,7 +29,7 @@
 								{
 									"name": "delivery_amount",
 									"type": "String",
-									"description": "商品运费总价",
+									"description": "运费未含税总价",
 									"required": true
 								},
 								{
@@ -77,13 +62,13 @@
 									"description": "子订单号id",
 									"required": true
 								}
-							]
+							],
+							"name": "lines",
+							"type": "Lines[]",
+							"description": "交易行计税结果",
+							"required": true
 						},
 						{
-							"name": "currency",
-							"type": "Currency",
-							"description": "交易币种",
-							"required": true,
 							"subParams": [
 								{
 									"name": "currency_code",
@@ -91,7 +76,11 @@
 									"description": "交易币种编码",
 									"required": true
 								}
-							]
+							],
+							"name": "currency",
+							"type": "Currency",
+							"description": "交易币种",
+							"required": true
 						},
 						{
 							"name": "exchange_rate",
@@ -99,7 +88,11 @@
 							"description": "币种转欧元汇率",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "HjTaxCalculateResultDto",
+					"description": "数据",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -119,7 +112,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.taxation.calculate.open.query",
+	"apiChineseName": "关务所需的申报清关字段",
+	"description": "关务所需的申报清关字段",
+	"id": 56229
 }

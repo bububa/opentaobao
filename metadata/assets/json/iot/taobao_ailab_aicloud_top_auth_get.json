@@ -1,8 +1,4 @@
 {
-	"id": 33061,
-	"name": "taobao.ailab.aicloud.top.auth.get",
-	"apiChineseName": "登陆",
-	"description": "登陆",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -31,29 +27,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "auth_info",
-					"type": "Json",
-					"description": "auth信息",
-					"required": true
-				},
-				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "是否操作成功",
-					"required": true
+					"type": "String",
+					"description": "auth信息"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo错误码信息，成功返回null",
-					"required": true
+					"description": "msgInfo错误码信息，成功返回null"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否操作成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.auth.get",
+	"apiChineseName": "登陆",
+	"description": "登陆",
+	"id": 33061
 }

@@ -1,8 +1,4 @@
 {
-	"id": 31229,
-	"name": "tmall.exchange.consigngoods",
-	"apiChineseName": "卖家发货",
-	"description": "卖家发货",
 	"requestParams": [
 		{
 			"name": "dispute_id",
@@ -32,67 +28,63 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "返回字段",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefundBaseResponse",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "exchange",
-					"type": "Exchange",
-					"description": "exchange",
-					"required": true,
 					"subParams": [
 						{
 							"name": "modified",
 							"type": "Date",
-							"description": "modified",
-							"required": true
+							"description": "modified"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "status",
-							"required": true
+							"description": "status"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "bizOrderId",
-							"required": true
+							"description": "bizOrderId"
 						},
 						{
 							"name": "dispute_id",
 							"type": "String",
-							"description": "disputeId",
-							"required": true
+							"description": "disputeId"
 						}
-					]
+					],
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "exchange"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefundBaseResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.exchange.consigngoods",
+	"apiChineseName": "卖家发货",
+	"description": "卖家发货",
+	"id": 31229
 }

@@ -1,8 +1,4 @@
 {
-	"id": 35153,
-	"name": "alibaba.wdk.item.serviceitem.query",
-	"apiChineseName": "查询服务商品",
-	"description": "查询服务商品",
 	"requestParams": [
 		{
 			"name": "hema_category_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result",
@@ -35,7 +28,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.serviceitem.query",
+	"apiChineseName": "查询服务商品",
+	"description": "查询服务商品",
+	"id": 35153
 }

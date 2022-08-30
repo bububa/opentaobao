@@ -1,8 +1,4 @@
 {
-	"id": 46667,
-	"name": "tmall.nr.seller.storerange.read",
-	"apiChineseName": "门店服务范围读取",
-	"description": "读取卖家所属门店的服务范围",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -19,83 +15,77 @@
 			"name": "store_ids",
 			"type": "Number[]",
 			"description": "门店id",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "NrResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
-					"name": "result_datas",
-					"type": "ResultData[]",
-					"description": "系统自动生成",
-					"required": true,
 					"subParams": [
-						{
-							"name": "store_id",
-							"type": "Number",
-							"description": "门店id",
-							"required": true
-						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家id",
-							"required": true
+							"description": "卖家id"
 						},
 						{
-							"name": "ranges",
-							"type": "NrServiceRangeResponseDto[]",
-							"description": "服务范围，支持多服务范围返回",
-							"required": true,
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id"
+						},
+						{
 							"subParams": [
 								{
-									"name": "points",
-									"type": "Points[]",
-									"description": "围栏数据",
-									"required": true,
 									"subParams": [
 										{
 											"name": "lat",
 											"type": "String",
-											"description": "维度",
-											"required": true
+											"description": "维度"
 										},
 										{
 											"name": "lng",
 											"type": "String",
-											"description": "经度",
-											"required": true
+											"description": "经度"
 										}
-									]
+									],
+									"name": "points",
+									"type": "Points[]",
+									"description": "围栏数据"
 								}
-							]
+							],
+							"name": "ranges",
+							"type": "NrServiceRangeResponseDto[]",
+							"description": "服务范围，支持多服务范围返回"
 						}
-					]
+					],
+					"name": "result_datas",
+					"type": "ResultData[]",
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "NrResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "tmall.nr.seller.storerange.read",
+	"apiChineseName": "门店服务范围读取",
+	"description": "读取卖家所属门店的服务范围",
+	"id": 46667
 }

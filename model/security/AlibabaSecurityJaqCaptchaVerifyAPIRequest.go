@@ -14,6 +14,8 @@ type AlibabaSecurityJaqCaptchaVerifyAPIRequest struct {
 	model.Params
 	// 扩展字段，格式为JSON字符串，用于传递“短信验证”等验证方式所需的额外入参，例如用户输入的验证码等，格式及JSON字段key定义请参考示例
 	_extendData string
+	// 风险识别接口返回的信息口令
+	_infoToken string
 	// 协议版本号
 	_protocolVersion string
 	// 软token签名
@@ -24,8 +26,6 @@ type AlibabaSecurityJaqCaptchaVerifyAPIRequest struct {
 	_sessionId string
 	// UMID token
 	_utoken string
-	// 风险识别接口返回的信息口令
-	_infoToken string
 	// 验证码发送渠道类型 1-短信 2-语音 3-邮件
 	_captchaType int64
 }
@@ -62,6 +62,19 @@ func (r *AlibabaSecurityJaqCaptchaVerifyAPIRequest) SetExtendData(_extendData st
 // GetExtendData ExtendData Getter
 func (r AlibabaSecurityJaqCaptchaVerifyAPIRequest) GetExtendData() string {
 	return r._extendData
+}
+
+// SetInfoToken is InfoToken Setter
+// 风险识别接口返回的信息口令
+func (r *AlibabaSecurityJaqCaptchaVerifyAPIRequest) SetInfoToken(_infoToken string) error {
+	r._infoToken = _infoToken
+	r.Set("info_token", _infoToken)
+	return nil
+}
+
+// GetInfoToken InfoToken Getter
+func (r AlibabaSecurityJaqCaptchaVerifyAPIRequest) GetInfoToken() string {
+	return r._infoToken
 }
 
 // SetProtocolVersion is ProtocolVersion Setter
@@ -127,19 +140,6 @@ func (r *AlibabaSecurityJaqCaptchaVerifyAPIRequest) SetUtoken(_utoken string) er
 // GetUtoken Utoken Getter
 func (r AlibabaSecurityJaqCaptchaVerifyAPIRequest) GetUtoken() string {
 	return r._utoken
-}
-
-// SetInfoToken is InfoToken Setter
-// 风险识别接口返回的信息口令
-func (r *AlibabaSecurityJaqCaptchaVerifyAPIRequest) SetInfoToken(_infoToken string) error {
-	r._infoToken = _infoToken
-	r.Set("info_token", _infoToken)
-	return nil
-}
-
-// GetInfoToken InfoToken Getter
-func (r AlibabaSecurityJaqCaptchaVerifyAPIRequest) GetInfoToken() string {
-	return r._infoToken
 }
 
 // SetCaptchaType is CaptchaType Setter

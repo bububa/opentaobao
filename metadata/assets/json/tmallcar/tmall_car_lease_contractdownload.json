@@ -1,8 +1,4 @@
 {
-	"id": 37077,
-	"name": "tmall.car.lease.contractdownload",
-	"apiChineseName": "天猫开新车租后合同下载",
-	"description": "天猫开新车租后合同下载",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "cost_time",
@@ -57,7 +50,14 @@
 					"description": "成功标志",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "tmall.car.lease.contractdownload",
+	"apiChineseName": "天猫开新车租后合同下载",
+	"description": "天猫开新车租后合同下载",
+	"id": 37077
 }

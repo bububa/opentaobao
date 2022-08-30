@@ -16,10 +16,10 @@ type TaobaoScitemQueryAPIRequest struct {
 	_itemName string
 	// 商家给商品的一个编码
 	_outerCode string
-	// 条形码
-	_barCode string
 	// 仓库编码
 	_wmsCode string
+	// 条形码
+	_barCode string
 	// ITEM类型(只允许输入以下英文或空) NORMAL 0:普通商品; COMBINE 1:是否是组合商品 DISTRIBUTION
 	_itemType int64
 	// 当前页码数
@@ -75,19 +75,6 @@ func (r TaobaoScitemQueryAPIRequest) GetOuterCode() string {
 	return r._outerCode
 }
 
-// SetBarCode is BarCode Setter
-// 条形码
-func (r *TaobaoScitemQueryAPIRequest) SetBarCode(_barCode string) error {
-	r._barCode = _barCode
-	r.Set("bar_code", _barCode)
-	return nil
-}
-
-// GetBarCode BarCode Getter
-func (r TaobaoScitemQueryAPIRequest) GetBarCode() string {
-	return r._barCode
-}
-
 // SetWmsCode is WmsCode Setter
 // 仓库编码
 func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
@@ -99,6 +86,19 @@ func (r *TaobaoScitemQueryAPIRequest) SetWmsCode(_wmsCode string) error {
 // GetWmsCode WmsCode Getter
 func (r TaobaoScitemQueryAPIRequest) GetWmsCode() string {
 	return r._wmsCode
+}
+
+// SetBarCode is BarCode Setter
+// 条形码
+func (r *TaobaoScitemQueryAPIRequest) SetBarCode(_barCode string) error {
+	r._barCode = _barCode
+	r.Set("bar_code", _barCode)
+	return nil
+}
+
+// GetBarCode BarCode Getter
+func (r TaobaoScitemQueryAPIRequest) GetBarCode() string {
+	return r._barCode
 }
 
 // SetItemType is ItemType Setter

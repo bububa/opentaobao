@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "feature",
+			"type": "String",
+			"description": "扩展信息Json格式"
+		},
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "e_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		},
+		{
+			"name": "e_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "cainiao.cntec.locallife.communitylife.verifyservicecode",
+	"apiChineseName": "验证码验证",
+	"description": "验证码验证",
+	"id": 63016
+}

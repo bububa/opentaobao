@@ -1,0 +1,249 @@
+{
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "分销退款单id，此参数必填",
+			"required": true
+		},
+		{
+			"name": "query_b2c_refund",
+			"type": "Boolean",
+			"description": "是否查询前台消费者退款"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "退款金额，单位：分"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "退款单最后修改时间，格式 yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "refund_status",
+					"type": "Number",
+					"description": "退款单状态，10-已撤回；20-等待卖家同意；30-卖家拒绝退款，等待买家修改；40-等待买家退货；50-买家退货，等待卖家确认收货；60-卖家拒绝收货；90-等待系统打款；100-退款成功；200-退款关闭"
+				},
+				{
+					"name": "refund_desc",
+					"type": "String",
+					"description": "退款说明"
+				},
+				{
+					"name": "return_goods",
+					"type": "Boolean",
+					"description": "是否退货"
+				},
+				{
+					"name": "refund_fee_yuan",
+					"type": "String",
+					"description": "退款金额，单位：元"
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "发生退款的分销子采购单id"
+				},
+				{
+					"name": "pay_sup_fee_yuan",
+					"type": "String",
+					"description": "支付给供应商的金额，单位：元"
+				},
+				{
+					"name": "supplier_nick",
+					"type": "String",
+					"description": "供应商昵称"
+				},
+				{
+					"name": "refund_create_time",
+					"type": "Date",
+					"description": "退款创建时间"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因"
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商昵称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "消费者退款状态最后修改时间，格式 yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "消费者昵称,未来不会透出，请用open_buyer_id"
+						},
+						{
+							"name": "refund_reason",
+							"type": "String",
+							"description": "退款原因"
+						},
+						{
+							"name": "goods_status_desc",
+							"type": "String",
+							"description": "货物状态描述"
+						},
+						{
+							"name": "need_return_goods",
+							"type": "Boolean",
+							"description": "是否需要退货"
+						},
+						{
+							"name": "refund_desc",
+							"type": "String",
+							"description": "退款说明"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "分销子采购单id"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "前台消费者子订单id"
+						},
+						{
+							"name": "return_fee",
+							"type": "Number",
+							"description": "退还给消费者的金额(分)"
+						},
+						{
+							"name": "to_seller_fee",
+							"type": "Number",
+							"description": "确认收货后会打款给分销商的金额(分),分摊到子单的实付金额-退款给消费者的金额"
+						},
+						{
+							"name": "refund_create_time",
+							"type": "Date",
+							"description": "退款创建时间"
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "退款id"
+						},
+						{
+							"name": "return_goods_quantity",
+							"type": "Number",
+							"description": "消费者退货数量"
+						},
+						{
+							"name": "open_buyer_id",
+							"type": "String",
+							"description": "消费者买家id加密key"
+						}
+					],
+					"name": "buyer_refund",
+					"type": "BuyerRefund",
+					"description": "消费者退款单信息"
+				},
+				{
+					"name": "purchase_order_id",
+					"type": "Number",
+					"description": "分销采购单id"
+				},
+				{
+					"name": "pay_sup_fee",
+					"type": "Number",
+					"description": "支付给供应商的金额，单位：分"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退款单类型，10-未发货退款；20-已发货退货；30-已发货仅退款；40-拒收"
+				},
+				{
+					"name": "refund_status_code",
+					"type": "String",
+					"description": "退款单状态code，RF_STATUS_NO_REFUND-已撤回；RF_STATUS_WAIT_SELLER_AGREE-等待卖家同意；RF_STATUS_SELLER_REFUSE-卖家拒绝退款,等待买家修改；RF_STATUS_WAIT_BUYER_RETURN_GOODS-等待买家退货；RF_STATUS_WAIT_SELLER_CONFIRM_GOODS-买家退货,等待卖家确认收货；RF_STATUS_SELLER_REFUSE_RETURN_GOODS-卖家拒绝收货；RF_STATUS_WAIT_SYSTEM_TRANSFER-等待系统打款；RF_STATUS_SUCCESS-退款成功；RF_STATUS_CLOSED-退款关闭"
+				},
+				{
+					"name": "refund_id",
+					"type": "Number",
+					"description": "退款单id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "company_code",
+							"type": "String",
+							"description": "退货物流公司编码，如顺丰、韵达等"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "退货物流公司名称，如顺丰"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "退货物流运单号"
+						}
+					],
+					"name": "return_logistics",
+					"type": "RefundLogistics[]",
+					"description": "退货的物流信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "refund_item_id",
+							"type": "Number",
+							"description": "退款明细ID，针对一笔退款每一个品就映射为一个明细，每一个明细有一个全局唯一的ID"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "分销子订单号"
+						},
+						{
+							"name": "refund_quantity",
+							"type": "Number",
+							"description": "退货数量"
+						}
+					],
+					"name": "refund_items",
+					"type": "RefundItem[]",
+					"description": "退款明细项，记录退款涉及的订单"
+				}
+			],
+			"name": "refund_detail",
+			"type": "RefundDetail",
+			"description": "退款单查询详情"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回值错误码"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "返回值错误信息"
+		},
+		{
+			"name": "opt_time",
+			"type": "Date",
+			"description": "操作时间"
+		}
+	],
+	"name": "taobao.fenxiao.yph.refund.get",
+	"apiChineseName": "一盘货商家单个查询退款单信息",
+	"description": "一盘货商家单个查询退款单信息",
+	"id": 59841
+}

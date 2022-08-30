@@ -1,14 +1,6 @@
 {
-	"id": 33997,
-	"name": "alibaba.campus.device.openapi.feedbackeventinfo",
-	"apiChineseName": "IVS事件处理反馈接口",
-	"description": "提供给第三方ISV的的事件信息处理反馈的接口",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "系统上下文",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,13 +13,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统上下文",
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "EventInfoApiDto",
-			"description": "请求封装类",
-			"required": true,
 			"subParams": [
 				{
 					"name": "event_time",
@@ -41,46 +33,49 @@
 					"description": "事件信息ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "EventInfoApiDto",
+			"description": "请求封装类",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用信息",
-					"required": true
+					"description": "调用信息"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误等级",
-					"required": true
+					"description": "错误等级"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.feedbackeventinfo",
+	"apiChineseName": "IVS事件处理反馈接口",
+	"description": "提供给第三方ISV的的事件信息处理反馈的接口",
+	"id": 33997
 }

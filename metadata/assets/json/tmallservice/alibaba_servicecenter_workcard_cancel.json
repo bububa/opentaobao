@@ -1,8 +1,4 @@
 {
-	"id": 49159,
-	"name": "alibaba.servicecenter.workcard.cancel",
-	"apiChineseName": "服务平台工单取消接口",
-	"description": "取消服务工单",
 	"requestParams": [
 		{
 			"name": "workcard_id",
@@ -21,36 +17,52 @@
 			"description": "服务单id"
 		},
 		{
+			"name": "type",
+			"type": "Number",
+			"description": "请求来源类型"
+		},
+		{
 			"name": "real_tp_nick",
 			"type": "String",
 			"description": "真实服务商昵称"
+		},
+		{
+			"name": "reason_code",
+			"type": "Number",
+			"description": "原因code"
+		},
+		{
+			"name": "reason_desc",
+			"type": "String",
+			"description": "原因desc"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "返回参数",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "显示信息,如：服务单失效，无法发起",
-					"required": true
+					"description": "显示信息,如：服务单失效，无法发起"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息code",
-					"required": true
+					"description": "消息code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回参数"
 		}
-	]
+	],
+	"name": "alibaba.servicecenter.workcard.cancel",
+	"apiChineseName": "服务平台工单取消接口",
+	"description": "取消服务工单",
+	"id": 49159
 }

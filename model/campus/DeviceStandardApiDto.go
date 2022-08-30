@@ -36,6 +36,8 @@ type DeviceStandardApiDto struct {
 	Nickname string `json:"nickname,omitempty" xml:"nickname,omitempty"`
 	// 设备运行状态展示字段
 	RunStatusName string `json:"run_status_name,omitempty" xml:"run_status_name,omitempty"`
+	// campusId
+	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 楼宇id
 	BuildingId int64 `json:"building_id,omitempty" xml:"building_id,omitempty"`
 	// 楼层id
@@ -44,8 +46,6 @@ type DeviceStandardApiDto struct {
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 空间单元id
 	SpaceId int64 `json:"space_id,omitempty" xml:"space_id,omitempty"`
-	// campusId
-	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 设备运行状态。0->在线 1->离线 2->故障
 	RunStatus int64 `json:"run_status,omitempty" xml:"run_status,omitempty"`
 	// 公司id

@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "rights_id",
+			"type": "String",
+			"description": "创建淘礼金时返回的rightsId",
+			"required": true
+		},
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "adzoneId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "update_success",
+					"type": "Boolean",
+					"description": "暂停成功"
+				}
+			],
+			"name": "model",
+			"type": "UpdateStatusResult",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "调用接口是否成功"
+		}
+	],
+	"name": "taobao.tbk.dg.vegas.tlj.stop",
+	"apiChineseName": "淘宝客-推广者-淘礼金暂停发放",
+	"description": "淘宝客推广者可对已经创建的淘礼金暂停发放",
+	"id": 58713
+}

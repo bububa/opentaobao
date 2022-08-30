@@ -1,8 +1,4 @@
 {
-	"id": 8,
-	"name": "taobao.product.propimg.upload",
-	"apiChineseName": "上传单张产品属性图片，如果需要传多张，可调多次",
-	"description": "传入产品ID \u003cbr/\u003e传入props,目前仅支持颜色属性.调用taobao.itemprops.get.v2取得颜色属性pid,\u003cbr/\u003e再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串; \u003cbr/\u003e传入图片内容 \u003cbr/\u003e注意：图片最大为2M,只支持JPG,GIF,如果需要传多张，可调多次",
 	"requestParams": [
 		{
 			"name": "id",
@@ -25,8 +21,8 @@
 			"name": "image",
 			"type": "byte[]",
 			"description": "图片内容.图片最大为2M,只支持JPG,GIF.",
-			"required": true,
-			"maxLength": 1048576
+			"maxLength": 1048576,
+			"required": true
 		},
 		{
 			"name": "position",
@@ -36,9 +32,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_prop_img",
-			"type": "ProductPropImg",
-			"description": "支持返回产品属性图片中的：url,id,created,modified",
 			"subParams": [
 				{
 					"name": "id",
@@ -60,7 +53,14 @@
 					"type": "Date",
 					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 				}
-			]
+			],
+			"name": "product_prop_img",
+			"type": "ProductPropImg",
+			"description": "支持返回产品属性图片中的：url,id,created,modified"
 		}
-	]
+	],
+	"name": "taobao.product.propimg.upload",
+	"apiChineseName": "上传单张产品属性图片，如果需要传多张，可调多次",
+	"description": "传入产品ID \u003cbr/\u003e传入props,目前仅支持颜色属性.调用taobao.itemprops.get.v2取得颜色属性pid,\u003cbr/\u003e再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串; \u003cbr/\u003e传入图片内容 \u003cbr/\u003e注意：图片最大为2M,只支持JPG,GIF,如果需要传多张，可调多次",
+	"id": 8
 }

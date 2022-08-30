@@ -1,13 +1,6 @@
 {
-	"id": 54268,
-	"name": "alitrip.agent.flight.sell.modify.approve",
-	"apiChineseName": "销售改签确认",
-	"description": "销售改签确认",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ModifyApproveRequestDto",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "apply_id",
@@ -17,12 +10,9 @@
 				{
 					"name": "domestic_intl",
 					"type": "Number",
-					"description": "国内国际标识"
+					"description": "国内国际标识:1:国内,2:国际"
 				},
 				{
-					"name": "change_list",
-					"type": "ModifyItemDTO[]",
-					"description": "改签数据",
 					"subParams": [
 						{
 							"name": "passenger_name",
@@ -37,17 +27,14 @@
 						{
 							"name": "pnr",
 							"type": "String",
-							"description": "pnr"
+							"description": "pnr(必填),无编码出票时可不填"
 						},
 						{
-							"name": "after_change_segments",
-							"type": "ModifySegmentDTO[]",
-							"description": "改签后航段",
 							"subParams": [
 								{
 									"name": "cabin_class",
 									"type": "String",
-									"description": "舱等"
+									"description": "舱等: F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱"
 								},
 								{
 									"name": "flight_no",
@@ -99,7 +86,10 @@
 									"type": "Number",
 									"description": "航程序号"
 								}
-							]
+							],
+							"name": "after_change_segments",
+							"type": "ModifySegmentDTO[]",
+							"description": "改签后航段"
 						},
 						{
 							"name": "modify_fee",
@@ -112,9 +102,6 @@
 							"description": "升舱费用"
 						},
 						{
-							"name": "before_change_segments",
-							"type": "ModifyBeforeSegmentDTO[]",
-							"description": "改前航段",
 							"subParams": [
 								{
 									"name": "arr_city",
@@ -126,38 +113,53 @@
 									"type": "String",
 									"description": "起飞城市"
 								}
-							]
+							],
+							"name": "before_change_segments",
+							"type": "ModifyBeforeSegmentDTO[]",
+							"description": "改前航段"
 						}
-					]
+					],
+					"name": "change_list",
+					"type": "ModifyItemDTO[]",
+					"description": "改签数据"
+				},
+				{
+					"name": "refund_way_type",
+					"type": "Number",
+					"description": "0:原路退回; 1:退银行卡; 2:原路退回+退银行卡"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ModifyApproveRequestDto",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.modify.approve",
+	"apiChineseName": "销售改签确认",
+	"description": "销售改签确认",
+	"id": 54268
 }

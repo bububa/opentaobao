@@ -1,8 +1,4 @@
 {
-	"id": 40549,
-	"name": "taobao.auction.gov.data.realtime.get",
-	"apiChineseName": "获取实时(今日)统计数据",
-	"description": "提供查询当日法院及下属法院的拍卖统计数据",
 	"requestParams": [
 		{
 			"name": "court_name",
@@ -19,65 +15,60 @@
 	],
 	"responseParams": [
 		{
-			"name": "real_time_data",
-			"type": "RealTimeData",
-			"description": "今日拍卖统计数据",
 			"subParams": [
 				{
 					"name": "auction_online_number",
 					"type": "Number",
-					"description": "在线标的件数",
-					"required": true
+					"description": "在线标的件数"
 				},
 				{
 					"name": "user_bid_number",
 					"type": "Number",
-					"description": "用户出价次数",
-					"required": true
+					"description": "用户出价次数"
 				},
 				{
 					"name": "auction_start_number",
 					"type": "Number",
-					"description": "开拍标的件数",
-					"required": true
+					"description": "开拍标的件数"
 				},
 				{
 					"name": "auction_publish_count",
 					"type": "Number",
-					"description": "发布标的件数",
-					"required": true
+					"description": "发布标的件数"
 				},
 				{
 					"name": "user_apply_number",
 					"type": "Number",
-					"description": "报名人数",
-					"required": true
+					"description": "报名人数"
 				},
 				{
 					"name": "user_intention_number",
 					"type": "Number",
-					"description": "意向用户数，包含订阅和报名次数，会累加历史数据",
-					"required": true
+					"description": "意向用户数，包含订阅和报名次数，会累加历史数据"
 				},
 				{
 					"name": "today_predict_gmv",
 					"type": "Number",
-					"description": "今天预计成交金额",
-					"required": true
+					"description": "今天预计成交金额"
 				},
 				{
 					"name": "user_view_number",
 					"type": "Number",
-					"description": "用户围观次数，会累加历史数据",
-					"required": true
+					"description": "用户围观次数，会累加历史数据"
 				},
 				{
 					"name": "auction_end_number",
 					"type": "Number",
-					"description": "结束标的件数",
-					"required": true
+					"description": "结束标的件数"
 				}
-			]
+			],
+			"name": "real_time_data",
+			"type": "RealTimeData",
+			"description": "今日拍卖统计数据"
 		}
-	]
+	],
+	"name": "taobao.auction.gov.data.realtime.get",
+	"apiChineseName": "获取实时(今日)统计数据",
+	"description": "提供查询当日法院及下属法院的拍卖统计数据",
+	"id": 40549
 }

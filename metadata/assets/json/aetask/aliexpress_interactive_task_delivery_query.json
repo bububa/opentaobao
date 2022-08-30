@@ -1,13 +1,6 @@
 {
-	"id": 52752,
-	"name": "aliexpress.interactive.task.delivery.query",
-	"apiChineseName": "AE互动任务投放",
-	"description": "将内部配置好的任务，如浏览商品，店铺投放给外部ISV",
 	"requestParams": [
 		{
-			"name": "request_dto",
-			"type": "QueryDeliveryRequestDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "pre_display",
@@ -44,14 +37,14 @@
 					"description": "准入key",
 					"required": true
 				}
-			]
+			],
+			"name": "request_dto",
+			"type": "QueryDeliveryRequestDto",
+			"description": "返回结果"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Result []",
-			"description": "服务返回接口",
 			"subParams": [
 				{
 					"name": "date_begin",
@@ -78,10 +71,6 @@
 					"required": true
 				},
 				{
-					"name": "materials",
-					"type": "Materials[]",
-					"description": "物料集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "material_url_type",
@@ -221,7 +210,11 @@
 							"description": "任务id",
 							"required": true
 						}
-					]
+					],
+					"name": "materials",
+					"type": "Materials[]",
+					"description": "物料集合",
+					"required": true
 				},
 				{
 					"name": "group_id",
@@ -235,7 +228,10 @@
 					"description": "结束时间",
 					"required": true
 				}
-			]
+			],
+			"name": "results",
+			"type": "Result []",
+			"description": "服务返回接口"
 		},
 		{
 			"name": "msg_info",
@@ -247,5 +243,9 @@
 			"type": "String",
 			"description": "msgCode"
 		}
-	]
+	],
+	"name": "aliexpress.interactive.task.delivery.query",
+	"apiChineseName": "AE互动任务投放",
+	"description": "将内部配置好的任务，如浏览商品，店铺投放给外部ISV",
+	"id": 52752
 }

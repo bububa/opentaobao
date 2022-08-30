@@ -1,0 +1,319 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "页码，从0开始",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "投放状态"
+				},
+				{
+					"name": "need_scene_list",
+					"type": "String[]",
+					"description": "场景列表"
+				},
+				{
+					"name": "campaign_name",
+					"type": "String",
+					"description": "计划名称"
+				},
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id列表"
+				}
+			],
+			"name": "campaign_query",
+			"type": "CampaignQueryTopDto",
+			"description": "计划查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划ID"
+						},
+						{
+							"name": "campaign_group_id",
+							"type": "Number",
+							"description": "计划组Id"
+						},
+						{
+							"name": "campaign_name",
+							"type": "String",
+							"description": "推广计划名称"
+						},
+						{
+							"name": "campaign_type",
+							"type": "Number",
+							"description": "类型(1:CPT,2:竞价CPM,8:CPC,16:单品)"
+						},
+						{
+							"name": "cpc_limit",
+							"type": "String",
+							"description": "最高点击单价"
+						},
+						{
+							"name": "day_budget",
+							"type": "String",
+							"description": "日预算 元"
+						},
+						{
+							"name": "cyclical_budget",
+							"type": "String",
+							"description": "周期预算 元"
+						},
+						{
+							"name": "dmc_period",
+							"type": "Number",
+							"description": "周期预算的周期天数 [3,30]"
+						},
+						{
+							"name": "dmc_begin_time",
+							"type": "String",
+							"description": "周期预算生效开始时间"
+						},
+						{
+							"name": "dmc_end_time",
+							"type": "String",
+							"description": "周期预算生效结束时间"
+						},
+						{
+							"name": "day_budget_unlimit",
+							"type": "Boolean",
+							"description": "dayBudgetUnlimit"
+						},
+						{
+							"name": "system_bid",
+							"type": "Number",
+							"description": "系统出价类型"
+						},
+						{
+							"name": "auto_bid",
+							"type": "Number",
+							"description": "是否智能出价"
+						},
+						{
+							"name": "speed_type",
+							"type": "Number",
+							"description": "投放方式(1:尽快，2:平滑)"
+						},
+						{
+							"name": "period_speed_type",
+							"type": "Number",
+							"description": "周期投放方式(0:尽快，1:平滑)"
+						},
+						{
+							"name": "solution_type",
+							"type": "Number",
+							"description": "方案类型(1：智能, 2:自定义）"
+						},
+						{
+							"name": "market_scene_type",
+							"type": "String",
+							"description": "marketSceneType"
+						},
+						{
+							"name": "market_scene",
+							"type": "Number",
+							"description": "marketScene"
+						},
+						{
+							"name": "maket_scene_name",
+							"type": "String",
+							"description": "marketSceneName"
+						},
+						{
+							"name": "activity_id",
+							"type": "String",
+							"description": "活动"
+						},
+						{
+							"name": "market_aim",
+							"type": "Number",
+							"description": "投放诉求（1:拓展新客, 2:打造爆款, 3: 日常销售）"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "投放状态(2:暂停,3:等待投放,5:投放中,7:投放结束, -99:异常)"
+						},
+						{
+							"name": "life_cycle",
+							"type": "Number",
+							"description": "生命周期(用来标示该计划组是否创建完成.99表示创建完成)"
+						},
+						{
+							"name": "target_buyer",
+							"type": "Number",
+							"description": "targetBuyer"
+						},
+						{
+							"name": "adgroup_id_list",
+							"type": "Number[]",
+							"description": "单元id列表"
+						},
+						{
+							"name": "top_time",
+							"type": "String",
+							"description": "置顶时间"
+						},
+						{
+							"name": "settle_charge",
+							"type": "String",
+							"description": "结算消耗"
+						},
+						{
+							"name": "source_channel",
+							"type": "String",
+							"description": "来源渠道"
+						},
+						{
+							"name": "source_entity_id",
+							"type": "Number",
+							"description": "来源实体id"
+						},
+						{
+							"name": "dmc_type",
+							"type": "Number",
+							"description": "预算类型"
+						},
+						{
+							"name": "auto_dmc",
+							"type": "Number",
+							"description": "单元间预算分配优化"
+						},
+						{
+							"name": "constraint_type",
+							"type": "Number",
+							"description": "出价约束类型"
+						},
+						{
+							"name": "constraint_value",
+							"type": "String",
+							"description": "出价约束的值"
+						},
+						{
+							"name": "channel_adzone_discount",
+							"type": "Boolean",
+							"description": "channelAdzoneDiscountSwitch"
+						},
+						{
+							"name": "creative_id_list",
+							"type": "Number[]",
+							"description": "创意id列表"
+						},
+						{
+							"name": "avg_dmc",
+							"type": "Number",
+							"description": "平均每日预算"
+						},
+						{
+							"name": "total_budget",
+							"type": "Number",
+							"description": "周期总预算(分)"
+						},
+						{
+							"name": "ab_test_open",
+							"type": "Number",
+							"description": "abTestOpen"
+						},
+						{
+							"name": "material_id",
+							"type": "Number",
+							"description": "物料id"
+						},
+						{
+							"name": "heat_item_ids",
+							"type": "Number[]",
+							"description": "加热的商品id"
+						},
+						{
+							"name": "strategy_crowd_info",
+							"type": "String",
+							"description": "策略中心人群信息"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "订单对应广告主的userid"
+						}
+					],
+					"name": "campaign_result_top_d_t_o_list",
+					"type": "CampaignResultTopDto[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.campaign.campaign.noreport",
+	"apiChineseName": "获取场景计划的非报表数据",
+	"description": "获取场景计划的非报表数据。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa",
+	"id": 58942
+}

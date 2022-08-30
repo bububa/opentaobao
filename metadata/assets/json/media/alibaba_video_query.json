@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "视频id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "视频标题"
+		},
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "视频id"
+		},
+		{
+			"name": "upload_time",
+			"type": "Number",
+			"description": "上传时间"
+		},
+		{
+			"name": "uploader_id",
+			"type": "String",
+			"description": "上传者id"
+		},
+		{
+			"name": "cover_url",
+			"type": "String",
+			"description": "视频封面"
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "视频描述"
+		},
+		{
+			"name": "duration",
+			"type": "Number",
+			"description": "视频时长(s)"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "视频高度"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "视频宽度"
+		},
+		{
+			"name": "aspect_ratio",
+			"type": "String",
+			"description": "视频比例"
+		},
+		{
+			"name": "tags",
+			"type": "String",
+			"description": "视频标签"
+		},
+		{
+			"name": "play_url",
+			"type": "String",
+			"description": "播放链接"
+		},
+		{
+			"name": "audit_state",
+			"type": "String",
+			"description": "审核状态"
+		}
+	],
+	"name": "alibaba.video.query",
+	"apiChineseName": "查询视频信息",
+	"description": "查询视频信息",
+	"id": 61577
+}

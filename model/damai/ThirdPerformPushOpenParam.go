@@ -20,4 +20,6 @@ type ThirdPerformPushOpenParam struct {
 	SystemId int64 `json:"system_id,omitempty" xml:"system_id,omitempty"`
 	// 场馆id
 	VenueId int64 `json:"venue_id,omitempty" xml:"venue_id,omitempty"`
+	// 入场方式 : 1 = 纸制票入场，2 = 电子票入场，3 = 纸质票电子票均支持
+	InWay int64 `json:"in_way,omitempty" xml:"in_way,omitempty"`
 }

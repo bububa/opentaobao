@@ -1,63 +1,73 @@
 {
-	"id": 55813,
-	"name": "tmall.nrt.member.openid",
-	"apiChineseName": "根据会员手机查询openId",
-	"description": "根据会员手机查询openId",
 	"requestParams": [
 		{
-			"name": "nrt_member_dto",
-			"type": "NrtMemberDTO",
-			"description": "会员DTO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "phone",
 					"type": "String",
 					"description": "手机号",
 					"required": true
+				},
+				{
+					"name": "member_type",
+					"type": "Number",
+					"description": "会员类型（1，喵零；2会员通）"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份"
+				},
+				{
+					"name": "sms_code",
+					"type": "String",
+					"description": "验证码"
 				}
-			]
+			],
+			"name": "nrt_member_dto",
+			"type": "NrtMemberDTO",
+			"description": "会员DTO",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "succ",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "MemberSynResponse",
-					"description": "返回的业务数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "open_id",
 							"type": "String",
-							"description": "加密后的taoId",
-							"required": true
+							"description": "加密后的taoId"
 						}
-					]
+					],
+					"name": "data",
+					"type": "MemberSynResponse",
+					"description": "返回的业务数据"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nrt.member.openid",
+	"apiChineseName": "根据会员手机查询openId",
+	"description": "根据会员手机查询openId",
+	"id": 55813
 }

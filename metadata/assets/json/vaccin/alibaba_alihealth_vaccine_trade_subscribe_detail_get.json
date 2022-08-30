@@ -1,0 +1,169 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "业务订单号",
+					"required": true
+				},
+				{
+					"name": "merchant_id",
+					"type": "String",
+					"description": "商家ID",
+					"required": true
+				},
+				{
+					"name": "subscribe_id",
+					"type": "Number",
+					"description": "预约单主键"
+				}
+			],
+			"name": "trade_subscribe_detail_query_top_request",
+			"type": "TradeSubscribeDetailQueryTopRequest",
+			"description": "请求参数类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "subscribe_id",
+							"type": "Number",
+							"description": "预约单主键"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单ID"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "预约者姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "预约者手机号"
+						},
+						{
+							"name": "identity_no",
+							"type": "String",
+							"description": "身份证号"
+						},
+						{
+							"name": "secondary_card_type",
+							"type": "String",
+							"description": "次要证件类型： 2护照 3港澳通行证"
+						},
+						{
+							"name": "secondary_card_id",
+							"type": "String",
+							"description": "次要证件号码"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "sku",
+							"type": "String",
+							"description": "关联订单购买的具体的SKU信息"
+						},
+						{
+							"name": "pov_name",
+							"type": "String",
+							"description": "pov名称"
+						},
+						{
+							"name": "pov_address",
+							"type": "String",
+							"description": "pov地址"
+						},
+						{
+							"name": "app_channel",
+							"type": "String",
+							"description": "APP渠道"
+						},
+						{
+							"name": "subscribe_start_time",
+							"type": "Date",
+							"description": "预约开始时间"
+						},
+						{
+							"name": "subscribe_end_time",
+							"type": "Date",
+							"description": "预约结束时间"
+						},
+						{
+							"name": "period_tag",
+							"type": "Number",
+							"description": "预约时段 1上午，2下午"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "预约单状态"
+						},
+						{
+							"name": "actual_pay_fee",
+							"type": "String",
+							"description": "订单实付金额"
+						},
+						{
+							"name": "cancel_role",
+							"type": "String",
+							"description": "取消者角色"
+						}
+					],
+					"name": "detail_top_dto_list",
+					"type": "TradeVaccineSubscribeDetailTopDTO[]",
+					"description": "预约单模型"
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务成功状态"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务报错code"
+				},
+				{
+					"name": "biz_message",
+					"type": "String",
+					"description": "业务报错消息"
+				}
+			],
+			"name": "data",
+			"type": "TradeVaccineSubscribeDetailTopResult",
+			"description": "预约详情响应"
+		}
+	],
+	"name": "alibaba.alihealth.vaccine.trade.subscribe.detail.get",
+	"apiChineseName": "私立疫苗交易-预约详情获取",
+	"description": "私立疫苗交易-预约详情获取",
+	"id": 63826
+}

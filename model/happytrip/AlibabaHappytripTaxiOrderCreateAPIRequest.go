@@ -54,6 +54,12 @@ type AlibabaHappytripTaxiOrderCreateAPIRequest struct {
 	_dynamicMd5 string
 	// 成本中心代码，用于区分不同的分账账号
 	_costCenter string
+	// 加价（元）
+	_addPrice string
+	// 出发地高德POI ID
+	_startPoiId string
+	// 目的地高德POI ID
+	_endPoiId string
 	// 叫车车型，0(实时)；1(预约)
 	_type int64
 	// 发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)
@@ -358,6 +364,45 @@ func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetCostCenter(_costCenter st
 // GetCostCenter CostCenter Getter
 func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetCostCenter() string {
 	return r._costCenter
+}
+
+// SetAddPrice is AddPrice Setter
+// 加价（元）
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetAddPrice(_addPrice string) error {
+	r._addPrice = _addPrice
+	r.Set("add_price", _addPrice)
+	return nil
+}
+
+// GetAddPrice AddPrice Getter
+func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetAddPrice() string {
+	return r._addPrice
+}
+
+// SetStartPoiId is StartPoiId Setter
+// 出发地高德POI ID
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetStartPoiId(_startPoiId string) error {
+	r._startPoiId = _startPoiId
+	r.Set("start_poi_id", _startPoiId)
+	return nil
+}
+
+// GetStartPoiId StartPoiId Getter
+func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetStartPoiId() string {
+	return r._startPoiId
+}
+
+// SetEndPoiId is EndPoiId Setter
+// 目的地高德POI ID
+func (r *AlibabaHappytripTaxiOrderCreateAPIRequest) SetEndPoiId(_endPoiId string) error {
+	r._endPoiId = _endPoiId
+	r.Set("end_poi_id", _endPoiId)
+	return nil
+}
+
+// GetEndPoiId EndPoiId Getter
+func (r AlibabaHappytripTaxiOrderCreateAPIRequest) GetEndPoiId() string {
+	return r._endPoiId
 }
 
 // SetType is Type Setter

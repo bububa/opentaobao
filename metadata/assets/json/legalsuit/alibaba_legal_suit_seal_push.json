@@ -1,0 +1,128 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件id"
+				},
+				{
+					"name": "push_people",
+					"type": "String",
+					"description": "推送人"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "explain",
+							"type": "String",
+							"description": "申请说明"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "文件类型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "create_time",
+									"type": "Date",
+									"description": "创建时间（可不填）"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "文件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "文件id"
+								}
+							],
+							"name": "file_models",
+							"type": "FileModel[]",
+							"description": "文件对象"
+						}
+					],
+					"name": "seal_file_models",
+					"type": "SealFileModel[]",
+					"description": "参数对象"
+				},
+				{
+					"name": "seal_type",
+					"type": "String",
+					"description": "用印类型"
+				},
+				{
+					"name": "handler_work_no",
+					"type": "String",
+					"description": "处理人"
+				}
+			],
+			"name": "seal_task_model",
+			"type": "SealTaskModel",
+			"description": "最外层list"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "api_error_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"subParams": [
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件id"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托id"
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id"
+				},
+				{
+					"name": "batch_id",
+					"type": "String",
+					"description": "批次id"
+				}
+			],
+			"name": "content",
+			"type": "SealResponseModel []",
+			"description": "返回内容"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.legal.suit.seal.push",
+	"apiChineseName": "法宝推送用印",
+	"description": "法宝推送用印",
+	"id": 62344
+}

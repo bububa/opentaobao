@@ -8,6 +8,8 @@ type SellerCat struct {
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// 店铺类目类型：可选值：manual_type：手动分类，new_type：新品上价， tree_type：二三级类目树 ，property_type：属性叶子类目树， brand_type：品牌推广
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
+	// 修改时间。格式：yyyy-MM-dd HH:mm:ss
+	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 卖家自定义类目编号
 	Cid int64 `json:"cid,omitempty" xml:"cid,omitempty"`
 	// 父类目编号，值等于0：表示此类目为店铺下的一级类目，值不等于0：表示此类目有父类目

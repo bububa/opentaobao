@@ -1,8 +1,4 @@
 {
-	"id": 25265,
-	"name": "yunos.service.cmns.coa.messageresult.get",
-	"apiChineseName": "CMNS消息发送到达查询",
-	"description": "CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息",
 	"requestParams": [
 		{
 			"name": "mid",
@@ -23,9 +19,6 @@
 			"description": "接口查询出错提示信息"
 		},
 		{
-			"name": "data",
-			"type": "MessageResult",
-			"description": "具体的消息返回值",
 			"subParams": [
 				{
 					"name": "expire_time",
@@ -52,7 +45,14 @@
 					"type": "Number",
 					"description": "消息达到设备数"
 				}
-			]
+			],
+			"name": "data",
+			"type": "MessageResult",
+			"description": "具体的消息返回值"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.messageresult.get",
+	"apiChineseName": "CMNS消息发送到达查询",
+	"description": "CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发送的消息",
+	"id": 25265
 }

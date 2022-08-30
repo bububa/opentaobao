@@ -1,24 +1,7 @@
 {
-	"id": 24982,
-	"name": "alibaba.scbp.effect.keyword.list",
-	"apiChineseName": "关键词报表",
-	"description": "关键词报表",
 	"requestParams": [
 		{
-			"name": "p4p_keyword_report_query",
-			"type": "IKeywordQuery",
-			"description": "IKeywordQuery",
 			"subParams": [
-				{
-					"name": "per_page_size",
-					"type": "Number",
-					"description": "每页行数"
-				},
-				{
-					"name": "to_page",
-					"type": "Number",
-					"description": "第几页"
-				},
 				{
 					"name": "end_date",
 					"type": "String",
@@ -29,40 +12,35 @@
 					"type": "Number",
 					"description": "区间 只能为1 7 30",
 					"required": true
+				},
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页行数"
+				},
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页"
 				}
-			]
+			],
+			"name": "p4p_keyword_report_query",
+			"type": "IKeywordQuery",
+			"description": "IKeywordQuery"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "keyword_report_list",
-			"type": "AdKeywordEffectDto []",
-			"description": "关键词效果数据列表",
 			"subParams": [
 				{
-					"name": "keyword",
+					"name": "click_cnt",
 					"type": "String",
-					"description": "关键词"
-				},
-				{
-					"name": "impression_cnt",
-					"type": "String",
-					"description": "曝光"
+					"description": "点击量"
 				},
 				{
 					"name": "click_cost_avg",
 					"type": "String",
 					"description": "平均点击花费"
-				},
-				{
-					"name": "online_time",
-					"type": "String",
-					"description": "单位小时，保留一位小数，例如13.5表示13.5小时"
-				},
-				{
-					"name": "click_cnt",
-					"type": "String",
-					"description": "点击量"
 				},
 				{
 					"name": "cost",
@@ -73,8 +51,26 @@
 					"name": "ctr",
 					"type": "String",
 					"description": "百分比，保留两位小数，例如3.75表示3.75%"
+				},
+				{
+					"name": "impression_cnt",
+					"type": "String",
+					"description": "曝光"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "online_time",
+					"type": "String",
+					"description": "单位小时，保留一位小数，例如13.5表示13.5小时"
 				}
-			]
+			],
+			"name": "keyword_report_list",
+			"type": "AdKeywordEffectDto []",
+			"description": "关键词效果数据列表"
 		},
 		{
 			"name": "total_num",
@@ -86,5 +82,9 @@
 			"type": "Number",
 			"description": "总页数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.effect.keyword.list",
+	"apiChineseName": "关键词报表",
+	"description": "关键词报表",
+	"id": 24982
 }

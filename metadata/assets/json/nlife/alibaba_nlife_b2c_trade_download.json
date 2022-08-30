@@ -1,29 +1,5 @@
 {
-	"id": 28164,
-	"name": "alibaba.nlife.b2c.trade.download",
-	"apiChineseName": "b2c下载订单",
-	"description": "下载零售商在零售+平台创建的订单",
 	"requestParams": [
-		{
-			"name": "page_no",
-			"type": "Number",
-			"description": "页码",
-			"required": true,
-			"minValue": 1
-		},
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "分页大小",
-			"required": true,
-			"maxValue": 50
-		},
-		{
-			"name": "store_id",
-			"type": "String",
-			"description": "零售门店在零售+平台对应的ID",
-			"required": true
-		},
 		{
 			"name": "start_date",
 			"type": "Date",
@@ -35,6 +11,24 @@
 			"type": "Date",
 			"description": "结束时间",
 			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "零售门店在零售+平台对应的ID",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -44,207 +38,179 @@
 			"description": "查询命中数量"
 		},
 		{
-			"name": "order_list",
-			"type": "Order []",
-			"description": "订单列表",
 			"subParams": [
 				{
-					"name": "goods_list",
-					"type": "Goods[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "商品数量",
-							"required": true
+							"description": "商品数量"
 						},
 						{
 							"name": "guider",
 							"type": "String",
-							"description": "导购员编号",
-							"required": true
+							"description": "导购员编号"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						},
 						{
 							"name": "price",
 							"type": "Number",
-							"description": "商品价格，人民币 分",
-							"required": true
+							"description": "商品价格，人民币 分"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "零售+商品ID",
-							"required": true
+							"description": "零售+商品ID"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品itemId",
-							"required": true
+							"description": "商品itemId"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "商品skuId",
-							"required": true
+							"description": "商品skuId"
 						}
-					]
+					],
+					"name": "goods_list",
+					"type": "Goods[]",
+					"description": "商品列表"
 				},
 				{
 					"name": "sales_name",
 					"type": "String",
-					"description": "收银员姓名",
-					"required": true
+					"description": "收银员姓名"
 				},
 				{
 					"name": "trade_status",
 					"type": "String",
-					"description": "交易状态:WAIT_PAY：等待支付；SUCCESS：支付成功；CLOSED：交易关闭",
-					"required": true
+					"description": "交易状态:WAIT_PAY：等待支付；SUCCESS：支付成功；CLOSED：交易关闭"
 				},
 				{
 					"name": "gmt_pay",
 					"type": "String",
-					"description": "支付时间",
-					"required": true
+					"description": "支付时间"
 				},
 				{
 					"name": "actual_pay_amount",
 					"type": "Number",
-					"description": "实付金额，人民币 分",
-					"required": true
+					"description": "实付金额，人民币 分"
 				},
 				{
 					"name": "total_amount",
 					"type": "Number",
-					"description": "订单金额，人民币 分",
-					"required": true
+					"description": "订单金额，人民币 分"
 				},
 				{
 					"name": "gmt_create",
 					"type": "String",
-					"description": "下单时间",
-					"required": true
+					"description": "下单时间"
 				},
 				{
 					"name": "store_name",
 					"type": "String",
-					"description": "门店名称",
-					"required": true
+					"description": "门店名称"
 				},
 				{
 					"name": "store_id",
 					"type": "Number",
-					"description": "门店ID",
-					"required": true
+					"description": "门店ID"
 				},
 				{
 					"name": "trade_no",
 					"type": "String",
-					"description": "零售+订单号",
-					"required": true
+					"description": "零售+订单号"
 				},
 				{
 					"name": "pay_channel",
 					"type": "String",
-					"description": "支付渠道",
-					"required": true
+					"description": "支付渠道"
 				},
 				{
 					"name": "refunded_amount",
 					"type": "Number",
-					"description": "已退金额，人民币 分",
-					"required": true
+					"description": "已退金额，人民币 分"
 				},
 				{
 					"name": "refund_status",
 					"type": "String",
-					"description": "退款状态：REFUNDED_PART：已部分退款；REFUNDED：已全部退款",
-					"required": true
+					"description": "退款状态：REFUNDED_PART：已部分退款；REFUNDED：已全部退款"
 				},
 				{
-					"name": "refunded_goods",
-					"type": "Goods[]",
-					"description": "发生退货的商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "商品skuId",
-							"required": true
+							"description": "商品skuId"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品itemId",
-							"required": true
+							"description": "商品itemId"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "零售+商品ID",
-							"required": true
+							"description": "零售+商品ID"
 						},
 						{
 							"name": "price",
 							"type": "Number",
-							"description": "商品价格，人民币 分",
-							"required": true
+							"description": "商品价格，人民币 分"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						},
 						{
 							"name": "guider",
 							"type": "String",
-							"description": "导购员编号",
-							"required": true
+							"description": "导购员编号"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "商品数量",
-							"required": true
+							"description": "商品数量"
 						}
-					]
+					],
+					"name": "refunded_goods",
+					"type": "Goods[]",
+					"description": "发生退货的商品列表"
 				},
 				{
 					"name": "sales_id",
 					"type": "String",
-					"description": "收银员ID",
-					"required": true
+					"description": "收银员ID"
 				},
 				{
 					"name": "trade_biz_type",
 					"type": "Number",
-					"description": "0：门店订单；1：全渠道订单；3：网直供订单",
-					"required": true
+					"description": "0：门店订单；1：全渠道订单；3：网直供订单"
 				},
 				{
 					"name": "omni_trade_no",
 					"type": "String",
-					"description": "如果是全渠道订单，此处为淘宝订单号",
-					"required": true
+					"description": "如果是全渠道订单，此处为淘宝订单号"
 				},
 				{
 					"name": "out_trade_no",
 					"type": "String",
-					"description": "外部订单号 即业务方订单号",
-					"required": true
+					"description": "外部订单号 即业务方订单号"
 				}
-			]
+			],
+			"name": "order_list",
+			"type": "Order []",
+			"description": "订单列表"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.trade.download",
+	"apiChineseName": "b2c下载订单",
+	"description": "下载零售商在零售+平台创建的订单",
+	"id": 28164
 }

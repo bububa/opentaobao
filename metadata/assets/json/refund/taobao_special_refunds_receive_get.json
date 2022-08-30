@@ -1,15 +1,11 @@
 {
-	"id": 50106,
-	"name": "taobao.special.refunds.receive.get",
-	"apiChineseName": "特殊退款类型的纠纷单列表查询",
-	"description": "特殊退款类型的纠纷单列表查询",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee, oid, good_status, company_name, sid, payment, reason, desc, has_good_return, modified, order_status,refund_phase",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "status",
@@ -53,6 +49,11 @@
 			"name": "use_has_next",
 			"type": "Boolean",
 			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。"
+		},
+		{
+			"name": "buyer_open_uid",
+			"type": "String",
+			"description": "买家openId"
 		}
 	],
 	"responseParams": [
@@ -67,9 +68,6 @@
 			"description": "是否存在下一页"
 		},
 		{
-			"name": "refunds",
-			"type": "Refund []",
-			"description": "搜索到的退款信息列表",
 			"subParams": [
 				{
 					"name": "refund_id",
@@ -232,8 +230,21 @@
 					"type": "String",
 					"description": "特殊退款类型：退差返现、价保服务",
 					"required": true
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家openId",
+					"required": true
 				}
-			]
+			],
+			"name": "refunds",
+			"type": "Refund []",
+			"description": "搜索到的退款信息列表"
 		}
-	]
+	],
+	"name": "taobao.special.refunds.receive.get",
+	"apiChineseName": "特殊退款类型的纠纷单列表查询",
+	"description": "特殊退款类型的纠纷单列表查询",
+	"id": 50106
 }

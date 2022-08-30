@@ -1,8 +1,4 @@
 {
-	"id": 26219,
-	"name": "taobao.tvpay.order.precreate",
-	"apiChineseName": "tv支付预下单",
-	"description": "tv支付预下单",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -16,62 +12,60 @@
 			"description": "来源"
 		},
 		{
+			"name": "license",
+			"type": "String",
+			"description": "牌照方"
+		},
+		{
 			"name": "data",
 			"type": "String",
 			"description": "订单详情",
 			"required": true
-		},
-		{
-			"name": "license",
-			"type": "String",
-			"description": "牌照方"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "data",
-					"type": "PreCreateResultDo",
-					"description": "结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "out_order_no",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "qr_code",
 							"type": "String",
-							"description": "二维码",
-							"required": true
+							"description": "二维码"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PreCreateResultDo",
+					"description": "结构体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.tvpay.order.precreate",
+	"apiChineseName": "tv支付预下单",
+	"description": "tv支付预下单",
+	"id": 26219
 }

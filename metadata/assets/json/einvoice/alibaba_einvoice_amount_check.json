@@ -1,8 +1,4 @@
 {
-	"id": 27764,
-	"name": "alibaba.einvoice.amount.check",
-	"apiChineseName": "开票量核对接口",
-	"description": "跟开票服务商核对历史开票量，用来对账",
 	"requestParams": [
 		{
 			"name": "payee_register_no",
@@ -25,53 +21,46 @@
 	],
 	"responseParams": [
 		{
-			"name": "einvoice_amount_check_result_list",
-			"type": "EinvoiceAmountCheckResult []",
-			"description": "开票量查询结果",
 			"subParams": [
 				{
 					"name": "payee_register_no",
 					"type": "String",
-					"description": "税号",
-					"required": true
+					"description": "税号"
 				},
 				{
 					"name": "invoice_date",
 					"type": "String",
-					"description": "开票日期",
-					"required": true
+					"description": "开票日期"
 				},
 				{
 					"name": "invoice_count",
 					"type": "Number",
-					"description": "开票量",
-					"required": true
+					"description": "开票量"
 				},
 				{
 					"name": "total_amount",
 					"type": "String",
-					"description": "开票含税总金额",
-					"required": true
+					"description": "开票含税总金额"
 				},
 				{
 					"name": "total_price",
 					"type": "String",
-					"description": "开票不含税总金额",
-					"required": true
+					"description": "开票不含税总金额"
 				},
 				{
 					"name": "total_tax",
 					"type": "String",
-					"description": "开票总税额",
-					"required": true
+					"description": "开票总税额"
 				},
 				{
 					"name": "invoice_type",
 					"type": "String",
-					"description": "发票类型，蓝票=blue，红票=red",
-					"required": true
+					"description": "发票类型，蓝票=blue，红票=red"
 				}
-			]
+			],
+			"name": "einvoice_amount_check_result_list",
+			"type": "EinvoiceAmountCheckResult []",
+			"description": "开票量查询结果"
 		},
 		{
 			"name": "is_success",
@@ -83,5 +72,9 @@
 			"type": "Number",
 			"description": "查询结果的数量"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.amount.check",
+	"apiChineseName": "开票量核对接口",
+	"description": "跟开票服务商核对历史开票量，用来对账",
+	"id": 27764
 }

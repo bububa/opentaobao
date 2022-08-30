@@ -20,14 +20,14 @@ type TaobaoVmarketEticketBeforeconsumeAPIResponseModel struct {
 	XMLName xml.Name `xml:"vmarket_eticket_beforeconsume_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 商品标题
-	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
-	// 扩展字段，暂时预留为0，没有任何意义
-	LeftAmount string `json:"left_amount,omitempty" xml:"left_amount,omitempty"`
-	// 有效期开始时间
-	ValidStart string `json:"valid_start,omitempty" xml:"valid_start,omitempty"`
 	// 有效期结束时间
 	ValidEnds string `json:"valid_ends,omitempty" xml:"valid_ends,omitempty"`
+	// 有效期开始时间
+	ValidStart string `json:"valid_start,omitempty" xml:"valid_start,omitempty"`
+	// 扩展字段，暂时预留为0，没有任何意义
+	LeftAmount string `json:"left_amount,omitempty" xml:"left_amount,omitempty"`
+	// 商品标题
+	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 1:可以进行核销码操作
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 当前订单剩余可核销数量

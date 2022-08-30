@@ -1,0 +1,477 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "货品编码"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "货品类型，NORMAL / COMBINE / SUITEGOODS"
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_type",
+							"type": "Number",
+							"description": "组合货品type:8  \t"
+						},
+						{
+							"name": "target_user_id",
+							"type": "Number",
+							"description": "货主Id"
+						},
+						{
+							"name": "type_attr_map",
+							"type": "String",
+							"description": "r_quantity:2 代表数量"
+						},
+						{
+							"name": "target_item_id",
+							"type": "Number",
+							"description": "组合货品子品Id"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "组合货品主品Id，创建主品后自动填充"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						}
+					],
+					"name": "comb_relation_d_t_o_list",
+					"type": "CnskuRelationDTO[]",
+					"description": "组合货品"
+				},
+				{
+					"name": "remove_feature_map",
+					"type": "String",
+					"description": "想去除的feature 和 updateFeatureMap对应"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "货品高度"
+				},
+				{
+					"subParams": [
+						{
+							"name": "belong_suite_good_id",
+							"type": "Number",
+							"description": "主品Id，创建可不填"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "单子品数量，要求\u003e0"
+						},
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "成分子品Id"
+						},
+						{
+							"name": "goods_value",
+							"type": "String",
+							"description": "真实货值"
+						}
+					],
+					"name": "suite_goods_relation_list",
+					"type": "CnskuSuiteGoodsRelationDTO[]",
+					"description": "套装货品关系列表"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "货品重量"
+				},
+				{
+					"name": "update_feature_map",
+					"type": "String",
+					"description": "需要向featureMap中增加的属性列表（新增\u0026更新接口使用）"
+				},
+				{
+					"name": "reserve_price",
+					"type": "Number",
+					"description": "吊牌价"
+				},
+				{
+					"name": "whc_bar_code",
+					"type": "String",
+					"description": "条形码( 格式如：条码1#条码2#条码3，多条码中间用 # 分隔)"
+				},
+				{
+					"name": "cnsku_id",
+					"type": "Number",
+					"description": "货品Id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "货品标题"
+				},
+				{
+					"subParams": [
+						{
+							"name": "deliver_requirements",
+							"type": "String",
+							"description": "配送要求（1：顺丰优先配）"
+						},
+						{
+							"name": "temperature_requirement",
+							"type": "String",
+							"description": "温度标识 1:常温 2:5°C-12°C 3:0°C-4°C 4:-18°C-0°C"
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "货品图片"
+						},
+						{
+							"name": "is_produce_code_mgt",
+							"type": "Boolean",
+							"description": "是否生产批号管理"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sn_seq",
+									"type": "String",
+									"description": "sn示例顺序"
+								},
+								{
+									"subParams": [
+										{
+											"name": "rule_regular_expression",
+											"type": "String",
+											"description": "规则正则表达式"
+										},
+										{
+											"name": "sn_mgt_sub_end",
+											"type": "Number",
+											"description": "SN截取结束位置"
+										},
+										{
+											"name": "rule_desc",
+											"type": "String",
+											"description": "规则描述"
+										},
+										{
+											"name": "sn_mgt_sub_start",
+											"type": "Number",
+											"description": "SN截取开始位置"
+										},
+										{
+											"name": "rule_img_url",
+											"type": "String",
+											"description": "规则对应图面urlurl"
+										},
+										{
+											"name": "is_sn_mgt_sub",
+											"type": "Boolean",
+											"description": "SN是否需要截取"
+										},
+										{
+											"name": "sn_mgt_sub_expression",
+											"type": "String",
+											"description": "SN截取正则表达式"
+										},
+										{
+											"name": "rule_sample",
+											"type": "String",
+											"description": "规则示例"
+										}
+									],
+									"name": "sample_rule_list",
+									"type": "CnskuSnSampleRuleDTO[]",
+									"description": "SN示例  \t"
+								},
+								{
+									"name": "sample_desc",
+									"type": "String",
+									"description": "sn示例顺序"
+								}
+							],
+							"name": "cnsku_sn_sample_d_t_o_list",
+							"type": "CnskuSnSampleDTO[]",
+							"description": "最大列表长度：20"
+						},
+						{
+							"name": "classification",
+							"type": "String",
+							"description": "存储分类"
+						},
+						{
+							"name": "tax_code",
+							"type": "String",
+							"description": "税收分类编码"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率标示"
+						},
+						{
+							"name": "is_imported",
+							"type": "Boolean",
+							"description": "是否进口"
+						},
+						{
+							"name": "trans_width",
+							"type": "Number",
+							"description": "运输单元宽"
+						},
+						{
+							"name": "trans_length",
+							"type": "Number",
+							"description": "运输单元长"
+						},
+						{
+							"name": "include_battery",
+							"type": "String",
+							"description": "是否包含电池(默认无电池) 1:无电池, 2:内置电池, 3:外置电池"
+						},
+						{
+							"name": "manufacturer",
+							"type": "String",
+							"description": "生产企业名称"
+						},
+						{
+							"name": "trans_image_url",
+							"type": "String",
+							"description": "运输单元体积照片"
+						},
+						{
+							"name": "is_drugs",
+							"type": "Boolean",
+							"description": "是否监管"
+						},
+						{
+							"name": "brand_country",
+							"type": "String",
+							"description": "原产国"
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "producing_area",
+							"type": "String",
+							"description": "产地"
+						},
+						{
+							"name": "trans_height",
+							"type": "Number",
+							"description": "运输单元高"
+						},
+						{
+							"name": "trans_volume",
+							"type": "Number",
+							"description": "运输单元体积"
+						},
+						{
+							"name": "trans_weight",
+							"type": "Number",
+							"description": "运输单元重量"
+						},
+						{
+							"name": "record_url",
+							"type": "String",
+							"description": "备案链接"
+						}
+					],
+					"name": "cnsku_extend_d_t_o",
+					"type": "CnskuExtendDTO",
+					"description": "扩展字段"
+				},
+				{
+					"subParams": [
+						{
+							"name": "lifecycle",
+							"type": "Number",
+							"description": "有效期天数"
+						},
+						{
+							"name": "is_precious",
+							"type": "Boolean",
+							"description": "是否贵品"
+						},
+						{
+							"name": "is_standard_carton",
+							"type": "Boolean",
+							"description": "是否规范运输单元"
+						},
+						{
+							"name": "gray_flag",
+							"type": "String",
+							"description": "体积规范标识"
+						},
+						{
+							"name": "whc_category",
+							"type": "String",
+							"description": "物流类目"
+						},
+						{
+							"name": "is_danger",
+							"type": "Boolean",
+							"description": "是否危险品"
+						},
+						{
+							"name": "net_weight",
+							"type": "Number",
+							"description": "净重"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "计量单位"
+						},
+						{
+							"name": "reject_lifecycle",
+							"type": "Number",
+							"description": "保质期禁收天数"
+						},
+						{
+							"name": "lockup_lifecycle",
+							"type": "Number",
+							"description": "保质期禁售天数"
+						},
+						{
+							"name": "is_sn_mgt",
+							"type": "Boolean",
+							"description": "是否启用序列号（sn）管理"
+						},
+						{
+							"name": "advent_lifecycle",
+							"type": "Number",
+							"description": "保质期临期天数"
+						},
+						{
+							"name": "goods_value",
+							"type": "String",
+							"description": "对应货值 单位元 小数点后保留2位"
+						},
+						{
+							"name": "is_po_mgt",
+							"type": "Boolean",
+							"description": "是否Po管理"
+						},
+						{
+							"name": "goods_no",
+							"type": "String",
+							"description": "货号"
+						},
+						{
+							"name": "pcs",
+							"type": "Number",
+							"description": "箱规"
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格"
+						},
+						{
+							"name": "sn_mode",
+							"type": "String",
+							"description": "SN管理模式"
+						},
+						{
+							"name": "is_hygroscopic",
+							"type": "Boolean",
+							"description": "是否易碎品"
+						},
+						{
+							"name": "is_standard",
+							"type": "Boolean",
+							"description": "是否规范销售单元"
+						},
+						{
+							"name": "is_batch_mgt",
+							"type": "Boolean",
+							"description": "是否批次管理"
+						},
+						{
+							"name": "is_shelflife",
+							"type": "Boolean",
+							"description": "是否效期管理"
+						}
+					],
+					"name": "cnsku_feature_d_t_o",
+					"type": "CnskuFeatureDTO",
+					"description": "feature字段"
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "长度"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "宽度"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "市场叶子类目id"
+				}
+			],
+			"name": "cnsku_dto",
+			"type": "CnskuDTO",
+			"description": "待修改的货品"
+		},
+		{
+			"subParams": [
+				{
+					"name": "sync_wms",
+					"type": "Boolean",
+					"description": "是否同步到wms, 为空时默认下发"
+				}
+			],
+			"name": "update_cnsku_option",
+			"type": "UpdateCnskuOption",
+			"description": "选项"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_messages",
+			"type": "String []",
+			"description": "异常信息\t"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "Null"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功\t"
+		},
+		{
+			"name": "is_system_failed",
+			"type": "Boolean",
+			"description": "是否系统异常\t"
+		},
+		{
+			"name": "sys_error_code",
+			"type": "String",
+			"description": "异常信息Code\t"
+		}
+	],
+	"name": "alibaba.ascp.cnsku.modify",
+	"apiChineseName": "供应链中台货品修改接口",
+	"description": "供应链中台货品修改接口",
+	"id": 62464
+}

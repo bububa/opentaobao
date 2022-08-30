@@ -1,8 +1,4 @@
 {
-	"id": 42042,
-	"name": "taobao.lark.iot.order.confirmorder",
-	"apiChineseName": "iot渠道卖品落单",
-	"description": "云智对接无人超市，接收无人超市订单信息",
 	"requestParams": [
 		{
 			"name": "channel_code",
@@ -57,55 +53,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "BizSingleResult",
-			"description": "返回下单结果",
 			"subParams": [
 				{
 					"name": "biz_msg",
 					"type": "String",
-					"description": "业务订结果",
-					"required": true
+					"description": "业务订结果"
 				},
 				{
 					"name": "biz_code",
 					"type": "String",
-					"description": "业务码",
-					"required": true
+					"description": "业务码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口是否成功",
-					"required": true
+					"description": "接口是否成功"
 				},
 				{
-					"name": "data",
-					"type": "IotGoodsOrderRsp",
-					"description": "业务返回",
-					"required": true,
 					"subParams": [
 						{
 							"name": "goods_order_id",
 							"type": "String",
-							"description": "订单号",
-							"required": true
-						},
-						{
-							"name": "out_goods_order_id",
-							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "cinema_link_id",
 							"type": "String",
-							"description": "影院内码",
-							"required": true
+							"description": "影院内码"
+						},
+						{
+							"name": "out_goods_order_id",
+							"type": "String",
+							"description": "外部订单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "IotGoodsOrderRsp",
+					"description": "业务返回"
 				}
-			]
+			],
+			"name": "data",
+			"type": "BizSingleResult",
+			"description": "返回下单结果"
 		}
-	]
+	],
+	"name": "taobao.lark.iot.order.confirmorder",
+	"apiChineseName": "iot渠道卖品落单",
+	"description": "云智对接无人超市，接收无人超市订单信息",
+	"id": 42042
 }

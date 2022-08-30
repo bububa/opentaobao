@@ -1,8 +1,4 @@
 {
-	"id": 52855,
-	"name": "alibaba.alihealth.examination.servicearea.check",
-	"apiChineseName": "体检机构对接_上门检测服务范围查询",
-	"description": "体检机构对接_上门检测服务范围查询",
 	"requestParams": [
 		{
 			"name": "package_code",
@@ -69,5 +65,9 @@
 			"type": "String",
 			"description": "校验结果编码，校验成功200、校验失败400"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.servicearea.check",
+	"apiChineseName": "体检机构对接_上门检测服务范围查询",
+	"description": "体检机构对接_上门检测服务范围查询",
+	"id": 52855
 }

@@ -1,0 +1,105 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "【必传】店铺商品id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "【创建时必传】文描商品标题 [不超过32个中文字符]"
+				},
+				{
+					"name": "img_url",
+					"type": "String[]",
+					"description": "【创建时必传】图片URL [建议不超过5个图片，第一个为主图，每个URL不超过256字节]"
+				},
+				{
+					"name": "item_describe_text",
+					"type": "String",
+					"description": "【创建时必传】商品描述富文本"
+				},
+				{
+					"name": "mobile_item_describe_text",
+					"type": "String",
+					"description": "【创建时必传】移动端商品描述富文本"
+				}
+			],
+			"name": "create_item_distribution_request",
+			"type": "MaterialRequest",
+			"description": "分销文描入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "处理结果"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "data",
+					"type": "MaterialChangeResponse",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功。调用成功之后，需要看data里面的success，才能知道业务处理是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "create_item_distribution_request",
+			"type": "TopResponse",
+			"description": "分销文描结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.item.distribution.describe",
+	"apiChineseName": "分销商品文描",
+	"description": "分销商品文描",
+	"id": 61217
+}

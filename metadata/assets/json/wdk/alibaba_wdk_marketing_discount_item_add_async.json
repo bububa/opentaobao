@@ -1,20 +1,8 @@
 {
-	"id": 38635,
-	"name": "alibaba.wdk.marketing.discount.item.add.async",
-	"apiChineseName": "特价批量新增商品",
-	"description": "新分组模型下新增商品",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ItemDiscountSku[]",
-			"description": "sku信息",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "limit_info",
-					"type": "LimitInfo",
-					"description": "限购信息",
 					"subParams": [
 						{
 							"name": "user_limit_cnt",
@@ -36,7 +24,10 @@
 							"type": "Number",
 							"description": "总限购"
 						}
-					]
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "限购信息"
 				},
 				{
 					"name": "sku_code",
@@ -60,12 +51,14 @@
 					"type": "Number",
 					"description": "门槛类型，2：累计消费金额，3：累计购买次数"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ItemDiscountSku[]",
+			"description": "sku信息",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "CommonActivityParam",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "out_act_id",
@@ -78,7 +71,10 @@
 					"description": "活动Id",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "version",
@@ -89,49 +85,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "处理结果",
-					"required": true
+					"description": "处理结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "datas",
-					"type": "ItemDiscountSku[]",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "sku编码",
-							"required": true
+							"description": "sku编码"
 						},
 						{
 							"name": "value",
 							"type": "Number",
-							"description": "\u003c优惠明细,分为单位\u003e优惠类型为[减价],则代表直降金额[如700,表示商品直降7元];优惠券类型为[一口价],则代表一口价[如700,表示商品一口价为7元];优惠券类型为[打折],则代表折扣[如700,表示打7折]",
-							"required": true
+							"description": "\u003c优惠明细,分为单位\u003e优惠类型为[减价],则代表直降金额[如700,表示商品直降7元];优惠券类型为[一口价],则代表一口价[如700,表示商品一口价为7元];优惠券类型为[打折],则代表折扣[如700,表示打7折]"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "ItemDiscountSku[]",
+					"description": "结果数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.discount.item.add.async",
+	"apiChineseName": "特价批量新增商品",
+	"description": "新分组模型下新增商品",
+	"id": 38635
 }

@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"name": "verification_code",
+			"type": "String",
+			"description": "验证码"
+		},
+		{
+			"name": "scene_source",
+			"type": "String",
+			"description": "场景来源，记录什么场景调用什么接口"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "是否切换成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果集"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.member.complete.switch",
+	"apiChineseName": "会员切换模式接口",
+	"description": "小程序老用户调用德比接口进行会员切换",
+	"id": 62144
+}

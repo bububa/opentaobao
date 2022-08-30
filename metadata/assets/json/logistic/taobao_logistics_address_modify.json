@@ -1,8 +1,4 @@
 {
-	"id": 10685,
-	"name": "taobao.logistics.address.modify",
-	"apiChineseName": "卖家地址库修改",
-	"description": "卖家地址库修改",
 	"requestParams": [
 		{
 			"name": "contact_id",
@@ -77,16 +73,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "address_result",
-			"type": "AddressResult",
-			"description": "只返回修改时间modify_date",
 			"subParams": [
 				{
 					"name": "modify_date",
 					"type": "Date",
 					"description": "修改日期时间"
 				}
-			]
+			],
+			"name": "address_result",
+			"type": "AddressResult",
+			"description": "只返回修改时间modify_date"
 		}
-	]
+	],
+	"name": "taobao.logistics.address.modify",
+	"apiChineseName": "卖家地址库修改",
+	"description": "卖家地址库修改",
+	"id": 10685
 }

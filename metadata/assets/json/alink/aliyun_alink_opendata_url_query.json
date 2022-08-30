@@ -1,8 +1,4 @@
 {
-	"id": 25501,
-	"name": "aliyun.alink.opendata.url.query",
-	"apiChineseName": "开放数据授权访问URL查询",
-	"description": "厂商数据授权访问URL查询",
 	"requestParams": [
 		{
 			"name": "access_key",
@@ -48,5 +44,9 @@
 			"type": "Json []",
 			"description": "授权url"
 		}
-	]
+	],
+	"name": "aliyun.alink.opendata.url.query",
+	"apiChineseName": "开放数据授权访问URL查询",
+	"description": "厂商数据授权访问URL查询",
+	"id": 25501
 }

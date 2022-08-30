@@ -1,19 +1,17 @@
 {
-	"id": 31931,
-	"name": "taobao.messageaccount.messsage.reply",
-	"apiChineseName": "消息号下行回复接口",
-	"description": "外部 isv 调用该进口来进行消息号消息的回复",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ReplyMessageDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "create_time",
 					"type": "Number",
 					"description": "毫秒时间戳",
+					"required": true
+				},
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "text or mix",
 					"required": true
 				},
 				{
@@ -29,50 +27,49 @@
 					"required": true
 				},
 				{
-					"name": "content_type",
-					"type": "String",
-					"description": "text or mix",
-					"required": true
-				},
-				{
 					"name": "content",
+					"type": "String",
 					"description": "消息内容结构",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ReplyMessageDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "model",
-					"required": true
+					"type": "String",
+					"description": "model"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.messageaccount.messsage.reply",
+	"apiChineseName": "消息号下行回复接口",
+	"description": "外部 isv 调用该进口来进行消息号消息的回复",
+	"id": 31931
 }

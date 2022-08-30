@@ -1,8 +1,4 @@
 {
-	"id": 31204,
-	"name": "tmall.exchange.returngoods.refuse",
-	"apiChineseName": "卖家拒绝确认收货",
-	"description": "卖家拒绝买家换货申请",
 	"requestParams": [
 		{
 			"name": "leave_message_pics",
@@ -29,9 +25,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ExchangeBaseResponse",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -52,10 +45,6 @@
 					"required": true
 				},
 				{
-					"name": "exchange",
-					"type": "Exchange",
-					"description": "换货单号基本信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "status",
@@ -81,9 +70,20 @@
 							"description": "正向交易单号ID",
 							"required": true
 						}
-					]
+					],
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "换货单号基本信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ExchangeBaseResponse",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.exchange.returngoods.refuse",
+	"apiChineseName": "卖家拒绝确认收货",
+	"description": "卖家拒绝买家换货申请",
+	"id": 31204
 }

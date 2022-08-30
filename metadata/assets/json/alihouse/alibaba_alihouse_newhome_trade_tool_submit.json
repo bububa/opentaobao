@@ -1,0 +1,115 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_show",
+					"type": "byte",
+					"description": "是否显示",
+					"required": true
+				},
+				{
+					"name": "outer_tool_id",
+					"type": "String",
+					"description": "工具唯一id，如购房登记id",
+					"required": true
+				},
+				{
+					"name": "tool_type",
+					"type": "byte",
+					"description": "工具类型，1. 购房登记",
+					"required": true
+				},
+				{
+					"name": "project_name",
+					"type": "String",
+					"description": "项目名称"
+				},
+				{
+					"name": "project_status",
+					"type": "byte",
+					"description": "项目状态,0-未开始、1-进行中、2-审核中、3-已结束"
+				},
+				{
+					"name": "link_name",
+					"type": "String",
+					"description": "链接名称"
+				},
+				{
+					"name": "link_url",
+					"type": "String",
+					"description": "链接地址"
+				},
+				{
+					"name": "status_show_name",
+					"type": "String",
+					"description": "状态显示名称"
+				},
+				{
+					"name": "begin_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "is_test",
+					"type": "byte",
+					"description": "是否为测试数据"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "ETC请求时间版本",
+					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id",
+					"required": true
+				}
+			],
+			"name": "trade_tool_dto",
+			"type": "TradeToolDTO",
+			"description": "对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.trade.tool.submit",
+	"apiChineseName": "交易工具信息上翻",
+	"description": "交易工具信息上翻",
+	"id": 62484
+}

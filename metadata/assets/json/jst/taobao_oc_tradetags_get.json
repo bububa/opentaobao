@@ -1,8 +1,4 @@
 {
-	"id": 24456,
-	"name": "taobao.oc.tradetags.get",
-	"apiChineseName": "根据订单查询订单标签",
-	"description": "根据订单查询订单标签。\u003cbr/\u003e\n返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。\u003cbr/\u003e\n官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明\u003cbr/\u003e\n主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865\u003cbr/\u003e",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -30,9 +26,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade_tags",
-			"type": "TradeTagRelationDo []",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "gmt_modified",
@@ -70,9 +63,6 @@
 					"description": "该标签在消费者端是否显示,0:不显示,1：显示"
 				},
 				{
-					"name": "history_trade_tag_relations",
-					"type": "HistoryTradeRelationDo[]",
-					"description": "该标签操作的历史记录",
 					"subParams": [
 						{
 							"name": "id",
@@ -114,9 +104,19 @@
 							"type": "String",
 							"description": "标签值，json格式"
 						}
-					]
+					],
+					"name": "history_trade_tag_relations",
+					"type": "HistoryTradeRelationDo[]",
+					"description": "该标签操作的历史记录"
 				}
-			]
+			],
+			"name": "trade_tags",
+			"type": "TradeTagRelationDo []",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.oc.tradetags.get",
+	"apiChineseName": "根据订单查询订单标签",
+	"description": "根据订单查询订单标签。\u003cbr/\u003e\n返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。\u003cbr/\u003e\n官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明\u003cbr/\u003e\n主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865\u003cbr/\u003e",
+	"id": 24456
 }

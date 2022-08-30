@@ -14,6 +14,8 @@ type AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest struct {
 	model.Params
 	// 外部顾问ID
 	_outerConsultantId string
+	// 版本号，请求时间戳
+	_version int64
 }
 
 // NewAlibabaAlihouseNewhomeProjectAdviserDeleteRequest 初始化AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest对象
@@ -48,4 +50,17 @@ func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetOuterConsultan
 // GetOuterConsultantId OuterConsultantId Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetOuterConsultantId() string {
 	return r._outerConsultantId
+}
+
+// SetVersion is Version Setter
+// 版本号，请求时间戳
+func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetVersion(_version int64) error {
+	r._version = _version
+	r.Set("version", _version)
+	return nil
+}
+
+// GetVersion Version Getter
+func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetVersion() int64 {
+	return r._version
 }

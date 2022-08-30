@@ -1,8 +1,4 @@
 {
-	"id": 24350,
-	"name": "alibaba.aliqin.flow.publish",
-	"apiChineseName": "流量发放(用户id)",
-	"description": "阿里通信流量下发功能，允许用户补发",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -40,5 +36,9 @@
 			"type": "String",
 			"description": "true为成功，其他为失败"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.flow.publish",
+	"apiChineseName": "流量发放(用户id)",
+	"description": "阿里通信流量下发功能，允许用户补发",
+	"id": 24350
 }

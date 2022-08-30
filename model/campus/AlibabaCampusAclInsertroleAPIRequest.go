@@ -14,6 +14,8 @@ type AlibabaCampusAclInsertroleAPIRequest struct {
 	model.Params
 	// 系统id
 	_systemId string
+	// 操作人id(不填默认appCode)
+	_userId string
 	// 角色描述
 	_roleDesc string
 	// 角色名称
@@ -22,8 +24,6 @@ type AlibabaCampusAclInsertroleAPIRequest struct {
 	_roleType string
 	// 角色唯一ID,统一ROLE_开头,不填默认生成ROLE_UUID(32位随机数)
 	_roleId string
-	// 操作人id(不填默认appCode)
-	_userId string
 	// 公司id,不填统一为SYS_000
 	_companyId int64
 	// 园区id
@@ -62,6 +62,19 @@ func (r *AlibabaCampusAclInsertroleAPIRequest) SetSystemId(_systemId string) err
 // GetSystemId SystemId Getter
 func (r AlibabaCampusAclInsertroleAPIRequest) GetSystemId() string {
 	return r._systemId
+}
+
+// SetUserId is UserId Setter
+// 操作人id(不填默认appCode)
+func (r *AlibabaCampusAclInsertroleAPIRequest) SetUserId(_userId string) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r AlibabaCampusAclInsertroleAPIRequest) GetUserId() string {
+	return r._userId
 }
 
 // SetRoleDesc is RoleDesc Setter
@@ -114,19 +127,6 @@ func (r *AlibabaCampusAclInsertroleAPIRequest) SetRoleId(_roleId string) error {
 // GetRoleId RoleId Getter
 func (r AlibabaCampusAclInsertroleAPIRequest) GetRoleId() string {
 	return r._roleId
-}
-
-// SetUserId is UserId Setter
-// 操作人id(不填默认appCode)
-func (r *AlibabaCampusAclInsertroleAPIRequest) SetUserId(_userId string) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r AlibabaCampusAclInsertroleAPIRequest) GetUserId() string {
-	return r._userId
 }
 
 // SetCompanyId is CompanyId Setter

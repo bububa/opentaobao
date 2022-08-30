@@ -1,8 +1,4 @@
 {
-	"id": 21681,
-	"name": "taobao.simba.keywordsvon.add",
-	"apiChineseName": "创建一批关键词",
-	"description": "创建一批关键词",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "Keyword []",
-			"description": "关键词列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -93,7 +86,14 @@
 					"type": "String",
 					"description": "匹配模式"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "关键词列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywordsvon.add",
+	"apiChineseName": "创建一批关键词",
+	"description": "创建一批关键词",
+	"id": 21681
 }

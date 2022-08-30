@@ -1,13 +1,6 @@
 {
-	"id": 25004,
-	"name": "alibaba.scbp.reckeyword.sys.get",
-	"apiChineseName": "系统推荐",
-	"description": "查询系统推荐词",
 	"requestParams": [
 		{
-			"name": "query_dto",
-			"type": "RecKeywordQuery",
-			"description": "RecKeywordQuery",
 			"subParams": [
 				{
 					"name": "per_page_size",
@@ -19,7 +12,10 @@
 					"type": "Number",
 					"description": "第几页"
 				}
-			]
+			],
+			"name": "query_dto",
+			"type": "RecKeywordQuery",
+			"description": "RecKeywordQuery"
 		}
 	],
 	"responseParams": [
@@ -34,9 +30,6 @@
 			"description": "总页数"
 		},
 		{
-			"name": "result_list",
-			"type": "RecKeywordDto []",
-			"description": "系统推荐词结果列表",
 			"subParams": [
 				{
 					"name": "is_added",
@@ -78,7 +71,14 @@
 					"type": "String",
 					"description": "搜索热度[1-6]"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "RecKeywordDto []",
+			"description": "系统推荐词结果列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.reckeyword.sys.get",
+	"apiChineseName": "系统推荐",
+	"description": "查询系统推荐词",
+	"id": 25004
 }

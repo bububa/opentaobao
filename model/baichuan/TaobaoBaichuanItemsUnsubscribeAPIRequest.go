@@ -13,7 +13,7 @@ import (
 type TaobaoBaichuanItemsUnsubscribeAPIRequest struct {
 	model.Params
 	// 删除的商品id
-	_itemIds []int64
+	_itemIds []string
 }
 
 // NewTaobaoBaichuanItemsUnsubscribeRequest 初始化TaobaoBaichuanItemsUnsubscribeAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetApiParams() url.Values {
 
 // SetItemIds is ItemIds Setter
 // 删除的商品id
-func (r *TaobaoBaichuanItemsUnsubscribeAPIRequest) SetItemIds(_itemIds []int64) error {
+func (r *TaobaoBaichuanItemsUnsubscribeAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
 	r.Set("item_ids", _itemIds)
 	return nil
 }
 
 // GetItemIds ItemIds Getter
-func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetItemIds() []int64 {
+func (r TaobaoBaichuanItemsUnsubscribeAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }

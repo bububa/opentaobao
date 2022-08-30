@@ -1,8 +1,4 @@
 {
-	"id": 43724,
-	"name": "taobao.ailab.aicloud.top.device.detailinfo.get",
-	"apiChineseName": "获取设备详细信息",
-	"description": "获取设备详细信息",
 	"requestParams": [
 		{
 			"name": "origin_user_id",
@@ -27,79 +23,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "result",
-					"type": "TopDeviceDetailInfoDto",
-					"description": "设备详细信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_id",
 							"type": "String",
-							"description": "设备id",
-							"required": true
+							"description": "设备id"
 						},
 						{
 							"name": "device_ip",
 							"type": "String",
-							"description": "设备联网的ip地址",
-							"required": true
+							"description": "设备联网的ip地址"
 						},
 						{
 							"name": "device_mac",
 							"type": "String",
-							"description": "Mac地址",
-							"required": true
+							"description": "Mac地址"
 						},
 						{
 							"name": "ext_device_id",
 							"type": "String",
-							"description": "外部设备id",
-							"required": true
+							"description": "外部设备id"
 						},
 						{
 							"name": "ext_device_type",
 							"type": "String",
-							"description": "外部设备类型，chinaMobile:中国移动，chinaTelecom:上海电信，chinaUnicom:中国联通",
-							"required": true
+							"description": "外部设备类型，chinaMobile:中国移动，chinaTelecom:上海电信，chinaUnicom:中国联通"
 						},
 						{
 							"name": "firmware_version",
 							"type": "String",
-							"description": "设备当前的固件版本",
-							"required": true
+							"description": "设备当前的固件版本"
 						},
 						{
 							"name": "sn",
 							"type": "String",
-							"description": "设备序列号",
-							"required": true
+							"description": "设备序列号"
 						}
-					]
+					],
+					"name": "result",
+					"type": "TopDeviceDetailInfoDto",
+					"description": "设备详细信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.detailinfo.get",
+	"apiChineseName": "获取设备详细信息",
+	"description": "获取设备详细信息",
+	"id": 43724
 }

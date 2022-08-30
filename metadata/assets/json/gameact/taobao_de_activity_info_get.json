@@ -1,8 +1,4 @@
 {
-	"id": 23052,
-	"name": "taobao.de.activity.info.get",
-	"apiChineseName": "获取活动信息",
-	"description": "根据appKey和活动id获取活动",
 	"requestParams": [
 		{
 			"name": "event_key",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "activities",
-			"type": "ActivityVO []",
-			"description": "返回结构",
 			"subParams": [
 				{
 					"name": "activity_url",
@@ -47,9 +40,6 @@
 					"description": "活动描述"
 				},
 				{
-					"name": "awards",
-					"type": "AwardVO[]",
-					"description": "奖项列表",
 					"subParams": [
 						{
 							"name": "award_id",
@@ -101,7 +91,10 @@
 							"type": "String",
 							"description": "分组描述"
 						}
-					]
+					],
+					"name": "awards",
+					"type": "AwardVO[]",
+					"description": "奖项列表"
 				},
 				{
 					"name": "event_key",
@@ -128,7 +121,14 @@
 					"type": "Number",
 					"description": "抽奖次数（免费）"
 				}
-			]
+			],
+			"name": "activities",
+			"type": "ActivityVO []",
+			"description": "返回结构"
 		}
-	]
+	],
+	"name": "taobao.de.activity.info.get",
+	"apiChineseName": "获取活动信息",
+	"description": "根据appKey和活动id获取活动",
+	"id": 23052
 }

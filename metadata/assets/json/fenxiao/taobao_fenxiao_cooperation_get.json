@@ -1,8 +1,4 @@
 {
-	"id": 10694,
-	"name": "taobao.fenxiao.cooperation.get",
-	"apiChineseName": "供应商或分销商获取合作关系信息",
-	"description": "获取供应商的合作关系信息",
 	"requestParams": [
 		{
 			"name": "status",
@@ -52,9 +48,6 @@
 			"description": "结果记录数"
 		},
 		{
-			"name": "cooperations",
-			"type": "Cooperation []",
-			"description": "合作分销关系",
 			"subParams": [
 				{
 					"name": "cooperate_id",
@@ -121,7 +114,14 @@
 					"type": "String[]",
 					"description": "授权产品线名称，和product_line中的值按序对应"
 				}
-			]
+			],
+			"name": "cooperations",
+			"type": "Cooperation []",
+			"description": "合作分销关系"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.cooperation.get",
+	"apiChineseName": "供应商或分销商获取合作关系信息",
+	"description": "获取供应商的合作关系信息",
+	"id": 10694
 }

@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"name": "handover_content_code",
+			"type": "String",
+			"description": "预约号(大包LP)",
+			"required": true
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
+			"required": true
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言"
+		},
+		{
+			"name": "subbag_count",
+			"type": "Number",
+			"description": "追加大包数量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "handover_order_id",
+									"type": "Number",
+									"description": "交接单id"
+								},
+								{
+									"name": "subbag_handover_content_id",
+									"type": "Number",
+									"description": "追加的大包id"
+								},
+								{
+									"name": "subbag_handover_content_code",
+									"type": "String",
+									"description": "追加的大包LP"
+								}
+							],
+							"name": "subbag_handover_content_list",
+							"type": "HandoverContentAddSubbagsDTO[]",
+							"description": "追加大包列表"
+						}
+					],
+					"name": "data",
+					"type": "OpenHandoverContentAddSubbagsResponse",
+					"description": "大包追加详情"
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求响应"
+		}
+	],
+	"name": "cainiao.global.handover.content.subbag.add",
+	"apiChineseName": "预约单下追加大包",
+	"description": "预约单下追加大包",
+	"id": 62872
+}

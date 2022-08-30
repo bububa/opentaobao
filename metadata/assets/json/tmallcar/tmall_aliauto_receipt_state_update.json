@@ -1,51 +1,52 @@
 {
-	"id": 56879,
-	"name": "tmall.aliauto.receipt.state.update",
-	"apiChineseName": "服务工单状态更新",
-	"description": "二轮车服务工单状态更新",
 	"requestParams": [
+		{
+			"name": "receipt_id",
+			"type": "Number",
+			"description": "服务工单id"
+		},
 		{
 			"name": "status",
 			"type": "String",
 			"description": "FINISH:服务完成"
 		},
 		{
-			"name": "receipt_id",
-			"type": "Number",
-			"description": "服务工单id"
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "上门服务时指定门店ID"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "返回的执行状态吗",
-					"required": true
+					"description": "返回的执行状态吗"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回的数据实体",
-					"required": true
+					"description": "返回的数据实体"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
+					"description": "是否执行成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "tmall.aliauto.receipt.state.update",
+	"apiChineseName": "服务工单状态更新",
+	"description": "二轮车服务工单状态更新",
+	"id": 56879
 }

@@ -1,14 +1,6 @@
 {
-	"id": 44873,
-	"name": "alibaba.wdk.series.create",
-	"apiChineseName": "系列品变更-新增系列",
-	"description": "系列品变更-新增系列",
 	"requestParams": [
 		{
-			"name": "series",
-			"type": "SkuSeriesCreateRequest",
-			"description": "系列品创建系列请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "series_desc",
@@ -33,14 +25,15 @@
 					"type": "Number",
 					"description": "类目id"
 				}
-			]
+			],
+			"name": "series",
+			"type": "SkuSeriesCreateRequest",
+			"description": "系列品创建系列请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_code",
@@ -49,10 +42,6 @@
 					"required": true
 				},
 				{
-					"name": "model",
-					"type": "SkuSeriesCreateResult",
-					"description": "商品系列创建结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "series_id",
@@ -60,7 +49,11 @@
 							"description": "系列编码",
 							"required": true
 						}
-					]
+					],
+					"name": "model",
+					"type": "SkuSeriesCreateResult",
+					"description": "商品系列创建结果",
+					"required": true
 				},
 				{
 					"name": "err_msg",
@@ -74,7 +67,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.series.create",
+	"apiChineseName": "系列品变更-新增系列",
+	"description": "系列品变更-新增系列",
+	"id": 44873
 }

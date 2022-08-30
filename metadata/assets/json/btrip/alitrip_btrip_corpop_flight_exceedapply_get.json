@@ -1,0 +1,185 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅审批单id",
+					"required": true
+				}
+			],
+			"name": "rq",
+			"type": "OpenIsvSearchRq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "商旅企业id"
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅审批单id"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "审批单状态 0:审批中 1:已同意 2:已拒绝"
+						},
+						{
+							"name": "btrip_cause",
+							"type": "String",
+							"description": "出差原因"
+						},
+						{
+							"name": "exceed_type",
+							"type": "Number",
+							"description": "超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间"
+						},
+						{
+							"name": "exceed_reason",
+							"type": "String",
+							"description": "超标原因"
+						},
+						{
+							"name": "origin_standard",
+							"type": "String",
+							"description": "原差旅标准"
+						},
+						{
+							"subParams": [
+								{
+									"name": "dep_city_name",
+									"type": "String",
+									"description": "出发城市名称"
+								},
+								{
+									"name": "arr_city_name",
+									"type": "String",
+									"description": "到达城市名称"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市三字码"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市三字码"
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "arr_time",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱"
+								},
+								{
+									"name": "cabin_class",
+									"type": "Number",
+									"description": "申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱"
+								},
+								{
+									"name": "cabin_class_str",
+									"type": "String",
+									"description": "舱等描述，头等舱，商务舱，经济舱，超值经济舱"
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "折扣"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格（元）"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间"
+								}
+							],
+							"name": "apply_intention_info_do",
+							"type": "ApplyIntentionInfoDo",
+							"description": "意向出行信息"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "第三方用户id"
+						},
+						{
+							"name": "submit_time",
+							"type": "Date",
+							"description": "审批单提交时间"
+						},
+						{
+							"name": "thirdpart_corp_id",
+							"type": "String",
+							"description": "第三方企业id"
+						},
+						{
+							"name": "thirdpart_apply_id",
+							"type": "String",
+							"description": "第三方出差审批单号"
+						}
+					],
+					"name": "module",
+					"type": "OpenIsvExceedApplyRs",
+					"description": "审批单对象"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参对象"
+		}
+	],
+	"name": "alitrip.btrip.corpop.flight.exceedapply.get",
+	"apiChineseName": "商旅机票第三方超标审批单搜索接口",
+	"description": "商旅机票第三方超标审批单搜索接口",
+	"id": 57611
+}

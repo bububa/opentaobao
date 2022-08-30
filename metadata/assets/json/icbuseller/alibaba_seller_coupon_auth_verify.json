@@ -1,8 +1,4 @@
 {
-	"id": 51234,
-	"name": "alibaba.seller.coupon.auth.verify",
-	"apiChineseName": "优惠券校验",
-	"description": "优惠券校验",
 	"requestParams": [
 		{
 			"name": "service_code",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "获取是否验证成功",
 			"subParams": [
 				{
 					"name": "success",
@@ -47,7 +40,14 @@
 					"description": "验证失败结果",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "获取是否验证成功"
 		}
-	]
+	],
+	"name": "alibaba.seller.coupon.auth.verify",
+	"apiChineseName": "优惠券校验",
+	"description": "优惠券校验",
+	"id": 51234
 }

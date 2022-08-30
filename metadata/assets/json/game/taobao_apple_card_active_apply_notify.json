@@ -1,14 +1,6 @@
 {
-	"id": 45035,
-	"name": "taobao.apple.card.active.apply.notify",
-	"apiChineseName": "苹果卡密申请激活回调接口",
-	"description": "苹果卡密申请激活回调接口",
 	"requestParams": [
 		{
-			"name": "apple_cards",
-			"type": "AppleCardDto[]",
-			"description": "卡列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "face_price",
@@ -35,7 +27,11 @@
 					"type": "String",
 					"description": "产品编码"
 				}
-			]
+			],
+			"name": "apple_cards",
+			"type": "AppleCardDto[]",
+			"description": "卡列表",
+			"maxListSize": 20
 		},
 		{
 			"name": "gateway_order_no",
@@ -69,5 +65,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "taobao.apple.card.active.apply.notify",
+	"apiChineseName": "苹果卡密申请激活回调接口",
+	"description": "苹果卡密申请激活回调接口",
+	"id": 45035
 }

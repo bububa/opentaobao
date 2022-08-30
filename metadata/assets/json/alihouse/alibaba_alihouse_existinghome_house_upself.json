@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"name": "community_outer_id",
+			"type": "String",
+			"description": "外部小区id",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部房源id",
+			"required": true
+		},
+		{
+			"name": "outer_entrust_id",
+			"type": "String",
+			"description": "外部委托id"
+		},
+		{
+			"name": "business_type",
+			"type": "Number",
+			"description": "1-新房，2-小区，3-公寓。与楼盘的枚举对齐，目的是查询小区或者是公寓数据"
+		},
+		{
+			"name": "is_async",
+			"type": "Number",
+			"description": "是否异步，0同步，1异步"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.upself",
+	"apiChineseName": "房源上架",
+	"description": "房源信息上架",
+	"id": 56938
+}

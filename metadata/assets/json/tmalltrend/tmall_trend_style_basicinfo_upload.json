@@ -1,15 +1,6 @@
 {
-	"id": 54653,
-	"name": "tmall.trend.style.basicinfo.upload",
-	"apiChineseName": "3D款式基本信息同步API",
-	"description": "3D款式基本信息同步至天猫趋势中心",
 	"requestParams": [
 		{
-			"name": "style_basic_info_bo_list",
-			"type": "StyleBasicInfoBo[]",
-			"description": "款式基本信息列表，单次同步最多1000条",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "sync_purpose",
@@ -98,6 +89,12 @@
 					"description": "辅料"
 				},
 				{
+					"name": "key_properties",
+					"type": "String",
+					"description": "核心属性项，英文分号分割，最多3个，必须按照给定备选项设置，否则强校验会不通过",
+					"required": true
+				},
+				{
 					"name": "price",
 					"type": "String",
 					"description": "款式价格，单位元",
@@ -133,12 +130,6 @@
 					"name": "offline_reason_detail",
 					"type": "String",
 					"description": "下线操作时说明详细下线原因"
-				},
-				{
-					"name": "key_properties",
-					"type": "String",
-					"description": "核心属性项，英文分号分割，最多3个，必须按照给定备选项设置，否则强校验会不通过",
-					"required": true
 				},
 				{
 					"name": "clothings",
@@ -190,15 +181,15 @@
 					"type": "String",
 					"description": "版本号"
 				}
-			]
+			],
+			"name": "style_basic_info_bo_list",
+			"type": "StyleBasicInfoBo[]",
+			"description": "款式基本信息列表，单次同步最多1000条",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "value",
-			"type": "String",
-			"description": "款式基本信息同步处理结果描述"
-		},
 		{
 			"name": "resp_success",
 			"type": "Boolean",
@@ -210,9 +201,18 @@
 			"description": "错误码,1001-系统错误，1002-请求参数错误，1003-业务处理错误，1004-数据权限错误"
 		},
 		{
+			"name": "value",
+			"type": "String",
+			"description": "款式基本信息同步处理结果描述"
+		},
+		{
 			"name": "error_msg",
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "tmall.trend.style.basicinfo.upload",
+	"apiChineseName": "3D款式基本信息同步API",
+	"description": "3D款式基本信息同步至天猫趋势中心",
+	"id": 54653
 }

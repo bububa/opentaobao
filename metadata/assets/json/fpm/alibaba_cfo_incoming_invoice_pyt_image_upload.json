@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "文件名"
+				},
+				{
+					"name": "file_size",
+					"type": "Number",
+					"description": "文件大小"
+				},
+				{
+					"name": "file_byte_base64_str",
+					"type": "String",
+					"description": "文件字节数组Base64字符串"
+				}
+			],
+			"name": "upload_request",
+			"type": "ImageUploadRequest",
+			"description": "影像上传实体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "文件resourceId"
+		},
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"name": "response_msg",
+			"type": "String",
+			"description": "相应消息"
+		}
+	],
+	"name": "alibaba.cfo.incoming.invoice.pyt.image.upload",
+	"apiChineseName": "票易通发票影像上传",
+	"description": "票易通发票影像上传",
+	"id": 61521
+}

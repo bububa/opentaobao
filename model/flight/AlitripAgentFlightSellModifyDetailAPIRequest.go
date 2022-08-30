@@ -14,7 +14,7 @@ type AlitripAgentFlightSellModifyDetailAPIRequest struct {
 	model.Params
 	// 申请单号
 	_applyId string
-	// 国内国际标识
+	// 国内国际标识:1:国内,2:国际
 	_domesticIntl int64
 }
 
@@ -53,7 +53,7 @@ func (r AlitripAgentFlightSellModifyDetailAPIRequest) GetApplyId() string {
 }
 
 // SetDomesticIntl is DomesticIntl Setter
-// 国内国际标识
+// 国内国际标识:1:国内,2:国际
 func (r *AlitripAgentFlightSellModifyDetailAPIRequest) SetDomesticIntl(_domesticIntl int64) error {
 	r._domesticIntl = _domesticIntl
 	r.Set("domestic_intl", _domesticIntl)

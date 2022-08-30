@@ -1,9 +1,11 @@
 {
-	"id": 25873,
-	"name": "taobao.alitrip.seller.refundorderlist.fetch",
-	"apiChineseName": "【机票代理商】——退票订单列表提取",
-	"description": "代理商纬度退票订单列表提取",
 	"requestParams": [
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "提取数据的结束时间",
+			"required": true
+		},
 		{
 			"name": "start_date",
 			"type": "Date",
@@ -14,34 +16,65 @@
 			"name": "status",
 			"type": "Number",
 			"description": "1：初始，2：接受，3：确认，4：失败，5：买家处理，6：卖家处理，7：等待小二回填，8：退款成功"
-		},
-		{
-			"name": "end_date",
-			"type": "Date",
-			"description": "提取数据的结束时间",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "ReturnApplyDo []",
-			"description": "退票订单列表",
 			"subParams": [
+				{
+					"name": "airline_code",
+					"type": "String",
+					"description": "航线二字码"
+				},
+				{
+					"name": "apply_time",
+					"type": "Date",
+					"description": "退票提交时间"
+				},
+				{
+					"name": "arr_airport_code",
+					"type": "String",
+					"description": "到达机场三字码"
+				},
+				{
+					"name": "cabin",
+					"type": "String",
+					"description": "舱位"
+				},
+				{
+					"name": "dep_airport_code",
+					"type": "String",
+					"description": "出发机场三字码"
+				},
 				{
 					"name": "dep_time",
 					"type": "Date",
 					"description": "到达时间"
 				},
 				{
-					"name": "refund_money",
-					"type": "Number",
-					"description": "退款金额（单位：元）"
+					"name": "first_process_time",
+					"type": "Date",
+					"description": "退票成功时间"
 				},
 				{
-					"name": "cabin",
+					"name": "flight_no",
 					"type": "String",
-					"description": "舱位"
+					"description": "航班号"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "数据项id"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "乘机人姓名"
 				},
 				{
 					"name": "pay_success_time",
@@ -54,19 +87,9 @@
 					"description": "退票手续费（单位：元）"
 				},
 				{
-					"name": "apply_time",
-					"type": "Date",
-					"description": "退票提交时间"
-				},
-				{
-					"name": "dep_airport_code",
-					"type": "String",
-					"description": "出发机场三字码"
-				},
-				{
-					"name": "id",
+					"name": "refund_money",
 					"type": "Number",
-					"description": "数据项id"
+					"description": "退款金额（单位：元）"
 				},
 				{
 					"name": "ticket_no",
@@ -74,41 +97,28 @@
 					"description": "票号"
 				},
 				{
-					"name": "airline_code",
-					"type": "String",
-					"description": "航线二字码"
-				},
-				{
-					"name": "flight_no",
-					"type": "String",
-					"description": "航班号"
-				},
-				{
-					"name": "first_process_time",
-					"type": "Date",
-					"description": "退票成功时间"
-				},
-				{
-					"name": "passenger_name",
-					"type": "String",
-					"description": "乘机人姓名"
-				},
-				{
-					"name": "arr_airport_code",
-					"type": "String",
-					"description": "到达机场三字码"
-				},
-				{
-					"name": "order_id",
-					"type": "Number",
-					"description": "订单号"
-				},
-				{
 					"name": "status",
 					"type": "Number",
 					"description": "退票状态，1：初始，2：接受，3：确认，4：失败，5：买家处理，6：卖家处理，7：等待小二回填，8：退款成功"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退票原因"
+				},
+				{
+					"name": "is_voluntary",
+					"type": "Boolean",
+					"description": "是否自愿"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "ReturnApplyDo []",
+			"description": "退票订单列表"
 		}
-	]
+	],
+	"name": "taobao.alitrip.seller.refundorderlist.fetch",
+	"apiChineseName": "【机票代理商】——退票订单列表提取",
+	"description": "代理商纬度退票订单列表提取",
+	"id": 25873
 }

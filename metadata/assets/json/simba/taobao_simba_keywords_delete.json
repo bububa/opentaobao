@@ -1,8 +1,4 @@
 {
-	"id": 10554,
-	"name": "taobao.simba.keywords.delete",
-	"apiChineseName": "删除一批关键词",
-	"description": "删除一批关键词",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -17,17 +13,14 @@
 		},
 		{
 			"name": "keyword_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "关键词Id数组，最多100个",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "Keyword []",
-			"description": "成功删除的关键词列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -67,7 +60,7 @@
 				{
 					"name": "audit_status",
 					"type": "String",
-					"description": "审核状态： audit_wait-待审核；audit_pass-审核通过(上线)；audit_reject-审核拒绝；audit_offline-审核直接下线；默认为 audit_pass。"
+					"description": "审核状态： \u003cbr/\u003eaudit_wait-待审核；\u003cbr/\u003eaudit_pass-审核通过(上线)；\u003cbr/\u003eaudit_reject-审核拒绝；\u003cbr/\u003eaudit_offline-审核直接下线；\u003cbr/\u003e默认为 audit_pass。"
 				},
 				{
 					"name": "audit_desc",
@@ -99,7 +92,14 @@
 					"type": "Number",
 					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "成功删除的关键词列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.delete",
+	"apiChineseName": "删除一批关键词",
+	"description": "删除一批关键词",
+	"id": 10554
 }

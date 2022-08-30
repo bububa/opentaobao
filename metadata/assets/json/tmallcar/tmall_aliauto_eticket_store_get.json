@@ -1,0 +1,125 @@
+{
+	"requestParams": [
+		{
+			"name": "order_ids",
+			"type": "Number[]",
+			"description": "订单号列表，最多支持20条",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回的执行状态吗"
+				},
+				{
+					"subParams": [
+						{
+							"name": "town_name",
+							"type": "String",
+							"description": "街道名称"
+						},
+						{
+							"name": "prov_name",
+							"type": "String",
+							"description": "省名称"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "district_name",
+							"type": "String",
+							"description": "区名称"
+						},
+						{
+							"name": "town",
+							"type": "Number",
+							"description": "街道编码"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号"
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "城市编码"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称"
+						},
+						{
+							"name": "store_phone",
+							"type": "String",
+							"description": "联系方式"
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "区域编码"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部门店编码"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "prov",
+							"type": "Number",
+							"description": "省编码"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "纬度"
+						}
+					],
+					"name": "data",
+					"type": "EticketStoreInfoDto[]",
+					"description": "返回的数据实体"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
+		}
+	],
+	"name": "tmall.aliauto.eticket.store.get",
+	"apiChineseName": "查询电子凭证对应门店信息",
+	"description": "查询电子凭证对应门店信息",
+	"id": 59235
+}

@@ -1,13 +1,6 @@
 {
-	"id": 28682,
-	"name": "alibaba.baichuan.ctg.toutiao.content",
-	"apiChineseName": "微博输出头条数据",
-	"description": "百川头条内容获取",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "CtgRequest",
-			"description": "param0",
 			"subParams": [
 				{
 					"name": "delivery_id",
@@ -39,144 +32,130 @@
 					"type": "String",
 					"description": "date"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "CtgRequest",
+			"description": "param0"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CtgResponse",
-			"description": "内容总体结构",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "返回错误信息",
-					"required": true
+					"description": "返回错误信息"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否包含下一页数据",
-					"required": true
+					"description": "是否包含下一页数据"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "数据列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "title",
 							"type": "String",
-							"description": "内容标题",
-							"required": true
+							"description": "内容标题"
 						},
 						{
 							"name": "publish_time",
 							"type": "Date",
-							"description": "内容发布时间",
-							"required": true
+							"description": "内容发布时间"
 						},
 						{
 							"name": "source",
 							"type": "String",
-							"description": "内容来源：头条",
-							"required": true
+							"description": "内容来源：头条"
 						},
 						{
 							"name": "summary",
 							"type": "String",
-							"description": "内容概要描述",
-							"required": true
+							"description": "内容概要描述"
 						},
 						{
 							"name": "cover_url",
 							"type": "String",
-							"description": "内容封面图",
-							"required": true
+							"description": "内容封面图"
 						},
 						{
 							"name": "content_url",
 							"type": "String",
-							"description": "内容链接（可能为空）",
-							"required": true
+							"description": "内容链接（可能为空）"
 						},
 						{
 							"name": "org_source",
 							"type": "String",
-							"description": "内容来源说明",
-							"required": true
+							"description": "内容来源说明"
 						},
 						{
 							"name": "nick",
 							"type": "String",
-							"description": "达人nick",
-							"required": true
-						},
-						{
-							"name": "wb_uid",
-							"type": "String",
-							"description": "微博大V账户id",
-							"required": true
-						},
-						{
-							"name": "create_time",
-							"type": "String",
-							"description": "内容创建时间",
-							"required": true
-						},
-						{
-							"name": "ybhpss",
-							"type": "String",
-							"description": "返回的埋点参数",
-							"required": true
-						},
-						{
-							"name": "body",
-							"type": "String",
-							"description": "内容正文信息",
-							"required": true
-						},
-						{
-							"name": "modified_time",
-							"type": "String",
-							"description": "内容修改时间",
-							"required": true
-						},
-						{
-							"name": "item_url_list",
-							"type": "String",
-							"description": "返回商品列表信息",
-							"required": true
-						},
-						{
-							"name": "content_id",
-							"type": "String",
-							"description": "内容id",
-							"required": true
+							"description": "达人nick"
 						},
 						{
 							"name": "tb_uid",
 							"type": "String",
-							"description": "淘宝达人id",
-							"required": true
+							"description": "淘宝达人id"
+						},
+						{
+							"name": "wb_uid",
+							"type": "String",
+							"description": "微博大V账户id"
+						},
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "内容创建时间"
+						},
+						{
+							"name": "ybhpss",
+							"type": "String",
+							"description": "返回的埋点参数"
+						},
+						{
+							"name": "body",
+							"type": "String",
+							"description": "内容正文信息"
+						},
+						{
+							"name": "modified_time",
+							"type": "String",
+							"description": "内容修改时间"
+						},
+						{
+							"name": "item_url_list",
+							"type": "String",
+							"description": "返回商品列表信息"
+						},
+						{
+							"name": "content_id",
+							"type": "String",
+							"description": "内容id"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "数据列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "处理成功与否",
-					"required": true
+					"description": "处理成功与否"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CtgResponse",
+			"description": "内容总体结构"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.ctg.toutiao.content",
+	"apiChineseName": "微博输出头条数据",
+	"description": "百川头条内容获取",
+	"id": 28682
 }

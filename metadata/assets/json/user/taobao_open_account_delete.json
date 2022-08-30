@@ -1,8 +1,4 @@
 {
-	"id": 24819,
-	"name": "taobao.open.account.delete",
-	"apiChineseName": "OpenAccount删除数据",
-	"description": "OpenAccount删除数据",
 	"requestParams": [
 		{
 			"name": "open_account_ids",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "datas",
-			"type": "OpenaccountVoid []",
-			"description": "删除结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -38,7 +31,14 @@
 					"type": "Number",
 					"description": "错误码"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "OpenaccountVoid []",
+			"description": "删除结果"
 		}
-	]
+	],
+	"name": "taobao.open.account.delete",
+	"apiChineseName": "OpenAccount删除数据",
+	"description": "OpenAccount删除数据",
+	"id": 24819
 }

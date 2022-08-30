@@ -1,13 +1,6 @@
 {
-	"id": 28586,
-	"name": "yunos.tvpubadmin.diccontroltask.add",
-	"apiChineseName": "新增停开服任务",
-	"description": "新增停开服任务",
 	"requestParams": [
 		{
-			"name": "task",
-			"type": "DicControlTaskDO",
-			"description": "任务信息",
 			"subParams": [
 				{
 					"name": "type",
@@ -54,7 +47,10 @@
 					"description": "牌照方",
 					"required": true
 				}
-			]
+			],
+			"name": "task",
+			"type": "DicControlTaskDO",
+			"description": "任务信息"
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.diccontroltask.add",
+	"apiChineseName": "新增停开服任务",
+	"description": "新增停开服任务",
+	"id": 28586
 }

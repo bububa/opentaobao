@@ -1,8 +1,4 @@
 {
-	"id": 27314,
-	"name": "cainiao.guoguo.cp.backup.assigncourier",
-	"apiChineseName": "CP兜底后指定接单的小件员",
-	"description": "CP兜底后指定接单的小件员；CP改派小件员",
 	"requestParams": [
 		{
 			"name": "cp_code",
@@ -58,5 +54,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "cainiao.guoguo.cp.backup.assigncourier",
+	"apiChineseName": "CP兜底后指定接单的小件员",
+	"description": "CP兜底后指定接单的小件员；CP改派小件员",
+	"id": 27314
 }

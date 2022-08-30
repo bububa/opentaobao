@@ -22,10 +22,10 @@ type CainiaoWaybillPrivacySellerOrderGetAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 错误列表
 	ErrorCodeList []string `json:"error_code_list,omitempty" xml:"error_code_list>string,omitempty"`
-	// 错误信息
-	ErrorInfoList []string `json:"error_info_list,omitempty" xml:"error_info_list>string,omitempty"`
 	// 返回值
 	ResponseList []CainiaoWaybillPrivacySellerOrderGetModule `json:"response_list,omitempty" xml:"response_list>cainiao_waybill_privacy_seller_order_get_module,omitempty"`
+	// 错误信息
+	ErrorInfoList []string `json:"error_info_list,omitempty" xml:"error_info_list>string,omitempty"`
 	// 第一个错误
 	OneErrorInfo string `json:"one_error_info,omitempty" xml:"one_error_info,omitempty"`
 	// objectId

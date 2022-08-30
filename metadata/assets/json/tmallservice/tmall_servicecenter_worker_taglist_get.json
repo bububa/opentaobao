@@ -1,8 +1,4 @@
 {
-	"id": 49244,
-	"name": "tmall.servicecenter.worker.taglist.get",
-	"apiChineseName": "获取工人标签",
-	"description": "服务商获取对应工人的标签",
 	"requestParams": [
 		{
 			"name": "id_number",
@@ -19,67 +15,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WorkerTag",
-			"description": "工人的能力标签",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "WorkerTag",
-					"description": "工人能力",
-					"required": true,
 					"subParams": [
-						{
-							"name": "ability_map",
-							"type": "Json",
-							"description": "能力列表 key为能力，value则是对应能力的详细描述.  effective: 当前能力是否已经激活。  serviceCode: 工人具备的能力。  abilityLevel:  0: 没有等级，1: 初级工人  2: 中级工人  3:高级工人 4:特级工人",
-							"required": true
-						},
 						{
 							"name": "black_list",
 							"type": "Boolean",
-							"description": "黑名单状态",
-							"required": true
+							"description": "黑名单状态"
 						},
 						{
 							"name": "degradation",
 							"type": "Boolean",
-							"description": "飞单状态",
-							"required": true
+							"description": "飞单状态"
+						},
+						{
+							"name": "ability_map",
+							"type": "String",
+							"description": "能力列表 key为能力，value则是对应能力的详细描述.  effective: 当前能力是否已经激活。  serviceCode: 工人具备的能力。  abilityLevel:  0: 没有等级，1: 初级工人  2: 中级工人  3:高级工人 4:特级工人"
 						},
 						{
 							"name": "vip",
 							"type": "Boolean",
-							"description": "vip工人",
-							"required": true
+							"description": "vip工人"
 						},
 						{
 							"name": "big_promotion",
 							"type": "Boolean",
-							"description": "大促工人",
-							"required": true
+							"description": "大促工人"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "WorkerTag",
+					"description": "工人能力"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WorkerTag",
+			"description": "工人的能力标签"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.taglist.get",
+	"apiChineseName": "获取工人标签",
+	"description": "服务商获取对应工人的标签",
+	"id": 49244
 }

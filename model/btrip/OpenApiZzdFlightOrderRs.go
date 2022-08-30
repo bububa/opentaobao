@@ -8,12 +8,10 @@ type OpenApiZzdFlightOrderRs struct {
 	ClientInfodos []ClientInfoDo `json:"client_infodos,omitempty" xml:"client_infodos>client_info_do,omitempty"`
 	// 票据信息
 	Ticketdos []OpenTicketDo `json:"ticketdos,omitempty" xml:"ticketdos>open_ticket_do,omitempty"`
-	// 商旅企业ID
-	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
-	// 订单状态：0, "待支付";1, "出票中";2, "已关闭";3,"有改签单";4, "有退票单";5, "出票成功";6, "退票申请中";7, "改签申请中";10, "订单关闭";
-	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 第三方交易号
 	TradeId string `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
+	// 商旅企业ID
+	CorpId string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
 	// 第三方企业ID
 	ThirdpartCorpId string `json:"thirdpart_corp_id,omitempty" xml:"thirdpart_corp_id,omitempty"`
 	// 第三方用户ID
@@ -26,6 +24,8 @@ type OpenApiZzdFlightOrderRs struct {
 	ThirdPartApplyId string `json:"third_part_apply_id,omitempty" xml:"third_part_apply_id,omitempty"`
 	// 审批单名称
 	ApplyTitle string `json:"apply_title,omitempty" xml:"apply_title,omitempty"`
+	// 订单状态：0, "待支付";1, "出票中";2, "已关闭";3,"有改签单";4, "有退票单";5, "出票成功";6, "退票申请中";7, "改签申请中";10, "订单关闭";
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 订单状态改变时间
@@ -48,10 +48,6 @@ type OpenApiZzdFlightOrderRs struct {
 	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
 	// 行程id
 	ItineraryNo string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
-	// 差标金额（分）
-	TravelStandardAmount int64 `json:"travel_standard_amount,omitempty" xml:"travel_standard_amount,omitempty"`
-	// 行程单邮费
-	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 	// '交易类型：1:机票预订，2:机票改签，3:保险费，4:行程单邮寄费，6：机票退票手续费，101：预订退款，102:改签退款，103:保险退款，104:行程单邮寄退款，105：机票赔付，106:机票改签服务费
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 资金流向:1:支出，2:收入
@@ -76,10 +72,14 @@ type OpenApiZzdFlightOrderRs struct {
 	RefundServiceFee int64 `json:"refund_service_fee,omitempty" xml:"refund_service_fee,omitempty"`
 	// tmc收取的预订服务费（分）
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
+	// 差标金额（分）
+	TravelStandardAmount int64 `json:"travel_standard_amount,omitempty" xml:"travel_standard_amount,omitempty"`
 	// 改签费用（分）
 	ChangeFee int64 `json:"change_fee,omitempty" xml:"change_fee,omitempty"`
 	// tmc收取的改签服务费（分）
 	ChangeServiceFee int64 `json:"change_service_fee,omitempty" xml:"change_service_fee,omitempty"`
+	// 行程单邮费
+	DeliveryFee int64 `json:"delivery_fee,omitempty" xml:"delivery_fee,omitempty"`
 	// 保险费用（分）
 	InsuranceFee int64 `json:"insurance_fee,omitempty" xml:"insurance_fee,omitempty"`
 	// 票张数

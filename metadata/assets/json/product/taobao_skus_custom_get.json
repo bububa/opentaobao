@@ -1,27 +1,20 @@
 {
-	"id": 164,
-	"name": "taobao.skus.custom.get",
-	"apiChineseName": "根据外部ID取商品SKU",
-	"description": "跟据卖家设定的Sku的外部id获取商品，如果一个outer_id对应多个Sku会返回所有符合条件的sku \u003cbr/\u003e这个Sku所属卖家从传入的session中获取，需要session绑定(注：iid标签里是num_iid的值，可以用作num_iid使用)",
 	"requestParams": [
-		{
-			"name": "outer_id",
-			"type": "String",
-			"description": "Sku的外部商家ID",
-			"required": true
-		},
 		{
 			"name": "fields",
 			"type": "String",
 			"description": "需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”隔开",
 			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "Sku的外部商家ID",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "skus",
-			"type": "Sku []",
-			"description": "Sku对象，具体字段以fields决定",
 			"subParams": [
 				{
 					"name": "sku_id",
@@ -34,14 +27,14 @@
 					"description": "sku所属商品id(注意：iid近期即将废弃，请用num_iid参数)"
 				},
 				{
-					"name": "num_iid",
-					"type": "Number",
-					"description": "sku所属商品数字id"
-				},
-				{
 					"name": "properties",
 					"type": "String",
 					"description": "sku的销售属性组合字符串（颜色，大小，等等，可通过类目API获取某类目下的销售属性）,格式是p1:v1;p2:v2"
+				},
+				{
+					"name": "properties_name",
+					"type": "String",
+					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2……"
 				},
 				{
 					"name": "quantity",
@@ -52,6 +45,11 @@
 					"name": "price",
 					"type": "String",
 					"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
 				},
 				{
 					"name": "created",
@@ -66,19 +64,21 @@
 				{
 					"name": "status",
 					"type": "String",
-					"description": "sku状态。 normal:正常 ；delete:删除,淘宝天猫此字段无效"
+					"description": "sku状态。 normal:正常 ；delete:删除"
 				},
 				{
-					"name": "properties_name",
-					"type": "String",
-					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2\u0026hellip;\u0026hellip;"
-				},
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
+					"name": "num_iid",
+					"type": "Number",
+					"description": "sku所属商品数字id"
 				}
-			]
+			],
+			"name": "skus",
+			"type": "Sku []",
+			"description": "Sku对象，具体字段以fields决定"
 		}
-	]
+	],
+	"name": "taobao.skus.custom.get",
+	"apiChineseName": "根据外部ID取商品SKU",
+	"description": "跟据卖家设定的Sku的外部id获取商品，如果一个outer_id对应多个Sku会返回所有符合条件的sku \u003cbr/\u003e这个Sku所属卖家从传入的session中获取，需要session绑定(注：iid标签里是num_iid的值，可以用作num_iid使用)",
+	"id": 164
 }

@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "logistics order id and it can be used to get shipment detail",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "PrintLabelRequestDTO",
+			"description": "param",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "lotistics order id"
+				},
+				{
+					"name": "label_url",
+					"type": "String",
+					"description": "URL of label PDF file"
+				}
+			],
+			"name": "data",
+			"type": "LabelDTO",
+			"description": "data"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "is success"
+		},
+		{
+			"name": "error_result_message",
+			"type": "String",
+			"description": "error message"
+		},
+		{
+			"name": "error_result_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.local.logistics.label.print",
+	"apiChineseName": "print label",
+	"description": "print label",
+	"id": 61152
+}

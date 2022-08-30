@@ -1,8 +1,4 @@
 {
-	"id": 53970,
-	"name": "alibaba.item.operate.delete",
-	"apiChineseName": "商品删除",
-	"description": "商品删除",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "商品删除是否成功"
 		}
-	]
+	],
+	"name": "alibaba.item.operate.delete",
+	"apiChineseName": "商品删除",
+	"description": "商品删除",
+	"id": 53970
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43246,
-	"name": "taobao.feedflow.item.target.validlist",
-	"apiChineseName": "获取有权限的定向列表",
-	"description": "获取有权限的定向列表",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -13,55 +9,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
-					"name": "targets",
-					"type": "TargetDto[]",
-					"description": "定向结构",
-					"required": true,
 					"subParams": [
 						{
 							"name": "target_id",
 							"type": "Number",
-							"description": "定向id",
-							"required": true
+							"description": "定向id"
 						},
 						{
 							"name": "target_name",
 							"type": "String",
-							"description": "定向名称",
-							"required": true
+							"description": "定向名称"
 						},
 						{
 							"name": "target_desc",
 							"type": "String",
-							"description": "定向描述",
-							"required": true
+							"description": "定向描述"
 						},
 						{
 							"name": "target_type",
 							"type": "String",
-							"description": "定向类型",
-							"required": true
+							"description": "定向类型"
 						}
-					]
+					],
+					"name": "targets",
+					"type": "TargetDto[]",
+					"description": "定向结构"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
+					"description": "调用是否成功,true-成功，false-失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.target.validlist",
+	"apiChineseName": "获取有权限的定向列表",
+	"description": "获取有权限的定向列表",
+	"id": 43246
 }

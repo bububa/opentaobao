@@ -1,8 +1,4 @@
 {
-	"id": 42962,
-	"name": "alibaba.ailab.user.authorized.query",
-	"apiChineseName": "查询授权状态接口",
-	"description": "查询三方用户授权状态",
 	"requestParams": [
 		{
 			"name": "schema_key",
@@ -31,5 +27,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "alibaba.ailab.user.authorized.query",
+	"apiChineseName": "查询授权状态接口",
+	"description": "查询三方用户授权状态",
+	"id": 42962
 }

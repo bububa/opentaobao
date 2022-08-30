@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "md5",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "data",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "request_id"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error_code"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "error_msg"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "error_level"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.campus.guardant.gate.sync",
+	"apiChineseName": "网点数据同步",
+	"description": "门禁供应商创建网点同步",
+	"id": 60968
+}

@@ -1,8 +1,4 @@
 {
-	"id": 49526,
-	"name": "alitrip.rail.trade.issueticket",
-	"apiChineseName": "德铁出票成功接口",
-	"description": "出票成功回调接口",
 	"requestParams": [
 		{
 			"name": "agent_order_id",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "成功失败",
-					"required": true
+					"description": "成功失败"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "alitrip.rail.trade.issueticket",
+	"apiChineseName": "德铁出票成功接口",
+	"description": "出票成功回调接口",
+	"id": 49526
 }

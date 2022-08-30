@@ -1,14 +1,6 @@
 {
-	"id": 33167,
-	"name": "alitrip.btrip.cost.center.entity.set",
-	"apiChineseName": "设置外部成本中心人员信息",
-	"description": "设置外部成本中心人员信息",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterSetEntityRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "thirdpart_id",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "entity_list",
-					"type": "OpenOrgEntityDo[]",
-					"description": "人员信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "entity_type",
@@ -34,7 +22,11 @@
 							"description": "员工/部门/角色id",
 							"required": true
 						}
-					]
+					],
+					"name": "entity_list",
+					"type": "OpenOrgEntityDo[]",
+					"description": "人员信息列表",
+					"required": true
 				},
 				{
 					"name": "corp_id",
@@ -42,60 +34,61 @@
 					"description": "企业id",
 					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterSetEntityRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
-					"name": "module",
-					"type": "OpenCostCenterSetEntityRs",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "add_num",
 							"type": "Number",
-							"description": "增加的人员信息条数",
-							"required": true
+							"description": "增加的人员信息条数"
 						},
 						{
 							"name": "remove_num",
 							"type": "Number",
-							"description": "删除的人员信息条数",
-							"required": true
+							"description": "删除的人员信息条数"
 						},
 						{
 							"name": "selected_user_num",
 							"type": "Number",
-							"description": "该成本中心下员工总数",
-							"required": true
+							"description": "该成本中心下员工总数"
 						}
-					]
+					],
+					"name": "module",
+					"type": "OpenCostCenterSetEntityRs",
+					"description": "结果对象"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.btrip.cost.center.entity.set",
+	"apiChineseName": "设置外部成本中心人员信息",
+	"description": "设置外部成本中心人员信息",
+	"id": 33167
 }

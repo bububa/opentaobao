@@ -1,8 +1,4 @@
 {
-	"id": 38869,
-	"name": "alibaba.mydata.self.product.get",
-	"apiChineseName": "获取客户产品相关表现数据",
-	"description": "获取客户产品相关表现数据",
 	"requestParams": [
 		{
 			"name": "statistics_type",
@@ -20,99 +16,90 @@
 			"name": "product_ids",
 			"type": "Number[]",
 			"description": "待查询产品id列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ProductEffect",
-			"description": "产品效果查询结果",
 			"subParams": [
 				{
-					"name": "effects",
-					"type": "EffectEntity[]",
-					"description": "产品效果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bookmark",
 							"type": "Number",
-							"description": "收藏买家数",
-							"required": true
+							"description": "收藏买家数"
 						},
 						{
 							"name": "click",
 							"type": "Number",
-							"description": "点击",
-							"required": true
+							"description": "点击"
 						},
 						{
 							"name": "compare",
 							"type": "Number",
-							"description": "对比买家数",
-							"required": true
+							"description": "对比买家数"
 						},
 						{
 							"name": "fb",
 							"type": "Number",
-							"description": "反馈",
-							"required": true
+							"description": "反馈"
 						},
 						{
 							"name": "impression",
 							"type": "Number",
-							"description": "曝光",
-							"required": true
+							"description": "曝光"
 						},
 						{
-							"name": "keyword_effects",
-							"type": "KeywordEffectEntity[]",
-							"description": "词来源",
-							"required": true,
 							"subParams": [
 								{
 									"name": "keyword",
 									"type": "String",
-									"description": "词",
-									"required": true
+									"description": "词"
 								}
-							]
+							],
+							"name": "keyword_effects",
+							"type": "KeywordEffectEntity[]",
+							"description": "词来源"
 						},
 						{
 							"name": "order",
 							"type": "Number",
-							"description": "提交订单数",
-							"required": true
+							"description": "提交订单数"
 						},
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品id",
-							"required": true
+							"description": "产品id"
 						},
 						{
 							"name": "share",
 							"type": "Number",
-							"description": "分享买家数",
-							"required": true
+							"description": "分享买家数"
 						},
 						{
 							"name": "visitor",
 							"type": "Number",
-							"description": "访客数",
-							"required": true
+							"description": "访客数"
 						}
-					]
+					],
+					"name": "effects",
+					"type": "EffectEntity[]",
+					"description": "产品效果"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "返回结果数量",
-					"required": true
+					"description": "返回结果数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ProductEffect",
+			"description": "产品效果查询结果"
 		}
-	]
+	],
+	"name": "alibaba.mydata.self.product.get",
+	"apiChineseName": "获取客户产品相关表现数据",
+	"description": "获取客户产品相关表现数据",
+	"id": 38869
 }

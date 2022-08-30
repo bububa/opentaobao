@@ -1,8 +1,4 @@
 {
-	"id": 54310,
-	"name": "alibaba.idle.parttime.synclog",
-	"apiChineseName": "兼职同步日志",
-	"description": "提供给供应商查询的接口",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -15,6 +11,12 @@
 			"type": "Number",
 			"description": "查询岗位同步结束时间",
 			"required": true
+		},
+		{
+			"name": "sync_ids",
+			"type": "String[]",
+			"description": "同步的id",
+			"maxListSize": 999
 		},
 		{
 			"name": "type",
@@ -33,93 +35,80 @@
 			"type": "Number",
 			"description": "第几页, 从0开始",
 			"required": true
-		},
-		{
-			"name": "sync_ids",
-			"type": "Number[]",
-			"description": "同步的id",
-			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "返回数据结构",
-					"required": true,
 					"subParams": [
 						{
-							"name": "part_time_job_sync_log_list",
-							"type": "PartTimeJobSyncLogList[]",
-							"description": "岗位列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "part_time_job_trans_nodes",
-									"type": "PartTimeJobTransNodes[]",
-									"description": "日志节点",
-									"required": true,
 									"subParams": [
 										{
 											"name": "create_time",
 											"type": "Number",
-											"description": "节点创建时间",
-											"required": true
+											"description": "节点创建时间"
 										},
 										{
 											"name": "node_description",
 											"type": "String",
-											"description": "节点描述",
-											"required": true
+											"description": "节点描述"
 										}
-									]
+									],
+									"name": "part_time_job_trans_nodes",
+									"type": "PartTimeJobTransNodes[]",
+									"description": "日志节点"
 								},
 								{
 									"name": "job_id",
 									"type": "Number",
-									"description": "岗位id",
-									"required": true
+									"description": "岗位id"
 								},
 								{
 									"name": "current_status",
 									"type": "String",
-									"description": "当前状态描述",
-									"required": true
+									"description": "当前状态描述"
 								},
 								{
 									"name": "create_time",
 									"type": "Number",
-									"description": "岗位创建时间",
-									"required": true
+									"description": "岗位创建时间"
 								}
-							]
+							],
+							"name": "part_time_job_sync_log_list",
+							"type": "PartTimeJobSyncLogList[]",
+							"description": "岗位列表"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回数据结构"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.parttime.synclog",
+	"apiChineseName": "兼职同步日志",
+	"description": "提供给供应商查询的接口",
+	"id": 54310
 }

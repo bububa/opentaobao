@@ -1,8 +1,4 @@
 {
-	"id": 9,
-	"name": "taobao.product.update",
-	"apiChineseName": "修改一个产品，可以修改主图，不能修改子图片",
-	"description": "传入产品ID \u003cbr/\u003e可修改字段：outer_id,binds,sale_props,name,price,desc,image \u003cbr/\u003e注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG\u003cbr/\u003e      2.商城卖家产品发布24小时后不能作删除或修改操作",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -59,9 +55,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "product",
-			"type": "Product",
-			"description": "返回product数据结构中的：product_id,modified",
 			"subParams": [
 				{
 					"name": "modified",
@@ -73,7 +66,14 @@
 					"type": "Number",
 					"description": "产品ID"
 				}
-			]
+			],
+			"name": "product",
+			"type": "Product",
+			"description": "返回product数据结构中的：product_id,modified"
 		}
-	]
+	],
+	"name": "taobao.product.update",
+	"apiChineseName": "修改一个产品，可以修改主图，不能修改子图片",
+	"description": "传入产品ID \u003cbr/\u003e可修改字段：outer_id,binds,sale_props,name,price,desc,image \u003cbr/\u003e注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG\u003cbr/\u003e      2.商城卖家产品发布24小时后不能作删除或修改操作",
+	"id": 9
 }

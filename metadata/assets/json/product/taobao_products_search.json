@@ -1,15 +1,11 @@
 {
-	"id": 5,
-	"name": "taobao.products.search",
-	"apiChineseName": "搜索产品信息",
-	"description": "只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。\u003cbr/\u003e二种方式搜索所有产品信息(二种至少传一种): \u003cbr/\u003e\n传入关键字q搜索\u003cbr/\u003e\n传入cid和props搜索\u003cbr/\u003e\n返回值支持:product_id,name,pic_path,cid,props,price,tsc\u003cbr/\u003e\n当用户指定了cid并且cid为垂直市场（3C电器城、鞋城）的类目id时，默认只返回小二确认\u003cbr/\u003e的产品。如果用户没有指定cid，或cid为普通的类目，默认返回商家确认或小二确认的产\u003cbr/\u003e品。如果用户自定了status字段，以指定的status类型为准。\n\u003cbr/\u003e新增一：\n   传入suite_items_str 按规格搜索套装产品。\n   返回字段增加suite_items_str,is_suite_effecitve支持。",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用\",\"分隔.新增字段status(product的当前状态)",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "q",
@@ -71,9 +67,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "products",
-			"type": "Product []",
-			"description": "返回具体信息为入参fields请求的字段信息",
 			"subParams": [
 				{
 					"name": "name",
@@ -123,12 +116,19 @@
 					"description": "产品的关键属性列表.格式：pid:vid;pid:vid",
 					"required": true
 				}
-			]
+			],
+			"name": "products",
+			"type": "Product []",
+			"description": "返回具体信息为入参fields请求的字段信息"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "结果总数"
 		}
-	]
+	],
+	"name": "taobao.products.search",
+	"apiChineseName": "搜索产品信息",
+	"description": "只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。\u003cbr/\u003e二种方式搜索所有产品信息(二种至少传一种): \u003cbr/\u003e\n传入关键字q搜索\u003cbr/\u003e\n传入cid和props搜索\u003cbr/\u003e\n返回值支持:product_id,name,pic_path,cid,props,price,tsc\u003cbr/\u003e\n当用户指定了cid并且cid为垂直市场（3C电器城、鞋城）的类目id时，默认只返回小二确认\u003cbr/\u003e的产品。如果用户没有指定cid，或cid为普通的类目，默认返回商家确认或小二确认的产\u003cbr/\u003e品。如果用户自定了status字段，以指定的status类型为准。\n\u003cbr/\u003e新增一：\n   传入suite_items_str 按规格搜索套装产品。\n   返回字段增加suite_items_str,is_suite_effecitve支持。",
+	"id": 5
 }

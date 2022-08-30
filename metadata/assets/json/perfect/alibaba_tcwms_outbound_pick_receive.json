@@ -1,0 +1,307 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "pick_order_code",
+							"type": "String",
+							"description": "拣货单"
+						},
+						{
+							"subParams": [
+								{
+									"name": "real_pick_quantity",
+									"type": "String",
+									"description": "真实拣货数量"
+								},
+								{
+									"name": "pick_finish_time",
+									"type": "Date",
+									"description": "拣货完成时间"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "pick_unit",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "plan_stock_quantity",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "barcodes",
+									"type": "String[]",
+									"description": "1"
+								},
+								{
+									"name": "real_stock_quantity",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "pick_order_detail_code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "plan_pick_quantity",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "attributes",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "container_code",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "pick_order_details",
+							"type": "PickOrderDetailRequest[]",
+							"description": "拣货子单"
+						}
+					],
+					"name": "pick_orders",
+					"type": "PickOrderRequest[]",
+					"description": "拣货单参数"
+				},
+				{
+					"name": "dock_barcode",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "work_mode",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "wave_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "dock_type",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "dock_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "cargo_owner_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "station_code",
+							"type": "String",
+							"description": "v"
+						},
+						{
+							"name": "outbound_order_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "promise_time_type",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outbound_order_type",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "latest_outbound_time",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "station_name",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_pic_url",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "item_type",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "plan_sales_quantity",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "plan_stock_quantity",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "barcodes",
+									"type": "String[]",
+									"description": "1"
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "intercept_strategy",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "sales_unit",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "cancelled",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "channel_name",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "attributes",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "outbound_order_detail_code",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "outbound_order_details",
+							"type": "PickOutboundOrderDetailRequest[]",
+							"description": "1"
+						},
+						{
+							"name": "business_type",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "1"
+						}
+					],
+					"name": "outbound_orders",
+					"type": "PickOutboundOrderRequest[]",
+					"description": "1"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "pick_receive_request",
+			"type": "PickReceiveRequest",
+			"description": "入口参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "PickReceiveResponse",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.tcwms.outbound.pick.receive",
+	"apiChineseName": "拣货接单",
+	"description": "拣货接单",
+	"id": 59506
+}

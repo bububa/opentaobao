@@ -1,0 +1,71 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "template_type",
+					"type": "String",
+					"description": "0--验证码 1--短信通知 2-- 推广短信 3--国际/港澳台消息",
+					"required": true
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "模板名称",
+					"required": true
+				},
+				{
+					"name": "template_content",
+					"type": "String",
+					"description": "模板内容",
+					"required": true
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "模板CODE",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述信息"
+				},
+				{
+					"name": "template_class",
+					"type": "String",
+					"description": "1-- 普通模板  2--数字短信模板"
+				}
+			],
+			"name": "sms_template_request",
+			"type": "SmsTemplateRequest",
+			"description": "存量短信模板上报入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "String",
+			"description": "请求成功"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "请求结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.jst.sms.template.report",
+	"apiChineseName": "服务商存量短信模板上传",
+	"description": "用于上传目前已经在阿里通信申请到的且正在使用的模板信息，确保模板数据正确，否则会导致短信发送失败！！！",
+	"id": 60347
+}

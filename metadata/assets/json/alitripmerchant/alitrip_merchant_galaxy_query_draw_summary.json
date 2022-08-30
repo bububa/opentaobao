@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_status",
+							"type": "Number",
+							"description": "用户状态"
+						},
+						{
+							"name": "offer_name",
+							"type": "String",
+							"description": "活动名称"
+						},
+						{
+							"name": "subtitle",
+							"type": "String",
+							"description": "子标题"
+						},
+						{
+							"name": "offer_image_wireless",
+							"type": "String[]",
+							"description": "无线端图片"
+						},
+						{
+							"name": "offer_id",
+							"type": "Number",
+							"description": "活动id"
+						},
+						{
+							"name": "offer_status",
+							"type": "Number",
+							"description": "活动状态"
+						}
+					],
+					"name": "contents",
+					"type": "DrawOfferSummaryVo[]",
+					"description": "返回类型"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.query.draw.summary",
+	"apiChineseName": "星河-抽奖活动概要列表查询",
+	"description": "雅高小程序抽奖活动列表概要查询",
+	"id": 57054
+}

@@ -1,0 +1,108 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "一页多少条",
+					"required": true
+				}
+			],
+			"name": "query_distributor_request",
+			"type": "QueryDistributorRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页条数"
+						},
+						{
+							"subParams": [
+								{
+									"name": "owner_id",
+									"type": "Number",
+									"description": "分销商用户id"
+								},
+								{
+									"name": "company_name",
+									"type": "String",
+									"description": "分销商公司/用户名"
+								}
+							],
+							"name": "merchant_list",
+							"type": "Integer[]",
+							"description": "分销商列表"
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数"
+						}
+					],
+					"name": "data",
+					"type": "QueryDistributorResponse",
+					"description": "请求结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "TopResponse",
+			"description": "请求结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.cooperate.distributor.query",
+	"apiChineseName": "商家关系查询分销商",
+	"description": "商家关系查询分销商",
+	"id": 60940
+}

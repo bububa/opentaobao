@@ -1,15 +1,11 @@
 {
-	"id": 10846,
-	"name": "taobao.ump.activities.list.get",
-	"apiChineseName": "营销活动列表查询",
-	"description": "按照营销活动id的列表ids，查询对应的营销活动列表。",
 	"requestParams": [
 		{
 			"name": "ids",
 			"type": "Number[]",
 			"description": "营销活动id列表。",
-			"required": true,
-			"maxListSize": 40
+			"maxListSize": 40,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -18,5 +14,9 @@
 			"type": "String []",
 			"description": "营销活动列表！"
 		}
-	]
+	],
+	"name": "taobao.ump.activities.list.get",
+	"apiChineseName": "营销活动列表查询",
+	"description": "按照营销活动id的列表ids，查询对应的营销活动列表。",
+	"id": 10846
 }

@@ -16,12 +16,12 @@ type MasterTradeOrder struct {
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// 商品标题
 	AuctionTitle string `json:"auction_title,omitempty" xml:"auction_title,omitempty"`
+	// 商品额外属性
+	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 发货时间
 	GmtShipped string `json:"gmt_shipped,omitempty" xml:"gmt_shipped,omitempty"`
 	// 付款时间
 	GmtPay string `json:"gmt_pay,omitempty" xml:"gmt_pay,omitempty"`
-	// 商品额外属性
-	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 商品编码
 	OuterIdP string `json:"outer_id_p,omitempty" xml:"outer_id_p,omitempty"`
 	// 类目id

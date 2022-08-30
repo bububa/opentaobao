@@ -1,30 +1,26 @@
 {
-	"id": 25847,
-	"name": "taobao.promotionmisc.common.item.detail.list.get",
-	"apiChineseName": "查询通用单品优惠详情列表",
-	"description": "查询通用单品优惠详情列表。",
 	"requestParams": [
 		{
 			"name": "activity_id",
 			"type": "Number",
 			"description": "优惠活动ID",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "分页页码，页码从1开始",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "分页大小，不能超过50",
-			"required": true,
 			"maxValue": 50,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -39,9 +35,6 @@
 			"description": "数据总数量"
 		},
 		{
-			"name": "detail_list",
-			"type": "CommonItemDetail []",
-			"description": "活动详情列表",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -68,7 +61,14 @@
 					"type": "Number",
 					"description": "优惠力度，其值的解释方式由promotion_type定义：当为减钱时解释成减钱数量，如：900表示减9元；当为打折时解释成打折折扣，如：900表示打9折"
 				}
-			]
+			],
+			"name": "detail_list",
+			"type": "CommonItemDetail []",
+			"description": "活动详情列表"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.common.item.detail.list.get",
+	"apiChineseName": "查询通用单品优惠详情列表",
+	"description": "查询通用单品优惠详情列表。",
+	"id": 25847
 }

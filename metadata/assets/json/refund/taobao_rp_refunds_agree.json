@@ -1,8 +1,4 @@
 {
-	"id": 22465,
-	"name": "taobao.rp.refunds.agree",
-	"apiChineseName": "同意退款",
-	"description": "卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。",
 	"requestParams": [
 		{
 			"name": "code",
@@ -18,31 +14,9 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "RefundMappingResult []",
-			"description": "退款操作结果列表",
-			"subParams": [
-				{
-					"name": "refund_id",
-					"type": "String",
-					"description": "退款ID"
-				},
-				{
-					"name": "message",
-					"type": "String",
-					"description": "结果信息"
-				},
-				{
-					"name": "succ",
-					"type": "Boolean",
-					"description": "是否成功"
-				}
-			]
-		},
-		{
-			"name": "msg_code",
+			"name": "message",
 			"type": "String",
-			"description": "批量退款操作情况，可选值：OP_SUCC（全部成功），SOME_OP_SUCC（部分成功），OP_FAILURE_UE（全部失败）"
+			"description": "信息"
 		},
 		{
 			"name": "succ",
@@ -50,9 +24,35 @@
 			"description": "操作成功"
 		},
 		{
-			"name": "message",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款ID"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "results",
+			"type": "RefundMappingResult []",
+			"description": "退款操作结果列表"
+		},
+		{
+			"name": "msg_code",
 			"type": "String",
-			"description": "信息"
+			"description": "批量退款操作情况，可选值：OP_SUCC（全部成功），SOME_OP_SUCC（部分成功），OP_FAILURE_UE（全部失败）"
 		}
-	]
+	],
+	"name": "taobao.rp.refunds.agree",
+	"apiChineseName": "同意退款",
+	"description": "卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。",
+	"id": 22465
 }

@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity",
+					"type": "String",
+					"description": "活动标识",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道标识"
+				},
+				{
+					"name": "outer_user_id",
+					"type": "String",
+					"description": "用户标识",
+					"required": true
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "平台标识"
+				}
+			],
+			"name": "query_param",
+			"type": "ExamineOuterUserRequest",
+			"description": "查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "is_target_crow",
+							"type": "Boolean",
+							"description": "是否为活动的目标用户"
+						},
+						{
+							"name": "target_url",
+							"type": "String",
+							"description": "活动url"
+						}
+					],
+					"name": "model",
+					"type": "ChannelExamineResultDTO",
+					"description": "查询结果"
+				}
+			],
+			"name": "result",
+			"type": "AdResult",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alitrip.bp.channel.crow.query",
+	"apiChineseName": "人群匹配",
+	"description": "判断用户是否在圈选的人群中",
+	"id": 58555
+}

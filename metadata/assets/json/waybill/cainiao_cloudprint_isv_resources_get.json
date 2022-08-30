@@ -1,8 +1,4 @@
 {
-	"id": 27409,
-	"name": "cainiao.cloudprint.isv.resources.get",
-	"apiChineseName": "isv资源查询",
-	"description": "isv资源查询，包括isv模板、打印项、预设的自定义区等",
 	"requestParams": [
 		{
 			"name": "isv_resource_type",
@@ -13,67 +9,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "resource_list",
-					"type": "IsvResourceDo[]",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "resource_content",
 							"type": "String",
-							"description": "资源内容（当资源类型为TEMPLATE时，为空）",
-							"required": true
+							"description": "资源内容（当资源类型为TEMPLATE时，为空）"
 						},
 						{
 							"name": "resource_id",
 							"type": "Number",
-							"description": "资源id",
-							"required": true
+							"description": "资源id"
 						},
 						{
 							"name": "resource_name",
 							"type": "String",
-							"description": "资源名称",
-							"required": true
+							"description": "资源名称"
 						},
 						{
 							"name": "resource_type",
 							"type": "String",
-							"description": "资源类型",
-							"required": true
+							"description": "资源类型"
 						},
 						{
 							"name": "resource_url",
 							"type": "String",
-							"description": "资源url（当资源类型为打印项时，为空）",
-							"required": true
+							"description": "资源url（当资源类型为打印项时，为空）"
 						}
-					]
+					],
+					"name": "resource_list",
+					"type": "IsvResourceDo[]",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "状态",
-					"required": true
+					"description": "状态"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.isv.resources.get",
+	"apiChineseName": "isv资源查询",
+	"description": "isv资源查询，包括isv模板、打印项、预设的自定义区等",
+	"id": 27409
 }

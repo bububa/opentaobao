@@ -6,6 +6,8 @@ type PriceInfoDto struct {
 	Breakfasts []string `json:"breakfasts,omitempty" xml:"breakfasts>string,omitempty"`
 	// 详情页会员权益标签
 	HotelDinamicLabels []HotelDinamicLabelDto `json:"hotel_dinamic_labels,omitempty" xml:"hotel_dinamic_labels>hotel_dinamic_label_dto,omitempty"`
+	// 绑定优惠券模板id
+	CouponTemplateIds []int64 `json:"coupon_template_ids,omitempty" xml:"coupon_template_ids>int64,omitempty"`
 	// 税费 单位元
 	TaxAndFeeToString string `json:"tax_and_fee_to_string,omitempty" xml:"tax_and_fee_to_string,omitempty"`
 	// 含税价 均价 单位元
@@ -36,6 +38,12 @@ type PriceInfoDto struct {
 	FirstLive string `json:"first_live,omitempty" xml:"first_live,omitempty"`
 	// 副会员商品等级
 	MemberLevelV2 string `json:"member_level_v2,omitempty" xml:"member_level_v2,omitempty"`
+	// rpcode
+	RpCode string `json:"rp_code,omitempty" xml:"rp_code,omitempty"`
+	// 标签
+	Tag string `json:"tag,omitempty" xml:"tag,omitempty"`
+	// 优惠券类型
+	CouponType string `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
 	// 是否担保商品
 	IsGuarantee int64 `json:"is_guarantee,omitempty" xml:"is_guarantee,omitempty"`
 	// 库存剩余数量
@@ -66,6 +74,16 @@ type PriceInfoDto struct {
 	AllowPersonNumber int64 `json:"allow_person_number,omitempty" xml:"allow_person_number,omitempty"`
 	// 是否售空
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	// 房型id
+	RoomId int64 `json:"room_id,omitempty" xml:"room_id,omitempty"`
+	// 热门商品权重
+	HotPrice int64 `json:"hot_price,omitempty" xml:"hot_price,omitempty"`
+	// 折扣商品
+	PriceInfo *PriceInfoDto `json:"price_info,omitempty" xml:"price_info,omitempty"`
+	// 折扣总价
+	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
+	// 代金券信息
+	VoucherInfo *VoucherVo `json:"voucher_info,omitempty" xml:"voucher_info,omitempty"`
 	// 是否是会员房
 	MemberRoom bool `json:"member_room,omitempty" xml:"member_room,omitempty"`
 	// 是否是副会员房

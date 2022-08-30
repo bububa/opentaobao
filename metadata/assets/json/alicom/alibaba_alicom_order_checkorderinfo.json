@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"name": "trade_status",
+			"type": "Number",
+			"description": "订单状态1: 等待买家付款   2:等待卖家发货   4:已退款  6: 交易成功",
+			"required": true
+		},
+		{
+			"name": "shop_name",
+			"type": "String",
+			"description": "商家的店铺名",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "淘宝交易订单id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "model"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "desc"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alicom.order.checkorderinfo",
+	"apiChineseName": "金融购机订单信息校验",
+	"description": "金融购机订单信息校验",
+	"id": 31279
+}

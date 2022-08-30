@@ -1,8 +1,4 @@
 {
-	"id": 24510,
-	"name": "taobao.tae.book.bills.get",
-	"apiChineseName": "tae查询虚拟账户明细数据",
-	"description": "tae查询虚拟账户明细数据",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -41,15 +37,12 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "bills",
-			"type": "TopAcctCashJourDto []",
-			"description": "虚拟账户账单列表",
 			"subParams": [
 				{
 					"name": "amount",
@@ -96,7 +89,10 @@
 					"type": "Number",
 					"description": "虚拟账户流水编号"
 				}
-			]
+			],
+			"name": "bills",
+			"type": "TopAcctCashJourDto []",
+			"description": "虚拟账户账单列表"
 		},
 		{
 			"name": "has_next",
@@ -108,5 +104,9 @@
 			"type": "Number",
 			"description": "当前查询的结果数,非总数"
 		}
-	]
+	],
+	"name": "taobao.tae.book.bills.get",
+	"apiChineseName": "tae查询虚拟账户明细数据",
+	"description": "tae查询虚拟账户明细数据",
+	"id": 24510
 }

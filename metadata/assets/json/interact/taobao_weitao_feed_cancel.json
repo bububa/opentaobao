@@ -1,8 +1,4 @@
 {
-	"id": 25695,
-	"name": "taobao.weitao.feed.cancel",
-	"apiChineseName": "取消广播在timeline、广场中展示",
-	"description": "取消广播在timeline和广场中的展示。",
 	"requestParams": [
 		{
 			"name": "feed_id",
@@ -24,16 +20,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PushResult",
-			"description": "推送结果",
 			"subParams": [
 				{
 					"name": "feed_id",
 					"type": "String",
 					"description": "新广播ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PushResult",
+			"description": "推送结果"
 		}
-	]
+	],
+	"name": "taobao.weitao.feed.cancel",
+	"apiChineseName": "取消广播在timeline、广场中展示",
+	"description": "取消广播在timeline和广场中的展示。",
+	"id": 25695
 }

@@ -1,8 +1,4 @@
 {
-	"id": 55576,
-	"name": "alibaba.legal.case.standpoint.savestandpoint",
-	"apiChineseName": "新增反馈口径",
-	"description": "新增反馈口径 ,从外部接受反馈的口径",
 	"requestParams": [
 		{
 			"name": "defense_caliber",
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "错误描述"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.standpoint.savestandpoint",
+	"apiChineseName": "新增反馈口径",
+	"description": "新增反馈口径 ,从外部接受反馈的口径",
+	"id": 55576
 }

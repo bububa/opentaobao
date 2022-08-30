@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "available",
+							"type": "Boolean",
+							"description": "非必填，"
+						},
+						{
+							"name": "day",
+							"type": "String",
+							"description": "必须是YYYY-MM-DD格式",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "容量值为1",
+							"required": true
+						},
+						{
+							"name": "time_range",
+							"type": "String",
+							"description": "表示具体的某一天内的一个时间段。注意：如果配置了改值，则这里容量调整的值则是2022-07-01 08:00-09:00的容量，不配置则是调整07-01这一天的容量"
+						}
+					],
+					"name": "day_quantity_list",
+					"type": "DayQuantity[]",
+					"description": "具体的调整值参数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "provider_code",
+							"type": "String",
+							"description": "注意：provider_code和providerId至少填写一个"
+						},
+						{
+							"name": "provider_id",
+							"type": "Number",
+							"description": "注意：provider_code和providerId至少填写一个"
+						},
+						{
+							"name": "supplier_id",
+							"type": "Number",
+							"description": "服务商id值",
+							"required": true
+						},
+						{
+							"name": "fulfil_type",
+							"type": "String",
+							"description": "上门类型",
+							"required": true
+						},
+						{
+							"name": "provider_type",
+							"type": "String",
+							"description": "服务网络",
+							"required": true
+						}
+					],
+					"name": "service_provider_dto",
+					"type": "ServiceProviderDTO",
+					"description": "服务提供者"
+				}
+			],
+			"name": "param_service_capacity_adjust_req_dto",
+			"type": "ServiceCapacityAdjustReqDTO",
+			"description": "容量调整",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回类型"
+		}
+	],
+	"name": "tmall.ssc.supplyplatform.capacity.edit",
+	"apiChineseName": "容量编辑",
+	"description": "容量编辑",
+	"id": 63529
+}

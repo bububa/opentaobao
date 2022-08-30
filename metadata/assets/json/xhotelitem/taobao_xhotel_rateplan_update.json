@@ -1,8 +1,4 @@
 {
-	"id": 22676,
-	"name": "taobao.xhotel.rateplan.update",
-	"apiChineseName": "价格计划rateplan更新或添加",
-	"description": "酒店产品库rateplan更新或添加",
 	"requestParams": [
 		{
 			"name": "name",
@@ -27,8 +23,8 @@
 		{
 			"name": "max_days",
 			"type": "Number",
-			"description": "最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1",
-			"maxValue": 90,
+			"description": "最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1,个别卖家支持180",
+			"maxValue": 180,
 			"minValue": 1
 		},
 		{
@@ -233,7 +229,7 @@
 		{
 			"name": "tag_json",
 			"type": "String",
-			"description": "更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,,     super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标"
+			"description": "更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,    super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标, free-room 表示免房商品"
 		},
 		{
 			"name": "allotment_release_time",
@@ -303,7 +299,7 @@
 		{
 			"name": "activity_type",
 			"type": "String",
-			"description": "活动类型。1通兑, 4:超级房券"
+			"description": "活动类型。1通兑 4超级房券 8直连免房"
 		},
 		{
 			"name": "guest_limit",
@@ -314,6 +310,16 @@
 			"name": "online_booking_binding_info",
 			"type": "String",
 			"description": "在线预约关联关系推送，priceRuleNumber：加价规则序号"
+		},
+		{
+			"name": "rights",
+			"type": "String",
+			"description": "rp的权益信息。1. 额外积分 2. 优惠价格 3. 套餐权益 4.行政礼遇"
+		},
+		{
+			"name": "free_room_charge_dst_role",
+			"type": "String",
+			"description": "商业化充值类型 seller充值到卖家 hotel充值到门店"
 		},
 		{
 			"name": "rpid",
@@ -327,5 +333,9 @@
 			"type": "Number",
 			"description": "修改的rp id"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rateplan.update",
+	"apiChineseName": "价格计划rateplan更新或添加",
+	"description": "酒店产品库rateplan更新或添加",
+	"id": 22676
 }

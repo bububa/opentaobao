@@ -1,14 +1,6 @@
 {
-	"id": 38749,
-	"name": "alibaba.campus.space.type.getpageresult",
-	"apiChineseName": "分页查询空间类别接口",
-	"description": "分页查询空间类别接口\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getPageResult",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "环境参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,13 +13,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "环境参数",
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "SpaceTypeQuery",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "limit",
@@ -79,158 +71,143 @@
 					"type": "String",
 					"description": "模糊查询key"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "SpaceTypeQuery",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "total",
-							"required": true
+							"description": "total"
 						},
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "limit",
-							"required": true
+							"description": "limit"
 						},
 						{
-							"name": "results",
-							"type": "PoiTypeWrap[]",
-							"description": "result",
-							"required": true,
 							"subParams": [
 								{
 									"name": "classify",
 									"type": "String",
-									"description": "类别的实际名称,空间或分组",
-									"required": true
+									"description": "类别的实际名称,空间或分组"
 								},
 								{
 									"name": "is_delete",
 									"type": "Boolean",
-									"description": "是否删除",
-									"required": true
+									"description": "是否删除"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "描述",
-									"required": true
+									"description": "描述"
 								},
 								{
 									"name": "full_name",
 									"type": "String",
-									"description": "全名",
-									"required": true
+									"description": "全名"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "小类名称",
-									"required": true
+									"description": "小类名称"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "小类编码",
-									"required": true
+									"description": "小类编码"
 								},
 								{
 									"name": "second_type_name",
 									"type": "String",
-									"description": "中类名称",
-									"required": true
+									"description": "中类名称"
 								},
 								{
 									"name": "second_type_code",
 									"type": "String",
-									"description": "中类编码",
-									"required": true
+									"description": "中类编码"
 								},
 								{
 									"name": "second_type_id",
 									"type": "Number",
-									"description": "中类id",
-									"required": true
+									"description": "中类id"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								}
-							]
+							],
+							"name": "results",
+							"type": "PoiTypeWrap[]",
+							"description": "result"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.type.getpageresult",
+	"apiChineseName": "分页查询空间类别接口",
+	"description": "分页查询空间类别接口\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getPageResult",
+	"id": 38749
 }

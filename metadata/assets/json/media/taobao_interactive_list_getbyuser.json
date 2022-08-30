@@ -1,8 +1,4 @@
 {
-	"id": 27943,
-	"name": "taobao.interactive.list.getbyuser",
-	"apiChineseName": "用户获取视频互动列表",
-	"description": "根据用户来获取用户编辑的互动列表",
 	"requestParams": [
 		{
 			"name": "current_page",
@@ -17,15 +13,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "result_code",
-					"type": "ResultCode",
-					"description": "错误",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
@@ -39,7 +28,11 @@
 							"description": "错误描述",
 							"required": true
 						}
-					]
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "错误",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -48,10 +41,6 @@
 					"required": true
 				},
 				{
-					"name": "model",
-					"type": "PageQueryResult",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
@@ -60,10 +49,6 @@
 							"required": true
 						},
 						{
-							"name": "result_list",
-							"type": "Resultlist[]",
-							"description": "resultList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -101,11 +86,26 @@
 									"description": "视频状态，1有效；0删除",
 									"required": true
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "Resultlist[]",
+							"description": "resultList",
+							"required": true
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageQueryResult",
+					"description": "model",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.interactive.list.getbyuser",
+	"apiChineseName": "用户获取视频互动列表",
+	"description": "根据用户来获取用户编辑的互动列表",
+	"id": 27943
 }

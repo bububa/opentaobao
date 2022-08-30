@@ -1,0 +1,30 @@
+{
+	"requestParams": [
+		{
+			"name": "fans_nick",
+			"type": "String",
+			"description": "要查询的粉丝的淘宝昵称"
+		},
+		{
+			"name": "ouid",
+			"type": "String",
+			"description": "ouid"
+		},
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "openid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "是否关注"
+		}
+	],
+	"name": "taobao.weitao.follow.isrelation",
+	"apiChineseName": "微淘是否关注",
+	"description": "判断用户是否关注对应的公共账号",
+	"id": 57734
+}

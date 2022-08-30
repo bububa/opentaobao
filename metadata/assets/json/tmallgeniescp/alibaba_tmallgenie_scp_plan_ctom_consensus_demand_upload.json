@@ -1,18 +1,8 @@
 {
-	"id": 53381,
-	"name": "alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload",
-	"apiChineseName": "22-C2M共识需求回传接口",
-	"description": "C2M 共识需求回传接口",
 	"requestParams": [
 		{
-			"name": "c2_m_consensus_demand_request",
-			"type": "C2MConsensusDemandRequest",
-			"description": "对象",
 			"subParams": [
 				{
-					"name": "c2_m_consensus_demand_param_d_t_o_list",
-					"type": "C2MConsensusDemandParamDto[]",
-					"description": "对象",
 					"subParams": [
 						{
 							"name": "key_figure_date",
@@ -49,14 +39,20 @@
 							"type": "String",
 							"description": "c2m分配数量"
 						}
-					]
+					],
+					"name": "c2_m_consensus_demand_param_d_t_o_list",
+					"type": "C2MConsensusDemandParamDto[]",
+					"description": "对象"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "c2_m_consensus_demand_request",
+			"type": "C2MConsensusDemandRequest",
+			"description": "对象"
 		}
 	],
 	"responseParams": [
@@ -75,5 +71,9 @@
 			"type": "String",
 			"description": "结果code"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload",
+	"apiChineseName": "22-C2M共识需求回传接口",
+	"description": "C2M 共识需求回传接口",
+	"id": 53381
 }

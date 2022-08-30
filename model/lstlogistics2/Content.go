@@ -4,8 +4,6 @@ package lstlogistics2
 type Content struct {
 	// 子订单
 	SubOrders []SubOrders `json:"sub_orders,omitempty" xml:"sub_orders>sub_orders,omitempty"`
-	// 物流编号，可用来查询物流详情
-	LogisticsId string `json:"logistics_id,omitempty" xml:"logistics_id,omitempty"`
 	// 揽收时间
 	PickTime string `json:"pick_time,omitempty" xml:"pick_time,omitempty"`
 	// 签收时间

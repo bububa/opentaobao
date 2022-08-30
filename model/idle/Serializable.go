@@ -8,14 +8,14 @@ type Serializable struct {
 	PlanIds []string `json:"plan_ids,omitempty" xml:"plan_ids>string,omitempty"`
 	// 商户订单号（唯一建）
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
+	// 代扣计划
+	PlanId string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
 	// 支付宝流水号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
 	// 支付时间
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// INIT:初始状态;PARTIAL_SUCCESSED:支付部分成功;SUCCESSED:支付成功;FAILED:支付失败
 	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
-	// 代扣计划
-	PlanId string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
 	// 业务编码：R1:回收
 	PayBizCode string `json:"pay_biz_code,omitempty" xml:"pay_biz_code,omitempty"`
 	// 状态描述
@@ -86,8 +86,16 @@ type Serializable struct {
 	SpuId string `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
 	// xydk:闲鱼代扣，信用订单使用
 	DkType string `json:"dk_type,omitempty" xml:"dk_type,omitempty"`
+	// 回收订单对应的快递单号
+	ShipMailNo string `json:"ship_mail_no,omitempty" xml:"ship_mail_no,omitempty"`
+	// 多笔估价场景，订单纬度对应的多笔估价集合
+	ApprizeIdList string `json:"apprize_id_list,omitempty" xml:"apprize_id_list,omitempty"`
+	// 多笔估价场景，订单纬度对应的多笔spuId集合
+	SpuIdList string `json:"spu_id_list,omitempty" xml:"spu_id_list,omitempty"`
 	// 回收场景
 	SceneType string `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
+	// 取件截止时间
+	ShipTimeEnd string `json:"ship_time_end,omitempty" xml:"ship_time_end,omitempty"`
 	// 支付宝交易号
 	AlipayOrderId string `json:"alipay_order_id,omitempty" xml:"alipay_order_id,omitempty"`
 	// 金额

@@ -1,14 +1,6 @@
 {
-	"id": 50807,
-	"name": "taobao.openmall.trade.create",
-	"apiChineseName": "创建订单",
-	"description": "创建Openmall订单",
 	"requestParams": [
 		{
-			"name": "param_top_trade_create_d_o",
-			"type": "TopTradeCreateDo",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "address",
@@ -120,22 +112,29 @@
 					"type": "Boolean",
 					"description": "创建订单传入true的时候，订单支付后会进入半小时的hold单（订单状态为：PAID_FORBID_CONSIGN），此时订单不会发货，用户可以调用Openmall地址修改接口修改订单收货地址，半小时结束后订单自动结束hold单进入发货流程订单状态为（WAIT_SELLER_SEND_GOODS）"
 				}
-			]
+			],
+			"name": "param_top_trade_create_d_o",
+			"type": "TopTradeCreateDo",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTradeResultVo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "tid",
 					"type": "String",
-					"description": "淘宝交易单号",
-					"required": true
+					"description": "淘宝交易单号"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.create",
+	"apiChineseName": "创建订单",
+	"description": "创建Openmall订单",
+	"id": 50807
 }

@@ -1,14 +1,13 @@
 {
-	"id": 45825,
-	"name": "alibaba.alsc.crm.point.extracharge",
-	"apiChineseName": "积分补录",
-	"description": "积分补录",
 	"requestParams": [
 		{
-			"name": "param_extra_charge_point_open_req",
-			"type": "ExtraChargePointOpenReq",
-			"description": "入参",
 			"subParams": [
+				{
+					"name": "biz_channel",
+					"type": "String",
+					"description": "CS是辰森，KRY是客如云",
+					"required": true
+				},
 				{
 					"name": "brand_id",
 					"type": "String",
@@ -63,53 +62,49 @@
 					"name": "out_brand_id",
 					"type": "String",
 					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
-				},
-				{
-					"name": "biz_channel",
-					"type": "String",
-					"description": "CS是辰森，KRY是客如云",
-					"required": true
 				}
-			]
+			],
+			"name": "param_extra_charge_point_open_req",
+			"type": "ExtraChargePointOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "业务数据",
-					"required": true
+					"description": "业务数据"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.point.extracharge",
+	"apiChineseName": "积分补录",
+	"description": "积分补录",
+	"id": 45825
 }

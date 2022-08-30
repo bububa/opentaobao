@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "uid_type",
+					"type": "String",
+					"description": "主账号使用main，子账号使用sub",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "淘系交易的订单号"
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "变更类型 1增加 2减少",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "变更渠道 1淘宝 100其他",
+					"required": true
+				},
+				{
+					"name": "outer_member_id",
+					"type": "String",
+					"description": "isv存储的会员id，唯一标识一个会员"
+				},
+				{
+					"name": "biz_scene",
+					"type": "Number",
+					"description": "变更场景 0交易 1互动活动 100其他",
+					"required": true
+				},
+				{
+					"name": "point_type",
+					"type": "Number",
+					"description": "积分类型 1消费积分 2成长值(等级积分)",
+					"required": true
+				},
+				{
+					"name": "raw_quantity",
+					"type": "String",
+					"description": "成长值变化量",
+					"required": true
+				},
+				{
+					"name": "serial_no",
+					"type": "String",
+					"description": "变更同步的序列号，幂等使用",
+					"required": true
+				},
+				{
+					"name": "change_time",
+					"type": "Number",
+					"description": "成长值变更发生时间，毫秒级时间戳，一般早于同步时间"
+				},
+				{
+					"name": "ouid",
+					"type": "String",
+					"description": "用户的ouid"
+				},
+				{
+					"name": "old_total_point",
+					"type": "String",
+					"description": "变更前的成长值"
+				},
+				{
+					"name": "total_point",
+					"type": "String",
+					"description": "变更后的成长值",
+					"required": true
+				}
+			],
+			"name": "sync_member_point_change_dto",
+			"type": "SyncMemberPointChangeDTO",
+			"description": "变更对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "错误码 ，比如 E1003 用户不是会员"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.member.point.change.sync",
+	"apiChineseName": "成长值/积分变更记录同步",
+	"description": "成长值/积分变更记录同步",
+	"id": 63273
+}

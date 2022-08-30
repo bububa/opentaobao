@@ -1,20 +1,8 @@
 {
-	"id": 36774,
-	"name": "alibaba.wdk.wholesale.order.commit",
-	"apiChineseName": "盒马帮采购确认订单接口",
-	"description": "盒马帮采购确认订单接口",
 	"requestParams": [
 		{
-			"name": "order_commit_req",
-			"type": "OrderCommitReq",
-			"description": "采购单信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "item_confirm_infos",
-					"type": "ItemConfirmInfo[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "confirm_quantity",
@@ -28,7 +16,11 @@
 							"description": "商品编码",
 							"required": true
 						}
-					]
+					],
+					"name": "item_confirm_infos",
+					"type": "ItemConfirmInfo[]",
+					"description": "商品列表",
+					"required": true
 				},
 				{
 					"name": "external_order_no",
@@ -42,34 +34,39 @@
 					"description": "商家编码",
 					"required": true
 				}
-			]
+			],
+			"name": "order_commit_req",
+			"type": "OrderCommitReq",
+			"description": "采购单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.wholesale.order.commit",
+	"apiChineseName": "盒马帮采购确认订单接口",
+	"description": "盒马帮采购确认订单接口",
+	"id": 36774
 }

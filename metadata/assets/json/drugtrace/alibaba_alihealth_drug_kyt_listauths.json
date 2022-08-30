@@ -1,8 +1,4 @@
 {
-	"id": 41186,
-	"name": "alibaba.alihealth.drug.kyt.listauths",
-	"apiChineseName": "企业搜索自己授权的物流企业",
-	"description": "企业搜索自己授权的物流企业",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -30,117 +26,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Page",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总计",
-							"required": true
+							"description": "总计"
 						},
 						{
-							"name": "result_list",
-							"type": "Result[]",
-							"description": "返回集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ent_id",
 									"type": "String",
-									"description": "企业ID",
-									"required": true
+									"description": "企业ID"
 								},
 								{
 									"name": "ent_capital_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "area_name",
 									"type": "String",
-									"description": "区",
-									"required": true
+									"description": "区"
 								},
 								{
 									"name": "city_name",
 									"type": "String",
-									"description": "市",
-									"required": true
+									"description": "市"
 								},
 								{
 									"name": "dict_region_code",
 									"type": "String",
-									"description": "地市编码",
-									"required": true
+									"description": "地市编码"
 								},
 								{
 									"name": "ent_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "prov_name",
 									"type": "String",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "reg_region_code",
 									"type": "String",
-									"description": "注册编码",
-									"required": true
+									"description": "注册编码"
 								},
 								{
 									"name": "user_role_type",
 									"type": "String",
-									"description": "角色类型",
-									"required": true
+									"description": "角色类型"
 								},
 								{
 									"name": "is_network",
 									"type": "String",
-									"description": "是否入网",
-									"required": true
+									"description": "是否入网"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业唯一标识",
-									"required": true
+									"description": "企业唯一标识"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "Result[]",
+							"description": "返回集合"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Page",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.listauths",
+	"apiChineseName": "企业搜索自己授权的物流企业",
+	"description": "企业搜索自己授权的物流企业",
+	"id": 41186
 }

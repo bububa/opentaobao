@@ -1,22 +1,18 @@
 {
-	"id": 23617,
-	"name": "taobao.wlb.waybill.shengxian.get",
-	"apiChineseName": "商家获取生鲜电子面单号",
-	"description": "商家通过交易订单号获取电子面单接口",
 	"requestParams": [
 		{
 			"name": "biz_code",
 			"type": "String",
 			"description": "物流服务方代码，生鲜配送：YXSR",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "delivery_type",
 			"type": "String",
 			"description": "物流服务类型。冷链：602，常温：502",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "sender_address_id",
@@ -34,15 +30,15 @@
 			"name": "order_channels_type",
 			"type": "String",
 			"description": "订单渠道： 淘宝平台订单：\"TB\"; 天猫平台订单：\"TM\"; 京东：\"JD\"; 拍拍：\"PP\"; 易迅平台订单：\"YX\"; 一号店平台订单：\"YHD\"; 当当网平台订单：\"DD\"; EBAY：\"EBAY\"; QQ网购：\"QQ\"; 苏宁：\"SN\"; 国美：\"GM\"; 唯品会：\"WPH\"; 聚美：\"Jm\"; 乐峰：\"LF\"; 蘑菇街：\"MGJ\"; 聚尚：\"JS\"; 银泰：\"YT\"; VANCL：\"VANCL\"; 邮乐：\"YL\"; 优购：\"YG\"; 拍鞋：\"PX\"; 1688平台：\"1688\";",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "trade_id",
 			"type": "String",
 			"description": "交易号，传入交易号不能存在拆单场景。",
-			"required": true,
-			"maxLength": 128
+			"maxLength": 128,
+			"required": true
 		},
 		{
 			"name": "feature",
@@ -58,9 +54,6 @@
 			"description": "生成是否成功"
 		},
 		{
-			"name": "fresh_waybill",
-			"type": "FreshWaybill",
-			"description": "成功后返回的生鲜电子面单信息",
 			"subParams": [
 				{
 					"name": "waybill_code",
@@ -92,7 +85,14 @@
 					"type": "String",
 					"description": "交易号"
 				}
-			]
+			],
+			"name": "fresh_waybill",
+			"type": "FreshWaybill",
+			"description": "成功后返回的生鲜电子面单信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.waybill.shengxian.get",
+	"apiChineseName": "商家获取生鲜电子面单号",
+	"description": "商家通过交易订单号获取电子面单接口",
+	"id": 23617
 }

@@ -2,6 +2,8 @@ package alsc
 
 // ExtraChargePointOpenReq 结构体
 type ExtraChargePointOpenReq struct {
+	// CS是辰森，KRY是客如云
+	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
 	// 系统自动生成
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 顾客id
@@ -20,8 +22,6 @@ type ExtraChargePointOpenReq struct {
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 外部品牌id,brandId与out_brand_id不可同时为空
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
-	// CS是辰森，KRY是客如云
-	BizChannel string `json:"biz_channel,omitempty" xml:"biz_channel,omitempty"`
 	// 变更积分数,不能小于等于0
 	ChangePoint int64 `json:"change_point,omitempty" xml:"change_point,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 45722,
-	"name": "aliexpress.usergrowth.recommend.items.get",
-	"apiChineseName": "第三方平台推荐商品",
-	"description": "第三方平台的推荐AE商品   场景：skin 、底部推荐等",
 	"requestParams": [
 		{
 			"name": "tracking_id",
@@ -42,15 +38,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "response model",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "Result itemList,The product are located at the top,maybe null when success = false",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -148,7 +137,11 @@
 							"description": "photo width",
 							"required": true
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "Result itemList,The product are located at the top,maybe null when success = false",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -168,7 +161,14 @@
 					"description": "Code is used to determine whether the result is correct",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "response model"
 		}
-	]
+	],
+	"name": "aliexpress.usergrowth.recommend.items.get",
+	"apiChineseName": "第三方平台推荐商品",
+	"description": "第三方平台的推荐AE商品   场景：skin 、底部推荐等",
+	"id": 45722
 }

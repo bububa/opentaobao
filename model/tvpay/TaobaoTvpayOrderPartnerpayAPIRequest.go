@@ -16,12 +16,12 @@ type TaobaoTvpayOrderPartnerpayAPIRequest struct {
 	_deviceId string
 	// 来源
 	_from string
+	// 牌照方
+	_license string
 	// 订单信息
 	_data string
 	// 支付方式
 	_payType string
-	// 牌照方
-	_license string
 }
 
 // NewTaobaoTvpayOrderPartnerpayRequest 初始化TaobaoTvpayOrderPartnerpayAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetFrom() string {
 	return r._from
 }
 
+// SetLicense is License Setter
+// 牌照方
+func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetLicense(_license string) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// GetLicense License Getter
+func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetLicense() string {
+	return r._license
+}
+
 // SetData is Data Setter
 // 订单信息
 func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetData(_data string) error {
@@ -95,17 +108,4 @@ func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetPayType(_payType string) error
 // GetPayType PayType Getter
 func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetPayType() string {
 	return r._payType
-}
-
-// SetLicense is License Setter
-// 牌照方
-func (r *TaobaoTvpayOrderPartnerpayAPIRequest) SetLicense(_license string) error {
-	r._license = _license
-	r.Set("license", _license)
-	return nil
-}
-
-// GetLicense License Getter
-func (r TaobaoTvpayOrderPartnerpayAPIRequest) GetLicense() string {
-	return r._license
 }

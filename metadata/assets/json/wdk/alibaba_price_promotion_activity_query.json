@@ -1,15 +1,5 @@
 {
-	"id": 36865,
-	"name": "alibaba.price.promotion.activity.query",
-	"apiChineseName": "查询盒马帮档期活动详情",
-	"description": "查询盒马帮档期活动详情",
 	"requestParams": [
-		{
-			"name": "page",
-			"type": "Number",
-			"description": "页码",
-			"required": true
-		},
 		{
 			"name": "outer_promotion_code",
 			"type": "String",
@@ -22,6 +12,12 @@
 			"description": "TOB店仓编码"
 		},
 		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页码大小",
@@ -29,11 +25,6 @@
 		}
 	],
 	"responseParams": [
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "接口调用是否成功"
-		},
 		{
 			"name": "data",
 			"type": "Json",
@@ -53,6 +44,15 @@
 			"name": "message",
 			"type": "String",
 			"description": "错误参数"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
 		}
-	]
+	],
+	"name": "alibaba.price.promotion.activity.query",
+	"apiChineseName": "查询盒马帮档期活动详情",
+	"description": "查询盒马帮档期活动详情",
+	"id": 36865
 }

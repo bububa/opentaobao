@@ -1,8 +1,4 @@
 {
-	"id": 10586,
-	"name": "taobao.vas.subscribe.get",
-	"apiChineseName": "订购关系查询",
-	"description": "用于ISV根据登录进来的淘宝会员名查询该为该会员开通哪些收费项目，ISV只能查询自己名下的应用及收费项目的订购情况",
 	"requestParams": [
 		{
 			"name": "article_code",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "article_user_subscribes",
-			"type": "ArticleUserSubscribe []",
-			"description": "用户订购信息",
 			"subParams": [
 				{
 					"name": "item_code",
@@ -33,7 +26,14 @@
 					"type": "Date",
 					"description": "订购关系到期时间"
 				}
-			]
+			],
+			"name": "article_user_subscribes",
+			"type": "ArticleUserSubscribe []",
+			"description": "用户订购信息"
 		}
-	]
+	],
+	"name": "taobao.vas.subscribe.get",
+	"apiChineseName": "订购关系查询",
+	"description": "用于ISV根据登录进来的淘宝会员名查询该为该会员开通哪些收费项目，ISV只能查询自己名下的应用及收费项目的订购情况",
+	"id": 10586
 }

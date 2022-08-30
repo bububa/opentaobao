@@ -1,8 +1,4 @@
 {
-	"id": 28936,
-	"name": "taobao.bus.tvmbookorder.set",
-	"apiChineseName": "线下自助机通知出票接口",
-	"description": "出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。",
 	"requestParams": [
 		{
 			"name": "alitrip_order_id",
@@ -34,10 +30,6 @@
 			"description": "取票人手机号"
 		},
 		{
-			"name": "passengers",
-			"type": "TvmPassengerVo[]",
-			"description": "乘客票面信息",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "agent_eticket",
@@ -89,7 +81,11 @@
 					"type": "Number",
 					"description": "实际票价"
 				}
-			]
+			],
+			"name": "passengers",
+			"type": "TvmPassengerVo[]",
+			"description": "乘客票面信息",
+			"maxListSize": 20
 		},
 		{
 			"name": "support_eticket",
@@ -118,5 +114,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.bus.tvmbookorder.set",
+	"apiChineseName": "线下自助机通知出票接口",
+	"description": "出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。",
+	"id": 28936
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10687,
-	"name": "taobao.logistics.online.send",
-	"apiChineseName": "在线订单发货处理（支持货到付款）",
-	"description": "用户调用该接口可实现在线订单发货（支持货到付款）\u003cbr/\u003e调用该接口实现在线下单发货，有两种情况：\u003cbr\u003e\u003cbr/\u003e\u003cfont color='red'\u003e如果不输入运单号的情况：交易状态不会改变，需要调用taobao.logistics.online.confirm确认发货后交易状态才会变成卖家已发货。\u003cbr\u003e\u003cbr/\u003e如果输入运单号的情况发货：交易订单状态会直接变成卖家已发货 。\u003c/font\u003e",
 	"requestParams": [
 		{
 			"name": "sub_tid",
@@ -55,16 +51,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "shipping",
-			"type": "Shipping",
-			"description": "de",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
 					"description": "返回发货是否成功。"
 				}
-			]
+			],
+			"name": "shipping",
+			"type": "Shipping",
+			"description": "de"
 		}
-	]
+	],
+	"name": "taobao.logistics.online.send",
+	"apiChineseName": "在线订单发货处理（支持货到付款）",
+	"description": "用户调用该接口可实现在线订单发货（支持货到付款）\u003cbr/\u003e调用该接口实现在线下单发货，有两种情况：\u003cbr\u003e\u003cbr/\u003e\u003cfont color='red'\u003e如果不输入运单号的情况：交易状态不会改变，需要调用taobao.logistics.online.confirm确认发货后交易状态才会变成卖家已发货。\u003cbr\u003e\u003cbr/\u003e如果输入运单号的情况发货：交易订单状态会直接变成卖家已发货 。\u003c/font\u003e",
+	"id": 10687
 }

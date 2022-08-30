@@ -1,13 +1,6 @@
 {
-	"id": 39847,
-	"name": "alibaba.campus.device.historydata.get",
-	"apiChineseName": "设备历史数据批量获取",
-	"description": "设备历史数据批量获取",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "workbench",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -29,12 +22,12 @@
 					"type": "Number",
 					"description": "园区id"
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "workbench"
 		},
 		{
-			"name": "query",
-			"type": "DeviceHistoryBatchQuery",
-			"description": "查询条件",
 			"subParams": [
 				{
 					"name": "start_date",
@@ -78,96 +71,90 @@
 					"description": "设备所属园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "DeviceHistoryBatchQuery",
+			"description": "查询条件"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "device_data_list",
-					"type": "DeviceHistoryBatchApiDto[]",
-					"description": "设备历史数据内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "property_code",
 							"type": "String",
-							"description": "设备参数code",
-							"required": true
+							"description": "设备参数code"
 						},
 						{
 							"name": "device_id",
 							"type": "String",
-							"description": "设备id",
-							"required": true
+							"description": "设备id"
 						},
 						{
 							"name": "success",
 							"type": "String",
-							"description": "当前设备查询结果状态",
-							"required": true
+							"description": "当前设备查询结果状态"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "当前查询错误信息",
-							"required": true
+							"description": "当前查询错误信息"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "当前查询错误编码",
-							"required": true
+							"description": "当前查询错误编码"
 						},
 						{
 							"name": "device_interval_value",
-							"type": "Json",
-							"description": "当前设备运行参数时间切片历史数据",
-							"required": true
+							"type": "String",
+							"description": "当前设备运行参数时间切片历史数据"
 						}
-					]
+					],
+					"name": "device_data_list",
+					"type": "DeviceHistoryBatchApiDto[]",
+					"description": "设备历史数据内容"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "返回结果总攻条数",
-					"required": true
+					"description": "返回结果总攻条数"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询是否成功",
-					"required": true
+					"description": "查询是否成功"
 				},
 				{
 					"name": "error_ext_info",
-					"type": "Json",
-					"description": "额外报错信息",
-					"required": true
+					"type": "String",
+					"description": "额外报错信息"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.historydata.get",
+	"apiChineseName": "设备历史数据批量获取",
+	"description": "设备历史数据批量获取",
+	"id": 39847
 }

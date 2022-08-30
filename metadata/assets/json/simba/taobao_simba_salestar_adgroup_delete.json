@@ -1,8 +1,4 @@
 {
-	"id": 43357,
-	"name": "taobao.simba.salestar.adgroup.delete",
-	"apiChineseName": "(新)销量明星删除推广单元接口",
-	"description": "删除一个推广组",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -27,5 +23,9 @@
 			"type": "Boolean",
 			"description": "表示接口调用成功，当推广单元不存在等情况下也会返回true"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.adgroup.delete",
+	"apiChineseName": "(新)销量明星删除推广单元接口",
+	"description": "删除一个推广组",
+	"id": 43357
 }

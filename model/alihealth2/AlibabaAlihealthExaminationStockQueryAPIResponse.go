@@ -26,6 +26,8 @@ type AlibabaAlihealthExaminationStockQueryAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回结果编码
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 预约至少提前多少小时
+	ReservationMinAheadHours string `json:"reservation_min_ahead_hours,omitempty" xml:"reservation_min_ahead_hours,omitempty"`
 	// 是否支持分时能力
 	TimeSharingEnable bool `json:"time_sharing_enable,omitempty" xml:"time_sharing_enable,omitempty"`
 }

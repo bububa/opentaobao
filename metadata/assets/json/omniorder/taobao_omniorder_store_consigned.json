@@ -1,8 +1,4 @@
 {
-	"id": 27391,
-	"name": "taobao.omniorder.store.consigned",
-	"apiChineseName": "Pos端门店发货",
-	"description": "ISV Pos端门店发货，通知星盘",
 	"requestParams": [
 		{
 			"name": "trace_id",
@@ -15,9 +11,6 @@
 			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址"
 		},
 		{
-			"name": "ins_receiver_to",
-			"type": "JzReceiverDto",
-			"description": "家装物流-安装收货人信息,如果为空,则取默认收货人信息",
 			"subParams": [
 				{
 					"name": "country",
@@ -69,16 +62,16 @@
 					"type": "String",
 					"description": "座机号"
 				}
-			]
+			],
+			"name": "ins_receiver_to",
+			"type": "JzReceiverDto",
+			"description": "家装物流-安装收货人信息,如果为空,则取默认收货人信息"
 		},
 		{
-			"name": "sub_order_list",
-			"type": "StoreConsignedResult[]",
-			"description": "子订单列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "attributes",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -146,12 +139,13 @@
 					"type": "Number",
 					"description": "主订单Id"
 				}
-			]
+			],
+			"name": "sub_order_list",
+			"type": "StoreConsignedResult[]",
+			"description": "子订单列表",
+			"maxListSize": 20
 		},
 		{
-			"name": "jz_top_args",
-			"type": "JzTopArgsDto",
-			"description": "家装物流-发货参数",
 			"subParams": [
 				{
 					"name": "mail_no",
@@ -193,12 +187,12 @@
 					"type": "String",
 					"description": "包裹数量"
 				}
-			]
+			],
+			"name": "jz_top_args",
+			"type": "JzTopArgsDto",
+			"description": "家装物流-发货参数"
 		},
 		{
-			"name": "ins_tp_dto",
-			"type": "TpDto",
-			"description": "家装物流-安装公司信息,需要安装时,才填写",
 			"subParams": [
 				{
 					"name": "code",
@@ -210,12 +204,12 @@
 					"type": "String",
 					"description": "公司名称"
 				}
-			]
+			],
+			"name": "ins_tp_dto",
+			"type": "TpDto",
+			"description": "家装物流-安装公司信息,需要安装时,才填写"
 		},
 		{
-			"name": "jz_receiver_to",
-			"type": "JzReceiverDto",
-			"description": "家装物流-家装收货人信息,如果为空,则取默认收货信息",
 			"subParams": [
 				{
 					"name": "country",
@@ -267,7 +261,10 @@
 					"type": "String",
 					"description": "座机号"
 				}
-			]
+			],
+			"name": "jz_receiver_to",
+			"type": "JzReceiverDto",
+			"description": "家装物流-家装收货人信息,如果为空,则取默认收货信息"
 		},
 		{
 			"name": "tid",
@@ -282,9 +279,6 @@
 			"required": true
 		},
 		{
-			"name": "lg_tp_dto",
-			"type": "TpDto",
-			"description": "家装物流-物流公司信息",
 			"subParams": [
 				{
 					"name": "code",
@@ -296,7 +290,10 @@
 					"type": "String",
 					"description": "公司名称"
 				}
-			]
+			],
+			"name": "lg_tp_dto",
+			"type": "TpDto",
+			"description": "家装物流-物流公司信息"
 		}
 	],
 	"responseParams": [
@@ -306,34 +303,35 @@
 			"description": "错误码"
 		},
 		{
-			"name": "message",
-			"type": "String",
-			"description": "错误内容"
-		},
-		{
-			"name": "data",
-			"type": "StoreConsignedResponse",
-			"description": "data",
 			"subParams": [
-				{
-					"name": "mail_no",
-					"type": "String",
-					"description": "mailNo",
-					"required": true
-				},
 				{
 					"name": "short_id",
 					"type": "String",
-					"description": "shortId",
-					"required": true
+					"description": "shortId"
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "mailNo"
 				},
 				{
 					"name": "got_code",
 					"type": "String",
-					"description": "gotCode",
-					"required": true
+					"description": "gotCode"
 				}
-			]
+			],
+			"name": "data",
+			"type": "StoreConsignedResponse",
+			"description": "data"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误内容"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.consigned",
+	"apiChineseName": "Pos端门店发货",
+	"description": "ISV Pos端门店发货，通知星盘",
+	"id": 27391
 }

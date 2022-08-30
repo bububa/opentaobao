@@ -1,8 +1,4 @@
 {
-	"id": 49545,
-	"name": "tmall.supplychain.channel.product.price.update",
-	"apiChineseName": "渠道价格更新接口",
-	"description": "更新渠道产品价格",
 	"requestParams": [
 		{
 			"name": "currency_type",
@@ -44,9 +40,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDTO",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -63,7 +56,14 @@
 					"type": "Boolean",
 					"description": "执行结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.price.update",
+	"apiChineseName": "渠道价格更新接口",
+	"description": "更新渠道产品价格",
+	"id": 49545
 }

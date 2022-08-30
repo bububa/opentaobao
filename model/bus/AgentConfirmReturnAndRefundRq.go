@@ -24,6 +24,10 @@ type AgentConfirmReturnAndRefundRq struct {
 	AgentExtAttr string `json:"agent_ext_attr,omitempty" xml:"agent_ext_attr,omitempty"`
 	// offline:线下退票;online:线上退票
 	AgentReturnMode string `json:"agent_return_mode,omitempty" xml:"agent_return_mode,omitempty"`
+	// 退票场景，common:普通退款场景 force: 不可抗力
+	RefundScene string `json:"refund_scene,omitempty" xml:"refund_scene,omitempty"`
+	// 通知用户退票原因
+	RefundSceneOfficialReasonCode string `json:"refund_scene_official_reason_code,omitempty" xml:"refund_scene_official_reason_code,omitempty"`
 	// 商家退票状态;1-成功,2-失败
 	AgentReturnTicketStatus int64 `json:"agent_return_ticket_status,omitempty" xml:"agent_return_ticket_status,omitempty"`
 	// 商家退票类型;0-按票退,1-按单退

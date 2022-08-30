@@ -12,12 +12,12 @@ import (
 // 根据shopId和skuCode返回商品溯源url
 type AlibabaWdkTraceUrlGetAPIRequest struct {
 	model.Params
+	// barCode 或者skuCode
+	_scanCode string
 	// 所属门店code
 	_shopId string
 	// 来源编码
 	_sourceCode string
-	// barCode 或者skuCode
-	_scanCode string
 }
 
 // NewAlibabaWdkTraceUrlGetRequest 初始化AlibabaWdkTraceUrlGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaWdkTraceUrlGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetScanCode is ScanCode Setter
+// barCode 或者skuCode
+func (r *AlibabaWdkTraceUrlGetAPIRequest) SetScanCode(_scanCode string) error {
+	r._scanCode = _scanCode
+	r.Set("scan_code", _scanCode)
+	return nil
+}
+
+// GetScanCode ScanCode Getter
+func (r AlibabaWdkTraceUrlGetAPIRequest) GetScanCode() string {
+	return r._scanCode
 }
 
 // SetShopId is ShopId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaWdkTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) erro
 // GetSourceCode SourceCode Getter
 func (r AlibabaWdkTraceUrlGetAPIRequest) GetSourceCode() string {
 	return r._sourceCode
-}
-
-// SetScanCode is ScanCode Setter
-// barCode 或者skuCode
-func (r *AlibabaWdkTraceUrlGetAPIRequest) SetScanCode(_scanCode string) error {
-	r._scanCode = _scanCode
-	r.Set("scan_code", _scanCode)
-	return nil
-}
-
-// GetScanCode ScanCode Getter
-func (r AlibabaWdkTraceUrlGetAPIRequest) GetScanCode() string {
-	return r._scanCode
 }

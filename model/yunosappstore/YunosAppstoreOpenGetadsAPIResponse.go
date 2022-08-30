@@ -22,10 +22,10 @@ type YunosAppstoreOpenGetadsAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 广告集
 	Ads []AdInfo `json:"ads,omitempty" xml:"ads>ad_info,omitempty"`
-	// 请求id
-	Rid string `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 响应消息
 	Rm string `json:"rm,omitempty" xml:"rm,omitempty"`
+	// 请求id
+	Rid string `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 响应码
 	Rc int64 `json:"rc,omitempty" xml:"rc,omitempty"`
 }

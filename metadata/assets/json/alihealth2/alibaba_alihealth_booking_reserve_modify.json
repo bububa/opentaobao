@@ -1,13 +1,6 @@
 {
-	"id": 43383,
-	"name": "alibaba.alihealth.booking.reserve.modify",
-	"apiChineseName": "修改预约",
-	"description": "消费医疗统一预约平台，取消预约",
 	"requestParams": [
 		{
-			"name": "modify",
-			"type": "IsvReserveRequest",
-			"description": "modify",
 			"subParams": [
 				{
 					"name": "reserve_time",
@@ -24,40 +17,43 @@
 					"type": "String",
 					"description": "订单ID"
 				}
-			]
+			],
+			"name": "modify",
+			"type": "IsvReserveRequest",
+			"description": "modify"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
-				{
-					"name": "data",
-					"type": "Boolean",
-					"description": "返回数据对象",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msg_info",
-					"required": true
+					"description": "msg_info"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msg_code",
-					"required": true
+					"description": "msg_code"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.booking.reserve.modify",
+	"apiChineseName": "修改预约",
+	"description": "消费医疗统一预约平台，取消预约",
+	"id": 43383
 }

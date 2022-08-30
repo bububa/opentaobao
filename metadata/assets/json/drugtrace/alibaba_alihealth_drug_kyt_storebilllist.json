@@ -1,8 +1,4 @@
 {
-	"id": 41416,
-	"name": "alibaba.alihealth.drug.kyt.storebilllist",
-	"apiChineseName": "零售端平台单据查询",
-	"description": "零售端平台单据查询",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -37,195 +33,169 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PageInfoDto",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "result_list",
-							"type": "StoreTerraceBillDto[]",
-							"description": "返回结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "bill_id",
 									"type": "String",
-									"description": "单据ID",
-									"required": true
+									"description": "单据ID"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据编码",
-									"required": true
+									"description": "单据编码"
 								},
 								{
 									"name": "ent_id",
 									"type": "String",
-									"description": "企业ID",
-									"required": true
+									"description": "企业ID"
 								},
 								{
 									"name": "crt_date",
 									"type": "String",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "upload_flag",
 									"type": "String",
-									"description": "上传标识",
-									"required": true
+									"description": "上传标识"
 								},
 								{
 									"name": "upload_file_name",
 									"type": "String",
-									"description": "文件名称",
-									"required": true
+									"description": "文件名称"
 								},
 								{
 									"name": "process_flag",
 									"type": "String",
-									"description": "处理标识",
-									"required": true
+									"description": "处理标识"
 								},
 								{
 									"name": "process_date",
 									"type": "String",
-									"description": "处理日期",
-									"required": true
+									"description": "处理日期"
 								},
 								{
 									"name": "data_type",
 									"type": "String",
-									"description": "单据类型",
-									"required": true
+									"description": "单据类型"
 								},
 								{
 									"name": "drug_type",
 									"type": "String",
-									"description": "药品类型",
-									"required": true
+									"description": "药品类型"
 								},
 								{
 									"name": "note_info",
 									"type": "String",
-									"description": "详情信息",
-									"required": true
+									"description": "详情信息"
 								},
 								{
 									"name": "corp_id",
 									"type": "String",
-									"description": "操作人编码",
-									"required": true
+									"description": "操作人编码"
 								},
 								{
 									"name": "corp_name",
 									"type": "String",
-									"description": "操作人姓名",
-									"required": true
+									"description": "操作人姓名"
 								},
 								{
 									"name": "store_in_out_date",
 									"type": "String",
-									"description": "单据日期",
-									"required": true
+									"description": "单据日期"
 								},
 								{
 									"name": "upload_file_path",
 									"type": "String",
-									"description": "上传文件路径",
-									"required": true
+									"description": "上传文件路径"
 								},
 								{
 									"name": "from_user_id",
 									"type": "String",
-									"description": "发货单位",
-									"required": true
+									"description": "发货单位"
 								},
 								{
 									"name": "from_ref_user_id",
 									"type": "String",
-									"description": "发货单位",
-									"required": true
+									"description": "发货单位"
 								},
 								{
 									"name": "to_user_id",
 									"type": "String",
-									"description": "收货单位",
-									"required": true
+									"description": "收货单位"
 								},
 								{
 									"name": "to_ref_user_id",
 									"type": "String",
-									"description": "收货单位",
-									"required": true
+									"description": "收货单位"
 								},
 								{
 									"name": "order_ismatched",
 									"type": "String",
-									"description": "是否匹配",
-									"required": true
+									"description": "是否匹配"
 								},
 								{
 									"name": "ref_user_id",
 									"type": "String",
-									"description": "企业ID",
-									"required": true
+									"description": "企业ID"
 								},
 								{
 									"name": "result_type",
 									"type": "String",
-									"description": "处理状态",
-									"required": true
+									"description": "处理状态"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "StoreTerraceBillDto[]",
+							"description": "返回结果"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "页数",
-							"required": true
+							"description": "页数"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "页码",
-							"required": true
+							"description": "页码"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "返回结果"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.storebilllist",
+	"apiChineseName": "零售端平台单据查询",
+	"description": "零售端平台单据查询",
+	"id": 41416
 }

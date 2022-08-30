@@ -1,333 +1,283 @@
 {
-	"id": 41681,
-	"name": "youku.wenyuvideo.persion.get",
-	"apiChineseName": "根据优酷人物ID获取人物详情页，包含相关影视和相关人物",
-	"description": "根据优酷人物ID获取人物详情页，包含相关影视和相关人物",
 	"requestParams": [
-		{
-			"name": "system_info",
-			"type": "String",
-			"description": "设备信息"
-		},
 		{
 			"name": "person_id",
 			"type": "Number",
 			"description": "人物ID"
+		},
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "设备信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PersonDetailRbo",
-					"description": "人物详情信息，包含相关影视和相关人物",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "主键(优酷人物ID)",
-							"required": true
+							"description": "主键(优酷人物ID)"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "人物名字",
-							"required": true
+							"description": "人物名字"
 						},
 						{
 							"name": "thumb_url",
 							"type": "String",
-							"description": "图片",
-							"required": true
+							"description": "图片"
 						},
 						{
 							"name": "thumb_url_lg",
 							"type": "String",
-							"description": "300*300人物头像",
-							"required": true
+							"description": "300*300人物头像"
 						},
 						{
 							"name": "poster_url",
 							"type": "String",
-							"description": "人物海报",
-							"required": true
+							"description": "人物海报"
 						},
 						{
 							"name": "poster_url_h",
 							"type": "String",
-							"description": "人物写真",
-							"required": true
+							"description": "人物写真"
 						},
 						{
 							"name": "person_desc",
 							"type": "String",
-							"description": "简介",
-							"required": true
+							"description": "简介"
 						},
 						{
 							"name": "gender",
 							"type": "String",
-							"description": "性别 U(nknow):未知 M(ale):男 F(emale):女 G(roup):组合",
-							"required": true
+							"description": "性别 U(nknow):未知 M(ale):男 F(emale):女 G(roup):组合"
 						},
 						{
 							"name": "birthday",
 							"type": "String",
-							"description": "生日",
-							"required": true
+							"description": "生日"
 						},
 						{
 							"name": "deathday",
 							"type": "String",
-							"description": "忌日",
-							"required": true
+							"description": "忌日"
 						},
 						{
 							"name": "homeplace",
 							"type": "String",
-							"description": "出生地",
-							"required": true
+							"description": "出生地"
 						},
 						{
 							"name": "height",
 							"type": "String",
-							"description": "身高，单位cm",
-							"required": true
+							"description": "身高，单位cm"
 						},
 						{
 							"name": "blood_type",
 							"type": "String",
-							"description": "血型 A、B、AB、O",
-							"required": true
+							"description": "血型 A、B、AB、O"
 						},
 						{
 							"name": "person_type_list",
 							"type": "String[]",
-							"description": "人物类型：unknow,director,starring,performer,singer,lyricswriter,composer,screenwriter,producer,host,voice,      * executive_producer,teacher,original, interview,paike",
-							"required": true
+							"description": "人物类型：unknow,director,starring,performer,singer,lyricswriter,composer,screenwriter,producer,host,voice,      * executive_producer,teacher,original, interview,paike"
 						},
 						{
 							"name": "nationality_list",
 							"type": "String[]",
-							"description": "人物国籍",
-							"required": true
+							"description": "人物国籍"
 						},
 						{
 							"name": "occupation_list",
 							"type": "String[]",
-							"description": "职业",
-							"required": true
+							"description": "职业"
 						},
 						{
 							"name": "person_kind_list",
 							"type": "String[]",
-							"description": "人物性质：牛人,拍客,网络红人",
-							"required": true
+							"description": "人物性质：牛人,拍客,网络红人"
 						},
 						{
 							"name": "member_list",
 							"type": "String[]",
-							"description": "组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{'id':20349,'name':'张宇凡'},{'id':35994,'name':'袁泉'}]",
-							"required": true
+							"description": "组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{'id':20349,'name':'张宇凡'},{'id':35994,'name':'袁泉'}]"
 						},
 						{
-							"name": "ref_shows",
-							"type": "ShowBaseRbo[]",
-							"description": "人物相关视频推荐",
-							"required": true,
 							"subParams": [
 								{
 									"name": "show_name",
 									"type": "String",
-									"description": "节目名称",
-									"required": true
-								},
-								{
-									"name": "show_subtitle",
-									"type": "String",
-									"description": "节目子标题",
-									"required": true
+									"description": "节目名称"
 								},
 								{
 									"name": "show_thumb_url",
 									"type": "String",
-									"description": "节目默认图片url",
-									"required": true
+									"description": "节目默认图片url"
 								},
 								{
 									"name": "show_vthumb_url",
 									"type": "String",
-									"description": "节目竖版图片url",
-									"required": true
+									"description": "节目竖版图片url"
 								},
 								{
 									"name": "show_type",
 									"type": "Number",
-									"description": "展示类型",
-									"required": true
+									"description": "展示类型"
 								},
 								{
 									"name": "show_category",
 									"type": "Number",
-									"description": "节目主分类",
-									"required": true
+									"description": "节目主分类"
 								},
 								{
 									"name": "is_dyn_total",
 									"type": "Number",
-									"description": "是否动态更新集数",
-									"required": true
+									"description": "是否动态更新集数"
 								},
 								{
 									"name": "last_sequence",
 									"type": "Number",
-									"description": "最新一集",
-									"required": true
+									"description": "最新一集"
 								},
 								{
 									"name": "episode_total",
 									"type": "Number",
-									"description": "正片总集数",
-									"required": true
+									"description": "正片总集数"
 								},
 								{
 									"name": "score",
 									"type": "String",
-									"description": "评分",
-									"required": true
+									"description": "评分"
 								},
 								{
 									"name": "prevue",
 									"type": "Boolean",
-									"description": "是否预告片",
-									"required": true
+									"description": "是否预告片"
 								},
 								{
 									"name": "mark",
 									"type": "String",
-									"description": "角标",
-									"required": true
+									"description": "角标"
 								},
 								{
 									"name": "program_id",
 									"type": "Number",
-									"description": "老媒资节目ID（整体兼容使用，不建议客户端使用）",
-									"required": true
+									"description": "老媒资节目ID（整体兼容使用，不建议客户端使用）"
 								},
 								{
 									"name": "release_date",
 									"type": "Date",
-									"description": "发行日期",
-									"required": true
+									"description": "发行日期"
 								},
 								{
 									"name": "view_tag",
 									"type": "String",
-									"description": "tag标记",
-									"required": true
+									"description": "tag标记"
 								},
 								{
 									"name": "episode_last",
 									"type": "Number",
-									"description": "最后一个正片集数",
-									"required": true
+									"description": "最后一个正片集数"
 								},
 								{
 									"name": "tips",
 									"type": "String",
-									"description": "影视信息在列表搜索等未知的重要提示",
-									"required": true
+									"description": "影视信息在列表搜索等未知的重要提示"
+								},
+								{
+									"name": "show_subtitle",
+									"type": "String",
+									"description": "节目子标题"
 								}
-							]
+							],
+							"name": "ref_shows",
+							"type": "ShowBaseRbo[]",
+							"description": "人物相关视频推荐"
 						},
 						{
-							"name": "ref_persons",
-							"type": "PersonRbo[]",
-							"description": "人物相关人物推荐",
-							"required": true,
 							"subParams": [
 								{
 									"name": "person_id",
 									"type": "Number",
-									"description": "taotv媒资的演职人员id",
-									"required": true
+									"description": "taotv媒资的演职人员id"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "姓名",
-									"required": true
+									"description": "姓名"
 								},
 								{
 									"name": "thumb_url",
 									"type": "String",
-									"description": "人物头像",
-									"required": true
+									"description": "人物头像"
 								},
 								{
 									"name": "thumb_url_lg",
 									"type": "String",
-									"description": "300*300人物头像",
-									"required": true
+									"description": "300*300人物头像"
 								},
 								{
 									"name": "poster_url",
 									"type": "String",
-									"description": "人物海报",
-									"required": true
+									"description": "人物海报"
 								},
 								{
 									"name": "job",
 									"type": "String",
-									"description": "演职人员工作",
-									"required": true
+									"description": "演职人员工作"
 								}
-							]
+							],
+							"name": "ref_persons",
+							"type": "PersonRbo[]",
+							"description": "人物相关人物推荐"
 						},
 						{
 							"name": "constellation",
 							"type": "String",
-							"description": "星座",
-							"required": true
+							"description": "星座"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PersonDetailRbo",
+					"description": "人物详情信息，包含相关影视和相关人物"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "HTTP请求状态",
-					"required": true
+					"description": "HTTP请求状态"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "业务扩展数据",
-					"required": true
+					"type": "String",
+					"description": "业务扩展数据"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码，业务错误码",
-					"required": true
+					"description": "错误码，业务错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "业务错误提示",
-					"required": true
+					"description": "业务错误提示"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功",
-					"required": true
+					"description": "接口调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "youku.wenyuvideo.persion.get",
+	"apiChineseName": "根据优酷人物ID获取人物详情页，包含相关影视和相关人物",
+	"description": "根据优酷人物ID获取人物详情页，包含相关影视和相关人物",
+	"id": 41681
 }

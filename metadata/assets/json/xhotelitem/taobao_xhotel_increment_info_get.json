@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "分页参数：当前页数，从1开始计数。\u003cbr/\u003e默认值：1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数：每页酒店数量。最小值1，最大值为1000。默认值：1000"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "更新时间",
+			"required": true
+		},
+		{
+			"name": "change_type",
+			"type": "Number",
+			"description": "变化类别，1为酒店价格，0为酒店",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "酒店总数"
+		},
+		{
+			"subParams": [
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "酒店ID"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "城市编码"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
+				}
+			],
+			"name": "hotels",
+			"type": "SHotel []",
+			"description": "酒店列表"
+		}
+	],
+	"name": "taobao.xhotel.increment.info.get",
+	"apiChineseName": "酒店状态增量查询接口",
+	"description": "酒店状态增量查询接口",
+	"id": 23780
+}

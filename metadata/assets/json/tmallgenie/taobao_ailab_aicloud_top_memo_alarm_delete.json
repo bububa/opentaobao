@@ -1,8 +1,4 @@
 {
-	"id": 36785,
-	"name": "taobao.ailab.aicloud.top.memo.alarm.delete",
-	"apiChineseName": "天猫精灵闹钟删除",
-	"description": "天猫精灵闹钟删除",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -35,217 +31,188 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "服务的结果封装",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题",
-					"required": true
+					"description": "附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题"
 				},
 				{
 					"name": "status_code",
 					"type": "Number",
-					"description": "调用返回码",
-					"required": true
+					"description": "调用返回码"
 				},
 				{
-					"name": "alarm",
-					"type": "Alarm",
-					"description": "服务的实际返回结果",
-					"required": true,
 					"subParams": [
 						{
+							"subParams": [
+								{
+									"name": "category",
+									"type": "String",
+									"description": "铃声类型"
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "铃声id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "铃声名字"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "铃声url"
+								},
+								{
+									"name": "source",
+									"type": "String",
+									"description": "铃声来源，默认为虾米"
+								}
+							],
 							"name": "alarm_music",
 							"type": "AlarmMusic",
-							"description": "闹钟音乐，第一次响起来的音乐",
-							"required": true,
+							"description": "闹钟音乐，第一次响起来的音乐"
+						},
+						{
 							"subParams": [
 								{
-									"name": "category",
+									"name": "source",
 									"type": "String",
-									"description": "铃声类型",
-									"required": true
-								},
-								{
-									"name": "id",
-									"type": "String",
-									"description": "铃声id",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "铃声名字",
-									"required": true
+									"description": "铃声来源，默认为虾米"
 								},
 								{
 									"name": "url",
 									"type": "String",
-									"description": "铃声url",
-									"required": true
+									"description": "铃声url"
 								},
 								{
-									"name": "source",
+									"name": "name",
 									"type": "String",
-									"description": "铃声来源，默认为虾米",
-									"required": true
+									"description": "铃声名字"
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "铃声id"
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "铃声类型"
 								}
-							]
-						},
-						{
+							],
 							"name": "alarm_musics",
 							"type": "AlarmMusic[]",
-							"description": "闹钟音乐列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "source",
-									"type": "String",
-									"description": "铃声来源，默认为虾米",
-									"required": true
-								},
-								{
-									"name": "url",
-									"type": "String",
-									"description": "铃声url",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "铃声名字",
-									"required": true
-								},
-								{
-									"name": "id",
-									"type": "String",
-									"description": "铃声id",
-									"required": true
-								},
-								{
-									"name": "category",
-									"type": "String",
-									"description": "铃声类型",
-									"required": true
-								}
-							]
+							"description": "闹钟音乐列表"
 						},
 						{
-							"name": "schedule_info",
-							"type": "ScheduleInfo",
-							"description": "调度信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "day_of_xs",
 									"type": "Number[]",
-									"description": "DayOfWeek/DayOfMonth",
-									"required": true
+									"description": "DayOfWeek/DayOfMonth"
 								},
 								{
 									"name": "interval",
 									"type": "Number",
-									"description": "调度间隔",
-									"required": true
+									"description": "调度间隔"
 								},
 								{
 									"name": "end_date",
 									"type": "Date",
-									"description": "调度结束时间",
-									"required": true
+									"description": "调度结束时间"
 								},
 								{
 									"name": "start_date",
 									"type": "Date",
-									"description": "调度开始时间",
-									"required": true
+									"description": "调度开始时间"
 								},
 								{
 									"name": "time",
 									"type": "Date",
-									"description": "调度时间点",
-									"required": true
+									"description": "调度时间点"
 								},
 								{
 									"name": "frequency",
-									"type": "Json",
-									"description": "调度频率",
-									"required": true
+									"type": "String",
+									"description": "调度频率"
 								},
 								{
 									"name": "repeat",
-									"type": "Json",
-									"description": "调度周期",
-									"required": true
+									"type": "String",
+									"description": "调度周期"
 								}
-							]
+							],
+							"name": "schedule_info",
+							"type": "ScheduleInfo",
+							"description": "调度信息"
 						},
 						{
 							"name": "alert_ways",
-							"type": "Json[]",
-							"description": "提醒方式，如APP，音箱等，如果有多个，用逗号分隔",
-							"required": true
+							"type": "String[]",
+							"description": "提醒方式，如APP，音箱等，如果有多个，用逗号分隔"
 						},
 						{
 							"name": "music_pre",
 							"type": "String",
-							"description": "musicPre",
-							"required": true
+							"description": "musicPre"
 						},
 						{
 							"name": "music_url",
 							"type": "String",
-							"description": "铃声Url",
-							"required": true
+							"description": "铃声Url"
 						},
 						{
 							"name": "topic",
 							"type": "String",
-							"description": "闹铃主题",
-							"required": true
+							"description": "闹铃主题"
 						},
 						{
 							"name": "ring_type",
 							"type": "String",
-							"description": "闹铃声音类型",
-							"required": true
+							"description": "闹铃声音类型"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "memo状态",
-							"required": true
+							"description": "memo状态"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "memo_id",
 							"type": "Number",
-							"description": "memo_ID",
-							"required": true
+							"description": "memo_ID"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						}
-					]
+					],
+					"name": "alarm",
+					"type": "Alarm",
+					"description": "服务的实际返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "服务的结果封装"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.memo.alarm.delete",
+	"apiChineseName": "天猫精灵闹钟删除",
+	"description": "天猫精灵闹钟删除",
+	"id": 36785
 }

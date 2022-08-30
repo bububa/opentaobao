@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				}
+			],
+			"name": "query_delivery_template_request",
+			"type": "QueryDeliveryTemplateRequest",
+			"description": "查询运费模板入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "查询结果"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误原因"
+						},
+						{
+							"subParams": [
+								{
+									"name": "template_id",
+									"type": "Number",
+									"description": "运费模板id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "运费模板名称"
+								}
+							],
+							"name": "delivery_templatemodel_list",
+							"type": "DeliveryTemplateModel[]",
+							"description": "运费模板列表"
+						}
+					],
+					"name": "data",
+					"type": "QueryDeliveryTemplateResponse",
+					"description": "运费模板列表。如果没有查到则为空"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功。调用成功之后，需要看data里面的success，才能知道业务处理是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误具体内容"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				}
+			],
+			"name": "query_deliverytemplate_response",
+			"type": "TopResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.deliverytemplate.query",
+	"apiChineseName": "商家运费模板查询",
+	"description": "商家运费模板查询",
+	"id": 60863
+}

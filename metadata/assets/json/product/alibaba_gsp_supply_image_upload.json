@@ -1,8 +1,4 @@
 {
-	"id": 51721,
-	"name": "alibaba.gsp.supply.image.upload",
-	"apiChineseName": "gsp图片上传",
-	"description": "上传图片至目标海外平台的素材空间",
 	"requestParams": [
 		{
 			"name": "file_name",
@@ -33,40 +29,40 @@
 			"description": "是否重试"
 		},
 		{
-			"name": "model",
-			"type": "UploadImageResp",
-			"description": "数据",
 			"subParams": [
 				{
 					"name": "url",
 					"type": "String",
-					"description": "返回的图片地址",
-					"required": true
+					"description": "返回的图片地址"
 				},
 				{
 					"name": "hash",
 					"type": "String",
-					"description": "图片哈希值",
-					"required": true
+					"description": "图片哈希值"
 				},
 				{
 					"name": "height",
 					"type": "Number",
-					"description": "图片高度",
-					"required": true
+					"description": "图片高度"
 				},
 				{
 					"name": "width",
 					"type": "Number",
-					"description": "图片宽度",
-					"required": true
+					"description": "图片宽度"
 				}
-			]
+			],
+			"name": "model",
+			"type": "UploadImageResp",
+			"description": "数据"
 		},
 		{
 			"name": "service_error_msg",
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.gsp.supply.image.upload",
+	"apiChineseName": "gsp图片上传",
+	"description": "上传图片至目标海外平台的素材空间",
+	"id": 51721
 }

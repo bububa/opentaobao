@@ -1,13 +1,6 @@
 {
-	"id": 43436,
-	"name": "alibaba.legal.suit.judgement.push",
-	"apiChineseName": "推送裁判登记信息给集团法务系统",
-	"description": "isv推送裁判登记信息给集团法务系统",
 	"requestParams": [
 		{
-			"name": "referee_registration_model",
-			"type": "RefereeRegistrationModel",
-			"description": "裁判登记信息",
 			"subParams": [
 				{
 					"name": "defendant_receive",
@@ -130,9 +123,23 @@
 					"description": "创建人"
 				},
 				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "附件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "附件key"
+						}
+					],
 					"name": "dropped_files",
 					"type": "FileModel[]",
-					"description": "撤诉文件附件列表",
+					"description": "撤诉文件附件列表"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -144,12 +151,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "judge_files",
 					"type": "FileModel[]",
-					"description": "裁决书附件列表",
+					"description": "裁决书附件列表"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -161,12 +168,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "settlement_agree_files",
 					"type": "FileModel[]",
-					"description": "和解协议附件列表",
+					"description": "和解协议附件列表"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -178,12 +185,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "written_verdict_files",
 					"type": "FileModel[]",
-					"description": "裁定书附件列表",
+					"description": "裁定书附件列表"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -195,12 +202,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "mediation_certificate_files",
 					"type": "FileModel[]",
-					"description": "调解凭证附件列表",
+					"description": "调解凭证附件列表"
+				},
+				{
 					"subParams": [
 						{
 							"name": "name",
@@ -212,29 +219,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
-				},
-				{
+					],
 					"name": "feedback_attachment_list",
 					"type": "FileModel[]",
-					"description": "反馈附件",
-					"subParams": [
-						{
-							"name": "name",
-							"type": "String",
-							"description": "附件名称"
-						},
-						{
-							"name": "key",
-							"type": "String",
-							"description": "附件key"
-						}
-					]
+					"description": "反馈附件"
 				},
 				{
-					"name": "other_files",
-					"type": "FileModel[]",
-					"description": "其他附件附件列表",
 					"subParams": [
 						{
 							"name": "name",
@@ -246,7 +236,10 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
+					],
+					"name": "other_files",
+					"type": "FileModel[]",
+					"description": "其他附件附件列表"
 				},
 				{
 					"name": "entrust_id",
@@ -263,40 +256,43 @@
 					"type": "String",
 					"description": "操作类型"
 				}
-			]
+			],
+			"name": "referee_registration_model",
+			"type": "RefereeRegistrationModel",
+			"description": "裁判登记信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Number",
-					"description": "裁判登记ID",
-					"required": true
+					"description": "裁判登记ID"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "系统异常",
-					"required": true
+					"description": "系统异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "ERR089",
-					"required": true
+					"description": "ERR089"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否返回正常",
-					"required": true
+					"description": "是否返回正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.judgement.push",
+	"apiChineseName": "推送裁判登记信息给集团法务系统",
+	"description": "isv推送裁判登记信息给集团法务系统",
+	"id": 43436
 }

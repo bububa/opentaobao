@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "服务产品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "display_msg",
+			"type": "String",
+			"description": "错误描述信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "content",
+							"type": "String",
+							"description": "服务内容"
+						}
+					],
+					"name": "service_contents",
+					"type": "ServiceContent[]",
+					"description": "服务内容list"
+				},
+				{
+					"name": "service_object_type",
+					"type": "String",
+					"description": "服务对象类型"
+				},
+				{
+					"name": "service_object_type_name",
+					"type": "String",
+					"description": "服务对象类型名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_property_name",
+							"type": "String",
+							"description": "服务属性名称"
+						},
+						{
+							"name": "service_property_value_enum",
+							"type": "String[]",
+							"description": "服务属性值枚举"
+						}
+					],
+					"name": "service_properties",
+					"type": "ServiceProperty[]",
+					"description": "服务属性"
+				}
+			],
+			"name": "service_definitions",
+			"type": "ServiceDefinition []",
+			"description": "服务标准定义list"
+		}
+	],
+	"name": "alibaba.ssc.purchase.servicedefinition.param.query",
+	"apiChineseName": "查询采购服务定义参数信息",
+	"description": "查询采购服务定义参数信息",
+	"id": 62412
+}

@@ -1,13 +1,6 @@
 {
-	"id": 37897,
-	"name": "taobao.alitrip.ie.agent.refund.new.fillconfirmfee",
-	"apiChineseName": "新模型-回填申请单费用",
-	"description": "1. 回填退票费用",
 	"requestParams": [
 		{
-			"name": "param_refund_order_fill_confirm_fee_rq",
-			"type": "RefundOrderFillConfirmFeeRq",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -16,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "fee_params",
-					"type": "RefundPassengerFeeParam[]",
-					"description": "回填费用参数列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "already_used_total_pirce",
@@ -56,7 +45,11 @@
 							"type": "String",
 							"description": "乘机人姓名"
 						}
-					]
+					],
+					"name": "fee_params",
+					"type": "RefundPassengerFeeParam[]",
+					"description": "回填费用参数列表",
+					"required": true
 				},
 				{
 					"name": "refund_order_id",
@@ -69,14 +62,14 @@
 					"type": "Number",
 					"description": "商家退款金额(单位：分)，用于审计金额正确性"
 				}
-			]
+			],
+			"name": "param_refund_order_fill_confirm_fee_rq",
+			"type": "RefundOrderFillConfirmFeeRq",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefundOrderFillConfirmFeeRs",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "api_error_code",
@@ -114,7 +107,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefundOrderFillConfirmFeeRs",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.refund.new.fillconfirmfee",
+	"apiChineseName": "新模型-回填申请单费用",
+	"description": "1. 回填退票费用",
+	"id": 37897
 }

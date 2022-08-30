@@ -12,6 +12,8 @@ type Refunderinfo struct {
 	RefunderArea string `json:"refunder_area,omitempty" xml:"refunder_area,omitempty"`
 	// 村镇
 	RefunderTown string `json:"refunder_town,omitempty" xml:"refunder_town,omitempty"`
+	// 详细地址
+	RefunderDetailAddress string `json:"refunder_detail_address,omitempty" xml:"refunder_detail_address,omitempty"`
 	// 退货人
 	RefunderName string `json:"refunder_name,omitempty" xml:"refunder_name,omitempty"`
 	// 手机号
@@ -20,6 +22,4 @@ type Refunderinfo struct {
 	RefunderPhone string `json:"refunder_phone,omitempty" xml:"refunder_phone,omitempty"`
 	// 邮编
 	RefunderZipCode string `json:"refunder_zip_code,omitempty" xml:"refunder_zip_code,omitempty"`
-	// 详细地址
-	RefunderDetailAddress string `json:"refunder_detail_address,omitempty" xml:"refunder_detail_address,omitempty"`
 }

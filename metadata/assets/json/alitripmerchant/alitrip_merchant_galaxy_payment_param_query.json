@@ -1,8 +1,4 @@
 {
-	"id": 54774,
-	"name": "alitrip.merchant.galaxy.payment.param.query",
-	"apiChineseName": "星河-支付参数查询接口",
-	"description": "获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -25,79 +21,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content",
-					"type": "OrderPayDTO",
-					"description": "支付参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pay_sign",
 							"type": "String",
-							"description": "签名",
-							"required": true
+							"description": "签名"
 						},
 						{
 							"name": "sign_type",
 							"type": "String",
-							"description": "签名类型",
-							"required": true
+							"description": "签名类型"
 						},
 						{
 							"name": "package_str",
 							"type": "String",
-							"description": "数据包",
-							"required": true
+							"description": "数据包"
 						},
 						{
 							"name": "nonce_str",
 							"type": "String",
-							"description": "随机字符串",
-							"required": true
+							"description": "随机字符串"
 						},
 						{
 							"name": "time_stamp",
 							"type": "String",
-							"description": "时间戳",
-							"required": true
+							"description": "时间戳"
 						},
 						{
 							"name": "app_id",
 							"type": "String",
-							"description": "小程序id",
-							"required": true
+							"description": "小程序id"
 						},
 						{
 							"name": "book_result",
 							"type": "Boolean",
-							"description": "预订结果",
-							"required": true
+							"description": "预订结果"
 						}
-					]
+					],
+					"name": "content",
+					"type": "OrderPayDTO",
+					"description": "支付参数"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.payment.param.query",
+	"apiChineseName": "星河-支付参数查询接口",
+	"description": "获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据",
+	"id": 54774
 }

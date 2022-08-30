@@ -1,8 +1,4 @@
 {
-	"id": 44649,
-	"name": "taobao.ailab.aicloud.top.hotwords.update",
-	"apiChineseName": "更新热词",
-	"description": "更新ASR热词",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -25,37 +21,39 @@
 			"description": "操作类型"
 		},
 		{
-			"name": "content",
-			"type": "HotWordsContent",
-			"description": "热词内容",
 			"subParams": [
 				{
 					"name": "words",
 					"type": "String[]",
 					"description": "热词列表"
 				}
-			]
+			],
+			"name": "content",
+			"type": "HotWordsContent",
+			"description": "热词内容"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "baseresult",
-			"type": "BaseResult",
-			"description": "baseresult",
 			"subParams": [
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "ret_msg",
-					"required": true
+					"description": "ret_msg"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "ret_code",
-					"required": true
+					"description": "ret_code"
 				}
-			]
+			],
+			"name": "baseresult",
+			"type": "BaseResult",
+			"description": "baseresult"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.hotwords.update",
+	"apiChineseName": "更新热词",
+	"description": "更新ASR热词",
+	"id": 44649
 }

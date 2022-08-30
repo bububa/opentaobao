@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_shop_id",
+			"type": "String",
+			"description": "商家自定义门店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "extension",
+							"type": "String",
+							"description": "附加属性"
+						},
+						{
+							"name": "item_head_img",
+							"type": "String",
+							"description": "商品缩略图"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "service_price",
+							"type": "String",
+							"description": "商品服务价格,单位：元"
+						}
+					],
+					"name": "store_service_items",
+					"type": "Item4IsvDto[]",
+					"description": "商品列表"
+				}
+			],
+			"name": "data",
+			"type": "StoreServiceItem4IsvDto",
+			"description": "服务出参"
+		}
+	],
+	"name": "tmall.aliauto.service.item.get",
+	"apiChineseName": "查询服务商门店已上架服务商品列表",
+	"description": "根据门店自定义门店编码查询门店【已上架】服务商品列表",
+	"id": 57211
+}

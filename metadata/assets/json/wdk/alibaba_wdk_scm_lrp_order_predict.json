@@ -1,14 +1,6 @@
 {
-	"id": 40727,
-	"name": "alibaba.wdk.scm.lrp.order.predict",
-	"apiChineseName": "单量预测",
-	"description": "提供基于门店和配送站的订单量预测，可用于提前安排人力资源",
 	"requestParams": [
 		{
-			"name": "param_order_predict_query",
-			"type": "OrderPredictQuery",
-			"description": "单量预测查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "data_type",
@@ -44,114 +36,106 @@
 					"type": "String",
 					"description": "门店code，该参数和delivery_station_code二选一"
 				}
-			]
+			],
+			"name": "param_order_predict_query",
+			"type": "OrderPredictQuery",
+			"description": "单量预测查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
-					"name": "predict_list",
-					"type": "OrderPredict[]",
-					"description": "单量预测结果列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_order_quantity",
 							"type": "Number",
-							"description": "实际总单量",
-							"required": true
+							"description": "实际总单量"
 						},
 						{
 							"name": "channel_actual_quantity",
-							"type": "Json",
-							"description": "分渠道实际单量，JSON结构",
-							"required": true
+							"type": "String",
+							"description": "分渠道实际单量，JSON结构"
 						},
 						{
 							"name": "channel_predict_quantity",
-							"type": "Json",
-							"description": "分渠道预测单量，JSON结构",
-							"required": true
+							"type": "String",
+							"description": "分渠道预测单量，JSON结构"
 						},
 						{
 							"name": "delivery_station_code",
 							"type": "String",
-							"description": "配送站编码",
-							"required": true
+							"description": "配送站编码"
 						},
 						{
 							"name": "delivery_station_name",
 							"type": "String",
-							"description": "配送站名称",
-							"required": true
+							"description": "配送站名称"
 						},
 						{
 							"name": "predict_date",
 							"type": "String",
-							"description": "预测日期",
-							"required": true
+							"description": "预测日期"
 						},
 						{
 							"name": "predict_order_quantity",
 							"type": "Number",
-							"description": "预测总单量",
-							"required": true
+							"description": "预测总单量"
 						},
 						{
 							"name": "sub_company_code",
 							"type": "String",
-							"description": "子公司编码",
-							"required": true
+							"description": "子公司编码"
 						},
 						{
 							"name": "sub_company_name",
 							"type": "String",
-							"description": "子公司名称",
-							"required": true
+							"description": "子公司名称"
 						},
 						{
 							"name": "time_range",
 							"type": "String",
-							"description": "时间段",
-							"required": true
+							"description": "时间段"
 						},
 						{
 							"name": "warehouse_code",
 							"type": "String",
-							"description": "门店编码",
-							"required": true
+							"description": "门店编码"
 						},
 						{
 							"name": "warehouse_name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						}
-					]
+					],
+					"name": "predict_list",
+					"type": "OrderPredict[]",
+					"description": "单量预测结果列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.scm.lrp.order.predict",
+	"apiChineseName": "单量预测",
+	"description": "提供基于门店和配送站的订单量预测，可用于提前安排人力资源",
+	"id": 40727
 }

@@ -1,27 +1,10 @@
 {
-	"id": 53274,
-	"name": "taobao.feedflow.item.algo.crowd.suggest",
-	"apiChineseName": "单品人群建议出价",
-	"description": "给超级推荐的广告主查看建议出价",
 	"requestParams": [
 		{
-			"name": "crowds",
-			"type": "CrowdDto[]",
-			"description": "人群列表",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
-					"name": "target_label",
-					"type": "LabelDto",
-					"description": "标签结构",
-					"required": true,
 					"subParams": [
 						{
-							"name": "options",
-							"type": "OptionDto[]",
-							"description": "选项结构",
-							"required": true,
 							"subParams": [
 								{
 									"name": "option_value",
@@ -29,7 +12,11 @@
 									"description": "选项值",
 									"required": true
 								}
-							]
+							],
+							"name": "options",
+							"type": "OptionDto[]",
+							"description": "选项结构",
+							"required": true
 						},
 						{
 							"name": "target_type",
@@ -55,9 +42,18 @@
 							"description": "定向id，可通过标签接口获取",
 							"required": true
 						}
-					]
+					],
+					"name": "target_label",
+					"type": "LabelDto",
+					"description": "标签结构",
+					"required": true
 				}
-			]
+			],
+			"name": "crowds",
+			"type": "CrowdDto[]",
+			"description": "人群列表",
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "item_id",
@@ -74,89 +70,81 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
+					"description": "调用是否成功,true-成功，false-失败"
 				},
 				{
-					"name": "crowds",
-					"type": "CrowdDto[]",
-					"description": "人群列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "target_label",
-							"type": "LabelDto",
-							"description": "标签结构",
-							"required": true,
 							"subParams": [
 								{
-									"name": "options",
-									"type": "OptionDto[]",
-									"description": "选项结构",
-									"required": true,
 									"subParams": [
 										{
 											"name": "option_value",
 											"type": "String",
-											"description": "选项值",
-											"required": true
+											"description": "选项值"
 										}
-									]
+									],
+									"name": "options",
+									"type": "OptionDto[]",
+									"description": "选项结构"
 								},
 								{
 									"name": "target_type",
 									"type": "String",
-									"description": "定向类型",
-									"required": true
+									"description": "定向类型"
 								},
 								{
 									"name": "label_value",
 									"type": "String",
-									"description": "标签值",
-									"required": true
+									"description": "标签值"
 								},
 								{
 									"name": "label_id",
 									"type": "Number",
-									"description": "标签id",
-									"required": true
+									"description": "标签id"
 								},
 								{
 									"name": "target_id",
 									"type": "Number",
-									"description": "定向id",
-									"required": true
+									"description": "定向id"
 								}
-							]
+							],
+							"name": "target_label",
+							"type": "LabelDto",
+							"description": "标签结构"
 						},
 						{
 							"name": "average_price",
 							"type": "Number",
-							"description": "人群平均出价，单位：分",
-							"required": true
+							"description": "人群平均出价，单位：分"
 						},
 						{
 							"name": "suggest_price",
 							"type": "Number",
-							"description": "人群建议出价，单位：分",
-							"required": true
+							"description": "人群建议出价，单位：分"
 						}
-					]
+					],
+					"name": "crowds",
+					"type": "CrowdDto[]",
+					"description": "人群列表"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "失败时候的消息",
-					"required": true
+					"description": "失败时候的消息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.algo.crowd.suggest",
+	"apiChineseName": "单品人群建议出价",
+	"description": "给超级推荐的广告主查看建议出价",
+	"id": 53274
 }

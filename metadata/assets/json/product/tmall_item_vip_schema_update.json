@@ -1,19 +1,15 @@
 {
-	"id": 25919,
-	"name": "tmall.item.vip.schema.update",
-	"apiChineseName": "大商家商品编辑接口",
-	"description": "大商家编辑商品",
 	"requestParams": [
-		{
-			"name": "schema_xml_fields",
-			"type": "String",
-			"description": "商品编辑的schema参数",
-			"required": true
-		},
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "商品编辑的schema参数",
 			"required": true
 		}
 	],
@@ -24,14 +20,18 @@
 			"description": "编辑商品的id"
 		},
 		{
-			"name": "sku_map_json",
-			"type": "String",
-			"description": "sku与outerId映射信息"
-		},
-		{
 			"name": "gmt_create",
 			"type": "Date",
 			"description": "编辑商品操作成功时间"
+		},
+		{
+			"name": "sku_map_json",
+			"type": "String",
+			"description": "sku与outerId映射信息"
 		}
-	]
+	],
+	"name": "tmall.item.vip.schema.update",
+	"apiChineseName": "大商家商品编辑接口",
+	"description": "大商家编辑商品",
+	"id": 25919
 }

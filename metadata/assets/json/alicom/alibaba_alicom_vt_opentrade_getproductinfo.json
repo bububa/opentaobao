@@ -1,8 +1,4 @@
 {
-	"id": 57010,
-	"name": "alibaba.alicom.vt.opentrade.getproductinfo",
-	"apiChineseName": "查询新虚拟产品配置信息",
-	"description": "话费宝查询产品信息相关配置",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -17,93 +13,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "ProductActivityInfoResponseDto",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
 							"type": "String",
-							"description": "产品ID",
-							"required": true
+							"description": "产品ID"
 						},
 						{
 							"name": "product_name",
 							"type": "String",
-							"description": "产品名称",
-							"required": true
+							"description": "产品名称"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "卖家名称",
-							"required": true
+							"description": "卖家名称"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "金额",
-							"required": true
+							"description": "金额"
 						},
 						{
 							"name": "activity_id",
 							"type": "String",
-							"description": "活动ID",
-							"required": true
+							"description": "活动ID"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
-							"name": "activity_gift_infos",
-							"type": "ActivityGiftInfos",
-							"description": "activityGiftInfos",
-							"required": true,
 							"subParams": [
 								{
 									"name": "gift_id",
 									"type": "String",
-									"description": "giftId",
-									"required": true
+									"description": "giftId"
 								},
 								{
 									"name": "gift_name",
 									"type": "String",
-									"description": "giftName",
-									"required": true
+									"description": "giftName"
 								}
-							]
+							],
+							"name": "activity_gift_infos",
+							"type": "ActivityGiftInfos",
+							"description": "activityGiftInfos"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ProductActivityInfoResponseDto",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alicom.vt.opentrade.getproductinfo",
+	"apiChineseName": "查询新虚拟产品配置信息",
+	"description": "话费宝查询产品信息相关配置",
+	"id": 57010
 }

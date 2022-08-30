@@ -20,6 +20,16 @@ type CampaignDto struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 计划修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 计划子类型
+	SubType string `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
+	// 周预算状态 on:开启 off:关闭
+	WeekBudgetStatus string `json:"week_budget_status,omitempty" xml:"week_budget_status,omitempty"`
+	// 最低价格
+	MinPrice string `json:"min_price,omitempty" xml:"min_price,omitempty"`
+	// 最大价格
+	MaxPrice string `json:"max_price,omitempty" xml:"max_price,omitempty"`
+	// 预算
+	Budget string `json:"budget,omitempty" xml:"budget,omitempty"`
 	// 用户上下线
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 结算上下线
@@ -42,4 +52,6 @@ type CampaignDto struct {
 	BizNumber int64 `json:"biz_number,omitempty" xml:"biz_number,omitempty"`
 	// 实体主键
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 出价模式 value =1 为智能出价 value =2 为手动出价
+	BidType int64 `json:"bid_type,omitempty" xml:"bid_type,omitempty"`
 }

@@ -22,10 +22,10 @@ type AlitripTuanHotelItemSkuUpdateAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品的sku列表
 	TopItemSkuBaseInfoList []TopItemSkuBaseInfo `json:"top_item_sku_base_info_list,omitempty" xml:"top_item_sku_base_info_list>top_item_sku_base_info,omitempty"`
-	// 错误信息
-	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误码
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	// 错误信息
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 宝贝ID
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 卖家ID

@@ -1,8 +1,4 @@
 {
-	"id": 37400,
-	"name": "tmall.popupstore.activity.query",
-	"apiChineseName": "查询某段时间内的快闪活动列表",
-	"description": "提供给ISV查询某一时间段内包含指定appKey的活动列表",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -19,67 +15,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_dto",
-			"type": "ResultDto",
-			"description": "出参对象",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "返回数据条数",
-					"required": true
+					"description": "返回数据条数"
 				},
 				{
-					"name": "code",
-					"type": "String",
-					"description": "返回code",
-					"required": true
-				},
-				{
-					"name": "msg",
-					"type": "String",
-					"description": "错误msg",
-					"required": true
-				},
-				{
-					"name": "result_list",
-					"type": "Result[]",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "活动id",
-							"required": true
+							"description": "活动id"
 						},
 						{
 							"name": "activity_end_time",
 							"type": "String",
-							"description": "活动结束时间",
-							"required": true
+							"description": "活动结束时间"
 						},
 						{
 							"name": "activity_status",
 							"type": "Number",
-							"description": "0：正常状态，-1：删除状态，-2：活动取消",
-							"required": true
+							"description": "0：正常状态，-1：删除状态，-2：活动取消"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "activity_start_time",
 							"type": "String",
-							"description": "活动开始时间",
-							"required": true
+							"description": "活动开始时间"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "Result[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误msg"
 				}
-			]
+			],
+			"name": "result_dto",
+			"type": "ResultDto",
+			"description": "出参对象"
 		}
-	]
+	],
+	"name": "tmall.popupstore.activity.query",
+	"apiChineseName": "查询某段时间内的快闪活动列表",
+	"description": "提供给ISV查询某一时间段内包含指定appKey的活动列表",
+	"id": 37400
 }

@@ -1,0 +1,47 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "可用余额"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "结果code"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "结果信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "结果code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.account.account.query",
+	"apiChineseName": "万相台账号余额查询",
+	"description": "万相台账号余额查询",
+	"id": 60871
+}

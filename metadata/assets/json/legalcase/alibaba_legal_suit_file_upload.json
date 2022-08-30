@@ -1,8 +1,4 @@
 {
-	"id": 42176,
-	"name": "alibaba.legal.suit.file.upload",
-	"apiChineseName": "诉讼文件上传接口",
-	"description": "上传文件接口",
 	"requestParams": [
 		{
 			"name": "file",
@@ -56,5 +52,9 @@
 			"type": "String",
 			"description": "失败的code枚举"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.file.upload",
+	"apiChineseName": "诉讼文件上传接口",
+	"description": "上传文件接口",
+	"id": 42176
 }

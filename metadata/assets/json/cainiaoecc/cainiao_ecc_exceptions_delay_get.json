@@ -1,8 +1,4 @@
 {
-	"id": 43853,
-	"name": "cainiao.ecc.exceptions.delay.get",
-	"apiChineseName": "菜鸟控制塔包裹滞留异常信息获取",
-	"description": "菜鸟控制塔包裹滞留异常信息获取",
 	"requestParams": [
 		{
 			"name": "mail_no",
@@ -13,73 +9,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "is_retry",
 					"type": "Boolean",
-					"description": "是否重试",
-					"required": true
+					"description": "是否重试"
 				},
 				{
-					"name": "result",
-					"type": "DelayExceptionDetailDto",
-					"description": "数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "商家Id",
-							"required": true
+							"description": "商家Id"
 						},
 						{
 							"name": "mail_no",
 							"type": "String",
-							"description": "运单号",
-							"required": true
+							"description": "运单号"
 						},
 						{
 							"name": "exception_code",
 							"type": "String",
-							"description": "异常类型code",
-							"required": true
+							"description": "异常类型code"
 						},
 						{
 							"name": "exception_name",
 							"type": "String",
-							"description": "异常类型名称",
-							"required": true
+							"description": "异常类型名称"
 						},
 						{
 							"name": "cp_reply_list",
-							"type": "Json[]",
-							"description": "CP回复列表",
-							"required": true
+							"type": "String[]",
+							"description": "CP回复列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "DelayExceptionDetailDto",
+					"description": "数据对象"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.ecc.exceptions.delay.get",
+	"apiChineseName": "菜鸟控制塔包裹滞留异常信息获取",
+	"description": "菜鸟控制塔包裹滞留异常信息获取",
+	"id": 43853
 }

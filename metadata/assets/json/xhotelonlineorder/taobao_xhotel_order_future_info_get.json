@@ -1,8 +1,4 @@
 {
-	"id": 26560,
-	"name": "taobao.xhotel.order.future.info.get",
-	"apiChineseName": "获取(查询)订单变更信息",
-	"description": "支持操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令",
 	"requestParams": [
 		{
 			"name": "out_uuid",
@@ -14,6 +10,16 @@
 			"name": "tids",
 			"type": "String",
 			"description": "指定淘宝订单ID。以英文分号隔开的字符串“123455666;123455666;123455666”"
+		},
+		{
+			"name": "created_start",
+			"type": "Date",
+			"description": "开始时间"
+		},
+		{
+			"name": "created_end",
+			"type": "Date",
+			"description": "结束时间"
 		},
 		{
 			"name": "hotel_code",
@@ -31,103 +37,80 @@
 			"type": "Number",
 			"description": "操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令",
 			"required": true
-		},
-		{
-			"name": "created_start",
-			"type": "Date",
-			"description": "开始时间"
-		},
-		{
-			"name": "created_end",
-			"type": "Date",
-			"description": "结束时间"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "HotelOrderDirectInfo []",
-			"description": "结果返回列表",
 			"subParams": [
 				{
 					"name": "request_i_d",
 					"type": "String",
-					"description": "单次请求的唯一标识",
-					"required": true
+					"description": "单次请求的唯一标识"
 				},
 				{
 					"name": "tid",
 					"type": "Number",
-					"description": "淘宝订单号",
-					"required": true
+					"description": "淘宝订单号"
 				},
 				{
 					"name": "out_order_id",
 					"type": "String",
-					"description": "外部订单号",
-					"required": true
+					"description": "外部订单号"
 				},
 				{
 					"name": "seller_id",
 					"type": "Number",
-					"description": "卖家id",
-					"required": true
+					"description": "卖家id"
 				},
 				{
 					"name": "hotel_code",
 					"type": "String",
-					"description": "酒店编码",
-					"required": true
+					"description": "酒店编码"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "修改时间",
-					"required": true
+					"description": "修改时间"
 				},
 				{
 					"name": "biz_type",
 					"type": "Number",
-					"description": "操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令",
-					"required": true
+					"description": "操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令"
 				},
 				{
 					"name": "context",
 					"type": "String",
-					"description": "xml内容格式字符串，详细参考 http://open.taobao.com/docs/doc.htm?spm=a219a.7629140.0.0.2gmWOz\u0026treeId=191\u0026articleId=106152\u0026docType=1",
-					"required": true
+					"description": "xml内容格式字符串，详细参考 http://open.taobao.com/docs/doc.htm?spm=a219a.7629140.0.0.2gmWOz\u0026treeId=191\u0026articleId=106152\u0026docType=1"
 				},
 				{
 					"name": "extensions",
 					"type": "String",
-					"description": "json格式的扩展字段",
-					"required": true
+					"description": "json格式的扩展字段"
 				},
 				{
 					"name": "action",
 					"type": "Number",
-					"description": "* PMS处理消息的动作（pms端应该考虑增加代办任务列表）      * 0:普通，不需要特殊动作      * 1：弹窗提示（Pms中央模态窗）      * 2：托盘信息提示（给酒店广播通知或者平台公告）      * 3:发送请求给酒店前台人员，前台人员需要看到后确认处理(比如督促前台结账、督促前台上报入住状态)      * 4：请求pms自动处理(自动发起结账，自动上报订单状态等)",
-					"required": true
+					"description": "* PMS处理消息的动作（pms端应该考虑增加代办任务列表）      * 0:普通，不需要特殊动作      * 1：弹窗提示（Pms中央模态窗）      * 2：托盘信息提示（给酒店广播通知或者平台公告）      * 3:发送请求给酒店前台人员，前台人员需要看到后确认处理(比如督促前台结账、督促前台上报入住状态)      * 4：请求pms自动处理(自动发起结账，自动上报订单状态等)"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "* 消息状态（tips:Pms定时get走请求，状态可以考虑不变化）      * 0：新建消息（接收到交易系统请求）      * 1:请求已获取（pms已经取走请求数据）      * 2:请求已认领（pms已经有人认领消息，正在处理）      * 3:请求已反馈（Pms反馈请求处理结果）      * 4:处理完成（已通知相关系统（交易））      * 5:请求失效",
-					"required": true
+					"description": "* 消息状态（tips:Pms定时get走请求，状态可以考虑不变化）      * 0：新建消息（接收到交易系统请求）      * 1:请求已获取（pms已经取走请求数据）      * 2:请求已认领（pms已经有人认领消息，正在处理）      * 3:请求已反馈（Pms反馈请求处理结果）      * 4:处理完成（已通知相关系统（交易））      * 5:请求失效"
 				},
 				{
 					"name": "display_text",
 					"type": "String",
-					"description": "给酒店前台展示的文案提示",
-					"required": true
+					"description": "给酒店前台展示的文案提示"
 				}
-			]
+			],
+			"name": "results",
+			"type": "HotelOrderDirectInfo []",
+			"description": "结果返回列表"
 		},
 		{
 			"name": "issuccess",
@@ -139,5 +122,9 @@
 			"type": "String",
 			"description": "返回外部请求流水号"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.future.info.get",
+	"apiChineseName": "获取(查询)订单变更信息",
+	"description": "支持操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令",
+	"id": 26560
 }

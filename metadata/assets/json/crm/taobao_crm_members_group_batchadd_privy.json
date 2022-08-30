@@ -1,0 +1,29 @@
+{
+	"requestParams": [
+		{
+			"name": "group_ids",
+			"type": "Number[]",
+			"description": "分组id",
+			"maxListSize": 999,
+			"required": true
+		},
+		{
+			"name": "ouids",
+			"type": "String[]",
+			"description": "ouid列表",
+			"maxListSize": 999,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "添加操作是否成功"
+		}
+	],
+	"name": "taobao.crm.members.group.batchadd.privy",
+	"apiChineseName": "一批会员添加分组(隐私号版）",
+	"description": "为一批会员添加分组，接口返回添加是否成功,如至少有一个会员的分组添加成功，接口就返回成功，否则返回失败，如果当前会员已经拥有当前分组，则直接跳过",
+	"id": 57681
+}

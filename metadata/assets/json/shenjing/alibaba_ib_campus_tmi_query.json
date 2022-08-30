@@ -1,14 +1,6 @@
 {
-	"id": 45850,
-	"name": "alibaba.ib.campus.tmi.query",
-	"apiChineseName": "IB智慧园区-查询TMI流水",
-	"description": "获取特定银行账户的银行流水",
 	"requestParams": [
 		{
-			"name": "account_query_req_dto",
-			"type": "AccountQueryReqDto",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_no",
@@ -40,142 +32,129 @@
 					"description": "起始日期",
 					"required": true
 				}
-			]
+			],
+			"name": "account_query_req_dto",
+			"type": "AccountQueryReqDto",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "TradeRecordDto []",
-			"description": "TMI流水",
 			"subParams": [
 				{
 					"name": "currency_type",
 					"type": "String",
-					"description": "账户币种",
-					"required": true
+					"description": "账户币种"
 				},
 				{
 					"name": "summary",
 					"type": "String",
-					"description": "摘要",
-					"required": true
+					"description": "摘要"
 				},
 				{
 					"name": "unique_no",
 					"type": "String",
-					"description": "唯一编号（网关流水唯一键）",
-					"required": true
+					"description": "唯一编号（网关流水唯一键）"
 				},
 				{
 					"name": "bank_code",
 					"type": "String",
-					"description": "银行账号编码",
-					"required": true
+					"description": "银行账号编码"
 				},
 				{
 					"name": "biz_ref_no",
 					"type": "String",
-					"description": "业务参考号",
-					"required": true
+					"description": "业务参考号"
 				},
 				{
 					"name": "other_side_account_no",
 					"type": "String",
-					"description": "对方账户",
-					"required": true
+					"description": "对方账户"
 				},
 				{
 					"name": "trade_no",
 					"type": "String",
-					"description": "银行交易流水号",
-					"required": true
+					"description": "银行交易流水号"
 				},
 				{
 					"name": "purpose",
 					"type": "String",
-					"description": "付款目的",
-					"required": true
+					"description": "付款目的"
 				},
 				{
 					"name": "sync_date",
 					"type": "Number",
-					"description": "流水同步日期",
-					"required": true
+					"description": "流水同步日期"
 				},
 				{
 					"name": "trade_date",
 					"type": "Number",
-					"description": "交易日期",
-					"required": true
+					"description": "交易日期"
 				},
 				{
 					"name": "debit_amount",
 					"type": "String",
-					"description": "借方金额(支出)",
-					"required": true
+					"description": "借方金额(支出)"
 				},
 				{
 					"name": "biz_summary",
 					"type": "String",
-					"description": "业务摘要",
-					"required": true
+					"description": "业务摘要"
 				},
 				{
 					"name": "process_no",
 					"type": "String",
-					"description": "流程实例号（只有招商银行才有）",
-					"required": true
+					"description": "流程实例号（只有招商银行才有）"
 				},
 				{
 					"name": "balance",
 					"type": "String",
-					"description": "账号当前余额",
-					"required": true
+					"description": "账号当前余额"
 				},
 				{
 					"name": "other_summary",
 					"type": "String",
-					"description": "其他摘要",
-					"required": true
+					"description": "其他摘要"
 				},
 				{
 					"name": "other_side_account_name",
 					"type": "String",
-					"description": "对方账户名称",
-					"required": true
+					"description": "对方账户名称"
 				},
 				{
 					"name": "biz_name",
 					"type": "String",
-					"description": "业务名称",
-					"required": true
+					"description": "业务名称"
 				},
 				{
 					"name": "account_no",
 					"type": "String",
-					"description": "账户号码",
-					"required": true
+					"description": "账户号码"
 				},
 				{
 					"name": "credit_amount",
 					"type": "String",
-					"description": "贷方金额(收入)",
-					"required": true
+					"description": "贷方金额(收入)"
 				},
 				{
 					"name": "account_no_ex",
 					"type": "String",
-					"description": "专属账号",
-					"required": true
+					"description": "专属账号"
 				},
 				{
 					"name": "trade_type",
 					"type": "String",
-					"description": "交易类型",
-					"required": true
+					"description": "交易类型"
 				}
-			]
+			],
+			"name": "results",
+			"type": "TradeRecordDto []",
+			"description": "TMI流水"
 		}
-	]
+	],
+	"name": "alibaba.ib.campus.tmi.query",
+	"apiChineseName": "IB智慧园区-查询TMI流水",
+	"description": "获取特定银行账户的银行流水",
+	"id": 45850
 }

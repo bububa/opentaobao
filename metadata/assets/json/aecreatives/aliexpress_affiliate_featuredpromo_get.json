@@ -1,8 +1,4 @@
 {
-	"id": 48596,
-	"name": "aliexpress.affiliate.featuredpromo.get",
-	"apiChineseName": "联盟主题推广活动信息获取",
-	"description": "获取联盟主题推广活动信息",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -34,10 +27,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficFeaturedPromoResultDto",
-					"description": "返回结果明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_record_count",
@@ -46,10 +35,6 @@
 							"required": true
 						},
 						{
-							"name": "promos",
-							"type": "Promo[]",
-							"description": "返回主题活动列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "product_num",
@@ -69,11 +54,26 @@
 									"description": "主题活动名称",
 									"required": true
 								}
-							]
+							],
+							"name": "promos",
+							"type": "Promo[]",
+							"description": "返回主题活动列表",
+							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficFeaturedPromoResultDto",
+					"description": "返回结果明细",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.featuredpromo.get",
+	"apiChineseName": "联盟主题推广活动信息获取",
+	"description": "获取联盟主题推广活动信息",
+	"id": 48596
 }

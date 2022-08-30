@@ -18,6 +18,8 @@ type TaobaoAlitripTravelItemSkuPriceModifyAPIRequest struct {
 	_outProductId string
 	// 商品id。itemId和outProductId至少填写一个
 	_itemId int64
+	// 商品价库变更类型，0=价格库存均变更，1=价格变更，2=库存变更
+	_modifyType int64
 }
 
 // NewTaobaoAlitripTravelItemSkuPriceModifyRequest 初始化TaobaoAlitripTravelItemSkuPriceModifyAPIRequest对象
@@ -78,4 +80,17 @@ func (r *TaobaoAlitripTravelItemSkuPriceModifyAPIRequest) SetItemId(_itemId int6
 // GetItemId ItemId Getter
 func (r TaobaoAlitripTravelItemSkuPriceModifyAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+// SetModifyType is ModifyType Setter
+// 商品价库变更类型，0=价格库存均变更，1=价格变更，2=库存变更
+func (r *TaobaoAlitripTravelItemSkuPriceModifyAPIRequest) SetModifyType(_modifyType int64) error {
+	r._modifyType = _modifyType
+	r.Set("modify_type", _modifyType)
+	return nil
+}
+
+// GetModifyType ModifyType Getter
+func (r TaobaoAlitripTravelItemSkuPriceModifyAPIRequest) GetModifyType() int64 {
+	return r._modifyType
 }

@@ -1,8 +1,4 @@
 {
-	"id": 55329,
-	"name": "alibaba.order.pay.result.query",
-	"apiChineseName": "alibaba查询订单支付结果",
-	"description": "alibaba查询订单支付结果",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "value",
-			"type": "CashierPayResponse",
-			"description": "pay response",
 			"subParams": [
 				{
 					"name": "pay_url",
 					"type": "String",
-					"description": "pay url",
-					"required": true
+					"description": "pay url"
 				},
 				{
 					"name": "reason_code",
 					"type": "String",
-					"description": "Payment failed reason code",
-					"required": true
+					"description": "Payment failed reason code"
 				},
 				{
 					"name": "reason_message",
 					"type": "String",
-					"description": "Payment failed reason message",
-					"required": true
+					"description": "Payment failed reason message"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "UNPAY Unpaid order \u003cbr /\u003e PAYING The order is being paid and it needs to wait for about 1 minute,\u003cbr /\u003e PAY_SUCCESS Order payment is successful,\u003cbr /\u003e PAY_FAILED Order payment failed",
-					"required": true
+					"description": "UNPAY Unpaid order \u003cbr /\u003e PAYING The order is being paid and it needs to wait for about 1 minute,\u003cbr /\u003e PAY_SUCCESS Order payment is successful,\u003cbr /\u003e PAY_FAILED Order payment failed"
 				},
 				{
 					"name": "trade_id",
 					"type": "Number",
-					"description": "order id",
-					"required": true
+					"description": "order id"
 				}
-			]
+			],
+			"name": "value",
+			"type": "CashierPayResponse",
+			"description": "pay response"
 		}
-	]
+	],
+	"name": "alibaba.order.pay.result.query",
+	"apiChineseName": "alibaba查询订单支付结果",
+	"description": "alibaba查询订单支付结果",
+	"id": 55329
 }

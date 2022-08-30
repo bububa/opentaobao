@@ -1,14 +1,6 @@
 {
-	"id": 56366,
-	"name": "alibaba.tcls.aelophy.merchant.order.upload",
-	"apiChineseName": "商家订单数据上传",
-	"description": "商家订单数据上传",
 	"requestParams": [
 		{
-			"name": "order_info",
-			"type": "MerchantOrderInfo",
-			"description": "商家订单信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "channel_order_id",
@@ -63,10 +55,6 @@
 					"description": "pos机号"
 				},
 				{
-					"name": "sub_order_list",
-					"type": "MerchantSubOrderInfo[]",
-					"description": "子订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_info",
@@ -122,7 +110,11 @@
 							"description": "子订单流水号",
 							"required": true
 						}
-					]
+					],
+					"name": "sub_order_list",
+					"type": "MerchantSubOrderInfo[]",
+					"description": "子订单信息",
+					"required": true
 				},
 				{
 					"name": "store_id",
@@ -152,10 +144,6 @@
 					"description": "渠道用户ID"
 				},
 				{
-					"name": "pay_channel_list",
-					"type": "MerchantOrderPaymentInfo[]",
-					"description": "支付方式",
-					"required": true,
 					"subParams": [
 						{
 							"name": "type",
@@ -185,7 +173,11 @@
 							"type": "String",
 							"description": "其他支付方式支付后获得userId，例如：微信平台的openId"
 						}
-					]
+					],
+					"name": "pay_channel_list",
+					"type": "MerchantOrderPaymentInfo[]",
+					"description": "支付方式",
+					"required": true
 				},
 				{
 					"name": "extend_property",
@@ -219,9 +211,6 @@
 					"description": "商家侧统一用户标识ID"
 				},
 				{
-					"name": "upload_batch_info",
-					"type": "UploadBatchInfo",
-					"description": "上传数据统计信息",
 					"subParams": [
 						{
 							"name": "batch_no",
@@ -243,21 +232,25 @@
 							"type": "Date",
 							"description": "该批次数据的时间范围-结束时间"
 						}
-					]
+					],
+					"name": "upload_batch_info",
+					"type": "UploadBatchInfo",
+					"description": "上传数据统计信息"
 				},
 				{
 					"name": "customize_order_channel",
 					"type": "String",
 					"description": "订单来源渠道细粒度分类"
 				}
-			]
+			],
+			"name": "order_info",
+			"type": "MerchantOrderInfo",
+			"description": "商家订单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "success",
@@ -283,7 +276,14 @@
 					"description": "返回值",
 					"required": true
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.merchant.order.upload",
+	"apiChineseName": "商家订单数据上传",
+	"description": "商家订单数据上传",
+	"id": 56366
 }

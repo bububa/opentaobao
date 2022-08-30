@@ -1,8 +1,4 @@
 {
-	"id": 26275,
-	"name": "taobao.tmc.queue.get",
-	"apiChineseName": "获取消息队列积压情况",
-	"description": "根据appkey和groupName获取消息队列积压情况",
 	"requestParams": [
 		{
 			"name": "group_name",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "datas",
-			"type": "TmcQueueInfo []",
-			"description": "队列详细信息",
 			"subParams": [
 				{
 					"name": "get_total",
 					"type": "Number",
-					"description": "当前队列当天读取量",
-					"required": true
+					"description": "当前队列当天读取量"
 				},
 				{
 					"name": "put_toal",
 					"type": "Number",
-					"description": "当前队列当天写入量",
-					"required": true
+					"description": "当前队列当天写入量"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "TMC组名",
-					"required": true
+					"description": "TMC组名"
 				},
 				{
 					"name": "broker_name",
 					"type": "String",
-					"description": "消息队列Broker名称",
-					"required": true
+					"description": "消息队列Broker名称"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "TmcQueueInfo []",
+			"description": "队列详细信息"
 		}
-	]
+	],
+	"name": "taobao.tmc.queue.get",
+	"apiChineseName": "获取消息队列积压情况",
+	"description": "根据appkey和groupName获取消息队列积压情况",
+	"id": 26275
 }

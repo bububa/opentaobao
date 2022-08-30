@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "leave_begin_and_end_array",
+			"type": "String[]",
+			"description": "开始和结束时间",
+			"maxListSize": 999
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "请假原因"
+		},
+		{
+			"name": "identity_number",
+			"type": "String",
+			"description": "身份证号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.wokrerleave",
+	"apiChineseName": "工人请假",
+	"description": "工人请假",
+	"id": 57281
+}

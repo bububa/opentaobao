@@ -1,33 +1,36 @@
 {
-	"id": 55032,
-	"name": "taobao.top.oaid.merge",
-	"apiChineseName": "OAID订单合并",
-	"description": "基于OAID（收件人ID， Open Addressee ID)做订单合并，确保相同收件人信息的订单合并到相同组。",
 	"requestParams": [
 		{
+			"subParams": [
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				}
+			],
 			"name": "merge_list",
 			"type": "OrderMerge[]",
 			"description": "合单请求列表，最多支持100个。",
 			"maxListSize": 999,
-			"subParams": [
-				{
-					"name": "tid",
-					"type": "String",
-					"description": "订单ID"
-				},
-				{
-					"name": "oaid",
-					"type": "String",
-					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。"
-				}
-			]
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
 			"name": "tid_list",
 			"type": "String []",
-			"description": "合单结果。可合单的订单ID列表用逗号分隔的字符串表示。比如，\"1111,2222\"表示订单1111和订单2222可合并发货。"
+			"description": "合单结果。注意：一个字符串中的多笔订单可以合单，不同字符串间的订单不可合单！！！\u003cbr/\u003e 比如，[\"1111,2222\"]表示订单1111和订单2222可合单，[\"1111\",\"2222\"]表示订单1111和订单2222不可以合单。"
 		}
-	]
+	],
+	"name": "taobao.top.oaid.merge",
+	"apiChineseName": "OAID订单合并",
+	"description": "基于OAID（收件人ID， Open Addressee ID)做订单合并，确保相同收件人信息的订单合并到相同组。",
+	"id": 55032
 }

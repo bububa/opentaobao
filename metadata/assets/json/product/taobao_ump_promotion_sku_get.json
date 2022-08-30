@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "sku_list",
+			"type": "String",
+			"description": "skuId"
+		},
+		{
+			"name": "channel_key",
+			"type": "String",
+			"description": "渠道"
+		},
+		{
+			"name": "buyer_id",
+			"type": "String",
+			"description": "买家id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "models",
+			"type": "Json",
+			"description": "返回对象"
+		},
+		{
+			"name": "default_model_key",
+			"type": "String",
+			"description": "默认key值"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "调用失败信息"
+		}
+	],
+	"name": "taobao.ump.promotion.sku.get",
+	"apiChineseName": "商品优惠详情查询",
+	"description": "商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。",
+	"id": 61571
+}

@@ -1,15 +1,6 @@
 {
-	"id": 56365,
-	"name": "alibaba.tcls.aelophy.merchant.user.upload",
-	"apiChineseName": "商家会员数据上传",
-	"description": "商家会员数据上传",
 	"requestParams": [
 		{
-			"name": "user_info_list",
-			"type": "MerchantUserInfo[]",
-			"description": "渠道用户信息",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "real_phone",
@@ -133,40 +124,45 @@
 					"type": "String",
 					"description": "微信unionId"
 				}
-			]
+			],
+			"name": "user_info_list",
+			"type": "MerchantUserInfo[]",
+			"description": "渠道用户信息",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息描述",
-					"required": true
+					"description": "错误信息描述"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "model",
-					"required": true
+					"description": "model"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.merchant.user.upload",
+	"apiChineseName": "商家会员数据上传",
+	"description": "商家会员数据上传",
+	"id": 56365
 }

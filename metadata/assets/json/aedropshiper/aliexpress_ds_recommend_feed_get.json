@@ -1,0 +1,230 @@
+{
+	"requestParams": [
+		{
+			"name": "country",
+			"type": "String",
+			"description": "screens the subject product library for the target country"
+		},
+		{
+			"name": "target_currency",
+			"type": "String",
+			"description": "target currency:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW"
+		},
+		{
+			"name": "target_language",
+			"type": "String",
+			"description": "target language:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IN"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "record count of each page, 1 - 50"
+		},
+		{
+			"name": "sort",
+			"type": "String",
+			"description": "sort by：priceAsc，priceDesc，volumeAsc、volumeDesc, discountAsc, discountDesc, DSRratingAsc，DSRratingDesc,"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "Page number"
+		},
+		{
+			"name": "category_id",
+			"type": "String",
+			"description": "Category ID, you can get category ID via \"get category\" API https://developers.aliexpress.com/en/doc.htm?docId=45801\u0026docType=2"
+		},
+		{
+			"name": "feed_name",
+			"type": "String",
+			"description": "feed name, eg. \"DS bestseller\"",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total_record_count",
+					"type": "Number",
+					"description": "total record count"
+				},
+				{
+					"name": "current_record_count",
+					"type": "Number",
+					"description": "current record count"
+				},
+				{
+					"name": "is_finished",
+					"type": "Boolean",
+					"description": "is finished"
+				},
+				{
+					"name": "total_page_no",
+					"type": "Number",
+					"description": "total page number"
+				},
+				{
+					"name": "current_page_no",
+					"type": "Number",
+					"description": "count page number"
+				},
+				{
+					"subParams": [
+						{
+							"name": "lastest_volume",
+							"type": "Number",
+							"description": "lastest volume"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "seller id"
+						},
+						{
+							"name": "target_sale_price",
+							"type": "String",
+							"description": "target sale price"
+						},
+						{
+							"name": "evaluate_rate",
+							"type": "String",
+							"description": "evaluate rate"
+						},
+						{
+							"name": "target_original_price",
+							"type": "String",
+							"description": "target original price"
+						},
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "shop id "
+						},
+						{
+							"name": "second_level_category_name",
+							"type": "String",
+							"description": "second level category name"
+						},
+						{
+							"name": "first_level_category_id",
+							"type": "Number",
+							"description": "first level category id"
+						},
+						{
+							"name": "product_video_url",
+							"type": "String",
+							"description": "product video url"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "product id"
+						},
+						{
+							"name": "sale_price",
+							"type": "String",
+							"description": "sale price"
+						},
+						{
+							"name": "target_sale_price_currency",
+							"type": "String",
+							"description": "sale price in target currency"
+						},
+						{
+							"name": "second_level_category_id",
+							"type": "Number",
+							"description": "second level category id"
+						},
+						{
+							"name": "shop_url",
+							"type": "String",
+							"description": "shop url"
+						},
+						{
+							"name": "product_detail_url",
+							"type": "String",
+							"description": "product detail url"
+						},
+						{
+							"name": "product_title",
+							"type": "String",
+							"description": "product title"
+						},
+						{
+							"name": "first_level_category_name",
+							"type": "String",
+							"description": "first level category name"
+						},
+						{
+							"name": "product_main_image_url",
+							"type": "String",
+							"description": "product main image url"
+						},
+						{
+							"name": "platform_product_type",
+							"type": "String",
+							"description": "platform product type:ALL,PLAZA,TMALL"
+						},
+						{
+							"name": "target_original_price_currency",
+							"type": "String",
+							"description": "target original price currency"
+						},
+						{
+							"name": "ship_to_days",
+							"type": "String",
+							"description": "ship to days"
+						},
+						{
+							"name": "sale_price_currency",
+							"type": "String",
+							"description": "sale price currency"
+						},
+						{
+							"name": "product_small_image_urls",
+							"type": "String[]",
+							"description": "product small image urls"
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "original price"
+						},
+						{
+							"name": "original_price_currency",
+							"type": "String",
+							"description": "original price currency"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "discount"
+						}
+					],
+					"name": "products",
+					"type": "Integer[]",
+					"description": "products"
+				}
+			],
+			"name": "result",
+			"type": "TrafficProductResultDTO",
+			"description": "result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "System Error"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.ds.recommend.feed.get",
+	"apiChineseName": "获取推荐商品信息流接口",
+	"description": "获取推荐商品信息流",
+	"id": 60366
+}

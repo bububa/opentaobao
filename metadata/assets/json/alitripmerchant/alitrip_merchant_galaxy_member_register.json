@@ -1,8 +1,4 @@
 {
-	"id": 54713,
-	"name": "alitrip.merchant.galaxy.member.register",
-	"apiChineseName": "星河-微信小程序会员注册",
-	"description": "星河产品=微信小程序注册雅高会员服务",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "member_param",
-			"type": "MemberParam",
-			"description": "注册入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "last_name",
@@ -70,40 +62,44 @@
 					"description": "用户邮箱",
 					"required": true
 				}
-			]
+			],
+			"name": "member_param",
+			"type": "MemberParam",
+			"description": "注册入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功还是失败",
-					"required": true
+					"description": "成功还是失败"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "register_result",
 					"type": "Boolean",
-					"description": "是否注册成功",
-					"required": true
+					"description": "是否注册成功"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.member.register",
+	"apiChineseName": "星河-微信小程序会员注册",
+	"description": "星河产品=微信小程序注册雅高会员服务",
+	"id": 54713
 }

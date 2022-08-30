@@ -18,6 +18,6 @@ type ResultWrapper struct {
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 	// 执行结果
 	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
-	// 是否retry
+	// 是否需要重试
 	Retry bool `json:"retry,omitempty" xml:"retry,omitempty"`
 }

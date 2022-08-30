@@ -1,8 +1,4 @@
 {
-	"id": 32237,
-	"name": "alibaba.campus.acl.grantpermiitemstouser",
-	"apiChineseName": "给人直接授权",
-	"description": "给人直接授权",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -22,16 +18,17 @@
 			"required": true
 		},
 		{
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id(不填默认appCode)"
+		},
+		{
 			"name": "emp_id",
 			"type": "String",
 			"description": "用户id",
 			"required": true
 		},
 		{
-			"name": "priv",
-			"type": "PermissionReq[]",
-			"description": "权限",
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "priv_key",
@@ -49,51 +46,49 @@
 					"type": "Date",
 					"description": "过期时间"
 				}
-			]
-		},
-		{
-			"name": "user_id",
-			"type": "String",
-			"description": "操作人id(不填默认appCode)"
+			],
+			"name": "priv",
+			"type": "PermissionReq[]",
+			"description": "权限",
+			"maxListSize": 1000
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "content",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "error_level",
-					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.grantpermiitemstouser",
+	"apiChineseName": "给人直接授权",
+	"description": "给人直接授权",
+	"id": 32237
 }

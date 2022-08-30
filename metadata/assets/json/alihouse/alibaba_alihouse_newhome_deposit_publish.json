@@ -1,0 +1,111 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "预存金淘宝商品Id,修改时必填"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "pic",
+					"type": "String",
+					"description": "商品主图",
+					"required": true
+				},
+				{
+					"name": "valid_days",
+					"type": "Number",
+					"description": "有效期-相对时间"
+				},
+				{
+					"name": "valid_start_date",
+					"type": "String",
+					"description": "有效期起-绝对时间 (yyyy-MM-dd)"
+				},
+				{
+					"name": "valid_end_date",
+					"type": "String",
+					"description": "有效期止-绝对时间 (yyyy-MM-dd)"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "购物金价格（单位:分）",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "库存",
+					"required": true
+				},
+				{
+					"name": "sub_stock_at_buy",
+					"type": "Boolean",
+					"description": "是否是拍下减库存，默认是支付减库存",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "商品状态（立即上架传0 定时上架传1 下架放入仓库传-2",
+					"required": true
+				},
+				{
+					"name": "starts",
+					"type": "String",
+					"description": "上架时间（yyyy-MM-dd）"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				}
+			],
+			"name": "pre_deposit_gold_save_param",
+			"type": "PreDepositGoldSaveParam",
+			"description": "房产预存金属性",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "预存金淘宝商品id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.deposit.publish",
+	"apiChineseName": "创建、修改、发布房产预存金商品",
+	"description": "创建、修改、发布房产预存金商品",
+	"id": 62498
+}

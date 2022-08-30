@@ -1,0 +1,97 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "对应的可投放的小程序id",
+					"required": true
+				},
+				{
+					"name": "material_id_list",
+					"type": "Number[]",
+					"description": "素材id列表",
+					"required": true
+				}
+			],
+			"name": "material_request",
+			"type": "MiniAppEntranceMaterialBizOpenDTO",
+			"description": "投放入口素材信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "material_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "material_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "素材id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "素材名字"
+				},
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "小程序appid"
+				},
+				{
+					"name": "card_id",
+					"type": "Number",
+					"description": "支持的投放入口卡片id"
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "支持的投放入口场景id"
+				},
+				{
+					"name": "data_str",
+					"type": "String",
+					"description": "场景卡片对应的动态表单内容"
+				},
+				{
+					"name": "path",
+					"type": "String",
+					"description": "素材对应的页面路径"
+				},
+				{
+					"name": "q_params_value_str",
+					"type": "String",
+					"description": "素材对应的页面参数值：全局参数值"
+				},
+				{
+					"name": "p_params_value_str",
+					"type": "String",
+					"description": "素材对应的页面参数值：页面参数值"
+				}
+			],
+			"name": "model",
+			"type": "Model []",
+			"description": "素材信息"
+		},
+		{
+			"name": "material_error_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.distribution.material.get",
+	"apiChineseName": "小程序投放---读取投放入口素材信息",
+	"description": "读取已录入的投放入口素材信息。",
+	"id": 56924
+}

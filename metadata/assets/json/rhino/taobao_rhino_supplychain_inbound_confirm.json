@@ -1,13 +1,6 @@
 {
-	"id": 39535,
-	"name": "taobao.rhino.supplychain.inbound.confirm",
-	"apiChineseName": "WMS003成衣入库确认",
-	"description": "【WMS003】【同步成衣入库完成信息】",
 	"requestParams": [
 		{
-			"name": "clothing_inbound_confirm",
-			"type": "ClothingInboundConfirmDto",
-			"description": "入库单确认对象",
 			"subParams": [
 				{
 					"name": "amount",
@@ -18,6 +11,21 @@
 					"name": "factory_id",
 					"type": "Number",
 					"description": "工厂ID，对应WMS002：Company"
+				},
+				{
+					"name": "material_desc",
+					"type": "String",
+					"description": "物料描述，对应WMS002：ItemName"
+				},
+				{
+					"name": "ec_order_code",
+					"type": "String",
+					"description": "电商平台订单号orderCode"
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "物料ID，对应WMS002：Item"
 				},
 				{
 					"name": "inbound_id",
@@ -35,24 +43,6 @@
 					"description": "入库完成时间"
 				},
 				{
-					"name": "material_desc",
-					"type": "String",
-					"description": "物料描述，对应WMS002：ItemName"
-				},
-				{
-					"name": "material_id",
-					"type": "Number",
-					"description": "物料ID，对应WMS002：Item"
-				},
-				{
-					"name": "ec_order_code",
-					"type": "String",
-					"description": "电商平台订单号orderCode"
-				},
-				{
-					"name": "sku_b_o",
-					"type": "SkuBo",
-					"description": "sku 信息",
 					"subParams": [
 						{
 							"name": "style_id",
@@ -74,7 +64,10 @@
 							"type": "Number",
 							"description": "尺码id"
 						}
-					]
+					],
+					"name": "sku_b_o",
+					"type": "SkuBo",
+					"description": "sku 信息"
 				},
 				{
 					"name": "inbound_type",
@@ -96,7 +89,10 @@
 					"type": "String",
 					"description": "toC订单Id"
 				}
-			]
+			],
+			"name": "clothing_inbound_confirm",
+			"type": "ClothingInboundConfirmDto",
+			"description": "入库单确认对象"
 		}
 	],
 	"responseParams": [
@@ -115,5 +111,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.rhino.supplychain.inbound.confirm",
+	"apiChineseName": "WMS003成衣入库确认",
+	"description": "【WMS003】【同步成衣入库完成信息】",
+	"id": 39535
 }

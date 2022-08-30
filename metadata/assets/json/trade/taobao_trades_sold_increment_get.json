@@ -1,8 +1,4 @@
 {
-	"id": 128,
-	"name": "taobao.trades.sold.increment.get",
-	"apiChineseName": "查询卖家已卖出的增量交易数据（根据修改时间）",
-	"description": "搜索当前会话用户作为卖家已卖出的增量交易数据（只能获取到三个月以内的交易信息）\n\u003cbr/\u003e1. 一次请求只能查询时间跨度为一天的增量交易记录，即end_modified - start_modified \u003c= 1天。\n\u003cbr/\u003e2. 返回的数据结果是以订单的修改时间倒序排列的，通过从后往前翻页的方式可以避免漏单问题。\n\u003cbr/\u003e3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -61,6 +57,11 @@
 			"name": "use_has_next",
 			"type": "Boolean",
 			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，\u003cspan style=\"color:red;font-weight: bold;\"\u003e通过此种方式获取增量交易，效率在原有的基础上有80%的提升\u003c/span\u003e。"
+		},
+		{
+			"name": "buyer_open_uid",
+			"type": "String",
+			"description": "买家openId"
 		}
 	],
 	"responseParams": [
@@ -70,9 +71,6 @@
 			"description": "搜索到的交易信息总数"
 		},
 		{
-			"name": "trades",
-			"type": "Trade []",
-			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息",
 			"subParams": [
 				{
 					"name": "seller_nick",
@@ -235,16 +233,6 @@
 					"description": "买家昵称"
 				},
 				{
-					"name": "has_yfx",
-					"type": "Boolean",
-					"description": "订单中是否包含运费险订单，如果包含运费险订单返回true，不包含运费险订单，返回false"
-				},
-				{
-					"name": "yfx_fee",
-					"type": "String",
-					"description": "订单的运费险，单位为元"
-				},
-				{
 					"name": "has_buyer_message",
 					"type": "Boolean",
 					"description": "判断订单是否有买家留言，有买家留言返回true，否则返回false"
@@ -280,9 +268,6 @@
 					"description": "卖家手工调整金额，精确到2位小数，单位：元。如：200.07，表示：200元7分。来源于订单价格修改，如果有多笔子订单的时候，这个为0，单笔的话则跟[order].adjust_fee一样"
 				},
 				{
-					"name": "service_orders",
-					"type": "ServiceOrder[]",
-					"description": "服务子订单列表",
 					"subParams": [
 						{
 							"name": "oid",
@@ -384,7 +369,10 @@
 							"type": "String",
 							"description": "服务供应链-服务商外部编码标"
 						}
-					]
+					],
+					"name": "service_orders",
+					"type": "ServiceOrder[]",
+					"description": "服务子订单列表"
 				},
 				{
 					"name": "buyer_rate",
@@ -402,9 +390,6 @@
 					"description": "收货人的所在地区\u003cbr/\u003e注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面\u003cbr/\u003e建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市"
 				},
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "订单列表",
 					"subParams": [
 						{
 							"name": "item_meal_name",
@@ -1178,8 +1163,81 @@
 							"name": "service_outer_id",
 							"type": "String",
 							"description": "服务供应链-服务商外部编码"
+						},
+						{
+							"name": "expand_card_expand_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单权益金分摊金额（单位为分）"
+						},
+						{
+							"name": "expand_card_basic_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单本金分摊金额（单位为分）"
+						},
+						{
+							"name": "seller_display_nick",
+							"type": "String",
+							"description": "卖家展示昵称"
+						},
+						{
+							"name": "buyer_display_nick",
+							"type": "String",
+							"description": "买家展示昵称"
+						},
+						{
+							"name": "lijian",
+							"type": "String",
+							"description": "预售订单立减金额"
+						},
+						{
+							"name": "auto_flow",
+							"type": "String",
+							"description": "优仓业务场景下 1（自动流转）/0（非自动流转）"
+						},
+						{
+							"name": "trade_fulfillment_type",
+							"type": "Number",
+							"description": "订单履约类型"
+						},
+						{
+							"name": "distribute_status",
+							"type": "String",
+							"description": "订单是有代发订单，为空表示该订单暂无代发单据，distribute-该子订单有已分配代发单据，cancel-订单的代发单据都已取消，"
+						},
+						{
+							"name": "pro_ct",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
+						},
+						{
+							"name": "has_gift",
+							"type": "Boolean",
+							"description": "是否含有赠品"
+						},
+						{
+							"name": "is_free_gift",
+							"type": "Boolean",
+							"description": "是否是赠品订单"
+						},
+						{
+							"name": "gift_mids",
+							"type": "String",
+							"description": "赠品关联的id，主品订单下此字段表示赠品订单id，赠品订单表示主品订单id"
+						},
+						{
+							"name": "is_idle",
+							"type": "String",
+							"description": "是否为闲鱼订单，1是，0否"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "rx_audit_status",
@@ -1214,19 +1272,36 @@
 				{
 					"name": "oaid",
 					"type": "String",
-					"description": "(收货人+手机号+收货地址+create）4字段返回值都都不能为空，否则生成不了oaid"
+					"description": "（收货人+手机号+座机+收货地址+create）5个字段组合成oaid，原始订单上座机为空也满足条件，否则生成不了oaid"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家OpenUid"
 				},
 				{
 					"name": "no_shipping",
 					"type": "Boolean",
 					"description": "无物流信息返回true，平台属性，业务不要依赖"
+				},
+				{
+					"name": "aid",
+					"type": "String",
+					"description": "地址aid字段"
 				}
-			]
+			],
+			"name": "trades",
+			"type": "Trade []",
+			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息"
 		},
 		{
 			"name": "has_next",
 			"type": "Boolean",
 			"description": "是否存在下一页"
 		}
-	]
+	],
+	"name": "taobao.trades.sold.increment.get",
+	"apiChineseName": "查询卖家已卖出的增量交易数据（根据修改时间）",
+	"description": "搜索当前会话用户作为卖家已卖出的增量交易数据（只能获取到三个月以内的交易信息）\n\u003cbr/\u003e1. 一次请求只能查询时间跨度为一天的增量交易记录，即end_modified - start_modified \u003c= 1天。\n\u003cbr/\u003e2. 返回的数据结果是以订单的修改时间倒序排列的，通过从后往前翻页的方式可以避免漏单问题。\n\u003cbr/\u003e3. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 128
 }

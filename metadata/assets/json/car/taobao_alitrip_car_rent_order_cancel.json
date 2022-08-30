@@ -1,13 +1,6 @@
 {
-	"id": 26554,
-	"name": "taobao.alitrip.car.rent.order.cancel",
-	"apiChineseName": "租车-取消订单",
-	"description": "服务商主动取消用户订单或者拒绝取消订单.",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "RentProviderCancelRequest",
-			"description": "取消请求对象",
 			"subParams": [
 				{
 					"name": "cancel_confirm",
@@ -37,7 +30,10 @@
 					"description": "订单id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "RentProviderCancelRequest",
+			"description": "取消请求对象"
 		}
 	],
 	"responseParams": [
@@ -61,5 +57,9 @@
 			"type": "Number",
 			"description": "结果码"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.rent.order.cancel",
+	"apiChineseName": "租车-取消订单",
+	"description": "服务商主动取消用户订单或者拒绝取消订单.",
+	"id": 26554
 }

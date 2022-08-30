@@ -1,53 +1,49 @@
 {
-	"id": 41245,
-	"name": "alibaba.alihealth.medical.doctor.sync",
-	"apiChineseName": "阿里健康预约挂号医生同步接口",
-	"description": "阿里健康预约挂号医生同步接口",
 	"requestParams": [
 		{
-			"name": "save_request",
-			"type": "CommonRequest4Top",
-			"description": "接口入参",
 			"subParams": [
 				{
 					"name": "biz_content",
 					"type": "String",
 					"description": "hosNo:渠道医院ID,deptNo:渠道科室ID,doctorNo:渠道医生ID,doctorName:医生姓名,status:状态"
 				}
-			]
+			],
+			"name": "save_request",
+			"type": "CommonRequest4Top",
+			"description": "接口入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.medical.doctor.sync",
+	"apiChineseName": "阿里健康预约挂号医生同步接口",
+	"description": "阿里健康预约挂号医生同步接口",
+	"id": 41245
 }

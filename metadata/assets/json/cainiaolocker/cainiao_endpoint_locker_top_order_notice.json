@@ -1,8 +1,4 @@
 {
-	"id": 31197,
-	"name": "cainiao.endpoint.locker.top.order.notice",
-	"apiChineseName": "手动触发发短信",
-	"description": "合作公司对订单手动触发短信，有次数限制",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -31,9 +27,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_desc",
@@ -53,7 +46,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.endpoint.locker.top.order.notice",
+	"apiChineseName": "手动触发发短信",
+	"description": "合作公司对订单手动触发短信，有次数限制",
+	"id": 31197
 }

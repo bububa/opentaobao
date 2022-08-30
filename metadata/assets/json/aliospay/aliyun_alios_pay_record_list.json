@@ -1,13 +1,6 @@
 {
-	"id": 45261,
-	"name": "aliyun.alios.pay.record.list",
-	"apiChineseName": "支付记录批量查询接口",
-	"description": "商户用来对账的接口",
 	"requestParams": [
 		{
-			"name": "search_record_request",
-			"type": "SearchRecordRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "trace_id",
@@ -49,116 +42,107 @@
 					"type": "Number",
 					"description": "每页数量，默认100"
 				}
-			]
+			],
+			"name": "search_record_request",
+			"type": "SearchRecordRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "aliospay_response",
-			"type": "AliOSPayResponse",
-			"description": "响应参数",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
-					"required": true
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "SearchRecordResponse",
-					"description": "业务数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
-							"name": "datas",
-							"type": "PayRecordData[]",
-							"description": "支付记录列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "biz_order_id",
 									"type": "String",
-									"description": "业务订单号",
-									"required": true
+									"description": "业务订单号"
 								},
 								{
 									"name": "pay_order_id",
 									"type": "String",
-									"description": "alios支付订单id",
-									"required": true
+									"description": "alios支付订单id"
 								},
 								{
 									"name": "alipay_trade_id",
 									"type": "String",
-									"description": "支付宝订单id",
-									"required": true
+									"description": "支付宝订单id"
 								},
 								{
 									"name": "subject",
 									"type": "String",
-									"description": "订单标题",
-									"required": true
+									"description": "订单标题"
 								},
 								{
 									"name": "pay_result",
 									"type": "String",
-									"description": "支付结果状态,取值为:INIT初始，WAIT_BUYER_PAY : 等待用户付款。TRADE_SUCCESS:支付已经成功。 TRADE_CLOSED:未付款交易超时关闭，或支付完成后全额退款。TRADE_FINISHED交易结束，不可退款",
-									"required": true
+									"description": "支付结果状态,取值为:INIT初始，WAIT_BUYER_PAY : 等待用户付款。TRADE_SUCCESS:支付已经成功。 TRADE_CLOSED:未付款交易超时关闭，或支付完成后全额退款。TRADE_FINISHED交易结束，不可退款"
 								},
 								{
 									"name": "total_amount",
 									"type": "Number",
-									"description": "订单总金额，单位分",
-									"required": true
+									"description": "订单总金额，单位分"
 								},
 								{
 									"name": "receipt_amount",
 									"type": "Number",
-									"description": "实收金额，单位分",
-									"required": true
+									"description": "实收金额，单位分"
 								},
 								{
 									"name": "refund_fee",
 									"type": "Number",
-									"description": "退款金额，单位分",
-									"required": true
+									"description": "退款金额，单位分"
 								},
 								{
 									"name": "order_time",
 									"type": "Number",
-									"description": "订单创建时间，时间戳",
-									"required": true
+									"description": "订单创建时间，时间戳"
 								},
 								{
 									"name": "payment_time",
 									"type": "Number",
-									"description": "交易支付时间，未进行支付无值，时间戳",
-									"required": true
+									"description": "交易支付时间，未进行支付无值，时间戳"
 								}
-							]
+							],
+							"name": "datas",
+							"type": "PayRecordData[]",
+							"description": "支付记录列表"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SearchRecordResponse",
+					"description": "业务数据"
 				}
-			]
+			],
+			"name": "aliospay_response",
+			"type": "AliOSPayResponse",
+			"description": "响应参数"
 		}
-	]
+	],
+	"name": "aliyun.alios.pay.record.list",
+	"apiChineseName": "支付记录批量查询接口",
+	"description": "商户用来对账的接口",
+	"id": 45261
 }

@@ -1,22 +1,18 @@
 {
-	"id": 27293,
-	"name": "cainiao.nborderfront.user.outside.queryoutsideuser",
-	"apiChineseName": "查询外部小件员休息",
-	"description": "采用SPI方式查询外部公司的小件员信息",
 	"requestParams": [
 		{
 			"name": "cp_code",
 			"type": "String",
 			"description": "cpcode",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "cp_user_id",
 			"type": "String",
 			"description": "cp小件员ID",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -26,9 +22,6 @@
 			"description": "返回错误编码"
 		},
 		{
-			"name": "user_info",
-			"type": "Struct",
-			"description": "userInfo",
 			"subParams": [
 				{
 					"name": "cp_user_id",
@@ -84,7 +77,14 @@
 					"description": "321000",
 					"required": true
 				}
-			]
+			],
+			"name": "user_info",
+			"type": "Struct",
+			"description": "userInfo"
 		}
-	]
+	],
+	"name": "cainiao.nborderfront.user.outside.queryoutsideuser",
+	"apiChineseName": "查询外部小件员休息",
+	"description": "采用SPI方式查询外部公司的小件员信息",
+	"id": 27293
 }

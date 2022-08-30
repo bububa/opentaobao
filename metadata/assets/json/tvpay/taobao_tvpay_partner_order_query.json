@@ -1,8 +1,4 @@
 {
-	"id": 26872,
-	"name": "taobao.tvpay.partner.order.query",
-	"apiChineseName": "商户查询订单",
-	"description": "给商户提供的查询订单状态的API",
 	"requestParams": [
 		{
 			"name": "order_no",
@@ -13,43 +9,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "data",
-					"type": "GetPartnerPayResultResultDo",
-					"description": "结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data",
 							"type": "String",
-							"description": "加密串，订单详情",
-							"required": true
+							"description": "加密串，订单详情"
 						}
-					]
+					],
+					"name": "data",
+					"type": "GetPartnerPayResultResultDo",
+					"description": "结构体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.tvpay.partner.order.query",
+	"apiChineseName": "商户查询订单",
+	"description": "给商户提供的查询订单状态的API",
+	"id": 26872
 }

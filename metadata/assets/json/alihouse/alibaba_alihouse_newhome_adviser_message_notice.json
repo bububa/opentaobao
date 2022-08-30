@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "外部经纪人ID",
+					"required": true
+				}
+			],
+			"name": "project_adviser_dto",
+			"type": "ProjectAdviserDTO",
+			"description": "置业顾问/经纪人对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功或失败"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.adviser.message.notice",
+	"apiChineseName": "催促小B发送短信",
+	"description": "催促小B发送短信",
+	"id": 62225
+}

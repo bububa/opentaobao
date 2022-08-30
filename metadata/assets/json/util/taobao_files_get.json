@@ -1,9 +1,10 @@
 {
-	"id": 32298,
-	"name": "taobao.files.get",
-	"apiChineseName": "业务文件获取",
-	"description": "获取业务方暂存给ISV的文件列表",
 	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "下载链接状态。1:未下载。2:已下载"
+		},
 		{
 			"name": "start_date",
 			"type": "Date",
@@ -15,38 +16,34 @@
 			"type": "Date",
 			"description": "搜索结束时间",
 			"required": true
-		},
-		{
-			"name": "status",
-			"type": "Number",
-			"description": "下载链接状态。1:未下载。2:已下载"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "TopDownloadRecordDo []",
-			"description": "results",
 			"subParams": [
 				{
 					"name": "url",
 					"type": "String",
-					"description": "下载链接",
-					"required": true
+					"description": "下载链接"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "文件创建时间",
-					"required": true
+					"description": "文件创建时间"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "下载链接状态。1:未下载。2:已下载",
-					"required": true
+					"description": "下载链接状态。1:未下载。2:已下载"
 				}
-			]
+			],
+			"name": "results",
+			"type": "TopDownloadRecordDo []",
+			"description": "results"
 		}
-	]
+	],
+	"name": "taobao.files.get",
+	"apiChineseName": "业务文件获取",
+	"description": "获取业务方暂存给ISV的文件列表",
+	"id": 32298
 }

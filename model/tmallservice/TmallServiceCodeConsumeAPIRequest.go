@@ -12,10 +12,10 @@ import (
 // 天猫服务平台－服务核销
 type TmallServiceCodeConsumeAPIRequest struct {
 	model.Params
-	// 核销码
-	_consumeCode string
 	// 核销帐号
 	_operatorNick string
+	// 核销码
+	_consumeCode string
 	// 门店id
 	_shopId string
 }
@@ -41,19 +41,6 @@ func (r TmallServiceCodeConsumeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetConsumeCode is ConsumeCode Setter
-// 核销码
-func (r *TmallServiceCodeConsumeAPIRequest) SetConsumeCode(_consumeCode string) error {
-	r._consumeCode = _consumeCode
-	r.Set("consume_code", _consumeCode)
-	return nil
-}
-
-// GetConsumeCode ConsumeCode Getter
-func (r TmallServiceCodeConsumeAPIRequest) GetConsumeCode() string {
-	return r._consumeCode
-}
-
 // SetOperatorNick is OperatorNick Setter
 // 核销帐号
 func (r *TmallServiceCodeConsumeAPIRequest) SetOperatorNick(_operatorNick string) error {
@@ -65,6 +52,19 @@ func (r *TmallServiceCodeConsumeAPIRequest) SetOperatorNick(_operatorNick string
 // GetOperatorNick OperatorNick Getter
 func (r TmallServiceCodeConsumeAPIRequest) GetOperatorNick() string {
 	return r._operatorNick
+}
+
+// SetConsumeCode is ConsumeCode Setter
+// 核销码
+func (r *TmallServiceCodeConsumeAPIRequest) SetConsumeCode(_consumeCode string) error {
+	r._consumeCode = _consumeCode
+	r.Set("consume_code", _consumeCode)
+	return nil
+}
+
+// GetConsumeCode ConsumeCode Getter
+func (r TmallServiceCodeConsumeAPIRequest) GetConsumeCode() string {
+	return r._consumeCode
 }
 
 // SetShopId is ShopId Setter

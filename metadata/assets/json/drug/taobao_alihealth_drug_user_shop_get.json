@@ -1,8 +1,4 @@
 {
-	"id": 30611,
-	"name": "taobao.alihealth.drug.user.shop.get",
-	"apiChineseName": "根据用户id获取店铺id",
-	"description": "提供给千牛智能客服，获取用户当前咨询的店铺ID",
 	"requestParams": [
 		{
 			"name": "user_nick",
@@ -17,5 +13,9 @@
 			"type": "Number",
 			"description": "shopId"
 		}
-	]
+	],
+	"name": "taobao.alihealth.drug.user.shop.get",
+	"apiChineseName": "根据用户id获取店铺id",
+	"description": "提供给千牛智能客服，获取用户当前咨询的店铺ID",
+	"id": 30611
 }

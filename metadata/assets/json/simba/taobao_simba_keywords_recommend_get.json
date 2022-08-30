@@ -1,8 +1,4 @@
 {
-	"id": 10527,
-	"name": "taobao.simba.keywords.recommend.get",
-	"apiChineseName": "取得一个推广组的推荐关键词列表",
-	"description": "取得一个推广组的推荐关键词列表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -29,16 +25,13 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "返回的每页数据量大小,最大200",
-			"required": true,
-			"maxValue": 200,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "返回的第几页数据，默认为1",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "order_by",
@@ -48,9 +41,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "recommend_words",
-			"type": "RecommendWordPage",
-			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -58,14 +48,16 @@
 					"description": "每页数据大小"
 				},
 				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "返回第几页的数据从1开始。\u003cbr/\u003e如果输入的值大于可取得的最大页码值时，将返回\u003cbr/\u003e最大的页码值并且recommend_word_list值将\u003cbr/\u003e为空"
+				},
+				{
 					"name": "total_item",
 					"type": "Number",
 					"description": "所查询的数据总数"
 				},
 				{
-					"name": "recommend_word_list",
-					"type": "RecommendWord[]",
-					"description": "推荐词分页对象列表",
 					"subParams": [
 						{
 							"name": "word",
@@ -87,14 +79,19 @@
 							"type": "String",
 							"description": "相关度"
 						}
-					]
-				},
-				{
-					"name": "page_no",
-					"type": "Number",
-					"description": "返回第几页的数据从1开始。\u003cbr/\u003e如果输入的值大于可取得的最大页码值时，将返回\u003cbr/\u003e最大的页码值并且recommend_word_list值将\u003cbr/\u003e为空"
+					],
+					"name": "recommend_word_list",
+					"type": "RecommendWord[]",
+					"description": "推荐词分页对象列表"
 				}
-			]
+			],
+			"name": "recommend_words",
+			"type": "RecommendWordPage",
+			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.recommend.get",
+	"apiChineseName": "取得一个推广组的推荐关键词列表",
+	"description": "取得一个推广组的推荐关键词列表",
+	"id": 10527
 }

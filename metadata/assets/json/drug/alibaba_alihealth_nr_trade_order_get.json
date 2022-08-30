@@ -1,8 +1,4 @@
 {
-	"id": 41388,
-	"name": "alibaba.alihealth.nr.trade.order.get",
-	"apiChineseName": "获取订单详情",
-	"description": "阿里健康O2O，获取订单详情",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -73,29 +69,26 @@
 			"description": "实付金额"
 		},
 		{
-			"name": "promotion_list",
-			"type": "OrderPromotionDto []",
-			"description": "订单优惠列表",
 			"subParams": [
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "优惠类型",
-					"required": true
+					"description": "优惠类型"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "优惠名称",
-					"required": true
+					"description": "优惠名称"
 				},
 				{
 					"name": "amount",
 					"type": "Number",
-					"description": "优惠金额",
-					"required": true
+					"description": "优惠金额"
 				}
-			]
+			],
+			"name": "promotion_list",
+			"type": "OrderPromotionDto []",
+			"description": "订单优惠列表"
 		},
 		{
 			"name": "total_promotion",
@@ -143,65 +136,56 @@
 			"description": "商家设置的运费"
 		},
 		{
-			"name": "sub_order_list",
-			"type": "SubOrderDto []",
-			"description": "子订单",
 			"subParams": [
 				{
 					"name": "sub_order_id",
 					"type": "Number",
-					"description": "子订单ID",
-					"required": true
+					"description": "子订单ID"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "商品营销类型：0-普通，1-满就送；2-兑换券",
-					"required": true
+					"description": "商品营销类型：0-普通，1-满就送；2-兑换券"
 				},
 				{
 					"name": "price",
 					"type": "Number",
-					"description": "价格",
-					"required": true
+					"description": "价格"
 				},
 				{
 					"name": "buy_amount",
 					"type": "Number",
-					"description": "购买数量",
-					"required": true
+					"description": "购买数量"
 				},
 				{
 					"name": "unit",
 					"type": "String",
-					"description": "商品单位",
-					"required": true
+					"description": "商品单位"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "商品名称",
-					"required": true
+					"description": "商品名称"
 				},
 				{
 					"name": "out_itemd_id",
 					"type": "String",
-					"description": "商家自定义商品ID",
-					"required": true
+					"description": "商家自定义商品ID"
 				},
 				{
 					"name": "rx",
 					"type": "Number",
-					"description": "是否为处方药",
-					"required": true
+					"description": "是否为处方药"
 				}
-			]
+			],
+			"name": "sub_order_list",
+			"type": "SubOrderDto []",
+			"description": "子订单"
 		},
 		{
 			"name": "rx",
@@ -252,6 +236,15 @@
 			"name": "out_store_id",
 			"type": "String",
 			"description": "高德、本地商户"
+		},
+		{
+			"name": "mi_check_param",
+			"type": "String",
+			"description": "包含医保结算ID，就诊\u0008ID，统筹医保金额，医保个账金额，现金金额，就诊人员编号，退款结算ID（按照字段排列顺序）。支付成功后，退款成功之前有六个字段，退款成功之后该字符串变成七个字段"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.nr.trade.order.get",
+	"apiChineseName": "获取订单详情",
+	"description": "阿里健康O2O，获取订单详情",
+	"id": 41388
 }

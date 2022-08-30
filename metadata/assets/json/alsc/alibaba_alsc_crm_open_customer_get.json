@@ -1,13 +1,6 @@
 {
-	"id": 50743,
-	"name": "alibaba.alsc.crm.open.customer.get",
-	"apiChineseName": "查询会员资产",
-	"description": "查询会员身份，资产等",
 	"requestParams": [
 		{
-			"name": "param_customer_get_open_req",
-			"type": "CustomerGetOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -46,428 +39,369 @@
 					"type": "String",
 					"description": "顾客id"
 				}
-			]
+			],
+			"name": "param_customer_get_open_req",
+			"type": "CustomerGetOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "result",
-					"type": "CustomerGetOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "card_open_info_list",
-							"type": "CardOpenInfo[]",
-							"description": "卡实例信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "accounts",
-									"type": "AccountOpenInfo[]",
-									"description": "账户信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "balance",
 											"type": "Number",
-											"description": "余额",
-											"required": true
+											"description": "余额"
 										},
 										{
 											"name": "gift",
 											"type": "Number",
-											"description": "赠储",
-											"required": true
+											"description": "赠储"
 										},
 										{
 											"name": "pre",
 											"type": "Number",
-											"description": "预储",
-											"required": true
+											"description": "预储"
 										},
 										{
 											"name": "real",
 											"type": "Number",
-											"description": "实储",
-											"required": true
+											"description": "实储"
 										},
 										{
 											"name": "total_gift",
 											"type": "Number",
-											"description": "总赠储",
-											"required": true
+											"description": "总赠储"
 										},
 										{
 											"name": "total_pre",
 											"type": "Number",
-											"description": "总预储",
-											"required": true
+											"description": "总预储"
 										},
 										{
 											"name": "total_real",
 											"type": "Number",
-											"description": "总实储",
-											"required": true
+											"description": "总实储"
 										}
-									]
+									],
+									"name": "accounts",
+									"type": "AccountOpenInfo[]",
+									"description": "账户信息"
 								},
 								{
 									"name": "card_id",
 									"type": "String",
-									"description": "卡id",
-									"required": true
+									"description": "卡id"
 								},
 								{
 									"name": "card_template_id",
 									"type": "String",
-									"description": "卡模板id",
-									"required": true
+									"description": "卡模板id"
 								},
 								{
 									"name": "card_type",
 									"type": "String",
-									"description": "卡类型，MEMBER：会员卡，GIFT：礼品卡",
-									"required": true
+									"description": "卡类型，MEMBER：会员卡，GIFT：礼品卡"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "电子卡状态，SOLD：已出售，ACTIVED：已激活，STOP：已停用，INVALID：已作废，EXPIRED：已过期，REFUND：已退卡",
-									"required": true
+									"description": "电子卡状态，SOLD：已出售，ACTIVED：已激活，STOP：已停用，INVALID：已作废，EXPIRED：已过期，REFUND：已退卡"
 								}
-							]
+							],
+							"name": "card_open_info_list",
+							"type": "CardOpenInfo[]",
+							"description": "卡实例信息"
 						},
 						{
-							"name": "customer_open_info",
-							"type": "CustomerOpenInfo",
-							"description": "会员信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "birthday",
 									"type": "Date",
-									"description": "生日",
-									"required": true
+									"description": "生日"
 								},
 								{
 									"name": "channel",
 									"type": "Number",
-									"description": "渠道",
-									"required": true
+									"description": "渠道"
 								},
 								{
 									"name": "customer_id",
 									"type": "String",
-									"description": "顾客id",
-									"required": true
+									"description": "顾客id"
 								},
 								{
 									"name": "customer_type",
 									"type": "Number",
-									"description": "顾客类型，顾客：0，会员：1",
-									"required": true
+									"description": "顾客类型，顾客：0，会员：1"
 								},
 								{
 									"name": "email",
 									"type": "String",
-									"description": "email",
-									"required": true
+									"description": "email"
 								},
 								{
 									"name": "gender",
 									"type": "Number",
-									"description": "性别 0女 1男",
-									"required": true
+									"description": "性别 0女 1男"
 								},
 								{
 									"name": "level_desc",
 									"type": "String",
-									"description": "等级详情",
-									"required": true
+									"description": "等级详情"
 								},
 								{
 									"name": "level_id",
 									"type": "String",
-									"description": "等级id",
-									"required": true
+									"description": "等级id"
 								},
 								{
 									"name": "level_no",
 									"type": "Number",
-									"description": "等级号",
-									"required": true
+									"description": "等级号"
 								},
 								{
 									"name": "mobile",
 									"type": "String",
-									"description": "手机号",
-									"required": true
+									"description": "手机号"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "姓名",
-									"required": true
+									"description": "姓名"
 								},
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "备注",
-									"required": true
+									"description": "备注"
 								},
 								{
 									"name": "member_time",
 									"type": "Date",
-									"description": "入会时间",
-									"required": true
+									"description": "入会时间"
 								},
 								{
 									"name": "member_store_id",
 									"type": "String",
-									"description": "入会门店",
-									"required": true
+									"description": "入会门店"
 								}
-							]
+							],
+							"name": "customer_open_info",
+							"type": "CustomerOpenInfo",
+							"description": "会员信息"
 						},
 						{
-							"name": "point_account_open_info",
-							"type": "PointAccountOpenInfo",
-							"description": "积分信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "available_point",
 									"type": "Number",
-									"description": "剩余可用积分",
-									"required": true
-								},
-								{
-									"name": "total_point",
-									"type": "Number",
-									"description": "累计获取积分",
-									"required": true
-								},
-								{
-									"name": "total_used_point",
-									"type": "Number",
-									"description": "累计被使用积分",
-									"required": true
+									"description": "剩余可用积分"
 								},
 								{
 									"name": "freeze_point",
 									"type": "Number",
-									"description": "已冻结积分",
-									"required": true
+									"description": "已冻结积分"
+								},
+								{
+									"name": "total_point",
+									"type": "Number",
+									"description": "累计获取积分"
+								},
+								{
+									"name": "total_used_point",
+									"type": "Number",
+									"description": "累计被使用积分"
 								},
 								{
 									"name": "remain_point",
 									"type": "Number",
-									"description": "剩余总积分",
-									"required": true
+									"description": "剩余总积分"
 								}
-							]
+							],
+							"name": "point_account_open_info",
+							"type": "PointAccountOpenInfo",
+							"description": "积分信息"
 						},
 						{
-							"name": "voucher_open_info_list",
-							"type": "VoucherOpenInfo[]",
-							"description": "券信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
 									"type": "Number",
-									"description": "面额",
-									"required": true
+									"description": "面额"
 								},
 								{
 									"name": "end_time",
 									"type": "String",
-									"description": "失效时间",
-									"required": true
+									"description": "失效时间"
 								},
 								{
 									"name": "start_fee",
 									"type": "Number",
-									"description": "满足金额阀值，单位：分",
-									"required": true
+									"description": "满足金额阀值，单位：分"
 								},
 								{
 									"name": "start_time",
 									"type": "String",
-									"description": "券开始时间",
-									"required": true
+									"description": "券开始时间"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "状态",
-									"required": true
+									"description": "状态"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "券名称",
-									"required": true
+									"description": "券名称"
 								},
 								{
 									"name": "voucher_id",
 									"type": "String",
-									"description": "券实例id",
-									"required": true
+									"description": "券实例id"
 								},
 								{
 									"name": "voucher_template_id",
 									"type": "String",
-									"description": "券模板id",
-									"required": true
+									"description": "券模板id"
 								},
 								{
 									"name": "voucher_type",
 									"type": "String",
-									"description": "优惠券类型，CASH：代金券，DISCOUNT：折扣券，GIFT：礼品券",
-									"required": true
+									"description": "优惠券类型，CASH：代金券，DISCOUNT：折扣券，GIFT：礼品券"
 								},
 								{
 									"name": "discount_rate",
 									"type": "String",
-									"description": "折扣率",
-									"required": true
+									"description": "折扣率"
 								},
 								{
 									"name": "item_id_list",
 									"type": "String[]",
-									"description": "商品id列表",
-									"required": true
+									"description": "商品id列表"
 								},
 								{
 									"name": "shop_id_list",
 									"type": "String[]",
-									"description": "门店id列表",
-									"required": true
+									"description": "门店id列表"
 								},
 								{
 									"name": "user_limit",
 									"type": "Number",
-									"description": "每人限领，-1代表不限",
-									"required": true
+									"description": "每人限领，-1代表不限"
 								},
 								{
 									"name": "item_coverage",
 									"type": "String",
-									"description": "适用商品范围 值：ALL，PART_AVAILABLE，PART_UNAVAILABLE * 说明：全部商品可用，部分商品可用，部分商品不可用",
-									"required": true
+									"description": "适用商品范围 值：ALL，PART_AVAILABLE，PART_UNAVAILABLE * 说明：全部商品可用，部分商品可用，部分商品不可用"
 								},
 								{
 									"name": "shop_coverage",
 									"type": "String",
-									"description": "适用商品范围 值：ALL，PART_AVAILABLE * 说明：全部门店可用，部分门店可用",
-									"required": true
+									"description": "适用商品范围 值：ALL，PART_AVAILABLE * 说明：全部门店可用，部分门店可用"
 								},
 								{
 									"name": "available_time",
 									"type": "String",
-									"description": "{\\\"type\\\":0,\\\"settings\\\":[{\\\"dayStartTime\\\":\\\"00:00\\\",\\\"dayEndTime\\\":\\\"23:59\\\",\\\"week\\\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7",
-									"required": true
+									"description": "{\\\"type\\\":0,\\\"settings\\\":[{\\\"dayStartTime\\\":\\\"00:00\\\",\\\"dayEndTime\\\":\\\"23:59\\\",\\\"week\\\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7"
 								},
 								{
-									"name": "item_info_list",
-									"type": "VoucherItemInfo[]",
-									"description": "商品信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "sku_id",
 											"type": "String",
-											"description": "sku规格id",
-											"required": true
+											"description": "sku规格id"
 										},
 										{
 											"name": "dish_id",
 											"type": "String",
-											"description": "菜品id",
-											"required": true
+											"description": "菜品id"
 										},
 										{
 											"name": "sku_out_no",
 											"type": "String",
-											"description": "外部sku规格id",
-											"required": true
+											"description": "外部sku规格id"
 										},
 										{
 											"name": "dish_out_no",
 											"type": "String",
-											"description": "外部菜品id",
-											"required": true
+											"description": "外部菜品id"
 										}
-									]
+									],
+									"name": "item_info_list",
+									"type": "VoucherItemInfo[]",
+									"description": "商品信息"
 								},
 								{
-									"name": "shop_info_list",
-									"type": "VoucherShopInfo[]",
-									"description": "门店信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "out_shop_id",
 											"type": "String",
-											"description": "外部门店id",
-											"required": true
+											"description": "外部门店id"
 										},
 										{
 											"name": "shop_id",
 											"type": "String",
-											"description": "门店id",
-											"required": true
+											"description": "门店id"
 										}
-									]
+									],
+									"name": "shop_info_list",
+									"type": "VoucherShopInfo[]",
+									"description": "门店信息"
 								},
 								{
 									"name": "ext_info",
 									"type": "String",
-									"description": "扩展字段,包含了礼品券的信息",
-									"required": true
+									"description": "扩展字段,包含了礼品券的信息"
 								},
 								{
 									"name": "use_condition",
 									"type": "String",
-									"description": "DINE_IN堂食，TAKE_OUT外卖",
-									"required": true
+									"description": "DINE_IN堂食，TAKE_OUT外卖"
 								}
-							]
+							],
+							"name": "voucher_open_info_list",
+							"type": "VoucherOpenInfo[]",
+							"description": "券信息"
 						}
-					]
+					],
+					"name": "result",
+					"type": "CustomerGetOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果显示",
-					"required": true
+					"description": "结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.customer.get",
+	"apiChineseName": "查询会员资产",
+	"description": "查询会员身份，资产等",
+	"id": 50743
 }

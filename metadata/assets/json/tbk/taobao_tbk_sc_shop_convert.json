@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第3段数字",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需返回的字段列表",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "链接形式-1：PC，2：无线。默认为１"
+		},
+		{
+			"name": "site_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第2段数字",
+			"required": true
+		},
+		{
+			"name": "unid",
+			"type": "String",
+			"description": "(该字段不开放)自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道"
+		},
+		{
+			"name": "user_ids",
+			"type": "String",
+			"description": "卖家id串，用,分割，从taobao.tbk.shop.get接口获取user_id字段",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家id"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "店铺推广链接"
+				}
+			],
+			"name": "results",
+			"type": "NTbkShop []",
+			"description": "加入淘宝客的店铺"
+		}
+	],
+	"name": "taobao.tbk.sc.shop.convert",
+	"apiChineseName": "淘宝客-服务商-店铺链接转换",
+	"description": "服务商使用。支持入参推广者对应的“推广位”和卖家id，获取对应的店铺推广链接。",
+	"id": 43878
+}

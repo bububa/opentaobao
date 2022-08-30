@@ -20,6 +20,4 @@ type TaobaoXhotelEntityConfigAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_entity_config_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 请勿关注该值
-	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 }

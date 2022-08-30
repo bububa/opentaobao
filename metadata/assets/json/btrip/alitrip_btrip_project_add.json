@@ -1,14 +1,6 @@
 {
-	"id": 53607,
-	"name": "alitrip.btrip.project.add",
-	"apiChineseName": "添加项目",
-	"description": "添加项目",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenProjectRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "code",
@@ -49,7 +41,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenProjectRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -68,5 +64,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.project.add",
+	"apiChineseName": "添加项目",
+	"description": "添加项目",
+	"id": 53607
 }

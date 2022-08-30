@@ -20,10 +20,10 @@ type AlibabaAlihealthDrugKytYyDrugcodesAPIRequest struct {
 	_produceBatchNo string
 	// 药品类型
 	_physicType string
-	// 包装规格
-	_pkgSpec string
 	// 制剂规格
 	_prepnSpec string
+	// 包装规格
+	_pkgSpec string
 }
 
 // NewAlibabaAlihealthDrugKytYyDrugcodesRequest 初始化AlibabaAlihealthDrugKytYyDrugcodesAPIRequest对象
@@ -99,19 +99,6 @@ func (r AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) GetPhysicType() string {
 	return r._physicType
 }
 
-// SetPkgSpec is PkgSpec Setter
-// 包装规格
-func (r *AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) SetPkgSpec(_pkgSpec string) error {
-	r._pkgSpec = _pkgSpec
-	r.Set("pkg_spec", _pkgSpec)
-	return nil
-}
-
-// GetPkgSpec PkgSpec Getter
-func (r AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) GetPkgSpec() string {
-	return r._pkgSpec
-}
-
 // SetPrepnSpec is PrepnSpec Setter
 // 制剂规格
 func (r *AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) SetPrepnSpec(_prepnSpec string) error {
@@ -123,4 +110,17 @@ func (r *AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) SetPrepnSpec(_prepnSpec s
 // GetPrepnSpec PrepnSpec Getter
 func (r AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) GetPrepnSpec() string {
 	return r._prepnSpec
+}
+
+// SetPkgSpec is PkgSpec Setter
+// 包装规格
+func (r *AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) SetPkgSpec(_pkgSpec string) error {
+	r._pkgSpec = _pkgSpec
+	r.Set("pkg_spec", _pkgSpec)
+	return nil
+}
+
+// GetPkgSpec PkgSpec Getter
+func (r AlibabaAlihealthDrugKytYyDrugcodesAPIRequest) GetPkgSpec() string {
+	return r._pkgSpec
 }

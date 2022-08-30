@@ -1,26 +1,7 @@
 {
-	"id": 55659,
-	"name": "alibaba.pur.supplier.porespcreate",
-	"apiChineseName": "po反馈创建",
-	"description": "PO反馈接口",
 	"requestParams": [
 		{
-			"name": "po_response",
-			"type": "SupplierPoResponseDO[]",
-			"description": "PO反馈信息",
-			"maxListSize": 20,
 			"subParams": [
-				{
-					"name": "remark",
-					"type": "String",
-					"description": "备注"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "反馈状态",
-					"required": true
-				},
 				{
 					"name": "po_no",
 					"type": "String",
@@ -50,6 +31,11 @@
 					"name": "capacity_record_no",
 					"type": "String",
 					"description": "产能计划代码"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
 				},
 				{
 					"name": "response_type",
@@ -109,29 +95,41 @@
 					"type": "String",
 					"description": "发货批次号",
 					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "反馈状态",
+					"required": true
 				}
-			]
+			],
+			"name": "po_response",
+			"type": "SupplierPoResponseDO[]",
+			"description": "PO反馈信息",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "内容",
-					"required": true
+					"description": "内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.supplier.porespcreate",
+	"apiChineseName": "po反馈创建",
+	"description": "PO反馈接口",
+	"id": 55659
 }

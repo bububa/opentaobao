@@ -1,0 +1,242 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_activity_type",
+					"type": "String",
+					"description": "业务类型(PO0  普通采购,ADJ0 报废,ADJ1 盘点调整,ADJ2 状态调整,SO0  TOC销售,SO1  TOB销售,SO4  TOC补发,RTV0 普通采购退货,RSO0 TOC销售退货,SYS1 系统调账)"
+				},
+				{
+					"name": "biz_trade_id",
+					"type": "String",
+					"description": "交易主单号"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "gmt_create_end",
+					"type": "Number",
+					"description": "出入库开始时间，ms级",
+					"required": true
+				},
+				{
+					"name": "gmt_create_start",
+					"type": "Number",
+					"description": "出入库截止时间，ms级",
+					"required": true
+				},
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "库存类型(1 良品，101 残品)"
+				},
+				{
+					"name": "operation_order_id",
+					"type": "String",
+					"description": "业务主单号"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，最大200"
+				},
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "货品ID",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码"
+				}
+			],
+			"name": "warehouse_inventory_log_query_dto",
+			"type": "WarehouseInventoryLogQueryDto",
+			"description": "查询DTO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "biz_sub_trade_id",
+							"type": "String",
+							"description": "交易子单号",
+							"required": true
+						},
+						{
+							"name": "biz_trade_id",
+							"type": "String",
+							"description": "交易主单号",
+							"required": true
+						},
+						{
+							"name": "operate_time",
+							"type": "Number",
+							"description": "出入库时间",
+							"required": true
+						},
+						{
+							"name": "biz_activity_type",
+							"type": "String",
+							"description": "业务类型（PO0  普通采购,ADJ0 报废,ADJ1 盘点调整,ADJ2 状态调整,SO0  TOC销售,SO1  TOB销售,SO4  TOC补发,RTV0 普通采购退货,RSO0 TOC销售退货,SYS1 系统调账）",
+							"required": true
+						},
+						{
+							"name": "operation_detail_order_id",
+							"type": "String",
+							"description": "业务子单号",
+							"required": true
+						},
+						{
+							"name": "operation_order_id",
+							"type": "String",
+							"description": "业务主单号",
+							"required": true
+						},
+						{
+							"name": "result_lock_quantity",
+							"type": "String",
+							"description": "变化后占用数量",
+							"required": true
+						},
+						{
+							"name": "change_lock_quantity",
+							"type": "String",
+							"description": "占用变化数量",
+							"required": true
+						},
+						{
+							"name": "result_quantity",
+							"type": "String",
+							"description": "变化后库存数量",
+							"required": true
+						},
+						{
+							"name": "change_quantity",
+							"type": "String",
+							"description": "库存变化数量",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型(1 良品，101 残品)",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "仓名称",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "whc_bar_code",
+							"type": "String",
+							"description": "货品条形码",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "货品编码",
+							"required": true
+						},
+						{
+							"name": "sc_item_name",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "wh_order_code",
+							"type": "String",
+							"description": "仓内单据号",
+							"required": true
+						}
+					],
+					"name": "data_list",
+					"type": "ErpWarehouseInventoryLogDto[]",
+					"description": "库存流水，按生成时间降序排列",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "查询结果总数",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "查询出参"
+		}
+	],
+	"name": "aliexpress.ascp.inventory.log.query",
+	"apiChineseName": "AliExpress库存流水查询API",
+	"description": "AliExpress库存流水查询API",
+	"id": 57499
+}

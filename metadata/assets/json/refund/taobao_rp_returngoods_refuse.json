@@ -1,8 +1,4 @@
 {
-	"id": 23877,
-	"name": "taobao.rp.returngoods.refuse",
-	"apiChineseName": "卖家拒绝退货",
-	"description": "卖家拒绝退货，目前仅支持天猫退货。",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -40,5 +36,9 @@
 			"type": "Boolean",
 			"description": "asdf"
 		}
-	]
+	],
+	"name": "taobao.rp.returngoods.refuse",
+	"apiChineseName": "卖家拒绝退货",
+	"description": "卖家拒绝退货，目前仅支持天猫退货。",
+	"id": 23877
 }

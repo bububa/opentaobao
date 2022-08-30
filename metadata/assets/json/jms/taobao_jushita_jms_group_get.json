@@ -1,8 +1,4 @@
 {
-	"id": 25634,
-	"name": "taobao.jushita.jms.group.get",
-	"apiChineseName": "查询ONS分组",
-	"description": "查询当前appkey在ONS中已有的分组",
 	"requestParams": [
 		{
 			"name": "page_no",
@@ -28,16 +24,20 @@
 			"description": "返回的总数"
 		},
 		{
-			"name": "groups",
-			"type": "MsgGroupDO []",
-			"description": "分组信息",
 			"subParams": [
 				{
 					"name": "name",
 					"type": "String",
 					"description": "123"
 				}
-			]
+			],
+			"name": "groups",
+			"type": "MsgGroupDO []",
+			"description": "分组信息"
 		}
-	]
+	],
+	"name": "taobao.jushita.jms.group.get",
+	"apiChineseName": "查询ONS分组",
+	"description": "查询当前appkey在ONS中已有的分组",
+	"id": 25634
 }

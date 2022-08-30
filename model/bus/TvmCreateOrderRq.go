@@ -28,6 +28,8 @@ type TvmCreateOrderRq struct {
 	IssueTimeout int64 `json:"issue_timeout,omitempty" xml:"issue_timeout,omitempty"`
 	// 支付超时时间(创建订单成功后开始计算) 单位:秒,到达指定时间后，平台进行关闭订单操作(自助机小程序订单使用)
 	PayTimeout int64 `json:"pay_timeout,omitempty" xml:"pay_timeout,omitempty"`
+	// 下单人联系信息
+	ContactInfo *TvmContactInfo `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
 	// true实名（传身份证）,必须传true后续进行程序强制校验
 	RealName bool `json:"real_name,omitempty" xml:"real_name,omitempty"`
 	// true:切换为自助机小程序订单;false:普通自助机订单

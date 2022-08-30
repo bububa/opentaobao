@@ -1,8 +1,4 @@
 {
-	"id": 30161,
-	"name": "alitrip.tripvp.agent.order.issue",
-	"apiChineseName": "廉航辅营正向订单出货接口",
-	"description": "廉航辅营正向订单出货接口",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "issue_pro_order_vo",
-			"type": "IssueProOrderVo",
-			"description": "出货通知信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -28,7 +20,11 @@
 					"description": "辅营出票号，不可为空，字符长度不超过32位",
 					"required": true
 				}
-			]
+			],
+			"name": "issue_pro_order_vo",
+			"type": "IssueProOrderVo",
+			"description": "出货通知信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -37,5 +33,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alitrip.tripvp.agent.order.issue",
+	"apiChineseName": "廉航辅营正向订单出货接口",
+	"description": "廉航辅营正向订单出货接口",
+	"id": 30161
 }

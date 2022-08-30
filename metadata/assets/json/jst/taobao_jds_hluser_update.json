@@ -1,8 +1,4 @@
 {
-	"id": 23843,
-	"name": "taobao.jds.hluser.update",
-	"apiChineseName": "订单全链路用户信息修改",
-	"description": "订单全链路用户信息修改，比如是否开放买家端展示",
 	"requestParams": [
 		{
 			"name": "open_for_buyer",
@@ -21,5 +17,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.jds.hluser.update",
+	"apiChineseName": "订单全链路用户信息修改",
+	"description": "订单全链路用户信息修改，比如是否开放买家端展示",
+	"id": 23843
 }

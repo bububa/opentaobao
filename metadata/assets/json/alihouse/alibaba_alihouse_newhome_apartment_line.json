@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部公寓id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "byte",
+			"description": "0-下架 1-上架",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.apartment.line",
+	"apiChineseName": "公寓上下架",
+	"description": "公寓上下架",
+	"id": 59654
+}

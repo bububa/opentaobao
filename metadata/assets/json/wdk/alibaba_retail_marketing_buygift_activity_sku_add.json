@@ -1,31 +1,15 @@
 {
-	"id": 55919,
-	"name": "alibaba.retail.marketing.buygift.activity.sku.add",
-	"apiChineseName": "添加单品买赠活动商品",
-	"description": "新增或更新单品买赠活动商品信息【同城零售】",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "BuyGiftActivitySkuOperateRequest",
-			"description": "添加活动商品参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "sku_elements",
-					"type": "SkuActivityElementDto[]",
-					"description": "商品元素信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码，与商品条码必选其一，或者同时传入以商品条码为准"
 						},
 						{
-							"name": "limit",
-							"type": "LimitDto",
-							"description": "限购配置信息",
 							"subParams": [
 								{
 									"name": "total_limit_cnt",
@@ -47,12 +31,15 @@
 									"type": "Number",
 									"description": "赠品每人每日限量/店"
 								}
-							]
+							],
+							"name": "limit",
+							"type": "LimitDto",
+							"description": "限购配置信息"
 						},
 						{
 							"name": "gift_sku_code",
 							"type": "String",
-							"description": "赠品编码，不填默认赠品为商品本身"
+							"description": "赠品编码，不填默认赠品为商品本身，赠品条码，不填默认赠品为商品本身，若主品传入的是编码，则赠品需传入编码或者不传"
 						},
 						{
 							"name": "gift_num",
@@ -64,14 +51,44 @@
 							"type": "Number",
 							"description": "买N赠M的N参数，买多少件可赠",
 							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码，与商品编码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"name": "gift_barcode",
+							"type": "String",
+							"description": "赠品条码，不填默认赠品为商品本身，若主品传入的是条码，则赠品需传入条码或者不传"
+						},
+						{
+							"subParams": [
+								{
+									"name": "channel",
+									"type": "String",
+									"description": "渠道编码 枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达"
+								},
+								{
+									"name": "store_ids",
+									"type": "String[]",
+									"description": "渠道对应的门店id列表[\"store001\",\"store002\"]"
+								}
+							],
+							"name": "sku_channel_configs",
+							"type": "SkuChannelConfigDTO[]",
+							"description": "商品渠道配置信息"
 						}
-					]
+					],
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true
 				},
 				{
 					"name": "act_id",
 					"type": "Number",
-					"description": "操作活动的ID",
-					"required": true
+					"description": "操作活动的ID"
 				},
 				{
 					"name": "creator_id",
@@ -84,47 +101,55 @@
 					"type": "String",
 					"description": "操作人Name",
 					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部erp活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "BuyGiftActivitySkuOperateRequest",
+			"description": "添加活动商品参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "部分商品添加失败时会有错误信息，正常情况下无数据",
-					"required": true
+					"description": "部分商品添加失败时会有错误信息，正常情况下无数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "failed_sku_codes",
 					"type": "String[]",
-					"description": "部分失败的商品编码列表",
-					"required": true
+					"description": "部分失败的商品编码列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.buygift.activity.sku.add",
+	"apiChineseName": "添加单品买赠活动商品",
+	"description": "新增或更新单品买赠活动商品信息【同城零售】",
+	"id": 55919
 }

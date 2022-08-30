@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "mos_tenant",
+					"type": "String",
+					"description": "租户",
+					"required": true
+				},
+				{
+					"name": "sms_template_id",
+					"type": "String",
+					"description": "短信模板ID",
+					"required": true
+				},
+				{
+					"name": "relation_id",
+					"type": "String",
+					"description": "幂等ID防重试",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "当前租户短信使用场景",
+					"required": true
+				},
+				{
+					"name": "template_params_map",
+					"type": "String",
+					"description": "模板参数填充MAP",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "SmsSendMessageDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "taskId"
+		},
+		{
+			"name": "biz_err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_err_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.mos.tmc.sms.send",
+	"apiChineseName": "银泰TMC发送短信",
+	"description": "银泰TMC发送短信",
+	"id": 60339
+}

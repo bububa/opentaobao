@@ -1,8 +1,4 @@
 {
-	"id": 51579,
-	"name": "taobao.openmall.refund.message.get",
-	"apiChineseName": "openmall获取退款单留言",
-	"description": "openmall获取退款单留言",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -13,14 +9,12 @@
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "翻页页码",
-			"minValue": 1
+			"description": "翻页页码"
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "翻页大小",
-			"minValue": 1
+			"description": "翻页大小"
 		},
 		{
 			"name": "refund_id",
@@ -31,49 +25,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "results_list",
-			"type": "RefundMessage []",
-			"description": "留言列表",
 			"subParams": [
 				{
 					"name": "refund_message",
 					"type": "String",
-					"description": "退款留言",
-					"required": true
+					"description": "退款留言"
 				},
 				{
-					"name": "refund_message_pics",
-					"type": "RefundMessagePic[]",
-					"description": "退款单结构",
-					"required": true,
 					"subParams": [
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "退款单图片留言",
-							"required": true
+							"description": "退款单图片留言"
 						},
 						{
 							"name": "pic",
 							"type": "String",
-							"description": "退款单图片地址",
-							"required": true
+							"description": "退款单图片地址"
 						}
-					]
+					],
+					"name": "refund_message_pics",
+					"type": "RefundMessagePic[]",
+					"description": "退款单结构"
 				},
 				{
 					"name": "time",
 					"type": "Date",
-					"description": "留言时间",
-					"required": true
+					"description": "留言时间"
 				},
 				{
 					"name": "role",
 					"type": "Number",
-					"description": "操作角色ID，1（卖家主账户），2（卖家子账户），3（小二）、4（买家）、5（系统）、6（系统超时）、7（服务商）；openmall中提交的留言角色均为4买家身份",
-					"required": true
+					"description": "操作角色ID，1（卖家主账户），2（卖家子账户），3（小二）、4（买家）、5（系统）、6（系统超时）、7（服务商）；openmall中提交的留言角色均为4买家身份"
 				}
-			]
+			],
+			"name": "results_list",
+			"type": "RefundMessage []",
+			"description": "留言列表"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.message.get",
+	"apiChineseName": "openmall获取退款单留言",
+	"description": "openmall获取退款单留言",
+	"id": 51579
 }

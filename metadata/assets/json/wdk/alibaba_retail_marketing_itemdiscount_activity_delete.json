@@ -1,14 +1,6 @@
 {
-	"id": 50865,
-	"name": "alibaba.retail.marketing.itemdiscount.activity.delete",
-	"apiChineseName": "删除单品特价活动【同城零售】",
-	"description": "同城零售单品特价活动删除",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemDiscountActivityOperateRequest",
-			"description": "删除活动参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "creator_id",
@@ -25,43 +17,51 @@
 				{
 					"name": "act_id",
 					"type": "Number",
-					"description": "活动ID",
-					"required": true
+					"description": "活动ID"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "erp外部活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemDiscountActivityOperateRequest",
+			"description": "删除活动参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "活动ID",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "活动ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "操作是否成功",
-					"required": true
+					"description": "操作是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itemdiscount.activity.delete",
+	"apiChineseName": "删除单品特价活动【同城零售】",
+	"description": "同城零售单品特价活动删除",
+	"id": 50865
 }

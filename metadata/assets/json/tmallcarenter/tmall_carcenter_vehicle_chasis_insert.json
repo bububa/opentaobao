@@ -1,13 +1,6 @@
 {
-	"id": 31209,
-	"name": "tmall.carcenter.vehicle.chasis.insert",
-	"apiChineseName": "EPC车型底盘压缩库新增接口",
-	"description": "EPC车型底盘压缩库新增接口",
 	"requestParams": [
 		{
-			"name": "dto",
-			"type": "ChasisVehicleInfoOriginalDto",
-			"description": "底盘压缩库入参",
 			"subParams": [
 				{
 					"name": "replacement",
@@ -84,52 +77,53 @@
 					"type": "String",
 					"description": "车系"
 				}
-			]
+			],
+			"name": "dto",
+			"type": "ChasisVehicleInfoOriginalDto",
+			"description": "底盘压缩库入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "gmtCurrentTime",
-					"required": true
+					"description": "gmtCurrentTime"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "object",
-					"type": "Json",
-					"description": "object",
-					"required": true
+					"type": "String",
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "costTime",
-					"required": true
+					"description": "costTime"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.carcenter.vehicle.chasis.insert",
+	"apiChineseName": "EPC车型底盘压缩库新增接口",
+	"description": "EPC车型底盘压缩库新增接口",
+	"id": 31209
 }

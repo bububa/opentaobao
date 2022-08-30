@@ -1,8 +1,4 @@
 {
-	"id": 27610,
-	"name": "taobao.weike.eservice.order.get",
-	"apiChineseName": "客服外包订单查询",
-	"description": "用于客服外包中服务商查询订单列表",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -48,41 +44,40 @@
 			"description": "记录总记录数"
 		},
 		{
-			"name": "order_list",
-			"type": "Order []",
-			"description": "订单列表",
 			"subParams": [
 				{
 					"name": "order_id",
 					"type": "Number",
-					"description": "订单ID",
-					"required": true
+					"description": "订单ID"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "商家昵称",
-					"required": true
+					"description": "商家昵称"
 				},
 				{
 					"name": "scheduling_state",
 					"type": "Boolean",
-					"description": "订单是否可以排班",
-					"required": true
+					"description": "订单是否可以排班"
 				},
 				{
 					"name": "start_date",
 					"type": "Date",
-					"description": "起始日期（订单未付款前可能为空）",
-					"required": true
+					"description": "起始日期（订单未付款前可能为空）"
 				},
 				{
 					"name": "end_date",
 					"type": "Date",
-					"description": "结束日期（订单未付款前可能为空）",
-					"required": true
+					"description": "结束日期（订单未付款前可能为空）"
 				}
-			]
+			],
+			"name": "order_list",
+			"type": "Order []",
+			"description": "订单列表"
 		}
-	]
+	],
+	"name": "taobao.weike.eservice.order.get",
+	"apiChineseName": "客服外包订单查询",
+	"description": "用于客服外包中服务商查询订单列表",
+	"id": 27610
 }

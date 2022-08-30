@@ -1,13 +1,6 @@
 {
-	"id": 33912,
-	"name": "alibaba.wdk.trade.order.cancel",
-	"apiChineseName": "外部交易订单取消接口",
-	"description": "通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理",
 	"requestParams": [
 		{
-			"name": "trade",
-			"type": "TradeOrder",
-			"description": "待取消的订单",
 			"subParams": [
 				{
 					"name": "shop_id",
@@ -26,14 +19,14 @@
 					"type": "String[]",
 					"description": "业务子订单标识(允许为null)"
 				}
-			]
+			],
+			"name": "trade",
+			"type": "TradeOrder",
+			"description": "待取消的订单"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderResult",
-			"description": "执行结果",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -54,10 +47,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "OrderObject",
-					"description": "取消的订单",
-					"required": true,
 					"subParams": [
 						{
 							"name": "discount_fee",
@@ -102,10 +91,6 @@
 							"required": true
 						},
 						{
-							"name": "deliverer",
-							"type": "OrderDeliverer",
-							"description": "配送人员信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "deliverer_code",
@@ -185,7 +170,11 @@
 									"description": "签收备注",
 									"required": true
 								}
-							]
+							],
+							"name": "deliverer",
+							"type": "OrderDeliverer",
+							"description": "配送人员信息",
+							"required": true
 						},
 						{
 							"name": "pay_fee",
@@ -212,10 +201,6 @@
 							"required": true
 						},
 						{
-							"name": "delivery",
-							"type": "OrderDelivery",
-							"description": "收货人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "delivery_fee",
@@ -223,7 +208,11 @@
 									"description": "配送费用金额",
 									"required": true
 								}
-							]
+							],
+							"name": "delivery",
+							"type": "OrderDelivery",
+							"description": "收货人信息",
+							"required": true
 						},
 						{
 							"name": "merchant_code",
@@ -232,10 +221,6 @@
 							"required": true
 						},
 						{
-							"name": "sub_orders",
-							"type": "Suborders[]",
-							"description": "子订单",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sale_unit",
@@ -327,7 +312,11 @@
 									"description": "取消结果: SUCCESS-已拦截，FAILURE-未拦截，SYSTEM_ERROR-系统异常，PARAM_ERROR-参数错误，BUSINESS_ERROR-业务异常",
 									"required": true
 								}
-							]
+							],
+							"name": "sub_orders",
+							"type": "Suborders[]",
+							"description": "子订单",
+							"required": true
 						},
 						{
 							"name": "out_order_id",
@@ -335,9 +324,20 @@
 							"description": "业务订单标识",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "OrderObject",
+					"description": "取消的订单",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderResult",
+			"description": "执行结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.trade.order.cancel",
+	"apiChineseName": "外部交易订单取消接口",
+	"description": "通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理",
+	"id": 33912
 }

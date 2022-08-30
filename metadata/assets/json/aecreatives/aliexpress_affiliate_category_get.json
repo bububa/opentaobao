@@ -1,8 +1,4 @@
 {
-	"id": 45801,
-	"name": "aliexpress.affiliate.category.get",
-	"apiChineseName": "AE流量推广类目信息获取API",
-	"description": "获取AE流量推广类目的API",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -29,16 +22,8 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "Result",
-					"description": "返回记录结果列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "categories",
-							"type": "Category[]",
-							"description": "类目信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "category_id",
@@ -58,7 +43,11 @@
 									"description": "父类目ID",
 									"required": true
 								}
-							]
+							],
+							"name": "categories",
+							"type": "Category[]",
+							"description": "类目信息",
+							"required": true
 						},
 						{
 							"name": "total_result_count",
@@ -66,9 +55,20 @@
 							"description": "返回结果数量",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "Result",
+					"description": "返回记录结果列表",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.category.get",
+	"apiChineseName": "AE流量推广类目信息获取API",
+	"description": "获取AE流量推广类目的API",
+	"id": 45801
 }

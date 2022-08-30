@@ -1,44 +1,44 @@
 {
-	"id": 23571,
-	"name": "taobao.simba.insight.catsforecastnew.get",
-	"apiChineseName": "获取词的相关类目预测数据",
-	"description": "根据给定的词，预测这些词的相关类目",
 	"requestParams": [
 		{
 			"name": "bidword_list",
 			"type": "String[]",
 			"description": "需要查询的词列表",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "category_forecast_list",
-			"type": "InsightCategoryForcastDTO []",
-			"description": "词的相关类目列表",
 			"subParams": [
-				{
-					"name": "cat_path_id",
-					"type": "String",
-					"description": "表示该类目的所有父级类目，按层级顺序排列，层级越高的在前面，不同的层级之间用空格分隔"
-				},
 				{
 					"name": "cat_path_name",
 					"type": "String",
 					"description": "表示类目的所有父级类目的名称，不同层级之间用\u0002\u0002（ascii码为2的字符）分隔开"
 				},
 				{
-					"name": "bidword",
-					"type": "String",
-					"description": "查询词"
-				},
-				{
 					"name": "score",
 					"type": "String",
 					"description": "表示词与该类目的相关度，值越大表示越相关"
+				},
+				{
+					"name": "cat_path_id",
+					"type": "String",
+					"description": "表示该类目的所有父级类目，按层级顺序排列，层级越高的在前面，不同的层级之间用空格分隔"
+				},
+				{
+					"name": "bidword",
+					"type": "String",
+					"description": "查询词"
 				}
-			]
+			],
+			"name": "category_forecast_list",
+			"type": "InsightCategoryForcastDTO []",
+			"description": "词的相关类目列表"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.catsforecastnew.get",
+	"apiChineseName": "获取词的相关类目预测数据",
+	"description": "根据给定的词，预测这些词的相关类目",
+	"id": 23571
 }

@@ -16,6 +16,8 @@ type GlobalAeopAeProductSku struct {
 	SkuPrice string `json:"sku_price,omitempty" xml:"sku_price,omitempty"`
 	// SKU discount price, also called sale price, value range: 0.01 - 100000.
 	SkuDiscountPrice string `json:"sku_discount_price,omitempty" xml:"sku_discount_price,omitempty"`
+	// EAN, or EAN13, stands for International Article Number (originally European Article Number). It is an extension of the UPC codes and you'll find them as barcodes on most everyday products. Sometimes the barcode is also called GTIN or GTIN13 (Global Trade Identifier)
+	EanCode string `json:"ean_code,omitempty" xml:"ean_code,omitempty"`
 	// Ranges from 1 to 999999 for one sku. The total stock of the entire product within multiple skus should also be in the range of 1 to 999999.
 	IpmSkuStock int64 `json:"ipm_sku_stock,omitempty" xml:"ipm_sku_stock,omitempty"`
 	// True means stock available for the sku, false means out of stock. The stock of at least one should be available.

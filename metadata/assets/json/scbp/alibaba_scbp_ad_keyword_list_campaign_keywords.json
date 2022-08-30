@@ -1,9 +1,25 @@
 {
-	"id": 55191,
-	"name": "alibaba.scbp.ad.keyword.list.campaign.keywords",
-	"apiChineseName": "获取计划关键词",
-	"description": "获取计划关键词",
 	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
 		{
 			"name": "campaign_id",
 			"type": "Number",
@@ -11,10 +27,6 @@
 			"required": true
 		},
 		{
-			"name": "campaign_keyword_query",
-			"type": "CampaignKeywordQuery",
-			"description": "搜索条件",
-			"required": true,
 			"subParams": [
 				{
 					"name": "type",
@@ -66,238 +78,193 @@
 					"type": "Number",
 					"description": "状态"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id",
-					"required": true
-				}
-			]
+			],
+			"name": "campaign_keyword_query",
+			"type": "CampaignKeywordQuery",
+			"description": "搜索条件",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "KeywordDto []",
-			"description": "返回数据集合",
 			"subParams": [
 				{
-					"name": "effect",
-					"type": "KeywordEffectDto",
-					"description": "效果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "keyword",
 							"type": "String",
-							"description": "关键词",
-							"required": true
+							"description": "关键词"
 						},
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "impr",
 							"type": "Number",
-							"description": "曝光",
-							"required": true
+							"description": "曝光"
 						},
 						{
 							"name": "click",
 							"type": "Number",
-							"description": "点击",
-							"required": true
+							"description": "点击"
 						},
 						{
 							"name": "cost",
 							"type": "Number",
-							"description": "消耗",
-							"required": true
+							"description": "消耗"
 						},
 						{
 							"name": "online_min",
 							"type": "Number",
-							"description": "推广时长",
-							"required": true
+							"description": "推广时长"
 						}
-					]
+					],
+					"name": "effect",
+					"type": "KeywordEffectDto",
+					"description": "效果数据"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "主键",
-					"required": true
+					"description": "主键"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modify",
 					"type": "Date",
-					"description": "更新时间",
-					"required": true
+					"description": "更新时间"
 				},
 				{
 					"name": "product_id",
 					"type": "Number",
-					"description": "产品id",
-					"required": true
+					"description": "产品id"
 				},
 				{
 					"name": "campaign_id",
 					"type": "Number",
-					"description": "计划id",
-					"required": true
+					"description": "计划id"
 				},
 				{
 					"name": "word",
 					"type": "String",
-					"description": "词",
-					"required": true
+					"description": "词"
 				},
 				{
 					"name": "norm_word",
 					"type": "String",
-					"description": "普通词",
-					"required": true
+					"description": "普通词"
 				},
 				{
 					"name": "online_status",
 					"type": "Number",
-					"description": "状态",
-					"required": true
+					"description": "状态"
 				},
 				{
 					"name": "bid_price",
 					"type": "String",
-					"description": "出价分",
-					"required": true
+					"description": "出价分"
 				},
 				{
 					"name": "avg_price",
 					"type": "String",
-					"description": "平均出价",
-					"required": true
+					"description": "平均出价"
 				},
 				{
 					"name": "sug_price",
 					"type": "String",
-					"description": "建议出价",
-					"required": true
+					"description": "建议出价"
 				},
 				{
 					"name": "base_price",
 					"type": "String",
-					"description": "低价",
-					"required": true
+					"description": "低价"
 				},
 				{
 					"name": "qs_star",
 					"type": "Number",
-					"description": "星级",
-					"required": true
+					"description": "星级"
 				},
 				{
 					"name": "best_match_product",
 					"type": "Number",
-					"description": "最优商品id",
-					"required": true
+					"description": "最优商品id"
 				},
 				{
 					"name": "relative_products_count",
 					"type": "Number",
-					"description": "相关性产品数量",
-					"required": true
+					"description": "相关性产品数量"
 				},
 				{
 					"name": "search_count",
 					"type": "Number",
-					"description": "搜索数量",
-					"required": true
+					"description": "搜索数量"
 				},
 				{
 					"name": "buy_count",
 					"type": "Number",
-					"description": "购买数量",
-					"required": true
+					"description": "购买数量"
 				},
 				{
 					"name": "properties",
-					"type": "Json",
-					"description": "配置信息",
-					"required": true
+					"type": "String",
+					"description": "配置信息"
 				},
 				{
-					"name": "bid_strategy",
-					"type": "BidStrategyDto",
-					"description": "战略数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "String",
-							"description": "主键",
-							"required": true
+							"description": "主键"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "topn",
 							"type": "Number",
-							"description": "目标排名，前N名",
-							"required": true
+							"description": "目标排名，前N名"
 						},
 						{
 							"name": "duration",
 							"type": "Number",
-							"description": "出价间隔分钟为单位的数值型",
-							"required": true
+							"description": "出价间隔分钟为单位的数值型"
 						},
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品",
-							"required": true
+							"description": "产品"
 						},
 						{
 							"name": "discount",
 							"type": "Number",
-							"description": "溢价比例",
-							"required": true
+							"description": "溢价比例"
 						}
-					]
+					],
+					"name": "bid_strategy",
+					"type": "BidStrategyDto",
+					"description": "战略数据"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "KeywordDto []",
+			"description": "返回数据集合"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.list.campaign.keywords",
+	"apiChineseName": "获取计划关键词",
+	"description": "获取计划关键词",
+	"id": 55191
 }

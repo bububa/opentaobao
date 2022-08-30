@@ -12,12 +12,12 @@ import (
 // 生服团购下单预约后，用户改期/取消，外调ISV。ISV人工确认后调接口同意或驳回
 type TaobaoLifeReservationItemOrderConfirmAPIRequest struct {
 	model.Params
-	// 淘宝主单号
-	_tradeNo string
-	// 凭证ID
+	// 凭证ID。与预约单号二选一，优先级低
 	_ticketId string
-	// 审核类型，PASS-通过；REJECT-驳回
+	// 审核结果。PASS：通过；REJECT：驳回
 	_optType string
+	// 预约单号。与凭证ID二选一，优先级高
+	_reservationOrderId string
 }
 
 // NewTaobaoLifeReservationItemOrderConfirmRequest 初始化TaobaoLifeReservationItemOrderConfirmAPIRequest对象
@@ -41,21 +41,8 @@ func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetTradeNo is TradeNo Setter
-// 淘宝主单号
-func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTradeNo(_tradeNo string) error {
-	r._tradeNo = _tradeNo
-	r.Set("trade_no", _tradeNo)
-	return nil
-}
-
-// GetTradeNo TradeNo Getter
-func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetTradeNo() string {
-	return r._tradeNo
-}
-
 // SetTicketId is TicketId Setter
-// 凭证ID
+// 凭证ID。与预约单号二选一，优先级低
 func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
 	r.Set("ticket_id", _ticketId)
@@ -68,7 +55,7 @@ func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetTicketId() string {
 }
 
 // SetOptType is OptType Setter
-// 审核类型，PASS-通过；REJECT-驳回
+// 审核结果。PASS：通过；REJECT：驳回
 func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetOptType(_optType string) error {
 	r._optType = _optType
 	r.Set("opt_type", _optType)
@@ -78,4 +65,17 @@ func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetOptType(_optType st
 // GetOptType OptType Getter
 func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetOptType() string {
 	return r._optType
+}
+
+// SetReservationOrderId is ReservationOrderId Setter
+// 预约单号。与凭证ID二选一，优先级高
+func (r *TaobaoLifeReservationItemOrderConfirmAPIRequest) SetReservationOrderId(_reservationOrderId string) error {
+	r._reservationOrderId = _reservationOrderId
+	r.Set("reservation_order_id", _reservationOrderId)
+	return nil
+}
+
+// GetReservationOrderId ReservationOrderId Getter
+func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetReservationOrderId() string {
+	return r._reservationOrderId
 }

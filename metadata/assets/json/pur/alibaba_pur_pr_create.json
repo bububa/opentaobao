@@ -1,14 +1,6 @@
 {
-	"id": 41406,
-	"name": "alibaba.pur.pr.create",
-	"apiChineseName": "下pr单",
-	"description": "下pr单",
 	"requestParams": [
 		{
-			"name": "pur_req",
-			"type": "MallReceivePrRequest",
-			"description": "订单信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "pur_req_id",
@@ -28,10 +20,6 @@
 					"required": true
 				},
 				{
-					"name": "order_items",
-					"type": "OrderItem[]",
-					"description": "订单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "currency_code",
@@ -42,7 +30,7 @@
 						{
 							"name": "tax_rate",
 							"type": "String",
-							"description": "税率",
+							"description": "税率，如13%传13",
 							"required": true
 						},
 						{
@@ -107,12 +95,13 @@
 							"description": "商品描述",
 							"required": true
 						}
-					]
+					],
+					"name": "order_items",
+					"type": "OrderItem[]",
+					"description": "订单详情",
+					"required": true
 				},
 				{
-					"name": "mall_files",
-					"type": "MallFile[]",
-					"description": "附件信息",
 					"subParams": [
 						{
 							"name": "file_md5",
@@ -129,61 +118,66 @@
 							"type": "String",
 							"description": "附件URL"
 						}
-					]
+					],
+					"name": "mall_files",
+					"type": "MallFile[]",
+					"description": "附件信息"
 				},
 				{
 					"name": "out_pur_req_id",
 					"type": "String",
 					"description": "外界商城申请标识"
 				}
-			]
+			],
+			"name": "pur_req",
+			"type": "MallReceivePrRequest",
+			"description": "订单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MallReceivePrResponse",
-			"description": "接口返回对象",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "MallReceivePrResponseData",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pur_req_id",
 							"type": "String",
-							"description": "采购商城申请单ID",
-							"required": true
+							"description": "采购商城申请单ID"
 						},
 						{
 							"name": "redirect_url",
 							"type": "String",
-							"description": "下单成功后跳转地址",
-							"required": true
+							"description": "下单成功后跳转地址"
 						}
-					]
+					],
+					"name": "data",
+					"type": "MallReceivePrResponseData",
+					"description": "返回数据"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回标识",
-					"required": true
+					"description": "返回标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MallReceivePrResponse",
+			"description": "接口返回对象"
 		}
-	]
+	],
+	"name": "alibaba.pur.pr.create",
+	"apiChineseName": "下pr单",
+	"description": "下pr单",
+	"id": 41406
 }

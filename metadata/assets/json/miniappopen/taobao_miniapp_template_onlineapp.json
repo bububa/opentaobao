@@ -1,15 +1,11 @@
 {
-	"id": 47754,
-	"name": "taobao.miniapp.template.onlineapp",
-	"apiChineseName": "上线实例化应用",
-	"description": "将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "app_id",
@@ -38,9 +34,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "online_results",
-			"type": "MiniappInstanceAppOnlineDto []",
-			"description": "分端上线结果",
 			"subParams": [
 				{
 					"name": "client",
@@ -60,12 +53,12 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "online_results",
+			"type": "MiniappInstanceAppOnlineDto []",
+			"description": "分端上线结果"
 		},
 		{
-			"name": "app_info",
-			"type": "MiniAppEntityTemplateDto",
-			"description": "基本信息",
 			"subParams": [
 				{
 					"name": "app_description",
@@ -103,7 +96,14 @@
 					"description": "线上正式版本的链接，所有消费者可访问。",
 					"required": true
 				}
-			]
+			],
+			"name": "app_info",
+			"type": "MiniAppEntityTemplateDto",
+			"description": "基本信息"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.onlineapp",
+	"apiChineseName": "上线实例化应用",
+	"description": "将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。",
+	"id": 47754
 }

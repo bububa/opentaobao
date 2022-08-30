@@ -1,8 +1,4 @@
 {
-	"id": 56295,
-	"name": "alitrip.travel.elements.search",
-	"apiChineseName": "商家元素搜索",
-	"description": "提供商家维护的景点、酒店、餐饮等元素搜索",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -31,67 +27,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResourceData",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "ResourceDataRecord[]",
-					"description": "资源列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "mapping_id",
 							"type": "Number",
-							"description": "映射id",
-							"required": true
+							"description": "映射id"
 						},
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "项目id",
-							"required": true
+							"description": "项目id"
 						},
 						{
 							"name": "num",
 							"type": "Number",
-							"description": "次数",
-							"required": true
+							"description": "次数"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "资源类型",
-							"required": true
+							"description": "资源类型"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "资源id",
-							"required": true
+							"description": "资源id"
 						},
 						{
 							"name": "value_map",
-							"type": "Json",
-							"description": "扩展属性，包括城市名称，外部编码等",
-							"required": true
+							"type": "String",
+							"description": "扩展属性，包括城市名称，外部编码等"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "ResourceDataRecord[]",
+					"description": "资源列表"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "资源名称",
-					"required": true
+					"description": "资源名称"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "资源类型",
-					"required": true
+					"description": "资源类型"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResourceData",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.travel.elements.search",
+	"apiChineseName": "商家元素搜索",
+	"description": "提供商家维护的景点、酒店、餐饮等元素搜索",
+	"id": 56295
 }

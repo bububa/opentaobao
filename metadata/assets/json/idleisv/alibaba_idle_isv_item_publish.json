@@ -1,14 +1,6 @@
 {
-	"id": 47401,
-	"name": "alibaba.idle.isv.item.publish",
-	"apiChineseName": "服务商闲鱼商品发布",
-	"description": "服务商ISV闲鱼商品发布",
 	"requestParams": [
 		{
-			"name": "item_param",
-			"type": "IdleItemApiDo",
-			"description": "商品数据参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "inspect_report",
@@ -40,7 +32,7 @@
 				{
 					"name": "title",
 					"type": "String",
-					"description": "商品标题(长度\u003c=20)",
+					"description": "商品标题(长度\u003c=30)",
 					"required": true
 				},
 				{
@@ -79,13 +71,28 @@
 				},
 				{
 					"name": "latitude",
-					"type": "String",
+					"type": "BigDecimal",
 					"description": "纬度"
 				},
 				{
 					"name": "longitude",
-					"type": "String",
+					"type": "BigDecimal",
 					"description": "经度"
+				},
+				{
+					"name": "item_biz_type",
+					"type": "Number",
+					"description": "商品业务类型 0 已验货不入仓，1 已验货入仓，2 普通商品"
+				},
+				{
+					"name": "ware_house_city",
+					"type": "String",
+					"description": "[废弃中]已验货入仓城市(此字段后续会废弃；如需使用参见: inspected_data.ware_house_city)"
+				},
+				{
+					"name": "ware_house_time",
+					"type": "Number",
+					"description": "[废弃中]已验货入仓时间(此字段后续会废弃；如需使用参见: inspected_data.ware_house_time)"
 				},
 				{
 					"name": "channel_cat_id",
@@ -93,9 +100,6 @@
 					"description": "渠道类目id，必填，不可修改"
 				},
 				{
-					"name": "pv_list",
-					"type": "IdleNewPubValueDo[]",
-					"description": "属性的键值对信息，包括品牌、型号、内存大小（手机）等",
 					"subParams": [
 						{
 							"name": "property_id",
@@ -122,44 +126,29 @@
 							"type": "String",
 							"description": "值名称"
 						}
-					]
+					],
+					"name": "pv_list",
+					"type": "IdleNewPubValueDo[]",
+					"description": "属性的键值对信息，包括品牌、型号、内存大小（手机）等"
 				},
 				{
-					"name": "ware_house_city",
-					"type": "String",
-					"description": "[废弃中]已验货入仓城市(此字段后续会废弃；如需使用参见: inspected_data.ware_house_city)"
-				},
-				{
-					"name": "ware_house_time",
-					"type": "Number",
-					"description": "[废弃中]已验货入仓时间(此字段后续会废弃；如需使用参见: inspected_data.ware_house_time)"
-				},
-				{
-					"name": "item_biz_type",
-					"type": "Number",
-					"description": "商品业务类型 0 已验货不入仓，1 已验货入仓，2 普通商品"
-				},
-				{
-					"name": "item_sku_list",
-					"type": "IdleItemApiSkuDo[]",
-					"description": "sku列表",
 					"subParams": [
 						{
-							"name": "property_list",
-							"type": "IdleItemApiPvPairDo[]",
-							"description": "销售属性列表(最多2个销售属性,每一个的属性值个数为2～10)",
 							"subParams": [
 								{
 									"name": "value_text",
 									"type": "String",
-									"description": "属性值文本"
+									"description": "属性值文本(长度\u003c=30)"
 								},
 								{
 									"name": "property_text",
 									"type": "String",
-									"description": "属性名文本"
+									"description": "属性名文本(长度\u003c=30)"
 								}
-							]
+							],
+							"name": "property_list",
+							"type": "IdleItemApiPvPairDo[]",
+							"description": "销售属性列表(最多2个销售属性,每一个的属性值个数为2～10)"
 						},
 						{
 							"name": "quantity",
@@ -170,13 +159,18 @@
 							"name": "price",
 							"type": "Number",
 							"description": "价格，单位分"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部商家标识(商品编码等)(长度\u003c=30)"
 						}
-					]
+					],
+					"name": "item_sku_list",
+					"type": "IdleItemApiSkuDo[]",
+					"description": "sku列表"
 				},
 				{
-					"name": "inspected_data",
-					"type": "IdleItemApiInspectedDo",
-					"description": "已验货业务数据(不可修改)",
 					"subParams": [
 						{
 							"name": "inspect_report",
@@ -193,12 +187,12 @@
 							"type": "Number",
 							"description": "已验货入仓时间，入仓模式必填，时间戳，单位秒，不可修改"
 						}
-					]
+					],
+					"name": "inspected_data",
+					"type": "IdleItemApiInspectedDo",
+					"description": "已验货业务数据(不可修改)"
 				},
 				{
-					"name": "book_data",
-					"type": "IdleItemApiBookDo",
-					"description": "图书业务数据",
 					"subParams": [
 						{
 							"name": "barcode",
@@ -210,55 +204,113 @@
 							"type": "String",
 							"description": "图书ISBN码对应的书名等信息"
 						}
-					]
+					],
+					"name": "book_data",
+					"type": "IdleItemApiBookDo",
+					"description": "图书业务数据"
 				},
 				{
 					"name": "quantity",
 					"type": "Number",
 					"description": "宝贝库存数量设置"
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "淘宝卖家后台的运费模板id"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部商家标识(商品编码等)(长度\u003c=30)"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bid_start_time",
+							"type": "Number",
+							"description": "拍卖起拍时间戳，单位毫秒"
+						},
+						{
+							"name": "bid_end_time",
+							"type": "Number",
+							"description": "拍卖结束时间戳，单位毫秒"
+						},
+						{
+							"name": "bid_bail",
+							"type": "Number",
+							"description": "保证金金额，单位分"
+						},
+						{
+							"name": "bid_step",
+							"type": "Number",
+							"description": "出价幅度，单位分；起拍价使用reserve_price"
+						}
+					],
+					"name": "bid_data",
+					"type": "IdleItemApiBidDo",
+					"description": "宝贝拍卖信息"
+				},
+				{
+					"name": "auction_type",
+					"type": "String",
+					"description": "商品类型，a: 拍卖， b：一口价(普通商品)"
+				},
+				{
+					"name": "white_bg_imgs",
+					"type": "Number[]",
+					"description": "商品白底图列表(目前暂时只支持一张)，使用图片上传接口返回的文件Id"
+				},
+				{
+					"name": "sp_guarantee",
+					"type": "String",
+					"description": "商品服务标签，用逗号分隔 || 1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证"
 				}
-			]
+			],
+			"name": "item_param",
+			"type": "IdleItemApiDo",
+			"description": "商品数据参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "IdleResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "IdleItemApiDo",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品Id（long型）",
-							"required": true
+							"description": "商品Id（long型）"
 						}
-					]
+					],
+					"name": "data",
+					"type": "IdleItemApiDo",
+					"description": "返回数据"
 				},
 				{
-					"name": "err_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "IdleResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.idle.isv.item.publish",
+	"apiChineseName": "服务商闲鱼商品发布",
+	"description": "服务商ISV闲鱼商品发布",
+	"id": 47401
 }

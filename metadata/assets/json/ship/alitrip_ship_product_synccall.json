@@ -1,23 +1,23 @@
 {
-	"id": 48174,
-	"name": "alitrip.ship.product.synccall",
-	"apiChineseName": "全量同步回调",
-	"description": "全量同步接口",
 	"responseParams": [
-		{
-			"name": "result_msg",
-			"type": "String",
-			"description": "错误描述"
-		},
 		{
 			"name": "result_code",
 			"type": "String",
 			"description": "错误码"
 		},
 		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "成功"
 		}
-	]
+	],
+	"name": "alitrip.ship.product.synccall",
+	"apiChineseName": "全量同步回调",
+	"description": "全量同步接口",
+	"id": 48174
 }

@@ -1,8 +1,4 @@
 {
-	"id": 53389,
-	"name": "alibaba.tmallgenie.scp.plan.current.po.get",
-	"apiChineseName": "11-同步本周的po单（从W-1周到W+4周）",
-	"description": "11-同步本周的po单（从W-1周到W+4周）",
 	"requestParams": [
 		{
 			"name": "request_extend_json",
@@ -12,97 +8,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果msg",
-					"required": true
+					"description": "结果msg"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果code",
-					"required": true
+					"description": "结果code"
 				},
 				{
-					"name": "data_list",
-					"type": "IbpPurchaseOrderDto[]",
-					"description": "返回对象封装",
-					"required": true,
 					"subParams": [
 						{
 							"name": "week_n_o",
 							"type": "String",
-							"description": "周",
-							"required": true
+							"description": "周"
 						},
 						{
 							"name": "production_quantity",
 							"type": "Number",
-							"description": "生产实绩数量",
-							"required": true
+							"description": "生产实绩数量"
 						},
 						{
 							"name": "urgent_plan_quantity",
 							"type": "Number",
-							"description": "紧急的计划数量",
-							"required": true
+							"description": "紧急的计划数量"
 						},
 						{
 							"name": "normal_plan_quantity",
 							"type": "Number",
-							"description": "普通的计划数量",
-							"required": true
+							"description": "普通的计划数量"
 						},
 						{
 							"name": "plan_quantity",
 							"type": "Number",
-							"description": "计划数量",
-							"required": true
+							"description": "计划数量"
 						},
 						{
 							"name": "materiel_code",
 							"type": "String",
-							"description": "物料编码",
-							"required": true
+							"description": "物料编码"
 						},
 						{
 							"name": "location_code",
 							"type": "String",
-							"description": "地点编码",
-							"required": true
+							"description": "地点编码"
 						},
 						{
 							"name": "extend_json",
 							"type": "String",
-							"description": "扩展参数",
-							"required": true
+							"description": "扩展参数"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "租户",
-							"required": true
+							"description": "租户"
 						},
 						{
 							"name": "key_figure_date",
 							"type": "Date",
-							"description": "关键日期值",
-							"required": true
+							"description": "关键日期值"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "IbpPurchaseOrderDto[]",
+					"description": "返回对象封装"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.current.po.get",
+	"apiChineseName": "11-同步本周的po单（从W-1周到W+4周）",
+	"description": "11-同步本周的po单（从W-1周到W+4周）",
+	"id": 53389
 }

@@ -1,14 +1,6 @@
 {
-	"id": 38142,
-	"name": "alibaba.damai.maitix.order.cancel",
-	"apiChineseName": "大麦-库存释放",
-	"description": "库存释放",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "MoaUnlockTicketParam",
-			"description": "库存释放入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -16,48 +8,51 @@
 					"description": "大麦订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "MoaUnlockTicketParam",
+			"description": "库存释放入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MxResult",
-			"description": "返回结果集",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "model",
-					"type": "UnLockTicketResponse",
-					"description": "数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						}
-					]
+					],
+					"name": "model",
+					"type": "UnLockTicketResponse",
+					"description": "数据对象"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "结果code，0代表成功，负数代表异常情况",
-					"required": true
+					"description": "结果code，0代表成功，负数代表异常情况"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功，true:成功，false:失败",
-					"required": true
+					"description": "是否成功，true:成功，false:失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MxResult",
+			"description": "返回结果集"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.order.cancel",
+	"apiChineseName": "大麦-库存释放",
+	"description": "库存释放",
+	"id": 38142
 }

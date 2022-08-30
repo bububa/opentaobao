@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "xxxx",
+					"required": true
+				}
+			],
+			"name": "gamepad_get_request",
+			"type": "GamepadGetRequest",
+			"description": "获取手柄请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "config",
+									"type": "String",
+									"description": "手柄配置"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "配置名称"
+								},
+								{
+									"name": "priority",
+									"type": "Number",
+									"description": "优先级"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "手柄ID"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "手柄类型"
+								}
+							],
+							"name": "virtual_gamepad_list",
+							"type": "VirtualGamepadList[]",
+							"description": "虚拟手柄样例"
+						}
+					],
+					"name": "data",
+					"type": "GamepadGetResponse",
+					"description": "返回数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果对象"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.gamepad.get",
+	"apiChineseName": "获取虚拟手柄配置",
+	"description": "获取虚拟手柄配置",
+	"id": 63173
+}

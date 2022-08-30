@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录标识"
+		},
+		{
+			"name": "user_site_code",
+			"type": "Number",
+			"description": "用户来源"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "popup_exit_text",
+							"type": "String",
+							"description": "抽奖放弃动作按钮文本"
+						},
+						{
+							"name": "popup_do_text",
+							"type": "String",
+							"description": "抽奖动作按钮文本"
+						},
+						{
+							"name": "popup_type",
+							"type": "Number",
+							"description": "抽奖类型"
+						},
+						{
+							"name": "popup_sub_text",
+							"type": "String",
+							"description": "抽奖副标题"
+						},
+						{
+							"name": "popup_text",
+							"type": "String",
+							"description": "抽奖标题"
+						},
+						{
+							"name": "popup_title",
+							"type": "String",
+							"description": "抽奖弹窗标题"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "抽奖弹窗文本"
+						},
+						{
+							"name": "top_title",
+							"type": "String",
+							"description": "抽奖弹窗头部标题"
+						},
+						{
+							"name": "offer_id",
+							"type": "String",
+							"description": "活动ID"
+						}
+					],
+					"name": "content",
+					"type": "ActivityDrawPopupVo",
+					"description": "首页抽奖弹窗数据"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.popup.query",
+	"apiChineseName": "星河-获取雅高小程序营销抽奖首页弹窗",
+	"description": "获取雅高微信小程序，营销抽奖首页弹窗数据。",
+	"id": 57068
+}

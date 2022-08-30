@@ -1,12 +1,6 @@
 {
-	"id": 55142,
-	"name": "taobao.qimen.receiverinfo.query",
-	"apiChineseName": "OAID 收件人信息解密接口",
-	"description": "WMS 调用该接口，通过 OAID 查询解密后的收件人信息",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "oaid",
@@ -23,14 +17,24 @@
 					"name": "ownerCode",
 					"type": "String",
 					"description": "货主ID"
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "使用场景。1001，顺丰电子面单发货；1002，4通一达电子面单发货；1003，EMS电子面单发货；1004，其他电子面单发货；2001，客户售后服务"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -63,10 +67,6 @@
 					"required": true
 				},
 				{
-					"name": "receiverInfo",
-					"type": "ReceiverInfo",
-					"description": "收货人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "oaid",
@@ -109,10 +109,38 @@
 							"type": "String",
 							"description": "详细地址, string (200) , 必填",
 							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收件人所在城市",
+							"required": true
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "收件人所在区",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收件人所在街道",
+							"required": true
 						}
-					]
+					],
+					"name": "receiverInfo",
+					"type": "ReceiverInfo",
+					"description": "收货人信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.receiverinfo.query",
+	"apiChineseName": "OAID 收件人信息解密接口",
+	"description": "WMS 调用该接口，通过 OAID 查询解密后的收件人信息",
+	"id": 55142
 }

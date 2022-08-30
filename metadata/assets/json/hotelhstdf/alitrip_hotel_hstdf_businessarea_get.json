@@ -1,13 +1,6 @@
 {
-	"id": 44900,
-	"name": "alitrip.hotel.hstdf.businessarea.get",
-	"apiChineseName": "根据城市查询商圈",
-	"description": "根据cityId分页查询商圈信息",
 	"requestParams": [
 		{
-			"name": "param_get_by_trdi_division_id_param",
-			"type": "GetByTrdiDivisionIdParam",
-			"description": "请求参数封装",
 			"subParams": [
 				{
 					"name": "page",
@@ -24,216 +17,190 @@
 					"type": "Number",
 					"description": "平台行政区划id，北京市"
 				}
-			]
+			],
+			"name": "param_get_by_trdi_division_id_param",
+			"type": "GetByTrdiDivisionIdParam",
+			"description": "请求参数封装"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopStdResultSet",
-			"description": "top返回结果",
 			"subParams": [
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是",
-					"required": true
+					"description": "是"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "module_list",
-					"type": "BusinessArea[]",
-					"description": "商圈数据集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "area",
 							"type": "String",
-							"description": "商圈围栏数据，经纬度坐标使用英文逗号拼接",
-							"required": true
+							"description": "商圈围栏数据，经纬度坐标使用英文逗号拼接"
 						},
 						{
 							"name": "area_pic",
 							"type": "String",
-							"description": "商圈图片",
-							"required": true
-						},
-						{
-							"name": "city",
-							"type": "Number",
-							"description": "所在城市id，北京市",
-							"required": true
-						},
-						{
-							"name": "country",
-							"type": "String",
-							"description": "所在国家英文名",
-							"required": true
-						},
-						{
-							"name": "district",
-							"type": "Number",
-							"description": "所在区县id",
-							"required": true
-						},
-						{
-							"name": "domestic",
-							"type": "Number",
-							"description": "国内外，0-国内，1--国外",
-							"required": true
-						},
-						{
-							"name": "extent_meter",
-							"type": "Number",
-							"description": "计算酒店所属商圈是否需要外延，0-不需要，1-需要",
-							"required": true
-						},
-						{
-							"name": "hot",
-							"type": "Number",
-							"description": "热度",
-							"required": true
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "id",
-							"required": true
-						},
-						{
-							"name": "latitude",
-							"type": "String",
-							"description": "商圈中心点纬度",
-							"required": true
-						},
-						{
-							"name": "longitude",
-							"type": "String",
-							"description": "商圈中心点经度",
-							"required": true
-						},
-						{
-							"name": "major",
-							"type": "Number",
-							"description": "暂不使用",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "中文名",
-							"required": true
-						},
-						{
-							"name": "outer_id",
-							"type": "String",
-							"description": "暂不使用",
-							"required": true
-						},
-						{
-							"name": "province",
-							"type": "Number",
-							"description": "所在省份id，北京直辖市",
-							"required": true
-						},
-						{
-							"name": "region",
-							"type": "String",
-							"description": "商圈跨多个地区时，其他地区id适应英文逗号拼接",
-							"required": true
-						},
-						{
-							"name": "source",
-							"type": "Number",
-							"description": "暂不使用",
-							"required": true
-						},
-						{
-							"name": "summary",
-							"type": "String",
-							"description": "商圈推荐导语",
-							"required": true
-						},
-						{
-							"name": "tags",
-							"type": "String[]",
-							"description": "商圈标签，英文逗号分隔，注意与酒店标签不是同一类概念",
-							"required": true
+							"description": "商圈图片"
 						},
 						{
 							"name": "area_pic_nail",
 							"type": "String",
-							"description": "商圈缩略图",
-							"required": true
+							"description": "商圈缩略图"
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "所在城市id，北京市"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "所在国家英文名"
 						},
 						{
 							"name": "country_code",
 							"type": "Number",
-							"description": "国家编码，取代country使用",
-							"required": true
+							"description": "国家编码，取代country使用"
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "所在区县id"
 						},
 						{
 							"name": "division_id",
 							"type": "Number",
-							"description": "能精确到的最低层级区划id，优先区县，次选城市",
-							"required": true
+							"description": "能精确到的最低层级区划id，优先区县，次选城市"
 						},
 						{
 							"name": "division_tree",
 							"type": "String",
-							"description": "行政区划树，冗余字段，不一定有值",
-							"required": true
+							"description": "行政区划树，冗余字段，不一定有值"
+						},
+						{
+							"name": "domestic",
+							"type": "Number",
+							"description": "国内外，0-国内，1--国外"
 						},
 						{
 							"name": "en_name",
 							"type": "String",
-							"description": "商圈英文名",
-							"required": true
+							"description": "商圈英文名"
+						},
+						{
+							"name": "extent_meter",
+							"type": "Number",
+							"description": "计算酒店所属商圈是否需要外延，0-不需要，1-需要"
+						},
+						{
+							"name": "hot",
+							"type": "Number",
+							"description": "热度"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "商圈中心点纬度"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "商圈中心点经度"
+						},
+						{
+							"name": "major",
+							"type": "Number",
+							"description": "暂不使用"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "中文名"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "暂不使用"
 						},
 						{
 							"name": "position_type",
 							"type": "Number",
-							"description": "经纬度服务商，0--高德，一般用于国内，1-- 谷歌，一般用于国际",
-							"required": true
+							"description": "经纬度服务商，0--高德，一般用于国内，1-- 谷歌，一般用于国际"
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "所在省份id，北京直辖市"
+						},
+						{
+							"name": "region",
+							"type": "String",
+							"description": "商圈跨多个地区时，其他地区id适应英文逗号拼接"
+						},
+						{
+							"name": "source",
+							"type": "Number",
+							"description": "暂不使用"
+						},
+						{
+							"name": "summary",
+							"type": "String",
+							"description": "商圈推荐导语"
+						},
+						{
+							"name": "tags",
+							"type": "String[]",
+							"description": "商圈标签，英文逗号分隔，注意与酒店标签不是同一类概念"
 						},
 						{
 							"name": "time_zone_id",
 							"type": "String",
-							"description": "时区，冗余字段，不一定有值",
-							"required": true
+							"description": "时区，冗余字段，不一定有值"
 						},
 						{
 							"name": "trdi_division_id",
 							"type": "Number",
-							"description": "最精确的行政区划对应的平台id",
-							"required": true
+							"description": "最精确的行政区划对应的平台id"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "BusinessArea[]",
+					"description": "商圈数据集合"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "暂不使用",
-					"required": true
+					"description": "暂不使用"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "请求失败时返回的错误信息，一般success=false时有值",
-					"required": true
+					"description": "请求失败时返回的错误信息，一般success=false时有值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "当前查询条件下的数据总数；判断是否需要继续查询时，可以使用已请求数据量对比该值，但建议对结果集合进行判空，为空即停止",
-					"required": true
+					"description": "当前查询条件下的数据总数；判断是否需要继续查询时，可以使用已请求数据量对比该值，但建议对结果集合进行判空，为空即停止"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopStdResultSet",
+			"description": "top返回结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hstdf.businessarea.get",
+	"apiChineseName": "根据城市查询商圈",
+	"description": "根据cityId分页查询商圈信息",
+	"id": 44900
 }

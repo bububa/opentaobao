@@ -21,7 +21,7 @@ type TaobaoWlbSubscriptionQueryAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 卖家定购的服务列表
-	SellerSubscriptionList []WlbSellerSubscription `json:"seller_subscription_list,omitempty" xml:"seller_subscription_list>wlb_seller_subscription,omitempty"`
+	SellerSubscriptionList []SellerSubscriptionList `json:"seller_subscription_list,omitempty" xml:"seller_subscription_list>seller_subscription_list,omitempty"`
 	// 结果总数
 	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

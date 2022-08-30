@@ -1,14 +1,6 @@
 {
-	"id": 44786,
-	"name": "alibaba.alihealth.baby.remind.batch.send",
-	"apiChineseName": "批量发送母婴提醒",
-	"description": "批量发送母婴提醒",
 	"requestParams": [
 		{
-			"name": "batch_remind_requests",
-			"type": "BatchRemindRequestDto[]",
-			"description": "批量发送提醒",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "baby_id",
@@ -32,7 +24,11 @@
 					"type": "String",
 					"description": "访问跳转链接"
 				}
-			]
+			],
+			"name": "batch_remind_requests",
+			"type": "BatchRemindRequestDto[]",
+			"description": "批量发送提醒",
+			"maxListSize": 20
 		},
 		{
 			"name": "remind_type",
@@ -43,29 +39,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "发送结果",
-					"required": true
+					"description": "发送结果"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.baby.remind.batch.send",
+	"apiChineseName": "批量发送母婴提醒",
+	"description": "批量发送母婴提醒",
+	"id": 44786
 }

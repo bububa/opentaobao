@@ -1,8 +1,4 @@
 {
-	"id": 47576,
-	"name": "alibaba.benefit.query",
-	"apiChineseName": "奖池奖品查询列表",
-	"description": "功能：奖池奖品查询列表\n业务逻辑：程序中通过奖池编号ename,业务方身份appName来查询奖池提供的奖品返回给\n小程。\n安全保障：为保证数据不会越权，需要卖家授，并且验证系统参数appKey。只有通过授权的，并且\nappkey验证通过的，才会查数据 并透出，否则直接失败。\n因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系\n是否一致，所以可以保证参数appName的合法性，没有越权。",
 	"requestParams": [
 		{
 			"name": "ename",
@@ -11,140 +7,125 @@
 			"required": true
 		},
 		{
+			"name": "award_type",
+			"type": "String",
+			"description": "表示奖池类型（发奖奖池传1，抽奖传0）"
+		},
+		{
 			"name": "app_name",
 			"type": "String",
 			"description": "商家来源身份标识（\"promotion-\"+appId）",
 			"required": true
-		},
-		{
-			"name": "award_type",
-			"type": "String",
-			"description": "表示奖池类型（发奖奖池传1，抽奖传0）"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "datas",
-					"type": "OrightDto[]",
-					"description": "datas",
-					"required": true,
 					"subParams": [
 						{
 							"name": "prize_id",
 							"type": "Number",
-							"description": "奖品id",
-							"required": true
+							"description": "奖品id"
 						},
 						{
 							"name": "template_name",
 							"type": "String",
-							"description": "模板名称",
-							"required": true
+							"description": "模板名称"
 						},
 						{
 							"name": "benefit_name",
 							"type": "String",
-							"description": "权益内容",
-							"required": true
+							"description": "权益内容"
 						},
 						{
 							"name": "right_type_name",
 							"type": "String",
-							"description": "权益类型名称",
-							"required": true
+							"description": "权益类型名称"
 						},
 						{
 							"name": "right_type_id",
 							"type": "Number",
-							"description": "权益类型id",
-							"required": true
+							"description": "权益类型id"
 						},
 						{
 							"name": "start_date",
 							"type": "Date",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "end_date",
 							"type": "Date",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "prize_quantity",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "remain_prize_quantity",
 							"type": "Number",
-							"description": "可发放数",
-							"required": true
+							"description": "可发放数"
 						},
 						{
 							"name": "probability",
 							"type": "String",
-							"description": "概率",
-							"required": true
+							"description": "概率"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "金额",
-							"required": true
+							"description": "金额"
 						},
 						{
 							"name": "use_start_time",
 							"type": "Date",
-							"description": "使用开始时间",
-							"required": true
+							"description": "使用开始时间"
 						},
 						{
 							"name": "use_end_time",
 							"type": "Date",
-							"description": "使用结束时间",
-							"required": true
+							"description": "使用结束时间"
 						},
 						{
 							"name": "condition",
 							"type": "String",
-							"description": "门槛",
-							"required": true
+							"description": "门槛"
 						},
 						{
 							"name": "ext_attribute",
 							"type": "String",
-							"description": "扩展参数",
-							"required": true
+							"description": "扩展参数"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "OrightDto[]",
+					"description": "datas"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.benefit.query",
+	"apiChineseName": "奖池奖品查询列表",
+	"description": "功能：奖池奖品查询列表\n业务逻辑：程序中通过奖池编号ename,业务方身份appName来查询奖池提供的奖品返回给\n小程。\n安全保障：为保证数据不会越权，需要卖家授，并且验证系统参数appKey。只有通过授权的，并且\nappkey验证通过的，才会查数据 并透出，否则直接失败。\n因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系\n是否一致，所以可以保证参数appName的合法性，没有越权。",
+	"id": 47576
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27158,
-	"name": "taobao.eticket.merchant.ma.consume",
-	"apiChineseName": "电子凭证核销接口",
-	"description": "电子凭证核销接口",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -22,10 +18,6 @@
 			"required": true
 		},
 		{
-			"name": "isv_ma_list",
-			"type": "IsvMa[]",
-			"description": "核销后换码的码列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "code",
@@ -42,7 +34,11 @@
 					"type": "String",
 					"description": "二维码图片文件名。已经申请了上传二维码的码商必填，其它码商无需关心。这个值是taobao.eticket.merchant.img.upload调用后的file_name"
 				}
-			]
+			],
+			"name": "isv_ma_list",
+			"type": "IsvMa[]",
+			"description": "核销后换码的码列表",
+			"maxListSize": 20
 		},
 		{
 			"name": "outer_id",
@@ -70,9 +66,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "ConsumeMaCallbackResp",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "attribute_map",
@@ -80,7 +73,10 @@
 					"description": "系统自动生成",
 					"required": true
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "ConsumeMaCallbackResp",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "ret_code",
@@ -92,5 +88,9 @@
 			"type": "String",
 			"description": "子结果信息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.consume",
+	"apiChineseName": "电子凭证核销接口",
+	"description": "电子凭证核销接口",
+	"id": 27158
 }

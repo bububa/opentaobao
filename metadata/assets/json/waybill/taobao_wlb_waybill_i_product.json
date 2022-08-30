@@ -1,14 +1,6 @@
 {
-	"id": 23893,
-	"name": "taobao.wlb.waybill.i.product",
-	"apiChineseName": "商家查询物流商产品类型接口",
-	"description": "商家可以查询物流商的产品类型和服务能力。",
 	"requestParams": [
 		{
-			"name": "waybill_product_type_request",
-			"type": "WaybillProductTypeRequest",
-			"description": "查询物流商电子面单产品类型入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cp_code",
@@ -16,43 +8,51 @@
 					"description": "物流商编码CODE",
 					"required": true
 				}
-			]
+			],
+			"name": "waybill_product_type_request",
+			"type": "WaybillProductTypeRequest",
+			"description": "查询物流商电子面单产品类型入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "product_types",
-			"type": "WaybillProductType []",
-			"description": "产品类型返回",
 			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "物流产品类型编码"
+				},
 				{
 					"name": "name",
 					"type": "String",
 					"description": "物流产品类型名称"
 				},
 				{
-					"name": "service_types",
-					"type": "WaybillServiceType[]",
-					"description": "物流服务类型列表",
 					"subParams": [
-						{
-							"name": "name",
-							"type": "String",
-							"description": "物流服务能力名称"
-						},
 						{
 							"name": "code",
 							"type": "String",
 							"description": "物流服务能力编码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "物流服务能力名称"
 						}
-					]
-				},
-				{
-					"name": "code",
-					"type": "String",
-					"description": "物流产品类型编码"
+					],
+					"name": "service_types",
+					"type": "WaybillServiceType[]",
+					"description": "物流服务类型列表"
 				}
-			]
+			],
+			"name": "product_types",
+			"type": "WaybillProductType []",
+			"description": "产品类型返回"
 		}
-	]
+	],
+	"name": "taobao.wlb.waybill.i.product",
+	"apiChineseName": "商家查询物流商产品类型接口",
+	"description": "商家可以查询物流商的产品类型和服务能力。",
+	"id": 23893
 }

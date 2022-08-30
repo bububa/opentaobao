@@ -1,8 +1,4 @@
 {
-	"id": 22526,
-	"name": "taobao.train.agent.order.get",
-	"apiChineseName": "代理商获取订单信息回调API",
-	"description": "代理商获取订单信息回调API",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -34,14 +30,8 @@
 			"description": "主订单id"
 		},
 		{
-			"name": "tickets",
-			"type": "ToAgentTicketInfo []",
-			"description": "火车票信息。",
 			"subParams": [
 				{
-					"name": "student_info",
-					"type": "StudentInfo",
-					"description": "学生信息",
 					"subParams": [
 						{
 							"name": "card",
@@ -93,7 +83,10 @@
 							"type": "String",
 							"description": "demo"
 						}
-					]
+					],
+					"name": "student_info",
+					"type": "StudentInfo",
+					"description": "学生信息"
 				},
 				{
 					"name": "sub_order_id",
@@ -175,7 +168,10 @@
 					"type": "Number",
 					"description": "0:成人 1:儿童 2：学生"
 				}
-			]
+			],
+			"name": "tickets",
+			"type": "ToAgentTicketInfo []",
+			"description": "火车票信息。"
 		},
 		{
 			"name": "total_price",
@@ -267,5 +263,9 @@
 			"type": "String",
 			"description": "扩展字段"
 		}
-	]
+	],
+	"name": "taobao.train.agent.order.get",
+	"apiChineseName": "代理商获取订单信息回调API",
+	"description": "代理商获取订单信息回调API",
+	"id": 22526
 }

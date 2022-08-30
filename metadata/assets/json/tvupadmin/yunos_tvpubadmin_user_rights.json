@@ -1,8 +1,4 @@
 {
-	"id": 28628,
-	"name": "yunos.tvpubadmin.user.rights",
-	"apiChineseName": "获取用户权益",
-	"description": "获取用户权益",
 	"requestParams": [
 		{
 			"name": "uid",
@@ -25,85 +21,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "PaginationDO",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "页码值",
-					"required": true
+					"description": "页码值"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页条数",
-					"required": true
+					"description": "每页条数"
 				},
 				{
-					"name": "list",
-					"type": "UserRightsDO[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "uid",
 							"type": "Number",
-							"description": "用户ID",
-							"required": true
+							"description": "用户ID"
 						},
 						{
 							"name": "renewal_support",
 							"type": "Boolean",
-							"description": "是否连续包月",
-							"required": true
+							"description": "是否连续包月"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_end",
 							"type": "Date",
-							"description": "权益截止时间",
-							"required": true
+							"description": "权益截止时间"
 						},
 						{
 							"name": "gmt_start",
 							"type": "Date",
-							"description": "权益开始时间",
-							"required": true
+							"description": "权益开始时间"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "权益类型",
-							"required": true
+							"description": "权益类型"
 						},
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "权益ID",
-							"required": true
+							"description": "权益ID"
 						}
-					]
+					],
+					"name": "list",
+					"type": "UserRightsDO[]",
+					"description": "list"
 				}
-			]
+			],
+			"name": "object",
+			"type": "PaginationDO",
+			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.user.rights",
+	"apiChineseName": "获取用户权益",
+	"description": "获取用户权益",
+	"id": 28628
 }

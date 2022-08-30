@@ -1,14 +1,6 @@
 {
-	"id": 43297,
-	"name": "alibaba.lst.trade.order.querychange",
-	"apiChineseName": "订单id批量查询（品牌商视角）",
-	"description": "根据品牌和时间段查询有变更记录的订单id",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "LstOrderQuery",
-			"description": "入参包装类",
-			"required": true,
 			"subParams": [
 				{
 					"name": "gmt_create_begin",
@@ -34,90 +26,86 @@
 					"description": "每页记录数",
 					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "LstOrderQuery",
+			"description": "入参包装类",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PagedResultDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
-					"name": "content_list",
-					"type": "TopOrderChange2BrandownerDto[]",
-					"description": "返回实体包装类",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_id",
 							"type": "Number",
-							"description": "退款单id",
-							"required": true
+							"description": "退款单id"
 						},
 						{
 							"name": "new_created",
 							"type": "Boolean",
-							"description": "是否新建，包括订单新建和退款单新建",
-							"required": true
+							"description": "是否新建，包括订单新建和退款单新建"
 						},
 						{
 							"name": "biz_type",
 							"type": "String",
-							"description": "FORWARD_ORDER 正向订单表示正常购买流程,REVERSE_ORDER 逆向订单表示退款流程",
-							"required": true
+							"description": "FORWARD_ORDER 正向订单表示正常购买流程,REVERSE_ORDER 逆向订单表示退款流程"
 						},
 						{
 							"name": "main_order_id",
 							"type": "Number",
-							"description": "主订单id",
-							"required": true
+							"description": "主订单id"
 						},
 						{
 							"name": "sub_order_id",
 							"type": "Number",
-							"description": "子订单id",
-							"required": true
+							"description": "子订单id"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "TopOrderChange2BrandownerDto[]",
+					"description": "返回实体包装类"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总记录条数",
-					"required": true
+					"description": "总记录条数"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "page",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "每页最大记录数",
-					"required": true
+					"description": "每页最大记录数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PagedResultDto",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.order.querychange",
+	"apiChineseName": "订单id批量查询（品牌商视角）",
+	"description": "根据品牌和时间段查询有变更记录的订单id",
+	"id": 43297
 }

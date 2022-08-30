@@ -1,8 +1,4 @@
 {
-	"id": 40768,
-	"name": "taobao.ailab.aicloud.top.skils.list",
-	"apiChineseName": "获取硬件平台设备下挂载的技能列表",
-	"description": "提供给在硬件平台接入设备的技能列表",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -51,125 +47,111 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "ret_value",
-					"type": "PageResult",
-					"description": "retValue",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "分页数量",
-							"required": true
+							"description": "分页数量"
 						},
 						{
 							"name": "page_count",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
-							"name": "result_list",
-							"type": "BotSkillsRelInfo[]",
-							"description": "结果集",
-							"required": true,
 							"subParams": [
 								{
 									"name": "skill_id",
 									"type": "Number",
-									"description": "技能Id",
-									"required": true
+									"description": "技能Id"
 								},
 								{
 									"name": "invocation_name",
 									"type": "String",
-									"description": "唤醒词",
-									"required": true
+									"description": "唤醒词"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "技能名称",
-									"required": true
+									"description": "技能名称"
 								},
 								{
-									"name": "service_providers",
-									"type": "ServiceProvider[]",
-									"description": "提供商集合",
-									"required": true,
 									"subParams": [
 										{
 											"name": "icon",
 											"type": "String",
-											"description": "图片地址",
-											"required": true
+											"description": "图片地址"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "提供商名",
-											"required": true
+											"description": "提供商名"
 										}
-									]
+									],
+									"name": "service_providers",
+									"type": "ServiceProvider[]",
+									"description": "提供商集合"
 								},
 								{
 									"name": "category",
 									"type": "String",
-									"description": "类别",
-									"required": true
+									"description": "类别"
 								},
 								{
 									"name": "icoin_image_url",
 									"type": "String",
-									"description": "技能图片地址",
-									"required": true
+									"description": "技能图片地址"
 								},
 								{
 									"name": "desc",
 									"type": "String",
-									"description": "技能描述信息",
-									"required": true
+									"description": "技能描述信息"
 								},
 								{
 									"name": "sample",
 									"type": "String",
-									"description": "典型例句(多个，以\\t分隔)",
-									"required": true
+									"description": "典型例句(多个，以\\t分隔)"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "BotSkillsRelInfo[]",
+							"description": "结果集"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "PageResult",
+					"description": "retValue"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.skils.list",
+	"apiChineseName": "获取硬件平台设备下挂载的技能列表",
+	"description": "提供给在硬件平台接入设备的技能列表",
+	"id": 40768
 }

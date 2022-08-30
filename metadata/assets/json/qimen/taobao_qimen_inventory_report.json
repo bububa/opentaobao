@@ -1,12 +1,6 @@
 {
-	"id": 27261,
-	"name": "taobao.qimen.inventory.report",
-	"apiChineseName": "库存盘点通知接口",
-	"description": "WMS调用奇门的接口,将库存盘点情况回传ERP",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "InventoryReportRequest",
 			"subParams": [
 				{
 					"name": "totalPage",
@@ -66,9 +60,6 @@
 					"description": "备注"
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "商品库存信息列表",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -127,7 +118,10 @@
 							"type": "Number",
 							"description": "库存商品总量"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品库存信息列表"
 				},
 				{
 					"name": "extendProps",
@@ -145,13 +139,13 @@
 					"description": "变动类型：CHECK=盘点 ADJUST=调整",
 					"required": true
 				}
-			]
+			],
+			"name": "request",
+			"type": "InventoryReportRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -171,7 +165,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.inventory.report",
+	"apiChineseName": "库存盘点通知接口",
+	"description": "WMS调用奇门的接口,将库存盘点情况回传ERP",
+	"id": 27261
 }

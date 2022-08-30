@@ -1,9 +1,10 @@
 {
-	"id": 27295,
-	"name": "taobao.simba.serchcrowd.batch.delete",
-	"apiChineseName": "单品搜索人群批量取消溢价",
-	"description": "删除单品搜索人群溢价功能",
 	"requestParams": [
+		{
+			"name": "sub_nick",
+			"type": "String",
+			"description": "子帐号nick"
+		},
 		{
 			"name": "nick",
 			"type": "String",
@@ -11,16 +12,11 @@
 			"required": true
 		},
 		{
-			"name": "sub_nick",
-			"type": "String",
-			"description": "子帐号nick"
-		},
-		{
 			"name": "adgroup_crowd_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "需要删除的人群id",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "key"
 		}
-	]
+	],
+	"name": "taobao.simba.serchcrowd.batch.delete",
+	"apiChineseName": "单品搜索人群批量取消溢价",
+	"description": "删除单品搜索人群溢价功能",
+	"id": 27295
 }

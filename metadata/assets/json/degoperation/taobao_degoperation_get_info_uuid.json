@@ -1,8 +1,4 @@
 {
-	"id": 38340,
-	"name": "taobao.degoperation.get.info.uuid",
-	"apiChineseName": "根据uuid用户抽奖次数限制",
-	"description": "根据uuid用户抽奖次数限制",
 	"requestParams": [
 		{
 			"name": "deg_app_key",
@@ -25,41 +21,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BonusResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "availableAccessAmount=可以抽奖次数， degPointTotal=该用户数娱积分余额， accessAmount=用户可以免费抽奖次数，activityId=抽奖活动id,activityUrl=H5活动页面地址,consumeAmount=积分/金牌消耗, description=活动描述,endTime=活动结束时间,eventKey=活动eventKey, luckyChannel=抽奖渠道移动终端渠道=1，TV魔盒/魔方/OTT=2，全部=3,luckyType=抽奖类型抽奖类型 免费型=1，消耗型=2，混合型=3,name=活动名称,startTime=活动开始时间",
-					"required": true
+					"type": "String",
+					"description": "availableAccessAmount=可以抽奖次数， degPointTotal=该用户数娱积分余额， accessAmount=用户可以免费抽奖次数，activityId=抽奖活动id,activityUrl=H5活动页面地址,consumeAmount=积分/金牌消耗, description=活动描述,endTime=活动结束时间,eventKey=活动eventKey, luckyChannel=抽奖渠道移动终端渠道=1，TV魔盒/魔方/OTT=2，全部=3,luckyType=抽奖类型抽奖类型 免费型=1，消耗型=2，混合型=3,name=活动名称,startTime=活动开始时间"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.degoperation.get.info.uuid",
+	"apiChineseName": "根据uuid用户抽奖次数限制",
+	"description": "根据uuid用户抽奖次数限制",
+	"id": 38340
 }

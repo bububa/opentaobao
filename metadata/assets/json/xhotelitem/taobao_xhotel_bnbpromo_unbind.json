@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "activity_code",
+			"type": "String",
+			"description": "营销活动code"
+		},
+		{
+			"subParams": [
+				{
+					"name": "rate_plan_code",
+					"type": "String",
+					"description": "外部rp"
+				},
+				{
+					"name": "out_rid",
+					"type": "String",
+					"description": "外部rid"
+				}
+			],
+			"name": "rate_infos",
+			"type": "PromoRateInfo",
+			"description": "营销"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "out_rid",
+					"type": "String",
+					"description": "外部rid"
+				},
+				{
+					"name": "rate_plan_code",
+					"type": "String",
+					"description": "外部rp"
+				}
+			],
+			"name": "module",
+			"type": "PromoBindResult",
+			"description": "营销解绑返回对象"
+		}
+	],
+	"name": "taobao.xhotel.bnbpromo.unbind",
+	"apiChineseName": "自促活动解绑接口",
+	"description": "自促活动解绑接口",
+	"id": 63063
+}

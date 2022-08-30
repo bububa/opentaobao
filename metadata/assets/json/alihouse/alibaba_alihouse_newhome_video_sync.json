@@ -1,14 +1,6 @@
 {
-	"id": 55952,
-	"name": "alibaba.alihouse.newhome.video.sync",
-	"apiChineseName": "视频草稿信息同步",
-	"description": "接收视频信息记录",
 	"requestParams": [
 		{
-			"name": "video",
-			"type": "VideoDraftDto",
-			"description": "草稿对下",
-			"required": true,
 			"subParams": [
 				{
 					"name": "sub_column",
@@ -56,8 +48,7 @@
 				{
 					"name": "city_id",
 					"type": "Number",
-					"description": "菜鸟城市id",
-					"required": true
+					"description": "菜鸟城市id"
 				},
 				{
 					"name": "publish_time",
@@ -126,41 +117,50 @@
 					"name": "summary",
 					"type": "String",
 					"description": "视频介绍"
+				},
+				{
+					"name": "outer_sub_id",
+					"type": "String",
+					"description": "比如楼盘下的货品id，小区小的房源id"
 				}
-			]
+			],
+			"name": "video",
+			"type": "VideoDraftDto",
+			"description": "草稿对下",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "失败信息",
-					"required": true
+					"description": "失败信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "true或false",
-					"required": true
+					"description": "true或false"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.video.sync",
+	"apiChineseName": "视频草稿信息同步",
+	"description": "接收视频信息记录",
+	"id": 55952
 }

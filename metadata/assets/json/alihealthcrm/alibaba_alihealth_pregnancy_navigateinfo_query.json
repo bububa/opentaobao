@@ -1,8 +1,4 @@
 {
-	"id": 30294,
-	"name": "alibaba.alihealth.pregnancy.navigateinfo.query",
-	"apiChineseName": "查询底导数据",
-	"description": "备孕管理--获取底部导航信息",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -13,87 +9,79 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "结果集",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "list",
-							"type": "Content[]",
-							"description": "list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "title",
 									"type": "String",
-									"description": "标题",
-									"required": true
+									"description": "标题"
 								},
 								{
 									"name": "link",
 									"type": "String",
-									"description": "跳转链接",
-									"required": true
+									"description": "跳转链接"
 								},
 								{
 									"name": "tag_code",
 									"type": "String",
-									"description": "卡片code 0=首页 ， 2544 =减重卡片，41596=孕产，64999=育儿，5122=备孕",
-									"required": true
+									"description": "卡片code 0=首页 ， 2544 =减重卡片，41596=孕产，64999=育儿，5122=备孕"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "卡片状态",
-									"required": true
+									"description": "卡片状态"
 								},
 								{
 									"name": "open_count",
 									"type": "Number",
-									"description": "卡片已开启数",
-									"required": true
+									"description": "卡片已开启数"
 								},
 								{
 									"name": "img_url_clicked",
 									"type": "String",
-									"description": "点击后的图标",
-									"required": true
+									"description": "点击后的图标"
 								},
 								{
 									"name": "img_url",
 									"type": "String",
-									"description": "未点击时的图标",
-									"required": true
+									"description": "未点击时的图标"
 								},
 								{
 									"name": "color",
 									"type": "String",
-									"description": "字体颜色，第一个为未点击时的，第二个为点击后的",
-									"required": true
+									"description": "字体颜色，第一个为未点击时的，第二个为点击后的"
 								}
-							]
+							],
+							"name": "list",
+							"type": "Content[]",
+							"description": "list"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "响应码",
-					"required": true
+					"description": "响应码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "相应信息",
-					"required": true
+					"description": "相应信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "结果集"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.pregnancy.navigateinfo.query",
+	"apiChineseName": "查询底导数据",
+	"description": "备孕管理--获取底部导航信息",
+	"id": 30294
 }

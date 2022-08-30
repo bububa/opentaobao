@@ -1,12 +1,6 @@
 {
-	"id": 29361,
-	"name": "taobao.qimen.singleitem.query",
-	"apiChineseName": "商品查询接口",
-	"description": "商品查询接口",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "RequestDO",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -23,13 +17,13 @@
 					"type": "String",
 					"description": "仓储系统商品编码,C123,string(50),必填,"
 				}
-			]
+			],
+			"name": "request",
+			"type": "RequestDO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -50,10 +44,6 @@
 					"required": true
 				},
 				{
-					"name": "item",
-					"type": "Item",
-					"description": "item",
-					"required": true,
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -391,9 +381,19 @@
 							"description": "是否液体, Y/N,  (默认为N)",
 							"required": true
 						}
-					]
+					],
+					"name": "item",
+					"type": "Item",
+					"description": "item",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.singleitem.query",
+	"apiChineseName": "商品查询接口",
+	"description": "商品查询接口",
+	"id": 29361
 }

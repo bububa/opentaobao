@@ -1,24 +1,5 @@
 {
-	"id": 21608,
-	"name": "taobao.inventory.adjust.external",
-	"apiChineseName": "非交易库存调整单",
-	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家非交易调整库存，调拨出库、盘点等时调用",
 	"requestParams": [
-		{
-			"name": "reduce_type",
-			"type": "String",
-			"description": "test"
-		},
-		{
-			"name": "biz_type",
-			"type": "String",
-			"description": "外部订单类型, BALANCE:盘点、NON_TAOBAO_TRADE:非淘宝交易、ALLOCATE:调拨、OTHERS:其他"
-		},
-		{
-			"name": "operate_type",
-			"type": "String",
-			"description": "test"
-		},
 		{
 			"name": "biz_unique_code",
 			"type": "String",
@@ -26,15 +7,19 @@
 			"required": true
 		},
 		{
-			"name": "items",
-			"type": "String",
-			"description": "商品初始库存信息： [{\"scItemId\":\"商品后端ID，如果有传scItemCode,参数可以为0\",\"scItemCode\":\"商品商家编码\",\"inventoryType\":\"库存类型  1：正常,”direction”: 1: 盘盈 -1: 盘亏,参数可选,\"quantity\":\"数量(正数)\"}]",
-			"required": true
-		},
-		{
 			"name": "occupy_operate_code",
 			"type": "String",
 			"description": "库存占用返回的操作码.operate_type 为OUTBOUND时，如果是确认事先进行过的库存占用，需要传入当时返回的操作码，并且明细必须与申请时保持一致"
+		},
+		{
+			"name": "operate_type",
+			"type": "String",
+			"description": "test"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "外部订单类型, BALANCE:盘点、NON_TAOBAO_TRADE:非淘宝交易、ALLOCATE:调拨、OTHERS:其他"
 		},
 		{
 			"name": "operate_time",
@@ -46,6 +31,17 @@
 			"type": "String",
 			"description": "商家仓库编码",
 			"required": true
+		},
+		{
+			"name": "items",
+			"type": "String",
+			"description": "商品初始库存信息： [{\"scItemId\":\"商品后端ID，如果有传scItemCode,参数可以为0\",\"scItemCode\":\"商品商家编码\",\"inventoryType\":\"库存类型  1：正常,”direction”: 1: 盘盈 -1: 盘亏,参数可选,\"quantity\":\"数量(正数)\"}]",
+			"required": true
+		},
+		{
+			"name": "reduce_type",
+			"type": "String",
+			"description": "test"
 		}
 	],
 	"responseParams": [
@@ -55,21 +51,25 @@
 			"description": "操作返回码"
 		},
 		{
-			"name": "tip_infos",
-			"type": "TipInfo []",
-			"description": "提示信息",
 			"subParams": [
-				{
-					"name": "info",
-					"type": "String",
-					"description": "返回信息"
-				},
 				{
 					"name": "sc_item_id",
 					"type": "String",
 					"description": "商品id"
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "返回信息"
 				}
-			]
+			],
+			"name": "tip_infos",
+			"type": "TipInfo []",
+			"description": "提示信息"
 		}
-	]
+	],
+	"name": "taobao.inventory.adjust.external",
+	"apiChineseName": "非交易库存调整单",
+	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家非交易调整库存，调拨出库、盘点等时调用",
+	"id": 21608
 }

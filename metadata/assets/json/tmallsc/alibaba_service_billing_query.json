@@ -1,8 +1,4 @@
 {
-	"id": 42709,
-	"name": "alibaba.service.billing.query",
-	"apiChineseName": "服务平台结算出账信息",
-	"description": "服务平台结算单明细查询服务",
 	"requestParams": [
 		{
 			"name": "gmt_create_start",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "settlement_detail_query_result",
-			"type": "FulfilplatformResult",
-			"description": "结算明细查询结果",
 			"subParams": [
 				{
 					"name": "msg_info",
@@ -40,10 +33,6 @@
 					"required": true
 				},
 				{
-					"name": "result_datas",
-					"type": "Resultdata[]",
-					"description": "结算明细list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -201,9 +190,20 @@
 							"description": "触发本次打款的动作类型。serviceOrder-tradeSuccess: 商家扣款到中间账户；serviceOrder-cancel: 退款;huijin-commision: 门店抽佣;huijin-store-transfer: 转账给门店",
 							"required": true
 						}
-					]
+					],
+					"name": "result_datas",
+					"type": "Resultdata[]",
+					"description": "结算明细list",
+					"required": true
 				}
-			]
+			],
+			"name": "settlement_detail_query_result",
+			"type": "FulfilplatformResult",
+			"description": "结算明细查询结果"
 		}
-	]
+	],
+	"name": "alibaba.service.billing.query",
+	"apiChineseName": "服务平台结算出账信息",
+	"description": "服务平台结算单明细查询服务",
+	"id": 42709
 }

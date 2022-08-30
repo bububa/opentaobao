@@ -1,18 +1,8 @@
 {
-	"id": 53394,
-	"name": "alibaba.tmallgenie.scp.plan.forecast.oem.upload",
-	"apiChineseName": "16-供应商预测（OEM-成品）回传接口",
-	"description": "供应商预测（OEM-成品）回传接口",
 	"requestParams": [
 		{
-			"name": "supplier_forecast_request",
-			"type": "SupplierForecastRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
-					"name": "supplier_forecast_param_d_t_o_list",
-					"type": "SupplierForecastParamDto[]",
-					"description": "请求参数",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -44,14 +34,20 @@
 							"type": "String",
 							"description": "物料号"
 						}
-					]
+					],
+					"name": "supplier_forecast_param_d_t_o_list",
+					"type": "SupplierForecastParamDto[]",
+					"description": "请求参数"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "supplier_forecast_request",
+			"type": "SupplierForecastRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
@@ -70,5 +66,9 @@
 			"type": "String",
 			"description": "参数code"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.forecast.oem.upload",
+	"apiChineseName": "16-供应商预测（OEM-成品）回传接口",
+	"description": "供应商预测（OEM-成品）回传接口",
+	"id": 53394
 }

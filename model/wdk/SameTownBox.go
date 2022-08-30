@@ -12,4 +12,6 @@ type SameTownBox struct {
 	ContainerCode string `json:"container_code,omitempty" xml:"container_code,omitempty"`
 	// 箱类型 NORMAL:周转箱 COLD:冷链箱 NONE:原箱
 	ContainerType string `json:"container_type,omitempty" xml:"container_type,omitempty"`
+	// 箱号
+	MaterialCode string `json:"material_code,omitempty" xml:"material_code,omitempty"`
 }

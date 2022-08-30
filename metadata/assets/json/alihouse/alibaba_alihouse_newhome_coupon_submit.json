@@ -1,25 +1,18 @@
 {
-	"id": 56015,
-	"name": "alibaba.alihouse.newhome.coupon.submit",
-	"apiChineseName": "提交专车优惠券活动",
-	"description": "提交专车优惠券活动",
 	"requestParams": [
 		{
-			"name": "coupon_dto",
-			"type": "MarketingCouponDto",
-			"description": "打车券活动对象",
 			"subParams": [
 				{
-					"name": "activity_project_list",
-					"type": "ProjectDetailInfoDto[]",
-					"description": "使用楼盘列表",
 					"subParams": [
 						{
 							"name": "outer_id",
 							"type": "String",
 							"description": "外部楼盘ID"
 						}
-					]
+					],
+					"name": "activity_project_list",
+					"type": "ProjectDetailInfoDto[]",
+					"description": "使用楼盘列表"
 				},
 				{
 					"name": "valid_date",
@@ -55,41 +48,54 @@
 					"name": "outer_activity_id",
 					"type": "String",
 					"description": "外部活动ID"
+				},
+				{
+					"name": "coupon_return_money",
+					"type": "Number",
+					"description": "专车券返程金额"
+				},
+				{
+					"name": "activity_type",
+					"type": "Number",
+					"description": "活动类型0-专车 2-往返"
 				}
-			]
+			],
+			"name": "coupon_dto",
+			"type": "MarketingCouponDto",
+			"description": "打车券活动对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回对象",
-					"required": true
+					"description": "返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.coupon.submit",
+	"apiChineseName": "提交专车优惠券活动",
+	"description": "提交专车优惠券活动",
+	"id": 56015
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10630,
-	"name": "taobao.wlb.order.create",
-	"apiChineseName": "创建物流宝订单",
-	"description": "创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生",
 	"requestParams": [
 		{
 			"name": "schedule_type",
@@ -25,15 +21,15 @@
 			"name": "out_biz_code",
 			"type": "String",
 			"description": "外部订单业务ID，该编号在isv中是唯一编号， 用来控制并发，去重用",
-			"required": true,
-			"maxLength": 128
+			"maxLength": 128,
+			"required": true
 		},
 		{
 			"name": "store_code",
 			"type": "String",
 			"description": "仓库编码",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "order_code",
@@ -173,5 +169,9 @@
 			"type": "Date",
 			"description": "订单创建时间"
 		}
-	]
+	],
+	"name": "taobao.wlb.order.create",
+	"apiChineseName": "创建物流宝订单",
+	"description": "创建物流宝订单，由外部ISV或者ERP，Elink，淘宝交易产生",
+	"id": 10630
 }

@@ -22,6 +22,8 @@ type ThirdTicketPushOpenParam struct {
 	PriceContent string `json:"price_content,omitempty" xml:"price_content,omitempty"`
 	// 票面元素扩展字段
 	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
+	// rfid值
+	Rfid string `json:"rfid,omitempty" xml:"rfid,omitempty"`
 	// 证件内容
 	CertificateType int64 `json:"certificate_type,omitempty" xml:"certificate_type,omitempty"`
 	// 票面id
@@ -50,4 +52,6 @@ type ThirdTicketPushOpenParam struct {
 	VoucherId int64 `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 票类型
 	MediumType int64 `json:"medium_type,omitempty" xml:"medium_type,omitempty"`
+	// 纸质票票单换票状态:1=未换，2=已换，
+	PrintStatus int64 `json:"print_status,omitempty" xml:"print_status,omitempty"`
 }

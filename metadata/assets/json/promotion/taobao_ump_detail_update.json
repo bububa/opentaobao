@@ -1,8 +1,4 @@
 {
-	"id": 10724,
-	"name": "taobao.ump.detail.update",
-	"apiChineseName": "修改活动详情",
-	"description": "更新活动详情",
 	"requestParams": [
 		{
 			"name": "detail_id",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.ump.detail.update",
+	"apiChineseName": "修改活动详情",
+	"description": "更新活动详情",
+	"id": 10724
 }

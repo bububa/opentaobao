@@ -1,13 +1,6 @@
 {
-	"id": 41280,
-	"name": "alibaba.scbp.target.ad.plan.add",
-	"apiChineseName": "定向推广-新建计划",
-	"description": "定向推广-新建单条计划",
 	"requestParams": [
 		{
-			"name": "top_p4p_basic_quick_campaign",
-			"type": "BasicQuickCampaign",
-			"description": "定向推广基础信息",
 			"subParams": [
 				{
 					"name": "max_price",
@@ -33,7 +26,10 @@
 					"description": "计划名称,不能大于20字符",
 					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_basic_quick_campaign",
+			"type": "BasicQuickCampaign",
+			"description": "定向推广基础信息"
 		}
 	],
 	"responseParams": [
@@ -42,5 +38,9 @@
 			"type": "Number",
 			"description": "计划ID"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.add",
+	"apiChineseName": "定向推广-新建计划",
+	"description": "定向推广-新建单条计划",
+	"id": 41280
 }

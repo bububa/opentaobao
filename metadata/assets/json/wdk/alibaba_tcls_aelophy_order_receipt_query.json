@@ -1,0 +1,284 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "batch_id",
+					"type": "String",
+					"description": "打印批次",
+					"required": true
+				},
+				{
+					"name": "paper_width",
+					"type": "Number",
+					"description": "打印纸宽度"
+				}
+			],
+			"name": "receipt_query_request",
+			"type": "ReceiptQueryRequest",
+			"description": "小票查询请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "status",
+					"type": "Boolean",
+					"description": "接口状态"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "batch_name",
+									"type": "String",
+									"description": "批次名称"
+								},
+								{
+									"name": "tb_order_id",
+									"type": "String",
+									"description": "淘宝订单号"
+								},
+								{
+									"name": "cancel_amount",
+									"type": "String",
+									"description": "取消退款金额"
+								},
+								{
+									"name": "order_num",
+									"type": "String",
+									"description": "渠道号"
+								},
+								{
+									"name": "discount_amount",
+									"type": "String",
+									"description": "优惠金额"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "batch_id",
+									"type": "String",
+									"description": "批次号"
+								},
+								{
+									"name": "warehouse_name",
+									"type": "String",
+									"description": "店仓名称"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "店仓code"
+								},
+								{
+									"name": "self_pick_place",
+									"type": "String",
+									"description": "自提点地址"
+								},
+								{
+									"subParams": [
+										{
+											"name": "sku_stock_unit",
+											"type": "String",
+											"description": "库存单位"
+										},
+										{
+											"name": "item_unit_price",
+											"type": "String",
+											"description": "商品原单价"
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "商品编码"
+										},
+										{
+											"name": "out_of_stock_item_count",
+											"type": "Number",
+											"description": "缺货出件数"
+										},
+										{
+											"name": "expect_item_count",
+											"type": "Number",
+											"description": "商品应拣数量"
+										},
+										{
+											"name": "service_names",
+											"type": "String[]",
+											"description": "加工服务"
+										},
+										{
+											"name": "nonstandard_item_count",
+											"type": "String",
+											"description": "实称重量"
+										},
+										{
+											"name": "total_amount",
+											"type": "String",
+											"description": "商品原合计金额"
+										},
+										{
+											"name": "expect_stock_quantity",
+											"type": "String",
+											"description": "商品应拣重量"
+										},
+										{
+											"name": "item_name",
+											"type": "String",
+											"description": "商品名称"
+										},
+										{
+											"name": "storage_mode",
+											"type": "Number",
+											"description": "温层信息"
+										},
+										{
+											"name": "barcode",
+											"type": "String",
+											"description": "条形码"
+										},
+										{
+											"name": "standard_sku",
+											"type": "Boolean",
+											"description": "是否标品"
+										}
+									],
+									"name": "item_info_list",
+									"type": "ItemInfoDTO[]",
+									"description": "商品列表"
+								},
+								{
+									"name": "storage_mode",
+									"type": "Number",
+									"description": "储藏方式"
+								},
+								{
+									"name": "all_item_count",
+									"type": "Number",
+									"description": "商品总件数"
+								},
+								{
+									"name": "out_of_stock",
+									"type": "Boolean",
+									"description": "缺货出状态"
+								},
+								{
+									"name": "latest_arrive_time",
+									"type": "Date",
+									"description": "最晚送达时间"
+								},
+								{
+									"name": "pay_order_amount",
+									"type": "String",
+									"description": "实付金额"
+								},
+								{
+									"name": "package_fee",
+									"type": "String",
+									"description": "包装费"
+								},
+								{
+									"name": "refund_amount",
+									"type": "String",
+									"description": "差额退款金额"
+								},
+								{
+									"name": "channel_order_id",
+									"type": "String",
+									"description": "渠道订单号"
+								},
+								{
+									"name": "billing_link",
+									"type": "String",
+									"description": "发票连接"
+								},
+								{
+									"name": "ticket_cou_pon",
+									"type": "String[]",
+									"description": "订单票联  user:顾客联，seller：商家联"
+								},
+								{
+									"subParams": [
+										{
+											"name": "buyer_name",
+											"type": "String",
+											"description": "买家姓名"
+										},
+										{
+											"name": "buyer_phone",
+											"type": "String",
+											"description": "买家电话号码"
+										},
+										{
+											"name": "buyer_address",
+											"type": "String",
+											"description": "收货地址"
+										}
+									],
+									"name": "buyer_info",
+									"type": "BuyerInfoDTO",
+									"description": "买家信息"
+								},
+								{
+									"name": "postage",
+									"type": "String",
+									"description": "运费"
+								},
+								{
+									"name": "total_order_amount",
+									"type": "String",
+									"description": "商品总额"
+								},
+								{
+									"name": "batch_strategy",
+									"type": "String",
+									"description": "批次策略"
+								},
+								{
+									"name": "business_type",
+									"type": "String",
+									"description": "业务类型"
+								},
+								{
+									"name": "fulfill_order_id",
+									"type": "String",
+									"description": "履约单号"
+								}
+							],
+							"name": "receipt_info",
+							"type": "ReceiptInfoDTO",
+							"description": "商家/顾客联小票数据"
+						}
+					],
+					"name": "order_list",
+					"type": "ReceiptDTO[]",
+					"description": "打印商家/顾客联小票数据列表"
+				}
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.order.receipt.query",
+	"apiChineseName": "订单小票查询",
+	"description": "订单小票查询",
+	"id": 63052
+}

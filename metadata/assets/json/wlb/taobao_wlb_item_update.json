@@ -1,24 +1,5 @@
 {
-	"id": 10619,
-	"name": "taobao.wlb.item.update",
-	"apiChineseName": "物流宝商品修改",
-	"description": "修改物流宝商品信息",
 	"requestParams": [
-		{
-			"name": "update_property_key_list",
-			"type": "String",
-			"description": "需要修改的商品属性值的列表，如果属性不存在，则新增属性"
-		},
-		{
-			"name": "delete_property_key_list",
-			"type": "String",
-			"description": "需要删除的商品属性key列表"
-		},
-		{
-			"name": "update_property_value_list",
-			"type": "String",
-			"description": "需要修改的属性值的列表"
-		},
 		{
 			"name": "id",
 			"type": "Number",
@@ -39,6 +20,21 @@
 			"name": "remark",
 			"type": "String",
 			"description": "要修改的商品备注"
+		},
+		{
+			"name": "update_property_key_list",
+			"type": "String",
+			"description": "需要修改的商品属性值的列表，如果属性不存在，则新增属性"
+		},
+		{
+			"name": "update_property_value_list",
+			"type": "String",
+			"description": "需要修改的属性值的列表"
+		},
+		{
+			"name": "delete_property_key_list",
+			"type": "String",
+			"description": "需要删除的商品属性key列表"
 		},
 		{
 			"name": "is_friable",
@@ -102,5 +98,9 @@
 			"type": "Boolean",
 			"description": "修改时间"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.update",
+	"apiChineseName": "物流宝商品修改",
+	"description": "修改物流宝商品信息",
+	"id": 10619
 }

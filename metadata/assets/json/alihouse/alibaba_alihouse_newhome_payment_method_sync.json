@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				},
+				{
+					"name": "payment_name",
+					"type": "String",
+					"description": "付款方式名称",
+					"required": true
+				},
+				{
+					"name": "payment_type",
+					"type": "Number",
+					"description": "付款方式类型",
+					"required": true
+				},
+				{
+					"name": "buy_one_radio",
+					"type": "Number",
+					"description": "首套最低比例",
+					"required": true
+				},
+				{
+					"name": "buy_multi_radio",
+					"type": "Number",
+					"description": "多套最低比例",
+					"required": true
+				},
+				{
+					"name": "creat_user_name",
+					"type": "String",
+					"description": "创建人姓名",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除",
+					"required": true
+				},
+				{
+					"name": "outer_payment_id",
+					"type": "String",
+					"description": "外部付款方式id",
+					"required": true
+				}
+			],
+			"name": "payment_mode_req_dto",
+			"type": "PaymentModeReqDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "编码"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "出参"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.payment.method.sync",
+	"apiChineseName": "付款方式上翻",
+	"description": "付款方式上翻",
+	"id": 62478
+}

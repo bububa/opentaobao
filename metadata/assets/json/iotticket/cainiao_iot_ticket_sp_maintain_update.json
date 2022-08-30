@@ -1,14 +1,6 @@
 {
-	"id": 50244,
-	"name": "cainiao.iot.ticket.sp.maintain.update",
-	"apiChineseName": "IoT售后服务商维修方案更新",
-	"description": "IoT售后服务商维修方案更新",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "UpdateMaintainPlanTopRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "operator_phone",
@@ -41,10 +33,6 @@
 					"required": true
 				},
 				{
-					"name": "iot_maintain_plan_item_list",
-					"type": "IotMaintainPlanItemTopRequest[]",
-					"description": "维修项",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pay_role",
@@ -58,7 +46,11 @@
 							"description": "设备编码（需要映射）",
 							"required": true
 						}
-					]
+					],
+					"name": "iot_maintain_plan_item_list",
+					"type": "IotMaintainPlanItemTopRequest[]",
+					"description": "维修项",
+					"required": true
 				},
 				{
 					"name": "maintain_abilities",
@@ -121,14 +113,15 @@
 					"description": "事件类型（需要映射）",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "UpdateMaintainPlanTopRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -148,7 +141,14 @@
 					"description": "异常编码",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.sp.maintain.update",
+	"apiChineseName": "IoT售后服务商维修方案更新",
+	"description": "IoT售后服务商维修方案更新",
+	"id": 50244
 }

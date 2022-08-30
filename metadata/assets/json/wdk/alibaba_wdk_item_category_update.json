@@ -1,14 +1,6 @@
 {
-	"id": 32806,
-	"name": "alibaba.wdk.item.category.update",
-	"apiChineseName": "修改类目",
-	"description": "修改类目",
 	"requestParams": [
 		{
-			"name": "bean",
-			"type": "UpdateCategoryRequestBean",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "org_code",
@@ -32,34 +24,39 @@
 					"type": "String",
 					"description": "盒马 后台类目"
 				}
-			]
+			],
+			"name": "bean",
+			"type": "UpdateCategoryRequestBean",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.category.update",
+	"apiChineseName": "修改类目",
+	"description": "修改类目",
+	"id": 32806
 }

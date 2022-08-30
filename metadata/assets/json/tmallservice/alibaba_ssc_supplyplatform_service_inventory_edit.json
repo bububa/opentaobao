@@ -1,19 +1,15 @@
 {
-	"id": 49149,
-	"name": "alibaba.ssc.supplyplatform.service.inventory.edit",
-	"apiChineseName": "编辑服务库存",
-	"description": "实时编辑服务库存。只支持增加或减少库存，不支持设置绝对库存值。\n需要自己处理好幂等逻辑。\n要先查询当前库存值，并基于返回结果做编辑操作。\n参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save",
 	"requestParams": [
-		{
-			"name": "provider_type",
-			"type": "String",
-			"description": "服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参",
-			"required": true
-		},
 		{
 			"name": "provider_id",
 			"type": "Number",
 			"description": "服务提供者id。参考alibaba.ssc.supplyplatform.servicecapacity.save入参",
+			"required": true
+		},
+		{
+			"name": "provider_type",
+			"type": "String",
+			"description": "服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参",
 			"required": true
 		},
 		{
@@ -23,11 +19,6 @@
 			"required": true
 		},
 		{
-			"name": "edit_details",
-			"type": "EditDetailInventoryRequest[]",
-			"description": "库存编辑列表。每次不超过100条",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "target_inventory_key",
@@ -41,40 +32,45 @@
 					"description": "不为0的整数",
 					"required": true
 				}
-			]
+			],
+			"name": "edit_details",
+			"type": "EditDetailInventoryRequest[]",
+			"description": "库存编辑列表。每次不超过100条",
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "对外展示的错误信息",
-					"required": true
+					"description": "对外展示的错误信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.service.inventory.edit",
+	"apiChineseName": "编辑服务库存",
+	"description": "实时编辑服务库存。只支持增加或减少库存，不支持设置绝对库存值。\n需要自己处理好幂等逻辑。\n要先查询当前库存值，并基于返回结果做编辑操作。\n参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save",
+	"id": 49149
 }

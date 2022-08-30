@@ -1,13 +1,6 @@
 {
-	"id": 44760,
-	"name": "alibaba.ailabs.tmallgenie.auth.taobaoauth",
-	"apiChineseName": "天猫精灵淘宝登录授权绑定接口",
-	"description": "厂商获取用户淘宝授权之后，通过此接口获取天猫精灵授权，并绑定一台设备",
 	"requestParams": [
 		{
-			"name": "auth_param",
-			"type": "TopAuthReqDto",
-			"description": "授权信息",
 			"subParams": [
 				{
 					"name": "response_type",
@@ -29,12 +22,12 @@
 					"type": "String",
 					"description": "state"
 				}
-			]
+			],
+			"name": "auth_param",
+			"type": "TopAuthReqDto",
+			"description": "授权信息"
 		},
 		{
-			"name": "device_param",
-			"type": "TopDeviceReqDto",
-			"description": "设备信息",
 			"subParams": [
 				{
 					"name": "device_signature",
@@ -46,59 +39,60 @@
 					"type": "String",
 					"description": "Device Serial Number，三方传入的设备唯一标识"
 				}
-			]
+			],
+			"name": "device_param",
+			"type": "TopDeviceReqDto",
+			"description": "设备信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "register_result",
-			"type": "RegisterInfoVo",
-			"description": "注册结果",
 			"subParams": [
 				{
 					"name": "user_open_id",
 					"type": "String",
-					"description": "用户开放ID，这个id标识您的天猫精灵用户",
-					"required": true
+					"description": "用户开放ID，这个id标识您的天猫精灵用户"
 				},
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "天猫精灵设备UUID，用户需要保存这个id，后续的设备相关接口调用都会使用设备uuid",
-					"required": true
+					"description": "天猫精灵设备UUID，用户需要保存这个id，后续的设备相关接口调用都会使用设备uuid"
 				}
-			]
+			],
+			"name": "register_result",
+			"type": "RegisterInfoVo",
+			"description": "注册结果"
 		},
 		{
-			"name": "auth_result",
-			"type": "DeviceTokenVo",
-			"description": "授权结果",
 			"subParams": [
 				{
 					"name": "access_expires_in",
 					"type": "Number",
-					"description": "token过期时间，相对时间，单位为秒",
-					"required": true
+					"description": "token过期时间，相对时间，单位为秒"
 				},
 				{
 					"name": "access_token",
 					"type": "String",
-					"description": "acces_token",
-					"required": true
+					"description": "acces_token"
 				},
 				{
 					"name": "refresh_expires_in",
 					"type": "Number",
-					"description": "token过期时间，相对时间，单位为秒",
-					"required": true
+					"description": "token过期时间，相对时间，单位为秒"
 				},
 				{
 					"name": "refresh_token",
 					"type": "String",
-					"description": "refresh_token",
-					"required": true
+					"description": "refresh_token"
 				}
-			]
+			],
+			"name": "auth_result",
+			"type": "DeviceTokenVo",
+			"description": "授权结果"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.taobaoauth",
+	"apiChineseName": "天猫精灵淘宝登录授权绑定接口",
+	"description": "厂商获取用户淘宝授权之后，通过此接口获取天猫精灵授权，并绑定一台设备",
+	"id": 44760
 }

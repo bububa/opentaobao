@@ -24,10 +24,10 @@ type AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest struct {
 	_sellerName string
 	// 商家id
 	_entInfoId int64
-	// 每页条数
-	_pageSize int64
 	// 当前页
 	_page int64
+	// 每页条数
+	_pageSize int64
 }
 
 // NewAlibabaAlihealthTracecodesellerBillResultSearchRequest 初始化AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest对象
@@ -129,19 +129,6 @@ func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetEntInfoId(
 	return r._entInfoId
 }
 
-// SetPageSize is PageSize Setter
-// 每页条数
-func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetPage is Page Setter
 // 当前页
 func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPage(_page int64) error {
@@ -153,4 +140,17 @@ func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPage(_pag
 // GetPage Page Getter
 func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPage() int64 {
 	return r._page
+}
+
+// SetPageSize is PageSize Setter
+// 每页条数
+func (r *AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r AlibabaAlihealthTracecodesellerBillResultSearchAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

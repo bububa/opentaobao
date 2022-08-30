@@ -1,8 +1,4 @@
 {
-	"id": 33769,
-	"name": "taobao.ailab.aicloud.top.like.delete",
-	"apiChineseName": "取消收藏",
-	"description": "取消收藏",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -61,5 +57,9 @@
 			"type": "Boolean",
 			"description": "具体结果值"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.like.delete",
+	"apiChineseName": "取消收藏",
+	"description": "取消收藏",
+	"id": 33769
 }

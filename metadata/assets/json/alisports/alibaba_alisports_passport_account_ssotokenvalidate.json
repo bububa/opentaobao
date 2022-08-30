@@ -1,8 +1,4 @@
 {
-	"id": 29455,
-	"name": "alibaba.alisports.passport.account.ssotokenvalidate",
-	"apiChineseName": "sso_token验证",
-	"description": "sso_token验证",
 	"requestParams": [
 		{
 			"name": "sso_token",
@@ -50,5 +46,9 @@
 			"type": "String",
 			"description": "第三方用户ID"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.ssotokenvalidate",
+	"apiChineseName": "sso_token验证",
+	"description": "sso_token验证",
+	"id": 29455
 }

@@ -1,18 +1,14 @@
 {
-	"id": 42408,
-	"name": "alibaba.retail.vending.road.item.sync",
-	"apiChineseName": "贩卖机库存商品同步",
-	"description": "贩卖机库存商品同步",
 	"requestParams": [
 		{
-			"name": "road_item_sync",
-			"type": "RoadItemSyncDto",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "list",
-					"type": "RoadItemSaveDto[]",
-					"description": "数据",
+					"name": "device_sn",
+					"type": "String",
+					"description": "设备Sn",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "road_ids",
@@ -48,15 +44,15 @@
 							"type": "String",
 							"description": "条码"
 						}
-					]
-				},
-				{
-					"name": "device_sn",
-					"type": "String",
-					"description": "设备Sn",
-					"required": true
+					],
+					"name": "list",
+					"type": "RoadItemSaveDto[]",
+					"description": "数据"
 				}
-			]
+			],
+			"name": "road_item_sync",
+			"type": "RoadItemSyncDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -80,5 +76,9 @@
 			"type": "String",
 			"description": "错误消息"
 		}
-	]
+	],
+	"name": "alibaba.retail.vending.road.item.sync",
+	"apiChineseName": "贩卖机库存商品同步",
+	"description": "贩卖机库存商品同步",
+	"id": 42408
 }

@@ -78,4 +78,6 @@ type TaobaoTrainAgentOrderGetVtwoAPIResponseModel struct {
 	Mailing bool `json:"mailing,omitempty" xml:"mailing,omitempty"`
 	// 是否需要发票
 	NeedReceipt bool `json:"need_receipt,omitempty" xml:"need_receipt,omitempty"`
+	// 是否需要乘车人退款 true:需要 false:不需要
+	RefundByPassenger bool `json:"refund_by_passenger,omitempty" xml:"refund_by_passenger,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29001,
-	"name": "tmall.car.lease.itemcarinfo",
-	"apiChineseName": "整车租赁商品四级车型信息",
-	"description": "整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -12,109 +8,97 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "耗时",
-					"required": true
+					"description": "耗时"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "当前时间",
-					"required": true
+					"description": "当前时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
-					"name": "object",
-					"type": "CarItemInfoDto",
-					"description": "返回的对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "brand",
 							"type": "String",
-							"description": "品牌",
-							"required": true
+							"description": "品牌"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
 							"name": "line",
 							"type": "String",
-							"description": "车系",
-							"required": true
+							"description": "车系"
 						},
 						{
 							"name": "model",
 							"type": "String",
-							"description": "型号",
-							"required": true
+							"description": "型号"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "不会返回",
-							"required": true
+							"description": "不会返回"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "不会返回",
-							"required": true
+							"description": "不会返回"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "skuId不会返回",
-							"required": true
+							"description": "skuId不会返回"
 						},
 						{
 							"name": "year",
 							"type": "String",
-							"description": "年款",
-							"required": true
+							"description": "年款"
 						}
-					]
+					],
+					"name": "object",
+					"type": "CarItemInfoDto",
+					"description": "返回的对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功与否",
-					"required": true
+					"description": "成功与否"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.car.lease.itemcarinfo",
+	"apiChineseName": "整车租赁商品四级车型信息",
+	"description": "整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传",
+	"id": 29001
 }

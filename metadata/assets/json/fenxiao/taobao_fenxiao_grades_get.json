@@ -1,13 +1,6 @@
 {
-	"id": 10569,
-	"name": "taobao.fenxiao.grades.get",
-	"apiChineseName": "分销商等级查询",
-	"description": "根据供应商ID，查询他的分销商等级信息",
 	"responseParams": [
 		{
-			"name": "fenxiao_grades",
-			"type": "FenxiaoGrade []",
-			"description": "分销商等级信息",
 			"subParams": [
 				{
 					"name": "grade_id",
@@ -29,7 +22,14 @@
 					"type": "Date",
 					"description": "记录最后修改时间"
 				}
-			]
+			],
+			"name": "fenxiao_grades",
+			"type": "FenxiaoGrade []",
+			"description": "分销商等级信息"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.grades.get",
+	"apiChineseName": "分销商等级查询",
+	"description": "根据供应商ID，查询他的分销商等级信息",
+	"id": 10569
 }

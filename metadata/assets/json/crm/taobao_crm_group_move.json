@@ -1,24 +1,20 @@
 {
-	"id": 10843,
-	"name": "taobao.crm.group.move",
-	"apiChineseName": "分组移动",
-	"description": "将一个分组下的所有会员移动到另一个分组，会员从原分组中删除\u003cbr/\u003e注：移动属性为异步任务建议先调用taobao.crm.grouptask.check 确保涉及属性上没有任务。",
 	"requestParams": [
 		{
 			"name": "from_group_id",
 			"type": "Number",
 			"description": "需要移动的分组",
-			"required": true,
 			"maxLength": 19,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "to_group_id",
 			"type": "Number",
 			"description": "目的分组",
-			"required": true,
 			"maxLength": 19,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -27,5 +23,9 @@
 			"type": "Boolean",
 			"description": "异步任务请求成功，是否执行完毕需要通过taobao.crm.grouptask.check检测"
 		}
-	]
+	],
+	"name": "taobao.crm.group.move",
+	"apiChineseName": "分组移动",
+	"description": "将一个分组下的所有会员移动到另一个分组，会员从原分组中删除\u003cbr/\u003e注：移动属性为异步任务建议先调用taobao.crm.grouptask.check 确保涉及属性上没有任务。",
+	"id": 10843
 }

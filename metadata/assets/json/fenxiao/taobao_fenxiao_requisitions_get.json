@@ -1,8 +1,4 @@
 {
-	"id": 21617,
-	"name": "taobao.fenxiao.requisitions.get",
-	"apiChineseName": "合作申请查询",
-	"description": "合作申请查询",
 	"requestParams": [
 		{
 			"name": "status",
@@ -42,9 +38,6 @@
 			"description": "结果记录数"
 		},
 		{
-			"name": "requisitions",
-			"type": "Requisition []",
-			"description": "合作申请",
 			"subParams": [
 				{
 					"name": "requisition_id",
@@ -111,7 +104,14 @@
 					"type": "String",
 					"description": "主营类目名称"
 				}
-			]
+			],
+			"name": "requisitions",
+			"type": "Requisition []",
+			"description": "合作申请"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.requisitions.get",
+	"apiChineseName": "合作申请查询",
+	"description": "合作申请查询",
+	"id": 21617
 }

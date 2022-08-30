@@ -1,8 +1,4 @@
 {
-	"id": 34531,
-	"name": "alibaba.aliqin.axb.vendor.heart.beat",
-	"apiChineseName": "供应商心跳上报接口",
-	"description": "供应商上报自己的心跳信息",
 	"requestParams": [
 		{
 			"name": "status",
@@ -18,29 +14,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "module",
-					"required": true
+					"description": "module"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.axb.vendor.heart.beat",
+	"apiChineseName": "供应商心跳上报接口",
+	"description": "供应商上报自己的心跳信息",
+	"id": 34531
 }

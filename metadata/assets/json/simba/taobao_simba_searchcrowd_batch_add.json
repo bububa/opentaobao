@@ -1,8 +1,4 @@
 {
-	"id": 27298,
-	"name": "taobao.simba.searchcrowd.batch.add",
-	"apiChineseName": "推广单元增加搜索人群",
-	"description": "推广单元新增搜索人群",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -11,93 +7,86 @@
 			"required": true
 		},
 		{
-			"name": "adgroup_id",
-			"type": "Number",
-			"description": "推广单元id",
-			"required": true
-		},
-		{
 			"name": "adgroup_targeting_tags",
 			"type": "String",
 			"description": "新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广单元id",
 			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "adgrouptargetingtags",
-			"type": "AdgroupTargetingTagDto []",
-			"description": "定向信息",
 			"subParams": [
 				{
 					"name": "price_mode",
 					"type": "Number",
-					"description": "人群包出价方式0:出价;1:溢价",
-					"required": true
+					"description": "人群包出价方式0:出价;1:溢价"
 				},
 				{
 					"name": "discount",
 					"type": "Number",
-					"description": "用户溢价比例,溢价20%,接口返回120",
-					"required": true
+					"description": "用户溢价比例,溢价20%,接口返回120"
 				},
 				{
 					"name": "is_default_price",
 					"type": "Number",
-					"description": "是否溢价1:不溢价,0:溢价",
-					"required": true
+					"description": "是否溢价1:不溢价,0:溢价"
 				},
 				{
-					"name": "crowd",
-					"type": "CrowdDto",
-					"description": "人群信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "业务类型",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "cust_id",
 							"type": "Number",
-							"description": "用户在直通车的ID",
-							"required": true
+							"description": "用户在直通车的ID"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "用户所选择的人群名称",
-							"required": true
+							"description": "用户所选择的人群名称"
 						},
 						{
 							"name": "template_id",
 							"type": "Number",
-							"description": "人群包模版类型",
-							"required": true
+							"description": "人群包模版类型"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "人群包类型",
-							"required": true
+							"description": "人群包类型"
 						}
-					]
+					],
+					"name": "crowd",
+					"type": "CrowdDto",
+					"description": "人群信息"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "人群Id",
-					"required": true
+					"description": "人群Id"
 				},
 				{
 					"name": "online_status",
 					"type": "Number",
-					"description": "人群上下线状态,0:下线;1:上线",
-					"required": true
+					"description": "人群上下线状态,0:下线;1:上线"
 				}
-			]
+			],
+			"name": "adgrouptargetingtags",
+			"type": "AdgroupTargetingTagDto []",
+			"description": "定向信息"
 		}
-	]
+	],
+	"name": "taobao.simba.searchcrowd.batch.add",
+	"apiChineseName": "推广单元增加搜索人群",
+	"description": "推广单元新增搜索人群",
+	"id": 27298
 }

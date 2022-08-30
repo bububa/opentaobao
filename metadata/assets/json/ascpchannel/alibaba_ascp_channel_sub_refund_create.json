@@ -1,14 +1,6 @@
 {
-	"id": 55230,
-	"name": "alibaba.ascp.channel.sub.refund.create",
-	"apiChineseName": "淘外分销逆向创单（子单退）",
-	"description": "淘外分销逆向创单（子单退）",
 	"requestParams": [
 		{
-			"name": "sub_refund_create_req",
-			"type": "ExternalCreateRefundOrderDetailRequest",
-			"description": "子单退款创建请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "currency_type",
@@ -25,8 +17,7 @@
 				{
 					"name": "refund_fee",
 					"type": "Number",
-					"description": "退款金额",
-					"required": true
+					"description": "退款金额"
 				},
 				{
 					"name": "refund_type",
@@ -65,91 +56,97 @@
 					"type": "String",
 					"description": "外部订单号",
 					"required": true
+				},
+				{
+					"name": "proof_pic_urls",
+					"type": "String[]",
+					"description": "退款举证图片列表"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因"
 				}
-			]
+			],
+			"name": "sub_refund_create_req",
+			"type": "ExternalCreateRefundOrderDetailRequest",
+			"description": "子单退款创建请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
-					"name": "error_message",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "Data",
-					"description": "返回主体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退款金额",
-							"required": true
+							"description": "退款金额"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "skuId",
-							"required": true
+							"description": "skuId"
 						},
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品id",
-							"required": true
+							"description": "产品id"
 						},
 						{
 							"name": "out_refund_no",
 							"type": "String",
-							"description": "外部退款单号",
-							"required": true
+							"description": "外部退款单号"
 						},
 						{
 							"name": "refund_no",
 							"type": "String",
-							"description": "供应链渠道退款单号",
-							"required": true
+							"description": "供应链渠道退款单号"
 						},
 						{
 							"name": "out_sub_order_no",
 							"type": "String",
-							"description": "外部子订单号",
-							"required": true
+							"description": "外部子订单号"
 						},
 						{
 							"name": "sub_sale_order_no",
 							"type": "String",
-							"description": "子订单号",
-							"required": true
+							"description": "子订单号"
 						},
 						{
 							"name": "sale_order_no",
 							"type": "String",
-							"description": "供应链渠道订单号",
-							"required": true
+							"description": "供应链渠道订单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回主体"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.channel.sub.refund.create",
+	"apiChineseName": "淘外分销逆向创单（子单退）",
+	"description": "淘外分销逆向创单（子单退）",
+	"id": 55230
 }

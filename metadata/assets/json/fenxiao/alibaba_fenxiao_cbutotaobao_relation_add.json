@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "淘宝商品id",
+			"required": true
+		},
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "1688买家id",
+			"required": true
+		},
+		{
+			"name": "supplier_id",
+			"type": "Number",
+			"description": "1688供应商id",
+			"required": true
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "1688商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "结果返回值"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.fenxiao.cbutotaobao.relation.add",
+	"apiChineseName": "1688分销铺货到淘宝关系添加",
+	"description": "1688分销铺货到淘宝关系添加",
+	"id": 61541
+}

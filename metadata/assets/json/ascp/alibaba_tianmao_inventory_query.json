@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_codes",
+					"type": "String[]",
+					"description": "货品编码集合（优先读货品ID，货品ID为空才读货品编码）"
+				},
+				{
+					"name": "item_ids",
+					"type": "Number[]",
+					"description": "货品ID集合（优先读货品ID，货品ID为空才读货品编码）"
+				},
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "货主ID",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码",
+					"required": true
+				}
+			],
+			"name": "hi_erp_query_inventory_req",
+			"type": "HiErpQueryInventoryReq",
+			"description": "库存查询模型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "货品ID"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码"
+						},
+						{
+							"name": "current_number",
+							"type": "Number",
+							"description": "当前库存数量"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货品编码"
+						}
+					],
+					"name": "result",
+					"type": "HiErpQueryInventoryResp[]",
+					"description": "库存返回模型"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因，通常用于success字段值为false时"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码，通常用于success为false时的页面错误类型判定"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "通常用于success为true时的页面提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果是否正确   true：成功  false：失败"
+				}
+			],
+			"name": "list_result",
+			"type": "ListResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.tianmao.inventory.query",
+	"apiChineseName": "阿里巴巴.天猫.aic库存.查询",
+	"description": "阿里巴巴.天猫.aic库存.查询",
+	"id": 61785
+}

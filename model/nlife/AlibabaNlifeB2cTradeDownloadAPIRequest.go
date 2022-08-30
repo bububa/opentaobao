@@ -12,12 +12,12 @@ import (
 // 下载零售商在零售+平台创建的订单
 type AlibabaNlifeB2cTradeDownloadAPIRequest struct {
 	model.Params
-	// 零售门店在零售+平台对应的ID
-	_storeId string
 	// 开始时间
 	_startDate string
 	// 结束时间
 	_endDate string
+	// 零售门店在零售+平台对应的ID
+	_storeId string
 	// 页码
 	_pageNo int64
 	// 分页大小
@@ -45,19 +45,6 @@ func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetStoreId is StoreId Setter
-// 零售门店在零售+平台对应的ID
-func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStoreId(_storeId string) error {
-	r._storeId = _storeId
-	r.Set("store_id", _storeId)
-	return nil
-}
-
-// GetStoreId StoreId Getter
-func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetStoreId() string {
-	return r._storeId
-}
-
 // SetStartDate is StartDate Setter
 // 开始时间
 func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStartDate(_startDate string) error {
@@ -82,6 +69,19 @@ func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetEndDate(_endDate string) err
 // GetEndDate EndDate Getter
 func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetStoreId is StoreId Setter
+// 零售门店在零售+平台对应的ID
+func (r *AlibabaNlifeB2cTradeDownloadAPIRequest) SetStoreId(_storeId string) error {
+	r._storeId = _storeId
+	r.Set("store_id", _storeId)
+	return nil
+}
+
+// GetStoreId StoreId Getter
+func (r AlibabaNlifeB2cTradeDownloadAPIRequest) GetStoreId() string {
+	return r._storeId
 }
 
 // SetPageNo is PageNo Setter

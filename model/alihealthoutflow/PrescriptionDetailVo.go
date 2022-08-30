@@ -22,6 +22,8 @@ type PrescriptionDetailVo struct {
 	PrescriptionPicUrl string `json:"prescription_pic_url,omitempty" xml:"prescription_pic_url,omitempty"`
 	// 肝功能
 	GanGongDetail string `json:"gan_gong_detail,omitempty" xml:"gan_gong_detail,omitempty"`
+	// 既往史
+	ProblemHistory string `json:"problem_history,omitempty" xml:"problem_history,omitempty"`
 	// 淘宝订单号
 	TaobaoOrderNo string `json:"taobao_order_no,omitempty" xml:"taobao_order_no,omitempty"`
 	// 患者姓名
@@ -46,8 +48,6 @@ type PrescriptionDetailVo struct {
 	DoctorName string `json:"doctor_name,omitempty" xml:"doctor_name,omitempty"`
 	// 医院id
 	HospitalId string `json:"hospital_id,omitempty" xml:"hospital_id,omitempty"`
-	// 既往史
-	ProblemHistory string `json:"problem_history,omitempty" xml:"problem_history,omitempty"`
 	// 出生年月日
 	PatientBirthday string `json:"patient_birthday,omitempty" xml:"patient_birthday,omitempty"`
 	// 处方审核时间

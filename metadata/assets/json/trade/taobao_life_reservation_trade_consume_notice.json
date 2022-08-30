@@ -1,8 +1,4 @@
 {
-	"id": 55039,
-	"name": "taobao.life.reservation.trade.consume.notice",
-	"apiChineseName": "生服购后预约外部核销",
-	"description": "生服团购商品，购后预约。外部ISV进行核销",
 	"requestParams": [
 		{
 			"name": "trade_no",
@@ -19,49 +15,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "traceId",
-					"required": true
+					"description": "traceId"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "error",
-					"type": "TribeError",
-					"description": "错误",
-					"required": true,
 					"subParams": [
 						{
 							"name": "view",
 							"type": "String",
-							"description": "错误可读性描述",
-							"required": true
+							"description": "错误可读性描述"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误码",
-							"required": true
+							"description": "错误码"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						}
-					]
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.life.reservation.trade.consume.notice",
+	"apiChineseName": "生服购后预约外部核销",
+	"description": "生服团购商品，购后预约。外部ISV进行核销",
+	"id": 55039
 }

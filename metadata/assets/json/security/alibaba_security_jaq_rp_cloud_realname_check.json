@@ -1,19 +1,9 @@
 {
-	"id": 33927,
-	"name": "alibaba.security.jaq.rp.cloud.realname.check",
-	"apiChineseName": "验证姓名和证件号",
-	"description": "验证姓名和证件号",
 	"requestParams": [
 		{
 			"name": "verify_token",
 			"type": "String",
 			"description": "token",
-			"required": true
-		},
-		{
-			"name": "image_urls",
-			"type": "Json",
-			"description": "要识别的信息",
 			"required": true
 		},
 		{
@@ -25,33 +15,40 @@
 			"name": "identity_code",
 			"type": "String",
 			"description": "证件号"
+		},
+		{
+			"name": "image_urls",
+			"type": "Json",
+			"description": "要识别的信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RealNameResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "check_code",
 					"type": "String",
-					"description": "checkCode",
-					"required": true
+					"description": "checkCode"
 				},
 				{
 					"name": "check_message",
 					"type": "String",
-					"description": "checkMessage",
-					"required": true
+					"description": "checkMessage"
 				},
 				{
 					"name": "match",
 					"type": "Boolean",
-					"description": "match",
-					"required": true
+					"description": "match"
 				}
-			]
+			],
+			"name": "data",
+			"type": "RealNameResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.cloud.realname.check",
+	"apiChineseName": "验证姓名和证件号",
+	"description": "验证姓名和证件号",
+	"id": 33927
 }

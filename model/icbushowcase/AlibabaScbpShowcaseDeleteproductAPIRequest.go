@@ -13,7 +13,7 @@ import (
 type AlibabaScbpShowcaseDeleteproductAPIRequest struct {
 	model.Params
 	// 橱窗idList
-	_windowIdList []int64
+	_windowIdList []string
 }
 
 // NewAlibabaScbpShowcaseDeleteproductRequest 初始化AlibabaScbpShowcaseDeleteproductAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetApiParams() url.Values {
 
 // SetWindowIdList is WindowIdList Setter
 // 橱窗idList
-func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdList []int64) error {
+func (r *AlibabaScbpShowcaseDeleteproductAPIRequest) SetWindowIdList(_windowIdList []string) error {
 	r._windowIdList = _windowIdList
 	r.Set("window_id_list", _windowIdList)
 	return nil
 }
 
 // GetWindowIdList WindowIdList Getter
-func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetWindowIdList() []int64 {
+func (r AlibabaScbpShowcaseDeleteproductAPIRequest) GetWindowIdList() []string {
 	return r._windowIdList
 }

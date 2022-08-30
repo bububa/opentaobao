@@ -1,8 +1,4 @@
 {
-	"id": 27337,
-	"name": "alibaba.alihealth.examination.reserve.state",
-	"apiChineseName": "体检机构对接_体检状态查询",
-	"description": "体检机构对接_体检状态查询",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -27,9 +23,6 @@
 			"description": "返回结果描述"
 		},
 		{
-			"name": "cooperation_order_info",
-			"type": "CooperationOrderInfo",
-			"description": "预约信息",
 			"subParams": [
 				{
 					"name": "check_no",
@@ -103,12 +96,19 @@
 					"description": "预约拒绝原因，在预约拒绝后才需赋值（仅上门服务中使用）",
 					"required": true
 				}
-			]
+			],
+			"name": "cooperation_order_info",
+			"type": "CooperationOrderInfo",
+			"description": "预约信息"
 		},
 		{
 			"name": "response_code",
 			"type": "String",
 			"description": "返回结果编码"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.state",
+	"apiChineseName": "体检机构对接_体检状态查询",
+	"description": "体检机构对接_体检状态查询",
+	"id": 27337
 }

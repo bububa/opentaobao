@@ -1,20 +1,8 @@
 {
-	"id": 32779,
-	"name": "alibaba.ascp.qcc.sample.cancel.item.relation",
-	"apiChineseName": "魅力惠样品解除父子商品关系",
-	"description": "品控中心魅力惠样品解除父子商品关系",
 	"requestParams": [
 		{
-			"name": "cancel_request",
-			"type": "CancelSampleRelationRequest",
-			"description": "请求参数对象",
-			"required": true,
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CancelSampleRelationData",
-					"description": "请求具体数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_item_id",
@@ -26,62 +14,67 @@
 							"type": "String[]",
 							"description": "商品编号列表"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CancelSampleRelationData",
+					"description": "请求具体数据",
+					"required": true
 				}
-			]
+			],
+			"name": "cancel_request",
+			"type": "CancelSampleRelationRequest",
+			"description": "请求参数对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SendResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
-					"name": "cancel_response",
-					"type": "CancelSampleRelationResponse",
-					"description": "业务系统返回响应",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "错误code",
-							"required": true
+							"description": "错误code"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "成功标示",
-							"required": true
+							"description": "成功标示"
 						}
-					]
+					],
+					"name": "cancel_response",
+					"type": "CancelSampleRelationResponse",
+					"description": "业务系统返回响应"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SendResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.ascp.qcc.sample.cancel.item.relation",
+	"apiChineseName": "魅力惠样品解除父子商品关系",
+	"description": "品控中心魅力惠样品解除父子商品关系",
+	"id": 32779
 }

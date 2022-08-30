@@ -1,8 +1,4 @@
 {
-	"id": 28548,
-	"name": "alibaba.oversea.translate.get",
-	"apiChineseName": "获取文本翻译信息",
-	"description": "根据传入的文本信息，获取其目标语言的翻译结果",
 	"requestParams": [
 		{
 			"name": "text",
@@ -25,23 +21,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SimpleTransResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "translated_text",
 					"type": "String",
-					"description": "translatedText",
-					"required": true
+					"description": "translatedText"
 				},
 				{
 					"name": "status_code",
 					"type": "String",
-					"description": "statusCode",
-					"required": true
+					"description": "statusCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SimpleTransResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.oversea.translate.get",
+	"apiChineseName": "获取文本翻译信息",
+	"description": "根据传入的文本信息，获取其目标语言的翻译结果",
+	"id": 28548
 }

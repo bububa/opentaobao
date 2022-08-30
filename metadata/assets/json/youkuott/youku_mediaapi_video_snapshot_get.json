@@ -1,8 +1,4 @@
 {
-	"id": 42057,
-	"name": "youku.mediaapi.video.snapshot.get",
-	"apiChineseName": "根据视频ID查询视频缩微图",
-	"description": "根据视频ID查询视频缩微图",
 	"requestParams": [
 		{
 			"name": "vid",
@@ -18,9 +14,6 @@
 			"description": "是否成功 true:成功  false:失败（top成功标志）"
 		},
 		{
-			"name": "model_list",
-			"type": "Struct []",
-			"description": "数据",
 			"subParams": [
 				{
 					"name": "domain_name",
@@ -37,12 +30,19 @@
 					"type": "Number",
 					"description": "毫秒"
 				}
-			]
+			],
+			"name": "model_list",
+			"type": "Struct []",
+			"description": "数据"
 		},
 		{
 			"name": "msg_info",
 			"type": "String",
 			"description": "返回信息"
 		}
-	]
+	],
+	"name": "youku.mediaapi.video.snapshot.get",
+	"apiChineseName": "根据视频ID查询视频缩微图",
+	"description": "根据视频ID查询视频缩微图",
+	"id": 42057
 }

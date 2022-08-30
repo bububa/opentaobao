@@ -1,13 +1,6 @@
 {
-	"id": 50063,
-	"name": "alibaba.icbu.product.schema.get",
-	"apiChineseName": "（新）ICBU商品发布schema接口",
-	"description": "获取ICBU商品发布的页面规则和填写字段，适用于新发商品",
 	"requestParams": [
 		{
-			"name": "param_product_top_publish_request",
-			"type": "ProductTopPublishRequest",
-			"description": "商品规则渲染请求",
 			"subParams": [
 				{
 					"name": "cat_id",
@@ -19,7 +12,10 @@
 					"type": "String",
 					"description": "返回文案的语种，支持en_US,zh,zh_TW"
 				}
-			]
+			],
+			"name": "param_product_top_publish_request",
+			"type": "ProductTopPublishRequest",
+			"description": "商品规则渲染请求"
 		}
 	],
 	"responseParams": [
@@ -48,5 +44,9 @@
 			"type": "String",
 			"description": "错误追踪码，请务必打印在日志中，后续排查问题请提交此错误追踪码"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.schema.get",
+	"apiChineseName": "（新）ICBU商品发布schema接口",
+	"description": "获取ICBU商品发布的页面规则和填写字段，适用于新发商品",
+	"id": 50063
 }

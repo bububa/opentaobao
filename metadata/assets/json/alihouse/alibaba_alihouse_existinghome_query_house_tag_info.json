@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "123",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "123",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "1",
+					"required": true
+				}
+			],
+			"name": "sync_house_tag_feature_dto",
+			"type": "SyncHouseTagFeatureDTO",
+			"description": "入参实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "community_outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"subParams": [
+								{
+									"name": "key",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "source",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "feature_dto_list",
+							"type": "FeatureDTO[]",
+							"description": "实体类"
+						}
+					],
+					"name": "data",
+					"type": "SyncHouseTagFeatureDTO",
+					"description": "返回值"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.query.house.tag.info",
+	"apiChineseName": "活动标查询接口",
+	"description": "活动标查询接口",
+	"id": 62942
+}

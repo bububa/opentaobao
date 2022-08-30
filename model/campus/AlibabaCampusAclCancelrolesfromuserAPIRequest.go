@@ -16,10 +16,10 @@ type AlibabaCampusAclCancelrolesfromuserAPIRequest struct {
 	_role []RoleReq
 	// 系统id
 	_systemId string
-	// 用户账号
-	_accountId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 用户账号
+	_accountId string
 	// 公司id
 	_companyId int64
 	// 园区id
@@ -73,19 +73,6 @@ func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetAccountId is AccountId Setter
-// 用户账号
-func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetAccountId(_accountId string) error {
-	r._accountId = _accountId
-	r.Set("account_id", _accountId)
-	return nil
-}
-
-// GetAccountId AccountId Getter
-func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetAccountId() string {
-	return r._accountId
-}
-
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
 func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetUserId(_userId string) error {
@@ -97,6 +84,19 @@ func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetUserId(_userId string
 // GetUserId UserId Getter
 func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetAccountId is AccountId Setter
+// 用户账号
+func (r *AlibabaCampusAclCancelrolesfromuserAPIRequest) SetAccountId(_accountId string) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// GetAccountId AccountId Getter
+func (r AlibabaCampusAclCancelrolesfromuserAPIRequest) GetAccountId() string {
+	return r._accountId
 }
 
 // SetCompanyId is CompanyId Setter

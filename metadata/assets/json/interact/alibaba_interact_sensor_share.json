@@ -1,13 +1,13 @@
 {
-	"id": 23757,
-	"name": "alibaba.interact.sensor.share",
-	"apiChineseName": "分享",
-	"description": "客户端分享",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "return=0表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.share",
+	"apiChineseName": "分享",
+	"description": "客户端分享",
+	"id": 23757
 }

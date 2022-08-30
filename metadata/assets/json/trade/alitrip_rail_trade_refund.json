@@ -1,14 +1,6 @@
 {
-	"id": 47494,
-	"name": "alitrip.rail.trade.refund",
-	"apiChineseName": "退票接口",
-	"description": "退票接口",
 	"requestParams": [
 		{
-			"name": "refund_param",
-			"type": "RefundReq",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -60,34 +52,39 @@
 					"description": "平台订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "refund_param",
+			"type": "RefundReq",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "接口返回对象",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "接口成功/失败",
-					"required": true
+					"description": "接口成功/失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "接口返回对象"
 		}
-	]
+	],
+	"name": "alitrip.rail.trade.refund",
+	"apiChineseName": "退票接口",
+	"description": "退票接口",
+	"id": 47494
 }

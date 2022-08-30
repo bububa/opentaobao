@@ -1,8 +1,4 @@
 {
-	"id": 46465,
-	"name": "alibaba.latour.strategy.show",
-	"apiChineseName": "阿里巴巴权益投放接口",
-	"description": "阿里巴巴权益平台权益投放接口",
 	"requestParams": [
 		{
 			"name": "with_test_benefit",
@@ -70,325 +66,328 @@
 			"name": "filter_crowd",
 			"type": "Boolean",
 			"description": "过滤人群"
+		},
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "openid"
+		},
+		{
+			"name": "with_strategy_instance",
+			"type": "Boolean",
+			"description": "是否需要投放计划维度的权益核销实例"
+		},
+		{
+			"name": "with_benefit_instance",
+			"type": "Boolean",
+			"description": "是否需要权益维度的权益核销实例"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "StrategyShowResultDto",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "extra_data",
-							"type": "Json",
-							"description": "扩展参数",
-							"required": true
+							"type": "String",
+							"description": "扩展参数"
 						},
 						{
 							"name": "has_next_page",
 							"type": "Boolean",
-							"description": "是否有下一页",
-							"required": true
+							"description": "是否有下一页"
 						},
 						{
-							"name": "show_strategy",
-							"type": "ShowStrategyDto",
-							"description": "投放计划",
-							"required": true,
 							"subParams": [
 								{
 									"name": "mode",
 									"type": "String",
-									"description": "投放模式",
-									"required": true
+									"description": "投放模式"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "投放计划code",
-									"required": true
+									"description": "投放计划code"
 								},
 								{
 									"name": "all_rule_passed",
 									"type": "Boolean",
-									"description": "是否投放计划所有规则通过",
-									"required": true
+									"description": "是否投放计划所有规则通过"
 								},
 								{
 									"name": "asac",
 									"type": "String",
-									"description": "投放计划安全码",
-									"required": true
+									"description": "投放计划安全码"
 								},
 								{
 									"name": "algorithm_failover",
 									"type": "Boolean",
-									"description": "算法容灾结果",
-									"required": true
+									"description": "算法容灾结果"
 								},
 								{
-									"name": "show_rules",
-									"type": "ShowRuleDto[]",
-									"description": "投放计划规则",
-									"required": true,
 									"subParams": [
 										{
 											"name": "feature",
-											"type": "Json",
-											"description": "规则扩展信息",
-											"required": true
+											"type": "String",
+											"description": "规则扩展信息"
 										},
 										{
 											"name": "passed",
 											"type": "Boolean",
-											"description": "规则是否通过",
-											"required": true
+											"description": "规则是否通过"
 										},
 										{
 											"name": "type",
 											"type": "String",
-											"description": "规则类型",
-											"required": true
+											"description": "规则类型"
 										}
-									]
+									],
+									"name": "show_rules",
+									"type": "ShowRuleDto[]",
+									"description": "投放计划规则"
+								},
+								{
+									"subParams": [
+										{
+											"name": "benefit_code",
+											"type": "String",
+											"description": "权益code"
+										},
+										{
+											"name": "benefit_type",
+											"type": "String",
+											"description": "权益类型"
+										},
+										{
+											"name": "record_id",
+											"type": "Number",
+											"description": "中奖记录ID"
+										}
+									],
+									"name": "show_benefit_instances",
+									"type": "ShowBenefitInstanceDTO[]",
+									"description": "投放计划维度核销数据"
 								}
-							]
+							],
+							"name": "show_strategy",
+							"type": "ShowStrategyDto",
+							"description": "投放计划"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
-							"name": "show_benefits",
-							"type": "ShowBenefitDto[]",
-							"description": "权益列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "权益code",
-									"required": true
+									"description": "权益code"
 								},
 								{
 									"name": "type_desc",
 									"type": "String",
-									"description": "权益类型",
-									"required": true
+									"description": "权益类型"
 								},
 								{
 									"name": "display_amount_unit",
 									"type": "String",
-									"description": "权益展示面额单位",
-									"required": true
+									"description": "权益展示面额单位"
 								},
 								{
 									"name": "end_date",
 									"type": "Date",
-									"description": "权益发放结束时间",
-									"required": true
+									"description": "权益发放结束时间"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "权益标题",
-									"required": true
+									"description": "权益标题"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "权益类型",
-									"required": true
+									"description": "权益类型"
 								},
 								{
 									"name": "feature",
-									"type": "Json",
-									"description": "权益扩展信息",
-									"required": true
+									"type": "String",
+									"description": "权益扩展信息"
 								},
 								{
 									"name": "can_win",
 									"type": "Boolean",
-									"description": "权益是否可领",
-									"required": true
+									"description": "权益是否可领"
 								},
 								{
 									"name": "interval_time_unit",
 									"type": "String",
-									"description": "相对使用时间类型",
-									"required": true
+									"description": "相对使用时间类型"
 								},
 								{
 									"name": "display_start_fee",
 									"type": "String",
-									"description": "展示门槛",
-									"required": true
+									"description": "展示门槛"
 								},
 								{
 									"name": "send_mode",
 									"type": "String",
-									"description": "权益发放类型",
-									"required": true
+									"description": "权益发放类型"
 								},
 								{
 									"name": "send_life_cycle_state",
 									"type": "String",
-									"description": "权益生命周期",
-									"required": true
+									"description": "权益生命周期"
 								},
 								{
 									"name": "amount",
 									"type": "Number",
-									"description": "权益面额",
-									"required": true
+									"description": "权益面额"
 								},
 								{
 									"name": "test",
 									"type": "Boolean",
-									"description": "是否测试权益",
-									"required": true
+									"description": "是否测试权益"
 								},
 								{
 									"name": "had_win",
 									"type": "Boolean",
-									"description": "是否已领",
-									"required": true
+									"description": "是否已领"
 								},
 								{
-									"name": "show_rules",
-									"type": "ShowRuleDto[]",
-									"description": "权益规则列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "passed",
 											"type": "Boolean",
-											"description": "规则是否通过",
-											"required": true
+											"description": "规则是否通过"
 										},
 										{
 											"name": "type",
 											"type": "String",
-											"description": "规则类型",
-											"required": true
+											"description": "规则类型"
 										},
 										{
 											"name": "feature",
-											"type": "Json",
-											"description": "规则扩展字段",
-											"required": true
+											"type": "String",
+											"description": "规则扩展字段"
 										}
-									]
+									],
+									"name": "show_rules",
+									"type": "ShowRuleDto[]",
+									"description": "权益规则列表"
 								},
 								{
 									"name": "amount_unit",
 									"type": "String",
-									"description": "面额单位",
-									"required": true
+									"description": "面额单位"
 								},
 								{
 									"name": "has_inventory",
 									"type": "Boolean",
-									"description": "是否有库存",
-									"required": true
+									"description": "是否有库存"
 								},
 								{
 									"name": "display_amount",
 									"type": "String",
-									"description": "展示面额",
-									"required": true
+									"description": "展示面额"
 								},
 								{
 									"name": "effective_time_mode",
 									"type": "String",
-									"description": "使用时间类型",
-									"required": true
+									"description": "使用时间类型"
 								},
 								{
 									"name": "material",
-									"type": "Json",
-									"description": "素材",
-									"required": true
+									"type": "String",
+									"description": "素材"
 								},
 								{
 									"name": "effective_interval",
 									"type": "Number",
-									"description": "相对使用时间长度",
-									"required": true
+									"description": "相对使用时间长度"
 								},
 								{
 									"name": "encrypted_dynamic_info",
 									"type": "String",
-									"description": "加密动态面额参数",
-									"required": true
+									"description": "加密动态面额参数"
 								},
 								{
 									"name": "start_fee",
 									"type": "Number",
-									"description": "门槛",
-									"required": true
+									"description": "门槛"
 								},
 								{
 									"name": "asac",
 									"type": "String",
-									"description": "权益安全码",
-									"required": true
+									"description": "权益安全码"
 								},
 								{
 									"name": "start_date",
 									"type": "Date",
-									"description": "发放开始时间",
-									"required": true
+									"description": "发放开始时间"
 								},
 								{
 									"name": "effective_start",
 									"type": "Date",
-									"description": "绝对使用时间开始",
-									"required": true
+									"description": "绝对使用时间开始"
 								},
 								{
 									"name": "effective_end",
 									"type": "Date",
-									"description": "绝对使用时间结束",
-									"required": true
+									"description": "绝对使用时间结束"
+								},
+								{
+									"subParams": [
+										{
+											"name": "record_id",
+											"type": "Number",
+											"description": "中奖记录ID"
+										}
+									],
+									"name": "show_benefit_instances",
+									"type": "ShowBenefitInstanceDTO[]",
+									"description": "权益维度核销数据"
 								}
-							]
+							],
+							"name": "show_benefits",
+							"type": "ShowBenefitDto[]",
+							"description": "权益列表"
 						},
 						{
 							"name": "tracking_data",
-							"type": "Json",
-							"description": "追踪信息",
-							"required": true
+							"type": "String",
+							"description": "追踪信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StrategyShowResultDto",
+					"description": "返回结果"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.latour.strategy.show",
+	"apiChineseName": "阿里巴巴权益投放接口",
+	"description": "阿里巴巴权益平台权益投放接口",
+	"id": 46465
 }

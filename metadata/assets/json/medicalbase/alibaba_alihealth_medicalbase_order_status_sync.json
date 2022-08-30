@@ -1,13 +1,6 @@
 {
-	"id": 55216,
-	"name": "alibaba.alihealth.medicalbase.order.status.sync",
-	"apiChineseName": "号源直连订单状态同步接口",
-	"description": "互联网医院isv批量通过接口批量导入",
 	"requestParams": [
 		{
-			"name": "orderl_sync_d_t_o",
-			"type": "OrderlSyncDto",
-			"description": "订单信息",
 			"subParams": [
 				{
 					"name": "alipay_id",
@@ -48,34 +41,38 @@
 					"type": "String",
 					"description": "取号密码"
 				}
-			]
+			],
+			"name": "orderl_sync_d_t_o",
+			"type": "OrderlSyncDto",
+			"description": "订单信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "isvId",
-					"required": true
+					"description": "isvId"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.medicalbase.order.status.sync",
+	"apiChineseName": "号源直连订单状态同步接口",
+	"description": "互联网医院isv批量通过接口批量导入",
+	"id": 55216
 }

@@ -1,0 +1,155 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_activity_id",
+					"type": "String",
+					"description": "外部活动ID",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "activity_sub_name",
+					"type": "String",
+					"description": "活动副标题"
+				},
+				{
+					"name": "activity_remark",
+					"type": "String",
+					"description": "活动描述",
+					"required": true
+				},
+				{
+					"name": "activity_rule",
+					"type": "String",
+					"description": "活动规则"
+				},
+				{
+					"name": "activity_begin_time",
+					"type": "Date",
+					"description": "活动展示开始时间",
+					"required": true
+				},
+				{
+					"name": "activity_end_time",
+					"type": "Date",
+					"description": "活动展示结束时间",
+					"required": true
+				},
+				{
+					"name": "sign_up_begin_time",
+					"type": "Date",
+					"description": "报名开始时间",
+					"required": true
+				},
+				{
+					"name": "sign_up_end_time",
+					"type": "Date",
+					"description": "报名结束时间",
+					"required": true
+				},
+				{
+					"name": "hold_begin_time",
+					"type": "Date",
+					"description": "活动举办开始时间"
+				},
+				{
+					"name": "hold_end_time",
+					"type": "Date",
+					"description": "活动举办结束时间"
+				},
+				{
+					"name": "banner_urls",
+					"type": "String",
+					"description": "头图",
+					"required": true
+				},
+				{
+					"name": "content_urls",
+					"type": "String",
+					"description": "内容图",
+					"required": true
+				},
+				{
+					"name": "is_online",
+					"type": "Number",
+					"description": "活动是否上架",
+					"required": true
+				},
+				{
+					"name": "is_official_show",
+					"type": "Number",
+					"description": "是否在官盘透出活动",
+					"required": true
+				},
+				{
+					"name": "is_sign_disclaimer",
+					"type": "Number",
+					"description": "是否签署免责声明",
+					"required": true
+				},
+				{
+					"name": "contactor",
+					"type": "String",
+					"description": "联系人",
+					"required": true
+				},
+				{
+					"name": "contactor_phone",
+					"type": "String",
+					"description": "联系人电话",
+					"required": true
+				},
+				{
+					"name": "contactor_email",
+					"type": "String",
+					"description": "联系人邮箱",
+					"required": true
+				}
+			],
+			"name": "case_field_activity_dto",
+			"type": "CaseFieldActivityDTO",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.casefield.activity.submit",
+	"apiChineseName": "案场活动维护",
+	"description": "案场活动维护",
+	"id": 59338
+}

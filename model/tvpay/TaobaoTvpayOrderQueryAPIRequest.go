@@ -16,6 +16,8 @@ type TaobaoTvpayOrderQueryAPIRequest struct {
 	_deviceId string
 	// 来源
 	_from string
+	// 牌照方
+	_license string
 	// 业务订单号
 	_bizOrderId string
 	// 支付宝订单号
@@ -24,8 +26,6 @@ type TaobaoTvpayOrderQueryAPIRequest struct {
 	_orderType string
 	// 外部订单号
 	_outOrderNo string
-	// 牌照方
-	_license string
 	// 是否淘系
 	_isTao bool
 }
@@ -75,6 +75,19 @@ func (r *TaobaoTvpayOrderQueryAPIRequest) SetFrom(_from string) error {
 // GetFrom From Getter
 func (r TaobaoTvpayOrderQueryAPIRequest) GetFrom() string {
 	return r._from
+}
+
+// SetLicense is License Setter
+// 牌照方
+func (r *TaobaoTvpayOrderQueryAPIRequest) SetLicense(_license string) error {
+	r._license = _license
+	r.Set("license", _license)
+	return nil
+}
+
+// GetLicense License Getter
+func (r TaobaoTvpayOrderQueryAPIRequest) GetLicense() string {
+	return r._license
 }
 
 // SetBizOrderId is BizOrderId Setter
@@ -127,19 +140,6 @@ func (r *TaobaoTvpayOrderQueryAPIRequest) SetOutOrderNo(_outOrderNo string) erro
 // GetOutOrderNo OutOrderNo Getter
 func (r TaobaoTvpayOrderQueryAPIRequest) GetOutOrderNo() string {
 	return r._outOrderNo
-}
-
-// SetLicense is License Setter
-// 牌照方
-func (r *TaobaoTvpayOrderQueryAPIRequest) SetLicense(_license string) error {
-	r._license = _license
-	r.Set("license", _license)
-	return nil
-}
-
-// GetLicense License Getter
-func (r TaobaoTvpayOrderQueryAPIRequest) GetLicense() string {
-	return r._license
 }
 
 // SetIsTao is IsTao Setter

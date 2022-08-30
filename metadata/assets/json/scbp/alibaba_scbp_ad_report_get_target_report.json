@@ -1,14 +1,25 @@
 {
-	"id": 55208,
-	"name": "alibaba.scbp.ad.report.get.target.report",
-	"apiChineseName": "定向报告",
-	"description": "定向报告",
 	"requestParams": [
 		{
-			"name": "target_report_operation",
-			"type": "TargetReportOperationDto",
-			"description": "请求参数",
-			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "type",
@@ -38,91 +49,71 @@
 					"type": "Number",
 					"description": "计划ID"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id"
-				}
-			]
+			],
+			"name": "target_report_operation",
+			"type": "TargetReportOperationDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TargetReportDto",
-			"description": "返回数据",
 			"subParams": [
 				{
-					"name": "target_effect_list",
-					"type": "TargetEffectDto[]",
-					"description": "返回实体集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "subject",
 							"type": "String",
-							"description": "标题",
-							"required": true
+							"description": "标题"
 						},
 						{
 							"name": "option_value",
 							"type": "String",
-							"description": "选项值",
-							"required": true
+							"description": "选项值"
 						},
 						{
 							"name": "tag_ref_type",
 							"type": "Number",
-							"description": "13:地域标签 14：人群标签",
-							"required": true
+							"description": "13:地域标签 14：人群标签"
 						},
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "日期(yyyy-MM-dd)",
-							"required": true
+							"description": "日期(yyyy-MM-dd)"
 						},
 						{
 							"name": "impr",
 							"type": "Number",
-							"description": "曝光",
-							"required": true
+							"description": "曝光"
 						},
 						{
 							"name": "click",
 							"type": "Number",
-							"description": "点击",
-							"required": true
+							"description": "点击"
 						},
 						{
 							"name": "cost",
 							"type": "Number",
-							"description": "消耗",
-							"required": true
+							"description": "消耗"
 						},
 						{
 							"name": "online_min",
 							"type": "Number",
-							"description": "推广时长",
-							"required": true
+							"description": "推广时长"
 						}
-					]
+					],
+					"name": "target_effect_list",
+					"type": "TargetEffectDto[]",
+					"description": "返回实体集合"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TargetReportDto",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.report.get.target.report",
+	"apiChineseName": "定向报告",
+	"description": "定向报告",
+	"id": 55208
 }

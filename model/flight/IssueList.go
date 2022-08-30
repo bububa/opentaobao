@@ -8,6 +8,8 @@ type IssueList struct {
 	Taxes []Taxes `json:"taxes,omitempty" xml:"taxes>taxes,omitempty"`
 	// 航段
 	Segments []Segments `json:"segments,omitempty" xml:"segments>segments,omitempty"`
+	// 政策信息
+	SellPolicyList []SellPolicyDto `json:"sell_policy_list,omitempty" xml:"sell_policy_list>sell_policy_dto,omitempty"`
 	// 证件信息
 	CertNo string `json:"cert_no,omitempty" xml:"cert_no,omitempty"`
 	// 乘机人姓名
@@ -16,6 +18,8 @@ type IssueList struct {
 	Pnr string `json:"pnr,omitempty" xml:"pnr,omitempty"`
 	// 联系电话
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
+	// 乘机人生日
+	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
 	// 证件类型
 	CertType int64 `json:"cert_type,omitempty" xml:"cert_type,omitempty"`
 	// 乘客类型

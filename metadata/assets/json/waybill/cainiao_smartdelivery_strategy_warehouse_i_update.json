@@ -1,20 +1,8 @@
 {
-	"id": 29294,
-	"name": "cainiao.smartdelivery.strategy.warehouse.i.update",
-	"apiChineseName": "智能发货引擎策略仓设置",
-	"description": "智能发货引擎发货策略设置仓维度",
 	"requestParams": [
 		{
-			"name": "delivery_strategy_set_request",
-			"type": "DeliveryStrategySetRequest",
-			"description": "智能发货设置请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "delivery_strategy_info",
-					"type": "DeliveryStrategyInfo",
-					"description": "策略信息对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "buyer_message_rule",
@@ -23,16 +11,8 @@
 							"required": true
 						},
 						{
-							"name": "cocp_info_list",
-							"type": "CpInfo[]",
-							"description": "合作CP信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "address",
-									"type": "Address",
-									"description": "地址信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "city",
@@ -61,7 +41,11 @@
 											"type": "String",
 											"description": "街道"
 										}
-									]
+									],
+									"name": "address",
+									"type": "Address",
+									"description": "地址信息",
+									"required": true
 								},
 								{
 									"name": "cloud_template_id",
@@ -81,12 +65,13 @@
 									"description": "状态: 0-禁用, 1-启用",
 									"required": true
 								}
-							]
+							],
+							"name": "cocp_info_list",
+							"type": "CpInfo[]",
+							"description": "合作CP信息",
+							"required": true
 						},
 						{
-							"name": "special_route_info_list",
-							"type": "SpecialRouteInfo[]",
-							"description": "特殊线路",
 							"subParams": [
 								{
 									"name": "cp_code",
@@ -94,9 +79,6 @@
 									"description": "快递公司code"
 								},
 								{
-									"name": "receive_area",
-									"type": "AddressArea",
-									"description": "到货区域",
 									"subParams": [
 										{
 											"name": "city",
@@ -108,9 +90,15 @@
 											"type": "String",
 											"description": "省"
 										}
-									]
+									],
+									"name": "receive_area",
+									"type": "AddressArea",
+									"description": "到货区域"
 								}
-							]
+							],
+							"name": "special_route_info_list",
+							"type": "SpecialRouteInfo[]",
+							"description": "特殊线路"
 						},
 						{
 							"name": "warehouse_id",
@@ -122,16 +110,21 @@
 							"type": "String",
 							"description": "仓名称"
 						}
-					]
+					],
+					"name": "delivery_strategy_info",
+					"type": "DeliveryStrategyInfo",
+					"description": "策略信息对象",
+					"required": true
 				}
-			]
+			],
+			"name": "delivery_strategy_set_request",
+			"type": "DeliveryStrategySetRequest",
+			"description": "智能发货设置请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "warehouse_info",
-			"type": "WarehouseDto",
-			"description": "仓信息",
 			"subParams": [
 				{
 					"name": "warehouse_id",
@@ -145,7 +138,14 @@
 					"description": "仓名称",
 					"required": true
 				}
-			]
+			],
+			"name": "warehouse_info",
+			"type": "WarehouseDto",
+			"description": "仓信息"
 		}
-	]
+	],
+	"name": "cainiao.smartdelivery.strategy.warehouse.i.update",
+	"apiChineseName": "智能发货引擎策略仓设置",
+	"description": "智能发货引擎发货策略设置仓维度",
+	"id": 29294
 }

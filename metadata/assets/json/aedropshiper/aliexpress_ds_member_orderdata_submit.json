@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"name": "ae_product_id",
+			"type": "String",
+			"description": "AE product ID",
+			"required": true
+		},
+		{
+			"name": "product_amount",
+			"type": "String",
+			"description": "SKU sales amount outside the station, to 2 decimal places",
+			"required": true
+		},
+		{
+			"name": "order_amount",
+			"type": "String",
+			"description": "Order sales amount outside the station, keep 2 decimal places",
+			"required": true
+		},
+		{
+			"name": "paytime",
+			"type": "String",
+			"description": "Off-site payment time, GMT time, format YYYYMMDD:HHMMSS",
+			"required": true
+		},
+		{
+			"name": "ae_sku_info",
+			"type": "String",
+			"description": "AE product SKU information, SKU key-value pair: \"200000182:193;200007763:201336100\"",
+			"required": true
+		},
+		{
+			"name": "product_url",
+			"type": "String",
+			"description": "Commodity site url",
+			"required": true
+		},
+		{
+			"name": "ae_orderid",
+			"type": "String",
+			"description": "AE order id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "Result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "Error message"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.ds.member.orderdata.submit",
+	"apiChineseName": "dropshipper数据回流",
+	"description": "dropshipper数据回流",
+	"id": 60456
+}

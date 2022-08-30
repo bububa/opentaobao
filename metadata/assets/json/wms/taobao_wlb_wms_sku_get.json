@@ -1,8 +1,4 @@
 {
-	"id": 25322,
-	"name": "taobao.wlb.wms.sku.get",
-	"apiChineseName": "商品信息查询",
-	"description": "商品信息查询",
 	"requestParams": [
 		{
 			"name": "item_code",
@@ -221,5 +217,9 @@
 			"type": "Boolean",
 			"description": "是否区域销售"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.sku.get",
+	"apiChineseName": "商品信息查询",
+	"description": "商品信息查询",
+	"id": 25322
 }

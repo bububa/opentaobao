@@ -1,0 +1,140 @@
+{
+	"requestParams": [
+		{
+			"name": "app_key_n",
+			"type": "String",
+			"description": "appkey",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "统计的开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "统计的结束时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "headers",
+			"type": "String",
+			"description": "Headers"
+		},
+		{
+			"subParams": [
+				{
+					"name": "bill_file_count",
+					"type": "Number",
+					"description": "其中生成的单据总数"
+				},
+				{
+					"name": "relation_task_count",
+					"type": "Number",
+					"description": "其中关联关系工生成包的数量"
+				},
+				{
+					"name": "ent_name",
+					"type": "String",
+					"description": "报告所有者名称"
+				},
+				{
+					"name": "relation_file_count",
+					"type": "Number",
+					"description": "其中生成的关联关系文件总数"
+				},
+				{
+					"name": "bill_task_accepted_count",
+					"type": "Number",
+					"description": "其中已经接收到正确回执的单据包数量是"
+				},
+				{
+					"name": "bill_file_accepted_count",
+					"type": "Number",
+					"description": "其中已经接收到正确回执的单据数量是"
+				},
+				{
+					"name": "bill_task_count",
+					"type": "Number",
+					"description": "其中单据生成包的数量"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "bill_file_un_accepted_count",
+					"type": "Number",
+					"description": "其中还没有接收回执的单据数量是"
+				},
+				{
+					"name": "relation_task_accepted_count",
+					"type": "Number",
+					"description": "其中已经接收到正确回执的文件数量是"
+				},
+				{
+					"name": "relation_file_un_accepted_count",
+					"type": "Number",
+					"description": "其中还没有接收回执的关联关系数量是"
+				},
+				{
+					"name": "relation_file_accepted_count",
+					"type": "Number",
+					"description": "其中已经接收到正确回执的关联关系数量是"
+				},
+				{
+					"name": "ref_ent_id",
+					"type": "String",
+					"description": "该报告的所有者唯一标识"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "报告开始时间"
+				},
+				{
+					"name": "relation_task_un_accepted_count",
+					"type": "Number",
+					"description": "其中还没有接收回执的数量是"
+				},
+				{
+					"name": "bill_task_un_accepted_count",
+					"type": "Number",
+					"description": "其中还没有接收回执的包数量是"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "报告结束时间"
+				}
+			],
+			"name": "model",
+			"type": "EntDailyReportDTO []",
+			"description": "返回的主要实体"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "请求回执信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "请求回执编码"
+		},
+		{
+			"name": "http_status_code",
+			"type": "Number",
+			"description": "http状态"
+		}
+	],
+	"name": "alibaba.alihealth.drug.download.getentdailytaskdtolist",
+	"apiChineseName": "码上放心数据落地-获取每天日报",
+	"description": "码上放心数据落地-获取每天日报",
+	"id": 62992
+}

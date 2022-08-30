@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ticket",
+					"type": "String",
+					"description": "信息获取凭证",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appKey"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "医生id",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "PayTaxValidationRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "验证通过"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误message"
+				}
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.doctor.leshui.ticket.valid",
+	"apiChineseName": "乐税token验证",
+	"description": "乐税token验证",
+	"id": 58929
+}

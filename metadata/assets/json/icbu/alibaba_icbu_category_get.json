@@ -1,8 +1,4 @@
 {
-	"id": 25349,
-	"name": "alibaba.icbu.category.get",
-	"apiChineseName": "商品发布类目获取",
-	"description": "获取商品发布类目",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "category",
-			"type": "PostCategory",
-			"description": "类目信息",
 			"subParams": [
 				{
 					"name": "parent_ids",
@@ -47,7 +40,14 @@
 					"type": "Number[]",
 					"description": "子类目ID数组"
 				}
-			]
+			],
+			"name": "category",
+			"type": "PostCategory",
+			"description": "类目信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.get",
+	"apiChineseName": "商品发布类目获取",
+	"description": "获取商品发布类目",
+	"id": 25349
 }

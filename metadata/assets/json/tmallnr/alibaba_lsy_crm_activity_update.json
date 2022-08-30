@@ -1,13 +1,6 @@
 {
-	"id": 55779,
-	"name": "alibaba.lsy.crm.activity.update",
-	"apiChineseName": "ISV活动修改",
-	"description": "ISV活动修改",
 	"requestParams": [
 		{
-			"name": "nrt_update_activity_req",
-			"type": "NrtUpdateActivityReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -26,35 +19,49 @@
 					"type": "Number",
 					"description": "员工ID",
 					"required": true
+				},
+				{
+					"name": "need_certificate",
+					"type": "Boolean",
+					"description": "是否需要电子凭证"
+				},
+				{
+					"name": "certificate_rights",
+					"type": "String",
+					"description": "权利说明"
 				}
-			]
+			],
+			"name": "nrt_update_activity_req",
+			"type": "NrtUpdateActivityReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.activity.update",
+	"apiChineseName": "ISV活动修改",
+	"description": "ISV活动修改",
+	"id": 55779
 }

@@ -1,8 +1,4 @@
 {
-	"id": 44553,
-	"name": "alibaba.ailabs.iot.device.list.get",
-	"apiChineseName": "获取iot设备列表",
-	"description": "通过此接口获取用户名下的iot设备列表",
 	"requestParams": [
 		{
 			"name": "user_open_id",
@@ -19,103 +15,92 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "ret_values",
-					"type": "RetValue[]",
-					"description": "返回值list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_icon",
 							"type": "String",
-							"description": "设备图片",
-							"required": true
+							"description": "设备图片"
 						},
 						{
 							"name": "device_model",
 							"type": "String",
-							"description": "型号",
-							"required": true
+							"description": "型号"
 						},
 						{
 							"name": "device_alias",
 							"type": "String",
-							"description": "别名",
-							"required": true
+							"description": "别名"
 						},
 						{
 							"name": "orgin_device_category",
 							"type": "String",
-							"description": "原本设备类型",
-							"required": true
+							"description": "原本设备类型"
 						},
 						{
 							"name": "device_properties",
 							"type": "String",
-							"description": "可控制的属性",
-							"required": true
+							"description": "可控制的属性"
 						},
 						{
 							"name": "particular_model",
 							"type": "String",
-							"description": "详细型号",
-							"required": true
+							"description": "详细型号"
 						},
 						{
 							"name": "device_category_en",
 							"type": "String",
-							"description": "设备类型英文",
-							"required": true
+							"description": "设备类型英文"
 						},
 						{
 							"name": "device_category",
 							"type": "String",
-							"description": "设备类型中文",
-							"required": true
+							"description": "设备类型中文"
 						},
 						{
 							"name": "device_brand",
 							"type": "String",
-							"description": "品牌",
-							"required": true
-						},
-						{
-							"name": "device_id",
-							"type": "String",
-							"description": "设备id",
-							"required": true
+							"description": "品牌"
 						},
 						{
 							"name": "device_zone",
 							"type": "String",
-							"description": "位置",
-							"required": true
+							"description": "位置"
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id"
 						}
-					]
+					],
+					"name": "ret_values",
+					"type": "RetValue[]",
+					"description": "返回值list"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.device.list.get",
+	"apiChineseName": "获取iot设备列表",
+	"description": "通过此接口获取用户名下的iot设备列表",
+	"id": 44553
 }

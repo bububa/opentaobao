@@ -1,8 +1,4 @@
 {
-	"id": 43415,
-	"name": "alibaba.alihealth.drug.kyt.dr.getproteminfo",
-	"apiChineseName": "疫苗，获取生产企业的存储和运输温度",
-	"description": "疫苗，获取生产企业的存储和运输温度",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -30,149 +26,131 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
+							"subParams": [
+								{
+									"name": "equipment_name",
+									"type": "String",
+									"description": "设备名称"
+								},
+								{
+									"name": "time",
+									"type": "String",
+									"description": "时间"
+								},
+								{
+									"name": "equipment_code",
+									"type": "String",
+									"description": "设备编号"
+								},
+								{
+									"name": "min_value",
+									"type": "String",
+									"description": "最低温度"
+								},
+								{
+									"name": "upload_ent_name",
+									"type": "String",
+									"description": "上传企业名称"
+								},
+								{
+									"name": "bill_code",
+									"type": "String",
+									"description": "单据编号"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "温度类型"
+								},
+								{
+									"name": "max_value",
+									"type": "String",
+									"description": "最高温度"
+								}
+							],
 							"name": "storage_temperature_list",
 							"type": "StorageTemperatureList[]",
-							"description": "存储温度",
-							"required": true,
-							"subParams": [
-								{
-									"name": "equipment_name",
-									"type": "String",
-									"description": "设备名称",
-									"required": true
-								},
-								{
-									"name": "time",
-									"type": "String",
-									"description": "时间",
-									"required": true
-								},
-								{
-									"name": "equipment_code",
-									"type": "String",
-									"description": "设备编号",
-									"required": true
-								},
-								{
-									"name": "min_value",
-									"type": "String",
-									"description": "最低温度",
-									"required": true
-								},
-								{
-									"name": "upload_ent_name",
-									"type": "String",
-									"description": "上传企业名称",
-									"required": true
-								},
-								{
-									"name": "bill_code",
-									"type": "String",
-									"description": "单据编号",
-									"required": true
-								},
-								{
-									"name": "type",
-									"type": "String",
-									"description": "温度类型",
-									"required": true
-								},
-								{
-									"name": "max_value",
-									"type": "String",
-									"description": "最高温度",
-									"required": true
-								}
-							]
+							"description": "存储温度"
 						},
 						{
-							"name": "transport_temperature_list",
-							"type": "TransportTemperatureList[]",
-							"description": "运输温度",
-							"required": true,
 							"subParams": [
 								{
 									"name": "equipment_name",
 									"type": "String",
-									"description": "设备名称",
-									"required": true
+									"description": "设备名称"
 								},
 								{
 									"name": "time",
 									"type": "String",
-									"description": "时间",
-									"required": true
+									"description": "时间"
 								},
 								{
 									"name": "equipment_code",
 									"type": "String",
-									"description": "设备编号",
-									"required": true
+									"description": "设备编号"
 								},
 								{
 									"name": "min_value",
 									"type": "String",
-									"description": "最低温度",
-									"required": true
+									"description": "最低温度"
 								},
 								{
 									"name": "upload_ent_name",
 									"type": "String",
-									"description": "上传企业",
-									"required": true
+									"description": "上传企业"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据编号",
-									"required": true
+									"description": "单据编号"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "温度类型",
-									"required": true
+									"description": "温度类型"
 								},
 								{
 									"name": "max_value",
 									"type": "String",
-									"description": "最高温度",
-									"required": true
+									"description": "最高温度"
 								}
-							]
+							],
+							"name": "transport_temperature_list",
+							"type": "TransportTemperatureList[]",
+							"description": "运输温度"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.getproteminfo",
+	"apiChineseName": "疫苗，获取生产企业的存储和运输温度",
+	"description": "疫苗，获取生产企业的存储和运输温度",
+	"id": 43415
 }

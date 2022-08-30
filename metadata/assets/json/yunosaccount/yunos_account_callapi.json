@@ -1,8 +1,4 @@
 {
-	"id": 27319,
-	"name": "yunos.account.callapi",
-	"apiChineseName": "调用YunOS账号开放API",
-	"description": "YunOS账号客户端对外开放的api通过top暴露",
 	"requestParams": [
 		{
 			"name": "version",
@@ -36,29 +32,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AccountResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "data",
-					"required": true
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "status",
-					"required": true
+					"description": "status"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AccountResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.account.callapi",
+	"apiChineseName": "调用YunOS账号开放API",
+	"description": "YunOS账号客户端对外开放的api通过top暴露",
+	"id": 27319
 }

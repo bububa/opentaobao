@@ -1,8 +1,4 @@
 {
-	"id": 26087,
-	"name": "taobao.alitrip.seller.refund.get",
-	"apiChineseName": "【机票代理商】退票申请单详情",
-	"description": "查询退票申请单详情",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -13,251 +9,216 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "errorCode",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "errorMsg",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
-					"name": "results",
-					"type": "ReturnTicketDetail",
-					"description": "申请单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "申请单ID",
-							"required": true
+							"description": "申请单ID"
 						},
 						{
 							"name": "apply_reason_type",
 							"type": "Number",
-							"description": "退票原因",
-							"required": true
+							"description": "退票原因"
 						},
 						{
 							"name": "apply_time",
 							"type": "Date",
-							"description": "退票申请时间",
-							"required": true
+							"description": "退票申请时间"
 						},
 						{
 							"name": "first_process_time",
 							"type": "Date",
-							"description": "退票成功时间",
-							"required": true
+							"description": "退票成功时间"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "pay_success_time",
 							"type": "Date",
-							"description": "退款成功时间",
-							"required": true
+							"description": "退款成功时间"
 						},
 						{
 							"name": "reason",
 							"type": "String",
-							"description": "申退原因",
-							"required": true
+							"description": "申退原因"
 						},
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退款手续费（分）",
-							"required": true
+							"description": "退款手续费（分）"
 						},
 						{
 							"name": "refund_money",
 							"type": "Number",
-							"description": "退款金额（退给买家的钱）（分）",
-							"required": true
+							"description": "退款金额（退给买家的钱）（分）"
 						},
 						{
-							"name": "return_apply_passenge",
-							"type": "ReturnApplyPassenge[]",
-							"description": "人的费用信息",
-							"required": true,
 							"subParams": [
+								{
+									"name": "discount_ticket_price",
+									"type": "Number",
+									"description": "优惠后票面价"
+								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "人ID",
-									"required": true
+									"description": "人ID"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
+									"description": "乘机人姓名"
 								},
 								{
 									"name": "passenger_type",
 									"type": "Number",
-									"description": "乘机人类型",
-									"required": true
+									"description": "乘机人类型"
 								},
 								{
 									"name": "refund_fee",
 									"type": "Number",
-									"description": "退款手续费",
-									"required": true
+									"description": "退款手续费"
 								},
 								{
 									"name": "refund_money",
 									"type": "Number",
-									"description": "退款金额",
-									"required": true
+									"description": "退款金额"
 								},
 								{
-									"name": "return_ticket_segment",
-									"type": "ReturnTicketSegment[]",
-									"description": "退款航段信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "arr_airport_code",
 											"type": "String",
-											"description": "到达机场三字码",
-											"required": true
+											"description": "到达机场三字码"
 										},
 										{
 											"name": "arr_city",
 											"type": "String",
-											"description": "到达城市",
-											"required": true
+											"description": "到达城市"
 										},
 										{
 											"name": "build_fee",
 											"type": "Number",
-											"description": "单个航段机场建设费用（分）",
-											"required": true
+											"description": "单个航段机场建设费用（分）"
 										},
 										{
 											"name": "dep_airport_code",
 											"type": "String",
-											"description": "出发机场三字码",
-											"required": true
+											"description": "出发机场三字码"
 										},
 										{
 											"name": "dep_city",
 											"type": "String",
-											"description": "出发城市",
-											"required": true
-										},
-										{
-											"name": "flight_no",
-											"type": "String",
-											"description": "航班号",
-											"required": true
-										},
-										{
-											"name": "id",
-											"type": "Number",
-											"description": "航段ID",
-											"required": true
-										},
-										{
-											"name": "oil_tax",
-											"type": "Number",
-											"description": "单个航段机场建燃油费用",
-											"required": true
-										},
-										{
-											"name": "refund_modify_fee",
-											"type": "Number",
-											"description": "改签手续费(分)",
-											"required": true
-										},
-										{
-											"name": "refund_upgrade_fee",
-											"type": "Number",
-											"description": "升舱手续费（分）",
-											"required": true
-										},
-										{
-											"name": "suspend",
-											"type": "Boolean",
-											"description": "票状态是否挂起",
-											"required": true
-										},
-										{
-											"name": "ticket_no",
-											"type": "String",
-											"description": "票号信息",
-											"required": true
-										},
-										{
-											"name": "trip_type",
-											"type": "Number",
-											"description": "去程0 回程1",
-											"required": true
+											"description": "出发城市"
 										},
 										{
 											"name": "dep_time",
 											"type": "Date",
-											"description": "起飞时间",
-											"required": true
+											"description": "起飞时间"
+										},
+										{
+											"name": "flight_no",
+											"type": "String",
+											"description": "航班号"
+										},
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "航段ID"
+										},
+										{
+											"name": "oil_tax",
+											"type": "Number",
+											"description": "单个航段机场建燃油费用"
+										},
+										{
+											"name": "refund_modify_fee",
+											"type": "Number",
+											"description": "改签手续费(分)"
+										},
+										{
+											"name": "refund_upgrade_fee",
+											"type": "Number",
+											"description": "升舱手续费（分）"
+										},
+										{
+											"name": "suspend",
+											"type": "Boolean",
+											"description": "票状态是否挂起"
+										},
+										{
+											"name": "ticket_no",
+											"type": "String",
+											"description": "票号信息"
+										},
+										{
+											"name": "trip_type",
+											"type": "Number",
+											"description": "去程0 回程1"
 										}
-									]
+									],
+									"name": "return_ticket_segment",
+									"type": "ReturnTicketSegment[]",
+									"description": "退款航段信息"
 								},
 								{
 									"name": "ticket_price",
 									"type": "Number",
-									"description": "票价信息(分)",
-									"required": true
-								},
-								{
-									"name": "discount_ticket_price",
-									"type": "Number",
-									"description": "优惠后票面价",
-									"required": true
+									"description": "票价信息(分)"
 								},
 								{
 									"name": "voucher_price",
 									"type": "Number",
-									"description": "优惠券金额",
-									"required": true
+									"description": "优惠券金额"
 								}
-							]
+							],
+							"name": "return_apply_passenge",
+							"type": "ReturnApplyPassenge[]",
+							"description": "人的费用信息"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "申请单状态（1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）",
-							"required": true
+							"description": "申请单状态（1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）"
 						},
 						{
 							"name": "credit_money",
 							"type": "Number",
-							"description": "creditMoney",
-							"required": true
+							"description": "creditMoney"
 						}
-					]
+					],
+					"name": "results",
+					"type": "ReturnTicketDetail",
+					"description": "申请单详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.seller.refund.get",
+	"apiChineseName": "【机票代理商】退票申请单详情",
+	"description": "查询退票申请单详情",
+	"id": 26087
 }

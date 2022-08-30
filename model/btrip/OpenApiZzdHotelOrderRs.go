@@ -6,12 +6,12 @@ type OpenApiZzdHotelOrderRs struct {
 	CostCenterList []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
 	// 用户信息
 	ClientInfoDos []ClientInfoDo `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
-	// 订单状态：1, "等待确认";2, "等待付款"; 3, "预订成功";4, "申请退款";5, "退款成功";6, "已关闭";0,"点击详情查看状态";7, "结账成功"; 8, "支付成功";
-	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 订单状态改变时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+	// 订单状态：1, "等待确认";2, "等待付款"; 3, "预订成功";4, "申请退款";5, "退款成功";6, "已关闭";0,"点击详情查看状态";7, "结账成功"; 8, "支付成功";
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 申请单标题
 	ApplyTitle string `json:"apply_title,omitempty" xml:"apply_title,omitempty"`
 	// 第三方申请单id

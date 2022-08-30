@@ -16,10 +16,10 @@ type TaobaoTvpayOrderPrecreateAPIRequest struct {
 	_deviceId string
 	// 来源
 	_from string
-	// 订单详情
-	_data string
 	// 牌照方
 	_license string
+	// 订单详情
+	_data string
 }
 
 // NewTaobaoTvpayOrderPrecreateRequest 初始化TaobaoTvpayOrderPrecreateAPIRequest对象
@@ -69,19 +69,6 @@ func (r TaobaoTvpayOrderPrecreateAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// SetData is Data Setter
-// 订单详情
-func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetData(_data string) error {
-	r._data = _data
-	r.Set("data", _data)
-	return nil
-}
-
-// GetData Data Getter
-func (r TaobaoTvpayOrderPrecreateAPIRequest) GetData() string {
-	return r._data
-}
-
 // SetLicense is License Setter
 // 牌照方
 func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetLicense(_license string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetLicense(_license string) error 
 // GetLicense License Getter
 func (r TaobaoTvpayOrderPrecreateAPIRequest) GetLicense() string {
 	return r._license
+}
+
+// SetData is Data Setter
+// 订单详情
+func (r *TaobaoTvpayOrderPrecreateAPIRequest) SetData(_data string) error {
+	r._data = _data
+	r.Set("data", _data)
+	return nil
+}
+
+// GetData Data Getter
+func (r TaobaoTvpayOrderPrecreateAPIRequest) GetData() string {
+	return r._data
 }

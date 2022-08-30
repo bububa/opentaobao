@@ -1,8 +1,4 @@
 {
-	"id": 326,
-	"name": "taobao.fenxiao.product.update",
-	"apiChineseName": "更新产品",
-	"description": "更新分销平台产品数据，不传更新数据返回失败\u003cbr\u003e\u003cbr/\u003e1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。\u003cbr\u003e",
 	"requestParams": [
 		{
 			"name": "postage_type",
@@ -203,5 +199,9 @@
 			"type": "Date",
 			"description": "更新时间，时间格式：yyyy-MM-dd HH:mm:ss"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.update",
+	"apiChineseName": "更新产品",
+	"description": "更新分销平台产品数据，不传更新数据返回失败\u003cbr\u003e\u003cbr/\u003e1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。\u003cbr\u003e",
+	"id": 326
 }

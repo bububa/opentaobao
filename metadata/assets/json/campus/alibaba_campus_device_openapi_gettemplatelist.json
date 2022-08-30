@@ -1,13 +1,6 @@
 {
-	"id": 38253,
-	"name": "alibaba.campus.device.openapi.gettemplatelist",
-	"apiChineseName": "查询设备模板",
-	"description": "查询设备模板信息",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "TemplateApiQuery",
-			"description": "设备模板查询对象",
 			"subParams": [
 				{
 					"name": "limit",
@@ -34,178 +27,159 @@
 					"type": "String",
 					"description": "设备模板名称"
 				}
-			]
+			],
+			"name": "query",
+			"type": "TemplateApiQuery",
+			"description": "设备模板查询对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "设备模板集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						},
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
-							"name": "results",
-							"type": "TemplateApiDto[]",
-							"description": "模板集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "模板id",
-									"required": true
+									"description": "模板id"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "模板编码",
-									"required": true
+									"description": "模板编码"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "模板名称",
-									"required": true
+									"description": "模板名称"
 								},
 								{
-									"name": "property_list",
-									"type": "PropertyApiDto[]",
-									"description": "参数点集合",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "参数点id",
-											"required": true
+											"description": "参数点id"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "参数点名称",
-											"required": true
+											"description": "参数点名称"
 										},
 										{
 											"name": "code",
 											"type": "String",
-											"description": "参数点编码",
-											"required": true
+											"description": "参数点编码"
 										},
 										{
 											"name": "type",
 											"type": "Number",
-											"description": "参数点类型id",
-											"required": true
+											"description": "参数点类型id"
 										},
 										{
 											"name": "type_name",
 											"type": "String",
-											"description": "参数点类型名称",
-											"required": true
+											"description": "参数点类型名称"
 										},
 										{
 											"name": "alarm",
 											"type": "Boolean",
-											"description": "是否报警类参数",
-											"required": true
+											"description": "是否报警类参数"
 										},
 										{
 											"name": "value_type",
 											"type": "Number",
-											"description": "值类型id",
-											"required": true
+											"description": "值类型id"
 										},
 										{
 											"name": "value_type_name",
 											"type": "String",
-											"description": "值类型名称",
-											"required": true
+											"description": "值类型名称"
 										},
 										{
 											"name": "property_kind",
 											"type": "Number",
-											"description": "元数据id",
-											"required": true
+											"description": "元数据id"
 										},
 										{
 											"name": "property_kind_code",
 											"type": "String",
-											"description": "元数据编码",
-											"required": true
+											"description": "元数据编码"
 										},
 										{
 											"name": "control_enum_value",
 											"type": "String",
-											"description": "控制类参数枚举值",
-											"required": true
+											"description": "控制类参数枚举值"
 										},
 										{
 											"name": "unit_id",
 											"type": "Number",
-											"description": "单位id",
-											"required": true
+											"description": "单位id"
 										},
 										{
 											"name": "unit_code",
 											"type": "String",
-											"description": "单位编码",
-											"required": true
+											"description": "单位编码"
 										}
-									]
+									],
+									"name": "property_list",
+									"type": "PropertyApiDto[]",
+									"description": "参数点集合"
 								}
-							]
+							],
+							"name": "results",
+							"type": "TemplateApiDto[]",
+							"description": "模板集合"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "设备模板集合"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.gettemplatelist",
+	"apiChineseName": "查询设备模板",
+	"description": "查询设备模板信息",
+	"id": 38253
 }

@@ -12,10 +12,12 @@ type ServiceTradeOrder struct {
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// 服务商品的标题
 	AuctionTitle string `json:"auction_title,omitempty" xml:"auction_title,omitempty"`
-	// 付款时间
-	GmtPay string `json:"gmt_pay,omitempty" xml:"gmt_pay,omitempty"`
 	// 服务商品额外属性
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
+	// 付款时间
+	GmtPay string `json:"gmt_pay,omitempty" xml:"gmt_pay,omitempty"`
+	// 商品图片
+	AuctionPic string `json:"auction_pic,omitempty" xml:"auction_pic,omitempty"`
 	// 商家编码
 	OuterIdP string `json:"outer_id_p,omitempty" xml:"outer_id_p,omitempty"`
 	// 服务商品的类目

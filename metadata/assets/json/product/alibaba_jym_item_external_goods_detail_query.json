@@ -1,0 +1,215 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "goods_id",
+					"type": "Number",
+					"description": "交易猫商品ID",
+					"required": true
+				}
+			],
+			"name": "goods_detail_query",
+			"type": "GoodsDetailQueryDto",
+			"description": "商品详情查询接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "description",
+									"type": "String",
+									"description": "商品描述"
+								},
+								{
+									"name": "storage",
+									"type": "Number",
+									"description": "库存"
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题"
+								}
+							],
+							"name": "goods_base_info",
+							"type": "GoodsBaseInfoDto",
+							"description": "商品基本信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "second_category_name",
+									"type": "String",
+									"description": "二级类目名称"
+								},
+								{
+									"name": "second_category_id",
+									"type": "Number",
+									"description": "二级类目ID"
+								},
+								{
+									"name": "first_category_name",
+									"type": "String",
+									"description": "一级类目名称"
+								},
+								{
+									"name": "first_category_id",
+									"type": "Number",
+									"description": "一级类目ID"
+								}
+							],
+							"name": "category",
+							"type": "GoodsCategoryDto",
+							"description": "类目"
+						},
+						{
+							"subParams": [
+								{
+									"name": "origin_image",
+									"type": "String",
+									"description": "原图url"
+								},
+								{
+									"name": "image_id",
+									"type": "Number",
+									"description": "图片id"
+								},
+								{
+									"name": "note",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "image_list",
+							"type": "GoodsImageDto[]",
+							"description": "商品图片url列表"
+						},
+						{
+							"subParams": [
+								{
+									"name": "server_id",
+									"type": "Number",
+									"description": "服务器id"
+								},
+								{
+									"name": "client_id",
+									"type": "Number",
+									"description": "客户端id"
+								},
+								{
+									"name": "platform_id",
+									"type": "Number",
+									"description": "平台id"
+								},
+								{
+									"name": "game_id",
+									"type": "Number",
+									"description": "游戏id"
+								}
+							],
+							"name": "game_property",
+							"type": "GamePropertyDto",
+							"description": "游戏属性"
+						},
+						{
+							"subParams": [
+								{
+									"name": "value",
+									"type": "String",
+									"description": "属性值"
+								},
+								{
+									"name": "value_id",
+									"type": "Number",
+									"description": "属性值id"
+								},
+								{
+									"name": "property_id",
+									"type": "Number",
+									"description": "属性id"
+								}
+							],
+							"name": "goods_property_list",
+							"type": "GoodsPropertyValueDto[]",
+							"description": "游戏属性对"
+						},
+						{
+							"subParams": [
+								{
+									"name": "value",
+									"type": "String",
+									"description": "属性值"
+								},
+								{
+									"name": "value_id",
+									"type": "Number",
+									"description": "属性值id"
+								},
+								{
+									"name": "property_id",
+									"type": "Number",
+									"description": "属性id"
+								}
+							],
+							"name": "seller_account_property_list",
+							"type": "GoodsPropertyValueDto[]",
+							"description": "卖家账号信息商品属性对"
+						},
+						{
+							"name": "support_retrieve_compensation",
+							"type": "Boolean",
+							"description": "是否支持找回包赔"
+						},
+						{
+							"name": "can_bargain",
+							"type": "Boolean",
+							"description": "是否支持议价"
+						}
+					],
+					"name": "goods_detail",
+					"type": "ExternalGoodsDetailDto",
+					"description": "商品详情信息"
+				},
+				{
+					"name": "goods_id",
+					"type": "Number",
+					"description": "商品ID"
+				}
+			],
+			"name": "result",
+			"type": "GoodsDetailResultDto",
+			"description": "商品详情查询接口返回"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jym.item.external.goods.detail.query",
+	"apiChineseName": "交易猫外部商家商品详情查询接口",
+	"description": "供外部B端商家接入，请求查询商品详情，返回商品详情查询结果",
+	"id": 58196
+}

@@ -1,8 +1,4 @@
 {
-	"id": 45794,
-	"name": "aliexpress.affiliate.hotproduct.query",
-	"apiChineseName": "查询联盟爆品数据",
-	"description": "查询联盟爆品API",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -82,9 +78,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -99,10 +92,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficProductResultDto",
-					"description": "返回结果状态结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page_no",
@@ -117,10 +106,6 @@
 							"required": true
 						},
 						{
-							"name": "products",
-							"type": "Product[]",
-							"description": "返回商品数量",
-							"required": true,
 							"subParams": [
 								{
 									"name": "app_sale_price",
@@ -315,10 +300,6 @@
 									"required": true
 								},
 								{
-									"name": "promo_code_info",
-									"type": "PromoCodeDto",
-									"description": "code信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "promo_code",
@@ -368,7 +349,11 @@
 											"description": "品code合一url",
 											"required": true
 										}
-									]
+									],
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code信息",
+									"required": true
 								},
 								{
 									"name": "ship_to_days",
@@ -376,7 +361,11 @@
 									"description": "可达国家与到达时间",
 									"required": true
 								}
-							]
+							],
+							"name": "products",
+							"type": "Product[]",
+							"description": "返回商品数量",
+							"required": true
 						},
 						{
 							"name": "total_page_no",
@@ -390,9 +379,20 @@
 							"description": "总计数量",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficProductResultDto",
+					"description": "返回结果状态结果",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.hotproduct.query",
+	"apiChineseName": "查询联盟爆品数据",
+	"description": "查询联盟爆品API",
+	"id": 45794
 }

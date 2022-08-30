@@ -1,19 +1,8 @@
 {
-	"id": 54030,
-	"name": "alibaba.retail.marketing.itempool.activity.create",
-	"apiChineseName": "创建商品池活动【同城零售】",
-	"description": "同城零售商品池活动创建",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemPoolActivityOperateRequest",
-			"description": "创建商品池活动参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "periodic_config",
-					"type": "PeriodicConfigDto",
-					"description": "周期配置",
 					"subParams": [
 						{
 							"name": "every_day_periods",
@@ -27,10 +16,13 @@
 						},
 						{
 							"name": "weekdays",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]"
 						}
-					]
+					],
+					"name": "periodic_config",
+					"type": "PeriodicConfigDto",
+					"description": "周期配置"
 				},
 				{
 					"name": "activity_name",
@@ -56,10 +48,6 @@
 					"description": "活动描述，最长30个字符"
 				},
 				{
-					"name": "stair_groups",
-					"type": "StairGroupDto[]",
-					"description": "阶梯分组",
-					"required": true,
 					"subParams": [
 						{
 							"name": "number",
@@ -68,10 +56,6 @@
 							"required": true
 						},
 						{
-							"name": "condition",
-							"type": "Condition",
-							"description": "优惠门槛",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
@@ -103,13 +87,13 @@
 									"type": "Boolean",
 									"description": "是否满元"
 								}
-							]
+							],
+							"name": "condition",
+							"type": "Condition",
+							"description": "优惠门槛",
+							"required": true
 						},
 						{
-							"name": "action",
-							"type": "Action",
-							"description": "优惠效果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "decrease_money",
@@ -146,13 +130,21 @@
 									"type": "Number",
 									"description": "一口价类型，0：普通一口价，1：第N件一口价，2：整体一口价"
 								}
-							]
+							],
+							"name": "action",
+							"type": "Action",
+							"description": "优惠效果",
+							"required": true
 						}
-					]
+					],
+					"name": "stair_groups",
+					"type": "StairGroupDto[]",
+					"description": "阶梯分组",
+					"required": true
 				},
 				{
 					"name": "terminals",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "支持的终端，1：APP,2:POS",
 					"required": true
 				},
@@ -163,9 +155,6 @@
 					"required": true
 				},
 				{
-					"name": "limit",
-					"type": "LimitDto",
-					"description": "限购",
 					"subParams": [
 						{
 							"name": "order_limit_cnt",
@@ -192,7 +181,10 @@
 							"type": "Number",
 							"description": "每人每日总限购"
 						}
-					]
+					],
+					"name": "limit",
+					"type": "LimitDto",
+					"description": "限购"
 				},
 				{
 					"name": "out_act_id",
@@ -214,13 +206,9 @@
 				{
 					"name": "member_crowd_code",
 					"type": "String[]",
-					"description": "限制人群,OLD_USER:老用户，NEW_USER:新用户，LIGHT_NEW_USER：闪购新客"
+					"description": "限制人群,OLD_USER:老用户，NEW_USER:新用户，LIGHT_NEW_USER：闪购新客，MERCHANT_NEW_USER：商家新用户，MERCHANT_OLD_USER：商家老用户"
 				},
 				{
-					"name": "logic_groups",
-					"type": "LogicGroupDto[]",
-					"description": "逻辑分组",
-					"required": true,
 					"subParams": [
 						{
 							"name": "number",
@@ -240,9 +228,6 @@
 							"description": "换购分组标识"
 						},
 						{
-							"name": "exchange_rule",
-							"type": "ExchangeRuleDto",
-							"description": "换购规则",
 							"subParams": [
 								{
 									"name": "max_buy_num",
@@ -254,7 +239,10 @@
 									"type": "Number",
 									"description": "换购分组顺序"
 								}
-							]
+							],
+							"name": "exchange_rule",
+							"type": "ExchangeRuleDto",
+							"description": "换购规则"
 						},
 						{
 							"name": "effective_group",
@@ -262,47 +250,65 @@
 							"description": "是否生效分组（多分组情况下，可能为false，例如商品池换购，普通逻辑分组为false，换购分组为true）",
 							"required": true
 						}
-					]
+					],
+					"name": "logic_groups",
+					"type": "LogicGroupDto[]",
+					"description": "逻辑分组",
+					"required": true
 				},
 				{
 					"name": "enable_multiple",
 					"type": "Boolean",
 					"description": "上不封顶标识，若设置{@link #enableMultiple}=true，则不支持多阶梯配置，且可以叠加优惠"
+				},
+				{
+					"name": "channels",
+					"type": "String[]",
+					"description": "枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达 32 翱象共享库存"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展信息"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemPoolActivityOperateRequest",
+			"description": "创建商品池活动参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "活动id",
-					"required": true
+					"description": "活动id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itempool.activity.create",
+	"apiChineseName": "创建商品池活动【同城零售】",
+	"description": "同城零售商品池活动创建",
+	"id": 54030
 }

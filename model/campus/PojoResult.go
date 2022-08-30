@@ -4,12 +4,12 @@ package campus
 type PojoResult struct {
 	// 内容
 	Contents []CompanyDto `json:"contents,omitempty" xml:"contents>company_dto,omitempty"`
+	// 错误码
+	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 接口错误描述
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 错误级别
 	ErrorLevel string `json:"error_level,omitempty" xml:"error_level,omitempty"`
-	// 错误码
-	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// requestId
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 错误详细信息

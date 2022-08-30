@@ -1,8 +1,4 @@
 {
-	"id": 25493,
-	"name": "taobao.alitrip.it.fare.get",
-	"apiChineseName": "【国际机票自有政策】单条查询",
-	"description": "通过此接口可以查询单条政策的详情，可以根据fareId或outId查询，用户outId查询时，如果outId不唯一，只返回最新添加的一条数据",
 	"requestParams": [
 		{
 			"name": "extendAttributes",
@@ -46,5 +42,9 @@
 			"type": "Number",
 			"description": "0：未发布 1：已发布 2：已过期"
 		}
-	]
+	],
+	"name": "taobao.alitrip.it.fare.get",
+	"apiChineseName": "【国际机票自有政策】单条查询",
+	"description": "通过此接口可以查询单条政策的详情，可以根据fareId或outId查询，用户outId查询时，如果outId不唯一，只返回最新添加的一条数据",
+	"id": 25493
 }

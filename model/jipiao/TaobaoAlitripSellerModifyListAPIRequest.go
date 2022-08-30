@@ -26,10 +26,10 @@ type TaobaoAlitripSellerModifyListAPIRequest struct {
 	_modifyDateStart string
 	// 申请单ID
 	_applyId int64
-	// 淘宝订单号
-	_orderId int64
 	// 页码
 	_currentPage int64
+	// 淘宝订单号
+	_orderId int64
 	// 每页记录数
 	_pageSize int64
 	// 1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款
@@ -148,19 +148,6 @@ func (r TaobaoAlitripSellerModifyListAPIRequest) GetApplyId() int64 {
 	return r._applyId
 }
 
-// SetOrderId is OrderId Setter
-// 淘宝订单号
-func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
-	return nil
-}
-
-// GetOrderId OrderId Getter
-func (r TaobaoAlitripSellerModifyListAPIRequest) GetOrderId() int64 {
-	return r._orderId
-}
-
 // SetCurrentPage is CurrentPage Setter
 // 页码
 func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage int64) error {
@@ -172,6 +159,19 @@ func (r *TaobaoAlitripSellerModifyListAPIRequest) SetCurrentPage(_currentPage in
 // GetCurrentPage CurrentPage Getter
 func (r TaobaoAlitripSellerModifyListAPIRequest) GetCurrentPage() int64 {
 	return r._currentPage
+}
+
+// SetOrderId is OrderId Setter
+// 淘宝订单号
+func (r *TaobaoAlitripSellerModifyListAPIRequest) SetOrderId(_orderId int64) error {
+	r._orderId = _orderId
+	r.Set("order_id", _orderId)
+	return nil
+}
+
+// GetOrderId OrderId Getter
+func (r TaobaoAlitripSellerModifyListAPIRequest) GetOrderId() int64 {
+	return r._orderId
 }
 
 // SetPageSize is PageSize Setter

@@ -1,0 +1,37 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "系统商订单号"
+		},
+		{
+			"name": "fail_msg",
+			"type": "String",
+			"description": "退款失败原因"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "退款结果状态 1:退款成功  2:退款失败",
+			"required": true
+		},
+		{
+			"name": "fliggy_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.travel.hotelticket.order.refund",
+	"apiChineseName": "退款结结果通知",
+	"description": "退款结果通知",
+	"id": 62576
+}

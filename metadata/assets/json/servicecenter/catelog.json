@@ -1,5 +1,5 @@
 {
-  "id": 10124,
   "name": "服务平台API",
-  "pkg": "servicecenter"
+  "pkg": "servicecenter",
+  "id": 10124
 }

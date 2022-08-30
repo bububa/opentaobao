@@ -1,13 +1,6 @@
 {
-	"id": 33370,
-	"name": "alibaba.campus.space.group.getspacegrouplistwithattr",
-	"apiChineseName": "分页查询空间分组业务属性",
-	"description": "分页查询空间分组业务属性",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "操作用户上下文",
 			"subParams": [
 				{
 					"name": "campus_code",
@@ -30,12 +23,12 @@
 					"type": "String",
 					"description": "用户id"
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文"
 		},
 		{
-			"name": "group_query",
-			"type": "SpaceGroupQuery",
-			"description": "查询对象",
 			"subParams": [
 				{
 					"name": "limit",
@@ -72,206 +65,182 @@
 					"type": "Number",
 					"description": "楼宇"
 				}
-			]
+			],
+			"name": "group_query",
+			"type": "SpaceGroupQuery",
+			"description": "查询对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "SpaceGroup[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "building_name",
 							"type": "String",
-							"description": "buildingName",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "name",
-							"required": true
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "id",
-							"required": true
-						},
-						{
-							"name": "description",
-							"type": "String",
-							"description": "description",
-							"required": true
-						},
-						{
-							"name": "code",
-							"type": "String",
-							"description": "code",
-							"required": true
-						},
-						{
-							"name": "attrs",
-							"type": "TypeAttrInstance[]",
-							"description": "attrs",
-							"required": true,
-							"subParams": [
-								{
-									"name": "value",
-									"type": "String",
-									"description": "value",
-									"required": true
-								},
-								{
-									"name": "value_type",
-									"type": "String",
-									"description": "valueType",
-									"required": true
-								},
-								{
-									"name": "uuid",
-									"type": "String",
-									"description": "uuid",
-									"required": true
-								},
-								{
-									"name": "type_attr_ref_id",
-									"type": "Number",
-									"description": "typeAttrRefId",
-									"required": true
-								},
-								{
-									"name": "attr_name",
-									"type": "String",
-									"description": "attrName",
-									"required": true
-								},
-								{
-									"name": "attr_code",
-									"type": "String",
-									"description": "attrCode",
-									"required": true
-								}
-							]
+							"description": "buildingName"
 						},
 						{
 							"name": "building_id",
 							"type": "Number",
-							"description": "buildingId",
-							"required": true
+							"description": "buildingId"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "typeCode",
-							"required": true
+							"description": "typeCode"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id"
 						},
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "typeName",
-							"required": true
+							"description": "typeName"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "campusName",
-							"required": true
+							"description": "campusName"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "typeId",
-							"required": true
+							"description": "typeId"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "campusId",
-							"required": true
+							"description": "campusId"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "floorName",
-							"required": true
+							"description": "floorName"
 						},
 						{
 							"name": "floor_id",
 							"type": "Number",
-							"description": "floorId",
-							"required": true
+							"description": "floorId"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "description"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "isDelete",
-							"required": true
+							"description": "isDelete"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type_attr_ref_id",
+									"type": "Number",
+									"description": "typeAttrRefId"
+								},
+								{
+									"name": "attr_name",
+									"type": "String",
+									"description": "attrName"
+								},
+								{
+									"name": "attr_code",
+									"type": "String",
+									"description": "attrCode"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "value"
+								},
+								{
+									"name": "value_type",
+									"type": "String",
+									"description": "valueType"
+								},
+								{
+									"name": "uuid",
+									"type": "String",
+									"description": "uuid"
+								}
+							],
+							"name": "attrs",
+							"type": "TypeAttrInstance[]",
+							"description": "attrs"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "ft_id",
 							"type": "String",
-							"description": "地图图元id",
-							"required": true
+							"description": "地图图元id"
 						},
 						{
 							"name": "geo_floor_id",
 							"type": "Number",
-							"description": "地图楼层id",
-							"required": true
+							"description": "地图楼层id"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "SpaceGroup[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.group.getspacegrouplistwithattr",
+	"apiChineseName": "分页查询空间分组业务属性",
+	"description": "分页查询空间分组业务属性",
+	"id": 33370
 }

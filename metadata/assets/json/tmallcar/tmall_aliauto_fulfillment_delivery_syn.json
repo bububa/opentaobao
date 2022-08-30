@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "idempotent",
+					"type": "String",
+					"description": "幂等id"
+				},
+				{
+					"name": "change_time",
+					"type": "Date",
+					"description": "变更时间",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "current_distinct",
+							"type": "String",
+							"description": "当前区县"
+						},
+						{
+							"name": "current_location_detail",
+							"type": "String",
+							"description": "当前详细地址"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "current_city",
+							"type": "String",
+							"description": "当前城市"
+						},
+						{
+							"name": "current_street",
+							"type": "String",
+							"description": "当街街道"
+						},
+						{
+							"name": "current_province",
+							"type": "String",
+							"description": "当前省份"
+						},
+						{
+							"name": "logistics_desc",
+							"type": "String",
+							"description": "物流轨迹详细描述"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度"
+						}
+					],
+					"name": "logistics_trace_req",
+					"type": "LogisticsTraceReq",
+					"description": "物流轨迹"
+				},
+				{
+					"name": "delivery_status_desc",
+					"type": "String",
+					"description": "交付状态详细描述"
+				},
+				{
+					"name": "delivery_status",
+					"type": "String",
+					"description": "交付状态",
+					"required": true
+				}
+			],
+			"name": "req",
+			"type": "SyncInfoReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误code"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.fulfillment.delivery.syn",
+	"apiChineseName": "交付状态及物流信息同步",
+	"description": "交付状态及物流信息同步",
+	"id": 62482
+}

@@ -1,8 +1,4 @@
 {
-	"id": 22172,
-	"name": "taobao.logistics.consign.order.createandsend",
-	"apiChineseName": "创建订单并发货",
-	"description": "创建物流订单，并发货。",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -175,5 +171,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.logistics.consign.order.createandsend",
+	"apiChineseName": "创建订单并发货",
+	"description": "创建物流订单，并发货。",
+	"id": 22172
 }

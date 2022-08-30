@@ -1,14 +1,6 @@
 {
-	"id": 53610,
-	"name": "alitrip.btrip.supplychain.flight.city",
-	"apiChineseName": "机场数据查询",
-	"description": "机场数据查询",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenSuggestRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -32,54 +24,52 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenSuggestRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SuggestRs",
-			"description": "结果对象",
 			"subParams": [
 				{
-					"name": "cities",
-					"type": "CityVo[]",
-					"description": "城市列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "三字码",
-							"required": true
+							"description": "三字码"
 						},
 						{
 							"name": "distance",
 							"type": "Number",
-							"description": "与搜索城市距离，单位千米，只在邻近机场推荐有值",
-							"required": true
+							"description": "与搜索城市距离，单位千米，只在邻近机场推荐有值"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "城市名称",
-							"required": true
+							"description": "城市名称"
 						},
 						{
 							"name": "travel_name",
 							"type": "String",
-							"description": "邻近机场城市，只在邻近机场推荐有值",
-							"required": true
+							"description": "邻近机场城市，只在邻近机场推荐有值"
 						}
-					]
+					],
+					"name": "cities",
+					"type": "CityVo[]",
+					"description": "城市列表"
 				},
 				{
 					"name": "nearby",
 					"type": "Boolean",
-					"description": "是否为邻近城市",
-					"required": true
+					"description": "是否为邻近城市"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SuggestRs",
+			"description": "结果对象"
 		},
 		{
 			"name": "result_code",
@@ -91,5 +81,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.flight.city",
+	"apiChineseName": "机场数据查询",
+	"description": "机场数据查询",
+	"id": 53610
 }

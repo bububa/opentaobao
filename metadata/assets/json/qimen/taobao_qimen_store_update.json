@@ -1,8 +1,4 @@
 {
-	"id": 26689,
-	"name": "taobao.qimen.store.update",
-	"apiChineseName": "门店更新接口",
-	"description": "商家在ERP等系统中调用该接口，更新门店信息",
 	"requestParams": [
 		{
 			"name": "store_name",
@@ -50,9 +46,6 @@
 			"description": "商户介绍"
 		},
 		{
-			"name": "address",
-			"type": "Address",
-			"description": "门店地址信息",
 			"subParams": [
 				{
 					"name": "region",
@@ -92,7 +85,10 @@
 					"type": "String",
 					"description": "城市"
 				}
-			]
+			],
+			"name": "address",
+			"type": "Address",
+			"description": "门店地址信息"
 		},
 		{
 			"name": "shop_id",
@@ -100,9 +96,6 @@
 			"description": "需要关联的线上店铺ID"
 		},
 		{
-			"name": "store_keeper",
-			"type": "StoreKeeper",
-			"description": "门店所有者信息",
 			"subParams": [
 				{
 					"name": "fax",
@@ -131,7 +124,10 @@
 					"description": "移动电话",
 					"required": true
 				}
-			]
+			],
+			"name": "store_keeper",
+			"type": "StoreKeeper",
+			"description": "门店所有者信息"
 		},
 		{
 			"name": "store_type",
@@ -152,21 +148,8 @@
 			"required": true
 		}
 	],
-	"responseParams": [
-		{
-			"name": "message",
-			"type": "String",
-			"description": "响应信息"
-		},
-		{
-			"name": "flag",
-			"type": "String",
-			"description": "响应标示"
-		},
-		{
-			"name": "qimen_code",
-			"type": "String",
-			"description": "响应编码"
-		}
-	]
+	"name": "taobao.qimen.store.update",
+	"apiChineseName": "门店更新接口",
+	"description": "商家在ERP等系统中调用该接口，更新门店信息",
+	"id": 26689
 }

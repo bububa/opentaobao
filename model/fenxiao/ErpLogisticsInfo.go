@@ -18,6 +18,16 @@ type ErpLogisticsInfo struct {
 	CombineItemId string `json:"combine_item_id,omitempty" xml:"combine_item_id,omitempty"`
 	// 组合商品Code
 	CombineItemCode string `json:"combine_item_code,omitempty" xml:"combine_item_code,omitempty"`
+	// 货品条码
+	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
+	// 推荐配送公司编码
+	DeliveryCps string `json:"delivery_cps,omitempty" xml:"delivery_cps,omitempty"`
+	// 仓商家编码
+	BizStoreCode string `json:"biz_store_code,omitempty" xml:"biz_store_code,omitempty"`
+	// 推荐配送erp编码
+	BizDeliveryCode string `json:"biz_delivery_code,omitempty" xml:"biz_delivery_code,omitempty"`
+	// 仓配建议类型
+	BizSdType string `json:"biz_sd_type,omitempty" xml:"biz_sd_type,omitempty"`
 	// 商品数字编号
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 应发数量

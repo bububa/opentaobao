@@ -1,8 +1,4 @@
 {
-	"id": 46360,
-	"name": "tmall.servicecenter.settlement.storetransfer.audit",
-	"apiChineseName": "新康众审批门店分账",
-	"description": "新康众审批门店分账",
 	"requestParams": [
 		{
 			"name": "audit_pass",
@@ -18,29 +14,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "分账审批通知结果",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息编码",
-					"required": true
+					"description": "消息编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否处理成功",
-					"required": true
+					"description": "是否处理成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "分账审批通知结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.settlement.storetransfer.audit",
+	"apiChineseName": "新康众审批门店分账",
+	"description": "新康众审批门店分账",
+	"id": 46360
 }

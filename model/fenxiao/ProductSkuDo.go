@@ -8,6 +8,10 @@ type ProductSkuDo struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 关联的前端宝贝skuid
 	AuctionSkuId int64 `json:"auction_sku_id,omitempty" xml:"auction_sku_id,omitempty"`
+	// 代销采购价:单位分
+	CostPriceFen int64 `json:"cost_price_fen,omitempty" xml:"cost_price_fen,omitempty"`
+	// 经销采购价:单位分
+	PriceCostDealerFen int64 `json:"price_cost_dealer_fen,omitempty" xml:"price_cost_dealer_fen,omitempty"`
 	// 库存
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 配额可用库存
@@ -18,10 +22,6 @@ type ProductSkuDo struct {
 	ScitemId int64 `json:"scitem_id,omitempty" xml:"scitem_id,omitempty"`
 	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
-	// 代销采购价:单位分
-	CostPriceFen int64 `json:"cost_price_fen,omitempty" xml:"cost_price_fen,omitempty"`
-	// 经销采购价:单位分
-	PriceCostDealerFen int64 `json:"price_cost_dealer_fen,omitempty" xml:"price_cost_dealer_fen,omitempty"`
 	// 市场价单位分
 	StandardPriceFen int64 `json:"standard_price_fen,omitempty" xml:"standard_price_fen,omitempty"`
 }

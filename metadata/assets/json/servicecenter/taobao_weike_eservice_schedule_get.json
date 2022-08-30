@@ -1,8 +1,4 @@
 {
-	"id": 27489,
-	"name": "taobao.weike.eservice.schedule.get",
-	"apiChineseName": "客服排班信息查询接口",
-	"description": "客服排班信息查询接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -34,9 +30,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CsSchedulingWrapper",
-			"description": "排班信息查询结果",
 			"subParams": [
 				{
 					"name": "total_count",
@@ -45,10 +38,6 @@
 					"required": true
 				},
 				{
-					"name": "cs_schedulings",
-					"type": "CsScheduling[]",
-					"description": "按天排班信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "date",
@@ -63,10 +52,6 @@
 							"required": true
 						},
 						{
-							"name": "schedulings",
-							"type": "Scheduling[]",
-							"description": "一天内排班信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "start_time",
@@ -104,7 +89,11 @@
 									"description": "排班记录状态描述",
 									"required": true
 								}
-							]
+							],
+							"name": "schedulings",
+							"type": "Scheduling[]",
+							"description": "一天内排班信息",
+							"required": true
 						},
 						{
 							"name": "order_id",
@@ -118,9 +107,20 @@
 							"description": "排班记录更新时间",
 							"required": true
 						}
-					]
+					],
+					"name": "cs_schedulings",
+					"type": "CsScheduling[]",
+					"description": "按天排班信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CsSchedulingWrapper",
+			"description": "排班信息查询结果"
 		}
-	]
+	],
+	"name": "taobao.weike.eservice.schedule.get",
+	"apiChineseName": "客服排班信息查询接口",
+	"description": "客服排班信息查询接口",
+	"id": 27489
 }

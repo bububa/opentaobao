@@ -38,10 +38,10 @@ type BeforeCourtModel struct {
 	AttachmentCount int64 `json:"attachment_count,omitempty" xml:"attachment_count,omitempty"`
 	// 反馈ID
 	FeedbackId int64 `json:"feedback_id,omitempty" xml:"feedback_id,omitempty"`
+	// 庭前ID
+	BeforeCourtId int64 `json:"before_court_id,omitempty" xml:"before_court_id,omitempty"`
 	// 案件ID
 	SuitId int64 `json:"suit_id,omitempty" xml:"suit_id,omitempty"`
 	// 委托ID
 	EntrustId int64 `json:"entrust_id,omitempty" xml:"entrust_id,omitempty"`
-	// 庭前ID
-	BeforeCourtId int64 `json:"before_court_id,omitempty" xml:"before_court_id,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 49590,
-	"name": "tmall.servicecenter.workcard.evaluate",
-	"apiChineseName": "服务商反馈鉴定结果",
-	"description": "服务商反馈鉴定结果",
 	"requestParams": [
 		{
 			"name": "pass_evaluation",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回值Result",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值Result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.evaluate",
+	"apiChineseName": "服务商反馈鉴定结果",
+	"description": "服务商反馈鉴定结果",
+	"id": 49590
 }

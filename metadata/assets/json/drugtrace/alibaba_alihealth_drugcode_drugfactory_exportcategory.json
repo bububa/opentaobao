@@ -1,8 +1,4 @@
 {
-	"id": 50929,
-	"name": "alibaba.alihealth.drugcode.drugfactory.exportcategory",
-	"apiChineseName": "导出临床药品目录",
-	"description": "导出临床药品目录",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -13,165 +9,146 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "ProductDto []",
-			"description": "导出的药品目录",
 			"subParams": [
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品 码"
+				},
 				{
 					"name": "comment",
 					"type": "String",
-					"description": "备注",
-					"required": true
+					"description": "备注"
 				},
 				{
-					"name": "sub_type_list",
-					"type": "SubType[]",
-					"description": "子类",
-					"required": true,
 					"subParams": [
 						{
-							"name": "res_prod_codes",
-							"type": "ResProdCodes",
-							"description": "资源码信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "res_code_list",
-									"type": "ResCode[]",
-									"description": "资源码",
-									"required": true,
-									"subParams": [
-										{
-											"name": "value",
-											"type": "String",
-											"description": "资源码值",
-											"required": true
-										},
-										{
-											"name": "code_level",
-											"type": "String",
-											"description": "码级别",
-											"required": true
-										},
-										{
-											"name": "code_version",
-											"type": "String",
-											"description": "码头",
-											"required": true
-										},
-										{
-											"name": "pkg_ratio",
-											"type": "String",
-											"description": "包装比例",
-											"required": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "authorized_no",
+							"name": "prepn_unit",
 							"type": "String",
-							"description": "批准文号",
-							"required": true
+							"description": "制剂单位"
 						},
 						{
 							"name": "pack_unit",
 							"type": "String",
-							"description": "包装单位",
-							"required": true
-						},
-						{
-							"name": "package_spec",
-							"type": "String",
-							"description": "包装规格",
-							"required": true
+							"description": "包装单位"
 						},
 						{
 							"name": "physic_detail_type",
 							"type": "String",
-							"description": "药品类型",
-							"required": true
-						},
-						{
-							"name": "physic_expiry",
-							"type": "String",
-							"description": "有效期",
-							"required": true
-						},
-						{
-							"name": "physic_expiry_unit",
-							"type": "String",
-							"description": "有效期单位",
-							"required": true
-						},
-						{
-							"name": "physic_info",
-							"type": "String",
-							"description": "药品信息",
-							"required": true
-						},
-						{
-							"name": "physic_type",
-							"type": "String",
-							"description": "药品类型",
-							"required": true
-						},
-						{
-							"name": "spec",
-							"type": "String",
-							"description": "规格",
-							"required": true
-						},
-						{
-							"name": "type",
-							"type": "String",
-							"description": "类型",
-							"required": true
-						},
-						{
-							"name": "type_no",
-							"type": "String",
-							"description": "子类编码",
-							"required": true
-						},
-						{
-							"name": "prepn_unit",
-							"type": "String",
-							"description": "制剂单位",
-							"required": true
+							"description": "药品类型"
 						},
 						{
 							"name": "pkg_num",
 							"type": "String",
-							"description": "包装数量",
-							"required": true
+							"description": "包装数量"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "package_spec",
+							"type": "String",
+							"description": "包装规格"
+						},
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格"
+						},
+						{
+							"name": "type_no",
+							"type": "String",
+							"description": "子类编码"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "code_version",
+											"type": "String",
+											"description": "码头"
+										},
+										{
+											"name": "code_level",
+											"type": "String",
+											"description": "码级别"
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "资源码值"
+										},
+										{
+											"name": "pkg_ratio",
+											"type": "String",
+											"description": "包装比例"
+										}
+									],
+									"name": "res_code_list",
+									"type": "ResCode[]",
+									"description": "资源码"
+								}
+							],
+							"name": "res_prod_codes",
+							"type": "ResProdCodes",
+							"description": "资源码信息"
+						},
+						{
+							"name": "physic_info",
+							"type": "String",
+							"description": "药品信息"
+						},
+						{
+							"name": "physic_type",
+							"type": "String",
+							"description": "药品类型"
+						},
+						{
+							"name": "physic_expiry",
+							"type": "String",
+							"description": "有效期"
+						},
+						{
+							"name": "authorized_no",
+							"type": "String",
+							"description": "批准文号"
+						},
+						{
+							"name": "physic_expiry_unit",
+							"type": "String",
+							"description": "有效期单位"
 						}
-					]
-				},
-				{
-					"name": "product_code",
-					"type": "String",
-					"description": "产品 码",
-					"required": true
+					],
+					"name": "sub_type_list",
+					"type": "SubType[]",
+					"description": "子类"
 				},
 				{
 					"name": "product_name",
 					"type": "String",
-					"description": "药品名称",
-					"required": true
+					"description": "药品名称"
 				}
-			]
-		},
-		{
-			"name": "msg_code",
-			"type": "String",
-			"description": "操作码"
+			],
+			"name": "model",
+			"type": "ProductDto []",
+			"description": "导出的药品目录"
 		},
 		{
 			"name": "msg_info",
 			"type": "String",
 			"description": "操作说明"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.drugfactory.exportcategory",
+	"apiChineseName": "导出临床药品目录",
+	"description": "导出临床药品目录",
+	"id": 50929
 }

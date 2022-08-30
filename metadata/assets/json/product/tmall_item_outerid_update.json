@@ -1,8 +1,4 @@
 {
-	"id": 25076,
-	"name": "tmall.item.outerid.update",
-	"apiChineseName": "天猫商品/SKU商家编码更新接口",
-	"description": "天猫商品/SKU商家编码更新接口；支持商品、SKU的商家编码同时更新；支持同一商品下的SKU批量更新。（感谢sample小雨提供接口命名）",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -16,15 +12,11 @@
 			"description": "商品维度商家编码，如果不修改可以不传；清空请设置空串"
 		},
 		{
-			"name": "sku_outers",
-			"type": "UpdateSkuOuterId[]",
-			"description": "商品SKU更新OuterId时候用的数据",
-			"maxListSize": 2000,
 			"subParams": [
 				{
-					"name": "sku_id",
-					"type": "Number",
-					"description": "SkuID，如果填写，将以SKUID查找被更新的SKU"
+					"name": "outer_id",
+					"type": "String",
+					"description": "被更新的Sku的商家外部id"
 				},
 				{
 					"name": "properties",
@@ -32,11 +24,15 @@
 					"description": "Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充；如果填写将以属性对形式查找被更新SKU"
 				},
 				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "被更新的Sku的商家外部id"
+					"name": "sku_id",
+					"type": "Number",
+					"description": "SkuID，如果填写，将以SKUID查找被更新的SKU"
 				}
-			]
+			],
+			"name": "sku_outers",
+			"type": "UpdateSkuOuterId[]",
+			"description": "商品SKU更新OuterId时候用的数据",
+			"maxListSize": 2000
 		}
 	],
 	"responseParams": [
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "商家编码更新结果"
 		}
-	]
+	],
+	"name": "tmall.item.outerid.update",
+	"apiChineseName": "天猫商品/SKU商家编码更新接口",
+	"description": "天猫商品/SKU商家编码更新接口；支持商品、SKU的商家编码同时更新；支持同一商品下的SKU批量更新。（感谢sample小雨提供接口命名）",
+	"id": 25076
 }

@@ -1,32 +1,8 @@
 {
-	"id": 48160,
-	"name": "alitrip.tuan.hotel.item.sku.calendar.update",
-	"apiChineseName": "酒店非标套餐商品日历库存宝贝SKU更新接口",
-	"description": "商户对发布的日历库存类型的宝贝套餐价格库存信息进行更新，仅提供日历库存的宝贝SKU的更新功能，skuId须传递商品已存在的skuId，若想进行SKU新增操作，请选择使用alitrip.tuan.hotel.item.sku.update接口。提供增量更新SKU功能，对于日历库存若传递日期信息，参数中若包含某一日期的价格和库存，则对此日期的数据进行覆盖更新，若不传递则保留此日期的价格库存信息。",
 	"requestParams": [
 		{
-			"name": "item_id",
-			"type": "Number",
-			"description": "宝贝ID",
-			"required": true
-		},
-		{
-			"name": "cat_id",
-			"type": "Number",
-			"description": "宝贝所属类目",
-			"required": true
-		},
-		{
-			"name": "item_sku_list",
-			"type": "TopTuanItemSkuVO[]",
-			"description": "暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等",
-			"required": true,
-			"maxListSize": 15,
 			"subParams": [
 				{
-					"name": "calendar_info",
-					"type": "TopSkuCalendarInfo",
-					"description": "套餐日历库存价格信息，日历库存需完整填写",
 					"subParams": [
 						{
 							"name": "end",
@@ -34,9 +10,6 @@
 							"description": "日历库存的结束时间，日历库存必填"
 						},
 						{
-							"name": "diff",
-							"type": "TopSkuDailyInfo[]",
-							"description": "日历库存价格信息，日历库存必填",
 							"subParams": [
 								{
 									"name": "d",
@@ -53,14 +26,20 @@
 									"type": "Number",
 									"description": "库存，日历库存必填"
 								}
-							]
+							],
+							"name": "diff",
+							"type": "TopSkuDailyInfo[]",
+							"description": "日历库存价格信息，日历库存必填"
 						},
 						{
 							"name": "begin",
 							"type": "String",
 							"description": "日历库存的开始时间，日历库存必填"
 						}
-					]
+					],
+					"name": "calendar_info",
+					"type": "TopSkuCalendarInfo",
+					"description": "套餐日历库存价格信息，日历库存需完整填写"
 				},
 				{
 					"name": "sku_id",
@@ -68,7 +47,24 @@
 					"description": "skuId，若更新sku信息，必填；若新增sku，此项填写为0",
 					"required": true
 				}
-			]
+			],
+			"name": "item_sku_list",
+			"type": "TopTuanItemSkuVO[]",
+			"description": "暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等",
+			"maxListSize": 15,
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝ID",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "宝贝所属类目",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -83,34 +79,26 @@
 			"description": "卖家ID"
 		},
 		{
-			"name": "top_item_sku_base_info_list",
-			"type": "TopItemSkuBaseInfo []",
-			"description": "商品的sku列表",
 			"subParams": [
 				{
 					"name": "sku_name",
 					"type": "String",
-					"description": "sku名称",
-					"required": true
+					"description": "sku名称"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "商家编码",
-					"required": true
+					"description": "商家编码"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "skuId",
-					"required": true
+					"description": "skuId"
 				}
-			]
-		},
-		{
-			"name": "message",
-			"type": "String",
-			"description": "错误信息"
+			],
+			"name": "top_item_sku_base_info_list",
+			"type": "TopItemSkuBaseInfo []",
+			"description": "商品的sku列表"
 		},
 		{
 			"name": "msg_code",
@@ -121,6 +109,15 @@
 			"name": "status",
 			"type": "Boolean",
 			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alitrip.tuan.hotel.item.sku.calendar.update",
+	"apiChineseName": "酒店非标套餐商品日历库存宝贝SKU更新接口",
+	"description": "商户对发布的日历库存类型的宝贝套餐价格库存信息进行更新，仅提供日历库存的宝贝SKU的更新功能，skuId须传递商品已存在的skuId，若想进行SKU新增操作，请选择使用alitrip.tuan.hotel.item.sku.update接口。提供增量更新SKU功能，对于日历库存若传递日期信息，参数中若包含某一日期的价格和库存，则对此日期的数据进行覆盖更新，若不传递则保留此日期的价格库存信息。",
+	"id": 48160
 }

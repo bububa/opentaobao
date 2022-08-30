@@ -1,8 +1,4 @@
 {
-	"id": 47466,
-	"name": "alibaba.idle.isv.media.upload",
-	"apiChineseName": "闲鱼服务商-图片上传",
-	"description": "供外部服务商ISV进行闲鱼商品发布时上传商品所需图片",
 	"requestParams": [
 		{
 			"name": "data",
@@ -25,35 +21,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "响应数据",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "媒体文件id",
-					"required": true
+					"description": "媒体文件id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "响应数据"
 		}
-	]
+	],
+	"name": "alibaba.idle.isv.media.upload",
+	"apiChineseName": "闲鱼服务商-图片上传",
+	"description": "供外部服务商ISV进行闲鱼商品发布时上传商品所需图片",
+	"id": 47466
 }

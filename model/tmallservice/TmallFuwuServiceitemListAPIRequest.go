@@ -13,7 +13,7 @@ import (
 type TmallFuwuServiceitemListAPIRequest struct {
 	model.Params
 	// 商品id列表，有数量限制
-	_itemids []int64
+	_itemids []string
 	// 商品所属卖家账号id
 	_sellerId int64
 }
@@ -41,14 +41,14 @@ func (r TmallFuwuServiceitemListAPIRequest) GetApiParams() url.Values {
 
 // SetItemids is Itemids Setter
 // 商品id列表，有数量限制
-func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []int64) error {
+func (r *TmallFuwuServiceitemListAPIRequest) SetItemids(_itemids []string) error {
 	r._itemids = _itemids
 	r.Set("itemids", _itemids)
 	return nil
 }
 
 // GetItemids Itemids Getter
-func (r TmallFuwuServiceitemListAPIRequest) GetItemids() []int64 {
+func (r TmallFuwuServiceitemListAPIRequest) GetItemids() []string {
 	return r._itemids
 }
 

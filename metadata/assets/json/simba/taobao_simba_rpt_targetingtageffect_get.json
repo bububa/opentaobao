@@ -1,8 +1,4 @@
 {
-	"id": 24977,
-	"name": "taobao.simba.rpt.targetingtageffect.get",
-	"apiChineseName": "获取定向效果报表数据",
-	"description": "获取定向效果报表数据",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -44,9 +40,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "RptEffectEntityDTO []",
-			"description": "效果数据",
 			"subParams": [
 				{
 					"name": "thedate",
@@ -128,7 +121,14 @@
 					"type": "String",
 					"description": "人群id"
 				}
-			]
+			],
+			"name": "results",
+			"type": "RptEffectEntityDTO []",
+			"description": "效果数据"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.targetingtageffect.get",
+	"apiChineseName": "获取定向效果报表数据",
+	"description": "获取定向效果报表数据",
+	"id": 24977
 }

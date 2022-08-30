@@ -16,6 +16,8 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	TkTotalCommi string `json:"tk_total_commi,omitempty" xml:"tk_total_commi,omitempty"`
 	// 优惠券信息-优惠券id
 	CouponId string `json:"coupon_id,omitempty" xml:"coupon_id,omitempty"`
+	// 商品信息-宝贝id(该字段废弃，请勿再用)
+	NumIid string `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 商品信息-商品标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商品信息-商品主图
@@ -34,12 +36,12 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	IncludeDxjh string `json:"include_dxjh,omitempty" xml:"include_dxjh,omitempty"`
 	// 商品信息-佣金比率。1550表示15.5%
 	CommissionRate string `json:"commission_rate,omitempty" xml:"commission_rate,omitempty"`
+	// 店铺信息-店铺名称
+	ShopTitle string `json:"shop_title,omitempty" xml:"shop_title,omitempty"`
 	// 优惠券信息-优惠券满减信息
 	CouponInfo string `json:"coupon_info,omitempty" xml:"coupon_info,omitempty"`
 	// 商品信息-佣金类型。MKT表示营销计划，SP表示定向计划，COMMON表示通用计划
 	CommissionType string `json:"commission_type,omitempty" xml:"commission_type,omitempty"`
-	// 店铺信息-店铺名称
-	ShopTitle string `json:"shop_title,omitempty" xml:"shop_title,omitempty"`
 	// 链接-宝贝+券二合一页面链接
 	CouponShareUrl string `json:"coupon_share_url,omitempty" xml:"coupon_share_url,omitempty"`
 	// 链接-宝贝推广链接
@@ -72,6 +74,8 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	OrigPrice string `json:"orig_price,omitempty" xml:"orig_price,omitempty"`
 	// 营销-天猫营销玩法
 	TmallPlayActivityInfo string `json:"tmall_play_activity_info,omitempty" xml:"tmall_play_activity_info,omitempty"`
+	// 商品信息-宝贝id
+	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商品邮费
 	RealPostFee string `json:"real_post_fee,omitempty" xml:"real_post_fee,omitempty"`
 	// 锁住的佣金率
@@ -110,14 +114,26 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	SuperiorBrand string `json:"superior_brand,omitempty" xml:"superior_brand,omitempty"`
 	// 是否品牌快抢，0不是，1是
 	IsBrandFlashSale string `json:"is_brand_flash_sale,omitempty" xml:"is_brand_flash_sale,omitempty"`
+	// 本地化-扩展信息
+	LocalizationExtend string `json:"localization_extend,omitempty" xml:"localization_extend,omitempty"`
 	// 物料评估-匹配分
 	MatchScore string `json:"match_score,omitempty" xml:"match_score,omitempty"`
 	// 物料评估-收益分
 	CommiScore string `json:"commi_score,omitempty" xml:"commi_score,omitempty"`
 	// 是否是热门商品，0不是，1是
 	HotFlag string `json:"hot_flag,omitempty" xml:"hot_flag,omitempty"`
-	// 商品信息-宝贝id(该字段废弃，请勿再用)
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 商品入驻淘特后产生的所有销量量级，不特指某段具体时间
+	TtSoldCount string `json:"tt_sold_count,omitempty" xml:"tt_sold_count,omitempty"`
+	// 额外奖励活动类型，如果一个商品有多个奖励类型，返回结果使用空格分割，0=预售单单奖励，1=618超级U选单单补
+	CpaRewardType string `json:"cpa_reward_type,omitempty" xml:"cpa_reward_type,omitempty"`
+	// 额外奖励活动金额，活动奖励金额的类型与cpa_reward_type字段对应，如果一个商品有多个奖励类型，返回结果使用空格分割
+	CpaRewardAmount string `json:"cpa_reward_amount,omitempty" xml:"cpa_reward_amount,omitempty"`
+	// 合作伙伴单单补ID，用作“年货节超级单单补”活动合作伙伴奖励统计依据
+	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
+	// 榜单url
+	RankPageUrl string `json:"rank_page_url,omitempty" xml:"rank_page_url,omitempty"`
+	// 搜索类型
+	ItemSearchType string `json:"item_search_type,omitempty" xml:"item_search_type,omitempty"`
 	// 店铺信息-卖家类型。0表示集市，1表示天猫
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 商品信息-30天销量（饿了么卡券信息-总销量）
@@ -144,8 +160,6 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	SellNum int64 `json:"sell_num,omitempty" xml:"sell_num,omitempty"`
 	// 拼团专用-拼团剩余库存
 	Stock int64 `json:"stock,omitempty" xml:"stock,omitempty"`
-	// 商品信息-宝贝id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 锁佣结束时间
 	LockRateEndTime int64 `json:"lock_rate_end_time,omitempty" xml:"lock_rate_end_time,omitempty"`
 	// 锁佣开始时间
@@ -160,8 +174,10 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
 	PresaleStartTime int64 `json:"presale_start_time,omitempty" xml:"presale_start_time,omitempty"`
 	// 比价场景专用，当系统检测到入参消费者ID购买当前商品会获得《天天开彩蛋》玩法的彩蛋时，该字段显示1，否则为0
 	RewardInfo int64 `json:"reward_info,omitempty" xml:"reward_info,omitempty"`
-	// 本地化-扩展信息
-	LocalizationExtend *LocalizationMapData `json:"localization_extend,omitempty" xml:"localization_extend,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
 	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	// 百亿补贴信息
+	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
+	// 猫超买返卡信息
+	MaifanPromotion *MaifanPromotionDto `json:"maifan_promotion,omitempty" xml:"maifan_promotion,omitempty"`
 }

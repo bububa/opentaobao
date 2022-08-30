@@ -13,7 +13,7 @@ import (
 type TmallExchangeMessagesGetAPIRequest struct {
 	model.Params
 	// 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)
-	_operatorRoles []int64
+	_operatorRoles []string
 	// 返回的字段。具体包括：id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
 	_fields []string
 	// 每页条数
@@ -47,14 +47,14 @@ func (r TmallExchangeMessagesGetAPIRequest) GetApiParams() url.Values {
 
 // SetOperatorRoles is OperatorRoles Setter
 // 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)
-func (r *TmallExchangeMessagesGetAPIRequest) SetOperatorRoles(_operatorRoles []int64) error {
+func (r *TmallExchangeMessagesGetAPIRequest) SetOperatorRoles(_operatorRoles []string) error {
 	r._operatorRoles = _operatorRoles
 	r.Set("operator_roles", _operatorRoles)
 	return nil
 }
 
 // GetOperatorRoles OperatorRoles Getter
-func (r TmallExchangeMessagesGetAPIRequest) GetOperatorRoles() []int64 {
+func (r TmallExchangeMessagesGetAPIRequest) GetOperatorRoles() []string {
 	return r._operatorRoles
 }
 

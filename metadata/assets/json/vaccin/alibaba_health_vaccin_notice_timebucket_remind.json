@@ -1,8 +1,4 @@
 {
-	"id": 50349,
-	"name": "alibaba.health.vaccin.notice.timebucket.remind",
-	"apiChineseName": "疫苗预约时间段提醒",
-	"description": "疫苗预约时间段提醒",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -49,11 +45,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "Boolean",
-			"description": "结果"
-		},
-		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "执行是否成功"
@@ -67,6 +58,15 @@
 			"name": "msg_info",
 			"type": "String",
 			"description": "错误描述"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.timebucket.remind",
+	"apiChineseName": "疫苗预约时间段提醒",
+	"description": "疫苗预约时间段提醒",
+	"id": 50349
 }

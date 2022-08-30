@@ -1,13 +1,6 @@
 {
-	"id": 39184,
-	"name": "alibaba.wdk.supplier.order.list",
-	"apiChineseName": "五道口供应商维度正向订单拉取",
-	"description": "五道口供应商维度正向订单拉取",
 	"requestParams": [
 		{
-			"name": "supplier_order_query_request",
-			"type": "SupplierOrderQueryRequest",
-			"description": "查询参数",
 			"subParams": [
 				{
 					"name": "order_from",
@@ -59,358 +52,309 @@
 					"type": "String",
 					"description": "渠道店id"
 				}
-			]
+			],
+			"name": "supplier_order_query_request",
+			"type": "SupplierOrderQueryRequest",
+			"description": "查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderListSyncPagedResult",
-			"description": "result",
 			"subParams": [
+				{
+					"name": "next_index",
+					"type": "Number",
+					"description": "返回下一查询页的序号。如果返回值是-1，则无下一页。数据拉取完成。"
+				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "returnCode",
-					"required": true
+					"description": "returnCode"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "returnMsg",
-					"required": true
-				},
-				{
-					"name": "next_index",
-					"type": "Number",
-					"description": "返回下一查询页的序号。如果返回值是-1，则无下一页。数据拉取完成。",
-					"required": true
+					"description": "returnMsg"
 				},
 				{
 					"name": "total_number",
 					"type": "String",
-					"description": "订单总数量",
-					"required": true
+					"description": "订单总数量"
 				},
 				{
-					"name": "orders",
-					"type": "OrderSyncDto[]",
-					"description": "订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "open_uid",
 							"type": "String",
-							"description": "买家id对应的open_uid，加密过",
-							"required": true
+							"description": "买家id对应的open_uid，加密过"
 						},
 						{
 							"name": "trade_attributes",
-							"type": "Json",
-							"description": "扩展map",
-							"required": true
+							"type": "String",
+							"description": "扩展map"
 						},
 						{
 							"name": "duty_code",
 							"type": "String",
-							"description": "班次号",
-							"required": true
+							"description": "班次号"
 						},
 						{
 							"name": "gift_coupon",
 							"type": "String",
-							"description": "赠券，格式为 券ID_券金额， 金额单位为分",
-							"required": true
+							"description": "赠券，格式为 券ID_券金额， 金额单位为分"
 						},
 						{
 							"name": "package_time",
 							"type": "Date",
-							"description": "打包时间",
-							"required": true
+							"description": "打包时间"
 						},
 						{
 							"name": "member_point",
 							"type": "String",
-							"description": "会员积分",
-							"required": true
+							"description": "会员积分"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家code",
-							"required": true
+							"description": "商家code"
 						},
 						{
 							"name": "operator_name",
 							"type": "String",
-							"description": "收银员名称",
-							"required": true
+							"description": "收银员名称"
 						},
 						{
 							"name": "tb_biz_order_id",
 							"type": "Number",
-							"description": "淘宝订单号",
-							"required": true
+							"description": "淘宝订单号"
 						},
 						{
 							"name": "operator_id",
 							"type": "String",
-							"description": "收银员id",
-							"required": true
+							"description": "收银员id"
 						},
 						{
 							"name": "member_card_num",
 							"type": "String",
-							"description": "会员卡号",
-							"required": true
+							"description": "会员卡号"
 						},
 						{
 							"name": "member_discount_amt",
 							"type": "Number",
-							"description": "会员优惠金额，单位分",
-							"required": true
+							"description": "会员优惠金额，单位分"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店id",
-							"required": true
+							"description": "经营店id"
 						},
 						{
 							"name": "post_fee",
 							"type": "Number",
-							"description": "邮费",
-							"required": true
+							"description": "邮费"
 						},
 						{
 							"name": "pay_time",
 							"type": "Date",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "original_amt",
 							"type": "Number",
-							"description": "商品总原价",
-							"required": true
+							"description": "商品总原价"
 						},
 						{
 							"name": "discount_amt",
 							"type": "Number",
-							"description": "总优惠金额",
-							"required": true
+							"description": "总优惠金额"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "盒马订单号",
-							"required": true
+							"description": "盒马订单号"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店id",
-							"required": true
+							"description": "渠道店id"
 						},
 						{
 							"name": "source_merchant_code",
 							"type": "String",
-							"description": "实际售卖商家code",
-							"required": true
+							"description": "实际售卖商家code"
 						},
 						{
 							"name": "order_from",
 							"type": "Number",
-							"description": "订单渠道，4：盒马，3：饿了么",
-							"required": true
+							"description": "订单渠道，4：盒马，3：饿了么"
 						},
 						{
 							"name": "order_client",
 							"type": "String",
-							"description": "下单终端: APP,POS",
-							"required": true
+							"description": "下单终端: APP,POS"
 						},
 						{
-							"name": "sub_orders",
-							"type": "SubOrderSyncDto[]",
-							"description": "subOrders",
-							"required": true,
 							"subParams": [
 								{
 									"name": "out_sku_code",
 									"type": "String",
-									"description": "外部SkuCode",
-									"required": true
+									"description": "外部SkuCode"
 								},
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "skuCode",
-									"required": true
+									"description": "skuCode"
 								},
 								{
 									"name": "trade_sub_attributes",
-									"type": "Json",
-									"description": "扩展属性map",
-									"required": true
+									"type": "String",
+									"description": "扩展属性map"
 								},
 								{
 									"name": "stock_unit",
 									"type": "String",
-									"description": "库存单位",
-									"required": true
+									"description": "库存单位"
 								},
 								{
 									"name": "sale_unit",
 									"type": "String",
-									"description": "售卖单位",
-									"required": true
+									"description": "售卖单位"
 								},
 								{
 									"name": "biz_order_id",
 									"type": "Number",
-									"description": "盒马订单号",
-									"required": true
+									"description": "盒马订单号"
 								},
 								{
 									"name": "tb_biz_order_id",
 									"type": "Number",
-									"description": "淘宝订单号",
-									"required": true
+									"description": "淘宝订单号"
 								},
 								{
 									"name": "out_order_id",
 									"type": "String",
-									"description": "外部订单号",
-									"required": true
+									"description": "外部订单号"
 								},
 								{
 									"name": "pick_amount_stock",
 									"type": "String",
-									"description": "库存单位拣货数量",
-									"required": true
+									"description": "库存单位拣货数量"
 								},
 								{
 									"name": "pick_amt",
 									"type": "Number",
-									"description": "拣货金额，单位分",
-									"required": true
+									"description": "拣货金额，单位分"
 								},
 								{
 									"name": "buy_amount_stock",
 									"type": "String",
-									"description": "库存单位购买数量",
-									"required": true
+									"description": "库存单位购买数量"
 								},
 								{
 									"name": "order_type",
 									"type": "String",
-									"description": "订单类型  COMMON，GIFT",
-									"required": true
+									"description": "订单类型  COMMON，GIFT"
 								},
 								{
 									"name": "txd_pmt_amt",
 									"type": "Number",
-									"description": "淘鲜达分摊金额",
-									"required": true
+									"description": "淘鲜达分摊金额"
 								},
 								{
 									"name": "order_status",
 									"type": "String",
-									"description": "子订单状态",
-									"required": true
+									"description": "子订单状态"
 								},
 								{
 									"name": "status_change_time",
-									"type": "Json",
-									"description": "履约各状态时间",
-									"required": true
+									"type": "String",
+									"description": "履约各状态时间"
 								},
 								{
 									"name": "price",
 									"type": "Number",
-									"description": "单价",
-									"required": true
+									"description": "单价"
 								},
 								{
 									"name": "original_amt",
 									"type": "Number",
-									"description": "原价=单价*库存单位购买数量",
-									"required": true
+									"description": "原价=单价*库存单位购买数量"
 								},
 								{
 									"name": "promotion_discount_amt",
 									"type": "Number",
-									"description": "优惠金额",
-									"required": true
+									"description": "优惠金额"
 								},
 								{
 									"name": "member_discount_amt",
 									"type": "Number",
-									"description": "会员优惠金额",
-									"required": true
+									"description": "会员优惠金额"
 								},
 								{
 									"name": "promotion_info",
 									"type": "String",
-									"description": "优惠来源明细，json格式的字符串，是个数组，可能包含多个优惠来源",
-									"required": true
+									"description": "优惠来源明细，json格式的字符串，是个数组，可能包含多个优惠来源"
 								}
-							]
+							],
+							"name": "sub_orders",
+							"type": "SubOrderSyncDto[]",
+							"description": "subOrders"
 						},
 						{
-							"name": "pay_channels",
-							"type": "PayChannel[]",
-							"description": "payChannels",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "payType",
-									"required": true
+									"description": "payType"
 								},
 								{
 									"name": "pay_amount",
 									"type": "Number",
-									"description": "payAmount",
-									"required": true
+									"description": "payAmount"
 								},
 								{
 									"name": "actual_pay_amount",
 									"type": "Number",
-									"description": "actualPayAmount",
-									"required": true
+									"description": "actualPayAmount"
 								},
 								{
 									"name": "pay_attributes",
 									"type": "String",
-									"description": "payAttributes",
-									"required": true
+									"description": "payAttributes"
 								}
-							]
+							],
+							"name": "pay_channels",
+							"type": "PayChannel[]",
+							"description": "payChannels"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "OrderSyncDto[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderListSyncPagedResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.supplier.order.list",
+	"apiChineseName": "五道口供应商维度正向订单拉取",
+	"description": "五道口供应商维度正向订单拉取",
+	"id": 39184
 }

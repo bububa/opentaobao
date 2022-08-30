@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "hotel_id",
+			"type": "String",
+			"description": "酒店id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "favorite_status",
+							"type": "Boolean",
+							"description": "是否收藏"
+						}
+					],
+					"name": "content",
+					"type": "FavoriteStatusVo",
+					"description": "收藏状态"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.favorite.save",
+	"apiChineseName": "用户添加或移除收藏接口",
+	"description": "用户可以点击收藏酒店，再次点击移除收藏的酒店",
+	"id": 57340
+}

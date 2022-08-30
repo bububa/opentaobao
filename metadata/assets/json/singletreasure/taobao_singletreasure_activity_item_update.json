@@ -1,13 +1,6 @@
 {
-	"id": 31363,
-	"name": "taobao.singletreasure.activity.item.update",
-	"apiChineseName": "更新单品优惠接口",
-	"description": "更新单品优惠接口",
 	"requestParams": [
 		{
-			"name": "item_detail_info",
-			"type": "ItemDetailInfoCreateDto",
-			"description": "修改接口的入参对象",
 			"subParams": [
 				{
 					"name": "limit_check",
@@ -33,9 +26,6 @@
 					"description": "猫客折上折，优惠力度，打折、减钱：单位分；打折，8折：800"
 				},
 				{
-					"name": "sku_v_os",
-					"type": "SkuDetailInfoCreateDto[]",
-					"description": "sku对象列表",
 					"subParams": [
 						{
 							"name": "mk_discount",
@@ -54,7 +44,10 @@
 							"description": "优惠力度，打折、减钱：单位分；打折，8折：800",
 							"required": true
 						}
-					]
+					],
+					"name": "sku_v_os",
+					"type": "SkuDetailInfoCreateDto[]",
+					"description": "sku对象列表"
 				},
 				{
 					"name": "item_id",
@@ -74,54 +67,55 @@
 					"description": "优惠力度，打折、减钱：单位分；打折，8折：800",
 					"required": true
 				}
-			]
+			],
+			"name": "item_detail_info",
+			"type": "ItemDetailInfoCreateDto",
+			"description": "修改接口的入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "请求返回信息",
-					"required": true
+					"description": "请求返回信息"
 				},
 				{
-					"name": "data",
-					"type": "ItemProcessErrorResultDto",
-					"description": "返回所有的处理错误的信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "活动ID",
-							"required": true
+							"description": "活动ID"
 						},
 						{
 							"name": "sku_id_map",
-							"type": "Json",
-							"description": "处理失败的item和sku: map结构为:itemId: skuId-错误信息,所有返回的外层key是itemId，里面的key是skuId，商品级别的skuId为-1",
-							"required": true
+							"type": "String",
+							"description": "处理失败的item和sku: map结构为:itemId: skuId-错误信息,所有返回的外层key是itemId，里面的key是skuId，商品级别的skuId为-1"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemProcessErrorResultDto",
+					"description": "返回所有的处理错误的信息"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "请求返回码",
-					"required": true
+					"description": "请求返回码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.item.update",
+	"apiChineseName": "更新单品优惠接口",
+	"description": "更新单品优惠接口",
+	"id": 31363
 }

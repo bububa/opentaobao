@@ -12,16 +12,16 @@ import (
 // 按终端号订购增值业务
 type AlibabaAliqinFcIotRechargeCardAPIRequest struct {
 	model.Params
+	// 外部id,用来做幂等
+	_outRechargeId string
 	// 外部计费号类型：写‘ICCID’
 	_billSource string
 	// iccid的值
 	_billReal string
-	// 流量包offerId
-	_offerId string
-	// 外部id,用来做幂等
-	_outRechargeId string
 	// ICCID
 	_iccid string
+	// 流量包offerId
+	_offerId string
 	// 生效时间,1000,立即生效; AUTO_ORD,下周期自动续订
 	_effCode string
 	// yyyy-MM-dd HH:mm:ss
@@ -47,6 +47,19 @@ func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetOutRechargeId is OutRechargeId Setter
+// 外部id,用来做幂等
+func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetOutRechargeId(_outRechargeId string) error {
+	r._outRechargeId = _outRechargeId
+	r.Set("out_recharge_id", _outRechargeId)
+	return nil
+}
+
+// GetOutRechargeId OutRechargeId Getter
+func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetOutRechargeId() string {
+	return r._outRechargeId
 }
 
 // SetBillSource is BillSource Setter
@@ -75,32 +88,6 @@ func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetBillReal() string {
 	return r._billReal
 }
 
-// SetOfferId is OfferId Setter
-// 流量包offerId
-func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetOfferId(_offerId string) error {
-	r._offerId = _offerId
-	r.Set("offer_id", _offerId)
-	return nil
-}
-
-// GetOfferId OfferId Getter
-func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetOfferId() string {
-	return r._offerId
-}
-
-// SetOutRechargeId is OutRechargeId Setter
-// 外部id,用来做幂等
-func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetOutRechargeId(_outRechargeId string) error {
-	r._outRechargeId = _outRechargeId
-	r.Set("out_recharge_id", _outRechargeId)
-	return nil
-}
-
-// GetOutRechargeId OutRechargeId Getter
-func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetOutRechargeId() string {
-	return r._outRechargeId
-}
-
 // SetIccid is Iccid Setter
 // ICCID
 func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetIccid(_iccid string) error {
@@ -112,6 +99,19 @@ func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetIccid(_iccid string) error
 // GetIccid Iccid Getter
 func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetIccid() string {
 	return r._iccid
+}
+
+// SetOfferId is OfferId Setter
+// 流量包offerId
+func (r *AlibabaAliqinFcIotRechargeCardAPIRequest) SetOfferId(_offerId string) error {
+	r._offerId = _offerId
+	r.Set("offer_id", _offerId)
+	return nil
+}
+
+// GetOfferId OfferId Getter
+func (r AlibabaAliqinFcIotRechargeCardAPIRequest) GetOfferId() string {
+	return r._offerId
 }
 
 // SetEffCode is EffCode Setter

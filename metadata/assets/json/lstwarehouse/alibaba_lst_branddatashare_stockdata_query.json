@@ -1,14 +1,6 @@
 {
-	"id": 53981,
-	"name": "alibaba.lst.branddatashare.stockdata.query",
-	"apiChineseName": "查询品牌商品实仓库存/周转效能",
-	"description": "品牌商查询授权供应商实仓库存数据",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "BmSupplierStockDataParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "supplier_member_id",
@@ -40,276 +32,241 @@
 					"description": "每页记录数",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "BmSupplierStockDataParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总记录数",
-					"required": true
+					"description": "总记录数"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "每页记录数",
-					"required": true
+					"description": "每页记录数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "page",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
-					"name": "content_list",
-					"type": "Content[]",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "is_no_rm",
 							"type": "String",
-							"description": "是否禁止补货",
-							"required": true
+							"description": "是否禁止补货"
 						},
 						{
 							"name": "product_quote_status",
 							"type": "String",
-							"description": "报价状态",
-							"required": true
+							"description": "报价状态"
 						},
 						{
 							"name": "oss_days_std001",
 							"type": "Number",
-							"description": "连续缺货天数",
-							"required": true
+							"description": "连续缺货天数"
 						},
 						{
 							"name": "cspu_id",
 							"type": "String",
-							"description": "单品编码",
-							"required": true
+							"description": "单品编码"
 						},
 						{
 							"name": "is_online",
 							"type": "String",
-							"description": "是否在售",
-							"required": true
+							"description": "是否在售"
 						},
 						{
 							"name": "sale_unit_desc",
 							"type": "String",
-							"description": "销售单位",
-							"required": true
+							"description": "销售单位"
 						},
 						{
 							"name": "itm_level",
 							"type": "String",
-							"description": "当前商品分层",
-							"required": true
+							"description": "当前商品分层"
 						},
 						{
 							"name": "rm_ship_type",
 							"type": "String",
-							"description": "补货配送方式",
-							"required": true
+							"description": "补货配送方式"
 						},
 						{
 							"name": "liquidation_status",
 							"type": "String",
-							"description": "出清状态",
-							"required": true
+							"description": "出清状态"
 						},
 						{
 							"name": "wh_name",
 							"type": "String",
-							"description": "仓库名称",
-							"required": true
+							"description": "仓库名称"
 						},
 						{
 							"name": "cspu_name",
 							"type": "String",
-							"description": "单品名称",
-							"required": true
+							"description": "单品名称"
 						},
 						{
 							"name": "sub_wh_type_name",
 							"type": "String",
-							"description": "仓库类型名称",
-							"required": true
+							"description": "仓库类型名称"
 						},
 						{
 							"name": "items_id",
 							"type": "String",
-							"description": "前端商品列表",
-							"required": true
+							"description": "前端商品列表"
 						},
 						{
 							"name": "company",
 							"type": "String",
-							"description": "公司名称",
-							"required": true
+							"description": "公司名称"
 						},
 						{
 							"name": "unit_price",
 							"type": "String",
-							"description": "单价",
-							"required": true
+							"description": "单价"
 						},
 						{
 							"name": "stat_date",
 							"type": "String",
-							"description": "数据日期",
-							"required": true
+							"description": "数据日期"
 						},
 						{
 							"name": "alloc_op_qty",
 							"type": "String",
-							"description": "在途数量",
-							"required": true
+							"description": "在途数量"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "品牌名称",
-							"required": true
+							"description": "品牌名称"
 						},
 						{
 							"name": "bar_code_list",
 							"type": "String",
-							"description": "条码",
-							"required": true
+							"description": "条码"
 						},
 						{
 							"name": "is_ob",
 							"type": "String",
-							"description": "是否OB",
-							"required": true
+							"description": "是否OB"
 						},
 						{
 							"name": "back_offer_id",
 							"type": "String",
-							"description": "货品id",
-							"required": true
+							"description": "货品id"
 						},
 						{
 							"name": "carton_pcs",
 							"type": "String",
-							"description": "箱规数",
-							"required": true
+							"description": "箱规数"
 						},
 						{
 							"name": "deport_itm_qty_std008",
 							"type": "Number",
-							"description": "可售库存",
-							"required": true
+							"description": "可售库存"
 						},
 						{
 							"name": "deport_itm_qty_std005",
 							"type": "Number",
-							"description": "残次品在仓商品件数",
-							"required": true
+							"description": "残次品在仓商品件数"
 						},
 						{
 							"name": "is_oos",
 							"type": "String",
-							"description": "是否缺货",
-							"required": true
+							"description": "是否缺货"
 						},
 						{
 							"name": "fst_inbound_time",
 							"type": "String",
-							"description": "首次入库时间",
-							"required": true
+							"description": "首次入库时间"
 						},
 						{
 							"name": "min_buy_qty",
 							"type": "String",
-							"description": "最小起批量",
-							"required": true
+							"description": "最小起批量"
 						},
 						{
 							"name": "min_buy_multiple",
 							"type": "String",
-							"description": "最小购买倍数",
-							"required": true
+							"description": "最小购买倍数"
 						},
 						{
 							"name": "is_dull",
 							"type": "String",
-							"description": "是否滞销",
-							"required": true
+							"description": "是否滞销"
 						},
 						{
 							"name": "cate_lv2_name",
 							"type": "String",
-							"description": "二级类目名称",
-							"required": true
+							"description": "二级类目名称"
 						},
 						{
 							"name": "parent_wh_name",
 							"type": "String",
-							"description": "上级仓名称",
-							"required": true
+							"description": "上级仓名称"
 						},
 						{
 							"name": "big_area_name",
 							"type": "String",
-							"description": "大区名称",
-							"required": true
+							"description": "大区名称"
 						},
 						{
 							"name": "fst_inbound_days",
 							"type": "Number",
-							"description": "首次入库天数",
-							"required": true
+							"description": "首次入库天数"
 						},
 						{
 							"name": "cate_lv1_name",
 							"type": "String",
-							"description": "一级类目名称",
-							"required": true
+							"description": "一级类目名称"
 						},
 						{
 							"name": "cate_lv3_name",
 							"type": "String",
-							"description": "三级类目名称",
-							"required": true
+							"description": "三级类目名称"
 						},
 						{
 							"name": "unsale_instock_days",
 							"type": "String",
-							"description": "滞销库存临界天数",
-							"required": true
+							"description": "滞销库存临界天数"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "Content[]",
+					"description": "返回内容"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.lst.branddatashare.stockdata.query",
+	"apiChineseName": "查询品牌商品实仓库存/周转效能",
+	"description": "品牌商查询授权供应商实仓库存数据",
+	"id": 53981
 }

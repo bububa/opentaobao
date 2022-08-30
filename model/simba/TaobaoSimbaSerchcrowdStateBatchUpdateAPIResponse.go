@@ -20,8 +20,8 @@ type TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"simba_serchcrowd_state_batch_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 部分失败时返回错误List
-	ErrorList []string `json:"error_list,omitempty" xml:"error_list>string,omitempty"`
 	// result
 	Adgrouptargetingtags []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
+	// 部分失败时返回错误List
+	ErrorList []string `json:"error_list,omitempty" xml:"error_list>string,omitempty"`
 }

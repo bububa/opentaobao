@@ -1,8 +1,4 @@
 {
-	"id": 42257,
-	"name": "taobao.fivee.importproduct.get",
-	"apiChineseName": "进口商品查询",
-	"description": "资质共享平台查询进口商品信息",
 	"requestParams": [
 		{
 			"name": "param_bu_code",
@@ -19,233 +15,202 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
-					"name": "data",
-					"type": "ImportProduct",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
-							"name": "barcode",
-							"type": "String",
-							"description": "条形码",
-							"required": true
-						},
-						{
-							"name": "licences",
-							"type": "Licence[]",
-							"description": "证照信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "certification_body",
-									"type": "String",
-									"description": "认证机构",
-									"required": true
-								},
-								{
-									"name": "code",
-									"type": "String",
-									"description": "编码",
-									"required": true
-								},
-								{
-									"name": "due_date",
-									"type": "Date",
-									"description": "到期日期",
-									"required": true
-								},
-								{
-									"name": "effective_date",
-									"type": "Date",
-									"description": "生效日期",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "名称",
-									"required": true
-								},
-								{
-									"name": "type",
-									"type": "Number",
-									"description": "类型",
-									"required": true
-								},
-								{
-									"name": "urls",
-									"type": "String[]",
-									"description": "下载地址列表",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "名称",
-							"required": true
-						},
-						{
-							"name": "agent_companies",
-							"type": "Company[]",
-							"description": "代理商信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "established_date",
 									"type": "Date",
-									"description": "成立时间",
-									"required": true
+									"description": "成立时间"
 								},
 								{
-									"name": "licences",
-									"type": "Licence[]",
-									"description": "证照信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "certification_body",
 											"type": "String",
-											"description": "认证机构",
-											"required": true
+											"description": "认证机构"
 										},
 										{
 											"name": "code",
 											"type": "String",
-											"description": "编码",
-											"required": true
+											"description": "编码"
 										},
 										{
 											"name": "due_date",
 											"type": "Date",
-											"description": "到期日期",
-											"required": true
+											"description": "到期日期"
 										},
 										{
 											"name": "effective_date",
 											"type": "Date",
-											"description": "生效日期",
-											"required": true
+											"description": "生效日期"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "名称",
-											"required": true
+											"description": "名称"
 										},
 										{
 											"name": "type",
 											"type": "Number",
-											"description": "类型",
-											"required": true
+											"description": "类型"
 										},
 										{
 											"name": "urls",
 											"type": "String[]",
-											"description": "下载地址列表",
-											"required": true
+											"description": "下载地址列表"
 										}
-									]
+									],
+									"name": "licences",
+									"type": "Licence[]",
+									"description": "证照信息"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "名称",
-									"required": true
+									"description": "名称"
 								},
 								{
 									"name": "registered_capital",
 									"type": "String",
-									"description": "注册资本",
-									"required": true
+									"description": "注册资本"
 								},
 								{
 									"name": "unique_code",
 									"type": "String",
-									"description": "统一社会信用代码",
-									"required": true
+									"description": "统一社会信用代码"
 								}
-							]
+							],
+							"name": "agent_companies",
+							"type": "Company[]",
+							"description": "代理商信息"
 						},
 						{
 							"name": "auth_code",
 							"type": "String",
-							"description": "批次或备案编号",
-							"required": true
+							"description": "批次或备案编号"
 						},
 						{
-							"name": "sanitation_certificates",
-							"type": "SanitationCertificate[]",
-							"description": "检验检疫证明",
-							"required": true,
+							"name": "barcode",
+							"type": "String",
+							"description": "条形码"
+						},
+						{
 							"subParams": [
 								{
-									"name": "batch_products",
-									"type": "BatchProduct[]",
-									"description": "批次信息",
-									"required": true,
-									"subParams": [
-										{
-											"name": "due_date",
-											"type": "Date",
-											"description": "到期日期",
-											"required": true
-										},
-										{
-											"name": "origin_country",
-											"type": "String",
-											"description": "原产国",
-											"required": true
-										},
-										{
-											"name": "produce_date",
-											"type": "Date",
-											"description": "生产日期",
-											"required": true
-										}
-									]
+									"name": "certification_body",
+									"type": "String",
+									"description": "认证机构"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "编码",
-									"required": true
+									"description": "编码"
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "到期日期"
+								},
+								{
+									"name": "effective_date",
+									"type": "Date",
+									"description": "生效日期"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "类型"
 								},
 								{
 									"name": "urls",
 									"type": "String[]",
-									"description": "下载地址列表",
-									"required": true
+									"description": "下载地址列表"
 								}
-							]
+							],
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "due_date",
+											"type": "Date",
+											"description": "到期日期"
+										},
+										{
+											"name": "origin_country",
+											"type": "String",
+											"description": "原产国"
+										},
+										{
+											"name": "produce_date",
+											"type": "Date",
+											"description": "生产日期"
+										}
+									],
+									"name": "batch_products",
+									"type": "BatchProduct[]",
+									"description": "批次信息"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "编码"
+								},
+								{
+									"name": "urls",
+									"type": "String[]",
+									"description": "下载地址列表"
+								}
+							],
+							"name": "sanitation_certificates",
+							"type": "SanitationCertificate[]",
+							"description": "检验检疫证明"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ImportProduct",
+					"description": "返回素材id"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.fivee.importproduct.get",
+	"apiChineseName": "进口商品查询",
+	"description": "资质共享平台查询进口商品信息",
+	"id": 42257
 }

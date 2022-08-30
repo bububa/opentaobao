@@ -12,18 +12,18 @@ import (
 // 修改物流宝商品信息
 type TaobaoWlbItemUpdateAPIRequest struct {
 	model.Params
-	// 需要修改的商品属性值的列表，如果属性不存在，则新增属性
-	_updatePropertyKeyList string
-	// 需要删除的商品属性key列表
-	_deletePropertyKeyList string
-	// 需要修改的属性值的列表
-	_updatePropertyValueList string
 	// 要修改的商品名称
 	_name string
 	// 要修改的商品标题
 	_title string
 	// 要修改的商品备注
 	_remark string
+	// 需要修改的商品属性值的列表，如果属性不存在，则新增属性
+	_updatePropertyKeyList string
+	// 需要修改的属性值的列表
+	_updatePropertyValueList string
+	// 需要删除的商品属性key列表
+	_deletePropertyKeyList string
 	// 商品颜色
 	_color string
 	// 商品货类
@@ -71,45 +71,6 @@ func (r TaobaoWlbItemUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetUpdatePropertyKeyList is UpdatePropertyKeyList Setter
-// 需要修改的商品属性值的列表，如果属性不存在，则新增属性
-func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyKeyList(_updatePropertyKeyList string) error {
-	r._updatePropertyKeyList = _updatePropertyKeyList
-	r.Set("update_property_key_list", _updatePropertyKeyList)
-	return nil
-}
-
-// GetUpdatePropertyKeyList UpdatePropertyKeyList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyKeyList() string {
-	return r._updatePropertyKeyList
-}
-
-// SetDeletePropertyKeyList is DeletePropertyKeyList Setter
-// 需要删除的商品属性key列表
-func (r *TaobaoWlbItemUpdateAPIRequest) SetDeletePropertyKeyList(_deletePropertyKeyList string) error {
-	r._deletePropertyKeyList = _deletePropertyKeyList
-	r.Set("delete_property_key_list", _deletePropertyKeyList)
-	return nil
-}
-
-// GetDeletePropertyKeyList DeletePropertyKeyList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetDeletePropertyKeyList() string {
-	return r._deletePropertyKeyList
-}
-
-// SetUpdatePropertyValueList is UpdatePropertyValueList Setter
-// 需要修改的属性值的列表
-func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyValueList(_updatePropertyValueList string) error {
-	r._updatePropertyValueList = _updatePropertyValueList
-	r.Set("update_property_value_list", _updatePropertyValueList)
-	return nil
-}
-
-// GetUpdatePropertyValueList UpdatePropertyValueList Getter
-func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyValueList() string {
-	return r._updatePropertyValueList
-}
-
 // SetName is Name Setter
 // 要修改的商品名称
 func (r *TaobaoWlbItemUpdateAPIRequest) SetName(_name string) error {
@@ -147,6 +108,45 @@ func (r *TaobaoWlbItemUpdateAPIRequest) SetRemark(_remark string) error {
 // GetRemark Remark Getter
 func (r TaobaoWlbItemUpdateAPIRequest) GetRemark() string {
 	return r._remark
+}
+
+// SetUpdatePropertyKeyList is UpdatePropertyKeyList Setter
+// 需要修改的商品属性值的列表，如果属性不存在，则新增属性
+func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyKeyList(_updatePropertyKeyList string) error {
+	r._updatePropertyKeyList = _updatePropertyKeyList
+	r.Set("update_property_key_list", _updatePropertyKeyList)
+	return nil
+}
+
+// GetUpdatePropertyKeyList UpdatePropertyKeyList Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyKeyList() string {
+	return r._updatePropertyKeyList
+}
+
+// SetUpdatePropertyValueList is UpdatePropertyValueList Setter
+// 需要修改的属性值的列表
+func (r *TaobaoWlbItemUpdateAPIRequest) SetUpdatePropertyValueList(_updatePropertyValueList string) error {
+	r._updatePropertyValueList = _updatePropertyValueList
+	r.Set("update_property_value_list", _updatePropertyValueList)
+	return nil
+}
+
+// GetUpdatePropertyValueList UpdatePropertyValueList Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetUpdatePropertyValueList() string {
+	return r._updatePropertyValueList
+}
+
+// SetDeletePropertyKeyList is DeletePropertyKeyList Setter
+// 需要删除的商品属性key列表
+func (r *TaobaoWlbItemUpdateAPIRequest) SetDeletePropertyKeyList(_deletePropertyKeyList string) error {
+	r._deletePropertyKeyList = _deletePropertyKeyList
+	r.Set("delete_property_key_list", _deletePropertyKeyList)
+	return nil
+}
+
+// GetDeletePropertyKeyList DeletePropertyKeyList Getter
+func (r TaobaoWlbItemUpdateAPIRequest) GetDeletePropertyKeyList() string {
+	return r._deletePropertyKeyList
 }
 
 // SetColor is Color Setter

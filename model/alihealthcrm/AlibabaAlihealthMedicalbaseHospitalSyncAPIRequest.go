@@ -14,6 +14,8 @@ type AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest struct {
 	model.Params
 	// 是否需要用户授权
 	_isAuth string
+	// 服务项列表
+	_functions string
 	// 主院区纬度
 	_lat string
 	// 主院区经度
@@ -62,8 +64,6 @@ type AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest struct {
 	_phone string
 	// 单医院（main）／ 平台（platform）
 	_hosType string
-	// 服务项列表
-	_functions string
 	// isv库里面的hosCode
 	_isvHosCode string
 	// 投放阵地alipay aliyy uc quark
@@ -102,6 +102,19 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetIsAuth(_isAuth st
 // GetIsAuth IsAuth Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetIsAuth() string {
 	return r._isAuth
+}
+
+// SetFunctions is Functions Setter
+// 服务项列表
+func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetFunctions(_functions string) error {
+	r._functions = _functions
+	r.Set("functions", _functions)
+	return nil
+}
+
+// GetFunctions Functions Getter
+func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetFunctions() string {
+	return r._functions
 }
 
 // SetLat is Lat Setter
@@ -414,19 +427,6 @@ func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetHosType(_hosType 
 // GetHosType HosType Getter
 func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetHosType() string {
 	return r._hosType
-}
-
-// SetFunctions is Functions Setter
-// 服务项列表
-func (r *AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) SetFunctions(_functions string) error {
-	r._functions = _functions
-	r.Set("functions", _functions)
-	return nil
-}
-
-// GetFunctions Functions Getter
-func (r AlibabaAlihealthMedicalbaseHospitalSyncAPIRequest) GetFunctions() string {
-	return r._functions
 }
 
 // SetIsvHosCode is IsvHosCode Setter

@@ -1,8 +1,4 @@
 {
-	"id": 227,
-	"name": "taobao.picture.category.add",
-	"apiChineseName": "新增图片分类信息",
-	"description": "同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符",
 	"requestParams": [
 		{
 			"name": "picture_category_name",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "picture_category",
-			"type": "PictureCategory",
-			"description": "图片分类信息",
 			"subParams": [
 				{
 					"name": "picture_category_id",
@@ -57,7 +50,14 @@
 					"type": "Number",
 					"description": "一级分类的parent_id为0\u003cbr/\u003e二级分类的则为其父分类的picture_category_id"
 				}
-			]
+			],
+			"name": "picture_category",
+			"type": "PictureCategory",
+			"description": "图片分类信息"
 		}
-	]
+	],
+	"name": "taobao.picture.category.add",
+	"apiChineseName": "新增图片分类信息",
+	"description": "同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符",
+	"id": 227
 }

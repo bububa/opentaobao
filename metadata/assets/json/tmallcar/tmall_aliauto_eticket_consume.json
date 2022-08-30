@@ -1,0 +1,30 @@
+{
+	"requestParams": [
+		{
+			"name": "consume_code",
+			"type": "String",
+			"description": "核销码"
+		},
+		{
+			"name": "employee_no",
+			"type": "String",
+			"description": "导购编码"
+		},
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "门店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "返回的数据实体"
+		}
+	],
+	"name": "tmall.aliauto.eticket.consume",
+	"apiChineseName": "天猫汽车二轮车电子凭证核销",
+	"description": "天猫汽车二轮车行业门店电子凭证核销",
+	"id": 57237
+}

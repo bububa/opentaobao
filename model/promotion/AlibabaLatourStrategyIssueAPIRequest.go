@@ -30,6 +30,8 @@ type AlibabaLatourStrategyIssueAPIRequest struct {
 	_userType string
 	// 指定发放权益code
 	_selectedBenefitCode string
+	// openid
+	_openid string
 	// 算法容灾
 	_failoverAlgorithmResult bool
 	// 是否需要过安全
@@ -172,6 +174,19 @@ func (r *AlibabaLatourStrategyIssueAPIRequest) SetSelectedBenefitCode(_selectedB
 // GetSelectedBenefitCode SelectedBenefitCode Getter
 func (r AlibabaLatourStrategyIssueAPIRequest) GetSelectedBenefitCode() string {
 	return r._selectedBenefitCode
+}
+
+// SetOpenid is Openid Setter
+// openid
+func (r *AlibabaLatourStrategyIssueAPIRequest) SetOpenid(_openid string) error {
+	r._openid = _openid
+	r.Set("openid", _openid)
+	return nil
+}
+
+// GetOpenid Openid Getter
+func (r AlibabaLatourStrategyIssueAPIRequest) GetOpenid() string {
+	return r._openid
 }
 
 // SetFailoverAlgorithmResult is FailoverAlgorithmResult Setter

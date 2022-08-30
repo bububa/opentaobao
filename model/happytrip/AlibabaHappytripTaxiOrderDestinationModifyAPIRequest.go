@@ -22,6 +22,8 @@ type AlibabaHappytripTaxiOrderDestinationModifyAPIRequest struct {
 	_endName string
 	// 目的地详细地址(最多100个字)
 	_endAddress string
+	// 高德POI唯一标识
+	_endPoiId string
 }
 
 // NewAlibabaHappytripTaxiOrderDestinationModifyRequest 初始化AlibabaHappytripTaxiOrderDestinationModifyAPIRequest对象
@@ -108,4 +110,17 @@ func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndAddress(_en
 // GetEndAddress EndAddress Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndAddress() string {
 	return r._endAddress
+}
+
+// SetEndPoiId is EndPoiId Setter
+// 高德POI唯一标识
+func (r *AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) SetEndPoiId(_endPoiId string) error {
+	r._endPoiId = _endPoiId
+	r.Set("end_poi_id", _endPoiId)
+	return nil
+}
+
+// GetEndPoiId EndPoiId Getter
+func (r AlibabaHappytripTaxiOrderDestinationModifyAPIRequest) GetEndPoiId() string {
+	return r._endPoiId
 }

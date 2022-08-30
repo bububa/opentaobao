@@ -1,13 +1,6 @@
 {
-	"id": 44157,
-	"name": "alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed",
-	"apiChineseName": "退仓结果回传",
-	"description": "退货入仓结果回传",
 	"requestParams": [
 		{
-			"name": "return_warehouse_result",
-			"type": "ReturnWarehouseResult",
-			"description": "退仓结果",
 			"subParams": [
 				{
 					"name": "warehouse_code",
@@ -20,9 +13,6 @@
 					"description": "入库单号"
 				},
 				{
-					"name": "sku_info_list",
-					"type": "ReverseSkuInfo[]",
-					"description": "子订单信息列表",
 					"subParams": [
 						{
 							"name": "warehouse_loss_stock_quantity",
@@ -50,9 +40,6 @@
 							"description": "逆向履约子单号"
 						},
 						{
-							"name": "warehouse_loss_reason_list",
-							"type": "WarehouseLossReason[]",
-							"description": "仓内报损原因列表",
 							"subParams": [
 								{
 									"name": "warehouse_loss_reason",
@@ -69,7 +56,10 @@
 									"type": "String",
 									"description": "仓内报损数量"
 								}
-							]
+							],
+							"name": "warehouse_loss_reason_list",
+							"type": "WarehouseLossReason[]",
+							"description": "仓内报损原因列表"
 						},
 						{
 							"name": "related_fulfill_order_id",
@@ -83,36 +73,48 @@
 							"description": "关联的正向履约子单号",
 							"required": true
 						}
-					]
+					],
+					"name": "sku_info_list",
+					"type": "ReverseSkuInfo[]",
+					"description": "子订单信息列表"
+				},
+				{
+					"name": "package_quality",
+					"type": "String",
+					"description": "0:包裹完整 1:包裹破损"
 				}
-			]
+			],
+			"name": "return_warehouse_result",
+			"type": "ReturnWarehouseResult",
+			"description": "退仓结果"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfillVoidResult",
-			"description": "fulfillVoidResult",
 			"subParams": [
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "返回码含义描述",
-					"required": true
+					"description": "返回码含义描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)",
-					"required": true
+					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true 调用成功 false 调用失败",
-					"required": true
+					"description": "true 调用成功 false 调用失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfillVoidResult",
+			"description": "fulfillVoidResult"
 		}
-	]
+	],
+	"name": "alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed",
+	"apiChineseName": "退仓结果回传",
+	"description": "退货入仓结果回传",
+	"id": 44157
 }

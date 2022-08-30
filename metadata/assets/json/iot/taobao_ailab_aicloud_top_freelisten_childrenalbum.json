@@ -1,8 +1,4 @@
 {
-	"id": 34182,
-	"name": "taobao.ailab.aicloud.top.freelisten.childrenalbum",
-	"apiChineseName": "儿童音频列表",
-	"description": "儿童音频列表",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -42,35 +38,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model_list",
-					"type": "Json[]",
-					"description": "List\u003cMap\u003cString, Object\u003e\u003e数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值",
-					"required": true
+					"type": "String[]",
+					"description": "List\u003cMap\u003cString, Object\u003e\u003e数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回状态",
-					"required": true
+					"description": "返回状态"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "网络请求是否成功",
-					"required": true
+					"description": "网络请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.freelisten.childrenalbum",
+	"apiChineseName": "儿童音频列表",
+	"description": "儿童音频列表",
+	"id": 34182
 }

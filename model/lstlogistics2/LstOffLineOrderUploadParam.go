@@ -4,16 +4,16 @@ package lstlogistics2
 type LstOffLineOrderUploadParam struct {
 	// 子订单
 	SubOrders []SubOrderParam `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_param,omitempty"`
-	// 小店名称
-	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
-	// 仓库名称
-	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
 	// 外部订单号,保证在商家下唯一
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 订单创建时间
 	OrderCreateTime string `json:"order_create_time,omitempty" xml:"order_create_time,omitempty"`
 	// 订单支付时间
 	OrderPayTime string `json:"order_pay_time,omitempty" xml:"order_pay_time,omitempty"`
+	// 仓库名称
+	WarehouseName string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
+	// 小店名称
+	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// erp小店id
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 买家备注

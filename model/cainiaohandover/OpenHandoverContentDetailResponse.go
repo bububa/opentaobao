@@ -4,6 +4,10 @@ package cainiaohandover
 type OpenHandoverContentDetailResponse struct {
 	// 大包关联的小包列表
 	ParcelOrderList []OpenParcelOrderDto `json:"parcel_order_list,omitempty" xml:"parcel_order_list>open_parcel_order_dto,omitempty"`
+	// 交接物物流订单编号
+	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 交接物运单号
+	TrackingNumber string `json:"tracking_number,omitempty" xml:"tracking_number,omitempty"`
 	// 交接物状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 预估重量
@@ -20,10 +24,6 @@ type OpenHandoverContentDetailResponse struct {
 	FeeCurrency string `json:"fee_currency,omitempty" xml:"fee_currency,omitempty"`
 	// 费用单位
 	FeeUnit string `json:"fee_unit,omitempty" xml:"fee_unit,omitempty"`
-	// 交接物运单号
-	TrackingNumber string `json:"tracking_number,omitempty" xml:"tracking_number,omitempty"`
-	// 交接物物流订单编号
-	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 交接物状态
 	StatusName string `json:"status_name,omitempty" xml:"status_name,omitempty"`
 	// 交接物关联的交接单状态code

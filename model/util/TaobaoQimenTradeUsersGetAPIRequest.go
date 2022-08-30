@@ -12,10 +12,10 @@ import (
 // 获取已开通奇门订单服务的用户列表
 type TaobaoQimenTradeUsersGetAPIRequest struct {
 	model.Params
-	// 每页的数量
-	_pageIndex int64
 	// 页数
 	_pageSize int64
+	// 每页的数量
+	_pageIndex int64
 }
 
 // NewTaobaoQimenTradeUsersGetRequest 初始化TaobaoQimenTradeUsersGetAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoQimenTradeUsersGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPageIndex is PageIndex Setter
-// 每页的数量
-func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) error {
-	r._pageIndex = _pageIndex
-	r.Set("page_index", _pageIndex)
-	return nil
-}
-
-// GetPageIndex PageIndex Getter
-func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageIndex() int64 {
-	return r._pageIndex
-}
-
 // SetPageSize is PageSize Setter
 // 页数
 func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -63,4 +50,17 @@ func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageSize(_pageSize int64) error 
 // GetPageSize PageSize Getter
 func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetPageIndex is PageIndex Setter
+// 每页的数量
+func (r *TaobaoQimenTradeUsersGetAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// GetPageIndex PageIndex Getter
+func (r TaobaoQimenTradeUsersGetAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
 }

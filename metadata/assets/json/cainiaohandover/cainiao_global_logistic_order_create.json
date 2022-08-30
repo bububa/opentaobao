@@ -1,20 +1,8 @@
 {
-	"id": 50714,
-	"name": "cainiao.global.logistic.order.create",
-	"apiChineseName": "创建物流订单",
-	"description": "创建物流订单",
 	"requestParams": [
 		{
-			"name": "order_param",
-			"type": "OpenOrderParam",
-			"description": "订单参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "trade_order_param",
-					"type": "OpenTradeOrderParam",
-					"description": "交易单参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trade_order_id",
@@ -22,13 +10,13 @@
 							"description": "主交易单ID",
 							"required": true
 						}
-					]
+					],
+					"name": "trade_order_param",
+					"type": "OpenTradeOrderParam",
+					"description": "交易单参数",
+					"required": true
 				},
 				{
-					"name": "solution_param",
-					"type": "OpenSolutionParam",
-					"description": "解决方案参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "solution_code",
@@ -37,10 +25,6 @@
 							"required": true
 						},
 						{
-							"name": "service_params",
-							"type": "OpenServiceParam[]",
-							"description": "物流服务列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
@@ -49,10 +33,6 @@
 									"required": true
 								},
 								{
-									"name": "features",
-									"type": "Features",
-									"description": "不同物流服务的扩展信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "warehouse_code",
@@ -79,156 +59,25 @@
 											"type": "String",
 											"description": "自寄时快递公司的名称"
 										}
-									]
+									],
+									"name": "features",
+									"type": "Features",
+									"description": "不同物流服务的扩展信息",
+									"required": true
 								}
-							]
-						}
-					]
-				},
-				{
-					"name": "seller_info_param",
-					"type": "OpenSellerInfoParam",
-					"description": "商家信息参数",
-					"required": true,
-					"subParams": [
-						{
-							"name": "top_user_key",
-							"type": "String",
-							"description": "跨店铺组包时的店铺分组ID"
-						}
-					]
-				},
-				{
-					"name": "sender_param",
-					"type": "OpenSenderParam",
-					"description": "发件人信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "seller_address_id",
-							"type": "Number",
-							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
+							],
+							"name": "service_params",
+							"type": "OpenServiceParam[]",
+							"description": "物流服务列表",
 							"required": true
 						}
-					]
+					],
+					"name": "solution_param",
+					"type": "OpenSolutionParam",
+					"description": "解决方案参数",
+					"required": true
 				},
 				{
-					"name": "returner_param",
-					"type": "OpenReturnerParam",
-					"description": "退货联系人信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "seller_address_id",
-							"type": "Number",
-							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "receiver_param",
-					"type": "ReceiverParam",
-					"description": "收件人信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "name",
-							"type": "String",
-							"description": "收件人名称"
-						},
-						{
-							"name": "telephone",
-							"type": "String",
-							"description": "收件人座机号"
-						},
-						{
-							"name": "mobile_phone",
-							"type": "String",
-							"description": "收件人手机号"
-						},
-						{
-							"name": "address_param",
-							"type": "OpenAddressParam",
-							"description": "收件人地址信息",
-							"subParams": [
-								{
-									"name": "division_id",
-									"type": "Number",
-									"description": "最小区划地址库ID"
-								},
-								{
-									"name": "zip_code",
-									"type": "String",
-									"description": "邮编"
-								},
-								{
-									"name": "country_name",
-									"type": "String",
-									"description": "国家名称"
-								},
-								{
-									"name": "province",
-									"type": "String",
-									"description": "省份"
-								},
-								{
-									"name": "city",
-									"type": "String",
-									"description": "城市"
-								},
-								{
-									"name": "district",
-									"type": "String",
-									"description": "区"
-								},
-								{
-									"name": "street",
-									"type": "String",
-									"description": "街道"
-								},
-								{
-									"name": "detail_address",
-									"type": "String",
-									"description": "详细地址"
-								},
-								{
-									"name": "country_code",
-									"type": "String",
-									"description": "国家二字码，CN：中国、RU：俄罗斯"
-								}
-							]
-						},
-						{
-							"name": "user_nick",
-							"type": "String",
-							"description": "用户昵称"
-						},
-						{
-							"name": "email",
-							"type": "String",
-							"description": "邮箱"
-						}
-					]
-				},
-				{
-					"name": "pickup_info_param",
-					"type": "OpenPickupInfoParam",
-					"description": "揽收信息参数",
-					"subParams": [
-						{
-							"name": "seller_address_id",
-							"type": "Number",
-							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "package_params",
-					"type": "OpenPackageParam[]",
-					"description": "包裹参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "length",
@@ -256,10 +105,6 @@
 							"description": "包裹价格"
 						},
 						{
-							"name": "item_params",
-							"type": "OpenItemParam[]",
-							"description": "商品参数",
-							"required": true,
 							"subParams": [
 								{
 									"name": "item_id",
@@ -340,16 +185,167 @@
 									"type": "Number",
 									"description": "商品高度"
 								}
-							]
+							],
+							"name": "item_params",
+							"type": "OpenItemParam[]",
+							"description": "商品参数",
+							"required": true
 						},
 						{
 							"name": "currency",
 							"type": "String",
 							"description": "包裹价格币种，CNY：人民币、USD：美元、RUB：卢布。"
 						}
-					]
+					],
+					"name": "package_params",
+					"type": "OpenPackageParam[]",
+					"description": "包裹参数",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "top_user_key",
+							"type": "String",
+							"description": "跨店铺组包时的店铺分组ID"
+						}
+					],
+					"name": "seller_info_param",
+					"type": "OpenSellerInfoParam",
+					"description": "商家信息参数",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_address_id",
+							"type": "Number",
+							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
+							"required": true
+						}
+					],
+					"name": "sender_param",
+					"type": "OpenSenderParam",
+					"description": "发件人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_address_id",
+							"type": "Number",
+							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
+							"required": true
+						}
+					],
+					"name": "returner_param",
+					"type": "OpenReturnerParam",
+					"description": "退货联系人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收件人名称"
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "收件人座机号"
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "收件人手机号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "最小区划地址库ID"
+								},
+								{
+									"name": "zip_code",
+									"type": "String",
+									"description": "邮编"
+								},
+								{
+									"name": "country_name",
+									"type": "String",
+									"description": "国家名称"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市"
+								},
+								{
+									"name": "district",
+									"type": "String",
+									"description": "区"
+								},
+								{
+									"name": "street",
+									"type": "String",
+									"description": "街道"
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "country_code",
+									"type": "String",
+									"description": "国家二字码，CN：中国、RU：俄罗斯"
+								}
+							],
+							"name": "address_param",
+							"type": "OpenAddressParam",
+							"description": "收件人地址信息"
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户昵称"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						}
+					],
+					"name": "receiver_param",
+					"type": "ReceiverParam",
+					"description": "收件人信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_address_id",
+							"type": "Number",
+							"description": "卖家后台地址id,用来获取卖家详细地址信息，传入值为Long型；",
+							"required": true
+						}
+					],
+					"name": "pickup_info_param",
+					"type": "OpenPickupInfoParam",
+					"description": "揽收信息参数"
 				}
-			]
+			],
+			"name": "order_param",
+			"type": "OpenOrderParam",
+			"description": "订单参数",
+			"required": true
 		},
 		{
 			"name": "locale",
@@ -359,46 +355,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "need_retry",
-			"type": "Boolean",
-			"description": "是否需要重试"
-		},
-		{
-			"name": "result",
-			"type": "OpenTakingOrderResponse",
-			"description": "请求结果",
-			"subParams": [
-				{
-					"name": "logistics_order_id",
-					"type": "Number",
-					"description": "物流订单ID",
-					"required": true
-				}
-			]
-		},
-		{
 			"name": "is_success",
 			"type": "String",
 			"description": "创建是否成功"
 		},
 		{
-			"name": "error_info",
-			"type": "ErrorInfo",
-			"description": "错误信息",
+			"name": "need_retry",
+			"type": "Boolean",
+			"description": "是否需要重试"
+		},
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "Number",
+					"description": "物流订单ID"
+				}
+			],
+			"name": "result",
+			"type": "OpenTakingOrderResponse",
+			"description": "请求结果"
+		},
+		{
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "error_info",
+			"type": "ErrorInfo",
+			"description": "错误信息"
 		}
-	]
+	],
+	"name": "cainiao.global.logistic.order.create",
+	"apiChineseName": "创建物流订单",
+	"description": "创建物流订单",
+	"id": 50714
 }

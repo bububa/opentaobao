@@ -1,8 +1,4 @@
 {
-	"id": 25472,
-	"name": "alibaba.security.jaq.spamregisterprevention.feedback",
-	"apiChineseName": "保护结果反馈",
-	"description": "用户通过这个接口对垃圾注册防控结果进行反馈",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -36,16 +32,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "feed_back_result",
-			"type": "JaqFeedBackResult",
-			"description": "feedBack返回结果",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
 					"description": "feedBack返回信息"
 				}
-			]
+			],
+			"name": "feed_back_result",
+			"type": "JaqFeedBackResult",
+			"description": "feedBack返回结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.spamregisterprevention.feedback",
+	"apiChineseName": "保护结果反馈",
+	"description": "用户通过这个接口对垃圾注册防控结果进行反馈",
+	"id": 25472
 }

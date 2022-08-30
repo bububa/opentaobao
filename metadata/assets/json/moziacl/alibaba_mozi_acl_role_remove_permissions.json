@@ -1,20 +1,8 @@
 {
-	"id": 45483,
-	"name": "alibaba.mozi.acl.role.remove.permissions",
-	"apiChineseName": "角色移除功能权限",
-	"description": "从角色中移除一批功能权限",
 	"requestParams": [
 		{
-			"name": "remove_permissions_from_role",
-			"type": "RemovePermissionsFromRoleRequest",
-			"description": "角色移除功能权限请求对象",
-			"required": true,
 			"subParams": [
 				{
-					"name": "principal_param",
-					"type": "BucUserPrincipalParam",
-					"description": "操作主体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -27,7 +15,11 @@
 							"description": "操作人所在租户",
 							"required": true
 						}
-					]
+					],
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"required": true
 				},
 				{
 					"name": "target_app_name",
@@ -48,54 +40,57 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "请求参数扩展字段"
 				}
-			]
+			],
+			"name": "remove_permissions_from_role",
+			"type": "RemovePermissionsFromRoleRequest",
+			"description": "角色移除功能权限请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RemovePermissionsFromRoleResult",
-			"description": "角色移除功能权限结果对象",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据，这个接口返回数据为空",
-					"required": true
+					"description": "返回数据，这个接口返回数据为空"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否处理成功，若成功则返回true",
-					"required": true
+					"description": "是否处理成功，若成功则返回true"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "响应结果message，若处理失败则返回失败原因",
-					"required": true
+					"description": "响应结果message，若处理失败则返回失败原因"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "扩展字段，与入参扩展字段值相同",
-					"required": true
+					"type": "String",
+					"description": "扩展字段，与入参扩展字段值相同"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RemovePermissionsFromRoleResult",
+			"description": "角色移除功能权限结果对象"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.role.remove.permissions",
+	"apiChineseName": "角色移除功能权限",
+	"description": "从角色中移除一批功能权限",
+	"id": 45483
 }

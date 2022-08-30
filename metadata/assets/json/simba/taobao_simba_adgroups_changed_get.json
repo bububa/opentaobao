@@ -1,8 +1,4 @@
 {
-	"id": 21249,
-	"name": "taobao.simba.adgroups.changed.get",
-	"apiChineseName": "分页获取修改的推广组ID和修改时间",
-	"description": "分页获取修改的推广组ID和修改时间",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,22 +14,16 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "返回的每页数据量大小,默认200最大1000",
-			"maxValue": 1000,
-			"minValue": 1
+			"description": "返回的每页数据量大小,默认200最大1000"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "返回的第几页数据，默认为1",
-			"minValue": 1
+			"description": "返回的第几页数据，默认为1"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "adgroups",
-			"type": "ADGroupPage",
-			"description": "推广组分页对象",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -51,9 +41,6 @@
 					"description": "所查询的数据总数，只有当返回第一页数据时有值，当要求返回的数据非第一页时，此返回值无效"
 				},
 				{
-					"name": "adgroup_list",
-					"type": "ADGroup[]",
-					"description": "商品对象列表",
 					"subParams": [
 						{
 							"name": "nick",
@@ -61,73 +48,28 @@
 							"description": "推广组主人昵称"
 						},
 						{
-							"name": "campaign_id",
-							"type": "Number",
-							"description": "推广计划Id"
-						},
-						{
 							"name": "adgroup_id",
 							"type": "Number",
 							"description": "推广组id"
 						},
 						{
-							"name": "category_ids",
-							"type": "String",
-							"description": "商品类目id，从根类目到子类目，用空格分割"
-						},
-						{
-							"name": "num_iid",
-							"type": "Number",
-							"description": "商品数字id"
-						},
-						{
-							"name": "default_price",
-							"type": "Number",
-							"description": "默认出价，单位为分，不能小于5"
-						},
-						{
-							"name": "nonsearch_max_price",
-							"type": "Number",
-							"description": "非搜索出价，单位为分，不能小于5"
-						},
-						{
-							"name": "is_nonsearch_default_price",
-							"type": "Boolean",
-							"description": "非搜索是否使用默认出价，false-不用；true-使用；默认为true;"
-						},
-						{
-							"name": "online_status",
-							"type": "String",
-							"description": "用户设置的上下线状态，offline-下线(暂停竞价)；online-上线；默认为online"
-						},
-						{
-							"name": "offline_type",
-							"type": "String",
-							"description": "online-上线；audit_offline-审核下线；crm_offline-CRM下线；默认为online"
-						},
-						{
-							"name": "reason",
-							"type": "String",
-							"description": "审核下线原因"
-						},
-						{
-							"name": "create_time",
-							"type": "Date",
-							"description": "创建时间"
-						},
-						{
 							"name": "modified_time",
 							"type": "Date",
 							"description": "最后修改时间"
-						},
-						{
-							"name": "nonsearch_status",
-							"type": "Number",
-							"description": "通投状态,1：开启；0：暂停；默认为1"
 						}
-					]
+					],
+					"name": "adgroup_list",
+					"type": "ADGroup[]",
+					"description": "商品对象列表"
 				}
-			]
+			],
+			"name": "adgroups",
+			"type": "ADGroupPage",
+			"description": "推广组分页对象"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroups.changed.get",
+	"apiChineseName": "分页获取修改的推广组ID和修改时间",
+	"description": "分页获取修改的推广组ID和修改时间",
+	"id": 21249
 }

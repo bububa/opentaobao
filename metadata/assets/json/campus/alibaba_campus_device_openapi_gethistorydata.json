@@ -1,14 +1,6 @@
 {
-	"id": 33813,
-	"name": "alibaba.campus.device.openapi.gethistorydata",
-	"apiChineseName": "查询设备历史数据",
-	"description": "查询历史数据的接口",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "请求端信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,13 +13,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求端信息",
+			"required": true
 		},
 		{
-			"name": "query",
-			"type": "DeviceDataApiQuery",
-			"description": "历史数据查询对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "limit",
@@ -65,128 +57,118 @@
 					"description": "设备id",
 					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "DeviceDataApiQuery",
+			"description": "历史数据查询对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "历史数据返回信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						},
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
-							"name": "results",
-							"type": "DeviceDataApiDto[]",
-							"description": "历史数据集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "device_id",
 									"type": "String",
-									"description": "设备id",
-									"required": true
+									"description": "设备id"
 								},
 								{
 									"name": "device_code",
 									"type": "String",
-									"description": "设备code",
-									"required": true
+									"description": "设备code"
 								},
 								{
 									"name": "property_code",
 									"type": "String",
-									"description": "参数点code",
-									"required": true
+									"description": "参数点code"
 								},
 								{
 									"name": "value",
 									"type": "String",
-									"description": "历史数据值",
-									"required": true
+									"description": "历史数据值"
 								},
 								{
 									"name": "timestamp",
 									"type": "Number",
-									"description": "时间戳",
-									"required": true
+									"description": "时间戳"
 								},
 								{
 									"name": "value_type",
 									"type": "Number",
-									"description": "值类型id",
-									"required": true
+									"description": "值类型id"
 								},
 								{
 									"name": "value_type_name",
 									"type": "String",
-									"description": "值类型名称",
-									"required": true
+									"description": "值类型名称"
 								},
 								{
 									"name": "unit_id",
 									"type": "Number",
-									"description": "单位id",
-									"required": true
+									"description": "单位id"
 								},
 								{
 									"name": "unit_code",
 									"type": "String",
-									"description": "单位编码",
-									"required": true
+									"description": "单位编码"
 								}
-							]
+							],
+							"name": "results",
+							"type": "DeviceDataApiDto[]",
+							"description": "历史数据集合"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "历史数据返回信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.gethistorydata",
+	"apiChineseName": "查询设备历史数据",
+	"description": "查询历史数据的接口",
+	"id": 33813
 }

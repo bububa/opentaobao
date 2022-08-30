@@ -1,8 +1,4 @@
 {
-	"id": 25975,
-	"name": "taobao.alitrip.travel.trade.memo.update",
-	"apiChineseName": "修改一笔交易备注",
-	"description": "更新一笔交易备注",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -28,9 +24,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "memo_update",
-			"type": "MemoUpdate",
-			"description": "修改交易备注返回值",
 			"subParams": [
 				{
 					"name": "tid",
@@ -42,7 +35,14 @@
 					"type": "Date",
 					"description": "关闭订单时间"
 				}
-			]
+			],
+			"name": "memo_update",
+			"type": "MemoUpdate",
+			"description": "修改交易备注返回值"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.trade.memo.update",
+	"apiChineseName": "修改一笔交易备注",
+	"description": "更新一笔交易备注",
+	"id": 25975
 }

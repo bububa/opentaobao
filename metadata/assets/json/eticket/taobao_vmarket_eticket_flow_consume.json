@@ -1,8 +1,4 @@
 {
-	"id": 26239,
-	"name": "taobao.vmarket.eticket.flow.consume",
-	"apiChineseName": "无交易类凭证核销",
-	"description": "无交易类凭证核销",
 	"requestParams": [
 		{
 			"name": "outer_id",
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "错误提示信息"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.flow.consume",
+	"apiChineseName": "无交易类凭证核销",
+	"description": "无交易类凭证核销",
+	"id": 26239
 }

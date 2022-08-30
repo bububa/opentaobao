@@ -1,8 +1,4 @@
 {
-	"id": 41857,
-	"name": "alibaba.alihealth.uic.userinfo.healthid.get",
-	"apiChineseName": "获取健康id",
-	"description": "根据支付宝用户ID获取用户健康ID",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -13,29 +9,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Number",
-					"description": "健康ID",
-					"required": true
+					"description": "健康ID"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.uic.userinfo.healthid.get",
+	"apiChineseName": "获取健康id",
+	"description": "根据支付宝用户ID获取用户健康ID",
+	"id": 41857
 }

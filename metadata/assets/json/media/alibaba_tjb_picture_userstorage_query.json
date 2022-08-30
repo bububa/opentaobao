@@ -1,0 +1,25 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "used_quota",
+					"type": "Number",
+					"description": "已使用的容量，单位字节"
+				},
+				{
+					"name": "total_quota",
+					"type": "Number",
+					"description": "总容量，单位字节"
+				}
+			],
+			"name": "user_storage",
+			"type": "TopUserStorageDTO",
+			"description": "用户容量信息"
+		}
+	],
+	"name": "alibaba.tjb.picture.userstorage.query",
+	"apiChineseName": "淘特图片空间用户容量查询",
+	"description": "淘特图片空间用户容量查询",
+	"id": 62255
+}

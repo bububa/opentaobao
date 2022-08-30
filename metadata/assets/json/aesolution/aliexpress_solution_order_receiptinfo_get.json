@@ -1,27 +1,20 @@
 {
-	"id": 42369,
-	"name": "aliexpress.solution.order.receiptinfo.get",
-	"apiChineseName": "Get Order Receipt Info",
-	"description": "Get Order Receipt Info, Support multi stores requirements for Turkey sellers.",
 	"requestParams": [
 		{
-			"name": "param1",
-			"type": "SingleOrderQuery",
-			"description": "query param",
 			"subParams": [
 				{
 					"name": "order_id",
 					"type": "Number",
 					"description": "order ID"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "SingleOrderQuery",
+			"description": "query param"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderAddressDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "country_name",
@@ -125,7 +118,14 @@
 					"description": "localized address, currently for buyer whose address is in Russia.",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderAddressDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.order.receiptinfo.get",
+	"apiChineseName": "Get Order Receipt Info",
+	"description": "Get Order Receipt Info, Support multi stores requirements for Turkey sellers.",
+	"id": 42369
 }

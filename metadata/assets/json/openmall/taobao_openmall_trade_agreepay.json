@@ -1,8 +1,4 @@
 {
-	"id": 51189,
-	"name": "taobao.openmall.trade.agreepay",
-	"apiChineseName": "openmall订单支付",
-	"description": "openmall订单支付",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.agreepay",
+	"apiChineseName": "openmall订单支付",
+	"description": "openmall订单支付",
+	"id": 51189
 }

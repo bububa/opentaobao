@@ -1,0 +1,378 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据量，默认100，最高100"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "1、老版本2、isv对外版本"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数，从1开始"
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票"
+				},
+				{
+					"name": "period_start",
+					"type": "String",
+					"description": "记账更新开始日期"
+				},
+				{
+					"name": "period_end",
+					"type": "String",
+					"description": "记账更新结束日期"
+				}
+			],
+			"name": "rq",
+			"type": "OpenIsvBillSettlementSearchRq",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "第三方企业id"
+						},
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总数据量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "traveler_name",
+									"type": "String",
+									"description": "出行人名称"
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "订单类型"
+								},
+								{
+									"name": "fees",
+									"type": "String",
+									"description": "杂费"
+								},
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "订单id"
+								},
+								{
+									"name": "department_id",
+									"type": "String",
+									"description": "部门id"
+								},
+								{
+									"name": "primary_id",
+									"type": "Number",
+									"description": "主键id，遇到相同id，已最新为准（数据会更新）"
+								},
+								{
+									"name": "over_apply_id",
+									"type": "String",
+									"description": "超标审批id"
+								},
+								{
+									"name": "apply_id",
+									"type": "String",
+									"description": "审批id"
+								},
+								{
+									"name": "booker_id",
+									"type": "String",
+									"description": "预定人use id"
+								},
+								{
+									"name": "cost_center_number",
+									"type": "String",
+									"description": "成本中心编码"
+								},
+								{
+									"name": "invoice_title",
+									"type": "String",
+									"description": "发票抬头"
+								},
+								{
+									"name": "room_type",
+									"type": "String",
+									"description": "房型"
+								},
+								{
+									"name": "promotion_fee",
+									"type": "String",
+									"description": "优惠券"
+								},
+								{
+									"name": "service_fee",
+									"type": "String",
+									"description": "服务费,仅在 feeType 20111、20112中展示，枚举详见语雀"
+								},
+								{
+									"name": "room_price",
+									"type": "String",
+									"description": "房价"
+								},
+								{
+									"name": "cost_center",
+									"type": "String",
+									"description": "成本中心名称"
+								},
+								{
+									"name": "person_refund_fee",
+									"type": "String",
+									"description": "个人退款金额"
+								},
+								{
+									"name": "settlement_fee",
+									"type": "String",
+									"description": "结算金额"
+								},
+								{
+									"name": "index",
+									"type": "String",
+									"description": "序号"
+								},
+								{
+									"name": "book_time",
+									"type": "String",
+									"description": "预定时间"
+								},
+								{
+									"name": "fee_type",
+									"type": "String",
+									"description": "费用类型，枚举详见语雀"
+								},
+								{
+									"name": "checkout_date",
+									"type": "String",
+									"description": "离店时间"
+								},
+								{
+									"name": "person_settle_price",
+									"type": "String",
+									"description": "个人结算费用"
+								},
+								{
+									"name": "is_negotiation",
+									"type": "String",
+									"description": "是否协议价"
+								},
+								{
+									"name": "project_name",
+									"type": "String",
+									"description": "项目名称"
+								},
+								{
+									"name": "total_nights",
+									"type": "Number",
+									"description": "总间夜数"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "入账状态，枚举详见语雀"
+								},
+								{
+									"name": "room_number",
+									"type": "Number",
+									"description": "房间号"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "入住城市"
+								},
+								{
+									"name": "city_code",
+									"type": "String",
+									"description": "入住城市编码，枚举详见语雀"
+								},
+								{
+									"name": "traveler_job_no",
+									"type": "String",
+									"description": "出行人工号"
+								},
+								{
+									"name": "check_in_date",
+									"type": "String",
+									"description": "入住时间"
+								},
+								{
+									"name": "project_code",
+									"type": "String",
+									"description": "项目编码"
+								},
+								{
+									"name": "cascade_department",
+									"type": "String",
+									"description": "级联部门"
+								},
+								{
+									"name": "order_price",
+									"type": "String",
+									"description": "订单金额"
+								},
+								{
+									"name": "department",
+									"type": "String",
+									"description": "末级部门"
+								},
+								{
+									"name": "corp_total_fee",
+									"type": "String",
+									"description": "企业支付金额"
+								},
+								{
+									"name": "settlement_type",
+									"type": "String",
+									"description": "结算类型，枚举详见语雀"
+								},
+								{
+									"name": "alipay_trade_no",
+									"type": "String",
+									"description": "支付流水号"
+								},
+								{
+									"name": "corp_refund_fee",
+									"type": "String",
+									"description": "企业退款金额"
+								},
+								{
+									"name": "fu_point_fee",
+									"type": "String",
+									"description": "福豆支付"
+								},
+								{
+									"name": "booker_name",
+									"type": "String",
+									"description": "预订人名称"
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名称"
+								},
+								{
+									"name": "traveler_id",
+									"type": "String",
+									"description": "出行人use id"
+								},
+								{
+									"name": "capital_direction",
+									"type": "String",
+									"description": "资金方向，枚举详见语雀"
+								},
+								{
+									"name": "settlement_time",
+									"type": "String",
+									"description": "结算时间"
+								},
+								{
+									"name": "nights",
+									"type": "Number",
+									"description": "入住天数"
+								},
+								{
+									"name": "booker_job_no",
+									"type": "String",
+									"description": "预定人工号"
+								},
+								{
+									"name": "is_share_str",
+									"type": "String",
+									"description": "是否合住"
+								},
+								{
+									"name": "voucher_type",
+									"type": "Number",
+									"description": "票据类型，枚举详见语雀"
+								},
+								{
+									"name": "bill_record_time",
+									"type": "Date",
+									"description": "入账时间"
+								},
+								{
+									"name": "settlement_grant_fee",
+									"type": "String",
+									"description": "预存赠送金额消费"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								}
+							],
+							"name": "data_list",
+							"type": "OpenIsvBillSettlementHotelRs[]",
+							"description": "数据集合"
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "类目，枚举详见语雀"
+						},
+						{
+							"name": "period_start",
+							"type": "String",
+							"description": "记账更新开始日期"
+						},
+						{
+							"name": "period_end",
+							"type": "String",
+							"description": "记账更新结束日期"
+						}
+					],
+					"name": "module",
+					"type": "OpenIsvBillSettlementRs",
+					"description": "module"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果code"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg"
+				}
+			],
+			"name": "result",
+			"type": "HisvResultSupport",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.btrip.corpop.hotel.billsettlement.query",
+	"apiChineseName": "酒店结算记账查询接口",
+	"description": "酒店结算记账查询接口",
+	"id": 59321
+}

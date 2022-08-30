@@ -1,8 +1,4 @@
 {
-	"id": 10625,
-	"name": "taobao.wlb.orderstatus.get",
-	"apiChineseName": "物流宝订单流转状态查询",
-	"description": "根据物流宝订单号查询物流宝订单至目前为止的流转状态列表",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -13,71 +9,65 @@
 	],
 	"responseParams": [
 		{
-			"name": "wlb_order_status",
-			"type": "WlbProcessStatus []",
-			"description": "订单流转信息状态列表",
 			"subParams": [
 				{
 					"name": "order_code",
 					"type": "String",
-					"description": "物流宝订单编码",
-					"required": true
+					"description": "物流宝订单编码"
 				},
 				{
 					"name": "operator",
 					"type": "String",
-					"description": "操作人",
-					"required": true
+					"description": "操作人"
 				},
 				{
 					"name": "operate_time",
 					"type": "Date",
-					"description": "操作时间",
-					"required": true
+					"description": "操作时间"
 				},
 				{
 					"name": "store_tp_code",
 					"type": "String",
-					"description": "仓库合作公司编码",
-					"required": true
+					"description": "仓库合作公司编码"
 				},
 				{
 					"name": "store_code",
 					"type": "String",
-					"description": "仓库编码",
-					"required": true
+					"description": "仓库编码"
 				},
 				{
 					"name": "tms_tp_code",
 					"type": "String",
-					"description": "tms合作公司编码",
-					"required": true
+					"description": "tms合作公司编码"
 				},
 				{
 					"name": "tms_order_code",
 					"type": "String",
-					"description": "tms合作公司订单编码",
-					"required": true
+					"description": "tms合作公司订单编码"
 				},
 				{
 					"name": "content",
 					"type": "String",
-					"description": "状态内容",
-					"required": true
+					"description": "状态内容"
 				},
 				{
 					"name": "remark",
 					"type": "String",
-					"description": "备注",
-					"required": true
+					"description": "备注"
 				},
 				{
 					"name": "status_code",
 					"type": "String",
-					"description": "订单操作状态：WMS_ACCEPT;WMS_PRINT;WMS_PICK;WMS_CHECK;WMS_PACKAGE;WMS_CONSIGN;WMS_CANCEL;WMS_UNKNOWN;WMS_CONFIRMEDTMS_ACCEPT;TMS_STATION_IN;TMS_STATION_OUT;TMS_SIGN;TMS_REJECT;TMS_CANCEL;TMS_UNKNOW;SYS_UNKNOWN",
-					"required": true
+					"description": "订单操作状态：WMS_ACCEPT;WMS_PRINT;WMS_PICK;WMS_CHECK;WMS_PACKAGE;WMS_CONSIGN;WMS_CANCEL;WMS_UNKNOWN;WMS_CONFIRMEDTMS_ACCEPT;TMS_STATION_IN;TMS_STATION_OUT;TMS_SIGN;TMS_REJECT;TMS_CANCEL;TMS_UNKNOW;SYS_UNKNOWN"
 				}
-			]
+			],
+			"name": "wlb_order_status",
+			"type": "WlbProcessStatus []",
+			"description": "订单流转信息状态列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.orderstatus.get",
+	"apiChineseName": "物流宝订单流转状态查询",
+	"description": "根据物流宝订单号查询物流宝订单至目前为止的流转状态列表",
+	"id": 10625
 }

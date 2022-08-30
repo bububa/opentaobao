@@ -1,8 +1,4 @@
 {
-	"id": 26482,
-	"name": "taobao.drug.quantity.update",
-	"apiChineseName": "商家更新库存",
-	"description": "商家通过top接口可以直接修改商品库存",
 	"requestParams": [
 		{
 			"name": "out_store_id",
@@ -25,29 +21,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误编号",
-					"required": true
+					"description": "错误编号"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求的接口是否成功",
-					"required": true
+					"description": "请求的接口是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.drug.quantity.update",
+	"apiChineseName": "商家更新库存",
+	"description": "商家通过top接口可以直接修改商品库存",
+	"id": 26482
 }

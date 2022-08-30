@@ -14,6 +14,10 @@ type TaobaoTravelTicketOrderRefundAPIRequest struct {
 	model.Params
 	// 退票失败理由
 	_refundFailureReason string
+	// 退票的批次号
+	_refundBatchNo string
+	// 退票数量
+	_refundNum int64
 	// 下单时订单ID
 	_orderId int64
 	// 退票结果；1: 退票成功；2: 退票失败
@@ -52,6 +56,32 @@ func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundFailureReason(_refund
 // GetRefundFailureReason RefundFailureReason Getter
 func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundFailureReason() string {
 	return r._refundFailureReason
+}
+
+// SetRefundBatchNo is RefundBatchNo Setter
+// 退票的批次号
+func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundBatchNo(_refundBatchNo string) error {
+	r._refundBatchNo = _refundBatchNo
+	r.Set("refund_batch_no", _refundBatchNo)
+	return nil
+}
+
+// GetRefundBatchNo RefundBatchNo Getter
+func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundBatchNo() string {
+	return r._refundBatchNo
+}
+
+// SetRefundNum is RefundNum Setter
+// 退票数量
+func (r *TaobaoTravelTicketOrderRefundAPIRequest) SetRefundNum(_refundNum int64) error {
+	r._refundNum = _refundNum
+	r.Set("refund_num", _refundNum)
+	return nil
+}
+
+// GetRefundNum RefundNum Getter
+func (r TaobaoTravelTicketOrderRefundAPIRequest) GetRefundNum() int64 {
+	return r._refundNum
 }
 
 // SetOrderId is OrderId Setter

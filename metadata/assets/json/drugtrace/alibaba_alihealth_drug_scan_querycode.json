@@ -1,13 +1,15 @@
 {
-	"id": 43192,
-	"name": "alibaba.alihealth.drug.scan.querycode",
-	"apiChineseName": "查询药监码对应的有效期和包装规格",
-	"description": "查询药监码对应的有效期和包装规格",
 	"requestParams": [
 		{
 			"name": "code",
 			"type": "String",
 			"description": "溯源码",
+			"required": true
+		},
+		{
+			"name": "scan_time",
+			"type": "Date",
+			"description": "扫码日期",
 			"required": true
 		},
 		{
@@ -30,59 +32,51 @@
 			"name": "area_code",
 			"type": "String",
 			"description": "区编码"
-		},
-		{
-			"name": "scan_time",
-			"type": "Date",
-			"description": "扫码日期",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "DrugScanLog",
-					"description": "返回模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pkg_spec",
 							"type": "String",
-							"description": "包装规格",
-							"required": true
-						},
-						{
-							"name": "expiry_date",
-							"type": "String",
-							"description": "有效期",
-							"required": true
+							"description": "包装规格"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "溯源码",
-							"required": true
+							"description": "溯源码"
+						},
+						{
+							"name": "expiry_date",
+							"type": "String",
+							"description": "有效期"
 						}
-					]
+					],
+					"name": "model",
+					"type": "DrugScanLog",
+					"description": "返回模型"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.scan.querycode",
+	"apiChineseName": "查询药监码对应的有效期和包装规格",
+	"description": "查询药监码对应的有效期和包装规格",
+	"id": 43192
 }

@@ -1,8 +1,4 @@
 {
-	"id": 56454,
-	"name": "taobao.xhotel.bnbhouse.add",
-	"apiChineseName": "民宿门店信息添加",
-	"description": "添加和更新民宿门店的信息",
 	"requestParams": [
 		{
 			"name": "out_owner_id",
@@ -11,288 +7,7 @@
 			"required": true
 		},
 		{
-			"name": "vendor",
-			"type": "String",
-			"description": "对接系统商名称：可为空不要乱填，需要申请后使用"
-		},
-		{
-			"name": "outer_id",
-			"type": "String",
-			"description": "供应商渠道门店ID",
-			"required": true
-		},
-		{
-			"name": "name",
-			"type": "String",
-			"description": "门店名称",
-			"required": true
-		},
-		{
-			"name": "name_e",
-			"type": "String",
-			"description": "门店英文名称"
-		},
-		{
-			"name": "attributes",
-			"type": "Number",
-			"description": "门店属性 1 个人房源 2 城市公寓 3 乡村民宿等",
-			"required": true
-		},
-		{
-			"name": "product_type",
-			"type": "Number",
-			"description": "门店类型，详见“房源类型list",
-			"required": true
-		},
-		{
-			"name": "has_license",
-			"type": "Number",
-			"description": "有无资质执照 0 无资质 1有资质",
-			"required": true
-		},
-		{
-			"name": "house_size",
-			"type": "Number",
-			"description": "面积大小"
-		},
-		{
-			"name": "floors",
-			"type": "String",
-			"description": "楼层"
-		},
-		{
-			"name": "description",
-			"type": "String",
-			"description": "门店简介"
-		},
-		{
-			"name": "facilities",
-			"type": "String",
-			"description": "酒店设施。json格式示例值：{\"24152\":true,\"24149\":true,\"24150\":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks\u0026docType=1\u0026articleId=108416\u0026previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类"
-		},
-		{
-			"name": "brand",
-			"type": "String",
-			"description": "品牌名称"
-		},
-		{
-			"name": "opening_time",
-			"type": "String",
-			"description": "开业时间，格式为2015-01-01"
-		},
-		{
-			"name": "decorate_level",
-			"type": "Number",
-			"description": "装修等级 1 精装 2普通 3简装"
-		},
-		{
-			"name": "decorate_time",
-			"type": "String",
-			"description": "装修时间，格式为2015-01-01"
-		},
-		{
-			"name": "decorate_style",
-			"type": "Number",
-			"description": "装修风格，详见装修风格枚举表"
-		},
-		{
-			"name": "scenic_feature",
-			"type": "Number",
-			"description": "风景类型，详见风景类型枚举表"
-		},
-		{
-			"name": "status",
-			"type": "byte",
-			"description": "房型状态。0:正常，-1:删除，-2:停售",
-			"required": true
-		},
-		{
-			"name": "tel",
-			"type": "String",
-			"description": "联系方式。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
-			"required": true
-		},
-		{
-			"name": "real_tel",
-			"type": "String",
-			"description": "真实联系方式",
-			"required": true
-		},
-		{
-			"name": "settlement_currency",
-			"type": "String",
-			"description": "结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用"
-		},
-		{
-			"name": "pictures",
-			"type": "BnbPictureDTO[]",
-			"description": "民宿门店添加",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
-				{
-					"name": "url",
-					"type": "String",
-					"description": "图片地址",
-					"required": true
-				},
-				{
-					"name": "type",
-					"type": "String",
-					"description": "type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]",
-					"required": true
-				},
-				{
-					"name": "attribute",
-					"type": "String",
-					"description": "图片属性 取值范围只能是：[普通图, 平面图, 全景图]",
-					"required": true
-				},
-				{
-					"name": "des",
-					"type": "String",
-					"description": "图片描述"
-				},
-				{
-					"name": "ismain",
-					"type": "Boolean",
-					"description": "是否主图  主图只能有一个，如果有多个或者没有，则会报错",
-					"required": true
-				}
-			]
-		},
-		{
-			"name": "tags",
-			"type": "String",
-			"description": "门店标签 标签信息，逗号(,)分隔"
-		},
-		{
-			"name": "is_use_shoot_image",
-			"type": "Number",
-			"description": "是否使用实拍图片 0不使用 1使用"
-		},
-		{
-			"name": "video_url",
-			"type": "String",
-			"description": "视频地址"
-		},
-		{
-			"name": "has_front_desk",
-			"type": "Number",
-			"description": "是否有前台 0没有 1有"
-		},
-		{
-			"name": "location",
-			"type": "BnbLocationDto",
-			"description": "位置信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "timezone",
-					"type": "String",
-					"description": "时区0到+11或者0到-11"
-				},
-				{
-					"name": "domestic",
-					"type": "Number",
-					"description": "国别 0:国内;1:国外。默认是国内",
-					"required": true
-				},
-				{
-					"name": "country",
-					"type": "String",
-					"description": "domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "province",
-					"type": "Number",
-					"description": "省份编码http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "city",
-					"type": "Number",
-					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新时为可选）",
-					"required": true
-				},
-				{
-					"name": "district",
-					"type": "Number",
-					"description": "区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm",
-					"required": true
-				},
-				{
-					"name": "business",
-					"type": "String",
-					"description": "商圈"
-				},
-				{
-					"name": "position_type",
-					"type": "String",
-					"description": "坐标类型，现在支持：G – Google; B – 百度; A – 高德; M – Mapbar; L – 灵图",
-					"required": true
-				},
-				{
-					"name": "longitude",
-					"type": "String",
-					"description": "经度",
-					"required": true
-				},
-				{
-					"name": "latitude",
-					"type": "String",
-					"description": "纬度",
-					"required": true
-				},
-				{
-					"name": "address",
-					"type": "String",
-					"description": "门店地址",
-					"required": true
-				},
-				{
-					"name": "doorplate",
-					"type": "String",
-					"description": "门牌号"
-				},
-				{
-					"name": "en_address",
-					"type": "String",
-					"description": "门店英文地址"
-				},
-				{
-					"name": "reception_address",
-					"type": "String",
-					"description": "接待地址"
-				}
-			]
-		},
-		{
-			"name": "bnb_booking_time",
-			"type": "BnbBookingTimeDto",
-			"description": "入住要求\u0026附加信息",
-			"subParams": [
-				{
-					"name": "latest_booking_time",
-					"type": "String",
-					"description": "最晚预定时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "earliest_check_in_time",
-					"type": "String",
-					"description": "最早入住时间 hh:mm,24小时时间格式住时间"
-				},
-				{
-					"name": "latest_check_in_time",
-					"type": "String",
-					"description": "最晚入住时间 hh:mm,24小时时间格式"
-				},
-				{
-					"name": "latest_check_out_time",
-					"type": "String",
-					"description": "最晚离店时间 hh:mm,24小时时间格式"
-				},
 				{
 					"name": "start_reception_time",
 					"type": "String",
@@ -302,33 +17,57 @@
 					"name": "end_reception_time",
 					"type": "String",
 					"description": "结束接待时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "earliest_check_in_time",
+					"type": "String",
+					"description": "最早入住时间 hh:mm,24小时时间格式住时间,默认值: 14:00"
+				},
+				{
+					"name": "latest_booking_time",
+					"type": "String",
+					"description": "最晚预定时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "latest_check_in_time",
+					"type": "String",
+					"description": "最晚入住时间 hh:mm,24小时时间格式"
+				},
+				{
+					"name": "latest_check_out_time",
+					"type": "String",
+					"description": "最晚离店时间 hh:mm,24小时时间格式,默认值: 12:00"
 				}
-			]
+			],
+			"name": "bnb_booking_time",
+			"type": "BnbBookingTimeDto",
+			"description": "入住要求\u0026附加信息"
 		},
 		{
-			"name": "check_in_notes",
+			"name": "decorate_level",
+			"type": "Number",
+			"description": "装修等级 1 精装 2普通 3简装"
+		},
+		{
+			"name": "tel",
 			"type": "String",
-			"description": "入住须知"
-		},
-		{
-			"name": "guest_gender",
-			"type": "Number",
-			"description": "可接待客人性别 0：不限制，1：只限男性，2：只限女性'"
-		},
-		{
-			"name": "guest_age",
-			"type": "Number",
-			"description": "可接待客人年龄情况：是否接待儿童、老人；成年人必接待，详见“可接待客人”list"
+			"description": "联系方式。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
+			"required": true
 		},
 		{
 			"name": "receive_foreigners",
 			"type": "Number",
-			"description": "是否可接待外宾 0不接待 1接待"
+			"description": "是否可接待外宾 0不接待 1接待,默认值: 0"
 		},
 		{
-			"name": "activities_allowed",
+			"name": "name_e",
 			"type": "String",
-			"description": "详见“允许活动”list 12,32,33,"
+			"description": "门店英文名称"
+		},
+		{
+			"name": "decorate_time",
+			"type": "String",
+			"description": "装修时间，格式为2015-01-01"
 		},
 		{
 			"name": "extra_beds_num",
@@ -336,15 +75,130 @@
 			"description": "可加床数"
 		},
 		{
-			"name": "charge",
-			"type": "BnbChargeDto",
-			"description": "加人收费信息",
+			"name": "tags",
+			"type": "String",
+			"description": "门店标签 标签信息，逗号(,)分隔"
+		},
+		{
+			"name": "has_front_desk",
+			"type": "Number",
+			"description": "是否有前台 0没有 1有"
+		},
+		{
+			"name": "guest_age",
+			"type": "Number",
+			"description": "可接待客人年龄情况：是否接待儿童、老人；成年人必接待，详见“可接待客人”list"
+		},
+		{
+			"name": "settlement_currency",
+			"type": "String",
+			"description": "结算过程中的结算币种符合，如需对接请联系飞猪技术支持，请谨慎使用"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "门店名称",
+			"maxLength": 60,
+			"required": true
+		},
+		{
+			"name": "is_use_shoot_image",
+			"type": "Number",
+			"description": "是否使用实拍图片 0不使用 1使用"
+		},
+		{
+			"name": "status",
+			"type": "byte",
+			"description": "房型状态。0:正常，-1:删除，-2:停售",
+			"required": true
+		},
+		{
+			"name": "guest_gender",
+			"type": "Number",
+			"description": "可接待客人性别 0：不限制，1：只限男性，2：只限女性'"
+		},
+		{
+			"name": "activities_allowed",
+			"type": "String",
+			"description": "详见“允许活动”list 12,32,33,"
+		},
+		{
+			"name": "opening_time",
+			"type": "String",
+			"description": "开业时间，格式为2015-01-01"
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "门店简介"
+		},
+		{
 			"subParams": [
 				{
-					"name": "add_people",
-					"type": "Number",
-					"description": "是否允许加人 0不允许 1允许"
+					"name": "attribute",
+					"type": "String",
+					"description": "图片属性 取值范围只能是：[普通图, 平面图, 全景图]",
+					"required": true
 				},
+				{
+					"name": "ismain",
+					"type": "Boolean",
+					"description": "是否主图  主图只能有一个，如果有多个或者没有，则会报错",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片地址",
+					"required": true
+				},
+				{
+					"name": "des",
+					"type": "String",
+					"description": "图片描述"
+				}
+			],
+			"name": "pictures",
+			"type": "BnbPictureDTO[]",
+			"description": "民宿门店添加",
+			"maxListSize": 999,
+			"required": true
+		},
+		{
+			"name": "has_license",
+			"type": "Number",
+			"description": "有无资质执照 0 无资质 1有资质",
+			"required": true
+		},
+		{
+			"name": "floors",
+			"type": "String",
+			"description": "楼层"
+		},
+		{
+			"name": "video_url",
+			"type": "String",
+			"description": "视频地址"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "对接系统商名称：可为空不要乱填，需要申请后使用"
+		},
+		{
+			"name": "product_type",
+			"type": "Number",
+			"description": "门店类型，详见“房源类型list",
+			"required": true
+		},
+		{
+			"subParams": [
 				{
 					"name": "num",
 					"type": "Number",
@@ -356,241 +210,59 @@
 					"description": "加人费用金额"
 				},
 				{
+					"name": "add_people",
+					"type": "Number",
+					"description": "是否允许加人 0不允许 1允许"
+				},
+				{
 					"name": "min_charging_age",
 					"type": "Number",
 					"description": "最小收费年龄"
 				}
-			]
-		}
-	],
-	"responseParams": [
+			],
+			"name": "charge",
+			"type": "BnbChargeDto",
+			"description": "加人收费信息"
+		},
 		{
-			"name": "results",
-			"type": "XHotel []",
-			"description": "系统自动生成",
+			"name": "decorate_style",
+			"type": "Number",
+			"description": "装修风格，详见装修风格枚举表"
+		},
+		{
+			"name": "check_in_notes",
+			"type": "String",
+			"description": "入住须知"
+		},
+		{
+			"name": "real_tel",
+			"type": "String",
+			"description": "真实联系方式",
+			"required": true
+		},
+		{
 			"subParams": [
-				{
-					"name": "hid",
-					"type": "Number",
-					"description": "卖家门店ID",
-					"required": true
-				},
 				{
 					"name": "country",
 					"type": "String",
-					"description": "国家编码",
+					"description": "domestic为0时，固定China； domestic为1时，必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm",
 					"required": true
 				},
 				{
-					"name": "domestic",
+					"name": "address",
+					"type": "String",
+					"description": "门店地址",
+					"required": true
+				},
+				{
+					"name": "business",
+					"type": "String",
+					"description": "商圈"
+				},
+				{
+					"name": "city",
 					"type": "Number",
-					"description": "0:国内;1:国外",
-					"required": true
-				},
-				{
-					"name": "vendor",
-					"type": "String",
-					"description": "对接系统商名称",
-					"required": true
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "门店名称",
-					"required": true
-				},
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "外部id",
-					"required": true
-				},
-				{
-					"name": "modified_time",
-					"type": "Date",
-					"description": "修改时间",
-					"required": true
-				},
-				{
-					"name": "created_time",
-					"type": "Date",
-					"description": "创建时间",
-					"required": true
-				},
-				{
-					"name": "error_info",
-					"type": "String",
-					"description": "未通过时的拒绝原因等。",
-					"required": true
-				},
-				{
-					"name": "shotel",
-					"type": "XsHotel",
-					"description": "淘宝标准门店信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "shid",
-							"type": "Number",
-							"description": "系统自动生成",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "门店状态：0: 正常;-2:停售；-1：删除",
-							"required": true
-						},
-						{
-							"name": "country",
-							"type": "String",
-							"description": "国家编码",
-							"required": true
-						},
-						{
-							"name": "province",
-							"type": "Number",
-							"description": "省份编码",
-							"required": true
-						},
-						{
-							"name": "city",
-							"type": "Number",
-							"description": "城市编码",
-							"required": true
-						},
-						{
-							"name": "district",
-							"type": "Number",
-							"description": "区域编码",
-							"required": true
-						},
-						{
-							"name": "address",
-							"type": "String",
-							"description": "酒店地址",
-							"required": true
-						},
-						{
-							"name": "business",
-							"type": "String",
-							"description": "商圈",
-							"required": true
-						},
-						{
-							"name": "domestic",
-							"type": "Number",
-							"description": "0:国内;1:国外",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "门店名称",
-							"required": true
-						},
-						{
-							"name": "name_e",
-							"type": "String",
-							"description": "英文名称",
-							"required": true
-						},
-						{
-							"name": "brand",
-							"type": "String",
-							"description": "品牌",
-							"required": true
-						},
-						{
-							"name": "pics",
-							"type": "String",
-							"description": "照片,json格式",
-							"required": true
-						},
-						{
-							"name": "service",
-							"type": "String",
-							"description": "交通距离与设施服务。JSON格式。",
-							"required": true
-						},
-						{
-							"name": "hotel_facilities",
-							"type": "String",
-							"description": "酒店设施。json格式",
-							"required": true
-						},
-						{
-							"name": "description",
-							"type": "String",
-							"description": "描述",
-							"required": true
-						},
-						{
-							"name": "rooms",
-							"type": "Number",
-							"description": "房间数",
-							"required": true
-						},
-						{
-							"name": "floors",
-							"type": "String",
-							"description": "楼层",
-							"required": true
-						},
-						{
-							"name": "decorate_time",
-							"type": "String",
-							"description": "装修时间",
-							"required": true
-						},
-						{
-							"name": "opening_time",
-							"type": "String",
-							"description": "开业年份",
-							"required": true
-						},
-						{
-							"name": "tel",
-							"type": "String",
-							"description": "门店电话",
-							"required": true
-						},
-						{
-							"name": "latitude",
-							"type": "String",
-							"description": "纬度",
-							"required": true
-						},
-						{
-							"name": "position_type",
-							"type": "Number",
-							"description": "position_type",
-							"required": true
-						},
-						{
-							"name": "longitude",
-							"type": "String",
-							"description": "精度",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "name_e",
-					"type": "String",
-					"description": "英文名称",
-					"required": true
-				},
-				{
-					"name": "tel",
-					"type": "String",
-					"description": "门店电话",
-					"required": true
-				},
-				{
-					"name": "position_type",
-					"type": "String",
-					"description": "position_type",
+					"description": "城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（更新时为可选）",
 					"required": true
 				},
 				{
@@ -600,102 +272,398 @@
 					"required": true
 				},
 				{
-					"name": "longitude",
+					"name": "position_type",
 					"type": "String",
-					"description": "精度",
+					"description": "坐标类型，现在支持：G – Google; B – 百度; A – 高德; M – Mapbar; L – 灵图",
 					"required": true
 				},
 				{
-					"name": "address",
-					"type": "String",
-					"description": "地址",
-					"required": true
-				},
-				{
-					"name": "business",
-					"type": "String",
-					"description": "商圈",
-					"required": true
-				},
-				{
-					"name": "district",
+					"name": "domestic",
 					"type": "Number",
-					"description": "地区",
-					"required": true
-				},
-				{
-					"name": "city",
-					"type": "Number",
-					"description": "城市",
+					"description": "国别 0:国内;1:国外。默认是国内",
 					"required": true
 				},
 				{
 					"name": "province",
 					"type": "Number",
-					"description": "省",
+					"description": "省份编码http://hotel.alitrip.com/area.htm",
 					"required": true
+				},
+				{
+					"name": "en_address",
+					"type": "String",
+					"description": "门店英文地址"
+				},
+				{
+					"name": "reception_address",
+					"type": "String",
+					"description": "接待地址"
+				},
+				{
+					"name": "district",
+					"type": "Number",
+					"description": "区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm",
+					"required": true
+				},
+				{
+					"name": "timezone",
+					"type": "String",
+					"description": "时区0到+11或者0到-11"
+				},
+				{
+					"name": "doorplate",
+					"type": "String",
+					"description": "门牌号"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				}
+			],
+			"name": "location",
+			"type": "BnbLocationDto",
+			"description": "位置信息",
+			"required": true
+		},
+		{
+			"name": "attributes",
+			"type": "Number",
+			"description": "门店属性 1 个人房源 2 城市公寓 3 乡村民宿等",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "供应商渠道门店ID",
+			"required": true
+		},
+		{
+			"name": "scenic_feature",
+			"type": "Number",
+			"description": "风景类型，详见风景类型枚举表"
+		},
+		{
+			"name": "brand",
+			"type": "String",
+			"description": "品牌名称"
+		},
+		{
+			"name": "facilities",
+			"type": "String",
+			"description": "酒店设施。json格式示例值：{\"24152\":true,\"24149\":true,\"24150\":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks\u0026docType=1\u0026articleId=108416\u0026previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类"
+		},
+		{
+			"name": "house_size",
+			"type": "Number",
+			"description": "面积大小"
+		},
+		{
+			"name": "shid",
+			"type": "Number",
+			"description": "匹配的标准门店"
+		},
+		{
+			"name": "standard_hotel_facilities",
+			"type": "String",
+			"description": "标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362\u0026docType=1",
+			"required": true
+		},
+		{
+			"name": "is_feizhu_hotel",
+			"type": "Boolean",
+			"description": "传入是或者否，是表明为菲住合作模式，hid打标；“否”表示为正常合作模式，hid去标；不传保持原有的合作模式不变"
+		},
+		{
+			"name": "commission_rate",
+			"type": "Number",
+			"description": "作为菲住门店签约的佣金比率,范围为10-50"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家编码"
+				},
+				{
+					"name": "domestic",
+					"type": "Number",
+					"description": "0:国内;1:国外"
+				},
+				{
+					"name": "vendor",
+					"type": "String",
+					"description": "对接系统商名称"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "门店名称"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "未通过时的拒绝原因等。"
+				},
+				{
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "酒店地址"
+						},
+						{
+							"name": "business",
+							"type": "String",
+							"description": "商圈"
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "区域编码"
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "城市编码"
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "省份编码"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家编码"
+						},
+						{
+							"name": "domestic",
+							"type": "Number",
+							"description": "0:国内;1:国外"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "系统自动生成"
+						},
+						{
+							"name": "name_e",
+							"type": "String",
+							"description": "英文名称"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "门店状态：0: 正常;-2:停售；-1：删除"
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "pics",
+							"type": "String",
+							"description": "照片,json格式"
+						},
+						{
+							"name": "service",
+							"type": "String",
+							"description": "交通距离与设施服务。JSON格式。"
+						},
+						{
+							"name": "hotel_facilities",
+							"type": "String",
+							"description": "酒店设施。json格式"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "rooms",
+							"type": "Number",
+							"description": "房间数"
+						},
+						{
+							"name": "floors",
+							"type": "String",
+							"description": "楼层"
+						},
+						{
+							"name": "decorate_time",
+							"type": "String",
+							"description": "装修时间"
+						},
+						{
+							"name": "opening_time",
+							"type": "String",
+							"description": "开业年份"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "门店电话"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "position_type",
+							"type": "Number",
+							"description": "position_type"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "精度"
+						}
+					],
+					"name": "shotel",
+					"type": "XsHotel",
+					"description": "淘宝标准门店信息"
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "卖家门店ID"
+				},
+				{
+					"name": "name_e",
+					"type": "String",
+					"description": "英文名称"
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "门店电话"
+				},
+				{
+					"name": "position_type",
+					"type": "String",
+					"description": "position_type"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "精度"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址"
+				},
+				{
+					"name": "business",
+					"type": "String",
+					"description": "商圈"
+				},
+				{
+					"name": "district",
+					"type": "Number",
+					"description": "地区"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "城市"
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "省"
 				},
 				{
 					"name": "brand",
 					"type": "String",
-					"description": "品牌",
-					"required": true
+					"description": "品牌"
 				},
 				{
 					"name": "pics",
 					"type": "String",
-					"description": "照片格式，json",
-					"required": true
+					"description": "照片格式，json"
 				},
 				{
 					"name": "hotel_facilities",
 					"type": "String",
-					"description": "设施",
-					"required": true
+					"description": "设施"
 				},
 				{
 					"name": "hotel_policies",
 					"type": "String",
-					"description": "入住政策",
-					"required": true
+					"description": "入住政策"
 				},
 				{
 					"name": "description",
 					"type": "String",
-					"description": "描述",
-					"required": true
+					"description": "描述"
 				},
 				{
 					"name": "rooms",
 					"type": "Number",
-					"description": "房间数",
-					"required": true
+					"description": "房间数"
 				},
 				{
 					"name": "floors",
 					"type": "String",
-					"description": "楼层",
-					"required": true
+					"description": "楼层"
 				},
 				{
 					"name": "decorate_time",
 					"type": "String",
-					"description": "装修时间",
-					"required": true
+					"description": "装修时间"
 				},
 				{
 					"name": "opening_time",
 					"type": "String",
-					"description": "开业时间",
-					"required": true
+					"description": "开业时间"
 				},
 				{
 					"name": "booking_notice",
 					"type": "String",
-					"description": "预订须知",
-					"required": true
+					"description": "预订须知"
 				}
-			]
+			],
+			"name": "results",
+			"type": "XHotel []",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "taobao.xhotel.bnbhouse.add",
+	"apiChineseName": "民宿门店信息添加",
+	"description": "添加和更新民宿门店的信息",
+	"id": 56454
 }

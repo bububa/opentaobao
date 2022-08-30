@@ -10,6 +10,10 @@ type AgentMultipleRefundRq struct {
 	AgentRefundReason string `json:"agent_refund_reason,omitempty" xml:"agent_refund_reason,omitempty"`
 	// 退款流水号唯一标识，防止重复退款
 	AgentRefundTransNo string `json:"agent_refund_trans_no,omitempty" xml:"agent_refund_trans_no,omitempty"`
+	// 选择不可抗力场景后飞猪平台会发送停运短信给用户
+	RefundScene string `json:"refund_scene,omitempty" xml:"refund_scene,omitempty"`
+	// 通知用户停运原因
+	RefundSceneOfficialReasonCode string `json:"refund_scene_official_reason_code,omitempty" xml:"refund_scene_official_reason_code,omitempty"`
 	// 飞猪平台订单号
 	MainBizOrderId int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
 	// 退款总金额(票款+服务费)(分)

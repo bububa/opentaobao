@@ -1,8 +1,4 @@
 {
-	"id": 27234,
-	"name": "taobao.top.openid.convert",
-	"apiChineseName": "混淆nick转openid",
-	"description": "混淆nick转openid，生成混淆nick必须与当前请求的isv匹配",
 	"requestParams": [
 		{
 			"name": "mix_nick",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "open_id"
 		}
-	]
+	],
+	"name": "taobao.top.openid.convert",
+	"apiChineseName": "混淆nick转openid",
+	"description": "混淆nick转openid，生成混淆nick必须与当前请求的isv匹配",
+	"id": 27234
 }

@@ -1,8 +1,4 @@
 {
-	"id": 23213,
-	"name": "taobao.de.activity.securitytoken.apply",
-	"apiChineseName": "安全token获取",
-	"description": "新增接口，这个接口是用于在手机端进行抽奖时候的验证使用",
 	"requestParams": [
 		{
 			"name": "event_key",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "成功标志位"
 		}
-	]
+	],
+	"name": "taobao.de.activity.securitytoken.apply",
+	"apiChineseName": "安全token获取",
+	"description": "新增接口，这个接口是用于在手机端进行抽奖时候的验证使用",
+	"id": 23213
 }

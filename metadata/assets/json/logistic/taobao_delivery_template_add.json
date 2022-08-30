@@ -1,15 +1,11 @@
 {
-	"id": 10918,
-	"name": "taobao.delivery.template.add",
-	"apiChineseName": "新增运费模板",
-	"description": "增加运费模板的外部接口",
 	"requestParams": [
 		{
 			"name": "name",
 			"type": "String",
 			"description": "运费模板的名称，长度不能超过50个字节",
-			"required": true,
-			"maxLength": 50
+			"maxLength": 50,
+			"required": true
 		},
 		{
 			"name": "assumer",
@@ -67,9 +63,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "delivery_template",
-			"type": "DeliveryTemplate",
-			"description": "模板对象",
 			"subParams": [
 				{
 					"name": "template_id",
@@ -81,7 +74,14 @@
 					"type": "Date",
 					"description": "模板创建时间"
 				}
-			]
+			],
+			"name": "delivery_template",
+			"type": "DeliveryTemplate",
+			"description": "模板对象"
 		}
-	]
+	],
+	"name": "taobao.delivery.template.add",
+	"apiChineseName": "新增运费模板",
+	"description": "增加运费模板的外部接口",
+	"id": 10918
 }

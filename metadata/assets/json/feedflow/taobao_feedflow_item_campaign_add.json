@@ -1,13 +1,6 @@
 {
-	"id": 43264,
-	"name": "taobao.feedflow.item.campaign.add",
-	"apiChineseName": "信息流增加推广计划",
-	"description": "信息流增加推广计划",
 	"requestParams": [
 		{
-			"name": "campaign",
-			"type": "CampaignDto",
-			"description": "计划信息",
 			"subParams": [
 				{
 					"name": "campaign_name",
@@ -16,14 +9,8 @@
 					"required": true
 				},
 				{
-					"name": "launch_period_list",
-					"type": "LaunchPeriodDTO[]",
-					"description": "打折范围",
 					"subParams": [
 						{
-							"name": "time_span_list",
-							"type": "TimeSpanDto[]",
-							"description": "时间",
 							"subParams": [
 								{
 									"name": "discount",
@@ -35,15 +22,17 @@
 									"type": "String",
 									"description": "时间"
 								}
-							]
+							],
+							"name": "time_span_list",
+							"type": "TimeSpanDto[]",
+							"description": "时间"
 						}
-					]
+					],
+					"name": "launch_period_list",
+					"type": "LaunchPeriodDTO[]",
+					"description": "打折范围"
 				},
 				{
-					"name": "launch_time",
-					"type": "LaunchTimeDto",
-					"description": "投放时间",
-					"required": true,
 					"subParams": [
 						{
 							"name": "launch_forever",
@@ -60,12 +49,13 @@
 							"type": "Date",
 							"description": "结束时间"
 						}
-					]
+					],
+					"name": "launch_time",
+					"type": "LaunchTimeDto",
+					"description": "投放时间",
+					"required": true
 				},
 				{
-					"name": "launch_area_list",
-					"type": "LaunchAreaDTO[]",
-					"description": "推广地域",
 					"subParams": [
 						{
 							"name": "code",
@@ -77,7 +67,10 @@
 							"type": "String",
 							"description": "地址名称"
 						}
-					]
+					],
+					"name": "launch_area_list",
+					"type": "LaunchAreaDTO[]",
+					"description": "推广地域"
 				},
 				{
 					"name": "day_budget",
@@ -85,34 +78,38 @@
 					"description": "每日预算，单位为分",
 					"required": true
 				}
-			]
+			],
+			"name": "campaign",
+			"type": "CampaignDto",
+			"description": "计划信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "result",
 					"type": "Number",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.campaign.add",
+	"apiChineseName": "信息流增加推广计划",
+	"description": "信息流增加推广计划",
+	"id": 43264
 }

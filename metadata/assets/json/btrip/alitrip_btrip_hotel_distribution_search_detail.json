@@ -1,13 +1,6 @@
 {
-	"id": 56181,
-	"name": "alitrip.btrip.hotel.distribution.search.detail",
-	"apiChineseName": "商旅酒店api分销-详情报价接口",
-	"description": "商旅酒店api分销-详情报价接口",
 	"requestParams": [
 		{
-			"name": "param_hotel_detail_r_q",
-			"type": "HotelDetailRq",
-			"description": "详情报价入参",
 			"subParams": [
 				{
 					"name": "check_in",
@@ -39,268 +32,278 @@
 					"description": "子渠道ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_hotel_detail_r_q",
+			"type": "HotelDetailRq",
+			"description": "详情报价入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "详情报价回参",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "HotelDetailRs",
-					"description": "详情报价回参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "check_in",
 							"type": "Date",
-							"description": "入住时间",
-							"required": true
+							"description": "入住时间"
 						},
 						{
 							"name": "check_out",
 							"type": "Date",
-							"description": "离店时间",
-							"required": true
+							"description": "离店时间"
 						},
 						{
 							"name": "eagle_trace_id",
 							"type": "String",
-							"description": "跟踪ID，可忽略",
-							"required": true
+							"description": "跟踪ID，可忽略"
 						},
 						{
-							"name": "rooms",
-							"type": "HotelDetailRoomDto[]",
-							"description": "房型列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "面积",
-									"required": true
+									"description": "面积"
 								},
 								{
 									"name": "bed_type_string",
 									"type": "String",
-									"description": "床型",
-									"required": true
+									"description": "床型"
 								},
 								{
 									"name": "facility",
 									"type": "String",
-									"description": "设施",
-									"required": true
+									"description": "设施"
 								},
 								{
 									"name": "floor",
 									"type": "String",
-									"description": "楼层",
-									"required": true
+									"description": "楼层"
 								},
 								{
 									"name": "max_occupancy",
 									"type": "Number",
-									"description": "最大入住人数",
-									"required": true
+									"description": "最大入住人数"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "房间名称",
-									"required": true
+									"description": "房间名称"
 								},
 								{
 									"name": "network_service",
 									"type": "String",
-									"description": "宽带服务，\"0\",\"有线上网(免费),\"1\",\"有线上网(无)\",\"2\",\"有线上网(收费)\",\"3\",\"有线上网(部分有且免费)\",\"4\",\"有线上网(部分有且收费)\"",
-									"required": true
+									"description": "宽带服务，\"0\",\"有线上网(免费),\"1\",\"有线上网(无)\",\"2\",\"有线上网(收费)\",\"3\",\"有线上网(部分有且免费)\",\"4\",\"有线上网(部分有且收费)\""
 								},
 								{
 									"name": "pics",
 									"type": "String",
-									"description": "图片",
-									"required": true
+									"description": "图片"
 								},
 								{
-									"name": "rates",
-									"type": "HotelDetailRateDto[]",
-									"description": "详情报价列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "breakfast",
 											"type": "String",
-											"description": "早餐描述",
-											"required": true
+											"description": "早餐描述"
 										},
 										{
 											"name": "cancel_policy_desc",
 											"type": "String",
-											"description": "免费取消政策描述",
-											"required": true
+											"description": "免费取消政策描述"
 										},
 										{
 											"name": "company_aassist",
 											"type": "String",
-											"description": "协议价，1表示协议支付",
-											"required": true
+											"description": "协议价，1表示协议支付"
 										},
 										{
 											"name": "currency_code",
 											"type": "String",
-											"description": "币种",
-											"required": true
+											"description": "币种"
 										},
 										{
 											"name": "end_time_daily",
 											"type": "String",
-											"description": "每日截止时间，可忽略",
-											"required": true
+											"description": "每日截止时间，可忽略"
 										},
 										{
 											"name": "instant_confirm",
 											"type": "Boolean",
-											"description": "是否即时确认，可忽略",
-											"required": true
+											"description": "是否即时确认，可忽略"
 										},
 										{
 											"name": "inventory_price",
 											"type": "String",
-											"description": "库存价格",
-											"required": true
+											"description": "库存价格"
 										},
 										{
 											"name": "item_id",
 											"type": "Number",
-											"description": "商品id",
-											"required": true
+											"description": "商品id"
 										},
 										{
 											"name": "min_adv_hours",
 											"type": "Number",
-											"description": "最小提前小时数，可忽略",
-											"required": true
+											"description": "最小提前小时数，可忽略"
 										},
 										{
 											"name": "min_days",
 											"type": "Number",
-											"description": "最小间隔天数，可忽略",
-											"required": true
+											"description": "最小间隔天数，可忽略"
 										},
 										{
 											"name": "nod",
 											"type": "Number",
-											"description": "间隔天数。可忽略",
-											"required": true
+											"description": "间隔天数。可忽略"
 										},
 										{
 											"name": "nop",
 											"type": "Number",
-											"description": "人数",
-											"required": true
+											"description": "人数"
 										},
 										{
 											"name": "payment_type",
 											"type": "Number",
-											"description": "支付方式，1-全额支付",
-											"required": true
+											"description": "支付方式，1-全额支付"
 										},
 										{
 											"name": "promotion_info",
 											"type": "String",
-											"description": "营销信息",
-											"required": true
+											"description": "营销信息"
 										},
 										{
 											"name": "rate_id",
 											"type": "Number",
-											"description": "报价ID",
-											"required": true
+											"description": "报价ID"
 										},
 										{
 											"name": "rate_plan_name",
 											"type": "String",
-											"description": "报价名称",
-											"required": true
+											"description": "报价名称"
 										},
 										{
 											"name": "rp_id",
 											"type": "Number",
-											"description": "rpId",
-											"required": true
+											"description": "rpId"
 										},
 										{
 											"name": "start_time_daily",
 											"type": "String",
-											"description": "每日开始时间。可忽略",
-											"required": true
+											"description": "每日开始时间。可忽略"
 										},
 										{
 											"name": "supplier_code",
 											"type": "String",
-											"description": "供应商标识码",
-											"required": true
+											"description": "供应商标识码"
 										},
 										{
 											"name": "supplier_name",
 											"type": "String",
-											"description": "供应商名称",
-											"required": true
+											"description": "供应商名称"
+										},
+										{
+											"name": "support_special_invoice",
+											"type": "Boolean",
+											"description": "是否支持专票"
+										},
+										{
+											"subParams": [
+												{
+													"name": "cancel_policy_type",
+													"type": "Number",
+													"description": "取消类型"
+												},
+												{
+													"subParams": [
+														{
+															"name": "hour",
+															"type": "Number",
+															"description": "提前小时"
+														},
+														{
+															"name": "value",
+															"type": "Number",
+															"description": "罚金"
+														}
+													],
+													"name": "btrip_hotel_cancel_policy_info_d_t_o_list",
+													"type": "BtripHotelCancelPolicyInfoDto[]",
+													"description": "详细的取消规则"
+												}
+											],
+											"name": "btrip_hotel_cancel_policy_d_t_o",
+											"type": "BtripHotelCancelPolicyDto",
+											"description": "取消政策"
+										},
+										{
+											"name": "daily_price_format_yuan",
+											"type": "Number",
+											"description": "取整后每日均价"
+										},
+										{
+											"name": "daily_price_view",
+											"type": "Number",
+											"description": "界面展示价格"
 										}
-									]
+									],
+									"name": "rates",
+									"type": "HotelDetailRateDto[]",
+									"description": "详情报价列表"
 								},
 								{
 									"name": "srid",
 									"type": "Number",
-									"description": "房型ID",
-									"required": true
+									"description": "房型ID"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "状态，状态0:正常;-1:删除",
-									"required": true
+									"description": "状态，状态0:正常;-1:删除"
 								},
 								{
 									"name": "window_type",
 									"type": "String",
-									"description": "窗型",
-									"required": true
+									"description": "窗型"
 								}
-							]
+							],
+							"name": "rooms",
+							"type": "HotelDetailRoomDto[]",
+							"description": "房型列表"
 						},
 						{
 							"name": "search_id",
 							"type": "String",
-							"description": "跟踪ID。可忽略",
-							"required": true
+							"description": "跟踪ID。可忽略"
 						},
 						{
 							"name": "shid",
 							"type": "Number",
-							"description": "酒店标准ID",
-							"required": true
+							"description": "酒店标准ID"
 						}
-					]
+					],
+					"name": "module",
+					"type": "HotelDetailRs",
+					"description": "详情报价回参"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回状态码",
-					"required": true
+					"description": "返回状态码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "返回异常描述",
-					"required": true
+					"description": "返回异常描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "详情报价回参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.hotel.distribution.search.detail",
+	"apiChineseName": "商旅酒店api分销-详情报价接口",
+	"description": "商旅酒店api分销-详情报价接口",
+	"id": 56181
 }

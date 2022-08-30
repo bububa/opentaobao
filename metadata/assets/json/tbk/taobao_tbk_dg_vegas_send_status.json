@@ -1,8 +1,4 @@
 {
-	"id": 52958,
-	"name": "taobao.tbk.dg.vegas.send.status",
-	"apiChineseName": "淘宝客-推广者-超级红包领取状态查询",
-	"description": "淘宝客传入用户标识的信息，查询该用户是否有当前阶段待核销的红包（淘客接入前需签署协议 https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）",
 	"requestParams": [
 		{
 			"name": "relation_id",
@@ -42,25 +38,27 @@
 			"description": "返回结果描述信息"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "返回结果封装对象",
 			"subParams": [
 				{
-					"name": "result_list",
-					"type": "MapData[]",
-					"description": "返回结果封装对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "is_new_user",
 							"type": "String",
-							"description": "若该用户当前无待核销的红包，则返回1，若当前有待核销的红包，则返回0",
-							"required": true
+							"description": "若该用户当前无待核销的红包，则返回1，若当前有待核销的红包，则返回0"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "MapData[]",
+					"description": "返回结果封装对象"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "返回结果封装对象"
 		}
-	]
+	],
+	"name": "taobao.tbk.dg.vegas.send.status",
+	"apiChineseName": "淘宝客-推广者-红包领取状态查询",
+	"description": "淘宝客传入用户标识的信息，查询该用户是否有当前阶段待核销的红包（淘客接入前需签署协议 https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）",
+	"id": 52958
 }

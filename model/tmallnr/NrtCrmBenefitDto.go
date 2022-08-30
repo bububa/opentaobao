@@ -26,6 +26,18 @@ type NrtCrmBenefitDto struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 券名称
 	BenefitName string `json:"benefit_name,omitempty" xml:"benefit_name,omitempty"`
+	// 券模板权益描述
+	BenefitDescription string `json:"benefit_description,omitempty" xml:"benefit_description,omitempty"`
+	// 券Code
+	BenefitCode string `json:"benefit_code,omitempty" xml:"benefit_code,omitempty"`
+	// 券模板实例Code
+	TemplateCode string `json:"template_code,omitempty" xml:"template_code,omitempty"`
+	// 券发放错误Code
+	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+	// 券发放错误信息
+	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+	// 券模板实例ID
+	TemplateId string `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 券模板ID
 	OutId int64 `json:"out_id,omitempty" xml:"out_id,omitempty"`
 	// 卖家id

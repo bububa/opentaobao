@@ -12,12 +12,14 @@ import (
 // 创建一个创意
 type TaobaoSimbaCreativeAddAPIRequest struct {
 	model.Params
-	// 创意标题，最多20个汉字
+	// 主人昵称
+	_nick string
+	// 创意标题，最多30个汉字
 	_title string
 	// 创意图片地址，必须是推广组对应商品的图片之一
 	_imgUrl string
-	// 主人昵称
-	_nick string
+	// 广审批准文号
+	_adExaminationCode string
 	// 推广组Id
 	_adgroupId int64
 }
@@ -43,8 +45,21 @@ func (r TaobaoSimbaCreativeAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetNick() string {
+	return r._nick
+}
+
 // SetTitle is Title Setter
-// 创意标题，最多20个汉字
+// 创意标题，最多30个汉字
 func (r *TaobaoSimbaCreativeAddAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)
@@ -69,17 +84,17 @@ func (r TaobaoSimbaCreativeAddAPIRequest) GetImgUrl() string {
 	return r._imgUrl
 }
 
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaCreativeAddAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
+// SetAdExaminationCode is AdExaminationCode Setter
+// 广审批准文号
+func (r *TaobaoSimbaCreativeAddAPIRequest) SetAdExaminationCode(_adExaminationCode string) error {
+	r._adExaminationCode = _adExaminationCode
+	r.Set("ad_examination_code", _adExaminationCode)
 	return nil
 }
 
-// GetNick Nick Getter
-func (r TaobaoSimbaCreativeAddAPIRequest) GetNick() string {
-	return r._nick
+// GetAdExaminationCode AdExaminationCode Getter
+func (r TaobaoSimbaCreativeAddAPIRequest) GetAdExaminationCode() string {
+	return r._adExaminationCode
 }
 
 // SetAdgroupId is AdgroupId Setter

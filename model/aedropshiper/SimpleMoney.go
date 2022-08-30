@@ -2,8 +2,8 @@ package aedropshiper
 
 // SimpleMoney 结构体
 type SimpleMoney struct {
-	// 金额
+	// Amount
 	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
-	// 币种
+	// Currency
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
 }

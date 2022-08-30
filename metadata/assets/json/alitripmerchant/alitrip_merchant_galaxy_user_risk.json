@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "用户ip"
+		},
+		{
+			"name": "email",
+			"type": "String",
+			"description": "邮箱"
+		},
+		{
+			"name": "scene",
+			"type": "Number",
+			"description": "场景值"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "request_union_id",
+							"type": "Number",
+							"description": "请求id"
+						},
+						{
+							"name": "rist_rank",
+							"type": "Number",
+							"description": "风险等级"
+						}
+					],
+					"name": "content",
+					"type": "UserRiskRankVo",
+					"description": "返回内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.user.risk",
+	"apiChineseName": "查询微信账号的风险等级",
+	"description": "【星河服务】查询微信账号的风险等级",
+	"id": 58230
+}

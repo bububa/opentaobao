@@ -10,12 +10,12 @@ type RentalOrderDto struct {
 	ReservedPackageTime string `json:"reserved_package_time,omitempty" xml:"reserved_package_time,omitempty"`
 	// 用户会员卡到期时间
 	BuyerMemberExpireDate string `json:"buyer_member_expire_date,omitempty" xml:"buyer_member_expire_date,omitempty"`
-	// 订单状态
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 买家地址
 	BuyerAddress *UserAddressDto `json:"buyer_address,omitempty" xml:"buyer_address,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 订单状态
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 邮费，单位分
 	Postage int64 `json:"postage,omitempty" xml:"postage,omitempty"`
 }

@@ -26,8 +26,8 @@ type TaobaoTopSecretGetAPIResponseModel struct {
 	AppConfig string `json:"app_config,omitempty" xml:"app_config,omitempty"`
 	// 下次更新秘钥间隔，单位（秒）
 	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
-	// 秘钥版本号
-	SecretVersion int64 `json:"secret_version,omitempty" xml:"secret_version,omitempty"`
 	// 最长有效期，容灾使用，单位（秒）
 	MaxInterval int64 `json:"max_interval,omitempty" xml:"max_interval,omitempty"`
+	// 秘钥版本号
+	SecretVersion int64 `json:"secret_version,omitempty" xml:"secret_version,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25127,
-	"name": "taobao.baichuan.openaccount.logindoublecheck",
-	"apiChineseName": "百川登录二次验证",
-	"description": "百川登录二次验证",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.openaccount.logindoublecheck",
+	"apiChineseName": "百川登录二次验证",
+	"description": "百川登录二次验证",
+	"id": 25127
 }

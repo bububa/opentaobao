@@ -1,0 +1,141 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_id",
+					"type": "Number",
+					"description": "业务单id",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "CarefreeDetailQueryReq",
+			"description": "查询参数对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_id",
+					"type": "Number",
+					"description": "业务单号"
+				},
+				{
+					"name": "pay_status",
+					"type": "Number",
+					"description": "支付状态"
+				},
+				{
+					"name": "service_off_time",
+					"type": "Number",
+					"description": "未上传发票服务失效时间（毫秒）"
+				},
+				{
+					"name": "has_refunded",
+					"type": "Number",
+					"description": "是否发生退款"
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "item_pic",
+					"type": "String",
+					"description": "商品图片"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "车系id"
+				},
+				{
+					"name": "series_name",
+					"type": "String",
+					"description": "车系名称"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "核销门店id"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "核销门店名称"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "订单类型（1 - 一口价电子凭证订单 | 2 - 分阶段订单）"
+				},
+				{
+					"name": "free_apply",
+					"type": "Boolean",
+					"description": "是否免申请"
+				},
+				{
+					"name": "earnest_paid_time",
+					"type": "Number",
+					"description": "定金支付时间"
+				},
+				{
+					"name": "order_close_time",
+					"type": "Number",
+					"description": "订单关闭时间"
+				},
+				{
+					"name": "order_cancel_time",
+					"type": "Number",
+					"description": "orderCancelTime"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "price"
+				},
+				{
+					"name": "order_success_time",
+					"type": "Number",
+					"description": "orderSuccessTime"
+				}
+			],
+			"name": "data",
+			"type": "CarefreeDetailInfoDTO",
+			"description": "数据对象"
+		},
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "扩展信息"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误编号"
+		}
+	],
+	"name": "tmall.car.carefree.detail.get",
+	"apiChineseName": "查询业务单信息",
+	"description": "查询业务单信息",
+	"id": 58708
+}

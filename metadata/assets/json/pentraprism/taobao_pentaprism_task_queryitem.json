@@ -1,14 +1,6 @@
 {
-	"id": 52767,
-	"name": "taobao.pentaprism.task.queryitem",
-	"apiChineseName": "查询任务当前进度",
-	"description": "外网用户查询五棱镜任务系统当前进度",
 	"requestParams": [
 		{
-			"name": "open_po",
-			"type": "OpenTaskPo",
-			"description": "TOP接口标准入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_name",
@@ -40,6 +32,11 @@
 					"required": true
 				},
 				{
+					"name": "from_token",
+					"type": "String",
+					"description": "分享任务的token，回流的时候传入"
+				},
+				{
 					"name": "ignore_rules",
 					"type": "Boolean",
 					"description": "是否忽略任务规则"
@@ -54,6 +51,12 @@
 					"name": "now",
 					"type": "Date",
 					"description": "做任务时间",
+					"required": true
+				},
+				{
+					"name": "open_token",
+					"type": "String",
+					"description": "请求对应任务的token，从五棱镜后台生成",
 					"required": true
 				},
 				{
@@ -73,596 +76,501 @@
 					"type": "Number",
 					"description": "用户类别，微博用户写死userType=2",
 					"required": true
-				},
-				{
-					"name": "from_token",
-					"type": "String",
-					"description": "分享任务的token，回流的时候传入"
-				},
-				{
-					"name": "open_token",
-					"type": "String",
-					"description": "请求对应任务的token，从五棱镜后台生成",
-					"required": true
 				}
-			]
+			],
+			"name": "open_po",
+			"type": "OpenTaskPo",
+			"description": "TOP接口标准入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaskResult",
-			"description": "TOP接口标准出参",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误详细信息",
-					"required": true
+					"description": "错误详细信息"
 				},
 				{
 					"name": "finish_count",
 					"type": "Number",
-					"description": "任务完成个数",
-					"required": true
+					"description": "任务完成个数"
 				},
 				{
-					"name": "model",
-					"type": "OpenTaskInfoVo",
-					"description": "任务数据返回对象",
-					"required": true,
 					"subParams": [
+						{
+							"name": "from_token",
+							"type": "String",
+							"description": "任务信息token，用于回流输入"
+						},
 						{
 							"name": "group_id",
 							"type": "Number",
-							"description": "任务分组ID",
-							"required": true
+							"description": "任务分组ID"
 						},
 						{
 							"name": "group_index",
 							"type": "Number",
-							"description": "任务分组所在位置，用户再次排序",
-							"required": true
+							"description": "任务分组所在位置，用户再次排序"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "投放ID",
-							"required": true
+							"description": "投放ID"
 						},
 						{
 							"name": "index",
 							"type": "Number",
-							"description": "分组内位置",
-							"required": true
+							"description": "分组内位置"
 						},
 						{
 							"name": "is_current",
 							"type": "Boolean",
-							"description": "扩展类任务标记，标记是否为当前任务",
-							"required": true
+							"description": "扩展类任务标记，标记是否为当前任务"
 						},
 						{
 							"name": "is_today",
 							"type": "Boolean",
-							"description": "是否今天完成的",
-							"required": true
+							"description": "是否今天完成的"
 						},
 						{
-							"name": "progress",
-							"type": "TaskProgressVo",
-							"description": "任务进度对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cd_time",
 									"type": "Number",
-									"description": "任务冷却时间，-1标识无冷却",
-									"required": true
+									"description": "任务冷却时间，-1标识无冷却"
 								},
 								{
 									"name": "finished_time",
 									"type": "Date",
-									"description": "任务完成时间",
-									"required": true
+									"description": "任务完成时间"
 								},
 								{
 									"name": "index",
 									"type": "Number",
-									"description": "扩展性任务索引",
-									"required": true
+									"description": "扩展性任务索引"
 								},
 								{
 									"name": "loop_times",
 									"type": "Number",
-									"description": "触发多少次任务算完成",
-									"required": true
+									"description": "触发多少次任务算完成"
 								},
 								{
 									"name": "max_times",
 									"type": "Number",
-									"description": "任务完成最大上限",
-									"required": true
+									"description": "任务完成最大上限"
 								},
 								{
 									"name": "need_times",
 									"type": "Number",
-									"description": "还需要做多少次任务才能做完",
-									"required": true
+									"description": "还需要做多少次任务才能做完"
 								},
 								{
 									"name": "period",
 									"type": "Number",
-									"description": "任务周期",
-									"required": true
+									"description": "任务周期"
 								},
 								{
 									"name": "reach_limit",
 									"type": "Boolean",
-									"description": "是否达到任务上限",
-									"required": true
+									"description": "是否达到任务上限"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "任务状态，“INIT”为初始化状态",
-									"required": true
+									"description": "任务状态，“INIT”为初始化状态"
 								},
 								{
 									"name": "times",
 									"type": "Number",
-									"description": "任务已经触发的次数",
-									"required": true
+									"description": "任务已经触发的次数"
 								}
-							]
+							],
+							"name": "progress",
+							"type": "TaskProgressVo",
+							"description": "任务进度对象"
 						},
 						{
-							"name": "rewards",
-							"type": "TaskRewardVo[]",
-							"description": "任务奖励对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "error_code",
 									"type": "String",
-									"description": "查询奖励错误码",
-									"required": true
+									"description": "查询奖励错误码"
 								},
 								{
-									"name": "success",
-									"type": "Boolean",
-									"description": "查询奖励详细错误信息",
-									"required": true
-								},
-								{
-									"name": "time",
-									"type": "Number",
-									"description": "发奖励时间",
-									"required": true
-								},
-								{
-									"name": "type",
-									"type": "String",
-									"description": "发奖励类型",
-									"required": true
-								},
-								{
-									"name": "win",
-									"type": "Boolean",
-									"description": "是否领奖",
-									"required": true
-								},
-								{
-									"name": "result",
-									"type": "TaskRewardItemVo",
-									"description": "奖励详细信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "base_count",
 											"type": "Number",
-											"description": "基础发放量",
-											"required": true
+											"description": "基础发放量"
 										},
 										{
 											"name": "config_id",
 											"type": "Number",
-											"description": "奖励模板ID",
-											"required": true
+											"description": "奖励模板ID"
 										},
 										{
 											"name": "encourage",
 											"type": "Number",
-											"description": "奖励激励值",
-											"required": true
+											"description": "奖励激励值"
 										},
 										{
 											"name": "final_count",
 											"type": "Number",
-											"description": "最终奖励发放数量",
-											"required": true
+											"description": "最终奖励发放数量"
 										},
 										{
 											"name": "icon",
 											"type": "String",
-											"description": "奖励发放图标",
-											"required": true
+											"description": "奖励发放图标"
 										},
 										{
 											"name": "max_count",
 											"type": "Number",
-											"description": "奖励区间最大值 用于展示",
-											"required": true
+											"description": "奖励区间最大值 用于展示"
 										},
 										{
 											"name": "min_count",
 											"type": "Number",
-											"description": "奖励区间最小值 用于展示",
-											"required": true
+											"description": "奖励区间最小值 用于展示"
 										},
 										{
 											"name": "mode",
 											"type": "String",
-											"description": "激励模式 用于展示 \"NONE\"表示无激励",
-											"required": true
+											"description": "激励模式 用于展示 \"NONE\"表示无激励"
 										},
 										{
 											"name": "own_count",
 											"type": "Number",
-											"description": "库存量",
-											"required": true
+											"description": "库存量"
 										},
 										{
 											"name": "own_count_text",
 											"type": "String",
-											"description": "总库存格式化带单位 万/亿",
-											"required": true
+											"description": "总库存格式化带单位 万/亿"
 										},
 										{
 											"name": "point_count",
 											"type": "Number",
-											"description": "成就点",
-											"required": true
+											"description": "成就点"
 										},
 										{
 											"name": "type",
 											"type": "String",
-											"description": "奖励类型",
-											"required": true
+											"description": "奖励类型"
 										},
 										{
 											"name": "unit",
 											"type": "String",
-											"description": "单位 用于展示",
-											"required": true
+											"description": "单位 用于展示"
 										}
-									]
+									],
+									"name": "result",
+									"type": "TaskRewardItemVo",
+									"description": "奖励详细信息"
+								},
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "查询奖励详细错误信息"
+								},
+								{
+									"name": "time",
+									"type": "Number",
+									"description": "发奖励时间"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "发奖励类型"
+								},
+								{
+									"name": "win",
+									"type": "Boolean",
+									"description": "是否领奖"
 								}
-							]
+							],
+							"name": "rewards",
+							"type": "TaskRewardVo[]",
+							"description": "任务奖励对象"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "任务状态",
-							"required": true
+							"description": "任务状态"
 						},
 						{
-							"name": "sub_list",
-							"type": "OpenTaskInfoVo[]",
-							"description": "扩展型任务子列表对象",
-							"required": true,
 							"subParams": [
+								{
+									"name": "from_token",
+									"type": "String",
+									"description": "任务信息token，用于回流输入"
+								},
 								{
 									"name": "group_id",
 									"type": "Number",
-									"description": "任务分组ID",
-									"required": true
+									"description": "任务分组ID"
 								},
 								{
 									"name": "group_index",
 									"type": "Number",
-									"description": "任务分组所在位置，用户再次排序",
-									"required": true
+									"description": "任务分组所在位置，用户再次排序"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "投放ID",
-									"required": true
+									"description": "投放ID"
 								},
 								{
 									"name": "index",
 									"type": "Number",
-									"description": "分组内位置",
-									"required": true
+									"description": "分组内位置"
 								},
 								{
 									"name": "is_current",
 									"type": "Boolean",
-									"description": "扩展类任务标记，标记是否为当前任务",
-									"required": true
+									"description": "扩展类任务标记，标记是否为当前任务"
 								},
 								{
 									"name": "is_today",
 									"type": "Boolean",
-									"description": "是否今天完成的",
-									"required": true
+									"description": "是否今天完成的"
 								},
 								{
-									"name": "progress",
-									"type": "TaskProgressVo",
-									"description": "任务进度对象",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cd_time",
 											"type": "Number",
-											"description": "任务冷却时间，-1标识无冷却",
-											"required": true
+											"description": "任务冷却时间，-1标识无冷却"
 										},
 										{
 											"name": "finished_time",
 											"type": "Date",
-											"description": "任务完成时间",
-											"required": true
+											"description": "任务完成时间"
 										},
 										{
 											"name": "index",
 											"type": "Number",
-											"description": "扩展性任务索引",
-											"required": true
+											"description": "扩展性任务索引"
 										},
 										{
 											"name": "loop_times",
 											"type": "Number",
-											"description": "触发多少次任务算完成",
-											"required": true
+											"description": "触发多少次任务算完成"
 										},
 										{
 											"name": "max_times",
 											"type": "Number",
-											"description": "任务完成最大上限",
-											"required": true
+											"description": "任务完成最大上限"
 										},
 										{
 											"name": "need_times",
 											"type": "Number",
-											"description": "还需要做多少次任务才能做完",
-											"required": true
+											"description": "还需要做多少次任务才能做完"
 										},
 										{
 											"name": "period",
 											"type": "Number",
-											"description": "任务周期",
-											"required": true
+											"description": "任务周期"
 										},
 										{
 											"name": "reach_limit",
 											"type": "Boolean",
-											"description": "是否达到任务上限",
-											"required": true
+											"description": "是否达到任务上限"
 										},
 										{
 											"name": "status",
 											"type": "String",
-											"description": "任务状态，“INIT”为初始化状态",
-											"required": true
+											"description": "任务状态，“INIT”为初始化状态"
 										},
 										{
 											"name": "times",
 											"type": "Number",
-											"description": "任务已经触发的次数",
-											"required": true
+											"description": "任务已经触发的次数"
 										}
-									]
+									],
+									"name": "progress",
+									"type": "TaskProgressVo",
+									"description": "任务进度对象"
 								},
 								{
-									"name": "rewards",
-									"type": "TaskRewardVo[]",
-									"description": "任务奖励对象",
-									"required": true,
 									"subParams": [
 										{
 											"name": "error_code",
 											"type": "String",
-											"description": "查询奖励错误码",
-											"required": true
+											"description": "查询奖励错误码"
 										},
 										{
-											"name": "success",
-											"type": "Boolean",
-											"description": "奖励查询是否成功",
-											"required": true
-										},
-										{
-											"name": "time",
-											"type": "Number",
-											"description": "发奖励时间",
-											"required": true
-										},
-										{
-											"name": "type",
-											"type": "String",
-											"description": "发奖励类型",
-											"required": true
-										},
-										{
-											"name": "win",
-											"type": "Boolean",
-											"description": "是否领奖",
-											"required": true
-										},
-										{
-											"name": "result",
-											"type": "TaskRewardItemVo",
-											"description": "奖励详细信息",
-											"required": true,
 											"subParams": [
 												{
 													"name": "base_count",
 													"type": "Number",
-													"description": "基础发放量",
-													"required": true
+													"description": "基础发放量"
 												},
 												{
 													"name": "config_id",
 													"type": "Number",
-													"description": "奖励模板ID",
-													"required": true
+													"description": "奖励模板ID"
 												},
 												{
 													"name": "encourage",
 													"type": "Number",
-													"description": "奖励激励值",
-													"required": true
+													"description": "奖励激励值"
 												},
 												{
 													"name": "final_count",
 													"type": "Number",
-													"description": "最终奖励发放数量",
-													"required": true
+													"description": "最终奖励发放数量"
 												},
 												{
 													"name": "icon",
 													"type": "String",
-													"description": "奖励发放图标",
-													"required": true
+													"description": "奖励发放图标"
 												},
 												{
 													"name": "max_count",
 													"type": "Number",
-													"description": "奖励区间最大值 用于展示",
-													"required": true
+													"description": "奖励区间最大值 用于展示"
 												},
 												{
 													"name": "min_count",
 													"type": "Number",
-													"description": "奖励区间最小值 用于展示",
-													"required": true
+													"description": "奖励区间最小值 用于展示"
 												},
 												{
 													"name": "mode",
 													"type": "String",
-													"description": "激励模式 用于展示 \"NONE\"表示无激励",
-													"required": true
+													"description": "激励模式 用于展示 \"NONE\"表示无激励"
 												},
 												{
 													"name": "own_count",
 													"type": "Number",
-													"description": "库存量",
-													"required": true
+													"description": "库存量"
 												},
 												{
 													"name": "own_count_text",
 													"type": "String",
-													"description": "总库存格式化带单位 万/亿",
-													"required": true
+													"description": "总库存格式化带单位 万/亿"
 												},
 												{
 													"name": "point_count",
 													"type": "Number",
-													"description": "库存量",
-													"required": true
+													"description": "库存量"
 												},
 												{
 													"name": "type",
 													"type": "String",
-													"description": "奖励类型",
-													"required": true
+													"description": "奖励类型"
 												},
 												{
 													"name": "unit",
 													"type": "String",
-													"description": "单位 用于展示",
-													"required": true
+													"description": "单位 用于展示"
 												}
-											]
+											],
+											"name": "result",
+											"type": "TaskRewardItemVo",
+											"description": "奖励详细信息"
+										},
+										{
+											"name": "success",
+											"type": "Boolean",
+											"description": "奖励查询是否成功"
+										},
+										{
+											"name": "time",
+											"type": "Number",
+											"description": "发奖励时间"
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "发奖励类型"
+										},
+										{
+											"name": "win",
+											"type": "Boolean",
+											"description": "是否领奖"
 										}
-									]
+									],
+									"name": "rewards",
+									"type": "TaskRewardVo[]",
+									"description": "任务奖励对象"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "任务状态",
-									"required": true
+									"description": "任务状态"
 								},
 								{
 									"name": "task_sub_type",
 									"type": "String",
-									"description": "任务子类型",
-									"required": true
+									"description": "任务子类型"
 								},
 								{
 									"name": "task_type",
 									"type": "String",
-									"description": "任务类型",
-									"required": true
+									"description": "任务类型"
 								},
 								{
 									"name": "time",
 									"type": "Date",
-									"description": "做任务时间",
-									"required": true
-								},
-								{
-									"name": "from_token",
-									"type": "String",
-									"description": "任务信息token，用于回流输入",
-									"required": true
+									"description": "做任务时间"
 								}
-							]
+							],
+							"name": "sub_list",
+							"type": "OpenTaskInfoVo[]",
+							"description": "扩展型任务子列表对象"
 						},
 						{
 							"name": "task_sub_type",
 							"type": "String",
-							"description": "任务子类型",
-							"required": true
+							"description": "任务子类型"
 						},
 						{
 							"name": "task_type",
 							"type": "String",
-							"description": "任务类型",
-							"required": true
+							"description": "任务类型"
 						},
 						{
 							"name": "time",
 							"type": "Date",
-							"description": "做任务时间",
-							"required": true
-						},
-						{
-							"name": "from_token",
-							"type": "String",
-							"description": "任务信息token，用于回流输入",
-							"required": true
+							"description": "做任务时间"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OpenTaskInfoVo",
+					"description": "任务数据返回对象"
 				},
 				{
 					"name": "now",
 					"type": "Date",
-					"description": "做任务时间",
-					"required": true
+					"description": "做任务时间"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "匹配命中任务数量",
-					"required": true
+					"description": "匹配命中任务数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaskResult",
+			"description": "TOP接口标准出参"
 		}
-	]
+	],
+	"name": "taobao.pentaprism.task.queryitem",
+	"apiChineseName": "查询任务当前进度",
+	"description": "外网用户查询五棱镜任务系统当前进度",
+	"id": 52767
 }

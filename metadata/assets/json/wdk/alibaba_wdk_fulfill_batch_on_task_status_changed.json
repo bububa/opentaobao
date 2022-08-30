@@ -1,13 +1,6 @@
 {
-	"id": 33677,
-	"name": "alibaba.wdk.fulfill.batch.on.task.status.changed",
-	"apiChineseName": "物流管控作业状态回传",
-	"description": "物流管控作业状态回传",
 	"requestParams": [
 		{
-			"name": "task_status",
-			"type": "TaskStatus",
-			"description": "作业状态回传对象",
 			"subParams": [
 				{
 					"name": "node_type",
@@ -50,9 +43,6 @@
 					"description": "容器编号列表"
 				},
 				{
-					"name": "fulfill_order_list",
-					"type": "FulfillOrder[]",
-					"description": "履约单列表",
 					"subParams": [
 						{
 							"name": "fulfill_order_id",
@@ -60,9 +50,6 @@
 							"description": "履约单号"
 						},
 						{
-							"name": "sku_info_list",
-							"type": "SkuInfo[]",
-							"description": "子订单信息列表",
 							"subParams": [
 								{
 									"name": "actual_sale_quantity",
@@ -95,30 +82,36 @@
 									"description": "扩展属性：exchangeGoods代表换货信息；containerType代表箱子标识（正常传0、禁止开箱传1）；containerCodes代表箱码数组（不存在为空）；"
 								},
 								{
-									"name": "containers",
-									"type": "ContainerDto[]",
-									"description": "容器",
 									"subParams": [
-										{
-											"name": "container_code",
-											"type": "String",
-											"description": "容器code"
-										},
 										{
 											"name": "container_type",
 											"type": "String",
 											"description": "容器类型"
+										},
+										{
+											"name": "container_code",
+											"type": "String",
+											"description": "容器code"
 										}
-									]
+									],
+									"name": "containers",
+									"type": "ContainerDto[]",
+									"description": "容器"
 								}
-							]
+							],
+							"name": "sku_info_list",
+							"type": "SkuInfo[]",
+							"description": "子订单信息列表"
 						},
 						{
 							"name": "attributes",
 							"type": "String",
 							"description": "扩展属性"
 						}
-					]
+					],
+					"name": "fulfill_order_list",
+					"type": "FulfillOrder[]",
+					"description": "履约单列表"
 				},
 				{
 					"name": "container_count",
@@ -135,34 +128,38 @@
 					"type": "String",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "task_status",
+			"type": "TaskStatus",
+			"description": "作业状态回传对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "fulfill_logistic_single_result",
-			"type": "FulfillLogisticDefaultResult",
-			"description": "fulfillLogisticSingleResult",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true 调用成功 false 调用失败",
-					"required": true
+					"description": "true 调用成功 false 调用失败"
 				},
 				{
 					"name": "err_desc",
 					"type": "String",
-					"description": "返回码含义描述",
-					"required": true
+					"description": "返回码含义描述"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)",
-					"required": true
+					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)"
 				}
-			]
+			],
+			"name": "fulfill_logistic_single_result",
+			"type": "FulfillLogisticDefaultResult",
+			"description": "fulfillLogisticSingleResult"
 		}
-	]
+	],
+	"name": "alibaba.wdk.fulfill.batch.on.task.status.changed",
+	"apiChineseName": "物流管控作业状态回传",
+	"description": "物流管控作业状态回传",
+	"id": 33677
 }

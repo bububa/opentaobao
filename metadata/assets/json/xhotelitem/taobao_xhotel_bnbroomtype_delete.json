@@ -1,0 +1,35 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "房型Id，系统商outer_id"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "对接系统商名称：可为空不要乱填，需要申请后使用"
+		},
+		{
+			"name": "rid",
+			"type": "Number",
+			"description": "房型Id，传参方式为rid或outer_id+vendor"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "是否出错"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.xhotel.bnbroomtype.delete",
+	"apiChineseName": "民宿房源删除接口",
+	"description": "增加民宿房源删除接口",
+	"id": 59015
+}

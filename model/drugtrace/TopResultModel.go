@@ -2,6 +2,8 @@ package drugtrace
 
 // TopResultModel 结构体
 type TopResultModel struct {
+	// 返回的批次列表信息
+	BlindFileBatchInfoDtoList []BlindFileBatchInfoDto `json:"blind_file_batch_info_dto_list,omitempty" xml:"blind_file_batch_info_dto_list>blind_file_batch_info_dto,omitempty"`
 	// 导出的项目和药品目录
 	Models []TrialProjectDto `json:"models,omitempty" xml:"models>trial_project_dto,omitempty"`
 	// 操作码

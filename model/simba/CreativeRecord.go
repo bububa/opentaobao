@@ -4,7 +4,7 @@ package simba
 type CreativeRecord struct {
 	// 主人昵称
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
-	// 创意标题，最多20个汉字
+	// 创意标题，最多30个汉字
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 修改前创意标题
 	OldTitle string `json:"old_title,omitempty" xml:"old_title,omitempty"`

@@ -26,4 +26,6 @@ type AlibabaAlihealthExaminationReserveConfirmAPIResponseModel struct {
 	UniqReserveCode string `json:"uniq_reserve_code,omitempty" xml:"uniq_reserve_code,omitempty"`
 	// 返回结果编码
 	ResponseCode string `json:"response_code,omitempty" xml:"response_code,omitempty"`
+	// 预约电子凭证码值，若返回凭证码值，会展示在订单详情。用户到店/上门后，可以通过该码值来验证订单，不同预约码值不能重复。长度不超过64位
+	VoucherCode string `json:"voucher_code,omitempty" xml:"voucher_code,omitempty"`
 }

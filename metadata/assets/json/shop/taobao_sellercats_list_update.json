@@ -1,8 +1,4 @@
 {
-	"id": 67,
-	"name": "taobao.sellercats.list.update",
-	"apiChineseName": "更新卖家自定义类目",
-	"description": "此API更新卖家店铺内自定义类目 \u003cbr/\u003e注：因为缓存的关系，添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布",
 	"requestParams": [
 		{
 			"name": "cid",
@@ -28,16 +24,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "seller_cat",
-			"type": "SellerCat",
-			"description": "返回sellercat数据结构中的：cid,modified",
 			"subParams": [
 				{
 					"name": "cid",
 					"type": "Number",
 					"description": "卖家自定义类目编号"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "修改时间。格式：yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "seller_cat",
+			"type": "SellerCat",
+			"description": "返回sellercat数据结构中的：cid,modified"
 		}
-	]
+	],
+	"name": "taobao.sellercats.list.update",
+	"apiChineseName": "更新卖家自定义类目",
+	"description": "此API更新卖家店铺内自定义类目 \u003cbr/\u003e注：因为缓存的关系，添加的新类目需8个小时后才可以在淘宝页面上正常显示，但是不影响在该类目下商品发布",
+	"id": 67
 }

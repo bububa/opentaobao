@@ -1,8 +1,4 @@
 {
-	"id": 23792,
-	"name": "alibaba.interact.activity.register",
-	"apiChineseName": "ISV互动应用活动注册服务",
-	"description": "为支持卖家由ISV互动应用可以在手淘店铺首页透出，提供ISV互动应用创建的活动注册到手淘的服务",
 	"requestParams": [
 		{
 			"name": "entry_url",
@@ -51,9 +47,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "register_sucess_info",
-			"type": "AllsparkResult",
-			"description": "活动注册成功，将活动注册后的ID和h5链接返回给调用方",
 			"subParams": [
 				{
 					"name": "err_msg",
@@ -66,9 +59,6 @@
 					"description": "出错代码"
 				},
 				{
-					"name": "data",
-					"type": "ActivityWriteResult",
-					"description": "服务结果对象",
 					"subParams": [
 						{
 							"name": "activity_id",
@@ -80,14 +70,24 @@
 							"type": "String",
 							"description": "活动页面h5链接"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ActivityWriteResult",
+					"description": "服务结果对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
 					"description": "是否注册成功"
 				}
-			]
+			],
+			"name": "register_sucess_info",
+			"type": "AllsparkResult",
+			"description": "活动注册成功，将活动注册后的ID和h5链接返回给调用方"
 		}
-	]
+	],
+	"name": "alibaba.interact.activity.register",
+	"apiChineseName": "ISV互动应用活动注册服务",
+	"description": "为支持卖家由ISV互动应用可以在手淘店铺首页透出，提供ISV互动应用创建的活动注册到手淘的服务",
+	"id": 23792
 }

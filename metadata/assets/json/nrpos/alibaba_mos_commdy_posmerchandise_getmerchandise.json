@@ -1,14 +1,6 @@
 {
-	"id": 42773,
-	"name": "alibaba.mos.commdy.posmerchandise.getmerchandise",
-	"apiChineseName": "去前置机商品在线查询",
-	"description": "去前置机商品在线查询接口",
 	"requestParams": [
 		{
-			"name": "pos_merchandise_list",
-			"type": "QueryMerchandiseDto[]",
-			"description": "查询参数列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "storeno",
@@ -20,222 +12,196 @@
 					"type": "String",
 					"description": "商品编码"
 				}
-			]
+			],
+			"name": "pos_merchandise_list",
+			"type": "QueryMerchandiseDto[]",
+			"description": "查询参数列表",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "headers",
-					"type": "Json",
-					"description": "返回头",
-					"required": true
+					"type": "String",
+					"description": "返回头"
 				},
 				{
 					"name": "mapping_code",
 					"type": "String",
-					"description": "null",
-					"required": true
+					"description": "null"
 				},
 				{
-					"name": "datas",
-					"type": "MerchandiseInfoDto[]",
-					"description": "返回数据，",
-					"required": true,
 					"subParams": [
 						{
 							"name": "storeno",
 							"type": "String",
-							"description": "门店号",
-							"required": true
+							"description": "门店号"
 						},
 						{
 							"name": "a0551",
 							"type": "String",
-							"description": "VIP活动折扣规则",
-							"required": true
+							"description": "VIP活动折扣规则"
 						},
 						{
 							"name": "a0550",
 							"type": "String",
-							"description": "VIP普通折扣规则",
-							"required": true
+							"description": "VIP普通折扣规则"
 						},
 						{
 							"name": "a0545",
 							"type": "String",
-							"description": "活动套号",
-							"required": true
+							"description": "活动套号"
 						},
 						{
 							"name": "a0544",
 							"type": "String",
-							"description": "保留字段",
-							"required": true
+							"description": "保留字段"
 						},
 						{
 							"name": "a0543",
 							"type": "String",
-							"description": "实时积分基数",
-							"required": true
+							"description": "实时积分基数"
 						},
 						{
 							"name": "a0542",
 							"type": "String",
-							"description": "保留字段",
-							"required": true
+							"description": "保留字段"
 						},
 						{
 							"name": "a0541",
 							"type": "String",
-							"description": "会员价",
-							"required": true
+							"description": "会员价"
 						},
 						{
 							"name": "a0540",
 							"type": "String",
-							"description": "是否接受VIP 0=不接受 1=接受",
-							"required": true
+							"description": "是否接受VIP 0=不接受 1=接受"
 						},
 						{
 							"name": "a0531",
 							"type": "String",
-							"description": "最低限制折扣，该商品所有折扣累加不能小于此折扣",
-							"required": true
+							"description": "最低限制折扣，该商品所有折扣累加不能小于此折扣"
 						},
 						{
 							"name": "a0530",
 							"type": "String",
-							"description": "用于文化广场最高折扣，跟最低折扣对应",
-							"required": true
+							"description": "用于文化广场最高折扣，跟最低折扣对应"
 						},
 						{
 							"name": "a0526",
 							"type": "String",
-							"description": "库存数量，此功能未启用",
-							"required": true
+							"description": "库存数量，此功能未启用"
 						},
 						{
 							"name": "a0525",
 							"type": "String",
-							"description": "默认折扣率",
-							"required": true
+							"description": "默认折扣率"
 						},
 						{
 							"name": "a0524",
 							"type": "String",
-							"description": "默认优惠价格",
-							"required": true
+							"description": "默认优惠价格"
 						},
 						{
 							"name": "a0523",
 							"type": "String",
-							"description": "折扣类别   0=不允许 1=允许",
-							"required": true
+							"description": "折扣类别   0=不允许 1=允许"
 						},
 						{
 							"name": "a0522",
 							"type": "String",
-							"description": "价格下限，此功能已取消",
-							"required": true
+							"description": "价格下限，此功能已取消"
 						},
 						{
 							"name": "a0521",
 							"type": "String",
-							"description": "价格上限，此功能已取消",
-							"required": true
+							"description": "价格上限，此功能已取消"
 						},
 						{
 							"name": "a0520",
 							"type": "String",
-							"description": "定价方式   0=定价 1=开价",
-							"required": true
+							"description": "定价方式   0=定价 1=开价"
 						},
 						{
 							"name": "a0517",
 							"type": "String",
-							"description": "零售价",
-							"required": true
+							"description": "零售价"
 						},
 						{
 							"name": "a0516",
 							"type": "String",
-							"description": "保留字段",
-							"required": true
+							"description": "保留字段"
 						},
 						{
 							"name": "a0508",
 							"type": "String",
-							"description": "部门",
-							"required": true
+							"description": "部门"
 						},
 						{
 							"name": "a0506",
 							"type": "String",
-							"description": "经营方式",
-							"required": true
+							"description": "经营方式"
 						},
 						{
 							"name": "a0504",
 							"type": "String",
-							"description": "专柜",
-							"required": true
+							"description": "专柜"
 						},
 						{
 							"name": "a0503",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "a0502",
 							"type": "String",
-							"description": "商品条码",
-							"required": true
+							"description": "商品条码"
 						},
 						{
 							"name": "a0501",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "MerchandiseInfoDto[]",
+					"description": "返回数据，"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "http请求返回码",
-					"required": true
+					"description": "http请求返回码"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "null",
-					"required": true
+					"type": "String",
+					"description": "null"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "业务返回码，801表示商品不存在",
-					"required": true
+					"description": "业务返回码，801表示商品不存在"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "业务返回信息",
-					"required": true
+					"description": "业务返回信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.commdy.posmerchandise.getmerchandise",
+	"apiChineseName": "去前置机商品在线查询",
+	"description": "去前置机商品在线查询接口",
+	"id": 42773
 }

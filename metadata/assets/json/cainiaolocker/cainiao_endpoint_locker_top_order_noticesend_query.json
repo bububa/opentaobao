@@ -1,8 +1,4 @@
 {
-	"id": 31196,
-	"name": "cainiao.endpoint.locker.top.order.noticesend.query",
-	"apiChineseName": "查询订单是否由裹裹发送消息",
-	"description": "合作公司查询消息发送的接口，判断是否裹裹发送消息",
 	"requestParams": [
 		{
 			"name": "station_id",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -47,10 +40,6 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cp_code",
@@ -82,9 +71,20 @@
 							"description": "快递公司名称",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "data",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.endpoint.locker.top.order.noticesend.query",
+	"apiChineseName": "查询订单是否由裹裹发送消息",
+	"description": "合作公司查询消息发送的接口，判断是否裹裹发送消息",
+	"id": 31196
 }

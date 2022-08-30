@@ -1,21 +1,17 @@
 {
-	"id": 46424,
-	"name": "cainiao.global.handover.savedraft",
-	"apiChineseName": "创建交接单草稿",
-	"description": "提供给ISV通过该接口创建交接单草稿",
 	"requestParams": [
 		{
-			"name": "user_info",
-			"type": "UserInfoDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "top_user_key",
 					"type": "String",
 					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
 				}
-			]
+			],
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "remark",
@@ -33,10 +29,6 @@
 			"description": "重量单位，克:g, 千克:kg，默认g"
 		},
 		{
-			"name": "pickup_info",
-			"type": "PickupDto",
-			"description": "揽收信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "name",
@@ -59,9 +51,6 @@
 					"description": "邮箱"
 				},
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "揽收地址",
 					"subParams": [
 						{
 							"name": "country",
@@ -104,25 +93,25 @@
 							"type": "String",
 							"description": "邮编"
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "揽收地址"
 				},
 				{
 					"name": "address_id",
 					"type": "Number",
 					"description": "AE后台维护的发件地址ID"
 				}
-			]
+			],
+			"name": "pickup_info",
+			"type": "PickupDto",
+			"description": "揽收信息",
+			"required": true
 		},
 		{
-			"name": "return_info",
-			"type": "ReturnerDto",
-			"description": "退件信息",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "退件地址",
-					"required": true,
 					"subParams": [
 						{
 							"name": "zip_code",
@@ -165,7 +154,11 @@
 							"description": "国家",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "退件地址",
+					"required": true
 				},
 				{
 					"name": "email",
@@ -194,7 +187,10 @@
 					"type": "Number",
 					"description": "AE后台维护的退货地址ID"
 				}
-			]
+			],
+			"name": "return_info",
+			"type": "ReturnerDto",
+			"description": "退件信息"
 		},
 		{
 			"name": "client",
@@ -206,8 +202,8 @@
 			"name": "order_code_list",
 			"type": "String[]",
 			"description": "需要组装大包的小包编码集合，最多限制200个小包",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "locale",
@@ -217,15 +213,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HsfResult",
-			"description": "请求结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OpenHandoverDraftSaveResponse",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "handover_order_id",
@@ -239,7 +228,11 @@
 							"description": "交接物id，即大包id",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "OpenHandoverDraftSaveResponse",
+					"description": "响应数据",
+					"required": true
 				},
 				{
 					"name": "error_msg",
@@ -259,7 +252,14 @@
 					"description": "请求处理是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.handover.savedraft",
+	"apiChineseName": "创建交接单草稿",
+	"description": "提供给ISV通过该接口创建交接单草稿",
+	"id": 46424
 }

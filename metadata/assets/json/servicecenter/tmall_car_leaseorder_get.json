@@ -1,8 +1,4 @@
 {
-	"id": 34313,
-	"name": "tmall.car.leaseorder.get",
-	"apiChineseName": "获取租赁订单信息",
-	"description": "卖家通过供销平台获取代销商的订单信息，但是部分情况下网商银行订单号获取不到，需要提供接口或者工具给卖家",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -12,73 +8,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "消耗时间",
-					"required": true
+					"description": "消耗时间"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "当前时间",
-					"required": true
+					"description": "当前时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "异常代码",
-					"required": true
+					"description": "异常代码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "异常消息",
-					"required": true
+					"description": "异常消息"
 				},
 				{
-					"name": "object",
-					"type": "LeaseOrderInfoDto",
-					"description": "真正返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_no",
 							"type": "String",
-							"description": "网商申请号",
-							"required": true
+							"description": "网商申请号"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)PAY_PENDING(国际信用卡支付付款确认中)",
-							"required": true
+							"description": "单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)PAY_PENDING(国际信用卡支付付款确认中)"
 						},
 						{
 							"name": "store_out_id",
 							"type": "String",
-							"description": "门店自定义编码",
-							"required": true
+							"description": "门店自定义编码"
 						}
-					]
+					],
+					"name": "object",
+					"type": "LeaseOrderInfoDto",
+					"description": "真正返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功与否",
-					"required": true
+					"description": "成功与否"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "tmall.car.leaseorder.get",
+	"apiChineseName": "获取租赁订单信息",
+	"description": "卖家通过供销平台获取代销商的订单信息，但是部分情况下网商银行订单号获取不到，需要提供接口或者工具给卖家",
+	"id": 34313
 }

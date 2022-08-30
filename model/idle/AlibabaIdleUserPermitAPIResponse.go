@@ -9,7 +9,7 @@ import (
 // AlibabaIdleUserPermitAPIResponse 用户appkey授权 API返回值
 // alibaba.idle.user.permit
 //
-// 用于记录登录用户与服务商的绑定关系，用于业务数据分发和授权校验
+// 闲鱼卖家与服务商关系绑定，用于业务数据分发/授权校验/消息通知鉴权
 type AlibabaIdleUserPermitAPIResponse struct {
 	model.CommonResponse
 	AlibabaIdleUserPermitAPIResponseModel

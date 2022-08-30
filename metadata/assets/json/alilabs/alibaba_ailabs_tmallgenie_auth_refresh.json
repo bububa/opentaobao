@@ -1,13 +1,6 @@
 {
-	"id": 44761,
-	"name": "alibaba.ailabs.tmallgenie.auth.refresh",
-	"apiChineseName": "刷新token",
-	"description": "通过此接口刷新天猫精灵授权token",
 	"requestParams": [
 		{
-			"name": "refresh_token_request",
-			"type": "TopRefreshReqDto",
-			"description": "refresh_token_request",
 			"subParams": [
 				{
 					"name": "client_id",
@@ -29,7 +22,10 @@
 					"type": "String",
 					"description": "refreshToken"
 				}
-			]
+			],
+			"name": "refresh_token_request",
+			"type": "TopRefreshReqDto",
+			"description": "refresh_token_request"
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "refresh_token"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.refresh",
+	"apiChineseName": "刷新token",
+	"description": "通过此接口刷新天猫精灵授权token",
+	"id": 44761
 }

@@ -1,14 +1,6 @@
 {
-	"id": 54728,
-	"name": "aliexpress.feed.post.publish",
-	"apiChineseName": "同步帖子",
-	"description": "站外平台同步帖子至AE FEED域",
 	"requestParams": [
 		{
-			"name": "offsite_publish_post_entity",
-			"type": "OffsitePublishPostEntity",
-			"description": "站外导入内容请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "summary",
@@ -16,9 +8,6 @@
 					"description": "帖子的summary"
 				},
 				{
-					"name": "image_infos",
-					"type": "OffsitePostImageVO[]",
-					"description": "图片列表，类型为1时不可为空",
 					"subParams": [
 						{
 							"name": "height",
@@ -35,7 +24,10 @@
 							"type": "String",
 							"description": "图片链接"
 						}
-					]
+					],
+					"name": "image_infos",
+					"type": "OffsitePostImageVO[]",
+					"description": "图片列表，类型为1时不可为空"
 				},
 				{
 					"name": "post_type",
@@ -49,9 +41,6 @@
 					"description": "商品id"
 				},
 				{
-					"name": "video_info",
-					"type": "OffsitePostVideoVO",
-					"description": "视频参数，类型为2时不可为空",
 					"subParams": [
 						{
 							"name": "cover_url",
@@ -73,7 +62,10 @@
 							"type": "Number",
 							"description": "视频高度"
 						}
-					]
+					],
+					"name": "video_info",
+					"type": "OffsitePostVideoVO",
+					"description": "视频参数，类型为2时不可为空"
 				},
 				{
 					"name": "origin",
@@ -101,14 +93,15 @@
 					"type": "String",
 					"description": "币种"
 				}
-			]
+			],
+			"name": "offsite_publish_post_entity",
+			"type": "OffsitePublishPostEntity",
+			"description": "站外导入内容请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
@@ -134,7 +127,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.feed.post.publish",
+	"apiChineseName": "同步帖子",
+	"description": "站外平台同步帖子至AE FEED域",
+	"id": 54728
 }

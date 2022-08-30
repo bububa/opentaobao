@@ -1,0 +1,248 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "auth_apply_user_id",
+									"type": "String",
+									"description": "申请人"
+								},
+								{
+									"name": "scan_time",
+									"type": "String",
+									"description": "扫描时间"
+								},
+								{
+									"name": "seller_name",
+									"type": "String",
+									"description": "销方名称"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "purchaser_code",
+									"type": "String",
+									"description": "购方编码"
+								},
+								{
+									"name": "cipher_text",
+									"type": "String",
+									"description": "发票密文（字符200位）"
+								},
+								{
+									"name": "auth_apply_time",
+									"type": "Date",
+									"description": "申请时间"
+								},
+								{
+									"name": "invoice_type",
+									"type": "String",
+									"description": "发票类型"
+								},
+								{
+									"name": "issued_tax_no",
+									"type": "String",
+									"description": "代开税号"
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "发票号码"
+								},
+								{
+									"name": "file_id",
+									"type": "String",
+									"description": "附件的resourceId(上传影响接口返回)"
+								},
+								{
+									"name": "amount_without_tax",
+									"type": "String",
+									"description": "不含税金额"
+								},
+								{
+									"name": "batch_no",
+									"type": "String",
+									"description": "批次号"
+								},
+								{
+									"name": "machine_code",
+									"type": "String",
+									"description": "机器编号（字符20位）"
+								},
+								{
+									"name": "scan_user_id",
+									"type": "String",
+									"description": "扫描员工号"
+								},
+								{
+									"name": "invoice_code",
+									"type": "String",
+									"description": "发票代码"
+								},
+								{
+									"name": "two_code_flag",
+									"type": "String",
+									"description": "二维码发票标记"
+								},
+								{
+									"name": "scan_account",
+									"type": "String",
+									"description": "扫描账号"
+								},
+								{
+									"name": "purchaser_name",
+									"type": "String",
+									"description": "购方名称"
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "税率"
+								},
+								{
+									"name": "seller_tax_no",
+									"type": "String",
+									"description": "销方税号"
+								},
+								{
+									"name": "cipher_text_twocode",
+									"type": "String",
+									"description": "二维码密文 （字符1000位）\t二维码发票必填"
+								},
+								{
+									"name": "purchaser_tax_no",
+									"type": "String",
+									"description": "购方税号"
+								},
+								{
+									"name": "verify_no",
+									"type": "String",
+									"description": "校验码"
+								},
+								{
+									"name": "paper_drew_date",
+									"type": "Date",
+									"description": "发票开票日期"
+								},
+								{
+									"name": "tax_amount",
+									"type": "String",
+									"description": "税额"
+								},
+								{
+									"name": "waybill_no",
+									"type": "String",
+									"description": "快递号"
+								}
+							],
+							"name": "head",
+							"type": "InvoiceMainExt",
+							"description": "发票头"
+						},
+						{
+							"subParams": [
+								{
+									"name": "unit_price",
+									"type": "String",
+									"description": "单价"
+								},
+								{
+									"name": "amount_without_tax",
+									"type": "String",
+									"description": "不含税金额"
+								},
+								{
+									"name": "item_spec",
+									"type": "String",
+									"description": "规格型号"
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "税率"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量"
+								},
+								{
+									"name": "cargo_name",
+									"type": "String",
+									"description": "货物或应税劳务名称"
+								},
+								{
+									"name": "quantity_unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "tax_amount",
+									"type": "String",
+									"description": "税额"
+								}
+							],
+							"name": "detail_list",
+							"type": "InvoiceDetails[]",
+							"description": "发票行"
+						}
+					],
+					"name": "invoice_scan_share_data",
+					"type": "XforceInvoiceDto[]",
+					"description": "发票实体"
+				},
+				{
+					"name": "_t",
+					"type": "Number",
+					"description": "扫描时间"
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "签名值"
+				},
+				{
+					"name": "appcode",
+					"type": "String",
+					"description": "应用code"
+				}
+			],
+			"name": "scan_request",
+			"type": "InvoiceScanRequest",
+			"description": "ocr录入请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "空值"
+		},
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"name": "response_msg",
+			"type": "String",
+			"description": "响应消息"
+		}
+	],
+	"name": "alibaba.cfo.incoming.invoice.pyt.invoice.scan",
+	"apiChineseName": "票易通发票ocr信息同步",
+	"description": "票易通发票ocr信息同步",
+	"id": 61522
+}

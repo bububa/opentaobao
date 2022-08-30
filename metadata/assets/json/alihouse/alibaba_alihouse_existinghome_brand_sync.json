@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "品牌logo",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称",
+					"required": true
+				},
+				{
+					"name": "outer_brand_id",
+					"type": "String",
+					"description": "外部品牌ID",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 1-是 0-否"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "brand_category",
+					"type": "Number",
+					"description": "品牌类别（0-二手房类别品牌 1-租房类别品牌）"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否为测试数据  1-是  0-否"
+				}
+			],
+			"name": "company_brand_dto",
+			"type": "CompanyBrandDto",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.brand.sync",
+	"apiChineseName": "二手房公司品牌数据同步",
+	"description": "二手房公司品牌数据同步",
+	"id": 56776
+}

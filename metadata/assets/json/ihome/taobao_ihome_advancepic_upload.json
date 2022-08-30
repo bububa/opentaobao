@@ -1,14 +1,6 @@
 {
-	"id": 50034,
-	"name": "taobao.ihome.advancepic.upload",
-	"apiChineseName": "ihome图片上传",
-	"description": "ihome 定制业务编辑器投稿素材上传",
 	"requestParams": [
 		{
-			"name": "materials",
-			"type": "AdvancePicMaterialDto[]",
-			"description": "图片类",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "title",
@@ -50,40 +42,44 @@
 					"type": "Number",
 					"description": "0 普通图 1 全景图 2 鸟瞰图"
 				}
-			]
+			],
+			"name": "materials",
+			"type": "AdvancePicMaterialDto[]",
+			"description": "图片类",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "提交成功的批次id",
-					"required": true
+					"description": "提交成功的批次id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "taobao.ihome.advancepic.upload",
+	"apiChineseName": "ihome图片上传",
+	"description": "ihome 定制业务编辑器投稿素材上传",
+	"id": 50034
 }

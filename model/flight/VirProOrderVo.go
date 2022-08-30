@@ -10,6 +10,8 @@ type VirProOrderVo struct {
 	PayNo string `json:"pay_no,omitempty" xml:"pay_no,omitempty"`
 	// 支付时间，订单为支付成功或出货成功时返回
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
+	// 联系人电话
+	ContactPhone string `json:"contact_phone,omitempty" xml:"contact_phone,omitempty"`
 	// 机票订单号
 	FlightOrderId int64 `json:"flight_order_id,omitempty" xml:"flight_order_id,omitempty"`
 	// 辅营订单金额

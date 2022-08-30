@@ -1,14 +1,6 @@
 {
-	"id": 31413,
-	"name": "alibaba.wdk.marketing.itemdiscount.queryitems",
-	"apiChineseName": "查询特价商品",
-	"description": "查询参加特价活动的商品优惠详情",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ActivitySkuQuery",
-			"description": "查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "page",
-					"type": "BasePageQuery",
-					"description": "分页参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_size",
@@ -34,7 +22,11 @@
 							"description": "当前分页，从1开始",
 							"required": true
 						}
-					]
+					],
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页参数",
+					"required": true
 				},
 				{
 					"name": "out_act_id",
@@ -45,135 +37,161 @@
 					"name": "sku_codes",
 					"type": "String[]",
 					"description": "需要查询的商品skuCodes"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步的渠道配置"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ActivitySkuQuery",
+			"description": "查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketPageResult",
-			"description": "查询返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "sku_list",
-					"type": "ItemDiscountSku[]",
-					"description": "参加活动的特价商品详情列表",
-					"required": true,
-					"subParams": [
-						{
-							"name": "item_shop_relation",
-							"type": "Json",
-							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId",
-							"required": true
-						},
-						{
-							"name": "value",
-							"type": "Number",
-							"description": "\u003c优惠明细,分为单位\u003e优惠类型为[减价],则代表直降金额[如700,表示商品直降7元];优惠券类型为[一口价],则代表一口价[如700,表示商品一口价为7元];优惠券类型为[打折],则代表折扣[如700,表示打7折]",
-							"required": true
-						},
-						{
-							"name": "sku_name",
-							"type": "String",
-							"description": "商品名称",
-							"required": true
-						},
-						{
-							"name": "sku_code",
-							"type": "String",
-							"description": "商品的skuCode",
-							"required": true
-						},
-						{
-							"name": "limit_info",
-							"type": "LimitInfo",
-							"description": "通用限购信息，-1为不限制，默认为不限制",
-							"required": true,
-							"subParams": [
-								{
-									"name": "total_limit_cnt",
-									"type": "Number",
-									"description": "活动期间总限购",
-									"required": true
-								},
-								{
-									"name": "user_limit_cnt",
-									"type": "Number",
-									"description": "每人活动期间总限购",
-									"required": true
-								},
-								{
-									"name": "user_daily_limit_cnt",
-									"type": "Number",
-									"description": "每人每日限购",
-									"required": true
-								},
-								{
-									"name": "daily_limit_cnt",
-									"type": "Number",
-									"description": "活动每日总限购",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "condition_num",
-							"type": "Number",
-							"description": "积分值",
-							"required": true
-						},
-						{
-							"name": "condition_type",
-							"type": "Number",
-							"description": "积分类型",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "查询特价商品是否成功",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "参加当前活动的商品总数",
-					"required": true
+					"description": "参加当前活动的商品总数"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页面大小",
-					"required": true
+					"description": "页面大小"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "total_limit_cnt",
+									"type": "Number",
+									"description": "活动期间总限购"
+								},
+								{
+									"name": "user_limit_cnt",
+									"type": "Number",
+									"description": "每人活动期间总限购"
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "每人每日限购"
+								},
+								{
+									"name": "daily_limit_cnt",
+									"type": "Number",
+									"description": "活动每日总限购"
+								},
+								{
+									"name": "daily_limit_cnt_double",
+									"type": "String",
+									"description": "活动每日总限购【小数位】"
+								},
+								{
+									"name": "user_daily_limit_cnt_double",
+									"type": "String",
+									"description": "每人每日限购【小数位】"
+								},
+								{
+									"name": "user_limit_cnt_double",
+									"type": "String",
+									"description": "每人活动期间总限购【小数位】"
+								},
+								{
+									"name": "total_limit_cnt_double",
+									"type": "String",
+									"description": "活动期间总限购【小数位】"
+								}
+							],
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制"
+						},
+						{
+							"name": "item_shop_relation",
+							"type": "String",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId"
+						},
+						{
+							"name": "value",
+							"type": "Number",
+							"description": "\u003c优惠明细,分为单位\u003e优惠类型为[减价],则代表直降金额[如700,表示商品直降7元];优惠券类型为[一口价],则代表一口价[如700,表示商品一口价为7元];优惠券类型为[打折],则代表折扣[如700,表示打7折]"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品的skuCode"
+						},
+						{
+							"name": "condition_num",
+							"type": "Number",
+							"description": "积分值"
+						},
+						{
+							"name": "condition_type",
+							"type": "Number",
+							"description": "积分类型"
+						}
+					],
+					"name": "sku_list",
+					"type": "ItemDiscountSku[]",
+					"description": "参加活动的特价商品详情列表"
 				},
 				{
 					"name": "current",
 					"type": "Number",
-					"description": "当前分页",
-					"required": true
+					"description": "当前分页"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询特价商品是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itemdiscount.queryitems",
+	"apiChineseName": "查询特价商品",
+	"description": "查询参加特价活动的商品优惠详情",
+	"id": 31413
 }

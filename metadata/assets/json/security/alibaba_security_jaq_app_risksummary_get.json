@@ -1,8 +1,4 @@
 {
-	"id": 25663,
-	"name": "alibaba.security.jaq.app.risksummary.get",
-	"apiChineseName": "应用风险概要信息查询接口",
-	"description": "用户通过alibaba.security.jaq.app.risk.scan接口提交应用进行风险扫描后，用此接口获取风险概要信息，本接口不返回风险详细信息",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -12,173 +8,152 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RiskSummary",
-			"description": "应用扫描概要信息",
 			"subParams": [
 				{
-					"name": "fake_info",
-					"type": "FakeAppSummary",
-					"description": "仿冒应用信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "fake_app_count",
 							"type": "Number",
-							"description": "仿冒应用总数(任务完成时才返回)",
-							"required": true
+							"description": "仿冒应用总数(任务完成时才返回)"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
-							"required": true
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
 						},
 						{
 							"name": "total_infected_users",
 							"type": "Number",
-							"description": "仿冒应用感染用户总数(任务完成时才返回)",
-							"required": true
+							"description": "仿冒应用感染用户总数(任务完成时才返回)"
 						}
-					]
+					],
+					"name": "fake_info",
+					"type": "FakeAppSummary",
+					"description": "仿冒应用信息"
 				},
 				{
-					"name": "malware_info",
-					"type": "MalwareSummary",
-					"description": "恶意代码信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "malware_count",
-							"type": "MalwareCount",
-							"description": "恶意代码数量信息(任务完成时才返回)",
-							"required": true,
 							"subParams": [
 								{
 									"name": "high_level",
 									"type": "Number",
-									"description": "高风险恶意代码数量",
-									"required": true
+									"description": "高风险恶意代码数量"
 								},
 								{
 									"name": "low_level",
 									"type": "Number",
-									"description": "低风险恶意代码数量",
-									"required": true
+									"description": "低风险恶意代码数量"
 								},
 								{
 									"name": "total",
 									"type": "Number",
-									"description": "恶意代码总数量",
-									"required": true
+									"description": "恶意代码总数量"
 								},
 								{
 									"name": "weak_level",
 									"type": "Number",
-									"description": "若风险恶意代码数量",
-									"required": true
+									"description": "若风险恶意代码数量"
 								}
-							]
+							],
+							"name": "malware_count",
+							"type": "MalwareCount",
+							"description": "恶意代码数量信息(任务完成时才返回)"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
-							"required": true
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
 						}
-					]
+					],
+					"name": "malware_info",
+					"type": "MalwareSummary",
+					"description": "恶意代码信息"
 				},
 				{
-					"name": "plugin_info",
-					"type": "PluginSummary",
-					"description": "插件信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "plugin_count",
 							"type": "Number",
-							"description": "插件个数",
-							"required": true
+							"description": "插件个数"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
-							"required": true
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
 						}
-					]
+					],
+					"name": "plugin_info",
+					"type": "PluginSummary",
+					"description": "插件信息"
 				},
 				{
 					"name": "task_status",
 					"type": "Number",
-					"description": "任务总状态: 1-已完成,2-处理中,3-处理失败,4-处理超时",
-					"required": true
+					"description": "任务总状态: 1-已完成,2-处理中,3-处理失败,4-处理超时"
 				},
 				{
-					"name": "vuln_info",
-					"type": "VulnSummary",
-					"description": "漏洞信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
-							"required": true
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
 						},
 						{
-							"name": "vuln_count",
-							"type": "VulnCount",
-							"description": "漏洞数量信息(任务完成时才返回)",
-							"required": true,
 							"subParams": [
 								{
 									"name": "high_level",
 									"type": "Number",
-									"description": "高风险漏洞数量",
-									"required": true
+									"description": "高风险漏洞数量"
 								},
 								{
 									"name": "low_level",
 									"type": "Number",
-									"description": "低风险漏洞数量",
-									"required": true
+									"description": "低风险漏洞数量"
 								},
 								{
 									"name": "mid_level",
 									"type": "Number",
-									"description": "中风险漏洞数量",
-									"required": true
+									"description": "中风险漏洞数量"
 								},
 								{
 									"name": "red_line",
 									"type": "Number",
-									"description": "红线漏洞数量",
-									"required": true
+									"description": "红线漏洞数量"
 								},
 								{
 									"name": "total",
 									"type": "Number",
-									"description": "漏洞总数量",
-									"required": true
+									"description": "漏洞总数量"
 								}
-							]
+							],
+							"name": "vuln_count",
+							"type": "VulnCount",
+							"description": "漏洞数量信息(任务完成时才返回)"
 						},
 						{
 							"name": "task_error_code",
 							"type": "String",
-							"description": "漏洞任务错误码 0-成功 其他-错误",
-							"required": true
+							"description": "漏洞任务错误码 0-成功 其他-错误"
 						},
 						{
 							"name": "task_error_msg",
 							"type": "String",
-							"description": "漏洞任务错误信息 succes-成功  其他-错误",
-							"required": true
+							"description": "漏洞任务错误信息 succes-成功  其他-错误"
 						}
-					]
+					],
+					"name": "vuln_info",
+					"type": "VulnSummary",
+					"description": "漏洞信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RiskSummary",
+			"description": "应用扫描概要信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.risksummary.get",
+	"apiChineseName": "应用风险概要信息查询接口",
+	"description": "用户通过alibaba.security.jaq.app.risk.scan接口提交应用进行风险扫描后，用此接口获取风险概要信息，本接口不返回风险详细信息",
+	"id": 25663
 }

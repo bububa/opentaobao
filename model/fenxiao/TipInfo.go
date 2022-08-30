@@ -2,10 +2,10 @@ package fenxiao
 
 // TipInfo 结构体
 type TipInfo struct {
-	// 返回信息
-	Info string `json:"info,omitempty" xml:"info,omitempty"`
 	// 商品id
 	ScItemId string `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
+	// 返回信息
+	Info string `json:"info,omitempty" xml:"info,omitempty"`
 	// errorCode
 	Errorcode string `json:"errorcode,omitempty" xml:"errorcode,omitempty"`
 	// errorMessage

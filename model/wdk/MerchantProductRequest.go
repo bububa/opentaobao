@@ -2,10 +2,10 @@ package wdk
 
 // MerchantProductRequest 结构体
 type MerchantProductRequest struct {
-	// 类目属性信息
-	CatProps []CatProps `json:"cat_props,omitempty" xml:"cat_props>cat_props,omitempty"`
 	// 商品条码
 	Barcodes []string `json:"barcodes,omitempty" xml:"barcodes>string,omitempty"`
+	// 类目属性信息
+	CatProps []CatProps `json:"cat_props,omitempty" xml:"cat_props>cat_props,omitempty"`
 	// 运输: 重量,单位: (g)
 	TransportWeight string `json:"transport_weight,omitempty" xml:"transport_weight,omitempty"`
 	// 标题

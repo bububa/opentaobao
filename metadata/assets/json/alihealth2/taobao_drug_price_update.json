@@ -1,8 +1,4 @@
 {
-	"id": 26484,
-	"name": "taobao.drug.price.update",
-	"apiChineseName": "商家更新宝贝价格",
-	"description": "商家更新价格",
 	"requestParams": [
 		{
 			"name": "out_store_id",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "msg_code",
@@ -47,7 +40,14 @@
 					"description": "请求是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.drug.price.update",
+	"apiChineseName": "商家更新宝贝价格",
+	"description": "商家更新价格",
+	"id": 26484
 }

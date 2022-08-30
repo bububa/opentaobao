@@ -14,12 +14,12 @@ type AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest struct {
 	model.Params
 	// 服务商预约凭证
 	_uniqReserveCode string
-	// 健康预约凭证
-	_reserveNumber string
-	// 事件(ASSIGNED_PRACTITONER:已分配医护人员、PRACTITONER_GO_OUT:医护人员已出发、PRACTITONER_HOME:医护人员已到家、PRACTITONER_CHECKED:医护人员检查完成)、CHANGE_PRACTITONER(变更医护人员)
-	_event string
 	// 事件发生时间
 	_eventOccurTime string
+	// 事件(ASSIGNED_PRACTITONER:已分配医护人员、PRACTITONER_GO_OUT:医护人员已出发、PRACTITONER_HOME:医护人员已到家、PRACTITONER_CHECKED:医护人员检查完成)、CHANGE_PRACTITONER(变更医护人员)
+	_event string
+	// 健康预约凭证
+	_reserveNumber string
 	// 从业者信息
 	_medicalPractitionerInfo *MedicalPractitionerInfo
 }
@@ -58,17 +58,17 @@ func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetUniqReser
 	return r._uniqReserveCode
 }
 
-// SetReserveNumber is ReserveNumber Setter
-// 健康预约凭证
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetReserveNumber(_reserveNumber string) error {
-	r._reserveNumber = _reserveNumber
-	r.Set("reserve_number", _reserveNumber)
+// SetEventOccurTime is EventOccurTime Setter
+// 事件发生时间
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEventOccurTime(_eventOccurTime string) error {
+	r._eventOccurTime = _eventOccurTime
+	r.Set("event_occur_time", _eventOccurTime)
 	return nil
 }
 
-// GetReserveNumber ReserveNumber Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetReserveNumber() string {
-	return r._reserveNumber
+// GetEventOccurTime EventOccurTime Getter
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEventOccurTime() string {
+	return r._eventOccurTime
 }
 
 // SetEvent is Event Setter
@@ -84,17 +84,17 @@ func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEvent() s
 	return r._event
 }
 
-// SetEventOccurTime is EventOccurTime Setter
-// 事件发生时间
-func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetEventOccurTime(_eventOccurTime string) error {
-	r._eventOccurTime = _eventOccurTime
-	r.Set("event_occur_time", _eventOccurTime)
+// SetReserveNumber is ReserveNumber Setter
+// 健康预约凭证
+func (r *AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) SetReserveNumber(_reserveNumber string) error {
+	r._reserveNumber = _reserveNumber
+	r.Set("reserve_number", _reserveNumber)
 	return nil
 }
 
-// GetEventOccurTime EventOccurTime Getter
-func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetEventOccurTime() string {
-	return r._eventOccurTime
+// GetReserveNumber ReserveNumber Getter
+func (r AlibabaAlihealthExaminationTodoorServiceinfoSyncAPIRequest) GetReserveNumber() string {
+	return r._reserveNumber
 }
 
 // SetMedicalPractitionerInfo is MedicalPractitionerInfo Setter

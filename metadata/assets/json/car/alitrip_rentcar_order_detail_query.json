@@ -1,0 +1,312 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "飞猪订单ID",
+					"required": true
+				}
+			],
+			"name": "param_rent_car_order_detail_callback_req",
+			"type": "RentCarOrderDetailCallbackReq",
+			"description": "RQ"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "buyer_email",
+							"type": "String",
+							"description": "buyerEmail",
+							"required": true
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "buyerPhone",
+							"required": true
+						}
+					],
+					"name": "buyer_info",
+					"type": "BuyerInfo",
+					"description": "buyerInfo",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "car_deposit_expire_time",
+							"type": "Number",
+							"description": "还车后{0}天自动释放免押额度",
+							"required": true
+						},
+						{
+							"name": "car_pre_deposit",
+							"type": "String",
+							"description": "车辆免押金额",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "main_title",
+											"type": "String",
+											"description": "主标题",
+											"required": true
+										},
+										{
+											"name": "occur_time",
+											"type": "Date",
+											"description": "发生时间",
+											"required": true
+										},
+										{
+											"name": "status",
+											"type": "Number",
+											"description": "状态",
+											"required": true
+										},
+										{
+											"name": "status_icon",
+											"type": "String",
+											"description": "状态图标",
+											"required": true
+										},
+										{
+											"name": "sub_title",
+											"type": "String",
+											"description": "子标题",
+											"required": true
+										}
+									],
+									"name": "deposit_flows",
+									"type": "RentCarDepositFlow[]",
+									"description": "节点流程",
+									"required": true
+								},
+								{
+									"name": "node_name",
+									"type": "String",
+									"description": "nodeName",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "status",
+									"required": true
+								}
+							],
+							"name": "deposit_nodes",
+							"type": "RentCarDepositNode[]",
+							"description": "免押节点",
+							"required": true
+						},
+						{
+							"name": "deposit_num",
+							"type": "String",
+							"description": "免押金额,",
+							"required": true
+						},
+						{
+							"name": "deposit_status",
+							"type": "String",
+							"description": "信用免押状态",
+							"required": true
+						},
+						{
+							"name": "deposit_type",
+							"type": "String",
+							"description": "单押双押",
+							"required": true
+						},
+						{
+							"name": "enable_deposit",
+							"type": "Boolean",
+							"description": "是否信用免押",
+							"required": true
+						},
+						{
+							"name": "legal_deposit_expire_time",
+							"type": "Number",
+							"description": "国内租车违章押金解压超时时间",
+							"required": true
+						},
+						{
+							"name": "legal_pre_deposit",
+							"type": "String",
+							"description": "违章免押金额,",
+							"required": true
+						}
+					],
+					"name": "deposit_info",
+					"type": "RentCarDepositInfo",
+					"description": "信用免押信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "cancel_reason",
+							"type": "String",
+							"description": "关单原因",
+							"required": true
+						},
+						{
+							"name": "created_time",
+							"type": "Date",
+							"description": "createdTime",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "折扣费用(优惠金额)",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "交易结束时间,确认时间",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "modifiedTime",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "orderId",
+							"required": true
+						},
+						{
+							"name": "order_source",
+							"type": "String",
+							"description": "orderSource",
+							"required": true
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "payStatus",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "payTime",
+							"required": true
+						},
+						{
+							"name": "pay_time_out_time",
+							"type": "Date",
+							"description": "payTimeOutTime",
+							"required": true
+						},
+						{
+							"name": "real_pay",
+							"type": "Number",
+							"description": "realPay",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "refundFee",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "refundStatus",
+							"required": true
+						},
+						{
+							"name": "trace_id",
+							"type": "String",
+							"description": "traceId",
+							"required": true
+						},
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "version",
+							"required": true
+						}
+					],
+					"name": "order_info",
+					"type": "OrderDetailInfo",
+					"description": "订单信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_email",
+							"type": "String",
+							"description": "sellerEmail",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "sellerId",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "sellerNick",
+							"required": true
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "sellerPhone",
+							"required": true
+						}
+					],
+					"name": "seller_info",
+					"type": "SellerInfo",
+					"description": "商家信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "RentCarOrderDetailRsp",
+			"description": "result"
+		}
+	],
+	"name": "alitrip.rentcar.order.detail.query",
+	"apiChineseName": "租车订单详情查询",
+	"description": "租车订单详情查询",
+	"id": 61845
+}

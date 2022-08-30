@@ -1,8 +1,4 @@
 {
-	"id": 52556,
-	"name": "alibaba.alihealth.drugtrace.top.yljg.uploadinoutbill",
-	"apiChineseName": "出入库单据上传",
-	"description": "零售企业上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）, \n不包括对个人的零售出库，疫苗接种，领药出库。",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -69,6 +65,23 @@
 			"required": true
 		},
 		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID[企业自已系统的药品ID]"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"maxListSize": 3500,
+			"required": true
+		},
+		{
 			"name": "client_type",
 			"type": "String",
 			"description": "客户端类型[必须填2]",
@@ -115,23 +128,6 @@
 			"description": "监督人证件号【销毁出库时填写】"
 		},
 		{
-			"name": "warehouse_id",
-			"type": "String",
-			"description": "仓号"
-		},
-		{
-			"name": "drug_id",
-			"type": "String",
-			"description": "药品ID[企业自已系统的药品ID]"
-		},
-		{
-			"name": "trace_codes",
-			"type": "String[]",
-			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 800
-		},
-		{
 			"name": "from_address",
 			"type": "String",
 			"description": "（协同平台数据合规）发货地址【必选】"
@@ -164,12 +160,12 @@
 		{
 			"name": "dis_ref_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】"
+			"description": "（协同平台数据合规）药品配送企业【添写ref_ent_id】"
 		},
 		{
 			"name": "dis_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】"
+			"description": "（协同平台数据合规）药品配送企业entId【添写ent_id】"
 		},
 		{
 			"name": "qu_receivable",
@@ -194,7 +190,7 @@
 		{
 			"name": "drug_list_json",
 			"type": "String",
-			"description": "（协同平台数据合规）药品列表Json"
+			"description": "（协同平台数据合规）药品列表Json[可不填写]"
 		},
 		{
 			"name": "ass_ref_ent_id",
@@ -228,5 +224,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 false 失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugtrace.top.yljg.uploadinoutbill",
+	"apiChineseName": "出入库单据上传",
+	"description": "零售企业上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）, \n不包括对个人的零售出库，疫苗接种，领药出库。",
+	"id": 52556
 }

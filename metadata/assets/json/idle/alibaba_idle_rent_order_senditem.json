@@ -1,8 +1,4 @@
 {
-	"id": 45632,
-	"name": "alibaba.idle.rent.order.senditem",
-	"apiChineseName": "确认发货",
-	"description": "确认发货",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "logistics_list",
-			"type": "LogisticsDto[]",
-			"description": "物流信息",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "logistics_name",
@@ -24,9 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "sender_address",
-					"type": "UserAddressDto",
-					"description": "发货地址信息",
 					"subParams": [
 						{
 							"name": "area",
@@ -58,7 +46,10 @@
 							"type": "String",
 							"description": "发货人手机号"
 						}
-					]
+					],
+					"name": "sender_address",
+					"type": "UserAddressDto",
+					"description": "发货地址信息"
 				},
 				{
 					"name": "logistics_id",
@@ -66,40 +57,45 @@
 					"description": "快递单号id",
 					"required": true
 				}
-			]
+			],
+			"name": "logistics_list",
+			"type": "LogisticsDto[]",
+			"description": "物流信息",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.idle.rent.order.senditem",
+	"apiChineseName": "确认发货",
+	"description": "确认发货",
+	"id": 45632
 }

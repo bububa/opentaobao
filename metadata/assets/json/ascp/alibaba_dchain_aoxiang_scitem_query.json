@@ -1,0 +1,266 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间戳",
+					"required": true
+				},
+				{
+					"name": "scitem_codes",
+					"type": "String[]",
+					"description": "货品商家编码列表，一次查询不要超过100个货品",
+					"required": true
+				}
+			],
+			"name": "query_scitem_request",
+			"type": "QueryScItemRequest",
+			"description": "货品查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "业务是否成功，success为成功，否则为错误码"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "业务错误信息，成功则为空"
+						},
+						{
+							"subParams": [
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "仓编码"
+								},
+								{
+									"name": "industry",
+									"type": "String",
+									"description": "行业；综合-NORMAL 图书-BOOKS 美妆-BEAUTY"
+								},
+								{
+									"name": "owner_code",
+									"type": "String",
+									"description": "货主编码"
+								},
+								{
+									"name": "scitem_name",
+									"type": "String",
+									"description": "货品名称"
+								},
+								{
+									"name": "scitem_code",
+									"type": "String",
+									"description": "货品商家编码"
+								},
+								{
+									"name": "scitem_id",
+									"type": "String",
+									"description": "货品id"
+								},
+								{
+									"name": "warehouse_scitem_code",
+									"type": "String",
+									"description": "仓货品编码"
+								},
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "条形码"
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称"
+								},
+								{
+									"name": "category_name",
+									"type": "String",
+									"description": "类目名称"
+								},
+								{
+									"name": "pic_path",
+									"type": "String",
+									"description": "货品主图URL"
+								},
+								{
+									"name": "length",
+									"type": "Number",
+									"description": "长(mm)"
+								},
+								{
+									"name": "width",
+									"type": "Number",
+									"description": "宽(mm)"
+								},
+								{
+									"name": "height",
+									"type": "Number",
+									"description": "高(mm)"
+								},
+								{
+									"name": "weight",
+									"type": "Number",
+									"description": "重(g)"
+								},
+								{
+									"name": "retail_price",
+									"type": "Number",
+									"description": "零售价(人命币-分)"
+								},
+								{
+									"name": "hazardous",
+									"type": "Number",
+									"description": "是否危险品，1=是，0=否"
+								},
+								{
+									"name": "fragile",
+									"type": "Number",
+									"description": "是否易碎品，1=是，0=否"
+								},
+								{
+									"name": "liquid",
+									"type": "Number",
+									"description": "是否液体，1=是，0=否"
+								},
+								{
+									"name": "precious",
+									"type": "Number",
+									"description": "是否贵重品，1=是，0=否"
+								},
+								{
+									"name": "storage_environment",
+									"type": "String",
+									"description": "存储条件。NORMAL： 常温 COOL： 阴凉 5°C-12°C FRESHNESS：保鲜 0°C-4°C REEFER：冷藏 -18°C-0°C THERMOSTATIC：恒温 18°C-25°C FROZEN：冷冻 \u003c-18°C COOL_AND_DRY：阴凉干燥 5°C-25°C,相对湿度65%以下"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "extend_props",
+									"type": "String",
+									"description": "扩展属性"
+								},
+								{
+									"name": "industry_feature_map",
+									"type": "String",
+									"description": "行业属性"
+								},
+								{
+									"subParams": [
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "采购价(人命币则为分)"
+										},
+										{
+											"name": "currency",
+											"type": "String",
+											"description": "币种"
+										},
+										{
+											"name": "supplier_name",
+											"type": "String",
+											"description": "供应商名称"
+										}
+									],
+									"name": "purchase_prices",
+									"type": "PurchasePrice",
+									"description": "采购价列表"
+								},
+								{
+									"name": "scitem_type",
+									"type": "Number",
+									"description": "货品类型；1-普通货品, 2-组合货品"
+								},
+								{
+									"subParams": [
+										{
+											"name": "scitem_code",
+											"type": "String",
+											"description": "货品商家编码"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "数量"
+										},
+										{
+											"name": "retail_price",
+											"type": "Number",
+											"description": "子货品单价(人命币则为分)"
+										},
+										{
+											"name": "currency",
+											"type": "String",
+											"description": "币种"
+										},
+										{
+											"name": "fixed_price",
+											"type": "Number",
+											"description": "是否固定价格 1是 0否"
+										},
+										{
+											"name": "scitem_id",
+											"type": "String",
+											"description": "子货品id"
+										}
+									],
+									"name": "sub_scitems",
+									"type": "SubScItemModel[]",
+									"description": "子货品列表(仅对组合货品生效)"
+								}
+							],
+							"name": "scitem_models",
+							"type": "ScItemModel[]",
+							"description": "货品列表"
+						}
+					],
+					"name": "data",
+					"type": "QueryScItemResponse",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "调用返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "调用返回信息码"
+				}
+			],
+			"name": "query_scitem_response",
+			"type": "QueryScItemResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.scitem.query",
+	"apiChineseName": "货品查询",
+	"description": "货品查询",
+	"id": 63829
+}

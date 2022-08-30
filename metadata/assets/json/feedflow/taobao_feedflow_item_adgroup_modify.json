@@ -1,14 +1,6 @@
 {
-	"id": 43279,
-	"name": "taobao.feedflow.item.adgroup.modify",
-	"apiChineseName": "信息流单元修改",
-	"description": "信息流单元修改",
 	"requestParams": [
 		{
-			"name": "adgroup",
-			"type": "AdgroupDto",
-			"description": "单元信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "adgroup_id",
@@ -22,9 +14,6 @@
 					"description": "单元名称"
 				},
 				{
-					"name": "intelligent_bid",
-					"type": "IntelligentBidDto",
-					"description": "智能出价",
 					"subParams": [
 						{
 							"name": "open",
@@ -41,41 +30,49 @@
 							"type": "Number",
 							"description": "人群策略"
 						}
-					]
+					],
+					"name": "intelligent_bid",
+					"type": "IntelligentBidDto",
+					"description": "智能出价"
 				},
 				{
 					"name": "status",
 					"type": "String",
 					"description": "状态"
 				}
-			]
+			],
+			"name": "adgroup",
+			"type": "AdgroupDto",
+			"description": "单元信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "单元id",
-					"required": true
+					"description": "单元id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.adgroup.modify",
+	"apiChineseName": "信息流单元修改",
+	"description": "信息流单元修改",
+	"id": 43279
 }

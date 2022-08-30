@@ -1,8 +1,4 @@
 {
-	"id": 48589,
-	"name": "taobao.usergrowth.dhh.delivery.ask",
-	"apiChineseName": "广告曝光前判定接口V2",
-	"description": "提供给媒体在曝光广告前调用",
 	"requestParams": [
 		{
 			"name": "profile",
@@ -45,19 +41,29 @@
 			"description": "用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other"
 		},
 		{
-			"name": "channel",
-			"type": "String",
-			"description": "渠道标识，在大航海平台申请",
-			"required": true
-		},
-		{
 			"name": "advertising_space_id",
 			"type": "String",
 			"description": "大航海广告位，在大航海平台申请",
 			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道标识，在大航海平台申请",
+			"required": true
 		}
 	],
 	"responseParams": [
+		{
+			"name": "task_id_list",
+			"type": "String []",
+			"description": "在大航海平台可投放的任务ID列表"
+		},
+		{
+			"name": "errcode",
+			"type": "Number",
+			"description": "错误码， 0： 成功；1：限流；2：服务不可用"
+		},
 		{
 			"name": "result",
 			"type": "Boolean",
@@ -67,16 +73,10 @@
 			"name": "task_id",
 			"type": "String",
 			"description": "在大航海平台推荐的任务ID"
-		},
-		{
-			"name": "errcode",
-			"type": "Number",
-			"description": "错误码， 0： 成功；1：限流；2：服务不可用"
-		},
-		{
-			"name": "task_id_list",
-			"type": "String []",
-			"description": "在大航海平台可投放的任务ID列表"
 		}
-	]
+	],
+	"name": "taobao.usergrowth.dhh.delivery.ask",
+	"apiChineseName": "广告曝光前判定接口V2",
+	"description": "提供给媒体在曝光广告前调用",
+	"id": 48589
 }

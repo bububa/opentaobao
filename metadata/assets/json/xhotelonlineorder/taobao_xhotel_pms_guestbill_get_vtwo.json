@@ -1,8 +1,4 @@
 {
-	"id": 45054,
-	"name": "taobao.xhotel.pms.guestbill.get.vtwo",
-	"apiChineseName": "客人PMS账单信息查询",
-	"description": "从pms获取客人账单信息",
 	"requestParams": [
 		{
 			"name": "tax_num",
@@ -32,201 +28,175 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "OrderBillInfo[]",
-					"description": "账单列表中涉及到的金额费用单位均为分",
-					"required": true,
 					"subParams": [
 						{
 							"name": "no_checkout_price",
 							"type": "Number",
-							"description": "未结账房费",
-							"required": true
+							"description": "未结账房费"
 						},
 						{
 							"name": "checkout_price",
 							"type": "Number",
-							"description": "已结账房费",
-							"required": true
+							"description": "已结账房费"
 						},
 						{
 							"name": "checkout_total_fee",
 							"type": "Number",
-							"description": "已结账总费用",
-							"required": true
+							"description": "已结账总费用"
 						},
 						{
 							"name": "no_checkout_total_fee",
 							"type": "Number",
-							"description": "未结账总费用",
-							"required": true
+							"description": "未结账总费用"
 						},
 						{
 							"name": "check_out_date",
 							"type": "String",
-							"description": "离店日期",
-							"required": true
+							"description": "离店日期"
 						},
 						{
 							"name": "check_in_date",
 							"type": "String",
-							"description": "入住日期",
-							"required": true
+							"description": "入住日期"
 						},
 						{
 							"name": "room_no",
 							"type": "String",
-							"description": "房间号",
-							"required": true
+							"description": "房间号"
 						},
 						{
 							"name": "id_number",
 							"type": "String",
-							"description": "完整的身份证号",
-							"required": true
+							"description": "完整的身份证号"
 						},
 						{
 							"name": "guest_name",
 							"type": "String",
-							"description": "客人姓名",
-							"required": true
+							"description": "客人姓名"
 						},
 						{
 							"name": "hotel_code",
 							"type": "String",
-							"description": "外部酒店代码",
-							"required": true
+							"description": "外部酒店代码"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "tid",
 							"type": "Number",
-							"description": "淘宝订单号",
-							"required": true
+							"description": "淘宝订单号"
 						},
 						{
 							"name": "request_id",
 							"type": "String",
-							"description": "请求id (同入参)",
-							"required": true
+							"description": "请求id (同入参)"
 						},
 						{
 							"name": "no_checkout_other_fee",
 							"type": "Number",
-							"description": "未结账杂费",
-							"required": true
+							"description": "未结账杂费"
 						},
 						{
 							"name": "checkout_other_fee",
 							"type": "Number",
-							"description": "已结账杂费",
-							"required": true
+							"description": "已结账杂费"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
-							"name": "other_fee_detail",
-							"type": "OtherFeeDetail",
-							"description": "杂费明细列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "other_fee_infos",
-									"type": "OtherFeeInfo[]",
-									"description": "无",
-									"required": true,
 									"subParams": [
 										{
 											"name": "name",
 											"type": "String",
-											"description": "杂费名称",
-											"required": true
+											"description": "杂费名称"
 										},
 										{
 											"name": "price",
 											"type": "Number",
-											"description": "杂费金额",
-											"required": true
+											"description": "杂费金额"
 										},
 										{
 											"name": "checkout",
 											"type": "Number",
-											"description": "结账状态(1:结账,0:未结账)",
-											"required": true
+											"description": "结账状态(1:结账,0:未结账)"
 										}
-									]
+									],
+									"name": "other_fee_infos",
+									"type": "OtherFeeInfo[]",
+									"description": "无"
 								}
-							]
+							],
+							"name": "other_fee_detail",
+							"type": "OtherFeeDetail",
+							"description": "杂费明细列表"
 						},
 						{
-							"name": "daily_room_fee",
-							"type": "DailyRoomFee",
-							"description": "每日房费类表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "daily_prices",
-									"type": "DailyPrice[]",
-									"description": "无",
-									"required": true,
 									"subParams": [
 										{
 											"name": "checkout",
 											"type": "Number",
-											"description": "结账状态(1:结账,0:未结账)",
-											"required": true
+											"description": "结账状态(1:结账,0:未结账)"
 										},
 										{
 											"name": "price",
 											"type": "Number",
-											"description": "每日实际房费",
-											"required": true
+											"description": "每日实际房费"
 										},
 										{
 											"name": "date",
 											"type": "Date",
-											"description": "日期",
-											"required": true
+											"description": "日期"
 										}
-									]
+									],
+									"name": "daily_prices",
+									"type": "DailyPrice[]",
+									"description": "无"
 								}
-							]
+							],
+							"name": "daily_room_fee",
+							"type": "DailyRoomFee",
+							"description": "每日房费类表"
 						}
-					]
+					],
+					"name": "results",
+					"type": "OrderBillInfo[]",
+					"description": "账单列表中涉及到的金额费用单位均为分"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功标记",
-					"required": true
+					"description": "是否成功标记"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "taobao.xhotel.pms.guestbill.get.vtwo",
+	"apiChineseName": "客人PMS账单信息查询",
+	"description": "从pms获取客人账单信息",
+	"id": 45054
 }

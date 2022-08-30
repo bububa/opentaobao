@@ -1,8 +1,4 @@
 {
-	"id": 49505,
-	"name": "taobao.simba.report.city.get",
-	"apiChineseName": "获取城市维度报表",
-	"description": "获取城市维度报表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -29,9 +25,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "RtRptResultEntityDTO",
-			"description": "11",
 			"subParams": [
 				{
 					"name": "thedate",
@@ -138,7 +131,14 @@
 					"type": "String",
 					"description": "总收藏数"
 				}
-			]
+			],
+			"name": "results",
+			"type": "RtRptResultEntityDTO",
+			"description": "11"
 		}
-	]
+	],
+	"name": "taobao.simba.report.city.get",
+	"apiChineseName": "获取城市维度报表",
+	"description": "获取城市维度报表",
+	"id": 49505
 }

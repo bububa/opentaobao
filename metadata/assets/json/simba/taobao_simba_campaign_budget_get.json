@@ -1,8 +1,4 @@
 {
-	"id": 10549,
-	"name": "taobao.simba.campaign.budget.get",
-	"apiChineseName": "取得一个推广计划的日限额",
-	"description": "取得一个推广计划的日限额",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_budget",
-			"type": "CampaignBudget",
-			"description": "推广计划日限额",
 			"subParams": [
 				{
 					"name": "nick",
@@ -38,6 +31,11 @@
 					"description": "日限额，单位是元，不得小于30"
 				},
 				{
+					"name": "is_smooth",
+					"type": "Boolean",
+					"description": "是否平滑消耗，true-是；false-否；在设置了推广计划日限额后，此属性才生效"
+				},
+				{
 					"name": "create_time",
 					"type": "Date",
 					"description": "创建时间"
@@ -46,13 +44,15 @@
 					"name": "modified_time",
 					"type": "Date",
 					"description": "最后修改时间"
-				},
-				{
-					"name": "is_smooth",
-					"type": "Boolean",
-					"description": "是否平滑消耗，true-是；false-否；在设置了推广计划日限额后，此属性才生效"
 				}
-			]
+			],
+			"name": "campaign_budget",
+			"type": "CampaignBudget",
+			"description": "推广计划日限额"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.budget.get",
+	"apiChineseName": "取得一个推广计划的日限额",
+	"description": "取得一个推广计划的日限额",
+	"id": 10549
 }

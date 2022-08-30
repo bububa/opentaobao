@@ -1,0 +1,35 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "parent_folder_id",
+					"type": "Number",
+					"description": "父文件夹id，顶级文件夹的父文件夹id为null。顶级文件夹只有一个。"
+				},
+				{
+					"name": "folder_id",
+					"type": "Number",
+					"description": "文件夹id"
+				},
+				{
+					"name": "folder_name",
+					"type": "String",
+					"description": "文件夹名称"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "文件夹的层级，顶级文件夹为0"
+				}
+			],
+			"name": "folder_list",
+			"type": "TopFolderDTO []",
+			"description": "文件夹列表"
+		}
+	],
+	"name": "alibaba.tjb.picture.folder.query",
+	"apiChineseName": "淘特图片空间用户文件夹查询",
+	"description": "淘特图片空间用户文件夹查询，返回用户所有的文件夹。",
+	"id": 62254
+}

@@ -1,8 +1,4 @@
 {
-	"id": 25300,
-	"name": "alibaba.icbu.product.group.add",
-	"apiChineseName": "增加商品分组",
-	"description": "增加商品分组",
 	"requestParams": [
 		{
 			"name": "group_name",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_group",
-			"type": "ProductGroup",
-			"description": "创建的分组信息",
 			"subParams": [
 				{
 					"name": "parent_id",
@@ -43,7 +36,14 @@
 					"type": "String",
 					"description": "分组名称"
 				}
-			]
+			],
+			"name": "product_group",
+			"type": "ProductGroup",
+			"description": "创建的分组信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.group.add",
+	"apiChineseName": "增加商品分组",
+	"description": "增加商品分组",
+	"id": 25300
 }

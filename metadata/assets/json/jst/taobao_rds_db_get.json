@@ -1,15 +1,11 @@
 {
-	"id": 11134,
-	"name": "taobao.rds.db.get",
-	"apiChineseName": "查询rds下的数据库",
-	"description": "查询rds实例下的数据库",
 	"requestParams": [
 		{
 			"name": "instance_name",
 			"type": "String",
 			"description": "rds的实例名",
-			"required": true,
-			"maxLength": 30
+			"maxLength": 30,
+			"required": true
 		},
 		{
 			"name": "db_status",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "rds_db_infos",
-			"type": "RdsDbInfo []",
-			"description": "数据库查询返回数据结构",
 			"subParams": [
 				{
 					"name": "max_account",
@@ -66,7 +59,14 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "rds_db_infos",
+			"type": "RdsDbInfo []",
+			"description": "数据库查询返回数据结构"
 		}
-	]
+	],
+	"name": "taobao.rds.db.get",
+	"apiChineseName": "查询rds下的数据库",
+	"description": "查询rds实例下的数据库",
+	"id": 11134
 }

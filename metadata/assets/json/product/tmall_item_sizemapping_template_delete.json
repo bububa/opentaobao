@@ -1,8 +1,4 @@
 {
-	"id": 24329,
-	"name": "tmall.item.sizemapping.template.delete",
-	"apiChineseName": "删除天猫商品尺码表模板",
-	"description": "删除天猫商品尺码表模板",
 	"requestParams": [
 		{
 			"name": "template_id",
@@ -17,5 +13,9 @@
 			"type": "Number",
 			"description": "尺码表模板ID"
 		}
-	]
+	],
+	"name": "tmall.item.sizemapping.template.delete",
+	"apiChineseName": "删除天猫商品尺码表模板",
+	"description": "删除天猫商品尺码表模板",
+	"id": 24329
 }

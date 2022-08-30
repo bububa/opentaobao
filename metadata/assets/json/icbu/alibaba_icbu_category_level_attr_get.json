@@ -1,13 +1,6 @@
 {
-	"id": 48659,
-	"name": "alibaba.icbu.category.level.attr.get",
-	"apiChineseName": "层级属性的子属性获取",
-	"description": "用于获取层级属性（车型库）的子属性和属性值",
 	"requestParams": [
 		{
-			"name": "attribute_value_request",
-			"type": "LevelAttributeValueRequest",
-			"description": "属性值request对象",
 			"subParams": [
 				{
 					"name": "cat_id",
@@ -25,14 +18,14 @@
 					"type": "Number",
 					"description": "属性值id, 不同取值范围时的查询策略如下:  \u003c=0：列出当前类目属性的所有属性值  \u003e0：指定当前类目属性的某一个属性值，列出该属性值下的子属性和该子属性的所有属性值"
 				}
-			]
+			],
+			"name": "attribute_value_request",
+			"type": "LevelAttributeValueRequest",
+			"description": "属性值request对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "Result",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "values",
@@ -58,7 +51,14 @@
 					"description": "返回值所在的属性id，如入参valueId为0，则与入参的attrId一致，否则为所选属性值的下层属性id",
 					"required": true
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "Result",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.level.attr.get",
+	"apiChineseName": "层级属性的子属性获取",
+	"description": "用于获取层级属性（车型库）的子属性和属性值",
+	"id": 48659
 }

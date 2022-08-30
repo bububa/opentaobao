@@ -1,14 +1,6 @@
 {
-	"id": 41160,
-	"name": "tmall.car.xcar.synchronize.car.model.data",
-	"apiChineseName": "爱车车型数据同步",
-	"description": "爱车汽车车型数据同步到天猫",
 	"requestParams": [
 		{
-			"name": "param_x_car_sys_model_d_t_o",
-			"type": "XCarSysModelDto",
-			"description": "传入对象描述",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_pid",
@@ -109,52 +101,54 @@
 					"description": "年款值id",
 					"required": true
 				}
-			]
+			],
+			"name": "param_x_car_sys_model_d_t_o",
+			"type": "XCarSysModelDto",
+			"description": "传入对象描述",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "返回对象描述",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "耗时",
-					"required": true
+					"description": "耗时"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "调用时间",
-					"required": true
+					"description": "调用时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "接口处理结果",
-					"required": true
+					"description": "接口处理结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口是否正常",
-					"required": true
+					"description": "接口是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "返回对象描述"
 		}
-	]
+	],
+	"name": "tmall.car.xcar.synchronize.car.model.data",
+	"apiChineseName": "爱车车型数据同步",
+	"description": "爱车汽车车型数据同步到天猫",
+	"id": 41160
 }

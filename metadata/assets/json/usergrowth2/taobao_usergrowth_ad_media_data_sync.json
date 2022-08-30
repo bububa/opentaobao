@@ -1,0 +1,92 @@
+{
+	"requestParams": [
+		{
+			"name": "stat_date",
+			"type": "Date",
+			"description": "统计日期",
+			"required": true
+		},
+		{
+			"name": "transform",
+			"type": "Number",
+			"description": "转化",
+			"required": true
+		},
+		{
+			"name": "cost",
+			"type": "Number",
+			"description": "消耗"
+		},
+		{
+			"name": "exposure",
+			"type": "Number",
+			"description": "曝光",
+			"required": true
+		},
+		{
+			"name": "device_os",
+			"type": "Number",
+			"description": "操作系统"
+		},
+		{
+			"name": "other_media",
+			"type": "String",
+			"description": "其他媒体"
+		},
+		{
+			"name": "ad_placement",
+			"type": "String",
+			"description": "资源位"
+		},
+		{
+			"name": "media_code",
+			"type": "String",
+			"description": "媒体",
+			"required": true
+		},
+		{
+			"name": "click",
+			"type": "Number",
+			"description": "点击",
+			"required": true
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "Number",
+			"description": "参数错误"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "新增媒体数据成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		}
+	],
+	"name": "taobao.usergrowth.ad.media.data.sync",
+	"apiChineseName": "媒体资源位投放效果数据回传",
+	"description": "创意维度广告效果数据回传",
+	"id": 59525
+}

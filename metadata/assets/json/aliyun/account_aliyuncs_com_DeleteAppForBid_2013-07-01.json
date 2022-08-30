@@ -1,8 +1,4 @@
 {
-	"id": 24693,
-	"name": "account.aliyuncs.com.DeleteAppForBid.2013-07-01",
-	"apiChineseName": "运营商删除用户的appkey",
-	"description": "删除用户的appkey，会校验调用的用户是否为当前运营商所创建的。",
 	"requestParams": [
 		{
 			"name": "OwnerId",
@@ -38,5 +34,9 @@
 			"type": "String",
 			"description": "入参的requestId"
 		}
-	]
+	],
+	"name": "account.aliyuncs.com.DeleteAppForBid.2013-07-01",
+	"apiChineseName": "运营商删除用户的appkey",
+	"description": "删除用户的appkey，会校验调用的用户是否为当前运营商所创建的。",
+	"id": 24693
 }

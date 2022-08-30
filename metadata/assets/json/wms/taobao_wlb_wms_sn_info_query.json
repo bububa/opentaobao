@@ -1,8 +1,4 @@
 {
-	"id": 26453,
-	"name": "taobao.wlb.wms.sn.info.query",
-	"apiChineseName": "查询单据序列号信息",
-	"description": "查询仓库作业的各类单据记录的Sn信息",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -25,75 +21,69 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "sn_info_list",
-					"type": "Sninfolist[]",
-					"description": "SN信息列表",
-					"required": true,
-					"subParams": [
-						{
-							"name": "sn_info",
-							"type": "Sninfo",
-							"description": "SN信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "item_id",
-									"type": "String",
-									"description": "商品ID",
-									"required": true
-								},
-								{
-									"name": "item_code",
-									"type": "String",
-									"description": "商家对商品的编码",
-									"required": true
-								},
-								{
-									"name": "inventory_type",
-									"type": "Number",
-									"description": "库存类型（1 可销售库存(正品) 101 残次 102 机损 103 箱损201 冻结库存）",
-									"required": true
-								},
-								{
-									"name": "sn_code",
-									"type": "String",
-									"description": "sn编码",
-									"required": true
-								}
-							]
-						}
-					]
+					"description": "错误信息"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总条数",
-					"required": true
+					"description": "总条数"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "inventory_type",
+									"type": "Number",
+									"description": "库存类型（1 可销售库存(正品) 101 残次 102 机损 103 箱损201 冻结库存）"
+								},
+								{
+									"name": "sn_code",
+									"type": "String",
+									"description": "sn编码"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商家对商品的编码"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
+								}
+							],
+							"name": "sn_info",
+							"type": "Sninfo",
+							"description": "SN信息"
+						}
+					],
+					"name": "sn_info_list",
+					"type": "Sninfolist[]",
+					"description": "SN信息列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.sn.info.query",
+	"apiChineseName": "查询单据序列号信息",
+	"description": "查询仓库作业的各类单据记录的Sn信息",
+	"id": 26453
 }

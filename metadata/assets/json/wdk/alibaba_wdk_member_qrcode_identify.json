@@ -1,8 +1,4 @@
 {
-	"id": 38732,
-	"name": "alibaba.wdk.member.qrcode.identify",
-	"apiChineseName": "扫码识别会员接口",
-	"description": "根据用户输入的付款码（支付宝、盒马、淘宝）、商家等信息，查询当前用户的基本信息及对应会员卡信息",
 	"requestParams": [
 		{
 			"name": "qr_code",
@@ -13,49 +9,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "MemberInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "nick",
 							"type": "String",
-							"description": "淘宝用户昵称",
-							"required": true
+							"description": "淘宝用户昵称"
 						},
 						{
 							"name": "uic_id",
 							"type": "String",
-							"description": "对应淘宝账号的OpenUID",
-							"required": true
+							"description": "对应淘宝账号的OpenUID"
 						}
-					]
+					],
+					"name": "model",
+					"type": "MemberInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.member.qrcode.identify",
+	"apiChineseName": "扫码识别会员接口",
+	"description": "根据用户输入的付款码（支付宝、盒马、淘宝）、商家等信息，查询当前用户的基本信息及对应会员卡信息",
+	"id": 38732
 }

@@ -1,9 +1,25 @@
 {
-	"id": 55204,
-	"name": "alibaba.scbp.ad.group.update.ad.group.batch",
-	"apiChineseName": "修改推广单元",
-	"description": "修改推广单元",
 	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
 		{
 			"name": "campaign_id",
 			"type": "Number",
@@ -11,16 +27,8 @@
 			"required": true
 		},
 		{
-			"name": "ad_group_batch_operation",
-			"type": "AdGroupBatchOperationDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "ad_group_operation_list",
-					"type": "AdGroupOperationDto[]",
-					"description": "入参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -43,29 +51,17 @@
 							"type": "String",
 							"description": "value"
 						}
-					]
-				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id",
+					],
+					"name": "ad_group_operation_list",
+					"type": "AdGroupOperationDto[]",
+					"description": "入参",
 					"required": true
 				}
-			]
+			],
+			"name": "ad_group_batch_operation",
+			"type": "AdGroupBatchOperationDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -74,5 +70,9 @@
 			"type": "Number",
 			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.group.update.ad.group.batch",
+	"apiChineseName": "修改推广单元",
+	"description": "修改推广单元",
+	"id": 55204
 }

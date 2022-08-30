@@ -8,4 +8,6 @@ type ReturnWarehouseResult struct {
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
 	// 入库单号
 	ReturnWarehouseBillId string `json:"return_warehouse_bill_id,omitempty" xml:"return_warehouse_bill_id,omitempty"`
+	// 0:包裹完整 1:包裹破损
+	PackageQuality string `json:"package_quality,omitempty" xml:"package_quality,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 30556,
-	"name": "taobao.wdk.equipment.conveyor.containerinfo.get",
-	"apiChineseName": "获取批次或波次中容器的信息",
-	"description": "获取批次或波次中容器的信息",
 	"requestParams": [
 		{
 			"name": "warehouse_id",
@@ -27,41 +23,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "String",
-					"description": "result",
-					"required": true
+					"description": "result"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "totel_num",
 					"type": "Number",
-					"description": "totelNum",
-					"required": true
+					"description": "totelNum"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.containerinfo.get",
+	"apiChineseName": "获取批次或波次中容器的信息",
+	"description": "获取批次或波次中容器的信息",
+	"id": 30556
 }

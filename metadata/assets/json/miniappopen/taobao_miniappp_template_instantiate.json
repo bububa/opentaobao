@@ -1,15 +1,11 @@
 {
-	"id": 45564,
-	"name": "taobao.miniappp.template.instantiate",
-	"apiChineseName": "（已废弃）构建实例化应用",
-	"description": "实例化saas化的小程序",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "投放端,目前可投放： taobao(淘宝),tmall(天猫)",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "description",
@@ -50,79 +46,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "MiniAppEntityDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "appkey",
 							"type": "String",
-							"description": "appkey",
-							"required": true
+							"description": "appkey"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "小程序appId",
-							"required": true
+							"description": "小程序appId"
 						},
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "小程序名称",
-							"required": true
+							"description": "小程序名称"
 						},
 						{
 							"name": "app_description",
 							"type": "String",
-							"description": "小程序描述",
-							"required": true
+							"description": "小程序描述"
 						},
 						{
 							"name": "app_icon",
 							"type": "String",
-							"description": "icon",
-							"required": true
+							"description": "icon"
 						},
 						{
 							"name": "online_version",
 							"type": "String",
-							"description": "当前版本",
-							"required": true
+							"description": "当前版本"
 						},
 						{
 							"name": "online_code",
 							"type": "String",
-							"description": "线上码",
-							"required": true
+							"description": "线上码"
 						}
-					]
+					],
+					"name": "model",
+					"type": "MiniAppEntityDto",
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.miniappp.template.instantiate",
+	"apiChineseName": "（已废弃）构建实例化应用",
+	"description": "实例化saas化的小程序",
+	"id": 45564
 }

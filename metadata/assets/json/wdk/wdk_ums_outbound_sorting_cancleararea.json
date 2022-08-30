@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wave_code",
+					"type": "String",
+					"description": "波次号"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓code"
+				}
+			],
+			"name": "param0",
+			"type": "DpsCanClearAreaMtopRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "调用码"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回异常信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功调用"
+				}
+			],
+			"name": "result",
+			"type": "UmsResult",
+			"description": "返回值"
+		}
+	],
+	"name": "wdk.ums.outbound.sorting.cancleararea",
+	"apiChineseName": "dps分货-是否能够清场",
+	"description": "dps分货-是否能够清场",
+	"id": 60067
+}

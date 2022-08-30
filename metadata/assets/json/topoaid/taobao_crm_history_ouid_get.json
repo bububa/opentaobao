@@ -1,0 +1,29 @@
+{
+	"requestParams": [
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家淘宝Nick",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "ouid",
+					"type": "String",
+					"description": "ouid",
+					"required": true
+				}
+			],
+			"name": "data",
+			"type": "CrmPrivacyResponse",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.crm.history.ouid.get",
+	"apiChineseName": "根据buyerNick获取ouid",
+	"description": "根据buyerNick获取ouid",
+	"id": 57623
+}

@@ -1,8 +1,4 @@
 {
-	"id": 24553,
-	"name": "taobao.wlb.wms.stock.out.order.notify",
-	"apiChineseName": "出库单通知",
-	"description": "出库单通知",
 	"requestParams": [
 		{
 			"name": "store_code",
@@ -39,9 +35,6 @@
 			"description": "要求出库日期"
 		},
 		{
-			"name": "receiver_info",
-			"type": "Receiverwlbwmsstockoutordernotify",
-			"description": "收件人信息",
 			"subParams": [
 				{
 					"name": "receiver_city",
@@ -88,12 +81,12 @@
 					"type": "String",
 					"description": "收件方电话"
 				}
-			]
+			],
+			"name": "receiver_info",
+			"type": "Receiverwlbwmsstockoutordernotify",
+			"description": "收件人信息"
 		},
 		{
-			"name": "sender_info",
-			"type": "Senderwlbwmsstockoutordernotify",
-			"description": "发货方信息",
 			"subParams": [
 				{
 					"name": "sender_town",
@@ -140,7 +133,10 @@
 					"type": "String",
 					"description": "发件方电话"
 				}
-			]
+			],
+			"name": "sender_info",
+			"type": "Senderwlbwmsstockoutordernotify",
+			"description": "发货方信息"
 		},
 		{
 			"name": "transport_mode",
@@ -173,15 +169,8 @@
 			"description": "车牌号"
 		},
 		{
-			"name": "order_item_list",
-			"type": "Orderitemlistwlbwmsstockoutordernotify[]",
-			"description": "订单商品信息列表",
-			"maxListSize": 5000,
 			"subParams": [
 				{
-					"name": "order_item",
-					"type": "Orderitemwlbwmsstockoutordernotify",
-					"description": "订单商品信息",
 					"subParams": [
 						{
 							"name": "produce_date",
@@ -228,9 +217,16 @@
 							"type": "Date",
 							"description": "到货日期"
 						}
-					]
+					],
+					"name": "order_item",
+					"type": "Orderitemwlbwmsstockoutordernotify",
+					"description": "订单商品信息"
 				}
-			]
+			],
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsstockoutordernotify[]",
+			"description": "订单商品信息列表",
+			"maxListSize": 5000
 		},
 		{
 			"name": "remark",
@@ -269,5 +265,9 @@
 			"type": "String",
 			"description": "仓储订单编码"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.stock.out.order.notify",
+	"apiChineseName": "出库单通知",
+	"description": "出库单通知",
+	"id": 24553
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42634,
-	"name": "tmall.servicecenter.servicestore.updatestatus",
-	"apiChineseName": "网点/门店状态修改",
-	"description": "修改网点/门店状态",
 	"requestParams": [
 		{
 			"name": "id",
@@ -24,29 +20,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "方法调用结果",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "msg_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "方法调用结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicestore.updatestatus",
+	"apiChineseName": "网点/门店状态修改",
+	"description": "修改网点/门店状态",
+	"id": 42634
 }

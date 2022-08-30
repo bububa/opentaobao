@@ -1,8 +1,4 @@
 {
-	"id": 42526,
-	"name": "alibaba.lst.trade.order.get",
-	"apiChineseName": "零售通交易订单查询--品牌商视角",
-	"description": "根据订单id查询零售通交易订单",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -30,10 +23,6 @@
 					"required": true
 				},
 				{
-					"name": "content",
-					"type": "LstTopOrderDto",
-					"description": "返回模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_pay_fee",
@@ -232,8 +221,36 @@
 							"type": "Boolean",
 							"description": "是否组合产品",
 							"required": true
+						},
+						{
+							"name": "offline_order",
+							"type": "Boolean",
+							"description": "是否线下订单",
+							"required": true
+						},
+						{
+							"name": "offline_car_order",
+							"type": "Boolean",
+							"description": "是否车销订单",
+							"required": true
+						},
+						{
+							"name": "offline_yd_id",
+							"type": "String",
+							"description": "线下订单业务员id",
+							"required": true
+						},
+						{
+							"name": "offline_yd_name",
+							"type": "String",
+							"description": "线下订单业务员name",
+							"required": true
 						}
-					]
+					],
+					"name": "content",
+					"type": "LstTopOrderDto",
+					"description": "返回模型",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -247,7 +264,14 @@
 					"description": "执行结果",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.order.get",
+	"apiChineseName": "零售通交易订单查询--品牌商视角",
+	"description": "根据订单id查询零售通交易订单",
+	"id": 42526
 }

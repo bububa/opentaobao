@@ -1,0 +1,276 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "express_code",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "tms_service_type",
+					"type": "Number",
+					"description": "服务类型 (0: “干支装一体”1: “不安装配送到家”2:“不安装配送到楼下”3: “自提”)",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "服务商code",
+					"required": true
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "bill_pic",
+					"type": "String",
+					"description": "底单图片（多个url以逗号分开）"
+				},
+				{
+					"name": "gather",
+					"type": "Boolean",
+					"description": "是否拼单"
+				},
+				{
+					"name": "gather_num",
+					"type": "Number",
+					"description": "拼几单"
+				},
+				{
+					"name": "industry",
+					"type": "String",
+					"description": "行业标(家装固定值，home_improvement)",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "联系人手机"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址"
+						}
+					],
+					"name": "sender_edit_dto",
+					"type": "OrderSenderEdit",
+					"description": "发货人信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "联系人电话"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址"
+						}
+					],
+					"name": "receiver_edit_dto",
+					"type": "OrderReceiverEdit",
+					"description": "收货人信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "体积，单位mm3"
+						},
+						{
+							"name": "leaf_cat_id",
+							"type": "String",
+							"description": "叶子类目ID"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "货品名称"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "货品数量"
+						},
+						{
+							"name": "pack_num",
+							"type": "Number",
+							"description": "包裹数量"
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "重量"
+						},
+						{
+							"name": "property",
+							"type": "String",
+							"description": "货品类型( soft：软体，plate：版式)"
+						},
+						{
+							"name": "assemble_type",
+							"type": "String",
+							"description": "安装类型( whole_install：整装， part_install：组装)"
+						}
+					],
+					"name": "item_edit_dto_list",
+					"type": "OrderItemEdit[]",
+					"description": "货品信息"
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "out_biz_code",
+					"type": "String",
+					"description": "外部单号",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				}
+			],
+			"name": "tms_order_update_request",
+			"type": "TmsOrderUpdateRequest",
+			"description": "服务商编辑",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "biz_exception",
+							"type": "Boolean",
+							"description": "是否为业务异常在流程中心场景下使用"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "业务错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "业务响应信息"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "业务调用是否成功"
+						}
+					],
+					"name": "data",
+					"type": "TmsOrderUpdateResponse",
+					"description": "喵师傅运单号"
+				}
+			],
+			"name": "tms_order_edit_response",
+			"type": "TopResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.industry.waybill.edit",
+	"apiChineseName": "服务商编辑运单",
+	"description": "服务商编辑运单",
+	"id": 63632
+}

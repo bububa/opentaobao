@@ -1,18 +1,23 @@
 {
-	"id": 50239,
-	"name": "cainiao.iot.ticket.sp.mail.voucher.upload",
-	"apiChineseName": "服务商寄出维修件上传凭证信息",
-	"description": "IoT售后服务商寄出维修件上传凭证信息",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CommentTicketTopRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "邮寄编码",
+					"required": true
+				},
+				{
 					"name": "feature",
+					"type": "String",
 					"description": "扩展信息"
+				},
+				{
+					"name": "comment",
+					"type": "String",
+					"description": "邮寄备注",
+					"required": true
 				},
 				{
 					"name": "operator_phone",
@@ -45,50 +50,43 @@
 					"required": true
 				},
 				{
-					"name": "comment",
-					"type": "String",
-					"description": "邮寄备注",
-					"required": true
-				},
-				{
-					"name": "mail_no",
-					"type": "String",
-					"description": "邮寄编码",
-					"required": true
-				},
-				{
 					"name": "send_proof",
 					"type": "String[]",
 					"description": "快递凭证照片"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CommentTicketTopRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "异常描述",
-					"required": true
+					"description": "异常描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "异常编码",
-					"required": true
+					"description": "异常编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.sp.mail.voucher.upload",
+	"apiChineseName": "服务商寄出维修件上传凭证信息",
+	"description": "IoT售后服务商寄出维修件上传凭证信息",
+	"id": 50239
 }

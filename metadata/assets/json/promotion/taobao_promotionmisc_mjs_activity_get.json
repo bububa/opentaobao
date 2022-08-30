@@ -1,22 +1,14 @@
 {
-	"id": 22250,
-	"name": "taobao.promotionmisc.mjs.activity.get",
-	"apiChineseName": "查询满就送活动",
-	"description": "查询满就送活动",
 	"requestParams": [
 		{
 			"name": "activity_id",
 			"type": "Number",
 			"description": "活动id。",
-			"required": true,
-			"minValue": 0
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "mjs_promotion",
-			"type": "MjsPromotion",
-			"description": "满就送活动信息。",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -153,7 +145,14 @@
 					"type": "String",
 					"description": "免邮的排除地区，即，除指定地区外，其他地区包邮。当is_free_post为true时，该值才有意义。代码使用*链接，代码为行政区划代码。"
 				}
-			]
+			],
+			"name": "mjs_promotion",
+			"type": "MjsPromotion",
+			"description": "满就送活动信息。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.mjs.activity.get",
+	"apiChineseName": "查询满就送活动",
+	"description": "查询满就送活动",
+	"id": 22250
 }

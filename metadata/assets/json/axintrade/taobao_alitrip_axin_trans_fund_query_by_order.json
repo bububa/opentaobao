@@ -1,18 +1,10 @@
 {
-	"id": 55696,
-	"name": "taobao.alitrip.axin.trans.fund.query.by.order",
-	"apiChineseName": "通过外部订单ID查询所有资金单",
-	"description": "阿信供销平台-通过外部订单ID查询所有资金单",
 	"requestParams": [
 		{
-			"name": "param_axin_fund_list_query_d_t_o",
-			"type": "AxinFundListQueryDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "fund_status",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "资金单类型",
 					"required": true
 				},
@@ -22,218 +14,193 @@
 					"description": "外部订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param_axin_fund_list_query_d_t_o",
+			"type": "AxinFundListQueryDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "need_retry",
-					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
-				},
-				{
-					"name": "info_msg",
-					"type": "String",
-					"description": "描述信息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "AxinFundDTO",
-					"description": "出参",
-					"required": true,
 					"subParams": [
 						{
-							"name": "fund_list",
-							"type": "AxinFundDto[]",
-							"description": "有效资金单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "alipay_order_id",
 									"type": "String",
-									"description": "支付宝交易号",
-									"required": true
+									"description": "支付宝交易号"
 								},
 								{
 									"name": "alipay_outer_id",
 									"type": "String",
-									"description": "支付宝外部商户号",
-									"required": true
+									"description": "支付宝外部商户号"
 								},
 								{
 									"name": "attributes",
 									"type": "String",
-									"description": "扩展属性",
-									"required": true
+									"description": "扩展属性"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "主键",
-									"required": true
+									"description": "主键"
 								},
 								{
 									"name": "outer_order_id",
 									"type": "String",
-									"description": "订单ID",
-									"required": true
+									"description": "订单ID"
 								},
 								{
 									"name": "pay_fee",
 									"type": "Number",
-									"description": "付款金额总额",
-									"required": true
+									"description": "付款金额总额"
 								},
 								{
 									"name": "pay_fund_id",
 									"type": "Number",
-									"description": "正向资金单ID，仅在逆向资金单上使用",
-									"required": true
+									"description": "正向资金单ID，仅在逆向资金单上使用"
 								},
 								{
 									"name": "pay_order_id",
 									"type": "String",
-									"description": "支付订单号(即tp订单号或支付宝流水号)",
-									"required": true
+									"description": "支付订单号(即tp订单号或支付宝流水号)"
 								},
 								{
 									"name": "pay_time",
 									"type": "Date",
-									"description": "付款时间",
-									"required": true
+									"description": "付款时间"
 								},
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "付款方式",
-									"required": true
+									"description": "付款方式"
 								},
 								{
 									"name": "payer_account",
 									"type": "String",
-									"description": "支付方账号",
-									"required": true
+									"description": "支付方账号"
 								},
 								{
 									"name": "payer_account_type",
 									"type": "Number",
-									"description": "支付方账号类型",
-									"required": true
+									"description": "支付方账号类型"
 								},
 								{
 									"name": "payer_alipay_id",
 									"type": "String",
-									"description": "付款方账号id",
-									"required": true
+									"description": "付款方账号id"
 								},
 								{
 									"name": "payer_nick",
 									"type": "String",
-									"description": "支付方昵称",
-									"required": true
+									"description": "支付方昵称"
 								},
 								{
 									"name": "payer_tid",
 									"type": "Number",
-									"description": "支付方淘宝ID",
-									"required": true
+									"description": "支付方淘宝ID"
 								},
 								{
 									"name": "receiver_account",
 									"type": "String",
-									"description": "收款方账号",
-									"required": true
+									"description": "收款方账号"
 								},
 								{
 									"name": "receiver_account_type",
 									"type": "Number",
-									"description": "收款方账号类型",
-									"required": true
+									"description": "收款方账号类型"
 								},
 								{
 									"name": "receiver_alipay_id",
 									"type": "String",
-									"description": "收款方账号id",
-									"required": true
+									"description": "收款方账号id"
 								},
 								{
 									"name": "receiver_nick",
 									"type": "String",
-									"description": "收款方昵称",
-									"required": true
+									"description": "收款方昵称"
 								},
 								{
 									"name": "receiver_tid",
 									"type": "Number",
-									"description": "收款方淘宝ID",
-									"required": true
+									"description": "收款方淘宝ID"
 								},
 								{
 									"name": "req_version",
 									"type": "String",
-									"description": "请求版本号",
-									"required": true
+									"description": "请求版本号"
 								},
 								{
 									"name": "smid",
 									"type": "String",
-									"description": "二级商户smid",
-									"required": true
+									"description": "二级商户smid"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "资金单状态",
-									"required": true
+									"description": "资金单状态"
 								},
 								{
 									"name": "trade_source",
 									"type": "Number",
-									"description": "付款来源",
-									"required": true
+									"description": "付款来源"
 								},
 								{
 									"name": "trade_type",
 									"type": "Number",
-									"description": "交易方式",
-									"required": true
+									"description": "交易方式"
 								}
-							]
+							],
+							"name": "fund_list",
+							"type": "AxinFundDto[]",
+							"description": "有效资金单列表"
 						},
 						{
 							"name": "total_payed_amount",
 							"type": "Number",
-							"description": "已支付总金额",
-							"required": true
+							"description": "已支付总金额"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinFundDTO",
+					"description": "出参"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "描述信息"
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.fund.query.by.order",
+	"apiChineseName": "通过外部订单ID查询所有资金单",
+	"description": "阿信供销平台-通过外部订单ID查询所有资金单",
+	"id": 55696
 }

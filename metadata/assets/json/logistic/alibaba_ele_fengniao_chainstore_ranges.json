@@ -1,8 +1,4 @@
 {
-	"id": 40495,
-	"name": "alibaba.ele.fengniao.chainstore.ranges",
-	"apiChineseName": "蜂鸟查询门店配送范围接口",
-	"description": "蜂鸟查询门店配送范围接口",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "range_list",
-			"type": "Result []",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "range_id",
@@ -33,10 +26,6 @@
 					"required": true
 				},
 				{
-					"name": "ranges",
-					"type": "Range[]",
-					"description": "ranges",
-					"required": true,
 					"subParams": [
 						{
 							"name": "longitude",
@@ -50,7 +39,11 @@
 							"description": "纬度",
 							"required": true
 						}
-					]
+					],
+					"name": "ranges",
+					"type": "Range[]",
+					"description": "ranges",
+					"required": true
 				},
 				{
 					"name": "range_type",
@@ -58,7 +51,14 @@
 					"description": "配送圈类型 1-日间 2- 晚上  3-全天",
 					"required": true
 				}
-			]
+			],
+			"name": "range_list",
+			"type": "Result []",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.chainstore.ranges",
+	"apiChineseName": "蜂鸟查询门店配送范围接口",
+	"description": "蜂鸟查询门店配送范围接口",
+	"id": 40495
 }

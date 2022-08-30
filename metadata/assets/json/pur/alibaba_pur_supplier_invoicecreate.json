@@ -1,29 +1,9 @@
 {
-	"id": 55661,
-	"name": "alibaba.pur.supplier.invoicecreate",
-	"apiChineseName": "preInvoice创建",
-	"description": "preInvoice创建",
 	"requestParams": [
 		{
-			"name": "invoice",
-			"type": "SupplierPreInvoiceInfoVO",
-			"description": "预发票头信息",
 			"subParams": [
 				{
-					"name": "invoice_item_list",
-					"type": "SupplierPreInvoiceItem[]",
-					"description": "预发票行信息",
 					"subParams": [
-						{
-							"name": "amount",
-							"type": "String",
-							"description": "发票行总金额"
-						},
-						{
-							"name": "spec",
-							"type": "String",
-							"description": "规格型号"
-						},
 						{
 							"name": "line_close_reason",
 							"type": "String",
@@ -65,9 +45,19 @@
 							"description": "发票行税额"
 						},
 						{
+							"name": "amount",
+							"type": "String",
+							"description": "发票行总金额"
+						},
+						{
 							"name": "invoice_line_quantity",
 							"type": "String",
 							"description": "发票行数量"
+						},
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格型号"
 						},
 						{
 							"name": "goods_name",
@@ -110,7 +100,15 @@
 							"description": "应付发票行编号",
 							"required": true
 						}
-					]
+					],
+					"name": "invoice_item_list",
+					"type": "SupplierPreInvoiceItem[]",
+					"description": "预发票行信息"
+				},
+				{
+					"name": "close_reason",
+					"type": "String",
+					"description": "关闭原因"
 				},
 				{
 					"name": "status",
@@ -141,16 +139,6 @@
 					"name": "currency",
 					"type": "String",
 					"description": "币种"
-				},
-				{
-					"name": "attachment",
-					"type": "byte[]",
-					"description": "发票附件"
-				},
-				{
-					"name": "close_reason",
-					"type": "String",
-					"description": "关闭原因"
 				},
 				{
 					"name": "total_amount",
@@ -260,33 +248,43 @@
 					"required": true
 				},
 				{
+					"name": "attachment",
+					"type": "byte[][]",
+					"description": "发票附件"
+				},
+				{
 					"name": "supplier_code",
 					"type": "String",
 					"description": "供应商编码",
 					"required": true
 				}
-			]
+			],
+			"name": "invoice",
+			"type": "SupplierPreInvoiceInfoVO",
+			"description": "预发票头信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.supplier.invoicecreate",
+	"apiChineseName": "preInvoice创建",
+	"description": "preInvoice创建",
+	"id": 55661
 }

@@ -1,8 +1,4 @@
 {
-	"id": 23875,
-	"name": "taobao.rp.refund.review",
-	"apiChineseName": "审核退款单",
-	"description": "审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -47,5 +43,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.rp.refund.review",
+	"apiChineseName": "审核退款单",
+	"description": "审核退款单，标志是否可用于批量退款，目前仅支持天猫订单。",
+	"id": 23875
 }

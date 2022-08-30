@@ -1,19 +1,9 @@
 {
-	"id": 25622,
-	"name": "taobao.xhotel.order.alipayface.create",
-	"apiChineseName": "信用住支付创建接口",
-	"description": "用于创建一笔信用住支付，主要应用场景是线下信用住",
 	"requestParams": [
 		{
-			"name": "total_fee",
-			"type": "Number",
-			"description": "总房费,单位为分",
-			"required": true
-		},
-		{
-			"name": "check_out",
-			"type": "Date",
-			"description": "离店日期(最多允许9天)",
+			"name": "out_order_id",
+			"type": "String",
+			"description": "商家系统的订单号，必须全局唯一，重复会按照相同订单处理",
 			"required": true
 		},
 		{
@@ -29,14 +19,9 @@
 			"required": true
 		},
 		{
-			"name": "daily_price_info",
-			"type": "String",
-			"description": "每日房价,json格式"
-		},
-		{
-			"name": "out_order_id",
-			"type": "String",
-			"description": "商家系统的订单号，必须全局唯一，重复会按照相同订单处理",
+			"name": "check_out",
+			"type": "Date",
+			"description": "离店日期(最多允许9天)",
 			"required": true
 		},
 		{
@@ -46,18 +31,28 @@
 			"required": true
 		},
 		{
-			"name": "guests",
-			"type": "Guest[]",
-			"description": "入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List \u0026lt Guest \u0026gt guests)赋值; 对于.net等其他版本SDK可以通过将List \u0026lt Guest\u0026gt结构数据转为json串赋值.",
-			"required": true,
-			"maxListSize": 20,
+			"name": "total_fee",
+			"type": "Number",
+			"description": "总房费,单位为分",
+			"required": true
+		},
+		{
+			"name": "daily_price_info",
+			"type": "String",
+			"description": "每日房价,json格式"
+		},
+		{
+			"name": "roomtype_name",
+			"type": "String",
+			"description": "房型名称"
+		},
+		{
+			"name": "rateplan_name",
+			"type": "String",
+			"description": "rateplan名称(不清楚可以留空)"
+		},
+		{
 			"subParams": [
-				{
-					"name": "is_main",
-					"type": "Boolean",
-					"description": "是否主入住人，该入住人会参与信用住结算扣款，多个入住人时必须有且仅有一个该字段设置为true",
-					"required": true
-				},
 				{
 					"name": "encrypt_type",
 					"type": "Number",
@@ -70,11 +65,6 @@
 					"required": true
 				},
 				{
-					"name": "id_type",
-					"type": "Number",
-					"description": "证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证"
-				},
-				{
 					"name": "id_number",
 					"type": "String",
 					"description": "证件号, 如果加密方式设置为1, 传入加密后的证件号",
@@ -84,8 +74,24 @@
 					"name": "phone",
 					"type": "String",
 					"description": "手机号, 如果加密方式设置为1, 传入加密后的手机号"
+				},
+				{
+					"name": "id_type",
+					"type": "Number",
+					"description": "证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证"
+				},
+				{
+					"name": "is_main",
+					"type": "Boolean",
+					"description": "是否主入住人，该入住人会参与信用住结算扣款，多个入住人时必须有且仅有一个该字段设置为true",
+					"required": true
 				}
-			]
+			],
+			"name": "guests",
+			"type": "Guest[]",
+			"description": "入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List \u0026lt Guest \u0026gt guests)赋值; 对于.net等其他版本SDK可以通过将List \u0026lt Guest\u0026gt结构数据转为json串赋值.",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "alipay_number",
@@ -102,16 +108,6 @@
 			"type": "String",
 			"description": "不清楚请留空, 用于和outHid共同定位一个酒店",
 			"maxLength": 50
-		},
-		{
-			"name": "roomtype_name",
-			"type": "String",
-			"description": "房型名称"
-		},
-		{
-			"name": "rateplan_name",
-			"type": "String",
-			"description": "rateplan名称(不清楚可以留空)"
 		},
 		{
 			"name": "self_checkin",
@@ -160,5 +156,9 @@
 			"type": "String",
 			"description": "阿里旅行生成的备注信息,用于提示用户一些注意事宜. 请将该字段的信息打印到客人的入住单上. 如果为空代表没有阿里旅行方面的特殊备注"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.alipayface.create",
+	"apiChineseName": "信用住支付创建接口",
+	"description": "用于创建一笔信用住支付，主要应用场景是线下信用住",
+	"id": 25622
 }

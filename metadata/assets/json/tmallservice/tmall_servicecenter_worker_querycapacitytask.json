@@ -1,53 +1,49 @@
 {
-	"id": 31305,
-	"name": "tmall.servicecenter.worker.querycapacitytask",
-	"apiChineseName": "查询需求容量",
-	"description": "查询需求容量",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "CapacityTaskQueryDto",
-			"description": "查询对象",
 			"subParams": [
 				{
 					"name": "province_name",
 					"type": "String",
 					"description": "省份"
 				}
-			]
+			],
+			"name": "query",
+			"type": "CapacityTaskQueryDto",
+			"description": "查询对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_base",
-			"type": "ResultBase",
-			"description": "ResultBase",
 			"subParams": [
 				{
 					"name": "value",
-					"type": "Json",
-					"description": "value",
-					"required": true
+					"type": "String",
+					"description": "value"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result_base",
+			"type": "ResultBase",
+			"description": "ResultBase"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.querycapacitytask",
+	"apiChineseName": "查询需求容量",
+	"description": "查询需求容量",
+	"id": 31305
 }

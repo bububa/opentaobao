@@ -1,0 +1,37 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_activity_code",
+			"type": "String",
+			"description": "外部活动code"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
+		}
+	],
+	"name": "taobao.xhotel.bnbpromo.delete",
+	"apiChineseName": "民宿卖家活动删除",
+	"description": "民宿删除营销活动",
+	"id": 59742
+}

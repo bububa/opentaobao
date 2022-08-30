@@ -1,8 +1,4 @@
 {
-	"id": 41927,
-	"name": "alibaba.retail.vending.price.whitelist.add",
-	"apiChineseName": "贩卖机价格修改白名单",
-	"description": "贩卖机价格修改白名单",
 	"requestParams": [
 		{
 			"name": "valid_starts",
@@ -57,29 +53,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "succ",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.vending.price.whitelist.add",
+	"apiChineseName": "贩卖机价格修改白名单",
+	"description": "贩卖机价格修改白名单",
+	"id": 41927
 }

@@ -1,0 +1,284 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "buyer_work_no",
+					"type": "String",
+					"description": "阿里采购员工号"
+				},
+				{
+					"name": "catalog_category_id",
+					"type": "Number",
+					"description": "阿里商城品类ID"
+				},
+				{
+					"name": "category_code",
+					"type": "String",
+					"description": "阿里采购三级类目"
+				},
+				{
+					"name": "data_source",
+					"type": "String",
+					"description": "外部商家标识",
+					"required": true
+				},
+				{
+					"name": "img_url_list",
+					"type": "String[]",
+					"description": "图片地址列表"
+				},
+				{
+					"name": "mall_url",
+					"type": "String",
+					"description": "外部商家产品链接"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "计价方式 AMOUNT QUANTITY",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "attr_name",
+							"type": "String",
+							"description": "属性名称",
+							"required": true
+						},
+						{
+							"name": "attr_value_name_list",
+							"type": "String[]",
+							"description": "属性值名称",
+							"required": true
+						}
+					],
+					"name": "product_attr_value_list",
+					"type": "AccessProductAttrValueDto[]",
+					"description": "产品属性",
+					"required": true
+				},
+				{
+					"name": "product_desc",
+					"type": "String",
+					"description": "产品描述"
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "产品名称",
+					"required": true
+				},
+				{
+					"name": "purchase_channel",
+					"type": "String",
+					"description": "采购通道，阿里侧枚举",
+					"required": true
+				},
+				{
+					"name": "recommendation",
+					"type": "String",
+					"description": "产品详情"
+				},
+				{
+					"name": "source_category_id",
+					"type": "Number",
+					"description": "外部商家品类ID，如果有的话需要在阿里侧有对应的映射"
+				},
+				{
+					"name": "source_category_name",
+					"type": "String",
+					"description": "外部商家品类名称"
+				},
+				{
+					"name": "source_info",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "source_type",
+					"type": "String",
+					"description": "子类型"
+				},
+				{
+					"name": "source_value",
+					"type": "String",
+					"description": "外部商家对应产品ID",
+					"required": true
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "计价单位",
+					"required": true
+				}
+			],
+			"name": "access_product_dto",
+			"type": "AccessProductDto",
+			"description": "产品对象",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "contract_code",
+					"type": "String",
+					"description": "阿里侧合同编号"
+				},
+				{
+					"name": "data_source",
+					"type": "String",
+					"description": "外部商家标识",
+					"required": true
+				},
+				{
+					"name": "is_apply_directory_mall",
+					"type": "String",
+					"description": "是否上架商城",
+					"required": true
+				},
+				{
+					"name": "minimum_purchase_quantity",
+					"type": "BigDecimal",
+					"description": "最小采购量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "effective_date",
+							"type": "Date",
+							"description": "报价生效时间",
+							"required": true
+						},
+						{
+							"name": "expire_date",
+							"type": "Date",
+							"description": "报价失效时间",
+							"required": true
+						},
+						{
+							"name": "ladder_price",
+							"type": "Boolean",
+							"description": "是否阶梯价",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "origin_unit_price",
+									"type": "BigDecimal",
+									"description": "原价"
+								},
+								{
+									"name": "unit_price",
+									"type": "BigDecimal",
+									"description": "协议价"
+								},
+								{
+									"name": "minimum_purchase_quantity",
+									"type": "BigDecimal",
+									"description": "最小采购量"
+								}
+							],
+							"name": "ladder_price_list",
+							"type": "AccessLadderPriceDto[]",
+							"description": "阶梯价信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "attr_name",
+									"type": "String",
+									"description": "属性名称",
+									"required": true
+								},
+								{
+									"name": "attr_value_name",
+									"type": "String",
+									"description": "属性值名称",
+									"required": true
+								}
+							],
+							"name": "sku_attr_value_list",
+							"type": "AccessSkuAttrValueDto[]",
+							"description": "sku属性列表",
+							"required": true
+						},
+						{
+							"name": "source_sku_id",
+							"type": "String",
+							"description": "外部商家skuId",
+							"required": true
+						},
+						{
+							"name": "unit_price",
+							"type": "BigDecimal",
+							"description": "协议价",
+							"required": true
+						},
+						{
+							"name": "origin_unit_price",
+							"type": "BigDecimal",
+							"description": "原价"
+						}
+					],
+					"name": "quotation_list",
+					"type": "AccessQuotationDto[]",
+					"description": "报价明细",
+					"required": true
+				},
+				{
+					"name": "source_value",
+					"type": "String",
+					"description": "外部商家商品标记值",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "阿里侧供应商ID"
+				},
+				{
+					"name": "tax_rate",
+					"type": "BigDecimal",
+					"description": "税率，如6%则为6",
+					"required": true
+				}
+			],
+			"name": "access_goods_dto",
+			"type": "AccessGoodsDto",
+			"description": "商品对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回提示信息"
+				}
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.pur.cmall.goods.sync",
+	"apiChineseName": "第三方商家接入采购商城-商品同步",
+	"description": "第三方商家接入采购商城-商品同步",
+	"id": 62775
+}

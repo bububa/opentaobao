@@ -1,0 +1,132 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_draft",
+					"type": "Number",
+					"description": "是否为草稿"
+				},
+				{
+					"name": "module_type",
+					"type": "Number",
+					"description": "模块类型",
+					"required": true
+				},
+				{
+					"name": "is_pre_show",
+					"type": "Number",
+					"description": "是否优先展示"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "页面类型",
+					"required": true
+				},
+				{
+					"name": "outer_shop_config_id",
+					"type": "String",
+					"description": "外部店铺配置ID",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题"
+						},
+						{
+							"name": "jump_value",
+							"type": "String",
+							"description": "跳转地址"
+						},
+						{
+							"name": "jump_type",
+							"type": "Number",
+							"description": "跳转类型"
+						},
+						{
+							"name": "outer_config_detail_id",
+							"type": "String",
+							"description": "外部配置详细ID",
+							"required": true
+						},
+						{
+							"name": "image_url",
+							"type": "String",
+							"description": "图片地址"
+						},
+						{
+							"name": "label",
+							"type": "String",
+							"description": "标签名称"
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "副标题"
+						},
+						{
+							"name": "order_no",
+							"type": "Number",
+							"description": "排序"
+						}
+					],
+					"name": "shop_config_details",
+					"type": "ShopConfigDetailDTO[]",
+					"description": "配置详细信息"
+				},
+				{
+					"name": "is_show",
+					"type": "Number",
+					"description": "是否展示"
+				}
+			],
+			"name": "shop_config",
+			"type": "ShopConfigDto",
+			"description": "城市配置信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.shopconfig.detail.submit",
+	"apiChineseName": "店铺配置信息接口",
+	"description": "提供店铺配置的能力",
+	"id": 58030
+}

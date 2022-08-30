@@ -1,8 +1,4 @@
 {
-	"id": 48873,
-	"name": "alibaba.ssc.supplyplatform.serviceability.delete",
-	"apiChineseName": "删除服务能力",
-	"description": "删除服务能力",
 	"requestParams": [
 		{
 			"name": "provider_type",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "对外展示的错误信息",
-					"required": true
+					"description": "对外展示的错误信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceability.delete",
+	"apiChineseName": "删除服务能力",
+	"description": "删除服务能力",
+	"id": 48873
 }

@@ -24,10 +24,10 @@ type TaobaoVmarketEticketAuthBeforeconsumeAPIResponseModel struct {
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
 	// 淘宝卖家旺旺名称
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
-	// 有效期开始时间
-	ValidStart string `json:"valid_start,omitempty" xml:"valid_start,omitempty"`
 	// 有效期结束时间
 	ValidEnds string `json:"valid_ends,omitempty" xml:"valid_ends,omitempty"`
+	// 有效期开始时间
+	ValidStart string `json:"valid_start,omitempty" xml:"valid_start,omitempty"`
 	// 1:可以进行核销码操作
 	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 	// 订单ID

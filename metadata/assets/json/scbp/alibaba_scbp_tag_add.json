@@ -1,8 +1,4 @@
 {
-	"id": 24985,
-	"name": "alibaba.scbp.tag.add",
-	"apiChineseName": "创建关键词分组",
-	"description": "创建关键词分组",
 	"requestParams": [
 		{
 			"name": "tag_name",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "分组名称"
 		}
-	]
+	],
+	"name": "alibaba.scbp.tag.add",
+	"apiChineseName": "创建关键词分组",
+	"description": "创建关键词分组",
+	"id": 24985
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29094,
-	"name": "yunos.tvpubadmin.content.child.rootnode.get",
-	"apiChineseName": "获取少儿大厅根类目接口",
-	"description": "通过此接口可获取少儿大厅根类目列表",
 	"requestParams": [
 		{
 			"name": "need_home_page",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "child_node_vo_list",
-			"type": "ChildNodeVo []",
-			"description": "类目列表",
 			"subParams": [
 				{
 					"name": "id",
@@ -36,7 +29,14 @@
 					"type": "String",
 					"description": "父类目名称"
 				}
-			]
+			],
+			"name": "child_node_vo_list",
+			"type": "ChildNodeVo []",
+			"description": "类目列表"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.child.rootnode.get",
+	"apiChineseName": "获取少儿大厅根类目接口",
+	"description": "通过此接口可获取少儿大厅根类目列表",
+	"id": 29094
 }

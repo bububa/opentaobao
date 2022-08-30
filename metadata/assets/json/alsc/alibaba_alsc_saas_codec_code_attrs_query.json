@@ -1,13 +1,6 @@
 {
-	"id": 54740,
-	"name": "alibaba.alsc.saas.codec.code.attrs.query",
-	"apiChineseName": "码业务属性查询",
-	"description": "码业务属性查询",
 	"requestParams": [
 		{
-			"name": "query_code_request",
-			"type": "QueryCodeBizAttrRequest",
-			"description": "请求入参",
 			"subParams": [
 				{
 					"name": "biz_scene_prefix",
@@ -19,60 +12,60 @@
 					"type": "String",
 					"description": "码值"
 				}
-			]
+			],
+			"name": "query_code_request",
+			"type": "QueryCodeBizAttrRequest",
+			"description": "请求入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CodeBizAttributeDto",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code_value",
 							"type": "String",
-							"description": "码值",
-							"required": true
+							"description": "码值"
 						},
 						{
 							"name": "subject_type",
 							"type": "String",
-							"description": "码值绑定业务主体类型",
-							"required": true
+							"description": "码值绑定业务主体类型"
 						},
 						{
 							"name": "subject_id",
 							"type": "String",
-							"description": "码值绑定的业务主体ID",
-							"required": true
+							"description": "码值绑定的业务主体ID"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CodeBizAttributeDto",
+					"description": "返回素材id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alsc.saas.codec.code.attrs.query",
+	"apiChineseName": "码业务属性查询",
+	"description": "码业务属性查询",
+	"id": 54740
 }

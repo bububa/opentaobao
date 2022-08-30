@@ -1,0 +1,149 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "11",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "11",
+			"required": true
+		},
+		{
+			"name": "voucher_id",
+			"type": "String",
+			"description": "11",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "voucher_id",
+							"type": "String",
+							"description": "代金券id"
+						},
+						{
+							"name": "voucher_status",
+							"type": "String",
+							"description": "券状态"
+						},
+						{
+							"name": "hotel_number",
+							"type": "Number",
+							"description": "酒店数量"
+						},
+						{
+							"name": "voucher_used_date",
+							"type": "String",
+							"description": "使用时间"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "voucher_price",
+							"type": "Number",
+							"description": "券价格"
+						},
+						{
+							"name": "voucher_number",
+							"type": "Number",
+							"description": "券码数量"
+						},
+						{
+							"name": "voucher_name",
+							"type": "String",
+							"description": "券码名称"
+						},
+						{
+							"name": "effective_date",
+							"type": "String",
+							"description": "有效期开始时间"
+						},
+						{
+							"name": "expire_date",
+							"type": "String",
+							"description": "有效期结束时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述"
+								}
+							],
+							"name": "appointment_notice",
+							"type": "BaseDescVO[]",
+							"description": "预约须知"
+						},
+						{
+							"name": "available_date_list",
+							"type": "String[]",
+							"description": "可约日期"
+						},
+						{
+							"name": "img",
+							"type": "String",
+							"description": "头图"
+						},
+						{
+							"name": "hotel_list",
+							"type": "String[]",
+							"description": "关联酒店集合"
+						},
+						{
+							"name": "rate_code_list",
+							"type": "String[]",
+							"description": "关联rpCode集合"
+						},
+						{
+							"name": "night_account",
+							"type": "Number",
+							"description": "可住几晚"
+						}
+					],
+					"name": "content",
+					"type": "VoucherInfoVO",
+					"description": "返回信息"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回参数"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.voucher.query",
+	"apiChineseName": "查询单个代金券信息",
+	"description": "查询单个代金券信息",
+	"id": 58832
+}

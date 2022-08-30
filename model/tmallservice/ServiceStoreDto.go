@@ -28,14 +28,10 @@ type ServiceStoreDto struct {
 	CertificatedBrandIds string `json:"certificated_brand_ids,omitempty" xml:"certificated_brand_ids,omitempty"`
 	// 公司名
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
-	// 纬度
-	Latitude string `json:"latitude,omitempty" xml:"latitude,omitempty"`
 	// 法人身份证号
 	LegalPersonIdNumber string `json:"legal_person_id_number,omitempty" xml:"legal_person_id_number,omitempty"`
 	// 法人姓名
 	LegalPersonName string `json:"legal_person_name,omitempty" xml:"legal_person_name,omitempty"`
-	// 经度
-	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 经理人/联系人姓名
 	ManagerName string `json:"manager_name,omitempty" xml:"manager_name,omitempty"`
 	// 经理人/联系人电话
@@ -62,12 +58,18 @@ type ServiceStoreDto struct {
 	FrontPhoto string `json:"front_photo,omitempty" xml:"front_photo,omitempty"`
 	// 营业执照照片
 	LicensePhoto string `json:"license_photo,omitempty" xml:"license_photo,omitempty"`
+	// 支付宝账户id
+	AlipayAccountId string `json:"alipay_account_id,omitempty" xml:"alipay_account_id,omitempty"`
 	// 品牌认证有效期
 	GmtBrandCertificationExpire string `json:"gmt_brand_certification_expire,omitempty" xml:"gmt_brand_certification_expire,omitempty"`
 	// 照片集合
 	PhotoCollections string `json:"photo_collections,omitempty" xml:"photo_collections,omitempty"`
 	// 标准地址编码
 	AddressCode int64 `json:"address_code,omitempty" xml:"address_code,omitempty"`
+	// 纬度
+	Latitude *BigDecimal `json:"latitude,omitempty" xml:"latitude,omitempty"`
+	// 经度
+	Longitude *BigDecimal `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 门店类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 门店id

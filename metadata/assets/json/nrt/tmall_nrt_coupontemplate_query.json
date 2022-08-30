@@ -1,15 +1,11 @@
 {
-	"id": 45387,
-	"name": "tmall.nrt.coupontemplate.query",
-	"apiChineseName": "券模板查询",
-	"description": "新零售场景，商家拉取在新零售工作台设置的券数据",
 	"requestParams": [
 		{
 			"name": "coupon_type_list",
 			"type": "Number[]",
 			"description": "券列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "current_page",
@@ -35,163 +31,142 @@
 			"description": "错误message"
 		},
 		{
-			"name": "model",
-			"type": "PageData",
-			"description": "model",
 			"subParams": [
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				},
 				{
-					"name": "data_list",
-					"type": "CouponTemplateDto[]",
-					"description": "数据列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "channel",
 							"type": "String",
-							"description": "渠道",
-							"required": true
+							"description": "渠道"
 						},
 						{
 							"name": "coupon_name",
 							"type": "String",
-							"description": "券名称",
-							"required": true
+							"description": "券名称"
 						},
 						{
 							"name": "coupon_type",
 							"type": "Number",
-							"description": "券type",
-							"required": true
+							"description": "券type"
 						},
 						{
 							"name": "creator",
 							"type": "String",
-							"description": "创建钉钉ID",
-							"required": true
+							"description": "创建钉钉ID"
 						},
 						{
 							"name": "discount",
 							"type": "Number",
-							"description": "面额",
-							"required": true
+							"description": "面额"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "券模板ID",
-							"required": true
+							"description": "券模板ID"
 						},
 						{
 							"name": "item_ids",
 							"type": "Number[]",
-							"description": "圈选商品列表",
-							"required": true
+							"description": "圈选商品列表"
 						},
 						{
 							"name": "mall_ids",
 							"type": "Number[]",
-							"description": "圈选卖场列表",
-							"required": true
+							"description": "圈选卖场列表"
 						},
 						{
 							"name": "modified_by",
 							"type": "String",
-							"description": "修改钉钉ID",
-							"required": true
+							"description": "修改钉钉ID"
 						},
 						{
 							"name": "send_end_time",
 							"type": "Date",
-							"description": "发放结束时间yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "发放结束时间yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "send_start_time",
 							"type": "Date",
-							"description": "发放开始时间yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "发放开始时间yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "start_fee",
 							"type": "Number",
-							"description": "门槛",
-							"required": true
+							"description": "门槛"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "store_ids",
 							"type": "Number[]",
-							"description": "圈选门店列表",
-							"required": true
+							"description": "圈选门店列表"
 						},
 						{
 							"name": "use_end_time",
 							"type": "Date",
-							"description": "使用结束时间:yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "使用结束时间:yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "use_start_time",
 							"type": "Date",
-							"description": "使用开始时间:yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "使用开始时间:yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "use_time",
 							"type": "Number",
-							"description": "领取后可以使用的相对时间，秒或天为单位",
-							"required": true
+							"description": "领取后可以使用的相对时间，秒或天为单位"
 						},
 						{
 							"name": "use_time_type",
 							"type": "Number",
-							"description": "使用时间类型",
-							"required": true
+							"description": "使用时间类型"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "发券code",
-							"required": true
+							"description": "发券code"
 						},
 						{
 							"name": "version",
 							"type": "Number",
-							"description": "版本号",
-							"required": true
+							"description": "版本号"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家ID",
-							"required": true
+							"description": "卖家ID"
 						},
 						{
 							"name": "coupon_template_id",
 							"type": "Number",
-							"description": "券模板ID",
-							"required": true
+							"description": "券模板ID"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "CouponTemplateDto[]",
+					"description": "数据列表"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "1",
-					"required": true
+					"description": "1"
 				}
-			]
+			],
+			"name": "model",
+			"type": "PageData",
+			"description": "model"
 		}
-	]
+	],
+	"name": "tmall.nrt.coupontemplate.query",
+	"apiChineseName": "券模板查询",
+	"description": "新零售场景，商家拉取在新零售工作台设置的券数据",
+	"id": 45387
 }

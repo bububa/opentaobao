@@ -1,8 +1,4 @@
 {
-	"id": 53739,
-	"name": "xiami.content.songs.collect.get",
-	"apiChineseName": "获取歌单详情接口",
-	"description": "根据歌单id，获取歌单详情",
 	"requestParams": [
 		{
 			"name": "collect_id",
@@ -10,9 +6,6 @@
 			"description": "歌单id"
 		},
 		{
-			"name": "page",
-			"type": "PagingVo",
-			"description": "分页信息",
 			"subParams": [
 				{
 					"name": "page",
@@ -24,632 +17,543 @@
 					"type": "Number",
 					"description": "每页展示数"
 				}
-			]
+			],
+			"name": "page",
+			"type": "PagingVo",
+			"description": "分页信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "songs",
-			"type": "Page",
-			"description": "返回的歌曲信息",
 			"subParams": [
 				{
-					"name": "song_list",
-					"type": "SongInfoDto[]",
-					"description": "歌曲列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "singers",
-							"type": "ArtistDto[]",
-							"description": "演唱者列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "地域",
-									"required": true
+									"description": "地域"
 								},
 								{
 									"name": "gender",
 									"type": "String",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "alias",
 									"type": "String",
-									"description": "别名",
-									"required": true
+									"description": "别名"
 								},
 								{
 									"name": "artist_name",
 									"type": "String",
-									"description": "艺人名",
-									"required": true
+									"description": "艺人名"
 								},
 								{
 									"name": "artist_logo",
 									"type": "String",
-									"description": "艺人头像",
-									"required": true
+									"description": "艺人头像"
 								},
 								{
 									"name": "artist_id",
 									"type": "Number",
-									"description": "艺人id",
-									"required": true
+									"description": "艺人id"
 								}
-							]
+							],
+							"name": "singers",
+							"type": "ArtistDto[]",
+							"description": "演唱者列表"
 						},
 						{
 							"name": "song_name",
 							"type": "String",
-							"description": "歌曲名",
-							"required": true
+							"description": "歌曲名"
 						},
 						{
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "地域"
+								},
+								{
+									"name": "gender",
+									"type": "String",
+									"description": "性别"
+								},
+								{
+									"name": "alias",
+									"type": "String",
+									"description": "别名"
+								},
+								{
+									"name": "artist_name",
+									"type": "String",
+									"description": "艺人名"
+								},
+								{
+									"name": "artist_logo",
+									"type": "String",
+									"description": "艺人头像"
+								},
+								{
+									"name": "artist_id",
+									"type": "Number",
+									"description": "艺人id"
+								}
+							],
 							"name": "composers",
 							"type": "ArtistDto[]",
-							"description": "作曲人列表",
-							"required": true,
+							"description": "作曲人列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "地域",
-									"required": true
+									"description": "地域"
 								},
 								{
 									"name": "gender",
 									"type": "String",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "alias",
 									"type": "String",
-									"description": "别名",
-									"required": true
+									"description": "别名"
 								},
 								{
 									"name": "artist_name",
 									"type": "String",
-									"description": "艺人名",
-									"required": true
+									"description": "艺人名"
 								},
 								{
 									"name": "artist_logo",
 									"type": "String",
-									"description": "艺人头像",
-									"required": true
+									"description": "艺人头像"
 								},
 								{
 									"name": "artist_id",
 									"type": "Number",
-									"description": "艺人id",
-									"required": true
+									"description": "艺人id"
 								}
-							]
-						},
-						{
+							],
 							"name": "artists",
 							"type": "ArtistDto[]",
-							"description": "专辑艺人",
-							"required": true,
-							"subParams": [
-								{
-									"name": "area",
-									"type": "String",
-									"description": "地域",
-									"required": true
-								},
-								{
-									"name": "gender",
-									"type": "String",
-									"description": "性别",
-									"required": true
-								},
-								{
-									"name": "alias",
-									"type": "String",
-									"description": "别名",
-									"required": true
-								},
-								{
-									"name": "artist_name",
-									"type": "String",
-									"description": "艺人名",
-									"required": true
-								},
-								{
-									"name": "artist_logo",
-									"type": "String",
-									"description": "艺人头像",
-									"required": true
-								},
-								{
-									"name": "artist_id",
-									"type": "Number",
-									"description": "艺人id",
-									"required": true
-								}
-							]
+							"description": "专辑艺人"
 						},
 						{
-							"name": "album",
-							"type": "AlbumDto",
-							"description": "专辑信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "album_logo",
 									"type": "String",
-									"description": "专辑封面",
-									"required": true
+									"description": "专辑封面"
 								},
 								{
 									"name": "album_name",
 									"type": "String",
-									"description": "专辑名",
-									"required": true
+									"description": "专辑名"
 								},
 								{
 									"name": "sub_name",
 									"type": "String",
-									"description": "副标题",
-									"required": true
+									"description": "副标题"
 								},
 								{
 									"name": "album_status",
 									"type": "String",
-									"description": "专辑状态 1-已发布 0-未发布",
-									"required": true
+									"description": "专辑状态 1-已发布 0-未发布"
 								},
 								{
 									"name": "gmt_publish",
 									"type": "String",
-									"description": "专辑发行时间",
-									"required": true
+									"description": "专辑发行时间"
 								},
 								{
 									"name": "album_id",
 									"type": "Number",
-									"description": "专辑id",
-									"required": true
+									"description": "专辑id"
 								},
 								{
 									"name": "language",
 									"type": "String",
-									"description": "语种",
-									"required": true
+									"description": "语种"
 								}
-							]
+							],
+							"name": "album",
+							"type": "AlbumDto",
+							"description": "专辑信息"
 						},
 						{
+							"subParams": [
+								{
+									"name": "artist_id",
+									"type": "Number",
+									"description": "艺人id"
+								},
+								{
+									"name": "artist_logo",
+									"type": "String",
+									"description": "艺人头像"
+								},
+								{
+									"name": "artist_name",
+									"type": "String",
+									"description": "艺人名"
+								},
+								{
+									"name": "alias",
+									"type": "String",
+									"description": "别名"
+								},
+								{
+									"name": "gender",
+									"type": "String",
+									"description": "性别"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "地域"
+								}
+							],
 							"name": "songwriters",
 							"type": "ArtistDto[]",
-							"description": "作词人列表",
-							"required": true,
+							"description": "作词人列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "artist_id",
 									"type": "Number",
-									"description": "艺人id",
-									"required": true
+									"description": "艺人id"
 								},
 								{
 									"name": "artist_logo",
 									"type": "String",
-									"description": "艺人头像",
-									"required": true
+									"description": "艺人头像"
 								},
 								{
 									"name": "artist_name",
 									"type": "String",
-									"description": "艺人名",
-									"required": true
+									"description": "艺人名"
 								},
 								{
 									"name": "alias",
 									"type": "String",
-									"description": "别名",
-									"required": true
+									"description": "别名"
 								},
 								{
 									"name": "gender",
 									"type": "String",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "area",
 									"type": "String",
-									"description": "地域",
-									"required": true
+									"description": "地域"
 								}
-							]
-						},
-						{
+							],
 							"name": "producers",
 							"type": "ArtistDto[]",
-							"description": "制作人列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "artist_id",
-									"type": "Number",
-									"description": "艺人id",
-									"required": true
-								},
-								{
-									"name": "artist_logo",
-									"type": "String",
-									"description": "艺人头像",
-									"required": true
-								},
-								{
-									"name": "artist_name",
-									"type": "String",
-									"description": "艺人名",
-									"required": true
-								},
-								{
-									"name": "alias",
-									"type": "String",
-									"description": "别名",
-									"required": true
-								},
-								{
-									"name": "gender",
-									"type": "String",
-									"description": "性别",
-									"required": true
-								},
-								{
-									"name": "area",
-									"type": "String",
-									"description": "地域",
-									"required": true
-								}
-							]
+							"description": "制作人列表"
 						},
 						{
-							"name": "tags",
-							"type": "TagLink[]",
-							"description": "标签列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "parent",
-									"type": "TagCatLink",
-									"description": "tag直属类目",
-									"required": true,
 									"subParams": [
 										{
-											"name": "parent",
-											"type": "TagCatLink",
-											"description": "tag根类目",
-											"required": true,
 											"subParams": [
 												{
 													"name": "code",
 													"type": "String",
-													"description": "根类目code",
-													"required": true
+													"description": "根类目code"
 												},
 												{
 													"name": "name_cn",
 													"type": "String",
-													"description": "根类目中文名",
-													"required": true
+													"description": "根类目中文名"
 												},
 												{
 													"name": "description",
 													"type": "String",
-													"description": "描述",
-													"required": true
+													"description": "描述"
 												},
 												{
 													"name": "pid",
 													"type": "Number",
-													"description": "父类目 根类目没有父类目，该字段为0",
-													"required": true
+													"description": "父类目 根类目没有父类目，该字段为0"
 												},
 												{
 													"name": "name_en",
 													"type": "String",
-													"description": "根类目英文名",
-													"required": true
+													"description": "根类目英文名"
 												},
 												{
 													"name": "id",
 													"type": "Number",
-													"description": "根类目id",
-													"required": true
+													"description": "根类目id"
 												}
-											]
+											],
+											"name": "parent",
+											"type": "TagCatLink",
+											"description": "tag根类目"
 										},
 										{
 											"name": "code",
 											"type": "String",
-											"description": "直属类目code",
-											"required": true
+											"description": "直属类目code"
 										},
 										{
 											"name": "name_cn",
 											"type": "String",
-											"description": "直属类目中文名",
-											"required": true
+											"description": "直属类目中文名"
 										},
 										{
 											"name": "description",
 											"type": "String",
-											"description": "直属类目描述",
-											"required": true
+											"description": "直属类目描述"
 										},
 										{
 											"name": "pid",
 											"type": "Number",
-											"description": "直属类目根类目，如果为0则该类目为根类目",
-											"required": true
+											"description": "直属类目根类目，如果为0则该类目为根类目"
 										},
 										{
 											"name": "name_en",
 											"type": "String",
-											"description": "直属类目英文名",
-											"required": true
+											"description": "直属类目英文名"
 										},
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "直属类目id",
-											"required": true
+											"description": "直属类目id"
 										}
-									]
+									],
+									"name": "parent",
+									"type": "TagCatLink",
+									"description": "tag直属类目"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "tag code(唯一标识一个tag)",
-									"required": true
+									"description": "tag code(唯一标识一个tag)"
 								},
 								{
 									"name": "name_cn",
 									"type": "String",
-									"description": "tag名称",
-									"required": true
+									"description": "tag名称"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "tag描述",
-									"required": true
+									"description": "tag描述"
 								},
 								{
 									"name": "pid",
 									"type": "Number",
-									"description": "父类目id",
-									"required": true
+									"description": "父类目id"
 								},
 								{
 									"name": "name_en",
 									"type": "String",
-									"description": "tag英文名",
-									"required": true
+									"description": "tag英文名"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "tag id(唯一标识一个tag)",
-									"required": true
+									"description": "tag id(唯一标识一个tag)"
 								}
-							]
+							],
+							"name": "tags",
+							"type": "TagLink[]",
+							"description": "标签列表"
 						},
 						{
 							"name": "duration",
 							"type": "Number",
-							"description": "歌曲时长（单位毫秒），没有对应的音频文件时为0",
-							"required": true
+							"description": "歌曲时长（单位毫秒），没有对应的音频文件时为0"
 						},
 						{
 							"name": "copyright_status",
 							"type": "Number",
-							"description": "版权状态",
-							"required": true
+							"description": "版权状态"
 						},
 						{
-							"name": "arrangements",
-							"type": "ArtistDto[]",
-							"description": "编曲人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "地域",
-									"required": true
+									"description": "地域"
 								},
 								{
 									"name": "gender",
 									"type": "String",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "alias",
 									"type": "String",
-									"description": "别名",
-									"required": true
+									"description": "别名"
 								},
 								{
 									"name": "artist_name",
 									"type": "String",
-									"description": "艺人名",
-									"required": true
+									"description": "艺人名"
 								},
 								{
 									"name": "artist_logo",
 									"type": "String",
-									"description": "艺人头像",
-									"required": true
+									"description": "艺人头像"
 								},
 								{
 									"name": "artist_id",
 									"type": "Number",
-									"description": "艺人id",
-									"required": true
+									"description": "艺人id"
 								}
-							]
+							],
+							"name": "arrangements",
+							"type": "ArtistDto[]",
+							"description": "编曲人列表"
 						},
 						{
-							"name": "lyrics",
-							"type": "LyricDto[]",
-							"description": "歌词列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "lyric_type",
 									"type": "String",
-									"description": "歌词类型 TXT LRC TRC TLRC TTRC",
-									"required": true
+									"description": "歌词类型 TXT LRC TRC TLRC TTRC"
 								},
 								{
 									"name": "lyric_id",
 									"type": "Number",
-									"description": "歌词id",
-									"required": true
+									"description": "歌词id"
 								},
 								{
 									"name": "lyric_url",
 									"type": "String",
-									"description": "歌词地址",
-									"required": true
+									"description": "歌词地址"
 								}
-							]
+							],
+							"name": "lyrics",
+							"type": "LyricDto[]",
+							"description": "歌词列表"
 						},
 						{
 							"name": "song_sub_name",
 							"type": "String",
-							"description": "歌曲副标题",
-							"required": true
+							"description": "歌曲副标题"
 						},
 						{
 							"name": "song_id",
 							"type": "Number",
-							"description": "歌曲id",
-							"required": true
+							"description": "歌曲id"
 						},
 						{
 							"name": "publish_status",
 							"type": "Number",
-							"description": "歌曲发布状态, 1-已发布, 0-未发布",
-							"required": true
+							"description": "歌曲发布状态, 1-已发布, 0-未发布"
 						}
-					]
+					],
+					"name": "song_list",
+					"type": "SongInfoDto[]",
+					"description": "歌曲列表"
 				},
 				{
-					"name": "paging",
-					"type": "PagingVo",
-					"description": "分页信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pages",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "count",
 							"type": "Number",
-							"description": "总歌曲数",
-							"required": true
+							"description": "总歌曲数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页展示数",
-							"required": true
+							"description": "每页展示数"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "页码",
-							"required": true
+							"description": "页码"
 						}
-					]
+					],
+					"name": "paging",
+					"type": "PagingVo",
+					"description": "分页信息"
 				}
-			]
+			],
+			"name": "songs",
+			"type": "Page",
+			"description": "返回的歌曲信息"
 		},
 		{
-			"name": "result_code",
-			"type": "ResultCode",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "result message",
-					"required": true
+					"description": "result message"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "系统自动生成"
 		},
 		{
-			"name": "collect",
-			"type": "CollectDto",
-			"description": "歌单详情",
 			"subParams": [
 				{
 					"name": "collect_id",
 					"type": "Number",
-					"description": "歌单id",
-					"required": true
+					"description": "歌单id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "歌单名",
-					"required": true
+					"description": "歌单名"
 				},
 				{
 					"name": "description",
 					"type": "String",
-					"description": "描述",
-					"required": true
+					"description": "描述"
 				},
 				{
 					"name": "theme",
 					"type": "String",
-					"description": "主题",
-					"required": true
+					"description": "主题"
 				},
 				{
 					"name": "partner_id",
 					"type": "Number",
-					"description": "业务方id",
-					"required": true
+					"description": "业务方id"
 				},
 				{
 					"name": "scene",
 					"type": "String",
-					"description": "场景",
-					"required": true
+					"description": "场景"
 				}
-			]
+			],
+			"name": "collect",
+			"type": "CollectDto",
+			"description": "歌单详情"
 		}
-	]
+	],
+	"name": "xiami.content.songs.collect.get",
+	"apiChineseName": "获取歌单详情接口",
+	"description": "根据歌单id，获取歌单详情",
+	"id": 53739
 }

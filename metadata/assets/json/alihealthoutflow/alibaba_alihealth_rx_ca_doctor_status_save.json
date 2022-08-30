@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "note",
+					"type": "String",
+					"description": "审核拒绝原因/证书信息"
+				},
+				{
+					"name": "process",
+					"type": "String",
+					"description": "用户同步状态 0：身份审核通过 1：证书签发 2：设置签章 3：用户注销 4：申请拒绝 5：用户停用 6：修改手机号 7：用户启用 9：用户删除"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "第三方厂商标识（必填）"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "医网信医师唯一标识",
+					"required": true
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "整体参数签名值"
+				},
+				{
+					"name": "stamp",
+					"type": "String",
+					"description": "仅当process为2时，会回调签章图片base64"
+				},
+				{
+					"name": "phone_num",
+					"type": "String",
+					"description": "用户手机号"
+				},
+				{
+					"name": "time",
+					"type": "String",
+					"description": "操作时间，yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "stamp_status",
+					"type": "String",
+					"description": "仅当process为2时，会回调签章状态 10：待审核 11：签章审核通过"
+				},
+				{
+					"name": "service_id",
+					"type": "Number",
+					"description": "订阅服务ID（必填）"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "模板ID（必填）"
+				}
+			],
+			"name": "doctor_status_dto",
+			"type": "DoctorStatusDTO",
+			"description": "入参实体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "出参"
+		},
+		{
+			"name": "exception_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "exception_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.rx.ca.doctor.status.save",
+	"apiChineseName": "ca认证获取医师认证结果",
+	"description": "ca认证获取医师认证结果",
+	"id": 60426
+}

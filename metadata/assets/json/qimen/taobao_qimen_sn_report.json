@@ -1,12 +1,6 @@
 {
-	"id": 26791,
-	"name": "taobao.qimen.sn.report",
-	"apiChineseName": "发货单SN通知接口",
-	"description": "WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "SnReportRequest",
 			"subParams": [
 				{
 					"name": "totalPage",
@@ -27,9 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "发货单信息",
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -64,12 +55,12 @@
 							"type": "String",
 							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不会 被重复处理;条件必填;条件为一单需要多次确认时)"
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息"
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "商品列表",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -88,20 +79,23 @@
 							"description": "商品序列号",
 							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品列表"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "SnReportRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -121,7 +115,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.sn.report",
+	"apiChineseName": "发货单SN通知接口",
+	"description": "WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP",
+	"id": 26791
 }

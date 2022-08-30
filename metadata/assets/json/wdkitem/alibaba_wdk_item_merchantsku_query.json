@@ -1,8 +1,4 @@
 {
-	"id": 30644,
-	"name": "alibaba.wdk.item.merchantsku.query",
-	"apiChineseName": "商家商品信息查询",
-	"description": "商家商品信息查询",
 	"requestParams": [
 		{
 			"name": "sku_code",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
@@ -53,7 +46,14 @@
 					"description": "code",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.merchantsku.query",
+	"apiChineseName": "商家商品信息查询",
+	"description": "商家商品信息查询",
+	"id": 30644
 }

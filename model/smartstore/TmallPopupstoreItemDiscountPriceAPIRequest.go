@@ -13,7 +13,7 @@ import (
 type TmallPopupstoreItemDiscountPriceAPIRequest struct {
 	model.Params
 	// 商品id列表
-	_itemIds []int64
+	_itemIds []string
 }
 
 // NewTmallPopupstoreItemDiscountPriceRequest 初始化TmallPopupstoreItemDiscountPriceAPIRequest对象
@@ -39,13 +39,13 @@ func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetApiParams() url.Values {
 
 // SetItemIds is ItemIds Setter
 // 商品id列表
-func (r *TmallPopupstoreItemDiscountPriceAPIRequest) SetItemIds(_itemIds []int64) error {
+func (r *TmallPopupstoreItemDiscountPriceAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
 	r.Set("item_ids", _itemIds)
 	return nil
 }
 
 // GetItemIds ItemIds Getter
-func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetItemIds() []int64 {
+func (r TmallPopupstoreItemDiscountPriceAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }

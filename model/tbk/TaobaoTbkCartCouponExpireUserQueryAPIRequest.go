@@ -14,10 +14,10 @@ type TaobaoTbkCartCouponExpireUserQueryAPIRequest struct {
 	model.Params
 	// 规则ID，由接口提供方分配
 	_ruleId string
-	// 每页大小
-	_pageSize int64
 	// 页码，从0开始
 	_pageNum int64
+	// 每页大小
+	_pageSize int64
 }
 
 // NewTaobaoTbkCartCouponExpireUserQueryRequest 初始化TaobaoTbkCartCouponExpireUserQueryAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetRuleId() string {
 	return r._ruleId
 }
 
-// SetPageSize is PageSize Setter
-// 每页大小
-func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
 // SetPageNum is PageNum Setter
 // 页码，从0开始
 func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageNum(_pageNum int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageNum(_pageNum int64
 // GetPageNum PageNum Getter
 func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageNum() int64 {
 	return r._pageNum
+}
+
+// SetPageSize is PageSize Setter
+// 每页大小
+func (r *TaobaoTbkCartCouponExpireUserQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

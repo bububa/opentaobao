@@ -1,8 +1,4 @@
 {
-	"id": 21625,
-	"name": "taobao.fenxiao.productcat.delete",
-	"apiChineseName": "删除产品线",
-	"description": "删除产品线",
 	"requestParams": [
 		{
 			"name": "product_line_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.productcat.delete",
+	"apiChineseName": "删除产品线",
+	"description": "删除产品线",
+	"id": 21625
 }

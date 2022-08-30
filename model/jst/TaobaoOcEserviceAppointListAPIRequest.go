@@ -12,18 +12,18 @@ import (
 // 允许外部的isv通过该接口读取门店预约信息
 type TaobaoOcEserviceAppointListAPIRequest struct {
 	model.Params
-	// 门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
-	_mallCode string
-	// 查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间
-	_startAppointTime string
 	// 买家客户nick(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_customerNick string
 	// 买家客户电话号码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_customerPhone string
 	// 买家客户装修房屋所在的市(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_houseAddressCity string
+	// 门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
+	_mallCode string
 	// 返回结果按预约时间排序，指示升序还是降息，取值asc和desc
 	_sortOrder string
+	// 查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间
+	_startAppointTime string
 	// 预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
 	_code int64
 	// 卖家主账号id
@@ -49,32 +49,6 @@ func (r TaobaoOcEserviceAppointListAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetMallCode is MallCode Setter
-// 门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
-func (r *TaobaoOcEserviceAppointListAPIRequest) SetMallCode(_mallCode string) error {
-	r._mallCode = _mallCode
-	r.Set("mall_code", _mallCode)
-	return nil
-}
-
-// GetMallCode MallCode Getter
-func (r TaobaoOcEserviceAppointListAPIRequest) GetMallCode() string {
-	return r._mallCode
-}
-
-// SetStartAppointTime is StartAppointTime Setter
-// 查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间
-func (r *TaobaoOcEserviceAppointListAPIRequest) SetStartAppointTime(_startAppointTime string) error {
-	r._startAppointTime = _startAppointTime
-	r.Set("start_appoint_time", _startAppointTime)
-	return nil
-}
-
-// GetStartAppointTime StartAppointTime Getter
-func (r TaobaoOcEserviceAppointListAPIRequest) GetStartAppointTime() string {
-	return r._startAppointTime
 }
 
 // SetCustomerNick is CustomerNick Setter
@@ -116,6 +90,19 @@ func (r TaobaoOcEserviceAppointListAPIRequest) GetHouseAddressCity() string {
 	return r._houseAddressCity
 }
 
+// SetMallCode is MallCode Setter
+// 门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)
+func (r *TaobaoOcEserviceAppointListAPIRequest) SetMallCode(_mallCode string) error {
+	r._mallCode = _mallCode
+	r.Set("mall_code", _mallCode)
+	return nil
+}
+
+// GetMallCode MallCode Getter
+func (r TaobaoOcEserviceAppointListAPIRequest) GetMallCode() string {
+	return r._mallCode
+}
+
 // SetSortOrder is SortOrder Setter
 // 返回结果按预约时间排序，指示升序还是降息，取值asc和desc
 func (r *TaobaoOcEserviceAppointListAPIRequest) SetSortOrder(_sortOrder string) error {
@@ -127,6 +114,19 @@ func (r *TaobaoOcEserviceAppointListAPIRequest) SetSortOrder(_sortOrder string) 
 // GetSortOrder SortOrder Getter
 func (r TaobaoOcEserviceAppointListAPIRequest) GetSortOrder() string {
 	return r._sortOrder
+}
+
+// SetStartAppointTime is StartAppointTime Setter
+// 查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间
+func (r *TaobaoOcEserviceAppointListAPIRequest) SetStartAppointTime(_startAppointTime string) error {
+	r._startAppointTime = _startAppointTime
+	r.Set("start_appoint_time", _startAppointTime)
+	return nil
+}
+
+// GetStartAppointTime StartAppointTime Getter
+func (r TaobaoOcEserviceAppointListAPIRequest) GetStartAppointTime() string {
+	return r._startAppointTime
 }
 
 // SetCode is Code Setter

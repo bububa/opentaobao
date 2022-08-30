@@ -14,7 +14,7 @@ type AlibabaAlihealthDrugKytUploadrelationAPIRequest struct {
 	model.Params
 	// affirmFlag
 	_affirmFlag string
-	// fileContent
+	// fileContent(可不添)
 	_fileContent string
 	// 加密之后的文件内容字符串
 	_fileContentString string
@@ -61,7 +61,7 @@ func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetAffirmFlag() string 
 }
 
 // SetFileContent is FileContent Setter
-// fileContent
+// fileContent(可不添)
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContent(_fileContent string) error {
 	r._fileContent = _fileContent
 	r.Set("file_content", _fileContent)

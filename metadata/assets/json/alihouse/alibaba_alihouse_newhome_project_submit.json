@@ -1,14 +1,6 @@
 {
-	"id": 55941,
-	"name": "alibaba.alihouse.newhome.project.submit",
-	"apiChineseName": "提交楼盘信息",
-	"description": "提交楼盘信息",
 	"requestParams": [
 		{
-			"name": "ebbas_project_dto",
-			"type": "EbbasProjectDto",
-			"description": "楼盘对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "e_code",
@@ -58,7 +50,7 @@
 				},
 				{
 					"name": "tag_codes",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "标签码",
 					"required": true
 				},
@@ -89,19 +81,25 @@
 				},
 				{
 					"name": "estate_types",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "物业类型,多选",
 					"required": true
 				},
 				{
 					"name": "property_rights_years_codes",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "产权年限码"
 				},
 				{
 					"name": "building_area",
 					"type": "String",
 					"description": "平均建筑面积"
+				},
+				{
+					"name": "decoration_standard_codes",
+					"type": "String[]",
+					"description": "装修类型，参见枚举",
+					"required": true
 				},
 				{
 					"name": "project_detail_address",
@@ -302,18 +300,18 @@
 				},
 				{
 					"name": "building_categorys",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "建筑类别"
 				},
 				{
 					"name": "building_types",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "建筑类型",
 					"required": true
 				},
 				{
 					"name": "house_types",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "房屋类型",
 					"required": true
 				},
@@ -524,9 +522,6 @@
 					"description": "营销方式"
 				},
 				{
-					"name": "layouts",
-					"type": "SyncProjectLayoutDto[]",
-					"description": "户型对象列表",
 					"subParams": [
 						{
 							"name": "room",
@@ -589,14 +584,28 @@
 							"name": "description",
 							"type": "String",
 							"description": "描述"
+						},
+						{
+							"name": "is_main_layout",
+							"type": "Number",
+							"description": "是否是主力户型"
+						},
+						{
+							"name": "layout_label",
+							"type": "String",
+							"description": "户型标签"
+						},
+						{
+							"name": "sales_status",
+							"type": "Number",
+							"description": "销售状态"
 						}
-					]
+					],
+					"name": "layouts",
+					"type": "SyncProjectLayoutDto[]",
+					"description": "户型对象列表"
 				},
 				{
-					"name": "pictures",
-					"type": "ProjectPictureDto[]",
-					"description": "图片对象列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "outer_picture_id",
@@ -635,8 +644,22 @@
 							"name": "outer_layout_id",
 							"type": "String",
 							"description": "外部户型ID"
+						},
+						{
+							"name": "is_focus",
+							"type": "Number",
+							"description": "是否是焦点图"
+						},
+						{
+							"name": "is_cover",
+							"type": "Number",
+							"description": "是否是封面图"
 						}
-					]
+					],
+					"name": "pictures",
+					"type": "ProjectPictureDto[]",
+					"description": "图片对象列表",
+					"required": true
 				},
 				{
 					"name": "is_test",
@@ -645,70 +668,95 @@
 					"required": true
 				},
 				{
-					"name": "decoration_standard_codes",
-					"type": "Number[]",
-					"description": "装修类型，参见枚举",
-					"required": true
-				},
-				{
 					"name": "parking_number_desc",
 					"type": "String",
 					"description": "车位总数描述"
+				},
+				{
+					"name": "function_id",
+					"type": "String",
+					"description": "功能区id"
+				},
+				{
+					"name": "temp_city_id",
+					"type": "Number",
+					"description": "城市ID-临时"
+				},
+				{
+					"name": "temp_area_id",
+					"type": "Number",
+					"description": "区域ID-临时"
+				},
+				{
+					"name": "temp_function_id",
+					"type": "Number",
+					"description": "功能区ID-临时"
+				},
+				{
+					"name": "temp_module_id",
+					"type": "Number",
+					"description": "板块ID-临时"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
 				}
-			]
+			],
+			"name": "ebbas_project_dto",
+			"type": "EbbasProjectDto",
+			"description": "楼盘对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回结果体",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "EbbasProjectSubmitVO",
-					"description": "接口返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "project_code",
 							"type": "String",
-							"description": "楼盘code",
-							"required": true
+							"description": "楼盘code"
 						},
 						{
 							"name": "e_code",
 							"type": "String",
-							"description": "楼盘e码",
-							"required": true
+							"description": "楼盘e码"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "外部id",
-							"required": true
+							"description": "外部id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "EbbasProjectSubmitVO",
+					"description": "接口返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果体"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.project.submit",
+	"apiChineseName": "提交楼盘信息",
+	"description": "提交楼盘信息",
+	"id": 55941
 }

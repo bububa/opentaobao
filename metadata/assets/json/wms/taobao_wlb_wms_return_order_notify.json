@@ -1,8 +1,4 @@
 {
-	"id": 25326,
-	"name": "taobao.wlb.wms.return.order.notify",
-	"apiChineseName": "销售退货通知",
-	"description": "销售退货通知",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -45,9 +41,6 @@
 			"description": "买家昵称"
 		},
 		{
-			"name": "sender_info",
-			"type": "Senderinfowlbwmsreturnordernotify",
-			"description": "发件人信息",
 			"subParams": [
 				{
 					"name": "sender_zip_code",
@@ -94,12 +87,12 @@
 					"type": "String",
 					"description": "发件人电话"
 				}
-			]
+			],
+			"name": "sender_info",
+			"type": "Senderinfowlbwmsreturnordernotify",
+			"description": "发件人信息"
 		},
 		{
-			"name": "receiver_info",
-			"type": "Receiverinfowlbwmsreturnordernotify",
-			"description": "收件人信息",
 			"subParams": [
 				{
 					"name": "receiver_zip_code",
@@ -151,18 +144,14 @@
 					"type": "String",
 					"description": "收件人名称"
 				}
-			]
+			],
+			"name": "receiver_info",
+			"type": "Receiverinfowlbwmsreturnordernotify",
+			"description": "收件人信息"
 		},
 		{
-			"name": "order_item_list",
-			"type": "Orderitemlistwlbwmsreturnordernotify[]",
-			"description": "商品信息列表",
-			"maxListSize": 50000,
 			"subParams": [
 				{
-					"name": "order_item",
-					"type": "Orderitemwlbwmsreturnordernotify",
-					"description": "1",
 					"subParams": [
 						{
 							"name": "order_item_id",
@@ -199,9 +188,16 @@
 							"type": "String",
 							"description": "商品名称"
 						}
-					]
+					],
+					"name": "order_item",
+					"type": "Orderitemwlbwmsreturnordernotify",
+					"description": "1"
 				}
-			]
+			],
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsreturnordernotify[]",
+			"description": "商品信息列表",
+			"maxListSize": 50000
 		},
 		{
 			"name": "extend_fields",
@@ -265,5 +261,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.return.order.notify",
+	"apiChineseName": "销售退货通知",
+	"description": "销售退货通知",
+	"id": 25326
 }

@@ -1,8 +1,4 @@
 {
-	"id": 24455,
-	"name": "taobao.oc.trades.bytag.get",
-	"apiChineseName": "标签查询订单",
-	"description": "根据标签查询订单编号",
 	"requestParams": [
 		{
 			"name": "page_size",
@@ -38,5 +34,9 @@
 			"type": "Number",
 			"description": "总数"
 		}
-	]
+	],
+	"name": "taobao.oc.trades.bytag.get",
+	"apiChineseName": "标签查询订单",
+	"description": "根据标签查询订单编号",
+	"id": 24455
 }

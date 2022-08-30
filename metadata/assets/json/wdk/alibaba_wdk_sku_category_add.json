@@ -1,14 +1,6 @@
 {
-	"id": 38944,
-	"name": "alibaba.wdk.sku.category.add",
-	"apiChineseName": "商家类目新增接口",
-	"description": "商家类目新增接口",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CategoryDo",
-			"description": "类目新增请求模型",
-			"required": true,
 			"subParams": [
 				{
 					"name": "code",
@@ -41,40 +33,44 @@
 					"type": "Number",
 					"description": "类目排序值"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CategoryDo",
+			"description": "类目新增请求模型",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口返回成功标志",
-					"required": true
+					"description": "接口返回成功标志"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码（只有有异常才有值）",
-					"required": true
+					"description": "错误码（只有有异常才有值）"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息（只有有异常才有值）",
-					"required": true
+					"description": "错误信息（只有有异常才有值）"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "调用成功时的返回类目code",
-					"required": true
+					"description": "调用成功时的返回类目code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.category.add",
+	"apiChineseName": "商家类目新增接口",
+	"description": "商家类目新增接口",
+	"id": 38944
 }

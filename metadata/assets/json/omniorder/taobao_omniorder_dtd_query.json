@@ -1,8 +1,4 @@
 {
-	"id": 31871,
-	"name": "taobao.omniorder.dtd.query",
-	"apiChineseName": "门店自送根据核销码查订单",
-	"description": "门店自送根据核销码码查询订单信息",
 	"requestParams": [
 		{
 			"name": "code",
@@ -18,22 +14,25 @@
 			"description": "错误码，为0表示成功，非0表示失败"
 		},
 		{
-			"name": "message",
-			"type": "String",
-			"description": "错误信息"
-		},
-		{
-			"name": "data",
-			"type": "Door2doorQueryResult",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "main_order_id",
 					"type": "Number",
-					"description": "码对应的淘宝主订单ID",
-					"required": true
+					"description": "码对应的淘宝主订单ID"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Door2doorQueryResult",
+			"description": "data"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.omniorder.dtd.query",
+	"apiChineseName": "门店自送根据核销码查订单",
+	"description": "门店自送根据核销码码查询订单信息",
+	"id": 31871
 }

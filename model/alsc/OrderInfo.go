@@ -88,6 +88,8 @@ type OrderInfo struct {
 	OutSeller *OrderUser `json:"out_seller,omitempty" xml:"out_seller,omitempty"`
 	// 订单实收金额，单位分
 	ActualFee int64 `json:"actual_fee,omitempty" xml:"actual_fee,omitempty"`
+	// 附加费总金额，如餐盒，
+	AttachTotalFee int64 `json:"attach_total_fee,omitempty" xml:"attach_total_fee,omitempty"`
 	// 就餐人数
 	DinnerPersons int64 `json:"dinner_persons,omitempty" xml:"dinner_persons,omitempty"`
 	// 下单时间
@@ -96,12 +98,10 @@ type OrderInfo struct {
 	PromoFee int64 `json:"promo_fee,omitempty" xml:"promo_fee,omitempty"`
 	// 整单抹零金额，单位分
 	ScrapFee int64 `json:"scrap_fee,omitempty" xml:"scrap_fee,omitempty"`
-	// 订单总金额，单位分
-	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
-	// 附加费总金额，如餐盒，
-	AttachTotalFee int64 `json:"attach_total_fee,omitempty" xml:"attach_total_fee,omitempty"`
 	// 服务费总金额
 	ServiceTotalFee int64 `json:"service_total_fee,omitempty" xml:"service_total_fee,omitempty"`
 	// 税费总金额
 	TaxTotalFee int64 `json:"tax_total_fee,omitempty" xml:"tax_total_fee,omitempty"`
+	// 订单总金额，单位分
+	TotalFee int64 `json:"total_fee,omitempty" xml:"total_fee,omitempty"`
 }

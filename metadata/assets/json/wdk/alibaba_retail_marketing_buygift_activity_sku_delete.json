@@ -1,34 +1,46 @@
 {
-	"id": 55911,
-	"name": "alibaba.retail.marketing.buygift.activity.sku.delete",
-	"apiChineseName": "删除单品买赠活动商品",
-	"description": "删除单品买赠活动商品信息【同城零售】",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "BuyGiftActivitySkuOperateRequest",
-			"description": "删除买赠活动商品参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "sku_elements",
-					"type": "SkuActivityElementDto[]",
-					"description": "商品元素信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "活动商品编码",
-							"required": true
+							"description": "商品编码，与商品条码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码，与商品编码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"subParams": [
+								{
+									"name": "channel",
+									"type": "String",
+									"description": "渠道编码 枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达"
+								},
+								{
+									"name": "store_ids",
+									"type": "String[]",
+									"description": "渠道对应的门店id列表[\"store001\",\"store002\"]"
+								}
+							],
+							"name": "sku_channel_configs",
+							"type": "SkuChannelConfigDTO[]",
+							"description": "商品渠道配置信息"
 						}
-					]
+					],
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true
 				},
 				{
 					"name": "act_id",
 					"type": "Number",
-					"description": "操作活动的ID",
-					"required": true
+					"description": "操作活动的ID"
 				},
 				{
 					"name": "creator_id",
@@ -41,41 +53,50 @@
 					"type": "String",
 					"description": "操作人Name",
 					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部erp活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "BuyGiftActivitySkuOperateRequest",
+			"description": "删除买赠活动商品参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "正常情况下data返回null",
-					"required": true
+					"description": "正常情况下data返回null"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.buygift.activity.sku.delete",
+	"apiChineseName": "删除单品买赠活动商品",
+	"description": "删除单品买赠活动商品信息【同城零售】",
+	"id": 55911
 }

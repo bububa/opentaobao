@@ -1,8 +1,4 @@
 {
-	"id": 26589,
-	"name": "taobao.mixnick.playtowe",
-	"apiChineseName": "互动mixNick转微淘",
-	"description": "微淘应用的混淆nick转为互动类型混淆nick",
 	"requestParams": [
 		{
 			"name": "mix_mix",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "微淘混淆nick"
 		}
-	]
+	],
+	"name": "taobao.mixnick.playtowe",
+	"apiChineseName": "互动mixNick转微淘",
+	"description": "微淘应用的混淆nick转为互动类型混淆nick",
+	"id": 26589
 }

@@ -1,15 +1,6 @@
 {
-	"id": 32944,
-	"name": "alibaba.lst.pos.open.inventory.syncinventorydata",
-	"apiChineseName": "商品库存修改同步接口(最多20条库存信息)",
-	"description": "商品库存修改同步接口(最多20条库存信息)",
 	"requestParams": [
 		{
-			"name": "inventory_d_t_o_list",
-			"type": "InventoryDto[]",
-			"description": "库存对象列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "operate_type",
@@ -24,6 +15,12 @@
 					"required": true
 				},
 				{
+					"name": "isv_goods_id",
+					"type": "String",
+					"description": "ISV商品Id",
+					"required": true
+				},
+				{
 					"name": "gmt_modified",
 					"type": "Number",
 					"description": "最后修改 精确到毫秒"
@@ -32,12 +29,6 @@
 					"name": "gmt_create",
 					"type": "Number",
 					"description": "创建时间 精确到毫秒",
-					"required": true
-				},
-				{
-					"name": "isv_goods_id",
-					"type": "String",
-					"description": "ISV商品Id",
 					"required": true
 				},
 				{
@@ -66,7 +57,12 @@
 					"type": "String",
 					"description": "设备型号"
 				}
-			]
+			],
+			"name": "inventory_d_t_o_list",
+			"type": "InventoryDto[]",
+			"description": "库存对象列表",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "user_id",
@@ -77,67 +73,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
-					"name": "module_list",
-					"type": "ErrorResult[]",
-					"description": "接口具体返回的业务数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "单个库存操作错误码",
-							"required": true
+							"description": "单个库存操作错误码"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "单个库存操作错误消息",
-							"required": true
+							"description": "单个库存操作错误消息"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个库存操作标志 true：成功 fasle：失败",
-							"required": true
+							"description": "单个库存操作标志 true：成功 fasle：失败"
 						},
 						{
 							"name": "data",
-							"type": "Json",
-							"description": "单个库存处理数据对象",
-							"required": true
+							"type": "String",
+							"description": "单个库存处理数据对象"
 						},
 						{
 							"name": "key",
 							"type": "String",
-							"description": "单个库存isv库存业务主键",
-							"required": true
+							"description": "单个库存isv库存业务主键"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "ErrorResult[]",
+					"description": "接口具体返回的业务数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误误码",
-					"required": true
+					"description": "错误误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "alibaba.lst.pos.open.inventory.syncinventorydata",
+	"apiChineseName": "商品库存修改同步接口(最多20条库存信息)",
+	"description": "商品库存修改同步接口(最多20条库存信息)",
+	"id": 32944
 }

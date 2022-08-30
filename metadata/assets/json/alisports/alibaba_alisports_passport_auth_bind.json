@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "阿里体育业务KEY",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "阿里体育openId",
+			"required": true
+		},
+		{
+			"name": "third_open_id",
+			"type": "String",
+			"description": "合作方openId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "alisp_data",
+					"type": "Boolean",
+					"description": "服务是否成功"
+				},
+				{
+					"name": "alisp_code",
+					"type": "Number",
+					"description": "请求错误码"
+				},
+				{
+					"name": "alisp_msg",
+					"type": "String",
+					"description": "请求错误码描述"
+				}
+			],
+			"name": "result",
+			"type": "AlispResult",
+			"description": "请求结果实体"
+		}
+	],
+	"name": "alibaba.alisports.passport.auth.bind",
+	"apiChineseName": "授权绑定关系接口",
+	"description": "授权回调绑定关系接口，建立阿里体育openId和三方openId的绑定关系",
+	"id": 58375
+}

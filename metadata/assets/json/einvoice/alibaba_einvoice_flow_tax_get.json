@@ -1,204 +1,175 @@
 {
-	"id": 56131,
-	"name": "alibaba.einvoice.flow.tax.get",
-	"apiChineseName": "查询税控开通工单详情",
-	"description": "查询税控开通工单详情，接口返回工单状态、开票商户信息以及税控设备信息。\n场景使用：1、业务前台收到入驻成功消息后，调用此接口查询最终的商户信息和设备信息；2、主动补偿查询：当工单长时间未收到事件通知，可能存在丢消息的情况，此时可主动查询该工单，更新本地工单状态。",
 	"requestParams": [
 		{
 			"name": "flow_id",
 			"type": "String",
 			"description": "入驻开通工单ID",
-			"required": true,
-			"maxLength": 128
+			"maxLength": 128,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "tax_flow_query_result",
-					"type": "TaxFlowQueryResult",
-					"description": "工单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "flow_id",
 							"type": "String",
-							"description": "入驻开通工单ID",
-							"required": true
+							"description": "入驻开通工单ID"
 						},
 						{
 							"name": "flow_status",
 							"type": "String",
-							"description": "入驻开通工单状态：  process: 入驻中；  success: 入驻成功；  closed: 入驻失败（发生退订或驳回工单）",
-							"required": true
+							"description": "入驻开通工单状态：  process: 入驻中；  success: 入驻成功；  closed: 入驻失败（发生退订或驳回工单）"
 						},
 						{
-							"name": "invoice_merchant",
-							"type": "InvoiceMerchantDto",
-							"description": "开票商户信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area",
 									"type": "String",
-									"description": "企业所在区",
-									"required": true
+									"description": "企业所在区"
 								},
 								{
 									"name": "bank_account_id",
 									"type": "String",
-									"description": "开户行账号",
-									"required": true
+									"description": "开户行账号"
 								},
 								{
 									"name": "bank_name",
 									"type": "String",
-									"description": "开户行名称，开户行账号加名称不超出100字符",
-									"required": true
+									"description": "开户行名称，开户行账号加名称不超出100字符"
 								},
 								{
 									"name": "city",
 									"type": "String",
-									"description": "企业所在城市",
-									"required": true
+									"description": "企业所在城市"
 								},
 								{
 									"name": "company_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "company_platform_code",
 									"type": "String",
-									"description": "系统自动生成",
-									"required": true
+									"description": "系统自动生成"
 								},
 								{
 									"name": "company_type",
 									"type": "Number",
-									"description": "企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;",
-									"required": true
+									"description": "企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;"
 								},
 								{
 									"name": "default_item_name",
 									"type": "String",
-									"description": "默认商品名称",
-									"required": true
+									"description": "默认商品名称"
 								},
 								{
 									"name": "default_tax_code",
 									"type": "String",
-									"description": "默认税收分类编码",
-									"required": true
+									"description": "默认税收分类编码"
 								},
 								{
 									"name": "default_tax_rate",
 									"type": "String",
-									"description": "税率，格式为小数",
-									"required": true
+									"description": "税率，格式为小数"
 								},
 								{
 									"name": "detailed_address",
 									"type": "String",
-									"description": "企业地址，当flow_status=success时必选；",
-									"required": true
+									"description": "企业地址，当flow_status=success时必选；"
 								},
 								{
 									"name": "invoice_phone",
 									"type": "String",
-									"description": "企业电话，当flow_status=success时必选；",
-									"required": true
+									"description": "企业电话，当flow_status=success时必选；"
 								},
 								{
 									"name": "payee_checker",
 									"type": "String",
-									"description": "复核人",
-									"required": true
+									"description": "复核人"
 								},
 								{
 									"name": "payee_operator",
 									"type": "String",
-									"description": "默认开票人  当flow_status=success时必选；",
-									"required": true
+									"description": "默认开票人  当flow_status=success时必选；"
 								},
 								{
 									"name": "payee_receiver",
 									"type": "String",
-									"description": "收款人",
-									"required": true
+									"description": "收款人"
 								},
 								{
 									"name": "payee_register_no",
 									"type": "String",
-									"description": "销方纳税人识别号",
-									"required": true
+									"description": "销方纳税人识别号"
 								},
 								{
 									"name": "province",
 									"type": "String",
-									"description": "企业所在省/直辖市",
-									"required": true
+									"description": "企业所在省/直辖市"
 								},
 								{
 									"name": "tax_token",
 									"type": "String",
-									"description": "由阿里发票平台生成的tax_token, 后续通过平店铺授权时需要使用该token, 作为商户的身份认证。",
-									"required": true
+									"description": "由阿里发票平台生成的tax_token, 后续通过平店铺授权时需要使用该token, 作为商户的身份认证。"
 								},
 								{
 									"name": "zero_tax_rate_flag",
 									"type": "String",
-									"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率",
-									"required": true
+									"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率"
 								}
-							]
+							],
+							"name": "invoice_merchant",
+							"type": "InvoiceMerchantDto",
+							"description": "开票商户信息"
 						},
 						{
-							"name": "invoice_order",
-							"type": "InvoiceOrderSimpleDto",
-							"description": "订购单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "device_id",
 									"type": "String",
-									"description": "所绑定的税控设备ID;  入驻成功 \u0026 单机版税控产品时，包含该字段。",
-									"required": true
+									"description": "所绑定的税控设备ID;  入驻成功 \u0026 单机版税控产品时，包含该字段。"
 								},
 								{
 									"name": "order_id",
 									"type": "String",
-									"description": "订购单ID",
-									"required": true
+									"description": "订购单ID"
 								},
 								{
 									"name": "product_code",
 									"type": "String",
-									"description": "税控产品，产品码由中台定义。",
-									"required": true
+									"description": "税控产品，产品码由中台定义。"
 								},
 								{
 									"name": "serv_end_time",
 									"type": "Date",
-									"description": "服务结束时间，格式yyyy-MM-dd HH:mm:ss 当flow_status=success时必选；",
-									"required": true
+									"description": "服务结束时间，格式yyyy-MM-dd HH:mm:ss 当flow_status=success时必选；"
 								},
 								{
 									"name": "serv_start_time",
 									"type": "Date",
-									"description": "服务起始时间，格式yyyy-MM-dd HH:mm:ss  当flow_status=success时必选；",
-									"required": true
+									"description": "服务起始时间，格式yyyy-MM-dd HH:mm:ss  当flow_status=success时必选；"
 								}
-							]
+							],
+							"name": "invoice_order",
+							"type": "InvoiceOrderSimpleDto",
+							"description": "订购单信息"
 						}
-					]
+					],
+					"name": "tax_flow_query_result",
+					"type": "TaxFlowQueryResult",
+					"description": "工单详情"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.flow.tax.get",
+	"apiChineseName": "查询税控开通工单详情",
+	"description": "查询税控开通工单详情，接口返回工单状态、开票商户信息以及税控设备信息。\n场景使用：1、业务前台收到入驻成功消息后，调用此接口查询最终的商户信息和设备信息；2、主动补偿查询：当工单长时间未收到事件通知，可能存在丢消息的情况，此时可主动查询该工单，更新本地工单状态。",
+	"id": 56131
 }

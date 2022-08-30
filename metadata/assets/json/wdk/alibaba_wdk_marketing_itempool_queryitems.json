@@ -1,14 +1,6 @@
 {
-	"id": 31761,
-	"name": "alibaba.wdk.marketing.itempool.queryitems",
-	"apiChineseName": "查询商品池活动下的商品",
-	"description": "查询商品池活动下面的商品",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ActivitySkuQuery",
-			"description": "查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "page",
-					"type": "BasePageQuery",
-					"description": "分页参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_size",
@@ -34,7 +22,11 @@
 							"description": "当前分页，从1开始",
 							"required": true
 						}
-					]
+					],
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页参数",
+					"required": true
 				},
 				{
 					"name": "out_act_id",
@@ -46,84 +38,81 @@
 					"type": "String[]",
 					"description": "需要查询的商品skuCodes"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ActivitySkuQuery",
+			"description": "查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketPageResult",
-			"description": "查询返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "参加当前活动的商品总数",
-					"required": true
+					"description": "参加当前活动的商品总数"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页面大小",
-					"required": true
+					"description": "页面大小"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "item_pool_sku_list",
-					"type": "ItemPoolSku[]",
-					"description": "返回的数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品的skuCode",
-							"required": true
+							"description": "商品的skuCode"
 						},
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "item_shop_relation",
-							"type": "Json",
-							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId",
-							"required": true
+							"type": "String",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId"
 						}
-					]
+					],
+					"name": "item_pool_sku_list",
+					"type": "ItemPoolSku[]",
+					"description": "返回的数据"
 				},
 				{
 					"name": "current",
 					"type": "Number",
-					"description": "当前分页",
-					"required": true
+					"description": "当前分页"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询商品是否成功",
-					"required": true
+					"description": "查询商品是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.queryitems",
+	"apiChineseName": "查询商品池活动下的商品",
+	"description": "查询商品池活动下面的商品",
+	"id": 31761
 }

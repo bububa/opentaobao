@@ -1,31 +1,15 @@
 {
-	"id": 10896,
-	"name": "taobao.wlb.out.inventory.change.notify",
-	"apiChineseName": "外部库存变化通知（企业物流用户使用）",
-	"description": "拥有自有仓的企业物流用户通过该接口把自有仓的库存通知到物流宝，由物流宝维护该库存，控制前台显示库存的准确性。",
 	"requestParams": [
-		{
-			"name": "type",
-			"type": "String",
-			"description": "WLB_ITEM--物流宝商品 IC_ITEM--淘宝商品 IC_SKU--淘宝sku",
-			"required": true
-		},
-		{
-			"name": "op_type",
-			"type": "String",
-			"description": "OUT--出库 IN--入库",
-			"required": true
-		},
-		{
-			"name": "source",
-			"type": "String",
-			"description": "（1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK:盘点 （6）PURCHASE:采购",
-			"required": true
-		},
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "物流宝商品id或前台宝贝id（由type类型决定）",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "WLB_ITEM--物流宝商品 IC_ITEM--淘宝商品 IC_SKU--淘宝sku",
 			"required": true
 		},
 		{
@@ -38,6 +22,18 @@
 			"name": "result_count",
 			"type": "Number",
 			"description": "本次库存变化后库存余额",
+			"required": true
+		},
+		{
+			"name": "op_type",
+			"type": "String",
+			"description": "OUT--出库 IN--入库",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "（1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK:盘点 （6）PURCHASE:采购",
 			"required": true
 		},
 		{
@@ -63,5 +59,9 @@
 			"type": "Date",
 			"description": "库存变化通知成功时间"
 		}
-	]
+	],
+	"name": "taobao.wlb.out.inventory.change.notify",
+	"apiChineseName": "外部库存变化通知（企业物流用户使用）",
+	"description": "拥有自有仓的企业物流用户通过该接口把自有仓的库存通知到物流宝，由物流宝维护该库存，控制前台显示库存的准确性。",
+	"id": 10896
 }

@@ -1,8 +1,4 @@
 {
-	"id": 30850,
-	"name": "alibaba.interact.sensor.ui",
-	"apiChineseName": "基本ui操作",
-	"description": "Weex 基本UI操作",
 	"requestParams": [
 		{
 			"name": "un_named",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "仅作客户端鉴权使用，不会发送接收请求"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.ui",
+	"apiChineseName": "基本ui操作",
+	"description": "Weex 基本UI操作",
+	"id": 30850
 }

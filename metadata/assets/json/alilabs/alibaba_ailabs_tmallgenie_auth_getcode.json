@@ -1,13 +1,6 @@
 {
-	"id": 44924,
-	"name": "alibaba.ailabs.tmallgenie.auth.getcode",
-	"apiChineseName": "获取token",
-	"description": "获取天猫精灵authCode",
 	"requestParams": [
 		{
-			"name": "auth_param",
-			"type": "TopAuthReqDto",
-			"description": "授权参数",
 			"subParams": [
 				{
 					"name": "response_type",
@@ -29,12 +22,12 @@
 					"type": "String",
 					"description": "OAUTH2 state 随意填写"
 				}
-			]
+			],
+			"name": "auth_param",
+			"type": "TopAuthReqDto",
+			"description": "授权参数"
 		},
 		{
-			"name": "device_param",
-			"type": "TopDeviceReqDto",
-			"description": "设备参数",
 			"subParams": [
 				{
 					"name": "device_signature",
@@ -46,7 +39,10 @@
 					"type": "String",
 					"description": "三方设备id"
 				}
-			]
+			],
+			"name": "device_param",
+			"type": "TopDeviceReqDto",
+			"description": "设备参数"
 		}
 	],
 	"responseParams": [
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "授权码 json 串，包含授权码和二维码URL"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.getcode",
+	"apiChineseName": "获取token",
+	"description": "获取天猫精灵authCode",
+	"id": 44924
 }

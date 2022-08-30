@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部改签单号",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为商旅corpId",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_modify_cancel_rq",
+			"type": "BtripFlightModifyCancelRq",
+			"description": "改签取消输入参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "dis_sub_order_id",
+							"type": "String",
+							"description": "外部分销改签订单号"
+						},
+						{
+							"name": "cancel_time",
+							"type": "Date",
+							"description": "改签取消时间"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "改签单的状态"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightModifyCancelRs",
+					"description": "返回模版"
+				},
+				{
+					"name": "result_code\t",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "改签取消输出参数"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.change.cancel",
+	"apiChineseName": "商旅机票改签取消",
+	"description": "商旅机票改签取消",
+	"id": 59519
+}

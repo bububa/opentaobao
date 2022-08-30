@@ -1,13 +1,6 @@
 {
-	"id": 28207,
-	"name": "alibaba.base.order.supplier.notify",
-	"apiChineseName": "阿里通信运营商信息回传",
-	"description": "接收阿里通信流量运营商信息回传",
 	"requestParams": [
 		{
-			"name": "param_flow_suppllier_notify_model",
-			"type": "FlowSuppllierNotifyModel",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -17,6 +10,7 @@
 				},
 				{
 					"name": "ext_info",
+					"type": "String",
 					"description": "扩展信息"
 				},
 				{
@@ -66,40 +60,43 @@
 					"type": "String",
 					"description": "买家ID，用户id"
 				}
-			]
+			],
+			"name": "param_flow_suppllier_notify_model",
+			"type": "FlowSuppllierNotifyModel",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "desc",
-					"required": true
+					"description": "desc"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "处理回传信息是否成功",
-					"required": true
+					"description": "处理回传信息是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.base.order.supplier.notify",
+	"apiChineseName": "阿里通信运营商信息回传",
+	"description": "接收阿里通信流量运营商信息回传",
+	"id": 28207
 }

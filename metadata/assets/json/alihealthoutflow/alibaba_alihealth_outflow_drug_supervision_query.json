@@ -1,13 +1,6 @@
 {
-	"id": 46451,
-	"name": "alibaba.alihealth.outflow.drug.supervision.query",
-	"apiChineseName": "监管平台药品查询",
-	"description": "获取监管平台药品数据",
 	"requestParams": [
 		{
-			"name": "request1",
-			"type": "OuterDrugVo",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "hos_id",
@@ -29,236 +22,207 @@
 					"type": "Date",
 					"description": "最后查询时间"
 				}
-			]
+			],
+			"name": "request1",
+			"type": "OuterDrugVo",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Page",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
-							"name": "pages",
-							"type": "DrugDto[]",
-							"description": "页对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "drug_common_name_py",
 									"type": "String",
-									"description": "药品通用名拼音",
-									"required": true
+									"description": "药品通用名拼音"
 								},
 								{
 									"name": "drug_name_py",
 									"type": "String",
-									"description": "药品名拼音",
-									"required": true
+									"description": "药品名拼音"
 								},
 								{
 									"name": "electric_pres",
 									"type": "Boolean",
-									"description": "是否允许电子处方",
-									"required": true
+									"description": "是否允许电子处方"
 								},
 								{
 									"name": "province_drug_code",
 									"type": "String",
-									"description": "省平台ID",
-									"required": true
+									"description": "省平台ID"
 								},
 								{
 									"name": "indication",
 									"type": "String",
-									"description": "适应症",
-									"required": true
+									"description": "适应症"
 								},
 								{
 									"name": "his_drug_name",
 									"type": "String",
-									"description": "HIS药品名称",
-									"required": true
+									"description": "HIS药品名称"
 								},
 								{
 									"name": "single_dosage_unit",
 									"type": "String",
-									"description": "每次剂量单位",
-									"required": true
+									"description": "每次剂量单位"
 								},
 								{
 									"name": "single_dosage",
 									"type": "String",
-									"description": "每次剂量值",
-									"required": true
+									"description": "每次剂量值"
 								},
 								{
 									"name": "pack_spec_sale_unit",
 									"type": "String",
-									"description": "包装规格--最小销售单位",
-									"required": true
+									"description": "包装规格--最小销售单位"
 								},
 								{
 									"name": "pack_spec_use_unit",
 									"type": "String",
-									"description": "包装规格--最小使用单位",
-									"required": true
+									"description": "包装规格--最小使用单位"
 								},
 								{
 									"name": "pack_spec_amount",
 									"type": "String",
-									"description": "包装规格--包装数量",
-									"required": true
+									"description": "包装规格--包装数量"
 								},
 								{
 									"name": "pack_unit",
 									"type": "String",
-									"description": "包装单位-装量单位",
-									"required": true
+									"description": "包装单位-装量单位"
 								},
 								{
 									"name": "pack_qty",
 									"type": "String",
-									"description": "包装单位-装量值",
-									"required": true
+									"description": "包装单位-装量值"
 								},
 								{
 									"name": "retail_price",
 									"type": "String",
-									"description": "单价",
-									"required": true
+									"description": "单价"
 								},
 								{
 									"name": "medicare_no",
 									"type": "String",
-									"description": "医保编号",
-									"required": true
+									"description": "医保编号"
 								},
 								{
 									"name": "drug_usage_code",
 									"type": "String",
-									"description": "用药途径编码",
-									"required": true
+									"description": "用药途径编码"
 								},
 								{
 									"name": "drug_usage",
 									"type": "String",
-									"description": "用药途径",
-									"required": true
+									"description": "用药途径"
 								},
 								{
 									"name": "frequency_code",
 									"type": "String",
-									"description": "频次编码",
-									"required": true
+									"description": "频次编码"
 								},
 								{
 									"name": "frequency",
 									"type": "String",
-									"description": "频次",
-									"required": true
+									"description": "频次"
 								},
 								{
 									"name": "drug_basic_code",
 									"type": "String",
-									"description": "药品本位码",
-									"required": true
+									"description": "药品本位码"
 								},
 								{
 									"name": "dosage_form",
 									"type": "String",
-									"description": "剂型",
-									"required": true
+									"description": "剂型"
 								},
 								{
 									"name": "approval_number",
 									"type": "String",
-									"description": "国药准字",
-									"required": true
+									"description": "国药准字"
 								},
 								{
 									"name": "manufacture",
 									"type": "String",
-									"description": "生产企业",
-									"required": true
+									"description": "生产企业"
 								},
 								{
 									"name": "pack_spec",
 									"type": "String",
-									"description": "处方展示规格",
-									"required": true
+									"description": "处方展示规格"
 								},
 								{
 									"name": "drug_code",
 									"type": "String",
-									"description": "医院编码",
-									"required": true
+									"description": "医院编码"
 								},
 								{
 									"name": "drug_common_name",
 									"type": "String",
-									"description": "药品通用名",
-									"required": true
+									"description": "药品通用名"
 								},
 								{
 									"name": "drug_name",
 									"type": "String",
-									"description": "商品名",
-									"required": true
+									"description": "商品名"
 								},
 								{
 									"name": "drug_class_code",
 									"type": "String",
-									"description": "药品分类码",
-									"required": true
+									"description": "药品分类码"
 								}
-							]
+							],
+							"name": "pages",
+							"type": "DrugDto[]",
+							"description": "页对象"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "页码",
-							"required": true
+							"description": "页码"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Page",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.drug.supervision.query",
+	"apiChineseName": "监管平台药品查询",
+	"description": "获取监管平台药品数据",
+	"id": 46451
 }

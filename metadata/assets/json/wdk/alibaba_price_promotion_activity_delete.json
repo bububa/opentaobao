@@ -1,8 +1,4 @@
 {
-	"id": 36853,
-	"name": "alibaba.price.promotion.activity.delete",
-	"apiChineseName": "删除档期活动",
-	"description": "删除盒马帮档期活动",
 	"requestParams": [
 		{
 			"name": "outer_promotion_code",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "is_success",
@@ -53,7 +46,14 @@
 					"description": "msg",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.price.promotion.activity.delete",
+	"apiChineseName": "删除档期活动",
+	"description": "删除盒马帮档期活动",
+	"id": 36853
 }

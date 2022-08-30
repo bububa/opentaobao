@@ -1,40 +1,20 @@
 {
-	"id": 25857,
-	"name": "taobao.promotionmisc.common.item.activity.list.get",
-	"apiChineseName": "查询通用单品优惠活动列表",
-	"description": "查询通用单品优惠活动列表。",
 	"requestParams": [
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "分页页码，页码从1开始",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "分页大小，不能超过50",
-			"required": true,
-			"maxValue": 50,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否查询成功"
-		},
-		{
-			"name": "total_count",
-			"type": "Number",
-			"description": "数据总数量"
-		},
-		{
-			"name": "activity_list",
-			"type": "CommonItemActivity []",
-			"description": "营销活动列表",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -62,16 +42,33 @@
 					"description": "活动结束时间"
 				},
 				{
-					"name": "is_user_tag",
-					"type": "Boolean",
-					"description": "是否指定人群标签"
-				},
-				{
 					"name": "user_tag",
 					"type": "String",
 					"description": "人群标签值"
+				},
+				{
+					"name": "is_user_tag",
+					"type": "Boolean",
+					"description": "是否指定人群标签"
 				}
-			]
+			],
+			"name": "activity_list",
+			"type": "CommonItemActivity []",
+			"description": "营销活动列表"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否查询成功"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "数据总数量"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.common.item.activity.list.get",
+	"apiChineseName": "查询通用单品优惠活动列表",
+	"description": "查询通用单品优惠活动列表。",
+	"id": 25857
 }

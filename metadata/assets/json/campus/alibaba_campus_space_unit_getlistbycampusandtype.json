@@ -1,20 +1,7 @@
 {
-	"id": 31928,
-	"name": "alibaba.campus.space.unit.getlistbycampusandtype",
-	"apiChineseName": "根据园区id及TypeId获取空间单元",
-	"description": "根据园区id及TypeId获取空间单元\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService\nHSF方法名称：getListByCampusAndType",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "系统自动生成",
 			"subParams": [
-				{
-					"name": "campus_id",
-					"type": "Number",
-					"description": "园区ID",
-					"required": true
-				},
 				{
 					"name": "campus_code",
 					"type": "String",
@@ -24,13 +11,19 @@
 					"name": "company_id",
 					"type": "Number",
 					"description": "\"\""
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统自动生成"
 		},
 		{
-			"name": "param1",
-			"type": "SpaceUnitQuery",
-			"description": "查询参数封装",
 			"subParams": [
 				{
 					"name": "limit",
@@ -53,120 +46,110 @@
 					"description": "园区ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "SpaceUnitQuery",
+			"description": "查询参数封装"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "ApiReturnningWrap[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "code",
-							"required": true
+							"description": "code"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "typeId",
-							"required": true
+							"description": "typeId"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "last_update_time",
 							"type": "Date",
-							"description": "lastUpdateTime",
-							"required": true
+							"description": "lastUpdateTime"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "version",
 							"type": "String",
-							"description": "version",
-							"required": true
+							"description": "version"
 						},
 						{
 							"name": "space_type",
 							"type": "String",
-							"description": "spaceType",
-							"required": true
+							"description": "spaceType"
 						},
 						{
 							"name": "ft_id",
 							"type": "String",
-							"description": "地图图元id",
-							"required": true
+							"description": "地图图元id"
 						},
 						{
 							"name": "geo_floor_id",
 							"type": "Number",
-							"description": "地图楼层id",
-							"required": true
+							"description": "地图楼层id"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "ApiReturnningWrap[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.unit.getlistbycampusandtype",
+	"apiChineseName": "根据园区id及TypeId获取空间单元",
+	"description": "根据园区id及TypeId获取空间单元\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceUnitApiTopService\nHSF方法名称：getListByCampusAndType",
+	"id": 31928
 }

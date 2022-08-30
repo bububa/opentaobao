@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "outer_tool_id",
+							"type": "String",
+							"description": "外部工具唯一id，如购房登记ID",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部楼盘ID",
+							"required": true
+						},
+						{
+							"name": "outer_tid",
+							"type": "String",
+							"description": "外部货id（外部唯一识别码）"
+						}
+					],
+					"name": "outer_bind_param_dto",
+					"type": "OuterBindParamDTO[]",
+					"description": "绑定对象",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "绑定类型：1.楼盘，8.房源，6.楼栋，7.户型",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "关系是否有效，1-有效，0-无效",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "请求时间戳，精确到毫秒"
+				}
+			],
+			"name": "trade_tool_bind_param_dto",
+			"type": "TradeToolBindParamDTO",
+			"description": "绑定对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_tool_id",
+							"type": "String",
+							"description": "外部工具唯一id，如购房登记ID"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部楼盘和货ID"
+						},
+						{
+							"name": "outer_tid",
+							"type": "String",
+							"description": "外部货id（外部唯一识别码）"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "data",
+					"type": "TradeToolBindResultDTO[]",
+					"description": "data"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "对象"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.trade.tool.bind",
+	"apiChineseName": "批量绑定交易工具",
+	"description": "批量绑定交易工具",
+	"id": 62485
+}

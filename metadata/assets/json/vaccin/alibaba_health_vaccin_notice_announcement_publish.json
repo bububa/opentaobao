@@ -1,8 +1,4 @@
 {
-	"id": 50347,
-	"name": "alibaba.health.vaccin.notice.announcement.publish",
-	"apiChineseName": "支付宝疫苗POV公告通知",
-	"description": "支付宝疫苗POV发布公告提醒信息",
 	"requestParams": [
 		{
 			"name": "pov_no",
@@ -46,11 +42,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "Boolean",
-			"description": "结果"
-		},
-		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "执行是否成功"
@@ -64,6 +55,15 @@
 			"name": "msg_info",
 			"type": "String",
 			"description": "错误描述"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.announcement.publish",
+	"apiChineseName": "支付宝疫苗POV公告通知",
+	"description": "支付宝疫苗POV发布公告提醒信息",
+	"id": 50347
 }

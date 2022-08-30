@@ -1,8 +1,4 @@
 {
-	"id": 40929,
-	"name": "alibaba.ailab.user.token.get",
-	"apiChineseName": "三方账号获取 token",
-	"description": "inside 设备的三方 app，通过 extId、schema 生成 token",
 	"requestParams": [
 		{
 			"name": "merchant_user_id",
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "随机 uuid，token 在5分钟后失效，token 在授权成功后失效；建议每次调用 api 获取最新 token"
 		}
-	]
+	],
+	"name": "alibaba.ailab.user.token.get",
+	"apiChineseName": "三方账号获取 token",
+	"description": "inside 设备的三方 app，通过 extId、schema 生成 token",
+	"id": 40929
 }

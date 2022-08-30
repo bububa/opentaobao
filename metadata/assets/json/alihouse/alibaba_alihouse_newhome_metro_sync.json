@@ -1,15 +1,12 @@
 {
-	"id": 55958,
-	"name": "alibaba.alihouse.newhome.metro.sync",
-	"apiChineseName": "地铁数据同步",
-	"description": "地铁数据同步",
 	"requestParams": [
 		{
-			"name": "base_metro_line_dto",
-			"type": "BaseMetroLineDto",
-			"description": "地铁入参数据",
-			"required": true,
 			"subParams": [
+				{
+					"name": "exit_poi",
+					"type": "String",
+					"description": "站点出口经纬度"
+				},
 				{
 					"name": "business_district",
 					"type": "String",
@@ -79,44 +76,48 @@
 					"description": "是否删除 0 否 1是（默认0）"
 				},
 				{
-					"name": "exit_poi",
-					"type": "String",
-					"description": "站点出口经纬度"
+					"name": "source_type",
+					"type": "Number",
+					"description": "数据源类型（1-新房 2-二手房）"
 				}
-			]
+			],
+			"name": "base_metro_line_dto",
+			"type": "BaseMetroLineDto",
+			"description": "地铁入参数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "外部ID",
-					"required": true
+					"description": "外部ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.metro.sync",
+	"apiChineseName": "地铁数据同步",
+	"description": "地铁数据同步",
+	"id": 55958
 }

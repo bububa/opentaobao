@@ -1,0 +1,322 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划ID列表"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间"
+				},
+				{
+					"name": "effect",
+					"type": "Number",
+					"description": "效果归因周期，支持15，30"
+				}
+			],
+			"name": "campaign_query",
+			"type": "CampaignQueryTopDto",
+			"description": "计划查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "hour_id",
+							"type": "Number",
+							"description": "按小时维度划分的小时ID"
+						},
+						{
+							"name": "log_date",
+							"type": "String",
+							"description": "按天维度划分的日期"
+						},
+						{
+							"name": "ad_pv",
+							"type": "Number",
+							"description": "展现数"
+						},
+						{
+							"name": "click",
+							"type": "Number",
+							"description": "点击数"
+						},
+						{
+							"name": "ctr",
+							"type": "String",
+							"description": "点击率"
+						},
+						{
+							"name": "ecpm",
+							"type": "String",
+							"description": "千次展现成本"
+						},
+						{
+							"name": "charge",
+							"type": "String",
+							"description": "消耗"
+						},
+						{
+							"name": "ecpc",
+							"type": "String",
+							"description": "点击成本"
+						},
+						{
+							"name": "car_num",
+							"type": "Number",
+							"description": "加购量"
+						},
+						{
+							"name": "dir_car_num",
+							"type": "Number",
+							"description": "直接加购量"
+						},
+						{
+							"name": "indir_car_num",
+							"type": "Number",
+							"description": "间接加购量"
+						},
+						{
+							"name": "inshop_item_col_num",
+							"type": "Number",
+							"description": "收藏量"
+						},
+						{
+							"name": "inshop_item_col_car_num_cost",
+							"type": "Number",
+							"description": "收藏加购成本"
+						},
+						{
+							"name": "alipay_inshop_amt",
+							"type": "String",
+							"description": "成交金额"
+						},
+						{
+							"name": "alipay_inshop_num",
+							"type": "Number",
+							"description": "成交笔数"
+						},
+						{
+							"name": "cvr",
+							"type": "String",
+							"description": "成交转化率"
+						},
+						{
+							"name": "roi",
+							"type": "String",
+							"description": "ROI"
+						},
+						{
+							"name": "prepay_inshop_amt",
+							"type": "String",
+							"description": "预售成交笔数"
+						},
+						{
+							"name": "prepay_inshop_num",
+							"type": "Number",
+							"description": "预售成交金额"
+						},
+						{
+							"name": "no_lalipay_inshop_amt_proprtion",
+							"type": "String",
+							"description": "新客成交金额贡献占比"
+						},
+						{
+							"name": "dir_alipay_inshop_num",
+							"type": "Number",
+							"description": "直接成交笔数"
+						},
+						{
+							"name": "dir_alipay_inshop_amt",
+							"type": "String",
+							"description": "直接成交金额"
+						},
+						{
+							"name": "indir_alipay_inshop_num",
+							"type": "Number",
+							"description": "间接成交笔数"
+						},
+						{
+							"name": "indir_alipay_inshop_amt",
+							"type": "String",
+							"description": "间接成交金额"
+						},
+						{
+							"name": "sample_alipay_num",
+							"type": "Number",
+							"description": "派样量"
+						},
+						{
+							"name": "sample_alipay_amt",
+							"type": "String",
+							"description": "派样成交金额"
+						},
+						{
+							"name": "car_num_kuan",
+							"type": "Number",
+							"description": "加购量"
+						},
+						{
+							"name": "dir_car_num_kuan",
+							"type": "Number",
+							"description": "直接加购量"
+						},
+						{
+							"name": "indir_car_num_kuan",
+							"type": "Number",
+							"description": "间接加购量"
+						},
+						{
+							"name": "inshop_item_col_num_kuan",
+							"type": "Number",
+							"description": "收藏量"
+						},
+						{
+							"name": "inshop_item_col_car_num_cost_kuan",
+							"type": "Number",
+							"description": "收藏加购成本"
+						},
+						{
+							"name": "alipay_inshop_amt_kuan",
+							"type": "String",
+							"description": "成交金额"
+						},
+						{
+							"name": "alipay_inshop_num_kuan",
+							"type": "Number",
+							"description": "成交笔数"
+						},
+						{
+							"name": "cvr_kuan",
+							"type": "String",
+							"description": "成交转化率"
+						},
+						{
+							"name": "roi_kuan",
+							"type": "String",
+							"description": "ROI"
+						},
+						{
+							"name": "prepay_inshop_amt_kuan",
+							"type": "String",
+							"description": "预售成交笔数"
+						},
+						{
+							"name": "prepay_inshop_num_kuan",
+							"type": "Number",
+							"description": "预售成交金额"
+						},
+						{
+							"name": "no_lalipay_inshop_amt_proprtion_kuan",
+							"type": "String",
+							"description": "新客成交金额贡献占比"
+						},
+						{
+							"name": "dir_alipay_inshop_num_kuan",
+							"type": "Number",
+							"description": "直接成交笔数"
+						},
+						{
+							"name": "dir_alipay_inshop_amt_kuan",
+							"type": "String",
+							"description": "直接成交金额"
+						},
+						{
+							"name": "indir_alipay_inshop_num_kuan",
+							"type": "Number",
+							"description": "间接成交笔数"
+						},
+						{
+							"name": "indir_alipay_inshop_amt_kuan",
+							"type": "String",
+							"description": "间接成交金额"
+						},
+						{
+							"name": "sample_alipay_num_kuan",
+							"type": "Number",
+							"description": "派样量"
+						},
+						{
+							"name": "sample_alipay_amt_kuan",
+							"type": "String",
+							"description": "派样成交金额"
+						},
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划ID"
+						}
+					],
+					"name": "report_result_top_d_t_o_list",
+					"type": "ReportResultTopDto[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.campaign.campaign.reportpage",
+	"apiChineseName": "获取场景计划的报表数据",
+	"description": "获取场景计划的报表数据。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa",
+	"id": 58970
+}

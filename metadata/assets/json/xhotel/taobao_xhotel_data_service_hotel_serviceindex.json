@@ -1,8 +1,4 @@
 {
-	"id": 38848,
-	"name": "taobao.xhotel.data.service.hotel.serviceindex",
-	"apiChineseName": "酒店服务指数",
-	"description": "酒店服务指数",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -42,117 +38,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "first_result",
-					"type": "TopAdsHtlDataQueryResult",
-					"description": "firstResult",
-					"required": true,
 					"subParams": [
 						{
 							"name": "count",
 							"type": "Number",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
-							"name": "top_ads_htl_service_data_list",
-							"type": "Topadshtlservicedatalist[]",
-							"description": "topAdsHtlServiceDataList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "hid",
 									"type": "Number",
-									"description": "酒店id",
-									"required": true
+									"description": "酒店id"
 								},
 								{
 									"name": "vendor",
 									"type": "String",
-									"description": "渠道名称",
-									"required": true
+									"description": "渠道名称"
 								},
 								{
 									"name": "tel",
 									"type": "String",
-									"description": "电话",
-									"required": true
+									"description": "电话"
 								},
 								{
 									"name": "sales_count_in_cycle",
 									"type": "Number",
-									"description": "有效订单数",
-									"required": true
+									"description": "有效订单数"
 								},
 								{
 									"name": "booking_succ_rate_str",
 									"type": "String",
-									"description": "预定成功率",
-									"required": true
+									"description": "预定成功率"
 								},
 								{
 									"name": "closed_count_in_cycle",
 									"type": "Number",
-									"description": "关闭订单数",
-									"required": true
+									"description": "关闭订单数"
 								},
 								{
 									"name": "no_ord_cnt_in_cycle",
 									"type": "Number",
-									"description": "查无订单数",
-									"required": true
+									"description": "查无订单数"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "酒店名称",
-									"required": true
+									"description": "酒店名称"
 								},
 								{
 									"name": "report_date",
 									"type": "Date",
-									"description": "统计时间",
-									"required": true
+									"description": "统计时间"
 								},
 								{
 									"name": "no_room_cnt_in_cycle",
 									"type": "Number",
-									"description": "到店无房数量",
-									"required": true
+									"description": "到店无房数量"
 								},
 								{
 									"name": "outer_id",
 									"type": "String",
-									"description": "酒店外部编码",
-									"required": true
+									"description": "酒店外部编码"
 								}
-							]
+							],
+							"name": "top_ads_htl_service_data_list",
+							"type": "Topadshtlservicedatalist[]",
+							"description": "topAdsHtlServiceDataList"
 						}
-					]
+					],
+					"name": "first_result",
+					"type": "TopAdsHtlDataQueryResult",
+					"description": "firstResult"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.data.service.hotel.serviceindex",
+	"apiChineseName": "酒店服务指数",
+	"description": "酒店服务指数",
+	"id": 38848
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26019,
-	"name": "taobao.tanx.audit.creative.modify",
-	"apiChineseName": "创意修改接口",
-	"description": "创意修改接口",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.tanx.audit.creative.modify",
+	"apiChineseName": "创意修改接口",
+	"description": "创意修改接口",
+	"id": 26019
 }

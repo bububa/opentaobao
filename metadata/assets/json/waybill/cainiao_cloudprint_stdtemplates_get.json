@@ -1,79 +1,74 @@
 {
-	"id": 26756,
-	"name": "cainiao.cloudprint.stdtemplates.get",
-	"apiChineseName": "获取所有的菜鸟标准电子面单模板",
-	"description": "获取菜鸟标准电子面单模板",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "结果集",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "StandardTemplateResult[]",
-					"description": "所有cp的标准模板",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cp_code",
 							"type": "String",
-							"description": "cp编码",
-							"required": true
+							"description": "cp编码"
 						},
 						{
-							"name": "standard_templates",
-							"type": "StandardTemplateDo[]",
-							"description": "该cp的所有标准模板",
-							"required": true,
 							"subParams": [
 								{
 									"name": "standard_template_id",
 									"type": "Number",
-									"description": "模板id",
-									"required": true
+									"description": "模板id"
 								},
 								{
 									"name": "standard_template_name",
 									"type": "String",
-									"description": "模板名称",
-									"required": true
+									"description": "模板名称"
 								},
 								{
 									"name": "standard_template_url",
 									"type": "String",
-									"description": "模板url",
-									"required": true
+									"description": "模板url"
 								},
 								{
 									"name": "standard_waybill_type",
 									"type": "Number",
-									"description": "1 快递标准面单 ,2 快递三联面单, 3 快递便携式三联单, 4 快运标准面单, 5 快运三联面单, 6 快递一联单",
-									"required": true
+									"description": "1 快递标准面单 ,2 快递三联面单, 3 快递便携式三联单, 4 快运标准面单, 5 快运三联面单, 6 快递一联单"
+								},
+								{
+									"name": "brand_code",
+									"type": "String",
+									"description": "如果没有 brandCode,则为 default"
 								}
-							]
+							],
+							"name": "standard_templates",
+							"type": "StandardTemplateDo[]",
+							"description": "该cp的所有标准模板"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "StandardTemplateResult[]",
+					"description": "所有cp的标准模板"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "结果集"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.stdtemplates.get",
+	"apiChineseName": "获取所有的菜鸟标准电子面单模板",
+	"description": "获取菜鸟标准电子面单模板",
+	"id": 26756
 }

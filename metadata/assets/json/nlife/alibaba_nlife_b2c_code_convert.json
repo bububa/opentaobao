@@ -1,8 +1,4 @@
 {
-	"id": 29320,
-	"name": "alibaba.nlife.b2c.code.convert",
-	"apiChineseName": "b2c转码",
-	"description": "将商品的URL转码，ISV将该码写入RFID",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -18,41 +14,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "ItemCodeConvertResponse",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "转码后的结果",
-					"required": true
+					"description": "转码后的结果"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "itemId",
-					"required": true
+					"description": "itemId"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "skuId",
-					"required": true
+					"description": "skuId"
 				},
 				{
 					"name": "store_id",
 					"type": "Number",
-					"description": "storeId",
-					"required": true
+					"description": "storeId"
 				},
 				{
 					"name": "code_type",
 					"type": "String",
-					"description": "BARCODE / UNIQUECODE",
-					"required": true
+					"description": "BARCODE / UNIQUECODE"
 				}
-			]
+			],
+			"name": "data",
+			"type": "ItemCodeConvertResponse",
+			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.code.convert",
+	"apiChineseName": "b2c转码",
+	"description": "将商品的URL转码，ISV将该码写入RFID",
+	"id": 29320
 }

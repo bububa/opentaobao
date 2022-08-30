@@ -1,13 +1,6 @@
 {
-	"id": 49617,
-	"name": "alibaba.wdk.sku.feature",
-	"apiChineseName": "商品标记接口",
-	"description": "给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SkuFeatureDo",
-			"description": "SkuFeatureDo",
 			"subParams": [
 				{
 					"name": "sku_code",
@@ -44,40 +37,43 @@
 					"type": "Boolean",
 					"description": "是否添加，默认是添加"
 				}
-			]
+			],
+			"name": "param",
+			"type": "SkuFeatureDo",
+			"description": "SkuFeatureDo"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用成功标志，不表示业务是否成功",
-					"required": true
+					"description": "接口调用成功标志，不表示业务是否成功"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "业务是否成功",
-					"required": true
+					"description": "业务是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.feature",
+	"apiChineseName": "商品标记接口",
+	"description": "给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。",
+	"id": 49617
 }

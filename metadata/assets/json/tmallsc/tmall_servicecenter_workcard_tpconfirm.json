@@ -1,0 +1,39 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单id",
+					"required": true
+				}
+			],
+			"name": "tp_confirm_request",
+			"type": "TpConfirmRequest",
+			"description": "服务商确认服务完成信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.tpconfirm",
+	"apiChineseName": "确认服务完成",
+	"description": "服务商确认服务完成",
+	"id": 57204
+}

@@ -1,14 +1,6 @@
 {
-	"id": 45480,
-	"name": "alibaba.mozi.acl.role.add",
-	"apiChineseName": "新增一个角色",
-	"description": "新增一个角色",
 	"requestParams": [
 		{
-			"name": "create_role_request",
-			"type": "CreateRoleRequest",
-			"description": "创建角色请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "target_app_name",
@@ -39,6 +31,7 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "请求扩展字段"
 				},
 				{
@@ -73,10 +66,6 @@
 					"description": "风险等级：L表示低风险，M表示中风，H表示高风险"
 				},
 				{
-					"name": "principal_param",
-					"type": "BucUserPrincipalParam",
-					"description": "操作主体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tenant_id",
@@ -90,7 +79,11 @@
 							"description": "操作人的userId",
 							"required": true
 						}
-					]
+					],
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"required": true
 				},
 				{
 					"name": "operator_user_id",
@@ -116,59 +109,62 @@
 				},
 				{
 					"name": "approver_user_ids",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "角色审批人userId列表"
 				},
 				{
 					"name": "extention_map",
+					"type": "String",
 					"description": "扩展字段"
 				}
-			]
+			],
+			"name": "create_role_request",
+			"type": "CreateRoleRequest",
+			"description": "创建角色请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CreateRoleResult",
-			"description": "创建角色结果对象",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "创建角色返回data，此处无数据返回",
-					"required": true
+					"description": "创建角色返回data，此处无数据返回"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功，若成功则为true",
-					"required": true
+					"description": "接口调用是否成功，若成功则为true"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "响应message，若失败则返回失败原因",
-					"required": true
+					"description": "响应message，若失败则返回失败原因"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "扩展字段，与入参扩展字段值相同",
-					"required": true
+					"type": "String",
+					"description": "扩展字段，与入参扩展字段值相同"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CreateRoleResult",
+			"description": "创建角色结果对象"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.role.add",
+	"apiChineseName": "新增一个角色",
+	"description": "新增一个角色",
+	"id": 45480
 }

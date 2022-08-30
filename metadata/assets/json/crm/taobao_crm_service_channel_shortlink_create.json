@@ -1,8 +1,4 @@
 {
-	"id": 25034,
-	"name": "taobao.crm.service.channel.shortlink.create",
-	"apiChineseName": "ECRM创建淘短链服务",
-	"description": "可生成店铺宝贝、店铺首页、活动链接、订单链接等4种可呼起手机淘宝APP至对应页面的淘短链。",
 	"requestParams": [
 		{
 			"name": "short_link_name",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "返回的淘短链。"
 		}
-	]
+	],
+	"name": "taobao.crm.service.channel.shortlink.create",
+	"apiChineseName": "ECRM创建淘短链服务",
+	"description": "可生成店铺宝贝、店铺首页、活动链接、订单链接等4种可呼起手机淘宝APP至对应页面的淘短链。",
+	"id": 25034
 }

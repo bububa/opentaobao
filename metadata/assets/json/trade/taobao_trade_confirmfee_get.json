@@ -1,8 +1,4 @@
 {
-	"id": 146,
-	"name": "taobao.trade.confirmfee.get",
-	"apiChineseName": "获取交易确认收货费用",
-	"description": "获取交易确认收货费用，可以获取主订单或子订单的确认收货费用",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade_confirm_fee",
-			"type": "TradeConfirmFee",
-			"description": "获取到的交易确认收货费用",
 			"subParams": [
 				{
 					"name": "confirm_fee",
@@ -32,7 +25,14 @@
 					"type": "Boolean",
 					"description": "是否是最后一笔订单（只对子订单有效，当其他子订单都是交易完成时，返回true，否则false）"
 				}
-			]
+			],
+			"name": "trade_confirm_fee",
+			"type": "TradeConfirmFee",
+			"description": "获取到的交易确认收货费用"
 		}
-	]
+	],
+	"name": "taobao.trade.confirmfee.get",
+	"apiChineseName": "获取交易确认收货费用",
+	"description": "获取交易确认收货费用，可以获取主订单或子订单的确认收货费用",
+	"id": 146
 }

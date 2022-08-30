@@ -16,10 +16,10 @@ type AlibabaBaichuanCtgVideoUploadAPIRequest struct {
 	_app string
 	// type
 	_type string
-	// 优酷道长绑定的淘宝账号ID
-	_tbUid string
 	// 视频VID，若为多个视频，则支持分组上传多个VID
 	_videoId string
+	// 优酷道长绑定的淘宝账号ID
+	_tbUid string
 	// 作者名称
 	_ownerName string
 	// 发布时间
@@ -85,19 +85,6 @@ func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetType() string {
 	return r._type
 }
 
-// SetTbUid is TbUid Setter
-// 优酷道长绑定的淘宝账号ID
-func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetTbUid(_tbUid string) error {
-	r._tbUid = _tbUid
-	r.Set("tb_uid", _tbUid)
-	return nil
-}
-
-// GetTbUid TbUid Getter
-func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetTbUid() string {
-	return r._tbUid
-}
-
 // SetVideoId is VideoId Setter
 // 视频VID，若为多个视频，则支持分组上传多个VID
 func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoId(_videoId string) error {
@@ -109,6 +96,19 @@ func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetVideoId(_videoId string) er
 // GetVideoId VideoId Getter
 func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetVideoId() string {
 	return r._videoId
+}
+
+// SetTbUid is TbUid Setter
+// 优酷道长绑定的淘宝账号ID
+func (r *AlibabaBaichuanCtgVideoUploadAPIRequest) SetTbUid(_tbUid string) error {
+	r._tbUid = _tbUid
+	r.Set("tb_uid", _tbUid)
+	return nil
+}
+
+// GetTbUid TbUid Getter
+func (r AlibabaBaichuanCtgVideoUploadAPIRequest) GetTbUid() string {
+	return r._tbUid
 }
 
 // SetOwnerName is OwnerName Setter

@@ -1,17 +1,8 @@
 {
-	"id": 25999,
-	"name": "taobao.qimen.inventory.query",
-	"apiChineseName": "库存查询接口（多商品）",
-	"description": "ERP调用奇门的接口,查询商品的库存量",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "InventoryQueryRequest",
 			"subParams": [
 				{
-					"name": "criteriaList",
-					"type": "Criteria[]",
-					"description": "查询准则",
 					"subParams": [
 						{
 							"name": "warehouseCode",
@@ -44,7 +35,10 @@
 							"type": "String",
 							"description": "备注"
 						}
-					]
+					],
+					"name": "criteriaList",
+					"type": "Criteria[]",
+					"description": "查询准则"
 				},
 				{
 					"name": "extendProps",
@@ -56,13 +50,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "InventoryQueryRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "InventoryQueryResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -83,10 +77,6 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "商品的库存信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "warehouseCode",
@@ -148,9 +138,19 @@
 							"description": "生产批号",
 							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品的库存信息列表",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "InventoryQueryResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.inventory.query",
+	"apiChineseName": "库存查询接口（多商品）",
+	"description": "ERP调用奇门的接口,查询商品的库存量",
+	"id": 25999
 }

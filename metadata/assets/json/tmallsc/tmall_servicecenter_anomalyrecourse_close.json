@@ -1,0 +1,40 @@
+{
+	"requestParams": [
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "完结时服务商自定义回复给消费者内容"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "投诉单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "value",
+			"type": "Number",
+			"description": "值"
+		}
+	],
+	"name": "tmall.servicecenter.anomalyrecourse.close",
+	"apiChineseName": "服务投诉问题单关单",
+	"description": "提供给服务商在投诉单完结时调用，关闭投诉问题工单。",
+	"id": 57338
+}

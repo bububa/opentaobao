@@ -1,21 +1,17 @@
 {
-	"id": 53750,
-	"name": "cainiao.reachable.batchjudge",
-	"apiChineseName": "是否派送可达判定批量查询接口",
-	"description": "提供给商家在发货之前做截单处理，输入物流商编码和收发货地址进行可达判定，目前支持国内主流的物流服务商, 支持快运和快递两种类型",
 	"requestParams": [
 		{
-			"name": "client_info",
-			"type": "ClientInfoDto",
-			"description": "调用方对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "description",
 					"type": "String",
 					"description": "调用时自定义描述信息"
 				}
-			]
+			],
+			"name": "client_info",
+			"type": "ClientInfoDto",
+			"description": "调用方对象",
+			"required": true
 		},
 		{
 			"name": "address_type",
@@ -24,10 +20,6 @@
 			"required": true
 		},
 		{
-			"name": "data",
-			"type": "RoutingReachableBatchRequestDto",
-			"description": "收发信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cp_code",
@@ -36,16 +28,8 @@
 					"required": true
 				},
 				{
-					"name": "address_and_service_list",
-					"type": "ReachableAddressAndServiceDto[]",
-					"description": "收发地址和服务列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "receive_address",
-							"type": "ReceiveAddress",
-							"description": "收货地址",
-							"required": true,
 							"subParams": [
 								{
 									"name": "town_name",
@@ -74,7 +58,11 @@
 									"description": "省",
 									"required": true
 								}
-							]
+							],
+							"name": "receive_address",
+							"type": "ReceiveAddress",
+							"description": "收货地址",
+							"required": true
 						},
 						{
 							"name": "service_code_list",
@@ -88,9 +76,6 @@
 							"required": true
 						},
 						{
-							"name": "send_address",
-							"type": "AddressDto",
-							"description": "发货地址",
 							"subParams": [
 								{
 									"name": "town_name",
@@ -117,7 +102,10 @@
 									"type": "String",
 									"description": "省"
 								}
-							]
+							],
+							"name": "send_address",
+							"type": "AddressDto",
+							"description": "发货地址"
 						},
 						{
 							"name": "oaid",
@@ -134,21 +122,26 @@
 							"type": "String",
 							"description": "C2M\u00261688开放地址ID"
 						}
-					]
+					],
+					"name": "address_and_service_list",
+					"type": "ReachableAddressAndServiceDto[]",
+					"description": "收发地址和服务列表",
+					"required": true
 				},
 				{
 					"name": "send_branch_code",
 					"type": "String",
 					"description": "发件揽收网点"
 				}
-			]
+			],
+			"name": "data",
+			"type": "RoutingReachableBatchRequestDto",
+			"description": "收发信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -157,22 +150,10 @@
 					"required": true
 				},
 				{
-					"name": "module",
-					"type": "ReachableServiceWaybillForTopResponseDto",
-					"description": "返回信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "result_list",
-							"type": "ReachableServiceWaybillResponseDto[]",
-							"description": "结果列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "error_info",
-									"type": "ErrorInfo",
-									"description": "单个结果是否异常",
-									"required": true,
 									"subParams": [
 										{
 											"name": "error_message",
@@ -186,7 +167,11 @@
 											"description": "错误码",
 											"required": true
 										}
-									]
+									],
+									"name": "error_info",
+									"type": "ErrorInfo",
+									"description": "单个结果是否异常",
+									"required": true
 								},
 								{
 									"name": "success",
@@ -195,10 +180,6 @@
 									"required": true
 								},
 								{
-									"name": "module",
-									"type": "ReachableDto",
-									"description": "可达信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "interrupt_reason",
@@ -212,7 +193,11 @@
 											"description": "是否阻断 true:阻断  false:可达",
 											"required": true
 										}
-									]
+									],
+									"name": "module",
+									"type": "ReachableDto",
+									"description": "可达信息",
+									"required": true
 								},
 								{
 									"name": "object_id",
@@ -220,15 +205,19 @@
 									"description": "与入参地址列表中单项objectId对应",
 									"required": true
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "ReachableServiceWaybillResponseDto[]",
+							"description": "结果列表",
+							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "ReachableServiceWaybillForTopResponseDto",
+					"description": "返回信息",
+					"required": true
 				},
 				{
-					"name": "one_error_info",
-					"type": "ErrorInfo",
-					"description": "请求错误信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_message",
@@ -242,9 +231,20 @@
 							"description": "错误码",
 							"required": true
 						}
-					]
+					],
+					"name": "one_error_info",
+					"type": "ErrorInfo",
+					"description": "请求错误信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "cainiao.reachable.batchjudge",
+	"apiChineseName": "是否派送可达判定批量查询接口",
+	"description": "提供给商家在发货之前做截单处理，输入物流商编码和收发货地址进行可达判定，目前支持国内主流的物流服务商, 支持快运和快递两种类型",
+	"id": 53750
 }

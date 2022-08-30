@@ -1,26 +1,26 @@
 {
-	"id": 43394,
-	"name": "taobao.simba.salestar.keywords.delete",
-	"apiChineseName": "销量明星关键词删除",
-	"description": "（新）关键词删除相关接口",
 	"requestParams": [
 		{
 			"name": "bidword_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "关键词ids",
 			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "删除成功"
-		},
-		{
 			"name": "results",
 			"type": "Number",
 			"description": "成功删除条数"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "删除成功"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.keywords.delete",
+	"apiChineseName": "销量明星关键词删除",
+	"description": "（新）关键词删除相关接口",
+	"id": 43394
 }

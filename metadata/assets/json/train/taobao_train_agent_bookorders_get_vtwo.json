@@ -1,8 +1,4 @@
 {
-	"id": 29812,
-	"name": "taobao.train.agent.bookorders.get.vtwo",
-	"apiChineseName": "代理商获取待出票订单列表v2--增加鉴权校验",
-	"description": "代理商获取待出票订单列表，只返回订单号",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -27,5 +23,9 @@
 			"type": "String",
 			"description": "错误描述"
 		}
-	]
+	],
+	"name": "taobao.train.agent.bookorders.get.vtwo",
+	"apiChineseName": "代理商获取待出票订单列表v2--增加鉴权校验",
+	"description": "代理商获取待出票订单列表，只返回订单号",
+	"id": 29812
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43535,
-	"name": "alibaba.it.esl.sendota",
-	"apiChineseName": "电子价签ota接口",
-	"description": "厂测接口，电子价签ota接口",
 	"requestParams": [
 		{
 			"name": "mac_ap",
@@ -21,5 +17,9 @@
 			"type": "String",
 			"description": "Can not find Corresponding AP MAC with ESL"
 		}
-	]
+	],
+	"name": "alibaba.it.esl.sendota",
+	"apiChineseName": "电子价签ota接口",
+	"description": "厂测接口，电子价签ota接口",
+	"id": 43535
 }

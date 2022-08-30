@@ -1,0 +1,127 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部活动id（商家自定义）"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "活动创建者ID",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "活动创建者name",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述",
+					"required": true
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "活动终端：1-APP，2-POS",
+					"required": true
+				},
+				{
+					"name": "store_ids",
+					"type": "String[]",
+					"description": "活动生效的经营店ID列表",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "member_crowd_code",
+					"type": "String[]",
+					"description": "活动人群编码，NEW_USER：新用户，OLD_USER：老用户，LIGHT_NEW_USER：闪购新客，MERCHANT_NEW_USER：商家新用户，MERCHANT_OLD_USER：商家老用户",
+					"required": true
+				},
+				{
+					"name": "channels",
+					"type": "String[]",
+					"description": "生效渠道，枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达",
+					"required": true
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "特价类型，1-减钱，2-一口价，3-打折",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展信息，json串",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "ItemDiscountActivityOperateRequest",
+			"description": "保存活动参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
+		}
+	],
+	"name": "alibaba.retail.marketing.itemdiscount.activity.save",
+	"apiChineseName": "【同城零售】单品活动保存",
+	"description": "【同城零售】单品活动保存",
+	"id": 61811
+}

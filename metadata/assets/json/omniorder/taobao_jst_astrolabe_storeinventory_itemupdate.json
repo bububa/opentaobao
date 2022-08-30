@@ -1,19 +1,8 @@
 {
-	"id": 37902,
-	"name": "taobao.jst.astrolabe.storeinventory.itemupdate",
-	"apiChineseName": "库存增量更新接口",
-	"description": "ERP调用该接口，增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存。",
 	"requestParams": [
 		{
-			"name": "stores",
-			"type": "Store[]",
-			"description": "门店列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "store_inventories",
-					"type": "StoreInventory[]",
-					"description": "门店库存列表",
 					"subParams": [
 						{
 							"name": "bill_num",
@@ -61,7 +50,10 @@
 							"type": "Number",
 							"description": "调整后库存数量"
 						}
-					]
+					],
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表"
 				},
 				{
 					"name": "warehouse_type",
@@ -75,7 +67,11 @@
 					"description": "门店ID(商户中心)或 电商仓ID",
 					"required": true
 				}
-			]
+			],
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店列表",
+			"maxListSize": 20
 		},
 		{
 			"name": "operation_time",
@@ -101,23 +97,25 @@
 			"description": "响应信息"
 		},
 		{
-			"name": "error_descriptions",
-			"type": "Error []",
-			"description": "错误信息列表",
 			"subParams": [
 				{
 					"name": "descrpition",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "failed_bill_num",
 					"type": "String",
-					"description": "处理失败的流水号",
-					"required": true
+					"description": "处理失败的流水号"
 				}
-			]
+			],
+			"name": "error_descriptions",
+			"type": "Error []",
+			"description": "错误信息列表"
 		}
-	]
+	],
+	"name": "taobao.jst.astrolabe.storeinventory.itemupdate",
+	"apiChineseName": "库存增量更新接口",
+	"description": "ERP调用该接口，增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存。",
+	"id": 37902
 }

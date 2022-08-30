@@ -1,8 +1,4 @@
 {
-	"id": 25455,
-	"name": "tmall.item.simpleschema.add",
-	"apiChineseName": "天猫简化发布商品",
-	"description": "天猫简化版schema发布商品。",
 	"requestParams": [
 		{
 			"name": "schema_xml_fields",
@@ -22,5 +18,9 @@
 			"type": "Date",
 			"description": "商品最后发布时间。"
 		}
-	]
+	],
+	"name": "tmall.item.simpleschema.add",
+	"apiChineseName": "天猫简化发布商品",
+	"description": "天猫简化版schema发布商品。",
+	"id": 25455
 }

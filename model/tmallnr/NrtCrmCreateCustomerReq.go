@@ -10,6 +10,8 @@ type NrtCrmCreateCustomerReq struct {
 	OpenId string `json:"open_id,omitempty" xml:"open_id,omitempty"`
 	// 姓名
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 微信昵称
+	WechatName string `json:"wechat_name,omitempty" xml:"wechat_name,omitempty"`
 	// 活动id
 	ActivityId int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 摊位id

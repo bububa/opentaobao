@@ -16,4 +16,6 @@ type BaseLoopLineDto struct {
 	Number int64 `json:"number,omitempty" xml:"number,omitempty"`
 	// 环线ID
 	LoopLineId int64 `json:"loop_line_id,omitempty" xml:"loop_line_id,omitempty"`
+	// 数据源类型（1-新房 2-二手房）
+	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
 }

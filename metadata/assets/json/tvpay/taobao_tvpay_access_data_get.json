@@ -1,8 +1,4 @@
 {
-	"id": 26205,
-	"name": "taobao.tvpay.access.data.get",
-	"apiChineseName": "tv支付",
-	"description": "在匿名用户支付后尝试为其登陆绑定的淘宝账号",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -16,63 +12,61 @@
 			"description": "来源"
 		},
 		{
-			"name": "out_order_no",
-			"type": "String",
-			"description": "订单id",
-			"required": true
-		},
-		{
 			"name": "account_client_version",
 			"type": "String",
 			"description": "账号客户端版本",
+			"required": true
+		},
+		{
+			"name": "out_order_no",
+			"type": "String",
+			"description": "订单id",
 			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "data",
-					"type": "GetLoginInfoByOrderResultDo",
-					"description": "结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "access_data",
 							"type": "String",
-							"description": "登陆信息，json",
-							"required": true
+							"description": "登陆信息，json"
 						},
 						{
 							"name": "has_login_info",
 							"type": "Boolean",
-							"description": "是否有登陆信息",
-							"required": true
+							"description": "是否有登陆信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "GetLoginInfoByOrderResultDo",
+					"description": "结构体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.tvpay.access.data.get",
+	"apiChineseName": "tv支付",
+	"description": "在匿名用户支付后尝试为其登陆绑定的淘宝账号",
+	"id": 26205
 }

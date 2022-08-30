@@ -1,8 +1,4 @@
 {
-	"id": 25122,
-	"name": "taobao.baichuan.taoke.trace",
-	"apiChineseName": "百川淘客打点",
-	"description": "百川淘客打点",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.taoke.trace",
+	"apiChineseName": "百川淘客打点",
+	"description": "百川淘客打点",
+	"id": 25122
 }

@@ -1,8 +1,4 @@
 {
-	"id": 35902,
-	"name": "tmall.channel.products.query",
-	"apiChineseName": "渠道中心-查询产品列表",
-	"description": "渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息",
 	"requestParams": [
 		{
 			"name": "product_number",
@@ -40,153 +36,134 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
-					"name": "product_list",
-					"type": "ProductTopDto[]",
-					"description": "产品信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_line_id",
 							"type": "Number",
-							"description": "产品线ID",
-							"required": true
+							"description": "产品线ID"
 						},
 						{
 							"name": "product_number",
 							"type": "String",
-							"description": "产品编码",
-							"required": true
+							"description": "产品编码"
 						},
 						{
 							"name": "desc_path",
 							"type": "String",
-							"description": "产品描述地址",
-							"required": true
+							"description": "产品描述地址"
 						},
 						{
 							"name": "standard_price",
 							"type": "Number",
-							"description": "基准价",
-							"required": true
+							"description": "基准价"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "标题",
-							"required": true
+							"description": "标题"
 						},
 						{
 							"name": "product_id",
 							"type": "Number",
-							"description": "产品Id",
-							"required": true
+							"description": "产品Id"
 						},
 						{
 							"name": "sc_item_id",
 							"type": "Number",
-							"description": "没有sku的情况下，产品对应的后端商品id",
-							"required": true
+							"description": "没有sku的情况下，产品对应的后端商品id"
 						},
 						{
 							"name": "spu_id",
 							"type": "Number",
-							"description": "spuId",
-							"required": true
+							"description": "spuId"
 						},
 						{
 							"name": "supplier_id",
 							"type": "Number",
-							"description": "供应商Id",
-							"required": true
+							"description": "供应商Id"
 						},
 						{
 							"name": "category_id",
 							"type": "Number",
-							"description": "类目Id",
-							"required": true
+							"description": "类目Id"
 						},
 						{
-							"name": "sku_list",
-							"type": "ProductSkuTopDto[]",
-							"description": "sku列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "skuId",
-									"required": true
+									"description": "skuId"
 								},
 								{
 									"name": "sku_number",
 									"type": "String",
-									"description": "sku商家编码",
-									"required": true
+									"description": "sku商家编码"
 								},
 								{
 									"name": "sku_sc_item_id",
 									"type": "Number",
-									"description": "sku后端货品",
-									"required": true
+									"description": "sku后端货品"
 								},
 								{
 									"name": "standard_price",
 									"type": "Number",
-									"description": "基准价",
-									"required": true
+									"description": "基准价"
 								},
 								{
 									"name": "bar_code",
 									"type": "String",
-									"description": "条形码",
-									"required": true
+									"description": "条形码"
 								},
 								{
 									"name": "picture_url",
 									"type": "String",
-									"description": "图片链接",
-									"required": true
+									"description": "图片链接"
 								}
-							]
+							],
+							"name": "sku_list",
+							"type": "ProductSkuTopDto[]",
+							"description": "sku列表"
 						}
-					]
+					],
+					"name": "product_list",
+					"type": "ProductTopDto[]",
+					"description": "产品信息"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否有下一页",
-					"required": true
+					"description": "是否有下一页"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否查询成功",
-					"required": true
+					"description": "是否查询成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.channel.products.query",
+	"apiChineseName": "渠道中心-查询产品列表",
+	"description": "渠道中心，供应商查询其产品数据，返回同时符合所有查询条件的产品信息",
+	"id": 35902
 }

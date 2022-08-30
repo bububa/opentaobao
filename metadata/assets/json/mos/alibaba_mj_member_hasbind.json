@@ -1,8 +1,4 @@
 {
-	"id": 55339,
-	"name": "alibaba.mj.member.hasbind",
-	"apiChineseName": "喵街会员是否绑定",
-	"description": "喵街检测用户是否为数字化会员",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -18,35 +14,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否绑定",
-					"required": true
+					"description": "是否绑定"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误内容",
-					"required": true
+					"description": "错误内容"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.mj.member.hasbind",
+	"apiChineseName": "喵街会员是否绑定",
+	"description": "喵街检测用户是否为数字化会员",
+	"id": 55339
 }

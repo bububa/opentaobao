@@ -1,8 +1,4 @@
 {
-	"id": 10543,
-	"name": "taobao.simba.campaign.platform.get",
-	"apiChineseName": "取得一个推广计划的投放平台设置",
-	"description": "获得一个推广计划的投放平台设置",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "campaign_platform",
-			"type": "CampaignPlatform",
-			"description": "取得的推广计划的投放平台设置",
 			"subParams": [
 				{
 					"name": "nick",
@@ -33,7 +26,22 @@
 					"description": "推广计划ID"
 				},
 				{
+					"name": "search_channels",
+					"type": "Number[]",
+					"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索"
+				},
+				{
+					"name": "nonsearch_channels",
+					"type": "Number[]",
+					"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向"
+				},
+				{
 					"name": "outside_discount",
+					"type": "Number",
+					"description": "已经废弃"
+				},
+				{
+					"name": "mobile_discount",
 					"type": "Number",
 					"description": "已经废弃了"
 				},
@@ -46,23 +54,15 @@
 					"name": "modified_time",
 					"type": "Date",
 					"description": "最后修改时间"
-				},
-				{
-					"name": "search_channels",
-					"type": "Number[]",
-					"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，7、无线站内搜索；9:无线站外搜索"
-				},
-				{
-					"name": "nonsearch_channels",
-					"type": "Number[]",
-					"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。2、站内定向；4、站外定向；8、无线站内定向；10、无线站外定向"
-				},
-				{
-					"name": "mobile_discount",
-					"type": "Number",
-					"description": "已经废弃了"
 				}
-			]
+			],
+			"name": "campaign_platform",
+			"type": "CampaignPlatform",
+			"description": "取得的推广计划的投放平台设置"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.platform.get",
+	"apiChineseName": "取得一个推广计划的投放平台设置",
+	"description": "获得一个推广计划的投放平台设置",
+	"id": 10543
 }

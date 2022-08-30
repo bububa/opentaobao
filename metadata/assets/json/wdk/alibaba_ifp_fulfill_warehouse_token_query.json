@@ -1,13 +1,6 @@
 {
-	"id": 53548,
-	"name": "alibaba.ifp.fulfill.warehouse.token.query",
-	"apiChineseName": "同城令牌打印接口",
-	"description": "用于仓内作业打印包裹信息",
 	"requestParams": [
 		{
-			"name": "package_query_d_t_o",
-			"type": "PackageQueryDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "token_code",
@@ -26,134 +19,122 @@
 					"description": "作业单元ID",
 					"required": true
 				}
-			]
+			],
+			"name": "package_query_d_t_o",
+			"type": "PackageQueryDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "work_result",
-			"type": "WorkResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "PackageResultDto",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "route_nodes",
-							"type": "RouteNodeDto[]",
-							"description": "路由节点",
-							"required": true,
 							"subParams": [
 								{
 									"name": "node_index",
 									"type": "Number",
-									"description": "节点序号",
-									"required": true
+									"description": "节点序号"
 								},
 								{
 									"name": "node_type",
 									"type": "String",
-									"description": "节点类型",
-									"required": true
+									"description": "节点类型"
 								},
 								{
 									"name": "node_code",
 									"type": "String",
-									"description": "节点名称",
-									"required": true
+									"description": "节点名称"
 								}
-							]
+							],
+							"name": "route_nodes",
+							"type": "RouteNodeDto[]",
+							"description": "路由节点"
 						},
 						{
 							"name": "token_codes",
 							"type": "String[]",
-							"description": "令牌列表",
-							"required": true
+							"description": "令牌列表"
 						},
 						{
 							"name": "operational_requirement",
-							"type": "Json",
-							"description": "作业要求",
-							"required": true
+							"type": "String",
+							"description": "作业要求"
 						},
 						{
 							"name": "merge_order_tag",
 							"type": "String",
-							"description": "合单标",
-							"required": true
+							"description": "合单标"
 						},
 						{
 							"name": "buyer_address",
 							"type": "String",
-							"description": "收件人地址",
-							"required": true
+							"description": "收件人地址"
 						},
 						{
 							"name": "buyer_phone",
 							"type": "String",
-							"description": "收件人电话",
-							"required": true
+							"description": "收件人电话"
 						},
 						{
 							"name": "buyer_name",
 							"type": "String",
-							"description": "收件人名称",
-							"required": true
+							"description": "收件人名称"
 						},
 						{
 							"name": "time_order_tag",
 							"type": "String",
-							"description": "末端合流标示",
-							"required": true
+							"description": "末端合流标示"
 						},
 						{
 							"name": "aoi_name",
 							"type": "String",
-							"description": "AOI名称",
-							"required": true
+							"description": "AOI名称"
 						},
 						{
 							"name": "route_area",
 							"type": "String",
-							"description": "区块ID",
-							"required": true
+							"description": "区块ID"
 						},
 						{
 							"name": "wave_time",
 							"type": "String",
-							"description": "波次时间",
-							"required": true
+							"description": "波次时间"
 						},
 						{
 							"name": "fulfill_date",
 							"type": "String",
-							"description": "应履约日期",
-							"required": true
+							"description": "应履约日期"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PackageResultDto",
+					"description": "返回数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "响应结果",
-					"required": true
+					"description": "响应结果"
 				}
-			]
+			],
+			"name": "work_result",
+			"type": "WorkResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ifp.fulfill.warehouse.token.query",
+	"apiChineseName": "同城令牌打印接口",
+	"description": "用于仓内作业打印包裹信息",
+	"id": 53548
 }

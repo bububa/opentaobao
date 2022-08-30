@@ -1,23 +1,9 @@
 {
-	"id": 26662,
-	"name": "taobao.oc.eservice.appoint.list",
-	"apiChineseName": "交互卡片预约信息读取接口",
-	"description": "允许外部的isv通过该接口读取门店预约信息",
 	"requestParams": [
 		{
 			"name": "code",
 			"type": "Number",
 			"description": "预约信息唯一编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)"
-		},
-		{
-			"name": "mall_code",
-			"type": "String",
-			"description": "门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)"
-		},
-		{
-			"name": "start_appoint_time",
-			"type": "String",
-			"description": "查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间"
 		},
 		{
 			"name": "customer_nick",
@@ -35,6 +21,11 @@
 			"description": "买家客户装修房屋所在的市(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)"
 		},
 		{
+			"name": "mall_code",
+			"type": "String",
+			"description": "门店编码(code, customerNick, customerPhone, houseAddressCity, mallCode 调用时五个可选参数中任选一个作为输入参数)"
+		},
+		{
 			"name": "seller_id",
 			"type": "Number",
 			"description": "卖家主账号id",
@@ -44,46 +35,51 @@
 			"name": "sort_order",
 			"type": "String",
 			"description": "返回结果按预约时间排序，指示升序还是降息，取值asc和desc"
+		},
+		{
+			"name": "start_appoint_time",
+			"type": "String",
+			"description": "查询预约的起始时间，格式yyyyMMddHHmmss，默认为当前时间"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "models",
-			"type": "O2oAppointInfoDto []",
-			"description": "返回的预约信息，多个预约信息按照预约时间升序排序",
 			"subParams": [
 				{
 					"name": "appoint_code",
 					"type": "Number",
-					"description": "预约信息唯一编码，如果使用此参数，customer_nick和mall_code参数不会使用",
-					"required": true
+					"description": "预约信息唯一编码，如果使用此参数，customer_nick和mall_code参数不会使用"
 				},
 				{
-					"name": "appoint_info_params",
-					"type": "O2oAppointInfoParam[]",
-					"description": "预约属性信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "param_name",
 							"type": "String",
-							"description": "预约属性名信息",
-							"required": true
+							"description": "预约属性名信息"
 						},
 						{
 							"name": "param_value",
 							"type": "String",
-							"description": "预约属性值信息",
-							"required": true
+							"description": "预约属性值信息"
 						}
-					]
+					],
+					"name": "appoint_info_params",
+					"type": "O2oAppointInfoParam[]",
+					"description": "预约属性信息列表"
 				}
-			]
+			],
+			"name": "models",
+			"type": "O2oAppointInfoDto []",
+			"description": "返回的预约信息，多个预约信息按照预约时间升序排序"
 		},
 		{
 			"name": "total_number",
 			"type": "Number",
 			"description": "返回的预约信息数目"
 		}
-	]
+	],
+	"name": "taobao.oc.eservice.appoint.list",
+	"apiChineseName": "交互卡片预约信息读取接口",
+	"description": "允许外部的isv通过该接口读取门店预约信息",
+	"id": 26662
 }

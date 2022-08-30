@@ -1,8 +1,4 @@
 {
-	"id": 51983,
-	"name": "alibaba.wdkorder.sharestock.insurance.callback",
-	"apiChineseName": "共享库存订单投保后回传保单号",
-	"description": "共享库存订单投保消息获取",
 	"requestParams": [
 		{
 			"name": "tb_sub_order_id",
@@ -19,29 +15,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MaochaoOrderInsuranceCallbackResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MaochaoOrderInsuranceCallbackResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.wdkorder.sharestock.insurance.callback",
+	"apiChineseName": "共享库存订单投保后回传保单号",
+	"description": "共享库存订单投保消息获取",
+	"id": 51983
 }

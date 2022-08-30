@@ -1,8 +1,4 @@
 {
-	"id": 24557,
-	"name": "taobao.wlb.wms.sku.update",
-	"apiChineseName": "商品信息的更新",
-	"description": "商品信息的更新",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -213,5 +209,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.sku.update",
+	"apiChineseName": "商品信息的更新",
+	"description": "商品信息的更新",
+	"id": 24557
 }

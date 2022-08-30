@@ -10,4 +10,6 @@ type Buyer struct {
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 买家电话
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
+	// 买家备注
+	UserMemo string `json:"user_memo,omitempty" xml:"user_memo,omitempty"`
 }

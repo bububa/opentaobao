@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "打印机 mac 地址",
+					"required": true
+				},
+				{
+					"name": "verify_code",
+					"type": "String",
+					"description": " 验证码",
+					"required": true
+				}
+			],
+			"name": "params",
+			"type": "CloudPrinterBindRequest",
+			"description": "req",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "共享码"
+				},
+				{
+					"name": "server_error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "describe",
+					"type": "String",
+					"description": "描述"
+				}
+			],
+			"name": "result",
+			"type": "IsvResult",
+			"description": "返回值"
+		}
+	],
+	"name": "cainiao.waybill.cloudprint.netprint.bind",
+	"apiChineseName": "网络打印机绑定",
+	"description": "绑定打印机接口",
+	"id": 61721
+}

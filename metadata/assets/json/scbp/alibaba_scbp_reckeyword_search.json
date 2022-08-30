@@ -1,13 +1,6 @@
 {
-	"id": 24984,
-	"name": "alibaba.scbp.reckeyword.search",
-	"apiChineseName": "推荐词-词推词",
-	"description": "推荐词-词推词",
 	"requestParams": [
 		{
-			"name": "query_dto",
-			"type": "RecKeywordQuery",
-			"description": "RecKeywordQuery",
 			"subParams": [
 				{
 					"name": "per_page_size",
@@ -25,14 +18,14 @@
 					"description": "搜索词",
 					"required": true
 				}
-			]
+			],
+			"name": "query_dto",
+			"type": "RecKeywordQuery",
+			"description": "RecKeywordQuery"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "RecKeywordDto []",
-			"description": "词推词结果列表",
 			"subParams": [
 				{
 					"name": "avg_price",
@@ -54,7 +47,10 @@
 					"type": "String",
 					"description": "搜索热度[1-6]"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "RecKeywordDto []",
+			"description": "词推词结果列表"
 		},
 		{
 			"name": "total_num",
@@ -66,5 +62,9 @@
 			"type": "Number",
 			"description": "总页数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.reckeyword.search",
+	"apiChineseName": "推荐词-词推词",
+	"description": "推荐词-词推词",
+	"id": 24984
 }

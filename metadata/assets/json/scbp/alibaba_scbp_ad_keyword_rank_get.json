@@ -1,8 +1,4 @@
 {
-	"id": 24990,
-	"name": "alibaba.scbp.ad.keyword.rank.get",
-	"apiChineseName": "获取外贸直通车关键词预估排名",
-	"description": "获取外贸直通车关键词预估排名",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -17,5 +13,9 @@
 			"type": "Number",
 			"description": "关键词的预估排名"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.rank.get",
+	"apiChineseName": "获取外贸直通车关键词预估排名",
+	"description": "获取外贸直通车关键词预估排名",
+	"id": 24990
 }

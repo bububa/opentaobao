@@ -1,15 +1,11 @@
 {
-	"id": 32942,
-	"name": "alibaba.lst.pos.open.inventory.getinventorydata",
-	"apiChineseName": "商品库存只读接口(最多20条库存信息)",
-	"description": "商品库存只读接口(最多20条库存信息)",
 	"requestParams": [
 		{
 			"name": "isv_goods_id_list",
 			"type": "String[]",
 			"description": "ISV商品Id列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "user_id",
@@ -20,9 +16,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "接口返回结果对象",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -31,10 +24,6 @@
 					"required": true
 				},
 				{
-					"name": "module_list",
-					"type": "InventoryDto[]",
-					"description": "接口具体返回的业务数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "quantity",
@@ -84,7 +73,11 @@
 							"description": "设备物理硬件ID（自身保证唯一性）",
 							"required": true
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "InventoryDto[]",
+					"description": "接口具体返回的业务数据对象",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -98,7 +91,14 @@
 					"description": "接口调用是否成功 true:调用成功 false:调用失败",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "接口返回结果对象"
 		}
-	]
+	],
+	"name": "alibaba.lst.pos.open.inventory.getinventorydata",
+	"apiChineseName": "商品库存只读接口(最多20条库存信息)",
+	"description": "商品库存只读接口(最多20条库存信息)",
+	"id": 32942
 }

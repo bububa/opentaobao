@@ -1,13 +1,6 @@
 {
-	"id": 51961,
-	"name": "alibaba.koubeishops.property.get",
-	"apiChineseName": "口碑店铺列表推荐",
-	"description": "推荐用户附近的美食门店",
 	"requestParams": [
 		{
-			"name": "param_open_api_search_request",
-			"type": "OpenApiSearchRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "app",
@@ -96,6 +89,7 @@
 				},
 				{
 					"name": "params_map",
+					"type": "String",
 					"description": "扩展参数"
 				},
 				{
@@ -125,6 +119,7 @@
 				},
 				{
 					"name": "selected_menus",
+					"type": "String",
 					"description": "菜单项"
 				},
 				{
@@ -167,150 +162,135 @@
 					"type": "String",
 					"description": "用户ID"
 				}
-			]
+			],
+			"name": "param_open_api_search_request",
+			"type": "OpenApiSearchRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenApiSearchResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "bucket_id",
 					"type": "String",
-					"description": "固定值",
-					"required": true
+					"description": "固定值"
 				},
 				{
 					"name": "context",
 					"type": "String",
-					"description": "固定值",
-					"required": true
+					"description": "固定值"
 				},
 				{
 					"name": "count",
 					"type": "Number",
-					"description": "个数",
-					"required": true
+					"description": "个数"
 				},
 				{
 					"name": "ext_attrs",
-					"type": "Json",
-					"description": "扩展值",
-					"required": true
+					"type": "String",
+					"description": "扩展值"
 				},
 				{
-					"name": "items",
-					"type": "OpenApiHit[]",
-					"description": "店铺信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_id",
 							"type": "String",
-							"description": "店铺ID",
-							"required": true
+							"description": "店铺ID"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						},
 						{
 							"name": "entity_id",
 							"type": "String",
-							"description": "店铺ID",
-							"required": true
+							"description": "店铺ID"
 						},
 						{
 							"name": "entity_type",
 							"type": "String",
-							"description": "店铺类型",
-							"required": true
+							"description": "店铺类型"
 						},
 						{
 							"name": "priority",
 							"type": "Number",
-							"description": "优先级",
-							"required": true
+							"description": "优先级"
 						},
 						{
 							"name": "recm_attrs",
-							"type": "Json",
-							"description": "店铺信息字段",
-							"required": true
+							"type": "String",
+							"description": "店铺信息字段"
 						},
 						{
 							"name": "rule_id",
 							"type": "String",
-							"description": "固定值",
-							"required": true
+							"description": "固定值"
 						},
 						{
 							"name": "weight",
 							"type": "String",
-							"description": "排序权重",
-							"required": true
+							"description": "排序权重"
 						}
-					]
+					],
+					"name": "items",
+					"type": "OpenApiHit[]",
+					"description": "店铺信息"
 				},
 				{
 					"name": "query",
 					"type": "String",
-					"description": "关键词",
-					"required": true
+					"description": "关键词"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求ID",
-					"required": true
+					"description": "请求ID"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "结果ID",
-					"required": true
+					"description": "结果ID"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "search_group",
 					"type": "String",
-					"description": "固定值",
-					"required": true
+					"description": "固定值"
 				},
 				{
 					"name": "search_id",
 					"type": "String",
-					"description": "搜索ID",
-					"required": true
+					"description": "搜索ID"
 				},
 				{
 					"name": "search_params",
 					"type": "String",
-					"description": "固定值",
-					"required": true
+					"description": "固定值"
 				},
 				{
 					"name": "session_id",
 					"type": "String",
-					"description": "sessionID",
-					"required": true
+					"description": "sessionID"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "店铺个数",
-					"required": true
+					"description": "店铺个数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenApiSearchResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.koubeishops.property.get",
+	"apiChineseName": "口碑店铺列表推荐",
+	"description": "推荐用户附近的美食门店",
+	"id": 51961
 }

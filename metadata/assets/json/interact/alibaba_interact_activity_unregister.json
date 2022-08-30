@@ -1,8 +1,4 @@
 {
-	"id": 23793,
-	"name": "alibaba.interact.activity.unregister",
-	"apiChineseName": "ISV互动应用活动关闭服务",
-	"description": "卖家在ISV互动应用中设置的活动主动关闭的服务",
 	"requestParams": [
 		{
 			"name": "biz_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "unregister_result",
-			"type": "AllsparkResult",
-			"description": "关闭活动结果",
 			"subParams": [
 				{
 					"name": "err_msg",
@@ -32,7 +25,14 @@
 					"type": "Boolean",
 					"description": "是否注册成功"
 				}
-			]
+			],
+			"name": "unregister_result",
+			"type": "AllsparkResult",
+			"description": "关闭活动结果"
 		}
-	]
+	],
+	"name": "alibaba.interact.activity.unregister",
+	"apiChineseName": "ISV互动应用活动关闭服务",
+	"description": "卖家在ISV互动应用中设置的活动主动关闭的服务",
+	"id": 23793
 }

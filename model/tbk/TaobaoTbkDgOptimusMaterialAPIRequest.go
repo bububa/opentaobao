@@ -20,20 +20,20 @@ type TaobaoTbkDgOptimusMaterialAPIRequest struct {
 	_deviceType string
 	// 内容专用-内容渠道信息
 	_contentSource string
+	// 商品ID，用于相似商品推荐
+	_itemId string
 	// 选品库投放id
 	_favoritesId string
 	// 页大小，默认20，1~100
 	_pageSize int64
-	// mm_xxx_xxx_xxx的第三位
-	_adzoneId int64
 	// 第几页，默认：1
 	_pageNo int64
+	// mm_xxx_xxx_xxx的第三位
+	_adzoneId int64
 	// 官方的物料Id(详细物料id见：https://market.m.taobao.com/app/qn/toutiao-new/index-pc.html#/detail/10628875?_k=gpov9a)
 	_materialId int64
 	// 内容专用-内容详情ID
 	_contentId int64
-	// 商品ID，用于相似商品推荐
-	_itemId int64
 }
 
 // NewTaobaoTbkDgOptimusMaterialRequest 初始化TaobaoTbkDgOptimusMaterialAPIRequest对象
@@ -109,6 +109,19 @@ func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetContentSource() string {
 	return r._contentSource
 }
 
+// SetItemId is ItemId Setter
+// 商品ID，用于相似商品推荐
+func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetItemId() string {
+	return r._itemId
+}
+
 // SetFavoritesId is FavoritesId Setter
 // 选品库投放id
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetFavoritesId(_favoritesId string) error {
@@ -135,19 +148,6 @@ func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// SetAdzoneId is AdzoneId Setter
-// mm_xxx_xxx_xxx的第三位
-func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
-	return nil
-}
-
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
-}
-
 // SetPageNo is PageNo Setter
 // 第几页，默认：1
 func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageNo(_pageNo int64) error {
@@ -159,6 +159,19 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetPageNo(_pageNo int64) error {
 // GetPageNo PageNo Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+// SetAdzoneId is AdzoneId Setter
+// mm_xxx_xxx_xxx的第三位
+func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
+	return nil
+}
+
+// GetAdzoneId AdzoneId Getter
+func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }
 
 // SetMaterialId is MaterialId Setter
@@ -185,17 +198,4 @@ func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetContentId(_contentId int64) er
 // GetContentId ContentId Getter
 func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetContentId() int64 {
 	return r._contentId
-}
-
-// SetItemId is ItemId Setter
-// 商品ID，用于相似商品推荐
-func (r *TaobaoTbkDgOptimusMaterialAPIRequest) SetItemId(_itemId int64) error {
-	r._itemId = _itemId
-	r.Set("item_id", _itemId)
-	return nil
-}
-
-// GetItemId ItemId Getter
-func (r TaobaoTbkDgOptimusMaterialAPIRequest) GetItemId() int64 {
-	return r._itemId
 }

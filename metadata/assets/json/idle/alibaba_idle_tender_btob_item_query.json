@@ -1,0 +1,395 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "page_number",
+					"type": "Number",
+					"description": "查询页码",
+					"required": true
+				},
+				{
+					"name": "schedule_date",
+					"type": "String",
+					"description": "场次日期"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "schedule_number",
+					"type": "String",
+					"description": "场次编码（两位数）"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
+				}
+			],
+			"name": "param0",
+			"type": "TenderItemListQry",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态"
+						},
+						{
+							"name": "start_price",
+							"type": "Number",
+							"description": "起拍价(分)"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "最终成交价(分)"
+						},
+						{
+							"name": "schedule",
+							"type": "String",
+							"description": "场次（日期+编码）"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "等级"
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "channel_data",
+									"type": "String",
+									"description": "扩展信息"
+								},
+								{
+									"name": "buyer_nick",
+									"type": "String",
+									"description": "拍卖买家的用户nick"
+								},
+								{
+									"name": "service_refund_reason",
+									"type": "String",
+									"description": "服务商退货的原因"
+								},
+								{
+									"name": "ship_time",
+									"type": "String",
+									"description": "上门回收时间"
+								},
+								{
+									"name": "channel",
+									"type": "String",
+									"description": "渠道"
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单主状态"
+								},
+								{
+									"name": "seller_address",
+									"type": "String",
+									"description": "卖家地址"
+								},
+								{
+									"name": "deal_price",
+									"type": "String",
+									"description": "拍卖最终成交价格"
+								},
+								{
+									"name": "buyer_area",
+									"type": "String",
+									"description": "买家区"
+								},
+								{
+									"name": "appraise_price",
+									"type": "String",
+									"description": "服务商评估价格"
+								},
+								{
+									"name": "buyer_address",
+									"type": "String",
+									"description": "买家地址"
+								},
+								{
+									"name": "buyer_city",
+									"type": "String",
+									"description": "买家城市信息"
+								},
+								{
+									"name": "seller_alipay_user_id",
+									"type": "String",
+									"description": "卖家alipay信息"
+								},
+								{
+									"name": "seller_city",
+									"type": "String",
+									"description": "卖家城市信息"
+								},
+								{
+									"name": "app_key",
+									"type": "String",
+									"description": "appkey"
+								},
+								{
+									"name": "attribute",
+									"type": "String",
+									"description": "扩展信息"
+								},
+								{
+									"name": "service_id",
+									"type": "String",
+									"description": "服务商绑定的用户id"
+								},
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "卖家nick"
+								},
+								{
+									"name": "start_price",
+									"type": "String",
+									"description": "起拍价格"
+								},
+								{
+									"name": "buyer_province",
+									"type": "String",
+									"description": "买家省份"
+								},
+								{
+									"name": "order_sub_status",
+									"type": "String",
+									"description": "订单子状态"
+								},
+								{
+									"name": "seller_phone",
+									"type": "String",
+									"description": "卖家的电话信息"
+								},
+								{
+									"name": "seller_country",
+									"type": "String",
+									"description": "卖家小区信息"
+								},
+								{
+									"name": "seller_alipay_account",
+									"type": "String",
+									"description": "卖家的alipay账号信息"
+								},
+								{
+									"name": "seller_close_reason",
+									"type": "String",
+									"description": "卖家关闭原因"
+								},
+								{
+									"name": "end_price",
+									"type": "String",
+									"description": "拍卖的终止价格"
+								},
+								{
+									"name": "buyer_real_name",
+									"type": "String",
+									"description": "购买人的真实姓名"
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "创建时间"
+								},
+								{
+									"name": "env",
+									"type": "String",
+									"description": "创建环境"
+								},
+								{
+									"name": "seller_real_name",
+									"type": "String",
+									"description": "卖家真实姓名"
+								},
+								{
+									"name": "service_close_reason",
+									"type": "String",
+									"description": "服务商关闭的原因"
+								},
+								{
+									"name": "seller_area",
+									"type": "String",
+									"description": "卖家的地址"
+								},
+								{
+									"name": "buyer_country",
+									"type": "String",
+									"description": "买家的地址信息"
+								},
+								{
+									"name": "idle_pay_type",
+									"type": "String",
+									"description": "回收支付类型"
+								},
+								{
+									"name": "buyer_phone",
+									"type": "String",
+									"description": "买家的电话信息"
+								},
+								{
+									"name": "service_nick",
+									"type": "String",
+									"description": "服务商的公司名称"
+								},
+								{
+									"name": "scene_type",
+									"type": "String",
+									"description": "下单场景"
+								},
+								{
+									"name": "biz_order_id",
+									"type": "String",
+									"description": "订单id2"
+								},
+								{
+									"name": "appraise_id",
+									"type": "String",
+									"description": "估价id"
+								},
+								{
+									"name": "service_deal_price",
+									"type": "String",
+									"description": "服务商最终成交价格"
+								},
+								{
+									"name": "ship_type",
+									"type": "String",
+									"description": "上门类型"
+								},
+								{
+									"name": "spu_id",
+									"type": "String",
+									"description": "spuId"
+								},
+								{
+									"name": "seller_refund_reason",
+									"type": "String",
+									"description": "卖家的退回原因"
+								},
+								{
+									"name": "seller_province",
+									"type": "String",
+									"description": "卖家的地址信息"
+								},
+								{
+									"name": "tender_order_id",
+									"type": "String",
+									"description": "拍场订单Id"
+								},
+								{
+									"name": "service_fee",
+									"type": "String",
+									"description": "服务费(分)"
+								},
+								{
+									"name": "buyer_out_pay_id",
+									"type": "String",
+									"description": "买家支付宝流水号"
+								}
+							],
+							"name": "order_info",
+							"type": "TenderOrderInfoVO",
+							"description": "订单信息"
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "服务商仓库码"
+						}
+					],
+					"name": "data",
+					"type": "TenderItemListVO[]",
+					"description": "商品数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常信息"
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下页"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "数据总量"
+				}
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.tender.btob.item.query",
+	"apiChineseName": "暗拍b2b商品查询",
+	"description": "暗拍b2b商品查询",
+	"id": 61365
+}

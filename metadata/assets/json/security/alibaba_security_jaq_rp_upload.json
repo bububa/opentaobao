@@ -1,8 +1,4 @@
 {
-	"id": 26876,
-	"name": "alibaba.security.jaq.rp.upload",
-	"apiChineseName": "聚安全实人认证上传认证信息",
-	"description": "聚安全实人认证上传认证信息",
 	"requestParams": [
 		{
 			"name": "verify_token",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "elements",
-			"type": "Element[]",
-			"description": "此次需要上传的认证信息的列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "name",
@@ -35,42 +26,47 @@
 					"description": "类型, 如果是姓名，身份证，则是ValueType；如果是图片则是PhotoType；如果是JSON格式，则是JsonType",
 					"required": true
 				}
-			]
+			],
+			"name": "elements",
+			"type": "Element[]",
+			"description": "此次需要上传的认证信息的列表",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RpUploadResult",
-			"description": "返回信息",
 			"subParams": [
 				{
-					"name": "upload_status",
-					"type": "UploadStatus",
-					"description": "上传状态信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "code",
 							"type": "Number",
-							"description": "code",
-							"required": true
+							"description": "code"
 						}
-					]
+					],
+					"name": "upload_status",
+					"type": "UploadStatus",
+					"description": "上传状态信息"
 				},
 				{
 					"name": "upload_id",
 					"type": "String",
-					"description": "上传id",
-					"required": true
+					"description": "上传id"
 				}
-			]
+			],
+			"name": "data",
+			"type": "RpUploadResult",
+			"description": "返回信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.upload",
+	"apiChineseName": "聚安全实人认证上传认证信息",
+	"description": "聚安全实人认证上传认证信息",
+	"id": 26876
 }

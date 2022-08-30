@@ -1,44 +1,16 @@
 {
-	"id": 50686,
-	"name": "alibaba.wdk.bm.paiyang.supply.publish",
-	"apiChineseName": "派样商品库存变更同步接口",
-	"description": "淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。",
 	"requestParams": [
 		{
-			"name": "isv_supply_sync_param",
-			"type": "IsvSupplySyncParam",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
-				{
-					"name": "modify_type",
-					"type": "String",
-					"description": "库存变动类型，arrive是到货、deliver是出货、lose是丢货"
-				},
-				{
-					"name": "sample_activity_id",
-					"type": "Number",
-					"description": "派样活动id"
-				},
-				{
-					"name": "order_id",
-					"type": "Number",
-					"description": "订单id，用来唯一标识库存流转记录，避免重复同步"
-				},
-				{
-					"name": "modify_quantity",
-					"type": "Number",
-					"description": "库存变动数量，到货是正值、出货是负值、丢货是负值"
-				},
 				{
 					"name": "barcode",
 					"type": "String",
 					"description": "商品条码"
 				},
 				{
-					"name": "operator",
-					"type": "String",
-					"description": "操作人"
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id，用来唯一标识库存流转记录，避免重复同步"
 				},
 				{
 					"name": "warehouse_type",
@@ -56,44 +28,68 @@
 					"description": "仓名称"
 				},
 				{
+					"name": "modify_type",
+					"type": "String",
+					"description": "库存变动类型，arrive是到货、deliver是出货、lose是丢货"
+				},
+				{
+					"name": "modify_quantity",
+					"type": "Number",
+					"description": "库存变动数量，到货是正值、出货是负值、丢货是负值"
+				},
+				{
 					"name": "modify_time",
 					"type": "Date",
 					"description": "库存变动时间"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人"
+				},
+				{
+					"name": "sample_activity_id",
+					"type": "Number",
+					"description": "派样活动id"
 				}
-			]
+			],
+			"name": "isv_supply_sync_param",
+			"type": "IsvSupplySyncParam",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BmResult",
-			"description": "请求出参",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "派样活动id",
-					"required": true
+					"description": "派样活动id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BmResult",
+			"description": "请求出参"
 		}
-	]
+	],
+	"name": "alibaba.wdk.bm.paiyang.supply.publish",
+	"apiChineseName": "派样商品库存变更同步接口",
+	"description": "淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。",
+	"id": 50686
 }

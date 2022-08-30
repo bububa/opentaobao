@@ -1,8 +1,4 @@
 {
-	"id": 49115,
-	"name": "alitrip.xhotel.channel.order.create.res.query",
-	"apiChineseName": "分销订单查询订单创建结果",
-	"description": "针对分销渠道订单，在调用创建订单接口失败1分钟后，调用此接口，用以确认订单是否创建成功。",
 	"requestParams": [
 		{
 			"name": "out_source_order_id",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HbsResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "module",
 					"type": "Number",
-					"description": "飞猪平台订单号",
-					"required": true
+					"description": "飞猪平台订单号"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_msg4_dev",
 					"type": "String",
-					"description": "给开发用的错误信息",
-					"required": true
+					"description": "给开发用的错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "订单是否创建成功",
-					"required": true
+					"description": "订单是否创建成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HbsResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alitrip.xhotel.channel.order.create.res.query",
+	"apiChineseName": "分销订单查询订单创建结果",
+	"description": "针对分销渠道订单，在调用创建订单接口失败1分钟后，调用此接口，用以确认订单是否创建成功。",
+	"id": 49115
 }

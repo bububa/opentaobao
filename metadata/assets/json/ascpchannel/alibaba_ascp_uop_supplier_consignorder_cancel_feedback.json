@@ -1,13 +1,6 @@
 {
-	"id": 49323,
-	"name": "alibaba.ascp.uop.supplier.consignorder.cancel.feedback",
-	"apiChineseName": "商家仓wms取消发货反馈回告服务",
-	"description": "履约单纬度通知商家仓wms取消发货结果反馈回告服务",
 	"requestParams": [
 		{
-			"name": "consignorder_cancel_feedback_request",
-			"type": "Consignordercancelfeedbackrequest",
-			"description": "取消发货反馈回告请求",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -36,35 +29,49 @@
 					"name": "cancel_reason",
 					"type": "String",
 					"description": "取消失败原因"
+				},
+				{
+					"name": "business_model",
+					"type": "String",
+					"description": "一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)"
 				}
-			]
+			],
+			"name": "consignorder_cancel_feedback_request",
+			"type": "Consignordercancelfeedbackrequest",
+			"description": "取消发货反馈回告请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "consignorder_cancel_feedback_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否需要重试"
 				}
-			]
+			],
+			"name": "consignorder_cancel_feedback_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.consignorder.cancel.feedback",
+	"apiChineseName": "商家仓wms取消发货反馈回告服务",
+	"description": "履约单纬度通知商家仓wms取消发货结果反馈回告服务",
+	"id": 49323
 }

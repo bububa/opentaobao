@@ -34,6 +34,8 @@ type ProjectPreSalePermitDto struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 预售楼幢
 	PreSaleBuild string `json:"pre_sale_build,omitempty" xml:"pre_sale_build,omitempty"`
+	// 外部项目店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 销售面积
 	SalesArea int64 `json:"sales_area,omitempty" xml:"sales_area,omitempty"`
 	// 销售套数

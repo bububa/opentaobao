@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "云主题id"
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "上下架状态（1上架，2下架）"
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除(0:未删除 1:已删除)"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部主键id",
+					"required": true
+				}
+			],
+			"name": "etc_theme_dto",
+			"type": "EtcThemeDTO",
+			"description": "请求云主题参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.admin.theme.update.status",
+	"apiChineseName": "云主题上下架+删除",
+	"description": "云主题上下架+删除",
+	"id": 61820
+}

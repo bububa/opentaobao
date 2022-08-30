@@ -1,0 +1,117 @@
+{
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "apply_tips",
+			"type": "String",
+			"description": "申请协商提示文案"
+		},
+		{
+			"name": "refund_version",
+			"type": "Number",
+			"description": "退款版本号"
+		},
+		{
+			"subParams": [
+				{
+					"name": "reason_id",
+					"type": "Number",
+					"description": "退款原因ID"
+				},
+				{
+					"name": "reason_text",
+					"type": "String",
+					"description": "退款原因文案"
+				}
+			],
+			"name": "reason_list",
+			"type": "Reason []",
+			"description": "可以协商的退款原因列表"
+		},
+		{
+			"subParams": [
+				{
+					"name": "max_refund_fee",
+					"type": "Number",
+					"description": "可以协商的最大退款金额"
+				}
+			],
+			"name": "max_refund_fee",
+			"type": "MaxRefundFee",
+			"description": "可以协商的最大退款金额"
+		},
+		{
+			"subParams": [
+				{
+					"name": "address_id",
+					"type": "Number",
+					"description": "地址ID"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人姓名"
+				},
+				{
+					"name": "post_code",
+					"type": "String",
+					"description": "邮政编码"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收件人手机"
+				},
+				{
+					"name": "country_name",
+					"type": "String",
+					"description": "国家"
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "area_name",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "town_name",
+					"type": "String",
+					"description": "乡镇/街道"
+				},
+				{
+					"name": "address_detail",
+					"type": "String",
+					"description": "乡镇/街道地址详情"
+				},
+				{
+					"name": "division_code",
+					"type": "String",
+					"description": "行政区划代码"
+				}
+			],
+			"name": "address_list",
+			"type": "Address []",
+			"description": "卖家退货地址列表"
+		}
+	],
+	"name": "taobao.refund.negotiatereturn.render",
+	"apiChineseName": "协商退货退款渲染",
+	"description": "协商退货退款渲染",
+	"id": 64015
+}

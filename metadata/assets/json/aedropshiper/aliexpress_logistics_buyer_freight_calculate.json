@@ -1,14 +1,6 @@
 {
-	"id": 39371,
-	"name": "aliexpress.logistics.buyer.freight.calculate",
-	"apiChineseName": "提供给买家使用的运费计算接口",
-	"description": "提供给买家使用的运费计算接口",
 	"requestParams": [
 		{
-			"name": "param_aeop_freight_calculate_for_buyer_d_t_o",
-			"type": "AeopFreightCalculateForBuyerDto",
-			"description": "运费计算请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "city_code",
@@ -54,20 +46,17 @@
 					"type": "String",
 					"description": "商品价格币种"
 				}
-			]
+			],
+			"name": "param_aeop_freight_calculate_for_buyer_d_t_o",
+			"type": "AeopFreightCalculateForBuyerDto",
+			"description": "运费计算请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AeopFreightCalculateResultListResponseForBuyer",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "aeop_freight_calculate_result_for_buyer_d_t_o_list",
-					"type": "AeopFreightCalculateResultForBuyerDto[]",
-					"description": "aeopFreightCalculateResultForBuyerDTOList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
@@ -82,10 +71,6 @@
 							"required": true
 						},
 						{
-							"name": "freight",
-							"type": "Money",
-							"description": "运费",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
@@ -105,7 +90,11 @@
 									"description": "currencyCode",
 									"required": true
 								}
-							]
+							],
+							"name": "freight",
+							"type": "Money",
+							"description": "运费",
+							"required": true
 						},
 						{
 							"name": "service_name",
@@ -113,7 +102,11 @@
 							"description": "serviceName",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_freight_calculate_result_for_buyer_d_t_o_list",
+					"type": "AeopFreightCalculateResultForBuyerDto[]",
+					"description": "aeopFreightCalculateResultForBuyerDTOList",
+					"required": true
 				},
 				{
 					"name": "error_desc",
@@ -127,7 +120,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "AeopFreightCalculateResultListResponseForBuyer",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.logistics.buyer.freight.calculate",
+	"apiChineseName": "提供给买家使用的运费计算接口",
+	"description": "提供给买家使用的运费计算接口",
+	"id": 39371
 }

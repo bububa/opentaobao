@@ -1,8 +1,4 @@
 {
-	"id": 33436,
-	"name": "taobao.ailab.aicloud.top.message.send",
-	"apiChineseName": "发送留言",
-	"description": "供准入的外部用户实现发送留言功能，APP端发送，设备端读取",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -46,5 +42,9 @@
 			"type": "Boolean",
 			"description": "model"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.message.send",
+	"apiChineseName": "发送留言",
+	"description": "供准入的外部用户实现发送留言功能，APP端发送，设备端读取",
+	"id": 33436
 }

@@ -1,14 +1,6 @@
 {
-	"id": 53615,
-	"name": "alitrip.btrip.open.cost.center.modify",
-	"apiChineseName": "修改成本中心",
-	"description": "修改成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterModifyRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "alipay_no",
@@ -49,7 +41,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterModifyRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.modify",
+	"apiChineseName": "修改成本中心",
+	"description": "修改成本中心",
+	"id": 53615
 }

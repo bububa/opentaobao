@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘/小区id",
+					"required": true
+				},
+				{
+					"name": "outer_review_id",
+					"type": "String",
+					"description": "外部评测id",
+					"required": true
+				},
+				{
+					"name": "outer_video_id",
+					"type": "String",
+					"description": "外部视频id"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型，1新房，2小区",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "评测状态",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "标识评测是否测试数据，0不是，1是",
+					"required": true
+				},
+				{
+					"name": "review_json",
+					"type": "String",
+					"description": "评测文本json数据",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "String",
+					"description": "发布时间",
+					"required": true
+				}
+			],
+			"name": "sync_rich_review_dto",
+			"type": "SyncRichReviewDTO",
+			"description": "评测实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "123"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果实体类"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.new.rich.review.sync",
+	"apiChineseName": "新评测改造接口同步",
+	"description": "新评测改造接口同步",
+	"id": 61715
+}

@@ -1,0 +1,218 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "erp_warehouse_code",
+							"type": "String",
+							"description": "仓库编码，string（50)    卖家下唯一主键 erp维度是会员ID+仓库ID生成同步过来的仓库编码，确保唯一，接口交互时货主下资源的唯一主键；",
+							"required": true
+						},
+						{
+							"name": "erp_warehouse_biz_code",
+							"type": "String",
+							"description": "商家编码，string（50)   商家在erp设置的商家编码，商家可编辑"
+						},
+						{
+							"name": "erp_warehouse_name",
+							"type": "String",
+							"description": "仓库名称，string（50）",
+							"required": true
+						},
+						{
+							"name": "wms_warehouse_code",
+							"type": "String",
+							"description": "WMS仓编码，string（50）"
+						},
+						{
+							"name": "wms_warehouse_name",
+							"type": "String",
+							"description": "WMS仓名称，string（50）"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份，string（15)"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市，string（15）"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区，string（15）"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "乡镇，string（15）"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址，string（50）"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编，string（15）"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "联系人分组，string（50），mr=默认组，th=退货组，kf=客服组，rk=入库组，ck=出库组，kn=库内组  "
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "联系人名称，string（20）"
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "联系人手机，string（20)"
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话 ，string（20)"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份，string（15)"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市，string（15）"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "地区，string（15）"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "乡镇，string（15）"
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "详细地址，string（50）"
+								}
+							],
+							"name": "contact_infos",
+							"type": "ContactInfo[]",
+							"description": "联系人信息；必填 1个"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态：0=停用；1=启用"
+						}
+					],
+					"name": "warehouse_infos",
+					"type": "WarehouseInfo[]",
+					"description": "仓信息数组 ；最多50条",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				}
+			],
+			"name": "warehouse_upsert_request",
+			"type": "WarehouseUpsertRequest",
+			"description": "仓信息同步入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "0=全部失败，1=全部成功，2=部分成功"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "true|false"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "响应码"
+								},
+								{
+									"name": "message",
+									"type": "String",
+									"description": "响应信息"
+								},
+								{
+									"name": "seller_id",
+									"type": "String",
+									"description": "卖家ID"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "仓编码"
+								}
+							],
+							"name": "detail",
+							"type": "DetailItem[]",
+							"description": "详细信息"
+						}
+					],
+					"name": "data",
+					"type": "DataDetail",
+					"description": "业务处理结果"
+				}
+			],
+			"name": "warehouse_upsert_response",
+			"type": "WarehouseUpsertResponse",
+			"description": "处理结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.warehouse.create.update",
+	"apiChineseName": "仓库信息同步",
+	"description": "仓库信息同步",
+	"id": 63258
+}

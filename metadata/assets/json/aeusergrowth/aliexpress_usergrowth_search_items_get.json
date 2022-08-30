@@ -1,8 +1,4 @@
 {
-	"id": 45721,
-	"name": "aliexpress.usergrowth.search.items.get",
-	"apiChineseName": "第三方平台搜索AE商品",
-	"description": "第三方平台的搜索服务   获取AE商品list",
 	"requestParams": [
 		{
 			"name": "keywords",
@@ -43,15 +39,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "response model",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "Result,The product  are located at the top,maybe null  when success = false",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -149,7 +138,11 @@
 							"description": "delivery freeShipping",
 							"required": true
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "Result,The product  are located at the top,maybe null  when success = false",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -170,10 +163,6 @@
 					"required": true
 				},
 				{
-					"name": "ext",
-					"type": "Ext",
-					"description": "extend param",
-					"required": true,
 					"subParams": [
 						{
 							"name": "search_page_link",
@@ -181,9 +170,20 @@
 							"description": "search page link",
 							"required": true
 						}
-					]
+					],
+					"name": "ext",
+					"type": "Ext",
+					"description": "extend param",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "response model"
 		}
-	]
+	],
+	"name": "aliexpress.usergrowth.search.items.get",
+	"apiChineseName": "第三方平台搜索AE商品",
+	"description": "第三方平台的搜索服务   获取AE商品list",
+	"id": 45721
 }

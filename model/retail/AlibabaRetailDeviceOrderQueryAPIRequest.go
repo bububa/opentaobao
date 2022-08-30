@@ -14,16 +14,16 @@ type AlibabaRetailDeviceOrderQueryAPIRequest struct {
 	model.Params
 	// 阿里设备物理ID
 	_deviceSnList []string
-	// 外部设备编码
-	_deviceUuid string
-	// 阿里设备编码
-	_deviceCode string
-	// CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
-	_payType string
-	// 查询订单开始时间
-	_starts string
 	// 查询订单结束时间
 	_ends string
+	// 阿里设备编码
+	_deviceCode string
+	// 外部设备编码
+	_deviceUuid string
+	// 查询订单开始时间
+	_starts string
+	// CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
+	_payType string
 	// -20 已退款，-10 交易关闭 ，10 创单 20 已支付  30 已出货  40 交易完成
 	_status int64
 	// 分页大小
@@ -66,17 +66,17 @@ func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceSnList() []string {
 	return r._deviceSnList
 }
 
-// SetDeviceUuid is DeviceUuid Setter
-// 外部设备编码
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceUuid(_deviceUuid string) error {
-	r._deviceUuid = _deviceUuid
-	r.Set("device_uuid", _deviceUuid)
+// SetEnds is Ends Setter
+// 查询订单结束时间
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetEnds(_ends string) error {
+	r._ends = _ends
+	r.Set("ends", _ends)
 	return nil
 }
 
-// GetDeviceUuid DeviceUuid Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceUuid() string {
-	return r._deviceUuid
+// GetEnds Ends Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetEnds() string {
+	return r._ends
 }
 
 // SetDeviceCode is DeviceCode Setter
@@ -92,17 +92,17 @@ func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceCode() string {
 	return r._deviceCode
 }
 
-// SetPayType is PayType Setter
-// CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) error {
-	r._payType = _payType
-	r.Set("pay_type", _payType)
+// SetDeviceUuid is DeviceUuid Setter
+// 外部设备编码
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetDeviceUuid(_deviceUuid string) error {
+	r._deviceUuid = _deviceUuid
+	r.Set("device_uuid", _deviceUuid)
 	return nil
 }
 
-// GetPayType PayType Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPayType() string {
-	return r._payType
+// GetDeviceUuid DeviceUuid Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetDeviceUuid() string {
+	return r._deviceUuid
 }
 
 // SetStarts is Starts Setter
@@ -118,17 +118,17 @@ func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetStarts() string {
 	return r._starts
 }
 
-// SetEnds is Ends Setter
-// 查询订单结束时间
-func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetEnds(_ends string) error {
-	r._ends = _ends
-	r.Set("ends", _ends)
+// SetPayType is PayType Setter
+// CASH 现金，ALIPAY_FACE_PAY_QR 支付宝，VENDING_PRIZE 抽奖，FACE_PAY 人脸
+func (r *AlibabaRetailDeviceOrderQueryAPIRequest) SetPayType(_payType string) error {
+	r._payType = _payType
+	r.Set("pay_type", _payType)
 	return nil
 }
 
-// GetEnds Ends Getter
-func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetEnds() string {
-	return r._ends
+// GetPayType PayType Getter
+func (r AlibabaRetailDeviceOrderQueryAPIRequest) GetPayType() string {
+	return r._payType
 }
 
 // SetStatus is Status Setter

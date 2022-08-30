@@ -1,14 +1,6 @@
 {
-	"id": 25194,
-	"name": "taobao.mobile.promotion.benefit.activity.send",
-	"apiChineseName": "手淘专用单用户发放接口",
-	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。",
 	"requestParams": [
 		{
-			"name": "single_benefit_request",
-			"type": "SingleBenefitRequest",
-			"description": "单用户权益发放请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "benefit_type",
@@ -63,14 +55,15 @@
 					"type": "String",
 					"description": "支持每日赢宝箱多个卡片类型，默认“游戏惊喜”卡片，可选“美妆”卡片beauty"
 				}
-			]
+			],
+			"name": "single_benefit_request",
+			"type": "SingleBenefitRequest",
+			"description": "单用户权益发放请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "send_result",
-			"type": "SingleBenefitSendResult",
-			"description": "权益发放结果",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -88,9 +81,6 @@
 					"description": "是否发放成功"
 				},
 				{
-					"name": "results",
-					"type": "MobileBenefitSendResultExt[]",
-					"description": "单次发放结果",
 					"subParams": [
 						{
 							"name": "error_code_list",
@@ -112,7 +102,10 @@
 							"type": "Number",
 							"description": "活动详情id"
 						}
-					]
+					],
+					"name": "results",
+					"type": "MobileBenefitSendResultExt[]",
+					"description": "单次发放结果"
 				},
 				{
 					"name": "unique_id",
@@ -124,7 +117,14 @@
 					"type": "Boolean",
 					"description": "用于宝箱应用，为true表示宝箱任务已完成，需要提示用户"
 				}
-			]
+			],
+			"name": "send_result",
+			"type": "SingleBenefitSendResult",
+			"description": "权益发放结果"
 		}
-	]
+	],
+	"name": "taobao.mobile.promotion.benefit.activity.send",
+	"apiChineseName": "手淘专用单用户发放接口",
+	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。",
+	"id": 25194
 }

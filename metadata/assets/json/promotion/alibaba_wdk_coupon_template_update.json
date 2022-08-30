@@ -1,25 +1,10 @@
 {
-	"id": 46143,
-	"name": "alibaba.wdk.coupon.template.update",
-	"apiChineseName": "优惠券模版修改",
-	"description": "优惠券模版修改",
 	"requestParams": [
 		{
-			"name": "param_coupon_template_operate_request",
-			"type": "CouponTemplateOperateRequest",
-			"description": "请求",
 			"subParams": [
 				{
-					"name": "coupon_template",
-					"type": "CouponTemplate",
-					"description": "券模版",
-					"required": true,
 					"subParams": [
 						{
-							"name": "apply_limit_config",
-							"type": "CouponTemplateApplyLimitConfig",
-							"description": "领取限制",
-							"required": true,
 							"subParams": [
 								{
 									"name": "apply_end_time",
@@ -52,13 +37,13 @@
 									"type": "Date",
 									"description": "优惠券最早能领取时间(在这时间之前，优惠券不能领取)"
 								}
-							]
+							],
+							"name": "apply_limit_config",
+							"type": "CouponTemplateApplyLimitConfig",
+							"description": "领取限制",
+							"required": true
 						},
 						{
-							"name": "common_config",
-							"type": "CouponTemplateCommonConfig",
-							"description": "基础信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "apply_channels",
@@ -93,12 +78,13 @@
 									"type": "String",
 									"description": "优惠券发放方式 ANONYMOUS(\"anonymous\",\"匿名券\"), REGISTERED(\"registered\",\"记名券\"),"
 								}
-							]
+							],
+							"name": "common_config",
+							"type": "CouponTemplateCommonConfig",
+							"description": "基础信息",
+							"required": true
 						},
 						{
-							"name": "condition_config",
-							"type": "CouponTemplateConditionConfig",
-							"description": "生效条件",
 							"subParams": [
 								{
 									"name": "amount",
@@ -142,13 +128,10 @@
 								},
 								{
 									"name": "terminals",
-									"type": "Number[]",
+									"type": "String[]",
 									"description": "生效终端:  1.app 2.pos"
 								},
 								{
-									"name": "user_crowd_config",
-									"type": "CouponTemplateUserCrowdConfig",
-									"description": "人群信息",
 									"subParams": [
 										{
 											"name": "merchant_customize_crowd_name",
@@ -160,19 +143,27 @@
 											"type": "String",
 											"description": "平台人群"
 										}
-									]
+									],
+									"name": "user_crowd_config",
+									"type": "CouponTemplateUserCrowdConfig",
+									"description": "人群信息"
 								},
 								{
 									"name": "max_use_count_per_order",
 									"type": "Number",
 									"description": "单笔订单最大可用张数"
+								},
+								{
+									"name": "merchant_categories",
+									"type": "String[]",
+									"description": "生效商家类目"
 								}
-							]
+							],
+							"name": "condition_config",
+							"type": "CouponTemplateConditionConfig",
+							"description": "生效条件"
 						},
 						{
-							"name": "discount_config",
-							"type": "CouponTemplateDiscountConfig",
-							"description": "优惠效果",
 							"subParams": [
 								{
 									"name": "decrease",
@@ -204,7 +195,10 @@
 									"type": "Boolean",
 									"description": "是否固定价格"
 								}
-							]
+							],
+							"name": "discount_config",
+							"type": "CouponTemplateDiscountConfig",
+							"description": "优惠效果"
 						},
 						{
 							"name": "id",
@@ -212,14 +206,8 @@
 							"description": "模板表主键 创建时为空"
 						},
 						{
-							"name": "investment_config",
-							"type": "CouponTemplateInvestmentConfig",
-							"description": "出资人配置",
 							"subParams": [
 								{
-									"name": "investment_info_list",
-									"type": "InvestmentInfo[]",
-									"description": "出资人配置",
 									"subParams": [
 										{
 											"name": "investor",
@@ -231,14 +219,17 @@
 											"type": "Number",
 											"description": "出资比例 2000 = 20%"
 										}
-									]
+									],
+									"name": "investment_info_list",
+									"type": "InvestmentInfo[]",
+									"description": "出资人配置"
 								}
-							]
+							],
+							"name": "investment_config",
+							"type": "CouponTemplateInvestmentConfig",
+							"description": "出资人配置"
 						},
 						{
-							"name": "option_config",
-							"type": "CouponTemplateOptionConfig",
-							"description": "其他配置--拓展信息",
 							"subParams": [
 								{
 									"name": "out_coupon_template_id",
@@ -259,18 +250,25 @@
 									"name": "picture_url",
 									"type": "String",
 									"description": "券图片"
+								},
+								{
+									"name": "purchase_id",
+									"type": "Number",
+									"description": "采买者id"
+								},
+								{
+									"name": "contract_instance_id",
+									"type": "Number",
+									"description": "合同id"
 								}
-							]
+							],
+							"name": "option_config",
+							"type": "CouponTemplateOptionConfig",
+							"description": "其他配置--拓展信息"
 						},
 						{
-							"name": "participate_config",
-							"type": "CouponTemplateParticipateConfig",
-							"description": "参与者",
 							"subParams": [
 								{
-									"name": "participate_list",
-									"type": "LogicGroup[]",
-									"description": "参与者列表",
 									"subParams": [
 										{
 											"name": "number",
@@ -287,9 +285,15 @@
 											"type": "Number",
 											"description": "逻辑分组类型  COMMON(1, \"普通分组\"), EXCHANGE(2, \"换购分组\"), BUY_GIFT(3, \"买赠分组\"), EXCHANGE_TJ_OVERLAY(4, \"特价换购叠加分组\"),"
 										}
-									]
+									],
+									"name": "participate_list",
+									"type": "LogicGroup[]",
+									"description": "参与者列表"
 								}
-							]
+							],
+							"name": "participate_config",
+							"type": "CouponTemplateParticipateConfig",
+							"description": "参与者"
 						},
 						{
 							"name": "source_id",
@@ -297,9 +301,6 @@
 							"description": "ump模板ID"
 						},
 						{
-							"name": "time_limit_config",
-							"type": "CouponTemplateTimeLimitConfig",
-							"description": "实例有效时间配置",
 							"subParams": [
 								{
 									"name": "end_valid_time",
@@ -320,20 +321,56 @@
 									"name": "validity_period",
 									"type": "Number",
 									"description": "优惠券有效时长，单位为秒（固定有效时长的优惠券）"
+								},
+								{
+									"name": "validity_start_interval",
+									"type": "Number",
+									"description": "优惠券有效开始时长，单位为秒（优惠券领取后X天开始有效）"
+								},
+								{
+									"name": "validity_end_interval",
+									"type": "Number",
+									"description": "优惠券有效结束时长，单位为秒（优惠券领取后X-Y天有效的Y）"
 								}
-							]
+							],
+							"name": "time_limit_config",
+							"type": "CouponTemplateTimeLimitConfig",
+							"description": "实例有效时间配置"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
 							"description": "优惠券模版uuid"
+						},
+						{
+							"name": "unique_id",
+							"type": "String",
+							"description": "幂等id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "valid_till_night",
+									"type": "Number",
+									"description": "是否要求优惠券在一天的23:59:59失效 1表示最后一秒失效"
+								},
+								{
+									"name": "application_type",
+									"type": "String",
+									"description": "优惠券应用类型 pointCoupon：积分券"
+								}
+							],
+							"name": "compatible_config",
+							"type": "CouponTemplateCompatibleConfig",
+							"description": "兼容历史逻辑配置"
 						}
-					]
+					],
+					"name": "coupon_template",
+					"type": "CouponTemplate",
+					"description": "券模版",
+					"required": true
 				},
 				{
-					"name": "user_info",
-					"type": "UserInfo",
-					"description": "用户信息",
 					"subParams": [
 						{
 							"name": "source",
@@ -350,42 +387,48 @@
 							"type": "String",
 							"description": "用户名称"
 						}
-					]
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息"
 				}
-			]
+			],
+			"name": "param_coupon_template_operate_request",
+			"type": "CouponTemplateOperateRequest",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "返回",
-					"required": true
+					"type": "String",
+					"description": "返回"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.template.update",
+	"apiChineseName": "优惠券模版修改",
+	"description": "优惠券模版修改",
+	"id": 46143
 }

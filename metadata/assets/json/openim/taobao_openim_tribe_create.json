@@ -1,14 +1,6 @@
 {
-	"id": 25570,
-	"name": "taobao.openim.tribe.create",
-	"apiChineseName": "创建群",
-	"description": "创建一个openim的群",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -25,7 +17,11 @@
 					"type": "String",
 					"description": "账户appkey"
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tribe_name",
@@ -46,10 +42,6 @@
 			"required": true
 		},
 		{
-			"name": "members",
-			"type": "OpenImUser[]",
-			"description": "创建群时候拉入群的成员tribe_type = 1（即为讨论组类型)时  该参数为必选tribe_type = 0 (即为普通群类型)时，改参数无效，可不填",
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "uid",
@@ -66,14 +58,15 @@
 					"type": "String",
 					"description": "账户appkey"
 				}
-			]
+			],
+			"name": "members",
+			"type": "OpenImUser[]",
+			"description": "创建群时候拉入群的成员tribe_type = 1（即为讨论组类型)时  该参数为必选tribe_type = 0 (即为普通群类型)时，改参数无效，可不填",
+			"maxListSize": 1000
 		}
 	],
 	"responseParams": [
 		{
-			"name": "tribe_info",
-			"type": "TribeInfo",
-			"description": "创建群的信息",
 			"subParams": [
 				{
 					"name": "tribe_id",
@@ -110,7 +103,14 @@
 					"type": "String",
 					"description": "群公告"
 				}
-			]
+			],
+			"name": "tribe_info",
+			"type": "TribeInfo",
+			"description": "创建群的信息"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.create",
+	"apiChineseName": "创建群",
+	"description": "创建一个openim的群",
+	"id": 25570
 }

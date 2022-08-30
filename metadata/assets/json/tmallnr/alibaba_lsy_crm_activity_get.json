@@ -1,8 +1,4 @@
 {
-	"id": 55222,
-	"name": "alibaba.lsy.crm.activity.get",
-	"apiChineseName": "私域导购查询活动详情",
-	"description": "私域导购查询活动详情",
 	"requestParams": [
 		{
 			"name": "activity_id",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "success",
@@ -42,10 +35,6 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "NrtCrmActivityDetailDto",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "status_str",
@@ -142,8 +131,86 @@
 							"type": "Number",
 							"description": "100:已发布，-100:失效，200:已结束",
 							"required": true
+						},
+						{
+							"name": "banner_url",
+							"type": "String",
+							"description": "头图",
+							"required": true
+						},
+						{
+							"name": "tmp_scene_activity_id_list",
+							"type": "String",
+							"description": "有价礼包List",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "live_fore_show",
+									"type": "String",
+									"description": "预考链接",
+									"required": true
+								},
+								{
+									"name": "live_status",
+									"type": "Number",
+									"description": "直播间状态",
+									"required": true
+								},
+								{
+									"name": "live_tao_pwd",
+									"type": "String",
+									"description": "淘口令",
+									"required": true
+								},
+								{
+									"name": "live_url",
+									"type": "String",
+									"description": "直播间链接",
+									"required": true
+								},
+								{
+									"name": "live_end_time",
+									"type": "Date",
+									"description": "直播开始时间",
+									"required": true
+								},
+								{
+									"name": "live_start_time",
+									"type": "Date",
+									"description": "直播结束时间",
+									"required": true
+								},
+								{
+									"name": "live_title",
+									"type": "String",
+									"description": "直播间标题",
+									"required": true
+								},
+								{
+									"name": "live_id",
+									"type": "Number",
+									"description": "直播间ID",
+									"required": true
+								},
+								{
+									"name": "live_cover_url",
+									"type": "String",
+									"description": "直播间封面URL",
+									"required": true
+								}
+							],
+							"name": "nrt_crm_live_d_t_o",
+							"type": "NrtCrmLiveDto",
+							"description": "直播对象",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "NrtCrmActivityDetailDto",
+					"description": "数据",
+					"required": true
 				},
 				{
 					"name": "err_msg",
@@ -151,7 +218,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.activity.get",
+	"apiChineseName": "私域导购查询活动详情",
+	"description": "私域导购查询活动详情",
+	"id": 55222
 }

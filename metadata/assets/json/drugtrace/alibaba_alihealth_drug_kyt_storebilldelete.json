@@ -1,8 +1,4 @@
 {
-	"id": 41415,
-	"name": "alibaba.alihealth.drug.kyt.storebilldelete",
-	"apiChineseName": "零售端单据删除",
-	"description": "零售端单据删除",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -50,5 +46,9 @@
 			"type": "Boolean",
 			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.storebilldelete",
+	"apiChineseName": "零售端单据删除",
+	"description": "零售端单据删除",
+	"id": 41415
 }

@@ -1,8 +1,4 @@
 {
-	"id": 49123,
-	"name": "taobao.place.storegroup.create",
-	"apiChineseName": "商户门店库创建接口",
-	"description": "用于商家创建线下门店库",
 	"requestParams": [
 		{
 			"name": "name",
@@ -17,47 +13,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopBatchResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "other",
-					"type": "Json",
-					"description": "其他信息",
-					"required": true
+					"type": "String",
+					"description": "其他信息"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "结果总数",
-					"required": true
+					"description": "结果总数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_list",
-					"type": "Json[]",
-					"description": "结果列表",
-					"required": true
+					"type": "String[]",
+					"description": "结果列表"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.place.storegroup.create",
+	"apiChineseName": "商户门店库创建接口",
+	"description": "用于商家创建线下门店库",
+	"id": 49123
 }

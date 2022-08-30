@@ -12,10 +12,10 @@ import (
 // 查询屏蔽品
 type AlibabaScbpAdGroupFindForbiddenProductAPIRequest struct {
 	model.Params
-	// 计划id
-	_campaignId int64
 	// 用户信息
 	_topContext *TopContextDto
+	// 计划id
+	_campaignId int64
 }
 
 // NewAlibabaScbpAdGroupFindForbiddenProductRequest 初始化AlibabaScbpAdGroupFindForbiddenProductAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdGroupFindForbiddenProductAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetCampaignId is CampaignId Setter
-// 计划id
-func (r *AlibabaScbpAdGroupFindForbiddenProductAPIRequest) SetCampaignId(_campaignId int64) error {
-	r._campaignId = _campaignId
-	r.Set("campaign_id", _campaignId)
-	return nil
-}
-
-// GetCampaignId CampaignId Getter
-func (r AlibabaScbpAdGroupFindForbiddenProductAPIRequest) GetCampaignId() int64 {
-	return r._campaignId
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdGroupFindForbiddenProductAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdGroupFindForbiddenProductAPIRequest) SetTopContext(_topCon
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdGroupFindForbiddenProductAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetCampaignId is CampaignId Setter
+// 计划id
+func (r *AlibabaScbpAdGroupFindForbiddenProductAPIRequest) SetCampaignId(_campaignId int64) error {
+	r._campaignId = _campaignId
+	r.Set("campaign_id", _campaignId)
+	return nil
+}
+
+// GetCampaignId CampaignId Getter
+func (r AlibabaScbpAdGroupFindForbiddenProductAPIRequest) GetCampaignId() int64 {
+	return r._campaignId
 }

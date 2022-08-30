@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "oss_key",
+					"type": "String",
+					"description": "oss 导入文件路径"
+				},
+				{
+					"name": "record_type",
+					"type": "String",
+					"description": "有效值LABEL/MINE/TRAIL",
+					"required": true
+				},
+				{
+					"name": "data_type",
+					"type": "String",
+					"description": "数据来源，OSS_CSV/ODPS_TABLE",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作方",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "odps_table",
+							"type": "String",
+							"description": "odps表名"
+						},
+						{
+							"name": "odps_account",
+							"type": "String",
+							"description": "odps账号"
+						},
+						{
+							"name": "odps_project",
+							"type": "String",
+							"description": "odps项目"
+						},
+						{
+							"name": "odps_table_partition",
+							"type": "String",
+							"description": "odps表标记"
+						}
+					],
+					"name": "odps_import_config",
+					"type": "OdpsImportConfig",
+					"description": "odps导入配置"
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "RequesterDataJobSaveCmd",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0:成功/-1:失败"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "返回信息"
+		}
+	],
+	"name": "taobao.ads.data.import",
+	"apiChineseName": "数据导入",
+	"description": "数据导入",
+	"id": 59755
+}

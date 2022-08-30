@@ -1,8 +1,4 @@
 {
-	"id": 52419,
-	"name": "taobao.opentrade.group.join",
-	"apiChineseName": "组团购场景参团",
-	"description": "组团购场景下，用户参团",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -11,16 +7,20 @@
 			"required": true
 		},
 		{
-			"name": "group_id",
-			"type": "Number",
-			"description": "团id",
-			"required": true
-		},
-		{
 			"name": "open_user_id",
 			"type": "String",
 			"description": "用户openId",
 			"required": true
+		},
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "团id",
+			"required": true
 		}
-	]
+	],
+	"name": "taobao.opentrade.group.join",
+	"apiChineseName": "组团购场景参团",
+	"description": "组团购场景下，用户参团",
+	"id": 52419
 }

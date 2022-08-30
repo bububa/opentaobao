@@ -1,14 +1,6 @@
 {
-	"id": 53623,
-	"name": "alitrip.btrip.supplychain.train.city",
-	"apiChineseName": "火车站数据查询",
-	"description": "火车站数据查询",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenSuggestRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -27,36 +19,37 @@
 					"type": "Number",
 					"description": "2：商旅开放平台"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenSuggestRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenApiSuggestRs",
-			"description": "结果对象",
 			"subParams": [
 				{
-					"name": "cities",
-					"type": "CityVo[]",
-					"description": "城市列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "城市码",
-							"required": true
+							"description": "城市码"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "城市名称",
-							"required": true
+							"description": "城市名称"
 						}
-					]
+					],
+					"name": "cities",
+					"type": "CityVo[]",
+					"description": "城市列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenApiSuggestRs",
+			"description": "结果对象"
 		},
 		{
 			"name": "result_code",
@@ -68,5 +61,9 @@
 			"type": "String",
 			"description": "结果码"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.train.city",
+	"apiChineseName": "火车站数据查询",
+	"description": "火车站数据查询",
+	"id": 53623
 }

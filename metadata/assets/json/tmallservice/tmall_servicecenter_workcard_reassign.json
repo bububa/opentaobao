@@ -1,13 +1,6 @@
 {
-	"id": 42625,
-	"name": "tmall.servicecenter.workcard.reassign",
-	"apiChineseName": "工单改派门店",
-	"description": "工单改派门店",
 	"requestParams": [
 		{
-			"name": "reassign_store_request",
-			"type": "ReassignStoreRequest",
-			"description": "请求入参",
 			"subParams": [
 				{
 					"name": "workcard_id",
@@ -24,40 +17,43 @@
 					"type": "Number",
 					"description": "原门店id"
 				}
-			]
+			],
+			"name": "reassign_store_request",
+			"type": "ReassignStoreRequest",
+			"description": "请求入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "result_data",
 					"type": "Number",
-					"description": "改派后的新的工单id",
-					"required": true
+					"description": "改派后的新的工单id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.reassign",
+	"apiChineseName": "工单改派门店",
+	"description": "工单改派门店",
+	"id": 42625
 }

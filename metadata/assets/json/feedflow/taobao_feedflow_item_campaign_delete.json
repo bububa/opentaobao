@@ -1,8 +1,4 @@
 {
-	"id": 43275,
-	"name": "taobao.feedflow.item.campaign.delete",
-	"apiChineseName": "删除计划",
-	"description": "删除计划",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -13,29 +9,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "操作结果",
-					"required": true
+					"description": "操作结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.campaign.delete",
+	"apiChineseName": "删除计划",
+	"description": "删除计划",
+	"id": 43275
 }

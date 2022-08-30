@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"name": "event_id",
+			"type": "Number",
+			"description": "CPA活动ID，详见https://www.yuque.com/docs/share/16905f3f-3a22-4e7c-b8c3-4d23791d42f7?#",
+			"required": true
+		},
+		{
+			"name": "biz_date",
+			"type": "String",
+			"description": "日期(yyyyMMdd)",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页页数，从1开始"
+		},
+		{
+			"name": "query_type",
+			"type": "Number",
+			"description": "数据类型：数据类型:1预估 2结算 （选择1可查询含当天实时预估统计的累计数据，选择2可查询最晚截止昨天结算的累计数据，具体逻辑以活动规则描述为准；）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "媒体三段式id（如果传入pid则返回pid汇总数据，不传则返回member维度统计数据，pid和relationid不可同时传入）"
+		},
+		{
+			"name": "relation_id",
+			"type": "Number",
+			"description": "代理id（如果传入rid则返回rid统计数据，不传则返回member维度统计数据）"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "union_30d_lx_uv",
+									"type": "Number",
+									"description": "符合奖励要求的累计用户数；按入参是预估/结算，区分用户数为预估or可结算结果；"
+								},
+								{
+									"name": "reward_amount",
+									"type": "String",
+									"description": "奖励金额；按入参是预估/结算，区分获得金额为预估or可结算结果；"
+								},
+								{
+									"name": "relation_id",
+									"type": "Number",
+									"description": "rid，当查询数据为rid维度时返回该字段"
+								},
+								{
+									"name": "biz_date",
+									"type": "String",
+									"description": "统计日期（统计活动期内，截止 统计日期 的数据）"
+								},
+								{
+									"name": "pid",
+									"type": "String",
+									"description": "媒体三段式id，当查询数据为pid维度时返回该字段"
+								},
+								{
+									"name": "query_type",
+									"type": "Number",
+									"description": "数据类型:1预估 2结算"
+								}
+							],
+							"name": "results",
+							"type": "VegasCpaReportDTO[]",
+							"description": "数据列表"
+						}
+					],
+					"name": "data",
+					"type": "PageResult",
+					"description": "分页模型"
+				}
+			],
+			"name": "result",
+			"type": "RpcResult",
+			"description": "返回模型"
+		}
+	],
+	"name": "taobao.tbk.dg.cpa.activity.report",
+	"apiChineseName": "淘宝客-推广者-任务奖励效果报表",
+	"description": "提供给媒体使用的cpa活动报表查询api，当前仅试运行媒体可使用",
+	"id": 58111
+}

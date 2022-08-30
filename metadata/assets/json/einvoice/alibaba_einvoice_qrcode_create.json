@@ -1,16 +1,13 @@
 {
-	"id": 31273,
-	"name": "alibaba.einvoice.qrcode.create",
-	"apiChineseName": "扫码开票二维码生成",
-	"description": "扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码",
 	"requestParams": [
 		{
-			"name": "invoice_items",
-			"type": "BillItemDo[]",
-			"description": "发票商品明细",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
 				{
 					"name": "quantity",
 					"type": "String",
@@ -31,14 +28,13 @@
 					"name": "unit",
 					"type": "String",
 					"description": "商品单位"
-				},
-				{
-					"name": "item_name",
-					"type": "String",
-					"description": "商品名称",
-					"required": true
 				}
-			]
+			],
+			"name": "invoice_items",
+			"type": "BillItemDo[]",
+			"description": "发票商品明细",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "payee_register_no",
@@ -65,6 +61,11 @@
 			"required": true
 		},
 		{
+			"name": "platform",
+			"type": "String",
+			"description": "请求方ERP系统平台，同结算单同步的platform，不填默认=platform"
+		},
+		{
 			"name": "qr_logo",
 			"type": "String",
 			"description": "二维码图片中间的logo"
@@ -84,38 +85,34 @@
 			"type": "Number",
 			"description": "二维码返回类型：1=二维码背后的URL，2=二维码图片CDN URL，3=二维码二进制数据流",
 			"required": true
-		},
-		{
-			"name": "platform",
-			"type": "String",
-			"description": "请求方ERP系统平台，同结算单同步的platform，不填默认=platform"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "result",
-					"required": true
+					"description": "result"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.qrcode.create",
+	"apiChineseName": "扫码开票二维码生成",
+	"description": "扫码开票功能中的二维码生成接口，pos机等发起请求生成二维码",
+	"id": 31273
 }

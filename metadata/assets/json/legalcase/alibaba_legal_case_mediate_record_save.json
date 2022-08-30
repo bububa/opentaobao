@@ -1,8 +1,4 @@
 {
-	"id": 53334,
-	"name": "alibaba.legal.case.mediate.record.save",
-	"apiChineseName": "新增调解结果",
-	"description": "增加调解沟通记录",
 	"requestParams": [
 		{
 			"name": "case_id",
@@ -15,14 +11,8 @@
 			"description": "委托id"
 		},
 		{
-			"name": "record",
-			"type": "MediateCommunicationModel",
-			"description": "记录",
 			"subParams": [
 				{
-					"name": "attachment_list",
-					"type": "FileModel[]",
-					"description": "附件",
 					"subParams": [
 						{
 							"name": "key",
@@ -34,7 +24,10 @@
 							"type": "String",
 							"description": "名称"
 						}
-					]
+					],
+					"name": "attachment_list",
+					"type": "FileModel[]",
+					"description": "附件"
 				},
 				{
 					"name": "communicate_record",
@@ -63,7 +56,7 @@
 				},
 				{
 					"name": "mediate_amount",
-					"type": "String",
+					"type": "BigDecimal",
 					"description": "调解金额"
 				},
 				{
@@ -96,34 +89,38 @@
 					"type": "String",
 					"description": "解决方案"
 				}
-			]
+			],
+			"name": "record",
+			"type": "MediateCommunicationModel",
+			"description": "记录"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Number",
-					"description": "调解记录id",
-					"required": true
+					"description": "调解记录id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.mediate.record.save",
+	"apiChineseName": "新增调解结果",
+	"description": "增加调解沟通记录",
+	"id": 53334
 }

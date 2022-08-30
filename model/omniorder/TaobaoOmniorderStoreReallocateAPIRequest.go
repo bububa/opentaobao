@@ -13,7 +13,7 @@ import (
 type TaobaoOmniorderStoreReallocateAPIRequest struct {
 	model.Params
 	// 子订单号
-	_subOrderIds []int64
+	_subOrderIds []string
 	// 电商仓code
 	_warehouseCode string
 	// 主订单号
@@ -45,14 +45,14 @@ func (r TaobaoOmniorderStoreReallocateAPIRequest) GetApiParams() url.Values {
 
 // SetSubOrderIds is SubOrderIds Setter
 // 子订单号
-func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetSubOrderIds(_subOrderIds []int64) error {
+func (r *TaobaoOmniorderStoreReallocateAPIRequest) SetSubOrderIds(_subOrderIds []string) error {
 	r._subOrderIds = _subOrderIds
 	r.Set("sub_order_ids", _subOrderIds)
 	return nil
 }
 
 // GetSubOrderIds SubOrderIds Getter
-func (r TaobaoOmniorderStoreReallocateAPIRequest) GetSubOrderIds() []int64 {
+func (r TaobaoOmniorderStoreReallocateAPIRequest) GetSubOrderIds() []string {
 	return r._subOrderIds
 }
 

@@ -1,14 +1,6 @@
 {
-	"id": 27518,
-	"name": "tmall.carcenter.vehicleinfo.register",
-	"apiChineseName": "车型数据更新",
-	"description": "基本车型信息维护",
 	"requestParams": [
 		{
-			"name": "vehicle_info",
-			"type": "OriginVehicleInfoDto",
-			"description": "车型数据对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "sales_name",
@@ -209,52 +201,54 @@
 					"type": "String",
 					"description": "代数"
 				}
-			]
+			],
+			"name": "vehicle_info",
+			"type": "OriginVehicleInfoDto",
+			"description": "车型数据对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "gmtCurrentTime",
-					"required": true
+					"description": "gmtCurrentTime"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "object",
-					"required": true
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "costTime",
-					"required": true
+					"description": "costTime"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.carcenter.vehicleinfo.register",
+	"apiChineseName": "车型数据更新",
+	"description": "基本车型信息维护",
+	"id": 27518
 }

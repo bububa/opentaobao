@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部房源id",
+					"required": true
+				},
+				{
+					"name": "outer_brand_id",
+					"type": "String",
+					"description": "外部品牌id"
+				}
+			],
+			"name": "sync_update_cooperate_brand",
+			"type": "SyncUpdateCooperateBrand",
+			"description": "实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回编码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "返回成功失败"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回具体值"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值对象"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.cooperate.brand.update",
+	"apiChineseName": "租房合作品牌更新接口",
+	"description": "租房合作品牌更新接口",
+	"id": 63472
+}

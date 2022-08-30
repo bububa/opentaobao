@@ -1,8 +1,4 @@
 {
-	"id": 40283,
-	"name": "alibaba.einvoice.income.device.return",
-	"apiChineseName": "服务商回传客户端设备列表",
-	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",
 	"requestParams": [
 		{
 			"name": "device_list",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "接口是否调用成功"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.income.device.return",
+	"apiChineseName": "服务商回传客户端设备列表",
+	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",
+	"id": 40283
 }

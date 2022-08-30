@@ -1,14 +1,6 @@
 {
-	"id": 43495,
-	"name": "taobao.alitrip.travel.product.base.modify",
-	"apiChineseName": "供应商编辑产品API",
-	"description": "飞猪供销平台供应商可通过该API编辑产品",
 	"requestParams": [
 		{
-			"name": "itineraries",
-			"type": "ItemItineraryInfo[]",
-			"description": "详细行程描述结构",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "content",
@@ -25,12 +17,13 @@
 					"type": "Number",
 					"description": "第一天行程为1，第二天行程为2"
 				}
-			]
+			],
+			"name": "itineraries",
+			"type": "ItemItineraryInfo[]",
+			"description": "详细行程描述结构",
+			"maxListSize": 20
 		},
 		{
-			"name": "base_info",
-			"type": "ProductBaseInfo",
-			"description": "产品基本信息",
 			"subParams": [
 				{
 					"name": "trip_max_days",
@@ -87,7 +80,10 @@
 					"type": "Number",
 					"description": "出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-\u003e出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。"
 				}
-			]
+			],
+			"name": "base_info",
+			"type": "ProductBaseInfo",
+			"description": "产品基本信息"
 		},
 		{
 			"name": "item_id",
@@ -96,9 +92,6 @@
 			"required": true
 		},
 		{
-			"name": "refund_info",
-			"type": "ItemRefundInfo",
-			"description": "退款规则结构",
 			"subParams": [
 				{
 					"name": "refund_regulations",
@@ -115,13 +108,12 @@
 					"type": "Number",
 					"description": "退改规则类型，0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-新版自定义退改规则。"
 				}
-			]
+			],
+			"name": "refund_info",
+			"type": "ItemRefundInfo",
+			"description": "退款规则结构"
 		},
 		{
-			"name": "booking_rules",
-			"type": "BookingRuleInfo[]",
-			"description": "预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "rule_type",
@@ -133,12 +125,13 @@
 					"type": "String",
 					"description": "1500个字"
 				}
-			]
+			],
+			"name": "booking_rules",
+			"type": "BookingRuleInfo[]",
+			"description": "预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
+			"maxListSize": 20
 		},
 		{
-			"name": "cruise_product_ext",
-			"type": "CruiseProductExt",
-			"description": "邮轮商品相关信息",
 			"subParams": [
 				{
 					"name": "ship_fee_include",
@@ -170,12 +163,12 @@
 					"type": "String",
 					"description": "邮轮公司"
 				}
-			]
+			],
+			"name": "cruise_product_ext",
+			"type": "CruiseProductExt",
+			"description": "邮轮商品相关信息"
 		},
 		{
-			"name": "product_sale_info",
-			"type": "ProductSaleInfo",
-			"description": "商品的销售属性相关信息",
 			"subParams": [
 				{
 					"name": "confirm_time",
@@ -232,34 +225,38 @@
 					"type": "String",
 					"description": "建议零售价下限，单位：元"
 				}
-			]
+			],
+			"name": "product_sale_info",
+			"type": "ProductSaleInfo",
+			"description": "商品的销售属性相关信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "travel_item",
-			"type": "TopTravelItem",
-			"description": "商品修改结果",
 			"subParams": [
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "商品创建时间",
-					"required": true
+					"description": "商品创建时间"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "商品修改时间",
-					"required": true
+					"description": "商品修改时间"
 				}
-			]
+			],
+			"name": "travel_item",
+			"type": "TopTravelItem",
+			"description": "商品修改结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.product.base.modify",
+	"apiChineseName": "供应商编辑产品API",
+	"description": "飞猪供销平台供应商可通过该API编辑产品",
+	"id": 43495
 }

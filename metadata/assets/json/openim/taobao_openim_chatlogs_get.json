@@ -1,14 +1,30 @@
 {
-	"id": 25192,
-	"name": "taobao.openim.chatlogs.get",
-	"apiChineseName": "openim聊天记录查询接口",
-	"description": "查询openim账号聊天记录",
 	"requestParams": [
 		{
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			],
 			"name": "user1",
 			"type": "OpenImUser",
 			"description": "用户1信息",
-			"required": true,
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "uid",
@@ -26,31 +42,11 @@
 					"type": "String",
 					"description": "账户appkey"
 				}
-			]
-		},
-		{
+			],
 			"name": "user2",
 			"type": "OpenImUser",
 			"description": "用户2信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "uid",
-					"type": "String",
-					"description": "用户id",
-					"required": true
-				},
-				{
-					"name": "taobao_account",
-					"type": "Boolean",
-					"description": "是否为淘宝账号"
-				},
-				{
-					"name": "app_key",
-					"type": "String",
-					"description": "账户appkey"
-				}
-			]
+			"required": true
 		},
 		{
 			"name": "begin",
@@ -78,9 +74,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RoamingMessageResult",
-			"description": "聊天记录查询结果",
 			"subParams": [
 				{
 					"name": "next_key",
@@ -88,14 +81,8 @@
 					"description": "下次迭代key"
 				},
 				{
-					"name": "messages",
-					"type": "RoamingMessage[]",
-					"description": "消息列表",
 					"subParams": [
 						{
-							"name": "content_list",
-							"type": "RoamingMessageItem[]",
-							"description": "消息内容",
 							"subParams": [
 								{
 									"name": "type",
@@ -107,7 +94,10 @@
 									"type": "String",
 									"description": "值"
 								}
-							]
+							],
+							"name": "content_list",
+							"type": "RoamingMessageItem[]",
+							"description": "消息内容"
 						},
 						{
 							"name": "time",
@@ -129,9 +119,19 @@
 							"type": "Number",
 							"description": "消息类型"
 						}
-					]
+					],
+					"name": "messages",
+					"type": "RoamingMessage[]",
+					"description": "消息列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RoamingMessageResult",
+			"description": "聊天记录查询结果"
 		}
-	]
+	],
+	"name": "taobao.openim.chatlogs.get",
+	"apiChineseName": "openim聊天记录查询接口",
+	"description": "查询openim账号聊天记录",
+	"id": 25192
 }

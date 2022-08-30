@@ -1,22 +1,15 @@
 {
-	"id": 27902,
-	"name": "taobao.alitrip.travel.item.element.query",
-	"apiChineseName": "【API3.0】资源元素查询接口",
-	"description": "提供资源元素查询接口，支持商家查询已经发布过的资源元素",
 	"requestParams": [
 		{
 			"name": "outer_ids",
 			"type": "String[]",
 			"description": "需要查询的资源元素列表，最大列表长度为50",
-			"required": true,
-			"maxListSize": 50
+			"maxListSize": 50,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "TopElementParam []",
-			"description": "资源元素列表",
 			"subParams": [
 				{
 					"name": "element_type",
@@ -54,7 +47,14 @@
 					"description": "元素的说明描述",
 					"required": true
 				}
-			]
+			],
+			"name": "results",
+			"type": "TopElementParam []",
+			"description": "资源元素列表"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.item.element.query",
+	"apiChineseName": "【API3.0】资源元素查询接口",
+	"description": "提供资源元素查询接口，支持商家查询已经发布过的资源元素",
+	"id": 27902
 }

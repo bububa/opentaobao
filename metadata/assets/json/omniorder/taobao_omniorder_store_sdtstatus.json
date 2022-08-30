@@ -1,8 +1,4 @@
 {
-	"id": 35291,
-	"name": "taobao.omniorder.store.sdtstatus",
-	"apiChineseName": "菜鸟裹裹运单状态查询",
-	"description": "提供给商家查询运力单的状态。",
 	"requestParams": [
 		{
 			"name": "package_id",
@@ -12,55 +8,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
-					"name": "data",
-					"type": "SdtStatusResponse",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
 							"type": "Number",
-							"description": "卖家ID，通sellerID",
-							"required": true
+							"description": "卖家ID，通sellerID"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "packageId",
-							"required": true
+							"description": "packageId"
 						},
 						{
 							"name": "reason_desc",
 							"type": "String",
-							"description": "取消原因",
-							"required": true
+							"description": "取消原因"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态 0 取号，1 已发货 -1 商家取消 -2 运力端取消",
-							"required": true
+							"description": "状态 0 取号，1 已发货 -1 商家取消 -2 运力端取消"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SdtStatusResponse",
+					"description": "data"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "异常码 0  正常，否则异常",
-					"required": true
+					"description": "异常码 0  正常，否则异常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.sdtstatus",
+	"apiChineseName": "菜鸟裹裹运单状态查询",
+	"description": "提供给商家查询运力单的状态。",
+	"id": 35291
 }

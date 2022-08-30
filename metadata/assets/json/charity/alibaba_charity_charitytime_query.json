@@ -1,9 +1,10 @@
 {
-	"id": 45562,
-	"name": "alibaba.charity.charitytime.query",
-	"apiChineseName": "查询公益3小时公益时汇总",
-	"description": "查询公益3小时公益时汇总",
 	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动ID"
+		},
 		{
 			"name": "charity_type_list",
 			"type": "String[]",
@@ -16,6 +17,11 @@
 			"description": "结束时间戳-毫秒时间"
 		},
 		{
+			"name": "ext_param",
+			"type": "Json",
+			"description": "扩展参数"
+		},
+		{
 			"name": "start_date",
 			"type": "Number",
 			"description": "开始时间戳-毫秒时间"
@@ -25,16 +31,6 @@
 			"type": "Number",
 			"description": "淘宝Uid",
 			"required": true
-		},
-		{
-			"name": "activity_id",
-			"type": "Number",
-			"description": "活动ID"
-		},
-		{
-			"name": "ext_param",
-			"type": "Json",
-			"description": "扩展参数"
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "成功"
 		}
-	]
+	],
+	"name": "alibaba.charity.charitytime.query",
+	"apiChineseName": "查询公益3小时公益时汇总",
+	"description": "查询公益3小时公益时汇总",
+	"id": 45562
 }

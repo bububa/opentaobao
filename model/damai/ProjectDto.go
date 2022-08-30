@@ -20,6 +20,8 @@ type ProjectDto struct {
 	VenueCity string `json:"venue_city,omitempty" xml:"venue_city,omitempty"`
 	// 场馆名称
 	VenueName string `json:"venue_name,omitempty" xml:"venue_name,omitempty"`
+	// 优惠价格
+	PromotionPrice string `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
 	// 上架时间
 	UpTime string `json:"up_time,omitempty" xml:"up_time,omitempty"`
 	// 关联艺人
@@ -38,8 +40,6 @@ type ProjectDto struct {
 	IsETicket string `json:"is_e_ticket,omitempty" xml:"is_e_ticket,omitempty"`
 	// 是否选座 1:是,0:非
 	IsSelectSeat string `json:"is_select_seat,omitempty" xml:"is_select_seat,omitempty"`
-	// 优惠价格
-	PromotionPrice string `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
 	// 短标题
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 价格字符串

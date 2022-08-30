@@ -1,13 +1,6 @@
 {
-	"id": 53621,
-	"name": "alitrip.btrip.open.cost.center.transfer",
-	"apiChineseName": "商旅成本中心转换为外部成本中心",
-	"description": "商旅成本中心转换为外部成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterTransferRq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -30,7 +23,10 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterTransferRq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
@@ -44,5 +40,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.transfer",
+	"apiChineseName": "商旅成本中心转换为外部成本中心",
+	"description": "商旅成本中心转换为外部成本中心",
+	"id": 53621
 }

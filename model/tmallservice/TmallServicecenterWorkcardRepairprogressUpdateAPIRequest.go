@@ -14,14 +14,14 @@ type TmallServicecenterWorkcardRepairprogressUpdateAPIRequest struct {
 	model.Params
 	// 图片列表
 	_picUrlList []string
-	// 请求节点的动作描述，唯一标识一个节点
-	_action string
 	// 真实接单服务商账号Nick
 	_realTpNick string
-	// 服务目标物瑕疵信息
-	_targetGoodsDefects string
+	// 请求节点的动作描述，唯一标识一个节点
+	_action string
 	// 衣服，鞋子
 	_receivedGoods string
+	// 服务目标物瑕疵信息
+	_targetGoodsDefects string
 	// 工单id
 	_workcardId int64
 }
@@ -60,19 +60,6 @@ func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetPicUrlList(
 	return r._picUrlList
 }
 
-// SetAction is Action Setter
-// 请求节点的动作描述，唯一标识一个节点
-func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetAction(_action string) error {
-	r._action = _action
-	r.Set("action", _action)
-	return nil
-}
-
-// GetAction Action Getter
-func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetAction() string {
-	return r._action
-}
-
 // SetRealTpNick is RealTpNick Setter
 // 真实接单服务商账号Nick
 func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetRealTpNick(_realTpNick string) error {
@@ -86,17 +73,17 @@ func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetRealTpNick(
 	return r._realTpNick
 }
 
-// SetTargetGoodsDefects is TargetGoodsDefects Setter
-// 服务目标物瑕疵信息
-func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetTargetGoodsDefects(_targetGoodsDefects string) error {
-	r._targetGoodsDefects = _targetGoodsDefects
-	r.Set("target_goods_defects", _targetGoodsDefects)
+// SetAction is Action Setter
+// 请求节点的动作描述，唯一标识一个节点
+func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetAction(_action string) error {
+	r._action = _action
+	r.Set("action", _action)
 	return nil
 }
 
-// GetTargetGoodsDefects TargetGoodsDefects Getter
-func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetTargetGoodsDefects() string {
-	return r._targetGoodsDefects
+// GetAction Action Getter
+func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetAction() string {
+	return r._action
 }
 
 // SetReceivedGoods is ReceivedGoods Setter
@@ -110,6 +97,19 @@ func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetReceivedGo
 // GetReceivedGoods ReceivedGoods Getter
 func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetReceivedGoods() string {
 	return r._receivedGoods
+}
+
+// SetTargetGoodsDefects is TargetGoodsDefects Setter
+// 服务目标物瑕疵信息
+func (r *TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) SetTargetGoodsDefects(_targetGoodsDefects string) error {
+	r._targetGoodsDefects = _targetGoodsDefects
+	r.Set("target_goods_defects", _targetGoodsDefects)
+	return nil
+}
+
+// GetTargetGoodsDefects TargetGoodsDefects Getter
+func (r TmallServicecenterWorkcardRepairprogressUpdateAPIRequest) GetTargetGoodsDefects() string {
+	return r._targetGoodsDefects
 }
 
 // SetWorkcardId is WorkcardId Setter

@@ -1,8 +1,4 @@
 {
-	"id": 38501,
-	"name": "alibaba.ceres.supplier.po.query",
-	"apiChineseName": "采购供应商订单查询接口",
-	"description": "采购供应商订单查询接口",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -24,115 +20,107 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回消息体",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "values",
-					"type": "Value[]",
-					"description": "返回单据消息体List",
-					"required": true,
 					"subParams": [
 						{
 							"name": "po_no",
 							"type": "String",
-							"description": "订单编号",
-							"required": true
+							"description": "订单编号"
 						},
 						{
 							"name": "effect_time",
 							"type": "Date",
-							"description": "订单生效时间",
-							"required": true
+							"description": "订单生效时间"
 						},
 						{
 							"name": "contract_no",
 							"type": "String",
-							"description": "合同编号",
-							"required": true
+							"description": "合同编号"
 						},
 						{
 							"name": "currency_code",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "订单金额",
-							"required": true
+							"description": "订单金额"
 						},
 						{
 							"name": "deliver_amount",
 							"type": "String",
-							"description": "已发货金额",
-							"required": true
+							"description": "已发货金额"
 						},
 						{
 							"name": "receive_amount",
 							"type": "String",
-							"description": "已接收金额",
-							"required": true
+							"description": "已接收金额"
 						},
 						{
 							"name": "bill_amount",
 							"type": "String",
-							"description": "已开票金额",
-							"required": true
+							"description": "已开票金额"
 						},
 						{
 							"name": "to_pay_amount",
 							"type": "String",
-							"description": "已满足付款金额",
-							"required": true
+							"description": "已满足付款金额"
 						},
 						{
 							"name": "payment_amount",
 							"type": "String",
-							"description": "已付款金额",
-							"required": true
+							"description": "已付款金额"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "begin_date",
 							"type": "String",
-							"description": "开始日期",
-							"required": true
+							"description": "开始日期"
 						},
 						{
 							"name": "end_date",
 							"type": "String",
-							"description": "结束日期",
-							"required": true
+							"description": "结束日期"
+						},
+						{
+							"name": "cpo_no",
+							"type": "String",
+							"description": "CPO NO"
 						}
-					]
+					],
+					"name": "values",
+					"type": "Value[]",
+					"description": "返回单据消息体List"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回code",
-					"required": true
+					"description": "返回code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否查询成功",
-					"required": true
+					"description": "是否查询成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回消息体"
 		}
-	]
+	],
+	"name": "alibaba.ceres.supplier.po.query",
+	"apiChineseName": "采购供应商订单查询接口",
+	"description": "采购供应商订单查询接口",
+	"id": 38501
 }

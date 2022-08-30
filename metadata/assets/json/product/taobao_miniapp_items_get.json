@@ -1,8 +1,4 @@
 {
-	"id": 47621,
-	"name": "taobao.miniapp.items.get",
-	"apiChineseName": "批量获取商品信息",
-	"description": "获取商品公开属性，只允许在商家应用环境中使用",
 	"requestParams": [
 		{
 			"name": "num_iids",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "items",
-			"type": "Item []",
-			"description": "Item(商品)结构",
 			"subParams": [
 				{
 					"name": "iid",
@@ -114,9 +107,6 @@
 					"description": "属性值别名"
 				},
 				{
-					"name": "item_imgs",
-					"type": "ItemImg[]",
-					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "url",
@@ -128,12 +118,12 @@
 							"type": "Number",
 							"description": "图片放在第几张（多图时可设置）"
 						}
-					]
+					],
+					"name": "item_imgs",
+					"type": "ItemImg[]",
+					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "prop_imgs",
-					"type": "PropImg[]",
-					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -160,12 +150,12 @@
 							"type": "Date",
 							"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
 						}
-					]
+					],
+					"name": "prop_imgs",
+					"type": "PropImg[]",
+					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "skus",
-					"type": "Sku[]",
-					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -276,7 +266,10 @@
 							"type": "String",
 							"description": "SKU图片"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段"
 				},
 				{
 					"name": "outer_id",
@@ -289,9 +282,6 @@
 					"description": "虚拟商品的状态字段"
 				},
 				{
-					"name": "videos",
-					"type": "Video[]",
-					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、\u003cbr/\u003evideo.url等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -328,7 +318,10 @@
 							"type": "Number",
 							"description": "视频记录所关联的商品的数字id"
 						}
-					]
+					],
+					"name": "videos",
+					"type": "Video[]",
+					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、\u003cbr/\u003evideo.url等形式就只会返回相应的字段"
 				},
 				{
 					"name": "second_kill",
@@ -360,7 +353,14 @@
 					"type": "String",
 					"description": "商品级别的条形码"
 				}
-			]
+			],
+			"name": "items",
+			"type": "Item []",
+			"description": "Item(商品)结构"
 		}
-	]
+	],
+	"name": "taobao.miniapp.items.get",
+	"apiChineseName": "批量获取商品信息",
+	"description": "获取商品公开属性，只允许在商家应用环境中使用",
+	"id": 47621
 }

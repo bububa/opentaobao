@@ -1,20 +1,8 @@
 {
-	"id": 56132,
-	"name": "alibaba.einvoice.flow.tax.create",
-	"apiChineseName": "创建税控开通工单",
-	"description": "商户在业务前台订购税控产品后，调用阿里发票此接口，提交税号的入驻开通工单。此接口返回为工单的提交结果，非真正入驻结果。开通结果会在商户完成设备的部署安装 入驻完成后，由阿里发票通过消息异步通知到业务前台。",
 	"requestParams": [
 		{
-			"name": "invoice_tax_flow_create_dto",
-			"type": "InvoiceTaxFlowCreateDto",
-			"description": "工单请求",
-			"required": true,
 			"subParams": [
 				{
-					"name": "invoice_company",
-					"type": "InvoiceCompanyDto",
-					"description": "企业税务信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "area",
@@ -103,13 +91,13 @@
 							"type": "String",
 							"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率"
 						}
-					]
+					],
+					"name": "invoice_company",
+					"type": "InvoiceCompanyDto",
+					"description": "企业税务信息",
+					"required": true
 				},
 				{
-					"name": "invoice_contact",
-					"type": "InvoiceContactDto",
-					"description": "联系人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "contact_addr",
@@ -133,7 +121,11 @@
 							"description": "联系人姓名",
 							"required": true
 						}
-					]
+					],
+					"name": "invoice_contact",
+					"type": "InvoiceContactDto",
+					"description": "联系人信息",
+					"required": true
 				},
 				{
 					"name": "outer_id",
@@ -165,7 +157,11 @@
 					"description": "服务的有效天数，单位为天。  阿里发票服务周期计算规则为：服务起始时间=部署完成时的系统时间，服务截止时间=服务起始时间+serviceValidDays",
 					"required": true
 				}
-			]
+			],
+			"name": "invoice_tax_flow_create_dto",
+			"type": "InvoiceTaxFlowCreateDto",
+			"description": "工单请求",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -174,5 +170,9 @@
 			"type": "String",
 			"description": "工单ID，发票中台生成"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.flow.tax.create",
+	"apiChineseName": "创建税控开通工单",
+	"description": "商户在业务前台订购税控产品后，调用阿里发票此接口，提交税号的入驻开通工单。此接口返回为工单的提交结果，非真正入驻结果。开通结果会在商户完成设备的部署安装 入驻完成后，由阿里发票通过消息异步通知到业务前台。",
+	"id": 56132
 }

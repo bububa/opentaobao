@@ -1,18 +1,8 @@
 {
-	"id": 28394,
-	"name": "cainiao.bms.order.consign.confirm",
-	"apiChineseName": "BMS出库通知",
-	"description": "BMS出库后，通知ISV",
 	"requestParams": [
 		{
-			"name": "content",
-			"type": "BmsConsignOrderConfirm",
-			"description": "通知消息主体",
 			"subParams": [
 				{
-					"name": "tms_orders",
-					"type": "TmsOrders[]",
-					"description": "运单信息列表",
 					"subParams": [
 						{
 							"name": "package_height",
@@ -20,9 +10,6 @@
 							"description": "包裹高度，单位：毫米"
 						},
 						{
-							"name": "tms_items",
-							"type": "TmsItem[]",
-							"description": "运单信息",
 							"subParams": [
 								{
 									"name": "item_quantity",
@@ -39,12 +26,12 @@
 									"type": "String",
 									"description": "货品ID"
 								}
-							]
+							],
+							"name": "tms_items",
+							"type": "TmsItem[]",
+							"description": "运单信息"
 						},
 						{
-							"name": "package_material_list",
-							"type": "PackageMaterialList[]",
-							"description": "包裹的包材信息列表",
 							"subParams": [
 								{
 									"name": "material_quantity",
@@ -56,7 +43,10 @@
 									"type": "String",
 									"description": "包材"
 								}
-							]
+							],
+							"name": "package_material_list",
+							"type": "PackageMaterialList[]",
+							"description": "包裹的包材信息列表"
 						},
 						{
 							"name": "package_width",
@@ -88,12 +78,12 @@
 							"type": "String",
 							"description": "包裹号"
 						}
-					]
+					],
+					"name": "tms_orders",
+					"type": "TmsOrders[]",
+					"description": "运单信息列表"
 				},
 				{
-					"name": "order_items",
-					"type": "OrderItems[]",
-					"description": "订单商品信息列表",
 					"subParams": [
 						{
 							"name": "order_item_id",
@@ -150,7 +140,10 @@
 							"type": "String",
 							"description": "后端商家编码"
 						}
-					]
+					],
+					"name": "order_items",
+					"type": "OrderItems[]",
+					"description": "订单商品信息列表"
 				},
 				{
 					"name": "order_post_fee",
@@ -212,14 +205,14 @@
 					"type": "String",
 					"description": "货主id"
 				}
-			]
+			],
+			"name": "content",
+			"type": "BmsConsignOrderConfirm",
+			"description": "通知消息主体"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDO",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "error_msg",
@@ -239,7 +232,14 @@
 					"description": "成功、失败",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "cainiao.bms.order.consign.confirm",
+	"apiChineseName": "BMS出库通知",
+	"description": "BMS出库后，通知ISV",
+	"id": 28394
 }

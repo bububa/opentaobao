@@ -1,8 +1,4 @@
 {
-	"id": 27770,
-	"name": "taobao.xhotel.rate.delete",
-	"apiChineseName": "rate删除接口",
-	"description": "酒店产品库rate删除",
 	"requestParams": [
 		{
 			"name": "vendor",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -44,7 +37,14 @@
 					"description": "rateid-房型id-房价id",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rate.delete",
+	"apiChineseName": "rate删除接口",
+	"description": "酒店产品库rate删除",
+	"id": 27770
 }

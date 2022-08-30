@@ -1,8 +1,4 @@
 {
-	"id": 25207,
-	"name": "alibaba.scbp.product.group.get",
-	"apiChineseName": "查询指定产品分组的下一层子分组",
-	"description": "查询指定产品分组的下一层子分组",
 	"requestParams": [
 		{
 			"name": "group_id",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "roduct_group_list",
-			"type": "TopProductGroupDto []",
-			"description": "下一层分组列表",
 			"subParams": [
 				{
 					"name": "group_id",
@@ -31,7 +24,14 @@
 					"type": "Boolean",
 					"description": "是否是叶子分组，即没有子分组"
 				}
-			]
+			],
+			"name": "roduct_group_list",
+			"type": "TopProductGroupDto []",
+			"description": "下一层分组列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.product.group.get",
+	"apiChineseName": "查询指定产品分组的下一层子分组",
+	"description": "查询指定产品分组的下一层子分组",
+	"id": 25207
 }

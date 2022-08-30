@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "投放业务，RECYCLE_3C（回收），RECYCLE_TENDER（寄拍）"
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "spu id"
+				},
+				{
+					"name": "pre_version",
+					"type": "String",
+					"description": "预上线版本号"
+				}
+			],
+			"name": "questionnaire_support_cmd",
+			"type": "QuestionnaireSupportCmd",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "spu_id",
+							"type": "Number",
+							"description": "spu id"
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "投放业务"
+						},
+						{
+							"name": "pre_version",
+							"type": "String",
+							"description": "预上线版本号"
+						}
+					],
+					"name": "data",
+					"type": "QuestionnaireSupportResult",
+					"description": "数据类型"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.template.ques.online",
+	"apiChineseName": "预上线SPU问卷版本",
+	"description": "获取SPU最新版本问卷",
+	"id": 63104
+}

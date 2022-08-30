@@ -1,8 +1,4 @@
 {
-	"id": 29121,
-	"name": "taobao.omniorder.store.sdtquerystation",
-	"apiChineseName": "速店通查询站点信息",
-	"description": "速店通查询站点信息",
 	"requestParams": [
 		{
 			"name": "param_long2",
@@ -13,87 +9,79 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "SdtQueryPackageResponse",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "stations",
-							"type": "SdtStationDto[]",
-							"description": "站点信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "action_time",
 									"type": "Date",
-									"description": "站点操作时间",
-									"required": true
+									"description": "站点操作时间"
 								},
 								{
 									"name": "cp_code",
 									"type": "String",
-									"description": "快递公司cpcode",
-									"required": true
+									"description": "快递公司cpcode"
 								},
 								{
 									"name": "cp_name",
 									"type": "String",
-									"description": "快递公司名称",
-									"required": true
+									"description": "快递公司名称"
 								},
 								{
 									"name": "station_code",
 									"type": "String",
-									"description": "站点code",
-									"required": true
+									"description": "站点code"
 								},
 								{
 									"name": "station_contact",
 									"type": "String",
-									"description": "站点联系方式",
-									"required": true
+									"description": "站点联系方式"
 								},
 								{
 									"name": "station_master",
 									"type": "String",
-									"description": "站点负责人",
-									"required": true
+									"description": "站点负责人"
 								},
 								{
 									"name": "station_name",
 									"type": "String",
-									"description": "站点名",
-									"required": true
+									"description": "站点名"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "站点类别（推荐站点、派送站点、揽收站点）",
-									"required": true
+									"description": "站点类别（推荐站点、派送站点、揽收站点）"
 								}
-							]
+							],
+							"name": "stations",
+							"type": "SdtStationDto[]",
+							"description": "站点信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SdtQueryPackageResponse",
+					"description": "data"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.sdtquerystation",
+	"apiChineseName": "速店通查询站点信息",
+	"description": "速店通查询站点信息",
+	"id": 29121
 }

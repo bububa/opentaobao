@@ -1,13 +1,6 @@
 {
-	"id": 50742,
-	"name": "alibaba.alsc.crm.open.assert.refund",
-	"apiChineseName": "资产核销回退接口",
-	"description": "回退已经核销的储值积分券资产",
 	"requestParams": [
 		{
-			"name": "param_property_refund_open_req",
-			"type": "PropertyRefundOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -70,80 +63,77 @@
 					"type": "String",
 					"description": "顾客id"
 				}
-			]
+			],
+			"name": "param_property_refund_open_req",
+			"type": "PropertyRefundOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "result",
-					"type": "PropertyRefundOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "point_success",
 							"type": "Boolean",
-							"description": "回退积分是否成功",
-							"required": true
+							"description": "回退积分是否成功"
 						},
 						{
 							"name": "value_success",
 							"type": "Boolean",
-							"description": "回退储值是否成功",
-							"required": true
+							"description": "回退储值是否成功"
 						},
 						{
-							"name": "voucher_status_list",
-							"type": "VoucherStatusInfo[]",
-							"description": "券实例状态",
-							"required": true,
 							"subParams": [
 								{
 									"name": "success",
 									"type": "Boolean",
-									"description": "是否成功",
-									"required": true
+									"description": "是否成功"
 								},
 								{
 									"name": "voucher_id",
 									"type": "String",
-									"description": "券码",
-									"required": true
+									"description": "券码"
 								}
-							]
+							],
+							"name": "voucher_status_list",
+							"type": "VoucherStatusInfo[]",
+							"description": "券实例状态"
 						}
-					]
+					],
+					"name": "result",
+					"type": "PropertyRefundOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果展示",
-					"required": true
+					"description": "结果展示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.assert.refund",
+	"apiChineseName": "资产核销回退接口",
+	"description": "回退已经核销的储值积分券资产",
+	"id": 50742
 }

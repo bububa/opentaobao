@@ -24,10 +24,10 @@ type AdInfo struct {
 	Deeplink string `json:"deeplink,omitempty" xml:"deeplink,omitempty"`
 	// 下地地址
 	DownloadUrl string `json:"download_url,omitempty" xml:"download_url,omitempty"`
+	// 回调地址
+	Callbacks *Callbacks `json:"callbacks,omitempty" xml:"callbacks,omitempty"`
 	// 版本号
 	VerCode int64 `json:"ver_code,omitempty" xml:"ver_code,omitempty"`
 	// 价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
-	// 回调地址
-	Callbacks *Callbacks `json:"callbacks,omitempty" xml:"callbacks,omitempty"`
 }

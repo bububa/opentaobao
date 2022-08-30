@@ -1,8 +1,4 @@
 {
-	"id": 51589,
-	"name": "alibaba.alihealth.drugcode.drugfactory.exportproject",
-	"apiChineseName": "导出项目和药品目录",
-	"description": "导出临床项目及其药品目录",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -13,169 +9,148 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "TrialProjectDto[]",
-					"description": "导出的项目和药品目录",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trial_project_name",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
 						},
 						{
 							"name": "trial_project_no",
 							"type": "String",
-							"description": "项目编号",
-							"required": true
+							"description": "项目编号"
 						},
 						{
-							"name": "drug_dto_list",
-							"type": "SubType[]",
-							"description": "药品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "product_name",
 									"type": "String",
-									"description": "药品名称",
-									"required": true
+									"description": "药品名称"
 								},
 								{
 									"name": "authorized_no",
 									"type": "String",
-									"description": "批准文号",
-									"required": true
+									"description": "批准文号"
 								},
 								{
 									"name": "pack_unit",
 									"type": "String",
-									"description": "包装单位",
-									"required": true
+									"description": "包装单位"
 								},
 								{
 									"name": "package_spec",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "physic_detail_type",
 									"type": "String",
-									"description": "药品类型",
-									"required": true
+									"description": "药品类型"
 								},
 								{
 									"name": "physic_expiry",
 									"type": "String",
-									"description": "有效期",
-									"required": true
+									"description": "有效期"
 								},
 								{
 									"name": "physic_info",
 									"type": "String",
-									"description": "药品信息",
-									"required": true
+									"description": "药品信息"
 								},
 								{
 									"name": "physic_type",
 									"type": "String",
-									"description": "药品类型",
-									"required": true
+									"description": "药品类型"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "类型",
-									"required": true
+									"description": "类型"
 								},
 								{
 									"name": "type_no",
 									"type": "String",
-									"description": "子类编码",
-									"required": true
+									"description": "子类编码"
 								},
 								{
 									"name": "prepn_unit",
 									"type": "String",
-									"description": "制剂单位",
-									"required": true
+									"description": "制剂单位"
 								},
 								{
 									"name": "pkg_num",
 									"type": "String",
-									"description": "包装数量",
-									"required": true
+									"description": "包装数量"
 								},
 								{
-									"name": "res_prod_codes",
-									"type": "ResProdCodes",
-									"description": "资源码信息",
-									"required": true,
 									"subParams": [
 										{
-											"name": "res_code_list",
-											"type": "ResCode[]",
-											"description": "资源码",
-											"required": true,
 											"subParams": [
 												{
 													"name": "value",
 													"type": "String",
-													"description": "资源码值",
-													"required": true
+													"description": "资源码值"
 												},
 												{
 													"name": "code_level",
 													"type": "String",
-													"description": "码级别",
-													"required": true
+													"description": "码级别"
 												},
 												{
 													"name": "code_version",
 													"type": "String",
-													"description": "码头",
-													"required": true
+													"description": "码头"
 												},
 												{
 													"name": "pkg_ratio",
 													"type": "String",
-													"description": "包装比例",
-													"required": true
+													"description": "包装比例"
 												}
-											]
+											],
+											"name": "res_code_list",
+											"type": "ResCode[]",
+											"description": "资源码"
 										}
-									]
+									],
+									"name": "res_prod_codes",
+									"type": "ResProdCodes",
+									"description": "资源码信息"
 								},
 								{
 									"name": "spec",
 									"type": "String",
-									"description": "制剂规格",
-									"required": true
+									"description": "制剂规格"
 								}
-							]
+							],
+							"name": "drug_dto_list",
+							"type": "SubType[]",
+							"description": "药品信息"
 						}
-					]
+					],
+					"name": "models",
+					"type": "TrialProjectDto[]",
+					"description": "导出的项目和药品目录"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "提示信息",
-					"required": true
+					"description": "提示信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "提示码",
-					"required": true
+					"description": "提示码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.drugfactory.exportproject",
+	"apiChineseName": "导出项目和药品目录",
+	"description": "导出临床项目及其药品目录",
+	"id": 51589
 }

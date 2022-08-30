@@ -1,0 +1,105 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务线编码，引力魔方：displayDefault",
+					"required": true
+				}
+			],
+			"name": "api_context",
+			"type": "ApiContextDTO",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "context_params",
+					"type": "String",
+					"description": "算法推荐模版context"
+				}
+			],
+			"name": "topic_query",
+			"type": "TopicQueryDTO",
+			"description": "查询对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "ext",
+							"type": "String",
+							"description": "模版扩展json信息，usageIndex: 使用热度，mark: 打标文案"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "模版描述信息"
+						},
+						{
+							"name": "highlight",
+							"type": "String",
+							"description": "模版推荐理由"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "模版名称"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "模版id"
+						}
+					],
+					"name": "templates",
+					"type": "Template[]",
+					"description": "榜单下的模版对象数组"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "榜单名称"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "榜单描述"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "榜单id"
+				}
+			],
+			"name": "result",
+			"type": "Topic []",
+			"description": "榜单对象数组"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.dmp.crowd.template.topic.find",
+	"apiChineseName": "平台精选榜单和模版查询接口",
+	"description": "查询平台精选榜单和模版信息",
+	"id": 61610
+}

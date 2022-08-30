@@ -1,14 +1,6 @@
 {
-	"id": 55110,
-	"name": "alibaba.einvoice.tax.opt.salaryaccount.update",
-	"apiChineseName": "更新用户发薪资产",
-	"description": "更新用户的发薪账号",
 	"requestParams": [
 		{
-			"name": "param_tax_optimization_employee_asset_update_d_t_o",
-			"type": "TaxOptimizationEmployeeAssetUpdateDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "asset_symbol",
@@ -46,64 +38,64 @@
 					"description": "税优模式",
 					"required": true
 				}
-			]
+			],
+			"name": "param_tax_optimization_employee_asset_update_d_t_o",
+			"type": "TaxOptimizationEmployeeAssetUpdateDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaxOptimizationEmployeeAssetUpdateResultDto",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "contractor_code",
 					"type": "String",
-					"description": "承包商编码",
-					"required": true
+					"description": "承包商编码"
 				},
 				{
 					"name": "current_binded_asset_symbol",
 					"type": "String",
-					"description": "需要更新的资产账号",
-					"required": true
+					"description": "需要更新的资产账号"
 				},
 				{
 					"name": "current_binded_asset_type",
 					"type": "String",
-					"description": "需要更新的资产类型",
-					"required": true
+					"description": "需要更新的资产类型"
 				},
 				{
 					"name": "employer_code",
 					"type": "String",
-					"description": "业务方编码",
-					"required": true
+					"description": "业务方编码"
 				},
 				{
 					"name": "identification_in_belonging_employer",
 					"type": "String",
-					"description": "用户在业务方平台的userid",
-					"required": true
+					"description": "用户在业务方平台的userid"
 				},
 				{
 					"name": "previous_binded_asset_symbol",
 					"type": "String",
-					"description": "当前资产账号",
-					"required": true
+					"description": "当前资产账号"
 				},
 				{
 					"name": "previous_binded_asset_type",
 					"type": "String",
-					"description": "当前资产类型",
-					"required": true
+					"description": "当前资产类型"
 				},
 				{
 					"name": "tax_optimization_mode",
 					"type": "String",
-					"description": "税优模式",
-					"required": true
+					"description": "税优模式"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaxOptimizationEmployeeAssetUpdateResultDto",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.tax.opt.salaryaccount.update",
+	"apiChineseName": "更新用户发薪资产",
+	"description": "更新用户的发薪账号",
+	"id": 55110
 }

@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "小区outerid",
+					"required": true
+				},
+				{
+					"name": "biz_time",
+					"type": "String",
+					"description": "业务时间",
+					"required": true
+				},
+				{
+					"name": "government_limit_price_desc",
+					"type": "String",
+					"description": "政府限价"
+				},
+				{
+					"name": "monthly_increase",
+					"type": "String",
+					"description": "月涨幅比（无百分号）"
+				},
+				{
+					"name": "monthly_avg_price_desc",
+					"type": "String",
+					"description": "月均价"
+				},
+				{
+					"name": "monthly_avg_price_unit",
+					"type": "String",
+					"description": "月均价单位"
+				}
+			],
+			"name": "dynamic_data_dto",
+			"type": "DynamicDataDto",
+			"description": "小区价格变动实体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.dynamicdata.submit",
+	"apiChineseName": "提交小区动态信息",
+	"description": "提交小区动态信息",
+	"id": 56936
+}

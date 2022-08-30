@@ -12,10 +12,10 @@ import (
 // 产品报告
 type AlibabaScbpAdReportGetProductReportAPIRequest struct {
 	model.Params
-	// 请求参数
-	_productReportOperation *ProductReportOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 请求参数
+	_productReportOperation *ProductReportOperationDto
 }
 
 // NewAlibabaScbpAdReportGetProductReportRequest 初始化AlibabaScbpAdReportGetProductReportAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdReportGetProductReportAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetProductReportOperation is ProductReportOperation Setter
-// 请求参数
-func (r *AlibabaScbpAdReportGetProductReportAPIRequest) SetProductReportOperation(_productReportOperation *ProductReportOperationDto) error {
-	r._productReportOperation = _productReportOperation
-	r.Set("product_report_operation", _productReportOperation)
-	return nil
-}
-
-// GetProductReportOperation ProductReportOperation Getter
-func (r AlibabaScbpAdReportGetProductReportAPIRequest) GetProductReportOperation() *ProductReportOperationDto {
-	return r._productReportOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdReportGetProductReportAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdReportGetProductReportAPIRequest) SetTopContext(_topContex
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdReportGetProductReportAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetProductReportOperation is ProductReportOperation Setter
+// 请求参数
+func (r *AlibabaScbpAdReportGetProductReportAPIRequest) SetProductReportOperation(_productReportOperation *ProductReportOperationDto) error {
+	r._productReportOperation = _productReportOperation
+	r.Set("product_report_operation", _productReportOperation)
+	return nil
+}
+
+// GetProductReportOperation ProductReportOperation Getter
+func (r AlibabaScbpAdReportGetProductReportAPIRequest) GetProductReportOperation() *ProductReportOperationDto {
+	return r._productReportOperation
 }

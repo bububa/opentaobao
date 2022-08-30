@@ -1,0 +1,136 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "purchase_sub_order_id",
+			"type": "Number",
+			"description": "采购单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "purchase_sub_order_id",
+							"type": "Number",
+							"description": "采购单号"
+						},
+						{
+							"name": "outer_order_id",
+							"type": "String",
+							"description": "分销商订单号"
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "订单状态"
+						},
+						{
+							"name": "order_status_desc",
+							"type": "String",
+							"description": "订单状态名称"
+						},
+						{
+							"name": "product_price",
+							"type": "Number",
+							"description": "产品单价，单位为分"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "订单总金额，单位为分"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建订单时间"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额，单位为分"
+						},
+						{
+							"name": "confirm_info",
+							"type": "String",
+							"description": "确认码信息（若有）"
+						},
+						{
+							"name": "fund_order_id",
+							"type": "Number",
+							"description": "支付ID（若有）"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品ID"
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "产品名称"
+						},
+						{
+							"name": "product_description",
+							"type": "String",
+							"description": "产品描述"
+						},
+						{
+							"name": "buy_amount",
+							"type": "Number",
+							"description": "购买数量"
+						},
+						{
+							"name": "service_start_time",
+							"type": "Date",
+							"description": "出行日期"
+						},
+						{
+							"name": "service_end_time",
+							"type": "Date",
+							"description": "结束日期"
+						},
+						{
+							"name": "use_time",
+							"type": "Date",
+							"description": "游玩日期（若有）"
+						}
+					],
+					"name": "data",
+					"type": "TopOrderDetailApiResDTO",
+					"description": "订单详情"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "返回对象"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotelticket.order.query",
+	"apiChineseName": "阿信度假交易订单查询接口",
+	"description": "阿信度假交易订单查询接口",
+	"id": 62024
+}

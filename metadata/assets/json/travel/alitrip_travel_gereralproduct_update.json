@@ -1,14 +1,6 @@
 {
-	"id": 43499,
-	"name": "alitrip.travel.gereralproduct.update",
-	"apiChineseName": "通用类目产品发布编辑",
-	"description": "提供给飞猪供销平台供应商发布编辑通用类目产品的API",
 	"requestParams": [
 		{
-			"name": "base_info",
-			"type": "GeneralProductBaseInfo",
-			"description": "产品基本信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "desc",
@@ -76,9 +68,6 @@
 					"description": "最晚收客时间:小时。仅个别类目支持"
 				},
 				{
-					"name": "props",
-					"type": "CatPropInfo[]",
-					"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
 					"subParams": [
 						{
 							"name": "vid",
@@ -90,19 +79,23 @@
 							"type": "String",
 							"description": "属性VID，调用taobao.itemprops.get取得"
 						}
-					]
+					],
+					"name": "props",
+					"type": "CatPropInfo[]",
+					"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。"
 				},
 				{
 					"name": "confirm_type",
 					"type": "Number",
 					"description": "可选，资源确认类型。1-即时确认，2-二次确认。不传默认1"
 				}
-			]
+			],
+			"name": "base_info",
+			"type": "GeneralProductBaseInfo",
+			"description": "产品基本信息",
+			"required": true
 		},
 		{
-			"name": "refund_info",
-			"type": "ItemRefundInfo",
-			"description": "退款规则结构",
 			"subParams": [
 				{
 					"name": "refund_regulations",
@@ -114,14 +107,12 @@
 					"type": "Number",
 					"description": "退改规则类型，0为标准，1为自定义 2为不支持退改规则。不传默认为0"
 				}
-			]
+			],
+			"name": "refund_info",
+			"type": "ItemRefundInfo",
+			"description": "退款规则结构"
 		},
 		{
-			"name": "booking_rules",
-			"type": "BookingRuleInfo[]",
-			"description": "必填，预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "rule_type",
@@ -135,12 +126,14 @@
 					"description": "1500个字",
 					"required": true
 				}
-			]
+			],
+			"name": "booking_rules",
+			"type": "BookingRuleInfo[]",
+			"description": "必填，预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "product_sale_info",
-			"type": "ProductSaleInfo",
-			"description": "产品销售信息",
 			"subParams": [
 				{
 					"name": "confirm_time",
@@ -182,18 +175,14 @@
 					"type": "String",
 					"description": "建议零售价下限，单位：元"
 				}
-			]
+			],
+			"name": "product_sale_info",
+			"type": "ProductSaleInfo",
+			"description": "产品销售信息"
 		},
 		{
-			"name": "date_sku_info_list",
-			"type": "DateSkuInfo[]",
-			"description": "更新sku信息，仅限日历商品使用",
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "alias",
-					"type": "PropertyAliasInfo[]",
-					"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改",
 					"subParams": [
 						{
 							"name": "value",
@@ -205,12 +194,12 @@
 							"type": "String",
 							"description": "销售属性的pid和vid，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid"
 						}
-					]
+					],
+					"name": "alias",
+					"type": "PropertyAliasInfo[]",
+					"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改"
 				},
 				{
-					"name": "date_list",
-					"type": "DateInventoryAndPrice[]",
-					"description": "SKU的销售价格库存，日历商品使用",
 					"subParams": [
 						{
 							"name": "stock",
@@ -227,12 +216,12 @@
 							"type": "Number",
 							"description": "Sku的销售价格。单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）"
 						}
-					]
+					],
+					"name": "date_list",
+					"type": "DateInventoryAndPrice[]",
+					"description": "SKU的销售价格库存，日历商品使用"
 				},
 				{
-					"name": "properties",
-					"type": "CatPropInfo[]",
-					"description": "SKU销售属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
 					"subParams": [
 						{
 							"name": "vid",
@@ -244,41 +233,49 @@
 							"type": "String",
 							"description": "属性PID，调用taobao.itemprops.get取得"
 						}
-					]
+					],
+					"name": "properties",
+					"type": "CatPropInfo[]",
+					"description": "SKU销售属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
 					"description": "sku商品编码"
 				}
-			]
+			],
+			"name": "date_sku_info_list",
+			"type": "DateSkuInfo[]",
+			"description": "更新sku信息，仅限日历商品使用",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopTravelItem",
-			"description": "firstResult",
 			"subParams": [
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "商品修改时间",
-					"required": true
+					"description": "商品修改时间"
 				},
 				{
 					"name": "item_id",
 					"type": "String",
-					"description": "产品id",
-					"required": true
+					"description": "产品id"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "商品创建时间",
-					"required": true
+					"description": "商品创建时间"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "firstResult"
 		}
-	]
+	],
+	"name": "alitrip.travel.gereralproduct.update",
+	"apiChineseName": "通用类目产品发布编辑",
+	"description": "提供给飞猪供销平台供应商发布编辑通用类目产品的API",
+	"id": 43499
 }

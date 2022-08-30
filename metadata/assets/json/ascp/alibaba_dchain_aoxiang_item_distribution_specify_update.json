@@ -1,0 +1,167 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "【必传】要选择进行铺货的店铺宝贝 itemId",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "要选择进行铺货的店铺宝贝 skuId， 如果没有sku就不传"
+				},
+				{
+					"name": "logistics_cost_template_id",
+					"type": "Number",
+					"description": "运费模板id， 可以通过alibaba.dchain.aoxiang.deliverytemplate.query 这个接口进行获取"
+				},
+				{
+					"subParams": [
+						{
+							"name": "distributor_shop_user_id",
+							"type": "Number",
+							"description": "分销商sellerId",
+							"required": true
+						},
+						{
+							"name": "distribute_price",
+							"type": "Number",
+							"description": "分销价",
+							"required": true
+						},
+						{
+							"name": "distribute_currency",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "retail_price",
+							"type": "Number",
+							"description": "建议零售价。专享情况下设置不生效。如果要修改使用通用价格修改"
+						},
+						{
+							"name": "retail_currency",
+							"type": "String",
+							"description": "币种"
+						}
+					],
+					"name": "distribution_info_list",
+					"type": "Long[]",
+					"description": "指定分销商铺货详情"
+				}
+			],
+			"name": "update_item_distribution_request",
+			"type": "UpdateItemDistributionRequest",
+			"description": "创建商品分销入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功。调用成功之后，需要看data里面的success，才能知道业务处理是否成功"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": " 处理是否成功"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误消息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": " 处理是否成功"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "错误编码"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误消息"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "要选择进行铺货的店铺宝贝 itemId"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "要选择进行铺货的店铺宝贝 skuId"
+								},
+								{
+									"name": "distributor_shop_user_id",
+									"type": "Number",
+									"description": "分销商sellerId"
+								}
+							],
+							"name": "response_detail_list",
+							"type": "SpecifyDistributionResponseDetail[]",
+							"description": "处理结果列表"
+						}
+					],
+					"name": "data",
+					"type": "SpecifyDistributionResponse",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				}
+			],
+			"name": "create_item_distribution_response",
+			"type": "TopResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.item.distribution.specify.update",
+	"apiChineseName": "指定分销商进行铺货(专享) - 修改",
+	"description": "选择店铺的商品进行指定分销商铺货。 可以指定对应的分销商对应的价格",
+	"id": 60877
+}

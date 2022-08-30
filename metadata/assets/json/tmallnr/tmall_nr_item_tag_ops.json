@@ -1,14 +1,6 @@
 {
-	"id": 41667,
-	"name": "tmall.nr.item.tag.ops",
-	"apiChineseName": "区域零售商品打标去标",
-	"description": "参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存",
 	"requestParams": [
 		{
-			"name": "tag_req_d_t_o",
-			"type": "TagReqDto",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "type",
@@ -24,7 +16,7 @@
 				},
 				{
 					"name": "item_ids",
-					"type": "String[]",
+					"type": "Number[]",
 					"description": "商品编码列表",
 					"required": true
 				},
@@ -38,60 +30,61 @@
 					"type": "String",
 					"description": "信息追踪串,用于后续排查问题,以及与外部厂商对账等场景下使用"
 				}
-			]
+			],
+			"name": "tag_req_d_t_o",
+			"type": "TagReqDto",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NewRetailResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "TagRespDto",
-					"description": "请求结果",
-					"required": true,
 					"subParams": [
-						{
-							"name": "fail_ids",
-							"type": "Number[]",
-							"description": "失败商品编码",
-							"required": true
-						},
 						{
 							"name": "descs",
 							"type": "String[]",
-							"description": "失败描述",
-							"required": true
+							"description": "失败描述"
+						},
+						{
+							"name": "fail_ids",
+							"type": "Number[]",
+							"description": "失败商品编码"
 						},
 						{
 							"name": "success_ids",
 							"type": "Number[]",
-							"description": "成功商品编码",
-							"required": true
+							"description": "成功商品编码"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "TagRespDto",
+					"description": "请求结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success_flag",
 					"type": "Boolean",
-					"description": "成功或者失败",
-					"required": true
+					"description": "成功或者失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "NewRetailResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nr.item.tag.ops",
+	"apiChineseName": "区域零售商品打标去标",
+	"description": "参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存",
+	"id": 41667
 }

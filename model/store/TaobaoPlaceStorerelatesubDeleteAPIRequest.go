@@ -13,7 +13,7 @@ import (
 type TaobaoPlaceStorerelatesubDeleteAPIRequest struct {
 	model.Params
 	// 子门店id
-	_subStoreIds []int64
+	_subStoreIds []string
 	// 门店Id
 	_storeId int64
 }
@@ -41,14 +41,14 @@ func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetApiParams() url.Values {
 
 // SetSubStoreIds is SubStoreIds Setter
 // 子门店id
-func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetSubStoreIds(_subStoreIds []int64) error {
+func (r *TaobaoPlaceStorerelatesubDeleteAPIRequest) SetSubStoreIds(_subStoreIds []string) error {
 	r._subStoreIds = _subStoreIds
 	r.Set("sub_store_ids", _subStoreIds)
 	return nil
 }
 
 // GetSubStoreIds SubStoreIds Getter
-func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetSubStoreIds() []int64 {
+func (r TaobaoPlaceStorerelatesubDeleteAPIRequest) GetSubStoreIds() []string {
 	return r._subStoreIds
 }
 

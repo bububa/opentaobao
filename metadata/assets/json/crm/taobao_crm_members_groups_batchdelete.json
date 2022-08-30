@@ -1,23 +1,19 @@
 {
-	"id": 10832,
-	"name": "taobao.crm.members.groups.batchdelete",
-	"apiChineseName": "批量删除分组",
-	"description": "批量删除多个会员的公共分组，接口返回删除是否成功，该接口只删除多个会员的公共分组，不是公共分组的，不进行删除。如果入参只输入一个会员，则表示删除该会员的某些分组。",
 	"requestParams": [
 		{
 			"name": "buyer_nicks",
 			"type": "String[]",
 			"description": "买家昵称列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "group_ids",
 			"type": "Number[]",
 			"description": "会员需要删除的分组",
-			"required": true,
 			"maxListSize": 10,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -26,5 +22,9 @@
 			"type": "Boolean",
 			"description": "删除是否成功"
 		}
-	]
+	],
+	"name": "taobao.crm.members.groups.batchdelete",
+	"apiChineseName": "批量删除分组",
+	"description": "批量删除多个会员的公共分组，接口返回删除是否成功，该接口只删除多个会员的公共分组，不是公共分组的，不进行删除。如果入参只输入一个会员，则表示删除该会员的某些分组。",
+	"id": 10832
 }

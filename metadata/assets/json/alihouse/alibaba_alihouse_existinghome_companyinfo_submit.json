@@ -1,0 +1,264 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "legal_cert_type",
+					"type": "Number",
+					"description": "法人证件类型  1身份证 2 港澳居民往来内地通行证；3 台湾同胞往来大陆通行证；4 外国人居留证"
+				},
+				{
+					"name": "legal_cert_back_url",
+					"type": "String",
+					"description": "法人证件背面照"
+				},
+				{
+					"name": "legal_cert_front_url",
+					"type": "String",
+					"description": "法人证件正面照"
+				},
+				{
+					"name": "business_license_expire_time",
+					"type": "String",
+					"description": "营业执照有效期时间"
+				},
+				{
+					"name": "business_license_status",
+					"type": "Number",
+					"description": "营业执照有效期类型"
+				},
+				{
+					"name": "business_license_url",
+					"type": "String",
+					"description": "营业执照图片"
+				},
+				{
+					"name": "business_license_no",
+					"type": "String",
+					"description": "营业执照编号"
+				},
+				{
+					"name": "legal_cert_no",
+					"type": "String",
+					"description": "法人编号"
+				},
+				{
+					"name": "legal_name",
+					"type": "String",
+					"description": "法人姓名"
+				},
+				{
+					"name": "business_contact_phone",
+					"type": "String",
+					"description": "商家联系方式"
+				},
+				{
+					"name": "business_contact_name",
+					"type": "String",
+					"description": "商家联系人"
+				},
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "商家别名"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商家名称"
+				},
+				{
+					"name": "merchant_type",
+					"type": "String",
+					"description": "商家类型  01：企业 07：个体工商户"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "进件类型 1-公司 2-城市品牌店 3-标准门店",
+					"required": true
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "personal_name",
+					"type": "String",
+					"description": "自然人名称"
+				},
+				{
+					"name": "personal_phone",
+					"type": "String",
+					"description": "自然人电话"
+				},
+				{
+					"name": "personal_cert_type",
+					"type": "Number",
+					"description": "自然人证件类型"
+				},
+				{
+					"name": "personal_cert_no",
+					"type": "String",
+					"description": "自然人证件编号"
+				},
+				{
+					"name": "personal_cert_expire_status",
+					"type": "Number",
+					"description": "自然人有效期类型 "
+				},
+				{
+					"name": "personal_cert_expire_time",
+					"type": "String",
+					"description": "有效期"
+				},
+				{
+					"name": "personal_cert_front_url",
+					"type": "String",
+					"description": "证件正面照"
+				},
+				{
+					"name": "personal_cert_back_url",
+					"type": "String",
+					"description": "证件反面照"
+				},
+				{
+					"name": "scene_type",
+					"type": "Number",
+					"description": "场景类型1-二手房交易 2-租房交易"
+				},
+				{
+					"name": "province_id",
+					"type": "Number",
+					"description": "省份ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID"
+				},
+				{
+					"name": "area_id",
+					"type": "Number",
+					"description": "区域ID"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "legal_cert_status",
+					"type": "Number",
+					"description": "有效期类型 1-永久 0-非永久 "
+				},
+				{
+					"name": "legal_cert_expire_time",
+					"type": "String",
+					"description": "过期时间"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部绑定楼盘ID"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店ID"
+				},
+				{
+					"name": "is_support_credit",
+					"type": "Number",
+					"description": "是否支持贷记 1- 支持 0-不支持"
+				},
+				{
+					"name": "contract_snapshot",
+					"type": "String",
+					"description": "合同快照"
+				},
+				{
+					"name": "collection_type",
+					"type": "Number",
+					"description": "收款类型 1-直收 2-代收"
+				},
+				{
+					"name": "instead_merchant_open_id",
+					"type": "Number",
+					"description": "代收主体ID"
+				},
+				{
+					"name": "sign_type",
+					"type": "Number",
+					"description": "签约类型"
+				},
+				{
+					"name": "signing_merchant_open_id",
+					"type": "Number",
+					"description": "代签主体ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型"
+						},
+						{
+							"name": "file_type",
+							"type": "Number",
+							"description": "文件类型"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "文件URL"
+						}
+					],
+					"name": "proof_list",
+					"type": "TradeMerchantProofDTO[]",
+					"description": "授权协议与证明列表"
+				}
+			],
+			"name": "cis",
+			"type": "TradeMerchantOpenDTO",
+			"description": "进件资料对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "进件id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.companyinfo.submit",
+	"apiChineseName": "进件接口",
+	"description": "进件接口",
+	"id": 57293
+}

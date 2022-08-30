@@ -1,14 +1,6 @@
 {
-	"id": 26869,
-	"name": "cainiao.waybill.ii.get",
-	"apiChineseName": "电子面单云打印接口",
-	"description": "菜鸟电子面单的云打印申请电子面单号的方法",
 	"requestParams": [
 		{
-			"name": "param_waybill_cloud_print_apply_new_request",
-			"type": "WaybillCloudPrintApplyNewRequest",
-			"description": "入参信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cp_code",
@@ -19,19 +11,11 @@
 				{
 					"name": "product_code",
 					"type": "String",
-					"description": "目前已经不推荐使用此字段，请不要使用"
+					"description": "目前仅顺丰支持此字段，传入快递产品编码"
 				},
 				{
-					"name": "sender",
-					"type": "UserInfoDto",
-					"description": "发货人信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "address",
-							"type": "AddressDto",
-							"description": "发货地址需要通过\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk\u0026treeId=17\u0026articleId=104860\u0026docType=1\"\u003esearch接口\u003c/a\u003e",
-							"required": true,
 							"subParams": [
 								{
 									"name": "city",
@@ -60,7 +44,11 @@
 									"type": "String",
 									"description": "街道，长度小于30"
 								}
-							]
+							],
+							"name": "address",
+							"type": "AddressDto",
+							"description": "发货地址需要通过\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk\u0026treeId=17\u0026articleId=104860\u0026docType=1\"\u003esearch接口\u003c/a\u003e",
+							"required": true
 						},
 						{
 							"name": "mobile",
@@ -78,13 +66,13 @@
 							"type": "String",
 							"description": "固定电话（手机号和固定电话不能同时为空），长度小于20"
 						}
-					]
+					],
+					"name": "sender",
+					"type": "UserInfoDto",
+					"description": "发货人信息",
+					"required": true
 				},
 				{
-					"name": "trade_order_info_dtos",
-					"type": "TradeOrderInfoDto[]",
-					"description": "请求面单信息，数量限制为10",
-					"required": true,
 					"subParams": [
 						{
 							"name": "logistics_services",
@@ -98,10 +86,6 @@
 							"required": true
 						},
 						{
-							"name": "order_info",
-							"type": "OrderInfoDto",
-							"description": "订单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "order_channels_type",
@@ -125,13 +109,13 @@
 									"type": "String[]",
 									"description": "外部电商平台交易子单号集合，非必填，数量限制100"
 								}
-							]
+							],
+							"name": "order_info",
+							"type": "OrderInfoDto",
+							"description": "订单信息",
+							"required": true
 						},
 						{
-							"name": "package_info",
-							"type": "PackageInfoDto",
-							"description": "包裹信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -139,10 +123,6 @@
 									"description": "包裹id，用于拆合单场景（只能传入数字、字母和下划线；批量请求时值不得重复，大小写敏感，即123A,123a 不可当做不同ID，否则存在一定可能取号失败）"
 								},
 								{
-									"name": "items",
-									"type": "Item[]",
-									"description": "商品信息,数量限制为100",
-									"required": true,
 									"subParams": [
 										{
 											"name": "count",
@@ -156,7 +136,11 @@
 											"description": "名称",
 											"required": true
 										}
-									]
+									],
+									"name": "items",
+									"type": "Item[]",
+									"description": "商品信息,数量限制为100",
+									"required": true
 								},
 								{
 									"name": "volume",
@@ -181,21 +165,37 @@
 								{
 									"name": "goods_description",
 									"type": "String",
-									"description": "大件快运中的货品描述，比如服装，家具"
+									"description": "大件快运中的货品描述，比如服装，家具。 顺丰取号必须传此参数"
+								},
+								{
+									"name": "length",
+									"type": "Number",
+									"description": "包裹长，单位厘米"
+								},
+								{
+									"name": "width",
+									"type": "Number",
+									"description": "包裹宽，单位厘米"
+								},
+								{
+									"name": "height",
+									"type": "Number",
+									"description": "包裹高，单位厘米"
+								},
+								{
+									"name": "good_value",
+									"type": "String",
+									"description": "物品价值，单位元"
 								}
-							]
+							],
+							"name": "package_info",
+							"type": "PackageInfoDto",
+							"description": "包裹信息",
+							"required": true
 						},
 						{
-							"name": "recipient",
-							"type": "RecipientInfoDto",
-							"description": "收件人信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "address",
-									"type": "AddressDto",
-									"description": "地址",
-									"required": true,
 									"subParams": [
 										{
 											"name": "city",
@@ -224,7 +224,11 @@
 											"type": "String",
 											"description": "街道"
 										}
-									]
+									],
+									"name": "address",
+									"type": "AddressDto",
+									"description": "地址",
+									"required": true
 								},
 								{
 									"name": "mobile",
@@ -257,7 +261,11 @@
 									"type": "String",
 									"description": "菜鸟解密地址ID，用于电商平台收件人信息加密的场景使用，非订单加密场景请勿使用。"
 								}
-							]
+							],
+							"name": "recipient",
+							"type": "RecipientInfoDto",
+							"description": "收件人信息",
+							"required": true
 						},
 						{
 							"name": "template_url",
@@ -270,8 +278,17 @@
 							"type": "Number",
 							"description": "使用者ID（使用电子面单账号的实际商家ID，如存在一个电子面单账号多个店铺使用时，请传入店铺的商家ID）",
 							"required": true
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "带面单号模式取号，目前仅顺丰支持"
 						}
-					]
+					],
+					"name": "trade_order_info_dtos",
+					"type": "TradeOrderInfoDto[]",
+					"description": "请求面单信息，数量限制为10",
+					"required": true
 				},
 				{
 					"name": "store_code",
@@ -302,15 +319,51 @@
 					"name": "multi_packages_shipment",
 					"type": "Boolean",
 					"description": "快递公司支持一票多件，快运公司子母件请勿使用该参数"
+				},
+				{
+					"name": "brand_code",
+					"type": "String",
+					"description": "品牌编码"
+				},
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "customer_code",
+					"type": "String",
+					"description": "月结卡号"
+				},
+				{
+					"name": "call_door_pick_up",
+					"type": "Boolean",
+					"description": "是否预约上门"
+				},
+				{
+					"name": "door_pick_up_time",
+					"type": "String",
+					"description": "预约上门收件时间"
+				},
+				{
+					"name": "door_pick_up_end_time",
+					"type": "String",
+					"description": "预约上门截止时间"
+				},
+				{
+					"name": "shipping_branch_code",
+					"type": "String",
+					"description": "寄件网点编码"
 				}
-			]
+			],
+			"name": "param_waybill_cloud_print_apply_new_request",
+			"type": "WaybillCloudPrintApplyNewRequest",
+			"description": "入参信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "modules",
-			"type": "WaybillCloudPrintResponse []",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "object_id",
@@ -335,8 +388,33 @@
 					"type": "String",
 					"description": "子母件中的母单号，当为子母件模式时，需要此单号为实际挂载物流详情的单号，需要使用此单号进行发货，查询物流详情，非子母件，此字段为空",
 					"required": true
+				},
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "拓展信息，特殊场景下使用",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "cp_code，跟入参传入的cp_code保持一致",
+					"required": true
+				},
+				{
+					"name": "real_cp_code",
+					"type": "String",
+					"description": "真实取号的cp_code，在淘特官方物流等虚拟cp的场景中real_cp_code和入参中的cp_code不一样，其他场景二者一样",
+					"required": true
 				}
-			]
+			],
+			"name": "modules",
+			"type": "WaybillCloudPrintResponse []",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "cainiao.waybill.ii.get",
+	"apiChineseName": "电子面单云打印接口",
+	"description": "菜鸟电子面单的云打印申请电子面单号的方法",
+	"id": 26869
 }

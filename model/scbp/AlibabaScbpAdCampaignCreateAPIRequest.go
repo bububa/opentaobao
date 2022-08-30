@@ -12,10 +12,10 @@ import (
 // 创建计划
 type AlibabaScbpAdCampaignCreateAPIRequest struct {
 	model.Params
-	// 返回数据
-	_campaignOperation *CampaignOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 返回数据
+	_campaignOperation *CampaignOperationDto
 }
 
 // NewAlibabaScbpAdCampaignCreateRequest 初始化AlibabaScbpAdCampaignCreateAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdCampaignCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCampaignOperation is CampaignOperation Setter
-// 返回数据
-func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
-	r._campaignOperation = _campaignOperation
-	r.Set("campaign_operation", _campaignOperation)
-	return nil
-}
-
-// GetCampaignOperation CampaignOperation Getter
-func (r AlibabaScbpAdCampaignCreateAPIRequest) GetCampaignOperation() *CampaignOperationDto {
-	return r._campaignOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetTopContext(_topContext *TopCo
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignCreateAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetCampaignOperation is CampaignOperation Setter
+// 返回数据
+func (r *AlibabaScbpAdCampaignCreateAPIRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
+	r._campaignOperation = _campaignOperation
+	r.Set("campaign_operation", _campaignOperation)
+	return nil
+}
+
+// GetCampaignOperation CampaignOperation Getter
+func (r AlibabaScbpAdCampaignCreateAPIRequest) GetCampaignOperation() *CampaignOperationDto {
+	return r._campaignOperation
 }

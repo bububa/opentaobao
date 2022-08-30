@@ -1,0 +1,166 @@
+{
+	"requestParams": [
+		{
+			"name": "merchant_open_id",
+			"type": "Number",
+			"description": "公司主体ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "backspin_text",
+									"type": "String",
+									"description": "下旋文"
+								},
+								{
+									"name": "horizontal_text",
+									"type": "String",
+									"description": "横向文"
+								},
+								{
+									"name": "center_pattern",
+									"type": "Number",
+									"description": "中心图案类型"
+								},
+								{
+									"name": "signature_color",
+									"type": "Number",
+									"description": "签章颜色"
+								},
+								{
+									"name": "signature_type",
+									"type": "Number",
+									"description": "签章类型"
+								},
+								{
+									"name": "signature_name",
+									"type": "String",
+									"description": "签章名称"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "ID"
+								},
+								{
+									"name": "seal_url",
+									"type": "String",
+									"description": "签章图片地址"
+								}
+							],
+							"name": "signature_list",
+							"type": "BusinessActivitySignatureDto[]",
+							"description": "签章信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "agreement_content",
+									"type": "String",
+									"description": "协议内容"
+								},
+								{
+									"name": "agreement_name",
+									"type": "String",
+									"description": "协议名称"
+								},
+								{
+									"name": "agreement_type",
+									"type": "Number",
+									"description": "协议类型"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "ID"
+								}
+							],
+							"name": "agreement_list",
+							"type": "BusinessActivityAgreementDto[]",
+							"description": "协议数据"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sub_bank_card_no",
+									"type": "String",
+									"description": "子户"
+								},
+								{
+									"name": "bank_contact_line",
+									"type": "String",
+									"description": "银联号"
+								},
+								{
+									"name": "bank_card_no",
+									"type": "String",
+									"description": "结算账户"
+								},
+								{
+									"name": "bank_account_alias",
+									"type": "String",
+									"description": "别名"
+								},
+								{
+									"name": "bank_account_name",
+									"type": "String",
+									"description": "账户名称"
+								},
+								{
+									"name": "account_type",
+									"type": "Number",
+									"description": "账户类型"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "ID"
+								}
+							],
+							"name": "bank_card_list",
+							"type": "BusinessActivityBankCardDto[]",
+							"description": "结算账户数据"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司名称"
+						}
+					],
+					"name": "data",
+					"type": "BusinessActivityPackageDto",
+					"description": "返回值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.business.activity.query",
+	"apiChineseName": "电商券活动公司数据查询",
+	"description": "电商券活动公司数据查询",
+	"id": 58609
+}

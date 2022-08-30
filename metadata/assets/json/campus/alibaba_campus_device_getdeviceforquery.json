@@ -1,15 +1,41 @@
 {
-	"id": 32562,
-	"name": "alibaba.campus.device.getdeviceforquery",
-	"apiChineseName": "下发设备的分页接口(无需AOP控制)",
-	"description": "下发设备的分页接口(发布在TOP上，connect调用，无需AOP控制)",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "DeviceApiQuery",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "可选参数"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "可选参数",
+					"required": true
+				}
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "平台统一参数",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "key",
+					"type": "String",
+					"description": "模糊查询关键字"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "设备模板code"
+				},
 				{
 					"name": "limit",
 					"type": "Number",
@@ -23,116 +49,80 @@
 					"required": true
 				},
 				{
-					"name": "campus_id",
-					"type": "Number",
-					"description": "园区id"
-				},
-				{
-					"name": "key",
-					"type": "String",
-					"description": "模糊查询关键字"
-				},
-				{
-					"name": "template_code",
-					"type": "String",
-					"description": "设备模板code"
-				},
-				{
 					"name": "campus_id_list",
 					"type": "Number[]",
 					"description": "园区id集合"
 				}
-			]
-		},
-		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "平台统一参数",
-			"required": true,
-			"subParams": [
-				{
-					"name": "company_id",
-					"type": "Number",
-					"description": "可选参数"
-				},
-				{
-					"name": "campus_id",
-					"type": "Number",
-					"description": "可选参数",
-					"required": true
-				}
-			]
+			],
+			"name": "query",
+			"type": "DeviceApiQuery",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "返回值",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "分页对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "页面大小",
-							"required": true
+							"description": "页面大小"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						},
 						{
 							"name": "results",
-							"type": "Json[]",
-							"description": "分页结果集合",
-							"required": true
+							"type": "String[]",
+							"description": "分页结果集合"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "分页对象"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.getdeviceforquery",
+	"apiChineseName": "下发设备的分页接口(无需AOP控制)",
+	"description": "下发设备的分页接口(发布在TOP上，connect调用，无需AOP控制)",
+	"id": 32562
 }

@@ -1,8 +1,4 @@
 {
-	"id": 33059,
-	"name": "taobao.ailab.aicloud.top.device.authcode.get",
-	"apiChineseName": "获取设备授权码",
-	"description": "获取设备授权码",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "msgInfo错误码信息，成功返回null"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.authcode.get",
+	"apiChineseName": "获取设备授权码",
+	"description": "获取设备授权码",
+	"id": 33059
 }

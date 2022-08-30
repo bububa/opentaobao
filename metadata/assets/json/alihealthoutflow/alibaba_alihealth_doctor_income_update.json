@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "说明信息"
+				},
+				{
+					"name": "income_id",
+					"type": "Number",
+					"description": "医生收入流水号"
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生id"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "是否打款成功"
+				}
+			],
+			"name": "doctor_income_status_request",
+			"type": "DoctorIncomeStatusRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "接口是否成功"
+		},
+		{
+			"name": "exception_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "exception_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.doctor.income.update",
+	"apiChineseName": "医蝶谷医生收入打款情况回调",
+	"description": "医蝶谷医生收入打款情况回调",
+	"id": 63835
+}

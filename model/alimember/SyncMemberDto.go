@@ -26,6 +26,8 @@ type SyncMemberDto struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 邮箱
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
+	// 授权账号类型，主账号/子账号
+	UidType string `json:"uid_type,omitempty" xml:"uid_type,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 	// 等级积分

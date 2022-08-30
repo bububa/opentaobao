@@ -12,10 +12,10 @@ import (
 // 创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张
 type TaobaoPromotionCouponAddAPIRequest struct {
 	model.Params
-	// 优惠券的截止日期
-	_endTime string
 	// 优惠券的生效时间
 	_startTime string
+	// 优惠券的截止日期
+	_endTime string
 	// 优惠券的面额，必须是3，5，10，20，50，100
 	_denominations int64
 	// 订单满多少元才能用这个优惠券，500就是满500元才能使用
@@ -43,19 +43,6 @@ func (r TaobaoPromotionCouponAddAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetEndTime is EndTime Setter
-// 优惠券的截止日期
-func (r *TaobaoPromotionCouponAddAPIRequest) SetEndTime(_endTime string) error {
-	r._endTime = _endTime
-	r.Set("end_time", _endTime)
-	return nil
-}
-
-// GetEndTime EndTime Getter
-func (r TaobaoPromotionCouponAddAPIRequest) GetEndTime() string {
-	return r._endTime
-}
-
 // SetStartTime is StartTime Setter
 // 优惠券的生效时间
 func (r *TaobaoPromotionCouponAddAPIRequest) SetStartTime(_startTime string) error {
@@ -67,6 +54,19 @@ func (r *TaobaoPromotionCouponAddAPIRequest) SetStartTime(_startTime string) err
 // GetStartTime StartTime Getter
 func (r TaobaoPromotionCouponAddAPIRequest) GetStartTime() string {
 	return r._startTime
+}
+
+// SetEndTime is EndTime Setter
+// 优惠券的截止日期
+func (r *TaobaoPromotionCouponAddAPIRequest) SetEndTime(_endTime string) error {
+	r._endTime = _endTime
+	r.Set("end_time", _endTime)
+	return nil
+}
+
+// GetEndTime EndTime Getter
+func (r TaobaoPromotionCouponAddAPIRequest) GetEndTime() string {
+	return r._endTime
 }
 
 // SetDenominations is Denominations Setter

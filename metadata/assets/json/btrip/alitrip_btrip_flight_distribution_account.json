@@ -1,0 +1,127 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "CorpId",
+					"required": true
+				}
+			],
+			"name": "param_account_r_q",
+			"type": "BtripAccountRq",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "status",
+									"type": "String",
+									"description": "账户状态1:激活 0：冻结"
+								},
+								{
+									"name": "status_desc",
+									"type": "String",
+									"description": "账户状态描述。冻结，激活"
+								},
+								{
+									"name": "total_amount",
+									"type": "Number",
+									"description": "可用余额，分"
+								},
+								{
+									"name": "balance",
+									"type": "Number",
+									"description": "账户余额，分"
+								},
+								{
+									"name": "freeze_amount",
+									"type": "Number",
+									"description": "冻结金额，分"
+								}
+							],
+							"name": "btrip_account_prestore_rs",
+							"type": "BtripAccountDetailRs",
+							"description": "预存账户"
+						},
+						{
+							"subParams": [
+								{
+									"name": "credit_limit",
+									"type": "Number",
+									"description": "月结额度"
+								},
+								{
+									"name": "used_credit_limit",
+									"type": "String",
+									"description": "已使用额度，分"
+								},
+								{
+									"name": "freeze_amount",
+									"type": "Number",
+									"description": "冻结金额    分"
+								},
+								{
+									"name": "credit_balance",
+									"type": "Number",
+									"description": "已使用额度  分"
+								},
+								{
+									"name": "available_amount",
+									"type": "Number",
+									"description": "剩余可用余额  分"
+								},
+								{
+									"name": "status_desc",
+									"type": "String",
+									"description": "激活/冻结"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "账户状态1:激活 0：冻结"
+								}
+							],
+							"name": "btrip_credi_amount_rs",
+							"type": "BtripCrediAmountRs",
+							"description": "月结"
+						}
+					],
+					"name": "module",
+					"type": "BtripAccountPrestoreRs",
+					"description": "账户信息返回"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "BtripAccountPrestoreRs",
+			"description": "响应结果\t"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.account",
+	"apiChineseName": "机票分销企业或者tmc企业预存or月结账户查询接口",
+	"description": "机票分销企业或者tmc企业预存or月结账户查询",
+	"id": 60300
+}

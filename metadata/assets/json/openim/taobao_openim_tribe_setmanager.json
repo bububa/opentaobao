@@ -1,14 +1,6 @@
 {
-	"id": 25575,
-	"name": "taobao.openim.tribe.setmanager",
-	"apiChineseName": "OPENIM群设置管理员",
-	"description": "OPENIM群设置管理员",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -27,7 +19,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tid",
@@ -36,10 +32,6 @@
 			"required": true
 		},
 		{
-			"name": "member",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -58,7 +50,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "member",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -67,5 +63,9 @@
 			"type": "Number",
 			"description": "群服务code"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.setmanager",
+	"apiChineseName": "OPENIM群设置管理员",
+	"description": "OPENIM群设置管理员",
+	"id": 25575
 }

@@ -1,18 +1,8 @@
 {
-	"id": 56033,
-	"name": "yunos.miniapp.datatunnel.call",
-	"apiChineseName": "车载小程序外部服务调用",
-	"description": "对客户提供的api进行统一封装调用。",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "BaseRequest",
-			"description": "参数",
 			"subParams": [
 				{
-					"name": "system_param",
-					"type": "SystemParam",
-					"description": "请求基础参数",
 					"subParams": [
 						{
 							"name": "trace_id",
@@ -32,16 +22,26 @@
 							"required": true
 						},
 						{
+							"name": "modify_token",
+							"type": "Boolean",
+							"description": "更新access_token"
+						},
+						{
+							"name": "token_expired",
+							"type": "Boolean",
+							"description": "token过期"
+						},
+						{
 							"name": "ac_token",
 							"type": "String",
 							"description": "授权token"
 						}
-					]
+					],
+					"name": "system_param",
+					"type": "SystemParam",
+					"description": "请求基础参数"
 				},
 				{
-					"name": "biz_param",
-					"type": "BizParam",
-					"description": "请求参数",
 					"subParams": [
 						{
 							"name": "data",
@@ -54,62 +54,65 @@
 							"description": "业务操作",
 							"required": true
 						}
-					]
+					],
+					"name": "biz_param",
+					"type": "BizParam",
+					"description": "请求参数"
 				}
-			]
+			],
+			"name": "param",
+			"type": "BaseRequest",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MapResult",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "Result",
-					"description": "结果核心内容",
-					"required": true,
+					"name": "trace_id",
+					"type": "String",
+					"description": "随机字符串"
+				},
+				{
 					"subParams": [
 						{
 							"name": "cp_code",
 							"type": "String",
-							"description": "cp对应的code",
-							"required": true
+							"description": "cp对应的code"
 						},
 						{
 							"name": "detail",
 							"type": "String",
-							"description": "结果详细内容",
-							"required": true
+							"description": "结果详细内容"
 						}
-					]
-				},
-				{
-					"name": "trace_id",
-					"type": "String",
-					"description": "随机字符串",
-					"required": true
+					],
+					"name": "result",
+					"type": "Result",
+					"description": "结果核心内容"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MapResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "yunos.miniapp.datatunnel.call",
+	"apiChineseName": "车载小程序外部服务调用",
+	"description": "对客户提供的api进行统一封装调用。",
+	"id": 56033
 }

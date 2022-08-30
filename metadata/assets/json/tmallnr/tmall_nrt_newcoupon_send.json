@@ -1,14 +1,6 @@
 {
-	"id": 55888,
-	"name": "tmall.nrt.newcoupon.send",
-	"apiChineseName": "券发放接口",
-	"description": "券发放接口",
 	"requestParams": [
 		{
-			"name": "nrt_coupon_send_dto",
-			"type": "NrtCouponSendDto",
-			"description": "发券dto",
-			"required": true,
 			"subParams": [
 				{
 					"name": "open_id",
@@ -51,14 +43,15 @@
 					"description": "券code",
 					"required": true
 				}
-			]
+			],
+			"name": "nrt_coupon_send_dto",
+			"type": "NrtCouponSendDto",
+			"description": "发券dto",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "code",
@@ -67,10 +60,6 @@
 					"required": true
 				},
 				{
-					"name": "model",
-					"type": "SendCouponResponse",
-					"description": "发券结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "discount",
@@ -114,7 +103,11 @@
 							"description": "开始时间",
 							"required": true
 						}
-					]
+					],
+					"name": "model",
+					"type": "SendCouponResponse",
+					"description": "发券结果对象",
+					"required": true
 				},
 				{
 					"name": "message",
@@ -122,7 +115,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "tmall.nrt.newcoupon.send",
+	"apiChineseName": "券发放接口",
+	"description": "券发放接口",
+	"id": 55888
 }

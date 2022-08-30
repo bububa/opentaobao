@@ -1,8 +1,4 @@
 {
-	"id": 50490,
-	"name": "aliexpress.affiliate.image.search",
-	"apiChineseName": "图搜",
-	"description": "图片搜索接口",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -64,9 +60,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "code",
@@ -75,16 +68,8 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "TrafficImageSearchResultDto",
-					"description": "图搜结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "products",
-							"type": "Product[]",
-							"description": "图搜结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sale_price",
@@ -267,10 +252,6 @@
 									"required": true
 								},
 								{
-									"name": "promo_code_info",
-									"type": "PromoCodeDto",
-									"description": "code",
-									"required": true,
 									"subParams": [
 										{
 											"name": "promo_code",
@@ -320,7 +301,11 @@
 											"description": "品code合一url",
 											"required": true
 										}
-									]
+									],
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code",
+									"required": true
 								},
 								{
 									"name": "product_title",
@@ -334,7 +319,11 @@
 									"description": "商品介绍视频",
 									"required": true
 								}
-							]
+							],
+							"name": "products",
+							"type": "Product[]",
+							"description": "图搜结果",
+							"required": true
 						},
 						{
 							"name": "total_record_count",
@@ -343,10 +332,6 @@
 							"required": true
 						},
 						{
-							"name": "region",
-							"type": "ProductImgRegionDto",
-							"description": "图片识别的坐标",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pos_top_left_x",
@@ -372,9 +357,17 @@
 									"description": "图片识别的坐标 pos_bottom_right_y",
 									"required": true
 								}
-							]
+							],
+							"name": "region",
+							"type": "ProductImgRegionDto",
+							"description": "图片识别的坐标",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "TrafficImageSearchResultDto",
+					"description": "图搜结果",
+					"required": true
 				},
 				{
 					"name": "message",
@@ -388,7 +381,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.image.search",
+	"apiChineseName": "图搜",
+	"description": "图片搜索接口",
+	"id": 50490
 }

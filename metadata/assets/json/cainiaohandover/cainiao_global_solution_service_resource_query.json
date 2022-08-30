@@ -1,8 +1,4 @@
 {
-	"id": 50657,
-	"name": "cainiao.global.solution.service.resource.query",
-	"apiChineseName": "查询解决方案服务资源列表",
-	"description": "返回直接解决方案的指定物流服务的可用资源列表",
 	"requestParams": [
 		{
 			"name": "locale",
@@ -10,16 +6,6 @@
 			"description": "多语言信息"
 		},
 		{
-			"name": "seller_param",
-			"type": "SellerParam",
-			"description": "商家信息",
-			"required": true
-		},
-		{
-			"name": "solution_service_res_param",
-			"type": "QuerySolutionServiceResParam",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "solution_code",
@@ -27,10 +13,6 @@
 					"description": "解决方案code"
 				},
 				{
-					"name": "service_param",
-					"type": "ServiceParam",
-					"description": "服务参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
@@ -38,152 +20,145 @@
 							"description": "DOOR_PICKUP：揽收仓资源、SELF_SEND：自送dropOff",
 							"required": true
 						}
-					]
+					],
+					"name": "service_param",
+					"type": "ServiceParam",
+					"description": "服务参数",
+					"required": true
 				}
-			]
+			],
+			"name": "solution_service_res_param",
+			"type": "QuerySolutionServiceResParam",
+			"description": "查询参数",
+			"required": true
 		},
 		{
-			"name": "sender_param",
-			"type": "OpenSenderParam",
-			"description": "发件信息",
 			"subParams": [
 				{
 					"name": "seller_address_id",
 					"type": "Number",
 					"description": "商家后台维护的揽收地址ID"
 				}
-			]
+			],
+			"name": "sender_param",
+			"type": "OpenSenderParam",
+			"description": "发件信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "GlspResponse",
-			"description": "请求结果",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "查询是否成功",
-					"required": true
+					"description": "查询是否成功"
 				},
 				{
-					"name": "error_info",
-					"type": "ErrorInfo",
-					"description": "错误信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "异常码",
-							"required": true
+							"description": "异常码"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "错误描述",
-							"required": true
+							"description": "错误描述"
 						}
-					]
+					],
+					"name": "error_info",
+					"type": "ErrorInfo",
+					"description": "错误信息"
 				},
 				{
-					"name": "result",
-					"type": "SolutionServiceResQueryResponse",
-					"description": "请求结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "solution_service_res_list",
-							"type": "SolutionServiceResDto[]",
-							"description": "物流服务资源列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "solution_code",
 									"type": "String",
-									"description": "解决方案编码",
-									"required": true
+									"description": "解决方案编码"
 								},
 								{
-									"name": "features",
-									"type": "Features",
-									"description": "扩展字段",
-									"required": true,
 									"subParams": [
 										{
 											"name": "appointment_process",
 											"type": "String",
-											"description": "预约流程",
-											"required": true
+											"description": "预约流程"
 										},
 										{
 											"name": "need_appointment",
 											"type": "Boolean",
-											"description": "是否需要预约",
-											"required": true
+											"description": "是否需要预约"
 										},
 										{
 											"name": "pickup_work_time",
 											"type": "String",
-											"description": "揽收时间",
-											"required": true
+											"description": "揽收时间"
 										}
-									]
+									],
+									"name": "features",
+									"type": "Features",
+									"description": "扩展字段"
 								},
 								{
 									"name": "priority",
 									"type": "String",
-									"description": "优先级",
-									"required": true
+									"description": "优先级"
 								},
 								{
 									"name": "contact_name",
 									"type": "String",
-									"description": "联系人名称",
-									"required": true
+									"description": "联系人名称"
 								},
 								{
 									"name": "contact_telephone",
 									"type": "String",
-									"description": "联系人电话",
-									"required": true
+									"description": "联系人电话"
 								},
 								{
 									"name": "work_time_tips",
 									"type": "String",
-									"description": "工作时间",
-									"required": true
+									"description": "工作时间"
 								},
 								{
 									"name": "division",
 									"type": "String",
-									"description": "地址对应的divisionId",
-									"required": true
+									"description": "地址对应的divisionId"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "资源名称",
-									"required": true
+									"description": "资源名称"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "资源编码",
-									"required": true
+									"description": "资源编码"
 								}
-							]
+							],
+							"name": "solution_service_res_list",
+							"type": "SolutionServiceResDto[]",
+							"description": "物流服务资源列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "SolutionServiceResQueryResponse",
+					"description": "请求结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "GlspResponse",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.solution.service.resource.query",
+	"apiChineseName": "查询解决方案服务资源列表",
+	"description": "返回直接解决方案的指定物流服务的可用资源列表",
+	"id": 50657
 }

@@ -1,0 +1,427 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店id"
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "城市code"
+				}
+			],
+			"name": "hotel_list",
+			"type": "HotelDTO",
+			"description": "酒店列表"
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "结束时间，不包含"
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id"
+		},
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "开始时间，包含"
+		},
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "当前酒店查询是否成功"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "当前酒店查询异常code"
+								},
+								{
+									"name": "error_msg",
+									"type": "String",
+									"description": "当前酒店查询异常信息"
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "当前酒店id"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "srid",
+													"type": "String",
+													"description": "房型id"
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "房型名称"
+												},
+												{
+													"name": "floor",
+													"type": "String",
+													"description": "楼层"
+												},
+												{
+													"name": "network_service",
+													"type": "String",
+													"description": "宽带服务\"0\",\"有线上网(免费), \"1\",\"有线上网(无)\", \"2\",\"有线上网(收费)\", \"3\",\"有线上网(部分有且免费)\", \"4\",\"有线上网(部分有且收费)\""
+												},
+												{
+													"name": "facility",
+													"type": "String",
+													"description": "设施"
+												},
+												{
+													"name": "max_occupancy",
+													"type": "Number",
+													"description": "最大入住人数"
+												},
+												{
+													"name": "area",
+													"type": "String",
+													"description": "面积"
+												},
+												{
+													"name": "window_type",
+													"type": "String",
+													"description": "窗型0, 无窗,1, 有窗;"
+												},
+												{
+													"name": "bed_type",
+													"type": "String",
+													"description": "床型"
+												},
+												{
+													"name": "bed_type_desc",
+													"type": "String",
+													"description": "床型描述"
+												}
+											],
+											"name": "std_room_info",
+											"type": "StdRoomType",
+											"description": "房型信息"
+										},
+										{
+											"subParams": [
+												{
+													"name": "modified_time",
+													"type": "Number",
+													"description": "当前rate修改时间，精确到毫秒"
+												},
+												{
+													"subParams": [
+														{
+															"name": "date",
+															"type": "Number",
+															"description": "当前价库日期"
+														},
+														{
+															"name": "price",
+															"type": "Number",
+															"description": "价格(单位分)"
+														},
+														{
+															"name": "quota",
+															"type": "Number",
+															"description": "库存"
+														},
+														{
+															"name": "promotion_price",
+															"type": "Number",
+															"description": "优惠金额（单位分）"
+														},
+														{
+															"name": "rate_switch",
+															"type": "Number",
+															"description": "当前房态是否正常,0-关房,1-正常；1的情况下要看下库存是否足够"
+														},
+														{
+															"name": "start_date",
+															"type": "Number",
+															"description": "入住日期"
+														},
+														{
+															"name": "end_date",
+															"type": "Number",
+															"description": "离店日期"
+														},
+														{
+															"name": "cny_price",
+															"type": "Number",
+															"description": "人民币金额（国际外币场景使用）"
+														}
+													],
+													"name": "price_stock_dto_list",
+													"type": "PriceStockDTO[]",
+													"description": "价库日历"
+												},
+												{
+													"subParams": [
+														{
+															"name": "breakfast",
+															"type": "String",
+															"description": "是否含早餐"
+														},
+														{
+															"name": "breakfast_count",
+															"type": "Number",
+															"description": "早餐数量"
+														},
+														{
+															"name": "start_date",
+															"type": "Number",
+															"description": "规则生效开始时间"
+														},
+														{
+															"name": "end_date",
+															"type": "Number",
+															"description": "规则生效结束时间(不包含)"
+														}
+													],
+													"name": "break_fast_list",
+													"type": "BreakfastDTO[]",
+													"description": "早餐信息列表"
+												},
+												{
+													"subParams": [
+														{
+															"name": "cancel_policy_desc",
+															"type": "String",
+															"description": "取消政策描述"
+														},
+														{
+															"name": "cancel_type",
+															"type": "Number",
+															"description": "取消政策类型"
+														},
+														{
+															"name": "cancel_policy_detail_list",
+															"type": "CancelPolicyDetailDTO[]",
+															"description": "取消政策明细列表"
+														},
+														{
+															"name": "start_date",
+															"type": "Number",
+															"description": "规则生效开始时间"
+														},
+														{
+															"name": "end_date",
+															"type": "Number",
+															"description": "规则生效结束时间"
+														}
+													],
+													"name": "cancel_rule_list",
+													"type": "CancelPolicyRuleDTO[]",
+													"description": "取消规则列表"
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "币种"
+												},
+												{
+													"name": "rate_id",
+													"type": "Number",
+													"description": "rateId"
+												},
+												{
+													"name": "item_id",
+													"type": "Number",
+													"description": "商品id"
+												},
+												{
+													"name": "rate_plan_id",
+													"type": "Number",
+													"description": "售卖政策id"
+												},
+												{
+													"name": "rate_plan_name",
+													"type": "String",
+													"description": "售卖政策名称"
+												},
+												{
+													"name": "resource_tag",
+													"type": "String",
+													"description": "资源标签"
+												},
+												{
+													"name": "commission_fee_rate",
+													"type": "String",
+													"description": "佣金费率"
+												},
+												{
+													"name": "seller_id",
+													"type": "Number",
+													"description": "卖家id"
+												},
+												{
+													"name": "end_time_daily",
+													"type": "String",
+													"description": "每日截止时间"
+												},
+												{
+													"name": "instant_confirm",
+													"type": "String",
+													"description": "是否即时确认"
+												},
+												{
+													"name": "min_adv_hours",
+													"type": "Number",
+													"description": "最小提前小时数"
+												},
+												{
+													"name": "multiple_price",
+													"type": "Boolean",
+													"description": "是否复杂价格"
+												},
+												{
+													"name": "rate_plan_name_en",
+													"type": "String",
+													"description": "价格计划英文名"
+												},
+												{
+													"name": "start_time_daily",
+													"type": "String",
+													"description": "每日开始时间"
+												},
+												{
+													"name": "max_adv_hours",
+													"type": "Number",
+													"description": "最大提前小时数"
+												},
+												{
+													"name": "min_stay",
+													"type": "Number",
+													"description": "最小入住天数"
+												},
+												{
+													"name": "max_stay",
+													"type": "Number",
+													"description": "最大入住天数"
+												},
+												{
+													"name": "min_book_count",
+													"type": "Number",
+													"description": "最小预订间数"
+												},
+												{
+													"name": "max_book_count",
+													"type": "Number",
+													"description": "最大预订间数"
+												},
+												{
+													"name": "nod",
+													"type": "Number",
+													"description": "连住天数,适用于复杂价格"
+												},
+												{
+													"name": "nop",
+													"type": "Number",
+													"description": "入住人数,适用于复杂价格"
+												},
+												{
+													"name": "max_occupancy",
+													"type": "Number",
+													"description": "最大入住人数"
+												},
+												{
+													"name": "distribute_mode",
+													"type": "String",
+													"description": "分销模式 FP-底价模式 SP-卖家模式"
+												},
+												{
+													"name": "max_days",
+													"type": "Number",
+													"description": "最大连住天数"
+												},
+												{
+													"subParams": [
+														{
+															"name": "can_dawn_book",
+															"type": "Boolean",
+															"description": "是否支持凌晨房"
+														},
+														{
+															"name": "dawn_book_start_time",
+															"type": "String",
+															"description": "凌晨房预订开始时间"
+														},
+														{
+															"name": "dawn_book_end_time",
+															"type": "String",
+															"description": "凌晨房预订结束时间"
+														}
+													],
+													"name": "dawn_booking_dto",
+													"type": "DawnBookingDTO",
+													"description": "凌晨房信息"
+												}
+											],
+											"name": "rate_list",
+											"type": "RateDTO[]",
+											"description": "rate信息列表"
+										}
+									],
+									"name": "room_list",
+									"type": "RoomPriceDTO[]",
+									"description": "房型列表，里面包含了rate信息列有"
+								}
+							],
+							"name": "hotel_price_dto_list",
+							"type": "HotelPriceBatchDTO[]",
+							"description": "酒店的报价结果列表"
+						}
+					],
+					"name": "data",
+					"type": "HotelPriceBatchResultDTO",
+					"description": "批量报价结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功,true正常,false异常"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.price.batch.get",
+	"apiChineseName": "阿信酒店批量报价查询接口",
+	"description": "阿信酒店批量报价查询接口",
+	"id": 60637
+}

@@ -1,0 +1,143 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "AE order id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "Order creation time"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_no",
+							"type": "String",
+							"description": "Logistics tracking number"
+						},
+						{
+							"name": "logistics_service",
+							"type": "String",
+							"description": "Logistics Services"
+						}
+					],
+					"name": "logistics_info_list",
+					"type": "AeOrderLogisticsInfo[]",
+					"description": "Order logistics information list"
+				},
+				{
+					"name": "logistics_status",
+					"type": "String",
+					"description": "Logistics status"
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "Order Status"
+				},
+				{
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "Amount"
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "Currency"
+						}
+					],
+					"name": "order_amount",
+					"type": "SimpleMoney",
+					"description": "Order amount"
+				},
+				{
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "Item ID"
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "Item name"
+						},
+						{
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount"
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "Currency"
+								}
+							],
+							"name": "product_price",
+							"type": "SimpleMoney",
+							"description": "Item price"
+						},
+						{
+							"name": "product_count",
+							"type": "Number",
+							"description": "Item quantity"
+						}
+					],
+					"name": "child_order_list",
+					"type": "AeChildOrderInfo[]",
+					"description": "Sub-order list"
+				},
+				{
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "Store ID"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "Store name"
+						},
+						{
+							"name": "store_url",
+							"type": "String",
+							"description": "Store address"
+						}
+					],
+					"name": "store_info",
+					"type": "AeStoreSimpleInfo",
+					"description": "Store Information"
+				}
+			],
+			"name": "result",
+			"type": "AeOrderInfoResultDTO",
+			"description": "Result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "Error message"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "Error code"
+		}
+	],
+	"name": "aliexpress.ds.trade.order.get",
+	"apiChineseName": "交易订单查询",
+	"description": "交易订单查询",
+	"id": 60455
+}

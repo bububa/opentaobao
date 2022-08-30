@@ -1,13 +1,6 @@
 {
-	"id": 37346,
-	"name": "alibaba.mj.mos.fund.modifybillbankaccount",
-	"apiChineseName": "修改付款单的银行账户信息",
-	"description": "修改付款单的银行账户信息",
 	"requestParams": [
 		{
-			"name": "modify_dto",
-			"type": "ModifyBillDto",
-			"description": "修改入参",
 			"subParams": [
 				{
 					"name": "bank_branch_code",
@@ -86,7 +79,10 @@
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "modify_dto",
+			"type": "ModifyBillDto",
+			"description": "修改入参"
 		}
 	],
 	"responseParams": [
@@ -95,5 +91,9 @@
 			"type": "Boolean",
 			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.mj.mos.fund.modifybillbankaccount",
+	"apiChineseName": "修改付款单的银行账户信息",
+	"description": "修改付款单的银行账户信息",
+	"id": 37346
 }

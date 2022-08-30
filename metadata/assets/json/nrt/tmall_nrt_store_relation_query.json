@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_ids",
+					"type": "Number[]",
+					"description": "卖场Id或者同城id",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型",
+					"required": true
+				}
+			],
+			"name": "store_query",
+			"type": "StoreQuery",
+			"description": "查询对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id1"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名称"
+						}
+					],
+					"name": "data",
+					"type": "NrtStoreDTO[]",
+					"description": "数据对象"
+				},
+				{
+					"name": "errcode",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "errmsg",
+					"type": "String",
+					"description": "异常信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "结果对象"
+		}
+	],
+	"name": "tmall.nrt.store.relation.query",
+	"apiChineseName": "喵零门店关系查询",
+	"description": "喵零门店关系查询",
+	"id": 62069
+}

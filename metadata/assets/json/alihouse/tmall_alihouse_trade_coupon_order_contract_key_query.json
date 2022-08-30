@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "履约单id",
+					"required": true
+				}
+			],
+			"name": "query",
+			"type": "CouponOrderQuery",
+			"description": "查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "ossKey"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "结果说明"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.alihouse.trade.coupon.order.contract.key.query",
+	"apiChineseName": "查询电商券履约单合同key",
+	"description": "查询电商券履约单合同地址",
+	"id": 58703
+}

@@ -1,15 +1,5 @@
 {
-	"id": 42088,
-	"name": "taobao.uscesl.biz.ap.search",
-	"apiChineseName": "AP列表查询",
-	"description": "查询当前门店下登记的AP列表",
 	"requestParams": [
-		{
-			"name": "biz_brand_key",
-			"type": "String",
-			"description": "商家编码",
-			"required": true
-		},
 		{
 			"name": "limit",
 			"type": "Number",
@@ -35,95 +25,92 @@
 			"type": "Number",
 			"description": "门店ID",
 			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家编码",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "成功与否看result.success，返回true或者false",
 			"subParams": [
 				{
-					"name": "message",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "本次调用是否成功",
-					"required": true
-				},
-				{
-					"name": "business_code",
-					"type": "String",
-					"description": "错误编码",
-					"required": true
-				},
-				{
-					"name": "return_code",
-					"type": "String",
-					"description": "调用返回编码",
-					"required": true
-				},
-				{
-					"name": "target_list",
-					"type": "Target[]",
-					"description": "返回对象list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "mac",
 							"type": "String",
-							"description": "AP的mac地址",
-							"required": true
+							"description": "AP的mac地址"
 						},
 						{
 							"name": "status",
 							"type": "Boolean",
-							"description": "是否在线",
-							"required": true
+							"description": "是否在线"
 						},
 						{
 							"name": "is_activate",
 							"type": "Boolean",
-							"description": "是否激活",
-							"required": true
+							"description": "是否激活"
 						},
 						{
 							"name": "model",
 							"type": "String",
-							"description": "型号",
-							"required": true
+							"description": "型号"
 						}
-					]
+					],
+					"name": "target_list",
+					"type": "Target[]",
+					"description": "返回对象list"
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "调用返回编码"
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "本次调用是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "total_pages",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "limit",
 					"type": "Number",
-					"description": "每页显示数",
-					"required": true
+					"description": "每页显示数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "成功与否看result.success，返回true或者false"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.ap.search",
+	"apiChineseName": "AP列表查询",
+	"description": "查询当前门店下登记的AP列表",
+	"id": 42088
 }

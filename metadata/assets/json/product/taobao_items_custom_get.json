@@ -1,8 +1,4 @@
 {
-	"id": 163,
-	"name": "taobao.items.custom.get",
-	"apiChineseName": "根据外部ID取商品",
-	"description": "跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "outer_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "items",
-			"type": "Item []",
-			"description": "商品列表，具体返回字段以fields决定",
 			"subParams": [
 				{
 					"name": "iid",
@@ -114,9 +107,6 @@
 					"description": "商品新旧程度(全新:new，闲置:unused，二手：second)"
 				},
 				{
-					"name": "location",
-					"type": "Location",
-					"description": "商品所在地",
 					"subParams": [
 						{
 							"name": "zip",
@@ -148,7 +138,10 @@
 							"type": "String",
 							"description": "区/县（只适用于物流API）"
 						}
-					]
+					],
+					"name": "location",
+					"type": "Location",
+					"description": "商品所在地"
 				},
 				{
 					"name": "price",
@@ -231,9 +224,6 @@
 					"description": "属性值别名"
 				},
 				{
-					"name": "item_imgs",
-					"type": "ItemImg[]",
-					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "url",
@@ -245,12 +235,12 @@
 							"type": "Number",
 							"description": "图片放在第几张（多图时可设置）"
 						}
-					]
+					],
+					"name": "item_imgs",
+					"type": "ItemImg[]",
+					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "prop_imgs",
-					"type": "PropImg[]",
-					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -277,12 +267,12 @@
 							"type": "Date",
 							"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
 						}
-					]
+					],
+					"name": "prop_imgs",
+					"type": "PropImg[]",
+					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "skus",
-					"type": "Sku[]",
-					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -383,7 +373,10 @@
 							"type": "String",
 							"description": "specId"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段"
 				},
 				{
 					"name": "outer_id",
@@ -406,9 +399,6 @@
 					"description": "是否在外部网店显示"
 				},
 				{
-					"name": "videos",
-					"type": "Video[]",
-					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、video.url等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -445,7 +435,10 @@
 							"type": "Number",
 							"description": "视频记录所关联的商品的数字id"
 						}
-					]
+					],
+					"name": "videos",
+					"type": "Video[]",
+					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、video.url等形式就只会返回相应的字段"
 				},
 				{
 					"name": "is_3D",
@@ -547,7 +540,14 @@
 					"type": "Boolean",
 					"description": "全球购商品卖家包税承诺，当值为true时，代表卖家承诺包税。"
 				}
-			]
+			],
+			"name": "items",
+			"type": "Item []",
+			"description": "商品列表，具体返回字段以fields决定"
 		}
-	]
+	],
+	"name": "taobao.items.custom.get",
+	"apiChineseName": "根据外部ID取商品",
+	"description": "跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 163
 }

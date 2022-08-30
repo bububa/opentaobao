@@ -1,13 +1,6 @@
 {
-	"id": 55337,
-	"name": "taobao.qimen.inventorybatch.query",
-	"apiChineseName": "商品单仓批次库存查询接口",
-	"description": "ERP 通过该接口查询指定商品的单仓批次库存",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
-			"description": "request",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -43,14 +36,14 @@
 					"description": "每页条数(最多 100 条)，必填",
 					"required": true
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request",
+			"description": "request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
-			"description": "响应",
 			"subParams": [
 				{
 					"name": "flag",
@@ -77,16 +70,8 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "Items",
-					"description": "明细列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item",
-							"type": "Item",
-							"description": "明细",
-							"required": true,
 							"subParams": [
 								{
 									"name": "itemCode",
@@ -130,11 +115,26 @@
 									"description": "库存数量",
 									"required": true
 								}
-							]
+							],
+							"name": "item",
+							"type": "Item",
+							"description": "明细",
+							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "Items",
+					"description": "明细列表",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response",
+			"description": "响应"
 		}
-	]
+	],
+	"name": "taobao.qimen.inventorybatch.query",
+	"apiChineseName": "商品单仓批次库存查询接口",
+	"description": "ERP 通过该接口查询指定商品的单仓批次库存",
+	"id": 55337
 }

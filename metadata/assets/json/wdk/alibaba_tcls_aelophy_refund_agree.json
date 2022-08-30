@@ -1,8 +1,4 @@
 {
-	"id": 55294,
-	"name": "alibaba.tcls.aelophy.refund.agree",
-	"apiChineseName": "saas 售后逆向 商户同意用户逆向申请",
-	"description": "saas 售后逆向 商户同意用户逆向申请",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -25,10 +21,6 @@
 			"description": "审核说明"
 		},
 		{
-			"name": "sub_refund_list",
-			"type": "Subrefundlist[]",
-			"description": "外部子订单列表",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "out_sub_order_id",
@@ -40,34 +32,43 @@
 					"type": "Number",
 					"description": "退款金额"
 				}
-			]
+			],
+			"name": "sub_refund_list",
+			"type": "Subrefundlist",
+			"description": "外部子订单列表"
+		},
+		{
+			"name": "order_from",
+			"type": "Number",
+			"description": "渠道"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.refund.agree",
+	"apiChineseName": "saas 售后逆向 商户同意用户逆向申请",
+	"description": "saas 售后逆向 商户同意用户逆向申请",
+	"id": 55294
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10620,
-	"name": "taobao.wlb.subscription.query",
-	"apiChineseName": "查询商家定购的所有服务",
-	"description": "查询商家定购的所有服务,可通过入参状态来筛选",
 	"requestParams": [
 		{
 			"name": "status",
@@ -27,9 +23,6 @@
 			"description": "结果总数"
 		},
 		{
-			"name": "seller_subscription_list",
-			"type": "WlbSellerSubscription []",
-			"description": "卖家定购的服务列表",
 			"subParams": [
 				{
 					"name": "id",
@@ -107,9 +100,6 @@
 					"description": "备注"
 				},
 				{
-					"name": "wlb_partner_address",
-					"type": "WlbPartnerAddress",
-					"description": "联系人地址信息",
 					"subParams": [
 						{
 							"name": "province",
@@ -136,12 +126,12 @@
 							"type": "String",
 							"description": "邮编"
 						}
-					]
+					],
+					"name": "wlb_partner_address",
+					"type": "AddressInfo",
+					"description": "联系人地址信息"
 				},
 				{
-					"name": "wlb_partner_contact",
-					"type": "WlbPartnerContact",
-					"description": "联系人联系详情",
 					"subParams": [
 						{
 							"name": "name",
@@ -153,7 +143,10 @@
 							"type": "String",
 							"description": "联系电话"
 						}
-					]
+					],
+					"name": "wlb_partner_contact",
+					"type": "ContactInfo",
+					"description": "联系人联系详情"
 				},
 				{
 					"name": "is_own_service",
@@ -164,8 +157,20 @@
 					"name": "service_alias",
 					"type": "String",
 					"description": "自有仓的别名，当当前订购记录为自有仓时才会有值"
+				},
+				{
+					"name": "openuid",
+					"type": "String",
+					"description": "openuid"
 				}
-			]
+			],
+			"name": "seller_subscription_list",
+			"type": "SellerSubscriptionList []",
+			"description": "卖家定购的服务列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.subscription.query",
+	"apiChineseName": "查询商家定购的所有服务",
+	"description": "查询商家定购的所有服务,可通过入参状态来筛选",
+	"id": 10620
 }

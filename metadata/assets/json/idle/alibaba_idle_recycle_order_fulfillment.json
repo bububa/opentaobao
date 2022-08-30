@@ -1,18 +1,8 @@
 {
-	"id": 32400,
-	"name": "alibaba.idle.recycle.order.fulfillment",
-	"apiChineseName": "闲鱼回收订单履约V1",
-	"description": "外部回收商针对自有回收订单的履行",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "RecycleOrderSynDto",
-			"description": "订单同步入参",
 			"subParams": [
 				{
-					"name": "attribute",
-					"type": "Attribute",
-					"description": "属性入参",
 					"subParams": [
 						{
 							"name": "confirm_fee",
@@ -22,7 +12,7 @@
 						{
 							"name": "reason",
 							"type": "String",
-							"description": "order_status=103时候填写 关闭原因"
+							"description": "order_status=103、101时候填写 关闭原因描述"
 						},
 						{
 							"name": "mail_no",
@@ -78,8 +68,36 @@
 							"name": "contact_mobile",
 							"type": "String",
 							"description": "联系人电话，上门回收填写,order_status=1"
+						},
+						{
+							"name": "recycle_supplier_id",
+							"type": "String",
+							"description": "手淘商家的淘宝账号id"
+						},
+						{
+							"name": "isv_receive_time",
+							"type": "String",
+							"description": "商家收到货品时间"
+						},
+						{
+							"name": "real_model",
+							"type": "String",
+							"description": "质检型号名称（若存在不一致情况，需要了解实际检测的质检型号，若实际型号在已挂载的spuid中则传spuid，否则传\"其他\"）"
+						},
+						{
+							"name": "spu_match",
+							"type": "String",
+							"description": "提交型号和质检型号是否一致"
+						},
+						{
+							"name": "close_reason_code",
+							"type": "String",
+							"description": "order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME(\"质检员未上门取件\"), SELLER_CAN_NOT_CONTACT(\"用户无法联系\"), SELLER_NOT_COME_STORE_AT_TIME(\"用户未按时到店\"), CANCEL_BY_SELLER_DEMAND(\"用户要求不回收了\"), QA_NOT_QUALIFIED(\"不符合服务商质检要求\"), OTHER(\"其他原因\")"
 						}
-					]
+					],
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "属性入参"
 				},
 				{
 					"name": "biz_order_id",
@@ -99,22 +117,28 @@
 					"description": "回收商在top上申请的appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "RecycleOrderSynDto",
+			"description": "订单同步入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.recycle.order.fulfillment",
+	"apiChineseName": "闲鱼回收订单履约V1",
+	"description": "外部回收商针对自有回收订单的履行",
+	"id": 32400
 }

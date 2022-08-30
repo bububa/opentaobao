@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "merchant_open_id",
+					"type": "String",
+					"description": "经营主体id",
+					"required": true
+				},
+				{
+					"name": "pos_apply_amount",
+					"type": "String",
+					"description": "pos数量",
+					"required": true
+				},
+				{
+					"name": "pos_open_id",
+					"type": "String",
+					"description": "pos进件id",
+					"required": true
+				},
+				{
+					"name": "merchant_id",
+					"type": "String",
+					"description": "通联id",
+					"required": true
+				}
+			],
+			"name": "syc_trade_pos_apply_dto",
+			"type": "SyncTradePosApplyDTO",
+			"description": "同步对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "编码"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回值"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "对象"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.pos.apply.submit",
+	"apiChineseName": "pos申请接口",
+	"description": "pos申请接口",
+	"id": 59132
+}

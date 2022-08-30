@@ -1,18 +1,8 @@
 {
-	"id": 53398,
-	"name": "alibaba.tmallgenie.scp.plan.saleforcast.saler.upload",
-	"apiChineseName": "19-销售预测数量（销管）回传接口",
-	"description": "销售预测数量（销管）回传接口",
 	"requestParams": [
 		{
-			"name": "sales_forecast_request",
-			"type": "SalesForecastRequest",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "sales_forecast_param_d_t_o_list",
-					"type": "SalesForecastParamDto[]",
-					"description": "入参对象列表",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -49,14 +39,20 @@
 							"description": "物料号",
 							"required": true
 						}
-					]
+					],
+					"name": "sales_forecast_param_d_t_o_list",
+					"type": "SalesForecastParamDto[]",
+					"description": "入参对象列表"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "sales_forecast_request",
+			"type": "SalesForecastRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -75,5 +71,9 @@
 			"type": "String",
 			"description": "参数code"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.saleforcast.saler.upload",
+	"apiChineseName": "19-销售预测数量（销管）回传接口",
+	"description": "销售预测数量（销管）回传接口",
+	"id": 53398
 }

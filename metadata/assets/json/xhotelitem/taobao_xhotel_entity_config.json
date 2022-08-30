@@ -1,8 +1,4 @@
 {
-	"id": 33177,
-	"name": "taobao.xhotel.entity.config",
-	"apiChineseName": "飞猪商品各实体通用配置",
-	"description": "飞猪商品各实体通用配置服务",
 	"requestParams": [
 		{
 			"name": "entity_code",
@@ -30,11 +26,8 @@
 			"description": "实体类型：1：卖家维度，2：酒店维度，3：房型维度，4：宝贝维度，5：rp维度。请注意目前仅支持类型5"
 		}
 	],
-	"responseParams": [
-		{
-			"name": "result",
-			"type": "Number",
-			"description": "请勿关注该值"
-		}
-	]
+	"name": "taobao.xhotel.entity.config",
+	"apiChineseName": "飞猪商品各实体通用配置",
+	"description": "飞猪商品各实体通用配置服务",
+	"id": 33177
 }

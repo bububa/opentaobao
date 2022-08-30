@@ -1,8 +1,4 @@
 {
-	"id": 40290,
-	"name": "alibaba.einvoice.income.verify.return",
-	"apiChineseName": "服务商回传发票查验的结果",
-	"description": "服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传",
 	"requestParams": [
 		{
 			"name": "checksum",
@@ -40,10 +36,6 @@
 			"description": "开票日期，格式为yyyy-MM-dd，success=true时必填"
 		},
 		{
-			"name": "invoice_items",
-			"type": "InvoiceItem[]",
-			"description": "发票明细",
-			"maxListSize": 10000,
 			"subParams": [
 				{
 					"name": "amount",
@@ -100,7 +92,11 @@
 					"type": "String",
 					"description": "0税率标识，0=出口零税率，1=免税，2=不征收，3=普通零税率，success=true并且taxRate=0时必填"
 				}
-			]
+			],
+			"name": "invoice_items",
+			"type": "InvoiceItem[]",
+			"description": "发票明细",
+			"maxListSize": 10000
 		},
 		{
 			"name": "invoice_memo",
@@ -212,5 +208,9 @@
 			"type": "Boolean",
 			"description": "接口调用结果，true=成功，false=失败，subCode以isp开头时需要服务商重试"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.income.verify.return",
+	"apiChineseName": "服务商回传发票查验的结果",
+	"description": "服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传",
+	"id": 40290
 }

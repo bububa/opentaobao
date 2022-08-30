@@ -1,8 +1,4 @@
 {
-	"id": 32152,
-	"name": "yunos.appstore.pad.hp.applist",
-	"apiChineseName": "查询HpPad appList",
-	"description": "提供hp pad应用群数据",
 	"requestParams": [
 		{
 			"name": "code",
@@ -12,65 +8,60 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Result []",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "icon",
 					"type": "String",
-					"description": "icon",
-					"required": true
+					"description": "icon"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "package_name",
 					"type": "String",
-					"description": "packageName",
-					"required": true
+					"description": "packageName"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "name",
-					"required": true
+					"description": "name"
 				},
 				{
 					"name": "developer_name",
 					"type": "String",
-					"description": "developerName",
-					"required": true
+					"description": "developerName"
 				},
 				{
 					"name": "version_code",
 					"type": "Number",
-					"description": "versionCode",
-					"required": true
+					"description": "versionCode"
 				},
 				{
 					"name": "uri",
 					"type": "String",
-					"description": "uri",
-					"required": true
+					"description": "uri"
 				},
 				{
 					"name": "url",
 					"type": "String",
-					"description": "url",
-					"required": true
+					"description": "url"
 				},
 				{
 					"name": "intro",
 					"type": "String",
-					"description": "intro",
-					"required": true
+					"description": "intro"
 				}
-			]
+			],
+			"name": "results",
+			"type": "Result []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.appstore.pad.hp.applist",
+	"apiChineseName": "查询HpPad appList",
+	"description": "提供hp pad应用群数据",
+	"id": 32152
 }

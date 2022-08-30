@@ -1,14 +1,6 @@
 {
-	"id": 44531,
-	"name": "alibaba.wdk.trade.discount.bill.get",
-	"apiChineseName": "订单优惠账单查询",
-	"description": "商家查询订单优惠账单",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OrderDiscountBillQueryRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "end_time",
@@ -47,174 +39,161 @@
 					"type": "String",
 					"description": "外部门店编码"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OrderDiscountBillQueryRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderDiscountBillQueryResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "next_id",
 					"type": "Number",
-					"description": "下一页查询的入参，当为-1时表示没有更多数据",
-					"required": true
+					"description": "下一页查询的入参，当为-1时表示没有更多数据"
 				},
 				{
-					"name": "return_code",
-					"type": "String",
-					"description": "结果码",
-					"required": true
-				},
-				{
-					"name": "return_msg",
-					"type": "String",
-					"description": "结果文案",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "业务请求成功与否",
-					"required": true
-				},
-				{
-					"name": "total_number",
-					"type": "Number",
-					"description": "总数量，只在查询第一页时返回",
-					"required": true
-				},
-				{
-					"name": "discount_bills",
-					"type": "OrderDiscountBillBo[]",
-					"description": "账单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "活动ID",
-							"required": true
+							"description": "活动ID"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "activity_type",
 							"type": "Number",
-							"description": "活动类型 1：活动 2：券",
-							"required": true
+							"description": "活动类型 1：活动 2：券"
 						},
 						{
 							"name": "buy_quantity",
 							"type": "Number",
-							"description": "购买数量",
-							"required": true
+							"description": "购买数量"
 						},
 						{
 							"name": "discount_fee",
 							"type": "Number",
-							"description": "优惠金额",
-							"required": true
+							"description": "优惠金额"
 						},
 						{
 							"name": "discount_quantity",
 							"type": "Number",
-							"description": "优惠件数",
-							"required": true
+							"description": "优惠件数"
 						},
 						{
 							"name": "discount_type",
 							"type": "Number",
-							"description": "补差类型",
-							"required": true
+							"description": "补差类型"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "主键id",
-							"required": true
+							"description": "主键id"
 						},
 						{
 							"name": "main_order_id",
 							"type": "String",
-							"description": "主订单号",
-							"required": true
+							"description": "主订单号"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "商家编码"
 						},
 						{
 							"name": "merchant_discount_fee",
 							"type": "Number",
-							"description": "商家优惠补差金额",
-							"required": true
+							"description": "商家优惠补差金额"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "交易状态",
-							"required": true
+							"description": "交易状态"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店id",
-							"required": true
+							"description": "经营店id"
 						},
 						{
 							"name": "sub_order_id",
 							"type": "String",
-							"description": "子单号",
-							"required": true
+							"description": "子单号"
 						},
 						{
 							"name": "txd_discount_fee",
 							"type": "Number",
-							"description": "淘鲜达优惠金额",
-							"required": true
+							"description": "淘鲜达优惠金额"
 						},
 						{
 							"name": "biz_time",
 							"type": "Date",
-							"description": "业务时间",
-							"required": true
+							"description": "业务时间"
 						},
 						{
 							"name": "order_channel",
 							"type": "Number",
-							"description": "订单渠道",
-							"required": true
+							"description": "订单渠道"
+						},
+						{
+							"name": "investor",
+							"type": "Number",
+							"description": "出资方 1表示平台出资  0表示品牌商出资"
 						}
-					]
+					],
+					"name": "discount_bills",
+					"type": "OrderDiscountBillBo[]",
+					"description": "账单列表"
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果文案"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "业务请求成功与否"
+				},
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "总数量，只在查询第一页时返回"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderDiscountBillQueryResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.trade.discount.bill.get",
+	"apiChineseName": "订单优惠账单查询",
+	"description": "商家查询订单优惠账单",
+	"id": 44531
 }

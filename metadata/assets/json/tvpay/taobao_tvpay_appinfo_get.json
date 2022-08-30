@@ -1,8 +1,4 @@
 {
-	"id": 26210,
-	"name": "taobao.tvpay.appinfo.get",
-	"apiChineseName": "tv支付获取应用信息",
-	"description": "tv支付获取应用信息",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -23,119 +19,106 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "data",
-					"type": "GetAppInfoResultDo",
-					"description": "结构体",
-					"required": true,
 					"subParams": [
 						{
-							"name": "package_name",
-							"type": "String",
-							"description": "包名",
-							"required": true
-						},
-						{
-							"name": "partner_id",
-							"type": "Number",
-							"description": "商户id",
-							"required": true
-						},
-						{
-							"name": "app_config",
-							"type": "SdkAppConfigDo",
-							"description": "应用配置",
-							"required": true,
 							"subParams": [
+								{
+									"name": "config_props",
+									"type": "String",
+									"description": "自定义属性"
+								},
 								{
 									"name": "enable_upload_log",
 									"type": "Boolean",
-									"description": "是否上传日志",
-									"required": true
+									"description": "是否上传日志"
 								},
 								{
 									"name": "enable_youment",
 									"type": "Boolean",
-									"description": "是否开启友盟",
-									"required": true
-								},
-								{
-									"name": "config_props",
-									"type": "String",
-									"description": "自定义属性",
-									"required": true
+									"description": "是否开启友盟"
 								},
 								{
 									"name": "enable_auto_login",
 									"type": "Boolean",
-									"description": "是否自动登入",
-									"required": true
+									"description": "是否自动登入"
 								}
-							]
+							],
+							"name": "app_config",
+							"type": "SdkAppConfigDo",
+							"description": "应用配置"
 						},
 						{
-							"name": "global_config",
-							"type": "SdkGlobalConfigDo",
-							"description": "全局配置",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ask_before_auto_login",
 									"type": "Boolean",
-									"description": "是否询问用户要自动登录",
-									"required": true
+									"description": "是否询问用户要自动登录"
 								},
 								{
 									"name": "auto_login_checked",
 									"type": "Boolean",
-									"description": "如果询问，是否默认选中自动登录",
-									"required": true
+									"description": "如果询问，是否默认选中自动登录"
 								},
 								{
 									"name": "auto_login_dialog_pattern",
 									"type": "Number",
-									"description": "询问对话框样式",
-									"required": true
+									"description": "询问对话框样式"
 								},
 								{
 									"name": "show_auth_code_by_default",
 									"type": "Boolean",
-									"description": "是否默认展示授权二维码",
-									"required": true
+									"description": "是否默认展示授权二维码"
 								},
 								{
 									"name": "h5_proxy_url",
 									"type": "String",
-									"description": "h5路由属性",
-									"required": true
+									"description": "h5路由属性"
 								}
-							]
+							],
+							"name": "global_config",
+							"type": "SdkGlobalConfigDo",
+							"description": "全局配置"
+						},
+						{
+							"name": "package_name",
+							"type": "String",
+							"description": "包名"
+						},
+						{
+							"name": "partner_id",
+							"type": "Number",
+							"description": "商户id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "GetAppInfoResultDo",
+					"description": "结构体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.tvpay.appinfo.get",
+	"apiChineseName": "tv支付获取应用信息",
+	"description": "tv支付获取应用信息",
+	"id": 26210
 }

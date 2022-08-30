@@ -1,20 +1,7 @@
 {
-	"id": 30893,
-	"name": "taobao.omniitem.item.fullupdate",
-	"apiChineseName": "全渠道商品全量更新",
-	"description": "全渠道商品全量更新，仅适用于全渠道门店商品\n需要全量传入商品相关所有参数，更新时会根据传入的字段进行全量更新\n对于SKU信息，会以skus对象进行判断，若传入的skus对象的sku为商品之前未包含的，则新增SKU，如果原先商品有该sku但现在没有传，则删除该SKU。所有传入的SKU信息要么全部均传入skuId，要么全部都不传入skuId。对于新增SKU的场景，目前无需传入SKUID，会根据传入的销售属性自动对应",
 	"requestParams": [
 		{
-			"name": "light_publish_info",
-			"type": "ItemLightPublishDto",
-			"description": "发布商品信息",
-			"required": true,
 			"subParams": [
-				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "商品ID，若填入则以itemId为准"
-				},
 				{
 					"name": "barcode",
 					"type": "String",
@@ -27,15 +14,17 @@
 					"required": true
 				},
 				{
+					"name": "desc",
+					"type": "String",
+					"description": "商品描述信息",
+					"required": true
+				},
+				{
 					"name": "extend_attr",
 					"type": "String",
 					"description": "扩展字段"
 				},
 				{
-					"name": "images",
-					"type": "ItemLightPublishImageDto[]",
-					"description": "商品图片，最少1张，最多5张",
-					"required": true,
 					"subParams": [
 						{
 							"name": "url",
@@ -43,7 +32,16 @@
 							"description": "图片空间URL",
 							"required": true
 						}
-					]
+					],
+					"name": "images",
+					"type": "ItemLightPublishImageDto[]",
+					"description": "商品图片，最少1张，最多5张",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID，若填入则以itemId为准"
 				},
 				{
 					"name": "operator",
@@ -67,10 +65,6 @@
 					"required": true
 				},
 				{
-					"name": "skus",
-					"type": "ItemLightPublishSkuDto[]",
-					"description": "sku信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_barcode",
@@ -94,10 +88,6 @@
 							"required": true
 						},
 						{
-							"name": "sale_props",
-							"type": "ItemLightPublishSalePropDto[]",
-							"description": "sku销售属性",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pid",
@@ -111,19 +101,27 @@
 									"description": "销售属性值",
 									"required": true
 								}
-							]
-						},
-						{
-							"name": "sku_outer_id",
-							"type": "String",
-							"description": "sku商家编码"
+							],
+							"name": "sale_props",
+							"type": "ItemLightPublishSalePropDto[]",
+							"description": "sku销售属性",
+							"required": true
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
 							"description": "skuId"
+						},
+						{
+							"name": "sku_outer_id",
+							"type": "String",
+							"description": "sku商家编码"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "ItemLightPublishSkuDto[]",
+					"description": "sku信息",
+					"required": true
 				},
 				{
 					"name": "subtitle",
@@ -136,14 +134,12 @@
 					"type": "String",
 					"description": "商品标题",
 					"required": true
-				},
-				{
-					"name": "desc",
-					"type": "String",
-					"description": "商品描述信息",
-					"required": true
 				}
-			]
+			],
+			"name": "light_publish_info",
+			"type": "ItemLightPublishDto",
+			"description": "发布商品信息",
+			"required": true
 		},
 		{
 			"name": "operate_type",
@@ -154,125 +150,111 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码，code=0表示成功",
-					"required": true
+					"description": "错误码，code=0表示成功"
 				},
 				{
-					"name": "data",
-					"type": "ItemLightPublishResult",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_id",
-							"type": "Number",
-							"description": "创建生成的itemId",
-							"required": true
-						},
-						{
-							"name": "sku_ids",
-							"type": "Json",
-							"description": "创建生成的skuId",
-							"required": true
-						},
-						{
-							"name": "duplicate_infos",
-							"type": "ItemSkuDuplicateInfo[]",
-							"description": "重复商品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "barcode",
 									"type": "String",
-									"description": "商品barcode",
-									"required": true
+									"description": "商品barcode"
 								},
 								{
-									"name": "duplicate_details",
-									"type": "ItemSkuDuplicateDetail[]",
-									"description": "重复商品详情列表，如果重复商品过多，目前只展示部分",
-									"required": true,
 									"subParams": [
 										{
 											"name": "barcode",
 											"type": "String",
-											"description": "商品barcode",
-											"required": true
+											"description": "商品barcode"
 										},
 										{
 											"name": "item_id",
 											"type": "Number",
-											"description": "itemId",
-											"required": true
+											"description": "itemId"
 										},
 										{
 											"name": "outer_id",
 											"type": "String",
-											"description": "outerId",
-											"required": true
+											"description": "outerId"
 										},
 										{
 											"name": "sku_barcode",
 											"type": "String",
-											"description": "skuBarcode",
-											"required": true
+											"description": "skuBarcode"
 										},
 										{
 											"name": "sku_id",
 											"type": "Number",
-											"description": "skuId",
-											"required": true
+											"description": "skuId"
 										},
 										{
 											"name": "sku_outer_id",
 											"type": "String",
-											"description": "skuOuterId",
-											"required": true
+											"description": "skuOuterId"
 										}
-									]
+									],
+									"name": "duplicate_details",
+									"type": "ItemSkuDuplicateDetail[]",
+									"description": "重复商品详情列表，如果重复商品过多，目前只展示部分"
 								},
 								{
 									"name": "duplicate_size",
 									"type": "Number",
-									"description": "duplicateSize",
-									"required": true
+									"description": "duplicateSize"
 								},
 								{
 									"name": "outer_id",
 									"type": "String",
-									"description": "outerId",
-									"required": true
+									"description": "outerId"
 								},
 								{
 									"name": "sku_barcode",
 									"type": "String",
-									"description": "skuBarcode",
-									"required": true
+									"description": "skuBarcode"
 								},
 								{
 									"name": "sku_outer_id",
 									"type": "String",
-									"description": "skuOuterId",
-									"required": true
+									"description": "skuOuterId"
 								}
-							]
+							],
+							"name": "duplicate_infos",
+							"type": "ItemSkuDuplicateInfo[]",
+							"description": "重复商品信息"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "创建生成的itemId"
+						},
+						{
+							"name": "sku_ids",
+							"type": "String",
+							"description": "创建生成的skuId"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemLightPublishResult",
+					"description": "data"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OmniResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.omniitem.item.fullupdate",
+	"apiChineseName": "全渠道商品全量更新",
+	"description": "全渠道商品全量更新，仅适用于全渠道门店商品\n需要全量传入商品相关所有参数，更新时会根据传入的字段进行全量更新\n对于SKU信息，会以skus对象进行判断，若传入的skus对象的sku为商品之前未包含的，则新增SKU，如果原先商品有该sku但现在没有传，则删除该SKU。所有传入的SKU信息要么全部均传入skuId，要么全部都不传入skuId。对于新增SKU的场景，目前无需传入SKUID，会根据传入的销售属性自动对应",
+	"id": 30893
 }

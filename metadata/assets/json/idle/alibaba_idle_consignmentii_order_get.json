@@ -1,8 +1,4 @@
 {
-	"id": 55652,
-	"name": "alibaba.idle.consignmentii.order.get",
-	"apiChineseName": "闲鱼寄卖V2订单查询",
-	"description": "闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -12,289 +8,247 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "module",
-					"type": "ConsignmentV2OrderTo",
-					"description": "订单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_key",
 							"type": "String",
-							"description": "回收商appKey",
-							"required": true
+							"description": "回收商appKey"
 						},
 						{
 							"name": "apprize_amount",
 							"type": "String",
-							"description": "估价金额，单位分，精确到元",
-							"required": true
+							"description": "估价金额，单位分，精确到元"
 						},
 						{
 							"name": "apprize_id",
 							"type": "String",
-							"description": "估价ID",
-							"required": true
+							"description": "估价ID"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "区",
-							"required": true
+							"description": "区"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "闲鱼订单ID",
-							"required": true
+							"description": "闲鱼订单ID"
 						},
 						{
 							"name": "buyer_close_reason",
 							"type": "String",
-							"description": "买家关闭原因",
-							"required": true
+							"description": "买家关闭原因"
 						},
 						{
 							"name": "channel",
 							"type": "String",
-							"description": "渠道",
-							"required": true
+							"description": "渠道"
 						},
 						{
 							"name": "channel_data",
 							"type": "String",
-							"description": "预留json格式渠道业务数据，如无则为空。比如,ship=1:不需要发货,weight=5-15代表5-15kg,userLevel=vip代表免议价用户",
-							"required": true
+							"description": "预留json格式渠道业务数据，如无则为空。比如,ship=1:不需要发货,weight=5-15代表5-15kg,userLevel=vip代表免议价用户"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "confirm_fee",
 							"type": "String",
-							"description": "用户定价，精确到分",
-							"required": true
+							"description": "用户定价，精确到分"
 						},
 						{
 							"name": "consignment_max_deal_amt",
 							"type": "String",
-							"description": "估价范围，上下限用分号分隔。",
-							"required": true
+							"description": "估价范围，上下限用分号分隔。"
 						},
 						{
 							"name": "consignment_pay_amount",
 							"type": "String",
-							"description": "服务商最终支付金额，精确到分。成交价减服务费",
-							"required": true
+							"description": "服务商最终支付金额，精确到分。成交价减服务费"
 						},
 						{
 							"name": "consignment_service_fee",
 							"type": "String",
-							"description": "正向服务费，精确到分",
-							"required": true
+							"description": "正向服务费，精确到分"
 						},
 						{
 							"name": "country",
 							"type": "String",
-							"description": "村",
-							"required": true
+							"description": "村"
 						},
 						{
 							"name": "degree",
 							"type": "String",
-							"description": "成色，几成新",
-							"required": true
+							"description": "成色，几成新"
 						},
 						{
 							"name": "env",
 							"type": "String",
-							"description": "下单环境",
-							"required": true
+							"description": "下单环境"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "订单创建时间，格式为\"yyyy-MM-dd HH:mm:ss\"",
-							"required": true
+							"description": "订单创建时间，格式为\"yyyy-MM-dd HH:mm:ss\""
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单一级状态",
-							"required": true
+							"description": "订单一级状态"
 						},
 						{
 							"name": "order_sub_status",
 							"type": "String",
-							"description": "订单二级状态",
-							"required": true
+							"description": "订单二级状态"
 						},
 						{
 							"name": "province",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "qa_amount",
 							"type": "String",
-							"description": "卖家定价,分",
-							"required": true
+							"description": "卖家定价,分"
 						},
 						{
 							"name": "rate_content",
 							"type": "String",
-							"description": "评价内容",
-							"required": true
+							"description": "评价内容"
 						},
 						{
 							"name": "rate_grade",
 							"type": "String",
-							"description": "评价等级。1 好评,0 默认中评",
-							"required": true
+							"description": "评价等级。1 好评,0 默认中评"
 						},
 						{
 							"name": "reference_recycle_price",
 							"type": "String",
-							"description": "回收参考价格，分",
-							"required": true
+							"description": "回收参考价格，分"
 						},
 						{
 							"name": "refund_mail_no",
 							"type": "String",
-							"description": "逆向发货物流单",
-							"required": true
+							"description": "逆向发货物流单"
 						},
 						{
 							"name": "report_url",
 							"type": "String",
-							"description": "鉴定报告url",
-							"required": true
+							"description": "鉴定报告url"
 						},
 						{
 							"name": "reverse_service_fee",
 							"type": "String",
-							"description": "逆向服务费，分",
-							"required": true
+							"description": "逆向服务费，分"
 						},
 						{
 							"name": "seller_address",
 							"type": "String",
-							"description": "卖家取件地址/收货地址",
-							"required": true
+							"description": "卖家取件地址/收货地址"
 						},
 						{
 							"name": "seller_alipay_account",
 							"type": "String",
-							"description": "卖家支付宝账号，服务商打款用",
-							"required": true
+							"description": "卖家支付宝账号，服务商打款用"
 						},
 						{
 							"name": "seller_alipay_user_id",
 							"type": "String",
-							"description": "卖家支付宝账号，服务商打款用",
-							"required": true
+							"description": "卖家支付宝账号，服务商打款用"
 						},
 						{
 							"name": "seller_close_reason",
 							"type": "String",
-							"description": "卖家关闭原因",
-							"required": true
+							"description": "卖家关闭原因"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "卖家昵称",
-							"required": true
+							"description": "卖家昵称"
 						},
 						{
 							"name": "seller_phone",
 							"type": "String",
-							"description": "卖家上门取件手机号码",
-							"required": true
+							"description": "卖家上门取件手机号码"
 						},
 						{
 							"name": "seller_real_name",
 							"type": "String",
-							"description": "卖家上门取件名称",
-							"required": true
+							"description": "卖家上门取件名称"
 						},
 						{
 							"name": "seller_receipt_address",
 							"type": "String",
-							"description": "逆向卖家退回地址",
-							"required": true
+							"description": "逆向卖家退回地址"
 						},
 						{
 							"name": "seller_receipt_name",
 							"type": "String",
-							"description": "逆向卖家退回取件名称",
-							"required": true
+							"description": "逆向卖家退回取件名称"
 						},
 						{
 							"name": "seller_receipt_phone",
 							"type": "String",
-							"description": "逆向卖家退回手机号",
-							"required": true
+							"description": "逆向卖家退回手机号"
 						},
 						{
 							"name": "service_rule",
 							"type": "String",
-							"description": "json格式服务费计算规则，单位为分，精确到元：最终成交金额*percent%，最高为max金额，最低为min金额。",
-							"required": true
+							"description": "json格式服务费计算规则，单位为分，精确到元：最终成交金额*percent%，最高为max金额，最低为min金额。"
 						},
 						{
 							"name": "ship_mail_no",
 							"type": "String",
-							"description": "上门取件物流单号",
-							"required": true
+							"description": "上门取件物流单号"
 						},
 						{
 							"name": "ship_time",
 							"type": "String",
-							"description": "上门取件时间",
-							"required": true
+							"description": "上门取件时间"
 						},
 						{
 							"name": "sub_channel",
 							"type": "String",
-							"description": "子渠道",
-							"required": true
+							"description": "子渠道"
 						},
 						{
 							"name": "summary",
 							"type": "String",
-							"description": "验货结论摘要",
-							"required": true
+							"description": "验货结论摘要"
 						}
-					]
+					],
+					"name": "module",
+					"type": "ConsignmentV2OrderTo",
+					"description": "订单详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.consignmentii.order.get",
+	"apiChineseName": "闲鱼寄卖V2订单查询",
+	"description": "闲鱼寄卖V2服务商以闲鱼交易买家身份查询订单信息",
+	"id": 55652
 }

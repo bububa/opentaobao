@@ -1,8 +1,4 @@
 {
-	"id": 36216,
-	"name": "alibaba.ascm.settlement.invoice.synchronization.im",
-	"apiChineseName": "英迈发票同步到结算",
-	"description": "外部供应商通过此API将发货的发票信息推送给供应链中台结算系统",
 	"requestParams": [
 		{
 			"name": "xml_data_slot",
@@ -13,29 +9,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SettlementGatewayResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "result",
-					"required": true
+					"description": "result"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SettlementGatewayResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.ascm.settlement.invoice.synchronization.im",
+	"apiChineseName": "英迈发票同步到结算",
+	"description": "外部供应商通过此API将发货的发票信息推送给供应链中台结算系统",
+	"id": 36216
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51350,
-	"name": "xiami.content.resource.action.report",
-	"apiChineseName": "曲库开放平台内容行为上报接口",
-	"description": "合作方对接入的曲库开放内容上报行为日志",
 	"requestParams": [
 		{
 			"name": "resource_id",
@@ -16,15 +12,15 @@
 			"description": "行为数量"
 		},
 		{
-			"name": "resource_type",
-			"type": "String",
-			"description": "资源类型（可枚举）: song(歌曲)",
-			"required": true
-		},
-		{
 			"name": "action",
 			"type": "String",
 			"description": "行为类型（可枚举）：LISTEN（主动试听）、PASSIVE_LISTEN（被动试听）",
+			"required": true
+		},
+		{
+			"name": "resource_type",
+			"type": "String",
+			"description": "资源类型（可枚举）: song(歌曲)",
 			"required": true
 		},
 		{
@@ -46,6 +42,11 @@
 			"name": "utdid",
 			"type": "String",
 			"description": "用户设备id"
+		},
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "扩展信息"
 		}
 	],
 	"responseParams": [
@@ -55,23 +56,25 @@
 			"description": "上报结果: true(成功), false(失败)"
 		},
 		{
-			"name": "result_code",
-			"type": "ResultCode",
-			"description": "返回结果码",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "result message",
-					"required": true
+					"description": "result message"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "result code",
-					"required": true
+					"description": "result code"
 				}
-			]
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "返回结果码"
 		}
-	]
+	],
+	"name": "xiami.content.resource.action.report",
+	"apiChineseName": "曲库开放平台内容行为上报接口",
+	"description": "合作方对接入的曲库开放内容上报行为日志",
+	"id": 51350
 }

@@ -1,13 +1,6 @@
 {
-	"id": 33116,
-	"name": "tmall.nr.fulfill.cancel",
-	"apiChineseName": "取消上门揽件",
-	"description": "新零售门店业务取消上门揽件",
 	"requestParams": [
 		{
-			"name": "req",
-			"type": "NrCancelFulfillReqDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "cancel_oper_user_name",
@@ -44,14 +37,14 @@
 					"type": "String",
 					"description": "取消原因的说明"
 				}
-			]
+			],
+			"name": "req",
+			"type": "NrCancelFulfillReqDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result_data",
@@ -77,7 +70,14 @@
 					"description": "isSuccess",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.cancel",
+	"apiChineseName": "取消上门揽件",
+	"description": "新零售门店业务取消上门揽件",
+	"id": 33116
 }

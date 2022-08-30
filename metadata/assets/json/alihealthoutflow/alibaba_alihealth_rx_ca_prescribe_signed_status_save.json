@@ -1,0 +1,104 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "拒绝签名原因（仅在拒绝签名状态时回调）"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "第三方厂商标识"
+				},
+				{
+					"name": "signed_pdf_base64",
+					"type": "String",
+					"description": "pdf文件流（base64编码，（仅在pdf签名成功状态时回调））"
+				},
+				{
+					"name": "delete_time",
+					"type": "String",
+					"description": "作废时间（仅在作废状态时回调），yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "signed_data",
+					"type": "String",
+					"description": "处方哈希的 P7签名（仅在签名成功时回调）"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "签名医师openId"
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "Body签名值"
+				},
+				{
+					"name": "service_id",
+					"type": "Number",
+					"description": "订阅服务Id"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "模板Id"
+				},
+				{
+					"name": "ur_id",
+					"type": "String",
+					"description": "处方ID"
+				},
+				{
+					"name": "unique_id",
+					"type": "String",
+					"description": "医网信处方唯一标识"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "签名订单状态 2已签名 6拒绝签名 7签名订单已过期删除 9已签名订单作废"
+				}
+			],
+			"name": "param0",
+			"type": "PrescribeStatusDTO",
+			"description": "入参实体"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述"
+				}
+			],
+			"name": "data",
+			"type": "YwxCommonVO",
+			"description": "出参"
+		},
+		{
+			"name": "exception_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "exception_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.rx.ca.prescribe.signed.status.save",
+	"apiChineseName": "处方ca认证",
+	"description": "处方ca认证",
+	"id": 60435
+}

@@ -1,14 +1,6 @@
 {
-	"id": 44858,
-	"name": "alibaba.wdk.series.sku.add",
-	"apiChineseName": "系列品商品变更-添加商品",
-	"description": "系列品商品变更-添加商品",
 	"requestParams": [
 		{
-			"name": "series_skus",
-			"type": "SeriesSkuRequest",
-			"description": "系列品添加商品请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "series_id",
@@ -27,60 +19,61 @@
 					"type": "String",
 					"description": "默认商品编码"
 				}
-			]
+			],
+			"name": "series_skus",
+			"type": "SeriesSkuRequest",
+			"description": "系列品添加商品请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "model",
-					"type": "SkuSeriesEditResult",
-					"description": "系列品添加商品成功结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "failed_sku_codes",
 							"type": "String[]",
-							"description": "成功的商品编码集",
-							"required": true
+							"description": "成功的商品编码集"
 						},
 						{
 							"name": "successed_sku_codes",
 							"type": "String[]",
-							"description": "失败的商品编码集",
-							"required": true
+							"description": "失败的商品编码集"
 						},
 						{
 							"name": "series_id",
 							"type": "Number",
-							"description": "系列编码",
-							"required": true
+							"description": "系列编码"
 						}
-					]
+					],
+					"name": "model",
+					"type": "SkuSeriesEditResult",
+					"description": "系列品添加商品成功结果"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误详情",
-					"required": true
+					"description": "错误详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.series.sku.add",
+	"apiChineseName": "系列品商品变更-添加商品",
+	"description": "系列品商品变更-添加商品",
+	"id": 44858
 }

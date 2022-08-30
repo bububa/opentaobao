@@ -1,54 +1,49 @@
 {
-	"id": 35428,
-	"name": "yunos.appstore.apps.get",
-	"apiChineseName": "根据包名列表获取应用信息列表",
-	"description": "根据包名列表获取应用信息列表",
 	"requestParams": [
 		{
 			"name": "pkgs",
 			"type": "String[]",
 			"description": "应用包名列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "app_info_list",
-			"type": "AppInfo []",
-			"description": "应用信息列表",
 			"subParams": [
 				{
 					"name": "icon",
 					"type": "String",
-					"description": "应用icon",
-					"required": true
+					"description": "应用icon"
 				},
 				{
 					"name": "package_name",
 					"type": "String",
-					"description": "应用包名",
-					"required": true
+					"description": "应用包名"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "应用名称",
-					"required": true
+					"description": "应用名称"
 				},
 				{
 					"name": "version_code",
 					"type": "Number",
-					"description": "应用版本号",
-					"required": true
+					"description": "应用版本号"
 				},
 				{
 					"name": "version_name",
 					"type": "String",
-					"description": "应用版本名称",
-					"required": true
+					"description": "应用版本名称"
 				}
-			]
+			],
+			"name": "app_info_list",
+			"type": "AppInfo []",
+			"description": "应用信息列表"
 		}
-	]
+	],
+	"name": "yunos.appstore.apps.get",
+	"apiChineseName": "根据包名列表获取应用信息列表",
+	"description": "根据包名列表获取应用信息列表",
+	"id": 35428
 }

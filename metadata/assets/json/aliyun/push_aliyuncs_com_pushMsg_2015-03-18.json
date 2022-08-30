@@ -1,8 +1,4 @@
 {
-	"id": 24694,
-	"name": "push.aliyuncs.com.pushMsg.2015-03-18",
-	"apiChineseName": "消息推送",
-	"description": "消息推送  ,支持指定用户/账号/广播等模式",
 	"requestParams": [
 		{
 			"name": "Account",
@@ -91,5 +87,9 @@
 			"type": "Number",
 			"description": "消息ID"
 		}
-	]
+	],
+	"name": "push.aliyuncs.com.pushMsg.2015-03-18",
+	"apiChineseName": "消息推送",
+	"description": "消息推送  ,支持指定用户/账号/广播等模式",
+	"id": 24694
 }

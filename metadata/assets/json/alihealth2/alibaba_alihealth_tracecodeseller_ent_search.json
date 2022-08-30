@@ -1,8 +1,4 @@
 {
-	"id": 38038,
-	"name": "alibaba.alihealth.tracecodeseller.ent.search",
-	"apiChineseName": "查询商家信息",
-	"description": "查询商家信息",
 	"requestParams": [
 		{
 			"name": "skey_code",
@@ -25,29 +21,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "models",
-					"type": "Json[]",
-					"description": "返回json字符串，包含商家的省、市、县、和id",
-					"required": true
+					"type": "String[]",
+					"description": "返回json字符串，包含商家的省、市、县、和id"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "成功、失败编码",
-					"required": true
+					"description": "成功、失败编码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "成功失败信息",
-					"required": true
+					"description": "成功失败信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.ent.search",
+	"apiChineseName": "查询商家信息",
+	"description": "查询商家信息",
+	"id": 38038
 }

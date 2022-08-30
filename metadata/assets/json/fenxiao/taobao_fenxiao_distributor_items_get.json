@@ -1,8 +1,4 @@
 {
-	"id": 10693,
-	"name": "taobao.fenxiao.distributor.items.get",
-	"apiChineseName": "查询商品下载记录",
-	"description": "供应商查询分销商商品下载记录。",
 	"requestParams": [
 		{
 			"name": "distributor_id",
@@ -42,9 +38,6 @@
 			"description": "查询结果记录数"
 		},
 		{
-			"name": "records",
-			"type": "FenxiaoItemRecord []",
-			"description": "下载记录对象",
 			"subParams": [
 				{
 					"name": "distributor_id",
@@ -76,7 +69,14 @@
 					"type": "String",
 					"description": "分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）"
 				}
-			]
+			],
+			"name": "records",
+			"type": "FenxiaoItemRecord []",
+			"description": "下载记录对象"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.distributor.items.get",
+	"apiChineseName": "查询商品下载记录",
+	"description": "供应商查询分销商商品下载记录。",
+	"id": 10693
 }

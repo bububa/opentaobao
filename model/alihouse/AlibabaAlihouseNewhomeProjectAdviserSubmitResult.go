@@ -8,6 +8,6 @@ type AlibabaAlihouseNewhomeProjectAdviserSubmitResult struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
-	// 返回素材id
+	// 操作结果
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 }

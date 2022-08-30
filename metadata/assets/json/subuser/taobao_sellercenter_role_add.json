@@ -1,15 +1,18 @@
 {
-	"id": 10820,
-	"name": "taobao.sellercenter.role.add",
-	"apiChineseName": "子账号角色的新增（指定卖家）",
-	"description": "给指定的卖家创建新的子账号角色\u003cbr/\u003e\u003cbr/\u003e如果需要授权的权限点有下级权限点或上级权限点，把该权限点的父权限点和该权限点的所有子权限都一并做赋权操作，并递归处理\u003cbr/\u003e例如：权限点列表如下\u003cbr/\u003e\u003cbr/\u003ecode=sell 宝贝管理\u003cbr/\u003e\u003cbr/\u003e---------|code=sm 店铺管理\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=sm-design 如店铺装修\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-visit内店装修入口\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-publish内店装修发布\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=phone 手机淘宝店铺\u003cbr/\u003e\u003cbr/\u003e调用改接口给code=sm-design店铺装修赋权时，同时会将下列权限点都赋予默认角色\u003cbr/\u003e\u003cbr/\u003ecode=sell 宝贝管理\u003cbr/\u003e\u003cbr/\u003e---------|code=sm 店铺管理\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=sm-design 如店铺装修\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-visit内店装修入口\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-publish内店装修发布\u003cbr/\u003e",
 	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "表示卖家昵称",
+			"maxLength": 500,
+			"required": true
+		},
 		{
 			"name": "name",
 			"type": "String",
 			"description": "角色名",
-			"required": true,
-			"maxLength": 20
+			"maxLength": 20,
+			"required": true
 		},
 		{
 			"name": "description",
@@ -22,20 +25,10 @@
 			"type": "String[]",
 			"description": "需要授权的权限点permission_code列表,以\",\"分割.其code值可以通过调用taobao.sellercenter.user.permissions.get返回，其中permission.is_authorize=1的权限点可以通过本接口授权给对应角色。",
 			"maxListSize": 2000
-		},
-		{
-			"name": "nick",
-			"type": "String",
-			"description": "表示卖家昵称",
-			"required": true,
-			"maxLength": 500
 		}
 	],
 	"responseParams": [
 		{
-			"name": "role",
-			"type": "Role",
-			"description": "子账号角色",
 			"subParams": [
 				{
 					"name": "role_id",
@@ -43,24 +36,9 @@
 					"description": "角色id"
 				},
 				{
-					"name": "role_name",
-					"type": "String",
-					"description": "角色名"
-				},
-				{
 					"name": "description",
 					"type": "String",
 					"description": "角色描述"
-				},
-				{
-					"name": "seller_id",
-					"type": "Number",
-					"description": "卖家Id"
-				},
-				{
-					"name": "create_time",
-					"type": "Date",
-					"description": "创建时间"
 				},
 				{
 					"name": "modified_time",
@@ -68,14 +46,16 @@
 					"description": "修改时间"
 				},
 				{
-					"name": "permissions",
-					"type": "Permission[]",
-					"description": "所拥有权限",
 					"subParams": [
 						{
 							"name": "permission_code",
 							"type": "String",
 							"description": "注册到权限中心的code值"
+						},
+						{
+							"name": "is_authorize",
+							"type": "Number",
+							"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 						},
 						{
 							"name": "permission_name",
@@ -86,15 +66,35 @@
 							"name": "parent_code",
 							"type": "String",
 							"description": "父权限code"
-						},
-						{
-							"name": "is_authorize",
-							"type": "Number",
-							"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 						}
-					]
+					],
+					"name": "permissions",
+					"type": "Permission[]",
+					"description": "所拥有权限"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家Id"
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "角色名"
 				}
-			]
+			],
+			"name": "role",
+			"type": "Role",
+			"description": "子账号角色"
 		}
-	]
+	],
+	"name": "taobao.sellercenter.role.add",
+	"apiChineseName": "子账号角色的新增（指定卖家）",
+	"description": "给指定的卖家创建新的子账号角色\u003cbr/\u003e\u003cbr/\u003e如果需要授权的权限点有下级权限点或上级权限点，把该权限点的父权限点和该权限点的所有子权限都一并做赋权操作，并递归处理\u003cbr/\u003e例如：权限点列表如下\u003cbr/\u003e\u003cbr/\u003ecode=sell 宝贝管理\u003cbr/\u003e\u003cbr/\u003e---------|code=sm 店铺管理\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=sm-design 如店铺装修\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-visit内店装修入口\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-publish内店装修发布\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=phone 手机淘宝店铺\u003cbr/\u003e\u003cbr/\u003e调用改接口给code=sm-design店铺装修赋权时，同时会将下列权限点都赋予默认角色\u003cbr/\u003e\u003cbr/\u003ecode=sell 宝贝管理\u003cbr/\u003e\u003cbr/\u003e---------|code=sm 店铺管理\u003cbr/\u003e\u003cbr/\u003e---------|---------|code=sm-design 如店铺装修\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-visit内店装修入口\u003cbr/\u003e\u003cbr/\u003e---------|---------|---------|code=sm-tbd-publish内店装修发布\u003cbr/\u003e",
+	"id": 10820
 }

@@ -1,0 +1,79 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "快递公司代码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "快递公司名称"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "快递公司id"
+						}
+					],
+					"name": "company_list",
+					"type": "CompanyList[]",
+					"description": "全部公司列表"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "快递公司总数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "快递公司代码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "快递公司名称"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "快递公司id"
+						}
+					],
+					"name": "hot_company_list",
+					"type": "HotCompanyList[]",
+					"description": "热门公司列表"
+				}
+			],
+			"name": "logistics_resp_result",
+			"type": "LogisticsRespResult",
+			"description": "快递公司列表返回参数"
+		},
+		{
+			"name": "result_err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "result_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.idle.logistics.companies.query",
+	"apiChineseName": "快递公司列表查询",
+	"description": "支持发货的快递公司列表查询",
+	"id": 60537
+}

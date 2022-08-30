@@ -24,6 +24,8 @@ type TaobaoSpecialRefundsReceiveGetAPIRequest struct {
 	_startModified string
 	// 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
 	_endModified string
+	// 买家openId
+	_buyerOpenUid string
 	// 页码。取值范围:大于零的整数; 默认值:1
 	_pageNo int64
 	// 每页条数。取值范围:大于零的整数; 默认值:40;最大值:100
@@ -129,6 +131,19 @@ func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetEndModified(_endModified s
 // GetEndModified EndModified Getter
 func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetEndModified() string {
 	return r._endModified
+}
+
+// SetBuyerOpenUid is BuyerOpenUid Setter
+// 买家openId
+func (r *TaobaoSpecialRefundsReceiveGetAPIRequest) SetBuyerOpenUid(_buyerOpenUid string) error {
+	r._buyerOpenUid = _buyerOpenUid
+	r.Set("buyer_open_uid", _buyerOpenUid)
+	return nil
+}
+
+// GetBuyerOpenUid BuyerOpenUid Getter
+func (r TaobaoSpecialRefundsReceiveGetAPIRequest) GetBuyerOpenUid() string {
+	return r._buyerOpenUid
 }
 
 // SetPageNo is PageNo Setter

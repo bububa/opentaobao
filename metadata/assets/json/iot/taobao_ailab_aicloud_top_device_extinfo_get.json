@@ -1,8 +1,4 @@
 {
-	"id": 42980,
-	"name": "taobao.ailab.aicloud.top.device.extinfo.get",
-	"apiChineseName": "获取设备扩展信息",
-	"description": "获取设备扩展信息",
 	"requestParams": [
 		{
 			"name": "origin_user_id",
@@ -31,55 +27,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "result",
-					"type": "TopDeviceExtInfoDto",
-					"description": "三方设备信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_id",
 							"type": "String",
-							"description": "设备id",
-							"required": true
+							"description": "设备id"
 						},
 						{
 							"name": "ext_device_id",
 							"type": "String",
-							"description": "三方设备id",
-							"required": true
+							"description": "三方设备id"
 						},
 						{
 							"name": "ext_device_type",
 							"type": "String",
-							"description": "三方设备类型",
-							"required": true
+							"description": "三方设备类型"
 						},
 						{
 							"name": "device_mac",
 							"type": "String",
-							"description": "设备mac",
-							"required": true
+							"description": "设备mac"
 						}
-					]
+					],
+					"name": "result",
+					"type": "TopDeviceExtInfoDto",
+					"description": "三方设备信息"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.extinfo.get",
+	"apiChineseName": "获取设备扩展信息",
+	"description": "获取设备扩展信息",
+	"id": 42980
 }

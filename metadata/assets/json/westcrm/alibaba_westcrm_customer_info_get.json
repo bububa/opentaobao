@@ -1,8 +1,4 @@
 {
-	"id": 41221,
-	"name": "alibaba.westcrm.customer.info.get",
-	"apiChineseName": "会员信息查询接口",
-	"description": "会员信息查询接口",
 	"requestParams": [
 		{
 			"name": "campus_id",
@@ -24,91 +20,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "data_list",
-					"type": "CustomerBaseInfoVo",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "point",
 							"type": "Number",
-							"description": "积分",
-							"required": true
+							"description": "积分"
 						},
 						{
 							"name": "avatar",
 							"type": "String",
-							"description": "头像",
-							"required": true
+							"description": "头像"
 						},
 						{
 							"name": "grade_num",
 							"type": "Number",
-							"description": "等级序号",
-							"required": true
+							"description": "等级序号"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "园区id",
-							"required": true
+							"description": "园区id"
 						},
 						{
 							"name": "mobile",
 							"type": "String",
-							"description": "电话",
-							"required": true
+							"description": "电话"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "名称",
-							"required": true
+							"description": "名称"
 						},
 						{
 							"name": "gender",
 							"type": "Number",
-							"description": "性别",
-							"required": true
+							"description": "性别"
 						},
 						{
 							"name": "grade_id",
 							"type": "Number",
-							"description": "等级id",
-							"required": true
+							"description": "等级id"
 						},
 						{
 							"name": "ib_user_id",
 							"type": "Number",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
 						},
 						{
 							"name": "grade_name",
 							"type": "String",
-							"description": "等级名称",
-							"required": true
+							"description": "等级名称"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "CustomerBaseInfoVo",
+					"description": "data"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "参数code",
-					"required": true
+					"description": "参数code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.westcrm.customer.info.get",
+	"apiChineseName": "会员信息查询接口",
+	"description": "会员信息查询接口",
+	"id": 41221
 }

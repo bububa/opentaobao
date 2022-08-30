@@ -1,13 +1,6 @@
 {
-	"id": 56180,
-	"name": "alitrip.btrip.hotel.distribution.search.low.price",
-	"apiChineseName": "商旅酒店api分销-酒店最低价",
-	"description": "商旅酒店api分销-酒店最低价",
 	"requestParams": [
 		{
-			"name": "param_hotel_search_list_r_q",
-			"type": "HotelSearchListRq",
-			"description": "列表最低价入参",
 			"subParams": [
 				{
 					"name": "check_in",
@@ -24,14 +17,12 @@
 				{
 					"name": "city_code",
 					"type": "String",
-					"description": "城市code",
-					"required": true
+					"description": "城市code"
 				},
 				{
 					"name": "city_name",
 					"type": "String",
-					"description": "城市名称",
-					"required": true
+					"description": "城市名称"
 				},
 				{
 					"name": "sub_channel",
@@ -53,81 +44,88 @@
 					"name": "shids",
 					"type": "String",
 					"description": "酒店id，多个用英文逗号分隔符"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，不能超过50"
 				}
-			]
+			],
+			"name": "param_hotel_search_list_r_q",
+			"type": "HotelSearchListRq",
+			"description": "列表最低价入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "返回出参",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "HotelSearchListRs",
-					"description": "返回出参",
-					"required": true,
 					"subParams": [
 						{
-							"name": "hotels",
-							"type": "HotelListDto[]",
-							"description": "酒店列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "low_price",
 									"type": "Number",
-									"description": "最低价，单位分",
-									"required": true
+									"description": "最低价，单位分"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "酒店名称",
-									"required": true
+									"description": "酒店名称"
 								},
 								{
 									"name": "shid",
 									"type": "Number",
-									"description": "酒店标准ID",
-									"required": true
+									"description": "酒店标准ID"
 								},
 								{
 									"name": "supplier_code",
 									"type": "String",
-									"description": "供应商code",
-									"required": true
+									"description": "供应商code"
 								},
 								{
 									"name": "supplier_name",
 									"type": "String",
-									"description": "供应商名称",
-									"required": true
+									"description": "供应商名称"
 								}
-							]
+							],
+							"name": "hotels",
+							"type": "HotelListDto[]",
+							"description": "酒店列表"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "酒店数量",
-							"required": true
+							"description": "酒店数量"
 						}
-					]
+					],
+					"name": "module",
+					"type": "HotelSearchListRs",
+					"description": "返回出参"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回状态",
-					"required": true
+					"description": "返回状态"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "返回描述",
-					"required": true
+					"description": "返回描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "返回出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.hotel.distribution.search.low.price",
+	"apiChineseName": "商旅酒店api分销-酒店最低价",
+	"description": "商旅酒店api分销-酒店最低价",
+	"id": 56180
 }

@@ -1,13 +1,6 @@
 {
-	"id": 53392,
-	"name": "alibaba.tmallgenie.scp.plan.forecast.raw.upload",
-	"apiChineseName": "17-供应商预测（原料-二级物料）回传接口",
-	"description": "供应商预测（原料-二级物料）回传接口",
 	"requestParams": [
 		{
-			"name": "supplier_forecast_raw_request",
-			"type": "SupplierForecastRawRequest",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "ip",
@@ -20,9 +13,6 @@
 					"description": "appkey"
 				},
 				{
-					"name": "supplier_forecast_raw_param_d_t_o_list",
-					"type": "SupplierForecastRawParamDto[]",
-					"description": "数据对象列表",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -59,14 +49,20 @@
 							"type": "String",
 							"description": "地点 - 成品供应商仓库\u0026二级物料中央仓"
 						}
-					]
+					],
+					"name": "supplier_forecast_raw_param_d_t_o_list",
+					"type": "SupplierForecastRawParamDto[]",
+					"description": "数据对象列表"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "supplier_forecast_raw_request",
+			"type": "SupplierForecastRawRequest",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
@@ -85,5 +81,9 @@
 			"type": "String",
 			"description": "结果code"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.forecast.raw.upload",
+	"apiChineseName": "17-供应商预测（原料-二级物料）回传接口",
+	"description": "供应商预测（原料-二级物料）回传接口",
+	"id": 53392
 }

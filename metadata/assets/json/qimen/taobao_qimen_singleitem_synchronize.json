@@ -1,12 +1,6 @@
 {
-	"id": 25998,
-	"name": "taobao.qimen.singleitem.synchronize",
-	"apiChineseName": "商品同步接口",
-	"description": "ERP调用奇门的接口,同步商品信息给WMS",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "ItemSynRequest",
 			"subParams": [
 				{
 					"name": "actionType",
@@ -37,9 +31,6 @@
 					"description": "供应商名称"
 				},
 				{
-					"name": "item",
-					"type": "Item",
-					"description": "商品信息",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -330,20 +321,23 @@
 							"type": "String",
 							"description": "是否液体, Y/N,  (默认为N)"
 						}
-					]
+					],
+					"name": "item",
+					"type": "Item",
+					"description": "商品信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "ItemSynRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -369,7 +363,13 @@
 					"description": "仓储系统商品Id(当这个字段不为空的时候;所有erp传输的时候都碰到itemid必传)",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.singleitem.synchronize",
+	"apiChineseName": "商品同步接口",
+	"description": "ERP调用奇门的接口,同步商品信息给WMS",
+	"id": 25998
 }

@@ -1,8 +1,4 @@
 {
-	"id": 41075,
-	"name": "alibaba.alihealth.drug.kyt.uploadretail",
-	"apiChineseName": "门店销售扫码回传接口",
-	"description": "门店在销售给顾客时，扫描追溯码的数据按照单据回传；",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -49,17 +45,27 @@
 			"description": "单据提交者姓名(可为空)"
 		},
 		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"maxListSize": 2000,
+			"required": true
+		},
+		{
 			"name": "client_type",
 			"type": "String",
 			"description": "请求类型[暂定都写2]",
 			"required": true
 		},
 		{
-			"name": "trace_codes",
-			"type": "String[]",
-			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 2000
+			"name": "customer_id_type",
+			"type": "String",
+			"description": "购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】"
+		},
+		{
+			"name": "customer_id",
+			"type": "String",
+			"description": "购买人证件编号"
 		},
 		{
 			"name": "user_tel",
@@ -90,16 +96,6 @@
 			"name": "user_agent",
 			"type": "String",
 			"description": "患者代理领药人"
-		},
-		{
-			"name": "customer_id_type",
-			"type": "String",
-			"description": "购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】"
-		},
-		{
-			"name": "customer_id",
-			"type": "String",
-			"description": "购买人证件编号"
 		}
 	],
 	"responseParams": [
@@ -123,5 +119,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 ,false失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.uploadretail",
+	"apiChineseName": "门店销售扫码回传接口",
+	"description": "门店在销售给顾客时，扫描追溯码的数据按照单据回传；",
+	"id": 41075
 }

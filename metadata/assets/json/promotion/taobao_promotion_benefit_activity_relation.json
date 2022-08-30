@@ -1,27 +1,32 @@
 {
-	"id": 25204,
-	"name": "taobao.promotion.benefit.activity.relation",
-	"apiChineseName": "关联活动权益",
-	"description": "卖家活动中需要通过该API来关联的对应的权益。",
 	"requestParams": [
 		{
-			"name": "relation_request",
-			"type": "RelationActivityBenefitRequest",
-			"description": "活动关联权益请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "benefit_activity_vo",
-					"type": "BenefitActivityVo",
-					"description": "同步权益活动的概述信息，用于卖家后台查看",
-					"required": true,
 					"subParams": [
 						{
-							"name": "start_time",
-							"type": "Date",
-							"description": "活动的开始时间",
+							"name": "benefit_id",
+							"type": "Number",
+							"description": "权益ID",
 							"required": true
 						},
+						{
+							"name": "benefit_type",
+							"type": "String",
+							"description": "权益类型"
+						},
+						{
+							"name": "config_id",
+							"type": "Number",
+							"description": "权益标识"
+						}
+					],
+					"name": "add_detail_vos",
+					"type": "ActivityBenefitDetailVo[]",
+					"description": "活动关联的权益信息，可以从权益选择器API中获取"
+				},
+				{
+					"subParams": [
 						{
 							"name": "activity_url",
 							"type": "String",
@@ -33,9 +38,21 @@
 							"description": "活动描述"
 						},
 						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "活动结束时间",
+							"required": true
+						},
+						{
 							"name": "name",
 							"type": "String",
 							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "活动的开始时间",
 							"required": true
 						},
 						{
@@ -43,39 +60,18 @@
 							"type": "String",
 							"description": "活动类型",
 							"required": true
-						},
-						{
-							"name": "end_time",
-							"type": "Date",
-							"description": "活动结束时间",
-							"required": true
 						}
-					]
-				},
-				{
-					"name": "add_detail_vos",
-					"type": "ActivityBenefitDetailVo[]",
-					"description": "活动关联的权益信息，可以从权益选择器API中获取",
-					"subParams": [
-						{
-							"name": "benefit_type",
-							"type": "String",
-							"description": "权益类型"
-						},
-						{
-							"name": "benefit_id",
-							"type": "Number",
-							"description": "权益ID",
-							"required": true
-						},
-						{
-							"name": "config_id",
-							"type": "Number",
-							"description": "权益标识"
-						}
-					]
+					],
+					"name": "benefit_activity_vo",
+					"type": "BenefitActivityVo",
+					"description": "同步权益活动的概述信息，用于卖家后台查看",
+					"required": true
 				}
-			]
+			],
+			"name": "relation_request",
+			"type": "RelationActivityBenefitRequest",
+			"description": "活动关联权益请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -89,5 +85,9 @@
 			"type": "Boolean",
 			"description": "请求是否成功"
 		}
-	]
+	],
+	"name": "taobao.promotion.benefit.activity.relation",
+	"apiChineseName": "关联活动权益",
+	"description": "卖家活动中需要通过该API来关联的对应的权益。",
+	"id": 25204
 }

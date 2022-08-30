@@ -12,10 +12,10 @@ import (
 // 下发设备的分页接口(发布在TOP上，connect调用，无需AOP控制)
 type AlibabaCampusDeviceGetdeviceforqueryAPIRequest struct {
 	model.Params
-	// 系统自动生成
-	_query *DeviceApiQuery
 	// 平台统一参数
 	_workBenchContext *WorkBenchContext
+	// 系统自动生成
+	_query *DeviceApiQuery
 }
 
 // NewAlibabaCampusDeviceGetdeviceforqueryRequest 初始化AlibabaCampusDeviceGetdeviceforqueryAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// SetQuery is Query Setter
-// 系统自动生成
-func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetQuery(_query *DeviceApiQuery) error {
-	r._query = _query
-	r.Set("query", _query)
-	return nil
-}
-
-// GetQuery Query Getter
-func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetQuery() *DeviceApiQuery {
-	return r._query
-}
-
 // SetWorkBenchContext is WorkBenchContext Setter
 // 平台统一参数
 func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
@@ -63,4 +50,17 @@ func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetWorkBenchContext(_wo
 // GetWorkBenchContext WorkBenchContext Getter
 func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetWorkBenchContext() *WorkBenchContext {
 	return r._workBenchContext
+}
+
+// SetQuery is Query Setter
+// 系统自动生成
+func (r *AlibabaCampusDeviceGetdeviceforqueryAPIRequest) SetQuery(_query *DeviceApiQuery) error {
+	r._query = _query
+	r.Set("query", _query)
+	return nil
+}
+
+// GetQuery Query Getter
+func (r AlibabaCampusDeviceGetdeviceforqueryAPIRequest) GetQuery() *DeviceApiQuery {
+	return r._query
 }

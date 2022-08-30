@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "game_id",
+			"type": "Number",
+			"description": "所需要下架的游戏ID值",
+			"required": true
+		},
+		{
+			"name": "off_game",
+			"type": "Boolean",
+			"description": "offGame是否下架游戏，true代表下架，false代表上架",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "代表调用成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "调用结果描述"
+		}
+	],
+	"name": "alibaba.jym.goods.external.goods.vmos.offon.game",
+	"apiChineseName": "基于游戏id临时上下架智能发布入口",
+	"description": "基于游戏id临时上下架智能发布入口",
+	"id": 60445
+}

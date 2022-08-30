@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "action",
+					"type": "String",
+					"description": "审核操作类型",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appKey"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "医生id",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "扩展信息"
+				}
+			],
+			"name": "param",
+			"type": "PayTaxNoticeRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "通知成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误message"
+				}
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.doctor.leshui.audit.result",
+	"apiChineseName": "乐税审核结果通知",
+	"description": "乐税审核结果通知",
+	"id": 58937
+}

@@ -1,13 +1,6 @@
 {
-	"id": 40634,
-	"name": "alitrip.platform.poi.raw.feed",
-	"apiChineseName": "存储poi原始数据",
-	"description": "对接外部数据源，外部数据推送poi数据到飞猪",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "TripPoiRawSaveParam",
-			"description": "poi存储参数",
 			"subParams": [
 				{
 					"name": "country_name",
@@ -74,6 +67,7 @@
 				},
 				{
 					"name": "extend_map",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -140,46 +134,48 @@
 					"description": "纬度",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "TripPoiRawSaveParam",
+			"description": "poi存储参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "result_code",
-					"type": "Json",
-					"description": "返回码",
-					"required": true
+					"type": "String",
+					"description": "返回码"
 				},
 				{
 					"name": "total_records",
 					"type": "Number",
-					"description": "totalRecords",
-					"required": true
+					"description": "totalRecords"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.platform.poi.raw.feed",
+	"apiChineseName": "存储poi原始数据",
+	"description": "对接外部数据源，外部数据推送poi数据到飞猪",
+	"id": 40634
 }

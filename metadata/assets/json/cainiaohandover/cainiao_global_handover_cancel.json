@@ -1,21 +1,17 @@
 {
-	"id": 46429,
-	"name": "cainiao.global.handover.cancel",
-	"apiChineseName": "取消交接单",
-	"description": "提供给ISV通过该接口取消交接单",
 	"requestParams": [
 		{
-			"name": "user_info",
-			"type": "UserInfoDto",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "top_user_key",
 					"type": "String",
 					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
 				}
-			]
+			],
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "系统自动生成",
+			"required": true
 		},
 		{
 			"name": "tracking_number",
@@ -46,15 +42,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HsfResult",
-			"description": "请求结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OpenHandoverCancelResponse",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "result",
@@ -62,7 +51,11 @@
 							"description": "取消结果",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "OpenHandoverCancelResponse",
+					"description": "响应数据",
+					"required": true
 				},
 				{
 					"name": "error_msg",
@@ -82,7 +75,14 @@
 					"description": "请求处理是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.handover.cancel",
+	"apiChineseName": "取消交接单",
+	"description": "提供给ISV通过该接口取消交接单",
+	"id": 46429
 }

@@ -2,8 +2,8 @@ package wdk
 
 // ChannelSkuDo 结构体
 type ChannelSkuDo struct {
-	// 状态（用来判断是否可售；1-正常）
-	LifeStatus string `json:"life_status,omitempty" xml:"life_status,omitempty"`
+	// 门店或DC编码
+	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
 	// 商品编码
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 	// 销售价格，单位元
@@ -14,8 +14,8 @@ type ChannelSkuDo struct {
 	SaleUnit string `json:"sale_unit,omitempty" xml:"sale_unit,omitempty"`
 	// 销售规格（如果不填，默认为sale_minimum字段值）
 	SaleSpec string `json:"sale_spec,omitempty" xml:"sale_spec,omitempty"`
-	// 门店或DC编码
-	OuCode string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
+	// 状态（用来判断是否可售；1-正常）
+	LifeStatus string `json:"life_status,omitempty" xml:"life_status,omitempty"`
 	// 出货仓（默认为店仓一体，仓编码为店编码）
 	DeliverWarehouse string `json:"deliver_warehouse,omitempty" xml:"deliver_warehouse,omitempty"`
 	// 原始供应商编码

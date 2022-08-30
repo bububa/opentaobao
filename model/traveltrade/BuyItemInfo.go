@@ -20,6 +20,10 @@ type BuyItemInfo struct {
 	ItemImage string `json:"item_image,omitempty" xml:"item_image,omitempty"`
 	// 商品类目相关的扩展信息，JSON格式。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&articleId=107548
 	CategoryExtInfosJson string `json:"category_ext_infos_json,omitempty" xml:"category_ext_infos_json,omitempty"`
+	// 场次开始时间
+	FsEndTime string `json:"fs_end_time,omitempty" xml:"fs_end_time,omitempty"`
+	// 场次结束时间
+	FsStartTime string `json:"fs_start_time,omitempty" xml:"fs_start_time,omitempty"`
 	// 商品所属叶子类目id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// 商品id

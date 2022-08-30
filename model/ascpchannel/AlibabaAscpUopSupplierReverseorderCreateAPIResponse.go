@@ -20,4 +20,6 @@ type AlibabaAscpUopSupplierReverseorderCreateAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ascp_uop_supplier_reverseorder_create_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回值包装,result为返回具体消息内容
+	ReverseCreateResponse *ResultWrapper `json:"reverse_create_response,omitempty" xml:"reverse_create_response,omitempty"`
 }

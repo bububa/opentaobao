@@ -1,8 +1,4 @@
 {
-	"id": 28876,
-	"name": "taobao.wlb.import.threepl.resource.get",
-	"apiChineseName": "3PL直邮获取资源列表",
-	"description": "获取3pl直邮的发货可用资源",
 	"requestParams": [
 		{
 			"name": "type",
@@ -17,10 +13,6 @@
 			"required": true
 		},
 		{
-			"name": "to_address",
-			"type": "AddressDto",
-			"description": "收件人地址",
-			"required": true,
 			"subParams": [
 				{
 					"name": "county",
@@ -54,120 +46,111 @@
 					"description": "国家地址",
 					"required": true
 				}
-			]
+			],
+			"name": "to_address",
+			"type": "AddressDto",
+			"description": "收件人地址",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "sub_error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误代码",
-					"required": true
-				},
-				{
-					"name": "sub_error_code",
-					"type": "String",
-					"description": "错误代码",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "resources",
-					"type": "ThreePlConsignResourceDto[]",
-					"description": "资源列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "broken_compensate_price",
 							"type": "Number",
-							"description": "破损赔付",
-							"required": true
+							"description": "破损赔付"
 						},
 						{
 							"name": "basic_weight",
 							"type": "Number",
-							"description": "首重价格",
-							"required": true
+							"description": "首重价格"
 						},
 						{
 							"name": "delivery_time",
 							"type": "Number",
-							"description": "达成时效",
-							"required": true
+							"description": "达成时效"
 						},
 						{
 							"name": "step_weight",
 							"type": "Number",
-							"description": "续重价格",
-							"required": true
+							"description": "续重价格"
 						},
 						{
 							"name": "basic_weight_price",
 							"type": "Number",
-							"description": "首重价格",
-							"required": true
+							"description": "首重价格"
 						},
 						{
 							"name": "res_code",
 							"type": "String",
-							"description": "资源code",
-							"required": true
+							"description": "资源code"
 						},
 						{
 							"name": "res_name",
 							"type": "String",
-							"description": "资源名称",
-							"required": true
+							"description": "资源名称"
 						},
 						{
 							"name": "achieving_rate",
 							"type": "Number",
-							"description": "达成率",
-							"required": true
+							"description": "达成率"
 						},
 						{
 							"name": "step_weight_price",
 							"type": "Number",
-							"description": "续重价格",
-							"required": true
+							"description": "续重价格"
 						},
 						{
 							"name": "res_id",
 							"type": "Number",
-							"description": "配送资源id",
-							"required": true
+							"description": "配送资源id"
 						},
 						{
 							"name": "missing_compensate_price",
 							"type": "Number",
-							"description": "丢失赔付价格",
-							"required": true
+							"description": "丢失赔付价格"
 						}
-					]
+					],
+					"name": "resources",
+					"type": "ThreePlConsignResourceDto[]",
+					"description": "资源列表"
+				},
+				{
+					"name": "sub_error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "sub_error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wlb.import.threepl.resource.get",
+	"apiChineseName": "3PL直邮获取资源列表",
+	"description": "获取3pl直邮的发货可用资源",
+	"id": 28876
 }

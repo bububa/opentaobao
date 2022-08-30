@@ -1,8 +1,4 @@
 {
-	"id": 25394,
-	"name": "alibaba.wholesale.shippingline.template.list",
-	"apiChineseName": "获取运费模板",
-	"description": "查询运费模板信息",
 	"requestParams": [
 		{
 			"name": "page_num",
@@ -21,9 +17,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "list_template_response",
-			"type": "ListTemplateAPIResult",
-			"description": "运费模板列表",
 			"subParams": [
 				{
 					"name": "total",
@@ -31,9 +24,6 @@
 					"description": "运费模板总数"
 				},
 				{
-					"name": "items",
-					"type": "ShippinglineTemplate[]",
-					"description": "运费模板集合",
 					"subParams": [
 						{
 							"name": "id",
@@ -45,9 +35,19 @@
 							"type": "String",
 							"description": "运费模板名称"
 						}
-					]
+					],
+					"name": "items",
+					"type": "ShippinglineTemplate[]",
+					"description": "运费模板集合"
 				}
-			]
+			],
+			"name": "list_template_response",
+			"type": "ListTemplateAPIResult",
+			"description": "运费模板列表"
 		}
-	]
+	],
+	"name": "alibaba.wholesale.shippingline.template.list",
+	"apiChineseName": "获取运费模板",
+	"description": "查询运费模板信息",
+	"id": 25394
 }

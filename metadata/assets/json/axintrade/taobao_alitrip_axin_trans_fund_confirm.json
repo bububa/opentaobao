@@ -1,8 +1,4 @@
 {
-	"id": 55645,
-	"name": "taobao.alitrip.axin.trans.fund.confirm",
-	"apiChineseName": "确认资金单",
-	"description": "通过外部订单号进行资金结算",
 	"requestParams": [
 		{
 			"name": "outer_order_id",
@@ -13,61 +9,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "简单数据类型出参，用于测试top接入流程",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "AxinFundConfirmResDto",
-					"description": "接口出参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "outer_order_id",
 							"type": "String",
-							"description": "外部订单号",
-							"required": true
+							"description": "外部订单号"
 						},
 						{
 							"name": "settle_amount",
 							"type": "Number",
-							"description": "结算金额",
-							"required": true
+							"description": "结算金额"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinFundConfirmResDto",
+					"description": "接口出参"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "描述信息"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "简单数据类型出参，用于测试top接入流程"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.fund.confirm",
+	"apiChineseName": "确认资金单",
+	"description": "通过外部订单号进行资金结算",
+	"id": 55645
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10897,
-	"name": "taobao.trade.postage.update",
-	"apiChineseName": "修改交易邮费价格",
-	"description": "修改订单邮费接口，通过传入订单编号和邮费价格，修改订单的邮费，返回修改时间modified,邮费post_fee,总费用total_fee。\n\u003cbr/\u003e \u003cspan style=\"color:red\"\u003e API取消加邮费功能通知：http://open.taobao.com/support/announcement_detail.htm?tid=24750\u003c/span\u003e",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -19,14 +15,11 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade",
-			"type": "Trade",
-			"description": "返回trade类型，其中包含修改时间modified，修改邮费post_fee，修改后的总费用total_fee和买家实付款payment",
 			"subParams": [
 				{
-					"name": "payment",
-					"type": "String",
-					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+					"name": "modified",
+					"type": "Date",
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "post_fee",
@@ -39,11 +32,18 @@
 					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
-					"name": "modified",
-					"type": "Date",
-					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
+					"name": "payment",
+					"type": "String",
+					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				}
-			]
+			],
+			"name": "trade",
+			"type": "Trade",
+			"description": "返回trade类型，其中包含修改时间modified，修改邮费post_fee，修改后的总费用total_fee和买家实付款payment"
 		}
-	]
+	],
+	"name": "taobao.trade.postage.update",
+	"apiChineseName": "修改交易邮费价格",
+	"description": "修改订单邮费接口，通过传入订单编号和邮费价格，修改订单的邮费，返回修改时间modified,邮费post_fee,总费用total_fee。\n\u003cbr/\u003e \u003cspan style=\"color:red\"\u003e API取消加邮费功能通知：http://open.taobao.com/support/announcement_detail.htm?tid=24750\u003c/span\u003e",
+	"id": 10897
 }

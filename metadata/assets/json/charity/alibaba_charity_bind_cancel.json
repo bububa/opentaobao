@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "user_key",
+			"type": "String",
+			"description": "解绑用户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "fail",
+					"type": "String",
+					"description": "是否失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.bind.cancel",
+	"apiChineseName": "取消用户绑定",
+	"description": "取消用户绑定",
+	"id": 59468
+}

@@ -1,8 +1,4 @@
 {
-	"id": 49147,
-	"name": "alitrip.item.schema.update",
-	"apiChineseName": "使用schema进行商品编辑",
-	"description": "飞猪度假商品使用schema进行商品编辑。目前支持类目：出境自由行(50278002)、境内自由行(50272002)、出境跟团游(50258005)、境内跟团游(50258004)、境外一日游/多日游(50276003)",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -18,29 +14,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTravelItem",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "商品修改时间",
-					"required": true
+					"description": "商品修改时间"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "商品创建时间",
-					"required": true
+					"description": "商品创建时间"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTravelItem",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alitrip.item.schema.update",
+	"apiChineseName": "使用schema进行商品编辑",
+	"description": "飞猪度假商品使用schema进行商品编辑。目前支持类目：出境自由行(50278002)、境内自由行(50272002)、出境跟团游(50258005)、境内跟团游(50258004)、境外一日游/多日游(50276003)",
+	"id": 49147
 }

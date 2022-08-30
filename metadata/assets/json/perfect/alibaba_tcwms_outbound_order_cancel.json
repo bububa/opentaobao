@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outbound_order_code",
+					"type": "String",
+					"description": "出库单"
+				},
+				{
+					"name": "sub_order_codes",
+					"type": "String[]",
+					"description": "出库子单"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓编码"
+				}
+			],
+			"name": "outbound_cancel_request",
+			"type": "OutboundCancelRequest",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "intercept_status",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "work_mode",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "warehouse_id",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "sub_order_code",
+							"type": "String",
+							"description": "11"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "cancel_success",
+							"type": "Boolean",
+							"description": "1"
+						}
+					],
+					"name": "outbound_order_cancels",
+					"type": "OutboundOrderCancelDTO[]",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "OutboundOrderCancelResponse",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.tcwms.outbound.order.cancel",
+	"apiChineseName": "取消出库单",
+	"description": "取消出库单",
+	"id": 59508
+}

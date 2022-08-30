@@ -1,0 +1,122 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码，场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "market_scene",
+					"type": "String",
+					"description": "营销场景"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "单元id"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "页码"
+				}
+			],
+			"name": "group_query",
+			"type": "GroupQueryTopDto",
+			"description": "官方人群查询",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "highlight",
+							"type": "String",
+							"description": "highlight"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "desc"
+						},
+						{
+							"name": "group_id_list",
+							"type": "Number[]",
+							"description": "group_ids"
+						},
+						{
+							"name": "valid_date",
+							"type": "String",
+							"description": "过期时间"
+						}
+					],
+					"name": "dmp_crowd_tmp_result_top_d_t_o_list",
+					"type": "DmpCrowdTmpResultTopDto[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.crowd.crowd.template",
+	"apiChineseName": "获取人群模版",
+	"description": "获取人群模版，场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa",
+	"id": 58972
+}

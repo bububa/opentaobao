@@ -1,8 +1,4 @@
 {
-	"id": 41200,
-	"name": "alibaba.westcrm.user.consumer.get",
-	"apiChineseName": "获取指定用户的消费总额",
-	"description": "获取指定用户的消费总额",
 	"requestParams": [
 		{
 			"name": "campus_id",
@@ -31,69 +27,64 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "data",
-					"type": "UserConsumerVo",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "orders",
-							"type": "OrderVo[]",
-							"description": "订单",
-							"required": true,
 							"subParams": [
 								{
 									"name": "order_pay",
 									"type": "String",
-									"description": "账单金额",
-									"required": true
+									"description": "账单金额"
 								},
 								{
 									"name": "order_id",
 									"type": "String",
-									"description": "账单id",
-									"required": true
+									"description": "账单id"
 								},
 								{
 									"name": "order_time",
 									"type": "String",
-									"description": "消费时间",
-									"required": true
+									"description": "消费时间"
 								}
-							]
+							],
+							"name": "orders",
+							"type": "OrderVo[]",
+							"description": "订单"
 						},
 						{
 							"name": "total_pay",
 							"type": "String",
-							"description": "消费总额",
-							"required": true
+							"description": "消费总额"
 						},
 						{
 							"name": "ib_user_id",
 							"type": "Number",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "UserConsumerVo",
+					"description": "data"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "参数code",
-					"required": true
+					"description": "参数code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.westcrm.user.consumer.get",
+	"apiChineseName": "获取指定用户的消费总额",
+	"description": "获取指定用户的消费总额",
+	"id": 41200
 }

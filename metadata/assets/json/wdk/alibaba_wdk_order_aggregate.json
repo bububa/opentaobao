@@ -1,13 +1,6 @@
 {
-	"id": 38076,
-	"name": "alibaba.wdk.order.aggregate",
-	"apiChineseName": "淘鲜达订单按门店机台号聚合查询",
-	"description": "淘鲜达订单按门店机台号聚合查询",
 	"requestParams": [
 		{
-			"name": "order_aggregate_query_request",
-			"type": "OrderAggregateQueryRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "start_time",
@@ -59,64 +52,63 @@
 					"type": "Number",
 					"description": "分页size"
 				}
-			]
+			],
+			"name": "order_aggregate_query_request",
+			"type": "OrderAggregateQueryRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderAggregateQueryResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "接口返回码. 如果返回 HM05038888888006 需重试(数据查询失败，请重试，注意限定重试次数)",
-					"required": true
+					"description": "接口返回码. 如果返回 HM05038888888006 需重试(数据查询失败，请重试，注意限定重试次数)"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "接口返回码描述",
-					"required": true
+					"description": "接口返回码描述"
 				},
 				{
 					"name": "biz_id_list",
 					"type": "Number[]",
-					"description": "240000310869037498",
-					"required": true
+					"description": "240000310869037498"
 				},
 				{
 					"name": "tb_biz_id_list",
 					"type": "Number[]",
-					"description": "171321816752430897",
-					"required": true
+					"description": "171321816752430897"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "totalNum",
-					"required": true
+					"description": "totalNum"
 				},
 				{
 					"name": "original_amt",
 					"type": "Number",
-					"description": "商品总金额（不含优惠）",
-					"required": true
+					"description": "商品总金额（不含优惠）"
 				},
 				{
 					"name": "discount_amt",
 					"type": "Number",
-					"description": "总优惠金额",
-					"required": true
+					"description": "总优惠金额"
 				},
 				{
 					"name": "next_index",
 					"type": "Number",
-					"description": "下一页序号",
-					"required": true
+					"description": "下一页序号"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderAggregateQueryResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.order.aggregate",
+	"apiChineseName": "淘鲜达订单按门店机台号聚合查询",
+	"description": "淘鲜达订单按门店机台号聚合查询",
+	"id": 38076
 }

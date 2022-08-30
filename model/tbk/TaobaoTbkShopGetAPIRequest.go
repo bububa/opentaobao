@@ -18,28 +18,28 @@ type TaobaoTbkShopGetAPIRequest struct {
 	_q string
 	// 排序_des（降序），排序_asc（升序），佣金比率（commission_rate）， 商品数量（auction_count），销售总数量（total_auction）
 	_sort string
-	// 信用等级下限，1~20
-	_startCredit int64
-	// 信用等级上限，1~20
-	_endCredit int64
-	// 淘客佣金比率下限，1~10000
-	_startCommissionRate int64
-	// 淘客佣金比率上限，1~10000
-	_endCommissionRate int64
-	// 店铺商品总数下限
-	_startTotalAction int64
-	// 店铺商品总数上限
-	_endTotalAction int64
-	// 累计推广商品下限
-	_startAuctionCount int64
 	// 累计推广商品上限
 	_endAuctionCount int64
-	// 链接形式：1：PC，2：无线，默认：１
-	_platform int64
+	// 淘客佣金比率上限，1~10000
+	_endCommissionRate int64
+	// 信用等级上限，1~20
+	_endCredit int64
+	// 店铺商品总数上限
+	_endTotalAction int64
 	// 第几页，默认1，1~100
 	_pageNo int64
 	// 页大小，默认20，1~100
 	_pageSize int64
+	// 链接形式：1：PC，2：无线，默认：１
+	_platform int64
+	// 累计推广商品下限
+	_startAuctionCount int64
+	// 淘客佣金比率下限，1~10000
+	_startCommissionRate int64
+	// 信用等级下限，1~20
+	_startCredit int64
+	// 店铺商品总数下限
+	_startTotalAction int64
 	// 是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性
 	_isTmall bool
 }
@@ -104,43 +104,17 @@ func (r TaobaoTbkShopGetAPIRequest) GetSort() string {
 	return r._sort
 }
 
-// SetStartCredit is StartCredit Setter
-// 信用等级下限，1~20
-func (r *TaobaoTbkShopGetAPIRequest) SetStartCredit(_startCredit int64) error {
-	r._startCredit = _startCredit
-	r.Set("start_credit", _startCredit)
+// SetEndAuctionCount is EndAuctionCount Setter
+// 累计推广商品上限
+func (r *TaobaoTbkShopGetAPIRequest) SetEndAuctionCount(_endAuctionCount int64) error {
+	r._endAuctionCount = _endAuctionCount
+	r.Set("end_auction_count", _endAuctionCount)
 	return nil
 }
 
-// GetStartCredit StartCredit Getter
-func (r TaobaoTbkShopGetAPIRequest) GetStartCredit() int64 {
-	return r._startCredit
-}
-
-// SetEndCredit is EndCredit Setter
-// 信用等级上限，1~20
-func (r *TaobaoTbkShopGetAPIRequest) SetEndCredit(_endCredit int64) error {
-	r._endCredit = _endCredit
-	r.Set("end_credit", _endCredit)
-	return nil
-}
-
-// GetEndCredit EndCredit Getter
-func (r TaobaoTbkShopGetAPIRequest) GetEndCredit() int64 {
-	return r._endCredit
-}
-
-// SetStartCommissionRate is StartCommissionRate Setter
-// 淘客佣金比率下限，1~10000
-func (r *TaobaoTbkShopGetAPIRequest) SetStartCommissionRate(_startCommissionRate int64) error {
-	r._startCommissionRate = _startCommissionRate
-	r.Set("start_commission_rate", _startCommissionRate)
-	return nil
-}
-
-// GetStartCommissionRate StartCommissionRate Getter
-func (r TaobaoTbkShopGetAPIRequest) GetStartCommissionRate() int64 {
-	return r._startCommissionRate
+// GetEndAuctionCount EndAuctionCount Getter
+func (r TaobaoTbkShopGetAPIRequest) GetEndAuctionCount() int64 {
+	return r._endAuctionCount
 }
 
 // SetEndCommissionRate is EndCommissionRate Setter
@@ -156,17 +130,17 @@ func (r TaobaoTbkShopGetAPIRequest) GetEndCommissionRate() int64 {
 	return r._endCommissionRate
 }
 
-// SetStartTotalAction is StartTotalAction Setter
-// 店铺商品总数下限
-func (r *TaobaoTbkShopGetAPIRequest) SetStartTotalAction(_startTotalAction int64) error {
-	r._startTotalAction = _startTotalAction
-	r.Set("start_total_action", _startTotalAction)
+// SetEndCredit is EndCredit Setter
+// 信用等级上限，1~20
+func (r *TaobaoTbkShopGetAPIRequest) SetEndCredit(_endCredit int64) error {
+	r._endCredit = _endCredit
+	r.Set("end_credit", _endCredit)
 	return nil
 }
 
-// GetStartTotalAction StartTotalAction Getter
-func (r TaobaoTbkShopGetAPIRequest) GetStartTotalAction() int64 {
-	return r._startTotalAction
+// GetEndCredit EndCredit Getter
+func (r TaobaoTbkShopGetAPIRequest) GetEndCredit() int64 {
+	return r._endCredit
 }
 
 // SetEndTotalAction is EndTotalAction Setter
@@ -180,45 +154,6 @@ func (r *TaobaoTbkShopGetAPIRequest) SetEndTotalAction(_endTotalAction int64) er
 // GetEndTotalAction EndTotalAction Getter
 func (r TaobaoTbkShopGetAPIRequest) GetEndTotalAction() int64 {
 	return r._endTotalAction
-}
-
-// SetStartAuctionCount is StartAuctionCount Setter
-// 累计推广商品下限
-func (r *TaobaoTbkShopGetAPIRequest) SetStartAuctionCount(_startAuctionCount int64) error {
-	r._startAuctionCount = _startAuctionCount
-	r.Set("start_auction_count", _startAuctionCount)
-	return nil
-}
-
-// GetStartAuctionCount StartAuctionCount Getter
-func (r TaobaoTbkShopGetAPIRequest) GetStartAuctionCount() int64 {
-	return r._startAuctionCount
-}
-
-// SetEndAuctionCount is EndAuctionCount Setter
-// 累计推广商品上限
-func (r *TaobaoTbkShopGetAPIRequest) SetEndAuctionCount(_endAuctionCount int64) error {
-	r._endAuctionCount = _endAuctionCount
-	r.Set("end_auction_count", _endAuctionCount)
-	return nil
-}
-
-// GetEndAuctionCount EndAuctionCount Getter
-func (r TaobaoTbkShopGetAPIRequest) GetEndAuctionCount() int64 {
-	return r._endAuctionCount
-}
-
-// SetPlatform is Platform Setter
-// 链接形式：1：PC，2：无线，默认：１
-func (r *TaobaoTbkShopGetAPIRequest) SetPlatform(_platform int64) error {
-	r._platform = _platform
-	r.Set("platform", _platform)
-	return nil
-}
-
-// GetPlatform Platform Getter
-func (r TaobaoTbkShopGetAPIRequest) GetPlatform() int64 {
-	return r._platform
 }
 
 // SetPageNo is PageNo Setter
@@ -245,6 +180,71 @@ func (r *TaobaoTbkShopGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoTbkShopGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetPlatform is Platform Setter
+// 链接形式：1：PC，2：无线，默认：１
+func (r *TaobaoTbkShopGetAPIRequest) SetPlatform(_platform int64) error {
+	r._platform = _platform
+	r.Set("platform", _platform)
+	return nil
+}
+
+// GetPlatform Platform Getter
+func (r TaobaoTbkShopGetAPIRequest) GetPlatform() int64 {
+	return r._platform
+}
+
+// SetStartAuctionCount is StartAuctionCount Setter
+// 累计推广商品下限
+func (r *TaobaoTbkShopGetAPIRequest) SetStartAuctionCount(_startAuctionCount int64) error {
+	r._startAuctionCount = _startAuctionCount
+	r.Set("start_auction_count", _startAuctionCount)
+	return nil
+}
+
+// GetStartAuctionCount StartAuctionCount Getter
+func (r TaobaoTbkShopGetAPIRequest) GetStartAuctionCount() int64 {
+	return r._startAuctionCount
+}
+
+// SetStartCommissionRate is StartCommissionRate Setter
+// 淘客佣金比率下限，1~10000
+func (r *TaobaoTbkShopGetAPIRequest) SetStartCommissionRate(_startCommissionRate int64) error {
+	r._startCommissionRate = _startCommissionRate
+	r.Set("start_commission_rate", _startCommissionRate)
+	return nil
+}
+
+// GetStartCommissionRate StartCommissionRate Getter
+func (r TaobaoTbkShopGetAPIRequest) GetStartCommissionRate() int64 {
+	return r._startCommissionRate
+}
+
+// SetStartCredit is StartCredit Setter
+// 信用等级下限，1~20
+func (r *TaobaoTbkShopGetAPIRequest) SetStartCredit(_startCredit int64) error {
+	r._startCredit = _startCredit
+	r.Set("start_credit", _startCredit)
+	return nil
+}
+
+// GetStartCredit StartCredit Getter
+func (r TaobaoTbkShopGetAPIRequest) GetStartCredit() int64 {
+	return r._startCredit
+}
+
+// SetStartTotalAction is StartTotalAction Setter
+// 店铺商品总数下限
+func (r *TaobaoTbkShopGetAPIRequest) SetStartTotalAction(_startTotalAction int64) error {
+	r._startTotalAction = _startTotalAction
+	r.Set("start_total_action", _startTotalAction)
+	return nil
+}
+
+// GetStartTotalAction StartTotalAction Getter
+func (r TaobaoTbkShopGetAPIRequest) GetStartTotalAction() int64 {
+	return r._startTotalAction
 }
 
 // SetIsTmall is IsTmall Setter

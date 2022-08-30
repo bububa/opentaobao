@@ -1,20 +1,6 @@
 {
-	"id": 54719,
-	"name": "alitrip.merchant.galaxy.wechat.login",
-	"apiChineseName": "星河-用户使用微信登陆",
-	"description": "星河产品=用户微信小程序登陆",
 	"requestParams": [
 		{
-			"name": "tenant_key",
-			"type": "String",
-			"description": "租户身份信息",
-			"required": true
-		},
-		{
-			"name": "login_param",
-			"type": "LoginParam",
-			"description": "微信小程序登陆请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "info_iv",
@@ -77,9 +63,6 @@
 					"required": true
 				},
 				{
-					"name": "new_userinfo",
-					"type": "NewUserInfo",
-					"description": "新版本用户信息",
 					"subParams": [
 						{
 							"name": "country",
@@ -116,42 +99,55 @@
 							"type": "String",
 							"description": "语言"
 						}
-					]
+					],
+					"name": "new_userinfo",
+					"type": "NewUserInfo",
+					"description": "新版本用户信息"
 				}
-			]
+			],
+			"name": "login_param",
+			"type": "LoginParam",
+			"description": "微信小程序登陆请求参数",
+			"required": true
+		},
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "token",
 					"type": "String",
-					"description": "token",
-					"required": true
+					"description": "token"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.wechat.login",
+	"apiChineseName": "星河-用户使用微信登陆",
+	"description": "星河产品=用户微信小程序登陆",
+	"id": 54719
 }

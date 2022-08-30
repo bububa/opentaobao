@@ -14,10 +14,10 @@ type TaobaoItemJointImgAPIRequest struct {
 	model.Params
 	// 图片URL,图片空间图片的相对地址，支持的文件类型：jpg,jpeg,png
 	_picPath string
-	// 商品图片id(如果是更新图片，则需要传该参数)
-	_id int64
 	// 商品数字ID，必选
 	_numIid int64
+	// 商品图片id(如果是更新图片，则需要传该参数)
+	_id int64
 	// 图片序号
 	_position int64
 	// 上传的图片是否关联为商品主图
@@ -60,19 +60,6 @@ func (r TaobaoItemJointImgAPIRequest) GetPicPath() string {
 	return r._picPath
 }
 
-// SetId is Id Setter
-// 商品图片id(如果是更新图片，则需要传该参数)
-func (r *TaobaoItemJointImgAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TaobaoItemJointImgAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetNumIid is NumIid Setter
 // 商品数字ID，必选
 func (r *TaobaoItemJointImgAPIRequest) SetNumIid(_numIid int64) error {
@@ -84,6 +71,19 @@ func (r *TaobaoItemJointImgAPIRequest) SetNumIid(_numIid int64) error {
 // GetNumIid NumIid Getter
 func (r TaobaoItemJointImgAPIRequest) GetNumIid() int64 {
 	return r._numIid
+}
+
+// SetId is Id Setter
+// 商品图片id(如果是更新图片，则需要传该参数)
+func (r *TaobaoItemJointImgAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TaobaoItemJointImgAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetPosition is Position Setter

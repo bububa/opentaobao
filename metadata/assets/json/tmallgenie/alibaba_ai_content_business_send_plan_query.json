@@ -1,0 +1,97 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "isv_user_info_map",
+					"type": "String",
+					"description": "isv用户信息(userId和phone)",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "circle_content",
+							"type": "String",
+							"description": "圈选内容",
+							"required": true
+						},
+						{
+							"name": "circle_id",
+							"type": "Number",
+							"description": "圈选标识id,由采销系统分配",
+							"required": true
+						}
+					],
+					"name": "circle_info",
+					"type": "PurchaseCircleInfoForOuterDTO",
+					"description": "圈选对象",
+					"required": true
+				},
+				{
+					"name": "isv_id",
+					"type": "Number",
+					"description": "isvId,由采销系统分配",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "PurchaseForOuterDTO",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "发放活动名称"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "receive_rule",
+					"type": "String",
+					"description": "领取规则"
+				},
+				{
+					"name": "purchase_item_info",
+					"type": "String",
+					"description": "商品信息"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "活动id"
+				}
+			],
+			"name": "ret_value",
+			"type": "PurchaseSendPlanDTO []",
+			"description": "出参对象"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.ai.content.business.send.plan.query",
+	"apiChineseName": "内容商业化发放权益查询",
+	"description": "天猫精灵内容生态的权益查询",
+	"id": 58482
+}

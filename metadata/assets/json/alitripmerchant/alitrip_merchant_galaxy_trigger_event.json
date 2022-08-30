@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"subParams": [
+				{
+					"name": "offer_id_list",
+					"type": "Number[]",
+					"description": "活动 ID"
+				},
+				{
+					"name": "event",
+					"type": "String",
+					"description": "触发事件"
+				},
+				{
+					"name": "order_id_list",
+					"type": "String[]",
+					"description": "订单 ID"
+				},
+				{
+					"name": "hotel_id_list",
+					"type": "String[]",
+					"description": "酒店 ID"
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "用户 token"
+				}
+			],
+			"name": "event_param",
+			"type": "EventParam",
+			"description": "触发事件入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "whether_to_issue_coupons",
+							"type": "Boolean",
+							"description": "true"
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "true"
+						},
+						{
+							"name": "home_page_popup",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "details_page_picture",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "1"
+						}
+					],
+					"name": "content",
+					"type": "EventCoupon",
+					"description": "消息体"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "状态信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.trigger.event",
+	"apiChineseName": "抽奖活动自定义事件触发",
+	"description": "自定义事件触发",
+	"id": 60605
+}

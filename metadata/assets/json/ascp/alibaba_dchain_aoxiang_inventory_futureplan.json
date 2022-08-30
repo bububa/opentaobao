@@ -1,0 +1,234 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "operation_order_id",
+					"type": "String",
+					"description": "操作id。所有的逻辑请保持品+仓+发布单号唯一，如果相同的品使用了相同的发布单号，库存认为是同一个计划。这个发布单号可以是在途单据号（CO、PO、ICP（调拨单号）、计划单号）",
+					"required": true
+				},
+				{
+					"name": "operation_code",
+					"type": "String",
+					"description": "操作code。幂等逻辑：品+operationOrderId+operationDetailOrderId+operationCode。 如果存在多次操作（期货数量更新） 需要保持operationCode不一样",
+					"required": true
+				},
+				{
+					"name": "biz_activity_code",
+					"type": "String",
+					"description": "新增负卖计划用 FU010,更新用 FU020,停用用 FU030",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "operation_detail_order_id",
+							"type": "String",
+							"description": "子订单操作id",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品id",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓code",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "负卖数量",
+							"required": true
+						},
+						{
+							"name": "inventory_strategy",
+							"type": "Number",
+							"description": "负卖表达策略。1.只表达负卖; 2.实物、负卖一起售卖，先表达实物、再表达负卖",
+							"required": true
+						},
+						{
+							"name": "start_date",
+							"type": "String",
+							"description": "负卖计划开始时间。时间格式. yyyy-MM-dd HH:mm:ss",
+							"required": true
+						},
+						{
+							"name": "end_date",
+							"type": "String",
+							"description": "负卖计划结束时间。时间格式. yyyy-MM-dd HH:mm:ss",
+							"required": true
+						},
+						{
+							"name": "time_strategy",
+							"type": "Number",
+							"description": "时间策略。1 - 绝对时间， 需要填写 deliveryStartDate 字段; 2 - 相对时间， 需要填写  relativeTime     字段",
+							"required": true
+						},
+						{
+							"name": "delivery_start_date",
+							"type": "String",
+							"description": "可以开始履约时间（预计到仓时间）。 时间格式. yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "relative_time",
+							"type": "Number",
+							"description": "相对时间天数(单位:天 适用于相对计划)"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "店铺宝贝ID",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "店铺宝贝skuId"
+								}
+							],
+							"name": "ic_item_list",
+							"type": "IcItemDTO[]",
+							"description": "表达负卖的店铺宝贝列表",
+							"required": true
+						}
+					],
+					"name": "future_plan_detail_list",
+					"type": "FuturePlanDetail[]",
+					"description": "负卖品详情",
+					"required": true
+				}
+			],
+			"name": "public_future_plan_request",
+			"type": "PublicFuturePlanRequest",
+			"description": "负卖计划入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作id"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "调用系统链路是否成功"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "业务结果"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "错误码"
+								},
+								{
+									"name": "error_message",
+									"type": "String",
+									"description": "错误信息"
+								},
+								{
+									"name": "ext_order_id",
+									"type": "String",
+									"description": "外部交易号(主)"
+								},
+								{
+									"name": "ext_sub_order_id",
+									"type": "String",
+									"description": "外部交易号(子)"
+								},
+								{
+									"name": "user_id",
+									"type": "Number",
+									"description": "货主id"
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "货品"
+								},
+								{
+									"name": "store_code",
+									"type": "String",
+									"description": "仓code"
+								},
+								{
+									"name": "channel_inv_id",
+									"type": "String",
+									"description": "期货库存id"
+								}
+							],
+							"name": "future_plan_item_result_list",
+							"type": "FuturePlanItemResult[]",
+							"description": "负卖设置结果"
+						}
+					],
+					"name": "data",
+					"type": "FuturePlanResponse",
+					"description": "具体结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用系统链路是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "future_plan_response",
+			"type": "TopResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.inventory.futureplan",
+	"apiChineseName": "负卖计划",
+	"description": "负卖计划。底层有白名单控制，并非对所有商家开放。如果需要使用，请联系对应的小二增加白名单",
+	"id": 61223
+}

@@ -1,8 +1,4 @@
 {
-	"id": 46613,
-	"name": "tmall.servicecenter.workcard.reservefail",
-	"apiChineseName": "预约失败",
-	"description": "服务商调用该接口回传工单预约失败",
 	"requestParams": [
 		{
 			"name": "identify_task_id",
@@ -33,35 +29,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "-",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "用于对外展示的错误信息",
-					"required": true
+					"description": "用于对外展示的错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息代码",
-					"required": true
+					"description": "消息代码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "系统级错误信息",
-					"required": true
+					"description": "系统级错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "-"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.reservefail",
+	"apiChineseName": "预约失败",
+	"description": "服务商调用该接口回传工单预约失败",
+	"id": 46613
 }

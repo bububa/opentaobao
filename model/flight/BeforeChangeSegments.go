@@ -2,7 +2,7 @@ package flight
 
 // BeforeChangeSegments 结构体
 type BeforeChangeSegments struct {
-	// 舱等
+	// 舱等:  F:头等舱, C:商务舱, Y:经济舱, S:超级经济舱, P:超值经济舱, M:标准经济舱, W:超级经济舱
 	CabinClass string `json:"cabin_class,omitempty" xml:"cabin_class,omitempty"`
 	// 航班号
 	FlightNo string `json:"flight_no,omitempty" xml:"flight_no,omitempty"`
