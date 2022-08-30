@@ -1,0 +1,186 @@
+{
+  "requestParams": [
+    {
+      "subParams": [
+        {
+          "name": "corp_id",
+          "type": "String",
+          "description": "第三方企业id",
+          "required": true
+        },
+        {
+          "name": "apply_id",
+          "type": "Number",
+          "description": "商旅审批单id",
+          "required": true
+        }
+      ],
+      "name": "rq",
+      "type": "OpenIsvSearchRQ",
+      "description": "入参",
+      "required": true
+    }
+  ],
+  "responseParams": [
+    {
+      "subParams": [
+        {
+          "name": "success",
+          "type": "Boolean",
+          "description": "是否成功"
+        },
+        {
+          "name": "result_code",
+          "type": "Number",
+          "description": "错误码"
+        },
+        {
+          "name": "result_msg",
+          "type": "String",
+          "description": "错误信息"
+        },
+        {
+          "subParams": [
+            {
+              "name": "corp_id",
+              "type": "String",
+              "description": "商旅企业id"
+            },
+            {
+              "name": "apply_id",
+              "type": "Number",
+              "description": "商旅审批单id"
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "description": "审批单状态 0:审批中 1:已同意 2:已拒绝"
+            },
+            {
+              "name": "btrip_cause",
+              "type": "String",
+              "description": "出差原因"
+            },
+            {
+              "name": "exceed_type",
+              "type": "Number",
+              "description": "超标类型，32：坐席超标"
+            },
+            {
+              "name": "exceed_reason",
+              "type": "String",
+              "description": "超标原因"
+            },
+            {
+              "name": "origin_standard",
+              "type": "String",
+              "description": "原差旅标准"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "price",
+                  "type": "Number",
+                  "description": "价格（分）"
+                },
+                {
+                  "name": "dep_city_name",
+                  "type": "String",
+                  "description": "出发城市名称"
+                },
+                {
+                  "name": "arr_city_name",
+                  "type": "String",
+                  "description": "到达城市名称"
+                },
+                {
+                  "name": "dep_city",
+                  "type": "String",
+                  "description": "出发城市三字码"
+                },
+                {
+                  "name": "arr_city",
+                  "type": "String",
+                  "description": "到达城市三字码"
+                },
+                {
+                  "name": "dep_time",
+                  "type": "Date",
+                  "description": "出发时间"
+                },
+                {
+                  "name": "arr_time",
+                  "type": "Date",
+                  "description": "到达时间"
+                },
+                {
+                  "name": "arr_station",
+                  "type": "String",
+                  "description": "到达站点名称"
+                },
+                {
+                  "name": "dep_station",
+                  "type": "String",
+                  "description": "出发站点名称"
+                },
+                {
+                  "name": "train_no",
+                  "type": "String",
+                  "description": "意向车次号"
+                },
+                {
+                  "name": "train_type_desc",
+                  "type": "String",
+                  "description": "意向车次类型"
+                },
+                {
+                  "name": "seat_name",
+                  "type": "String",
+                  "description": "意向坐席名称"
+                },
+                {
+                  "name": "type",
+                  "type": "Number",
+                  "description": "超标类型，32：坐席超标"
+                }
+              ],
+              "name": "apply_intention_info_do",
+              "type": "ApplyIntentionInfoDo",
+              "description": "意向出行信息"
+            },
+            {
+              "name": "user_id",
+              "type": "String",
+              "description": "第三方用户id"
+            },
+            {
+              "name": "submit_time",
+              "type": "Date",
+              "description": "提交时间"
+            },
+            {
+              "name": "thirdpart_corp_id",
+              "type": "String",
+              "description": "第三方企业id"
+            },
+            {
+              "name": "thirdpart_apply_id",
+              "type": "String",
+              "description": "第三方出差审批单号"
+            }
+          ],
+          "name": "module",
+          "type": "OpenIsvExceedApplyRs",
+          "description": "审批单对象"
+        }
+      ],
+      "name": "result",
+      "type": "HisvResult",
+      "description": "出参对象"
+    }
+  ],
+  "name": "alitrip.btrip.corpop.train.exceedapply.get",
+  "apiChineseName": "商旅火车票第三方超标审批单搜索接口",
+  "description": "商旅火车票第三方超标审批单搜索接口",
+  "id": 57762
+}

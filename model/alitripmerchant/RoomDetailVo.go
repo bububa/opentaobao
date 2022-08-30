@@ -7,7 +7,7 @@ type RoomDetailVo struct {
 	// 图片
 	Pics []string `json:"pics,omitempty" xml:"pics>string,omitempty"`
 	// 房型设施分组
-	FacilityGroupList []FacilityListVo `json:"facility_group_list,omitempty" xml:"facility_group_list>facility_list_vo,omitempty"`
+	FacilityGroupList []FacilityListVO `json:"facility_group_list,omitempty" xml:"facility_group_list>facility_list_vo,omitempty"`
 	// 最低价含税  单位元
 	LowestPriceToString string `json:"lowest_price_to_string,omitempty" xml:"lowest_price_to_string,omitempty"`
 	// 货币类型
