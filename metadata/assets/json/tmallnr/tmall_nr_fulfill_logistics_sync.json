@@ -1,14 +1,6 @@
 {
-	"id": 38370,
-	"name": "tmall.nr.fulfill.logistics.sync",
-	"apiChineseName": "同城配物流信息回传",
-	"description": "同城配业务物流信息回传，通过接口将物流信息同步给天猫",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "NrLogisticsInfoSynReqDto",
-			"description": "物流回传参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "delivery_user_type",
@@ -19,6 +11,11 @@
 					"name": "facility_name",
 					"type": "String",
 					"description": "站点名称"
+				},
+				{
+					"name": "plan_date",
+					"type": "String",
+					"description": "配送日期，周期送业务必传"
 				},
 				{
 					"name": "delivery_user_id",
@@ -75,6 +72,11 @@
 					"description": "取消配送编号"
 				},
 				{
+					"name": "sub_biz_order_id",
+					"type": "Number",
+					"description": "淘宝交易子订单号，周期送业务必传"
+				},
+				{
 					"name": "delivery_phone",
 					"type": "String",
 					"description": "快递业务员联系方式，手机号码或电话。"
@@ -96,6 +98,11 @@
 					"description": "操作人类型:1寄件人,3客服小二,4快递员,5CP,6收件人,100系统"
 				},
 				{
+					"name": "sequence_no",
+					"type": "Number",
+					"description": "配送序号"
+				},
+				{
 					"name": "mail_cp",
 					"type": "String",
 					"description": "运单所属CP，自配送传入：OTHER"
@@ -105,50 +112,40 @@
 					"type": "String",
 					"description": "业务类型（oneHour:一小时达,zqs:周期送,dss:定时送，周期送业务:zqs）如果自配送传入：other",
 					"required": true
-				},
-				{
-					"name": "plan_date",
-					"type": "String",
-					"description": "配送日期，周期送业务必传"
-				},
-				{
-					"name": "sub_biz_order_id",
-					"type": "Number",
-					"description": "淘宝交易子订单号，周期送业务必传"
-				},
-				{
-					"name": "sequence_no",
-					"type": "Number",
-					"description": "配送序号"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "NrLogisticsInfoSynReqDto",
+			"description": "物流回传参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "result_data",
 					"type": "Boolean",
-					"description": "成功失败标识,true:成功，false:失败",
-					"required": true
+					"description": "成功失败标识,true:成功，false:失败"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.logistics.sync",
+	"apiChineseName": "同城配物流信息回传",
+	"description": "同城配业务物流信息回传，通过接口将物流信息同步给天猫",
+	"id": 38370
 }

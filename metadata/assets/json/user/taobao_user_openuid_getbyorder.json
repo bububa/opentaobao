@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家nick",
+					"required": true
+				}
+			],
+			"name": "tid_infos",
+			"type": "BuyerOrder",
+			"description": "买家订单列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "订单id"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家nick"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家openuid"
+				}
+			],
+			"name": "open_uids",
+			"type": "OpenUidInfo []",
+			"description": "买家uid对象"
+		}
+	],
+	"name": "taobao.user.openuid.getbyorder",
+	"apiChineseName": "根据订单获取买家openuid",
+	"description": "根据订单获取买家openuid，最大查询30个",
+	"id": 63726
+}

@@ -1,8 +1,4 @@
 {
-	"id": 55335,
-	"name": "youku.ott.pay.order.querycporder",
-	"apiChineseName": "查询支付订单对应cp订单号",
-	"description": "根据支付订单查询对应cp订单号",
 	"requestParams": [
 		{
 			"name": "gateway_order",
@@ -13,41 +9,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvOrderResultDTO",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "cp_order_no",
 					"type": "String",
-					"description": "cp原始订单号",
-					"required": true
+					"description": "cp原始订单号"
 				},
 				{
 					"name": "qcode_url",
 					"type": "String",
-					"description": "qcodeUrl",
-					"required": true
+					"description": "qcodeUrl"
 				},
 				{
 					"name": "version_code",
 					"type": "String",
-					"description": "版本号",
-					"required": true
+					"description": "版本号"
 				},
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "本次订单号",
-					"required": true
+					"description": "本次订单号"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvOrderResultDTO",
+			"description": "data"
 		}
-	]
+	],
+	"name": "youku.ott.pay.order.querycporder",
+	"apiChineseName": "查询支付订单对应cp订单号",
+	"description": "根据支付订单查询对应cp订单号",
+	"id": 55335
 }

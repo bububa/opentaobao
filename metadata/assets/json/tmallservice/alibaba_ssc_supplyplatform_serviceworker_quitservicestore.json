@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "id_number_list",
+					"type": "String[]",
+					"description": "退出网点的工人身份证列表",
+					"required": true
+				},
+				{
+					"name": "service_store_code",
+					"type": "String",
+					"description": "网点编码",
+					"required": true
+				}
+			],
+			"name": "worker_quit_service_store_for_top_req_dto",
+			"type": "WorkerQuitServiceStoreForTopReqDTO",
+			"description": "工人退出网点model",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.quitservicestore",
+	"apiChineseName": "工人退出网点",
+	"description": "工人退出网点",
+	"id": 60122
+}

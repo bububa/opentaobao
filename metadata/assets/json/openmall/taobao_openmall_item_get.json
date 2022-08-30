@@ -1,8 +1,4 @@
 {
-	"id": 50836,
-	"name": "taobao.openmall.item.get",
-	"apiChineseName": "获取商品详情物料",
-	"description": "获取联盟开放的openmall商品",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -12,309 +8,265 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "item",
-					"type": "TopItemVo",
-					"description": "商品",
-					"required": true,
 					"subParams": [
 						{
 							"name": "category_id",
 							"type": "Number",
-							"description": "商品类目",
-							"required": true
+							"description": "商品类目"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "商品所在城市",
-							"required": true
+							"description": "商品所在城市"
 						},
 						{
 							"name": "cost_price",
 							"type": "String",
-							"description": "商品成本价，精确到2位小数，单位：元。如：200.07，表示200元7分。",
-							"required": true
+							"description": "商品成本价，精确到2位小数，单位：元。如：200.07，表示200元7分。"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "商品描述, 字数要大于5个字符，小于25000个字符",
-							"required": true
+							"description": "商品描述, 字数要大于5个字符，小于25000个字符"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品ID",
-							"required": true
+							"description": "商品ID"
 						},
 						{
-							"name": "item_images",
-							"type": "TopItemImageVo[]",
-							"description": "商品图片",
-							"required": true,
 							"subParams": [
 								{
 									"name": "position",
 									"type": "Number",
-									"description": "图片放在第几张（多图时设置），propertyImages中不返回",
-									"required": true
+									"description": "图片放在第几张（多图时设置），propertyImages中不返回"
 								},
 								{
 									"name": "url",
 									"type": "String",
-									"description": "商品图片链接",
-									"required": true
+									"description": "商品图片链接"
 								},
 								{
 									"name": "image_id",
 									"type": "Number",
-									"description": "图片ID，itemImages中不返回",
-									"required": true
+									"description": "图片ID，itemImages中不返回"
 								},
 								{
 									"name": "properties",
 									"type": "String",
-									"description": "商品属性，itemImages中不返回",
-									"required": true
+									"description": "商品属性，itemImages中不返回"
 								}
-							]
+							],
+							"name": "item_images",
+							"type": "TopItemImageVo[]",
+							"description": "商品图片"
 						},
 						{
 							"name": "item_videos",
 							"type": "String",
-							"description": "商品视频列表，多个视频用逗号分隔。",
-							"required": true
+							"description": "商品视频列表，多个视频用逗号分隔。"
 						},
 						{
 							"name": "pic_url",
 							"type": "String",
-							"description": "商品主图",
-							"required": true
+							"description": "商品主图"
 						},
 						{
-							"name": "postages",
-							"type": "TopPostageVo[]",
-							"description": "运费列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "add_fee",
 									"type": "String",
-									"description": "增费：支持0.00-999.99（最多包含两位小数）",
-									"required": true
+									"description": "增费：支持0.00-999.99（最多包含两位小数）"
 								},
 								{
 									"name": "add_standard",
 									"type": "String",
-									"description": "增费标准。 当valuation为0时，支持1-9999范围内的整数；  当valuation为1时，支持0.1-9999.9范围内的小数，只能包含一位小数（单位为千克）；  当valuation为3时，支持0.1-999.9范围内的数值，数值只能包含一位小数（单位为 立方米）。",
-									"required": true
+									"description": "增费标准。 当valuation为0时，支持1-9999范围内的整数；  当valuation为1时，支持0.1-9999.9范围内的小数，只能包含一位小数（单位为千克）；  当valuation为3时，支持0.1-999.9范围内的数值，数值只能包含一位小数（单位为 立方米）。"
 								},
 								{
 									"name": "post_area",
 									"type": "String",
-									"description": "涉及的地区，多个地区用逗号分隔。地区码可以用taobao.areas.get接口获取，或者参考：http://www.mca.gov.cn/article/sj/xzqh/2020/2020/202003301019.html  当值为1时，表示全国所有地区。",
-									"required": true
+									"description": "涉及的地区，多个地区用逗号分隔。地区码可以用taobao.areas.get接口获取，或者参考：http://www.mca.gov.cn/article/sj/xzqh/2020/2020/202003301019.html  当值为1时，表示全国所有地区。"
 								},
 								{
 									"name": "post_type",
 									"type": "String",
-									"description": "运费方式，可选值：平邮 (post)、快递公司(express)、EMS (ems)、货到付款(cod)、物流宝保障速递(wlb)、家装物流(furniture)。",
-									"required": true
+									"description": "运费方式，可选值：平邮 (post)、快递公司(express)、EMS (ems)、货到付款(cod)、物流宝保障速递(wlb)、家装物流(furniture)。"
 								},
 								{
 									"name": "start_fee",
 									"type": "String",
-									"description": "首费，范围0.00-999.99（最多包含两位小数）。",
-									"required": true
+									"description": "首费，范围0.00-999.99（最多包含两位小数）。"
 								},
 								{
 									"name": "start_standard",
 									"type": "String",
-									"description": "首费标准。  当valuation(记价方式)为1时，支持0.1-9999.9范围内的小数只能包含一位小数（单位为千克）；  当valuation(记价方式)为3时，支持0.1-999.9范围内的数值，数值只能包含一位小数（单位为 立方米）。",
-									"required": true
+									"description": "首费标准。  当valuation(记价方式)为1时，支持0.1-9999.9范围内的小数只能包含一位小数（单位为千克）；  当valuation(记价方式)为3时，支持0.1-999.9范围内的数值，数值只能包含一位小数（单位为 立方米）。"
 								},
 								{
 									"name": "valuation",
 									"type": "Number",
-									"description": "运费计算方式，可选值：0（件数）、1（重量）、3（体积）。",
-									"required": true
+									"description": "运费计算方式，可选值：0（件数）、1（重量）、3（体积）。"
 								}
-							]
+							],
+							"name": "postages",
+							"type": "TopPostageVo[]",
+							"description": "运费列表"
 						},
 						{
 							"name": "item_properties",
 							"type": "String",
-							"description": "商品的属性列表，由属性名ID(pid)、属性值ID(vid)、属性名(pid_name)、属性值(vid_name)组成。格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2……",
-							"required": true
+							"description": "商品的属性列表，由属性名ID(pid)、属性值ID(vid)、属性名(pid_name)、属性值(vid_name)组成。格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2……"
 						},
 						{
-							"name": "property_images",
-							"type": "TopItemImageVo[]",
-							"description": "商品属性图片",
-							"required": true,
 							"subParams": [
 								{
 									"name": "image_id",
 									"type": "Number",
-									"description": "属性图片的id",
-									"required": true
+									"description": "属性图片的id"
 								},
 								{
 									"name": "properties",
 									"type": "String",
-									"description": "图片所对应的商品属性，由属性名ID(pid)、属性值ID(vid)组成。格式为：pid:vid。    pid和vid对应的中文名称，可以从item_properties字段中获取。比如，1627207对应item_properties中的“颜色”，28324对应属性值“黄色”。",
-									"required": true
+									"description": "图片所对应的商品属性，由属性名ID(pid)、属性值ID(vid)组成。格式为：pid:vid。    pid和vid对应的中文名称，可以从item_properties字段中获取。比如，1627207对应item_properties中的“颜色”，28324对应属性值“黄色”。"
 								},
 								{
 									"name": "url",
 									"type": "String",
-									"description": "属性图片链接",
-									"required": true
+									"description": "属性图片链接"
 								},
 								{
 									"name": "position",
 									"type": "Number",
-									"description": "图片放在第几张（多图时设置），propertyImages中不返回",
-									"required": true
+									"description": "图片放在第几张（多图时设置），propertyImages中不返回"
 								}
-							]
+							],
+							"name": "property_images",
+							"type": "TopItemImageVo[]",
+							"description": "商品属性图片"
 						},
 						{
 							"name": "prov",
 							"type": "String",
-							"description": "商品所在省份",
-							"required": true
+							"description": "商品所在省份"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "库存",
-							"required": true
+							"description": "库存"
 						},
 						{
 							"name": "size",
 							"type": "String",
-							"description": "表示商品的体积，用于按体积计费的运费模板。该值的单位为立方米（m3）。该值支持两种格式的设置：  格式1：bulk:3，单位为立方米(m3)，表示直接设置为商品的体积；    格式2：width:10;breadth:10;height:10，单位为米（m）。",
-							"required": true
+							"description": "表示商品的体积，用于按体积计费的运费模板。该值的单位为立方米（m3）。该值支持两种格式的设置：  格式1：bulk:3，单位为立方米(m3)，表示直接设置为商品的体积；    格式2：width:10;breadth:10;height:10，单位为米（m）。"
 						},
 						{
-							"name": "skus",
-							"type": "TopItemSkuVo[]",
-							"description": "sku列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "price",
 									"type": "String",
-									"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。",
-									"required": true
+									"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
 								},
 								{
 									"name": "properties",
 									"type": "String",
-									"description": "sku所对应的销售属性串，由 属性名ID(pid)、属性值ID(vid)组成。  格式为：pid1:vid1;pid2:vid2 ;pid3:vid3…    pid和vid对应的中文名称，可以从item_properties字段中获取。",
-									"required": true
+									"description": "sku所对应的销售属性串，由 属性名ID(pid)、属性值ID(vid)组成。  格式为：pid1:vid1;pid2:vid2 ;pid3:vid3…    pid和vid对应的中文名称，可以从item_properties字段中获取。"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "属于这个sku的商品的数量",
-									"required": true
+									"description": "属于这个sku的商品的数量"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "sku的id",
-									"required": true
+									"description": "sku的id"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "sku描述，以分号分隔描述项，### 分隔翻译内容；注意，当为别名时，翻译项中将没有冒号分隔",
-									"required": true
+									"description": "sku描述，以分号分隔描述项，### 分隔翻译内容；注意，当为别名时，翻译项中将没有冒号分隔"
 								}
-							]
+							],
+							"name": "skus",
+							"type": "TopItemSkuVo[]",
+							"description": "sku列表"
 						},
 						{
 							"name": "item_status",
 							"type": "Number",
-							"description": "商品状态：上架（1）、下架（0）",
-							"required": true
+							"description": "商品状态：上架（1）、下架（0）"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "商品标题",
-							"required": true
+							"description": "商品标题"
 						},
 						{
 							"name": "is_virtual",
 							"type": "Boolean",
-							"description": "是否虚拟商品",
-							"required": true
+							"description": "是否虚拟商品"
 						},
 						{
 							"name": "weight",
 							"type": "String",
-							"description": "商品的重量，用于按重量计费的运费模板。注意：单位为kg",
-							"required": true
+							"description": "商品的重量，用于按重量计费的运费模板。注意：单位为kg"
 						},
 						{
 							"name": "area_limit",
 							"type": "Boolean",
-							"description": "是否区域限购。值为true时，通过taobao.openmall.item.salearea.get获取商品可销售区域；值为false时，该商品所有区域都可销售。",
-							"required": true
+							"description": "是否区域限购。值为true时，通过taobao.openmall.item.salearea.get获取商品可销售区域；值为false时，该商品所有区域都可销售。"
 						},
 						{
 							"name": "property_alias",
 							"type": "String",
-							"description": "属性值别名,比如颜色的自定义名称",
-							"required": true
+							"description": "属性值别名,比如颜色的自定义名称"
 						},
 						{
 							"name": "shop_name",
 							"type": "String",
-							"description": "商品店铺名称",
-							"required": true
+							"description": "商品店铺名称"
 						},
 						{
 							"name": "popularity",
 							"type": "Number",
-							"description": "商品人气",
-							"required": true
+							"description": "商品人气"
 						},
 						{
 							"name": "support_erp_hold",
 							"type": "String",
-							"description": "当前商品是否支持hold单，当为false时，下单接口中的need_erp_hold不生效",
-							"required": true
+							"description": "当前商品是否支持hold单，当为false时，下单接口中的need_erp_hold不生效"
 						}
-					]
+					],
+					"name": "item",
+					"type": "TopItemVo",
+					"description": "商品"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.item.get",
+	"apiChineseName": "获取商品详情物料",
+	"description": "获取联盟开放的openmall商品",
+	"id": 50836
 }

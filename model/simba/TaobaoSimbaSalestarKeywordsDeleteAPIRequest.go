@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaSalestarKeywordsDeleteAPIRequest struct {
 	model.Params
 	// 关键词ids
-	_bidwordIds []int64
+	_bidwordIds []string
 }
 
 // NewTaobaoSimbaSalestarKeywordsDeleteRequest 初始化TaobaoSimbaSalestarKeywordsDeleteAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetApiParams() url.Values {
 
 // SetBidwordIds is BidwordIds Setter
 // 关键词ids
-func (r *TaobaoSimbaSalestarKeywordsDeleteAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+func (r *TaobaoSimbaSalestarKeywordsDeleteAPIRequest) SetBidwordIds(_bidwordIds []string) error {
 	r._bidwordIds = _bidwordIds
 	r.Set("bidword_ids", _bidwordIds)
 	return nil
 }
 
 // GetBidwordIds BidwordIds Getter
-func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetBidwordIds() []int64 {
+func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetBidwordIds() []string {
 	return r._bidwordIds
 }

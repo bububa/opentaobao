@@ -1,18 +1,8 @@
 {
-	"id": 46787,
-	"name": "alibaba.nrs.item.rtdata.backflow",
-	"apiChineseName": "RT竞价数据回流",
-	"description": "回流竞品价格数据，用与后续OCR识别价签数据，做精确化数据纠正",
 	"requestParams": [
 		{
-			"name": "rt_item_price_tag_back_param",
-			"type": "RtItemPriceTagBackParam",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "price_tag_param_list",
-					"type": "RtItemResearchPriceParam[]",
-					"description": "数据列表",
 					"subParams": [
 						{
 							"name": "serial_no",
@@ -26,6 +16,7 @@
 						},
 						{
 							"name": "ext_map",
+							"type": "String",
 							"description": "扩展字段"
 						},
 						{
@@ -113,7 +104,10 @@
 							"type": "String",
 							"description": "rt货号"
 						}
-					]
+					],
+					"name": "price_tag_param_list",
+					"type": "RtItemResearchPriceParam[]",
+					"description": "数据列表"
 				},
 				{
 					"name": "busi_code",
@@ -125,40 +119,43 @@
 					"type": "String",
 					"description": "业务来源"
 				}
-			]
+			],
+			"name": "rt_item_price_tag_back_param",
+			"type": "RtItemPriceTagBackParam",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrsResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回结果数据",
-					"required": true
+					"description": "返回结果数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口成功失败标志",
-					"required": true
+					"description": "接口成功失败标志"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrsResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.nrs.item.rtdata.backflow",
+	"apiChineseName": "RT竞价数据回流",
+	"description": "回流竞品价格数据，用与后续OCR识别价签数据，做精确化数据纠正",
+	"id": 46787
 }

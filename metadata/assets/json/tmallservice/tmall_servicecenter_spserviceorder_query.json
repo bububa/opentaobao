@@ -1,8 +1,4 @@
 {
-	"id": 46504,
-	"name": "tmall.servicecenter.spserviceorder.query",
-	"apiChineseName": "服务单列表查询",
-	"description": "查询服务单列表",
 	"requestParams": [
 		{
 			"name": "parent_biz_order_id",
@@ -13,145 +9,128 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "返回参数",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "展示信息，如：服务单不存在",
-					"required": true
+					"description": "展示信息，如：服务单不存在"
 				},
 				{
 					"name": "error_name",
 					"type": "String",
-					"description": "错误名称",
-					"required": true
+					"description": "错误名称"
 				},
 				{
-					"name": "result_list",
-					"type": "SpServiceOrderDTO[]",
-					"description": "服务单列表数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "gmt_expire",
 							"type": "Date",
-							"description": "过期日期",
-							"required": true
+							"description": "过期日期"
 						},
 						{
-							"name": "service_definition_d_t_o",
-							"type": "ServiceDefinitionDTO",
-							"description": "服务定义",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_code",
 									"type": "String",
-									"description": "服务code，如：换胎code",
-									"required": true
-								},
-								{
-									"name": "display_name",
-									"type": "String",
-									"description": "服务名称",
-									"required": true
+									"description": "服务code，如：换胎code"
 								},
 								{
 									"name": "biz_code",
 									"type": "String",
-									"description": "业务code，如：汽车安装code",
-									"required": true
+									"description": "业务code，如：汽车安装code"
+								},
+								{
+									"name": "display_name",
+									"type": "String",
+									"description": "服务名称"
 								}
-							]
-						},
-						{
-							"name": "gmt_effect",
-							"type": "Date",
-							"description": "生效日期",
-							"required": true
+							],
+							"name": "service_definition_d_t_o",
+							"type": "ServiceDefinitionDTO",
+							"description": "服务定义"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "服务单id",
-							"required": true
+							"description": "服务单id"
 						},
 						{
-							"name": "service_trade_order_d_t_o",
-							"type": "ServiceTradeOrderDTO",
-							"description": "服务交易订单",
-							"required": true,
+							"name": "gmt_effect",
+							"type": "Date",
+							"description": "生效日期"
+						},
+						{
 							"subParams": [
 								{
 									"name": "order_id",
 									"type": "Number",
-									"description": "交易订单id",
-									"required": true
+									"description": "交易订单id"
 								},
 								{
 									"name": "attribute",
 									"type": "String",
-									"description": "属性，如{是否是服务包：1}",
-									"required": true
+									"description": "属性，如{是否是服务包：1}"
 								},
 								{
 									"name": "outer_id_sku",
 									"type": "String",
-									"description": "商品商家编码",
-									"required": true
+									"description": "商品商家编码"
 								}
-							]
+							],
+							"name": "service_trade_order_d_t_o",
+							"type": "ServiceTradeOrderDTO",
+							"description": "服务交易订单"
 						},
 						{
 							"name": "service_sequence",
 							"type": "Number",
-							"description": "服务单申请工单的幂等键",
-							"required": true
+							"description": "服务单申请工单的幂等键"
 						},
 						{
 							"name": "fulfil_type_code",
 							"type": "String",
-							"description": "履约类型:1, \"到店\"2, \"到家\"3, \"寄送\"",
-							"required": true
+							"description": "履约类型:1, \"到店\"2, \"到家\"3, \"寄送\""
 						},
 						{
-							"name": "service_provider_d_t_o",
-							"type": "ServiceProviderDto",
-							"description": "服务提供者",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_store_id",
 									"type": "Number",
-									"description": "服务门店id",
-									"required": true
+									"description": "服务门店id"
 								}
-							]
+							],
+							"name": "service_provider_d_t_o",
+							"type": "ServiceProviderDto",
+							"description": "服务提供者"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					],
+					"name": "result_list",
+					"type": "SpServiceOrderDTO[]",
+					"description": "服务单列表数据"
 				},
 				{
 					"name": "error_type",
 					"type": "String",
-					"description": "错误类型",
-					"required": true
+					"description": "错误类型"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息，如：服务不可用",
-					"required": true
+					"description": "错误信息，如：服务不可用"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回参数"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.spserviceorder.query",
+	"apiChineseName": "服务单列表查询",
+	"description": "查询服务单列表",
+	"id": 46504
 }

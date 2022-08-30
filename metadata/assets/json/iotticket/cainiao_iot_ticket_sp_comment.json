@@ -1,17 +1,10 @@
 {
-	"id": 50238,
-	"name": "cainiao.iot.ticket.sp.comment",
-	"apiChineseName": "IoT售后服务商工单备注",
-	"description": "IoT售后服务商工单备注",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CommentTicketTopRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "feature",
+					"type": "String",
 					"description": "扩展信息"
 				},
 				{
@@ -50,34 +43,39 @@
 					"description": "工单备注",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "CommentTicketTopRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "异常描述",
-					"required": true
+					"description": "异常描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.sp.comment",
+	"apiChineseName": "IoT售后服务商工单备注",
+	"description": "IoT售后服务商工单备注",
+	"id": 50238
 }

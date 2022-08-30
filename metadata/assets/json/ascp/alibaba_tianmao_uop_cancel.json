@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "货主id",
+					"required": true
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "关单原因"
+				}
+			],
+			"name": "hi_erp_close_dto",
+			"type": "HiErpCloseDTO",
+			"description": "取消接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_biz_id",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "履约单号"
+						},
+						{
+							"name": "task_exc_msg",
+							"type": "String",
+							"description": "取消任务创建结果"
+						}
+					],
+					"name": "result",
+					"type": "HiErpCloseResp",
+					"description": "数据"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "通常用于success为true时的页面提示"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "通常用于success为false时的页面错误类型判定"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "通常用于success为false时的页面错误信息提示"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回参数"
+		}
+	],
+	"name": "alibaba.tianmao.uop.cancel",
+	"apiChineseName": "阿里巴巴.天猫. 履约订单. 取消",
+	"description": "阿里巴巴.天猫. 履约订单. 取消",
+	"id": 61749
+}

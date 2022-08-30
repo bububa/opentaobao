@@ -1,0 +1,530 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "第三方用户id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "1、老版本2、isv对外版本"
+				}
+			],
+			"name": "rq",
+			"type": "OpenApiSearchDetailRQ",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "成功标识"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "corp_id",
+									"type": "String",
+									"description": "企业id"
+								},
+								{
+									"name": "gmt_modify",
+									"type": "Date",
+									"description": "更新时间"
+								},
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "订单号"
+								},
+								{
+									"name": "contact_name",
+									"type": "String",
+									"description": "用户名"
+								},
+								{
+									"name": "order_status",
+									"type": "Number",
+									"description": "订单状态"
+								},
+								{
+									"name": "thirdpart_apply_id",
+									"type": "String",
+									"description": "第三方申请单id"
+								},
+								{
+									"name": "corp_name",
+									"type": "String",
+									"description": "企业id"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户id"
+								},
+								{
+									"name": "thirdpart_itinerary_id",
+									"type": "String",
+									"description": "第三方行程id"
+								},
+								{
+									"name": "apply_id",
+									"type": "String",
+									"description": "申请单id"
+								},
+								{
+									"name": "btrip_title",
+									"type": "String",
+									"description": "申请事由"
+								},
+								{
+									"name": "trip_type",
+									"type": "Number",
+									"description": "行程类型。0:单程，1:往返，2:中转"
+								},
+								{
+									"name": "itinerary_id",
+									"type": "String",
+									"description": "行程id"
+								},
+								{
+									"name": "depart_id",
+									"type": "String",
+									"description": "用户所在部门id"
+								},
+								{
+									"name": "depart_name",
+									"type": "String",
+									"description": "用户所在部门名称"
+								},
+								{
+									"name": "thirdpart_corp_id",
+									"type": "String",
+									"description": "三方企业id"
+								}
+							],
+							"name": "order_base_info",
+							"type": "OrderBaseInfo",
+							"description": "订单基础信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘机人，多个用‘,’分割"
+								},
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存"
+								},
+								{
+									"name": "price",
+									"type": "Price",
+									"description": "价格"
+								},
+								{
+									"name": "category_code",
+									"type": "Number",
+									"description": "交易类目编码"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "资金流向:1:支出，2:收入"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "流水创建时间"
+								},
+								{
+									"name": "trade_id",
+									"type": "String",
+									"description": "订单交易流水号"
+								}
+							],
+							"name": "price_info_list",
+							"type": "PriceInfo[]",
+							"description": "订单费用列表"
+						},
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "发票id"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "发票抬头"
+								}
+							],
+							"name": "invoice_info",
+							"type": "InvoiceInfo",
+							"description": "发票信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "to_station_name",
+									"type": "String",
+									"description": "到达车站名称"
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "from_station_name",
+									"type": "String",
+									"description": "出发车站名称"
+								},
+								{
+									"name": "train_no",
+									"type": "String",
+									"description": "车次编号"
+								},
+								{
+									"name": "run_time",
+									"type": "Number",
+									"description": "运行时长"
+								},
+								{
+									"name": "arr_time",
+									"type": "Date",
+									"description": "到达时间"
+								}
+							],
+							"name": "train_info",
+							"type": "TrainInfo",
+							"description": "车次信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "改签票号"
+								},
+								{
+									"name": "origin_ticket_no",
+									"type": "String",
+									"description": "改签原票"
+								},
+								{
+									"name": "change_coach_no",
+									"type": "String",
+									"description": "改签车厢号"
+								},
+								{
+									"name": "change_seat_no",
+									"type": "String",
+									"description": "改签座位号"
+								},
+								{
+									"name": "change_train_type_name",
+									"type": "String",
+									"description": "改签车次类型"
+								},
+								{
+									"name": "change_seat_type_name",
+									"type": "String",
+									"description": "改签座位类型"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "改签票启程时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "改签票到达时间"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "gmt_modify",
+									"type": "Date",
+									"description": "修改时间"
+								},
+								{
+									"name": "change_handling_fee",
+									"type": "Price",
+									"description": "改签手续费"
+								},
+								{
+									"name": "change_gap_fee",
+									"type": "Price",
+									"description": "改签差价"
+								},
+								{
+									"name": "change_service_fee",
+									"type": "Price",
+									"description": "改签服务费"
+								},
+								{
+									"name": "check_in_time",
+									"type": "Date",
+									"description": "进站时间"
+								},
+								{
+									"name": "check_out_time",
+									"type": "Date",
+									"description": "出站时间"
+								},
+								{
+									"name": "out_ticket_status",
+									"type": "String",
+									"description": "外部票状态"
+								}
+							],
+							"name": "change_ticket_info_list",
+							"type": "TrainChangeTicketInfo[]",
+							"description": "改签票列表"
+						},
+						{
+							"subParams": [
+								{
+									"name": "refund_fee",
+									"type": "Price",
+									"description": "退票金额"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "退票票号"
+								},
+								{
+									"name": "gmt_modify",
+									"type": "Date",
+									"description": "更新时间"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "refund_service_fee",
+									"type": "Price",
+									"description": "服务费退款"
+								}
+							],
+							"name": "refund_ticket_info_list",
+							"type": "TrainRefundTicketInfo[]",
+							"description": "退票列表"
+						},
+						{
+							"subParams": [
+								{
+									"name": "service_fee",
+									"type": "Price",
+									"description": "预订服务费"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "coach_no",
+									"type": "String",
+									"description": "车厢号"
+								},
+								{
+									"name": "gmt_modify",
+									"type": "Date",
+									"description": "更新时间"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Price",
+									"description": "票价"
+								},
+								{
+									"name": "seat_type_name",
+									"type": "String",
+									"description": "座位类型"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户id"
+								},
+								{
+									"name": "train_type_name",
+									"type": "String",
+									"description": "车次类型"
+								},
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "支付方式 1个人支付/2企业支付/3混付"
+								},
+								{
+									"name": "ticket_status",
+									"type": "Number",
+									"description": "票状态"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "seat_no",
+									"type": "String",
+									"description": "座位号"
+								},
+								{
+									"name": "changed",
+									"type": "Boolean",
+									"description": "是否改签"
+								},
+								{
+									"name": "check_in_time",
+									"type": "Date",
+									"description": "进站时间"
+								},
+								{
+									"name": "check_out_time",
+									"type": "Date",
+									"description": "出站时间"
+								},
+								{
+									"name": "out_ticket_status",
+									"type": "String",
+									"description": "外部订单状态"
+								}
+							],
+							"name": "ticket_info_list",
+							"type": "TrainTicketInfo[]",
+							"description": "正票列表"
+						},
+						{
+							"subParams": [
+								{
+									"name": "project_code",
+									"type": "String",
+									"description": "项目code"
+								},
+								{
+									"name": "cost_center_id",
+									"type": "Number",
+									"description": "成本中心id"
+								},
+								{
+									"name": "cost_center_name",
+									"type": "String",
+									"description": "成本中心名称"
+								},
+								{
+									"name": "user_type",
+									"type": "Number",
+									"description": "出行人类型 0:内部/1:外部"
+								},
+								{
+									"name": "cost_center_number",
+									"type": "String",
+									"description": "成本中心编号"
+								},
+								{
+									"name": "thirdpart_project_id",
+									"type": "String",
+									"description": "第三方项目id"
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "用户名"
+								},
+								{
+									"name": "project_id",
+									"type": "Number",
+									"description": "项目id"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户id"
+								},
+								{
+									"name": "project_title",
+									"type": "String",
+									"description": "项目名称"
+								}
+							],
+							"name": "passenger_info_list",
+							"type": "PassengerInfo[]",
+							"description": "出行人列表"
+						}
+					],
+					"name": "module",
+					"type": "OpenApiTrainOrderDetailRs",
+					"description": "火车票详情"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参对象"
+		}
+	],
+	"name": "alitrip.btrip.supplychain.train.detail.search",
+	"apiChineseName": "【商旅】火车票订单详情查询",
+	"description": "【商旅】火车票订单详情查询",
+	"id": 62390
+}

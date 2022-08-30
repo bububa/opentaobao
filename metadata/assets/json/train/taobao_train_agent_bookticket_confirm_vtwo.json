@@ -1,18 +1,22 @@
 {
-	"id": 29796,
-	"name": "taobao.train.agent.bookticket.confirm.vtwo",
-	"apiChineseName": "火车票代理商接口——确认出票是否成功v2--增加鉴权校验",
-	"description": "火车票代理商接口——确认出票是否成功",
 	"requestParams": [
 		{
-			"name": "sub_order_id",
-			"type": "String",
-			"description": "错误的子订单号123434,123432"
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
 		},
 		{
-			"name": "can_change",
-			"type": "Boolean",
-			"description": "是否支持在线退改签"
+			"name": "dep_date",
+			"type": "String",
+			"description": "出发时间",
+			"required": true
+		},
+		{
+			"name": "fail_msg",
+			"type": "String",
+			"description": "记录失败原因，传数字，1、票已售完，出票失败全额退款，2、票价变动，出票失败全额退款，3、乘车人已购买相同车票，出票失败全额退款， 4、出票超时，出票失败全额退款，5、乘车人证件未通过铁路局审核，需到售票窗口办理， 6、发车时间变动，出票失败全额退款，7、车次信息错误，出票失败全额退款，8、12306故障,出票失败全额退款， 0、出票失败全额退款",
+			"required": true
 		},
 		{
 			"name": "main_order_id",
@@ -27,28 +31,10 @@
 			"required": true
 		},
 		{
-			"name": "agent_id",
-			"type": "Number",
-			"description": "代理商id",
-			"required": true
-		},
-		{
 			"name": "tickets",
 			"type": "String[]",
 			"description": "火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.",
-			"required": true,
-			"maxListSize": 10
-		},
-		{
-			"name": "ticket_num",
-			"type": "Number",
-			"description": "订单中包含的票数量",
-			"required": true
-		},
-		{
-			"name": "dep_date",
-			"type": "String",
-			"description": "出发时间",
+			"maxListSize": 20,
 			"required": true
 		},
 		{
@@ -58,15 +44,25 @@
 			"required": true
 		},
 		{
-			"name": "fail_msg",
-			"type": "String",
-			"description": "记录失败原因，传数字，1、票已售完，出票失败全额退款，2、票价变动，出票失败全额退款，3、乘车人已购买相同车票，出票失败全额退款， 4、出票超时，出票失败全额退款，5、乘车人证件未通过铁路局审核，需到售票窗口办理， 6、发车时间变动，出票失败全额退款，7、车次信息错误，出票失败全额退款，8、12306故障,出票失败全额退款， 0、出票失败全额退款",
+			"name": "ticket_num",
+			"type": "Number",
+			"description": "订单中包含的票数量",
 			"required": true
 		},
 		{
 			"name": "alipay_trade_no",
 			"type": "String",
 			"description": "支付宝交易流水号"
+		},
+		{
+			"name": "can_change",
+			"type": "Boolean",
+			"description": "是否支持在线退改签"
+		},
+		{
+			"name": "sub_order_id",
+			"type": "String",
+			"description": "错误的子订单号123434,123432"
 		},
 		{
 			"name": "order_type",
@@ -109,10 +105,6 @@
 			"description": "扩展字段"
 		},
 		{
-			"name": "ticket_info_list",
-			"type": "OrderTicketInfo[]",
-			"description": "票信息列表",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "ttp_sub_order_id",
@@ -169,7 +161,11 @@
 					"type": "String",
 					"description": "12306票号"
 				}
-			]
+			],
+			"name": "ticket_info_list",
+			"type": "OrderTicketInfo[]",
+			"description": "票信息列表",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
@@ -178,5 +174,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.train.agent.bookticket.confirm.vtwo",
+	"apiChineseName": "火车票代理商接口——确认出票是否成功v2--增加鉴权校验",
+	"description": "火车票代理商接口——确认出票是否成功",
+	"id": 29796
 }

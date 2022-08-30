@@ -1,33 +1,30 @@
 {
-	"id": 55254,
-	"name": "alibaba.modifyaddress.isv.bindseller.check",
-	"apiChineseName": "查询服务商下的商家是否开通了改地址",
-	"description": "鉴权服务商和商家的绑定关系，看商家是否开通了改地址\n1. 没有授权\n2. 已与当前appkey签约\n3. 没有签约\n4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。",
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "CheckSellerChooseErpResponse",
-			"description": "model",
 			"subParams": [
 				{
 					"name": "status",
 					"type": "String",
-					"description": "状态结果\u003c/br\u003e 您无权查询此商家信息\u003cbr\u003e 已与当前服务商签约改地址服务\u003c/br\u003e  当前商家改地址服务未签约服务商\u003c/br\u003e 已与其他服务商签约改地址服务\u003c/br\u003e",
-					"required": true
+					"description": "状态结果\u003c/br\u003e 您无权查询此商家信息\u003cbr\u003e 已与当前服务商签约改地址服务\u003c/br\u003e  当前商家改地址服务未签约服务商\u003c/br\u003e 已与其他服务商签约改地址服务\u003c/br\u003e"
 				},
 				{
 					"name": "appkey",
 					"type": "String",
-					"description": "商家绑定的appkey",
-					"required": true
+					"description": "商家绑定的appkey"
 				},
 				{
 					"name": "app_title",
 					"type": "String",
-					"description": "app名称",
-					"required": true
+					"description": "app名称"
 				}
-			]
+			],
+			"name": "model",
+			"type": "CheckSellerChooseErpResponse",
+			"description": "model"
 		}
-	]
+	],
+	"name": "alibaba.modifyaddress.isv.bindseller.check",
+	"apiChineseName": "查询服务商下的商家是否开通了改地址",
+	"description": "鉴权服务商和商家的绑定关系，看商家是否开通了改地址\n1. 没有授权\n2. 已与当前appkey签约\n3. 没有签约\n4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。",
+	"id": 55254
 }

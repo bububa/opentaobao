@@ -1,8 +1,4 @@
 {
-	"id": 33601,
-	"name": "alitrip.grouptour.product.upload",
-	"apiChineseName": "新版跟团游商品维护接口",
-	"description": "新版跟团游商品维护接口",
 	"requestParams": [
 		{
 			"name": "go_traffic_type",
@@ -50,15 +46,8 @@
 			"description": "参团线路类型。0 -目的地参团，1-为出发地参团"
 		},
 		{
-			"name": "group_tour_package_info",
-			"type": "GroupTourPackageInfo[]",
-			"description": "套餐信息,数组类型，支持上传多个套餐信息",
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "trip_element_list",
-					"type": "GroupTourTripElement[]",
-					"description": "行程信息，新发布商品必填，数据，可以一次提交多天的行程信息",
 					"subParams": [
 						{
 							"name": "day",
@@ -75,94 +64,94 @@
 							"type": "String",
 							"description": "具体的行程信息，根据type字段，将对象序列化成json串，以字符串的形式赋值给json_str，传到后端,每一个json_str都只能是对应单个对象，不能对应数组  当type=1时： json_str = {     \"type\":1, //包含元素类型，1:住宿信息，2:景点，3:餐饮信息，4:购物信息     \"hotelType”:1,//住宿方式，1:酒店/客栈 2:住在交通工具上 3:住宿自理 4:露营     \"hotelStarType\":1, //1:酒店星级 2:酒店档次     \"hotelStar\":\"三星级\", //如果hotelStarType =1:酒店星级，hotelStar取值范围（一星级，二星级，三星级，四星级，五星级）；如果hotelStarType =1:酒店星级，hotelStar取值范围（舒适,高档,豪华,经济连锁，二星及以下）     \"hotelCityName\":\"北京市\", //酒店所在城市名称     \"hotelName\":\"如家快捷北京北太平庄店”,//酒店名称     \"roomType\":\"大床房”, //房型     \"tripContentDetails\":{ //该字段选填，imageList为数组类型，住宿图片，desc为住宿说明                           \"imageList\":[                                        \"https://img.daily.taobaocdn.net/imgextra/i2/2024098454/TB2.BJ9XEw7LKJjyzdKXXaShXXa_!!2024098454.jpg\",                                        \"https://img.daily.taobaocdn.net/imgextra/i1/2024098454/TB2Ui4yXEw7LKJjyzdKXXaShXXa_!!2024098454.jpg\"                                       ],                           \"desc”:”住宿说明”                          } } 当type=2时： json_str = {     \"type”:2, //包含元素类型，1:住宿信息，2:景点，3:餐饮信息，4:购物信息     \"activityHour\":10, //活动时间-小时     \"activityMinute\":30,//活动时间-分钟,这里是10个小时30分钟     \"scenicName\":\"八达岭长城”,//景点名称     \"scenicCity\":\"北京市” //景点所在城市,”classicScenic”:true, \"tripContentDetails\":{ //该字段选填，imageList为数组类型，景点图片，desc为景点详细说明                           \"imageList\":[                                        \"https://img.daily.taobaocdn.net/imgextra/i2/2024098454/TB2.BJ9XEw7LKJjyzdKXXaShXXa_!!2024098454.jpg\",                                        \"https://img.daily.taobaocdn.net/imgextra/i1/2024098454/TB2Ui4yXEw7LKJjyzdKXXaShXXa_!!2024098454.jpg\"                                       ],                           \"desc”:”景点详情”                          } } 当type=3时： json_str ={     \"type\":3, //包含元素类型，1:住宿信息，2:景点，3:餐饮信息，4:购物信息     \"foodInclude\":false,//true：包含餐饮，false:不包含餐饮信息     \"specialIllustrate\":\" 餐饮说明”,//餐饮说明     \"foodType\":[ //1:早餐，2:中餐，3:晚餐         1,         2,         3     ] } 当type=4时： json_str ={     \"type\":4, //包含元素类型，1:住宿信息，2:景点，3:餐饮信息，4:购物信息     \"activityHour\":1,//活动时间-小时     \"activityMinute\":5,//活动时间-分钟,这里是1个小时5分钟     \"shoppingPlace\":\"家乐福”,//购物店名称     \"shoppingProduct\":\"啥都有”//营业产品 }。当type=5时： json_str ={ \"type\":5, //包含元素类型，1:住宿信息，2:景点，3:餐饮信息，4:购物信息，5:自由活动 ,\"activityHour\":1,//活动时间-小时 \"activityMinute\":5,//活动时间-分钟,这里是1个小时5分钟 \"scenicCity\":\"杭州”,//活动城市, \"activityContent\":\"啥都有”//活动推荐 }"
 						}
-					]
+					],
+					"name": "trip_element_list",
+					"type": "GroupTourTripElement[]",
+					"description": "行程信息，新发布商品必填，数据，可以一次提交多天的行程信息"
 				},
 				{
+					"subParams": [
+						{
+							"name": "transport_way",
+							"type": "Number",
+							"description": "交通类型 1：飞机， 2：火车，3：汽车，4：轮船"
+						},
+						{
+							"name": "group",
+							"type": "Number",
+							"description": "第几组交通信息，每一组交通信息包含一组去程交通和返程交通，当在页\u003e 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交\u003e通信息group=1，第二组交通信息group取值为2，以此类推"
+						},
+						{
+							"name": "non_stop",
+							"type": "Number",
+							"description": "是否直飞，飞机选填，1-直飞；0-不是直飞"
+						},
+						{
+							"name": "traffic_desc",
+							"type": "String",
+							"description": "交通说明，针对交通类型是汽车，轮船和其他"
+						},
+						{
+							"name": "arrival_time",
+							"type": "String",
+							"description": "到达时间，当地时间HH:mm"
+						},
+						{
+							"name": "departure_time",
+							"type": "String",
+							"description": "出发时间，当地时间HH:mm"
+						},
+						{
+							"name": "destination",
+							"type": "String",
+							"description": "到达城市"
+						},
+						{
+							"name": "departure",
+							"type": "String",
+							"description": "出发城市"
+						},
+						{
+							"name": "plane_type",
+							"type": "String",
+							"description": "飞机机型，飞机选填"
+						},
+						{
+							"name": "vendor",
+							"type": "String",
+							"description": "交通公司名，飞机选填"
+						},
+						{
+							"name": "traffic_no",
+							"type": "String",
+							"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+						},
+						{
+							"name": "day",
+							"type": "Number",
+							"description": "第几天"
+						},
+						{
+							"name": "stop_over",
+							"type": "Boolean",
+							"description": "是否经停"
+						},
+						{
+							"name": "stop_city",
+							"type": "String",
+							"description": "经停城市"
+						},
+						{
+							"name": "is_non_red_eye_flight",
+							"type": "Boolean",
+							"description": "是否是\"非红眼航班\"。【红眼航班】定义：凌晨一点至六点起飞，且飞行时间少于少于正常睡眠需求（8小时）的航班。"
+						}
+					],
 					"name": "back_traffic_info_list",
 					"type": "GroupTourTrafficInfo[]",
-					"description": "返程交通，交通工具的类型必须与商品上的去程交通一致",
-					"subParams": [
-						{
-							"name": "transport_way",
-							"type": "Number",
-							"description": "交通类型 1：飞机， 2：火车，3：汽车，4：轮船"
-						},
-						{
-							"name": "group",
-							"type": "Number",
-							"description": "第几组交通信息，每一组交通信息包含一组去程交通和返程交通，当在页\u003e 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交\u003e通信息group=1，第二组交通信息group取值为2，以此类推"
-						},
-						{
-							"name": "non_stop",
-							"type": "Number",
-							"description": "是否直飞，飞机选填，1-直飞；0-不是直飞"
-						},
-						{
-							"name": "traffic_desc",
-							"type": "String",
-							"description": "交通说明，针对交通类型是汽车，轮船和其他"
-						},
-						{
-							"name": "arrival_time",
-							"type": "String",
-							"description": "到达时间，当地时间HH:mm"
-						},
-						{
-							"name": "departure_time",
-							"type": "String",
-							"description": "出发时间，当地时间HH:mm"
-						},
-						{
-							"name": "destination",
-							"type": "String",
-							"description": "到达城市"
-						},
-						{
-							"name": "departure",
-							"type": "String",
-							"description": "出发城市"
-						},
-						{
-							"name": "plane_type",
-							"type": "String",
-							"description": "飞机机型，飞机选填"
-						},
-						{
-							"name": "vendor",
-							"type": "String",
-							"description": "交通公司名，飞机选填"
-						},
-						{
-							"name": "traffic_no",
-							"type": "String",
-							"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
-						},
-						{
-							"name": "day",
-							"type": "Number",
-							"description": "第几天"
-						},
-						{
-							"name": "stop_over",
-							"type": "Boolean",
-							"description": "是否经停"
-						},
-						{
-							"name": "stop_city",
-							"type": "String",
-							"description": "经停城市"
-						},
-						{
-							"name": "is_non_red_eye_flight",
-							"type": "Boolean",
-							"description": "是否是\"非红眼航班\"。【红眼航班】定义：凌晨一点至六点起飞，且飞行时间少于少于正常睡眠需求（8小时）的航班。"
-						}
-					]
+					"description": "返程交通，交通工具的类型必须与商品上的去程交通一致"
 				},
 				{
-					"name": "go_traffic_info_list",
-					"type": "GroupTourTrafficInfo[]",
-					"description": "去程交通，交通工具的类型必须与商品上的去程交通一致",
 					"subParams": [
 						{
 							"name": "transport_way",
@@ -239,7 +228,10 @@
 							"type": "Boolean",
 							"description": "是否是\"非红眼航班\"。【红眼航班】定义：凌晨一点至六点起飞，且飞行时间少于少于正常睡眠需求（8小时）的航班。"
 						}
-					]
+					],
+					"name": "go_traffic_info_list",
+					"type": "GroupTourTrafficInfo[]",
+					"description": "去程交通，交通工具的类型必须与商品上的去程交通一致"
 				},
 				{
 					"name": "self_explanation",
@@ -291,7 +283,11 @@
 					"type": "Number",
 					"description": "套餐级别行程晚数，必填。"
 				}
-			]
+			],
+			"name": "group_tour_package_info",
+			"type": "GroupTourPackageInfo[]",
+			"description": "套餐信息,数组类型，支持上传多个套餐信息",
+			"maxListSize": 20
 		},
 		{
 			"name": "confirm_type",
@@ -404,35 +400,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopTravelItem",
-			"description": "firstResult",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "itemId",
-					"required": true
+					"description": "itemId"
 				},
 				{
 					"name": "out_product_id",
 					"type": "String",
-					"description": "outProductId",
-					"required": true
+					"description": "outProductId"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "modified",
-					"required": true
+					"description": "modified"
 				},
 				{
 					"name": "extend",
 					"type": "String",
-					"description": "extend",
-					"required": true
+					"description": "extend"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "firstResult"
 		}
-	]
+	],
+	"name": "alitrip.grouptour.product.upload",
+	"apiChineseName": "新版跟团游商品维护接口",
+	"description": "新版跟团游商品维护接口",
+	"id": 33601
 }

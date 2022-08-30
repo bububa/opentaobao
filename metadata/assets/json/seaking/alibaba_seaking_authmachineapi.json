@@ -1,8 +1,4 @@
 {
-	"id": 47571,
-	"name": "alibaba.seaking.authmachineapi",
-	"apiChineseName": "机翻Api授权",
-	"description": "机翻Api授权",
 	"requestParams": [
 		{
 			"name": "identify_type",
@@ -33,5 +29,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.seaking.authmachineapi",
+	"apiChineseName": "机翻Api授权",
+	"description": "机翻Api授权",
+	"id": 47571
 }

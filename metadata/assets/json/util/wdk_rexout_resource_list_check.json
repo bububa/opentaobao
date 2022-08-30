@@ -1,0 +1,151 @@
+{
+	"requestParams": [
+		{
+			"name": "package_name",
+			"type": "String",
+			"description": "主包名",
+			"required": true
+		},
+		{
+			"name": "version_code",
+			"type": "Number",
+			"description": "主包版本",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型"
+		},
+		{
+			"name": "old_versions",
+			"type": "String",
+			"description": "旧版本资源信息"
+		},
+		{
+			"name": "org_info",
+			"type": "String",
+			"description": "所属商家结构"
+		},
+		{
+			"name": "attributes",
+			"type": "String",
+			"description": "自定义参数"
+		},
+		{
+			"name": "tenant_id",
+			"type": "Number",
+			"description": "租户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "config_json",
+					"type": "String",
+					"description": "自定义配置信息"
+				},
+				{
+					"name": "download_url",
+					"type": "String",
+					"description": "资源文件下载地址"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "资源状态"
+				},
+				{
+					"name": "qrcode",
+					"type": "String",
+					"description": "二维码地址"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "资源大小"
+				},
+				{
+					"name": "update_desc",
+					"type": "String",
+					"description": "资源描述"
+				},
+				{
+					"name": "version_code",
+					"type": "Number",
+					"description": "资源描述"
+				},
+				{
+					"name": "version_name",
+					"type": "String",
+					"description": "资源版本名"
+				},
+				{
+					"name": "icon_url",
+					"type": "String",
+					"description": "图标地址"
+				},
+				{
+					"name": "md5",
+					"type": "String",
+					"description": "资源MD5"
+				},
+				{
+					"name": "auto_install",
+					"type": "Boolean",
+					"description": "是否自动安装"
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "应用名"
+				},
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "主包名"
+				},
+				{
+					"name": "old_package_name",
+					"type": "String",
+					"description": "兼容主包名"
+				},
+				{
+					"name": "identifier",
+					"type": "String",
+					"description": "自定义标识符"
+				}
+			],
+			"name": "data",
+			"type": "DTO []",
+			"description": "资源列表"
+		},
+		{
+			"name": "succeed",
+			"type": "String",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误内容"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "wdk.rexout.resource.list.check",
+	"apiChineseName": "ReX应用中心资源更新检测-外部",
+	"description": "ReX应用中心资源更新检测-外部",
+	"id": 61367
+}

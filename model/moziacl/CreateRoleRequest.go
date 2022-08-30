@@ -5,7 +5,7 @@ type CreateRoleRequest struct {
 	// 角色包含的权限name列表
 	AddPermissionNames []string `json:"add_permission_names,omitempty" xml:"add_permission_names>string,omitempty"`
 	// 角色审批人userId列表
-	ApproverUserIds []int64 `json:"approver_user_ids,omitempty" xml:"approver_user_ids>int64,omitempty"`
+	ApproverUserIds []string `json:"approver_user_ids,omitempty" xml:"approver_user_ids>string,omitempty"`
 	// 角色归属的应用name，不传则以appKey对应的应用为准
 	TargetAppName string `json:"target_app_name,omitempty" xml:"target_app_name,omitempty"`
 	// 角色描述

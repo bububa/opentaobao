@@ -1,8 +1,4 @@
 {
-	"id": 21621,
-	"name": "taobao.fenxiao.product.gradeprice.get",
-	"apiChineseName": "等级折扣查询",
-	"description": "等级折扣查询",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -28,9 +24,6 @@
 			"description": "操作是否成功"
 		},
 		{
-			"name": "grade_discounts",
-			"type": "GradeDiscount []",
-			"description": "等级折扣列表",
 			"subParams": [
 				{
 					"name": "sku_id",
@@ -57,7 +50,14 @@
 					"type": "Price",
 					"description": "采购价格"
 				}
-			]
+			],
+			"name": "grade_discounts",
+			"type": "GradeDiscount []",
+			"description": "等级折扣列表"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.gradeprice.get",
+	"apiChineseName": "等级折扣查询",
+	"description": "等级折扣查询",
+	"id": 21621
 }

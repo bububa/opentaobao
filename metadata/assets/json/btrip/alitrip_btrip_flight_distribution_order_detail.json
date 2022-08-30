@@ -1,0 +1,319 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_order_operate_common_rq",
+			"type": "BtripFlightOrderOperateCommonRq",
+			"description": "订单详情入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝交易流水号"
+						},
+						{
+							"name": "book_user_id",
+							"type": "String",
+							"description": "预订人用户id"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "联系电话"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"subParams": [
+								{
+									"name": "airline_code",
+									"type": "String",
+									"description": "航司编码"
+								},
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "到达机场名称"
+								},
+								{
+									"name": "arr_airport_code",
+									"type": "String",
+									"description": "到达机场编码"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市名称"
+								},
+								{
+									"name": "arr_city_code",
+									"type": "String",
+									"description": "到达城市编码"
+								},
+								{
+									"name": "arr_time",
+									"type": "String",
+									"description": "到达时间"
+								},
+								{
+									"name": "baggage",
+									"type": "String",
+									"description": "行李额描述"
+								},
+								{
+									"name": "build_price",
+									"type": "Number",
+									"description": "机建费用"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "舱等"
+								},
+								{
+									"name": "carrier",
+									"type": "String",
+									"description": "承运方"
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "出发机场名称"
+								},
+								{
+									"name": "dep_airport_code",
+									"type": "String",
+									"description": "出发机场编码"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市"
+								},
+								{
+									"name": "dep_city_code",
+									"type": "String",
+									"description": "出发城市编码"
+								},
+								{
+									"name": "dep_time",
+									"type": "String",
+									"description": "出发时间"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "meal",
+									"type": "String",
+									"description": "餐食描述"
+								},
+								{
+									"name": "oil_price",
+									"type": "Number",
+									"description": "燃油费用"
+								},
+								{
+									"name": "segment_type",
+									"type": "Number",
+									"description": "航段类型"
+								},
+								{
+									"name": "stop_arr_time",
+									"type": "String",
+									"description": "经停到达时间"
+								},
+								{
+									"name": "stop_city",
+									"type": "String",
+									"description": "经停城市"
+								},
+								{
+									"name": "stop_dep_time",
+									"type": "String",
+									"description": "经停出发时间"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票费用"
+								}
+							],
+							"name": "flight_info_list",
+							"type": "OrderFlightInfo[]",
+							"description": "航班信息列表"
+						},
+						{
+							"name": "last_pay_time",
+							"type": "String",
+							"description": "最迟支付时间"
+						},
+						{
+							"name": "btrip_order_id",
+							"type": "Number",
+							"description": "商旅订单号"
+						},
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间"
+						},
+						{
+							"name": "promotion_price",
+							"type": "Number",
+							"description": "优惠金额"
+						},
+						{
+							"name": "settle_amount",
+							"type": "Number",
+							"description": "结算金额"
+						},
+						{
+							"name": "settle_type",
+							"type": "Number",
+							"description": "结算类型"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态：0初始化，1占座成功待支付，2支付成功待出票，3出票成功，4订单已取消，5订单已失败"
+						},
+						{
+							"subParams": [
+								{
+									"name": "pnr_code",
+									"type": "String",
+									"description": "pnr编码"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "ticket_status",
+									"type": "String",
+									"description": "票状态"
+								},
+								{
+									"name": "open_ticket_status",
+									"type": "String",
+									"description": "openTicket状态"
+								}
+							],
+							"name": "ticket_info_list",
+							"type": "OrderTicketInfo[]",
+							"description": "票信息"
+						},
+						{
+							"name": "total_build_price",
+							"type": "Number",
+							"description": "总机建费用"
+						},
+						{
+							"name": "total_oil_price",
+							"type": "Number",
+							"description": "总燃油费用"
+						},
+						{
+							"name": "total_order_price",
+							"type": "Number",
+							"description": "总订单费用"
+						},
+						{
+							"subParams": [
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客姓名"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户编号"
+								}
+							],
+							"name": "traveler_info_list",
+							"type": "OrderTravelerInfo[]",
+							"description": "乘机人列表"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightOrderDetailRs",
+					"description": "订单详情"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.order.detail",
+	"apiChineseName": "商旅机票分销订单详情接口",
+	"description": "商旅机票分销订单详情接口",
+	"id": 57580
+}

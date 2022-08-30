@@ -1,8 +1,4 @@
 {
-	"id": 42269,
-	"name": "aliexpress.solution.order.fulfill",
-	"apiChineseName": "fulfill order",
-	"description": "fulfill order for seller",
 	"requestParams": [
 		{
 			"name": "service_name",
@@ -41,9 +37,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "result_success",
@@ -51,7 +44,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "object"
 		}
-	]
+	],
+	"name": "aliexpress.solution.order.fulfill",
+	"apiChineseName": "fulfill order",
+	"description": "fulfill order for seller",
+	"id": 42269
 }

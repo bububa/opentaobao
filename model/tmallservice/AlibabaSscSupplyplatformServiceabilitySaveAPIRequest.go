@@ -20,6 +20,8 @@ type AlibabaSscSupplyplatformServiceabilitySaveAPIRequest struct {
 	_areaCodeList []int64
 	// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
 	_providerType string
+	// 服务提供者code。外部与天猫对接时，自己定义的code用这个字段
+	_providerCode string
 	// 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
 	_providerId int64
 }
@@ -95,6 +97,19 @@ func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderType(_
 // GetProviderType ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetProviderType() string {
 	return r._providerType
+}
+
+// SetProviderCode is ProviderCode Setter
+// 服务提供者code。外部与天猫对接时，自己定义的code用这个字段
+func (r *AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) SetProviderCode(_providerCode string) error {
+	r._providerCode = _providerCode
+	r.Set("provider_code", _providerCode)
+	return nil
+}
+
+// GetProviderCode ProviderCode Getter
+func (r AlibabaSscSupplyplatformServiceabilitySaveAPIRequest) GetProviderCode() string {
+	return r._providerCode
 }
 
 // SetProviderId is ProviderId Setter

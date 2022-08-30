@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘外部id",
+					"required": true
+				},
+				{
+					"name": "sort_no",
+					"type": "Number",
+					"description": "排序值 大于等于10的数字",
+					"required": true
+				}
+			],
+			"name": "update_sort_no_dto",
+			"type": "UpdateSortNoDto",
+			"description": "排序值请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.sortno",
+	"apiChineseName": "新房排序值同步",
+	"description": "新房排序值同步",
+	"id": 57988
+}

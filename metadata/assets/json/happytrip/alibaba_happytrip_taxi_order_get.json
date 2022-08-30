@@ -1,8 +1,4 @@
 {
-	"id": 28365,
-	"name": "alibaba.happytrip.taxi.order.get",
-	"apiChineseName": "订单详情",
-	"description": "获取订单状态及详情",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -23,21 +19,10 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "data",
-			"type": "OrderGetResult",
-			"description": "订单获取结果",
 			"subParams": [
 				{
-					"name": "price",
-					"type": "CostInfo",
-					"description": "费用信息，如果订单有折扣，这里为折后价格，如果没有折扣，这里和original_price保持一致",
-					"required": true,
 					"subParams": [
 						{
-							"name": "detail",
-							"type": "CostDetailInfo[]",
-							"description": "费用明细",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
@@ -57,7 +42,11 @@
 									"description": "费用类型，如果不需要显示直接设为null，为0也会显示出来。discount_fee:折扣金额;refund_price：退款;empty_fee：远途费或超出套餐部分远途费; highway_fee：高速费;  bridge_fee：路桥费; low_speed_fee：低速费或超出套餐低速费;  night_fee：夜间费用或超出套餐部分夜间费; normal_fee：正常行驶费用或超出套餐部分行驶距离费; other_fee：其他费用;  park_fee：停车费; start_price：起步价格;  tip_fee：加价费用;  limit_fee：车最低消费; combo_fee：套餐费用;  normal_time_fee：快车时长费;  cancel_fee：违约费; dynamic_price：动态调价费用;  wait_fee：等候费; clear_fee：清洁费; cross_city_fee：跨城费",
 									"required": true
 								}
-							]
+							],
+							"name": "detail",
+							"type": "CostDetailInfo[]",
+							"description": "费用明细",
+							"required": true
 						},
 						{
 							"name": "total_price",
@@ -71,13 +60,13 @@
 							"description": "原价，如果订单有折扣这里为折扣前的价格，如果没有折扣和total_price字段保持一致",
 							"required": true
 						}
-					]
+					],
+					"name": "price",
+					"type": "CostInfo",
+					"description": "费用信息，如果订单有折扣，这里为折后价格，如果没有折扣，这里和original_price保持一致",
+					"required": true
 				},
 				{
-					"name": "order",
-					"type": "OrderInfo",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -125,6 +114,12 @@
 							"name": "driver_phone",
 							"type": "String",
 							"description": "号码保护中间号（如无号码保护，为司机真实手机号）",
+							"required": true
+						},
+						{
+							"name": "driver_id",
+							"type": "String",
+							"description": "司机唯一标识",
 							"required": true
 						},
 						{
@@ -324,14 +319,20 @@
 							"type": "String",
 							"description": "备注，如取消原因",
 							"required": true
+						},
+						{
+							"name": "allow_modify_dest",
+							"type": "Boolean",
+							"description": "是否允许修改目的地",
+							"required": true
 						}
-					]
+					],
+					"name": "order",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true
 				},
 				{
-					"name": "carpool",
-					"type": "CarpoolInfo",
-					"description": "拼车信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "carpool_flag",
@@ -346,10 +347,6 @@
 							"required": true
 						},
 						{
-							"name": "passenger_orders",
-							"type": "PassengerOrderInfo[]",
-							"description": "乘客订单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -399,15 +396,19 @@
 									"description": "目的地纬度",
 									"required": true
 								}
-							]
+							],
+							"name": "passenger_orders",
+							"type": "PassengerOrderInfo[]",
+							"description": "乘客订单信息",
+							"required": true
 						}
-					]
+					],
+					"name": "carpool",
+					"type": "CarpoolInfo",
+					"description": "拼车信息",
+					"required": true
 				},
 				{
-					"name": "reassign_info",
-					"type": "ReassignInfo",
-					"description": "订单改派信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pre_order_id",
@@ -433,9 +434,20 @@
 							"description": "最新被指派的订单id",
 							"required": true
 						}
-					]
+					],
+					"name": "reassign_info",
+					"type": "ReassignInfo",
+					"description": "订单改派信息",
+					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "OrderGetResult",
+			"description": "订单获取结果"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.get",
+	"apiChineseName": "订单详情",
+	"description": "获取订单状态及详情",
+	"id": 28365
 }

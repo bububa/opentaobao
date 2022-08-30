@@ -1,13 +1,13 @@
 {
-	"id": 25200,
-	"name": "alibaba.scbp.account.budget.get",
-	"apiChineseName": "查询日消耗预算",
-	"description": "查询日消耗预算",
 	"responseParams": [
 		{
 			"name": "budget",
 			"type": "String",
 			"description": "返回今日预算"
 		}
-	]
+	],
+	"name": "alibaba.scbp.account.budget.get",
+	"apiChineseName": "查询日消耗预算",
+	"description": "查询日消耗预算",
+	"id": 25200
 }

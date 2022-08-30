@@ -1,8 +1,4 @@
 {
-	"id": 22375,
-	"name": "slb.aliyuncs.com.SetLoadBalancerName.2013-02-21",
-	"apiChineseName": "配置LoadBalancer的别名。",
-	"description": "配置LoadBalancer的别名。",
 	"requestParams": [
 		{
 			"name": "loadBalancerId",
@@ -14,8 +10,8 @@
 			"name": "loadBalancerName",
 			"type": "String",
 			"description": "loadBalancerName",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -24,5 +20,9 @@
 			"type": "String",
 			"description": "request id"
 		}
-	]
+	],
+	"name": "slb.aliyuncs.com.SetLoadBalancerName.2013-02-21",
+	"apiChineseName": "配置LoadBalancer的别名。",
+	"description": "配置LoadBalancer的别名。",
+	"id": 22375
 }

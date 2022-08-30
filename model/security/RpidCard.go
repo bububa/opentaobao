@@ -20,8 +20,8 @@ type RpidCard struct {
 	UrlFrontImage string `json:"url_front_image,omitempty" xml:"url_front_image,omitempty"`
 	// RPIDCardImage
 	RpIdcardImage *RpidCardImage `json:"rp_idcard_image,omitempty" xml:"rp_idcard_image,omitempty"`
-	// sex
-	Sex *RpSex `json:"sex,omitempty" xml:"sex,omitempty"`
 	// bizErrorCode
 	BizErrorCode *RpErrorCode `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
+	// sex
+	Sex *RpSex `json:"sex,omitempty" xml:"sex,omitempty"`
 }

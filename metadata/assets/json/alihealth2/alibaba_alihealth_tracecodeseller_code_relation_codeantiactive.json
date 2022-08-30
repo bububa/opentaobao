@@ -1,8 +1,4 @@
 {
-	"id": 38179,
-	"name": "alibaba.alihealth.tracecodeseller.code.relation.codeantiactive",
-	"apiChineseName": "解除码的关联关系",
-	"description": "解除码的关联关系",
 	"requestParams": [
 		{
 			"name": "top_code",
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "成功失败信息"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.code.relation.codeantiactive",
+	"apiChineseName": "解除码的关联关系",
+	"description": "解除码的关联关系",
+	"id": 38179
 }

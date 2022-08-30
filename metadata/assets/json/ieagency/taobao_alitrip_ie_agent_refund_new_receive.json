@@ -1,8 +1,4 @@
 {
-	"id": 48498,
-	"name": "taobao.alitrip.ie.agent.refund.new.receive",
-	"apiChineseName": "商家退票受理申请(对外)",
-	"description": "允许代理商通过top接口受理退票申请",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -24,29 +20,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ReceiveRefundTicketRs",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "apiErrorMsg",
-					"required": true
+					"description": "apiErrorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "apiErrorCode",
-					"required": true
+					"description": "apiErrorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ReceiveRefundTicketRs",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.refund.new.receive",
+	"apiChineseName": "商家退票受理申请(对外)",
+	"description": "允许代理商通过top接口受理退票申请",
+	"id": 48498
 }

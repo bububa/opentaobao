@@ -1,8 +1,4 @@
 {
-	"id": 49160,
-	"name": "alibaba.servicecenter.spserviceorder.update",
-	"apiChineseName": "服务供应链服务单更新",
-	"description": "服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中",
 	"requestParams": [
 		{
 			"name": "sp_service_order_id",
@@ -38,35 +34,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.servicecenter.spserviceorder.update",
+	"apiChineseName": "服务供应链服务单更新",
+	"description": "服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中",
+	"id": 49160
 }

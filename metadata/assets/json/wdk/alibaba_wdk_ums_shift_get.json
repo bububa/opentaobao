@@ -1,8 +1,4 @@
 {
-	"id": 31329,
-	"name": "alibaba.wdk.ums.shift.get",
-	"apiChineseName": "移库单获取",
-	"description": "移库单获取",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -12,21 +8,10 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "list",
-					"type": "StockShiftDTO[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_list",
-							"type": "StockShiftDetailDTO[]",
-							"description": "itemList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "batch_info",
@@ -70,7 +55,11 @@
 									"description": "itemCode",
 									"required": true
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "StockShiftDetailDTO[]",
+							"description": "itemList",
+							"required": true
 						},
 						{
 							"name": "remark",
@@ -108,7 +97,11 @@
 							"description": "shiftDescribe",
 							"required": true
 						}
-					]
+					],
+					"name": "list",
+					"type": "StockShiftDTO[]",
+					"description": "list",
+					"required": true
 				},
 				{
 					"name": "code",
@@ -128,7 +121,14 @@
 					"description": "msg",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.shift.get",
+	"apiChineseName": "移库单获取",
+	"description": "移库单获取",
+	"id": 31329
 }

@@ -26,4 +26,10 @@ type Suborders struct {
 	OriginFee int64 `json:"origin_fee,omitempty" xml:"origin_fee,omitempty"`
 	// 子订单优惠金额
 	DiscountFee int64 `json:"discount_fee,omitempty" xml:"discount_fee,omitempty"`
+	// 商家优惠分摊
+	DiscountMerchantFee int64 `json:"discount_merchant_fee,omitempty" xml:"discount_merchant_fee,omitempty"`
+	// 平台优惠分摊
+	DiscountPlatformFee int64 `json:"discount_platform_fee,omitempty" xml:"discount_platform_fee,omitempty"`
+	// 子单价格
+	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 }

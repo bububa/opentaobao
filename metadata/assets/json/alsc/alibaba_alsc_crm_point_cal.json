@@ -1,13 +1,6 @@
 {
-	"id": 45809,
-	"name": "alibaba.alsc.crm.point.cal",
-	"apiChineseName": "计算积分可以抵扣的金额",
-	"description": "计算积分可以抵扣的金额\n积分的抵扣为区间型\n如抵扣规则为100积分抵扣50元，则输入消费120积分的话，回返回消费100积分抵扣50元\n 这里为纯计算逻辑，不会校验用户是否有足够的可用积分进行抵扣",
 	"requestParams": [
 		{
-			"name": "param_calculate_deducted_money_open_req",
-			"type": "CalculateDeductedMoneyOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -41,78 +34,75 @@
 					"type": "String",
 					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
 				}
-			]
+			],
+			"name": "param_calculate_deducted_money_open_req",
+			"type": "CalculateDeductedMoneyOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "DuductedMoneyOpenInfo",
-					"description": "业务结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "consume_point",
 							"type": "Number",
-							"description": "消耗的积分",
-							"required": true
+							"description": "消耗的积分"
 						},
 						{
 							"name": "deducted_money",
 							"type": "Number",
-							"description": "抵扣的金额,单位为分",
-							"required": true
+							"description": "抵扣的金额,单位为分"
 						},
 						{
 							"name": "deleted",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						}
-					]
+					],
+					"name": "result",
+					"type": "DuductedMoneyOpenInfo",
+					"description": "业务结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.point.cal",
+	"apiChineseName": "计算积分可以抵扣的金额",
+	"description": "计算积分可以抵扣的金额\n积分的抵扣为区间型\n如抵扣规则为100积分抵扣50元，则输入消费120积分的话，回返回消费100积分抵扣50元\n 这里为纯计算逻辑，不会校验用户是否有足够的可用积分进行抵扣",
+	"id": 45809
 }

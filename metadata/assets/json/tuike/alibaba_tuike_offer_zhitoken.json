@@ -1,8 +1,4 @@
 {
-	"id": 29784,
-	"name": "alibaba.tuike.offer.zhitoken",
-	"apiChineseName": "生成阿里口令",
-	"description": "推荐链接生产吱口令",
 	"requestParams": [
 		{
 			"name": "title",
@@ -57,53 +53,50 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "headers",
-					"type": "Json",
-					"description": "headers",
-					"required": true
+					"type": "String",
+					"description": "headers"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "httpStatusCode",
-					"required": true
+					"description": "httpStatusCode"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "bizExtMap",
-					"required": true
+					"type": "String",
+					"description": "bizExtMap"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.tuike.offer.zhitoken",
+	"apiChineseName": "生成阿里口令",
+	"description": "推荐链接生产吱口令",
+	"id": 29784
 }

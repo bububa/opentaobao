@@ -12,8 +12,6 @@ import (
 // 异地云仓发货时，需填写的第三方物流公司列表
 type AlibabaLstLogisticsThirdpartCompanyListAPIRequest struct {
 	model.Params
-	// 入参
-	_query *LstLogisticsCompanyQuery
 }
 
 // NewAlibabaLstLogisticsThirdpartCompanyListRequest 初始化AlibabaLstLogisticsThirdpartCompanyListAPIRequest对象
@@ -35,17 +33,4 @@ func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetApiParams() url.Va
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetQuery is Query Setter
-// 入参
-func (r *AlibabaLstLogisticsThirdpartCompanyListAPIRequest) SetQuery(_query *LstLogisticsCompanyQuery) error {
-	r._query = _query
-	r.Set("query", _query)
-	return nil
-}
-
-// GetQuery Query Getter
-func (r AlibabaLstLogisticsThirdpartCompanyListAPIRequest) GetQuery() *LstLogisticsCompanyQuery {
-	return r._query
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43845,
-	"name": "tmall.car.lease.freedownpayment.put",
-	"apiChineseName": "同步直租车免首付商品活动信息",
-	"description": "汽车行业直租车免首付需求中，用与对商品打标，活动范围设置，在消费者端商品详情页、订单等环节透出，表示该商品为直租免首付商品。",
 	"requestParams": [
 		{
 			"name": "pre_end_time",
@@ -36,47 +32,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "当前时间",
-					"required": true
+					"description": "当前时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "返回对象,成功：true，失败：false",
-					"required": true
+					"description": "返回对象,成功：true，失败：false"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "耗费时间",
-					"required": true
+					"description": "耗费时间"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "tmall.car.lease.freedownpayment.put",
+	"apiChineseName": "同步直租车免首付商品活动信息",
+	"description": "汽车行业直租车免首付需求中，用与对商品打标，活动范围设置，在消费者端商品详情页、订单等环节透出，表示该商品为直租免首付商品。",
+	"id": 43845
 }

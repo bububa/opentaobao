@@ -1,67 +1,59 @@
 {
-	"id": 30507,
-	"name": "tmall.servicecenter.service.type.queryall",
-	"apiChineseName": "服务供应链服务类型",
-	"description": "查询天猫服务类型列表",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
-					"name": "value",
-					"type": "ServiceTypeDtOs",
-					"description": "value",
-					"required": true,
 					"subParams": [
 						{
-							"name": "service_type_d_t_os",
-							"type": "ServiceTypeDto[]",
-							"description": "serviceTypeDTOs",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_name",
 									"type": "String",
-									"description": "serviceName",
-									"required": true
+									"description": "serviceName"
 								}
-							]
+							],
+							"name": "service_type_d_t_os",
+							"type": "ServiceTypeDto[]",
+							"description": "serviceTypeDTOs"
 						}
-					]
+					],
+					"name": "value",
+					"type": "ServiceTypeDtOs",
+					"description": "value"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.service.type.queryall",
+	"apiChineseName": "服务供应链服务类型",
+	"description": "查询天猫服务类型列表",
+	"id": 30507
 }

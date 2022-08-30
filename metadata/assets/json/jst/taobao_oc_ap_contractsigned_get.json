@@ -1,8 +1,4 @@
 {
-	"id": 25563,
-	"name": "taobao.oc.ap.contractsigned.get",
-	"apiChineseName": "用户是否签署支付宝代扣协议",
-	"description": "用户是否签署支付宝代扣协议",
 	"responseParams": [
 		{
 			"name": "contract_sign",
@@ -14,5 +10,9 @@
 			"type": "String",
 			"description": "调用出错描述信息"
 		}
-	]
+	],
+	"name": "taobao.oc.ap.contractsigned.get",
+	"apiChineseName": "用户是否签署支付宝代扣协议",
+	"description": "用户是否签署支付宝代扣协议",
+	"id": 25563
 }

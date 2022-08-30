@@ -1,8 +1,4 @@
 {
-	"id": 28140,
-	"name": "alibaba.ai.ar.service.detect",
-	"apiChineseName": "ailab AR图像检索",
-	"description": "ailab AR图像检索",
 	"requestParams": [
 		{
 			"name": "img_data",
@@ -36,5 +32,9 @@
 			"type": "Json",
 			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.ai.ar.service.detect",
+	"apiChineseName": "ailab AR图像检索",
+	"description": "ailab AR图像检索",
+	"id": 28140
 }

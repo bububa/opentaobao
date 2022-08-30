@@ -1,0 +1,191 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_ids",
+			"type": "String[]",
+			"description": "外部id列表",
+			"maxListSize": 500,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店id"
+						},
+						{
+							"name": "outer_company_id",
+							"type": "String",
+							"description": "外部公司id"
+						},
+						{
+							"name": "outer_company_brand_id",
+							"type": "String",
+							"description": "外部城市品牌店id"
+						},
+						{
+							"name": "outer_shop_id",
+							"type": "String",
+							"description": "外部店铺id"
+						},
+						{
+							"name": "city_id",
+							"type": "Number",
+							"description": "城市id"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "store_name_short",
+							"type": "String",
+							"description": "门店简称"
+						},
+						{
+							"name": "store_info",
+							"type": "String",
+							"description": "门店简介"
+						},
+						{
+							"name": "contact_man",
+							"type": "String",
+							"description": "联系人"
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "联系人电话"
+						},
+						{
+							"name": "main_phone",
+							"type": "String",
+							"description": "400主号"
+						},
+						{
+							"name": "sub_phone",
+							"type": "String",
+							"description": "子号"
+						},
+						{
+							"name": "gaode_longitude",
+							"type": "String",
+							"description": "高德经度"
+						},
+						{
+							"name": "gaode_latitude",
+							"type": "String",
+							"description": "高德纬度"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址"
+						},
+						{
+							"name": "store_biz_type",
+							"type": "String",
+							"description": "门店业务类型"
+						},
+						{
+							"name": "store_status",
+							"type": "Number",
+							"description": "门店状态"
+						},
+						{
+							"name": "company_license_no",
+							"type": "String",
+							"description": "营业执照编号"
+						},
+						{
+							"name": "company_legal_person",
+							"type": "String",
+							"description": "法人"
+						},
+						{
+							"name": "company_license_photo",
+							"type": "String",
+							"description": "营业执照图片"
+						},
+						{
+							"name": "company_license_expire_time",
+							"type": "Date",
+							"description": "营业执照过期时间"
+						},
+						{
+							"name": "company_license_status",
+							"type": "byte",
+							"description": "营业执照状态"
+						},
+						{
+							"name": "is_small_ka",
+							"type": "byte",
+							"description": "是否为大ka"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司名称"
+						},
+						{
+							"name": "virtual_type",
+							"type": "Number",
+							"description": "是否为虚拟店铺"
+						},
+						{
+							"name": "company_license_url",
+							"type": "String",
+							"description": "营业执照备案地址"
+						},
+						{
+							"name": "partake_business",
+							"type": "String",
+							"description": "负责业务"
+						},
+						{
+							"name": "is_test",
+							"type": "Number",
+							"description": "测试标"
+						},
+						{
+							"name": "tag_codes",
+							"type": "String",
+							"description": "门店标签"
+						}
+					],
+					"name": "data",
+					"type": "CompanyStoreForCheckDTO[]",
+					"description": "结果列表"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.store.check",
+	"apiChineseName": "门店对账查询工具",
+	"description": "门店对账查询工具",
+	"id": 62663
+}

@@ -1,8 +1,4 @@
 {
-	"id": 45551,
-	"name": "alibaba.seaking.titlerewrite.result",
-	"apiChineseName": "获取标题改写任务结果",
-	"description": "获取标题改写任务结果",
 	"requestParams": [
 		{
 			"name": "token_from",
@@ -25,55 +21,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaskResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "finished_count",
 					"type": "Number",
-					"description": "完成的任务数",
-					"required": true
+					"description": "完成的任务数"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总计任务数",
-					"required": true
+					"description": "总计任务数"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "任务状态",
-					"required": true
+					"description": "任务状态"
 				},
 				{
-					"name": "task_result_detail_list",
-					"type": "TaskResultDetailDto[]",
-					"description": "子任务列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "result",
 							"type": "String",
-							"description": "标题改写结果",
-							"required": true
+							"description": "标题改写结果"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "子任务状态",
-							"required": true
+							"description": "子任务状态"
 						},
 						{
 							"name": "idx",
 							"type": "Number",
-							"description": "子任务编号",
-							"required": true
+							"description": "子任务编号"
 						}
-					]
+					],
+					"name": "task_result_detail_list",
+					"type": "TaskResultDetailDto[]",
+					"description": "子任务列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaskResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.seaking.titlerewrite.result",
+	"apiChineseName": "获取标题改写任务结果",
+	"description": "获取标题改写任务结果",
+	"id": 45551
 }

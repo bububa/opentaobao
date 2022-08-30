@@ -1,15 +1,12 @@
 {
-	"id": 27819,
-	"name": "taobao.alitrip.flightchange.add",
-	"apiChineseName": "航变信息录入接口",
-	"description": "代理商调用航变录入接口,\n    简要描述:完成航变信息的自动录入后飞猪机票平台会发生的动作是匹配所有该代理人的订单,如果接口参数指定了飞猪机票订单号，发生的动作是匹配该代理人的指定订单；\n找到与航变航班相关的订单给旅客下发航变短信并出发IVR自动外呼旅客。",
 	"requestParams": [
 		{
-			"name": "flight_change_data_do",
-			"type": "FlightChangeDataDO",
-			"description": "录入参数类",
-			"required": true,
 			"subParams": [
+				{
+					"name": "new_arr_airport",
+					"type": "String",
+					"description": "航班最新到达机场三字码, 字符长度3；仅当flightChangeType=2，该参数必填"
+				},
 				{
 					"name": "old_arr_airport",
 					"type": "String",
@@ -70,40 +67,40 @@
 					"name": "new_arr_time_str",
 					"type": "String",
 					"description": "最新到达时间"
-				},
-				{
-					"name": "new_arr_airport",
-					"type": "String",
-					"description": "航班最新到达机场三字码, 字符长度3；仅当flightChangeType=2，该参数必填"
 				}
-			]
+			],
+			"name": "flight_change_data_do",
+			"type": "FlightChangeDataDO",
+			"description": "录入参数类",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.flightchange.add",
+	"apiChineseName": "航变信息录入接口",
+	"description": "代理商调用航变录入接口,\n    简要描述:完成航变信息的自动录入后飞猪机票平台会发生的动作是匹配所有该代理人的订单,如果接口参数指定了飞猪机票订单号，发生的动作是匹配该代理人的指定订单；\n找到与航变航班相关的订单给旅客下发航变短信并出发IVR自动外呼旅客。",
+	"id": 27819
 }

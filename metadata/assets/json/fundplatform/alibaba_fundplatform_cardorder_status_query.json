@@ -1,14 +1,6 @@
 {
-	"id": 28554,
-	"name": "alibaba.fundplatform.cardorder.status.query",
-	"apiChineseName": "查询制卡商制卡进度",
-	"description": "当通知制卡商进行制卡后，其制卡流程会比较长，若长时间未反馈当前制卡进展，则需要使用该接口来向制卡商发起进度查询。",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
-			"description": "请求结构体",
-			"required": true,
 			"subParams": [
 				{
 					"name": "card_order_id",
@@ -22,14 +14,15 @@
 					"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
 					"required": true
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct",
+			"description": "请求结构体",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Struct",
-			"description": "返回结构体",
 			"subParams": [
 				{
 					"name": "status",
@@ -67,7 +60,14 @@
 					"description": "物流单号，仅当制卡状态为发货完成时返回该值",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Struct",
+			"description": "返回结构体"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.cardorder.status.query",
+	"apiChineseName": "查询制卡商制卡进度",
+	"description": "当通知制卡商进行制卡后，其制卡流程会比较长，若长时间未反馈当前制卡进展，则需要使用该接口来向制卡商发起进度查询。",
+	"id": 28554
 }

@@ -2,10 +2,10 @@ package xhotelitem
 
 // TaobaoXhotelServicetimeGetResultSet 结构体
 type TaobaoXhotelServicetimeGetResultSet struct {
-	// results
-	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// firstResult
 	FirstResults []ServiceTimeDataDo `json:"first_results,omitempty" xml:"first_results>service_time_data_do,omitempty"`
+	// results
+	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// exception
 	Exception string `json:"exception,omitempty" xml:"exception,omitempty"`
 	// errorCode

@@ -1,8 +1,4 @@
 {
-	"id": 27490,
-	"name": "taobao.weike.eservice.subusers.get",
-	"apiChineseName": "客服外包订单分配的商家子账号列表",
-	"description": "获取客服外包订单分配的商家子账号列表，以及授权状态",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,43 +9,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AuthorizedAccountWrapper",
-			"description": "商家子账号查询结果",
 			"subParams": [
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "商家子账号记录数",
-					"required": true
+					"description": "商家子账号记录数"
 				},
 				{
-					"name": "sub_users",
-					"type": "SubUser[]",
-					"description": "商家子账号列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "state_des",
 							"type": "String",
-							"description": "授权状态描述",
-							"required": true
+							"description": "授权状态描述"
 						},
 						{
 							"name": "state",
 							"type": "Number",
-							"description": "授权状态: 1表示授权，0表示取消授权，-1表示失效",
-							"required": true
+							"description": "授权状态: 1表示授权，0表示取消授权，-1表示失效"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "商家子账号昵称",
-							"required": true
+							"description": "商家子账号昵称"
 						}
-					]
+					],
+					"name": "sub_users",
+					"type": "SubUser[]",
+					"description": "商家子账号列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AuthorizedAccountWrapper",
+			"description": "商家子账号查询结果"
 		}
-	]
+	],
+	"name": "taobao.weike.eservice.subusers.get",
+	"apiChineseName": "客服外包订单分配的商家子账号列表",
+	"description": "获取客服外包订单分配的商家子账号列表，以及授权状态",
+	"id": 27490
 }

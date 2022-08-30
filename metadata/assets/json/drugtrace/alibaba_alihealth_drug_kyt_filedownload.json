@@ -1,8 +1,4 @@
 {
-	"id": 41412,
-	"name": "alibaba.alihealth.drug.kyt.filedownload",
-	"apiChineseName": "处理失败单据下载",
-	"description": "处理失败单据下载",
 	"requestParams": [
 		{
 			"name": "ref_user_id",
@@ -46,5 +42,9 @@
 			"type": "Boolean",
 			"description": "返回是否成功"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.filedownload",
+	"apiChineseName": "处理失败单据下载",
+	"description": "处理失败单据下载",
+	"id": 41412
 }

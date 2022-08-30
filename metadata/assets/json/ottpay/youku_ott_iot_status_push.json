@@ -1,8 +1,4 @@
 {
-	"id": 46646,
-	"name": "youku.ott.iot.status.push",
-	"apiChineseName": "iot设备状态变化通知接口",
-	"description": "ott iot设备状态通知",
 	"requestParams": [
 		{
 			"name": "change_info",
@@ -21,5 +17,9 @@
 			"type": "Boolean",
 			"description": "成功标识"
 		}
-	]
+	],
+	"name": "youku.ott.iot.status.push",
+	"apiChineseName": "iot设备状态变化通知接口",
+	"description": "ott iot设备状态通知",
+	"id": 46646
 }

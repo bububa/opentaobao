@@ -1,8 +1,4 @@
 {
-	"id": 32084,
-	"name": "alibaba.icbu.rfq.search",
-	"apiChineseName": "查询RFQ",
-	"description": "用于查询RFQ的信息",
 	"requestParams": [
 		{
 			"name": "md5key",
@@ -10,9 +6,6 @@
 			"description": "验证"
 		},
 		{
-			"name": "cond",
-			"type": "RfqRequestSearchCondDto",
-			"description": "查询条件",
 			"subParams": [
 				{
 					"name": "search_text",
@@ -85,192 +78,171 @@
 					"type": "Boolean",
 					"description": "是否过滤已报价"
 				}
-			]
+			],
+			"name": "cond",
+			"type": "RfqRequestSearchCondDto",
+			"description": "查询条件"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RfqRemoteServiceResult",
-			"description": "返回信息结果集",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "查询返回信息",
-					"required": true
+					"description": "查询返回信息"
 				},
 				{
-					"name": "result",
-					"type": "RfqRequestSearchResultDto",
-					"description": "结果集",
-					"required": true,
 					"subParams": [
 						{
-							"name": "request_list",
-							"type": "Requestlist[]",
-							"description": "RFQ列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "rfq_id",
 									"type": "String",
-									"description": "RFQID",
-									"required": true
+									"description": "RFQID"
 								},
 								{
 									"name": "category_id",
 									"type": "Number",
-									"description": "类目ID",
-									"required": true
+									"description": "类目ID"
 								},
 								{
 									"name": "subject",
 									"type": "String",
-									"description": "RFQ标题",
-									"required": true
+									"description": "RFQ标题"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "RFQ内容",
-									"required": true
+									"description": "RFQ内容"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								},
 								{
 									"name": "quantity_unit",
 									"type": "String",
-									"description": "数量单位",
-									"required": true
+									"description": "数量单位"
 								},
 								{
 									"name": "country_simple",
 									"type": "String",
-									"description": "国家简称",
-									"required": true
+									"description": "国家简称"
 								},
 								{
 									"name": "left_count",
 									"type": "Number",
-									"description": "剩余报价",
-									"required": true
+									"description": "剩余报价"
 								},
 								{
 									"name": "annex_names",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "lang_src",
 									"type": "String",
-									"description": "语种",
-									"required": true
+									"description": "语种"
 								},
 								{
 									"name": "expirate_time",
 									"type": "Number",
-									"description": "过期时间",
-									"required": true
+									"description": "过期时间"
 								},
 								{
 									"name": "open_time",
 									"type": "Number",
-									"description": "开始时间",
-									"required": true
+									"description": "开始时间"
 								},
 								{
 									"name": "image_url",
 									"type": "String",
-									"description": "图片地址",
-									"required": true
+									"description": "图片地址"
 								},
 								{
 									"name": "supplier_countrys",
 									"type": "String",
-									"description": "供应商国家",
-									"required": true
+									"description": "供应商国家"
 								},
 								{
-									"name": "annex_files",
-									"type": "RfqAnnexFileRemoteDto[]",
-									"description": "附件",
-									"required": true,
 									"subParams": [
 										{
 											"name": "file_name",
 											"type": "String",
-											"description": "文件名",
-											"required": true
+											"description": "文件名"
 										},
 										{
 											"name": "unique_file_name",
 											"type": "String",
-											"description": "唯一文件名",
-											"required": true
+											"description": "唯一文件名"
 										}
-									]
+									],
+									"name": "annex_files",
+									"type": "RfqAnnexFileRemoteDto[]",
+									"description": "附件"
 								},
 								{
 									"name": "unique_rfq_id",
 									"type": "String",
-									"description": "唯一加密RFQID",
-									"required": true
+									"description": "唯一加密RFQID"
 								}
-							]
+							],
+							"name": "request_list",
+							"type": "Requestlist[]",
+							"description": "RFQ列表"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
-							"name": "category_list",
-							"type": "Categorylist[]",
-							"description": "类目列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "category_id",
 									"type": "Number",
-									"description": "类目ID",
-									"required": true
+									"description": "类目ID"
 								},
 								{
 									"name": "category_name",
 									"type": "String",
-									"description": "类目名称",
-									"required": true
+									"description": "类目名称"
 								},
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								}
-							]
+							],
+							"name": "category_list",
+							"type": "Categorylist[]",
+							"description": "类目列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "RfqRequestSearchResultDto",
+					"description": "结果集"
 				},
 				{
 					"name": "error_type",
 					"type": "String",
-					"description": "错误类型",
-					"required": true
+					"description": "错误类型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RfqRemoteServiceResult",
+			"description": "返回信息结果集"
 		}
-	]
+	],
+	"name": "alibaba.icbu.rfq.search",
+	"apiChineseName": "查询RFQ",
+	"description": "用于查询RFQ的信息",
+	"id": 32084
 }

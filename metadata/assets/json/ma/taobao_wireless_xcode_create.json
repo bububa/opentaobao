@@ -1,8 +1,4 @@
 {
-	"id": 25425,
-	"name": "taobao.wireless.xcode.create",
-	"apiChineseName": "创建二维码/短连接",
-	"description": "创建码平台的普通二维码或者长连接转短连接服务",
 	"requestParams": [
 		{
 			"name": "biz_code",
@@ -16,9 +12,6 @@
 			"required": true
 		},
 		{
-			"name": "style",
-			"type": "QrCodeStyle",
-			"description": "普通二维码样式参数",
 			"subParams": [
 				{
 					"name": "bg_color",
@@ -50,14 +43,14 @@
 					"type": "Number",
 					"description": "可选参数，二维码大小，值60～600，默认185pix"
 				}
-			]
+			],
+			"name": "style",
+			"type": "QrCodeStyle",
+			"description": "普通二维码样式参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "xcode",
-			"type": "XCodeTo",
-			"description": "创建二维码/短连接 返回信息",
 			"subParams": [
 				{
 					"name": "img_url",
@@ -109,7 +102,14 @@
 					"type": "Date",
 					"description": "有效期结束时间，使用短链接跳转的，结束后不再可以访问"
 				}
-			]
+			],
+			"name": "xcode",
+			"type": "XCodeTo",
+			"description": "创建二维码/短连接 返回信息"
 		}
-	]
+	],
+	"name": "taobao.wireless.xcode.create",
+	"apiChineseName": "创建二维码/短连接",
+	"description": "创建码平台的普通二维码或者长连接转短连接服务",
+	"id": 25425
 }

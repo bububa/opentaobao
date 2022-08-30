@@ -20,6 +20,8 @@ type DrfTxdActivityBo struct {
 	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
 	// 商品池阶梯规则
 	StairRules string `json:"stair_rules,omitempty" xml:"stair_rules,omitempty"`
+	// 周期生效配置，weekdays：星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]；every_day_periods：每天的什么时间阶段搞活动,精确到秒单位,最多支持5段 例如:03:00:00_05:00:00，示例：{"weekdays":[1,2,3,4,5,6,7],"every_day_periods":["03:00:00_05:00:00","18:00:00_21:00:00"]}
+	PeriodConfig string `json:"period_config,omitempty" xml:"period_config,omitempty"`
 	// 封顶金额，单位：分
 	CellingAmount int64 `json:"celling_amount,omitempty" xml:"celling_amount,omitempty"`
 	// 是否多阶梯可叠加，0--否，1--是
@@ -64,4 +66,6 @@ type DrfTxdActivityBo struct {
 	IsCheckAllCond int64 `json:"is_check_all_cond,omitempty" xml:"is_check_all_cond,omitempty"`
 	// 淘鲜达活动Id
 	TxdActivityId int64 `json:"txd_activity_id,omitempty" xml:"txd_activity_id,omitempty"`
+	// 是否针对单个商品使用优惠
+	IsAlone int64 `json:"is_alone,omitempty" xml:"is_alone,omitempty"`
 }

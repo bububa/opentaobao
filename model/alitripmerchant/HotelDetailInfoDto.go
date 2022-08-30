@@ -6,14 +6,14 @@ import (
 
 // HotelDetailInfoDto 结构体
 type HotelDetailInfoDto struct {
+	// 酒店图片信息
+	HotelPictures []HotelPictureDto `json:"hotel_pictures,omitempty" xml:"hotel_pictures>hotel_picture_dto,omitempty"`
 	// 娱乐设施图片
 	FunFacilitys []string `json:"fun_facilitys,omitempty" xml:"fun_facilitys>string,omitempty"`
 	// 酒店设施
 	HotelFacilitys []string `json:"hotel_facilitys,omitempty" xml:"hotel_facilitys>string,omitempty"`
 	// 酒店服务
 	HotelServices []string `json:"hotel_services,omitempty" xml:"hotel_services>string,omitempty"`
-	// 酒店图片信息
-	HotelPictures []HotelPictureDto `json:"hotel_pictures,omitempty" xml:"hotel_pictures>hotel_picture_dto,omitempty"`
 	// 房型详情
 	RoomDetails []RoomDetailDto `json:"room_details,omitempty" xml:"room_details>room_detail_dto,omitempty"`
 	// 酒店政策

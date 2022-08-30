@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "阿里体育业务KEY"
+		},
+		{
+			"name": "sso_token",
+			"type": "String",
+			"description": "授权token，有效期2小时"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "avatar",
+							"type": "String",
+							"description": "头像"
+						},
+						{
+							"name": "nick",
+							"type": "String",
+							"description": "昵称"
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "openId"
+						}
+					],
+					"name": "alisp_data",
+					"type": "AuthAccountInfoDto",
+					"description": "数据对象"
+				},
+				{
+					"name": "alisp_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "alisp_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "AlispResult",
+			"description": "结果对象"
+		}
+	],
+	"name": "alibaba.alisports.passport.auth.accountinfo",
+	"apiChineseName": "授权账号信息",
+	"description": "获取体育用户OpenId\\nick\\avatar 三个信息",
+	"id": 58363
+}

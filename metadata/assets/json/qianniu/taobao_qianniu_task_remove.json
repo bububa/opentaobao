@@ -1,8 +1,4 @@
 {
-	"id": 23033,
-	"name": "taobao.qianniu.task.remove",
-	"apiChineseName": "轻任务删除接口",
-	"description": "轻任务删除接口。",
 	"requestParams": [
 		{
 			"name": "metadata_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.qianniu.task.remove",
+	"apiChineseName": "轻任务删除接口",
+	"description": "轻任务删除接口。",
+	"id": 23033
 }

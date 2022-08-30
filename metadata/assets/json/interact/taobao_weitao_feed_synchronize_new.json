@@ -1,8 +1,4 @@
 {
-	"id": 25696,
-	"name": "taobao.weitao.feed.synchronize.new",
-	"apiChineseName": "推广淘小铺isv 活动到微淘feed",
-	"description": "推广微淘互动应用活动到微淘",
 	"requestParams": [
 		{
 			"name": "feed_type",
@@ -60,16 +56,20 @@
 			"description": "增加错误信息"
 		},
 		{
-			"name": "result",
-			"type": "PushResult",
-			"description": "推送结果",
 			"subParams": [
 				{
 					"name": "feed_id",
 					"type": "String",
 					"description": "新广播ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PushResult",
+			"description": "推送结果"
 		}
-	]
+	],
+	"name": "taobao.weitao.feed.synchronize.new",
+	"apiChineseName": "推广淘小铺isv 活动到微淘feed",
+	"description": "推广微淘互动应用活动到微淘",
+	"id": 25696
 }

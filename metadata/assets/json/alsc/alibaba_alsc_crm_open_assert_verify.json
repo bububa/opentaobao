@@ -1,13 +1,6 @@
 {
-	"id": 50741,
-	"name": "alibaba.alsc.crm.open.assert.verify",
-	"apiChineseName": "资产核销接口",
-	"description": "核销储值，积分，券资产",
 	"requestParams": [
 		{
-			"name": "param_property_verify_open_req",
-			"type": "PropertyVerifyOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -79,80 +72,77 @@
 					"type": "String",
 					"description": "顾客id"
 				}
-			]
+			],
+			"name": "param_property_verify_open_req",
+			"type": "PropertyVerifyOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "result",
-					"type": "PropertyVerifyOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "point_success",
 							"type": "Boolean",
-							"description": "积分核销是否成功",
-							"required": true
+							"description": "积分核销是否成功"
 						},
 						{
 							"name": "value_success",
 							"type": "Boolean",
-							"description": "储值核销是否成功",
-							"required": true
+							"description": "储值核销是否成功"
 						},
 						{
-							"name": "voucher_status_list",
-							"type": "VoucherStatusInfo[]",
-							"description": "券码核销信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "success",
 									"type": "Boolean",
-									"description": "是否成功",
-									"required": true
+									"description": "是否成功"
 								},
 								{
 									"name": "voucher_id",
 									"type": "String",
-									"description": "券码",
-									"required": true
+									"description": "券码"
 								}
-							]
+							],
+							"name": "voucher_status_list",
+							"type": "VoucherStatusInfo[]",
+							"description": "券码核销信息"
 						}
-					]
+					],
+					"name": "result",
+					"type": "PropertyVerifyOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.assert.verify",
+	"apiChineseName": "资产核销接口",
+	"description": "核销储值，积分，券资产",
+	"id": 50741
 }

@@ -1,0 +1,140 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "ERP单号，sellerId下唯一单号",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "WMS单号"
+						},
+						{
+							"name": "erp_warehouse_code",
+							"type": "String",
+							"description": "ERP仓库编码,sellerId下唯一",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Number",
+							"description": "创建时间（时间戳）Long，必填",
+							"required": true
+						}
+					],
+					"name": "order",
+					"type": "Order",
+					"description": "单据信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "process_status",
+							"type": "String",
+							"description": "作业状态，ACCEPT(仓库接单)、PRINT(打印)、PICK(拣货)、CHECK(复核)、PACKAGE(打包)、CONFIRM(确认出库)\",  ACCEPT(仓库接单) \\CONFIRM(确认出库) 必填；其他条件必填；",
+							"required": true
+						},
+						{
+							"name": "operate_time",
+							"type": "Number",
+							"description": "操作时间（时间戳），必填",
+							"required": true
+						}
+					],
+					"name": "process",
+					"type": "Process",
+					"description": "单据作业信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "source_order_code",
+							"type": "String",
+							"description": "交易主单号，必填"
+						},
+						{
+							"name": "sub_source_order_code",
+							"type": "String",
+							"description": "交易子单号，必填"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品编码id，必填"
+						},
+						{
+							"name": "plan_qty",
+							"type": "Number",
+							"description": "应发货品数量，必填"
+						}
+					],
+					"name": "order_lines",
+					"type": "OrderLine[]",
+					"description": "(创建发货单)条件必填"
+				},
+				{
+					"name": "order_flag",
+					"type": "String",
+					"description": "订单标记 ，用字符串格式来表示订单标记列表"
+				}
+			],
+			"name": "order_process_report_request",
+			"type": "WmsOrderProcessReportRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId，类似于requestId"
+				}
+			],
+			"name": "order_process_report_response",
+			"type": "WmsOrderProcessReportResponse",
+			"description": "请求出参"
+		}
+	],
+	"name": "alibaba.dchain.isv.wms.orderprocess.report",
+	"apiChineseName": "仓作业信息同步",
+	"description": "仓作业信息同步",
+	"id": 63309
+}

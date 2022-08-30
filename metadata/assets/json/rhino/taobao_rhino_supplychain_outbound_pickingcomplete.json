@@ -1,14 +1,6 @@
 {
-	"id": 39533,
-	"name": "taobao.rhino.supplychain.outbound.pickingcomplete",
-	"apiChineseName": "【WMS005】接收成衣捡配完成通知",
-	"description": "接收成衣捡配完成通知,WMS005",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "PickingCompleteMsg",
-			"description": "捡配完成消息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "factory_id",
@@ -36,14 +28,8 @@
 					"description": "仓库编码"
 				},
 				{
-					"name": "waybills",
-					"type": "ClothingOutboundWaybill[]",
-					"description": "运货单信息package_infos",
 					"subParams": [
 						{
-							"name": "outbound_items",
-							"type": "ClothingSkuDto[]",
-							"description": "每个运货单sku明细items",
 							"subParams": [
 								{
 									"name": "amount",
@@ -65,7 +51,10 @@
 									"type": "String",
 									"description": "成衣rfid编码"
 								}
-							]
+							],
+							"name": "outbound_items",
+							"type": "ClothingSkuDto[]",
+							"description": "每个运货单sku明细items"
 						},
 						{
 							"name": "express_company",
@@ -77,14 +66,21 @@
 							"type": "String",
 							"description": "快递编号tms_order_code"
 						}
-					]
+					],
+					"name": "waybills",
+					"type": "ClothingOutboundWaybill[]",
+					"description": "运货单信息package_infos"
 				},
 				{
 					"name": "outbound_type",
 					"type": "Number",
 					"description": "出库单单据类型，1-正常出库2-手工出库"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "PickingCompleteMsg",
+			"description": "捡配完成消息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -103,5 +99,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.rhino.supplychain.outbound.pickingcomplete",
+	"apiChineseName": "【WMS005】接收成衣捡配完成通知",
+	"description": "接收成衣捡配完成通知,WMS005",
+	"id": 39533
 }

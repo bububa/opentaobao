@@ -1,8 +1,4 @@
 {
-	"id": 23842,
-	"name": "taobao.vmarket.eticket.store.get",
-	"apiChineseName": "获取电子凭证预约门店信息",
-	"description": "用于给外部商家查询电子凭证预约门店信息",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -52,5 +48,9 @@
 			"type": "String",
 			"description": "自有卖家导入门店的时候，可以把自己系统门店信息的主键或者唯一key传入，用于快速匹配"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.store.get",
+	"apiChineseName": "获取电子凭证预约门店信息",
+	"description": "用于给外部商家查询电子凭证预约门店信息",
+	"id": 23842
 }

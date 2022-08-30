@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "真实履约服务商Nick（非ERP系统不要填写）"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_sku_code",
+							"type": "String",
+							"description": "服务项"
+						}
+					],
+					"name": "values",
+					"type": "Value[]",
+					"description": "服务项"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.servicecenter.workcard.confirmedsku.query",
+	"apiChineseName": "查询确认履行的服务项",
+	"description": "查询确认履行的服务项",
+	"id": 58811
+}

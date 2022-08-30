@@ -1,8 +1,4 @@
 {
-	"id": 50074,
-	"name": "taobao.place.store.query",
-	"apiChineseName": "门店信息查询接口",
-	"description": "根据用户授权信息，获取用户的门店公开信息",
 	"requestParams": [
 		{
 			"name": "biz_code",
@@ -22,345 +18,294 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "failure",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
-					"name": "result",
-					"type": "FullStoreTopDto",
-					"description": "返回结果：true成功；false失败",
-					"required": true,
 					"subParams": [
 						{
-							"name": "biz_code",
-							"type": "String",
-							"description": "业务身份",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "门店名字",
-							"required": true
-						},
-						{
-							"name": "store_id",
+							"name": "authen_status",
 							"type": "Number",
-							"description": "门店ID",
-							"required": true
+							"description": "审核状态"
 						},
 						{
 							"name": "belong",
 							"type": "Number",
-							"description": "父级别门店id",
-							"required": true
+							"description": "父级别门店id"
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "业务身份"
 						},
 						{
 							"name": "biz_outer_id",
 							"type": "String",
-							"description": "业务外部id",
-							"required": true
+							"description": "业务外部id"
 						},
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "业务类型",
-							"required": true
-						},
-						{
-							"name": "subname",
-							"type": "String",
-							"description": "分店名",
-							"required": true
-						},
-						{
-							"name": "type",
-							"type": "Number",
-							"description": "门店类型",
-							"required": true
-						},
-						{
-							"name": "user_id",
-							"type": "Number",
-							"description": "门店的商家id",
-							"required": true
-						},
-						{
-							"name": "authen_status",
-							"type": "Number",
-							"description": "审核状态",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "company_name",
 							"type": "String",
-							"description": "门店所属商户名称",
-							"required": true
+							"description": "门店所属商户名称"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "门店描述",
-							"required": true
+							"description": "门店描述"
 						},
 						{
 							"name": "logo",
 							"type": "String",
-							"description": "门店LOGO",
-							"required": true
+							"description": "门店LOGO"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名字"
 						},
 						{
 							"name": "outer_code",
 							"type": "String",
-							"description": "门店外部编码",
-							"required": true
+							"description": "门店外部编码"
 						},
 						{
-							"name": "poi_info",
-							"type": "PoiInfoDto",
-							"description": "位置地址信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "address_alias",
 									"type": "String",
-									"description": "地址别名",
-									"required": true
+									"description": "地址别名"
 								},
 								{
 									"name": "address_en",
 									"type": "String",
-									"description": "英文地址",
-									"required": true
+									"description": "英文地址"
 								},
 								{
 									"name": "address_local",
 									"type": "String",
-									"description": "当地语言地址",
-									"required": true
+									"description": "当地语言地址"
 								},
 								{
 									"name": "bunk",
 									"type": "String",
-									"description": "铺位号",
-									"required": true
+									"description": "铺位号"
 								},
 								{
 									"name": "business_area",
 									"type": "String",
-									"description": "营业面积",
-									"required": true
+									"description": "营业面积"
 								},
 								{
 									"name": "city",
 									"type": "Number",
-									"description": "市",
-									"required": true
+									"description": "市"
 								},
 								{
 									"name": "city_int",
 									"type": "Number",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "city_name",
 									"type": "String",
-									"description": "市名",
-									"required": true
+									"description": "市名"
 								},
 								{
 									"name": "continent",
 									"type": "Number",
-									"description": "洲",
-									"required": true
+									"description": "洲"
 								},
 								{
 									"name": "continent_name",
 									"type": "String",
-									"description": "洲名",
-									"required": true
+									"description": "洲名"
 								},
 								{
 									"name": "country",
 									"type": "Number",
-									"description": "国家",
-									"required": true
+									"description": "国家"
 								},
 								{
 									"name": "country_name",
 									"type": "String",
-									"description": "国家名",
-									"required": true
+									"description": "国家名"
 								},
 								{
 									"name": "district",
 									"type": "Number",
-									"description": "区域",
-									"required": true
+									"description": "区域"
 								},
 								{
 									"name": "district_int",
 									"type": "Number",
-									"description": "区域",
-									"required": true
+									"description": "区域"
 								},
 								{
 									"name": "district_name",
 									"type": "String",
-									"description": "区域名",
-									"required": true
+									"description": "区域名"
 								},
 								{
 									"name": "division_type",
 									"type": "Number",
-									"description": "行政区code类型",
-									"required": true
+									"description": "行政区code类型"
 								},
 								{
 									"name": "floor",
 									"type": "String",
-									"description": "楼层",
-									"required": true
+									"description": "楼层"
 								},
 								{
 									"name": "full_address",
 									"type": "String",
-									"description": "楼层名",
-									"required": true
+									"description": "楼层名"
 								},
 								{
 									"name": "post_code",
 									"type": "String",
-									"description": "邮政编码",
-									"required": true
+									"description": "邮政编码"
 								},
 								{
 									"name": "posx",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "posy",
 									"type": "String",
-									"description": "纬度",
-									"required": true
+									"description": "纬度"
 								},
 								{
 									"name": "prov",
 									"type": "Number",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "prov_int",
 									"type": "Number",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "prov_name",
 									"type": "String",
-									"description": "省名",
-									"required": true
+									"description": "省名"
 								},
 								{
 									"name": "town",
 									"type": "Number",
-									"description": "街道",
-									"required": true
+									"description": "街道"
 								},
 								{
 									"name": "town_int",
 									"type": "Number",
-									"description": "街道",
-									"required": true
+									"description": "街道"
 								},
 								{
 									"name": "town_name",
 									"type": "String",
-									"description": "街道名",
-									"required": true
+									"description": "街道名"
 								}
-							]
+							],
+							"name": "poi_info",
+							"type": "PoiInfoDto",
+							"description": "位置地址信息"
 						},
 						{
 							"name": "shop_id",
 							"type": "Number",
-							"description": "店铺id",
-							"required": true
+							"description": "店铺id"
 						},
 						{
 							"name": "standard_category_id",
 							"type": "Number",
-							"description": "标准类目ID",
-							"required": true
+							"description": "标准类目ID"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "门店状态",
-							"required": true
+							"description": "门店状态"
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID"
 						},
 						{
 							"name": "store_type",
 							"type": "String",
-							"description": "门店类型",
-							"required": true
+							"description": "门店类型"
+						},
+						{
+							"name": "subname",
+							"type": "String",
+							"description": "分店名"
 						},
 						{
 							"name": "tags",
 							"type": "Number[]",
-							"description": "业务TAGS",
-							"required": true
+							"description": "业务TAGS"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "门店类型"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "门店的商家id"
 						},
 						{
 							"name": "pic",
 							"type": "String",
-							"description": "门店主图，仅存一张，tfs格式",
-							"required": true
+							"description": "门店主图，仅存一张，tfs格式"
 						}
-					]
+					],
+					"name": "result",
+					"type": "FullStoreTopDto",
+					"description": "返回结果：true成功；false失败"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "个数",
-					"required": true
+					"description": "个数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.place.store.query",
+	"apiChineseName": "门店信息查询接口",
+	"description": "根据用户授权信息，获取用户的门店公开信息",
+	"id": 50074
 }

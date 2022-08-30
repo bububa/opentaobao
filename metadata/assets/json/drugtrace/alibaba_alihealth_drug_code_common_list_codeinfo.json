@@ -1,8 +1,4 @@
 {
-	"id": 41299,
-	"name": "alibaba.alihealth.drug.code.common.list.codeinfo",
-	"apiChineseName": "通用查询码接口",
-	"description": "通用查询码接口",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -20,8 +16,8 @@
 			"name": "code_list",
 			"type": "String[]",
 			"description": "追溯码",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "cert_isv_no",
@@ -62,15 +58,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "最外层结果",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "CodeFullInfoDto[]",
-					"description": "内层大对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "msg_code",
@@ -85,10 +74,6 @@
 							"required": true
 						},
 						{
-							"name": "code_produce_info_d_t_o",
-							"type": "CodeProduceInfoDto",
-							"description": "码生产信息对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "produce_date",
@@ -115,10 +100,6 @@
 									"required": true
 								},
 								{
-									"name": "produce_info_list",
-									"type": "ProduceInfoDto[]",
-									"description": "生产信息集合",
-									"required": true,
 									"subParams": [
 										{
 											"name": "batch_no",
@@ -144,15 +125,19 @@
 											"description": "最小包装数量",
 											"required": true
 										}
-									]
+									],
+									"name": "produce_info_list",
+									"type": "ProduceInfoDto[]",
+									"description": "生产信息集合",
+									"required": true
 								}
-							]
+							],
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDto",
+							"description": "码生产信息对象",
+							"required": true
 						},
 						{
-							"name": "drug_ent_base_d_t_o",
-							"type": "DrugEntBaseDto",
-							"description": "药品基本信息对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "drug_ent_base_id",
@@ -250,13 +235,13 @@
 									"description": "药品详细类型",
 									"required": true
 								}
-							]
+							],
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDto",
+							"description": "药品基本信息对象",
+							"required": true
 						},
 						{
-							"name": "p_user_ent_d_t_o",
-							"type": "PUserEntDto",
-							"description": "企业信息对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "org_code",
@@ -288,13 +273,13 @@
 									"description": "企业id",
 									"required": true
 								}
-							]
+							],
+							"name": "p_user_ent_d_t_o",
+							"type": "PUserEntDto",
+							"description": "企业信息对象",
+							"required": true
 						},
 						{
-							"name": "code_status_type_d_t_o",
-							"type": "CodeStatusTypeDto",
-							"description": "追溯码状态对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "verification_type",
@@ -333,10 +318,6 @@
 									"required": true
 								},
 								{
-									"name": "parent_code_info_list",
-									"type": "ParentCodeInfo[]",
-									"description": "当前码的所有父码和packageLevel",
-									"required": true,
 									"subParams": [
 										{
 											"name": "package_level",
@@ -350,13 +331,13 @@
 											"description": "父码",
 											"required": true
 										}
-									]
+									],
+									"name": "parent_code_info_list",
+									"type": "ParentCodeInfo[]",
+									"description": "当前码的所有父码和packageLevel",
+									"required": true
 								},
 								{
-									"name": "child_codes",
-									"type": "Childcodes[]",
-									"description": "当前码的子码",
-									"required": true,
 									"subParams": [
 										{
 											"name": "pkg_level",
@@ -370,15 +351,19 @@
 											"description": "子码级别",
 											"required": true
 										}
-									]
+									],
+									"name": "child_codes",
+									"type": "Childcodes[]",
+									"description": "当前码的子码",
+									"required": true
 								}
-							]
+							],
+							"name": "code_status_type_d_t_o",
+							"type": "CodeStatusTypeDto",
+							"description": "追溯码状态对象",
+							"required": true
 						},
 						{
-							"name": "code_active_info_list_api_d_t_o",
-							"type": "CodeActiveInfoListApiDto",
-							"description": "码激活信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pkg_ratio",
@@ -386,7 +371,11 @@
 									"description": "包装比例",
 									"required": true
 								}
-							]
+							],
+							"name": "code_active_info_list_api_d_t_o",
+							"type": "CodeActiveInfoListApiDto",
+							"description": "码激活信息",
+							"required": true
 						},
 						{
 							"name": "code",
@@ -394,7 +383,11 @@
 							"description": "追溯码",
 							"required": true
 						}
-					]
+					],
+					"name": "models",
+					"type": "CodeFullInfoDto[]",
+					"description": "内层大对象",
+					"required": true
 				},
 				{
 					"name": "msg_code",
@@ -414,7 +407,14 @@
 					"description": "查询成功失败标记",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.code.common.list.codeinfo",
+	"apiChineseName": "通用查询码接口",
+	"description": "通用查询码接口",
+	"id": 41299
 }

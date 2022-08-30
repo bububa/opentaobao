@@ -1,0 +1,205 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "statuses",
+					"type": "String[]",
+					"description": "状态,online,offline,invalid"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "start_time_begin",
+					"type": "Date",
+					"description": "权益发放开始时间大于该值"
+				},
+				{
+					"name": "start_time_end",
+					"type": "Date",
+					"description": "权益发放开始时间小于该值"
+				},
+				{
+					"name": "end_time_end",
+					"type": "Date",
+					"description": "权益发放结束时间小于该值"
+				},
+				{
+					"name": "end_time_begin",
+					"type": "Date",
+					"description": "权益发放结束时间大于该值"
+				},
+				{
+					"name": "benefit_type",
+					"type": "String",
+					"description": "权益类型"
+				}
+			],
+			"name": "benefit_read_top_query",
+			"type": "BenefitReadTopQuery",
+			"description": "查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页记录数"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总记录数"
+						},
+						{
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "权益code"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "权益类型"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "权益名称"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "权益描述"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态,online,offline,invalid"
+								},
+								{
+									"name": "benefit_pool_id",
+									"type": "Number",
+									"description": "关联的权益池id"
+								},
+								{
+									"name": "start_date",
+									"type": "Date",
+									"description": "权益发放开始时间"
+								},
+								{
+									"name": "end_date",
+									"type": "Date",
+									"description": "权益发放结束时间"
+								},
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "权益库存总数，当sendMode是fixedAmount时表示总库存个数，当sendMode为dynamicAmount时表示库存总面额，单位为分"
+								},
+								{
+									"name": "bestow",
+									"type": "Number",
+									"description": "发放量，当sendMode是fixedAmount时表示已发放个数，当sendMode为dynamicAmount时表示已发放面额，单位为分"
+								},
+								{
+									"name": "total_num",
+									"type": "Number",
+									"description": "总个数，当sendMode为dynamicAmount时表示已发放面额，单位为分"
+								},
+								{
+									"name": "send_mode",
+									"type": "String",
+									"description": "发放模式,fixedAmount,dynamicAmount"
+								},
+								{
+									"name": "creator_user_name",
+									"type": "String",
+									"description": "创建者昵称"
+								},
+								{
+									"name": "modifier_user_name",
+									"type": "String",
+									"description": "修改者昵称"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "权益id"
+								},
+								{
+									"name": "feature",
+									"type": "String",
+									"description": "扩展字段"
+								}
+							],
+							"name": "data_list",
+							"type": "BenefitDto[]",
+							"description": "返回查询数据"
+						}
+					],
+					"name": "data",
+					"type": "Page",
+					"description": "返回查询结果"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.lafite.seller.benefit.list",
+	"apiChineseName": "商家自运营权益列表",
+	"description": "小程序isv可使用该接口获取权益列表",
+	"id": 57468
+}

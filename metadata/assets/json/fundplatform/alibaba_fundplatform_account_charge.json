@@ -1,8 +1,4 @@
 {
-	"id": 30278,
-	"name": "alibaba.fundplatform.account.charge",
-	"apiChineseName": "资金平台余额账户充值",
-	"description": "资金平台余额账户充值【创建账户\u0026返回付款URL】",
 	"requestParams": [
 		{
 			"name": "param_long",
@@ -11,9 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "param_charge_request",
-			"type": "ChargeRequest",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "amount",
@@ -33,18 +26,6 @@
 					"required": true
 				},
 				{
-					"name": "sub_biz_type",
-					"type": "Number",
-					"description": "业务类型,由资金平台分配,一般为9位数字",
-					"required": true
-				},
-				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "用户ID,两个userId请保持一致",
-					"required": true
-				},
-				{
 					"name": "payer_alipay_email",
 					"type": "String",
 					"description": "付款支付宝账户email",
@@ -55,55 +36,68 @@
 					"type": "String",
 					"description": "付款支付宝账户编码",
 					"required": true
+				},
+				{
+					"name": "sub_biz_type",
+					"type": "Number",
+					"description": "业务类型,由资金平台分配,一般为9位数字",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID,两个userId请保持一致",
+					"required": true
 				}
-			]
+			],
+			"name": "param_charge_request",
+			"type": "ChargeRequest",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSupport",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
-					"name": "module",
-					"type": "AccountChargeResponse",
-					"description": "出参对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "account_id",
 							"type": "Number",
-							"description": "充值的账户ID",
-							"required": true
+							"description": "充值的账户ID"
 						},
 						{
 							"name": "pay_url",
 							"type": "String",
-							"description": "充值URL",
-							"required": true
+							"description": "充值URL"
 						}
-					]
+					],
+					"name": "module",
+					"type": "AccountChargeResponse",
+					"description": "出参对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSupport",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.account.charge",
+	"apiChineseName": "资金平台余额账户充值",
+	"description": "资金平台余额账户充值【创建账户\u0026返回付款URL】",
+	"id": 30278
 }

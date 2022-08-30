@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"name": "channel",
+			"type": "Number",
+			"description": "渠道ID",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "推广码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "promoter_code",
+					"type": "String",
+					"description": "推广码"
+				},
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id"
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id"
+				},
+				{
+					"name": "task_name",
+					"type": "String",
+					"description": "任务名"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "transform_time",
+							"type": "Number",
+							"description": "新登时间"
+						}
+					],
+					"name": "transform_infos",
+					"type": "OfflineUserTransformInfo[]",
+					"description": "新登数据明细"
+				}
+			],
+			"name": "data",
+			"type": "OfflinePromoteInfo",
+			"description": "新登数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "successful",
+			"type": "String",
+			"description": "是否成功获取数据"
+		}
+	],
+	"name": "taobao.usergrowth.offline.newlogin.query",
+	"apiChineseName": "线下新登数据实时查询接口",
+	"description": "线下新登数据实时查询接口",
+	"id": 60791
+}

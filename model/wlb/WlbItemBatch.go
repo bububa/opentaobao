@@ -22,14 +22,6 @@ type WlbItemBatch struct {
 	Remarks string `json:"remarks,omitempty" xml:"remarks,omitempty"`
 	// 状态。item_batch_status_open:开放 item_batch_status_lock:冻结 item_batch_status_invalid:无效
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 创建者
-	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
-	// 最后修改者
-	LastModifier string `json:"last_modifier,omitempty" xml:"last_modifier,omitempty"`
-	// 创建时间
-	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 最后修改时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 商品批次记录id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 用户id
@@ -42,8 +34,4 @@ type WlbItemBatch struct {
 	DefectQuantity int64 `json:"defect_quantity,omitempty" xml:"defect_quantity,omitempty"`
 	// 天（单位）
 	GuaranteeUnit int64 `json:"guarantee_unit,omitempty" xml:"guarantee_unit,omitempty"`
-	// 版本
-	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
-	// 是否删除。0：正常 1：删除
-	IsDeleted bool `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 }

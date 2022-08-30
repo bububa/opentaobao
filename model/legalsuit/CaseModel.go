@@ -20,6 +20,8 @@ type CaseModel struct {
 	CourtFileList []FileModel `json:"court_file_list,omitempty" xml:"court_file_list>file_model,omitempty"`
 	// 起诉状附件
 	PleadingFileList []FileModel `json:"pleading_file_list,omitempty" xml:"pleading_file_list>file_model,omitempty"`
+	// 案件bu
+	BuLabels []LabelOption `json:"bu_labels,omitempty" xml:"bu_labels>label_option,omitempty"`
 	// 预立案号
 	PreCaseNumber string `json:"pre_case_number,omitempty" xml:"pre_case_number,omitempty"`
 	// 标签4
@@ -66,6 +68,10 @@ type CaseModel struct {
 	CaseDetailCode string `json:"case_detail_code,omitempty" xml:"case_detail_code,omitempty"`
 	// 案号
 	CaseNumber string `json:"case_number,omitempty" xml:"case_number,omitempty"`
+	// 案件编号
+	CaseCode string `json:"case_code,omitempty" xml:"case_code,omitempty"`
+	// 送达时间
+	SendTime string `json:"send_time,omitempty" xml:"send_time,omitempty"`
 	// 费用信息
 	SuitFee *SuitFeeModel `json:"suit_fee,omitempty" xml:"suit_fee,omitempty"`
 	// 收案信息
@@ -74,4 +80,6 @@ type CaseModel struct {
 	CourtModel *CourtModel `json:"court_model,omitempty" xml:"court_model,omitempty"`
 	// 案件id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 案件类型
+	CaseTypeLabel *LabelOption `json:"case_type_label,omitempty" xml:"case_type_label,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 54868,
-	"name": "alibaba.einvoice.tax.opt.esignresult.query",
-	"apiChineseName": "查询用户签约税优结果",
-	"description": "查询用户是否已经签约",
 	"requestParams": [
 		{
 			"name": "employer_code",
@@ -17,101 +13,90 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "AgreementInfoDto []",
-			"description": "查询结果",
 			"subParams": [
 				{
 					"name": "agreement_type",
 					"type": "String",
-					"description": "协议类型",
-					"required": true
+					"description": "协议类型"
 				},
 				{
 					"name": "asset_symbol",
 					"type": "String",
-					"description": "资产符号",
-					"required": true
+					"description": "资产符号"
 				},
 				{
 					"name": "employer_code",
 					"type": "String",
-					"description": "业务方编码",
-					"required": true
+					"description": "业务方编码"
 				},
 				{
 					"name": "sign_time",
 					"type": "String",
-					"description": "签约时间",
-					"required": true
+					"description": "签约时间"
 				},
 				{
 					"name": "agreement_url",
 					"type": "String",
-					"description": "合同链接",
-					"required": true
+					"description": "合同链接"
 				},
 				{
 					"name": "contractor_code",
 					"type": "String",
-					"description": "供应商编码",
-					"required": true
+					"description": "供应商编码"
 				},
 				{
 					"name": "contractor_name",
 					"type": "String",
-					"description": "供应商名称",
-					"required": true
+					"description": "供应商名称"
 				},
 				{
 					"name": "asset_type",
 					"type": "String",
-					"description": "资产类型",
-					"required": true
+					"description": "资产类型"
 				},
 				{
 					"name": "apply_dutiable_mode_enum",
 					"type": "String",
-					"description": "报税类型",
-					"required": true
+					"description": "报税类型"
 				},
 				{
 					"name": "pay_salary_mode_enum",
 					"type": "String",
-					"description": "发薪模式",
-					"required": true
+					"description": "发薪模式"
 				},
 				{
 					"name": "tax_optimization_mode",
 					"type": "String",
-					"description": "税优模式",
-					"required": true
+					"description": "税优模式"
 				},
 				{
 					"name": "termination_time",
 					"type": "String",
-					"description": "解约时间",
-					"required": true
+					"description": "解约时间"
 				},
 				{
 					"name": "identification_in_belonging_employer",
 					"type": "String",
-					"description": "用户在业务方平台的userid",
-					"required": true
+					"description": "用户在业务方平台的userid"
 				},
 				{
 					"name": "extend_field",
 					"type": "String",
-					"description": "扩展信息",
-					"required": true
+					"description": "扩展信息"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "签约状态",
-					"required": true
+					"description": "签约状态"
 				}
-			]
+			],
+			"name": "results",
+			"type": "AgreementInfoDto []",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.tax.opt.esignresult.query",
+	"apiChineseName": "查询用户签约税优结果",
+	"description": "查询用户是否已经签约",
+	"id": 54868
 }

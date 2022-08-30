@@ -1,8 +1,4 @@
 {
-	"id": 21683,
-	"name": "taobao.simba.keywordsbykeywordids.get",
-	"apiChineseName": "根据一个关键词Id列表取得一组关键词",
-	"description": "根据一个关键词Id列表取得一组关键词",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "Keyword []",
-			"description": "取得的关键词列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -97,7 +90,14 @@
 					"type": "Number",
 					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "取得的关键词列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywordsbykeywordids.get",
+	"apiChineseName": "根据一个关键词Id列表取得一组关键词",
+	"description": "根据一个关键词Id列表取得一组关键词",
+	"id": 21683
 }

@@ -1,8 +1,4 @@
 {
-	"id": 33967,
-	"name": "alibaba.einvoice.deduct.get",
-	"apiChineseName": "发票扣减的接口",
-	"description": "获取历史发票扣减量、每日发票扣减量的接口",
 	"requestParams": [
 		{
 			"name": "payee_register_no",
@@ -22,61 +18,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
-					"name": "result",
-					"type": "ResultSet",
-					"description": "result",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_date",
 							"type": "String",
-							"description": "业务日期",
-							"required": true
+							"description": "业务日期"
 						},
 						{
 							"name": "deduct",
 							"type": "Number",
-							"description": "实际扣减",
-							"required": true
+							"description": "实际扣减"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "应扣减",
-							"required": true
+							"description": "应扣减"
 						},
 						{
 							"name": "package_register_no",
 							"type": "String",
-							"description": "税号",
-							"required": true
+							"description": "税号"
 						}
-					]
+					],
+					"name": "result",
+					"type": "ResultSet",
+					"description": "result"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.deduct.get",
+	"apiChineseName": "发票扣减的接口",
+	"description": "获取历史发票扣减量、每日发票扣减量的接口",
+	"id": 33967
 }

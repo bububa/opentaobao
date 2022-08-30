@@ -1,8 +1,4 @@
 {
-	"id": 28602,
-	"name": "yunos.tvpubadmin.content.video.submitauditresult",
-	"apiChineseName": "迎客松提交视频审核结果",
-	"description": "迎客松提交视频审核结果",
 	"requestParams": [
 		{
 			"name": "license_audit_result",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.video.submitauditresult",
+	"apiChineseName": "迎客松提交视频审核结果",
+	"description": "迎客松提交视频审核结果",
+	"id": 28602
 }

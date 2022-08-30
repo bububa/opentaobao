@@ -1,8 +1,4 @@
 {
-	"id": 35502,
-	"name": "yunos.dm.sys.get.domain",
-	"apiChineseName": "获取动态域名",
-	"description": "返回alios ucp后端域名",
 	"requestParams": [
 		{
 			"name": "make",
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "obj"
 		}
-	]
+	],
+	"name": "yunos.dm.sys.get.domain",
+	"apiChineseName": "获取动态域名",
+	"description": "返回alios ucp后端域名",
+	"id": 35502
 }

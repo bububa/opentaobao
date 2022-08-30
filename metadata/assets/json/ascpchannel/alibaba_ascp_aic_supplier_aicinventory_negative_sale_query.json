@@ -1,28 +1,18 @@
 {
-	"id": 54003,
-	"name": "alibaba.ascp.aic.supplier.aicinventory.negative.sale.query",
-	"apiChineseName": "商家查询负卖库存",
-	"description": "商家根据当前接口查询负卖货品的库存",
 	"requestParams": [
 		{
-			"name": "aicinventory_query_request",
-			"type": "Aicinventoryqueryrequest",
-			"description": "库存查询参数",
 			"subParams": [
 				{
-					"name": "aicinventory_query_list",
-					"type": "Aicinventoryquerylist[]",
-					"description": "参数列表",
 					"subParams": [
 						{
 							"name": "store_code_list",
 							"type": "String[]",
-							"description": "仓列编码列表"
+							"description": "仓库编码列表，一般不用入参"
 						},
 						{
 							"name": "publish_order_nos",
 							"type": "String[]",
-							"description": "协议ID列表"
+							"description": "协议ID列表，一般不用入参"
 						},
 						{
 							"name": "source_user_id",
@@ -33,12 +23,12 @@
 						{
 							"name": "channel_code_list",
 							"type": "String[]",
-							"description": "销售渠道列表",
+							"description": "销售渠道列表不能用6500，已切换至1000",
 							"required": true
 						},
 						{
 							"name": "inventory_type_list",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "库存类型列表"
 						},
 						{
@@ -47,104 +37,105 @@
 							"description": "货品ID",
 							"required": true
 						}
-					]
+					],
+					"name": "aicinventory_query_list",
+					"type": "Aicinventoryquerylist[]",
+					"description": "参数列表"
 				}
-			]
+			],
+			"name": "aicinventory_query_request",
+			"type": "Aicinventoryqueryrequest",
+			"description": "库存查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "aicinventory_query_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Data[]",
-					"description": "系统自动生成",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sc_item_id",
 							"type": "Number",
-							"description": "货品id",
-							"required": true
+							"description": "货品id"
 						},
 						{
 							"name": "store_code",
 							"type": "String",
-							"description": "仓库编码",
-							"required": true
+							"description": "仓库编码"
 						},
 						{
 							"name": "source_user_id",
 							"type": "Number",
-							"description": "物流货主id",
-							"required": true
+							"description": "物流货主id"
 						},
 						{
 							"name": "inv_status",
 							"type": "Number",
-							"description": "有效状态",
-							"required": true
+							"description": "有效状态"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "可售总量",
-							"required": true
+							"description": "库存总量(前台)"
 						},
 						{
 							"name": "lock_quantity",
 							"type": "String",
-							"description": "占用量",
-							"required": true
+							"description": "占用量"
 						},
 						{
 							"name": "reserved_quantity",
 							"type": "String",
-							"description": "预留库存总量",
-							"required": true
+							"description": "预留库存总量"
 						},
 						{
 							"name": "reserved_lock_quantity",
 							"type": "String",
-							"description": "预留库存占用量",
-							"required": true
+							"description": "预留库存占用量"
 						},
 						{
 							"name": "publish_order_no",
 							"type": "String",
-							"description": "协议ID",
-							"required": true
+							"description": "协议ID=plan_id单据号"
 						},
 						{
 							"name": "trade_future_inv_id",
 							"type": "Number",
-							"description": "销售市场中的计划ID，考拉中发布单号=计划ID",
-							"required": true
+							"description": "ASCP销售市场中的计划ID，供应商不能用这个"
+						},
+						{
+							"name": "sellable_quantity",
+							"type": "String",
+							"description": "当前可售库存量(前台)"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data[]",
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "aicinventory_query_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.aic.supplier.aicinventory.negative.sale.query",
+	"apiChineseName": "商家查询负卖库存",
+	"description": "商家根据当前接口查询负卖货品的库存",
+	"id": 54003
 }

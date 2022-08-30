@@ -13,7 +13,7 @@ import (
 type TaobaoFeedflowItemCreativeDeleteAPIRequest struct {
 	model.Params
 	// 创意id列表
-	_creativeIdList []int64
+	_creativeIdList []string
 }
 
 // NewTaobaoFeedflowItemCreativeDeleteRequest 初始化TaobaoFeedflowItemCreativeDeleteAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoFeedflowItemCreativeDeleteAPIRequest) GetApiParams() url.Values {
 
 // SetCreativeIdList is CreativeIdList Setter
 // 创意id列表
-func (r *TaobaoFeedflowItemCreativeDeleteAPIRequest) SetCreativeIdList(_creativeIdList []int64) error {
+func (r *TaobaoFeedflowItemCreativeDeleteAPIRequest) SetCreativeIdList(_creativeIdList []string) error {
 	r._creativeIdList = _creativeIdList
 	r.Set("creative_id_list", _creativeIdList)
 	return nil
 }
 
 // GetCreativeIdList CreativeIdList Getter
-func (r TaobaoFeedflowItemCreativeDeleteAPIRequest) GetCreativeIdList() []int64 {
+func (r TaobaoFeedflowItemCreativeDeleteAPIRequest) GetCreativeIdList() []string {
 	return r._creativeIdList
 }

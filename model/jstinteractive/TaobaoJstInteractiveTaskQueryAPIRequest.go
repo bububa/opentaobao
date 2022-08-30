@@ -12,6 +12,10 @@ import (
 // 查询用户的互动任务列表
 type TaobaoJstInteractiveTaskQueryAPIRequest struct {
 	model.Params
+	// 小程序ID
+	_mcGwSourceMiniAppId string
+	// 小程序appkey
+	_mcGwSourceAppKey string
 }
 
 // NewTaobaoJstInteractiveTaskQueryRequest 初始化TaobaoJstInteractiveTaskQueryAPIRequest对象
@@ -33,4 +37,30 @@ func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetMcGwSourceMiniAppId is McGwSourceMiniAppId Setter
+// 小程序ID
+func (r *TaobaoJstInteractiveTaskQueryAPIRequest) SetMcGwSourceMiniAppId(_mcGwSourceMiniAppId string) error {
+	r._mcGwSourceMiniAppId = _mcGwSourceMiniAppId
+	r.Set("mc_gw_source_mini_app_id", _mcGwSourceMiniAppId)
+	return nil
+}
+
+// GetMcGwSourceMiniAppId McGwSourceMiniAppId Getter
+func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetMcGwSourceMiniAppId() string {
+	return r._mcGwSourceMiniAppId
+}
+
+// SetMcGwSourceAppKey is McGwSourceAppKey Setter
+// 小程序appkey
+func (r *TaobaoJstInteractiveTaskQueryAPIRequest) SetMcGwSourceAppKey(_mcGwSourceAppKey string) error {
+	r._mcGwSourceAppKey = _mcGwSourceAppKey
+	r.Set("mc_gw_source_app_key", _mcGwSourceAppKey)
+	return nil
+}
+
+// GetMcGwSourceAppKey McGwSourceAppKey Getter
+func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetMcGwSourceAppKey() string {
+	return r._mcGwSourceAppKey
 }

@@ -1,48 +1,45 @@
 {
-	"id": 53544,
-	"name": "taobao.opentrade.tools.items.unbind",
-	"apiChineseName": "交易开放商品解绑",
-	"description": "交易开放商品解绑",
 	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "Number[]",
+			"description": "商品id",
+			"maxListSize": 999,
+			"required": true
+		},
 		{
 			"name": "miniapp_id",
 			"type": "Number",
 			"description": "绑定交易开放场景的C端小程序ID",
 			"required": true
-		},
-		{
-			"name": "item_ids",
-			"type": "Number[]",
-			"description": "商品id",
-			"required": true,
-			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "ItemUnBindResult []",
-			"description": "解绑返回结构",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "解绑异常时的错误信息",
-					"required": true
+					"description": "解绑异常时的错误信息"
 				},
 				{
 					"name": "bind_ok",
 					"type": "Boolean",
-					"description": "是否解绑成功",
-					"required": true
+					"description": "是否解绑成功"
 				}
-			]
+			],
+			"name": "results",
+			"type": "ItemUnBindResult []",
+			"description": "解绑返回结构"
 		}
-	]
+	],
+	"name": "taobao.opentrade.tools.items.unbind",
+	"apiChineseName": "交易开放商品解绑",
+	"description": "交易开放商品解绑",
+	"id": 53544
 }

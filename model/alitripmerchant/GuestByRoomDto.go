@@ -3,7 +3,7 @@ package alitripmerchant
 // GuestByRoomDto 结构体
 type GuestByRoomDto struct {
 	// 儿童年龄数组
-	ChildAges []int64 `json:"child_ages,omitempty" xml:"child_ages>int64,omitempty"`
+	ChildAges []string `json:"child_ages,omitempty" xml:"child_ages>string,omitempty"`
 	// 入住人名
 	ContactFirstName string `json:"contact_first_name,omitempty" xml:"contact_first_name,omitempty"`
 	// 入住人姓

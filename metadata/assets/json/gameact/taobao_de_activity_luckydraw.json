@@ -1,8 +1,4 @@
 {
-	"id": 23053,
-	"name": "taobao.de.activity.luckydraw",
-	"apiChineseName": "抽奖",
-	"description": "用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等",
 	"requestParams": [
 		{
 			"name": "event_key",
@@ -65,9 +61,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "award_v_o",
-			"type": "AwardVO",
-			"description": "中奖奖品",
 			"subParams": [
 				{
 					"name": "award_id",
@@ -144,7 +137,10 @@
 					"type": "String",
 					"description": "分组描述"
 				}
-			]
+			],
+			"name": "award_v_o",
+			"type": "AwardVO",
+			"description": "中奖奖品"
 		},
 		{
 			"name": "is_lucky",
@@ -161,5 +157,9 @@
 			"type": "Number",
 			"description": "可用抽奖次数"
 		}
-	]
+	],
+	"name": "taobao.de.activity.luckydraw",
+	"apiChineseName": "抽奖",
+	"description": "用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等",
+	"id": 23053
 }

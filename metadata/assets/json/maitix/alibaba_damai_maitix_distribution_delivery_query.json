@@ -1,8 +1,4 @@
 {
-	"id": 47599,
-	"name": "alibaba.damai.maitix.distribution.delivery.query",
-	"apiChineseName": "查询分销物流单",
-	"description": "渠道查询物流订单",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -13,79 +9,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "model",
-					"type": "OpenApiDeliveryOrderDto",
-					"description": "订单内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "delivery_company_id",
 							"type": "Number",
-							"description": "快递公司ID",
-							"required": true
+							"description": "快递公司ID"
 						},
 						{
 							"name": "delivery_company_name",
 							"type": "String",
-							"description": "快递公司名称",
-							"required": true
+							"description": "快递公司名称"
 						},
 						{
 							"name": "sign_time",
 							"type": "Date",
-							"description": "签收时间",
-							"required": true
+							"description": "签收时间"
 						},
 						{
 							"name": "delivery_time",
 							"type": "Date",
-							"description": "发货时间",
-							"required": true
+							"description": "发货时间"
 						},
 						{
 							"name": "main_order_id",
 							"type": "String",
-							"description": "主订单号",
-							"required": true
+							"description": "主订单号"
 						},
 						{
 							"name": "delivery_status",
 							"type": "Number",
-							"description": "物流状态，1-发货，2-签收",
-							"required": true
+							"description": "物流状态，1-发货，2-签收"
 						},
 						{
 							"name": "waybill_no",
 							"type": "String",
-							"description": "物流单号",
-							"required": true
+							"description": "物流单号"
 						}
-					]
+					],
+					"name": "model",
+					"type": "OpenApiDeliveryOrderDto",
+					"description": "订单内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.distribution.delivery.query",
+	"apiChineseName": "查询分销物流单",
+	"description": "渠道查询物流订单",
+	"id": 47599
 }

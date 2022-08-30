@@ -1,8 +1,4 @@
 {
-	"id": 59,
-	"name": "taobao.areas.get",
-	"apiChineseName": "查询地址区域",
-	"description": "查询标准地址区域代码信息。可以直接参考最新的行政区域代码：\n\u003ca href=\"http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\" target=\"_blank\"\u003e http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\u003c/a\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -13,10 +9,12 @@
 	],
 	"responseParams": [
 		{
-			"name": "areas",
-			"type": "Area []",
-			"description": "地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。",
 			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "标准行政区域代码.参考:http://www.stats.gov.cn/tjbz/xzqhdm/t20120105_402777427.htm"
+				},
 				{
 					"name": "type",
 					"type": "Number",
@@ -36,13 +34,15 @@
 					"name": "zip",
 					"type": "String",
 					"description": "具体一个地区的邮编"
-				},
-				{
-					"name": "id",
-					"type": "Number",
-					"description": "标准行政区域代码.参考:http://www.stats.gov.cn/tjbz/xzqhdm/t20120105_402777427.htm"
 				}
-			]
+			],
+			"name": "areas",
+			"type": "Area []",
+			"description": "地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。"
 		}
-	]
+	],
+	"name": "taobao.areas.get",
+	"apiChineseName": "查询地址区域",
+	"description": "查询标准地址区域代码信息。可以直接参考最新的行政区域代码：\n\u003ca href=\"http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\" target=\"_blank\"\u003e http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\u003c/a\u003e",
+	"id": 59
 }

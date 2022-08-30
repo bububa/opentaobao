@@ -1,13 +1,6 @@
 {
-	"id": 50744,
-	"name": "alibaba.alsc.crm.open.customer.save",
-	"apiChineseName": "保存和更新顾客",
-	"description": "用来保存顾客，如果已经存在的话，则更新顾客",
 	"requestParams": [
 		{
-			"name": "param_customer_save_open_req",
-			"type": "CustomerSaveOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "birthday",
@@ -74,46 +67,48 @@
 					"description": "saas门店id",
 					"required": true
 				}
-			]
+			],
+			"name": "param_customer_save_open_req",
+			"type": "CustomerSaveOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "结果,顾客id",
-					"required": true
+					"description": "结果,顾客id"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果显示",
-					"required": true
+					"description": "结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.customer.save",
+	"apiChineseName": "保存和更新顾客",
+	"description": "用来保存顾客，如果已经存在的话，则更新顾客",
+	"id": 50744
 }

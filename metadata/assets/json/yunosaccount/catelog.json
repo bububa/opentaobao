@@ -1,5 +1,5 @@
 {
-  "id": 20790,
   "name": "Yunos Account API",
-  "pkg": "yunosaccount"
+  "pkg": "yunosaccount",
+  "id": 20790
 }

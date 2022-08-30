@@ -1,8 +1,4 @@
 {
-	"id": 26088,
-	"name": "taobao.alitrip.seller.refund.fillfee",
-	"apiChineseName": "机票代理商】回填手续费",
-	"description": "回填手续费",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.seller.refund.fillfee",
+	"apiChineseName": "机票代理商】回填手续费",
+	"description": "回填手续费",
+	"id": 26088
 }

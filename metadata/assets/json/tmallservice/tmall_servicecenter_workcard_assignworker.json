@@ -1,9 +1,10 @@
 {
-	"id": 46612,
-	"name": "tmall.servicecenter.workcard.assignworker",
-	"apiChineseName": "服务商分派工人",
-	"description": "服务商调用该接口分派工人给具体的工单",
 	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "核销单外部id"
+		},
 		{
 			"name": "target_worker_id",
 			"type": "Number",
@@ -25,11 +26,6 @@
 			"description": "需要指派的工人姓名"
 		},
 		{
-			"name": "outer_id",
-			"type": "String",
-			"description": "核销单外部id"
-		},
-		{
 			"name": "stop_order_type_check_reason",
 			"type": "Number",
 			"description": "不检查订单类型的原因ID由运营提供，服务商不可自由传"
@@ -47,35 +43,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "-",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "用于对外展示的信息",
-					"required": true
+					"description": "用于对外展示的信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息代码",
-					"required": true
+					"description": "消息代码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "系统级错误信息",
-					"required": true
+					"description": "系统级错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "-"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.assignworker",
+	"apiChineseName": "服务商分派工人",
+	"description": "服务商调用该接口分派工人给具体的工单",
+	"id": 46612
 }

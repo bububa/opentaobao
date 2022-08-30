@@ -1,62 +1,11 @@
 {
-	"id": 52622,
-	"name": "alibaba.idle.parttime.jobsync",
-	"apiChineseName": "兼职岗位同步",
-	"description": "服务商同步岗位信息给闲鱼",
 	"requestParams": [
 		{
-			"name": "job_list",
-			"type": "PartTimeJob[]",
-			"description": "岗位列表",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
 				{
-					"name": "location",
+					"name": "job_item_title",
 					"type": "String",
-					"description": "工作地点",
-					"required": true
-				},
-				{
-					"name": "royalties",
-					"type": "String",
-					"description": "津贴",
-					"required": true
-				},
-				{
-					"name": "pay_way",
-					"type": "String",
-					"description": "支付方式, 支付宝/微信/现金等",
-					"required": true
-				},
-				{
-					"name": "job_description",
-					"type": "String",
-					"description": "工作描述",
-					"required": true
-				},
-				{
-					"name": "recruit_count",
-					"type": "Number",
-					"description": "招聘人数",
-					"required": true
-				},
-				{
-					"name": "job_title",
-					"type": "String",
-					"description": "岗位名称: 该兼职岗位的名称",
-					"required": true
-				},
-				{
-					"name": "company",
-					"type": "String",
-					"description": "招聘公司",
-					"required": true
-				},
-				{
-					"name": "work_duration",
-					"type": "String",
-					"description": "工作时长",
+					"description": "商品标题: 职位在 Feed 流中展示的标题,",
 					"required": true
 				},
 				{
@@ -66,21 +15,63 @@
 					"required": true
 				},
 				{
-					"name": "work_time",
+					"name": "job_title",
 					"type": "String",
-					"description": "工作时间",
-					"required": true
-				},
-				{
-					"name": "job_item_title",
-					"type": "String",
-					"description": "商品标题: 职位在 Feed 流中展示的标题,",
+					"description": "岗位名称: 该兼职岗位的名称",
 					"required": true
 				},
 				{
 					"name": "salary",
 					"type": "String",
 					"description": "工资",
+					"required": true
+				},
+				{
+					"name": "pay_way",
+					"type": "String",
+					"description": "支付方式, 支付宝/微信/现金等",
+					"required": true
+				},
+				{
+					"name": "location",
+					"type": "String",
+					"description": "工作地点",
+					"required": true
+				},
+				{
+					"name": "recruit_count",
+					"type": "Number",
+					"description": "招聘人数",
+					"required": true
+				},
+				{
+					"name": "job_description",
+					"type": "String",
+					"description": "工作描述",
+					"required": true
+				},
+				{
+					"name": "royalties",
+					"type": "String",
+					"description": "津贴",
+					"required": true
+				},
+				{
+					"name": "work_duration",
+					"type": "String",
+					"description": "工作时长",
+					"required": true
+				},
+				{
+					"name": "work_time",
+					"type": "String",
+					"description": "工作时间",
+					"required": true
+				},
+				{
+					"name": "company",
+					"type": "String",
+					"description": "招聘公司",
 					"required": true
 				},
 				{
@@ -102,10 +93,6 @@
 					"required": true
 				},
 				{
-					"name": "job_requirements",
-					"type": "PartTimeRequireSchema[]",
-					"description": "岗位具体的要求和要求的类型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "description",
@@ -125,7 +112,11 @@
 							"description": "要求描述",
 							"required": true
 						}
-					]
+					],
+					"name": "job_requirements",
+					"type": "PartTimeRequireSchema[]",
+					"description": "岗位具体的要求和要求的类型",
+					"required": true
 				},
 				{
 					"name": "gps",
@@ -169,7 +160,12 @@
 					"description": "发布岗位的经纬度",
 					"required": true
 				}
-			]
+			],
+			"name": "job_list",
+			"type": "PartTimeJob[]",
+			"description": "岗位列表",
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "sync_time",
@@ -184,5 +180,9 @@
 			"type": "Boolean",
 			"description": "请求是否成功"
 		}
-	]
+	],
+	"name": "alibaba.idle.parttime.jobsync",
+	"apiChineseName": "兼职岗位同步",
+	"description": "服务商同步岗位信息给闲鱼",
+	"id": 52622
 }

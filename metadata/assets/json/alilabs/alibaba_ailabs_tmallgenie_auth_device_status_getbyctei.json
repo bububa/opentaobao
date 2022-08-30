@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "ctei",
+			"type": "String",
+			"description": "ctei"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "extensions",
+							"type": "String",
+							"description": "扩展返回，保留使用"
+						},
+						{
+							"name": "online_status",
+							"type": "String",
+							"description": "在线状态（0：离线，1：在线）"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid"
+						}
+					],
+					"name": "result",
+					"type": "DeviceStatusVO",
+					"description": "接口返回model"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "状态码（200：成功，其他：失败）"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口对象封装"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.status.getbyctei",
+	"apiChineseName": "根据ctei查询状态",
+	"description": "提供给电信查询设备在线状态值",
+	"id": 62507
+}

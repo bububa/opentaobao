@@ -1,14 +1,6 @@
 {
-	"id": 43687,
-	"name": "alibaba.lst.bm.store.add",
-	"apiChineseName": "导入品牌商自有门店",
-	"description": "导入品牌商自有门店",
 	"requestParams": [
 		{
-			"name": "open_store_dto",
-			"type": "LstTopOpenStoreDto",
-			"description": "门店数据模型",
-			"required": true,
 			"subParams": [
 				{
 					"name": "phone",
@@ -26,6 +18,11 @@
 					"name": "second_category",
 					"type": "String",
 					"description": "企业自定义的门店二级类别，最大长度512字符"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "企业自定义门店id，最大长度128字符"
 				},
 				{
 					"name": "primary_category",
@@ -76,13 +73,12 @@
 					"name": "town",
 					"type": "String",
 					"description": "区县内的街道"
-				},
-				{
-					"name": "store_id",
-					"type": "String",
-					"description": "企业自定义门店id，最大长度128字符"
 				}
-			]
+			],
+			"name": "open_store_dto",
+			"type": "LstTopOpenStoreDto",
+			"description": "门店数据模型",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -91,5 +87,9 @@
 			"type": "Boolean",
 			"description": "true表示执行成功，false表示执行失败"
 		}
-	]
+	],
+	"name": "alibaba.lst.bm.store.add",
+	"apiChineseName": "导入品牌商自有门店",
+	"description": "导入品牌商自有门店",
+	"id": 43687
 }

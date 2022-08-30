@@ -1,13 +1,6 @@
 {
-	"id": 42467,
-	"name": "taobao.idle.recycle.refund.returngoods",
-	"apiChineseName": "闲鱼回收退货V2",
-	"description": "回收商买家退货，填写退货运单号",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "RecycleReturnGoodsRequest",
-			"description": "退货",
 			"subParams": [
 				{
 					"name": "logistics_company_name",
@@ -33,60 +26,60 @@
 					"description": "卖家电话",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "RecycleReturnGoodsRequest",
+			"description": "退货"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "IdleTopResult",
-			"description": "退货",
 			"subParams": [
 				{
-					"name": "err_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "成功",
-					"required": true
-				},
-				{
-					"name": "module",
-					"type": "RefundBaseDto",
-					"description": "退货后状态",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "refund_status",
 							"type": "String",
-							"description": "退款状态",
-							"required": true
+							"description": "退款状态"
 						},
 						{
 							"name": "refund_status_desc",
 							"type": "String",
-							"description": "退货状态",
-							"required": true
+							"description": "退货状态"
 						}
-					]
+					],
+					"name": "module",
+					"type": "RefundBaseDto",
+					"description": "退货后状态"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "IdleTopResult",
+			"description": "退货"
 		}
-	]
+	],
+	"name": "taobao.idle.recycle.refund.returngoods",
+	"apiChineseName": "闲鱼回收退货V2",
+	"description": "回收商买家退货，填写退货运单号",
+	"id": 42467
 }

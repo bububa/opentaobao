@@ -1,8 +1,4 @@
 {
-	"id": 10719,
-	"name": "taobao.ump.activity.get",
-	"apiChineseName": "查询营销活动",
-	"description": "查询营销活动",
 	"requestParams": [
 		{
 			"name": "act_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "营销活动的内容，可以通过ump sdk中的marketingTool来完成对该内容的处理"
 		}
-	]
+	],
+	"name": "taobao.ump.activity.get",
+	"apiChineseName": "查询营销活动",
+	"description": "查询营销活动",
+	"id": 10719
 }

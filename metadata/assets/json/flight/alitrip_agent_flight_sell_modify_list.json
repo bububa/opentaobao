@@ -1,13 +1,6 @@
 {
-	"id": 54103,
-	"name": "alitrip.agent.flight.sell.modify.list",
-	"apiChineseName": "销售改签单列表",
-	"description": "销售改签单列表",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ModifyListRequestDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "agent_ids",
@@ -17,7 +10,7 @@
 				{
 					"name": "end_apply_time",
 					"type": "Date",
-					"description": "申请结束时间"
+					"description": "申请结束时间(提交申请结束时间，限制只能与起始时间相差一天)"
 				},
 				{
 					"name": "begin_apply_time",
@@ -32,74 +25,72 @@
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "改签单状态"
+					"description": "改签单状态:1:待回填费用或行程,2:待用户支付,3:待出票,4:已完成,5:已拒绝"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ModifyListRequestDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "123",
-					"required": true
+					"description": "123"
 				},
 				{
-					"name": "data_list",
-					"type": "T[]",
-					"description": "结果集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "String",
-							"description": "申请单号",
-							"required": true
+							"description": "申请单号"
 						},
 						{
 							"name": "domestic_intl",
 							"type": "Number",
-							"description": "国内国际标识",
-							"required": true
+							"description": "国内国际标识(1:国内,2:国际)"
 						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "飞猪订单号",
-							"required": true
+							"description": "飞猪订单号"
 						},
 						{
 							"name": "apply_time",
 							"type": "Date",
-							"description": "申请时间",
-							"required": true
+							"description": "申请时间"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "T[]",
+					"description": "结果集"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageDto",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.modify.list",
+	"apiChineseName": "销售改签单列表",
+	"description": "销售改签单列表",
+	"id": 54103
 }

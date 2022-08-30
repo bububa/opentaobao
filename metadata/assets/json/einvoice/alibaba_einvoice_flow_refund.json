@@ -1,20 +1,7 @@
 {
-	"id": 56198,
-	"name": "alibaba.einvoice.flow.refund",
-	"apiChineseName": "退订工单(入驻、加盘、续约)",
-	"description": "电子发票工单系统，工单退订能力开放",
 	"requestParams": [
 		{
-			"name": "invoice_flow_refund",
-			"type": "InvoiceFlowRefundDto",
-			"description": "退订请求参数",
-			"required": true,
 			"subParams": [
-				{
-					"name": "remark",
-					"type": "String",
-					"description": "退款备注信息"
-				},
 				{
 					"name": "flow_id",
 					"type": "String",
@@ -26,23 +13,35 @@
 					"type": "String",
 					"description": "业务平台码",
 					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "退款备注信息"
 				}
-			]
+			],
+			"name": "invoice_flow_refund",
+			"type": "InvoiceFlowRefundDto",
+			"description": "退订请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "返回参数",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回参数"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.flow.refund",
+	"apiChineseName": "退订工单(入驻、加盘、续约)",
+	"description": "电子发票工单系统，工单退订能力开放",
+	"id": 56198
 }

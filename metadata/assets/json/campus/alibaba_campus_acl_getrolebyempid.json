@@ -1,8 +1,4 @@
 {
-	"id": 32239,
-	"name": "alibaba.campus.acl.getrolebyempid",
-	"apiChineseName": "根据用户查询角色",
-	"description": "根据用户查询角色",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -31,61 +27,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CollectionResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "RoleVo[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "role_id",
 							"type": "String",
-							"description": "角色id",
-							"required": true
+							"description": "角色id"
 						},
 						{
 							"name": "role_name",
 							"type": "String",
-							"description": "角色名称",
-							"required": true
+							"description": "角色名称"
 						},
 						{
 							"name": "role_type",
 							"type": "String",
-							"description": "角色类型(admin代表人员类型,device代表设备类型的角色)",
-							"required": true
+							"description": "角色类型(admin代表人员类型,device代表设备类型的角色)"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "RoleVo[]",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "接口错误描述",
-					"required": true
+					"description": "接口错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.getrolebyempid",
+	"apiChineseName": "根据用户查询角色",
+	"description": "根据用户查询角色",
+	"id": 32239
 }

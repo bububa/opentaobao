@@ -1,14 +1,6 @@
 {
-	"id": 53921,
-	"name": "taobao.jst.interactive.assets.config",
-	"apiChineseName": "任务素材配置接口",
-	"description": "任务素材配置接口",
 	"requestParams": [
 		{
-			"name": "assets_config_list",
-			"type": "AssetsConfig[]",
-			"description": "[]",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "accept_btn",
@@ -68,7 +60,11 @@
 					"type": "Number",
 					"description": "直播间id，必须为授权店铺的直播间，配置直播观看任务时必填"
 				}
-			]
+			],
+			"name": "assets_config_list",
+			"type": "AssetsConfig[]",
+			"description": "[]",
+			"maxListSize": 999
 		},
 		{
 			"name": "mini_app_id",
@@ -83,5 +79,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.assets.config",
+	"apiChineseName": "任务素材配置接口",
+	"description": "任务素材配置接口",
+	"id": 53921
 }

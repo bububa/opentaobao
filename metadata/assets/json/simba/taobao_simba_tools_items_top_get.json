@@ -1,8 +1,4 @@
 {
-	"id": 10529,
-	"name": "taobao.simba.tools.items.top.get",
-	"apiChineseName": "取得一个关键词的推广组排名列表",
-	"description": "取得一个关键词的推广组排名列表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "rankeditems",
-			"type": "RankedItem []",
-			"description": "推广组信息列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -40,7 +33,7 @@
 				},
 				{
 					"name": "max_price",
-					"type": "Price",
+					"type": "String",
 					"description": "最高出价"
 				},
 				{
@@ -58,7 +51,14 @@
 					"type": "Number",
 					"description": "原始质量评分"
 				}
-			]
+			],
+			"name": "rankeditems",
+			"type": "RankedItem []",
+			"description": "推广组信息列表"
 		}
-	]
+	],
+	"name": "taobao.simba.tools.items.top.get",
+	"apiChineseName": "取得一个关键词的推广组排名列表",
+	"description": "取得一个关键词的推广组排名列表",
+	"id": 10529
 }

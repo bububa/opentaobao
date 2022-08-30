@@ -8,18 +8,18 @@ type Picture struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 图片相素,格式:长x宽，如450x150
 	Pixel string `json:"pixel,omitempty" xml:"pixel,omitempty"`
-	// 图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过
+	// 图片状态,0 未审核没冻结 1  冻结 2 审核通过
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 图片是否删除的标记
 	Deleted string `json:"deleted,omitempty" xml:"deleted,omitempty"`
+	// 图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布
+	ClientType string `json:"client_type,omitempty" xml:"client_type,omitempty"`
 	// 图片的创建时间
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 图片的修改时间
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// 图片在后台处理之后的md5值当md5值为32位长度的字符串时为图片搬家后的文件md5验证码md5值为长整数时为图片替换后的时间戳
 	Md5 string `json:"md5,omitempty" xml:"md5,omitempty"`
-	// 图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布
-	ClientType string `json:"client_type,omitempty" xml:"client_type,omitempty"`
 	// 图片ID
 	PictureId int64 `json:"picture_id,omitempty" xml:"picture_id,omitempty"`
 	// 图片分类ID

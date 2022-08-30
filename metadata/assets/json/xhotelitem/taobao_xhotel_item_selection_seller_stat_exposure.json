@@ -1,8 +1,4 @@
 {
-	"id": 48476,
-	"name": "taobao.xhotel.item.selection.seller.stat.exposure",
-	"apiChineseName": "选品曝光趋势",
-	"description": "用于提供给商家获取选品曝光趋势",
 	"requestParams": [
 		{
 			"name": "date",
@@ -32,69 +28,64 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "module",
-					"type": "Module",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "seller_stat_exposure_element_list",
-							"type": "SellerStatExposureElementList[]",
-							"description": "返回结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "stat_date",
 									"type": "String",
-									"description": "日期",
-									"required": true
+									"description": "日期"
 								},
 								{
 									"name": "exposed_percent",
 									"type": "String",
-									"description": "曝光率",
-									"required": true
+									"description": "曝光率"
 								},
 								{
 									"name": "shid_total_amount",
 									"type": "String",
-									"description": "shid维度访问量",
-									"required": true
+									"description": "shid维度访问量"
 								},
 								{
 									"name": "exposed_amount",
 									"type": "String",
-									"description": "对应商品曝光数量",
-									"required": true
+									"description": "对应商品曝光数量"
 								}
-							]
+							],
+							"name": "seller_stat_exposure_element_list",
+							"type": "SellerStatExposureElementList[]",
+							"description": "返回结果"
 						}
-					]
+					],
+					"name": "module",
+					"type": "Module",
+					"description": "返回结果"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "接口信息",
-					"required": true
+					"description": "接口信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.xhotel.item.selection.seller.stat.exposure",
+	"apiChineseName": "选品曝光趋势",
+	"description": "用于提供给商家获取选品曝光趋势",
+	"id": 48476
 }

@@ -1,8 +1,4 @@
 {
-	"id": 31282,
-	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor",
-	"apiChineseName": "容器被预分拣器分配到悬挂链",
-	"description": "容器被预分拣器分配到悬挂链",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -17,91 +13,82 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopWcsResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "service_error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "service_error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
-					"name": "list",
-					"type": "WcsContainerAssignedToConveyorDto[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "warehouse_code",
 							"type": "String",
-							"description": "warehouseCode",
-							"required": true
+							"description": "warehouseCode"
 						},
 						{
 							"name": "warehouse_id",
 							"type": "Number",
-							"description": "warehouseId",
-							"required": true
+							"description": "warehouseId"
 						},
 						{
 							"name": "batch_code",
 							"type": "String",
-							"description": "batchCode",
-							"required": true
+							"description": "batchCode"
 						},
 						{
 							"name": "container_code",
 							"type": "String",
-							"description": "containerCode",
-							"required": true
+							"description": "containerCode"
 						},
 						{
 							"name": "wave_code",
 							"type": "String",
-							"description": "waveCode",
-							"required": true
+							"description": "waveCode"
 						},
 						{
 							"name": "conveyor_id",
 							"type": "Number",
-							"description": "conveyorId",
-							"required": true
+							"description": "conveyorId"
 						},
 						{
 							"name": "conveyor_assigned_time",
 							"type": "String",
-							"description": "conveyorAssignedTime",
-							"required": true
+							"description": "conveyorAssignedTime"
 						},
 						{
 							"name": "assigned_conveyor",
 							"type": "Number",
-							"description": "assignedConveyor",
-							"required": true
+							"description": "assignedConveyor"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						}
-					]
+					],
+					"name": "list",
+					"type": "WcsContainerAssignedToConveyorDto[]",
+					"description": "list"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopWcsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor",
+	"apiChineseName": "容器被预分拣器分配到悬挂链",
+	"description": "容器被预分拣器分配到悬挂链",
+	"id": 31282
 }

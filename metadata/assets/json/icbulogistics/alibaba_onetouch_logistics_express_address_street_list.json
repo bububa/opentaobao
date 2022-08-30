@@ -1,14 +1,6 @@
 {
-	"id": 47978,
-	"name": "alibaba.onetouch.logistics.express.address.street.list",
-	"apiChineseName": "四级地址库-街道",
-	"description": "四级地址库-街道模糊查询",
 	"requestParams": [
 		{
-			"name": "param_query",
-			"type": "AddressQueryDto",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "search_text",
@@ -16,54 +8,56 @@
 					"description": "查询关键词",
 					"required": true
 				}
-			]
+			],
+			"name": "param_query",
+			"type": "AddressQueryDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "返回结果描述",
-					"required": true
+					"description": "返回结果描述"
 				},
 				{
-					"name": "values",
-					"type": "RegionEntity[]",
-					"description": "列表对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "zip",
 							"type": "String",
-							"description": "邮编",
-							"required": true
+							"description": "邮编"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "地址",
-							"required": true
+							"description": "地址"
 						}
-					]
+					],
+					"name": "values",
+					"type": "RegionEntity[]",
+					"description": "列表对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "返回结果编码",
-					"required": true
+					"description": "返回结果编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.onetouch.logistics.express.address.street.list",
+	"apiChineseName": "四级地址库-街道",
+	"description": "四级地址库-街道模糊查询",
+	"id": 47978
 }

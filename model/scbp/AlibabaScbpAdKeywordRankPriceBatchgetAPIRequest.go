@@ -12,10 +12,10 @@ import (
 // 外贸直通车关键词前五名批量排价
 type AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest struct {
 	model.Params
-	// 上下文
-	_context *ContextDto
 	// keyword_request
 	_keywordRequest *TopKeywordListDto
+	// 上下文
+	_context *ContextDto
 }
 
 // NewAlibabaScbpAdKeywordRankPriceBatchgetRequest 初始化AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetApiParams() url.Valu
 	return params
 }
 
-// SetContext is Context Setter
-// 上下文
-func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetContext(_context *ContextDto) error {
-	r._context = _context
-	r.Set("context", _context)
-	return nil
-}
-
-// GetContext Context Getter
-func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetContext() *ContextDto {
-	return r._context
-}
-
 // SetKeywordRequest is KeywordRequest Setter
 // keyword_request
 func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetKeywordRequest(_keywordRequest *TopKeywordListDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetKeywordRequest(_key
 // GetKeywordRequest KeywordRequest Getter
 func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetKeywordRequest() *TopKeywordListDto {
 	return r._keywordRequest
+}
+
+// SetContext is Context Setter
+// 上下文
+func (r *AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) SetContext(_context *ContextDto) error {
+	r._context = _context
+	r.Set("context", _context)
+	return nil
+}
+
+// GetContext Context Getter
+func (r AlibabaScbpAdKeywordRankPriceBatchgetAPIRequest) GetContext() *ContextDto {
+	return r._context
 }

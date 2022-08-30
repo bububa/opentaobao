@@ -1,15 +1,11 @@
 {
-	"id": 41995,
-	"name": "alibaba.wdk.marketing.open.data.relation.query",
-	"apiChineseName": "数据关联关系查询",
-	"description": "数据关联关系查询",
 	"requestParams": [
 		{
 			"name": "out_data_ids",
 			"type": "String[]",
 			"description": "外部数据Id",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "biz_code",
@@ -26,55 +22,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "结果信息",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "OutTxdDataRelation[]",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_biz_code",
 							"type": "String",
-							"description": "子数据类型",
-							"required": true
+							"description": "子数据类型"
 						},
 						{
 							"name": "biz_code",
 							"type": "String",
-							"description": "数据类型",
-							"required": true
+							"description": "数据类型"
 						},
 						{
 							"name": "out_data_id",
 							"type": "String",
-							"description": "外部数据Id",
-							"required": true
+							"description": "外部数据Id"
 						},
 						{
 							"name": "txd_data_id",
 							"type": "String",
-							"description": "淘鲜达数据Id",
-							"required": true
+							"description": "淘鲜达数据Id"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "OutTxdDataRelation[]",
+					"description": "结果数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.data.relation.query",
+	"apiChineseName": "数据关联关系查询",
+	"description": "数据关联关系查询",
+	"id": 41995
 }

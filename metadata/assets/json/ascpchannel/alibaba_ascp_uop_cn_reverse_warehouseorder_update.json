@@ -1,8 +1,4 @@
 {
-	"id": 50190,
-	"name": "alibaba.ascp.uop.cn.reverse.warehouseorder.update",
-	"apiChineseName": "供应链中台逆向入库单修改服务",
-	"description": "供应链中台逆向入库单修改服务",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -25,29 +21,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "update_reverse_warehouse_order_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "update_reverse_warehouse_order_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.cn.reverse.warehouseorder.update",
+	"apiChineseName": "供应链中台逆向入库单修改服务",
+	"description": "供应链中台逆向入库单修改服务",
+	"id": 50190
 }

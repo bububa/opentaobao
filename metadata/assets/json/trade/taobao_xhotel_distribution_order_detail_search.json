@@ -1,8 +1,4 @@
 {
-	"id": 48653,
-	"name": "taobao.xhotel.distribution.order.detail.search",
-	"apiChineseName": "分销渠道订单详情查询",
-	"description": "该接口用于提供酒店分销渠道的订单详情查询",
 	"requestParams": [
 		{
 			"name": "distribution_oid",
@@ -32,167 +28,145 @@
 			"description": "错误描述"
 		},
 		{
-			"name": "top_distribution_order_detail",
-			"type": "TopDistributionOrderDetail",
-			"description": "订单详情对象",
 			"subParams": [
 				{
 					"name": "buyer_nick",
 					"type": "String",
-					"description": "买家昵称",
-					"required": true
+					"description": "买家昵称"
 				},
 				{
 					"name": "order_status_desc",
 					"type": "String",
-					"description": "订单状态",
-					"required": true
+					"description": "订单状态"
 				},
 				{
 					"name": "rid",
 					"type": "Number",
-					"description": "房型id",
-					"required": true
+					"description": "房型id"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "订单类型id",
-					"required": true
+					"description": "订单类型id"
 				},
 				{
 					"name": "payment",
 					"type": "Number",
-					"description": "付款金额",
-					"required": true
+					"description": "付款金额"
 				},
 				{
 					"name": "room_type_name",
 					"type": "String",
-					"description": "房型名称",
-					"required": true
+					"description": "房型名称"
 				},
 				{
 					"name": "checkout_date",
 					"type": "Date",
-					"description": "离店日期",
-					"required": true
+					"description": "离店日期"
 				},
 				{
 					"name": "total_room_price",
 					"type": "Number",
-					"description": "总房费",
-					"required": true
+					"description": "总房费"
 				},
 				{
 					"name": "rp_name",
 					"type": "String",
-					"description": "rp名称",
-					"required": true
+					"description": "rp名称"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "订单更新时间",
-					"required": true
+					"description": "订单更新时间"
 				},
 				{
 					"name": "type_name",
 					"type": "String",
-					"description": "订单类型名称",
-					"required": true
+					"description": "订单类型名称"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "卖家昵称",
-					"required": true
+					"description": "卖家昵称"
 				},
 				{
 					"name": "hotel_name",
 					"type": "String",
-					"description": "酒店名称",
-					"required": true
+					"description": "酒店名称"
 				},
 				{
 					"name": "order_status_code",
 					"type": "Number",
-					"description": "订单状态Code",
-					"required": true
+					"description": "订单状态Code"
 				},
 				{
 					"name": "hid",
 					"type": "Number",
-					"description": "酒店hid",
-					"required": true
+					"description": "酒店hid"
 				},
 				{
 					"name": "pay_time",
 					"type": "Date",
-					"description": "支付时间",
-					"required": true
+					"description": "支付时间"
 				},
 				{
 					"name": "checkin_date",
 					"type": "Date",
-					"description": "入住时间",
-					"required": true
+					"description": "入住时间"
 				},
 				{
 					"name": "tid",
 					"type": "Number",
-					"description": "飞猪订单号",
-					"required": true
+					"description": "飞猪订单号"
 				},
 				{
 					"name": "contact_name",
 					"type": "String",
-					"description": "买家姓名",
-					"required": true
+					"description": "买家姓名"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "订单创建时间",
-					"required": true
+					"description": "订单创建时间"
 				},
 				{
 					"name": "room_number",
 					"type": "Number",
-					"description": "房间数",
-					"required": true
+					"description": "房间数"
 				},
 				{
 					"name": "rpid",
 					"type": "Number",
-					"description": "价格计划ID",
-					"required": true
+					"description": "价格计划ID"
 				},
 				{
 					"name": "nights",
 					"type": "Number",
-					"description": "间夜",
-					"required": true
+					"description": "间夜"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				},
 				{
 					"name": "dis_oid",
 					"type": "String",
-					"description": "分销渠道外部订单号",
-					"required": true
+					"description": "分销渠道外部订单号"
 				},
 				{
 					"name": "multi_tids",
 					"type": "String",
-					"description": "飞猪拆单订单（当一次下单定多间房的时候会出现这种情况）",
-					"required": true
+					"description": "飞猪拆单订单（当一次下单定多间房的时候会出现这种情况）"
 				}
-			]
+			],
+			"name": "top_distribution_order_detail",
+			"type": "TopDistributionOrderDetail",
+			"description": "订单详情对象"
 		}
-	]
+	],
+	"name": "taobao.xhotel.distribution.order.detail.search",
+	"apiChineseName": "分销渠道订单详情查询",
+	"description": "该接口用于提供酒店分销渠道的订单详情查询",
+	"id": 48653
 }

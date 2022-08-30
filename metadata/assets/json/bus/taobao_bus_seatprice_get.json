@@ -1,14 +1,6 @@
 {
-	"id": 27559,
-	"name": "taobao.bus.seatprice.get",
-	"apiChineseName": "汽车票余票接口",
-	"description": "提供给商家，查询汽车票班次余票",
 	"requestParams": [
 		{
-			"name": "param_bus_seat_price_r_q",
-			"type": "BusSeatPriceRq",
-			"description": "余票请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "schedule_id",
@@ -16,90 +8,86 @@
 					"description": "车次ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_bus_seat_price_r_q",
+			"type": "BusSeatPriceRq",
+			"description": "余票请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
-					"name": "module",
-					"type": "B2BBusSeatPriceDto",
-					"description": "余票对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "dep_city_name",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "dep_time",
 							"type": "String",
-							"description": "出发时间",
-							"required": true
+							"description": "出发时间"
 						},
 						{
 							"name": "full_price",
 							"type": "Number",
-							"description": "车次全价",
-							"required": true
+							"description": "车次全价"
 						},
 						{
 							"name": "last_place_name",
 							"type": "String",
-							"description": "目的地",
-							"required": true
+							"description": "目的地"
 						},
 						{
 							"name": "schedule_id",
 							"type": "String",
-							"description": "车次ID",
-							"required": true
+							"description": "车次ID"
 						},
 						{
 							"name": "stock",
 							"type": "Number",
-							"description": "余票数量",
-							"required": true
+							"description": "余票数量"
 						},
 						{
 							"name": "service_price",
 							"type": "Number",
-							"description": "服务费",
-							"required": true
+							"description": "服务费"
 						}
-					]
+					],
+					"name": "module",
+					"type": "B2BBusSeatPriceDto",
+					"description": "余票对象"
 				},
 				{
 					"name": "server_i_p",
 					"type": "String",
-					"description": "serverIP",
-					"required": true
+					"description": "serverIP"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否查询成功",
-					"required": true
+					"description": "是否查询成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.bus.seatprice.get",
+	"apiChineseName": "汽车票余票接口",
+	"description": "提供给商家，查询汽车票班次余票",
+	"id": 27559
 }

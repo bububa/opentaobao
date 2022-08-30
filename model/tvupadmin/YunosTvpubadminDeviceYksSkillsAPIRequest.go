@@ -12,6 +12,8 @@ import (
 // 根据设备id获取技能列表
 type YunosTvpubadminDeviceYksSkillsAPIRequest struct {
 	model.Params
+	// 技能id
+	_skillId int64
 	// 设备id
 	_botId int64
 	// 1234
@@ -20,8 +22,6 @@ type YunosTvpubadminDeviceYksSkillsAPIRequest struct {
 	_pageIndex int64
 	// 分页单位
 	_pageSize int64
-	// 技能id
-	_skillId int64
 }
 
 // NewYunosTvpubadminDeviceYksSkillsRequest 初始化YunosTvpubadminDeviceYksSkillsAPIRequest对象
@@ -43,6 +43,19 @@ func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSkillId is SkillId Setter
+// 技能id
+func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) error {
+	r._skillId = _skillId
+	r.Set("skill_id", _skillId)
+	return nil
+}
+
+// GetSkillId SkillId Getter
+func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetSkillId() int64 {
+	return r._skillId
 }
 
 // SetBotId is BotId Setter
@@ -95,17 +108,4 @@ func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetPageSize(_pageSize int64) 
 // GetPageSize PageSize Getter
 func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetSkillId is SkillId Setter
-// 技能id
-func (r *YunosTvpubadminDeviceYksSkillsAPIRequest) SetSkillId(_skillId int64) error {
-	r._skillId = _skillId
-	r.Set("skill_id", _skillId)
-	return nil
-}
-
-// GetSkillId SkillId Getter
-func (r YunosTvpubadminDeviceYksSkillsAPIRequest) GetSkillId() int64 {
-	return r._skillId
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25488,
-	"name": "taobao.deg.user.gamegift.query",
-	"apiChineseName": "用户数娱游戏礼包查询",
-	"description": "查询用户数娱礼包列表",
 	"requestParams": [
 		{
 			"name": "status",
@@ -18,9 +14,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "records",
-			"type": "GameGiftRecordDto []",
-			"description": "礼包信息",
 			"subParams": [
 				{
 					"name": "record_id",
@@ -37,7 +30,14 @@
 					"type": "String",
 					"description": "cp item id"
 				}
-			]
+			],
+			"name": "records",
+			"type": "GameGiftRecordDto []",
+			"description": "礼包信息"
 		}
-	]
+	],
+	"name": "taobao.deg.user.gamegift.query",
+	"apiChineseName": "用户数娱游戏礼包查询",
+	"description": "查询用户数娱礼包列表",
+	"id": 25488
 }

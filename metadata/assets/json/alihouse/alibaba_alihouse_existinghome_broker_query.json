@@ -1,0 +1,184 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_broker_id",
+			"type": "String",
+			"description": "外部经纪人ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID"
+						},
+						{
+							"name": "broker_id",
+							"type": "Number",
+							"description": "经纪人ID"
+						},
+						{
+							"name": "outer_company_id",
+							"type": "String",
+							"description": "外部公司ID"
+						},
+						{
+							"name": "adviser_user_name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "tags",
+							"type": "String[]",
+							"description": "中文标签"
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "outer_shop_id",
+							"type": "String",
+							"description": "归属门店"
+						},
+						{
+							"name": "main_phone",
+							"type": "String",
+							"description": "主机号"
+						},
+						{
+							"name": "sub_phone",
+							"type": "String",
+							"description": "400分机号"
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "性别"
+						},
+						{
+							"name": "introduction",
+							"type": "String",
+							"description": "个人简介"
+						},
+						{
+							"name": "work_year",
+							"type": "Number",
+							"description": "工作年限"
+						},
+						{
+							"name": "service_evaluation",
+							"type": "String",
+							"description": "服务评价"
+						},
+						{
+							"name": "id_number",
+							"type": "String",
+							"description": "身份证号"
+						},
+						{
+							"name": "head_url",
+							"type": "String",
+							"description": "头像"
+						},
+						{
+							"name": "card_front_url",
+							"type": "String",
+							"description": "身份证正面"
+						},
+						{
+							"name": "card_back_url",
+							"type": "String",
+							"description": "身份证反面"
+						},
+						{
+							"name": "business_card",
+							"type": "String",
+							"description": "名片"
+						},
+						{
+							"name": "job_status",
+							"type": "Number",
+							"description": "在职状态"
+						},
+						{
+							"name": "agent_license_url",
+							"type": "String",
+							"description": "执业资格证图片"
+						},
+						{
+							"name": "agent_license_number",
+							"type": "String",
+							"description": "执业资格证"
+						},
+						{
+							"name": "agent_employ_url",
+							"type": "String",
+							"description": "从业信息卡图片"
+						},
+						{
+							"name": "agent_employ_number",
+							"type": "String",
+							"description": "从业信息卡编号"
+						},
+						{
+							"name": "verification_info",
+							"type": "String",
+							"description": "核验返回信息"
+						},
+						{
+							"name": "verification_status",
+							"type": "Number",
+							"description": "核验状态"
+						},
+						{
+							"name": "sub_user_nick",
+							"type": "String",
+							"description": "经纪人子账号名称"
+						},
+						{
+							"name": "has_tb_account",
+							"type": "Boolean",
+							"description": "是否拥有淘宝账号"
+						},
+						{
+							"name": "partake_business",
+							"type": "String",
+							"description": "负责的业务域"
+						}
+					],
+					"name": "data",
+					"type": "ProjectAdviserDto",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.broker.query",
+	"apiChineseName": "根据外部经纪人ID查询",
+	"description": "根据外部经纪人ID查询",
+	"id": 57242
+}

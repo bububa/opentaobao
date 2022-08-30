@@ -1,0 +1,154 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "invoice_apply_id",
+					"type": "String",
+					"description": "口碑开票id",
+					"required": true
+				}
+			],
+			"name": "invoice_insurance_no_top_req",
+			"type": "InvoiceInsuranceNoTopReq",
+			"description": "请求原文"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "鹰眼id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "invoice_apply_id",
+							"type": "String",
+							"description": "发票申请单id"
+						},
+						{
+							"name": "insurance_type",
+							"type": "String",
+							"description": "保险类型，医美险 MEDICAL_BEAUTY ，提前放款险 ADVANCE_LOAN"
+						},
+						{
+							"name": "insurance_no_list",
+							"type": "String[]",
+							"description": "保险单号列表"
+						},
+						{
+							"name": "unique_code",
+							"type": "String",
+							"description": "统一社会信用代码"
+						},
+						{
+							"name": "months",
+							"type": "String",
+							"description": "月份，多个月份用逗号分隔"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "发票金额 单位:分"
+						},
+						{
+							"name": "invoice_type",
+							"type": "Number",
+							"description": "0 普通 1 专票"
+						},
+						{
+							"name": "post_type",
+							"type": "String",
+							"description": "email：开电子发票 ，paper：开纸质发票"
+						},
+						{
+							"name": "operating_license",
+							"type": "String",
+							"description": "发票抬头"
+						},
+						{
+							"name": "tax_reg_number",
+							"type": "String",
+							"description": "纳税人识别号"
+						},
+						{
+							"name": "invoice_address",
+							"type": "String",
+							"description": "发票地址"
+						},
+						{
+							"name": "invoice_phone",
+							"type": "String",
+							"description": "发票电话"
+						},
+						{
+							"name": "invoice_post_address",
+							"type": "String",
+							"description": "收件人地址"
+						},
+						{
+							"name": "invoice_post_phone",
+							"type": "String",
+							"description": "收件人号码"
+						},
+						{
+							"name": "bank_name",
+							"type": "String",
+							"description": "开户行"
+						},
+						{
+							"name": "bank_account",
+							"type": "String",
+							"description": "开户行账号"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "电子邮件"
+						}
+					],
+					"name": "data",
+					"type": "TopInvoiceInsuranceNoDTO",
+					"description": "返回结果数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误原因"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误原因"
+						}
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回参数"
+		}
+	],
+	"name": "taobao.servindustry.finance.insurance.invoice.insurancenos",
+	"apiChineseName": "商家查询本次开票的保险单号",
+	"description": "商家查询本次开票的保险单号",
+	"id": 61987
+}

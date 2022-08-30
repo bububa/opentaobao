@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "ctei",
+			"type": "String",
+			"description": "ctei",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "拉起端上应用/服务的url",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "额外传递的参数"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "应用拉起方式"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "状态码"
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "结果值"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "响应结果"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.third.telecom.pushrender",
+	"apiChineseName": "电信-推送拉起设备应用",
+	"description": "电信-推送拉起设备应用",
+	"id": 60655
+}

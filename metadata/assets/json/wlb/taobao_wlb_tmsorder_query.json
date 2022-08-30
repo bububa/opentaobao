@@ -1,15 +1,11 @@
 {
-	"id": 10609,
-	"name": "taobao.wlb.tmsorder.query",
-	"apiChineseName": "通过物流订单编号查询物流信息",
-	"description": "通过物流订单编号分页查询物流信息",
 	"requestParams": [
 		{
 			"name": "order_code",
 			"type": "String",
 			"description": "物流订单编号",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "page_no",
@@ -24,9 +20,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "tms_order_list",
-			"type": "WlbTmsOrder []",
-			"description": "物流订单运单信息列表",
 			"subParams": [
 				{
 					"name": "order_code",
@@ -48,12 +41,19 @@
 					"type": "String",
 					"description": "物流公司编码"
 				}
-			]
+			],
+			"name": "tms_order_list",
+			"type": "WlbTmsOrder []",
+			"description": "物流订单运单信息列表"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "结果总数"
 		}
-	]
+	],
+	"name": "taobao.wlb.tmsorder.query",
+	"apiChineseName": "通过物流订单编号查询物流信息",
+	"description": "通过物流订单编号分页查询物流信息",
+	"id": 10609
 }

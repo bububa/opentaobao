@@ -1,9 +1,11 @@
 {
-	"id": 35582,
-	"name": "yunos.tvscreen.admin.common.operation",
-	"apiChineseName": "一体机桌面通用接口",
-	"description": "一体机桌面通用接口",
 	"requestParams": [
+		{
+			"name": "interface_name",
+			"type": "String",
+			"description": "接口名称",
+			"required": true
+		},
 		{
 			"name": "parameters",
 			"type": "String",
@@ -14,33 +16,29 @@
 			"type": "String",
 			"description": "方法名",
 			"required": true
-		},
-		{
-			"name": "interface_name",
-			"type": "String",
-			"description": "接口名称",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "message",
-					"type": "String",
-					"description": "message",
-					"required": true
-				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "result",
-					"required": true
+					"description": "result"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvscreen.admin.common.operation",
+	"apiChineseName": "一体机桌面通用接口",
+	"description": "一体机桌面通用接口",
+	"id": 35582
 }

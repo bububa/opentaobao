@@ -1,8 +1,4 @@
 {
-	"id": 53962,
-	"name": "alibaba.item.publish.submit",
-	"apiChineseName": "商品发布",
-	"description": "新商品发布，提交商品发布信息",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -54,5 +50,9 @@
 			"type": "String",
 			"description": "商品所属市场"
 		}
-	]
+	],
+	"name": "alibaba.item.publish.submit",
+	"apiChineseName": "商品发布",
+	"description": "新商品发布，提交商品发布信息",
+	"id": 53962
 }

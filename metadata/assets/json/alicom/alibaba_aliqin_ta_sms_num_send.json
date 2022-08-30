@@ -1,19 +1,21 @@
 {
-	"id": 25521,
-	"name": "alibaba.aliqin.ta.sms.num.send",
-	"apiChineseName": "短信发送",
-	"description": "短信发送",
 	"requestParams": [
+		{
+			"name": "rec_num",
+			"type": "String",
+			"description": "接收号码",
+			"required": true
+		},
+		{
+			"name": "sms_template_code",
+			"type": "String",
+			"description": "短信模板CODE",
+			"required": true
+		},
 		{
 			"name": "extend",
 			"type": "String",
 			"description": "公共回传参数"
-		},
-		{
-			"name": "sms_type",
-			"type": "String",
-			"description": "类型，normal：短信",
-			"required": true
 		},
 		{
 			"name": "sms_free_sign_name",
@@ -27,15 +29,9 @@
 			"description": "短信模板变量，AckNum是变量参数"
 		},
 		{
-			"name": "rec_num",
+			"name": "sms_type",
 			"type": "String",
-			"description": "接收号码",
-			"required": true
-		},
-		{
-			"name": "sms_template_code",
-			"type": "String",
-			"description": "短信模板CODE",
+			"description": "类型，normal：短信",
 			"required": true
 		},
 		{
@@ -51,19 +47,16 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BizResult",
-			"description": "返回结果",
 			"subParams": [
-				{
-					"name": "err_code",
-					"type": "String",
-					"description": "错误码"
-				},
 				{
 					"name": "model",
 					"type": "String",
 					"description": "返回结果"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息描述"
 				},
 				{
 					"name": "success",
@@ -71,11 +64,18 @@
 					"description": "true表示成功，false表示失败"
 				},
 				{
-					"name": "msg",
+					"name": "err_code",
 					"type": "String",
-					"description": "返回信息描述"
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.ta.sms.num.send",
+	"apiChineseName": "短信发送",
+	"description": "短信发送",
+	"id": 25521
 }

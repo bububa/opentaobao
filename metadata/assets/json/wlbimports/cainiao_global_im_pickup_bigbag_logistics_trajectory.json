@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "bigbag_id",
+					"type": "Number",
+					"description": "大包id",
+					"required": true
+				}
+			],
+			"name": "bigbag_logistics_query_request",
+			"type": "BigbagLogisticsQueryRequest",
+			"description": "大包物流轨迹查询请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "operate_time",
+									"type": "String",
+									"description": "操作时间"
+								},
+								{
+									"name": "operate_desc",
+									"type": "String",
+									"description": "操作节点描述（PU-已揽收；OK-已送达；DD-破损送达）"
+								},
+								{
+									"name": "tracking_number",
+									"type": "String",
+									"description": "运单号"
+								},
+								{
+									"name": "operate_code",
+									"type": "String",
+									"description": "操作节点（PU、OK、DD）"
+								}
+							],
+							"name": "logistics_trajectory_info_list",
+							"type": "BigBagLogisticsTrajectoryInfoResponse[]",
+							"description": "大包物流轨迹集合"
+						}
+					],
+					"name": "data",
+					"type": "BigbagLogisticsTrajectoryResponse",
+					"description": "大包物流轨迹查询返回值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统响应结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常提示"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "响应体"
+		}
+	],
+	"name": "cainiao.global.im.pickup.bigbag.logistics.trajectory",
+	"apiChineseName": "大包物流轨迹查询",
+	"description": "大包物流轨迹查询",
+	"id": 59985
+}

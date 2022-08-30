@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备Id， 可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "调用者的userid，若有userAccessToken,可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_token",
+			"type": "String",
+			"description": "目前没有使用，可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_access_token",
+			"type": "String",
+			"description": "登录后获取的accessToken",
+			"required": true
+		},
+		{
+			"name": "instance_id",
+			"type": "String",
+			"description": "ecs上的实例id,可以传空值",
+			"required": true
+		},
+		{
+			"name": "game_id",
+			"type": "String",
+			"description": "项目所在平台上的gameid",
+			"required": true
+		},
+		{
+			"name": "game_project_key",
+			"type": "String",
+			"description": "projectKey",
+			"required": true
+		},
+		{
+			"name": "account_type",
+			"type": "Number",
+			"description": "user的类型",
+			"required": true
+		},
+		{
+			"name": "customer_account_id",
+			"type": "String",
+			"description": "user的外部唯一Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "0"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "sucess"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mp_account_id",
+							"type": "Number",
+							"description": "user在mp上的accountid"
+						},
+						{
+							"name": "access_token",
+							"type": "String",
+							"description": "user的acesstoken"
+						}
+					],
+					"name": "data",
+					"type": "LoginSessionDTO",
+					"description": "login session"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.cgame.mp.mpproject.loginexistaccount",
+	"apiChineseName": "登录存在账号",
+	"description": "发送消息给游戏",
+	"id": 61309
+}

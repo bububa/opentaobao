@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "eticket_code",
+					"type": "String",
+					"description": "核销码",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id"
+				}
+			],
+			"name": "command",
+			"type": "ConsumeEticketCommand",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "核销成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错诶信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.trade.car.eticket.consume",
+	"apiChineseName": "天猫汽车电子凭证核销",
+	"description": "为商家提供电子凭证核销接口，支持分账",
+	"id": 58058
+}

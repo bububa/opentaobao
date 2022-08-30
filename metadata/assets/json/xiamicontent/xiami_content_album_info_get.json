@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"name": "album_ids",
+			"type": "Number",
+			"description": "专辑id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "album_logo",
+					"type": "String",
+					"description": "专辑封面"
+				},
+				{
+					"name": "album_name",
+					"type": "String",
+					"description": "专辑名"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "厂牌id"
+				},
+				{
+					"name": "sub_name",
+					"type": "String",
+					"description": "副标题"
+				},
+				{
+					"name": "gmt_publish",
+					"type": "Date",
+					"description": "发布时间"
+				},
+				{
+					"name": "album_status",
+					"type": "Number",
+					"description": "专辑状态"
+				},
+				{
+					"name": "album_id",
+					"type": "Number",
+					"description": "专辑id"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语种"
+				}
+			],
+			"name": "album_list",
+			"type": "AlbumDto []",
+			"description": "专辑信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "result msg"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "result code"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "返回结果"
+		}
+	],
+	"name": "xiami.content.album.info.get",
+	"apiChineseName": "获取专辑信息",
+	"description": "获取专辑信息",
+	"id": 61549
+}

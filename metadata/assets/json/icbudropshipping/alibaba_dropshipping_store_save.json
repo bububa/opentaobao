@@ -1,0 +1,27 @@
+{
+	"requestParams": [
+		{
+			"name": "store_type",
+			"type": "String",
+			"description": "store type",
+			"required": true
+		},
+		{
+			"name": "store_url",
+			"type": "String",
+			"description": "store url",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "String",
+			"description": " is success"
+		}
+	],
+	"name": "alibaba.dropshipping.store.save",
+	"apiChineseName": "阿里巴巴dropshipping店铺数据保存接口",
+	"description": "阿里巴巴dropshipping店铺数据保存",
+	"id": 61189
+}

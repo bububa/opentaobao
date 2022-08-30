@@ -1,14 +1,6 @@
 {
-	"id": 44177,
-	"name": "tmall.servicecenter.reservecond.update",
-	"apiChineseName": "主动预约条件更新",
-	"description": "1、设置主动预约开通条件",
 	"requestParams": [
 		{
-			"name": "roc_list",
-			"type": "ReserveOpenConditionDTO[]",
-			"description": "主动预约开通条件",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "category_id",
@@ -45,15 +37,14 @@
 					"type": "Number",
 					"description": "身份id"
 				}
-			]
+			],
+			"name": "roc_list",
+			"type": "ReserveOpenConditionDTO[]",
+			"description": "主动预约开通条件",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
-		{
-			"name": "msg_success",
-			"type": "Boolean",
-			"description": "是否成功"
-		},
 		{
 			"name": "msg_info",
 			"type": "String",
@@ -63,6 +54,15 @@
 			"name": "msg_code",
 			"type": "String",
 			"description": "返回code"
+		},
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.reservecond.update",
+	"apiChineseName": "主动预约条件更新",
+	"description": "1、设置主动预约开通条件",
+	"id": 44177
 }

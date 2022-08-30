@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "scope_id",
+			"type": "Number",
+			"description": "授权范围",
+			"required": true
+		},
+		{
+			"name": "user_key",
+			"type": "String",
+			"description": "用户ID",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "fail",
+					"type": "String",
+					"description": "是否失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.user.external.auth.cancel",
+	"apiChineseName": "取消外部授权",
+	"description": "取消外部授权",
+	"id": 59740
+}

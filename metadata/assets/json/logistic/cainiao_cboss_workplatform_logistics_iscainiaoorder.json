@@ -1,8 +1,4 @@
 {
-	"id": 27056,
-	"name": "cainiao.cboss.workplatform.logistics.iscainiaoorder",
-	"apiChineseName": "根据交易单号判断是否为菜鸟发货订单",
-	"description": "根据交易单号判断是否为菜鸟发货订单",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -31,5 +27,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "cainiao.cboss.workplatform.logistics.iscainiaoorder",
+	"apiChineseName": "根据交易单号判断是否为菜鸟发货订单",
+	"description": "根据交易单号判断是否为菜鸟发货订单",
+	"id": 27056
 }

@@ -1,20 +1,16 @@
 {
-	"id": 53680,
-	"name": "alibaba.tmallgenie.scp.plan.sku.supplier.quote.upload",
-	"apiChineseName": "标准供应商配额同步",
-	"description": "标准供应商配额同步",
 	"requestParams": [
 		{
-			"name": "net_demand_request",
-			"type": "NetDemandRequest",
-			"description": "对象",
 			"subParams": [
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "net_demand_request",
+			"type": "NetDemandRequest",
+			"description": "对象"
 		}
 	],
 	"responseParams": [
@@ -34,47 +30,45 @@
 			"description": "返回码"
 		},
 		{
-			"name": "data_list",
-			"type": "ChannelQuotaDto []",
-			"description": "对象列表",
 			"subParams": [
 				{
 					"name": "key_figure_date",
 					"type": "Date",
-					"description": "关键日期值",
-					"required": true
+					"description": "关键日期值"
 				},
 				{
 					"name": "ratio",
 					"type": "String",
-					"description": "比例（精确到2位小数：0.34）",
-					"required": true
+					"description": "比例（精确到2位小数：0.34）"
 				},
 				{
 					"name": "materiel_code",
 					"type": "String",
-					"description": "物料code",
-					"required": true
+					"description": "物料code"
 				},
 				{
 					"name": "location_code",
 					"type": "String",
-					"description": "地点code",
-					"required": true
+					"description": "地点code"
 				},
 				{
 					"name": "extend_json",
 					"type": "String",
-					"description": "扩展参数",
-					"required": true
+					"description": "扩展参数"
 				},
 				{
 					"name": "tenant",
 					"type": "String",
-					"description": "租户",
-					"required": true
+					"description": "租户"
 				}
-			]
+			],
+			"name": "data_list",
+			"type": "ChannelQuotaDto []",
+			"description": "对象列表"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.sku.supplier.quote.upload",
+	"apiChineseName": "标准供应商配额同步",
+	"description": "标准供应商配额同步",
+	"id": 53680
 }

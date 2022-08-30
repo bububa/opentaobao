@@ -1,59 +1,52 @@
 {
-	"id": 43248,
-	"name": "taobao.feedflow.account.get",
-	"apiChineseName": "获取信息流账户详情",
-	"description": "获取账户信息接口。\n(1) BP显示余额 (字段 ：banlance ) = 现金余额(字段：cash_balance) + 赠款余额；\n(2) 可用余额(字段：availableBalance) = BP显示余额\n(3) 红包(字段：redPacket)",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDTO",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回说明信息",
-					"required": true
+					"description": "返回说明信息"
 				},
 				{
-					"name": "result",
-					"type": "AccountDTO",
-					"description": "账户信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "balance",
 							"type": "String",
-							"description": "账户余额，单位：元",
-							"required": true
+							"description": "账户余额，单位：元"
 						},
 						{
 							"name": "cash_balance",
 							"type": "String",
-							"description": "现金余额，单位：元",
-							"required": true
+							"description": "现金余额，单位：元"
 						},
 						{
 							"name": "available_balance",
 							"type": "String",
-							"description": "可用余额，单位：元",
-							"required": true
+							"description": "可用余额，单位：元"
 						},
 						{
 							"name": "red_packet",
 							"type": "String",
-							"description": "红包，单位：元",
-							"required": true
+							"description": "红包，单位：元"
 						}
-					]
+					],
+					"name": "result",
+					"type": "AccountDTO",
+					"description": "账户信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.account.get",
+	"apiChineseName": "获取信息流账户详情",
+	"description": "获取账户信息接口。\n(1) BP显示余额 (字段 ：banlance ) = 现金余额(字段：cash_balance) + 赠款余额；\n(2) 可用余额(字段：availableBalance) = BP显示余额\n(3) 红包(字段：redPacket)",
+	"id": 43248
 }

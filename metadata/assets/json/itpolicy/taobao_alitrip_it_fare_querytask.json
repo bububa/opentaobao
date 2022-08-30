@@ -1,8 +1,4 @@
 {
-	"id": 25495,
-	"name": "taobao.alitrip.it.fare.querytask",
-	"apiChineseName": "【国际机票自有政策】批量操作结果查询",
-	"description": "批量操作同步返回任务id，后台生成异步任务，通过此接口查询批量操作的执行结果",
 	"requestParams": [
 		{
 			"name": "extendAttributes",
@@ -18,6 +14,28 @@
 	],
 	"responseParams": [
 		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "row_num",
+					"type": "Number",
+					"description": "错误行数"
+				}
+			],
+			"name": "errors",
+			"type": "ErrorFareRow []",
+			"description": "任务执行失败，会返回一条失败信息。如果是导入任务，会返回每条导入失败的政策说明，最多只返回200条失败信息。"
+		},
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		},
+		{
 			"name": "gmt_finished",
 			"type": "Date",
 			"description": "完成时间"
@@ -28,31 +46,13 @@
 			"description": "成功处理条数"
 		},
 		{
-			"name": "extend_attributes",
-			"type": "String",
-			"description": "json格式的字符串，扩展属性，预留"
-		},
-		{
-			"name": "errors",
-			"type": "ErrorFareRow []",
-			"description": "任务执行失败，会返回一条失败信息。如果是导入任务，会返回每条导入失败的政策说明，最多只返回200条失败信息。",
-			"subParams": [
-				{
-					"name": "row_num",
-					"type": "Number",
-					"description": "错误行数"
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误描述"
-				}
-			]
-		},
-		{
 			"name": "status",
 			"type": "Number",
 			"description": "任务状态，1 处理中，2 处理失败，3 处理完毕"
 		}
-	]
+	],
+	"name": "taobao.alitrip.it.fare.querytask",
+	"apiChineseName": "【国际机票自有政策】批量操作结果查询",
+	"description": "批量操作同步返回任务id，后台生成异步任务，通过此接口查询批量操作的执行结果",
+	"id": 25495
 }

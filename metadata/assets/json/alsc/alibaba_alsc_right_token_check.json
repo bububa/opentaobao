@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "实物奖品凭证",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "链路ID"
+				},
+				{
+					"subParams": [
+						{
+							"name": "right_id",
+							"type": "String",
+							"description": "权益ID"
+						},
+						{
+							"name": "right_instance_id",
+							"type": "String",
+							"description": "权益实例ID"
+						}
+					],
+					"name": "result_obj",
+					"type": "EntityPrizeTokenResp",
+					"description": "返回数据"
+				},
+				{
+					"name": "can_retry",
+					"type": "Boolean",
+					"description": "可重试"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误原因"
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "拓展信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alsc.right.token.check",
+	"apiChineseName": "实物奖品凭证校验",
+	"description": "实物奖品凭证校验",
+	"id": 59021
+}

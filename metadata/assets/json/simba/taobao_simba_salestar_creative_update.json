@@ -1,8 +1,4 @@
 {
-	"id": 43361,
-	"name": "taobao.simba.salestar.creative.update",
-	"apiChineseName": "销量明星更新创意相关接口",
-	"description": "更新一个创意的信息，可以设置创意标题、创意图片",
 	"requestParams": [
 		{
 			"name": "adgroup_id",
@@ -20,8 +16,8 @@
 			"name": "title",
 			"type": "String",
 			"description": "创意标题，最多20个汉字",
-			"required": true,
-			"maxLength": 40
+			"maxLength": 40,
+			"required": true
 		},
 		{
 			"name": "img_url",
@@ -37,9 +33,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "creativerecord",
-			"type": "CreativeRecord",
-			"description": "创意修改记录对象",
 			"subParams": [
 				{
 					"name": "nick",
@@ -91,7 +84,14 @@
 					"type": "Date",
 					"description": "创建时间"
 				}
-			]
+			],
+			"name": "creativerecord",
+			"type": "CreativeRecord",
+			"description": "创意修改记录对象"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.creative.update",
+	"apiChineseName": "销量明星更新创意相关接口",
+	"description": "更新一个创意的信息，可以设置创意标题、创意图片",
+	"id": 43361
 }

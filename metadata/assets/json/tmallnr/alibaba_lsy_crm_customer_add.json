@@ -1,13 +1,6 @@
 {
-	"id": 55225,
-	"name": "alibaba.lsy.crm.customer.add",
-	"apiChineseName": "私域导购添加活动留资入口",
-	"description": "私域导购添加活动留资入口",
 	"requestParams": [
 		{
-			"name": "req_dto",
-			"type": "NrtCrmCreateCustomerReq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -50,34 +43,38 @@
 					"description": "导购员id",
 					"required": true
 				}
-			]
+			],
+			"name": "req_dto",
+			"type": "NrtCrmCreateCustomerReq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回对象",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误提示码",
-					"required": true
+					"description": "错误提示码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.customer.add",
+	"apiChineseName": "私域导购添加活动留资入口",
+	"description": "私域导购添加活动留资入口",
+	"id": 55225
 }

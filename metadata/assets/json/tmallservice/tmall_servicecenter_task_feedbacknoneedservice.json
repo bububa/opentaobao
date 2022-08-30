@@ -1,14 +1,6 @@
 {
-	"id": 27441,
-	"name": "tmall.servicecenter.task.feedbacknoneedservice",
-	"apiChineseName": "服务商反馈无需安装工单接口",
-	"description": "服务商反馈无需安装工单接口",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SuspendServiceDo",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "updater",
@@ -51,34 +43,39 @@
 					"description": "工单id",
 					"required": true
 				}
-			]
+			],
+			"name": "param",
+			"type": "SuspendServiceDo",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.task.feedbacknoneedservice",
+	"apiChineseName": "服务商反馈无需安装工单接口",
+	"description": "服务商反馈无需安装工单接口",
+	"id": 27441
 }

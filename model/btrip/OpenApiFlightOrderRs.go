@@ -58,6 +58,8 @@ type OpenApiFlightOrderRs struct {
 	ProjectCode string `json:"project_code,omitempty" xml:"project_code,omitempty"`
 	// 项目名称
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
+	// 第三方项目id
+	ThirdPartProjectId string `json:"third_part_project_id,omitempty" xml:"third_part_project_id,omitempty"`
 	// 机票订单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 行程类型。0:单程，1:往返，2:中转

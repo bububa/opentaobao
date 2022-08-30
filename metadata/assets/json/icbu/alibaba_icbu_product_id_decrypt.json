@@ -1,8 +1,4 @@
 {
-	"id": 26068,
-	"name": "alibaba.icbu.product.id.decrypt",
-	"apiChineseName": "商品ID解密",
-	"description": "对混淆的产品ID解密",
 	"requestParams": [
 		{
 			"name": "language",
@@ -23,5 +19,9 @@
 			"type": "Number",
 			"description": "商品ID"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.id.decrypt",
+	"apiChineseName": "商品ID解密",
+	"description": "对混淆的产品ID解密",
+	"id": 26068
 }

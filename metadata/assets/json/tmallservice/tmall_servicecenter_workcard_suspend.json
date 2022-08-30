@@ -1,8 +1,4 @@
 {
-	"id": 46669,
-	"name": "tmall.servicecenter.workcard.suspend",
-	"apiChineseName": "工单挂起",
-	"description": "工单挂起",
 	"requestParams": [
 		{
 			"name": "reserve_service_date",
@@ -32,29 +28,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误原因描述",
-					"required": true
+					"description": "错误原因描述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.suspend",
+	"apiChineseName": "工单挂起",
+	"description": "工单挂起",
+	"id": 46669
 }

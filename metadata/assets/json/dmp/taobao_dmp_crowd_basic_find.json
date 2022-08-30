@@ -1,0 +1,128 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务线编码，引力魔方：displayDefault",
+					"required": true
+				}
+			],
+			"name": "api_context",
+			"type": "ApiContextDTO",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "crowd_id_list",
+					"type": "Number[]",
+					"description": "按已有人群id查询过滤"
+				},
+				{
+					"name": "crowd_name",
+					"type": "String",
+					"description": "按人群名称模糊匹配"
+				}
+			],
+			"name": "crowd_query",
+			"type": "CrowdQueryDTO",
+			"description": "人群查询条件"
+		},
+		{
+			"subParams": [
+				{
+					"name": "int_current_page",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"name": "int_page_size",
+					"type": "Number",
+					"description": "分页大小"
+				}
+			],
+			"name": "pager",
+			"type": "Pager",
+			"description": "分页参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "valid_date",
+					"type": "Date",
+					"description": "人群有效期"
+				},
+				{
+					"name": "crowd_name",
+					"type": "String",
+					"description": "人群名称"
+				},
+				{
+					"name": "crowd_id",
+					"type": "Number",
+					"description": "人群id"
+				},
+				{
+					"name": "coverage",
+					"type": "Number",
+					"description": "人群覆盖人数"
+				},
+				{
+					"name": "createtime",
+					"type": "Date",
+					"description": "人群创建时间"
+				}
+			],
+			"name": "result",
+			"type": "CrowdDTO []",
+			"description": "人群对象"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "记录总条数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页数"
+				}
+			],
+			"name": "pager",
+			"type": "Pager",
+			"description": "分页对象"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.dmp.crowd.basic.find",
+	"apiChineseName": "DMP_BP版人群列表查询",
+	"description": "DMP_BP版人群列表查询",
+	"id": 61644
+}

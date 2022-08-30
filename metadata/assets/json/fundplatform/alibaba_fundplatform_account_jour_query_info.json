@@ -1,13 +1,6 @@
 {
-	"id": 31024,
-	"name": "alibaba.fundplatform.account.jour.query.info",
-	"apiChineseName": "查询账户流水信息",
-	"description": "外部查询账户流水信息",
 	"requestParams": [
 		{
-			"name": "param_fund_account_journal_query_req",
-			"type": "FundAccountJournalQueryReq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "account_id",
@@ -42,98 +35,92 @@
 					"description": "页大小，[1,1000]",
 					"required": true
 				}
-			]
+			],
+			"name": "param_fund_account_journal_query_req",
+			"type": "FundAccountJournalQueryReq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSupport",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
-					"name": "module",
-					"type": "FundAccountJournalResponse",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
-							"name": "journal_list",
-							"type": "FundAccountJournalDto[]",
-							"description": "流水列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "account_id",
 									"type": "Number",
-									"description": "账户ID",
-									"required": true
+									"description": "账户ID"
 								},
 								{
 									"name": "deal_amount",
 									"type": "Number",
-									"description": "操作金额",
-									"required": true
+									"description": "操作金额"
 								},
 								{
 									"name": "description",
 									"type": "String",
-									"description": "描述",
-									"required": true
+									"description": "描述"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "最后修改时间",
-									"required": true
+									"description": "最后修改时间"
 								},
 								{
 									"name": "journal_type",
 									"type": "String",
-									"description": "流水类型：FUND_ACCOUNT_IN 充值 FUND_ACCOUNT_OUT 提现 FUND_ACCOUNT_DEDUCT 扣款 FUND_ACCOUNT_FREEZE 冻结 FUND_ACCOUNT_UNFREEZE 解冻",
-									"required": true
+									"description": "流水类型：FUND_ACCOUNT_IN 充值 FUND_ACCOUNT_OUT 提现 FUND_ACCOUNT_DEDUCT 扣款 FUND_ACCOUNT_FREEZE 冻结 FUND_ACCOUNT_UNFREEZE 解冻"
 								},
 								{
 									"name": "out_biz_id",
 									"type": "String",
-									"description": "外部订单号",
-									"required": true
+									"description": "外部订单号"
 								},
 								{
 									"name": "user_id",
 									"type": "Number",
-									"description": "用户ID",
-									"required": true
+									"description": "用户ID"
 								}
-							]
+							],
+							"name": "journal_list",
+							"type": "FundAccountJournalDto[]",
+							"description": "流水列表"
 						}
-					]
+					],
+					"name": "module",
+					"type": "FundAccountJournalResponse",
+					"description": "module"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSupport",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.account.jour.query.info",
+	"apiChineseName": "查询账户流水信息",
+	"description": "外部查询账户流水信息",
+	"id": 31024
 }

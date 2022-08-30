@@ -1,9 +1,11 @@
 {
-	"id": 148,
-	"name": "taobao.item.joint.propimg",
-	"apiChineseName": "商品关联属性图",
-	"description": "* 关联一张商品属性图片到num_iid指定的商品中\u003cbr/\u003e    * 传入的num_iid所对应的商品必须属于当前会话的用户\u003cbr/\u003e    * 图片的属性必须要是颜色的属性，这个在前台显示的时候需要和sku进行关联的\u003cbr/\u003e    * 商品图片关联在卖家身份和图片来源上的限制，卖家要是B卖家或订购了多图服务才能关联图片，并且图片要来自于卖家自己的图片空间才行\u003cbr/\u003e    * 商品图片数量有限制。不管是上传的图片还是关联的图片，他们的总数不能超过一定限额，最多不能超过24张（每个颜色属性都有一张）",
 	"requestParams": [
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，必选",
+			"required": true
+		},
 		{
 			"name": "properties",
 			"type": "String",
@@ -16,29 +18,19 @@
 			"description": "属性图片ID。如果是新增不需要填写"
 		},
 		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片序号"
+		},
+		{
 			"name": "pic_path",
 			"type": "String",
 			"description": "图片地址(传入图片相对地址即可,即不需包含 http://img02.taobao.net/bao/uploaded )",
 			"required": true
-		},
-		{
-			"name": "num_iid",
-			"type": "Number",
-			"description": "商品数字ID，必选",
-			"required": true,
-			"minValue": 0
-		},
-		{
-			"name": "position",
-			"type": "Number",
-			"description": "图片序号"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "prop_img",
-			"type": "PropImg",
-			"description": "属性图片对象信息",
 			"subParams": [
 				{
 					"name": "id",
@@ -55,7 +47,14 @@
 					"type": "Date",
 					"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "prop_img",
+			"type": "PropImg",
+			"description": "属性图片对象信息"
 		}
-	]
+	],
+	"name": "taobao.item.joint.propimg",
+	"apiChineseName": "商品关联属性图",
+	"description": "* 关联一张商品属性图片到num_iid指定的商品中\u003cbr/\u003e    * 传入的num_iid所对应的商品必须属于当前会话的用户\u003cbr/\u003e    * 图片的属性必须要是颜色的属性，这个在前台显示的时候需要和sku进行关联的\u003cbr/\u003e    * 商品图片关联在卖家身份和图片来源上的限制，卖家要是B卖家或订购了多图服务才能关联图片，并且图片要来自于卖家自己的图片空间才行\u003cbr/\u003e    * 商品图片数量有限制。不管是上传的图片还是关联的图片，他们的总数不能超过一定限额，最多不能超过24张（每个颜色属性都有一张）",
+	"id": 148
 }

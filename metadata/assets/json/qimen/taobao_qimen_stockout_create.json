@@ -1,17 +1,8 @@
 {
-	"id": 25992,
-	"name": "taobao.qimen.stockout.create",
-	"apiChineseName": "出库单创建接口",
-	"description": "ERP调用奇门接口，创建出库单信息",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "StockOutCreateRequest",
 			"subParams": [
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "出库单信息",
 					"subParams": [
 						{
 							"name": "totalOrderLines",
@@ -31,9 +22,6 @@
 							"required": true
 						},
 						{
-							"name": "relatedOrders",
-							"type": "RelatedOrder[]",
-							"description": "关联单据信息",
 							"subParams": [
 								{
 									"name": "orderType",
@@ -45,7 +33,10 @@
 									"type": "String",
 									"description": "关联的订单编号"
 								}
-							]
+							],
+							"name": "relatedOrders",
+							"type": "RelatedOrder[]",
+							"description": "关联单据信息"
 						},
 						{
 							"name": "warehouseCode",
@@ -90,9 +81,6 @@
 							"description": "提货方式(到仓自提、快递、干线物流)"
 						},
 						{
-							"name": "pickerInfo",
-							"type": "PickerInfo",
-							"description": "提货人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -124,12 +112,12 @@
 									"type": "String",
 									"description": "车牌号"
 								}
-							]
+							],
+							"name": "pickerInfo",
+							"type": "PickerInfo",
+							"description": "提货人信息"
 						},
 						{
-							"name": "senderInfo",
-							"type": "SenderInfo",
-							"description": "发件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -201,12 +189,12 @@
 									"type": "String",
 									"description": "证件号"
 								}
-							]
+							],
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息"
 						},
 						{
-							"name": "receiverInfo",
-							"type": "ReceiverInfo",
-							"description": "收件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -288,7 +276,10 @@
 									"type": "String",
 									"description": "证件号"
 								}
-							]
+							],
+							"name": "receiverInfo",
+							"type": "ReceiverInfo",
+							"description": "收件人信息"
 						},
 						{
 							"name": "remark",
@@ -330,12 +321,12 @@
 							"type": "String",
 							"description": "仓库名称"
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "出库单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "单据信息",
 					"subParams": [
 						{
 							"name": "outBizCode",
@@ -415,20 +406,23 @@
 							"type": "Map",
 							"description": "扩展属性"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "单据信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "StockOutCreateRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -460,7 +454,13 @@
 					"description": "出库单仓储系统编码",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.stockout.create",
+	"apiChineseName": "出库单创建接口",
+	"description": "ERP调用奇门接口，创建出库单信息",
+	"id": 25992
 }

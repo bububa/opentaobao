@@ -1,13 +1,6 @@
 {
-	"id": 45822,
-	"name": "alibaba.alsc.crm.point.reversepoint",
-	"apiChineseName": "积分消费回退",
-	"description": "积分消费回退",
 	"requestParams": [
 		{
-			"name": "param_reverse_consume_point_open_req",
-			"type": "ReverseConsumePointOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -86,46 +79,48 @@
 					"description": "外部渠道，CS是辰森，客如云是KRY",
 					"required": true
 				}
-			]
+			],
+			"name": "param_reverse_consume_point_open_req",
+			"type": "ReverseConsumePointOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "业务数据",
-					"required": true
+					"description": "业务数据"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.point.reversepoint",
+	"apiChineseName": "积分消费回退",
+	"description": "积分消费回退",
+	"id": 45822
 }

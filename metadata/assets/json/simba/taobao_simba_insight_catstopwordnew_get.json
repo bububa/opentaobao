@@ -1,8 +1,4 @@
 {
-	"id": 23574,
-	"name": "taobao.simba.insight.catstopwordnew.get",
-	"apiChineseName": "获取类目下最热门的词",
-	"description": "按照某个维度，查询某个类目下最热门的词，维度有点击，展现，花费，点击率等，具体可以按哪些字段进行排序，参考参数说明，比如选择了impression，则返回该类目下展现量最高那几个词。",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -32,21 +28,21 @@
 			"name": "page_size",
 			"type": "Number",
 			"description": "返回前多少条数据",
-			"required": true,
-			"maxValue": 20,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "topword_data_list",
-			"type": "InsightWordDataUnderCatDTO []",
-			"description": "类目下热门词详细数据",
 			"subParams": [
 				{
 					"name": "impression",
 					"type": "Number",
 					"description": "展现量"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "Number",
+					"description": "间接成交金额"
 				},
 				{
 					"name": "click",
@@ -59,24 +55,14 @@
 					"description": "花费，单位（分）"
 				},
 				{
+					"name": "cat_name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
 					"name": "directtransaction",
 					"type": "Number",
 					"description": "直接成交金额"
-				},
-				{
-					"name": "indirecttransaction",
-					"type": "Number",
-					"description": "间接成交金额"
-				},
-				{
-					"name": "directtransactionshipping",
-					"type": "Number",
-					"description": "直接成交笔数"
-				},
-				{
-					"name": "indirecttransactionshipping",
-					"type": "Number",
-					"description": "间接成交笔数"
 				},
 				{
 					"name": "favitemtotal",
@@ -84,9 +70,9 @@
 					"description": "宝贝搜藏数"
 				},
 				{
-					"name": "favshoptotal",
+					"name": "cat_id",
 					"type": "Number",
-					"description": "店铺搜藏数"
+					"description": "类目id"
 				},
 				{
 					"name": "transactionshippingtotal",
@@ -94,24 +80,9 @@
 					"description": "总的成交笔数"
 				},
 				{
-					"name": "transactiontotal",
-					"type": "Number",
-					"description": "成交总金额"
-				},
-				{
-					"name": "favtotal",
-					"type": "Number",
-					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
-				},
-				{
-					"name": "competition",
-					"type": "Number",
-					"description": "竞争度"
-				},
-				{
-					"name": "ctr",
+					"name": "coverage",
 					"type": "String",
-					"description": "点击率"
+					"description": "点击转化率"
 				},
 				{
 					"name": "cpc",
@@ -119,31 +90,58 @@
 					"description": "平均点击花费"
 				},
 				{
+					"name": "favtotal",
+					"type": "Number",
+					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
+				},
+				{
 					"name": "roi",
 					"type": "String",
 					"description": "投入产出比"
 				},
 				{
-					"name": "coverage",
-					"type": "String",
-					"description": "点击转化率"
-				},
-				{
-					"name": "cat_id",
+					"name": "transactiontotal",
 					"type": "Number",
-					"description": "类目id"
+					"description": "成交总金额"
 				},
 				{
-					"name": "cat_name",
-					"type": "String",
-					"description": "类目名称"
+					"name": "indirecttransactionshipping",
+					"type": "Number",
+					"description": "间接成交笔数"
 				},
 				{
 					"name": "bidword",
 					"type": "String",
 					"description": "关键词"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "Number",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "Number",
+					"description": "店铺搜藏数"
+				},
+				{
+					"name": "competition",
+					"type": "Number",
+					"description": "竞争度"
 				}
-			]
+			],
+			"name": "topword_data_list",
+			"type": "InsightWordDataUnderCatDTO []",
+			"description": "类目下热门词详细数据"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.catstopwordnew.get",
+	"apiChineseName": "获取类目下最热门的词",
+	"description": "按照某个维度，查询某个类目下最热门的词，维度有点击，展现，花费，点击率等，具体可以按哪些字段进行排序，参考参数说明，比如选择了impression，则返回该类目下展现量最高那几个词。",
+	"id": 23574
 }

@@ -1,9 +1,11 @@
 {
-	"id": 41370,
-	"name": "alibaba.alihealth.drug.kyt.recordinfo",
-	"apiChineseName": "快易通健康检查",
-	"description": "快易通健康检查",
 	"requestParams": [
+		{
+			"name": "log_level",
+			"type": "String",
+			"description": "级别",
+			"required": true
+		},
 		{
 			"name": "service_name",
 			"type": "String",
@@ -25,12 +27,6 @@
 			"name": "other_param",
 			"type": "String",
 			"description": "其他参数"
-		},
-		{
-			"name": "log_level",
-			"type": "String",
-			"description": "级别",
-			"required": true
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "Boolean",
 			"description": "是否响应成功"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.recordinfo",
+	"apiChineseName": "快易通健康检查",
+	"description": "快易通健康检查",
+	"id": 41370
 }

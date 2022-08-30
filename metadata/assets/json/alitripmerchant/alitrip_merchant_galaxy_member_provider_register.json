@@ -1,8 +1,4 @@
 {
-	"id": 56563,
-	"name": "alitrip.merchant.galaxy.member.provider.register",
-	"apiChineseName": "对外提供会员注册服务",
-	"description": "星河产品=对外提供注册雅高会员服务",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "provider_member_param",
-			"type": "ProviderMemberParam",
-			"description": "注册入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "last_name",
@@ -81,40 +73,44 @@
 					"type": "String",
 					"description": "追踪信息"
 				}
-			]
+			],
+			"name": "provider_member_param",
+			"type": "ProviderMemberParam",
+			"description": "注册入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "是否注册成功",
-					"required": true
+					"description": "是否注册成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.member.provider.register",
+	"apiChineseName": "对外提供会员注册服务",
+	"description": "星河产品=对外提供注册雅高会员服务",
+	"id": 56563
 }

@@ -1,14 +1,6 @@
 {
-	"id": 53609,
-	"name": "alitrip.btrip.invoice.setting.modify",
-	"apiChineseName": "发票变更",
-	"description": "发票变更",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenInvoiceModifyAndNewRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "address",
@@ -65,7 +57,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenInvoiceModifyAndNewRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -84,5 +80,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.invoice.setting.modify",
+	"apiChineseName": "发票变更",
+	"description": "发票变更",
+	"id": 53609
 }

@@ -1,14 +1,6 @@
 {
-	"id": 33162,
-	"name": "alitrip.btrip.cost.center.delete",
-	"apiChineseName": "删除外部成本中心",
-	"description": "删除外部成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterDeleteRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "thirdpart_id",
@@ -22,34 +14,39 @@
 					"description": "企业id",
 					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterDeleteRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.btrip.cost.center.delete",
+	"apiChineseName": "删除外部成本中心",
+	"description": "删除外部成本中心",
+	"id": 33162
 }

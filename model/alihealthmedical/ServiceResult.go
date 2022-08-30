@@ -6,8 +6,6 @@ type ServiceResult struct {
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 	// errMessage
 	ErrMessage string `json:"err_message,omitempty" xml:"err_message,omitempty"`
-	// 审核记录通讯id
-	DoctorUuid string `json:"doctor_uuid,omitempty" xml:"doctor_uuid,omitempty"`
 	// 错误码
 	CodeError string `json:"code_error,omitempty" xml:"code_error,omitempty"`
 	// 错误信息

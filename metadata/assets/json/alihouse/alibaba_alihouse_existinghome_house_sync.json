@@ -1,0 +1,797 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "house_check_status",
+							"type": "Number",
+							"description": "核验码状态 0未通过 1通过"
+						},
+						{
+							"name": "house_check_picture_url",
+							"type": "String",
+							"description": "核验码图片"
+						},
+						{
+							"name": "house_check_code",
+							"type": "String",
+							"description": "核验码图片"
+						},
+						{
+							"name": "entrust_end_time",
+							"type": "String",
+							"description": "委托结束时间"
+						},
+						{
+							"name": "entrust_begin_time",
+							"type": "String",
+							"description": "委托开始时间"
+						},
+						{
+							"name": "sale_ratio_fee",
+							"type": "String",
+							"description": "佣金费率 百分比小数"
+						},
+						{
+							"name": "entrust_picture",
+							"type": "String",
+							"description": "委托证书图片"
+						},
+						{
+							"name": "certificate_picture",
+							"type": "String",
+							"description": "产权证书图片"
+						},
+						{
+							"name": "entrust_status_reason",
+							"type": "String",
+							"description": "委托状态变更原因"
+						},
+						{
+							"name": "entrust_status",
+							"type": "Number",
+							"description": "委托状态"
+						},
+						{
+							"name": "house_price",
+							"type": "String",
+							"description": "委托价格 单位万元"
+						},
+						{
+							"name": "role",
+							"type": "Number",
+							"description": "委托角色 1首付 2 实勘 3 委托"
+						},
+						{
+							"name": "outer_agent_id",
+							"type": "String",
+							"description": "外部经纪人id"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店id"
+						},
+						{
+							"name": "outer_company_id",
+							"type": "String",
+							"description": "外部公司id"
+						},
+						{
+							"name": "consigner_phone",
+							"type": "String",
+							"description": "委托人电话"
+						},
+						{
+							"name": "consigner_name",
+							"type": "String",
+							"description": "委托人姓名"
+						},
+						{
+							"name": "rights_id_cards",
+							"type": "String[]",
+							"description": "委托人身份正号"
+						},
+						{
+							"name": "rights_names",
+							"type": "String[]",
+							"description": "委托人姓名"
+						},
+						{
+							"name": "rights_no",
+							"type": "String",
+							"description": "委托证书编号"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部委托id"
+						},
+						{
+							"name": "house_check_desc",
+							"type": "String",
+							"description": "核验描述"
+						},
+						{
+							"name": "entrust_pictures",
+							"type": "String[]",
+							"description": "委托证书图片链接"
+						},
+						{
+							"name": "ownership_address",
+							"type": "String",
+							"description": "房产证地址"
+						},
+						{
+							"name": "entrust_selling_id",
+							"type": "Number",
+							"description": "委托售后id"
+						},
+						{
+							"name": "pay_type_json",
+							"type": "String",
+							"description": "付款方式json"
+						},
+						{
+							"name": "service_content",
+							"type": "String",
+							"description": "服务内容"
+						},
+						{
+							"name": "rent_requirement",
+							"type": "String",
+							"description": "租客要求"
+						},
+						{
+							"name": "max_rent_time",
+							"type": "Number",
+							"description": "最长租期"
+						},
+						{
+							"name": "min_rent_time",
+							"type": "Number",
+							"description": "最短租期"
+						},
+						{
+							"name": "viewing_time",
+							"type": "String",
+							"description": "可看房时间"
+						},
+						{
+							"name": "check_in_time",
+							"type": "String",
+							"description": "可入住时间"
+						},
+						{
+							"name": "outer_brand_id",
+							"type": "String",
+							"description": "外部品牌ID"
+						},
+						{
+							"name": "rent_price",
+							"type": "String",
+							"description": "租金"
+						},
+						{
+							"name": "maintenance_time",
+							"type": "String",
+							"description": "最新房源维护时间"
+						},
+						{
+							"name": "house_check_information",
+							"type": "String",
+							"description": "核验信息"
+						},
+						{
+							"name": "rights_no_type",
+							"type": "Number",
+							"description": "产权证证件类型,1-业务件号，2-证件号，3-商品房备案号"
+						},
+						{
+							"name": "merchant_open_id",
+							"type": "String",
+							"description": "经营主体id"
+						},
+						{
+							"name": "rent_vouchers",
+							"type": "String[]",
+							"description": "租房凭证"
+						},
+						{
+							"name": "trade_biz_type",
+							"type": "Number",
+							"description": "交易业务类型，1-B2C，2-C2C，3-寄租"
+						},
+						{
+							"name": "agreement_id",
+							"type": "Number",
+							"description": "模版id"
+						},
+						{
+							"name": "natural_merchant_open_id",
+							"type": "Number",
+							"description": "房东自然人主体id"
+						},
+						{
+							"name": "enterprise_merchant_open_id",
+							"type": "Number",
+							"description": "寄租模式下-企业B房东主体ID\t"
+						},
+						{
+							"name": "collection_type",
+							"type": "Number",
+							"description": "收款模式"
+						},
+						{
+							"name": "send_rent_charge_model",
+							"type": "String",
+							"description": "寄租收费模式\t1、房东承担寄租服务费 2、租客承担门店服务费 3、租客承担门店服务费+房东承担寄租服务费"
+						},
+						{
+							"name": "landlord_type",
+							"type": "Number",
+							"description": "寄租-房源房东类型 交易类型不为空，房源房东类型 1、企业B房东 2、自然人主体"
+						},
+						{
+							"name": "instead_merchant_open_id",
+							"type": "Number",
+							"description": "代收主体id 当收款模式为代收是必填"
+						}
+					],
+					"name": "entrust",
+					"type": "SyncExistingHouseEntrustDto",
+					"description": "房源委托信息"
+				},
+				{
+					"name": "gather_time",
+					"type": "String",
+					"description": "首录时间"
+				},
+				{
+					"name": "is_show",
+					"type": "Number",
+					"description": "是否展示 1展示 0不展示",
+					"required": true
+				},
+				{
+					"name": "video_url",
+					"type": "String",
+					"description": "视频链接"
+				},
+				{
+					"name": "layout_pictures",
+					"type": "String[]",
+					"description": "户型图片"
+				},
+				{
+					"name": "inner_pictures",
+					"type": "String[]",
+					"description": "室内图"
+				},
+				{
+					"name": "show_price",
+					"type": "String",
+					"description": "价格 单位万元"
+				},
+				{
+					"name": "property_age",
+					"type": "Number",
+					"description": "产权年限"
+				},
+				{
+					"name": "construction_time",
+					"type": "String",
+					"description": "建筑年代"
+				},
+				{
+					"name": "is_only_house",
+					"type": "Number",
+					"description": "是否唯一住房 0不是 1是"
+				},
+				{
+					"name": "is_elevator",
+					"type": "Number",
+					"description": "是否有电梯 0 没有 1有"
+				},
+				{
+					"name": "house_reason",
+					"type": "String",
+					"description": "房源上下架原因"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "房源状态",
+					"required": true
+				},
+				{
+					"name": "property_type",
+					"type": "Number",
+					"description": "物业性质",
+					"required": true
+				},
+				{
+					"name": "total_floor",
+					"type": "Number",
+					"description": "总楼层",
+					"required": true
+				},
+				{
+					"name": "floor",
+					"type": "Number",
+					"description": "当前楼层",
+					"required": true
+				},
+				{
+					"name": "position",
+					"type": "Number",
+					"description": "楼层位置"
+				},
+				{
+					"name": "balcony",
+					"type": "Number",
+					"description": "阳台数",
+					"required": true
+				},
+				{
+					"name": "kitchen",
+					"type": "Number",
+					"description": "厨房数",
+					"required": true
+				},
+				{
+					"name": "toilet",
+					"type": "Number",
+					"description": "厕所数",
+					"required": true
+				},
+				{
+					"name": "hall",
+					"type": "Number",
+					"description": "客厅数",
+					"required": true
+				},
+				{
+					"name": "room",
+					"type": "Number",
+					"description": "室数",
+					"required": true
+				},
+				{
+					"name": "look_time",
+					"type": "String",
+					"description": "看房时间"
+				},
+				{
+					"name": "direction",
+					"type": "Number",
+					"description": "朝向",
+					"required": true
+				},
+				{
+					"name": "fitment",
+					"type": "Number",
+					"description": "装修标准",
+					"required": true
+				},
+				{
+					"name": "situation",
+					"type": "Number",
+					"description": "房屋现状"
+				},
+				{
+					"name": "fee_desc",
+					"type": "String",
+					"description": "税费描述"
+				},
+				{
+					"name": "service_desc",
+					"type": "String",
+					"description": "服务描述"
+				},
+				{
+					"name": "community_desc",
+					"type": "String",
+					"description": "小区描述"
+				},
+				{
+					"name": "layout_desc",
+					"type": "String",
+					"description": "户型描述"
+				},
+				{
+					"name": "mentality",
+					"type": "String",
+					"description": "业主心态"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "房源介绍",
+					"required": true
+				},
+				{
+					"name": "room_no",
+					"type": "String",
+					"description": "房号"
+				},
+				{
+					"name": "unit_no",
+					"type": "String",
+					"description": "单元"
+				},
+				{
+					"name": "building_no",
+					"type": "String",
+					"description": "楼栋"
+				},
+				{
+					"name": "building_area",
+					"type": "String",
+					"description": "建筑面积"
+				},
+				{
+					"name": "inside_area",
+					"type": "String",
+					"description": "套内面积"
+				},
+				{
+					"name": "land_use",
+					"type": "Number",
+					"description": "土地用途"
+				},
+				{
+					"name": "property_rights",
+					"type": "Number",
+					"description": "产权性质"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "房源标题",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "房源地址"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部房源id",
+					"required": true
+				},
+				{
+					"name": "ecode",
+					"type": "String",
+					"description": "房源E码",
+					"required": true
+				},
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "Number",
+					"description": "公私域区分 1公域 2私域",
+					"required": true
+				},
+				{
+					"name": "video_cover_image",
+					"type": "String",
+					"description": "视频封面图"
+				},
+				{
+					"name": "house_type",
+					"type": "Number",
+					"description": "0-正常房源 1-临时房源（交易专用）"
+				},
+				{
+					"name": "is_cover",
+					"type": "Number",
+					"description": "是否存在室内图封面,1是，2否"
+				},
+				{
+					"name": "tag_codes",
+					"type": "String[]",
+					"description": "房源标签"
+				},
+				{
+					"name": "community_name",
+					"type": "String",
+					"description": "小区名"
+				},
+				{
+					"name": "outer_layouts_id",
+					"type": "String",
+					"description": "外部户型id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "is_cover",
+							"type": "Number",
+							"description": "是否封面图"
+						},
+						{
+							"name": "is_focus",
+							"type": "Number",
+							"description": "是否焦点图"
+						},
+						{
+							"name": "is_deleted",
+							"type": "String",
+							"description": "是否删除"
+						},
+						{
+							"name": "source_type",
+							"type": "Number",
+							"description": "数据类型1-楼盘，2-小区，3-租房"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "图片说明"
+						},
+						{
+							"name": "pic_data",
+							"type": "String",
+							"description": "图片URL全路径"
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "图片类型"
+						},
+						{
+							"name": "order_tag",
+							"type": "Number",
+							"description": "图片顺序"
+						},
+						{
+							"name": "outer_house_id",
+							"type": "String",
+							"description": "外部房源ID"
+						},
+						{
+							"name": "outer_house_base_id",
+							"type": "String",
+							"description": "外部房屋ID"
+						},
+						{
+							"name": "outer_layout_id",
+							"type": "String",
+							"description": "外部户型ID"
+						},
+						{
+							"name": "outer_picture_id",
+							"type": "String",
+							"description": "外部图片ID"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部id包含楼盘、小区"
+						}
+					],
+					"name": "pictures",
+					"type": "ProjectPictureDto[]",
+					"description": "图片dto"
+				},
+				{
+					"name": "is_async",
+					"type": "Number",
+					"description": "是否需要异步"
+				},
+				{
+					"name": "rent_status",
+					"type": "Number",
+					"description": "出租状态"
+				},
+				{
+					"name": "service_facilities",
+					"type": "String",
+					"description": "房屋设施"
+				},
+				{
+					"name": "partition_type",
+					"type": "Number",
+					"description": "隔断类型"
+				},
+				{
+					"name": "window_type",
+					"type": "Number",
+					"description": "窗类型"
+				},
+				{
+					"name": "has_independent_balcony",
+					"type": "Number",
+					"description": "是否有独立阳台"
+				},
+				{
+					"name": "has_independent_toilet",
+					"type": "Number",
+					"description": "是否有独立卫生间"
+				},
+				{
+					"name": "house_model",
+					"type": "Number",
+					"description": "租房业务模式"
+				},
+				{
+					"name": "house_category",
+					"type": "Number",
+					"description": "房源分类"
+				},
+				{
+					"name": "rent_price",
+					"type": "String",
+					"description": "租金"
+				},
+				{
+					"name": "room_type",
+					"type": "Number",
+					"description": "房间类型"
+				},
+				{
+					"name": "outer_house_base_id",
+					"type": "String",
+					"description": "外部房屋ID"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1-新房，2-二手房，3-租房，默认为2"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0默认不是测试，1是测试数据"
+				},
+				{
+					"name": "unit_price",
+					"type": "String",
+					"description": "单价，XX元/m²，整数"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店ID"
+				},
+				{
+					"name": "cargo_type",
+					"type": "Number",
+					"description": "货类型 6-楼栋  7-户型  8-房源"
+				},
+				{
+					"name": "sales_status",
+					"type": "Number",
+					"description": "货的销售状态 0-待定 1-待售 2-在售 3-售罄 4-停售"
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "交易商品所属商品id或者货所属商品id"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "如果上翻的货为房源，则关联的为认购商品时，需必填此房源下认购商品所属的SKUid"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型 1-安心置业 2-特价房 3-0元购  4-大额电商券 5-认购商品 6-楼栋  7-户型  8-房源"
+						}
+					],
+					"name": "extend",
+					"type": "GoodsRelationDTO[]",
+					"description": "货品商品关联DTo"
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "交易商品所属商品id或者货所属商品id"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "如果上翻的货为房源，则关联的为认购商品时，需必填此房源下认购商品所属的SKUid"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型 1-安心置业 2-特价房 3-0元购  4-大额电商券 5-认购商品 6-楼栋  7-户型  8-房源"
+						}
+					],
+					"name": "relation_cargos",
+					"type": "GoodsRelationDTO[]",
+					"description": "货品商品关联DTo"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "货的商品id"
+				}
+			],
+			"name": "house",
+			"type": "SyncExistingHouseDto",
+			"description": "房源信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"subParams": [
+						{
+							"name": "entrust_id",
+							"type": "Number",
+							"description": "房源id"
+						},
+						{
+							"name": "house_id",
+							"type": "Number",
+							"description": "委托id 公域房源同步时此返回值为空"
+						},
+						{
+							"name": "entrust_version",
+							"type": "String",
+							"description": "委托版本"
+						},
+						{
+							"name": "entrust_item_id",
+							"type": "Number",
+							"description": "委托商品"
+						},
+						{
+							"name": "community_item_id",
+							"type": "Number",
+							"description": "小区商品"
+						},
+						{
+							"name": "community_id",
+							"type": "Number",
+							"description": "小区ID"
+						}
+					],
+					"name": "data",
+					"type": "SyncHouseResultDto",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.sync",
+	"apiChineseName": "房源信息同步",
+	"description": "房源信息同步",
+	"id": 56790
+}

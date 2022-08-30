@@ -1,8 +1,4 @@
 {
-	"id": 69,
-	"name": "taobao.shop.update",
-	"apiChineseName": "更新店铺基本信息",
-	"description": "目前只支持标题、公告和描述的更新",
 	"requestParams": [
 		{
 			"name": "title",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "shop",
-			"type": "Shop",
-			"description": "店铺信息",
 			"subParams": [
 				{
 					"name": "sid",
@@ -36,7 +29,14 @@
 					"type": "Date",
 					"description": "最后修改时间。格式：yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "shop",
+			"type": "Shop",
+			"description": "店铺信息"
 		}
-	]
+	],
+	"name": "taobao.shop.update",
+	"apiChineseName": "更新店铺基本信息",
+	"description": "目前只支持标题、公告和描述的更新",
+	"id": 69
 }

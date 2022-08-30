@@ -1,0 +1,237 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "work_year",
+					"type": "Number",
+					"description": "工作年限"
+				},
+				{
+					"name": "introduction",
+					"type": "String",
+					"description": "个人简介"
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "性别 0-保密 1-男 2-女"
+				},
+				{
+					"name": "sub_phone",
+					"type": "String",
+					"description": "分机号"
+				},
+				{
+					"name": "main_phone",
+					"type": "String",
+					"description": "主机号"
+				},
+				{
+					"name": "out_store_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "tags",
+					"type": "String[]",
+					"description": "标签"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "名字"
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "外部公司ID"
+				},
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "外部经纪人ID"
+				},
+				{
+					"name": "service_evaluation",
+					"type": "String",
+					"description": "服务评分"
+				},
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "身份证号码"
+				},
+				{
+					"name": "head_url",
+					"type": "String",
+					"description": "头像"
+				},
+				{
+					"name": "card_front_url",
+					"type": "String",
+					"description": "身份证正面"
+				},
+				{
+					"name": "card_back_url",
+					"type": "String",
+					"description": "身份证反面"
+				},
+				{
+					"name": "business_card",
+					"type": "String",
+					"description": "名片"
+				},
+				{
+					"name": "job_status",
+					"type": "Number",
+					"description": "在职状态 0-未知1-在职2-离职"
+				},
+				{
+					"name": "real_name_status",
+					"type": "Number",
+					"description": "实名认证状态 0-未审 1-通过 2-拒绝"
+				},
+				{
+					"name": "agent_license_url",
+					"type": "String",
+					"description": "执业资格证图片"
+				},
+				{
+					"name": "agent_license_number",
+					"type": "String",
+					"description": "执业资格证编号"
+				},
+				{
+					"name": "agent_employ_url",
+					"type": "String",
+					"description": "从业信息卡图片"
+				},
+				{
+					"name": "agent_employ_number",
+					"type": "String",
+					"description": "从业信息卡编号"
+				},
+				{
+					"name": "verification_info",
+					"type": "String",
+					"description": "核验返回信息"
+				},
+				{
+					"name": "verification_status",
+					"type": "Number",
+					"description": "核验状态 0-未审 1-通过 9-失败"
+				},
+				{
+					"subParams": [
+						{
+							"name": "recent_view_count",
+							"type": "Number",
+							"description": "近90天带看量"
+						},
+						{
+							"name": "exam_status",
+							"type": "Number",
+							"description": "考试认证1-已认证 0-未认证"
+						},
+						{
+							"name": "tutor_status",
+							"type": "Number",
+							"description": "导师认证1-已认证 0-未认证"
+						},
+						{
+							"name": "recent_trade_count",
+							"type": "Number",
+							"description": "近90天交易量"
+						}
+					],
+					"name": "broker_attach",
+					"type": "ProjectAdviserAttachDto",
+					"description": "经纪人附属属性"
+				},
+				{
+					"name": "profession",
+					"type": "String",
+					"description": "经纪人职业"
+				},
+				{
+					"name": "education",
+					"type": "Number",
+					"description": "经纪人教育水平"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "经纪人类型，3-社区志愿者 4-客服，不填默认为经纪人"
+				},
+				{
+					"name": "sincerity_status",
+					"type": "Number",
+					"description": "诚信状态1-优秀 2-诚信"
+				},
+				{
+					"name": "agent_employ_status",
+					"type": "Number",
+					"description": "经纪人是否有从业资格证"
+				},
+				{
+					"name": "agent_employ_number_url",
+					"type": "String",
+					"description": "从业资格备案信息地址"
+				},
+				{
+					"name": "partake_business",
+					"type": "String",
+					"description": "负责业务（0-二手房 1-长租公寓 2-居间模式）"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试 0-否 1-是"
+				}
+			],
+			"name": "brokers",
+			"type": "ProjectAdviserDto[]",
+			"description": "经纪人",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.broker.submit",
+	"apiChineseName": "提交经纪人信息",
+	"description": "提交经纪人信息",
+	"id": 56719
+}

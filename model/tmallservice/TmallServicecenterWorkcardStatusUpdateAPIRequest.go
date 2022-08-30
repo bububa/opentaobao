@@ -50,20 +50,20 @@ type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 	_expressCode string
 	// 物流公司名字
 	_expressCompany string
-	// 工单id
-	_workcardId int64
-	// 工单类型： 2（合同） 或者 1(任务）
-	_type *model.File
-	// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
-	_status *model.File
 	// 买家id
 	_buyerId int64
-	// 更新时间
-	_updateDate int64
 	// 服务生效时间 ：工单类型为合同工单时，必选！
 	_effectDate int64
+	// 工单id
+	_workcardId int64
 	// 服务失效时间 ：工单类型为合同工单时，必选！
 	_expireDate int64
+	// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
+	_status *model.File
+	// 更新时间
+	_updateDate int64
+	// 工单类型： 2（合同） 或者 1(任务）
+	_type *model.File
 	// 服务预约时间
 	_serviceDate int64
 	// 服务完成时间
@@ -344,45 +344,6 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpressCompany() st
 	return r._expressCompany
 }
 
-// SetWorkcardId is WorkcardId Setter
-// 工单id
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
-	r._workcardId = _workcardId
-	r.Set("workcard_id", _workcardId)
-	return nil
-}
-
-// GetWorkcardId WorkcardId Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkcardId() int64 {
-	return r._workcardId
-}
-
-// SetType is Type Setter
-// 工单类型： 2（合同） 或者 1(任务）
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.File) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetType() *model.File {
-	return r._type
-}
-
-// SetStatus is Status Setter
-// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *model.File) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetStatus() *model.File {
-	return r._status
-}
-
 // SetBuyerId is BuyerId Setter
 // 买家id
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId int64) error {
@@ -394,19 +355,6 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetBuyerId(_buyerId i
 // GetBuyerId BuyerId Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetBuyerId() int64 {
 	return r._buyerId
-}
-
-// SetUpdateDate is UpdateDate Setter
-// 更新时间
-func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_updateDate int64) error {
-	r._updateDate = _updateDate
-	r.Set("update_date", _updateDate)
-	return nil
-}
-
-// GetUpdateDate UpdateDate Getter
-func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdateDate() int64 {
-	return r._updateDate
 }
 
 // SetEffectDate is EffectDate Setter
@@ -422,6 +370,19 @@ func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetEffectDate() int64 
 	return r._effectDate
 }
 
+// SetWorkcardId is WorkcardId Setter
+// 工单id
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetWorkcardId(_workcardId int64) error {
+	r._workcardId = _workcardId
+	r.Set("workcard_id", _workcardId)
+	return nil
+}
+
+// GetWorkcardId WorkcardId Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetWorkcardId() int64 {
+	return r._workcardId
+}
+
 // SetExpireDate is ExpireDate Setter
 // 服务失效时间 ：工单类型为合同工单时，必选！
 func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expireDate int64) error {
@@ -433,6 +394,45 @@ func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetExpireDate(_expire
 // GetExpireDate ExpireDate Getter
 func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetExpireDate() int64 {
 	return r._expireDate
+}
+
+// SetStatus is Status Setter
+// 目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetStatus(_status *model.File) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetStatus() *model.File {
+	return r._status
+}
+
+// SetUpdateDate is UpdateDate Setter
+// 更新时间
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetUpdateDate(_updateDate int64) error {
+	r._updateDate = _updateDate
+	r.Set("update_date", _updateDate)
+	return nil
+}
+
+// GetUpdateDate UpdateDate Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetUpdateDate() int64 {
+	return r._updateDate
+}
+
+// SetType is Type Setter
+// 工单类型： 2（合同） 或者 1(任务）
+func (r *TmallServicecenterWorkcardStatusUpdateAPIRequest) SetType(_type *model.File) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TmallServicecenterWorkcardStatusUpdateAPIRequest) GetType() *model.File {
+	return r._type
 }
 
 // SetServiceDate is ServiceDate Setter

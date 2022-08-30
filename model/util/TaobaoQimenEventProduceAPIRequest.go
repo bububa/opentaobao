@@ -14,10 +14,10 @@ type TaobaoQimenEventProduceAPIRequest struct {
 	model.Params
 	// 事件状态，如QIMEN_ERP_TRANSFER，QIMEN_ERP_CHECK
 	_status string
-	// 淘宝订单号
-	_tid string
 	// JSON格式扩展字段
 	_ext string
+	// 淘宝订单号
+	_tid string
 	// 商家平台编码.MAIN:官方渠道,JD:京东,DD:当当,PP:拍拍,YX:易讯,EBAY:ebay,AMAZON:亚马逊,SN:苏宁,GM:国美,WPH:唯品会,JM:聚美,MGJ:蘑菇街,YT:银泰,YHD:1号店,1688:1688,POS:POS门店,OTHER:其他
 	_platform string
 	// 外部商家名称。必须同时填写platform
@@ -60,19 +60,6 @@ func (r TaobaoQimenEventProduceAPIRequest) GetStatus() string {
 	return r._status
 }
 
-// SetTid is Tid Setter
-// 淘宝订单号
-func (r *TaobaoQimenEventProduceAPIRequest) SetTid(_tid string) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoQimenEventProduceAPIRequest) GetTid() string {
-	return r._tid
-}
-
 // SetExt is Ext Setter
 // JSON格式扩展字段
 func (r *TaobaoQimenEventProduceAPIRequest) SetExt(_ext string) error {
@@ -84,6 +71,19 @@ func (r *TaobaoQimenEventProduceAPIRequest) SetExt(_ext string) error {
 // GetExt Ext Getter
 func (r TaobaoQimenEventProduceAPIRequest) GetExt() string {
 	return r._ext
+}
+
+// SetTid is Tid Setter
+// 淘宝订单号
+func (r *TaobaoQimenEventProduceAPIRequest) SetTid(_tid string) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoQimenEventProduceAPIRequest) GetTid() string {
+	return r._tid
 }
 
 // SetPlatform is Platform Setter

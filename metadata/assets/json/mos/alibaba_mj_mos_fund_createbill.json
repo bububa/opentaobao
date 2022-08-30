@@ -1,18 +1,8 @@
 {
-	"id": 37345,
-	"name": "alibaba.mj.mos.fund.createbill",
-	"apiChineseName": "创建一个付款单",
-	"description": "创建一个付款单",
 	"requestParams": [
 		{
-			"name": "bill_dto",
-			"type": "CreateBillDto",
-			"description": "创建付款单入参",
 			"subParams": [
 				{
-					"name": "settlement_d_t_o_list",
-					"type": "BillSettlementDto[]",
-					"description": "结算单列表",
 					"subParams": [
 						{
 							"name": "line_no",
@@ -128,9 +118,6 @@
 							"description": "扩展"
 						},
 						{
-							"name": "invoice_d_t_o_list",
-							"type": "SettleInvoiceDto[]",
-							"description": "发票列表",
 							"subParams": [
 								{
 									"name": "invoice_type",
@@ -177,7 +164,10 @@
 									"type": "String",
 									"description": "扩展"
 								}
-							]
+							],
+							"name": "invoice_d_t_o_list",
+							"type": "SettleInvoiceDto[]",
+							"description": "发票列表"
 						},
 						{
 							"name": "department_coa",
@@ -189,7 +179,10 @@
 							"type": "String",
 							"description": "区域科目段"
 						}
-					]
+					],
+					"name": "settlement_d_t_o_list",
+					"type": "BillSettlementDto[]",
+					"description": "结算单列表"
 				},
 				{
 					"name": "payee_country",
@@ -297,7 +290,10 @@
 					"type": "String",
 					"description": "付款说明，该说明会带到智付的订单上，做为订单说明"
 				}
-			]
+			],
+			"name": "bill_dto",
+			"type": "CreateBillDto",
+			"description": "创建付款单入参"
 		}
 	],
 	"responseParams": [
@@ -306,5 +302,9 @@
 			"type": "String",
 			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.mj.mos.fund.createbill",
+	"apiChineseName": "创建一个付款单",
+	"description": "创建一个付款单",
+	"id": 37345
 }

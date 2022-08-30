@@ -1,8 +1,4 @@
 {
-	"id": 23580,
-	"name": "taobao.simba.insight.catsinfo.get",
-	"apiChineseName": "类目信息获取",
-	"description": "获取类目信息，此接口既提供所有顶级类目的查询，又提供给定类目id自身信息和子类目信息的查询，所以可以根据此接口逐层获取所有的类目信息",
 	"requestParams": [
 		{
 			"name": "type",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "category_info_list",
-			"type": "InsightCategoryInfoDTO []",
-			"description": "类目详细信息",
 			"subParams": [
 				{
 					"name": "cat_id",
@@ -29,19 +22,9 @@
 					"description": "类目Id"
 				},
 				{
-					"name": "cat_name",
+					"name": "cat_path_name",
 					"type": "String",
-					"description": "类目名称"
-				},
-				{
-					"name": "cat_level",
-					"type": "Number",
-					"description": "类目的级别"
-				},
-				{
-					"name": "parent_cat_id",
-					"type": "Number",
-					"description": "父类目Id"
+					"description": "表示类目的所有父级类目的名称，不同层级之间用\u0002\u0002（ascii码为2的字符）分隔开"
 				},
 				{
 					"name": "cat_path_id",
@@ -49,16 +32,33 @@
 					"description": "表示该类目的所有父级类目，按层级顺序排列，层级越高的在前面，不同的层级之间用空格分隔"
 				},
 				{
-					"name": "cat_path_name",
-					"type": "String",
-					"description": "表示类目的所有父级类目的名称，不同层级之间用\u0002\u0002（ascii码为2的字符）分隔开"
+					"name": "parent_cat_id",
+					"type": "Number",
+					"description": "父类目Id"
 				},
 				{
 					"name": "last_sync_time",
 					"type": "Date",
 					"description": "表示类目信息上次同步的时间"
+				},
+				{
+					"name": "cat_level",
+					"type": "Number",
+					"description": "类目的级别"
+				},
+				{
+					"name": "cat_name",
+					"type": "String",
+					"description": "类目名称"
 				}
-			]
+			],
+			"name": "category_info_list",
+			"type": "InsightCategoryInfoDTO []",
+			"description": "类目详细信息"
 		}
-	]
+	],
+	"name": "taobao.simba.insight.catsinfo.get",
+	"apiChineseName": "类目信息获取",
+	"description": "获取类目信息，此接口既提供所有顶级类目的查询，又提供给定类目id自身信息和子类目信息的查询，所以可以根据此接口逐层获取所有的类目信息",
+	"id": 23580
 }

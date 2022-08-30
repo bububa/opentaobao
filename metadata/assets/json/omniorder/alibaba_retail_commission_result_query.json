@@ -1,13 +1,6 @@
 {
-	"id": 43948,
-	"name": "alibaba.retail.commission.result.query",
-	"apiChineseName": "分佣结果查询",
-	"description": "查询导购分佣记录",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "CommissionResultQuery",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -54,192 +47,170 @@
 					"type": "Date",
 					"description": "订单支付的结束时间"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "CommissionResultQuery",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "commission_result_list",
-					"type": "CommissionResultDto[]",
-					"description": "返回的数据实体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "分佣id",
-							"required": true
+							"description": "分佣id"
 						},
 						{
 							"name": "biz_order_type",
 							"type": "Number",
-							"description": "订单类型",
-							"required": true
+							"description": "订单类型"
 						},
 						{
 							"name": "biz_order_money",
 							"type": "Number",
-							"description": "订单金额，单位分",
-							"required": true
+							"description": "订单金额，单位分"
 						},
 						{
 							"name": "order_pay_money",
 							"type": "Number",
-							"description": "实付金额，单位分",
-							"required": true
+							"description": "实付金额，单位分"
 						},
 						{
 							"name": "order_create_time",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "order_pay_time",
 							"type": "Date",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "order_end_time",
 							"type": "Date",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "commission_money",
 							"type": "Number",
-							"description": "佣金，单位分",
-							"required": true
+							"description": "佣金，单位分"
 						},
 						{
 							"name": "commission_employee_id",
 							"type": "Number",
-							"description": "分佣导购id",
-							"required": true
+							"description": "分佣导购id"
 						},
 						{
 							"name": "commission_employee_type",
 							"type": "Number",
-							"description": "分佣导购类型：1-招募导购,2-当前导购,3-首单导购,4-外部订单导购，5-好友，6-接单导购",
-							"required": true
+							"description": "分佣导购类型：1-招募导购,2-当前导购,3-首单导购,4-外部订单导购，5-好友，6-接单导购"
 						},
 						{
 							"name": "commission_employee_name",
 							"type": "String",
-							"description": "分佣导购名称",
-							"required": true
+							"description": "分佣导购名称"
 						},
 						{
 							"name": "employee_store_id",
 							"type": "Number",
-							"description": "分佣导购所属门店id",
-							"required": true
+							"description": "分佣导购所属门店id"
 						},
 						{
 							"name": "employee_store_name",
 							"type": "String",
-							"description": "分佣导购所属门店名称",
-							"required": true
+							"description": "分佣导购所属门店名称"
 						},
 						{
 							"name": "seller_name",
 							"type": "String",
-							"description": "旗舰店名称",
-							"required": true
+							"description": "旗舰店名称"
 						},
 						{
 							"name": "buyer_join_time",
 							"type": "Date",
-							"description": "消费者入会时间",
-							"required": true
+							"description": "消费者入会时间"
 						},
 						{
 							"name": "commission_time",
 							"type": "Date",
-							"description": "分佣时间",
-							"required": true
+							"description": "分佣时间"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "消费者nick",
-							"required": true
+							"description": "消费者nick"
 						},
 						{
 							"name": "work_id",
 							"type": "String",
-							"description": "导购工号",
-							"required": true
+							"description": "导购工号"
 						},
 						{
 							"name": "pay_order_id",
 							"type": "String",
-							"description": "支付订单",
-							"required": true
+							"description": "支付订单"
 						},
 						{
 							"name": "auction_id",
 							"type": "Number",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
 							"name": "order_id_string",
 							"type": "String",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "biz_order_id_string",
 							"type": "String",
-							"description": "子订单id",
-							"required": true
+							"description": "子订单id"
 						}
-					]
+					],
+					"name": "commission_result_list",
+					"type": "CommissionResultDto[]",
+					"description": "返回的数据实体"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回的执行状态吗",
-					"required": true
+					"description": "返回的执行状态吗"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
+					"description": "是否执行成功"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总记录数",
-					"required": true
+					"description": "总记录数"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页大小",
-					"required": true
+					"description": "页大小"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.retail.commission.result.query",
+	"apiChineseName": "分佣结果查询",
+	"description": "查询导购分佣记录",
+	"id": 43948
 }

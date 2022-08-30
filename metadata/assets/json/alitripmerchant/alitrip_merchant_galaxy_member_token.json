@@ -1,8 +1,4 @@
 {
-	"id": 54718,
-	"name": "alitrip.merchant.galaxy.member.token",
-	"apiChineseName": "星河-校验token",
-	"description": "校验或者刷新token",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -17,35 +13,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功还是失败",
-					"required": true
+					"description": "成功还是失败"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "token",
 					"type": "String",
-					"description": "token",
-					"required": true
+					"description": "token"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.member.token",
+	"apiChineseName": "星河-校验token",
+	"description": "校验或者刷新token",
+	"id": 54718
 }

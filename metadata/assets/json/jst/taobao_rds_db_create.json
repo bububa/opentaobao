@@ -1,22 +1,18 @@
 {
-	"id": 11133,
-	"name": "taobao.rds.db.create",
-	"apiChineseName": "rds创建数据库",
-	"description": "在rds实例里创建数据库",
 	"requestParams": [
 		{
 			"name": "instance_name",
 			"type": "String",
 			"description": "rds的实例名",
-			"required": true,
-			"maxLength": 30
+			"maxLength": 30,
+			"required": true
 		},
 		{
 			"name": "db_name",
 			"type": "String",
 			"description": "数据库名",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "account_name",
@@ -27,9 +23,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "rds_db_info",
-			"type": "RdsDbInfo",
-			"description": "rds创建、查询、删除db返回结果的数据结构",
 			"subParams": [
 				{
 					"name": "max_account",
@@ -66,7 +59,14 @@
 					"type": "String",
 					"description": "数据库名称"
 				}
-			]
+			],
+			"name": "rds_db_info",
+			"type": "RdsDbInfo",
+			"description": "rds创建、查询、删除db返回结果的数据结构"
 		}
-	]
+	],
+	"name": "taobao.rds.db.create",
+	"apiChineseName": "rds创建数据库",
+	"description": "在rds实例里创建数据库",
+	"id": 11133
 }

@@ -15,7 +15,7 @@ type TaobaoBillAccountsGetAPIRequest struct {
 	// 需要返回的字段
 	_fields []string
 	// 需要获取的科目ID
-	_aids []int64
+	_aids []string
 }
 
 // NewTaobaoBillAccountsGetRequest 初始化TaobaoBillAccountsGetAPIRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoBillAccountsGetAPIRequest) GetFields() []string {
 
 // SetAids is Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []int64) error {
+func (r *TaobaoBillAccountsGetAPIRequest) SetAids(_aids []string) error {
 	r._aids = _aids
 	r.Set("aids", _aids)
 	return nil
 }
 
 // GetAids Aids Getter
-func (r TaobaoBillAccountsGetAPIRequest) GetAids() []int64 {
+func (r TaobaoBillAccountsGetAPIRequest) GetAids() []string {
 	return r._aids
 }

@@ -1,40 +1,26 @@
 {
-	"id": 50094,
-	"name": "taobao.special.refund.get",
-	"apiChineseName": "特殊部分退纠纷单查询",
-	"description": "获取单笔特殊部分退的纠纷单查询",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "refund_id",
 			"type": "Number",
 			"description": "退款单号",
-			"required": true,
-			"maxValue": 9223372036854775807,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "refund",
-			"type": "Refund",
-			"description": "退款详情",
 			"subParams": [
 				{
-					"name": "shipping_type",
+					"name": "address",
 					"type": "String",
-					"description": "物流方式.可选值:free(卖家包邮),post(平邮),express(快递),ems(EMS)."
-				},
-				{
-					"name": "cs_status",
-					"type": "Number",
-					"description": "不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成 4;客服主管复审失败5;客服处理完成6;"
+					"description": "卖家收货地址"
 				},
 				{
 					"name": "advance_status",
@@ -42,39 +28,14 @@
 					"description": "退款先行垫付默认的未申请状态 0;退款先行垫付申请中  1;退款先行垫付，垫付完成 2;退款先行垫付，卖家拒绝收货 3;退款先行垫付，垫付关闭 4;退款先行垫付，垫付分账成功 5;"
 				},
 				{
-					"name": "split_taobao_fee",
-					"type": "String",
-					"description": "分账给淘宝的钱"
-				},
-				{
-					"name": "split_seller_fee",
-					"type": "String",
-					"description": "分账给卖家的钱"
-				},
-				{
-					"name": "refund_id",
-					"type": "String",
-					"description": "退款单号"
-				},
-				{
-					"name": "tid",
-					"type": "Number",
-					"description": "淘宝交易单号"
-				},
-				{
-					"name": "oid",
-					"type": "Number",
-					"description": "子订单号。如果是单笔交易oid会等于tid"
-				},
-				{
 					"name": "alipay_no",
 					"type": "String",
 					"description": "支付宝交易号"
 				},
 				{
-					"name": "total_fee",
+					"name": "attribute",
 					"type": "String",
-					"description": "交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+					"description": "attribute"
 				},
 				{
 					"name": "buyer_nick",
@@ -82,9 +43,9 @@
 					"description": "买家昵称"
 				},
 				{
-					"name": "seller_nick",
+					"name": "company_name",
 					"type": "String",
-					"description": "卖家昵称"
+					"description": "物流公司名称"
 				},
 				{
 					"name": "created",
@@ -92,19 +53,19 @@
 					"description": "退款申请时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
-					"name": "modified",
+					"name": "cs_status",
+					"type": "Number",
+					"description": "不需客服介入1;需要客服介入2;客服已经介入3;客服初审完成4;客服主管复审失败5;客服处理完成6;系统撤销(B2B使用)，维权撤销(集市使用) 7;支持买家 8;支持卖家 9;举证中 10;开放申诉 11;"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "退款说明"
+				},
+				{
+					"name": "good_return_time",
 					"type": "Date",
-					"description": "更新时间。格式:yyyy-MM-dd HH:mm:ss"
-				},
-				{
-					"name": "order_status",
-					"type": "String",
-					"description": "退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自\u0026quot;http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81\u0026quot;"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+					"description": "退货时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "good_status",
@@ -117,81 +78,14 @@
 					"description": "买家是否需要退货。可选值:true(是),false(否)"
 				},
 				{
-					"name": "refund_fee",
-					"type": "String",
-					"description": "退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
-				},
-				{
-					"name": "payment",
-					"type": "String",
-					"description": "支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
-				},
-				{
-					"name": "reason",
-					"type": "String",
-					"description": "退款原因"
-				},
-				{
-					"name": "desc",
-					"type": "String",
-					"description": "退款说明"
-				},
-				{
-					"name": "title",
-					"type": "String",
-					"description": "商品标题"
-				},
-				{
-					"name": "price",
-					"type": "String",
-					"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+					"name": "modified",
+					"type": "Date",
+					"description": "更新时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "num",
 					"type": "Number",
-					"description": "商品购买数量"
-				},
-				{
-					"name": "good_return_time",
-					"type": "Date",
-					"description": "退货时间。格式:yyyy-MM-dd HH:mm:ss"
-				},
-				{
-					"name": "company_name",
-					"type": "String",
-					"description": "物流公司名称"
-				},
-				{
-					"name": "sid",
-					"type": "String",
-					"description": "退货运单号"
-				},
-				{
-					"name": "address",
-					"type": "String",
-					"description": "卖家收货地址"
-				},
-				{
-					"name": "refund_remind_timeout",
-					"type": "RefundRemindTimeout",
-					"description": "退款超时结构RefundRemindTimeout",
-					"subParams": [
-						{
-							"name": "remind_type",
-							"type": "Number",
-							"description": "提醒的类型（退款详情中提示信息的类型）"
-						},
-						{
-							"name": "exist_timeout",
-							"type": "Boolean",
-							"description": "是否存在超时。可选值:true(是),false(否)"
-						},
-						{
-							"name": "timeout",
-							"type": "Date",
-							"description": "超时时间。格式:yyyy-MM-dd HH:mm:ss"
-						}
-					]
+					"description": "商品数量"
 				},
 				{
 					"name": "num_iid",
@@ -199,24 +93,19 @@
 					"description": "申请退款的商品数字编号"
 				},
 				{
-					"name": "refund_phase",
-					"type": "String",
-					"description": "退款阶段，可选值：onsale/aftersale"
-				},
-				{
-					"name": "refund_version",
+					"name": "oid",
 					"type": "Number",
-					"description": "退款版本号（时间戳）"
+					"description": "子订单号。如果是单笔交易oid会等于tid"
 				},
 				{
-					"name": "sku",
+					"name": "operation_contraint",
 					"type": "String",
-					"description": "商品SKU信息"
+					"description": "退款约束，可选值：cannot_refuse（不允许操作），refund_onweb（需要到网页版操作）"
 				},
 				{
-					"name": "attribute",
+					"name": "order_status",
 					"type": "String",
-					"description": "退款扩展属性"
+					"description": "退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自\"http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81\""
 				},
 				{
 					"name": "outer_id",
@@ -224,9 +113,111 @@
 					"description": "商品外部商家编码"
 				},
 				{
-					"name": "operation_contraint",
+					"name": "payment",
 					"type": "String",
-					"description": "退款约束，可选值：cannot_refuse（不允许操作），refund_onweb（需要到网页版操作）"
+					"description": "支付给卖家的金额(交易总金额-退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "退款原因"
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款单号"
+				},
+				{
+					"name": "refund_phase",
+					"type": "String",
+					"description": "退款阶段，可选值：onsale/aftersale"
+				},
+				{
+					"subParams": [
+						{
+							"name": "exist_timeout",
+							"type": "Boolean",
+							"description": "是否存在超时。可选值:true(是),false(否)"
+						},
+						{
+							"name": "remind_type",
+							"type": "Number",
+							"description": "提醒的类型（退款详情中提示信息的类型）"
+						},
+						{
+							"name": "timeout",
+							"type": "Date",
+							"description": "超时时间。格式:yyyy-MM-dd HH:mm:ss"
+						}
+					],
+					"name": "refund_remind_timeout",
+					"type": "RefundRemindTimeout",
+					"description": "退款超时结构RefundRemindTimeout"
+				},
+				{
+					"name": "refund_version",
+					"type": "Number",
+					"description": "退款版本号（时间戳）"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "物流方式.可选值:free(卖家包邮),post(平邮),express(快递),ems(EMS)."
+				},
+				{
+					"name": "sid",
+					"type": "String",
+					"description": "退货运单号"
+				},
+				{
+					"name": "sku",
+					"type": "String",
+					"description": "商品SKU信息"
+				},
+				{
+					"name": "split_seller_fee",
+					"type": "String",
+					"description": "分账给卖家的钱"
+				},
+				{
+					"name": "split_taobao_fee",
+					"type": "String",
+					"description": "分账给淘宝的钱"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "淘宝交易单号"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "buyer_open_uid",
@@ -236,9 +227,16 @@
 				{
 					"name": "special_refund_type",
 					"type": "String",
-					"description": "逆向特殊部分退类型：价保服务、退差返现"
+					"description": "逆向特殊部分退类型：价保服务（priceProtect）、退差返现(cashBack)"
 				}
-			]
+			],
+			"name": "refund",
+			"type": "Refund",
+			"description": "退款详情"
 		}
-	]
+	],
+	"name": "taobao.special.refund.get",
+	"apiChineseName": "特殊部分退纠纷单查询",
+	"description": "获取单笔特殊部分退的纠纷单查询",
+	"id": 50094
 }

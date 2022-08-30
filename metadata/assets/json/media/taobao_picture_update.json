@@ -1,8 +1,4 @@
 {
-	"id": 10912,
-	"name": "taobao.picture.update",
-	"apiChineseName": "修改图片名字",
-	"description": "修改指定图片的图片名",
 	"requestParams": [
 		{
 			"name": "picture_id",
@@ -14,8 +10,8 @@
 			"name": "new_name",
 			"type": "String",
 			"description": "新的图片名，最大长度50字符，不能为空",
-			"required": true,
-			"maxLength": 50
+			"maxLength": 50,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -24,5 +20,9 @@
 			"type": "Boolean",
 			"description": "更新是否成功"
 		}
-	]
+	],
+	"name": "taobao.picture.update",
+	"apiChineseName": "修改图片名字",
+	"description": "修改指定图片的图片名",
+	"id": 10912
 }

@@ -1,8 +1,4 @@
 {
-	"id": 37988,
-	"name": "taobao.tbk.sc.publisher.info.save",
-	"apiChineseName": "淘宝客-公用-私域用户备案",
-	"description": "通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。",
 	"requestParams": [
 		{
 			"name": "relation_from",
@@ -44,35 +40,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "relation_id",
 					"type": "Number",
-					"description": "渠道关系ID",
-					"required": true
+					"description": "渠道关系ID"
 				},
 				{
 					"name": "account_name",
 					"type": "String",
-					"description": "渠道昵称",
-					"required": true
+					"description": "渠道昵称"
 				},
 				{
 					"name": "special_id",
 					"type": "Number",
-					"description": "会员运营ID",
-					"required": true
+					"description": "会员运营ID"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "如果重复绑定会提示：”重复绑定渠道“或”重复绑定粉丝“",
-					"required": true
+					"description": "如果重复绑定会提示：”重复绑定渠道“或”重复绑定粉丝“"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "data"
 		}
-	]
+	],
+	"name": "taobao.tbk.sc.publisher.info.save",
+	"apiChineseName": "淘宝客-公用-私域用户备案",
+	"description": "通过入参渠道管理或会员运营管理的邀请码，生成渠道id或会员运营id，完成渠道或会员的备案。",
+	"id": 37988
 }

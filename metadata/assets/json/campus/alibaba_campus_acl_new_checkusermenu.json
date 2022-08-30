@@ -1,13 +1,6 @@
 {
-	"id": 38903,
-	"name": "alibaba.campus.acl.new.checkusermenu",
-	"apiChineseName": "校验用户是否有菜单权限",
-	"description": "校验用户是否有菜单权限",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -27,12 +20,12 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
-			"name": "param",
-			"type": "CheckUserMenuParam",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "menu_url",
@@ -44,40 +37,43 @@
 					"type": "String",
 					"description": "用户账号"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CheckUserMenuParam",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "content",
-					"required": true
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.checkusermenu",
+	"apiChineseName": "校验用户是否有菜单权限",
+	"description": "校验用户是否有菜单权限",
+	"id": 38903
 }

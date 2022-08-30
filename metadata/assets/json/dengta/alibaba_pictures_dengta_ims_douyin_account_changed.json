@@ -1,8 +1,4 @@
 {
-	"id": 50713,
-	"name": "alibaba.pictures.dengta.ims.douyin.account.changed",
-	"apiChineseName": "接收发生变化的抖音帐号",
-	"description": "接收发生变化的抖音帐号",
 	"requestParams": [
 		{
 			"name": "account_ids",
@@ -25,29 +21,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "GeneralResult",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求标识",
-					"required": true
+					"description": "请求标识"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "value",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "GeneralResult",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.pictures.dengta.ims.douyin.account.changed",
+	"apiChineseName": "接收发生变化的抖音帐号",
+	"description": "接收发生变化的抖音帐号",
+	"id": 50713
 }

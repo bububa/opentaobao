@@ -1,15 +1,6 @@
 {
-	"id": 47816,
-	"name": "alibaba.wdk.bm.stock.publish",
-	"apiChineseName": "品牌营销涉及到的商品的库存同步接口",
-	"description": "用于操作sku的库存",
 	"requestParams": [
 		{
-			"name": "sku_stock_publish_param_list",
-			"type": "SkuStockPublishParamDo[]",
-			"description": "批量入参",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "shop_code",
@@ -53,72 +44,72 @@
 					"description": "当时业务发生的时间戳，单位：ms",
 					"required": true
 				}
-			]
+			],
+			"name": "sku_stock_publish_param_list",
+			"type": "SkuStockPublishParamDo[]",
+			"description": "批量入参",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BmResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "publish_results",
-					"type": "SkuStockPublishResult[]",
-					"description": "详细结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "具体的错误码",
-							"required": true
+							"description": "具体的错误码"
 						},
 						{
 							"name": "result",
 							"type": "Boolean",
-							"description": "bill_no对应的操作结果",
-							"required": true
+							"description": "bill_no对应的操作结果"
 						},
 						{
 							"name": "bill_no",
 							"type": "String",
-							"description": "入参中对应的幂等单据号",
-							"required": true
+							"description": "入参中对应的幂等单据号"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "具体的更新失败原因",
-							"required": true
+							"description": "具体的更新失败原因"
 						}
-					]
+					],
+					"name": "publish_results",
+					"type": "SkuStockPublishResult[]",
+					"description": "详细结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用的成功与否",
-					"required": true
+					"description": "接口调用的成功与否"
 				},
 				{
 					"name": "ext_data",
-					"type": "Json",
-					"description": "额外属性",
-					"required": true
+					"type": "String",
+					"description": "额外属性"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统调用的错误码",
-					"required": true
+					"description": "系统调用的错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "系统调用的错误原因",
-					"required": true
+					"description": "系统调用的错误原因"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BmResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.wdk.bm.stock.publish",
+	"apiChineseName": "品牌营销涉及到的商品的库存同步接口",
+	"description": "用于操作sku的库存",
+	"id": 47816
 }

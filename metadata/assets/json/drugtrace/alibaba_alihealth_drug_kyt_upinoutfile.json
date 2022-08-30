@@ -1,8 +1,4 @@
 {
-	"id": 41260,
-	"name": "alibaba.alihealth.drug.kyt.upinoutfile",
-	"apiChineseName": "上传出入库单据(传文件)",
-	"description": "上传出入库单据(传文件)",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -154,5 +150,9 @@
 			"type": "Boolean",
 			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.upinoutfile",
+	"apiChineseName": "上传出入库单据(传文件)",
+	"description": "上传出入库单据(传文件)",
+	"id": 41260
 }

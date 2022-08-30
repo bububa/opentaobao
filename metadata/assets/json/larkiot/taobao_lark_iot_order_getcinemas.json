@@ -1,8 +1,4 @@
 {
-	"id": 42041,
-	"name": "taobao.lark.iot.order.getcinemas",
-	"apiChineseName": "获取iot渠道开放的影院",
-	"description": "iot渠道拉取有权限访问的影院",
 	"requestParams": [
 		{
 			"name": "channel_code",
@@ -12,67 +8,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "BizListResult",
-			"description": "有权限的影院列表",
 			"subParams": [
 				{
 					"name": "biz_code",
 					"type": "String",
-					"description": "业务码",
-					"required": true
+					"description": "业务码"
 				},
 				{
 					"name": "biz_msg",
 					"type": "String",
-					"description": "业务信息",
-					"required": true
+					"description": "业务信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "访问结果",
-					"required": true
+					"description": "访问结果"
 				},
 				{
-					"name": "data_list",
-					"type": "CinemaIotResponse[]",
-					"description": "影院列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cinema_link_id",
 							"type": "String",
-							"description": "影院内码",
-							"required": true
+							"description": "影院内码"
 						},
 						{
 							"name": "cinema_name",
 							"type": "String",
-							"description": "影院名称",
-							"required": true
+							"description": "影院名称"
 						},
 						{
 							"name": "cinema_id",
 							"type": "String",
-							"description": "影院国家编码",
-							"required": true
+							"description": "影院国家编码"
 						},
 						{
 							"name": "city_code",
 							"type": "String",
-							"description": "城市编码",
-							"required": true
+							"description": "城市编码"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "城市",
-							"required": true
+							"description": "城市"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "CinemaIotResponse[]",
+					"description": "影院列表"
 				}
-			]
+			],
+			"name": "data",
+			"type": "BizListResult",
+			"description": "有权限的影院列表"
 		}
-	]
+	],
+	"name": "taobao.lark.iot.order.getcinemas",
+	"apiChineseName": "获取iot渠道开放的影院",
+	"description": "iot渠道拉取有权限访问的影院",
+	"id": 42041
 }

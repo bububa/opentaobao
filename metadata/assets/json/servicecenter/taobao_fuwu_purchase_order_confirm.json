@@ -1,14 +1,6 @@
 {
-	"id": 25687,
-	"name": "taobao.fuwu.purchase.order.confirm",
-	"apiChineseName": "服务市场内购服务下单接口",
-	"description": "通过传入服务市场商品的itemcode等信息，返回给服务商内购服务的下单链接",
 	"requestParams": [
 		{
-			"name": "param_order_confirm_query_d_t_o",
-			"type": "OrderConfirmQueryDto",
-			"description": "内购服务下单接口参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_key",
@@ -49,7 +41,11 @@
 					"type": "String",
 					"description": "计量型服务的数量，如果是计量型内购服务，则必填"
 				}
-			]
+			],
+			"name": "param_order_confirm_query_d_t_o",
+			"type": "OrderConfirmQueryDto",
+			"description": "内购服务下单接口参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -58,5 +54,9 @@
 			"type": "String",
 			"description": "下单页面url"
 		}
-	]
+	],
+	"name": "taobao.fuwu.purchase.order.confirm",
+	"apiChineseName": "服务市场内购服务下单接口",
+	"description": "通过传入服务市场商品的itemcode等信息，返回给服务商内购服务的下单链接",
+	"id": 25687
 }

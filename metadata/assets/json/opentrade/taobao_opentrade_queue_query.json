@@ -1,8 +1,4 @@
 {
-	"id": 48547,
-	"name": "taobao.opentrade.queue.query",
-	"apiChineseName": "尖货交易排队信息查询",
-	"description": "尖货交易排队信息查询",
 	"requestParams": [
 		{
 			"name": "status",
@@ -45,53 +41,50 @@
 			"description": "总记录数"
 		},
 		{
-			"name": "results",
-			"type": "McUserDto []",
-			"description": "返回的排队用户数据",
 			"subParams": [
 				{
 					"name": "status",
 					"type": "String",
-					"description": "用户状态",
-					"required": true
+					"description": "用户状态"
 				},
 				{
 					"name": "activity_id",
 					"type": "String",
-					"description": "排队活动ID",
-					"required": true
+					"description": "排队活动ID"
 				},
 				{
 					"name": "ext_info",
 					"type": "String",
-					"description": "排队传入的扩展信息",
-					"required": true
+					"description": "排队传入的扩展信息"
 				},
 				{
 					"name": "quality",
 					"type": "Number",
-					"description": "排队商品数量",
-					"required": true
+					"description": "排队商品数量"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "排队商品SKU ID",
-					"required": true
+					"description": "排队商品SKU ID"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "排队商品ID",
-					"required": true
+					"description": "排队商品ID"
 				},
 				{
 					"name": "user_open_id",
 					"type": "String",
-					"description": "用户openId",
-					"required": true
+					"description": "用户openId"
 				}
-			]
+			],
+			"name": "results",
+			"type": "McUserDto []",
+			"description": "返回的排队用户数据"
 		}
-	]
+	],
+	"name": "taobao.opentrade.queue.query",
+	"apiChineseName": "尖货交易排队信息查询",
+	"description": "尖货交易排队信息查询",
+	"id": 48547
 }

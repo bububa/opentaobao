@@ -1,0 +1,156 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_activity_code",
+			"type": "String",
+			"description": "外部活动code"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "out_rid",
+									"type": "String",
+									"description": "外部房源id"
+								},
+								{
+									"name": "rate_plan_code",
+									"type": "String",
+									"description": "外部rpcode"
+								}
+							],
+							"name": "rate_infos",
+							"type": "Rateinfos[]",
+							"description": "参与活动的rates"
+						},
+						{
+							"name": "outer_activity_code",
+							"type": "String",
+							"description": "外部活动code"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "check_in_from",
+											"type": "Date",
+											"description": "入住开始"
+										},
+										{
+											"name": "investment_number",
+											"type": "String",
+											"description": "固定折扣百分比"
+										},
+										{
+											"name": "valid_weeks",
+											"type": "String[]",
+											"description": "一个星期内有效性约束"
+										},
+										{
+											"name": "check_in_to",
+											"type": "Date",
+											"description": "入住结束"
+										},
+										{
+											"subParams": [
+												{
+													"name": "invalid_from",
+													"type": "Date",
+													"description": "活动失效开始时间"
+												},
+												{
+													"name": "invalid_to",
+													"type": "Date",
+													"description": "活动失效结束时间"
+												}
+											],
+											"name": "invalid_dates",
+											"type": "InvalidDate[]",
+											"description": "失效时间"
+										}
+									],
+									"name": "daily_booking_info",
+									"type": "DailyBookingInfo",
+									"description": "天天特惠优惠"
+								},
+								{
+									"subParams": [
+										{
+											"name": "min_pre_booking_days",
+											"type": "Number",
+											"description": "提前预定天数,时间范围为1-60天"
+										},
+										{
+											"name": "investment_number",
+											"type": "Number",
+											"description": "固定折扣百分比"
+										},
+										{
+											"name": "min_continuity_stay",
+											"type": "Number",
+											"description": "连住天数"
+										}
+									],
+									"name": "early_booking_info",
+									"type": "EarlyBookingInfo",
+									"description": "早定优惠"
+								},
+								{
+									"subParams": [
+										{
+											"name": "min_continuity_stay",
+											"type": "Number",
+											"description": "连住天数可选择范围为（2，3，4，5，7，15，30）"
+										},
+										{
+											"name": "investment_number",
+											"type": "Number",
+											"description": "固定折扣百分比"
+										}
+									],
+									"name": "long_order_info",
+									"type": "LongOrderInfo",
+									"description": "连住优惠"
+								}
+							],
+							"name": "promo_info",
+							"type": "PromoInfo",
+							"description": "优惠信息"
+						}
+					],
+					"name": "bnb_promo",
+					"type": "BnbPromoDTO",
+					"description": "民宿活动信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
+		}
+	],
+	"name": "taobao.xhotel.bnbpromo.get",
+	"apiChineseName": "民宿查询营销活动",
+	"description": "民宿查询营销活动",
+	"id": 59749
+}

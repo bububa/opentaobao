@@ -1,8 +1,4 @@
 {
-	"id": 54903,
-	"name": "alibaba.alihealth.drug.wxinfo.upload",
-	"apiChineseName": "小程序数据回传",
-	"description": "小程序数据回传",
 	"requestParams": [
 		{
 			"name": "user_info",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "msgCode"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.wxinfo.upload",
+	"apiChineseName": "小程序数据回传",
+	"description": "小程序数据回传",
+	"id": 54903
 }

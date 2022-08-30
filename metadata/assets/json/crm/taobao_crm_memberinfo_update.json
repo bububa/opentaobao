@@ -1,22 +1,18 @@
 {
-	"id": 10837,
-	"name": "taobao.crm.memberinfo.update",
-	"apiChineseName": "编辑会员资料",
-	"description": "编辑会员的基本资料，接口返回会员信息修改是否成功",
 	"requestParams": [
 		{
 			"name": "buyer_nick",
 			"type": "String",
 			"description": "买家昵称",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "status",
 			"type": "String",
 			"description": "用于描述会员的状态，normal表示正常，blacklist表示黑名单(不享受会员折扣).",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "grade",
@@ -73,5 +69,9 @@
 			"type": "Boolean",
 			"description": "会员信息修改是否成功"
 		}
-	]
+	],
+	"name": "taobao.crm.memberinfo.update",
+	"apiChineseName": "编辑会员资料",
+	"description": "编辑会员的基本资料，接口返回会员信息修改是否成功",
+	"id": 10837
 }

@@ -1,8 +1,4 @@
 {
-	"id": 23002,
-	"name": "taobao.xhotel.order.alipayface.settle",
-	"apiChineseName": "信用住订单结账接口",
-	"description": "用于离店付订单在客人离店后，发起结账以及扣款等后续动作",
 	"requestParams": [
 		{
 			"name": "memo",
@@ -30,8 +26,8 @@
 			"name": "total_room_fee",
 			"type": "Number",
 			"description": "房费总额(必须大于0)。结账时请按订单原价发起结账卖家优惠由飞猪平台发起扣减",
-			"required": true,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		},
 		{
 			"name": "daily_price_info",
@@ -57,10 +53,6 @@
 			"maxLength": 1024
 		},
 		{
-			"name": "room_settle_info_list",
-			"type": "RoomSettleInfo[]",
-			"description": "单间房明细",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "room_no",
@@ -102,7 +94,11 @@
 					"type": "String",
 					"description": "房间状态；1:未入住（担保且需扣款）；2:取消成功（卖家取消；担保noshow且双方协商一致不扣款）；3:已入住"
 				}
-			]
+			],
+			"name": "room_settle_info_list",
+			"type": "RoomSettleInfo[]",
+			"description": "单间房明细",
+			"maxListSize": 20
 		},
 		{
 			"name": "contain_guarantee",
@@ -146,5 +142,9 @@
 			"type": "String",
 			"description": "返回"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.alipayface.settle",
+	"apiChineseName": "信用住订单结账接口",
+	"description": "用于离店付订单在客人离店后，发起结账以及扣款等后续动作",
+	"id": 23002
 }

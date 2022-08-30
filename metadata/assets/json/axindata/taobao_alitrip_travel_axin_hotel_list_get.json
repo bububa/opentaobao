@@ -1,0 +1,237 @@
+{
+	"requestParams": [
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市编码",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id(由阿信分配)",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "标准房型id"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "标准房型名称"
+										},
+										{
+											"name": "floor",
+											"type": "String",
+											"description": "楼层"
+										},
+										{
+											"name": "network_service",
+											"type": "String",
+											"description": "宽带服务（\"0\",\"有线上网(免费),\"1\",\"有线上网(无)\",\"2\",\"有线上网(收费)\",\"3\",\"有线上网(部分有且免费)\",\"4\",\"有线上网(部分有且收费)\"）"
+										},
+										{
+											"name": "facility",
+											"type": "String",
+											"description": "设施"
+										},
+										{
+											"name": "max_occupancy",
+											"type": "Number",
+											"description": "最大入住人数"
+										},
+										{
+											"name": "area",
+											"type": "String",
+											"description": "面积"
+										},
+										{
+											"name": "window_type",
+											"type": "String",
+											"description": "窗型（0, 无窗,1, 有窗;）"
+										},
+										{
+											"name": "bed_type",
+											"type": "String",
+											"description": "床型"
+										},
+										{
+											"name": "bed_type_desc",
+											"type": "String",
+											"description": "床型描述"
+										},
+										{
+											"name": "status",
+											"type": "byte",
+											"description": "状态（0 - 正常 ，-1 删除 ，-4 失效）"
+										}
+									],
+									"name": "std_room_type_list",
+									"type": "StdRoomType[]",
+									"description": "标准房型信息"
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "标准酒店名称"
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址"
+								},
+								{
+									"name": "services",
+									"type": "String",
+									"description": "服务"
+								},
+								{
+									"name": "longtitude",
+									"type": "String",
+									"description": "经度"
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度"
+								},
+								{
+									"name": "rate_number",
+									"type": "Number",
+									"description": "评论数"
+								},
+								{
+									"name": "rate_score",
+									"type": "String",
+									"description": "评分"
+								},
+								{
+									"name": "hotel_tel",
+									"type": "String",
+									"description": "酒店电话"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "酒店特色"
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市编码"
+								},
+								{
+									"name": "star",
+									"type": "String",
+									"description": "酒店档次"
+								},
+								{
+									"name": "opening_time",
+									"type": "String",
+									"description": "开业时间"
+								},
+								{
+									"name": "hotel_facilities",
+									"type": "String",
+									"description": "酒店设施"
+								},
+								{
+									"name": "brand",
+									"type": "String",
+									"description": "酒店品牌"
+								},
+								{
+									"name": "hotel_type",
+									"type": "byte",
+									"description": "酒店类型（0-标准酒店 1-标准客栈）"
+								},
+								{
+									"name": "pet_info",
+									"type": "String",
+									"description": "宠物信息"
+								},
+								{
+									"name": "decorate_time",
+									"type": "String",
+									"description": "装修时间"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述"
+								},
+								{
+									"name": "status",
+									"type": "byte",
+									"description": "状态0-正常"
+								}
+							],
+							"name": "data_list",
+							"type": "StdHotelVO[]",
+							"description": "标准酒店列表"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "记录总条数"
+						}
+					],
+					"name": "data",
+					"type": "PageVO",
+					"description": "分页对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.list.get",
+	"apiChineseName": "标准酒店信息查询-阿信",
+	"description": "阿信酒店分销基础数据查询",
+	"id": 56860
+}

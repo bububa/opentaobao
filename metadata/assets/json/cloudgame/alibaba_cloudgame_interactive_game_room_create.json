@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "主播用户id",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token"
+				}
+			],
+			"name": "create_room_request",
+			"type": "CreateRoomRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间id"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展数据"
+						}
+					],
+					"name": "data",
+					"type": "CreateRoomResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回提示信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.room.create",
+	"apiChineseName": "建游戏房间",
+	"description": "建游戏房间",
+	"id": 62070
+}

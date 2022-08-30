@@ -1,8 +1,4 @@
 {
-	"id": 41912,
-	"name": "alibaba.mj.oc.online.ticketno.get",
-	"apiChineseName": "线上小票号获取",
-	"description": "线上小票号获取",
 	"requestParams": [
 		{
 			"name": "out_store_no",
@@ -31,5 +27,9 @@
 			"type": "Boolean",
 			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.online.ticketno.get",
+	"apiChineseName": "线上小票号获取",
+	"description": "线上小票号获取",
+	"id": 41912
 }

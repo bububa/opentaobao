@@ -1,8 +1,4 @@
 {
-	"id": 46729,
-	"name": "tmall.nr.seller.storerange.sync",
-	"apiChineseName": "同步商户中心服务范围",
-	"description": "同步商户中心服务范围",
 	"requestParams": [
 		{
 			"name": "biz_identity",
@@ -10,15 +6,8 @@
 			"description": "业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达"
 		},
 		{
-			"name": "req_d_t_o_list",
-			"type": "SyncServiceRangeRequestDto[]",
-			"description": "系统自动生成",
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "points",
-					"type": "Point[]",
-					"description": "围栏信息",
 					"subParams": [
 						{
 							"name": "lat",
@@ -30,10 +19,14 @@
 							"type": "String",
 							"description": "经度"
 						}
-					]
+					],
+					"name": "points",
+					"type": "Point[]",
+					"description": "围栏信息"
 				},
 				{
 					"name": "properties",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -46,7 +39,11 @@
 					"type": "Number",
 					"description": "类型 -1 为删除,其余为添加，如果记录存在则做更新"
 				}
-			]
+			],
+			"name": "req_d_t_o_list",
+			"type": "SyncServiceRangeRequestDto[]",
+			"description": "系统自动生成",
+			"maxListSize": 20
 		},
 		{
 			"name": "seller_id",
@@ -65,5 +62,9 @@
 			"type": "Boolean",
 			"description": "请求是否成功"
 		}
-	]
+	],
+	"name": "tmall.nr.seller.storerange.sync",
+	"apiChineseName": "同步商户中心服务范围",
+	"description": "同步商户中心服务范围",
+	"id": 46729
 }

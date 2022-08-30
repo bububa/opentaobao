@@ -1,8 +1,4 @@
 {
-	"id": 29834,
-	"name": "taobao.alitrip.ie.agent.refund.search",
-	"apiChineseName": "卖家查询退票申请",
-	"description": "卖家查询退票申请",
 	"requestParams": [
 		{
 			"name": "create_start_time",
@@ -41,157 +37,137 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "QueryRefundTicketsRs",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "refund_ticket_list",
-					"type": "IeRefundTicketVo[]",
-					"description": "refundTicketList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "申请单id",
-							"required": true
+							"description": "申请单id"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "ticket_no",
 							"type": "String",
-							"description": "票号",
-							"required": true
+							"description": "票号"
 						},
 						{
 							"name": "apply_reason",
 							"type": "String",
-							"description": "申请退票原因",
-							"required": true
+							"description": "申请退票原因"
 						},
 						{
 							"name": "apply_answer",
 							"type": "String",
-							"description": "代理商回复",
-							"required": true
+							"description": "代理商回复"
 						},
 						{
 							"name": "apply_type",
 							"type": "Number",
-							"description": "自愿申请:0,非自愿退票(不可抗力):1,自愿退票（我要改变行程计划、我不想飞）:2,自愿退票（填错名字、选错日期、选错航班）:3,自愿退票（生病了无法乘机（无二甲医院证明））:4,非自愿退票（航班延误或取消、航班时刻变更等航司原因）:5,非自愿退票（身体原因且有二级甲等医院\u003c含\u003e以上的医院证明）:6,非自愿退票（旅客拒签或其他不可抗力因素）:7",
-							"required": true
+							"description": "自愿申请:0,非自愿退票(不可抗力):1,自愿退票（我要改变行程计划、我不想飞）:2,自愿退票（填错名字、选错日期、选错航班）:3,自愿退票（生病了无法乘机（无二甲医院证明））:4,非自愿退票（航班延误或取消、航班时刻变更等航司原因）:5,非自愿退票（身体原因且有二级甲等医院\u003c含\u003e以上的医院证明）:6,非自愿退票（旅客拒签或其他不可抗力因素）:7"
 						},
 						{
 							"name": "agent_name",
 							"type": "String",
-							"description": "代理商名称",
-							"required": true
+							"description": "代理商名称"
 						},
 						{
 							"name": "refund_status",
 							"type": "Number",
-							"description": "退票状态",
-							"required": true
+							"description": "退票状态"
 						},
 						{
 							"name": "refund_pay_status",
 							"type": "Number",
-							"description": "退票支付状态",
-							"required": true
+							"description": "退票支付状态"
 						},
 						{
 							"name": "passenger_id",
 							"type": "Number",
-							"description": "乘机人id",
-							"required": true
+							"description": "乘机人id"
 						},
 						{
 							"name": "passenger_name",
 							"type": "String",
-							"description": "乘机人名称",
-							"required": true
+							"description": "乘机人名称"
 						},
 						{
 							"name": "refund_money",
 							"type": "Number",
-							"description": "回填金额",
-							"required": true
+							"description": "回填金额"
 						},
 						{
 							"name": "refund_to_user_money",
 							"type": "Number",
-							"description": "实际退票金额",
-							"required": true
+							"description": "实际退票金额"
 						},
 						{
 							"name": "apply_time",
 							"type": "Date",
-							"description": "退票时间",
-							"required": true
+							"description": "退票时间"
 						},
 						{
 							"name": "agent_agree_time",
 							"type": "Date",
-							"description": "接受时间",
-							"required": true
+							"description": "接受时间"
 						},
 						{
 							"name": "agent_receive_time",
 							"type": "Date",
-							"description": "受理时间",
-							"required": true
+							"description": "受理时间"
 						},
 						{
 							"name": "agent_refuse_time",
 							"type": "Date",
-							"description": "拒绝时间",
-							"required": true
+							"description": "拒绝时间"
 						},
 						{
 							"name": "agent_pay_time",
 							"type": "Date",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "refund_product_type",
 							"type": "Number",
-							"description": "2^0=1 限时免费退；2^1=2 极速退款；比如表示(限时免费退+实时退款)=1+2=3",
-							"required": true
+							"description": "2^0=1 限时免费退；2^1=2 极速退款；比如表示(限时免费退+实时退款)=1+2=3"
 						}
-					]
+					],
+					"name": "refund_ticket_list",
+					"type": "IeRefundTicketVo[]",
+					"description": "refundTicketList"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "apiErrorMsg",
-					"required": true
+					"description": "apiErrorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "apiErrorCode",
-					"required": true
+					"description": "apiErrorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "page_count",
 					"type": "Number",
-					"description": "pageCount",
-					"required": true
+					"description": "pageCount"
 				}
-			]
+			],
+			"name": "result",
+			"type": "QueryRefundTicketsRs",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.refund.search",
+	"apiChineseName": "卖家查询退票申请",
+	"description": "卖家查询退票申请",
+	"id": 29834
 }

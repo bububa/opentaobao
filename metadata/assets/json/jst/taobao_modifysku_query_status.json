@@ -1,0 +1,30 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "NO_AUTH-您无权查询此商家信息;  HAS_SIGNED-已与当前服务商签约自助修改商品信息服务; NO_SIGNED-当前商家自助修改商品信息未签约服务商 HAS_SIGNED_OTHERS-已与其他服务商签约自助修改商品信息"
+				},
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "商家绑定的appkey\t"
+				},
+				{
+					"name": "apptitle",
+					"type": "String",
+					"description": "app名称\t"
+				}
+			],
+			"name": "model",
+			"type": "CheckSignSkuResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.modifysku.query.status",
+	"apiChineseName": "查询商家是否开通自助修改商品信息服务",
+	"description": "查询商家是否开通自助修改商品信息服务\n1. 没有授权\n2. 已与当前appkey签约\n3. 没有签约\n4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。",
+	"id": 59007
+}

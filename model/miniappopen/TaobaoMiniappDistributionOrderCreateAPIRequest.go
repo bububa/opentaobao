@@ -9,7 +9,7 @@ import (
 // TaobaoMiniappDistributionOrderCreateAPIRequest 创建小程序投放计划 API请求
 // taobao.miniapp.distribution.order.create
 //
-// 帮助商家，创建小程序的投放计划。
+// 帮助商家，创建小程序的投放计划。该api，仅针对特定场景开放，目前仅支持客服场景，具体支持的场景列表请联系技术支持或业务对接人确认。
 type TaobaoMiniappDistributionOrderCreateAPIRequest struct {
 	model.Params
 	// 投放计划信息

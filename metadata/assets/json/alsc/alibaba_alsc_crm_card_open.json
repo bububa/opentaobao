@@ -1,14 +1,6 @@
 {
-	"id": 45800,
-	"name": "alibaba.alsc.crm.card.open",
-	"apiChineseName": "标准开卡流程",
-	"description": "标准开卡流程",
 	"requestParams": [
 		{
-			"name": "param_open_card_standard_open_req",
-			"type": "OpenCardStandardOpenReq",
-			"description": "开卡参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -48,14 +40,14 @@
 					"description": "外部品牌ID，与brandId不能同时为空"
 				},
 				{
-					"name": "out_shop_id",
-					"type": "String",
-					"description": "外部门店ID,与shopId不能同时为空"
-				},
-				{
 					"name": "request_id",
 					"type": "String",
 					"description": "请求UUID ,用于做幂等"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,与shopId不能同时为空"
 				},
 				{
 					"name": "card_template_id",
@@ -67,46 +59,49 @@
 					"type": "Boolean",
 					"description": "是否激活"
 				}
-			]
+			],
+			"name": "param_open_card_standard_open_req",
+			"type": "OpenCardStandardOpenReq",
+			"description": "开卡参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "电子卡号",
-					"required": true
+					"description": "电子卡号"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.open",
+	"apiChineseName": "标准开卡流程",
+	"description": "标准开卡流程",
+	"id": 45800
 }

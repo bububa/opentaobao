@@ -24,6 +24,8 @@ type IdentityInfo struct {
 	EndDate string `json:"end_date,omitempty" xml:"end_date,omitempty"`
 	// biometricSeq
 	BiometricSeq string `json:"biometric_seq,omitempty" xml:"biometric_seq,omitempty"`
+	// 套餐合约相关信息
+	ContactInfo string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
 	// 订单id
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 是否长期有效

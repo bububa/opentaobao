@@ -1,8 +1,4 @@
 {
-	"id": 53020,
-	"name": "alibaba.leg.msg.post",
-	"apiChineseName": "集团法务消息发送",
-	"description": "消息发送能力",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -73,43 +69,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "SendTemplateMsgResponse",
-					"description": "内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "message_trace_id",
 							"type": "String",
-							"description": "32位的uuid,用来追踪一条消息",
-							"required": true
+							"description": "32位的uuid,用来追踪一条消息"
 						}
-					]
+					],
+					"name": "content",
+					"type": "SendTemplateMsgResponse",
+					"description": "内容"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误码描述",
-					"required": true
+					"description": "错误码描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.leg.msg.post",
+	"apiChineseName": "集团法务消息发送",
+	"description": "消息发送能力",
+	"id": 53020
 }

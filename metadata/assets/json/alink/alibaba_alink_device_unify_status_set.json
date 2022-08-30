@@ -1,8 +1,4 @@
 {
-	"id": 30013,
-	"name": "alibaba.alink.device.unify.status.set",
-	"apiChineseName": "设置设备标准属性状态",
-	"description": "操作用户绑定的设备",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -51,7 +44,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.device.unify.status.set",
+	"apiChineseName": "设置设备标准属性状态",
+	"description": "操作用户绑定的设备",
+	"id": 30013
 }

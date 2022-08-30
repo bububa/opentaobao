@@ -1,19 +1,15 @@
 {
-	"id": 46997,
-	"name": "taobao.miniapp.cloud.mongo.update",
-	"apiChineseName": "更新MongoDB中的数据",
-	"description": "更新MongoDB中的数据",
 	"requestParams": [
-		{
-			"name": "collection",
-			"type": "String",
-			"description": "MongoDB表名",
-			"required": true
-		},
 		{
 			"name": "filter",
 			"type": "Json",
 			"description": "更新条件",
+			"required": true
+		},
+		{
+			"name": "collection",
+			"type": "String",
+			"description": "MongoDB表名",
 			"required": true
 		},
 		{
@@ -34,5 +30,9 @@
 			"type": "Number",
 			"description": "更新的记录数"
 		}
-	]
+	],
+	"name": "taobao.miniapp.cloud.mongo.update",
+	"apiChineseName": "更新MongoDB中的数据",
+	"description": "更新MongoDB中的数据",
+	"id": 46997
 }

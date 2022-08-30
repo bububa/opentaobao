@@ -1,0 +1,141 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "酒店地址"
+						},
+						{
+							"name": "hotel_en_name",
+							"type": "String",
+							"description": "酒店英文名称"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "hotel_name",
+							"type": "String",
+							"description": "酒店中文名称",
+							"required": true
+						},
+						{
+							"name": "address_en",
+							"type": "String",
+							"description": "英文地址"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "酒店电话"
+						}
+					],
+					"name": "hotel_match_d_t_o_list",
+					"type": "HotelMatchDTO[]",
+					"description": "要匹配的酒店参数列表",
+					"required": true
+				},
+				{
+					"name": "distributor_tid",
+					"type": "Number",
+					"description": "分销商id",
+					"required": true
+				}
+			],
+			"name": "req",
+			"type": "MatchedHotelRequestDTO",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "参数酒店名称"
+								},
+								{
+									"subParams": [
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "匹配的标准酒店id"
+										},
+										{
+											"name": "score",
+											"type": "String",
+											"description": "分值"
+										}
+									],
+									"name": "matched_hotel_data_list",
+									"type": "MatchedHotelDataDTO[]",
+									"description": "酒店匹配结果列表，会有相应分值"
+								},
+								{
+									"name": "er_code",
+									"type": "String",
+									"description": "错误code"
+								},
+								{
+									"name": "er_msg",
+									"type": "String",
+									"description": "错误信息"
+								},
+								{
+									"name": "succ",
+									"type": "Boolean",
+									"description": "当前匹配是否有异常"
+								}
+							],
+							"name": "matched_hotel_result_list",
+							"type": "MatchedHotelResultDTO[]",
+							"description": "酒店匹配结果列表"
+						}
+					],
+					"name": "data",
+					"type": "MatchedHotelBatchResultDTO",
+					"description": "结果返回模型"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "er_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "er_msg",
+					"type": "String",
+					"description": "错误msg"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "结果result"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.match",
+	"apiChineseName": "酒店匹配接口-阿信",
+	"description": "酒店匹配接口-阿信",
+	"id": 61657
+}

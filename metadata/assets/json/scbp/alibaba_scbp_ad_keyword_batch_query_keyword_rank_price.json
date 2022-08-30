@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "关键词id",
+					"required": true
+				},
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词",
+					"required": true
+				}
+			],
+			"name": "keyword_list",
+			"type": "KeywordInfo[]",
+			"description": "关键词信息集合",
+			"maxListSize": 5,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "price_array",
+					"type": "String[]",
+					"description": "关键词前五名排价"
+				}
+			],
+			"name": "result_list",
+			"type": "KeywordRankPriceDTO []",
+			"description": "关键词前五名排价详细信息返回"
+		}
+	],
+	"name": "alibaba.scbp.ad.keyword.batch.query.keyword.rank.price",
+	"apiChineseName": "批量查询关键词前五名排价",
+	"description": "批量查询关键词前五名排价",
+	"id": 60494
+}

@@ -1,18 +1,16 @@
 {
-	"id": 46553,
-	"name": "alitrip.platform.poi.raw.saverawpoi",
-	"apiChineseName": "POI开放存储能力",
-	"description": "POI开放存储提供离线/在线/纬错更新的能力",
 	"requestParams": [
 		{
-			"name": "trip_poi_raw_save_param",
-			"type": "TripPoiRawSaveParamV2",
-			"description": "poi存储参数",
 			"subParams": [
 				{
 					"name": "offline_reason",
 					"type": "String",
 					"description": "下线原因"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "更新时间"
 				},
 				{
 					"name": "photo_urls",
@@ -45,6 +43,63 @@
 					"description": "描述"
 				},
 				{
+					"subParams": [
+						{
+							"name": "alcohol",
+							"type": "Boolean",
+							"description": "是否提供酒精饮料"
+						},
+						{
+							"name": "parking",
+							"type": "Boolean",
+							"description": "是否有停车位"
+						},
+						{
+							"name": "wifi",
+							"type": "Boolean",
+							"description": "是否有wifi"
+						},
+						{
+							"name": "booking",
+							"type": "Boolean",
+							"description": "是否接受预约"
+						},
+						{
+							"name": "byo",
+							"type": "Boolean",
+							"description": "是否允许自带杯"
+						},
+						{
+							"name": "box",
+							"type": "Boolean",
+							"description": "是否有包厢"
+						},
+						{
+							"name": "chinese_svc",
+							"type": "Boolean",
+							"description": "是否提供中文服务"
+						},
+						{
+							"name": "takeout",
+							"type": "Boolean",
+							"description": "是否支持外带"
+						},
+						{
+							"name": "tips",
+							"type": "Boolean",
+							"description": "是否需要小费"
+						},
+						{
+							"name": "tel_rsvt",
+							"type": "Boolean",
+							"description": "是否支持电话预定"
+						}
+					],
+					"name": "service_info",
+					"type": "StructureServiceInfo",
+					"description": "服务详情"
+				},
+				{
 					"name": "type",
 					"type": "Number",
 					"description": "类型"
@@ -70,12 +125,18 @@
 					"description": "视频url"
 				},
 				{
+					"name": "commercial_circle",
+					"type": "String",
+					"description": "商圈"
+				},
+				{
 					"name": "country_code",
 					"type": "String",
 					"description": "国家码"
 				},
 				{
 					"name": "extend_map",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -89,9 +150,36 @@
 					"description": "poiId(飞猪端poiId)"
 				},
 				{
+					"subParams": [
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名"
+						},
+						{
+							"name": "brand_en_name",
+							"type": "String",
+							"description": "品牌英文名"
+						},
+						{
+							"name": "brand_logo",
+							"type": "String",
+							"description": "品牌Logo"
+						}
+					],
+					"name": "brand_info",
+					"type": "StructureBrandInfo",
+					"description": "品牌信息"
+				},
+				{
 					"name": "shop_id",
 					"type": "String",
 					"description": "门店Id"
+				},
+				{
+					"name": "open_time",
+					"type": "String",
+					"description": "开放时间"
 				},
 				{
 					"name": "address_en",
@@ -149,6 +237,11 @@
 					"description": "手机号"
 				},
 				{
+					"name": "consumption",
+					"type": "String",
+					"description": "人均消费"
+				},
+				{
 					"name": "name_en",
 					"type": "String",
 					"description": "英文名"
@@ -157,6 +250,11 @@
 					"name": "transport",
 					"type": "String",
 					"description": "交通"
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "创建时间"
 				},
 				{
 					"name": "store_id",
@@ -169,6 +267,11 @@
 					"description": "本地名"
 				},
 				{
+					"name": "recommend_infos",
+					"type": "String",
+					"description": "推荐信息"
+				},
+				{
 					"name": "name",
 					"type": "String",
 					"description": "名字"
@@ -177,6 +280,16 @@
 					"name": "country_name",
 					"type": "String",
 					"description": "国家名"
+				},
+				{
+					"name": "shop_type",
+					"type": "String",
+					"description": "店铺类型"
+				},
+				{
+					"name": "operator_type",
+					"type": "Number",
+					"description": "操作类型(0:新增 1:更新)"
 				},
 				{
 					"name": "category",
@@ -192,166 +305,49 @@
 					"name": "offline_reason_detail",
 					"type": "String",
 					"description": "下线详细原因"
-				},
-				{
-					"name": "gmt_modified",
-					"type": "String",
-					"description": "更新时间"
-				},
-				{
-					"name": "service_info",
-					"type": "StructureServiceInfo",
-					"description": "服务详情",
-					"subParams": [
-						{
-							"name": "alcohol",
-							"type": "Boolean",
-							"description": "是否提供酒精饮料"
-						},
-						{
-							"name": "parking",
-							"type": "Boolean",
-							"description": "是否有停车位"
-						},
-						{
-							"name": "wifi",
-							"type": "Boolean",
-							"description": "是否有wifi"
-						},
-						{
-							"name": "booking",
-							"type": "Boolean",
-							"description": "是否接受预约"
-						},
-						{
-							"name": "byo",
-							"type": "Boolean",
-							"description": "是否允许自带杯"
-						},
-						{
-							"name": "box",
-							"type": "Boolean",
-							"description": "是否有包厢"
-						},
-						{
-							"name": "chinese_svc",
-							"type": "Boolean",
-							"description": "是否提供中文服务"
-						},
-						{
-							"name": "takeout",
-							"type": "Boolean",
-							"description": "是否支持外带"
-						},
-						{
-							"name": "tips",
-							"type": "Boolean",
-							"description": "是否需要小费"
-						},
-						{
-							"name": "tel_rsvt",
-							"type": "Boolean",
-							"description": "是否支持电话预定"
-						}
-					]
-				},
-				{
-					"name": "commercial_circle",
-					"type": "String",
-					"description": "商圈"
-				},
-				{
-					"name": "brand_info",
-					"type": "StructureBrandInfo",
-					"description": "品牌信息",
-					"subParams": [
-						{
-							"name": "brand_name",
-							"type": "String",
-							"description": "品牌名"
-						},
-						{
-							"name": "brand_en_name",
-							"type": "String",
-							"description": "品牌英文名"
-						},
-						{
-							"name": "brand_logo",
-							"type": "String",
-							"description": "品牌Logo"
-						}
-					]
-				},
-				{
-					"name": "open_time",
-					"type": "String",
-					"description": "开放时间"
-				},
-				{
-					"name": "consumption",
-					"type": "String",
-					"description": "人均消费"
-				},
-				{
-					"name": "gmt_create",
-					"type": "String",
-					"description": "创建时间"
-				},
-				{
-					"name": "recommend_infos",
-					"type": "String",
-					"description": "推荐信息"
-				},
-				{
-					"name": "shop_type",
-					"type": "String",
-					"description": "店铺类型"
-				},
-				{
-					"name": "operator_type",
-					"type": "Number",
-					"description": "操作类型(0:新增 1:更新)"
 				}
-			]
+			],
+			"name": "trip_poi_raw_save_param",
+			"type": "TripPoiRawSaveParamV2",
+			"description": "poi存储参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "total_records",
 					"type": "Number",
-					"description": "总记录",
-					"required": true
+					"description": "总记录"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "返回素材id",
-					"required": true
+					"type": "String",
+					"description": "返回素材id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result_code",
-					"type": "Json",
-					"description": "错误码",
-					"required": true
+					"type": "String",
+					"description": "错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alitrip.platform.poi.raw.saverawpoi",
+	"apiChineseName": "POI开放存储能力",
+	"description": "POI开放存储提供离线/在线/纬错更新的能力",
+	"id": 46553
 }

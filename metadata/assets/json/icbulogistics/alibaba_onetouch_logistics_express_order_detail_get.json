@@ -1,14 +1,6 @@
 {
-	"id": 48056,
-	"name": "alibaba.onetouch.logistics.express.order.detail.get",
-	"apiChineseName": "订单详细信息(面单及仓库信息)",
-	"description": "订单详细信息(面单及仓库信息)",
 	"requestParams": [
 		{
-			"name": "param_query",
-			"type": "LogisticsOrderQueryDto",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_number",
@@ -16,136 +8,125 @@
 					"description": "物流单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param_query",
+			"type": "LogisticsOrderQueryDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "返回结果编码",
-					"required": true
+					"description": "返回结果编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data",
-					"type": "OrderDetailDto",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "warehouse",
-							"type": "WarehouseDto",
-							"description": "仓库信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "description",
 									"type": "String",
-									"description": "备注",
-									"required": true
+									"description": "备注"
 								},
 								{
 									"name": "working_time",
 									"type": "String",
-									"description": "工作时间",
-									"required": true
+									"description": "工作时间"
 								},
 								{
 									"name": "contact_phone",
 									"type": "String",
-									"description": "联系电话",
-									"required": true
+									"description": "联系电话"
 								},
 								{
 									"name": "contact_person",
 									"type": "String",
-									"description": "联系人",
-									"required": true
+									"description": "联系人"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "地址",
-									"required": true
+									"description": "地址"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "仓库名称",
-									"required": true
+									"description": "仓库名称"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "仓库编码",
-									"required": true
+									"description": "仓库编码"
 								}
-							]
+							],
+							"name": "warehouse",
+							"type": "WarehouseDto",
+							"description": "仓库信息"
 						},
 						{
 							"name": "bar_code",
 							"type": "String",
-							"description": "条码Base64",
-							"required": true
+							"description": "条码Base64"
 						},
 						{
 							"name": "order_number",
 							"type": "String",
-							"description": "物流订单号",
-							"required": true
+							"description": "物流订单号"
 						},
 						{
-							"name": "pickup_info",
-							"type": "PickupInfoDto",
-							"description": "上门揽收信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "can_pickup",
 									"type": "Boolean",
-									"description": "能否上门揽收",
-									"required": true
+									"description": "能否上门揽收"
 								},
 								{
 									"name": "pickup_type",
 									"type": "String",
-									"description": "上门揽收类型，warehouse_free_pickup：仓库免费上门揽收，warehouse_paid_pickup：仓库收费上门揽收，provider_paid_pickup：服务商收费上门揽收",
-									"required": true
+									"description": "上门揽收类型，warehouse_free_pickup：仓库免费上门揽收，warehouse_paid_pickup：仓库收费上门揽收，provider_paid_pickup：服务商收费上门揽收"
 								},
 								{
 									"name": "pickup_type_name",
 									"type": "String",
-									"description": "上门揽收类型名称",
-									"required": true
+									"description": "上门揽收类型名称"
 								},
 								{
 									"name": "service_provider",
 									"type": "String",
-									"description": "上门揽收服务商",
-									"required": true
+									"description": "上门揽收服务商"
 								}
-							]
+							],
+							"name": "pickup_info",
+							"type": "PickupInfoDto",
+							"description": "上门揽收信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "OrderDetailDto",
+					"description": "结果数据"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "返回结果描述",
-					"required": true
+					"description": "返回结果描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.onetouch.logistics.express.order.detail.get",
+	"apiChineseName": "订单详细信息(面单及仓库信息)",
+	"description": "订单详细信息(面单及仓库信息)",
+	"id": 48056
 }

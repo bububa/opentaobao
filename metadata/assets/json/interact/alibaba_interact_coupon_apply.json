@@ -1,13 +1,13 @@
 {
-	"id": 26102,
-	"name": "alibaba.interact.coupon.apply",
-	"apiChineseName": "优惠券领取鉴权接口",
-	"description": "鉴权接口，为coupon.apply接口鉴权",
 	"responseParams": [
 		{
 			"name": "stub",
 			"type": "String",
 			"description": "无用参数，top限制一定要有出参，增加此参数"
 		}
-	]
+	],
+	"name": "alibaba.interact.coupon.apply",
+	"apiChineseName": "优惠券领取鉴权接口",
+	"description": "鉴权接口，为coupon.apply接口鉴权",
+	"id": 26102
 }

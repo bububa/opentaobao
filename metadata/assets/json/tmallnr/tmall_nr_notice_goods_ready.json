@@ -1,13 +1,6 @@
 {
-	"id": 37939,
-	"name": "tmall.nr.notice.goods.ready",
-	"apiChineseName": "同步天猫配送人员信息",
-	"description": "接收商家的配送人员信息，和第三公司信息及提货码",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "NrZqsGoodsReadyReqDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "performer_name",
@@ -54,7 +47,10 @@
 					"type": "String",
 					"description": "业务标识dds，zqs等"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "NrZqsGoodsReadyReqDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -78,5 +74,9 @@
 			"type": "Boolean",
 			"description": "isSuccess"
 		}
-	]
+	],
+	"name": "tmall.nr.notice.goods.ready",
+	"apiChineseName": "同步天猫配送人员信息",
+	"description": "接收商家的配送人员信息，和第三公司信息及提货码",
+	"id": 37939
 }

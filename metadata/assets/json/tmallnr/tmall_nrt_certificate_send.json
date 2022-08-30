@@ -1,0 +1,122 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "投放渠道",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "淘系加密ID",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "Number",
+					"description": "电子凭证模版id",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务编码",
+					"required": true
+				}
+			],
+			"name": "nrt_certificate_send_d_t_o",
+			"type": "NrtCertificateSendDto",
+			"description": "发电子凭证DTO"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "certificate_code",
+							"type": "String",
+							"description": "电子凭证码值",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "Number",
+							"description": "电子凭证模版id",
+							"required": true
+						},
+						{
+							"name": "channel",
+							"type": "Number",
+							"description": "投放渠道",
+							"required": true
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "淘系加密ID",
+							"required": true
+						}
+					],
+					"name": "model",
+					"type": "NrtCertificateInstanceResponseDto",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.nrt.certificate.send",
+	"apiChineseName": "有价礼包发放电子凭证",
+	"description": "支持有价礼包发放电子凭证",
+	"id": 57905
+}

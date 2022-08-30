@@ -1,13 +1,6 @@
 {
-	"id": 43437,
-	"name": "alibaba.legal.suit.court.open.push",
-	"apiChineseName": "开庭信息推送接口",
-	"description": "供ISV推送开庭信息给集团诉讼",
 	"requestParams": [
 		{
-			"name": "court_info_model",
-			"type": "CourtInfoModel",
-			"description": "开庭信息",
 			"subParams": [
 				{
 					"name": "summary",
@@ -25,9 +18,6 @@
 					"description": "合议庭"
 				},
 				{
-					"name": "feedback_attachment_list",
-					"type": "FileModel[]",
-					"description": "反馈附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -39,7 +29,10 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
+					],
+					"name": "feedback_attachment_list",
+					"type": "FileModel[]",
+					"description": "反馈附件"
 				},
 				{
 					"name": "court_id",
@@ -122,9 +115,6 @@
 					"description": "非正式开庭原因"
 				},
 				{
-					"name": "question_list",
-					"type": "CourtProblemModel[]",
-					"description": "问题列表",
 					"subParams": [
 						{
 							"name": "party_reply",
@@ -146,7 +136,10 @@
 							"type": "String",
 							"description": "问题是否有价值"
 						}
-					]
+					],
+					"name": "question_list",
+					"type": "CourtProblemModel[]",
+					"description": "问题列表"
 				},
 				{
 					"name": "update_time",
@@ -154,9 +147,6 @@
 					"description": "更新时间"
 				},
 				{
-					"name": "formal_attachment_list",
-					"type": "FileModel[]",
-					"description": "非正式开庭附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -168,12 +158,12 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
+					],
+					"name": "formal_attachment_list",
+					"type": "FileModel[]",
+					"description": "非正式开庭附件"
 				},
 				{
-					"name": "inclusion_ori_def_list",
-					"type": "CourtEvidenceModel[]",
-					"description": "开庭证据列表",
 					"subParams": [
 						{
 							"name": "opinion",
@@ -210,7 +200,10 @@
 							"type": "String",
 							"description": "质证证据类型(原告证据还是被告证据)"
 						}
-					]
+					],
+					"name": "inclusion_ori_def_list",
+					"type": "CourtEvidenceModel[]",
+					"description": "开庭证据列表"
 				},
 				{
 					"name": "risk_feedback",
@@ -243,9 +236,6 @@
 					"description": "操作类型"
 				},
 				{
-					"name": "accuser_list",
-					"type": "CourtPartyModel[]",
-					"description": "原告信息",
 					"subParams": [
 						{
 							"name": "delivery_situation",
@@ -287,7 +277,10 @@
 							"type": "String",
 							"description": "原告/被告名称"
 						}
-					]
+					],
+					"name": "accuser_list",
+					"type": "CourtPartyModel[]",
+					"description": "原告信息"
 				},
 				{
 					"name": "accuser_defendant_is_court",
@@ -295,9 +288,6 @@
 					"description": "原被告是否到庭(主诉)"
 				},
 				{
-					"name": "informal_attachment_list",
-					"type": "FileModel[]",
-					"description": "非正式开庭附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -309,7 +299,10 @@
 							"type": "String",
 							"description": "附件key"
 						}
-					]
+					],
+					"name": "informal_attachment_list",
+					"type": "FileModel[]",
+					"description": "非正式开庭附件"
 				},
 				{
 					"name": "calling_time",
@@ -342,9 +335,6 @@
 					"description": "反馈ID"
 				},
 				{
-					"name": "defendant_list",
-					"type": "CourtPartyModel[]",
-					"description": "被告信息",
 					"subParams": [
 						{
 							"name": "delivery_situation",
@@ -386,42 +376,48 @@
 							"type": "String",
 							"description": "原告/被告名称"
 						}
-					]
+					],
+					"name": "defendant_list",
+					"type": "CourtPartyModel[]",
+					"description": "被告信息"
 				}
-			]
+			],
+			"name": "court_info_model",
+			"type": "CourtInfoModel",
+			"description": "开庭信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "String",
-					"description": "开庭记录ID",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "开庭记录ID"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.court.open.push",
+	"apiChineseName": "开庭信息推送接口",
+	"description": "供ISV推送开庭信息给集团诉讼",
+	"id": 43437
 }

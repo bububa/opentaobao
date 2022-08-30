@@ -12,12 +12,12 @@ import (
 // 更新一个推广计划，可以设置推广计划名字，修改推广计划上下线状态。
 type TaobaoSimbaCampaignUpdateAPIRequest struct {
 	model.Params
-	// 用户设置的上下限状态；offline-下线；online-上线；
-	_onlineStatus string
-	// 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
-	_title string
 	// 主人昵称
 	_nick string
+	// 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
+	_title string
+	// 用户设置的上下限状态；offline-下线；online-上线；
+	_onlineStatus string
 	// 推广计划Id
 	_campaignId int64
 }
@@ -43,17 +43,17 @@ func (r TaobaoSimbaCampaignUpdateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOnlineStatus is OnlineStatus Setter
-// 用户设置的上下限状态；offline-下线；online-上线；
-func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetOnlineStatus(_onlineStatus string) error {
-	r._onlineStatus = _onlineStatus
-	r.Set("online_status", _onlineStatus)
+// SetNick is Nick Setter
+// 主人昵称
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
 	return nil
 }
 
-// GetOnlineStatus OnlineStatus Getter
-func (r TaobaoSimbaCampaignUpdateAPIRequest) GetOnlineStatus() string {
-	return r._onlineStatus
+// GetNick Nick Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetTitle is Title Setter
@@ -69,17 +69,17 @@ func (r TaobaoSimbaCampaignUpdateAPIRequest) GetTitle() string {
 	return r._title
 }
 
-// SetNick is Nick Setter
-// 主人昵称
-func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
+// SetOnlineStatus is OnlineStatus Setter
+// 用户设置的上下限状态；offline-下线；online-上线；
+func (r *TaobaoSimbaCampaignUpdateAPIRequest) SetOnlineStatus(_onlineStatus string) error {
+	r._onlineStatus = _onlineStatus
+	r.Set("online_status", _onlineStatus)
 	return nil
 }
 
-// GetNick Nick Getter
-func (r TaobaoSimbaCampaignUpdateAPIRequest) GetNick() string {
-	return r._nick
+// GetOnlineStatus OnlineStatus Getter
+func (r TaobaoSimbaCampaignUpdateAPIRequest) GetOnlineStatus() string {
+	return r._onlineStatus
 }
 
 // SetCampaignId is CampaignId Setter

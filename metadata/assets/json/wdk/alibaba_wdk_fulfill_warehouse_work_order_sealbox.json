@@ -1,26 +1,10 @@
 {
-	"id": 55408,
-	"name": "alibaba.wdk.fulfill.warehouse.work.order.sealbox",
-	"apiChineseName": "仓封箱回告",
-	"description": "仓封箱回告箱与包裹的关系",
 	"requestParams": [
 		{
-			"name": "same_town_box",
-			"type": "SameTownBox",
-			"description": "同城交付物箱",
-			"required": true,
 			"subParams": [
 				{
-					"name": "same_town_packages",
-					"type": "Sametownpackages[]",
-					"description": "同城包裹列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "sku_details",
-							"type": "Skudetails[]",
-							"description": "货品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "fulfill_sub_order_id",
@@ -34,7 +18,11 @@
 									"description": "货品编码",
 									"required": true
 								}
-							]
+							],
+							"name": "sku_details",
+							"type": "Skudetails[]",
+							"description": "货品列表",
+							"required": true
 						},
 						{
 							"name": "attribute",
@@ -71,7 +59,11 @@
 							"description": "履约单id",
 							"required": true
 						}
-					]
+					],
+					"name": "same_town_packages",
+					"type": "Sametownpackages[]",
+					"description": "同城包裹列表",
+					"required": true
 				},
 				{
 					"name": "is_test",
@@ -95,8 +87,17 @@
 					"type": "String",
 					"description": "箱类型 NORMAL:周转箱 COLD:冷链箱 NONE:原箱",
 					"required": true
+				},
+				{
+					"name": "material_code",
+					"type": "String",
+					"description": "箱号"
 				}
-			]
+			],
+			"name": "same_town_box",
+			"type": "SameTownBox",
+			"description": "同城交付物箱",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -115,5 +116,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.wdk.fulfill.warehouse.work.order.sealbox",
+	"apiChineseName": "仓封箱回告",
+	"description": "仓封箱回告箱与包裹的关系",
+	"id": 55408
 }

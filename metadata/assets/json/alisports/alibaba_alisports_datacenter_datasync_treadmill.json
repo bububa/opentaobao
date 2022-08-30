@@ -1,48 +1,10 @@
 {
-	"id": 48650,
-	"name": "alibaba.alisports.datacenter.datasync.treadmill",
-	"apiChineseName": "阿里体育同步跑步机设备数据",
-	"description": "合作方向阿里体育同步跑步机设备的数据",
 	"requestParams": [
 		{
-			"name": "user_id",
-			"type": "String",
-			"description": "阿里体育用户id",
-			"required": true
-		},
-		{
-			"name": "start_time",
-			"type": "Number",
-			"description": "运动开始时间,秒级别时间戳",
-			"required": true,
-			"maxLength": 10
-		},
-		{
-			"name": "end_time",
-			"type": "Number",
-			"description": "运动结束时间，秒级别时间戳",
-			"required": true,
-			"maxLength": 10
-		},
-		{
-			"name": "timezone",
-			"type": "String",
-			"description": "时区编码，不传默认东八区"
-		},
-		{
-			"name": "location",
-			"type": "String",
-			"description": "运动位置经纬度"
-		},
-		{
-			"name": "country_code",
-			"type": "Number",
-			"description": "国家编码，https://zh.wikipedia.org/wiki/%E5%9C%8B%E5%AE%B6%E5%9C%B0%E5%8D%80%E4%BB%A3%E7%A2%BC"
-		},
-		{
-			"name": "province_code",
-			"type": "Number",
-			"description": "省编码， https://www.ip33.com/area_code.html"
+			"name": "tempo_datas",
+			"type": "Number[]",
+			"description": "配速过程数据",
+			"maxListSize": 6000
 		},
 		{
 			"name": "city_code",
@@ -50,19 +12,64 @@
 			"description": "城市编码"
 		},
 		{
+			"name": "timezone",
+			"type": "String",
+			"description": "时区编码，不传默认东八区"
+		},
+		{
+			"name": "min_heartrate",
+			"type": "Number",
+			"description": "最小心率"
+		},
+		{
+			"name": "max_heartrate",
+			"type": "Number",
+			"description": "最大心率"
+		},
+		{
+			"name": "avg_heartrate",
+			"type": "Number",
+			"description": "平均心率"
+		},
+		{
+			"name": "device_name",
+			"type": "String",
+			"description": "设备名称"
+		},
+		{
 			"name": "speed",
 			"type": "BigDecimal",
 			"description": "平均速度，单位km/h"
 		},
 		{
-			"name": "max_speed",
-			"type": "BigDecimal",
-			"description": "最大速度，单位km/h"
+			"name": "collect_time_interval",
+			"type": "Number",
+			"description": "过程数据收集间隔时间"
 		},
 		{
-			"name": "power_frequency",
+			"name": "country_code",
 			"type": "Number",
-			"description": "平均步频"
+			"description": "国家编码，https://zh.wikipedia.org/wiki/%E5%9C%8B%E5%AE%B6%E5%9C%B0%E5%8D%80%E4%BB%A3%E7%A2%BC"
+		},
+		{
+			"name": "end_time",
+			"type": "Number",
+			"description": "运动结束时间，秒级别时间戳",
+			"maxLength": 10,
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Number",
+			"description": "运动开始时间,秒级别时间戳",
+			"maxLength": 10,
+			"required": true
+		},
+		{
+			"name": "heartrate_datas",
+			"type": "Number[]",
+			"description": "心率过程数据",
+			"maxListSize": 60000
 		},
 		{
 			"name": "mileage",
@@ -75,39 +82,19 @@
 			"description": "累计爬升，单位m"
 		},
 		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型：4.跑步机 5.单车 6.划船机"
+		},
+		{
 			"name": "duration_time",
 			"type": "Number",
 			"description": "运动持续时常,单位：秒"
 		},
 		{
-			"name": "steps",
+			"name": "province_code",
 			"type": "Number",
-			"description": "总步数"
-		},
-		{
-			"name": "calorie",
-			"type": "BigDecimal",
-			"description": "消耗总热量，单位：卡路里"
-		},
-		{
-			"name": "max_heartrate",
-			"type": "Number",
-			"description": "最大心率"
-		},
-		{
-			"name": "min_heartrate",
-			"type": "Number",
-			"description": "最小心率"
-		},
-		{
-			"name": "avg_heartrate",
-			"type": "Number",
-			"description": "平均心率"
-		},
-		{
-			"name": "collect_time_interval",
-			"type": "Number",
-			"description": "过程数据收集间隔时间"
+			"description": "省编码， https://www.ip33.com/area_code.html"
 		},
 		{
 			"name": "collect_time_unit",
@@ -115,34 +102,16 @@
 			"description": "过程数据收集间隔时间单位，1.毫秒 2.秒 3.分 4.小时"
 		},
 		{
-			"name": "speed_datas",
-			"type": "String[]",
-			"description": "速度过程数据,单位km/h",
-			"maxListSize": 6000
-		},
-		{
-			"name": "motion_frequency_datas",
-			"type": "String[]",
-			"description": "步频/踏频/桨频过程数据",
-			"maxListSize": 6000
-		},
-		{
 			"name": "hrz_motion_range_datas",
-			"type": "String[]",
+			"type": "Number[]",
 			"description": "步幅/踏幅/桨幅过程数据",
 			"maxListSize": 6000
 		},
 		{
-			"name": "tempo_datas",
-			"type": "String[]",
-			"description": "配速过程数据",
-			"maxListSize": 6000
-		},
-		{
-			"name": "heartrate_datas",
+			"name": "motion_frequency_datas",
 			"type": "Number[]",
-			"description": "心率过程数据",
-			"maxListSize": 60000
+			"description": "步频/踏频/桨频过程数据",
+			"maxListSize": 6000
 		},
 		{
 			"name": "message_id",
@@ -150,19 +119,46 @@
 			"description": "三方数据唯一id"
 		},
 		{
-			"name": "device_type",
-			"type": "Number",
-			"description": "设备类型：4.跑步机 5.单车 6.划船机"
+			"name": "max_speed",
+			"type": "BigDecimal",
+			"description": "最大速度，单位km/h"
 		},
 		{
-			"name": "device_name",
+			"name": "user_id",
 			"type": "String",
-			"description": "设备名称"
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "power_frequency",
+			"type": "Number",
+			"description": "平均步频"
+		},
+		{
+			"name": "calorie",
+			"type": "BigDecimal",
+			"description": "消耗总热量，单位：卡路里"
+		},
+		{
+			"name": "location",
+			"type": "String",
+			"description": "运动位置经纬度"
 		},
 		{
 			"name": "device_model",
 			"type": "String",
 			"description": "设备型号"
+		},
+		{
+			"name": "speed_datas",
+			"type": "Number[]",
+			"description": "速度过程数据,单位km/h",
+			"maxListSize": 6000
+		},
+		{
+			"name": "steps",
+			"type": "Number",
+			"description": "总步数"
 		}
 	],
 	"responseParams": [
@@ -186,5 +182,9 @@
 			"type": "Boolean",
 			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.alisports.datacenter.datasync.treadmill",
+	"apiChineseName": "阿里体育同步跑步机设备数据",
+	"description": "合作方向阿里体育同步跑步机设备的数据",
+	"id": 48650
 }

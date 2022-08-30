@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "leave_begin_and_end_list",
+			"type": "String[]",
+			"description": "时间段",
+			"maxListSize": 999
+		},
+		{
+			"name": "identity_number",
+			"type": "String",
+			"description": "身份证号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息"
+				},
+				{
+					"name": "is_success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.cancelleave",
+	"apiChineseName": "工人取消请假",
+	"description": "工人取消请假",
+	"id": 57198
+}

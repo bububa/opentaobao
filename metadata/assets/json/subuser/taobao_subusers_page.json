@@ -1,0 +1,95 @@
+{
+	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "主账号用户名",
+			"required": true
+		},
+		{
+			"name": "account_status",
+			"type": "Number",
+			"description": "可以不传，不传的话和老接口返回数据一样。如果传则根据子账号当前状态筛选 1正常   2冻结  3处罚，如果不传默认都返回"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，大于1小于200",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码，大于等于1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "子账号id"
+				},
+				{
+					"name": "sub_status",
+					"type": "Number",
+					"description": "子账号状态， 1正常   2冻结  3处罚"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "主账号id"
+				},
+				{
+					"name": "sub_dispatch_status",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "sub_owed_status",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "sub_nick",
+					"type": "String",
+					"description": "zhangsan:no1"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "zhangsan"
+				},
+				{
+					"name": "sub_name",
+					"type": "String",
+					"description": "员工昵称"
+				}
+			],
+			"name": "subaccounts",
+			"type": "SubAccountInfo []",
+			"description": "子账号基本信息"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "isv本次调用传入的页大小"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "本次调用删选条件下的总子账号数量，除以页大小可得出最大页数"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "isv本次调用传入的页码"
+		}
+	],
+	"name": "taobao.subusers.page",
+	"apiChineseName": "分页获取指定账户的子账号简易信息列表（新isv建议使用taobao.sellercenter.subusers.page接口）",
+	"description": "分页获取指定账户的子账号简易信息列表\n（新isv接入建议使用taobao.sellercenter.subusers.page接口）",
+	"id": 61194
+}

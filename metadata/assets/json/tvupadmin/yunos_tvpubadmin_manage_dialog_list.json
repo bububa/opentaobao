@@ -1,8 +1,4 @@
 {
-	"id": 30399,
-	"name": "yunos.tvpubadmin.manage.dialog.list",
-	"apiChineseName": "分页获取弹窗列表",
-	"description": "分页获取弹窗配置列表",
 	"requestParams": [
 		{
 			"name": "query",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.manage.dialog.list",
+	"apiChineseName": "分页获取弹窗列表",
+	"description": "分页获取弹窗配置列表",
+	"id": 30399
 }

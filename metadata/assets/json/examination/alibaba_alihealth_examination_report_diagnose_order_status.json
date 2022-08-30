@@ -1,13 +1,6 @@
 {
-	"id": 55130,
-	"name": "alibaba.alihealth.examination.report.diagnose.order.status",
-	"apiChineseName": "报告解读订单状态更新",
-	"description": "报告解读订单状态更新",
 	"requestParams": [
 		{
-			"name": "report_order_status_request",
-			"type": "ReportOrderStatusRequest",
-			"description": "参数对象",
 			"subParams": [
 				{
 					"name": "note",
@@ -37,40 +30,43 @@
 					"type": "String",
 					"description": "医生ID"
 				}
-			]
+			],
+			"name": "report_order_status_request",
+			"type": "ReportOrderStatusRequest",
+			"description": "参数对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "业务流程执行结果",
-					"required": true
+					"description": "业务流程执行结果"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "调用成功",
-					"required": true
+					"description": "调用成功"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.status",
+	"apiChineseName": "报告解读订单状态更新",
+	"description": "报告解读订单状态更新",
+	"id": 55130
 }

@@ -1,13 +1,6 @@
 {
-	"id": 55778,
-	"name": "alibaba.lsy.crm.activity.store.getstorelist",
-	"apiChineseName": "ISV查询门店",
-	"description": "ISV查询门店",
 	"requestParams": [
 		{
-			"name": "query_store_req",
-			"type": "NrtQueryStoreReq",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -25,96 +18,90 @@
 					"type": "Number",
 					"description": "页码"
 				}
-			]
+			],
+			"name": "query_store_req",
+			"type": "NrtQueryStoreReq",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "page_result_d_o",
-			"type": "PageResultDo",
-			"description": "返回结果集",
 			"subParams": [
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "数据总数目",
-					"required": true
+					"description": "数据总数目"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data_list",
-					"type": "NrtStoreDto[]",
-					"description": "门店集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "门店ID",
-							"required": true
+							"description": "门店ID"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "short_address",
 							"type": "String",
-							"description": "地址",
-							"required": true
+							"description": "地址"
 						},
 						{
 							"name": "lat",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "lng",
 							"type": "String",
-							"description": "经度",
-							"required": true
+							"description": "经度"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "NrtStoreDto[]",
+					"description": "门店集合"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页记录数",
-					"required": true
+					"description": "每页记录数"
 				},
 				{
 					"name": "total_page_num",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "page_num",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				}
-			]
+			],
+			"name": "page_result_d_o",
+			"type": "PageResultDo",
+			"description": "返回结果集"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.activity.store.getstorelist",
+	"apiChineseName": "ISV查询门店",
+	"description": "ISV查询门店",
+	"id": 55778
 }

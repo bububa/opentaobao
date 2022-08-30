@@ -1,8 +1,4 @@
 {
-	"id": 28092,
-	"name": "taobao.film.tfbackyard.cardschedule.update",
-	"apiChineseName": "CGV影城卡排期数据传输",
-	"description": "cgv影城卡排期价格数据传输API",
 	"requestParams": [
 		{
 			"name": "json_data",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.film.tfbackyard.cardschedule.update",
+	"apiChineseName": "CGV影城卡排期数据传输",
+	"description": "cgv影城卡排期价格数据传输API",
+	"id": 28092
 }

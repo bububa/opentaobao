@@ -1,13 +1,6 @@
 {
-	"id": 55953,
-	"name": "alibaba.alihouse.newhome.rc.sync",
-	"apiChineseName": "阿里房产图文草稿信息同步",
-	"description": "接收图文草稿信息",
 	"requestParams": [
 		{
-			"name": "rc",
-			"type": "RichContentDraftDto",
-			"description": "图文内容",
 			"subParams": [
 				{
 					"name": "outer_rich_content_id",
@@ -35,8 +28,7 @@
 				{
 					"name": "short_title",
 					"type": "String",
-					"description": "资讯短标题",
-					"required": true
+					"description": "资讯短标题"
 				},
 				{
 					"name": "tags",
@@ -74,8 +66,7 @@
 				{
 					"name": "keywords",
 					"type": "String[]",
-					"description": "关键字",
-					"required": true
+					"description": "关键字"
 				},
 				{
 					"name": "summary",
@@ -89,9 +80,6 @@
 					"required": true
 				},
 				{
-					"name": "project_cards",
-					"type": "ProjectCardDataDTO[]",
-					"description": "楼盘卡片映射",
 					"subParams": [
 						{
 							"name": "outer_id",
@@ -105,12 +93,12 @@
 							"description": "卡片占位符",
 							"required": true
 						}
-					]
+					],
+					"name": "project_cards",
+					"type": "ProjectCardDataDTO[]",
+					"description": "楼盘卡片映射"
 				},
 				{
-					"name": "video_mappings",
-					"type": "VideoDataDTO[]",
-					"description": "视频映射",
 					"subParams": [
 						{
 							"name": "video_url",
@@ -129,7 +117,10 @@
 							"description": "外部视频id",
 							"required": true
 						}
-					]
+					],
+					"name": "video_mappings",
+					"type": "VideoDataDTO[]",
+					"description": "视频映射"
 				},
 				{
 					"name": "is_test",
@@ -137,40 +128,43 @@
 					"description": "1 测试数据 0 正常数据",
 					"required": true
 				}
-			]
+			],
+			"name": "rc",
+			"type": "RichContentDraftDto",
+			"description": "图文内容"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "失败信息",
-					"required": true
+					"description": "失败信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "true或false",
-					"required": true
+					"description": "true或false"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.rc.sync",
+	"apiChineseName": "阿里房产图文草稿信息同步",
+	"description": "接收图文草稿信息",
+	"id": 55953
 }

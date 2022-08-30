@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "税控产品码",
+					"required": true
+				},
+				{
+					"name": "payee_register_no",
+					"type": "String",
+					"description": "服务商平台授权商户的税号",
+					"required": true
+				}
+			],
+			"name": "tax_auth_token_query_dto",
+			"type": "TaxAuthTokenQueryDto",
+			"description": "授权信息查询请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "服务商平台授权商户的访问令牌"
+				}
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.einvoice.tax.auth.query",
+	"apiChineseName": "发票中台授权信息获取",
+	"description": "发票中台授权信息获取",
+	"id": 58871
+}

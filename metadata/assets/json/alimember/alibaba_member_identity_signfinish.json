@@ -1,14 +1,6 @@
 {
-	"id": 48008,
-	"name": "alibaba.member.identity.signfinish",
-	"apiChineseName": "签约确认",
-	"description": "签约确认",
 	"requestParams": [
 		{
-			"name": "sign_finish",
-			"type": "SignIdentityFinishRequest",
-			"description": "签约确认信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "time_stamp",
@@ -35,10 +27,6 @@
 					"required": true
 				},
 				{
-					"name": "identity_model",
-					"type": "IdentityModel",
-					"description": "付费会员时间信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "start_time",
@@ -52,7 +40,11 @@
 							"description": "结束时间",
 							"required": true
 						}
-					]
+					],
+					"name": "identity_model",
+					"type": "IdentityModel",
+					"description": "付费会员时间信息",
+					"required": true
 				},
 				{
 					"name": "open_merchant_id",
@@ -61,10 +53,6 @@
 					"required": true
 				},
 				{
-					"name": "order_model",
-					"type": "OrderModel",
-					"description": "签约单据信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_type",
@@ -90,30 +78,40 @@
 							"description": "该单据对应付费会员结束时间",
 							"required": true
 						}
-					]
+					],
+					"name": "order_model",
+					"type": "OrderModel",
+					"description": "签约单据信息",
+					"required": true
 				}
-			]
+			],
+			"name": "sign_finish",
+			"type": "SignIdentityFinishRequest",
+			"description": "签约确认信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code，返回码",
-					"required": true
+					"description": "code，返回码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message，返回信息",
-					"required": true
+					"description": "message，返回信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.member.identity.signfinish",
+	"apiChineseName": "签约确认",
+	"description": "签约确认",
+	"id": 48008
 }

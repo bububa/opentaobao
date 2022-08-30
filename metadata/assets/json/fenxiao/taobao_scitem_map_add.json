@@ -1,8 +1,4 @@
 {
-	"id": 21600,
-	"name": "taobao.scitem.map.add",
-	"apiChineseName": "创建IC商品与后端商品的映射关系",
-	"description": "创建IC商品或分销商品与后端商品的映射关系",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -37,5 +33,9 @@
 			"type": "String",
 			"description": "接口调用返回结果信息：商家编码"
 		}
-	]
+	],
+	"name": "taobao.scitem.map.add",
+	"apiChineseName": "创建IC商品与后端商品的映射关系",
+	"description": "创建IC商品或分销商品与后端商品的映射关系",
+	"id": 21600
 }

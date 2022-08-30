@@ -1,8 +1,4 @@
 {
-	"id": 45550,
-	"name": "alibaba.seaking.imagetranslate.submit",
-	"apiChineseName": "提交图片翻译任务",
-	"description": "提交图片翻译任务",
 	"requestParams": [
 		{
 			"name": "token_from",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "image_translate_detail_list",
-			"type": "ImageTranslateDetailDto[]",
-			"description": "子任务列表",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "target_lang",
@@ -48,7 +39,12 @@
 					"description": "子任务编号，从1开始，必须连续",
 					"required": true
 				}
-			]
+			],
+			"name": "image_translate_detail_list",
+			"type": "ImageTranslateDetailDto[]",
+			"description": "子任务列表",
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "token",
@@ -63,5 +59,9 @@
 			"type": "Number",
 			"description": "任务id"
 		}
-	]
+	],
+	"name": "alibaba.seaking.imagetranslate.submit",
+	"apiChineseName": "提交图片翻译任务",
+	"description": "提交图片翻译任务",
+	"id": 45550
 }

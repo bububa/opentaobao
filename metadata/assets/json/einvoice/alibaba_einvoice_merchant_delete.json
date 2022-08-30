@@ -1,36 +1,32 @@
 {
-	"id": 53953,
-	"name": "alibaba.einvoice.merchant.delete",
-	"apiChineseName": "发票中台-同平台取消授权税号适用商户",
-	"description": "税号授权给同平台下其他商户使用后，可以使用此接口取消授权，被取消授权的商户失去开票能力",
 	"requestParams": [
 		{
 			"name": "tax_token",
 			"type": "String",
 			"description": "验证码，商户首次绑定已入驻税号接口返回的taxToken",
-			"required": true,
-			"maxLength": 512
+			"maxLength": 512,
+			"required": true
 		},
 		{
 			"name": "outer_id",
 			"type": "String",
 			"description": "业务方发起删除商户的唯一幂等ID, 由业务方生成。只能由字母和数字组成。",
-			"required": true,
-			"maxLength": 20
+			"maxLength": 20,
+			"required": true
 		},
 		{
 			"name": "merchant_user_id",
 			"type": "String",
 			"description": "业务平台商户ID",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "platform_code",
 			"type": "String",
 			"description": "业务平台code, 由阿里发票分配",
-			"required": true,
-			"maxLength": 8
+			"maxLength": 8,
+			"required": true
 		},
 		{
 			"name": "payee_register_no",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "删除成功的业务平台商户ID"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.merchant.delete",
+	"apiChineseName": "发票中台-同平台取消授权税号适用商户",
+	"description": "税号授权给同平台下其他商户使用后，可以使用此接口取消授权，被取消授权的商户失去开票能力",
+	"id": 53953
 }

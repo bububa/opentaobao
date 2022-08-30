@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "purchase_order_id",
+			"type": "Number",
+			"description": "采购单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "支付id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.order.pay",
+	"apiChineseName": "阿信酒店分销订单支付",
+	"description": "阿信酒店分销订单支付",
+	"id": 56493
+}

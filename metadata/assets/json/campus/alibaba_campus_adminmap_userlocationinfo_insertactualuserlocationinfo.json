@@ -1,14 +1,6 @@
 {
-	"id": 33585,
-	"name": "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo",
-	"apiChineseName": "上传用户实时位置",
-	"description": "上传用户实时位置\nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：insertActualUserLocationInfo",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "环境参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,13 +13,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "环境参数",
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "UserLocationInfo",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "identity_type",
@@ -74,52 +66,54 @@
 					"description": "经纬度类型1代表GPS,2代表mercator;",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "UserLocationInfo",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "content",
-					"required": true
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo",
+	"apiChineseName": "上传用户实时位置",
+	"description": "上传用户实时位置\nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：insertActualUserLocationInfo",
+	"id": 33585
 }

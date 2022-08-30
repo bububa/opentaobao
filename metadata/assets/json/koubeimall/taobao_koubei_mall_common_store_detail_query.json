@@ -1,29 +1,25 @@
 {
-	"id": 49827,
-	"name": "taobao.koubei.mall.common.store.detail.query",
-	"apiChineseName": "查询综合体内的门店详细信息",
-	"description": "查询口碑综合体内的门店详情信息",
 	"requestParams": [
-		{
-			"name": "data_set_id",
-			"type": "String",
-			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
-			"required": true,
-			"maxLength": 32
-		},
 		{
 			"name": "mall_id",
 			"type": "String",
 			"description": "商圈ID",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "store_id",
 			"type": "String",
 			"description": "商圈内的门店ID",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
+		},
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "city_code",
@@ -64,303 +60,261 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "API请求全链路追踪ID",
-					"required": true
+					"description": "API请求全链路追踪ID"
 				},
 				{
-					"name": "data",
-					"type": "StoreDetailDto",
-					"description": "返回门店详情模型",
-					"required": true,
 					"subParams": [
 						{
-							"name": "store_album",
-							"type": "StoreAlbumDto",
-							"description": "门店相册",
-							"required": true,
 							"subParams": [
 								{
 									"name": "album_name",
 									"type": "String",
-									"description": "相册名称",
-									"required": true
+									"description": "相册名称"
 								},
 								{
 									"name": "album_desc",
 									"type": "String",
-									"description": "描述信息",
-									"required": true
+									"description": "描述信息"
 								},
 								{
-									"name": "picture_list",
-									"type": "Picture[]",
-									"description": "照片列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "sequence",
 											"type": "Number",
-											"description": "图片顺序",
-											"required": true
+											"description": "图片顺序"
 										},
 										{
 											"name": "picture_source",
 											"type": "String",
-											"description": "图片来源",
-											"required": true
+											"description": "图片来源"
 										},
 										{
 											"name": "picture_url",
 											"type": "String",
-											"description": "图片链接",
-											"required": true
+											"description": "图片链接"
 										},
 										{
 											"name": "picture_name",
 											"type": "String",
-											"description": "图片名称",
-											"required": true
+											"description": "图片名称"
 										}
-									]
+									],
+									"name": "picture_list",
+									"type": "Picture[]",
+									"description": "照片列表"
 								}
-							]
+							],
+							"name": "store_album",
+							"type": "StoreAlbumDto",
+							"description": "门店相册"
 						},
 						{
-							"name": "store_dto",
-							"type": "StoreDto",
-							"description": "门店基础信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "门店品牌名称",
-									"required": true
+									"description": "门店品牌名称"
 								},
 								{
 									"name": "contact_info",
 									"type": "String",
-									"description": "门店联系方式，多个电话用英文\",\"分隔符（包含手机、座机电话）",
-									"required": true
+									"description": "门店联系方式，多个电话用英文\",\"分隔符（包含手机、座机电话）"
 								},
 								{
-									"name": "service_tag_list",
-									"type": "ServiceTag[]",
-									"description": "门店服务 预定、点餐、排号、外卖",
-									"required": true,
 									"subParams": [
 										{
 											"name": "tag_icon",
 											"type": "String",
-											"description": "图标icon",
-											"required": true
+											"description": "图标icon"
 										},
 										{
 											"name": "tag_code",
 											"type": "String",
-											"description": "服务标签code",
-											"required": true
+											"description": "服务标签code"
 										}
-									]
+									],
+									"name": "service_tag_list",
+									"type": "ServiceTag[]",
+									"description": "门店服务 预定、点餐、排号、外卖"
 								},
 								{
 									"name": "mall_id",
 									"type": "String",
-									"description": "门店所属商圈ID",
-									"required": true
+									"description": "门店所属商圈ID"
 								},
 								{
 									"name": "comment_total_count",
 									"type": "String",
-									"description": "门店评论总数",
-									"required": true
+									"description": "门店评论总数"
 								},
 								{
-									"name": "district_info",
-									"type": "DistrictInfo",
-									"description": "地理位置信息模型",
-									"required": true,
 									"subParams": [
 										{
 											"name": "district_code",
 											"type": "String",
-											"description": "区域编码",
-											"required": true
+											"description": "区域编码"
 										},
 										{
 											"name": "address",
 											"type": "String",
-											"description": "地址",
-											"required": true
+											"description": "地址"
 										},
 										{
 											"name": "city_name",
 											"type": "String",
-											"description": "城市名称",
-											"required": true
+											"description": "城市名称"
 										},
 										{
 											"name": "district_name",
 											"type": "String",
-											"description": "区域名称",
-											"required": true
+											"description": "区域名称"
 										},
 										{
 											"name": "city_code",
 											"type": "String",
-											"description": "城市编码",
-											"required": true
+											"description": "城市编码"
 										},
 										{
 											"name": "province_code",
 											"type": "String",
-											"description": "省份编码",
-											"required": true
+											"description": "省份编码"
 										},
 										{
 											"name": "latitude",
 											"type": "String",
-											"description": "纬度",
-											"required": true
+											"description": "纬度"
 										},
 										{
 											"name": "province_name",
 											"type": "String",
-											"description": "省份名称",
-											"required": true
+											"description": "省份名称"
 										},
 										{
 											"name": "longitude",
 											"type": "String",
-											"description": "经度",
-											"required": true
+											"description": "经度"
 										}
-									]
+									],
+									"name": "district_info",
+									"type": "DistrictInfo",
+									"description": "地理位置信息模型"
 								},
 								{
 									"name": "comment_score",
 									"type": "String",
-									"description": "门店评分",
-									"required": true
+									"description": "门店评分"
 								},
 								{
 									"name": "business_time",
 									"type": "String",
-									"description": "营业时间",
-									"required": true
+									"description": "营业时间"
 								},
 								{
 									"name": "store_id",
 									"type": "String",
-									"description": "门店ID",
-									"required": true
+									"description": "门店ID"
 								},
 								{
 									"name": "billboard",
 									"type": "String",
-									"description": "榜单",
-									"required": true
+									"description": "榜单"
 								},
 								{
 									"name": "category_name",
 									"type": "String",
-									"description": "门店类目信息，一级、二级、三级类目用英文\",\"分隔符；示例：美食,火锅,川菜/重庆火锅",
-									"required": true
+									"description": "门店类目信息，一级、二级、三级类目用英文\",\"分隔符；示例：美食,火锅,川菜/重庆火锅"
 								},
 								{
 									"name": "score",
 									"type": "String",
-									"description": "门店质量分",
-									"required": true
+									"description": "门店质量分"
 								},
 								{
 									"name": "store_detail_url",
 									"type": "String",
-									"description": "门店详情小程序URL",
-									"required": true
+									"description": "门店详情小程序URL"
 								},
 								{
 									"name": "store_logo",
 									"type": "String",
-									"description": "门店logo",
-									"required": true
+									"description": "门店logo"
 								},
 								{
 									"name": "store_name",
 									"type": "String",
-									"description": "门店名称",
-									"required": true
+									"description": "门店名称"
 								},
 								{
 									"name": "average_price",
 									"type": "String",
-									"description": "人均消费",
-									"required": true
+									"description": "人均消费"
 								}
-							]
+							],
+							"name": "store_dto",
+							"type": "StoreDto",
+							"description": "门店基础信息"
 						},
 						{
-							"name": "service_info",
-							"type": "ServiceInfoDto",
-							"description": "服务信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_desc",
 									"type": "String",
-									"description": "服务说明",
-									"required": true
+									"description": "服务说明"
 								},
 								{
 									"name": "service_tag_list",
 									"type": "String[]",
-									"description": "门店服务tag",
-									"required": true
+									"description": "门店服务tag"
 								}
-							]
+							],
+							"name": "service_info",
+							"type": "ServiceInfoDto",
+							"description": "服务信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StoreDetailDto",
+					"description": "返回门店详情模型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "error",
-					"type": "TribeError",
-					"description": "错误信息，success=false时，返回相关错误信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误码",
-							"required": true
+							"description": "错误码"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息描述",
-							"required": true
+							"description": "错误信息描述"
 						},
 						{
 							"name": "view",
 							"type": "String",
-							"description": "错误信息可读性描述",
-							"required": true
+							"description": "错误信息可读性描述"
 						}
-					]
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息，success=false时，返回相关错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.koubei.mall.common.store.detail.query",
+	"apiChineseName": "查询综合体内的门店详细信息",
+	"description": "查询口碑综合体内的门店详情信息",
+	"id": 49827
 }

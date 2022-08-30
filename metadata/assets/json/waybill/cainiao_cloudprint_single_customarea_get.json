@@ -1,8 +1,4 @@
 {
-	"id": 28068,
-	"name": "cainiao.cloudprint.single.customarea.get",
-	"apiChineseName": "获取商家单一自定义区",
-	"description": "商家所有快递公司模板只有一个自定义区",
 	"requestParams": [
 		{
 			"name": "seller_id",
@@ -12,15 +8,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CustomAreaSingleResult",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "custom_area_id",
@@ -35,10 +24,6 @@
 							"required": true
 						},
 						{
-							"name": "keys",
-							"type": "KeyResult[]",
-							"description": "keys",
-							"required": true,
 							"subParams": [
 								{
 									"name": "key_name",
@@ -46,9 +31,17 @@
 									"description": "动态key的名称",
 									"required": true
 								}
-							]
+							],
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "keys",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "CustomAreaSingleResult",
+					"description": "data",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -68,7 +61,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.single.customarea.get",
+	"apiChineseName": "获取商家单一自定义区",
+	"description": "商家所有快递公司模板只有一个自定义区",
+	"id": 28068
 }

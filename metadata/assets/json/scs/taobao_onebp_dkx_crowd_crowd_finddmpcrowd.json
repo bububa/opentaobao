@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "场景编码",
+					"required": true
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "topic_id",
+							"type": "Number",
+							"description": "topicId"
+						},
+						{
+							"subParams": [
+								{
+									"name": "template_id",
+									"type": "Number",
+									"description": "模板id:templateId"
+								},
+								{
+									"name": "template_name",
+									"type": "String",
+									"description": "模板名称"
+								},
+								{
+									"name": "valid_date",
+									"type": "String",
+									"description": "模板有效期"
+								},
+								{
+									"name": "template_desc",
+									"type": "String",
+									"description": "模板介绍"
+								}
+							],
+							"name": "template_list",
+							"type": "DmpJxCrowdTemplateViewDTO[]",
+							"description": "template"
+						}
+					],
+					"name": "result",
+					"type": "DmpJxTopicViewDTO[]",
+					"description": "结果体"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.crowd.crowd.finddmpcrowd",
+	"apiChineseName": "查询达摩盘精选人群模板",
+	"description": "查询达摩盘精选人群模板；使用方法为先查询出topic和对应的templateId（需要一一对应），然后将想使用的模板topic\u0026templateId组填入Add接口中的new_dmp_template_crowd结构中提交即可。",
+	"id": 61151
+}

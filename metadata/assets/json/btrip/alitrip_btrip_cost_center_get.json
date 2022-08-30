@@ -1,8 +1,4 @@
 {
-	"id": 29198,
-	"name": "alitrip.btrip.cost.center.get",
-	"apiChineseName": "获取用户费用归属",
-	"description": "获取差旅申请用户的费用归属列表",
 	"requestParams": [
 		{
 			"name": "corp_id",
@@ -19,61 +15,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "resultCode",
-					"required": true
+					"description": "resultCode"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "resultMsg",
-					"required": true
+					"description": "resultMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "cost_center_list",
-					"type": "CostCenterList[]",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "corpId",
-							"required": true
+							"description": "corpId"
 						},
 						{
 							"name": "number",
 							"type": "String",
-							"description": "number",
-							"required": true
+							"description": "number"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						}
-					]
+					],
+					"name": "cost_center_list",
+					"type": "CostCenterList[]",
+					"description": "module"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.btrip.cost.center.get",
+	"apiChineseName": "获取用户费用归属",
+	"description": "获取差旅申请用户的费用归属列表",
+	"id": 29198
 }

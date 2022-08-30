@@ -1,13 +1,6 @@
 {
-	"id": 26042,
-	"name": "alibaba.tianji.supplier.order.result",
-	"apiChineseName": "供应商处理订单接口（订购成功/失败、发货）",
-	"description": "供应商处理订单接口（订购成功/失败、发货）",
 	"requestParams": [
 		{
-			"name": "supplier_order_result_model",
-			"type": "SupplierOrderResultModel",
-			"description": "供应商处理订单结果反馈参数",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -45,7 +38,10 @@
 					"description": "订购结果状态",
 					"required": true
 				}
-			]
+			],
+			"name": "supplier_order_result_model",
+			"type": "SupplierOrderResultModel",
+			"description": "供应商处理订单结果反馈参数"
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "Boolean",
 			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.tianji.supplier.order.result",
+	"apiChineseName": "供应商处理订单接口（订购成功/失败、发货）",
+	"description": "供应商处理订单接口（订购成功/失败、发货）",
+	"id": 26042
 }

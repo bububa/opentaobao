@@ -8,6 +8,8 @@ type DistributionOrderSaveOpenRequest struct {
 	TimeType string `json:"time_type,omitempty" xml:"time_type,omitempty"`
 	// 投放计划名字
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 卡片对应的动态表单字段信息
+	CardData string `json:"card_data,omitempty" xml:"card_data,omitempty"`
 	// 投放的小程序id
 	AppId int64 `json:"app_id,omitempty" xml:"app_id,omitempty"`
 	// 要投放的卡片id

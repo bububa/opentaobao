@@ -12,10 +12,10 @@ import (
 // 标签人群预估
 type AlibabaScbpAdTargetTagEstimateUvAPIRequest struct {
 	model.Params
-	// 请求参数
-	_tagEstimateOperation *TagEstimateOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 请求参数
+	_tagEstimateOperation *TagEstimateOperationDto
 }
 
 // NewAlibabaScbpAdTargetTagEstimateUvRequest 初始化AlibabaScbpAdTargetTagEstimateUvAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetTagEstimateOperation is TagEstimateOperation Setter
-// 请求参数
-func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTagEstimateOperation(_tagEstimateOperation *TagEstimateOperationDto) error {
-	r._tagEstimateOperation = _tagEstimateOperation
-	r.Set("tag_estimate_operation", _tagEstimateOperation)
-	return nil
-}
-
-// GetTagEstimateOperation TagEstimateOperation Getter
-func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTagEstimateOperation() *TagEstimateOperationDto {
-	return r._tagEstimateOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTopContext(_topContext *
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetTagEstimateOperation is TagEstimateOperation Setter
+// 请求参数
+func (r *AlibabaScbpAdTargetTagEstimateUvAPIRequest) SetTagEstimateOperation(_tagEstimateOperation *TagEstimateOperationDto) error {
+	r._tagEstimateOperation = _tagEstimateOperation
+	r.Set("tag_estimate_operation", _tagEstimateOperation)
+	return nil
+}
+
+// GetTagEstimateOperation TagEstimateOperation Getter
+func (r AlibabaScbpAdTargetTagEstimateUvAPIRequest) GetTagEstimateOperation() *TagEstimateOperationDto {
+	return r._tagEstimateOperation
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25205,
-	"name": "taobao.promotion.benefit.activity.time.update",
-	"apiChineseName": "更新关联活动有效时间",
-	"description": "更新关联权益的活动有效时间",
 	"requestParams": [
 		{
 			"name": "relation_id",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "修改是否成功"
 		}
-	]
+	],
+	"name": "taobao.promotion.benefit.activity.time.update",
+	"apiChineseName": "更新关联活动有效时间",
+	"description": "更新关联权益的活动有效时间",
+	"id": 25205
 }

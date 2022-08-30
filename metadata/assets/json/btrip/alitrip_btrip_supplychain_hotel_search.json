@@ -1,14 +1,6 @@
 {
-	"id": 53594,
-	"name": "alitrip.btrip.supplychain.hotel.search",
-	"apiChineseName": "【商旅】酒店订单查询",
-	"description": "【商旅】酒店订单查询",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiSearchRq",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "all_apply",
@@ -76,370 +68,341 @@
 					"type": "Number",
 					"description": "1、老版本2、isv对外版本"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiSearchRq",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "module_list",
-					"type": "OpenApiHotelOrderRs[]",
-					"description": "酒店订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "商旅企业id",
-							"required": true
+							"description": "商旅企业id"
 						},
 						{
 							"name": "corp_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "第三方用户id",
-							"required": true
+							"description": "第三方用户id"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
-							"description": "用户名称",
-							"required": true
+							"description": "用户名称"
 						},
 						{
 							"name": "depart_id",
 							"type": "String",
-							"description": "用户所在部门id",
-							"required": true
+							"description": "用户所在部门id"
 						},
 						{
 							"name": "depart_name",
 							"type": "String",
-							"description": "部门名称",
-							"required": true
+							"description": "部门名称"
 						},
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "商旅申请单id",
-							"required": true
+							"description": "商旅申请单id"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "联系人姓名",
-							"required": true
+							"description": "联系人姓名"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "酒店所在城市",
-							"required": true
+							"description": "酒店所在城市"
 						},
 						{
 							"name": "hotel_name",
 							"type": "String",
-							"description": "酒店名称",
-							"required": true
+							"description": "酒店名称"
 						},
 						{
 							"name": "check_in",
 							"type": "Date",
-							"description": "入住时间",
-							"required": true
+							"description": "入住时间"
 						},
 						{
 							"name": "check_out",
 							"type": "Date",
-							"description": "离店时间",
-							"required": true
+							"description": "离店时间"
 						},
 						{
 							"name": "room_type",
 							"type": "String",
-							"description": "房型",
-							"required": true
+							"description": "房型"
 						},
 						{
 							"name": "room_num",
 							"type": "Number",
-							"description": "房间数",
-							"required": true
+							"description": "房间数"
 						},
 						{
 							"name": "night",
 							"type": "Number",
-							"description": "总共住几晚",
-							"required": true
+							"description": "总共住几晚"
 						},
 						{
-							"name": "price_info_list",
-							"type": "OpenPriceInfo[]",
-							"description": "价目详情列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "price",
 									"type": "String",
-									"description": "价格",
-									"required": true
+									"description": "价格"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "资金流向:1:支出，2:收入",
-									"required": true
+									"description": "资金流向:1:支出，2:收入"
 								},
 								{
 									"name": "category",
 									"type": "String",
-									"description": "交易类型",
-									"required": true
+									"description": "交易类型(废弃)"
 								},
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "结算方式:1个人现付，2:企业现付,4:企业月结，8企业预存",
-									"required": true
+									"description": "结算方式:1个人现付，2:企业现付,4:企业月结，8企业预存"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "流水创建时间",
-									"required": true
+									"description": "流水创建时间"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "入住人信息，多个用‘,’分割",
-									"required": true
+									"description": "入住人信息，多个用‘,’分割"
 								},
 								{
 									"name": "trade_id",
 									"type": "String",
-									"description": "交易流水号",
-									"required": true
+									"description": "交易流水号"
+								},
+								{
+									"name": "category_type",
+									"type": "Number",
+									"description": "交易类目类型1-飞机，2-酒店，3-火车，4-用车"
+								},
+								{
+									"name": "category_code",
+									"type": "Number",
+									"description": "交易类目编码"
 								}
-							]
+							],
+							"name": "price_info_list",
+							"type": "OpenPriceInfo[]",
+							"description": "价目详情列表"
 						},
 						{
-							"name": "cost_center",
-							"type": "OpenCostCenterDo",
-							"description": "成本中心对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商旅成本中心id",
-									"required": true
+									"description": "商旅成本中心id"
 								},
 								{
 									"name": "corp_id",
 									"type": "String",
-									"description": "商旅企业id",
-									"required": true
+									"description": "商旅企业id"
 								},
 								{
 									"name": "number",
 									"type": "String",
-									"description": "成本中心编号",
-									"required": true
+									"description": "成本中心编号"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "成本中心名称",
-									"required": true
+									"description": "成本中心名称"
 								}
-							]
+							],
+							"name": "cost_center",
+							"type": "OpenCostCenterDo",
+							"description": "成本中心对象"
 						},
 						{
 							"name": "guest",
 							"type": "String",
-							"description": "入住顾客，多个用','分割",
-							"required": true
+							"description": "入住顾客，多个用','分割"
 						},
 						{
 							"name": "order_type_desc",
 							"type": "String",
-							"description": "订单类型描述",
-							"required": true
+							"description": "订单类型描述"
 						},
 						{
 							"name": "order_status_desc",
 							"type": "String",
-							"description": "订单状态描述",
-							"required": true
+							"description": "订单状态描述"
 						},
 						{
 							"name": "order_type",
 							"type": "Number",
-							"description": "订单类型",
-							"required": true
+							"description": "订单类型"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
-							"name": "invoice",
-							"type": "OpenInvoiceDo",
-							"description": "发票对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商旅发票id",
-									"required": true
+									"description": "商旅发票id"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "发票抬头",
-									"required": true
+									"description": "发票抬头"
 								},
 								{
 									"name": "invoice_type",
 									"type": "Number",
-									"description": "发票类型：1:增值税普通发票；2:增值税专用发票",
-									"required": true
+									"description": "发票类型：1:增值税普通发票；2:增值税专用发票"
 								}
-							]
+							],
+							"name": "invoice",
+							"type": "OpenInvoiceDo",
+							"description": "发票对象"
 						},
 						{
 							"name": "thirdpart_itinerary_id",
 							"type": "String",
-							"description": "第三方行程id",
-							"required": true
+							"description": "第三方行程id"
 						},
 						{
-							"name": "user_affiliate_list",
-							"type": "OpenUserAffiliateDo[]",
-							"description": "入住人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "入住人ID（第三方用户Id）",
-									"required": true
+									"description": "入住人ID（第三方用户Id）"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "入住人名称",
-									"required": true
+									"description": "入住人名称"
 								}
-							]
+							],
+							"name": "user_affiliate_list",
+							"type": "OpenUserAffiliateDo[]",
+							"description": "入住人列表"
 						},
 						{
 							"name": "thirdpart_apply_id",
 							"type": "String",
-							"description": "第三方申请单ID",
-							"required": true
+							"description": "第三方申请单ID"
 						},
 						{
 							"name": "btrip_title",
 							"type": "String",
-							"description": "申请单名称",
-							"required": true
+							"description": "申请单名称"
 						},
 						{
 							"name": "project_id",
 							"type": "Number",
-							"description": "项目id",
-							"required": true
+							"description": "项目id"
 						},
 						{
 							"name": "project_title",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
 						},
 						{
 							"name": "project_code",
 							"type": "String",
-							"description": "项目code",
-							"required": true
+							"description": "项目code"
+						},
+						{
+							"name": "thirdpart_project_id",
+							"type": "String",
+							"description": "第三方项目id"
+						},
+						{
+							"name": "hotel_support_vat_invoice_type",
+							"type": "Number",
+							"description": "酒店开票支持类型：11 仅支持增值税普通发票 12 支持增值税专用发票和增值税普通发票"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "OpenApiHotelOrderRs[]",
+					"description": "酒店订单列表"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
-					"name": "page_info",
-					"type": "OpenPageInfoRs",
-					"description": "分页相关信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "total_number",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						}
-					]
+					],
+					"name": "page_info",
+					"type": "OpenPageInfoRs",
+					"description": "分页相关信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.hotel.search",
+	"apiChineseName": "【商旅】酒店订单查询",
+	"description": "【商旅】酒店订单查询",
+	"id": 53594
 }

@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "物流订单号",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "PrintLabelRequestDTO",
+			"description": "打印面单入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "物流订单号"
+				},
+				{
+					"name": "label_url",
+					"type": "String",
+					"description": "面单链接"
+				}
+			],
+			"name": "data",
+			"type": "LabelDTO",
+			"description": "出参对象"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用状态"
+		},
+		{
+			"name": "error_result_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "error_result_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "aliexpress.local.logistic.label.print",
+	"apiChineseName": "物流打印面单",
+	"description": "物流打印面单",
+	"id": 60977
+}

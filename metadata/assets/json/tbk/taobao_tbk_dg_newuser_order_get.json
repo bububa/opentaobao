@@ -1,25 +1,19 @@
 {
-	"id": 33892,
-	"name": "taobao.tbk.dg.newuser.order.get",
-	"apiChineseName": "淘宝客-推广者-新用户订单明细查询",
-	"description": "拉新API",
 	"requestParams": [
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "页大小，默认20，1~100",
-			"maxValue": 100,
-			"minValue": 1
-		},
-		{
-			"name": "adzone_id",
-			"type": "Number",
-			"description": "mm_xxx_xxx_xxx的第三位"
+			"description": "页大小，默认20，1~100"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "页码，默认1"
+		},
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第三位"
 		},
 		{
 			"name": "start_time",
@@ -34,239 +28,207 @@
 		{
 			"name": "activity_id",
 			"type": "String",
-			"description": "活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301\u0026postId=8599277",
+			"description": "活动id， 活动名称与活动ID列表（该字段已废弃）",
 			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Results",
-			"description": "data",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "results",
-							"type": "MapData[]",
-							"description": "resultList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "register_time",
 									"type": "Date",
-									"description": "新注册时间，仅淘宝拉新适用",
-									"required": true
+									"description": "新注册时间，仅淘宝拉新适用"
 								},
 								{
 									"name": "bind_time",
 									"type": "Date",
-									"description": "当前活动为淘宝拉新活动时，bind_time为新激活时间； 当前活动为支付宝拉新活动时，bind_time为绑定时间。",
-									"required": true
+									"description": "当前活动为淘宝拉新活动时，bind_time为新激活时间； 当前活动为支付宝拉新活动时，bind_time为绑定时间。"
 								},
 								{
 									"name": "buy_time",
 									"type": "Date",
-									"description": "首购时间，仅淘宝，天猫拉新适用",
-									"required": true
+									"description": "首购时间，仅淘宝，天猫拉新适用"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "新人状态， 当前活动为淘宝拉新活动时，1: 新注册，2:激活，3:首购，4:确认收货； 当前活动为支付宝实名活动时，1：已绑定，2：拉新成功，3：无效用户；当前活动为支付宝新登活动时，3：手淘首购，4：手淘确认收货；当前活动为天猫拉新活动时，2:已领取，3:已首购，4:已收货",
-									"required": true
+									"description": "新人状态， 当前活动为淘宝拉新活动时，1: 新注册，2:激活，3:首购，4:确认收货； 当前活动为支付宝实名活动时，1：已绑定，2：拉新成功，3：无效用户；当前活动为支付宝新登活动时，3：手淘首购，4：手淘确认收货；当前活动为天猫拉新活动时，2:已领取，3:已首购，4:已收货"
 								},
 								{
 									"name": "mobile",
 									"type": "String",
-									"description": "新人手机号",
-									"required": true
+									"description": "新人手机号"
 								},
 								{
 									"name": "order_tk_type",
 									"type": "Number",
-									"description": "订单淘客类型:1.淘客订单；2.非淘客订单，仅淘宝，天猫拉新适用",
-									"required": true
+									"description": "订单淘客类型:1.淘客订单；2.非淘客订单，仅淘宝，天猫拉新适用"
 								},
 								{
 									"name": "union_id",
 									"type": "String",
-									"description": "分享用户(unionid)，仅淘宝，天猫拉新适用",
-									"required": true
+									"description": "分享用户(unionid)，仅淘宝，天猫拉新适用"
 								},
 								{
 									"name": "member_id",
 									"type": "Number",
-									"description": "来源媒体ID(pid中mm_1_2_3)中第1位",
-									"required": true
+									"description": "来源媒体ID(pid中mm_1_2_3)中第1位"
 								},
 								{
 									"name": "member_nick",
 									"type": "String",
-									"description": "来源媒体名称",
-									"required": true
+									"description": "来源媒体名称"
 								},
 								{
 									"name": "site_id",
 									"type": "Number",
-									"description": "来源站点ID(pid中mm_1_2_3)中第2位",
-									"required": true
+									"description": "来源站点ID(pid中mm_1_2_3)中第2位"
 								},
 								{
 									"name": "site_name",
 									"type": "String",
-									"description": "来源站点名称",
-									"required": true
+									"description": "来源站点名称"
 								},
 								{
 									"name": "adzone_id",
 									"type": "Number",
-									"description": "来源广告位ID(pid中mm_1_2_3)中第3位",
-									"required": true
+									"description": "来源广告位ID(pid中mm_1_2_3)中第3位"
 								},
 								{
 									"name": "adzone_name",
 									"type": "String",
-									"description": "来源广告位名称",
-									"required": true
+									"description": "来源广告位名称"
 								},
 								{
 									"name": "tb_trade_parent_id",
 									"type": "Number",
-									"description": "淘宝订单id，仅淘宝，天猫拉新适用",
-									"required": true
+									"description": "淘宝订单id，仅淘宝，天猫拉新适用"
 								},
 								{
 									"name": "accept_time",
 									"type": "Date",
-									"description": "确认收货时间，仅天猫拉新适用",
-									"required": true
+									"description": "确认收货时间，仅天猫拉新适用"
 								},
 								{
 									"name": "receive_time",
 									"type": "Date",
-									"description": "领取红包时间，仅天猫拉新适用",
-									"required": true
+									"description": "领取红包时间，仅天猫拉新适用"
 								},
 								{
 									"name": "success_time",
 									"type": "Date",
-									"description": "拉新成功时间，仅支付宝拉新适用",
-									"required": true
+									"description": "拉新成功时间，仅支付宝拉新适用"
 								},
 								{
 									"name": "activity_type",
 									"type": "String",
-									"description": "活动类型，taobao-淘宝 alipay-支付宝 tmall-天猫",
-									"required": true
+									"description": "活动类型，taobao-淘宝 alipay-支付宝 tmall-天猫"
 								},
 								{
 									"name": "activity_id",
 									"type": "String",
-									"description": "活动id",
-									"required": true
+									"description": "活动id"
 								},
 								{
 									"name": "biz_date",
 									"type": "String",
-									"description": "日期，格式为\"20180202\"",
-									"required": true
+									"description": "日期，格式为\"20180202\""
 								},
 								{
-									"name": "orders",
-									"type": "OrderData[]",
-									"description": "复购订单，仅适用于手淘拉新",
-									"required": true,
 									"subParams": [
 										{
 											"name": "commission",
 											"type": "String",
-											"description": "预估佣金",
-											"required": true
+											"description": "预估佣金"
 										},
 										{
 											"name": "confirm_receive_time",
 											"type": "String",
-											"description": "收货时间",
-											"required": true
+											"description": "收货时间"
 										},
 										{
 											"name": "pay_time",
 											"type": "String",
-											"description": "支付时间",
-											"required": true
+											"description": "支付时间"
 										},
 										{
 											"name": "order_no",
 											"type": "String",
-											"description": "订单号",
-											"required": true
+											"description": "订单号"
 										}
-									]
+									],
+									"name": "orders",
+									"type": "OrderData[]",
+									"description": "复购订单，仅适用于手淘拉新"
 								},
 								{
 									"name": "bind_card_time",
 									"type": "Date",
-									"description": "绑卡日期，仅适用于手淘拉新",
-									"required": true
+									"description": "绑卡日期，仅适用于手淘拉新"
 								},
 								{
 									"name": "login_time",
 									"type": "Date",
-									"description": "loginTime",
-									"required": true
+									"description": "loginTime"
 								},
 								{
 									"name": "is_card_save",
 									"type": "Number",
-									"description": "银行卡是否是绑定状态：1-绑定，0-未绑定",
-									"required": true
+									"description": "银行卡是否是绑定状态：1-绑定，0-未绑定"
 								},
 								{
 									"name": "use_rights_time",
 									"type": "Date",
-									"description": "使用权益时间",
-									"required": true
+									"description": "使用权益时间"
 								},
 								{
 									"name": "get_rights_time",
 									"type": "Date",
-									"description": "领取权益时间",
-									"required": true
+									"description": "领取权益时间"
 								},
 								{
 									"name": "relation_id",
 									"type": "String",
-									"description": "渠道关系id",
-									"required": true
+									"description": "渠道关系id"
 								}
-							]
+							],
+							"name": "results",
+							"type": "MapData[]",
+							"description": "resultList"
 						},
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "页码",
-							"required": true
+							"description": "页码"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "has_next",
 							"type": "Boolean",
-							"description": "是否有下一页",
-							"required": true
+							"description": "是否有下一页"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "data"
 				}
-			]
+			],
+			"name": "results",
+			"type": "Results",
+			"description": "data"
 		}
-	]
+	],
+	"name": "taobao.tbk.dg.newuser.order.get",
+	"apiChineseName": "淘宝客-推广者-新用户订单明细查询",
+	"description": "拉新API",
+	"id": 33892
 }

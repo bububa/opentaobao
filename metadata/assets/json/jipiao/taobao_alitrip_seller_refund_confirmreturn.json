@@ -1,8 +1,4 @@
 {
-	"id": 26086,
-	"name": "taobao.alitrip.seller.refund.confirmreturn",
-	"apiChineseName": "【机票代理商】确认退票",
-	"description": "确认退票",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.seller.refund.confirmreturn",
+	"apiChineseName": "【机票代理商】确认退票",
+	"description": "确认退票",
+	"id": 26086
 }

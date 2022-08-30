@@ -1,14 +1,6 @@
 {
-	"id": 37509,
-	"name": "alibaba.campus.acl.new.listroles",
-	"apiChineseName": "查询全部角色",
-	"description": "查询全部角色",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "system_id",
@@ -27,12 +19,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"required": true
 		},
 		{
-			"name": "rolequeryparam",
-			"type": "RoleQueryParam",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "app_keys",
@@ -49,96 +42,90 @@
 					"type": "String",
 					"description": "园区"
 				}
-			]
+			],
+			"name": "rolequeryparam",
+			"type": "RoleQueryParam",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "SysRoleDto[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "角色主键id",
-							"required": true
+							"description": "角色主键id"
 						},
 						{
 							"name": "role_key",
 							"type": "String",
-							"description": "角色key",
-							"required": true
+							"description": "角色key"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "角色属于哪个租户",
-							"required": true
+							"description": "角色属于哪个租户"
 						},
 						{
 							"name": "app_key",
 							"type": "String",
-							"description": "应用",
-							"required": true
+							"description": "应用"
 						},
 						{
 							"name": "dept_id",
 							"type": "String",
-							"description": "园区",
-							"required": true
+							"description": "园区"
 						},
 						{
 							"name": "dept_name",
 							"type": "String",
-							"description": "园区名称",
-							"required": true
+							"description": "园区名称"
 						},
 						{
 							"name": "role_name",
 							"type": "String",
-							"description": "角色名称",
-							"required": true
+							"description": "角色名称"
 						},
 						{
 							"name": "role_desc",
 							"type": "String",
-							"description": "角色描述",
-							"required": true
+							"description": "角色描述"
 						},
 						{
 							"name": "role_type",
 							"type": "String",
-							"description": "角色类型",
-							"required": true
+							"description": "角色类型"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "SysRoleDto[]",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.listroles",
+	"apiChineseName": "查询全部角色",
+	"description": "查询全部角色",
+	"id": 37509
 }

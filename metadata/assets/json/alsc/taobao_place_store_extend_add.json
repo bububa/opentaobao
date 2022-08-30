@@ -1,8 +1,4 @@
 {
-	"id": 50112,
-	"name": "taobao.place.store.extend.add",
-	"apiChineseName": "新增门店扩展属性",
-	"description": "新增授权用户的门店扩展属性",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -10,10 +6,6 @@
 			"description": "门店ID"
 		},
 		{
-			"name": "etv",
-			"type": "ExtendTypeValueTopDto[]",
-			"description": "扩展信息",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "code",
@@ -25,7 +17,11 @@
 					"type": "String",
 					"description": "扩展value"
 				}
-			]
+			],
+			"name": "etv",
+			"type": "ExtendTypeValueTopDto[]",
+			"description": "扩展信息",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
@@ -44,5 +40,9 @@
 			"type": "Number",
 			"description": "个数"
 		}
-	]
+	],
+	"name": "taobao.place.store.extend.add",
+	"apiChineseName": "新增门店扩展属性",
+	"description": "新增授权用户的门店扩展属性",
+	"id": 50112
 }

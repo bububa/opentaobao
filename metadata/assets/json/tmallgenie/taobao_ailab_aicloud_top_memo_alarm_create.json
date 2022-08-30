@@ -1,8 +1,4 @@
 {
-	"id": 42913,
-	"name": "taobao.ailab.aicloud.top.memo.alarm.create",
-	"apiChineseName": "天猫精灵闹钟创建",
-	"description": "天猫精灵闹钟创建",
 	"requestParams": [
 		{
 			"name": "ext",
@@ -27,40 +23,32 @@
 			"description": "手持设备ID"
 		},
 		{
-			"name": "param_create_alarm_param",
-			"type": "CreateAlarmParam",
-			"description": "创建闹钟入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "schedule",
-					"type": "ScheduleDto",
-					"description": "提醒方式",
-					"required": true,
 					"subParams": [
 						{
-							"name": "once",
-							"type": "OnceSchedule",
-							"description": "一次性",
 							"subParams": [
 								{
 									"name": "datetime",
 									"type": "Date",
 									"description": "响起日期和时间（年月日时分秒）"
 								}
-							]
+							],
+							"name": "once",
+							"type": "OnceSchedule",
+							"description": "一次性"
 						},
 						{
-							"name": "statutory_working_day",
-							"type": "StatutoryWorkingDaySchedule",
-							"description": "法定工作日",
 							"subParams": [
 								{
 									"name": "time",
 									"type": "Date",
 									"description": "响起时间（时分秒）"
 								}
-							]
+							],
+							"name": "statutory_working_day",
+							"type": "StatutoryWorkingDaySchedule",
+							"description": "法定工作日"
 						},
 						{
 							"name": "type",
@@ -69,13 +57,10 @@
 							"required": true
 						},
 						{
-							"name": "weekly",
-							"type": "WeeklySchedule",
-							"description": "每周",
 							"subParams": [
 								{
 									"name": "days_of_week",
-									"type": "Number[]",
+									"type": "String[]",
 									"description": "周几循环"
 								},
 								{
@@ -83,9 +68,16 @@
 									"type": "Date",
 									"description": "响起时间（时分秒）"
 								}
-							]
+							],
+							"name": "weekly",
+							"type": "WeeklySchedule",
+							"description": "每周"
 						}
-					]
+					],
+					"name": "schedule",
+					"type": "ScheduleDto",
+					"description": "提醒方式",
+					"required": true
 				},
 				{
 					"name": "trigger_repeat",
@@ -103,7 +95,11 @@
 					"description": "设备uuid",
 					"required": true
 				}
-			]
+			],
+			"name": "param_create_alarm_param",
+			"type": "CreateAlarmParam",
+			"description": "创建闹钟入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -122,5 +118,9 @@
 			"type": "Number",
 			"description": "状态码"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.memo.alarm.create",
+	"apiChineseName": "天猫精灵闹钟创建",
+	"description": "天猫精灵闹钟创建",
+	"id": 42913
 }

@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "isv_hos_code",
+			"type": "String",
+			"description": "服务商医院编码",
+			"required": true
+		},
+		{
+			"name": "function_code",
+			"type": "String",
+			"description": "服务项可空  默认 100001 预约挂号服务项"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "normal 正常  maintaining 维护中",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "isvId"
+				}
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
+		}
+	],
+	"name": "alibaba.alihealth.medicalbase.hos.status.sync",
+	"apiChineseName": "挂号医院上下线",
+	"description": "挂号医院上下线",
+	"id": 58501
+}

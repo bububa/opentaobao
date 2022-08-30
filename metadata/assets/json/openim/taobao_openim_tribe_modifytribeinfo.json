@@ -1,14 +1,6 @@
 {
-	"id": 25581,
-	"name": "taobao.openim.tribe.modifytribeinfo",
-	"apiChineseName": "OPENIM群信息修改",
-	"description": "OPENIM群信息修改",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -27,7 +19,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tribe_name",
@@ -54,5 +50,9 @@
 			"type": "Number",
 			"description": "群服务code"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.modifytribeinfo",
+	"apiChineseName": "OPENIM群信息修改",
+	"description": "OPENIM群信息修改",
+	"id": 25581
 }

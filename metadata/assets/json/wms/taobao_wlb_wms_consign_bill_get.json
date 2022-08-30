@@ -1,8 +1,4 @@
 {
-	"id": 25681,
-	"name": "taobao.wlb.wms.consign.bill.get",
-	"apiChineseName": "获取销售订单发货信息",
-	"description": "获取销售订单发货信息",
 	"requestParams": [
 		{
 			"name": "cn_order_code",
@@ -17,27 +13,12 @@
 	],
 	"responseParams": [
 		{
-			"name": "consign_send_info_list",
-			"type": "Consignsendinfolist []",
-			"description": "商品信息列表",
 			"subParams": [
 				{
-					"name": "consign_send_info",
-					"type": "Consignsendinfo",
-					"description": "物流订单发货信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "order_item_list",
-							"type": "Orderitemlist[]",
-							"description": "订单信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "order_item",
-									"type": "Orderitem",
-									"description": "订单商品信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "order_item_id",
@@ -64,16 +45,8 @@
 											"required": true
 										},
 										{
-											"name": "inventory_item_list",
-											"type": "Inventoryitemlist[]",
-											"description": "商品属性列表",
-											"required": true,
 											"subParams": [
 												{
-													"name": "inventory_item",
-													"type": "Inventoryitem",
-													"description": "商品属性列表",
-													"required": true,
 													"subParams": [
 														{
 															"name": "inventory_type",
@@ -117,37 +90,37 @@
 															"description": "批次号",
 															"required": true
 														}
-													]
+													],
+													"name": "inventory_item",
+													"type": "Inventoryitem",
+													"description": "商品属性列表",
+													"required": true
 												}
-											]
+											],
+											"name": "inventory_item_list",
+											"type": "Inventoryitemlist[]",
+											"description": "商品属性列表",
+											"required": true
 										}
-									]
+									],
+									"name": "order_item",
+									"type": "Orderitem",
+									"description": "订单商品信息",
+									"required": true
 								}
-							]
+							],
+							"name": "order_item_list",
+							"type": "Orderitemlist[]",
+							"description": "订单信息",
+							"required": true
 						},
 						{
-							"name": "tms_order_list",
-							"type": "Tmsorderlist[]",
-							"description": "运单信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "tms_order",
-									"type": "Tmsorder",
-									"description": "运单信息列表",
-									"required": true,
 									"subParams": [
 										{
-											"name": "package_material_list",
-											"type": "Packagemateriallist[]",
-											"description": "包材信息",
-											"required": true,
 											"subParams": [
 												{
-													"name": "package_material",
-													"type": "Packagematerial",
-													"description": "包裹包材信息",
-													"required": true,
 													"subParams": [
 														{
 															"name": "material_type",
@@ -161,9 +134,17 @@
 															"description": "包材的数量",
 															"required": true
 														}
-													]
+													],
+													"name": "package_material",
+													"type": "Packagematerial",
+													"description": "包裹包材信息",
+													"required": true
 												}
-											]
+											],
+											"name": "package_material_list",
+											"type": "Packagemateriallist[]",
+											"description": "包材信息",
+											"required": true
 										},
 										{
 											"name": "tms_code",
@@ -208,16 +189,8 @@
 											"required": true
 										},
 										{
-											"name": "tms_item_list",
-											"type": "Tmsitemlist[]",
-											"description": "包裹里面的商品信息列表",
-											"required": true,
 											"subParams": [
 												{
-													"name": "tms_item",
-													"type": "Tmsitem",
-													"description": "包裹里面商品",
-													"required": true,
 													"subParams": [
 														{
 															"name": "item_id",
@@ -237,13 +210,29 @@
 															"description": "此运单里该商品的数量",
 															"required": true
 														}
-													]
+													],
+													"name": "tms_item",
+													"type": "Tmsitem",
+													"description": "包裹里面商品",
+													"required": true
 												}
-											]
+											],
+											"name": "tms_item_list",
+											"type": "Tmsitemlist[]",
+											"description": "包裹里面的商品信息列表",
+											"required": true
 										}
-									]
+									],
+									"name": "tms_order",
+									"type": "Tmsorder",
+									"description": "运单信息列表",
+									"required": true
 								}
-							]
+							],
+							"name": "tms_order_list",
+							"type": "Tmsorderlist[]",
+							"description": "运单信息",
+							"required": true
 						},
 						{
 							"name": "cn_order_code",
@@ -282,16 +271,8 @@
 							"required": true
 						},
 						{
-							"name": "invoince_confirm_list",
-							"type": "Invoinceconfirmlist[]",
-							"description": "发票确认信息列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "invoince_confirm",
-									"type": "Invoinceconfirm",
-									"description": "发票确认信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "bill_id",
@@ -311,13 +292,32 @@
 											"description": "发票代码",
 											"required": true
 										}
-									]
+									],
+									"name": "invoince_confirm",
+									"type": "Invoinceconfirm",
+									"description": "发票确认信息",
+									"required": true
 								}
-							]
+							],
+							"name": "invoince_confirm_list",
+							"type": "Invoinceconfirmlist[]",
+							"description": "发票确认信息列表",
+							"required": true
 						}
-					]
+					],
+					"name": "consign_send_info",
+					"type": "Consignsendinfo",
+					"description": "物流订单发货信息",
+					"required": true
 				}
-			]
+			],
+			"name": "consign_send_info_list",
+			"type": "Consignsendinfolist []",
+			"description": "商品信息列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.consign.bill.get",
+	"apiChineseName": "获取销售订单发货信息",
+	"description": "获取销售订单发货信息",
+	"id": 25681
 }

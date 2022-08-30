@@ -1,13 +1,6 @@
 {
-	"id": 44475,
-	"name": "alitrip.btrip.approval.modify",
-	"apiChineseName": "修改审批单",
-	"description": "修改审批单",
 	"requestParams": [
 		{
-			"name": "add_apply_request",
-			"type": "OpenApiNewApplyRq",
-			"description": "申请单",
 			"subParams": [
 				{
 					"name": "trip_day",
@@ -44,10 +37,6 @@
 					"required": true
 				},
 				{
-					"name": "traveler_list",
-					"type": "OpenUserInfo[]",
-					"description": "出行人列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_name",
@@ -60,7 +49,11 @@
 							"description": "出行人id",
 							"required": true
 						}
-					]
+					],
+					"name": "traveler_list",
+					"type": "OpenUserInfo[]",
+					"description": "出行人列表",
+					"required": true
 				},
 				{
 					"name": "trip_title",
@@ -80,10 +73,6 @@
 					"description": "部门id，如果不传，会根据user相关信息去获取对应的部门信息，如果传的是错误的部门信息，后面无法做部门的费用归属；部门ID只能是数字"
 				},
 				{
-					"name": "itinerary_list",
-					"type": "OpenItineraryInfo[]",
-					"description": "行程列表，必须传入全量的新的行程列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "dep_city",
@@ -163,7 +152,11 @@
 							"type": "String",
 							"description": "项目名称"
 						}
-					]
+					],
+					"name": "itinerary_list",
+					"type": "OpenItineraryInfo[]",
+					"description": "行程列表，必须传入全量的新的行程列表",
+					"required": true
 				},
 				{
 					"name": "apply_show_id",
@@ -180,54 +173,55 @@
 					"type": "Number",
 					"description": "审批单状态，不传入默认为0：0审批中，1同意，2拒绝"
 				}
-			]
+			],
+			"name": "add_apply_request",
+			"type": "OpenApiNewApplyRq",
+			"description": "申请单"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtripApplyResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "module",
-					"type": "OpenApiNewApplyRs",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "thirdpart_apply_id",
 							"type": "String",
-							"description": "用户传入审批单id",
-							"required": true
+							"description": "用户传入审批单id"
 						},
 						{
 							"name": "apply_id",
 							"type": "String",
-							"description": "商旅审批单id",
-							"required": true
+							"description": "商旅审批单id"
 						}
-					]
+					],
+					"name": "module",
+					"type": "OpenApiNewApplyRs",
+					"description": "结果对象"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtripApplyResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.btrip.approval.modify",
+	"apiChineseName": "修改审批单",
+	"description": "修改审批单",
+	"id": 44475
 }

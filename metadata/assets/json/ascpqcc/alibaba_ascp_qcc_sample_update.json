@@ -1,20 +1,8 @@
 {
-	"id": 32778,
-	"name": "alibaba.ascp.qcc.sample.update",
-	"apiChineseName": "品控中心更新样品信息",
-	"description": "品控中心更新样品信息",
 	"requestParams": [
 		{
-			"name": "update_request",
-			"type": "UpdateSampleRequest",
-			"description": "更新请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "data",
-					"type": "UpdateSampleData",
-					"description": "请求业务数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "vendor_size",
@@ -28,62 +16,67 @@
 							"description": "业务系统商品编号",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "UpdateSampleData",
+					"description": "请求业务数据",
+					"required": true
 				}
-			]
+			],
+			"name": "update_request",
+			"type": "UpdateSampleRequest",
+			"description": "更新请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SendResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
-					"name": "update_response",
-					"type": "UpdateSampleResponse",
-					"description": "业务系统返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "业务系统错误信息",
-							"required": true
+							"description": "业务系统错误信息"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "业务系统错误编号",
-							"required": true
+							"description": "业务系统错误编号"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "业务系统是否成功",
-							"required": true
+							"description": "业务系统是否成功"
 						}
-					]
+					],
+					"name": "update_response",
+					"type": "UpdateSampleResponse",
+					"description": "业务系统返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SendResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.ascp.qcc.sample.update",
+	"apiChineseName": "品控中心更新样品信息",
+	"description": "品控中心更新样品信息",
+	"id": 32778
 }

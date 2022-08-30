@@ -1,13 +1,6 @@
 {
-	"id": 55231,
-	"name": "alibaba.ascp.channel.sales.order.create",
-	"apiChineseName": "供应链渠道销售单创建接口",
-	"description": "阿里巴巴供应链渠道销售订单创建接口",
 	"requestParams": [
 		{
-			"name": "create_order_request",
-			"type": "ExternalCreateSalesOrderRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "currency_type",
@@ -15,9 +8,6 @@
 					"description": "币种"
 				},
 				{
-					"name": "out_sub_orders",
-					"type": "ExternalCreateSubSalesOrderRequest[]",
-					"description": "子订单列表",
 					"subParams": [
 						{
 							"name": "quantity",
@@ -51,12 +41,12 @@
 							"type": "String",
 							"description": "外部子订单号, 外部一定要设置,如果外部没有,则设置为outOrderNo+productId+productSkuId"
 						}
-					]
+					],
+					"name": "out_sub_orders",
+					"type": "ExternalCreateSubSalesOrderRequest[]",
+					"description": "子订单列表"
 				},
 				{
-					"name": "receiver",
-					"type": "ExternalReceiverRequest",
-					"description": "收货人信息",
 					"subParams": [
 						{
 							"name": "contact_name",
@@ -131,12 +121,12 @@
 							"type": "Number",
 							"description": "区域编码"
 						}
-					]
+					],
+					"name": "receiver",
+					"type": "ExternalReceiverRequest",
+					"description": "收货人信息"
 				},
 				{
-					"name": "sender",
-					"type": "ExternalSenderRequest",
-					"description": "发货人",
 					"subParams": [
 						{
 							"name": "mobile_phone",
@@ -148,7 +138,10 @@
 							"type": "String",
 							"description": "发货人名称"
 						}
-					]
+					],
+					"name": "sender",
+					"type": "ExternalSenderRequest",
+					"description": "发货人"
 				},
 				{
 					"name": "sales_mode",
@@ -174,92 +167,87 @@
 					"description": "授权渠道(市场)",
 					"required": true
 				}
-			]
+			],
+			"name": "create_order_request",
+			"type": "ExternalCreateSalesOrderRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "create_order_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "返回值主体",
-					"required": true,
 					"subParams": [
 						{
-							"name": "sub_order_list",
-							"type": "Suborders[]",
-							"description": "子单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "out_sku_id",
 									"type": "String",
-									"description": "外部skuId",
-									"required": true
+									"description": "外部skuId"
 								},
 								{
 									"name": "out_item_id",
 									"type": "String",
-									"description": "外部itemId",
-									"required": true
+									"description": "外部itemId"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "skuId",
-									"required": true
+									"description": "skuId"
 								},
 								{
 									"name": "product_id",
 									"type": "Number",
-									"description": "产品id",
-									"required": true
+									"description": "产品id"
 								},
 								{
 									"name": "out_sub_order_no",
 									"type": "String",
-									"description": "外部子订单号",
-									"required": true
+									"description": "外部子订单号"
 								},
 								{
 									"name": "sub_sale_order_no",
 									"type": "String",
-									"description": "外部订单号",
-									"required": true
+									"description": "外部订单号"
 								}
-							]
+							],
+							"name": "sub_order_list",
+							"type": "Suborders[]",
+							"description": "子单列表"
 						},
 						{
 							"name": "sale_order_no",
 							"type": "String",
-							"description": "渠道订单号",
-							"required": true
+							"description": "渠道订单号"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "返回值主体"
 				}
-			]
+			],
+			"name": "create_order_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.channel.sales.order.create",
+	"apiChineseName": "供应链渠道销售单创建接口",
+	"description": "阿里巴巴供应链渠道销售订单创建接口",
+	"id": 55231
 }

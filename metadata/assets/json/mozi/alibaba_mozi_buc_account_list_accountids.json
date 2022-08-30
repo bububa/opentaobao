@@ -1,13 +1,6 @@
 {
-	"id": 45946,
-	"name": "alibaba.mozi.buc.account.list.accountids",
-	"apiChineseName": "根据一批账号ID查询账号列表",
-	"description": "根据一批账号ID查询账号列表",
 	"requestParams": [
 		{
-			"name": "list_account_ids",
-			"type": "ListAccountsByAccountIdsRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "tenant_id",
@@ -28,54 +21,56 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "附加信息"
 				}
-			]
+			],
+			"name": "list_account_ids",
+			"type": "ListAccountsByAccountIdsRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListAccountsByAccountIdsResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "返回的数据",
-					"required": true
-				},
-				{
-					"name": "request_id",
 					"type": "String",
-					"description": "请求的序列化",
-					"required": true
-				},
-				{
-					"name": "response_code",
-					"type": "String",
-					"description": "返回码",
-					"required": true
-				},
-				{
-					"name": "response_message",
-					"type": "String",
-					"description": "返回的状态消息",
-					"required": true
+					"description": "返回的数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的序列化"
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回的状态消息"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "返回的附件信息",
-					"required": true
+					"type": "String",
+					"description": "返回的附件信息"
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListAccountsByAccountIdsResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.mozi.buc.account.list.accountids",
+	"apiChineseName": "根据一批账号ID查询账号列表",
+	"description": "根据一批账号ID查询账号列表",
+	"id": 45946
 }

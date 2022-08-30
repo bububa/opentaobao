@@ -1,0 +1,155 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名"
+				},
+				{
+					"name": "hospital_allowance",
+					"type": "String",
+					"description": "医疗费用补助"
+				},
+				{
+					"name": "hospital_ems_phone",
+					"type": "String",
+					"description": "医院收件电话"
+				},
+				{
+					"name": "is_refer",
+					"type": "String",
+					"description": "是否转诊"
+				},
+				{
+					"name": "download_url",
+					"type": "String",
+					"description": "资料链接"
+				},
+				{
+					"name": "hospital_address",
+					"type": "String",
+					"description": "医院地址"
+				},
+				{
+					"name": "user_unique_code",
+					"type": "String",
+					"description": "唯一编码",
+					"required": true
+				},
+				{
+					"name": "apply_audit_time",
+					"type": "String",
+					"description": "审核时间"
+				},
+				{
+					"name": "foundation_pay_date",
+					"type": "String",
+					"description": "交通住宿打款日期"
+				},
+				{
+					"name": "check_remark",
+					"type": "String",
+					"description": "审核意见"
+				},
+				{
+					"name": "hospital_phone",
+					"type": "String",
+					"description": "医院电话"
+				},
+				{
+					"name": "foundation_ems_phone",
+					"type": "String",
+					"description": "医院收件电话"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "跳转url"
+				},
+				{
+					"name": "foundation_ems_address",
+					"type": "String",
+					"description": "基金会收件地址"
+				},
+				{
+					"name": "foundation_allowance",
+					"type": "String",
+					"description": "交通住宿金额"
+				},
+				{
+					"name": "sms_phone",
+					"type": "String",
+					"description": "短信通知手机"
+				},
+				{
+					"name": "hospital_addressee",
+					"type": "String",
+					"description": "基金会收件人"
+				},
+				{
+					"name": "apply_audit_status",
+					"type": "String",
+					"description": "审核状态"
+				},
+				{
+					"name": "treat_hospital",
+					"type": "String",
+					"description": "就诊医院"
+				},
+				{
+					"name": "foundation_addressee",
+					"type": "String",
+					"description": "基金会收件人"
+				},
+				{
+					"name": "hospital_pay_date",
+					"type": "String",
+					"description": "医疗费用打款日期"
+				},
+				{
+					"name": "project_third_id",
+					"type": "String",
+					"description": "申请项目"
+				},
+				{
+					"name": "hospital_ems_address",
+					"type": "String",
+					"description": "医院收件地址"
+				},
+				{
+					"name": "payment_institution",
+					"type": "String",
+					"description": "打款机构"
+				}
+			],
+			"name": "body",
+			"type": "SNodeDto",
+			"description": "状态信息入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResponseMessage",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihealth.pw.special.synchronode",
+	"apiChineseName": "合作方同步状态至阿里健康",
+	"description": "合作方同步状态至阿里健康",
+	"id": 58950
+}

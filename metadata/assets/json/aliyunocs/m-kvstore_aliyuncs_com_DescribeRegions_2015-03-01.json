@@ -1,8 +1,4 @@
 {
-	"id": 24718,
-	"name": "m-kvstore.aliyuncs.com.DescribeRegions.2015-03-01",
-	"apiChineseName": "查看Region列表",
-	"description": "查看Region列表",
 	"responseParams": [
 		{
 			"name": "RequestId",
@@ -10,9 +6,6 @@
 			"description": "请求的唯一ID"
 		},
 		{
-			"name": "RegionIds",
-			"type": "AliyunOcsRegion []",
-			"description": "RegionIds 为一个 List,里面每个元素由三部分组成【RegionId,LocalName,ZoneIds】，其中ZoneIds是多个值组成的String，多个值间用英文半角“,”分隔。",
 			"subParams": [
 				{
 					"name": "RegionId",
@@ -29,7 +22,14 @@
 					"type": "String",
 					"description": "杭州"
 				}
-			]
+			],
+			"name": "RegionIds",
+			"type": "AliyunOcsRegion []",
+			"description": "RegionIds 为一个 List,里面每个元素由三部分组成【RegionId,LocalName,ZoneIds】，其中ZoneIds是多个值组成的String，多个值间用英文半角“,”分隔。"
 		}
-	]
+	],
+	"name": "m-kvstore.aliyuncs.com.DescribeRegions.2015-03-01",
+	"apiChineseName": "查看Region列表",
+	"description": "查看Region列表",
+	"id": 24718
 }

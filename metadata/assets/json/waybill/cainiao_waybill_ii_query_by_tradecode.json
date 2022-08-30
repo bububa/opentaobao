@@ -1,14 +1,6 @@
 {
-	"id": 27114,
-	"name": "cainiao.waybill.ii.query.by.tradecode",
-	"apiChineseName": "通过订单号查询电子面单通接口",
-	"description": "通过订单号查看面单的信息",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "WaybillDetailQueryByBizSubCodeRequest[]",
-			"description": "订单号列表",
-			"maxListSize": 10,
 			"subParams": [
 				{
 					"name": "biz_sub_code",
@@ -20,60 +12,61 @@
 					"type": "String",
 					"description": "请求id"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "WaybillDetailQueryByBizSubCodeRequest[]",
+			"description": "订单号列表",
+			"maxListSize": 10
 		}
 	],
 	"responseParams": [
 		{
-			"name": "modules",
-			"type": "WaybillCloudPrintWithResultDescResponse []",
-			"description": "查询返回值",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "单查询错误code",
-					"required": true
+					"description": "单查询错误code"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "单查询错误message",
-					"required": true
+					"description": "单查询错误message"
 				},
 				{
 					"name": "object_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否查询",
-					"required": true
+					"description": "是否查询"
 				},
 				{
-					"name": "waybill_cloud_print_response",
-					"type": "WaybillCloudPrintResponse",
-					"description": "面单信息",
-					"required": true,
 					"subParams": [
-						{
-							"name": "waybill_code",
-							"type": "String",
-							"description": "面单号",
-							"required": true
-						},
 						{
 							"name": "print_data",
 							"type": "String",
-							"description": "面单信息",
-							"required": true
+							"description": "面单信息"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "面单号"
 						}
-					]
+					],
+					"name": "waybill_cloud_print_response",
+					"type": "WaybillCloudPrintResponse",
+					"description": "面单信息"
 				}
-			]
+			],
+			"name": "modules",
+			"type": "WaybillCloudPrintWithResultDescResponse []",
+			"description": "查询返回值"
 		}
-	]
+	],
+	"name": "cainiao.waybill.ii.query.by.tradecode",
+	"apiChineseName": "通过订单号查询电子面单通接口",
+	"description": "通过订单号查看面单的信息",
+	"id": 27114
 }

@@ -1,13 +1,6 @@
 {
-	"id": 45900,
-	"name": "alibaba.alsc.crm.promotion.list",
-	"apiChineseName": "获取促销规则列表",
-	"description": "获取品牌的促销规则列表",
 	"requestParams": [
 		{
-			"name": "promotion_facade_open_req",
-			"type": "PromotionFacadeOpenReq",
-			"description": "获取促销规则请求参数",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -18,6 +11,11 @@
 					"name": "deleted",
 					"type": "Boolean",
 					"description": "1"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "最后修改时间"
 				},
 				{
 					"name": "out_brand_id",
@@ -40,11 +38,6 @@
 					"description": "STATUS_NEW,STATUS_WORKING,STATUS_SUSPEND,STATUS_END，STATUS_EXPIRED,未投放,执行中,已暂停,已终止,已终止"
 				},
 				{
-					"name": "gmt_modified",
-					"type": "String",
-					"description": "最后修改时间"
-				},
-				{
 					"name": "last_id",
 					"type": "String",
 					"description": "最后时间"
@@ -54,232 +47,204 @@
 					"type": "String",
 					"description": "促销ID"
 				}
-			]
+			],
+			"name": "promotion_facade_open_req",
+			"type": "PromotionFacadeOpenReq",
+			"description": "获取促销规则请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "分页返回模型",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
 					"name": "has_next_page",
 					"type": "Boolean",
-					"description": "是否有下一页",
-					"required": true
+					"description": "是否有下一页"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "当前每页显示数量",
-					"required": true
+					"description": "当前每页显示数量"
 				},
 				{
-					"name": "result_list",
-					"type": "PromotionFacadeOpenInfoList[]",
-					"description": "促销模版集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "available_time",
 							"type": "String",
-							"description": "可用时段  0000101（星期五，星期天）       [{\"days\":\"0000101\",\"startTime\":\"08:00:00\",\"endTime\":\"11:59:59\"},       {\"days\":\"0010101\",\"startTime\":\"08:00:00\",\"endTime\":\"11:59:59\"}]",
-							"required": true
-						},
-						{
-							"name": "deleted",
-							"type": "Boolean",
-							"description": "是否已经删除",
-							"required": true
-						},
-						{
-							"name": "description",
-							"type": "String",
-							"description": "规则描述",
-							"required": true
-						},
-						{
-							"name": "end_time",
-							"type": "String",
-							"description": "促销周期结束时间",
-							"required": true
-						},
-						{
-							"name": "ext_info",
-							"type": "String",
-							"description": "扩展字段  isAdded:是否叠加,isVoucherShared:是否与优惠券共享,giftGoodsIdList:赠品类似、活动商品,privilegeCondition:权益条件(类型type:         满量 \"type\":\"FULL_AMOUNT\",\"name\":\"num\", \"value\":\"3\"         满额 \"type\":\"FULL_CAPACITY\", \"name\":\"money\",\"value\":\"300\"         下一份 \"type\":\"NEXT\", \"name\":\"num\",\"value\":\"3\"         加价购),privilegeType:权益类型(一口价\"type\":\"FIXPRICE\",\"name\":\"money\",\"value\":\"3000\"         减免\"type\":\"DECREASE\",\"name\":\"money\",\"value\":\"10\"         减低价\"type\":\"REDUCE_LOW_PRICE\",\"name\":\"\",\"value\":\"\"         折扣：\"type\":\"DISCOUNT\",\"name\":\"discount\",\"value\":\"80\"         赠品 \"type\":\"GIFT\", \"name\":\"num\", \"value\":\"2\")",
-							"required": true
-						},
-						{
-							"name": "item_coverage",
-							"type": "String",
-							"description": "适用商品范围  值：ALL，PART_AVAILABLE，PART_UNAVAILABLE      * 说明：全部商品可用，部分商品可用，部分商品不可用",
-							"required": true
-						},
-						{
-							"name": "item_selected_open_info_list",
-							"type": "ItemSelectedOpenInfoList[]",
-							"description": "圈选商品",
-							"required": true,
-							"subParams": [
-								{
-									"name": "sku_id",
-									"type": "String",
-									"description": "规格id",
-									"required": true
-								},
-								{
-									"name": "dish_id",
-									"type": "String",
-									"description": "菜单id",
-									"required": true
-								},
-								{
-									"name": "sku_out_no",
-									"type": "String",
-									"description": "规则号",
-									"required": true
-								},
-								{
-									"name": "dish_out_no",
-									"type": "String",
-									"description": "菜品号",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "促销规则名称",
-							"required": true
-						},
-						{
-							"name": "promotion_id",
-							"type": "String",
-							"description": "促销规则Id",
-							"required": true
-						},
-						{
-							"name": "shop_selected_open_info_list",
-							"type": "ShopSelectedOpenInfoList[]",
-							"description": "圈选门店",
-							"required": true,
-							"subParams": [
-								{
-									"name": "shop_id",
-									"type": "String",
-									"description": "门店id",
-									"required": true
-								},
-								{
-									"name": "out_shop_id",
-									"type": "String",
-									"description": "外部门店id",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "start_time",
-							"type": "String",
-							"description": "促销周期开始时间",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "状态 促销活动状态 值：UNUSED,USED,NO_INVENTORY,INVALID 说明：未使用,使用中,使用中,使用中",
-							"required": true
-						},
-						{
-							"name": "suitable_people",
-							"type": "String",
-							"description": "促销活动适用人群 值：MEMBER，CUSTOMER，ALL      * 说明：会员,非会员，不限",
-							"required": true
-						},
-						{
-							"name": "type",
-							"type": "String",
-							"description": "/**      * 满量促销      */     TYPE_FULL_AMOUNT,      /**      * 满额促销      */     TYPE_FULL_CAPACITY,      /**      * 买赠活动      */     TYPE_BOUGHT_GIFT;",
-							"required": true
+							"description": "可用时段  0000101（星期五，星期天）       [{\"days\":\"0000101\",\"startTime\":\"08:00:00\",\"endTime\":\"11:59:59\"},       {\"days\":\"0010101\",\"startTime\":\"08:00:00\",\"endTime\":\"11:59:59\"}]"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否已经删除"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "规则描述"
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "促销周期结束时间"
+						},
+						{
+							"name": "item_coverage",
+							"type": "String",
+							"description": "适用商品范围  值：ALL，PART_AVAILABLE，PART_UNAVAILABLE      * 说明：全部商品可用，部分商品可用，部分商品不可用"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "规格id"
+								},
+								{
+									"name": "dish_id",
+									"type": "String",
+									"description": "菜单id"
+								},
+								{
+									"name": "sku_out_no",
+									"type": "String",
+									"description": "规则号"
+								},
+								{
+									"name": "dish_out_no",
+									"type": "String",
+									"description": "菜品号"
+								}
+							],
+							"name": "item_selected_open_info_list",
+							"type": "ItemSelectedOpenInfoList[]",
+							"description": "圈选商品"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "促销规则名称"
+						},
+						{
+							"name": "promotion_id",
+							"type": "String",
+							"description": "促销规则Id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "shop_id",
+									"type": "String",
+									"description": "门店id"
+								},
+								{
+									"name": "out_shop_id",
+									"type": "String",
+									"description": "外部门店id"
+								}
+							],
+							"name": "shop_selected_open_info_list",
+							"type": "ShopSelectedOpenInfoList[]",
+							"description": "圈选门店"
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "促销周期开始时间"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态 促销活动状态 值：UNUSED,USED,NO_INVENTORY,INVALID 说明：未使用,使用中,使用中,使用中"
+						},
+						{
+							"name": "suitable_people",
+							"type": "String",
+							"description": "促销活动适用人群 值：MEMBER，CUSTOMER，ALL      * 说明：会员,非会员，不限"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "String",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "/**      * 满量促销      */     TYPE_FULL_AMOUNT,      /**      * 满额促销      */     TYPE_FULL_CAPACITY,      /**      * 买赠活动      */     TYPE_BOUGHT_GIFT;"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段  isAdded:是否叠加,isVoucherShared:是否与优惠券共享,giftGoodsIdList:赠品类似、活动商品,privilegeCondition:权益条件(类型type:         满量 \"type\":\"FULL_AMOUNT\",\"name\":\"num\", \"value\":\"3\"         满额 \"type\":\"FULL_CAPACITY\", \"name\":\"money\",\"value\":\"300\"         下一份 \"type\":\"NEXT\", \"name\":\"num\",\"value\":\"3\"         加价购),privilegeType:权益类型(一口价\"type\":\"FIXPRICE\",\"name\":\"money\",\"value\":\"3000\"         减免\"type\":\"DECREASE\",\"name\":\"money\",\"value\":\"10\"         减低价\"type\":\"REDUCE_LOW_PRICE\",\"name\":\"\",\"value\":\"\"         折扣：\"type\":\"DISCOUNT\",\"name\":\"discount\",\"value\":\"80\"         赠品 \"type\":\"GIFT\", \"name\":\"num\", \"value\":\"2\")"
 						},
 						{
 							"name": "create_by",
 							"type": "String",
-							"description": "创建人",
-							"required": true
+							"description": "创建人"
 						},
 						{
 							"name": "update_by",
 							"type": "String",
-							"description": "更新人",
-							"required": true
+							"description": "更新人"
 						},
 						{
 							"name": "update_by_name",
 							"type": "String",
-							"description": "更新人名称",
-							"required": true
+							"description": "更新人名称"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "PromotionFacadeOpenInfoList[]",
+					"description": "促销模版集合"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果显示",
-					"required": true
+					"description": "结果显示"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "总数量",
-					"required": true
+					"description": "总数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.promotion.list",
+	"apiChineseName": "获取促销规则列表",
+	"description": "获取品牌的促销规则列表",
+	"id": 45900
 }

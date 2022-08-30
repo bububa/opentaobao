@@ -1,8 +1,4 @@
 {
-	"id": 28631,
-	"name": "yunos.tvpubadmin.device.appupgradedetail",
-	"apiChineseName": "获取应用升级详情",
-	"description": "获取应用升级详情",
 	"requestParams": [
 		{
 			"name": "version_id",
@@ -18,89 +14,80 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "AppVersionAuditDo",
-			"description": "应用列表",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "主键ID",
-					"required": true
+					"description": "主键ID"
 				},
 				{
 					"name": "app_name",
 					"type": "String",
-					"description": "应用名",
-					"required": true
+					"description": "应用名"
 				},
 				{
 					"name": "app_package_name",
 					"type": "String",
-					"description": "应用包名",
-					"required": true
+					"description": "应用包名"
 				},
 				{
 					"name": "version_name",
 					"type": "String",
-					"description": "版本号",
-					"required": true
+					"description": "版本号"
 				},
 				{
 					"name": "version_code",
 					"type": "String",
-					"description": "版本Code",
-					"required": true
+					"description": "版本Code"
 				},
 				{
 					"name": "release_note",
 					"type": "String",
-					"description": "发布说明",
-					"required": true
+					"description": "发布说明"
 				},
 				{
 					"name": "download_url",
 					"type": "String",
-					"description": "下载地址",
-					"required": true
+					"description": "下载地址"
 				},
 				{
 					"name": "size",
 					"type": "String",
-					"description": "安装包大小",
-					"required": true
+					"description": "安装包大小"
 				},
 				{
 					"name": "audit_status",
 					"type": "String",
-					"description": "审核状态",
-					"required": true
+					"description": "审核状态"
 				},
 				{
 					"name": "status_desc",
 					"type": "String",
-					"description": "审核意见",
-					"required": true
+					"description": "审核意见"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_modify",
 					"type": "Date",
-					"description": "修改时间",
-					"required": true
+					"description": "修改时间"
 				},
 				{
 					"name": "gmt_audit",
 					"type": "Date",
-					"description": "审核时间",
-					"required": true
+					"description": "审核时间"
 				}
-			]
+			],
+			"name": "object",
+			"type": "AppVersionAuditDo",
+			"description": "应用列表"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.appupgradedetail",
+	"apiChineseName": "获取应用升级详情",
+	"description": "获取应用升级详情",
+	"id": 28631
 }

@@ -1,8 +1,4 @@
 {
-	"id": 40644,
-	"name": "alibaba.alisports.data.sports.syncsleepdata",
-	"apiChineseName": "阿里体育数据中心用户睡眠数据同步接口",
-	"description": "阿里体育数据中心用户睡眠数据同步接口",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -73,5 +69,9 @@
 			"type": "String",
 			"description": "alisp_msg"
 		}
-	]
+	],
+	"name": "alibaba.alisports.data.sports.syncsleepdata",
+	"apiChineseName": "阿里体育数据中心用户睡眠数据同步接口",
+	"description": "阿里体育数据中心用户睡眠数据同步接口",
+	"id": 40644
 }

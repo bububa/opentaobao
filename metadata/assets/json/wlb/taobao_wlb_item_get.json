@@ -1,22 +1,15 @@
 {
-	"id": 10627,
-	"name": "taobao.wlb.item.get",
-	"apiChineseName": "根据商品ID获取商品信息",
-	"description": "根据商品ID获取商品信息,除了获取商品信息外还可获取商品属性信息和库存信息。",
 	"requestParams": [
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "商品ID",
-			"required": true,
-			"maxLength": 20
+			"maxLength": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "WlbItem",
-			"description": "商品信息",
 			"subParams": [
 				{
 					"name": "id",
@@ -173,7 +166,14 @@
 					"type": "Number",
 					"description": "价格"
 				}
-			]
+			],
+			"name": "item",
+			"type": "WlbItem",
+			"description": "商品信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.get",
+	"apiChineseName": "根据商品ID获取商品信息",
+	"description": "根据商品ID获取商品信息,除了获取商品信息外还可获取商品属性信息和库存信息。",
+	"id": 10627
 }

@@ -1,16 +1,22 @@
 {
-	"id": 54749,
-	"name": "taobao.trades.sold.query",
-	"apiChineseName": "根据收件人信息查询交易单号",
-	"description": "根据收件人信息查询交易单号。",
 	"requestParams": [
 		{
-			"name": "query_list",
-			"type": "OrderQuery[]",
-			"description": "查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。",
-			"required": true,
-			"maxListSize": 999,
 			"subParams": [
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人电话号码"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人的手机号"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人的姓名"
+				},
 				{
 					"name": "start_created",
 					"type": "Date",
@@ -20,23 +26,24 @@
 					"name": "end_created",
 					"type": "Date",
 					"description": "查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss"
-				},
-				{
-					"name": "receiver_name",
-					"type": "String",
-					"description": "收件人的姓名"
-				},
-				{
-					"name": "receiver_mobile",
-					"type": "String",
-					"description": "收件人的手机号"
-				},
-				{
-					"name": "receiver_phone",
-					"type": "String",
-					"description": "收件人电话号码"
 				}
-			]
+			],
+			"name": "query_list",
+			"type": "OrderQuery[]",
+			"description": "查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。",
+			"maxListSize": 999,
+			"required": true
+		},
+		{
+			"name": "scene",
+			"type": "String",
+			"description": "业务场景编码。不同场景，策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(客服咨询)、1002(售后服务)，\u003ca href=\"https://open.taobao.com/doc.htm?docId=120186\u0026docType=1\" target=\"_blank\"\u003e详情点击\u003c/a\u003e",
+			"required": true
+		},
+		{
+			"name": "order_type",
+			"type": "String",
+			"description": "订单类型，默认值为1，可选值为：交易(1)，分销(2)，换货(3)"
 		}
 	],
 	"responseParams": [
@@ -45,5 +52,9 @@
 			"type": "String []",
 			"description": "订单ID列表。按照订单创建时间倒序，最多返回最近的100笔订单。"
 		}
-	]
+	],
+	"name": "taobao.trades.sold.query",
+	"apiChineseName": "根据收件人信息查询交易单号",
+	"description": "根据收件人信息查询交易单号。",
+	"id": 54749
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25968,
-	"name": "taobao.baodian.deposit.get.with.sdkversion",
-	"apiChineseName": "查询用户宝点信息（带sdk版本，已迁移）",
-	"description": "获取用户宝点信息（带sdk版本，已迁移）",
 	"requestParams": [
 		{
 			"name": "device_model",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CoinUserDepositV2",
-			"description": "结构体",
 			"subParams": [
 				{
 					"name": "credit",
@@ -125,7 +118,14 @@
 					"description": "头像地址",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CoinUserDepositV2",
+			"description": "结构体"
 		}
-	]
+	],
+	"name": "taobao.baodian.deposit.get.with.sdkversion",
+	"apiChineseName": "查询用户宝点信息（带sdk版本，已迁移）",
+	"description": "获取用户宝点信息（带sdk版本，已迁移）",
+	"id": 25968
 }

@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "im_token",
+					"type": "String",
+					"description": "令牌值",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				}
+			],
+			"name": "report_im_token_status_request",
+			"type": "ReportImTokenStatusRequest",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "令牌校验失败原因"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "令牌校验状态"
+						}
+					],
+					"name": "data",
+					"type": "ReportImTokenStatusResponse",
+					"description": "返回数据对象"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "success"
+				}
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.verify",
+	"apiChineseName": "报告解读令牌校验",
+	"description": "报告解读令牌校验",
+	"id": 59296
+}

@@ -1,13 +1,6 @@
 {
-	"id": 45555,
-	"name": "tmall.nrt.pay.merchant.stall.signing.modify",
-	"apiChineseName": "三级商户进件修改",
-	"description": "三级商户进件修改",
 	"requestParams": [
 		{
-			"name": "req",
-			"type": "StallSigningReqDto",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "ip_role_id",
@@ -25,9 +18,6 @@
 					"description": "摊位id"
 				},
 				{
-					"name": "biz_cards",
-					"type": "SettleCardInfoDto[]",
-					"description": "银行卡信息",
 					"subParams": [
 						{
 							"name": "account_branch_name",
@@ -74,56 +64,60 @@
 							"type": "String",
 							"description": "账号使用类型"
 						}
-					]
+					],
+					"name": "biz_cards",
+					"type": "SettleCardInfoDto[]",
+					"description": "银行卡信息"
 				}
-			]
+			],
+			"name": "req",
+			"type": "StallSigningReqDto",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data",
-					"type": "StallSigningRespDto",
-					"description": "系统自动生成",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "申请单id",
-							"required": true
+							"description": "申请单id"
 						},
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "摊位/门店id",
-							"required": true
+							"description": "摊位/门店id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StallSigningRespDto",
+					"description": "系统自动生成"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "tmall.nrt.pay.merchant.stall.signing.modify",
+	"apiChineseName": "三级商户进件修改",
+	"description": "三级商户进件修改",
+	"id": 45555
 }

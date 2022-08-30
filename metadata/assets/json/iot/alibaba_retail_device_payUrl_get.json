@@ -1,8 +1,4 @@
 {
-	"id": 37888,
-	"name": "alibaba.retail.device.payUrl.get",
-	"apiChineseName": "贩卖机支付二维链接获取",
-	"description": "贩卖机支付二维链接获取",
 	"requestParams": [
 		{
 			"name": "isv_order_id",
@@ -36,49 +32,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "module",
-					"type": "Json",
-					"description": "module",
-					"required": true
+					"type": "String",
+					"description": "module"
 				},
 				{
-					"name": "error_infos",
-					"type": "ErrorInfo[]",
-					"description": "errorInfos",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "sub_error_code",
 							"type": "String",
-							"description": "subErrorCode",
-							"required": true
+							"description": "subErrorCode"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "errorMessage",
-							"required": true
+							"description": "errorMessage"
 						}
-					]
+					],
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.retail.device.payUrl.get",
+	"apiChineseName": "贩卖机支付二维链接获取",
+	"description": "贩卖机支付二维链接获取",
+	"id": 37888
 }

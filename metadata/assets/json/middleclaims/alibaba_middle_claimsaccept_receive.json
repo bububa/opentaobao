@@ -1,13 +1,6 @@
 {
-	"id": 53335,
-	"name": "alibaba.middle.claimsaccept.receive",
-	"apiChineseName": "国际化中台服务域接收保险公司理赔受理结果",
-	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔受理结果的处理后，将该结果返回至服务域",
 	"requestParams": [
 		{
-			"name": "claims_accept_dto",
-			"type": "ClaimsAcceptDto",
-			"description": "理赔受理结果实体类",
 			"subParams": [
 				{
 					"name": "service_work_order_id",
@@ -45,9 +38,6 @@
 					"description": "保单号"
 				},
 				{
-					"name": "extension_map",
-					"type": "Extensionmap",
-					"description": "预留扩展Map",
 					"subParams": [
 						{
 							"name": "extension_map_fir",
@@ -64,12 +54,12 @@
 							"type": "String",
 							"description": "预留扩展值3"
 						}
-					]
+					],
+					"name": "extension_map",
+					"type": "Extensionmap",
+					"description": "预留扩展Map"
 				},
 				{
-					"name": "delivery_address_dto",
-					"type": "DeliveryAddressDto",
-					"description": "保险退货仓库地址实体类",
 					"subParams": [
 						{
 							"name": "receiver_name",
@@ -111,42 +101,48 @@
 							"type": "String",
 							"description": "具体地址"
 						}
-					]
+					],
+					"name": "delivery_address_dto",
+					"type": "DeliveryAddressDto",
+					"description": "保险退货仓库地址实体类"
 				}
-			]
+			],
+			"name": "claims_accept_dto",
+			"type": "ClaimsAcceptDto",
+			"description": "理赔受理结果实体类"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统调用结果",
-					"required": true
+					"description": "系统调用结果"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "业务结果",
-					"required": true
+					"description": "业务结果"
 				},
 				{
 					"name": "repeated",
 					"type": "Boolean",
-					"description": "是否重复",
-					"required": true
+					"description": "是否重复"
 				},
 				{
 					"name": "retry",
 					"type": "Boolean",
-					"description": "是否重试",
-					"required": true
+					"description": "是否重试"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.middle.claimsaccept.receive",
+	"apiChineseName": "国际化中台服务域接收保险公司理赔受理结果",
+	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔受理结果的处理后，将该结果返回至服务域",
+	"id": 53335
 }

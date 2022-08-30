@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "external_login_id",
+			"type": "String",
+			"description": "登录用户id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回二维码串"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.alipay.dksign",
+	"apiChineseName": "支付宝代扣签约",
+	"description": "提供支付宝代扣签约服务",
+	"id": 56876
+}

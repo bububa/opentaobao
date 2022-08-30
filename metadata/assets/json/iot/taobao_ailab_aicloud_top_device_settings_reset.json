@@ -1,8 +1,4 @@
 {
-	"id": 33651,
-	"name": "taobao.ailab.aicloud.top.device.settings.reset",
-	"apiChineseName": "重置设备个性化设置",
-	"description": "重置设备个性化设置",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -56,5 +52,9 @@
 			"type": "String",
 			"description": "扩展字段"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.settings.reset",
+	"apiChineseName": "重置设备个性化设置",
+	"description": "重置设备个性化设置",
+	"id": 33651
 }

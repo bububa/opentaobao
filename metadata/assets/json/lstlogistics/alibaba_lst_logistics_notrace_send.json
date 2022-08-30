@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "send_time",
+					"type": "Date",
+					"description": "发货时间"
+				},
+				{
+					"name": "remarks",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"subParams": [
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "主订单id",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单id",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "购买数量",
+									"required": true
+								}
+							],
+							"name": "sub_order_param_list",
+							"type": "SubOrderParam[]",
+							"description": "发货子订单列表",
+							"required": true
+						}
+					],
+					"name": "main_order_param_list",
+					"type": "MainOrderParam[]",
+					"description": "发货主订单列表",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "SendDummyOrderParam",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_id",
+							"type": "String",
+							"description": "物流编号，可用来查询物流详情"
+						}
+					],
+					"name": "content",
+					"type": "Content",
+					"description": "返回内容"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.lst.logistics.notrace.send",
+	"apiChineseName": "供应商-异云-无需物流发货",
+	"description": "异地云仓的订单，使用无需物流的发货方式来变更订单发货状态",
+	"id": 53482
+}

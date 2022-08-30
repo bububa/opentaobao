@@ -48,12 +48,12 @@ type SalesOrderDto struct {
 	ReceiverMobile string `json:"receiver_mobile,omitempty" xml:"receiver_mobile,omitempty"`
 	// 收货人固话
 	ReceiverPhone string `json:"receiver_phone,omitempty" xml:"receiver_phone,omitempty"`
+	// 预约送达时间范围，开始时间
+	AppointmentStartTime string `json:"appointment_start_time,omitempty" xml:"appointment_start_time,omitempty"`
 	// 收货人所在区域
 	ReceiverArea string `json:"receiver_area,omitempty" xml:"receiver_area,omitempty"`
 	// 收货人所在市
 	ReceiverCity string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
-	// 预约送达时间范围，开始时间
-	AppointmentStartTime string `json:"appointment_start_time,omitempty" xml:"appointment_start_time,omitempty"`
 	// 预约送达时间范围，结束时间
 	AppointmentEndTime string `json:"appointment_end_time,omitempty" xml:"appointment_end_time,omitempty"`
 	// 预售订单，最晚发货时间

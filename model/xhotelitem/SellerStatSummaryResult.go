@@ -2,8 +2,6 @@ package xhotelitem
 
 // SellerStatSummaryResult 结构体
 type SellerStatSummaryResult struct {
-	// rate平均分
-	AvgRateScore string `json:"avg_rate_score,omitempty" xml:"avg_rate_score,omitempty"`
 	// 曝光率
 	ExposedPercent string `json:"exposed_percent,omitempty" xml:"exposed_percent,omitempty"`
 	// supplier参数
@@ -20,6 +18,8 @@ type SellerStatSummaryResult struct {
 	MaxRateScore string `json:"max_rate_score,omitempty" xml:"max_rate_score,omitempty"`
 	// 选品情况
 	SelectionMessageInfo string `json:"selection_message_info,omitempty" xml:"selection_message_info,omitempty"`
+	// rate平均分
+	AvgRateScore string `json:"avg_rate_score,omitempty" xml:"avg_rate_score,omitempty"`
 	// 日期
 	DateParam string `json:"date_param,omitempty" xml:"date_param,omitempty"`
 	// 商品总数

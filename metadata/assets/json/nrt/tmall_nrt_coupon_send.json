@@ -1,14 +1,6 @@
 {
-	"id": 45388,
-	"name": "tmall.nrt.coupon.send",
-	"apiChineseName": "券发放接口",
-	"description": "新零售场景，商家自有渠道发放券",
 	"requestParams": [
 		{
-			"name": "nrt_coupon_send_dto",
-			"type": "NrtCouponSendDTO",
-			"description": "发券dto",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_code",
@@ -51,14 +43,15 @@
 					"description": "券类型，247：品类券，276：门店券，357：门店通用券",
 					"required": true
 				}
-			]
+			],
+			"name": "nrt_coupon_send_dto",
+			"type": "NrtCouponSendDTO",
+			"description": "发券dto",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "SendCouponResponse",
-			"description": "发券结果对象",
 			"subParams": [
 				{
 					"name": "discount",
@@ -102,7 +95,14 @@
 					"description": "开始时间",
 					"required": true
 				}
-			]
+			],
+			"name": "model",
+			"type": "SendCouponResponse",
+			"description": "发券结果对象"
 		}
-	]
+	],
+	"name": "tmall.nrt.coupon.send",
+	"apiChineseName": "券发放接口",
+	"description": "新零售场景，商家自有渠道发放券",
+	"id": 45388
 }

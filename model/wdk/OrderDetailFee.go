@@ -22,4 +22,8 @@ type OrderDetailFee struct {
 	PackageFee string `json:"package_fee,omitempty" xml:"package_fee,omitempty"`
 	// 商品金额
 	ProductFee string `json:"product_fee,omitempty" xml:"product_fee,omitempty"`
+	// 渠道费
+	PayChannelFee string `json:"pay_channel_fee,omitempty" xml:"pay_channel_fee,omitempty"`
+	// 渠道费率
+	PayChannelRate string `json:"pay_channel_rate,omitempty" xml:"pay_channel_rate,omitempty"`
 }

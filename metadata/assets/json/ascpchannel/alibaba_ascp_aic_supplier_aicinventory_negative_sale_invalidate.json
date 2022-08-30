@@ -1,20 +1,8 @@
 {
-	"id": 54000,
-	"name": "alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate",
-	"apiChineseName": "负卖库存失效接口",
-	"description": "失效负卖库存数据",
 	"requestParams": [
 		{
-			"name": "future_inventory_main_operation_quest",
-			"type": "Futureinventorymainoperationquest",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "main_order_dto",
-					"type": "Mainorderdto",
-					"description": "操作主单",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -46,30 +34,27 @@
 							"description": "供应链原始单据来源平台",
 							"required": true
 						}
-					]
+					],
+					"name": "main_order_dto",
+					"type": "Mainorderdto",
+					"description": "操作主单",
+					"required": true
 				},
 				{
-					"name": "detail_operation_dtos",
-					"type": "Detailoperationdtos[]",
-					"description": "子单操作明细列表",
 					"subParams": [
 						{
 							"name": "channel_code",
 							"type": "String",
-							"description": "销售市场、IPM 1000,考拉前端 6500",
+							"description": "销售市场、IPM：1000",
 							"required": true
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "库存数量",
+							"description": "库存总量",
 							"required": true
 						},
 						{
-							"name": "detail_order_dto",
-							"type": "Detailorderdto",
-							"description": "操作子单",
-							"required": true,
 							"subParams": [
 								{
 									"name": "biz_date",
@@ -83,13 +68,13 @@
 									"description": "实际操作子单id",
 									"required": true
 								}
-							]
+							],
+							"name": "detail_order_dto",
+							"type": "Detailorderdto",
+							"description": "操作子单",
+							"required": true
 						},
 						{
-							"name": "future_plan_info_dto",
-							"type": "Futureplaninfodto",
-							"description": "期货计划信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "end_date",
@@ -121,13 +106,13 @@
 									"description": "相对时间天数(单位:天 适用于相对计划)",
 									"required": true
 								}
-							]
+							],
+							"name": "future_plan_info_dto",
+							"type": "Futureplaninfodto",
+							"description": "期货计划信息",
+							"required": true
 						},
 						{
-							"name": "item_dto",
-							"type": "Itemdto",
-							"description": "货品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sc_item_id",
@@ -136,9 +121,6 @@
 									"required": true
 								},
 								{
-									"name": "item_d_o_list",
-									"type": "Itemdolist[]",
-									"description": "前端商品列表",
 									"subParams": [
 										{
 											"name": "item_id",
@@ -150,15 +132,18 @@
 											"type": "String",
 											"description": "前端SKU ID"
 										}
-									]
+									],
+									"name": "item_d_o_list",
+									"type": "Itemdolist[]",
+									"description": "前端商品列表"
 								}
-							]
+							],
+							"name": "item_dto",
+							"type": "Itemdto",
+							"description": "货品信息",
+							"required": true
 						},
 						{
-							"name": "location_dto",
-							"type": "Locationdto",
-							"description": "位置信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "store_code",
@@ -166,13 +151,13 @@
 									"description": "仓库编码",
 									"required": true
 								}
-							]
+							],
+							"name": "location_dto",
+							"type": "Locationdto",
+							"description": "位置信息",
+							"required": true
 						},
 						{
-							"name": "owner_dto",
-							"type": "Ownerdto",
-							"description": "货主信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
@@ -186,24 +171,28 @@
 									"description": "供应商ID",
 									"required": true
 								}
-							]
+							],
+							"name": "owner_dto",
+							"type": "Ownerdto",
+							"description": "货主信息",
+							"required": true
 						},
 						{
-							"name": "strategy_dto",
-							"type": "Strategydto",
-							"description": "策略",
 							"subParams": [
 								{
 									"name": "aic_inventory_strategy",
 									"type": "Number",
-									"description": "默认 4"
+									"description": "默认 4销售计划"
 								},
 								{
 									"name": "aic_inventory_strategy_available_list",
-									"type": "Number[]",
-									"description": "默认 4"
+									"type": "String[]",
+									"description": "默认 4销售计划"
 								}
-							]
+							],
+							"name": "strategy_dto",
+							"type": "Strategydto",
+							"description": "策略"
 						},
 						{
 							"name": "trade_inv_id",
@@ -216,104 +205,101 @@
 							"description": "库存类型",
 							"required": true
 						}
-					]
+					],
+					"name": "detail_operation_dtos",
+					"type": "Detailoperationdtos[]",
+					"description": "子单操作明细列表"
 				}
-			]
+			],
+			"name": "future_inventory_main_operation_quest",
+			"type": "Futureinventorymainoperationquest",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "future_inv_item_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Data[]",
-					"description": "系统自动生成",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
 							"type": "Number",
-							"description": "物流货主ID",
-							"required": true
+							"description": "物流货主ID"
 						},
 						{
 							"name": "sc_item_id",
 							"type": "Number",
-							"description": "货品ID",
-							"required": true
+							"description": "货品ID"
 						},
 						{
 							"name": "store_code",
 							"type": "String",
-							"description": "仓库编码",
-							"required": true
+							"description": "仓库编码"
 						},
 						{
 							"name": "channel_code",
 							"type": "String",
-							"description": "渠道编码",
-							"required": true
+							"description": "渠道编码"
 						},
 						{
 							"name": "aic_channel_inv_id",
 							"type": "String",
-							"description": "期货库存账户id",
-							"required": true
+							"description": "期货库存账户id"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "调用接口是否成功",
-							"required": true
+							"description": "调用接口是否成功"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "错误编码",
-							"required": true
+							"description": "错误编码"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "ext_order_id",
 							"type": "String",
-							"description": "外部交易号(主)",
-							"required": true
+							"description": "外部交易号(主)"
 						},
 						{
 							"name": "ext_sub_order_id",
 							"type": "String",
-							"description": "外部交易号(子)",
-							"required": true
+							"description": "外部交易号(子)"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data[]",
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "future_inv_item_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate",
+	"apiChineseName": "负卖库存失效接口",
+	"description": "失效负卖库存数据",
+	"id": 54000
 }

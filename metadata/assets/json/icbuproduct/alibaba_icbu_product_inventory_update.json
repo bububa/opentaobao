@@ -1,14 +1,6 @@
 {
-	"id": 53178,
-	"name": "alibaba.icbu.product.inventory.update",
-	"apiChineseName": "icbu商品库存更新",
-	"description": "更新库存信息",
 	"requestParams": [
 		{
-			"name": "request_param",
-			"type": "ProductInventoryRequest",
-			"description": "更新请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_id",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "inventory_list",
-					"type": "InventoryDto[]",
-					"description": "待更新的库存列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -46,48 +34,55 @@
 							"description": "操作类型，加库存或者减库存,加库存:plus,减库存:sub",
 							"required": true
 						}
-					]
+					],
+					"name": "inventory_list",
+					"type": "InventoryDto[]",
+					"description": "待更新的库存列表",
+					"required": true
 				}
-			]
+			],
+			"name": "request_param",
+			"type": "ProductInventoryRequest",
+			"description": "更新请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "库存更新是否成功",
-					"required": true
+					"description": "库存更新是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "接口更新失败时错误信息",
-					"required": true
+					"description": "接口更新失败时错误信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "失败错误码",
-					"required": true
+					"description": "失败错误码"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "接口失败时的追踪id",
-					"required": true
+					"description": "接口失败时的追踪id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.inventory.update",
+	"apiChineseName": "icbu商品库存更新",
+	"description": "更新库存信息",
+	"id": 53178
 }

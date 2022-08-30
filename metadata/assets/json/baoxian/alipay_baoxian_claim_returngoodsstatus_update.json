@@ -1,8 +1,4 @@
 {
-	"id": 37741,
-	"name": "alipay.baoxian.claim.returngoodsstatus.update",
-	"apiChineseName": "更新理赔单退货货物状态",
-	"description": "更新理赔单退货货物状态",
 	"requestParams": [
 		{
 			"name": "claim_no",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "model",
-					"required": true
+					"type": "String",
+					"description": "model"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alipay.baoxian.claim.returngoodsstatus.update",
+	"apiChineseName": "更新理赔单退货货物状态",
+	"description": "更新理赔单退货货物状态",
+	"id": 37741
 }

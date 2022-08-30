@@ -1,19 +1,29 @@
 {
-	"id": 31400,
-	"name": "alibaba.wdk.marketing.itemdiscount.createactivity",
-	"apiChineseName": "创建商品特价活动",
-	"description": "创建商品特价活动",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemDiscountActivityRequest",
-			"description": "创建活动请求入参",
-			"required": true,
 			"subParams": [
 				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间,时间戳",
+					"required": true
+				},
+				{
 					"name": "terminals",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "discount_type",
+					"type": "String",
+					"description": "商品特价优惠方式[itemDecreaseMoney:商品特价减钱;itemFixPrice:商品特价一口价;itemDiscount:商品特价打折]",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动详情描述,不超过30个英文字符",
 					"required": true
 				},
 				{
@@ -31,24 +41,6 @@
 					"name": "end_time",
 					"type": "Number",
 					"description": "活动结束时间,时间戳",
-					"required": true
-				},
-				{
-					"name": "start_time",
-					"type": "Number",
-					"description": "活动开始时间,时间戳",
-					"required": true
-				},
-				{
-					"name": "discount_type",
-					"type": "String",
-					"description": "商品特价优惠方式[itemDecreaseMoney:商品特价减钱;itemFixPrice:商品特价一口价;itemDiscount:商品特价打折]",
-					"required": true
-				},
-				{
-					"name": "description",
-					"type": "String",
-					"description": "活动详情描述,不超过30个英文字符",
 					"required": true
 				},
 				{
@@ -78,9 +70,6 @@
 					"description": "渠道编码"
 				},
 				{
-					"name": "period_config",
-					"type": "PeriodConfig",
-					"description": "周期优惠信息",
 					"subParams": [
 						{
 							"name": "every_day_periods",
@@ -89,10 +78,13 @@
 						},
 						{
 							"name": "weekdays",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "一周的哪几天生效"
 						}
-					]
+					],
+					"name": "period_config",
+					"type": "PeriodConfig",
+					"description": "周期优惠信息"
 				},
 				{
 					"name": "priority_value",
@@ -103,41 +95,62 @@
 					"name": "cover_before",
 					"type": "Boolean",
 					"description": "是否参加后单压前单，默认不参加"
+				},
+				{
+					"name": "by_channel",
+					"type": "Boolean",
+					"description": "是否自定义渠道同步"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "淘鲜达:\"31\",饿了么:\"3\",京东到家:\"26\",美团外卖:\"2\""
+						}
+					],
+					"name": "channel_config_list",
+					"type": "ChannelConfig[]",
+					"description": "自定义同步的渠道配置"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemDiscountActivityRequest",
+			"description": "创建活动请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "创建活动返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "创建成功时会返回五道口活动id",
-					"required": true
+					"description": "创建成功时会返回五道口活动id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "创建活动是否成功",
-					"required": true
+					"description": "创建活动是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建活动返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itemdiscount.createactivity",
+	"apiChineseName": "创建商品特价活动",
+	"description": "创建商品特价活动",
+	"id": 31400
 }

@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户Id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录凭证"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "消息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.card.query.record",
+	"apiChineseName": "微信会员卡领取记录查询",
+	"description": "微信会员卡领取记录查询",
+	"id": 60925
+}

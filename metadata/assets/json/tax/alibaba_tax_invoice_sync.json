@@ -1,8 +1,4 @@
 {
-	"id": 41740,
-	"name": "alibaba.tax.invoice.sync",
-	"apiChineseName": "第三方开票回调API",
-	"description": "该接口只提供给俄罗斯供应商开具发票使用，请勿申请。",
 	"requestParams": [
 		{
 			"name": "param_json",
@@ -13,37 +9,37 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ThirdPartyInvoiceCallBackResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "value_list",
-					"type": "ResultItem[]",
-					"description": "具体明细列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "correctness",
 							"type": "Boolean",
-							"description": "每一项成功失败",
-							"required": true
+							"description": "每一项成功失败"
 						},
 						{
 							"name": "error_description",
 							"type": "String",
-							"description": "每一项具体异常信息",
-							"required": true
+							"description": "每一项具体异常信息"
 						},
 						{
 							"name": "request_id",
 							"type": "String",
-							"description": "每一项的请求id",
-							"required": true
+							"description": "每一项的请求id"
 						}
-					]
+					],
+					"name": "value_list",
+					"type": "ResultItem[]",
+					"description": "具体明细列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ThirdPartyInvoiceCallBackResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.tax.invoice.sync",
+	"apiChineseName": "第三方开票回调API",
+	"description": "该接口只提供给俄罗斯供应商开具发票使用，请勿申请。",
+	"id": 41740
 }

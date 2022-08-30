@@ -1,8 +1,4 @@
 {
-	"id": 56166,
-	"name": "alibaba.idle.order.msg.send",
-	"apiChineseName": "虚拟发货消息发送接口",
-	"description": "用户下单后服务商期望自动发货，该接口用于给用户发送文本消息，主要用于卡券类等虚拟商品场景",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "是否发送成功"
 		}
-	]
+	],
+	"name": "alibaba.idle.order.msg.send",
+	"apiChineseName": "虚拟发货消息发送接口",
+	"description": "用户下单后服务商期望自动发货，该接口用于给用户发送文本消息，主要用于卡券类等虚拟商品场景",
+	"id": 56166
 }

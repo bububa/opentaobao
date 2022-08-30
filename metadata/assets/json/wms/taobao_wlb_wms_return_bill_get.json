@@ -1,8 +1,4 @@
 {
-	"id": 25678,
-	"name": "taobao.wlb.wms.return.bill.get",
-	"apiChineseName": "获取销退收货信息",
-	"description": "通过订单号获取单个销退单收货信息。",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "return_order_info",
-			"type": "CainiaoReturnBillReturnorderinfo",
-			"description": "回退订单信息",
 			"subParams": [
 				{
 					"name": "order_code",
@@ -42,14 +35,8 @@
 					"description": "仓库订单完成时间"
 				},
 				{
-					"name": "order_item_list",
-					"type": "CainiaoReturnBillOrderitemlist[]",
-					"description": "订单商品信息列表",
 					"subParams": [
 						{
-							"name": "order_item",
-							"type": "CainiaoReturnBillOrderitem",
-							"description": "订单商品信息",
 							"subParams": [
 								{
 									"name": "order_item_id",
@@ -67,14 +54,8 @@
 									"description": "商家编码"
 								},
 								{
-									"name": "inventory_item_list",
-									"type": "CainiaoReturnBillInventoryitemlist[]",
-									"description": "商品信息",
 									"subParams": [
 										{
-											"name": "inventory_item",
-											"type": "CainiaoReturnBillInventoryitem",
-											"description": "订单详情",
 											"subParams": [
 												{
 													"name": "inventory_type",
@@ -111,20 +92,39 @@
 													"type": "String",
 													"description": "批次号"
 												}
-											]
+											],
+											"name": "inventory_item",
+											"type": "CainiaoReturnBillInventoryitem",
+											"description": "订单详情"
 										}
-									]
+									],
+									"name": "inventory_item_list",
+									"type": "CainiaoReturnBillInventoryitemlist[]",
+									"description": "商品信息"
 								}
-							]
+							],
+							"name": "order_item",
+							"type": "CainiaoReturnBillOrderitem",
+							"description": "订单商品信息"
 						}
-					]
+					],
+					"name": "order_item_list",
+					"type": "CainiaoReturnBillOrderitemlist[]",
+					"description": "订单商品信息列表"
 				},
 				{
 					"name": "pre_cn_order_code",
 					"type": "String",
 					"description": "此销退订单对应原销售订单的菜鸟订单号"
 				}
-			]
+			],
+			"name": "return_order_info",
+			"type": "CainiaoReturnBillReturnorderinfo",
+			"description": "回退订单信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.return.bill.get",
+	"apiChineseName": "获取销退收货信息",
+	"description": "通过订单号获取单个销退单收货信息。",
+	"id": 25678
 }

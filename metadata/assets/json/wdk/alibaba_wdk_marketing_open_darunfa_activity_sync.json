@@ -1,15 +1,6 @@
 {
-	"id": 41999,
-	"name": "alibaba.wdk.marketing.open.darunfa.activity.sync",
-	"apiChineseName": "活动数据同步",
-	"description": "大润发活动数据同步",
 	"requestParams": [
 		{
-			"name": "activity_list",
-			"type": "DrfTxdActivityBo[]",
-			"description": "大润发活动数据",
-			"required": true,
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "activity_channel",
@@ -165,8 +156,23 @@
 					"name": "txd_activity_id",
 					"type": "Number",
 					"description": "淘鲜达活动Id"
+				},
+				{
+					"name": "period_config",
+					"type": "String",
+					"description": "周期生效配置，weekdays：星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]；every_day_periods：每天的什么时间阶段搞活动,精确到秒单位,最多支持5段 例如:03:00:00_05:00:00，示例：{\"weekdays\":[1,2,3,4,5,6,7],\"every_day_periods\":[\"03:00:00_05:00:00\",\"18:00:00_21:00:00\"]}"
+				},
+				{
+					"name": "is_alone",
+					"type": "Number",
+					"description": "是否针对单个商品使用优惠"
 				}
-			]
+			],
+			"name": "activity_list",
+			"type": "DrfTxdActivityBo[]",
+			"description": "大润发活动数据",
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "shop_id",
@@ -183,55 +189,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true--成功，false--失败",
-					"required": true
+					"description": "true--成功，false--失败"
 				},
 				{
-					"name": "activity_list",
-					"type": "SyncActivityResultBo[]",
-					"description": "活动数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_ids",
 							"type": "String",
-							"description": "门店ID",
-							"required": true
+							"description": "门店ID"
 						},
 						{
 							"name": "version_id",
 							"type": "Number",
-							"description": "版本ID",
-							"required": true
+							"description": "版本ID"
 						},
 						{
 							"name": "promotion_id",
 							"type": "String",
-							"description": "大润发活动ID",
-							"required": true
+							"description": "大润发活动ID"
 						}
-					]
+					],
+					"name": "activity_list",
+					"type": "SyncActivityResultBo[]",
+					"description": "活动数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.darunfa.activity.sync",
+	"apiChineseName": "活动数据同步",
+	"description": "大润发活动数据同步",
+	"id": 41999
 }

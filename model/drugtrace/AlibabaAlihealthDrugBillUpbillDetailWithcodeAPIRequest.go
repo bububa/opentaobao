@@ -20,6 +20,8 @@ type AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest struct {
 	_fromRefUserId string
 	// 收货企业refEntId
 	_toRefUserId string
+	// 委托企业id
+	_agentRefEntId string
 }
 
 // NewAlibabaAlihealthDrugBillUpbillDetailWithcodeRequest 初始化AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest对象
@@ -93,4 +95,17 @@ func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetToRefUserId(
 // GetToRefUserId ToRefUserId Getter
 func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetToRefUserId() string {
 	return r._toRefUserId
+}
+
+// SetAgentRefEntId is AgentRefEntId Setter
+// 委托企业id
+func (r *AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) SetAgentRefEntId(_agentRefEntId string) error {
+	r._agentRefEntId = _agentRefEntId
+	r.Set("agent_ref_ent_id", _agentRefEntId)
+	return nil
+}
+
+// GetAgentRefEntId AgentRefEntId Getter
+func (r AlibabaAlihealthDrugBillUpbillDetailWithcodeAPIRequest) GetAgentRefEntId() string {
+	return r._agentRefEntId
 }

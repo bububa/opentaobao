@@ -1,8 +1,4 @@
 {
-	"id": 33931,
-	"name": "tmall.servicecenter.servicemonitormessage.update",
-	"apiChineseName": "服务商更新预警消息状态",
-	"description": "服务商收到预警后，需要进行回复已读状态，并可填写备注",
 	"requestParams": [
 		{
 			"name": "service_monitor_message_id",
@@ -24,47 +20,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "value",
-					"type": "Json",
-					"description": "value",
-					"required": true
+					"type": "String",
+					"description": "value"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicemonitormessage.update",
+	"apiChineseName": "服务商更新预警消息状态",
+	"description": "服务商收到预警后，需要进行回复已读状态，并可填写备注",
+	"id": 33931
 }

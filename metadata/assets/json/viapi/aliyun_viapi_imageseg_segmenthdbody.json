@@ -1,8 +1,4 @@
 {
-	"id": 50733,
-	"name": "aliyun.viapi.imageseg.segmenthdbody",
-	"apiChineseName": "高清人体分割",
-	"description": "对输入图像中包含的人进行分割，输出结果透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -17,9 +13,6 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "image_url",
@@ -27,7 +20,14 @@
 					"description": "输出图像URL",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.imageseg.segmenthdbody",
+	"apiChineseName": "高清人体分割",
+	"description": "对输入图像中包含的人进行分割，输出结果透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50733
 }

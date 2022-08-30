@@ -16,6 +16,8 @@ type AliexpressSolutionFeedSubmitAPIRequest struct {
 	_itemList []SingleItemRequestDto
 	// Currently support 4 types of feeds:PRODUCT_CREATE,PRODUCT_FULL_UPDATE,PRODUCT_STOCKS_UPDATE,PRODUCT_PRICES_UPDATE
 	_operationType string
+	// More information of the request.
+	_developerFeatures string
 }
 
 // NewAliexpressSolutionFeedSubmitRequest 初始化AliexpressSolutionFeedSubmitAPIRequest对象
@@ -63,4 +65,17 @@ func (r *AliexpressSolutionFeedSubmitAPIRequest) SetOperationType(_operationType
 // GetOperationType OperationType Getter
 func (r AliexpressSolutionFeedSubmitAPIRequest) GetOperationType() string {
 	return r._operationType
+}
+
+// SetDeveloperFeatures is DeveloperFeatures Setter
+// More information of the request.
+func (r *AliexpressSolutionFeedSubmitAPIRequest) SetDeveloperFeatures(_developerFeatures string) error {
+	r._developerFeatures = _developerFeatures
+	r.Set("developer_features", _developerFeatures)
+	return nil
+}
+
+// GetDeveloperFeatures DeveloperFeatures Getter
+func (r AliexpressSolutionFeedSubmitAPIRequest) GetDeveloperFeatures() string {
+	return r._developerFeatures
 }

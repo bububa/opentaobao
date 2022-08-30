@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "form_data",
+			"type": "String",
+			"description": "需变更的表单数据",
+			"required": true
+		},
+		{
+			"name": "record_id",
+			"type": "String",
+			"description": "需变更的数据ID，不填表示插入"
+		},
+		{
+			"name": "form_identifier",
+			"type": "String",
+			"description": "智能表单唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "record_id",
+			"type": "String",
+			"description": "操作数据ID"
+		}
+	],
+	"name": "taobao.smartapp.smartform.data.write",
+	"apiChineseName": "智能表单外部更新数据",
+	"description": "智能表单外部更新数据",
+	"id": 60673
+}

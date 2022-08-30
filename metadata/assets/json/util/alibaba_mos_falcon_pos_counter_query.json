@@ -1,8 +1,4 @@
 {
-	"id": 52356,
-	"name": "alibaba.mos.falcon.pos.counter.query",
-	"apiChineseName": "云POS查看专柜属性",
-	"description": "银泰商业获取专柜是否支持小数等属性查看",
 	"requestParams": [
 		{
 			"name": "sn",
@@ -22,79 +18,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "traceId",
-					"required": true
+					"description": "traceId"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "total",
-					"required": true
+					"description": "total"
 				},
 				{
-					"name": "data",
-					"type": "PosInfoDto",
-					"description": "是否成功",
-					"required": true,
 					"subParams": [
 						{
 							"name": "support4_decimal",
 							"type": "String",
-							"description": "是否支持小数",
-							"required": true
+							"description": "是否支持小数"
 						},
 						{
 							"name": "counter_no",
 							"type": "String",
-							"description": "专柜号",
-							"required": true
+							"description": "专柜号"
 						},
 						{
 							"name": "store_no",
 							"type": "String",
-							"description": "门店号",
-							"required": true
+							"description": "门店号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PosInfoDto",
+					"description": "是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "extra",
-					"type": "Json",
-					"description": "额外",
-					"required": true
+					"type": "String",
+					"description": "额外"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "titles",
 					"type": "String[]",
-					"description": "标题",
-					"required": true
+					"description": "标题"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.falcon.pos.counter.query",
+	"apiChineseName": "云POS查看专柜属性",
+	"description": "银泰商业获取专柜是否支持小数等属性查看",
+	"id": 52356
 }

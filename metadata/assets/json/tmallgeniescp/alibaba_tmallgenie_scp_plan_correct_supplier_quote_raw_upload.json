@@ -1,20 +1,16 @@
 {
-	"id": 54757,
-	"name": "alibaba.tmallgenie.scp.plan.correct.supplier.quote.raw.upload",
-	"apiChineseName": "同步供应商校准后的配额-二级物料",
-	"description": "同步供应商校准后的配额-二级物料",
 	"requestParams": [
 		{
-			"name": "current_quote_raw_request",
-			"type": "AbstractRequest",
-			"description": "对象",
 			"subParams": [
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "current_quote_raw_request",
+			"type": "AbstractRequest",
+			"description": "对象"
 		}
 	],
 	"responseParams": [
@@ -34,47 +30,45 @@
 			"description": "返回码"
 		},
 		{
-			"name": "data_list",
-			"type": "CurrentQuotaDto []",
-			"description": "对象列表",
 			"subParams": [
 				{
 					"name": "key_figure_date",
 					"type": "Date",
-					"description": "关键日期值",
-					"required": true
+					"description": "关键日期值"
 				},
 				{
 					"name": "ratio",
 					"type": "String",
-					"description": "比例（精确到2位小数：0.34）",
-					"required": true
+					"description": "比例（精确到2位小数：0.34）"
 				},
 				{
 					"name": "materiel_code",
 					"type": "String",
-					"description": "二级物料-物料编码",
-					"required": true
+					"description": "二级物料-物料编码"
 				},
 				{
 					"name": "location_code",
 					"type": "String",
-					"description": "二级物料供应商-locCode",
-					"required": true
+					"description": "二级物料供应商-locCode"
 				},
 				{
 					"name": "extend_json",
 					"type": "String",
-					"description": "扩展参数",
-					"required": true
+					"description": "扩展参数"
 				},
 				{
 					"name": "tenant",
 					"type": "String",
-					"description": "租户",
-					"required": true
+					"description": "租户"
 				}
-			]
+			],
+			"name": "data_list",
+			"type": "CurrentQuotaDto []",
+			"description": "对象列表"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.correct.supplier.quote.raw.upload",
+	"apiChineseName": "同步供应商校准后的配额-二级物料",
+	"description": "同步供应商校准后的配额-二级物料",
+	"id": 54757
 }

@@ -1,0 +1,243 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "主单号",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "QueryOrderRQ",
+			"description": "rq"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ttp_order_id",
+									"type": "Number",
+									"description": "主单号"
+								},
+								{
+									"name": "last_issue_time",
+									"type": "Date",
+									"description": "最晚出票时间"
+								},
+								{
+									"name": "ticket_num",
+									"type": "Number",
+									"description": "票数"
+								},
+								{
+									"name": "order_status_name",
+									"type": "String",
+									"description": "主单状态"
+								},
+								{
+									"name": "emergency",
+									"type": "Boolean",
+									"description": "是否为紧急单"
+								},
+								{
+									"name": "vip_settle_mode",
+									"type": "Number",
+									"description": "支付方式（0 现金 1 电子支付）"
+								},
+								{
+									"name": "tp_order_id",
+									"type": "Number",
+									"description": "退改订单号"
+								}
+							],
+							"name": "tap_order",
+							"type": "TapOrderVO",
+							"description": "主单详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘车人姓名"
+								},
+								{
+									"name": "passenger_type_code",
+									"type": "String",
+									"description": "乘车人类型"
+								},
+								{
+									"name": "mobile_no",
+									"type": "String",
+									"description": "手机号"
+								},
+								{
+									"name": "certificate_type_code",
+									"type": "String",
+									"description": "证件类型"
+								},
+								{
+									"name": "certificate_no",
+									"type": "String",
+									"description": "证件号"
+								}
+							],
+							"name": "ticket_infos",
+							"type": "TicketInfoDTO[]",
+							"description": "票详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ttp_order_id",
+									"type": "Number",
+									"description": "主订单号"
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单号"
+								},
+								{
+									"name": "from_station_name",
+									"type": "String",
+									"description": "出发站"
+								},
+								{
+									"name": "from_station_telecode",
+									"type": "String",
+									"description": "出发站三字码"
+								},
+								{
+									"name": "to_station_name",
+									"type": "String",
+									"description": "到达站"
+								},
+								{
+									"name": "to_station_telecode",
+									"type": "String",
+									"description": "到达站三字码"
+								},
+								{
+									"name": "train_date",
+									"type": "String",
+									"description": "发车日期"
+								},
+								{
+									"name": "train_code",
+									"type": "String",
+									"description": "车次编号"
+								},
+								{
+									"name": "seat_type_code",
+									"type": "String",
+									"description": "座席编号"
+								},
+								{
+									"name": "seat_type_name",
+									"type": "String",
+									"description": "座席名称"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价（单位 分）"
+								},
+								{
+									"name": "online_book_seat",
+									"type": "String",
+									"description": "在线选座参数(GDC支持在线选座，此坐席为优选坐席，出票员可以优先保证此字段解析的坐席)"
+								},
+								{
+									"name": "vip_custom_type",
+									"type": "Number",
+									"description": "定制票类型（0:不指定坐席 1:下铺 2:下铺or中铺 3:过道 4:靠窗）"
+								},
+								{
+									"name": "inter_change_station_telecode",
+									"type": "String",
+									"description": "中转站三字码"
+								},
+								{
+									"name": "inter_change_station_name",
+									"type": "String",
+									"description": "中转站名称"
+								},
+								{
+									"name": "segment_id",
+									"type": "Number",
+									"description": "程id"
+								},
+								{
+									"name": "segment_index",
+									"type": "Number",
+									"description": "程 序号（区分中转一、二程）"
+								},
+								{
+									"name": "from_time",
+									"type": "String",
+									"description": "出发时间"
+								},
+								{
+									"name": "to_time",
+									"type": "String",
+									"description": "到达时间"
+								},
+								{
+									"name": "status_name",
+									"type": "String",
+									"description": "子单状态"
+								},
+								{
+									"name": "emergency",
+									"type": "Boolean",
+									"description": "是否为紧急单"
+								},
+								{
+									"name": "last_issue_time",
+									"type": "String",
+									"description": "子单出票截止时间（yyyy-MM-dd HH:mm:ss）"
+								}
+							],
+							"name": "tap_sub_orders",
+							"type": "TapSubOrderVO[]",
+							"description": "子单详情"
+						}
+					],
+					"name": "module",
+					"type": "QueryOrderRS",
+					"description": "订单详情"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回msg"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.order.query",
+	"apiChineseName": "订单详情查询",
+	"description": "订单详情查询接口",
+	"id": 60343
+}

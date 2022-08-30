@@ -1,0 +1,123 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id"
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token",
+					"required": true
+				}
+			],
+			"name": "stop_user_game_request",
+			"type": "StopUserGameRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "mix_game_id",
+									"type": "String",
+									"description": "游戏id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "游戏名称"
+								},
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "主播id"
+								},
+								{
+									"name": "total_player_num",
+									"type": "Number",
+									"description": "支持玩家数量"
+								},
+								{
+									"name": "player_num",
+									"type": "Number",
+									"description": "当前玩家数量"
+								}
+							],
+							"name": "game",
+							"type": "OpenGameDTO",
+							"description": "游戏详情"
+						},
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "玩家id"
+								},
+								{
+									"name": "player_index",
+									"type": "String",
+									"description": "位置索引"
+								}
+							],
+							"name": "player_list",
+							"type": "OpenGamePlayerDTO[]",
+							"description": "玩家列表"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						}
+					],
+					"name": "data",
+					"type": "StopUserGameResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.player.stop",
+	"apiChineseName": "用户停止游戏",
+	"description": "用户停止游戏",
+	"id": 62220
+}

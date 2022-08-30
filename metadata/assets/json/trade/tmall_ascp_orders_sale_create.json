@@ -1,13 +1,6 @@
 {
-	"id": 38211,
-	"name": "tmall.ascp.orders.sale.create",
-	"apiChineseName": "ASCP渠道中心销售单创建接口",
-	"description": "ASCP渠道中心销售单创建接口",
 	"requestParams": [
 		{
-			"name": "channel_order_request",
-			"type": "CreateChannelOrderRequest",
-			"description": "请求对象",
 			"subParams": [
 				{
 					"name": "memo",
@@ -26,16 +19,7 @@
 					"required": true
 				},
 				{
-					"name": "item_list",
-					"type": "ChannelOrderItem[]",
-					"description": "子订单信息",
-					"required": true,
 					"subParams": [
-						{
-							"name": "item_name",
-							"type": "String",
-							"description": "商品名称"
-						},
 						{
 							"name": "distribution_price",
 							"type": "Number",
@@ -66,8 +50,17 @@
 							"name": "quantity",
 							"type": "Number",
 							"description": "数量"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "ChannelOrderItem[]",
+					"description": "子订单信息",
+					"required": true
 				},
 				{
 					"name": "biz_type",
@@ -76,9 +69,6 @@
 					"required": true
 				},
 				{
-					"name": "receiver_logistics",
-					"type": "ReceiverLogistics",
-					"description": "物流信息",
 					"subParams": [
 						{
 							"name": "mobile_phone",
@@ -140,7 +130,10 @@
 							"description": "收货地址",
 							"required": true
 						}
-					]
+					],
+					"name": "receiver_logistics",
+					"type": "ReceiverLogistics",
+					"description": "物流信息"
 				},
 				{
 					"name": "source_lbx",
@@ -149,6 +142,7 @@
 				},
 				{
 					"name": "properties",
+					"type": "String",
 					"description": "属性"
 				},
 				{
@@ -158,16 +152,16 @@
 					"required": true
 				},
 				{
-					"name": "option",
-					"type": "ChannelOrderOption",
-					"description": "选项",
 					"subParams": [
 						{
 							"name": "is_allow_upper_modify",
 							"type": "Boolean",
 							"description": "是否允许供应商修改"
 						}
-					]
+					],
+					"name": "option",
+					"type": "ChannelOrderOption",
+					"description": "选项"
 				},
 				{
 					"name": "trade_type",
@@ -175,46 +169,48 @@
 					"description": "交易类型（1——代销；2——经销）",
 					"required": true
 				}
-			]
+			],
+			"name": "channel_order_request",
+			"type": "CreateChannelOrderRequest",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "module",
-					"type": "Json",
-					"description": "module",
-					"required": true
+					"type": "String",
+					"description": "module"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.ascp.orders.sale.create",
+	"apiChineseName": "ASCP渠道中心销售单创建接口",
+	"description": "ASCP渠道中心销售单创建接口",
+	"id": 38211
 }

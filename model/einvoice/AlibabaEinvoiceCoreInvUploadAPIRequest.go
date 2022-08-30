@@ -36,8 +36,6 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	_redNoticeNo string
 	// 销方税务登记证号。由大写字母或数字组成，长度要求15~20位。
 	_payeeRegisterNo string
-	// 购方手机号码，用于收票
-	_receiveMobile string
 	// 发票申请ID, 由阿里发票平台生成。  source=apply时 必填。
 	_applyId string
 	// 销方名称
@@ -56,6 +54,8 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	_invoiceMemo string
 	// 购方电子邮箱，需满足邮箱格式。  格式要求：\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*
 	_payerEmail string
+	// 购方手机号码，用于收票
+	_receiveMobile string
 	// 发票防伪码/密码
 	_antiFakeCode string
 	// 购方银行账号， 专票必填。
@@ -104,12 +104,16 @@ type AlibabaEinvoiceCoreInvUploadAPIRequest struct {
 	_createResult string
 	// 开票流水号/序列号，唯一标志一笔开票请求，由于阿里发票中台生成。  source=async时必填，其他source可为空
 	_serialNo string
-	// 发票板式文件数据，字节数据。  电票时必传。
-	_invoiceFileData *model.File
+	// 发票板式文件数据，Base64编码字符串。电票时和invoice_file_data必传其一
+	_invoiceFileContent string
+	// 扣除额
+	_deductAmount string
 	// 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
 	_invoiceKind int64
 	// 抬头类型。可选值：  0：个人  1：企业
 	_businessType int64
+	// 发票板式文件数据，字节数据。  电票时和invoice_file_content必传其一。
+	_invoiceFileData *model.File
 }
 
 // NewAlibabaEinvoiceCoreInvUploadRequest 初始化AlibabaEinvoiceCoreInvUploadAPIRequest对象
@@ -276,19 +280,6 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayeeRegisterNo() string {
 	return r._payeeRegisterNo
 }
 
-// SetReceiveMobile is ReceiveMobile Setter
-// 购方手机号码，用于收票
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetReceiveMobile(_receiveMobile string) error {
-	r._receiveMobile = _receiveMobile
-	r.Set("receive_mobile", _receiveMobile)
-	return nil
-}
-
-// GetReceiveMobile ReceiveMobile Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetReceiveMobile() string {
-	return r._receiveMobile
-}
-
 // SetApplyId is ApplyId Setter
 // 发票申请ID, 由阿里发票平台生成。  source=apply时 必填。
 func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetApplyId(_applyId string) error {
@@ -404,6 +395,19 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetPayerEmail(_payerEmail strin
 // GetPayerEmail PayerEmail Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetPayerEmail() string {
 	return r._payerEmail
+}
+
+// SetReceiveMobile is ReceiveMobile Setter
+// 购方手机号码，用于收票
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetReceiveMobile(_receiveMobile string) error {
+	r._receiveMobile = _receiveMobile
+	r.Set("receive_mobile", _receiveMobile)
+	return nil
+}
+
+// GetReceiveMobile ReceiveMobile Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetReceiveMobile() string {
+	return r._receiveMobile
 }
 
 // SetAntiFakeCode is AntiFakeCode Setter
@@ -718,17 +722,30 @@ func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetSerialNo() string {
 	return r._serialNo
 }
 
-// SetInvoiceFileData is InvoiceFileData Setter
-// 发票板式文件数据，字节数据。  电票时必传。
-func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
-	r._invoiceFileData = _invoiceFileData
-	r.Set("invoice_file_data", _invoiceFileData)
+// SetInvoiceFileContent is InvoiceFileContent Setter
+// 发票板式文件数据，Base64编码字符串。电票时和invoice_file_data必传其一
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileContent(_invoiceFileContent string) error {
+	r._invoiceFileContent = _invoiceFileContent
+	r.Set("invoice_file_content", _invoiceFileContent)
 	return nil
 }
 
-// GetInvoiceFileData InvoiceFileData Getter
-func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
-	return r._invoiceFileData
+// GetInvoiceFileContent InvoiceFileContent Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileContent() string {
+	return r._invoiceFileContent
+}
+
+// SetDeductAmount is DeductAmount Setter
+// 扣除额
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetDeductAmount(_deductAmount string) error {
+	r._deductAmount = _deductAmount
+	r.Set("deduct_amount", _deductAmount)
+	return nil
+}
+
+// GetDeductAmount DeductAmount Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetDeductAmount() string {
+	return r._deductAmount
 }
 
 // SetInvoiceKind is InvoiceKind Setter
@@ -755,4 +772,17 @@ func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetBusinessType(_businessType i
 // GetBusinessType BusinessType Getter
 func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetBusinessType() int64 {
 	return r._businessType
+}
+
+// SetInvoiceFileData is InvoiceFileData Setter
+// 发票板式文件数据，字节数据。  电票时和invoice_file_content必传其一。
+func (r *AlibabaEinvoiceCoreInvUploadAPIRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
+	r._invoiceFileData = _invoiceFileData
+	r.Set("invoice_file_data", _invoiceFileData)
+	return nil
+}
+
+// GetInvoiceFileData InvoiceFileData Getter
+func (r AlibabaEinvoiceCoreInvUploadAPIRequest) GetInvoiceFileData() *model.File {
+	return r._invoiceFileData
 }

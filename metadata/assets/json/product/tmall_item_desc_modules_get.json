@@ -1,8 +1,4 @@
 {
-	"id": 22171,
-	"name": "tmall.item.desc.modules.get",
-	"apiChineseName": "商品描述模块信息获取",
-	"description": "商品描述模块信息获取，包括运营设定的类目级别的模块信息以及用户自定义模块数量约束。",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -19,19 +15,33 @@
 	],
 	"responseParams": [
 		{
-			"name": "modular_desc_info",
-			"type": "ModularDescInfo",
-			"description": "返回描述模块信息",
 			"subParams": [
 				{
-					"name": "itm_dsc_modules",
-					"type": "ItemDescModule[]",
-					"description": "运营定义的该商品所属类目的类目级别模块信息列表，列表顺序即为模块顺序。",
+					"name": "usr_def_max_num",
+					"type": "Number",
+					"description": "用户自定义模块数量最大值限制。类目级别模块+用户级别模块必须小于\u003c20"
+				},
+				{
 					"subParams": [
+						{
+							"name": "intros",
+							"type": "String",
+							"description": "一个List\u003cString\u003e的Json串，里面是模块引导提示，不超过3条（isv提交时可忽略不传）"
+						},
+						{
+							"name": "tpl_urls",
+							"type": "String",
+							"description": "淘宝图片空间的地址链接，示例模板，最多不超过三个（isv提交时可忽略不传）"
+						},
 						{
 							"name": "module_id",
 							"type": "Number",
 							"description": "模块id ,(注意:用户自定义模块不用填此项。)"
+						},
+						{
+							"name": "required",
+							"type": "Boolean",
+							"description": "是否必填 （isv提交时可忽略不传）"
 						},
 						{
 							"name": "module_name",
@@ -47,28 +57,11 @@
 							"name": "content",
 							"type": "String",
 							"description": "描述具体内容"
-						},
-						{
-							"name": "intros",
-							"type": "String",
-							"description": "一个List\u003cString\u003e的Json串，里面是模块引导提示，不超过3条（isv提交时可忽略不传）"
-						},
-						{
-							"name": "tpl_urls",
-							"type": "String",
-							"description": "淘宝图片空间的地址链接，示例模板，最多不超过三个（isv提交时可忽略不传）"
-						},
-						{
-							"name": "required",
-							"type": "Boolean",
-							"description": "是否必填 （isv提交时可忽略不传）"
 						}
-					]
-				},
-				{
-					"name": "usr_def_max_num",
-					"type": "Number",
-					"description": "用户自定义模块数量最大值限制。类目级别模块+用户级别模块必须小于\u003c20"
+					],
+					"name": "itm_dsc_modules",
+					"type": "ItemDescModule[]",
+					"description": "运营定义的该商品所属类目的类目级别模块信息列表，列表顺序即为模块顺序。"
 				},
 				{
 					"name": "dead_line",
@@ -80,7 +73,14 @@
 					"type": "Boolean",
 					"description": "默认值为false，如果此字段为true，则卖家上传的模块化的描述信息可以自定义排序。"
 				}
-			]
+			],
+			"name": "modular_desc_info",
+			"type": "ModularDescInfo",
+			"description": "返回描述模块信息"
 		}
-	]
+	],
+	"name": "tmall.item.desc.modules.get",
+	"apiChineseName": "商品描述模块信息获取",
+	"description": "商品描述模块信息获取，包括运营设定的类目级别的模块信息以及用户自定义模块数量约束。",
+	"id": 22171
 }

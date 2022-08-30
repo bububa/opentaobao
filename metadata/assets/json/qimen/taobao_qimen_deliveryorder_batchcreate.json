@@ -1,22 +1,10 @@
 {
-	"id": 25994,
-	"name": "taobao.qimen.deliveryorder.batchcreate",
-	"apiChineseName": "发货单创建批量接口",
-	"description": "ERP调用接口，将发货信息批量推送给WMS",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "DeliveryOrderBatchCreateRequest",
 			"subParams": [
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "订单信息",
 					"subParams": [
 						{
-							"name": "deliveryOrder",
-							"type": "DeliveryOrder",
-							"description": "发货单信息",
 							"subParams": [
 								{
 									"name": "deliveryOrderCode",
@@ -173,9 +161,6 @@
 									"description": "快递区域编码"
 								},
 								{
-									"name": "deliveryRequirements",
-									"type": "DeliveryRequirements",
-									"description": "发货要求",
 									"subParams": [
 										{
 											"name": "scheduleType",
@@ -202,12 +187,12 @@
 											"type": "String",
 											"description": "发货服务类型(PTPS:普通配送;LLPS:冷链配送;HBP:环保配)"
 										}
-									]
+									],
+									"name": "deliveryRequirements",
+									"type": "DeliveryRequirements",
+									"description": "发货要求"
 								},
 								{
-									"name": "senderInfo",
-									"type": "SenderInfo",
-									"description": "发件人信息",
 									"subParams": [
 										{
 											"name": "company",
@@ -274,12 +259,12 @@
 											"description": "详细地址",
 											"required": true
 										}
-									]
+									],
+									"name": "senderInfo",
+									"type": "SenderInfo",
+									"description": "发件人信息"
 								},
 								{
-									"name": "receiverInfo",
-									"type": "ReceiverInfo",
-									"description": "收件人信息",
 									"subParams": [
 										{
 											"name": "company",
@@ -361,7 +346,10 @@
 											"type": "String",
 											"description": "oaid"
 										}
-									]
+									],
+									"name": "receiverInfo",
+									"type": "ReceiverInfo",
+									"description": "收件人信息"
 								},
 								{
 									"name": "isUrgency",
@@ -374,9 +362,6 @@
 									"description": "是否需要发票(Y/N;默认为N)"
 								},
 								{
-									"name": "invoices",
-									"type": "Invoice[]",
-									"description": "发票信息",
 									"subParams": [
 										{
 											"name": "type",
@@ -399,14 +384,8 @@
 											"description": "发票内容(不推荐使用)"
 										},
 										{
-											"name": "detail",
-											"type": "Detail",
-											"description": "订单详情",
 											"subParams": [
 												{
-													"name": "items",
-													"type": "Item[]",
-													"description": "商品列表",
 													"subParams": [
 														{
 															"name": "itemName",
@@ -433,16 +412,25 @@
 															"type": "String",
 															"description": "金额"
 														}
-													]
+													],
+													"name": "items",
+													"type": "Item[]",
+													"description": "商品列表"
 												}
-											]
+											],
+											"name": "detail",
+											"type": "Detail",
+											"description": "订单详情"
 										},
 										{
 											"name": "taxNumber",
 											"type": "String",
 											"description": "税号"
 										}
-									]
+									],
+									"name": "invoices",
+									"type": "Invoice[]",
+									"description": "发票信息"
 								},
 								{
 									"name": "insuranceFlag",
@@ -450,9 +438,6 @@
 									"description": "是否需要保险(Y/N;默认为N)"
 								},
 								{
-									"name": "insurance",
-									"type": "Insurance",
-									"description": "保险信息",
 									"subParams": [
 										{
 											"name": "type",
@@ -464,7 +449,10 @@
 											"type": "String",
 											"description": "保险金额"
 										}
-									]
+									],
+									"name": "insurance",
+									"type": "Insurance",
+									"description": "保险信息"
 								},
 								{
 									"name": "buyerMessage",
@@ -491,12 +479,12 @@
 									"type": "String",
 									"description": "平台订单号"
 								}
-							]
+							],
+							"name": "deliveryOrder",
+							"type": "DeliveryOrder",
+							"description": "发货单信息"
 						},
 						{
-							"name": "orderLines",
-							"type": "OrderLine[]",
-							"description": "单据列表",
 							"subParams": [
 								{
 									"name": "orderLineNo",
@@ -587,22 +575,28 @@
 									"type": "String",
 									"description": "过期日期(YYYY-MM-DD)"
 								}
-							]
+							],
+							"name": "orderLines",
+							"type": "OrderLine[]",
+							"description": "单据列表"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "DeliveryOrderBatchCreateRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "DeliveryOrderBatchCreateResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -623,10 +617,6 @@
 					"required": true
 				},
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "订单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deliveryOrderCode",
@@ -640,9 +630,19 @@
 							"description": "出错信息",
 							"required": true
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单详情",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "DeliveryOrderBatchCreateResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.deliveryorder.batchcreate",
+	"apiChineseName": "发货单创建批量接口",
+	"description": "ERP调用接口，将发货信息批量推送给WMS",
+	"id": 25994
 }

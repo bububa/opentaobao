@@ -18,4 +18,6 @@ type TopReceiverDo struct {
 	Zip string `json:"zip,omitempty" xml:"zip,omitempty"`
 	// 收货人所在省份
 	State string `json:"state,omitempty" xml:"state,omitempty"`
+	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
+	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 }

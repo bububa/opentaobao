@@ -1,20 +1,7 @@
 {
-	"id": 50189,
-	"name": "alibaba.icbu.product.schema.update",
-	"apiChineseName": "（新）商品发布增量更新接口",
-	"description": "商品更新接口，方式为增量更新，只更新传入的字段",
 	"requestParams": [
 		{
-			"name": "param_product_top_publish_request",
-			"type": "ProductTopPublishRequest",
-			"description": "发布入参",
-			"required": true,
 			"subParams": [
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "商品明文id"
-				},
 				{
 					"name": "cat_id",
 					"type": "Number",
@@ -26,11 +13,20 @@
 					"description": "返回文案的语种，支持en_US,zh,zh_TW"
 				},
 				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品明文id"
+				},
+				{
 					"name": "xml",
 					"type": "String",
 					"description": "商品的具体数据信息"
 				}
-			]
+			],
+			"name": "param_product_top_publish_request",
+			"type": "ProductTopPublishRequest",
+			"description": "发布入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -59,5 +55,9 @@
 			"type": "String",
 			"description": "错误追踪码，请务必打印在日志中，后续排查问题请提交此错误追踪码"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.schema.update",
+	"apiChineseName": "（新）商品发布增量更新接口",
+	"description": "商品更新接口，方式为增量更新，只更新传入的字段",
+	"id": 50189
 }

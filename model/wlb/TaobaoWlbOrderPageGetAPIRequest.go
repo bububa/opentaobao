@@ -14,14 +14,14 @@ type TaobaoWlbOrderPageGetAPIRequest struct {
 	model.Params
 	// 物流订单编号
 	_orderCode string
-	// 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
-	_orderType string
-	// 订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单
-	_orderSubType string
 	// 查询截止时间
 	_endTime string
 	// 查询开始时间
 	_startTime string
+	// 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
+	_orderType string
+	// 订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单
+	_orderSubType string
 	// 每页多少条
 	_pageSize int64
 	// 分页的第几页
@@ -64,32 +64,6 @@ func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
 }
 
-// SetOrderType is OrderType Setter
-// 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
-func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderType(_orderType string) error {
-	r._orderType = _orderType
-	r.Set("order_type", _orderType)
-	return nil
-}
-
-// GetOrderType OrderType Getter
-func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderType() string {
-	return r._orderType
-}
-
-// SetOrderSubType is OrderSubType Setter
-// 订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单
-func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderSubType(_orderSubType string) error {
-	r._orderSubType = _orderSubType
-	r.Set("order_sub_type", _orderSubType)
-	return nil
-}
-
-// GetOrderSubType OrderSubType Getter
-func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderSubType() string {
-	return r._orderSubType
-}
-
 // SetEndTime is EndTime Setter
 // 查询截止时间
 func (r *TaobaoWlbOrderPageGetAPIRequest) SetEndTime(_endTime string) error {
@@ -114,6 +88,32 @@ func (r *TaobaoWlbOrderPageGetAPIRequest) SetStartTime(_startTime string) error 
 // GetStartTime StartTime Getter
 func (r TaobaoWlbOrderPageGetAPIRequest) GetStartTime() string {
 	return r._startTime
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库
+func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderType(_orderType string) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderType() string {
+	return r._orderType
+}
+
+// SetOrderSubType is OrderSubType Setter
+// 订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单
+func (r *TaobaoWlbOrderPageGetAPIRequest) SetOrderSubType(_orderSubType string) error {
+	r._orderSubType = _orderSubType
+	r.Set("order_sub_type", _orderSubType)
+	return nil
+}
+
+// GetOrderSubType OrderSubType Getter
+func (r TaobaoWlbOrderPageGetAPIRequest) GetOrderSubType() string {
+	return r._orderSubType
 }
 
 // SetPageSize is PageSize Setter

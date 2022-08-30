@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1-新房，2-二手房，3-租房，默认为2"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "操作类型 add-新增，delete-删除"
+				},
+				{
+					"name": "business_activities",
+					"type": "String[]",
+					"description": "商业活动标"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部房源id"
+						},
+						{
+							"name": "community_outer_id",
+							"type": "String",
+							"description": "外部小区id"
+						},
+						{
+							"name": "house_model",
+							"type": "Number",
+							"description": "租房业务模式"
+						}
+					],
+					"name": "house_features_list",
+					"type": "HouseFeaturesDTO[]",
+					"description": "房源列表"
+				},
+				{
+					"name": "batch_number",
+					"type": "String",
+					"description": "请求批次号"
+				},
+				{
+					"name": "features_type",
+					"type": "String",
+					"description": "house-房源类型，store-标准门店"
+				}
+			],
+			"name": "house_features",
+			"type": "SyncHouseFeaturesDTO",
+			"description": "房源上翻标"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "操作结果"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作返回值"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.features.sync",
+	"apiChineseName": "房源标准打标数据同步",
+	"description": "房源标准打标数据同步",
+	"id": 61830
+}

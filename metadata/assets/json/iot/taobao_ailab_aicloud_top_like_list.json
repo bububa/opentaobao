@@ -1,18 +1,10 @@
 {
-	"id": 33766,
-	"name": "taobao.ailab.aicloud.top.like.list",
-	"apiChineseName": "列出收藏列表",
-	"description": "列出收藏列表",
 	"requestParams": [
 		{
-			"name": "ext",
+			"name": "schema",
 			"type": "String",
-			"description": "扩展信息，用于存放APP类型等"
-		},
-		{
-			"name": "utd_id",
-			"type": "String",
-			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+			"description": "账户体系隔离",
+			"required": true
 		},
 		{
 			"name": "user_id",
@@ -21,10 +13,14 @@
 			"required": true
 		},
 		{
-			"name": "schema",
+			"name": "utd_id",
 			"type": "String",
-			"description": "账户体系隔离",
-			"required": true
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
 		},
 		{
 			"name": "param1",
@@ -44,67 +40,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
-					"name": "msg_info",
-					"type": "String",
-					"description": "msgInfo",
-					"required": true
-				},
-				{
-					"name": "models",
-					"type": "Like[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "String",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "album",
 							"type": "String",
-							"description": "album",
-							"required": true
+							"description": "album"
 						},
 						{
 							"name": "author",
 							"type": "String",
-							"description": "author",
-							"required": true
+							"description": "author"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "source",
 							"type": "String",
-							"description": "source",
-							"required": true
+							"description": "source"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Like[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.like.list",
+	"apiChineseName": "列出收藏列表",
+	"description": "列出收藏列表",
+	"id": 33766
 }

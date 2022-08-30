@@ -1,8 +1,4 @@
 {
-	"id": 44110,
-	"name": "alibaba.idle.consignment.order.get",
-	"apiChineseName": "闲鱼帮卖订单查询",
-	"description": "闲鱼帮卖服务商以闲鱼交易买家身份查询订单信息",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -13,15 +9,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "ConsignmentOrderTo",
-					"description": "帮卖订单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "gmt_create",
@@ -209,7 +198,11 @@
 							"description": "json格式服务费计算规则，单位为分，精确到元：最终成交金额*percent%，最高为max金额，最低为min金额。",
 							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "ConsignmentOrderTo",
+					"description": "帮卖订单详情",
+					"required": true
 				},
 				{
 					"name": "err_code",
@@ -229,7 +222,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.consignment.order.get",
+	"apiChineseName": "闲鱼帮卖订单查询",
+	"description": "闲鱼帮卖服务商以闲鱼交易买家身份查询订单信息",
+	"id": 44110
 }

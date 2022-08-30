@@ -1,8 +1,4 @@
 {
-	"id": 40889,
-	"name": "tmall.channel.trade.refundorder.gets",
-	"apiChineseName": "供应商查询退款单",
-	"description": "供应商分页查询退款单",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -37,88 +33,80 @@
 			"description": "查询第几页"
 		},
 		{
-			"name": "page_elements",
-			"type": "TopChannelRefundDTO []",
-			"description": "包含的元素",
 			"subParams": [
 				{
 					"name": "refund_id",
 					"type": "Number",
-					"description": "退款单号",
-					"required": true
-				},
-				{
-					"name": "down_account_nick",
-					"type": "String",
-					"description": "分销商昵称",
-					"required": true
+					"description": "退款单号"
 				},
 				{
 					"name": "refund_type_desc",
 					"type": "String",
-					"description": "服务类型",
-					"required": true
+					"description": "服务类型"
 				},
 				{
 					"name": "refund_status_desc",
 					"type": "String",
-					"description": "单据状态",
-					"required": true
+					"description": "单据状态"
 				},
 				{
 					"name": "main_channel_order_no",
 					"type": "String",
-					"description": "采购单号(渠道单)",
-					"required": true
+					"description": "采购单号(渠道单)"
 				},
 				{
 					"name": "purchase_order_pay_fee",
 					"type": "Number",
-					"description": "交易金额：分",
-					"required": true
+					"description": "交易金额：分"
 				},
 				{
 					"name": "refund_fee",
 					"type": "Number",
-					"description": "退款金额：分",
-					"required": true
+					"description": "退款金额：分"
 				},
 				{
 					"name": "refund_reason_desc",
 					"type": "String",
-					"description": "退款原因",
-					"required": true
+					"description": "退款原因"
 				},
 				{
 					"name": "refund_create_date",
 					"type": "Date",
-					"description": "退款单创建时间",
-					"required": true
+					"description": "退款单创建时间"
 				},
 				{
 					"name": "purchase_order_status",
 					"type": "String",
-					"description": "铺货状态",
-					"required": true
+					"description": "铺货状态"
+				},
+				{
+					"name": "down_account_nick",
+					"type": "String",
+					"description": "分销商昵称"
 				},
 				{
 					"name": "main_purchase_order_no",
 					"type": "Number",
-					"description": "销售主订单号（采购单）",
-					"required": true
+					"description": "销售主订单号（采购单）"
 				},
 				{
 					"name": "sub_purchase_order_no",
 					"type": "Number",
-					"description": "销售子订单号（采购单）",
-					"required": true
+					"description": "销售子订单号（采购单）"
 				}
-			]
+			],
+			"name": "page_elements",
+			"type": "TopChannelRefundDTO []",
+			"description": "包含的元素"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "所有元素个数"
 		}
-	]
+	],
+	"name": "tmall.channel.trade.refundorder.gets",
+	"apiChineseName": "供应商查询退款单",
+	"description": "供应商分页查询退款单",
+	"id": 40889
 }

@@ -44,7 +44,7 @@ type OpenContent struct {
 	SortNum int64 `json:"sort_num,omitempty" xml:"sort_num,omitempty"`
 	// 三方热度分1~5
 	HotScore int64 `json:"hot_score,omitempty" xml:"hot_score,omitempty"`
-	// 0-免费、1-单篇售卖，2-专辑售卖，3-商业化一期类型
+	// 商业化类型请先和平台小二确认再调用！ 0-免费、1-一号两端鉴权单篇售卖、2-一号两端鉴权专辑售卖、3-天猫精灵侧分销零售专辑售卖、4-天猫精灵超级会员售卖 当取4时s_super_vip_free必须为true否则为false
 	ChargeType int64 `json:"charge_type,omitempty" xml:"charge_type,omitempty"`
 	// 播放顺序 0 正序 1 倒序
 	PlayOrder int64 `json:"play_order,omitempty" xml:"play_order,omitempty"`
@@ -60,4 +60,6 @@ type OpenContent struct {
 	IsAlbumAudition bool `json:"is_album_audition,omitempty" xml:"is_album_audition,omitempty"`
 	// 内容分集是否支持试听,默认为false
 	IsAudition bool `json:"is_audition,omitempty" xml:"is_audition,omitempty"`
+	// 是否仅大会员内容
+	IsSuperVipFree bool `json:"is_super_vip_free,omitempty" xml:"is_super_vip_free,omitempty"`
 }

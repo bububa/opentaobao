@@ -1,14 +1,6 @@
 {
-	"id": 53585,
-	"name": "alitrip.btrip.corpop.apply.add",
-	"apiChineseName": "【商旅】isv添加审批单",
-	"description": "【商旅】isv添加审批单",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiApplyRq",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "thirdpart_apply_id",
@@ -43,10 +35,6 @@
 					"description": "部门名称"
 				},
 				{
-					"name": "itinerary_list",
-					"type": "OpenItineraryInfo[]",
-					"description": "行程列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "arr_city",
@@ -57,7 +45,7 @@
 						{
 							"name": "arr_city_code",
 							"type": "String",
-							"description": "到达城市编码"
+							"description": "必填，到达城市编码。传0时，不管控到达城市。注意：出发/到达地点只能都不限，或者都限制。不限城市情况，请注意酒店差标的传参，确保所有城市都有传入差标"
 						},
 						{
 							"name": "arr_date",
@@ -79,7 +67,7 @@
 						{
 							"name": "dep_city_code",
 							"type": "String",
-							"description": "出发城市编码"
+							"description": "必填，出发城市编码。传0时，不管控出发城市。注意：出发/到达地点只能都不限，或者都限制。不限城市情况，请注意酒店差标的传参，确保所有城市都有传入差标"
 						},
 						{
 							"name": "dep_date",
@@ -116,7 +104,7 @@
 						{
 							"name": "traffic_type",
 							"type": "Number",
-							"description": "交通方式：0飞机, 1,火车, 2汽车, 3其他",
+							"description": "交通方式：0飞机 1火车 2汽车 3其他 4用车 5不限 6仅飞机 7仅火车 8仅汽车，当酒店时，arr_city可能为空。如果行程既想订交通又想订酒店，传0/1/2， 如果行程只想定交通，传6/7/8 只想定酒店，传3。needTraffic，needHotel可以不传",
 							"required": true
 						},
 						{
@@ -129,8 +117,22 @@
 							"name": "third_part_invoice_id",
 							"type": "String",
 							"description": "第三方发票id，和商旅发票id二者选择其一即可"
+						},
+						{
+							"name": "need_hotel",
+							"type": "Boolean",
+							"description": "行程是否需要预定酒店，不传默认需要"
+						},
+						{
+							"name": "need_traffic",
+							"type": "Boolean",
+							"description": "行程是否需要预定交通工具，不传默认需要"
 						}
-					]
+					],
+					"name": "itinerary_list",
+					"type": "OpenItineraryInfo[]",
+					"description": "行程列表",
+					"required": true
 				},
 				{
 					"name": "status",
@@ -138,23 +140,21 @@
 					"description": "审批单状态，不传入默认为0：0审批中，1同意，2拒绝"
 				},
 				{
-					"name": "traveler_list",
-					"type": "OpenUserInfo[]",
-					"description": "出行人列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "第三方用户id",
-							"required": true
+							"description": "第三方用户id"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
 							"description": "用户名称"
 						}
-					]
+					],
+					"name": "traveler_list",
+					"type": "OpenUserInfo[]",
+					"description": "出行人列表"
 				},
 				{
 					"name": "trip_cause",
@@ -193,61 +193,269 @@
 					"name": "type",
 					"type": "Number",
 					"description": "1：代提交 2：本人提交 注意：当申请单为代提交时，申请单提交人自己无法为自己下单"
+				},
+				{
+					"name": "union_no",
+					"type": "String",
+					"description": "关联单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "用户名称，英文姓名请用“/”分隔，中间不能含有空格，顺序：姓/名（last-name/first-name）"
+						}
+					],
+					"name": "external_traveler_list",
+					"type": "OpenUserInfo[]",
+					"description": "外部出行人列表"
+				},
+				{
+					"name": "hotel_budget",
+					"type": "Number",
+					"description": "审批单酒店预算，单位分。注意：特殊授权人住店产生的杂费（用餐、房间内商品等）将在退房时扣款，由企业支付"
+				},
+				{
+					"name": "flight_budget",
+					"type": "Number",
+					"description": "审批单机票预算，单位分"
+				},
+				{
+					"name": "train_budget",
+					"type": "Number",
+					"description": "审批单火车票预算，单位分。注意：例如坐席同为”硬卧“，上/中/下铺存在价格差异的情况，预订时将按照其中最高价格，校验预算余额"
+				},
+				{
+					"name": "vehicle_budget",
+					"type": "Number",
+					"description": "审批单用车预算，单位分。注意：打车场景存在不可控因素，会超出原预估价格：1. 乘客线下修改目的地；2. 堵车等道路意外情况；3. 司机添加附加费，如过路费、高速费、等待费等"
+				},
+				{
+					"name": "budget",
+					"type": "Number",
+					"description": "审批单总预算，单位分"
+				},
+				{
+					"name": "budget_merge",
+					"type": "Number",
+					"description": "多个申请单预算合并。1：否，【union_no】相同的【申请单(apply id)】，每个的【预算】仅对本申请单生效。2：是，所有【union_no】相同的【申请单(apply id)】，其中全部【预算】合并求和，可以混用。"
+				},
+				{
+					"name": "limit_traveler",
+					"type": "Number",
+					"description": "0：不限制出行人，1：限申请单内的出行人。注意：不限出行人，实际出行人也不限制差标，而且传入的出行人信息也不会存储"
+				},
+				{
+					"name": "together_book_rule",
+					"type": "Number",
+					"description": "同时预订(机票\u0026火车票)规则。1：就高；2：就低。"
+				},
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "String",
+							"description": "合住公式。1-\"(A+B)*param%\",2-\"A*param%\",3-\"A+B*param%\",4-\"A+param元\",5-\"(A+B)/2+param元\""
+						},
+						{
+							"name": "param",
+							"type": "String",
+							"description": "请传入整数即可，当合住方式为1/2/3时接口会处理成x%"
+						}
+					],
+					"name": "hotel_share",
+					"type": "HotelShareInfo",
+					"description": "酒店合住规则"
+				},
+				{
+					"subParams": [
+						{
+							"name": "flight_cabins",
+							"type": "String",
+							"description": "国内机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱"
+						},
+						{
+							"name": "economy_discount",
+							"type": "Number",
+							"description": "经济舱折扣。1到10的整数"
+						},
+						{
+							"name": "business_discount",
+							"type": "Number",
+							"description": "商务舱折扣。1到10的整数"
+						},
+						{
+							"name": "first_discount",
+							"type": "Number",
+							"description": "头等舱折扣。1到10的整数"
+						},
+						{
+							"name": "train_seats",
+							"type": "String",
+							"description": "火车票坐席，多值逗号分隔。0：硬座，1：硬卧，2：软座，3：软卧，4：高级软卧，5：商务座，6：一等座，7：二等座，8：动卧"
+						},
+						{
+							"subParams": [
+								{
+									"name": "city_code",
+									"type": "String",
+									"description": "城市编码，传0代表其他全部城市"
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "城市名称"
+								},
+								{
+									"name": "fee",
+									"type": "Number",
+									"description": "酒店间夜金额，单位(分)，如需不限请传99999999。注意：差标只能管控到元，角、分会被抹掉，请避免传入角、分的值。"
+								}
+							],
+							"name": "hotel_citys",
+							"type": "HotelCityFee[]",
+							"description": "酒店城市费用列表"
+						},
+						{
+							"name": "reserve_type",
+							"type": "Number",
+							"description": "限制差标类型。0-不限差标，1-限制差标。注意：同一审批单的所有出行人只能都限制差标/都不限制差标，否则会调用失败"
+						},
+						{
+							"name": "international_flight_cabins",
+							"type": "String",
+							"description": "国际机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
+						}
+					],
+					"name": "external_traveler_standard",
+					"type": "ExternalUserStandard",
+					"description": "外部出行人差标"
+				},
+				{
+					"subParams": [
+						{
+							"name": "flight_cabins",
+							"type": "String",
+							"description": "国内机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱"
+						},
+						{
+							"name": "economy_discount",
+							"type": "Number",
+							"description": "经济舱折扣。1到10的整数"
+						},
+						{
+							"name": "business_discount",
+							"type": "Number",
+							"description": "商务舱折扣。1到10的整数"
+						},
+						{
+							"name": "first_discount",
+							"type": "Number",
+							"description": "头等舱折扣。1到10的整数"
+						},
+						{
+							"name": "train_seats",
+							"type": "String",
+							"description": "火车票坐席，多值逗号分隔。0：硬座，1：硬卧，2：软座，3：软卧，4：高级软卧，5：商务座，6：一等座，7：二等座，8：动卧"
+						},
+						{
+							"subParams": [
+								{
+									"name": "city_code",
+									"type": "String",
+									"description": "城市编码，传0代表其他全部城市"
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "城市名称"
+								},
+								{
+									"name": "fee",
+									"type": "Number",
+									"description": "酒店间夜金额，单位(分)，如需不限请传99999999。注意：差标只能管控到元，角、分会被抹掉，请避免传入角、分的值。"
+								}
+							],
+							"name": "hotel_citys",
+							"type": "HotelCityFee[]",
+							"description": "酒店城市费用列表"
+						},
+						{
+							"name": "reserve_type",
+							"type": "Number",
+							"description": "限制差标类型。0-不限差标，1-限制差标。注意：同一审批单的所有出行人只能都限制差标/都不限制差标，否则会调用失败"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "出行人id（第三方用户id）"
+						},
+						{
+							"name": "international_flight_cabins",
+							"type": "String",
+							"description": "国际机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
+						}
+					],
+					"name": "traveler_standard",
+					"type": "InternalUserStandard[]",
+					"description": "内部人员差标列表"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiApplyRq",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参数",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "OpenApiApplyRs",
-					"description": "结果对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "商旅申请单id",
-							"required": true
+							"description": "商旅申请单id"
 						},
 						{
 							"name": "thirdpart_apply_id",
 							"type": "String",
-							"description": "外部申请单id",
-							"required": true
+							"description": "外部申请单id"
 						},
 						{
 							"name": "thirdpart_business_id",
 							"type": "String",
-							"description": "第三方业务id",
-							"required": true
+							"description": "第三方业务id"
 						}
-					]
+					],
+					"name": "module",
+					"type": "OpenApiApplyRs",
+					"description": "结果对象"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参数"
 		}
-	]
+	],
+	"name": "alitrip.btrip.corpop.apply.add",
+	"apiChineseName": "【商旅】isv添加审批单",
+	"description": "【商旅】isv添加审批单",
+	"id": 53585
 }

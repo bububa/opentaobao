@@ -7,9 +7,9 @@ type CouponTemplateConditionConfig struct {
 	// 生效门店
 	ShopIds []string `json:"shop_ids,omitempty" xml:"shop_ids>string,omitempty"`
 	// 生效终端:  1.app 2.pos
-	Terminals []int64 `json:"terminals,omitempty" xml:"terminals>int64,omitempty"`
+	Terminals []string `json:"terminals,omitempty" xml:"terminals>string,omitempty"`
 	// 排除的商品规则 1:专柜品
-	ExcludeItemRules []int64 `json:"exclude_item_rules,omitempty" xml:"exclude_item_rules>int64,omitempty"`
+	ExcludeItemRules []string `json:"exclude_item_rules,omitempty" xml:"exclude_item_rules>string,omitempty"`
 	// 生效商家类目
 	MerchantCategories []string `json:"merchant_categories,omitempty" xml:"merchant_categories>string,omitempty"`
 	// 门槛金额

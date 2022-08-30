@@ -1,5 +1,5 @@
 {
-  "id": 10240,
   "name": "天猫精品库API",
-  "pkg": "tmallitem"
+  "pkg": "tmallitem",
+  "id": 10240
 }

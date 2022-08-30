@@ -1,15 +1,6 @@
 {
-	"id": 45140,
-	"name": "aliexpress.solution.batch.product.price.update",
-	"apiChineseName": "aliexpress.solution.batch.product.price.update",
-	"description": "batch product price update operation for oversea sellers",
 	"requestParams": [
 		{
-			"name": "mutiple_product_update_list",
-			"type": "SynchronizeProductRequestDto[]",
-			"description": "The product list, in which the price needs to be updated. Maximum length:20",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "product_id",
@@ -18,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "multiple_sku_update_list",
-					"type": "SynchronizeSkuRequestDto[]",
-					"description": "The sku list, in which the inventory needs to be updated within the same product id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "price",
@@ -40,12 +27,13 @@
 							"description": "sku code",
 							"required": true
 						}
-					]
+					],
+					"name": "multiple_sku_update_list",
+					"type": "SynchronizeSkuRequestDto[]",
+					"description": "The sku list, in which the inventory needs to be updated within the same product id",
+					"required": true
 				},
 				{
-					"name": "multi_country_price_configuration",
-					"type": "MultiCountryPriceConfigurationDto",
-					"description": "multi country price configuration",
 					"subParams": [
 						{
 							"name": "price_type",
@@ -53,9 +41,6 @@
 							"description": "Currently supporting only absolute. Please test carefully before uploading products."
 						},
 						{
-							"name": "country_price_list",
-							"type": "SingleCountryPriceDto[]",
-							"description": "Price list for different countries",
 							"subParams": [
 								{
 									"name": "ship_to_country",
@@ -63,9 +48,6 @@
 									"description": "Currently supporting RU US CA ES FR UK NL IL BR CL AU UA BY JP TH SG KR ID MY PH VN IT DE SA AE PL TR"
 								},
 								{
-									"name": "sku_price_by_country_list",
-									"type": "SingleSkuPriceByCountryDto[]",
-									"description": "Sku price list under the same ship_to_country",
 									"subParams": [
 										{
 											"name": "sku_code",
@@ -82,13 +64,27 @@
 											"type": "String",
 											"description": "Value of discount_price for each country"
 										}
-									]
+									],
+									"name": "sku_price_by_country_list",
+									"type": "SingleSkuPriceByCountryDto[]",
+									"description": "Sku price list under the same ship_to_country"
 								}
-							]
+							],
+							"name": "country_price_list",
+							"type": "SingleCountryPriceDto[]",
+							"description": "Price list for different countries"
 						}
-					]
+					],
+					"name": "multi_country_price_configuration",
+					"type": "MultiCountryPriceConfigurationDto",
+					"description": "multi country price configuration"
 				}
-			]
+			],
+			"name": "mutiple_product_update_list",
+			"type": "SynchronizeProductRequestDto[]",
+			"description": "The product list, in which the price needs to be updated. Maximum length:20",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -108,9 +104,6 @@
 			"description": "Indicates the update result is successful or not. Only all the products in mutiple_product_update_list have been updated successfully will make the success to be true, otherwise false."
 		},
 		{
-			"name": "update_failed_list",
-			"type": "SynchronizeProductResponseDto []",
-			"description": "update failed list",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -130,12 +123,12 @@
 					"description": "product oid",
 					"required": true
 				}
-			]
+			],
+			"name": "update_failed_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update failed list"
 		},
 		{
-			"name": "update_successful_list",
-			"type": "SynchronizeProductResponseDto []",
-			"description": "update successful list",
 			"subParams": [
 				{
 					"name": "product_id",
@@ -143,7 +136,14 @@
 					"description": "product id",
 					"required": true
 				}
-			]
+			],
+			"name": "update_successful_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update successful list"
 		}
-	]
+	],
+	"name": "aliexpress.solution.batch.product.price.update",
+	"apiChineseName": "aliexpress.solution.batch.product.price.update",
+	"description": "batch product price update operation for oversea sellers",
+	"id": 45140
 }

@@ -46,4 +46,6 @@ type AlibabaProductResponse struct {
 	CustomInfo *CustomInfo `json:"custom_info,omitempty" xml:"custom_info,omitempty"`
 	// 是否是智能编辑
 	IsSmartEdit bool `json:"is_smart_edit,omitempty" xml:"is_smart_edit,omitempty"`
+	// 是否是有效rts
+	Rts bool `json:"rts,omitempty" xml:"rts,omitempty"`
 }

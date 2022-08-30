@@ -1,8 +1,4 @@
 {
-	"id": 55119,
-	"name": "alibaba.alihealth.examination.report.diagnose.order.submit",
-	"apiChineseName": "体检报告人工解读订单",
-	"description": "体检报告人工解读订单信息推送给ISV，进行人工解读",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -57,9 +53,6 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "order_info",
-			"type": "OrderInfo",
-			"description": "三方订单信息",
 			"subParams": [
 				{
 					"name": "outer_order_id",
@@ -91,7 +84,14 @@
 					"description": "订单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "order_info",
+			"type": "OrderInfo",
+			"description": "三方订单信息"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.submit",
+	"apiChineseName": "体检报告人工解读订单",
+	"description": "体检报告人工解读订单信息推送给ISV，进行人工解读",
+	"id": 55119
 }

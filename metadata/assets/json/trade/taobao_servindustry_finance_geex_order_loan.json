@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"name": "price_unit",
+			"type": "String",
+			"description": "金额单位"
+		},
+		{
+			"name": "update_time",
+			"type": "Number",
+			"description": "更新时间"
+		},
+		{
+			"name": "loan_time",
+			"type": "Number",
+			"description": "放款时间"
+		},
+		{
+			"name": "alsc_order_id",
+			"type": "String",
+			"description": "本地订单号"
+		},
+		{
+			"name": "loan_price",
+			"type": "Number",
+			"description": "放款金额"
+		},
+		{
+			"name": "loan_status",
+			"type": "String",
+			"description": "放款状态"
+		},
+		{
+			"name": "loan_flow_id",
+			"type": "String",
+			"description": "放款流水"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误描述"
+						}
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否可重试"
+				}
+			],
+			"name": "result",
+			"type": "RetryResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.servindustry.finance.geex.order.loan",
+	"apiChineseName": "即科放款信息回调api",
+	"description": "即科放款信息api",
+	"id": 58923
+}

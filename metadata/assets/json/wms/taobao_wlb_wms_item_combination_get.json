@@ -1,8 +1,4 @@
 {
-	"id": 26724,
-	"name": "taobao.wlb.wms.item.combination.get",
-	"apiChineseName": "查询组合商品的组合关系",
-	"description": "查询组合商品的组合关系",
 	"requestParams": [
 		{
 			"name": "itemid",
@@ -13,57 +9,54 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回结果",
 			"subParams": [
 				{
 					"name": "wl_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "wl_error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "wl_error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "sub_item_list",
-					"type": "SubItemList[]",
-					"description": "子货品列表",
-					"required": true,
 					"subParams": [
 						{
-							"name": "sub_item",
-							"type": "SubItem",
-							"description": "子货品",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sc_item_id",
 									"type": "Number",
-									"description": "子货品ID",
-									"required": true
+									"description": "子货品ID"
 								},
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "子货品数量",
-									"required": true
+									"description": "子货品数量"
 								}
-							]
+							],
+							"name": "sub_item",
+							"type": "SubItem",
+							"description": "子货品"
 						}
-					]
+					],
+					"name": "sub_item_list",
+					"type": "SubItemList[]",
+					"description": "子货品列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.item.combination.get",
+	"apiChineseName": "查询组合商品的组合关系",
+	"description": "查询组合商品的组合关系",
+	"id": 26724
 }

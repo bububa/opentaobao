@@ -1,8 +1,4 @@
 {
-	"id": 25404,
-	"name": "taobao.xhotel.multiplerates.increment",
-	"apiChineseName": "复杂房价推送接口（批量增量）",
-	"description": "复杂房价批量增量更新，只会更新指定日期的信息\n完全涵盖了taobao.xhotel.rates.increment接口的功能",
 	"requestParams": [
 		{
 			"name": "rate_quota_map",
@@ -22,5 +18,9 @@
 			"type": "String",
 			"description": "批量更新的时候，如果部分更新失败，会展示部分失败的原因"
 		}
-	]
+	],
+	"name": "taobao.xhotel.multiplerates.increment",
+	"apiChineseName": "复杂房价推送接口（批量增量）",
+	"description": "复杂房价批量增量更新，只会更新指定日期的信息\n完全涵盖了taobao.xhotel.rates.increment接口的功能",
+	"id": 25404
 }

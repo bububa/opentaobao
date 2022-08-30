@@ -1,8 +1,4 @@
 {
-	"id": 44065,
-	"name": "taobao.alime.user.token.advance.get",
-	"apiChineseName": "获取用户免登录令牌v2",
-	"description": "根据第三账号信息获取用户的免登录令牌",
 	"requestParams": [
 		{
 			"name": "routing",
@@ -56,5 +52,9 @@
 			"type": "Number",
 			"description": "响应编码(由于\"code\"为top保留字，用code0以示区分，文档中均以code说明)，code == 0为成功，其它为失败"
 		}
-	]
+	],
+	"name": "taobao.alime.user.token.advance.get",
+	"apiChineseName": "获取用户免登录令牌v2",
+	"description": "根据第三账号信息获取用户的免登录令牌",
+	"id": 44065
 }

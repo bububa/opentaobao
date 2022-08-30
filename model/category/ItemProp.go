@@ -12,6 +12,10 @@ type ItemProp struct {
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 子属性的模板（卖家自行输入属性时需要用到）
 	ChildTemplate string `json:"child_template,omitempty" xml:"child_template,omitempty"`
+	// 度量衡相关信息
+	TaosirDo string `json:"taosir_do,omitempty" xml:"taosir_do,omitempty"`
+	// 材质属性信息
+	MaterialDo string `json:"material_do,omitempty" xml:"material_do,omitempty"`
 	// 属性 ID 例：品牌的PID=20000
 	Pid int64 `json:"pid,omitempty" xml:"pid,omitempty"`
 	// 上级属性ID
@@ -20,10 +24,6 @@ type ItemProp struct {
 	ParentVid int64 `json:"parent_vid,omitempty" xml:"parent_vid,omitempty"`
 	// 排列序号。取值范围:大于零的整排列序号。取值范围:大于零的整数
 	SortOrder int64 `json:"sort_order,omitempty" xml:"sort_order,omitempty"`
-	// 度量衡相关信息
-	TaosirDo *ItemTaosirDo `json:"taosir_do,omitempty" xml:"taosir_do,omitempty"`
-	// 材质属性信息
-	MaterialDo *ItemMaterialProp `json:"material_do,omitempty" xml:"material_do,omitempty"`
 	// 是否关键属性。可选值:true(是),false(否)
 	IsKeyProp bool `json:"is_key_prop,omitempty" xml:"is_key_prop,omitempty"`
 	// 是否销售属性。可选值:true(是),false(否)

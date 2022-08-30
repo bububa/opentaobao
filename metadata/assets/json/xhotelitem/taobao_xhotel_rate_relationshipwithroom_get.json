@@ -1,8 +1,4 @@
 {
-	"id": 23286,
-	"name": "taobao.xhotel.rate.relationshipwithroom.get",
-	"apiChineseName": "查询rpId",
-	"description": "某个卖家根据rpId查询所有的gid，可分页，不填分页信息则默认显示第一页。",
 	"requestParams": [
 		{
 			"name": "rp_id",
@@ -18,14 +14,18 @@
 	],
 	"responseParams": [
 		{
-			"name": "gids",
-			"type": "String []",
-			"description": "返回值"
-		},
-		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "根据条件所查询的所有结果的总数量"
+		},
+		{
+			"name": "gids",
+			"type": "String []",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rate.relationshipwithroom.get",
+	"apiChineseName": "查询rpId",
+	"description": "某个卖家根据rpId查询所有的gid，可分页，不填分页信息则默认显示第一页。",
+	"id": 23286
 }

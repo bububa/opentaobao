@@ -1,17 +1,8 @@
 {
-	"id": 25997,
-	"name": "taobao.qimen.returnorder.confirm",
-	"apiChineseName": "退货入库单确认接口",
-	"description": "taobao.qimen.returnorder.confirm",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "ReturnOrderConfirmRequest",
 			"subParams": [
 				{
-					"name": "returnOrder",
-					"type": "ReturnOrder",
-					"description": "退货单信息",
 					"subParams": [
 						{
 							"name": "returnOrderCode",
@@ -72,9 +63,6 @@
 							"description": "备注"
 						},
 						{
-							"name": "senderInfo",
-							"type": "SenderInfo",
-							"description": "发件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -146,14 +134,17 @@
 									"type": "String",
 									"description": "备注"
 								}
-							]
+							],
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息"
 						}
-					]
+					],
+					"name": "returnOrder",
+					"type": "ReturnOrder",
+					"description": "退货单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "remark",
@@ -224,9 +215,6 @@
 							"description": "生产批号"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "批次信息",
 							"subParams": [
 								{
 									"name": "remark",
@@ -263,7 +251,10 @@
 									"type": "Number",
 									"description": "实收数量(要求batchs节点下所有的实收数量之和等于orderline中的实收数量)"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次信息"
 						},
 						{
 							"name": "qrCode",
@@ -277,31 +268,34 @@
 							"required": true
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "sn列表",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn编码"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "ReturnOrderConfirmRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -321,7 +315,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.returnorder.confirm",
+	"apiChineseName": "退货入库单确认接口",
+	"description": "taobao.qimen.returnorder.confirm",
+	"id": 25997
 }

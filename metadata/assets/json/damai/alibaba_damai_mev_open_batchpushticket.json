@@ -1,14 +1,6 @@
 {
-	"id": 46050,
-	"name": "alibaba.damai.mev.open.batchpushticket",
-	"apiChineseName": "大麦换验平台-第三方对外开放-票单接口batchPushTicket",
-	"description": "批量推送票单",
 	"requestParams": [
 		{
-			"name": "third_ticket_set_open_param_list",
-			"type": "ThirdTicketPushOpenParam[]",
-			"description": "入参thirdTicketSetOpenParamList",
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "certificate_no",
@@ -129,41 +121,55 @@
 					"name": "medium_type",
 					"type": "Number",
 					"description": "票类型"
+				},
+				{
+					"name": "rfid",
+					"type": "String",
+					"description": "rfid值"
+				},
+				{
+					"name": "print_status",
+					"type": "Number",
+					"description": "纸质票票单换票状态:1=未换，2=已换，"
 				}
-			]
+			],
+			"name": "third_ticket_set_open_param_list",
+			"type": "ThirdTicketPushOpenParam[]",
+			"description": "入参thirdTicketSetOpenParamList",
+			"maxListSize": 100
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.batchpushticket",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票单接口batchPushTicket",
+	"description": "批量推送票单",
+	"id": 46050
 }

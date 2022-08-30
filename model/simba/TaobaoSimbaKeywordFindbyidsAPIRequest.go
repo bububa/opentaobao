@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaKeywordFindbyidsAPIRequest struct {
 	model.Params
 	// 关键词ids
-	_bidwordIds []int64
+	_bidwordIds []string
 }
 
 // NewTaobaoSimbaKeywordFindbyidsRequest 初始化TaobaoSimbaKeywordFindbyidsAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetApiParams() url.Values {
 
 // SetBidwordIds is BidwordIds Setter
 // 关键词ids
-func (r *TaobaoSimbaKeywordFindbyidsAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+func (r *TaobaoSimbaKeywordFindbyidsAPIRequest) SetBidwordIds(_bidwordIds []string) error {
 	r._bidwordIds = _bidwordIds
 	r.Set("bidword_ids", _bidwordIds)
 	return nil
 }
 
 // GetBidwordIds BidwordIds Getter
-func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetBidwordIds() []int64 {
+func (r TaobaoSimbaKeywordFindbyidsAPIRequest) GetBidwordIds() []string {
 	return r._bidwordIds
 }

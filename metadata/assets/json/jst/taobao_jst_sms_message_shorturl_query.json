@@ -1,8 +1,4 @@
 {
-	"id": 52716,
-	"name": "taobao.jst.sms.message.shorturl.query",
-	"apiChineseName": "聚石塔短链信息查询",
-	"description": "聚石塔短链信息查询",
 	"requestParams": [
 		{
 			"name": "short_name",
@@ -47,5 +43,9 @@
 			"type": "String",
 			"description": "查询短链信息失败"
 		}
-	]
+	],
+	"name": "taobao.jst.sms.message.shorturl.query",
+	"apiChineseName": "聚石塔短链信息查询",
+	"description": "聚石塔短链信息查询",
+	"id": 52716
 }

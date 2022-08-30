@@ -1,8 +1,4 @@
 {
-	"id": 30649,
-	"name": "alibaba.wdk.item.category.query",
-	"apiChineseName": "类目查询接口",
-	"description": "类目查询接口",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
@@ -51,7 +44,14 @@
 					"description": "result",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.category.query",
+	"apiChineseName": "类目查询接口",
+	"description": "类目查询接口",
+	"id": 30649
 }

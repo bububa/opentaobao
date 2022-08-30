@@ -1,50 +1,46 @@
 {
-	"id": 53954,
-	"name": "alibaba.einvoice.merchant.add",
-	"apiChineseName": "发票中台-同平台授权税号适用商户",
-	"description": "适用于以下场景：\n业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力",
 	"requestParams": [
 		{
 			"name": "tax_token",
 			"type": "String",
 			"description": "验证码，门店绑定已入驻税号接口返回的taxToken",
-			"required": true,
-			"maxLength": 512
+			"maxLength": 512,
+			"required": true
 		},
 		{
 			"name": "outer_id",
 			"type": "String",
 			"description": "业务方发起新增门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。",
-			"required": true,
-			"maxLength": 20
+			"maxLength": 20,
+			"required": true
 		},
 		{
 			"name": "merchant_user_id",
 			"type": "String",
 			"description": "业务平台门店ID",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "platform_code",
 			"type": "String",
 			"description": "业务平台code, 由阿里发票分配",
-			"required": true,
-			"maxLength": 8
+			"maxLength": 8,
+			"required": true
 		},
 		{
 			"name": "payee_register_no",
 			"type": "String",
 			"description": "税务登记号",
-			"required": true,
-			"maxLength": 20
+			"maxLength": 20,
+			"required": true
 		},
 		{
 			"name": "merchant_name",
 			"type": "String",
 			"description": "业务平台门店名称",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		},
 		{
 			"name": "device_ids",
@@ -59,5 +55,9 @@
 			"type": "String",
 			"description": "新增成功的业务平台门店ID"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.merchant.add",
+	"apiChineseName": "发票中台-同平台授权税号适用商户",
+	"description": "适用于以下场景：\n业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力",
+	"id": 53954
 }

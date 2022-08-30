@@ -1,8 +1,4 @@
 {
-	"id": 23285,
-	"name": "taobao.xhotel.rate.relationshipwithrp.get",
-	"apiChineseName": "根据gid查询卖家下所有的rpId",
-	"description": "根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据",
 	"requestParams": [
 		{
 			"name": "gid",
@@ -18,14 +14,18 @@
 	],
 	"responseParams": [
 		{
-			"name": "rp_ids",
-			"type": "String []",
-			"description": "所查询出的结果，是一个字符串数组"
-		},
-		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "根据条件所查询的所有结果的总数量"
+		},
+		{
+			"name": "rp_ids",
+			"type": "String []",
+			"description": "所查询出的结果，是一个字符串数组"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rate.relationshipwithrp.get",
+	"apiChineseName": "根据gid查询卖家下所有的rpId",
+	"description": "根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据",
+	"id": 23285
 }

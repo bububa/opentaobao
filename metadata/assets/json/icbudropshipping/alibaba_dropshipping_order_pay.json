@@ -1,14 +1,6 @@
 {
-	"id": 55331,
-	"name": "alibaba.dropshipping.order.pay",
-	"apiChineseName": "alibaba dropshipping 支付代扣",
-	"description": "alibaba dropshipping 支付代扣",
 	"requestParams": [
 		{
-			"name": "param_order_pay_request",
-			"type": "OrderPayRequest",
-			"description": "request model",
-			"required": true,
 			"subParams": [
 				{
 					"name": "accept_language",
@@ -52,46 +44,49 @@
 					"description": "Buyer's IP",
 					"required": true
 				}
-			]
+			],
+			"name": "param_order_pay_request",
+			"type": "OrderPayRequest",
+			"description": "request model",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "value",
-			"type": "CashierPayResponse",
-			"description": "response model",
 			"subParams": [
 				{
 					"name": "pay_url",
 					"type": "String",
-					"description": "Payment url",
-					"required": true
+					"description": "Payment url"
 				},
 				{
 					"name": "reason_code",
 					"type": "String",
-					"description": "Payment failed reason code",
-					"required": true
+					"description": "Payment failed reason code"
 				},
 				{
 					"name": "reason_message",
 					"type": "String",
-					"description": "Payment failed reason message",
-					"required": true
+					"description": "Payment failed reason message"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "UNPAY Unpaid order \u003cbr /\u003e PAYING The order is being paid and it needs to wait for about 1 minute,\u003cbr /\u003e PAY_SUCCESS Order payment is successful,\u003cbr /\u003e PAY_FAILED Order payment failed",
-					"required": true
+					"description": "UNPAY Unpaid order \u003cbr /\u003e PAYING The order is being paid and it needs to wait for about 1 minute,\u003cbr /\u003e PAY_SUCCESS Order payment is successful,\u003cbr /\u003e PAY_FAILED Order payment failed"
 				},
 				{
 					"name": "trade_id",
 					"type": "Number",
-					"description": "order id",
-					"required": true
+					"description": "order id"
 				}
-			]
+			],
+			"name": "value",
+			"type": "CashierPayResponse",
+			"description": "response model"
 		}
-	]
+	],
+	"name": "alibaba.dropshipping.order.pay",
+	"apiChineseName": "alibaba dropshipping 支付代扣",
+	"description": "alibaba dropshipping 支付代扣",
+	"id": 55331
 }

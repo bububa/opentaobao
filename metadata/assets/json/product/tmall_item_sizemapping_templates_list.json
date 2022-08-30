@@ -1,33 +1,30 @@
 {
-	"id": 24327,
-	"name": "tmall.item.sizemapping.templates.list",
-	"apiChineseName": "获取天猫商品尺码表模板列表",
-	"description": "获取所有尺码表模板列表。",
 	"responseParams": [
 		{
-			"name": "size_mapping_templates",
-			"type": "SizeMappingTemplate []",
-			"description": "尺码表模板列表",
 			"subParams": [
 				{
 					"name": "template_id",
 					"type": "Number",
-					"description": "尺码表模板ID",
-					"required": true
+					"description": "尺码表模板ID"
 				},
 				{
 					"name": "template_name",
 					"type": "String",
-					"description": "尺码表模板名称",
-					"required": true
+					"description": "尺码表模板名称"
 				},
 				{
 					"name": "template_content",
 					"type": "String",
-					"description": "尺码表模板内容，格式为\"尺码值:维度名称:数值,尺码值:维度名称:数值\"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。",
-					"required": true
+					"description": "尺码表模板内容，格式为\"尺码值:维度名称:数值,尺码值:维度名称:数值\"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。"
 				}
-			]
+			],
+			"name": "size_mapping_templates",
+			"type": "SizeMappingTemplate []",
+			"description": "尺码表模板列表"
 		}
-	]
+	],
+	"name": "tmall.item.sizemapping.templates.list",
+	"apiChineseName": "获取天猫商品尺码表模板列表",
+	"description": "获取所有尺码表模板列表。",
+	"id": 24327
 }

@@ -2,12 +2,12 @@ package axintrade
 
 // AxinFundCreateResDto 结构体
 type AxinFundCreateResDto struct {
-	// 资金单ID
-	FundId string `json:"fund_id,omitempty" xml:"fund_id,omitempty"`
-	// 阿信支付宝账号appID
-	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
 	// 支付宝返回的拼接串
 	AlipayBody string `json:"alipay_body,omitempty" xml:"alipay_body,omitempty"`
+	// 阿信支付宝账号appID
+	AppId string `json:"app_id,omitempty" xml:"app_id,omitempty"`
+	// 资金单ID
+	FundId string `json:"fund_id,omitempty" xml:"fund_id,omitempty"`
 	// 商户原始订单号，最大长度限制32位
 	MerchantOrderNo string `json:"merchant_order_no,omitempty" xml:"merchant_order_no,omitempty"`
 	// 商户订单号，由商家自定义

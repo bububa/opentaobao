@@ -1,38 +1,32 @@
 {
-	"id": 22255,
-	"name": "taobao.promotionmisc.mjs.activity.list.get",
-	"apiChineseName": "查询满就送活动列表",
-	"description": "查询满就送活动列表。注意，该接口的返回值中，只包含活动的主要信息，如activity_id，name，description，start_time，end_time，type，participate_range。优惠的详细信息，请通过taobao.promotionmisc.mjs.activity.get获取。",
 	"requestParams": [
 		{
 			"name": "activity_type",
 			"type": "Number",
 			"description": "活动类型： 1表示商品级别的活动；2表示店铺级别的活动。",
-			"required": true,
 			"maxLength": 1,
-			"maxValue": 2,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "页码。",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页记录数，最大支持50 。",
-			"required": true,
-			"minValue": 1
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "mjs_promotion_list",
-			"type": "MjsPromotion []",
-			"description": "只包含活动的主要信息，如activity_id，aame，description，start_time，end_time，type，participate_range。优惠的其他详细信息，请通过taobao.promotionmisc.mjs.activity.get获取。",
+			"name": "total_count",
+			"type": "Number",
+			"description": "记录总条数。"
+		},
+		{
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -69,12 +63,14 @@
 					"type": "Date",
 					"description": "活动结束时间。"
 				}
-			]
-		},
-		{
-			"name": "total_count",
-			"type": "Number",
-			"description": "记录总条数。"
+			],
+			"name": "mjs_promotion_list",
+			"type": "MjsPromotion []",
+			"description": "只包含活动的主要信息，如activity_id，aame，description，start_time，end_time，type，participate_range。优惠的其他详细信息，请通过taobao.promotionmisc.mjs.activity.get获取。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.mjs.activity.list.get",
+	"apiChineseName": "查询满就送活动列表",
+	"description": "查询满就送活动列表。注意，该接口的返回值中，只包含活动的主要信息，如activity_id，name，description，start_time，end_time，type，participate_range。优惠的详细信息，请通过taobao.promotionmisc.mjs.activity.get获取。",
+	"id": 22255
 }

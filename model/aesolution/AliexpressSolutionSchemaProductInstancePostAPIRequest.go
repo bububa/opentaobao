@@ -12,8 +12,10 @@ import (
 // Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.
 type AliexpressSolutionSchemaProductInstancePostAPIRequest struct {
 	model.Params
-	// Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
+	// Product instance data. The relative parameters description in schema json String are same as "aliexpress.solution.product.post" .Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
 	_productInstanceRequest string
+	// More information of the request.
+	_developerFeatures string
 }
 
 // NewAliexpressSolutionSchemaProductInstancePostRequest 初始化AliexpressSolutionSchemaProductInstancePostAPIRequest对象
@@ -38,7 +40,7 @@ func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetApiParams() ur
 }
 
 // SetProductInstanceRequest is ProductInstanceRequest Setter
-// Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
+// Product instance data. The relative parameters description in schema json String are same as "aliexpress.solution.product.post" .Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
 func (r *AliexpressSolutionSchemaProductInstancePostAPIRequest) SetProductInstanceRequest(_productInstanceRequest string) error {
 	r._productInstanceRequest = _productInstanceRequest
 	r.Set("product_instance_request", _productInstanceRequest)
@@ -48,4 +50,17 @@ func (r *AliexpressSolutionSchemaProductInstancePostAPIRequest) SetProductInstan
 // GetProductInstanceRequest ProductInstanceRequest Getter
 func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetProductInstanceRequest() string {
 	return r._productInstanceRequest
+}
+
+// SetDeveloperFeatures is DeveloperFeatures Setter
+// More information of the request.
+func (r *AliexpressSolutionSchemaProductInstancePostAPIRequest) SetDeveloperFeatures(_developerFeatures string) error {
+	r._developerFeatures = _developerFeatures
+	r.Set("developer_features", _developerFeatures)
+	return nil
+}
+
+// GetDeveloperFeatures DeveloperFeatures Getter
+func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetDeveloperFeatures() string {
+	return r._developerFeatures
 }

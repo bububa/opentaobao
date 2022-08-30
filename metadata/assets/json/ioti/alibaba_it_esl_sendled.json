@@ -1,8 +1,4 @@
 {
-	"id": 43536,
-	"name": "alibaba.it.esl.sendled",
-	"apiChineseName": "厂测LED控制",
-	"description": "针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试",
 	"requestParams": [
 		{
 			"name": "mac_ap",
@@ -21,5 +17,9 @@
 			"type": "String",
 			"description": "Can not find Corresponding AP MAC with ESL"
 		}
-	]
+	],
+	"name": "alibaba.it.esl.sendled",
+	"apiChineseName": "厂测LED控制",
+	"description": "针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试",
+	"id": 43536
 }

@@ -1,19 +1,11 @@
 {
-	"id": 52738,
-	"name": "alibaba.alicom.wtt.opentrade.createorder",
-	"apiChineseName": "充值送活动下单接口",
-	"description": "提供给话费宝创建淘宝订单",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "OpentradCreateOrderRequestDTO",
-			"description": "入参请求说明",
 			"subParams": [
 				{
 					"name": "activity_id",
 					"type": "Number",
-					"description": "活动ID",
-					"required": true
+					"description": "活动ID"
 				},
 				{
 					"name": "transfer_id",
@@ -63,8 +55,7 @@
 				{
 					"name": "gift_id",
 					"type": "Number",
-					"description": "礼包ID",
-					"required": true
+					"description": "礼包ID"
 				},
 				{
 					"name": "product_name",
@@ -82,78 +73,75 @@
 					"description": "产品ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "OpentradCreateOrderRequestDTO",
+			"description": "入参请求说明"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "data",
-					"type": "CreateOrderResponseDto",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tmall_order_id",
 							"type": "String",
-							"description": "天猫订单号",
-							"required": true
+							"description": "天猫订单号"
 						},
 						{
 							"name": "transfer_id",
 							"type": "String",
-							"description": "交易请求流水号",
-							"required": true
+							"description": "交易请求流水号"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "金额(单位:分)",
-							"required": true
+							"description": "金额(单位:分)"
 						},
 						{
 							"name": "pay_url",
 							"type": "String",
-							"description": "支付跳转地址",
-							"required": true
+							"description": "支付跳转地址"
 						},
 						{
 							"name": "sign_str",
 							"type": "String",
-							"description": "加密串",
-							"required": true
+							"description": "加密串"
 						},
 						{
 							"name": "alipay_trade_id",
 							"type": "String",
-							"description": "支付宝支付订单号",
-							"required": true
+							"description": "支付宝支付订单号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CreateOrderResponseDto",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alicom.wtt.opentrade.createorder",
+	"apiChineseName": "充值送活动下单接口",
+	"description": "提供给话费宝创建淘宝订单",
+	"id": 52738
 }

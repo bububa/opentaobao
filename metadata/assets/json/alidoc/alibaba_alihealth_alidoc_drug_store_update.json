@@ -1,14 +1,6 @@
 {
-	"id": 44809,
-	"name": "alibaba.alihealth.alidoc.drug.store.update",
-	"apiChineseName": "更新药店",
-	"description": "药店信息更新接口",
 	"requestParams": [
 		{
-			"name": "drug_store_update_top_request",
-			"type": "DrugStoreUpdateTopRequest",
-			"description": "更新对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "drug_store_code",
@@ -33,6 +25,7 @@
 				},
 				{
 					"name": "medicare_label",
+					"type": "byte",
 					"description": "1-支持医保，0-不支持医保"
 				},
 				{
@@ -42,6 +35,7 @@
 				},
 				{
 					"name": "status",
+					"type": "byte",
 					"description": "状态，1-启动，0-封存"
 				},
 				{
@@ -49,7 +43,11 @@
 					"type": "String",
 					"description": "经度"
 				}
-			]
+			],
+			"name": "drug_store_update_top_request",
+			"type": "DrugStoreUpdateTopRequest",
+			"description": "更新对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -68,5 +66,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.alidoc.drug.store.update",
+	"apiChineseName": "更新药店",
+	"description": "药店信息更新接口",
+	"id": 44809
 }

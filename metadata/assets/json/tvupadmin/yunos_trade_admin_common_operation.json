@@ -1,8 +1,4 @@
 {
-	"id": 30697,
-	"name": "yunos.trade.admin.common.operation",
-	"apiChineseName": "交易迎客松通用服务接口",
-	"description": "迎客松交易相关通用接口",
 	"requestParams": [
 		{
 			"name": "parameter",
@@ -24,17 +20,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "String",
-					"description": "实际内容",
-					"required": true
+					"description": "实际内容"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "yunos.trade.admin.common.operation",
+	"apiChineseName": "交易迎客松通用服务接口",
+	"description": "迎客松交易相关通用接口",
+	"id": 30697
 }

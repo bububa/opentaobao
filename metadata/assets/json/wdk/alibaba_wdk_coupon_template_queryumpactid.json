@@ -1,15 +1,11 @@
 {
-	"id": 53873,
-	"name": "alibaba.wdk.coupon.template.queryumpactid",
-	"apiChineseName": "通过券模板查询券活动id接口",
-	"description": "当前大润发商家根据券模板创建券id，但订单回流的核销是根据券活动id回流的，大润发侧无法建立券模板和券活动的关联关系，导致大润发计算核销率比较困难，营销域增加通过券模板查询券活动id接口",
 	"requestParams": [
 		{
 			"name": "source_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "券模版id列表",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "wdk_coupon_type",
@@ -20,49 +16,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "CouponRelatedResponse[]",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ump_activity_id",
 							"type": "Number",
-							"description": "活动id",
-							"required": true
+							"description": "活动id"
 						},
 						{
 							"name": "source_id",
 							"type": "Number",
-							"description": "券模版id",
-							"required": true
+							"description": "券模版id"
 						}
-					]
+					],
+					"name": "models",
+					"type": "CouponRelatedResponse[]",
+					"description": "数据"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true为成功",
-					"required": true
+					"description": "true为成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.template.queryumpactid",
+	"apiChineseName": "通过券模板查询券活动id接口",
+	"description": "当前大润发商家根据券模板创建券id，但订单回流的核销是根据券活动id回流的，大润发侧无法建立券模板和券活动的关联关系，导致大润发计算核销率比较困难，营销域增加通过券模板查询券活动id接口",
+	"id": 53873
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42040,
-	"name": "taobao.lark.iot.order.getgoodslist",
-	"apiChineseName": "iot渠道获取卖品信息",
-	"description": "iot无人超市服务商通过接口获取影院的可售卖品数据",
 	"requestParams": [
 		{
 			"name": "channel_code",
@@ -19,111 +15,99 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "BizSingleResult",
-			"description": "卖品信息列表",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "ThirdGoodsListRsp",
-					"description": "卖品列表数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "max_buy_count",
 							"type": "Number",
-							"description": "最大数量",
-							"required": true
+							"description": "最大数量"
 						},
 						{
 							"name": "cinema_link_id",
 							"type": "String",
-							"description": "影院内码",
-							"required": true
+							"description": "影院内码"
 						},
 						{
-							"name": "goods_list",
-							"type": "ThirdGoodsRsp[]",
-							"description": "卖品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "goods_code",
 									"type": "String",
-									"description": "卖品编码",
-									"required": true
+									"description": "卖品编码"
 								},
 								{
 									"name": "goods_name",
 									"type": "String",
-									"description": "卖品名称",
-									"required": true
+									"description": "卖品名称"
 								},
 								{
 									"name": "package_flag",
 									"type": "String",
-									"description": "套餐标识",
-									"required": true
+									"description": "套餐标识"
 								},
 								{
 									"name": "standard_price",
 									"type": "String",
-									"description": "标准价",
-									"required": true
+									"description": "标准价"
 								},
 								{
 									"name": "settle_price",
 									"type": "String",
-									"description": "结算价",
-									"required": true
+									"description": "结算价"
 								},
 								{
 									"name": "desc",
 									"type": "String",
-									"description": "描述",
-									"required": true
+									"description": "描述"
 								},
 								{
 									"name": "goods_key",
 									"type": "String",
-									"description": "唯一键",
-									"required": true
+									"description": "唯一键"
 								},
 								{
 									"name": "member_flag",
 									"type": "String",
-									"description": "会员标识",
-									"required": true
+									"description": "会员标识"
 								},
 								{
 									"name": "goods_pic_url",
 									"type": "String",
-									"description": "卖品url",
-									"required": true
+									"description": "卖品url"
 								}
-							]
+							],
+							"name": "goods_list",
+							"type": "ThirdGoodsRsp[]",
+							"description": "卖品列表"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ThirdGoodsListRsp",
+					"description": "卖品列表数据"
 				},
 				{
 					"name": "biz_code",
 					"type": "String",
-					"description": "业务码",
-					"required": true
+					"description": "业务码"
 				},
 				{
 					"name": "biz_msg",
 					"type": "String",
-					"description": "业务结果",
-					"required": true
+					"description": "业务结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "订单结果",
-					"required": true
+					"description": "订单结果"
 				}
-			]
+			],
+			"name": "data",
+			"type": "BizSingleResult",
+			"description": "卖品信息列表"
 		}
-	]
+	],
+	"name": "taobao.lark.iot.order.getgoodslist",
+	"apiChineseName": "iot渠道获取卖品信息",
+	"description": "iot无人超市服务商通过接口获取影院的可售卖品数据",
+	"id": 42040
 }

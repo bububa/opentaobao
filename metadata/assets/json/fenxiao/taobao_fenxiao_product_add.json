@@ -1,28 +1,10 @@
 {
-	"id": 325,
-	"name": "taobao.fenxiao.product.add",
-	"apiChineseName": "添加产品",
-	"description": "添加分销平台产品数据。业务逻辑与分销系统前台页面一致。\u003cbr/\u003e\u003cbr/\u003e    * 产品图片默认为空\u003cbr/\u003e    * 产品发布后默认为下架状态",
 	"requestParams": [
 		{
-			"name": "postage_type",
-			"type": "String",
-			"description": "运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）,默认seller。"
-		},
-		{
-			"name": "have_invoice",
-			"type": "String",
-			"description": "是否有发票，可选值：false（否）、true（是），默认false。"
-		},
-		{
-			"name": "have_quarantee",
-			"type": "String",
-			"description": "是否有保修，可选值：false（否）、true（是），默认false。"
-		},
-		{
-			"name": "trade_type",
-			"type": "String",
-			"description": "分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）、ALL（代销和经销都做）"
+			"name": "category_id",
+			"type": "Number",
+			"description": "所属类目id，参考Taobao.itemcats.get，不支持成人等类目，输入成人类目id保存提示类目属性错误。",
+			"required": true
 		},
 		{
 			"name": "name",
@@ -43,9 +25,9 @@
 			"required": true
 		},
 		{
-			"name": "cost_price",
+			"name": "standard_retail_price",
 			"type": "String",
-			"description": "代销采购价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
+			"description": "零售基准价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
 		},
 		{
 			"name": "retail_price_low",
@@ -60,10 +42,14 @@
 			"required": true
 		},
 		{
-			"name": "category_id",
-			"type": "Number",
-			"description": "所属类目id，参考Taobao.itemcats.get，不支持成人等类目，输入成人类目id保存提示类目属性错误。",
-			"required": true
+			"name": "cost_price",
+			"type": "String",
+			"description": "代销采购价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
+		},
+		{
+			"name": "dealer_cost_price",
+			"type": "String",
+			"description": "经销采购价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
 		},
 		{
 			"name": "outer_id",
@@ -95,6 +81,11 @@
 			"required": true
 		},
 		{
+			"name": "postage_type",
+			"type": "String",
+			"description": "运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）,默认seller。"
+		},
+		{
 			"name": "postage_id",
 			"type": "Number",
 			"description": "运费模板ID，参考taobao.postages.get。"
@@ -115,9 +106,24 @@
 			"description": "ems费用，单位：元。例：“10.56”。 大小为0.00元到999999元之间。"
 		},
 		{
+			"name": "have_invoice",
+			"type": "String",
+			"description": "是否有发票，可选值：false（否）、true（是），默认false。"
+		},
+		{
+			"name": "have_quarantee",
+			"type": "String",
+			"description": "是否有保修，可选值：false（否）、true（是），默认false。"
+		},
+		{
 			"name": "discount_id",
 			"type": "Number",
 			"description": "折扣ID"
+		},
+		{
+			"name": "trade_type",
+			"type": "String",
+			"description": "分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）、ALL（代销和经销都做）"
 		},
 		{
 			"name": "is_authz",
@@ -175,11 +181,6 @@
 			"description": "sku的属性。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
 		},
 		{
-			"name": "dealer_cost_price",
-			"type": "String",
-			"description": "经销采购价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
-		},
-		{
 			"name": "sku_dealer_cost_prices",
 			"type": "String",
 			"description": "sku的经销采购价。如果多个，用逗号分隔，并与其他sku信息保持相同顺序。其中每个值的单位：元。例：“10.56,12.3”。必须在0.01元到10000000元之间。"
@@ -188,11 +189,6 @@
 			"name": "item_id",
 			"type": "Number",
 			"description": "导入的商品ID"
-		},
-		{
-			"name": "standard_retail_price",
-			"type": "String",
-			"description": "零售基准价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
 		},
 		{
 			"name": "spu_id",
@@ -211,5 +207,9 @@
 			"type": "Date",
 			"description": "产品创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.add",
+	"apiChineseName": "添加产品",
+	"description": "添加分销平台产品数据。业务逻辑与分销系统前台页面一致。\u003cbr/\u003e\u003cbr/\u003e    * 产品图片默认为空\u003cbr/\u003e    * 产品发布后默认为下架状态",
+	"id": 325
 }

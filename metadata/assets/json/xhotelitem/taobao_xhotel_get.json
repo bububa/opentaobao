@@ -1,8 +1,4 @@
 {
-	"id": 22663,
-	"name": "taobao.xhotel.get",
-	"apiChineseName": "酒店查询接口",
-	"description": "酒店查询接口",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -29,9 +25,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "xhotel",
-			"type": "FirstResult",
-			"description": "查询得到的hotel",
 			"subParams": [
 				{
 					"name": "hid",
@@ -64,10 +57,6 @@
 					"required": true
 				},
 				{
-					"name": "s_hotel",
-					"type": "Shotel",
-					"description": "淘宝标准酒店信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "shid",
@@ -285,7 +274,11 @@
 							"description": "0：酒店 1：客栈",
 							"required": true
 						}
-					]
+					],
+					"name": "s_hotel",
+					"type": "Shotel",
+					"description": "淘宝标准酒店信息",
+					"required": true
 				},
 				{
 					"name": "match_status",
@@ -479,7 +472,14 @@
 					"description": "离线数据,该酒店热卖1,非热卖0,未知-1",
 					"required": true
 				}
-			]
+			],
+			"name": "xhotel",
+			"type": "FirstResult",
+			"description": "查询得到的hotel"
 		}
-	]
+	],
+	"name": "taobao.xhotel.get",
+	"apiChineseName": "酒店查询接口",
+	"description": "酒店查询接口",
+	"id": 22663
 }

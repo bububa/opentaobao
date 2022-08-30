@@ -1,8 +1,4 @@
 {
-	"id": 21626,
-	"name": "taobao.fenxiao.productcat.update",
-	"apiChineseName": "修改产品线",
-	"description": "修改产品线",
 	"requestParams": [
 		{
 			"name": "product_line_id",
@@ -19,30 +15,22 @@
 		{
 			"name": "retail_low_percent",
 			"type": "Number",
-			"description": "最低零售价比例，注意：100.00%，则输入为10000",
-			"maxValue": 99999,
-			"minValue": 100
+			"description": "最低零售价比例，注意：100.00%，则输入为10000"
 		},
 		{
 			"name": "retail_high_percent",
 			"type": "Number",
-			"description": "最高零售价比例，注意：100.00%，则输入为10000",
-			"maxValue": 99999,
-			"minValue": 100
+			"description": "最高零售价比例，注意：100.00%，则输入为10000"
 		},
 		{
 			"name": "agent_cost_percent",
 			"type": "Number",
-			"description": "代销默认采购价比例，注意：100.00%，则输入为10000",
-			"maxValue": 99999,
-			"minValue": 100
+			"description": "代销默认采购价比例，注意：100.00%，则输入为10000"
 		},
 		{
 			"name": "dealer_cost_percent",
 			"type": "Number",
-			"description": "经销默认采购价比例，注意：100.00%，则输入为10000",
-			"maxValue": 99999,
-			"minValue": 100
+			"description": "经销默认采购价比例，注意：100.00%，则输入为10000"
 		}
 	],
 	"responseParams": [
@@ -51,5 +39,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.productcat.update",
+	"apiChineseName": "修改产品线",
+	"description": "修改产品线",
+	"id": 21626
 }

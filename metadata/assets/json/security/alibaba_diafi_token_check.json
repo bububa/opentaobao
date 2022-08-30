@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"name": "app",
+			"type": "String",
+			"description": "对应配置"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "用户参数"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息"
+				}
+			],
+			"name": "result",
+			"type": "DiAfiResult",
+			"description": "结果集"
+		}
+	],
+	"name": "alibaba.diafi.token.check",
+	"apiChineseName": "天朗token校验API",
+	"description": "天朗token校验",
+	"id": 61781
+}

@@ -16,10 +16,10 @@ import (
 // 商品图片有数量和大小上的限制，根据卖家享有的服务（如：卖家订购了多图服务等），商品图片数量限制不同。
 type TaobaoItemImgUploadAPIRequest struct {
 	model.Params
-	// 商品图片id(如果是更新图片，则需要传该参数)
-	_id int64
 	// 商品数字ID，该参数必须
 	_numIid int64
+	// 商品图片id(如果是更新图片，则需要传该参数)
+	_id int64
 	// 图片序号
 	_position int64
 	// 商品图片内容类型:JPG;最大:3M 。支持的文件类型：jpg,jpeg,png
@@ -51,19 +51,6 @@ func (r TaobaoItemImgUploadAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetId is Id Setter
-// 商品图片id(如果是更新图片，则需要传该参数)
-func (r *TaobaoItemImgUploadAPIRequest) SetId(_id int64) error {
-	r._id = _id
-	r.Set("id", _id)
-	return nil
-}
-
-// GetId Id Getter
-func (r TaobaoItemImgUploadAPIRequest) GetId() int64 {
-	return r._id
-}
-
 // SetNumIid is NumIid Setter
 // 商品数字ID，该参数必须
 func (r *TaobaoItemImgUploadAPIRequest) SetNumIid(_numIid int64) error {
@@ -75,6 +62,19 @@ func (r *TaobaoItemImgUploadAPIRequest) SetNumIid(_numIid int64) error {
 // GetNumIid NumIid Getter
 func (r TaobaoItemImgUploadAPIRequest) GetNumIid() int64 {
 	return r._numIid
+}
+
+// SetId is Id Setter
+// 商品图片id(如果是更新图片，则需要传该参数)
+func (r *TaobaoItemImgUploadAPIRequest) SetId(_id int64) error {
+	r._id = _id
+	r.Set("id", _id)
+	return nil
+}
+
+// GetId Id Getter
+func (r TaobaoItemImgUploadAPIRequest) GetId() int64 {
+	return r._id
 }
 
 // SetPosition is Position Setter

@@ -1,119 +1,105 @@
 {
-	"id": 42642,
-	"name": "wdk.wms.pick.medicine.query",
-	"apiChineseName": "查询拣货单中的药品信息",
-	"description": "联营商药机查询拣货单中的药品信息",
 	"requestParams": [
-		{
-			"name": "shop_id",
-			"type": "Number",
-			"description": "shopId",
-			"required": true
-		},
 		{
 			"name": "uuid",
 			"type": "String",
 			"description": "uuid",
 			"required": true
+		},
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "shopId",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
-					"name": "medicine_items",
-					"type": "MedicineItemDo[]",
-					"description": "拣货单维度药品信息list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "count",
 							"type": "Number",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "sku_title",
 							"type": "String",
-							"description": "sku名称",
-							"required": true
+							"description": "sku名称"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "sku编码",
-							"required": true
+							"description": "sku编码"
 						}
-					]
+					],
+					"name": "medicine_items",
+					"type": "MedicineItemDo[]",
+					"description": "拣货单维度药品信息list"
 				},
 				{
-					"name": "source_order_medicine_d_t_o_s",
-					"type": "SourceOrderMedicineDto[]",
-					"description": "履约单维度药品明细",
-					"required": true,
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
 					"subParams": [
 						{
-							"name": "medicine_item_d_o_s",
-							"type": "MedicineItemDo[]",
-							"description": "药品明细list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								},
 								{
 									"name": "sku_title",
 									"type": "String",
-									"description": "sku名称",
-									"required": true
+									"description": "sku名称"
 								},
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "sku编码",
-									"required": true
+									"description": "sku编码"
 								}
-							]
+							],
+							"name": "medicine_item_d_o_s",
+							"type": "MedicineItemDo[]",
+							"description": "药品明细list"
 						},
 						{
 							"name": "source_order_code",
 							"type": "String",
-							"description": "盒马履约单号",
-							"required": true
+							"description": "盒马履约单号"
 						},
 						{
 							"name": "original_order_id",
 							"type": "String",
-							"description": "外部单号(比如饿了么)",
-							"required": true
+							"description": "外部单号(比如饿了么)"
 						},
 						{
 							"name": "out_main_order_id",
 							"type": "String",
-							"description": "盒马app订单号",
-							"required": true
+							"description": "盒马app订单号"
 						}
-					]
+					],
+					"name": "source_order_medicine_d_t_o_s",
+					"type": "SourceOrderMedicineDto[]",
+					"description": "履约单维度药品明细"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "wdk.wms.pick.medicine.query",
+	"apiChineseName": "查询拣货单中的药品信息",
+	"description": "联营商药机查询拣货单中的药品信息",
+	"id": 42642
 }

@@ -1,13 +1,6 @@
 {
-	"id": 37858,
-	"name": "taobao.bus.agent.returnticket.confirm",
-	"apiChineseName": "商家回调退票",
-	"description": "商家通过TOP接口调用来回传退票状态",
 	"requestParams": [
 		{
-			"name": "param_agent_confirm_return_r_q",
-			"type": "AgentConfirmReturnRq",
-			"description": "退票入参",
 			"subParams": [
 				{
 					"name": "agent_order_id",
@@ -57,7 +50,10 @@
 					"type": "Date",
 					"description": "退票成功时间点"
 				}
-			]
+			],
+			"name": "param_agent_confirm_return_r_q",
+			"type": "AgentConfirmReturnRq",
+			"description": "退票入参"
 		}
 	],
 	"responseParams": [
@@ -76,5 +72,9 @@
 			"type": "Boolean",
 			"description": "是否确认成功"
 		}
-	]
+	],
+	"name": "taobao.bus.agent.returnticket.confirm",
+	"apiChineseName": "商家回调退票",
+	"description": "商家通过TOP接口调用来回传退票状态",
+	"id": 37858
 }

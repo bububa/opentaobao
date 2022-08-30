@@ -1,9 +1,10 @@
 {
-	"id": 21680,
-	"name": "taobao.simba.adgroup.onlineitemsvon.get",
-	"apiChineseName": "获取用户上架在线销售的全部宝贝",
-	"description": "获取用户上架在线销售的全部宝贝",
 	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "推广单元类型 101001005代表标准推广，101001014代表销量明星推广"
+		},
 		{
 			"name": "nick",
 			"type": "String",
@@ -22,116 +23,99 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "页尺寸，最大200",
-			"maxValue": 200
+			"description": "页尺寸，最大200"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "页码，从1开始,最大50。最大只能获取1W个宝贝",
-			"maxValue": 50
-		},
-		{
-			"name": "product_id",
-			"type": "Number",
-			"description": "推广单元类型 101001005代表标准推广，101001014代表销量明星推广"
+			"description": "页码，从1开始,最大50。最大只能获取1W个宝贝"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "page_item",
-			"type": "SubwayItemPartition",
-			"description": "带分页的淘宝商品",
 			"subParams": [
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页数据大小",
-					"required": true
+					"description": "每页数据大小"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "返回第几页的数据从1开始",
-					"required": true
+					"description": "返回第几页的数据从1开始"
 				},
 				{
 					"name": "total_item",
 					"type": "Number",
-					"description": "所查询的数据总数，只有当返回第一页数据时有值，当要求返回的数据非第一页时，此返回值无效",
-					"required": true
+					"description": "所查询的数据总数，只有当返回第一页数据时有值，当要求返回的数据非第一页时，此返回值无效"
 				},
 				{
-					"name": "order_field",
-					"type": "String",
-					"description": "排序字段",
-					"required": true
-				},
-				{
-					"name": "order_by",
-					"type": "Boolean",
-					"description": "排序，\u003cbr/\u003eTrue:升级False:降序",
-					"required": true
-				},
-				{
-					"name": "item_list",
-					"type": "SubwayItem[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品信息在外部系统（淘宝主站）的标题"
+						},
 						{
 							"name": "num_id",
 							"type": "Number",
-							"description": "商品信息在外部系统(淘宝主站)的数字id",
-							"required": true
+							"description": "商品信息在外部系统(淘宝主站)的数字id"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "商品信息在外部系统（淘宝主站）的价格",
-							"required": true
-						},
-						{
-							"name": "title",
-							"type": "String",
-							"description": "商品信息在外部系统（淘宝主站）的标题",
-							"required": true
-						},
-						{
-							"name": "extra_attributes",
-							"type": "ExtraAttributes",
-							"description": "扩展属性对象",
-							"required": true,
-							"subParams": [
-								{
-									"name": "publish_time",
-									"type": "Date",
-									"description": "商品在淘宝的发布时间",
-									"required": true
-								},
-								{
-									"name": "quantity",
-									"type": "Number",
-									"description": "库存数量",
-									"required": true
-								},
-								{
-									"name": "sales_count",
-									"type": "Number",
-									"description": "商品的累积销量",
-									"required": true
-								}
-							]
+							"description": "商品信息在外部系统（淘宝主站）的价格"
 						},
 						{
 							"name": "img_url",
 							"type": "String",
-							"description": "imgUrl",
-							"required": true
+							"description": "imgUrl"
+						},
+						{
+							"subParams": [
+								{
+									"name": "publish_time",
+									"type": "Date",
+									"description": "商品在淘宝的发布时间"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存数量"
+								},
+								{
+									"name": "sales_count",
+									"type": "Number",
+									"description": "商品的累积销量"
+								}
+							],
+							"name": "extra_attributes",
+							"type": "ExtraAttributes",
+							"description": "扩展属性对象"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "SubwayItem[]",
+					"description": "商品列表"
+				},
+				{
+					"name": "order_field",
+					"type": "String",
+					"description": "排序字段"
+				},
+				{
+					"name": "order_by",
+					"type": "Boolean",
+					"description": "排序，\u003cbr/\u003eTrue:升级False:降序"
 				}
-			]
+			],
+			"name": "page_item",
+			"type": "SubwayItemPartition",
+			"description": "带分页的淘宝商品"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroup.onlineitemsvon.get",
+	"apiChineseName": "获取用户上架在线销售的全部宝贝",
+	"description": "获取用户上架在线销售的全部宝贝",
+	"id": 21680
 }

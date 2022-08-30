@@ -1,8 +1,4 @@
 {
-	"id": 35819,
-	"name": "taobao.taotv.carousel.playlist.get",
-	"apiChineseName": "根据频道ID获取频道下节目单以及当前播放",
-	"description": "根据频道ID获取频道下节目单以及当前播放，包括所有视频源的视频",
 	"requestParams": [
 		{
 			"name": "channel_id",
@@ -17,217 +13,188 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "CarouselChannelRbo",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "serial_number",
 							"type": "Number",
-							"description": "频道固定的编号",
-							"required": true
+							"description": "频道固定的编号"
 						},
 						{
-							"name": "video_list",
-							"type": "Videolist[]",
-							"description": "频道所有的视频列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "video_id",
 									"type": "String",
-									"description": "视频ID信息",
-									"required": true
+									"description": "视频ID信息"
 								},
 								{
 									"name": "video_ext_type",
 									"type": "Number",
-									"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型",
-									"required": true
+									"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型"
 								},
 								{
 									"name": "play_list_id",
 									"type": "Number",
-									"description": "当前视频的播单ID",
-									"required": true
+									"description": "当前视频的播单ID"
 								},
 								{
 									"name": "program_id",
 									"type": "Number",
-									"description": "当前视频的节目ID",
-									"required": true
+									"description": "当前视频的节目ID"
 								},
 								{
 									"name": "sort",
 									"type": "Number",
-									"description": "当前视频的排序",
-									"required": true
+									"description": "当前视频的排序"
 								},
 								{
 									"name": "duration",
 									"type": "Number",
-									"description": "视频时长（单位秒）",
-									"required": true
+									"description": "视频时长（单位秒）"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "视频名称",
-									"required": true
+									"description": "视频名称"
 								},
 								{
 									"name": "pic",
 									"type": "String",
-									"description": "视频图片",
-									"required": true
+									"description": "视频图片"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "主键ID",
-									"required": true
+									"description": "主键ID"
 								}
-							]
+							],
+							"name": "video_list",
+							"type": "Videolist[]",
+							"description": "频道所有的视频列表"
 						},
 						{
-							"name": "current_video",
-							"type": "CarouselCurrentPlayRbo",
-							"description": "频道当前播放视频",
-							"required": true,
 							"subParams": [
 								{
-									"name": "video",
-									"type": "CarouselPlaylistVideoRbo",
-									"description": "当前轮播视频信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "video_id",
 											"type": "String",
-											"description": "视频ID信息",
-											"required": true
+											"description": "视频ID信息"
 										},
 										{
 											"name": "video_ext_type",
 											"type": "Number",
-											"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型",
-											"required": true
+											"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型"
 										},
 										{
 											"name": "play_list_id",
 											"type": "Number",
-											"description": "当前视频的播单ID",
-											"required": true
+											"description": "当前视频的播单ID"
 										},
 										{
 											"name": "program_id",
 											"type": "Number",
-											"description": "当前视频的节目ID",
-											"required": true
+											"description": "当前视频的节目ID"
 										},
 										{
 											"name": "sort",
 											"type": "Number",
-											"description": "当前视频的排序",
-											"required": true
+											"description": "当前视频的排序"
 										},
 										{
 											"name": "duration",
 											"type": "Number",
-											"description": "视频时长（单位秒）",
-											"required": true
+											"description": "视频时长（单位秒）"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "视频名称",
-											"required": true
+											"description": "视频名称"
 										},
 										{
 											"name": "pic",
 											"type": "String",
-											"description": "视频图片",
-											"required": true
+											"description": "视频图片"
 										},
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "主键ID",
-											"required": true
+											"description": "主键ID"
 										}
-									]
+									],
+									"name": "video",
+									"type": "CarouselPlaylistVideoRbo",
+									"description": "当前轮播视频信息"
 								},
 								{
 									"name": "point",
 									"type": "Number",
-									"description": "当前视频正在播放的时间点（单位秒）",
-									"required": true
+									"description": "当前视频正在播放的时间点（单位秒）"
 								}
-							]
+							],
+							"name": "current_video",
+							"type": "CarouselCurrentPlayRbo",
+							"description": "频道当前播放视频"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "频道描述",
-							"required": true
+							"description": "频道描述"
 						},
 						{
 							"name": "bcp",
 							"type": "Number",
-							"description": "牌照方",
-							"required": true
+							"description": "牌照方"
 						},
 						{
 							"name": "pic",
 							"type": "String",
-							"description": "频道图标",
-							"required": true
+							"description": "频道图标"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "频道名称",
-							"required": true
+							"description": "频道名称"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "频道ID",
-							"required": true
+							"description": "频道ID"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CarouselChannelRbo",
+					"description": "返回数据"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "httpStatusCode",
-					"required": true
+					"description": "httpStatusCode"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.taotv.carousel.playlist.get",
+	"apiChineseName": "根据频道ID获取频道下节目单以及当前播放",
+	"description": "根据频道ID获取频道下节目单以及当前播放，包括所有视频源的视频",
+	"id": 35819
 }

@@ -12,7 +12,7 @@ import (
 // 根据企业名称查询企业唯一标识【ref_ent_id】和企业ID【ent_id】
 type AlibabaAlihealthDrugKytGetentinfoAPIRequest struct {
 	model.Params
-	// 公司名称
+	// 企业名称
 	_entName string
 }
 
@@ -38,7 +38,7 @@ func (r AlibabaAlihealthDrugKytGetentinfoAPIRequest) GetApiParams() url.Values {
 }
 
 // SetEntName is EntName Setter
-// 公司名称
+// 企业名称
 func (r *AlibabaAlihealthDrugKytGetentinfoAPIRequest) SetEntName(_entName string) error {
 	r._entName = _entName
 	r.Set("ent_name", _entName)

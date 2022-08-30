@@ -1,8 +1,4 @@
 {
-	"id": 10591,
-	"name": "taobao.item.quantity.update",
-	"apiChineseName": "宝贝/SKU库存修改",
-	"description": "提供按照全量或增量形式修改宝贝/SKU库存的功能",
 	"requestParams": [
 		{
 			"name": "num_iid",
@@ -34,9 +30,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified",
 			"subParams": [
 				{
 					"name": "iid",
@@ -59,9 +52,6 @@
 					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
 				},
 				{
-					"name": "skus",
-					"type": "Sku[]",
-					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -162,9 +152,19 @@
 							"type": "String",
 							"description": "specId"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified"
 		}
-	]
+	],
+	"name": "taobao.item.quantity.update",
+	"apiChineseName": "宝贝/SKU库存修改",
+	"description": "提供按照全量或增量形式修改宝贝/SKU库存的功能",
+	"id": 10591
 }

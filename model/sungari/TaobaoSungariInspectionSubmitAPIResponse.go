@@ -22,8 +22,8 @@ type TaobaoSungariInspectionSubmitAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// message
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 是否成功
-	Data *InspectionResultInfo `json:"data,omitempty" xml:"data,omitempty"`
 	// 状态码
 	ReturnCode int64 `json:"return_code,omitempty" xml:"return_code,omitempty"`
+	// 是否成功
+	Data *InspectionResultInfo `json:"data,omitempty" xml:"data,omitempty"`
 }

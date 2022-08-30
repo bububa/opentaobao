@@ -1,8 +1,4 @@
 {
-	"id": 29033,
-	"name": "taobao.tmc.auth.get",
-	"apiChineseName": "TMC授权token",
-	"description": "TMC连接授权Token",
 	"requestParams": [
 		{
 			"name": "group",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.tmc.auth.get",
+	"apiChineseName": "TMC授权token",
+	"description": "TMC连接授权Token",
+	"id": 29033
 }

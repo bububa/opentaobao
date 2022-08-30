@@ -18,6 +18,8 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest struct {
 	_beginDate string
 	// 结束日期（不写时分秒）
 	_endDate string
+	// 发货单位
+	_fromUserId string
 	// 生产批号
 	_produceBatchNo string
 	// 药品ID
@@ -30,8 +32,6 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest struct {
 	_status string
 	// 单据号
 	_billCode string
-	// 发货单位
-	_fromUserId string
 	// 页大小
 	_pageSize int64
 	// 页码
@@ -96,6 +96,19 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetEndDate(_endDat
 // GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetFromUserId is FromUserId Setter
+// 发货单位
+func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
+	r._fromUserId = _fromUserId
+	r.Set("from_user_id", _fromUserId)
+	return nil
+}
+
+// GetFromUserId FromUserId Getter
+func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetFromUserId() string {
+	return r._fromUserId
 }
 
 // SetProduceBatchNo is ProduceBatchNo Setter
@@ -174,19 +187,6 @@ func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetBillCode(_billC
 // GetBillCode BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetBillCode() string {
 	return r._billCode
-}
-
-// SetFromUserId is FromUserId Setter
-// 发货单位
-func (r *AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
-	r._fromUserId = _fromUserId
-	r.Set("from_user_id", _fromUserId)
-	return nil
-}
-
-// GetFromUserId FromUserId Getter
-func (r AlibabaAlihealthDrugtraceTopYljgListupoutAPIRequest) GetFromUserId() string {
-	return r._fromUserId
 }
 
 // SetPageSize is PageSize Setter

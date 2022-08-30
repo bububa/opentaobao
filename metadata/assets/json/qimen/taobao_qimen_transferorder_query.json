@@ -1,13 +1,6 @@
 {
-	"id": 29227,
-	"name": "taobao.qimen.transferorder.query",
-	"apiChineseName": "调拨单查询",
-	"description": "调拨单查询",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
-			"required": true,
 			"subParams": [
 				{
 					"name": "transferOrderCode",
@@ -26,13 +19,14 @@
 					"type": "String",
 					"description": "ERP单号"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "flag",
@@ -53,10 +47,6 @@
 					"required": true
 				},
 				{
-					"name": "transferOrderDetail",
-					"type": "TransferOrderDetail",
-					"description": "调拨单细节",
-					"required": true,
 					"subParams": [
 						{
 							"name": "transferOrderCode",
@@ -125,10 +115,6 @@
 							"required": true
 						},
 						{
-							"name": "items",
-							"type": "Item[]",
-							"description": "调拨单货品明细记录集",
-							"required": true,
 							"subParams": [
 								{
 									"name": "scItemCode",
@@ -160,11 +146,25 @@
 									"description": "实际入库数量,Item1234,string(50),,",
 									"required": true
 								}
-							]
+							],
+							"name": "items",
+							"type": "Item[]",
+							"description": "调拨单货品明细记录集",
+							"required": true
 						}
-					]
+					],
+					"name": "transferOrderDetail",
+					"type": "TransferOrderDetail",
+					"description": "调拨单细节",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Struct"
 		}
-	]
+	],
+	"name": "taobao.qimen.transferorder.query",
+	"apiChineseName": "调拨单查询",
+	"description": "调拨单查询",
+	"id": 29227
 }

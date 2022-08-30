@@ -14,6 +14,10 @@ type TaobaoTradesSoldQueryAPIRequest struct {
 	model.Params
 	// 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
 	_queryList []OrderQuery
+	// 业务场景编码。不同场景，策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(客服咨询)、1002(售后服务)，<a href="https://open.taobao.com/doc.htm?docId=120186&docType=1" target="_blank">详情点击</a>
+	_scene string
+	// 订单类型，默认值为1，可选值为：交易(1)，分销(2)，换货(3)
+	_orderType string
 }
 
 // NewTaobaoTradesSoldQueryRequest 初始化TaobaoTradesSoldQueryAPIRequest对象
@@ -48,4 +52,30 @@ func (r *TaobaoTradesSoldQueryAPIRequest) SetQueryList(_queryList []OrderQuery) 
 // GetQueryList QueryList Getter
 func (r TaobaoTradesSoldQueryAPIRequest) GetQueryList() []OrderQuery {
 	return r._queryList
+}
+
+// SetScene is Scene Setter
+// 业务场景编码。不同场景，策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(客服咨询)、1002(售后服务)，<a href="https://open.taobao.com/doc.htm?docId=120186&docType=1" target="_blank">详情点击</a>
+func (r *TaobaoTradesSoldQueryAPIRequest) SetScene(_scene string) error {
+	r._scene = _scene
+	r.Set("scene", _scene)
+	return nil
+}
+
+// GetScene Scene Getter
+func (r TaobaoTradesSoldQueryAPIRequest) GetScene() string {
+	return r._scene
+}
+
+// SetOrderType is OrderType Setter
+// 订单类型，默认值为1，可选值为：交易(1)，分销(2)，换货(3)
+func (r *TaobaoTradesSoldQueryAPIRequest) SetOrderType(_orderType string) error {
+	r._orderType = _orderType
+	r.Set("order_type", _orderType)
+	return nil
+}
+
+// GetOrderType OrderType Getter
+func (r TaobaoTradesSoldQueryAPIRequest) GetOrderType() string {
+	return r._orderType
 }

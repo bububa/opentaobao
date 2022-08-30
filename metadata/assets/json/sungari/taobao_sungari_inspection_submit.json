@@ -1,8 +1,4 @@
 {
-	"id": 54164,
-	"name": "taobao.sungari.inspection.submit",
-	"apiChineseName": "抽检指令录入",
-	"description": "抽检指令录入",
 	"requestParams": [
 		{
 			"name": "data",
@@ -19,63 +15,60 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "InspectionResultInfo",
-			"description": "是否成功",
+			"name": "return_code",
+			"type": "Number",
+			"description": "状态码"
+		},
+		{
 			"subParams": [
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "卖家nick",
-					"required": true
+					"description": "卖家nick"
 				},
 				{
 					"name": "send_address",
 					"type": "String",
-					"description": "发货地址",
-					"required": true
+					"description": "发货地址"
 				},
 				{
 					"name": "register_address",
 					"type": "String",
-					"description": "注册地址",
-					"required": true
+					"description": "注册地址"
 				},
 				{
 					"name": "licence_no",
 					"type": "String",
-					"description": "营业执照编号",
-					"required": true
+					"description": "营业执照编号"
 				},
 				{
 					"name": "seller_tel",
 					"type": "String",
-					"description": "卖家电话",
-					"required": true
+					"description": "卖家电话"
 				},
 				{
 					"name": "certification_name",
 					"type": "String",
-					"description": "认证名称",
-					"required": true
+					"description": "认证名称"
 				},
 				{
 					"name": "dispose_result",
 					"type": "String",
-					"description": "处置结果",
-					"required": true
+					"description": "处置结果"
 				}
-			]
+			],
+			"name": "data",
+			"type": "InspectionResultInfo",
+			"description": "是否成功"
 		},
 		{
 			"name": "message",
 			"type": "String",
 			"description": "message"
-		},
-		{
-			"name": "return_code",
-			"type": "Number",
-			"description": "状态码"
 		}
-	]
+	],
+	"name": "taobao.sungari.inspection.submit",
+	"apiChineseName": "抽检指令录入",
+	"description": "抽检指令录入",
+	"id": 54164
 }

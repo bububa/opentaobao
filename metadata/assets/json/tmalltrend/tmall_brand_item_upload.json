@@ -1,15 +1,6 @@
 {
-	"id": 53378,
-	"name": "tmall.brand.item.upload",
-	"apiChineseName": "天猫品牌新品同步API",
-	"description": "支撑天猫品牌将各渠道新品信息同步至平台",
 	"requestParams": [
 		{
-			"name": "item_list",
-			"type": "TmallBrandChannelNewItem[]",
-			"description": "需要同步的商品列表",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "channel_quantity",
@@ -104,7 +95,12 @@
 					"description": "渠道的发售区域",
 					"required": true
 				}
-			]
+			],
+			"name": "item_list",
+			"type": "TmallBrandChannelNewItem[]",
+			"description": "需要同步的商品列表",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -128,5 +124,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "tmall.brand.item.upload",
+	"apiChineseName": "天猫品牌新品同步API",
+	"description": "支撑天猫品牌将各渠道新品信息同步至平台",
+	"id": 53378
 }

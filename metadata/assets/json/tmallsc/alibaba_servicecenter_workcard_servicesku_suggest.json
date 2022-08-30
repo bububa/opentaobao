@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "真实履约服务商nick(非erp系统不要调用)"
+		},
+		{
+			"subParams": [
+				{
+					"name": "service_sku_code",
+					"type": "String",
+					"description": "服务项",
+					"required": true
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "问题图片链接"
+				}
+			],
+			"name": "tp_suggest_service_sku_infos",
+			"type": "TpSuggestServiceSkuInfoDto[]",
+			"description": "服务商反馈服务项",
+			"maxListSize": 999,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.servicecenter.workcard.servicesku.suggest",
+	"apiChineseName": "服务商反馈需要履行的服务项",
+	"description": "服务商反馈需要履行的服务项",
+	"id": 58809
+}

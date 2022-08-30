@@ -12,6 +12,8 @@ import (
 // 体检状态为改期中，服务上通知健康是否改期成功
 type AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest struct {
 	model.Params
+	// 服务商预约凭证
+	_uniqReserveCode string
 	// 旧的预约日期
 	_oldReserveDate string
 	// 套餐编码
@@ -20,8 +22,6 @@ type AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest struct {
 	_reserveNumber string
 	// 新的预约日期
 	_newReserveDate string
-	// 服务商预约凭证
-	_uniqReserveCode string
 	// 商品编码
 	_goodsCode string
 	// 门店编码
@@ -55,6 +55,19 @@ func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetApiParams()
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetUniqReserveCode is UniqReserveCode Setter
+// 服务商预约凭证
+func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+	r._uniqReserveCode = _uniqReserveCode
+	r.Set("uniq_reserve_code", _uniqReserveCode)
+	return nil
+}
+
+// GetUniqReserveCode UniqReserveCode Getter
+func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetUniqReserveCode() string {
+	return r._uniqReserveCode
 }
 
 // SetOldReserveDate is OldReserveDate Setter
@@ -107,19 +120,6 @@ func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetNewReserve
 // GetNewReserveDate NewReserveDate Getter
 func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetNewReserveDate() string {
 	return r._newReserveDate
-}
-
-// SetUniqReserveCode is UniqReserveCode Setter
-// 服务商预约凭证
-func (r *AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
-	r._uniqReserveCode = _uniqReserveCode
-	r.Set("uniq_reserve_code", _uniqReserveCode)
-	return nil
-}
-
-// GetUniqReserveCode UniqReserveCode Getter
-func (r AlibabaAlihealthExaminationReserveModifyNotifyAPIRequest) GetUniqReserveCode() string {
-	return r._uniqReserveCode
 }
 
 // SetGoodsCode is GoodsCode Setter

@@ -1,26 +1,13 @@
 {
-	"id": 50864,
-	"name": "alibaba.retail.marketing.itemdiscount.activity.sku.add",
-	"apiChineseName": "特价活动新增商品",
-	"description": "新增或更新活动商品信息【同城零售】",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemDiscountActivityElementOperateRequest",
-			"description": "添加活动商品参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "sku_elements",
-					"type": "SkuActivityElementDto[]",
-					"description": "商品元素信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码，与商品条码必选其一，或者同时传入以商品条码为准"
 						},
 						{
 							"name": "fix_price_money",
@@ -38,9 +25,6 @@
 							"description": "减钱金额【分】"
 						},
 						{
-							"name": "limit",
-							"type": "LimitDto",
-							"description": "限购配置信息",
 							"subParams": [
 								{
 									"name": "total_limit_cnt",
@@ -67,15 +51,43 @@
 									"type": "Number",
 									"description": "用户每单限购"
 								}
-							]
+							],
+							"name": "limit",
+							"type": "LimitDto",
+							"description": "限购配置信息"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码，与商品编码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"subParams": [
+								{
+									"name": "channel",
+									"type": "String",
+									"description": "渠道编码 枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达"
+								},
+								{
+									"name": "store_ids",
+									"type": "String[]",
+									"description": "渠道对应的门店id列表[\"store001\",\"store002\"]"
+								}
+							],
+							"name": "sku_channel_configs",
+							"type": "SkuChannelConfigDTO[]",
+							"description": "商品渠道配置信息"
 						}
-					]
+					],
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true
 				},
 				{
 					"name": "act_id",
 					"type": "Number",
-					"description": "操作活动的ID",
-					"required": true
+					"description": "操作活动的ID"
 				},
 				{
 					"name": "creator_id",
@@ -88,47 +100,55 @@
 					"type": "String",
 					"description": "操作人Name",
 					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "erp外部活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemDiscountActivityElementOperateRequest",
+			"description": "添加活动商品参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "操作结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "无用字段（废弃）",
-					"required": true
+					"description": "无用字段（废弃）"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "failed_sku_codes",
 					"type": "String[]",
-					"description": "部分失败的商品编码列表",
-					"required": true
+					"description": "部分失败的商品编码列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itemdiscount.activity.sku.add",
+	"apiChineseName": "特价活动新增商品",
+	"description": "新增或更新活动商品信息【同城零售】",
+	"id": 50864
 }

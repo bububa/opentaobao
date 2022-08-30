@@ -1,19 +1,8 @@
 {
-	"id": 47555,
-	"name": "aliexpress.social.locale.get",
-	"apiChineseName": "Locale获取接口",
-	"description": "新增Locale获取接口",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemPickPagingResult",
-			"description": "包类型",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "LocaleDto[]",
-					"description": "结果封装",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
@@ -27,7 +16,11 @@
 							"description": "Locale名称",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "LocaleDto[]",
+					"description": "结果封装",
+					"required": true
 				},
 				{
 					"name": "page_no",
@@ -65,7 +58,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "包类型"
 		}
-	]
+	],
+	"name": "aliexpress.social.locale.get",
+	"apiChineseName": "Locale获取接口",
+	"description": "新增Locale获取接口",
+	"id": 47555
 }

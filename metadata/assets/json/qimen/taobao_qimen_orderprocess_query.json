@@ -1,12 +1,6 @@
 {
-	"id": 27274,
-	"name": "taobao.qimen.orderprocess.query",
-	"apiChineseName": "订单流水查询接口",
-	"description": "ERP调用订单流水查询接口",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "OrderProcessQueryRequest",
 			"subParams": [
 				{
 					"name": "orderType",
@@ -49,13 +43,13 @@
 					"type": "String",
 					"description": "货主编码"
 				}
-			]
+			],
+			"name": "request",
+			"type": "OrderProcessQueryRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "OrderProcessQueryResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -76,10 +70,6 @@
 					"required": true
 				},
 				{
-					"name": "orderProcess",
-					"type": "OrderProcess",
-					"description": "订单处理流程",
-					"required": true,
 					"subParams": [
 						{
 							"name": "orderCode",
@@ -106,10 +96,6 @@
 							"required": true
 						},
 						{
-							"name": "processes",
-							"type": "Process[]",
-							"description": "处理流程",
-							"required": true,
 							"subParams": [
 								{
 									"name": "processStatus",
@@ -147,11 +133,25 @@
 									"description": "备注",
 									"required": true
 								}
-							]
+							],
+							"name": "processes",
+							"type": "Process[]",
+							"description": "处理流程",
+							"required": true
 						}
-					]
+					],
+					"name": "orderProcess",
+					"type": "OrderProcess",
+					"description": "订单处理流程",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "OrderProcessQueryResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.orderprocess.query",
+	"apiChineseName": "订单流水查询接口",
+	"description": "ERP调用订单流水查询接口",
+	"id": 27274
 }

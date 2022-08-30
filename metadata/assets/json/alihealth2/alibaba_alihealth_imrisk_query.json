@@ -1,0 +1,122 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "patient_id",
+					"type": "String",
+					"description": "患者id",
+					"required": true
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生id",
+					"required": true
+				},
+				{
+					"name": "scene_name",
+					"type": "String",
+					"description": "场景",
+					"required": true
+				},
+				{
+					"name": "tenant_code",
+					"type": "String",
+					"description": "租户",
+					"required": true
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "会话id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "role",
+							"type": "String",
+							"description": "PATIENT(\"患者\"),     DOCTOR(\"医生\"),     SYSTEM(\"系统\")",
+							"required": true
+						},
+						{
+							"name": "time",
+							"type": "String",
+							"description": "YYYY-MM-DD HH:mm:ss格式的时间",
+							"required": true
+						},
+						{
+							"name": "content_type",
+							"type": "String",
+							"description": "TEXT(\"文本\"),     IMG(\"图片\"),     VOICE(\"语音\")",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "聊天内容，如果是图片或者语音，需要通过base64编码为String后传入。",
+							"required": true
+						}
+					],
+					"name": "conversations",
+					"type": "Conversation[]",
+					"description": "会话内容，按照时间排序",
+					"required": true
+				},
+				{
+					"name": "biz_time",
+					"type": "String",
+					"description": "会话开始时间，YYYY-MM-DD HH:mm:ss格式",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "IMRiskCheckCommand",
+			"description": "入参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "type",
+					"type": "String",
+					"description": "INTEGRITY(\"对话完整性\"),     ATTITUDE(\"态度\"),     CONTENT_SECURITY(\"内容安全\")"
+				},
+				{
+					"name": "res",
+					"type": "Number",
+					"description": "1: 违规， 2: 疑似， -1: 该类型下，不对结果进行评判"
+				},
+				{
+					"name": "label",
+					"type": "String",
+					"description": "只有ATTITUDE类型才有值，识别的结果，如：\"语气问题\", \"辱骂骚扰\"，\"自我介绍\", \"感谢用语\", \"祝福用语\",      * \"礼貌用语\", \"患者安抚\", \"随访追问\", \"邀评关注\", \"平台推荐\"等"
+				}
+			],
+			"name": "data",
+			"type": "IMRule []",
+			"description": "返回结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "the_err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "the_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.imrisk.query",
+	"apiChineseName": "问诊质控接口",
+	"description": "阿里健康的问诊质控接口",
+	"id": 58917
+}

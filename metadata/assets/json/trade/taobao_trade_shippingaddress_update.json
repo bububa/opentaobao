@@ -1,8 +1,4 @@
 {
-	"id": 241,
-	"name": "taobao.trade.shippingaddress.update",
-	"apiChineseName": "更改交易的收货地址",
-	"description": "只能更新一笔交易里面的买家收货地址 \u003cbr/\u003e只能更新发货前（即买家已付款，等待卖家发货状态）的交易的买家收货地址 \u003cbr/\u003e更新后的发货地址可以通过taobao.trade.fullinfo.get查到 \u003cbr/\u003e参数中所说的字节为GBK编码的（英文和数字占1字节，中文占2字节）",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -19,13 +15,13 @@
 		{
 			"name": "receiver_phone",
 			"type": "String",
-			"description": "固定电话。最大长度为30个字节。",
+			"description": "座机号码。最大长度为30个字节。传-1表示删除",
 			"maxLength": 30
 		},
 		{
 			"name": "receiver_mobile",
 			"type": "String",
-			"description": "移动电话。最大长度为11个字节。",
+			"description": "移动电话。最大长度为11个字节。传-1表示删除",
 			"maxLength": 11
 		},
 		{
@@ -55,7 +51,7 @@
 		{
 			"name": "receiver_zip",
 			"type": "String",
-			"description": "邮政编码。必须由6个数字组成。",
+			"description": "邮政编码。必须由6个数字组成。注：邮政编码根据地址信息自动填入，不可单独修改",
 			"maxLength": 6
 		},
 		{
@@ -67,9 +63,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade",
-			"type": "Trade",
-			"description": "交易结构",
 			"subParams": [
 				{
 					"name": "tid",
@@ -81,7 +74,14 @@
 					"type": "Date",
 					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "trade",
+			"type": "Trade",
+			"description": "交易结构"
 		}
-	]
+	],
+	"name": "taobao.trade.shippingaddress.update",
+	"apiChineseName": "更改交易的收货地址",
+	"description": "只能更新一笔交易里面的买家收货地址 \u003cbr/\u003e只能更新发货前（即买家已付款，等待卖家发货状态）的交易的买家收货地址 \u003cbr/\u003e更新后的发货地址可以通过taobao.trade.fullinfo.get查到 \u003cbr/\u003e参数中所说的字节为GBK编码的（英文和数字占1字节，中文占2字节）",
+	"id": 241
 }

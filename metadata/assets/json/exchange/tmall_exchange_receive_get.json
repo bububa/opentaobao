@@ -1,8 +1,4 @@
 {
-	"id": 31198,
-	"name": "tmall.exchange.receive.get",
-	"apiChineseName": "卖家查询换货列表",
-	"description": "卖家查询换货列表",
 	"requestParams": [
 		{
 			"name": "end_gmt_modifed_time",
@@ -33,8 +29,8 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "page_size",
@@ -53,9 +49,9 @@
 			"description": "查询申请时间段的结束时间点"
 		},
 		{
-			"name": "buyer_id",
-			"type": "Number",
-			"description": "买家id"
+			"name": "buyer_open_uid",
+			"type": "String",
+			"description": "买家的openId"
 		},
 		{
 			"name": "refund_id_array",
@@ -81,9 +77,6 @@
 			"description": "所有符合查询条件的换货单的数量"
 		},
 		{
-			"name": "results",
-			"type": "Exchange []",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "reason",
@@ -234,8 +227,23 @@
 					"type": "String",
 					"description": "buyerName",
 					"required": true
+				},
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+					"required": true
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家openId",
+					"required": true
 				}
-			]
+			],
+			"name": "results",
+			"type": "Exchange []",
+			"description": "返回结果"
 		},
 		{
 			"name": "page_results",
@@ -262,5 +270,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "tmall.exchange.receive.get",
+	"apiChineseName": "卖家查询换货列表",
+	"description": "卖家查询换货列表",
+	"id": 31198
 }

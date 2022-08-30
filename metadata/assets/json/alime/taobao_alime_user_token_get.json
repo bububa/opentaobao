@@ -1,18 +1,14 @@
 {
-	"id": 41699,
-	"name": "taobao.alime.user.token.get",
-	"apiChineseName": "获取用户免登录令牌",
-	"description": "根据第三账号信息获取用户的免登录令牌",
 	"requestParams": [
 		{
-			"name": "foreign_id",
-			"type": "String",
-			"description": "用户在第三方账号中的唯一id"
+			"name": "routing",
+			"type": "Number",
+			"description": "路由id, 一般为用户id，用于异地容灾"
 		},
 		{
-			"name": "nick",
-			"type": "String",
-			"description": "用户昵称"
+			"name": "id",
+			"type": "Number",
+			"description": "用户在小蜜账号中的唯一id"
 		},
 		{
 			"name": "source",
@@ -21,19 +17,19 @@
 			"required": true
 		},
 		{
-			"name": "id",
-			"type": "Number",
-			"description": "用户在小蜜账号中的唯一id"
+			"name": "nick",
+			"type": "String",
+			"description": "用户昵称"
+		},
+		{
+			"name": "foreign_id",
+			"type": "String",
+			"description": "用户在第三方账号中的唯一id"
 		},
 		{
 			"name": "expires",
 			"type": "Number",
 			"description": "令牌的过期时间(时间为秒)，最大为3600"
-		},
-		{
-			"name": "routing",
-			"type": "Number",
-			"description": "路由id, 一般为用户id，用于异地容灾"
 		}
 	],
 	"responseParams": [
@@ -52,5 +48,9 @@
 			"type": "String",
 			"description": "响应消息"
 		}
-	]
+	],
+	"name": "taobao.alime.user.token.get",
+	"apiChineseName": "获取用户免登录令牌",
+	"description": "根据第三账号信息获取用户的免登录令牌",
+	"id": 41699
 }

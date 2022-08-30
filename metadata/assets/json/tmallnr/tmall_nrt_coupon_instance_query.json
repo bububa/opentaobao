@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"name": "instance_ids",
+			"type": "String",
+			"description": "券实例id"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务身份"
+		},
+		{
+			"name": "coupon_types",
+			"type": "String",
+			"description": "券类型"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "加密后的uid"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "models",
+					"type": "String[]",
+					"description": "券实例实体"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.nrt.coupon.instance.query",
+	"apiChineseName": "查询用户券实例",
+	"description": "查询用户券实例",
+	"id": 59116
+}

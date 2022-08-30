@@ -1,15 +1,6 @@
 {
-	"id": 36870,
-	"name": "alibaba.wdk.sku.add",
-	"apiChineseName": "新增商品",
-	"description": "创建RT门店商品或DC商品",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "SkuDo[]",
-			"description": "商品列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "barcodes",
@@ -27,6 +18,11 @@
 					"description": "商家后台类目编码"
 				},
 				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码"
+				},
+				{
 					"name": "height",
 					"type": "String",
 					"description": "高度（高）"
@@ -42,6 +38,11 @@
 					"description": "长度(深)"
 				},
 				{
+					"name": "main_pic_urls",
+					"type": "String",
+					"description": "主图图片地址"
+				},
+				{
 					"name": "manufacturer_address",
 					"type": "String",
 					"description": "生产商地址"
@@ -50,6 +51,11 @@
 					"name": "manufacturer_name",
 					"type": "String",
 					"description": "生产商名称"
+				},
+				{
+					"name": "detail_pic_urls",
+					"type": "String",
+					"description": "详情图片地址"
 				},
 				{
 					"name": "producer_place",
@@ -112,16 +118,6 @@
 					"description": "宽度（宽）"
 				},
 				{
-					"name": "main_pic_urls",
-					"type": "String",
-					"description": "主图图片地址"
-				},
-				{
-					"name": "detail_pic_urls",
-					"type": "String",
-					"description": "详情图片地址"
-				},
-				{
 					"name": "hm_category_code",
 					"type": "String",
 					"description": "平台后台类目编码"
@@ -145,11 +141,6 @@
 					"name": "input_invoice_content",
 					"type": "String",
 					"description": "输入开票内容"
-				},
-				{
-					"name": "ou_code",
-					"type": "String",
-					"description": "门店或DC编码"
 				},
 				{
 					"name": "accounting_category",
@@ -367,6 +358,11 @@
 					"description": "标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议淘鲜达商家填默认值“无价签”"
 				},
 				{
+					"name": "rich_text",
+					"type": "String",
+					"description": "文描,（同字段txt_desc）；优先使用本字段"
+				},
+				{
 					"name": "back_cat_code",
 					"type": "String",
 					"description": "平台类目编码（同字段hm_category_code），需要商家把自己的类目对应到平台的类目上，此字段暂时只能支持3、4级类目修改；优先使用本字段"
@@ -397,9 +393,6 @@
 					"description": "在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段"
 				},
 				{
-					"name": "sku_suppliers",
-					"type": "SkuSupplierDo[]",
-					"description": "供货商信息",
 					"subParams": [
 						{
 							"name": "return_flag",
@@ -431,17 +424,12 @@
 							"type": "Number",
 							"description": "是否主供应商 1是主供应商 0非主供"
 						}
-					]
+					],
+					"name": "sku_suppliers",
+					"type": "SkuSupplierDo[]",
+					"description": "供货商信息"
 				},
 				{
-					"name": "rich_text",
-					"type": "String",
-					"description": "文描,（同字段txt_desc）；优先使用本字段"
-				},
-				{
-					"name": "industry_props",
-					"type": "IndustryPropDo",
-					"description": "行业属性",
 					"subParams": [
 						{
 							"name": "industry_type",
@@ -449,9 +437,6 @@
 							"description": "行业类型"
 						},
 						{
-							"name": "props",
-							"type": "PropDo[]",
-							"description": "行业对应的属性",
 							"subParams": [
 								{
 									"name": "key",
@@ -468,9 +453,15 @@
 									"type": "Boolean",
 									"description": "是否移除该属性"
 								}
-							]
+							],
+							"name": "props",
+							"type": "PropDo[]",
+							"description": "行业对应的属性"
 						}
-					]
+					],
+					"name": "industry_props",
+					"type": "IndustryPropDo",
+					"description": "行业属性"
 				},
 				{
 					"name": "forest_cate_id",
@@ -513,9 +504,6 @@
 					"description": "业务类型：txd淘鲜达，elm饿了么，shareStore共享库存，默认txd"
 				},
 				{
-					"name": "channel_props",
-					"type": "ChannelProp[]",
-					"description": "渠道属性",
 					"subParams": [
 						{
 							"name": "channel_type",
@@ -523,9 +511,6 @@
 							"description": "渠道类型：txd淘鲜达，elm饿了么，shareStore共享库存"
 						},
 						{
-							"name": "props",
-							"type": "PropField[]",
-							"description": "渠道属性，取值为key-value键值对形式",
 							"subParams": [
 								{
 									"name": "value",
@@ -537,76 +522,102 @@
 									"type": "String",
 									"description": "渠道属性key, 取值为\"ONE_HOUR_STATUS\" \u0008代表小时达，value=0表示不可售, value=1表示可售；\"WAVE_ARRIVE_STATUS\" 代表波次达，value=0表示不可售,value=1表示可售"
 								}
-							]
+							],
+							"name": "props",
+							"type": "PropField[]",
+							"description": "渠道属性，取值为key-value键值对形式"
 						}
-					]
+					],
+					"name": "channel_props",
+					"type": "ChannelProp[]",
+					"description": "渠道属性"
+				},
+				{
+					"name": "spec_type",
+					"type": "String",
+					"description": "1一品多码（只支持非称重品）"
+				},
+				{
+					"name": "trans_ratio",
+					"type": "String",
+					"description": "与母商品的库存转换系数，例如10，则转换到母商品的库存为10*此商品的库存，可空，当新增一品多规格品的时候不能为空"
+				},
+				{
+					"name": "parent_sku_code",
+					"type": "String",
+					"description": "母商品的sku_code可空，当新增一品多规格品的时候不能为空"
+				},
+				{
+					"name": "is_online",
+					"type": "Number",
+					"description": "是否线上的品 1:是  0:否"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "SkuDo[]",
+			"description": "商品列表",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResults",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "接口返回成功标志",
-					"required": true
-				},
-				{
-					"name": "models",
-					"type": "ApiResult[]",
-					"description": "models",
-					"required": true,
 					"subParams": [
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "错误编码",
-							"required": true
+							"description": "错误编码"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个商品新增是否成功",
-							"required": true
+							"description": "单个商品新增是否成功"
 						},
 						{
 							"name": "model",
 							"type": "String",
-							"description": "skuCode商品编码",
-							"required": true
+							"description": "skuCode商品编码"
 						},
 						{
 							"name": "product_id",
 							"type": "String",
-							"description": "聚合之后的产品id，商家需要保存该值",
-							"required": true
+							"description": "聚合之后的产品id，商家需要保存该值"
 						}
-					]
+					],
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "models"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.add",
+	"apiChineseName": "新增商品",
+	"description": "创建RT门店商品或DC商品",
+	"id": 36870
 }

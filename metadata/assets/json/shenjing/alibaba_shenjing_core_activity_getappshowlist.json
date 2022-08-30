@@ -1,13 +1,6 @@
 {
-	"id": 38075,
-	"name": "alibaba.shenjing.core.activity.getappshowlist",
-	"apiChineseName": "获取神鲸活动列表",
-	"description": "获取神鲸活动列表",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "验权对象",
 			"subParams": [
 				{
 					"name": "app_code",
@@ -29,7 +22,10 @@
 					"type": "Number",
 					"description": "园区Id"
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "验权对象"
 		},
 		{
 			"name": "timestamp1",
@@ -49,159 +45,139 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "返回的结果对象",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "返回内容(分页对象)",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "分页总数",
-							"required": true
+							"description": "分页总数"
 						},
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "一页行数",
-							"required": true
+							"description": "一页行数"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "分页总数",
-							"required": true
+							"description": "分页总数"
 						},
 						{
-							"name": "items",
-							"type": "T[]",
-							"description": "活动列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "full_adress",
 									"type": "String",
-									"description": "获取地址",
-									"required": true
+									"description": "获取地址"
 								},
 								{
 									"name": "act_detail_url",
 									"type": "String",
-									"description": "活动详情的URL地址",
-									"required": true
+									"description": "活动详情的URL地址"
 								},
 								{
 									"name": "content",
 									"type": "String",
-									"description": "活动的内容",
-									"required": true
+									"description": "活动的内容"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "发布状态  \"draft\":\"草稿\",\"wait\":\"待发布\",  \"underway\":\"进行中\",  \"over\":\"已结束\",  \"insertingcoil\":\"已下线\"",
-									"required": true
+									"description": "发布状态  \"draft\":\"草稿\",\"wait\":\"待发布\",  \"underway\":\"进行中\",  \"over\":\"已结束\",  \"insertingcoil\":\"已下线\""
 								},
 								{
 									"name": "view_end_time",
 									"type": "Date",
-									"description": "活动展示结束时间",
-									"required": true
+									"description": "活动展示结束时间"
 								},
 								{
 									"name": "view_start_time",
 									"type": "Date",
-									"description": "活动展示开始时间",
-									"required": true
+									"description": "活动展示开始时间"
 								},
 								{
 									"name": "act_end_time",
 									"type": "Date",
-									"description": "活动结束时间",
-									"required": true
+									"description": "活动结束时间"
 								},
 								{
 									"name": "act_start_time",
 									"type": "Date",
-									"description": "活动开始时间",
-									"required": true
+									"description": "活动开始时间"
 								},
 								{
 									"name": "wy_company_id",
 									"type": "Number",
-									"description": "物业公司ID",
-									"required": true
+									"description": "物业公司ID"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "活动主键ID",
-									"required": true
+									"description": "活动主键ID"
 								},
 								{
 									"name": "images",
 									"type": "String",
-									"description": "宣传图片多个,分隔",
-									"required": true
+									"description": "宣传图片多个,分隔"
 								},
 								{
 									"name": "timestamp",
 									"type": "Number",
-									"description": "活动创建的时间戳",
-									"required": true
+									"description": "活动创建的时间戳"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "活动名",
-									"required": true
+									"description": "活动名"
 								}
-							]
+							],
+							"name": "items",
+							"type": "T[]",
+							"description": "活动列表"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "一页行数",
-							"required": true
+							"description": "一页行数"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "返回内容(分页对象)"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标示",
-					"required": true
+					"description": "成功标示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回的结果对象"
 		}
-	]
+	],
+	"name": "alibaba.shenjing.core.activity.getappshowlist",
+	"apiChineseName": "获取神鲸活动列表",
+	"description": "获取神鲸活动列表",
+	"id": 38075
 }

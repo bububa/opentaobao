@@ -1,14 +1,6 @@
 {
-	"id": 31548,
-	"name": "alibaba.iwork.mc.msg.sendmobile",
-	"apiChineseName": "发送消息给手机用户",
-	"description": "给手机用户发送对应操作结果的消息",
 	"requestParams": [
 		{
-			"name": "mobile_receiver_message_event",
-			"type": "MobileReceiverMessageEvent",
-			"description": "消息对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "msg_key",
@@ -68,40 +60,44 @@
 					"description": "发送者",
 					"required": true
 				}
-			]
+			],
+			"name": "mobile_receiver_message_event",
+			"type": "MobileReceiverMessageEvent",
+			"description": "消息对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "content",
-					"required": true
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.iwork.mc.msg.sendmobile",
+	"apiChineseName": "发送消息给手机用户",
+	"description": "给手机用户发送对应操作结果的消息",
+	"id": 31548
 }

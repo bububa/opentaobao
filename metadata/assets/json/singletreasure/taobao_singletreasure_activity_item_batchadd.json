@@ -1,14 +1,6 @@
 {
-	"id": 31339,
-	"name": "taobao.singletreasure.activity.item.batchadd",
-	"apiChineseName": "批量添加商品接口",
-	"description": "向活动中批量添加商品优惠",
 	"requestParams": [
 		{
-			"name": "item_detail_info",
-			"type": "ItemDetailInfoBatchCreateDto",
-			"description": "系统入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -17,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "item_detail_info",
-					"type": "ItemDetailInfoCreateDto[]",
-					"description": "商品列表",
 					"subParams": [
 						{
 							"name": "limit_check",
@@ -37,9 +26,6 @@
 							"description": "猫客折上折，优惠力度，打折、减钱：单位分；打折，8折：800"
 						},
 						{
-							"name": "sku_v_os",
-							"type": "SkuDetailInfoCreateDto[]",
-							"description": "sku对象列表",
 							"subParams": [
 								{
 									"name": "mk_discount",
@@ -56,7 +42,10 @@
 									"type": "Number",
 									"description": "优惠力度，打折、减钱：单位分；打折，8折：800"
 								}
-							]
+							],
+							"name": "sku_v_os",
+							"type": "SkuDetailInfoCreateDto[]",
+							"description": "sku对象列表"
 						},
 						{
 							"name": "item_id",
@@ -74,56 +63,61 @@
 							"type": "Number",
 							"description": "优惠力度，打折、减钱：单位分；打折，8折：800"
 						}
-					]
+					],
+					"name": "item_detail_info",
+					"type": "ItemDetailInfoCreateDto[]",
+					"description": "商品列表"
 				}
-			]
+			],
+			"name": "item_detail_info",
+			"type": "ItemDetailInfoBatchCreateDto",
+			"description": "系统入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "data",
-					"type": "ItemProcessErrorResultDto",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "activityId",
-							"required": true
+							"description": "activityId"
 						},
 						{
 							"name": "sku_id_map",
-							"type": "Json",
-							"description": "处理失败的item和sku: map结构为:itemId: skuId-错误信息,所有返回的外层key是itemId，里面的key是skuId，商品级别的skuId为-1",
-							"required": true
+							"type": "String",
+							"description": "处理失败的item和sku: map结构为:itemId: skuId-错误信息,所有返回的外层key是itemId，里面的key是skuId，商品级别的skuId为-1"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemProcessErrorResultDto",
+					"description": "data"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.item.batchadd",
+	"apiChineseName": "批量添加商品接口",
+	"description": "向活动中批量添加商品优惠",
+	"id": 31339
 }

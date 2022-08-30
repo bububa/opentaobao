@@ -1,18 +1,10 @@
 {
-	"id": 26112,
-	"name": "taobao.openim.chatlogs.import",
-	"apiChineseName": "openim单聊消息导入",
-	"description": "提供openim账号的聊天消息导入功能",
 	"requestParams": [
 		{
-			"name": "messages",
-			"type": "TextMessage[]",
-			"description": "消息序列",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "from_id",
+					"type": "String",
 					"description": "发送方userid",
 					"required": true
 				},
@@ -30,10 +22,16 @@
 				},
 				{
 					"name": "to_id",
+					"type": "String",
 					"description": "接受方userid",
 					"required": true
 				}
-			]
+			],
+			"name": "messages",
+			"type": "TextMessage[]",
+			"description": "消息序列",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -52,5 +50,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.openim.chatlogs.import",
+	"apiChineseName": "openim单聊消息导入",
+	"description": "提供openim账号的聊天消息导入功能",
+	"id": 26112
 }

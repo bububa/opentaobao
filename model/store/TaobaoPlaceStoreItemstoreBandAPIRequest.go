@@ -13,7 +13,7 @@ import (
 type TaobaoPlaceStoreItemstoreBandAPIRequest struct {
 	model.Params
 	// 门店id
-	_storeIds []int64
+	_storeIds []string
 	// 操作类型
 	_actionType string
 	// 商品id
@@ -43,14 +43,14 @@ func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetApiParams() url.Values {
 
 // SetStoreIds is StoreIds Setter
 // 门店id
-func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetStoreIds(_storeIds []int64) error {
+func (r *TaobaoPlaceStoreItemstoreBandAPIRequest) SetStoreIds(_storeIds []string) error {
 	r._storeIds = _storeIds
 	r.Set("store_ids", _storeIds)
 	return nil
 }
 
 // GetStoreIds StoreIds Getter
-func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetStoreIds() []int64 {
+func (r TaobaoPlaceStoreItemstoreBandAPIRequest) GetStoreIds() []string {
 	return r._storeIds
 }
 

@@ -1,15 +1,6 @@
 {
-	"id": 54666,
-	"name": "tmall.trend.style.produceinfo.upload",
-	"apiChineseName": "款式生产信息同步API",
-	"description": "款式生产信息同步至平台",
 	"requestParams": [
 		{
-			"name": "style_produce_info_bo_list",
-			"type": "StyleProduceInfoBO[]",
-			"description": "款式生产信息列表，单次同步最对1000条",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "sync_purpose",
@@ -92,7 +83,12 @@
 					"description": "生产Bom清单，json字符串",
 					"required": true
 				}
-			]
+			],
+			"name": "style_produce_info_bo_list",
+			"type": "StyleProduceInfoBO[]",
+			"description": "款式生产信息列表，单次同步最对1000条",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -116,5 +112,9 @@
 			"type": "String",
 			"description": "错误描述信息"
 		}
-	]
+	],
+	"name": "tmall.trend.style.produceinfo.upload",
+	"apiChineseName": "款式生产信息同步API",
+	"description": "款式生产信息同步至平台",
+	"id": 54666
 }

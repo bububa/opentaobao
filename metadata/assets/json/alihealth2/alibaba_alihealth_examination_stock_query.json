@@ -1,8 +1,4 @@
 {
-	"id": 27433,
-	"name": "alibaba.alihealth.examination.stock.query",
-	"apiChineseName": "体检机构对接_体检套餐库存查询",
-	"description": "体检机构对接_体检套餐库存查询",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -37,9 +33,6 @@
 			"description": "返回结果描述"
 		},
 		{
-			"name": "storage_list",
-			"type": "Storage []",
-			"description": "门店库存列表",
 			"subParams": [
 				{
 					"name": "used_num",
@@ -65,7 +58,10 @@
 					"description": "状态,目前仅瑞慈使用,瑞慈状态:00:正常 01:已满 02:机构休息 03: 预约截止",
 					"required": true
 				}
-			]
+			],
+			"name": "storage_list",
+			"type": "Storage []",
+			"description": "门店库存列表"
 		},
 		{
 			"name": "response_code",
@@ -76,6 +72,15 @@
 			"name": "time_sharing_enable",
 			"type": "Boolean",
 			"description": "是否支持分时能力"
+		},
+		{
+			"name": "reservation_min_ahead_hours",
+			"type": "String",
+			"description": "预约至少提前多少小时"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.stock.query",
+	"apiChineseName": "体检机构对接_体检套餐库存查询",
+	"description": "体检机构对接_体检套餐库存查询",
+	"id": 27433
 }

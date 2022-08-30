@@ -12,7 +12,7 @@ import (
 // 服务商ISV，根据订单号，查询闲鱼订单信息
 type AlibabaIdleIsvOrderQueryAPIRequest struct {
 	model.Params
-	// 系统自动生成
+	// 订单查询接口入参
 	_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery
 }
 
@@ -38,7 +38,7 @@ func (r AlibabaIdleIsvOrderQueryAPIRequest) GetApiParams() url.Values {
 }
 
 // SetParamAppraiseIsvOrderQuery is ParamAppraiseIsvOrderQuery Setter
-// 系统自动生成
+// 订单查询接口入参
 func (r *AlibabaIdleIsvOrderQueryAPIRequest) SetParamAppraiseIsvOrderQuery(_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery) error {
 	r._paramAppraiseIsvOrderQuery = _paramAppraiseIsvOrderQuery
 	r.Set("param_appraise_isv_order_query", _paramAppraiseIsvOrderQuery)

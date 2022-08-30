@@ -1,15 +1,6 @@
 {
-	"id": 35816,
-	"name": "alibaba.mos.goods.setprice",
-	"apiChineseName": "价格变更接口",
-	"description": "价格变更接口，供供应商修改价格时使用。",
 	"requestParams": [
 		{
-			"name": "price_dto_list",
-			"type": "PriceDto[]",
-			"description": "价格变更对象列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "counter_id",
@@ -33,60 +24,62 @@
 					"description": "商品标准价",
 					"required": true
 				}
-			]
+			],
+			"name": "price_dto_list",
+			"type": "PriceDto[]",
+			"description": "价格变更对象列表",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data_s",
-			"type": "PriceResult []",
-			"description": "返回数据",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "如果出错，返回错误信息",
-					"required": true
+					"description": "如果出错，返回错误信息"
 				},
 				{
-					"name": "price_dto",
-					"type": "PriceDto",
-					"description": "价格对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "counter_id",
 							"type": "String",
-							"description": "专柜id",
-							"required": true
+							"description": "专柜id"
 						},
 						{
 							"name": "out_counter_id",
 							"type": "String",
-							"description": "外部专柜id",
-							"required": true
+							"description": "外部专柜id"
 						},
 						{
 							"name": "out_id",
 							"type": "String",
-							"description": "外部商品id",
-							"required": true
+							"description": "外部商品id"
 						},
 						{
 							"name": "standard_price",
 							"type": "String",
-							"description": "商品标准价",
-							"required": true
+							"description": "商品标准价"
 						}
-					]
+					],
+					"name": "price_dto",
+					"type": "PriceDto",
+					"description": "价格对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "单挑成功与否",
-					"required": true
+					"description": "单挑成功与否"
 				}
-			]
+			],
+			"name": "data_s",
+			"type": "PriceResult []",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.mos.goods.setprice",
+	"apiChineseName": "价格变更接口",
+	"description": "价格变更接口，供供应商修改价格时使用。",
+	"id": 35816
 }

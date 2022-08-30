@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "third_depart_id",
+					"type": "String",
+					"description": "子机构id"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "第三方下属厂商id(最大64位)",
+					"required": true
+				},
+				{
+					"name": "cert_end_date",
+					"type": "String",
+					"description": "证书有效期结束时间\t"
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "签名值",
+					"required": true
+				},
+				{
+					"name": "stamp",
+					"type": "String",
+					"description": "公章base64编码格式(仅在制作签章时回调)"
+				},
+				{
+					"name": "depart_id",
+					"type": "String",
+					"description": "子机构在医网信id(子机构审核制章的值)\t"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述(拒绝有值)"
+				},
+				{
+					"name": "cert_num",
+					"type": "String",
+					"description": "证书序列号\t"
+				},
+				{
+					"name": "cert_start_date",
+					"type": "String",
+					"description": "证书有效期开始时间"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态 1:通过 2:停用 3:拒绝",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "CaSignStatusSaveRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "出参"
+		},
+		{
+			"name": "exception_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "exception_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.rx.ca.device.sign.status.save",
+	"apiChineseName": "处方ca认证-厂商通知接口",
+	"description": "处方ca认证-厂商通知接口",
+	"id": 60677
+}

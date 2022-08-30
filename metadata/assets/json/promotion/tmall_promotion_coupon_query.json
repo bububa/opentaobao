@@ -1,8 +1,4 @@
 {
-	"id": 38496,
-	"name": "tmall.promotion.coupon.query",
-	"apiChineseName": "查询可用优惠券列表",
-	"description": "查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -19,83 +15,81 @@
 			"name": "buyer_nick",
 			"type": "String",
 			"description": "buyer_id、buyer_nick至少填一个， 都填写以id为准"
+		},
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "扩展字段"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "errorMsg",
-					"required": true
-				},
-				{
-					"name": "result_code",
-					"type": "String",
-					"description": "resultCode",
-					"required": true
-				},
-				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "id",
+							"name": "discount",
 							"type": "String",
-							"description": "id",
-							"required": true
-						},
-						{
-							"name": "coupon_template_id",
-							"type": "String",
-							"description": "couponTemplateId",
-							"required": true
-						},
-						{
-							"name": "supplier_id",
-							"type": "String",
-							"description": "supplierId",
-							"required": true
-						},
-						{
-							"name": "start_time",
-							"type": "Date",
-							"description": "startTime",
-							"required": true
-						},
-						{
-							"name": "end_time",
-							"type": "Date",
-							"description": "endTime",
-							"required": true
-						},
-						{
-							"name": "coupon_name",
-							"type": "String",
-							"description": "couponName",
-							"required": true
+							"description": "discount"
 						},
 						{
 							"name": "start_fee",
 							"type": "String",
-							"description": "startFee",
-							"required": true
+							"description": "startFee"
 						},
 						{
-							"name": "discount",
+							"name": "coupon_name",
 							"type": "String",
-							"description": "discount",
-							"required": true
+							"description": "couponName"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "endTime"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "startTime"
+						},
+						{
+							"name": "supplier_id",
+							"type": "String",
+							"description": "supplierId"
+						},
+						{
+							"name": "coupon_template_id",
+							"type": "String",
+							"description": "couponTemplateId"
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "id"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "data"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "resultCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.promotion.coupon.query",
+	"apiChineseName": "查询可用优惠券列表",
+	"description": "查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick",
+	"id": 38496
 }

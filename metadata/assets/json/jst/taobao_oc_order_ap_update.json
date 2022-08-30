@@ -1,8 +1,4 @@
 {
-	"id": 25564,
-	"name": "taobao.oc.order.ap.update",
-	"apiChineseName": "按OC订单分账",
-	"description": "对OC订单执行分账操作",
 	"requestParams": [
 		{
 			"name": "oc_order_id",
@@ -27,5 +23,9 @@
 			"type": "String",
 			"description": "执行失败时候的错误描述信息"
 		}
-	]
+	],
+	"name": "taobao.oc.order.ap.update",
+	"apiChineseName": "按OC订单分账",
+	"description": "对OC订单执行分账操作",
+	"id": 25564
 }

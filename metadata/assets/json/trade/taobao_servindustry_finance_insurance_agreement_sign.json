@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"name": "inner_agreement_id",
+			"type": "String",
+			"description": "内部模板id",
+			"required": true
+		},
+		{
+			"name": "unique_code",
+			"type": "String",
+			"description": "唯一码",
+			"required": true
+		},
+		{
+			"name": "out_agreement_id",
+			"type": "String",
+			"description": "保司模板id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否能够重试"
+				}
+			],
+			"name": "result",
+			"type": "RetryResult",
+			"description": "返回参数"
+		}
+	],
+	"name": "taobao.servindustry.finance.insurance.agreement.sign",
+	"apiChineseName": "保司合同签约后回调接口",
+	"description": "保司合同签约后回调接口",
+	"id": 61701
+}

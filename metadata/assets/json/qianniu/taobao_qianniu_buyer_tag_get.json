@@ -1,8 +1,4 @@
 {
-	"id": 25400,
-	"name": "taobao.qianniu.buyer.tag.get",
-	"apiChineseName": "判断买家是否有某些标",
-	"description": "判断某个买家是否有某些标",
 	"requestParams": [
 		{
 			"name": "buyer_nick",
@@ -19,16 +15,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "user_tag_info",
-			"type": "UserTagQueryResult",
-			"description": "用户tag信息",
 			"subParams": [
 				{
 					"name": "enterprise_buyer",
 					"type": "Boolean",
 					"description": "买家是否有这个标，true表示有，false表示没有"
 				}
-			]
+			],
+			"name": "user_tag_info",
+			"type": "UserTagQueryResult",
+			"description": "用户tag信息"
 		}
-	]
+	],
+	"name": "taobao.qianniu.buyer.tag.get",
+	"apiChineseName": "判断买家是否有某些标",
+	"description": "判断某个买家是否有某些标",
+	"id": 25400
 }

@@ -1,8 +1,4 @@
 {
-	"id": 29609,
-	"name": "alipay.baoxian.claim.uploadattachment",
-	"apiChineseName": "资料上传接口",
-	"description": "给合作伙伴上传申请理赔材料",
 	"requestParams": [
 		{
 			"name": "out_biz_no",
@@ -51,55 +47,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "upload_result",
-			"type": "UploadResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "InsAttachmentUploadVo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "oss_path",
 							"type": "String",
-							"description": "ossPath",
-							"required": true
+							"description": "ossPath"
 						},
 						{
 							"name": "e_tag",
 							"type": "String",
-							"description": "eTag",
-							"required": true
+							"description": "eTag"
 						},
 						{
 							"name": "size",
 							"type": "Number",
-							"description": "size",
-							"required": true
+							"description": "size"
 						}
-					]
+					],
+					"name": "model",
+					"type": "InsAttachmentUploadVo",
+					"description": "model"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "upload_result",
+			"type": "UploadResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alipay.baoxian.claim.uploadattachment",
+	"apiChineseName": "资料上传接口",
+	"description": "给合作伙伴上传申请理赔材料",
+	"id": 29609
 }

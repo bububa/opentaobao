@@ -1,13 +1,6 @@
 {
-	"id": 45814,
-	"name": "alibaba.alsc.crm.card.query.template",
-	"apiChineseName": "查询卡模板详情",
-	"description": "查询卡模板详情",
 	"requestParams": [
 		{
-			"name": "param_query_card_template_open_req",
-			"type": "QueryCardTemplateOpenReq",
-			"description": "请求对象",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -49,482 +42,414 @@
 					"type": "String",
 					"description": "物理卡号"
 				}
-			]
+			],
+			"name": "param_query_card_template_open_req",
+			"type": "QueryCardTemplateOpenReq",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "CardTemplateOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "card_template_id",
 							"type": "String",
-							"description": "卡模板id",
-							"required": true
+							"description": "卡模板id"
 						},
 						{
 							"name": "card_type",
 							"type": "String",
-							"description": "卡类型",
-							"required": true
+							"description": "卡类型"
 						},
 						{
 							"name": "create_by",
 							"type": "String",
-							"description": "创建人",
-							"required": true
+							"description": "创建人"
 						},
 						{
 							"name": "deleted",
 							"type": "Boolean",
-							"description": "逻辑删除",
-							"required": true
+							"description": "逻辑删除"
 						},
 						{
 							"name": "expire_type",
 							"type": "String",
-							"description": "过期类型",
-							"required": true
+							"description": "过期类型"
 						},
 						{
 							"name": "expire_value",
 							"type": "String",
-							"description": "过期值",
-							"required": true
+							"description": "过期值"
 						},
 						{
-							"name": "ext_info",
-							"type": "Extinfo",
-							"description": "扩展信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "empty",
 									"type": "Boolean",
-									"description": "Map\u003cString,String\u003e",
-									"required": true
+									"description": "Map\u003cString,String\u003e"
 								}
-							]
+							],
+							"name": "ext_info",
+							"type": "Extinfo",
+							"description": "扩展信息"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "menu_id",
 							"type": "String",
-							"description": "特价菜单ID",
-							"required": true
+							"description": "特价菜单ID"
 						},
 						{
 							"name": "menu_limit_type",
 							"type": "String",
-							"description": "特价菜限制",
-							"required": true
+							"description": "特价菜限制"
 						},
 						{
 							"name": "menu_switch",
 							"type": "Boolean",
-							"description": "特价菜单开关",
-							"required": true
+							"description": "特价菜单开关"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "卡模板名称",
-							"required": true
+							"description": "卡模板名称"
 						},
 						{
 							"name": "open_gift_switch",
 							"type": "Boolean",
-							"description": "开卡礼包开关",
-							"required": true
+							"description": "开卡礼包开关"
 						},
 						{
 							"name": "opt_plan_id",
 							"type": "String",
-							"description": "运营计划ID",
-							"required": true
+							"description": "运营计划ID"
 						},
 						{
 							"name": "phy_card_fee_amount",
 							"type": "Number",
-							"description": "工本费金额",
-							"required": true
+							"description": "工本费金额"
 						},
 						{
 							"name": "phy_card_fee_back",
 							"type": "Boolean",
-							"description": "是否可退卡费",
-							"required": true
+							"description": "是否可退卡费"
 						},
 						{
 							"name": "phy_card_fee_switch",
 							"type": "Boolean",
-							"description": "工本费开关",
-							"required": true
+							"description": "工本费开关"
 						},
 						{
 							"name": "pre_recharge_amount",
 							"type": "Number",
-							"description": "开卡礼包-赠送预储金额",
-							"required": true
+							"description": "开卡礼包-赠送预储金额"
 						},
 						{
 							"name": "recharge_clear",
 							"type": "Boolean",
-							"description": "开卡礼包-有效期结束是否清零",
-							"required": true
+							"description": "开卡礼包-有效期结束是否清零"
 						},
 						{
-							"name": "recharge_rule_open_info",
-							"type": "RechargeRuleOpenInfo",
-							"description": "储值规则信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "card_type",
 									"type": "String",
-									"description": "卡类型：0-会员卡，1-礼品卡",
-									"required": true
+									"description": "卡类型：0-会员卡，1-礼品卡"
 								},
 								{
 									"name": "create_by",
 									"type": "String",
-									"description": "创建人",
-									"required": true
+									"description": "创建人"
 								},
 								{
 									"name": "deduction_order",
 									"type": "String",
-									"description": "扣减顺序：0-比例、1-先实储后赠送、2-先增储后实储",
-									"required": true
+									"description": "扣减顺序：0-比例、1-先实储后赠送、2-先增储后实储"
 								},
 								{
 									"name": "deleted",
 									"type": "Boolean",
-									"description": "逻辑删除标记",
-									"required": true
+									"description": "逻辑删除标记"
 								},
 								{
-									"name": "ext_info",
-									"type": "Extinfo",
-									"description": "扩展信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "empty",
 											"type": "Boolean",
-											"description": "Map\u003cString,String\u003e",
-											"required": true
+											"description": "Map\u003cString,String\u003e"
 										}
-									]
+									],
+									"name": "ext_info",
+									"type": "Extinfo",
+									"description": "扩展信息"
 								},
 								{
 									"name": "full_gift_switch",
 									"type": "Boolean",
-									"description": "满赠开关：false-关，true-开，默认关闭",
-									"required": true
+									"description": "满赠开关：false-关，true-开，默认关闭"
 								},
 								{
 									"name": "gift_type",
 									"type": "String",
-									"description": "满赠类型：0-按金额（默认），1-按百分比、",
-									"required": true
+									"description": "满赠类型：0-按金额（默认），1-按百分比、"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "gmt_modified",
 									"type": "Date",
-									"description": "修改时间",
-									"required": true
+									"description": "修改时间"
 								},
 								{
-									"name": "list_recharge_rule_detail_info_list",
-									"type": "RechargeRuleDetailOpenInfo[]",
-									"description": "规则明细列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "gift_point",
 											"type": "Number",
-											"description": "赠送积分",
-											"required": true
+											"description": "赠送积分"
 										},
 										{
 											"name": "gift_value",
 											"type": "Number",
-											"description": "赠送金额",
-											"required": true
+											"description": "赠送金额"
 										},
 										{
 											"name": "real_value",
 											"type": "Number",
-											"description": "储值金额",
-											"required": true
+											"description": "储值金额"
 										},
 										{
 											"name": "remark",
 											"type": "String",
-											"description": "备注信息",
-											"required": true
+											"description": "备注信息"
 										}
-									]
+									],
+									"name": "list_recharge_rule_detail_info_list",
+									"type": "RechargeRuleDetailOpenInfo[]",
+									"description": "规则明细列表"
 								},
 								{
 									"name": "pay_no_pwd_credit",
 									"type": "Number",
-									"description": "免密额度:-1表示不限额，单位为分，默认200_00L",
-									"required": true
+									"description": "免密额度:-1表示不限额，单位为分，默认200_00L"
 								},
 								{
 									"name": "pay_no_pwd_switch",
 									"type": "Boolean",
-									"description": "免密开关:0-关闭（默认），1-开启",
-									"required": true
+									"description": "免密开关:0-关闭（默认），1-开启"
 								},
 								{
 									"name": "rule_id",
 									"type": "String",
-									"description": "规则id",
-									"required": true
+									"description": "规则id"
 								},
 								{
 									"name": "rule_name",
 									"type": "String",
-									"description": "储值规则名称",
-									"required": true
+									"description": "储值规则名称"
 								},
 								{
 									"name": "shop_id",
 									"type": "String",
-									"description": "门店id",
-									"required": true
+									"description": "门店id"
 								},
 								{
 									"name": "update_by",
 									"type": "String",
-									"description": "修改人",
-									"required": true
+									"description": "修改人"
 								},
 								{
 									"name": "out_shop_id",
 									"type": "String",
-									"description": "外部门店ID",
-									"required": true
+									"description": "外部门店ID"
 								}
-							]
+							],
+							"name": "recharge_rule_open_info",
+							"type": "RechargeRuleOpenInfo",
+							"description": "储值规则信息"
 						},
 						{
 							"name": "recharge_shop_ids",
 							"type": "String[]",
-							"description": "储值门店列表",
-							"required": true
+							"description": "储值门店列表"
 						},
 						{
 							"name": "recharge_switch",
 							"type": "Boolean",
-							"description": "储值开关",
-							"required": true
+							"description": "储值开关"
 						},
 						{
 							"name": "sell_price",
 							"type": "Number",
-							"description": "售价",
-							"required": true
+							"description": "售价"
 						},
 						{
 							"name": "sell_shop_group_id",
 							"type": "String",
-							"description": "售卡门店分组ID",
-							"required": true
+							"description": "售卡门店分组ID"
 						},
 						{
 							"name": "sell_shop_ids",
 							"type": "String[]",
-							"description": "售卡门店列表",
-							"required": true
+							"description": "售卡门店列表"
 						},
 						{
 							"name": "startexpire_type",
 							"type": "String",
-							"description": "何时开始计算有效期",
-							"required": true
+							"description": "何时开始计算有效期"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "卡模板状态",
-							"required": true
+							"description": "卡模板状态"
 						},
 						{
 							"name": "update_by",
 							"type": "String",
-							"description": "修改人",
-							"required": true
+							"description": "修改人"
 						},
 						{
 							"name": "use_limit_type",
 							"type": "String",
-							"description": "使用限制",
-							"required": true
+							"description": "使用限制"
 						},
 						{
 							"name": "use_shop_ids",
 							"type": "String[]",
-							"description": "使用门店列表",
-							"required": true
+							"description": "使用门店列表"
 						},
 						{
-							"name": "vouchers",
-							"type": "OpenGiftVoucherOpenInfo[]",
-							"description": "开卡礼包-优惠券模板列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "num",
 									"type": "Number",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								},
 								{
 									"name": "voucher_id",
 									"type": "String",
-									"description": "券模板ID",
-									"required": true
+									"description": "券模板ID"
 								}
-							]
+							],
+							"name": "vouchers",
+							"type": "OpenGiftVoucherOpenInfo[]",
+							"description": "开卡礼包-优惠券模板列表"
 						},
 						{
-							"name": "wx_card_ext",
-							"type": "WxCardOpenExt",
-							"description": "微信卡扩展",
-							"required": true,
 							"subParams": [
 								{
 									"name": "brand_logo",
 									"type": "String",
-									"description": "品牌logoURL",
-									"required": true
+									"description": "品牌logoURL"
 								},
 								{
 									"name": "general_bg_logo",
 									"type": "String",
-									"description": "统一卡面URL",
-									"required": true
+									"description": "统一卡面URL"
 								},
 								{
 									"name": "general_bg_switch",
 									"type": "Boolean",
-									"description": "是否统一卡面",
-									"required": true
+									"description": "是否统一卡面"
 								},
 								{
 									"name": "paid_get_switch",
 									"type": "Boolean",
-									"description": "支付后是否可领取",
-									"required": true
+									"description": "支付后是否可领取"
 								},
 								{
-									"name": "wx_level_bgs",
-									"type": "WxLevelBgOpenInfo[]",
-									"description": "等级卡面",
-									"required": true,
 									"subParams": [
 										{
 											"name": "bg_url",
 											"type": "String",
-											"description": "卡面URL",
-											"required": true
+											"description": "卡面URL"
 										},
 										{
 											"name": "level_id",
 											"type": "String",
-											"description": "等级ID",
-											"required": true
+											"description": "等级ID"
 										},
 										{
 											"name": "level_name",
 											"type": "String",
-											"description": "等级名称",
-											"required": true
+											"description": "等级名称"
 										}
-									]
+									],
+									"name": "wx_level_bgs",
+									"type": "WxLevelBgOpenInfo[]",
+									"description": "等级卡面"
 								}
-							]
+							],
+							"name": "wx_card_ext",
+							"type": "WxCardOpenExt",
+							"description": "微信卡扩展"
 						},
 						{
 							"name": "wx_card_switch",
 							"type": "Boolean",
-							"description": "微信卡开关",
-							"required": true
+							"description": "微信卡开关"
 						},
 						{
 							"name": "out_recharge_shop_ids",
 							"type": "String[]",
-							"description": "外部储值门店",
-							"required": true
+							"description": "外部储值门店"
 						},
 						{
 							"name": "out_use_shop_ids",
 							"type": "String[]",
-							"description": "外部适用门店",
-							"required": true
+							"description": "外部适用门店"
 						},
 						{
 							"name": "out_sell_shop_ids",
 							"type": "String[]",
-							"description": "外部出售门店",
-							"required": true
+							"description": "外部出售门店"
 						}
-					]
+					],
+					"name": "result",
+					"type": "CardTemplateOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.query.template",
+	"apiChineseName": "查询卡模板详情",
+	"description": "查询卡模板详情",
+	"id": 45814
 }

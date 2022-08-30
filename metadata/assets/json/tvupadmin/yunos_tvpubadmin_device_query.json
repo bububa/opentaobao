@@ -1,8 +1,4 @@
 {
-	"id": 28630,
-	"name": "yunos.tvpubadmin.device.query",
-	"apiChineseName": "获取设备列表",
-	"description": "获取设备列表",
 	"requestParams": [
 		{
 			"name": "terminal_type",
@@ -35,79 +31,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "PaginationDO",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "页码值",
-					"required": true
+					"description": "页码值"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页条数",
-					"required": true
+					"description": "每页条数"
 				},
 				{
-					"name": "list",
-					"type": "DeviceExtendDO[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bcp",
 							"type": "Number",
-							"description": "牌照方",
-							"required": true
+							"description": "牌照方"
 						},
 						{
 							"name": "device_model",
 							"type": "String",
-							"description": "设备型号",
-							"required": true
+							"description": "设备型号"
 						},
 						{
 							"name": "inner_device_model",
 							"type": "String",
-							"description": "设备内部型号",
-							"required": true
+							"description": "设备内部型号"
 						},
 						{
 							"name": "terminal_type",
 							"type": "String",
-							"description": "设备类型",
-							"required": true
+							"description": "设备类型"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "厂商名称",
-							"required": true
+							"description": "厂商名称"
 						},
 						{
 							"name": "brand_id",
 							"type": "Number",
-							"description": "厂商ID",
-							"required": true
+							"description": "厂商ID"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						}
-					]
+					],
+					"name": "list",
+					"type": "DeviceExtendDO[]",
+					"description": "list"
 				}
-			]
+			],
+			"name": "object",
+			"type": "PaginationDO",
+			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.query",
+	"apiChineseName": "获取设备列表",
+	"description": "获取设备列表",
+	"id": 28630
 }

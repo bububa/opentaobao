@@ -1,20 +1,8 @@
 {
-	"id": 47504,
-	"name": "alibaba.lst.ic.stock.items.update",
-	"apiChineseName": "零售通经销商商品库存设置",
-	"description": "零售通经销商商品库存设置",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "LstItemStockParam",
-			"description": "零售通经销商商品库存",
-			"required": true,
 			"subParams": [
 				{
-					"name": "stock_list",
-					"type": "Stocklist[]",
-					"description": "库存参数列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
@@ -33,68 +21,72 @@
 							"type": "String",
 							"description": "商家仓仓库code"
 						}
-					]
+					],
+					"name": "stock_list",
+					"type": "Stocklist[]",
+					"description": "库存参数列表",
+					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "LstItemStockParam",
+			"description": "零售通经销商商品库存",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content_list",
-					"type": "Content[]",
-					"description": "列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "result",
 							"type": "Boolean",
-							"description": "成功/失败",
-							"required": true
+							"description": "成功/失败"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品Id",
-							"required": true
+							"description": "商品Id"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误code",
-							"required": true
+							"description": "错误code"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "错误描述",
-							"required": true
+							"description": "错误描述"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "Content[]",
+					"description": "列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.lst.ic.stock.items.update",
+	"apiChineseName": "零售通经销商商品库存设置",
+	"description": "零售通经销商商品库存设置",
+	"id": 47504
 }

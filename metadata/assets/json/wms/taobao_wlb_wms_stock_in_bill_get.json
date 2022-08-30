@@ -1,8 +1,4 @@
 {
-	"id": 25679,
-	"name": "taobao.wlb.wms.stock.in.bill.get",
-	"apiChineseName": "获取入库单信息",
-	"description": "获取入库单信息",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "stock_in_info",
-			"type": "CainiaoStockInBillStockininfo",
-			"description": "入库单信息",
 			"subParams": [
 				{
 					"name": "order_code",
@@ -47,14 +40,8 @@
 					"description": "入库单状态 WMS_ACCEPT 接单成功 WMS_REJECT 接单失败WMS_CONFIRMED 仓库生产完成"
 				},
 				{
-					"name": "order_item_list",
-					"type": "CainiaoStockInBillOrderitemlist[]",
-					"description": "入库单信息",
 					"subParams": [
 						{
-							"name": "order_item",
-							"type": "CainiaoStockInBillOrderitem",
-							"description": "入库单信息",
 							"subParams": [
 								{
 									"name": "order_item_id",
@@ -77,14 +64,8 @@
 									"description": "通知数量"
 								},
 								{
-									"name": "inventory_item_list",
-									"type": "CainiaoStockInBillInventoryitemlist[]",
-									"description": "仓库收货商品信息",
 									"subParams": [
 										{
-											"name": "inventory_item",
-											"type": "CainiaoStockInBillInventoryitem",
-											"description": "仓库收货商品信息",
 											"subParams": [
 												{
 													"name": "inventory_type",
@@ -121,15 +102,34 @@
 													"type": "String",
 													"description": "批次号"
 												}
-											]
+											],
+											"name": "inventory_item",
+											"type": "CainiaoStockInBillInventoryitem",
+											"description": "仓库收货商品信息"
 										}
-									]
+									],
+									"name": "inventory_item_list",
+									"type": "CainiaoStockInBillInventoryitemlist[]",
+									"description": "仓库收货商品信息"
 								}
-							]
+							],
+							"name": "order_item",
+							"type": "CainiaoStockInBillOrderitem",
+							"description": "入库单信息"
 						}
-					]
+					],
+					"name": "order_item_list",
+					"type": "CainiaoStockInBillOrderitemlist[]",
+					"description": "入库单信息"
 				}
-			]
+			],
+			"name": "stock_in_info",
+			"type": "CainiaoStockInBillStockininfo",
+			"description": "入库单信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.stock.in.bill.get",
+	"apiChineseName": "获取入库单信息",
+	"description": "获取入库单信息",
+	"id": 25679
 }

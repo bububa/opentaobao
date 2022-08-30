@@ -3,7 +3,7 @@ package wdk
 // FinanceOrderDetailRequest 结构体
 type FinanceOrderDetailRequest struct {
 	// 门店编码list
-	ShopCodes []Null `json:"shop_codes,omitempty" xml:"shop_codes>null,omitempty"`
+	ShopCodes []string `json:"shop_codes,omitempty" xml:"shop_codes>string,omitempty"`
 	// 销售渠道
 	SaleChannel string `json:"sale_channel,omitempty" xml:"sale_channel,omitempty"`
 	// 销售来源

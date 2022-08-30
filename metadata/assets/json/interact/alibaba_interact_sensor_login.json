@@ -1,13 +1,13 @@
 {
-	"id": 23756,
-	"name": "alibaba.interact.sensor.login",
-	"apiChineseName": "获取登陆页面",
-	"description": "获取登陆页面",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "return=0表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.login",
+	"apiChineseName": "获取登陆页面",
+	"description": "获取登陆页面",
+	"id": 23756
 }

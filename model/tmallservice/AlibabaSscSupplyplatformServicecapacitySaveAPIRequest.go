@@ -12,14 +12,16 @@ import (
 // 保存服务容量
 type AlibabaSscSupplyplatformServicecapacitySaveAPIRequest struct {
 	model.Params
-	// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-	_providerType string
 	// 目前支持两种。daily 每天容量相同；customize 定制容量，每天都不同
 	_mode string
 	// 目前支持两种。day 表示支持的时间粒度为天；hour 时间粒度为小时
 	_timeInterval string
 	// 容量数据。根据mode和time interval有不同的格式。具体格式见业务对接文档。
 	_capacityData string
+	// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
+	_providerType string
+	// 网点编码
+	_providerCode string
 	// 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
 	_providerId int64
 }
@@ -43,19 +45,6 @@ func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetApiParams() ur
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetProviderType is ProviderType Setter
-// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderType(_providerType string) error {
-	r._providerType = _providerType
-	r.Set("provider_type", _providerType)
-	return nil
-}
-
-// GetProviderType ProviderType Getter
-func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetProviderType() string {
-	return r._providerType
 }
 
 // SetMode is Mode Setter
@@ -95,6 +84,32 @@ func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetCapacityData(
 // GetCapacityData CapacityData Getter
 func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetCapacityData() string {
 	return r._capacityData
+}
+
+// SetProviderType is ProviderType Setter
+// 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
+func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderType(_providerType string) error {
+	r._providerType = _providerType
+	r.Set("provider_type", _providerType)
+	return nil
+}
+
+// GetProviderType ProviderType Getter
+func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetProviderType() string {
+	return r._providerType
+}
+
+// SetProviderCode is ProviderCode Setter
+// 网点编码
+func (r *AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) SetProviderCode(_providerCode string) error {
+	r._providerCode = _providerCode
+	r.Set("provider_code", _providerCode)
+	return nil
+}
+
+// GetProviderCode ProviderCode Getter
+func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetProviderCode() string {
+	return r._providerCode
 }
 
 // SetProviderId is ProviderId Setter

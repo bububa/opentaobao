@@ -1,8 +1,4 @@
 {
-	"id": 41576,
-	"name": "taobao.alitrip.domestic.rent.car.status.update",
-	"apiChineseName": "航旅国内租车订单状态更新",
-	"description": "航旅国内租车订单状态更新",
 	"requestParams": [
 		{
 			"name": "status",
@@ -26,6 +22,11 @@
 			"type": "String",
 			"description": "服务商标识，由飞猪提供给到各服务商",
 			"required": true
+		},
+		{
+			"name": "car_number",
+			"type": "String",
+			"description": "车牌号"
 		}
 	],
 	"responseParams": [
@@ -44,5 +45,9 @@
 			"type": "Number",
 			"description": "错误码.code为0时表示成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.domestic.rent.car.status.update",
+	"apiChineseName": "航旅国内租车订单状态更新",
+	"description": "航旅国内租车订单状态更新",
+	"id": 41576
 }

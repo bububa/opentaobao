@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "拍品id",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "review_vin",
+					"type": "String",
+					"description": "复核vin码"
+				},
+				{
+					"name": "datestamp",
+					"type": "Number",
+					"description": "时间戳",
+					"required": true
+				},
+				{
+					"name": "has_report",
+					"type": "Boolean",
+					"description": "是否有生成报告，true 有，false 未生成 ",
+					"required": true
+				},
+				{
+					"name": "origin_vin",
+					"type": "String",
+					"description": "原始vin码（拍卖传的vin码，没传返回空）"
+				},
+				{
+					"name": "report_url",
+					"type": "String",
+					"description": "机动车报告地址链接"
+				},
+				{
+					"name": "attribute",
+					"type": "String",
+					"description": "机动车机构化属性，json格式"
+				}
+			],
+			"name": "vehicle_test_report_dto",
+			"type": "VehicleTestReportDTO",
+			"description": "机动车报告数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "数据接收成功为true，失败false"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "表示接口请求成功或失败"
+				}
+			],
+			"name": "result",
+			"type": "Result4Top",
+			"description": "请求返回对象"
+		}
+	],
+	"name": "taobao.auction.vehicle.report.recieve",
+	"apiChineseName": "机动车报告回调数据接收",
+	"description": "机动车报告同步接收接口",
+	"id": 62231
+}

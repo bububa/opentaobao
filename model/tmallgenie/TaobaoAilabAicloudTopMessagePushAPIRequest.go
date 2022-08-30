@@ -14,8 +14,6 @@ type TaobaoAilabAicloudTopMessagePushAPIRequest struct {
 	model.Params
 	// 消息推送请求
 	_messageBroadcastRequest *MessageBroadcastRequest
-	// 当前用户信息
-	_userInfoContext *OpsRequestUserInfoContext
 }
 
 // NewTaobaoAilabAicloudTopMessagePushRequest 初始化TaobaoAilabAicloudTopMessagePushAPIRequest对象
@@ -50,17 +48,4 @@ func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetMessageBroadcastRequest(
 // GetMessageBroadcastRequest MessageBroadcastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetMessageBroadcastRequest() *MessageBroadcastRequest {
 	return r._messageBroadcastRequest
-}
-
-// SetUserInfoContext is UserInfoContext Setter
-// 当前用户信息
-func (r *TaobaoAilabAicloudTopMessagePushAPIRequest) SetUserInfoContext(_userInfoContext *OpsRequestUserInfoContext) error {
-	r._userInfoContext = _userInfoContext
-	r.Set("user_info_context", _userInfoContext)
-	return nil
-}
-
-// GetUserInfoContext UserInfoContext Getter
-func (r TaobaoAilabAicloudTopMessagePushAPIRequest) GetUserInfoContext() *OpsRequestUserInfoContext {
-	return r._userInfoContext
 }

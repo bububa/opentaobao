@@ -20,6 +20,6 @@ type TaobaoTopOaidMergeAPIResponseModel struct {
 	XMLName xml.Name `xml:"top_oaid_merge_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 合单结果。可合单的订单ID列表用逗号分隔的字符串表示。比如，"1111,2222"表示订单1111和订单2222可合并发货。
+	// 合单结果。注意：一个字符串中的多笔订单可以合单，不同字符串间的订单不可合单！！！<br/> 比如，["1111,2222"]表示订单1111和订单2222可合单，["1111","2222"]表示订单1111和订单2222不可以合单。
 	TidList []string `json:"tid_list,omitempty" xml:"tid_list>string,omitempty"`
 }

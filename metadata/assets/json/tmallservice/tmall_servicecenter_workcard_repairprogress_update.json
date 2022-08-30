@@ -1,9 +1,10 @@
 {
-	"id": 49416,
-	"name": "tmall.servicecenter.workcard.repairprogress.update",
-	"apiChineseName": "更新维修进度",
-	"description": "提供给外部合作服务商的维修进度更改接口",
 	"requestParams": [
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "真实接单服务商账号Nick"
+		},
 		{
 			"name": "pic_url_list",
 			"type": "String[]",
@@ -23,46 +24,42 @@
 			"required": true
 		},
 		{
-			"name": "real_tp_nick",
+			"name": "received_goods",
 			"type": "String",
-			"description": "真实接单服务商账号Nick"
+			"description": "衣服，鞋子"
 		},
 		{
 			"name": "target_goods_defects",
 			"type": "String",
 			"description": "服务目标物瑕疵信息"
-		},
-		{
-			"name": "received_goods",
-			"type": "String",
-			"description": "衣服，鞋子"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.repairprogress.update",
+	"apiChineseName": "更新维修进度",
+	"description": "提供给外部合作服务商的维修进度更改接口",
+	"id": 49416
 }

@@ -12,4 +12,6 @@ type TaobaoQimenOrderQueryRequest struct {
 	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
 	// 移动电话, string (50) , 必填
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
+	// 1001，客服咨询；1002，售后服务
+	Scene string `json:"scene,omitempty" xml:"scene,omitempty"`
 }

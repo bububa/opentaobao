@@ -1,8 +1,4 @@
 {
-	"id": 31306,
-	"name": "tmall.servicecenter.worker.querypage",
-	"apiChineseName": "查询工人列表",
-	"description": "服务商查询工人列表",
 	"requestParams": [
 		{
 			"name": "page_index",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -52,7 +45,14 @@
 					"description": "value",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.querypage",
+	"apiChineseName": "查询工人列表",
+	"description": "服务商查询工人列表",
+	"id": 31306
 }

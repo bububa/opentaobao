@@ -12,12 +12,14 @@ import (
 // 查询货主/本企业上游企业出库单据信息
 type AlibabaAlihealthDrugKytListupoutAPIRequest struct {
 	model.Params
-	// 企业ID
+	// 货主企业唯一标识（一般情况下填写自已企业）
 	_refEntId string
 	// 开始日期（不写时分秒）
 	_beginDate string
 	// 结束日期（不写时分秒）
 	_endDate string
+	// 发货单位
+	_fromUserId string
 	// 生产批号
 	_produceBatchNo string
 	// 药品ID
@@ -30,8 +32,8 @@ type AlibabaAlihealthDrugKytListupoutAPIRequest struct {
 	_status string
 	// 单据号
 	_billCode string
-	// 发货单位
-	_fromUserId string
+	// 第三方物流企业唯一标识（只有代查其它企业数据时填写）
+	_agentRefEntId string
 	// 页大小
 	_pageSize int64
 	// 页码
@@ -60,7 +62,7 @@ func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetApiParams() url.Values {
 }
 
 // SetRefEntId is RefEntId Setter
-// 企业ID
+// 货主企业唯一标识（一般情况下填写自已企业）
 func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
@@ -96,6 +98,19 @@ func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetEndDate(_endDate string)
 // GetEndDate EndDate Getter
 func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetFromUserId is FromUserId Setter
+// 发货单位
+func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
+	r._fromUserId = _fromUserId
+	r.Set("from_user_id", _fromUserId)
+	return nil
+}
+
+// GetFromUserId FromUserId Getter
+func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetFromUserId() string {
+	return r._fromUserId
 }
 
 // SetProduceBatchNo is ProduceBatchNo Setter
@@ -176,17 +191,17 @@ func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetBillCode() string {
 	return r._billCode
 }
 
-// SetFromUserId is FromUserId Setter
-// 发货单位
-func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetFromUserId(_fromUserId string) error {
-	r._fromUserId = _fromUserId
-	r.Set("from_user_id", _fromUserId)
+// SetAgentRefEntId is AgentRefEntId Setter
+// 第三方物流企业唯一标识（只有代查其它企业数据时填写）
+func (r *AlibabaAlihealthDrugKytListupoutAPIRequest) SetAgentRefEntId(_agentRefEntId string) error {
+	r._agentRefEntId = _agentRefEntId
+	r.Set("agent_ref_ent_id", _agentRefEntId)
 	return nil
 }
 
-// GetFromUserId FromUserId Getter
-func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetFromUserId() string {
-	return r._fromUserId
+// GetAgentRefEntId AgentRefEntId Getter
+func (r AlibabaAlihealthDrugKytListupoutAPIRequest) GetAgentRefEntId() string {
+	return r._agentRefEntId
 }
 
 // SetPageSize is PageSize Setter

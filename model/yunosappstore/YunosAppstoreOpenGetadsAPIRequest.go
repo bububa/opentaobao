@@ -22,8 +22,6 @@ type YunosAppstoreOpenGetadsAPIRequest struct {
 	_excludeCats []string
 	// 创意模板id列表
 	_templateIds []int64
-	// 请求id
-	_rid string
 	// 场景或页面标识
 	_caseId string
 	// ssp标识
@@ -34,6 +32,8 @@ type YunosAppstoreOpenGetadsAPIRequest struct {
 	_clientIp string
 	// 设备唯一标识
 	_deviceId string
+	// 请求id
+	_rid string
 	// 客户端版本号
 	_clientVerCode int64
 	// 广告数量
@@ -134,19 +134,6 @@ func (r YunosAppstoreOpenGetadsAPIRequest) GetTemplateIds() []int64 {
 	return r._templateIds
 }
 
-// SetRid is Rid Setter
-// 请求id
-func (r *YunosAppstoreOpenGetadsAPIRequest) SetRid(_rid string) error {
-	r._rid = _rid
-	r.Set("rid", _rid)
-	return nil
-}
-
-// GetRid Rid Getter
-func (r YunosAppstoreOpenGetadsAPIRequest) GetRid() string {
-	return r._rid
-}
-
 // SetCaseId is CaseId Setter
 // 场景或页面标识
 func (r *YunosAppstoreOpenGetadsAPIRequest) SetCaseId(_caseId string) error {
@@ -210,6 +197,19 @@ func (r *YunosAppstoreOpenGetadsAPIRequest) SetDeviceId(_deviceId string) error 
 // GetDeviceId DeviceId Getter
 func (r YunosAppstoreOpenGetadsAPIRequest) GetDeviceId() string {
 	return r._deviceId
+}
+
+// SetRid is Rid Setter
+// 请求id
+func (r *YunosAppstoreOpenGetadsAPIRequest) SetRid(_rid string) error {
+	r._rid = _rid
+	r.Set("rid", _rid)
+	return nil
+}
+
+// GetRid Rid Getter
+func (r YunosAppstoreOpenGetadsAPIRequest) GetRid() string {
+	return r._rid
 }
 
 // SetClientVerCode is ClientVerCode Setter

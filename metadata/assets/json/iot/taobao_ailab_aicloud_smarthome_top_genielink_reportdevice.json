@@ -1,8 +1,4 @@
 {
-	"id": 37280,
-	"name": "taobao.ailab.aicloud.smarthome.top.genielink.reportdevice",
-	"apiChineseName": "零配方案上报设备",
-	"description": "零配方案中设备联网成功之后上报设备",
 	"requestParams": [
 		{
 			"name": "vendor_id",
@@ -27,35 +23,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "status_code",
 					"type": "Number",
-					"description": "statusCode",
-					"required": true
+					"description": "statusCode"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "result",
-					"required": true
+					"description": "result"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "exception",
-					"required": true
+					"type": "String",
+					"description": "exception"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.smarthome.top.genielink.reportdevice",
+	"apiChineseName": "零配方案上报设备",
+	"description": "零配方案中设备联网成功之后上报设备",
+	"id": 37280
 }

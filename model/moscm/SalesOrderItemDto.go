@@ -10,14 +10,14 @@ type SalesOrderItemDto struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商品类型:普通商品(NORMAL)
 	ProductType string `json:"product_type,omitempty" xml:"product_type,omitempty"`
+	// 销售属性：颜色:15#/规格:3.5g，用/分隔
+	SaleProperty string `json:"sale_property,omitempty" xml:"sale_property,omitempty"`
 	// 数量
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 价格，单位:元
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
 	// 折扣金额，单位:元
 	Discount string `json:"discount,omitempty" xml:"discount,omitempty"`
-	// 销售属性：颜色:15#/规格:3.5g，用/分隔
-	SaleProperty string `json:"sale_property,omitempty" xml:"sale_property,omitempty"`
 	// 吊牌价，单位:元
 	TagPrice string `json:"tag_price,omitempty" xml:"tag_price,omitempty"`
 	// 支付信息

@@ -9,7 +9,7 @@ import (
 // AliexpressTradeBuyPlaceorderAPIResponse AE下单API API返回值
 // aliexpress.trade.buy.placeorder
 //
-// A006_INVALID_ACCOUNT_INFO
+// 150欧欧盟税改
 type AliexpressTradeBuyPlaceorderAPIResponse struct {
 	model.CommonResponse
 	AliexpressTradeBuyPlaceorderAPIResponseModel

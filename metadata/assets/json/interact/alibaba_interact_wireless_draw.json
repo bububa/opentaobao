@@ -1,13 +1,13 @@
 {
-	"id": 25728,
-	"name": "alibaba.interact.wireless.draw",
-	"apiChineseName": "双11到店互动无线端抽奖接口鉴权",
-	"description": "双11到店互动无线端mtop接口开放鉴权接口，无入参出参，无安全风险，mtop接口开发 坯子",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.interact.wireless.draw",
+	"apiChineseName": "双11到店互动无线端抽奖接口鉴权",
+	"description": "双11到店互动无线端mtop接口开放鉴权接口，无入参出参，无安全风险，mtop接口开发 坯子",
+	"id": 25728
 }

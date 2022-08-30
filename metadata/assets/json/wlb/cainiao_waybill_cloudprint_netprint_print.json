@@ -1,0 +1,97 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "share_code",
+					"type": "String",
+					"description": "共享码",
+					"required": true
+				},
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "打印机 id",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": " 自定义区数据"
+						},
+						{
+							"name": "template_url",
+							"type": "String",
+							"description": " 自定义区链接"
+						}
+					],
+					"name": "custom_data",
+					"type": "CustomData",
+					"description": "自定义内容"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ver",
+							"type": "String",
+							"description": "版本"
+						},
+						{
+							"name": "data",
+							"type": "String",
+							"description": " 打印数据",
+							"required": true
+						},
+						{
+							"name": "encrypted",
+							"type": "Boolean",
+							"description": " 是否加密"
+						},
+						{
+							"name": "signature",
+							"type": "String",
+							"description": "签名"
+						},
+						{
+							"name": "add_data",
+							"type": "String",
+							"description": "追加的 data"
+						},
+						{
+							"name": "template_url",
+							"type": "String",
+							"description": " 模板 url",
+							"required": true
+						}
+					],
+					"name": "print_data",
+					"type": "PrintData",
+					"description": "打印数据",
+					"required": true
+				}
+			],
+			"name": "printer_print_data",
+			"type": "CloudPrinterPrintRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "server_error_code",
+			"type": "String",
+			"description": "错误码，0 为成功"
+		},
+		{
+			"name": "describe",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "cainiao.waybill.cloudprint.netprint.print",
+	"apiChineseName": "网络打印机打印接口",
+	"description": "打印接口",
+	"id": 61720
+}

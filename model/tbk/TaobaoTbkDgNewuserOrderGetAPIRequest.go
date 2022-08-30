@@ -16,14 +16,14 @@ type TaobaoTbkDgNewuserOrderGetAPIRequest struct {
 	_startTime string
 	// 结束时间，当活动为淘宝活动，表示最晚结束时间；当活动为支付宝活动，表示最晚绑定时间；当活动为天猫活动，表示最晚领取红包的时间
 	_endTime string
-	// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+	// 活动id， 活动名称与活动ID列表（该字段已废弃）
 	_activityId string
 	// 页大小，默认20，1~100
 	_pageSize int64
-	// mm_xxx_xxx_xxx的第三位
-	_adzoneId int64
 	// 页码，默认1
 	_pageNo int64
+	// mm_xxx_xxx_xxx的第三位
+	_adzoneId int64
 }
 
 // NewTaobaoTbkDgNewuserOrderGetRequest 初始化TaobaoTbkDgNewuserOrderGetAPIRequest对象
@@ -74,7 +74,7 @@ func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetEndTime() string {
 }
 
 // SetActivityId is ActivityId Setter
-// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+// 活动id， 活动名称与活动ID列表（该字段已废弃）
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
 	r.Set("activity_id", _activityId)
@@ -99,19 +99,6 @@ func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
 }
 
-// SetAdzoneId is AdzoneId Setter
-// mm_xxx_xxx_xxx的第三位
-func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) error {
-	r._adzoneId = _adzoneId
-	r.Set("adzone_id", _adzoneId)
-	return nil
-}
-
-// GetAdzoneId AdzoneId Getter
-func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetAdzoneId() int64 {
-	return r._adzoneId
-}
-
 // SetPageNo is PageNo Setter
 // 页码，默认1
 func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -123,4 +110,17 @@ func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetPageNo(_pageNo int64) error {
 // GetPageNo PageNo Getter
 func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetPageNo() int64 {
 	return r._pageNo
+}
+
+// SetAdzoneId is AdzoneId Setter
+// mm_xxx_xxx_xxx的第三位
+func (r *TaobaoTbkDgNewuserOrderGetAPIRequest) SetAdzoneId(_adzoneId int64) error {
+	r._adzoneId = _adzoneId
+	r.Set("adzone_id", _adzoneId)
+	return nil
+}
+
+// GetAdzoneId AdzoneId Getter
+func (r TaobaoTbkDgNewuserOrderGetAPIRequest) GetAdzoneId() int64 {
+	return r._adzoneId
 }

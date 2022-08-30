@@ -1,8 +1,4 @@
 {
-	"id": 38598,
-	"name": "alibaba.gpu.schema.catsearch",
-	"apiChineseName": "按类目查询spu接口",
-	"description": "按类目查询spu的schema接口",
 	"requestParams": [
 		{
 			"name": "leaf_cat_id",
@@ -40,5 +36,9 @@
 			"type": "Number",
 			"description": "总记录数"
 		}
-	]
+	],
+	"name": "alibaba.gpu.schema.catsearch",
+	"apiChineseName": "按类目查询spu接口",
+	"description": "按类目查询spu的schema接口",
+	"id": 38598
 }

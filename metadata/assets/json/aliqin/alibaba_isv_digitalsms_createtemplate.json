@@ -1,8 +1,4 @@
 {
-	"id": 40353,
-	"name": "alibaba.isv.digitalsms.createtemplate",
-	"apiChineseName": "数字短信模板创建",
-	"description": "数字短信模板创建，给聚石塔，类型：2",
 	"requestParams": [
 		{
 			"name": "template_name",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "template_contents",
-			"type": "DigitalSmsTemplateContentDto[]",
-			"description": "系统自动生成",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "file_contents",
@@ -41,7 +32,12 @@
 					"description": "文件后缀名，文字内容转成txt，图片支持gif、jpg、png格式，音频支持mp3格式，视频支持mp4格式，目前只支持上传一个视频文件",
 					"required": true
 				}
-			]
+			],
+			"name": "template_contents",
+			"type": "DigitalSmsTemplateContentDto[]",
+			"description": "系统自动生成",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "apply_remark",
@@ -52,35 +48,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "模板code",
-					"required": true
+					"description": "模板code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "返回信息描述",
-					"required": true
+					"description": "返回信息描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true表示成功，false表示失败",
-					"required": true
+					"description": "true表示成功，false表示失败"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.isv.digitalsms.createtemplate",
+	"apiChineseName": "数字短信模板创建",
+	"description": "数字短信模板创建，给聚石塔，类型：2",
+	"id": 40353
 }

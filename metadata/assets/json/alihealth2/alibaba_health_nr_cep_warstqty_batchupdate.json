@@ -1,15 +1,6 @@
 {
-	"id": 56279,
-	"name": "alibaba.health.nr.cep.warstqty.batchupdate",
-	"apiChineseName": "批量更新ISV库存",
-	"description": "青岛医保服务-ISV批量更新孔雀翎中库存数据",
 	"requestParams": [
 		{
-			"name": "war_stqty_list",
-			"type": "TopIsvStqtyLstDto[]",
-			"description": "库存更新对象",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "dept_code",
@@ -29,34 +20,40 @@
 					"description": "数量",
 					"required": true
 				}
-			]
+			],
+			"name": "war_stqty_list",
+			"type": "TopIsvStqtyLstDto[]",
+			"description": "库存更新对象",
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResponseResult",
-			"description": "服务出参",
 			"subParams": [
-				{
-					"name": "issuccess",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
+				},
+				{
+					"name": "issuccess",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResponseResult",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "alibaba.health.nr.cep.warstqty.batchupdate",
+	"apiChineseName": "批量更新ISV库存",
+	"description": "青岛医保服务-ISV批量更新孔雀翎中库存数据",
+	"id": 56279
 }

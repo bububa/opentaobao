@@ -1,34 +1,46 @@
 {
-	"id": 54057,
-	"name": "alibaba.retail.marketing.itempool.activity.sku.delete",
-	"apiChineseName": "删除商品池活动商品【同城零售】",
-	"description": "删除商品池活动商品信息【同城零售】",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemPoolActivityElementOperateRequest",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "sku_elements",
-					"type": "ItemPoolSkuActivityElementDto[]",
-					"description": "商品元素列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码，与商品条码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码，与商品编码必选其一，或者同时传入以商品条码为准"
+						},
+						{
+							"subParams": [
+								{
+									"name": "channel",
+									"type": "String",
+									"description": "渠道编码 枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达"
+								},
+								{
+									"name": "store_ids",
+									"type": "String[]",
+									"description": "渠道对应的门店id列表 例[\"store001\",\"store002\"]"
+								}
+							],
+							"name": "sku_channel_configs",
+							"type": "SkuChannelConfigDTO[]",
+							"description": "商品渠道配置信息"
 						}
-					]
+					],
+					"name": "sku_elements",
+					"type": "ItemPoolSkuActivityElementDto[]",
+					"description": "商品元素列表",
+					"required": true
 				},
 				{
 					"name": "act_id",
 					"type": "Number",
-					"description": "同城零售活动id",
-					"required": true
+					"description": "同城零售活动id"
 				},
 				{
 					"name": "creator_id",
@@ -47,41 +59,50 @@
 					"type": "Number",
 					"description": "商品所属分组序号",
 					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "erp外部活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemPoolActivityElementOperateRequest",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "空值",
-					"required": true
+					"description": "空值"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误提示文案",
-					"required": true
+					"description": "错误提示文案"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itempool.activity.sku.delete",
+	"apiChineseName": "删除商品池活动商品【同城零售】",
+	"description": "删除商品池活动商品信息【同城零售】",
+	"id": 54057
 }

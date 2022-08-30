@@ -1,14 +1,6 @@
 {
-	"id": 25505,
-	"name": "taobao.antifraud.riskassessment.get",
-	"apiChineseName": "反欺诈风险识别",
-	"description": "反欺诈服务是阿里大数据风控服务能力的对外输出，通过用户信誉、行为分析精准识别可信用户和风险用户并实时防御，解决交易、支付、活动等关键业务环节存在的欺诈威胁，保护企业品牌和数据，降低企业经济损失",
 	"requestParams": [
 		{
-			"name": "collinadata_context",
-			"type": "CollinadataContext",
-			"description": "风控查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_key",
@@ -45,19 +37,17 @@
 					"type": "String",
 					"description": "透传参数"
 				}
-			]
+			],
+			"name": "collinadata_context",
+			"type": "CollinadataContext",
+			"description": "风控查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "risk_result",
-			"type": "ResultWrapper",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "CollinadataQueryResult",
-					"description": "返回风控结果信息",
 					"subParams": [
 						{
 							"name": "score",
@@ -74,7 +64,10 @@
 							"type": "String",
 							"description": "字符串格式, 关于score生成的描述信息. 本字段可能为空."
 						}
-					]
+					],
+					"name": "result",
+					"type": "CollinadataQueryResult",
+					"description": "返回风控结果信息"
 				},
 				{
 					"name": "code",
@@ -91,7 +84,14 @@
 					"type": "String",
 					"description": "描述"
 				}
-			]
+			],
+			"name": "risk_result",
+			"type": "ResultWrapper",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.antifraud.riskassessment.get",
+	"apiChineseName": "反欺诈风险识别",
+	"description": "反欺诈服务是阿里大数据风控服务能力的对外输出，通过用户信誉、行为分析精准识别可信用户和风险用户并实时防御，解决交易、支付、活动等关键业务环节存在的欺诈威胁，保护企业品牌和数据，降低企业经济损失",
+	"id": 25505
 }

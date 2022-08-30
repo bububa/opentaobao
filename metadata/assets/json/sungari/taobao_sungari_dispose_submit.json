@@ -1,14 +1,6 @@
 {
-	"id": 40728,
-	"name": "taobao.sungari.dispose.submit",
-	"apiChineseName": "商品商家处置提交任务",
-	"description": "商品商家处置信息接口，提供政府部门发送处置信息给阿里",
 	"requestParams": [
 		{
-			"name": "info",
-			"type": "DisposeInfoDo",
-			"description": "平台处置信息入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "api_type",
@@ -141,7 +133,11 @@
 					"type": "String",
 					"description": "原始函链接"
 				}
-			]
+			],
+			"name": "info",
+			"type": "DisposeInfoDo",
+			"description": "平台处置信息入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -160,5 +156,9 @@
 			"type": "String",
 			"description": "提示信息"
 		}
-	]
+	],
+	"name": "taobao.sungari.dispose.submit",
+	"apiChineseName": "商品商家处置提交任务",
+	"description": "商品商家处置信息接口，提供政府部门发送处置信息给阿里",
+	"id": 40728
 }

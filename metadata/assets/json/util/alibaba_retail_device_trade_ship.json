@@ -1,8 +1,4 @@
 {
-	"id": 31756,
-	"name": "alibaba.retail.device.trade.ship",
-	"apiChineseName": "贩卖机掉货成功通知",
-	"description": "贩卖机发货",
 	"requestParams": [
 		{
 			"name": "device_type",
@@ -23,11 +19,6 @@
 			"required": true
 		},
 		{
-			"name": "ship_detail_list",
-			"type": "ShipDetailDTO[]",
-			"description": "详情",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "item_id",
@@ -46,60 +37,64 @@
 					"type": "String",
 					"description": "外部订单ID"
 				}
-			]
+			],
+			"name": "ship_detail_list",
+			"type": "ShipDetailDTO[]",
+			"description": "详情",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "order_update_option",
-			"type": "OrderUpdateOption",
-			"description": "选项",
 			"subParams": [
 				{
 					"name": "biz_name",
 					"type": "String",
 					"description": "业务识别"
 				}
-			]
+			],
+			"name": "order_update_option",
+			"type": "OrderUpdateOption",
+			"description": "选项"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "error_infos",
-					"type": "ErrorInfo[]",
-					"description": "errorInfos",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "sub_error_code",
 							"type": "String",
-							"description": "subErrorCode",
-							"required": true
+							"description": "subErrorCode"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "errorMessage",
-							"required": true
+							"description": "errorMessage"
 						}
-					]
+					],
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.retail.device.trade.ship",
+	"apiChineseName": "贩卖机掉货成功通知",
+	"description": "贩卖机发货",
+	"id": 31756
 }

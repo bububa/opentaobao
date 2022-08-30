@@ -1,114 +1,100 @@
 {
-	"id": 50233,
-	"name": "alibaba.wdkorder.sharestock.fulfill.get",
-	"apiChineseName": "商户订单履约数据获取",
-	"description": "商户订单履约数据获取",
 	"requestParams": [
 		{
 			"name": "fulfill_order_id",
 			"type": "String",
-			"description": "履约单ID"
+			"description": "履约单ID",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MaochaoOrderFulfillQueryResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
-					"name": "fulfill_order_list",
-					"type": "MaochaoWdkOrderFulfillDto[]",
-					"description": "履约单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tb_sub_order_id",
 							"type": "Number",
-							"description": "主站子订单ID",
-							"required": true
+							"description": "主站子订单ID"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "五道口订单ID",
-							"required": true
+							"description": "五道口订单ID"
 						},
 						{
 							"name": "biz_sub_order_id",
 							"type": "Number",
-							"description": "五道口子订单ID",
-							"required": true
+							"description": "五道口子订单ID"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商户编码",
-							"required": true
+							"description": "商户编码"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店ID",
-							"required": true
+							"description": "经营店ID"
 						},
 						{
 							"name": "pick_amount_stock",
 							"type": "String",
-							"description": "拣货数量",
-							"required": true
+							"description": "拣货数量"
 						},
 						{
 							"name": "attributes",
-							"type": "Json",
-							"description": "扩展属性",
-							"required": true
+							"type": "String",
+							"description": "扩展属性"
 						},
 						{
 							"name": "fulfill_status",
 							"type": "String",
-							"description": "履约状态",
-							"required": true
+							"description": "履约状态"
 						},
 						{
 							"name": "tb_order_id",
 							"type": "Number",
-							"description": "主站订单ID",
-							"required": true
+							"description": "主站订单ID"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店ID",
-							"required": true
+							"description": "渠道店ID"
 						},
 						{
 							"name": "enter_warehouse_stock_quantity",
 							"type": "String",
-							"description": "返仓数量",
-							"required": true
+							"description": "返仓数量"
 						}
-					]
+					],
+					"name": "fulfill_order_list",
+					"type": "MaochaoWdkOrderFulfillDto[]",
+					"description": "履约单列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MaochaoOrderFulfillQueryResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdkorder.sharestock.fulfill.get",
+	"apiChineseName": "商户订单履约数据获取",
+	"description": "商户订单履约数据获取",
+	"id": 50233
 }

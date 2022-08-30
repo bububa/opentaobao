@@ -1,8 +1,4 @@
 {
-	"id": 29085,
-	"name": "yunos.ad.audit.creative.get",
-	"apiChineseName": "获取单个创意审核状态",
-	"description": "获取单个创意审核状态",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -34,35 +30,35 @@
 			"description": "是否成功"
 		},
 		{
-			"name": "result",
-			"type": "CreativeAuditDto",
-			"description": "审核结果",
 			"subParams": [
 				{
 					"name": "creative_id",
 					"type": "String",
-					"description": "广告创意id",
-					"required": true
+					"description": "广告创意id"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "是否审核通过，WAITING等待审核，PASS通过，REFUSE拒绝",
-					"required": true
+					"description": "是否审核通过，WAITING等待审核，PASS通过，REFUSE拒绝"
 				},
 				{
 					"name": "level",
 					"type": "Number",
-					"description": "创意级别",
-					"required": true
+					"description": "创意级别"
 				},
 				{
 					"name": "refuse_cause",
 					"type": "String",
-					"description": "拒绝原因",
-					"required": true
+					"description": "拒绝原因"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CreativeAuditDto",
+			"description": "审核结果"
 		}
-	]
+	],
+	"name": "yunos.ad.audit.creative.get",
+	"apiChineseName": "获取单个创意审核状态",
+	"description": "获取单个创意审核状态",
+	"id": 29085
 }

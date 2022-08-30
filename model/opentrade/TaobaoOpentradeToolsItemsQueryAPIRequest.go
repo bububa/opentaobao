@@ -14,6 +14,10 @@ type TaobaoOpentradeToolsItemsQueryAPIRequest struct {
 	model.Params
 	// 交易开放C端小程序ID
 	_miniappId int64
+	// 起始页
+	_pageIndex int64
+	// 每页大小
+	_pageSize int64
 }
 
 // NewTaobaoOpentradeToolsItemsQueryRequest 初始化TaobaoOpentradeToolsItemsQueryAPIRequest对象
@@ -48,4 +52,30 @@ func (r *TaobaoOpentradeToolsItemsQueryAPIRequest) SetMiniappId(_miniappId int64
 // GetMiniappId MiniappId Getter
 func (r TaobaoOpentradeToolsItemsQueryAPIRequest) GetMiniappId() int64 {
 	return r._miniappId
+}
+
+// SetPageIndex is PageIndex Setter
+// 起始页
+func (r *TaobaoOpentradeToolsItemsQueryAPIRequest) SetPageIndex(_pageIndex int64) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// GetPageIndex PageIndex Getter
+func (r TaobaoOpentradeToolsItemsQueryAPIRequest) GetPageIndex() int64 {
+	return r._pageIndex
+}
+
+// SetPageSize is PageSize Setter
+// 每页大小
+func (r *TaobaoOpentradeToolsItemsQueryAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoOpentradeToolsItemsQueryAPIRequest) GetPageSize() int64 {
+	return r._pageSize
 }

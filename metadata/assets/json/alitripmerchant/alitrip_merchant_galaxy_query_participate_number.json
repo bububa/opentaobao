@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录信息"
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "offer_id",
+							"type": "Number",
+							"description": "活动id"
+						},
+						{
+							"name": "left_time",
+							"type": "Number",
+							"description": "剩余次数"
+						}
+					],
+					"name": "content",
+					"type": "ActivityParticipateNumberVo",
+					"description": "返回类型"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.query.participate.number",
+	"apiChineseName": "星河-抽奖活动次数查询",
+	"description": "雅高小程序抽奖活动，查询用户抽奖次数",
+	"id": 57043
+}

@@ -16,14 +16,14 @@ type TaobaoDegoperationDoLuckydrawAPIRequest struct {
 	_degAppKey string
 	// 后台活动配置eventkey
 	_degEventKey string
+	// 传参信息
+	_degAccessToken string
 	// 前端标识
 	_source string
 	// 设备uuid
 	_uuid string
 	// 参数校验
 	_paramSign string
-	// 传参信息
-	_degAccessToken string
 }
 
 // NewTaobaoDegoperationDoLuckydrawRequest 初始化TaobaoDegoperationDoLuckydrawAPIRequest对象
@@ -73,6 +73,19 @@ func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegEventKey() string {
 	return r._degEventKey
 }
 
+// SetDegAccessToken is DegAccessToken Setter
+// 传参信息
+func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAccessToken(_degAccessToken string) error {
+	r._degAccessToken = _degAccessToken
+	r.Set("deg_access_token", _degAccessToken)
+	return nil
+}
+
+// GetDegAccessToken DegAccessToken Getter
+func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegAccessToken() string {
+	return r._degAccessToken
+}
+
 // SetSource is Source Setter
 // 前端标识
 func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetSource(_source string) error {
@@ -110,17 +123,4 @@ func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetParamSign(_paramSign string
 // GetParamSign ParamSign Getter
 func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetParamSign() string {
 	return r._paramSign
-}
-
-// SetDegAccessToken is DegAccessToken Setter
-// 传参信息
-func (r *TaobaoDegoperationDoLuckydrawAPIRequest) SetDegAccessToken(_degAccessToken string) error {
-	r._degAccessToken = _degAccessToken
-	r.Set("deg_access_token", _degAccessToken)
-	return nil
-}
-
-// GetDegAccessToken DegAccessToken Getter
-func (r TaobaoDegoperationDoLuckydrawAPIRequest) GetDegAccessToken() string {
-	return r._degAccessToken
 }

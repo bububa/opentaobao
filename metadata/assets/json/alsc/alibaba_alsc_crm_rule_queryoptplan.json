@@ -1,14 +1,6 @@
 {
-	"id": 46089,
-	"name": "alibaba.alsc.crm.rule.queryoptplan",
-	"apiChineseName": "查询运营计划",
-	"description": "查询运营计划",
 	"requestParams": [
 		{
-			"name": "plan_rule_query_open_request",
-			"type": "PlanRuleQueryOpenReq",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "deleted",
@@ -42,20 +34,17 @@
 					"type": "String",
 					"description": "外部品牌ID"
 				}
-			]
+			],
+			"name": "plan_rule_query_open_request",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "请求参数",
 			"subParams": [
 				{
-					"name": "result_list",
-					"type": "OptPlanOpenInfo[]",
-					"description": "运营计划列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "opt_plan_id",
@@ -112,10 +101,6 @@
 							"required": true
 						},
 						{
-							"name": "shop_group_info",
-							"type": "ShopGroupOpenInfo",
-							"description": "门店组信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "shop_ids",
@@ -147,7 +132,11 @@
 									"description": "外部门店ID",
 									"required": true
 								}
-							]
+							],
+							"name": "shop_group_info",
+							"type": "ShopGroupOpenInfo",
+							"description": "门店组信息",
+							"required": true
 						},
 						{
 							"name": "gmt_create",
@@ -179,7 +168,11 @@
 							"description": "逻辑删除标志",
 							"required": true
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "OptPlanOpenInfo[]",
+					"description": "运营计划列表",
+					"required": true
 				},
 				{
 					"name": "page_size",
@@ -223,7 +216,14 @@
 					"description": "错误结果显示",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "请求参数"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.rule.queryoptplan",
+	"apiChineseName": "查询运营计划",
+	"description": "查询运营计划",
+	"id": 46089
 }

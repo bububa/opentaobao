@@ -1,66 +1,60 @@
 {
-	"id": 52009,
-	"name": "taobao.openmall.item.salearea.get",
-	"apiChineseName": "查询商品可售区域",
-	"description": "获取openmall商品的可售区域",
 	"requestParams": [
-		{
-			"name": "sku_ids",
-			"type": "String",
-			"description": "商品SKU"
-		},
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "商品ID",
 			"required": true
+		},
+		{
+			"name": "sku_ids",
+			"type": "String",
+			"description": "商品SKU"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "sale_area_list",
-					"type": "TopSaleAreaVo[]",
-					"description": "可售区域结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "商品SKU ID",
-							"required": true
+							"description": "商品SKU ID"
 						},
 						{
 							"name": "sale_area_info",
 							"type": "String",
-							"description": "可售区域信息，JSON数组格式的字符串。区域的层次用树状结构表示。 包含的字段有：     areaId：区域码; \tsubSaleArea：所属子区域的可售信息; \t 树的叶子节点表示可售区域。 树的枝节点只是聚合可售区域，表达区域的层次关系。",
-							"required": true
+							"description": "可售区域信息，JSON数组格式的字符串。区域的层次用树状结构表示。 包含的字段有：     areaId：区域码; \tsubSaleArea：所属子区域的可售信息; \t 树的叶子节点表示可售区域。 树的枝节点只是聚合可售区域，表达区域的层次关系。"
 						}
-					]
+					],
+					"name": "sale_area_list",
+					"type": "TopSaleAreaVo[]",
+					"description": "可售区域结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.item.salearea.get",
+	"apiChineseName": "查询商品可售区域",
+	"description": "获取openmall商品的可售区域",
+	"id": 52009
 }

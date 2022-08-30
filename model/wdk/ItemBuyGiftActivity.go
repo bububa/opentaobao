@@ -3,7 +3,7 @@ package wdk
 // ItemBuyGiftActivity 结构体
 type ItemBuyGiftActivity struct {
 	// 优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]
-	Terminals []int64 `json:"terminals,omitempty" xml:"terminals>int64,omitempty"`
+	Terminals []string `json:"terminals,omitempty" xml:"terminals>string,omitempty"`
 	// 参加活动的渠道店ids
 	ShopIds []string `json:"shop_ids,omitempty" xml:"shop_ids>string,omitempty"`
 	// 买赠活动详情描述,不超过30个英文字符

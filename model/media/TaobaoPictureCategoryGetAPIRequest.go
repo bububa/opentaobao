@@ -12,10 +12,10 @@ import (
 // 获取图片分类信息
 type TaobaoPictureCategoryGetAPIRequest struct {
 	model.Params
-	// 1
-	_type string
 	// 图片分类名，不支持模糊查询
 	_pictureCategoryName string
+	// 1
+	_type string
 	// 图片分类的修改时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片分类。
 	_modifiedTime string
 	// 图片分类ID
@@ -45,19 +45,6 @@ func (r TaobaoPictureCategoryGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetType is Type Setter
-// 1
-func (r *TaobaoPictureCategoryGetAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoPictureCategoryGetAPIRequest) GetType() string {
-	return r._type
-}
-
 // SetPictureCategoryName is PictureCategoryName Setter
 // 图片分类名，不支持模糊查询
 func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryName(_pictureCategoryName string) error {
@@ -69,6 +56,19 @@ func (r *TaobaoPictureCategoryGetAPIRequest) SetPictureCategoryName(_pictureCate
 // GetPictureCategoryName PictureCategoryName Getter
 func (r TaobaoPictureCategoryGetAPIRequest) GetPictureCategoryName() string {
 	return r._pictureCategoryName
+}
+
+// SetType is Type Setter
+// 1
+func (r *TaobaoPictureCategoryGetAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoPictureCategoryGetAPIRequest) GetType() string {
+	return r._type
 }
 
 // SetModifiedTime is ModifiedTime Setter

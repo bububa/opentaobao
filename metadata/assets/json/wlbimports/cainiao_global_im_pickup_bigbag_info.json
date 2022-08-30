@@ -1,0 +1,101 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "bigbag_id",
+					"type": "Number",
+					"description": "大包id",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				}
+			],
+			"name": "bigbag_status_request",
+			"type": "BigbagStatusRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否响应正常"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常code"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bigbag_id",
+							"type": "Number",
+							"description": "handoverContentId"
+						},
+						{
+							"name": "bigbag_code",
+							"type": "String",
+							"description": "handoverContentCode"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "交接物状态，draft：草稿、committed：已提交、awaiting_tracking_number：等待分配运单号、awaiting_pickup：等待揽收、pickup：已揽收、pickup_failed：揽收失败、arrived：已到达、signed_normal：签收正常、signed_abnormal：签收异常、signed_failed：签收失败、canceled：已取消、cancel_failure：取消失败、canceling：取消中"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "更新时间（北京时间）"
+						},
+						{
+							"subParams": [
+								{
+									"name": "logistics_order_code",
+									"type": "String",
+									"description": "小包LP"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态，init:初始化、inbound_normal：入库正常、inbound_abnormal：入库异常"
+								}
+							],
+							"name": "parcel_order_list",
+							"type": "ParcelOrderStatusResponse[]",
+							"description": "parcelOrderList"
+						}
+					],
+					"name": "data",
+					"type": "BigbagStatusResponse",
+					"description": "响应体"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "hsfResult"
+		}
+	],
+	"name": "cainiao.global.im.pickup.bigbag.info",
+	"apiChineseName": "大包状态查询",
+	"description": "大包状态查询",
+	"id": 59939
+}

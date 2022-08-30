@@ -1,13 +1,6 @@
 {
-	"id": 33494,
-	"name": "alibaba.aliqin.axb.vendor.push.call.release",
-	"apiChineseName": "供应商推送通话结束事件",
-	"description": "通话结束挂断的时候，供应商推送通话结束事件给阿里侧",
 	"requestParams": [
 		{
-			"name": "end_call_request",
-			"type": "EndCallRequest",
-			"description": "end_call_request",
 			"subParams": [
 				{
 					"name": "release_cause",
@@ -24,13 +17,13 @@
 				{
 					"name": "ring_time",
 					"type": "Date",
-					"description": "被叫响铃时间，如果没有响铃时间，ring_time填写call_out_time的时间；短信话单时，此值传短信接收时间",
+					"description": "被叫响铃时间，如没有响铃时间，则等于call_out_time的时间；短信话单时，此值传短信接收时间",
 					"required": true
 				},
 				{
 					"name": "start_time",
 					"type": "Date",
-					"description": "被叫接听时间；短信话单时，此值传短信接收时间",
+					"description": "被叫接听时间（通话计费开始时间），如未接通，则等于release_time的时间；短信话单时，此值传短信接收时间",
 					"required": true
 				},
 				{
@@ -42,7 +35,7 @@
 				{
 					"name": "call_out_time",
 					"type": "Date",
-					"description": "呼叫被叫侧发起的时间；短信话单时，此值传短信接收时间",
+					"description": "呼叫被叫侧发起的时间，如未发起，则等于call_time的时间；短信话单时，此值传短信接收时间",
 					"required": true
 				},
 				{
@@ -54,7 +47,7 @@
 				{
 					"name": "release_time",
 					"type": "Date",
-					"description": "通话释放时间,如果未接通start_time应该等于release_time；短信话单时，此值传短信接收时间",
+					"description": "通话释放时间（通话计费结束时间）；短信话单时，此值传短信接收时间",
 					"required": true
 				},
 				{
@@ -71,7 +64,7 @@
 				{
 					"name": "free_ring_time",
 					"type": "Date",
-					"description": "被叫空闲振铃时间；可选参数，无此相关功能，可不传"
+					"description": "被叫空闲振铃时间；如获取不到，则等于ring_time的时间"
 				},
 				{
 					"name": "sms_number",
@@ -112,35 +105,44 @@
 					"name": "extension_no",
 					"type": "String",
 					"description": "分机号"
+				},
+				{
+					"name": "end_call_ivr_dtmf",
+					"type": "String",
+					"description": "dtmf按键"
 				}
-			]
+			],
+			"name": "end_call_request",
+			"type": "EndCallRequest",
+			"description": "end_call_request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "module，此接口此字段可以不用判断，以外层CODE是否为OK来判断是否调用成",
-					"required": true
+					"description": "module，此接口此字段可以不用判断，以外层CODE是否为OK来判断是否调用成"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "业务响应码code为OK时代表请求成功,其他CODE建议做重试机制",
-					"required": true
+					"description": "业务响应码code为OK时代表请求成功,其他CODE建议做重试机制"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.axb.vendor.push.call.release",
+	"apiChineseName": "供应商推送通话结束事件",
+	"description": "通话结束挂断的时候，供应商推送通话结束事件给阿里侧",
+	"id": 33494
 }

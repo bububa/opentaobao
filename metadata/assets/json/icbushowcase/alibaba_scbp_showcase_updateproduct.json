@@ -1,8 +1,4 @@
 {
-	"id": 40997,
-	"name": "alibaba.scbp.showcase.updateproduct",
-	"apiChineseName": "替换橱窗商品",
-	"description": "替换橱窗商品",
 	"requestParams": [
 		{
 			"name": "window_id",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "是否修改成功"
 		}
-	]
+	],
+	"name": "alibaba.scbp.showcase.updateproduct",
+	"apiChineseName": "替换橱窗商品",
+	"description": "替换橱窗商品",
+	"id": 40997
 }

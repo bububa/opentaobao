@@ -1,13 +1,6 @@
 {
-	"id": 46024,
-	"name": "alibaba.damai.maitix.opengateway.project.status.query",
-	"apiChineseName": "分销状态查询接口queryProjectStatusByProjectId",
-	"description": "queryProjectStatusByProjectId",
 	"requestParams": [
 		{
-			"name": "dis_project_status_query_param",
-			"type": "DisProjectStatusQueryDto",
-			"description": "入参dto",
 			"subParams": [
 				{
 					"name": "query_perform_status",
@@ -20,86 +13,82 @@
 					"description": "项目id",
 					"required": true
 				}
-			]
+			],
+			"name": "dis_project_status_query_param",
+			"type": "DisProjectStatusQueryDto",
+			"description": "入参dto"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "error_code",
-					"type": "String",
-					"description": "参数errorCode",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "参数errorMsg",
-					"required": true
-				},
-				{
 					"name": "ext_map",
-					"type": "Json",
-					"description": "参数extMap",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "DisStatusDto",
-					"description": "参数model",
-					"required": true,
-					"subParams": [
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "1-可售,0-不可售",
-							"required": true
-						},
-						{
-							"name": "project_id",
-							"type": "Number",
-							"description": "项目id",
-							"required": true
-						},
-						{
-							"name": "dis_perform_status_d_t_o_list",
-							"type": "DisPerformStatusDto[]",
-							"description": "场次状态列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "perform_id",
-									"type": "Number",
-									"description": "场次id",
-									"required": true
-								},
-								{
-									"name": "project_id",
-									"type": "Number",
-									"description": "项目id",
-									"required": true
-								},
-								{
-									"name": "status",
-									"type": "Number",
-									"description": "场次状态",
-									"required": true
-								}
-							]
-						}
-					]
+					"type": "String",
+					"description": "参数extMap"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "参数success",
-					"required": true
+					"description": "参数success"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "参数errorCode"
+				},
+				{
+					"subParams": [
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目id"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "1-可售,0-不可售"
+						},
+						{
+							"subParams": [
+								{
+									"name": "perform_id",
+									"type": "Number",
+									"description": "场次id"
+								},
+								{
+									"name": "project_id",
+									"type": "Number",
+									"description": "项目id"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "场次状态"
+								}
+							],
+							"name": "dis_perform_status_d_t_o_list",
+							"type": "DisPerformStatusDto[]",
+							"description": "场次状态列表"
+						}
+					],
+					"name": "model",
+					"type": "DisStatusDto",
+					"description": "参数model"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "参数errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.opengateway.project.status.query",
+	"apiChineseName": "分销状态查询接口queryProjectStatusByProjectId",
+	"description": "queryProjectStatusByProjectId",
+	"id": 46024
 }

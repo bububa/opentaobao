@@ -1,13 +1,6 @@
 {
-	"id": 46067,
-	"name": "alibaba.damai.mev.open.deletestand",
-	"apiChineseName": "大麦换验平台-第三方对外开放-看台接口deleteStand",
-	"description": "deleteStand",
 	"requestParams": [
 		{
-			"name": "delete_stand_param",
-			"type": "StandIdOpenParam",
-			"description": "入参deleteStandParam",
 			"subParams": [
 				{
 					"name": "perform_id",
@@ -29,40 +22,43 @@
 					"type": "String",
 					"description": "商户密钥"
 				}
-			]
+			],
+			"name": "delete_stand_param",
+			"type": "StandIdOpenParam",
+			"description": "入参deleteStandParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.deletestand",
+	"apiChineseName": "大麦换验平台-第三方对外开放-看台接口deleteStand",
+	"description": "deleteStand",
+	"id": 46067
 }

@@ -1,8 +1,4 @@
 {
-	"id": 32552,
-	"name": "youku.tv.desktop.toyou.recommend",
-	"apiChineseName": "TV桌面为你推荐接口",
-	"description": "提供为你推荐数据",
 	"requestParams": [
 		{
 			"name": "token",
@@ -70,89 +66,80 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "V5BaseItemRbo []",
-			"description": "响应的结果列表",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "坑位ID",
-					"required": true
+					"description": "坑位ID"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "坑位标题",
-					"required": true
+					"description": "坑位标题"
 				},
 				{
 					"name": "subtitle",
 					"type": "String",
-					"description": "坑位子标题",
-					"required": true
+					"description": "坑位子标题"
 				},
 				{
 					"name": "center_pic",
 					"type": "String",
-					"description": "中间图片",
-					"required": true
+					"description": "中间图片"
 				},
 				{
 					"name": "bg_pic",
 					"type": "String",
-					"description": "背景图片",
-					"required": true
+					"description": "背景图片"
 				},
 				{
 					"name": "bg_pic_gif",
 					"type": "String",
-					"description": "背景动图（高配）",
-					"required": true
+					"description": "背景动图（高配）"
 				},
 				{
 					"name": "biz_type",
 					"type": "String",
-					"description": "跳转行为",
-					"required": true
+					"description": "跳转行为"
 				},
 				{
 					"name": "extra",
-					"type": "Json",
-					"description": "扩展字段",
-					"required": true
+					"type": "String",
+					"description": "扩展字段"
 				},
 				{
 					"name": "extra_str",
 					"type": "String",
-					"description": "未解析的扩展字段",
-					"required": true
+					"description": "未解析的扩展字段"
 				},
 				{
 					"name": "item_type",
 					"type": "String",
-					"description": "坑位类型",
-					"required": true
+					"description": "坑位类型"
 				},
 				{
 					"name": "score",
 					"type": "String",
-					"description": "评分",
-					"required": true
+					"description": "评分"
 				},
 				{
 					"name": "recommend_rule_id",
 					"type": "Number",
-					"description": "推荐主题ID",
-					"required": true
+					"description": "推荐主题ID"
 				},
 				{
 					"name": "recommend_reason",
 					"type": "String",
-					"description": "推荐理由",
-					"required": true
+					"description": "推荐理由"
 				}
-			]
+			],
+			"name": "results",
+			"type": "V5BaseItemRbo []",
+			"description": "响应的结果列表"
 		}
-	]
+	],
+	"name": "youku.tv.desktop.toyou.recommend",
+	"apiChineseName": "TV桌面为你推荐接口",
+	"description": "提供为你推荐数据",
+	"id": 32552
 }

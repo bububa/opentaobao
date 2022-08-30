@@ -1,0 +1,383 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "出发城市"
+				},
+				{
+					"name": "machine_number",
+					"type": "String",
+					"description": "机具编号"
+				},
+				{
+					"name": "station_name",
+					"type": "String",
+					"description": "出发站点"
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "出发省份"
+				},
+				{
+					"name": "trade_source",
+					"type": "String",
+					"description": "渠道来源：self-\u003e自助机机具;window-\u003e窗口",
+					"required": true
+				}
+			],
+			"name": "insurance_recommend_rq",
+			"type": "InsuranceRecommendRq",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "ins_product_code",
+					"type": "String",
+					"description": "保险产品码"
+				},
+				{
+					"name": "ins_name",
+					"type": "String",
+					"description": "保险名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "key"
+						}
+					],
+					"name": "special_terms_and_conditions",
+					"type": "InsurancePropertyVO",
+					"description": "特别约定"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "productFeatureImage"
+						}
+					],
+					"name": "product_feature_image",
+					"type": "InsurancePropertyVO",
+					"description": "产品特色图片"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "checkDtails"
+						}
+					],
+					"name": "check_dtails",
+					"type": "InsurancePropertyVO",
+					"description": "查看详情"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "claimFlow"
+						}
+					],
+					"name": "claim_flow",
+					"type": "InsurancePropertyVO",
+					"description": "理赔流程"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "productTerm"
+						}
+					],
+					"name": "product_term",
+					"type": "InsurancePropertyVO",
+					"description": "保险条款"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "prodTag"
+						}
+					],
+					"name": "prod_tag",
+					"type": "InsurancePropertyVO",
+					"description": "产品标签"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "productFeature"
+						}
+					],
+					"name": "product_feature",
+					"type": "InsurancePropertyVO",
+					"description": "产品特色"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "claimServicePhone"
+						}
+					],
+					"name": "claim_service_phone",
+					"type": "InsurancePropertyVO",
+					"description": "理赔服务电话"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "productImage"
+						}
+					],
+					"name": "product_image",
+					"type": "InsurancePropertyVO",
+					"description": "产品图片"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "insMustKnow"
+						}
+					],
+					"name": "ins_must_know",
+					"type": "InsurancePropertyVO",
+					"description": "投保须知"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "customerServicePhone"
+						}
+					],
+					"name": "customer_service_phone",
+					"type": "InsurancePropertyVO",
+					"description": "客服电话"
+				},
+				{
+					"name": "ins_price",
+					"type": "Number",
+					"description": "保险售卖价格(单位：分)"
+				},
+				{
+					"name": "ins_title",
+					"type": "String",
+					"description": "保险标题"
+				}
+			],
+			"name": "ins_product_list",
+			"type": "InsuranceProductVO []",
+			"description": "保险产品列表"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "接口业务成功时为空"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "true:成功；false:失败"
+		}
+	],
+	"name": "alitrip.bus.insurance.recommend",
+	"apiChineseName": "汽车票保险推荐接口",
+	"description": "汽车票保险推荐接口-供商家售卖飞猪保险使用",
+	"id": 61877
+}

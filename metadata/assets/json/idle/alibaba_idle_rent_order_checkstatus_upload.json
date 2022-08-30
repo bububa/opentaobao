@@ -1,8 +1,4 @@
 {
-	"id": 45634,
-	"name": "alibaba.idle.rent.order.checkstatus.upload",
-	"apiChineseName": "上传验收结果",
-	"description": "上传验收结果",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "check_result",
-			"type": "CheckResultDto",
-			"description": "校验结果",
-			"required": true,
 			"subParams": [
 				{
 					"name": "item_id",
@@ -43,40 +35,44 @@
 					"type": "Number",
 					"description": "sku id"
 				}
-			]
+			],
+			"name": "check_result",
+			"type": "CheckResultDto",
+			"description": "校验结果",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.idle.rent.order.checkstatus.upload",
+	"apiChineseName": "上传验收结果",
+	"description": "上传验收结果",
+	"id": 45634
 }

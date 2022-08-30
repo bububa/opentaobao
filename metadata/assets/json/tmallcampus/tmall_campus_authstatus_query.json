@@ -1,0 +1,57 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "认证状态(0:从未参与过认证的| 1: 算法预判通过 | 2:算法预判失败 | 3:人工审核中 | 4:人工审核通过 | 5:人工审核失败)"
+						},
+						{
+							"name": "campus",
+							"type": "String",
+							"description": "学校名称"
+						}
+					],
+					"name": "data",
+					"type": "StudentDTO",
+					"description": "业务数据-学生认证状态"
+				},
+				{
+					"name": "total_num",
+					"type": "String",
+					"description": "结果总数（用于分页）"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "page_num",
+					"type": "String",
+					"description": "页码（用于分页）"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "tmall.campus.authstatus.query",
+	"apiChineseName": "学生认证状态查询",
+	"description": "学生认证状态查询",
+	"id": 61316
+}

@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"name": "open_app_key",
+			"type": "String",
+			"description": "自运营开放平台APPKEY",
+			"required": true
+		},
+		{
+			"name": "cinema_id",
+			"type": "Number",
+			"description": "影院ID",
+			"required": true
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "included_order_status",
+			"type": "String",
+			"description": "包含的订单状态, 默认不填"
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "offset 下标, 从0开始"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": "账单数据"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "账单总量"
+						}
+					],
+					"name": "return_value",
+					"type": "ReturnValue",
+					"description": "返回值"
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID(排查问题用)"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值包装"
+		}
+	],
+	"name": "taobao.film.tfavatar.bill.sale.payment.query.vii",
+	"apiChineseName": "获取影院卖品账单--支付账单-V2版本(正逆分离)",
+	"description": "获取影院卖品账单--支付账单-V2版本(正逆分离)",
+	"id": 61824
+}

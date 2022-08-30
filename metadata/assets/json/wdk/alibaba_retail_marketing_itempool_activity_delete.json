@@ -1,14 +1,9 @@
 {
-	"id": 54052,
-	"name": "alibaba.retail.marketing.itempool.activity.delete",
-	"apiChineseName": "删除商品池活动【同城零售】",
-	"description": "同城零售商品池活动删除",
 	"requestParams": [
 		{
 			"name": "act_id",
 			"type": "Number",
-			"description": "同城零售活动Id",
-			"required": true
+			"description": "同城零售活动Id"
 		},
 		{
 			"name": "creator_id",
@@ -21,39 +16,44 @@
 			"type": "String",
 			"description": "操作人名称",
 			"required": true
+		},
+		{
+			"name": "out_act_id",
+			"type": "String",
+			"description": "erp外部活动id"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OctopusOpenResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "同城零售活动Id",
-					"required": true
+					"description": "同城零售活动Id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.retail.marketing.itempool.activity.delete",
+	"apiChineseName": "删除商品池活动【同城零售】",
+	"description": "同城零售商品池活动删除",
+	"id": 54052
 }

@@ -68,6 +68,8 @@ type OrderDetailDto struct {
 	Days int64 `json:"days,omitempty" xml:"days,omitempty"`
 	// 房间数量
 	RoomNumber int64 `json:"room_number,omitempty" xml:"room_number,omitempty"`
+	// 酒店房型信息
+	RoomDetailDto *RoomDetailDto `json:"room_detail_dto,omitempty" xml:"room_detail_dto,omitempty"`
 	// 最大入住人数
 	MaxCheckInNumber int64 `json:"max_check_in_number,omitempty" xml:"max_check_in_number,omitempty"`
 	// 费用明细对象
@@ -78,8 +80,6 @@ type OrderDetailDto struct {
 	CancelRule int64 `json:"cancel_rule,omitempty" xml:"cancel_rule,omitempty"`
 	// 支付剩余时间
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
-	// 酒店房型信息
-	RoomDetailDto *RoomDetailDto `json:"room_detail_dto,omitempty" xml:"room_detail_dto,omitempty"`
 	// 卖家价格ID
 	OutRateId int64 `json:"out_rate_id,omitempty" xml:"out_rate_id,omitempty"`
 	// 成人总数

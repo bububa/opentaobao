@@ -1,14 +1,6 @@
 {
-	"id": 38742,
-	"name": "taobao.rdc.aligenius.warehouse.resend.update",
-	"apiChineseName": "补发单状态回传",
-	"description": "补发单状态回传接口",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "UpdateResendStatusDto",
-			"description": "参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "status",
@@ -39,34 +31,39 @@
 					"description": "平台补发单唯一标识",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "UpdateResendStatusDto",
+			"description": "参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "fail_info",
 					"type": "String",
-					"description": "errorInfo",
-					"required": true
+					"description": "errorInfo"
 				},
 				{
 					"name": "fail_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success_flag",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.warehouse.resend.update",
+	"apiChineseName": "补发单状态回传",
+	"description": "补发单状态回传接口",
+	"id": 38742
 }

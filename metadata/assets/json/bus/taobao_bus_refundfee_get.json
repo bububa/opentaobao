@@ -1,8 +1,4 @@
 {
-	"id": 33363,
-	"name": "taobao.bus.refundfee.get",
-	"apiChineseName": "查询退票费用明细",
-	"description": "查询退票的费用信息",
 	"requestParams": [
 		{
 			"name": "ali_trip_order_id",
@@ -19,41 +15,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "B2BQueryRefundFeeRp",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "can_return_single_ticket",
 					"type": "Boolean",
-					"description": "canReturnSingleTicket",
-					"required": true
+					"description": "canReturnSingleTicket"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "refund_fees",
-					"type": "Json[]",
-					"description": "refundFees",
-					"required": true
+					"type": "String[]",
+					"description": "refundFees"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "B2BQueryRefundFeeRp",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.bus.refundfee.get",
+	"apiChineseName": "查询退票费用明细",
+	"description": "查询退票的费用信息",
+	"id": 33363
 }

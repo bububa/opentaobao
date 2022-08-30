@@ -1,8 +1,4 @@
 {
-	"id": 50720,
-	"name": "taobao.sebp.organization.getinviteinfo",
-	"apiChineseName": "淘小铺机构上下级关系",
-	"description": "机构人员获取机构上下级关系信息",
 	"requestParams": [
 		{
 			"name": "modify_date",
@@ -18,93 +14,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
-					"name": "module",
-					"type": "PageInfo",
-					"description": "结果信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "pages",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "页大小",
-							"required": true
+							"description": "页大小"
 						},
 						{
-							"name": "list",
-							"type": "OrganizationInviteInfoVo[]",
-							"description": "邀请关系信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "encrypt_invitor_id",
 									"type": "String",
-									"description": "加密后的邀请者ID",
-									"required": true
+									"description": "加密后的邀请者ID"
 								},
 								{
 									"name": "modify_date",
 									"type": "String",
-									"description": "修改日期，latest-为最新",
-									"required": true
+									"description": "修改日期，latest-为最新"
 								},
 								{
 									"name": "encrypt_distributor_id",
 									"type": "String",
-									"description": "加密后的分销商ID",
-									"required": true
+									"description": "加密后的分销商ID"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "-1-在体系内，高佣全部退款，0-在体系内，未退高佣，1-不在体系内",
-									"required": true
+									"description": "-1-在体系内，高佣全部退款，0-在体系内，未退高佣，1-不在体系内"
 								}
-							]
+							],
+							"name": "list",
+							"type": "OrganizationInviteInfoVo[]",
+							"description": "邀请关系信息"
 						},
 						{
 							"name": "page_num",
 							"type": "Number",
-							"description": "第几页",
-							"required": true
+							"description": "第几页"
 						}
-					]
+					],
+					"name": "module",
+					"type": "PageInfo",
+					"description": "结果信息"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.sebp.organization.getinviteinfo",
+	"apiChineseName": "淘小铺机构上下级关系",
+	"description": "机构人员获取机构上下级关系信息",
+	"id": 50720
 }

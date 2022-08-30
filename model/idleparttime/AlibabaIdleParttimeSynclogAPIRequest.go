@@ -13,7 +13,7 @@ import (
 type AlibabaIdleParttimeSynclogAPIRequest struct {
 	model.Params
 	// 同步的id
-	_syncIds []int64
+	_syncIds []string
 	// 查询岗位同步开始时间
 	_startTime int64
 	// 查询岗位同步结束时间
@@ -49,14 +49,14 @@ func (r AlibabaIdleParttimeSynclogAPIRequest) GetApiParams() url.Values {
 
 // SetSyncIds is SyncIds Setter
 // 同步的id
-func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []int64) error {
+func (r *AlibabaIdleParttimeSynclogAPIRequest) SetSyncIds(_syncIds []string) error {
 	r._syncIds = _syncIds
 	r.Set("sync_ids", _syncIds)
 	return nil
 }
 
 // GetSyncIds SyncIds Getter
-func (r AlibabaIdleParttimeSynclogAPIRequest) GetSyncIds() []int64 {
+func (r AlibabaIdleParttimeSynclogAPIRequest) GetSyncIds() []string {
 	return r._syncIds
 }
 

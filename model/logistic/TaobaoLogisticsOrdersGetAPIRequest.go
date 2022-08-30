@@ -30,6 +30,8 @@ type TaobaoLogisticsOrdersGetAPIRequest struct {
 	_freightPayer string
 	// 物流方式.可选值:post(平邮),express(快递),ems(EMS).如:post
 	_type string
+	// 系统自动生成
+	_ouid string
 	// 交易ID.如果加入tid参数的话,不用传其他的参数,若传入tid：非拆单场景，仅会返回一条物流订单信息；拆单场景，会返回多条物流订单信息
 	_tid int64
 	// 页码.该字段没传 或 值<1 ,则默认page_no为1
@@ -174,6 +176,19 @@ func (r *TaobaoLogisticsOrdersGetAPIRequest) SetType(_type string) error {
 // GetType Type Getter
 func (r TaobaoLogisticsOrdersGetAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetOuid is Ouid Setter
+// 系统自动生成
+func (r *TaobaoLogisticsOrdersGetAPIRequest) SetOuid(_ouid string) error {
+	r._ouid = _ouid
+	r.Set("ouid", _ouid)
+	return nil
+}
+
+// GetOuid Ouid Getter
+func (r TaobaoLogisticsOrdersGetAPIRequest) GetOuid() string {
+	return r._ouid
 }
 
 // SetTid is Tid Setter

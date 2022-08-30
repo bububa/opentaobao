@@ -1,8 +1,4 @@
 {
-	"id": 41650,
-	"name": "alibaba.alihealth.examination.agreement.list",
-	"apiChineseName": "isv协议获取",
-	"description": "isv协议获取",
 	"requestParams": [
 		{
 			"name": "store_code",
@@ -22,9 +18,6 @@
 			"description": "返回结果描述"
 		},
 		{
-			"name": "agreement",
-			"type": "Agreement",
-			"description": "返回的json格式数据",
 			"subParams": [
 				{
 					"name": "type",
@@ -38,7 +31,14 @@
 					"description": "二级制base64编码1",
 					"required": true
 				}
-			]
+			],
+			"name": "agreement",
+			"type": "Agreement",
+			"description": "返回的json格式数据"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.agreement.list",
+	"apiChineseName": "isv协议获取",
+	"description": "isv协议获取",
+	"id": 41650
 }

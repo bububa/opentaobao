@@ -1,14 +1,6 @@
 {
-	"id": 51025,
-	"name": "taobao.openmall.trade.render",
-	"apiChineseName": "渲染订单价格",
-	"description": "请求渲染订单价格",
 	"requestParams": [
 		{
-			"name": "param_top_trade_create_d_o",
-			"type": "TopTradeCreateDo",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "address",
@@ -86,60 +78,61 @@
 					"description": "商品SKUID，无sku商品传0",
 					"required": true
 				}
-			]
+			],
+			"name": "param_top_trade_create_d_o",
+			"type": "TopTradeCreateDo",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTradeResultVo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "area_id",
 					"type": "Number",
-					"description": "发货地址对应的areaid",
-					"required": true
+					"description": "发货地址对应的areaid"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "location",
 					"type": "String",
-					"description": "发货地址",
-					"required": true
+					"description": "发货地址"
 				},
 				{
-					"name": "posts",
-					"type": "PostDo[]",
-					"description": "运费列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "运费金额，运费0为包邮",
-							"required": true
+							"description": "运费金额，运费0为包邮"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "发货方式 快递，EMS等",
-							"required": true
+							"description": "发货方式 快递，EMS等"
 						},
 						{
 							"name": "shipping_type",
 							"type": "String",
-							"description": "物流方式，可选值  ems, post, express",
-							"required": true
+							"description": "物流方式，可选值  ems, post, express"
 						}
-					]
+					],
+					"name": "posts",
+					"type": "PostDo[]",
+					"description": "运费列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.render",
+	"apiChineseName": "渲染订单价格",
+	"description": "请求渲染订单价格",
+	"id": 51025
 }

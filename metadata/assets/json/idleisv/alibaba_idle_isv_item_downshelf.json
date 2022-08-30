@@ -1,36 +1,40 @@
 {
-	"id": 49487,
-	"name": "alibaba.idle.isv.item.downshelf",
-	"apiChineseName": "服务商闲鱼商品下架",
-	"description": "供外部服务商ISV进行闲鱼商品下架操作",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "IdleItemBaseApiDo",
-			"description": "返回结果result",
 			"subParams": [
 				{
 					"name": "item_id",
 					"type": "Number",
 					"description": "商品Id（根据此数据进行相应商品下架）",
 					"required": true
+				},
+				{
+					"name": "provider_id",
+					"type": "Number",
+					"description": "服务商Id(已废弃,无需传入)"
 				}
-			]
+			],
+			"name": "param",
+			"type": "IdleItemBaseApiDo",
+			"description": "返回结果result"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "返回结果result",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "data",
-					"required": true
+					"description": "data"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果result"
 		}
-	]
+	],
+	"name": "alibaba.idle.isv.item.downshelf",
+	"apiChineseName": "服务商闲鱼商品下架",
+	"description": "供外部服务商ISV进行闲鱼商品下架操作",
+	"id": 49487
 }

@@ -1,14 +1,6 @@
 {
-	"id": 34063,
-	"name": "alibaba.mos.pos.alarm",
-	"apiChineseName": "pos故障报警",
-	"description": "故障报警",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "PosLogDto",
-			"description": "参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "ip_addr",
@@ -145,7 +137,11 @@
 					"type": "String",
 					"description": "告警级别"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "PosLogDto",
+			"description": "参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -164,5 +160,9 @@
 			"type": "Boolean",
 			"description": "success/false"
 		}
-	]
+	],
+	"name": "alibaba.mos.pos.alarm",
+	"apiChineseName": "pos故障报警",
+	"description": "故障报警",
+	"id": 34063
 }

@@ -1,0 +1,146 @@
+{
+	"requestParams": [
+		{
+			"name": "suit_id",
+			"type": "Number",
+			"description": "案件ID",
+			"required": true
+		},
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托ID",
+			"required": true
+		},
+		{
+			"name": "domination_id",
+			"type": "Number",
+			"description": "管辖ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "dominationissent_ruling_count",
+							"type": "String",
+							"description": "管辖裁决书数量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "附件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "附件ID"
+								}
+							],
+							"name": "domination_dissent_ruling_list",
+							"type": "FileModel[]",
+							"description": "管辖裁决书附件"
+						},
+						{
+							"name": "attachment_count",
+							"type": "String",
+							"description": "管辖文书"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "附件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "附件id"
+								}
+							],
+							"name": "attachment_list",
+							"type": "FileModel[]",
+							"description": "管辖文书列表"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "express_num",
+							"type": "String",
+							"description": "快递编号"
+						},
+						{
+							"name": "express_company",
+							"type": "String",
+							"description": "快递公司"
+						},
+						{
+							"name": "judge",
+							"type": "String",
+							"description": "法官"
+						},
+						{
+							"name": "is_court",
+							"type": "String",
+							"description": "是否开庭"
+						},
+						{
+							"name": "suit_id",
+							"type": "Number",
+							"description": "案件ID"
+						},
+						{
+							"name": "entrust_id",
+							"type": "Number",
+							"description": "委托ID"
+						},
+						{
+							"name": "domination_id",
+							"type": "Number",
+							"description": "管辖ID"
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商code"
+						}
+					],
+					"name": "content",
+					"type": "DominationModel",
+					"description": "管辖内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.legal.suit.domination.get",
+	"apiChineseName": "查询管辖信息",
+	"description": "查询管辖信息",
+	"id": 43039
+}

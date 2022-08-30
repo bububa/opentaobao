@@ -1,13 +1,6 @@
 {
-	"id": 46654,
-	"name": "taobao.kaola.scitem.add",
-	"apiChineseName": "考拉货品新增接口",
-	"description": "考拉货品新增接口",
 	"requestParams": [
 		{
-			"name": "cnsku",
-			"type": "CnskuDto",
-			"description": "待新增的货品",
 			"subParams": [
 				{
 					"name": "item_code",
@@ -80,9 +73,6 @@
 					"description": "包装材料"
 				},
 				{
-					"name": "cnsku_extend_d_t_o",
-					"type": "CnskuExtendDto",
-					"description": "扩展字段",
 					"subParams": [
 						{
 							"name": "main_composition",
@@ -244,12 +234,12 @@
 							"type": "String",
 							"description": "剂型"
 						}
-					]
+					],
+					"name": "cnsku_extend_d_t_o",
+					"type": "CnskuExtendDto",
+					"description": "扩展字段"
 				},
 				{
-					"name": "cnsku_feature_d_t_o",
-					"type": "CnskuFeatureDto",
-					"description": "feature标签",
 					"subParams": [
 						{
 							"name": "origin_address",
@@ -451,7 +441,10 @@
 							"type": "Boolean",
 							"description": "是否需要测量图片-销售单元"
 						}
-					]
+					],
+					"name": "cnsku_feature_d_t_o",
+					"type": "CnskuFeatureDto",
+					"description": "feature标签"
 				},
 				{
 					"name": "length",
@@ -472,20 +465,23 @@
 					"name": "update_feature_map",
 					"description": "新增或更新的feature项"
 				}
-			]
+			],
+			"name": "cnsku",
+			"type": "CnskuDto",
+			"description": "待新增的货品"
 		},
 		{
-			"name": "option",
-			"type": "AddCnskuOption",
-			"description": "新增选项",
-			"required": true,
 			"subParams": [
 				{
 					"name": "sync_wms",
 					"type": "Boolean",
 					"description": "是否同步到wms, 为空时默认下发"
 				}
-			]
+			],
+			"name": "option",
+			"type": "AddCnskuOption",
+			"description": "新增选项",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -514,5 +510,9 @@
 			"type": "String",
 			"description": "异常信息Code"
 		}
-	]
+	],
+	"name": "taobao.kaola.scitem.add",
+	"apiChineseName": "考拉货品新增接口",
+	"description": "考拉货品新增接口",
+	"id": 46654
 }

@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "coupon_code",
+					"type": "String",
+					"description": "券码",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID"
+				}
+			],
+			"name": "exchange_code_dto",
+			"type": "ExchangeCodeDTO",
+			"description": "核销码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "结果说明"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "结果"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.alihouse.trade.coupon.order.code.exchange",
+	"apiChineseName": "核销券码",
+	"description": "ETC核销券码",
+	"id": 58619
+}

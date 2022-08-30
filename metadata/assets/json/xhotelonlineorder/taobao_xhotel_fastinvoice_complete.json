@@ -1,14 +1,6 @@
 {
-	"id": 29554,
-	"name": "taobao.xhotel.fastinvoice.complete",
-	"apiChineseName": "极速开票开票请求完成",
-	"description": "极速开票开票请求回传,用于更新航信开票请求数据",
 	"requestParams": [
 		{
-			"name": "invoice_info_param",
-			"type": "InvoiceInfoParam",
-			"description": "无",
-			"required": true,
 			"subParams": [
 				{
 					"name": "request_id",
@@ -17,15 +9,15 @@
 					"required": true
 				},
 				{
-					"name": "tax_num",
-					"type": "String",
-					"description": "酒店开票点税号",
-					"required": true
-				},
-				{
 					"name": "invoice_room_price",
 					"type": "Number",
 					"description": "实际房费(分)",
+					"required": true
+				},
+				{
+					"name": "tax_num",
+					"type": "String",
+					"description": "酒店开票点税号",
 					"required": true
 				},
 				{
@@ -40,9 +32,6 @@
 					"description": "发票类型（1:普通发票；2：增值税专用发票）"
 				},
 				{
-					"name": "value_added_info",
-					"type": "ValueAddedInfo",
-					"description": "专票信息",
 					"subParams": [
 						{
 							"name": "tel",
@@ -69,9 +58,16 @@
 							"type": "String",
 							"description": "增值税发票税号"
 						}
-					]
+					],
+					"name": "value_added_info",
+					"type": "ValueAddedInfo",
+					"description": "专票信息"
 				}
-			]
+			],
+			"name": "invoice_info_param",
+			"type": "InvoiceInfoParam",
+			"description": "无",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -90,5 +86,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "taobao.xhotel.fastinvoice.complete",
+	"apiChineseName": "极速开票开票请求完成",
+	"description": "极速开票开票请求回传,用于更新航信开票请求数据",
+	"id": 29554
 }

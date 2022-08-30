@@ -1,14 +1,6 @@
 {
-	"id": 44696,
-	"name": "alitrip.hotel.hms.partner.info.get",
-	"apiChineseName": "获取合作商信息",
-	"description": "用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务",
 	"requestParams": [
 		{
-			"name": "query_partner_info_param",
-			"type": "QueryPartnerInfoParam",
-			"description": "查询合作商信息query参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "hoc_partner_id",
@@ -16,108 +8,101 @@
 					"description": "合作商Id",
 					"required": true
 				}
-			]
+			],
+			"name": "query_partner_info_param",
+			"type": "QueryPartnerInfoParam",
+			"description": "查询合作商信息query参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "hms_top_result_set",
-			"type": "HmsTopResultSet",
-			"description": "返回Result",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "AlliancePartnerInfo",
-					"description": "合作商信息实体",
-					"required": true,
 					"subParams": [
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司名称"
+						},
 						{
 							"name": "contact_phone",
 							"type": "String",
-							"description": "合作商联系人电话",
-							"required": true
+							"description": "合作商联系人电话"
 						},
 						{
 							"name": "account_name",
 							"type": "String",
-							"description": "结算账户名",
-							"required": true
+							"description": "结算账户名"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "合作商联系人姓名",
-							"required": true
+							"description": "合作商联系人姓名"
 						},
 						{
 							"name": "partner_id",
 							"type": "Number",
-							"description": "合作商ID",
-							"required": true
+							"description": "合作商ID"
 						},
 						{
 							"name": "pay_type",
 							"type": "Number",
-							"description": "结算类型（目前只有0，企业支付宝）",
-							"required": true
+							"description": "结算类型（目前只有0，企业支付宝）"
 						},
 						{
 							"name": "account_num",
 							"type": "String",
-							"description": "结算账号",
-							"required": true
+							"description": "结算账号"
 						},
 						{
 							"name": "is_valid",
 							"type": "Number",
-							"description": "是否生效（0: 失效 1:生效）",
-							"required": true
-						},
-						{
-							"name": "company_name",
-							"type": "String",
-							"description": "公司名称",
-							"required": true
+							"description": "是否生效（0: 失效 1:生效）"
 						},
 						{
 							"name": "contact_email",
 							"type": "String",
-							"description": "公司联系邮箱",
-							"required": true
+							"description": "公司联系邮箱"
 						},
 						{
 							"name": "company_address",
 							"type": "String",
-							"description": "公司地址",
-							"required": true
+							"description": "公司地址"
 						},
 						{
 							"name": "main_account",
 							"type": "String",
-							"description": "合作商签约主账号",
-							"required": true
+							"description": "合作商签约主账号"
 						}
-					]
+					],
+					"name": "result",
+					"type": "AlliancePartnerInfo",
+					"description": "合作商信息实体"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "操作是否成功",
-					"required": true
+					"description": "操作是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回Result"
 		}
-	]
+	],
+	"name": "alitrip.hotel.hms.partner.info.get",
+	"apiChineseName": "获取合作商信息",
+	"description": "用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务",
+	"id": 44696
 }

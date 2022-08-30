@@ -1,8 +1,4 @@
 {
-	"id": 22,
-	"name": "taobao.item.add",
-	"apiChineseName": "添加一个商品",
-	"description": "此接口用于新增一个淘宝商品  \n商品的属性和sku的属性有包含的关系，商品的价格要位于sku的价格区间之中（例如，sku价格有5元、10元两种，那么商品的价格就需要大于等于5元，小于等于10元，否则新增商品会失败） \n商品的类目和商品的价格、sku的价格都有一定的相关性（具体的关系要通过类目属性查询接口获得） \n商品的运费承担方式和邮费设置有相关性，卖家承担运费不用设置邮费，买家承担运费需要设置邮费 \n当关键属性值选择了“其他”的时候，需要输入input_pids和input_str商品才能添加成功。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "sku_spec_ids",
@@ -200,9 +196,9 @@
 			"name": "num",
 			"type": "Number",
 			"description": "商品数量。取值范围:0-900000000的整数。且需要等于Sku所有数量的和。拍卖商品中增加拍只能为1，荷兰拍要在[2,500)范围内。",
-			"required": true,
 			"maxValue": 900000000,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		},
 		{
 			"name": "price",
@@ -225,15 +221,15 @@
 			"name": "title",
 			"type": "String",
 			"description": "宝贝标题。不能超过30字符，受违禁词控制。天猫图书管控类目最大允许120字符；",
-			"required": true,
-			"maxLength": 120
+			"maxLength": 120,
+			"required": true
 		},
 		{
 			"name": "desc",
 			"type": "String",
 			"description": "宝贝描述。字数要大于5个字符，小于25000个字符，受违禁词控制",
-			"required": true,
-			"maxLength": 200000
+			"maxLength": 200000,
+			"required": true
 		},
 		{
 			"name": "approve_status",
@@ -244,8 +240,8 @@
 			"name": "cid",
 			"type": "Number",
 			"description": "叶子类目id",
-			"required": true,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		},
 		{
 			"name": "props",
@@ -649,9 +645,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "商品结构,仅有numIid和created返回",
 			"subParams": [
 				{
 					"name": "iid",
@@ -671,7 +664,14 @@
 					"description": "Item的发布时间，目前仅供taobao.item.add和taobao.item.get可用",
 					"required": true
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "商品结构,仅有numIid和created返回"
 		}
-	]
+	],
+	"name": "taobao.item.add",
+	"apiChineseName": "添加一个商品",
+	"description": "此接口用于新增一个淘宝商品  \n商品的属性和sku的属性有包含的关系，商品的价格要位于sku的价格区间之中（例如，sku价格有5元、10元两种，那么商品的价格就需要大于等于5元，小于等于10元，否则新增商品会失败） \n商品的类目和商品的价格、sku的价格都有一定的相关性（具体的关系要通过类目属性查询接口获得） \n商品的运费承担方式和邮费设置有相关性，卖家承担运费不用设置邮费，买家承担运费需要设置邮费 \n当关键属性值选择了“其他”的时候，需要输入input_pids和input_str商品才能添加成功。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 22
 }

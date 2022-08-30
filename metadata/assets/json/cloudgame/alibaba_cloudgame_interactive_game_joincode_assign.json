@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "主播用户id"
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间id"
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token"
+				},
+				{
+					"name": "play_index",
+					"type": "String",
+					"description": "玩家位置"
+				}
+			],
+			"name": "join_code_assign_request",
+			"type": "JoinCodeAssignRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回状态码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "join_code",
+							"type": "String",
+							"description": "联机码"
+						},
+						{
+							"name": "game_session",
+							"type": "String",
+							"description": "游戏会话id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "玩家id"
+								},
+								{
+									"name": "player_index",
+									"type": "String",
+									"description": "位置索引"
+								}
+							],
+							"name": "player_list",
+							"type": "Long[]",
+							"description": "玩家列表"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						}
+					],
+					"name": "data",
+					"type": "JoinCodeAssignResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.joincode.assign",
+	"apiChineseName": "分配joinCode",
+	"description": "分配joinCode",
+	"id": 62212
+}

@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "平台key",
+			"required": true
+		},
+		{
+			"name": "access_sign",
+			"type": "String",
+			"description": "平台签名",
+			"required": true
+		},
+		{
+			"name": "access_time",
+			"type": "String",
+			"description": "签名时间戳"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_key",
+					"type": "String",
+					"description": "产品Key"
+				},
+				{
+					"name": "device_name",
+					"type": "String",
+					"description": "设备名称"
+				},
+				{
+					"name": "device_secret",
+					"type": "String",
+					"description": "设备Secret"
+				}
+			],
+			"name": "data",
+			"type": "IotRegisterResult",
+			"description": "数据"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "wdk.rexout.device.iot.registerid",
+	"apiChineseName": "通过设备ID获取三元组-外部",
+	"description": "通过设备ID获取三元组-外部",
+	"id": 60419
+}

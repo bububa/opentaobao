@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名"
+				},
+				{
+					"name": "modify_time",
+					"type": "String",
+					"description": "修改时间"
+				},
+				{
+					"name": "user_unique_code",
+					"type": "String",
+					"description": "唯一编码",
+					"required": true
+				},
+				{
+					"name": "project_third_id",
+					"type": "String",
+					"description": "申请项目"
+				}
+			],
+			"name": "body",
+			"type": "SynchroPatientNameDto",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResponseMessage",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihealth.pw.special.synchropatientname",
+	"apiChineseName": "同步患者姓名至阿里健康",
+	"description": "同步患者姓名至阿里健康",
+	"id": 58951
+}

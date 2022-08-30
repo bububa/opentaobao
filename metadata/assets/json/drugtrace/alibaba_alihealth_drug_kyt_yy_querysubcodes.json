@@ -1,8 +1,4 @@
 {
-	"id": 45161,
-	"name": "alibaba.alihealth.drug.kyt.yy.querysubcodes",
-	"apiChineseName": "查询一个码的所有子码",
-	"description": "单码的了码查询",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -19,81 +15,74 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model_list",
-					"type": "CodeRelationDto[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "code_relation_list",
-							"type": "CodeInfo[]",
-							"description": "码关联关系",
-							"required": true,
 							"subParams": [
 								{
 									"name": "status",
 									"type": "String",
-									"description": "码状态",
-									"required": true
+									"description": "码状态"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "追溯码",
-									"required": true
+									"description": "追溯码"
 								},
 								{
 									"name": "code_level",
 									"type": "String",
-									"description": "码等级",
-									"required": true
+									"description": "码等级"
 								},
 								{
 									"name": "parent_code",
 									"type": "String",
-									"description": "父码",
-									"required": true
+									"description": "父码"
 								},
 								{
 									"name": "code_pack_level",
 									"type": "String",
-									"description": "码包装等级",
-									"required": true
+									"description": "码包装等级"
 								}
-							]
+							],
+							"name": "code_relation_list",
+							"type": "CodeInfo[]",
+							"description": "码关联关系"
 						},
 						{
 							"name": "error_code_content",
 							"type": "String",
-							"description": "errorCodeContent",
-							"required": true
+							"description": "errorCodeContent"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "CodeRelationDto[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.yy.querysubcodes",
+	"apiChineseName": "查询一个码的所有子码",
+	"description": "单码的了码查询",
+	"id": 45161
 }

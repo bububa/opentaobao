@@ -1,13 +1,6 @@
 {
-	"id": 49255,
-	"name": "alibaba.mozi.vds.tenant.api.service.dismiss",
-	"apiChineseName": "MOZI解除组织主管服务",
-	"description": "解除组织主管",
 	"requestParams": [
 		{
-			"name": "par0",
-			"type": "DismissOrganizationSupervisorRequest",
-			"description": "第一个入参",
 			"subParams": [
 				{
 					"name": "employee_codes",
@@ -33,40 +26,43 @@
 					"description": "操作人",
 					"required": true
 				}
-			]
+			],
+			"name": "par0",
+			"type": "DismissOrganizationSupervisorRequest",
+			"description": "第一个入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DismissOrganizationSupervisorResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "responseMessage",
-					"required": true
+					"description": "responseMessage"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "responseCode",
-					"required": true
+					"description": "responseCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DismissOrganizationSupervisorResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mozi.vds.tenant.api.service.dismiss",
+	"apiChineseName": "MOZI解除组织主管服务",
+	"description": "解除组织主管",
+	"id": 49255
 }

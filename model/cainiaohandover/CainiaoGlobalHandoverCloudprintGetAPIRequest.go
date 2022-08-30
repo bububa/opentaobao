@@ -14,10 +14,10 @@ type CainiaoGlobalHandoverCloudprintGetAPIRequest struct {
 	model.Params
 	// 大包运单号
 	_trackingNumber string
-	// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-	_client string
 	// 大包物流单LP号
 	_orderCode string
+	// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
+	_client string
 	// 多语言
 	_locale string
 	// 用户信息
@@ -58,19 +58,6 @@ func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetTrackingNumber() string
 	return r._trackingNumber
 }
 
-// SetClient is Client Setter
-// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetClient(_client string) error {
-	r._client = _client
-	r.Set("client", _client)
-	return nil
-}
-
-// GetClient Client Getter
-func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetClient() string {
-	return r._client
-}
-
 // SetOrderCode is OrderCode Setter
 // 大包物流单LP号
 func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetOrderCode(_orderCode string) error {
@@ -82,6 +69,19 @@ func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetOrderCode(_orderCode s
 // GetOrderCode OrderCode Getter
 func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+// SetClient is Client Setter
+// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
+func (r *CainiaoGlobalHandoverCloudprintGetAPIRequest) SetClient(_client string) error {
+	r._client = _client
+	r.Set("client", _client)
+	return nil
+}
+
+// GetClient Client Getter
+func (r CainiaoGlobalHandoverCloudprintGetAPIRequest) GetClient() string {
+	return r._client
 }
 
 // SetLocale is Locale Setter

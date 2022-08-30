@@ -6,16 +6,16 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// TaobaoJstSmsMessageDirectBatchsendAPIResponse 聚石塔新短信发送接口 API返回值
+// TaobaoJstSmsMessageDirectBatchsendAPIResponse OAID批量发送，支持明文手机号发送 API返回值
 // taobao.jst.sms.message.direct.batchsend
 //
-// 聚石塔所见即所得的短信发送接口
+// OAID批量发送，支持明文手机号发送
 type TaobaoJstSmsMessageDirectBatchsendAPIResponse struct {
 	model.CommonResponse
 	TaobaoJstSmsMessageDirectBatchsendAPIResponseModel
 }
 
-// TaobaoJstSmsMessageDirectBatchsendAPIResponseModel is 聚石塔新短信发送接口 成功返回结果
+// TaobaoJstSmsMessageDirectBatchsendAPIResponseModel is OAID批量发送，支持明文手机号发送 成功返回结果
 type TaobaoJstSmsMessageDirectBatchsendAPIResponseModel struct {
 	XMLName xml.Name `xml:"jst_sms_message_direct_batchsend_response"`
 	// 平台颁发的每次请求访问的唯一标识

@@ -1,8 +1,4 @@
 {
-	"id": 22533,
-	"name": "tmall.traderate.itemtags.get",
-	"apiChineseName": "通过商品ID获取标签列表",
-	"description": "通过商品ID获取标签详细信息",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,15 +9,7 @@
 	],
 	"responseParams": [
 		{
-			"name": "tags",
-			"type": "TmallRateTagDetail []",
-			"description": "标签列表",
 			"subParams": [
-				{
-					"name": "tag_name",
-					"type": "String",
-					"description": "标签名称"
-				},
 				{
 					"name": "count",
 					"type": "Number",
@@ -31,8 +19,20 @@
 					"name": "posi",
 					"type": "Boolean",
 					"description": "标签的极性：1正极 -1负极"
+				},
+				{
+					"name": "tag_name",
+					"type": "String",
+					"description": "标签名称"
 				}
-			]
+			],
+			"name": "tags",
+			"type": "TmallRateTagDetail []",
+			"description": "标签列表"
 		}
-	]
+	],
+	"name": "tmall.traderate.itemtags.get",
+	"apiChineseName": "通过商品ID获取标签列表",
+	"description": "通过商品ID获取标签详细信息",
+	"id": 22533
 }

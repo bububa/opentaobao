@@ -14,9 +14,9 @@ type AlibabaAlihealthDrugKytSearchstatusAPIRequest struct {
 	model.Params
 	// 企业ref_ent_id（货主企业的ref_ent_id）
 	_refEntId string
-	// 开始日期（没有时分秒）
+	// 开始日期（没有时分秒，【单据创建时间】）
 	_beginDate string
-	// 结束日期（没有时分秒）
+	// 结束日期（没有时分秒，【单据创建时间】）
 	_endDate string
 	// 单据类型 A：全部 AI：全部入库 AO：全部出库
 	_billType string
@@ -73,7 +73,7 @@ func (r AlibabaAlihealthDrugKytSearchstatusAPIRequest) GetRefEntId() string {
 }
 
 // SetBeginDate is BeginDate Setter
-// 开始日期（没有时分秒）
+// 开始日期（没有时分秒，【单据创建时间】）
 func (r *AlibabaAlihealthDrugKytSearchstatusAPIRequest) SetBeginDate(_beginDate string) error {
 	r._beginDate = _beginDate
 	r.Set("begin_date", _beginDate)
@@ -86,7 +86,7 @@ func (r AlibabaAlihealthDrugKytSearchstatusAPIRequest) GetBeginDate() string {
 }
 
 // SetEndDate is EndDate Setter
-// 结束日期（没有时分秒）
+// 结束日期（没有时分秒，【单据创建时间】）
 func (r *AlibabaAlihealthDrugKytSearchstatusAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)

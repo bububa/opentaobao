@@ -1,18 +1,8 @@
 {
-	"id": 53396,
-	"name": "alibaba.tmallgenie.scp.plan.mouthfour.upload",
-	"apiChineseName": "21-M+4PR 回传接口接口",
-	"description": "M+4 PR 回传接口",
 	"requestParams": [
 		{
-			"name": "month_four_pr_request",
-			"type": "MonthFourPrRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
-					"name": "month_four_pr_param_d_t_o_s",
-					"type": "MonthFourPrParamDto[]",
-					"description": "请求参数",
 					"subParams": [
 						{
 							"name": "key_figure_date",
@@ -39,14 +29,20 @@
 							"type": "String",
 							"description": "租户"
 						}
-					]
+					],
+					"name": "month_four_pr_param_d_t_o_s",
+					"type": "MonthFourPrParamDto[]",
+					"description": "请求参数"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "month_four_pr_request",
+			"type": "MonthFourPrRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
@@ -65,5 +61,9 @@
 			"type": "String",
 			"description": "结果code"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.mouthfour.upload",
+	"apiChineseName": "21-M+4PR 回传接口接口",
+	"description": "M+4 PR 回传接口",
+	"id": 53396
 }

@@ -60,6 +60,12 @@ type OrderSyncRefundDto struct {
 	OutRefundId string `json:"out_refund_id,omitempty" xml:"out_refund_id,omitempty"`
 	// 外部门店id
 	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
+	// 退款业务单号
+	BizMainRefundId string `json:"biz_main_refund_id,omitempty" xml:"biz_main_refund_id,omitempty"`
+	// 外部退款单号
+	OutMainRefundId string `json:"out_main_refund_id,omitempty" xml:"out_main_refund_id,omitempty"`
+	// 退单状态 APPLY：申请，待审核，REFUSE：审核拒绝，AGREE：审核同意（退款中），SUCCESS：退款成功，CANCEL：取消申请，PLATFROM_DEAL：平台仲裁中，FAILED：退款失败
+	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 扩展属性map
 	RefundAttributes string `json:"refund_attributes,omitempty" xml:"refund_attributes,omitempty"`
 	// 供应商code
@@ -88,4 +94,6 @@ type OrderSyncRefundDto struct {
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 纠纷类型 1：售中  2：售后
 	DisputeType int64 `json:"dispute_type,omitempty" xml:"dispute_type,omitempty"`
+	// 退款销售数量
+	RefundSaleQuantity int64 `json:"refund_sale_quantity,omitempty" xml:"refund_sale_quantity,omitempty"`
 }

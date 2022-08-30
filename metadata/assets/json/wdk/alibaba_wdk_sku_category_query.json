@@ -1,54 +1,50 @@
 {
-	"id": 39542,
-	"name": "alibaba.wdk.sku.category.query",
-	"apiChineseName": "商家类目获取接口",
-	"description": "商家类目获取接口",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CategoryDo",
-			"description": "查询类目请模型",
-			"required": true,
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
 					"description": "类目编码"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CategoryDo",
+			"description": "查询类目请模型",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口返回成功标志",
-					"required": true
+					"description": "接口返回成功标志"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码（只有有异常才有值）",
-					"required": true
+					"description": "错误码（只有有异常才有值）"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息（只有有异常才有值）",
-					"required": true
+					"description": "错误信息（只有有异常才有值）"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "返回业务参数模型，-1状态的为删除的类目",
-					"required": true
+					"description": "返回业务参数模型，-1状态的为删除的类目"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.category.query",
+	"apiChineseName": "商家类目获取接口",
+	"description": "商家类目获取接口",
+	"id": 39542
 }

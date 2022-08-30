@@ -1,8 +1,4 @@
 {
-	"id": 40996,
-	"name": "alibaba.scbp.showcase.sort",
-	"apiChineseName": "橱窗顺序变更",
-	"description": "橱窗顺序变更",
 	"requestParams": [
 		{
 			"name": "window_id",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "是否更新成功"
 		}
-	]
+	],
+	"name": "alibaba.scbp.showcase.sort",
+	"apiChineseName": "橱窗顺序变更",
+	"description": "橱窗顺序变更",
+	"id": 40996
 }

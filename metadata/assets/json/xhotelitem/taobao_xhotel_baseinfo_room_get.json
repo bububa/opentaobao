@@ -1,15 +1,11 @@
 {
-	"id": 28763,
-	"name": "taobao.xhotel.baseinfo.room.get",
-	"apiChineseName": "酒店房型与房价查询",
-	"description": "根据outHid/hid获取酒店的房型和价格信息",
 	"requestParams": [
 		{
 			"name": "out_hid",
 			"type": "String",
 			"description": "卖家系统中的酒店ID。",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "vendor",
@@ -24,101 +20,91 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
-					"name": "xhotel_base_info",
-					"type": "XHotelInfoWithRoom",
-					"description": "酒店基础信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "room_type_list",
-							"type": "RoomType[]",
-							"description": "房型基础信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "rate_plan_list",
-									"type": "RatepPlan[]",
-									"description": "房价列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "vendor",
 											"type": "String",
-											"description": "系统商",
-											"required": true
+											"description": "系统商"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "房价名称",
-											"required": true
-										},
-										{
-											"name": "status",
-											"type": "Number",
-											"description": "1：开启2：关闭。",
-											"required": true
+											"description": "房价名称"
 										},
 										{
 											"name": "rate_plan_code",
 											"type": "String",
-											"description": "ratePlanCode",
-											"required": true
+											"description": "ratePlanCode"
+										},
+										{
+											"name": "status",
+											"type": "Number",
+											"description": "1：开启2：关闭。"
 										}
-									]
+									],
+									"name": "rate_plan_list",
+									"type": "RatepPlan[]",
+									"description": "房价列表"
 								},
 								{
 									"name": "vendor",
 									"type": "String",
-									"description": "系统商",
-									"required": true
+									"description": "系统商"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "房型名称",
-									"required": true
+									"description": "房型名称"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "房型状态。0:正常，-1:删除，-2:停售",
-									"required": true
+									"description": "房型状态。0:正常，-1:删除，-2:停售"
 								},
 								{
 									"name": "outer_id",
 									"type": "String",
-									"description": "outerId",
-									"required": true
+									"description": "outerId"
 								}
-							]
+							],
+							"name": "room_type_list",
+							"type": "RoomType[]",
+							"description": "房型基础信息"
 						}
-					]
+					],
+					"name": "xhotel_base_info",
+					"type": "XHotelInfoWithRoom",
+					"description": "酒店基础信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.baseinfo.room.get",
+	"apiChineseName": "酒店房型与房价查询",
+	"description": "根据outHid/hid获取酒店的房型和价格信息",
+	"id": 28763
 }

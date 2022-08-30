@@ -1,20 +1,8 @@
 {
-	"id": 35446,
-	"name": "aliexpress.trade.buy.placeorder",
-	"apiChineseName": "AE下单API",
-	"description": "A006_INVALID_ACCOUNT_INFO",
 	"requestParams": [
 		{
-			"name": "param_place_order_request4_open_api_d_t_o",
-			"type": "PlaceOrderRequest4OpenApiDto",
-			"description": "下单具体参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "logistics_address",
-					"type": "MaillingAddressRequestDto",
-					"description": "物流地址信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "address",
@@ -111,14 +99,29 @@
 							"name": "is_foreigner",
 							"type": "String",
 							"description": "是否是外籍"
+						},
+						{
+							"name": "vat_no",
+							"type": "String",
+							"description": "vat税号"
+						},
+						{
+							"name": "tax_company",
+							"type": "String",
+							"description": "公司名称"
+						},
+						{
+							"name": "location_tree_address_id",
+							"type": "String",
+							"description": "地址树ID"
 						}
-					]
+					],
+					"name": "logistics_address",
+					"type": "MaillingAddressRequestDto",
+					"description": "物流地址信息",
+					"required": true
 				},
 				{
-					"name": "product_items",
-					"type": "ProductBaseItem[]",
-					"description": "商品属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_count",
@@ -147,16 +150,21 @@
 							"type": "String",
 							"description": "用户留言"
 						}
-					]
+					],
+					"name": "product_items",
+					"type": "ProductBaseItem[]",
+					"description": "商品属性",
+					"required": true
 				}
-			]
+			],
+			"name": "param_place_order_request4_open_api_d_t_o",
+			"type": "PlaceOrderRequest4OpenApiDto",
+			"description": "下单具体参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PlaceOrderRes4OpenApiDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -182,7 +190,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PlaceOrderRes4OpenApiDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.trade.buy.placeorder",
+	"apiChineseName": "AE下单API",
+	"description": "150欧欧盟税改",
+	"id": 35446
 }

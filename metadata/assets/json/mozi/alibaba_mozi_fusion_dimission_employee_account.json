@@ -1,13 +1,6 @@
 {
-	"id": 41856,
-	"name": "alibaba.mozi.fusion.dimission.employee.account",
-	"apiChineseName": "人员离职",
-	"description": "人员离职并且回收账号",
 	"requestParams": [
 		{
-			"name": "dimission.employee",
-			"type": "RemoveTenantEmployeeAndAccountRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "tenant_id",
@@ -17,6 +10,7 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "附加属性"
 				},
 				{
@@ -35,46 +29,48 @@
 					"type": "Number",
 					"description": "账号ID"
 				}
-			]
+			],
+			"name": "dimission.employee",
+			"type": "RemoveTenantEmployeeAndAccountRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RemoveTenantEmployeeAndAccountResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "返回状态描述",
-					"required": true
+					"description": "返回状态描述"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "返回附加信息",
-					"required": true
+					"type": "String",
+					"description": "返回附加信息"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "返回的状态码",
-					"required": true
+					"description": "返回的状态码"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求的UUID",
-					"required": true
+					"description": "请求的UUID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RemoveTenantEmployeeAndAccountResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mozi.fusion.dimission.employee.account",
+	"apiChineseName": "人员离职",
+	"description": "人员离职并且回收账号",
+	"id": 41856
 }

@@ -1,16 +1,19 @@
 {
-	"id": 38785,
-	"name": "alibaba.mos.order.list.get",
-	"apiChineseName": "批量查询订单交易",
-	"description": "批量查询交易信息",
 	"requestParams": [
 		{
-			"name": "order_criteria",
-			"type": "OrderCriteria",
-			"description": "订单查询条件",
 			"subParams": [
 				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "银泰专柜Id"
+				},
+				{
 					"name": "start_date",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "end_date",
 					"type": "Date",
 					"description": "订单创建时间"
 				},
@@ -20,31 +23,21 @@
 					"description": "订单号"
 				},
 				{
-					"name": "end_date",
-					"type": "Date",
-					"description": "订单创建时间"
-				},
-				{
 					"name": "status",
 					"type": "String[]",
 					"description": "未支付(“UNPAID”),已支付(\"PAID\"),部分发货(\"PARTDISTRIBUTION\"),全部发货(\"ALLDISTRIBUTION\"),取消(\"CANCEL\")"
-				},
-				{
-					"name": "counter_id",
-					"type": "String",
-					"description": "银泰专柜Id"
 				},
 				{
 					"name": "out_counter_id",
 					"type": "String",
 					"description": "供应商专柜Id"
 				}
-			]
+			],
+			"name": "order_criteria",
+			"type": "OrderCriteria",
+			"description": "订单查询条件"
 		},
 		{
-			"name": "paginator",
-			"type": "Paginator",
-			"description": "分页信息",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -56,330 +49,286 @@
 					"type": "Number",
 					"description": "当前页，从1开始， 最多支持返回250页"
 				}
-			]
+			],
+			"name": "paginator",
+			"type": "Paginator",
+			"description": "分页信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "sub_msg",
-					"type": "String",
-					"description": "消息",
-					"required": true
-				},
-				{
-					"name": "sub_code",
-					"type": "String",
-					"description": "状态码",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "PagedList",
-					"description": "结果集",
-					"required": true,
 					"subParams": [
 						{
-							"name": "list",
-							"type": "SalesOrderDto[]",
-							"description": "集合",
-							"required": true,
 							"subParams": [
 								{
-									"name": "order_items",
-									"type": "SalesOrderItemDto[]",
-									"description": "订单商品明细",
-									"required": true,
 									"subParams": [
-										{
-											"name": "out_id",
-											"type": "String",
-											"description": "外部商品Id",
-											"required": true
-										},
-										{
-											"name": "sku_id",
-											"type": "String",
-											"description": "商品Id",
-											"required": true
-										},
-										{
-											"name": "title",
-											"type": "String",
-											"description": "商品名称",
-											"required": true
-										},
-										{
-											"name": "product_type",
-											"type": "String",
-											"description": "商品类型:普通商品(NORMAL)",
-											"required": true
-										},
-										{
-											"name": "quantity",
-											"type": "String",
-											"description": "数量",
-											"required": true
-										},
-										{
-											"name": "price",
-											"type": "String",
-											"description": "价格，单位:元",
-											"required": true
-										},
-										{
-											"name": "discount",
-											"type": "String",
-											"description": "折扣金额，单位:元",
-											"required": true
-										},
-										{
-											"name": "sale_property",
-											"type": "String",
-											"description": "销售属性：颜色:15#/规格:3.5g，用/分隔",
-											"required": true
-										},
-										{
-											"name": "tag_price",
-											"type": "String",
-											"description": "吊牌价，单位:元",
-											"required": true
-										},
-										{
-											"name": "payments",
-											"type": "String",
-											"description": "支付信息",
-											"required": true
-										},
-										{
-											"name": "disc_code",
-											"type": "String",
-											"description": "唯一码（仅西有用）",
-											"required": true
-										},
-										{
-											"name": "disc_amount",
-											"type": "String",
-											"description": "分摊金额（仅西有用）",
-											"required": true
-										},
-										{
-											"name": "shipment_interception",
-											"type": "String",
-											"description": "发货拦截标识（ NORMAL 正常 ;INTERCEPTION 拦截 ）",
-											"required": true
-										},
-										{
-											"name": "guider_id",
-											"type": "String",
-											"description": "导购Id",
-											"required": true
-										},
-										{
-											"name": "barcode",
-											"type": "String",
-											"description": "条码",
-											"required": true
-										},
-										{
-											"name": "art_no",
-											"type": "String",
-											"description": "货号",
-											"required": true
-										},
-										{
-											"name": "id",
-											"type": "String",
-											"description": "唯一标识",
-											"required": true
-										},
-										{
-											"name": "e2_part_discount",
-											"type": "String",
-											"description": "E2分摊金额",
-											"required": true
-										},
-										{
-											"name": "settlement_code",
-											"type": "String",
-											"description": "商品编码",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "invoice",
-									"type": "InvoiceDto",
-									"description": "发票信息（已废弃）",
-									"required": true,
-									"subParams": [
-										{
-											"name": "title",
-											"type": "String",
-											"description": "名称",
-											"required": true
-										},
 										{
 											"name": "kind",
 											"type": "String",
-											"description": "发票类型:普通发票、电子发票、增值税发票",
-											"required": true
+											"description": "发票类型:普通发票、电子发票、增值税发票"
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "名称"
 										},
 										{
 											"name": "content",
 											"type": "String",
-											"description": "发票内容:日用品",
-											"required": true
+											"description": "发票内容:日用品"
 										},
 										{
 											"name": "title_type",
 											"type": "String",
-											"description": "发票抬头类型：个人、单位",
-											"required": true
+											"description": "发票抬头类型：个人、单位"
 										},
 										{
 											"name": "tax_number",
 											"type": "String",
-											"description": "税号",
-											"required": true
+											"description": "税号"
 										}
-									]
+									],
+									"name": "invoice",
+									"type": "InvoiceDto",
+									"description": "发票信息（已废弃）"
+								},
+								{
+									"subParams": [
+										{
+											"name": "out_id",
+											"type": "String",
+											"description": "外部商品Id"
+										},
+										{
+											"name": "sku_id",
+											"type": "String",
+											"description": "商品Id"
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "商品名称"
+										},
+										{
+											"name": "product_type",
+											"type": "String",
+											"description": "商品类型:普通商品(NORMAL)"
+										},
+										{
+											"name": "sale_property",
+											"type": "String",
+											"description": "销售属性：颜色:15#/规格:3.5g，用/分隔"
+										},
+										{
+											"name": "quantity",
+											"type": "String",
+											"description": "数量"
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "价格，单位:元"
+										},
+										{
+											"name": "discount",
+											"type": "String",
+											"description": "折扣金额，单位:元"
+										},
+										{
+											"name": "tag_price",
+											"type": "String",
+											"description": "吊牌价，单位:元"
+										},
+										{
+											"name": "payments",
+											"type": "String",
+											"description": "支付信息"
+										},
+										{
+											"name": "disc_code",
+											"type": "String",
+											"description": "唯一码（仅西有用）"
+										},
+										{
+											"name": "disc_amount",
+											"type": "String",
+											"description": "分摊金额（仅西有用）"
+										},
+										{
+											"name": "shipment_interception",
+											"type": "String",
+											"description": "发货拦截标识（ NORMAL 正常 ;INTERCEPTION 拦截 ）"
+										},
+										{
+											"name": "guider_id",
+											"type": "String",
+											"description": "导购Id"
+										},
+										{
+											"name": "barcode",
+											"type": "String",
+											"description": "条码"
+										},
+										{
+											"name": "art_no",
+											"type": "String",
+											"description": "货号"
+										},
+										{
+											"name": "id",
+											"type": "String",
+											"description": "唯一标识"
+										},
+										{
+											"name": "e2_part_discount",
+											"type": "String",
+											"description": "E2分摊金额"
+										},
+										{
+											"name": "settlement_code",
+											"type": "String",
+											"description": "商品编码"
+										}
+									],
+									"name": "order_items",
+									"type": "SalesOrderItemDto[]",
+									"description": "订单商品明细"
 								},
 								{
 									"name": "store_name",
 									"type": "String",
-									"description": "门店名称",
-									"required": true
+									"description": "门店名称"
 								},
 								{
 									"name": "sale_type",
 									"type": "String",
-									"description": "销售类型：STORE（门店销售)、ONLINE(线上销售)",
-									"required": true
+									"description": "销售类型：STORE（门店销售)、ONLINE(线上销售)"
 								},
 								{
 									"name": "last_updated",
 									"type": "Date",
-									"description": "最后更新时间",
-									"required": true
+									"description": "最后更新时间"
 								},
 								{
 									"name": "date_created",
 									"type": "Date",
-									"description": "订单创建时间",
-									"required": true
+									"description": "订单创建时间"
 								},
 								{
 									"name": "paid_time",
 									"type": "Date",
-									"description": "支付时间",
-									"required": true
+									"description": "支付时间"
 								},
 								{
 									"name": "freight",
 									"type": "String",
-									"description": "运费，单位:元",
-									"required": true
+									"description": "运费，单位:元"
 								},
 								{
 									"name": "amount",
 									"type": "String",
-									"description": "订单商品金额，单位:元",
-									"required": true
+									"description": "订单商品金额，单位:元"
 								},
 								{
 									"name": "order_number",
 									"type": "String",
-									"description": "订单号",
-									"required": true
+									"description": "订单号"
 								},
 								{
 									"name": "counter_id",
 									"type": "String",
-									"description": "专柜ID",
-									"required": true
+									"description": "专柜ID"
 								},
 								{
 									"name": "counter_name",
 									"type": "String",
-									"description": "专柜名称",
-									"required": true
+									"description": "专柜名称"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "订单状态，可选值：UNPAID(未支付)、PAID(已支付)、PARTDISTRIBUTION(部分发货)、ALLDISTRIBUTION(全部发货)、CANCEL(取消)、BUYER_REFUND_GOODS（买家退货）",
-									"required": true
+									"description": "订单状态，可选值：UNPAID(未支付)、PAID(已支付)、PARTDISTRIBUTION(部分发货)、ALLDISTRIBUTION(全部发货)、CANCEL(取消)、BUYER_REFUND_GOODS（买家退货）"
 								},
 								{
 									"name": "buyer_memo",
 									"type": "String",
-									"description": "买家备注",
-									"required": true
+									"description": "买家备注"
 								},
 								{
 									"name": "payments",
 									"type": "String",
-									"description": "支付信息",
-									"required": true
+									"description": "支付信息"
 								},
 								{
 									"name": "out_counter_id",
 									"type": "String",
-									"description": "供应商专柜Id",
-									"required": true
+									"description": "供应商专柜Id"
 								},
 								{
 									"name": "shipper",
 									"type": "String",
-									"description": "发货方:INTIME(银泰)、THIRD(第三方)",
-									"required": true
+									"description": "发货方:INTIME(银泰)、THIRD(第三方)"
 								},
 								{
 									"name": "delivery_type",
 									"type": "String",
-									"description": "配送方式:TOSTORE(门店自提)、APPOINTTIME(定时达)、EXPRESS(普通快递)、NEXTDAY(次日定时达)、TOSTORESERVICE(到店服务)、OFFLINESALE(现场销售)、NOT_REQUIRED（无需配送（虚拟商品））",
-									"required": true
+									"description": "配送方式:TOSTORE(门店自提)、APPOINTTIME(定时达)、EXPRESS(普通快递)、NEXTDAY(次日定时达)、TOSTORESERVICE(到店服务)、OFFLINESALE(现场销售)、NOT_REQUIRED（无需配送（虚拟商品））"
 								}
-							]
+							],
+							"name": "list",
+							"type": "SalesOrderDto[]",
+							"description": "集合"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "取的记录数",
-							"required": true
+							"description": "取的记录数"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前是第几页",
-							"required": true
+							"description": "当前是第几页"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PagedList",
+					"description": "结果集"
+				},
+				{
+					"name": "sub_msg",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "sub_code",
+					"type": "String",
+					"description": "状态码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.order.list.get",
+	"apiChineseName": "批量查询订单交易",
+	"description": "批量查询交易信息",
+	"id": 38785
 }

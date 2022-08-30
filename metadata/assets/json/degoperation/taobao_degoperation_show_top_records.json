@@ -1,8 +1,4 @@
 {
-	"id": 38266,
-	"name": "taobao.degoperation.show.top.records",
-	"apiChineseName": "活动中奖记录",
-	"description": "活动中奖记录",
 	"requestParams": [
 		{
 			"name": "deg_app_key",
@@ -25,41 +21,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BonusResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "taobaonick:脱敏，price奖品价值，awardTypeName=奖品类型名称，awardName=奖品名称，awardType=奖品类型",
-					"required": true
+					"type": "String",
+					"description": "taobaonick:脱敏，price奖品价值，awardTypeName=奖品类型名称，awardName=奖品名称，awardType=奖品类型"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.degoperation.show.top.records",
+	"apiChineseName": "活动中奖记录",
+	"description": "活动中奖记录",
+	"id": 38266
 }

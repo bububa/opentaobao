@@ -16,10 +16,10 @@ type AlibabaWdkopenCateorderPullAPIRequest struct {
 	_subOutOrderIds []string
 	// 经营店ID
 	_storeId string
-	// 回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消
-	_status string
 	// 主站主订单ID
 	_outOrderId string
+	// 回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消
+	_status string
 }
 
 // NewAlibabaWdkopenCateorderPullRequest 初始化AlibabaWdkopenCateorderPullAPIRequest对象
@@ -69,19 +69,6 @@ func (r AlibabaWdkopenCateorderPullAPIRequest) GetStoreId() string {
 	return r._storeId
 }
 
-// SetStatus is Status Setter
-// 回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消
-func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r AlibabaWdkopenCateorderPullAPIRequest) GetStatus() string {
-	return r._status
-}
-
 // SetOutOrderId is OutOrderId Setter
 // 主站主订单ID
 func (r *AlibabaWdkopenCateorderPullAPIRequest) SetOutOrderId(_outOrderId string) error {
@@ -93,4 +80,17 @@ func (r *AlibabaWdkopenCateorderPullAPIRequest) SetOutOrderId(_outOrderId string
 // GetOutOrderId OutOrderId Getter
 func (r AlibabaWdkopenCateorderPullAPIRequest) GetOutOrderId() string {
 	return r._outOrderId
+}
+
+// SetStatus is Status Setter
+// 回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消
+func (r *AlibabaWdkopenCateorderPullAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaWdkopenCateorderPullAPIRequest) GetStatus() string {
+	return r._status
 }

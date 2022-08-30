@@ -14,7 +14,7 @@ import (
 type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest struct {
 	model.Params
 	// 子帐号列表，最多10个
-	_accountIds []int64
+	_accountIds []string
 	// 查询开始日期，只有日期有效，时间忽略
 	_startDate string
 	// 查询结束日期，只有日期有效，时间忽略
@@ -44,14 +44,14 @@ func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetApiParams() url.V
 
 // SetAccountIds is AccountIds Setter
 // 子帐号列表，最多10个
-func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetAccountIds(_accountIds []int64) error {
+func (r *TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) SetAccountIds(_accountIds []string) error {
 	r._accountIds = _accountIds
 	r.Set("account_ids", _accountIds)
 	return nil
 }
 
 // GetAccountIds AccountIds Getter
-func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetAccountIds() []int64 {
+func (r TaobaoQianniuCloudkefuOnlinestatuslogGetAPIRequest) GetAccountIds() []string {
 	return r._accountIds
 }
 

@@ -1,8 +1,4 @@
 {
-	"id": 28330,
-	"name": "alibaba.alink.message.config.set",
-	"apiChineseName": "消息提醒开关",
-	"description": "阿里智能消息开关",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -53,7 +46,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.message.config.set",
+	"apiChineseName": "消息提醒开关",
+	"description": "阿里智能消息开关",
+	"id": 28330
 }

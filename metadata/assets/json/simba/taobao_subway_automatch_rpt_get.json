@@ -1,8 +1,4 @@
 {
-	"id": 56063,
-	"name": "taobao.subway.automatch.rpt.get",
-	"apiChineseName": "查询流量智选天级报告",
-	"description": "查询流量智选天级报告",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -37,83 +33,75 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "ResultMap []",
-			"description": "流量智选天级别报表数据",
 			"subParams": [
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "ctr",
-					"required": true
+					"description": "ctr"
 				},
 				{
 					"name": "cpm",
 					"type": "String",
-					"description": "cpm",
-					"required": true
+					"description": "cpm"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "消耗（分）",
-					"required": true
+					"description": "消耗（分）"
 				},
 				{
 					"name": "campaignid",
 					"type": "String",
-					"description": "计划id",
-					"required": true
+					"description": "计划id"
 				},
 				{
 					"name": "sub_package_name",
 					"type": "String",
-					"description": "词包名称（汇总-流量包、汇总-自主买词）",
-					"required": true
+					"description": "词包名称（汇总-流量包、汇总-自主买词）"
 				},
 				{
 					"name": "click",
 					"type": "String",
-					"description": "点击量",
-					"required": true
+					"description": "点击量"
 				},
 				{
 					"name": "sub_package",
 					"type": "String",
-					"description": "词包类型（0：汇总-流量包，-1：汇总-自主买词）",
-					"required": true
+					"description": "词包类型（0：汇总-流量包，-1：汇总-自主买词）"
 				},
 				{
 					"name": "thedate",
 					"type": "String",
-					"description": "报表数据日期",
-					"required": true
+					"description": "报表数据日期"
 				},
 				{
 					"name": "adgroupid",
 					"type": "String",
-					"description": "推广组id",
-					"required": true
+					"description": "推广组id"
 				},
 				{
 					"name": "impression",
 					"type": "String",
-					"description": "展现量",
-					"required": true
+					"description": "展现量"
 				},
 				{
 					"name": "coverage",
 					"type": "String",
-					"description": "点击转化率",
-					"required": true
+					"description": "点击转化率"
 				},
 				{
 					"name": "roi",
 					"type": "String",
-					"description": "roi",
-					"required": true
+					"description": "roi"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "ResultMap []",
+			"description": "流量智选天级别报表数据"
 		}
-	]
+	],
+	"name": "taobao.subway.automatch.rpt.get",
+	"apiChineseName": "查询流量智选天级报告",
+	"description": "查询流量智选天级报告",
+	"id": 56063
 }

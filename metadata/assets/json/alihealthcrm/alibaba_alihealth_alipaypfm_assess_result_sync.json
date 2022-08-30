@@ -1,8 +1,4 @@
 {
-	"id": 46804,
-	"name": "alibaba.alihealth.alipaypfm.assess.result.sync",
-	"apiChineseName": "用户测评结果回传接口",
-	"description": "用户测评结果回传接口",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
-				{
-					"name": "model",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "调用结果",
-					"required": true
+					"description": "调用结果"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "调用返回code",
-					"required": true
+					"description": "调用返回code"
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.alipaypfm.assess.result.sync",
+	"apiChineseName": "用户测评结果回传接口",
+	"description": "用户测评结果回传接口",
+	"id": 46804
 }

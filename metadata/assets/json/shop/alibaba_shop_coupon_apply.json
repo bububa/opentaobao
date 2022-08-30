@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "买家的openId",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "券的uuid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作成功或者失败",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.shop.coupon.apply",
+	"apiChineseName": "通用店铺券领券接口",
+	"description": "店铺小部件和模块开发的isv通用店铺券领券接口",
+	"id": 57303
+}

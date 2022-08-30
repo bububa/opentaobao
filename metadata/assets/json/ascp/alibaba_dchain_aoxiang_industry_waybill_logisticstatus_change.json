@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "express_code",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID",
+					"required": true
+				},
+				{
+					"name": "industry",
+					"type": "String",
+					"description": "行业",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "服务商code",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Number",
+					"description": "物流节点发生变更时间的时间戳",
+					"required": true
+				},
+				{
+					"name": "logistic_status",
+					"type": "String",
+					"description": "当前物流节点",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "物流节点文本描述",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				}
+			],
+			"name": "tms_order_confirm_request",
+			"type": "TmsOrderConfirmRequest",
+			"description": "物流节点回传入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "业务请求是否成功"
+						},
+						{
+							"name": "biz_exception",
+							"type": "Boolean",
+							"description": "是否业务异常"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "data",
+					"type": "TmsOrderConfirmResponse",
+					"description": "返回值"
+				}
+			],
+			"name": "tms_order_confirm_response",
+			"type": "TopResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.industry.waybill.logisticstatus.change",
+	"apiChineseName": "物流节点回传",
+	"description": "物流节点回传",
+	"id": 63629
+}

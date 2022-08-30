@@ -1,15 +1,11 @@
 {
-	"id": 46628,
-	"name": "taobao.miniapp.template.instantiate",
-	"apiChineseName": "构建实例化应用",
-	"description": "实例化saas化的小程序",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "投放端,目前可投放： taobao(淘宝),tmall(天猫)，taobao为必填，需要模板在这些端上已经发布上线",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "description",
@@ -79,19 +75,23 @@
 			"description": "小程序icon"
 		},
 		{
-			"name": "pre_view_url",
-			"type": "String",
-			"description": "当前新生成的预览版本的链接，仅当前商家有权限预览。"
-		},
-		{
 			"name": "app_version",
 			"type": "String",
 			"description": "当前新生成的预览版本号"
+		},
+		{
+			"name": "pre_view_url",
+			"type": "String",
+			"description": "当前新生成的预览版本的链接，仅当前商家有权限预览。"
 		},
 		{
 			"name": "app_alias",
 			"type": "String",
 			"description": "小程序简称。在小程序Loading动画、首页标题、「更多」菜单标题上优先展示简称。"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.instantiate",
+	"apiChineseName": "构建实例化应用",
+	"description": "实例化saas化的小程序",
+	"id": 46628
 }

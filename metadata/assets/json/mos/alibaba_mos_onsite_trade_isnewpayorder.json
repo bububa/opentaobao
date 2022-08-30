@@ -1,48 +1,44 @@
 {
-	"id": 37386,
-	"name": "alibaba.mos.onsite.trade.isnewpayorder",
-	"apiChineseName": "是否为新支付订单",
-	"description": "退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单",
 	"requestParams": [
 		{
 			"name": "out_trade_no",
 			"type": "String",
 			"description": "外部订单号",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否为新支付订单。true：是，false:不是",
-					"required": true
+					"description": "是否为新支付订单。true：是，false:不是"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mos.onsite.trade.isnewpayorder",
+	"apiChineseName": "是否为新支付订单",
+	"description": "退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单",
+	"id": 37386
 }

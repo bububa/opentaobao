@@ -1,0 +1,95 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "value_id",
+					"type": "String",
+					"description": "属性值id"
+				},
+				{
+					"name": "property_id",
+					"type": "String",
+					"description": "属性id"
+				},
+				{
+					"name": "channel_cat_id",
+					"type": "String",
+					"description": "类目id",
+					"required": true
+				}
+			],
+			"name": "youpin_cpv_qry",
+			"type": "YoupinCpvQry",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "String",
+							"description": "属性id"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "属性名称"
+						},
+						{
+							"name": "show_sub_property",
+							"type": "Boolean",
+							"description": "是否包含子属性"
+						},
+						{
+							"subParams": [
+								{
+									"name": "value_id",
+									"type": "String",
+									"description": "属性值d"
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "属性值名称"
+								}
+							],
+							"name": "value_list",
+							"type": "YoupinPropertyValueResultDto[]",
+							"description": "属性值list"
+						}
+					],
+					"name": "data",
+					"type": "YoupinCpvResultDto[]",
+					"description": "属性list"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果对象"
+		}
+	],
+	"name": "alibaba.idle.isv.pv.query",
+	"apiChineseName": "查询pv属性",
+	"description": "查询pv属性",
+	"id": 61369
+}

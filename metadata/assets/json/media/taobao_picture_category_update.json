@@ -1,8 +1,4 @@
 {
-	"id": 10909,
-	"name": "taobao.picture.category.update",
-	"apiChineseName": "更新图片分类",
-	"description": "更新图片分类的名字，或者更新图片分类的父分类（即分类移动）。只能移动2级分类到非2级分类，默认分类和1级分类不可移动。",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -28,5 +24,9 @@
 			"type": "Boolean",
 			"description": "更新图片分类是否成功"
 		}
-	]
+	],
+	"name": "taobao.picture.category.update",
+	"apiChineseName": "更新图片分类",
+	"description": "更新图片分类的名字，或者更新图片分类的父分类（即分类移动）。只能移动2级分类到非2级分类，默认分类和1级分类不可移动。",
+	"id": 10909
 }

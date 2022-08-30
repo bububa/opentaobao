@@ -1,8 +1,4 @@
 {
-	"id": 27170,
-	"name": "taobao.region.warehouse.manage",
-	"apiChineseName": "编辑仓库覆盖范围",
-	"description": "编辑仓库覆盖范围",
 	"requestParams": [
 		{
 			"name": "store_code",
@@ -14,41 +10,41 @@
 			"name": "regions",
 			"type": "String[]",
 			"description": "可映射三级地址,例: 广东省",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 15000,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "true/false",
-					"required": true
+					"description": "true/false"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.region.warehouse.manage",
+	"apiChineseName": "编辑仓库覆盖范围",
+	"description": "编辑仓库覆盖范围",
+	"id": 27170
 }

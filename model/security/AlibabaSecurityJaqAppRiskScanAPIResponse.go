@@ -21,5 +21,5 @@ type AlibabaSecurityJaqAppRiskScanAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 扫描任务信息
-	Result *ScanTaskInfo `json:"result,omitempty" xml:"result,omitempty"`
+	Result *TaskInfo `json:"result,omitempty" xml:"result,omitempty"`
 }

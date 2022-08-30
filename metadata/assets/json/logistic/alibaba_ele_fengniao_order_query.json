@@ -1,13 +1,6 @@
 {
-	"id": 39586,
-	"name": "alibaba.ele.fengniao.order.query",
-	"apiChineseName": "查询订单基本信息",
-	"description": "查询订单基本信息",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "app_id",
@@ -19,14 +12,14 @@
 					"type": "String",
 					"description": "外部订单号"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "kvs",
-			"type": "Kvs []",
-			"description": "kvs",
 			"subParams": [
 				{
 					"name": "value",
@@ -46,7 +39,10 @@
 					"description": "index",
 					"required": true
 				}
-			]
+			],
+			"name": "kvs",
+			"type": "Kvs []",
+			"description": "kvs"
 		},
 		{
 			"name": "receiver_longitude",
@@ -73,5 +69,9 @@
 			"type": "String",
 			"description": "收件人纬度"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.order.query",
+	"apiChineseName": "查询订单基本信息",
+	"description": "查询订单基本信息",
+	"id": 39586
 }

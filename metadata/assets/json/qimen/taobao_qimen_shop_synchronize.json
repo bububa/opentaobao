@@ -1,13 +1,6 @@
 {
-	"id": 36436,
-	"name": "taobao.qimen.shop.synchronize",
-	"apiChineseName": "店铺同步接口",
-	"description": "店铺同步接口描述",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "actionType",
@@ -15,9 +8,6 @@
 					"description": "add,update, 必填"
 				},
 				{
-					"name": "shop",
-					"type": "Shop",
-					"description": "店铺",
 					"subParams": [
 						{
 							"name": "sourcePlatformCode",
@@ -55,9 +45,6 @@
 							"description": "平台店铺名称（如淘宝店铺名称）,  string (50)"
 						},
 						{
-							"name": "shopAddress",
-							"type": "ShopAddress",
-							"description": "店铺地址",
 							"subParams": [
 								{
 									"name": "zipCode",
@@ -89,18 +76,24 @@
 									"type": "String",
 									"description": "详细地址, string (200)"
 								}
-							]
+							],
+							"name": "shopAddress",
+							"type": "ShopAddress",
+							"description": "店铺地址"
 						}
-					]
+					],
+					"name": "shop",
+					"type": "Shop",
+					"description": "店铺"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
-			"description": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -120,7 +113,14 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response",
+			"description": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.shop.synchronize",
+	"apiChineseName": "店铺同步接口",
+	"description": "店铺同步接口描述",
+	"id": 36436
 }

@@ -1,14 +1,6 @@
 {
-	"id": 56317,
-	"name": "aliexpress.ascp.ffo.item.query",
-	"apiChineseName": "AliExpress发货单明细分页查询API",
-	"description": "AE履约发货单明细分页查询",
 	"requestParams": [
 		{
-			"name": "fulfillment_forward_order_item_query",
-			"type": "FulfillmentForwardOrderItemQueryDto",
-			"description": "DTO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -22,20 +14,17 @@
 					"description": "履约单号",
 					"required": true
 				}
-			]
+			],
+			"name": "fulfillment_forward_order_item_query",
+			"type": "FulfillmentForwardOrderItemQueryDto",
+			"description": "DTO",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "dto",
-					"required": true,
 					"subParams": [
 						{
 							"name": "aic_inventory",
@@ -103,7 +92,11 @@
 							"description": "扩展字段",
 							"required": true
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "dto",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -123,7 +116,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "aliexpress.ascp.ffo.item.query",
+	"apiChineseName": "AliExpress发货单明细分页查询API",
+	"description": "AE履约发货单明细分页查询",
+	"id": 56317
 }

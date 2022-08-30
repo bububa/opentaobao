@@ -1,13 +1,6 @@
 {
-	"id": 55499,
-	"name": "alitrip.btrip.open.supplychain.flight.trade",
-	"apiChineseName": "【商旅】机票交易流水查询接口",
-	"description": "【商旅】杭州市政府机票交易流水接口查询",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiZzdSearchRq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "thirdpart_corp_id",
@@ -57,528 +50,451 @@
 					"type": "String",
 					"description": "结算开始时间"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiZzdSearchRq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResultSupport",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
-					"name": "module_list",
-					"type": "OpenApiZzdFlightOrderRs[]",
-					"description": "出参",
-					"required": true,
 					"subParams": [
-						{
-							"name": "corp_id",
-							"type": "String",
-							"description": "商旅企业ID",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "订单状态：0, \"待支付\";1, \"出票中\";2, \"已关闭\";3,\"有改签单\";4, \"有退票单\";5, \"出票成功\";6, \"退票申请中\";7, \"改签申请中\";10, \"订单关闭\";",
-							"required": true
-						},
-						{
-							"name": "travel_standard_amount",
-							"type": "Number",
-							"description": "差标金额（分）",
-							"required": true
-						},
-						{
-							"name": "delivery_fee",
-							"type": "Number",
-							"description": "行程单邮费",
-							"required": true
-						},
 						{
 							"name": "trade_id",
 							"type": "String",
-							"description": "第三方交易号",
-							"required": true
+							"description": "第三方交易号"
 						},
 						{
 							"name": "trade_type",
 							"type": "Number",
-							"description": "'交易类型：1:机票预订，2:机票改签，3:保险费，4:行程单邮寄费，6：机票退票手续费，101：预订退款，102:改签退款，103:保险退款，104:行程单邮寄退款，105：机票赔付，106:机票改签服务费",
-							"required": true
+							"description": "'交易类型：1:机票预订，2:机票改签，3:保险费，4:行程单邮寄费，6：机票退票手续费，101：预订退款，102:改签退款，103:保险退款，104:行程单邮寄退款，105：机票赔付，106:机票改签服务费"
 						},
 						{
 							"name": "trade_action",
 							"type": "Number",
-							"description": "资金流向:1:支出，2:收入",
-							"required": true
+							"description": "资金流向:1:支出，2:收入"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "商旅企业ID"
 						},
 						{
 							"name": "thirdpart_corp_id",
 							"type": "String",
-							"description": "第三方企业ID",
-							"required": true
+							"description": "第三方企业ID"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "第三方用户ID",
-							"required": true
+							"description": "第三方用户ID"
 						},
 						{
 							"name": "user_nick",
 							"type": "String",
-							"description": "第三方用户姓名",
-							"required": true
+							"description": "第三方用户姓名"
 						},
 						{
 							"name": "depart_name",
 							"type": "String",
-							"description": "部门名称",
-							"required": true
+							"description": "部门名称"
 						},
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "申请单ID",
-							"required": true
+							"description": "申请单ID"
 						},
 						{
 							"name": "third_part_apply_id",
 							"type": "String",
-							"description": "第三方申请单ID",
-							"required": true
+							"description": "第三方申请单ID"
 						},
 						{
 							"name": "apply_title",
 							"type": "String",
-							"description": "审批单名称",
-							"required": true
+							"description": "审批单名称"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态：0, \"待支付\";1, \"出票中\";2, \"已关闭\";3,\"有改签单\";4, \"有退票单\";5, \"出票成功\";6, \"退票申请中\";7, \"改签申请中\";10, \"订单关闭\";"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "String",
-							"description": "订单状态改变时间",
-							"required": true
+							"description": "订单状态改变时间"
 						},
 						{
 							"name": "pay_type",
 							"type": "Number",
-							"description": "0:企业支付，1:个人支付",
-							"required": true
+							"description": "0:企业支付，1:个人支付"
 						},
 						{
 							"name": "settle_type",
 							"type": "Number",
-							"description": "结算方式：1：个人现付，2:企业现付,4:企业月结，8、企业预存'",
-							"required": true
+							"description": "结算方式：1：个人现付，2:企业现付,4:企业月结，8、企业预存'"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "总结算金额（分）",
-							"required": true
+							"description": "总结算金额（分）"
 						},
 						{
 							"name": "corp_amount",
 							"type": "Number",
-							"description": "企业支付金额（分），当pay_type是企业支付时有值",
-							"required": true
+							"description": "企业支付金额（分），当pay_type是企业支付时有值"
 						},
 						{
 							"name": "personal_amount",
 							"type": "Number",
-							"description": "个人支付金额（分），当pay_type是个人支付时有值",
-							"required": true
+							"description": "个人支付金额（分），当pay_type是个人支付时有值"
 						},
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退票费（分），改签退款/预订退款 退回的钱",
-							"required": true
+							"description": "退票费（分），改签退款/预订退款 退回的钱"
 						},
 						{
 							"name": "refund_service_fee",
 							"type": "Number",
-							"description": "tmc收取的退票服务费（分）",
-							"required": true
+							"description": "tmc收取的退票服务费（分）"
 						},
 						{
 							"name": "service_fee",
 							"type": "Number",
-							"description": "tmc收取的预订服务费（分）",
-							"required": true
+							"description": "tmc收取的预订服务费（分）"
 						},
 						{
 							"name": "currency",
 							"type": "String",
-							"description": "货币类型",
-							"required": true
+							"description": "货币类型"
 						},
 						{
 							"name": "approver",
 							"type": "String",
-							"description": "审批人名称，多个/分开",
-							"required": true
+							"description": "审批人名称，多个/分开"
 						},
 						{
 							"name": "settlement_batch_no",
 							"type": "String",
-							"description": "结算批次：corpidyyyymm（该订单结算时间）",
-							"required": true
+							"description": "结算批次：corpidyyyymm（该订单结算时间）"
+						},
+						{
+							"name": "travel_standard_amount",
+							"type": "Number",
+							"description": "差标金额（分）"
 						},
 						{
 							"name": "invoice_id",
 							"type": "String",
-							"description": "商旅发票ID",
-							"required": true
+							"description": "商旅发票ID"
 						},
 						{
 							"name": "invoice_title",
 							"type": "String",
-							"description": "发票抬头",
-							"required": true
+							"description": "发票抬头"
 						},
 						{
 							"name": "project_code",
 							"type": "String",
-							"description": "项目编号",
-							"required": true
+							"description": "项目编号"
 						},
 						{
 							"name": "project_title",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
 						},
 						{
 							"name": "thirdpart_itinerary_id",
 							"type": "String",
-							"description": "第三方行程id",
-							"required": true
+							"description": "第三方行程id"
 						},
 						{
 							"name": "itinerary_no",
 							"type": "String",
-							"description": "行程id",
-							"required": true
+							"description": "行程id"
 						},
 						{
-							"name": "cost_center_list",
-							"type": "CostCenterDo[]",
-							"description": "成本中心信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cost_center_id",
 									"type": "Number",
-									"description": "成本中心ID",
-									"required": true
+									"description": "成本中心ID"
 								},
 								{
 									"name": "cost_center_title",
 									"type": "String",
-									"description": "成本中心名称",
-									"required": true
+									"description": "成本中心名称"
 								},
 								{
 									"name": "cost_center_number",
 									"type": "String",
-									"description": "成本中心编码",
-									"required": true
+									"description": "成本中心编码"
 								},
 								{
 									"name": "third_cost_center_id",
 									"type": "String",
-									"description": "第三方成本中心id",
-									"required": true
+									"description": "第三方成本中心id"
 								}
-							]
+							],
+							"name": "cost_center_list",
+							"type": "CostCenterDo[]",
+							"description": "成本中心信息"
 						},
 						{
-							"name": "client_infodos",
-							"type": "ClientInfoDo[]",
-							"description": "乘机人列表信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "乘机人id",
-									"required": true
+									"description": "乘机人id"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
+									"description": "乘机人姓名"
 								}
-							]
+							],
+							"name": "client_infodos",
+							"type": "ClientInfoDo[]",
+							"description": "乘机人列表信息"
 						},
 						{
 							"name": "change_fee",
 							"type": "Number",
-							"description": "改签费用（分）",
-							"required": true
+							"description": "改签费用（分）"
 						},
 						{
 							"name": "change_service_fee",
 							"type": "Number",
-							"description": "tmc收取的改签服务费（分）",
-							"required": true
+							"description": "tmc收取的改签服务费（分）"
+						},
+						{
+							"name": "delivery_fee",
+							"type": "Number",
+							"description": "行程单邮费"
 						},
 						{
 							"name": "insurance_fee",
 							"type": "Number",
-							"description": "保险费用（分）",
-							"required": true
+							"description": "保险费用（分）"
 						},
 						{
 							"name": "ticket_count",
 							"type": "Number",
-							"description": "票张数",
-							"required": true
+							"description": "票张数"
 						},
 						{
 							"name": "passenger_count",
 							"type": "Number",
-							"description": "乘机人数量",
-							"required": true
+							"description": "乘机人数量"
 						},
 						{
-							"name": "ticketdos",
-							"type": "OpenTicketDo[]",
-							"description": "票据信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ticket_no",
 									"type": "String",
-									"description": "机票号",
-									"required": true
+									"description": "机票号"
 								},
 								{
 									"name": "is_changed",
 									"type": "Boolean",
-									"description": "是否改签票（true：是；false：否）",
-									"required": true
+									"description": "是否改签票（true：是；false：否）"
 								},
 								{
 									"name": "origin_ticket_no",
 									"type": "String",
-									"description": "原改签票号",
-									"required": true
+									"description": "原改签票号"
 								},
 								{
 									"name": "flight_no",
 									"type": "String",
-									"description": "航班号",
-									"required": true
+									"description": "航班号"
 								},
 								{
 									"name": "airline_company",
 									"type": "String",
-									"description": "航空公司名称",
-									"required": true
+									"description": "航空公司名称"
 								},
 								{
 									"name": "airline_code",
 									"type": "String",
-									"description": "航空公司编码",
-									"required": true
+									"description": "航空公司编码"
 								},
 								{
 									"name": "dep_time",
 									"type": "Date",
-									"description": "出发时间",
-									"required": true
-								},
-								{
-									"name": "dep_city_name",
-									"type": "String",
-									"description": "出发城市",
-									"required": true
-								},
-								{
-									"name": "arr_city_name",
-									"type": "String",
-									"description": "到达城市",
-									"required": true
-								},
-								{
-									"name": "dep_airport",
-									"type": "String",
-									"description": "出发机场三字码",
-									"required": true
-								},
-								{
-									"name": "arr_airport",
-									"type": "String",
-									"description": "到达机场三字码",
-									"required": true
-								},
-								{
-									"name": "dep_airport_name",
-									"type": "String",
-									"description": "出发机场名称",
-									"required": true
-								},
-								{
-									"name": "arr_airport_name",
-									"type": "String",
-									"description": "到达机场名称",
-									"required": true
-								},
-								{
-									"name": "cabin",
-									"type": "String",
-									"description": "舱位",
-									"required": true
-								},
-								{
-									"name": "cabinclass",
-									"type": "String",
-									"description": "舱等",
-									"required": true
-								},
-								{
-									"name": "ticket_price",
-									"type": "String",
-									"description": "票价（分）",
-									"required": true
-								},
-								{
-									"name": "discount",
-									"type": "String",
-									"description": "折扣",
-									"required": true
-								},
-								{
-									"name": "insurance_fee",
-									"type": "Number",
-									"description": "保险费（分）",
-									"required": true
-								},
-								{
-									"name": "oil",
-									"type": "Number",
-									"description": "燃油费（分）",
-									"required": true
-								},
-								{
-									"name": "build",
-									"type": "Number",
-									"description": "基建（分）",
-									"required": true
-								},
-								{
-									"name": "currency",
-									"type": "String",
-									"description": "货币类型",
-									"required": true
-								},
-								{
-									"name": "itinerary_num",
-									"type": "String",
-									"description": "行程单号",
-									"required": true
-								},
-								{
-									"name": "passenger_name",
-									"type": "String",
-									"description": "乘机人",
-									"required": true
-								},
-								{
-									"name": "insure_no",
-									"type": "String",
-									"description": "保险单号",
-									"required": true
-								},
-								{
-									"name": "insure_status",
-									"type": "String",
-									"description": "状态：1已出保 2已退保",
-									"required": true
-								},
-								{
-									"name": "insure_name",
-									"type": "String",
-									"description": "乘机人(保险人)姓名",
-									"required": true
-								},
-								{
-									"name": "ride_time",
-									"type": "Number",
-									"description": "飞行时长（分钟），未去除经停时间",
-									"required": true
+									"description": "出发时间"
 								},
 								{
 									"name": "arr_time",
 									"type": "Date",
-									"description": "到达时间",
-									"required": true
+									"description": "到达时间"
+								},
+								{
+									"name": "dep_city_name",
+									"type": "String",
+									"description": "出发城市"
+								},
+								{
+									"name": "arr_city_name",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "出发机场三字码"
+								},
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "到达机场三字码"
+								},
+								{
+									"name": "dep_airport_name",
+									"type": "String",
+									"description": "出发机场名称"
+								},
+								{
+									"name": "arr_airport_name",
+									"type": "String",
+									"description": "到达机场名称"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位"
+								},
+								{
+									"name": "cabinclass",
+									"type": "String",
+									"description": "舱等"
+								},
+								{
+									"name": "ticket_price",
+									"type": "String",
+									"description": "票价（分）"
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "折扣"
+								},
+								{
+									"name": "insurance_fee",
+									"type": "Number",
+									"description": "保险费（分）"
+								},
+								{
+									"name": "oil",
+									"type": "Number",
+									"description": "燃油费（分）"
+								},
+								{
+									"name": "build",
+									"type": "Number",
+									"description": "基建（分）"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "货币类型"
+								},
+								{
+									"name": "itinerary_num",
+									"type": "String",
+									"description": "行程单号"
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘机人"
+								},
+								{
+									"name": "insure_no",
+									"type": "String",
+									"description": "保险单号"
+								},
+								{
+									"name": "insure_status",
+									"type": "String",
+									"description": "状态：1已出保 2已退保"
+								},
+								{
+									"name": "insure_name",
+									"type": "String",
+									"description": "乘机人(保险人)姓名"
+								},
+								{
+									"name": "ride_time",
+									"type": "Number",
+									"description": "飞行时长（分钟），未去除经停时间"
 								}
-							]
+							],
+							"name": "ticketdos",
+							"type": "OpenTicketDo[]",
+							"description": "票据信息"
 						},
 						{
 							"name": "change_charge_fee",
 							"type": "Number",
-							"description": "航司收取的改签手续费",
-							"required": true
+							"description": "航司收取的改签手续费"
 						},
 						{
 							"name": "refund_charge_fee",
 							"type": "Number",
-							"description": "航司收取的退票手续费",
-							"required": true
+							"description": "航司收取的退票手续费"
 						},
 						{
 							"name": "is_changed",
 							"type": "Boolean",
-							"description": "是否是改签流水",
-							"required": true
+							"description": "是否是改签流水"
 						},
 						{
 							"name": "is_refund",
 							"type": "Boolean",
-							"description": "是否是退票流水",
-							"required": true
+							"description": "是否是退票流水"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "OpenApiZzdFlightOrderRs[]",
+					"description": "出参"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResultSupport",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.supplychain.flight.trade",
+	"apiChineseName": "【商旅】机票交易流水查询接口",
+	"description": "【商旅】杭州市政府机票交易流水接口查询",
+	"id": 55499
 }

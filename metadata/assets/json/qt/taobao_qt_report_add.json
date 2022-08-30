@@ -1,65 +1,59 @@
 {
-	"id": 10902,
-	"name": "taobao.qt.report.add",
-	"apiChineseName": "上传质检报告",
-	"description": "上传质检报告",
 	"requestParams": [
 		{
 			"name": "servcie_item_code",
 			"type": "String",
 			"description": "收费项code",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "sp_name",
 			"type": "String",
 			"description": "质检服务商名称",
-			"required": true,
-			"maxLength": 50
+			"maxLength": 50,
+			"required": true
 		},
 		{
 			"name": "nick",
 			"type": "String",
 			"description": "送检者昵称",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "qt_code",
 			"type": "String",
 			"description": "一个质检服务唯一标识质量检验单的编号",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "qt_name",
 			"type": "String",
 			"description": "质检名称",
-			"required": true,
-			"maxLength": 150
+			"maxLength": 150,
+			"required": true
 		},
 		{
 			"name": "item_url",
 			"type": "String",
 			"description": "样品链接.\u003cbr/\u003eQT_TYPE=9的时候，请填写N\\A",
-			"required": true,
-			"maxLength": 256
+			"maxLength": 256,
+			"required": true
 		},
 		{
 			"name": "item_desc",
 			"type": "String",
 			"description": "样品信息描述",
-			"required": true,
-			"maxLength": 150
+			"maxLength": 150,
+			"required": true
 		},
 		{
 			"name": "qt_type",
 			"type": "Number",
 			"description": "(1L, \"聚划算\"),\u003cbr/\u003e(2L, \"消保\"),\u003cbr/\u003e(3L, \"分销\"),\u003cbr/\u003e(4L, \"抽检\"),\u003cbr/\u003e(5L, \"良无限线下数据\"),\u003cbr/\u003e(6L, \"入驻/续签商城\"),\u003cbr/\u003e(7L, \"买家质检维权\"),\u003cbr/\u003e(8L, \"实地验证\"),\u003cbr/\u003e(9L, \"淘宝买家订单商品鉴定\"),\u003cbr/\u003e(10L,\"假一赔三\");",
-			"required": true,
-			"maxValue": 15,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "qt_standard",
@@ -77,9 +71,7 @@
 			"name": "status",
 			"type": "Number",
 			"description": "0:已提交申请\u003cbr/\u003e1:已收到样品\u003cbr/\u003e2:已出检测结果\u003cbr/\u003e3.已出具报告",
-			"required": true,
-			"maxValue": 4,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "is_passed",
@@ -126,5 +118,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.qt.report.add",
+	"apiChineseName": "上传质检报告",
+	"description": "上传质检报告",
+	"id": 10902
 }

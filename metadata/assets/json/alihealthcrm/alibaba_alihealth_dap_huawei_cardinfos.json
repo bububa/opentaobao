@@ -1,14 +1,6 @@
 {
-	"id": 50797,
-	"name": "alibaba.alihealth.dap.huawei.cardinfos",
-	"apiChineseName": "华为负一屏卡片查询",
-	"description": "医疗健康频道卡片华为负一屏",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "String",
-			"description": "source     HUAWEI_HAG,OPPO_OAG",
-			"required": true,
 			"subParams": [
 				{
 					"name": "card_type",
@@ -20,48 +12,51 @@
 					"type": "String",
 					"description": "1 ： 华为卡片"
 				}
-			]
+			],
+			"name": "param",
+			"type": "String",
+			"description": "source     HUAWEI_HAG,OPPO_OAG",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				},
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "indexInfo：首页详情 cardInfos：卡片列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "index_info",
 							"type": "String",
-							"description": "首页卡片信息",
-							"required": true
+							"description": "首页卡片信息"
 						},
 						{
 							"name": "card_infos",
 							"type": "String",
-							"description": "卡片服务列表",
-							"required": true
+							"description": "卡片服务列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "indexInfo：首页详情 cardInfos：卡片列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dap.huawei.cardinfos",
+	"apiChineseName": "华为负一屏卡片查询",
+	"description": "医疗健康频道卡片华为负一屏",
+	"id": 50797
 }

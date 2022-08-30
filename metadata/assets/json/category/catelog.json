@@ -1,5 +1,5 @@
 {
-  "id": 3,
   "name": "类目API",
-  "pkg": "category"
+  "pkg": "category",
+  "id": 3
 }

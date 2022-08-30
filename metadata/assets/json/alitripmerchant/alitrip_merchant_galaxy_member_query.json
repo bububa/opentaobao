@@ -1,8 +1,4 @@
 {
-	"id": 54726,
-	"name": "alitrip.merchant.galaxy.member.query",
-	"apiChineseName": "星河-获取登录用户的信息",
-	"description": "获取登录用户的信息",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -19,149 +15,425 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content",
-					"type": "MemberDto",
-					"description": "用户信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "member_base_info",
-							"type": "MemberBaseInfoDto",
-							"description": "用户基本信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "first_name",
 									"type": "String",
-									"description": "用户英文姓",
-									"required": true
+									"description": "用户英文姓"
 								},
 								{
 									"name": "last_name",
 									"type": "String",
-									"description": "用户英文名",
-									"required": true
+									"description": "用户英文名"
 								},
 								{
 									"name": "civility",
 									"type": "String",
-									"description": "称呼",
-									"required": true
+									"description": "称呼"
 								},
 								{
 									"name": "language",
 									"type": "String",
-									"description": "语言",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "phone_num",
-							"type": "String",
-							"description": "手机号",
-							"required": true
-						},
-						{
-							"name": "wechat_avatar_url",
-							"type": "String",
-							"description": "微信头像",
-							"required": true
-						},
-						{
-							"name": "wechat_nick_name",
-							"type": "String",
-							"description": "微信昵称",
-							"required": true
-						},
-						{
-							"name": "is_member",
-							"type": "Boolean",
-							"description": "是否是会员",
-							"required": true
-						},
-						{
-							"name": "phone_pri",
-							"type": "String",
-							"description": "手机前缀",
-							"required": true
-						},
-						{
-							"name": "card_base_info",
-							"type": "CardBaseInfoDto",
-							"description": "会员卡信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "card_tier",
-									"type": "String",
-									"description": "会员等级",
-									"required": true
+									"description": "语言"
 								},
 								{
-									"name": "card_number",
+									"name": "country",
 									"type": "String",
-									"description": "会员卡号",
-									"required": true
+									"description": "城市"
 								},
 								{
-									"name": "card_type",
+									"name": "gender",
 									"type": "String",
-									"description": "会员卡类型",
-									"required": true
+									"description": "性别"
+								},
+								{
+									"name": "subscription",
+									"type": "Boolean",
+									"description": "是否接受广告通知"
 								}
-							]
-						},
-						{
-							"name": "email",
-							"type": "String",
-							"description": "邮箱",
-							"required": true
-						},
-						{
-							"name": "token",
-							"type": "String",
-							"description": "token",
-							"required": true
+							],
+							"name": "member_base_info",
+							"type": "MemberBaseInfoDto",
+							"description": "用户基本信息"
 						},
 						{
 							"name": "tenant_user_id",
 							"type": "String",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
+						},
+						{
+							"name": "wechat_avatar_url",
+							"type": "String",
+							"description": "微信头像"
+						},
+						{
+							"name": "wechat_nick_name",
+							"type": "String",
+							"description": "微信昵称"
+						},
+						{
+							"name": "phone_num",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "is_member",
+							"type": "Boolean",
+							"description": "是否是会员"
+						},
+						{
+							"name": "phone_pri",
+							"type": "String",
+							"description": "手机前缀"
+						},
+						{
+							"subParams": [
+								{
+									"name": "card_tier",
+									"type": "String",
+									"description": "会员等级"
+								},
+								{
+									"name": "card_number",
+									"type": "String",
+									"description": "会员卡号"
+								},
+								{
+									"name": "card_type",
+									"type": "String",
+									"description": "会员卡类型"
+								},
+								{
+									"name": "wechat_card_status",
+									"type": "String",
+									"description": "微信会员卡状态"
+								}
+							],
+							"name": "card_base_info",
+							"type": "CardBaseInfoDto",
+							"description": "会员卡信息"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "返回日期毫秒值",
-							"required": true
+							"description": "返回日期毫秒值"
+						},
+						{
+							"name": "coupon_count",
+							"type": "Number",
+							"description": "当前用户拥有优惠券数量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "member_card_pic",
+									"type": "String",
+									"description": "会员卡图片"
+								},
+								{
+									"name": "hotel_level_en",
+									"type": "String",
+									"description": "英文等级"
+								},
+								{
+									"name": "reach_condition",
+									"type": "String",
+									"description": "达到会员条件"
+								},
+								{
+									"name": "icon_color",
+									"type": "String",
+									"description": "icon颜色"
+								},
+								{
+									"name": "card_desc",
+									"type": "String",
+									"description": "卡信息描述"
+								},
+								{
+									"name": "back_ground_pic",
+									"type": "String",
+									"description": "背景图片"
+								},
+								{
+									"subParams": [
+										{
+											"name": "order",
+											"type": "Number",
+											"description": "顺序"
+										},
+										{
+											"name": "member_right_content",
+											"type": "String",
+											"description": "内容"
+										},
+										{
+											"name": "member_right_desc",
+											"type": "String",
+											"description": "权益名称"
+										},
+										{
+											"name": "icon_code_point",
+											"type": "String",
+											"description": "码点"
+										}
+									],
+									"name": "member_right_list",
+									"type": "MemberRightVo[]",
+									"description": "会员权益集合"
+								},
+								{
+									"name": "personal_center_pic",
+									"type": "String",
+									"description": "个人中心背景图片"
+								}
+							],
+							"name": "member_card_detail",
+							"type": "MemberCardDetailVo",
+							"description": "会员卡信息"
+						},
+						{
+							"name": "voucher_count",
+							"type": "Number",
+							"description": "有效代金券数量"
+						},
+						{
+							"name": "has_wechat_public_account_open_id",
+							"type": "Boolean",
+							"description": "是否有微信公众号openId"
+						},
+						{
+							"subParams": [
+								{
+									"name": "nb_points",
+									"type": "Number",
+									"description": "会员奖励积分"
+								},
+								{
+									"name": "nb_points_earn_last_12_months",
+									"type": "Number",
+									"description": "近12个月内赚取的会员积分"
+								},
+								{
+									"name": "nb_points_to_next_tiering",
+									"type": "Number",
+									"description": "升级所需会员积分"
+								},
+								{
+									"name": "points_earned_on_tier_update",
+									"type": "Number",
+									"description": "更新等级所获得的积分"
+								}
+							],
+							"name": "points_detail",
+							"type": "PointsDetailDTO",
+							"description": "会员积分详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "current_nights_balance",
+									"type": "Number",
+									"description": "当前间夜数余额"
+								},
+								{
+									"name": "current_stays_balance",
+									"type": "Number",
+									"description": "当前入住间夜数余额"
+								},
+								{
+									"name": "fast_tracked_status_nights",
+									"type": "Number",
+									"description": "快速跟踪间夜状态"
+								},
+								{
+									"name": "nb_nights_to_next_tiering",
+									"type": "Number",
+									"description": "升级所需会员间夜"
+								},
+								{
+									"name": "nights_spent_on_tier_update",
+									"type": "Number",
+									"description": "更新等级所花费的间夜"
+								}
+							],
+							"name": "night_detail",
+							"type": "PointsDetailDTO",
+							"description": "会员间夜详情"
+						},
+						{
+							"name": "authorize_status",
+							"type": "String",
+							"description": "会员认证状态"
+						},
+						{
+							"name": "register_type",
+							"type": "String",
+							"description": "会员注册状态"
+						},
+						{
+							"subParams": [
+								{
+									"name": "hotel_level_en",
+									"type": "String",
+									"description": "会员卡英文"
+								},
+								{
+									"name": "hotel_level_zh",
+									"type": "String",
+									"description": "会员卡中文"
+								},
+								{
+									"name": "member_card_pic",
+									"type": "String",
+									"description": "达到条件"
+								},
+								{
+									"subParams": [
+										{
+											"name": "member_right_desc",
+											"type": "String",
+											"description": "会员权益名称"
+										},
+										{
+											"name": "member_right_content",
+											"type": "String",
+											"description": "会员权益内容"
+										},
+										{
+											"name": "icon_code_point",
+											"type": "String",
+											"description": "icon 码点"
+										},
+										{
+											"name": "order",
+											"type": "String",
+											"description": "权益顺序"
+										},
+										{
+											"name": "if_lock",
+											"type": "Boolean",
+											"description": "权益是否置灰封锁"
+										},
+										{
+											"name": "if_new",
+											"type": "Boolean",
+											"description": "是否标识为 new 权益"
+										}
+									],
+									"name": "member_right",
+									"type": "MemberRight[]",
+									"description": "会员权益"
+								},
+								{
+									"name": "reach_condition",
+									"type": "String",
+									"description": "达到条件"
+								},
+								{
+									"name": "if_lock_card",
+									"type": "Boolean",
+									"description": "当前等级=false 小于当前等级为空 大于当前等级为true"
+								},
+								{
+									"name": "iconcolor",
+									"type": "String",
+									"description": "背景色"
+								},
+								{
+									"name": "member_card_bk_pic",
+									"type": "String",
+									"description": "会员卡背景图片"
+								}
+							],
+							"name": "member_right_carousels",
+							"type": "MemberRightCarouselVO[]",
+							"description": "会员权益走马灯"
+						},
+						{
+							"name": "pwd_error_count",
+							"type": "Number",
+							"description": "错误次数"
+						},
+						{
+							"name": "pop_up_page",
+							"type": "String",
+							"description": "弹窗页面"
+						},
+						{
+							"name": "next_level_name",
+							"type": "String",
+							"description": "下一等级"
+						},
+						{
+							"name": "phone_by_derby",
+							"type": "String",
+							"description": "德比返回的手机号"
+						},
+						{
+							"name": "is_fake_email",
+							"type": "Boolean",
+							"description": "是否为假邮箱"
+						},
+						{
+							"subParams": [
+								{
+									"name": "points_expiration_date",
+									"type": "String",
+									"description": "积分倒计时"
+								},
+								{
+									"name": "end_date",
+									"type": "String",
+									"description": "会员卡倒计时"
+								}
+							],
+							"name": "derby_special_field",
+							"type": "DerbySpecialField",
+							"description": "德比返回体中提取的参数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "MemberDto",
+					"description": "用户信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.member.query",
+	"apiChineseName": "星河-获取登录用户的信息",
+	"description": "获取登录用户的信息",
+	"id": 54726
 }

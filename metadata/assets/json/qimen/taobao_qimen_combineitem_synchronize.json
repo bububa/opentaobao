@@ -1,12 +1,6 @@
 {
-	"id": 27264,
-	"name": "taobao.qimen.combineitem.synchronize",
-	"apiChineseName": "组合商品接口",
-	"description": "ERP调用奇门的接口,将商品信息同步给WMS",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "CombineItemSyncRequest",
 			"subParams": [
 				{
 					"name": "itemCode",
@@ -26,9 +20,6 @@
 					"description": "仓库编码"
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "组合商品接口中的单商品信息",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -394,9 +385,6 @@
 							"description": "test"
 						},
 						{
-							"name": "priceAdjustment",
-							"type": "PriceAdjustment",
-							"description": "test",
 							"subParams": [
 								{
 									"name": "type",
@@ -423,7 +411,10 @@
 									"type": "String",
 									"description": "test"
 								}
-							]
+							],
+							"name": "priceAdjustment",
+							"type": "PriceAdjustment",
+							"description": "test"
 						},
 						{
 							"name": "latestUpdateTime",
@@ -451,9 +442,6 @@
 							"description": "test"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "test",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -490,22 +478,28 @@
 									"type": "String",
 									"description": "test"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "test"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "组合商品接口中的单商品信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "CombineItemSyncRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -525,7 +519,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.combineitem.synchronize",
+	"apiChineseName": "组合商品接口",
+	"description": "ERP调用奇门的接口,将商品信息同步给WMS",
+	"id": 27264
 }

@@ -1,14 +1,6 @@
 {
-	"id": 43477,
-	"name": "taobao.feedflow.item.adgroup.rpthourlist",
-	"apiChineseName": "超级推荐【商品推广】单元分时报表查询",
-	"description": "广告主推广组分时数据查询，支持广告主查询最近90天内某一天的单元维度分时报表数据",
 	"requestParams": [
 		{
-			"name": "rpt_query",
-			"type": "RptQueryDto",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -39,242 +31,213 @@
 					"description": "开始小时",
 					"required": true
 				}
-			]
+			],
+			"name": "rpt_query",
+			"type": "RptQueryDto",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "描述信息"
 				},
 				{
-					"name": "rpt_list",
-					"type": "RptResultDto[]",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "campaign_name",
 							"type": "String",
-							"description": "计划名称",
-							"required": true
+							"description": "计划名称"
 						},
 						{
 							"name": "campaign_id",
 							"type": "Number",
-							"description": "计划id",
-							"required": true
+							"description": "计划id"
 						},
 						{
 							"name": "alipay_inshop_amt",
 							"type": "String",
-							"description": "成交订单金额",
-							"required": true
+							"description": "成交订单金额"
 						},
 						{
 							"name": "alipay_in_shop_num",
 							"type": "Number",
-							"description": "成交订单数",
-							"required": true
+							"description": "成交订单数"
 						},
 						{
 							"name": "deep_inshop_num",
 							"type": "Number",
-							"description": "深度进店次数",
-							"required": true
+							"description": "深度进店次数"
 						},
 						{
 							"name": "inshop_pv",
 							"type": "Number",
-							"description": "引导进店量",
-							"required": true
+							"description": "引导进店量"
 						},
 						{
 							"name": "click",
 							"type": "Number",
-							"description": "有效点击数",
-							"required": true
+							"description": "有效点击数"
 						},
 						{
 							"name": "hour_id",
 							"type": "Number",
-							"description": "小时",
-							"required": true
+							"description": "小时"
 						},
 						{
 							"name": "ad_pv",
 							"type": "Number",
-							"description": "有效展现量",
-							"required": true
+							"description": "有效展现量"
 						},
 						{
 							"name": "gmv_inshop_num",
 							"type": "Number",
-							"description": "拍下订单量",
-							"required": true
+							"description": "拍下订单量"
 						},
 						{
 							"name": "avg_access_page_num",
 							"type": "String",
-							"description": "平均访问页面数",
-							"required": true
+							"description": "平均访问页面数"
 						},
 						{
 							"name": "inshop_uv",
 							"type": "Number",
-							"description": "引导进店人数",
-							"required": true
+							"description": "引导进店人数"
 						},
 						{
 							"name": "gmv_inshop_amt",
 							"type": "String",
-							"description": "拍下订单金额",
-							"required": true
+							"description": "拍下订单金额"
 						},
 						{
 							"name": "icvr",
 							"type": "String",
-							"description": "展现转化率",
-							"required": true
+							"description": "展现转化率"
 						},
 						{
 							"name": "new_f_charge",
 							"type": "String",
-							"description": "拉新消耗",
-							"required": true
+							"description": "拉新消耗"
 						},
 						{
 							"name": "ecpm",
 							"type": "String",
-							"description": "千次展现成本",
-							"required": true
+							"description": "千次展现成本"
 						},
 						{
 							"name": "cart_num",
 							"type": "Number",
-							"description": "加购物车数",
-							"required": true
+							"description": "加购物车数"
 						},
 						{
 							"name": "cvr",
 							"type": "String",
-							"description": "点击转化率",
-							"required": true
+							"description": "点击转化率"
 						},
 						{
 							"name": "ecpc",
 							"type": "String",
-							"description": "点击成本",
-							"required": true
+							"description": "点击成本"
 						},
 						{
 							"name": "log_date",
 							"type": "Date",
-							"description": "日期",
-							"required": true
+							"description": "日期"
 						},
 						{
 							"name": "avg_access_time",
 							"type": "String",
-							"description": "平均访问时长",
-							"required": true
+							"description": "平均访问时长"
 						},
 						{
 							"name": "follow_number",
 							"type": "Number",
-							"description": "粉丝关注量",
-							"required": true
+							"description": "粉丝关注量"
 						},
 						{
 							"name": "inshop_item_col_num",
 							"type": "Number",
-							"description": "收藏宝贝数",
-							"required": true
+							"description": "收藏宝贝数"
 						},
 						{
 							"name": "charge",
 							"type": "String",
-							"description": "消耗",
-							"required": true
+							"description": "消耗"
 						},
 						{
 							"name": "inshop_uv_rate",
 							"type": "String",
-							"description": "引导进店率",
-							"required": true
+							"description": "引导进店率"
 						},
 						{
 							"name": "add_new_uv",
 							"type": "Number",
-							"description": "新客获取量",
-							"required": true
+							"description": "新客获取量"
 						},
 						{
 							"name": "roi",
 							"type": "String",
-							"description": "投资回报率",
-							"required": true
+							"description": "投资回报率"
 						},
 						{
 							"name": "add_new_uv_rate",
 							"type": "String",
-							"description": "新客获取率",
-							"required": true
+							"description": "新客获取率"
 						},
 						{
 							"name": "adgroup_id",
 							"type": "Number",
-							"description": "推广组id",
-							"required": true
+							"description": "推广组id"
 						},
 						{
 							"name": "adgroup_name",
 							"type": "String",
-							"description": "推广组名称",
-							"required": true
+							"description": "推广组名称"
 						}
-					]
+					],
+					"name": "rpt_list",
+					"type": "RptResultDto[]",
+					"description": "返回结果"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
-					"name": "result_code",
-					"type": "ResultCode",
-					"description": "返回信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "code",
 							"type": "Number",
-							"description": "返回码",
-							"required": true
+							"description": "返回码"
 						}
-					]
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.adgroup.rpthourlist",
+	"apiChineseName": "超级推荐【商品推广】单元分时报表查询",
+	"description": "广告主推广组分时数据查询，支持广告主查询最近90天内某一天的单元维度分时报表数据",
+	"id": 43477
 }

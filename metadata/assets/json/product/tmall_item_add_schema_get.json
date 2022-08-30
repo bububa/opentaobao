@@ -1,8 +1,4 @@
 {
-	"id": 23256,
-	"name": "tmall.item.add.schema.get",
-	"apiChineseName": "天猫发布商品规则获取",
-	"description": "通过类目以及productId获取商品发布规则；",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "返回发布商品的规则文档"
 		}
-	]
+	],
+	"name": "tmall.item.add.schema.get",
+	"apiChineseName": "天猫发布商品规则获取",
+	"description": "通过类目以及productId获取商品发布规则；",
+	"id": 23256
 }

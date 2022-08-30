@@ -1,8 +1,4 @@
 {
-	"id": 49740,
-	"name": "yunos.service.cmns.coa.device.get",
-	"apiChineseName": "设备详情查询",
-	"description": "第三方应用开发者调用此接口查询设备详情",
 	"requestParams": [
 		{
 			"name": "type",
@@ -17,149 +13,126 @@
 	],
 	"responseParams": [
 		{
-			"name": "device_list",
-			"type": "DeviceResult []",
-			"description": "设备详情",
 			"subParams": [
 				{
 					"name": "accept_message",
 					"type": "Number",
-					"description": "是否接收消息",
-					"required": true
+					"description": "是否接收消息"
 				},
 				{
 					"name": "active_time",
 					"type": "Date",
-					"description": "激活时间",
-					"required": true
+					"description": "激活时间"
 				},
 				{
 					"name": "base_type",
 					"type": "String",
-					"description": "基带",
-					"required": true
+					"description": "基带"
 				},
 				{
 					"name": "bsp_type",
 					"type": "String",
-					"description": "BSP",
-					"required": true
+					"description": "BSP"
 				},
 				{
 					"name": "device_type",
 					"type": "Number",
-					"description": "设备类型：1手机 2TV",
-					"required": true
+					"description": "设备类型：1手机 2TV"
 				},
 				{
 					"name": "eth_mac",
 					"type": "String",
-					"description": "有线网卡mac",
-					"required": true
+					"description": "有线网卡mac"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "did",
-					"required": true
+					"description": "did"
 				},
 				{
 					"name": "imei",
 					"type": "String",
-					"description": "imei",
-					"required": true
+					"description": "imei"
 				},
 				{
 					"name": "imsi1",
 					"type": "String",
-					"description": "imsi1",
-					"required": true
+					"description": "imsi1"
 				},
 				{
 					"name": "imsi2",
 					"type": "String",
-					"description": "imsi2",
-					"required": true
+					"description": "imsi2"
 				},
 				{
 					"name": "is_vendor_rom",
 					"type": "String",
-					"description": "isVendorRom",
-					"required": true
+					"description": "isVendorRom"
 				},
 				{
 					"name": "kp",
 					"type": "String",
-					"description": "kp",
-					"required": true
+					"description": "kp"
 				},
 				{
 					"name": "login_time",
 					"type": "Number",
-					"description": "最近登录时间",
-					"required": true
+					"description": "最近登录时间"
 				},
 				{
 					"name": "networking",
 					"type": "String",
-					"description": "网络类型",
-					"required": true
+					"description": "网络类型"
 				},
 				{
 					"name": "online",
 					"type": "Number",
-					"description": "是否在线,1为在线，0为离线",
-					"required": true
+					"description": "是否在线,1为在线，0为离线"
 				},
 				{
 					"name": "phone_type",
 					"type": "String",
-					"description": "phoneType",
-					"required": true
+					"description": "phoneType"
 				},
 				{
 					"name": "rom",
 					"type": "String",
-					"description": "系统版本",
-					"required": true
+					"description": "系统版本"
 				},
 				{
 					"name": "rom_tuiguang",
 					"type": "String",
-					"description": "romTuiguang",
-					"required": true
+					"description": "romTuiguang"
 				},
 				{
 					"name": "rom_vendor",
 					"type": "String",
-					"description": "romVendor",
-					"required": true
+					"description": "romVendor"
 				},
 				{
 					"name": "terminal",
 					"type": "String",
-					"description": "设备机型",
-					"required": true
+					"description": "设备机型"
 				},
 				{
 					"name": "update_version",
 					"type": "String",
-					"description": "轻量升级版本",
-					"required": true
+					"description": "轻量升级版本"
 				},
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "uuid",
-					"required": true
+					"description": "uuid"
 				},
 				{
 					"name": "wlan_mac",
 					"type": "String",
-					"description": "无线mac",
-					"required": true
+					"description": "无线mac"
 				}
-			]
+			],
+			"name": "device_list",
+			"type": "DeviceResult []",
+			"description": "设备详情"
 		},
 		{
 			"name": "message",
@@ -171,5 +144,9 @@
 			"type": "Number",
 			"description": "200表示查询成功"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.device.get",
+	"apiChineseName": "设备详情查询",
+	"description": "第三方应用开发者调用此接口查询设备详情",
+	"id": 49740
 }

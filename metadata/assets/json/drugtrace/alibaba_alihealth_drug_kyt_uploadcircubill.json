@@ -1,8 +1,4 @@
 {
-	"id": 41031,
-	"name": "alibaba.alihealth.drug.kyt.uploadcircubill",
-	"apiChineseName": "生产批发单据上传",
-	"description": "生产批发单据上传（非零售企业使用），包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -13,7 +9,7 @@
 		{
 			"name": "bill_time",
 			"type": "Date",
-			"description": "单据时间（扫码时间）",
+			"description": "单据时间（扫码时间、出入库时间） ",
 			"required": true
 		},
 		{
@@ -25,7 +21,7 @@
 		{
 			"name": "physic_type",
 			"type": "Number",
-			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药",
+			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药【可以随便填写，单据上传后会以实际为准】",
 			"required": true
 		},
 		{
@@ -76,7 +72,7 @@
 		{
 			"name": "upload_file_name",
 			"type": "String",
-			"description": "单据名称",
+			"description": "单据文件名",
 			"required": true
 		},
 		{
@@ -86,79 +82,79 @@
 			"required": true
 		},
 		{
-			"name": "qu_receivable",
-			"type": "Number",
-			"description": "（协同平台数据合规）应收货总数量"
-		},
-		{
-			"name": "xt_is_check",
+			"name": "from_address",
 			"type": "String",
-			"description": "（协同平台数据合规）是否验证，0：未通过验证，1：已验证"
-		},
-		{
-			"name": "xt_check_code",
-			"type": "String",
-			"description": "（协同平台数据合规）未验证通过原因【验证未通过时填写】"
-		},
-		{
-			"name": "xt_check_code_desc",
-			"type": "String",
-			"description": "（协同平台数据合规）未验证通过原因描述【验证未通过时填写】"
-		},
-		{
-			"name": "drug_list_json",
-			"type": "String",
-			"description": "（协同平台数据合规）药品列表Json：\"codeCount\":         药品数量 \"commDrugId\":     国家药品唯一标识 \"exprieDate\":         生产日期 \"physicInfo\":          药品信息 \"pkgSpec\":           包状规格 \"prepnCount\":       制剂数量 \"produceBatchNo\":生产批次 \"produceDate\":      生产日期"
-		},
-		{
-			"name": "ass_ref_ent_id",
-			"type": "String",
-			"description": "（协同平台数据合规）单据委托企业refEntId"
-		},
-		{
-			"name": "dis_ent_id",
-			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】"
-		},
-		{
-			"name": "dis_ref_ent_id",
-			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】"
-		},
-		{
-			"name": "to_person",
-			"type": "String",
-			"description": "（协同平台数据合规）收货人【必选】"
-		},
-		{
-			"name": "from_person",
-			"type": "String",
-			"description": "（协同平台数据合规）发货人【必选】"
-		},
-		{
-			"name": "order_code",
-			"type": "String",
-			"description": "（协同平台数据合规）订货单编号【可选】"
-		},
-		{
-			"name": "from_bill_code",
-			"type": "String",
-			"description": "（协同平台数据合规）发货单编号【必选】"
+			"description": "发货地址【必选】"
 		},
 		{
 			"name": "to_address",
 			"type": "String",
-			"description": "（协同平台数据合规）收货地址【必选】"
+			"description": "收货地址【必选】"
 		},
 		{
-			"name": "from_address",
+			"name": "from_bill_code",
 			"type": "String",
-			"description": "（协同平台数据合规）发货地址【必选】"
+			"description": "发货单编号【必选】"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "订货单编号【可选】"
+		},
+		{
+			"name": "from_person",
+			"type": "String",
+			"description": "发货人【特药时必选】"
+		},
+		{
+			"name": "to_person",
+			"type": "String",
+			"description": "收货人【特药时必选】"
+		},
+		{
+			"name": "dis_ref_ent_id",
+			"type": "String",
+			"description": "药品配送企业【填写 ref_ent_Id，与dis_ent_id属性选填一个就行】"
+		},
+		{
+			"name": "dis_ent_id",
+			"type": "String",
+			"description": "药品配送企业【填写 ent_Id】"
+		},
+		{
+			"name": "qu_receivable",
+			"type": "Number",
+			"description": "应收货总数量"
+		},
+		{
+			"name": "xt_is_check",
+			"type": "String",
+			"description": "是否验证，0：未通过验证，1：已验证"
+		},
+		{
+			"name": "xt_check_code",
+			"type": "String",
+			"description": "未验证通过原因【验证未通过时填写】"
+		},
+		{
+			"name": "xt_check_code_desc",
+			"type": "String",
+			"description": "未验证通过原因描述【验证未通过时填写】"
+		},
+		{
+			"name": "drug_list_json",
+			"type": "String",
+			"description": "药品列表【可不填写，不填写时会通过码进行计算】Json：\"codeCount\":         药品数量 \"commDrugId\":     国家药品唯一标识 \"exprieDate\":         生产日期 \"physicInfo\":          药品信息 \"pkgSpec\":           包状规格 \"prepnCount\":       制剂数量 \"produceBatchNo\":生产批次 \"produceDate\":      生产日期"
+		},
+		{
+			"name": "ass_ref_ent_id",
+			"type": "String",
+			"description": "单据委托企业【填写 ref_ent_Id，与ass_ent_id属性选填一个就行】"
 		},
 		{
 			"name": "ass_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）单据委托企业entId"
+			"description": "单据委托企业【填写 ent_Id】"
 		}
 	],
 	"responseParams": [
@@ -182,5 +178,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 ,false失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.uploadcircubill",
+	"apiChineseName": "生产批发单据上传",
+	"description": "生产批发单据上传（非零售企业使用），包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。",
+	"id": 41031
 }

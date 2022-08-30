@@ -33,6 +33,10 @@ type AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest struct {
 	_operIcCode string
 	// 单据提交者姓名
 	_operIcName string
+	// 仓号
+	_warehouseId string
+	// 药品ID[企业自已系统的药品ID]
+	_drugId string
 	// 客户端类型[必须填2]
 	_clientType string
 	// 退货原因代码[退货入出库时填写]
@@ -51,10 +55,6 @@ type AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest struct {
 	_superviserName string
 	// 监督人证件号【销毁出库时填写】
 	_superviserCode string
-	// 仓号
-	_warehouseId string
-	// 药品ID[企业自已系统的药品ID]
-	_drugId string
 	// 单据类型【102代表采购入库】
 	_billType int64
 	// 药品类型【3普药2特药】
@@ -212,6 +212,32 @@ func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetOperIcName() stri
 	return r._operIcName
 }
 
+// SetWarehouseId is WarehouseId Setter
+// 仓号
+func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
+	r._warehouseId = _warehouseId
+	r.Set("warehouse_id", _warehouseId)
+	return nil
+}
+
+// GetWarehouseId WarehouseId Getter
+func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetWarehouseId() string {
+	return r._warehouseId
+}
+
+// SetDrugId is DrugId Setter
+// 药品ID[企业自已系统的药品ID]
+func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
+	r._drugId = _drugId
+	r.Set("drug_id", _drugId)
+	return nil
+}
+
+// GetDrugId DrugId Getter
+func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetDrugId() string {
+	return r._drugId
+}
+
 // SetClientType is ClientType Setter
 // 客户端类型[必须填2]
 func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetClientType(_clientType string) error {
@@ -327,32 +353,6 @@ func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetSuperviserCode(_
 // GetSuperviserCode SuperviserCode Getter
 func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetSuperviserCode() string {
 	return r._superviserCode
-}
-
-// SetWarehouseId is WarehouseId Setter
-// 仓号
-func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetWarehouseId(_warehouseId string) error {
-	r._warehouseId = _warehouseId
-	r.Set("warehouse_id", _warehouseId)
-	return nil
-}
-
-// GetWarehouseId WarehouseId Getter
-func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetWarehouseId() string {
-	return r._warehouseId
-}
-
-// SetDrugId is DrugId Setter
-// 药品ID[企业自已系统的药品ID]
-func (r *AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) SetDrugId(_drugId string) error {
-	r._drugId = _drugId
-	r.Set("drug_id", _drugId)
-	return nil
-}
-
-// GetDrugId DrugId Getter
-func (r AlibabaAlihealthDrugKytYyUploadinoutbillAPIRequest) GetDrugId() string {
-	return r._drugId
 }
 
 // SetBillType is BillType Setter

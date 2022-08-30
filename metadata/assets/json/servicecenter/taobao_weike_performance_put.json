@@ -1,8 +1,4 @@
 {
-	"id": 23059,
-	"name": "taobao.weike.performance.put",
-	"apiChineseName": "提交客服绩效接口",
-	"description": "提交客服绩效接口",
 	"requestParams": [
 		{
 			"name": "id",
@@ -10,9 +6,6 @@
 			"description": "订单id"
 		},
 		{
-			"name": "per_info_wrapper",
-			"type": "PerformanceInfoWrapper",
-			"description": "绩效数据封装类",
 			"subParams": [
 				{
 					"name": "has_bonus_config",
@@ -20,9 +13,6 @@
 					"description": "是否有提成配置"
 				},
 				{
-					"name": "performance_info_list",
-					"type": "PerformanceInfoDTO[]",
-					"description": "绩效数据列表",
 					"subParams": [
 						{
 							"name": "first_response_time",
@@ -94,7 +84,10 @@
 							"type": "String",
 							"description": "平均响应时间"
 						}
-					]
+					],
+					"name": "performance_info_list",
+					"type": "PerformanceInfoDTO[]",
+					"description": "绩效数据列表"
 				},
 				{
 					"name": "has_authorize",
@@ -111,7 +104,10 @@
 					"type": "String",
 					"description": "统计开始时间"
 				}
-			]
+			],
+			"name": "per_info_wrapper",
+			"type": "PerformanceInfoWrapper",
+			"description": "绩效数据封装类"
 		}
 	],
 	"responseParams": [
@@ -120,5 +116,9 @@
 			"type": "Boolean",
 			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.weike.performance.put",
+	"apiChineseName": "提交客服绩效接口",
+	"description": "提交客服绩效接口",
+	"id": 23059
 }

@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_region_id",
+					"type": "String",
+					"description": "外部区域/商圈ID",
+					"required": true
+				},
+				{
+					"name": "region_type",
+					"type": "Number",
+					"description": "类型400-商圈",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_consultant_id",
+							"type": "String",
+							"description": "外部经纪人ID"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "经纪人状态"
+						}
+					],
+					"name": "outer_consultant_infos",
+					"type": "RegionExpertInfoDTO[]",
+					"description": "经纪人信息"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0-正式数据 1-测试数据",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号",
+					"required": true
+				}
+			],
+			"name": "region_expert_dto",
+			"type": "RegionExpertDTO",
+			"description": "商圈信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部经纪人ID"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否成功"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "异常信息"
+						}
+					],
+					"name": "data",
+					"type": "RegionExpertResultDTO[]",
+					"description": "成功/失败结果返回"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功/失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "处理描述信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.region.info.submit",
+	"apiChineseName": "商圈专家信息同步",
+	"description": "商圈专家信息同步",
+	"id": 63440
+}

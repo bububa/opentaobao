@@ -1,0 +1,239 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "btrip_order_id",
+					"type": "Number",
+					"description": "商旅订单id"
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销商订单id",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常是指企业id",
+					"required": true
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商标识",
+					"required": true
+				}
+			],
+			"name": "param_btrip_hotel_order_operate_rq",
+			"type": "BtripHotelOrderOperateRq",
+			"description": "订单详情接口入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "hotel_address",
+									"type": "String",
+									"description": "酒店地址"
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名称"
+								},
+								{
+									"name": "hotel_tel",
+									"type": "String",
+									"description": "酒店电话"
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度"
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度"
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "酒店id"
+								}
+							],
+							"name": "btrip_hotel_info",
+							"type": "BtripHotelInfoDto",
+							"description": "订单酒店信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "btrip_order_id",
+									"type": "Number",
+									"description": "商旅订单id"
+								},
+								{
+									"name": "buyer_real_refund",
+									"type": "Number",
+									"description": "买家实退金额"
+								},
+								{
+									"name": "check_in",
+									"type": "Date",
+									"description": "入住时间"
+								},
+								{
+									"name": "check_out",
+									"type": "Date",
+									"description": "离店时间"
+								},
+								{
+									"name": "dis_order_id",
+									"type": "String",
+									"description": "分销商订单号"
+								},
+								{
+									"name": "discount_fee",
+									"type": "Number",
+									"description": "卖家优惠的金额"
+								},
+								{
+									"name": "late_arrive_time",
+									"type": "Date",
+									"description": "最晚到店时间，可能为空"
+								},
+								{
+									"name": "nights",
+									"type": "Number",
+									"description": "住几晚"
+								},
+								{
+									"name": "order_create_date",
+									"type": "Date",
+									"description": "订单创建日期"
+								},
+								{
+									"name": "order_status",
+									"type": "Number",
+									"description": "订单状态"
+								},
+								{
+									"name": "order_status_desc",
+									"type": "String",
+									"description": "订单状态描述"
+								},
+								{
+									"name": "platform_promotion_amt",
+									"type": "Number",
+									"description": "平台优惠金额，单位：分"
+								},
+								{
+									"name": "room_number",
+									"type": "Number",
+									"description": "订单房间数"
+								},
+								{
+									"name": "total_actual_price",
+									"type": "Number",
+									"description": "实际支付金额"
+								},
+								{
+									"name": "total_room_price",
+									"type": "Number",
+									"description": "总房费"
+								},
+								{
+									"name": "supplier_order_id",
+									"type": "String",
+									"description": "供应商订单id"
+								}
+							],
+							"name": "btrip_hotel_order_main_info",
+							"type": "BtripHotelOrderMainInfoDto",
+							"description": "订单主体信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "room_facility_list",
+									"type": "String[]",
+									"description": "酒店房间设施列表"
+								},
+								{
+									"name": "room_type_name",
+									"type": "String",
+									"description": "房型名称"
+								}
+							],
+							"name": "btrip_hotel_room_info",
+							"type": "BtripHotelRoomInfoDto",
+							"description": "房型信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "board_num",
+											"type": "Number",
+											"description": "餐食数量"
+										},
+										{
+											"name": "board_type",
+											"type": "Number",
+											"description": "餐食类型"
+										}
+									],
+									"name": "btrip_hotel_board_d_t_o",
+									"type": "BtripHotelBoardDto",
+									"description": "餐食信息"
+								},
+								{
+									"name": "cny_price",
+									"type": "Number",
+									"description": "房价"
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "日期"
+								}
+							],
+							"name": "daily_price_info_list",
+							"type": "BtripHotelDailyPriceInfoDto[]",
+							"description": "每日房价信息"
+						}
+					],
+					"name": "module",
+					"type": "BtripHotelOrderDetailInfoRs",
+					"description": "订单详情接口返回数据对象"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "返回结果码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回结果信息"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "订单详情接口返回结果"
+		}
+	],
+	"name": "alitrip.btrip.hotel.distribution.order.detail",
+	"apiChineseName": "商旅酒店API分销查询订单详情",
+	"description": "商旅酒店API分销查询订单详情",
+	"id": 56192
+}

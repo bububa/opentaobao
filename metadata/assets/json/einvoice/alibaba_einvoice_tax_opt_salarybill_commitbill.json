@@ -1,13 +1,6 @@
 {
-	"id": 54860,
-	"name": "alibaba.einvoice.tax.opt.salarybill.commitbill",
-	"apiChineseName": "提交发薪账单",
-	"description": "提交发薪账单",
 	"requestParams": [
 		{
-			"name": "param_tax_optimization_salary_bill_commit_req_d_t_o",
-			"type": "TaxOptimizationSalaryBillCommitReqDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "account_date",
@@ -21,12 +14,10 @@
 				},
 				{
 					"name": "contractor_applied_dutiable_amount",
+					"type": "String",
 					"description": "发薪isv对应的发薪额度"
 				},
 				{
-					"name": "detail_list",
-					"type": "TaxOptimizationSalaryDetailInfoDto[]",
-					"description": "发薪明细",
 					"subParams": [
 						{
 							"name": "amount",
@@ -53,7 +44,10 @@
 							"type": "String",
 							"description": "用户在业务平台的userid"
 						}
-					]
+					],
+					"name": "detail_list",
+					"type": "TaxOptimizationSalaryDetailInfoDto[]",
+					"description": "发薪明细"
 				},
 				{
 					"name": "employer_code",
@@ -70,7 +64,46 @@
 					"type": "Number",
 					"description": "总账单明细数"
 				}
-			]
+			],
+			"name": "param_tax_optimization_salary_bill_commit_req_d_t_o",
+			"type": "TaxOptimizationSalaryBillCommitReqDto",
+			"description": "入参"
 		}
-	]
+	],
+	"responseParams": [
+		{
+			"name": "contractor_code",
+			"type": "String",
+			"description": "承包商编码"
+		},
+		{
+			"name": "detail_id",
+			"type": "String",
+			"description": "明细id"
+		},
+		{
+			"name": "employer_code",
+			"type": "String",
+			"description": "业务方编码"
+		},
+		{
+			"name": "identification_in_belonging_employer",
+			"type": "String",
+			"description": "用户在业务方平台userid"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误原因"
+		}
+	],
+	"name": "alibaba.einvoice.tax.opt.salarybill.commitbill",
+	"apiChineseName": "提交发薪账单",
+	"description": "提交发薪账单",
+	"id": 54860
 }

@@ -14,10 +14,10 @@ type TaobaoBanamadpcItemSelectPropAPIRequest struct {
 	model.Params
 	// 子属性的schema xml
 	_xml string
-	// 属性id
-	_propId int64
 	// 类目id
 	_catId int64
+	// 属性id
+	_propId int64
 }
 
 // NewTaobaoBanamadpcItemSelectPropRequest 初始化TaobaoBanamadpcItemSelectPropAPIRequest对象
@@ -54,19 +54,6 @@ func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetXml() string {
 	return r._xml
 }
 
-// SetPropId is PropId Setter
-// 属性id
-func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetPropId(_propId int64) error {
-	r._propId = _propId
-	r.Set("prop_id", _propId)
-	return nil
-}
-
-// GetPropId PropId Getter
-func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetPropId() int64 {
-	return r._propId
-}
-
 // SetCatId is CatId Setter
 // 类目id
 func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetCatId(_catId int64) error {
@@ -78,4 +65,17 @@ func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetCatId(_catId int64) error {
 // GetCatId CatId Getter
 func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetCatId() int64 {
 	return r._catId
+}
+
+// SetPropId is PropId Setter
+// 属性id
+func (r *TaobaoBanamadpcItemSelectPropAPIRequest) SetPropId(_propId int64) error {
+	r._propId = _propId
+	r.Set("prop_id", _propId)
+	return nil
+}
+
+// GetPropId PropId Getter
+func (r TaobaoBanamadpcItemSelectPropAPIRequest) GetPropId() int64 {
+	return r._propId
 }

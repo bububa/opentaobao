@@ -1,8 +1,4 @@
 {
-	"id": 33240,
-	"name": "taobao.omniitem.item.get",
-	"apiChineseName": "获取全渠道门店商品",
-	"description": "通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息",
 	"requestParams": [
 		{
 			"name": "page_no",
@@ -27,9 +23,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -44,10 +37,6 @@
 					"required": true
 				},
 				{
-					"name": "datas",
-					"type": "LightItemDo[]",
-					"description": "返回查询到的商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -104,10 +93,6 @@
 							"required": true
 						},
 						{
-							"name": "skus",
-							"type": "ItemLightPublishSkuDto[]",
-							"description": "sku信息列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sku_id",
@@ -152,10 +137,6 @@
 									"required": true
 								},
 								{
-									"name": "sale_props",
-									"type": "ItemLightPublishSalePropDto[]",
-									"description": "sku销售属性列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "pid",
@@ -169,7 +150,11 @@
 											"description": "销售属性值",
 											"required": true
 										}
-									]
+									],
+									"name": "sale_props",
+									"type": "ItemLightPublishSalePropDto[]",
+									"description": "sku销售属性列表",
+									"required": true
 								},
 								{
 									"name": "extend_attr",
@@ -177,7 +162,11 @@
 									"description": "sku扩展字段",
 									"required": true
 								}
-							]
+							],
+							"name": "skus",
+							"type": "ItemLightPublishSkuDto[]",
+							"description": "sku信息列表",
+							"required": true
 						},
 						{
 							"name": "pretium",
@@ -198,10 +187,6 @@
 							"required": true
 						},
 						{
-							"name": "images",
-							"type": "ItemLightPublishImageDto[]",
-							"description": "商品图片，最少1张，最多5张",
-							"required": true,
 							"subParams": [
 								{
 									"name": "url",
@@ -209,7 +194,11 @@
 									"description": "图片空间URL",
 									"required": true
 								}
-							]
+							],
+							"name": "images",
+							"type": "ItemLightPublishImageDto[]",
+							"description": "商品图片，最少1张，最多5张",
+							"required": true
 						},
 						{
 							"name": "extend_attr",
@@ -217,7 +206,11 @@
 							"description": "扩展字段",
 							"required": true
 						}
-					]
+					],
+					"name": "datas",
+					"type": "LightItemDo[]",
+					"description": "返回查询到的商品列表",
+					"required": true
 				},
 				{
 					"name": "code",
@@ -225,7 +218,14 @@
 					"description": "错误码",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.omniitem.item.get",
+	"apiChineseName": "获取全渠道门店商品",
+	"description": "通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息",
+	"id": 33240
 }

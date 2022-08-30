@@ -14,10 +14,10 @@ type AlibabaAliqinFcVoiceGetdetailAPIRequest struct {
 	model.Params
 	// 呼叫唯一ID
 	_callId string
-	// 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
-	_prodId int64
 	// Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
 	_queryDate int64
+	// 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
+	_prodId int64
 }
 
 // NewAlibabaAliqinFcVoiceGetdetailRequest 初始化AlibabaAliqinFcVoiceGetdetailAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetCallId() string {
 	return r._callId
 }
 
-// SetProdId is ProdId Setter
-// 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
-func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error {
-	r._prodId = _prodId
-	r.Set("prod_id", _prodId)
-	return nil
-}
-
-// GetProdId ProdId Getter
-func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
-	return r._prodId
-}
-
 // SetQueryDate is QueryDate Setter
 // Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
 func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64) error {
@@ -78,4 +65,17 @@ func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetQueryDate(_queryDate int64)
 // GetQueryDate QueryDate Getter
 func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetQueryDate() int64 {
 	return r._queryDate
+}
+
+// SetProdId is ProdId Setter
+// 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
+func (r *AlibabaAliqinFcVoiceGetdetailAPIRequest) SetProdId(_prodId int64) error {
+	r._prodId = _prodId
+	r.Set("prod_id", _prodId)
+	return nil
+}
+
+// GetProdId ProdId Getter
+func (r AlibabaAliqinFcVoiceGetdetailAPIRequest) GetProdId() int64 {
+	return r._prodId
 }

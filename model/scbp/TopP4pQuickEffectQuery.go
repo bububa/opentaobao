@@ -16,12 +16,12 @@ type TopP4pQuickEffectQuery struct {
 	CampaignTitle string `json:"campaign_title,omitempty" xml:"campaign_title,omitempty"`
 	// 查询类型，crowd(人群)，region(地域)
 	TagType string `json:"tag_type,omitempty" xml:"tag_type,omitempty"`
+	// 区间 只能为1 7 30
+	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
 	// 第几页
 	ToPage int64 `json:"to_page,omitempty" xml:"to_page,omitempty"`
 	// 每页行数
 	PerPageSize int64 `json:"per_page_size,omitempty" xml:"per_page_size,omitempty"`
-	// 区间 只能为1 7 30
-	Interval int64 `json:"interval,omitempty" xml:"interval,omitempty"`
 	// 若查询类型为人群，需要填写此字段  1（潜在访问偏好） 2（潜在采购意向） 3（店铺老客） 4（优选人群）
 	TagLabel int64 `json:"tag_label,omitempty" xml:"tag_label,omitempty"`
 }

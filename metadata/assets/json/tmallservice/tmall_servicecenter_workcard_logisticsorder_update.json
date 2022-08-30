@@ -1,8 +1,4 @@
 {
-	"id": 55357,
-	"name": "tmall.servicecenter.workcard.logisticsorder.update",
-	"apiChineseName": "物流工单履约状态更新",
-	"description": "天猫寄送类服务对接外部物流服务商回传物流状态信息",
 	"requestParams": [
 		{
 			"name": "volume",
@@ -91,33 +87,44 @@
 			"name": "pickup_door_time",
 			"type": "Date",
 			"description": "上门揽收时间 pickup_door节点时必填"
+		},
+		{
+			"name": "new_logistics",
+			"type": "Boolean",
+			"description": "是否更新新物流数据"
+		},
+		{
+			"name": "extend_info",
+			"type": "String",
+			"description": "扩展属性"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "错误描述信息",
-					"required": true
+					"description": "错误描述信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true 成功  false  失败",
-					"required": true
+					"description": "true 成功  false  失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.logisticsorder.update",
+	"apiChineseName": "物流工单履约状态更新",
+	"description": "天猫寄送类服务对接外部物流服务商回传物流状态信息",
+	"id": 55357
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51985,
-	"name": "alibaba.wdkorder.sharestock.insurance.refundcallback",
-	"apiChineseName": "共享库存逆向订单理赔单回传",
-	"description": "共享库存逆向订单理赔单回传",
 	"requestParams": [
 		{
 			"name": "tb_sub_order_id",
@@ -25,29 +21,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MaochaoOrderInsuranceRefundCallbackResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MaochaoOrderInsuranceRefundCallbackResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdkorder.sharestock.insurance.refundcallback",
+	"apiChineseName": "共享库存逆向订单理赔单回传",
+	"description": "共享库存逆向订单理赔单回传",
+	"id": 51985
 }

@@ -6,12 +6,12 @@ type InvoiceApplyDtlDto struct {
 	CreateInvResults []InvoiceCreateSimpleResultDto `json:"create_inv_results,omitempty" xml:"create_inv_results>invoice_create_simple_result_dto,omitempty"`
 	// 申请明细列表
 	InvoiceItems []InvoiceApplyItemsDto `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
-	// 发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。
-	ApplyMode string `json:"apply_mode,omitempty" xml:"apply_mode,omitempty"`
 	// 合计实付金额（申请开票的总金额，含税），格式为2位小数。开红票时传正数。  需满足公式：开票总金额(invoiceAmount) = 各项明细的交易金额(amount)之和 - 各项明细的优惠金额(discount)之和。  当指定auto_create_invoice=true或商户配置为自动开票时该字段必填。
 	ApplyAmount string `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
 	// 发票申请ID
 	ApplyId string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
+	// 发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。
+	ApplyMode string `json:"apply_mode,omitempty" xml:"apply_mode,omitempty"`
 	// 申请状态，可选值：  applying: 申请中，初始状态  cancelled: 申请已取消  confirmed: 商户已确认，待开/待录入发票  creating_inv: 开票中，待发票结果回传  inv_failed: 开票失败  inv_success: 开票成功  inv_part_success: 部分成功（拆单场景下存在。举例：发票申请拆单之后有10张票，其中有1张开票成功时，此时申请状态即为inv_part_success，当10张票全部成功申请状态则为inv_success）
 	ApplyStatus string `json:"apply_status,omitempty" xml:"apply_status,omitempty"`
 	// 申请创建时间

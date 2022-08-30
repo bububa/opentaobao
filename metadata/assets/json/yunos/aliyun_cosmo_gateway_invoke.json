@@ -1,8 +1,4 @@
 {
-	"id": 33101,
-	"name": "aliyun.cosmo.gateway.invoke",
-	"apiChineseName": "alios cosmo服务调用",
-	"description": "AliOS cosmo服务分发平台对外调用接口",
 	"requestParams": [
 		{
 			"name": "context",
@@ -11,24 +7,21 @@
 			"required": true
 		},
 		{
-			"name": "rdam_request",
-			"type": "RdamGenericRequest",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
 					"description": "请求标示"
 				}
-			]
+			],
+			"name": "rdam_request",
+			"type": "RdamGenericRequest",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RdamResponse",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
@@ -59,8 +52,27 @@
 					"type": "String",
 					"description": "traceId",
 					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "Number",
+					"description": "biz_code",
+					"required": true
+				},
+				{
+					"name": "biz_msg",
+					"type": "String",
+					"description": "biz_msg",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "RdamResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliyun.cosmo.gateway.invoke",
+	"apiChineseName": "alios cosmo服务调用",
+	"description": "AliOS cosmo服务分发平台对外调用接口",
+	"id": 33101
 }

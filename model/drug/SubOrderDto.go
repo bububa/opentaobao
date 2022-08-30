@@ -22,4 +22,6 @@ type SubOrderDto struct {
 	BuyAmount int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
 	// 是否为处方药
 	Rx int64 `json:"rx,omitempty" xml:"rx,omitempty"`
+	// 商品的skuId
+	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 }

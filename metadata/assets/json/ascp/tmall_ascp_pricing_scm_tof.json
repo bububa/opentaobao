@@ -1,15 +1,6 @@
 {
-	"id": 40826,
-	"name": "tmall.ascp.pricing.scm.tof",
-	"apiChineseName": "TOF\u0026SCM营销域对接-成本录入设置",
-	"description": "TOF\u0026SCM营销域对接-成本录入设置",
 	"requestParams": [
 		{
-			"name": "costs",
-			"type": "ItemSkuCost[]",
-			"description": "成本价集合",
-			"required": true,
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "skuid",
@@ -34,7 +25,12 @@
 					"type": "String",
 					"description": "返回错误提示"
 				}
-			]
+			],
+			"name": "costs",
+			"type": "ItemSkuCost[]",
+			"description": "成本价集合",
+			"maxListSize": 200,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "成功"
 		}
-	]
+	],
+	"name": "tmall.ascp.pricing.scm.tof",
+	"apiChineseName": "TOF\u0026SCM营销域对接-成本录入设置",
+	"description": "TOF\u0026SCM营销域对接-成本录入设置",
+	"id": 40826
 }

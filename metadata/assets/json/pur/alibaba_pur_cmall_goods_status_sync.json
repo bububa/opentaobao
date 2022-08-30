@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"name": "goods_data_source",
+			"type": "String",
+			"description": "外部商家标识",
+			"required": true
+		},
+		{
+			"name": "goods_source_value",
+			"type": "String",
+			"description": "外部商家商品唯一标志",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "状态，shelfed:上架，unShelfed:下架",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回提示信息"
+				}
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.pur.cmall.goods.status.sync",
+	"apiChineseName": "第三方商城接入采购商城-商品状态同步",
+	"description": "第三方商城接入采购商城-商品状态同步",
+	"id": 62776
+}

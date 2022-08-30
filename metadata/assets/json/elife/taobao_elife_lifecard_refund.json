@@ -1,14 +1,6 @@
 {
-	"id": 26190,
-	"name": "taobao.elife.lifecard.refund",
-	"apiChineseName": "品牌惠卡券冲正退还",
-	"description": "淘宝生活汇消费卡虚拟卡，线下冲正退货接口",
 	"requestParams": [
 		{
-			"name": "refund_request",
-			"type": "RefundRequest",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "amount",
@@ -50,7 +42,11 @@
 					"type": "String",
 					"description": "原正向核销交易的小票信息"
 				}
-			]
+			],
+			"name": "refund_request",
+			"type": "RefundRequest",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -79,5 +75,9 @@
 			"type": "Boolean",
 			"description": "成功失败标志"
 		}
-	]
+	],
+	"name": "taobao.elife.lifecard.refund",
+	"apiChineseName": "品牌惠卡券冲正退还",
+	"description": "淘宝生活汇消费卡虚拟卡，线下冲正退货接口",
+	"id": 26190
 }

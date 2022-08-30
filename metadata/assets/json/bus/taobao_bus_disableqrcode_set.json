@@ -1,8 +1,4 @@
 {
-	"id": 28931,
-	"name": "taobao.bus.disableqrcode.set",
-	"apiChineseName": "自助机失效二维码",
-	"description": "使创建的二维码失效",
 	"requestParams": [
 		{
 			"name": "alitrip_order_id",
@@ -27,5 +23,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.bus.disableqrcode.set",
+	"apiChineseName": "自助机失效二维码",
+	"description": "使创建的二维码失效",
+	"id": 28931
 }

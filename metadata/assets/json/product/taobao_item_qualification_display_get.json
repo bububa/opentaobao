@@ -1,8 +1,4 @@
 {
-	"id": 25726,
-	"name": "taobao.item.qualification.display.get",
-	"apiChineseName": "资质采集配置异步获取接口",
-	"description": "根据类目，商品，属性等参与动态获得资质采集配置",
 	"requestParams": [
 		{
 			"name": "param",
@@ -22,26 +18,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "display_conf",
-			"type": "DisplayQualifications",
-			"description": "返回资质采集配置",
 			"subParams": [
-				{
-					"name": "message",
-					"type": "String",
-					"description": "返回消息"
-				},
 				{
 					"name": "result",
 					"type": "Boolean",
 					"description": "是否成功"
 				},
 				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
 					"name": "model",
 					"type": "String",
 					"description": "填充列表"
 				}
-			]
+			],
+			"name": "display_conf",
+			"type": "DisplayQualifications",
+			"description": "返回资质采集配置"
 		}
-	]
+	],
+	"name": "taobao.item.qualification.display.get",
+	"apiChineseName": "资质采集配置异步获取接口",
+	"description": "根据类目，商品，属性等参与动态获得资质采集配置",
+	"id": 25726
 }

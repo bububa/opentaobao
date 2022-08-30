@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "服务订单号",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "IsvGetReportDiagnoseUrlRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "短信中跳转url"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alihealth.examination.report.diagnose.order.diagnoseurl.get",
+	"apiChineseName": "获取报告解读url",
+	"description": "获取报告解读url",
+	"id": 59048
+}

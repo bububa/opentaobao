@@ -24,8 +24,8 @@ type ActivityStatisticsDto struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 活动名称
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
-	// 预计到货时间
-	PredictArrivalTime string `json:"predict_arrival_time,omitempty" xml:"predict_arrival_time,omitempty"`
 	// 营销活动
 	MktActivityType string `json:"mkt_activity_type,omitempty" xml:"mkt_activity_type,omitempty"`
+	// 预计到货时间
+	PredictArrivalTime string `json:"predict_arrival_time,omitempty" xml:"predict_arrival_time,omitempty"`
 }

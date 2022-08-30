@@ -1,22 +1,18 @@
 {
-	"id": 10915,
-	"name": "taobao.delivery.template.get",
-	"apiChineseName": "获取用户指定运费模板信息",
-	"description": "获取用户指定运费模板信息",
 	"requestParams": [
 		{
 			"name": "template_ids",
 			"type": "String[]",
 			"description": "需要查询的运费模板ID列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需返回的字段列表。 \u003cbr/\u003e \u003cbr/\u003e\u003cB\u003e\u003cbr/\u003e可选值:示例中的值;各字段之间用\",\"隔开\u003cbr/\u003e\u003c/B\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e \u003cbr/\u003e\u003cfont color=blue\u003e\u003cbr/\u003etemplate_id：查询模板ID \u003cbr/\u003e \u003cbr/\u003etemplate_name:查询模板名称 \u003cbr/\u003e \u003cbr/\u003eassumer：查询服务承担放 \u003cbr/\u003e \u003cbr/\u003evaluation:查询计价规则 \u003cbr/\u003e \u003cbr/\u003esupports:查询增值服务列表 \u003cbr/\u003e \u003cbr/\u003ecreated:查询模板创建时间 \u003cbr/\u003e \u003cbr/\u003emodified:查询修改时间\u003cbr/\u003e \u003cbr/\u003econsign_area_id:运费模板上设置的卖家发货地址最小级别ID\u003cbr/\u003e \u003cbr/\u003eaddress:卖家地址信息\u003cbr/\u003e\u003c/font\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e \u003cbr/\u003e\u003cfont color=bule\u003e\u003cbr/\u003equery_cod:查询货到付款运费信息\u003cbr/\u003e \u003cbr/\u003equery_post:查询平邮运费信息 \u003cbr/\u003e \u003cbr/\u003equery_express:查询快递公司运费信息 \u003cbr/\u003e \u003cbr/\u003equery_ems:查询EMS运费信息\u003cbr/\u003e \u003cbr/\u003equery_bzsd:查询普通保障速递运费信息\u003cbr/\u003e \u003cbr/\u003equery_wlb:查询物流宝保障速递运费信息\u003cbr/\u003e \u003cbr/\u003equery_furniture:查询家装物流运费信息\u003cbr/\u003e\u003cfont color=blue\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cfont color=red\u003e不能有空格\u003c/font\u003e",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "user_nick",
@@ -26,9 +22,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "delivery_templates",
-			"type": "DeliveryTemplate []",
-			"description": "运费模板列表",
 			"subParams": [
 				{
 					"name": "template_id",
@@ -51,9 +44,6 @@
 					"description": "可选值：0\u003cbr/\u003e说明：\u003cbr/\u003e0:表示按宝贝件数计算运费\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e1:表示按宝贝重量计算运费\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e3:表示按宝贝体积计算运费"
 				},
 				{
-					"name": "fee_list",
-					"type": "TopFee[]",
-					"description": "运费模板中运费详细信息对象，包含默认运费和指定地区运费",
 					"subParams": [
 						{
 							"name": "service_type",
@@ -85,7 +75,10 @@
 							"type": "String",
 							"description": "增费：输入0.00-999.99（最多包含两位小数） 不能为空不输入运费时必须输入0"
 						}
-					]
+					],
+					"name": "fee_list",
+					"type": "TopFee[]",
+					"description": "运费模板中运费详细信息对象，包含默认运费和指定地区运费"
 				},
 				{
 					"name": "supports",
@@ -112,12 +105,19 @@
 					"type": "Number",
 					"description": "该模板上设置的卖家发货地址区域ID，如：address为浙江省杭州市西湖去文三路XX号那么这个consign_area_id的值就是西湖区的ID"
 				}
-			]
+			],
+			"name": "delivery_templates",
+			"type": "DeliveryTemplate []",
+			"description": "运费模板列表"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "获得到符合条件的结果总数"
 		}
-	]
+	],
+	"name": "taobao.delivery.template.get",
+	"apiChineseName": "获取用户指定运费模板信息",
+	"description": "获取用户指定运费模板信息",
+	"id": 10915
 }

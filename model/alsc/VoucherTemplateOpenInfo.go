@@ -20,6 +20,8 @@ type VoucherTemplateOpenInfo struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 绝对日期中的开始时间
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
+	// // 未使用     UNUSED,     // 使用中     USED,     // 无库存     NO_INVENTORY,     // 已失效     INVALID,     ;
+	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 券模板类型 * 值：GIFT、DISCOUNT、CASH      * 说明：礼品券、礼品券、礼品券
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 使用场景DINE_IN 堂食,TAKE_OUT外卖
@@ -28,8 +30,6 @@ type VoucherTemplateOpenInfo struct {
 	ValidDateType string `json:"valid_date_type,omitempty" xml:"valid_date_type,omitempty"`
 	// 模版ID
 	VoucherTemplateId string `json:"voucher_template_id,omitempty" xml:"voucher_template_id,omitempty"`
-	// // 未使用     UNUSED,     // 使用中     USED,     // 无库存     NO_INVENTORY,     // 已失效     INVALID,     ;
-	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 面额
 	Denomination string `json:"denomination,omitempty" xml:"denomination,omitempty"`
 	// 更新人

@@ -1,8 +1,4 @@
 {
-	"id": 27942,
-	"name": "alitrip.ticket.rule.query",
-	"apiChineseName": "【门票API2.0】门票规则信息查询接口",
-	"description": "门票规则信息查询接口：返回商家上传的门票规则信息",
 	"requestParams": [
 		{
 			"name": "out_rule_id",
@@ -13,137 +9,120 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TicketRuleParam",
-			"description": "门票规则信息",
 			"subParams": [
 				{
 					"name": "out_scenic_id",
 					"type": "String",
-					"description": "商户景点编码",
-					"required": true
+					"description": "商户景点编码"
 				},
 				{
 					"name": "ali_scenic_id",
 					"type": "Number",
-					"description": "阿里旅行景点编码",
-					"required": true
+					"description": "阿里旅行景点编码"
 				},
 				{
 					"name": "out_rule_id",
 					"type": "String",
-					"description": "卖家景点规则编码",
-					"required": true
+					"description": "卖家景点规则编码"
 				},
 				{
 					"name": "out_rule_name",
 					"type": "String",
-					"description": "卖家景点规则名称",
-					"required": true
+					"description": "卖家景点规则名称"
 				},
 				{
 					"name": "rule_type",
 					"type": "Number",
-					"description": "票种规则类型(0实体票规则；1电子票规则)",
-					"required": true
+					"description": "票种规则类型(0实体票规则；1电子票规则)"
 				},
 				{
 					"name": "rule_status",
 					"type": "Number",
-					"description": "规则状态（0：有效，-1：失效）",
-					"required": true
+					"description": "规则状态（0：有效，-1：失效）"
 				},
 				{
 					"name": "refund_type",
 					"type": "Number",
-					"description": "退票类型。1-无条件退改， 2-有条件退改， 3-不可退改。",
-					"required": true
+					"description": "退票类型。1-无条件退改， 2-有条件退改， 3-不可退改。"
 				},
 				{
 					"name": "refund_desc",
 					"type": "String",
-					"description": "退票描述",
-					"required": true
+					"description": "退票描述"
 				},
 				{
 					"name": "visitor_require",
 					"type": "Number",
-					"description": "游客信息设置 1:不需要,2:仅需一位游客信息,3:需要所有游客信息",
-					"required": true
+					"description": "游客信息设置 1:不需要,2:仅需一位游客信息,3:需要所有游客信息"
 				},
 				{
 					"name": "visitor_infos",
 					"type": "String",
-					"description": "需要的出游人信息，2:手机号,3:身份证,4:姓名,5:护照号码 6:护照姓名拼音。",
-					"required": true
+					"description": "需要的出游人信息，2:手机号,3:身份证,4:姓名,5:护照号码 6:护照姓名拼音。"
 				},
 				{
 					"name": "visitor_limit_able",
 					"type": "Number",
-					"description": "出游人 是否限购。1:限购,2:不限购",
-					"required": true
+					"description": "出游人 是否限购。1:限购,2:不限购"
 				},
 				{
 					"name": "visitor_limit_mode",
 					"type": "Number",
-					"description": "限购模式。mode为1按天, mode为2按周, mode为3按月",
-					"required": true
+					"description": "限购模式。mode为1按天, mode为2按周, mode为3按月"
 				},
 				{
 					"name": "visitor_limit_num",
 					"type": "Number",
-					"description": "限购数量",
-					"required": true
+					"description": "限购数量"
 				},
 				{
 					"name": "enter_type",
 					"type": "Number",
-					"description": "入园类型。1-用兑换凭证直接入园，2-用兑换凭证换票入园",
-					"required": true
+					"description": "入园类型。1-用兑换凭证直接入园，2-用兑换凭证换票入园"
 				},
 				{
 					"name": "enter_voucher_type",
 					"type": "Number",
-					"description": "入园使用的凭证类型。1、二维码，2、身份证，3、二维码或身份证，4:数字码，5、手机号，6、其它",
-					"required": true
+					"description": "入园使用的凭证类型。1、二维码，2、身份证，3、二维码或身份证，4:数字码，5、手机号，6、其它"
 				},
 				{
 					"name": "enter_voucher_value",
 					"type": "String",
-					"description": "其他入园凭证类型。",
-					"required": true
+					"description": "其他入园凭证类型。"
 				},
 				{
 					"name": "ticket_change_adderss",
 					"type": "String",
-					"description": "换票地址",
-					"required": true
+					"description": "换票地址"
 				},
 				{
 					"name": "enter_address",
 					"type": "String",
-					"description": "景区入园地址",
-					"required": true
+					"description": "景区入园地址"
 				},
 				{
 					"name": "fee_include",
 					"type": "String",
-					"description": "门票费用包含",
-					"required": true
+					"description": "门票费用包含"
 				},
 				{
 					"name": "extra_desc",
 					"type": "String",
-					"description": "补充说明",
-					"required": true
+					"description": "补充说明"
 				},
 				{
 					"name": "visitor_limit_type",
 					"type": "Number",
-					"description": "限购类型。0-身份证限购， 1-手机号限购",
-					"required": true
+					"description": "限购类型。0-身份证限购， 1-手机号限购"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TicketRuleParam",
+			"description": "门票规则信息"
 		}
-	]
+	],
+	"name": "alitrip.ticket.rule.query",
+	"apiChineseName": "【门票API2.0】门票规则信息查询接口",
+	"description": "门票规则信息查询接口：返回商家上传的门票规则信息",
+	"id": 27942
 }

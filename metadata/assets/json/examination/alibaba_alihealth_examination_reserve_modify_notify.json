@@ -1,9 +1,11 @@
 {
-	"id": 53413,
-	"name": "alibaba.alihealth.examination.reserve.modify.notify",
-	"apiChineseName": "通知改期结果",
-	"description": "体检状态为改期中，服务上通知健康是否改期成功",
 	"requestParams": [
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "服务商预约凭证",
+			"required": true
+		},
 		{
 			"name": "old_reserve_date",
 			"type": "String",
@@ -25,12 +27,6 @@
 			"name": "new_reserve_date",
 			"type": "String",
 			"description": "新的预约日期",
-			"required": true
-		},
-		{
-			"name": "uniq_reserve_code",
-			"type": "String",
-			"description": "服务商预约凭证",
 			"required": true
 		},
 		{
@@ -67,55 +63,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "鹰眼id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "response_code",
+							"type": "String",
+							"description": "结果"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "结果"
+						}
+					],
+					"name": "data",
+					"type": "ModifyResultResponse",
+					"description": "返回数据对象"
+				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "ModifyResultResponse",
-					"description": "返回数据对象",
-					"required": true,
-					"subParams": [
-						{
-							"name": "msg",
-							"type": "String",
-							"description": "结果",
-							"required": true
-						},
-						{
-							"name": "response_code",
-							"type": "String",
-							"description": "结果",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "eagle_eye_trace_id",
-					"type": "String",
-					"description": "鹰眼id",
-					"required": true
+					"description": "errMessage"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.modify.notify",
+	"apiChineseName": "通知改期结果",
+	"description": "体检状态为改期中，服务上通知健康是否改期成功",
+	"id": 53413
 }

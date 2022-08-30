@@ -1,8 +1,4 @@
 {
-	"id": 46991,
-	"name": "alibaba.alihealth.drug.kyt.dr.vaequipment.list",
-	"apiChineseName": "获取企业冷链设备信息",
-	"description": "获取企业冷链设备信息",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -46,165 +42,144 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "list",
-							"type": "Result[]",
-							"description": "查询列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "mod_date",
 									"type": "String",
-									"description": "修改时间",
-									"required": true
+									"description": "修改时间"
 								},
 								{
 									"name": "address",
 									"type": "String",
-									"description": "设备地址",
-									"required": true
+									"description": "设备地址"
 								},
 								{
 									"name": "comments",
 									"type": "String",
-									"description": "备注",
-									"required": true
+									"description": "备注"
 								},
 								{
 									"name": "equipment_code",
 									"type": "String",
-									"description": "设备编号",
-									"required": true
+									"description": "设备编号"
 								},
 								{
 									"name": "crt_date",
 									"type": "String",
-									"description": "记录时间",
-									"required": true
+									"description": "记录时间"
 								},
 								{
 									"name": "equipment_type",
 									"type": "String",
-									"description": "设备类型",
-									"required": true
+									"description": "设备类型"
 								},
 								{
 									"name": "associated_status",
 									"type": "String",
-									"description": "关联状态",
-									"required": true
+									"description": "关联状态"
 								},
 								{
 									"name": "probe",
 									"type": "String",
-									"description": "关联探头",
-									"required": true
+									"description": "关联探头"
 								},
 								{
 									"name": "mod_ic_code",
 									"type": "String",
-									"description": "记录修改人",
-									"required": true
+									"description": "记录修改人"
 								},
 								{
 									"name": "address_detail",
 									"type": "String",
-									"description": "详细地址",
-									"required": true
+									"description": "详细地址"
 								},
 								{
 									"name": "dict_region_d_t_o",
 									"type": "String",
-									"description": "地区",
-									"required": true
+									"description": "地区"
 								},
 								{
 									"name": "crt_ic_code",
 									"type": "String",
-									"description": "记录创建人",
-									"required": true
+									"description": "记录创建人"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "所属企业",
-									"required": true
+									"description": "所属企业"
 								},
 								{
 									"name": "equipment_name",
 									"type": "String",
-									"description": "设备名称",
-									"required": true
+									"description": "设备名称"
 								},
 								{
 									"name": "va_equipment_id",
 									"type": "String",
-									"description": "设备主键",
-									"required": true
+									"description": "设备主键"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "设备状态",
-									"required": true
+									"description": "设备状态"
 								}
-							]
+							],
+							"name": "list",
+							"type": "Result[]",
+							"description": "查询列表"
 						},
 						{
 							"name": "pages",
 							"type": "Number",
-							"description": "页数",
-							"required": true
+							"description": "页数"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页显示数量",
-							"required": true
+							"description": "每页显示数量"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "页码",
-							"required": true
+							"description": "页码"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.vaequipment.list",
+	"apiChineseName": "获取企业冷链设备信息",
+	"description": "获取企业冷链设备信息",
+	"id": 46991
 }

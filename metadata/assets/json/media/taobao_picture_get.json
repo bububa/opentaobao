@@ -1,8 +1,4 @@
 {
-	"id": 138,
-	"name": "taobao.picture.get",
-	"apiChineseName": "获取图片信息",
-	"description": "获取图片信息",
 	"requestParams": [
 		{
 			"name": "picture_id",
@@ -20,14 +16,14 @@
 			"description": "是否删除,unfroze代表没有删除"
 		},
 		{
+			"name": "modified_time",
+			"type": "Date",
+			"description": "图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。"
+		},
+		{
 			"name": "title",
 			"type": "String",
 			"description": "图片标题,最大长度50字符,中英文都算一字符"
-		},
-		{
-			"name": "order_by",
-			"type": "String",
-			"description": "图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc"
 		},
 		{
 			"name": "start_date",
@@ -50,14 +46,14 @@
 			"description": "每页条数.每页返回最多返回100条,默认值40"
 		},
 		{
-			"name": "modified_time",
-			"type": "Date",
-			"description": "图片被修改的时间点，格式:yyyy-MM-dd HH:mm:ss。查询此修改时间点之后到目前的图片。"
-		},
-		{
 			"name": "client_type",
 			"type": "String",
 			"description": "图片使用，如果是pc宝贝detail使用，设置为client:computer，查询出来的图片是符合pc的宝贝detail显示的如果是手机宝贝detail使用，设置为client:phone，查询出来的图片是符合手机的宝贝detail显示的,默认值是全部"
+		},
+		{
+			"name": "order_by",
+			"type": "String",
+			"description": "图片查询结果排序,time:desc按上传时间从晚到早(默认), time:asc按上传时间从早到晚,sizes:desc按图片从大到小，sizes:asc按图片从小到大,默认time:desc"
 		},
 		{
 			"name": "urls",
@@ -72,9 +68,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "pictures",
-			"type": "Picture []",
-			"description": "图片信息列表",
 			"subParams": [
 				{
 					"name": "picture_id",
@@ -109,12 +102,17 @@
 				{
 					"name": "status",
 					"type": "String",
-					"description": "图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过"
+					"description": "图片状态,0 未审核没冻结 1  冻结 2 审核通过"
 				},
 				{
 					"name": "deleted",
 					"type": "String",
 					"description": "图片是否删除的标记"
+				},
+				{
+					"name": "client_type",
+					"type": "String",
+					"description": "图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布"
 				},
 				{
 					"name": "created",
@@ -127,21 +125,23 @@
 					"description": "图片的修改时间"
 				},
 				{
-					"name": "referenced",
-					"type": "Boolean",
-					"description": "图片是否被引用"
-				},
-				{
 					"name": "md5",
 					"type": "String",
 					"description": "图片在后台处理之后的md5值当md5值为32位长度的字符串时为图片搬家后的文件md5验证码md5值为长整数时为图片替换后的时间戳"
 				},
 				{
-					"name": "client_type",
-					"type": "String",
-					"description": "图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布"
+					"name": "referenced",
+					"type": "Boolean",
+					"description": "图片是否被引用"
 				}
-			]
+			],
+			"name": "pictures",
+			"type": "Picture []",
+			"description": "图片信息列表"
 		}
-	]
+	],
+	"name": "taobao.picture.get",
+	"apiChineseName": "获取图片信息",
+	"description": "获取图片信息",
+	"id": 138
 }

@@ -1,14 +1,13 @@
 {
-	"id": 29569,
-	"name": "taobao.xhotel.commoninvoice.update",
-	"apiChineseName": "常用发票信息更新接口",
-	"description": "常用发票信息更新接口(根据用户id,发票抬头和发票属性或发票id进行更新,没有则添加)",
 	"requestParams": [
 		{
-			"name": "common_invoice_info_param",
-			"type": "CommonInvoiceInfo",
-			"description": "无",
 			"subParams": [
+				{
+					"name": "invoice_attr",
+					"type": "Number",
+					"description": "发票属性（0:公司；1：个人）",
+					"required": true
+				},
 				{
 					"name": "phone",
 					"type": "String",
@@ -18,6 +17,12 @@
 					"name": "email",
 					"type": "String",
 					"description": "个人email"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户名",
+					"required": true
 				},
 				{
 					"name": "invoice_type",
@@ -32,15 +37,6 @@
 					"required": true
 				},
 				{
-					"name": "invoice_attr",
-					"type": "Number",
-					"description": "发票属性（0:公司；1：个人）",
-					"required": true
-				},
-				{
-					"name": "value_added_info",
-					"type": "ValueAddedInfo",
-					"description": "专票信息",
 					"subParams": [
 						{
 							"name": "tax_no",
@@ -67,20 +63,20 @@
 							"type": "String",
 							"description": "开户行"
 						}
-					]
+					],
+					"name": "value_added_info",
+					"type": "ValueAddedInfo",
+					"description": "专票信息"
 				},
 				{
 					"name": "invoice_id",
 					"type": "Number",
 					"description": "发票id"
-				},
-				{
-					"name": "user_nick",
-					"type": "String",
-					"description": "用户名",
-					"required": true
 				}
-			]
+			],
+			"name": "common_invoice_info_param",
+			"type": "CommonInvoiceInfo",
+			"description": "无"
 		}
 	],
 	"responseParams": [
@@ -99,5 +95,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "taobao.xhotel.commoninvoice.update",
+	"apiChineseName": "常用发票信息更新接口",
+	"description": "常用发票信息更新接口(根据用户id,发票抬头和发票属性或发票id进行更新,没有则添加)",
+	"id": 29569
 }

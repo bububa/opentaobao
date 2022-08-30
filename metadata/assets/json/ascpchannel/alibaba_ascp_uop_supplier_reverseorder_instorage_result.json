@@ -1,13 +1,6 @@
 {
-	"id": 52093,
-	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.result",
-	"apiChineseName": "逆向销退入库单到仓结果回告",
-	"description": "ERP回告销退入库单到仓信息回告",
 	"requestParams": [
 		{
-			"name": "instorage_result_request",
-			"type": "Instorageresultrequest",
-			"description": "消退入库单结果请求",
 			"subParams": [
 				{
 					"name": "lg_order_code",
@@ -16,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "operate_info",
-					"type": "Operateinfo",
-					"description": "操作信息",
 					"subParams": [
 						{
 							"name": "operate_time",
@@ -30,7 +20,10 @@
 							"type": "String",
 							"description": "操作人"
 						}
-					]
+					],
+					"name": "operate_info",
+					"type": "Operateinfo",
+					"description": "操作信息"
 				},
 				{
 					"name": "supplier_id",
@@ -43,34 +36,38 @@
 					"type": "String",
 					"description": "入库时间"
 				}
-			]
+			],
+			"name": "instorage_result_request",
+			"type": "Instorageresultrequest",
+			"description": "消退入库单结果请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "instorage_result_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				}
-			]
+			],
+			"name": "instorage_result_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.result",
+	"apiChineseName": "逆向销退入库单到仓结果回告",
+	"description": "ERP回告销退入库单到仓信息回告",
+	"id": 52093
 }

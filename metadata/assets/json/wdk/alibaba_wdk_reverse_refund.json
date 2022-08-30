@@ -1,14 +1,6 @@
 {
-	"id": 41041,
-	"name": "alibaba.wdk.reverse.refund",
-	"apiChineseName": "退款打款",
-	"description": "五道口退款打款开放能力接口",
 	"requestParams": [
 		{
-			"name": "open_refund_req_d_t_o",
-			"type": "OpenRefundReqDto",
-			"description": "退款打款请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "store_id",
@@ -35,10 +27,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_channel_list",
-					"type": "ChannelRefundDto[]",
-					"description": "退款渠道",
-					"required": true,
 					"subParams": [
 						{
 							"name": "channel_code",
@@ -52,16 +40,21 @@
 							"description": "渠道对应的退款金额(单位分)",
 							"required": true
 						}
-					]
+					],
+					"name": "refund_channel_list",
+					"type": "ChannelRefundDto[]",
+					"description": "退款渠道",
+					"required": true
 				}
-			]
+			],
+			"name": "open_refund_req_d_t_o",
+			"type": "OpenRefundReqDto",
+			"description": "退款打款请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
@@ -87,7 +80,14 @@
 					"description": "退款单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.wdk.reverse.refund",
+	"apiChineseName": "退款打款",
+	"description": "五道口退款打款开放能力接口",
+	"id": 41041
 }

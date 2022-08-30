@@ -1,8 +1,4 @@
 {
-	"id": 22739,
-	"name": "taobao.qianniu.task.increase",
-	"apiChineseName": "增加任务接收人接口",
-	"description": "根据任务元id增加任务接收人",
 	"requestParams": [
 		{
 			"name": "metadata_id",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "是否添加成功"
 		}
-	]
+	],
+	"name": "taobao.qianniu.task.increase",
+	"apiChineseName": "增加任务接收人接口",
+	"description": "根据任务元id增加任务接收人",
+	"id": 22739
 }

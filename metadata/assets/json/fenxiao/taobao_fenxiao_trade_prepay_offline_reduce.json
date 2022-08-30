@@ -1,14 +1,6 @@
 {
-	"id": 33475,
-	"name": "taobao.fenxiao.trade.prepay.offline.reduce",
-	"apiChineseName": "渠道分销供应商上传线下流水预存款（减少）",
-	"description": "渠道分销供应商上传线下流水预存款（减少）",
 	"requestParams": [
 		{
-			"name": "offline_reduce_prepay_param",
-			"type": "TopOfflineReducePrepayDto",
-			"description": "减少流水",
-			"required": true,
 			"subParams": [
 				{
 					"name": "flow_type",
@@ -95,22 +87,29 @@
 					"type": "String",
 					"description": "付款行全称"
 				}
-			]
+			],
+			"name": "offline_reduce_prepay_param",
+			"type": "TopOfflineReducePrepayDto",
+			"description": "减少流水",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultTopDo",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultTopDo",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.trade.prepay.offline.reduce",
+	"apiChineseName": "渠道分销供应商上传线下流水预存款（减少）",
+	"description": "渠道分销供应商上传线下流水预存款（减少）",
+	"id": 33475
 }

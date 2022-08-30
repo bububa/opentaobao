@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "活动id"
+		},
+		{
+			"name": "record_id",
+			"type": "Number",
+			"description": "活动记录ID"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "收货人地址"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "收货人电话"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "收货人姓名"
+		},
+		{
+			"name": "goods_id",
+			"type": "Number",
+			"description": "奖品ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "邮寄信息是否填写成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.address.add",
+	"apiChineseName": "星河-营销抽奖奖品邮寄地址添加",
+	"description": "营销抽奖活动，奖品邮寄地址填写",
+	"id": 57069
+}

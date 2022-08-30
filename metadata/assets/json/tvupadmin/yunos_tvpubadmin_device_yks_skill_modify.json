@@ -1,8 +1,4 @@
 {
-	"id": 37911,
-	"name": "yunos.tvpubadmin.device.yks.skill.modify",
-	"apiChineseName": "修改技能",
-	"description": "修改技能",
 	"requestParams": [
 		{
 			"name": "skill_id",
@@ -22,29 +18,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "ret_value",
-					"type": "Json",
-					"description": "返回内容",
-					"required": true
+					"type": "String",
+					"description": "返回内容"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.yks.skill.modify",
+	"apiChineseName": "修改技能",
+	"description": "修改技能",
+	"id": 37911
 }

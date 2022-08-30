@@ -1,8 +1,4 @@
 {
-	"id": 41196,
-	"name": "alibaba.ib.shenjing.visitor.pad.fetchcodeverify",
-	"apiChineseName": "访客通过PAD提交访客码",
-	"description": "访客通过PAD提交访客码，录脸进入园区。",
 	"requestParams": [
 		{
 			"name": "visitor_code",
@@ -18,47 +14,46 @@
 	],
 	"responseParams": [
 		{
-			"name": "content",
-			"type": "Content",
-			"description": "内容",
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
 			"subParams": [
 				{
 					"name": "visitor_linkman",
 					"type": "String",
-					"description": "访客名称",
-					"required": true
+					"description": "访客名称"
 				},
 				{
 					"name": "id",
 					"type": "String",
-					"description": "访客ID",
-					"required": true
+					"description": "访客ID"
 				},
 				{
 					"name": "visitor_face_photo_total_num",
 					"type": "Number",
-					"description": "总计来访人数",
-					"required": true
+					"description": "总计来访人数"
 				},
 				{
 					"name": "apply_user_name",
 					"type": "String",
-					"description": "邀请人",
-					"required": true
+					"description": "邀请人"
 				},
 				{
 					"name": "emp_org_name",
 					"type": "String",
-					"description": "公司名称",
-					"required": true
+					"description": "公司名称"
 				},
 				{
 					"name": "visitor_face_photo_current_num",
 					"type": "Number",
-					"description": "当前上传人脸数",
-					"required": true
+					"description": "当前上传人脸数"
 				}
-			]
+			],
+			"name": "content",
+			"type": "Content",
+			"description": "内容"
 		},
 		{
 			"name": "result_request_id",
@@ -66,14 +61,13 @@
 			"description": "request_id"
 		},
 		{
-			"name": "result_code",
-			"type": "String",
-			"description": "错误码"
-		},
-		{
 			"name": "result_msg",
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.ib.shenjing.visitor.pad.fetchcodeverify",
+	"apiChineseName": "访客通过PAD提交访客码",
+	"description": "访客通过PAD提交访客码，录脸进入园区。",
+	"id": 41196
 }

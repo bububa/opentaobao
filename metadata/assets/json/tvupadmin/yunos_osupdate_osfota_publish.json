@@ -1,8 +1,4 @@
 {
-	"id": 30523,
-	"name": "yunos.osupdate.osfota.publish",
-	"apiChineseName": "系统升级发布",
-	"description": "发布osupdate系统升级任务",
 	"requestParams": [
 		{
 			"name": "publish_json",
@@ -13,17 +9,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否操作成功",
-					"required": true
+					"description": "是否操作成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "yunos.osupdate.osfota.publish",
+	"apiChineseName": "系统升级发布",
+	"description": "发布osupdate系统升级任务",
+	"id": 30523
 }

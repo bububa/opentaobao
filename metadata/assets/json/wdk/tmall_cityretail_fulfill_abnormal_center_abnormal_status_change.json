@@ -1,14 +1,6 @@
 {
-	"id": 53549,
-	"name": "tmall.cityretail.fulfill.abnormal.center.abnormal.status.change",
-	"apiChineseName": "同城零售履约异常中心异常单处理结果回调接口",
-	"description": "同城零售履约异常中心异常单处理结果回调接口",
 	"requestParams": [
 		{
-			"name": "abnormal_status_change_dto",
-			"type": "AbnormalStatusChangeDto[]",
-			"description": "入参",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "is_final",
@@ -61,9 +53,6 @@
 					"description": "状态变更类型"
 				},
 				{
-					"name": "abnormal_content_dto",
-					"type": "AbnormalContentDto",
-					"description": "参数",
 					"subParams": [
 						{
 							"name": "operate_desc",
@@ -85,59 +74,64 @@
 							"type": "String",
 							"description": "上报数量"
 						}
-					]
+					],
+					"name": "abnormal_content_dto",
+					"type": "AbnormalContentDto",
+					"description": "参数"
 				},
 				{
 					"name": "abnormal_coordination_id",
 					"type": "String",
 					"description": "异常协同单ID"
 				}
-			]
+			],
+			"name": "abnormal_status_change_dto",
+			"type": "AbnormalStatusChangeDto[]",
+			"description": "入参",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "fulfill_single_result",
-			"type": "FulfillSingleResult",
-			"description": "响应参数",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "处理结果",
-					"required": true
+					"description": "处理结果"
 				},
 				{
 					"name": "biz_exception",
 					"type": "Boolean",
-					"description": "是否业务异常",
-					"required": true
+					"description": "是否业务异常"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "异常描述",
-					"required": true
+					"description": "异常描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "异常code",
-					"required": true
+					"description": "异常code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "fulfill_single_result",
+			"type": "FulfillSingleResult",
+			"description": "响应参数"
 		}
-	]
+	],
+	"name": "tmall.cityretail.fulfill.abnormal.center.abnormal.status.change",
+	"apiChineseName": "同城零售履约异常中心异常单处理结果回调接口",
+	"description": "同城零售履约异常中心异常单处理结果回调接口",
+	"id": 53549
 }

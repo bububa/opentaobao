@@ -1,8 +1,4 @@
 {
-	"id": 39599,
-	"name": "alibaba.ele.fengniao.carrierdriver.location",
-	"apiChineseName": "查询骑手当前位置",
-	"description": "查询骑手当前位置",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "location",
-			"type": "Location",
-			"description": "location",
 			"subParams": [
 				{
 					"name": "longitude",
@@ -33,7 +26,10 @@
 					"description": "纬度",
 					"required": true
 				}
-			]
+			],
+			"name": "location",
+			"type": "Location",
+			"description": "location"
 		},
 		{
 			"name": "state",
@@ -55,5 +51,9 @@
 			"type": "Number",
 			"description": "运单状态变化时间点"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.carrierdriver.location",
+	"apiChineseName": "查询骑手当前位置",
+	"description": "查询骑手当前位置",
+	"id": 39599
 }

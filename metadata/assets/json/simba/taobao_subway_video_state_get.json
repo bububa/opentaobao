@@ -1,0 +1,25 @@
+{
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "账号昵称"
+		},
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "videoId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "1, \"等待转码\"     2, \"转码中\"     3, \"转码失败\"     4, \"等待审核\"     5, \"未通过审核\"     6, \"通过审核\"     7, \"已删除\"     8, \"不符合规范\""
+		}
+	],
+	"name": "taobao.subway.video.state.get",
+	"apiChineseName": "获取视频状态",
+	"description": "获取已上传视频的状态",
+	"id": 56051
+}

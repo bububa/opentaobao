@@ -1,8 +1,4 @@
 {
-	"id": 53340,
-	"name": "alibaba.legal.case.common.enumdata",
-	"apiChineseName": "获取通用枚举值接口",
-	"description": "获取通用枚举值接口",
 	"requestParams": [
 		{
 			"name": "key",
@@ -18,69 +14,64 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorcode",
-					"required": true
+					"description": "errorcode"
 				},
 				{
-					"name": "contents",
-					"type": "Content[]",
-					"description": "内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "value",
 							"type": "String",
-							"description": "code值",
-							"required": true
+							"description": "code值"
 						},
 						{
 							"name": "text",
 							"type": "String",
-							"description": "文本值",
-							"required": true
+							"description": "文本值"
 						},
 						{
-							"name": "children",
-							"type": "Children[]",
-							"description": "二级值集",
-							"required": true,
 							"subParams": [
 								{
 									"name": "text",
 									"type": "String",
-									"description": "文本值",
-									"required": true
+									"description": "文本值"
 								},
 								{
 									"name": "value",
 									"type": "String",
-									"description": "code值",
-									"required": true
+									"description": "code值"
 								}
-							]
+							],
+							"name": "children",
+							"type": "Children[]",
+							"description": "二级值集"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "Content[]",
+					"description": "内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errormasg",
-					"required": true
+					"description": "errormasg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.common.enumdata",
+	"apiChineseName": "获取通用枚举值接口",
+	"description": "获取通用枚举值接口",
+	"id": 53340
 }

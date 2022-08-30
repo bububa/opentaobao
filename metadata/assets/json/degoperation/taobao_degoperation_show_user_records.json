@@ -1,9 +1,11 @@
 {
-	"id": 38265,
-	"name": "taobao.degoperation.show.user.records",
-	"apiChineseName": "用户中奖记录",
-	"description": "用户中奖记录",
 	"requestParams": [
+		{
+			"name": "deg_access_token",
+			"type": "String",
+			"description": "系统信息",
+			"required": true
+		},
 		{
 			"name": "deg_app_key",
 			"type": "String",
@@ -27,51 +29,44 @@
 			"type": "Number",
 			"description": "分页尺寸",
 			"required": true
-		},
-		{
-			"name": "deg_access_token",
-			"type": "String",
-			"description": "系统信息",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BonusResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "\"activityId\"= 活动id, \"activityName\"= 活动名称,\"appKeyEventKey\"=活动唯一标识,\"currentPageNumber\"=当前第几页,\"awardName\": 奖品名称,\"awardType\": 奖品类型,\"awardTypeName\": 奖品类型名称,\"hasAward\": 实物奖品是否已经兑换奖品,\"luckyTime\": 中奖时间, \"sequenceNo\": 中奖记录唯一标志  \"userId\"=系统过滤，只返回-1",
-					"required": true
+					"type": "String",
+					"description": "\"activityId\"= 活动id, \"activityName\"= 活动名称,\"appKeyEventKey\"=活动唯一标识,\"currentPageNumber\"=当前第几页,\"awardName\": 奖品名称,\"awardType\": 奖品类型,\"awardTypeName\": 奖品类型名称,\"hasAward\": 实物奖品是否已经兑换奖品,\"luckyTime\": 中奖时间, \"sequenceNo\": 中奖记录唯一标志  \"userId\"=系统过滤，只返回-1"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.degoperation.show.user.records",
+	"apiChineseName": "用户中奖记录",
+	"description": "用户中奖记录",
+	"id": 38265
 }

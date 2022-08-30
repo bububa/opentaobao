@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "如有pid，则查询pid下的relationid名单；如没有pid，则查询appkey关联userid下的pid名单"
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "分页参数",
+			"required": true
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "分页参数，一次最多不能超过1000",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "pid",
+							"type": "String",
+							"description": "当入参不传pid的时候返回，表示账号关联的pid"
+						},
+						{
+							"name": "rid",
+							"type": "String",
+							"description": "当入参传入pid的时候返回，表示pid关联的relationId"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "0表示预警，1表示拦截，如果名单中同一个淘客同时有拦截和预警信息，以拦截为准"
+						}
+					],
+					"name": "status_list",
+					"type": "DataMap[]",
+					"description": "x"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "无"
+		}
+	],
+	"name": "taobao.tbk.dg.tpwd.risk.report",
+	"apiChineseName": "淘宝客-推广者-淘口令预警及拦截查询",
+	"description": "淘宝客-推广者-淘口令预警及拦截查询",
+	"id": 59692
+}

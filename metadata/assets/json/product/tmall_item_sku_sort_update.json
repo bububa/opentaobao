@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "text",
+							"type": "String",
+							"description": "属性值文本",
+							"required": true
+						},
+						{
+							"name": "value",
+							"type": "Number",
+							"description": "属性值ID",
+							"required": true
+						}
+					],
+					"name": "sale_prop_value_sorts",
+					"type": "SalePropValueSort[]",
+					"description": "销售属性值集合",
+					"required": true
+				},
+				{
+					"name": "property_value",
+					"type": "String",
+					"description": "属性项名称",
+					"required": true
+				},
+				{
+					"name": "property_id",
+					"type": "Number",
+					"description": "属性项ID",
+					"required": true
+				}
+			],
+			"name": "item_sale_prop_sort",
+			"type": "ItemSalePropSort",
+			"description": "销售属性排序集合",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误码标识"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误信息集合"
+				}
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.item.sku.sort.update",
+	"apiChineseName": "商品销售属性排序更新",
+	"description": "商品销售属性排序更新",
+	"id": 60016
+}

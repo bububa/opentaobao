@@ -1,15 +1,6 @@
 {
-	"id": 27014,
-	"name": "taobao.alitrip.travel.normalvisa.updatepersonstauts",
-	"apiChineseName": "更新签证办理进度",
-	"description": "更新签证办理进度",
 	"requestParams": [
 		{
-			"name": "normal_visa_update_unit_list",
-			"type": "NormalVisaUpdateUnit[]",
-			"description": "更新信息",
-			"required": true,
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "book_time",
@@ -59,7 +50,12 @@
 					"type": "String",
 					"description": "物流公司名称"
 				}
-			]
+			],
+			"name": "normal_visa_update_unit_list",
+			"type": "NormalVisaUpdateUnit[]",
+			"description": "更新信息",
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "biz_order_id",
@@ -70,47 +66,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "结果：包含result更新成功",
 			"subParams": [
 				{
 					"name": "results",
 					"type": "Boolean[]",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果数",
-					"required": true
+					"description": "结果数"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否包含下一个",
-					"required": true
+					"description": "是否包含下一个"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常",
-					"required": true
+					"type": "String",
+					"description": "异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果：包含result更新成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.normalvisa.updatepersonstauts",
+	"apiChineseName": "更新签证办理进度",
+	"description": "更新签证办理进度",
+	"id": 27014
 }

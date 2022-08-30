@@ -1,0 +1,78 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道例如corpId",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_order_operate_common_rq",
+			"type": "BtripFlightCancelOrderRq",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "cancel_time",
+							"type": "Date",
+							"description": "取消时间"
+						},
+						{
+							"name": "fail_code",
+							"type": "String",
+							"description": "失败类型"
+						},
+						{
+							"name": "fail_reason",
+							"type": "String",
+							"description": "失败原因"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightCancelOrderRs",
+					"description": "取消订单响应结果"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "响应代码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "响应结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果状态"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.order.cancel",
+	"apiChineseName": "商旅机票分销-取消订单",
+	"description": "商旅机票分销取消订单",
+	"id": 57584
+}

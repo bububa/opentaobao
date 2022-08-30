@@ -1,73 +1,64 @@
 {
-	"id": 31366,
-	"name": "taobao.singletreasure.activity.name.query",
-	"apiChineseName": "查询官方的活动名称接口",
-	"description": "查询官方的活动名称列表接口",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "请求返回描述信息",
-					"required": true
+					"description": "请求返回描述信息"
 				},
 				{
-					"name": "data_list",
-					"type": "ActivityNameCategoryDto[]",
-					"description": "data结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "text",
 							"type": "String",
-							"description": "活动描述   1:日常活动  2:官方活动",
-							"required": true
+							"description": "活动描述   1:日常活动  2:官方活动"
 						},
 						{
 							"name": "value",
 							"type": "Number",
-							"description": "活动value",
-							"required": true
+							"description": "活动value"
 						},
 						{
-							"name": "list",
-							"type": "ActivityNameInfoDto[]",
-							"description": "名称列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "category",
 									"type": "String",
-									"description": "类目",
-									"required": true
+									"description": "类目"
 								},
 								{
 									"name": "name_list",
 									"type": "String[]",
-									"description": "活动名称的列表",
-									"required": true
+									"description": "活动名称的列表"
 								}
-							]
+							],
+							"name": "list",
+							"type": "ActivityNameInfoDto[]",
+							"description": "名称列表"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "ActivityNameCategoryDto[]",
+					"description": "data结果"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "请求返回码",
-					"required": true
+					"description": "请求返回码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.name.query",
+	"apiChineseName": "查询官方的活动名称接口",
+	"description": "查询官方的活动名称列表接口",
+	"id": 31366
 }

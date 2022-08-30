@@ -1,0 +1,417 @@
+{
+	"requestParams": [
+		{
+			"name": "ship_to_country",
+			"type": "String",
+			"description": "Country"
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "Item ID"
+		},
+		{
+			"name": "target_currency",
+			"type": "String",
+			"description": "Target currency"
+		},
+		{
+			"name": "target_language",
+			"type": "String",
+			"description": "Target language"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "Item ID"
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "ID of the category of the product"
+						},
+						{
+							"name": "subject",
+							"type": "String",
+							"description": "The title of the product"
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "The currency unit of the commodity. U.S. Dollar: USD, Ruble: RUB"
+						},
+						{
+							"name": "product_status_type",
+							"type": "String",
+							"description": "Product status"
+						},
+						{
+							"name": "ws_display",
+							"type": "String",
+							"description": "Reasons for removal of goods"
+						},
+						{
+							"name": "ws_offline_date",
+							"type": "Date",
+							"description": "The date the product was removed from the shelf"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "Commodity creation time"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "Change the time"
+						},
+						{
+							"name": "owner_member_seq_long",
+							"type": "Number",
+							"description": "Seller's master account ID"
+						},
+						{
+							"name": "evaluation_count",
+							"type": "String",
+							"description": "Evaluation number"
+						},
+						{
+							"name": "avg_evaluation_rating",
+							"type": "String",
+							"description": "Average rating stars, 1-5 stars"
+						},
+						{
+							"name": "detail",
+							"type": "String",
+							"description": "Commodity detailed description"
+						},
+						{
+							"name": "mobile_detail",
+							"type": "String",
+							"description": "Mobile detailed description"
+						}
+					],
+					"name": "ae_item_base_info_dto",
+					"type": "AeItemBaseInfoDTO",
+					"description": "Basic commodity information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "SKU ID"
+						},
+						{
+							"name": "sku_stock",
+							"type": "Boolean",
+							"description": "SKU inventory, the data format is true if stock is available, false if no stock is available; at least one sku record is available."
+						},
+						{
+							"name": "sku_price",
+							"type": "String",
+							"description": "SKU price. Value range: 0.01-100000; Unit: USD. Such as: 200.07, which means: 200 US dollars 7 points. Need to be in the correct price range."
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "SKU merchant code. Format: single-byte alphanumeric characters, length 20, excluding spaces greater than and less than signs. If the user only fills in the retail price (productprice) and product code, a complete SKU record needs to be generated and submitted, otherwise the product code cannot be saved. The system will think that only the retail price has been submitted, but there is no SKU, resulting in unsaved product editing."
+						},
+						{
+							"name": "ipm_sku_stock",
+							"type": "Number",
+							"description": "The actual saleable inventory attribute of SKU is ipmSkuStock. The reasonable value range of this attribute value is 0~999999. If the product has SKU, please make sure that at least one SKU is in stock, that is, the value of ipmSkuStock is 1~999999. The range of the inventory value of the entire product latitude is 1~999999. If the skuStock attribute is set at the same time, the system will give priority to the ipmSkuStock attribute; if the ipmSkuStock attribute is not set, the system will set the inventory according to the skuStock attribute, true means 999, false means 0."
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "The currency unit of the product. U.S. Dollar: USD, Ruble: RUB"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_property_id",
+									"type": "Number",
+									"description": "Attribute ID"
+								},
+								{
+									"name": "sku_property_name",
+									"type": "String",
+									"description": "Attribute name"
+								},
+								{
+									"name": "sku_property_value",
+									"type": "String",
+									"description": "Attribute value"
+								},
+								{
+									"name": "property_value_id",
+									"type": "Number",
+									"description": "Custom id"
+								},
+								{
+									"name": "property_value_definition_name",
+									"type": "String",
+									"description": "Custom name"
+								},
+								{
+									"name": "sku_image",
+									"type": "String",
+									"description": "SKU pictures"
+								}
+							],
+							"name": "ae_sku_property_dtos",
+							"type": "AeSkuPropertyDTO[]",
+							"description": "SKU attribute object"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "Commodity barcode"
+						},
+						{
+							"name": "offer_sale_price",
+							"type": "String",
+							"description": "SKU discount price"
+						},
+						{
+							"name": "offer_bulk_sale_price",
+							"type": "String",
+							"description": "SKU bulk discount price"
+						},
+						{
+							"name": "sku_bulk_order",
+							"type": "Number",
+							"description": "Minimum number of batches"
+						},
+						{
+							"name": "sku_available_stock",
+							"type": "Number",
+							"description": "SKU inventory"
+						}
+					],
+					"name": "ae_item_sku_info_dtos",
+					"type": "AeItemSkuInfoDTO[]",
+					"description": "SKU information"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ali_member_id",
+									"type": "Number",
+									"description": "Seller's master account ID"
+								},
+								{
+									"name": "media_id",
+									"type": "Number",
+									"description": "Video ID"
+								},
+								{
+									"name": "media_status",
+									"type": "String",
+									"description": "Video status"
+								},
+								{
+									"name": "media_type",
+									"type": "String",
+									"description": "Type of video"
+								},
+								{
+									"name": "poster_url",
+									"type": "String",
+									"description": "The URL of the video cover image"
+								}
+							],
+							"name": "ae_video_dtos",
+							"type": "AeVideoDTO[]",
+							"description": "Video information"
+						},
+						{
+							"name": "image_urls",
+							"type": "String",
+							"description": "List of main images of the product"
+						}
+					],
+					"name": "ae_multimedia_info_dto",
+					"type": "AeItemSkuInfoDTO",
+					"description": "Multimedia information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "package_length",
+							"type": "Number",
+							"description": "The length of the product"
+						},
+						{
+							"name": "package_height",
+							"type": "Number",
+							"description": "Product height"
+						},
+						{
+							"name": "package_width",
+							"type": "Number",
+							"description": "Product width"
+						},
+						{
+							"name": "gross_weight",
+							"type": "String",
+							"description": "The gross weight of the product"
+						},
+						{
+							"name": "base_unit",
+							"type": "Number",
+							"description": "Number of basic products for custom weighing"
+						},
+						{
+							"name": "package_type",
+							"type": "Boolean",
+							"description": "Type of packaging"
+						},
+						{
+							"name": "product_unit",
+							"type": "Number",
+							"description": "Unit of commodity"
+						}
+					],
+					"name": "package_info_dto",
+					"type": "AeMultimediaInfoDTO",
+					"description": "Package information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "delivery_time",
+							"type": "Number",
+							"description": "Goods lead time"
+						},
+						{
+							"name": "ship_to_country",
+							"type": "String",
+							"description": "Country"
+						}
+					],
+					"name": "logistics_info_dto",
+					"type": "PackageInfoDTO",
+					"description": "Logistics information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "attr_name_id",
+							"type": "Number",
+							"description": "Attribute ID"
+						},
+						{
+							"name": "attr_name",
+							"type": "String",
+							"description": "Attribute name"
+						},
+						{
+							"name": "attr_value_id",
+							"type": "Number",
+							"description": "Attribute ID"
+						},
+						{
+							"name": "attr_value",
+							"type": "String",
+							"description": "Attribute value"
+						},
+						{
+							"name": "attr_value_start",
+							"type": "String",
+							"description": "Interval attribute start value"
+						},
+						{
+							"name": "attr_value_end",
+							"type": "String",
+							"description": "End value of interval attribute"
+						},
+						{
+							"name": "attr_value_unit",
+							"type": "String",
+							"description": "Attribute unit"
+						}
+					],
+					"name": "ae_item_properties",
+					"type": "LogisticsInfoDTO[]",
+					"description": "Attribute information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "Store ID"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "Shop name"
+						},
+						{
+							"name": "item_as_described_rating",
+							"type": "String",
+							"description": "Product description, 1-5 stars"
+						},
+						{
+							"name": "communication_rating",
+							"type": "String",
+							"description": "Seller service, 1-5 stars"
+						},
+						{
+							"name": "shipping_speed_rating",
+							"type": "String",
+							"description": "Logistics, 1-5 stars"
+						}
+					],
+					"name": "ae_store_info",
+					"type": "AeItemProperty",
+					"description": "Store Information"
+				},
+				{
+					"subParams": [
+						{
+							"name": "main_product_id",
+							"type": "Number",
+							"description": "main productId"
+						},
+						{
+							"name": "sub_product_id",
+							"type": "String",
+							"description": "sub productId"
+						}
+					],
+					"name": "product_id_converter_result",
+					"type": "ProductIdConverterResultDTO",
+					"description": "product id converter result"
+				}
+			],
+			"name": "result",
+			"type": "AeItemQueryResultDTO",
+			"description": "Product search results"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "Error message"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "Error code"
+		}
+	],
+	"name": "aliexpress.ds.product.get",
+	"apiChineseName": "商品信息查询",
+	"description": "商品信息查询",
+	"id": 60452
+}

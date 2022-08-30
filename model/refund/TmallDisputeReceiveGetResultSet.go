@@ -4,8 +4,6 @@ package refund
 type TmallDisputeReceiveGetResultSet struct {
 	// results
 	Results []Dispute `json:"results,omitempty" xml:"results>dispute,omitempty"`
-	// 所抛出异常
-	Exception string `json:"exception,omitempty" xml:"exception,omitempty"`
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息

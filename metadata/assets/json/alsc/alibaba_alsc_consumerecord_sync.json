@@ -1,0 +1,577 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_source",
+					"type": "String",
+					"description": "业务方",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "同步请求扩展信息"
+				},
+				{
+					"name": "open_app_key",
+					"type": "String",
+					"description": "加密openId的appKey"
+				},
+				{
+					"name": "open_user_id",
+					"type": "String",
+					"description": "开放平台用户id",
+					"required": true
+				},
+				{
+					"name": "owner_type",
+					"type": "String",
+					"description": "用户账号类型",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "biz_content",
+							"type": "String",
+							"description": "消费记录业务上下文"
+						},
+						{
+							"name": "biz_no",
+							"type": "String",
+							"description": "业务单据号",
+							"required": true
+						},
+						{
+							"name": "biz_no_type",
+							"type": "String",
+							"description": "业务单据类型",
+							"required": true
+						},
+						{
+							"name": "biz_source",
+							"type": "String",
+							"description": "业务方",
+							"required": true
+						},
+						{
+							"name": "biz_status",
+							"type": "String",
+							"description": "消费记录业务状态",
+							"required": true
+						},
+						{
+							"name": "biz_sub_type",
+							"type": "String",
+							"description": "业务子类型"
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "deliver_man",
+									"type": "String",
+									"description": "配送员名称"
+								},
+								{
+									"name": "deliver_time",
+									"type": "Date",
+									"description": "开始配送时间"
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "物流单扩展信息"
+								},
+								{
+									"name": "fee",
+									"type": "Number",
+									"description": "物流费"
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "配送员联系电话"
+								}
+							],
+							"name": "delivery_open_info",
+							"type": "DeliveryOpenInfo",
+							"description": "物流单模型"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "消费记录扩展信息"
+						},
+						{
+							"name": "gmt_biz_create",
+							"type": "Date",
+							"description": "业务创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_biz_modified",
+							"type": "Date",
+							"description": "业务最后修改时间",
+							"required": true
+						},
+						{
+							"name": "opposite_id",
+							"type": "String",
+							"description": "对侧ID"
+						},
+						{
+							"name": "opposite_id_type",
+							"type": "String",
+							"description": "对侧ID类型"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "action_desc",
+											"type": "String",
+											"description": "行动点描述"
+										},
+										{
+											"name": "action_type",
+											"type": "String",
+											"description": "行动点类型"
+										},
+										{
+											"name": "highlight",
+											"type": "Boolean",
+											"description": "文案是否高亮"
+										},
+										{
+											"name": "jump_url",
+											"type": "String",
+											"description": "跳转链接"
+										}
+									],
+									"name": "action_open_infos",
+									"type": "ActionOpenInfo[]",
+									"description": "行动点模型"
+								},
+								{
+									"name": "biz_context",
+									"type": "String",
+									"description": "主单业务上下文"
+								},
+								{
+									"name": "biz_status",
+									"type": "String",
+									"description": "主单业务状态",
+									"required": true
+								},
+								{
+									"name": "biz_status_desc",
+									"type": "String",
+									"description": "主单状态中文描述",
+									"required": true
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "主单扩展信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "总金额"
+										},
+										{
+											"name": "buyer_pay_amt",
+											"type": "Number",
+											"description": "用户实付"
+										},
+										{
+											"name": "merchant_subsidy",
+											"type": "Number",
+											"description": "商户补贴"
+										},
+										{
+											"name": "platform_subsidy",
+											"type": "Number",
+											"description": "平台补贴"
+										}
+									],
+									"name": "fund_open_info",
+									"type": "FundOpenInfo",
+									"description": "主单资金明细"
+								},
+								{
+									"name": "order_channel",
+									"type": "String",
+									"description": "下单渠道",
+									"required": true
+								},
+								{
+									"name": "order_detail_url",
+									"type": "String",
+									"description": "订单详情页跳转链接",
+									"required": true
+								},
+								{
+									"name": "order_sub_channel",
+									"type": "String",
+									"description": "下单子渠道"
+								},
+								{
+									"name": "subject",
+									"type": "String",
+									"description": "订单标题",
+									"required": true
+								}
+							],
+							"name": "order_open_info",
+							"type": "OrderOpenInfo",
+							"description": "主单模型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_context",
+									"type": "String",
+									"description": "支付单业务上下文"
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "支付单扩展信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "总金额"
+										},
+										{
+											"name": "buyer_pay_amt",
+											"type": "Number",
+											"description": "用户实付"
+										},
+										{
+											"name": "merchant_subsidy",
+											"type": "Number",
+											"description": "商户补贴"
+										},
+										{
+											"name": "platform_subsidy",
+											"type": "Number",
+											"description": "平台补贴"
+										}
+									],
+									"name": "fund_open_info",
+									"type": "FundOpenInfo",
+									"description": "支付单资金明细"
+								},
+								{
+									"name": "pay_time",
+									"type": "Date",
+									"description": "支付时间"
+								},
+								{
+									"name": "payer_account_no",
+									"type": "String",
+									"description": "付款者账户号"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "支付状态"
+								},
+								{
+									"name": "trade_no",
+									"type": "String",
+									"description": "交易号"
+								},
+								{
+									"name": "trade_type",
+									"type": "String",
+									"description": "交易类型"
+								}
+							],
+							"name": "payment_open_infos",
+							"type": "PaymentOpenInfo[]",
+							"description": "支付单模型"
+						},
+						{
+							"name": "rate_status",
+							"type": "String",
+							"description": "评价状态"
+						},
+						{
+							"name": "record_type",
+							"type": "String",
+							"description": "消费记录类型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_context",
+									"type": "String",
+									"description": "退款单业务上下文"
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "退款单扩展信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "总金额"
+										},
+										{
+											"name": "buyer_pay_amt",
+											"type": "Number",
+											"description": "用户实付"
+										},
+										{
+											"name": "merchant_subsidy",
+											"type": "Number",
+											"description": "商户补贴"
+										},
+										{
+											"name": "platform_subsidy",
+											"type": "Number",
+											"description": "平台补贴"
+										}
+									],
+									"name": "fund_open_info",
+									"type": "FundOpenInfo",
+									"description": "退款单资金明细"
+								},
+								{
+									"name": "refund_amount",
+									"type": "Number",
+									"description": "退款金额"
+								},
+								{
+									"name": "refund_order_id",
+									"type": "String",
+									"description": "退款单id"
+								},
+								{
+									"name": "refund_real_amount",
+									"type": "Number",
+									"description": "退款实付"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "退款状态"
+								}
+							],
+							"name": "refund_open_infos",
+							"type": "RefundOpenInfo[]",
+							"description": "退款单模型"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "店铺扩展信息"
+								},
+								{
+									"name": "pid",
+									"type": "String",
+									"description": "店铺Pid"
+								},
+								{
+									"name": "shop_id",
+									"type": "String",
+									"description": "店铺ID",
+									"required": true
+								},
+								{
+									"name": "shop_logo_url",
+									"type": "String",
+									"description": "店铺logo图片",
+									"required": true
+								},
+								{
+									"name": "shop_name",
+									"type": "String",
+									"description": "店铺名称",
+									"required": true
+								}
+							],
+							"name": "shop_open_info",
+							"type": "ShopOpenInfo",
+							"description": "店铺模型",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "biz_context",
+									"type": "String",
+									"description": "子单业务上下文"
+								},
+								{
+									"name": "biz_status",
+									"type": "String",
+									"description": "子单业务状态",
+									"required": true
+								},
+								{
+									"name": "biz_status_desc",
+									"type": "String",
+									"description": "子单状态中文描述",
+									"required": true
+								},
+								{
+									"name": "consume_desc",
+									"type": "String",
+									"description": "consumeDesc"
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "子单扩展信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "总金额"
+										},
+										{
+											"name": "buyer_pay_amt",
+											"type": "Number",
+											"description": "用户实付"
+										},
+										{
+											"name": "merchant_subsidy",
+											"type": "Number",
+											"description": "商户补贴"
+										},
+										{
+											"name": "platform_subsidy",
+											"type": "Number",
+											"description": "平台补贴"
+										}
+									],
+									"name": "fund_open_info",
+									"type": "FundOpenInfo",
+									"description": "子单资金明细"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "item_pic_url",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "valid_desc",
+									"type": "String",
+									"description": "子单记录的时间提示"
+								},
+								{
+									"name": "valid_end",
+									"type": "Date",
+									"description": "有效期结束时间"
+								},
+								{
+									"name": "valid_start",
+									"type": "Date",
+									"description": "有效期开始时间"
+								}
+							],
+							"name": "sub_order_open_infos",
+							"type": "SubOrderOpenInfo[]",
+							"description": "子单模型",
+							"required": true
+						},
+						{
+							"name": "visibility",
+							"type": "Boolean",
+							"description": "订单是否可见"
+						}
+					],
+					"name": "record_open_info",
+					"type": "AlscConsumeRecordOpenInfo",
+					"description": "同步消费记录模型",
+					"required": true
+				}
+			],
+			"name": "param_record_open_sync_request",
+			"type": "RecordOpenSyncRequest",
+			"description": "外部订单同步本地生活消费记录请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "result_status",
+					"type": "Number",
+					"description": "结果码"
+				}
+			],
+			"name": "result",
+			"type": "SingleDataResult",
+			"description": "同步返回结果"
+		}
+	],
+	"name": "alibaba.alsc.consumerecord.sync",
+	"apiChineseName": "外域订单同步本地生活消费记录",
+	"description": "外部第三方将本地生活app端下单数据同步到本地生活消费记录中心",
+	"id": 56921
+}

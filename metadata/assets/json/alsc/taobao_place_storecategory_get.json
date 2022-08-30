@@ -1,13 +1,13 @@
 {
-	"id": 41027,
-	"name": "taobao.place.storecategory.get",
-	"apiChineseName": "获取门店类目信息",
-	"description": "获取门店类目信息",
 	"responseParams": [
 		{
 			"name": "category_list",
 			"type": "String",
 			"description": "门店类目格式"
 		}
-	]
+	],
+	"name": "taobao.place.storecategory.get",
+	"apiChineseName": "获取门店类目信息",
+	"description": "获取门店类目信息",
+	"id": 41027
 }

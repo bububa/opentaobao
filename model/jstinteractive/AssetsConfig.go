@@ -20,12 +20,12 @@ type AssetsConfig struct {
 	TaskId string `json:"task_id,omitempty" xml:"task_id,omitempty"`
 	// 任务标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 商品详情页地址或直播间地址
-	Action string `json:"action,omitempty" xml:"action,omitempty"`
 	// 任务浮标标题，浏览商品为【浏览10秒得奖励】，观看直播为【观看30秒得奖励】，暂不支持自定义
 	ShopCompTitle string `json:"shop_comp_title,omitempty" xml:"shop_comp_title,omitempty"`
 	// 任务浏览时长，商品详情页10秒，直播间30秒，暂不支持自定义
 	Duration string `json:"duration,omitempty" xml:"duration,omitempty"`
+	// 商品详情页地址或直播间地址
+	Action string `json:"action,omitempty" xml:"action,omitempty"`
 	// 商品id，必须为授权店铺的商品，配置商品浏览任务时必填
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 直播间id，必须为授权店铺的直播间，配置直播观看任务时必填

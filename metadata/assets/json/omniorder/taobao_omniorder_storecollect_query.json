@@ -1,8 +1,4 @@
 {
-	"id": 29286,
-	"name": "taobao.omniorder.storecollect.query",
-	"apiChineseName": "全渠道门店自提根据核销码查询订单",
-	"description": "全渠道门店自提根据核销码查询订单",
 	"requestParams": [
 		{
 			"name": "code",
@@ -13,37 +9,37 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "0表示码可用，其余值表示码不可用",
-					"required": true
+					"description": "0表示码可用，其余值表示码不可用"
 				},
 				{
-					"name": "data",
-					"type": "StoreCollectQueryOrderResponse",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "main_order_id",
 							"type": "Number",
-							"description": "主订单ID",
-							"required": true
+							"description": "主订单ID"
 						}
-					]
+					],
+					"name": "data",
+					"type": "StoreCollectQueryOrderResponse",
+					"description": "data"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "码状态附加信息，若码可用则此处为空",
-					"required": true
+					"description": "码状态附加信息，若码可用则此处为空"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.storecollect.query",
+	"apiChineseName": "全渠道门店自提根据核销码查询订单",
+	"description": "全渠道门店自提根据核销码查询订单",
+	"id": 29286
 }

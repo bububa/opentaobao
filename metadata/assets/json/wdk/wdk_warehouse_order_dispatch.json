@@ -1,0 +1,206 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ware_house_code",
+					"type": "String",
+					"description": "仓编码",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "shop_code",
+							"type": "String",
+							"description": "门店编码",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "order_no",
+									"type": "String",
+									"description": "订单小号"
+								},
+								{
+									"name": "latest_prepare_time",
+									"type": "String",
+									"description": "最晚拣货完成时间"
+								}
+							],
+							"name": "ext_map",
+							"type": "ExtMap",
+							"description": "额外属性"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "expect_stock_quantity",
+									"type": "String",
+									"description": "库存单位购买库数量"
+								},
+								{
+									"name": "attribute_map",
+									"type": "String",
+									"description": "扩展服务"
+								},
+								{
+									"name": "expect_sale_quantity",
+									"type": "String",
+									"description": "销售单位购买数量"
+								},
+								{
+									"name": "work_unit_content_id",
+									"type": "String",
+									"description": "履约子单号/子订单号"
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "expect_sale_quantity单位"
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "expect_stock_quantity单位"
+								},
+								{
+									"name": "order_sub_code",
+									"type": "String",
+									"description": "子订单号"
+								}
+							],
+							"name": "work_order_unit_contents",
+							"type": "WorkOrderUnitContents[]",
+							"description": "作业子单列表",
+							"required": true
+						},
+						{
+							"name": "work_order_unit_id",
+							"type": "String",
+							"description": "履约单号/订单号",
+							"required": true
+						},
+						{
+							"name": "earliest_arrival_time",
+							"type": "Date",
+							"description": "作业单最早送达时间",
+							"required": true
+						},
+						{
+							"name": "latest_arrive_time",
+							"type": "Date",
+							"description": "作业单最晚送达时间",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "buyer_address",
+									"type": "String",
+									"description": "收货人地址"
+								},
+								{
+									"name": "buyer_phone",
+									"type": "String",
+									"description": "收货人联系电话"
+								},
+								{
+									"name": "buyer_name",
+									"type": "String",
+									"description": "收货人姓名"
+								}
+							],
+							"name": "customer",
+							"type": "Customer",
+							"description": "收货人对象"
+						},
+						{
+							"name": "source_from",
+							"type": "Number",
+							"description": "订单来源",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						}
+					],
+					"name": "work_order_units",
+					"type": "WorkOrderUnits[]",
+					"description": "作业单列表",
+					"required": true
+				},
+				{
+					"name": "earliest_arrival_time",
+					"type": "Date",
+					"description": "作业单最早送达时间",
+					"required": true
+				},
+				{
+					"name": "work_order_name",
+					"type": "String",
+					"description": "任务名称",
+					"required": true
+				},
+				{
+					"name": "latest_arrive_time",
+					"type": "Date",
+					"description": "作业单最晚送达时间",
+					"required": true
+				},
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "任务编码",
+					"required": true
+				}
+			],
+			"name": "work_order",
+			"type": "WorkOrder",
+			"description": "仓作业单",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功"
+				}
+			],
+			"name": "base_result",
+			"type": "BaseResult",
+			"description": "返回包装类"
+		}
+	],
+	"name": "wdk.warehouse.order.dispatch",
+	"apiChineseName": "仓作业下发",
+	"description": "牵牛花仓作业下发接口提供",
+	"id": 56424
+}

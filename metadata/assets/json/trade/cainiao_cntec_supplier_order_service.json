@@ -1,13 +1,6 @@
 {
-	"id": 50557,
-	"name": "cainiao.cntec.supplier.order.service",
-	"apiChineseName": "供货商查询订单数据接口",
-	"description": "提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。\n数据查询的范围只和供货商的身份有关系，比如大润发的用户只能查询大润发的订单，而且会校验身份和颁发的appkey之间的关系，并且目前对接的只有一个供货商",
 	"requestParams": [
 		{
-			"name": "query_conditioin",
-			"type": "SupplierOrderQueryDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "outer_store_id",
@@ -39,240 +32,210 @@
 					"description": "分页参数，页大小",
 					"required": true
 				}
-			]
+			],
+			"name": "query_conditioin",
+			"type": "SupplierOrderQueryDto",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "has_next_page",
 					"type": "Boolean",
-					"description": "是否有下一页",
-					"required": true
+					"description": "是否有下一页"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "分页大小",
-					"required": true
+					"description": "分页大小"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总条数",
-					"required": true
+					"description": "总条数"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "分页游标",
-					"required": true
+					"description": "分页游标"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "order_list",
-					"type": "SupplierOrder[]",
-					"description": "订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_fee",
 							"type": "Number",
-							"description": "退款金额",
-							"required": true
+							"description": "退款金额"
 						},
 						{
 							"name": "outer_store_id",
 							"type": "String",
-							"description": "外部门店ID",
-							"required": true
+							"description": "外部门店ID"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "买家账号",
-							"required": true
+							"description": "买家账号"
 						},
 						{
 							"name": "item_title",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "城市",
-							"required": true
+							"description": "城市"
 						},
 						{
 							"name": "item_total_price",
 							"type": "Number",
-							"description": "商品总价，单位为分",
-							"required": true
+							"description": "商品总价，单位为分"
 						},
 						{
 							"name": "refund_status",
 							"type": "String",
-							"description": "退款状态，有两种状态，已退款和未退款",
-							"required": true
+							"description": "退款状态，有两种状态，已退款和未退款"
 						},
 						{
 							"name": "trade_end_time",
 							"type": "Date",
-							"description": "交易完成时间",
-							"required": true
+							"description": "交易完成时间"
 						},
 						{
 							"name": "buyer_id",
 							"type": "String",
-							"description": "买家ID",
-							"required": true
+							"description": "买家ID"
 						},
 						{
 							"name": "trade_create_time",
 							"type": "Date",
-							"description": "交易创建时间",
-							"required": true
+							"description": "交易创建时间"
 						},
 						{
 							"name": "buy_amount",
 							"type": "Number",
-							"description": "购买数量",
-							"required": true
+							"description": "购买数量"
 						},
 						{
 							"name": "sub_order_id",
 							"type": "String",
-							"description": "子订单ID",
-							"required": true
+							"description": "子订单ID"
 						},
 						{
 							"name": "outer_item_id",
 							"type": "String",
-							"description": "外部商品ID,对RT来说就是货号",
-							"required": true
+							"description": "外部商品ID,对RT来说就是货号"
 						},
 						{
 							"name": "trade_status",
 							"type": "String",
-							"description": "交易状态",
-							"required": true
+							"description": "交易状态"
 						},
 						{
 							"name": "supplier",
 							"type": "String",
-							"description": "供货商身份标识",
-							"required": true
+							"description": "供货商身份标识"
 						},
 						{
 							"name": "refund_end_time",
 							"type": "Date",
-							"description": "退款完成时间",
-							"required": true
+							"description": "退款完成时间"
 						},
 						{
 							"name": "item_price",
 							"type": "Number",
-							"description": "商品价格，单位为分",
-							"required": true
+							"description": "商品价格，单位为分"
 						},
 						{
 							"name": "station_name",
 							"type": "String",
-							"description": "驿站名称",
-							"required": true
+							"description": "驿站名称"
 						},
 						{
 							"name": "store_name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
-						},
-						{
-							"name": "station_id",
-							"type": "Number",
-							"description": "驿站ID",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "main_order_id",
 							"type": "String",
-							"description": "主订单ID",
-							"required": true
+							"description": "主订单ID"
+						},
+						{
+							"name": "station_id",
+							"type": "Number",
+							"description": "驿站ID"
 						},
 						{
 							"name": "activity_start_time",
 							"type": "Date",
-							"description": "营销活动开始时间",
-							"required": true
+							"description": "营销活动开始时间"
 						},
 						{
 							"name": "activity_attributes",
-							"type": "Json",
-							"description": "营销活动扩展属性，可能包含到货时间",
-							"required": true
+							"type": "String",
+							"description": "营销活动扩展属性，可能包含到货时间"
 						},
 						{
 							"name": "activity_type",
 							"type": "String",
-							"description": "营销活动类型",
-							"required": true
+							"description": "营销活动类型"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "营销活动名称",
-							"required": true
+							"description": "营销活动名称"
 						},
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "营销活动id",
-							"required": true
+							"description": "营销活动id"
 						},
 						{
 							"name": "activity_end_time",
 							"type": "Date",
-							"description": "营销活动结束时间",
-							"required": true
+							"description": "营销活动结束时间"
 						},
 						{
 							"name": "actual_total_fee",
 							"type": "Number",
-							"description": "实付金额，单位为分",
-							"required": true
+							"description": "实付金额，单位为分"
 						},
 						{
 							"name": "modified_time",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						}
-					]
+					],
+					"name": "order_list",
+					"type": "SupplierOrder[]",
+					"description": "订单列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "cainiao.cntec.supplier.order.service",
+	"apiChineseName": "供货商查询订单数据接口",
+	"description": "提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。\n数据查询的范围只和供货商的身份有关系，比如大润发的用户只能查询大润发的订单，而且会校验身份和颁发的appkey之间的关系，并且目前对接的只有一个供货商",
+	"id": 50557
 }

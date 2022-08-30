@@ -4,6 +4,8 @@ package cainiaohandover
 type Features struct {
 	// 容器类型(1、托盘;2、大包或盒子3、散装)
 	ContainerType string `json:"container_type,omitempty" xml:"container_type,omitempty"`
+	// 是否预先组大包，true：是。false：否
+	PrePackage string `json:"pre_package,omitempty" xml:"pre_package,omitempty"`
 	// 自送仓资源编码
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
 	// 自送仓资源所对应的schemeCode

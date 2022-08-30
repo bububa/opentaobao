@@ -1,0 +1,180 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_company_brand_id",
+					"type": "String",
+					"description": "外部城市品牌店ID",
+					"required": true
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "公司外部ID",
+					"required": true
+				},
+				{
+					"name": "outer_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称",
+					"required": true
+				},
+				{
+					"name": "company_name_short",
+					"type": "String",
+					"description": "公司简称",
+					"required": true
+				},
+				{
+					"name": "company_license_no",
+					"type": "String",
+					"description": "营业执照编号",
+					"required": true
+				},
+				{
+					"name": "company_legal_person",
+					"type": "String",
+					"description": "企业法定代表人",
+					"required": true
+				},
+				{
+					"name": "company_license_photo",
+					"type": "String",
+					"description": "营业执照图片",
+					"required": true
+				},
+				{
+					"name": "company_license_expire_time",
+					"type": "String",
+					"description": "营业执照有效时间"
+				},
+				{
+					"name": "company_license_status",
+					"type": "Number",
+					"description": "是否长期有效 1-是 0-否"
+				},
+				{
+					"name": "company_logo",
+					"type": "String",
+					"description": "公司logo"
+				},
+				{
+					"name": "company_certificate_no",
+					"type": "String",
+					"description": "备案证明编号"
+				},
+				{
+					"name": "company_certificate_photo",
+					"type": "String",
+					"description": "备案证明图片"
+				},
+				{
+					"name": "contact_man",
+					"type": "String",
+					"description": "联系人",
+					"required": true
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系电话",
+					"required": true
+				},
+				{
+					"name": "gaode_longitude",
+					"type": "String",
+					"description": "高德经度",
+					"required": true
+				},
+				{
+					"name": "gaode_latitude",
+					"type": "String",
+					"description": "高德纬度",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 0 - 否 1 - 是",
+					"required": true
+				},
+				{
+					"name": "is_virtual_company",
+					"type": "Number",
+					"description": "是否虚拟品牌店 1-是 0-否",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "品牌门店描述"
+				},
+				{
+					"name": "tag_codes",
+					"type": "String",
+					"description": "城市品牌店标签"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否为测试标 0-否 1-是"
+				}
+			],
+			"name": "company_brand_city_dto",
+			"type": "CompanyBrandCityDto",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.brandcity.sync",
+	"apiChineseName": "二手房城市品牌店数据同步",
+	"description": "二手房城市品牌店数据同步",
+	"id": 56775
+}

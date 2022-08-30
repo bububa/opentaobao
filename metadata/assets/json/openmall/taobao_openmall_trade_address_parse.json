@@ -1,8 +1,4 @@
 {
-	"id": 52498,
-	"name": "taobao.openmall.trade.address.parse",
-	"apiChineseName": "openmall服务地址区域码解析",
-	"description": "openmall服务，解析地址区域码，获取创建订单等接口中的区域码信息",
 	"requestParams": [
 		{
 			"name": "raw_address",
@@ -19,37 +15,37 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopParseAddressVO",
-			"description": "一组地址解析结构，解析正确率与地址完整度相关",
 			"subParams": [
 				{
-					"name": "entries",
-					"type": "TopParseAddressEntryVO[]",
-					"description": "地址解析结构",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "地区编码",
-							"required": true
+							"description": "地区编码"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "地域名称",
-							"required": true
+							"description": "地域名称"
 						},
 						{
 							"name": "scope",
 							"type": "Number",
-							"description": "地区级别，2代表省、自治区、直辖市、特别行政区；3代表地级市、 地区、盟、自治州；4代表县、区、自治县、旗；5代表乡、镇、街道，openmall中请取第三或者第四级别地域编码传入即可",
-							"required": true
+							"description": "地区级别，2代表省、自治区、直辖市、特别行政区；3代表地级市、 地区、盟、自治州；4代表县、区、自治县、旗；5代表乡、镇、街道，openmall中请取第三或者第四级别地域编码传入即可"
 						}
-					]
+					],
+					"name": "entries",
+					"type": "TopParseAddressEntryVO[]",
+					"description": "地址解析结构"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopParseAddressVO",
+			"description": "一组地址解析结构，解析正确率与地址完整度相关"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.address.parse",
+	"apiChineseName": "openmall服务地址区域码解析",
+	"description": "openmall服务，解析地址区域码，获取创建订单等接口中的区域码信息",
+	"id": 52498
 }

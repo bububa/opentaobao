@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest struct {
 	model.Params
 	// 关键词列表集合,id用半角逗号分割，一次最多20个
-	_bidwordIds []int64
+	_bidwordIds []string
 	// 旺旺名称
 	_nick string
 	// adgroupId
@@ -43,14 +43,14 @@ func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetApiParams() url
 
 // SetBidwordIds is BidwordIds Setter
 // 关键词列表集合,id用半角逗号分割，一次最多20个
-func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) SetBidwordIds(_bidwordIds []string) error {
 	r._bidwordIds = _bidwordIds
 	r.Set("bidword_ids", _bidwordIds)
 	return nil
 }
 
 // GetBidwordIds BidwordIds Getter
-func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetBidwordIds() []int64 {
+func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIRequest) GetBidwordIds() []string {
 	return r._bidwordIds
 }
 

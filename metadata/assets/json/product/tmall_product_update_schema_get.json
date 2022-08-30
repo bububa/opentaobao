@@ -1,8 +1,4 @@
 {
-	"id": 23432,
-	"name": "tmall.product.update.schema.get",
-	"apiChineseName": "产品更新规则获取接口",
-	"description": "获取用户更新产品的规则",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "参数产品ID对产品的更新规则"
 		}
-	]
+	],
+	"name": "tmall.product.update.schema.get",
+	"apiChineseName": "产品更新规则获取接口",
+	"description": "获取用户更新产品的规则",
+	"id": 23432
 }

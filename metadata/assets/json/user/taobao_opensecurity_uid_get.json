@@ -1,8 +1,4 @@
 {
-	"id": 24672,
-	"name": "taobao.opensecurity.uid.get",
-	"apiChineseName": "淘宝open security uid 获取接口",
-	"description": "根据明文 taobao user id 换取 app的 open_uid",
 	"requestParams": [
 		{
 			"name": "tb_user_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "open security tbUserId，淘宝用户对每个Appkey会有唯一的一个open_uid"
 		}
-	]
+	],
+	"name": "taobao.opensecurity.uid.get",
+	"apiChineseName": "淘宝open security uid 获取接口",
+	"description": "根据明文 taobao user id 换取 app的 open_uid",
+	"id": 24672
 }

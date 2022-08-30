@@ -1,8 +1,4 @@
 {
-	"id": 30295,
-	"name": "alibaba.alihealth.pregnancy.taginfo.addrank",
-	"apiChineseName": "点击标签后排序接口",
-	"description": "备孕管理--点击标签后排序接口",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -19,23 +15,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "结果集",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "结果集"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.pregnancy.taginfo.addrank",
+	"apiChineseName": "点击标签后排序接口",
+	"description": "备孕管理--点击标签后排序接口",
+	"id": 30295
 }

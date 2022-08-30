@@ -1,18 +1,8 @@
 {
-	"id": 53384,
-	"name": "alibaba.tmallgenie.scp.plan.saleforcast.pm.month.upload",
-	"apiChineseName": "24-销售月预测数量（产管）回传-月度",
-	"description": "销售月预测数量（产管）回传-月度",
 	"requestParams": [
 		{
-			"name": "sales_forecast_request",
-			"type": "SalesForecastRequest",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "sales_forecast_param_d_t_o_list",
-					"type": "SalesForecastParamDto[]",
-					"description": "入参List",
 					"subParams": [
 						{
 							"name": "extend_json",
@@ -33,6 +23,11 @@
 							"required": true
 						},
 						{
+							"name": "sales_forecast_qty_pm_per_month",
+							"type": "String",
+							"description": "产管提报预测数量-月度"
+						},
+						{
 							"name": "cust_id",
 							"type": "String",
 							"description": "渠道",
@@ -43,20 +38,21 @@
 							"type": "String",
 							"description": "物料号",
 							"required": true
-						},
-						{
-							"name": "sales_forecast_qty_pm_per_month",
-							"type": "String",
-							"description": "产管提报预测数量-月度"
 						}
-					]
+					],
+					"name": "sales_forecast_param_d_t_o_list",
+					"type": "SalesForecastParamDto[]",
+					"description": "入参List"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "sales_forecast_request",
+			"type": "SalesForecastRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -75,5 +71,9 @@
 			"type": "String",
 			"description": "返回码"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.saleforcast.pm.month.upload",
+	"apiChineseName": "24-销售月预测数量（产管）回传-月度",
+	"description": "销售月预测数量（产管）回传-月度",
+	"id": 53384
 }

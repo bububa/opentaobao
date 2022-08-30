@@ -1,8 +1,4 @@
 {
-	"id": 57,
-	"name": "taobao.traderate.list.add",
-	"apiChineseName": "针对父子订单新增批量评价",
-	"description": "针对父子订单新增批量评价(\u003cfont color=\"red\"\u003e注：在评价之前需要对订单成功的时间进行判定（end_time）,如果超过15天，不用再通过该接口进行评价\u003c/font\u003e)",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -35,19 +31,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade_rate",
-			"type": "TradeRateRequest",
-			"description": "返回的评论的信息，仅返回tid和created字段",
 			"subParams": [
 				{
-					"name": "created",
-					"type": "Date"
+					"name": "tid",
+					"type": "Number",
+					"description": "交易ID"
 				},
 				{
-					"name": "tid",
-					"type": "Number"
+					"name": "created",
+					"type": "Date",
+					"description": "评价创建时间,格式:yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "trade_rate",
+			"type": "TradeRateRequest",
+			"description": "返回的评论的信息，仅返回tid和created字段"
 		}
-	]
+	],
+	"name": "taobao.traderate.list.add",
+	"apiChineseName": "针对父子订单新增批量评价",
+	"description": "针对父子订单新增批量评价(\u003cfont color=\"red\"\u003e注：在评价之前需要对订单成功的时间进行判定（end_time）,如果超过15天，不用再通过该接口进行评价\u003c/font\u003e)",
+	"id": 57
 }

@@ -12,8 +12,6 @@ import (
 // tmax接收丰巢快递通知
 type TmallFcboxNotifyAPIRequest struct {
 	model.Params
-	// 申请接口返回的申请标识
-	_applyId string
 	// 状态备注
 	_stateRemark string
 	// 申请记录当前状态
@@ -22,6 +20,8 @@ type TmallFcboxNotifyAPIRequest struct {
 	_operateTime string
 	// 变更操作
 	_operate string
+	// 申请接口返回的申请标识
+	_applyId string
 }
 
 // NewTmallFcboxNotifyRequest 初始化TmallFcboxNotifyAPIRequest对象
@@ -43,19 +43,6 @@ func (r TmallFcboxNotifyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
-}
-
-// SetApplyId is ApplyId Setter
-// 申请接口返回的申请标识
-func (r *TmallFcboxNotifyAPIRequest) SetApplyId(_applyId string) error {
-	r._applyId = _applyId
-	r.Set("apply_id", _applyId)
-	return nil
-}
-
-// GetApplyId ApplyId Getter
-func (r TmallFcboxNotifyAPIRequest) GetApplyId() string {
-	return r._applyId
 }
 
 // SetStateRemark is StateRemark Setter
@@ -108,4 +95,17 @@ func (r *TmallFcboxNotifyAPIRequest) SetOperate(_operate string) error {
 // GetOperate Operate Getter
 func (r TmallFcboxNotifyAPIRequest) GetOperate() string {
 	return r._operate
+}
+
+// SetApplyId is ApplyId Setter
+// 申请接口返回的申请标识
+func (r *TmallFcboxNotifyAPIRequest) SetApplyId(_applyId string) error {
+	r._applyId = _applyId
+	r.Set("apply_id", _applyId)
+	return nil
+}
+
+// GetApplyId ApplyId Getter
+func (r TmallFcboxNotifyAPIRequest) GetApplyId() string {
+	return r._applyId
 }

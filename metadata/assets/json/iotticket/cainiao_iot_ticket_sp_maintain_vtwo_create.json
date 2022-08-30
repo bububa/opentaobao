@@ -1,20 +1,8 @@
 {
-	"id": 55877,
-	"name": "cainiao.iot.ticket.sp.maintain.vtwo.create",
-	"apiChineseName": "服务商制定维修费方案",
-	"description": "服务商制定维修费方案",
 	"requestParams": [
 		{
-			"name": "make_maintain_plan_top_request",
-			"type": "MakeMaintainPlanV2TopRequest",
-			"description": "维修方案",
-			"required": true,
 			"subParams": [
 				{
-					"name": "iot_maintain_plan_item_list",
-					"type": "IotMaintainPlanItemTopRequest[]",
-					"description": "维修项",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_code",
@@ -26,7 +14,11 @@
 							"type": "String",
 							"description": "付款角色：merchant-商家记账；customer-客户支付"
 						}
-					]
+					],
+					"name": "iot_maintain_plan_item_list",
+					"type": "IotMaintainPlanItemTopRequest[]",
+					"description": "维修项",
+					"required": true
 				},
 				{
 					"name": "problem_type_list",
@@ -60,6 +52,7 @@
 				},
 				{
 					"name": "feature",
+					"type": "String",
 					"description": "扩展属性"
 				},
 				{
@@ -97,34 +90,39 @@
 					"type": "Number",
 					"description": "工单Id"
 				}
-			]
+			],
+			"name": "make_maintain_plan_top_request",
+			"type": "MakeMaintainPlanV2TopRequest",
+			"description": "维修方案",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "异常描述",
-					"required": true
+					"description": "异常描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.sp.maintain.vtwo.create",
+	"apiChineseName": "服务商制定维修费方案",
+	"description": "服务商制定维修费方案",
+	"id": 55877
 }

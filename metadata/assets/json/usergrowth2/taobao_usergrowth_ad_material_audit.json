@@ -1,0 +1,108 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "淘宝频道",
+			"required": true
+		},
+		{
+			"name": "scenario_type",
+			"type": "Number",
+			"description": "标的类型",
+			"required": true
+		},
+		{
+			"name": "outer_creative_id",
+			"type": "String",
+			"description": "创意id",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "长文案"
+		},
+		{
+			"name": "img_url",
+			"type": "String",
+			"description": "图片url"
+		},
+		{
+			"name": "h5_url",
+			"type": "String",
+			"description": "H5落地页链接"
+		},
+		{
+			"name": "ad_type",
+			"type": "Number",
+			"description": "广告类型",
+			"required": true
+		},
+		{
+			"name": "video_url",
+			"type": "String",
+			"description": "视频url"
+		},
+		{
+			"name": "sub_title",
+			"type": "String",
+			"description": "短文案"
+		},
+		{
+			"name": "creative_type",
+			"type": "Number",
+			"description": "创意类型",
+			"required": true
+		},
+		{
+			"name": "dp_url",
+			"type": "String",
+			"description": "dp链接"
+		},
+		{
+			"name": "app_id",
+			"type": "Number",
+			"description": "应用id",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "Number",
+			"description": "参数错误"
+		},
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "新增创意id"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		}
+	],
+	"name": "taobao.usergrowth.ad.material.audit",
+	"apiChineseName": "素材审核",
+	"description": "素材审核",
+	"id": 60596
+}

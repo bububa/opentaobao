@@ -1,13 +1,10 @@
 {
-	"id": 21698,
-	"name": "taobao.subuser.info.update",
-	"apiChineseName": "修改指定账户子账号的基本信息",
-	"description": "修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）",
 	"requestParams": [
 		{
-			"name": "is_disable_subaccount",
-			"type": "Boolean",
-			"description": "是否停用子账号 true:表示停用该子账号false:表示开启该子账号"
+			"name": "sub_id",
+			"type": "Number",
+			"description": "子账号ID",
+			"required": true
 		},
 		{
 			"name": "is_dispatch",
@@ -15,10 +12,9 @@
 			"description": "子账号是否参与分流 true:参与分流 false:不参与分流"
 		},
 		{
-			"name": "sub_id",
-			"type": "Number",
-			"description": "子账号ID",
-			"required": true
+			"name": "is_disable_subaccount",
+			"type": "Boolean",
+			"description": "是否停用子账号 true:表示停用该子账号false:表示开启该子账号"
 		}
 	],
 	"responseParams": [
@@ -27,5 +23,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功 true:操作成功; false:操作失败"
 		}
-	]
+	],
+	"name": "taobao.subuser.info.update",
+	"apiChineseName": "修改指定账户子账号的基本信息",
+	"description": "修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）",
+	"id": 21698
 }

@@ -1,0 +1,231 @@
+{
+	"requestParams": [
+		{
+			"name": "community_outer_id",
+			"type": "String",
+			"description": "1",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "200"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true"
+				},
+				{
+					"subParams": [
+						{
+							"name": "community_outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "business_type",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "scene",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "e_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "is_test",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "outer_company_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_agent_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "merchant_open_id",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "house_category",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "outer_house_base_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_layouts_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "house_model",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "rent_price",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "show_price",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "inside_area",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "building_area",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "room",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "hall",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "toilet",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "kitchen",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "balcony",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "new_item_id",
+							"type": "Number",
+							"description": "IC商品id"
+						},
+						{
+							"name": "entrust_status",
+							"type": "Number",
+							"description": "委托状态"
+						},
+						{
+							"name": "agreement_id",
+							"type": "Number",
+							"description": "模版id"
+						},
+						{
+							"name": "landlord_type",
+							"type": "Number",
+							"description": "寄租-房源房东类型 交易类型不为空，房源房东类型 1、企业B房东 2、自然人主体"
+						},
+						{
+							"name": "natural_merchant_open_id",
+							"type": "Number",
+							"description": "房东自然人主体id"
+						},
+						{
+							"name": "collection_type",
+							"type": "Number",
+							"description": "收款模式1-直收    2-代收"
+						},
+						{
+							"name": "instead_merchant_open_id",
+							"type": "Number",
+							"description": "代收主体id 当收款模式为代收是必填"
+						},
+						{
+							"name": "sign_type",
+							"type": "Number",
+							"description": "1-静默 2-授权代理人"
+						},
+						{
+							"name": "enterprise_merchant_open_id",
+							"type": "Number",
+							"description": "寄租模式下-企业B房东主体ID"
+						},
+						{
+							"name": "signing_merchant_open_id",
+							"type": "Number",
+							"description": "授权的主体ID  说明： 当签约类型是授权代理人时，授权代理人ID需要必填"
+						}
+					],
+					"name": "data",
+					"type": "SyncHouseBaseInfoDTO",
+					"description": "返回实体类"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回实体类"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.query.house.base.info",
+	"apiChineseName": "查询房源基本信息",
+	"description": "查询房源基本信息",
+	"id": 62959
+}

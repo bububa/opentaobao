@@ -10,7 +10,7 @@ type Lines struct {
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 商品未含税总价
 	OrderTaxExcludedAmount string `json:"order_tax_excluded_amount,omitempty" xml:"order_tax_excluded_amount,omitempty"`
-	// 商品运费总价
+	// 运费未含税总价
 	DeliveryAmount string `json:"delivery_amount,omitempty" xml:"delivery_amount,omitempty"`
 	// 商品税金总价
 	OrderTaxAmount string `json:"order_tax_amount,omitempty" xml:"order_tax_amount,omitempty"`

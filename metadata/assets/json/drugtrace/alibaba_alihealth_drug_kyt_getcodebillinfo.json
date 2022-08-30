@@ -1,8 +1,4 @@
 {
-	"id": 41217,
-	"name": "alibaba.alihealth.drug.kyt.getcodebillinfo",
-	"apiChineseName": "根据码获取基本和单据信息",
-	"description": "根据码信息获取基本信息和单据信息",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -19,627 +15,530 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "CodeFullInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "package_level",
 							"type": "Number",
-							"description": "包装层级",
-							"required": true
+							"description": "包装层级"
 						},
 						{
-							"name": "code_status_type_d_t_o",
-							"type": "CodeStatusTypeDto",
-							"description": "码状态",
-							"required": true,
 							"subParams": [
 								{
 									"name": "curr_ent_str",
 									"type": "String",
-									"description": "追溯码是否在本企业",
-									"required": true
+									"description": "追溯码是否在本企业"
 								},
 								{
 									"name": "verification_type_str",
 									"type": "String",
-									"description": "追溯码状态描述",
-									"required": true
+									"description": "追溯码状态描述"
 								},
 								{
 									"name": "verification_type",
 									"type": "String",
-									"description": "追溯码状态",
-									"required": true
+									"description": "追溯码状态"
 								}
-							]
+							],
+							"name": "code_status_type_d_t_o",
+							"type": "CodeStatusTypeDto",
+							"description": "码状态"
 						},
 						{
-							"name": "bill_in_out_d_t_o_s",
-							"type": "BillInOutDto[]",
-							"description": "追溯码流向信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "bill_type_str",
 									"type": "String",
-									"description": "单据类型描述",
-									"required": true
+									"description": "单据类型描述"
 								},
 								{
 									"name": "etl_time",
 									"type": "String",
-									"description": "送达日期",
-									"required": true
+									"description": "送达日期"
 								},
 								{
 									"name": "order_is_matched",
 									"type": "String",
-									"description": "是否匹配",
-									"required": true
+									"description": "是否匹配"
 								},
 								{
 									"name": "upload_file_name",
 									"type": "String",
-									"description": "单据文件名",
-									"required": true
+									"description": "单据文件名"
 								},
 								{
 									"name": "agent_user_name",
 									"type": "String",
-									"description": "代理物流企业",
-									"required": true
+									"description": "代理物流企业"
 								},
 								{
 									"name": "agent_ref_user_id",
 									"type": "String",
-									"description": "代理物流企业ID",
-									"required": true
+									"description": "代理物流企业ID"
 								},
 								{
 									"name": "to_user_name",
 									"type": "String",
-									"description": "收货企业",
-									"required": true
+									"description": "收货企业"
 								},
 								{
 									"name": "to_user_id",
 									"type": "String",
-									"description": "收货企业ID",
-									"required": true
+									"description": "收货企业ID"
 								},
 								{
 									"name": "from_user_name",
 									"type": "String",
-									"description": "发货企业",
-									"required": true
+									"description": "发货企业"
 								},
 								{
 									"name": "from_user_id",
 									"type": "String",
-									"description": "发货企业ID",
-									"required": true
+									"description": "发货企业ID"
 								},
 								{
 									"name": "ref_user_id",
 									"type": "String",
-									"description": "货主",
-									"required": true
+									"description": "货主"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品标识",
-									"required": true
+									"description": "药品标识"
 								},
 								{
 									"name": "process_date",
 									"type": "Date",
-									"description": "单据处理日期",
-									"required": true
+									"description": "单据处理日期"
 								},
 								{
 									"name": "crt_date",
 									"type": "Date",
-									"description": "单所处理完成时间",
-									"required": true
+									"description": "单所处理完成时间"
 								},
 								{
 									"name": "bill_time",
 									"type": "Date",
-									"description": "单据时间",
-									"required": true
+									"description": "单据时间"
 								},
 								{
 									"name": "produce_date",
 									"type": "Date",
-									"description": "生产日期",
-									"required": true
+									"description": "生产日期"
 								},
 								{
 									"name": "exprie_date",
 									"type": "String",
-									"description": "有效期",
-									"required": true
+									"description": "有效期"
 								},
 								{
 									"name": "remnant_count",
 									"type": "String",
-									"description": "制剂数量",
-									"required": true
+									"description": "制剂数量"
 								},
 								{
 									"name": "code_count",
 									"type": "String",
-									"description": "码数量",
-									"required": true
+									"description": "码数量"
 								},
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "produceBatchNo",
-									"required": true
+									"description": "produceBatchNo"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据号",
-									"required": true
+									"description": "单据号"
 								},
 								{
 									"name": "old_bill_id",
 									"type": "String",
-									"description": "旧单据id",
-									"required": true
+									"description": "旧单据id"
 								},
 								{
 									"name": "bill_type",
 									"type": "String",
-									"description": "billType",
-									"required": true
+									"description": "billType"
 								},
 								{
 									"name": "bill_id",
 									"type": "String",
-									"description": "单据id",
-									"required": true
+									"description": "单据id"
 								}
-							]
+							],
+							"name": "bill_in_out_d_t_o_s",
+							"type": "BillInOutDto[]",
+							"description": "追溯码流向信息"
 						},
 						{
-							"name": "code_produce_info_d_t_o",
-							"type": "CodeProduceInfoDto",
-							"description": "生产信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "prod_seq_no",
 									"type": "String",
-									"description": "产品序列码",
-									"required": true
+									"description": "产品序列码"
 								},
 								{
 									"name": "product_ref_ent_id",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "product_ent_id",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "product_ent_name",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "prepn_unit_desc",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "prepn_unit",
 									"type": "Number",
-									"description": "制剂单位类型(详见码表)",
-									"required": true
+									"description": "制剂单位类型(详见码表)"
 								},
 								{
 									"name": "pkg_num",
 									"type": "Number",
-									"description": "最小制剂数量，单个",
-									"required": true
+									"description": "最小制剂数量，单个"
 								},
 								{
 									"name": "small_measure_num",
 									"type": "Number",
-									"description": "最小制剂数量的总数",
-									"required": true
+									"description": "最小制剂数量的总数"
 								},
 								{
 									"name": "small_pkg_num",
 									"type": "Number",
-									"description": "该生产信息对应的最小包装数量",
-									"required": true
+									"description": "该生产信息对应的最小包装数量"
 								},
 								{
 									"name": "physic_info",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "pkg_spec",
 									"type": "String",
-									"description": "暂无",
-									"required": true
+									"description": "暂无"
 								},
 								{
 									"name": "physic_type",
 									"type": "String",
-									"description": "药品类型",
-									"required": true
+									"description": "药品类型"
 								},
 								{
 									"name": "produce_ent_name",
 									"type": "String",
-									"description": "当前企业id",
-									"required": true
+									"description": "当前企业id"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "生产企业id",
-									"required": true
+									"description": "生产企业id"
 								},
 								{
 									"name": "licence_no",
 									"type": "String",
-									"description": "进口许可证",
-									"required": true
+									"description": "进口许可证"
 								},
 								{
 									"name": "pkg_ratio",
 									"type": "String",
-									"description": "包装比例",
-									"required": true
+									"description": "包装比例"
 								},
 								{
 									"name": "agent_ent_id",
 									"type": "String",
-									"description": "代理企业id",
-									"required": true
+									"description": "代理企业id"
 								},
 								{
 									"name": "pack_ent_id",
 									"type": "String",
-									"description": "包装企业id",
-									"required": true
+									"description": "包装企业id"
 								},
 								{
 									"name": "produce_ent_id",
 									"type": "String",
-									"description": "生产企业id",
-									"required": true
+									"description": "生产企业id"
 								},
 								{
 									"name": "approval_no",
 									"type": "String",
-									"description": "授权批号",
-									"required": true
+									"description": "授权批号"
 								},
 								{
 									"name": "authrizer_ent_id",
 									"type": "String",
-									"description": "授权企业id",
-									"required": true
+									"description": "授权企业id"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品商品基本信息标识",
-									"required": true
+									"description": "药品商品基本信息标识"
 								},
 								{
 									"name": "curr_ent_id",
 									"type": "String",
-									"description": "当前企业id",
-									"required": true
+									"description": "当前企业id"
 								},
 								{
 									"name": "exprie_date",
 									"type": "String",
-									"description": "有效期至",
-									"required": true
+									"description": "有效期至"
 								},
 								{
 									"name": "produce_date",
 									"type": "Date",
-									"description": "生产日期",
-									"required": true
+									"description": "生产日期"
 								},
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "生产批次号",
-									"required": true
+									"description": "生产批次号"
 								},
 								{
 									"name": "produce_info_id",
 									"type": "String",
-									"description": "生产信息标识",
-									"required": true
+									"description": "生产信息标识"
 								}
-							]
+							],
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDto",
+							"description": "生产信息"
 						},
 						{
-							"name": "drug_ent_base_d_t_o",
-							"type": "DrugEntBaseDto",
-							"description": "药品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "prepn_spec",
 									"type": "String",
-									"description": "制剂规格",
-									"required": true
+									"description": "制剂规格"
 								},
 								{
 									"name": "prepn_type_desc",
 									"type": "String",
-									"description": "剂型描述",
-									"required": true
+									"description": "剂型描述"
 								},
 								{
 									"name": "prepn_type",
 									"type": "Number",
-									"description": "剂型(制剂类型)(详见码表)",
-									"required": true
+									"description": "剂型(制剂类型)(详见码表)"
 								},
 								{
 									"name": "physic_name",
 									"type": "String",
-									"description": "剂型描述",
-									"required": true
+									"description": "剂型描述"
 								},
 								{
 									"name": "physic_nat_code",
 									"type": "Number",
-									"description": "申请码标识:1未申请,2已申请",
-									"required": true
+									"description": "申请码标识:1未申请,2已申请"
 								},
 								{
 									"name": "prod_code",
 									"type": "String",
-									"description": "药品子类编码",
-									"required": true
+									"description": "药品子类编码"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "状态 1正常,0停用",
-									"required": true
+									"description": "状态 1正常,0停用"
 								},
 								{
 									"name": "exprie_unit",
 									"type": "String",
-									"description": "有效期单位(详见码表) 1:日，2：月，3：年",
-									"required": true
+									"description": "有效期单位(详见码表) 1:日，2：月，3：年"
 								},
 								{
 									"name": "exprie_life",
 									"type": "Number",
-									"description": "药品有效期数(月/年)",
-									"required": true
+									"description": "药品有效期数(月/年)"
 								},
 								{
 									"name": "ann_code_amt",
 									"type": "Number",
-									"description": "年赋码量",
-									"required": true
+									"description": "年赋码量"
 								},
 								{
 									"name": "approval_licence_expiry",
 									"type": "Date",
-									"description": "批准文号有效期至",
-									"required": true
+									"description": "批准文号有效期至"
 								},
 								{
 									"name": "approval_licence_date",
 									"type": "Date",
-									"description": "批准文号发放日期",
-									"required": true
+									"description": "批准文号发放日期"
 								},
 								{
 									"name": "approval_licence_type",
 									"type": "Number",
-									"description": "批准文号类型",
-									"required": true
+									"description": "批准文号类型"
 								},
 								{
 									"name": "approval_licence_no",
 									"type": "String",
-									"description": "批准文号",
-									"required": true
+									"description": "批准文号"
 								},
 								{
 									"name": "drug_approval_info_id",
 									"type": "String",
-									"description": "药品批准文号ID(药品目录)",
-									"required": true
+									"description": "药品批准文号ID(药品目录)"
 								},
 								{
 									"name": "drug_base_info_id",
 									"type": "String",
-									"description": "药品基本信息ID",
-									"required": true
+									"description": "药品基本信息ID"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业唯一标识",
-									"required": true
+									"description": "企业唯一标识"
 								},
 								{
 									"name": "drug_ent_base_id",
 									"type": "String",
-									"description": "企业药品ID",
-									"required": true
+									"description": "企业药品ID"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品ID",
-									"required": true
+									"description": "药品ID"
 								},
 								{
 									"name": "physic_type",
 									"type": "Number",
-									"description": "药品类型(详见码表) 1：特殊药品原料药，2：特殊药品制剂，3：普通药品，9：未分类",
-									"required": true
+									"description": "药品类型(详见码表) 1：特殊药品原料药，2：特殊药品制剂，3：普通药品，9：未分类"
 								},
 								{
 									"name": "physic_type_desc",
 									"type": "String",
-									"description": "药品类型描叙（普通药品）",
-									"required": true
+									"description": "药品类型描叙（普通药品）"
 								},
 								{
 									"name": "physic_detail_type",
 									"type": "Number",
-									"description": "药品详细类型",
-									"required": true
+									"description": "药品详细类型"
 								},
 								{
 									"name": "prepn_unit",
 									"type": "Number",
-									"description": "制剂单位类型(详见码表)",
-									"required": true
+									"description": "制剂单位类型(详见码表)"
 								},
 								{
 									"name": "prepn_unit_desc",
 									"type": "String",
-									"description": "制剂单位类型描述",
-									"required": true
+									"description": "制剂单位类型描述"
 								},
 								{
 									"name": "code_active_product_flag_str",
 									"type": "String",
-									"description": "是否混批",
-									"required": true
+									"description": "是否混批"
 								},
 								{
 									"name": "sdc_code",
 									"type": "String",
-									"description": "本位码",
-									"required": true
+									"description": "本位码"
 								},
 								{
 									"name": "ent_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "mod_date",
 									"type": "Date",
-									"description": "修改时间(为企业提供数据)",
-									"required": true
+									"description": "修改时间(为企业提供数据)"
 								},
 								{
 									"name": "crt_date",
 									"type": "Date",
-									"description": "创建时间(为企业提供数据)",
-									"required": true
+									"description": "创建时间(为企业提供数据)"
 								},
 								{
 									"name": "authorizer_flag",
 									"type": "String",
-									"description": "是否授权0未授权,1已授权",
-									"required": true
+									"description": "是否授权0未授权,1已授权"
 								},
 								{
 									"name": "mod_ic_code",
 									"type": "String",
-									"description": "修改操作证书号",
-									"required": true
+									"description": "修改操作证书号"
 								},
 								{
 									"name": "physic_info",
 									"type": "String",
-									"description": "药品信息",
-									"required": true
+									"description": "药品信息"
 								},
 								{
 									"name": "ean13_code",
 									"type": "String",
-									"description": "商品条码13位的69码",
-									"required": true
+									"description": "商品条码13位的69码"
 								},
 								{
 									"name": "prod_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "pkg_spec_crit",
 									"type": "String",
-									"description": "包装规格常规",
-									"required": true
+									"description": "包装规格常规"
 								},
 								{
 									"name": "pkg_spec",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "pkg_num",
 									"type": "Number",
-									"description": "包装数量",
-									"required": true
+									"description": "包装数量"
 								},
 								{
 									"name": "pkg_unit",
 									"type": "Number",
-									"description": "包装单位(详见码表)",
-									"required": true
+									"description": "包装单位(详见码表)"
 								}
-							]
+							],
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDto",
+							"description": "药品信息"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CodeFullInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "调用成功",
-					"required": true
+					"description": "调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.getcodebillinfo",
+	"apiChineseName": "根据码获取基本和单据信息",
+	"description": "根据码信息获取基本信息和单据信息",
+	"id": 41217
 }

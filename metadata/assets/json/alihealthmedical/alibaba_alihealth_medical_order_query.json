@@ -1,14 +1,6 @@
 {
-	"id": 51275,
-	"name": "alibaba.alihealth.medical.order.query",
-	"apiChineseName": "三方机构查询订单详情接口",
-	"description": "查询订单详情，包括评价",
 	"requestParams": [
 		{
-			"name": "request_info",
-			"type": "OrderQueryRequestDTO",
-			"description": "请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -22,290 +14,253 @@
 					"description": "互联网医院编码",
 					"required": true
 				}
-			]
+			],
+			"name": "request_info",
+			"type": "OrderQueryRequestDTO",
+			"description": "请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OrderDetailDTO",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_type",
 							"type": "String",
-							"description": "商品类型",
-							"required": true
+							"description": "商品类型"
 						},
 						{
 							"name": "close_account_time",
 							"type": "String",
-							"description": "结算日期，格式必须为：20200711",
-							"required": true
+							"description": "结算日期，格式必须为：20200711"
 						},
 						{
 							"name": "label_names",
 							"type": "String",
-							"description": "短评标签名字, 使用英文逗号分隔",
-							"required": true
+							"description": "短评标签名字, 使用英文逗号分隔"
 						},
 						{
 							"name": "diagnosing_time",
 							"type": "Date",
-							"description": "订单接诊时间",
-							"required": true
+							"description": "订单接诊时间"
 						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "patient_id",
 							"type": "String",
-							"description": "就诊人UUID，最长64个字符",
-							"required": true
+							"description": "就诊人UUID，最长64个字符"
 						},
 						{
 							"name": "order_create_time",
 							"type": "Date",
-							"description": "订单下单时间",
-							"required": true
+							"description": "订单下单时间"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态：WAIT_DIAGNOSE，  DIAGNOSING，  REFUNDED，  DIAGNOSED，  THIRD_SELLER_PAID",
-							"required": true
+							"description": "订单状态：WAIT_DIAGNOSE，  DIAGNOSING，  REFUNDED，  DIAGNOSED，  THIRD_SELLER_PAID"
 						},
 						{
-							"name": "medical_info",
-							"type": "MedicalInfoDTO",
-							"description": "就诊人信息串",
-							"required": true,
 							"subParams": [
 								{
 									"name": "past_history_details",
 									"type": "String[]",
-									"description": "既往史详情",
-									"required": true
+									"description": "既往史详情"
 								},
 								{
 									"name": "city",
 									"type": "String",
-									"description": "城市",
-									"required": true
+									"description": "城市"
 								},
 								{
 									"name": "disease_pictures",
 									"type": "String[]",
-									"description": "疾病照片、检查单",
-									"required": true
+									"description": "疾病照片、检查单"
 								},
 								{
 									"name": "allergies_details",
 									"type": "String[]",
-									"description": "过敏史详情",
-									"required": true
+									"description": "过敏史详情"
 								},
 								{
 									"name": "chief_complaint",
 									"type": "String",
-									"description": "主诉",
-									"required": true
+									"description": "主诉"
 								},
 								{
 									"name": "abnormal_liver_function_detail",
 									"type": "String",
-									"description": "肝功能异常详情",
-									"required": true
+									"description": "肝功能异常详情"
 								},
 								{
 									"name": "abnormal_renal_function_detail",
 									"type": "String",
-									"description": "肾功能异常详情",
-									"required": true
+									"description": "肾功能异常详情"
 								},
 								{
 									"name": "has_allergies_history",
 									"type": "Boolean",
-									"description": "是否有过敏史",
-									"required": true
+									"description": "是否有过敏史"
 								},
 								{
 									"name": "is_pregnant",
 									"type": "Boolean",
-									"description": "是否（备孕/妊娠/哺乳期）",
-									"required": true
+									"description": "是否（备孕/妊娠/哺乳期）"
 								},
 								{
 									"name": "present_illness_history",
 									"type": "String",
-									"description": "现病史",
-									"required": true
+									"description": "现病史"
 								},
 								{
 									"name": "family_history_details",
 									"type": "String[]",
-									"description": "家族史详情",
-									"required": true
+									"description": "家族史详情"
 								},
 								{
 									"name": "past_history_description",
 									"type": "String",
-									"description": "既往史描述",
-									"required": true
+									"description": "既往史描述"
 								},
 								{
 									"name": "sex",
 									"type": "String",
-									"description": "性别",
-									"required": true
+									"description": "性别"
 								},
 								{
 									"name": "is_liver_function_abnormal",
 									"type": "Boolean",
-									"description": "是否肝功能异常",
-									"required": true
+									"description": "是否肝功能异常"
 								},
 								{
 									"name": "expected_confinement_date",
 									"type": "String",
-									"description": "预产期，如果妊娠则需要填写预产期",
-									"required": true
+									"description": "预产期，如果妊娠则需要填写预产期"
 								},
 								{
 									"name": "family_history_description",
 									"type": "String",
-									"description": "家族史描述",
-									"required": true
+									"description": "家族史描述"
 								},
 								{
 									"name": "allergies_description",
 									"type": "String",
-									"description": "过敏史描述",
-									"required": true
+									"description": "过敏史描述"
 								},
 								{
 									"name": "is_renal_function_abnormal",
 									"type": "Boolean",
-									"description": "是否肾功能异常",
-									"required": true
+									"description": "是否肾功能异常"
 								},
 								{
 									"name": "diagnosed_diseases",
 									"type": "String[]",
-									"description": "已确诊的疾病",
-									"required": true
+									"description": "已确诊的疾病"
 								},
 								{
 									"name": "pregnant_type",
 									"type": "String",
-									"description": "备孕/妊娠/哺乳",
-									"required": true
+									"description": "备孕/妊娠/哺乳"
 								},
 								{
 									"name": "has_family_history",
 									"type": "Boolean",
-									"description": "是否有家族史",
-									"required": true
+									"description": "是否有家族史"
 								},
 								{
 									"name": "age",
 									"type": "String",
-									"description": "月龄，单位为“个月”",
-									"required": true
+									"description": "月龄，单位为“个月”"
 								},
 								{
 									"name": "has_past_history",
 									"type": "Boolean",
-									"description": "是否有既往史",
-									"required": true
+									"description": "是否有既往史"
 								}
-							]
+							],
+							"name": "medical_info",
+							"type": "MedicalInfoDTO",
+							"description": "就诊人信息串"
 						},
 						{
 							"name": "score",
 							"type": "Number",
-							"description": "评价综合得分：取值 1 - 5",
-							"required": true
+							"description": "评价综合得分：取值 1 - 5"
 						},
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
 							"name": "doctor_name",
 							"type": "String",
-							"description": "医生名字",
-							"required": true
+							"description": "医生名字"
 						},
 						{
 							"name": "review_create_time",
 							"type": "Date",
-							"description": "评价时间",
-							"required": true
+							"description": "评价时间"
 						},
 						{
 							"name": "total_fee",
 							"type": "String",
-							"description": "商品总价，单位为元",
-							"required": true
+							"description": "商品总价，单位为元"
 						},
 						{
 							"name": "doctor_id",
 							"type": "String",
-							"description": "医生UUID",
-							"required": true
+							"description": "医生UUID"
 						},
 						{
 							"name": "order_finish_time",
 							"type": "Date",
-							"description": "订单终止时间",
-							"required": true
+							"description": "订单终止时间"
 						},
 						{
 							"name": "comment",
 							"type": "String",
-							"description": "评价内容",
-							"required": true
+							"description": "评价内容"
 						},
 						{
 							"name": "session_id",
 							"type": "String",
-							"description": "会话id",
-							"required": true
+							"description": "会话id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "OrderDetailDTO",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.medical.order.query",
+	"apiChineseName": "三方机构查询订单详情接口",
+	"description": "查询订单详情，包括评价",
+	"id": 51275
 }

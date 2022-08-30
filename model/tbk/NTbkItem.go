@@ -6,6 +6,8 @@ type NTbkItem struct {
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 一级类目名称
 	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
+	// 商品ID
+	NumIid string `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 商品标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商品主图
@@ -46,8 +48,8 @@ type NTbkItem struct {
 	SuperiorBrand string `json:"superior_brand,omitempty" xml:"superior_brand,omitempty"`
 	// 是否是热门商品，0不是，1是
 	HotFlag string `json:"hot_flag,omitempty" xml:"hot_flag,omitempty"`
-	// 商品ID
-	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
+	// 入参的商品ID或营销ID
+	InputNumIid string `json:"input_num_iid,omitempty" xml:"input_num_iid,omitempty"`
 	// 卖家类型，0表示集市，1表示商城，3表示特价版
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 卖家id

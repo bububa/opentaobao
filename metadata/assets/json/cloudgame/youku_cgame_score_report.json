@@ -1,13 +1,6 @@
 {
-	"id": 50410,
-	"name": "youku.cgame.score.report",
-	"apiChineseName": "云游戏战绩上传",
-	"description": "云游戏战绩上传API",
 	"requestParams": [
 		{
-			"name": "score_report_dto",
-			"type": "ScoreReportDto",
-			"description": "战绩上传Dto",
 			"subParams": [
 				{
 					"name": "score",
@@ -38,6 +31,7 @@
 				},
 				{
 					"name": "ext_info",
+					"type": "String",
 					"description": "扩展信息JSON串"
 				},
 				{
@@ -45,7 +39,10 @@
 					"type": "Number",
 					"description": "上报时间戳"
 				}
-			]
+			],
+			"name": "score_report_dto",
+			"type": "ScoreReportDto",
+			"description": "战绩上传Dto"
 		}
 	],
 	"responseParams": [
@@ -64,5 +61,9 @@
 			"type": "String",
 			"description": "返回消息"
 		}
-	]
+	],
+	"name": "youku.cgame.score.report",
+	"apiChineseName": "云游戏战绩上传",
+	"description": "云游戏战绩上传API",
+	"id": 50410
 }

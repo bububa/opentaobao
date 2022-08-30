@@ -1,13 +1,20 @@
 {
-	"id": 42298,
-	"name": "alibaba.scbp.ad.keyword.rank.price.batchget",
-	"apiChineseName": "外贸直通车关键词前五名批量排价",
-	"description": "外贸直通车关键词前五名批量排价",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "ContextDto",
-			"description": "上下文",
+			"subParams": [
+				{
+					"name": "keyword_list",
+					"type": "String[]",
+					"description": "关键词列表",
+					"required": true
+				}
+			],
+			"name": "keyword_request",
+			"type": "TopKeywordListDTO",
+			"description": "keyword_request",
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "login_id",
@@ -39,42 +46,33 @@
 					"type": "String",
 					"description": "ip"
 				}
-			]
-		},
-		{
-			"name": "keyword_request",
-			"type": "TopKeywordListDTO",
-			"description": "keyword_request",
-			"required": true,
-			"subParams": [
-				{
-					"name": "keyword_list",
-					"type": "String[]",
-					"description": "关键词列表",
-					"required": true
-				}
-			]
+			],
+			"name": "context",
+			"type": "ContextDto",
+			"description": "上下文"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "KeywordRankPriceDTO []",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "keyword",
 					"type": "String",
-					"description": "关键词",
-					"required": true
+					"description": "关键词"
 				},
 				{
 					"name": "rank_price_list",
 					"type": "String[]",
-					"description": "排价结果",
-					"required": true
+					"description": "排价结果"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "KeywordRankPriceDTO []",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.rank.price.batchget",
+	"apiChineseName": "外贸直通车关键词前五名批量排价",
+	"description": "外贸直通车关键词前五名批量排价",
+	"id": 42298
 }

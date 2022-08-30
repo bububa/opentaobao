@@ -4,14 +4,14 @@ package alsc
 type CustomerUpdateOpenReq struct {
 	// 人群标签
 	TagIds []string `json:"tag_ids,omitempty" xml:"tag_ids>string,omitempty"`
-	// 顾客ID
-	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
-	// 品牌ID 外部品牌id  2选1
-	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
 	// 地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 生日
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
+	// 品牌ID 外部品牌id  2选1
+	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
+	// 顾客ID
+	CustomerId string `json:"customer_id,omitempty" xml:"customer_id,omitempty"`
 	// 邮箱
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 扩展信息

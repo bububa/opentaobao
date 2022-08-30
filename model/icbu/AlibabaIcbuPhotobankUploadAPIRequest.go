@@ -12,12 +12,12 @@ import (
 // 图片银行图片上传开放接口
 type AlibabaIcbuPhotobankUploadAPIRequest struct {
 	model.Params
+	// 扩展参数信息,如ICVID
+	_extraContext string
 	// 上传图片名称
 	_fileName string
 	// 上传图片所在分组
 	_groupId string
-	// 扩展参数信息,如ICVID
-	_extraContext string
 	// 图片字节数组
 	_imageBytes *model.File
 }
@@ -41,6 +41,19 @@ func (r AlibabaIcbuPhotobankUploadAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetExtraContext is ExtraContext Setter
+// 扩展参数信息,如ICVID
+func (r *AlibabaIcbuPhotobankUploadAPIRequest) SetExtraContext(_extraContext string) error {
+	r._extraContext = _extraContext
+	r.Set("extra_context", _extraContext)
+	return nil
+}
+
+// GetExtraContext ExtraContext Getter
+func (r AlibabaIcbuPhotobankUploadAPIRequest) GetExtraContext() string {
+	return r._extraContext
 }
 
 // SetFileName is FileName Setter
@@ -67,19 +80,6 @@ func (r *AlibabaIcbuPhotobankUploadAPIRequest) SetGroupId(_groupId string) error
 // GetGroupId GroupId Getter
 func (r AlibabaIcbuPhotobankUploadAPIRequest) GetGroupId() string {
 	return r._groupId
-}
-
-// SetExtraContext is ExtraContext Setter
-// 扩展参数信息,如ICVID
-func (r *AlibabaIcbuPhotobankUploadAPIRequest) SetExtraContext(_extraContext string) error {
-	r._extraContext = _extraContext
-	r.Set("extra_context", _extraContext)
-	return nil
-}
-
-// GetExtraContext ExtraContext Getter
-func (r AlibabaIcbuPhotobankUploadAPIRequest) GetExtraContext() string {
-	return r._extraContext
 }
 
 // SetImageBytes is ImageBytes Setter

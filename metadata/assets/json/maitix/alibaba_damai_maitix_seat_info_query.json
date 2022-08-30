@@ -1,19 +1,8 @@
 {
-	"id": 46980,
-	"name": "alibaba.damai.maitix.seat.info.query",
-	"apiChineseName": "分销商查询座位信息",
-	"description": "分销查询座位文案信息",
 	"requestParams": [
 		{
-			"name": "seat_query_param",
-			"type": "SeatQueryParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "stands",
-					"type": "StandQueryParam[]",
-					"description": "有条件必传-看台信息,如果传了下面的seat_info信息可以不传这个,否则必传",
 					"subParams": [
 						{
 							"name": "seat_ids",
@@ -25,7 +14,10 @@
 							"type": "Number",
 							"description": "看台ID"
 						}
-					]
+					],
+					"name": "stands",
+					"type": "StandQueryParam[]",
+					"description": "有条件必传-看台信息,如果传了下面的seat_info信息可以不传这个,否则必传"
 				},
 				{
 					"name": "perform_id",
@@ -57,198 +49,177 @@
 					"type": "String",
 					"description": "可选,选座信息,只需要把回调的seatInfoV2对应的json数据urlDecode后直接赋值给这个字段就行,"
 				}
-			]
+			],
+			"name": "seat_query_param",
+			"type": "SeatQueryParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "返回信息",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "SeatQueryDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "ordinary_seat_d_t_o_s",
-							"type": "OrdinarySeatDto[]",
-							"description": "单票座位信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "seat_no",
 									"type": "String",
-									"description": "座位号",
-									"required": true
+									"description": "座位号"
 								},
 								{
 									"name": "row_no",
 									"type": "String",
-									"description": "排号",
-									"required": true
+									"description": "排号"
 								},
 								{
 									"name": "floor_name",
 									"type": "String",
-									"description": "楼层名称",
-									"required": true
+									"description": "楼层名称"
 								},
 								{
 									"name": "stand_name",
 									"type": "String",
-									"description": "看台名称",
-									"required": true
+									"description": "看台名称"
 								},
 								{
 									"name": "stand_id",
 									"type": "Number",
-									"description": "看台ID",
-									"required": true
+									"description": "看台ID"
 								},
 								{
 									"name": "seat_id",
 									"type": "Number",
-									"description": "座位ID",
-									"required": true
+									"description": "座位ID"
 								},
 								{
 									"name": "price",
 									"type": "String",
-									"description": "价格，单位分",
-									"required": true
+									"description": "价格，单位分"
 								},
 								{
 									"name": "price_id",
 									"type": "Number",
-									"description": "票品ID,价格id,和ticket_item_id等价",
-									"required": true
+									"description": "票品ID,价格id,和ticket_item_id等价"
 								}
-							]
+							],
+							"name": "ordinary_seat_d_t_o_s",
+							"type": "OrdinarySeatDto[]",
+							"description": "单票座位信息"
 						},
 						{
 							"name": "seat_status",
 							"type": "Number",
-							"description": "座位状态，2有效",
-							"required": true
+							"description": "座位状态，2有效"
 						},
 						{
-							"name": "combine_seat_d_t_o_s",
-							"type": "CombineSeatDto[]",
-							"description": "套票座位信息",
-							"required": true,
 							"subParams": [
 								{
-									"name": "ordinary_tickets",
-									"type": "OrdinarySeatDto[]",
-									"description": "套票下的单票信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "price_id",
 											"type": "Number",
-											"description": "票品ID,价格id,和ticket_item_id等价",
-											"required": true
+											"description": "票品ID,价格id,和ticket_item_id等价"
 										},
 										{
 											"name": "price",
 											"type": "String",
-											"description": "价格，单位分",
-											"required": true
+											"description": "价格，单位分"
 										},
 										{
 											"name": "seat_id",
 											"type": "Number",
-											"description": "座位ID",
-											"required": true
+											"description": "座位ID"
 										},
 										{
 											"name": "stand_id",
 											"type": "Number",
-											"description": "看台ID",
-											"required": true
+											"description": "看台ID"
 										},
 										{
 											"name": "stand_name",
 											"type": "String",
-											"description": "看台名称",
-											"required": true
+											"description": "看台名称"
 										},
 										{
 											"name": "floor_name",
 											"type": "String",
-											"description": "楼层名称",
-											"required": true
+											"description": "楼层名称"
 										},
 										{
 											"name": "row_no",
 											"type": "String",
-											"description": "排号",
-											"required": true
+											"description": "排号"
 										},
 										{
 											"name": "seat_no",
 											"type": "String",
-											"description": "座位号",
-											"required": true
+											"description": "座位号"
 										}
-									]
+									],
+									"name": "ordinary_tickets",
+									"type": "OrdinarySeatDto[]",
+									"description": "套票下的单票信息"
 								},
 								{
 									"name": "third_combine_joint_ticket_id",
 									"type": "Number",
-									"description": "套票组合ID,和下单参数的combine_id一个意思",
-									"required": true
+									"description": "套票组合ID,和下单参数的combine_id一个意思"
 								},
 								{
 									"name": "third_combine_ticket_id",
 									"type": "Number",
-									"description": "套票ID,如果是套票。下单的时候传这个给ticket_item_id,和下面的combine_ticket_id一样",
-									"required": true
+									"description": "套票ID,如果是套票。下单的时候传这个给ticket_item_id,和下面的combine_ticket_id一样"
 								},
 								{
 									"name": "combine_ticket_price",
 									"type": "String",
-									"description": "套票价格，单位为分",
-									"required": true
+									"description": "套票价格，单位为分"
 								},
 								{
 									"name": "combine_ticket_name",
 									"type": "String",
-									"description": "套票名称",
-									"required": true
+									"description": "套票名称"
 								},
 								{
 									"name": "combine_ticket_id",
 									"type": "Number",
-									"description": "套票ID,如果是套票。下单的时候传这个给ticket_item_id,和上面的third_combine_ticket_id一样",
-									"required": true
+									"description": "套票ID,如果是套票。下单的时候传这个给ticket_item_id,和上面的third_combine_ticket_id一样"
 								}
-							]
+							],
+							"name": "combine_seat_d_t_o_s",
+							"type": "CombineSeatDto[]",
+							"description": "套票座位信息"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					],
+					"name": "model",
+					"type": "SeatQueryDto",
+					"description": "model"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回信息"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.seat.info.query",
+	"apiChineseName": "分销商查询座位信息",
+	"description": "分销查询座位文案信息",
+	"id": 46980
 }

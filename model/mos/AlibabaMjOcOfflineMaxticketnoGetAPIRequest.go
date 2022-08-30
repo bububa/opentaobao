@@ -12,12 +12,12 @@ import (
 // 给pos机提供线下最大小票号查询
 type AlibabaMjOcOfflineMaxticketnoGetAPIRequest struct {
 	model.Params
+	// 日期
+	_datetime string
 	// 收银机号
 	_posNo string
 	// 外部门店号
 	_storeNo string
-	// 日期
-	_datetime string
 }
 
 // NewAlibabaMjOcOfflineMaxticketnoGetRequest 初始化AlibabaMjOcOfflineMaxticketnoGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetDatetime is Datetime Setter
+// 日期
+func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetDatetime(_datetime string) error {
+	r._datetime = _datetime
+	r.Set("datetime", _datetime)
+	return nil
+}
+
+// GetDatetime Datetime Getter
+func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetDatetime() string {
+	return r._datetime
 }
 
 // SetPosNo is PosNo Setter
@@ -65,17 +78,4 @@ func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetStoreNo(_storeNo string)
 // GetStoreNo StoreNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetStoreNo() string {
 	return r._storeNo
-}
-
-// SetDatetime is Datetime Setter
-// 日期
-func (r *AlibabaMjOcOfflineMaxticketnoGetAPIRequest) SetDatetime(_datetime string) error {
-	r._datetime = _datetime
-	r.Set("datetime", _datetime)
-	return nil
-}
-
-// GetDatetime Datetime Getter
-func (r AlibabaMjOcOfflineMaxticketnoGetAPIRequest) GetDatetime() string {
-	return r._datetime
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51810,
-	"name": "alibaba.alihealth.drugcode.drugfactory.transferblind",
-	"apiChineseName": "传输盲底文件",
-	"description": "临床用药试验-传输盲底文件",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "操作说明"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.drugfactory.transferblind",
+	"apiChineseName": "传输盲底文件",
+	"description": "临床用药试验-传输盲底文件",
+	"id": 51810
 }

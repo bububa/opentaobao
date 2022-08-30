@@ -4,6 +4,8 @@ package ascpchannel
 type Datas struct {
 	// 占用库存
 	LockQuantity string `json:"lock_quantity,omitempty" xml:"lock_quantity,omitempty"`
+	// 渠道编码
+	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
 	// 总库存
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 供应链中台货仓code

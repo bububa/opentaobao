@@ -1,8 +1,4 @@
 {
-	"id": 21985,
-	"name": "taobao.tmc.messages.confirm",
-	"apiChineseName": "确认消费消息的状态",
-	"description": "确认消费消息的状态",
 	"requestParams": [
 		{
 			"name": "group_name",
@@ -13,8 +9,8 @@
 			"name": "s_message_ids",
 			"type": "Number[]",
 			"description": "处理成功的消息ID列表 最大 200个ID",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "f_message_ids",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.tmc.messages.confirm",
+	"apiChineseName": "确认消费消息的状态",
+	"description": "确认消费消息的状态",
+	"id": 21985
 }

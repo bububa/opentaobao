@@ -2,7 +2,7 @@ package xiamicontent
 
 // ResultCode 结构体
 type ResultCode struct {
-	// result message
+	// result msg
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// result code
 	Code int64 `json:"code,omitempty" xml:"code,omitempty"`

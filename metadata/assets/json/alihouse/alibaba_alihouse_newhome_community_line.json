@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部小区ID"
+		},
+		{
+			"name": "type",
+			"type": "byte",
+			"description": "0-下架 1-上架"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.community.line",
+	"apiChineseName": "小区上下架",
+	"description": "小区上下架",
+	"id": 56948
+}

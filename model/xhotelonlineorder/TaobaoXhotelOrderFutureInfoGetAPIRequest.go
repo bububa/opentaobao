@@ -16,14 +16,14 @@ type TaobaoXhotelOrderFutureInfoGetAPIRequest struct {
 	_outUuid string
 	// 指定淘宝订单ID。以英文分号隔开的字符串“123455666;123455666;123455666”
 	_tids string
-	// 酒店编码
-	_hotelCode string
-	// 系统商分配的身份识别
-	_vendor string
 	// 开始时间
 	_createdStart string
 	// 结束时间
 	_createdEnd string
+	// 酒店编码
+	_hotelCode string
+	// 系统商分配的身份识别
+	_vendor string
 	// 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
 	_operateType int64
 }
@@ -75,32 +75,6 @@ func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetTids() string {
 	return r._tids
 }
 
-// SetHotelCode is HotelCode Setter
-// 酒店编码
-func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetHotelCode(_hotelCode string) error {
-	r._hotelCode = _hotelCode
-	r.Set("hotel_code", _hotelCode)
-	return nil
-}
-
-// GetHotelCode HotelCode Getter
-func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetHotelCode() string {
-	return r._hotelCode
-}
-
-// SetVendor is Vendor Setter
-// 系统商分配的身份识别
-func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetVendor() string {
-	return r._vendor
-}
-
 // SetCreatedStart is CreatedStart Setter
 // 开始时间
 func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetCreatedStart(_createdStart string) error {
@@ -125,6 +99,32 @@ func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetCreatedEnd(_createdEnd str
 // GetCreatedEnd CreatedEnd Getter
 func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetCreatedEnd() string {
 	return r._createdEnd
+}
+
+// SetHotelCode is HotelCode Setter
+// 酒店编码
+func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetHotelCode(_hotelCode string) error {
+	r._hotelCode = _hotelCode
+	r.Set("hotel_code", _hotelCode)
+	return nil
+}
+
+// GetHotelCode HotelCode Getter
+func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetHotelCode() string {
+	return r._hotelCode
+}
+
+// SetVendor is Vendor Setter
+// 系统商分配的身份识别
+func (r *TaobaoXhotelOrderFutureInfoGetAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelOrderFutureInfoGetAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetOperateType is OperateType Setter

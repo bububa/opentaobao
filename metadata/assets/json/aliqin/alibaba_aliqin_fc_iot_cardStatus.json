@@ -1,8 +1,4 @@
 {
-	"id": 28645,
-	"name": "alibaba.aliqin.fc.iot.cardStatus",
-	"apiChineseName": "物联卡状态查询",
-	"description": "物联卡状态查询",
 	"requestParams": [
 		{
 			"name": "iccid",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "\"MsisdnStatus\":\"卡状态\",\"MSISDN\":\"MSISDN号\",\"ICCID\":\"ICCID号\"",
-					"required": true
+					"type": "String",
+					"description": "\"MsisdnStatus\":\"卡状态\",\"MSISDN\":\"MSISDN号\",\"ICCID\":\"ICCID号\""
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "1.成功；2.失败",
-					"required": true
+					"description": "1.成功；2.失败"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "状态",
-					"required": true
+					"description": "状态"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.iot.cardStatus",
+	"apiChineseName": "物联卡状态查询",
+	"description": "物联卡状态查询",
+	"id": 28645
 }

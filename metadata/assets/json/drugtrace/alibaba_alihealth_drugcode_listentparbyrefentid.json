@@ -1,0 +1,167 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "登录企业refEntId",
+			"required": true
+		},
+		{
+			"name": "ent_name",
+			"type": "String",
+			"description": "企业名称"
+		},
+		{
+			"name": "partner_idb",
+			"type": "String",
+			"description": "往来单位id"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页数",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数"
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "prov_name",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "partner_ent_id",
+							"type": "String",
+							"description": "往来单位的ent_id"
+						},
+						{
+							"name": "par_ref_ent_id",
+							"type": "String",
+							"description": "往来单位企业ID"
+						},
+						{
+							"name": "audit_flag",
+							"type": "Number",
+							"description": "1-审核通过；2-审核不通过；0-待审核：服务端针对networkType和standard字段汇总给出状态"
+						},
+						{
+							"name": "p_ent_par_id",
+							"type": "String",
+							"description": "系统往来单位序号，主键id"
+						},
+						{
+							"name": "network_type",
+							"type": "Number",
+							"description": "networkType"
+						},
+						{
+							"name": "ent_id",
+							"type": "String",
+							"description": "企业id"
+						},
+						{
+							"name": "partner_name",
+							"type": "String",
+							"description": "往来单位名称"
+						},
+						{
+							"name": "license_type_str",
+							"type": "String",
+							"description": "证件类型名称"
+						},
+						{
+							"name": "is_network",
+							"type": "Number",
+							"description": "是否入网"
+						},
+						{
+							"name": "addr_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "ent_prov_code",
+							"type": "String",
+							"description": "企业所在省"
+						},
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "refEntId"
+						},
+						{
+							"name": "country_name",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "partner_id",
+							"type": "String",
+							"description": "往来单位编码（企业内部用）"
+						},
+						{
+							"name": "partner_capital_name",
+							"type": "String",
+							"description": "往来单位中文拼音首字母"
+						}
+					],
+					"name": "result",
+					"type": "PEntParDTO[]",
+					"description": "返回结果对象"
+				}
+			],
+			"name": "model",
+			"type": "PageInfoDTO",
+			"description": "返回结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回状态值"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回状态描述"
+		}
+	],
+	"name": "alibaba.alihealth.drugcode.listentparbyrefentid",
+	"apiChineseName": "根据企业id获取往来单位",
+	"description": "根据企业id获取往来单位",
+	"id": 58710
+}

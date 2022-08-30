@@ -1,14 +1,5 @@
 {
-	"id": 39240,
-	"name": "tmall.fcbox.notify",
-	"apiChineseName": "丰巢通知接口",
-	"description": "tmax接收丰巢快递通知",
 	"requestParams": [
-		{
-			"name": "apply_id",
-			"type": "String",
-			"description": "申请接口返回的申请标识"
-		},
 		{
 			"name": "state_remark",
 			"type": "String",
@@ -28,33 +19,39 @@
 			"name": "operate",
 			"type": "String",
 			"description": "变更操作"
+		},
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "申请接口返回的申请标识"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.fcbox.notify",
+	"apiChineseName": "丰巢通知接口",
+	"description": "tmax接收丰巢快递通知",
+	"id": 39240
 }

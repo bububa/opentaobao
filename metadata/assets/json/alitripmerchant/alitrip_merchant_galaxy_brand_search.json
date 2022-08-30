@@ -1,8 +1,4 @@
 {
-	"id": 54748,
-	"name": "alitrip.merchant.galaxy.brand.search",
-	"apiChineseName": "星河-品牌搜索",
-	"description": "星河服务=获取雅高品牌信息",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -12,189 +8,165 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "brands",
-					"type": "Content",
-					"description": "品牌信息",
-					"required": true,
 					"subParams": [
 						{
+							"subParams": [
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称"
+								},
+								{
+									"name": "species",
+									"type": "String",
+									"description": "品牌类型"
+								},
+								{
+									"name": "logo",
+									"type": "String",
+									"description": "品牌地址"
+								},
+								{
+									"name": "sub_type",
+									"type": "Number",
+									"description": "子品牌编码"
+								},
+								{
+									"name": "brand_code",
+									"type": "String",
+									"description": "品牌编码"
+								}
+							],
 							"name": "upscales",
 							"type": "BrandListDto[]",
-							"description": "高档型",
-							"required": true,
+							"description": "高档型"
+						},
+						{
 							"subParams": [
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "species",
 									"type": "String",
-									"description": "品牌类型",
-									"required": true
+									"description": "品牌类型"
 								},
 								{
 									"name": "logo",
 									"type": "String",
-									"description": "品牌地址",
-									"required": true
+									"description": "品牌地址"
 								},
 								{
 									"name": "sub_type",
 									"type": "Number",
-									"description": "子品牌编码",
-									"required": true
+									"description": "子品牌编码"
 								},
 								{
 									"name": "brand_code",
 									"type": "String",
-									"description": "品牌编码",
-									"required": true
+									"description": "品牌编码"
 								}
-							]
-						},
-						{
+							],
 							"name": "luxurys",
 							"type": "BrandListDto[]",
-							"description": "豪华型",
-							"required": true,
+							"description": "豪华型"
+						},
+						{
 							"subParams": [
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "species",
 									"type": "String",
-									"description": "品牌类型",
-									"required": true
+									"description": "品牌类型"
 								},
 								{
 									"name": "logo",
 									"type": "String",
-									"description": "品牌地址",
-									"required": true
+									"description": "品牌地址"
 								},
 								{
 									"name": "sub_type",
 									"type": "Number",
-									"description": "子品牌编码",
-									"required": true
+									"description": "子品牌编码"
 								},
 								{
 									"name": "brand_code",
 									"type": "String",
-									"description": "品牌编码",
-									"required": true
+									"description": "品牌编码"
 								}
-							]
-						},
-						{
+							],
 							"name": "cm_for_tables",
 							"type": "BrandListDto[]",
-							"description": "舒适型",
-							"required": true,
-							"subParams": [
-								{
-									"name": "brand_name",
-									"type": "String",
-									"description": "品牌名称",
-									"required": true
-								},
-								{
-									"name": "species",
-									"type": "String",
-									"description": "品牌类型",
-									"required": true
-								},
-								{
-									"name": "logo",
-									"type": "String",
-									"description": "品牌地址",
-									"required": true
-								},
-								{
-									"name": "sub_type",
-									"type": "Number",
-									"description": "子品牌编码",
-									"required": true
-								},
-								{
-									"name": "brand_code",
-									"type": "String",
-									"description": "品牌编码",
-									"required": true
-								}
-							]
+							"description": "舒适型"
 						},
 						{
-							"name": "economics",
-							"type": "BrandListDto[]",
-							"description": "经济型",
-							"required": true,
 							"subParams": [
 								{
 									"name": "brand_name",
 									"type": "String",
-									"description": "品牌名称",
-									"required": true
+									"description": "品牌名称"
 								},
 								{
 									"name": "species",
 									"type": "String",
-									"description": "品牌类型",
-									"required": true
+									"description": "品牌类型"
 								},
 								{
 									"name": "logo",
 									"type": "String",
-									"description": "品牌地址",
-									"required": true
+									"description": "品牌地址"
 								},
 								{
 									"name": "sub_type",
 									"type": "Number",
-									"description": "子品牌编码",
-									"required": true
+									"description": "子品牌编码"
 								},
 								{
 									"name": "brand_code",
 									"type": "String",
-									"description": "品牌编码",
-									"required": true
+									"description": "品牌编码"
 								}
-							]
+							],
+							"name": "economics",
+							"type": "BrandListDto[]",
+							"description": "经济型"
 						}
-					]
+					],
+					"name": "brands",
+					"type": "Content",
+					"description": "品牌信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.brand.search",
+	"apiChineseName": "星河-品牌搜索",
+	"description": "星河服务=获取雅高品牌信息",
+	"id": 54748
 }

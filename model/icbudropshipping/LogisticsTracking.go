@@ -10,4 +10,6 @@ type LogisticsTracking struct {
 	CurrentEventCode string `json:"current_event_code,omitempty" xml:"current_event_code,omitempty"`
 	// tracking number
 	TrackingNumber string `json:"tracking_number,omitempty" xml:"tracking_number,omitempty"`
+	// tracking url
+	TrackingUrl string `json:"tracking_url,omitempty" xml:"tracking_url,omitempty"`
 }

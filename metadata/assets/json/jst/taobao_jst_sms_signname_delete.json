@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sign_name",
+					"type": "String",
+					"description": "待删除的签名"
+				}
+			],
+			"name": "delete_sms_sign_request",
+			"type": "TopDeleteSmsSignRequest",
+			"description": "删除签名入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "删除成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误原因"
+		}
+	],
+	"name": "taobao.jst.sms.signname.delete",
+	"apiChineseName": "淘宝短信签名删除",
+	"description": "淘宝短信签名删除",
+	"id": 60272
+}

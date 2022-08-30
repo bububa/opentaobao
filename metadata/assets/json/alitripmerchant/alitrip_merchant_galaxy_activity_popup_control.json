@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "活动id"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "活动类型"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "是否执行成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.popup.control",
+	"apiChineseName": "营销弹屏疲劳度控制",
+	"description": "星河=营销弹屏疲劳控制",
+	"id": 57216
+}

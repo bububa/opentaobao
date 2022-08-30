@@ -1,8 +1,4 @@
 {
-	"id": 31476,
-	"name": "alibaba.nlife.b2c.tradestatus.drive",
-	"apiChineseName": "b2c订单状态驱动",
-	"description": "用于驱动零售+订单状态",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -32,9 +28,6 @@
 			"description": "接口类型：CONFIRM（收货）DELIVER（发货）"
 		},
 		{
-			"name": "logistics_info",
-			"type": "LogisticsInfo",
-			"description": "货流信息",
 			"subParams": [
 				{
 					"name": "receiver",
@@ -52,9 +45,6 @@
 					"description": "收货人联系电话"
 				},
 				{
-					"name": "logistics_info_details",
-					"type": "LogisticsInfoDetail[]",
-					"description": "货流详细信息",
 					"subParams": [
 						{
 							"name": "goods_ids",
@@ -76,9 +66,15 @@
 							"type": "String",
 							"description": "发货时间"
 						}
-					]
+					],
+					"name": "logistics_info_details",
+					"type": "LogisticsInfoDetail[]",
+					"description": "货流详细信息"
 				}
-			]
+			],
+			"name": "logistics_info",
+			"type": "LogisticsInfo",
+			"description": "货流信息"
 		},
 		{
 			"name": "extend_params",
@@ -86,11 +82,8 @@
 			"description": "扩展参数 JSON格式"
 		}
 	],
-	"responseParams": [
-		{
-			"name": "message",
-			"type": "String",
-			"description": "描述"
-		}
-	]
+	"name": "alibaba.nlife.b2c.tradestatus.drive",
+	"apiChineseName": "b2c订单状态驱动",
+	"description": "用于驱动零售+订单状态",
+	"id": 31476
 }

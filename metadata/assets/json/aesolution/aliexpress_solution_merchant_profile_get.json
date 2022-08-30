@@ -1,8 +1,4 @@
 {
-	"id": 46616,
-	"name": "aliexpress.solution.merchant.profile.get",
-	"apiChineseName": "aliexpress.solution.merchant.profile.get",
-	"description": "API for oversea sellers to obtain the normal information, e.g. store id, registration country code.",
 	"responseParams": [
 		{
 			"name": "country_code",
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "shop url"
 		}
-	]
+	],
+	"name": "aliexpress.solution.merchant.profile.get",
+	"apiChineseName": "aliexpress.solution.merchant.profile.get",
+	"description": "API for oversea sellers to obtain the normal information, e.g. store id, registration country code.",
+	"id": 46616
 }

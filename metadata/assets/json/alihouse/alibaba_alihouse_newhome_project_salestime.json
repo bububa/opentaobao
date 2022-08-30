@@ -1,0 +1,230 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_sid",
+					"type": "String",
+					"description": "外部项目id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市名",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市编码",
+					"required": true
+				},
+				{
+					"name": "subject_name",
+					"type": "String",
+					"description": "项目名称",
+					"required": true
+				},
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "有效状态 0-无效 1-有效",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "pre_sale_permit_id",
+							"type": "String",
+							"description": "预售证编号"
+						},
+						{
+							"name": "pre_sale_permit_time",
+							"type": "String",
+							"description": "预售时间"
+						}
+					],
+					"name": "pre_permit_d_t_o_list",
+					"type": "ProjectSalesTimePrePermitDto[]",
+					"description": "预售信息对象列表"
+				},
+				{
+					"name": "subject_avg_price",
+					"type": "String",
+					"description": "项目价格"
+				},
+				{
+					"name": "decoration_standard_price_desc",
+					"type": "String",
+					"description": "装修价格"
+				},
+				{
+					"name": "is_register",
+					"type": "Number",
+					"description": "是否具有登记环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "register_start_date",
+					"type": "String",
+					"description": "登记开始时间"
+				},
+				{
+					"name": "register_end_date",
+					"type": "String",
+					"description": "登记结束时间"
+				},
+				{
+					"name": "is_recognize",
+					"type": "Number",
+					"description": "是否具有认筹环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "recognize_start_date",
+					"type": "String",
+					"description": "认筹开始时间"
+				},
+				{
+					"name": "recognize_end_date",
+					"type": "String",
+					"description": "认筹结束时间"
+				},
+				{
+					"name": "is_material",
+					"type": "Number",
+					"description": "是否具有交资料环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "material_start_date",
+					"type": "String",
+					"description": "交资料开始时间"
+				},
+				{
+					"name": "material_end_date",
+					"type": "String",
+					"description": "交资料结束时间"
+				},
+				{
+					"name": "is_publicity",
+					"type": "Number",
+					"description": "是否具有公示环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "publicity_start_date",
+					"type": "String",
+					"description": "公示开始时间"
+				},
+				{
+					"name": "publicity_end_date",
+					"type": "String",
+					"description": "公示结束时间"
+				},
+				{
+					"name": "is_lottery",
+					"type": "Number",
+					"description": "是否具有摇号环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "lottery_draw_date",
+					"type": "String",
+					"description": "摇号时间"
+				},
+				{
+					"name": "offline_lottery_draw_desc",
+					"type": "String",
+					"description": "线下摇号"
+				},
+				{
+					"name": "is_open",
+					"type": "Number",
+					"description": "是否具有开盘环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "is_blur_open",
+					"type": "Number",
+					"description": "是否模糊显示 0-否 1-是"
+				},
+				{
+					"name": "open_date",
+					"type": "String",
+					"description": "开盘时间"
+				},
+				{
+					"name": "is_selection",
+					"type": "Number",
+					"description": "是否具有选房环节 0(否) 1(是)",
+					"required": true
+				},
+				{
+					"name": "selection_start_date",
+					"type": "String",
+					"description": "选房开始时间"
+				},
+				{
+					"name": "selection_end_date",
+					"type": "String",
+					"description": "选房结束时间"
+				},
+				{
+					"name": "offline_room_selection_desc",
+					"type": "String",
+					"description": "线下选房"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				}
+			],
+			"name": "project_sales_time_dto",
+			"type": "ProjectSalesTimeDto",
+			"description": "楼盘销售时刻对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.salestime",
+	"apiChineseName": "楼盘销售时刻同步",
+	"description": "楼盘销售时刻同步",
+	"id": 58056
+}

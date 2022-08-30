@@ -1,8 +1,4 @@
 {
-	"id": 10379,
-	"name": "taobao.fenxiao.distributors.get",
-	"apiChineseName": "获取分销商信息",
-	"description": "查询和当前登录供应商有合作关系的分销商的信息",
 	"requestParams": [
 		{
 			"name": "nicks",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "distributors",
-			"type": "Distributor []",
-			"description": "分销商详细信息",
 			"subParams": [
 				{
 					"name": "alipay_account",
@@ -82,7 +75,14 @@
 					"type": "Date",
 					"description": "分销商卖家的开店时间"
 				}
-			]
+			],
+			"name": "distributors",
+			"type": "Distributor []",
+			"description": "分销商详细信息"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.distributors.get",
+	"apiChineseName": "获取分销商信息",
+	"description": "查询和当前登录供应商有合作关系的分销商的信息",
+	"id": 10379
 }

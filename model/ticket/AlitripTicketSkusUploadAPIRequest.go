@@ -17,18 +17,18 @@ type AlitripTicketSkusUploadAPIRequest struct {
 	model.Params
 	// 必填，该票种下使用的价格规则。
 	_priceRules []PriceRule
-	// 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
-	_outProductId string
 	// 必填，门票 票种类型
 	_ticketType string
+	// 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+	_outProductId string
 	// 可选，门票场次（场次门票专用，对于场次门票必选）
 	_ticketSeason string
 	// 可选，门票区域（场次门票专用，对于场次门票必选）
 	_ticketArea string
-	// 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
-	_aliProductId int64
 	// 特殊必填，淘宝商品id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 	_itemId int64
+	// 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+	_aliProductId int64
 }
 
 // NewAlitripTicketSkusUploadRequest 初始化AlitripTicketSkusUploadAPIRequest对象
@@ -65,19 +65,6 @@ func (r AlitripTicketSkusUploadAPIRequest) GetPriceRules() []PriceRule {
 	return r._priceRules
 }
 
-// SetOutProductId is OutProductId Setter
-// 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
-func (r *AlitripTicketSkusUploadAPIRequest) SetOutProductId(_outProductId string) error {
-	r._outProductId = _outProductId
-	r.Set("out_product_id", _outProductId)
-	return nil
-}
-
-// GetOutProductId OutProductId Getter
-func (r AlitripTicketSkusUploadAPIRequest) GetOutProductId() string {
-	return r._outProductId
-}
-
 // SetTicketType is TicketType Setter
 // 必填，门票 票种类型
 func (r *AlitripTicketSkusUploadAPIRequest) SetTicketType(_ticketType string) error {
@@ -89,6 +76,19 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetTicketType(_ticketType string) er
 // GetTicketType TicketType Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetTicketType() string {
 	return r._ticketType
+}
+
+// SetOutProductId is OutProductId Setter
+// 特殊必填，商户收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+func (r *AlitripTicketSkusUploadAPIRequest) SetOutProductId(_outProductId string) error {
+	r._outProductId = _outProductId
+	r.Set("out_product_id", _outProductId)
+	return nil
+}
+
+// GetOutProductId OutProductId Getter
+func (r AlitripTicketSkusUploadAPIRequest) GetOutProductId() string {
+	return r._outProductId
 }
 
 // SetTicketSeason is TicketSeason Setter
@@ -117,19 +117,6 @@ func (r AlitripTicketSkusUploadAPIRequest) GetTicketArea() string {
 	return r._ticketArea
 }
 
-// SetAliProductId is AliProductId Setter
-// 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
-func (r *AlitripTicketSkusUploadAPIRequest) SetAliProductId(_aliProductId int64) error {
-	r._aliProductId = _aliProductId
-	r.Set("ali_product_id", _aliProductId)
-	return nil
-}
-
-// GetAliProductId AliProductId Getter
-func (r AlitripTicketSkusUploadAPIRequest) GetAliProductId() int64 {
-	return r._aliProductId
-}
-
 // SetItemId is ItemId Setter
 // 特殊必填，淘宝商品id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
 func (r *AlitripTicketSkusUploadAPIRequest) SetItemId(_itemId int64) error {
@@ -141,4 +128,17 @@ func (r *AlitripTicketSkusUploadAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r AlitripTicketSkusUploadAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+// SetAliProductId is AliProductId Setter
+// 特殊必填，阿里标准收费项目id。ali_product_id, item_id与out_product_id三选一，至少填写其中一个
+func (r *AlitripTicketSkusUploadAPIRequest) SetAliProductId(_aliProductId int64) error {
+	r._aliProductId = _aliProductId
+	r.Set("ali_product_id", _aliProductId)
+	return nil
+}
+
+// GetAliProductId AliProductId Getter
+func (r AlitripTicketSkusUploadAPIRequest) GetAliProductId() int64 {
+	return r._aliProductId
 }

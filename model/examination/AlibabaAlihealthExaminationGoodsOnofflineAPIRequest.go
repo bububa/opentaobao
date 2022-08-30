@@ -14,10 +14,10 @@ type AlibabaAlihealthExaminationGoodsOnofflineAPIRequest struct {
 	model.Params
 	// 商品组code，机构保证唯一
 	_groupId string
-	// 操作类型: online=上线，offline=下线
-	_type string
 	// 门店code列表
 	_hospitalCodes string
+	// 操作类型: online=上线，offline=下线
+	_type string
 }
 
 // NewAlibabaAlihealthExaminationGoodsOnofflineRequest 初始化AlibabaAlihealthExaminationGoodsOnofflineAPIRequest对象
@@ -54,19 +54,6 @@ func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetGroupId() string
 	return r._groupId
 }
 
-// SetType is Type Setter
-// 操作类型: online=上线，offline=下线
-func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetType(_type string) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetType() string {
-	return r._type
-}
-
 // SetHospitalCodes is HospitalCodes Setter
 // 门店code列表
 func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetHospitalCodes(_hospitalCodes string) error {
@@ -78,4 +65,17 @@ func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetHospitalCodes(_
 // GetHospitalCodes HospitalCodes Getter
 func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetHospitalCodes() string {
 	return r._hospitalCodes
+}
+
+// SetType is Type Setter
+// 操作类型: online=上线，offline=下线
+func (r *AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) SetType(_type string) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r AlibabaAlihealthExaminationGoodsOnofflineAPIRequest) GetType() string {
+	return r._type
 }

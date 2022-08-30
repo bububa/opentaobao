@@ -1,13 +1,6 @@
 {
-	"id": 44122,
-	"name": "alibaba.idle.consignment.spu.statistics",
-	"apiChineseName": "闲鱼帮卖同步服务商交易统计信息",
-	"description": "闲鱼帮卖同步服务商交易统计信息",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SpuStatistics",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "start_time",
@@ -55,7 +48,10 @@
 					"type": "String",
 					"description": "结构数据，涉及金额的数据单位为分，精确到元"
 				}
-			]
+			],
+			"name": "param",
+			"type": "SpuStatistics",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -64,5 +60,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.idle.consignment.spu.statistics",
+	"apiChineseName": "闲鱼帮卖同步服务商交易统计信息",
+	"description": "闲鱼帮卖同步服务商交易统计信息",
+	"id": 44122
 }

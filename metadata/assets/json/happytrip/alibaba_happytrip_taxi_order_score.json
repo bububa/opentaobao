@@ -1,8 +1,4 @@
 {
-	"id": 28571,
-	"name": "alibaba.happytrip.taxi.order.score",
-	"apiChineseName": "订单打分和评价",
-	"description": "对司机进行评分，只有订单结束后，才能进行。",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.score",
+	"apiChineseName": "订单打分和评价",
+	"description": "对司机进行评分，只有订单结束后，才能进行。",
+	"id": 28571
 }

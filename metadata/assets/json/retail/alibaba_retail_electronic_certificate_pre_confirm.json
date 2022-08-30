@@ -1,8 +1,4 @@
 {
-	"id": 33950,
-	"name": "alibaba.retail.electronic.certificate.pre.confirm",
-	"apiChineseName": "贩卖机开始核销接口",
-	"description": "零售终端贩卖机开始核销接口,返回待领的商品ID",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -17,43 +13,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "ElectronicCertificateDto",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "itemId",
-							"required": true
+							"description": "itemId"
 						}
-					]
+					],
+					"name": "module",
+					"type": "ElectronicCertificateDto",
+					"description": "module"
 				},
 				{
 					"name": "warning_infos",
-					"type": "Json[]",
-					"description": "warningInfos",
-					"required": true
+					"type": "String[]",
+					"description": "warningInfos"
 				},
 				{
 					"name": "error_infos",
-					"type": "Json[]",
-					"description": "errorInfos",
-					"required": true
+					"type": "String[]",
+					"description": "errorInfos"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.retail.electronic.certificate.pre.confirm",
+	"apiChineseName": "贩卖机开始核销接口",
+	"description": "零售终端贩卖机开始核销接口,返回待领的商品ID",
+	"id": 33950
 }

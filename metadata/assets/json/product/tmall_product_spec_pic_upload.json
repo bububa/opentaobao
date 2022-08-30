@@ -1,8 +1,4 @@
 {
-	"id": 21439,
-	"name": "tmall.product.spec.pic.upload",
-	"apiChineseName": "上传产品规格认证图片",
-	"description": "上传指定类型的产品规格认证文件，并返回存有上传成功图片url的产品规格对象",
 	"requestParams": [
 		{
 			"name": "certify_type",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "上传成功的产品规格认证图片url"
 		}
-	]
+	],
+	"name": "tmall.product.spec.pic.upload",
+	"apiChineseName": "上传产品规格认证图片",
+	"description": "上传指定类型的产品规格认证文件，并返回存有上传成功图片url的产品规格对象",
+	"id": 21439
 }

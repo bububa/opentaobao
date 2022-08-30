@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库code"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "人员id"
+				}
+			],
+			"name": "param0",
+			"type": "UserQueryByIdTopRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_account",
+							"type": "String",
+							"description": "人员account"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "人员名字"
+						}
+					],
+					"name": "data",
+					"type": "UserInfoTopDTO",
+					"description": "数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "UmsResult",
+			"description": "结果"
+		}
+	],
+	"name": "wdk.ums.outbound.sorting.userquery",
+	"apiChineseName": "dps-查询分货作业人员信息",
+	"description": "dps-查询分货作业人员信息",
+	"id": 62531
+}

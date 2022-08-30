@@ -1,14 +1,6 @@
 {
-	"id": 36139,
-	"name": "alibaba.wdk.marketing.coupon.createactivity",
-	"apiChineseName": "优惠券活动创建",
-	"description": "添加优惠券活动",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CouponActivity",
-			"description": "创建优惠券活动请求入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "range_type",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "limit_info",
-					"type": "LimitInfo",
-					"description": "通用限购信息，-1为不限制，默认为不限制[如果同时设置了(每人活动期间总限领)和(每人每日限领)，则只能生效(每人活动期间总限领)]",
-					"required": true,
 					"subParams": [
 						{
 							"name": "daily_limit_cnt",
@@ -43,11 +31,15 @@
 							"description": "必须指定且值为正数，活动期间总限领",
 							"required": true
 						}
-					]
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制[如果同时设置了(每人活动期间总限领)和(每人每日限领)，则只能生效(每人活动期间总限领)]",
+					"required": true
 				},
 				{
 					"name": "terminals",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
 					"required": true
 				},
@@ -143,40 +135,44 @@
 					"type": "Number",
 					"description": "[减至券特有]优惠件数，限制最多优惠N件，值为-1代表不限制优惠件数 [单位为整数]【已下线】"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CouponActivity",
+			"description": "创建优惠券活动请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "创建优惠券活动返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "创建成功时会返回五道口优惠券活动id",
-					"required": true
+					"description": "创建成功时会返回五道口优惠券活动id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "创建优惠券活动是否成功",
-					"required": true
+					"description": "创建优惠券活动是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建优惠券活动返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.coupon.createactivity",
+	"apiChineseName": "优惠券活动创建",
+	"description": "添加优惠券活动",
+	"id": 36139
 }

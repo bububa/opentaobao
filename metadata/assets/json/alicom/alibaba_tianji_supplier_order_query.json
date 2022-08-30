@@ -1,13 +1,6 @@
 {
-	"id": 26048,
-	"name": "alibaba.tianji.supplier.order.query",
-	"apiChineseName": "查询供应商订单",
-	"description": "查询供应商订单",
 	"requestParams": [
 		{
-			"name": "param_supplier_top_query_model",
-			"type": "SupplierTopQueryModel",
-			"description": "订单查询入参",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -54,14 +47,14 @@
 					"type": "Date",
 					"description": "订单开始时间"
 				}
-			]
+			],
+			"name": "param_supplier_top_query_model",
+			"type": "SupplierTopQueryModel",
+			"description": "订单查询入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "model_list",
-			"type": "DistributionOrderInfo []",
-			"description": "分销订单信息",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -112,10 +105,6 @@
 					"required": true
 				},
 				{
-					"name": "id_card_info",
-					"type": "IdCardInfo",
-					"description": "身份证件信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "card_number",
@@ -153,7 +142,11 @@
 							"description": "手持证件照",
 							"required": true
 						}
-					]
+					],
+					"name": "id_card_info",
+					"type": "IdCardInfo",
+					"description": "身份证件信息",
+					"required": true
 				},
 				{
 					"name": "isp_name",
@@ -186,10 +179,6 @@
 					"required": true
 				},
 				{
-					"name": "logistics_info",
-					"type": "DistributionOrderLogisticsInfo",
-					"description": "物流信息,收货人信息,姓名，电话，地址",
-					"required": true,
 					"subParams": [
 						{
 							"name": "area",
@@ -245,7 +234,11 @@
 							"description": "收货人地址",
 							"required": true
 						}
-					]
+					],
+					"name": "logistics_info",
+					"type": "DistributionOrderLogisticsInfo",
+					"description": "物流信息,收货人信息,姓名，电话，地址",
+					"required": true
 				},
 				{
 					"name": "logistics_status",
@@ -403,12 +396,19 @@
 					"description": "认证的活体ID序列",
 					"required": true
 				}
-			]
+			],
+			"name": "model_list",
+			"type": "DistributionOrderInfo []",
+			"description": "分销订单信息"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "查询总数"
 		}
-	]
+	],
+	"name": "alibaba.tianji.supplier.order.query",
+	"apiChineseName": "查询供应商订单",
+	"description": "查询供应商订单",
+	"id": 26048
 }

@@ -1,0 +1,139 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "指定快递公司"
+				},
+				{
+					"subParams": [
+						{
+							"name": "town_name",
+							"type": "String",
+							"description": "镇/街道"
+						},
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省"
+						}
+					],
+					"name": "address",
+					"type": "AddressDTO",
+					"description": "地址"
+				}
+			],
+			"name": "reachable_recommend_request_dto",
+			"type": "ReachableRecommendRequestDTO",
+			"description": "入参"
+		},
+		{
+			"subParams": [
+				{
+					"name": "description",
+					"type": "String",
+					"description": "调用时自定义描述信息"
+				}
+			],
+			"name": "client_info_dto",
+			"type": "ClientInfoDTO",
+			"description": "调用方对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "reachable",
+							"type": "Boolean",
+							"description": "地址是否可达"
+						},
+						{
+							"name": "interrupt_reason",
+							"type": "String",
+							"description": "不可达原因"
+						},
+						{
+							"name": "interrupt_end_time",
+							"type": "String",
+							"description": "不可达结束时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "cp_code",
+									"type": "String",
+									"description": "cp编码"
+								},
+								{
+									"name": "cp_name",
+									"type": "String",
+									"description": "cp名称"
+								}
+							],
+							"name": "reachable_cps",
+							"type": "CpInfoDTO[]",
+							"description": "可达CP列表"
+						},
+						{
+							"name": "interrupt_type",
+							"type": "String",
+							"description": "拦截类型"
+						}
+					],
+					"name": "module",
+					"type": "ReachableRecommendResponseDTO",
+					"description": "地址可达结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						}
+					],
+					"name": "error_info_list",
+					"type": "ErrorInfo[]",
+					"description": "异常信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultDTO",
+			"description": "结果"
+		}
+	],
+	"name": "cainiao.waybill.address.reachable.query",
+	"apiChineseName": "地址可达查询",
+	"description": "地址可达查询",
+	"id": 63054
+}

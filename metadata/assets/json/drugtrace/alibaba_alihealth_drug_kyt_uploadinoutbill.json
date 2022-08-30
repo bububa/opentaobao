@@ -1,8 +1,4 @@
 {
-	"id": 41215,
-	"name": "alibaba.alihealth.drug.kyt.uploadinoutbill",
-	"apiChineseName": "企业上传出入库信息",
-	"description": "企业上传出入库信息，包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。\n不包括对个人的零售出库，疫苗接种，领药出库。\n本接口与uploadcircubill接口的主要区别的，本接口入参中直接上传追溯码（多个码时用逗号分隔）。uploadcircubill接口入参中，需要上传码的单据文件（用扫码枪生成的xml文件），一般情况下使用uploadcircubill接口上传单据文件。",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -25,7 +21,7 @@
 		{
 			"name": "physic_type",
 			"type": "Number",
-			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药",
+			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药【可以随便填写，单据上传后会以实际为准】",
 			"required": true
 		},
 		{
@@ -127,84 +123,84 @@
 		{
 			"name": "trace_codes",
 			"type": "String[]",
-			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 1500
+			"description": "追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"maxListSize": 3500,
+			"required": true
 		},
 		{
 			"name": "qu_receivable",
 			"type": "Number",
-			"description": "（协同平台数据合规）应收货总数量"
+			"description": "应收货总数量"
 		},
 		{
 			"name": "xt_is_check",
 			"type": "String",
-			"description": "（协同平台数据合规）是否验证，0：未通过验证，1：已验证"
+			"description": "是否验证，0：未通过验证，1：已验证"
 		},
 		{
 			"name": "xt_check_code",
 			"type": "String",
-			"description": "（协同平台数据合规）未验证通过原因【验证未通过时填写】"
+			"description": "未验证通过原因【验证未通过时填写】"
 		},
 		{
 			"name": "xt_check_code_desc",
 			"type": "String",
-			"description": "（协同平台数据合规）未验证通过原因描述【验证未通过时填写】"
+			"description": "未验证通过原因描述【验证未通过时填写】"
 		},
 		{
 			"name": "drug_list_json",
 			"type": "String",
-			"description": "（协同平台数据合规）药品列表Json：\"codeCount\": 药品数量 \"commDrugId\": 国家药品唯一标识 \"exprieDate\": 生产日期 \"physicInfo\": 药品信息 \"pkgSpec\": 包状规格 \"prepnCount\": 制剂数量 \"produceBatchNo\":生产批次 \"produceDate\": 生产日期"
+			"description": "药品列表Json：\"codeCount\": 药品数量 \"commDrugId\": 国家药品唯一标识 \"exprieDate\": 生产日期 \"physicInfo\": 药品信息 \"pkgSpec\": 包状规格 \"prepnCount\": 制剂数量 \"produceBatchNo\":生产批次 \"produceDate\": 生产日期"
 		},
 		{
 			"name": "ass_ref_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）单据委托企业refEntId"
+			"description": "单据委托企业refEntId"
 		},
 		{
 			"name": "dis_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业entId出库单，收货方为医疗机构时填写】"
+			"description": "药品配送企业ent_Id出库单"
 		},
 		{
 			"name": "dis_ref_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）药品配送企业出库单，收货方为医疗机构时填写】"
+			"description": "药品配送ref_enti_d企业"
 		},
 		{
 			"name": "to_person",
 			"type": "String",
-			"description": "（协同平台数据合规）收货人【必选】"
+			"description": "收货人"
 		},
 		{
 			"name": "from_person",
 			"type": "String",
-			"description": "（协同平台数据合规）发货人【必选】"
+			"description": "发货人"
 		},
 		{
 			"name": "order_code",
 			"type": "String",
-			"description": "（协同平台数据合规）订货单编号【可选】"
+			"description": "订货单编号【可选】"
 		},
 		{
 			"name": "from_bill_code",
 			"type": "String",
-			"description": "（协同平台数据合规）发货单编号【必选】"
+			"description": "发货单编号"
 		},
 		{
 			"name": "to_address",
 			"type": "String",
-			"description": "（协同平台数据合规）收货地址【必选】"
+			"description": "收货地址"
 		},
 		{
 			"name": "from_address",
 			"type": "String",
-			"description": "（协同平台数据合规）发货地址【必选】"
+			"description": "发货地址"
 		},
 		{
 			"name": "ass_ent_id",
 			"type": "String",
-			"description": "（协同平台数据合规）单据委托企业entId"
+			"description": "单据委托企业entId"
 		}
 	],
 	"responseParams": [
@@ -228,5 +224,9 @@
 			"type": "Boolean",
 			"description": "是否成功(true 成功 false 失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.uploadinoutbill",
+	"apiChineseName": "企业上传出入库信息",
+	"description": "企业上传出入库信息，包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。\n不包括对个人的零售出库，疫苗接种，领药出库。\n本接口与uploadcircubill接口的主要区别的，本接口入参中直接上传追溯码（多个码时用逗号分隔）。uploadcircubill接口入参中，需要上传码的单据文件（用扫码枪生成的xml文件），一般情况下使用uploadcircubill接口上传单据文件。",
+	"id": 41215
 }

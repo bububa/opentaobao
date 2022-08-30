@@ -1,8 +1,4 @@
 {
-	"id": 38149,
-	"name": "taobao.taotv.video.playlist.ottnav.get",
-	"apiChineseName": "ott播单",
-	"description": "根据聚焦播单ID拿到下面播单视频，根据左侧播单ID列表批量拿到播单信息",
 	"requestParams": [
 		{
 			"name": "play_list_id",
@@ -23,125 +19,111 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PlayListNavRbo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cur_play_list_id",
 							"type": "String",
-							"description": "当前播单id",
-							"required": true
+							"description": "当前播单id"
 						},
 						{
-							"name": "videos",
-							"type": "Videos[]",
-							"description": "当前播单视频列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "视频标题",
-									"required": true
-								},
-								{
-									"name": "from",
-									"type": "String",
-									"description": "视频来源",
-									"required": true
+									"description": "视频标题"
 								},
 								{
 									"name": "video_id",
 									"type": "String",
-									"description": "视频ID",
-									"required": true
+									"description": "视频ID"
 								},
 								{
 									"name": "pic_url",
 									"type": "String",
-									"description": "视频图片",
-									"required": true
+									"description": "视频图片"
+								},
+								{
+									"name": "from",
+									"type": "String",
+									"description": "视频来源"
 								}
-							]
+							],
+							"name": "videos",
+							"type": "Videos[]",
+							"description": "当前播单视频列表"
 						},
 						{
-							"name": "play_list",
-							"type": "Playlist[]",
-							"description": "播单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "play_list_id",
 									"type": "Number",
-									"description": "播单ID",
-									"required": true
+									"description": "播单ID"
 								},
 								{
 									"name": "play_list_name",
 									"type": "String",
-									"description": "播单名称",
-									"required": true
+									"description": "播单名称"
 								},
 								{
 									"name": "bg_pic",
 									"type": "String",
-									"description": "背景图",
-									"required": true
+									"description": "背景图"
 								},
 								{
 									"name": "icon_pic",
 									"type": "String",
-									"description": "icon图标",
-									"required": true
+									"description": "icon图标"
 								},
 								{
 									"name": "has_recommend",
 									"type": "Number",
-									"description": "是否开启视频推荐功能：1开启0关闭（null或无字段均关闭)",
-									"required": true
+									"description": "是否开启视频推荐功能：1开启0关闭（null或无字段均关闭)"
 								}
-							]
+							],
+							"name": "play_list",
+							"type": "Playlist[]",
+							"description": "播单列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PlayListNavRbo",
+					"description": "model"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "httpStatusCode",
-					"required": true
+					"description": "httpStatusCode"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.taotv.video.playlist.ottnav.get",
+	"apiChineseName": "ott播单",
+	"description": "根据聚焦播单ID拿到下面播单视频，根据左侧播单ID列表批量拿到播单信息",
+	"id": 38149
 }

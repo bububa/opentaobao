@@ -1,8 +1,4 @@
 {
-	"id": 29030,
-	"name": "taobao.bus.tvmrefundorder.set",
-	"apiChineseName": "线下自助机逆向退款接口",
-	"description": "汽车票线下自助机 逆向退票接口；用于已出票完成后，再发起退款（注意这是售后退款，如出票异常但是告诉我们出票成功，后续给客户退款，需要调用这个接口，一般开放给财务。出票过程中的失败，请直接调用出票接口并且传递false标志，我们会自动退款。）",
 	"requestParams": [
 		{
 			"name": "alitrip_order_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "refund_account_in_details",
-			"type": "RefundAccountInDetail[]",
-			"description": "分账退款明细",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "alipay_account",
@@ -36,7 +28,11 @@
 					"type": "String",
 					"description": "退款批次号须唯一"
 				}
-			]
+			],
+			"name": "refund_account_in_details",
+			"type": "RefundAccountInDetail[]",
+			"description": "分账退款明细",
+			"maxListSize": 20
 		},
 		{
 			"name": "refund_amount",
@@ -45,22 +41,35 @@
 			"required": true
 		},
 		{
-			"name": "refund_reason",
-			"type": "String",
-			"description": "退款原因"
-		},
-		{
 			"name": "refund_batch_no",
 			"type": "String",
 			"description": "批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可",
 			"required": true
 		},
 		{
-			"name": "insurance_refund_details",
-			"type": "InsuranceRefundDetail[]",
-			"description": "保险退款详情",
-			"maxListSize": 999,
+			"name": "refund_reason",
+			"type": "String",
+			"description": "退款原因"
+		},
+		{
 			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "insure_price",
+							"type": "Number",
+							"description": "保险价格"
+						},
+						{
+							"name": "product_no",
+							"type": "String",
+							"description": "保险产品码"
+						}
+					],
+					"name": "tvm_insurance_infos",
+					"type": "TvmInsuranceInfo[]",
+					"description": "退保信息"
+				},
 				{
 					"name": "insure_price",
 					"type": "Number",
@@ -80,25 +89,12 @@
 					"name": "rider_name",
 					"type": "String",
 					"description": "乘客姓名"
-				},
-				{
-					"name": "tvm_insurance_infos",
-					"type": "TvmInsuranceInfo[]",
-					"description": "退保信息",
-					"subParams": [
-						{
-							"name": "insure_price",
-							"type": "Number",
-							"description": "保险价格"
-						},
-						{
-							"name": "product_no",
-							"type": "String",
-							"description": "保险产品码"
-						}
-					]
 				}
-			]
+			],
+			"name": "insurance_refund_details",
+			"type": "InsuranceRefundDetail[]",
+			"description": "保险退款详情",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
@@ -117,5 +113,9 @@
 			"type": "Boolean",
 			"description": "success true 成功 false 失败"
 		}
-	]
+	],
+	"name": "taobao.bus.tvmrefundorder.set",
+	"apiChineseName": "线下自助机逆向退款接口",
+	"description": "汽车票线下自助机 逆向退票接口；用于已出票完成后，再发起退款（注意这是售后退款，如出票异常但是告诉我们出票成功，后续给客户退款，需要调用这个接口，一般开放给财务。出票过程中的失败，请直接调用出票接口并且传递false标志，我们会自动退款。）",
+	"id": 29030
 }

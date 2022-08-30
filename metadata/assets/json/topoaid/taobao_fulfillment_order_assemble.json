@@ -1,0 +1,116 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "group_id",
+					"type": "String",
+					"description": "组合id，服务商内部的合单操作id，取消合单会根据group_id进行删除操作。",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "taobao_sub_order_id",
+							"type": "String",
+							"description": "淘宝交易子订单id"
+						},
+						{
+							"name": "order_type",
+							"type": "Number",
+							"description": "order_id的类型，0:淘宝交易订单,1: 换货单,2:分销单，3:补货单，4:代发单"
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "商品类型, 0:下单货品，1:赠品，2:其他"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "淘宝单号可以是交易订单、换货单、补货单、代发单或分销单等，当 order_type=0时，order_id =  taobao_parent_order_id。"
+						},
+						{
+							"name": "erp_order_id",
+							"type": "String",
+							"description": "erp系统内的订单id"
+						},
+						{
+							"name": "taobao_parent_order_id",
+							"type": "String",
+							"description": "淘宝交易主订单id"
+						}
+					],
+					"name": "order_list",
+					"type": "OrderGroup[]",
+					"description": "合单订单列表，一个列表最多200"
+				}
+			],
+			"name": "assemble_orders",
+			"type": "AssembleOrder",
+			"description": "批量回传集合,一次接口最多40",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "操作类型，支持参数为MERGE、CANCEL_MERGE。当进行CANCEL_MERGE操作时，只需要传入groupId即可，order_list可以为空",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "call_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "call_error_msg",
+			"type": "String",
+			"description": "错误信息描述"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "group_id",
+							"type": "String",
+							"description": "入参中的groupId"
+						},
+						{
+							"name": "result",
+							"type": "Boolean",
+							"description": "回传结果"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误信息描述"
+						}
+					],
+					"name": "order_group_responses",
+					"type": "OrderGroupResponse[]",
+					"description": "回传结果List"
+				}
+			],
+			"name": "model",
+			"type": "OrderAssembleResponse",
+			"description": "回传结果"
+		}
+	],
+	"name": "taobao.fulfillment.order.assemble",
+	"apiChineseName": "拆合单结果回传接口",
+	"description": "拆合单结果回传接口",
+	"id": 62880
+}

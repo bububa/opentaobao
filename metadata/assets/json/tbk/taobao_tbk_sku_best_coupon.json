@@ -1,35 +1,34 @@
 {
-	"id": 54727,
-	"name": "taobao.tbk.sku.best.coupon",
-	"apiChineseName": "sku维度最优优惠券信息",
-	"description": "根据itemid和skuid查询最优优惠券信息",
 	"requestParams": [
-		{
-			"name": "item_id",
-			"type": "Number",
-			"description": "商品ID",
-			"required": true
-		},
 		{
 			"name": "sku_id",
 			"type": "Number",
 			"description": "商品对应的skuId",
 			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "coupon_info",
-			"type": "MapData",
-			"description": "优惠券详细信息",
 			"subParams": [
 				{
 					"name": "coupon_expire_time",
 					"type": "Number",
-					"description": "优惠券过期时间13位时间戳",
-					"required": true
+					"description": "优惠券过期时间13位时间戳"
 				}
-			]
+			],
+			"name": "coupon_info",
+			"type": "MapData",
+			"description": "优惠券详细信息"
 		}
-	]
+	],
+	"name": "taobao.tbk.sku.best.coupon",
+	"apiChineseName": "sku维度最优优惠券信息",
+	"description": "根据itemid和skuid查询最优优惠券信息",
+	"id": 54727
 }

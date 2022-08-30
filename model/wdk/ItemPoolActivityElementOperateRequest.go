@@ -8,6 +8,8 @@ type ItemPoolActivityElementOperateRequest struct {
 	CreatorId string `json:"creator_id,omitempty" xml:"creator_id,omitempty"`
 	// 操作人名称
 	CreatorName string `json:"creator_name,omitempty" xml:"creator_name,omitempty"`
+	// erp外部活动id
+	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
 	// 同城零售活动id
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
 	// 商品所属分组序号，默认单个分组则填1

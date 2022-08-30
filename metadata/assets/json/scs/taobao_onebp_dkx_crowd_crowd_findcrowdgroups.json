@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "market_scene",
+					"type": "String",
+					"description": "营销场景"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "人群id"
+				}
+			],
+			"name": "group_query",
+			"type": "GroupQueryTopDto",
+			"description": "官方人群查询",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "group_id",
+							"type": "Number",
+							"description": "人群id"
+						},
+						{
+							"name": "group_name",
+							"type": "String",
+							"description": "人群名称"
+						},
+						{
+							"name": "group_desc",
+							"type": "String",
+							"description": "人群描述"
+						}
+					],
+					"name": "template_group_top_d_t_o_list",
+					"type": "TemplateGroupTopDto[]",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.crowd.crowd.findcrowdgroups",
+	"apiChineseName": "获取人群组",
+	"description": "获取人群组\n入参1示例：{\"biz_code\":\"adStrategyDkx\"}\n入参2示例：{ \"market_scene\": \"ad_strategy_laxin\"}",
+	"id": 58875
+}

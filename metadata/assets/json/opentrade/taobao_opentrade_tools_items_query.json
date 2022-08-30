@@ -1,14 +1,20 @@
 {
-	"id": 53535,
-	"name": "taobao.opentrade.tools.items.query",
-	"apiChineseName": "交易开放获取商品绑定信息",
-	"description": "交易开放获取商品绑定信息",
 	"requestParams": [
 		{
 			"name": "miniapp_id",
 			"type": "Number",
 			"description": "交易开放C端小程序ID",
 			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "起始页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小"
 		}
 	],
 	"responseParams": [
@@ -16,6 +22,15 @@
 			"name": "item_ids",
 			"type": "Number []",
 			"description": "已绑定的商品ID列表"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总商品数"
 		}
-	]
+	],
+	"name": "taobao.opentrade.tools.items.query",
+	"apiChineseName": "交易开放获取商品绑定信息",
+	"description": "交易开放获取商品绑定信息",
+	"id": 53535
 }

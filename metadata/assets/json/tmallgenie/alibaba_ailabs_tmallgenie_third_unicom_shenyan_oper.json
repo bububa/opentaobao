@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"name": "cuei",
+			"type": "String",
+			"description": "cuei",
+			"required": true
+		},
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "联通用户id",
+			"required": true
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "traceId",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "操作类型：1.打开神眼 2.关闭神眼",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "响应码（0000表示成功，其他表示失败）"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.third.unicom.shenyan.oper",
+	"apiChineseName": "联通神眼注册操作",
+	"description": "联通神眼注册操作",
+	"id": 60470
+}

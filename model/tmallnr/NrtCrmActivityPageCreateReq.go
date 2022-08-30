@@ -16,10 +16,10 @@ type NrtCrmActivityPageCreateReq struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 业务code
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
+	// 页面ID
+	PageId int64 `json:"page_id,omitempty" xml:"page_id,omitempty"`
 	// 创建人id
 	Creator int64 `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 页面类型
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
-	// 页面ID
-	PageId int64 `json:"page_id,omitempty" xml:"page_id,omitempty"`
 }

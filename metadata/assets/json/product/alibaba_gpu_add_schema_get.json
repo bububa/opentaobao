@@ -1,8 +1,4 @@
 {
-	"id": 38593,
-	"name": "alibaba.gpu.add.schema.get",
-	"apiChineseName": "获取产品发布规则接口",
-	"description": "获取产品发布规则接口",
 	"requestParams": [
 		{
 			"name": "leaf_cat_id",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "返回产品发布规则"
 		}
-	]
+	],
+	"name": "alibaba.gpu.add.schema.get",
+	"apiChineseName": "获取产品发布规则接口",
+	"description": "获取产品发布规则接口",
+	"id": 38593
 }

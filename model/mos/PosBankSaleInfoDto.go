@@ -34,24 +34,24 @@ type PosBankSaleInfoDto struct {
 	TradeRefNo string `json:"trade_ref_no,omitempty" xml:"trade_ref_no,omitempty"`
 	// 外部门店号，类似HZ01
 	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
+	// 加密摘要，未脱敏号加密
+	EncrypteSummary string `json:"encrypte_summary,omitempty" xml:"encrypte_summary,omitempty"`
+	// 通讯类型。001：网线，002:电话
+	CommunicateType string `json:"communicate_type,omitempty" xml:"communicate_type,omitempty"`
 	// 操作时间。yyyy-MM-dd HH:mm:ss
 	OperateTime string `json:"operate_time,omitempty" xml:"operate_time,omitempty"`
 	// 冲正标志，供银行卡调账使用，表字段需要，不由接口传入，默认为00
 	Rback string `json:"rback,omitempty" xml:"rback,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+	// 扩展字段
+	ExtendParam string `json:"extend_param,omitempty" xml:"extend_param,omitempty"`
 	// 收银员
 	Cashier string `json:"cashier,omitempty" xml:"cashier,omitempty"`
 	// ip地址
 	Ip string `json:"ip,omitempty" xml:"ip,omitempty"`
 	// mac地址
 	Mac string `json:"mac,omitempty" xml:"mac,omitempty"`
-	// 通讯类型。001：网线，002:电话
-	CommunicateType string `json:"communicate_type,omitempty" xml:"communicate_type,omitempty"`
-	// 加密摘要，未脱敏号加密
-	EncrypteSummary string `json:"encrypte_summary,omitempty" xml:"encrypte_summary,omitempty"`
-	// 扩展字段
-	ExtendParam string `json:"extend_param,omitempty" xml:"extend_param,omitempty"`
 	// 交易金额。单位：分
 	TradeAmount int64 `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
 	// 支付类型行号

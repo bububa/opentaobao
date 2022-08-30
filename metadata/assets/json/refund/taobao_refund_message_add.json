@@ -1,8 +1,4 @@
 {
-	"id": 125,
-	"name": "taobao.refund.message.add",
-	"apiChineseName": "创建退款留言/凭证",
-	"description": "创建退款留言/凭证",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -25,9 +21,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "refund_message",
-			"type": "RefundMessage",
-			"description": "退款信息。包含id和created",
 			"subParams": [
 				{
 					"name": "id",
@@ -39,7 +32,14 @@
 					"type": "Date",
 					"description": "留言创建时间。格式:yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "refund_message",
+			"type": "RefundMessage",
+			"description": "退款信息。包含id和created"
 		}
-	]
+	],
+	"name": "taobao.refund.message.add",
+	"apiChineseName": "创建退款留言/凭证",
+	"description": "创建退款留言/凭证",
+	"id": 125
 }

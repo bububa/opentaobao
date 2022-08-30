@@ -38,9 +38,17 @@ type RawVideoAlbum struct {
 	SubTitle string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
 	// 标题（若需显示集数，请填写：第X集：视频名称；如第一集：天猫精灵）
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
+	// 学段见类目文档
+	GradeStagId string `json:"grade_stag_id,omitempty" xml:"grade_stag_id,omitempty"`
+	// 学科见类目文档
+	CourseId string `json:"course_id,omitempty" xml:"course_id,omitempty"`
+	// 版本见类目文档
+	BookVersionId string `json:"book_version_id,omitempty" xml:"book_version_id,omitempty"`
+	// 教材见类目文档
+	TextbookId string `json:"textbook_id,omitempty" xml:"textbook_id,omitempty"`
 	// 试看数(表示前N个视频支持试看)
 	AuditionNum int64 `json:"audition_num,omitempty" xml:"audition_num,omitempty"`
-	// 付费类型 0-免费、1-VIP免费、2-整本专辑售卖
+	// 付费类型 0-免费、1-VIP免费、2-整本专辑售卖、3-超级会员
 	ChargeType int64 `json:"charge_type,omitempty" xml:"charge_type,omitempty"`
 	// 收藏量
 	CollectCount int64 `json:"collect_count,omitempty" xml:"collect_count,omitempty"`
@@ -74,6 +82,10 @@ type RawVideoAlbum struct {
 	ValidEndTime int64 `json:"valid_end_time,omitempty" xml:"valid_end_time,omitempty"`
 	// 生效时间,unix时间戳,单位:毫秒,为空则立即生效
 	ValidStartTime int64 `json:"valid_start_time,omitempty" xml:"valid_start_time,omitempty"`
+	// 课程形式见类目文档
+	CourseType int64 `json:"course_type,omitempty" xml:"course_type,omitempty"`
 	// 更新到第几集，如果是未完结状态此字段必填
 	UpdateIndex int64 `json:"update_index,omitempty" xml:"update_index,omitempty"`
+	// 是否教育内容
+	IsEducation bool `json:"is_education,omitempty" xml:"is_education,omitempty"`
 }

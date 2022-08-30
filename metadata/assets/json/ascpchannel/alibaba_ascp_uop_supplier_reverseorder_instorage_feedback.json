@@ -1,13 +1,6 @@
 {
-	"id": 49792,
-	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.feedback",
-	"apiChineseName": "逆向销退入库单入库结果回告",
-	"description": "ASCP按照逆向履约单纬度，通过该接口接收商家在退货完成时，自动创建销退单做入库回传。",
 	"requestParams": [
 		{
-			"name": "instorage_feedback_request",
-			"type": "Instoragefeedbackrequest",
-			"description": "销退单入库结果请求",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -43,10 +36,6 @@
 					"description": "快递单号"
 				},
 				{
-					"name": "receiver_info",
-					"type": "Receiverinfo",
-					"description": "退回收件人信息(商家)",
-					"required": true,
 					"subParams": [
 						{
 							"name": "receiver_phone",
@@ -77,8 +66,7 @@
 						{
 							"name": "receiver_area",
 							"type": "String",
-							"description": "收件方区县",
-							"required": true
+							"description": "收件方区县"
 						},
 						{
 							"name": "receiver_city",
@@ -104,13 +92,13 @@
 							"description": "收件方邮编",
 							"required": true
 						}
-					]
+					],
+					"name": "receiver_info",
+					"type": "Receiverinfo",
+					"description": "退回收件人信息(商家)",
+					"required": true
 				},
 				{
-					"name": "sender_info",
-					"type": "Senderinfo",
-					"description": "退回寄件人信息(消费者)",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sender_phone",
@@ -141,8 +129,7 @@
 						{
 							"name": "sender_area",
 							"type": "String",
-							"description": "发件方区县",
-							"required": true
+							"description": "发件方区县"
 						},
 						{
 							"name": "sender_city",
@@ -168,13 +155,13 @@
 							"description": "发件方邮编",
 							"required": true
 						}
-					]
+					],
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "退回寄件人信息(消费者)",
+					"required": true
 				},
 				{
-					"name": "order_items",
-					"type": "Orderitems[]",
-					"description": "退回订单货品信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_order_code",
@@ -201,10 +188,6 @@
 							"required": true
 						},
 						{
-							"name": "instorage_details",
-							"type": "Instoragedetails[]",
-							"description": "销退回告明细列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "received_quantity",
@@ -218,44 +201,61 @@
 									"description": "库存类型:101=残次品;1=正品",
 									"required": true
 								}
-							]
+							],
+							"name": "instorage_details",
+							"type": "Instoragedetails[]",
+							"description": "销退回告明细列表",
+							"required": true
 						}
-					]
+					],
+					"name": "order_items",
+					"type": "Orderitems[]",
+					"description": "退回订单货品信息列表",
+					"required": true
 				},
 				{
 					"name": "store_code",
 					"type": "String",
 					"description": "退回仓编码",
 					"required": true
+				},
+				{
+					"name": "business_model",
+					"type": "String",
+					"description": "1\t一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)"
 				}
-			]
+			],
+			"name": "instorage_feedback_request",
+			"type": "Instoragefeedbackrequest",
+			"description": "销退单入库结果请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "instorage_feedback_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "instorage_feedback_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.feedback",
+	"apiChineseName": "逆向销退入库单入库结果回告",
+	"description": "ASCP按照逆向履约单纬度，通过该接口接收商家在退货完成时，自动创建销退单做入库回传。",
+	"id": 49792
 }

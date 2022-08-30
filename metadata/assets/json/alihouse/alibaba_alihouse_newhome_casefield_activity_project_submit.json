@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_activity_id",
+					"type": "String",
+					"description": "外部活动ID",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部楼盘ID",
+							"required": true
+						},
+						{
+							"name": "activity_address",
+							"type": "String",
+							"description": "活动地址"
+						},
+						{
+							"name": "sign_up_limit",
+							"type": "Number",
+							"description": "报名人数上限",
+							"required": true
+						}
+					],
+					"name": "case_field_activity_project_dto",
+					"type": "CaseFieldActivityProjectDTO[]",
+					"description": "活动地址",
+					"required": true
+				}
+			],
+			"name": "case_field_activity_projects_dto",
+			"type": "CaseFieldActivityProjectsDTO",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.casefield.activity.project.submit",
+	"apiChineseName": "案场活动楼盘维护",
+	"description": "案场活动楼盘维护",
+	"id": 59339
+}

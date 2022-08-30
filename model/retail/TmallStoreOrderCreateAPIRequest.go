@@ -12,10 +12,10 @@ import (
 // 门店订单创建api
 type TmallStoreOrderCreateAPIRequest struct {
 	model.Params
-	// 系统自动生成
-	_appInfo *AppInfo
 	// 创建订单请求
 	_createOrderRequest *CreateOrderRequest
+	// 系统自动生成
+	_appInfo *AppInfo
 }
 
 // NewTmallStoreOrderCreateRequest 初始化TmallStoreOrderCreateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TmallStoreOrderCreateAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetAppInfo is AppInfo Setter
-// 系统自动生成
-func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
-	r._appInfo = _appInfo
-	r.Set("app_info", _appInfo)
-	return nil
-}
-
-// GetAppInfo AppInfo Getter
-func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
-	return r._appInfo
-}
-
 // SetCreateOrderRequest is CreateOrderRequest Setter
 // 创建订单请求
 func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
@@ -63,4 +50,17 @@ func (r *TmallStoreOrderCreateAPIRequest) SetCreateOrderRequest(_createOrderRequ
 // GetCreateOrderRequest CreateOrderRequest Getter
 func (r TmallStoreOrderCreateAPIRequest) GetCreateOrderRequest() *CreateOrderRequest {
 	return r._createOrderRequest
+}
+
+// SetAppInfo is AppInfo Setter
+// 系统自动生成
+func (r *TmallStoreOrderCreateAPIRequest) SetAppInfo(_appInfo *AppInfo) error {
+	r._appInfo = _appInfo
+	r.Set("app_info", _appInfo)
+	return nil
+}
+
+// GetAppInfo AppInfo Getter
+func (r TmallStoreOrderCreateAPIRequest) GetAppInfo() *AppInfo {
+	return r._appInfo
 }

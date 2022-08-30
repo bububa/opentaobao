@@ -1,8 +1,4 @@
 {
-	"id": 24766,
-	"name": "push.aliyuncs.com.pushNotification.2015-03-18",
-	"apiChineseName": "推送通知",
-	"description": "pushNotification",
 	"requestParams": [
 		{
 			"name": "Account",
@@ -136,5 +132,9 @@
 			"type": "Number",
 			"description": "消息ID,用于查询"
 		}
-	]
+	],
+	"name": "push.aliyuncs.com.pushNotification.2015-03-18",
+	"apiChineseName": "推送通知",
+	"description": "pushNotification",
+	"id": 24766
 }

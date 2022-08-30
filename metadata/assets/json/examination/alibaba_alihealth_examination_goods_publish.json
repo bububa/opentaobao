@@ -1,35 +1,21 @@
 {
-	"id": 38546,
-	"name": "alibaba.alihealth.examination.goods.publish",
-	"apiChineseName": "体检机构对接_商品发布／更新",
-	"description": "体检机构对接_商品发布／更新",
 	"requestParams": [
 		{
 			"name": "group_id",
 			"type": "String",
 			"description": "商品id，机构保证全局唯一",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		},
 		{
 			"name": "group_name",
 			"type": "String",
 			"description": "商品名称",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		},
 		{
-			"name": "package_list",
-			"type": "Package[]",
-			"description": "套餐列表",
-			"maxListSize": 200,
 			"subParams": [
-				{
-					"name": "gender",
-					"type": "String",
-					"description": "性别（0：男，1：女，2：通用）",
-					"required": true
-				},
 				{
 					"name": "contract_price",
 					"type": "String",
@@ -37,9 +23,6 @@
 					"required": true
 				},
 				{
-					"name": "item_list",
-					"type": "Item[]",
-					"description": "体检项列表",
 					"subParams": [
 						{
 							"name": "title",
@@ -72,7 +55,10 @@
 							"type": "String",
 							"description": "体检组显示权重"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "Item[]",
+					"description": "体检项列表"
 				},
 				{
 					"name": "settlement_price",
@@ -94,7 +80,13 @@
 				{
 					"name": "package_detail",
 					"type": "String",
-					"description": "套餐详情"
+					"description": "最多500个字，套餐详情"
+				},
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别（0：男，1：女，2：通用）",
+					"required": true
 				},
 				{
 					"name": "marital_status",
@@ -105,12 +97,12 @@
 				{
 					"name": "labels",
 					"type": "String[]",
-					"description": "入职体检,父母体检,女性体检,男性体检,儿童体检,婚前孕前,肿瘤筛查,深度体检,核酸检测,专项检查,白领体检,特价体检,证件体检,皮肤检测,健康证；多个逗号分隔"
+					"description": "体检业务：入职体检,父母体检,女性体检,中青年体检,肿瘤筛查,肠胃套餐,健康证,儿童体检,婚前孕前,高端体检,核酸检测,妇科检查,特价体检,证件体检,专科检查,健康优选,减重服务 护理/检测业务：上门换药,陪诊/陪护,小儿护理,日常护理,置管护理,上门核酸,上门体检,传染病检测,慢病检测,肿瘤早筛,甲状腺检测,专项检测,卵巢检测,打针/采血,核酸团检,中医养生,过敏原检测,小儿检测,基因检测,皮肤检测,过敏检测,肠胃检查,甲状腺检查 心理健康业务：心理测评,心理咨询,在线咨询,情感分析,情感顾问,测评,心理医生,咨询,心理辅导,情感咨询,心理电话咨询,心理门店咨询,恋爱情感,焦虑缓解,职业规划,家庭教育,一对一服务,猜你喜欢,推荐,专家课程,线上陪伴营,专家预约,团体治疗,亲子关系,抑郁焦虑 口腔齿科业务：洗牙,儿童口腔,美白,拔牙,烤瓷牙;  多个请用逗号分隔，不建议跨行业/业务使用上述标签；个人到店核酸检测请选择'核酸检测', 上门核酸检测请选择'上门核酸', 上门核酸团检请选择'核酸团检'"
 				},
 				{
 					"name": "feature_item",
 					"type": "String[]",
-					"description": "三高检测,肿瘤筛查,前列腺检查,宫颈癌筛查,妇科检查,乳腺检查,甲状腺检查,心脑血管检查,胸肺部检查,肝胆检查,专项检查,基因检测,脱发检测,毛囊检测,毛发检测,胃部疾病筛查,肠道疾病筛查,脊椎检测；多个逗号分隔"
+					"description": "体检业务：三高检测,肿瘤筛查,前列腺检查,宫颈癌筛查,妇科检查,甲状腺检查,心脑血管检查,胸肺部检查,肝胆检查,乳腺检查,颈椎腰椎,肠胃疾病,专项检查,脱发检测,脊椎检测 心理健康业务：1V1专业沟通,专业量表,全面报告,专业心理评估,60分钟深入咨询,个性化定制方案,系统稳定咨询 口腔齿科业务：预防牙周病,清洁牙齿,清除色素,效果更佳,牙齿防蛀,重点保护,促进钙化,全口防蛀,一次搞定,全面检查,赠送X光片,进口树脂,美观耐用,纳米树脂,及时止龋,为换牙护航,微创拔牙,解除隐患,预防感染,进口材料,SPA式体验,不酸不痛,牙齿美白,数字化定制,仿若真牙,认证医生,专业服务; 多个请用逗号分隔，不建议跨行业/业务使用上述标签"
 				},
 				{
 					"name": "detail_image",
@@ -136,8 +128,47 @@
 					"name": "info_image",
 					"type": "String",
 					"description": "http://123123.jpg"
+				},
+				{
+					"name": "free",
+					"type": "Boolean",
+					"description": "是否免费，仅部分场景适用，默认传false"
+				},
+				{
+					"name": "allow_offline_pay",
+					"type": "Boolean",
+					"description": "是否允许线下支付，仅部分场景适用，默认传false"
+				},
+				{
+					"name": "report_generation_max_duration_business_commitment",
+					"type": "Number",
+					"description": "报告最大产出时长，服务商承诺，单位小时;0: 无效值，默认为0; 1~4: 4小时出报告, 5~6: 6小时出报告, 7~12: 12小时出报告, 13~24: 24小时出报告"
+				},
+				{
+					"name": "only_as_sku_item",
+					"type": "Boolean",
+					"description": "是否只作为加项"
+				},
+				{
+					"name": "sku_item_codes",
+					"type": "String[]",
+					"description": "关联加项编码"
+				},
+				{
+					"name": "recommend_sku_item_codes",
+					"type": "String[]",
+					"description": "推荐加项编码"
+				},
+				{
+					"name": "sku_item_codes_no_data",
+					"type": "Boolean",
+					"description": "标记加项编码为空，用于清空加项"
 				}
-			]
+			],
+			"name": "package_list",
+			"type": "Package[]",
+			"description": "套餐列表",
+			"maxListSize": 200
 		},
 		{
 			"name": "type",
@@ -153,7 +184,7 @@
 		{
 			"name": "target_group",
 			"type": "String",
-			"description": "最多256个字，界面对应列表文字"
+			"description": "最多256个字，界面对应列表文字；为空是自动取套餐的package_detail字段值"
 		},
 		{
 			"name": "label",
@@ -174,39 +205,44 @@
 			"name": "backend_category_id",
 			"type": "Number",
 			"description": "类目ID，填入叶子类目ID，儿童体检: 20210204000004, 中青年体检: 20210204000005, 老年体检: 20210204000006, 证件体检（含入职）: 20210204000007, 核酸检测（到店服务）: 20210204000008, 专科服务（不包含核酸检测）: 20210204000009, 上门检测: 202102040000010, 上门护理: 202102040000011, 上门体检 202102040000012"
+		},
+		{
+			"name": "reservation_api_version",
+			"type": "Number",
+			"description": "预约服务版本号, 控制预约链路, 仅支持新增, 不支持更新; 1: 路由至预约系统，0:系统默认；"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "详细错误信息",
-					"required": true
+					"description": "详细错误信息"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "结果数据，通常为空",
-					"required": true
+					"type": "String",
+					"description": "结果数据，通常为空"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行成功标示",
-					"required": true
+					"description": "执行成功标示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.goods.publish",
+	"apiChineseName": "体检机构对接_商品发布／更新",
+	"description": "体检机构对接_商品发布／更新",
+	"id": 38546
 }

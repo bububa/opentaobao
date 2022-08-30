@@ -1,8 +1,4 @@
 {
-	"id": 50558,
-	"name": "alibaba.icbu.product.id.encrypt",
-	"apiChineseName": "ICBU国际站商品加密接口",
-	"description": "ICBU国际站，对混淆的产品ID加密。",
 	"requestParams": [
 		{
 			"name": "language",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "加密id"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.id.encrypt",
+	"apiChineseName": "ICBU国际站商品加密接口",
+	"description": "ICBU国际站，对混淆的产品ID加密。",
+	"id": 50558
 }

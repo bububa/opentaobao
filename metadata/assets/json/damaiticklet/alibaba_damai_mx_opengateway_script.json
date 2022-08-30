@@ -1,0 +1,234 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "release_time",
+					"type": "Date",
+					"description": "发行时间"
+				},
+				{
+					"name": "player_min_num",
+					"type": "Number",
+					"description": "玩家人数下限",
+					"required": true
+				},
+				{
+					"name": "has_holographic",
+					"type": "String",
+					"description": "是否全息 是1 否0"
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "剧本来源 剧游:2",
+					"required": true
+				},
+				{
+					"name": "girl_num",
+					"type": "Number",
+					"description": "女生人数",
+					"required": true
+				},
+				{
+					"name": "reading_volume",
+					"type": "Number",
+					"description": "阅读体量"
+				},
+				{
+					"name": "hosting_difficulty",
+					"type": "Number",
+					"description": "主持难度"
+				},
+				{
+					"name": "script_describe",
+					"type": "String",
+					"description": "剧本文字描述",
+					"required": true
+				},
+				{
+					"name": "supervise_name",
+					"type": "String",
+					"description": "监制名称"
+				},
+				{
+					"name": "boy_num",
+					"type": "Number",
+					"description": "男生人数",
+					"required": true
+				},
+				{
+					"name": "has_prop",
+					"type": "String",
+					"description": "有无道具 有1 无0"
+				},
+				{
+					"name": "electronic_data",
+					"type": "String",
+					"description": "电子资料"
+				},
+				{
+					"name": "out_id",
+					"type": "Number",
+					"description": "三方剧本id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "tag_type",
+							"type": "Number",
+							"description": "剧本类型,核心题材1   剧本题材 2  时代背景 3   流派/类型 4  剧本类型 5",
+							"required": true
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "剧本名称",
+							"required": true
+						},
+						{
+							"name": "out_tag_id",
+							"type": "Number",
+							"description": "剧本标签id"
+						}
+					],
+					"name": "third_script_tag_list",
+					"type": "ScriptTagThirdParam[]",
+					"description": "剧本标签数据",
+					"required": true
+				},
+				{
+					"name": "script_cover",
+					"type": "String",
+					"description": "剧本封面",
+					"required": true
+				},
+				{
+					"name": "sale_price",
+					"type": "Number",
+					"description": "发售价格（单位分）"
+				},
+				{
+					"name": "author",
+					"type": "String",
+					"description": "作者",
+					"required": true
+				},
+				{
+					"name": "is_reverse",
+					"type": "String",
+					"description": "可否反串 1可 0否"
+				},
+				{
+					"name": "sale_mode",
+					"type": "Number",
+					"description": "发售方式 盒装1 限定2 独家3 待定4  实景5 ",
+					"required": true
+				},
+				{
+					"name": "script_time",
+					"type": "Number",
+					"description": "平均游戏时长（分钟）",
+					"required": true
+				},
+				{
+					"name": "script_other_image_list",
+					"type": "String[]",
+					"description": "剧本其他图片"
+				},
+				{
+					"name": "script_video_list",
+					"type": "String[]",
+					"description": "剧本视频"
+				},
+				{
+					"name": "script_poster_list",
+					"type": "String[]",
+					"description": "剧本人物海报图"
+				},
+				{
+					"name": "difficulty",
+					"type": "Number",
+					"description": "剧本难度 1:新手 2:进阶 3:烧脑",
+					"required": true
+				},
+				{
+					"name": "player_num_mode",
+					"type": "Number",
+					"description": "玩家人数模式：固定:0 范围1",
+					"required": true
+				},
+				{
+					"name": "player_max_num",
+					"type": "Number",
+					"description": "玩家人数上限",
+					"required": true
+				},
+				{
+					"name": "script_name",
+					"type": "String",
+					"description": "剧本名称",
+					"required": true
+				},
+				{
+					"name": "producer",
+					"type": "String",
+					"description": "出品方"
+				},
+				{
+					"name": "distribution_studio",
+					"type": "String",
+					"description": "发行工作室",
+					"required": true
+				},
+				{
+					"name": "has_deduction",
+					"type": "String",
+					"description": "有无演绎"
+				},
+				{
+					"name": "right_age",
+					"type": "Number",
+					"description": "1:6+ ，2:12+ ，3:16+ ，4:18+"
+				}
+			],
+			"name": "script_info_open_param",
+			"type": "ScriptInfoOpenParam",
+			"description": "接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "提示"
+				}
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回值模型"
+		}
+	],
+	"name": "alibaba.damai.mx.opengateway.script",
+	"apiChineseName": "第三方剧本数据推送",
+	"description": "第三方剧本数据推送",
+	"id": 62313
+}

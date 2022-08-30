@@ -1,8 +1,4 @@
 {
-	"id": 24932,
-	"name": "alibaba.aliqin.flow.wallet.charge",
-	"apiChineseName": "流量直充",
-	"description": "流量直充",
 	"requestParams": [
 		{
 			"name": "phone_num",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "充值请求"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.flow.wallet.charge",
+	"apiChineseName": "流量直充",
+	"description": "流量直充",
+	"id": 24932
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51024,
-	"name": "alibaba.einvoice.prod.result.fileurl.get",
-	"apiChineseName": "发票中台-发票文件下载地址查询",
-	"description": "发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件",
 	"requestParams": [
 		{
 			"name": "platform_user_id",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "发票版式文件下载地址。下载链接是一次性链接，有效期1天。请发票文件下载后本地保存， 若异常导致需要再次下载文件，请再次请求接口获取。"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.prod.result.fileurl.get",
+	"apiChineseName": "发票中台-发票文件下载地址查询",
+	"description": "发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件",
+	"id": 51024
 }

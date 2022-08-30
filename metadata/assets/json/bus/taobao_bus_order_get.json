@@ -1,14 +1,6 @@
 {
-	"id": 27636,
-	"name": "taobao.bus.order.get",
-	"apiChineseName": "汽车票订单查询",
-	"description": "商家汽车票订单查询",
 	"requestParams": [
 		{
-			"name": "param_b2_b_order_query_r_q",
-			"type": "B2BOrderQueryRq",
-			"description": "订单查询对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "ali_trip_order_id",
@@ -16,266 +8,234 @@
 					"description": "阿里订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "param_b2_b_order_query_r_q",
+			"type": "B2BOrderQueryRq",
+			"description": "订单查询对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "B2BOrderQueryRp",
-			"description": "订单查询返回对象",
 			"subParams": [
 				{
-					"name": "b2b_bus_order_info",
-					"type": "B2BBusOrderInfo",
-					"description": "订单对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "alipay_trade_id",
 							"type": "String",
-							"description": "支付宝交易流水号",
-							"required": true
+							"description": "支付宝交易流水号"
 						},
 						{
-							"name": "b2_b_bus_line_info",
-							"type": "B2BBusLineInfo",
-							"description": "车次对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "dep_time",
 									"type": "String",
-									"description": "出发时间",
-									"required": true
+									"description": "出发时间"
 								},
 								{
 									"name": "last_place_name",
 									"type": "String",
-									"description": "目的地",
-									"required": true
+									"description": "目的地"
 								},
 								{
 									"name": "schedule_id",
 									"type": "String",
-									"description": "车次ID",
-									"required": true
+									"description": "车次ID"
 								},
 								{
 									"name": "start_city_name",
 									"type": "String",
-									"description": "出发城市",
-									"required": true
+									"description": "出发城市"
 								},
 								{
 									"name": "start_station_name",
 									"type": "String",
-									"description": "出发车站",
-									"required": true
+									"description": "出发车站"
 								},
 								{
 									"name": "start_station_name_address",
 									"type": "String",
-									"description": "出发车站地址",
-									"required": true
+									"description": "出发车站地址"
 								},
 								{
 									"name": "to_station_name",
 									"type": "String",
-									"description": "到达车站",
-									"required": true
+									"description": "到达车站"
 								}
-							]
+							],
+							"name": "b2_b_bus_line_info",
+							"type": "B2BBusLineInfo",
+							"description": "车次对象"
 						},
 						{
-							"name": "b2_b_fetch_holder_info",
-							"type": "B2BFetchHolderInfo",
-							"description": "取票人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "fetch_cert_number",
 									"type": "String",
-									"description": "取票人证件号码",
-									"required": true
+									"description": "取票人证件号码"
 								},
 								{
 									"name": "fetch_cert_type",
 									"type": "String",
-									"description": "取票人证件类型",
-									"required": true
+									"description": "取票人证件类型"
 								},
 								{
 									"name": "fetch_phone",
 									"type": "String",
-									"description": "取票人电话",
-									"required": true
+									"description": "取票人电话"
 								},
 								{
 									"name": "fetch_ticket_name",
 									"type": "String",
-									"description": "取票人姓名",
-									"required": true
+									"description": "取票人姓名"
 								}
-							]
+							],
+							"name": "b2_b_fetch_holder_info",
+							"type": "B2BFetchHolderInfo",
+							"description": "取票人信息"
 						},
 						{
-							"name": "b2_b_fetch_ticket",
-							"type": "B2BFetchTicket",
-							"description": "取票信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "fetch_sms",
 									"type": "String",
-									"description": "取票短信",
-									"required": true
+									"description": "取票短信"
 								},
 								{
 									"name": "fetch_ticket_address",
 									"type": "String",
-									"description": "取票地址",
-									"required": true
+									"description": "取票地址"
 								},
 								{
 									"name": "fetch_ticket_number",
 									"type": "String",
-									"description": "取票号",
-									"required": true
+									"description": "取票号"
 								},
 								{
 									"name": "fetch_ticket_pwd",
 									"type": "String",
-									"description": "取票密码",
-									"required": true
+									"description": "取票密码"
 								}
-							]
+							],
+							"name": "b2_b_fetch_ticket",
+							"type": "B2BFetchTicket",
+							"description": "取票信息"
 						},
 						{
-							"name": "bus_b2b_ticket_info_list",
-							"type": "B2BTicketInfo[]",
-							"description": "票信息",
-							"required": true,
 							"subParams": [
-								{
-									"name": "rider_cert_type",
-									"type": "String",
-									"description": "乘客类型",
-									"required": true
-								},
-								{
-									"name": "rider_name",
-									"type": "String",
-									"description": "乘客姓名",
-									"required": true
-								},
-								{
-									"name": "rider_seat_number",
-									"type": "String",
-									"description": "座位号",
-									"required": true
-								},
-								{
-									"name": "service_charge",
-									"type": "Number",
-									"description": "服务费",
-									"required": true
-								},
-								{
-									"name": "ticket_id",
-									"type": "String",
-									"description": "票ID",
-									"required": true
-								},
-								{
-									"name": "ticket_price",
-									"type": "Number",
-									"description": "票价",
-									"required": true
-								},
 								{
 									"name": "commission_fee",
 									"type": "Number",
-									"description": "退票手续费",
-									"required": true
+									"description": "退票手续费"
 								},
 								{
 									"name": "refund_fee",
 									"type": "Number",
-									"description": "可退款金额",
-									"required": true
+									"description": "可退款金额"
 								},
 								{
 									"name": "refund_status",
 									"type": "Number",
-									"description": "退票状态 1(新建立) 2（处理中）3（同意）4（拒绝）5（已退款）",
-									"required": true
+									"description": "退票状态 1(新建立) 2（处理中）3（同意）4（拒绝）5（已退款）"
+								},
+								{
+									"name": "rider_cert_type",
+									"type": "String",
+									"description": "乘客类型"
+								},
+								{
+									"name": "rider_name",
+									"type": "String",
+									"description": "乘客姓名"
+								},
+								{
+									"name": "rider_seat_number",
+									"type": "String",
+									"description": "座位号"
+								},
+								{
+									"name": "service_charge",
+									"type": "Number",
+									"description": "服务费"
 								},
 								{
 									"name": "sub_order_id",
 									"type": "Number",
-									"description": "子订单id",
-									"required": true
+									"description": "子订单id"
+								},
+								{
+									"name": "ticket_id",
+									"type": "String",
+									"description": "票ID"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价"
 								}
-							]
+							],
+							"name": "bus_b2b_ticket_info_list",
+							"type": "B2BTicketInfo[]",
+							"description": "票信息"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "订单创建时间",
-							"required": true
+							"description": "订单创建时间"
 						},
 						{
 							"name": "issue_time",
 							"type": "String",
-							"description": "出票成功时间",
-							"required": true
+							"description": "出票成功时间"
 						},
 						{
 							"name": "main_order_id",
 							"type": "Number",
-							"description": "阿里订单号",
-							"required": true
+							"description": "阿里订单号"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "ticket_count",
 							"type": "Number",
-							"description": "票数",
-							"required": true
+							"description": "票数"
 						},
 						{
 							"name": "total_price",
 							"type": "Number",
-							"description": "总价",
-							"required": true
+							"description": "总价"
 						}
-					]
+					],
+					"name": "b2b_bus_order_info",
+					"type": "B2BBusOrderInfo",
+					"description": "订单对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误代码",
-					"required": true
+					"description": "错误代码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否查询成功",
-					"required": true
+					"description": "是否查询成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "B2BOrderQueryRp",
+			"description": "订单查询返回对象"
 		}
-	]
+	],
+	"name": "taobao.bus.order.get",
+	"apiChineseName": "汽车票订单查询",
+	"description": "商家汽车票订单查询",
+	"id": 27636
 }

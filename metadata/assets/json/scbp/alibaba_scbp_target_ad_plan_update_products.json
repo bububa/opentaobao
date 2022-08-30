@@ -1,14 +1,6 @@
 {
-	"id": 41362,
-	"name": "alibaba.scbp.target.ad.plan.update.products",
-	"apiChineseName": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
-	"description": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
 	"requestParams": [
 		{
-			"name": "param_top_p4p_modify_quick_campaign_product_d_t_o",
-			"type": "TopP4pModifyQuickCampaignProductDto",
-			"description": "系统生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "action",
@@ -28,7 +20,11 @@
 					"description": "商品ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_top_p4p_modify_quick_campaign_product_d_t_o",
+			"type": "TopP4pModifyQuickCampaignProductDto",
+			"description": "系统生成",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -37,5 +33,9 @@
 			"type": "Number []",
 			"description": "操作成功的商品ID列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.update.products",
+	"apiChineseName": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
+	"description": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
+	"id": 41362
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28603,
-	"name": "yunos.tvpubadmin.content.tableaudit.querylauncher",
-	"apiChineseName": "运营位管控-查询联盟一体机运营位元数据列表",
-	"description": "运营位管控-查询联盟一体机运营位元数据列表",
 	"requestParams": [
 		{
 			"name": "table_audit_query",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "查询桌面坑位内容列表（用于联盟、一体机）"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.tableaudit.querylauncher",
+	"apiChineseName": "运营位管控-查询联盟一体机运营位元数据列表",
+	"description": "运营位管控-查询联盟一体机运营位元数据列表",
+	"id": 28603
 }

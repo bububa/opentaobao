@@ -1,14 +1,6 @@
 {
-	"id": 50611,
-	"name": "taobao.message.send",
-	"apiChineseName": "消息发送",
-	"description": "消息发送接口",
 	"requestParams": [
 		{
-			"name": "send_message_req",
-			"type": "SendMessageReq",
-			"description": "消息发送相关参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "target_id",
@@ -31,7 +23,11 @@
 					"name": "action_url_params",
 					"description": "跳转的目标链接参数，如：page=xxxx"
 				}
-			]
+			],
+			"name": "send_message_req",
+			"type": "SendMessageReq",
+			"description": "消息发送相关参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "taobao.message.send",
+	"apiChineseName": "消息发送",
+	"description": "消息发送接口",
+	"id": 50611
 }

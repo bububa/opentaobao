@@ -1,24 +1,7 @@
 {
-	"id": 42050,
-	"name": "taobao.tbk.dg.punish.order.get",
-	"apiChineseName": "淘宝客-推广者-处罚订单查询",
-	"description": "新增处罚订单查询API，提供媒体调用查询能力。这个是给媒体自己用的",
 	"requestParams": [
 		{
-			"name": "af_order_option",
-			"type": "TopApiAfOrderOption",
-			"description": "入参的对象",
 			"subParams": [
-				{
-					"name": "site_id",
-					"type": "Number",
-					"description": "pid中的第二段，siteId"
-				},
-				{
-					"name": "span",
-					"type": "Number",
-					"description": "查询时间跨度，不超过30天，单位是天"
-				},
 				{
 					"name": "relation_id",
 					"type": "Number",
@@ -45,6 +28,11 @@
 					"description": "pageNo"
 				},
 				{
+					"name": "span",
+					"type": "Number",
+					"description": "查询时间跨度，不超过30天，单位是天"
+				},
+				{
 					"name": "start_time",
 					"type": "Date",
 					"description": "查询开始时间，以taoke订单创建时间开始"
@@ -55,6 +43,16 @@
 					"description": "此参数不再使用，请勿入参"
 				},
 				{
+					"name": "adzone_id",
+					"type": "Number",
+					"description": "pid中的第三段，adzoneId"
+				},
+				{
+					"name": "site_id",
+					"type": "Number",
+					"description": "pid中的第二段，siteId"
+				},
+				{
 					"name": "violation_type",
 					"type": "Number",
 					"description": "此参数不再使用，请勿入参"
@@ -63,152 +61,133 @@
 					"name": "punish_status",
 					"type": "Number",
 					"description": "此参数不再使用，请勿入参"
-				},
-				{
-					"name": "adzone_id",
-					"type": "Number",
-					"description": "pid中的第三段，adzoneId"
 				}
-			]
+			],
+			"name": "af_order_option",
+			"type": "TopApiAfOrderOption",
+			"description": "入参的对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RpcResult",
-			"description": "查询的对象",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "PageResult",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "page_no",
-							"type": "Number",
-							"description": "翻页的pageno",
-							"required": true
-						},
-						{
-							"name": "page_size",
-							"type": "Number",
-							"description": "翻页的pagesie",
-							"required": true
-						},
-						{
-							"name": "total_count",
-							"type": "Number",
-							"description": "一共能查询出来的结果总数",
-							"required": true
-						},
-						{
-							"name": "results",
-							"type": "Result[]",
-							"description": "处罚订单列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "relation_id",
-									"type": "Number",
-									"description": "渠道关系id",
-									"required": true
-								},
-								{
-									"name": "settle_month",
-									"type": "Number",
-									"description": "结算月份",
-									"required": true
-								},
-								{
-									"name": "tk_trade_create_time",
+									"name": "union_id",
 									"type": "String",
-									"description": "淘客订单创建时间",
-									"required": true
-								},
-								{
-									"name": "tb_trade_parent_id",
-									"type": "Number",
-									"description": "父订单号（该字段不再支持）",
-									"required": true
+									"description": "淘宝联盟unionid（该字段不再支持）"
 								},
 								{
 									"name": "special_id",
 									"type": "Number",
-									"description": "会员运营id（该字段不再支持）",
-									"required": true
+									"description": "会员运营id（该字段不再支持）"
 								},
 								{
-									"name": "union_id",
-									"type": "String",
-									"description": "淘宝联盟unionid（该字段不再支持）",
-									"required": true
+									"name": "relation_id",
+									"type": "Number",
+									"description": "渠道关系id"
+								},
+								{
+									"name": "settle_month",
+									"type": "Number",
+									"description": "结算月份"
 								},
 								{
 									"name": "punish_status",
 									"type": "String",
-									"description": "处罚状态。0 冻结，1 解冻",
-									"required": true
+									"description": "处罚状态。0 冻结，1 解冻"
 								},
 								{
 									"name": "violation_type",
 									"type": "String",
-									"description": "处罚类型，目前包括 1.店铺淘宝客 2.订单虚假交易",
-									"required": true
+									"description": "处罚类型，目前包括 1.店铺淘宝客 2.订单虚假交易"
+								},
+								{
+									"name": "tk_trade_create_time",
+									"type": "String",
+									"description": "淘客订单创建时间"
 								},
 								{
 									"name": "tb_trade_id",
 									"type": "Number",
-									"description": "子订单号",
-									"required": true
+									"description": "子订单号"
+								},
+								{
+									"name": "tb_trade_parent_id",
+									"type": "Number",
+									"description": "父订单号（该字段不再支持）"
 								},
 								{
 									"name": "tk_adzone_id",
 									"type": "Number",
-									"description": "pid里的adzoneid",
-									"required": true
+									"description": "pid里的adzoneid"
 								},
 								{
 									"name": "tk_site_id",
 									"type": "Number",
-									"description": "pid里的siteid",
-									"required": true
+									"description": "pid里的siteid"
 								},
 								{
 									"name": "tk_pub_id",
 									"type": "String",
-									"description": "pid里的pubid",
-									"required": true
+									"description": "pid里的pubid"
 								}
-							]
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "处罚订单列表"
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "翻页的pageno"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "翻页的pagesie"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "一共能查询出来的结果总数"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PageResult",
+					"description": "结果"
 				},
 				{
 					"name": "biz_error_desc",
 					"type": "String",
-					"description": "业务出错的描述",
-					"required": true
+					"description": "业务出错的描述"
 				},
 				{
 					"name": "biz_error_code",
 					"type": "Number",
-					"description": "业务出错的状态码",
-					"required": true
+					"description": "业务出错的状态码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "执行结果状态码",
-					"required": true
+					"description": "执行结果状态码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RpcResult",
+			"description": "查询的对象"
 		}
-	]
+	],
+	"name": "taobao.tbk.dg.punish.order.get",
+	"apiChineseName": "淘宝客-推广者-处罚订单查询",
+	"description": "新增处罚订单查询API，提供媒体调用查询能力。这个是给媒体自己用的",
+	"id": 42050
 }

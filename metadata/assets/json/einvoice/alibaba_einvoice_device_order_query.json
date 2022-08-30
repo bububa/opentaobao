@@ -1,8 +1,4 @@
 {
-	"id": 51473,
-	"name": "alibaba.einvoice.device.order.query",
-	"apiChineseName": "查询税控设备加盘订购单详情",
-	"description": "查询税控设备订购单详情",
 	"requestParams": [
 		{
 			"name": "flow_id",
@@ -13,117 +9,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "InvoiceFwOrderDto",
-					"description": "订购单信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "invoice_contact",
-							"type": "InvoiceContactDto",
-							"description": "联系人对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "contact_name",
 									"type": "String",
-									"description": "联系人姓名",
-									"required": true
+									"description": "联系人姓名"
 								},
 								{
 									"name": "contact_mobile",
 									"type": "String",
-									"description": "联系人电话",
-									"required": true
+									"description": "联系人电话"
 								},
 								{
 									"name": "contact_addr",
 									"type": "String",
-									"description": "联系人地址",
-									"required": true
+									"description": "联系人地址"
 								}
-							]
+							],
+							"name": "invoice_contact",
+							"type": "InvoiceContactDto",
+							"description": "联系人对象"
 						},
 						{
 							"name": "buy_date",
 							"type": "Date",
-							"description": "订购时间，格式yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "订购时间，格式yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "fact_total_fee",
 							"type": "String",
-							"description": "实付总金额，单位元，最多2位小数",
-							"required": true
+							"description": "实付总金额，单位元，最多2位小数"
 						},
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "商品规格ID",
-							"required": true
+							"description": "商品规格ID"
 						},
 						{
 							"name": "article_id",
 							"type": "String",
-							"description": "订购商品ID",
-							"required": true
+							"description": "订购商品ID"
 						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "服务市场订单号",
-							"required": true
+							"description": "服务市场订单号"
 						},
 						{
 							"name": "product_code",
 							"type": "String",
-							"description": "产品Code,中台定义的税控产品Code",
-							"required": true
+							"description": "产品Code,中台定义的税控产品Code"
 						},
 						{
 							"name": "payee_register_no",
 							"type": "String",
-							"description": "纳税人识别号",
-							"required": true
+							"description": "纳税人识别号"
 						},
 						{
 							"name": "flow_id",
 							"type": "String",
-							"description": "税控设备订购单ID",
-							"required": true
+							"description": "税控设备订购单ID"
 						},
 						{
 							"name": "register_type",
 							"type": "String",
-							"description": "入驻类型，可选值： 新订购：new，已有税控初始化：online",
-							"required": true
+							"description": "入驻类型，可选值： 新订购：new，已有税控初始化：online"
 						},
 						{
 							"name": "serv_end_time",
 							"type": "Date",
-							"description": "服务结束时间，格式yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "服务结束时间，格式yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "serv_start_time",
 							"type": "Date",
-							"description": "服务起始时间，格式yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "服务起始时间，格式yyyy-MM-dd HH:mm:ss"
 						},
 						{
 							"name": "article_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						}
-					]
+					],
+					"name": "result",
+					"type": "InvoiceFwOrderDto",
+					"description": "订购单信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.device.order.query",
+	"apiChineseName": "查询税控设备加盘订购单详情",
+	"description": "查询税控设备订购单详情",
+	"id": 51473
 }

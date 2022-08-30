@@ -1,13 +1,6 @@
 {
-	"id": 52291,
-	"name": "alibaba.wdk.coupon.contract.create",
-	"apiChineseName": "营销券合同创建接口",
-	"description": "营销券合同创建接口",
 	"requestParams": [
 		{
-			"name": "create_contract_instance_request",
-			"type": "CreateContractInstanceRequest",
-			"description": "调用入参",
 			"subParams": [
 				{
 					"name": "out_object_id",
@@ -40,14 +33,8 @@
 					"description": "创建人id"
 				},
 				{
-					"name": "contract_template",
-					"type": "CreateContractTemplateRequest",
-					"description": "合同模版",
 					"subParams": [
 						{
-							"name": "coupon_config_list",
-							"type": "Couponconfiglist[]",
-							"description": "提货券配置列表",
 							"subParams": [
 								{
 									"name": "view_total_amount",
@@ -74,7 +61,10 @@
 									"type": "Number",
 									"description": "提货券面额（单位：分）"
 								}
-							]
+							],
+							"name": "coupon_config_list",
+							"type": "Couponconfiglist[]",
+							"description": "提货券配置列表"
 						},
 						{
 							"name": "second_sign_day",
@@ -286,42 +276,48 @@
 							"type": "String",
 							"description": "甲方公司名称"
 						}
-					]
+					],
+					"name": "contract_template",
+					"type": "CreateContractTemplateRequest",
+					"description": "合同模版"
 				}
-			]
+			],
+			"name": "create_contract_instance_request",
+			"type": "CreateContractInstanceRequest",
+			"description": "调用入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "Number",
-					"description": "合同ID",
-					"required": true
+					"description": "合同ID"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误码说明",
-					"required": true
+					"description": "错误码说明"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.contract.create",
+	"apiChineseName": "营销券合同创建接口",
+	"description": "营销券合同创建接口",
+	"id": 52291
 }

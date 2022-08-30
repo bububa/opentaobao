@@ -1,0 +1,34 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "报表最近生成时间"
+		}
+	],
+	"name": "alibaba.scbp.ad.report.get.last.effect.date",
+	"apiChineseName": "获取最近报表生成时间",
+	"description": "获取最近报表生成时间",
+	"id": 63332
+}

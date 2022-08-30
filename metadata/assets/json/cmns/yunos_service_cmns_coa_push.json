@@ -1,14 +1,6 @@
 {
-	"id": 25235,
-	"name": "yunos.service.cmns.coa.push",
-	"apiChineseName": "消息推送接口",
-	"description": "调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。",
 	"requestParams": [
 		{
-			"name": "msg_obj",
-			"type": "CmnsMessage",
-			"description": "消息结构对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "topic",
@@ -21,10 +13,6 @@
 					"description": "消息是否压缩,0:二进制压缩,1:utf8文本"
 				},
 				{
-					"name": "receiver",
-					"type": "Receiver",
-					"description": "消息发送对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data_list",
@@ -38,7 +26,11 @@
 							"description": "只能填写deviceToken",
 							"required": true
 						}
-					]
+					],
+					"name": "receiver",
+					"type": "Receiver",
+					"description": "消息发送对象",
+					"required": true
 				},
 				{
 					"name": "collapse_key",
@@ -109,7 +101,11 @@
 					"type": "Number",
 					"description": "仅IOS应用推送时使用，默认值为0，开发环境为1，生产环境为0"
 				}
-			]
+			],
+			"name": "msg_obj",
+			"type": "CmnsMessage",
+			"description": "消息结构对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -128,5 +124,9 @@
 			"type": "Number",
 			"description": "消息ID，失败则为null"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.push",
+	"apiChineseName": "消息推送接口",
+	"description": "调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。",
+	"id": 25235
 }

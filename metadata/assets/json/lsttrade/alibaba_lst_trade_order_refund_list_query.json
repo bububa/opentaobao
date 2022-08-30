@@ -1,13 +1,6 @@
 {
-	"id": 45528,
-	"name": "alibaba.lst.trade.order.refund.list.query",
-	"apiChineseName": "查询退款单列表(卖家视角)",
-	"description": "查询退款单列表(卖家视角)",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "TopLstSupplierOrderRefundQuery",
-			"description": "输入参数",
 			"subParams": [
 				{
 					"name": "refund_type",
@@ -54,7 +47,10 @@
 					"type": "Date",
 					"description": "退款申请时间(截止)"
 				}
-			]
+			],
+			"name": "param",
+			"type": "TopLstSupplierOrderRefundQuery",
+			"description": "输入参数"
 		}
 	],
 	"responseParams": [
@@ -74,9 +70,6 @@
 			"description": "当前页"
 		},
 		{
-			"name": "content_list",
-			"type": "Content []",
-			"description": "列表数据",
 			"subParams": [
 				{
 					"name": "refund_count",
@@ -109,10 +102,6 @@
 					"required": true
 				},
 				{
-					"name": "sub_orders",
-					"type": "SubOrders[]",
-					"description": "子单",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_count",
@@ -126,7 +115,11 @@
 							"description": "子单ID",
 							"required": true
 						}
-					]
+					],
+					"name": "sub_orders",
+					"type": "SubOrders[]",
+					"description": "子单",
+					"required": true
 				},
 				{
 					"name": "gmt_completed",
@@ -176,7 +169,14 @@
 					"description": "主订单id",
 					"required": true
 				}
-			]
+			],
+			"name": "content_list",
+			"type": "Content []",
+			"description": "列表数据"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.order.refund.list.query",
+	"apiChineseName": "查询退款单列表(卖家视角)",
+	"description": "查询退款单列表(卖家视角)",
+	"id": 45528
 }

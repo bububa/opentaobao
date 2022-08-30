@@ -6,8 +6,6 @@ type TopTicketItemFullinfoResult struct {
 	PicUrls []string `json:"pic_urls,omitempty" xml:"pic_urls>string,omitempty"`
 	// 门票商品下 各个票种的sku信息
 	TicketTypes []TicketSimpleSkuParam `json:"ticket_types,omitempty" xml:"ticket_types>ticket_simple_sku_param,omitempty"`
-	// 联票的场景，则该收费项目可能关联多个景点，以英文逗号分隔
-	AliScenicIds string `json:"ali_scenic_ids,omitempty" xml:"ali_scenic_ids,omitempty"`
 	// 商户系统中景点编码
 	OutScenicId string `json:"out_scenic_id,omitempty" xml:"out_scenic_id,omitempty"`
 	// 阿里旅行收费项目名称
@@ -26,6 +24,8 @@ type TopTicketItemFullinfoResult struct {
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 手机描述
 	WapDesc string `json:"wap_desc,omitempty" xml:"wap_desc,omitempty"`
+	// 联票的场景，则该收费项目可能关联多个景点，以英文逗号分隔
+	AliScenicIds string `json:"ali_scenic_ids,omitempty" xml:"ali_scenic_ids,omitempty"`
 	// 阿里旅行提供的景点编码
 	AliScenicId int64 `json:"ali_scenic_id,omitempty" xml:"ali_scenic_id,omitempty"`
 	// 阿里旅行提供的收费项目编码

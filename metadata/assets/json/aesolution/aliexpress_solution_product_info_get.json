@@ -1,8 +1,4 @@
 {
-	"id": 42383,
-	"name": "aliexpress.solution.product.info.get",
-	"apiChineseName": "Get Single Product Info",
-	"description": "Get Single Product Info",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "GlobalAeopFindProductResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "add_unit",
@@ -29,16 +22,8 @@
 					"required": true
 				},
 				{
-					"name": "aeop_a_e_multimedia",
-					"type": "GlobalAeopAeMultimedia",
-					"description": "Multimedia information",
-					"required": true,
 					"subParams": [
 						{
-							"name": "aeop_a_e_videos",
-							"type": "GlobalAeopAeVideo[]",
-							"description": "video information",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ali_member_id",
@@ -70,15 +55,19 @@
 									"description": "URL of the video cover image",
 									"required": true
 								}
-							]
+							],
+							"name": "aeop_a_e_videos",
+							"type": "GlobalAeopAeVideo[]",
+							"description": "video information",
+							"required": true
 						}
-					]
+					],
+					"name": "aeop_a_e_multimedia",
+					"type": "GlobalAeopAeMultimedia",
+					"description": "Multimedia information",
+					"required": true
 				},
 				{
-					"name": "aeop_ae_product_propertys",
-					"type": "GlobalAeopAeProductProperty[]",
-					"description": "Product properties",
-					"required": true,
 					"subParams": [
 						{
 							"name": "attr_name",
@@ -110,19 +99,15 @@
 							"description": "unit of customized attribute value",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_ae_product_propertys",
+					"type": "GlobalAeopAeProductProperty[]",
+					"description": "Product properties",
+					"required": true
 				},
 				{
-					"name": "aeop_ae_product_s_k_us",
-					"type": "GlobalAeopAeProductSku[]",
-					"description": "List for multiple skus of the product, expressed in json format.",
-					"required": true,
 					"subParams": [
 						{
-							"name": "aeop_s_k_u_property_list",
-							"type": "GlobalAeopSkuProperty[]",
-							"description": "List of SKU attributes",
-							"required": true,
 							"subParams": [
 								{
 									"name": "property_value_definition_name",
@@ -148,7 +133,11 @@
 									"description": "SKU attribute name id",
 									"required": true
 								}
-							]
+							],
+							"name": "aeop_s_k_u_property_list",
+							"type": "GlobalAeopSkuProperty[]",
+							"description": "List of SKU attributes",
+							"required": true
 						},
 						{
 							"name": "barcode",
@@ -197,8 +186,18 @@
 							"type": "String",
 							"description": "SKU discount price, also called sale price, value range: 0.01 - 100000.",
 							"required": true
+						},
+						{
+							"name": "ean_code",
+							"type": "String",
+							"description": "EAN, or EAN13, stands for International Article Number (originally European Article Number). It is an extension of the UPC codes and you'll find them as barcodes on most everyday products. Sometimes the barcode is also called GTIN or GTIN13 (Global Trade Identifier)",
+							"required": true
 						}
-					]
+					],
+					"name": "aeop_ae_product_s_k_us",
+					"type": "GlobalAeopAeProductSku[]",
+					"description": "List for multiple skus of the product, expressed in json format.",
+					"required": true
 				},
 				{
 					"name": "base_unit",
@@ -393,10 +392,6 @@
 					"required": true
 				},
 				{
-					"name": "multi_language_subject_list",
-					"type": "GlobalSubject[]",
-					"description": "multi language subject list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "locale",
@@ -410,13 +405,13 @@
 							"description": "subject",
 							"required": true
 						}
-					]
+					],
+					"name": "multi_language_subject_list",
+					"type": "GlobalSubject[]",
+					"description": "multi language subject list",
+					"required": true
 				},
 				{
-					"name": "multi_language_description_list",
-					"type": "GlobalDescription[]",
-					"description": "multo language description list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "locale",
@@ -436,13 +431,13 @@
 							"description": "web detail",
 							"required": true
 						}
-					]
+					],
+					"name": "multi_language_description_list",
+					"type": "GlobalDescription[]",
+					"description": "multo language description list",
+					"required": true
 				},
 				{
-					"name": "multi_country_price_configuration",
-					"type": "MultiCountryPriceConfigurationDto",
-					"description": "multi country price configuration",
-					"required": true,
 					"subParams": [
 						{
 							"name": "price_type",
@@ -451,10 +446,6 @@
 							"required": true
 						},
 						{
-							"name": "country_price_list",
-							"type": "SingleCountryPriceDto[]",
-							"description": "Price list for different countries",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ship_to_country",
@@ -463,10 +454,6 @@
 									"required": true
 								},
 								{
-									"name": "sku_price_by_country_list",
-									"type": "SingleSkuPriceByCountryDto[]",
-									"description": "Sku price list under the same ship_to_country",
-									"required": true,
 									"subParams": [
 										{
 											"name": "sku_code",
@@ -486,13 +473,32 @@
 											"description": "discount price",
 											"required": true
 										}
-									]
+									],
+									"name": "sku_price_by_country_list",
+									"type": "SingleSkuPriceByCountryDto[]",
+									"description": "Sku price list under the same ship_to_country",
+									"required": true
 								}
-							]
+							],
+							"name": "country_price_list",
+							"type": "SingleCountryPriceDto[]",
+							"description": "Price list for different countries",
+							"required": true
 						}
-					]
+					],
+					"name": "multi_country_price_configuration",
+					"type": "MultiCountryPriceConfigurationDto",
+					"description": "multi country price configuration",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "GlobalAeopFindProductResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.product.info.get",
+	"apiChineseName": "Get Single Product Info",
+	"description": "Get Single Product Info",
+	"id": 42383
 }

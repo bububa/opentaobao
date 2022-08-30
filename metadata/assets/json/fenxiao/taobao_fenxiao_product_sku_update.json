@@ -1,19 +1,10 @@
 {
-	"id": 10946,
-	"name": "taobao.fenxiao.product.sku.update",
-	"apiChineseName": "产品sku编辑接口",
-	"description": "产品SKU信息更新",
 	"requestParams": [
 		{
 			"name": "product_id",
 			"type": "Number",
 			"description": "产品ID",
 			"required": true
-		},
-		{
-			"name": "quantity",
-			"type": "Number",
-			"description": "产品SKU库存"
 		},
 		{
 			"name": "standard_price",
@@ -26,10 +17,14 @@
 			"description": "代销采购价"
 		},
 		{
-			"name": "properties",
+			"name": "dealer_cost_price",
 			"type": "String",
-			"description": "sku属性",
-			"required": true
+			"description": "经销采购价"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "产品SKU库存"
 		},
 		{
 			"name": "sku_number",
@@ -37,9 +32,10 @@
 			"description": "商家编码"
 		},
 		{
-			"name": "dealer_cost_price",
+			"name": "properties",
 			"type": "String",
-			"description": "经销采购价"
+			"description": "sku属性",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "Date",
 			"description": "操作时间"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.sku.update",
+	"apiChineseName": "产品sku编辑接口",
+	"description": "产品SKU信息更新",
+	"id": 10946
 }

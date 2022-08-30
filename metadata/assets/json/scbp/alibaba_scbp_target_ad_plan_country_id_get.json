@@ -1,41 +1,37 @@
 {
-	"id": 41338,
-	"name": "alibaba.scbp.target.ad.plan.country.id.get",
-	"apiChineseName": "定向推广-国家标签ID获取",
-	"description": "定向推广-国家标签ID获取",
 	"responseParams": [
 		{
-			"name": "region_list",
-			"type": "RegionView []",
-			"description": "地区列表",
 			"subParams": [
 				{
-					"name": "country_list",
-					"type": "CountryView[]",
-					"description": "国家列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "country_cn_name",
 							"type": "String",
-							"description": "国家中文名",
-							"required": true
+							"description": "国家中文名"
 						},
 						{
 							"name": "country_id",
 							"type": "String",
-							"description": "国家ID",
-							"required": true
+							"description": "国家ID"
 						}
-					]
+					],
+					"name": "country_list",
+					"type": "CountryView[]",
+					"description": "国家列表"
 				},
 				{
 					"name": "region_cn_name",
 					"type": "String",
-					"description": "地区中文名",
-					"required": true
+					"description": "地区中文名"
 				}
-			]
+			],
+			"name": "region_list",
+			"type": "RegionView []",
+			"description": "地区列表"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.country.id.get",
+	"apiChineseName": "定向推广-国家标签ID获取",
+	"description": "定向推广-国家标签ID获取",
+	"id": 41338
 }

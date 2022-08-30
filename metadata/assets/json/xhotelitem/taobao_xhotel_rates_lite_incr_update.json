@@ -1,8 +1,4 @@
 {
-	"id": 48222,
-	"name": "taobao.xhotel.rates.lite.incr.update",
-	"apiChineseName": "酒店价格库存轻量级增量接口",
-	"description": "多个rate的库存房价开关的增量更新接口",
 	"requestParams": [
 		{
 			"name": "rate_list_inv_info",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "first_result",
 					"type": "String",
-					"description": "多个rate的更新结果",
-					"required": true
+					"description": "多个rate的更新结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.rates.lite.incr.update",
+	"apiChineseName": "酒店价格库存轻量级增量接口",
+	"description": "多个rate的库存房价开关的增量更新接口",
+	"id": 48222
 }

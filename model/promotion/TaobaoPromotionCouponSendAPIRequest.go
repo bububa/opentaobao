@@ -14,6 +14,10 @@ type TaobaoPromotionCouponSendAPIRequest struct {
 	model.Params
 	// 买家昵称用半角','号分割
 	_buyerNick []string
+	// ouid
+	_ouidData []OuidData
+	// openuid
+	_buyerIds []string
 	// 优惠券的id
 	_couponId int64
 }
@@ -50,6 +54,32 @@ func (r *TaobaoPromotionCouponSendAPIRequest) SetBuyerNick(_buyerNick []string) 
 // GetBuyerNick BuyerNick Getter
 func (r TaobaoPromotionCouponSendAPIRequest) GetBuyerNick() []string {
 	return r._buyerNick
+}
+
+// SetOuidData is OuidData Setter
+// ouid
+func (r *TaobaoPromotionCouponSendAPIRequest) SetOuidData(_ouidData []OuidData) error {
+	r._ouidData = _ouidData
+	r.Set("ouid_data", _ouidData)
+	return nil
+}
+
+// GetOuidData OuidData Getter
+func (r TaobaoPromotionCouponSendAPIRequest) GetOuidData() []OuidData {
+	return r._ouidData
+}
+
+// SetBuyerIds is BuyerIds Setter
+// openuid
+func (r *TaobaoPromotionCouponSendAPIRequest) SetBuyerIds(_buyerIds []string) error {
+	r._buyerIds = _buyerIds
+	r.Set("buyer_ids", _buyerIds)
+	return nil
+}
+
+// GetBuyerIds BuyerIds Getter
+func (r TaobaoPromotionCouponSendAPIRequest) GetBuyerIds() []string {
+	return r._buyerIds
 }
 
 // SetCouponId is CouponId Setter

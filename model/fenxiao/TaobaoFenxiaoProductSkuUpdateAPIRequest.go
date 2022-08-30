@@ -16,12 +16,12 @@ type TaobaoFenxiaoProductSkuUpdateAPIRequest struct {
 	_standardPrice string
 	// 代销采购价
 	_agentCostPrice string
-	// sku属性
-	_properties string
-	// 商家编码
-	_skuNumber string
 	// 经销采购价
 	_dealerCostPrice string
+	// 商家编码
+	_skuNumber string
+	// sku属性
+	_properties string
 	// 产品ID
 	_productId int64
 	// 产品SKU库存
@@ -75,17 +75,17 @@ func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetAgentCostPrice() string {
 	return r._agentCostPrice
 }
 
-// SetProperties is Properties Setter
-// sku属性
-func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProperties(_properties string) error {
-	r._properties = _properties
-	r.Set("properties", _properties)
+// SetDealerCostPrice is DealerCostPrice Setter
+// 经销采购价
+func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetDealerCostPrice(_dealerCostPrice string) error {
+	r._dealerCostPrice = _dealerCostPrice
+	r.Set("dealer_cost_price", _dealerCostPrice)
 	return nil
 }
 
-// GetProperties Properties Getter
-func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProperties() string {
-	return r._properties
+// GetDealerCostPrice DealerCostPrice Getter
+func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetDealerCostPrice() string {
+	return r._dealerCostPrice
 }
 
 // SetSkuNumber is SkuNumber Setter
@@ -101,17 +101,17 @@ func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetSkuNumber() string {
 	return r._skuNumber
 }
 
-// SetDealerCostPrice is DealerCostPrice Setter
-// 经销采购价
-func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetDealerCostPrice(_dealerCostPrice string) error {
-	r._dealerCostPrice = _dealerCostPrice
-	r.Set("dealer_cost_price", _dealerCostPrice)
+// SetProperties is Properties Setter
+// sku属性
+func (r *TaobaoFenxiaoProductSkuUpdateAPIRequest) SetProperties(_properties string) error {
+	r._properties = _properties
+	r.Set("properties", _properties)
 	return nil
 }
 
-// GetDealerCostPrice DealerCostPrice Getter
-func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetDealerCostPrice() string {
-	return r._dealerCostPrice
+// GetProperties Properties Getter
+func (r TaobaoFenxiaoProductSkuUpdateAPIRequest) GetProperties() string {
+	return r._properties
 }
 
 // SetProductId is ProductId Setter

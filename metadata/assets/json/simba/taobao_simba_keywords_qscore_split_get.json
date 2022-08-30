@@ -1,8 +1,4 @@
 {
-	"id": 25653,
-	"name": "taobao.simba.keywords.qscore.split.get",
-	"apiChineseName": "新质量分服务",
-	"description": "获取关键词新的质量分",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -17,203 +13,177 @@
 		},
 		{
 			"name": "bidword_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "词id数组（最多批量获取20个）",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "result",
-					"type": "QScoreSplitDto",
-					"description": "返回新质量分实体信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "cat_match_score",
-							"type": "String",
-							"description": "类目质量得分",
-							"required": true
-						},
-						{
-							"name": "adgroup_id",
-							"type": "Number",
-							"description": "推广组id",
-							"required": true
-						},
-						{
-							"name": "word_score_list",
-							"type": "Wordscorelist[]",
-							"description": "关键词新质量得分列表，包含PC和移动的质量分",
-							"required": true,
-							"subParams": [
-								{
-									"name": "wireless_creativescore",
-									"type": "String",
-									"description": "移动创意质量(创意效果)",
-									"required": true
-								},
-								{
-									"name": "wireless_custscore",
-									"type": "String",
-									"description": "移动店铺质量(账户表现)",
-									"required": true
-								},
-								{
-									"name": "relescore",
-									"type": "String",
-									"description": "相关性，同kwscore",
-									"required": true
-								},
-								{
-									"name": "campaign_id",
-									"type": "Number",
-									"description": "计划id",
-									"required": true
-								},
-								{
-									"name": "wireless_matchflag",
-									"type": "Number",
-									"description": "词是否有首屏展示机会。值含义(4: 有展现机会,且能上首屏 2: 有展示机会,上不了首屏、1: 无展现机会,更上不了首屏)",
-									"required": true
-								},
-								{
-									"name": "adgroup_id",
-									"type": "Number",
-									"description": "推广组id",
-									"required": true
-								},
-								{
-									"name": "plflag",
-									"type": "Number",
-									"description": "词是否能推左",
-									"required": true
-								},
-								{
-									"name": "wireless_relescore",
-									"type": "String",
-									"description": "移动相关性，同kwscore",
-									"required": true
-								},
-								{
-									"name": "creativescore",
-									"type": "String",
-									"description": "创意质量(创意效果)",
-									"required": true
-								},
-								{
-									"name": "wireless_qscore",
-									"type": "String",
-									"description": "移动质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）",
-									"required": true
-								},
-								{
-									"name": "qscore",
-									"type": "String",
-									"description": "PC质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）",
-									"required": true
-								},
-								{
-									"name": "catscore",
-									"type": "String",
-									"description": "类目质量得分",
-									"required": true
-								},
-								{
-									"name": "customer_id",
-									"type": "Number",
-									"description": "客户id",
-									"required": true
-								},
-								{
-									"name": "custscore",
-									"type": "String",
-									"description": "店铺质量(账户表现)",
-									"required": true
-								},
-								{
-									"name": "nick",
-									"type": "String",
-									"description": "昵称",
-									"required": true
-								},
-								{
-									"name": "kwscore",
-									"type": "String",
-									"description": "词相关性分数",
-									"required": true
-								},
-								{
-									"name": "cvrscore",
-									"type": "String",
-									"description": "点击转化率(买家体验)",
-									"required": true
-								},
-								{
-									"name": "pscore",
-									"type": "String",
-									"description": "属性得分",
-									"required": true
-								},
-								{
-									"name": "word",
-									"type": "String",
-									"description": "关键词",
-									"required": true
-								},
-								{
-									"name": "wireless_cvrscore",
-									"type": "String",
-									"description": "移动点击转化率(买家体验)",
-									"required": true
-								},
-								{
-									"name": "ad_type",
-									"type": "String",
-									"description": "广告类型  单品： \u0026quot;tbuad\u0026quot;; 店铺： \u0026quot;addp\u0026quot;;",
-									"required": true
-								},
-								{
-									"name": "keyword_id",
-									"type": "Number",
-									"description": "词id",
-									"required": true
-								},
-								{
-									"name": "min_price",
-									"type": "Number",
-									"description": "最低展现出价",
-									"required": true
-								},
-								{
-									"name": "pc_left_flag",
-									"type": "Number",
-									"description": "词在pc端是否能首页推左(0:不能推左、1:可以推左)，此标记仅代表首页推左标",
-									"required": true
-								}
-							]
-						}
-					]
-				},
 				{
 					"name": "key",
 					"type": "String",
-					"description": "返回成功/错误码",
-					"required": true
+					"description": "返回成功/错误码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cat_match_score",
+							"type": "String",
+							"description": "类目质量得分"
+						},
+						{
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "推广组id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "wireless_qscore",
+									"type": "String",
+									"description": "移动质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）"
+								},
+								{
+									"name": "wireless_cvrscore",
+									"type": "String",
+									"description": "移动点击转化率(买家体验)"
+								},
+								{
+									"name": "wireless_creativescore",
+									"type": "String",
+									"description": "移动创意质量(创意效果)"
+								},
+								{
+									"name": "wireless_custscore",
+									"type": "String",
+									"description": "移动店铺质量(账户表现)"
+								},
+								{
+									"name": "wireless_relescore",
+									"type": "String",
+									"description": "移动相关性，同kwscore"
+								},
+								{
+									"name": "nick",
+									"type": "String",
+									"description": "昵称"
+								},
+								{
+									"name": "keyword_id",
+									"type": "Number",
+									"description": "词id"
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "推广组id"
+								},
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id"
+								},
+								{
+									"name": "customer_id",
+									"type": "Number",
+									"description": "客户id"
+								},
+								{
+									"name": "catscore",
+									"type": "String",
+									"description": "类目质量得分"
+								},
+								{
+									"name": "kwscore",
+									"type": "String",
+									"description": "词相关性分数"
+								},
+								{
+									"name": "qscore",
+									"type": "String",
+									"description": "PC质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）"
+								},
+								{
+									"name": "word",
+									"type": "String",
+									"description": "关键词"
+								},
+								{
+									"name": "cvrscore",
+									"type": "String",
+									"description": "点击转化率(买家体验)"
+								},
+								{
+									"name": "creativescore",
+									"type": "String",
+									"description": "创意质量(创意效果)"
+								},
+								{
+									"name": "custscore",
+									"type": "String",
+									"description": "店铺质量(账户表现)"
+								},
+								{
+									"name": "pscore",
+									"type": "String",
+									"description": "属性得分"
+								},
+								{
+									"name": "plflag",
+									"type": "Number",
+									"description": "词是否能推左"
+								},
+								{
+									"name": "relescore",
+									"type": "String",
+									"description": "相关性，同kwscore"
+								},
+								{
+									"name": "wireless_matchflag",
+									"type": "Number",
+									"description": "词是否有首屏展示机会。值含义(4: 有展现机会,且能上首屏 2: 有展示机会,上不了首屏、1: 无展现机会,更上不了首屏)"
+								},
+								{
+									"name": "min_price",
+									"type": "Number",
+									"description": "最低展现出价"
+								},
+								{
+									"name": "ad_type",
+									"type": "String",
+									"description": "广告类型  单品： \u0026quot;tbuad\u0026quot;; 店铺： \u0026quot;addp\u0026quot;;"
+								},
+								{
+									"name": "pc_left_flag",
+									"type": "Number",
+									"description": "词在pc端是否能首页推左(0:不能推左、1:可以推左)，此标记仅代表首页推左标"
+								}
+							],
+							"name": "word_score_list",
+							"type": "Wordscorelist[]",
+							"description": "关键词新质量得分列表，包含PC和移动的质量分"
+						}
+					],
+					"name": "result",
+					"type": "QScoreSplitDto",
+					"description": "返回新质量分实体信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.qscore.split.get",
+	"apiChineseName": "新质量分服务",
+	"description": "获取关键词新的质量分",
+	"id": 25653
 }

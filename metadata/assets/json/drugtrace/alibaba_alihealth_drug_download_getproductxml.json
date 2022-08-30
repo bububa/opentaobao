@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "app_key_n",
+			"type": "String",
+			"description": "appKey",
+			"required": true
+		},
+		{
+			"name": "ent_name",
+			"type": "String",
+			"description": "企业名称"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "一个map的json的形式，这个map的key是aookey下的企业名称，value是对应product.xml的下载地址，有效期是20分钟"
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "DataEntTaskResultDto",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihealth.drug.download.getproductxml",
+	"apiChineseName": "获取product.xml的下载链接",
+	"description": "阿里健康-追溯码-D2D获得药器信息下载地址，方便生产线操作",
+	"id": 59189
+}

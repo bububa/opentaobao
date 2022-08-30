@@ -1,8 +1,4 @@
 {
-	"id": 21536,
-	"name": "taobao.crm.grademkt.member.query",
-	"apiChineseName": "会员等级营销-会员关系查询",
-	"description": "商家通过该接口查询线上店铺会员。",
 	"requestParams": [
 		{
 			"name": "parameter",
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "json格式"
 		}
-	]
+	],
+	"name": "taobao.crm.grademkt.member.query",
+	"apiChineseName": "会员等级营销-会员关系查询",
+	"description": "商家通过该接口查询线上店铺会员。",
+	"id": 21536
 }

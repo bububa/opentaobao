@@ -24,6 +24,8 @@ type TmallDisputeReceiveGetAPIRequest struct {
 	_startModified string
 	// 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
 	_endModified string
+	// 买家openId
+	_buyerOpenUid string
 	// 每页条数。取值范围:大于零的整数; 默认值:20;最大值:100
 	_pageSize int64
 	// 逆向纠纷单号id
@@ -131,6 +133,19 @@ func (r *TmallDisputeReceiveGetAPIRequest) SetEndModified(_endModified string) e
 // GetEndModified EndModified Getter
 func (r TmallDisputeReceiveGetAPIRequest) GetEndModified() string {
 	return r._endModified
+}
+
+// SetBuyerOpenUid is BuyerOpenUid Setter
+// 买家openId
+func (r *TmallDisputeReceiveGetAPIRequest) SetBuyerOpenUid(_buyerOpenUid string) error {
+	r._buyerOpenUid = _buyerOpenUid
+	r.Set("buyer_open_uid", _buyerOpenUid)
+	return nil
+}
+
+// GetBuyerOpenUid BuyerOpenUid Getter
+func (r TmallDisputeReceiveGetAPIRequest) GetBuyerOpenUid() string {
+	return r._buyerOpenUid
 }
 
 // SetPageSize is PageSize Setter

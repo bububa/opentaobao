@@ -1,99 +1,89 @@
 {
-	"id": 37069,
-	"name": "tmall.servicecenter.tp.funds.send.query",
-	"apiChineseName": "服务商资金权益发放的查询接口",
-	"description": "服务商资金权益发放结果的查询接口",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "TpFundsSendQuery",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
-				{
-					"name": "funds_type",
-					"type": "Number",
-					"description": "资金权益类型。1：预付款红包；2：尾款红包",
-					"required": true
-				},
 				{
 					"name": "biz_order_id",
 					"type": "Number",
 					"description": "订单ID",
 					"required": true
+				},
+				{
+					"name": "funds_type",
+					"type": "Number",
+					"description": "资金权益类型。1：预付款红包；2：尾款红包",
+					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "TpFundsSendQuery",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "value",
-					"type": "TpFundsSendResultDo",
-					"description": "value",
-					"required": true,
 					"subParams": [
 						{
 							"name": "red_packets_id",
 							"type": "String",
-							"description": "红包ID",
-							"required": true
+							"description": "红包ID"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "金额，单位分",
-							"required": true
+							"description": "金额，单位分"
 						},
 						{
 							"name": "status",
 							"type": "Boolean",
-							"description": "状态，true表示发放成功",
-							"required": true
+							"description": "状态，true表示发放成功"
 						},
 						{
 							"name": "funds_type",
 							"type": "Number",
-							"description": "资金权益类型。1：预付款红包；2：尾款红包",
-							"required": true
+							"description": "资金权益类型。1：预付款红包；2：尾款红包"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						},
 						{
 							"name": "receive_time",
 							"type": "String",
-							"description": "红包发放时间，格式yyyy-MM-dd HH:mm:ss",
-							"required": true
+							"description": "红包发放时间，格式yyyy-MM-dd HH:mm:ss"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "查询是否OK",
-					"required": true
+					],
+					"name": "value",
+					"type": "TpFundsSendResultDo",
+					"description": "value"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询是否OK"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.tp.funds.send.query",
+	"apiChineseName": "服务商资金权益发放的查询接口",
+	"description": "服务商资金权益发放结果的查询接口",
+	"id": 37069
 }

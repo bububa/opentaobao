@@ -1,13 +1,6 @@
 {
-	"id": 28331,
-	"name": "alibaba.alink.message.config.list",
-	"apiChineseName": "查询消息开关配置列表",
-	"description": "阿里智能获取消息开关配置列表",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -39,7 +32,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.message.config.list",
+	"apiChineseName": "查询消息开关配置列表",
+	"description": "阿里智能获取消息开关配置列表",
+	"id": 28331
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27523,
-	"name": "cainiao.cloudprint.customarea.update",
-	"apiChineseName": "自定义区内容更新",
-	"description": "自定义区内容更新",
 	"requestParams": [
 		{
 			"name": "custom_area_id",
@@ -25,63 +21,59 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CustomAreaResult",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "custom_area_id",
 							"type": "Number",
-							"description": "customAreaId",
-							"required": true
+							"description": "customAreaId"
 						},
 						{
 							"name": "custom_area_url",
 							"type": "String",
-							"description": "customAreaUrl",
-							"required": true
+							"description": "customAreaUrl"
 						},
 						{
-							"name": "keys",
-							"type": "KeyResult[]",
-							"description": "keys",
-							"required": true,
 							"subParams": [
 								{
 									"name": "key_name",
 									"type": "String",
-									"description": "keyName",
-									"required": true
+									"description": "keyName"
 								}
-							]
+							],
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "keys"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CustomAreaResult",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.customarea.update",
+	"apiChineseName": "自定义区内容更新",
+	"description": "自定义区内容更新",
+	"id": 27523
 }

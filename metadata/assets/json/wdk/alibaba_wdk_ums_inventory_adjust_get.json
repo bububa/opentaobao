@@ -1,8 +1,4 @@
 {
-	"id": 30634,
-	"name": "alibaba.wdk.ums.inventory.adjust.get",
-	"apiChineseName": "库调单-回流单",
-	"description": "库调单-回流单",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
@@ -24,10 +17,6 @@
 					"required": true
 				},
 				{
-					"name": "list",
-					"type": "StockChangeDto[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "warehouse_code",
@@ -72,10 +61,6 @@
 							"required": true
 						},
 						{
-							"name": "item_list",
-							"type": "StockChangeDetailDto[]",
-							"description": "itemList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "batch_code",
@@ -113,7 +98,11 @@
 									"description": "cabinetCode",
 									"required": true
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "StockChangeDetailDto[]",
+							"description": "itemList",
+							"required": true
 						},
 						{
 							"name": "remark",
@@ -133,7 +122,11 @@
 							"description": "费用承担部门（按需取）",
 							"required": true
 						}
-					]
+					],
+					"name": "list",
+					"type": "StockChangeDto[]",
+					"description": "list",
+					"required": true
 				},
 				{
 					"name": "msg",
@@ -147,7 +140,14 @@
 					"description": "success",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.inventory.adjust.get",
+	"apiChineseName": "库调单-回流单",
+	"description": "库调单-回流单",
+	"id": 30634
 }

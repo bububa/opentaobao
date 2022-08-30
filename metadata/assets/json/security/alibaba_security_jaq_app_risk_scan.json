@@ -1,23 +1,26 @@
 {
-	"id": 25661,
-	"name": "alibaba.security.jaq.app.risk.scan",
-	"apiChineseName": "应用风险扫描提交接口",
-	"description": "提交应用进行风险扫描(含漏洞扫描、恶意代码检测、仿冒监测),扫描完成后可通过对应的查询接口查询扫描结果",
 	"requestParams": [
 		{
-			"name": "app_info",
-			"type": "ScanAppInfo",
-			"description": "应用信息",
 			"subParams": [
 				{
-					"name": "data_type",
+					"name": "app_os_type",
 					"type": "Number",
-					"description": "APP数据类型 1-App URL 2-App MD5，应用加固仅支持1，风险扫描支持1和2"
+					"description": "app 类型，1-apk, 2-ipa（暂不支持）"
+				},
+				{
+					"name": "callback_url",
+					"type": "String",
+					"description": "任务处理完成后的反向通知回调地址,请不要使用ip地址,可能会无法回调,dataType=1时必填,通知为GET请求,请求URL: callbackUrl+\"?item_id=xxx\u0026task_status=1\"; item_id为应用加固/风险扫描接口返回的任务ID; task_status为任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时; 对于应用加固,接收到通知后如果task_status为1则可通过对应的查询接口查询加固/扫描结果; 对于应用风险扫描,如果task_status为1,3,4均可通过对应查询接口查询到结果,但不包括失败的扫描项的结果"
 				},
 				{
 					"name": "data",
 					"type": "String",
 					"description": "APP数据  dataType=1时填写 App包的下载地址;  dataType=2时填写 App包的md5值"
+				},
+				{
+					"name": "data_type",
+					"type": "Number",
+					"description": "APP数据类型 1-App URL 2-App MD5，应用加固仅支持1，风险扫描支持1和2"
 				},
 				{
 					"name": "md5",
@@ -28,18 +31,11 @@
 					"name": "size",
 					"type": "Number",
 					"description": "APP包大小(单位:字节),dataType=1时必填,用于文件校验"
-				},
-				{
-					"name": "callback_url",
-					"type": "String",
-					"description": "任务处理完成后的反向通知回调地址,请不要使用ip地址,可能会无法回调,dataType=1时必填,通知为GET请求,请求URL: callbackUrl+\"?item_id=xxx\u0026task_status=1\"; item_id为应用加固/风险扫描接口返回的任务ID; task_status为任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时; 对于应用加固,接收到通知后如果task_status为1则可通过对应的查询接口查询加固/扫描结果; 对于应用风险扫描,如果task_status为1,3,4均可通过对应查询接口查询到结果,但不包括失败的扫描项的结果"
-				},
-				{
-					"name": "app_os_type",
-					"type": "Number",
-					"description": "app 类型，1-apk, 2-ipa（暂不支持）"
 				}
-			]
+			],
+			"name": "app_info",
+			"type": "ScanAppInfo",
+			"description": "应用信息"
 		},
 		{
 			"name": "scan_types",
@@ -55,9 +51,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ScanTaskInfo",
-			"description": "扫描任务信息",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -69,7 +62,14 @@
 					"type": "Number",
 					"description": "任务处理进度: 1-处理完成 (可立即通过对应的查询接口查询处理结果), 2-异步处理中(需等待app_info.callback_url接收到反向通知后再查询结果) ; 对于app_info.data_type为1目前都是异步处理，此字段返回2; 对于app_info.data_type为2目前都是同步处理，此字段返回1"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaskInfo",
+			"description": "扫描任务信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.risk.scan",
+	"apiChineseName": "应用风险扫描提交接口",
+	"description": "提交应用进行风险扫描(含漏洞扫描、恶意代码检测、仿冒监测),扫描完成后可通过对应的查询接口查询扫描结果",
+	"id": 25661
 }

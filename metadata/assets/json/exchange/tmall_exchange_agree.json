@@ -1,8 +1,4 @@
 {
-	"id": 31202,
-	"name": "tmall.exchange.agree",
-	"apiChineseName": "卖家同意换货申请",
-	"description": "卖家同意换货申请",
 	"requestParams": [
 		{
 			"name": "post",
@@ -40,8 +36,8 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "返回字段。当前支持的有 dispute_id, bizorder_id, modified, status",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "mobile",
@@ -51,61 +47,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ExchangeBaseResponse",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回结果说明",
-					"required": true
+					"description": "返回结果说明"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回结果码",
-					"required": true
+					"description": "返回结果码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功调用",
-					"required": true
+					"description": "是否成功调用"
 				},
 				{
-					"name": "exchange",
-					"type": "Exchange",
-					"description": "换货单信息",
-					"required": true,
 					"subParams": [
-						{
-							"name": "status",
-							"type": "String",
-							"description": "换货单状态",
-							"required": true
-						},
 						{
 							"name": "modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "dispute_id",
 							"type": "String",
-							"description": "换货单号ID",
-							"required": true
+							"description": "换货单号ID"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "换货单状态"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "正向交易单号ID",
-							"required": true
+							"description": "正向交易单号ID"
 						}
-					]
+					],
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "换货单信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ExchangeBaseResponse",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.exchange.agree",
+	"apiChineseName": "卖家同意换货申请",
+	"description": "卖家同意换货申请",
+	"id": 31202
 }

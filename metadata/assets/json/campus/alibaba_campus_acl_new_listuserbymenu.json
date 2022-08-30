@@ -1,13 +1,6 @@
 {
-	"id": 39250,
-	"name": "alibaba.campus.acl.new.listuserbymenu",
-	"apiChineseName": "查询菜单下的人员",
-	"description": "查询拥有菜单权限的用户",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -27,7 +20,10 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
 			"name": "menu_url",
@@ -38,41 +34,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "contents",
-					"type": "Json[]",
-					"description": "content",
-					"required": true
+					"type": "String[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.listuserbymenu",
+	"apiChineseName": "查询菜单下的人员",
+	"description": "查询拥有菜单权限的用户",
+	"id": 39250
 }

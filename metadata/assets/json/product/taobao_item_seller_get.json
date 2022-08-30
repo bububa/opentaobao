@@ -1,8 +1,4 @@
 {
-	"id": 24625,
-	"name": "taobao.item.seller.get",
-	"apiChineseName": "获取单个商品详细信息",
-	"description": "获取单个商品的全部信息\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -14,15 +10,12 @@
 			"name": "num_iid",
 			"type": "Number",
 			"description": "商品数字ID",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "商品详细信息",
 			"subParams": [
 				{
 					"name": "detail_url",
@@ -110,9 +103,6 @@
 					"description": "商品新旧程度(全新:new，闲置:unused，二手：second)"
 				},
 				{
-					"name": "location",
-					"type": "Location",
-					"description": "商品所在地",
 					"subParams": [
 						{
 							"name": "zip",
@@ -144,7 +134,10 @@
 							"type": "String",
 							"description": "区/县（只适用于物流API）"
 						}
-					]
+					],
+					"name": "location",
+					"type": "Location",
+					"description": "商品所在地"
 				},
 				{
 					"name": "price",
@@ -232,9 +225,6 @@
 					"description": "属性值别名"
 				},
 				{
-					"name": "item_imgs",
-					"type": "ItemImg[]",
-					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "url",
@@ -246,12 +236,12 @@
 							"type": "Number",
 							"description": "图片放在第几张（多图时可设置）"
 						}
-					]
+					],
+					"name": "item_imgs",
+					"type": "ItemImg[]",
+					"description": "商品图片列表(包括主图)。fields中只设置item_img可以返回ItemImg结构体中所有字段，如果设置为item_img.id、item_img.url、item_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "prop_imgs",
-					"type": "PropImg[]",
-					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -278,12 +268,12 @@
 							"type": "Date",
 							"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
 						}
-					]
+					],
+					"name": "prop_imgs",
+					"type": "PropImg[]",
+					"description": "商品属性图片列表。fields中只设置prop_img可以返回PropImg结构体中所有字段，如果设置为prop_img.id、prop_img.url、prop_img.properties、prop_img.position等形式就只会返回相应的字段"
 				},
 				{
-					"name": "skus",
-					"type": "Sku[]",
-					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -384,7 +374,10 @@
 							"type": "String",
 							"description": "specId"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段"
 				},
 				{
 					"name": "outer_id",
@@ -412,9 +405,6 @@
 					"description": "是否定时上架商品"
 				},
 				{
-					"name": "videos",
-					"type": "Video[]",
-					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、video.url等形式就只会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -451,7 +441,10 @@
 							"type": "Number",
 							"description": "视频记录所关联的商品的数字id"
 						}
-					]
+					],
+					"name": "videos",
+					"type": "Video[]",
+					"description": "商品视频列表(目前只支持单个视频关联)。fields中只设置video可以返回Video结构体中所有字段，如果设置为video.id、video.video_id、video.url等形式就只会返回相应的字段"
 				},
 				{
 					"name": "is_3D",
@@ -524,9 +517,6 @@
 					"description": "周期销售库存"
 				},
 				{
-					"name": "item_rectangle_imgs",
-					"type": "ItemImg[]",
-					"description": "itemRectangleImgs",
 					"subParams": [
 						{
 							"name": "url",
@@ -538,7 +528,10 @@
 							"type": "Number",
 							"description": "图片放在第几张（多图时可设置）"
 						}
-					]
+					],
+					"name": "item_rectangle_imgs",
+					"type": "ItemImg[]",
+					"description": "itemRectangleImgs"
 				},
 				{
 					"name": "after_sale_id",
@@ -710,7 +703,14 @@
 					"type": "String",
 					"description": "全球购商品采购地信息（库存类型），有两种库存类型：现货和代购;参数值为1时代表现货，值为2时代表代购"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "商品详细信息"
 		}
-	]
+	],
+	"name": "taobao.item.seller.get",
+	"apiChineseName": "获取单个商品详细信息",
+	"description": "获取单个商品的全部信息\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 24625
 }

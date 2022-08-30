@@ -1,13 +1,6 @@
 {
-	"id": 43038,
-	"name": "alibaba.legal.suit.domination.push",
-	"apiChineseName": "更新或者保存管辖信息",
-	"description": "ISV推送管辖信息到诉讼平台",
 	"requestParams": [
 		{
-			"name": "domination_dissent_model",
-			"type": "DominationDissentModel",
-			"description": "管辖信息",
 			"subParams": [
 				{
 					"name": "domination_dissent_ruling_count",
@@ -15,9 +8,6 @@
 					"description": "裁定书附件数量"
 				},
 				{
-					"name": "domination_dissent_ruling_list",
-					"type": "FileModel[]",
-					"description": "裁定书附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -29,7 +19,10 @@
 							"type": "String",
 							"description": "裁定书附件ID"
 						}
-					]
+					],
+					"name": "domination_dissent_ruling_list",
+					"type": "FileModel[]",
+					"description": "裁定书附件"
 				},
 				{
 					"name": "description",
@@ -67,9 +60,6 @@
 					"description": "反馈附件的个数"
 				},
 				{
-					"name": "feedback_attachment_list",
-					"type": "FileModel[]",
-					"description": "反馈附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -81,7 +71,10 @@
 							"type": "String",
 							"description": "反馈附件ID"
 						}
-					]
+					],
+					"name": "feedback_attachment_list",
+					"type": "FileModel[]",
+					"description": "反馈附件"
 				},
 				{
 					"name": "feedback_content",
@@ -134,9 +127,6 @@
 					"description": "管辖文书数量"
 				},
 				{
-					"name": "application_attachment_list",
-					"type": "FileModel[]",
-					"description": "管辖文书",
 					"subParams": [
 						{
 							"name": "name",
@@ -148,7 +138,10 @@
 							"type": "String",
 							"description": "文书ID"
 						}
-					]
+					],
+					"name": "application_attachment_list",
+					"type": "FileModel[]",
+					"description": "管辖文书"
 				},
 				{
 					"name": "domination_process",
@@ -165,40 +158,43 @@
 					"type": "String",
 					"description": "操作类型，这里只能更新"
 				}
-			]
+			],
+			"name": "domination_dissent_model",
+			"type": "DominationDissentModel",
+			"description": "管辖信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "content",
 					"type": "Number",
-					"description": "管辖ID",
-					"required": true
+					"description": "管辖ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.domination.push",
+	"apiChineseName": "更新或者保存管辖信息",
+	"description": "ISV推送管辖信息到诉讼平台",
+	"id": 43038
 }

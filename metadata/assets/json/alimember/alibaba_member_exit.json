@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "open_merchant_id",
+					"type": "String",
+					"description": "要退会的商家",
+					"required": true
+				},
+				{
+					"name": "uid_type",
+					"type": "String",
+					"description": "商家账号类型"
+				},
+				{
+					"name": "isv_member_id",
+					"type": "String",
+					"description": "isv会员id",
+					"required": true
+				}
+			],
+			"name": "exit_member",
+			"type": "ExitMemberDto",
+			"description": "退会对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.member.exit",
+	"apiChineseName": "退会",
+	"description": "商家会员解绑",
+	"id": 63099
+}

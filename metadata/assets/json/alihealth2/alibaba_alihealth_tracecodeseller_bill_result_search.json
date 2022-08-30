@@ -1,8 +1,4 @@
 {
-	"id": 38016,
-	"name": "alibaba.alihealth.tracecodeseller.bill.result.search",
-	"apiChineseName": "查询出入库单处理结果api",
-	"description": "查询出入库单处理结果api",
 	"requestParams": [
 		{
 			"name": "skey_code",
@@ -39,101 +35,93 @@
 			"description": "不需要"
 		},
 		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "每页条数",
-			"required": true
-		},
-		{
 			"name": "page",
 			"type": "Number",
 			"description": "当前页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
 			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PageInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
-							"name": "results",
-							"type": "Result[]",
-							"description": "result",
-							"required": true,
 							"subParams": [
 								{
 									"name": "gmt_modified",
 									"type": "Number",
-									"description": "单据处理时间",
-									"required": true
+									"description": "单据处理时间"
 								},
 								{
 									"name": "task_status",
 									"type": "Number",
-									"description": "单据处理状态",
-									"required": true
+									"description": "单据处理状态"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Number",
-									"description": "单据上传时间",
-									"required": true
+									"description": "单据上传时间"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据编号",
-									"required": true
+									"description": "单据编号"
 								},
 								{
 									"name": "oper_ent_id",
 									"type": "Number",
-									"description": "商家id",
-									"required": true
+									"description": "商家id"
 								}
-							]
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "result"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "page",
-							"required": true
+							"description": "page"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "pageSize",
-							"required": true
+							"description": "pageSize"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.bill.result.search",
+	"apiChineseName": "查询出入库单处理结果api",
+	"description": "查询出入库单处理结果api",
+	"id": 38016
 }

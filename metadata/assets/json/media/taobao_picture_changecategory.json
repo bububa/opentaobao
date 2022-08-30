@@ -1,15 +1,11 @@
 {
-	"id": 10911,
-	"name": "taobao.picture.changecategory",
-	"apiChineseName": "修改图片的分类",
-	"description": "把批量的图片移动到某个分类下",
 	"requestParams": [
 		{
 			"name": "picture_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "要移动的图片的id",
-			"required": true,
-			"maxListSize": 1000
+			"maxListSize": 1000,
+			"required": true
 		},
 		{
 			"name": "picture_category_id",
@@ -24,5 +20,9 @@
 			"type": "Boolean",
 			"description": "移动图片是否成功：部分移动成功为true，全部移动失败为false。"
 		}
-	]
+	],
+	"name": "taobao.picture.changecategory",
+	"apiChineseName": "修改图片的分类",
+	"description": "把批量的图片移动到某个分类下",
+	"id": 10911
 }

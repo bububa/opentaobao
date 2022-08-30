@@ -1,8 +1,4 @@
 {
-	"id": 28332,
-	"name": "alibaba.alink.message.history.count",
-	"apiChineseName": "查询消息总数",
-	"description": "查询消息总数",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -39,9 +35,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -73,7 +66,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.message.history.count",
+	"apiChineseName": "查询消息总数",
+	"description": "查询消息总数",
+	"id": 28332
 }

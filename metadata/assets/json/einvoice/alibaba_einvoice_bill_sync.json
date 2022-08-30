@@ -1,16 +1,13 @@
 {
-	"id": 31288,
-	"name": "alibaba.einvoice.bill.sync",
-	"apiChineseName": "结算单同步",
-	"description": "电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票",
 	"requestParams": [
 		{
-			"name": "invoice_items",
-			"type": "BillItemDo[]",
-			"description": "结算商品单明细列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
 				{
 					"name": "quantity",
 					"type": "String",
@@ -34,17 +31,16 @@
 					"description": "商品单位"
 				},
 				{
-					"name": "item_name",
-					"type": "String",
-					"description": "商品名称",
-					"required": true
-				},
-				{
 					"name": "row_type",
 					"type": "Number",
 					"description": "1 折扣行 2被折扣行 0普通行"
 				}
-			]
+			],
+			"name": "invoice_items",
+			"type": "BillItemDo[]",
+			"description": "结算商品单明细列表",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "status",
@@ -71,6 +67,11 @@
 			"required": true
 		},
 		{
+			"name": "invoice_price",
+			"type": "String",
+			"description": "结算单可开票总金额（不填=sumPrice），小数点后2两位"
+		},
+		{
 			"name": "order_id",
 			"type": "String",
 			"description": "结算单订单ID",
@@ -89,9 +90,16 @@
 			"required": true
 		},
 		{
-			"name": "qrcode",
-			"type": "QrCodeDo",
-			"description": "生成二维码参数，若不需要生成二维码，则不填",
+			"name": "brand_name",
+			"type": "String",
+			"description": "品牌名称，不填默认=shop_name"
+		},
+		{
+			"name": "shop_platform",
+			"type": "String",
+			"description": "开票店铺的平台，默认等于platform"
+		},
+		{
 			"subParams": [
 				{
 					"name": "qr_type",
@@ -113,22 +121,10 @@
 					"type": "Number",
 					"description": "二维码高度"
 				}
-			]
-		},
-		{
-			"name": "brand_name",
-			"type": "String",
-			"description": "品牌名称，不填默认=shop_name"
-		},
-		{
-			"name": "invoice_price",
-			"type": "String",
-			"description": "结算单可开票总金额（不填=sumPrice），小数点后2两位"
-		},
-		{
-			"name": "shop_platform",
-			"type": "String",
-			"description": "开票店铺的平台，默认等于platform"
+			],
+			"name": "qrcode",
+			"type": "QrCodeDo",
+			"description": "生成二维码参数，若不需要生成二维码，则不填"
 		}
 	],
 	"responseParams": [
@@ -152,5 +148,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.bill.sync",
+	"apiChineseName": "结算单同步",
+	"description": "电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票",
+	"id": 31288
 }

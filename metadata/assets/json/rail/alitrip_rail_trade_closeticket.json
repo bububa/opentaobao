@@ -1,8 +1,4 @@
 {
-	"id": 49585,
-	"name": "alitrip.rail.trade.closeticket",
-	"apiChineseName": "出票失败关单接口",
-	"description": "出票成功回调接口",
 	"requestParams": [
 		{
 			"name": "tp_order_id",
@@ -31,29 +27,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "查询结果集",
 			"subParams": [
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "成功失败",
-					"required": true
+					"description": "成功失败"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
 		}
-	]
+	],
+	"name": "alitrip.rail.trade.closeticket",
+	"apiChineseName": "出票失败关单接口",
+	"description": "出票成功回调接口",
+	"id": 49585
 }

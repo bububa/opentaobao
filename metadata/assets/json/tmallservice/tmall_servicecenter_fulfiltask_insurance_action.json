@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"name": "task_action",
+			"type": "String",
+			"description": "履约动作，取值：send_goods, 上门取件;supplier_signed, 服务商签收;evaluate_report, 鉴定报告;insurance_claims, 保险理赔;send_back, 寄回;repair_finish, 维修完成;"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "fulfil_task_id",
+			"type": "Number",
+			"description": "履行单id"
+		},
+		{
+			"name": "task_context_data",
+			"type": "Json",
+			"description": "履约动作数据，不同动作取值见api文档；"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部单号id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "fulfil_task_id",
+							"type": "Number",
+							"description": "履行单id"
+						},
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "工单id"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部单号id"
+						}
+					],
+					"name": "value",
+					"type": "FulfilInsuranceTaskResponse",
+					"description": "返回值对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.servicecenter.fulfiltask.insurance.action",
+	"apiChineseName": "供应链保险链路动作",
+	"description": "服务供应链履约链路 保险类业务履约接口",
+	"id": 57591
+}

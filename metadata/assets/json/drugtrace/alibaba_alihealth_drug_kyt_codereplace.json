@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ref_ent_id（码申请企业）",
+			"required": true
+		},
+		{
+			"name": "new_code",
+			"type": "String",
+			"description": "替换后的追溯码",
+			"required": true
+		},
+		{
+			"name": "old_code",
+			"type": "String",
+			"description": "被替换的追溯码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回列表"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "调用是否成功(true 成功 false 失败)"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.codereplace",
+	"apiChineseName": "单码替换",
+	"description": "单码替换",
+	"id": 62486
+}

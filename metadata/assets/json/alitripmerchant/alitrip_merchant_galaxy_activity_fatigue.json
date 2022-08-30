@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录标识"
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "活动ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "返回数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.fatigue",
+	"apiChineseName": "营销抽奖-弹窗疲劳度控制",
+	"description": "星河产品-营销抽奖首页弹窗疲劳度控制服务",
+	"id": 57183
+}

@@ -1,8 +1,4 @@
 {
-	"id": 23434,
-	"name": "tmall.item.schema.update",
-	"apiChineseName": "天猫根据规则编辑商品",
-	"description": "天猫根据规则编辑商品",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -38,5 +34,9 @@
 			"type": "Date",
 			"description": "商品更新操作成功时间"
 		}
-	]
+	],
+	"name": "tmall.item.schema.update",
+	"apiChineseName": "天猫根据规则编辑商品",
+	"description": "天猫根据规则编辑商品",
+	"id": 23434
 }

@@ -1,8 +1,4 @@
 {
-	"id": 40551,
-	"name": "taobao.auction.gov.data.annually.get",
-	"apiChineseName": "按年统计法院拍卖数据",
-	"description": "按月统计法院拍卖数据 包含：\n标的件数统计：发布标的件数、结束标的件数、开拍标的件数\n竞价实况：预计成交金额、出价次数、报名人数\n在线标的：在线标的件数、意向用户数、网拍围观人次\n\n最长6年，年起始时间2017年",
 	"requestParams": [
 		{
 			"name": "court_name",
@@ -31,67 +27,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "CourtsBidStatAnnuallyList []",
-			"description": "按年统计结果列表",
 			"subParams": [
 				{
-					"name": "courts_bid_stat_sum",
-					"type": "CourtsBidStatSum",
-					"description": "法院按年维度标的统计汇总",
-					"required": true,
 					"subParams": [
 						{
 							"name": "publish_count",
 							"type": "Number",
-							"description": "发拍次数",
-							"required": true
+							"description": "发拍次数"
 						},
 						{
 							"name": "hammer_price",
 							"type": "Number",
-							"description": "成交金额",
-							"required": true
+							"description": "成交金额"
 						},
 						{
 							"name": "hammer_count",
 							"type": "Number",
-							"description": "成交件数",
-							"required": true
+							"description": "成交件数"
 						},
 						{
 							"name": "end_count",
 							"type": "Number",
-							"description": "结束网拍次数",
-							"required": true
+							"description": "结束网拍次数"
 						},
 						{
 							"name": "end_count_dist",
 							"type": "Number",
-							"description": "结束标的件数（去重）",
-							"required": true
+							"description": "结束标的件数（去重）"
 						},
 						{
 							"name": "avg_addv_percent",
 							"type": "Number",
-							"description": "平均成交溢价率(万分位)",
-							"required": true
+							"description": "平均成交溢价率(万分位)"
 						},
 						{
 							"name": "publish_count_dist",
 							"type": "Number",
-							"description": "发拍件数（去重）",
-							"required": true
+							"description": "发拍件数（去重）"
 						}
-					]
+					],
+					"name": "courts_bid_stat_sum",
+					"type": "CourtsBidStatSum",
+					"description": "法院按年维度标的统计汇总"
 				},
 				{
 					"name": "period",
 					"type": "String",
-					"description": "时间区间(年)",
-					"required": true
+					"description": "时间区间(年)"
 				}
-			]
+			],
+			"name": "results",
+			"type": "CourtsBidStatAnnuallyList []",
+			"description": "按年统计结果列表"
 		}
-	]
+	],
+	"name": "taobao.auction.gov.data.annually.get",
+	"apiChineseName": "按年统计法院拍卖数据",
+	"description": "按月统计法院拍卖数据 包含：\n标的件数统计：发布标的件数、结束标的件数、开拍标的件数\n竞价实况：预计成交金额、出价次数、报名人数\n在线标的：在线标的件数、意向用户数、网拍围观人次\n\n最长6年，年起始时间2017年",
+	"id": 40551
 }

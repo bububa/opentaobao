@@ -1,8 +1,4 @@
 {
-	"id": 25561,
-	"name": "taobao.oc.ap.contracturl.get",
-	"apiChineseName": "按用户获取支付宝代扣协议链接地址",
-	"description": "按用户获取支付宝代扣协议链接地址",
 	"responseParams": [
 		{
 			"name": "is_success",
@@ -19,5 +15,9 @@
 			"type": "String",
 			"description": "错误描述信息"
 		}
-	]
+	],
+	"name": "taobao.oc.ap.contracturl.get",
+	"apiChineseName": "按用户获取支付宝代扣协议链接地址",
+	"description": "按用户获取支付宝代扣协议链接地址",
+	"id": 25561
 }

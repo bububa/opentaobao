@@ -1,13 +1,6 @@
 {
-	"id": 41565,
-	"name": "taobao.game.deliveryvoucher.evaluate",
-	"apiChineseName": "卡券评价回传",
-	"description": "卡券ISV回传商品评价",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "VoucherEvaluateRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "evaluate_content",
@@ -16,15 +9,14 @@
 					"required": true
 				},
 				{
+					"name": "extend",
+					"type": "String",
+					"description": "可扩展字段"
+				},
+				{
 					"name": "evaluate_time",
 					"type": "Date",
 					"description": "评价时间",
-					"required": true
-				},
-				{
-					"name": "order_id",
-					"type": "Number",
-					"description": "主交易订单号",
 					"required": true
 				},
 				{
@@ -34,16 +26,14 @@
 					"required": true
 				},
 				{
-					"name": "voucher_infos",
-					"type": "DeliveryVoucherInfoDTO[]",
-					"description": "券信息，券信息,最多20条券记录",
-					"required": true,
+					"name": "order_id",
+					"type": "Number",
+					"description": "主交易订单号",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
-							"name": "vouchers",
-							"type": "DeliveryVoucherDTO[]",
-							"description": "券信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -57,7 +47,11 @@
 									"description": "券号",
 									"required": true
 								}
-							]
+							],
+							"name": "vouchers",
+							"type": "DeliveryVoucherDTO[]",
+							"description": "券信息",
+							"required": true
 						},
 						{
 							"name": "item_id",
@@ -65,12 +59,11 @@
 							"description": "商品id",
 							"required": true
 						}
-					]
-				},
-				{
-					"name": "extend",
-					"type": "String",
-					"description": "可扩展字段"
+					],
+					"name": "voucher_infos",
+					"type": "DeliveryVoucherInfoDTO[]",
+					"description": "券信息，券信息,最多20条券记录",
+					"required": true
 				},
 				{
 					"name": "operate_date",
@@ -90,7 +83,10 @@
 					"description": "第三方服务商标识,top appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "VoucherEvaluateRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
@@ -109,5 +105,9 @@
 			"type": "Boolean",
 			"description": "操作状态"
 		}
-	]
+	],
+	"name": "taobao.game.deliveryvoucher.evaluate",
+	"apiChineseName": "卡券评价回传",
+	"description": "卡券ISV回传商品评价",
+	"id": 41565
 }

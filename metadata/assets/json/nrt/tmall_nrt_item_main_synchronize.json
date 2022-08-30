@@ -1,8 +1,4 @@
 {
-	"id": 45381,
-	"name": "tmall.nrt.item.main.synchronize",
-	"apiChineseName": "家装新零售主商品同步至阿里",
-	"description": "同步红星美凯龙存量商品到阿里",
 	"requestParams": [
 		{
 			"name": "booth_id",
@@ -17,10 +13,6 @@
 			"required": true
 		},
 		{
-			"name": "props",
-			"type": "CategoryPropDto[]",
-			"description": "类目属性",
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "property_id",
@@ -43,7 +35,11 @@
 					"type": "String",
 					"description": "属性值名称"
 				}
-			]
+			],
+			"name": "props",
+			"type": "CategoryPropDto[]",
+			"description": "类目属性",
+			"maxListSize": 100
 		},
 		{
 			"name": "dealer_code",
@@ -63,9 +59,6 @@
 			"description": "商家编码"
 		},
 		{
-			"name": "outer_props",
-			"type": "MacallineItemExtDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "brand_series_id",
@@ -93,9 +86,6 @@
 					"description": "标签价格类型"
 				},
 				{
-					"name": "original_location",
-					"type": "LocationDto",
-					"description": "产地",
 					"subParams": [
 						{
 							"name": "city",
@@ -122,7 +112,10 @@
 							"type": "Number",
 							"description": "类型，1：国内，2：国外"
 						}
-					]
+					],
+					"name": "original_location",
+					"type": "LocationDto",
+					"description": "产地"
 				},
 				{
 					"name": "price_type",
@@ -164,7 +157,10 @@
 					"type": "String",
 					"description": "饰面"
 				}
-			]
+			],
+			"name": "outer_props",
+			"type": "MacallineItemExtDto",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "price",
@@ -179,37 +175,37 @@
 	],
 	"responseParams": [
 		{
-			"name": "tmall_nrt_item_main_synchronize",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "NrtItemSyncResultDto",
-					"description": "返回值",
-					"required": true,
 					"subParams": [
 						{
 							"name": "s_item_id",
 							"type": "Number",
-							"description": "摊位商品ID",
-							"required": true
+							"description": "摊位商品ID"
 						},
 						{
 							"name": "m_item_id",
 							"type": "Number",
-							"description": "主商品ID",
-							"required": true
+							"description": "主商品ID"
 						}
-					]
+					],
+					"name": "data",
+					"type": "NrtItemSyncResultDto",
+					"description": "返回值"
 				},
 				{
 					"name": "succ",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "tmall_nrt_item_main_synchronize",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nrt.item.main.synchronize",
+	"apiChineseName": "家装新零售主商品同步至阿里",
+	"description": "同步红星美凯龙存量商品到阿里",
+	"id": 45381
 }

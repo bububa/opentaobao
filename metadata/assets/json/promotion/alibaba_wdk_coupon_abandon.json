@@ -1,13 +1,6 @@
 {
-	"id": 46111,
-	"name": "alibaba.wdk.coupon.abandon",
-	"apiChineseName": "废券",
-	"description": "优惠券废弃",
 	"requestParams": [
 		{
-			"name": "param_wdk_coupon_abandon_param",
-			"type": "WdkCouponAbandonParam",
-			"description": "废券参数",
 			"subParams": [
 				{
 					"name": "coupon_source",
@@ -34,40 +27,43 @@
 					"type": "String",
 					"description": "匿名码"
 				}
-			]
+			],
+			"name": "param_wdk_coupon_abandon_param",
+			"type": "WdkCouponAbandonParam",
+			"description": "废券参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "操作结果",
-					"required": true
+					"description": "操作结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.abandon",
+	"apiChineseName": "废券",
+	"description": "优惠券废弃",
+	"id": 46111
 }

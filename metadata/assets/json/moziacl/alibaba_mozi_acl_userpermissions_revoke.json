@@ -1,20 +1,8 @@
 {
-	"id": 45456,
-	"name": "alibaba.mozi.acl.userpermissions.revoke",
-	"apiChineseName": "回收账户权限",
-	"description": "调用此接口，会根据入参回收该账户下的该批权限点",
 	"requestParams": [
 		{
-			"name": "revoke_permission",
-			"type": "RevokePermissionsRequest",
-			"description": "回收权限入参对象",
-			"required": true,
 			"subParams": [
 				{
-					"name": "principal",
-					"type": "BucUserPrincipalParam",
-					"description": "回收主体对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -28,7 +16,11 @@
 							"description": "回收主体所在的租户Id",
 							"required": true
 						}
-					]
+					],
+					"name": "principal",
+					"type": "BucUserPrincipalParam",
+					"description": "回收主体对象",
+					"required": true
 				},
 				{
 					"name": "target_app_name",
@@ -43,49 +35,53 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "请求扩展字段",
 					"required": true
 				}
-			]
+			],
+			"name": "revoke_permission",
+			"type": "RevokePermissionsRequest",
+			"description": "回收权限入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RevokePermissionsResult",
-			"description": "回收账户的权限请求返回对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功，成功则为true",
-					"required": true
+					"description": "是否调用成功，成功则为true"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "响应message，若失败则返回失败原因",
-					"required": true
+					"description": "响应message，若失败则返回失败原因"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "扩展字段，与入参扩展字段值相同",
-					"required": true
+					"type": "String",
+					"description": "扩展字段，与入参扩展字段值相同"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RevokePermissionsResult",
+			"description": "回收账户的权限请求返回对象"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.userpermissions.revoke",
+	"apiChineseName": "回收账户权限",
+	"description": "调用此接口，会根据入参回收该账户下的该批权限点",
+	"id": 45456
 }

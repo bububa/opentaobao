@@ -1,19 +1,8 @@
 {
-	"id": 47558,
-	"name": "aliexpress.social.currency.get",
-	"apiChineseName": "币种获取接口",
-	"description": "获取目前AE社交支持的币种",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemPickPagingResult",
-			"description": "包类型",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "CurrencyDto[]",
-					"description": "结果封装",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
@@ -33,7 +22,11 @@
 							"description": "货币名称",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "CurrencyDto[]",
+					"description": "结果封装",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -53,7 +46,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "包类型"
 		}
-	]
+	],
+	"name": "aliexpress.social.currency.get",
+	"apiChineseName": "币种获取接口",
+	"description": "获取目前AE社交支持的币种",
+	"id": 47558
 }

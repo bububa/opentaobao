@@ -1,13 +1,6 @@
 {
-	"id": 33520,
-	"name": "alibaba.wdk.stock.publish",
-	"apiChineseName": "五道口库存发布接口（针对外部渠道）",
-	"description": "五道口库存发布接口（针对外部渠道）",
 	"requestParams": [
 		{
-			"name": "batch_stock_publish_dto",
-			"type": "BatchStockPublishDto",
-			"description": "批量参数",
 			"subParams": [
 				{
 					"name": "update_type",
@@ -61,9 +54,6 @@
 					"description": "渠道店类型（废弃）"
 				},
 				{
-					"name": "stock_publish_dtos",
-					"type": "StockPublishDto[]",
-					"description": "子参数列表",
 					"subParams": [
 						{
 							"name": "sku_code",
@@ -94,14 +84,20 @@
 							"type": "String",
 							"description": "订单描述"
 						}
-					]
+					],
+					"name": "stock_publish_dtos",
+					"type": "StockPublishDto[]",
+					"description": "子参数列表"
 				},
 				{
 					"name": "un_batched_order_stock_subtracted",
 					"type": "Boolean",
 					"description": "是否已扣除未批次数，用于全量发布"
 				}
-			]
+			],
+			"name": "batch_stock_publish_dto",
+			"type": "BatchStockPublishDto",
+			"description": "批量参数"
 		}
 	],
 	"responseParams": [
@@ -120,5 +116,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "alibaba.wdk.stock.publish",
+	"apiChineseName": "五道口库存发布接口（针对外部渠道）",
+	"description": "五道口库存发布接口（针对外部渠道）",
+	"id": 33520
 }

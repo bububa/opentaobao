@@ -1,8 +1,4 @@
 {
-	"id": 33207,
-	"name": "alibaba.campus.acl.getmenubyempid",
-	"apiChineseName": "查询用户的菜单",
-	"description": "查询用户的菜单",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -31,79 +27,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CollectionResult",
-			"description": "接口返回结果",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "TreeNode[]",
-					"description": "菜单内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "String",
-							"description": "菜单主键id",
-							"required": true
+							"description": "菜单主键id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "菜单名称",
-							"required": true
+							"description": "菜单名称"
 						},
 						{
 							"name": "url",
 							"type": "String",
-							"description": "菜单链接",
-							"required": true
+							"description": "菜单链接"
 						},
 						{
 							"name": "level",
 							"type": "Number",
-							"description": "菜单级别",
-							"required": true
+							"description": "菜单级别"
 						},
 						{
 							"name": "menu_id",
 							"type": "String",
-							"description": "菜单层级路劲",
-							"required": true
+							"description": "菜单层级路劲"
 						},
 						{
 							"name": "menu_order",
 							"type": "Number",
-							"description": "菜单排序字段",
-							"required": true
+							"description": "菜单排序字段"
 						},
 						{
 							"name": "childs",
-							"type": "Json[]",
-							"description": "childs",
-							"required": true
+							"type": "String[]",
+							"description": "childs"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "TreeNode[]",
+					"description": "菜单内容"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.getmenubyempid",
+	"apiChineseName": "查询用户的菜单",
+	"description": "查询用户的菜单",
+	"id": 33207
 }

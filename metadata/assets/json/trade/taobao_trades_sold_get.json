@@ -1,8 +1,4 @@
 {
-	"id": 46,
-	"name": "taobao.trades.sold.get",
-	"apiChineseName": "查询卖家已卖出的交易数据（根据创建时间）",
-	"description": "搜索当前会话用户作为卖家已卖出的交易数据（只能获取到三个月以内的交易信息）\n\u003cbr/\u003e1. 返回的数据结果是以订单的创建时间倒序排列的。\n\u003cbr/\u003e2. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。\n\u003cbr/\u003e注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，解决办法就是type加上订单类型就可正常返回了。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -84,9 +80,6 @@
 			"description": "是否存在下一页"
 		},
 		{
-			"name": "trades",
-			"type": "Trade []",
-			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息",
 			"subParams": [
 				{
 					"name": "seller_nick",
@@ -299,9 +292,6 @@
 					"description": "交易内部来源。WAP(手机);HITAO(嗨淘);TOP(TOP平台);TAOBAO(普通淘宝);JHS(聚划算)一笔订单可能同时有以上多个标记，则以逗号分隔"
 				},
 				{
-					"name": "service_orders",
-					"type": "ServiceOrder[]",
-					"description": "服务子订单列表",
 					"subParams": [
 						{
 							"name": "oid",
@@ -403,7 +393,10 @@
 							"type": "String",
 							"description": "服务供应链-服务商外部编码标"
 						}
-					]
+					],
+					"name": "service_orders",
+					"type": "ServiceOrder[]",
+					"description": "服务子订单列表"
 				},
 				{
 					"name": "buyer_rate",
@@ -451,9 +444,6 @@
 					"description": "导购宝提货方式，inshop：店内提货，online：线上发货"
 				},
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "订单列表",
 					"subParams": [
 						{
 							"name": "item_meal_name",
@@ -1237,8 +1227,71 @@
 							"name": "expand_card_basic_price_used_suborder",
 							"type": "String",
 							"description": "购物金核销子订单本金分摊金额（单位为分）"
+						},
+						{
+							"name": "seller_display_nick",
+							"type": "String",
+							"description": "卖家展示昵称"
+						},
+						{
+							"name": "buyer_display_nick",
+							"type": "String",
+							"description": "买家展示昵称"
+						},
+						{
+							"name": "lijian",
+							"type": "String",
+							"description": "预售订单立减金额"
+						},
+						{
+							"name": "auto_flow",
+							"type": "String",
+							"description": "优仓业务场景下 1（自动流转）/0（非自动流转）"
+						},
+						{
+							"name": "trade_fulfillment_type",
+							"type": "Number",
+							"description": "订单履约类型"
+						},
+						{
+							"name": "distribute_status",
+							"type": "String",
+							"description": "订单是有代发订单，为空表示该订单暂无代发单据，distribute-该子订单有已分配代发单据，cancel-订单的代发单据都已取消，"
+						},
+						{
+							"name": "pro_ct",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
+						},
+						{
+							"name": "has_gift",
+							"type": "Boolean",
+							"description": "是否含有赠品"
+						},
+						{
+							"name": "is_free_gift",
+							"type": "Boolean",
+							"description": "是否是赠品订单"
+						},
+						{
+							"name": "gift_mids",
+							"type": "String",
+							"description": "赠品关联的id，主品订单下此字段表示赠品订单id，赠品订单表示主品订单id"
+						},
+						{
+							"name": "is_idle",
+							"type": "String",
+							"description": "是否为闲鱼订单，1是，0否"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "rx_audit_status",
@@ -1294,6 +1347,11 @@
 					"name": "is_o2o_passport",
 					"type": "Boolean",
 					"description": "是否是智慧门店订单，只有true，或者 null 两种情况"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家OpenUid"
 				},
 				{
 					"name": "tmall_delivery",
@@ -1359,8 +1417,30 @@
 					"name": "asdp_ads",
 					"type": "String",
 					"description": "送货上门标"
+				},
+				{
+					"name": "aid",
+					"type": "String",
+					"description": "地址aid字段"
+				},
+				{
+					"name": "drug_register",
+					"type": "String",
+					"description": "是否疫情登记的订单。0=未登记，1=已登记"
+				},
+				{
+					"name": "promise_sign_time",
+					"type": "String",
+					"description": "承诺/最晚送达时间"
 				}
-			]
+			],
+			"name": "trades",
+			"type": "Trade []",
+			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息"
 		}
-	]
+	],
+	"name": "taobao.trades.sold.get",
+	"apiChineseName": "查询卖家已卖出的交易数据（根据创建时间）",
+	"description": "搜索当前会话用户作为卖家已卖出的交易数据（只能获取到三个月以内的交易信息）\n\u003cbr/\u003e1. 返回的数据结果是以订单的创建时间倒序排列的。\n\u003cbr/\u003e2. 返回的数据结果只包含了订单的部分数据，可通过taobao.trade.fullinfo.get获取订单详情。\n\u003cbr/\u003e注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，解决办法就是type加上订单类型就可正常返回了。\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 46
 }

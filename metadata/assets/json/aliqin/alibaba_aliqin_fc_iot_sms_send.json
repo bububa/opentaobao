@@ -1,8 +1,4 @@
 {
-	"id": 28775,
-	"name": "alibaba.aliqin.fc.iot.sms.send",
-	"apiChineseName": "物联网短信发送",
-	"description": "发送物联网短信，只允许使用物联网短信模板",
 	"requestParams": [
 		{
 			"name": "extend",
@@ -35,9 +31,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BizResult",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "err_code",
@@ -59,7 +52,14 @@
 					"type": "String",
 					"description": "返回信息描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.iot.sms.send",
+	"apiChineseName": "物联网短信发送",
+	"description": "发送物联网短信，只允许使用物联网短信模板",
+	"id": 28775
 }

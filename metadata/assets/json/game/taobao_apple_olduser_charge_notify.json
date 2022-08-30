@@ -1,8 +1,4 @@
 {
-	"id": 32402,
-	"name": "taobao.apple.olduser.charge.notify",
-	"apiChineseName": "老用户激活并兑换通知接口",
-	"description": "老用户激活并兑换通知接口",
 	"requestParams": [
 		{
 			"name": "result_code",
@@ -15,9 +11,6 @@
 			"description": "结果信息说明"
 		},
 		{
-			"name": "main_data",
-			"type": "AppleTopOldSignNotifyDo",
-			"description": "业务参数",
 			"subParams": [
 				{
 					"name": "card_no",
@@ -49,7 +42,10 @@
 					"type": "String",
 					"description": "网关订单号"
 				}
-			]
+			],
+			"name": "main_data",
+			"type": "AppleTopOldSignNotifyDo",
+			"description": "业务参数"
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "String",
 			"description": "处理结果码"
 		}
-	]
+	],
+	"name": "taobao.apple.olduser.charge.notify",
+	"apiChineseName": "老用户激活并兑换通知接口",
+	"description": "老用户激活并兑换通知接口",
+	"id": 32402
 }

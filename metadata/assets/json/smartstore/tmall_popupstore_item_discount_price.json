@@ -1,48 +1,44 @@
 {
-	"id": 38219,
-	"name": "tmall.popupstore.item.discount.price",
-	"apiChineseName": "商品优惠价格查询",
-	"description": "商品优惠价格查询",
 	"requestParams": [
 		{
 			"name": "item_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "商品id列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_dto",
-			"type": "ResultDto",
-			"description": "出参对象",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "数据条数",
-					"required": true
+					"description": "数据条数"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码code",
-					"required": true
+					"description": "错误码code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "错误msg",
-					"required": true
+					"description": "错误msg"
 				},
 				{
 					"name": "result_list",
-					"type": "Json",
-					"description": "实际结果",
-					"required": true
+					"type": "String",
+					"description": "实际结果"
 				}
-			]
+			],
+			"name": "result_dto",
+			"type": "ResultDto",
+			"description": "出参对象"
 		}
-	]
+	],
+	"name": "tmall.popupstore.item.discount.price",
+	"apiChineseName": "商品优惠价格查询",
+	"description": "商品优惠价格查询",
+	"id": 38219
 }

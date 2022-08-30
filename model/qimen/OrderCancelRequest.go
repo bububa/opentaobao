@@ -2,6 +2,8 @@ package qimen
 
 // OrderCancelRequest 结构体
 type OrderCancelRequest struct {
+	// 交易平台子订单信息
+	SubSourceOrders []SubSourceOrder `json:"subSourceOrders,omitempty" xml:"subSourceOrders>sub_source_order,omitempty"`
 	// 仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 货主编码

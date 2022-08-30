@@ -1,14 +1,6 @@
 {
-	"id": 53675,
-	"name": "alibaba.alihealth.drugcode.user.data",
-	"apiChineseName": "西安杨森同步用户行为接口",
-	"description": "西安杨森同步用户行为接口",
 	"requestParams": [
 		{
-			"name": "list",
-			"type": "HaoxinqingDataDto[]",
-			"description": "用户信息",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "number",
@@ -40,7 +32,11 @@
 					"type": "String",
 					"description": "用于唯一建，同一条信息uuid一样则更新"
 				}
-			]
+			],
+			"name": "list",
+			"type": "HaoxinqingDataDto[]",
+			"description": "用户信息",
+			"maxListSize": 999
 		},
 		{
 			"name": "ref_ent_id",
@@ -50,59 +46,55 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "headers",
-					"type": "Json",
-					"description": "无",
-					"required": true
+					"type": "String",
+					"description": "无"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true 成功  false 不成功",
-					"required": true
+					"description": "true 成功  false 不成功"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "model",
-					"required": true
+					"type": "String",
+					"description": "model"
 				},
 				{
 					"name": "biz_ext_map",
-					"type": "Json",
-					"description": "无",
-					"required": true
+					"type": "String",
+					"description": "无"
 				},
 				{
 					"name": "mapping_code",
 					"type": "String",
-					"description": "无",
-					"required": true
+					"description": "无"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "无",
-					"required": true
+					"description": "无"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.user.data",
+	"apiChineseName": "西安杨森同步用户行为接口",
+	"description": "西安杨森同步用户行为接口",
+	"id": 53675
 }

@@ -1,8 +1,4 @@
 {
-	"id": 40552,
-	"name": "taobao.auction.gov.data.topn.get",
-	"apiChineseName": "根据不同维度，获取排行榜列表",
-	"description": "根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表",
 	"requestParams": [
 		{
 			"name": "circle_type",
@@ -37,35 +33,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "ranks",
-			"type": "CourtsBidStatTopnDto []",
-			"description": "法院维度标的统计排行",
 			"subParams": [
 				{
 					"name": "rank",
 					"type": "Number",
-					"description": "排名",
-					"required": true
+					"description": "排名"
 				},
 				{
 					"name": "court_name",
 					"type": "String",
-					"description": "法院名称",
-					"required": true
+					"description": "法院名称"
 				},
 				{
 					"name": "hammer_price",
 					"type": "Number",
-					"description": "成交价（成交标的）",
-					"required": true
+					"description": "成交价（成交标的）"
 				},
 				{
 					"name": "publish_count_dist",
 					"type": "Number",
-					"description": "发拍件数（去重）",
-					"required": true
+					"description": "发拍件数（去重）"
 				}
-			]
+			],
+			"name": "ranks",
+			"type": "CourtsBidStatTopnDto []",
+			"description": "法院维度标的统计排行"
 		}
-	]
+	],
+	"name": "taobao.auction.gov.data.topn.get",
+	"apiChineseName": "根据不同维度，获取排行榜列表",
+	"description": "根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表",
+	"id": 40552
 }

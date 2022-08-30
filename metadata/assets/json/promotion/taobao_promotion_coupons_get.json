@@ -1,8 +1,4 @@
 {
-	"id": 10585,
-	"name": "taobao.promotion.coupons.get",
-	"apiChineseName": "查询卖家优惠券",
-	"description": "查询卖家已经创建的优惠券，接口返回信息：优惠券ID，面值，创建时间，有效期，使用条件，使用渠道，创建渠道，优惠券总数量",
 	"requestParams": [
 		{
 			"name": "coupon_id",
@@ -17,15 +13,12 @@
 		{
 			"name": "denominations",
 			"type": "Number",
-			"description": "优惠券的面额，必须是3，5，10，20，50,100",
-			"maxValue": 100,
-			"minValue": 3
+			"description": "优惠券的面额，必须是3，5，10，20，50,100"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "查询的页号，结果集是分页返回的，每页20条",
-			"minValue": 1
+			"description": "查询的页号，结果集是分页返回的，每页20条"
 		},
 		{
 			"name": "page_size",
@@ -41,9 +34,6 @@
 			"description": "查询的总数量"
 		},
 		{
-			"name": "coupons",
-			"type": "Coupon []",
-			"description": "优惠券列表",
 			"subParams": [
 				{
 					"name": "coupon_id",
@@ -75,7 +65,14 @@
 					"type": "String",
 					"description": "优惠券的创建渠道，自己创建/他人创建"
 				}
-			]
+			],
+			"name": "coupons",
+			"type": "Coupon []",
+			"description": "优惠券列表"
 		}
-	]
+	],
+	"name": "taobao.promotion.coupons.get",
+	"apiChineseName": "查询卖家优惠券",
+	"description": "查询卖家已经创建的优惠券，接口返回信息：优惠券ID，面值，创建时间，有效期，使用条件，使用渠道，创建渠道，优惠券总数量",
+	"id": 10585
 }

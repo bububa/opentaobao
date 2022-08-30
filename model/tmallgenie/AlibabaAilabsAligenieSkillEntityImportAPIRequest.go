@@ -12,10 +12,10 @@ import (
 // 根据用户上传的实体信息，进行制定技能实体的动态变更
 type AlibabaAilabsAligenieSkillEntityImportAPIRequest struct {
 	model.Params
-	// 要更新的实体名
-	_entityName string
 	// 固定值，ISV
 	_type string
+	// 要更新的实体名
+	_entityName string
 	// 技能Id
 	_skillId int64
 	// 文件内容
@@ -47,19 +47,6 @@ func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetApiParams() url.Val
 	return params
 }
 
-// SetEntityName is EntityName Setter
-// 要更新的实体名
-func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetEntityName(_entityName string) error {
-	r._entityName = _entityName
-	r.Set("entity_name", _entityName)
-	return nil
-}
-
-// GetEntityName EntityName Getter
-func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetEntityName() string {
-	return r._entityName
-}
-
 // SetType is Type Setter
 // 固定值，ISV
 func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetType(_type string) error {
@@ -71,6 +58,19 @@ func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetType(_type string)
 // GetType Type Getter
 func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetType() string {
 	return r._type
+}
+
+// SetEntityName is EntityName Setter
+// 要更新的实体名
+func (r *AlibabaAilabsAligenieSkillEntityImportAPIRequest) SetEntityName(_entityName string) error {
+	r._entityName = _entityName
+	r.Set("entity_name", _entityName)
+	return nil
+}
+
+// GetEntityName EntityName Getter
+func (r AlibabaAilabsAligenieSkillEntityImportAPIRequest) GetEntityName() string {
+	return r._entityName
 }
 
 // SetSkillId is SkillId Setter

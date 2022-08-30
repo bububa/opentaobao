@@ -1,8 +1,4 @@
 {
-	"id": 10927,
-	"name": "taobao.item.price.update",
-	"apiChineseName": "更新商品价格",
-	"description": "更新商品价格",
 	"requestParams": [
 		{
 			"name": "location.state",
@@ -18,8 +14,8 @@
 			"name": "num_iid",
 			"type": "Number",
 			"description": "商品数字ID，该参数必须",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "cid",
@@ -266,9 +262,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "商品结构里的num_iid，modified",
 			"subParams": [
 				{
 					"name": "iid",
@@ -285,7 +278,14 @@
 					"type": "Date",
 					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "商品结构里的num_iid，modified"
 		}
-	]
+	],
+	"name": "taobao.item.price.update",
+	"apiChineseName": "更新商品价格",
+	"description": "更新商品价格",
+	"id": 10927
 }

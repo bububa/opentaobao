@@ -1,27 +1,17 @@
 {
-	"id": 10899,
-	"name": "taobao.ts.property.get",
-	"apiChineseName": "淘宝服务属性查询",
-	"description": "淘宝服务属性查询",
 	"requestParams": [
 		{
 			"name": "service_item_code",
 			"type": "String",
 			"description": "服务收费项code",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_item_property",
-			"type": "ServiceItemProperty",
-			"description": "服务收费项相关属性对象",
 			"subParams": [
 				{
-					"name": "item_property_values",
-					"type": "ItemPropertyValues[]",
-					"description": "属性列表",
 					"subParams": [
 						{
 							"name": "property_id",
@@ -38,7 +28,10 @@
 							"type": "String[]",
 							"description": "属性值列表."
 						}
-					]
+					],
+					"name": "item_property_values",
+					"type": "ItemPropertyValues[]",
+					"description": "属性列表"
 				},
 				{
 					"name": "service_name",
@@ -57,7 +50,7 @@
 				},
 				{
 					"name": "basic_price",
-					"type": "Price",
+					"type": "String",
 					"description": "基础价格"
 				},
 				{
@@ -70,7 +63,14 @@
 					"type": "String",
 					"description": "质检服务简介"
 				}
-			]
+			],
+			"name": "service_item_property",
+			"type": "ServiceItemProperty",
+			"description": "服务收费项相关属性对象"
 		}
-	]
+	],
+	"name": "taobao.ts.property.get",
+	"apiChineseName": "淘宝服务属性查询",
+	"description": "淘宝服务属性查询",
+	"id": 10899
 }

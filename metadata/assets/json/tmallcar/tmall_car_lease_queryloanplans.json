@@ -1,8 +1,4 @@
 {
-	"id": 37075,
-	"name": "tmall.car.lease.queryloanplans",
-	"apiChineseName": "天猫开新车租后查询还款计划",
-	"description": "天猫开新车租后查询还款计划",
 	"requestParams": [
 		{
 			"name": "loanarno",
@@ -19,47 +15,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultVo",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "耗时",
-					"required": true
+					"description": "耗时"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "当前时间",
-					"required": true
+					"description": "当前时间"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误提示",
-					"required": true
+					"description": "错误提示"
 				},
 				{
 					"name": "object",
 					"type": "String",
-					"description": "合还款计划",
-					"required": true
+					"description": "合还款计划"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "外层成功标志",
-					"required": true
+					"description": "外层成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultVo",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "tmall.car.lease.queryloanplans",
+	"apiChineseName": "天猫开新车租后查询还款计划",
+	"description": "天猫开新车租后查询还款计划",
+	"id": 37075
 }

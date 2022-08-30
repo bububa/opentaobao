@@ -1,8 +1,4 @@
 {
-	"id": 41030,
-	"name": "taobao.place.store.delete",
-	"apiChineseName": "线下门店删除",
-	"description": "用于商家删除线下门店",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "门店删除结果"
 		}
-	]
+	],
+	"name": "taobao.place.store.delete",
+	"apiChineseName": "线下门店删除",
+	"description": "用于商家删除线下门店",
+	"id": 41030
 }

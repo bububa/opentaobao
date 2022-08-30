@@ -1,0 +1,305 @@
+{
+	"requestParams": [
+		{
+			"name": "song_ids",
+			"type": "Number",
+			"description": "歌曲id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "错误信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "song_name",
+					"type": "String",
+					"description": "歌曲名"
+				},
+				{
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地域"
+						},
+						{
+							"name": "gender",
+							"type": "String",
+							"description": "性别"
+						},
+						{
+							"name": "alias",
+							"type": "String",
+							"description": "别名"
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人id"
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名"
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人封面"
+						}
+					],
+					"name": "singers",
+					"type": "ArtistDTO[]",
+					"description": "演唱者"
+				},
+				{
+					"subParams": [
+						{
+							"name": "album_logo",
+							"type": "String",
+							"description": "专辑封面"
+						},
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "专辑名"
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "厂牌id"
+						},
+						{
+							"name": "sub_name",
+							"type": "String",
+							"description": "副标题"
+						},
+						{
+							"name": "gmt_publish",
+							"type": "Date",
+							"description": "发行时间"
+						},
+						{
+							"name": "album_status",
+							"type": "Number",
+							"description": "专辑状态 1-已发布 0-未发布"
+						},
+						{
+							"name": "album_id",
+							"type": "Number",
+							"description": "专辑id"
+						},
+						{
+							"name": "language",
+							"type": "String",
+							"description": "语言"
+						}
+					],
+					"name": "album",
+					"type": "AlbumDTO",
+					"description": "专辑"
+				},
+				{
+					"name": "recommend_scene_id",
+					"type": "String",
+					"description": "推荐场景id"
+				},
+				{
+					"name": "show_status",
+					"type": "Number",
+					"description": "展示状态"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name_cn",
+							"type": "String",
+							"description": "标签名"
+						},
+						{
+							"name": "pid",
+							"type": "Number",
+							"description": "父标签id"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "标签id"
+						}
+					],
+					"name": "tags",
+					"type": "TagLink[]",
+					"description": "标签"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "时长"
+				},
+				{
+					"name": "cover_url",
+					"type": "String",
+					"description": "音乐封面"
+				},
+				{
+					"name": "waveform_url",
+					"type": "String",
+					"description": "波形图文件"
+				},
+				{
+					"name": "copyright_status",
+					"type": "Number",
+					"description": "版权状态 1-上架，0-下架"
+				},
+				{
+					"subParams": [
+						{
+							"name": "audio_id",
+							"type": "Number",
+							"description": "音频id"
+						},
+						{
+							"name": "format",
+							"type": "String",
+							"description": "格式"
+						},
+						{
+							"name": "bits",
+							"type": "Number",
+							"description": "位"
+						},
+						{
+							"name": "sample_rate",
+							"type": "Number",
+							"description": "采样率"
+						},
+						{
+							"name": "audio_cover",
+							"type": "String",
+							"description": "音频封面"
+						},
+						{
+							"name": "quality",
+							"type": "Number",
+							"description": "音质"
+						},
+						{
+							"name": "duration",
+							"type": "Number",
+							"description": "时长（毫秒）"
+						},
+						{
+							"name": "listen_url",
+							"type": "String",
+							"description": "音频文件地址"
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小"
+						},
+						{
+							"name": "rate",
+							"type": "Number",
+							"description": "码率"
+						},
+						{
+							"name": "audio_name",
+							"type": "String",
+							"description": "音频名称"
+						},
+						{
+							"name": "expire",
+							"type": "Number",
+							"description": "超时时间"
+						},
+						{
+							"name": "audio_desc",
+							"type": "String",
+							"description": "音频描述"
+						}
+					],
+					"name": "audios",
+					"type": "AudioDTO[]",
+					"description": "音频信息"
+				},
+				{
+					"name": "song_id",
+					"type": "Number",
+					"description": "歌曲id"
+				},
+				{
+					"name": "song_sub_name",
+					"type": "String",
+					"description": "歌曲副标题"
+				},
+				{
+					"subParams": [
+						{
+							"name": "lyric_id",
+							"type": "Number",
+							"description": "歌词id"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "歌词类型"
+						},
+						{
+							"name": "song_id",
+							"type": "Number",
+							"description": "歌曲id"
+						},
+						{
+							"name": "lyric_url",
+							"type": "String",
+							"description": "歌词地址"
+						}
+					],
+					"name": "lyrics",
+					"type": "LyricDTO[]",
+					"description": "歌词"
+				},
+				{
+					"name": "publish_status",
+					"type": "Number",
+					"description": "歌曲发布状态, 1-已发布, 0-未发布"
+				},
+				{
+					"name": "music_type",
+					"type": "Number",
+					"description": "音乐类型，1完整版 2剪辑版"
+				},
+				{
+					"name": "deleted_status",
+					"type": "Number",
+					"description": "删除状态，1已删除 0未删除"
+				}
+			],
+			"name": "music_list",
+			"type": "MusicDTO []",
+			"description": "音乐信息"
+		}
+	],
+	"name": "xiami.content.music.info.get",
+	"apiChineseName": "获取音乐信息",
+	"description": "(批量)获取歌曲信息",
+	"id": 62315
+}

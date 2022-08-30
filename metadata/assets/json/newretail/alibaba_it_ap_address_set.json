@@ -1,8 +1,4 @@
 {
-	"id": 44780,
-	"name": "alibaba.it.ap.address.set",
-	"apiChineseName": "setApAddressNew",
-	"description": "该接口可为ISV系统提供 ap位置信息维护的功能",
 	"requestParams": [
 		{
 			"name": "ap_city_name",
@@ -86,35 +82,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回内容",
-					"required": true
+					"description": "返回内容"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "返回的错误码",
-					"required": true
+					"description": "返回的错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "返回的message",
-					"required": true
+					"description": "返回的message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.it.ap.address.set",
+	"apiChineseName": "setApAddressNew",
+	"description": "该接口可为ISV系统提供 ap位置信息维护的功能",
+	"id": 44780
 }

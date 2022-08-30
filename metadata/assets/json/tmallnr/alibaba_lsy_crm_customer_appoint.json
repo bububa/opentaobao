@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wechat_name",
+					"type": "String",
+					"description": "微信名称",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务code",
+					"required": true
+				},
+				{
+					"name": "guider_id",
+					"type": "Number",
+					"description": "导购员ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "会员ID",
+					"required": true
+				}
+			],
+			"name": "crm_appoint_activity_req",
+			"type": "CrmAppointActivityReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "asdasd"
+		}
+	],
+	"name": "alibaba.lsy.crm.customer.appoint",
+	"apiChineseName": "ISV直播间预约",
+	"description": "ISV直播间预约",
+	"id": 61334
+}

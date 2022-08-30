@@ -1,8 +1,4 @@
 {
-	"id": 25040,
-	"name": "taobao.cloudpush.push",
-	"apiChineseName": "百川用户使用云推送高级推送接口",
-	"description": "百川用户使用云推送高级推送接口",
 	"requestParams": [
 		{
 			"name": "target",
@@ -133,5 +129,9 @@
 			"type": "String",
 			"description": "请求失败的错误信息."
 		}
-	]
+	],
+	"name": "taobao.cloudpush.push",
+	"apiChineseName": "百川用户使用云推送高级推送接口",
+	"description": "百川用户使用云推送高级推送接口",
+	"id": 25040
 }

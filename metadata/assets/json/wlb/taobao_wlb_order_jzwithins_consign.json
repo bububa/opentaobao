@@ -1,8 +1,4 @@
 {
-	"id": 24052,
-	"name": "taobao.wlb.order.jzwithins.consign",
-	"apiChineseName": "家装发货接口",
-	"description": "为支持家装类目的商家，对绑定家装物流服务的订单可以在商家的ERP中发货、批量发货，因此开发带安装服务商的发货接口",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -11,10 +7,34 @@
 			"required": true
 		},
 		{
+			"subParams": [
+				{
+					"name": "tp_code",
+					"type": "String",
+					"description": "服务商编码"
+				},
+				{
+					"name": "tp_name",
+					"type": "String",
+					"description": "服务商名称"
+				},
+				{
+					"name": "service_type",
+					"type": "Number",
+					"description": "服务类型"
+				},
+				{
+					"name": "is_virtual_tp",
+					"type": "Boolean",
+					"description": "是否是虚拟服务商（家装-商家自有物流）"
+				}
+			],
 			"name": "tms_partner",
 			"type": "JzPartnerNew",
 			"description": "物流服务商信息",
-			"required": true,
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "tp_code",
@@ -36,40 +56,12 @@
 					"type": "Boolean",
 					"description": "是否是虚拟服务商（家装-商家自有物流）"
 				}
-			]
-		},
-		{
+			],
 			"name": "ins_partner",
 			"type": "JzPartnerNew",
-			"description": "物流服务商信息",
-			"subParams": [
-				{
-					"name": "tp_code",
-					"type": "String",
-					"description": "服务商编码"
-				},
-				{
-					"name": "tp_name",
-					"type": "String",
-					"description": "服务商名称"
-				},
-				{
-					"name": "service_type",
-					"type": "Number",
-					"description": "服务类型"
-				},
-				{
-					"name": "is_virtual_tp",
-					"type": "Boolean",
-					"description": "是否是虚拟服务商（家装-商家自有物流）"
-				}
-			]
+			"description": "物流服务商信息"
 		},
 		{
-			"name": "jz_consign_args",
-			"type": "JzConsignArgsNew",
-			"description": "家装物流发货参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "mail_no",
@@ -116,7 +108,11 @@
 					"type": "String",
 					"description": "发货时间，tmsPartner.virualType=true时必填"
 				}
-			]
+			],
+			"name": "jz_consign_args",
+			"type": "JzConsignArgsNew",
+			"description": "家装物流发货参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -130,5 +126,9 @@
 			"type": "String",
 			"description": "发货返回信息，如果发货错误则报出对应错误"
 		}
-	]
+	],
+	"name": "taobao.wlb.order.jzwithins.consign",
+	"apiChineseName": "家装发货接口",
+	"description": "为支持家装类目的商家，对绑定家装物流服务的订单可以在商家的ERP中发货、批量发货，因此开发带安装服务商的发货接口",
+	"id": 24052
 }

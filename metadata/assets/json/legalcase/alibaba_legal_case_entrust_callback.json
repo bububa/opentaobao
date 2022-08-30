@@ -1,8 +1,4 @@
 {
-	"id": 53332,
-	"name": "alibaba.legal.case.entrust.callback",
-	"apiChineseName": "委托回调接口",
-	"description": "委托回调接口",
 	"requestParams": [
 		{
 			"name": "entrust_id",
@@ -31,5 +27,9 @@
 			"type": "String",
 			"description": "error_msg"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.entrust.callback",
+	"apiChineseName": "委托回调接口",
+	"description": "委托回调接口",
+	"id": 53332
 }

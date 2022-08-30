@@ -1,0 +1,152 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务编码",
+			"required": true
+		},
+		{
+			"name": "coupon_template_ids",
+			"type": "String",
+			"description": "券模版id集合",
+			"required": true
+		},
+		{
+			"name": "coupon_type",
+			"type": "Number",
+			"description": "券类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "版本"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "券总数"
+						},
+						{
+							"name": "reserve_count",
+							"type": "Number",
+							"description": "券剩余数量"
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "券渠道"
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "门槛"
+						},
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "面额"
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "创建人"
+						},
+						{
+							"name": "modified_by",
+							"type": "String",
+							"description": "修改人"
+						},
+						{
+							"name": "use_time_type",
+							"type": "Number",
+							"description": "使用时间类型use_time_type"
+						},
+						{
+							"name": "use_time",
+							"type": "Number",
+							"description": "领取后可以使用的相对时间，秒或天为单位"
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "使用开始时间:yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "使用结束时间:yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "券状态"
+						},
+						{
+							"name": "coupon_type",
+							"type": "Number",
+							"description": "券类型"
+						},
+						{
+							"name": "coupon_name",
+							"type": "String",
+							"description": "券名称"
+						},
+						{
+							"name": "send_start_time",
+							"type": "String",
+							"description": "发放开始时间yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "send_end_time",
+							"type": "String",
+							"description": "发放结束时间yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "coupon_template_id",
+							"type": "Number",
+							"description": "券模版id"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "发放code"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展信息"
+						}
+					],
+					"name": "model",
+					"type": "NrtCouponTemplateDTO[]",
+					"description": "券模版数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.nrt.coupon.template.query",
+	"apiChineseName": "查询券模版",
+	"description": "查询券模版",
+	"id": 60859
+}

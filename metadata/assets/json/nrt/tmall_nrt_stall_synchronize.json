@@ -1,13 +1,6 @@
 {
-	"id": 45396,
-	"name": "tmall.nrt.stall.synchronize",
-	"apiChineseName": "摊位信息同步",
-	"description": "摊位信息同步",
 	"requestParams": [
 		{
-			"name": "stall",
-			"type": "NrtStoreDTO",
-			"description": "参数对象",
 			"subParams": [
 				{
 					"name": "stall_code",
@@ -164,48 +157,50 @@
 					"type": "String",
 					"description": "卖场部门Id"
 				}
-			]
+			],
+			"name": "stall",
+			"type": "NrtStoreDTO",
+			"description": "参数对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "tmall_nrt_stall_synchronize",
-			"type": "ResultDO",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "err_code",
-					"type": "String",
-					"description": "系统自动生成",
-					"required": true
-				},
-				{
-					"name": "succ",
-					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
-				},
-				{
-					"name": "err_msg",
-					"type": "String",
-					"description": "系统自动生成",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "NrtStoreDto",
-					"description": "参数对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "stall_id",
 							"type": "Number",
-							"description": "摊位Id",
-							"required": true
+							"description": "摊位Id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "NrtStoreDto",
+					"description": "参数对象"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "tmall_nrt_stall_synchronize",
+			"type": "ResultDO",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.nrt.stall.synchronize",
+	"apiChineseName": "摊位信息同步",
+	"description": "摊位信息同步",
+	"id": 45396
 }

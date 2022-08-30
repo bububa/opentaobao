@@ -1,8 +1,4 @@
 {
-	"id": 10831,
-	"name": "taobao.crm.grade.set",
-	"apiChineseName": "卖家设置等级规则",
-	"description": "设置等级信息，可以设置层级等级，也可以单独设置一个等级。出于安全原因，折扣现最低只能设置到700即7折。",
 	"requestParams": [
 		{
 			"name": "amount",
@@ -22,26 +18,26 @@
 			"name": "grade",
 			"type": "Number[]",
 			"description": "会员等级，用逗号分隔。买家会员级别0：店铺客户 1：普通会员 2 ：高级会员 3：VIP会员 4：至尊VIP",
-			"required": true,
 			"maxListSize": 4,
 			"maxValue": 4,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		},
 		{
 			"name": "discount",
 			"type": "Number[]",
 			"description": "会员级别折扣率。会员等级越高，折扣必须越低。\u003cbr/\u003e950即9.5折，888折即8.88折。出于安全原因，折扣现最低只能设置到700即7折。",
-			"required": true,
 			"maxListSize": 4,
 			"maxValue": 1000,
-			"minValue": 700
+			"minValue": 700,
+			"required": true
 		},
 		{
 			"name": "hierarchy",
 			"type": "Boolean[]",
 			"description": "是否设置达到某一会员等级的交易量和交易额，必填。4个级别都需要设置，如入参为true,true,true,false时，表示设置达到高级会员、VIP会员的交易量或者交易额，不设置达到至尊会员的交易量和交易额",
-			"required": true,
-			"maxListSize": 4
+			"maxListSize": 4,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -50,5 +46,9 @@
 			"type": "Boolean",
 			"description": "true：成功 false：失败"
 		}
-	]
+	],
+	"name": "taobao.crm.grade.set",
+	"apiChineseName": "卖家设置等级规则",
+	"description": "设置等级信息，可以设置层级等级，也可以单独设置一个等级。出于安全原因，折扣现最低只能设置到700即7折。",
+	"id": 10831
 }

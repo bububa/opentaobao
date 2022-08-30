@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量，支持最大100"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数"
+				},
+				{
+					"name": "goods_id_list",
+					"type": "Number[]",
+					"description": "商品ID数组，size最大支持100"
+				}
+			],
+			"name": "batch_goods_status_query",
+			"type": "BatchGoodsStatusQueryDto",
+			"description": "批量查询商品状态接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态"
+						},
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "商品ID"
+						}
+					],
+					"name": "goods_status_list",
+					"type": "GoodsStatusDto[]",
+					"description": "商品状态列表"
+				}
+			],
+			"name": "result",
+			"type": "BatchGoodsStatusResultDto",
+			"description": "批量查询商品状态接口返回"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jym.item.external.goods.status.batch.query",
+	"apiChineseName": "交易猫外部商家商品状态批量查询接口",
+	"description": "供外部B端商家接入，请求查询商品状态，返回商品状态查询结果",
+	"id": 58197
+}

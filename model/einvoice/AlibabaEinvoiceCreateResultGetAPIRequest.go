@@ -12,14 +12,14 @@ import (
 // ERP开票结果获取
 type AlibabaEinvoiceCreateResultGetAPIRequest struct {
 	model.Params
-	// 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
-	_serialNo string
+	// 收款方税务登记证号
+	_payeeRegisterNo string
 	// 电商平台代码。淘宝：taobao，天猫：tmall
 	_platformCode string
 	// 电商平台对应的订单号
 	_platformTid string
-	// 收款方税务登记证号
-	_payeeRegisterNo string
+	// 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
+	_serialNo string
 	// 外部平台店铺名称，需要在阿里发票平台配置，只有当platform_code不为TB和TM时，这个字段才生效。注意：后台配置的店铺平台必须和入参platform_code一致
 	_outShopName string
 }
@@ -45,17 +45,17 @@ func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetSerialNo is SerialNo Setter
-// 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
-func (r *AlibabaEinvoiceCreateResultGetAPIRequest) SetSerialNo(_serialNo string) error {
-	r._serialNo = _serialNo
-	r.Set("serial_no", _serialNo)
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
+// 收款方税务登记证号
+func (r *AlibabaEinvoiceCreateResultGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+	r._payeeRegisterNo = _payeeRegisterNo
+	r.Set("payee_register_no", _payeeRegisterNo)
 	return nil
 }
 
-// GetSerialNo SerialNo Getter
-func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetSerialNo() string {
-	return r._serialNo
+// GetPayeeRegisterNo PayeeRegisterNo Getter
+func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetPayeeRegisterNo() string {
+	return r._payeeRegisterNo
 }
 
 // SetPlatformCode is PlatformCode Setter
@@ -84,17 +84,17 @@ func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetPlatformTid() string {
 	return r._platformTid
 }
 
-// SetPayeeRegisterNo is PayeeRegisterNo Setter
-// 收款方税务登记证号
-func (r *AlibabaEinvoiceCreateResultGetAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
-	r._payeeRegisterNo = _payeeRegisterNo
-	r.Set("payee_register_no", _payeeRegisterNo)
+// SetSerialNo is SerialNo Setter
+// 流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高
+func (r *AlibabaEinvoiceCreateResultGetAPIRequest) SetSerialNo(_serialNo string) error {
+	r._serialNo = _serialNo
+	r.Set("serial_no", _serialNo)
 	return nil
 }
 
-// GetPayeeRegisterNo PayeeRegisterNo Getter
-func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetPayeeRegisterNo() string {
-	return r._payeeRegisterNo
+// GetSerialNo SerialNo Getter
+func (r AlibabaEinvoiceCreateResultGetAPIRequest) GetSerialNo() string {
+	return r._serialNo
 }
 
 // SetOutShopName is OutShopName Setter

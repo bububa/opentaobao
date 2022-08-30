@@ -1,8 +1,4 @@
 {
-	"id": 50166,
-	"name": "aliexpress.social.ins.directresult.update",
-	"apiChineseName": "ISV更新INS私信发送的结果",
-	"description": "ISV更新INS私信发送的结果",
 	"requestParams": [
 		{
 			"name": "id",
@@ -50,5 +46,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "aliexpress.social.ins.directresult.update",
+	"apiChineseName": "ISV更新INS私信发送的结果",
+	"description": "ISV更新INS私信发送的结果",
+	"id": 50166
 }

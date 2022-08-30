@@ -1,8 +1,4 @@
 {
-	"id": 55727,
-	"name": "taobao.wlb.imports.vas.identity.result",
-	"apiChineseName": "集货鉴定结果",
-	"description": "集货鉴定结果查询",
 	"requestParams": [
 		{
 			"name": "lg_order_code",
@@ -13,105 +9,94 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "返回出参数结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "Result",
-					"description": "鉴定结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "lg_order_code",
 							"type": "String",
-							"description": "物流订单号",
-							"required": true
+							"description": "物流订单号"
 						},
 						{
-							"name": "vas_results",
-							"type": "IdentityItemDto[]",
-							"description": "鉴定结果项",
-							"required": true,
 							"subParams": [
 								{
 									"name": "identity_cnt",
 									"type": "Number",
-									"description": "鉴定次数",
-									"required": true
+									"description": "鉴定次数"
 								},
 								{
 									"name": "uni_code",
 									"type": "String",
-									"description": "防伪扣编码",
-									"required": true
+									"description": "防伪扣编码"
 								},
 								{
 									"name": "sc_item_id",
 									"type": "String",
-									"description": "货品Id",
-									"required": true
+									"description": "货品Id"
 								},
 								{
 									"name": "identity_remark",
 									"type": "String",
-									"description": "鉴定结果备注",
-									"required": true
+									"description": "鉴定结果备注"
 								},
 								{
 									"name": "report_url",
 									"type": "String",
-									"description": "鉴定报告地址",
-									"required": true
+									"description": "鉴定报告地址"
 								},
 								{
 									"name": "identity_result",
 									"type": "String",
-									"description": "鉴定结果",
-									"required": true
+									"description": "鉴定结果"
 								}
-							]
+							],
+							"name": "vas_results",
+							"type": "IdentityItemDto[]",
+							"description": "鉴定结果项"
 						}
-					]
+					],
+					"name": "result",
+					"type": "Result",
+					"description": "鉴定结果"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "sub_error_msg",
 					"type": "String",
-					"description": "返回错误信息",
-					"required": true
+					"description": "返回错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "sub_error_code",
 					"type": "String",
-					"description": "子错误编码",
-					"required": true
+					"description": "子错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回出参数结果"
 		}
-	]
+	],
+	"name": "taobao.wlb.imports.vas.identity.result",
+	"apiChineseName": "集货鉴定结果",
+	"description": "集货鉴定结果查询",
+	"id": 55727
 }

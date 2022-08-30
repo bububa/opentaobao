@@ -1,23 +1,22 @@
 {
-	"id": 55295,
-	"name": "alibaba.tcls.aelophy.refund.fetchgoods",
-	"apiChineseName": "saas 售后逆向 商户发起逆向取货",
-	"description": "saas 售后逆向 商户发起逆向取货",
 	"requestParams": [
 		{
 			"name": "store_id",
 			"type": "String",
-			"description": "经营店ID"
+			"description": "经营店ID",
+			"required": true
 		},
 		{
 			"name": "out_order_id",
 			"type": "String",
-			"description": "外部订单ID"
+			"description": "外部订单ID",
+			"required": true
 		},
 		{
 			"name": "refund_id",
 			"type": "String",
-			"description": "退款单ID"
+			"description": "渠道退款单ID",
+			"required": true
 		},
 		{
 			"name": "fetch_start_time",
@@ -35,49 +34,57 @@
 			"description": "备注"
 		},
 		{
-			"name": "sub_refund_list",
-			"type": "Subrefundlist[]",
-			"description": "外部子订单列表",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "expect_fetch_quantity",
 					"type": "Number",
-					"description": "期望取货数量"
+					"description": "期望取货数量",
+					"required": true
 				},
 				{
 					"name": "out_sub_order_id",
 					"type": "String",
-					"description": "外部子订单ID"
+					"description": "外部子订单ID",
+					"required": true
 				}
-			]
+			],
+			"name": "sub_refund_list",
+			"type": "Subrefundlist",
+			"description": "外部子订单列表",
+			"required": true
+		},
+		{
+			"name": "order_from",
+			"type": "Number",
+			"description": "渠道来源"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.refund.fetchgoods",
+	"apiChineseName": "saas 售后逆向 商户发起逆向取货",
+	"description": "saas 售后逆向 商户发起逆向取货",
+	"id": 55295
 }

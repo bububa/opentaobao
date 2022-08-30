@@ -18,12 +18,12 @@ type TaobaoBrandStartshopRptWordpackageGetAPIRequest struct {
 	_endDate string
 	// 转化周期
 	_effect string
-	// 流量类型
-	_trafficType string
 	// 每页显示条数(0,200]
 	_pageSize string
 	// 当前页数 ,从1开始
 	_pageIndex string
+	// 流量类型
+	_trafficType string
 }
 
 // NewTaobaoBrandStartshopRptWordpackageGetRequest 初始化TaobaoBrandStartshopRptWordpackageGetAPIRequest对象
@@ -86,19 +86,6 @@ func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetEffect() string {
 	return r._effect
 }
 
-// SetTrafficType is TrafficType Setter
-// 流量类型
-func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetTrafficType(_trafficType string) error {
-	r._trafficType = _trafficType
-	r.Set("traffic_type", _trafficType)
-	return nil
-}
-
-// GetTrafficType TrafficType Getter
-func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetTrafficType() string {
-	return r._trafficType
-}
-
 // SetPageSize is PageSize Setter
 // 每页显示条数(0,200]
 func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageSize(_pageSize string) error {
@@ -123,4 +110,17 @@ func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetPageIndex(_pageInde
 // GetPageIndex PageIndex Getter
 func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetPageIndex() string {
 	return r._pageIndex
+}
+
+// SetTrafficType is TrafficType Setter
+// 流量类型
+func (r *TaobaoBrandStartshopRptWordpackageGetAPIRequest) SetTrafficType(_trafficType string) error {
+	r._trafficType = _trafficType
+	r.Set("traffic_type", _trafficType)
+	return nil
+}
+
+// GetTrafficType TrafficType Getter
+func (r TaobaoBrandStartshopRptWordpackageGetAPIRequest) GetTrafficType() string {
+	return r._trafficType
 }

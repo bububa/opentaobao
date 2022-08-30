@@ -1,8 +1,4 @@
 {
-	"id": 24355,
-	"name": "taobao.wlb.imports.resource.get",
-	"apiChineseName": "获取所有服务列表",
-	"description": "一般进口TOP接口，获取所有服务列表。",
 	"requestParams": [
 		{
 			"name": "from_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "to_address",
-			"type": "ReciverAddressDo",
-			"description": "买家收货地信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "detail_address",
@@ -48,19 +40,17 @@
 					"type": "String",
 					"description": "市级别"
 				}
-			]
+			],
+			"name": "to_address",
+			"type": "ReciverAddressDo",
+			"description": "买家收货地信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "resources",
-			"type": "ResourceResult []",
-			"description": "一般进口所有服务商列表",
 			"subParams": [
 				{
-					"name": "delivery_price",
-					"type": "DeliveryPrice",
-					"description": "服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元",
 					"subParams": [
 						{
 							"name": "basic_weight",
@@ -82,7 +72,10 @@
 							"type": "Number",
 							"description": "续重价格"
 						}
-					]
+					],
+					"name": "delivery_price",
+					"type": "DeliveryPrice",
+					"description": "服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元"
 				},
 				{
 					"name": "delivery_time",
@@ -104,7 +97,14 @@
 					"type": "String",
 					"description": "魔方天下美国线"
 				}
-			]
+			],
+			"name": "resources",
+			"type": "ResourceResult []",
+			"description": "一般进口所有服务商列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.imports.resource.get",
+	"apiChineseName": "获取所有服务列表",
+	"description": "一般进口TOP接口，获取所有服务列表。",
+	"id": 24355
 }

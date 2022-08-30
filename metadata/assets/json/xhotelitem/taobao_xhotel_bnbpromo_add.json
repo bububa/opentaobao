@@ -1,0 +1,98 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "investment_number",
+							"type": "String",
+							"description": "活动折扣"
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "起始时间"
+						}
+					],
+					"name": "tonight_discount",
+					"type": "TonightDiscount",
+					"description": "今夜特惠"
+				},
+				{
+					"subParams": [
+						{
+							"name": "investment_number",
+							"type": "Number",
+							"description": "互动折扣"
+						},
+						{
+							"name": "min_continuity_stay",
+							"type": "Number",
+							"description": "最小连住天数"
+						}
+					],
+					"name": "long_order_info",
+					"type": "LongOrderInfo",
+					"description": "连住优惠"
+				},
+				{
+					"subParams": [
+						{
+							"name": "investment_number",
+							"type": "Number",
+							"description": "活动折扣"
+						},
+						{
+							"name": "min_pre_booking_days",
+							"type": "Number",
+							"description": "早定天数"
+						}
+					],
+					"name": "early_booking_info",
+					"type": "EarlyBookingInfo",
+					"description": "早定优惠"
+				},
+				{
+					"subParams": [
+						{
+							"name": "investment_number",
+							"type": "Number",
+							"description": "活动折扣"
+						},
+						{
+							"name": "valid_weeks",
+							"type": "String[]",
+							"description": "生效星期，星期一星期二生效就填1，2"
+						}
+					],
+					"name": "daily_booking_info",
+					"type": "DailyBookingInfo",
+					"description": "天天特惠"
+				}
+			],
+			"name": "promo_info",
+			"type": "PromoInfo",
+			"description": "营销类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_code",
+					"type": "String",
+					"description": "营销活动code"
+				}
+			],
+			"name": "module",
+			"type": "PromoCode",
+			"description": "营销添加返回对象"
+		}
+	],
+	"name": "taobao.xhotel.bnbpromo.add",
+	"apiChineseName": "自促活动申请接口",
+	"description": "自促活动申请接口",
+	"id": 62997
+}

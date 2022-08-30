@@ -13,7 +13,7 @@ import (
 type TaobaoPictureChangecategoryAPIRequest struct {
 	model.Params
 	// 要移动的图片的id
-	_pictureIds []int64
+	_pictureIds []string
 	// 目标分类的id
 	_pictureCategoryId int64
 }
@@ -41,14 +41,14 @@ func (r TaobaoPictureChangecategoryAPIRequest) GetApiParams() url.Values {
 
 // SetPictureIds is PictureIds Setter
 // 要移动的图片的id
-func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureIds(_pictureIds []int64) error {
+func (r *TaobaoPictureChangecategoryAPIRequest) SetPictureIds(_pictureIds []string) error {
 	r._pictureIds = _pictureIds
 	r.Set("picture_ids", _pictureIds)
 	return nil
 }
 
 // GetPictureIds PictureIds Getter
-func (r TaobaoPictureChangecategoryAPIRequest) GetPictureIds() []int64 {
+func (r TaobaoPictureChangecategoryAPIRequest) GetPictureIds() []string {
 	return r._pictureIds
 }
 

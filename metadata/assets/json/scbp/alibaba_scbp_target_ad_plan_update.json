@@ -1,14 +1,6 @@
 {
-	"id": 41339,
-	"name": "alibaba.scbp.target.ad.plan.update",
-	"apiChineseName": "定向推广-更新推广计划的基础信息",
-	"description": "定向推广-更新推广计划的基础信息",
 	"requestParams": [
 		{
-			"name": "top_p4p_basic_quick_campaign",
-			"type": "TopP4pBasicQuickCampaign",
-			"description": "TopP4pBasicQuickCampaign",
-			"required": true,
 			"subParams": [
 				{
 					"name": "max_price",
@@ -36,7 +28,11 @@
 					"description": "推广计划id",
 					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_basic_quick_campaign",
+			"type": "TopP4pBasicQuickCampaign",
+			"description": "TopP4pBasicQuickCampaign",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -45,5 +41,9 @@
 			"type": "Boolean",
 			"description": "true修改成功，false修改失败"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.update",
+	"apiChineseName": "定向推广-更新推广计划的基础信息",
+	"description": "定向推广-更新推广计划的基础信息",
+	"id": 41339
 }

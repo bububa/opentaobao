@@ -12,7 +12,7 @@ import (
 // 零头出入库单据上传
 type AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest struct {
 	model.Params
-	// 企业ID
+	// 企业ref_ent_id
 	_refEntId string
 	// 零头入库：106；零头出库：210
 	_billType string
@@ -20,13 +20,13 @@ type AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest struct {
 	_billCode string
 	// 单据时间:yyyy-MM-dd HH:mm:ss
 	_billTime string
-	// 发货企业ID
+	// 发货企业【注意：该入参是ref_ent_id,并不是ent_id】
 	_fromRefUserId string
-	// 收货企业ID
+	// 收货企业【注意：该入参是ref_ent_id,并不是ent_id】
 	_toRefUserId string
-	// 委托企业ID
+	// 委托企业【注意：该入参是ref_ent_id,并不是ent_id】
 	_assRefEntId string
-	// 配送企业ID
+	// 配送企业【注意：该入参是ref_ent_id,并不是ent_id】
 	_disRefEntId string
 	// 药品ID
 	_drugEntBaseInfoId string
@@ -62,7 +62,7 @@ func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetApiParams() url.V
 }
 
 // SetRefEntId is RefEntId Setter
-// 企业ID
+// 企业ref_ent_id
 func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetRefEntId(_refEntId string) error {
 	r._refEntId = _refEntId
 	r.Set("ref_ent_id", _refEntId)
@@ -114,7 +114,7 @@ func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetBillTime() string
 }
 
 // SetFromRefUserId is FromRefUserId Setter
-// 发货企业ID
+// 发货企业【注意：该入参是ref_ent_id,并不是ent_id】
 func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetFromRefUserId(_fromRefUserId string) error {
 	r._fromRefUserId = _fromRefUserId
 	r.Set("from_ref_user_id", _fromRefUserId)
@@ -127,7 +127,7 @@ func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetFromRefUserId() s
 }
 
 // SetToRefUserId is ToRefUserId Setter
-// 收货企业ID
+// 收货企业【注意：该入参是ref_ent_id,并不是ent_id】
 func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetToRefUserId(_toRefUserId string) error {
 	r._toRefUserId = _toRefUserId
 	r.Set("to_ref_user_id", _toRefUserId)
@@ -140,7 +140,7 @@ func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetToRefUserId() str
 }
 
 // SetAssRefEntId is AssRefEntId Setter
-// 委托企业ID
+// 委托企业【注意：该入参是ref_ent_id,并不是ent_id】
 func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetAssRefEntId(_assRefEntId string) error {
 	r._assRefEntId = _assRefEntId
 	r.Set("ass_ref_ent_id", _assRefEntId)
@@ -153,7 +153,7 @@ func (r AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) GetAssRefEntId() str
 }
 
 // SetDisRefEntId is DisRefEntId Setter
-// 配送企业ID
+// 配送企业【注意：该入参是ref_ent_id,并不是ent_id】
 func (r *AlibabaAlihealthDrugKytRemnantbillUploadAPIRequest) SetDisRefEntId(_disRefEntId string) error {
 	r._disRefEntId = _disRefEntId
 	r.Set("dis_ref_ent_id", _disRefEntId)

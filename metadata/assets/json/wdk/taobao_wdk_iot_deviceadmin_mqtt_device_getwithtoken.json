@@ -1,8 +1,4 @@
 {
-	"id": 33674,
-	"name": "taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken",
-	"apiChineseName": "获取mqtt设备信息",
-	"description": "智能硬件设备动态注册和获取mqtt设备信息",
 	"requestParams": [
 		{
 			"name": "business_code",
@@ -37,55 +33,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HmResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "MqttDeviceInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "device_name",
 							"type": "String",
-							"description": "mqtt设备名",
-							"required": true
+							"description": "mqtt设备名"
 						},
 						{
 							"name": "device_secret",
 							"type": "String",
-							"description": "mqtt设备秘钥",
-							"required": true
+							"description": "mqtt设备秘钥"
 						},
 						{
 							"name": "product_key",
 							"type": "String",
-							"description": "mqtt设备所属产品",
-							"required": true
+							"description": "mqtt设备所属产品"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
+					],
+					"name": "model",
+					"type": "MqttDeviceInfoDto",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HmResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken",
+	"apiChineseName": "获取mqtt设备信息",
+	"description": "智能硬件设备动态注册和获取mqtt设备信息",
+	"id": 33674
 }

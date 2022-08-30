@@ -1,0 +1,11 @@
+package ascp
+
+// InventoryBatchUploadAsyncRequest 结构体
+type InventoryBatchUploadAsyncRequest struct {
+	// 库存信息
+	PhysicsInventory []PhysicsInventory `json:"physics_inventory,omitempty" xml:"physics_inventory>physics_inventory,omitempty"`
+	// 业务请求ID，用于做幂等
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// ERP调翱象接口创建货品的时间戳
+	RequestTime int64 `json:"request_time,omitempty" xml:"request_time,omitempty"`
+}

@@ -1,0 +1,164 @@
+{
+	"requestParams": [
+		{
+			"name": "service_product_id",
+			"type": "Number",
+			"description": "服务产品id",
+			"required": true
+		},
+		{
+			"name": "service_object_type",
+			"type": "String",
+			"description": "服务对象类型",
+			"required": true
+		},
+		{
+			"name": "service_object_name",
+			"type": "String",
+			"description": "服务对象类型名称"
+		},
+		{
+			"name": "service_content",
+			"type": "String",
+			"description": "服务内容",
+			"required": true
+		},
+		{
+			"name": "service_properties",
+			"type": "Json",
+			"description": "服务计价json",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌id"
+		},
+		{
+			"subParams": [
+				{
+					"name": "address_province",
+					"type": "String",
+					"description": "买家地址-省"
+				},
+				{
+					"name": "address_city",
+					"type": "String",
+					"description": "买家地址-市"
+				},
+				{
+					"name": "address_district",
+					"type": "String",
+					"description": "买家地址-区"
+				},
+				{
+					"name": "address_town",
+					"type": "String",
+					"description": "买家地址-街道"
+				},
+				{
+					"name": "address_detail",
+					"type": "String",
+					"description": "买家地址-详细地址"
+				},
+				{
+					"name": "full_address",
+					"type": "String",
+					"description": "买家地址-完整地址"
+				},
+				{
+					"name": "location",
+					"type": "Number",
+					"description": "买家地址-地址编码"
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "买家姓名",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "买家手机号",
+					"required": true
+				}
+			],
+			"name": "buyer",
+			"type": "BuyerDTO",
+			"description": "消费者信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "reserve_time_start",
+					"type": "Date",
+					"description": "消费者预约开始时间"
+				},
+				{
+					"name": "reserve_time_end",
+					"type": "Date",
+					"description": "消费者预约结束时间"
+				}
+			],
+			"name": "reservation",
+			"type": "ReservationDTO",
+			"description": "预约信息"
+		},
+		{
+			"name": "service_count",
+			"type": "Number",
+			"description": "数量",
+			"required": true
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "外部单号",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "外部渠道",
+			"required": true
+		},
+		{
+			"name": "ext_json",
+			"type": "Json",
+			"description": "额外业务信息"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "display_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "service_order_id",
+			"type": "Number",
+			"description": "服务单id"
+		},
+		{
+			"name": "workcard_ids",
+			"type": "Number []",
+			"description": "工单id列表"
+		}
+	],
+	"name": "tmall.servicecenter.spserviceorder.create",
+	"apiChineseName": "服务单创建",
+	"description": "服务单创建",
+	"id": 62418
+}

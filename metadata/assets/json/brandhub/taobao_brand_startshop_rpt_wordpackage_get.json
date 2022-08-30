@@ -1,8 +1,4 @@
 {
-	"id": 29755,
-	"name": "taobao.brand.startshop.rpt.wordpackage.get",
-	"apiChineseName": "明星店铺品牌流量包报表数据查询",
-	"description": "获取明星店铺广告词包分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
 	"requestParams": [
 		{
 			"name": "start_date",
@@ -22,12 +18,6 @@
 			"description": "转化周期"
 		},
 		{
-			"name": "traffic_type",
-			"type": "String",
-			"description": "流量类型",
-			"required": true
-		},
-		{
 			"name": "page_size",
 			"type": "String",
 			"description": "每页显示条数(0,200]"
@@ -36,6 +26,12 @@
 			"name": "page_index",
 			"type": "String",
 			"description": "当前页数 ,从1开始"
+		},
+		{
+			"name": "traffic_type",
+			"type": "String",
+			"description": "流量类型",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -45,173 +41,150 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "campaign_rpt_list",
-			"type": "Result []",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "thedate",
 					"type": "String",
-					"description": "日期",
-					"required": true
+					"description": "日期"
 				},
 				{
 					"name": "impression",
 					"type": "Number",
-					"description": "展现量",
-					"required": true
+					"description": "展现量"
 				},
 				{
 					"name": "click",
 					"type": "Number",
-					"description": "点击量",
-					"required": true
+					"description": "点击量"
 				},
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "点击率",
-					"required": true
+					"description": "点击率"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "花费(分)",
-					"required": true
+					"description": "花费(分)"
 				},
 				{
 					"name": "cpm",
 					"type": "String",
-					"description": "千次展现成本",
-					"required": true
+					"description": "千次展现成本"
 				},
 				{
 					"name": "cpc",
 					"type": "String",
-					"description": "点击单价",
-					"required": true
+					"description": "点击单价"
 				},
 				{
 					"name": "favitemtotal",
 					"type": "Number",
-					"description": "宝贝收藏数",
-					"required": true
+					"description": "宝贝收藏数"
 				},
 				{
 					"name": "transactionshippingtotal",
 					"type": "Number",
-					"description": "展示成交笔数",
-					"required": true
+					"description": "展示成交笔数"
 				},
 				{
 					"name": "favshoptotal",
 					"type": "Number",
-					"description": "店铺收藏数",
-					"required": true
+					"description": "店铺收藏数"
 				},
 				{
 					"name": "carttotal",
 					"type": "Number",
-					"description": "宝贝加购数",
-					"required": true
+					"description": "宝贝加购数"
 				},
 				{
 					"name": "transactiontotal",
 					"type": "String",
-					"description": "展示成交金额",
-					"required": true
+					"description": "展示成交金额"
 				},
 				{
 					"name": "roi",
 					"type": "String",
-					"description": "展示回报率",
-					"required": true
+					"description": "展示回报率"
 				},
 				{
 					"name": "cvr",
 					"type": "String",
-					"description": "展示转化率",
-					"required": true
+					"description": "展示转化率"
 				},
 				{
 					"name": "click_transactionshipping",
 					"type": "Number",
-					"description": "点击成交笔数",
-					"required": true
+					"description": "点击成交笔数"
 				},
 				{
 					"name": "click_transactiontotal",
 					"type": "String",
-					"description": "点击成交金额",
-					"required": true
+					"description": "点击成交金额"
 				},
 				{
 					"name": "click_roi",
 					"type": "String",
-					"description": "点击回报率",
-					"required": true
+					"description": "点击回报率"
 				},
 				{
 					"name": "click_cvr",
 					"type": "String",
-					"description": "点击转化率",
-					"required": true
+					"description": "点击转化率"
 				},
 				{
 					"name": "click_uv",
 					"type": "Number",
-					"description": "点击访客数",
-					"required": true
+					"description": "点击访客数"
 				},
 				{
 					"name": "uv",
 					"type": "Number",
-					"description": "触达访客数",
-					"required": true
+					"description": "触达访客数"
 				},
 				{
 					"name": "uv_new",
 					"type": "Number",
-					"description": "触达新访客数",
-					"required": true
+					"description": "触达新访客数"
 				},
 				{
 					"name": "campaigntitle",
 					"type": "String",
-					"description": "推广计划名称",
-					"required": true
+					"description": "推广计划名称"
 				},
 				{
 					"name": "campaignid",
 					"type": "Number",
-					"description": "推广计划id",
-					"required": true
+					"description": "推广计划id"
 				},
 				{
 					"name": "adgroupid",
 					"type": "Number",
-					"description": "推广组id",
-					"required": true
+					"description": "推广组id"
 				},
 				{
 					"name": "adgrouptitle",
 					"type": "String",
-					"description": "推广组名称",
-					"required": true
+					"description": "推广组名称"
 				},
 				{
 					"name": "bidword",
 					"type": "String",
-					"description": "词包名称",
-					"required": true
+					"description": "词包名称"
 				},
 				{
 					"name": "bidwordid",
 					"type": "Number",
-					"description": "词包id",
-					"required": true
+					"description": "词包id"
 				}
-			]
+			],
+			"name": "campaign_rpt_list",
+			"type": "Result []",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.brand.startshop.rpt.wordpackage.get",
+	"apiChineseName": "明星店铺品牌流量包报表数据查询",
+	"description": "获取明星店铺广告词包分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
+	"id": 29755
 }

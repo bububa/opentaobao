@@ -1,25 +1,9 @@
 {
-	"id": 39410,
-	"name": "alibaba.wdk.marketing.expire.promotion.delete",
-	"apiChineseName": "短保优惠删除",
-	"description": "短保优惠删除",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ExpirePromotionBo",
-			"description": "删除短保优惠",
 			"subParams": [
 				{
-					"name": "period_infos",
-					"type": "ExpirePeriodInfo[]",
-					"description": "短保时间段信息",
 					"subParams": [
-						{
-							"name": "promotion_value",
-							"type": "Number",
-							"description": "优惠具体折扣，1到1000",
-							"required": true
-						},
 						{
 							"name": "end_hour",
 							"type": "Number",
@@ -37,8 +21,17 @@
 							"type": "Number",
 							"description": "外部活动id",
 							"required": true
+						},
+						{
+							"name": "promotion_value",
+							"type": "Number",
+							"description": "优惠具体折扣，1到1000",
+							"required": true
 						}
-					]
+					],
+					"name": "period_infos",
+					"type": "ExpirePeriodInfo[]",
+					"description": "短保时间段信息"
 				},
 				{
 					"name": "shop_ids",
@@ -58,7 +51,10 @@
 					"description": "商品skucode",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ExpirePromotionBo",
+			"description": "删除短保优惠"
 		}
 	],
 	"responseParams": [
@@ -68,53 +64,46 @@
 			"description": "message"
 		},
 		{
-			"name": "datas",
-			"type": "ExpirePromotionResult []",
-			"description": "data",
 			"subParams": [
-				{
-					"name": "sku_code",
-					"type": "String",
-					"description": "skuCode",
-					"required": true
-				},
-				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "itemId",
-					"required": true
-				},
-				{
-					"name": "shop_id",
-					"type": "String",
-					"description": "shopId",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
-					"name": "merchant_code",
-					"type": "String",
-					"description": "merchantCode",
-					"required": true
-				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "skuCode"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "merchantCode"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "shopId"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "ExpirePromotionResult []",
+			"description": "data"
 		},
 		{
 			"name": "fail_code",
@@ -126,5 +115,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.expire.promotion.delete",
+	"apiChineseName": "短保优惠删除",
+	"description": "短保优惠删除",
+	"id": 39410
 }

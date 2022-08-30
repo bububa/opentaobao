@@ -1,8 +1,4 @@
 {
-	"id": 39587,
-	"name": "alibaba.ele.fengniao.shippingorder.event",
-	"apiChineseName": "查询运单事件信息",
-	"description": "查询运单事件信息",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "shipping_order_events",
-			"type": "ShippingOrderEvent []",
-			"description": "shippingOrderEvents",
 			"subParams": [
 				{
 					"name": "shipping_state",
@@ -33,7 +26,10 @@
 					"description": "状态变更时间",
 					"required": true
 				}
-			]
+			],
+			"name": "shipping_order_events",
+			"type": "ShippingOrderEvent []",
+			"description": "shippingOrderEvents"
 		},
 		{
 			"name": "finish_at",
@@ -50,5 +46,9 @@
 			"type": "Number",
 			"description": "骑手预计送达时间"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.shippingorder.event",
+	"apiChineseName": "查询运单事件信息",
+	"description": "查询运单事件信息",
+	"id": 39587
 }

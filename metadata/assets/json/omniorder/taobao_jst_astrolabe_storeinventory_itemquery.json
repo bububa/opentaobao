@@ -1,14 +1,6 @@
 {
-	"id": 37901,
-	"name": "taobao.jst.astrolabe.storeinventory.itemquery",
-	"apiChineseName": "库存查询接口",
-	"description": "查询门店或电商仓库存，该接口一次可以同时查询多个门店或电商仓的多个商品的多种类型的库存",
 	"requestParams": [
 		{
-			"name": "stores",
-			"type": "Store[]",
-			"description": "门店信息",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "warehouse_id",
@@ -21,9 +13,6 @@
 					"description": "库存来源"
 				},
 				{
-					"name": "store_inventories",
-					"type": "StoreInventory[]",
-					"description": "门店库存",
 					"subParams": [
 						{
 							"name": "sku_id",
@@ -40,9 +29,16 @@
 							"type": "Number",
 							"description": "淘宝前端商品id"
 						}
-					]
+					],
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存"
 				}
-			]
+			],
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店信息",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
@@ -62,69 +58,69 @@
 			"description": "message"
 		},
 		{
-			"name": "stores",
-			"type": "Store []",
-			"description": "门店列表",
 			"subParams": [
 				{
-					"name": "store_inventories",
-					"type": "StoreInventory[]",
-					"description": "门店库存列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "淘宝前端商品id",
-							"required": true
+							"description": "淘宝前端商品id"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "ISV系统中商品编码",
-							"required": true
+							"description": "ISV系统中商品编码"
 						},
 						{
 							"name": "sku_id",
 							"type": "String",
-							"description": "商品的SKU编码",
-							"required": true
+							"description": "商品的SKU编码"
 						},
 						{
-							"name": "quantity_details",
-							"type": "QuantityDetail[]",
-							"description": "库存量详情列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "inventory_type",
 									"type": "String",
-									"description": "库存类型",
-									"required": true
+									"description": "库存类型"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "库存数量",
-									"required": true
+									"description": "库存数量"
+								},
+								{
+									"name": "occupy_quantity",
+									"type": "Number",
+									"description": "占用库存"
 								}
-							]
+							],
+							"name": "quantity_details",
+							"type": "QuantityDetail[]",
+							"description": "库存量详情列表"
 						}
-					]
+					],
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表"
 				},
 				{
 					"name": "warehouse_id",
 					"type": "String",
-					"description": "门店ID(商户中心) 或 电商仓ID",
-					"required": true
+					"description": "门店ID(商户中心) 或 电商仓ID"
 				},
 				{
 					"name": "warehouse_type",
 					"type": "String",
-					"description": "库存来源",
-					"required": true
+					"description": "库存来源"
 				}
-			]
+			],
+			"name": "stores",
+			"type": "Store []",
+			"description": "门店列表"
 		}
-	]
+	],
+	"name": "taobao.jst.astrolabe.storeinventory.itemquery",
+	"apiChineseName": "库存查询接口",
+	"description": "查询门店或电商仓库存，该接口一次可以同时查询多个门店或电商仓的多个商品的多种类型的库存",
+	"id": 37901
 }

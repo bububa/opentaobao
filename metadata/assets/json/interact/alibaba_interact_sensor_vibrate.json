@@ -1,13 +1,13 @@
 {
-	"id": 23779,
-	"name": "alibaba.interact.sensor.vibrate",
-	"apiChineseName": "客户端震动",
-	"description": "客户端震动",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.vibrate",
+	"apiChineseName": "客户端震动",
+	"description": "客户端震动",
+	"id": 23779
 }

@@ -1,14 +1,6 @@
 {
-	"id": 45455,
-	"name": "alibaba.mozi.acl.grant.grantrole",
-	"apiChineseName": "将一个角色授予一个账号",
-	"description": "根据入参，将入参中的角色授权给入参的某个账户，调用此接口后，该账户就会被授予该角色",
 	"requestParams": [
 		{
-			"name": "grant_roles_request",
-			"type": "GrantRolesRequest",
-			"description": "整体入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "reason",
@@ -23,13 +15,10 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "扩展参数"
 				},
 				{
-					"name": "principal",
-					"type": "BucUserPrincipalParam",
-					"description": "授角色主体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tenant_id",
@@ -43,7 +32,11 @@
 							"description": "授予角色的账号id",
 							"required": true
 						}
-					]
+					],
+					"name": "principal",
+					"type": "BucUserPrincipalParam",
+					"description": "授角色主体",
+					"required": true
 				},
 				{
 					"name": "expire_date",
@@ -56,46 +49,49 @@
 					"description": "授予的角色的code列表",
 					"required": true
 				}
-			]
+			],
+			"name": "grant_roles_request",
+			"type": "GrantRolesRequest",
+			"description": "整体入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "GrantRolesResult",
-			"description": "给账号授予角色结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功，成功则为true，否则为false",
-					"required": true
+					"description": "是否调用成功，成功则为true，否则为false"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "响应信息，若失败，则返回失败信息",
-					"required": true
+					"description": "响应信息，若失败，则返回失败信息"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "扩展字段，与入参扩展字段值相同",
-					"required": true
+					"type": "String",
+					"description": "扩展字段，与入参扩展字段值相同"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "GrantRolesResult",
+			"description": "给账号授予角色结果"
 		}
-	]
+	],
+	"name": "alibaba.mozi.acl.grant.grantrole",
+	"apiChineseName": "将一个角色授予一个账号",
+	"description": "根据入参，将入参中的角色授权给入参的某个账户，调用此接口后，该账户就会被授予该角色",
+	"id": 45455
 }

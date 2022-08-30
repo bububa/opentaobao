@@ -1,13 +1,6 @@
 {
-	"id": 46068,
-	"name": "alibaba.damai.mev.open.deleteface",
-	"apiChineseName": "大麦换验平台-第三方对外开放-票面接口deleteFace",
-	"description": "deleteFace",
 	"requestParams": [
 		{
-			"name": "delete_face_param",
-			"type": "TicketFaceIdOpenParam",
-			"description": "入参deleteFaceParam",
 			"subParams": [
 				{
 					"name": "face_id",
@@ -24,40 +17,43 @@
 					"type": "String",
 					"description": "商户密钥"
 				}
-			]
+			],
+			"name": "delete_face_param",
+			"type": "TicketFaceIdOpenParam",
+			"description": "入参deleteFaceParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误内容",
-					"required": true
+					"description": "错误内容"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.deleteface",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票面接口deleteFace",
+	"description": "deleteFace",
+	"id": 46068
 }

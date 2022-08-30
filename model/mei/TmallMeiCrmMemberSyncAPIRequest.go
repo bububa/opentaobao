@@ -22,12 +22,18 @@ type TmallMeiCrmMemberSyncAPIRequest struct {
 	_mixNick string
 	// 昵称
 	_nick string
+	// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
+	_levelPoint string
 	// 会员积分
 	_point int64
 	// 会员等级
 	_level int64
 	// 该次同步的版本信息（建议使用时间戳）
 	_version int64
+	// 毫秒级别时间戳，可不传，表示会员等级有效期
+	_levelExpireTime int64
+	// 1(表示传统等级模式), 2(成长值等级模式)
+	_levelType int64
 }
 
 // NewTmallMeiCrmMemberSyncRequest 初始化TmallMeiCrmMemberSyncAPIRequest对象
@@ -103,6 +109,19 @@ func (r TmallMeiCrmMemberSyncAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetLevelPoint is LevelPoint Setter
+// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
+func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelPoint(_levelPoint string) error {
+	r._levelPoint = _levelPoint
+	r.Set("level_point", _levelPoint)
+	return nil
+}
+
+// GetLevelPoint LevelPoint Getter
+func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelPoint() string {
+	return r._levelPoint
+}
+
 // SetPoint is Point Setter
 // 会员积分
 func (r *TmallMeiCrmMemberSyncAPIRequest) SetPoint(_point int64) error {
@@ -140,4 +159,30 @@ func (r *TmallMeiCrmMemberSyncAPIRequest) SetVersion(_version int64) error {
 // GetVersion Version Getter
 func (r TmallMeiCrmMemberSyncAPIRequest) GetVersion() int64 {
 	return r._version
+}
+
+// SetLevelExpireTime is LevelExpireTime Setter
+// 毫秒级别时间戳，可不传，表示会员等级有效期
+func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelExpireTime(_levelExpireTime int64) error {
+	r._levelExpireTime = _levelExpireTime
+	r.Set("level_expire_time", _levelExpireTime)
+	return nil
+}
+
+// GetLevelExpireTime LevelExpireTime Getter
+func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelExpireTime() int64 {
+	return r._levelExpireTime
+}
+
+// SetLevelType is LevelType Setter
+// 1(表示传统等级模式), 2(成长值等级模式)
+func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelType(_levelType int64) error {
+	r._levelType = _levelType
+	r.Set("level_type", _levelType)
+	return nil
+}
+
+// GetLevelType LevelType Getter
+func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelType() int64 {
+	return r._levelType
 }

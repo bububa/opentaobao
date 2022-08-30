@@ -1,8 +1,4 @@
 {
-	"id": 35295,
-	"name": "taobao.uscesl.iteminfo.put",
-	"apiChineseName": "电子价签显示用商品信息写入",
-	"description": "用于电子价签上显示的商品信息的写入，包含价格及促销信息",
 	"requestParams": [
 		{
 			"name": "model_num",
@@ -197,5 +193,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "taobao.uscesl.iteminfo.put",
+	"apiChineseName": "电子价签显示用商品信息写入",
+	"description": "用于电子价签上显示的商品信息的写入，包含价格及促销信息",
+	"id": 35295
 }

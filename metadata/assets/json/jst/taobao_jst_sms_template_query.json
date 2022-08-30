@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "要查询的模板CODE",
+					"required": true
+				}
+			],
+			"name": "query_sms_template_request",
+			"type": "TopQuerySmsTemplateRequest",
+			"description": "查询短信模板的入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "template_type",
+					"type": "Number",
+					"description": "0--验证码 1--短信通知 2-- 推广短信 3--国际/港澳台消息"
+				},
+				{
+					"name": "template_status",
+					"type": "Number",
+					"description": "0--待审核  1--通过  2--拒绝"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "审核意见"
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "模板名称"
+				},
+				{
+					"name": "template_content",
+					"type": "String",
+					"description": "模板内容"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "模板CODE"
+				},
+				{
+					"name": "create_date",
+					"type": "String",
+					"description": "创建时间"
+				}
+			],
+			"name": "module",
+			"type": "AccessBaseDTO",
+			"description": "返回结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		}
+	],
+	"name": "taobao.jst.sms.template.query",
+	"apiChineseName": "淘宝短信模板查询",
+	"description": "淘宝短信模板查询",
+	"id": 60275
+}

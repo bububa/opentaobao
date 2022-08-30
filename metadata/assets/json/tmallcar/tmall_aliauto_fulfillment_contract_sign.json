@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "second_party_mobile_num",
+					"type": "String",
+					"description": "乙方手机号"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "contract_type",
+					"type": "String",
+					"description": "合同类型。购车合同：PURCHASE_VEHICLE；提车合同：GET_VEHICLE",
+					"required": true
+				},
+				{
+					"name": "first_party_name",
+					"type": "String",
+					"description": "甲方名称"
+				},
+				{
+					"name": "file_url",
+					"type": "String",
+					"description": "合同文件url"
+				},
+				{
+					"name": "issue_date",
+					"type": "Date",
+					"description": "合同签署日期"
+				},
+				{
+					"name": "second_party_name",
+					"type": "String",
+					"description": "乙方名称"
+				},
+				{
+					"name": "second_party_id_card",
+					"type": "String",
+					"description": "乙方身份证号"
+				}
+			],
+			"name": "req",
+			"type": "ConsignContractReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误code"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.fulfillment.contract.sign",
+	"apiChineseName": "合同签署",
+	"description": "商家回传用户签署的合同信息",
+	"id": 57871
+}

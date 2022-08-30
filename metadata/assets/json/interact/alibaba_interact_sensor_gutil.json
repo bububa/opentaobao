@@ -1,13 +1,13 @@
 {
-	"id": 23864,
-	"name": "alibaba.interact.sensor.gutil",
-	"apiChineseName": "canvas工具包",
-	"description": "canvas工具包",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0 表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.gutil",
+	"apiChineseName": "canvas工具包",
+	"description": "canvas工具包",
+	"id": 23864
 }

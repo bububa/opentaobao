@@ -32,6 +32,10 @@ type ReceiverInfo struct {
 	DetailAddress string `json:"detailAddress,omitempty" xml:"detailAddress,omitempty"`
 	// oaid
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+	// 1
+	Privacy string `json:"privacy,omitempty" xml:"privacy,omitempty"`
+	// 收件人所在区
+	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 证件号
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
 }

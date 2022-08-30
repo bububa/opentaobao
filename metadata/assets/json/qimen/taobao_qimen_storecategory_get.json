@@ -1,8 +1,4 @@
 {
-	"id": 26738,
-	"name": "taobao.qimen.storecategory.get",
-	"apiChineseName": "门店类目获取接口",
-	"description": "商家在ERP中调用该接口，获取门店类目",
 	"requestParams": [
 		{
 			"name": "remark",
@@ -30,26 +26,10 @@
 			"name": "store_category",
 			"type": "String",
 			"description": "类目json字符串"
-		},
-		{
-			"name": "message",
-			"type": "String",
-			"description": "响应信息"
-		},
-		{
-			"name": "flag",
-			"type": "String",
-			"description": "响应标示"
-		},
-		{
-			"name": "qimen_code",
-			"type": "String",
-			"description": "响应code"
-		},
-		{
-			"name": "store_category",
-			"type": "String",
-			"description": "类目json字符串"
 		}
-	]
+	],
+	"name": "taobao.qimen.storecategory.get",
+	"apiChineseName": "门店类目获取接口",
+	"description": "商家在ERP中调用该接口，获取门店类目",
+	"id": 26738
 }

@@ -1,14 +1,6 @@
 {
-	"id": 54791,
-	"name": "alibaba.einvoice.tax.opt.salaryrequest.singleaccept",
-	"apiChineseName": "单明细发薪受理",
-	"description": "单明细发薪受理",
 	"requestParams": [
 		{
-			"name": "param_tax_optimization_single_detail_salary_payment_access_d_t_o",
-			"type": "TaxOptimizationSingleDetailSalaryPaymentAccessDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "apply_amount",
@@ -51,22 +43,29 @@
 					"type": "String",
 					"description": "业务自定义发薪备注"
 				}
-			]
+			],
+			"name": "param_tax_optimization_single_detail_salary_payment_access_d_t_o",
+			"type": "TaxOptimizationSingleDetailSalaryPaymentAccessDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TaxOptimizationSingleDetailPaymentAccessResultDto",
-			"description": "返回结果类",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "服务返回结果",
-					"required": true
+					"description": "服务返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TaxOptimizationSingleDetailPaymentAccessResultDto",
+			"description": "返回结果类"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.tax.opt.salaryrequest.singleaccept",
+	"apiChineseName": "单明细发薪受理",
+	"description": "单明细发薪受理",
+	"id": 54791
 }

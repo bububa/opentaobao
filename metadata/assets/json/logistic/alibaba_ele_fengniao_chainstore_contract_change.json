@@ -1,14 +1,6 @@
 {
-	"id": 41492,
-	"name": "alibaba.ele.fengniao.chainstore.contract.change",
-	"apiChineseName": "门店改签合同接口",
-	"description": "通过调用接口，门店改签物流服务包",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "service_package_code",
@@ -30,7 +22,11 @@
 					"type": "String",
 					"description": "门店code"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "msg"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.chainstore.contract.change",
+	"apiChineseName": "门店改签合同接口",
+	"description": "通过调用接口，门店改签物流服务包",
+	"id": 41492
 }

@@ -26,7 +26,7 @@ type AlibabaAlscMerchantExtTicketcodeUseAPIResponseModel struct {
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 用户购买时商品的原价，单位为元，精确到小数点后两位
 	OriginalPrice string `json:"original_price,omitempty" xml:"original_price,omitempty"`
-	// 该字段用于描述本次返回中的业务属性，现有：BIZ_ALREADY_SUCCESS（幂等业务码）
+	// 该字段用于描述本次返回中的业务属性，现有：TICKET_ALREADY_USED（幂等业务码）
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
 	// 用户购买时商品的现价，单位为元，精确到小数点后两位
 	CurrentPrice string `json:"current_price,omitempty" xml:"current_price,omitempty"`

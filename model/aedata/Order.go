@@ -36,6 +36,8 @@ type Order struct {
 	IncentiveCommissionRate string `json:"incentive_commission_rate,omitempty" xml:"incentive_commission_rate,omitempty"`
 	// 是否为联盟商品：N/Y
 	IsAffiliateProduct string `json:"is_affiliate_product,omitempty" xml:"is_affiliate_product,omitempty"`
+	// 国家标：global、ru_site、es_site、it_site
+	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 自定义参数(JSON格式）
 	CustomParameters string `json:"custom_parameters,omitempty" xml:"custom_parameters,omitempty"`
 	// 订单完成时的预计佣金

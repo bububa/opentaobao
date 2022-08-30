@@ -1,13 +1,6 @@
 {
-	"id": 38131,
-	"name": "alibaba.campus.space.type.getbycode",
-	"apiChineseName": "根据类别编码查询类别",
-	"description": "根据类别编码查询类别\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getByCode",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "查询条件封装",
 			"subParams": [
 				{
 					"name": "campus_code",
@@ -25,7 +18,10 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "查询条件封装"
 		},
 		{
 			"name": "type_code",
@@ -35,127 +31,112 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "PoiType",
-					"description": "内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "类别名称",
-							"required": true
+							"description": "类别名称"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "类别编码",
-							"required": true
+							"description": "类别编码"
 						},
 						{
 							"name": "big_type_code",
 							"type": "String",
-							"description": "大类编码",
-							"required": true
+							"description": "大类编码"
 						},
 						{
 							"name": "big_type_name",
 							"type": "String",
-							"description": "大类名称",
-							"required": true
+							"description": "大类名称"
 						},
 						{
 							"name": "big_type_id",
 							"type": "Number",
-							"description": "大类ID",
-							"required": true
+							"description": "大类ID"
 						},
 						{
 							"name": "pid",
 							"type": "Number",
-							"description": "父类id",
-							"required": true
+							"description": "父类id"
 						},
 						{
 							"name": "classify",
 							"type": "String",
-							"description": "类别的实际名称,空间或分组",
-							"required": true
+							"description": "类别的实际名称,空间或分组"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "编码",
-							"required": true
+							"description": "编码"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "名称",
-							"required": true
+							"description": "名称"
 						},
 						{
 							"name": "category",
 							"type": "Number",
-							"description": "POI类型分类",
-							"required": true
+							"description": "POI类型分类"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "描述",
-							"required": true
+							"description": "描述"
 						},
 						{
 							"name": "type_en_name",
 							"type": "String",
-							"description": "英文名称",
-							"required": true
+							"description": "英文名称"
 						}
-					]
+					],
+					"name": "content",
+					"type": "PoiType",
+					"description": "内容"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.type.getbycode",
+	"apiChineseName": "根据类别编码查询类别",
+	"description": "根据类别编码查询类别\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getByCode",
+	"id": 38131
 }

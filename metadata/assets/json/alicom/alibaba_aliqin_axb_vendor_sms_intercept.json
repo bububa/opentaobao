@@ -1,13 +1,6 @@
 {
-	"id": 33882,
-	"name": "alibaba.aliqin.axb.vendor.sms.intercept",
-	"apiChineseName": "AXB短信托收推送接口",
-	"description": "用于给供应商推送需要托收的短信",
 	"requestParams": [
 		{
-			"name": "sms_intercept_request",
-			"type": "SmsInterceptRequest",
-			"description": "短信托收结构体",
 			"subParams": [
 				{
 					"name": "secret_no",
@@ -51,34 +44,38 @@
 					"description": "分配给供应商的KEY",
 					"required": true
 				}
-			]
+			],
+			"name": "sms_intercept_request",
+			"type": "SmsInterceptRequest",
+			"description": "短信托收结构体"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "响应结构体",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "此字段忽略，只用判断code是否为OK",
-					"required": true
+					"description": "此字段忽略，只用判断code是否为OK"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "响应的业务CODE：OK代表请求成功，非OK的错误码建议进行重试",
-					"required": true
+					"description": "响应的业务CODE：OK代表请求成功，非OK的错误码建议进行重试"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "响应结构体"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.axb.vendor.sms.intercept",
+	"apiChineseName": "AXB短信托收推送接口",
+	"description": "用于给供应商推送需要托收的短信",
+	"id": 33882
 }

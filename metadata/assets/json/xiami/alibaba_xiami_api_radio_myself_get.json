@@ -1,8 +1,4 @@
 {
-	"id": 23270,
-	"name": "alibaba.xiami.api.radio.myself.get",
-	"apiChineseName": "我的电台",
-	"description": "我的电台",
 	"requestParams": [
 		{
 			"name": "limit",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Song []",
-			"description": "歌曲列表",
 			"subParams": [
 				{
 					"name": "song_id",
@@ -126,7 +119,14 @@
 					"type": "Boolean",
 					"description": "是否已收藏"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Song []",
+			"description": "歌曲列表"
 		}
-	]
+	],
+	"name": "alibaba.xiami.api.radio.myself.get",
+	"apiChineseName": "我的电台",
+	"description": "我的电台",
+	"id": 23270
 }

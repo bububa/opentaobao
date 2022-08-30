@@ -1,13 +1,6 @@
 {
-	"id": 36213,
-	"name": "alibaba.wdk.trade.refund.inform",
-	"apiChineseName": "外部渠道通知淘鲜达退款成功接口",
-	"description": "该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。",
 	"requestParams": [
 		{
-			"name": "inform_refund_success_request",
-			"type": "InformRefundSuccessRequest",
-			"description": "通知退款成功请求",
 			"subParams": [
 				{
 					"name": "shop_id",
@@ -16,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_fulfill_sub_orders",
-					"type": "RefundSuccessSubOrderRequest[]",
-					"description": "退货成功履约子单",
 					"subParams": [
 						{
 							"name": "sub_biz_order_id",
@@ -69,16 +59,19 @@
 							"type": "String",
 							"description": "期望取货销售数量"
 						}
-					]
+					],
+					"name": "refund_fulfill_sub_orders",
+					"type": "RefundSuccessSubOrderRequest[]",
+					"description": "退货成功履约子单"
 				}
-			]
+			],
+			"name": "inform_refund_success_request",
+			"type": "InformRefundSuccessRequest",
+			"description": "通知退款成功请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "InformRefundSuccessResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -98,7 +91,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "InformRefundSuccessResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.trade.refund.inform",
+	"apiChineseName": "外部渠道通知淘鲜达退款成功接口",
+	"description": "该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。",
+	"id": 36213
 }

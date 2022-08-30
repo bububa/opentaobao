@@ -1,18 +1,8 @@
 {
-	"id": 33699,
-	"name": "tmall.servicecenter.worker.update",
-	"apiChineseName": "修改工人信息",
-	"description": "修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。\n错误码如下\n100000, 系统错误\n100001, 工人信息校验失败\n100002, 用户校验失败\n100003, 操作失败\n10004,工人信息为空\n10005,服务商id为空或者服务商名称为空\n10006, 工人不存在\n10007, 工人已存在\n10008, 缺少工人姓名\n10009, 缺少工人电话\n10010, 网点不存在\n11000, category_id 无效\n11001, biz_type 无效\n20001,已查询到最后一页",
 	"requestParams": [
 		{
-			"name": "worker",
-			"type": "WorkerDto",
-			"description": "工人信息",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "工人居住地址",
 					"subParams": [
 						{
 							"name": "address_detail",
@@ -24,7 +14,10 @@
 							"type": "String[]",
 							"description": "省/市/区/街道"
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "工人居住地址"
 				},
 				{
 					"name": "biz_type",
@@ -87,16 +80,16 @@
 					"description": "-"
 				},
 				{
-					"name": "service_areas",
-					"type": "DivisionDto[]",
-					"description": "-",
 					"subParams": [
 						{
 							"name": "division_names",
 							"type": "String[]",
 							"description": "-"
 						}
-					]
+					],
+					"name": "service_areas",
+					"type": "DivisionDto[]",
+					"description": "-"
 				},
 				{
 					"name": "service_store_code",
@@ -118,52 +111,53 @@
 					"type": "String",
 					"description": "serviceCodes 列表，竖线分隔"
 				}
-			]
+			],
+			"name": "worker",
+			"type": "WorkerDto",
+			"description": "工人信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "value",
 					"type": "Boolean",
-					"description": "value",
-					"required": true
+					"description": "value"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.update",
+	"apiChineseName": "修改工人信息",
+	"description": "修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。\n错误码如下\n100000, 系统错误\n100001, 工人信息校验失败\n100002, 用户校验失败\n100003, 操作失败\n10004,工人信息为空\n10005,服务商id为空或者服务商名称为空\n10006, 工人不存在\n10007, 工人已存在\n10008, 缺少工人姓名\n10009, 缺少工人电话\n10010, 网点不存在\n11000, category_id 无效\n11001, biz_type 无效\n20001,已查询到最后一页",
+	"id": 33699
 }

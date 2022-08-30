@@ -1,8 +1,4 @@
 {
-	"id": 54359,
-	"name": "alibaba.visitor.getidsbyqrcode",
-	"apiChineseName": "根据访客二维码查访客行程id",
-	"description": "根据支付宝阿里访客小程序的动态二维码查询来访行程id",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -30,41 +26,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功或失败",
-					"required": true
+					"description": "成功或失败"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "contents",
-					"type": "Json[]",
-					"description": "内容",
-					"required": true
+					"type": "String[]",
+					"description": "内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.visitor.getidsbyqrcode",
+	"apiChineseName": "根据访客二维码查访客行程id",
+	"description": "根据支付宝阿里访客小程序的动态二维码查询来访行程id",
+	"id": 54359
 }

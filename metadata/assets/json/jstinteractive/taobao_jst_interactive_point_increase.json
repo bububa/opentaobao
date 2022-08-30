@@ -1,8 +1,4 @@
 {
-	"id": 51837,
-	"name": "taobao.jst.interactive.point.increase",
-	"apiChineseName": "互动积分发放接口",
-	"description": "向用户发放互动积分",
 	"requestParams": [
 		{
 			"name": "amount",
@@ -19,14 +15,18 @@
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "调用是否成功"
-		},
-		{
 			"name": "amount",
 			"type": "Number",
 			"description": "用户积分总额"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.point.increase",
+	"apiChineseName": "互动积分发放接口",
+	"description": "向用户发放互动积分",
+	"id": 51837
 }

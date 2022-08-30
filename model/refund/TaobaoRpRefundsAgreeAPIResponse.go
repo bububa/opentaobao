@@ -22,10 +22,10 @@ type TaobaoRpRefundsAgreeAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 退款操作结果列表
 	Results []RefundMappingResult `json:"results,omitempty" xml:"results>refund_mapping_result,omitempty"`
-	// 批量退款操作情况，可选值：OP_SUCC（全部成功），SOME_OP_SUCC（部分成功），OP_FAILURE_UE（全部失败）
-	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 批量退款操作情况，可选值：OP_SUCC（全部成功），SOME_OP_SUCC（部分成功），OP_FAILURE_UE（全部失败）
+	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 操作成功
 	Succ bool `json:"succ,omitempty" xml:"succ,omitempty"`
 }

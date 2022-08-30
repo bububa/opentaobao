@@ -1,25 +1,9 @@
 {
-	"id": 38632,
-	"name": "alibaba.wdk.marketing.itempool.activity.create",
-	"apiChineseName": "创建活动新接口",
-	"description": "创建活动新接口，支持新工具玩法",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "ItemPoolActivity",
-			"description": "创建活动请求入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "limit_info",
-					"type": "LimitInfo",
-					"description": "通用限购信息，-1为不限制，默认为不限制",
 					"subParams": [
-						{
-							"name": "daily_limit_cnt",
-							"type": "Number",
-							"description": "活动每日总限购"
-						},
 						{
 							"name": "user_daily_limit_cnt",
 							"type": "Number",
@@ -34,48 +18,20 @@
 							"name": "total_limit_cnt",
 							"type": "Number",
 							"description": "活动期间总限购"
-						}
-					]
-				},
-				{
-					"name": "terminals",
-					"type": "Number[]",
-					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
-					"required": true
-				},
-				{
-					"name": "out_act_id",
-					"type": "String",
-					"description": "商家活动id"
-				},
-				{
-					"name": "shop_ids",
-					"type": "String[]",
-					"description": "参加活动的渠道店ids",
-					"required": true
-				},
-				{
-					"name": "end_time",
-					"type": "Number",
-					"description": "活动结束时间",
-					"required": true
-				},
-				{
-					"name": "rule_stairs",
-					"type": "OpenPromotionRuleStair[]",
-					"description": "商品池活动的梯度列表",
-					"required": true,
-					"subParams": [
-						{
-							"name": "number",
-							"type": "Number",
-							"description": "阶梯序号，代表商家的阶梯ID，同时代表阶梯优先级的顺序",
-							"required": true
 						},
 						{
-							"name": "cap_count_discount_rule",
-							"type": "CapCountDiscountRule",
-							"description": "指定件数优惠规则",
+							"name": "daily_limit_cnt",
+							"type": "Number",
+							"description": "活动每日总限购"
+						}
+					],
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制"
+				},
+				{
+					"subParams": [
+						{
 							"subParams": [
 								{
 									"name": "cap_count_each_fix_price",
@@ -117,12 +73,12 @@
 									"type": "Boolean",
 									"description": "是否指定件数每件一口价"
 								}
-							]
+							],
+							"name": "cap_count_discount_rule",
+							"type": "CapCountDiscountRule",
+							"description": "指定件数优惠规则"
 						},
 						{
-							"name": "cover_all_discount_rule",
-							"type": "CoverAllDiscountRule",
-							"description": "阶梯整体优惠规则",
 							"subParams": [
 								{
 									"name": "each_fix_price",
@@ -164,27 +120,12 @@
 									"type": "Boolean",
 									"description": "是否每件一口价"
 								}
-							]
+							],
+							"name": "cover_all_discount_rule",
+							"type": "CoverAllDiscountRule",
+							"description": "阶梯整体优惠规则"
 						},
 						{
-							"name": "login_group_express",
-							"type": "String",
-							"description": "分组表达式【暂时不使用】"
-						},
-						{
-							"name": "amount",
-							"type": "Number",
-							"description": "满x元【单位为分】"
-						},
-						{
-							"name": "count",
-							"type": "Number",
-							"description": "满x件"
-						},
-						{
-							"name": "count_at_discount_rule",
-							"type": "CountAtDiscountRule",
-							"description": "第N件优惠规则",
 							"subParams": [
 								{
 									"name": "count_at_discount_rate",
@@ -216,17 +157,15 @@
 									"type": "Boolean",
 									"description": "是否第N件打折"
 								}
-							]
+							],
+							"name": "count_at_discount_rule",
+							"type": "CountAtDiscountRule",
+							"description": "第N件优惠规则"
 						},
 						{
-							"name": "is_overlay_logic_group_condition",
-							"type": "Boolean",
-							"description": "是否叠加逻辑分组的条件"
-						},
-						{
-							"name": "is_count",
-							"type": "Boolean",
-							"description": "是否满件"
+							"name": "login_group_express",
+							"type": "String",
+							"description": "分组表达式【暂时不使用】"
 						},
 						{
 							"name": "is_amount",
@@ -234,9 +173,32 @@
 							"description": "是否满元"
 						},
 						{
-							"name": "separate_pricing_discount_rule",
-							"type": "SeparatePricingDiscountRule",
-							"description": "单独定价优惠规则",
+							"name": "is_count",
+							"type": "Boolean",
+							"description": "是否满件"
+						},
+						{
+							"name": "number",
+							"type": "Number",
+							"description": "阶梯序号，代表商家的阶梯ID，同时代表阶梯优先级的顺序",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "满x元【单位为分】"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "满x件"
+						},
+						{
+							"name": "is_overlay_logic_group_condition",
+							"type": "Boolean",
+							"description": "是否叠加逻辑分组的条件"
+						},
+						{
 							"subParams": [
 								{
 									"name": "is_discount_rate",
@@ -253,52 +215,62 @@
 									"type": "Boolean",
 									"description": "是否为一口价类型"
 								}
-							]
+							],
+							"name": "separate_pricing_discount_rule",
+							"type": "SeparatePricingDiscountRule",
+							"description": "单独定价优惠规则"
 						}
-					]
-				},
-				{
-					"name": "start_time",
-					"type": "Number",
-					"description": "活动开始时间",
+					],
+					"name": "rule_stairs",
+					"type": "OpenPromotionRuleStair[]",
+					"description": "商品池活动的梯度列表",
 					"required": true
 				},
 				{
-					"name": "description",
-					"type": "String",
-					"description": "活动描述",
-					"required": true
-				},
-				{
-					"name": "activity_name",
-					"type": "String",
-					"description": "活动标题",
-					"required": true
-				},
-				{
-					"name": "member_limit",
-					"type": "Number",
-					"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
-				},
-				{
-					"name": "merchant_crowd_code",
-					"type": "String",
-					"description": "商家人群编码"
-				},
-				{
-					"name": "txd_crowd_code",
-					"type": "String",
-					"description": "淘鲜达人群编码"
-				},
-				{
-					"name": "logic_group_rules",
-					"type": "OpenLogicGroupRule[]",
-					"description": "逻辑分组规则",
 					"subParams": [
 						{
-							"name": "cover_all_discount_rule",
-							"type": "CoverAllDiscountRule",
-							"description": "整体优惠",
+							"name": "ceiling_amount",
+							"type": "Number",
+							"description": "封顶金额"
+						},
+						{
+							"name": "is_multi_mix",
+							"type": "Boolean",
+							"description": "多阶梯是否可叠加"
+						},
+						{
+							"name": "item_overlay",
+							"type": "Boolean",
+							"description": "单商品是否累计"
+						},
+						{
+							"name": "is_alone",
+							"type": "Boolean",
+							"description": "是否单商品计数【NY使用】【废弃】"
+						},
+						{
+							"name": "enable_multiple",
+							"type": "Boolean",
+							"description": "是否上不封顶"
+						},
+						{
+							"name": "is_check_all_cond",
+							"type": "Boolean",
+							"description": "是否叠加计算逻辑分组与阶梯满元【件】条件"
+						},
+						{
+							"name": "discount_fee_mode",
+							"type": "Number",
+							"description": "1-可贬值，0-不可贬值"
+						}
+					],
+					"name": "activity_rule",
+					"type": "ActivityRule",
+					"description": "活动优惠规则"
+				},
+				{
+					"subParams": [
+						{
 							"subParams": [
 								{
 									"name": "each_fix_price",
@@ -340,7 +312,10 @@
 									"type": "Boolean",
 									"description": "是否整体每件一口价"
 								}
-							]
+							],
+							"name": "cover_all_discount_rule",
+							"type": "CoverAllDiscountRule",
+							"description": "整体优惠"
 						},
 						{
 							"name": "is_effective_group",
@@ -387,54 +362,68 @@
 							"type": "Number",
 							"description": "分摊比例"
 						}
-					]
+					],
+					"name": "logic_group_rules",
+					"type": "OpenLogicGroupRule[]",
+					"description": "逻辑分组规则"
 				},
 				{
-					"name": "activity_rule",
-					"type": "ActivityRule",
-					"description": "活动优惠规则",
-					"subParams": [
-						{
-							"name": "ceiling_amount",
-							"type": "Number",
-							"description": "封顶金额"
-						},
-						{
-							"name": "is_multi_mix",
-							"type": "Boolean",
-							"description": "多阶梯是否可叠加"
-						},
-						{
-							"name": "item_overlay",
-							"type": "Boolean",
-							"description": "单商品是否累计"
-						},
-						{
-							"name": "is_alone",
-							"type": "Boolean",
-							"description": "是否单商品计数【NY使用】【废弃】"
-						},
-						{
-							"name": "enable_multiple",
-							"type": "Boolean",
-							"description": "是否上不封顶"
-						},
-						{
-							"name": "is_check_all_cond",
-							"type": "Boolean",
-							"description": "是否叠加计算逻辑分组与阶梯满元【件】条件"
-						},
-						{
-							"name": "discount_fee_mode",
-							"type": "Number",
-							"description": "1-可贬值，0-不可贬值"
-						}
-					]
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
 				},
 				{
-					"name": "period_config",
-					"type": "PeriodConfig",
-					"description": "周期优惠信息",
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动标题",
+					"required": true
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "txd_crowd_code",
+					"type": "String",
+					"description": "淘鲜达人群编码"
+				},
+				{
+					"name": "member_limit",
+					"type": "Number",
+					"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
 					"subParams": [
 						{
 							"name": "every_day_periods",
@@ -443,10 +432,13 @@
 						},
 						{
 							"name": "weekdays",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]"
 						}
-					]
+					],
+					"name": "period_config",
+					"type": "PeriodConfig",
+					"description": "周期优惠信息"
 				},
 				{
 					"name": "is_comb",
@@ -468,7 +460,11 @@
 					"type": "Boolean",
 					"description": "是否是类目优惠"
 				}
-			]
+			],
+			"name": "param",
+			"type": "ItemPoolActivity",
+			"description": "创建活动请求入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -492,5 +488,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.activity.create",
+	"apiChineseName": "创建活动新接口",
+	"description": "创建活动新接口，支持新工具玩法",
+	"id": 38632
 }

@@ -1,38 +1,35 @@
 {
-	"id": 54625,
-	"name": "taobao.miniapp.eleuser.phone.get",
-	"apiChineseName": "获取饿了么用户信息",
-	"description": "获取饿了么用户信息",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "EleUicInfo",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "avatar",
 					"type": "String",
-					"description": "用户头像",
-					"required": true
+					"description": "用户头像"
 				},
 				{
 					"name": "nick",
 					"type": "String",
-					"description": "用户昵称",
-					"required": true
+					"description": "用户昵称"
 				},
 				{
 					"name": "phone",
 					"type": "String",
-					"description": "手机号",
-					"required": true
+					"description": "手机号"
 				}
-			]
+			],
+			"name": "result",
+			"type": "EleUicInfo",
+			"description": "返回对象"
 		},
 		{
 			"name": "trace_id",
 			"type": "String",
 			"description": "traceId"
 		}
-	]
+	],
+	"name": "taobao.miniapp.eleuser.phone.get",
+	"apiChineseName": "获取饿了么用户信息",
+	"description": "获取饿了么用户信息",
+	"id": 54625
 }

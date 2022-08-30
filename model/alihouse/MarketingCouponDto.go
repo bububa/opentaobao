@@ -18,4 +18,8 @@ type MarketingCouponDto struct {
 	CouponMoney int64 `json:"coupon_money,omitempty" xml:"coupon_money,omitempty"`
 	// 券状态
 	ActivityStatus int64 `json:"activity_status,omitempty" xml:"activity_status,omitempty"`
+	// 专车券返程金额
+	CouponReturnMoney int64 `json:"coupon_return_money,omitempty" xml:"coupon_return_money,omitempty"`
+	// 活动类型0-专车 2-往返
+	ActivityType int64 `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
 }

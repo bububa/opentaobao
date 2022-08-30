@@ -18,6 +18,8 @@ type TaobaoTrainAgentHandrefundRefundfeeAPIRequest struct {
 	_mainBizOrderId int64
 	// 退款金额,单位为分
 	_refundFee int64
+	// 子订单号
+	_subOrderId int64
 }
 
 // NewTaobaoTrainAgentHandrefundRefundfeeRequest 初始化TaobaoTrainAgentHandrefundRefundfeeAPIRequest对象
@@ -78,4 +80,17 @@ func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetRefundFee(_refundFee 
 // GetRefundFee RefundFee Getter
 func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetRefundFee() int64 {
 	return r._refundFee
+}
+
+// SetSubOrderId is SubOrderId Setter
+// 子订单号
+func (r *TaobaoTrainAgentHandrefundRefundfeeAPIRequest) SetSubOrderId(_subOrderId int64) error {
+	r._subOrderId = _subOrderId
+	r.Set("sub_order_id", _subOrderId)
+	return nil
+}
+
+// GetSubOrderId SubOrderId Getter
+func (r TaobaoTrainAgentHandrefundRefundfeeAPIRequest) GetSubOrderId() int64 {
+	return r._subOrderId
 }

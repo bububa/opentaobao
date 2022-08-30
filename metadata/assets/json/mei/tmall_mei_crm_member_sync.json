@@ -1,8 +1,4 @@
 {
-	"id": 24492,
-	"name": "tmall.mei.crm.member.sync",
-	"apiChineseName": "同步推送会员信息",
-	"description": "品牌方通过该api主动推送会员信息。使用场景包括\n1.用户在线上注册后，线下补充信息后，同步到线上。\n2.其他情况的主动推送变更。",
 	"requestParams": [
 		{
 			"name": "mobile",
@@ -38,6 +34,21 @@
 			"name": "nick",
 			"type": "String",
 			"description": "昵称"
+		},
+		{
+			"name": "level_point",
+			"type": "String",
+			"description": "成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传"
+		},
+		{
+			"name": "level_expire_time",
+			"type": "Number",
+			"description": "毫秒级别时间戳，可不传，表示会员等级有效期"
+		},
+		{
+			"name": "level_type",
+			"type": "Number",
+			"description": "1(表示传统等级模式), 2(成长值等级模式)"
 		}
 	],
 	"responseParams": [
@@ -46,5 +57,9 @@
 			"type": "Json",
 			"description": "处理的其他信息"
 		}
-	]
+	],
+	"name": "tmall.mei.crm.member.sync",
+	"apiChineseName": "同步推送会员信息",
+	"description": "品牌方通过该api主动推送会员信息。使用场景包括\n1.用户在线上注册后，线下补充信息后，同步到线上。\n2.其他情况的主动推送变更。",
+	"id": 24492
 }

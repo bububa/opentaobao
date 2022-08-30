@@ -1,8 +1,4 @@
 {
-	"id": 21607,
-	"name": "taobao.inventory.adjust.trade",
-	"apiChineseName": "交易库存调整单",
-	"description": "商家交易调整库存，淘宝交易、B2B经销等",
 	"requestParams": [
 		{
 			"name": "tb_order_type",
@@ -36,21 +32,25 @@
 			"description": "操作返回码"
 		},
 		{
-			"name": "tip_infos",
-			"type": "TipInfo []",
-			"description": "提示信息",
 			"subParams": [
-				{
-					"name": "info",
-					"type": "String",
-					"description": "返回信息"
-				},
 				{
 					"name": "sc_item_id",
 					"type": "String",
 					"description": "商品id"
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "返回信息"
 				}
-			]
+			],
+			"name": "tip_infos",
+			"type": "TipInfo []",
+			"description": "提示信息"
 		}
-	]
+	],
+	"name": "taobao.inventory.adjust.trade",
+	"apiChineseName": "交易库存调整单",
+	"description": "商家交易调整库存，淘宝交易、B2B经销等",
+	"id": 21607
 }

@@ -1,13 +1,6 @@
 {
-	"id": 33367,
-	"name": "alibaba.campus.space.unit.getspaceunitlistwithattr",
-	"apiChineseName": "空间单元列表带业务属性实例",
-	"description": "空间单元列表带业务属性实例",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "操作用户上下文",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -30,12 +23,12 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文"
 		},
 		{
-			"name": "unit_query",
-			"type": "SpaceUnitQuery",
-			"description": "空间单元查询对象",
 			"subParams": [
 				{
 					"name": "limit",
@@ -82,20 +75,16 @@
 					"type": "Number",
 					"description": "楼宇id"
 				}
-			]
+			],
+			"name": "unit_query",
+			"type": "SpaceUnitQuery",
+			"description": "空间单元查询对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "PoiInfo[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "building_name",
@@ -200,10 +189,6 @@
 							"required": true
 						},
 						{
-							"name": "attrs",
-							"type": "TypeAttrInstance[]",
-							"description": "attrs",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type_attr_ref_id",
@@ -241,7 +226,11 @@
 									"description": "uuid",
 									"required": true
 								}
-							]
+							],
+							"name": "attrs",
+							"type": "TypeAttrInstance[]",
+							"description": "attrs",
+							"required": true
 						},
 						{
 							"name": "uuid",
@@ -273,7 +262,11 @@
 							"description": "areaStr",
 							"required": true
 						}
-					]
+					],
+					"name": "contents",
+					"type": "PoiInfo[]",
+					"description": "content",
+					"required": true
 				},
 				{
 					"name": "total_count",
@@ -311,7 +304,14 @@
 					"description": "errorLevel",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.unit.getspaceunitlistwithattr",
+	"apiChineseName": "空间单元列表带业务属性实例",
+	"description": "空间单元列表带业务属性实例",
+	"id": 33367
 }

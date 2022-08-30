@@ -1,34 +1,25 @@
 {
-	"id": 53982,
-	"name": "alibaba.lst.branddatashare.suppliers.list.query",
-	"apiChineseName": "品牌数据授权的供应商列表",
-	"description": "品牌商查询品牌数据授权的供应商列表",
-	"requestParams": [
-		{
-			"name": "query",
-			"type": "LstBmSupplierQuery",
-			"description": "入参"
-		}
-	],
 	"responseParams": [
 		{
-			"name": "content_list",
-			"type": "Content []",
-			"description": "返回值列表",
 			"subParams": [
 				{
 					"name": "brand_name_list",
 					"type": "String[]",
-					"description": "品牌名称列表",
-					"required": true
+					"description": "品牌名称列表"
 				},
 				{
 					"name": "supplier_member_id",
 					"type": "String",
-					"description": "供应商memberId",
-					"required": true
+					"description": "供应商memberId"
 				}
-			]
+			],
+			"name": "content_list",
+			"type": "Content []",
+			"description": "返回值列表"
 		}
-	]
+	],
+	"name": "alibaba.lst.branddatashare.suppliers.list.query",
+	"apiChineseName": "品牌数据授权的供应商列表",
+	"description": "品牌商查询品牌数据授权的供应商列表",
+	"id": 53982
 }

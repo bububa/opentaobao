@@ -1,8 +1,4 @@
 {
-	"id": 52760,
-	"name": "alibaba.alihealth.drug.upload.extinfo",
-	"apiChineseName": "中药饮片及器械对接",
-	"description": "中药饮片及器械对接",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -23,15 +19,8 @@
 			"required": true
 		},
 		{
-			"name": "ext_info_dto",
-			"type": "ExtInfoDto",
-			"description": "扩展信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "produce_info_dto",
-					"type": "ProduceInfoDto",
-					"description": "生产信息模块",
 					"subParams": [
 						{
 							"name": "produce_batch_no",
@@ -43,18 +32,13 @@
 							"type": "String",
 							"description": "生产日期yyyy-MM-dd"
 						}
-					]
+					],
+					"name": "produce_info_dto",
+					"type": "ProduceInfoDto",
+					"description": "生产信息模块"
 				},
 				{
-					"name": "seedlings_base_info_dto",
-					"type": "SeedlingsBaseInfoDto",
-					"description": "种源与基地信息",
 					"subParams": [
-						{
-							"name": "base_pictures",
-							"type": "String[]",
-							"description": "基地图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
-						},
 						{
 							"name": "variety",
 							"type": "String",
@@ -91,9 +75,11 @@
 							"description": "基地名称"
 						},
 						{
-							"name": "base_certification",
-							"type": "RichTextDto",
-							"description": "基地认证（文字+图片）图片建议尺寸：height: 310px;width: 670px;",
+							"name": "base_pictures",
+							"type": "String[]",
+							"description": "基地图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
 							"subParams": [
 								{
 									"name": "pictures",
@@ -105,14 +91,17 @@
 									"type": "String",
 									"description": "文字"
 								}
-							]
+							],
+							"name": "base_certification",
+							"type": "RichTextDto",
+							"description": "基地认证（文字+图片）图片建议尺寸：height: 310px;width: 670px;"
 						}
-					]
+					],
+					"name": "seedlings_base_info_dto",
+					"type": "SeedlingsBaseInfoDto",
+					"description": "种源与基地信息"
 				},
 				{
-					"name": "pieces_detection_dto",
-					"type": "PiecesDetectionDto",
-					"description": "饮片检验信息",
 					"subParams": [
 						{
 							"name": "pesticides_detection",
@@ -128,6 +117,11 @@
 							"name": "aflatoxin_detection",
 							"type": "String",
 							"description": "黄曲霉毒素检测"
+						},
+						{
+							"name": "inspection_report_pictures",
+							"type": "String[]",
+							"description": "饮片检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
 						},
 						{
 							"name": "exec_standard",
@@ -138,18 +132,13 @@
 							"name": "pieces_pictures",
 							"type": "String[]",
 							"description": "饮片图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
-						},
-						{
-							"name": "inspection_report_pictures",
-							"type": "String[]",
-							"description": "饮片检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
 						}
-					]
+					],
+					"name": "pieces_detection_dto",
+					"type": "PiecesDetectionDto",
+					"description": "饮片检验信息"
 				},
 				{
-					"name": "materials_detection_dto",
-					"type": "MaterialsDetectionDto",
-					"description": "药材检验信息",
 					"subParams": [
 						{
 							"name": "pesticides_detection",
@@ -165,6 +154,11 @@
 							"name": "aflatoxin_detection",
 							"type": "String",
 							"description": "黄曲霉毒素检测"
+						},
+						{
+							"name": "inspection_report_pictures",
+							"type": "String[]",
+							"description": "药材检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
 						},
 						{
 							"name": "exec_standard",
@@ -180,18 +174,13 @@
 							"name": "materials_pictures",
 							"type": "String[]",
 							"description": "药材图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
-						},
-						{
-							"name": "inspection_report_pictures",
-							"type": "String[]",
-							"description": "药材检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
 						}
-					]
+					],
+					"name": "materials_detection_dto",
+					"type": "MaterialsDetectionDto",
+					"description": "药材检验信息"
 				},
 				{
-					"name": "purchase_info_dto",
-					"type": "PurchaseInfoDto",
-					"description": "采购管理",
 					"subParams": [
 						{
 							"name": "purchase_date",
@@ -218,12 +207,12 @@
 							"type": "String[]",
 							"description": "采购管理图片（上传图片）"
 						}
-					]
+					],
+					"name": "purchase_info_dto",
+					"type": "PurchaseInfoDto",
+					"description": "采购管理"
 				},
 				{
-					"name": "process_info_dto",
-					"type": "ProcessInfoDto",
-					"description": "产地初加工管理",
 					"subParams": [
 						{
 							"name": "harvest_date",
@@ -260,12 +249,12 @@
 							"type": "String",
 							"description": "采收地块"
 						}
-					]
+					],
+					"name": "process_info_dto",
+					"type": "ProcessInfoDto",
+					"description": "产地初加工管理"
 				},
 				{
-					"name": "pieces_produce_info_dto",
-					"type": "PiecesProduceInfoDto",
-					"description": "生产管理",
 					"subParams": [
 						{
 							"name": "production_start_date",
@@ -302,12 +291,12 @@
 							"type": "String[]",
 							"description": "生产管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
 						}
-					]
+					],
+					"name": "pieces_produce_info_dto",
+					"type": "PiecesProduceInfoDto",
+					"description": "生产管理"
 				},
 				{
-					"name": "warehouse_info_dto",
-					"type": "WarehouseInfoDto",
-					"description": "存储管理",
 					"subParams": [
 						{
 							"name": "warehouse_location",
@@ -349,12 +338,12 @@
 							"type": "String",
 							"description": "出库日期yyyy-MM-dd"
 						}
-					]
+					],
+					"name": "warehouse_info_dto",
+					"type": "WarehouseInfoDto",
+					"description": "存储管理"
 				},
 				{
-					"name": "planting_info_dto",
-					"type": "PlantingInfoDto",
-					"description": "种植管理",
 					"subParams": [
 						{
 							"name": "planting_area",
@@ -391,12 +380,12 @@
 							"type": "String",
 							"description": "栽培模式"
 						}
-					]
+					],
+					"name": "planting_info_dto",
+					"type": "PlantingInfoDto",
+					"description": "种植管理"
 				},
 				{
-					"name": "ent_info_dto",
-					"type": "EntInfoDto",
-					"description": "企业信息",
 					"subParams": [
 						{
 							"name": "ent_contact",
@@ -413,42 +402,49 @@
 							"type": "String",
 							"description": "企业介绍"
 						}
-					]
+					],
+					"name": "ent_info_dto",
+					"type": "EntInfoDto",
+					"description": "企业信息"
 				}
-			]
+			],
+			"name": "ext_info_dto",
+			"type": "ExtInfoDto",
+			"description": "扩展信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "编码值",
-					"required": true
+					"description": "编码值"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口响应是否成功",
-					"required": true
+					"description": "接口响应是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "中文解释",
-					"required": true
+					"description": "中文解释"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "业务处理是否成功",
-					"required": true
+					"description": "业务处理是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.upload.extinfo",
+	"apiChineseName": "中药饮片及器械对接",
+	"description": "中药饮片及器械对接",
+	"id": 52760
 }

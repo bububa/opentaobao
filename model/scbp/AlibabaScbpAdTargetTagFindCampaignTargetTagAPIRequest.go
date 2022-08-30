@@ -12,12 +12,12 @@ import (
 // 查询标签数据
 type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest struct {
 	model.Params
+	// 用户信息
+	_topContext *TopContextDto
 	// 计划id
 	_campaignId int64
 	// 请求参数
 	_targetTagOperation *TargetTagOperationDto
-	// 用户信息
-	_topContext *TopContextDto
 }
 
 // NewAlibabaScbpAdTargetTagFindCampaignTargetTagRequest 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetApiParams() ur
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTopContext is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// GetTopContext TopContext Getter
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTargetTagOper
 // GetTargetTagOperation TargetTagOperation Getter
 func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTargetTagOperation() *TargetTagOperationDto {
 	return r._targetTagOperation
-}
-
-// SetTopContext is TopContext Setter
-// 用户信息
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) SetTopContext(_topContext *TopContextDto) error {
-	r._topContext = _topContext
-	r.Set("top_context", _topContext)
-	return nil
-}
-
-// GetTopContext TopContext Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagAPIRequest) GetTopContext() *TopContextDto {
-	return r._topContext
 }

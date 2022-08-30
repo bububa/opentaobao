@@ -1,8 +1,4 @@
 {
-	"id": 53240,
-	"name": "alibaba.asr.dataservice.promotionrule.delete",
-	"apiChineseName": "优惠规则删除",
-	"description": "删除优惠规则，例如星巴克删除优惠规则",
 	"requestParams": [
 		{
 			"name": "pos_key",
@@ -12,55 +8,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataServiceResponse",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "ext_map",
-					"type": "Extmap",
-					"description": "扩展字段",
-					"required": true,
 					"subParams": [
 						{
 							"name": "keyvalue",
 							"type": "Boolean",
-							"description": "扩展字段",
-							"required": true
+							"description": "扩展字段"
 						}
-					]
+					],
+					"name": "ext_map",
+					"type": "Extmap",
+					"description": "扩展字段"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "结果对象",
-					"required": true
+					"description": "结果对象"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "报错编码",
-					"required": true
+					"description": "报错编码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "报错描述",
-					"required": true
+					"description": "报错描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "鹰眼id",
-					"required": true
+					"description": "鹰眼id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataServiceResponse",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.asr.dataservice.promotionrule.delete",
+	"apiChineseName": "优惠规则删除",
+	"description": "删除优惠规则，例如星巴克删除优惠规则",
+	"id": 53240
 }

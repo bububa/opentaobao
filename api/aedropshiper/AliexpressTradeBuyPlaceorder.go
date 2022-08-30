@@ -8,7 +8,7 @@ import (
 // AliexpressTradeBuyPlaceorder AE下单API
 // aliexpress.trade.buy.placeorder
 //
-// A006_INVALID_ACCOUNT_INFO
+// 150欧欧盟税改
 func AliexpressTradeBuyPlaceorder(clt *core.SDKClient, req *aedropshiper.AliexpressTradeBuyPlaceorderAPIRequest, session string) (*aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse, error) {
 	var resp aedropshiper.AliexpressTradeBuyPlaceorderAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -1,15 +1,11 @@
 {
-	"id": 11135,
-	"name": "taobao.rds.db.delete",
-	"apiChineseName": "RDS数据库删除",
-	"description": "通过api删除用户RDS的数据库",
 	"requestParams": [
 		{
 			"name": "instance_name",
 			"type": "String",
 			"description": "rds的实例名",
-			"required": true,
-			"maxLength": 30
+			"maxLength": 30,
+			"required": true
 		},
 		{
 			"name": "db_name",
@@ -20,9 +16,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "rds_db_info",
-			"type": "RdsDbInfo",
-			"description": "删除数据库，返回结果对象",
 			"subParams": [
 				{
 					"name": "db_status",
@@ -44,7 +37,14 @@
 					"type": "String",
 					"description": "用户id"
 				}
-			]
+			],
+			"name": "rds_db_info",
+			"type": "RdsDbInfo",
+			"description": "删除数据库，返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.rds.db.delete",
+	"apiChineseName": "RDS数据库删除",
+	"description": "通过api删除用户RDS的数据库",
+	"id": 11135
 }

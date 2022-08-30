@@ -1,8 +1,4 @@
 {
-	"id": 26553,
-	"name": "alibaba.security.jaq.ocr.image.sync.detect",
-	"apiChineseName": "聚安全图文识别同步检测接口",
-	"description": "图像字符识别同步检测接口",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -13,17 +9,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "JaqOcrImageDetectResult",
-			"description": "出参结构体",
 			"subParams": [
 				{
 					"name": "texts",
 					"type": "String[]",
-					"description": "字符串列表，内容是图像中文字的主要段落内容（按照概率输出最多5组概率最大的组合）",
-					"required": true
+					"description": "字符串列表，内容是图像中文字的主要段落内容（按照概率输出最多5组概率最大的组合）"
 				}
-			]
+			],
+			"name": "data",
+			"type": "JaqOcrImageDetectResult",
+			"description": "出参结构体"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.ocr.image.sync.detect",
+	"apiChineseName": "聚安全图文识别同步检测接口",
+	"description": "图像字符识别同步检测接口",
+	"id": 26553
 }

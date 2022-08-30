@@ -2,6 +2,8 @@ package alitripmerchant
 
 // HotelDetailsParam 结构体
 type HotelDetailsParam struct {
+	// 分组过滤请求
+	GroupParam []HotelDetailsGroupParam `json:"group_param,omitempty" xml:"group_param>hotel_details_group_param,omitempty"`
 	// 离店时间
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
 	// 入店时间
@@ -16,6 +18,8 @@ type HotelDetailsParam struct {
 	RoomType string `json:"room_type,omitempty" xml:"room_type,omitempty"`
 	// 用户登录信息
 	Token string `json:"token,omitempty" xml:"token,omitempty"`
+	// 代金券id
+	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 标准酒店id
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 成人数量

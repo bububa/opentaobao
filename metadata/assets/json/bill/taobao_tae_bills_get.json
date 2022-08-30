@@ -1,8 +1,4 @@
 {
-	"id": 24513,
-	"name": "taobao.tae.bills.get",
-	"apiChineseName": "tae查询账单明细",
-	"description": "tae查询账单明细",
 	"requestParams": [
 		{
 			"name": "query_start_date",
@@ -50,8 +46,8 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "传入需要返回的字段,参见Bill结构体",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -66,9 +62,6 @@
 			"description": "是否存在下一页"
 		},
 		{
-			"name": "bills",
-			"type": "BillDto []",
-			"description": "账单列表",
 			"subParams": [
 				{
 					"name": "total_amount",
@@ -170,7 +163,14 @@
 					"type": "String",
 					"description": "支付宝交易号,暂不提供"
 				}
-			]
+			],
+			"name": "bills",
+			"type": "BillDto []",
+			"description": "账单列表"
 		}
-	]
+	],
+	"name": "taobao.tae.bills.get",
+	"apiChineseName": "tae查询账单明细",
+	"description": "tae查询账单明细",
+	"id": 24513
 }

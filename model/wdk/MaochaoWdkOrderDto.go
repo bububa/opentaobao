@@ -28,6 +28,12 @@ type MaochaoWdkOrderDto struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 子订单扩展字段, 订单商品采购价数据purchase_price
 	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
+	// 商品条码
+	Barcode string `json:"barcode,omitempty" xml:"barcode,omitempty"`
+	// 返利比例
+	PurchaseRebateRatio string `json:"purchase_rebate_ratio,omitempty" xml:"purchase_rebate_ratio,omitempty"`
+	// 不退货返利比例
+	UnRebateRatio string `json:"un_rebate_ratio,omitempty" xml:"un_rebate_ratio,omitempty"`
 	// 购买数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 五道口子订单ID
@@ -40,4 +46,6 @@ type MaochaoWdkOrderDto struct {
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 商品价格
 	AuctionPrice int64 `json:"auction_price,omitempty" xml:"auction_price,omitempty"`
+	// 是否进货返利
+	PurchaseRebate bool `json:"purchase_rebate,omitempty" xml:"purchase_rebate,omitempty"`
 }

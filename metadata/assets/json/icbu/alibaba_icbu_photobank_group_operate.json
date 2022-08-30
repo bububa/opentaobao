@@ -1,13 +1,6 @@
 {
-	"id": 41767,
-	"name": "alibaba.icbu.photobank.group.operate",
-	"apiChineseName": "图片银行分组操作接口",
-	"description": "修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名",
 	"requestParams": [
 		{
-			"name": "photo_group_operation_request",
-			"type": "PhotoGroupOperationRequest",
-			"description": "图片分组操作请求对象",
 			"subParams": [
 				{
 					"name": "group_name",
@@ -24,54 +17,55 @@
 					"type": "String",
 					"description": "add表示新增分组，delete表示删除分组，rename表示重命名分组"
 				}
-			]
+			],
+			"name": "photo_group_operation_request",
+			"type": "PhotoGroupOperationRequest",
+			"description": "图片分组操作请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "photo_group_result",
-			"type": "PhotoGroupResult",
-			"description": "接口返回的数据结果",
 			"subParams": [
 				{
-					"name": "photobank_group",
-					"type": "PhotobankGroup",
-					"description": "add操作中表示新增的图片分组，rename操作中表示重命名的分组，delete操作中返回分组信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "level3",
 							"type": "Number",
-							"description": "level3",
-							"required": true
+							"description": "level3"
 						},
 						{
 							"name": "level2",
 							"type": "Number",
-							"description": "level2",
-							"required": true
+							"description": "level2"
 						},
 						{
 							"name": "level1",
 							"type": "Number",
-							"description": "level1",
-							"required": true
+							"description": "level1"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "分组名字",
-							"required": true
+							"description": "分组名字"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "分组id",
-							"required": true
+							"description": "分组id"
 						}
-					]
+					],
+					"name": "photobank_group",
+					"type": "PhotobankGroup",
+					"description": "add操作中表示新增的图片分组，rename操作中表示重命名的分组，delete操作中返回分组信息"
 				}
-			]
+			],
+			"name": "photo_group_result",
+			"type": "PhotoGroupResult",
+			"description": "接口返回的数据结果"
 		}
-	]
+	],
+	"name": "alibaba.icbu.photobank.group.operate",
+	"apiChineseName": "图片银行分组操作接口",
+	"description": "修改用户图片银行的分组信息，包括 新增分组，删除分组，分组重命名",
+	"id": 41767
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26038,
-	"name": "alibaba.aliqin.ta.sms.num.query",
-	"apiChineseName": "短信查询",
-	"description": "查询短信发送揭露",
 	"requestParams": [
 		{
 			"name": "biz_id",
@@ -56,59 +52,55 @@
 			"description": "总页数"
 		},
 		{
-			"name": "values",
-			"type": "FcPartnerSmsDetailDto []",
-			"description": "1",
 			"subParams": [
 				{
 					"name": "extend",
 					"type": "String",
-					"description": "公共回传参数",
-					"required": true
+					"description": "公共回传参数"
 				},
 				{
 					"name": "rec_num",
 					"type": "String",
-					"description": "短信接收号码",
-					"required": true
+					"description": "短信接收号码"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "sms_code",
 					"type": "String",
-					"description": "模板编码",
-					"required": true
+					"description": "模板编码"
 				},
 				{
 					"name": "sms_content",
 					"type": "String",
-					"description": "短信内容",
-					"required": true
+					"description": "短信内容"
 				},
 				{
 					"name": "sms_receiver_time",
 					"type": "Date",
-					"description": "短信接收时间",
-					"required": true
+					"description": "短信接收时间"
 				},
 				{
 					"name": "sms_send_time",
 					"type": "Date",
-					"description": "短信发送时间",
-					"required": true
+					"description": "短信发送时间"
 				},
 				{
 					"name": "sms_status",
 					"type": "Number",
-					"description": "发送状态 1：等待回执，2：发送失败，3：发送成功",
-					"required": true
+					"description": "发送状态 1：等待回执，2：发送失败，3：发送成功"
 				}
-			]
+			],
+			"name": "values",
+			"type": "FcPartnerSmsDetailDto []",
+			"description": "1"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.ta.sms.num.query",
+	"apiChineseName": "短信查询",
+	"description": "查询短信发送揭露",
+	"id": 26038
 }

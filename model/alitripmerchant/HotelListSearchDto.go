@@ -38,6 +38,10 @@ type HotelListSearchDto struct {
 	Longitude string `json:"longitude,omitempty" xml:"longitude,omitempty"`
 	// 品牌code
 	BrandCode string `json:"brand_code,omitempty" xml:"brand_code,omitempty"`
+	// 城市首字母
+	CityPy string `json:"city_py,omitempty" xml:"city_py,omitempty"`
+	// 酒店电话
+	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 经纬度类型 0-高德 1-google
 	PositionType int64 `json:"position_type,omitempty" xml:"position_type,omitempty"`
 	// 标准库id
@@ -48,6 +52,8 @@ type HotelListSearchDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 是否热门
 	Hot int64 `json:"hot,omitempty" xml:"hot,omitempty"`
+	// 代金券实体类
+	VoucherInfo *VoucherVo `json:"voucher_info,omitempty" xml:"voucher_info,omitempty"`
 	// 是否满房 0未满房1满房
 	Full bool `json:"full,omitempty" xml:"full,omitempty"`
 }

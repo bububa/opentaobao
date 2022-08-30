@@ -1,0 +1,109 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "api业务线编码。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				}
+			],
+			"name": "api_service_context",
+			"type": "ApiServiceContext",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务线编码。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "计划状态。0暂停推广，1正在推广，9结束推广"
+				},
+				{
+					"subParams": [
+						{
+							"name": "day_budget",
+							"type": "String",
+							"description": "日预算"
+						}
+					],
+					"name": "day_budget",
+					"type": "DayBudgetTopDto",
+					"description": "预算"
+				}
+			],
+			"name": "campaign_query",
+			"type": "CampaignQueryTopDto",
+			"description": "计划查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "campaignId"
+						}
+					],
+					"name": "solution_result_top_d_t_o",
+					"type": "SolutionResultTopDto",
+					"description": "返回结果"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "错误编码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						}
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回状态码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果体"
+		}
+	],
+	"name": "taobao.onebp.dkx.campaign.campaign.modify",
+	"apiChineseName": "修改计划",
+	"description": "修改计划。场景和bizCode的对应关系为：拉新快adStrategyDkx，上新快adStrategyShangXin ，货品加速adStrategyProductSpeed，入会快adStrategyRuHui，预热蓄水adStrategyYuRe，爆发收割adStrategyBaoFa",
+	"id": 58943
+}

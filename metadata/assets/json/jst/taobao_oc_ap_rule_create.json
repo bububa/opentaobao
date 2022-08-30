@@ -1,15 +1,11 @@
 {
-	"id": 25566,
-	"name": "taobao.oc.ap.rule.create",
-	"apiChineseName": "创建分账规则",
-	"description": "OC分账业务功能支持，用于创建分账规则",
 	"requestParams": [
 		{
 			"name": "division_rule",
 			"type": "Number[]",
 			"description": "传入比例数组后者金额数组",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "ext_attributes",
@@ -34,5 +30,9 @@
 			"type": "Boolean",
 			"description": "表示方法是否正常执行成功"
 		}
-	]
+	],
+	"name": "taobao.oc.ap.rule.create",
+	"apiChineseName": "创建分账规则",
+	"description": "OC分账业务功能支持，用于创建分账规则",
+	"id": 25566
 }

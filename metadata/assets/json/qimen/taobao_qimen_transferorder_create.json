@@ -1,12 +1,6 @@
 {
-	"id": 29228,
-	"name": "taobao.qimen.transferorder.create",
-	"apiChineseName": "调拨单创建",
-	"description": "调拨单创建",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "erpOrderCode",
@@ -34,9 +28,6 @@
 					"description": "扩展属性,HZ1234,string(500),,"
 				},
 				{
-					"name": "transferItems",
-					"type": "TransferItems[]",
-					"description": "项目集",
 					"subParams": [
 						{
 							"name": "scItemCode",
@@ -53,7 +44,10 @@
 							"type": "String",
 							"description": "货品编码,HZ1234,string(50),必填,"
 						}
-					]
+					],
+					"name": "transferItems",
+					"type": "TransferItems[]",
+					"description": "项目集"
 				},
 				{
 					"name": "ownerCode",
@@ -61,13 +55,13 @@
 					"description": "111",
 					"required": true
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "flag",
@@ -88,10 +82,6 @@
 					"required": true
 				},
 				{
-					"name": "transferExecuteInfo",
-					"type": "Struct",
-					"description": "调拨单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "transferOrderCode",
@@ -111,9 +101,19 @@
 							"description": "预计入库时间,0,string(50),,",
 							"required": true
 						}
-					]
+					],
+					"name": "transferExecuteInfo",
+					"type": "Struct",
+					"description": "调拨单信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Struct"
 		}
-	]
+	],
+	"name": "taobao.qimen.transferorder.create",
+	"apiChineseName": "调拨单创建",
+	"description": "调拨单创建",
+	"id": 29228
 }

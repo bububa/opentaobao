@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页数",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "product_ids",
+							"type": "Number[]",
+							"description": "产品id列表"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总条数"
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "当前页数"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小"
+						}
+					],
+					"name": "data",
+					"type": "PackageApiResDTO",
+					"description": "酒景套餐产品列表查询结果"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "返回参数"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotelticket.product.list",
+	"apiChineseName": "阿信酒景套餐产品列表查询",
+	"description": "阿信酒景套餐产品列表查询",
+	"id": 62019
+}

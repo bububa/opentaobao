@@ -1,13 +1,14 @@
 {
-	"id": 25271,
-	"name": "taobao.open.account.token.apply",
-	"apiChineseName": "申请免登Open Account Token",
-	"description": "申请免登Open Account Token",
 	"requestParams": [
 		{
-			"name": "token_timestamp",
+			"name": "isv_account_id",
+			"type": "String",
+			"description": "isv自己账号的唯一id"
+		},
+		{
+			"name": "login_state_expire_in",
 			"type": "Number",
-			"description": "时间戳单位是毫秒"
+			"description": "ISV APP的登录态时长单位是秒"
 		},
 		{
 			"name": "open_account_id",
@@ -15,19 +16,14 @@
 			"description": "open account id"
 		},
 		{
-			"name": "isv_account_id",
-			"type": "String",
-			"description": "isv自己账号的唯一id"
+			"name": "token_timestamp",
+			"type": "Number",
+			"description": "时间戳单位是毫秒"
 		},
 		{
 			"name": "uuid",
 			"type": "String",
 			"description": "用于防重放的唯一id"
-		},
-		{
-			"name": "login_state_expire_in",
-			"type": "Number",
-			"description": "ISV APP的登录态时长单位是秒"
 		},
 		{
 			"name": "ext",
@@ -37,10 +33,12 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "OpenAccountTokenApplyResult",
-			"description": "返回的token结果",
 			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				},
 				{
 					"name": "data",
 					"type": "String",
@@ -55,13 +53,15 @@
 					"name": "successful",
 					"type": "Boolean",
 					"description": "是否成功"
-				},
-				{
-					"name": "code",
-					"type": "Number",
-					"description": "错误码"
 				}
-			]
+			],
+			"name": "data",
+			"type": "OpenAccountTokenApplyResult",
+			"description": "返回的token结果"
 		}
-	]
+	],
+	"name": "taobao.open.account.token.apply",
+	"apiChineseName": "申请免登Open Account Token",
+	"description": "申请免登Open Account Token",
+	"id": 25271
 }

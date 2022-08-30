@@ -1,8 +1,4 @@
 {
-	"id": 29086,
-	"name": "yunos.ad.audit.creative.add",
-	"apiChineseName": "单个创意预审接口",
-	"description": "YunOS广告业务第三方DSP单个创意预审接口",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "creative",
-			"type": "CreativeParamDto",
-			"description": "创意审核入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "creative_id",
@@ -78,24 +70,32 @@
 					"description": "创意类型",
 					"required": true
 				}
-			]
+			],
+			"name": "creative",
+			"type": "CreativeParamDto",
+			"description": "创意审核入参",
+			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "status_code",
-			"type": "Number",
-			"description": "statusCode"
-		},
 		{
 			"name": "message",
 			"type": "String",
 			"description": "message"
 		},
 		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "statusCode"
+		},
+		{
 			"name": "is_ok",
 			"type": "Boolean",
 			"description": "isOk"
 		}
-	]
+	],
+	"name": "yunos.ad.audit.creative.add",
+	"apiChineseName": "单个创意预审接口",
+	"description": "YunOS广告业务第三方DSP单个创意预审接口",
+	"id": 29086
 }

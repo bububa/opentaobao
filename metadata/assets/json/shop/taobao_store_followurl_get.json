@@ -1,8 +1,4 @@
 {
-	"id": 40699,
-	"name": "taobao.store.followurl.get",
-	"apiChineseName": "获取店铺关注URL",
-	"description": "获取关注店铺的URL",
 	"requestParams": [
 		{
 			"name": "callback_url",
@@ -26,5 +22,9 @@
 			"type": "String",
 			"description": "店铺关注URL"
 		}
-	]
+	],
+	"name": "taobao.store.followurl.get",
+	"apiChineseName": "获取店铺关注URL",
+	"description": "获取关注店铺的URL",
+	"id": 40699
 }

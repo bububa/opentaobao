@@ -1,14 +1,6 @@
 {
-	"id": 55376,
-	"name": "taobao.miniapp.distribution.order.create",
-	"apiChineseName": "创建小程序投放计划",
-	"description": "帮助商家，创建小程序的投放计划。",
 	"requestParams": [
 		{
-			"name": "order_request",
-			"type": "DistributionOrderSaveOpenRequest",
-			"description": "投放计划信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "url",
@@ -56,7 +48,11 @@
 					"type": "Number",
 					"description": "投放计划结束时间"
 				}
-			]
+			],
+			"name": "order_request",
+			"type": "DistributionOrderSaveOpenRequest",
+			"description": "投放计划信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -80,5 +76,9 @@
 			"type": "Number",
 			"description": "创建成功的投放计划id"
 		}
-	]
+	],
+	"name": "taobao.miniapp.distribution.order.create",
+	"apiChineseName": "创建小程序投放计划",
+	"description": "帮助商家，创建小程序的投放计划。该api，仅针对特定场景开放，目前仅支持客服场景，具体支持的场景列表请联系技术支持或业务对接人确认。",
+	"id": 55376
 }

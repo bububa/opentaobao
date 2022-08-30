@@ -1,29 +1,116 @@
 {
-	"id": 41028,
-	"name": "taobao.place.store.create",
-	"apiChineseName": "商户门店创建接口",
-	"description": "用于商家创建线下门店",
 	"requestParams": [
 		{
-			"name": "store_create",
-			"type": "StoreUpdateTopDto",
-			"description": "门店创建入参",
 			"subParams": [
+				{
+					"name": "description",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "门店状态，枚举值。NORMAL：正常。CLOSE：关店。HOLD: 暂停营业"
+				},
+				{
+					"subParams": [
+						{
+							"name": "fax",
+							"type": "String",
+							"description": "传真"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "移动电话",
+							"required": true
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店联系人"
+						}
+					],
+					"name": "store_keeper",
+					"type": "StoreKeeperDto",
+					"description": "门店信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "pos_y",
+							"type": "BigDecimal",
+							"description": "维度"
+						},
+						{
+							"name": "pos_x",
+							"type": "BigDecimal",
+							"description": "经度"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "business_area",
+							"type": "String",
+							"description": "营业面积"
+						}
+					],
+					"name": "store_adress",
+					"type": "StoreAdressDto",
+					"description": "门店地址"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "门店结束营业时间"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "门店开始营业时间"
+				},
 				{
 					"name": "name",
 					"type": "String",
 					"description": "门店主名",
-					"required": true
-				},
-				{
-					"name": "sub_name",
-					"type": "String",
-					"description": "分店名称"
-				},
-				{
-					"name": "main_category",
-					"type": "Number",
-					"description": "门店主类目",
 					"required": true
 				},
 				{
@@ -39,109 +126,15 @@
 					"required": true
 				},
 				{
-					"name": "start_time",
+					"name": "main_category",
+					"type": "Number",
+					"description": "门店主类目",
+					"required": true
+				},
+				{
+					"name": "sub_name",
 					"type": "String",
-					"description": "门店开始营业时间"
-				},
-				{
-					"name": "end_time",
-					"type": "String",
-					"description": "门店结束营业时间"
-				},
-				{
-					"name": "store_adress",
-					"type": "StoreAdressDto",
-					"description": "门店地址",
-					"subParams": [
-						{
-							"name": "province",
-							"type": "String",
-							"description": "省份",
-							"required": true
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "城市",
-							"required": true
-						},
-						{
-							"name": "area",
-							"type": "String",
-							"description": "区",
-							"required": true
-						},
-						{
-							"name": "town",
-							"type": "String",
-							"description": "街道"
-						},
-						{
-							"name": "detail_address",
-							"type": "String",
-							"description": "详细地址",
-							"required": true
-						},
-						{
-							"name": "pos_x",
-							"type": "String",
-							"description": "经度"
-						},
-						{
-							"name": "pos_y",
-							"type": "String",
-							"description": "维度"
-						},
-						{
-							"name": "business_area",
-							"type": "String",
-							"description": "营业面积"
-						}
-					]
-				},
-				{
-					"name": "store_keeper",
-					"type": "StoreKeeperDto",
-					"description": "门店信息",
-					"subParams": [
-						{
-							"name": "name",
-							"type": "String",
-							"description": "门店联系人"
-						},
-						{
-							"name": "zip_code",
-							"type": "String",
-							"description": "邮编"
-						},
-						{
-							"name": "mobile",
-							"type": "String",
-							"description": "移动电话",
-							"required": true
-						},
-						{
-							"name": "tel",
-							"type": "String",
-							"description": "电话",
-							"required": true
-						},
-						{
-							"name": "fax",
-							"type": "String",
-							"description": "传真"
-						}
-					]
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "门店状态，枚举值。NORMAL：正常。CLOSE：关店。HOLD: 暂停营业"
-				},
-				{
-					"name": "description",
-					"type": "String",
-					"description": "备注"
+					"description": "分店名称"
 				},
 				{
 					"name": "shop_id",
@@ -155,7 +148,7 @@
 				},
 				{
 					"name": "tags",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "门店标"
 				},
 				{
@@ -164,9 +157,6 @@
 					"description": "24小时营业"
 				},
 				{
-					"name": "attributes",
-					"type": "AttributeValueTopDto[]",
-					"description": "通用属性",
 					"subParams": [
 						{
 							"name": "value",
@@ -178,12 +168,12 @@
 							"type": "String",
 							"description": "属性KEY"
 						}
-					]
+					],
+					"name": "attributes",
+					"type": "AttributeValueTopDto[]",
+					"description": "通用属性"
 				},
 				{
-					"name": "category_property_values",
-					"type": "PropertyValueTopDto[]",
-					"description": "类目属性",
 					"subParams": [
 						{
 							"name": "value",
@@ -195,7 +185,10 @@
 							"type": "Number",
 							"description": "属性ID"
 						}
-					]
+					],
+					"name": "category_property_values",
+					"type": "PropertyValueTopDto[]",
+					"description": "类目属性"
 				},
 				{
 					"name": "standard_category_id",
@@ -208,9 +201,6 @@
 					"description": "业务身份"
 				},
 				{
-					"name": "biz_attributes",
-					"type": "AttributeValueTopDto[]",
-					"description": "业务属性",
 					"subParams": [
 						{
 							"name": "value",
@@ -222,7 +212,10 @@
 							"type": "String",
 							"description": "属性KEY"
 						}
-					]
+					],
+					"name": "biz_attributes",
+					"type": "AttributeValueTopDto[]",
+					"description": "业务属性"
 				},
 				{
 					"name": "logo",
@@ -249,7 +242,10 @@
 					"type": "Number",
 					"description": "审核状态"
 				}
-			]
+			],
+			"name": "store_create",
+			"type": "StoreUpdateTopDto",
+			"description": "门店创建入参"
 		}
 	],
 	"responseParams": [
@@ -258,5 +254,9 @@
 			"type": "Number",
 			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.place.store.create",
+	"apiChineseName": "商户门店创建接口",
+	"description": "用于商家创建线下门店",
+	"id": 41028
 }

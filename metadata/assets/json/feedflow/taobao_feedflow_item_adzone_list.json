@@ -1,14 +1,6 @@
 {
-	"id": 43295,
-	"name": "taobao.feedflow.item.adzone.list",
-	"apiChineseName": "批量查询可用广告位列表",
-	"description": "批量查询可用广告位列表",
 	"requestParams": [
 		{
-			"name": "adzone_query",
-			"type": "AdzoneQueryDto",
-			"description": "广告位查询条件",
-			"required": true,
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -26,48 +18,51 @@
 					"type": "String",
 					"description": "广告位名称"
 				}
-			]
+			],
+			"name": "adzone_query",
+			"type": "AdzoneQueryDto",
+			"description": "广告位查询条件",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
-				},
-				{
-					"name": "adzone_list",
-					"type": "AdzoneDto[]",
-					"description": "广告位列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "adzone_name",
 							"type": "String",
-							"description": "广告位名称",
-							"required": true
+							"description": "广告位名称"
 						},
 						{
 							"name": "adzone_id",
 							"type": "Number",
-							"description": "广告位id",
-							"required": true
+							"description": "广告位id"
 						}
-					]
+					],
+					"name": "adzone_list",
+					"type": "AdzoneDto[]",
+					"description": "广告位列表"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.adzone.list",
+	"apiChineseName": "批量查询可用广告位列表",
+	"description": "批量查询可用广告位列表",
+	"id": 43295
 }

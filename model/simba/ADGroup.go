@@ -32,8 +32,6 @@ type ADGroup struct {
 	DefaultPrice int64 `json:"default_price,omitempty" xml:"default_price,omitempty"`
 	// 非搜索出价，单位为分，不能小于5
 	NonsearchMaxPrice int64 `json:"nonsearch_max_price,omitempty" xml:"nonsearch_max_price,omitempty"`
-	// 通投状态,1：开启；0：暂停；默认为1
-	NonsearchStatus int64 `json:"nonsearch_status,omitempty" xml:"nonsearch_status,omitempty"`
 	// 已经废弃
 	MobileDiscount int64 `json:"mobile_discount,omitempty" xml:"mobile_discount,omitempty"`
 	// 非搜索是否使用默认出价，false-不用；true-使用；默认为true;

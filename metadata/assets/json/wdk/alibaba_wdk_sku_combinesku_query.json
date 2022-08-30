@@ -1,24 +1,11 @@
 {
-	"id": 39580,
-	"name": "alibaba.wdk.sku.combinesku.query",
-	"apiChineseName": "组合商品查询接口",
-	"description": "查询组合商品接口",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SkuQueryDO",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "ou_code",
 					"type": "String",
 					"description": "门店或DC编码,如果填写了渠道店id，该字段会被忽略"
-				},
-				{
-					"name": "shop_id",
-					"type": "String",
-					"description": "渠道店id"
 				},
 				{
 					"name": "channel_code",
@@ -30,173 +17,161 @@
 					"type": "String[]",
 					"description": "商品编码（多个条码用英文逗号隔开，最多支持20个）",
 					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "SkuQueryDO",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResults",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功",
-					"required": true
+					"description": "接口调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "接口调用异常编码",
-					"required": true
+					"description": "接口调用异常编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "接口调用异常信息",
-					"required": true
+					"description": "接口调用异常信息"
 				},
 				{
-					"name": "models",
-					"type": "ApiResult[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个商品是否查询成功",
-							"required": true
+							"description": "单个商品是否查询成功"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "单个商品查询异常编码（异常才有值）",
-							"required": true
+							"description": "单个商品查询异常编码（异常才有值）"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "单个商品查询异常信息（异常才有值）",
-							"required": true
+							"description": "单个商品查询异常信息（异常才有值）"
 						},
 						{
-							"name": "model",
-							"type": "SkuDo",
-							"description": "商品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "商品唯一编码，不可修改",
-									"required": true
+									"description": "商品唯一编码，不可修改"
 								},
 								{
 									"name": "sku_name",
 									"type": "String",
-									"description": "商品名称，对商品直观的描述，通常包含了品牌、规格等信息",
-									"required": true
-								},
-								{
-									"name": "ou_code",
-									"type": "String",
-									"description": "门店或DC编码",
-									"required": true
-								},
-								{
-									"name": "detail_pic_urls",
-									"type": "String",
-									"description": "详情图片地址（多个图片用英文逗号分割）",
-									"required": true
-								},
-								{
-									"name": "sale_price",
-									"type": "String",
-									"description": "商品价格（单位元）",
-									"required": true
-								},
-								{
-									"name": "barcodes",
-									"type": "String",
-									"description": "条码（支持一品多码，多个条码以英文逗号分隔）",
-									"required": true
-								},
-								{
-									"name": "allow_app_sale",
-									"type": "Number",
-									"description": "是否app可售（1可售，0不可售，默认0）",
-									"required": true
-								},
-								{
-									"name": "app_effect_begin_time",
-									"type": "Date",
-									"description": "线上生效开始时间",
-									"required": true
-								},
-								{
-									"name": "app_effect_end_time",
-									"type": "Date",
-									"description": "线上生效过期时间",
-									"required": true
-								},
-								{
-									"name": "sub_skus",
-									"type": "SubSkuDo[]",
-									"description": "子商品信息",
-									"required": true,
-									"subParams": [
-										{
-											"name": "sub_sku_code",
-											"type": "String",
-											"description": "子商品编码（需要先有子商品）",
-											"required": true
-										},
-										{
-											"name": "sub_sku_num",
-											"type": "String",
-											"description": "子商品数量",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "category_code",
-									"type": "String",
-									"description": "商家类目编码",
-									"required": true
-								},
-								{
-									"name": "hm_category_code",
-									"type": "String",
-									"description": "盒马类目编码",
-									"required": true
-								},
-								{
-									"name": "sale_spec",
-									"type": "String",
-									"description": "销售规格",
-									"required": true
+									"description": "商品名称，对商品直观的描述，通常包含了品牌、规格等信息"
 								},
 								{
 									"name": "main_pic_urls",
 									"type": "String",
-									"description": "主图",
-									"required": true
+									"description": "主图"
+								},
+								{
+									"name": "ou_code",
+									"type": "String",
+									"description": "门店或DC编码"
+								},
+								{
+									"name": "detail_pic_urls",
+									"type": "String",
+									"description": "详情图片地址（多个图片用英文逗号分割）"
+								},
+								{
+									"name": "sale_price",
+									"type": "String",
+									"description": "商品价格（单位元）"
+								},
+								{
+									"name": "barcodes",
+									"type": "String",
+									"description": "条码（支持一品多码，多个条码以英文逗号分隔）"
+								},
+								{
+									"name": "allow_app_sale",
+									"type": "Number",
+									"description": "是否app可售（1可售，0不可售，默认0）"
+								},
+								{
+									"name": "app_effect_begin_time",
+									"type": "Date",
+									"description": "线上生效开始时间"
+								},
+								{
+									"name": "app_effect_end_time",
+									"type": "Date",
+									"description": "线上生效过期时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "sub_sku_code",
+											"type": "String",
+											"description": "子商品编码（需要先有子商品）"
+										},
+										{
+											"name": "sub_sku_num",
+											"type": "String",
+											"description": "子商品数量"
+										}
+									],
+									"name": "sub_skus",
+									"type": "SubSkuDo[]",
+									"description": "子商品信息"
+								},
+								{
+									"name": "category_code",
+									"type": "String",
+									"description": "商家类目编码"
+								},
+								{
+									"name": "hm_category_code",
+									"type": "String",
+									"description": "盒马类目编码"
+								},
+								{
+									"name": "sale_spec",
+									"type": "String",
+									"description": "销售规格"
 								},
 								{
 									"name": "sale_price_unit_cent",
 									"type": "Number",
-									"description": "商品价格（单位分）",
-									"required": true
+									"description": "商品价格（单位分）"
 								}
-							]
+							],
+							"name": "model",
+							"type": "SkuDo",
+							"description": "商品信息"
 						}
-					]
+					],
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "商品列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.combinesku.query",
+	"apiChineseName": "组合商品查询接口",
+	"description": "查询组合商品接口",
+	"id": 39580
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27155,
-	"name": "taobao.eticket.merchant.ma.reverse",
-	"apiChineseName": "电子凭证冲正接口",
-	"description": "电子凭证平台冲正接口",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -47,9 +43,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "ReverseMaCallbackResp",
-			"description": "回复结果",
 			"subParams": [
 				{
 					"name": "attribute_map",
@@ -57,7 +50,10 @@
 					"description": "业务参数KV",
 					"required": true
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "ReverseMaCallbackResp",
+			"description": "回复结果"
 		},
 		{
 			"name": "ret_code",
@@ -69,5 +65,9 @@
 			"type": "String",
 			"description": "子结果信息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.reverse",
+	"apiChineseName": "电子凭证冲正接口",
+	"description": "电子凭证平台冲正接口",
+	"id": 27155
 }

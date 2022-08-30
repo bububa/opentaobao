@@ -1,8 +1,4 @@
 {
-	"id": 54270,
-	"name": "alitrip.agent.flight.sell.refund.refuse",
-	"apiChineseName": "销售退票拒绝",
-	"description": "销售退票拒绝",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -12,7 +8,7 @@
 		{
 			"name": "domestic_intl",
 			"type": "Number",
-			"description": "国内国际标识"
+			"description": "国内国际标识:1:国内,2:国际"
 		},
 		{
 			"name": "refuse_reason",
@@ -22,29 +18,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.refund.refuse",
+	"apiChineseName": "销售退票拒绝",
+	"description": "销售退票拒绝",
+	"id": 54270
 }

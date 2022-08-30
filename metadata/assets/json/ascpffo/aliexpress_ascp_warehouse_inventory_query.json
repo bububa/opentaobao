@@ -1,0 +1,161 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "库存类型（1 良品，101 残品）",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，最大30"
+				},
+				{
+					"name": "sc_item_id_list",
+					"type": "Number[]",
+					"description": "货品列表，最多30个"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓编码"
+				}
+			],
+			"name": "warehouse_inventory_query_dto",
+			"type": "WarehouseInventoryQueryDto",
+			"description": "查询DTO",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "仓名称",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "whc_bar_code",
+							"type": "String",
+							"description": "货品条形码",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "货品编码",
+							"required": true
+						},
+						{
+							"name": "sc_item_name",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "lock_quantity",
+							"type": "String",
+							"description": "占用数量",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "仓内实际库存数量(包含占用)",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型(1 良品，101 残品)",
+							"required": true
+						}
+					],
+					"name": "data_list",
+					"type": "ErpWarehouseInventoryDto[]",
+					"description": "DTO列表",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "查询结果总数",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "分页查询结果"
+		}
+	],
+	"name": "aliexpress.ascp.warehouse.inventory.query",
+	"apiChineseName": "AliExpress在仓库存查询API",
+	"description": "AliExpress在仓库存查询查询API",
+	"id": 57500
+}

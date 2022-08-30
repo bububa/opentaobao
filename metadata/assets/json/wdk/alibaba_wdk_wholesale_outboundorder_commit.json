@@ -1,20 +1,8 @@
 {
-	"id": 36773,
-	"name": "alibaba.wdk.wholesale.outboundorder.commit",
-	"apiChineseName": "盒马帮发货信息回传接口",
-	"description": "盒马帮发货信息回传接口",
 	"requestParams": [
 		{
-			"name": "outbound_info_commit_req",
-			"type": "OutboundInfoCommitReq",
-			"description": "发货信息参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "outbound_item_infos",
-					"type": "OutboundItemInfo[]",
-					"description": "商品列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "wholesale_order_no",
@@ -51,9 +39,6 @@
 							"required": true
 						},
 						{
-							"name": "containers",
-							"type": "ContainerDo[]",
-							"description": "容器信息",
 							"subParams": [
 								{
 									"name": "quantity",
@@ -70,9 +55,16 @@
 									"type": "Date",
 									"description": "生产日期"
 								}
-							]
+							],
+							"name": "containers",
+							"type": "ContainerDo[]",
+							"description": "容器信息"
 						}
-					]
+					],
+					"name": "outbound_item_infos",
+					"type": "OutboundItemInfo[]",
+					"description": "商品列表",
+					"required": true
 				},
 				{
 					"name": "estimated_arrival_at",
@@ -115,34 +107,39 @@
 					"type": "String",
 					"description": "商家编码，已经废弃"
 				}
-			]
+			],
+			"name": "outbound_info_commit_req",
+			"type": "OutboundInfoCommitReq",
+			"description": "发货信息参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.wholesale.outboundorder.commit",
+	"apiChineseName": "盒马帮发货信息回传接口",
+	"description": "盒马帮发货信息回传接口",
+	"id": 36773
 }

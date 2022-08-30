@@ -1,8 +1,4 @@
 {
-	"id": 42934,
-	"name": "taobao.uscesl.biz.item.light.up",
-	"apiChineseName": "商品条码亮灯API",
-	"description": "亮灯API",
 	"requestParams": [
 		{
 			"name": "item_bar_code",
@@ -32,61 +28,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "return_code",
-					"type": "Json",
-					"description": "返回码",
-					"required": true
+					"type": "String",
+					"description": "返回码"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "business_code",
 					"type": "String",
-					"description": "业务错误码",
-					"required": true
+					"description": "业务错误码"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "true或false",
-					"required": true
+					"description": "true或false"
 				},
 				{
-					"name": "target",
-					"type": "LightResultInfoBo",
-					"description": "true或false",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success_count",
 							"type": "Number",
-							"description": "成功数量",
-							"required": true
+							"description": "成功数量"
 						},
 						{
 							"name": "fail_count",
 							"type": "Number",
-							"description": "失败数量",
-							"required": true
+							"description": "失败数量"
 						},
 						{
 							"name": "notify_message",
 							"type": "String",
-							"description": "通知消息",
-							"required": true
+							"description": "通知消息"
 						}
-					]
+					],
+					"name": "target",
+					"type": "LightResultInfoBo",
+					"description": "true或false"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.item.light.up",
+	"apiChineseName": "商品条码亮灯API",
+	"description": "亮灯API",
+	"id": 42934
 }

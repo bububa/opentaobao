@@ -1,8 +1,4 @@
 {
-	"id": 50362,
-	"name": "alibaba.ascp.industry.icp.query.lbx",
-	"apiChineseName": "icp订单号查询lbx订单号",
-	"description": "根据icp订单号查询lbx订单号",
 	"requestParams": [
 		{
 			"name": "icp_order_code",
@@ -12,151 +8,133 @@
 	],
 	"responseParams": [
 		{
-			"name": "biz_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "请求的参数异常",
-					"required": true
+					"description": "请求的参数异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "请求的参数异常code",
-					"required": true
+					"description": "请求的参数异常code"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "out_biz_code",
 							"type": "String",
-							"description": "外部icps单号",
-							"required": true
+							"description": "外部icps单号"
 						},
 						{
 							"name": "transfer_order_status",
 							"type": "String",
-							"description": "调拨状态",
-							"required": true
+							"description": "调拨状态"
 						},
 						{
-							"name": "transfer_detail_list",
-							"type": "Transferdetaildtolist[]",
-							"description": "单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "store_code",
 									"type": "String",
-									"description": "仓code",
-									"required": true
+									"description": "仓code"
 								},
 								{
 									"name": "unit_biz_code",
 									"type": "String",
-									"description": "LBX订单号",
-									"required": true
+									"description": "LBX订单号"
 								},
 								{
 									"name": "unit_type",
 									"type": "String",
-									"description": "1-出库单；2-入库单",
-									"required": true
+									"description": "1-出库单；2-入库单"
 								},
 								{
 									"name": "fulfil_uni_biz_status",
 									"type": "String",
-									"description": "出库lbx-下发仓、仓接单、部分出、全出 \t * 入库lbx-下发仓、仓接单、部分入、全入",
-									"required": true
+									"description": "出库lbx-下发仓、仓接单、部分出、全出 \t * 入库lbx-下发仓、仓接单、部分入、全入"
 								},
 								{
-									"name": "transfer_unit_order_item_list",
-									"type": "Transferunitorderitemdtos[]",
-									"description": "品基本信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "unit_biz_code",
 											"type": "String",
-											"description": "LBX订单号",
-											"required": true
+											"description": "LBX订单号"
 										},
 										{
 											"name": "item_id",
 											"type": "Number",
-											"description": "后端货品id",
-											"required": true
+											"description": "后端货品id"
 										},
 										{
 											"name": "item_name",
 											"type": "String",
-											"description": "后端货品名称",
-											"required": true
+											"description": "后端货品名称"
 										},
 										{
 											"name": "item_code",
 											"type": "String",
-											"description": "货品条码",
-											"required": true
+											"description": "货品条码"
 										},
 										{
 											"name": "plan_quantity",
 											"type": "Number",
-											"description": "计划下发数量",
-											"required": true
+											"description": "计划下发数量"
 										},
 										{
 											"name": "real_quantity",
 											"type": "Number",
-											"description": "实际回传数量",
-											"required": true
+											"description": "实际回传数量"
 										},
 										{
-											"name": "transfer_extend_order_item_list",
-											"type": "Transferextendorderitemdtolist[]",
-											"description": "品信息",
-											"required": true,
 											"subParams": [
 												{
 													"name": "inventory_type",
 													"type": "Number",
-													"description": "库存类型",
-													"required": true
+													"description": "库存类型"
 												},
 												{
 													"name": "quantity",
 													"type": "Number",
-													"description": "数量",
-													"required": true
+													"description": "数量"
 												},
 												{
 													"name": "batch_code",
 													"type": "String",
-													"description": "批次号",
-													"required": true
+													"description": "批次号"
 												}
-											]
+											],
+											"name": "transfer_extend_order_item_list",
+											"type": "Transferextendorderitemdtolist[]",
+											"description": "品信息"
 										}
-									]
+									],
+									"name": "transfer_unit_order_item_list",
+									"type": "Transferunitorderitemdtos[]",
+									"description": "品基本信息"
 								}
-							]
+							],
+							"name": "transfer_detail_list",
+							"type": "Transferdetaildtolist[]",
+							"description": "单信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "内容"
 				}
-			]
+			],
+			"name": "biz_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.industry.icp.query.lbx",
+	"apiChineseName": "icp订单号查询lbx订单号",
+	"description": "根据icp订单号查询lbx订单号",
+	"id": 50362
 }

@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				},
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				}
+			],
+			"name": "top_context_dto",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "客户等级"
+						},
+						{
+							"name": "score",
+							"type": "Number",
+							"description": "分数"
+						},
+						{
+							"name": "star_temp",
+							"type": "Number",
+							"description": "下月星级"
+						},
+						{
+							"name": "score_temp",
+							"type": "Number",
+							"description": "下月分数"
+						},
+						{
+							"name": "exchange_rate",
+							"type": "String",
+							"description": "汇率"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						},
+						{
+							"name": "region",
+							"type": "String",
+							"description": "区域"
+						},
+						{
+							"name": "customer_balance",
+							"type": "Number",
+							"description": "账户余额，单位：分"
+						}
+					],
+					"name": "result",
+					"type": "TopCustomerDto",
+					"description": "返回实体"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回类"
+		}
+	],
+	"name": "alibaba.scbp.ad.customer.find.customer.info",
+	"apiChineseName": "查询客户信息",
+	"description": "查询客户信息",
+	"id": 57920
+}

@@ -12,12 +12,12 @@ import (
 // 根据shopId和skuCode返回商品静态溯源url
 type AlibabaWdkItemTraceUrlGetAPIRequest struct {
 	model.Params
+	// 商品skuCode
+	_skuCode string
 	// 所属门店code
 	_shopId string
 	// 来源编码
 	_sourceCode string
-	// 商品skuCode
-	_skuCode string
 }
 
 // NewAlibabaWdkItemTraceUrlGetRequest 初始化AlibabaWdkItemTraceUrlGetAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetSkuCode is SkuCode Setter
+// 商品skuCode
+func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSkuCode(_skuCode string) error {
+	r._skuCode = _skuCode
+	r.Set("sku_code", _skuCode)
+	return nil
+}
+
+// GetSkuCode SkuCode Getter
+func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSkuCode() string {
+	return r._skuCode
 }
 
 // SetShopId is ShopId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSourceCode(_sourceCode string) 
 // GetSourceCode SourceCode Getter
 func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSourceCode() string {
 	return r._sourceCode
-}
-
-// SetSkuCode is SkuCode Setter
-// 商品skuCode
-func (r *AlibabaWdkItemTraceUrlGetAPIRequest) SetSkuCode(_skuCode string) error {
-	r._skuCode = _skuCode
-	r.Set("sku_code", _skuCode)
-	return nil
-}
-
-// GetSkuCode SkuCode Getter
-func (r AlibabaWdkItemTraceUrlGetAPIRequest) GetSkuCode() string {
-	return r._skuCode
 }

@@ -1,8 +1,4 @@
 {
-	"id": 22129,
-	"name": "taobao.jushita.jdp.users.get",
-	"apiChineseName": "获取开通的订单同步服务的用户",
-	"description": "获取开通的订单同步服务的用户，含有rds的路由关系",
 	"requestParams": [
 		{
 			"name": "start_modified",
@@ -32,9 +28,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "users",
-			"type": "JdpUser []",
-			"description": "用户列表",
 			"subParams": [
 				{
 					"name": "user_nick",
@@ -51,12 +44,19 @@
 					"type": "Number",
 					"description": "0:暂停1：正常2：sessoin失效，停止3：已删除"
 				}
-			]
+			],
+			"name": "users",
+			"type": "JdpUser []",
+			"description": "用户列表"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "总记录数"
 		}
-	]
+	],
+	"name": "taobao.jushita.jdp.users.get",
+	"apiChineseName": "获取开通的订单同步服务的用户",
+	"description": "获取开通的订单同步服务的用户，含有rds的路由关系",
+	"id": 22129
 }

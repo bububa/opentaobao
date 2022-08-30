@@ -1,8 +1,4 @@
 {
-	"id": 29096,
-	"name": "yunos.tvpubadmin.content.child.recoitem.query",
-	"apiChineseName": "查询少儿大厅推荐内容列表",
-	"description": "查询少儿大厅推荐内容列表",
 	"requestParams": [
 		{
 			"name": "id",
@@ -37,115 +33,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageVo",
-			"description": "搜索结果",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
-					"name": "record_list",
-					"type": "ChildRecItemVo[]",
-					"description": "内容列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "自增ID",
-							"required": true
+							"description": "自增ID"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "名称",
-							"required": true
+							"description": "名称"
 						},
 						{
 							"name": "version",
 							"type": "Number",
-							"description": "版本",
-							"required": true
+							"description": "版本"
 						},
 						{
 							"name": "node_id",
 							"type": "Number",
-							"description": "所属类目",
-							"required": true
+							"description": "所属类目"
 						},
 						{
 							"name": "layout_id",
 							"type": "Number",
-							"description": "布局ID",
-							"required": true
+							"description": "布局ID"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态：1-上线，0-下线",
-							"required": true
+							"description": "状态：1-上线，0-下线"
 						},
 						{
 							"name": "sort",
 							"type": "Number",
-							"description": "排序",
-							"required": true
+							"description": "排序"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "业务类型",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "extra",
 							"type": "String",
-							"description": "扩展数据",
-							"required": true
+							"description": "扩展数据"
 						},
 						{
 							"name": "rule_id",
 							"type": "Number",
-							"description": "主题ID",
-							"required": true
+							"description": "主题ID"
 						},
 						{
 							"name": "pic_url",
 							"type": "String",
-							"description": "图片链接",
-							"required": true
+							"description": "图片链接"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						}
-					]
+					],
+					"name": "record_list",
+					"type": "ChildRecItemVo[]",
+					"description": "内容列表"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "单页数量",
-					"required": true
+					"description": "单页数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageVo",
+			"description": "搜索结果"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.child.recoitem.query",
+	"apiChineseName": "查询少儿大厅推荐内容列表",
+	"description": "查询少儿大厅推荐内容列表",
+	"id": 29096
 }

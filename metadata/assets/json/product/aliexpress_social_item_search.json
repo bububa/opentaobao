@@ -1,8 +1,4 @@
 {
-	"id": 47556,
-	"name": "aliexpress.social.item.search",
-	"apiChineseName": "AE社交选品",
-	"description": "AE社交选品,通过各种筛选条件对社交商品池进行筛选",
 	"requestParams": [
 		{
 			"name": "has_video",
@@ -97,15 +93,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemPickPagingResult",
-			"description": "报类型",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "ItemSearchResult[]",
-					"description": "搜索结构封装",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_id",
@@ -221,7 +210,11 @@
 							"description": "收藏数语义化",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "ItemSearchResult[]",
+					"description": "搜索结构封装",
+					"required": true
 				},
 				{
 					"name": "page_no",
@@ -259,7 +252,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "报类型"
 		}
-	]
+	],
+	"name": "aliexpress.social.item.search",
+	"apiChineseName": "AE社交选品",
+	"description": "AE社交选品,通过各种筛选条件对社交商品池进行筛选",
+	"id": 47556
 }

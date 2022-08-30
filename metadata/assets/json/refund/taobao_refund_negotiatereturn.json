@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "refund_version",
+			"type": "Number",
+			"description": "退款版本号",
+			"required": true
+		},
+		{
+			"name": "refund_fee",
+			"type": "Number",
+			"description": "退款金额，单位（分）",
+			"required": true
+		},
+		{
+			"name": "address_id",
+			"type": "Number",
+			"description": "地址ID，通过协商退货退款渲染接口获取到的",
+			"required": true
+		}
+	],
+	"name": "taobao.refund.negotiatereturn",
+	"apiChineseName": "协商退货退款",
+	"description": "协商退货退款",
+	"id": 64010
+}

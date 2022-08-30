@@ -1,0 +1,117 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "reason_id",
+					"type": "Number",
+					"description": "退款原因id",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "渠道订单ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "商家经营店ID",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求唯一键",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "refund_fee",
+							"type": "BigDecimal",
+							"description": "申请子单退款金额"
+						},
+						{
+							"name": "refund_amount",
+							"type": "BigDecimal",
+							"description": "申请子单退货数量"
+						},
+						{
+							"name": "out_sub_order_id",
+							"type": "String",
+							"description": "渠道子订单号，淘鲜达渠道为TP子单号"
+						}
+					],
+					"name": "sub_refund_orders",
+					"type": "CsApplySubOrderDTO[]",
+					"description": "申请退款的子订单ID列表",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注说明"
+				},
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "渠道来源"
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "申请退款金额"
+				},
+				{
+					"name": "refund_delivery_fee",
+					"type": "Number",
+					"description": "申请退运费"
+				},
+				{
+					"name": "refund_package_fee",
+					"type": "Number",
+					"description": "申请退包装费"
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "申请退款原因"
+				}
+			],
+			"name": "refund_cs_apply_d_t_o",
+			"type": "RefundCsApplyNewDTO",
+			"description": "逆向申请入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.refund.csapply.new",
+	"apiChineseName": "代客退",
+	"description": "代客退",
+	"id": 60215
+}

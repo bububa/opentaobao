@@ -1,13 +1,6 @@
 {
-	"id": 33364,
-	"name": "taobao.bus.refund.set",
-	"apiChineseName": "B2B退票申请接口",
-	"description": "B2B业务支持退票",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "B2BRefundOrderRq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "refund_reason",
@@ -30,14 +23,14 @@
 					"type": "Number[]",
 					"description": "飞猪子订单号"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "B2BRefundOrderRq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "B2BRefundOrderRp",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "results",
@@ -69,7 +62,14 @@
 					"description": "success1",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "B2BRefundOrderRp",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.bus.refund.set",
+	"apiChineseName": "B2B退票申请接口",
+	"description": "B2B业务支持退票",
+	"id": 33364
 }

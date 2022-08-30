@@ -1,8 +1,4 @@
 {
-	"id": 47676,
-	"name": "taobao.simba.bidword.pricetools",
-	"apiChineseName": "关键词出价指导工具（新）",
-	"description": "关键词出价指导工具（新）",
 	"requestParams": [
 		{
 			"name": "bidword_id",
@@ -11,15 +7,15 @@
 			"required": true
 		},
 		{
+			"name": "traffic_type",
+			"type": "String",
+			"description": "区分渠道 ，计算机：PC，无线 ：WL"
+		},
+		{
 			"name": "type",
 			"type": "Number",
 			"description": "出价目标 ，1：争取排名；2：提升展现；3：提示点击；4：提升转化",
 			"required": true
-		},
-		{
-			"name": "traffic_type",
-			"type": "String",
-			"description": "区分渠道 ，计算机：PC，无线 ：WL"
 		},
 		{
 			"name": "adgroup_id",
@@ -30,99 +26,89 @@
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "PriceSuggestionDto",
-			"description": "true 表示符合准入，false不符合",
 			"subParams": [
 				{
 					"name": "bidwordid",
 					"type": "String",
-					"description": "关键词id",
-					"required": true
+					"description": "关键词id"
 				},
 				{
 					"name": "word",
 					"type": "String",
-					"description": "关键词原词",
-					"required": true
+					"description": "关键词原词"
 				},
 				{
 					"name": "stat",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "yesterday_info",
-					"type": "YesterdayInfo",
-					"description": "昨日信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "click",
 							"type": "String",
-							"description": "昨日点击量",
-							"required": true
+							"description": "昨日点击量"
 						},
 						{
 							"name": "impression",
 							"type": "String",
-							"description": "昨日展现量",
-							"required": true
+							"description": "昨日展现量"
 						}
-					]
+					],
+					"name": "yesterday_info",
+					"type": "YesterdayInfo",
+					"description": "昨日信息"
 				},
 				{
-					"name": "guidance_price",
-					"type": "GuidancePrice",
-					"description": "出价建议",
-					"required": true,
 					"subParams": [
 						{
 							"name": "click_up_rate",
 							"type": "String",
-							"description": "相对当前价格点击提升比例",
-							"required": true
+							"description": "相对当前价格点击提升比例"
 						},
 						{
 							"name": "impression_up_rate",
 							"type": "String",
-							"description": "相对当前价格展现提升比例",
-							"required": true
+							"description": "相对当前价格展现提升比例"
 						},
 						{
 							"name": "price_flag",
 							"type": "String",
-							"description": "价格类型，0代表正常排名建议，1代表被过滤排名建议， \t\t * 2代表相近价格建议，3代表转化出价建议",
-							"required": true
+							"description": "价格类型，0代表正常排名建议，1代表被过滤排名建议， \t\t * 2代表相近价格建议，3代表转化出价建议"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "建议出价（分）",
-							"required": true
+							"description": "建议出价（分）"
 						},
 						{
 							"name": "flag",
 							"type": "String",
-							"description": "flag＝0，1时为目标排名，flag＝2时无意义,flag=3时代表对应的建议",
-							"required": true
+							"description": "flag＝0，1时为目标排名，flag＝2时无意义,flag=3时代表对应的建议"
 						},
 						{
 							"name": "new_click",
 							"type": "String",
-							"description": "建议价格能够拿到的点击量",
-							"required": true
+							"description": "建议价格能够拿到的点击量"
 						},
 						{
 							"name": "new_impression",
 							"type": "String",
-							"description": "建议价格能够拿到的展现量",
-							"required": true
+							"description": "建议价格能够拿到的展现量"
 						}
-					]
+					],
+					"name": "guidance_price",
+					"type": "GuidancePrice",
+					"description": "出价建议"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "PriceSuggestionDto",
+			"description": "true 表示符合准入，false不符合"
 		}
-	]
+	],
+	"name": "taobao.simba.bidword.pricetools",
+	"apiChineseName": "关键词出价指导工具（新）",
+	"description": "关键词出价指导工具（新）",
+	"id": 47676
 }

@@ -14,8 +14,6 @@ type CainiaoGlobalSolutionServiceResourceQueryAPIRequest struct {
 	model.Params
 	// 多语言信息
 	_locale string
-	// 商家信息
-	_sellerParam *SellerParam
 	// 查询参数
 	_solutionServiceResParam *QuerySolutionServiceResParam
 	// 发件信息
@@ -54,19 +52,6 @@ func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetLocale(_locale 
 // GetLocale Locale Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetLocale() string {
 	return r._locale
-}
-
-// SetSellerParam is SellerParam Setter
-// 商家信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryAPIRequest) SetSellerParam(_sellerParam *SellerParam) error {
-	r._sellerParam = _sellerParam
-	r.Set("seller_param", _sellerParam)
-	return nil
-}
-
-// GetSellerParam SellerParam Getter
-func (r CainiaoGlobalSolutionServiceResourceQueryAPIRequest) GetSellerParam() *SellerParam {
-	return r._sellerParam
 }
 
 // SetSolutionServiceResParam is SolutionServiceResParam Setter

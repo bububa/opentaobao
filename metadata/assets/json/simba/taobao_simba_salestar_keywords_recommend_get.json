@@ -1,8 +1,4 @@
 {
-	"id": 43400,
-	"name": "taobao.simba.salestar.keywords.recommend.get",
-	"apiChineseName": "销量明星api相关接口",
-	"description": "取得一个推广组的推荐关键词列表",
 	"requestParams": [
 		{
 			"name": "adgroup_id",
@@ -18,14 +14,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "recommend_words",
-			"type": "RecommendWordPage",
-			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值",
 			"subParams": [
 				{
-					"name": "recommend_word_list",
-					"type": "RecommendWord[]",
-					"description": "推荐词分页对象列表",
 					"subParams": [
 						{
 							"name": "word",
@@ -47,9 +37,19 @@
 							"type": "String",
 							"description": "相关度"
 						}
-					]
+					],
+					"name": "recommend_word_list",
+					"type": "RecommendWord[]",
+					"description": "推荐词分页对象列表"
 				}
-			]
+			],
+			"name": "recommend_words",
+			"type": "RecommendWordPage",
+			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.keywords.recommend.get",
+	"apiChineseName": "销量明星api相关接口",
+	"description": "取得一个推广组的推荐关键词列表",
+	"id": 43400
 }

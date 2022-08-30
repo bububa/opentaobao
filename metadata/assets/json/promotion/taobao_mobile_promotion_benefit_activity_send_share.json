@@ -1,8 +1,4 @@
 {
-	"id": 25732,
-	"name": "taobao.mobile.promotion.benefit.activity.send.share",
-	"apiChineseName": "手淘专用单用户发放接口",
-	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。",
 	"requestParams": [
 		{
 			"name": "benefit_type",
@@ -65,9 +61,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "send_result",
-			"type": "ShareBenefitSendResult",
-			"description": "权益发放结果",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -89,7 +82,14 @@
 					"type": "Json",
 					"description": "发放结果"
 				}
-			]
+			],
+			"name": "send_result",
+			"type": "ShareBenefitSendResult",
+			"description": "权益发放结果"
 		}
-	]
+	],
+	"name": "taobao.mobile.promotion.benefit.activity.send.share",
+	"apiChineseName": "手淘专用单用户发放接口",
+	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。",
+	"id": 25732
 }

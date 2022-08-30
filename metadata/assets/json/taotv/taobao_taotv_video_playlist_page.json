@@ -1,8 +1,4 @@
 {
-	"id": 42440,
-	"name": "taobao.taotv.video.playlist.page",
-	"apiChineseName": "分页获取所有播单",
-	"description": "获取所有播单信息（分页）",
 	"requestParams": [
 		{
 			"name": "system_info",
@@ -19,105 +15,94 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "播单信息分页信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "此接口默认每次获取100条",
-							"required": true
+							"description": "此接口默认每次获取100条"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "播单总数",
-							"required": true
+							"description": "播单总数"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总共页数",
-							"required": true
+							"description": "总共页数"
 						},
 						{
-							"name": "data_list",
-							"type": "Data[]",
-							"description": "播单对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "create_time",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "modify_time",
 									"type": "Date",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "bg_pic",
 									"type": "String",
-									"description": "图片",
-									"required": true
+									"description": "图片"
 								},
 								{
 									"name": "play_list_name",
 									"type": "String",
-									"description": "播单名称",
-									"required": true
+									"description": "播单名称"
 								},
 								{
 									"name": "play_list_id",
 									"type": "Number",
-									"description": "播单id",
-									"required": true
+									"description": "播单id"
 								}
-							]
+							],
+							"name": "data_list",
+							"type": "Data[]",
+							"description": "播单对象"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "播单信息分页信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.taotv.video.playlist.page",
+	"apiChineseName": "分页获取所有播单",
+	"description": "获取所有播单信息（分页）",
+	"id": 42440
 }

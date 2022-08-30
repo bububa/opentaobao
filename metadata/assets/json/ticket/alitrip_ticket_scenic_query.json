@@ -1,8 +1,4 @@
 {
-	"id": 27941,
-	"name": "alitrip.ticket.scenic.query",
-	"apiChineseName": "【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询）",
-	"description": "查询卖家已发布过的门票商品列表，根据景点维度聚合查询。如果卖家在该景点下未发布过任何商品，则查询不到数据！",
 	"requestParams": [
 		{
 			"name": "ali_scenic_id",
@@ -22,87 +18,79 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "ScenicAndProductResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "scenic_list",
-					"type": "Scenic[]",
-					"description": "景点列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ali_scenic_id",
 							"type": "String",
-							"description": "标准景点ID",
-							"required": true
+							"description": "标准景点ID"
 						},
 						{
 							"name": "ali_scenic_name",
 							"type": "String",
-							"description": "标准景点名称",
-							"required": true
+							"description": "标准景点名称"
 						},
 						{
 							"name": "out_scenic_id",
 							"type": "String",
-							"description": "商家景点ID",
-							"required": true
+							"description": "商家景点ID"
 						},
 						{
 							"name": "out_scenic_name",
 							"type": "String",
-							"description": "商家景点名称",
-							"required": true
+							"description": "商家景点名称"
 						},
 						{
-							"name": "product_list",
-							"type": "Product[]",
-							"description": "收费项目列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "ali_product_id",
 									"type": "String",
-									"description": "标准收费项目ID",
-									"required": true
+									"description": "标准收费项目ID"
 								},
 								{
 									"name": "ali_product_name",
 									"type": "String",
-									"description": "标准收费项目名称",
-									"required": true
+									"description": "标准收费项目名称"
 								},
 								{
 									"name": "out_product_id",
 									"type": "String",
-									"description": "商家收费项目ID",
-									"required": true
+									"description": "商家收费项目ID"
 								},
 								{
 									"name": "out_product_name",
 									"type": "String",
-									"description": "商家收费项目名称",
-									"required": true
+									"description": "商家收费项目名称"
 								},
 								{
 									"name": "item_id",
 									"type": "String",
-									"description": "商品ID",
-									"required": true
+									"description": "商品ID"
 								},
 								{
 									"name": "item_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								}
-							]
+							],
+							"name": "product_list",
+							"type": "Product[]",
+							"description": "收费项目列表"
 						}
-					]
+					],
+					"name": "scenic_list",
+					"type": "Scenic[]",
+					"description": "景点列表"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "ScenicAndProductResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alitrip.ticket.scenic.query",
+	"apiChineseName": "【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询）",
+	"description": "查询卖家已发布过的门票商品列表，根据景点维度聚合查询。如果卖家在该景点下未发布过任何商品，则查询不到数据！",
+	"id": 27941
 }

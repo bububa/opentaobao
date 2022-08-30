@@ -1,8 +1,4 @@
 {
-	"id": 21875,
-	"name": "taobao.fenxiao.distributor.products.get",
-	"apiChineseName": "分销商查询产品信息",
-	"description": "分销商查询供应商产品信息",
 	"requestParams": [
 		{
 			"name": "order_by",
@@ -80,9 +76,6 @@
 			"description": "是否存在下一页"
 		},
 		{
-			"name": "products",
-			"type": "FenxiaoProduct []",
-			"description": "产品对象记录集。返回 FenxiaoProduct 包含的字段信息。",
 			"subParams": [
 				{
 					"name": "pid",
@@ -229,10 +222,6 @@
 					"required": true
 				},
 				{
-					"name": "skus",
-					"type": "SkuList[]",
-					"description": "sku列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -288,7 +277,11 @@
 							"description": "关联的后端商品id",
 							"required": true
 						}
-					]
+					],
+					"name": "skus",
+					"type": "SkuList[]",
+					"description": "sku列表",
+					"required": true
 				},
 				{
 					"name": "discount_id",
@@ -357,10 +350,6 @@
 					"required": true
 				},
 				{
-					"name": "pdus",
-					"type": "PduList[]",
-					"description": "产品分销商信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -392,7 +381,11 @@
 							"description": "分销商用户名",
 							"required": true
 						}
-					]
+					],
+					"name": "pdus",
+					"type": "PduList[]",
+					"description": "产品分销商信息",
+					"required": true
 				},
 				{
 					"name": "scitem_id",
@@ -407,10 +400,6 @@
 					"required": true
 				},
 				{
-					"name": "images",
-					"type": "ProductImageList[]",
-					"description": "产品图片",
-					"required": true,
 					"subParams": [
 						{
 							"name": "image_id",
@@ -442,7 +431,11 @@
 							"description": "当图片类型为属性图片时，表示图片对应的属性pv对。",
 							"required": true
 						}
-					]
+					],
+					"name": "images",
+					"type": "ProductImageList[]",
+					"description": "产品图片",
+					"required": true
 				},
 				{
 					"name": "query_item_id",
@@ -456,7 +449,14 @@
 					"description": "产品spu id",
 					"required": true
 				}
-			]
+			],
+			"name": "products",
+			"type": "FenxiaoProduct []",
+			"description": "产品对象记录集。返回 FenxiaoProduct 包含的字段信息。"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.distributor.products.get",
+	"apiChineseName": "分销商查询产品信息",
+	"description": "分销商查询供应商产品信息",
+	"id": 21875
 }

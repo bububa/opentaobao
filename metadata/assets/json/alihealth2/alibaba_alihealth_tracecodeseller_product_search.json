@@ -1,8 +1,4 @@
 {
-	"id": 38012,
-	"name": "alibaba.alihealth.tracecodeseller.product.search",
-	"apiChineseName": "查询商品api",
-	"description": "查询商品api",
 	"requestParams": [
 		{
 			"name": "skey_code",
@@ -31,75 +27,69 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "msg_code",
-					"type": "String",
-					"description": "msgCode",
-					"required": true
-				},
-				{
-					"name": "msg_info",
-					"type": "String",
-					"description": "msgInfo",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "PageInfo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "totalNum",
-							"required": true
+							"description": "totalNum"
 						},
 						{
-							"name": "results",
-							"type": "Result[]",
-							"description": "result",
-							"required": true,
 							"subParams": [
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "商品备注",
-									"required": true
-								},
-								{
-									"name": "product_name",
-									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品备注"
 								},
 								{
 									"name": "product_trac_info_id",
 									"type": "Number",
-									"description": "productTracInfoId",
-									"required": true
+									"description": "productTracInfoId"
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "商品名称"
 								}
-							]
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "result"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "page",
-							"required": true
+							"description": "page"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "pageSize",
-							"required": true
+							"description": "pageSize"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfo",
+					"description": "model"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.product.search",
+	"apiChineseName": "查询商品api",
+	"description": "查询商品api",
+	"id": 38012
 }

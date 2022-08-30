@@ -1,15 +1,6 @@
 {
-	"id": 44744,
-	"name": "alibaba.ailabs.aligenie.videoalbum.push",
-	"apiChineseName": "天猫精灵内容库视频合辑数据推送接口",
-	"description": "三方内容合作厂商可将视频辑数据通过此接口推送至天猫精灵内容库接入中，供天猫精灵使用",
 	"requestParams": [
 		{
-			"name": "param1",
-			"type": "RawVideoAlbum[]",
-			"description": "视频合辑数据",
-			"required": true,
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "tag_ids",
@@ -199,7 +190,12 @@
 					"type": "Number",
 					"description": "发布时间,unix时间戳,单位:毫秒"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "RawVideoAlbum[]",
+			"description": "视频合辑数据",
+			"maxListSize": 200,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -213,5 +209,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.videoalbum.push",
+	"apiChineseName": "天猫精灵内容库视频合辑数据推送接口",
+	"description": "三方内容合作厂商可将视频辑数据通过此接口推送至天猫精灵内容库接入中，供天猫精灵使用",
+	"id": 44744
 }

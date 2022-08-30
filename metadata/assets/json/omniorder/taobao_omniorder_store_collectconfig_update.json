@@ -1,14 +1,6 @@
 {
-	"id": 33753,
-	"name": "taobao.omniorder.store.collectconfig.update",
-	"apiChineseName": "门店自提配置修改",
-	"description": "修改门店自提配置内容",
 	"requestParams": [
 		{
-			"name": "store_collect_config",
-			"type": "StoreCollectConfig",
-			"description": "门店自提配置",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_end_time",
@@ -37,7 +29,11 @@
 					"type": "Date",
 					"description": "活动结束时间"
 				}
-			]
+			],
+			"name": "store_collect_config",
+			"type": "StoreCollectConfig",
+			"description": "门店自提配置",
+			"required": true
 		},
 		{
 			"name": "store_id",
@@ -48,9 +44,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
@@ -67,7 +60,14 @@
 					"type": "String",
 					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.collectconfig.update",
+	"apiChineseName": "门店自提配置修改",
+	"description": "修改门店自提配置内容",
+	"id": 33753
 }

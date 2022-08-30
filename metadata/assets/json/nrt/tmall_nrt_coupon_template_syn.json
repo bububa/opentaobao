@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务编码",
+			"required": true
+		},
+		{
+			"name": "coupon_template_id",
+			"type": "String",
+			"description": "券模版id集合",
+			"required": true
+		},
+		{
+			"name": "coupon_type",
+			"type": "Number",
+			"description": "券类型"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "tmall.nrt.coupon.template.syn",
+	"apiChineseName": "喵零券同步",
+	"description": "查询券模版",
+	"id": 61834
+}

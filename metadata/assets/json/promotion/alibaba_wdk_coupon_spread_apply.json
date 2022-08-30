@@ -1,13 +1,6 @@
 {
-	"id": 46116,
-	"name": "alibaba.wdk.coupon.spread.apply",
-	"apiChineseName": "普通发券",
-	"description": "优惠券发放",
 	"requestParams": [
 		{
-			"name": "param_wdk_coupon_apply_param",
-			"type": "WdkCouponApplyParam",
-			"description": "参数对象",
 			"subParams": [
 				{
 					"name": "apply_channel",
@@ -26,6 +19,7 @@
 				},
 				{
 					"name": "features",
+					"type": "String",
 					"description": "拓展属性"
 				},
 				{
@@ -53,54 +47,55 @@
 					"type": "String",
 					"description": "幂等键"
 				}
-			]
+			],
+			"name": "param_wdk_coupon_apply_param",
+			"type": "WdkCouponApplyParam",
+			"description": "参数对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "CouponTemplateOperateResponse",
-					"description": "返回",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ma_code",
 							"type": "String",
-							"description": "匿名码code",
-							"required": true
+							"description": "匿名码code"
 						},
 						{
 							"name": "voucher_id",
 							"type": "String",
-							"description": "券实例id",
-							"required": true
+							"description": "券实例id"
 						}
-					]
+					],
+					"name": "model",
+					"type": "CouponTemplateOperateResponse",
+					"description": "返回"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.spread.apply",
+	"apiChineseName": "普通发券",
+	"description": "优惠券发放",
+	"id": 46116
 }

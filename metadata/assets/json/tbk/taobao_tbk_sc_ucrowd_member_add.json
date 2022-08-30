@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "account_type",
+			"type": "Number",
+			"description": "成员账号类型，1:sid",
+			"required": true
+		},
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "人群id",
+			"required": true
+		},
+		{
+			"name": "account_list",
+			"type": "String[]",
+			"description": "成员列表",
+			"maxListSize": 999,
+			"required": true
+		},
+		{
+			"name": "edit_type",
+			"type": "Number",
+			"description": "更新方式，1:增量更新，2:全量更新",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "data",
+			"type": "RpcResult",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.ucrowd.member.add",
+	"apiChineseName": "淘宝客-服务商-上传人群数据",
+	"description": "服务商使用。支持淘宝客上传人群标签id对应的会员列表，支持全量和增量多种数据更新方式。",
+	"id": 53886
+}

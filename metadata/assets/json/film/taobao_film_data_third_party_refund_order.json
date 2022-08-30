@@ -1,8 +1,4 @@
 {
-	"id": 36938,
-	"name": "taobao.film.data.third.party.refund.order",
-	"apiChineseName": "退票接口",
-	"description": "淘票票第三方退票接口",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -54,49 +50,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultGeneralModel",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "return_message",
 					"type": "String",
-					"description": "调用失败描述信息",
-					"required": true
+					"description": "调用失败描述信息"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "0代表接口调用成功，其他值表示调用失败，错误信息可详见接口文档",
-					"required": true
+					"description": "0代表接口调用成功，其他值表示调用失败，错误信息可详见接口文档"
 				},
 				{
-					"name": "return_value",
-					"type": "TopRefundOrderStatus",
-					"description": "returnValue",
-					"required": true,
 					"subParams": [
 						{
 							"name": "status",
 							"type": "String",
-							"description": "退款中，其他状态可详见接口文档",
-							"required": true
+							"description": "退款中，其他状态可详见接口文档"
 						},
 						{
 							"name": "tb_order_id",
 							"type": "String",
-							"description": "tbOrderId",
-							"required": true
+							"description": "tbOrderId"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "message",
-							"required": true
+							"description": "message"
 						}
-					]
+					],
+					"name": "return_value",
+					"type": "TopRefundOrderStatus",
+					"description": "returnValue"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.film.data.third.party.refund.order",
+	"apiChineseName": "退票接口",
+	"description": "淘票票第三方退票接口",
+	"id": 36938
 }

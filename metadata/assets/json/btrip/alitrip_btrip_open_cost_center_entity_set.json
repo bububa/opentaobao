@@ -1,14 +1,6 @@
 {
-	"id": 53618,
-	"name": "alitrip.btrip.open.cost.center.entity.set",
-	"apiChineseName": "设置成本中心人员信息",
-	"description": "设置成本中心人员信息",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterSetEntityRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -17,24 +9,24 @@
 					"required": true
 				},
 				{
-					"name": "entity_list",
-					"type": "OpenOrgEntityDo[]",
-					"description": "人员信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "entity_id",
 							"type": "String",
-							"description": "员工/部门/角色id",
+							"description": "员工/部门/角色id/第三方部门id",
 							"required": true
 						},
 						{
 							"name": "entity_type",
 							"type": "String",
-							"description": "人员类型:1员工，2部门，3角色",
+							"description": "人员类型:1员工，2部门，3角色，4第三方部门",
 							"required": true
 						}
-					]
+					],
+					"name": "entity_list",
+					"type": "OpenOrgEntityDo[]",
+					"description": "人员信息列表",
+					"required": true
 				},
 				{
 					"name": "thirdpart_id",
@@ -47,34 +39,35 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterSetEntityRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenCostCenterSetEntityRs",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "add_num",
 					"type": "Number",
-					"description": "增加的人员/部门/角色个数",
-					"required": true
+					"description": "增加的人员/部门/角色个数"
 				},
 				{
 					"name": "remove_num",
 					"type": "Number",
-					"description": "删除的人员/部门/角色个数",
-					"required": true
+					"description": "删除的人员/部门/角色个数"
 				},
 				{
 					"name": "selected_user_num",
 					"type": "Number",
-					"description": "该成本中心下员工总数",
-					"required": true
+					"description": "该成本中心下员工总数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenCostCenterSetEntityRs",
+			"description": "结果对象"
 		},
 		{
 			"name": "result_code",
@@ -86,5 +79,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.entity.set",
+	"apiChineseName": "设置成本中心人员信息",
+	"description": "设置成本中心人员信息",
+	"id": 53618
 }

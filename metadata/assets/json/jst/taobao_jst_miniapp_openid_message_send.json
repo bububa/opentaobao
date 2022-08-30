@@ -1,8 +1,4 @@
 {
-	"id": 53513,
-	"name": "taobao.jst.miniapp.openid.message.send",
-	"apiChineseName": "单个openId用户短信发送",
-	"description": "单个openId用户短信发送",
 	"requestParams": [
 		{
 			"name": "sign_name",
@@ -66,5 +62,9 @@
 			"type": "String",
 			"description": "请求失败错误信息"
 		}
-	]
+	],
+	"name": "taobao.jst.miniapp.openid.message.send",
+	"apiChineseName": "单个openId用户短信发送",
+	"description": "单个openId用户短信发送",
+	"id": 53513
 }

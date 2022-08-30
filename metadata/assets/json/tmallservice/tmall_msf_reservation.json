@@ -1,13 +1,6 @@
 {
-	"id": 26099,
-	"name": "tmall.msf.reservation",
-	"apiChineseName": "喵师傅服务预约API",
-	"description": "喵师傅预约api",
 	"requestParams": [
 		{
-			"name": "reserv_info",
-			"type": "ReservationDTO",
-			"description": "预约内容",
 			"subParams": [
 				{
 					"name": "outer_id",
@@ -73,7 +66,10 @@
 					"type": "Number",
 					"description": "跳过订单类型检查的原因ID, 具体原因对应ID值咨询运营，一般不填写"
 				}
-			]
+			],
+			"name": "reserv_info",
+			"type": "ReservationDTO",
+			"description": "预约内容"
 		}
 	],
 	"responseParams": [
@@ -82,5 +78,9 @@
 			"type": "String",
 			"description": "预约成功,json"
 		}
-	]
+	],
+	"name": "tmall.msf.reservation",
+	"apiChineseName": "喵师傅服务预约API",
+	"description": "喵师傅预约api",
+	"id": 26099
 }

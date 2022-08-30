@@ -17,7 +17,7 @@ type PrescriptionVerifyRequest struct {
 	// 结算id（必选）
 	OutSettlement string `json:"out_settlement,omitempty" xml:"out_settlement,omitempty"`
 	// 核销金额（必选）
-	VerificationAmount string `json:"verification_amount,omitempty" xml:"verification_amount,omitempty"`
+	VerificationAmount *BigDecimal `json:"verification_amount,omitempty" xml:"verification_amount,omitempty"`
 	// 是否核销（必选）
 	IfConfirm bool `json:"if_confirm,omitempty" xml:"if_confirm,omitempty"`
 }

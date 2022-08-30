@@ -1,15 +1,11 @@
 {
-	"id": 29541,
-	"name": "alibaba.mj.oc.getproductbyscancode",
-	"apiChineseName": "POS商品查询接口",
-	"description": "此API用于在银泰商场中，POS端扫码获取商品信息",
 	"requestParams": [
 		{
 			"name": "code",
 			"type": "String",
 			"description": "码, 对应的信息可能是款号，也有可能是具体的某一个商品",
-			"required": true,
-			"maxLength": 200
+			"maxLength": 200,
+			"required": true
 		},
 		{
 			"name": "code_type",
@@ -32,9 +28,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_list",
-			"type": "ScanProduct []",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "art_no",
@@ -73,10 +66,6 @@
 					"required": true
 				},
 				{
-					"name": "sale_propertys",
-					"type": "SaleProperty[]",
-					"description": "销售属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "p_id",
@@ -102,7 +91,11 @@
 							"description": "属性值名称",
 							"required": true
 						}
-					]
+					],
+					"name": "sale_propertys",
+					"type": "SaleProperty[]",
+					"description": "销售属性",
+					"required": true
 				},
 				{
 					"name": "shop_code",
@@ -152,7 +145,14 @@
 					"description": "商品标签",
 					"required": true
 				}
-			]
+			],
+			"name": "product_list",
+			"type": "ScanProduct []",
+			"description": "data"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.getproductbyscancode",
+	"apiChineseName": "POS商品查询接口",
+	"description": "此API用于在银泰商场中，POS端扫码获取商品信息",
+	"id": 29541
 }

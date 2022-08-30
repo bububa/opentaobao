@@ -1,8 +1,4 @@
 {
-	"id": 55012,
-	"name": "alibaba.cgame.avatar.userbody.query",
-	"apiChineseName": "用户Avatar body查询",
-	"description": "Avatar用户body数据查询",
 	"requestParams": [
 		{
 			"name": "mix_user_id",
@@ -13,73 +9,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trace_id",
 							"type": "String",
-							"description": "body traceID",
-							"required": true
+							"description": "body traceID"
 						},
 						{
 							"name": "face_data_json",
 							"type": "String",
-							"description": "脸部数据",
-							"required": true
+							"description": "脸部数据"
 						},
 						{
 							"name": "gender",
 							"type": "Number",
-							"description": "性别， 1-male, 2-female",
-							"required": true
+							"description": "性别， 1-male, 2-female"
 						},
 						{
 							"name": "request_id",
 							"type": "String",
-							"description": "请求唯一标识ID",
-							"required": true
+							"description": "请求唯一标识ID"
 						},
 						{
 							"name": "mix_user_id",
 							"type": "String",
-							"description": "用户mixUserId",
-							"required": true
+							"description": "用户mixUserId"
 						},
 						{
 							"name": "ext_info",
 							"type": "String",
-							"description": "扩展数据",
-							"required": true
+							"description": "扩展数据"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "响应数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.cgame.avatar.userbody.query",
+	"apiChineseName": "用户Avatar body查询",
+	"description": "Avatar用户body数据查询",
+	"id": 55012
 }

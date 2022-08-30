@@ -1,13 +1,6 @@
 {
-	"id": 46493,
-	"name": "cainiao.cntec.shopkeeper.supply.statistics.query",
-	"apiChineseName": "团购业务供货商查询门店统计数据",
-	"description": "查询门店售卖商品统计数据",
 	"requestParams": [
 		{
-			"name": "query_activity_dto",
-			"type": "QueryActivityDto",
-			"description": "查询参数",
 			"subParams": [
 				{
 					"name": "store_id",
@@ -29,144 +22,130 @@
 					"type": "Number",
 					"description": "当前页"
 				}
-			]
+			],
+			"name": "query_activity_dto",
+			"type": "QueryActivityDto",
+			"description": "查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "trace_id",
-					"required": true
+					"description": "trace_id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "model_list",
-					"type": "ActivityStatisticsDto[]",
-					"description": "门店统计结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "inventory_coefficient",
 							"type": "String",
-							"description": "箱规",
-							"required": true
+							"description": "箱规"
 						},
 						{
 							"name": "totoal_price",
 							"type": "String",
-							"description": "总价",
-							"required": true
+							"description": "总价"
 						},
 						{
 							"name": "buy_amount",
 							"type": "String",
-							"description": "购买数量",
-							"required": true
+							"description": "购买数量"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "单价",
-							"required": true
+							"description": "单价"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "商品标题",
-							"required": true
+							"description": "商品标题"
 						},
 						{
 							"name": "product_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "station_name",
 							"type": "String",
-							"description": "驿站名称",
-							"required": true
+							"description": "驿站名称"
 						},
 						{
 							"name": "station_id",
 							"type": "String",
-							"description": "驿站id",
-							"required": true
+							"description": "驿站id"
 						},
 						{
 							"name": "store_name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "门店id",
-							"required": true
+							"description": "门店id"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
-						},
-						{
-							"name": "predict_arrival_time",
-							"type": "Date",
-							"description": "预计到货时间",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "mkt_activity_type",
 							"type": "String",
-							"description": "营销活动",
-							"required": true
+							"description": "营销活动"
+						},
+						{
+							"name": "predict_arrival_time",
+							"type": "Date",
+							"description": "预计到货时间"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "ActivityStatisticsDto[]",
+					"description": "门店统计结果"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数量",
-					"required": true
+					"description": "总数量"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "分页大小",
-					"required": true
+					"description": "分页大小"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.cntec.shopkeeper.supply.statistics.query",
+	"apiChineseName": "团购业务供货商查询门店统计数据",
+	"description": "查询门店售卖商品统计数据",
+	"id": 46493
 }

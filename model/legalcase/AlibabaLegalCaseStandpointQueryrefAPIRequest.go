@@ -13,7 +13,7 @@ import (
 type AlibabaLegalCaseStandpointQueryrefAPIRequest struct {
 	model.Params
 	// 查询的口径id列表
-	_standpointIds []int64
+	_standpointIds []string
 	// 案件id
 	_suitId int64
 	// 委托id
@@ -43,14 +43,14 @@ func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetApiParams() url.Values 
 
 // SetStandpointIds is StandpointIds Setter
 // 查询的口径id列表
-func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetStandpointIds(_standpointIds []int64) error {
+func (r *AlibabaLegalCaseStandpointQueryrefAPIRequest) SetStandpointIds(_standpointIds []string) error {
 	r._standpointIds = _standpointIds
 	r.Set("standpoint_ids", _standpointIds)
 	return nil
 }
 
 // GetStandpointIds StandpointIds Getter
-func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetStandpointIds() []int64 {
+func (r AlibabaLegalCaseStandpointQueryrefAPIRequest) GetStandpointIds() []string {
 	return r._standpointIds
 }
 

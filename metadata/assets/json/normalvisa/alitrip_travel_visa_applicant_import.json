@@ -1,15 +1,5 @@
 {
-	"id": 44453,
-	"name": "alitrip.travel.visa.applicant.import",
-	"apiChineseName": "签证申请人导入",
-	"description": "签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理",
 	"requestParams": [
-		{
-			"name": "nation_id",
-			"type": "Number",
-			"description": "国家id。目前支持越南(27027)",
-			"required": true
-		},
 		{
 			"name": "photo_file",
 			"type": "byte[]",
@@ -26,6 +16,12 @@
 			"name": "passport_file_type",
 			"type": "String",
 			"description": "护照文件类型",
+			"required": true
+		},
+		{
+			"name": "nation_id",
+			"type": "Number",
+			"description": "国家id。目前支持越南(27027)",
 			"required": true
 		},
 		{
@@ -83,5 +79,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alitrip.travel.visa.applicant.import",
+	"apiChineseName": "签证申请人导入",
+	"description": "签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理",
+	"id": 44453
 }

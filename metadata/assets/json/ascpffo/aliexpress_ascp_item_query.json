@@ -1,13 +1,6 @@
 {
-	"id": 56315,
-	"name": "aliexpress.ascp.item.query",
-	"apiChineseName": "AliExpress货品查询查询API",
-	"description": "AE货品查询API",
 	"requestParams": [
 		{
-			"name": "sc_item_query",
-			"type": "ScItemQueryDto",
-			"description": "DTO",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -40,25 +33,21 @@
 					"type": "String",
 					"description": "货品条码"
 				}
-			]
+			],
+			"name": "sc_item_query",
+			"type": "ScItemQueryDto",
+			"description": "DTO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageQueryResult",
-			"description": "DTO",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "DTO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "extend_fields",
 							"type": "String",
-							"description": "扩展字段",
+							"description": "扩展字段,JsonString,数据格式Map\u003cString, String\u003e 相关key： 货品实际高度-销售单元：Bheight 货品实际长度-销售单元：Blength 货品实际宽度-销售单元：Bwidth 货品实际重量-销售单元：Bweight 货品实际高度-运输单元：CartonHeight 货品实际长度-运输单元：CartonLength 货品实际宽度-运输单元：CartonWidth 货品实际重量-运输单元：CartonWeight",
 							"required": true
 						},
 						{
@@ -169,7 +158,11 @@
 							"description": "货品Id",
 							"required": true
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "DTO",
+					"required": true
 				},
 				{
 					"name": "error_code",
@@ -207,7 +200,14 @@
 					"description": "查询结果总数",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "DTO"
 		}
-	]
+	],
+	"name": "aliexpress.ascp.item.query",
+	"apiChineseName": "AliExpress货品查询查询API",
+	"description": "AE货品查询API",
+	"id": 56315
 }

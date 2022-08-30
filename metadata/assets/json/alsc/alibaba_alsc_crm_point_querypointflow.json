@@ -1,13 +1,6 @@
 {
-	"id": 45808,
-	"name": "alibaba.alsc.crm.point.querypointflow",
-	"apiChineseName": "分页查询积分流水",
-	"description": "分页查询积分流水",
 	"requestParams": [
 		{
-			"name": "param_page_query_point_flow_open_req",
-			"type": "PageQueryPointFlowOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -70,138 +63,125 @@
 					"type": "String",
 					"description": "CS是辰森，KRY是客如云"
 				}
-			]
+			],
+			"name": "param_page_query_point_flow_open_req",
+			"type": "PageQueryPointFlowOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "分页返回模型",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页",
-					"required": true
+					"description": "当前页"
 				},
 				{
 					"name": "has_next_page",
 					"type": "Boolean",
-					"description": "是否有下一页",
-					"required": true
+					"description": "是否有下一页"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页条数",
-					"required": true
+					"description": "每页条数"
 				},
 				{
-					"name": "result_list",
-					"type": "PointFlowOpenInfo[]",
-					"description": "积分流水对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_type",
 							"type": "String",
-							"description": "业务场景",
-							"required": true
+							"description": "业务场景"
 						},
 						{
 							"name": "biz_type_description",
 							"type": "String",
-							"description": "业务类型描述",
-							"required": true
+							"description": "业务类型描述"
 						},
 						{
 							"name": "change_point",
 							"type": "Number",
-							"description": "变更积分",
-							"required": true
+							"description": "变更积分"
 						},
 						{
 							"name": "flow_id",
 							"type": "String",
-							"description": "流水id",
-							"required": true
+							"description": "流水id"
 						},
 						{
 							"name": "operator_name",
 							"type": "String",
-							"description": "操作员名",
-							"required": true
+							"description": "操作员名"
 						},
 						{
 							"name": "out_biz_id",
 							"type": "String",
-							"description": "交易单号",
-							"required": true
+							"description": "交易单号"
 						},
 						{
 							"name": "reason",
 							"type": "String",
-							"description": "变更原因",
-							"required": true
+							"description": "变更原因"
 						},
 						{
 							"name": "remain_point",
 							"type": "Number",
-							"description": "剩余积分",
-							"required": true
+							"description": "剩余积分"
 						},
 						{
 							"name": "shop_name",
 							"type": "String",
-							"description": "店铺名称",
-							"required": true
+							"description": "店铺名称"
 						},
 						{
 							"name": "time",
 							"type": "Date",
-							"description": "交易时间",
-							"required": true
+							"description": "交易时间"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "PointFlowOpenInfo[]",
+					"description": "积分流水对象"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "总条数",
-					"required": true
+					"description": "总条数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.point.querypointflow",
+	"apiChineseName": "分页查询积分流水",
+	"description": "分页查询积分流水",
+	"id": 45808
 }

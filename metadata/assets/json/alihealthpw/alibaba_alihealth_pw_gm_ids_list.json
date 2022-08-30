@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "apply_unique_codes",
+					"type": "String[]",
+					"description": "编码列表"
+				}
+			],
+			"name": "body",
+			"type": "ListByApplyIdsForBReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "apply_status",
+									"type": "String",
+									"description": "申请状态"
+								},
+								{
+									"name": "apply_type",
+									"type": "String",
+									"description": "申请类型"
+								},
+								{
+									"name": "apply_date",
+									"type": "String",
+									"description": "申请时间"
+								},
+								{
+									"name": "apply_unique_code",
+									"type": "String",
+									"description": "唯一编码"
+								}
+							],
+							"name": "list",
+							"type": "PendingListDto[]",
+							"description": "列表"
+						}
+					],
+					"name": "data",
+					"type": "ListByApplyIdsForBResp",
+					"description": "数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "ResponseMessage",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.alihealth.pw.gm.ids.list",
+	"apiChineseName": "同情用药根据申请单列表查询申请单",
+	"description": "同情用药根据申请单列表查询申请单",
+	"id": 57918
+}

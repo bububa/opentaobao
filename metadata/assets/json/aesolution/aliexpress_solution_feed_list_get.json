@@ -1,8 +1,4 @@
 {
-	"id": 47314,
-	"name": "aliexpress.solution.feed.list.get",
-	"apiChineseName": "aliexpress.solution.feed.list.get",
-	"description": "API to query the feed list belonged to a seller",
 	"requestParams": [
 		{
 			"name": "current_page",
@@ -42,9 +38,6 @@
 			"description": "current page"
 		},
 		{
-			"name": "job_list",
-			"type": "BatchOperationJobDto []",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "status",
@@ -64,7 +57,10 @@
 					"description": "job id",
 					"required": true
 				}
-			]
+			],
+			"name": "job_list",
+			"type": "BatchOperationJobDto []",
+			"description": "data"
 		},
 		{
 			"name": "page_size",
@@ -81,5 +77,9 @@
 			"type": "Number",
 			"description": "total page based on the total_count and page_size"
 		}
-	]
+	],
+	"name": "aliexpress.solution.feed.list.get",
+	"apiChineseName": "aliexpress.solution.feed.list.get",
+	"description": "API to query the feed list belonged to a seller",
+	"id": 47314
 }

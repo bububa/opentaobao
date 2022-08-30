@@ -1,15 +1,80 @@
 {
-	"id": 42259,
-	"name": "taobao.fivee.importproduct.publish",
-	"apiChineseName": "进口商品发布",
-	"description": "直营业务商家入住发布商品时，上传商品及商家证照信息",
 	"requestParams": [
 		{
-			"name": "import_product",
-			"type": "ImportProduct",
-			"description": "进口商品",
-			"required": true,
 			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "urls",
+									"type": "String[]",
+									"description": "下载地址列表"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称",
+									"required": true
+								},
+								{
+									"name": "effective_date",
+									"type": "Date",
+									"description": "生效日期"
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "到期日期"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "编码",
+									"required": true
+								},
+								{
+									"name": "certification_body",
+									"type": "String",
+									"description": "认证机构"
+								}
+							],
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "代理商名称"
+						},
+						{
+							"name": "unique_code",
+							"type": "String",
+							"description": "统一社会信息信用代码",
+							"required": true
+						},
+						{
+							"name": "established_date",
+							"type": "Date",
+							"description": "成立日期"
+						},
+						{
+							"name": "registered_capital",
+							"type": "String",
+							"description": "注册资本"
+						}
+					],
+					"name": "agent_companies",
+					"type": "Company[]",
+					"description": "代理商信息"
+				},
 				{
 					"name": "barcode",
 					"type": "String",
@@ -17,9 +82,6 @@
 					"required": true
 				},
 				{
-					"name": "licences",
-					"type": "Licence[]",
-					"description": "证照信息",
 					"subParams": [
 						{
 							"name": "certification_body",
@@ -59,7 +121,10 @@
 							"type": "String[]",
 							"description": "下载地址列表"
 						}
-					]
+					],
+					"name": "licences",
+					"type": "Licence[]",
+					"description": "证照信息"
 				},
 				{
 					"name": "name",
@@ -68,88 +133,8 @@
 					"required": true
 				},
 				{
-					"name": "agent_companies",
-					"type": "Company[]",
-					"description": "代理商信息",
 					"subParams": [
 						{
-							"name": "licences",
-							"type": "Licence[]",
-							"description": "证照信息",
-							"subParams": [
-								{
-									"name": "type",
-									"type": "Number",
-									"description": "类型",
-									"required": true
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "名称",
-									"required": true
-								},
-								{
-									"name": "effective_date",
-									"type": "Date",
-									"description": "生效日期"
-								},
-								{
-									"name": "due_date",
-									"type": "Date",
-									"description": "到期日期"
-								},
-								{
-									"name": "code",
-									"type": "String",
-									"description": "编码",
-									"required": true
-								},
-								{
-									"name": "certification_body",
-									"type": "String",
-									"description": "认证机构"
-								},
-								{
-									"name": "urls",
-									"type": "String[]",
-									"description": "下载地址列表"
-								}
-							]
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "代理商名称"
-						},
-						{
-							"name": "unique_code",
-							"type": "String",
-							"description": "统一社会信息信用代码",
-							"required": true
-						},
-						{
-							"name": "established_date",
-							"type": "Date",
-							"description": "成立日期"
-						},
-						{
-							"name": "registered_capital",
-							"type": "String",
-							"description": "注册资本"
-						}
-					]
-				},
-				{
-					"name": "sanitation_certificates",
-					"type": "SanitationCertificate[]",
-					"description": "检验检疫证明",
-					"subParams": [
-						{
-							"name": "batch_products",
-							"type": "BatchProduct[]",
-							"description": "批次信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "due_date",
@@ -167,7 +152,11 @@
 									"type": "Date",
 									"description": "生产日期"
 								}
-							]
+							],
+							"name": "batch_products",
+							"type": "BatchProduct[]",
+							"description": "批次信息",
+							"required": true
 						},
 						{
 							"name": "code",
@@ -180,7 +169,10 @@
 							"type": "String[]",
 							"description": "下载地址列表"
 						}
-					]
+					],
+					"name": "sanitation_certificates",
+					"type": "SanitationCertificate[]",
+					"description": "检验检疫证明"
 				},
 				{
 					"name": "inner_code",
@@ -192,7 +184,11 @@
 					"type": "String",
 					"description": "业务备注"
 				}
-			]
+			],
+			"name": "import_product",
+			"type": "ImportProduct",
+			"description": "进口商品",
+			"required": true
 		},
 		{
 			"name": "param_bucode",
@@ -222,5 +218,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.fivee.importproduct.publish",
+	"apiChineseName": "进口商品发布",
+	"description": "直营业务商家入住发布商品时，上传商品及商家证照信息",
+	"id": 42259
 }

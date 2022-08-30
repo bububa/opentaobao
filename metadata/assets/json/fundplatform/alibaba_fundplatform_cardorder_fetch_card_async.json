@@ -1,14 +1,6 @@
 {
-	"id": 30285,
-	"name": "alibaba.fundplatform.cardorder.fetch.card.async",
-	"apiChineseName": "异步批量生成储值卡",
-	"description": "外部业务方异步批量生成储值卡的接口。同步只返回接受成功，异步会通知制卡成功",
 	"requestParams": [
 		{
-			"name": "param_card_fetch_async_request",
-			"type": "CardFetchAsyncRequest",
-			"description": "入参复杂对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "active",
@@ -22,9 +14,6 @@
 					"description": "购买主体类型 company 公司|person  个人"
 				},
 				{
-					"name": "card_fetch_details",
-					"type": "CardFetchDetailDto[]",
-					"description": "制卡详情",
 					"subParams": [
 						{
 							"name": "num",
@@ -43,7 +32,10 @@
 							"description": "制卡模板号",
 							"required": true
 						}
-					]
+					],
+					"name": "card_fetch_details",
+					"type": "CardFetchDetailDto[]",
+					"description": "制卡详情"
 				},
 				{
 					"name": "out_biz_id",
@@ -68,34 +60,39 @@
 					"description": "购买方在淘宝的用户ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param_card_fetch_async_request",
+			"type": "CardFetchAsyncRequest",
+			"description": "入参复杂对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CardFetchAsyncResponse",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CardFetchAsyncResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.cardorder.fetch.card.async",
+	"apiChineseName": "异步批量生成储值卡",
+	"description": "外部业务方异步批量生成储值卡的接口。同步只返回接受成功，异步会通知制卡成功",
+	"id": 30285
 }

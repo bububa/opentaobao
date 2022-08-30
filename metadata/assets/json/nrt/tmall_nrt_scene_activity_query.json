@@ -1,0 +1,213 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务身份",
+			"required": true
+		},
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "benefit_type",
+							"type": "String",
+							"description": "权益类型"
+						},
+						{
+							"name": "probability",
+							"type": "String",
+							"description": "中奖概率"
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "业务身份"
+						},
+						{
+							"name": "out_relate_id",
+							"type": "Number",
+							"description": "关联的权益模板id"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "benefit_id",
+							"type": "Number",
+							"description": "权益id"
+						},
+						{
+							"name": "total_quantity",
+							"type": "Number",
+							"description": "总数"
+						},
+						{
+							"name": "benefit_name",
+							"type": "String",
+							"description": "权益名称"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "person_limit_count",
+							"type": "Number",
+							"description": "个人限领数"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "权益图片地址"
+						},
+						{
+							"name": "use_channel",
+							"type": "Number",
+							"description": "使用渠道"
+						}
+					],
+					"name": "benefit_list",
+					"type": "NrtBenefitDTO[]",
+					"description": "权益列表"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份"
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "创建者id"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "有价礼包活动对应的商品id"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "activity_type",
+					"type": "String",
+					"description": "活动类型"
+				},
+				{
+					"name": "modified_id",
+					"type": "String",
+					"description": "修改人id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本"
+				},
+				{
+					"subParams": [
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "渠道编码"
+						},
+						{
+							"name": "channel_name",
+							"type": "String",
+							"description": "渠道名称"
+						}
+					],
+					"name": "channel_list",
+					"type": "ChannelDTO[]",
+					"description": "渠道"
+				}
+			],
+			"name": "data",
+			"type": "NrtSceneActivityDTO",
+			"description": "数据"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "tmall.nrt.scene.activity.query",
+	"apiChineseName": "喵零场景活动查询",
+	"description": "喵零场景活动查询",
+	"id": 61563
+}

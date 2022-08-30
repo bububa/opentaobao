@@ -1,8 +1,4 @@
 {
-	"id": 53697,
-	"name": "alibaba.lsy.miniapp.msg.push",
-	"apiChineseName": "零售云小程序消息推送",
-	"description": "零售云小程序消息推送，推送消息至零售云（喵零等）",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -46,5 +42,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.lsy.miniapp.msg.push",
+	"apiChineseName": "零售云小程序消息推送",
+	"description": "零售云小程序消息推送，推送消息至零售云（喵零等）",
+	"id": 53697
 }

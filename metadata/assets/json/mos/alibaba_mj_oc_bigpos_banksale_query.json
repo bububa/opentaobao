@@ -1,8 +1,4 @@
 {
-	"id": 42791,
-	"name": "alibaba.mj.oc.bigpos.banksale.query",
-	"apiChineseName": "大pos银行卡查账接口",
-	"description": "大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -32,53 +28,50 @@
 			"description": "明细数量"
 		},
 		{
-			"name": "datas",
-			"type": "Data []",
-			"description": "数据主体",
 			"subParams": [
 				{
 					"name": "row_no",
 					"type": "Number",
-					"description": "行号",
-					"required": true
+					"description": "行号"
 				},
 				{
 					"name": "oper_time",
 					"type": "String",
-					"description": "交易时间",
-					"required": true
+					"description": "交易时间"
 				},
 				{
 					"name": "pos_trace_no",
 					"type": "String",
-					"description": "查询流水号",
-					"required": true
+					"description": "查询流水号"
 				},
 				{
 					"name": "refnum",
 					"type": "String",
-					"description": "银联系统参考号",
-					"required": true
+					"description": "银联系统参考号"
 				},
 				{
 					"name": "amount",
 					"type": "Number",
-					"description": "交易金额",
-					"required": true
+					"description": "交易金额"
 				},
 				{
 					"name": "adjusted_amount",
 					"type": "Number",
-					"description": "已调账金额",
-					"required": true
+					"description": "已调账金额"
 				},
 				{
 					"name": "fphm",
 					"type": "String",
-					"description": "小票号后7位",
-					"required": true
+					"description": "小票号后7位"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "Data []",
+			"description": "数据主体"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.bigpos.banksale.query",
+	"apiChineseName": "大pos银行卡查账接口",
+	"description": "大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账",
+	"id": 42791
 }

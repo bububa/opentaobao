@@ -1,0 +1,80 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "detail_desc",
+							"type": "String",
+							"description": "使用描述"
+						},
+						{
+							"name": "coupon_name",
+							"type": "String",
+							"description": "优惠券名称"
+						},
+						{
+							"name": "expired_time_min",
+							"type": "String",
+							"description": "到期日期"
+						},
+						{
+							"name": "discount_amount",
+							"type": "String",
+							"description": "面额(减免额度) 元"
+						},
+						{
+							"name": "condition_desc",
+							"type": "String",
+							"description": "使用条件描述"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态"
+						}
+					],
+					"name": "contents",
+					"type": "CouponInfo[]",
+					"description": "优惠券详情"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.coupon.invalid.list",
+	"apiChineseName": "用户失效优惠券列表",
+	"description": "雅高小程序用户失效优惠券列表",
+	"id": 57595
+}

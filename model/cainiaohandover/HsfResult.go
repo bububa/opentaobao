@@ -10,4 +10,6 @@ type HsfResult struct {
 	Data *OpenHandoverCancelResponse `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求处理是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+	// 请求结果
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

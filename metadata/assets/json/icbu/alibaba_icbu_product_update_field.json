@@ -1,14 +1,6 @@
 {
-	"id": 27010,
-	"name": "alibaba.icbu.product.update.field",
-	"apiChineseName": "商品按字段更新",
-	"description": "按字段修改国际站商品，支持询盘商品和在线批发商品，支持英文商品和多语言商品",
 	"requestParams": [
 		{
-			"name": "attributes",
-			"type": "ProductAttribute[]",
-			"description": "商品属性和属性值",
-			"maxListSize": 500,
 			"subParams": [
 				{
 					"name": "attribute_id",
@@ -40,25 +32,29 @@
 					"type": "String",
 					"description": "作为sku属性值时，自定义属性值名称"
 				}
-			]
+			],
+			"name": "attributes",
+			"type": "ProductAttribute[]",
+			"description": "商品属性和属性值",
+			"maxListSize": 500
 		},
 		{
-			"name": "bulk_discount_prices",
-			"type": "BulkDiscountPrice[]",
-			"description": "根据数量设置的折扣价",
-			"maxListSize": 20,
 			"subParams": [
-				{
-					"name": "start_quantity",
-					"type": "Number",
-					"description": "起始数量，范围是1-99999"
-				},
 				{
 					"name": "price",
 					"type": "String",
 					"description": "价格，范围是0.01-9999999.00"
+				},
+				{
+					"name": "start_quantity",
+					"type": "Number",
+					"description": "起始数量，范围是1-99999"
 				}
-			]
+			],
+			"name": "bulk_discount_prices",
+			"type": "BulkDiscountPrice[]",
+			"description": "根据数量设置的折扣价",
+			"maxListSize": 20
 		},
 		{
 			"name": "category_id",
@@ -94,9 +90,6 @@
 			"required": true
 		},
 		{
-			"name": "main_image",
-			"type": "MainImage",
-			"description": "商品主图",
 			"subParams": [
 				{
 					"name": "images",
@@ -118,37 +111,19 @@
 					"type": "String",
 					"description": "水印位置，在中间(center)或者在底部(bottom)"
 				}
-			]
+			],
+			"name": "main_image",
+			"type": "MainImage",
+			"description": "商品主图"
 		},
 		{
-			"name": "product_sku",
-			"type": "ProductSku",
-			"description": "商品SKU定义",
 			"subParams": [
 				{
-					"name": "attributes",
-					"type": "ProductAttribute[]",
-					"description": "商品属性和属性值",
 					"subParams": [
 						{
 							"name": "attribute_id",
 							"type": "Number",
 							"description": "属性ID"
-						},
-						{
-							"name": "attribute_name",
-							"type": "String",
-							"description": "属性名称"
-						},
-						{
-							"name": "value_id",
-							"type": "Number",
-							"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
-						},
-						{
-							"name": "value_name",
-							"type": "String",
-							"description": "属性值名称"
 						},
 						{
 							"name": "sku_custom_image_url",
@@ -159,18 +134,30 @@
 							"name": "sku_custom_value_name",
 							"type": "String",
 							"description": "作为sku属性值时，自定义属性值名称"
+						},
+						{
+							"name": "value_id",
+							"type": "Number",
+							"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String",
+							"description": "属性名称"
+						},
+						{
+							"name": "value_name",
+							"type": "String",
+							"description": "属性值名称"
 						}
-					]
+					],
+					"name": "attributes",
+					"type": "ProductAttribute[]",
+					"description": "商品属性和属性值"
 				},
 				{
-					"name": "special_skus",
-					"type": "SkuDetail[]",
-					"description": "单个SKU详细定义",
 					"subParams": [
 						{
-							"name": "attributes",
-							"type": "ProductAttribute[]",
-							"description": "商品属性和属性值",
 							"subParams": [
 								{
 									"name": "attribute_id",
@@ -178,19 +165,14 @@
 									"description": "属性ID"
 								},
 								{
-									"name": "attribute_name",
-									"type": "String",
-									"description": "属性名称"
-								},
-								{
 									"name": "value_id",
 									"type": "Number",
 									"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
 								},
 								{
-									"name": "value_name",
+									"name": "sku_custom_value_name",
 									"type": "String",
-									"description": "属性值名称"
+									"description": "作为sku属性值时，自定义属性值名称"
 								},
 								{
 									"name": "sku_custom_image_url",
@@ -198,11 +180,68 @@
 									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
 								},
 								{
+									"name": "attribute_name",
+									"type": "String",
+									"description": "属性名称"
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "属性值名称"
+								}
+							],
+							"name": "attributes",
+							"type": "ProductAttribute[]",
+							"description": "商品属性和属性值"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
+						}
+					],
+					"name": "exclude_skus",
+					"type": "SkuDetail[]",
+					"description": "单个SKU详细定义"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "attribute_id",
+									"type": "Number",
+									"description": "属性ID"
+								},
+								{
+									"name": "value_id",
+									"type": "Number",
+									"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
+								},
+								{
 									"name": "sku_custom_value_name",
 									"type": "String",
 									"description": "作为sku属性值时，自定义属性值名称"
+								},
+								{
+									"name": "sku_custom_image_url",
+									"type": "String",
+									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
+								},
+								{
+									"name": "attribute_name",
+									"type": "String",
+									"description": "属性名称"
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "属性值名称"
 								}
-							]
+							],
+							"name": "attributes",
+							"type": "ProductAttribute[]",
+							"description": "商品属性和属性值"
 						},
 						{
 							"name": "price",
@@ -220,9 +259,6 @@
 							"description": "SKU id，唯一标识一个SKU"
 						},
 						{
-							"name": "inventory_dto_list",
-							"type": "InventoryDetail[]",
-							"description": "库存对象列表",
 							"subParams": [
 								{
 									"name": "src_inventory",
@@ -239,60 +275,20 @@
 									"type": "String",
 									"description": "仓code，不填表示默认国内仓"
 								}
-							]
+							],
+							"name": "inventory_dto_list",
+							"type": "InventoryDetail[]",
+							"description": "库存对象列表"
 						}
-					]
-				},
-				{
-					"name": "exclude_skus",
+					],
+					"name": "special_skus",
 					"type": "SkuDetail[]",
-					"description": "单个SKU详细定义",
-					"subParams": [
-						{
-							"name": "attributes",
-							"type": "ProductAttribute[]",
-							"description": "商品属性和属性值",
-							"subParams": [
-								{
-									"name": "attribute_id",
-									"type": "Number",
-									"description": "属性ID"
-								},
-								{
-									"name": "attribute_name",
-									"type": "String",
-									"description": "属性名称"
-								},
-								{
-									"name": "value_id",
-									"type": "Number",
-									"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
-								},
-								{
-									"name": "value_name",
-									"type": "String",
-									"description": "属性值名称"
-								},
-								{
-									"name": "sku_custom_image_url",
-									"type": "String",
-									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
-								},
-								{
-									"name": "sku_custom_value_name",
-									"type": "String",
-									"description": "作为sku属性值时，自定义属性值名称"
-								}
-							]
-						},
-						{
-							"name": "price",
-							"type": "String",
-							"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
-						}
-					]
+					"description": "单个SKU详细定义"
 				}
-			]
+			],
+			"name": "product_sku",
+			"type": "ProductSku",
+			"description": "商品SKU定义"
 		},
 		{
 			"name": "product_type",
@@ -301,19 +297,21 @@
 			"required": true
 		},
 		{
-			"name": "sourcing_trade",
-			"type": "SourcingTrade",
-			"description": "询盘商品交易信息",
 			"subParams": [
+				{
+					"name": "delivery_port",
+					"type": "String",
+					"description": "发货港口"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "发货期限"
+				},
 				{
 					"name": "fob_currency",
 					"type": "String",
 					"description": "FOB价格货币，参见FAQ 货币枚举值"
-				},
-				{
-					"name": "fob_min_price",
-					"type": "String",
-					"description": "FOB最小价格"
 				},
 				{
 					"name": "fob_max_price",
@@ -321,14 +319,14 @@
 					"description": "FOB最大价格"
 				},
 				{
+					"name": "fob_min_price",
+					"type": "String",
+					"description": "FOB最小价格"
+				},
+				{
 					"name": "fob_unit_type",
 					"type": "String",
 					"description": "FOB计量单位，参见FAQ 计量单位枚举值"
-				},
-				{
-					"name": "payment_methods",
-					"type": "String[]",
-					"description": "付款方式，参见FAQ 付款方式枚举值"
 				},
 				{
 					"name": "min_order_quantity",
@@ -341,6 +339,16 @@
 					"description": "最小起订量计量单位，参见FAQ 计量单位枚举值"
 				},
 				{
+					"name": "payment_methods",
+					"type": "String[]",
+					"description": "付款方式，参见FAQ 付款方式枚举值"
+				},
+				{
+					"name": "supply_period_type",
+					"type": "String",
+					"description": "供货能力周期，参见FAQ 时间周期枚举值"
+				},
+				{
 					"name": "supply_quantity",
 					"type": "String",
 					"description": "供货能力"
@@ -351,29 +359,11 @@
 					"description": "供货能力计量单位，参见FAQ 计量单位枚举值"
 				},
 				{
-					"name": "supply_period_type",
-					"type": "String",
-					"description": "供货能力周期，参见FAQ 时间周期枚举值"
-				},
-				{
-					"name": "delivery_port",
-					"type": "String",
-					"description": "发货港口"
-				},
-				{
-					"name": "delivery_time",
-					"type": "String",
-					"description": "发货期限"
-				},
-				{
 					"name": "packaging_desc",
 					"type": "String",
 					"description": "包装信息"
 				},
 				{
-					"name": "deliver_periods",
-					"type": "DeliverPeriod[]",
-					"description": "发货周期，发货时间相关建议使用此项",
 					"subParams": [
 						{
 							"name": "process_period",
@@ -385,9 +375,15 @@
 							"type": "Number",
 							"description": "数量"
 						}
-					]
+					],
+					"name": "deliver_periods",
+					"type": "DeliverPeriod[]",
+					"description": "发货周期，发货时间相关建议使用此项"
 				}
-			]
+			],
+			"name": "sourcing_trade",
+			"type": "SourcingTrade",
+			"description": "询盘商品交易信息"
 		},
 		{
 			"name": "subject",
@@ -395,49 +391,11 @@
 			"description": "商品名称，最多128个字符"
 		},
 		{
-			"name": "wholesale_trade",
-			"type": "WholesaleTrade",
-			"description": "在线批发商品交易信息",
 			"subParams": [
-				{
-					"name": "unit_type",
-					"type": "String",
-					"description": "最小计量单位，参见FAQ 计量单位枚举值"
-				},
-				{
-					"name": "sale_type",
-					"type": "String",
-					"description": "销售方式，按件卖(normal)或者按批卖(batch)"
-				},
 				{
 					"name": "batch_number",
 					"type": "Number",
 					"description": "每批数量，当sale_type=batch时生效，范围是1-99999"
-				},
-				{
-					"name": "price",
-					"type": "String",
-					"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
-				},
-				{
-					"name": "package_size",
-					"type": "String",
-					"description": "尺寸，单位是厘米，长宽高范围是1-9999999"
-				},
-				{
-					"name": "weight",
-					"type": "String",
-					"description": "重量，单位是kg，精确到小数点后三位，范围是0.01-9999999.000"
-				},
-				{
-					"name": "min_order_quantity",
-					"type": "Number",
-					"description": "最小起订量，范围是1-99999"
-				},
-				{
-					"name": "shipping_line_template_id",
-					"type": "Number",
-					"description": "运费模板ID"
 				},
 				{
 					"name": "handling_time",
@@ -445,9 +403,41 @@
 					"description": "备货期，单位是天，范围是1-60"
 				},
 				{
-					"name": "deliver_periods",
-					"type": "DeliverPeriod[]",
-					"description": "发货周期，发货时间相关建议使用此项",
+					"name": "min_order_quantity",
+					"type": "Number",
+					"description": "最小起订量，范围是1-99999"
+				},
+				{
+					"name": "package_size",
+					"type": "String",
+					"description": "尺寸，单位是厘米，长宽高范围是1-9999999"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
+				},
+				{
+					"name": "sale_type",
+					"type": "String",
+					"description": "销售方式，按件卖(normal)或者按批卖(batch)"
+				},
+				{
+					"name": "shipping_line_template_id",
+					"type": "Number",
+					"description": "运费模板ID"
+				},
+				{
+					"name": "unit_type",
+					"type": "String",
+					"description": "最小计量单位，参见FAQ 计量单位枚举值"
+				},
+				{
+					"name": "weight",
+					"type": "String",
+					"description": "重量，单位是kg，精确到小数点后三位，范围是0.01-9999999.000"
+				},
+				{
 					"subParams": [
 						{
 							"name": "process_period",
@@ -459,9 +449,15 @@
 							"type": "Number",
 							"description": "数量"
 						}
-					]
+					],
+					"name": "deliver_periods",
+					"type": "DeliverPeriod[]",
+					"description": "发货周期，发货时间相关建议使用此项"
 				}
-			]
+			],
+			"name": "wholesale_trade",
+			"type": "WholesaleTrade",
+			"description": "在线批发商品交易信息"
 		},
 		{
 			"name": "market",
@@ -469,14 +465,8 @@
 			"description": "发布的市场，支持main/onesite，默认main发到主市场，填onesite发布为商机通产品"
 		},
 		{
-			"name": "custom_info",
-			"type": "CustomInfo",
-			"description": "定制信息",
 			"subParams": [
 				{
-					"name": "custom_contents",
-					"type": "CustomContent[]",
-					"description": "定制内容",
 					"subParams": [
 						{
 							"name": "min_order_quantity",
@@ -488,9 +478,15 @@
 							"type": "String",
 							"description": "定制类型，只允许填写英文字符"
 						}
-					]
+					],
+					"name": "custom_contents",
+					"type": "CustomContent[]",
+					"description": "定制内容"
 				}
-			]
+			],
+			"name": "custom_info",
+			"type": "CustomInfo",
+			"description": "定制信息"
 		},
 		{
 			"name": "is_smart_edit",
@@ -515,5 +511,9 @@
 			"type": "String",
 			"description": "加密后的产品ID"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.update.field",
+	"apiChineseName": "商品按字段更新",
+	"description": "按字段修改国际站商品，支持询盘商品和在线批发商品，支持英文商品和多语言商品",
+	"id": 27010
 }

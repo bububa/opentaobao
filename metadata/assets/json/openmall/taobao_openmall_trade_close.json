@@ -1,8 +1,4 @@
 {
-	"id": 50810,
-	"name": "taobao.openmall.trade.close",
-	"apiChineseName": "关闭订单",
-	"description": "关闭订单",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -25,17 +21,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTradeResultVo",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "tid",
 					"type": "String",
-					"description": "淘宝交易ID",
-					"required": true
+					"description": "淘宝交易ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.close",
+	"apiChineseName": "关闭订单",
+	"description": "关闭订单",
+	"id": 50810
 }

@@ -1,0 +1,105 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_tid",
+					"type": "String",
+					"description": "外部货id（外部唯一识别码）",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部私域楼盘ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "品所属商品id"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "品所属商品skuid"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型 1-安心置业 2-特价房 3-0元购 4-大额电商券 5-认购商品"
+						}
+					],
+					"name": "extend",
+					"type": "GoodsRelationDto[]",
+					"description": "货下挂的其他品列表 最大列表长度：100"
+				},
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型 6-楼栋 7-户型 8-房源"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "货所属商品skuid(本期不需填，扩展字段)"
+						},
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "货所属商品id"
+						}
+					],
+					"name": "relation_cargos",
+					"type": "GoodsRelationDto[]",
+					"description": "货下挂的其他货列表 最大列表长度：100"
+				}
+			],
+			"name": "relation_binding_dto",
+			"type": "RelationBindingDto",
+			"description": "货独立绑定货品关系请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.tradeitem.relation",
+	"apiChineseName": "货独立绑定货品",
+	"description": "货独立绑定货品",
+	"id": 62502
+}

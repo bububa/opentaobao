@@ -12,13 +12,13 @@ import (
 // 供应商按查询条件批量查询代销采购退款
 type TaobaoFenxiaoRefundQueryAPIRequest struct {
 	model.Params
-	// 渠道code，可批量 老供销渠道：999
+	// 查询的经营模式，当不指定时，默认查询代销订单 代销：1 经销：2 寄售（自营寄售）：5 平台寄售
 	_tradeTypes []int64
-	// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
+	// 渠道市场编码，可批量指定。 当不指定时，按照配置的分销市场生效 渠道编码枚举：1-供销平台（淘宝）；2-供销平台（天猫）；3-供销平台（天猫超市）；5-供销平台（淘乡甜）；110001-供销平台（全球购）；110007-淘分销；200002-消费电子市场
 	_channelCodes []int64
-	// 代销采购退款单最早修改时间
+	// 查询退款单的修改时间开始,格式如:yyyy-MM-dd HH:mm:ss
 	_startDate string
-	// 代销采购退款最迟修改时间。与start_date的最大时间间隔不能超过30天
+	// 查询退款单的修改时间结束,格式如:yyyy-MM-dd HH:mm:ss
 	_endDate string
 	// 页码（大于0的整数。无值或小于1的值按默认值1计）
 	_pageNo int64
@@ -26,7 +26,9 @@ type TaobaoFenxiaoRefundQueryAPIRequest struct {
 	_pageSize int64
 	// 角色，供应商：2，分销商：1
 	_userRoleType int64
-	// 是否查询下游买家的退款信息
+	// 退款流程类型：4：发货前退款；1：发货后退款不退货；2：发货后退款退货；3：售后退款；5：拒收；6：售后退货退款
+	_refundFlowTypes int64
+	// 是否查询下游消费者的退款信息
 	_querySellerRefund bool
 }
 
@@ -52,7 +54,7 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetApiParams() url.Values {
 }
 
 // SetTradeTypes is TradeTypes Setter
-// 渠道code，可批量 老供销渠道：999
+// 查询的经营模式，当不指定时，默认查询代销订单 代销：1 经销：2 寄售（自营寄售）：5 平台寄售
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetTradeTypes(_tradeTypes []int64) error {
 	r._tradeTypes = _tradeTypes
 	r.Set("trade_types", _tradeTypes)
@@ -65,7 +67,7 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetTradeTypes() []int64 {
 }
 
 // SetChannelCodes is ChannelCodes Setter
-// 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
+// 渠道市场编码，可批量指定。 当不指定时，按照配置的分销市场生效 渠道编码枚举：1-供销平台（淘宝）；2-供销平台（天猫）；3-供销平台（天猫超市）；5-供销平台（淘乡甜）；110001-供销平台（全球购）；110007-淘分销；200002-消费电子市场
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetChannelCodes(_channelCodes []int64) error {
 	r._channelCodes = _channelCodes
 	r.Set("channel_codes", _channelCodes)
@@ -78,7 +80,7 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetChannelCodes() []int64 {
 }
 
 // SetStartDate is StartDate Setter
-// 代销采购退款单最早修改时间
+// 查询退款单的修改时间开始,格式如:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetStartDate(_startDate string) error {
 	r._startDate = _startDate
 	r.Set("start_date", _startDate)
@@ -91,7 +93,7 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetStartDate() string {
 }
 
 // SetEndDate is EndDate Setter
-// 代销采购退款最迟修改时间。与start_date的最大时间间隔不能超过30天
+// 查询退款单的修改时间结束,格式如:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetEndDate(_endDate string) error {
 	r._endDate = _endDate
 	r.Set("end_date", _endDate)
@@ -142,8 +144,21 @@ func (r TaobaoFenxiaoRefundQueryAPIRequest) GetUserRoleType() int64 {
 	return r._userRoleType
 }
 
+// SetRefundFlowTypes is RefundFlowTypes Setter
+// 退款流程类型：4：发货前退款；1：发货后退款不退货；2：发货后退款退货；3：售后退款；5：拒收；6：售后退货退款
+func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetRefundFlowTypes(_refundFlowTypes int64) error {
+	r._refundFlowTypes = _refundFlowTypes
+	r.Set("refund_flow_types", _refundFlowTypes)
+	return nil
+}
+
+// GetRefundFlowTypes RefundFlowTypes Getter
+func (r TaobaoFenxiaoRefundQueryAPIRequest) GetRefundFlowTypes() int64 {
+	return r._refundFlowTypes
+}
+
 // SetQuerySellerRefund is QuerySellerRefund Setter
-// 是否查询下游买家的退款信息
+// 是否查询下游消费者的退款信息
 func (r *TaobaoFenxiaoRefundQueryAPIRequest) SetQuerySellerRefund(_querySellerRefund bool) error {
 	r._querySellerRefund = _querySellerRefund
 	r.Set("query_seller_refund", _querySellerRefund)

@@ -1,8 +1,4 @@
 {
-	"id": 45308,
-	"name": "youku.ott.kitty.commonorder.sync",
-	"apiChineseName": "运营商一般订单同步",
-	"description": "运营商一般订单同步",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -62,5 +58,9 @@
 			"type": "Number",
 			"description": "返回码（一般情况请求方只需要关心success，除非特殊情况需要关心错误码）"
 		}
-	]
+	],
+	"name": "youku.ott.kitty.commonorder.sync",
+	"apiChineseName": "运营商一般订单同步",
+	"description": "运营商一般订单同步",
+	"id": 45308
 }

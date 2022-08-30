@@ -1,20 +1,12 @@
 {
-	"id": 36869,
-	"name": "alibaba.wdk.sku.channelsku.add",
-	"apiChineseName": "新增渠道商品",
-	"description": "盒马帮1期新增渠道商品",
 	"requestParams": [
 		{
-			"name": "ch_sku_d_o_list",
-			"type": "ChannelSkuDo[]",
-			"description": "入参模型",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
-					"name": "life_status",
+					"name": "ou_code",
 					"type": "String",
-					"description": "状态（用来判断是否可售；1-正常）"
+					"description": "门店或DC编码",
+					"required": true
 				},
 				{
 					"name": "sku_code",
@@ -48,10 +40,9 @@
 					"description": "销售规格（如果不填，默认为sale_minimum字段值）"
 				},
 				{
-					"name": "ou_code",
+					"name": "life_status",
 					"type": "String",
-					"description": "门店或DC编码",
-					"required": true
+					"description": "状态（用来判断是否可售；1-正常）"
 				},
 				{
 					"name": "deliver_warehouse",
@@ -98,66 +89,67 @@
 					"type": "Number",
 					"description": "是否在线上露出，0不露出，1露出"
 				}
-			]
+			],
+			"name": "ch_sku_d_o_list",
+			"type": "ChannelSkuDo[]",
+			"description": "入参模型",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResults",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "成功失败",
-					"required": true
-				},
-				{
-					"name": "models",
-					"type": "ApiResult[]",
-					"description": "返会结果集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "成功失败",
-							"required": true
-						},
-						{
-							"name": "err_msg",
-							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "成功失败"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "错误编码",
-							"required": true
+							"description": "错误编码"
 						},
 						{
 							"name": "model",
 							"type": "String",
-							"description": "返会结果",
-							"required": true
+							"description": "返会结果"
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "错误信息"
 						}
-					]
+					],
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "返会结果集合"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResults",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.channelsku.add",
+	"apiChineseName": "新增渠道商品",
+	"description": "盒马帮1期新增渠道商品",
+	"id": 36869
 }

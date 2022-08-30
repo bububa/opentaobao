@@ -1,0 +1,125 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "search_type",
+					"type": "Number",
+					"description": "搜索类型：1-系统推荐                      2-按词分组推荐                      3-按词推荐词",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "exact_match",
+					"type": "Boolean",
+					"description": "true-精准匹配 false-模糊匹配"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "order_by",
+					"type": "String",
+					"description": "排序字段：searchIndex,buyIndex,star,keyword"
+				},
+				{
+					"name": "order",
+					"type": "String",
+					"description": "排序规则 asc/desc"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "词组id，searchType为2时必传"
+				}
+			],
+			"name": "recommend_query",
+			"type": "RecommendKeywordQueryDTO",
+			"description": "推词请求实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "normal_word",
+					"type": "String",
+					"description": "归一化词"
+				},
+				{
+					"name": "search_index",
+					"type": "Number",
+					"description": "搜索热度"
+				},
+				{
+					"name": "buy_index",
+					"type": "Number",
+					"description": "购买热度"
+				},
+				{
+					"name": "star",
+					"type": "Number",
+					"description": "星级（推广评分）"
+				},
+				{
+					"name": "best_product_id",
+					"type": "Number",
+					"description": "最优绑定品id"
+				},
+				{
+					"name": "suggest_price",
+					"type": "String",
+					"description": "建议出价"
+				},
+				{
+					"name": "avg_price",
+					"type": "String",
+					"description": "同行平均出价"
+				},
+				{
+					"name": "base_price",
+					"type": "String",
+					"description": "市场底价"
+				}
+			],
+			"name": "result_list",
+			"type": "AdRecommendWordDTO []",
+			"description": "推词返回实体类"
+		}
+	],
+	"name": "alibaba.scbp.ad.keyword.recommend.word",
+	"apiChineseName": "推词",
+	"description": "推词",
+	"id": 63333
+}

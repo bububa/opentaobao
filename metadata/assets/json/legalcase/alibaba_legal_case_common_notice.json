@@ -1,8 +1,4 @@
 {
-	"id": 53331,
-	"name": "alibaba.legal.case.common.notice",
-	"apiChineseName": "消息通知",
-	"description": "同步通知给诉讼系统",
 	"requestParams": [
 		{
 			"name": "case_id",
@@ -23,10 +19,6 @@
 			"required": true
 		},
 		{
-			"name": "notice_model",
-			"type": "NoticeModel",
-			"description": "消息模型",
-			"required": true,
 			"subParams": [
 				{
 					"name": "creator",
@@ -34,9 +26,6 @@
 					"description": "创建人"
 				},
 				{
-					"name": "attachment",
-					"type": "FileModel[]",
-					"description": "附件",
 					"subParams": [
 						{
 							"name": "name",
@@ -48,7 +37,10 @@
 							"type": "String",
 							"description": "key"
 						}
-					]
+					],
+					"name": "attachment",
+					"type": "FileModel[]",
+					"description": "附件"
 				},
 				{
 					"name": "notice_id",
@@ -60,7 +52,11 @@
 					"type": "String",
 					"description": "内容"
 				}
-			]
+			],
+			"name": "notice_model",
+			"type": "NoticeModel",
+			"description": "消息模型",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -84,5 +80,9 @@
 			"type": "String",
 			"description": "msg"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.common.notice",
+	"apiChineseName": "消息通知",
+	"description": "同步通知给诉讼系统",
+	"id": 53331
 }

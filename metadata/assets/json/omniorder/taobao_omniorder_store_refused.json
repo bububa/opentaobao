@@ -1,8 +1,4 @@
 {
-	"id": 27390,
-	"name": "taobao.omniorder.store.refused",
-	"apiChineseName": "Pos端门店拒单",
-	"description": "ISV Pos端门店拒单，通知星盘",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "sub_order_list",
-			"type": "SubOrder[]",
-			"description": "子订单列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "code",
@@ -64,9 +55,15 @@
 				},
 				{
 					"name": "attributes",
+					"type": "String",
 					"description": "扩展字段"
 				}
-			]
+			],
+			"name": "sub_order_list",
+			"type": "SubOrder[]",
+			"description": "子订单列表",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "report_timestamp",
@@ -91,5 +88,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.refused",
+	"apiChineseName": "Pos端门店拒单",
+	"description": "ISV Pos端门店拒单，通知星盘",
+	"id": 27390
 }

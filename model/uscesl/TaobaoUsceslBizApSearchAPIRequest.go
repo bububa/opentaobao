@@ -12,10 +12,10 @@ import (
 // 查询当前门店下登记的AP列表
 type TaobaoUsceslBizApSearchAPIRequest struct {
 	model.Params
-	// 商家编码
-	_bizBrandKey string
 	// 价签条码
 	_mac string
+	// 商家编码
+	_bizBrandKey string
 	// 每页显示数
 	_limit int64
 	// 页码
@@ -47,19 +47,6 @@ func (r TaobaoUsceslBizApSearchAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBizBrandKey is BizBrandKey Setter
-// 商家编码
-func (r *TaobaoUsceslBizApSearchAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
-	r._bizBrandKey = _bizBrandKey
-	r.Set("biz_brand_key", _bizBrandKey)
-	return nil
-}
-
-// GetBizBrandKey BizBrandKey Getter
-func (r TaobaoUsceslBizApSearchAPIRequest) GetBizBrandKey() string {
-	return r._bizBrandKey
-}
-
 // SetMac is Mac Setter
 // 价签条码
 func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
@@ -71,6 +58,19 @@ func (r *TaobaoUsceslBizApSearchAPIRequest) SetMac(_mac string) error {
 // GetMac Mac Getter
 func (r TaobaoUsceslBizApSearchAPIRequest) GetMac() string {
 	return r._mac
+}
+
+// SetBizBrandKey is BizBrandKey Setter
+// 商家编码
+func (r *TaobaoUsceslBizApSearchAPIRequest) SetBizBrandKey(_bizBrandKey string) error {
+	r._bizBrandKey = _bizBrandKey
+	r.Set("biz_brand_key", _bizBrandKey)
+	return nil
+}
+
+// GetBizBrandKey BizBrandKey Getter
+func (r TaobaoUsceslBizApSearchAPIRequest) GetBizBrandKey() string {
+	return r._bizBrandKey
 }
 
 // SetLimit is Limit Setter

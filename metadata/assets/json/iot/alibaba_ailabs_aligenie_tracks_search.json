@@ -1,8 +1,4 @@
 {
-	"id": 40673,
-	"name": "alibaba.ailabs.aligenie.tracks.search",
-	"apiChineseName": "查询音频",
-	"description": "搜索类目下的音频信息",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -54,47 +50,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "record_count",
 					"type": "Number",
-					"description": "总共符合数据的个数（目前由于底层引擎限制，实际最多能查5000个，超过5000返回为空）",
-					"required": true
+					"description": "总共符合数据的个数（目前由于底层引擎限制，实际最多能查5000个，超过5000返回为空）"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "List数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值",
-					"required": true
+					"type": "String",
+					"description": "List数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "extend_info",
 					"type": "String",
-					"description": "额外扩展信息，JSON串，不一定有",
-					"required": true
+					"description": "额外扩展信息，JSON串，不一定有"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.tracks.search",
+	"apiChineseName": "查询音频",
+	"description": "搜索类目下的音频信息",
+	"id": 40673
 }

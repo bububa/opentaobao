@@ -16,10 +16,8 @@ type QTaskMetadata struct {
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
 	// 轻任务附件信息，userId_timestamp_随机字符串，例如：23434_1234458623_seresfto
 	Attachments string `json:"attachments,omitempty" xml:"attachments,omitempty"`
-	// 语音备注的文件名
-	VoiceFile string `json:"voice_file,omitempty" xml:"voice_file,omitempty"`
-	// 任务的接收人
-	Receiver string `json:"receiver,omitempty" xml:"receiver,omitempty"`
+	// 我的安排的任务上的提醒时间
+	BizRemindTime string `json:"biz_remind_time,omitempty" xml:"biz_remind_time,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 任务更新时间
@@ -30,8 +28,10 @@ type QTaskMetadata struct {
 	BizTypeStr string `json:"biz_type_str,omitempty" xml:"biz_type_str,omitempty"`
 	// 点击动作的协议
 	Action string `json:"action,omitempty" xml:"action,omitempty"`
-	// 我的安排的任务上的提醒时间
-	BizRemindTime string `json:"biz_remind_time,omitempty" xml:"biz_remind_time,omitempty"`
+	// 语音备注的文件名
+	VoiceFile string `json:"voice_file,omitempty" xml:"voice_file,omitempty"`
+	// 任务接收人的列表
+	Receiver string `json:"receiver,omitempty" xml:"receiver,omitempty"`
 	// newYunpanAttachments
 	NewYunpanAttachments string `json:"new_yunpan_attachments,omitempty" xml:"new_yunpan_attachments,omitempty"`
 	// 主键
@@ -46,10 +46,12 @@ type QTaskMetadata struct {
 	ReminderFlag int64 `json:"reminder_flag,omitempty" xml:"reminder_flag,omitempty"`
 	// 任务完成标识： 0表示只要有一个人完成任务即可，1表示所有人需要各自都完成任务
 	FinishStrategy int64 `json:"finish_strategy,omitempty" xml:"finish_strategy,omitempty"`
-	// 与此任务元相关的任务数
-	TaskCount int64 `json:"task_count,omitempty" xml:"task_count,omitempty"`
 	// 优先级，0低，1中，2高
 	Priority int64 `json:"priority,omitempty" xml:"priority,omitempty"`
+	// 与此任务元相关的任务数
+	TaskCount int64 `json:"task_count,omitempty" xml:"task_count,omitempty"`
+	// 是biz_remind_time的数字格式
+	BizRemindTimeLong int64 `json:"biz_remind_time_long,omitempty" xml:"biz_remind_time_long,omitempty"`
 	// 完成的任务数。如果完成策略是只需要1个人完成的，则只要一个人完成就会返回总任务条数。如果是所有人都要完成的，则会返回实际完成条数。
 	FinishCount int64 `json:"finish_count,omitempty" xml:"finish_count,omitempty"`
 	// start_time的数字格式
@@ -66,6 +68,4 @@ type QTaskMetadata struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 当前任务的评论数
 	CommentCount int64 `json:"comment_count,omitempty" xml:"comment_count,omitempty"`
-	// 是biz_remind_time的数字格式
-	BizRemindTimeLong int64 `json:"biz_remind_time_long,omitempty" xml:"biz_remind_time_long,omitempty"`
 }

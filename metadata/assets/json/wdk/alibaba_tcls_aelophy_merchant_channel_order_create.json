@@ -1,20 +1,8 @@
 {
-	"id": 55833,
-	"name": "alibaba.tcls.aelophy.merchant.channel.order.create",
-	"apiChineseName": "翱象商家自有渠道 订单创建",
-	"description": "翱象小程序渠道订单创建",
 	"requestParams": [
 		{
-			"name": "order_info",
-			"type": "OrderInfo",
-			"description": "订单信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "buyer",
-					"type": "Buyer",
-					"description": "买家信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "user_id",
@@ -39,14 +27,19 @@
 							"type": "String",
 							"description": "买家电话",
 							"required": true
+						},
+						{
+							"name": "user_memo",
+							"type": "String",
+							"description": "买家备注"
 						}
-					]
+					],
+					"name": "buyer",
+					"type": "Buyer",
+					"description": "买家信息",
+					"required": true
 				},
 				{
-					"name": "consignee",
-					"type": "Consignee",
-					"description": "收件人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -84,14 +77,20 @@
 							"description": "配送结束时间",
 							"required": true
 						}
-					]
+					],
+					"name": "consignee",
+					"type": "Consignee",
+					"description": "收件人信息",
+					"required": true
 				},
 				{
-					"name": "sub_orders",
-					"type": "SubOrder[]",
-					"description": "子订单信息",
-					"required": true,
 					"subParams": [
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "外部子单号",
+							"required": true
+						},
 						{
 							"name": "sku_code",
 							"type": "String",
@@ -129,9 +128,6 @@
 							"required": true
 						},
 						{
-							"name": "discount_infos",
-							"type": "DiscountInfo[]",
-							"description": "营销优惠明细",
 							"subParams": [
 								{
 									"name": "activity_id",
@@ -157,14 +153,16 @@
 									"name": "platform_discount_fee",
 									"type": "Number",
 									"description": "活动优惠金额平台分摊"
+								},
+								{
+									"name": "activity_name",
+									"type": "String",
+									"description": "活动名称"
 								}
-							]
-						},
-						{
-							"name": "sub_out_order_id",
-							"type": "String",
-							"description": "外部子单号",
-							"required": true
+							],
+							"name": "discount_infos",
+							"type": "DiscountInfo[]",
+							"description": "营销优惠明细"
 						},
 						{
 							"name": "merchant_discount_fee",
@@ -180,8 +178,17 @@
 							"name": "total_weight",
 							"type": "Number",
 							"description": "子单商品总重量"
+						},
+						{
+							"name": "handling_type",
+							"type": "String",
+							"description": "处理方式"
 						}
-					]
+					],
+					"name": "sub_orders",
+					"type": "SubOrder[]",
+					"description": "子订单信息",
+					"required": true
 				},
 				{
 					"name": "pay_fee",
@@ -214,6 +221,11 @@
 					"required": true
 				},
 				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部渠道店ID(与shop_id必选其一)"
+				},
+				{
 					"name": "order_status",
 					"type": "String",
 					"description": "订单状态",
@@ -233,13 +245,7 @@
 				{
 					"name": "order_from",
 					"type": "Number",
-					"description": "订单来源"
-				},
-				{
-					"name": "out_shop_id",
-					"type": "String",
-					"description": "外部渠道店ID",
-					"required": true
+					"description": "订单来源(选填out_shop_id时该值必填)"
 				},
 				{
 					"name": "pickup_type",
@@ -256,35 +262,167 @@
 					"name": "serial_no",
 					"type": "String",
 					"description": "订单小号"
+				},
+				{
+					"name": "package_fee",
+					"type": "Number",
+					"description": "包装费"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id(与out_shop_id必选其一)"
+				},
+				{
+					"name": "merchant_total_fee",
+					"type": "Number",
+					"description": "商家应收总金额"
+				},
+				{
+					"name": "other_merchant_subsidy_fee",
+					"type": "Number",
+					"description": "未分类商家总优惠"
+				},
+				{
+					"name": "other_plat_subsidy_fee",
+					"type": "Number",
+					"description": "未分类平台总优惠"
+				},
+				{
+					"name": "merchant_base_send_fee",
+					"type": "Number",
+					"description": "商家基础配送费"
+				},
+				{
+					"name": "plat_send_subsidy_fee",
+					"type": "Number",
+					"description": "平台配送费补贴"
+				},
+				{
+					"name": "merchant_send_subsidy_fee",
+					"type": "Number",
+					"description": "商家配送费补贴"
+				},
+				{
+					"name": "merchant_call_order_fee",
+					"type": "Number",
+					"description": "商家呼单小费"
+				},
+				{
+					"name": "cold_chain_send_fee",
+					"type": "Number",
+					"description": "冷链配送费"
+				},
+				{
+					"name": "merchant_call_order_send_fee",
+					"type": "Number",
+					"description": "商家呼单配送费"
+				},
+				{
+					"name": "send_insurance_fee",
+					"type": "Number",
+					"description": "配送保险"
+				},
+				{
+					"name": "logistics_shop_service_fee",
+					"type": "Number",
+					"description": "物流驻店服务费"
+				},
+				{
+					"name": "actual_increment_service_fee",
+					"type": "Number",
+					"description": "实收增值服务费"
+				},
+				{
+					"name": "performance_increment_service_fee",
+					"type": "Number",
+					"description": "履约增值服务费"
+				},
+				{
+					"name": "distance_increase_performance_fee",
+					"type": "Number",
+					"description": "距离加价履约费"
+				},
+				{
+					"name": "time_increase_performance_fee",
+					"type": "Number",
+					"description": "时段加价履约费"
+				},
+				{
+					"name": "merchant_public_donation",
+					"type": "Number",
+					"description": "公益捐款"
+				},
+				{
+					"name": "plat_points_deduction_fee",
+					"type": "Number",
+					"description": "用户积分抵扣金额"
+				},
+				{
+					"name": "self_pick_discount_fee",
+					"type": "Number",
+					"description": "自提服务费优惠金额"
+				},
+				{
+					"name": "self_pick_payable_fee",
+					"type": "Number",
+					"description": "自提服务费"
+				},
+				{
+					"name": "price_increase_performance_fee",
+					"type": "Number",
+					"description": "价格加价履约费"
+				},
+				{
+					"subParams": [
+						{
+							"name": "pay_channel_type",
+							"type": "Number",
+							"description": "支付渠道类型 1.默认 10-支付宝 20-微信支付 30-积分支付 40-储值卡支付 50-银行卡支付。有支付渠道的情况下，必填。 必须是翱象支持的支付渠道，否则报错。"
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "当前支付渠道的支付金额，单位分。有支付渠道的情况下，必填。"
+						}
+					],
+					"name": "pay_channels",
+					"type": "PayChannel[]",
+					"description": "支付渠道，不填会默认使用类型1，支付金额=主单的payFee"
 				}
-			]
+			],
+			"name": "order_info",
+			"type": "OrderInfo",
+			"description": "订单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.merchant.channel.order.create",
+	"apiChineseName": "翱象商家自有渠道 订单创建",
+	"description": "翱象小程序渠道订单创建",
+	"id": 55833
 }

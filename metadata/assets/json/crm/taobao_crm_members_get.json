@@ -1,8 +1,4 @@
 {
-	"id": 10838,
-	"name": "taobao.crm.members.get",
-	"apiChineseName": "获取卖家的会员（基本查询）",
-	"description": "查询卖家的会员，进行基本的查询，返回符合条件的会员列表",
 	"requestParams": [
 		{
 			"name": "buyer_nick",
@@ -14,36 +10,18 @@
 			"name": "grade",
 			"type": "Number",
 			"description": "会员等级,如果不传入值则默认为全部等级。",
-			"maxLength": 32,
-			"maxValue": 6,
-			"minValue": -1
+			"maxLength": 32
 		},
 		{
-			"name": "min_trade_amount",
-			"type": "Price",
-			"description": "最小交易额,单位为元"
-		},
-		{
-			"name": "max_trade_amount",
-			"type": "Price",
-			"description": "最大交易额，单位为元"
-		},
-		{
-			"name": "min_trade_count",
+			"name": "page_size",
 			"type": "Number",
-			"description": "最小交易量",
-			"minValue": 0
+			"description": "表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，"
 		},
 		{
-			"name": "max_trade_count",
+			"name": "current_page",
 			"type": "Number",
-			"description": "最大交易量",
-			"minValue": 0
-		},
-		{
-			"name": "min_last_trade_time",
-			"type": "Date",
-			"description": "最早上次交易时间"
+			"description": "显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000",
+			"required": true
 		},
 		{
 			"name": "max_last_trade_time",
@@ -51,26 +29,38 @@
 			"description": "最迟上次交易时间"
 		},
 		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，",
-			"maxValue": 100,
-			"minValue": 1
+			"name": "min_last_trade_time",
+			"type": "Date",
+			"description": "最早上次交易时间"
 		},
 		{
-			"name": "current_page",
+			"name": "max_trade_amount",
+			"type": "Price",
+			"description": "最大交易额，单位为元"
+		},
+		{
+			"name": "min_trade_amount",
+			"type": "Price",
+			"description": "最小交易额,单位为元"
+		},
+		{
+			"name": "min_trade_count",
 			"type": "Number",
-			"description": "显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为1000",
-			"required": true,
-			"maxValue": 80,
-			"minValue": 1
+			"description": "最小交易量"
+		},
+		{
+			"name": "max_trade_count",
+			"type": "Number",
+			"description": "最大交易量"
+		},
+		{
+			"name": "open_uid",
+			"type": "String",
+			"description": "用户的ouid"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "members",
-			"type": "BasicMember []",
-			"description": "根据一定条件查询到卖家的会员",
 			"subParams": [
 				{
 					"name": "buyer_nick",
@@ -78,39 +68,9 @@
 					"description": "会员昵称"
 				},
 				{
-					"name": "status",
+					"name": "ouid",
 					"type": "String",
-					"description": "显示会员的状态，normal正常，blacklist黑名单"
-				},
-				{
-					"name": "grade",
-					"type": "Number",
-					"description": "会员等级，0未非会员，其余对应等级名称取grade_name"
-				},
-				{
-					"name": "trade_count",
-					"type": "Number",
-					"description": "交易成功的次数"
-				},
-				{
-					"name": "trade_amount",
-					"type": "Price",
-					"description": "交易的金额"
-				},
-				{
-					"name": "last_trade_time",
-					"type": "Date",
-					"description": "最后交易的日期"
-				},
-				{
-					"name": "close_trade_count",
-					"type": "Number",
-					"description": "交易关闭的笔数"
-				},
-				{
-					"name": "close_trade_amount",
-					"type": "Price",
-					"description": "交易关闭金额"
+					"description": "open_uid"
 				},
 				{
 					"name": "item_num",
@@ -118,14 +78,49 @@
 					"description": "购买的宝贝件数"
 				},
 				{
+					"name": "close_trade_amount",
+					"type": "String",
+					"description": "交易关闭金额"
+				},
+				{
 					"name": "group_ids",
 					"type": "String",
 					"description": "分组的id集合字符串"
 				},
 				{
+					"name": "status",
+					"type": "String",
+					"description": "显示会员的状态，normal正常，blacklist黑名单"
+				},
+				{
 					"name": "relation_source",
 					"type": "Number",
 					"description": "关系来源，1交易成功，2未交易成功 ,3 卖家主动吸纳"
+				},
+				{
+					"name": "trade_amount",
+					"type": "String",
+					"description": "交易的金额"
+				},
+				{
+					"name": "grade",
+					"type": "Number",
+					"description": "会员等级，0未非会员，其余对应等级名称取grade_name"
+				},
+				{
+					"name": "close_trade_count",
+					"type": "Number",
+					"description": "交易关闭的笔数"
+				},
+				{
+					"name": "last_trade_time",
+					"type": "Date",
+					"description": "最后交易的日期"
+				},
+				{
+					"name": "trade_count",
+					"type": "Number",
+					"description": "交易成功的次数"
 				},
 				{
 					"name": "biz_order_id",
@@ -137,12 +132,19 @@
 					"type": "String",
 					"description": "等级名称"
 				}
-			]
+			],
+			"name": "members",
+			"type": "BasicMember []",
+			"description": "根据一定条件查询到卖家的会员"
 		},
 		{
 			"name": "total_result",
 			"type": "Number",
 			"description": "记录总数"
 		}
-	]
+	],
+	"name": "taobao.crm.members.get",
+	"apiChineseName": "获取卖家的会员（基本查询）",
+	"description": "查询卖家的会员，进行基本的查询，返回符合条件的会员列表",
+	"id": 10838
 }

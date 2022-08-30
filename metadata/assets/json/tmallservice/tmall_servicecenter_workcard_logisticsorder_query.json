@@ -1,149 +1,139 @@
 {
-	"id": 55369,
-	"name": "tmall.servicecenter.workcard.logisticsorder.query",
-	"apiChineseName": "物流单信息查询",
-	"description": "物流订单信息查询API",
 	"requestParams": [
 		{
 			"name": "logistics_order_id",
 			"type": "Number",
 			"description": "物流单号",
 			"required": true
+		},
+		{
+			"name": "new_logistics",
+			"type": "Boolean",
+			"description": "是否查询新物流，不填默认查原有物流"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "ExpressDto",
-					"description": "物流信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "goods_info",
 							"type": "String",
-							"description": "物品信息明细 字符串格式为：json 串 例子： [{ \"name\": \"大衣,毛衣\", \"count\": 1 }, { \"name\": \"裤子\", \"count\": 2 }]",
-							"required": true
+							"description": "物品信息明细 字符串格式为：json 串 例子： [{ \"name\": \"大衣,毛衣\", \"count\": 1 }, { \"name\": \"裤子\", \"count\": 2 }]"
 						},
 						{
 							"name": "sub_mail_nos",
 							"type": "String[]",
-							"description": "子物流单号",
-							"required": true
+							"description": "子物流单号"
 						},
 						{
 							"name": "mail_no",
 							"type": "String",
-							"description": "物流单号",
-							"required": true
+							"description": "物流单号"
 						},
 						{
+							"subParams": [
+								{
+									"name": "account_nick",
+									"type": "String",
+									"description": "寄件人名称"
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "寄件人手机号码"
+								},
+								{
+									"name": "full_address",
+									"type": "String",
+									"description": "寄件地址"
+								}
+							],
 							"name": "sender",
 							"type": "CustomerInfo",
-							"description": "寄件人信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "account_nick",
-									"type": "String",
-									"description": "寄件人名称",
-									"required": true
-								},
-								{
-									"name": "phone",
-									"type": "String",
-									"description": "寄件人手机号码",
-									"required": true
-								},
-								{
-									"name": "full_address",
-									"type": "String",
-									"description": "寄件地址",
-									"required": true
-								}
-							]
+							"description": "寄件人信息"
 						},
 						{
-							"name": "receiver",
-							"type": "CustomerInfo",
-							"description": "收件人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "account_nick",
 									"type": "String",
-									"description": "收件人名称",
-									"required": true
+									"description": "收件人名称"
 								},
 								{
 									"name": "phone",
 									"type": "String",
-									"description": "收件人手机号码",
-									"required": true
+									"description": "收件人手机号码"
 								},
 								{
 									"name": "full_address",
 									"type": "String",
-									"description": "收件地址",
-									"required": true
+									"description": "收件地址"
 								}
-							]
+							],
+							"name": "receiver",
+							"type": "CustomerInfo",
+							"description": "收件人信息"
 						},
 						{
 							"name": "logistics_order_id",
 							"type": "Number",
-							"description": "物流单号",
-							"required": true
-						},
-						{
-							"name": "status_code",
-							"type": "String",
-							"description": "物流创建 ：create 物流取消 ：cancel 分派小件员：assign 已经分派小件员: assigned 包裹上门揽收: pickup_door 包裹已揽收完成: pickup_finished 包裹派送中: dispatching 包裹已签收: signed",
-							"required": true
+							"description": "物流单号"
 						},
 						{
 							"name": "reserve_end_time",
 							"type": "Date",
-							"description": "预约开始时间",
-							"required": true
+							"description": "预约开始时间"
 						},
 						{
 							"name": "reserve_start_time",
 							"type": "Date",
-							"description": "预约结束时间",
-							"required": true
+							"description": "预约结束时间"
+						},
+						{
+							"name": "status_code",
+							"type": "String",
+							"description": "物流创建 ：create 物流取消 ：cancel 分派小件员：assign 已经分派小件员: assigned 包裹上门揽收: pickup_door 包裹已揽收完成: pickup_finished 包裹派送中: dispatching 包裹已签收: signed"
 						},
 						{
 							"name": "goods_type",
 							"type": "String",
-							"description": "luxury（奢饰商品）/common（普通商品）",
-							"required": true
+							"description": "luxury（奢饰商品）/common（普通商品）"
+						},
+						{
+							"name": "value_added_service_demand",
+							"type": "String",
+							"description": "增值服务需求"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "ExpressDto",
+					"description": "物流信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "结果 true /false",
-					"required": true
+					"description": "结果 true /false"
 				},
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "stage_type",
 					"type": "String",
-					"description": "物流类型 消费者--\u003e 商家 STAGE1；商家---\u003e消费者  STAGE2",
-					"required": true
+					"description": "物流类型 消费者--\u003e 商家 STAGE1；商家---\u003e消费者  STAGE2"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.logisticsorder.query",
+	"apiChineseName": "物流单信息查询",
+	"description": "物流订单信息查询API",
+	"id": 55369
 }

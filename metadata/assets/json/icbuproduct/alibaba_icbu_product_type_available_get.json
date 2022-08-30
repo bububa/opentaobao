@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "返回结果语种"
+				}
+			],
+			"name": "type_request",
+			"type": "ProductTopRequest",
+			"description": "-",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "错误追踪码，请务必打印在日志中，后续排查问题请提交此错误追踪码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "support_post_whole_sale",
+					"type": "Boolean",
+					"description": "是否支持下单品"
+				},
+				{
+					"name": "support_post_sourcing",
+					"type": "Boolean",
+					"description": "是否支持询盘品"
+				}
+			],
+			"name": "data",
+			"type": "ProductSupportTypeDTO",
+			"description": "返回结果数据"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "调用是否成功\t"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回的错误码，数组形式的字符串，用;分割\t"
+		}
+	],
+	"name": "alibaba.icbu.product.type.available.get",
+	"apiChineseName": "商家发品类型查询",
+	"description": "查询商家发品权限",
+	"id": 62123
+}

@@ -1,0 +1,115 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "erp_warehouse_code",
+							"type": "String",
+							"description": "仓库编码，string（50)    卖家下唯一主键",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP货品id，ERP内部系统货品唯一识别标识"
+						},
+						{
+							"name": "avaliable_quantity",
+							"type": "Number",
+							"description": "仓可用正品库存数量",
+							"required": true
+						},
+						{
+							"name": "total_quantity",
+							"type": "Number",
+							"description": "仓实际正品库存总数",
+							"required": true
+						}
+					],
+					"name": "physics_inventory",
+					"type": "PhysicsInventory[]",
+					"description": "库存信息",
+					"required": true
+				}
+			],
+			"name": "inventory_upload_request",
+			"type": "InventoryBatchUploadAsyncRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP货品id，ERP内部系统货品唯一识别标识"
+						},
+						{
+							"name": "erp_warehouse_code",
+							"type": "String",
+							"description": "仓库编码，string（50)    卖家下唯一主键"
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "响应码"
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "响应信息"
+						}
+					],
+					"name": "data",
+					"type": "DataDetail[]",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=接收失败，1=接收成功"
+				}
+			],
+			"name": "inventory_upload_response",
+			"type": "InventoryUploadAsyncResponse",
+			"description": "请求出参"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.physics.inventory.batch.upload.async",
+	"apiChineseName": "实仓库存同步",
+	"description": "实仓库存同步",
+	"id": 63308
+}

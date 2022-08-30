@@ -1,17 +1,8 @@
 {
-	"id": 25991,
-	"name": "taobao.qimen.entryorder.create",
-	"apiChineseName": "入库单创建接口",
-	"description": "ERP调用接口，创建入库单;",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "EntryOrderCreateRequest",
 			"subParams": [
 				{
-					"name": "entryOrder",
-					"type": "EntryOrder",
-					"description": "入库单信息",
 					"subParams": [
 						{
 							"name": "entryOrderCode",
@@ -47,9 +38,6 @@
 							"description": "业务类型(SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK=调拨入库;QTRK=其他入库;B2BRK=B2B入 库;XNRK=虚拟入库;只传英文编码)"
 						},
 						{
-							"name": "relatedOrders",
-							"type": "RelatedOrder[]",
-							"description": "关联订单信息",
 							"subParams": [
 								{
 									"name": "orderType",
@@ -61,7 +49,10 @@
 									"type": "String",
 									"description": "关联的订单编号"
 								}
-							]
+							],
+							"name": "relatedOrders",
+							"type": "RelatedOrder[]",
+							"description": "关联订单信息"
 						},
 						{
 							"name": "expectStartTime",
@@ -114,9 +105,6 @@
 							"description": "操作时间(YYYY-MM-DD HH:MM:SS)"
 						},
 						{
-							"name": "senderInfo",
-							"type": "SenderInfo",
-							"description": "发件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -183,12 +171,12 @@
 									"description": "详细地址",
 									"required": true
 								}
-							]
+							],
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息"
 						},
 						{
-							"name": "receiverInfo",
-							"type": "ReceiverInfo",
-							"description": "收件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -265,7 +253,10 @@
 									"description": "详细地址",
 									"required": true
 								}
-							]
+							],
+							"name": "receiverInfo",
+							"type": "ReceiverInfo",
+							"description": "收件人信息"
 						},
 						{
 							"name": "remark",
@@ -292,12 +283,12 @@
 							"type": "String",
 							"description": "出库仓库名称"
 						}
-					]
+					],
+					"name": "entryOrder",
+					"type": "EntryOrder",
+					"description": "入库单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "入库单详情",
 					"subParams": [
 						{
 							"name": "outBizCode",
@@ -383,31 +374,34 @@
 							"description": "单位"
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "sn编码列表",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn编码"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn编码列表"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "入库单详情"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "EntryOrderCreateRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -433,7 +427,13 @@
 					"description": "仓储系统入库单编码",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.entryorder.create",
+	"apiChineseName": "入库单创建接口",
+	"description": "ERP调用接口，创建入库单;",
+	"id": 25991
 }

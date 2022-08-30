@@ -1,14 +1,6 @@
 {
-	"id": 53612,
-	"name": "alitrip.btrip.invoice.setting.add",
-	"apiChineseName": "发票设置",
-	"description": "发票设置",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenInvoiceModifyAndNewRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "address",
@@ -65,7 +57,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenInvoiceModifyAndNewRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -84,5 +80,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.invoice.setting.add",
+	"apiChineseName": "发票设置",
+	"description": "发票设置",
+	"id": 53612
 }

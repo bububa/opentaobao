@@ -14,7 +14,7 @@ type TaobaoFenxiaoProductQuantityUpdateAPIRequest struct {
 	model.Params
 	// 库存修改值。产品有sku时，与sku属性顺序对应，用,分隔。产品无sku时，只写库存值。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0
 	_quantity string
-	// sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。
+	// sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。请参照taobao.fenxiao.products.get接口返回的properties设置入参
 	_properties string
 	// 产品ID
 	_productId int64
@@ -57,7 +57,7 @@ func (r TaobaoFenxiaoProductQuantityUpdateAPIRequest) GetQuantity() string {
 }
 
 // SetProperties is Properties Setter
-// sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。
+// sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。请参照taobao.fenxiao.products.get接口返回的properties设置入参
 func (r *TaobaoFenxiaoProductQuantityUpdateAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
 	r.Set("properties", _properties)

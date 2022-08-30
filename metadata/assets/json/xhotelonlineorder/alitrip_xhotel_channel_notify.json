@@ -1,13 +1,6 @@
 {
-	"id": 48716,
-	"name": "alitrip.xhotel.channel.notify",
-	"apiChineseName": "分销渠道各类通知接口",
-	"description": "分销渠道支付通知",
 	"requestParams": [
 		{
-			"name": "order_notify_query",
-			"type": "OrderNotifyQuery",
-			"description": "通知类型查询条件",
 			"subParams": [
 				{
 					"name": "pay_time",
@@ -34,22 +27,28 @@
 					"type": "String",
 					"description": "会员卡号"
 				}
-			]
+			],
+			"name": "order_notify_query",
+			"type": "OrderNotifyQuery",
+			"description": "通知类型查询条件"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HbsResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HbsResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.xhotel.channel.notify",
+	"apiChineseName": "分销渠道各类通知接口",
+	"description": "分销渠道支付通知",
+	"id": 48716
 }

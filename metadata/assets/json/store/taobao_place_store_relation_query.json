@@ -1,13 +1,6 @@
 {
-	"id": 51046,
-	"name": "taobao.place.store.relation.query",
-	"apiChineseName": "门店关系查询",
-	"description": "查询门店关系",
 	"requestParams": [
 		{
-			"name": "param_store_relation_simple_query",
-			"type": "StoreRelationSimpleQuery",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -33,105 +26,103 @@
 					"name": "store_id",
 					"type": "Number",
 					"description": "门店id"
+				},
+				{
+					"name": "accurate_count",
+					"type": "Boolean",
+					"description": "是否获取精确数量，设置为true后搜索性能较差，对准确总数有强诉求的场景再使用。分页时请只在第一页请求时设置为true"
 				}
-			]
+			],
+			"name": "param_store_relation_simple_query",
+			"type": "StoreRelationSimpleQuery",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopBatchResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "failure",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
-					"name": "other",
-					"type": "Other",
-					"description": "其它信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "是否为空",
-							"required": true
+							"description": "是否为空"
 						}
-					]
+					],
+					"name": "other",
+					"type": "Other",
+					"description": "其它信息"
 				},
 				{
-					"name": "result_list",
-					"type": "StoreRelationSimpleDo[]",
-					"description": "业务结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_type",
 							"type": "Number",
-							"description": "业务类型",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "业务id",
-							"required": true
+							"description": "业务id"
 						},
 						{
 							"name": "relation_id",
 							"type": "Number",
-							"description": "关系id",
-							"required": true
+							"description": "关系id"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "业务关系状态",
-							"required": true
+							"description": "业务关系状态"
 						},
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "门店id",
-							"required": true
+							"description": "门店id"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "StoreRelationSimpleDo[]",
+					"description": "业务结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "条目数（已废弃）",
-					"required": true
+					"description": "条目数，默认不返回，当设置accurate_count为true时才会返回"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.place.store.relation.query",
+	"apiChineseName": "门店关系查询",
+	"description": "查询门店关系",
+	"id": 51046
 }

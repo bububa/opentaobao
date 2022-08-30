@@ -18,6 +18,8 @@ type TaobaoSimbaSalestarCreativeAddAPIRequest struct {
 	_imgUrl string
 	// 主人昵称
 	_nick string
+	// 创意广审编号
+	_adExaminationCode string
 	// 推广组Id
 	_adgroupId int64
 }
@@ -80,6 +82,19 @@ func (r *TaobaoSimbaSalestarCreativeAddAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetAdExaminationCode is AdExaminationCode Setter
+// 创意广审编号
+func (r *TaobaoSimbaSalestarCreativeAddAPIRequest) SetAdExaminationCode(_adExaminationCode string) error {
+	r._adExaminationCode = _adExaminationCode
+	r.Set("ad_examination_code", _adExaminationCode)
+	return nil
+}
+
+// GetAdExaminationCode AdExaminationCode Getter
+func (r TaobaoSimbaSalestarCreativeAddAPIRequest) GetAdExaminationCode() string {
+	return r._adExaminationCode
 }
 
 // SetAdgroupId is AdgroupId Setter

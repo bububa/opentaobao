@@ -6,6 +6,8 @@ type HisvResult struct {
 	ModuleList []OpenIsvApplyRs `json:"module_list,omitempty" xml:"module_list>open_isv_apply_rs,omitempty"`
 	// 错误信息
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+	// 错误码
+	ResultCode string `json:"result_code	,omitempty" xml:"result_code	,omitempty"`
 	// 结果对象
 	Module *OpenApiApplyRs `json:"module,omitempty" xml:"module,omitempty"`
 	// 错误码

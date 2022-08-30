@@ -1,14 +1,6 @@
 {
-	"id": 55214,
-	"name": "alibaba.ascp.channel.distributor.product.detail",
-	"apiChineseName": "获取供应链渠道中心品的详情接口（淘外分销商专用）",
-	"description": "此api为淘外分销的品批量查询标准api，淘外分销商专用",
 	"requestParams": [
 		{
-			"name": "product_detail_request",
-			"type": "ProductDetailQueryRequestForDistributor",
-			"description": "产品详情查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_id",
@@ -24,154 +16,152 @@
 				{
 					"name": "sub_channel_code",
 					"type": "String",
-					"description": "二级渠道编码"
+					"description": "二级渠道编码",
+					"required": true
 				},
 				{
 					"name": "channel_code",
 					"type": "String",
 					"description": "渠道编码",
 					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码"
 				}
-			]
+			],
+			"name": "product_detail_request",
+			"type": "ProductDetailQueryRequestForDistributor",
+			"description": "产品详情查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultWrapper",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
-					"name": "result_success",
-					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
-				},
-				{
-					"name": "error_message",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "error",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "ProductDetailDTO",
-					"description": "返回信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "product_sku_detail",
-							"type": "ProductSkuDetailDTO[]",
-							"description": "sku 列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "properties",
 									"type": "String[]",
-									"description": "sku 销售属性",
-									"required": true
+									"description": "sku 销售属性"
 								},
 								{
 									"name": "sku_id",
 									"type": "String",
-									"description": "skuId",
-									"required": true
+									"description": "skuId"
 								},
 								{
 									"name": "picture",
 									"type": "String[]",
-									"description": "sku图片链接",
-									"required": true
+									"description": "sku图片链接"
 								}
-							]
+							],
+							"name": "product_sku_detail",
+							"type": "ProductSkuDetailDTO[]",
+							"description": "sku 列表"
 						},
 						{
 							"name": "white_bg_picture",
 							"type": "String",
-							"description": "透明白底图",
-							"required": true
+							"description": "透明白底图"
 						},
 						{
 							"name": "product_id",
 							"type": "String",
-							"description": "产品 id",
-							"required": true
+							"description": "产品 id"
 						},
 						{
 							"name": "desc_rich_text",
 							"type": "String",
-							"description": "富文本详描",
-							"required": true
+							"description": "富文本详描"
 						},
 						{
 							"name": "sales_modes",
 							"type": "String[]",
-							"description": "经营模式",
-							"required": true
+							"description": "经营模式"
 						},
 						{
 							"name": "sub_channel_code",
 							"type": "String",
-							"description": "二级渠道编码",
-							"required": true
+							"description": "二级渠道编码"
 						},
 						{
 							"name": "pictures",
 							"type": "String[]",
-							"description": "产品图片链接",
-							"required": true
+							"description": "产品图片链接"
 						},
 						{
 							"name": "product_title",
 							"type": "String",
-							"description": "产品标题",
-							"required": true
+							"description": "产品标题"
 						},
 						{
 							"name": "properties",
 							"type": "String[]",
-							"description": "产品销售属性",
-							"required": true
+							"description": "产品销售属性"
 						},
 						{
 							"name": "category",
 							"type": "String",
-							"description": "类目",
-							"required": true
+							"description": "类目"
 						},
 						{
 							"name": "brand",
 							"type": "String",
-							"description": "品牌",
-							"required": true
+							"description": "品牌"
 						},
 						{
 							"name": "channel_code",
 							"type": "String",
-							"description": "渠道编码",
-							"required": true
+							"description": "渠道编码"
 						},
 						{
 							"name": "brand_id",
 							"type": "String",
-							"description": "品牌 id",
-							"required": true
+							"description": "品牌 id"
 						},
 						{
 							"name": "category_id",
 							"type": "String",
-							"description": "类目 id",
-							"required": true
+							"description": "类目 id"
+						},
+						{
+							"name": "materials_map",
+							"type": "String",
+							"description": "素材扩展信息"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ProductDetailDTO",
+					"description": "返回信息"
+				},
+				{
+					"name": "result_success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error",
+					"type": "String",
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.channel.distributor.product.detail",
+	"apiChineseName": "获取供应链渠道中心品的详情接口（淘外分销商专用）",
+	"description": "此api为淘外分销的品批量查询标准api，淘外分销商专用",
+	"id": 55214
 }

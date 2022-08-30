@@ -12,12 +12,12 @@ import (
 // 服务商调用该接口分派工人给具体的工单
 type TmallServicecenterWorkcardAssignworkerAPIRequest struct {
 	model.Params
+	// 核销单外部id
+	_outerId string
 	// 需要指派的工人手机
 	_targetWorkerMobile string
 	// 需要指派的工人姓名
 	_targetWorkerName string
-	// 核销单外部id
-	_outerId string
 	// 扩展信息
 	_extJson string
 	// 需要指派的工人id
@@ -51,6 +51,19 @@ func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetApiParams() url.Val
 	return params
 }
 
+// SetOuterId is OuterId Setter
+// 核销单外部id
+func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetOuterId(_outerId string) error {
+	r._outerId = _outerId
+	r.Set("outer_id", _outerId)
+	return nil
+}
+
+// GetOuterId OuterId Getter
+func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetOuterId() string {
+	return r._outerId
+}
+
 // SetTargetWorkerMobile is TargetWorkerMobile Setter
 // 需要指派的工人手机
 func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerMobile(_targetWorkerMobile string) error {
@@ -75,19 +88,6 @@ func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetTargetWorkerName(_
 // GetTargetWorkerName TargetWorkerName Getter
 func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetTargetWorkerName() string {
 	return r._targetWorkerName
-}
-
-// SetOuterId is OuterId Setter
-// 核销单外部id
-func (r *TmallServicecenterWorkcardAssignworkerAPIRequest) SetOuterId(_outerId string) error {
-	r._outerId = _outerId
-	r.Set("outer_id", _outerId)
-	return nil
-}
-
-// GetOuterId OuterId Getter
-func (r TmallServicecenterWorkcardAssignworkerAPIRequest) GetOuterId() string {
-	return r._outerId
 }
 
 // SetExtJson is ExtJson Setter

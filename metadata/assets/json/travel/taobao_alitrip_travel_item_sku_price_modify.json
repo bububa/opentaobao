@@ -1,8 +1,4 @@
 {
-	"id": 25811,
-	"name": "taobao.alitrip.travel.item.sku.price.modify",
-	"apiChineseName": "【API3.0】日期级别日历价格库存修改，增量维护",
-	"description": "【API3.0】日期级别日历价格库存增量维护",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -15,10 +11,6 @@
 			"description": "商品 外部商家编码。itemId和outProductId至少填写一个"
 		},
 		{
-			"name": "skus",
-			"type": "PontusTravelItemSkuInfo[]",
-			"description": "商品日历价格库存套餐",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "outer_sku_id",
@@ -27,10 +19,6 @@
 					"required": true
 				},
 				{
-					"name": "prices",
-					"type": "PontusTravelPrices[]",
-					"description": "商品日历价格库存相关信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "operation",
@@ -64,16 +52,26 @@
 							"type": "String",
 							"description": "外部商家团期id，可选字段，仅供商家自己使用，用来标识每一天的价格库存"
 						}
-					]
+					],
+					"name": "prices",
+					"type": "PontusTravelPrices[]",
+					"description": "商品日历价格库存相关信息",
+					"required": true
 				}
-			]
+			],
+			"name": "skus",
+			"type": "PontusTravelItemSkuInfo[]",
+			"description": "商品日历价格库存套餐",
+			"maxListSize": 20
+		},
+		{
+			"name": "modify_type",
+			"type": "Number",
+			"description": "商品价库变更类型，0=价格库存均变更，1=价格变更，2=库存变更"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "travel_item",
-			"type": "TopTravelItem",
-			"description": "日期级别日历价格库存增量维护",
 			"subParams": [
 				{
 					"name": "created",
@@ -90,7 +88,14 @@
 					"type": "Date",
 					"description": "商品修改时间"
 				}
-			]
+			],
+			"name": "travel_item",
+			"type": "TopTravelItem",
+			"description": "日期级别日历价格库存增量维护"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.item.sku.price.modify",
+	"apiChineseName": "【API3.0】日期级别日历价格库存修改，增量维护",
+	"description": "【API3.0】日期级别日历价格库存增量维护",
+	"id": 25811
 }

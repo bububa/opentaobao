@@ -18,4 +18,6 @@ type BaseLabelDto struct {
 	BusinessId string `json:"business_id,omitempty" xml:"business_id,omitempty"`
 	// 父级业务ID
 	ParentBusinessId string `json:"parent_business_id,omitempty" xml:"parent_business_id,omitempty"`
+	// 业务类型0-新房 1-二手房
+	BizType int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 }

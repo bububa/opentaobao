@@ -1,9 +1,11 @@
 {
-	"id": 49677,
-	"name": "taobao.banamadpc.item.select.prop",
-	"apiChineseName": "获取子属性",
-	"description": "巴拿马供应商通过此接口获取子属性",
 	"requestParams": [
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目id",
+			"required": true
+		},
 		{
 			"name": "xml",
 			"type": "String",
@@ -15,45 +17,39 @@
 			"type": "Number",
 			"description": "属性id",
 			"required": true
-		},
-		{
-			"name": "cat_id",
-			"type": "Number",
-			"description": "类目id",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "无",
 			"subParams": [
 				{
 					"name": "er_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "er_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "入参类目下入参属性的子属性schema xml",
-					"required": true
+					"description": "入参类目下入参属性的子属性schema xml"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "无"
 		}
-	]
+	],
+	"name": "taobao.banamadpc.item.select.prop",
+	"apiChineseName": "获取子属性",
+	"description": "巴拿马供应商通过此接口获取子属性",
+	"id": 49677
 }

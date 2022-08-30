@@ -1,22 +1,18 @@
 {
-	"id": 22665,
-	"name": "taobao.xhotel.add",
-	"apiChineseName": "酒店新增接口（ID重复自动更新）",
-	"description": "添加酒店或更新酒店",
 	"requestParams": [
 		{
 			"name": "outer_id",
 			"type": "String",
 			"description": "外部酒店ID, 这是卖家自己系统中的ID",
-			"required": true,
-			"maxLength": 64
+			"maxLength": 64,
+			"required": true
 		},
 		{
 			"name": "name",
 			"type": "String",
 			"description": "酒店名称,国内酒店请传中文名称",
-			"required": true,
-			"maxLength": 128
+			"maxLength": 128,
+			"required": true
 		},
 		{
 			"name": "used_name",
@@ -61,8 +57,8 @@
 			"name": "address",
 			"type": "String",
 			"description": "酒店地址。长度不能超过255。不填入会导致不能自动匹配。",
-			"required": true,
-			"maxLength": 255
+			"maxLength": 255,
+			"required": true
 		},
 		{
 			"name": "longitude",
@@ -85,8 +81,8 @@
 			"name": "tel",
 			"type": "String",
 			"description": "酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
-			"required": true,
-			"maxLength": 30
+			"maxLength": 30,
+			"required": true
 		},
 		{
 			"name": "extend",
@@ -130,9 +126,7 @@
 		{
 			"name": "rooms",
 			"type": "Number",
-			"description": "房间数 0~9999之内的数字",
-			"maxValue": 9999,
-			"minValue": 1
+			"description": "房间数 0~9999之内的数字"
 		},
 		{
 			"name": "description",
@@ -147,7 +141,7 @@
 		{
 			"name": "brand",
 			"type": "String",
-			"description": "酒店品牌。取值为数字。枚举如下（只给出top30，如果不满足，请联系去啊接口人）：    ruJia(\"1\", \"rujiakuaijie\", \"如家快捷\", 1),    qiTian(\"2\", \"7 days\", \"7天连锁\", 1),    hanTing(\"3\", \"Hanting Inns \u0026 Hotels\", \"汉庭酒店\", 1),    geLinHaoTai(\"4\", \"Green Tree Inn\", \"格林豪泰\", 1),    jinJiang(\"5\", \"Jinjiang Inn\", \"锦江之星\", 1),    su8(\"6\", \"Super 8\", \"速8\", 1),    moTai(\"7\", \"Motel\", \"莫泰\", 1),    zhouji(\"8\", \"InterContinental\", \"洲际\", 4),    budint(\"9\", \"Pod Inn\", \"布丁\", 1),    jiuJiu(\"10\", \"jiujiuliansuo\", \"99连锁\", 1),    piaoHome(\"11\", \"Piao Home Inn\", \"飘HOME\", 1),    juzi(\"12\", \"Orange Hotels\", \"桔子酒店\", 1),    yibai(\"13\", \"yibai\", \"易佰\", 1),    weiyena(\"14\",\"weiyena\",\"维也纳\",2),    huangguanjiari(\"15\", \"huangguanjiari\", \"皇冠假日\", 4),    xidawu(\"16\", \"xidawu\", \"喜达屋\", 3),    chengshiBJ(\"17\", \"chengshibianjie\", \"城市便捷\", 1),    shagnKeYou(\"18\", \"shagnkeyou\", \"尚客优\", 1),    jinjiang(\"19\", \"jinjiang\", \"锦江酒店\", 3),    wendemu(\"20\", \"Hawthorn Suites\", \"温德姆\", 4),    yibisi(\"21\", \"Ibis Hotels\", \"宜必思\", 1),    wanhao(\"22\", \"JM Hoteles\", \"万豪\", 4),    yijia365(\"23\", \"yijia365\", \"驿家365\", 1),    shoulv(\"24\", \"shoulvjituan\", \"首旅建国\", 3),    kaiyuan(\"25\", \"New Century Hotel\", \"开元大酒店\", 4),    yagao(\"26\", \"yagao\", \"雅高\", 3),    daisi(\"27\", \"daisi\", \"戴斯\", 3),    jinling(\"28\", \"jinlingliansuo\", \"金陵\", 4),    xianggelila(\"29\", \"Shangri-La City Hotels\", \"香格里拉\", 4),    xierdun(\"30\", \"Hilton\", \"希尔顿\", 4),"
+			"description": "酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH\u0026docType=1\u0026articleId=120180"
 		},
 		{
 			"name": "postal_code",
@@ -249,9 +243,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "xhotel",
-			"type": "XHotel",
-			"description": "酒店信息",
 			"subParams": [
 				{
 					"name": "hid",
@@ -261,17 +252,9 @@
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "酒店状态：\u003cbr/\u003e0: 正常;-2:停售；-1：删除"
+					"description": "酒店状态：0: 正常;-2:停售；-1：删除"
 				},
 				{
-					"name": "error_info",
-					"type": "String",
-					"description": "未通过时的拒绝原因等。"
-				},
-				{
-					"name": "s_hotel",
-					"type": "SHotel",
-					"description": "淘宝标准酒店信息",
 					"subParams": [
 						{
 							"name": "shid",
@@ -289,6 +272,11 @@
 							"description": "used_name"
 						},
 						{
+							"name": "type",
+							"type": "String",
+							"description": "酒店类型"
+						},
+						{
 							"name": "domestic",
 							"type": "Number",
 							"description": "0:国内;1:国外"
@@ -297,6 +285,11 @@
 							"name": "country",
 							"type": "String",
 							"description": "国家编码"
+						},
+						{
+							"name": "city_tag",
+							"type": "String",
+							"description": "地区标签"
 						},
 						{
 							"name": "province",
@@ -314,6 +307,11 @@
 							"description": "区域编码"
 						},
 						{
+							"name": "business",
+							"type": "String",
+							"description": "business"
+						},
+						{
 							"name": "address",
 							"type": "String",
 							"description": "酒店地址"
@@ -324,16 +322,6 @@
 							"description": "酒店级别"
 						},
 						{
-							"name": "business",
-							"type": "String",
-							"description": "business"
-						},
-						{
-							"name": "position_type",
-							"type": "Number",
-							"description": "position_type"
-						},
-						{
 							"name": "longitude",
 							"type": "String",
 							"description": "longitude"
@@ -342,6 +330,11 @@
 							"name": "latitude",
 							"type": "String",
 							"description": "latitude"
+						},
+						{
+							"name": "position_type",
+							"type": "Number",
+							"description": "position_type"
 						},
 						{
 							"name": "tel",
@@ -369,6 +362,11 @@
 							"description": "楼层数"
 						},
 						{
+							"name": "extend",
+							"type": "String",
+							"description": "扩展信息的JSON"
+						},
+						{
 							"name": "rooms",
 							"type": "Number",
 							"description": "房间数"
@@ -384,19 +382,19 @@
 							"description": "交通距离与设施服务。JSON格式。"
 						},
 						{
+							"name": "hotel_facilities",
+							"type": "String",
+							"description": "酒店设施"
+						},
+						{
+							"name": "room_facilities",
+							"type": "String",
+							"description": "房间设施"
+						},
+						{
 							"name": "pic_url",
 							"type": "String",
 							"description": "酒店图片url"
-						},
-						{
-							"name": "extend",
-							"type": "String",
-							"description": "扩展信息的JSON"
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "状态:0：待系统匹配1：已系统匹配，匹配成功，待卖家确认2：已系统匹配，匹配失败，待人工匹配3：已人工匹配，匹配成功，待卖家确认4：已人工匹配，匹配失败5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo;6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo;7：停售"
 						},
 						{
 							"name": "created_time",
@@ -409,29 +407,9 @@
 							"description": "修改时间"
 						},
 						{
-							"name": "brand",
-							"type": "String",
-							"description": "brand"
-						},
-						{
-							"name": "type",
-							"type": "String",
-							"description": "酒店类型"
-						},
-						{
-							"name": "hotel_facilities",
-							"type": "String",
-							"description": "酒店设施"
-						},
-						{
-							"name": "room_facilities",
-							"type": "String",
-							"description": "房间设施"
-						},
-						{
-							"name": "city_tag",
-							"type": "String",
-							"description": "地区标签"
+							"name": "status",
+							"type": "Number",
+							"description": "0,营业中；-1，筹建中；-2，暂停营业；-3，已停业；默认为0"
 						},
 						{
 							"name": "postal_code",
@@ -439,86 +417,14 @@
 							"description": "邮编"
 						},
 						{
-							"name": "fee",
+							"name": "brand",
 							"type": "String",
-							"description": "杂费"
-						},
-						{
-							"name": "srid",
-							"type": "Number",
-							"description": "srid"
-						},
-						{
-							"name": "pics",
-							"type": "String",
-							"description": "pics"
-						},
-						{
-							"name": "area",
-							"type": "String",
-							"description": "area"
-						},
-						{
-							"name": "facility",
-							"type": "String",
-							"description": "facility"
-						},
-						{
-							"name": "floor",
-							"type": "String",
-							"description": "floor"
-						},
-						{
-							"name": "max_occupancy",
-							"type": "Number",
-							"description": "maxOccupancy"
-						},
-						{
-							"name": "add_bed",
-							"type": "Number",
-							"description": "addBed"
-						},
-						{
-							"name": "bed",
-							"type": "String",
-							"description": "bed"
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "gmtCreate"
-						},
-						{
-							"name": "network_service",
-							"type": "String",
-							"description": "networkService"
-						},
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "gmtModified"
-						},
-						{
-							"name": "window_type",
-							"type": "String",
-							"description": "windowType"
-						},
-						{
-							"name": "name_e",
-							"type": "String",
-							"description": "标准酒店英文名"
-						},
-						{
-							"name": "is_kezhan",
-							"type": "Number",
-							"description": "0：酒店 1：客栈"
+							"description": "brand"
 						}
-					]
-				},
-				{
-					"name": "match_status",
-					"type": "Number",
-					"description": "hotel匹配状态: \u003cbr/\u003e0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认“YES” 6：卖家已确认，确认“NO” 7:已系统匹配，但是匹配重复，待人工确认"
+					],
+					"name": "s_hotel",
+					"type": "SHotel",
+					"description": "淘宝标准酒店信息"
 				},
 				{
 					"name": "outer_id",
@@ -531,11 +437,6 @@
 					"description": "酒店名称"
 				},
 				{
-					"name": "used_name",
-					"type": "String",
-					"description": "曾用名"
-				},
-				{
 					"name": "domestic",
 					"type": "Number",
 					"description": "0:国内;1:国外"
@@ -544,6 +445,11 @@
 					"name": "country",
 					"type": "String",
 					"description": "国家编码"
+				},
+				{
+					"name": "used_name",
+					"type": "String",
+					"description": "曾用名"
 				},
 				{
 					"name": "province",
@@ -596,6 +502,16 @@
 					"description": "扩展信息"
 				},
 				{
+					"name": "match_status",
+					"type": "Number",
+					"description": "已废弃"
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "未通过时的拒绝原因等。"
+				},
+				{
 					"name": "credit_card_types",
 					"type": "String",
 					"description": "逗号分隔的字符串 1visa；2万事达卡；3美国运通卡；4发现卡；5大来卡；6JCB卡；7银联卡"
@@ -605,7 +521,14 @@
 					"type": "String",
 					"description": "卖家酒店英文名称"
 				}
-			]
+			],
+			"name": "xhotel",
+			"type": "XHotel",
+			"description": "酒店信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.add",
+	"apiChineseName": "酒店新增接口（ID重复自动更新）",
+	"description": "添加酒店或更新酒店",
+	"id": 22665
 }

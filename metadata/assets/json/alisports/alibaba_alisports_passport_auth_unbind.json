@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "阿里体育业务KEY",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "阿里体育openId",
+			"required": true
+		},
+		{
+			"name": "third_open_id",
+			"type": "String",
+			"description": "合作方openId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "alisp_data",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "alisp_code",
+					"type": "Number",
+					"description": "错误码 200是成功"
+				},
+				{
+					"name": "alisp_msg",
+					"type": "String",
+					"description": "错误描述"
+				}
+			],
+			"name": "result",
+			"type": "AlispResult",
+			"description": "体育返回实体对象"
+		}
+	],
+	"name": "alibaba.alisports.passport.auth.unbind",
+	"apiChineseName": "三方关系解绑接口",
+	"description": "解除阿里体育openId和三方合作方的openId的绑定关系",
+	"id": 58373
+}

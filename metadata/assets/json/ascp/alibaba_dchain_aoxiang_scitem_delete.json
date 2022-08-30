@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sc_item_code",
+					"type": "String",
+					"description": "货品编码",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID",
+					"required": true
+				}
+			],
+			"name": "delete_sc_item_request",
+			"type": "DeleteScItemRequest",
+			"description": "入参结构体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "调用链路ID"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "delete_sc_item_response",
+			"type": "DeleteScItemResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.scitem.delete",
+	"apiChineseName": "货品删除",
+	"description": "货品删除",
+	"id": 61222
+}

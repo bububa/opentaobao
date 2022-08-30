@@ -14,14 +14,14 @@ type TaobaoBrandStartshopRptAdgroupGetAPIRequest struct {
 	model.Params
 	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
 	_trafficType string
-	// 当前页数
-	_pageIndex string
-	// 每页条数
-	_pageSize string
 	// 开始时间(最多可查询最近90天)
 	_startDate string
 	// 截至时间(最晚到昨天)
 	_endDate string
+	// 当前页数
+	_pageIndex string
+	// 每页条数
+	_pageSize string
 	// 转化周期默认15天,3,7,15
 	_effect int64
 }
@@ -60,32 +60,6 @@ func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetTrafficType() string {
 	return r._trafficType
 }
 
-// SetPageIndex is PageIndex Setter
-// 当前页数
-func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetPageIndex(_pageIndex string) error {
-	r._pageIndex = _pageIndex
-	r.Set("page_index", _pageIndex)
-	return nil
-}
-
-// GetPageIndex PageIndex Getter
-func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetPageIndex() string {
-	return r._pageIndex
-}
-
-// SetPageSize is PageSize Setter
-// 每页条数
-func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetPageSize(_pageSize string) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetPageSize() string {
-	return r._pageSize
-}
-
 // SetStartDate is StartDate Setter
 // 开始时间(最多可查询最近90天)
 func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetStartDate(_startDate string) error {
@@ -110,6 +84,32 @@ func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetEndDate(_endDate string
 // GetEndDate EndDate Getter
 func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetPageIndex is PageIndex Setter
+// 当前页数
+func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetPageIndex(_pageIndex string) error {
+	r._pageIndex = _pageIndex
+	r.Set("page_index", _pageIndex)
+	return nil
+}
+
+// GetPageIndex PageIndex Getter
+func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetPageIndex() string {
+	return r._pageIndex
+}
+
+// SetPageSize is PageSize Setter
+// 每页条数
+func (r *TaobaoBrandStartshopRptAdgroupGetAPIRequest) SetPageSize(_pageSize string) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoBrandStartshopRptAdgroupGetAPIRequest) GetPageSize() string {
+	return r._pageSize
 }
 
 // SetEffect is Effect Setter

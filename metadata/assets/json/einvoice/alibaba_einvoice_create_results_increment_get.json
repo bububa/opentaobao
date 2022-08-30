@@ -1,8 +1,4 @@
 {
-	"id": 25797,
-	"name": "alibaba.einvoice.create.results.increment.get",
-	"apiChineseName": "ERP增量开票结果获取",
-	"description": "增量开票结果获取",
 	"requestParams": [
 		{
 			"name": "status",
@@ -40,9 +36,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "invoice_result_list",
-			"type": "InvoiceResult []",
-			"description": "开票结果返回列表",
 			"subParams": [
 				{
 					"name": "invoice_date",
@@ -134,12 +127,19 @@
 					"type": "String",
 					"description": "错误编码"
 				}
-			]
+			],
+			"name": "invoice_result_list",
+			"type": "InvoiceResult []",
+			"description": "开票结果返回列表"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "符合条件的开票总数"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.create.results.increment.get",
+	"apiChineseName": "ERP增量开票结果获取",
+	"description": "增量开票结果获取",
+	"id": 25797
 }

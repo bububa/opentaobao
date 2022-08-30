@@ -1,15 +1,6 @@
 {
-	"id": 44745,
-	"name": "alibaba.ailabs.aligenie.openvideo.push",
-	"apiChineseName": "天猫精灵内容库视频分集数据推送接口",
-	"description": "天猫精灵内容库视频分集数据推送接口",
 	"requestParams": [
 		{
-			"name": "videos",
-			"type": "RawSingleVideo[]",
-			"description": "待推送的视频数据",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "release_time",
@@ -60,6 +51,7 @@
 				},
 				{
 					"name": "play_url",
+					"type": "String",
 					"description": "播放链接，Map，key为support_definition的值"
 				},
 				{
@@ -204,7 +196,12 @@
 					"description": "试看秒数，若支持试看填1，否则填0",
 					"required": true
 				}
-			]
+			],
+			"name": "videos",
+			"type": "RawSingleVideo[]",
+			"description": "待推送的视频数据",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -218,5 +215,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.openvideo.push",
+	"apiChineseName": "天猫精灵内容库视频分集数据推送接口",
+	"description": "天猫精灵内容库视频分集数据推送接口",
+	"id": 44745
 }

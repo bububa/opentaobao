@@ -1,8 +1,4 @@
 {
-	"id": 57038,
-	"name": "alibaba.happytrip.taxi.driver.location.get",
-	"apiChineseName": "司机位置",
-	"description": "获取司机实时位置",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -23,9 +19,6 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "data",
-			"type": "Struct",
-			"description": "司机位置",
 			"subParams": [
 				{
 					"name": "lat",
@@ -57,7 +50,14 @@
 					"description": "更新时间",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Struct",
+			"description": "司机位置"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.driver.location.get",
+	"apiChineseName": "司机位置",
+	"description": "获取司机实时位置",
+	"id": 57038
 }

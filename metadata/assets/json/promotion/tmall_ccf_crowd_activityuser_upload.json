@@ -1,8 +1,4 @@
 {
-	"id": 50272,
-	"name": "tmall.ccf.crowd.activityuser.upload",
-	"apiChineseName": "品牌营销活动用户上传",
-	"description": "搜集ISV的活动用户信息，将其沉淀为活动人群数据",
 	"requestParams": [
 		{
 			"name": "activity_id",
@@ -14,8 +10,8 @@
 			"name": "crowd_types",
 			"type": "String[]",
 			"description": "人群类型",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "taobao_open_id",
@@ -56,5 +52,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "tmall.ccf.crowd.activityuser.upload",
+	"apiChineseName": "品牌营销活动用户上传",
+	"description": "搜集ISV的活动用户信息，将其沉淀为活动人群数据",
+	"id": 50272
 }

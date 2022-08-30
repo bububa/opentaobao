@@ -1,8 +1,4 @@
 {
-	"id": 29084,
-	"name": "yunos.ad.audit.creative.getlist",
-	"apiChineseName": "批量获取创意审核状态",
-	"description": "批量获取创意审核状态",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -19,8 +15,8 @@
 			"name": "creative_ids",
 			"type": "String[]",
 			"description": "创意列表",
-			"required": true,
-			"maxListSize": 500
+			"maxListSize": 500,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -40,35 +36,35 @@
 			"description": "isOk"
 		},
 		{
-			"name": "results",
-			"type": "CreativeAuditDto []",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "creative_id",
 					"type": "String",
-					"description": "creativeId",
-					"required": true
+					"description": "creativeId"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "status",
-					"required": true
+					"description": "status"
 				},
 				{
 					"name": "level",
 					"type": "Number",
-					"description": "level",
-					"required": true
+					"description": "level"
 				},
 				{
 					"name": "refuse_cause",
 					"type": "String",
-					"description": "refuseCause",
-					"required": true
+					"description": "refuseCause"
 				}
-			]
+			],
+			"name": "results",
+			"type": "CreativeAuditDto []",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.ad.audit.creative.getlist",
+	"apiChineseName": "批量获取创意审核状态",
+	"description": "批量获取创意审核状态",
+	"id": 29084
 }

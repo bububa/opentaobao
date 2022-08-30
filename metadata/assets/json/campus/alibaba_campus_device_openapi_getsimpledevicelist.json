@@ -1,14 +1,6 @@
 {
-	"id": 37986,
-	"name": "alibaba.campus.device.openapi.getsimpledevicelist",
-	"apiChineseName": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
-	"description": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "请求发送端信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,13 +13,13 @@
 					"description": "所属园区Id",
 					"required": true
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true
 		},
 		{
-			"name": "query",
-			"type": "DeviceApiQuery",
-			"description": "多条件查询对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "limit",
@@ -100,6 +92,11 @@
 					"description": "设备uuid集合[生成参考文档该字段入参是数组，有误。入参类型请使用java.lang.List类型]"
 				},
 				{
+					"name": "name_or_code",
+					"type": "String",
+					"description": "模糊查询设备名称或编码"
+				},
+				{
 					"name": "campus_id",
 					"type": "Number",
 					"description": "园区id"
@@ -110,203 +107,177 @@
 					"description": "楼宇id"
 				},
 				{
-					"name": "name_or_code",
-					"type": "String",
-					"description": "模糊查询设备名称或编码"
-				},
-				{
 					"name": "code",
 					"type": "String",
 					"description": "根据设备code精确匹配"
 				}
-			]
+			],
+			"name": "query",
+			"type": "DeviceApiQuery",
+			"description": "多条件查询对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "设备分页集合数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						},
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "分页大小",
-							"required": true
+							"description": "分页大小"
 						},
 						{
-							"name": "result_list",
-							"type": "DeviceStandardApiDto[]",
-							"description": "分页集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "设备code",
-									"required": true
+									"description": "设备code"
 								},
 								{
 									"name": "campus_name",
 									"type": "String",
-									"description": "园区名称",
-									"required": true
+									"description": "园区名称"
 								},
 								{
 									"name": "campus_id",
 									"type": "Number",
-									"description": "园区id",
-									"required": true
+									"description": "园区id"
 								},
 								{
 									"name": "building_id",
 									"type": "Number",
-									"description": "楼宇id",
-									"required": true
+									"description": "楼宇id"
 								},
 								{
 									"name": "building_name",
 									"type": "String",
-									"description": "楼宇名称",
-									"required": true
+									"description": "楼宇名称"
 								},
 								{
 									"name": "floor_id",
 									"type": "Number",
-									"description": "楼层id",
-									"required": true
+									"description": "楼层id"
 								},
 								{
 									"name": "floor_name",
 									"type": "String",
-									"description": "楼层名称",
-									"required": true
+									"description": "楼层名称"
 								},
 								{
 									"name": "space_id",
 									"type": "Number",
-									"description": "空间单元id",
-									"required": true
+									"description": "空间单元id"
 								},
 								{
 									"name": "space_name",
 									"type": "String",
-									"description": "空间单元名称",
-									"required": true
+									"description": "空间单元名称"
 								},
 								{
 									"name": "longitude",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "latitude",
 									"type": "String",
-									"description": "纬度",
-									"required": true
+									"description": "纬度"
 								},
 								{
 									"name": "be_logic",
 									"type": "Boolean",
-									"description": "是否逻辑设备",
-									"required": true
+									"description": "是否逻辑设备"
 								},
 								{
 									"name": "template_code",
 									"type": "String",
-									"description": "设备模板编码",
-									"required": true
+									"description": "设备模板编码"
 								},
 								{
 									"name": "uuid",
 									"type": "String",
-									"description": "uuid",
-									"required": true
+									"description": "uuid"
 								},
 								{
 									"name": "device_id",
 									"type": "String",
-									"description": "设备id",
-									"required": true
+									"description": "设备id"
 								},
 								{
 									"name": "be_run",
 									"type": "String",
-									"description": "是否启用",
-									"required": true
+									"description": "是否启用"
 								},
 								{
 									"name": "template_id",
 									"type": "Number",
-									"description": "设备模板id",
-									"required": true
+									"description": "设备模板id"
 								},
 								{
 									"name": "nickname",
 									"type": "String",
-									"description": "设备别名",
-									"required": true
+									"description": "设备别名"
 								},
 								{
 									"name": "run_status",
 									"type": "Number",
-									"description": "设备运行状态。0-\u003e在线 1-\u003e离线 2-\u003e故障",
-									"required": true
+									"description": "设备运行状态。0-\u003e在线 1-\u003e离线 2-\u003e故障"
 								},
 								{
 									"name": "company_id",
 									"type": "Number",
-									"description": "公司id",
-									"required": true
+									"description": "公司id"
 								}
-							]
+							],
+							"name": "result_list",
+							"type": "DeviceStandardApiDto[]",
+							"description": "分页集合"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "currentPage",
-							"required": true
+							"description": "currentPage"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "设备分页集合数据"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.getsimpledevicelist",
+	"apiChineseName": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
+	"description": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
+	"id": 37986
 }

@@ -1,20 +1,34 @@
 {
-	"id": 49979,
-	"name": "alibaba.ailabs.iot.business.recipestep.insertorupdate",
-	"apiChineseName": "插入或更新食谱步骤",
-	"description": "插入或更新食谱步骤",
 	"requestParams": [
 		{
-			"name": "param_business_recipe_step_open_param",
-			"type": "BusinessRecipeStepOpenParam",
-			"description": "食谱步骤开放参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "business_recipe_id",
 					"type": "Number",
 					"description": "行业食谱id",
 					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "action_name",
+							"type": "String",
+							"description": "指令名称"
+						},
+						{
+							"name": "action_value",
+							"type": "String",
+							"description": "指令值"
+						},
+						{
+							"name": "sequence",
+							"type": "Number",
+							"description": "指令顺序号"
+						}
+					],
+					"name": "recipe_step_action_list",
+					"type": "BusinessRecipeStepActionOpenParam[]",
+					"description": "步骤指令列表"
 				},
 				{
 					"name": "description",
@@ -27,9 +41,6 @@
 					"description": "行业食谱步骤id"
 				},
 				{
-					"name": "image_url",
-					"type": "ImageUrlParam",
-					"description": "食谱步骤图片",
 					"subParams": [
 						{
 							"name": "img",
@@ -51,7 +62,10 @@
 							"type": "String",
 							"description": "小图"
 						}
-					]
+					],
+					"name": "image_url",
+					"type": "ImageUrlParam",
+					"description": "食谱步骤图片"
 				},
 				{
 					"name": "open_account_id",
@@ -82,14 +96,8 @@
 					"description": "食谱步骤提示"
 				},
 				{
-					"name": "video_url",
-					"type": "VideoUrlParam",
-					"description": "食谱步骤视频",
 					"subParams": [
 						{
-							"name": "cover",
-							"type": "ImageUrlParam",
-							"description": "视频封面图",
 							"subParams": [
 								{
 									"name": "img",
@@ -111,7 +119,10 @@
 									"type": "String",
 									"description": "小图"
 								}
-							]
+							],
+							"name": "cover",
+							"type": "ImageUrlParam",
+							"description": "视频封面图"
 						},
 						{
 							"name": "default_url",
@@ -143,29 +154,10 @@
 							"type": "Number",
 							"description": "视频宽度"
 						}
-					]
-				},
-				{
-					"name": "recipe_step_action_list",
-					"type": "BusinessRecipeStepActionOpenParam[]",
-					"description": "步骤指令列表",
-					"subParams": [
-						{
-							"name": "action_name",
-							"type": "String",
-							"description": "指令名称"
-						},
-						{
-							"name": "action_value",
-							"type": "String",
-							"description": "指令值"
-						},
-						{
-							"name": "sequence",
-							"type": "Number",
-							"description": "指令顺序号"
-						}
-					]
+					],
+					"name": "video_url",
+					"type": "VideoUrlParam",
+					"description": "食谱步骤视频"
 				},
 				{
 					"name": "action_flag",
@@ -173,7 +165,11 @@
 					"description": "指令标识：0不支持指令，1支持指令",
 					"required": true
 				}
-			]
+			],
+			"name": "param_business_recipe_step_open_param",
+			"type": "BusinessRecipeStepOpenParam",
+			"description": "食谱步骤开放参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -197,5 +193,9 @@
 			"type": "String",
 			"description": "追踪id"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.business.recipestep.insertorupdate",
+	"apiChineseName": "插入或更新食谱步骤",
+	"description": "插入或更新食谱步骤",
+	"id": 49979
 }

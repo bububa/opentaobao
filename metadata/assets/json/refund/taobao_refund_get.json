@@ -1,30 +1,23 @@
 {
-	"id": 53,
-	"name": "taobao.refund.get",
-	"apiChineseName": "获取单笔退款详情",
-	"description": "获取单笔退款详情",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段。目前支持有：refund_id, alipay_no, tid, oid, buyer_nick, seller_nick, total_fee, status, created, refund_fee, good_status, has_good_return, payment, reason, desc, num_iid, title, price, num, good_return_time, company_name, sid, address, shipping_type, refund_remind_timeout, refund_phase, refund_version, operation_contraint, attribute, outer_id, sku",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		},
 		{
 			"name": "refund_id",
 			"type": "Number",
 			"description": "退款单号",
-			"required": true,
 			"maxValue": 9223372036854775807,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "refund",
-			"type": "Refund",
-			"description": "退款详情",
 			"subParams": [
 				{
 					"name": "shipping_type",
@@ -172,9 +165,6 @@
 					"description": "卖家收货地址"
 				},
 				{
-					"name": "refund_remind_timeout",
-					"type": "RefundRemindTimeout",
-					"description": "退款超时结构RefundRemindTimeout",
 					"subParams": [
 						{
 							"name": "remind_type",
@@ -191,7 +181,10 @@
 							"type": "Date",
 							"description": "超时时间。格式:yyyy-MM-dd HH:mm:ss"
 						}
-					]
+					],
+					"name": "refund_remind_timeout",
+					"type": "RefundRemindTimeout",
+					"description": "退款超时结构RefundRemindTimeout"
 				},
 				{
 					"name": "num_iid",
@@ -232,8 +225,20 @@
 					"name": "buyer_open_uid",
 					"type": "String",
 					"description": "买家账号的OpenUID"
+				},
+				{
+					"name": "ouid",
+					"type": "String",
+					"description": "ouid"
 				}
-			]
+			],
+			"name": "refund",
+			"type": "Refund",
+			"description": "退款详情"
 		}
-	]
+	],
+	"name": "taobao.refund.get",
+	"apiChineseName": "获取单笔退款详情",
+	"description": "获取单笔退款详情",
+	"id": 53
 }

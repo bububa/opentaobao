@@ -1,8 +1,4 @@
 {
-	"id": 30580,
-	"name": "taobao.alihealth.drug.store.get",
-	"apiChineseName": "根据店铺id获取店铺详情",
-	"description": "根据店铺id获取店铺详情",
 	"requestParams": [
 		{
 			"name": "shop_id",
@@ -13,215 +9,186 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "StoreDetailDto",
-			"description": "model",
 			"subParams": [
 				{
-					"name": "tags",
-					"type": "Tags[]",
-					"description": "tags",
-					"required": true,
 					"subParams": [
 						{
 							"name": "type",
 							"type": "String",
-							"description": "type",
-							"required": true
+							"description": "type"
 						},
 						{
 							"name": "pic_path",
 							"type": "String",
-							"description": "picPath",
-							"required": true
+							"description": "picPath"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "desc",
-							"required": true
+							"description": "desc"
 						},
 						{
 							"name": "short_desc",
 							"type": "String",
-							"description": "shortDesc",
-							"required": true
+							"description": "shortDesc"
 						},
 						{
 							"name": "man_fan_type",
 							"type": "String",
-							"description": "manFanType",
-							"required": true
+							"description": "manFanType"
 						}
-					]
+					],
+					"name": "tags",
+					"type": "Tags[]",
+					"description": "tags"
 				},
 				{
-					"name": "store_detail",
-					"type": "StoreDto",
-					"description": "storeDetail",
-					"required": true,
 					"subParams": [
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "shopId",
-							"required": true
+							"description": "shopId"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "storeId",
-							"required": true
+							"description": "storeId"
 						},
 						{
 							"name": "store_name",
 							"type": "String",
-							"description": "storeName",
-							"required": true
+							"description": "storeName"
 						},
 						{
 							"name": "pic_url",
 							"type": "String",
-							"description": "picURL",
-							"required": true
+							"description": "picURL"
 						},
 						{
 							"name": "business_status",
 							"type": "String",
-							"description": "businessStatus",
-							"required": true
+							"description": "businessStatus"
 						},
 						{
 							"name": "order_count",
 							"type": "Number",
-							"description": "orderCount",
-							"required": true
+							"description": "orderCount"
 						},
 						{
 							"name": "order_count_desc",
 							"type": "String",
-							"description": "orderCountDesc",
-							"required": true
+							"description": "orderCountDesc"
 						},
 						{
 							"name": "minimum_account",
 							"type": "Number",
-							"description": "minimumAccount",
-							"required": true
+							"description": "minimumAccount"
 						},
 						{
 							"name": "delivery_account",
 							"type": "Number",
-							"description": "deliveryAccount",
-							"required": true
+							"description": "deliveryAccount"
 						},
 						{
 							"name": "notice",
 							"type": "String",
-							"description": "notice",
-							"required": true
+							"description": "notice"
 						},
 						{
 							"name": "delivery_time",
 							"type": "String",
-							"description": "deliveryTime",
-							"required": true
+							"description": "deliveryTime"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "address",
-							"required": true
+							"description": "address"
 						},
 						{
 							"name": "tele",
 							"type": "String",
-							"description": "tele",
-							"required": true
+							"description": "tele"
 						},
 						{
 							"name": "latitude",
 							"type": "String",
-							"description": "latitude",
-							"required": true
+							"description": "latitude"
 						},
 						{
 							"name": "longitude",
 							"type": "String",
-							"description": "longitude",
-							"required": true
+							"description": "longitude"
 						},
 						{
 							"name": "earliest_time_of_delivery",
 							"type": "String",
-							"description": "earliestTimeOfDelivery",
-							"required": true
+							"description": "earliestTimeOfDelivery"
 						},
 						{
 							"name": "punctuality_rate",
 							"type": "String",
-							"description": "punctualityRate",
-							"required": true
+							"description": "punctualityRate"
 						},
 						{
 							"name": "dpavgscore",
 							"type": "String",
-							"description": "dpavgscore",
-							"required": true
+							"description": "dpavgscore"
 						},
 						{
 							"name": "areas",
 							"type": "String",
-							"description": "areas",
-							"required": true
+							"description": "areas"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "sellerNick",
-							"required": true
+							"description": "sellerNick"
 						},
 						{
 							"name": "delivery_type",
 							"type": "Number",
-							"description": "deliveryType",
-							"required": true
+							"description": "deliveryType"
 						},
 						{
 							"name": "delivery_type_desc",
 							"type": "String",
-							"description": "deliveryTypeDesc",
-							"required": true
+							"description": "deliveryTypeDesc"
 						}
-					]
+					],
+					"name": "store_detail",
+					"type": "StoreDto",
+					"description": "storeDetail"
 				},
 				{
-					"name": "cats",
-					"type": "Cat[]",
-					"description": "cat",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cat_id",
 							"type": "String",
-							"description": "catId",
-							"required": true
+							"description": "catId"
 						},
 						{
 							"name": "cat_name",
 							"type": "String",
-							"description": "catName",
-							"required": true
+							"description": "catName"
 						},
 						{
 							"name": "item_count",
 							"type": "Number",
-							"description": "itemCount",
-							"required": true
+							"description": "itemCount"
 						}
-					]
+					],
+					"name": "cats",
+					"type": "Cat[]",
+					"description": "cat"
 				}
-			]
+			],
+			"name": "model",
+			"type": "StoreDetailDto",
+			"description": "model"
 		}
-	]
+	],
+	"name": "taobao.alihealth.drug.store.get",
+	"apiChineseName": "根据店铺id获取店铺详情",
+	"description": "根据店铺id获取店铺详情",
+	"id": 30580
 }

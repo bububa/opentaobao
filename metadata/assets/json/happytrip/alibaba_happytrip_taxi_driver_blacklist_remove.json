@@ -1,8 +1,4 @@
 {
-	"id": 57064,
-	"name": "alibaba.happytrip.taxi.driver.blacklist.remove",
-	"apiChineseName": "移除司机黑名单",
-	"description": "移除司机黑名单",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "错误描述"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.driver.blacklist.remove",
+	"apiChineseName": "移除司机黑名单",
+	"description": "移除司机黑名单",
+	"id": 57064
 }

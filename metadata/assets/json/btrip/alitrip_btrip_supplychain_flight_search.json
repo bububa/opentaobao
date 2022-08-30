@@ -1,14 +1,6 @@
 {
-	"id": 53596,
-	"name": "alitrip.btrip.supplychain.flight.search",
-	"apiChineseName": "【商旅】机票订单查询",
-	"description": "【商旅】机票订单查询",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiSearchRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "all_apply",
@@ -76,396 +68,388 @@
 					"type": "Number",
 					"description": "1、老版本2、isv对外版本"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiSearchRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参对象",
 			"subParams": [
 				{
-					"name": "module_list",
-					"type": "OpenApiFlightOrderRs[]",
-					"description": "机票列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "机票订单id",
-							"required": true
+							"description": "机票订单id"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "第三方用户id",
-							"required": true
+							"description": "第三方用户id"
 						},
 						{
 							"name": "corp_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "商旅企业id",
-							"required": true
+							"description": "商旅企业id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
-							"description": "用户名称",
-							"required": true
+							"description": "用户名称"
 						},
 						{
 							"name": "depart_id",
 							"type": "String",
-							"description": "用户所在部门id",
-							"required": true
+							"description": "用户所在部门id"
 						},
 						{
 							"name": "depart_name",
 							"type": "String",
-							"description": "部门名称",
-							"required": true
+							"description": "部门名称"
 						},
 						{
 							"name": "apply_id",
 							"type": "String",
-							"description": "商旅申请单id",
-							"required": true
+							"description": "商旅申请单id"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "联系人",
-							"required": true
+							"description": "联系人"
 						},
 						{
 							"name": "dep_city",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "arr_city",
 							"type": "String",
-							"description": "到达城市",
-							"required": true
+							"description": "到达城市"
 						},
 						{
 							"name": "dep_date",
 							"type": "Date",
-							"description": "出发日期",
-							"required": true
+							"description": "出发日期"
 						},
 						{
 							"name": "ret_date",
 							"type": "Date",
-							"description": "到达日期",
-							"required": true
+							"description": "到达日期"
 						},
 						{
 							"name": "trip_type",
 							"type": "Number",
-							"description": "行程类型。0:单程，1:往返，2:中转",
-							"required": true
+							"description": "行程类型。0:单程，1:往返，2:中转"
 						},
 						{
 							"name": "passenger_count",
 							"type": "Number",
-							"description": "乘机人数量",
-							"required": true
+							"description": "乘机人数量"
 						},
 						{
 							"name": "cabin_class",
 							"type": "String",
-							"description": "舱位类型",
-							"required": true
+							"description": "舱位类型"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中",
-							"required": true
+							"description": "订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中"
 						},
 						{
 							"name": "discount",
 							"type": "String",
-							"description": "折扣",
-							"required": true
+							"description": "折扣"
 						},
 						{
 							"name": "flight_no",
 							"type": "String",
-							"description": "航班号",
-							"required": true
+							"description": "航班号"
 						},
 						{
 							"name": "passenger_name",
 							"type": "String",
-							"description": "乘机人，多个用‘,’分割",
-							"required": true
+							"description": "乘机人，多个用‘,’分割"
 						},
 						{
 							"name": "dep_airport",
 							"type": "String",
-							"description": "出发机场",
-							"required": true
+							"description": "出发机场"
 						},
 						{
 							"name": "arr_airport",
 							"type": "String",
-							"description": "到达机场",
-							"required": true
+							"description": "到达机场"
 						},
 						{
-							"name": "invoice",
-							"type": "OpenInvoiceDo",
-							"description": "发票信息对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商旅发票id",
-									"required": true
+									"description": "商旅发票id"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "发票抬头",
-									"required": true
+									"description": "发票抬头"
 								}
-							]
+							],
+							"name": "invoice",
+							"type": "OpenInvoiceDO",
+							"description": "发票信息对象"
 						},
 						{
-							"name": "cost_center",
-							"type": "OpenCostCenterDo",
-							"description": "成本中心对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商旅成本中心id",
-									"required": true
+									"description": "商旅成本中心id"
 								},
 								{
 									"name": "corpid",
 									"type": "String",
-									"description": "商旅企业id",
-									"required": true
+									"description": "商旅企业id"
 								},
 								{
 									"name": "number",
 									"type": "String",
-									"description": "成本中心编号",
-									"required": true
+									"description": "成本中心编号"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "成本中心名称",
-									"required": true
+									"description": "成本中心名称"
 								}
-							]
+							],
+							"name": "cost_center",
+							"type": "OpenCostCenterDo",
+							"description": "成本中心对象"
 						},
 						{
-							"name": "price_info_list",
-							"type": "OpenPriceInfo[]",
-							"description": "价目信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "price",
 									"type": "String",
-									"description": "价格",
-									"required": true
+									"description": "价格"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "资金流向:1:支出，2:收入",
-									"required": true
+									"description": "资金流向:1:支出，2:收入"
 								},
 								{
 									"name": "category",
 									"type": "String",
-									"description": "交易类目",
-									"required": true
+									"description": "交易类目（废弃）"
 								},
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存",
-									"required": true
+									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "流水创建时间",
-									"required": true
+									"description": "流水创建时间"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "乘机人，多个用‘,’分割",
-									"required": true
+									"description": "乘机人，多个用‘,’分割"
 								},
 								{
 									"name": "trade_id",
 									"type": "String",
-									"description": "订单交易流水号",
-									"required": true
+									"description": "订单交易流水号"
+								},
+								{
+									"name": "original_ticket_no",
+									"type": "String",
+									"description": "改签前的票号"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "改签票号"
+								},
+								{
+									"name": "change_flight_no",
+									"type": "String",
+									"description": "改签航班号"
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "改签折扣"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "改签票起飞时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "改签票到达时间"
+								},
+								{
+									"name": "category_type",
+									"type": "Number",
+									"description": "交易类目类型1-飞机，2-酒店，3-火车，4-用车"
+								},
+								{
+									"name": "category_code",
+									"type": "Number",
+									"description": "交易类目编码"
 								}
-							]
+							],
+							"name": "price_info_list",
+							"type": "OpenPriceInfo[]",
+							"description": "价目信息"
 						},
 						{
-							"name": "insure_info_list",
-							"type": "OpenFlightInsureInfo[]",
-							"description": "保险信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "insure_no",
 									"type": "String",
-									"description": "保单号",
-									"required": true
+									"description": "保单号"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "状态：1已出保 2已退保",
-									"required": true
+									"description": "状态：1已出保 2已退保"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "乘机人(保险人)姓名",
-									"required": true
+									"description": "乘机人(保险人)姓名"
 								}
-							]
+							],
+							"name": "insure_info_list",
+							"type": "OpenFlightInsureInfo[]",
+							"description": "保险信息"
 						},
 						{
 							"name": "thirdpart_itinerary_id",
 							"type": "String",
-							"description": "第三方行程id",
-							"required": true
+							"description": "第三方行程id"
 						},
 						{
-							"name": "user_affiliate_list",
-							"type": "OpenUserAffiliateDo[]",
-							"description": "出行人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "出行人ID（第三方用户Id）",
-									"required": true
+									"description": "出行人ID（第三方用户Id）"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "出行人名称",
-									"required": true
+									"description": "出行人名称"
 								}
-							]
+							],
+							"name": "user_affiliate_list",
+							"type": "OpenUserAffiliateDo[]",
+							"description": "出行人列表"
 						},
 						{
 							"name": "thirdpart_apply_id",
 							"type": "String",
-							"description": "第三方申请单ID",
-							"required": true
+							"description": "第三方申请单ID"
 						},
 						{
 							"name": "btrip_title",
 							"type": "String",
-							"description": "申请单名称",
-							"required": true
+							"description": "申请单名称"
 						},
 						{
 							"name": "project_id",
 							"type": "Number",
-							"description": "项目id",
-							"required": true
+							"description": "项目id"
 						},
 						{
 							"name": "project_code",
 							"type": "String",
-							"description": "项目code",
-							"required": true
+							"description": "项目code"
 						},
 						{
 							"name": "project_title",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
+						},
+						{
+							"name": "third_part_project_id",
+							"type": "String",
+							"description": "第三方项目id"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "OpenApiFlightOrderRs[]",
+					"description": "机票列表"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
-					"name": "page_info",
-					"type": "PageInfoRs",
-					"description": "分页相关信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "total_number",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						}
-					]
+					],
+					"name": "page_info",
+					"type": "PageInfoRs",
+					"description": "分页相关信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参对象"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.flight.search",
+	"apiChineseName": "【商旅】机票订单查询",
+	"description": "【商旅】机票订单查询",
+	"id": 53596
 }

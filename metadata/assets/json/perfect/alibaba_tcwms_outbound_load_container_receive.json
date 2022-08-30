@@ -1,0 +1,182 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "container_order_code",
+							"type": "String",
+							"description": "装箱单",
+							"required": true
+						},
+						{
+							"name": "container_order_type",
+							"type": "String",
+							"description": "箱单类型，NORMAL_BOX(正常箱)，OUTER_BOX(箱外件)，IRREGULAR_BOX(异形件)",
+							"required": true
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "扩展"
+						},
+						{
+							"name": "container_code",
+							"type": "String",
+							"description": "周转箱号",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "sales_quantity",
+											"type": "String",
+											"description": "销量数量"
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "货品",
+											"required": true
+										},
+										{
+											"name": "sales_unit",
+											"type": "String",
+											"description": "销量单位"
+										},
+										{
+											"name": "stock_quantity",
+											"type": "String",
+											"description": "库存数量",
+											"required": true
+										},
+										{
+											"name": "attributes",
+											"type": "String",
+											"description": "扩展"
+										},
+										{
+											"name": "outbound_order_detail_code",
+											"type": "String",
+											"description": "出库子单",
+											"required": true
+										},
+										{
+											"name": "stock_unit",
+											"type": "String",
+											"description": "库存单位",
+											"required": true
+										}
+									],
+									"name": "package_details",
+									"type": "LoadPackageOrderDetailRequest[]",
+									"description": "包裹明细",
+									"required": true
+								},
+								{
+									"name": "package_code",
+									"type": "String",
+									"description": "令牌号",
+									"required": true
+								},
+								{
+									"name": "outbound_order_code",
+									"type": "String",
+									"description": "出库单",
+									"required": true
+								},
+								{
+									"name": "package_order_code",
+									"type": "String",
+									"description": "包裹单号，没有默认使用包裹号，即令牌号"
+								},
+								{
+									"name": "attributes",
+									"type": "String",
+									"description": "扩展"
+								}
+							],
+							"name": "packages",
+							"type": "LoadPackageOrderRequest[]",
+							"description": "包裹",
+							"required": true
+						},
+						{
+							"name": "station_code",
+							"type": "String",
+							"description": "站点",
+							"required": true
+						},
+						{
+							"name": "station_name",
+							"type": "String",
+							"description": "站点名称"
+						}
+					],
+					"name": "container_orders",
+					"type": "LoadContainerOrderRequest[]",
+					"description": "装箱单",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展"
+				},
+				{
+					"name": "operator_code",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓code",
+					"required": true
+				}
+			],
+			"name": "load_receive_request",
+			"type": "LoadReceiveRequest",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "成功标记"
+				}
+			],
+			"name": "result",
+			"type": "LoadReceiveResponse",
+			"description": "参数"
+		}
+	],
+	"name": "alibaba.tcwms.outbound.load.container.receive",
+	"apiChineseName": "装箱接单",
+	"description": "装箱接单",
+	"id": 59507
+}

@@ -1,8 +1,4 @@
 {
-	"id": 26238,
-	"name": "taobao.vmarket.eticket.flow.resend",
-	"apiChineseName": "业务重新触发发码短信",
-	"description": "业务重新触发发码短信",
 	"requestParams": [
 		{
 			"name": "outer_id",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "错误提示信息"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.flow.resend",
+	"apiChineseName": "业务重新触发发码短信",
+	"description": "业务重新触发发码短信",
+	"id": 26238
 }

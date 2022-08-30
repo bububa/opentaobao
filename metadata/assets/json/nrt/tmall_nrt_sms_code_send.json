@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务身份",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "1:喵零入会验证码",
+			"required": true
+		},
+		{
+			"name": "sms_param",
+			"type": "String",
+			"description": "短信参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sms_code",
+					"type": "String",
+					"description": "短信验证码"
+				}
+			],
+			"name": "data",
+			"type": "NrtSmsDTO",
+			"description": "返回数据对象"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "succ",
+			"type": "String",
+			"description": "请求成功与否"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "系统异常"
+		}
+	],
+	"name": "tmall.nrt.sms.code.send",
+	"apiChineseName": "喵零发送短信",
+	"description": "喵零发送短信",
+	"id": 61513
+}

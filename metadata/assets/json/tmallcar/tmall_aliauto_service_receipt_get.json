@@ -1,8 +1,4 @@
 {
-	"id": 56878,
-	"name": "tmall.aliauto.service.receipt.get",
-	"apiChineseName": "isv查询服务工单详情",
-	"description": "isv查询服务工单详情",
 	"requestParams": [
 		{
 			"name": "receipt_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "code",
@@ -24,10 +17,6 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "ServiceReceiptInfo4IsvDto",
-					"description": "返回的数据实体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "address",
@@ -118,8 +107,30 @@
 							"type": "Json",
 							"description": "工单附加信息",
 							"required": true
+						},
+						{
+							"name": "chosen_outer_store_id",
+							"type": "String",
+							"description": "选定的门店ID",
+							"required": true
+						},
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "DOOR2DOOR:上门服务，INSTORE:到店服务",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "GUARANTEE:维修，INSTALL:安装",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "ServiceReceiptInfo4IsvDto",
+					"description": "返回的数据实体",
+					"required": true
 				},
 				{
 					"name": "message",
@@ -133,7 +144,14 @@
 					"description": "是否执行成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "tmall.aliauto.service.receipt.get",
+	"apiChineseName": "isv查询服务工单详情",
+	"description": "isv查询服务工单详情",
+	"id": 56878
 }

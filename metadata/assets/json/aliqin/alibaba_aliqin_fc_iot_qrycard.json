@@ -1,8 +1,4 @@
 {
-	"id": 27487,
-	"name": "alibaba.aliqin.fc.iot.qrycard",
-	"apiChineseName": "查询终端信息",
-	"description": "查询终端信息",
 	"requestParams": [
 		{
 			"name": "bill_source",
@@ -25,73 +21,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "系统自动生成",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "Model[]",
-					"description": "model",
-					"required": true,
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
 					"subParams": [
 						{
 							"name": "resource_type",
 							"type": "String",
-							"description": "流量类型(6700001:上网流量)",
-							"required": true
+							"description": "流量类型(6700001:上网流量)"
 						},
 						{
 							"name": "flow_resource",
 							"type": "Number",
-							"description": "总流量(KB)",
-							"required": true
+							"description": "总流量(KB)"
 						},
 						{
 							"name": "rest_of_flow",
 							"type": "Number",
-							"description": "剩余流量(KB)",
-							"required": true
+							"description": "剩余流量(KB)"
 						},
 						{
 							"name": "res_name",
 							"type": "String",
-							"description": "资源名称",
-							"required": true
+							"description": "资源名称"
 						},
 						{
 							"name": "valid_date",
 							"type": "String",
-							"description": "生效时间",
-							"required": true
+							"description": "生效时间"
 						},
 						{
 							"name": "expire_date",
 							"type": "String",
-							"description": "失效时间",
-							"required": true
+							"description": "失效时间"
 						},
 						{
 							"name": "flow_used",
 							"type": "Number",
-							"description": "已使用流量(KB)",
-							"required": true
+							"description": "已使用流量(KB)"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Model[]",
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true返回成功，false返回失败",
-					"required": true
-				},
-				{
-					"name": "code",
-					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "true返回成功，false返回失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.iot.qrycard",
+	"apiChineseName": "查询终端信息",
+	"description": "查询终端信息",
+	"id": 27487
 }

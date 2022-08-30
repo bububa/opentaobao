@@ -1,12 +1,6 @@
 {
-	"id": 26000,
-	"name": "taobao.qimen.order.cancel",
-	"apiChineseName": "单据取消接口",
-	"description": "ERP调用奇门的接口,取消创建单据操作。场景介绍：ERP主动发起取消某些创建的单据。如入库单、出库单、退货单等；所有的场景",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "OrderCancelRequest",
 			"subParams": [
 				{
 					"name": "warehouseCode",
@@ -44,14 +38,26 @@
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
+				},
+				{
+					"subParams": [
+						{
+							"name": "subSourceOrderCode",
+							"type": "String",
+							"description": "交易平台子订单编码"
+						}
+					],
+					"name": "subSourceOrders",
+					"type": "SubSourceOrder[]",
+					"description": "交易平台子订单信息"
 				}
-			]
+			],
+			"name": "request",
+			"type": "OrderCancelRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "OrderCancelResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -71,7 +77,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "OrderCancelResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.order.cancel",
+	"apiChineseName": "单据取消接口",
+	"description": "ERP调用奇门的接口,取消创建单据操作。场景介绍：ERP主动发起取消某些创建的单据。如入库单、出库单、退货单等；所有的场景",
+	"id": 26000
 }

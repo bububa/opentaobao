@@ -1,8 +1,4 @@
 {
-	"id": 45573,
-	"name": "alibaba.benefit.send",
-	"apiChineseName": "发奖接口",
-	"description": "发奖接口",
 	"requestParams": [
 		{
 			"name": "right_ename",
@@ -66,5 +62,9 @@
 			"type": "String",
 			"description": "奖品名称"
 		}
-	]
+	],
+	"name": "alibaba.benefit.send",
+	"apiChineseName": "发奖接口",
+	"description": "发奖接口",
+	"id": 45573
 }

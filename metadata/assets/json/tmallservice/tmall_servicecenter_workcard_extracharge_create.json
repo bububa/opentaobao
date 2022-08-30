@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "unit_price",
+					"type": "Number",
+					"description": "费用项单价(分)"
+				},
+				{
+					"name": "buy_amount",
+					"type": "Number",
+					"description": "购买数量"
+				},
+				{
+					"name": "charge_item_name",
+					"type": "String",
+					"description": "费用项名称"
+				}
+			],
+			"name": "extra_charge_item_list",
+			"type": "WorkcardExtraChargeCreateTuple",
+			"description": "额外收费项列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.extracharge.create",
+	"apiChineseName": "创建工单额外收费项",
+	"description": "创建额外收费项",
+	"id": 61477
+}

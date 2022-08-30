@@ -1,0 +1,218 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "distribution_type",
+					"type": "String",
+					"description": "分销类型（不传代表非分销场景） 枚举值： (1, \"直营和分销全参与\"),  (2, \"仅直营参与\"),  (3, \"仅分销参与\"),  (4, \"指定分销店铺\");"
+				},
+				{
+					"name": "source_platform_code",
+					"type": "String",
+					"description": "订单来源平台编码,TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、MIA=蜜芽、GW=商家官网、CT=村淘、YJWD=云集微店、PDD=拼多多、 DYXD=抖音小店、KS=快手、OTHERS=其他",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易主单",
+					"required": true
+				},
+				{
+					"name": "trade_create_time",
+					"type": "Number",
+					"description": "交易下单时间(毫秒)",
+					"required": true
+				},
+				{
+					"name": "trade_pay_time",
+					"type": "Number",
+					"description": "交易支付时间(毫秒)",
+					"required": true
+				},
+				{
+					"name": "order_amount",
+					"type": "Number",
+					"description": "订单金额：支付金额-退款金额,单位:分，如:20007，表示:20元7分",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "支付金额，单位:分，如:20007，表示:20元7分",
+					"required": true
+				},
+				{
+					"name": "consign_order_code",
+					"type": "String",
+					"description": "翱象发货单号",
+					"required": true
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称",
+					"required": true
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "订单产品类型,必填，不传默认0，枚举值：  (0, \"全量产品类型\"), (1,\"普通产品类型(代表除预售下沉提前发货产品类型以外的类型）\"), (2, \"预售下沉提前发货产品类型\"), (3, \"普通预售产品类型\");"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				},
+				{
+					"name": "seller_message",
+					"type": "String",
+					"description": "卖家留言"
+				},
+				{
+					"name": "buyer_message",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "收件人国家(地区)二字码。https://www.ufsoo.com/news/detail-59307681-b5e1-4328-a6e6-20fddd6c5ec6.html"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收件人所在省份"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收件人所在城市"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收件人所在地区"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收件人所在村镇/街道"
+						}
+					],
+					"name": "receiver_info",
+					"type": "ReceiverInfo",
+					"description": "收件人结构体"
+				},
+				{
+					"subParams": [
+						{
+							"name": "gift_order_id",
+							"type": "String",
+							"description": "赠品绑赠单号",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "货品商家编码",
+							"required": true
+						},
+						{
+							"name": "sc_item_name",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "activity_id",
+							"type": "String",
+							"description": "活动ID",
+							"required": true
+						},
+						{
+							"name": "gift_id",
+							"type": "String",
+							"description": "赠品ID",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "赠品数量",
+							"required": true
+						}
+					],
+					"name": "gift_orders",
+					"type": "GiftOrder[]",
+					"description": "赠品列表",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "币种，USD-美元，CNY-人民币，RUB-卢布，JPY-日元，EUR-欧元，GBP-英镑，HKD-港币，NZD-新西兰元，SGD-新加坡元，AUD-澳元，KRW-韩元，THB-泰铢",
+					"required": true
+				}
+			],
+			"name": "reverse_consignorder_gift_request",
+			"type": "ReverseConsignOrderGiftRequest",
+			"description": "赠品绑赠回滚入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "reverse_consignorder_gift_response",
+			"type": "ReverseConsignOrderGiftRequest",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.consignorder.gift.reverse",
+	"apiChineseName": "赠品绑赠回滚",
+	"description": "赠品绑赠回滚",
+	"id": 60383
+}

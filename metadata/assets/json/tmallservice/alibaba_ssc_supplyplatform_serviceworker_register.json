@@ -1,0 +1,135 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "身份证",
+					"required": true
+				},
+				{
+					"name": "profile_picture_url",
+					"type": "String",
+					"description": "工人图像"
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址",
+					"required": true
+				},
+				{
+					"name": "address_id",
+					"type": "Number",
+					"description": "详细地址编码",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "worker_id",
+							"type": "Number",
+							"description": "身份证"
+						},
+						{
+							"name": "area_code_list",
+							"type": "Number[]",
+							"description": "服务区域",
+							"required": true
+						},
+						{
+							"name": "service_skill_list",
+							"type": "String[]",
+							"description": "技能"
+						}
+					],
+					"name": "worker_service_ability",
+					"type": "WorkerServiceAbility",
+					"description": "工人能力model",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_store_code",
+							"type": "String",
+							"description": "网点编码",
+							"required": true
+						}
+					],
+					"name": "joined_store",
+					"type": "JoinedStore",
+					"description": "工人加入网点model",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "工人手机号",
+					"required": true
+				}
+			],
+			"name": "worker_register_for_top_req_dto",
+			"type": "WorkerRegisterForTopReqDTO",
+			"description": "工人注册model",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "worker_id",
+							"type": "Number",
+							"description": "工人ID"
+						}
+					],
+					"name": "value",
+					"type": "WorkerCreateDTO",
+					"description": "结果model"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "通用响应model"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.serviceworker.register",
+	"apiChineseName": "服务商添加工人",
+	"description": "工人注册",
+	"id": 60121
+}

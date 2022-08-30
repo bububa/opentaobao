@@ -1,8 +1,4 @@
 {
-	"id": 43435,
-	"name": "alibaba.legal.suit.judgement.get",
-	"apiChineseName": "获取裁判登记信息",
-	"description": "供ISV供应商获取集团法务系统的裁判登记信息",
 	"requestParams": [
 		{
 			"name": "suit_id",
@@ -13,321 +9,276 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "RefereeRegistrationModel",
-					"description": "裁判登记内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "is_court_opened",
 							"type": "String",
-							"description": "是否开庭",
-							"required": true
+							"description": "是否开庭"
 						},
 						{
 							"name": "main_point",
 							"type": "String",
-							"description": "主要观点",
-							"required": true
+							"description": "主要观点"
 						},
 						{
 							"name": "typical_cause",
 							"type": "String",
-							"description": "撤诉原因(原因)",
-							"required": true
+							"description": "撤诉原因(原因)"
 						},
 						{
 							"name": "other_business_label",
 							"type": "String",
-							"description": "其他业务标签内容",
-							"required": true
+							"description": "其他业务标签内容"
 						},
 						{
 							"name": "business_label_keys",
 							"type": "String",
-							"description": "业务标签Keys",
-							"required": true
+							"description": "业务标签Keys"
 						},
 						{
 							"name": "judgement_result_second",
 							"type": "String",
-							"description": "判决结果二级",
-							"required": true
+							"description": "判决结果二级"
 						},
 						{
 							"name": "judgement_result",
 							"type": "String",
-							"description": "判决结果",
-							"required": true
+							"description": "判决结果"
 						},
 						{
 							"name": "received_time",
 							"type": "Date",
-							"description": "接收时间",
-							"required": true
+							"description": "接收时间"
 						},
 						{
 							"name": "calling_time",
 							"type": "Date",
-							"description": "接口调用时间",
-							"required": true
+							"description": "接口调用时间"
 						},
 						{
 							"name": "registration_id",
 							"type": "Number",
-							"description": "诉讼系统裁判登记信息",
-							"required": true
+							"description": "诉讼系统裁判登记信息"
 						},
 						{
 							"name": "suit_id",
 							"type": "Number",
-							"description": "案件id",
-							"required": true
+							"description": "案件id"
 						},
 						{
 							"name": "updater",
 							"type": "String",
-							"description": "更新人",
-							"required": true
+							"description": "更新人"
 						},
 						{
 							"name": "founder",
 							"type": "String",
-							"description": "创建人",
-							"required": true
+							"description": "创建人"
 						},
 						{
 							"name": "defendant_receive",
 							"type": "String",
-							"description": "判决金额（其他被告赔付）",
-							"required": true
+							"description": "判决金额（其他被告赔付）"
 						},
 						{
 							"name": "amount_our_receive",
 							"type": "String",
-							"description": "判决金额（我方获赔）",
-							"required": true
+							"description": "判决金额（我方获赔）"
 						},
 						{
 							"name": "amount_our_give",
 							"type": "String",
-							"description": "判决金额（我方赔付）",
-							"required": true
+							"description": "判决金额（我方赔付）"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "诉讼金额",
-							"required": true
+							"description": "诉讼金额"
 						},
 						{
 							"name": "processor",
 							"type": "String",
-							"description": "我方处理人",
-							"required": true
+							"description": "我方处理人"
 						},
 						{
 							"name": "is_assume_responsibility",
 							"type": "String",
-							"description": "平台是否需要承担责任",
-							"required": true
+							"description": "平台是否需要承担责任"
 						},
 						{
 							"name": "update_time",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "drop_date",
 							"type": "String",
-							"description": "撤诉日期",
-							"required": true
+							"description": "撤诉日期"
 						},
 						{
 							"name": "feedback_content",
 							"type": "String",
-							"description": "反馈内容",
-							"required": true
+							"description": "反馈内容"
 						},
 						{
 							"name": "feedback_id",
 							"type": "Number",
-							"description": "反馈ID",
-							"required": true
+							"description": "反馈ID"
 						},
 						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "附件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "附件key"
+								}
+							],
 							"name": "feedback_attachment_list",
 							"type": "LFileModel[]",
-							"description": "反馈附件",
-							"required": true,
+							"description": "反馈附件"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
-						},
-						{
+							],
 							"name": "mediation_certificate_files",
 							"type": "FileModel[]",
-							"description": "调解凭证附件列表",
-							"required": true,
+							"description": "调解凭证附件列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
-						},
-						{
+							],
 							"name": "written_verdict_files",
 							"type": "LFileModel[]",
-							"description": "裁定书附件列表",
-							"required": true,
+							"description": "裁定书附件列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
-						},
-						{
+							],
 							"name": "settlement_agree_files",
 							"type": "LFileModel[]",
-							"description": "和解协议附件列表",
-							"required": true,
+							"description": "和解协议附件列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
-						},
-						{
+							],
 							"name": "judge_files",
 							"type": "LFileModel[]",
-							"description": "裁决书附件列表",
-							"required": true,
+							"description": "裁决书附件列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
-						},
-						{
+							],
 							"name": "dropped_files",
 							"type": "LFileModel[]",
-							"description": "撤诉文件附件列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "name",
-									"type": "String",
-									"description": "附件名称",
-									"required": true
-								},
-								{
-									"name": "key",
-									"type": "String",
-									"description": "附件key",
-									"required": true
-								}
-							]
+							"description": "撤诉文件附件列表"
 						},
 						{
-							"name": "other_files",
-							"type": "LFileModel[]",
-							"description": "其他附件附件列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "附件名称",
-									"required": true
+									"description": "附件名称"
 								},
 								{
 									"name": "key",
 									"type": "String",
-									"description": "附件key",
-									"required": true
+									"description": "附件key"
 								}
-							]
+							],
+							"name": "other_files",
+							"type": "LFileModel[]",
+							"description": "其他附件附件列表"
 						}
-					]
+					],
+					"name": "content",
+					"type": "RefereeRegistrationModel",
+					"description": "裁判登记内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.suit.judgement.get",
+	"apiChineseName": "获取裁判登记信息",
+	"description": "供ISV供应商获取集团法务系统的裁判登记信息",
+	"id": 43435
 }

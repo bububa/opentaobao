@@ -1,0 +1,30 @@
+{
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "淘宝账号昵称"
+		},
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "视频ID"
+		},
+		{
+			"name": "creative_id",
+			"type": "Number",
+			"description": "创意ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否解绑成功"
+		}
+	],
+	"name": "taobao.subway.creative.video.unbind",
+	"apiChineseName": "创意与视频解绑接口",
+	"description": "将创意与视频解绑",
+	"id": 56054
+}

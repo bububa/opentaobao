@@ -1,8 +1,4 @@
 {
-	"id": 37272,
-	"name": "youku.ott.pay.order.createorder",
-	"apiChineseName": "创建订单",
-	"description": "ottpay创建订单",
 	"requestParams": [
 		{
 			"name": "buyer",
@@ -52,35 +48,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvOrderResultDTO",
-			"description": "data",
 			"subParams": [
+				{
+					"name": "qcode_url",
+					"type": "String",
+					"description": "qcodeUrl"
+				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "orderNo",
-					"required": true
+					"description": "orderNo"
 				},
 				{
 					"name": "cp_order_no",
 					"type": "String",
-					"description": "cpOrderNo",
-					"required": true
-				},
-				{
-					"name": "qcode_url",
-					"type": "String",
-					"description": "qcodeUrl",
-					"required": true
+					"description": "cpOrderNo"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvOrderResultDTO",
+			"description": "data"
 		}
-	]
+	],
+	"name": "youku.ott.pay.order.createorder",
+	"apiChineseName": "创建订单",
+	"description": "ottpay创建订单",
+	"id": 37272
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28639,
-	"name": "yunos.tvpubadmin.diccontroltask.query",
-	"apiChineseName": "停开服任务列表",
-	"description": "牌照方对终端设备的停开服管理",
 	"requestParams": [
 		{
 			"name": "name",
@@ -39,5 +35,9 @@
 			"type": "PaginationDO",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.diccontroltask.query",
+	"apiChineseName": "停开服任务列表",
+	"description": "牌照方对终端设备的停开服管理",
+	"id": 28639
 }

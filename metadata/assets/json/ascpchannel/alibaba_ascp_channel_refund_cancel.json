@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "refund_no",
+					"type": "String",
+					"description": "退款单号",
+					"required": true
+				},
+				{
+					"name": "out_refund_no",
+					"type": "String",
+					"description": "外部退款单号"
+				}
+			],
+			"name": "cancel_refund_order_request",
+			"type": "Cancelrefundorderrequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
+		}
+	],
+	"name": "alibaba.ascp.channel.refund.cancel",
+	"apiChineseName": "渠道退款单撤销",
+	"description": "售后申请的撤回接口",
+	"id": 57200
+}

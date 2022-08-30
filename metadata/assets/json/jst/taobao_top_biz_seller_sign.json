@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "商家主账号昵称"
+		},
+		{
+			"name": "appkey_title",
+			"type": "String",
+			"description": "appkey名称"
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "商家主账号ID",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "签约类型：1-补发",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态：0-无效；1-有效"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "call_result",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "call_err_code",
+			"type": "String",
+			"description": "失败code"
+		},
+		{
+			"name": "call_err_msg",
+			"type": "String",
+			"description": "失败msg"
+		}
+	],
+	"name": "taobao.top.biz.seller.sign",
+	"apiChineseName": "淘宝订单履约-商家erp签约",
+	"description": "淘宝订单履约-商家erp签约，包含各场景的签约",
+	"id": 61714
+}

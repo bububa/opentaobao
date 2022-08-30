@@ -1,8 +1,4 @@
 {
-	"id": 22666,
-	"name": "taobao.xhotel.room.get",
-	"apiChineseName": "room实体查询",
-	"description": "此接口用于查询一个商品，根据传入的gid查询商品信息。卖家只能查询自己的商品。",
 	"requestParams": [
 		{
 			"name": "vendor",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "room",
-			"type": "FirstResult",
-			"description": "房间信息",
 			"subParams": [
 				{
 					"name": "down_reason",
@@ -170,7 +163,14 @@
 					"description": "switchCalendar",
 					"required": true
 				}
-			]
+			],
+			"name": "room",
+			"type": "FirstResult",
+			"description": "房间信息"
 		}
-	]
+	],
+	"name": "taobao.xhotel.room.get",
+	"apiChineseName": "room实体查询",
+	"description": "此接口用于查询一个商品，根据传入的gid查询商品信息。卖家只能查询自己的商品。",
+	"id": 22666
 }

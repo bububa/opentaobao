@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"name": "buyer_login_id",
+			"type": "String",
+			"description": "买家登录账号"
+		},
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务code"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "exec_description",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "接口状态"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "服务code"
+						},
+						{
+							"name": "service_begin",
+							"type": "Date",
+							"description": "服务开始时间"
+						},
+						{
+							"name": "service_end",
+							"type": "Date",
+							"description": "服务结束时间"
+						},
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "服务类型"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "服务状态"
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "订单编号"
+						},
+						{
+							"name": "buyer_login_id",
+							"type": "String",
+							"description": "购买人登录账号"
+						},
+						{
+							"name": "vendor_id",
+							"type": "String",
+							"description": "服务商id"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "购买数量"
+						},
+						{
+							"name": "transaction_price",
+							"type": "Number",
+							"description": "成交价（无效字段）"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "transaction_unit_price",
+							"type": "Number",
+							"description": "成交单价（无效字段）"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "skucode"
+						}
+					],
+					"name": "dtos",
+					"type": "TradePurchaseDto[]",
+					"description": "授权订单集合"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
+		}
+	],
+	"name": "alibaba.seller.vendor.trade.purchase",
+	"apiChineseName": "查看购买人的订单记录以及授权时间",
+	"description": "查看购买人的订单记录以及授权时间",
+	"id": 56479
+}

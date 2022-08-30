@@ -1,17 +1,8 @@
 {
-	"id": 26003,
-	"name": "taobao.qimen.orderprocess.report",
-	"apiChineseName": "订单流水通知接口",
-	"description": "WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明：仓库仓内操作状态回传给ERP, 比如打包操作完成时, 回传一个打 包完成的状态给到ERP, ERP自行决定如何处理。",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "OrderProcessReportRequest",
 			"subParams": [
 				{
-					"name": "order",
-					"type": "Order",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "orderCode",
@@ -39,12 +30,12 @@
 							"type": "String",
 							"description": "备注"
 						}
-					]
+					],
+					"name": "order",
+					"type": "Order",
+					"description": "订单信息"
 				},
 				{
-					"name": "process",
-					"type": "Process",
-					"description": "订单处理信息",
 					"subParams": [
 						{
 							"name": "processStatus",
@@ -82,7 +73,10 @@
 							"type": "String",
 							"description": "运单号"
 						}
-					]
+					],
+					"name": "process",
+					"type": "Process",
+					"description": "订单处理信息"
 				},
 				{
 					"name": "extendProps",
@@ -94,13 +88,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "OrderProcessReportRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -120,7 +114,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.orderprocess.report",
+	"apiChineseName": "订单流水通知接口",
+	"description": "WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明：仓库仓内操作状态回传给ERP, 比如打包操作完成时, 回传一个打 包完成的状态给到ERP, ERP自行决定如何处理。",
+	"id": 26003
 }

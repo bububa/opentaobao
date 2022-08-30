@@ -1,8 +1,4 @@
 {
-	"id": 28,
-	"name": "taobao.item.sku.get",
-	"apiChineseName": "获取SKU",
-	"description": "获取sku_id所对应的sku数据 \nsku_id对应的sku要属于传入的nick对应的卖家\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -19,15 +15,11 @@
 		{
 			"name": "num_iid",
 			"type": "Number",
-			"description": "商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。",
-			"minValue": 0
+			"description": "商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "sku",
-			"type": "Sku",
-			"description": "Sku",
 			"subParams": [
 				{
 					"name": "sku_id",
@@ -50,6 +42,11 @@
 					"description": "sku的销售属性组合字符串（颜色，大小，等等，可通过类目API获取某类目下的销售属性）,格式是p1:v1;p2:v2"
 				},
 				{
+					"name": "properties_name",
+					"type": "String",
+					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2……"
+				},
+				{
 					"name": "quantity",
 					"type": "Number",
 					"description": "属于这个sku的商品的数量，"
@@ -58,6 +55,11 @@
 					"name": "price",
 					"type": "String",
 					"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
 				},
 				{
 					"name": "created",
@@ -72,12 +74,7 @@
 				{
 					"name": "status",
 					"type": "String",
-					"description": "sku状态。 normal:正常 ；delete:删除,淘宝天猫此字段无效"
-				},
-				{
-					"name": "properties_name",
-					"type": "String",
-					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2\u0026hellip;\u0026hellip;"
+					"description": "sku状态。 normal:正常 ；delete:删除"
 				},
 				{
 					"name": "sku_spec_id",
@@ -90,16 +87,18 @@
 					"description": "商品在付款减库存的状态下，该sku上未付款的订单数量"
 				},
 				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
-				},
-				{
 					"name": "barcode",
 					"type": "String",
 					"description": "商品级别的条形码"
 				}
-			]
+			],
+			"name": "sku",
+			"type": "Sku",
+			"description": "Sku"
 		}
-	]
+	],
+	"name": "taobao.item.sku.get",
+	"apiChineseName": "获取SKU",
+	"description": "获取sku_id所对应的sku数据 \nsku_id对应的sku要属于传入的nick对应的卖家\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 28
 }

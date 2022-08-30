@@ -1,14 +1,6 @@
 {
-	"id": 27660,
-	"name": "yunos.service.cmns.coa.message.push",
-	"apiChineseName": "消息推送接口",
-	"description": "调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。",
 	"requestParams": [
 		{
-			"name": "push_request",
-			"type": "PushRequest",
-			"description": "消息推送请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "device_type",
@@ -32,10 +24,6 @@
 					"required": true
 				},
 				{
-					"name": "receiver",
-					"type": "Receiver",
-					"description": "消息发送对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data",
@@ -49,7 +37,11 @@
 							"description": "只能填写deviceToken",
 							"required": true
 						}
-					]
+					],
+					"name": "receiver",
+					"type": "Receiver",
+					"description": "消息发送对象",
+					"required": true
 				},
 				{
 					"name": "type",
@@ -72,7 +64,11 @@
 					"type": "String",
 					"description": "去重码，为应用自己维护的消息唯一标记"
 				}
-			]
+			],
+			"name": "push_request",
+			"type": "PushRequest",
+			"description": "消息推送请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -91,5 +87,9 @@
 			"type": "Number",
 			"description": "200:消息发送成功"
 		}
-	]
+	],
+	"name": "yunos.service.cmns.coa.message.push",
+	"apiChineseName": "消息推送接口",
+	"description": "调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。",
+	"id": 27660
 }

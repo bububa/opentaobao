@@ -1,117 +1,103 @@
 {
-	"id": 51228,
-	"name": "xiami.content.songs.audio.get",
-	"apiChineseName": "获取歌曲音频",
-	"description": "获取歌曲音频",
 	"requestParams": [
 		{
 			"name": "song_ids",
 			"type": "Number[]",
 			"description": "歌曲ID",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_code",
-			"type": "ResultCode",
-			"description": "请求结果信息",
-			"subParams": [
-				{
-					"name": "msg",
-					"type": "String",
-					"description": "result message",
-					"required": true
-				},
-				{
-					"name": "code",
-					"type": "Number",
-					"description": "result code",
-					"required": true
-				}
-			]
-		},
-		{
-			"name": "audios",
-			"type": "SongAudiosDto []",
-			"description": "音频信息",
 			"subParams": [
 				{
 					"name": "song_id",
 					"type": "Number",
-					"description": "歌曲ID",
-					"required": true
+					"description": "歌曲ID"
 				},
 				{
-					"name": "audios",
-					"type": "AudioDto[]",
-					"description": "音频信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "audio_id",
 							"type": "Number",
-							"description": "音频ID",
-							"required": true
+							"description": "音频ID"
 						},
 						{
 							"name": "duration",
 							"type": "Number",
-							"description": "音频时长，同一歌曲时长一致（单位：毫秒）",
-							"required": true
+							"description": "音频时长，同一歌曲时长一致（单位：毫秒）"
 						},
 						{
 							"name": "listen_url",
 							"type": "String",
-							"description": "音频地址 带有标准的CDN签名",
-							"required": true
+							"description": "音频地址 带有标准的CDN签名"
 						},
 						{
 							"name": "file_size",
 							"type": "Number",
-							"description": "文件大小(单位: 字节)",
-							"required": true
+							"description": "文件大小(单位: 字节)"
 						},
 						{
 							"name": "format",
 							"type": "String",
-							"description": "音频格式:mp3|m4a|wav",
-							"required": true
+							"description": "音频格式:mp3|m4a|wav"
 						},
 						{
 							"name": "rate",
 							"type": "Number",
-							"description": "码率: 32|64|128|192|320|\u003e320的整数值",
-							"required": true
+							"description": "码率: 32|64|128|192|320|\u003e320的整数值"
 						},
 						{
 							"name": "quality",
 							"type": "Number",
-							"description": "品质:1(无损)|2(320k)|3(192k)|4(128k)|5(32k)|7(64k)|15(MQA)",
-							"required": true
+							"description": "品质:1(无损)|2(320k)|3(192k)|4(128k)|5(32k)|7(64k)|15(MQA)"
 						},
 						{
 							"name": "sample_rate",
 							"type": "Number",
-							"description": "采样率",
-							"required": true
+							"description": "采样率"
 						},
 						{
 							"name": "bits",
 							"type": "Number",
-							"description": "位信息，音频压缩过程产生的信息，可忽略",
-							"required": true
+							"description": "位信息，音频压缩过程产生的信息，可忽略"
 						},
 						{
 							"name": "expire",
 							"type": "Number",
-							"description": "过期时间(unix timestamp)",
-							"required": true
+							"description": "过期时间(unix timestamp)"
 						}
-					]
+					],
+					"name": "audios",
+					"type": "AudioDto[]",
+					"description": "音频信息"
 				}
-			]
+			],
+			"name": "audios",
+			"type": "SongAudiosDto []",
+			"description": "音频信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "result message"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "result code"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "请求结果信息"
 		}
-	]
+	],
+	"name": "xiami.content.songs.audio.get",
+	"apiChineseName": "获取歌曲音频",
+	"description": "获取歌曲音频",
+	"id": 51228
 }

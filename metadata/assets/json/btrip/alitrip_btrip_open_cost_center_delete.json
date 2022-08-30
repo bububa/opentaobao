@@ -1,13 +1,6 @@
 {
-	"id": 53616,
-	"name": "alitrip.btrip.open.cost.center.delete",
-	"apiChineseName": "删除成本中心",
-	"description": "删除成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterDeleteRq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -26,7 +19,10 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterDeleteRq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
@@ -40,5 +36,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.delete",
+	"apiChineseName": "删除成本中心",
+	"description": "删除成本中心",
+	"id": 53616
 }

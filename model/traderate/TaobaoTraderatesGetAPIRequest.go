@@ -24,6 +24,8 @@ type TaobaoTraderatesGetAPIRequest struct {
 	_startDate string
 	// 评价结束时间。如果只输入结束时间，那么全部返回所有评价数据。
 	_endDate string
+	// ouid
+	_ouid string
 	// 页码。取值范围:大于零的整数最大限制为200; 默认值:1
 	_pageNo int64
 	// 每页获取条数。默认值40，最小值1，最大值150。
@@ -133,6 +135,19 @@ func (r *TaobaoTraderatesGetAPIRequest) SetEndDate(_endDate string) error {
 // GetEndDate EndDate Getter
 func (r TaobaoTraderatesGetAPIRequest) GetEndDate() string {
 	return r._endDate
+}
+
+// SetOuid is Ouid Setter
+// ouid
+func (r *TaobaoTraderatesGetAPIRequest) SetOuid(_ouid string) error {
+	r._ouid = _ouid
+	r.Set("ouid", _ouid)
+	return nil
+}
+
+// GetOuid Ouid Getter
+func (r TaobaoTraderatesGetAPIRequest) GetOuid() string {
+	return r._ouid
 }
 
 // SetPageNo is PageNo Setter

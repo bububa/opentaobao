@@ -1,14 +1,6 @@
 {
-	"id": 45392,
-	"name": "tmall.nrt.member.synchronize",
-	"apiChineseName": "新零售会员同步接口",
-	"description": "新零售会员上翻接口，商家的会员信息同步至阿里侧",
 	"requestParams": [
 		{
-			"name": "nrt_member_dto",
-			"type": "NrtMemberDTO",
-			"description": "会员DTO",
-			"required": true,
 			"subParams": [
 				{
 					"name": "out_member_id",
@@ -81,14 +73,15 @@
 					"type": "String",
 					"description": "淘宝nick"
 				}
-			]
+			],
+			"name": "nrt_member_dto",
+			"type": "NrtMemberDTO",
+			"description": "会员DTO",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "MemberSynResponse",
-			"description": "是否成功",
 			"subParams": [
 				{
 					"name": "biz_code",
@@ -114,7 +107,14 @@
 					"description": "sellerid",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "MemberSynResponse",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "tmall.nrt.member.synchronize",
+	"apiChineseName": "新零售会员同步接口",
+	"description": "新零售会员上翻接口，商家的会员信息同步至阿里侧",
+	"id": 45392
 }

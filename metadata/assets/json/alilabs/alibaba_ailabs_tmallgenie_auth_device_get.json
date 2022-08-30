@@ -1,8 +1,4 @@
 {
-	"id": 44766,
-	"name": "alibaba.ailabs.tmallgenie.auth.device.get",
-	"apiChineseName": "获取设备详情",
-	"description": "通过此接口获取设备详情",
 	"requestParams": [
 		{
 			"name": "client_id",
@@ -25,35 +21,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "device_info",
-			"type": "Result",
-			"description": "设备信息",
 			"subParams": [
 				{
 					"name": "extensions",
 					"type": "String",
-					"description": "拓展信息",
-					"required": true
+					"description": "拓展信息"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "设备名",
-					"required": true
+					"description": "设备名"
 				},
 				{
 					"name": "device_id",
 					"type": "String",
-					"description": "设备三方唯一id",
-					"required": true
+					"description": "设备三方唯一id"
 				},
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "设备uuid",
-					"required": true
+					"description": "设备uuid"
+				},
+				{
+					"subParams": [
+						{
+							"name": "rom",
+							"type": "String",
+							"description": "ROM"
+						},
+						{
+							"name": "ram",
+							"type": "String",
+							"description": "RAM"
+						}
+					],
+					"name": "device_tag",
+					"type": "HashMap",
+					"description": "设备标签"
 				}
-			]
+			],
+			"name": "device_info",
+			"type": "Result",
+			"description": "设备信息"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.get",
+	"apiChineseName": "获取设备详情",
+	"description": "通过此接口获取设备详情",
+	"id": 44766
 }

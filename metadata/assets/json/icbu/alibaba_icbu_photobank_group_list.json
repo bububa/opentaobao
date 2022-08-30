@@ -1,8 +1,4 @@
 {
-	"id": 30575,
-	"name": "alibaba.icbu.photobank.group.list",
-	"apiChineseName": "图片银行分组信息获取",
-	"description": "图片银行分组信息获取",
 	"requestParams": [
 		{
 			"name": "extra_context",
@@ -17,41 +13,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "groups",
-			"type": "PhotoAlbumGroup []",
-			"description": "groups",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "id",
-					"required": true
+					"description": "id"
 				},
 				{
 					"name": "level1",
 					"type": "Number",
-					"description": "level1",
-					"required": true
+					"description": "level1"
 				},
 				{
 					"name": "level2",
 					"type": "Number",
-					"description": "level2",
-					"required": true
+					"description": "level2"
 				},
 				{
 					"name": "level3",
 					"type": "Number",
-					"description": "level3",
-					"required": true
+					"description": "level3"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "name",
-					"required": true
+					"description": "name"
 				}
-			]
+			],
+			"name": "groups",
+			"type": "PhotoAlbumGroup []",
+			"description": "groups"
 		}
-	]
+	],
+	"name": "alibaba.icbu.photobank.group.list",
+	"apiChineseName": "图片银行分组信息获取",
+	"description": "图片银行分组信息获取",
+	"id": 30575
 }

@@ -12,10 +12,10 @@ import (
 // 天猫精灵 IoT 视频 SaaS 服务-江苏电信-appKeySecret 更新
 type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest struct {
 	model.Params
-	// 一次请求的唯一标识符
-	_seqId string
 	// 新的 key
 	_secret string
+	// 一次请求的唯一标识符
+	_seqId string
 }
 
 // NewAlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest 初始化AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) G
 	return params
 }
 
-// SetSeqId is SeqId Setter
-// 一次请求的唯一标识符
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSeqId(_seqId string) error {
-	r._seqId = _seqId
-	r.Set("seq_id", _seqId)
-	return nil
-}
-
-// GetSeqId SeqId Getter
-func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSeqId() string {
-	return r._seqId
-}
-
 // SetSecret is Secret Setter
 // 新的 key
 func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSecret(_secret string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) 
 // GetSecret Secret Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSecret() string {
 	return r._secret
+}
+
+// SetSeqId is SeqId Setter
+// 一次请求的唯一标识符
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) SetSeqId(_seqId string) error {
+	r._seqId = _seqId
+	r.Set("seq_id", _seqId)
+	return nil
+}
+
+// GetSeqId SeqId Getter
+func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateAPIRequest) GetSeqId() string {
+	return r._seqId
 }

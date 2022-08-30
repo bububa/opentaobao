@@ -15,7 +15,7 @@ type AlibabaWdkMarketingPriceAPIRequest struct {
 	// 商品sku
 	_skuCodes []string
 	// 门店标识数组
-	_shopIds []int64
+	_shopIds []string
 	// 查询结束时间(sku_codes非空无效)
 	_endTime string
 	// 查询开始时间(sku_codes非空无效)
@@ -62,14 +62,14 @@ func (r AlibabaWdkMarketingPriceAPIRequest) GetSkuCodes() []string {
 
 // SetShopIds is ShopIds Setter
 // 门店标识数组
-func (r *AlibabaWdkMarketingPriceAPIRequest) SetShopIds(_shopIds []int64) error {
+func (r *AlibabaWdkMarketingPriceAPIRequest) SetShopIds(_shopIds []string) error {
 	r._shopIds = _shopIds
 	r.Set("shop_ids", _shopIds)
 	return nil
 }
 
 // GetShopIds ShopIds Getter
-func (r AlibabaWdkMarketingPriceAPIRequest) GetShopIds() []int64 {
+func (r AlibabaWdkMarketingPriceAPIRequest) GetShopIds() []string {
 	return r._shopIds
 }
 

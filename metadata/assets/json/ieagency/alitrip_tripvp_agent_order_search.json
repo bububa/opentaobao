@@ -1,8 +1,4 @@
 {
-	"id": 30160,
-	"name": "alitrip.tripvp.agent.order.search",
-	"apiChineseName": "【国际机票】查询辅营订单列表",
-	"description": "【国际机票】查询辅营订单列表",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -52,23 +48,25 @@
 			"description": "是否有下一页"
 		},
 		{
-			"name": "order_vos",
-			"type": "VirProOrderVo []",
-			"description": "辅营订单列表",
 			"subParams": [
 				{
 					"name": "book_time",
 					"type": "Date",
-					"description": "bookTime",
-					"required": true
+					"description": "bookTime"
 				},
 				{
 					"name": "order_id",
 					"type": "Number",
-					"description": "辅营订单号",
-					"required": true
+					"description": "辅营订单号"
 				}
-			]
+			],
+			"name": "order_vos",
+			"type": "VirProOrderVo []",
+			"description": "辅营订单列表"
 		}
-	]
+	],
+	"name": "alitrip.tripvp.agent.order.search",
+	"apiChineseName": "【国际机票】查询辅营订单列表",
+	"description": "【国际机票】查询辅营订单列表",
+	"id": 30160
 }

@@ -15,12 +15,12 @@ type AlibabaMosOnsiteTradeQueryAPIRequest struct {
 	model.Params
 	// 喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  > 商户支付流水号。
 	_tradeNo string
+	// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
+	_outTradeNo string
 	// 商户ID类型，取值为miaojie或out
 	_storeIdType string
 	// 门店号或喵街商户ID
 	_storeId string
-	// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
-	_outTradeNo string
 }
 
 // NewAlibabaMosOnsiteTradeQueryRequest 初始化AlibabaMosOnsiteTradeQueryAPIRequest对象
@@ -57,6 +57,19 @@ func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetTradeNo() string {
 	return r._tradeNo
 }
 
+// SetOutTradeNo is OutTradeNo Setter
+// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
+func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string) error {
+	r._outTradeNo = _outTradeNo
+	r.Set("out_trade_no", _outTradeNo)
+	return nil
+}
+
+// GetOutTradeNo OutTradeNo Getter
+func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetOutTradeNo() string {
+	return r._outTradeNo
+}
+
 // SetStoreIdType is StoreIdType Setter
 // 商户ID类型，取值为miaojie或out
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreIdType(_storeIdType string) error {
@@ -81,17 +94,4 @@ func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetStoreId(_storeId string) error
 // GetStoreId StoreId Getter
 func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetStoreId() string {
 	return r._storeId
-}
-
-// SetOutTradeNo is OutTradeNo Setter
-// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
-func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string) error {
-	r._outTradeNo = _outTradeNo
-	r.Set("out_trade_no", _outTradeNo)
-	return nil
-}
-
-// GetOutTradeNo OutTradeNo Getter
-func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetOutTradeNo() string {
-	return r._outTradeNo
 }

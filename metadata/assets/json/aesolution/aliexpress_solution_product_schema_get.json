@@ -1,8 +1,4 @@
 {
-	"id": 43456,
-	"name": "aliexpress.solution.product.schema.get",
-	"apiChineseName": "get product schema",
-	"description": "provide a new schema way to post product. With a pair of API, one for getting schema, one for posting instance",
 	"requestParams": [
 		{
 			"name": "aliexpress_category_id",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ProductSchemaDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success flag",
-					"required": true
+					"description": "success flag"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "error code",
-					"required": true
+					"description": "error code"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "error message",
-					"required": true
+					"description": "error message"
 				},
 				{
 					"name": "schema",
 					"type": "String",
-					"description": "schema",
-					"required": true
+					"description": "schema"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ProductSchemaDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.product.schema.get",
+	"apiChineseName": "get product schema",
+	"description": "provide a new schema way to post product. With a pair of API, one for getting schema, one for posting instance",
+	"id": 43456
 }

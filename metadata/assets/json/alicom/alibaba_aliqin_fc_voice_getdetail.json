@@ -1,8 +1,4 @@
 {
-	"id": 33933,
-	"name": "alibaba.aliqin.fc.voice.getdetail",
-	"apiChineseName": "获取呼叫详情",
-	"description": "通过呼叫id获取呼叫相关的数据",
 	"requestParams": [
 		{
 			"name": "call_id",
@@ -11,15 +7,15 @@
 			"required": true
 		},
 		{
-			"name": "prod_id",
-			"type": "Number",
-			"description": "语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009",
-			"required": true
-		},
-		{
 			"name": "query_date",
 			"type": "Number",
 			"description": "Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）",
+			"required": true
+		},
+		{
+			"name": "prod_id",
+			"type": "Number",
+			"description": "语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009",
 			"required": true
 		}
 	],
@@ -35,14 +31,18 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "alicom_success",
-			"type": "Boolean",
-			"description": "请求是否成功"
-		},
-		{
 			"name": "model",
 			"type": "String",
 			"description": "返回值，在没有结果时为空。recordFile表示的是录音文件地址"
+		},
+		{
+			"name": "alicom_success",
+			"type": "Boolean",
+			"description": "请求是否成功"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.voice.getdetail",
+	"apiChineseName": "获取呼叫详情",
+	"description": "通过呼叫id获取呼叫相关的数据",
+	"id": 33933
 }

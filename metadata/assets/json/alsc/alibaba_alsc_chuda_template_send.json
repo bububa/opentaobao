@@ -1,13 +1,6 @@
 {
-	"id": 57060,
-	"name": "alibaba.alsc.chuda.template.send",
-	"apiChineseName": "本地生活触达模板消息发送接口",
-	"description": "允许三方小程序通过该api发送本地生活触达消息",
 	"requestParams": [
 		{
-			"name": "notify_request",
-			"type": "TemplateNotifyRequest",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "open_id",
@@ -34,9 +27,13 @@
 				},
 				{
 					"name": "template_args",
+					"type": "String",
 					"description": "模板变量数据"
 				}
-			]
+			],
+			"name": "notify_request",
+			"type": "TemplateNotifyRequest",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
@@ -60,5 +57,9 @@
 			"type": "String",
 			"description": "描述信息"
 		}
-	]
+	],
+	"name": "alibaba.alsc.chuda.template.send",
+	"apiChineseName": "本地生活触达模板消息发送接口",
+	"description": "允许三方小程序通过该api发送本地生活触达消息",
+	"id": 57060
 }

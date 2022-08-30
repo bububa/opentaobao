@@ -1,13 +1,6 @@
 {
-	"id": 10545,
-	"name": "taobao.simba.campaign.areaoptions.get",
-	"apiChineseName": "取得推广计划的可设置投放地域列表",
-	"description": "取得推广计划的可设置投放地域列表",
 	"responseParams": [
 		{
-			"name": "area_options",
-			"type": "AreaOption []",
-			"description": "推广计划所有可设置的投放地域",
 			"subParams": [
 				{
 					"name": "area_id",
@@ -29,7 +22,14 @@
 					"type": "Number",
 					"description": "地域级别，目前自治区、省、直辖市是1，其他城市、地区是2"
 				}
-			]
+			],
+			"name": "area_options",
+			"type": "AreaOption []",
+			"description": "推广计划所有可设置的投放地域"
 		}
-	]
+	],
+	"name": "taobao.simba.campaign.areaoptions.get",
+	"apiChineseName": "取得推广计划的可设置投放地域列表",
+	"description": "取得推广计划的可设置投放地域列表",
+	"id": 10545
 }

@@ -1,8 +1,4 @@
 {
-	"id": 39109,
-	"name": "tmall.traceplatform.ccic.tracecode.check",
-	"apiChineseName": "ccic校验溯源码",
-	"description": "天猫国际溯源业务，需要将溯源码校验的功能输出到ccic官方主页中以增强溯源码的可信度，故需要提供api给ccic使用以校验溯源码的正确性。",
 	"requestParams": [
 		{
 			"name": "short_tracecode",
@@ -19,49 +15,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "obj",
-					"type": "CCICCheckCodeDO",
-					"description": "obj",
-					"required": true,
 					"subParams": [
 						{
 							"name": "enterable",
 							"type": "Boolean",
-							"description": "enterable",
-							"required": true
+							"description": "enterable"
 						},
 						{
 							"name": "enter_url",
 							"type": "String",
-							"description": "enterUrl",
-							"required": true
+							"description": "enterUrl"
 						}
-					]
+					],
+					"name": "obj",
+					"type": "CCICCheckCodeDO",
+					"description": "obj"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.ccic.tracecode.check",
+	"apiChineseName": "ccic校验溯源码",
+	"description": "天猫国际溯源业务，需要将溯源码校验的功能输出到ccic官方主页中以增强溯源码的可信度，故需要提供api给ccic使用以校验溯源码的正确性。",
+	"id": 39109
 }

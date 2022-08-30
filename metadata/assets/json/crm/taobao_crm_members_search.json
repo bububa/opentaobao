@@ -1,8 +1,4 @@
 {
-	"id": 10836,
-	"name": "taobao.crm.members.search",
-	"apiChineseName": "获取卖家会员（高级查询）",
-	"description": "会员列表的高级查询，接口返回符合条件的会员列表.\u003cbr\u003e\u003cbr/\u003e注：建议获取09年以后的数据，09年之前的数据不是很完整",
 	"requestParams": [
 		{
 			"name": "buyer_nick",
@@ -13,9 +9,50 @@
 		{
 			"name": "grade",
 			"type": "Number",
-			"description": "会员等级",
-			"maxValue": 6,
-			"minValue": -1
+			"description": "会员等级"
+		},
+		{
+			"name": "relation_source",
+			"type": "Number",
+			"description": "关系来源，1交易成功，2未成交，3卖家手动吸纳",
+			"maxLength": 32
+		},
+		{
+			"name": "max_last_trade_time",
+			"type": "Date",
+			"description": "最迟上次交易时间"
+		},
+		{
+			"name": "min_last_trade_time",
+			"type": "Date",
+			"description": "最早上次交易时间（订单创建时间）"
+		},
+		{
+			"name": "min_trade_count",
+			"type": "Number",
+			"description": "最小交易量"
+		},
+		{
+			"name": "max_trade_count",
+			"type": "Number",
+			"description": "最大交易量"
+		},
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "分组id",
+			"maxLength": 19
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1.最大1000页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示的会员数量，page_size的最大值不能超过100，最小值不能小于1"
 		},
 		{
 			"name": "min_trade_amount",
@@ -28,132 +65,18 @@
 			"description": "最大交易额，单位为元"
 		},
 		{
-			"name": "min_trade_count",
-			"type": "Number",
-			"description": "最小交易量",
-			"minValue": 0
-		},
-		{
-			"name": "max_trade_count",
-			"type": "Number",
-			"description": "最大交易量",
-			"minValue": 0
-		},
-		{
-			"name": "min_last_trade_time",
-			"type": "Date",
-			"description": "最早上次交易时间（订单创建时间）"
-		},
-		{
-			"name": "max_last_trade_time",
-			"type": "Date",
-			"description": "最迟上次交易时间"
-		},
-		{
-			"name": "relation_source",
-			"type": "Number",
-			"description": "关系来源，1交易成功，2未成交，3卖家手动吸纳",
-			"maxLength": 32,
-			"maxValue": 3,
-			"minValue": 1
-		},
-		{
-			"name": "group_id",
-			"type": "Number",
-			"description": "分组id",
-			"maxLength": 19
-		},
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "每页显示的会员数量，page_size的最大值不能超过100，最小值不能小于1",
-			"maxValue": 100,
-			"minValue": 1
-		},
-		{
-			"name": "current_page",
-			"type": "Number",
-			"description": "显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1.最大1000页",
-			"required": true,
-			"maxValue": 80,
-			"minValue": 1
+			"name": "open_uid",
+			"type": "String",
+			"description": "用户的open_uid"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "members",
-			"type": "CrmMember []",
-			"description": "根据一定条件查询的卖家会员",
 			"subParams": [
-				{
-					"name": "buyer_nick",
-					"type": "String",
-					"description": "买家昵称"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "显示会员的状态，normal正常，blacklist黑名单"
-				},
-				{
-					"name": "grade",
-					"type": "Number",
-					"description": "会员等级，0未非会员，其余对应等级名称取grade_name"
-				},
-				{
-					"name": "trade_count",
-					"type": "Number",
-					"description": "交易成功笔数"
-				},
-				{
-					"name": "trade_amount",
-					"type": "Price",
-					"description": "交易成功的金额"
-				},
-				{
-					"name": "close_trade_count",
-					"type": "Number",
-					"description": "交易关闭的的笔数"
-				},
-				{
-					"name": "close_trade_amount",
-					"type": "Price",
-					"description": "交易关闭的金额"
-				},
 				{
 					"name": "item_num",
 					"type": "Number",
 					"description": "购买的宝贝件数"
-				},
-				{
-					"name": "group_ids",
-					"type": "String",
-					"description": "会员拥有的所有分组"
-				},
-				{
-					"name": "province",
-					"type": "Number",
-					"description": "北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35.注:请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026amp;path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线."
-				},
-				{
-					"name": "city",
-					"type": "String",
-					"description": "城市.请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026amp;path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线."
-				},
-				{
-					"name": "avg_price",
-					"type": "Price",
-					"description": "平均客单价."
-				},
-				{
-					"name": "relation_source",
-					"type": "Number",
-					"description": "关系来源，1交易成功，2未成交，3卖家主动吸纳"
-				},
-				{
-					"name": "last_trade_time",
-					"type": "Date",
-					"description": "最后交易时间"
 				},
 				{
 					"name": "item_close_count",
@@ -161,21 +84,98 @@
 					"description": "交易关闭的宝贝件数"
 				},
 				{
+					"name": "close_trade_amount",
+					"type": "String",
+					"description": "交易关闭的金额"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "显示会员的状态，normal正常，blacklist黑名单"
+				},
+				{
+					"name": "group_ids",
+					"type": "String",
+					"description": "会员拥有的所有分组"
+				},
+				{
+					"name": "relation_source",
+					"type": "Number",
+					"description": "关系来源，1交易成功，2未成交，3卖家主动吸纳"
+				},
+				{
+					"name": "close_trade_count",
+					"type": "Number",
+					"description": "交易关闭的的笔数"
+				},
+				{
+					"name": "last_trade_time",
+					"type": "Date",
+					"description": "最后交易时间"
+				},
+				{
 					"name": "biz_order_id",
 					"type": "Number",
 					"description": "最后一次交易的订单号.注:该字段从2014.4.23之后不再返回."
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市.请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026amp;path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线."
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称"
+				},
+				{
+					"name": "ouid",
+					"type": "String",
+					"description": "openuid"
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35.注:请注意:从2014.4.23之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026amp;path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线."
+				},
+				{
+					"name": "grade",
+					"type": "Number",
+					"description": "会员等级，0未非会员，其余对应等级名称取grade_name"
+				},
+				{
+					"name": "trade_amount",
+					"type": "String",
+					"description": "交易成功的金额"
+				},
+				{
+					"name": "trade_count",
+					"type": "Number",
+					"description": "交易成功笔数"
+				},
+				{
+					"name": "avg_price",
+					"type": "String",
+					"description": "平均客单价."
 				},
 				{
 					"name": "grade_name",
 					"type": "String",
 					"description": "等级名称"
 				}
-			]
+			],
+			"name": "members",
+			"type": "CrmMember []",
+			"description": "根据一定条件查询的卖家会员"
 		},
 		{
 			"name": "total_result",
 			"type": "Number",
 			"description": "记录的总条数"
 		}
-	]
+	],
+	"name": "taobao.crm.members.search",
+	"apiChineseName": "获取卖家会员（高级查询）",
+	"description": "会员列表的高级查询，接口返回符合条件的会员列表.\u003cbr\u003e\u003cbr/\u003e注：建议获取09年以后的数据，09年之前的数据不是很完整",
+	"id": 10836
 }

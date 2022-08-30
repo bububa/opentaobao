@@ -1,8 +1,4 @@
 {
-	"id": 29199,
-	"name": "alitrip.btrip.invoice.search",
-	"apiChineseName": "根据发票抬头搜索发票",
-	"description": "用户根据发票抬头搜索发票信息",
 	"requestParams": [
 		{
 			"name": "corp_id",
@@ -22,49 +18,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "invoice",
-					"type": "OpenInvoiceDo",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "title",
 							"type": "String",
-							"description": "title",
-							"required": true
+							"description": "title"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						}
-					]
+					],
+					"name": "invoice",
+					"type": "OpenInvoiceDo",
+					"description": "module"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "resultMsg",
-					"required": true
+					"description": "resultMsg"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "resultCode",
-					"required": true
+					"description": "resultCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.btrip.invoice.search",
+	"apiChineseName": "根据发票抬头搜索发票",
+	"description": "用户根据发票抬头搜索发票信息",
+	"id": 29199
 }

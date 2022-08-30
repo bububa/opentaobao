@@ -1,13 +1,6 @@
 {
-	"id": 53619,
-	"name": "alitrip.btrip.open.cost.center.entity.add",
-	"apiChineseName": "增加成本中心人员信息",
-	"description": "增加成本中心人员信息",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterAddEntityRq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -16,21 +9,21 @@
 					"required": true
 				},
 				{
-					"name": "entity_list",
-					"type": "OpenOrgEntityDo[]",
-					"description": "人员信息列表",
 					"subParams": [
 						{
 							"name": "entity_id",
 							"type": "String",
-							"description": "员工/部门/角色id"
+							"description": "员工/部门/角色id/第三方部门id"
 						},
 						{
 							"name": "entity_type",
 							"type": "String",
-							"description": "人员类型:1员工，2部门，3角色"
+							"description": "人员类型:1员工，2部门，3角色，4第三方部门"
 						}
-					]
+					],
+					"name": "entity_list",
+					"type": "OpenOrgEntityDo[]",
+					"description": "人员信息列表"
 				},
 				{
 					"name": "thirdpart_id",
@@ -43,28 +36,29 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterAddEntityRq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenCostCenterAddEntityRs",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "add_num",
 					"type": "Number",
-					"description": "增加的人员/部门/角色个数",
-					"required": true
+					"description": "增加的人员/部门/角色个数"
 				},
 				{
 					"name": "selected_user_num",
 					"type": "Number",
-					"description": "该成本中心下员工总数",
-					"required": true
+					"description": "该成本中心下员工总数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenCostCenterAddEntityRs",
+			"description": "结果对象"
 		},
 		{
 			"name": "result_code",
@@ -76,5 +70,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.entity.add",
+	"apiChineseName": "增加成本中心人员信息",
+	"description": "增加成本中心人员信息",
+	"id": 53619
 }

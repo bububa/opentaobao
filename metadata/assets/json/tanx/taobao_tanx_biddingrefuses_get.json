@@ -1,15 +1,11 @@
 {
-	"id": 24797,
-	"name": "taobao.tanx.biddingrefuses.get",
-	"apiChineseName": "tanx竞价失败反馈api",
-	"description": "竞价失败反馈根据创意id查询API提供",
 	"requestParams": [
 		{
 			"name": "creative_ids",
 			"type": "String[]",
 			"description": "dsp的创意id",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "member_id",
@@ -47,9 +43,6 @@
 			"description": "返回是否成功"
 		},
 		{
-			"name": "bidding_refuse_list",
-			"type": "BiddingRefuseDto []",
-			"description": "返回竞价失败对象信息",
 			"subParams": [
 				{
 					"name": "filter_id",
@@ -81,7 +74,14 @@
 					"type": "String",
 					"description": "O123545"
 				}
-			]
+			],
+			"name": "bidding_refuse_list",
+			"type": "BiddingRefuseDto []",
+			"description": "返回竞价失败对象信息"
 		}
-	]
+	],
+	"name": "taobao.tanx.biddingrefuses.get",
+	"apiChineseName": "tanx竞价失败反馈api",
+	"description": "竞价失败反馈根据创意id查询API提供",
+	"id": 24797
 }

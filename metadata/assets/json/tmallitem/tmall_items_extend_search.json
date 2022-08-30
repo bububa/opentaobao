@@ -1,8 +1,4 @@
 {
-	"id": 21643,
-	"name": "tmall.items.extend.search",
-	"apiChineseName": "搜索天猫商品",
-	"description": "提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search",
 	"requestParams": [
 		{
 			"name": "q",
@@ -117,9 +113,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item_list",
-			"type": "TmallExtendSearchItem []",
-			"description": "商品列表",
 			"subParams": [
 				{
 					"name": "title",
@@ -201,7 +194,10 @@
 					"type": "Price",
 					"description": "搜索宝贝的sku最低价的折扣价"
 				}
-			]
+			],
+			"name": "item_list",
+			"type": "TmallExtendSearchItem []",
+			"description": "商品列表"
 		},
 		{
 			"name": "total_results",
@@ -214,9 +210,6 @@
 			"description": "查询条件"
 		},
 		{
-			"name": "cat_list",
-			"type": "TmallCat []",
-			"description": "类目列表",
 			"subParams": [
 				{
 					"name": "cat_id",
@@ -228,12 +221,12 @@
 					"type": "String",
 					"description": "搜索前台类目名字"
 				}
-			]
+			],
+			"name": "cat_list",
+			"type": "TmallCat []",
+			"description": "类目列表"
 		},
 		{
-			"name": "brand_list",
-			"type": "TmallBrand []",
-			"description": "品牌列表",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -245,7 +238,14 @@
 					"type": "String",
 					"description": "搜索品牌名字"
 				}
-			]
+			],
+			"name": "brand_list",
+			"type": "TmallBrand []",
+			"description": "品牌列表"
 		}
-	]
+	],
+	"name": "tmall.items.extend.search",
+	"apiChineseName": "搜索天猫商品",
+	"description": "提供天猫商品搜索结果，需要调用精选商品，请改为调用：tmall.selected.items.search",
+	"id": 21643
 }

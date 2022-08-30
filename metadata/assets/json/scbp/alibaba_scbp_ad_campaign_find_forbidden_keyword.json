@@ -1,20 +1,6 @@
 {
-	"id": 55000,
-	"name": "alibaba.scbp.ad.campaign.find.forbidden.keyword",
-	"apiChineseName": "查询屏蔽词",
-	"description": "查询屏蔽词",
 	"requestParams": [
 		{
-			"name": "campaign_id",
-			"type": "Number",
-			"description": "计划id",
-			"required": true
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_line_id",
@@ -28,72 +14,77 @@
 					"description": "产品id",
 					"required": true
 				}
-			]
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回数据",
 			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回code",
-					"required": true
+					"description": "返回code"
 				},
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
-				},
-				{
-					"name": "result_list",
-					"type": "Result[]",
-					"description": "服务出参",
-					"required": true,
 					"subParams": [
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "修改时间",
-							"required": true
-						},
-						{
-							"name": "normword",
-							"type": "String",
-							"description": "普通词",
-							"required": true
-						},
 						{
 							"name": "campaign_id",
 							"type": "Number",
-							"description": "计划id",
-							"required": true
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "计划id"
 						},
 						{
 							"name": "keyword",
 							"type": "String",
-							"description": "关键词",
-							"required": true
+							"description": "关键词"
+						},
+						{
+							"name": "normword",
+							"type": "String",
+							"description": "普通词"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "Result[]",
+					"description": "服务出参"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.campaign.find.forbidden.keyword",
+	"apiChineseName": "查询屏蔽词",
+	"description": "查询屏蔽词",
+	"id": 55000
 }

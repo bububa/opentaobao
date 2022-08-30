@@ -1,13 +1,6 @@
 {
-	"id": 54272,
-	"name": "alitrip.agent.flight.sell.refund.list",
-	"apiChineseName": "销售退票单列表",
-	"description": "销售退票单列表",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "RefundListRequestDto",
-			"description": "请求对象",
 			"subParams": [
 				{
 					"name": "end_apply_time",
@@ -18,7 +11,7 @@
 				{
 					"name": "begin_apply_time",
 					"type": "Date",
-					"description": "退票申请结束时间",
+					"description": "退票申请结束时间(提交申请结束时间，限制只能与起始时间相差一天)",
 					"required": true
 				},
 				{
@@ -30,79 +23,77 @@
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "退票单状态"
+					"description": "退票单状态:1:待回填费用,2:待退款,3:退款中,4:已完成,5:已拒绝"
 				},
 				{
 					"name": "agent_ids",
 					"type": "Number[]",
 					"description": "店铺id集合"
 				}
-			]
+			],
+			"name": "param",
+			"type": "RefundListRequestDto",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "123",
-					"required": true
+					"description": "123"
 				},
 				{
-					"name": "data_list",
-					"type": "T[]",
-					"description": "数据集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "apply_id",
 							"type": "String",
-							"description": "退票申请单号",
-							"required": true
+							"description": "退票申请单号"
 						},
 						{
 							"name": "domestic_intl",
 							"type": "Number",
-							"description": "国内国际标识",
-							"required": true
+							"description": "国内国际标识(1:国内,2:国际)"
 						},
 						{
 							"name": "order_id",
 							"type": "String",
-							"description": "飞猪订单号",
-							"required": true
+							"description": "飞猪订单号"
 						},
 						{
 							"name": "apply_time",
 							"type": "Date",
-							"description": "时间",
-							"required": true
+							"description": "时间"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "T[]",
+					"description": "数据集"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功失败标识",
-					"required": true
+					"description": "成功失败标识"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageDto",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alitrip.agent.flight.sell.refund.list",
+	"apiChineseName": "销售退票单列表",
+	"description": "销售退票单列表",
+	"id": 54272
 }

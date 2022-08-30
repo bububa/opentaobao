@@ -1,0 +1,1129 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商标识"
+				},
+				{
+					"name": "dep_city_code",
+					"type": "String",
+					"description": "出发城市三字码",
+					"required": true
+				},
+				{
+					"name": "arr_city_code",
+					"type": "String",
+					"description": "到达城市三字码",
+					"required": true
+				},
+				{
+					"name": "dep_city_name",
+					"type": "String",
+					"description": "出发城市名称"
+				},
+				{
+					"name": "arr_city_name",
+					"type": "String",
+					"description": "到达城市名称"
+				},
+				{
+					"name": "dep_date",
+					"type": "String",
+					"description": "出发日期：指定航班搜索时 ，出发时间以 yyyy-MM-dd HH:mm 这种格式",
+					"required": true
+				},
+				{
+					"name": "airline_code",
+					"type": "String",
+					"description": "航司二字码"
+				},
+				{
+					"name": "cabin_class",
+					"type": "String",
+					"description": "舱等:(0所有舱位,1经济舱,2头等舱和商务舱,3经济舱,4头等舱,5商务舱,6经济舱和超级经济舱)"
+				},
+				{
+					"name": "flight_no",
+					"type": "String",
+					"description": "航班号"
+				},
+				{
+					"name": "transfer_flight_no",
+					"type": "String",
+					"description": "中转航班号"
+				},
+				{
+					"name": "transfer_city_code",
+					"type": "String",
+					"description": "中转城市三字码:transferFlightNo不为空则必填"
+				},
+				{
+					"name": "transfer_leave_date",
+					"type": "String",
+					"description": "中转航班出发时间:transferFlightNo不为空则必填"
+				},
+				{
+					"name": "need_multi_class_price",
+					"type": "Boolean",
+					"description": "是否查询多舱价位"
+				},
+				{
+					"name": "trip_type",
+					"type": "String",
+					"description": "航程类型",
+					"required": true
+				},
+				{
+					"name": "isv_name",
+					"type": "String",
+					"description": "可选项，自定义渠道名称（用于创建渠道）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "String",
+							"description": "乘客类型",
+							"required": true
+						}
+					],
+					"name": "traveler_list",
+					"type": "TravelerInfo[]",
+					"description": "乘客列表",
+					"required": true
+				}
+			],
+			"name": "param_flight_search_list_r_q",
+			"type": "BtripFlightSearchListRq",
+			"description": "机票搜索入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "销售航班号"
+								},
+								{
+									"name": "is_share",
+									"type": "Boolean",
+									"description": "是否共享航班"
+								},
+								{
+									"name": "carrier_no",
+									"type": "String",
+									"description": "承运航班信息"
+								},
+								{
+									"name": "carrier_air_line",
+									"type": "String",
+									"description": "承运航司信息"
+								},
+								{
+									"name": "is_stop",
+									"type": "Boolean",
+									"description": "是否经停"
+								},
+								{
+									"name": "is_transfer",
+									"type": "Boolean",
+									"description": "是否中转"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "销售价"
+								},
+								{
+									"name": "remained_seat_count",
+									"type": "String",
+									"description": "剩余座位数:(0~9: 剩余0~9个座位; A: 大于9个座位 \u0000 个别航司大于4是A)"
+								},
+								{
+									"name": "build_price",
+									"type": "Number",
+									"description": "机建费"
+								},
+								{
+									"name": "oil_price",
+									"type": "Number",
+									"description": "燃油费"
+								},
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "舱位代码"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "舱等"
+								},
+								{
+									"name": "total_price",
+									"type": "String",
+									"description": "总价"
+								},
+								{
+									"name": "promotion_price",
+									"type": "String",
+									"description": "优惠价"
+								},
+								{
+									"name": "memo",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "secret_params",
+									"type": "String",
+									"description": "加密参数"
+								},
+								{
+									"name": "class_rule",
+									"type": "String",
+									"description": "退改签描述"
+								},
+								{
+									"name": "stop_city",
+									"type": "String",
+									"description": "经停城市"
+								},
+								{
+									"name": "stop_dep_time",
+									"type": "String",
+									"description": "经停起飞时间"
+								},
+								{
+									"name": "stop_arr_time",
+									"type": "String",
+									"description": "经停落地时间"
+								},
+								{
+									"name": "segment_number",
+									"type": "String",
+									"description": "航段编号"
+								},
+								{
+									"name": "trip_type",
+									"type": "Number",
+									"description": "航线类型"
+								},
+								{
+									"name": "invoice_type",
+									"type": "Number",
+									"description": "行程单类型"
+								},
+								{
+									"name": "dep_date",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "arr_date",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "dep_city_code",
+									"type": "String",
+									"description": "出发城市三字码"
+								},
+								{
+									"name": "meal_desc",
+									"type": "String",
+									"description": "餐食"
+								},
+								{
+									"name": "product_type_desc",
+									"type": "String",
+									"description": "产品类型描述（标准产品/非标准产品）"
+								},
+								{
+									"name": "is_protocol",
+									"type": "Boolean",
+									"description": "是否协议价"
+								},
+								{
+									"name": "flight_size",
+									"type": "String",
+									"description": "机型"
+								},
+								{
+									"name": "discount",
+									"type": "Number",
+									"description": "折扣"
+								},
+								{
+									"name": "ota_item_id",
+									"type": "String",
+									"description": "商品id"
+								},
+								{
+									"name": "flight_type",
+									"type": "String",
+									"description": "机型号"
+								},
+								{
+									"subParams": [
+										{
+											"name": "transfer_flight_no",
+											"type": "String",
+											"description": "航班号，二程"
+										},
+										{
+											"name": "transfer_arr_date",
+											"type": "Date",
+											"description": "中转到达时间 (第一程到达时间)"
+										},
+										{
+											"name": "transfer_dep_date",
+											"type": "Date",
+											"description": "中转起飞时间 (第二程起飞时间)"
+										},
+										{
+											"subParams": [
+												{
+													"name": "airport_code",
+													"type": "String",
+													"description": "必填项,机场编码"
+												},
+												{
+													"name": "airport_name",
+													"type": "String",
+													"description": "机场名称"
+												},
+												{
+													"name": "terminal",
+													"type": "String",
+													"description": "航站楼"
+												}
+											],
+											"name": "transfer_arr_airport_info",
+											"type": "AirportInfo",
+											"description": " 中转到达机场信息"
+										},
+										{
+											"subParams": [
+												{
+													"name": "airport_code",
+													"type": "String",
+													"description": "必填项,机场编码  "
+												},
+												{
+													"name": "airport_name",
+													"type": "String",
+													"description": "机场名称"
+												},
+												{
+													"name": "terminal",
+													"type": "String",
+													"description": "航站楼"
+												}
+											],
+											"name": "transfer_dep_airport_info",
+											"type": "AirportInfo",
+											"description": "中转出发机场信息"
+										},
+										{
+											"subParams": [
+												{
+													"name": "airline_code",
+													"type": "String",
+													"description": "航司编码"
+												},
+												{
+													"name": "airline_name",
+													"type": "String",
+													"description": "航司名称"
+												},
+												{
+													"name": "airline_simple_name",
+													"type": "String",
+													"description": "航司简称"
+												}
+											],
+											"name": "transfer_airline_info",
+											"type": "AirlineInfo",
+											"description": "第二程销售航司信息"
+										},
+										{
+											"subParams": [
+												{
+													"name": "baggage_info",
+													"type": "String",
+													"description": "行李额描述"
+												},
+												{
+													"name": "tuigaiqian_info",
+													"type": "String",
+													"description": "退改签描述"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "extra_contents",
+															"type": "ExtraContentsBean[]",
+															"description": "说明文案"
+														},
+														{
+															"name": "sub_table_head",
+															"type": "String[]",
+															"description": "与子内容列数保持一致"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundChangeRuleSubItem[]",
+															"description": "退改表达内容 \u0000"
+														}
+													],
+													"name": "change_rule_item",
+													"type": "RefundChangeRuleItem",
+													"description": "改签规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "extra_contents",
+															"type": "ExtraContentsBean[]",
+															"description": "说明文案"
+														},
+														{
+															"name": "sub_table_head",
+															"type": "String[]",
+															"description": "与子内容列数保持一致"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundChangeRuleSubItem[]",
+															"description": "退改表达内容 "
+														}
+													],
+													"name": "refund_rule_item",
+													"type": "RefundChangeRuleItem",
+													"description": "退票规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "tips",
+															"type": "BaggageTip",
+															"description": "提示"
+														},
+														{
+															"name": "baggage_sub_items",
+															"type": "BaggageSubItem[]",
+															"description": "行李额子内容"
+														}
+													],
+													"name": "baggage_item",
+													"type": "BaggageItem",
+													"description": "行李规则"
+												}
+											],
+											"name": "transfer_flight_rule_list",
+											"type": "FlightRule[]",
+											"description": "第二程退改签规则列表"
+										},
+										{
+											"name": "flight_size",
+											"type": "String",
+											"description": "机型代码\u0000"
+										},
+										{
+											"name": "flight_type",
+											"type": "String",
+											"description": "机型"
+										}
+									],
+									"name": "transfer_info",
+									"type": "TransferInfo",
+									"description": "中转信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "airline_code",
+											"type": "String",
+											"description": "航司编码"
+										},
+										{
+											"name": "airline_name",
+											"type": "String",
+											"description": "航司名称"
+										},
+										{
+											"name": "airline_simple_name",
+											"type": "String",
+											"description": "航司简称"
+										}
+									],
+									"name": "airline_info",
+									"type": "AirlineInfo",
+									"description": "销售航司信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "airport_code",
+											"type": "String",
+											"description": "出发城市编码"
+										},
+										{
+											"name": "airport_name",
+											"type": "String",
+											"description": "出发日期"
+										},
+										{
+											"name": "terminal",
+											"type": "String",
+											"description": "航班号"
+										}
+									],
+									"name": "arr_airport_info",
+									"type": "AirportInfo",
+									"description": "出发机场信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "airport_code",
+											"type": "String",
+											"description": "到达机场编码"
+										},
+										{
+											"name": "airport_name",
+											"type": "String",
+											"description": "到达机场名称"
+										},
+										{
+											"name": "terminal",
+											"type": "String",
+											"description": "航站楼"
+										}
+									],
+									"name": "dep_airport_info",
+									"type": "AirportInfo",
+									"description": "到达机场信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "tuigaiqian_info",
+											"type": "String",
+											"description": "退改签描述"
+										},
+										{
+											"name": "baggage_info",
+											"type": "String",
+											"description": "行李额描述"
+										},
+										{
+											"subParams": [
+												{
+													"name": "index",
+													"type": "Number",
+													"description": "排序使用"
+												},
+												{
+													"name": "table_head",
+													"type": "String",
+													"description": "表格首行内容(去程 北京-上海)"
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "表格标题"
+												},
+												{
+													"name": "type",
+													"type": "Number",
+													"description": "内容类型(0退票/1改期)"
+												},
+												{
+													"subParams": [
+														{
+															"name": "content",
+															"type": "String",
+															"description": "说明内容"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "内容标题"
+														}
+													],
+													"name": "extra_contents",
+													"type": "ExtraContentsBean[]",
+													"description": "说明文案"
+												},
+												{
+													"name": "sub_table_head",
+													"type": "String[]",
+													"description": "与子内容列数保持一致"
+												},
+												{
+													"subParams": [
+														{
+															"name": "is_struct",
+															"type": "Boolean",
+															"description": "是否结构体"
+														},
+														{
+															"name": "ptc",
+															"type": "String",
+															"description": "PTC"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "退改签规则的类型"
+														},
+														{
+															"name": "refund_sub_contents",
+															"type": "RefundChangeRuleSubContent[]",
+															"description": "退款子内容"
+														}
+													],
+													"name": "refund_sub_items",
+													"type": "RefundChangeRuleSubItem[]",
+													"description": "退改表达内容 "
+												}
+											],
+											"name": "change_rule_item",
+											"type": "RefundChangeRuleItem",
+											"description": "改签规则"
+										},
+										{
+											"subParams": [
+												{
+													"name": "index",
+													"type": "Number",
+													"description": "排序使用"
+												},
+												{
+													"name": "table_head",
+													"type": "String",
+													"description": "表格首行内容(去程 北京-上海)"
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "表格标题"
+												},
+												{
+													"name": "type",
+													"type": "Number",
+													"description": "内容类型(0退票/1改期)"
+												},
+												{
+													"subParams": [
+														{
+															"name": "content",
+															"type": "String",
+															"description": "说明内容"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "内容标题"
+														}
+													],
+													"name": "extra_contents",
+													"type": "ExtraContentsBean[]",
+													"description": "说明文案"
+												},
+												{
+													"name": "sub_table_head",
+													"type": "String[]",
+													"description": "与子内容列数保持一致"
+												},
+												{
+													"subParams": [
+														{
+															"name": "is_struct",
+															"type": "Boolean",
+															"description": "是否结构体"
+														},
+														{
+															"name": "ptc",
+															"type": "String",
+															"description": "PTC"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "退改签规则的类型"
+														},
+														{
+															"name": "refund_sub_contents",
+															"type": "RefundChangeRuleSubContent[]",
+															"description": "退款子内容"
+														}
+													],
+													"name": "refund_sub_items",
+													"type": "RefundChangeRuleSubItem[]",
+													"description": "退改表达内容 "
+												}
+											],
+											"name": "refund_rule_item",
+											"type": "RefundChangeRuleItem",
+											"description": "退票规则"
+										},
+										{
+											"subParams": [
+												{
+													"name": "index",
+													"type": "Number",
+													"description": "排序使用"
+												},
+												{
+													"name": "table_head",
+													"type": "String",
+													"description": "表格首行内容(去程 北京-上海)"
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "表格标题"
+												},
+												{
+													"name": "type",
+													"type": "Number",
+													"description": "内容类型(0退票/1改期)"
+												},
+												{
+													"subParams": [
+														{
+															"name": "logo",
+															"type": "String",
+															"description": "头像链接"
+														},
+														{
+															"name": "tips_desc",
+															"type": "String",
+															"description": "提示描述"
+														},
+														{
+															"name": "tips_image",
+															"type": "String",
+															"description": "图片链接"
+														}
+													],
+													"name": "tips",
+													"type": "BaggageTip",
+													"description": "提示"
+												},
+												{
+													"subParams": [
+														{
+															"name": "is_struct",
+															"type": "Boolean",
+															"description": "是否结构体"
+														},
+														{
+															"name": "ptc",
+															"type": "String",
+															"description": "PTC"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "退改签规则的类型"
+														},
+														{
+															"name": "baggage_sub_content_visualizes",
+															"type": "BaggageSubContentVisualizesBean[]",
+															"description": "行李子内容可视化内容"
+														}
+													],
+													"name": "baggage_sub_items",
+													"type": "BaggageTip[]",
+													"description": "行李额子内容"
+												}
+											],
+											"name": "baggage_item",
+											"type": "BaggageItem",
+											"description": "行李规则"
+										}
+									],
+									"name": "flight_rule_list",
+									"type": "FlightRule[]",
+									"description": "退改签规则列表"
+								},
+								{
+									"subParams": [
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "销售价"
+										},
+										{
+											"name": "ticket_price",
+											"type": "Number",
+											"description": "票价"
+										},
+										{
+											"name": "oil_price",
+											"type": "Number",
+											"description": "燃油"
+										},
+										{
+											"name": "build_price",
+											"type": "Number",
+											"description": "基建"
+										},
+										{
+											"name": "total_price",
+											"type": "Number",
+											"description": "总价"
+										},
+										{
+											"name": "remained_seat_count",
+											"type": "String",
+											"description": "剩余座位数"
+										},
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "必填项,舱位代码"
+										},
+										{
+											"name": "child_cabin",
+											"type": "String",
+											"description": "子舱位代码"
+										},
+										{
+											"name": "class_name",
+											"type": "String",
+											"description": "舱位名称，公务舱"
+										},
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "必填项,舱等"
+										},
+										{
+											"name": "cabin_class_name",
+											"type": "String",
+											"description": "子舱位等级展示用名称，超级经济舱"
+										},
+										{
+											"name": "discount",
+											"type": "String",
+											"description": "必填项,折扣"
+										},
+										{
+											"name": "promotion_price",
+											"type": "String",
+											"description": "优惠价"
+										},
+										{
+											"name": "memo",
+											"type": "String",
+											"description": "备注{\"key\":\"value\"}"
+										},
+										{
+											"name": "order_params",
+											"type": "String",
+											"description": "加密参数,包含agentId 登下单需要用到的参数信息"
+										},
+										{
+											"name": "class_rule",
+											"type": "String",
+											"description": "退改签描述"
+										},
+										{
+											"subParams": [
+												{
+													"name": "tuigaiqian_info",
+													"type": "String",
+													"description": "退改签描述"
+												},
+												{
+													"name": "baggage_info",
+													"type": "String",
+													"description": "行李额描述"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "extra_contents",
+															"type": "ExtraContentsBean[]",
+															"description": "说明文案"
+														},
+														{
+															"name": "sub_table_head",
+															"type": "String[]",
+															"description": "与子内容列数保持一致"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundChangeRuleSubItem[]",
+															"description": "退改表达内容"
+														}
+													],
+													"name": "change_rule_item",
+													"type": "RefundChangeRuleItem",
+													"description": "改签规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "extra_contents",
+															"type": "ExtraContentsBean[]",
+															"description": "说明文案"
+														},
+														{
+															"name": "sub_table_head",
+															"type": "String[]",
+															"description": "与子内容列数保持一致"
+														},
+														{
+															"name": "refund_sub_items",
+															"type": "RefundChangeRuleSubItem[]",
+															"description": "退改表达内容 "
+														}
+													],
+													"name": "refund_rule_item",
+													"type": "RefundChangeRuleItem",
+													"description": "退票规则"
+												},
+												{
+													"subParams": [
+														{
+															"name": "index",
+															"type": "Number",
+															"description": "排序使用"
+														},
+														{
+															"name": "table_head",
+															"type": "String",
+															"description": "表格首行内容(去程 北京-上海)"
+														},
+														{
+															"name": "title",
+															"type": "String",
+															"description": "表格标题"
+														},
+														{
+															"name": "type",
+															"type": "Number",
+															"description": "内容类型(0退票/1改期)"
+														},
+														{
+															"name": "tips",
+															"type": "BaggageTip",
+															"description": "提示"
+														},
+														{
+															"name": "baggage_sub_items",
+															"type": "ExtraContentsBean[]",
+															"description": "行李额子内容"
+														}
+													],
+													"name": "baggage_item",
+													"type": "BaggageItem",
+													"description": "行李规则"
+												}
+											],
+											"name": "flight_rule_list",
+											"type": "FlightRule[]",
+											"description": "退改签规则列表"
+										},
+										{
+											"name": "product_type",
+											"type": "Number",
+											"description": "产品类型"
+										},
+										{
+											"name": "invoice_type",
+											"type": "Number",
+											"description": "行程单类型"
+										},
+										{
+											"name": "is_protocol",
+											"type": "Boolean",
+											"description": "是否协议价"
+										},
+										{
+											"name": "product_type_desc",
+											"type": "String",
+											"description": "标准/非标准产品"
+										},
+										{
+											"name": "ota_item_id",
+											"type": "String",
+											"description": "商品id"
+										},
+										{
+											"name": "flight_rule_list_str",
+											"type": "String",
+											"description": "退改签规则列表json"
+										}
+									],
+									"name": "cabin_info_list",
+									"type": "MultiCabinClassInfo[]",
+									"description": "多舱位价格"
+								}
+							],
+							"name": "flight_info_list",
+							"type": "FlightInfoDTO[]",
+							"description": "航班列表"
+						},
+						{
+							"name": "is_replace_pnr",
+							"type": "Boolean",
+							"description": "是否可更换PNR出票"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightSearchListRs",
+					"description": "子模块"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.newflightlist",
+	"apiChineseName": "商旅机票航班列表接口，用于分销询价V2",
+	"description": "商旅机票航班列表接口，用于分销询价V2",
+	"id": 63075
+}

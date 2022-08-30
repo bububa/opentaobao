@@ -1,14 +1,6 @@
 {
-	"id": 32115,
-	"name": "alibaba.campus.device.openapi.getdevicerealtimedata",
-	"apiChineseName": "获取指定设备下指定参数的实时值",
-	"description": "获取指定设备下指定参数的实时值",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "请求端信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,7 +13,11 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求端信息",
+			"required": true
 		},
 		{
 			"name": "uuid",
@@ -38,85 +34,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "返回查询结果",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "RunDataDto",
-					"description": "实时信息对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "property_code",
 							"type": "String",
-							"description": "参数code",
-							"required": true
+							"description": "参数code"
 						},
 						{
 							"name": "property_name",
 							"type": "String",
-							"description": "参数名称",
-							"required": true
+							"description": "参数名称"
 						},
 						{
 							"name": "value",
 							"type": "String",
-							"description": "实时参数值",
-							"required": true
+							"description": "实时参数值"
 						},
 						{
 							"name": "property_kind",
 							"type": "Number",
-							"description": "参数在数据字典所属分类，如30600，代表character",
-							"required": true
+							"description": "参数在数据字典所属分类，如30600，代表character"
 						},
 						{
 							"name": "unit_code",
 							"type": "String",
-							"description": "单位编码",
-							"required": true
+							"description": "单位编码"
 						},
 						{
 							"name": "ref_device_id",
 							"type": "String",
-							"description": "被关联物理设备编码",
-							"required": true
+							"description": "被关联物理设备编码"
 						},
 						{
 							"name": "ref_property_code",
 							"type": "String",
-							"description": "被关联参数点属性",
-							"required": true
+							"description": "被关联参数点属性"
 						}
-					]
+					],
+					"name": "content",
+					"type": "RunDataDto",
+					"description": "实时信息对象"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回查询结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.device.openapi.getdevicerealtimedata",
+	"apiChineseName": "获取指定设备下指定参数的实时值",
+	"description": "获取指定设备下指定参数的实时值",
+	"id": 32115
 }

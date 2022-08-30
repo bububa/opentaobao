@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "service_category_id",
+			"type": "String",
+			"description": "服务目录id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "服务技能code"
+						}
+					],
+					"name": "service_skus",
+					"type": "ServiceSkuDTO[]",
+					"description": "服务sku列表"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回类型"
+		}
+	],
+	"name": "alibaba.ssc.supplyplatform.servicedefinition.querysku",
+	"apiChineseName": "服务sku查询",
+	"description": "服务sku查询",
+	"id": 63540
+}

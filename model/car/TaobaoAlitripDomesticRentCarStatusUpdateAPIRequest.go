@@ -18,6 +18,8 @@ type TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest struct {
 	_orderId string
 	// 服务商标识，由飞猪提供给到各服务商
 	_providerId string
+	// 车牌号
+	_carNumber string
 	// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
 	_status int64
 }
@@ -80,6 +82,19 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetProviderId(_prov
 // GetProviderId ProviderId Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetProviderId() string {
 	return r._providerId
+}
+
+// SetCarNumber is CarNumber Setter
+// 车牌号
+func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetCarNumber(_carNumber string) error {
+	r._carNumber = _carNumber
+	r.Set("car_number", _carNumber)
+	return nil
+}
+
+// GetCarNumber CarNumber Getter
+func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetCarNumber() string {
+	return r._carNumber
 }
 
 // SetStatus is Status Setter

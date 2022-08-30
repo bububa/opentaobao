@@ -1,8 +1,4 @@
 {
-	"id": 22556,
-	"name": "taobao.tanx.creative.get",
-	"apiChineseName": "获取单个审核创意状态",
-	"description": "获取单个审核创意状态",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -46,9 +42,6 @@
 			"description": "是否成功"
 		},
 		{
-			"name": "result",
-			"type": "CreativeAuditDto",
-			"description": "创意查询返回结果列表",
 			"subParams": [
 				{
 					"name": "level",
@@ -76,9 +69,6 @@
 					"description": "创意内容数据"
 				},
 				{
-					"name": "publishers_audit_info_list",
-					"type": "CreativePublisherAuditDto[]",
-					"description": "媒体审核列表",
 					"subParams": [
 						{
 							"name": "status",
@@ -95,7 +85,10 @@
 							"type": "String",
 							"description": "拒绝原因"
 						}
-					]
+					],
+					"name": "publishers_audit_info_list",
+					"type": "CreativePublisherAuditDto[]",
+					"description": "媒体审核列表"
 				},
 				{
 					"name": "dsp_id",
@@ -107,7 +100,14 @@
 					"type": "String",
 					"description": "广告主ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CreativeAuditDto",
+			"description": "创意查询返回结果列表"
 		}
-	]
+	],
+	"name": "taobao.tanx.creative.get",
+	"apiChineseName": "获取单个审核创意状态",
+	"description": "获取单个审核创意状态",
+	"id": 22556
 }

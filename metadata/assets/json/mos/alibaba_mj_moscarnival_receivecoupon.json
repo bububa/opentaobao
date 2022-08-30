@@ -1,8 +1,4 @@
 {
-	"id": 50746,
-	"name": "alibaba.mj.moscarnival.receivecoupon",
-	"apiChineseName": "根据手机号码领券",
-	"description": "根据手机号码领券",
 	"requestParams": [
 		{
 			"name": "mobile",
@@ -19,59 +15,55 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "调用链id",
-					"required": true
+					"description": "调用链id"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总行数",
-					"required": true
+					"description": "总行数"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "是否成功",
-					"required": true
+					"type": "String",
+					"description": "是否成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "result_code",
-					"type": "Json",
-					"description": "结果码",
-					"required": true
+					"type": "String",
+					"description": "结果码"
 				},
 				{
 					"name": "titles",
 					"type": "String[]",
-					"description": "标题",
-					"required": true
+					"description": "标题"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mj.moscarnival.receivecoupon",
+	"apiChineseName": "根据手机号码领券",
+	"description": "根据手机号码领券",
+	"id": 50746
 }

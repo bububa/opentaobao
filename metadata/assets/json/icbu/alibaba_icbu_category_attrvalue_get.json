@@ -1,13 +1,6 @@
 {
-	"id": 24395,
-	"name": "alibaba.icbu.category.attrvalue.get",
-	"apiChineseName": "属性值获取",
-	"description": "属性值获取",
 	"requestParams": [
 		{
-			"name": "attribute_value_request",
-			"type": "AttributeValueRequest",
-			"description": "属性值request对象",
 			"subParams": [
 				{
 					"name": "attribute_value_id",
@@ -25,14 +18,14 @@
 					"type": "Number[]",
 					"description": "选填；需要过滤的属性"
 				}
-			]
+			],
+			"name": "attribute_value_request",
+			"type": "AttributeValueRequest",
+			"description": "属性值request对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "AttributeValue []",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "attr_id",
@@ -59,7 +52,14 @@
 					"type": "Number",
 					"description": "所属类目id"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "AttributeValue []",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.attrvalue.get",
+	"apiChineseName": "属性值获取",
+	"description": "属性值获取",
+	"id": 24395
 }

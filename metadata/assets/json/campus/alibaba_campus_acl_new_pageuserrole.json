@@ -1,14 +1,6 @@
 {
-	"id": 37549,
-	"name": "alibaba.campus.acl.new.pageuserrole",
-	"apiChineseName": "分页查询管理员",
-	"description": "新增用户和角色的关系",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "system_id",
@@ -28,13 +20,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"required": true
 		},
 		{
-			"name": "users_role_query_param",
-			"type": "UsersRoleQueryParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "role_key",
@@ -86,130 +78,120 @@
 					"type": "String",
 					"description": "园区id"
 				}
-			]
+			],
+			"name": "users_role_query_param",
+			"type": "UsersRoleQueryParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总计数",
-							"required": true
+							"description": "总计数"
 						},
 						{
-							"name": "items",
-							"type": "UserRolesDto[]",
-							"description": "返回内容",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "用户账号",
-									"required": true
+									"description": "用户账号"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "用户名称",
-									"required": true
+									"description": "用户名称"
 								},
 								{
-									"name": "role_list",
-									"type": "SysRoleDto[]",
-									"description": "roleList",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "String",
-											"description": "角色id",
-											"required": true
+											"description": "角色id"
 										},
 										{
 											"name": "app_key",
 											"type": "String",
-											"description": "appKey",
-											"required": true
+											"description": "appKey"
 										},
 										{
 											"name": "tenant",
 											"type": "String",
-											"description": "租户",
-											"required": true
+											"description": "租户"
 										},
 										{
 											"name": "role_name",
 											"type": "String",
-											"description": "角色名称",
-											"required": true
+											"description": "角色名称"
 										},
 										{
 											"name": "role_desc",
 											"type": "String",
-											"description": "角色描述",
-											"required": true
+											"description": "角色描述"
 										},
 										{
 											"name": "role_key",
 											"type": "String",
-											"description": "角色key",
-											"required": true
+											"description": "角色key"
 										}
-									]
+									],
+									"name": "role_list",
+									"type": "SysRoleDto[]",
+									"description": "roleList"
 								}
-							]
+							],
+							"name": "items",
+							"type": "UserRolesDto[]",
+							"description": "返回内容"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页码",
-							"required": true
+							"description": "当前页码"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.pageuserrole",
+	"apiChineseName": "分页查询管理员",
+	"description": "新增用户和角色的关系",
+	"id": 37549
 }

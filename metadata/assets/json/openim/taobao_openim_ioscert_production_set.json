@@ -1,8 +1,4 @@
 {
-	"id": 24162,
-	"name": "taobao.openim.ioscert.production.set",
-	"apiChineseName": "设置ios证书",
-	"description": "设置ios证书",
 	"requestParams": [
 		{
 			"name": "password",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "操作成功"
 		}
-	]
+	],
+	"name": "taobao.openim.ioscert.production.set",
+	"apiChineseName": "设置ios证书",
+	"description": "设置ios证书",
+	"id": 24162
 }

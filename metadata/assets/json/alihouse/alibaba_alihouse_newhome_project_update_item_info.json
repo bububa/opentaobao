@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘的外部id",
+					"required": true
+				},
+				{
+					"name": "project_desc_introduce",
+					"type": "String",
+					"description": "楼盘描述介绍",
+					"required": true
+				}
+			],
+			"name": "project_update_item_info_dto",
+			"type": "ProjectUpdateItemInfoDTO",
+			"description": "实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "楼盘表的主键ID"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功返回值"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功描述"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "成功code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "实体类"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.update.item.info",
+	"apiChineseName": "更新楼盘商品信息",
+	"description": "更新楼盘商品信息",
+	"id": 63133
+}

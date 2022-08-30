@@ -1,14 +1,50 @@
 {
-	"id": 24521,
-	"name": "taobao.tbk.shop.get",
-	"apiChineseName": "淘宝客-推广者-店铺搜索",
-	"description": "淘宝客店铺查询",
 	"requestParams": [
+		{
+			"name": "end_auction_count",
+			"type": "Number",
+			"description": "累计推广商品上限"
+		},
+		{
+			"name": "end_commission_rate",
+			"type": "Number",
+			"description": "淘客佣金比率上限，1~10000"
+		},
+		{
+			"name": "end_credit",
+			"type": "Number",
+			"description": "信用等级上限，1~20"
+		},
+		{
+			"name": "end_total_action",
+			"type": "Number",
+			"description": "店铺商品总数上限"
+		},
 		{
 			"name": "fields",
 			"type": "String",
 			"description": "需返回的字段列表",
 			"required": true
+		},
+		{
+			"name": "is_tmall",
+			"type": "Boolean",
+			"description": "是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页，默认1，1~100"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20，1~100"
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "链接形式：1：PC，2：无线，默认：１"
 		},
 		{
 			"name": "q",
@@ -22,19 +58,9 @@
 			"description": "排序_des（降序），排序_asc（升序），佣金比率（commission_rate）， 商品数量（auction_count），销售总数量（total_auction）"
 		},
 		{
-			"name": "is_tmall",
-			"type": "Boolean",
-			"description": "是否商城的店铺，设置为true表示该是属于淘宝商城的店铺，设置为false或不设置表示不判断这个属性"
-		},
-		{
-			"name": "start_credit",
+			"name": "start_auction_count",
 			"type": "Number",
-			"description": "信用等级下限，1~20"
-		},
-		{
-			"name": "end_credit",
-			"type": "Number",
-			"description": "信用等级上限，1~20"
+			"description": "累计推广商品下限"
 		},
 		{
 			"name": "start_commission_rate",
@@ -42,66 +68,23 @@
 			"description": "淘客佣金比率下限，1~10000"
 		},
 		{
-			"name": "end_commission_rate",
+			"name": "start_credit",
 			"type": "Number",
-			"description": "淘客佣金比率上限，1~10000"
+			"description": "信用等级下限，1~20"
 		},
 		{
 			"name": "start_total_action",
 			"type": "Number",
 			"description": "店铺商品总数下限"
-		},
-		{
-			"name": "end_total_action",
-			"type": "Number",
-			"description": "店铺商品总数上限"
-		},
-		{
-			"name": "start_auction_count",
-			"type": "Number",
-			"description": "累计推广商品下限"
-		},
-		{
-			"name": "end_auction_count",
-			"type": "Number",
-			"description": "累计推广商品上限"
-		},
-		{
-			"name": "platform",
-			"type": "Number",
-			"description": "链接形式：1：PC，2：无线，默认：１"
-		},
-		{
-			"name": "page_no",
-			"type": "Number",
-			"description": "第几页，默认1，1~100"
-		},
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "页大小，默认20，1~100"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "NTbkShop []",
-			"description": "淘宝客店铺",
 			"subParams": [
 				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "卖家ID"
-				},
-				{
-					"name": "shop_title",
+					"name": "shop_url",
 					"type": "String",
-					"description": "店铺名称"
-				},
-				{
-					"name": "shop_type",
-					"type": "String",
-					"description": "店铺类型，B：天猫，C：淘宝"
+					"description": "店铺地址"
 				},
 				{
 					"name": "seller_nick",
@@ -109,21 +92,38 @@
 					"description": "卖家昵称"
 				},
 				{
+					"name": "shop_type",
+					"type": "String",
+					"description": "店铺类型，B：天猫，C：淘宝"
+				},
+				{
+					"name": "shop_title",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
+				},
+				{
 					"name": "pict_url",
 					"type": "String",
 					"description": "店标图片"
-				},
-				{
-					"name": "shop_url",
-					"type": "String",
-					"description": "店铺地址"
 				}
-			]
+			],
+			"name": "results",
+			"type": "NTbkShop []",
+			"description": "淘宝客店铺"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "搜索到符合条件的结果总数"
 		}
-	]
+	],
+	"name": "taobao.tbk.shop.get",
+	"apiChineseName": "淘宝客-推广者-店铺搜索",
+	"description": "淘宝客店铺查询",
+	"id": 24521
 }

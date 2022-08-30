@@ -1,29 +1,22 @@
 {
-	"id": 32,
-	"name": "taobao.item.update.listing",
-	"apiChineseName": "一口价商品上架",
-	"description": "* 单个商品上架\u003cbr/\u003e* 输入的num_iid必须属于当前会话用户",
 	"requestParams": [
 		{
 			"name": "num_iid",
 			"type": "Number",
 			"description": "商品数字ID，该参数必须",
-			"required": true,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		},
 		{
 			"name": "num",
 			"type": "Number",
 			"description": "需要上架的商品的数量。取值范围:大于零的整数。如果商品有sku，则上架数量默认为所有sku数量总和，不可修改。否则商品数量根据设置数量调整为num",
-			"required": true,
-			"minValue": 0
+			"minValue": 0,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "上架后返回的商品信息：返回的结果就是:num_iid和modified",
 			"subParams": [
 				{
 					"name": "iid",
@@ -40,7 +33,14 @@
 					"type": "Date",
 					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "上架后返回的商品信息：返回的结果就是:num_iid和modified"
 		}
-	]
+	],
+	"name": "taobao.item.update.listing",
+	"apiChineseName": "一口价商品上架",
+	"description": "* 单个商品上架\u003cbr/\u003e* 输入的num_iid必须属于当前会话用户",
+	"id": 32
 }

@@ -1,0 +1,104 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "call_id",
+					"type": "String",
+					"description": "唯一的呼叫ID，最大可支持字符串长度256",
+					"required": true
+				},
+				{
+					"name": "called_no",
+					"type": "String",
+					"description": "被叫号码",
+					"required": true
+				},
+				{
+					"name": "call_no",
+					"type": "String",
+					"description": "主叫号码",
+					"required": true
+				},
+				{
+					"name": "extension_no",
+					"type": "String",
+					"description": "分机号"
+				},
+				{
+					"name": "event_type",
+					"type": "String",
+					"description": "振铃事件：ALERTING  摘机事件：PICKUP",
+					"required": true
+				},
+				{
+					"name": "subs_id",
+					"type": "String",
+					"description": "绑定关系ID",
+					"required": true
+				},
+				{
+					"name": "vendor_key",
+					"type": "String",
+					"description": "供应商KEY",
+					"required": true
+				},
+				{
+					"name": "secret_no",
+					"type": "String",
+					"description": "中间号码",
+					"required": true
+				},
+				{
+					"name": "event_time",
+					"type": "Date",
+					"description": "事件时间",
+					"required": true
+				},
+				{
+					"name": "called_display_no",
+					"type": "String",
+					"description": "被叫号显",
+					"required": true
+				},
+				{
+					"name": "call_time",
+					"type": "Date",
+					"description": "呼叫开始时间",
+					"required": true
+				}
+			],
+			"name": "event_call_request",
+			"type": "EventCallRequest",
+			"description": "呼叫事件推送请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "接口调用成功 OK"
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "事件接收成功 true"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应描述"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "呼叫事件响应"
+		}
+	],
+	"name": "alibaba.aliqin.axb.vendor.push.call.event",
+	"apiChineseName": "呼叫事件推送",
+	"description": "呼叫事件推送\n响铃时间、摘机事件",
+	"id": 61849
+}

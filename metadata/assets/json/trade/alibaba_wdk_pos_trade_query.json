@@ -1,13 +1,6 @@
 {
-	"id": 44001,
-	"name": "alibaba.wdk.pos.trade.query",
-	"apiChineseName": "轻pos品牌营销查询接口",
-	"description": "轻pos品牌营销场景，外部商家查询营销信息",
 	"requestParams": [
 		{
-			"name": "query_request",
-			"type": "FastBuyPosQueryRequest",
-			"description": "查询请求",
 			"subParams": [
 				{
 					"name": "machine_id",
@@ -30,64 +23,63 @@
 					"type": "String",
 					"description": "外部门店编码"
 				}
-			]
+			],
+			"name": "query_request",
+			"type": "FastBuyPosQueryRequest",
+			"description": "查询请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FastBuyPosQueryResult",
-			"description": "查询返回结果",
 			"subParams": [
 				{
 					"name": "biz_order_id",
 					"type": "String",
-					"description": "五道口订单id",
-					"required": true
+					"description": "五道口订单id"
 				},
 				{
 					"name": "coupon_fee",
 					"type": "Number",
-					"description": "优惠券优惠金额",
-					"required": true
+					"description": "优惠券优惠金额"
 				},
 				{
 					"name": "order_status",
 					"type": "Number",
-					"description": "订单状态：1为已下单，未支付；2为交易完成；3为已退款；4为已关单",
-					"required": true
+					"description": "订单状态：1为已下单，未支付；2为交易完成；3为已退款；4为已关单"
 				},
 				{
 					"name": "promotion_fee",
 					"type": "Number",
-					"description": "优惠活动优惠金额",
-					"required": true
+					"description": "优惠活动优惠金额"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回的错误码",
-					"required": true
+					"description": "返回的错误码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "item_promotions",
-					"type": "Json",
-					"description": "商品分摊优惠",
-					"required": true
+					"type": "String",
+					"description": "商品分摊优惠"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FastBuyPosQueryResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.pos.trade.query",
+	"apiChineseName": "轻pos品牌营销查询接口",
+	"description": "轻pos品牌营销场景，外部商家查询营销信息",
+	"id": 44001
 }

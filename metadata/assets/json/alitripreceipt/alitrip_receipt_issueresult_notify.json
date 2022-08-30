@@ -1,0 +1,65 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "issue_status",
+					"type": "String",
+					"description": "开票状态success:开票成功；fail:开票失败;issuing:开票中；cancel:已撤销；red：已冲红）",
+					"required": true
+				},
+				{
+					"name": "issue_apply_id",
+					"type": "String",
+					"description": "开票流水ID",
+					"required": true
+				},
+				{
+					"name": "tp_order_id",
+					"type": "String",
+					"description": "交易订单ID"
+				},
+				{
+					"name": "fail_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "fail_reason",
+					"type": "String",
+					"description": "错误原因"
+				},
+				{
+					"name": "is_finally",
+					"type": "Boolean",
+					"description": "是否最终",
+					"required": true
+				}
+			],
+			"name": "param0",
+			"type": "IssueResultNotifyCmd",
+			"description": "开票结果通知"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "是否开票成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误原因"
+		}
+	],
+	"name": "alitrip.receipt.issueresult.notify",
+	"apiChineseName": "飞猪发票开票结果通知",
+	"description": "飞猪发票开票结果通知",
+	"id": 60461
+}

@@ -1,8 +1,4 @@
 {
-	"id": 41831,
-	"name": "taobao.homeai.alg.predict",
-	"apiChineseName": "硬装预测接口",
-	"description": "居然之家硬装预测服务",
 	"requestParams": [
 		{
 			"name": "from_case",
@@ -19,15 +15,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回值",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "FeatureWallSuggestionDto",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "design_id",
@@ -36,16 +25,8 @@
 							"required": true
 						},
 						{
-							"name": "feature_walls",
-							"type": "FeatureWallDto[]",
-							"description": "墙位置",
-							"required": true,
 							"subParams": [
 								{
-									"name": "bounding_box",
-									"type": "BoundingBoxDto",
-									"description": "包围盒",
-									"required": true,
 									"subParams": [
 										{
 											"name": "x_len",
@@ -65,7 +46,11 @@
 											"description": "z",
 											"required": true
 										}
-									]
+									],
+									"name": "bounding_box",
+									"type": "BoundingBoxDto",
+									"description": "包围盒",
+									"required": true
 								},
 								{
 									"name": "fronts",
@@ -91,9 +76,17 @@
 									"description": "硬装类型",
 									"required": true
 								}
-							]
+							],
+							"name": "feature_walls",
+							"type": "FeatureWallDto[]",
+							"description": "墙位置",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "FeatureWallSuggestionDto",
+					"description": "data",
+					"required": true
 				},
 				{
 					"name": "code",
@@ -113,7 +106,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "taobao.homeai.alg.predict",
+	"apiChineseName": "硬装预测接口",
+	"description": "居然之家硬装预测服务",
+	"id": 41831
 }

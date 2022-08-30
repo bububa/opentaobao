@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "template_ids",
+			"type": "String",
+			"description": "模版ID"
+		},
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.message.subscription.storage",
+	"apiChineseName": "存储模版ID",
+	"description": "消息订阅中的消息模版的存储",
+	"id": 57110
+}

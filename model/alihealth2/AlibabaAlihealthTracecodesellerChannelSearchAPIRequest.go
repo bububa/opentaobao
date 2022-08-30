@@ -16,12 +16,12 @@ type AlibabaAlihealthTracecodesellerChannelSearchAPIRequest struct {
 	_skeyCode string
 	// 商家id
 	_entInfoId int64
+	// 0 出库 2 入库
+	_outInType int64
 	// 第几页
 	_page int64
 	// 每页几条
 	_pageSize int64
-	// 0 出库 2 入库
-	_outInType int64
 }
 
 // NewAlibabaAlihealthTracecodesellerChannelSearchRequest 初始化AlibabaAlihealthTracecodesellerChannelSearchAPIRequest对象
@@ -71,6 +71,19 @@ func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetEntInfoId() i
 	return r._entInfoId
 }
 
+// SetOutInType is OutInType Setter
+// 0 出库 2 入库
+func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetOutInType(_outInType int64) error {
+	r._outInType = _outInType
+	r.Set("out_in_type", _outInType)
+	return nil
+}
+
+// GetOutInType OutInType Getter
+func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetOutInType() int64 {
+	return r._outInType
+}
+
 // SetPage is Page Setter
 // 第几页
 func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPage(_page int64) error {
@@ -95,17 +108,4 @@ func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetPageSize(_pa
 // GetPageSize PageSize Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetOutInType is OutInType Setter
-// 0 出库 2 入库
-func (r *AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) SetOutInType(_outInType int64) error {
-	r._outInType = _outInType
-	r.Set("out_in_type", _outInType)
-	return nil
-}
-
-// GetOutInType OutInType Getter
-func (r AlibabaAlihealthTracecodesellerChannelSearchAPIRequest) GetOutInType() int64 {
-	return r._outInType
 }

@@ -1,0 +1,186 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"subParams": [
+				{
+					"name": "check_out_date",
+					"type": "String",
+					"description": "离店时间"
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准静态信息库酒店id"
+				},
+				{
+					"name": "hotel_id",
+					"type": "String",
+					"description": "外部酒店id"
+				},
+				{
+					"name": "rp_title",
+					"type": "String",
+					"description": "商品名称"
+				},
+				{
+					"name": "check_in_date",
+					"type": "String",
+					"description": "入住时间"
+				},
+				{
+					"name": "sr_id",
+					"type": "Number",
+					"description": "房型id"
+				},
+				{
+					"name": "voucher_id",
+					"type": "String",
+					"description": "代金券id"
+				}
+			],
+			"name": "fill_order_param",
+			"type": "FillOrderParam",
+			"description": "填单页入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "reservation_notice",
+							"type": "String",
+							"description": "订房必读"
+						},
+						{
+							"name": "total_day",
+							"type": "Number",
+							"description": "入住几晚"
+						},
+						{
+							"name": "check_out_hour",
+							"type": "String",
+							"description": "几点前离店"
+						},
+						{
+							"name": "check_in_hour",
+							"type": "String",
+							"description": "几点后入住"
+						},
+						{
+							"name": "check_out_week",
+							"type": "String",
+							"description": "星期几离店"
+						},
+						{
+							"name": "check_in_week",
+							"type": "String",
+							"description": "星期几入住"
+						},
+						{
+							"name": "check_out_date",
+							"type": "String",
+							"description": "离店日期"
+						},
+						{
+							"name": "check_in_date",
+							"type": "String",
+							"description": "入住日期"
+						},
+						{
+							"name": "file_url",
+							"type": "String",
+							"description": "房间图片"
+						},
+						{
+							"name": "rp_title",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "max_occupancy",
+							"type": "Number",
+							"description": "最大入住人数"
+						},
+						{
+							"name": "window_type",
+							"type": "String",
+							"description": "房间窗型"
+						},
+						{
+							"name": "bed_type",
+							"type": "String",
+							"description": "房间床型"
+						},
+						{
+							"name": "room_area",
+							"type": "String",
+							"description": "房间大小"
+						},
+						{
+							"name": "room_name",
+							"type": "String",
+							"description": "房间名称"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "酒店地址"
+						},
+						{
+							"name": "hotel_name",
+							"type": "String",
+							"description": "酒店名称"
+						},
+						{
+							"name": "hotel_url",
+							"type": "String",
+							"description": "酒店背景图片"
+						},
+						{
+							"name": "universal_cancel_policy_desc",
+							"type": "String",
+							"description": "通用取消政策描述"
+						},
+						{
+							"name": "universal_cancel_policy_name",
+							"type": "String",
+							"description": "通用取消政策名称"
+						}
+					],
+					"name": "content",
+					"type": "FillPageVo",
+					"description": "填单页展示对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.order.fill",
+	"apiChineseName": "填单页接口",
+	"description": "进入填单页时调用此接口，返回填单所需展示基础信息",
+	"id": 57823
+}

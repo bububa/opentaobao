@@ -1,14 +1,6 @@
 {
-	"id": 35777,
-	"name": "taobao.logistics.express.modify.appoint",
-	"apiChineseName": "快递改约api",
-	"description": "商家通过此api操作修改物流单，交易单的收货人地址、收货人联系方式、预约配送日期",
 	"requestParams": [
 		{
-			"name": "express_modify_appoint_top_request",
-			"type": "ExpressModifyAppointTopRequestDto",
-			"description": "改约请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "sc_date",
@@ -63,72 +55,71 @@
 					"type": "String",
 					"description": "收货人地址"
 				}
-			]
+			],
+			"name": "express_modify_appoint_top_request",
+			"type": "ExpressModifyAppointTopRequestDto",
+			"description": "改约请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SingleResultDto",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "is_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
-					"name": "result",
-					"type": "ExpressModifyAppointTopResponseDto",
-					"description": "业务返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "是否执行成功",
-							"required": true
+							"description": "是否执行成功"
 						},
 						{
 							"name": "order_code",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						}
-					]
+					],
+					"name": "result",
+					"type": "ExpressModifyAppointTopResponseDto",
+					"description": "业务返回结果"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "调用码",
-					"required": true
+					"description": "调用码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "is_idempotent",
 					"type": "Boolean",
-					"description": "是否幂等",
-					"required": true
+					"description": "是否幂等"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SingleResultDto",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "taobao.logistics.express.modify.appoint",
+	"apiChineseName": "快递改约api",
+	"description": "商家通过此api操作修改物流单，交易单的收货人地址、收货人联系方式、预约配送日期",
+	"id": 35777
 }

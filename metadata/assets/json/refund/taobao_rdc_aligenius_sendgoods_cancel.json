@@ -1,14 +1,6 @@
 {
-	"id": 29304,
-	"name": "taobao.rdc.aligenius.sendgoods.cancel",
-	"apiChineseName": "取消发货",
-	"description": "提供商家在仅退款中发送取消发货状态",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CancelGoodsDto",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "oid",
@@ -63,48 +55,51 @@
 					"type": "String",
 					"description": "描述"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CancelGoodsDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "Resultdata",
-					"description": "resultData",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refund_id",
 							"type": "Number",
-							"description": "退款单号",
-							"required": true
+							"description": "退款单号"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData"
 				},
 				{
 					"name": "error_info",
 					"type": "String",
-					"description": "异常信息",
-					"required": true
+					"description": "异常信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "异常编码",
-					"required": true
+					"description": "异常编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.sendgoods.cancel",
+	"apiChineseName": "取消发货",
+	"description": "提供商家在仅退款中发送取消发货状态",
+	"id": 29304
 }

@@ -1,14 +1,6 @@
 {
-	"id": 55378,
-	"name": "alitrip.btrip.city.car.apply.approve",
-	"apiChineseName": "三方市内用车申请单审批",
-	"description": "三方市内用车申请单审批",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "CityCarApplyApproveRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -44,7 +36,11 @@
 					"description": "审批的第三方员工ID",
 					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "CityCarApplyApproveRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "审批是否成功"
 		}
-	]
+	],
+	"name": "alitrip.btrip.city.car.apply.approve",
+	"apiChineseName": "三方市内用车申请单审批",
+	"description": "三方市内用车申请单审批",
+	"id": 55378
 }

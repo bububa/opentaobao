@@ -1,19 +1,15 @@
 {
-	"id": 55148,
-	"name": "alibaba.damai.ticklet.qrcode.decode",
-	"apiChineseName": "票夹-动态二维码-解码",
-	"description": "对于票夹的动态二维码进行解码",
 	"requestParams": [
-		{
-			"name": "product_system_id",
-			"type": "String",
-			"description": "生产系统",
-			"required": true
-		},
 		{
 			"name": "encrypted_qr_code",
 			"type": "String",
 			"description": "加密二维码",
+			"required": true
+		},
+		{
+			"name": "product_system_id",
+			"type": "String",
+			"description": "生产系统",
 			"required": true
 		}
 	],
@@ -38,5 +34,9 @@
 			"type": "String",
 			"description": "model"
 		}
-	]
+	],
+	"name": "alibaba.damai.ticklet.qrcode.decode",
+	"apiChineseName": "票夹-动态二维码-解码",
+	"description": "对于票夹的动态二维码进行解码",
+	"id": 55148
 }

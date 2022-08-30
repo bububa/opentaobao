@@ -1,14 +1,6 @@
 {
-	"id": 36856,
-	"name": "alibaba.price.promotion.create",
-	"apiChineseName": "营销档期活动创建",
-	"description": "大润发-盒马帮提供新增创建营销活动",
 	"requestParams": [
 		{
-			"name": "promotion_activity_do",
-			"type": "PromotionActivityDo",
-			"description": "档期活动参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "start_time",
@@ -72,7 +64,11 @@
 					"type": "String",
 					"description": "创建人名称"
 				}
-			]
+			],
+			"name": "promotion_activity_do",
+			"type": "PromotionActivityDo",
+			"description": "档期活动参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -101,5 +97,9 @@
 			"type": "Boolean",
 			"description": "创建是否成功"
 		}
-	]
+	],
+	"name": "alibaba.price.promotion.create",
+	"apiChineseName": "营销档期活动创建",
+	"description": "大润发-盒马帮提供新增创建营销活动",
+	"id": 36856
 }

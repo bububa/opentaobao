@@ -1,8 +1,4 @@
 {
-	"id": 32215,
-	"name": "alibaba.campus.acl.queryallemppermiitem",
-	"apiChineseName": "查询员工全部权限(包括角色下面的权限)",
-	"description": "查询员工全部权限(包括角色下面的权限)",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -40,99 +36,89 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Page",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "limit",
 							"type": "Number",
-							"description": "每页多少条",
-							"required": true
+							"description": "每页多少条"
 						},
 						{
-							"name": "items",
-							"type": "PermissionVo[]",
-							"description": "items",
-							"required": true,
 							"subParams": [
 								{
 									"name": "priv_key",
 									"type": "String",
-									"description": "权限健",
-									"required": true
+									"description": "权限健"
 								},
 								{
 									"name": "priv_vaue",
 									"type": "String",
-									"description": "权限值",
-									"required": true
+									"description": "权限值"
 								},
 								{
 									"name": "expire_time",
 									"type": "Date",
-									"description": "过期时间",
-									"required": true
+									"description": "过期时间"
 								},
 								{
 									"name": "effective_time",
 									"type": "Date",
-									"description": "开始时间",
-									"required": true
+									"description": "开始时间"
 								}
-							]
+							],
+							"name": "items",
+							"type": "PermissionVo[]",
+							"description": "items"
 						},
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总数",
-							"required": true
+							"description": "总数"
 						},
 						{
 							"name": "current_page",
 							"type": "Number",
-							"description": "当前页码",
-							"required": true
+							"description": "当前页码"
 						},
 						{
 							"name": "total_page",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.queryallemppermiitem",
+	"apiChineseName": "查询员工全部权限(包括角色下面的权限)",
+	"description": "查询员工全部权限(包括角色下面的权限)",
+	"id": 32215
 }

@@ -1,8 +1,4 @@
 {
-	"id": 22028,
-	"name": "taobao.fenxiao.dealer.requisitionorder.close",
-	"apiChineseName": "供应商/分销商关闭采购申请/经销采购单",
-	"description": "供应商或分销商关闭采购申请/经销采购单",
 	"requestParams": [
 		{
 			"name": "dealer_order_id",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功。true：成功；false：失败。"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.dealer.requisitionorder.close",
+	"apiChineseName": "供应商/分销商关闭采购申请/经销采购单",
+	"description": "供应商或分销商关闭采购申请/经销采购单",
+	"id": 22028
 }

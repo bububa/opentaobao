@@ -1,13 +1,6 @@
 {
-	"id": 30410,
-	"name": "yunos.osupdate.appversion.create",
-	"apiChineseName": "创建应用升级任务",
-	"description": "创建应用升级任务",
 	"requestParams": [
 		{
-			"name": "app_version",
-			"type": "TvAppVersion",
-			"description": "应用版本信息",
 			"subParams": [
 				{
 					"name": "version_code",
@@ -26,9 +19,6 @@
 					"description": "系统版本"
 				},
 				{
-					"name": "device_adapter_list",
-					"type": "Deviceadapterlist[]",
-					"description": "适配设备列表",
 					"subParams": [
 						{
 							"name": "real_type_id",
@@ -70,7 +60,10 @@
 							"type": "String",
 							"description": "设备名称"
 						}
-					]
+					],
+					"name": "device_adapter_list",
+					"type": "Deviceadapterlist[]",
+					"description": "适配设备列表"
 				},
 				{
 					"name": "download_path",
@@ -83,9 +76,6 @@
 					"description": "发布说明"
 				},
 				{
-					"name": "app",
-					"type": "AppDto",
-					"description": "应用信息",
 					"subParams": [
 						{
 							"name": "id",
@@ -93,7 +83,10 @@
 							"description": "应用ID",
 							"required": true
 						}
-					]
+					],
+					"name": "app",
+					"type": "AppDto",
+					"description": "应用信息"
 				},
 				{
 					"name": "status",
@@ -110,7 +103,10 @@
 					"type": "String",
 					"description": "是否需要重启"
 				}
-			]
+			],
+			"name": "app_version",
+			"type": "TvAppVersion",
+			"description": "应用版本信息"
 		}
 	],
 	"responseParams": [
@@ -119,5 +115,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "yunos.osupdate.appversion.create",
+	"apiChineseName": "创建应用升级任务",
+	"description": "创建应用升级任务",
+	"id": 30410
 }

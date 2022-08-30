@@ -1,13 +1,6 @@
 {
-	"id": 49324,
-	"name": "alibaba.ascp.uop.supplier.consignorder.ship",
-	"apiChineseName": "履约单商家仓发货结果回传服务",
-	"description": "ERP通过该接口通知商家仓声明销售订单出库信息,支持履约单纬度全部发货的回传（目前不支持分批回传)",
 	"requestParams": [
 		{
-			"name": "consignorder_ship_request",
-			"type": "Consignordershiprequest",
-			"description": "发货回传请求模型",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -28,10 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "order_items",
-					"type": "Orderitems[]",
-					"description": "履约子单明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_order_code",
@@ -42,7 +31,8 @@
 						{
 							"name": "sc_item_id",
 							"type": "String",
-							"description": "货品ID"
+							"description": "货品ID",
+							"required": true
 						},
 						{
 							"name": "item_quantity",
@@ -55,12 +45,17 @@
 							"type": "Number",
 							"description": "货品缺发数量"
 						}
-					]
+					],
+					"name": "order_items",
+					"type": "Orderitems[]",
+					"description": "履约子单明细",
+					"required": true
 				},
 				{
 					"name": "store_code",
 					"type": "String",
-					"description": "发货仓编码"
+					"description": "发货仓编码",
+					"required": true
 				},
 				{
 					"name": "store_name",
@@ -68,10 +63,6 @@
 					"description": "发货仓名称"
 				},
 				{
-					"name": "tms_orders",
-					"type": "Tmsorders[]",
-					"description": "包裹列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tms_order_code",
@@ -91,10 +82,6 @@
 							"description": "快递公司名称"
 						},
 						{
-							"name": "tms_items",
-							"type": "Tmsitems[]",
-							"description": "包裹明细列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sub_order_code",
@@ -105,7 +92,8 @@
 								{
 									"name": "sc_item_id",
 									"type": "String",
-									"description": "货品ID"
+									"description": "货品ID",
+									"required": true
 								},
 								{
 									"name": "item_quantity",
@@ -118,14 +106,19 @@
 									"type": "Number",
 									"description": "货品缺发数量"
 								}
-							]
+							],
+							"name": "tms_items",
+							"type": "Tmsitems[]",
+							"description": "包裹明细列表",
+							"required": true
 						}
-					]
+					],
+					"name": "tms_orders",
+					"type": "Tmsorders[]",
+					"description": "包裹列表",
+					"required": true
 				},
 				{
-					"name": "sender_info",
-					"type": "Senderinfo",
-					"description": "发件人信息",
 					"subParams": [
 						{
 							"name": "sender_zip_code",
@@ -177,41 +170,58 @@
 							"type": "String",
 							"description": "发件方电话"
 						}
-					]
+					],
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "发件人信息"
 				},
 				{
 					"name": "whole_sheet_consigned",
 					"type": "Boolean",
 					"description": "是否整单发货,目前只支持履约单整单发货回传"
+				},
+				{
+					"name": "business_model",
+					"type": "String",
+					"description": "一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)"
 				}
-			]
+			],
+			"name": "consignorder_ship_request",
+			"type": "Consignordershiprequest",
+			"description": "发货回传请求模型"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "consignorder_ship_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否需要重试"
 				}
-			]
+			],
+			"name": "consignorder_ship_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.consignorder.ship",
+	"apiChineseName": "履约单商家仓发货结果回传服务",
+	"description": "ERP通过该接口通知商家仓声明销售订单出库信息,支持履约单纬度全部发货的回传（目前不支持分批回传)",
+	"id": 49324
 }

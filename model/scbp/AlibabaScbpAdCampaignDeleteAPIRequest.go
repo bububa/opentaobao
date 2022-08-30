@@ -12,10 +12,10 @@ import (
 // 删除计划
 type AlibabaScbpAdCampaignDeleteAPIRequest struct {
 	model.Params
-	// 操作对象
-	_batchOperation *CampaignBatchOperationDto
 	// 用户信息
 	_topContext *TopContextDto
+	// 操作对象
+	_batchOperation *CampaignBatchOperationDto
 }
 
 // NewAlibabaScbpAdCampaignDeleteRequest 初始化AlibabaScbpAdCampaignDeleteAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetBatchOperation is BatchOperation Setter
-// 操作对象
-func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
-	r._batchOperation = _batchOperation
-	r.Set("batch_operation", _batchOperation)
-	return nil
-}
-
-// GetBatchOperation BatchOperation Getter
-func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetBatchOperation() *CampaignBatchOperationDto {
-	return r._batchOperation
-}
-
 // SetTopContext is TopContext Setter
 // 用户信息
 func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetTopContext(_topContext *TopContextDto) error {
@@ -63,4 +50,17 @@ func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetTopContext(_topContext *TopCo
 // GetTopContext TopContext Getter
 func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetTopContext() *TopContextDto {
 	return r._topContext
+}
+
+// SetBatchOperation is BatchOperation Setter
+// 操作对象
+func (r *AlibabaScbpAdCampaignDeleteAPIRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
+	r._batchOperation = _batchOperation
+	r.Set("batch_operation", _batchOperation)
+	return nil
+}
+
+// GetBatchOperation BatchOperation Getter
+func (r AlibabaScbpAdCampaignDeleteAPIRequest) GetBatchOperation() *CampaignBatchOperationDto {
+	return r._batchOperation
 }

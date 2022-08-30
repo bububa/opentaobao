@@ -1,13 +1,6 @@
 {
-	"id": 24998,
-	"name": "alibaba.scbp.effect.product.single.get",
-	"apiChineseName": "单个产品的报表",
-	"description": "单个产品的报表",
 	"requestParams": [
 		{
-			"name": "p4p_product_report_query",
-			"type": "ProductQuery",
-			"description": "ProductQuery",
 			"subParams": [
 				{
 					"name": "inteval",
@@ -41,14 +34,14 @@
 					"description": "产品ID",
 					"required": true
 				}
-			]
+			],
+			"name": "p4p_product_report_query",
+			"type": "ProductQuery",
+			"description": "ProductQuery"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "s_product_effect_list",
-			"type": "SingleProductEffectDto []",
-			"description": "单个产品的效果数据列表",
 			"subParams": [
 				{
 					"name": "subject",
@@ -90,7 +83,10 @@
 					"type": "String",
 					"description": "百分比，保留两位小数，例如3.75表示3.75%"
 				}
-			]
+			],
+			"name": "s_product_effect_list",
+			"type": "SingleProductEffectDto []",
+			"description": "单个产品的效果数据列表"
 		},
 		{
 			"name": "total_num",
@@ -102,5 +98,9 @@
 			"type": "Number",
 			"description": "总页数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.effect.product.single.get",
+	"apiChineseName": "单个产品的报表",
+	"description": "单个产品的报表",
+	"id": 24998
 }

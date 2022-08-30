@@ -4,8 +4,6 @@ package wenyuvideo
 type ShowBaseRbo struct {
 	// 节目名称
 	ShowName string `json:"show_name,omitempty" xml:"show_name,omitempty"`
-	// 节目子标题
-	ShowSubtitle string `json:"show_subtitle,omitempty" xml:"show_subtitle,omitempty"`
 	// 节目默认图片url
 	ShowThumbUrl string `json:"show_thumb_url,omitempty" xml:"show_thumb_url,omitempty"`
 	// 节目竖版图片url
@@ -20,6 +18,8 @@ type ShowBaseRbo struct {
 	ViewTag string `json:"view_tag,omitempty" xml:"view_tag,omitempty"`
 	// 影视信息在列表搜索等未知的重要提示
 	Tips string `json:"tips,omitempty" xml:"tips,omitempty"`
+	// 节目子标题
+	ShowSubtitle string `json:"show_subtitle,omitempty" xml:"show_subtitle,omitempty"`
 	// 展示类型
 	ShowType int64 `json:"show_type,omitempty" xml:"show_type,omitempty"`
 	// 节目主分类

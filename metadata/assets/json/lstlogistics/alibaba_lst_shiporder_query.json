@@ -1,8 +1,4 @@
 {
-	"id": 39341,
-	"name": "alibaba.lst.shiporder.query",
-	"apiChineseName": "零售通发货单查询",
-	"description": "通过该接口可以查询零售通运保保发货单，并处理相关业务流程。",
 	"requestParams": [
 		{
 			"name": "source",
@@ -18,147 +14,129 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "LstThirdPartMainShipOrderDto",
-					"description": "发货单信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "details",
-							"type": "LstThirdPartDetailShipOrderDto[]",
-							"description": "货品列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "sale_quantity",
 									"type": "Number",
-									"description": "销售数量",
-									"required": true
+									"description": "销售数量"
 								},
 								{
 									"name": "sku_unit",
 									"type": "String",
-									"description": "销售单位",
-									"required": true
+									"description": "销售单位"
 								},
 								{
 									"name": "sku_spec",
 									"type": "String",
-									"description": "规格",
-									"required": true
+									"description": "规格"
 								},
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "条码",
-									"required": true
+									"description": "条码"
 								},
 								{
 									"name": "sku_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "load_quantity",
 									"type": "Number",
-									"description": "装车数量",
-									"required": true
+									"description": "装车数量"
 								},
 								{
 									"name": "sign_quantity",
 									"type": "Number",
-									"description": "签收数量",
-									"required": true
+									"description": "签收数量"
 								},
 								{
 									"name": "detail_order_id",
 									"type": "String",
-									"description": "明细订单ID",
-									"required": true
+									"description": "明细订单ID"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "子发货单状态",
-									"required": true
+									"description": "子发货单状态"
 								}
-							]
+							],
+							"name": "details",
+							"type": "LstThirdPartDetailShipOrderDto[]",
+							"description": "货品列表"
 						},
 						{
 							"name": "sign_time",
 							"type": "Date",
-							"description": "签收时间",
-							"required": true
+							"description": "签收时间"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "订单",
-							"required": true
+							"description": "订单"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "发货单状态：NEW ---\u003e新建，LOAD_WAIT---\u003e待装车，LOAD_SUCCESS---\u003e已装车，SIGN_SUCCESS---\u003e签收，SIGN_PART_SUCCESS---\u003e部分签收，SIGN_FAILED---\u003e拒签，CANCEL---\u003e取消",
-							"required": true
+							"description": "发货单状态：NEW ---\u003e新建，LOAD_WAIT---\u003e待装车，LOAD_SUCCESS---\u003e已装车，SIGN_SUCCESS---\u003e签收，SIGN_PART_SUCCESS---\u003e部分签收，SIGN_FAILED---\u003e拒签，CANCEL---\u003e取消"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部订单ID",
-							"required": true
+							"description": "外部订单ID"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "发货单更新时间",
-							"required": true
+							"description": "发货单更新时间"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "发货单生成时间",
-							"required": true
+							"description": "发货单生成时间"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "发货单ID",
-							"required": true
+							"description": "发货单ID"
 						},
 						{
 							"name": "load_time",
 							"type": "Date",
-							"description": "装车时间",
-							"required": true
+							"description": "装车时间"
 						}
-					]
+					],
+					"name": "model",
+					"type": "LstThirdPartMainShipOrderDto",
+					"description": "发货单信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.lst.shiporder.query",
+	"apiChineseName": "零售通发货单查询",
+	"description": "通过该接口可以查询零售通运保保发货单，并处理相关业务流程。",
+	"id": 39341
 }

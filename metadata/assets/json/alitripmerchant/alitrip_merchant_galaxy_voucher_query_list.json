@@ -1,0 +1,195 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "voucher_id",
+									"type": "String",
+									"description": "代金券id：用来跳转详情页使用"
+								},
+								{
+									"name": "merchant_id",
+									"type": "String",
+									"description": "雅高merchantId"
+								},
+								{
+									"name": "voucher_status",
+									"type": "String",
+									"description": "代金券状态"
+								},
+								{
+									"name": "hotel_number",
+									"type": "Number",
+									"description": "可约酒店数量"
+								},
+								{
+									"name": "voucher_used_date",
+									"type": "String",
+									"description": "代金券使用时间"
+								},
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "代金券关联订单id"
+								},
+								{
+									"name": "voucher_price",
+									"type": "Number",
+									"description": "券码价格"
+								},
+								{
+									"name": "voucher_number",
+									"type": "Number",
+									"description": "券码数量"
+								},
+								{
+									"name": "voucher_name",
+									"type": "String",
+									"description": "券码名称"
+								},
+								{
+									"name": "effective_date",
+									"type": "String",
+									"description": "有效期开始时间"
+								},
+								{
+									"name": "expire_date",
+									"type": "String",
+									"description": "有效期结束时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "名称"
+										},
+										{
+											"name": "description",
+											"type": "String",
+											"description": "描述"
+										}
+									],
+									"name": "appointment_notice",
+									"type": "BaseDescVO[]",
+									"description": "可约日期"
+								},
+								{
+									"name": "available_date_list",
+									"type": "String[]",
+									"description": "可约日期"
+								},
+								{
+									"name": "img",
+									"type": "String",
+									"description": "头图"
+								},
+								{
+									"name": "hotel_list",
+									"type": "String[]",
+									"description": "关联酒店集合"
+								},
+								{
+									"name": "rate_code_list",
+									"type": "String[]",
+									"description": "关联rpCode集合"
+								},
+								{
+									"name": "markup_rule_list",
+									"type": "String[]",
+									"description": "加价规则"
+								},
+								{
+									"name": "night_account",
+									"type": "Number",
+									"description": "预订间夜"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "skuId"
+								}
+							],
+							"name": "voucher",
+							"type": "VoucherInfoVO[]",
+							"description": "套餐券实体类"
+						},
+						{
+							"subParams": [
+								{
+									"name": "stock_id",
+									"type": "String",
+									"description": "优惠券微信支付的模板id"
+								},
+								{
+									"name": "out_request_no",
+									"type": "String",
+									"description": "创建优惠券时的批次号"
+								},
+								{
+									"name": "coupon_code",
+									"type": "String",
+									"description": "券code"
+								}
+							],
+							"name": "send_coupon_params",
+							"type": "SendCouponParams[]",
+							"description": "添加优惠券参至卡包参数"
+						},
+						{
+							"name": "sign",
+							"type": "String",
+							"description": "加密签名"
+						},
+						{
+							"name": "send_coupon_merchant",
+							"type": "String",
+							"description": "商户号"
+						}
+					],
+					"name": "content",
+					"type": "VoucherParameter",
+					"description": "返回体"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.voucher.query.list",
+	"apiChineseName": "查询代金券列表",
+	"description": "查询代金券列表",
+	"id": 58833
+}

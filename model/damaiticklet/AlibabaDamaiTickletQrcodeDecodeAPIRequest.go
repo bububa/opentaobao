@@ -12,10 +12,10 @@ import (
 // 对于票夹的动态二维码进行解码
 type AlibabaDamaiTickletQrcodeDecodeAPIRequest struct {
 	model.Params
-	// 生产系统
-	_productSystemId string
 	// 加密二维码
 	_encryptedQrCode string
+	// 生产系统
+	_productSystemId string
 }
 
 // NewAlibabaDamaiTickletQrcodeDecodeRequest 初始化AlibabaDamaiTickletQrcodeDecodeAPIRequest对象
@@ -39,19 +39,6 @@ func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetProductSystemId is ProductSystemId Setter
-// 生产系统
-func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetProductSystemId(_productSystemId string) error {
-	r._productSystemId = _productSystemId
-	r.Set("product_system_id", _productSystemId)
-	return nil
-}
-
-// GetProductSystemId ProductSystemId Getter
-func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetProductSystemId() string {
-	return r._productSystemId
-}
-
 // SetEncryptedQrCode is EncryptedQrCode Setter
 // 加密二维码
 func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetEncryptedQrCode(_encryptedQrCode string) error {
@@ -63,4 +50,17 @@ func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetEncryptedQrCode(_encrypte
 // GetEncryptedQrCode EncryptedQrCode Getter
 func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetEncryptedQrCode() string {
 	return r._encryptedQrCode
+}
+
+// SetProductSystemId is ProductSystemId Setter
+// 生产系统
+func (r *AlibabaDamaiTickletQrcodeDecodeAPIRequest) SetProductSystemId(_productSystemId string) error {
+	r._productSystemId = _productSystemId
+	r.Set("product_system_id", _productSystemId)
+	return nil
+}
+
+// GetProductSystemId ProductSystemId Getter
+func (r AlibabaDamaiTickletQrcodeDecodeAPIRequest) GetProductSystemId() string {
+	return r._productSystemId
 }

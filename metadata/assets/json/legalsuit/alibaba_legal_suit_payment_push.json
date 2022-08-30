@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "send_people",
+					"type": "String",
+					"description": "推送人"
+				},
+				{
+					"name": "case_number",
+					"type": "String",
+					"description": "案号"
+				},
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件id"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托id"
+				},
+				{
+					"name": "comment",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"subParams": [
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间（不用填）"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "文件名"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "文件id"
+						}
+					],
+					"name": "payment_order_files",
+					"type": "FileModel[]",
+					"description": "附件信息"
+				}
+			],
+			"name": "payment_order_model",
+			"type": "PaymentOrderModel",
+			"description": "推送信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "api_error_code",
+			"type": "String",
+			"description": "参数校验错误"
+		},
+		{
+			"name": "content",
+			"type": "Number",
+			"description": "任务id"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "参数校验错误"
+		}
+	],
+	"name": "alibaba.legal.suit.payment.push",
+	"apiChineseName": "外部推送缴费",
+	"description": "外部推送缴费",
+	"id": 62345
+}

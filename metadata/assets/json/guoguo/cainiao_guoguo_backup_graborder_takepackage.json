@@ -1,8 +1,4 @@
 {
-	"id": 26057,
-	"name": "cainiao.guoguo.backup.graborder.takepackage",
-	"apiChineseName": "兜底派送订单的揽件接口",
-	"description": "快递公司回传订单号和四位取件码给菜鸟裹裹",
 	"requestParams": [
 		{
 			"name": "orderCode",
@@ -19,15 +15,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "BackupOrderDo",
-					"description": "封装返回的数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "success",
@@ -35,7 +24,11 @@
 							"description": "成功",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "BackupOrderDo",
+					"description": "封装返回的数据",
+					"required": true
 				},
 				{
 					"name": "status_code",
@@ -55,7 +48,14 @@
 					"description": "接口调用正常",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "cainiao.guoguo.backup.graborder.takepackage",
+	"apiChineseName": "兜底派送订单的揽件接口",
+	"description": "快递公司回传订单号和四位取件码给菜鸟裹裹",
+	"id": 26057
 }

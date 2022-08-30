@@ -1,13 +1,13 @@
 {
-	"id": 23795,
-	"name": "alibaba.interact.sensor.popwindow",
-	"apiChineseName": "popwindow",
-	"description": "popwindow",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0 表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.popwindow",
+	"apiChineseName": "popwindow",
+	"description": "popwindow",
+	"id": 23795
 }

@@ -28,14 +28,14 @@ type TopHotelPromotion struct {
 	Priority int64 `json:"priority,omitempty" xml:"priority,omitempty"`
 	// tid
 	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 优惠的呈现方式,目前有如下定义:,1. 金额类优惠,2. 使用次数类优惠,3. 权益类优惠,4. 后返类优惠
+	AmountType int64 `json:"amount_type,omitempty" xml:"amount_type,omitempty"`
 	// 活动使用的折扣
 	Discount int64 `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 优惠计算规则类型
 	RuleType int64 `json:"rule_type,omitempty" xml:"rule_type,omitempty"`
 	// 优惠维度
 	RuleTarget int64 `json:"rule_target,omitempty" xml:"rule_target,omitempty"`
-	// 优惠的呈现方式,目前有如下定义:,1. 金额类优惠,2. 使用次数类优惠,3. 权益类优惠,4. 后返类优惠
-	AmountType int64 `json:"amount_type,omitempty" xml:"amount_type,omitempty"`
 	// 出资方是否卖家还是平台
 	InvestorType int64 `json:"investor_type,omitempty" xml:"investor_type,omitempty"`
 	// 是否"积分加钱购"类型活动

@@ -32,4 +32,6 @@ type CodeQueryFlows struct {
 	InType string `json:"in_type,omitempty" xml:"in_type,omitempty"`
 	// 入库委托企业ID
 	FromAssRefEntId string `json:"from_ass_ref_ent_id,omitempty" xml:"from_ass_ref_ent_id,omitempty"`
+	// 疑似单据存在异常， 为空或否：不存在异常   是：存在异常
+	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
 }

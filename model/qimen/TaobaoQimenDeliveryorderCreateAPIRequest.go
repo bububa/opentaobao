@@ -12,7 +12,7 @@ import (
 // taobao.qimen.deliveryorder.create
 type TaobaoQimenDeliveryorderCreateAPIRequest struct {
 	model.Params
-	//
+	// 奇门仓储字段
 	_request *DeliveryOrderCreateRequest
 }
 
@@ -38,7 +38,7 @@ func (r TaobaoQimenDeliveryorderCreateAPIRequest) GetApiParams() url.Values {
 }
 
 // SetRequest is Request Setter
-//
+// 奇门仓储字段
 func (r *TaobaoQimenDeliveryorderCreateAPIRequest) SetRequest(_request *DeliveryOrderCreateRequest) error {
 	r._request = _request
 	r.Set("request", _request)

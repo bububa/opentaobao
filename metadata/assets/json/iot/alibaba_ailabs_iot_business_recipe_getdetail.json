@@ -1,8 +1,4 @@
 {
-	"id": 49976,
-	"name": "alibaba.ailabs.iot.business.recipe.getdetail",
-	"apiChineseName": "获取食谱详情",
-	"description": "获取食谱详情接口，获取ISV自己的食谱详情数据",
 	"requestParams": [
 		{
 			"name": "business_recipe_id",
@@ -19,417 +15,357 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "返回包装类",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "响应code",
-					"required": true
+					"description": "响应code"
 				},
 				{
-					"name": "ret_value",
-					"type": "BusinessRecipeOpenDto",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "business_recipe_id",
 							"type": "Number",
-							"description": "行业食谱id",
-							"required": true
+							"description": "行业食谱id"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "菜谱描述",
-							"required": true
+							"description": "菜谱描述"
 						},
 						{
 							"name": "function_type",
 							"type": "Number",
-							"description": "菜谱功能类型 1 普通食谱 2 智能食谱",
-							"required": true
+							"description": "菜谱功能类型 1 普通食谱 2 智能食谱"
 						},
 						{
-							"name": "recipe_ingredient_list",
-							"type": "RecipeIngredientDto[]",
-							"description": "食谱食材参数列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "name",
-									"type": "String",
-									"description": "参数名",
-									"required": true
-								},
-								{
-									"name": "weight",
-									"type": "String",
-									"description": "重量及单位",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "recipe_name_cn",
-							"type": "String",
-							"description": "食谱中文名",
-							"required": true
-						},
-						{
-							"name": "recipe_step_list",
-							"type": "BusinessRecipeStepOpenDto[]",
-							"description": "食谱步骤列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "business_recipe_id",
-									"type": "Number",
-									"description": "行业食谱id",
-									"required": true
-								},
-								{
-									"name": "business_recipe_step_id",
-									"type": "Number",
-									"description": "行业食谱步骤id",
-									"required": true
-								},
-								{
-									"name": "description",
-									"type": "String",
-									"description": "步骤详细描述",
-									"required": true
-								},
-								{
-									"name": "image_url",
-									"type": "ImageUrlDto",
-									"description": "食谱步骤图url",
-									"required": true,
-									"subParams": [
-										{
-											"name": "img",
-											"type": "String",
-											"description": "默认图片",
-											"required": true
-										},
-										{
-											"name": "large",
-											"type": "String",
-											"description": "大图",
-											"required": true
-										},
-										{
-											"name": "medium",
-											"type": "String",
-											"description": "中图",
-											"required": true
-										},
-										{
-											"name": "small",
-											"type": "String",
-											"description": "小图",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "recipe_step_action_list",
-									"type": "BusinessRecipeStepActionOpenDto[]",
-									"description": "食谱步骤指令列表",
-									"required": true,
-									"subParams": [
-										{
-											"name": "action_name",
-											"type": "String",
-											"description": "指令名",
-											"required": true
-										},
-										{
-											"name": "action_type",
-											"type": "Number",
-											"description": "指令类型：0:整数型,1:枚举类型,2:浮点类型,3:布尔型,4:字符串,5:时间型,6:JSON对象",
-											"required": true
-										},
-										{
-											"name": "action_value",
-											"type": "String",
-											"description": "指令值",
-											"required": true
-										},
-										{
-											"name": "sequence",
-											"type": "Number",
-											"description": "指令顺序号",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "recipe_step_name",
-									"type": "String",
-									"description": "食谱步骤名",
-									"required": true
-								},
-								{
-									"name": "recipe_step_time",
-									"type": "Number",
-									"description": "食谱步骤时间",
-									"required": true
-								},
-								{
-									"name": "sequence",
-									"type": "Number",
-									"description": "顺序号",
-									"required": true
-								},
-								{
-									"name": "tips",
-									"type": "String",
-									"description": "食谱步骤提示",
-									"required": true
-								},
-								{
-									"name": "video_url",
-									"type": "VideoUrlDto",
-									"description": "食谱步骤视频",
-									"required": true,
-									"subParams": [
-										{
-											"name": "cover",
-											"type": "ImageUrlDto",
-											"description": "视频封面图",
-											"required": true,
-											"subParams": [
-												{
-													"name": "img",
-													"type": "String",
-													"description": "默认图片",
-													"required": true
-												},
-												{
-													"name": "large",
-													"type": "String",
-													"description": "大图",
-													"required": true
-												},
-												{
-													"name": "medium",
-													"type": "String",
-													"description": "中图",
-													"required": true
-												},
-												{
-													"name": "small",
-													"type": "String",
-													"description": "小图",
-													"required": true
-												}
-											]
-										},
-										{
-											"name": "default_url",
-											"type": "String",
-											"description": "默认播放链接",
-											"required": true
-										},
-										{
-											"name": "height",
-											"type": "Number",
-											"description": "视频高度",
-											"required": true
-										},
-										{
-											"name": "high",
-											"type": "String",
-											"description": "高清",
-											"required": true
-										},
-										{
-											"name": "standard",
-											"type": "String",
-											"description": "标清",
-											"required": true
-										},
-										{
-											"name": "ultra",
-											"type": "String",
-											"description": "超清",
-											"required": true
-										},
-										{
-											"name": "width",
-											"type": "Number",
-											"description": "视频宽度",
-											"required": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "recipe_time",
-							"type": "Number",
-							"description": "食谱时间，单位秒",
-							"required": true
-						},
-						{
-							"name": "recipe_video",
-							"type": "VideoUrlDto",
-							"description": "食谱视频",
-							"required": true,
-							"subParams": [
-								{
-									"name": "cover",
-									"type": "ImageUrlDto",
-									"description": "视频封面图",
-									"required": true,
-									"subParams": [
-										{
-											"name": "img",
-											"type": "String",
-											"description": "默认图片",
-											"required": true
-										},
-										{
-											"name": "large",
-											"type": "String",
-											"description": "大图",
-											"required": true
-										},
-										{
-											"name": "medium",
-											"type": "String",
-											"description": "中图",
-											"required": true
-										},
-										{
-											"name": "small",
-											"type": "String",
-											"description": "小图",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "default_url",
-									"type": "String",
-									"description": "默认播放链接",
-									"required": true
-								},
-								{
-									"name": "height",
-									"type": "Number",
-									"description": "视频高度",
-									"required": true
-								},
-								{
-									"name": "high",
-									"type": "String",
-									"description": "高清",
-									"required": true
-								},
-								{
-									"name": "standard",
-									"type": "String",
-									"description": "标清",
-									"required": true
-								},
-								{
-									"name": "ultra",
-									"type": "String",
-									"description": "超清",
-									"required": true
-								},
-								{
-									"name": "width",
-									"type": "Number",
-									"description": "视频宽度",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "tag_list",
-							"type": "ContentTagDto[]",
-							"description": "标签列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "tag_id",
-									"type": "Number",
-									"description": "标签id",
-									"required": true
-								},
-								{
-									"name": "tag_name",
-									"type": "String",
-									"description": "标签名称",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "tips",
-							"type": "String",
-							"description": "食谱提示信息",
-							"required": true
-						},
-						{
-							"name": "recipe_image",
-							"type": "ImageUrlDto",
-							"description": "食谱图片",
-							"required": true,
 							"subParams": [
 								{
 									"name": "img",
 									"type": "String",
-									"description": "默认图片",
-									"required": true
+									"description": "默认图片"
 								},
 								{
 									"name": "large",
 									"type": "String",
-									"description": "大图",
-									"required": true
+									"description": "大图"
 								},
 								{
 									"name": "medium",
 									"type": "String",
-									"description": "中图",
-									"required": true
+									"description": "中图"
 								},
 								{
 									"name": "small",
 									"type": "String",
-									"description": "小图",
-									"required": true
+									"description": "小图"
 								}
-							]
+							],
+							"name": "recipe_image",
+							"type": "ImageUrlDto",
+							"description": "食谱图片"
+						},
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "参数名"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量及单位"
+								}
+							],
+							"name": "recipe_ingredient_list",
+							"type": "RecipeIngredientDto[]",
+							"description": "食谱食材参数列表"
+						},
+						{
+							"name": "recipe_name_cn",
+							"type": "String",
+							"description": "食谱中文名"
+						},
+						{
+							"subParams": [
+								{
+									"name": "business_recipe_id",
+									"type": "Number",
+									"description": "行业食谱id"
+								},
+								{
+									"name": "business_recipe_step_id",
+									"type": "Number",
+									"description": "行业食谱步骤id"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "步骤详细描述"
+								},
+								{
+									"subParams": [
+										{
+											"name": "img",
+											"type": "String",
+											"description": "默认图片"
+										},
+										{
+											"name": "large",
+											"type": "String",
+											"description": "大图"
+										},
+										{
+											"name": "medium",
+											"type": "String",
+											"description": "中图"
+										},
+										{
+											"name": "small",
+											"type": "String",
+											"description": "小图"
+										}
+									],
+									"name": "image_url",
+									"type": "ImageUrlDto",
+									"description": "食谱步骤图url"
+								},
+								{
+									"subParams": [
+										{
+											"name": "action_name",
+											"type": "String",
+											"description": "指令名"
+										},
+										{
+											"name": "action_type",
+											"type": "Number",
+											"description": "指令类型：0:整数型,1:枚举类型,2:浮点类型,3:布尔型,4:字符串,5:时间型,6:JSON对象"
+										},
+										{
+											"name": "action_value",
+											"type": "String",
+											"description": "指令值"
+										},
+										{
+											"name": "sequence",
+											"type": "Number",
+											"description": "指令顺序号"
+										}
+									],
+									"name": "recipe_step_action_list",
+									"type": "BusinessRecipeStepActionOpenDto[]",
+									"description": "食谱步骤指令列表"
+								},
+								{
+									"name": "recipe_step_name",
+									"type": "String",
+									"description": "食谱步骤名"
+								},
+								{
+									"name": "recipe_step_time",
+									"type": "Number",
+									"description": "食谱步骤时间"
+								},
+								{
+									"name": "sequence",
+									"type": "Number",
+									"description": "顺序号"
+								},
+								{
+									"name": "tips",
+									"type": "String",
+									"description": "食谱步骤提示"
+								},
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "img",
+													"type": "String",
+													"description": "默认图片"
+												},
+												{
+													"name": "large",
+													"type": "String",
+													"description": "大图"
+												},
+												{
+													"name": "medium",
+													"type": "String",
+													"description": "中图"
+												},
+												{
+													"name": "small",
+													"type": "String",
+													"description": "小图"
+												}
+											],
+											"name": "cover",
+											"type": "ImageUrlDto",
+											"description": "视频封面图"
+										},
+										{
+											"name": "default_url",
+											"type": "String",
+											"description": "默认播放链接"
+										},
+										{
+											"name": "height",
+											"type": "Number",
+											"description": "视频高度"
+										},
+										{
+											"name": "high",
+											"type": "String",
+											"description": "高清"
+										},
+										{
+											"name": "standard",
+											"type": "String",
+											"description": "标清"
+										},
+										{
+											"name": "ultra",
+											"type": "String",
+											"description": "超清"
+										},
+										{
+											"name": "width",
+											"type": "Number",
+											"description": "视频宽度"
+										}
+									],
+									"name": "video_url",
+									"type": "VideoUrlDto",
+									"description": "食谱步骤视频"
+								}
+							],
+							"name": "recipe_step_list",
+							"type": "BusinessRecipeStepOpenDto[]",
+							"description": "食谱步骤列表"
+						},
+						{
+							"name": "recipe_time",
+							"type": "Number",
+							"description": "食谱时间，单位秒"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "img",
+											"type": "String",
+											"description": "默认图片"
+										},
+										{
+											"name": "large",
+											"type": "String",
+											"description": "大图"
+										},
+										{
+											"name": "medium",
+											"type": "String",
+											"description": "中图"
+										},
+										{
+											"name": "small",
+											"type": "String",
+											"description": "小图"
+										}
+									],
+									"name": "cover",
+									"type": "ImageUrlDto",
+									"description": "视频封面图"
+								},
+								{
+									"name": "default_url",
+									"type": "String",
+									"description": "默认播放链接"
+								},
+								{
+									"name": "height",
+									"type": "Number",
+									"description": "视频高度"
+								},
+								{
+									"name": "high",
+									"type": "String",
+									"description": "高清"
+								},
+								{
+									"name": "standard",
+									"type": "String",
+									"description": "标清"
+								},
+								{
+									"name": "ultra",
+									"type": "String",
+									"description": "超清"
+								},
+								{
+									"name": "width",
+									"type": "Number",
+									"description": "视频宽度"
+								}
+							],
+							"name": "recipe_video",
+							"type": "VideoUrlDto",
+							"description": "食谱视频"
+						},
+						{
+							"subParams": [
+								{
+									"name": "tag_id",
+									"type": "Number",
+									"description": "标签id"
+								},
+								{
+									"name": "tag_name",
+									"type": "String",
+									"description": "标签名称"
+								}
+							],
+							"name": "tag_list",
+							"type": "ContentTagDto[]",
+							"description": "标签列表"
+						},
+						{
+							"name": "tips",
+							"type": "String",
+							"description": "食谱提示信息"
 						},
 						{
 							"name": "recipe_type",
 							"type": "String",
-							"description": "食谱类型 0视频菜谱 1图文菜谱",
-							"required": true
+							"description": "食谱类型 0视频菜谱 1图文菜谱"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "BusinessRecipeOpenDto",
+					"description": "返回结果"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "追踪id",
-					"required": true
+					"description": "追踪id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.business.recipe.getdetail",
+	"apiChineseName": "获取食谱详情",
+	"description": "获取食谱详情接口，获取ISV自己的食谱详情数据",
+	"id": 49976
 }

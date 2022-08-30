@@ -10,6 +10,10 @@ type LogicGroupDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 换购规则
 	ExchangeRule *ExchangeRuleDto `json:"exchange_rule,omitempty" xml:"exchange_rule,omitempty"`
+	// 优惠门槛
+	Condition *ConditionDto `json:"condition,omitempty" xml:"condition,omitempty"`
+	// 优惠效果
+	Action *ActionDto `json:"action,omitempty" xml:"action,omitempty"`
 	// 换购分组标识
 	Exchange bool `json:"exchange,omitempty" xml:"exchange,omitempty"`
 	// 是否生效分组（多分组情况下，可能为false，例如商品池换购，普通逻辑分组为false，换购分组为true）

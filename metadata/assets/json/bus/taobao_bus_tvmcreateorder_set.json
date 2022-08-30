@@ -1,14 +1,6 @@
 {
-	"id": 28759,
-	"name": "taobao.bus.tvmcreateorder.set",
-	"apiChineseName": "线下自助机创建订单",
-	"description": "提供给汽车票线下自助机的创建订单使用",
 	"requestParams": [
 		{
-			"name": "param_t_v_m_create_order_r_q",
-			"type": "TvmCreateOrderRq",
-			"description": "创建订单对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "agent_order_id",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "passengers",
-					"type": "TvmPassengerVo[]",
-					"description": "乘客",
-					"required": true,
 					"subParams": [
 						{
 							"name": "full_price",
@@ -86,9 +74,6 @@
 							"description": "保险费 (单位分)"
 						},
 						{
-							"name": "tvm_insurance_infos",
-							"type": "TvmInsuranceInfo[]",
-							"description": "保险信息",
 							"subParams": [
 								{
 									"name": "insure_price",
@@ -105,9 +90,26 @@
 									"type": "String",
 									"description": "保险唯一id"
 								}
-							]
+							],
+							"name": "tvm_insurance_infos",
+							"type": "TvmInsuranceInfo[]",
+							"description": "保险信息"
+						},
+						{
+							"name": "ticket_type",
+							"type": "Number",
+							"description": "乘客类型：0：成人，1：儿童，2：携童"
+						},
+						{
+							"name": "discount_type",
+							"type": "Number",
+							"description": "折扣类型：1：特殊证件，2：特殊线路，3其他。如果是折扣票必须填写"
 						}
-					]
+					],
+					"name": "passengers",
+					"type": "TvmPassengerVo[]",
+					"description": "乘客",
+					"required": true
 				},
 				{
 					"name": "ticket_count",
@@ -122,10 +124,6 @@
 					"required": true
 				},
 				{
-					"name": "tvm_bus_line_info",
-					"type": "TvmBusLineInfo",
-					"description": "班次信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "dep_time",
@@ -214,7 +212,7 @@
 						{
 							"name": "start_province_code",
 							"type": "String",
-							"description": "出发省份码"
+							"description": "出发省份，"
 						},
 						{
 							"name": "start_city_code",
@@ -231,7 +229,11 @@
 							"type": "String",
 							"description": "到达城市码"
 						}
-					]
+					],
+					"name": "tvm_bus_line_info",
+					"type": "TvmBusLineInfo",
+					"description": "班次信息",
+					"required": true
 				},
 				{
 					"name": "real_name",
@@ -240,9 +242,6 @@
 					"required": true
 				},
 				{
-					"name": "account_in_details",
-					"type": "AccountInDetail[]",
-					"description": "分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。",
 					"subParams": [
 						{
 							"name": "alipay_account",
@@ -259,7 +258,10 @@
 							"type": "String",
 							"description": "对应该支付宝的支付宝账号ID，注意和支付宝账号保持一致"
 						}
-					]
+					],
+					"name": "account_in_details",
+					"type": "AccountInDetail[]",
+					"description": "分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。"
 				},
 				{
 					"name": "service_provider_id",
@@ -295,8 +297,29 @@
 					"name": "pay_mode",
 					"type": "String",
 					"description": "取值范围 ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）；UNION（多码合一）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mobile_number",
+							"type": "String",
+							"description": "下单人手机号，非特殊业务必填，影响商务结算"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "下单人姓名"
+						}
+					],
+					"name": "contact_info",
+					"type": "TvmContactInfo",
+					"description": "下单人联系信息"
 				}
-			]
+			],
+			"name": "param_t_v_m_create_order_r_q",
+			"type": "TvmCreateOrderRq",
+			"description": "创建订单对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -320,5 +343,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "taobao.bus.tvmcreateorder.set",
+	"apiChineseName": "线下自助机创建订单",
+	"description": "提供给汽车票线下自助机的创建订单使用",
+	"id": 28759
 }

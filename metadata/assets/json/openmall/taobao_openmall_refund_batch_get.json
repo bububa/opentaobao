@@ -1,8 +1,4 @@
 {
-	"id": 53700,
-	"name": "taobao.openmall.refund.batch.get",
-	"apiChineseName": "批量获取openmall退款单",
-	"description": "批量获取openmall退款单\n注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get",
 	"requestParams": [
 		{
 			"name": "end_created",
@@ -14,16 +10,13 @@
 			"name": "page_index",
 			"type": "Number",
 			"description": "翻页页码，从1开始",
-			"required": true,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页面大小，不超过100",
-			"required": true,
-			"maxValue": 100,
-			"minValue": 1
+			"required": true
 		},
 		{
 			"name": "distributor",
@@ -40,46 +33,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "entities",
-			"type": "TopRefundVo []",
-			"description": "退款列表",
 			"subParams": [
 				{
 					"name": "refund_id",
 					"type": "Number",
-					"description": "退款单ID",
-					"required": true
+					"description": "退款单ID"
 				},
 				{
 					"name": "tid",
 					"type": "Number",
-					"description": "对应订单ID",
-					"required": true
+					"description": "对应订单ID"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "退款单状态，此接口存在延迟，详情参考taobao.openmall.refund.get",
-					"required": true
+					"description": "退款单状态，此接口存在延迟，详情参考taobao.openmall.refund.get"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "退款单创建时间",
-					"required": true
+					"description": "退款单创建时间"
 				},
 				{
 					"name": "refund_fee",
 					"type": "String",
-					"description": "请求退款金额",
-					"required": true
+					"description": "请求退款金额"
 				}
-			]
+			],
+			"name": "entities",
+			"type": "TopRefundVo []",
+			"description": "退款列表"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "范围内总的退款单个数"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.batch.get",
+	"apiChineseName": "批量获取openmall退款单",
+	"description": "批量获取openmall退款单\n注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get",
+	"id": 53700
 }

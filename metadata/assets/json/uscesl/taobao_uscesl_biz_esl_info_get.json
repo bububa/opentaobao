@@ -1,8 +1,4 @@
 {
-	"id": 39125,
-	"name": "taobao.uscesl.biz.esl.info.get",
-	"apiChineseName": "价签设备信息查询接口",
-	"description": "价签设备信息查询接口",
 	"requestParams": [
 		{
 			"name": "esl_bar_code",
@@ -29,5 +25,9 @@
 			"type": "Json",
 			"description": "result.sucess表示是否成功，target是设备信息"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.esl.info.get",
+	"apiChineseName": "价签设备信息查询接口",
+	"description": "价签设备信息查询接口",
+	"id": 39125
 }

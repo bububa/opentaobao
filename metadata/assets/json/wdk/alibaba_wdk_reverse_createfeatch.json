@@ -1,0 +1,174 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "buyer_address",
+					"type": "String",
+					"description": "买家地址",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "买家名称",
+					"required": true
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "买家电话",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "expect_fetch_quantity",
+							"type": "String",
+							"description": "期望取货数量",
+							"required": true
+						},
+						{
+							"name": "expect_refund_quantity",
+							"type": "String",
+							"description": "期望退款数量",
+							"required": true
+						},
+						{
+							"name": "fetch_type",
+							"type": "Number",
+							"description": "取货类型（1上门取货）",
+							"required": true
+						},
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "子单号",
+							"required": true
+						}
+					],
+					"name": "fetch_aggregate_list",
+					"type": "FetchAggregate[]",
+					"description": "取货详情",
+					"required": true
+				},
+				{
+					"name": "expect_fetch_end_time",
+					"type": "String",
+					"description": "期望取货结束时间"
+				},
+				{
+					"name": "expect_fetch_start_time",
+					"type": "String",
+					"description": "期望取货开始时间"
+				},
+				{
+					"name": "fetch_type",
+					"type": "Number",
+					"description": "上门取货（1为上门取货）",
+					"required": true
+				},
+				{
+					"name": "main_out_order_id",
+					"type": "String",
+					"description": "主单号",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"subParams": [
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "操作人id"
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作人名字"
+						},
+						{
+							"name": "operator_type",
+							"type": "Number",
+							"description": "操作人类型（4客服小二）",
+							"required": true
+						}
+					],
+					"name": "operator",
+					"type": "OperatorVo",
+					"description": "发起人",
+					"required": true
+				},
+				{
+					"name": "reason_id",
+					"type": "Number",
+					"description": "原因id"
+				},
+				{
+					"name": "refund_amount",
+					"type": "Number",
+					"description": "退款金额"
+				},
+				{
+					"name": "reverse_id",
+					"type": "String",
+					"description": "退款单号 幂等id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				}
+			],
+			"name": "param_create_fetch_req",
+			"type": "CreateFetchReq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码描述"
+				},
+				{
+					"subParams": [
+						{
+							"name": "refer_id",
+							"type": "String",
+							"description": "取货单di"
+						}
+					],
+					"name": "model",
+					"type": "CreateFetchResponse",
+					"description": "返回model"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true/false"
+				}
+			],
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.wdk.reverse.createfeatch",
+	"apiChineseName": "逆向取货",
+	"description": "发起逆向取货",
+	"id": 56263
+}

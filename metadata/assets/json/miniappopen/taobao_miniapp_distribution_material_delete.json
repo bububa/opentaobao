@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "对应的小程序id",
+					"required": true
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "素材id",
+					"required": true
+				}
+			],
+			"name": "material_request",
+			"type": "MiniAppEntranceMaterialBizOpenDTO",
+			"description": "投放入口素材信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "material_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "material_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "操作结果"
+		},
+		{
+			"name": "material_error_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.distribution.material.delete",
+	"apiChineseName": "小程序投放 --- 删除投放素材",
+	"description": "删除已录入的投放入口素材信息。",
+	"id": 56925
+}

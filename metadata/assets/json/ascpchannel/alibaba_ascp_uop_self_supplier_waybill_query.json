@@ -1,0 +1,198 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人id"
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称"
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "物流服务编码"
+				},
+				{
+					"name": "consign_lp_order_code",
+					"type": "String",
+					"description": "发货LP单号",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "包裹code，同一个订单唯一，同一个lp单号多次或同一次传重复的包裹号会被幂等",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "包裹描述信息"
+						},
+						{
+							"name": "total_package_count",
+							"type": "String",
+							"description": "子包裹数，在快运取号场景可能会用到"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "包裹重量，单位克"
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "包裹体积，单位立方厘米"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "长，单位mm"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "宽，单位mm"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高，单位mm"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商品code",
+									"required": true
+								},
+								{
+									"name": "item_count",
+									"type": "String",
+									"description": "商品数量",
+									"required": true
+								}
+							],
+							"name": "items",
+							"type": "WaybillQueryPackageItem[]",
+							"description": "商品信息"
+						}
+					],
+					"name": "packages",
+					"type": "WaybillQueryRequestData[]",
+					"description": "包裹列表",
+					"required": true
+				},
+				{
+					"name": "business_model",
+					"type": "String",
+					"description": "自营接口配业务模式，默认为1代表商家仓自营配 (为1时会强制校验发货的配CP和单号必须与取号时一致，且多包裹必须一次性发货)"
+				}
+			],
+			"name": "waybill_query_request",
+			"type": "Waybillqueryrequest",
+			"description": "查询面单请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cp_res_code",
+							"type": "String",
+							"description": "配资源code"
+						},
+						{
+							"name": "cp_res_name",
+							"type": "String",
+							"description": "配资源名称"
+						},
+						{
+							"name": "cp_brand_code",
+							"type": "String",
+							"description": "配资源品牌code"
+						},
+						{
+							"name": "logistics_company",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "package_code",
+									"type": "String",
+									"description": "对应传入的packageCode"
+								},
+								{
+									"name": "waybill_code",
+									"type": "String",
+									"description": "面单号"
+								},
+								{
+									"name": "parent_waybill_code",
+									"type": "String",
+									"description": "父面单号 本次没有，为子母单预留"
+								},
+								{
+									"name": "print_data",
+									"type": "String",
+									"description": "面单信息"
+								}
+							],
+							"name": "waybill_cloud_print_dto_list",
+							"type": "WaybillCloudPrintDTO[]",
+							"description": "电子面单信息"
+						}
+					],
+					"name": "data",
+					"type": "WaybillQueryResponseData",
+					"description": "data对象"
+				}
+			],
+			"name": "waybill_query_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
+		}
+	],
+	"name": "alibaba.ascp.uop.self.supplier.waybill.query",
+	"apiChineseName": "商家仓自营配电子面单取号",
+	"description": "ERP调用打印面单取号接口",
+	"id": 61349
+}

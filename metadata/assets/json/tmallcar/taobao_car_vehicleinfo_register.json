@@ -1,14 +1,6 @@
 {
-	"id": 41631,
-	"name": "taobao.car.vehicleinfo.register",
-	"apiChineseName": "全量车型导入",
-	"description": "全量车型导入",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "FullInfoCarModelDTO[]",
-			"description": "参数集合",
-			"maxListSize": 50,
 			"subParams": [
 				{
 					"name": "abs",
@@ -517,10 +509,12 @@
 				},
 				{
 					"name": "is_commercial",
+					"type": "byte",
 					"description": "是否商用车"
 				},
 				{
 					"name": "is_foreign",
+					"type": "byte",
 					"description": "是否海外车"
 				},
 				{
@@ -1159,7 +1153,11 @@
 					"type": "String",
 					"description": "宽度（mm）"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "FullInfoCarModelDTO[]",
+			"description": "参数集合",
+			"maxListSize": 50
 		}
 	],
 	"responseParams": [
@@ -1183,5 +1181,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.car.vehicleinfo.register",
+	"apiChineseName": "全量车型导入",
+	"description": "全量车型导入",
+	"id": 41631
 }

@@ -1,13 +1,6 @@
 {
-	"id": 55215,
-	"name": "alibaba.ascp.channel.distributor.product.select",
-	"apiChineseName": "供应链渠道中心品的选品接口（淘外分销商专用）",
-	"description": "此api为淘外分销的品的选品标准api，淘外分销商专用",
 	"requestParams": [
 		{
-			"name": "select_product_request",
-			"type": "ProductLinkRequest",
-			"description": "选品请求",
 			"subParams": [
 				{
 					"name": "out_item_id",
@@ -16,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "sku_list",
-					"type": "ProductSkuLinkDTO[]",
-					"description": "sku 列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "out_sku_id",
@@ -33,7 +22,11 @@
 							"description": "供应商产品 skuId",
 							"required": true
 						}
-					]
+					],
+					"name": "sku_list",
+					"type": "ProductSkuLinkDTO[]",
+					"description": "sku 列表",
+					"required": true
 				},
 				{
 					"name": "product_id",
@@ -49,7 +42,8 @@
 				{
 					"name": "sub_channel_code",
 					"type": "String",
-					"description": "二级渠道编码"
+					"description": "二级渠道编码",
+					"required": true
 				},
 				{
 					"name": "channel_code",
@@ -57,7 +51,10 @@
 					"description": "渠道编码",
 					"required": true
 				}
-			]
+			],
+			"name": "select_product_request",
+			"type": "ProductLinkRequest",
+			"description": "选品请求"
 		}
 	],
 	"responseParams": [
@@ -76,5 +73,9 @@
 			"type": "String",
 			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.ascp.channel.distributor.product.select",
+	"apiChineseName": "供应链渠道中心品的选品接口（淘外分销商专用）",
+	"description": "此api为淘外分销的品的选品标准api，淘外分销商专用",
+	"id": 55215
 }

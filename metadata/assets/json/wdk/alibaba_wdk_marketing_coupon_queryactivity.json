@@ -1,14 +1,6 @@
 {
-	"id": 35500,
-	"name": "alibaba.wdk.marketing.coupon.queryactivity",
-	"apiChineseName": "查询优惠券活动",
-	"description": "查询优惠券活动",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "CommonActivityParam",
-			"description": "查询优惠券活动入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -21,14 +13,15 @@
 					"type": "String",
 					"description": "商家优惠券活动id"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "CommonActivityParam",
+			"description": "查询优惠券活动入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "查询返回结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -43,16 +36,8 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "CouponActivity",
-					"description": "返回的优惠券活动信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "limit_info",
-							"type": "LimitInfo",
-							"description": "通用限购信息，-1为不限制，默认为不限制",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_limit_cnt",
@@ -78,7 +63,11 @@
 									"description": "活动期间总限购",
 									"required": true
 								}
-							]
+							],
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制",
+							"required": true
 						},
 						{
 							"name": "out_act_id",
@@ -194,7 +183,11 @@
 							"description": "[减至券特有]件数门槛，值为-1代表无门槛 [单位为整数]",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "CouponActivity",
+					"description": "返回的优惠券活动信息",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -202,7 +195,14 @@
 					"description": "查询商品是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.coupon.queryactivity",
+	"apiChineseName": "查询优惠券活动",
+	"description": "查询优惠券活动",
+	"id": 35500
 }

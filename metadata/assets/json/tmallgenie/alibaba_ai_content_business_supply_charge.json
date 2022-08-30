@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "encrypted_mobile",
+					"type": "String",
+					"description": "加密的手机号，采用RSA加密，由猫精提供加密方法",
+					"required": true
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "合作方自己生成需要保证唯一，至少16位。",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "猫精提供的bizCode",
+					"required": true
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "加密后的签名，签名方法见：猫精提供文档",
+					"required": true
+				},
+				{
+					"name": "timestamp",
+					"type": "Number",
+					"description": "当前请求的时间戳，例如：1641468394035",
+					"required": true
+				}
+			],
+			"name": "member_charge_request",
+			"type": "MemberChargeRequest",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "ret_value",
+					"type": "Boolean",
+					"description": "true为充值成功"
+				},
+				{
+					"name": "ret_code",
+					"type": "String",
+					"description": "0 表示 请求成功，其他表示请求失败"
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.ai.content.business.supply.charge",
+	"apiChineseName": "供销商品充值接口",
+	"description": "供销商品充值接口",
+	"id": 60875
+}

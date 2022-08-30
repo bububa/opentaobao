@@ -1,8 +1,4 @@
 {
-	"id": 24556,
-	"name": "taobao.wlb.wms.sku.create",
-	"apiChineseName": "商品同步",
-	"description": "商品同步",
 	"requestParams": [
 		{
 			"name": "item_code",
@@ -220,5 +216,9 @@
 			"type": "String",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.sku.create",
+	"apiChineseName": "商品同步",
+	"description": "商品同步",
+	"id": 24556
 }

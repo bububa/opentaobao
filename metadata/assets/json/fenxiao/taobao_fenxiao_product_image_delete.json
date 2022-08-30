@@ -1,8 +1,4 @@
 {
-	"id": 10949,
-	"name": "taobao.fenxiao.product.image.delete",
-	"apiChineseName": "产品图片删除",
-	"description": "产品图片删除，只删除图片信息，不真正删除图片",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -33,5 +29,9 @@
 			"type": "Date",
 			"description": "操作时间"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.image.delete",
+	"apiChineseName": "产品图片删除",
+	"description": "产品图片删除，只删除图片信息，不真正删除图片",
+	"id": 10949
 }

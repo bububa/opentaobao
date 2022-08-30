@@ -1,15 +1,11 @@
 {
-	"id": 21492,
-	"name": "taobao.logistics.consign.resend",
-	"apiChineseName": "修改物流公司和运单号",
-	"description": "支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：\u003cbr\u003e\u003cbr/\u003e1、必须是已发货订单，自己联系发货的必须24小时内才可修改；在线下单的，必须下单后物流公司未揽收成功前才可修改；\u003cbr/\u003e2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司。",
 	"requestParams": [
 		{
 			"name": "tid",
 			"type": "Number",
 			"description": "淘宝交易ID",
-			"required": true,
-			"minValue": 1000
+			"minValue": 1000,
+			"required": true
 		},
 		{
 			"name": "sub_tid",
@@ -47,16 +43,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "shipping",
-			"type": "Shipping",
-			"description": "返回发货是否成功is_success",
 			"subParams": [
 				{
 					"name": "is_success",
 					"type": "Boolean",
 					"description": "返回发货是否成功。"
 				}
-			]
+			],
+			"name": "shipping",
+			"type": "Shipping",
+			"description": "返回发货是否成功is_success"
 		}
-	]
+	],
+	"name": "taobao.logistics.consign.resend",
+	"apiChineseName": "修改物流公司和运单号",
+	"description": "支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：\u003cbr\u003e\n1、必须是已发货订单，自己联系发货的必须50天内才可修改；在线下单的，必须下单后物流公司未揽收成功前才可修改；\n2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司。",
+	"id": 21492
 }

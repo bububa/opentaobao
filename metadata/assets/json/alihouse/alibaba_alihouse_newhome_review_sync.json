@@ -1,14 +1,6 @@
 {
-	"id": 55956,
-	"name": "alibaba.alihouse.newhome.review.sync",
-	"apiChineseName": "天猫好房楼盘评测同步",
-	"description": "接受楼盘测评图文信息",
 	"requestParams": [
 		{
-			"name": "review",
-			"type": "ProjectReviewDraftDto",
-			"description": "测评草稿信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "outer_id",
@@ -127,40 +119,44 @@
 					"description": "1测试数据 0正常数据",
 					"required": true
 				}
-			]
+			],
+			"name": "review",
+			"type": "ProjectReviewDraftDto",
+			"description": "测评草稿信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "失败信息",
-					"required": true
+					"description": "失败信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "true或false",
-					"required": true
+					"description": "true或false"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.review.sync",
+	"apiChineseName": "天猫好房楼盘评测同步",
+	"description": "接受楼盘测评图文信息",
+	"id": 55956
 }

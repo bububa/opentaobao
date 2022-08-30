@@ -1,14 +1,6 @@
 {
-	"id": 54908,
-	"name": "alibaba.buynow.order.create",
-	"apiChineseName": "阿里巴巴买家buynow下单接口",
-	"description": "阿里巴巴买家下单接口",
 	"requestParams": [
 		{
-			"name": "param_order_create_request",
-			"type": "OrderCreateRequest",
-			"description": "Order creation parameter",
-			"required": true,
 			"subParams": [
 				{
 					"name": "channel_refer_id",
@@ -17,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "logistics_detail",
-					"type": "LogisticsDetail",
-					"description": "Logistics details",
-					"required": true,
 					"subParams": [
 						{
 							"name": "carrier_code",
@@ -29,10 +17,6 @@
 							"required": true
 						},
 						{
-							"name": "shipment_address",
-							"type": "Address",
-							"description": "shipment address",
-							"required": true,
 							"subParams": [
 								{
 									"name": "address",
@@ -74,9 +58,6 @@
 									"required": true
 								},
 								{
-									"name": "fax",
-									"type": "Phone",
-									"description": "Fax",
 									"subParams": [
 										{
 											"name": "area",
@@ -93,7 +74,10 @@
 											"type": "String",
 											"description": "fax number"
 										}
-									]
+									],
+									"name": "fax",
+									"type": "Phone",
+									"description": "Fax"
 								},
 								{
 									"name": "port",
@@ -116,9 +100,6 @@
 									"description": "Province/state abbreviation"
 								},
 								{
-									"name": "telephone",
-									"type": "Phone",
-									"description": "telephone",
 									"subParams": [
 										{
 											"name": "area",
@@ -135,22 +116,29 @@
 											"type": "String",
 											"description": "telephone number"
 										}
-									]
+									],
+									"name": "telephone",
+									"type": "Phone",
+									"description": "telephone"
 								},
 								{
 									"name": "zip",
 									"type": "String",
 									"description": "zip"
 								}
-							]
+							],
+							"name": "shipment_address",
+							"type": "Address",
+							"description": "shipment address",
+							"required": true
 						}
-					]
+					],
+					"name": "logistics_detail",
+					"type": "LogisticsDetail",
+					"description": "Logistics details",
+					"required": true
 				},
 				{
-					"name": "payment_detail",
-					"type": "PaymentDetail",
-					"description": "Payment details",
-					"required": true,
 					"subParams": [
 						{
 							"name": "shipment_fee",
@@ -164,13 +152,13 @@
 							"description": "total amount",
 							"required": true
 						}
-					]
+					],
+					"name": "payment_detail",
+					"type": "PaymentDetail",
+					"description": "Payment details",
+					"required": true
 				},
 				{
-					"name": "product_list",
-					"type": "TradeEcologyOrderCreateProduct[]",
-					"description": "Product list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -195,7 +183,11 @@
 							"description": "unit price",
 							"required": true
 						}
-					]
+					],
+					"name": "product_list",
+					"type": "TradeEcologyOrderCreateProduct[]",
+					"description": "Product list",
+					"required": true
 				},
 				{
 					"name": "properties",
@@ -207,28 +199,34 @@
 					"type": "String",
 					"description": "order remark"
 				}
-			]
+			],
+			"name": "param_order_create_request",
+			"type": "OrderCreateRequest",
+			"description": "Order creation parameter",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "value",
-			"type": "OrderCreateResponse",
-			"description": "Response",
 			"subParams": [
 				{
 					"name": "pay_url",
 					"type": "String",
-					"description": "pay url",
-					"required": true
+					"description": "pay url"
 				},
 				{
 					"name": "trade_id",
 					"type": "String",
-					"description": "order number",
-					"required": true
+					"description": "order number"
 				}
-			]
+			],
+			"name": "value",
+			"type": "OrderCreateResponse",
+			"description": "Response"
 		}
-	]
+	],
+	"name": "alibaba.buynow.order.create",
+	"apiChineseName": "阿里巴巴买家buynow下单接口",
+	"description": "阿里巴巴买家下单接口",
+	"id": 54908
 }

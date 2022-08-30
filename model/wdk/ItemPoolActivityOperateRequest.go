@@ -5,13 +5,15 @@ type ItemPoolActivityOperateRequest struct {
 	// 阶梯分组
 	StairGroups []StairGroupDto `json:"stair_groups,omitempty" xml:"stair_groups>stair_group_dto,omitempty"`
 	// 支持的终端，1：APP,2:POS
-	Terminals []int64 `json:"terminals,omitempty" xml:"terminals>int64,omitempty"`
+	Terminals []string `json:"terminals,omitempty" xml:"terminals>string,omitempty"`
 	// 经营店
 	StoreIds []string `json:"store_ids,omitempty" xml:"store_ids>string,omitempty"`
-	// 限制人群,OLD_USER:老用户，NEW_USER:新用户，LIGHT_NEW_USER：闪购新客
+	// 限制人群,OLD_USER:老用户，NEW_USER:新用户，LIGHT_NEW_USER：闪购新客，MERCHANT_NEW_USER：商家新用户，MERCHANT_OLD_USER：商家老用户
 	MemberCrowdCode []string `json:"member_crowd_code,omitempty" xml:"member_crowd_code>string,omitempty"`
 	// 逻辑分组
 	LogicGroups []LogicGroupDto `json:"logic_groups,omitempty" xml:"logic_groups>logic_group_dto,omitempty"`
+	// 枚举： 2 美团 3 饿了么 26 京东到家 31 翱象淘鲜达 32 翱象共享库存
+	Channels []string `json:"channels,omitempty" xml:"channels>string,omitempty"`
 	// 活动名称，最长15个字符
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// 操作人id
@@ -22,6 +24,8 @@ type ItemPoolActivityOperateRequest struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 外部商家erp活动id
 	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
+	// 扩展信息
+	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 周期配置
 	PeriodicConfig *PeriodicConfigDto `json:"periodic_config,omitempty" xml:"periodic_config,omitempty"`
 	// 限购

@@ -1,12 +1,6 @@
 {
-	"id": 29363,
-	"name": "taobao.qimen.inventoryrule.create",
-	"apiChineseName": "渠道间库存规则设置接口",
-	"description": "渠道间库存规则设置",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "RequestDO",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -14,9 +8,6 @@
 					"description": "奇门仓储字段,C1223,string(50),,"
 				},
 				{
-					"name": "inventoryRules",
-					"type": "InventoryRule[]",
-					"description": "inventoryRules",
 					"subParams": [
 						{
 							"name": "actionType",
@@ -29,9 +20,6 @@
 							"description": "奇门仓储字段,C1223,string(50),,"
 						},
 						{
-							"name": "channelRatioRules",
-							"type": "ChannelRatioRule[]",
-							"description": "channelRatioRules",
 							"subParams": [
 								{
 									"name": "channelCode",
@@ -43,17 +31,23 @@
 									"type": "String",
 									"description": "奇门仓储字段,C1223,string(50),,"
 								}
-							]
+							],
+							"name": "channelRatioRules",
+							"type": "ChannelRatioRule[]",
+							"description": "channelRatioRules"
 						}
-					]
+					],
+					"name": "inventoryRules",
+					"type": "InventoryRule[]",
+					"description": "inventoryRules"
 				}
-			]
+			],
+			"name": "request",
+			"type": "RequestDO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -73,7 +67,13 @@
 					"description": "响应信息,invalid appkey,string(100),,",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.inventoryrule.create",
+	"apiChineseName": "渠道间库存规则设置接口",
+	"description": "渠道间库存规则设置",
+	"id": 29363
 }

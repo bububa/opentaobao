@@ -1,47 +1,38 @@
 {
-	"id": 46137,
-	"name": "alitrip.tuan.hotel.shop.category.get",
-	"apiChineseName": "商家店铺类目查询",
-	"description": "查询商家店铺类目信息",
 	"responseParams": [
 		{
-			"name": "top_root_shop_category_list",
-			"type": "TopRootShopCategoryVoList []",
-			"description": "一级类目列表",
 			"subParams": [
 				{
-					"name": "shop_category_list",
-					"type": "ShopCategoryVoList[]",
-					"description": "二级类目列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "categories_name",
 							"type": "String",
-							"description": "二级类目名称",
-							"required": true
+							"description": "二级类目名称"
 						},
 						{
 							"name": "categories_id",
 							"type": "Number",
-							"description": "二级类目ID",
-							"required": true
+							"description": "二级类目ID"
 						}
-					]
+					],
+					"name": "shop_category_list",
+					"type": "ShopCategoryVoList[]",
+					"description": "二级类目列表"
 				},
 				{
 					"name": "category_name",
 					"type": "String",
-					"description": "一级类目名称",
-					"required": true
+					"description": "一级类目名称"
 				},
 				{
 					"name": "category_id",
 					"type": "Number",
-					"description": "一级类目ID",
-					"required": true
+					"description": "一级类目ID"
 				}
-			]
+			],
+			"name": "top_root_shop_category_list",
+			"type": "TopRootShopCategoryVoList []",
+			"description": "一级类目列表"
 		},
 		{
 			"name": "msg_code",
@@ -58,5 +49,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "alitrip.tuan.hotel.shop.category.get",
+	"apiChineseName": "商家店铺类目查询",
+	"description": "查询商家店铺类目信息",
+	"id": 46137
 }

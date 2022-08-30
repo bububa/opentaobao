@@ -1,8 +1,4 @@
 {
-	"id": 28582,
-	"name": "yunos.tvpubadmin.device.stats",
-	"apiChineseName": "获取设备统计数据",
-	"description": "获取设备统计数据",
 	"requestParams": [
 		{
 			"name": "factory_name",
@@ -19,53 +15,50 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "StatsDeviceInfoDO",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "id",
-					"required": true
+					"description": "id"
 				},
 				{
 					"name": "factory_name",
 					"type": "String",
-					"description": "factoryName",
-					"required": true
+					"description": "factoryName"
 				},
 				{
 					"name": "device_model",
 					"type": "String",
-					"description": "deviceModel",
-					"required": true
+					"description": "deviceModel"
 				},
 				{
 					"name": "user_active_total",
 					"type": "Number",
-					"description": "userActiveTotal",
-					"required": true
+					"description": "userActiveTotal"
 				},
 				{
 					"name": "user_sign_daily",
 					"type": "Number",
-					"description": "userSignDaily",
-					"required": true
+					"description": "userSignDaily"
 				},
 				{
 					"name": "stats_date_str",
 					"type": "String",
-					"description": "statsDateStr",
-					"required": true
+					"description": "statsDateStr"
 				},
 				{
 					"name": "stats_date",
 					"type": "Date",
-					"description": "statsDate",
-					"required": true
+					"description": "statsDate"
 				}
-			]
+			],
+			"name": "object",
+			"type": "StatsDeviceInfoDO",
+			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.stats",
+	"apiChineseName": "获取设备统计数据",
+	"description": "获取设备统计数据",
+	"id": 28582
 }

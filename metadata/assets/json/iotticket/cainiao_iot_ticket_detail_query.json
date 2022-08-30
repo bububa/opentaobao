@@ -1,8 +1,4 @@
 {
-	"id": 50245,
-	"name": "cainiao.iot.ticket.detail.query",
-	"apiChineseName": "IoT售后工单详情查询",
-	"description": "Iot售后工单详情信息查询",
 	"requestParams": [
 		{
 			"name": "sp_code",
@@ -19,275 +15,237 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "customer_address",
 							"type": "String",
-							"description": "客户地址",
-							"required": true
+							"description": "客户地址"
 						},
 						{
-							"name": "images",
-							"type": "Images[]",
-							"description": "图片列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type",
 									"type": "String",
-									"description": "图片类型：service-上门服务图片;cuSendProof-客户邮寄凭证;spSendProof-服务商邮寄凭证;abnormalImage-异常信息;purchaseVoucher-用户购买凭证",
-									"required": true
+									"description": "图片类型：service-上门服务图片;cuSendProof-客户邮寄凭证;spSendProof-服务商邮寄凭证;abnormalImage-异常信息;purchaseVoucher-用户购买凭证"
 								},
 								{
 									"name": "url",
 									"type": "String",
-									"description": "图片url",
-									"required": true
+									"description": "图片url"
 								}
-							]
+							],
+							"name": "images",
+							"type": "Images[]",
+							"description": "图片列表"
 						},
 						{
 							"name": "event_type_desc",
 							"type": "String",
-							"description": "事件类型描述",
-							"required": true
+							"description": "事件类型描述"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "customer_mail_no",
 							"type": "String",
-							"description": "客户寄回设备邮编",
-							"required": true
+							"description": "客户寄回设备邮编"
 						},
 						{
-							"name": "maintenance_info",
-							"type": "MaintenanceInfo",
-							"description": "维修方案信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "maintain_method",
 									"type": "String",
-									"description": "维修方式",
-									"required": true
+									"description": "维修方式"
 								},
 								{
 									"name": "maintain_abilities",
 									"type": "String",
-									"description": "修理方式",
-									"required": true
+									"description": "修理方式"
 								},
 								{
 									"name": "pay_method",
 									"type": "String",
-									"description": "支付方式：payBefore-维修前付费;payAfter-维修后付费;noNeedPay-无需付费",
-									"required": true
+									"description": "支付方式：payBefore-维修前付费;payAfter-维修后付费;noNeedPay-无需付费"
 								},
 								{
 									"name": "other_fee",
 									"type": "String",
-									"description": "其它费用",
-									"required": true
+									"description": "其它费用"
 								},
 								{
 									"name": "fee_remark",
 									"type": "String",
-									"description": "费用描述",
-									"required": true
+									"description": "费用描述"
 								},
 								{
-									"name": "part_item_list",
-									"type": "PartItemList[]",
-									"description": "维修配件信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "item_code",
 											"type": "String",
-											"description": "配件编码",
-											"required": true
+											"description": "配件编码"
 										},
 										{
 											"name": "pay_role",
 											"type": "String",
-											"description": "支付角色：merchant-商家记账；customer-客户付费",
-											"required": true
+											"description": "支付角色：merchant-商家记账；customer-客户付费"
 										}
-									]
+									],
+									"name": "part_item_list",
+									"type": "PartItemList[]",
+									"description": "维修配件信息"
 								},
 								{
 									"name": "warranty_type",
 									"type": "String",
-									"description": "承保类型",
-									"required": true
+									"description": "承保类型"
 								},
 								{
 									"name": "event_type_list",
 									"type": "String[]",
-									"description": "事件类型列表",
-									"required": true
+									"description": "事件类型列表"
 								}
-							]
+							],
+							"name": "maintenance_info",
+							"type": "MaintenanceInfo",
+							"description": "维修方案信息"
 						},
 						{
 							"name": "customer_name",
 							"type": "String",
-							"description": "客户名称",
-							"required": true
+							"description": "客户名称"
 						},
 						{
 							"name": "device_bar_code",
 							"type": "String",
-							"description": "设备bar code",
-							"required": true
+							"description": "设备bar code"
 						},
 						{
 							"name": "device_purchase_date",
 							"type": "String",
-							"description": "购买日期",
-							"required": true
+							"description": "购买日期"
 						},
 						{
 							"name": "customer_phone",
 							"type": "String",
-							"description": "客户联系方式",
-							"required": true
+							"description": "客户联系方式"
 						},
 						{
-							"name": "operate_log_list",
-							"type": "OperateLogList[]",
-							"description": "操作记录",
-							"required": true,
 							"subParams": [
 								{
 									"name": "operate_phone",
 									"type": "String",
-									"description": "操作人联系方式",
-									"required": true
+									"description": "操作人联系方式"
 								},
 								{
 									"name": "operate_time",
 									"type": "Date",
-									"description": "操作时间",
-									"required": true
+									"description": "操作时间"
 								},
 								{
 									"name": "operate_type",
 									"type": "String",
-									"description": "操作类型描述",
-									"required": true
+									"description": "操作类型描述"
 								},
 								{
 									"name": "operate_name",
 									"type": "String",
-									"description": "操作人",
-									"required": true
+									"description": "操作人"
 								},
 								{
 									"name": "remark",
 									"type": "String",
-									"description": "备注信息",
-									"required": true
+									"description": "备注信息"
 								}
-							]
+							],
+							"name": "operate_log_list",
+							"type": "OperateLogList[]",
+							"description": "操作记录"
 						},
 						{
 							"name": "ticket_description",
 							"type": "String",
-							"description": "工单详情描述",
-							"required": true
+							"description": "工单详情描述"
 						},
 						{
 							"name": "sp_mail_no",
 							"type": "String",
-							"description": "服务商设备寄回邮寄编号",
-							"required": true
+							"description": "服务商设备寄回邮寄编号"
 						},
 						{
-							"name": "repairman_info",
-							"type": "RepairmanInfo",
-							"description": "上门人员信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "repairman_id",
 									"type": "String",
-									"description": "上门维修人员编号",
-									"required": true
+									"description": "上门维修人员编号"
 								},
 								{
 									"name": "repairman_name",
 									"type": "String",
-									"description": "上门维修人员名称",
-									"required": true
+									"description": "上门维修人员名称"
 								},
 								{
 									"name": "repairman_phone",
 									"type": "String",
-									"description": "上门维修人员联系方式",
-									"required": true
+									"description": "上门维修人员联系方式"
 								},
 								{
 									"name": "appoint_date",
 									"type": "String",
-									"description": "上门时间",
-									"required": true
+									"description": "上门时间"
 								},
 								{
 									"name": "visit_address",
 									"type": "String",
-									"description": "上门维修地址",
-									"required": true
+									"description": "上门维修地址"
 								}
-							]
+							],
+							"name": "repairman_info",
+							"type": "RepairmanInfo",
+							"description": "上门人员信息"
 						},
 						{
 							"name": "ticket_id",
 							"type": "Number",
-							"description": "工单Id",
-							"required": true
+							"description": "工单Id"
 						},
 						{
 							"name": "status_desc",
 							"type": "String",
-							"description": "服务状态描述：待受理；待发起维修方案；待确认维修方案；维修服务中；待确认完成；待评价；已完结；已撤销",
-							"required": true
+							"description": "服务状态描述：待受理；待发起维修方案；待确认维修方案；维修服务中；待确认完成；待评价；已完结；已撤销"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "结果数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.iot.ticket.detail.query",
+	"apiChineseName": "IoT售后工单详情查询",
+	"description": "Iot售后工单详情信息查询",
+	"id": 50245
 }

@@ -1,0 +1,71 @@
+{
+	"requestParams": [
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "人群标签id",
+			"required": true
+		},
+		{
+			"name": "report_date",
+			"type": "String",
+			"description": "报表日期，支持：月、日，示例：2020-12，2020-12-30",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "alipay_user_num_in_ucrowd",
+							"type": "Number",
+							"description": "人群内成交人数"
+						},
+						{
+							"name": "alipay_user_num",
+							"type": "Number",
+							"description": "支付人数"
+						},
+						{
+							"name": "pre_pub_share_fee",
+							"type": "String",
+							"description": "付款预估收入。指买家付款金额为基数，预估您可能获得的收入。因买家退款等原因，可能与结算预估收入不一致"
+						},
+						{
+							"name": "alipay_amt",
+							"type": "String",
+							"description": "支付金额"
+						},
+						{
+							"name": "alipay_num",
+							"type": "Number",
+							"description": "支付订单数"
+						},
+						{
+							"name": "click_uv_union",
+							"type": "Number",
+							"description": "点击人数"
+						},
+						{
+							"name": "click_pv_union",
+							"type": "Number",
+							"description": "点击数"
+						}
+					],
+					"name": "ucrowd_report",
+					"type": "DwsUnionAppDto",
+					"description": "ucrowd_report"
+				}
+			],
+			"name": "data",
+			"type": "RpcResult",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.ucrowd.report.get",
+	"apiChineseName": "淘宝客-服务商-人群推广效果",
+	"description": "服务商使用。支持淘宝客通过入参人群标签id，获得人群的推广和转化效果数据。",
+	"id": 54135
+}

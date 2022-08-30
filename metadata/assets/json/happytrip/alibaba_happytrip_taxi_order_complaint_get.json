@@ -1,8 +1,4 @@
 {
-	"id": 55977,
-	"name": "alibaba.happytrip.taxi.order.complaint.get",
-	"apiChineseName": "投诉详情",
-	"description": "获取投诉处理进度详情",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -29,9 +25,6 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "data",
-			"type": "Struct",
-			"description": "投诉详情获取结果",
 			"subParams": [
 				{
 					"name": "order_id",
@@ -57,7 +50,14 @@
 					"description": "处理结果",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Struct",
+			"description": "投诉详情获取结果"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.complaint.get",
+	"apiChineseName": "投诉详情",
+	"description": "获取投诉处理进度详情",
+	"id": 55977
 }

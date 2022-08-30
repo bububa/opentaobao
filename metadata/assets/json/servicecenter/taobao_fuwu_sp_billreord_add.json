@@ -1,24 +1,12 @@
 {
-	"id": 25688,
-	"name": "taobao.fuwu.sp.billreord.add",
-	"apiChineseName": "内购服务确认单明细上传接口",
-	"description": "isv能通过该接口上传确认单明细数据",
 	"requestParams": [
 		{
-			"name": "param_bill_record_d_t_o",
-			"type": "BillRecordDto",
-			"description": "确认单的账单明细",
-			"required": true,
 			"subParams": [
 				{
-					"name": "start_date",
-					"type": "Date",
-					"description": "记录产生时间"
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "状态：1成功、2失败"
+					"name": "appkey",
+					"type": "String",
+					"description": "appkey",
+					"required": true
 				},
 				{
 					"name": "extend1",
@@ -31,23 +19,12 @@
 					"description": "备用字段"
 				},
 				{
-					"name": "appkey",
-					"type": "String",
-					"description": "appkey",
-					"required": true
-				},
-				{
-					"name": "extend3",
-					"type": "String",
-					"description": "备用字段"
-				},
-				{
 					"name": "extend2",
 					"type": "String",
 					"description": "备用字段"
 				},
 				{
-					"name": "extend5",
+					"name": "extend3",
 					"type": "String",
 					"description": "备用字段"
 				},
@@ -57,18 +34,7 @@
 					"description": "备用字段"
 				},
 				{
-					"name": "type",
-					"type": "Number",
-					"description": "账单分类：1短信",
-					"required": true
-				},
-				{
-					"name": "target_no",
-					"type": "String",
-					"description": "目标号码"
-				},
-				{
-					"name": "extend7",
+					"name": "extend5",
 					"type": "String",
 					"description": "备用字段"
 				},
@@ -78,14 +44,9 @@
 					"description": "备用字段"
 				},
 				{
-					"name": "extend9",
+					"name": "extend7",
 					"type": "String",
 					"description": "备用字段"
-				},
-				{
-					"name": "out_confirm_id",
-					"type": "String",
-					"description": "外部确认账单ID"
 				},
 				{
 					"name": "extend8",
@@ -93,14 +54,19 @@
 					"description": "备用字段"
 				},
 				{
+					"name": "extend9",
+					"type": "String",
+					"description": "备用字段"
+				},
+				{
 					"name": "fee",
 					"type": "Number",
-					"description": "金额（单位：分）"
+					"description": "金额"
 				},
 				{
 					"name": "nick",
 					"type": "String",
-					"description": "卖家ID",
+					"description": "卖家nick",
 					"required": true
 				},
 				{
@@ -109,11 +75,41 @@
 					"description": "服务市场有效订单ID"
 				},
 				{
+					"name": "out_confirm_id",
+					"type": "String",
+					"description": "外部确认账单ID"
+				},
+				{
 					"name": "out_order_id",
 					"type": "String",
 					"description": "外部订单ID"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "记录产生时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态：1成功、2失败"
+				},
+				{
+					"name": "target_no",
+					"type": "String",
+					"description": "目标号码"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "账单分类：1短信",
+					"required": true
 				}
-			]
+			],
+			"name": "param_bill_record_d_t_o",
+			"type": "BillRecordDto",
+			"description": "确认单的账单明细",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -122,5 +118,9 @@
 			"type": "Boolean",
 			"description": "返回调用结果"
 		}
-	]
+	],
+	"name": "taobao.fuwu.sp.billreord.add",
+	"apiChineseName": "内购服务确认单明细上传接口",
+	"description": "isv能通过该接口上传确认单明细数据",
+	"id": 25688
 }

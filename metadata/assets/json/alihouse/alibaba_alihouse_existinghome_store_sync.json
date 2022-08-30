@@ -1,0 +1,241 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "公司外部ID"
+				},
+				{
+					"name": "outer_company_brand_id",
+					"type": "String",
+					"description": "外部城市品牌ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "店铺名称",
+					"required": true
+				},
+				{
+					"name": "store_name_short",
+					"type": "String",
+					"description": "店铺简称",
+					"required": true
+				},
+				{
+					"name": "store_info",
+					"type": "String",
+					"description": "门店描述"
+				},
+				{
+					"name": "main_user_nick",
+					"type": "String",
+					"description": "经纪人昵称"
+				},
+				{
+					"name": "contact_man",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系电话",
+					"required": true
+				},
+				{
+					"name": "main_phone",
+					"type": "String",
+					"description": "400主号"
+				},
+				{
+					"name": "sub_phone",
+					"type": "String",
+					"description": "400子号"
+				},
+				{
+					"name": "gaode_longitude",
+					"type": "String",
+					"description": "高德经度",
+					"required": true
+				},
+				{
+					"name": "gaode_latitude",
+					"type": "String",
+					"description": "高德纬度",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址",
+					"required": true
+				},
+				{
+					"name": "store_biz_type",
+					"type": "String",
+					"description": "门店开通业务"
+				},
+				{
+					"name": "store_status",
+					"type": "Number",
+					"description": "门店状态"
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 0 - 否 1 - 是"
+				},
+				{
+					"name": "company_license_no",
+					"type": "String",
+					"description": "营业执照编号",
+					"required": true
+				},
+				{
+					"name": "company_legal_person",
+					"type": "String",
+					"description": "企业法定代表人",
+					"required": true
+				},
+				{
+					"name": "company_license_photo",
+					"type": "String",
+					"description": "营业执照图片",
+					"required": true
+				},
+				{
+					"name": "company_license_expire_time",
+					"type": "String",
+					"description": "营业执照有效时间"
+				},
+				{
+					"name": "company_license_status",
+					"type": "Number",
+					"description": "是否长期有效 1-是 0-否"
+				},
+				{
+					"name": "is_small_ka",
+					"type": "Number",
+					"description": "是否是小ka数据 1-是 0-否"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "virtual_type",
+					"type": "Number",
+					"description": "是否为虚拟门店（0-否，在前端展示    1-是，在前端不展示）"
+				},
+				{
+					"name": "company_license_url",
+					"type": "String",
+					"description": "营业执照地址"
+				},
+				{
+					"name": "partake_business",
+					"type": "String",
+					"description": "门店负责业务（0-二手房 1-长租公寓 2-居间模式）"
+				},
+				{
+					"name": "tag_codes",
+					"type": "String",
+					"description": "标准门店标签"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否为测试 0-否 1-是"
+				},
+				{
+					"name": "is_async",
+					"type": "Number",
+					"description": "0-同步，1-异步"
+				},
+				{
+					"name": "batch_number",
+					"type": "String",
+					"description": "批次号"
+				},
+				{
+					"name": "store_icon",
+					"type": "String",
+					"description": "门店图标，有就传，没有会展示默认的兜底图标"
+				},
+				{
+					"name": "store_type",
+					"type": "Number",
+					"description": "门店类型"
+				},
+				{
+					"name": "source_channel",
+					"type": "String",
+					"description": "来源渠道(麦滴、全房通、寓盟、寓小二、趣房、泛慈)"
+				},
+				{
+					"name": "business_level",
+					"type": "Number",
+					"description": "商务等级（0-普通  1-公寓KA）"
+				},
+				{
+					"name": "signing_company_name",
+					"type": "String",
+					"description": "签约公司名称"
+				}
+			],
+			"name": "company_store_dto",
+			"type": "CompanyStoreDto",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.store.sync",
+	"apiChineseName": "二手房标准门店数据同步",
+	"description": "二手房标准门店数据同步",
+	"id": 56810
+}

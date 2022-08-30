@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小，必填，第几页",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "页码，必填，从1开始",
+			"required": true
+		},
+		{
+			"name": "backup_ds",
+			"type": "String",
+			"description": "备份快照版本号（日期格式yyyyMMdd），可选参数，默认不填，则查找最近备份版本数据"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "snapshot_info",
+							"type": "String",
+							"description": "版本拓展信息"
+						},
+						{
+							"name": "grade_name",
+							"type": "String",
+							"description": "等级名称"
+						},
+						{
+							"name": "grade",
+							"type": "Number",
+							"description": "等级编码"
+						},
+						{
+							"name": "ouid",
+							"type": "String",
+							"description": "ouid"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "记录最后修改时间"
+						}
+					],
+					"name": "hsmemberinfo_list",
+					"type": "HsMemberInfoDto[]",
+					"description": "备份会员信息列表"
+				},
+				{
+					"name": "total",
+					"type": "String",
+					"description": "总记录数，分页用"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息，成功时可为空"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码，0：表示查询成功，其他：表示失败"
+				}
+			],
+			"name": "result_dto",
+			"type": "ResultDto",
+			"description": "返回结果对象"
+		}
+	],
+	"name": "taobao.member.hismemberdata.get.privy",
+	"apiChineseName": "会员历史备份数据查询",
+	"description": "会员历史备份数据分页查询，查询内容为等级，会员备份版本，会员nick等信息.",
+	"id": 57857
+}

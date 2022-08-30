@@ -1,13 +1,6 @@
 {
-	"id": 49316,
-	"name": "alibaba.ascp.uop.supplier.consignorder.outofstock.callback",
-	"apiChineseName": "履约单纬度的仓缺货回告服务",
-	"description": "商家仓履约单纬度的仓缺货回告接口",
 	"requestParams": [
 		{
-			"name": "consignorder_outofstock_callback_request",
-			"type": "Consignorderoutofstockcallbackrequest",
-			"description": "缺货回告请求模型",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -28,10 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "out_of_stock_items",
-					"type": "Outofstockitems[]",
-					"description": "缺货明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_order_code",
@@ -50,41 +39,49 @@
 							"description": "货品缺货数量",
 							"required": true
 						}
-					]
+					],
+					"name": "out_of_stock_items",
+					"type": "Outofstockitems[]",
+					"description": "缺货明细",
+					"required": true
 				},
 				{
 					"name": "out_of_stock_reason",
 					"type": "String",
 					"description": "缺货原因"
 				}
-			]
+			],
+			"name": "consignorder_outofstock_callback_request",
+			"type": "Consignorderoutofstockcallbackrequest",
+			"description": "缺货回告请求模型"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "consignorder_outofstock_callback_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "consignorder_outofstock_callback_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.consignorder.outofstock.callback",
+	"apiChineseName": "履约单纬度的仓缺货回告服务",
+	"description": "商家仓履约单纬度的仓缺货回告接口",
+	"id": 49316
 }

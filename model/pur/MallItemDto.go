@@ -2,6 +2,8 @@ package pur
 
 // MallItemDto 结构体
 type MallItemDto struct {
+	// 合同单号
+	ContractCode string `json:"contract_code,omitempty" xml:"contract_code,omitempty"`
 	// 币种
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
 	// 商品预览图
@@ -26,8 +28,6 @@ type MallItemDto struct {
 	UnitPrice string `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
 	// 计价单位
 	Uom string `json:"uom,omitempty" xml:"uom,omitempty"`
-	// 合同单号
-	ContractCode string `json:"contract_code,omitempty" xml:"contract_code,omitempty"`
 	// 产品详情链接
 	ItemUrl string `json:"item_url,omitempty" xml:"item_url,omitempty"`
 	// 数量

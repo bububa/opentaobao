@@ -1,13 +1,6 @@
 {
-	"id": 45023,
-	"name": "alibaba.alihealth.outflow.diagnosis.saveorupdate",
-	"apiChineseName": "处方外流-诊断字典表",
-	"description": "阿里健康-处方外流-对外提供诊断字典表维护功能",
 	"requestParams": [
 		{
-			"name": "diagnose_dict_dto",
-			"type": "DiagnoseDictDto",
-			"description": "诊断数据",
 			"subParams": [
 				{
 					"name": "icd_code",
@@ -39,40 +32,43 @@
 					"type": "String",
 					"description": "渠道(非空)"
 				}
-			]
+			],
+			"name": "diagnose_dict_dto",
+			"type": "DiagnoseDictDto",
+			"description": "诊断数据"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "ServiceResult",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "标识",
-					"required": true
+					"description": "标识"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.diagnosis.saveorupdate",
+	"apiChineseName": "处方外流-诊断字典表",
+	"description": "阿里健康-处方外流-对外提供诊断字典表维护功能",
+	"id": 45023
 }

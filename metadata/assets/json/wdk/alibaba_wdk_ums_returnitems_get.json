@@ -1,8 +1,4 @@
 {
-	"id": 30632,
-	"name": "alibaba.wdk.ums.returnitems.get",
-	"apiChineseName": "退货库位商品查询（退货出库辅助）-回流单",
-	"description": "退货库位商品查询（退货出库辅助）-回流单",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -13,15 +9,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "reslut",
 			"subParams": [
 				{
-					"name": "list",
-					"type": "ErpReturnItemDto[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "count",
@@ -47,7 +36,11 @@
 							"description": "warehouseCode",
 							"required": true
 						}
-					]
+					],
+					"name": "list",
+					"type": "ErpReturnItemDto[]",
+					"description": "list",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -67,7 +60,14 @@
 					"description": "code",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "reslut"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.returnitems.get",
+	"apiChineseName": "退货库位商品查询（退货出库辅助）-回流单",
+	"description": "退货库位商品查询（退货出库辅助）-回流单",
+	"id": 30632
 }

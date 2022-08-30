@@ -1,0 +1,264 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "head",
+					"type": "String",
+					"description": "头像",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否是测试数据",
+					"required": true
+				},
+				{
+					"name": "outer_review_id",
+					"type": "String",
+					"description": "外部测评id",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "String",
+					"description": "发布时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "defect",
+					"type": "String",
+					"description": "项目不足"
+				},
+				{
+					"name": "lights",
+					"type": "String",
+					"description": "项目亮点",
+					"required": true
+				},
+				{
+					"name": "public_traffic",
+					"type": "String",
+					"description": "公共交通",
+					"required": true
+				},
+				{
+					"name": "model_house",
+					"type": "String",
+					"description": "样板房细节"
+				},
+				{
+					"name": "house_type_analysis",
+					"type": "String",
+					"description": "户型分析描述",
+					"required": true
+				},
+				{
+					"name": "potential_price",
+					"type": "String",
+					"description": "价格潜力",
+					"required": true
+				},
+				{
+					"name": "now_price",
+					"type": "String",
+					"description": "价格现状",
+					"required": true
+				},
+				{
+					"name": "other_source",
+					"type": "String",
+					"description": "其他配套",
+					"required": true
+				},
+				{
+					"name": "medical_source",
+					"type": "String",
+					"description": "医疗配套",
+					"required": true
+				},
+				{
+					"name": "edu_source",
+					"type": "String",
+					"description": "教育配套"
+				},
+				{
+					"name": "main_road",
+					"type": "String",
+					"description": "自驾道路",
+					"required": true
+				},
+				{
+					"name": "subway_desc",
+					"type": "String",
+					"description": "轨道交通"
+				},
+				{
+					"name": "block_desc",
+					"type": "String",
+					"description": "板块描述",
+					"required": true
+				},
+				{
+					"name": "district_desc",
+					"type": "String",
+					"description": "区域描述",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "custom_source",
+					"type": "String",
+					"description": "自定义配套"
+				},
+				{
+					"name": "live_source_desc",
+					"type": "String",
+					"description": "生活配套描述",
+					"required": true
+				},
+				{
+					"name": "traffic_travel_desc",
+					"type": "String",
+					"description": "交通出行描述",
+					"required": true
+				},
+				{
+					"name": "product_feature",
+					"type": "String",
+					"description": "产品特色",
+					"required": true
+				},
+				{
+					"name": "product_feature_desc",
+					"type": "String",
+					"description": "产品特色描述",
+					"required": true
+				},
+				{
+					"name": "district_block_desc",
+					"type": "String",
+					"description": "区域板块描述",
+					"required": true
+				},
+				{
+					"name": "suitable_people",
+					"type": "String",
+					"description": "适合人群",
+					"required": true
+				},
+				{
+					"name": "project_desc",
+					"type": "String",
+					"description": "项目描述",
+					"required": true
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "昵称"
+				},
+				{
+					"name": "describe",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "outer_video_id",
+					"type": "Number",
+					"description": "外部视频id"
+				},
+				{
+					"name": "house_multiple",
+					"type": "String",
+					"description": "户型需要支持多组（1-5组）",
+					"required": true
+				},
+				{
+					"name": "price_trend",
+					"type": "Number",
+					"description": "是否展示价格走势模块开关",
+					"required": true
+				},
+				{
+					"name": "price_desc",
+					"type": "String",
+					"description": "价格描述",
+					"required": true
+				},
+				{
+					"name": "park_source",
+					"type": "String",
+					"description": "公园配套"
+				},
+				{
+					"name": "unique_id",
+					"type": "Number",
+					"description": "唯一id",
+					"required": true
+				}
+			],
+			"name": "sync_project_new_review_draft_dto",
+			"type": "SyncProjectNewReviewDraftDto",
+			"description": "测评数据实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.new.review.sync",
+	"apiChineseName": "新测评基础信息接口",
+	"description": "新测评基础信息接口",
+	"id": 58136
+}

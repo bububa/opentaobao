@@ -1,8 +1,4 @@
 {
-	"id": 38651,
-	"name": "alibaba.alisports.passport.account.checkmobile",
-	"apiChineseName": "阿里体育会员系统--手机号验证接口",
-	"description": "验证三方用户的手机号，获取对应的阿里体育会员id",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -62,9 +58,6 @@
 			"description": "alisp_code"
 		},
 		{
-			"name": "alisp_data",
-			"type": "AlispData",
-			"description": "alisp_data",
 			"subParams": [
 				{
 					"name": "sso_token",
@@ -90,7 +83,14 @@
 					"description": "access_token",
 					"required": true
 				}
-			]
+			],
+			"name": "alisp_data",
+			"type": "AlispData",
+			"description": "alisp_data"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.checkmobile",
+	"apiChineseName": "阿里体育会员系统--手机号验证接口",
+	"description": "验证三方用户的手机号，获取对应的阿里体育会员id",
+	"id": 38651
 }

@@ -1,12 +1,6 @@
 {
-	"id": 24691,
-	"name": "taobao.qimen.entryorder.query",
-	"apiChineseName": "入库单查询接口",
-	"description": "ERP调用接口，查询入库单信息;",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "EntryOrderQueryRequest",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -51,13 +45,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "EntryOrderQueryRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "EntryOrderQueryResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -84,10 +78,6 @@
 					"required": true
 				},
 				{
-					"name": "entryOrder",
-					"type": "EntryOrder",
-					"description": "入库单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "entryOrderCode",
@@ -131,13 +121,13 @@
 							"description": "操作时间(YYYY-MM-DD HH:MM:SS;当status=FULFILLED;operateTime为入库时间)",
 							"required": true
 						}
-					]
+					],
+					"name": "entryOrder",
+					"type": "EntryOrder",
+					"description": "入库单信息",
+					"required": true
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "入库单单据信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -211,9 +201,19 @@
 							"description": "备注",
 							"required": true
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "入库单单据信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "EntryOrderQueryResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.entryorder.query",
+	"apiChineseName": "入库单查询接口",
+	"description": "ERP调用接口，查询入库单信息;",
+	"id": 24691
 }

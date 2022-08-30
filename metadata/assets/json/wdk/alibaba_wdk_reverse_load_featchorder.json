@@ -1,0 +1,116 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "fetch_order_id",
+					"type": "String",
+					"description": "取货单id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "main_out_order_id",
+					"type": "String",
+					"description": "主单号",
+					"required": true
+				}
+			],
+			"name": "param_load_fetch_req",
+			"type": "LoadFetchReq",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "fetch_order_id",
+							"type": "String",
+							"description": "退货取货单ID"
+						},
+						{
+							"subParams": [
+								{
+									"name": "main_out_order_id",
+									"type": "String",
+									"description": "主单号"
+								},
+								{
+									"name": "sub_out_order_id",
+									"type": "String",
+									"description": "子单号"
+								},
+								{
+									"name": "expect_fetch_quantity",
+									"type": "String",
+									"description": "期望取货数量"
+								},
+								{
+									"name": "actual_fetch_quantity",
+									"type": "String",
+									"description": "时间取货数量"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态"
+								},
+								{
+									"name": "fetch_end_time",
+									"type": "String",
+									"description": "取货结束时间"
+								},
+								{
+									"name": "expect_refund_quantity",
+									"type": "String",
+									"description": "期望退款数量"
+								},
+								{
+									"name": "fetch_type",
+									"type": "Number",
+									"description": "取货类型"
+								}
+							],
+							"name": "fetch_aggregates",
+							"type": "FetchAggregateSdo[]",
+							"description": "取货单list"
+						}
+					],
+					"name": "model",
+					"type": "LoadFetchResponse",
+					"description": "model"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				}
+			],
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "ReverseResult"
+		}
+	],
+	"name": "alibaba.wdk.reverse.load.featchorder",
+	"apiChineseName": "取货详情",
+	"description": "取货详情",
+	"id": 56526
+}

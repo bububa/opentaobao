@@ -1,13 +1,10 @@
 {
-	"id": 25796,
-	"name": "alibaba.einvoice.create.result.get",
-	"apiChineseName": "ERP开票结果获取",
-	"description": "ERP开票结果获取",
 	"requestParams": [
 		{
-			"name": "serial_no",
+			"name": "payee_register_no",
 			"type": "String",
-			"description": "流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高"
+			"description": "收款方税务登记证号",
+			"required": true
 		},
 		{
 			"name": "platform_code",
@@ -20,10 +17,9 @@
 			"description": "电商平台对应的订单号"
 		},
 		{
-			"name": "payee_register_no",
+			"name": "serial_no",
 			"type": "String",
-			"description": "收款方税务登记证号",
-			"required": true
+			"description": "流水号 (serial_no)和(platform_code,platform_tid)必须填写其中一组,serial_no优先级更高"
 		},
 		{
 			"name": "out_shop_name",
@@ -33,289 +29,247 @@
 	],
 	"responseParams": [
 		{
-			"name": "invoice_result_list",
-			"type": "InvoiceResult []",
-			"description": "开票返回结果数据列表",
 			"subParams": [
 				{
-					"name": "invoice_date",
+					"name": "anti_fake_code",
 					"type": "String",
-					"description": "开票日期",
-					"required": true
-				},
-				{
-					"name": "platform_code",
-					"type": "String",
-					"description": "电商平台代码。淘宝：taobao，天猫：tmall",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)",
-					"required": true
-				},
-				{
-					"name": "file_path",
-					"type": "String",
-					"description": "发票PDF的下载地址(仅在单个查询接口上显示，批量查询不显示)",
-					"required": true
-				},
-				{
-					"name": "invoice_amount",
-					"type": "String",
-					"description": "开票金额",
-					"required": true
+					"description": "防伪码"
 				},
 				{
 					"name": "ciphertext",
 					"type": "String",
-					"description": "发票密文，密码区的字符串",
-					"required": true
-				},
-				{
-					"name": "erp_tid",
-					"type": "String",
-					"description": "erp自定义单据号",
-					"required": true
-				},
-				{
-					"name": "file_data_type",
-					"type": "String",
-					"description": "文件类型(pdf,jpg,png)",
-					"required": true
-				},
-				{
-					"name": "invoice_no",
-					"type": "String",
-					"description": "发票号码",
-					"required": true
-				},
-				{
-					"name": "serial_no",
-					"type": "String",
-					"description": "开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。",
-					"required": true
-				},
-				{
-					"name": "anti_fake_code",
-					"type": "String",
-					"description": "防伪码",
-					"required": true
+					"description": "发票密文，密码区的字符串"
 				},
 				{
 					"name": "device_no",
 					"type": "String",
-					"description": "税控设备编号(新版电子发票有)",
-					"required": true
+					"description": "税控设备编号(新版电子发票有)"
+				},
+				{
+					"name": "erp_tid",
+					"type": "String",
+					"description": "erp自定义单据号"
+				},
+				{
+					"name": "file_data_type",
+					"type": "String",
+					"description": "文件类型(pdf,jpg,png)"
+				},
+				{
+					"name": "file_path",
+					"type": "String",
+					"description": "发票PDF的下载地址(仅在单个查询接口上显示，批量查询不显示)"
+				},
+				{
+					"name": "invoice_amount",
+					"type": "String",
+					"description": "开票金额"
 				},
 				{
 					"name": "invoice_code",
 					"type": "String",
-					"description": "发票代码",
-					"required": true
+					"description": "发票代码"
+				},
+				{
+					"name": "invoice_date",
+					"type": "String",
+					"description": "开票日期"
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票号码"
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "电商平台代码。淘宝：taobao，天猫：tmall"
 				},
 				{
 					"name": "platform_tid",
 					"type": "String",
-					"description": "电商平台订单号",
-					"required": true
+					"description": "电商平台订单号"
 				},
 				{
-					"name": "biz_error_msg",
+					"name": "serial_no",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)"
 				},
 				{
 					"name": "biz_error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "invoice_items",
-					"type": "InvoiceItem[]",
-					"description": "电子发票明细，erp开票默认不返回，如果erp需要获取阿里发票平台自动开票的结果，需要先找阿里小二开通权限",
-					"required": true,
+					"name": "biz_error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
 					"subParams": [
 						{
 							"name": "unit",
 							"type": "String",
-							"description": "单位",
-							"required": true
+							"description": "单位"
 						},
 						{
 							"name": "sum_price",
 							"type": "String",
-							"description": "总价，格式：100.00(不含税)",
-							"required": true
+							"description": "总价，格式：100.00(不含税)"
 						},
 						{
 							"name": "tax",
 							"type": "String",
-							"description": "税额",
-							"required": true
+							"description": "税额"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "单价，格式：100.00(不含税)",
-							"required": true
+							"description": "单价，格式：100.00(不含税)"
 						},
 						{
 							"name": "item_no",
 							"type": "String",
-							"description": "税收分类编码",
-							"required": true
+							"description": "税收分类编码"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "发票项目名称（或商品名称）",
-							"required": true
+							"description": "发票项目名称（或商品名称）"
 						},
 						{
 							"name": "specification",
 							"type": "String",
-							"description": "规格型号,可选",
-							"required": true
+							"description": "规格型号,可选"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "tax_rate",
 							"type": "String",
-							"description": "税率。税率只能为0或0.03或0.04或0.06或0.11或0.13或0.17",
-							"required": true
+							"description": "税率。税率只能为0或0.03或0.04或0.06或0.11或0.13或0.17"
 						},
 						{
 							"name": "row_type",
 							"type": "String",
-							"description": "发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0",
-							"required": true
+							"description": "发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "价税合计。(等于sumPrice和tax之和)",
-							"required": true
+							"description": "价税合计。(等于sumPrice和tax之和)"
 						},
 						{
 							"name": "zero_rate_flag",
 							"type": "String",
-							"description": "0税率标识，0=出口零税率，1=免税，2=不征收，3=普通零税率",
-							"required": true
+							"description": "0税率标识，0=出口零税率，1=免税，2=不征收，3=普通零税率"
 						},
 						{
 							"name": "outer_id",
 							"type": "String",
-							"description": "商品的外部系统id，如果有sku则取sku的outerId，否则取item的outerId，，阿里发票平台自动开票时才有",
-							"required": true
+							"description": "商品的外部系统id，如果有sku则取sku的outerId，否则取item的outerId，，阿里发票平台自动开票时才有"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "淘宝子订单号，阿里发票平台自动开票时才有",
-							"required": true
+							"description": "淘宝子订单号，阿里发票平台自动开票时才有"
 						},
 						{
 							"name": "is_post_fee_row",
 							"type": "Boolean",
-							"description": "是否为运费行，，阿里发票平台自动开票时才有",
-							"required": true
+							"description": "是否为运费行，，阿里发票平台自动开票时才有"
 						}
-					]
+					],
+					"name": "invoice_items",
+					"type": "InvoiceItem[]",
+					"description": "电子发票明细，erp开票默认不返回，如果erp需要获取阿里发票平台自动开票的结果，需要先找阿里小二开通权限"
 				},
 				{
 					"name": "invoice_type",
 					"type": "String",
-					"description": "发票类型，blue=蓝票，red=红票",
-					"required": true
+					"description": "发票类型，blue=蓝票，red=红票"
 				},
 				{
 					"name": "invoice_kind",
 					"type": "Number",
-					"description": "发票种类，0=电子发票，1=纸质发票，2=纸质专票",
-					"required": true
+					"description": "发票种类，0=电子发票，1=纸质发票，2=纸质专票"
 				},
 				{
 					"name": "normal_invoice_code",
 					"type": "String",
-					"description": "原蓝票发票代码，invoiceType=red时有值",
-					"required": true
+					"description": "原蓝票发票代码，invoiceType=red时有值"
 				},
 				{
 					"name": "normal_invoice_no",
 					"type": "String",
-					"description": "原蓝票发票号码，invoiceType=red时有值",
-					"required": true
+					"description": "原蓝票发票号码，invoiceType=red时有值"
 				},
 				{
 					"name": "payee_operator",
 					"type": "String",
-					"description": "开票人，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "开票人，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payee_receiver",
 					"type": "String",
-					"description": "收款人，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "收款人，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payee_checker",
 					"type": "String",
-					"description": "复核人，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "复核人，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payer_name",
 					"type": "String",
-					"description": "购买方抬头，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "购买方抬头，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payer_register_no",
 					"type": "String",
-					"description": "购买方税号，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "购买方税号，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payer_phone",
 					"type": "String",
-					"description": "购买方企业电话，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "购买方企业电话，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payer_address",
 					"type": "String",
-					"description": "购买方企业地址，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "购买方企业地址，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payer_bankaccount",
 					"type": "String",
-					"description": "购买方企业银行及账号，erp开票不返回，用来erp获取自动开票结果",
-					"required": true
+					"description": "购买方企业银行及账号，erp开票不返回，用来erp获取自动开票结果"
 				},
 				{
 					"name": "payee_register_no",
 					"type": "String",
-					"description": "销售方税号",
-					"required": true
+					"description": "销售方税号"
 				},
 				{
 					"name": "invoice_time",
 					"type": "String",
-					"description": "开票时间，时分秒格式（注意：2019-04-11之后开具的发票才返回）",
-					"required": true
+					"description": "开票时间，时分秒格式（注意：2019-04-11之后开具的发票才返回）"
 				}
-			]
+			],
+			"name": "invoice_result_list",
+			"type": "InvoiceResult []",
+			"description": "开票返回结果数据列表"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.create.result.get",
+	"apiChineseName": "ERP开票结果获取",
+	"description": "ERP开票结果获取",
+	"id": 25796
 }

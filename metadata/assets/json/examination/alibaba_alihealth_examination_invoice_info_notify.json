@@ -1,9 +1,11 @@
 {
-	"id": 53994,
-	"name": "alibaba.alihealth.examination.invoice.info.notify",
-	"apiChineseName": "体检机构同步发票信息给阿里健康",
-	"description": "体检机构向阿里健康同步发票信息",
 	"requestParams": [
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约凭证",
+			"required": true
+		},
 		{
 			"name": "invoice_status",
 			"type": "String",
@@ -13,65 +15,56 @@
 			"name": "invoice_url",
 			"type": "String",
 			"description": "发票访问地址；（invoice_status在已开票状态下必填）"
-		},
-		{
-			"name": "reserve_number",
-			"type": "String",
-			"description": "阿里健康预约凭证",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "eagle_eye_trace_id",
 					"type": "String",
-					"description": "鹰眼id",
-					"required": true
+					"description": "鹰眼id"
 				},
 				{
-					"name": "data",
-					"type": "ReserveStatusResultResponse",
-					"description": "返回数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "response_code",
 							"type": "String",
-							"description": "业务响应code",
-							"required": true
+							"description": "业务响应code"
 						},
 						{
 							"name": "msg",
 							"type": "String",
-							"description": "正文",
-							"required": true
+							"description": "正文"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ReserveStatusResultResponse",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "系统错误码",
-					"required": true
+					"description": "系统错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "系统错误信息",
-					"required": true
+					"description": "系统错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.invoice.info.notify",
+	"apiChineseName": "体检机构同步发票信息给阿里健康",
+	"description": "体检机构向阿里健康同步发票信息",
+	"id": 53994
 }

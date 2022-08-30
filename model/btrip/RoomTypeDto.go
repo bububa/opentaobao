@@ -16,6 +16,8 @@ type RoomTypeDto struct {
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// 窗型
 	WindowType string `json:"window_type,omitempty" xml:"window_type,omitempty"`
+	// 房型名称
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 最大入住人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
 	// 酒店Id

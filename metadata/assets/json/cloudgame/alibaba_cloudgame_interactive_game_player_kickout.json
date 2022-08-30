@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id"
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间id"
+				},
+				{
+					"name": "kick_out_user_id",
+					"type": "String",
+					"description": "踢出用户id",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token"
+				}
+			],
+			"name": "kick_out_user_request",
+			"type": "KickOutUserRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "mix_game_id",
+									"type": "String",
+									"description": "游戏id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "游戏名称"
+								},
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "创建者id"
+								},
+								{
+									"name": "total_player_num",
+									"type": "Number",
+									"description": "游戏总人数"
+								},
+								{
+									"name": "player_num",
+									"type": "Number",
+									"description": "游戏当前人数"
+								}
+							],
+							"name": "game",
+							"type": "OpenGameDTO",
+							"description": "游戏详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "玩家id"
+								},
+								{
+									"name": "player_index",
+									"type": "String",
+									"description": "位置索引"
+								}
+							],
+							"name": "player_list",
+							"type": "OpenGameDTO[]",
+							"description": "玩家列表"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间id"
+						}
+					],
+					"name": "data",
+					"type": "JoinCodeAssignResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.player.kickout",
+	"apiChineseName": "踢人",
+	"description": "踢人",
+	"id": 62214
+}

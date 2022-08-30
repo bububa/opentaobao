@@ -1,14 +1,6 @@
 {
-	"id": 41997,
-	"name": "alibaba.wdk.marketing.open.version.apply",
-	"apiChineseName": "数据同步版本号申请",
-	"description": "数据同步版本号申请",
 	"requestParams": [
 		{
-			"name": "sync_version",
-			"type": "SyncVersionBo",
-			"description": "同步版本信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "out_unique_id",
@@ -52,48 +44,51 @@
 					"description": "WDK_MARKET--营销数据",
 					"required": true
 				}
-			]
+			],
+			"name": "sync_version",
+			"type": "SyncVersionBo",
+			"description": "同步版本信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "版本号申请结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "发布结果",
-					"required": true
+					"description": "发布结果"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
-					"name": "data",
-					"type": "SyncVersionBo",
-					"description": "版本信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "version_id",
 							"type": "Number",
-							"description": "版本号",
-							"required": true
+							"description": "版本号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SyncVersionBo",
+					"description": "版本信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "版本号申请结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.version.apply",
+	"apiChineseName": "数据同步版本号申请",
+	"description": "数据同步版本号申请",
+	"id": 41997
 }

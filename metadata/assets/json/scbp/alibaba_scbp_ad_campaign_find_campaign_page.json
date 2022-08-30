@@ -1,14 +1,25 @@
 {
-	"id": 55181,
-	"name": "alibaba.scbp.ad.campaign.find.campaign.page",
-	"apiChineseName": "分页查询计划",
-	"description": "分页查询计划",
 	"requestParams": [
 		{
-			"name": "campaign_query",
-			"type": "CampaignQueryDto",
-			"description": "请求实体类",
-			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "title",
@@ -32,23 +43,13 @@
 				},
 				{
 					"name": "type_list",
-					"type": "Number[]",
-					"description": "计划类型列表"
-				},
-				{
-					"name": "sub_type_list",
 					"type": "String[]",
-					"description": "计划子类型列表"
+					"description": "计划类型列表"
 				},
 				{
 					"name": "cate_id",
 					"type": "Number",
 					"description": "类目id"
-				},
-				{
-					"name": "pkg_cfg_id_list",
-					"type": "Number[]",
-					"description": "方案包配置id列表"
 				},
 				{
 					"name": "page",
@@ -60,26 +61,11 @@
 					"type": "Number",
 					"description": "每页数量"
 				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id"
-				}
-			]
+			],
+			"name": "campaign_query",
+			"type": "CampaignQueryDto",
+			"description": "请求实体类",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -89,131 +75,145 @@
 			"description": "总数量"
 		},
 		{
-			"name": "result_list",
-			"type": "CampaignDto []",
-			"description": "返回数据",
 			"subParams": [
 				{
 					"name": "title",
 					"type": "String",
-					"description": "计划标题",
-					"required": true
+					"description": "计划标题"
 				},
 				{
 					"name": "start_time",
 					"type": "Date",
-					"description": "计划开始时间",
-					"required": true
+					"description": "计划开始时间"
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "计划结束时间",
-					"required": true
+					"description": "计划结束时间"
 				},
 				{
 					"name": "online_status",
 					"type": "Number",
-					"description": "用户上下线",
-					"required": true
+					"description": "用户上下线"
 				},
 				{
 					"name": "settle_status",
 					"type": "Number",
-					"description": "结算上下线",
-					"required": true
+					"description": "结算上下线"
 				},
 				{
 					"name": "settle_reason",
 					"type": "String",
-					"description": "结算上下线原因",
-					"required": true
+					"description": "结算上下线原因"
 				},
 				{
 					"name": "settle_time",
 					"type": "Date",
-					"description": "settleTime",
-					"required": true
+					"description": "settleTime"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "计划类型",
-					"required": true
+					"description": "计划类型"
 				},
 				{
 					"name": "campaign_model",
 					"type": "Number",
-					"description": "计划模型",
-					"required": true
+					"description": "计划模型"
 				},
 				{
 					"name": "top_time",
 					"type": "Date",
-					"description": "置顶时间",
-					"required": true
+					"description": "置顶时间"
 				},
 				{
 					"name": "settle_version",
 					"type": "Number",
-					"description": "结算版本",
-					"required": true
+					"description": "结算版本"
 				},
 				{
 					"name": "scene_id",
 					"type": "Number",
-					"description": "场景ID",
-					"required": true
+					"description": "场景ID"
 				},
 				{
 					"name": "properties",
-					"type": "Json",
-					"description": "Campaign扩展属性",
-					"required": true
+					"type": "String",
+					"description": "Campaign扩展属性"
 				},
 				{
 					"name": "product_line_id",
 					"type": "Number",
-					"description": "产品线id",
-					"required": true
+					"description": "产品线id"
 				},
 				{
 					"name": "member_id",
 					"type": "Number",
-					"description": "广告用户ID",
-					"required": true
+					"description": "广告用户ID"
 				},
 				{
 					"name": "cust_id",
 					"type": "Number",
-					"description": "客户ID",
-					"required": true
+					"description": "客户ID"
 				},
 				{
 					"name": "biz_number",
 					"type": "Number",
-					"description": "业务流水号",
-					"required": true
+					"description": "业务流水号"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "实体主键",
-					"required": true
+					"description": "实体主键"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "计划创建时间",
-					"required": true
+					"description": "计划创建时间"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "计划修改时间",
-					"required": true
+					"description": "计划修改时间"
+				},
+				{
+					"name": "sub_type",
+					"type": "String",
+					"description": "计划子类型"
+				},
+				{
+					"name": "week_budget_status",
+					"type": "String",
+					"description": "周预算状态 on:开启 off:关闭"
+				},
+				{
+					"name": "bid_type",
+					"type": "Number",
+					"description": "出价模式 value =1 为智能出价 value =2 为手动出价"
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "最低价格"
+				},
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "最大价格"
+				},
+				{
+					"name": "budget",
+					"type": "String",
+					"description": "预算"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "CampaignDto []",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.campaign.find.campaign.page",
+	"apiChineseName": "分页查询计划",
+	"description": "分页查询计划",
+	"id": 55181
 }

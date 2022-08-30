@@ -1,8 +1,4 @@
 {
-	"id": 33221,
-	"name": "taobao.openuid.get.bytrade",
-	"apiChineseName": "通过订单获取对应买家的openUID",
-	"description": "通过订单获取对应买家的openUID,需要卖家授权",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "当前交易tid对应买家的openuid"
 		}
-	]
+	],
+	"name": "taobao.openuid.get.bytrade",
+	"apiChineseName": "通过订单获取对应买家的openUID",
+	"description": "通过订单获取对应买家的openUID,需要卖家授权",
+	"id": 33221
 }

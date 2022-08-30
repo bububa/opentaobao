@@ -1,8 +1,4 @@
 {
-	"id": 32945,
-	"name": "alibaba.lst.pos.open.account.checkissettled",
-	"apiChineseName": "校验当前用户是否入驻了零售通门店接口",
-	"description": "校验当前用户是否入驻了零售通门店接口",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -13,35 +9,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息描述",
-					"required": true
+					"description": "错误信息描述"
 				},
 				{
 					"name": "module",
-					"type": "Json",
-					"description": "接口具体返回的业务数据对象",
-					"required": true
+					"type": "String",
+					"description": "接口具体返回的业务数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "业务错误码",
-					"required": true
+					"description": "业务错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "alibaba.lst.pos.open.account.checkissettled",
+	"apiChineseName": "校验当前用户是否入驻了零售通门店接口",
+	"description": "校验当前用户是否入驻了零售通门店接口",
+	"id": 32945
 }

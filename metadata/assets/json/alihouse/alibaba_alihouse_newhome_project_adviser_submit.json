@@ -1,14 +1,6 @@
 {
-	"id": 55922,
-	"name": "alibaba.alihouse.newhome.project.adviser.submit",
-	"apiChineseName": "提交楼盘顾问",
-	"description": "提交楼盘顾问",
 	"requestParams": [
 		{
-			"name": "advisers",
-			"type": "ProjectAdviserDto[]",
-			"description": "顾问列表",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "sort",
@@ -91,49 +83,83 @@
 					"description": "类型 1-置业顾问 2-小区专家 3-经纪人"
 				},
 				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "顾问id"
+				},
+				{
 					"name": "outer_id",
 					"type": "String",
 					"description": "外部楼盘ID"
 				},
 				{
-					"name": "outer_consultant_id",
+					"name": "receive_model",
+					"type": "Number",
+					"description": "接待模式，2 - 接待模式2.0，3 - 接待模式3.0"
+				},
+				{
+					"name": "audit_status",
+					"type": "Number",
+					"description": "审批状态"
+				},
+				{
+					"name": "is_receive_customer",
+					"type": "Number",
+					"description": "是否可接待客户，1 - 是，0 - 否，接待模式3.0时，此字段必填。"
+				},
+				{
+					"name": "audit_reason",
 					"type": "String",
-					"description": "顾问id"
+					"description": "审核通过或驳回原因"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0-非测试 1-测试"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "请求时间戳，精确到毫秒"
 				}
-			]
+			],
+			"name": "advisers",
+			"type": "ProjectAdviserDto[]",
+			"description": "顾问列表",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回素材id",
-					"required": true
+					"description": "操作结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.project.adviser.submit",
+	"apiChineseName": "提交楼盘顾问",
+	"description": "提交楼盘顾问",
+	"id": 55922
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42759,
-	"name": "alibaba.mj.oc.bigpos.banksale.adjustment.apply",
-	"apiChineseName": "大pos银行卡调账申请",
-	"description": "大pos银行卡调账申请",
 	"requestParams": [
 		{
 			"name": "store_no",
@@ -34,5 +30,9 @@
 			"type": "String",
 			"description": "调账收银机号"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.bigpos.banksale.adjustment.apply",
+	"apiChineseName": "大pos银行卡调账申请",
+	"description": "大pos银行卡调账申请",
+	"id": 42759
 }

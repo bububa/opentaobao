@@ -276,6 +276,24 @@ type Order struct {
 	ExpandCardExpandPriceUsedSuborder string `json:"expand_card_expand_price_used_suborder,omitempty" xml:"expand_card_expand_price_used_suborder,omitempty"`
 	// 购物金核销子订单本金分摊金额（单位为分）
 	ExpandCardBasicPriceUsedSuborder string `json:"expand_card_basic_price_used_suborder,omitempty" xml:"expand_card_basic_price_used_suborder,omitempty"`
+	// 卖家展示昵称
+	SellerDisplayNick string `json:"seller_display_nick,omitempty" xml:"seller_display_nick,omitempty"`
+	// 买家展示昵称
+	BuyerDisplayNick string `json:"buyer_display_nick,omitempty" xml:"buyer_display_nick,omitempty"`
+	// 预售订单立减金额
+	Lijian string `json:"lijian,omitempty" xml:"lijian,omitempty"`
+	// 优仓业务场景下 1（自动流转）/0（非自动流转）
+	AutoFlow string `json:"auto_flow,omitempty" xml:"auto_flow,omitempty"`
+	// 订单是有代发订单，为空表示该订单暂无代发单据，distribute-该子订单有已分配代发单据，cancel-订单的代发单据都已取消，
+	DistributeStatus string `json:"distribute_status,omitempty" xml:"distribute_status,omitempty"`
+	// 承诺/最晚揽收时间
+	ProCt string `json:"pro_ct,omitempty" xml:"pro_ct,omitempty"`
+	// 赠品关联的id，主品订单下此字段表示赠品订单id，赠品订单表示主品订单id
+	GiftMids string `json:"gift_mids,omitempty" xml:"gift_mids,omitempty"`
+	// 是否为闲鱼订单，1是，0否
+	IsIdle string `json:"is_idle,omitempty" xml:"is_idle,omitempty"`
+	// 承诺/最晚揽收时间
+	PromiseCollectTime string `json:"promise_collect_time,omitempty" xml:"promise_collect_time,omitempty"`
 	// 商品数字ID
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 购买数量。取值范围:大于零的整数
@@ -294,6 +312,8 @@ type Order struct {
 	BindOid int64 `json:"bind_oid,omitempty" xml:"bind_oid,omitempty"`
 	// 花呗分期期数
 	FqgNum int64 `json:"fqg_num,omitempty" xml:"fqg_num,omitempty"`
+	// 订单履约类型
+	TradeFulfillmentType int64 `json:"trade_fulfillment_type,omitempty" xml:"trade_fulfillment_type,omitempty"`
 	// 买家是否已评价。可选值：true(已评价)，false(未评价)
 	BuyerRate bool `json:"buyer_rate,omitempty" xml:"buyer_rate,omitempty"`
 	// 卖家是否已评价。可选值：true(已评价)，false(未评价)
@@ -316,4 +336,8 @@ type Order struct {
 	IsKaola bool `json:"is_kaola,omitempty" xml:"is_kaola,omitempty"`
 	// 子订单优惠贬值
 	IsDevalueFee bool `json:"is_devalue_fee,omitempty" xml:"is_devalue_fee,omitempty"`
+	// 是否含有赠品
+	HasGift bool `json:"has_gift,omitempty" xml:"has_gift,omitempty"`
+	// 是否是赠品订单
+	IsFreeGift bool `json:"is_free_gift,omitempty" xml:"is_free_gift,omitempty"`
 }

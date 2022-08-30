@@ -1,13 +1,6 @@
 {
-	"id": 36940,
-	"name": "tmall.nr.fulfill.sold.orderlist.query",
-	"apiChineseName": "零售商获取品牌商的特定订单列表",
-	"description": "零售商获取品牌商的特定订单列表，后端服务有零售商和品牌商的绑定关系，存在开关控制；同时后端存在定时送业务等特殊业务的校验，非同城配送业务不能返回，返回值存在品牌方用户的电话号码，当前电话号码是屏蔽中间四位",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "NrTimingOrderSoldQueryReqDto",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "end_created",
@@ -39,332 +32,288 @@
 					"type": "String",
 					"description": "业务标识，dss标识定时送业务；jsd表示极速达业务；qyls 区域零售业务标识"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "NrTimingOrderSoldQueryReqDto",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "NrTimingOrderSoldQueryRespDto",
-					"description": "resultData",
-					"required": true,
 					"subParams": [
 						{
-							"name": "trade_order_detail_d_t_os",
-							"type": "TradeOrderDetailDto[]",
-							"description": "主订单列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "order_d_t_os",
-									"type": "NrOrderDto[]",
-									"description": "子订单列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "create_time",
 											"type": "Date",
-											"description": "createTime",
-											"required": true
+											"description": "createTime"
 										},
 										{
 											"name": "buyer_nick",
 											"type": "String",
-											"description": "buyerNick",
-											"required": true
+											"description": "buyerNick"
 										},
 										{
 											"name": "seller_nick",
 											"type": "String",
-											"description": "sellerNick",
-											"required": true
+											"description": "sellerNick"
 										},
 										{
 											"name": "refund_status",
 											"type": "String",
-											"description": "退款状态可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，SELLER_REFUSE_BUYER(卖家拒绝退款)，CLOSED(退款关闭)，SUCCESS(退款成功)",
-											"required": true
+											"description": "退款状态可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，SELLER_REFUSE_BUYER(卖家拒绝退款)，CLOSED(退款关闭)，SUCCESS(退款成功)"
 										},
 										{
 											"name": "num",
 											"type": "Number",
-											"description": "数据",
-											"required": true
+											"description": "数据"
 										},
 										{
 											"name": "sku_id",
 											"type": "Number",
-											"description": "skuId",
-											"required": true
+											"description": "skuId"
 										},
 										{
 											"name": "item_id",
 											"type": "Number",
-											"description": "itemId",
-											"required": true
+											"description": "itemId"
 										},
 										{
 											"name": "title",
 											"type": "String",
-											"description": "title",
-											"required": true
+											"description": "title"
 										},
 										{
 											"name": "order_id",
 											"type": "Number",
-											"description": "orderId",
-											"required": true
+											"description": "orderId"
 										},
 										{
-											"name": "nr_zqs_plan_resp_d_t_o",
-											"type": "NrZqsPlanRespDto",
-											"description": "配送计划的详情，仅做周期送业务需要",
-											"required": true,
 											"subParams": [
 												{
 													"name": "num_per_cycle",
 													"type": "Number",
-													"description": "每次配送件数",
-													"required": true
+													"description": "每次配送件数"
 												},
 												{
 													"name": "pause_ahead_days",
 													"type": "Number",
-													"description": "暂停/退款提前告知的天数",
-													"required": true
+													"description": "暂停/退款提前告知的天数"
 												},
 												{
 													"name": "send_start_time",
 													"type": "String",
-													"description": "配送时间范围，起送时间，只取时分，HH:mm格式",
-													"required": true
+													"description": "配送时间范围，起送时间，只取时分，HH:mm格式"
 												},
 												{
 													"name": "send_end_time",
 													"type": "String",
-													"description": "配送时间范围，结束时间，只取时分，HH:mm格式",
-													"required": true
+													"description": "配送时间范围，结束时间，只取时分，HH:mm格式"
 												},
 												{
 													"name": "cycle_days",
 													"type": "Number",
-													"description": "每次配送的周期天数（在cycleType为1时生效，其它时候为空）1表示每天送，2表示隔1天送",
-													"required": true
+													"description": "每次配送的周期天数（在cycleType为1时生效，其它时候为空）1表示每天送，2表示隔1天送"
 												},
 												{
 													"name": "cycle_type",
 													"type": "Number",
-													"description": "配送频率类型:1-隔N天送，2-周末送，3-工作日送",
-													"required": true
+													"description": "配送频率类型:1-隔N天送，2-周末送，3-工作日送"
 												},
 												{
 													"name": "start_refund_date",
 													"type": "String",
-													"description": "退款开始时间，注意，这个时间当天如果有配送还是会配送的，第二天开始之后的配送会取消",
-													"required": true
+													"description": "退款开始时间，注意，这个时间当天如果有配送还是会配送的，第二天开始之后的配送会取消"
 												},
 												{
-													"name": "plan_list",
-													"type": "NrZqsPlanDetailInfoDto[]",
-													"description": "已生成的配送计划序号及配送日期",
-													"required": true,
 													"subParams": [
 														{
 															"name": "sequence_no",
 															"type": "Number",
-															"description": "配送期号从1开始，一直到N",
-															"required": true
+															"description": "配送期号从1开始，一直到N"
 														},
 														{
 															"name": "plan_date",
 															"type": "String",
-															"description": "计划配送时间",
-															"required": true
+															"description": "计划配送时间"
 														}
-													]
+													],
+													"name": "plan_list",
+													"type": "NrZqsPlanDetailInfoDto[]",
+													"description": "已生成的配送计划序号及配送日期"
 												}
-											]
+											],
+											"name": "nr_zqs_plan_resp_d_t_o",
+											"type": "NrZqsPlanRespDto",
+											"description": "配送计划的详情，仅做周期送业务需要"
 										},
 										{
 											"name": "adjust_fee",
 											"type": "Number",
-											"description": "修改价格修改的金额",
-											"required": true
+											"description": "修改价格修改的金额"
 										},
 										{
 											"name": "discount_fee",
 											"type": "Number",
-											"description": "店铺优惠的金额",
-											"required": true
+											"description": "店铺优惠的金额"
 										},
 										{
 											"name": "actual_paid_fee",
 											"type": "Number",
-											"description": "实际付款金额",
-											"required": true
+											"description": "实际付款金额"
 										},
 										{
 											"name": "auction_price",
 											"type": "Number",
-											"description": "商品价格",
-											"required": true
+											"description": "商品价格"
 										}
-									]
+									],
+									"name": "order_d_t_os",
+									"type": "NrOrderDto[]",
+									"description": "子订单列表"
 								},
 								{
 									"name": "store_code",
 									"type": "String",
-									"description": "storeCode",
-									"required": true
+									"description": "storeCode"
 								},
 								{
 									"name": "appoint_end_time",
 									"type": "String",
-									"description": "appointEndTime",
-									"required": true
+									"description": "appointEndTime"
 								},
 								{
 									"name": "appoint_start_time",
 									"type": "String",
-									"description": "appointStartTime",
-									"required": true
+									"description": "appointStartTime"
 								},
 								{
 									"name": "receiver_address",
 									"type": "String",
-									"description": "收货地址_未提供",
-									"required": true
+									"description": "收货地址_未提供"
 								},
 								{
 									"name": "receiver_town",
 									"type": "String",
-									"description": "镇/街道_未提供",
-									"required": true
+									"description": "镇/街道_未提供"
 								},
 								{
 									"name": "receiver_district",
 									"type": "String",
-									"description": "区_未提供",
-									"required": true
+									"description": "区_未提供"
 								},
 								{
 									"name": "receiver_city",
 									"type": "String",
-									"description": "城市_未提供",
-									"required": true
+									"description": "城市_未提供"
 								},
 								{
 									"name": "receiver_province",
 									"type": "String",
-									"description": "省",
-									"required": true
+									"description": "省"
 								},
 								{
 									"name": "receiver_phone",
 									"type": "String",
-									"description": "电话_未提供",
-									"required": true
+									"description": "电话_未提供"
 								},
 								{
 									"name": "receiver_mobile",
 									"type": "String",
-									"description": "手机_未提供",
-									"required": true
+									"description": "手机_未提供"
 								},
 								{
 									"name": "receiver_name",
 									"type": "String",
-									"description": "收货人_未提供",
-									"required": true
+									"description": "收货人_未提供"
 								},
 								{
 									"name": "pay_time",
 									"type": "String",
-									"description": "payTime",
-									"required": true
+									"description": "payTime"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
-									"required": true
+									"description": "可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)"
 								},
 								{
 									"name": "order_id",
 									"type": "String",
-									"description": "orderId",
-									"required": true
+									"description": "orderId"
 								},
 								{
 									"name": "create_time",
 									"type": "String",
-									"description": "createTime",
-									"required": true
+									"description": "createTime"
 								},
 								{
 									"name": "buyer_nick",
 									"type": "String",
-									"description": "buyerNick",
-									"required": true
+									"description": "buyerNick"
 								},
 								{
 									"name": "seller_nick",
 									"type": "String",
-									"description": "sellerNick",
-									"required": true
+									"description": "sellerNick"
 								},
 								{
 									"name": "post_fee",
 									"type": "String",
-									"description": "邮费（单位分）",
-									"required": true
+									"description": "邮费（单位分）"
 								}
-							]
+							],
+							"name": "trade_order_detail_d_t_os",
+							"type": "TradeOrderDetailDto[]",
+							"description": "主订单列表"
 						},
 						{
 							"name": "page_no",
 							"type": "Number",
-							"description": "pageNo",
-							"required": true
+							"description": "pageNo"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "totalNum",
-							"required": true
+							"description": "totalNum"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "pageSize",
-							"required": true
+							"description": "pageSize"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "NrTimingOrderSoldQueryRespDto",
+					"description": "resultData"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.sold.orderlist.query",
+	"apiChineseName": "零售商获取品牌商的特定订单列表",
+	"description": "零售商获取品牌商的特定订单列表，后端服务有零售商和品牌商的绑定关系，存在开关控制；同时后端存在定时送业务等特殊业务的校验，非同城配送业务不能返回，返回值存在品牌方用户的电话号码，当前电话号码是屏蔽中间四位",
+	"id": 36940
 }

@@ -1,13 +1,6 @@
 {
-	"id": 46655,
-	"name": "alibaba.alsc.crm.card.qryphysical",
-	"apiChineseName": "查询物理卡",
-	"description": "查询物理卡",
 	"requestParams": [
 		{
-			"name": "param_query_phy_card_open_req",
-			"type": "QueryPhyCardOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "out_brand_id",
@@ -24,78 +17,75 @@
 					"type": "String",
 					"description": "品牌ID"
 				}
-			]
+			],
+			"name": "param_query_phy_card_open_req",
+			"type": "QueryPhyCardOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "PhysicalCardOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "physical_card_id",
 							"type": "String",
-							"description": "物理卡ID",
-							"required": true
+							"description": "物理卡ID"
 						},
 						{
 							"name": "card_template_id",
 							"type": "String",
-							"description": "卡模板ID",
-							"required": true
+							"description": "卡模板ID"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "/**      * 未制卡      */     WAIT_MAKE(\"WAIT_MAKE\", \"未制卡\"),      /**      * 未出售      */     WAIT_SELL(\"WAIT_SELL\", \"未出售\"),      /**      * 已出售      */     SOLD(\"SOLD\", \"已出售\"),      /**      * 已作废      */     INVALID(\"INVALID\", \"已作废\");",
-							"required": true
+							"description": "/**      * 未制卡      */     WAIT_MAKE(\"WAIT_MAKE\", \"未制卡\"),      /**      * 未出售      */     WAIT_SELL(\"WAIT_SELL\", \"未出售\"),      /**      * 已出售      */     SOLD(\"SOLD\", \"已出售\"),      /**      * 已作废      */     INVALID(\"INVALID\", \"已作废\");"
 						},
 						{
 							"name": "card_id",
 							"type": "String",
-							"description": "电子卡ID",
-							"required": true
+							"description": "电子卡ID"
 						},
 						{
 							"name": "card_type",
 							"type": "String",
-							"description": "/**      * 会员卡      */     MEMBER(\"MEMBER\", \"会员卡\", 0),      /**      * 礼品卡      */     GIFT(\"GIFT\", \"礼品卡\", 1);",
-							"required": true
+							"description": "/**      * 会员卡      */     MEMBER(\"MEMBER\", \"会员卡\", 0),      /**      * 礼品卡      */     GIFT(\"GIFT\", \"礼品卡\", 1);"
 						}
-					]
+					],
+					"name": "result",
+					"type": "PhysicalCardOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.qryphysical",
+	"apiChineseName": "查询物理卡",
+	"description": "查询物理卡",
+	"id": 46655
 }

@@ -1,16 +1,5 @@
 {
-	"id": 36854,
-	"name": "alibaba.price.promotion.item.delete",
-	"apiChineseName": "批量删除档期",
-	"description": "盒马帮批量删除档期商品",
 	"requestParams": [
-		{
-			"name": "sku_codes",
-			"type": "String[]",
-			"description": "商品code",
-			"required": true,
-			"maxListSize": 20
-		},
 		{
 			"name": "ou_code",
 			"type": "String",
@@ -27,45 +16,51 @@
 			"name": "unique_id",
 			"type": "String",
 			"description": "盒马唯一标识"
+		},
+		{
+			"name": "sku_codes",
+			"type": "String[]",
+			"description": "商品code",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "data_list",
 					"type": "String[]",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "total_record",
 					"type": "Number",
-					"description": "totalRecord",
-					"required": true
+					"description": "totalRecord"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.price.promotion.item.delete",
+	"apiChineseName": "批量删除档期",
+	"description": "盒马帮批量删除档期商品",
+	"id": 36854
 }

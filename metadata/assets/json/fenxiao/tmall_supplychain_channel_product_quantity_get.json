@@ -1,8 +1,4 @@
 {
-	"id": 49549,
-	"name": "tmall.supplychain.channel.product.quantity.get",
-	"apiChineseName": "渠道库存查询接口",
-	"description": "渠道库存查询接口",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -17,35 +13,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "module",
 					"type": "String",
-					"description": "库存数量",
-					"required": true
+					"description": "库存数量"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.quantity.get",
+	"apiChineseName": "渠道库存查询接口",
+	"description": "渠道库存查询接口",
+	"id": 49549
 }

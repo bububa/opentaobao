@@ -1,0 +1,349 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "first_name",
+							"type": "String",
+							"description": "first name of sender",
+							"required": true
+						},
+						{
+							"name": "last_name",
+							"type": "String",
+							"description": "last name of sender",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "sender's country",
+							"required": true
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "zip code of ship from place",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "sender's district and street",
+							"required": true
+						},
+						{
+							"name": "federal_tax_id",
+							"type": "String",
+							"description": "federal tax id(cnpj)"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "sender's city",
+							"required": true
+						},
+						{
+							"name": "address_number",
+							"type": "String",
+							"description": "sender's street number",
+							"required": true
+						},
+						{
+							"name": "cellphone",
+							"type": "String",
+							"description": "cell phone of sender"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "sender's State",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "email of sender"
+						}
+					],
+					"name": "sender_address",
+					"type": "AddressTopDTO",
+					"description": "sender address",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "number of the parcel and there's only one parcel"
+						},
+						{
+							"name": "parcel_type_code",
+							"type": "String",
+							"description": "Type: ENVELOPE, BOX, BAG, TUBE, PALLET",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "Length of the parcel in the shipment order. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "Width of the parcel in the shipment order. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "Actual gross weight of the parcel instead of the weight of the product, nor the added weight of the invoice volumes.  Default unit: kilograms",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "Height of the parcel in the shipment order. Default unit: centimeters",
+							"required": true
+						}
+					],
+					"name": "parcel",
+					"type": "ParcelTopDTO",
+					"description": "parcel info",
+					"required": true
+				},
+				{
+					"name": "delivery_method_id",
+					"type": "Number",
+					"description": "Delivery option id selected by a sender",
+					"required": true
+				},
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "It's sales order id and a 16-digit number. There will be mapping between trade order and shipment order",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "first_name",
+							"type": "String",
+							"description": "first name of receiver",
+							"required": true
+						},
+						{
+							"name": "last_name",
+							"type": "String",
+							"description": "last name of receiver",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "receiver's country",
+							"required": true
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "zip code of ship to place",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "receiver's district and street",
+							"required": true
+						},
+						{
+							"name": "federal_tax_id",
+							"type": "String",
+							"description": "CPF of the buyer. Senders can find it on sales order"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "receiver's city",
+							"required": true
+						},
+						{
+							"name": "address_number",
+							"type": "String",
+							"description": "receiver's street number",
+							"required": true
+						},
+						{
+							"name": "cellphone",
+							"type": "String",
+							"description": "cell phone of receiver"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "receiver's State",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "email of receiver"
+						},
+						{
+							"name": "additional",
+							"type": "String",
+							"description": "shipping additional"
+						}
+					],
+					"name": "receipt_address",
+					"type": "AddressTopDTO",
+					"description": "receiver address",
+					"required": true
+				},
+				{
+					"name": "logistics_channel_id",
+					"type": "String",
+					"description": "Logistics provider Id of the shipping order such as 1-Cainiao, 2-Pegaki, 3-Frenet, 4-Delivery Hub, etc.",
+					"required": true
+				},
+				{
+					"name": "provider_shipping_costs",
+					"type": "String",
+					"description": "Input delivery_cost in logistics method query API. If no value returned, then input 1",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "invoice_series",
+							"type": "String",
+							"description": "3-digit number",
+							"required": true
+						},
+						{
+							"name": "invoice_key",
+							"type": "String",
+							"description": "44-digit number",
+							"required": true
+						},
+						{
+							"name": "invoice_number",
+							"type": "String",
+							"description": "9-digit number",
+							"required": true
+						},
+						{
+							"name": "invoice_total_value",
+							"type": "String",
+							"description": "value of invoice",
+							"required": true
+						},
+						{
+							"name": "invoice_date",
+							"type": "String",
+							"description": "date of inovice issued",
+							"required": true
+						}
+					],
+					"name": "invoice",
+					"type": "InvoiceTopDTO",
+					"description": "invoice info"
+				},
+				{
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "Quantity of a sku in the order. It's used to calculate the total number of products in a parcel",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "price"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "Total weight of a SKU in its original packaging. Default unit: kilograms",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "AE sku_id to identify a unit of sku"
+						}
+					],
+					"name": "products",
+					"type": "ProductTopDTO[]",
+					"description": "products info",
+					"required": true
+				},
+				{
+					"name": "query_id",
+					"type": "String",
+					"description": "Find it in responses of shipping method query API"
+				}
+			],
+			"name": "param1",
+			"type": "CreateOrderRequestTopDTO",
+			"description": "create logistics order's param",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "Shipment order id created. AE will save relationship with logistics provider's shipment order_id"
+				}
+			],
+			"name": "data",
+			"type": "AELogisticsOrderDTO",
+			"description": "response info"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "interface status"
+		},
+		{
+			"name": "error_result_message",
+			"type": "String",
+			"description": "error message"
+		},
+		{
+			"name": "error_result_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.local.logistics.order.create",
+	"apiChineseName": "create logistics order",
+	"description": "create logistics order",
+	"id": 61140
+}

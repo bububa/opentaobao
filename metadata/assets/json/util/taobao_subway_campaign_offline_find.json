@@ -1,0 +1,581 @@
+{
+	"requestParams": [
+		{
+			"name": "pv_type_in",
+			"type": "Number",
+			"description": "数据来源（pc站内：1；pc站外：2；无限站内：4；无限站内：5；销量明星：6）"
+		},
+		{
+			"name": "campaign_type_not_in",
+			"type": "Number",
+			"description": "计划类型（直通车搜索-无线/pc：0；智能推广计划：8；销量明星计划：16；口碑L店计划：17；新享一键推广计划-独立结算账户(策略中心)：21；超级直播-一键推广计划（策略中心：订单模式、计划不复用：22；大快消一键推广计划（策略中心）：23；超级直播-持续推广计划（策略中心:计划模式、可复用、类似单品）：24；合约广告、流量卡计划：31；极速推计划：37；AI智投：38；）"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "campaign_id_equal",
+			"type": "Number",
+			"description": "需要查询的计划id，不传表示不限制"
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "页码（0为第一页）",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示的记录条数",
+			"required": true
+		},
+		{
+			"name": "effect",
+			"type": "Number",
+			"description": "转化周期-1-15累计天数，1-1转化天数，3-3转化天数，7-7转化天数，15-15转化天数，不传默认为15累计天数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "时间"
+				},
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量"
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量"
+				},
+				{
+					"name": "cost",
+					"type": "Number",
+					"description": "花费"
+				},
+				{
+					"name": "ctr",
+					"type": "Number",
+					"description": "点击率"
+				},
+				{
+					"name": "cpc",
+					"type": "Number",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "cpm",
+					"type": "Number",
+					"description": "千次展现花费"
+				},
+				{
+					"name": "fav_total",
+					"type": "Number",
+					"description": "总收藏数"
+				},
+				{
+					"name": "fav_item_total",
+					"type": "Number",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "fav_shop_total",
+					"type": "Number",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "cart_total",
+					"type": "Number",
+					"description": "总购物车数"
+				},
+				{
+					"name": "direct_cart_total",
+					"type": "Number",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirect_cart_total",
+					"type": "Number",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "cart_total_cost",
+					"type": "Number",
+					"description": "加购成本"
+				},
+				{
+					"name": "fav_item_total_cost",
+					"type": "Number",
+					"description": "宝贝收藏成本"
+				},
+				{
+					"name": "fav_item_total_coverage",
+					"type": "Number",
+					"description": "宝贝收藏率"
+				},
+				{
+					"name": "cart_total_coverage",
+					"type": "Number",
+					"description": "加购率"
+				},
+				{
+					"name": "epre_pay_amt",
+					"type": "Number",
+					"description": "总预售成交金额"
+				},
+				{
+					"name": "epre_pay_cnt",
+					"type": "Number",
+					"description": "总预售成交笔数"
+				},
+				{
+					"name": "dir_epre_pay_amt",
+					"type": "Number",
+					"description": "直接预售成交金额"
+				},
+				{
+					"name": "dir_epre_pay_cnt",
+					"type": "Number",
+					"description": "直接预售成交笔数"
+				},
+				{
+					"name": "indir_epre_pay_amt",
+					"type": "Number",
+					"description": "间接预售成交金额"
+				},
+				{
+					"name": "indir_epre_pay_cnt",
+					"type": "Number",
+					"description": "间接预售成交笔数"
+				},
+				{
+					"name": "transaction_total",
+					"type": "Number",
+					"description": "总成交金额"
+				},
+				{
+					"name": "direct_transaction",
+					"type": "Number",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirect_transaction",
+					"type": "Number",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "transaction_shipping_total",
+					"type": "Number",
+					"description": "总成交笔数"
+				},
+				{
+					"name": "direct_transaction_shipping",
+					"type": "Number",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirect_transaction_shipping",
+					"type": "Number",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "roi",
+					"type": "Number",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "Number",
+					"description": "点击转化率"
+				},
+				{
+					"name": "direct_transaction_shipping_coverage",
+					"type": "Number",
+					"description": "直接点击转化率"
+				},
+				{
+					"name": "click_shopping_num",
+					"type": "Number",
+					"description": "购物金充值笔数"
+				},
+				{
+					"name": "click_shopping_amt",
+					"type": "Number",
+					"description": "购物金充值金额"
+				},
+				{
+					"name": "search_impression",
+					"type": "Number",
+					"description": "自然流量曝光"
+				},
+				{
+					"name": "search_transaction",
+					"type": "Number",
+					"description": "自然流量转化金额"
+				},
+				{
+					"name": "ww_cnt",
+					"type": "Number",
+					"description": "旺旺咨询量"
+				},
+				{
+					"name": "hfh_dj_cnt",
+					"type": "Number",
+					"description": "特权订金订单支付笔数"
+				},
+				{
+					"name": "hfh_dj_amt",
+					"type": "Number",
+					"description": "特权订金金额"
+				},
+				{
+					"name": "hfh_ys_cnt",
+					"type": "Number",
+					"description": "尾款支付笔数"
+				},
+				{
+					"name": "hfh_ys_amt",
+					"type": "Number",
+					"description": "尾款金额"
+				},
+				{
+					"name": "hfh_ykj_cnt",
+					"type": "Number",
+					"description": "一口价支付笔数"
+				},
+				{
+					"name": "hfh_ykj_amt",
+					"type": "Number",
+					"description": "一口价金额"
+				},
+				{
+					"name": "rh_cnt",
+					"type": "Number",
+					"description": "入会量"
+				},
+				{
+					"name": "lz_cnt",
+					"type": "Number",
+					"description": "留资量"
+				},
+				{
+					"name": "transaction_total_in_yuan",
+					"type": "Number",
+					"description": "总成交金额（单位元）"
+				},
+				{
+					"name": "cpm_in_yuan",
+					"type": "Number",
+					"description": "千次展现花费（单位元）"
+				},
+				{
+					"name": "indir_epre_pay_amt_in_yuan",
+					"type": "Number",
+					"description": "间接预售成交金额（单位元）"
+				},
+				{
+					"name": "cpc_in_yuan",
+					"type": "Number",
+					"description": "平均点击花费（单位元）"
+				},
+				{
+					"name": "dir_epre_pay_amt_in_yuan",
+					"type": "Number",
+					"description": "直接预售成交金额（单位元）"
+				},
+				{
+					"name": "click_shopping_amt_in_yuan",
+					"type": "Number",
+					"description": "购物金充值金额（单位元）"
+				},
+				{
+					"name": "campaign_type",
+					"type": "Number",
+					"description": "计划类型（直通车搜索-无线/pc：0；智能推广计划：8；销量明星计划：16；口碑L店计划：17；新享一键推广计划-独立结算账户(策略中心)：21；超级直播-一键推广计划（策略中心：订单模式、计划不复用：22；大快消一键推广计划（策略中心）：23；超级直播-持续推广计划（策略中心:计划模式、可复用、类似单品）：24；合约广告、流量卡计划：31；极速推计划：37；AI智投：38；）"
+				},
+				{
+					"name": "hfh_ys_amt_in_yuan",
+					"type": "Number",
+					"description": "尾款金额（单位元）"
+				},
+				{
+					"name": "campaign_id",
+					"type": "String",
+					"description": "计划id"
+				},
+				{
+					"name": "cart_total_cost_in_yuan",
+					"type": "Number",
+					"description": "加购成本（单位元）"
+				},
+				{
+					"name": "direct_transaction_in_yuan",
+					"type": "Number",
+					"description": "直接成交金额（单位元）"
+				},
+				{
+					"name": "indirect_transaction_in_yuan",
+					"type": "Number",
+					"description": "间接成交金额（单位元）"
+				},
+				{
+					"name": "campaign_title",
+					"type": "String",
+					"description": "计划标题"
+				},
+				{
+					"name": "fav_item_total_cost_in_yuan",
+					"type": "Number",
+					"description": "宝贝收藏成本（单位元）"
+				},
+				{
+					"name": "epre_pay_amt_in_yuan",
+					"type": "Number",
+					"description": "总预售成交金额（单位元）"
+				},
+				{
+					"name": "hfh_ykj_amt_in_yuan",
+					"type": "Number",
+					"description": "一口价金额（单位元）"
+				},
+				{
+					"name": "cost_in_yuan",
+					"type": "Number",
+					"description": "花费（单位元）"
+				},
+				{
+					"name": "search_transaction_in_yuan",
+					"type": "Number",
+					"description": "自然流量转化金额（单位元）"
+				},
+				{
+					"name": "campaign_type_name",
+					"type": "String",
+					"description": "计划类型名称"
+				},
+				{
+					"name": "hfh_dj_amt_in",
+					"type": "Number",
+					"description": "特权订金金额（单位元）"
+				},
+				{
+					"name": "adgroup_title",
+					"type": "String",
+					"description": "单元标题"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "单元id"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "linkurl",
+					"type": "String",
+					"description": "跳转链接（商品详情页）"
+				},
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "创意图片url"
+				},
+				{
+					"name": "hfh_dj_amt_in_yuan",
+					"type": "Number",
+					"description": "特权订金金额（单位元）"
+				},
+				{
+					"name": "crowd_name",
+					"type": "String",
+					"description": "人群名称"
+				},
+				{
+					"name": "crowd_id",
+					"type": "Number",
+					"description": "人群id"
+				},
+				{
+					"name": "adgroup_img_url",
+					"type": "String",
+					"description": "单元图片url"
+				},
+				{
+					"name": "creative_title",
+					"type": "String",
+					"description": "创意标题"
+				},
+				{
+					"name": "creativetype",
+					"type": "String",
+					"description": "创意类型(1:静态创意，2：智能创意，3：PSD创意，4：动态文案创意，5：自动化创意，6：智能创意，7：综合静态创意，8：综合智能创意，9：自动直播创意，10：元素化创意，11：素材类创意，12：钻展多图创意)"
+				},
+				{
+					"name": "creativeid",
+					"type": "Number",
+					"description": "创意id"
+				},
+				{
+					"name": "ctr_str",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "cpc_str",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "fav_item_total_coverage_str",
+					"type": "String",
+					"description": "宝贝收藏率"
+				},
+				{
+					"name": "cart_total_coverage_str",
+					"type": "String",
+					"description": "加购率"
+				},
+				{
+					"name": "roi_str",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage_str",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "direct_transaction_shipping_coverage_str",
+					"type": "String",
+					"description": "直接点击转化率"
+				},
+				{
+					"name": "transaction_total_in_yuan_str",
+					"type": "String",
+					"description": "总成交金额（单位元）"
+				},
+				{
+					"name": "cpm_in_yuan_str",
+					"type": "String",
+					"description": "千次展现花费（单位元）"
+				},
+				{
+					"name": "indir_epre_pay_amt_in_yuan_str",
+					"type": "String",
+					"description": "间接预售成交金额（单位元）"
+				},
+				{
+					"name": "cpc_in_yuan_str",
+					"type": "String",
+					"description": "平均点击花费（单位元）"
+				},
+				{
+					"name": "dir_epre_pay_amt_in_yuan_str",
+					"type": "String",
+					"description": "直接预售成交金额（单位元）"
+				},
+				{
+					"name": "click_shopping_amt_in_yuan_str",
+					"type": "String",
+					"description": "购物金充值金额（单位元）"
+				},
+				{
+					"name": "hfh_ys_amt_in_yuan_str",
+					"type": "String",
+					"description": "尾款金额（单位元）"
+				},
+				{
+					"name": "cart_total_cost_in_yuan_str",
+					"type": "String",
+					"description": "加购成本（单位元）"
+				},
+				{
+					"name": "direct_transaction_in_yuan_str",
+					"type": "String",
+					"description": "直接成交金额（单位元）"
+				},
+				{
+					"name": "indirect_transaction_in_yuan_str",
+					"type": "String",
+					"description": "间接成交金额（单位元）"
+				},
+				{
+					"name": "fav_item_total_cost_in_yuan_str",
+					"type": "String",
+					"description": "宝贝收藏成本（单位元）"
+				},
+				{
+					"name": "epre_pay_amt_in_yuan_str",
+					"type": "String",
+					"description": "总预售成交金额（单位元）"
+				},
+				{
+					"name": "hfh_ykj_amt_in_yuan_str",
+					"type": "String",
+					"description": "一口价金额（单位元）"
+				},
+				{
+					"name": "cost_in_yuan_str",
+					"type": "String",
+					"description": "花费（单位元）"
+				},
+				{
+					"name": "search_transaction_in_yuan_str",
+					"type": "String",
+					"description": "自然流量转化金额（单位元）"
+				},
+				{
+					"name": "hfh_dj_amt_in_str",
+					"type": "String",
+					"description": "特权订金金额（单位元）"
+				},
+				{
+					"name": "hfh_dj_amt_in_yuan_str",
+					"type": "String",
+					"description": "特权订金金额（单位元）"
+				},
+				{
+					"name": "avg_rank_str",
+					"type": "String",
+					"description": "平均展现排名"
+				}
+			],
+			"name": "result",
+			"type": "ReportResultTopDTO []",
+			"description": "返回参数"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总条数"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "提示"
+		}
+	],
+	"name": "taobao.subway.campaign.offline.find",
+	"apiChineseName": "查询某计划离线多日汇总列表",
+	"description": "查询某计划离线列表",
+	"id": 60737
+}

@@ -1,8 +1,4 @@
 {
-	"id": 27020,
-	"name": "taobao.alitrip.travel.normalvisa.getcompany",
-	"apiChineseName": "获取物流公司信息",
-	"description": "获取物流公司信息",
 	"requestParams": [
 		{
 			"name": "param0",
@@ -13,69 +9,64 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "结果，有返回代表成功",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "LogisticsCompanyInfo[]",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "logistics_company_unit_top_v_o_list",
-							"type": "LogisticsCompanyUnitTopVo[]",
-							"description": "物流公司列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "company_name",
 									"type": "String",
-									"description": "物流公司名",
-									"required": true
+									"description": "物流公司名"
 								},
 								{
 									"name": "company_code",
 									"type": "String",
-									"description": "物流公司代码",
-									"required": true
+									"description": "物流公司代码"
 								}
-							]
+							],
+							"name": "logistics_company_unit_top_v_o_list",
+							"type": "LogisticsCompanyUnitTopVo[]",
+							"description": "物流公司列表"
 						}
-					]
+					],
+					"name": "results",
+					"type": "LogisticsCompanyInfo[]",
+					"description": "结果"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果数",
-					"required": true
+					"description": "结果数"
 				},
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否包含下一个",
-					"required": true
+					"description": "是否包含下一个"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常",
-					"required": true
+					"type": "String",
+					"description": "异常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果，有返回代表成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.normalvisa.getcompany",
+	"apiChineseName": "获取物流公司信息",
+	"description": "获取物流公司信息",
+	"id": 27020
 }

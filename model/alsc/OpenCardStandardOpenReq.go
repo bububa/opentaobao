@@ -16,10 +16,10 @@ type OpenCardStandardOpenReq struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 外部品牌ID，与brandId不能同时为空
 	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
-	// 外部门店ID,与shopId不能同时为空
-	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 请求UUID ,用于做幂等
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 外部门店ID,与shopId不能同时为空
+	OutShopId string `json:"out_shop_id,omitempty" xml:"out_shop_id,omitempty"`
 	// 卡模板ID，与物理卡号不能同时为空
 	CardTemplateId string `json:"card_template_id,omitempty" xml:"card_template_id,omitempty"`
 	// 是否激活

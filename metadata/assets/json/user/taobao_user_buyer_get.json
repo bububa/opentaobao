@@ -1,8 +1,4 @@
 {
-	"id": 21348,
-	"name": "taobao.user.buyer.get",
-	"apiChineseName": "查询买家信息API",
-	"description": "查询买家信息API，只能买家类应用调用。",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "user",
-			"type": "User",
-			"description": "只返回nick,avatar参数",
 			"subParams": [
 				{
 					"name": "nick",
@@ -23,21 +16,28 @@
 					"description": "用户昵称"
 				},
 				{
-					"name": "sex",
-					"type": "String",
-					"description": "性别。可选值:m(男),f(女)"
-				},
-				{
 					"name": "avatar",
 					"type": "String",
 					"description": "用户头像地址"
+				},
+				{
+					"name": "sex",
+					"type": "String",
+					"description": "性别。可选值:m(男),f(女)"
 				},
 				{
 					"name": "open_uid",
 					"type": "String",
 					"description": "对应账号的OpenUID"
 				}
-			]
+			],
+			"name": "user",
+			"type": "User",
+			"description": "用户"
 		}
-	]
+	],
+	"name": "taobao.user.buyer.get",
+	"apiChineseName": "查询买家信息API",
+	"description": "查询买家信息API，只能买家类应用调用。",
+	"id": 21348
 }

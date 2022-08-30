@@ -1,13 +1,6 @@
 {
-	"id": 29867,
-	"name": "taobao.game.deliveryvoucher.sendvoucher",
-	"apiChineseName": "提货券发券接口",
-	"description": "提货券发券接口：同步券和订单的关联信息",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "SendVoucherRequest",
-			"description": "发券参数",
 			"subParams": [
 				{
 					"name": "operate_date",
@@ -39,16 +32,8 @@
 					"required": true
 				},
 				{
-					"name": "voucher_infos",
-					"type": "DeliveryVoucherInfoDTO[]",
-					"description": "券信息，券信息,最多20条券记录",
-					"required": true,
 					"subParams": [
 						{
-							"name": "vouchers",
-							"type": "DeliveryVoucherDTO[]",
-							"description": "券信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -62,7 +47,11 @@
 									"description": "券号",
 									"required": true
 								}
-							]
+							],
+							"name": "vouchers",
+							"type": "DeliveryVoucherDTO[]",
+							"description": "券信息",
+							"required": true
 						},
 						{
 							"name": "item_id",
@@ -70,9 +59,16 @@
 							"description": "商品id",
 							"required": true
 						}
-					]
+					],
+					"name": "voucher_infos",
+					"type": "DeliveryVoucherInfoDTO[]",
+					"description": "券信息，券信息,最多20条券记录",
+					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "SendVoucherRequest",
+			"description": "发券参数"
 		}
 	],
 	"responseParams": [
@@ -82,14 +78,18 @@
 			"description": "message"
 		},
 		{
-			"name": "result_code",
-			"type": "String",
-			"description": "code"
-		},
-		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "success"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
 		}
-	]
+	],
+	"name": "taobao.game.deliveryvoucher.sendvoucher",
+	"apiChineseName": "提货券发券接口",
+	"description": "提货券发券接口：同步券和订单的关联信息",
+	"id": 29867
 }

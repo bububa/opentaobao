@@ -1,14 +1,6 @@
 {
-	"id": 31779,
-	"name": "alibaba.wdk.marketing.itembuygift.queryactivity",
-	"apiChineseName": "查询买赠活动",
-	"description": "查询买赠活动",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "CommonActivityParam",
-			"description": "查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "activity_id",
@@ -21,108 +13,101 @@
 					"type": "String",
 					"description": "商家活动id"
 				}
-			]
+			],
+			"name": "param",
+			"type": "CommonActivityParam",
+			"description": "查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "查询返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "ItemBuyGiftActivity",
-					"description": "查询返回的活动信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "五道口活动id",
-							"required": true
+							"description": "五道口活动id"
 						},
 						{
 							"name": "out_act_id",
 							"type": "String",
-							"description": "商家活动id",
-							"required": true
+							"description": "商家活动id"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "买赠活动详情描述,不超过30个英文字符",
-							"required": true
+							"description": "买赠活动详情描述,不超过30个英文字符"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "买赠活动名称，不超过10个英文字符",
-							"required": true
+							"description": "买赠活动名称，不超过10个英文字符"
 						},
 						{
 							"name": "end_time",
 							"type": "Number",
-							"description": "结束时间，时间戳",
-							"required": true
+							"description": "结束时间，时间戳"
 						},
 						{
 							"name": "start_time",
 							"type": "Number",
-							"description": "开始时间，时间戳",
-							"required": true
+							"description": "开始时间，时间戳"
 						},
 						{
 							"name": "shop_ids",
 							"type": "String",
-							"description": "参加活动的渠道店ids",
-							"required": true
+							"description": "参加活动的渠道店ids"
 						},
 						{
 							"name": "terminals",
 							"type": "Number[]",
-							"description": "优惠适用场景:APP|POS|POS+APP 分别对应的值为1|2|1,2",
-							"required": true
+							"description": "优惠适用场景:APP|POS|POS+APP 分别对应的值为1|2|1,2"
 						},
 						{
 							"name": "member_limit",
 							"type": "Number",
-							"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享",
-							"required": true
+							"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
 						},
 						{
 							"name": "merchant_crowd_code",
 							"type": "String",
-							"description": "商家人群编码",
-							"required": true
+							"description": "商家人群编码"
 						},
 						{
 							"name": "txd_crowd_code",
 							"type": "String",
-							"description": "淘鲜达人群编码",
-							"required": true
+							"description": "淘鲜达人群编码"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemBuyGiftActivity",
+					"description": "查询返回的活动信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询活动是否成功",
-					"required": true
+					"description": "查询活动是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "查询返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itembuygift.queryactivity",
+	"apiChineseName": "查询买赠活动",
+	"description": "查询买赠活动",
+	"id": 31779
 }

@@ -1,8 +1,4 @@
 {
-	"id": 10898,
-	"name": "taobao.qt.report.get",
-	"apiChineseName": "查询质检报告",
-	"description": "质检报告查询",
 	"requestParams": [
 		{
 			"name": "qt_code",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "qt_report",
-			"type": "QtReport",
-			"description": "质检报告对象",
 			"subParams": [
 				{
 					"name": "id",
@@ -107,7 +100,14 @@
 					"type": "Number",
 					"description": "质检报告状态\u003cbr/\u003e 0:已提交申请 1:已收到样品 2:已出检测结果 3.已出具报告"
 				}
-			]
+			],
+			"name": "qt_report",
+			"type": "QtReport",
+			"description": "质检报告对象"
 		}
-	]
+	],
+	"name": "taobao.qt.report.get",
+	"apiChineseName": "查询质检报告",
+	"description": "质检报告查询",
+	"id": 10898
 }

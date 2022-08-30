@@ -1,8 +1,4 @@
 {
-	"id": 27154,
-	"name": "taobao.qimen.items.marking",
-	"apiChineseName": "商品通自动打标",
-	"description": "调用该接口，对商品进行XXXX标的打标、去标的动作。",
 	"requestParams": [
 		{
 			"name": "action_type",
@@ -18,10 +14,10 @@
 		},
 		{
 			"name": "item_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "线上商品ID，long，必填",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "remark",
@@ -40,5 +36,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "taobao.qimen.items.marking",
+	"apiChineseName": "商品通自动打标",
+	"description": "调用该接口，对商品进行XXXX标的打标、去标的动作。",
+	"id": 27154
 }

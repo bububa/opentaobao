@@ -3,7 +3,7 @@ package tmallnr
 // TagReqDto 结构体
 type TagReqDto struct {
 	// 商品编码列表
-	ItemIds []string `json:"item_ids,omitempty" xml:"item_ids>string,omitempty"`
+	ItemIds []int64 `json:"item_ids,omitempty" xml:"item_ids>int64,omitempty"`
 	// 业务身份标识,dss定时送;FN蜂鸟,CN菜鸟
 	BizIdentity string `json:"biz_identity,omitempty" xml:"biz_identity,omitempty"`
 	// 信息追踪串,用于后续排查问题,以及与外部厂商对账等场景下使用

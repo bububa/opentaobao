@@ -1,14 +1,6 @@
 {
-	"id": 42745,
-	"name": "alibaba.wdk.marketing.open.heartbeat",
-	"apiChineseName": "心跳服务【10s一次】",
-	"description": "商家数据同步心跳服务",
 	"requestParams": [
 		{
-			"name": "heart_beat",
-			"type": "HeartBeatBo",
-			"description": "心跳信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "version_id",
@@ -21,34 +13,39 @@
 					"type": "String",
 					"description": "MARKET-营销，ITEM-商品"
 				}
-			]
+			],
+			"name": "heart_beat",
+			"type": "HeartBeatBo",
+			"description": "心跳信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true--成功",
-					"required": true
+					"description": "true--成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.heartbeat",
+	"apiChineseName": "心跳服务【10s一次】",
+	"description": "商家数据同步心跳服务",
+	"id": 42745
 }

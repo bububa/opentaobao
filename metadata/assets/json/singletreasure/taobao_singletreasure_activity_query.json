@@ -1,14 +1,6 @@
 {
-	"id": 31364,
-	"name": "taobao.singletreasure.activity.query",
-	"apiChineseName": "查询活动列表接口",
-	"description": "查询活动列表接口",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "PageQueryDto",
-			"description": "查询对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_size",
@@ -23,9 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "query",
-					"type": "ActivityInfoListQueryDto",
-					"description": "查询条件请求体",
 					"subParams": [
 						{
 							"name": "activity_id",
@@ -42,16 +31,20 @@
 							"type": "Number",
 							"description": "活动状态  删除：-1；暂停：0；未开始：1；进行中：2；已结束：3"
 						}
-					]
+					],
+					"name": "query",
+					"type": "ActivityInfoListQueryDto",
+					"description": "查询条件请求体"
 				}
-			]
+			],
+			"name": "query",
+			"type": "PageQueryDto",
+			"description": "查询对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -60,10 +53,6 @@
 					"required": true
 				},
 				{
-					"name": "data_list",
-					"type": "ActivityInfo[]",
-					"description": "查询结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "free_post",
@@ -143,7 +132,11 @@
 							"description": "活动状态",
 							"required": true
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "ActivityInfo[]",
+					"description": "查询结果",
+					"required": true
 				},
 				{
 					"name": "code",
@@ -175,7 +168,14 @@
 					"description": "返回结果个数",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.query",
+	"apiChineseName": "查询活动列表接口",
+	"description": "查询活动列表接口",
+	"id": 31364
 }

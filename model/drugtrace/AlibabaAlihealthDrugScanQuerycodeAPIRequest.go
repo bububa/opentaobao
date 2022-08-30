@@ -14,6 +14,8 @@ type AlibabaAlihealthDrugScanQuerycodeAPIRequest struct {
 	model.Params
 	// 溯源码
 	_code string
+	// 扫码日期
+	_scanTime string
 	// 用户标识id
 	_webchatId string
 	// 省编码
@@ -22,8 +24,6 @@ type AlibabaAlihealthDrugScanQuerycodeAPIRequest struct {
 	_cityCode string
 	// 区编码
 	_areaCode string
-	// 扫码日期
-	_scanTime string
 }
 
 // NewAlibabaAlihealthDrugScanQuerycodeRequest 初始化AlibabaAlihealthDrugScanQuerycodeAPIRequest对象
@@ -58,6 +58,19 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetCode(_code string) erro
 // GetCode Code Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetCode() string {
 	return r._code
+}
+
+// SetScanTime is ScanTime Setter
+// 扫码日期
+func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetScanTime(_scanTime string) error {
+	r._scanTime = _scanTime
+	r.Set("scan_time", _scanTime)
+	return nil
+}
+
+// GetScanTime ScanTime Getter
+func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetScanTime() string {
+	return r._scanTime
 }
 
 // SetWebchatId is WebchatId Setter
@@ -110,17 +123,4 @@ func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetAreaCode(_areaCode stri
 // GetAreaCode AreaCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetAreaCode() string {
 	return r._areaCode
-}
-
-// SetScanTime is ScanTime Setter
-// 扫码日期
-func (r *AlibabaAlihealthDrugScanQuerycodeAPIRequest) SetScanTime(_scanTime string) error {
-	r._scanTime = _scanTime
-	r.Set("scan_time", _scanTime)
-	return nil
-}
-
-// GetScanTime ScanTime Getter
-func (r AlibabaAlihealthDrugScanQuerycodeAPIRequest) GetScanTime() string {
-	return r._scanTime
 }

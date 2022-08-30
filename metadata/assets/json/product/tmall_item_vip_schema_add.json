@@ -1,8 +1,4 @@
 {
-	"id": 25916,
-	"name": "tmall.item.vip.schema.add",
-	"apiChineseName": "大商家商品发布接口",
-	"description": "大商家商品发布接口",
 	"requestParams": [
 		{
 			"name": "schema_xml_fields",
@@ -18,14 +14,18 @@
 			"description": "商品发布成功_商品id"
 		},
 		{
-			"name": "sku_map_json",
-			"type": "String",
-			"description": "sku与outerId映射信息"
-		},
-		{
 			"name": "gmt_create",
 			"type": "Date",
 			"description": "发布商品操作成功时间"
+		},
+		{
+			"name": "sku_map_json",
+			"type": "String",
+			"description": "sku与outerId映射信息"
 		}
-	]
+	],
+	"name": "tmall.item.vip.schema.add",
+	"apiChineseName": "大商家商品发布接口",
+	"description": "大商家商品发布接口",
+	"id": 25916
 }

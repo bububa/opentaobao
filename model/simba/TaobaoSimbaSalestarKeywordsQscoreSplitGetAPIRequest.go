@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest struct {
 	model.Params
 	// 词id数组（最多批量获取20个）
-	_bidwordIds []int64
+	_bidwordIds []string
 	// 账号昵称
 	_nick string
 	// 推广组id
@@ -43,14 +43,14 @@ func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetApiParams() url.
 
 // SetBidwordIds is BidwordIds Setter
 // 词id数组（最多批量获取20个）
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []int64) error {
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) SetBidwordIds(_bidwordIds []string) error {
 	r._bidwordIds = _bidwordIds
 	r.Set("bidword_ids", _bidwordIds)
 	return nil
 }
 
 // GetBidwordIds BidwordIds Getter
-func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []int64 {
+func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIRequest) GetBidwordIds() []string {
 	return r._bidwordIds
 }
 

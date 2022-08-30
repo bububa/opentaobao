@@ -1,0 +1,174 @@
+{
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "ak",
+			"required": true
+		},
+		{
+			"name": "access_sign",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "l1_code",
+							"type": "String",
+							"description": "1级组织架构code"
+						},
+						{
+							"name": "l1_name",
+							"type": "String",
+							"description": "1级组织架构名"
+						},
+						{
+							"name": "l2_code",
+							"type": "String",
+							"description": "2级组织架构code"
+						},
+						{
+							"name": "l2_name",
+							"type": "String",
+							"description": "2级组织架构名"
+						},
+						{
+							"name": "l3_code",
+							"type": "String",
+							"description": "3级组织架构code"
+						},
+						{
+							"name": "l3_name",
+							"type": "String",
+							"description": "3级组织架构名"
+						},
+						{
+							"name": "l4_code",
+							"type": "String",
+							"description": "4级组织架构code"
+						},
+						{
+							"name": "l4_name",
+							"type": "String",
+							"description": "4级组织架构名"
+						},
+						{
+							"name": "l5_code",
+							"type": "String",
+							"description": "5级组织架构code"
+						},
+						{
+							"name": "l5_name",
+							"type": "String",
+							"description": "5级组织架构名"
+						}
+					],
+					"name": "organization",
+					"type": "AiotOpenDeviceOrganizationDTO",
+					"description": "组织架构"
+				},
+				{
+					"subParams": [
+						{
+							"name": "utdid",
+							"type": "String",
+							"description": "设备业务标识"
+						},
+						{
+							"name": "device_name",
+							"type": "String",
+							"description": "设备名"
+						},
+						{
+							"name": "platform",
+							"type": "Number",
+							"description": "平台类型"
+						},
+						{
+							"name": "manufacturer",
+							"type": "String",
+							"description": "厂商"
+						},
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "hard_code",
+							"type": "String",
+							"description": "硬件型号"
+						},
+						{
+							"name": "device_type",
+							"type": "String",
+							"description": "设备类型"
+						},
+						{
+							"name": "device_sn",
+							"type": "String",
+							"description": "设备SN"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						}
+					],
+					"name": "base",
+					"type": "AiotOpenDeviceBaseDTO",
+					"description": "基础信息"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "设备唯一标识"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户号"
+				},
+				{
+					"name": "extend_str",
+					"type": "String",
+					"description": "业务自定义参数"
+				}
+			],
+			"name": "data",
+			"type": "AiotTopOpenDeviceDto",
+			"description": "设备详情"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "结果是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "wdk.rexout.device.info.get",
+	"apiChineseName": "获取设备详情-外部对接",
+	"description": "获取设备详情-外部对接",
+	"id": 60418
+}

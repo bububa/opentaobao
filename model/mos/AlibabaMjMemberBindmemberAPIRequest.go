@@ -12,10 +12,10 @@ import (
 // 用于绑定喵街数字化会员
 type AlibabaMjMemberBindmemberAPIRequest struct {
 	model.Params
-	// open_id
-	_openId string
 	// 渠道
 	_channel string
+	// open_id
+	_openId string
 	// 用户号
 	_userId int64
 	// 商城Id
@@ -43,19 +43,6 @@ func (r AlibabaMjMemberBindmemberAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetOpenId is OpenId Setter
-// open_id
-func (r *AlibabaMjMemberBindmemberAPIRequest) SetOpenId(_openId string) error {
-	r._openId = _openId
-	r.Set("open_id", _openId)
-	return nil
-}
-
-// GetOpenId OpenId Getter
-func (r AlibabaMjMemberBindmemberAPIRequest) GetOpenId() string {
-	return r._openId
-}
-
 // SetChannel is Channel Setter
 // 渠道
 func (r *AlibabaMjMemberBindmemberAPIRequest) SetChannel(_channel string) error {
@@ -67,6 +54,19 @@ func (r *AlibabaMjMemberBindmemberAPIRequest) SetChannel(_channel string) error 
 // GetChannel Channel Getter
 func (r AlibabaMjMemberBindmemberAPIRequest) GetChannel() string {
 	return r._channel
+}
+
+// SetOpenId is OpenId Setter
+// open_id
+func (r *AlibabaMjMemberBindmemberAPIRequest) SetOpenId(_openId string) error {
+	r._openId = _openId
+	r.Set("open_id", _openId)
+	return nil
+}
+
+// GetOpenId OpenId Getter
+func (r AlibabaMjMemberBindmemberAPIRequest) GetOpenId() string {
+	return r._openId
 }
 
 // SetUserId is UserId Setter

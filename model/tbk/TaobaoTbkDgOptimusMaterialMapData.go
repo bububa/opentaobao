@@ -10,6 +10,8 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	ShopTitle string `json:"shop_title,omitempty" xml:"shop_title,omitempty"`
 	// 优惠券信息-优惠券起用门槛，满X元可用。如：满299元减20元
 	CouponStartFee string `json:"coupon_start_fee,omitempty" xml:"coupon_start_fee,omitempty"`
+	// 商品信息-宝贝id
+	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 折扣价（元） 若属于预售商品，付定金时间内，折扣价=预售价
 	ZkFinalPrice string `json:"zk_final_price,omitempty" xml:"zk_final_price,omitempty"`
 	// 商品信息-佣金比率(%)
@@ -130,12 +132,18 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	IsBrandFlashSale string `json:"is_brand_flash_sale,omitempty" xml:"is_brand_flash_sale,omitempty"`
 	// 是否是热门商品，0不是，1是
 	HotFlag string `json:"hot_flag,omitempty" xml:"hot_flag,omitempty"`
+	// 商品入驻淘特后产生的所有销量量级，不特指某段具体时间
+	TtSoldCount string `json:"tt_sold_count,omitempty" xml:"tt_sold_count,omitempty"`
+	// 额外奖励活动类型，如果一个商品有多个奖励类型，返回结果使用空格分割，0=单单奖励(已失效)，1=超级单单奖励(已失效)，2=年货节单单奖励
+	CpaRewardType string `json:"cpa_reward_type,omitempty" xml:"cpa_reward_type,omitempty"`
+	// 额外奖励活动金额，活动奖励金额的类型与cpa_reward_type字段对应，如果一个商品有多个奖励类型，返回结果使用空格分割
+	CpaRewardAmount string `json:"cpa_reward_amount,omitempty" xml:"cpa_reward_amount,omitempty"`
+	// 合作伙伴单单补ID，用作“年货节超级单单补”活动合作伙伴奖励统计依据
+	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 优惠券（元） 若属于预售商品，该优惠券付尾款可用，付定金不可用
 	CouponAmount int64 `json:"coupon_amount,omitempty" xml:"coupon_amount,omitempty"`
 	// 商品信息-叶子类目id
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
-	// 商品信息-宝贝id
-	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 优惠券信息-优惠券总量
 	CouponTotalCount int64 `json:"coupon_total_count,omitempty" xml:"coupon_total_count,omitempty"`
 	// 店铺信息-卖家类型，0表示淘宝，1表示天猫，3表示特价版
@@ -186,4 +194,8 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	TqgTotalCount int64 `json:"tqg_total_count,omitempty" xml:"tqg_total_count,omitempty"`
 	// 前N件佣金信息-前N件佣金生效或预热时透出以下字段
 	TopnInfo *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+	// 百亿补贴信息
+	BybtInfo *BybtInfoDto `json:"bybt_info,omitempty" xml:"bybt_info,omitempty"`
+	// 猫超买返卡信息
+	MaifanPromotion *MaifanPromotionDto `json:"maifan_promotion,omitempty" xml:"maifan_promotion,omitempty"`
 }

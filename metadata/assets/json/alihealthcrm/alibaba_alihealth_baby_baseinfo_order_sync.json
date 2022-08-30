@@ -1,8 +1,4 @@
 {
-	"id": 44764,
-	"name": "alibaba.alihealth.baby.baseinfo.order.sync",
-	"apiChineseName": "alibaba.alihealth.baby.baseinfo.order.sync",
-	"description": "育学园将订单信息回传给我们",
 	"requestParams": [
 		{
 			"name": "tp_user_id",
@@ -58,5 +54,9 @@
 			"type": "Number",
 			"description": "操作码"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.baby.baseinfo.order.sync",
+	"apiChineseName": "alibaba.alihealth.baby.baseinfo.order.sync",
+	"description": "育学园将订单信息回传给我们",
+	"id": 44764
 }

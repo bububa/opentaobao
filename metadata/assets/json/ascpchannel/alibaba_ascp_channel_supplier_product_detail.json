@@ -1,0 +1,156 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "include_sku",
+					"type": "Boolean",
+					"description": "是否查询 sku 信息"
+				},
+				{
+					"name": "channel_product_id",
+					"type": "Number",
+					"description": "渠道产品 id",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "product_detail_request",
+			"type": "ProductDetailQueryRequestForSupplier",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "sku 对应的货品 id"
+								},
+								{
+									"name": "sales_mode_list",
+									"type": "String[]",
+									"description": "经营模式"
+								},
+								{
+									"name": "picture_list",
+									"type": "String[]",
+									"description": "图片链接"
+								},
+								{
+									"name": "properties",
+									"type": "String[]",
+									"description": "销售属性"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuid"
+								}
+							],
+							"name": "sku_list",
+							"type": "SkuList[]",
+							"description": "sku 列表"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品 id"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "产品货品 id"
+						},
+						{
+							"name": "sales_mode_list",
+							"type": "String[]",
+							"description": "经营模式,agent:代销，dealer经销"
+						},
+						{
+							"name": "sub_channel_code",
+							"type": "String",
+							"description": "二级渠道编码"
+						},
+						{
+							"name": "picture_list",
+							"type": "String[]",
+							"description": "图片链接列表"
+						},
+						{
+							"name": "product_title",
+							"type": "String",
+							"description": "渠道产品名称"
+						},
+						{
+							"name": "property_list",
+							"type": "String[]",
+							"description": "销售属性，格式[k1:v2,k2:v2]"
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "类目"
+						},
+						{
+							"name": "out_no",
+							"type": "String",
+							"description": "商家编码"
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "渠道编码"
+						}
+					],
+					"name": "module",
+					"type": "ProductDetailQueryResponseForSupplier",
+					"description": "返回详情"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.ascp.channel.supplier.product.detail",
+	"apiChineseName": "供应链渠道中心分销品详情查询(供应商专用)",
+	"description": "供应链渠道中心分销品详情查询(供应商专用)",
+	"id": 55121
+}

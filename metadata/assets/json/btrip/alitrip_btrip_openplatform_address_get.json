@@ -1,13 +1,6 @@
 {
-	"id": 53431,
-	"name": "alitrip.btrip.openplatform.address.get",
-	"apiChineseName": "【商旅】开放平台对外页面跳转",
-	"description": "获取类目预定页跳转地址",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiJumpInfoRq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -49,9 +42,6 @@
 					"required": true
 				},
 				{
-					"name": "corp_info_rq",
-					"type": "CorpInfoRq",
-					"description": "注册签约时企业信息（注册签约时必填）",
 					"subParams": [
 						{
 							"name": "corp_id",
@@ -98,12 +88,12 @@
 							"type": "Number",
 							"description": "企业人数"
 						}
-					]
+					],
+					"name": "corp_info_rq",
+					"type": "CorpInfoRq",
+					"description": "注册签约时企业信息（注册签约时必填）"
 				},
 				{
-					"name": "user_info_rq",
-					"type": "UserInfoRq",
-					"description": "注册签约时管理员信息（注册签约时必填）",
 					"subParams": [
 						{
 							"name": "user_id",
@@ -150,50 +140,55 @@
 							"type": "String",
 							"description": "职务等级"
 						}
-					]
+					],
+					"name": "user_info_rq",
+					"type": "UserInfoRq",
+					"description": "注册签约时管理员信息（注册签约时必填）"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiJumpInfoRq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "module",
-					"type": "OpenApiJumpInfoRs",
-					"description": "出参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "url",
 							"type": "String",
-							"description": "跳转url",
-							"required": true
+							"description": "跳转url"
 						}
-					]
+					],
+					"name": "module",
+					"type": "OpenApiJumpInfoRs",
+					"description": "出参"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.openplatform.address.get",
+	"apiChineseName": "【商旅】开放平台对外页面跳转",
+	"description": "获取类目预定页跳转地址",
+	"id": 53431
 }

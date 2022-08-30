@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "card_type",
+			"type": "String",
+			"description": "卡类型"
+		},
+		{
+			"name": "send_coupon_result",
+			"type": "String",
+			"description": "实体类"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "返回体"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回对象"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.add.coupon.record",
+	"apiChineseName": "星河-记录用户微信优惠券领取记录",
+	"description": "雅高小程序添加优惠券实例",
+	"id": 61724
+}

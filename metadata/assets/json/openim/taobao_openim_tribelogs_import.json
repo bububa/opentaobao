@@ -1,8 +1,4 @@
 {
-	"id": 26111,
-	"name": "taobao.openim.tribelogs.import",
-	"apiChineseName": "openim群聊天记录导入",
-	"description": "openim群聊天记录导入",
 	"requestParams": [
 		{
 			"name": "tribe_id",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "messages",
-			"type": "TribeTextMessage[]",
-			"description": "消息列表",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "from_id",
@@ -35,7 +26,12 @@
 					"description": "消息时间。UTC时间，精确到秒。时间范围必须在当前时间30天内",
 					"required": true
 				}
-			]
+			],
+			"name": "messages",
+			"type": "TribeTextMessage[]",
+			"description": "消息列表",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.openim.tribelogs.import",
+	"apiChineseName": "openim群聊天记录导入",
+	"description": "openim群聊天记录导入",
+	"id": 26111
 }

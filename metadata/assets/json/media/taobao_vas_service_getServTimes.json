@@ -1,8 +1,4 @@
 {
-	"id": 153,
-	"name": "taobao.vas.service.getServTimes",
-	"apiChineseName": "查询某个用户图片空间的使用情况",
-	"description": "查询某个用户图片空间的使用情况",
 	"requestParams": [
 		{
 			"name": "serv_code",
@@ -22,5 +18,9 @@
 			"type": "Number",
 			"description": "剩余次数（容量）"
 		}
-	]
+	],
+	"name": "taobao.vas.service.getServTimes",
+	"apiChineseName": "查询某个用户图片空间的使用情况",
+	"description": "查询某个用户图片空间的使用情况",
+	"id": 153
 }

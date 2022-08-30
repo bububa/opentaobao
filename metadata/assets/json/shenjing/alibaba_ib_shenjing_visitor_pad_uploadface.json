@@ -1,8 +1,4 @@
 {
-	"id": 41188,
-	"name": "alibaba.ib.shenjing.visitor.pad.uploadface",
-	"apiChineseName": "访客PAD上传人脸",
-	"description": "访客PAD端上传人脸。",
 	"requestParams": [
 		{
 			"name": "id",
@@ -17,61 +13,53 @@
 	],
 	"responseParams": [
 		{
-			"name": "content",
-			"type": "UploadFaceDo",
-			"description": "内容",
 			"subParams": [
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "中文消息",
-					"required": true
+					"description": "中文消息"
 				},
 				{
 					"name": "visitor_face_photo_total_num",
 					"type": "Number",
-					"description": "访客总数",
-					"required": true
+					"description": "访客总数"
 				},
 				{
-					"name": "map",
-					"type": "ResultMap",
-					"description": "出参",
-					"required": true,
 					"subParams": [
 						{
 							"name": "photo_url",
 							"type": "String",
-							"description": "图片URL",
-							"required": true
+							"description": "图片URL"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "园区名称",
-							"required": true
+							"description": "园区名称"
 						}
-					]
+					],
+					"name": "map",
+					"type": "ResultMap",
+					"description": "出参"
 				},
 				{
 					"name": "ext_desc",
 					"type": "String",
-					"description": "extDesc",
-					"required": true
+					"description": "extDesc"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
 					"name": "visitor_face_photo_current_num",
 					"type": "Number",
-					"description": "当前上传人数",
-					"required": true
+					"description": "当前上传人数"
 				}
-			]
+			],
+			"name": "content",
+			"type": "UploadFaceDo",
+			"description": "内容"
 		},
 		{
 			"name": "result_code",
@@ -88,5 +76,9 @@
 			"type": "String",
 			"description": "request_id"
 		}
-	]
+	],
+	"name": "alibaba.ib.shenjing.visitor.pad.uploadface",
+	"apiChineseName": "访客PAD上传人脸",
+	"description": "访客PAD端上传人脸。",
+	"id": 41188
 }

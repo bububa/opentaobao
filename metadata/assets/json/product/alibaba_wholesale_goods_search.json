@@ -1,13 +1,6 @@
 {
-	"id": 24366,
-	"name": "alibaba.wholesale.goods.search",
-	"apiChineseName": "批发市场产品搜索",
-	"description": "批发市场产品搜索",
 	"requestParams": [
 		{
-			"name": "param_search_goods_option",
-			"type": "SearchGoodsOption",
-			"description": "SearchGoodsOption",
 			"subParams": [
 				{
 					"name": "price_to_cent",
@@ -59,14 +52,14 @@
 					"type": "Number[]",
 					"description": "产品筛选tags"
 				}
-			]
+			],
+			"name": "param_search_goods_option",
+			"type": "SearchGoodsOption",
+			"description": "SearchGoodsOption"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "wholesale_goods_search_result",
-			"type": "WholesaleSearchOpenResult",
-			"description": "在线批发商品搜索结果",
 			"subParams": [
 				{
 					"name": "result_memo",
@@ -79,14 +72,8 @@
 					"description": "result_code 返回结果码，例如200"
 				},
 				{
-					"name": "result",
-					"type": "GoodsSearchResult",
-					"description": "在线批发产品搜索结果",
 					"subParams": [
 						{
-							"name": "category",
-							"type": "WholesaleCategory",
-							"description": "搜素结果所在的类目信息",
 							"subParams": [
 								{
 									"name": "paths",
@@ -98,7 +85,10 @@
 									"type": "Json",
 									"description": "类目节点map"
 								}
-							]
+							],
+							"name": "category",
+							"type": "WholesaleCategory",
+							"description": "搜素结果所在的类目信息"
 						},
 						{
 							"name": "total",
@@ -106,9 +96,6 @@
 							"description": "返回结果数"
 						},
 						{
-							"name": "items",
-							"type": "GoodsSummary[]",
-							"description": "搜索产品列表",
 							"subParams": [
 								{
 									"name": "max_price_cent",
@@ -165,11 +152,24 @@
 									"type": "String",
 									"description": "currency 产品价格货币单位"
 								}
-							]
+							],
+							"name": "items",
+							"type": "GoodsSummary[]",
+							"description": "搜索产品列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "GoodsSearchResult",
+					"description": "在线批发产品搜索结果"
 				}
-			]
+			],
+			"name": "wholesale_goods_search_result",
+			"type": "WholesaleSearchOpenResult",
+			"description": "在线批发商品搜索结果"
 		}
-	]
+	],
+	"name": "alibaba.wholesale.goods.search",
+	"apiChineseName": "批发市场产品搜索",
+	"description": "批发市场产品搜索",
+	"id": 24366
 }

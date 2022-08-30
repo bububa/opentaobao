@@ -2,10 +2,10 @@ package drugtrace
 
 // PEntParDto 结构体
 type PEntParDto struct {
-	// 往来单位名称
-	PartnerName string `json:"partner_name,omitempty" xml:"partner_name,omitempty"`
 	// 往来单位ID
 	PartnerId string `json:"partner_id,omitempty" xml:"partner_id,omitempty"`
+	// 往来单位名称
+	PartnerName string `json:"partner_name,omitempty" xml:"partner_name,omitempty"`
 	// 企业id
 	EntId string `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
 	// 往来单位企业唯一标识
@@ -44,4 +44,16 @@ type PEntParDto struct {
 	PEntParId string `json:"p_ent_par_id,omitempty" xml:"p_ent_par_id,omitempty"`
 	// 创建IC码
 	CrtIcCode string `json:"crt_ic_code,omitempty" xml:"crt_ic_code,omitempty"`
+	// 往来单位企业ID
+	ParRefEntId string `json:"par_ref_ent_id,omitempty" xml:"par_ref_ent_id,omitempty"`
+	// 证件类型名称
+	LicenseTypeStr string `json:"license_type_str,omitempty" xml:"license_type_str,omitempty"`
+	// 详细地址
+	AddrDetail string `json:"addr_detail,omitempty" xml:"addr_detail,omitempty"`
+	// 城市
+	CountryName string `json:"country_name,omitempty" xml:"country_name,omitempty"`
+	// 1-审核通过；2-审核不通过；0-待审核：服务端针对networkType和standard字段汇总给出状态
+	AuditFlag int64 `json:"audit_flag,omitempty" xml:"audit_flag,omitempty"`
+	// networkType
+	NetworkType int64 `json:"network_type,omitempty" xml:"network_type,omitempty"`
 }

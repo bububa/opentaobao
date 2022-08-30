@@ -28,6 +28,10 @@ type AlibabaAlihealthDrugKytUploadretailAPIRequest struct {
 	_operIcName string
 	// 请求类型[暂定都写2]
 	_clientType string
+	// 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
+	_customerIdType string
+	// 购买人证件编号
+	_customerId string
 	// 患者电话
 	_userTel string
 	// 互联网标识
@@ -40,10 +44,6 @@ type AlibabaAlihealthDrugKytUploadretailAPIRequest struct {
 	_userName string
 	// 患者代理领药人
 	_userAgent string
-	// 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
-	_customerIdType string
-	// 购买人证件编号
-	_customerId string
 	// 单据类型[321,零售出库][322,疫苗接种]
 	_billType int64
 	// 药品类型[3,普药]
@@ -175,6 +175,32 @@ func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetClientType() string {
 	return r._clientType
 }
 
+// SetCustomerIdType is CustomerIdType Setter
+// 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
+func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetCustomerIdType(_customerIdType string) error {
+	r._customerIdType = _customerIdType
+	r.Set("customer_id_type", _customerIdType)
+	return nil
+}
+
+// GetCustomerIdType CustomerIdType Getter
+func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetCustomerIdType() string {
+	return r._customerIdType
+}
+
+// SetCustomerId is CustomerId Setter
+// 购买人证件编号
+func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetCustomerId(_customerId string) error {
+	r._customerId = _customerId
+	r.Set("customer_id", _customerId)
+	return nil
+}
+
+// GetCustomerId CustomerId Getter
+func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetCustomerId() string {
+	return r._customerId
+}
+
 // SetUserTel is UserTel Setter
 // 患者电话
 func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetUserTel(_userTel string) error {
@@ -251,32 +277,6 @@ func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetUserAgent(_userAgent 
 // GetUserAgent UserAgent Getter
 func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetUserAgent() string {
 	return r._userAgent
-}
-
-// SetCustomerIdType is CustomerIdType Setter
-// 购买人证件类型【1身份证2护照3 军官证4 医保卡5接种卡6学生证9其它】
-func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetCustomerIdType(_customerIdType string) error {
-	r._customerIdType = _customerIdType
-	r.Set("customer_id_type", _customerIdType)
-	return nil
-}
-
-// GetCustomerIdType CustomerIdType Getter
-func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetCustomerIdType() string {
-	return r._customerIdType
-}
-
-// SetCustomerId is CustomerId Setter
-// 购买人证件编号
-func (r *AlibabaAlihealthDrugKytUploadretailAPIRequest) SetCustomerId(_customerId string) error {
-	r._customerId = _customerId
-	r.Set("customer_id", _customerId)
-	return nil
-}
-
-// GetCustomerId CustomerId Getter
-func (r AlibabaAlihealthDrugKytUploadretailAPIRequest) GetCustomerId() string {
-	return r._customerId
 }
 
 // SetBillType is BillType Setter

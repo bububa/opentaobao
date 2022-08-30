@@ -1,8 +1,4 @@
 {
-	"id": 24314,
-	"name": "taobao.alitrip.ie.agent.order.get",
-	"apiChineseName": "【国际机票】查询订单详情",
-	"description": "根据订单ID查询订单详情",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -17,1233 +13,1039 @@
 	],
 	"responseParams": [
 		{
-			"name": "order_vo",
-			"type": "IeOrderVo",
-			"description": "返回数据",
 			"subParams": [
 				{
-					"name": "passgener_vos",
-					"type": "IePassgenerVo[]",
-					"description": "乘机人列表",
-					"required": true,
-					"subParams": [
-						{
-							"name": "address_state",
-							"type": "String",
-							"description": "美国加拿大居住地-州",
-							"required": true
-						},
-						{
-							"name": "birthday",
-							"type": "Date",
-							"description": "出生日期",
-							"required": true
-						},
-						{
-							"name": "cert_issue_country",
-							"type": "String",
-							"description": "证件签发国",
-							"required": true
-						},
-						{
-							"name": "address_city",
-							"type": "String",
-							"description": "美国居住地-城市",
-							"required": true
-						},
-						{
-							"name": "address_postcode",
-							"type": "String",
-							"description": "美国居住地-邮编",
-							"required": true
-						},
-						{
-							"name": "passenger_type",
-							"type": "String",
-							"description": "乘机人类型(Adult:普通成人,Child:儿童,StudentAbroad:留学生,Infant:婴儿)",
-							"required": true
-						},
-						{
-							"name": "cert_type",
-							"type": "String",
-							"description": "乘机人证件类型(Passport:护照,Hongkong_Macao:港澳通行证,Taiwan_MTP:台胞证,Home_Return_Permit:回乡证,Taiwan_Pass:台湾通行证,Entry_Taiwan_Permit:入台证);",
-							"required": true
-						},
-						{
-							"name": "address_street",
-							"type": "String",
-							"description": "美国居住地-街道",
-							"required": true
-						},
-						{
-							"name": "nationality",
-							"type": "String",
-							"description": "国籍",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "乘机人姓名",
-							"required": true
-						},
-						{
-							"name": "cert_no",
-							"type": "String",
-							"description": "乘机人证件号",
-							"required": true
-						},
-						{
-							"name": "cert_period",
-							"type": "Date",
-							"description": "证件有效期",
-							"required": true
-						},
-						{
-							"name": "gender",
-							"type": "String",
-							"description": "性别(MALE:男,FEMALE:女)",
-							"required": true
-						},
-						{
-							"name": "airline_code",
-							"type": "String",
-							"description": "常旅客积分分属航司二字码",
-							"required": true
-						},
-						{
-							"name": "airline_card_no",
-							"type": "String",
-							"description": "常旅客卡号",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "itinerary_vo",
-					"type": "IeItineraryVo",
-					"description": "行程单信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "express_company_name",
-							"type": "String",
-							"description": "快递公司编号",
-							"required": true
-						},
-						{
-							"name": "refund_money",
-							"type": "Number",
-							"description": "退款金额",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "行程单状态(INITIAL:初始状态,NOPAY(:未付款,PAYED:已付款,FINISHED:已完成,REFUND:已退款,CLOSED:已关闭（随主订单))",
-							"required": true
-						},
-						{
-							"name": "remark",
-							"type": "String",
-							"description": "商家备注信息",
-							"required": true
-						},
-						{
-							"name": "consignee",
-							"type": "String",
-							"description": "收件人",
-							"required": true
-						},
-						{
-							"name": "city_name",
-							"type": "String",
-							"description": "城市名称",
-							"required": true
-						},
-						{
-							"name": "send_time",
-							"type": "Date",
-							"description": "发送时间",
-							"required": true
-						},
-						{
-							"name": "send_type",
-							"type": "String",
-							"description": "配送方式(Counter:自取,Normal:快递,Regist:挂号信,Common:平邮)",
-							"required": true
-						},
-						{
-							"name": "province_name",
-							"type": "String",
-							"description": "省份名称",
-							"required": true
-						},
-						{
-							"name": "postcode",
-							"type": "String",
-							"description": "邮编",
-							"required": true
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "主键",
-							"required": true
-						},
-						{
-							"name": "district_name",
-							"type": "String",
-							"description": "区县名称",
-							"required": true
-						},
-						{
-							"name": "price",
-							"type": "Number",
-							"description": "价格",
-							"required": true
-						},
-						{
-							"name": "address",
-							"type": "String",
-							"description": "收货地址",
-							"required": true
-						},
-						{
-							"name": "pay_status",
-							"type": "String",
-							"description": "支付状态(INITIAL: 初始状态, CREATED:已创建担保交易, PAYED:已付款, TURNED:转交易成功)",
-							"required": true
-						},
-						{
-							"name": "express_no",
-							"type": "String",
-							"description": "快递单号",
-							"required": true
-						},
-						{
-							"name": "itinerary_no",
-							"type": "String",
-							"description": "行程单号",
-							"required": true
-						},
-						{
-							"name": "telephone",
-							"type": "String",
-							"description": "电话",
-							"required": true
-						},
-						{
-							"name": "is_post",
-							"type": "Boolean",
-							"description": "是否已经邮寄",
-							"required": true
-						},
-						{
-							"name": "express_company_code",
-							"type": "String",
-							"description": "快递公司编号",
-							"required": true
-						},
-						{
-							"name": "mobile",
-							"type": "String",
-							"description": "移动电话",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "base_order_vo",
-					"type": "IeBaseOrderVo",
-					"description": "订单基本信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "arr_airport",
-							"type": "String",
-							"description": "到达机场",
-							"required": true
-						},
-						{
-							"name": "flight_nos",
-							"type": "String",
-							"description": "全部航班号",
-							"required": true
-						},
-						{
-							"name": "trade_order_id",
-							"type": "Number",
-							"description": "交易订单id",
-							"required": true
-						},
-						{
-							"name": "gmt_create_time",
-							"type": "Date",
-							"description": "订单创建时间",
-							"required": true
-						},
-						{
-							"name": "success_time",
-							"type": "Date",
-							"description": "订单成功时间",
-							"required": true
-						},
-						{
-							"name": "total_service_price",
-							"type": "Number",
-							"description": "服务费",
-							"required": true
-						},
-						{
-							"name": "inbound_dep_time",
-							"type": "Date",
-							"description": "回程出发日期",
-							"required": true
-						},
-						{
-							"name": "credit_status",
-							"type": "String",
-							"description": "信用状态(Normal:正常,Frozen:已冻结,Unfrozen:已解冻)",
-							"required": true
-						},
-						{
-							"name": "pay_time",
-							"type": "Date",
-							"description": "支付时间",
-							"required": true
-						},
-						{
-							"name": "inbound_arr_time",
-							"type": "Date",
-							"description": "回程到达时间",
-							"required": true
-						},
-						{
-							"name": "pay2_agent_time",
-							"type": "Date",
-							"description": "转交易时间",
-							"required": true
-						},
-						{
-							"name": "book_time",
-							"type": "Date",
-							"description": "预定hk时间",
-							"required": true
-						},
-						{
-							"name": "commission_status",
-							"type": "String",
-							"description": "佣金状态(Init:初始状态,Failure:扣佣金失败,Success:扣佣金成功;)",
-							"required": true
-						},
-						{
-							"name": "total_ticket_price",
-							"type": "Number",
-							"description": "总票价",
-							"required": true
-						},
-						{
-							"name": "total_activity_remit_price",
-							"type": "Number",
-							"description": "活动金额",
-							"required": true
-						},
-						{
-							"name": "total_tax_price",
-							"type": "Number",
-							"description": "总税费",
-							"required": true
-						},
-						{
-							"name": "outbound_dep_time",
-							"type": "Date",
-							"description": "出发时间",
-							"required": true
-						},
-						{
-							"name": "total_price",
-							"type": "Number",
-							"description": "订单总价(包含打包商品的价格)",
-							"required": true
-						},
-						{
-							"name": "total_redpackage",
-							"type": "Number",
-							"description": "红包价格",
-							"required": true
-						},
-						{
-							"name": "dep_airport",
-							"type": "String",
-							"description": "出发机场",
-							"required": true
-						},
-						{
-							"name": "commission_price",
-							"type": "Number",
-							"description": "佣金金额",
-							"required": true
-						},
-						{
-							"name": "trip_type",
-							"type": "String",
-							"description": "行程类型(OneWay:单程,RoundTrip:往返,MultiCity:多程)",
-							"required": true
-						},
-						{
-							"name": "order_status",
-							"type": "String",
-							"description": "订单状态(Init:初始状态,BookSuccess:\"预定成功,PaySuccess:付款成功,TicketSuccess:订单成功,Close:订单关闭)",
-							"required": true
-						},
-						{
-							"name": "close_time",
-							"type": "Date",
-							"description": "订单关闭时间",
-							"required": true
-						},
-						{
-							"name": "pay_status",
-							"type": "String",
-							"description": "支付状态(Init:初始状态;create_secure_pay:创建担保交易成功,PaySuccess:付款成功,TransferSuccess:转交易成功, PayedClosed:已支付订单关闭,NoPayClosed:未支付订单关闭 )",
-							"required": true
-						},
-						{
-							"name": "close_type",
-							"type": "String",
-							"description": "关闭类型(Init:正常(未关闭),BuyerClose:买家关闭,NoAVClose:舱位已售完,NoEnoughAV:剩余座位数不足,PayOvertime:付款超时,TicketOrverTime:出票超时,Other:其它)",
-							"required": true
-						},
-						{
-							"name": "passenger_count",
-							"type": "Number",
-							"description": "乘机人数量",
-							"required": true
-						},
-						{
-							"name": "est_commission_price",
-							"type": "Number",
-							"description": "预计佣金金额",
-							"required": true
-						},
-						{
-							"name": "close_reason",
-							"type": "String",
-							"description": "关闭原因",
-							"required": true
-						},
-						{
-							"name": "outbound_arr_time",
-							"type": "Date",
-							"description": "出发到达日期",
-							"required": true
-						},
-						{
-							"name": "origin_total_price",
-							"type": "Number",
-							"description": "订单初始总价(包含打包商品的价格)",
-							"required": true
-						},
-						{
-							"name": "gold_medal_order",
-							"type": "Boolean",
-							"description": "金牌订单",
-							"required": true
-						},
-						{
-							"name": "product_tags",
-							"type": "String[]",
-							"description": "产品标识 student:学生票、nationality：国籍票、group：小团票、gold：金牌机票、card：宝贝机票、common：年龄票、speed：极速机票、age：限年龄票、delay：延时出票",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "trade_order_id",
-					"type": "Number",
-					"description": "交易订单ID",
-					"required": true
-				},
-				{
-					"name": "contacts_vo",
-					"type": "IeContactsVo",
-					"description": "联系人信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "phone",
-							"type": "String",
-							"description": "联系人电话",
-							"required": true
-						},
-						{
-							"name": "email",
-							"type": "String",
-							"description": "联系人邮箱",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "联系人姓名",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "item_vo",
-					"type": "IeItemVo",
-					"description": "搜索产品信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "child_price",
-							"type": "Number",
-							"description": "儿童价格",
-							"required": true
-						},
-						{
-							"name": "child_tax",
-							"type": "Number",
-							"description": "儿童税费",
-							"required": true
-						},
-						{
-							"name": "baggage_rule",
-							"type": "String",
-							"description": "行李规定",
-							"required": true
-						},
-						{
-							"name": "flights",
-							"type": "IeFlightVo[]",
-							"description": "航班信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "arr_airport",
-									"type": "String",
-									"description": "到达机场",
-									"required": true
-								},
-								{
-									"name": "cabin_class",
-									"type": "String",
-									"description": "服务等级(First:头等舱,Business:商务舱, Economy:经济舱, EconomyStandard:标准经济舱, EconomyPremium:超级经济舱)",
-									"required": true
-								},
-								{
-									"name": "dep_time",
-									"type": "Date",
-									"description": "出发时间",
-									"required": true
-								},
-								{
-									"name": "stop_quantity",
-									"type": "Number",
-									"description": "经停数量",
-									"required": true
-								},
-								{
-									"name": "flight_cabin",
-									"type": "String",
-									"description": "舱位",
-									"required": true
-								},
-								{
-									"name": "trans_visa",
-									"type": "String",
-									"description": "过境签信息",
-									"required": true
-								},
-								{
-									"name": "dep_airport",
-									"type": "String",
-									"description": "出发机场",
-									"required": true
-								},
-								{
-									"name": "dep_terminal",
-									"type": "String",
-									"description": "出发航站楼",
-									"required": true
-								},
-								{
-									"name": "flight_number",
-									"type": "String",
-									"description": "航班号",
-									"required": true
-								},
-								{
-									"name": "equip_type",
-									"type": "String",
-									"description": "机型",
-									"required": true
-								},
-								{
-									"name": "stop_airport",
-									"type": "String",
-									"description": "经停机场三字码，逗号分隔",
-									"required": true
-								},
-								{
-									"name": "segment_rph",
-									"type": "Number",
-									"description": "第几段",
-									"required": true
-								},
-								{
-									"name": "operating_flight_number",
-									"type": "String",
-									"description": "实际承运航班号",
-									"required": true
-								},
-								{
-									"name": "operating_air_line",
-									"type": "String",
-									"description": "承运方航空公司",
-									"required": true
-								},
-								{
-									"name": "elapsed_minute",
-									"type": "Number",
-									"description": "飞行时长",
-									"required": true
-								},
-								{
-									"name": "arr_terminal",
-									"type": "String",
-									"description": "到达航站楼",
-									"required": true
-								},
-								{
-									"name": "arr_time",
-									"type": "Date",
-									"description": "到达时间",
-									"required": true
-								},
-								{
-									"name": "stop_minute",
-									"type": "Number",
-									"description": "经停分钟数，逗号分隔",
-									"required": true
-								},
-								{
-									"name": "itinerary_type",
-									"type": "Number",
-									"description": "行程类型",
-									"required": true
-								},
-								{
-									"name": "marketing_airline",
-									"type": "String",
-									"description": "市场方航空公司",
-									"required": true
-								},
-								{
-									"name": "cabin_class_code",
-									"type": "String",
-									"description": "cabinClassCode",
-									"required": true
-								},
-								{
-									"name": "main_segment",
-									"type": "Boolean",
-									"description": "mainSegment",
-									"required": true
-								},
-								{
-									"name": "infant_cabin_class_code",
-									"type": "String",
-									"description": "婴儿舱位等级代码",
-									"required": true
-								},
-								{
-									"name": "infant_cabin_class",
-									"type": "String",
-									"description": "服务等级(First:头等舱,Business:商务舱, Economy:经济舱, EconomyStandard:标准经济舱, EconomyPremium:超级经济舱)",
-									"required": true
-								},
-								{
-									"name": "infant_flight_cabin",
-									"type": "String",
-									"description": "婴儿舱位代码",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "adult_tax",
-							"type": "Number",
-							"description": "成人价格",
-							"required": true
-						},
-						{
-							"name": "restriction",
-							"type": "String",
-							"description": "退改签规则",
-							"required": true
-						},
-						{
-							"name": "adult_price",
-							"type": "Number",
-							"description": "成人价格",
-							"required": true
-						},
-						{
-							"name": "trip_type",
-							"type": "String",
-							"description": "行程类型(OneWay:单程,RoundTrip:往返,MultiCity:多程)",
-							"required": true
-						},
-						{
-							"name": "ticketing_airline",
-							"type": "String",
-							"description": "出票航司",
-							"required": true
-						},
-						{
-							"name": "resource_code",
-							"type": "String",
-							"description": "供应渠道",
-							"required": true
-						},
-						{
-							"name": "office_no",
-							"type": "String",
-							"description": "officeNo",
-							"required": true
-						},
-						{
-							"name": "fare_item_id",
-							"type": "String",
-							"description": "fareItemId",
-							"required": true
-						},
-						{
-							"name": "bonus_id",
-							"type": "String",
-							"description": "bonusId",
-							"required": true
-						},
-						{
-							"name": "origin_bonus_id",
-							"type": "String",
-							"description": "原始政策id",
-							"required": true
-						},
-						{
-							"name": "infant_tax",
-							"type": "Number",
-							"description": "婴儿税费",
-							"required": true
-						},
-						{
-							"name": "infant_price",
-							"type": "Number",
-							"description": "婴儿价格",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "book_order_vos",
-					"type": "IeBookOrderVo[]",
-					"description": "预定订单信息",
-					"required": true,
-					"subParams": [
-						{
-							"name": "chd_ticket_price",
-							"type": "Number",
-							"description": "1",
-							"required": true
-						},
-						{
-							"name": "book_flight_vos",
-							"type": "IeBookFlightVo[]",
-							"description": "2",
-							"required": true,
-							"subParams": [
-								{
-									"name": "arr_airport",
-									"type": "String",
-									"description": "到达机场",
-									"required": true
-								},
-								{
-									"name": "dep_time",
-									"type": "Date",
-									"description": "出发日期",
-									"required": true
-								},
-								{
-									"name": "flight_cabin",
-									"type": "String",
-									"description": "航班舱位",
-									"required": true
-								},
-								{
-									"name": "dep_airport",
-									"type": "String",
-									"description": "出发机场",
-									"required": true
-								},
-								{
-									"name": "flight_number",
-									"type": "String",
-									"description": "市场方航班号",
-									"required": true
-								},
-								{
-									"name": "equip_type",
-									"type": "String",
-									"description": "机型",
-									"required": true
-								},
-								{
-									"name": "operating_flight_number",
-									"type": "String",
-									"description": "共享航班号",
-									"required": true
-								},
-								{
-									"name": "operating_air_line",
-									"type": "String",
-									"description": "共享航空公司",
-									"required": true
-								},
-								{
-									"name": "direction_type",
-									"type": "String",
-									"description": "航班方向(Outbound:去程,Inbound:回程,行程类型,MultiCity:多程)",
-									"required": true
-								},
-								{
-									"name": "segment_rph",
-									"type": "Number",
-									"description": "第几段",
-									"required": true
-								},
-								{
-									"name": "arr_time",
-									"type": "Date",
-									"description": "到达时间",
-									"required": true
-								},
-								{
-									"name": "code_share",
-									"type": "Boolean",
-									"description": "是否共享航班",
-									"required": true
-								},
-								{
-									"name": "marketing_airline",
-									"type": "String",
-									"description": "市场",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "chd_tax_price",
-							"type": "Number",
-							"description": "300",
-							"required": true
-						},
-						{
-							"name": "ticket_authentic_status",
-							"type": "String",
-							"description": "票号验真状态(Init:初始状态,Failure:验真失败,SUCCESS:验真通过)",
-							"required": true
-						},
-						{
-							"name": "total_order_pirce",
-							"type": "Number",
-							"description": "5000",
-							"required": true
-						},
-						{
-							"name": "book_type",
-							"type": "String",
-							"description": "pnr预定类型(Auto:自动, Manual:手工)",
-							"required": true
-						},
-						{
-							"name": "book_status",
-							"type": "String",
-							"description": "预定订单状态(Init:初始状态, Need_Manule_HK:转手工HK, HK_Success:HK成功,Ticket_Success:出票成功,Close:订单关闭)",
-							"required": true
-						},
-						{
-							"name": "origin_total_price",
-							"type": "Number",
-							"description": "原始总价(包含打包商品的价格)",
-							"required": true
-						},
-						{
-							"name": "book_pnr_vos",
-							"type": "IeBookPnrVo[]",
-							"description": "9",
-							"required": true,
-							"subParams": [
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "pnr id",
-									"required": true
-								},
-								{
-									"name": "pnr_type",
-									"type": "String",
-									"description": "pnr类型",
-									"required": true
-								},
-								{
-									"name": "pnr_no",
-									"type": "String",
-									"description": "pnr值",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "adt_ticket_price",
-							"type": "Number",
-							"description": "10",
-							"required": true
-						},
-						{
-							"name": "tax_type",
-							"type": "String",
-							"description": "税费类型(UserRefTax:参考税,RealTax:实时税费,ManualTax:手工回填税费)",
-							"required": true
-						},
-						{
-							"name": "total_ticket_price",
-							"type": "Number",
-							"description": "12",
-							"required": true
-						},
-						{
-							"name": "book_ticket_vos",
-							"type": "IeBookTicketVo[]",
-							"description": "13",
-							"required": true,
-							"subParams": [
-								{
-									"name": "conj_ticket_flag",
-									"type": "Boolean",
-									"description": "是否联程票",
-									"required": true
-								},
-								{
-									"name": "flight_ids",
-									"type": "Number[]",
-									"description": "航班号id列表",
-									"required": true
-								},
-								{
-									"name": "passenger_type",
-									"type": "String",
-									"description": "乘机人类型(Adult:普通成人,Child:儿童,StudentAbroad:留学生,Infant:婴儿)",
-									"required": true
-								},
-								{
-									"name": "passenger_cert_type",
-									"type": "String",
-									"description": "乘机人证件类型(Passport:护照,Hongkong_Macao:港澳通行证,Taiwan_MTP:台胞证,Home_Return_Permit:回乡证,Taiwan_Pass:台湾通行证,Entry_Taiwan_Permit:入台证);",
-									"required": true
-								},
-								{
-									"name": "authentic_status",
-									"type": "String",
-									"description": "票号验真状态(Init:初始状态,Failure:验真失败,SUCCESS:验真通过)",
-									"required": true
-								},
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "主键",
-									"required": true
-								},
-								{
-									"name": "passenger_cert_no",
-									"type": "String",
-									"description": "乘机人证件号",
-									"required": true
-								},
-								{
-									"name": "ticket_tax",
-									"type": "Number",
-									"description": "票税",
-									"required": true
-								},
-								{
-									"name": "ticket_nos",
-									"type": "String[]",
-									"description": "票号",
-									"required": true
-								},
-								{
-									"name": "passenger_name",
-									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
-								},
-								{
-									"name": "ticket_price",
-									"type": "Number",
-									"description": "票价",
-									"required": true
-								},
-								{
-									"name": "authentic_memo",
-									"type": "String",
-									"description": "票号验真备注",
-									"required": true
-								},
-								{
-									"name": "issue_ticket_time",
-									"type": "Date",
-									"description": "出票日期",
-									"required": true
-								},
-								{
-									"name": "pnr_id",
-									"type": "Number",
-									"description": "pnr主键",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "issue_ticket_type",
-							"type": "String",
-							"description": "出票类型(Auto:自动出票,Manual:手工出票)",
-							"required": true
-						},
-						{
-							"name": "adt_tax_price",
-							"type": "Number",
-							"description": "15",
-							"required": true
-						},
-						{
-							"name": "passenger_count",
-							"type": "Number",
-							"description": "16",
-							"required": true
-						},
-						{
-							"name": "total_tax_price",
-							"type": "Number",
-							"description": "17",
-							"required": true
-						},
-						{
-							"name": "terminal_url",
-							"type": "String",
-							"description": "18",
-							"required": true
-						},
-						{
-							"name": "terminal_file_name",
-							"type": "String",
-							"description": "19",
-							"required": true
-						},
-						{
-							"name": "fare_source",
-							"type": "Number",
-							"description": "3",
-							"required": true
-						}
-					]
-				},
-				{
-					"name": "activity_vos",
-					"type": "IeOrderActivityVo[]",
-					"description": "activityVOs",
-					"required": true,
 					"subParams": [
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "activityName",
-							"required": true
+							"description": "activityName"
 						},
 						{
 							"name": "activity_price",
 							"type": "Number",
-							"description": "activityPrice",
-							"required": true
+							"description": "activityPrice"
 						}
-					]
+					],
+					"name": "activity_vos",
+					"type": "IeOrderActivityVo[]",
+					"description": "activityVOs"
 				},
 				{
-					"name": "vir_pro_order_vos",
-					"type": "IeVirProOrderVo[]",
-					"description": "辅营订单",
-					"required": true,
+					"subParams": [
+						{
+							"name": "arr_airport",
+							"type": "String",
+							"description": "到达机场"
+						},
+						{
+							"name": "book_time",
+							"type": "Date",
+							"description": "预定hk时间"
+						},
+						{
+							"name": "close_reason",
+							"type": "String",
+							"description": "关闭原因"
+						},
+						{
+							"name": "close_time",
+							"type": "Date",
+							"description": "订单关闭时间"
+						},
+						{
+							"name": "close_type",
+							"type": "String",
+							"description": "关闭类型(Init:正常(未关闭),BuyerClose:买家关闭,NoAVClose:舱位已售完,NoEnoughAV:剩余座位数不足,PayOvertime:付款超时,TicketOrverTime:出票超时,Other:其它)"
+						},
+						{
+							"name": "commission_price",
+							"type": "Number",
+							"description": "佣金金额"
+						},
+						{
+							"name": "commission_status",
+							"type": "String",
+							"description": "佣金状态(Init:初始状态,Failure:扣佣金失败,Success:扣佣金成功;)"
+						},
+						{
+							"name": "credit_status",
+							"type": "String",
+							"description": "信用状态(Normal:正常,Frozen:已冻结,Unfrozen:已解冻)"
+						},
+						{
+							"name": "dep_airport",
+							"type": "String",
+							"description": "出发机场"
+						},
+						{
+							"name": "est_commission_price",
+							"type": "Number",
+							"description": "预计佣金金额"
+						},
+						{
+							"name": "flight_nos",
+							"type": "String",
+							"description": "全部航班号"
+						},
+						{
+							"name": "gmt_create_time",
+							"type": "Date",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "gold_medal_order",
+							"type": "Boolean",
+							"description": "金牌订单"
+						},
+						{
+							"name": "inbound_arr_time",
+							"type": "Date",
+							"description": "回程到达时间"
+						},
+						{
+							"name": "inbound_dep_time",
+							"type": "Date",
+							"description": "回程出发日期"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态(Init:初始状态,BookSuccess:\"预定成功,PaySuccess:付款成功,TicketSuccess:订单成功,Close:订单关闭)"
+						},
+						{
+							"name": "origin_total_price",
+							"type": "Number",
+							"description": "订单初始总价(包含打包商品的价格)"
+						},
+						{
+							"name": "outbound_arr_time",
+							"type": "Date",
+							"description": "出发到达日期"
+						},
+						{
+							"name": "outbound_dep_time",
+							"type": "Date",
+							"description": "出发时间"
+						},
+						{
+							"name": "passenger_count",
+							"type": "Number",
+							"description": "乘机人数量"
+						},
+						{
+							"name": "pay2_agent_time",
+							"type": "Date",
+							"description": "转交易时间"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "支付状态(Init:初始状态;create_secure_pay:创建担保交易成功,PaySuccess:付款成功,TransferSuccess:转交易成功, PayedClosed:已支付订单关闭,NoPayClosed:未支付订单关闭 )"
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间"
+						},
+						{
+							"name": "product_tags",
+							"type": "String[]",
+							"description": "产品标识 student:学生票、nationality：国籍票、group：小团票、gold：金牌机票、card：宝贝机票、common：年龄票、speed：极速机票、age：限年龄票、delay：延时出票"
+						},
+						{
+							"name": "success_time",
+							"type": "Date",
+							"description": "订单成功时间"
+						},
+						{
+							"name": "total_activity_remit_price",
+							"type": "Number",
+							"description": "活动金额"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "订单总价(包含打包商品的价格)"
+						},
+						{
+							"name": "total_redpackage",
+							"type": "Number",
+							"description": "红包价格"
+						},
+						{
+							"name": "total_service_price",
+							"type": "Number",
+							"description": "服务费"
+						},
+						{
+							"name": "total_tax_price",
+							"type": "Number",
+							"description": "总税费"
+						},
+						{
+							"name": "total_ticket_price",
+							"type": "Number",
+							"description": "总票价"
+						},
+						{
+							"name": "trade_order_id",
+							"type": "Number",
+							"description": "交易订单id"
+						},
+						{
+							"name": "trip_type",
+							"type": "String",
+							"description": "行程类型(OneWay:单程,RoundTrip:往返,MultiCity:多程)"
+						}
+					],
+					"name": "base_order_vo",
+					"type": "IeBaseOrderVo",
+					"description": "订单基本信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "adt_tax_price",
+							"type": "Number",
+							"description": "15"
+						},
+						{
+							"name": "adt_ticket_price",
+							"type": "Number",
+							"description": "10"
+						},
+						{
+							"subParams": [
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "到达机场"
+								},
+								{
+									"name": "arr_time",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "code_share",
+									"type": "Boolean",
+									"description": "是否共享航班"
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "出发机场"
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发日期"
+								},
+								{
+									"name": "direction_type",
+									"type": "String",
+									"description": "航班方向(Outbound:去程,Inbound:回程,行程类型,MultiCity:多程)"
+								},
+								{
+									"name": "equip_type",
+									"type": "String",
+									"description": "机型"
+								},
+								{
+									"name": "flight_cabin",
+									"type": "String",
+									"description": "航班舱位"
+								},
+								{
+									"name": "flight_number",
+									"type": "String",
+									"description": "市场方航班号"
+								},
+								{
+									"name": "marketing_airline",
+									"type": "String",
+									"description": "市场"
+								},
+								{
+									"name": "operating_air_line",
+									"type": "String",
+									"description": "共享航空公司"
+								},
+								{
+									"name": "operating_flight_number",
+									"type": "String",
+									"description": "共享航班号"
+								},
+								{
+									"name": "segment_rph",
+									"type": "Number",
+									"description": "第几段"
+								}
+							],
+							"name": "book_flight_vos",
+							"type": "IeBookFlightVo[]",
+							"description": "2"
+						},
+						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "pnr id"
+								},
+								{
+									"name": "pnr_no",
+									"type": "String",
+									"description": "pnr值"
+								},
+								{
+									"name": "pnr_type",
+									"type": "String",
+									"description": "pnr类型"
+								}
+							],
+							"name": "book_pnr_vos",
+							"type": "IeBookPnrVo[]",
+							"description": "9"
+						},
+						{
+							"name": "book_status",
+							"type": "String",
+							"description": "预定订单状态(Init:初始状态, Need_Manule_HK:转手工HK, HK_Success:HK成功,Ticket_Success:出票成功,Close:订单关闭)"
+						},
+						{
+							"subParams": [
+								{
+									"name": "authentic_memo",
+									"type": "String",
+									"description": "票号验真备注"
+								},
+								{
+									"name": "authentic_status",
+									"type": "String",
+									"description": "票号验真状态(Init:初始状态,Failure:验真失败,SUCCESS:验真通过)"
+								},
+								{
+									"name": "conj_ticket_flag",
+									"type": "Boolean",
+									"description": "是否联程票"
+								},
+								{
+									"name": "flight_ids",
+									"type": "Number[]",
+									"description": "航班号id列表"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "主键"
+								},
+								{
+									"name": "issue_ticket_time",
+									"type": "Date",
+									"description": "出票日期"
+								},
+								{
+									"name": "passenger_cert_no",
+									"type": "String",
+									"description": "乘机人证件号"
+								},
+								{
+									"name": "passenger_cert_type",
+									"type": "String",
+									"description": "乘机人证件类型(Passport:护照,Hongkong_Macao:港澳通行证,Taiwan_MTP:台胞证,Home_Return_Permit:回乡证,Taiwan_Pass:台湾通行证,Entry_Taiwan_Permit:入台证);"
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘机人姓名"
+								},
+								{
+									"name": "passenger_type",
+									"type": "String",
+									"description": "乘机人类型(Adult:普通成人,Child:儿童,StudentAbroad:留学生,Infant:婴儿)"
+								},
+								{
+									"name": "pnr_id",
+									"type": "Number",
+									"description": "pnr主键"
+								},
+								{
+									"name": "ticket_nos",
+									"type": "String[]",
+									"description": "票号"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价"
+								},
+								{
+									"name": "ticket_tax",
+									"type": "Number",
+									"description": "票税"
+								}
+							],
+							"name": "book_ticket_vos",
+							"type": "IeBookTicketVo[]",
+							"description": "13"
+						},
+						{
+							"name": "book_type",
+							"type": "String",
+							"description": "pnr预定类型(Auto:自动, Manual:手工)"
+						},
+						{
+							"name": "chd_tax_price",
+							"type": "Number",
+							"description": "300"
+						},
+						{
+							"name": "chd_ticket_price",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "fare_source",
+							"type": "Number",
+							"description": "3"
+						},
+						{
+							"name": "issue_ticket_type",
+							"type": "String",
+							"description": "出票类型(Auto:自动出票,Manual:手工出票)"
+						},
+						{
+							"name": "origin_total_price",
+							"type": "Number",
+							"description": "原始总价(包含打包商品的价格)"
+						},
+						{
+							"name": "passenger_count",
+							"type": "Number",
+							"description": "16"
+						},
+						{
+							"name": "tax_type",
+							"type": "String",
+							"description": "税费类型(UserRefTax:参考税,RealTax:实时税费,ManualTax:手工回填税费)"
+						},
+						{
+							"name": "terminal_file_name",
+							"type": "String",
+							"description": "19"
+						},
+						{
+							"name": "terminal_url",
+							"type": "String",
+							"description": "18"
+						},
+						{
+							"name": "ticket_authentic_status",
+							"type": "String",
+							"description": "票号验真状态(Init:初始状态,Failure:验真失败,SUCCESS:验真通过)"
+						},
+						{
+							"name": "total_order_pirce",
+							"type": "Number",
+							"description": "5000"
+						},
+						{
+							"name": "total_tax_price",
+							"type": "Number",
+							"description": "17"
+						},
+						{
+							"name": "total_ticket_price",
+							"type": "Number",
+							"description": "12"
+						}
+					],
+					"name": "book_order_vos",
+					"type": "IeBookOrderVo[]",
+					"description": "预定订单信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "email",
+							"type": "String",
+							"description": "联系人邮箱"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "联系人电话"
+						}
+					],
+					"name": "contacts_vo",
+					"type": "IeContactsVo",
+					"description": "联系人信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "adult_price",
+							"type": "Number",
+							"description": "成人价格"
+						},
+						{
+							"name": "adult_tax",
+							"type": "Number",
+							"description": "成人价格"
+						},
+						{
+							"name": "baggage_rule",
+							"type": "String",
+							"description": "行李规定"
+						},
+						{
+							"name": "bonus_id",
+							"type": "String",
+							"description": "bonusId"
+						},
+						{
+							"name": "child_price",
+							"type": "Number",
+							"description": "儿童价格"
+						},
+						{
+							"name": "child_tax",
+							"type": "Number",
+							"description": "儿童税费"
+						},
+						{
+							"name": "fare_item_id",
+							"type": "String",
+							"description": "fareItemId"
+						},
+						{
+							"subParams": [
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "到达机场"
+								},
+								{
+									"name": "arr_terminal",
+									"type": "String",
+									"description": "到达航站楼"
+								},
+								{
+									"name": "arr_time",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "cabin_class",
+									"type": "String",
+									"description": "服务等级(First:头等舱,Business:商务舱, Economy:经济舱, EconomyStandard:标准经济舱, EconomyPremium:超级经济舱)"
+								},
+								{
+									"name": "cabin_class_code",
+									"type": "String",
+									"description": "cabinClassCode"
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "出发机场"
+								},
+								{
+									"name": "dep_terminal",
+									"type": "String",
+									"description": "出发航站楼"
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "elapsed_minute",
+									"type": "Number",
+									"description": "飞行时长"
+								},
+								{
+									"name": "equip_type",
+									"type": "String",
+									"description": "机型"
+								},
+								{
+									"name": "flight_cabin",
+									"type": "String",
+									"description": "舱位"
+								},
+								{
+									"name": "flight_number",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "itinerary_type",
+									"type": "Number",
+									"description": "行程类型"
+								},
+								{
+									"name": "main_segment",
+									"type": "Boolean",
+									"description": "mainSegment"
+								},
+								{
+									"name": "marketing_airline",
+									"type": "String",
+									"description": "市场方航空公司"
+								},
+								{
+									"name": "operating_air_line",
+									"type": "String",
+									"description": "承运方航空公司"
+								},
+								{
+									"name": "operating_flight_number",
+									"type": "String",
+									"description": "实际承运航班号"
+								},
+								{
+									"name": "segment_rph",
+									"type": "Number",
+									"description": "第几段"
+								},
+								{
+									"name": "stop_airport",
+									"type": "String",
+									"description": "经停机场三字码，逗号分隔"
+								},
+								{
+									"name": "stop_minute",
+									"type": "Number",
+									"description": "经停分钟数，逗号分隔"
+								},
+								{
+									"name": "stop_quantity",
+									"type": "Number",
+									"description": "经停数量"
+								},
+								{
+									"name": "trans_visa",
+									"type": "String",
+									"description": "过境签信息"
+								},
+								{
+									"name": "infant_cabin_class_code",
+									"type": "String",
+									"description": "婴儿舱位等级代码"
+								},
+								{
+									"name": "infant_cabin_class",
+									"type": "String",
+									"description": "服务等级(First:头等舱,Business:商务舱, Economy:经济舱, EconomyStandard:标准经济舱, EconomyPremium:超级经济舱)"
+								},
+								{
+									"name": "infant_flight_cabin",
+									"type": "String",
+									"description": "婴儿舱位代码"
+								}
+							],
+							"name": "flights",
+							"type": "IeFlightVo[]",
+							"description": "航班信息"
+						},
+						{
+							"name": "office_no",
+							"type": "String",
+							"description": "officeNo"
+						},
+						{
+							"name": "resource_code",
+							"type": "String",
+							"description": "供应渠道"
+						},
+						{
+							"name": "restriction",
+							"type": "String",
+							"description": "退改签规则"
+						},
+						{
+							"name": "ticketing_airline",
+							"type": "String",
+							"description": "出票航司"
+						},
+						{
+							"name": "trip_type",
+							"type": "String",
+							"description": "行程类型(OneWay:单程,RoundTrip:往返,MultiCity:多程)"
+						},
+						{
+							"name": "origin_bonus_id",
+							"type": "String",
+							"description": "原始政策id"
+						},
+						{
+							"name": "infant_tax",
+							"type": "Number",
+							"description": "婴儿税费"
+						},
+						{
+							"name": "infant_price",
+							"type": "Number",
+							"description": "婴儿价格"
+						}
+					],
+					"name": "item_vo",
+					"type": "IeItemVo",
+					"description": "搜索产品信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称"
+						},
+						{
+							"name": "consignee",
+							"type": "String",
+							"description": "收件人"
+						},
+						{
+							"name": "district_name",
+							"type": "String",
+							"description": "区县名称"
+						},
+						{
+							"name": "express_company_code",
+							"type": "String",
+							"description": "快递公司编号"
+						},
+						{
+							"name": "express_company_name",
+							"type": "String",
+							"description": "快递公司编号"
+						},
+						{
+							"name": "express_no",
+							"type": "String",
+							"description": "快递单号"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键"
+						},
+						{
+							"name": "is_post",
+							"type": "Boolean",
+							"description": "是否已经邮寄"
+						},
+						{
+							"name": "itinerary_no",
+							"type": "String",
+							"description": "行程单号"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "移动电话"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "支付状态(INITIAL: 初始状态, CREATED:已创建担保交易, PAYED:已付款, TURNED:转交易成功)"
+						},
+						{
+							"name": "postcode",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份名称"
+						},
+						{
+							"name": "refund_money",
+							"type": "Number",
+							"description": "退款金额"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "商家备注信息"
+						},
+						{
+							"name": "send_time",
+							"type": "Date",
+							"description": "发送时间"
+						},
+						{
+							"name": "send_type",
+							"type": "String",
+							"description": "配送方式(Counter:自取,Normal:快递,Regist:挂号信,Common:平邮)"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "行程单状态(INITIAL:初始状态,NOPAY(:未付款,PAYED:已付款,FINISHED:已完成,REFUND:已退款,CLOSED:已关闭（随主订单))"
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "电话"
+						}
+					],
+					"name": "itinerary_vo",
+					"type": "IeItineraryVo",
+					"description": "行程单信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "address_city",
+							"type": "String",
+							"description": "美国居住地-城市"
+						},
+						{
+							"name": "address_postcode",
+							"type": "String",
+							"description": "美国居住地-邮编"
+						},
+						{
+							"name": "address_state",
+							"type": "String",
+							"description": "美国加拿大居住地-州"
+						},
+						{
+							"name": "address_street",
+							"type": "String",
+							"description": "美国居住地-街道"
+						},
+						{
+							"name": "birthday",
+							"type": "Date",
+							"description": "出生日期"
+						},
+						{
+							"name": "cert_issue_country",
+							"type": "String",
+							"description": "证件签发国"
+						},
+						{
+							"name": "cert_no",
+							"type": "String",
+							"description": "乘机人证件号"
+						},
+						{
+							"name": "cert_period",
+							"type": "Date",
+							"description": "证件有效期"
+						},
+						{
+							"name": "cert_type",
+							"type": "String",
+							"description": "乘机人证件类型(Passport:护照,Hongkong_Macao:港澳通行证,Taiwan_MTP:台胞证,Home_Return_Permit:回乡证,Taiwan_Pass:台湾通行证,Entry_Taiwan_Permit:入台证);"
+						},
+						{
+							"name": "gender",
+							"type": "String",
+							"description": "性别(MALE:男,FEMALE:女)"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "乘机人姓名"
+						},
+						{
+							"name": "nationality",
+							"type": "String",
+							"description": "国籍"
+						},
+						{
+							"name": "passenger_type",
+							"type": "String",
+							"description": "乘机人类型(Adult:普通成人,Child:儿童,StudentAbroad:留学生,Infant:婴儿)"
+						},
+						{
+							"name": "airline_code",
+							"type": "String",
+							"description": "常旅客积分分属航司二字码"
+						},
+						{
+							"name": "airline_card_no",
+							"type": "String",
+							"description": "常旅客卡号"
+						}
+					],
+					"name": "passgener_vos",
+					"type": "IePassgenerVo[]",
+					"description": "乘机人列表"
+				},
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "交易订单ID"
+				},
+				{
 					"subParams": [
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "辅营订单号",
-							"required": true
+							"description": "辅营订单号"
 						},
 						{
-							"name": "passenger_aux_vos",
-							"type": "IePassengerAuxVo[]",
-							"description": "辅营购买信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "乘机人姓名",
-									"required": true
+									"description": "乘机人姓名"
 								},
 								{
-									"name": "flight_vo",
-									"type": "IeBookFlightVo",
-									"description": "乘机人购买辅营产品的航段",
-									"required": true,
 									"subParams": [
 										{
 											"name": "flight_number",
 											"type": "String",
-											"description": "航班号",
-											"required": true
+											"description": "航班号"
 										},
 										{
 											"name": "dep_airport",
 											"type": "String",
-											"description": "出发机场",
-											"required": true
+											"description": "出发机场"
 										},
 										{
 											"name": "arr_airport",
 											"type": "String",
-											"description": "到达机场",
-											"required": true
+											"description": "到达机场"
 										},
 										{
 											"name": "dep_time",
 											"type": "Date",
-											"description": "出发时间",
-											"required": true
+											"description": "出发时间"
 										},
 										{
 											"name": "flight_cabin",
 											"type": "String",
-											"description": "航班舱位",
-											"required": true
+											"description": "航班舱位"
 										}
-									]
+									],
+									"name": "flight_vo",
+									"type": "IeBookFlightVo",
+									"description": "乘机人购买辅营产品的航段"
 								},
 								{
-									"name": "aux_product_vo",
-									"type": "IeAuxProductVo",
-									"description": "辅营产品规格信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "outer_id",
 											"type": "String",
-											"description": "产品外部ID",
-											"required": true
+											"description": "产品外部ID"
 										},
 										{
 											"name": "product_name",
 											"type": "String",
-											"description": "产品名称",
-											"required": true
+											"description": "产品名称"
 										},
 										{
 											"name": "product_type",
 											"type": "Number",
-											"description": "产品类型 3:贵宾厅，4:行李，5:选座，6:套餐，7:CIP，11:值机，12:餐食, 13:值机及选座",
-											"required": true
+											"description": "产品类型 3:贵宾厅，4:行李，5:选座，6:套餐，7:CIP，11:值机，12:餐食, 13:值机及选座"
 										},
 										{
 											"name": "sale_type",
 											"type": "Number",
-											"description": "销售类型 1:一次销售，2:二次销售，3:不限",
-											"required": true
+											"description": "销售类型 1:一次销售，2:二次销售，3:不限"
 										},
 										{
 											"name": "online_price",
 											"type": "Number",
-											"description": "商品销售价格单位人民币分，打包行李的单价",
-											"required": true
+											"description": "商品销售价格单位人民币分，打包行李的单价"
 										},
 										{
-											"name": "baggage_vo",
-											"type": "IeBaggageVo",
-											"description": "行李产品规格信息(仅当productType=4有效）",
-											"required": true,
 											"subParams": [
 												{
 													"name": "pc",
 													"type": "Number",
-													"description": "行李总件数",
-													"required": true
+													"description": "行李总件数"
 												},
 												{
 													"name": "weight",
 													"type": "Number",
-													"description": "行李重量，单位KG，当allWeight为是的时候行李重量描述所有件数的总重量",
-													"required": true
+													"description": "行李重量，单位KG，当allWeight为是的时候行李重量描述所有件数的总重量"
 												},
 												{
 													"name": "is_all_weight",
 													"type": "Boolean",
-													"description": "是否所有行李重量",
-													"required": true
+													"description": "是否所有行李重量"
 												}
-											]
+											],
+											"name": "baggage_vo",
+											"type": "IeBaggageVo",
+											"description": "行李产品规格信息(仅当productType=4有效）"
 										},
 										{
-											"name": "seat_vo",
-											"type": "IeSeatVo",
-											"description": "选座产品信息(仅当productType=3或8有效）",
-											"required": true,
 											"subParams": [
 												{
 													"name": "seat_row",
 													"type": "Number",
-													"description": "座位行区域，1:前排，2:中排，3:后排",
-													"required": true
+													"description": "座位行区域，1:前排，2:中排，3:后排"
 												},
 												{
 													"name": "seat_area",
 													"type": "Number",
-													"description": "座位列区域， 1:靠过道，2:靠窗，3:并排",
-													"required": true
+													"description": "座位列区域， 1:靠过道，2:靠窗，3:并排"
 												}
-											]
+											],
+											"name": "seat_vo",
+											"type": "IeSeatVo",
+											"description": "选座产品信息(仅当productType=3或8有效）"
 										}
-									]
+									],
+									"name": "aux_product_vo",
+									"type": "IeAuxProductVo",
+									"description": "辅营产品规格信息"
 								},
 								{
 									"name": "book_num",
 									"type": "Number",
-									"description": "订购数量，默认1",
-									"required": true
+									"description": "订购数量，默认1"
 								}
-							]
+							],
+							"name": "passenger_aux_vos",
+							"type": "IePassengerAuxVo[]",
+							"description": "辅营购买信息"
 						}
-					]
+					],
+					"name": "vir_pro_order_vos",
+					"type": "IeVirProOrderVo[]",
+					"description": "辅营订单"
 				},
 				{
 					"name": "business_mode",
 					"type": "Number",
-					"description": "订单模式",
-					"required": true
+					"description": "订单模式"
 				}
-			]
+			],
+			"name": "order_vo",
+			"type": "IeOrderVo",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.order.get",
+	"apiChineseName": "【国际机票】查询订单详情",
+	"description": "根据订单ID查询订单详情",
+	"id": 24314
 }

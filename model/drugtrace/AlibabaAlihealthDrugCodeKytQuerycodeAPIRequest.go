@@ -13,7 +13,7 @@ import (
 // 核查平台优先过滤非8开头的，长度非20位数字的码信息。
 type AlibabaAlihealthDrugCodeKytQuerycodeAPIRequest struct {
 	model.Params
-	// 码列表
+	// 码列表【多个码用逗号分隔的字符串。要求数量在1000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 	_codes []string
 	// 企业唯一标识
 	_refEntId string
@@ -41,7 +41,7 @@ func (r AlibabaAlihealthDrugCodeKytQuerycodeAPIRequest) GetApiParams() url.Value
 }
 
 // SetCodes is Codes Setter
-// 码列表
+// 码列表【多个码用逗号分隔的字符串。要求数量在1000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 func (r *AlibabaAlihealthDrugCodeKytQuerycodeAPIRequest) SetCodes(_codes []string) error {
 	r._codes = _codes
 	r.Set("codes", _codes)

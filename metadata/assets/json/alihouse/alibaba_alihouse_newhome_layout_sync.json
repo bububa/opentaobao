@@ -1,14 +1,6 @@
 {
-	"id": 55949,
-	"name": "alibaba.alihouse.newhome.layout.sync",
-	"apiChineseName": "房通户型数据同步",
-	"description": "房通户型数据同步",
 	"requestParams": [
 		{
-			"name": "sync_project_layout_data",
-			"type": "SyncProjectLayoutDto",
-			"description": "数据",
-			"required": true,
 			"subParams": [
 				{
 					"name": "layout_images",
@@ -33,8 +25,7 @@
 				{
 					"name": "construction_area",
 					"type": "String",
-					"description": "建筑面积",
-					"required": true
+					"description": "建筑面积"
 				},
 				{
 					"name": "bathroom",
@@ -75,8 +66,7 @@
 				{
 					"name": "orientation",
 					"type": "Number",
-					"description": "朝向",
-					"required": true
+					"description": "朝向"
 				},
 				{
 					"name": "description",
@@ -87,41 +77,149 @@
 					"name": "is_deleted",
 					"type": "String",
 					"description": "是否删除 1 是 0 否"
+				},
+				{
+					"name": "source_type",
+					"type": "Number",
+					"description": "数据源类型 （1-新房 2-二手房）"
+				},
+				{
+					"name": "is_main_layout",
+					"type": "Number",
+					"description": "是否是主力户型"
+				},
+				{
+					"name": "layout_label",
+					"type": "String",
+					"description": "户型标签"
+				},
+				{
+					"name": "sales_status",
+					"type": "Number",
+					"description": "销售状态"
+				},
+				{
+					"name": "kitchen",
+					"type": "String",
+					"description": "厨房数量"
+				},
+				{
+					"name": "open_kitchen",
+					"type": "Number",
+					"description": "是否开放厨房 1-是 0-否"
+				},
+				{
+					"name": "service_facility",
+					"type": "String",
+					"description": "服务设施"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店ID"
+				},
+				{
+					"name": "outer_tid",
+					"type": "String",
+					"description": "外部货ID"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型"
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "商品ID"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "SKUID"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型"
+						}
+					],
+					"name": "extend",
+					"type": "GoodsRelationDTO[]",
+					"description": "绑定的品"
+				},
+				{
+					"subParams": [
+						{
+							"name": "relation_item_id",
+							"type": "Number",
+							"description": "商品ID"
+						},
+						{
+							"name": "relation_sku_id",
+							"type": "Number",
+							"description": "SKUID"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型"
+						}
+					],
+					"name": "relation_cargos",
+					"type": "GoodsRelationDTO[]",
+					"description": "绑定的货"
+				},
+				{
+					"name": "estate_type",
+					"type": "Number",
+					"description": "物业类型"
 				}
-			]
+			],
+			"name": "sync_project_layout_data",
+			"type": "SyncProjectLayoutDto",
+			"description": "数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回户型ID",
-					"required": true
+					"description": "返回户型ID"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.layout.sync",
+	"apiChineseName": "房通户型数据同步",
+	"description": "房通户型数据同步",
+	"id": 55949
 }

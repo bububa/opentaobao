@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "上次查询的最大更新时间",
+			"required": true
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "单次查询返回的最大记录数",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "max_date_id",
+							"type": "Date",
+							"description": "本次查询最大记录更新时间"
+						},
+						{
+							"name": "data_list",
+							"type": "Number[]",
+							"description": "酒店列表"
+						}
+					],
+					"name": "data",
+					"type": "PageDTO",
+					"description": "数据对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "接口应答对象"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.hotel.modify.increment",
+	"apiChineseName": "酒店价库变更列表查询-供销平台",
+	"description": "按照时间纬度查询酒店变更列表",
+	"id": 58887
+}

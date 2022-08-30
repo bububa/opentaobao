@@ -24,6 +24,8 @@ type DrugRequest struct {
 	PackQty string `json:"pack_qty,omitempty" xml:"pack_qty,omitempty"`
 	// 药品来源（非空）
 	DrugSource string `json:"drug_source,omitempty" xml:"drug_source,omitempty"`
+	// 频次数量
+	FreqTimes string `json:"freq_times,omitempty" xml:"freq_times,omitempty"`
 	// 频次编码
 	FrequencyCode string `json:"frequency_code,omitempty" xml:"frequency_code,omitempty"`
 	// 频次
@@ -54,6 +56,4 @@ type DrugRequest struct {
 	DrugBasicCode string `json:"drug_basic_code,omitempty" xml:"drug_basic_code,omitempty"`
 	// 医保编号
 	MedicareNo string `json:"medicare_no,omitempty" xml:"medicare_no,omitempty"`
-	// 频次数量
-	FreqTimes string `json:"freq_times,omitempty" xml:"freq_times,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 30688,
-	"name": "taobao.omniorder.store.switchstatus.update",
-	"apiChineseName": "switchstatus.update",
-	"description": "变更门店发货、门店自提状态",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -19,26 +15,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "data",
-					"type": "Json",
-					"description": "返回素材id"
-				},
 				{
 					"name": "message",
 					"type": "String",
 					"description": "message"
 				},
 				{
+					"name": "data",
+					"type": "String",
+					"description": "data"
+				},
+				{
 					"name": "code",
 					"type": "String",
 					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniorder.store.switchstatus.update",
+	"apiChineseName": "switchstatus.update",
+	"description": "变更门店发货、门店自提状态",
+	"id": 30688
 }

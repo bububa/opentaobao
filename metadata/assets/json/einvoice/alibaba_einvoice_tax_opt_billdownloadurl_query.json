@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"name": "bill_date",
+			"type": "String",
+			"description": "指定账单的日期",
+			"required": true
+		},
+		{
+			"name": "company_code",
+			"type": "String",
+			"description": "平台提供的公司编码",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型，建议传递，供应商请传递固定值:CONTRACTOR"
+		},
+		{
+			"name": "belonging_business_scenario",
+			"type": "String",
+			"description": "供应商提供服务的的合作企业的公司编码，当user_type为CONTRACTOR时，建议提供此参数。特别是供应商使用同一主体编码面向多个企业提供服务，务必提供此参数，用于明确区分需要下载哪个合作企业的业务账单。"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "download_url",
+							"type": "String",
+							"description": "账单文件的下载地址，请求成功后20s内有效"
+						}
+					],
+					"name": "result",
+					"type": "TaxOptimizationBillDownloadUrlResultDto",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "操作结果对象"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.einvoice.tax.opt.billdownloadurl.query",
+	"apiChineseName": "税筹业务账单文件下载URL查询",
+	"description": "税筹业务账单文件下载的URL查询",
+	"id": 57414
+}

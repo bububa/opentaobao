@@ -1,8 +1,4 @@
 {
-	"id": 285,
-	"name": "taobao.appstore.subscribe.get",
-	"apiChineseName": "查询appstore应用订购关系",
-	"description": "查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get)",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "user_subscribe",
-			"type": "UserSubscribe",
-			"description": "用户订购信息",
 			"subParams": [
 				{
 					"name": "status",
@@ -37,7 +30,14 @@
 					"type": "Number",
 					"description": "0-无版本信息；1-初级版；2-中级版；3-高级版"
 				}
-			]
+			],
+			"name": "user_subscribe",
+			"type": "UserSubscribe",
+			"description": "用户订购信息"
 		}
-	]
+	],
+	"name": "taobao.appstore.subscribe.get",
+	"apiChineseName": "查询appstore应用订购关系",
+	"description": "查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get)",
+	"id": 285
 }

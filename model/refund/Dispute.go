@@ -56,6 +56,8 @@ type Dispute struct {
 	TimeOut string `json:"time_out,omitempty" xml:"time_out,omitempty"`
 	// 商品名称
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
+	// 买家openId
+	BuyerOpenUid string `json:"buyer_open_uid,omitempty" xml:"buyer_open_uid,omitempty"`
 	// 买家购买数量
 	Num int64 `json:"num,omitempty" xml:"num,omitempty"`
 	// 子订单号。如果是单笔交易oid会等于tid

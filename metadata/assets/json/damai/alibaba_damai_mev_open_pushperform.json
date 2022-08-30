@@ -1,13 +1,6 @@
 {
-	"id": 46073,
-	"name": "alibaba.damai.mev.open.pushperform",
-	"apiChineseName": "大麦换验平台-第三方对外开放-场次接口pushPerform",
-	"description": "pushPerform",
 	"requestParams": [
 		{
-			"name": "push_perform_param",
-			"type": "ThirdPerformPushOpenParam",
-			"description": "入参pushPerformParam",
 			"subParams": [
 				{
 					"name": "end_time",
@@ -53,41 +46,49 @@
 					"name": "venue_id",
 					"type": "Number",
 					"description": "场馆id"
+				},
+				{
+					"name": "in_way",
+					"type": "Number",
+					"description": "入场方式 : 1 = 纸制票入场，2 = 电子票入场，3 = 纸质票电子票均支持"
 				}
-			]
+			],
+			"name": "push_perform_param",
+			"type": "ThirdPerformPushOpenParam",
+			"description": "入参pushPerformParam"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "返回结果",
-					"required": true
+					"description": "返回结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.damai.mev.open.pushperform",
+	"apiChineseName": "大麦换验平台-第三方对外开放-场次接口pushPerform",
+	"description": "pushPerform",
+	"id": 46073
 }

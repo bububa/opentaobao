@@ -1,8 +1,4 @@
 {
-	"id": 25402,
-	"name": "taobao.xhotel.multiplerates.update",
-	"apiChineseName": "复杂价格推送接口（批量全量）",
-	"description": "批量更新复杂价格\n涵盖了taobao.xhotel.rates.update的功能",
 	"requestParams": [
 		{
 			"name": "rate_quota_map",
@@ -22,5 +18,9 @@
 			"type": "String",
 			"description": "批量更新的时候，如果部分更新失败，会展示部分失败的原因"
 		}
-	]
+	],
+	"name": "taobao.xhotel.multiplerates.update",
+	"apiChineseName": "复杂价格推送接口（批量全量）",
+	"description": "批量更新复杂价格\n涵盖了taobao.xhotel.rates.update的功能",
+	"id": 25402
 }

@@ -1,13 +1,13 @@
 {
-	"id": 23754,
-	"name": "alibaba.interact.sensor.networkstatus",
-	"apiChineseName": "网络状态",
-	"description": "客户端网络状态",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "return=0表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.networkstatus",
+	"apiChineseName": "网络状态",
+	"description": "客户端网络状态",
+	"id": 23754
 }

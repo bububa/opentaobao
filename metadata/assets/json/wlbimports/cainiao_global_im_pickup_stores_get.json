@@ -1,0 +1,221 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "from_id",
+					"type": "Number",
+					"description": "发件人联系地址ID",
+					"required": true
+				},
+				{
+					"name": "to_id",
+					"type": "Number",
+					"description": "发件人国家ID",
+					"required": true
+				},
+				{
+					"name": "transport_type",
+					"type": "String",
+					"description": "运输方式（卡车：TRUCK，快递：EXPRESS）",
+					"required": true
+				}
+			],
+			"name": "transferstore_query_request",
+			"type": "TransferstoreQueryRequest",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "zip_code",
+											"type": "String",
+											"description": "邮编"
+										},
+										{
+											"name": "country",
+											"type": "String",
+											"description": "国家"
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "城市"
+										},
+										{
+											"name": "company_name",
+											"type": "String",
+											"description": "公司名称"
+										},
+										{
+											"name": "resource_name",
+											"type": "String",
+											"description": "资源名称"
+										},
+										{
+											"name": "country_id",
+											"type": "Number",
+											"description": "国家id"
+										},
+										{
+											"name": "area_id",
+											"type": "Number",
+											"description": "地区id"
+										},
+										{
+											"name": "resource_code",
+											"type": "String",
+											"description": "资源code"
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省份"
+										},
+										{
+											"name": "phone",
+											"type": "String",
+											"description": "电话"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "名称"
+										},
+										{
+											"name": "detail_address",
+											"type": "String",
+											"description": "详细地址"
+										},
+										{
+											"name": "email",
+											"type": "String",
+											"description": "邮件"
+										}
+									],
+									"name": "pick_up_response",
+									"type": "PickupInfo",
+									"description": "仓库揽收信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "zip_code",
+											"type": "String",
+											"description": "邮编"
+										},
+										{
+											"name": "country",
+											"type": "String",
+											"description": "国家"
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "城市"
+										},
+										{
+											"name": "company_name",
+											"type": "String",
+											"description": "公司"
+										},
+										{
+											"name": "country_id",
+											"type": "Number",
+											"description": "国家id"
+										},
+										{
+											"name": "area_id",
+											"type": "Number",
+											"description": "地区id"
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省份"
+										},
+										{
+											"name": "phone",
+											"type": "String",
+											"description": "电话"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "联系人姓名"
+										},
+										{
+											"name": "detail_address",
+											"type": "String",
+											"description": "详细地址"
+										},
+										{
+											"name": "store_name",
+											"type": "String",
+											"description": "仓名称"
+										},
+										{
+											"name": "email",
+											"type": "String",
+											"description": "邮件"
+										},
+										{
+											"name": "store_code",
+											"type": "String",
+											"description": "仓code"
+										}
+									],
+									"name": "store_center_response",
+									"type": "TransferStoreCenterResponse",
+									"description": "集货仓信息"
+								}
+							],
+							"name": "transfer_store_info_response_list",
+							"type": "TransferStoreInfoResponse[]",
+							"description": "集货仓信息列表"
+						}
+					],
+					"name": "transfer_store_response",
+					"type": "TransferStoreResponse",
+					"description": "集货仓查询结果信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否正常响应"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网络异常码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常提示"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "响应体"
+		}
+	],
+	"name": "cainiao.global.im.pickup.stores.get",
+	"apiChineseName": "首公里揽收-集货仓列表查询",
+	"description": "首公里揽收-集货仓列表查询",
+	"id": 59942
+}

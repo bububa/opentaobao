@@ -1,13 +1,6 @@
 {
-	"id": 44003,
-	"name": "alibaba.wdk.pos.trade.pay",
-	"apiChineseName": "轻pos品牌营销支付接口",
-	"description": "轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易",
 	"requestParams": [
 		{
-			"name": "pay_request",
-			"type": "FastBuyPosPayRequest",
-			"description": "支付请求",
 			"subParams": [
 				{
 					"name": "alipay_trade_id",
@@ -35,34 +28,38 @@
 					"type": "Number",
 					"description": "实际支付金额"
 				}
-			]
+			],
+			"name": "pay_request",
+			"type": "FastBuyPosPayRequest",
+			"description": "支付请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FastBuyPosPayResult",
-			"description": "支付结果",
 			"subParams": [
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回的错误码",
-					"required": true
+					"description": "返回的错误码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FastBuyPosPayResult",
+			"description": "支付结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.pos.trade.pay",
+	"apiChineseName": "轻pos品牌营销支付接口",
+	"description": "轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易",
+	"id": 44003
 }

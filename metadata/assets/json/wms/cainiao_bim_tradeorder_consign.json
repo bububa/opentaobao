@@ -1,8 +1,4 @@
 {
-	"id": 26245,
-	"name": "cainiao.bim.tradeorder.consign",
-	"apiChineseName": "驱动保税交易订单发货",
-	"description": "驱动保税交易订单发货",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -32,5 +28,9 @@
 			"type": "String",
 			"description": "菜鸟物流订单号,格式为LP开头"
 		}
-	]
+	],
+	"name": "cainiao.bim.tradeorder.consign",
+	"apiChineseName": "驱动保税交易订单发货",
+	"description": "驱动保税交易订单发货",
+	"id": 26245
 }

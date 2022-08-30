@@ -1,13 +1,6 @@
 {
-	"id": 43372,
-	"name": "alibaba.alihealth.booking.reserve.confirm",
-	"apiChineseName": "确认预约",
-	"description": "确认预约",
 	"requestParams": [
 		{
-			"name": "confirm",
-			"type": "IsvReserveRequest",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "reserve_time",
@@ -26,40 +19,43 @@
 					"description": "订单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "confirm",
+			"type": "IsvReserveRequest",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
-				{
-					"name": "data",
-					"type": "Boolean",
-					"description": "返回数据对象",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msg_info",
-					"required": true
+					"description": "msg_info"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msg_code",
-					"required": true
+					"description": "msg_code"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.booking.reserve.confirm",
+	"apiChineseName": "确认预约",
+	"description": "确认预约",
+	"id": 43372
 }

@@ -1,8 +1,4 @@
 {
-	"id": 46020,
-	"name": "alibaba.alihealth.drug.kyt.yy.uploadretail",
-	"apiChineseName": "医院上传出库信息",
-	"description": "医院上传出库信息接口",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -52,8 +48,8 @@
 			"name": "trace_codes",
 			"type": "String[]",
 			"description": "20位追溯码（多个时用半角逗号分隔）",
-			"required": true,
-			"maxListSize": 2000
+			"maxListSize": 2000,
+			"required": true
 		},
 		{
 			"name": "customer_id_type",
@@ -117,5 +113,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功(true 成功 ,false失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.yy.uploadretail",
+	"apiChineseName": "医院上传出库信息",
+	"description": "医院上传出库信息接口",
+	"id": 46020
 }

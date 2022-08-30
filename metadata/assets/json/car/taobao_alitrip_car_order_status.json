@@ -1,8 +1,4 @@
 {
-	"id": 26874,
-	"name": "taobao.alitrip.car.order.status",
-	"apiChineseName": "商家订单状态改变通知接口（神州专车接口）",
-	"description": "商家订单状态改变通知接口，神州专车专用接口！",
 	"requestParams": [
 		{
 			"name": "operation",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "其它数据",
-					"required": true
+					"type": "String",
+					"description": "其它数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.status",
+	"apiChineseName": "商家订单状态改变通知接口（神州专车接口）",
+	"description": "商家订单状态改变通知接口，神州专车专用接口！",
+	"id": 26874
 }

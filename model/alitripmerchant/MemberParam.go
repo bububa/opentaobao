@@ -16,8 +16,16 @@ type MemberParam struct {
 	PhoneNum string `json:"phone_num,omitempty" xml:"phone_num,omitempty"`
 	// 用户邮箱
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
+	// 城市
+	Country string `json:"country,omitempty" xml:"country,omitempty"`
+	// 用户注册类型（1.新用户注册  2.老用户注册）
+	UserRegisterType string `json:"user_register_type,omitempty" xml:"user_register_type,omitempty"`
 	// 是否接受协议
 	AcceptedTandC bool `json:"accepted_tand_c,omitempty" xml:"accepted_tand_c,omitempty"`
 	// 是否接受消息推送
 	Subscription bool `json:"subscription,omitempty" xml:"subscription,omitempty"`
+	// 用户是否勾选短信收取优惠邮件
+	OptinAll bool `json:"optin_all,omitempty" xml:"optin_all,omitempty"`
+	// 是否统一向境外提供个人信息
+	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
 }

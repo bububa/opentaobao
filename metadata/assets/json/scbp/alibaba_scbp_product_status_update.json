@@ -1,15 +1,11 @@
 {
-	"id": 26259,
-	"name": "alibaba.scbp.product.status.update",
-	"apiChineseName": "修改P4P产品推广状态",
-	"description": "修改P4P产品推广状态",
 	"requestParams": [
 		{
 			"name": "product_id_list",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "产品ID列表",
-			"required": true,
-			"maxListSize": 50
+			"maxListSize": 50,
+			"required": true
 		},
 		{
 			"name": "status",
@@ -24,5 +20,9 @@
 			"type": "Number",
 			"description": "实际修改的产品数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.product.status.update",
+	"apiChineseName": "修改P4P产品推广状态",
+	"description": "修改P4P产品推广状态",
+	"id": 26259
 }

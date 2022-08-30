@@ -1,13 +1,6 @@
 {
-	"id": 49793,
-	"name": "alibaba.ascp.uop.supplier.reverseorder.create",
-	"apiChineseName": "商家ERP发起创建销退单服务",
-	"description": "商家在收到消费者实物退货后，在ERP发起创建销退单服务",
 	"requestParams": [
 		{
-			"name": "reverse_create_request",
-			"type": "ReverseCreateRequest",
-			"description": "逆向销退单创建请求",
 			"subParams": [
 				{
 					"name": "supplier_id",
@@ -45,10 +38,6 @@
 					"required": true
 				},
 				{
-					"name": "receiver_info",
-					"type": "Receiverinfo",
-					"description": "退回收件人信息（商家）",
-					"required": true,
 					"subParams": [
 						{
 							"name": "receiver_email",
@@ -112,13 +101,13 @@
 							"description": "邮编",
 							"required": true
 						}
-					]
+					],
+					"name": "receiver_info",
+					"type": "Receiverinfo",
+					"description": "退回收件人信息（商家）",
+					"required": true
 				},
 				{
-					"name": "sender_info",
-					"type": "Senderinfo",
-					"description": "退回寄件人信息（消费者）",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sender_phone",
@@ -176,12 +165,13 @@
 							"description": "邮编",
 							"required": true
 						}
-					]
+					],
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "退回寄件人信息（消费者）",
+					"required": true
 				},
 				{
-					"name": "order_items",
-					"type": "Orderitems[]",
-					"description": "退回订单货品信息列表",
 					"subParams": [
 						{
 							"name": "erp_order_line",
@@ -206,7 +196,10 @@
 							"description": "货品计划退回数量",
 							"required": true
 						}
-					]
+					],
+					"name": "order_items",
+					"type": "Orderitems[]",
+					"description": "退回订单货品信息列表"
 				},
 				{
 					"name": "store_code",
@@ -214,7 +207,50 @@
 					"description": "退回仓编码",
 					"required": true
 				}
-			]
+			],
+			"name": "reverse_create_request",
+			"type": "ReverseCreateRequest",
+			"description": "逆向销退单创建请求"
 		}
-	]
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"subParams": [
+						{
+							"name": "idempotent_reason",
+							"type": "String",
+							"description": "幂等原因"
+						}
+					],
+					"name": "data",
+					"type": "DataMap",
+					"description": "业务数据"
+				}
+			],
+			"name": "reverse_create_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
+		}
+	],
+	"name": "alibaba.ascp.uop.supplier.reverseorder.create",
+	"apiChineseName": "商家ERP发起创建销退单服务",
+	"description": "商家在收到消费者实物退货后，在ERP发起创建销退单服务",
+	"id": 49793
 }

@@ -1,0 +1,153 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_activity_code",
+					"type": "String",
+					"description": "外部营销活动的code，最长40个字符"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "min_continuity_stay",
+									"type": "Number",
+									"description": "最小连住天数"
+								},
+								{
+									"name": "investment_number",
+									"type": "Number",
+									"description": "折扣比例，填30就意味着原价的30%，也就是打3折。数字范围限定在10-95之间"
+								}
+							],
+							"name": "long_order_info",
+							"type": "LongOrderInfo",
+							"description": "连住优惠的入参"
+						},
+						{
+							"subParams": [
+								{
+									"name": "min_pre_booking_days",
+									"type": "Number",
+									"description": "最少提前预定天数，数字范围限定在1-60"
+								},
+								{
+									"name": "investment_number",
+									"type": "Number",
+									"description": "折扣比例，填30就意味着原价的30%，也就是打3折。数字范围限定在10-95之间"
+								},
+								{
+									"name": "min_continuity_stay",
+									"type": "Number",
+									"description": "连住天数,可为空，范围1-60"
+								}
+							],
+							"name": "early_booking_info",
+							"type": "EarlyBookingInfo",
+							"description": "早定优惠的入参"
+						},
+						{
+							"subParams": [
+								{
+									"name": "valid_weeks",
+									"type": "String[]",
+									"description": "一个星期内有效性约束。1-7 对应周一到周日，传入的值比如[1,6]，就表示星期一和星期六营销生效"
+								},
+								{
+									"name": "check_in_from",
+									"type": "Date",
+									"description": "可入住的起始时间，不填默认一年，一年后自动续期"
+								},
+								{
+									"name": "check_in_to",
+									"type": "Date",
+									"description": "可入住的结束时间，不填默认一年，一年后自动续期"
+								},
+								{
+									"name": "investment_number",
+									"type": "Number",
+									"description": "折扣比例，填30就意味着原价的30%，也就是打3折。数字范围限定在10-95之间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "invalid_from",
+											"type": "Date",
+											"description": "活动失效开始时间"
+										},
+										{
+											"name": "invalid_to",
+											"type": "Date",
+											"description": "活动失效结束时间"
+										}
+									],
+									"name": "invalid_dates",
+									"type": "InvalidDate[]",
+									"description": "不可用日期，开始日期和结束日期: from--to  只有一天的场景，from和to传同一天； 默认：空，代表无时间限制；"
+								}
+							],
+							"name": "daily_booking_info",
+							"type": "DailyBookingInfo",
+							"description": "天天特惠的入参"
+						}
+					],
+					"name": "promo_info",
+					"type": "PromoInfo",
+					"description": "营销活动的具体参数对象，在每次添加更新的时候，long_order_info、early_booking_info、daily_booking_info 只能填1种类型，其他2种类型为空",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "rate_plan_code",
+							"type": "String",
+							"description": "外部价格计划code"
+						},
+						{
+							"name": "out_rid",
+							"type": "String",
+							"description": "外部房型id"
+						}
+					],
+					"name": "rate_infos",
+					"type": "RateInfo[]",
+					"description": "营销活动关联的价格计划和房型"
+				}
+			],
+			"name": "update_promo_param",
+			"type": "UpdatePromoParam",
+			"description": "更新营销活动的入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集"
+		}
+	],
+	"name": "taobao.xhotel.bnbpromo.update",
+	"apiChineseName": "民宿营销活动更新",
+	"description": "全量更新对应外部活动code相关的营销活动信息",
+	"id": 59720
+}

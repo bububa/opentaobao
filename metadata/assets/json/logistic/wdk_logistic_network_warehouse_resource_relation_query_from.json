@@ -1,14 +1,6 @@
 {
-	"id": 54065,
-	"name": "wdk.logistic.network.warehouse.resource.relation.query.from",
-	"apiChineseName": "中心仓查网格仓",
-	"description": "盒马集市，中心仓查询网格仓",
 	"requestParams": [
 		{
-			"name": "param_page_query_warehouse_resource_relation_by_from_request",
-			"type": "PageQueryWarehouseResourceRelationByFromRequest",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "from_org_resource_code",
@@ -43,134 +35,123 @@
 					"description": "分页，上限50",
 					"required": true
 				}
-			]
+			],
+			"name": "param_page_query_warehouse_resource_relation_by_from_request",
+			"type": "PageQueryWarehouseResourceRelationByFromRequest",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "LogisticsResult",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "data",
-					"type": "Pagination",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "results",
-							"type": "WarehouseResourceRelationDto[]",
-							"description": "数据列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "from_org_resource_code",
 									"type": "String",
-									"description": "from资源外部编码",
-									"required": true
+									"description": "from资源外部编码"
 								},
 								{
 									"name": "from_org_source",
 									"type": "String",
-									"description": "from资源来源",
-									"required": true
+									"description": "from资源来源"
 								},
 								{
 									"name": "from_resource_code",
 									"type": "String",
-									"description": "from资源编码",
-									"required": true
+									"description": "from资源编码"
 								},
 								{
 									"name": "from_resource_name",
 									"type": "String",
-									"description": "from资源名称",
-									"required": true
+									"description": "from资源名称"
 								},
 								{
 									"name": "from_resource_type",
 									"type": "String",
-									"description": "from资源类型",
-									"required": true
+									"description": "from资源类型"
 								},
 								{
 									"name": "merchant_code",
 									"type": "String",
-									"description": "商家code",
-									"required": true
+									"description": "商家code"
 								},
 								{
 									"name": "network_code",
 									"type": "String",
-									"description": "网络名称",
-									"required": true
+									"description": "网络名称"
 								},
 								{
 									"name": "relation_type",
 									"type": "String",
-									"description": "关系类型",
-									"required": true
+									"description": "关系类型"
 								},
 								{
 									"name": "to_org_resource_code",
 									"type": "String",
-									"description": "to资源外部编码",
-									"required": true
+									"description": "to资源外部编码"
 								},
 								{
 									"name": "to_org_source",
 									"type": "String",
-									"description": "to资源来源",
-									"required": true
+									"description": "to资源来源"
 								},
 								{
 									"name": "to_resource_code",
 									"type": "String",
-									"description": "to资源编码",
-									"required": true
+									"description": "to资源编码"
 								},
 								{
 									"name": "to_resource_name",
 									"type": "String",
-									"description": "to资源名称",
-									"required": true
+									"description": "to资源名称"
 								},
 								{
 									"name": "to_resource_type",
 									"type": "String",
-									"description": "to资源类型",
-									"required": true
+									"description": "to资源类型"
 								}
-							]
+							],
+							"name": "results",
+							"type": "WarehouseResourceRelationDto[]",
+							"description": "数据列表"
 						},
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "关系总数",
-							"required": true
+							"description": "关系总数"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Pagination",
+					"description": "数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "异常消息",
-					"required": true
+					"description": "异常消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "LogisticsResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "wdk.logistic.network.warehouse.resource.relation.query.from",
+	"apiChineseName": "中心仓查网格仓",
+	"description": "盒马集市，中心仓查询网格仓",
+	"id": 54065
 }

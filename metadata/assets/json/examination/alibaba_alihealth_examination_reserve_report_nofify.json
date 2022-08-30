@@ -1,8 +1,4 @@
 {
-	"id": 54141,
-	"name": "alibaba.alihealth.examination.reserve.report.nofify",
-	"apiChineseName": "服务商主动通知体检报告",
-	"description": "服务商主动回传用户的体检报告数据",
 	"requestParams": [
 		{
 			"name": "uniq_reserve_code",
@@ -41,23 +37,25 @@
 			"description": "11"
 		},
 		{
-			"name": "data",
-			"type": "ReserveReportResponse",
-			"description": "返回数据对象",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "11",
-					"required": true
+					"description": "11"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "11",
-					"required": true
+					"description": "11"
 				}
-			]
+			],
+			"name": "data",
+			"type": "ReserveReportResponse",
+			"description": "返回数据对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.report.nofify",
+	"apiChineseName": "服务商主动通知体检报告",
+	"description": "服务商主动回传用户的体检报告数据",
+	"id": 54141
 }

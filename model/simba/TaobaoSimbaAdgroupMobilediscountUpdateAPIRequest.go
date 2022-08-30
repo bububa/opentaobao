@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest struct {
 	model.Params
 	// 推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)
-	_adgroupIds []int64
+	_adgroupIds []string
 	// 昵称
 	_nick string
 	// 折扣（折扣值在1-400之间）
@@ -43,14 +43,14 @@ func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetApiParams() url.Val
 
 // SetAdgroupIds is AdgroupIds Setter
 // 推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)
-func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
+func (r *TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) SetAdgroupIds(_adgroupIds []string) error {
 	r._adgroupIds = _adgroupIds
 	r.Set("adgroup_ids", _adgroupIds)
 	return nil
 }
 
 // GetAdgroupIds AdgroupIds Getter
-func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetAdgroupIds() []int64 {
+func (r TaobaoSimbaAdgroupMobilediscountUpdateAPIRequest) GetAdgroupIds() []string {
 	return r._adgroupIds
 }
 

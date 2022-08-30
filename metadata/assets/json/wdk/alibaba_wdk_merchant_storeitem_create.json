@@ -1,8 +1,4 @@
 {
-	"id": 30267,
-	"name": "alibaba.wdk.merchant.storeitem.create",
-	"apiChineseName": "新建门店商品",
-	"description": "新建门店商品",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -45,5 +41,9 @@
 			"type": "String",
 			"description": "errorDesc"
 		}
-	]
+	],
+	"name": "alibaba.wdk.merchant.storeitem.create",
+	"apiChineseName": "新建门店商品",
+	"description": "新建门店商品",
+	"id": 30267
 }

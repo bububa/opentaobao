@@ -1,0 +1,33 @@
+{
+	"requestParams": [
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "操作原因",
+			"required": true
+		},
+		{
+			"name": "crowd_instance_id",
+			"type": "Number",
+			"description": "人群实例ID",
+			"required": true
+		},
+		{
+			"name": "ouid",
+			"type": "String",
+			"description": "ouid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "sub_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	],
+	"name": "taobao.crm.exchange.crowdinstance.add.privy",
+	"apiChineseName": "向活动人群实例中增加买家（隐私号版）",
+	"description": "向活动人群实例中增加买家",
+	"id": 58419
+}

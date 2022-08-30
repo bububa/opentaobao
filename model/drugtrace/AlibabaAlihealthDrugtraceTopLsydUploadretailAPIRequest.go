@@ -12,7 +12,7 @@ import (
 // 快易通多融零售上传接口
 type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	model.Params
-	// 20位追溯码（多个时用半角逗号分隔）
+	// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 	_traceCodes []string
 	// 单据编号（唯一）
 	_billCode string
@@ -42,9 +42,9 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest struct {
 	_userName string
 	// 药品代理人
 	_userAgent string
-	// 单据类型[321,零售出库][322,疫苗接种]
+	// 单据类型[321,零售出库][322,疫苗接种][116,消费者退货入库]
 	_billType int64
-	// 药品类型[2,特药，3,普药]
+	// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 	_physicType int64
 }
 
@@ -70,7 +70,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetApiParams() u
 }
 
 // SetTraceCodes is TraceCodes Setter
-// 20位追溯码（多个时用半角逗号分隔）
+// 追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetTraceCodes(_traceCodes []string) error {
 	r._traceCodes = _traceCodes
 	r.Set("trace_codes", _traceCodes)
@@ -265,7 +265,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetUserAgent() s
 }
 
 // SetBillType is BillType Setter
-// 单据类型[321,零售出库][322,疫苗接种]
+// 单据类型[321,零售出库][322,疫苗接种][116,消费者退货入库]
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetBillType(_billType int64) error {
 	r._billType = _billType
 	r.Set("bill_type", _billType)
@@ -278,7 +278,7 @@ func (r AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) GetBillType() in
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型[2,特药，3,普药]
+// 药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】
 func (r *AlibabaAlihealthDrugtraceTopLsydUploadretailAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)

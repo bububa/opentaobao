@@ -20,6 +20,6 @@ type TaobaoTravelTicketOrderRefundAPIResponseModel struct {
 	XMLName xml.Name `xml:"travel_ticket_order_refund_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 成功返回isSuccess为true
+	// 系统自动生成
 	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

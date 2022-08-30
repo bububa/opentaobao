@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		},
+		{
+			"name": "json_string",
+			"type": "String",
+			"description": "微信认证参数"
+		},
+		{
+			"name": "json_signature",
+			"type": "String",
+			"description": "微信认证参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "返回内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.verify.signature",
+	"apiChineseName": "微信账号生物认证",
+	"description": "在用户注册等场景下，如果账号风险等级过高，需要进行生物认证",
+	"id": 58354
+}

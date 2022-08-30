@@ -1,23 +1,5 @@
 {
-	"id": 32242,
-	"name": "alibaba.campus.acl.cancelrolesfromuser",
-	"apiChineseName": "撤销用户授予的角色",
-	"description": "撤销用户授予的角色",
 	"requestParams": [
-		{
-			"name": "role",
-			"type": "RoleReq[]",
-			"description": "系统自动生成",
-			"maxListSize": 1000,
-			"subParams": [
-				{
-					"name": "role_id",
-					"type": "String",
-					"description": "角色id",
-					"required": true
-				}
-			]
-		},
 		{
 			"name": "company_id",
 			"type": "Number",
@@ -37,54 +19,67 @@
 			"required": true
 		},
 		{
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id(不填默认appCode)"
+		},
+		{
 			"name": "account_id",
 			"type": "String",
 			"description": "用户账号",
 			"required": true
 		},
 		{
-			"name": "user_id",
-			"type": "String",
-			"description": "操作人id(不填默认appCode)"
+			"subParams": [
+				{
+					"name": "role_id",
+					"type": "String",
+					"description": "角色id",
+					"required": true
+				}
+			],
+			"name": "role",
+			"type": "RoleReq[]",
+			"description": "系统自动生成",
+			"maxListSize": 1000
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "接口返回结果",
-					"required": true
+					"description": "接口返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误结果提示信息",
-					"required": true
+					"description": "错误结果提示信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.cancelrolesfromuser",
+	"apiChineseName": "撤销用户授予的角色",
+	"description": "撤销用户授予的角色",
+	"id": 32242
 }

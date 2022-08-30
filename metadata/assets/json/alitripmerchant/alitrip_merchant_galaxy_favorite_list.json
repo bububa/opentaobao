@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录标识"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "picture_url",
+							"type": "String",
+							"description": "酒店头图"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "酒店地址"
+						},
+						{
+							"name": "name_cn",
+							"type": "String",
+							"description": "酒店中文名称"
+						},
+						{
+							"name": "hotel_id",
+							"type": "String",
+							"description": "酒店id"
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "飞猪标准酒店id"
+						},
+						{
+							"name": "logo_url",
+							"type": "String",
+							"description": "品牌logo URL"
+						},
+						{
+							"name": "media_url",
+							"type": "String",
+							"description": "卫生健康标识"
+						}
+					],
+					"name": "contents",
+					"type": "FavoriteHotelList[]",
+					"description": "收藏列表"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.favorite.list",
+	"apiChineseName": "用户收藏列表查询",
+	"description": "让用户可以查询自己收藏的酒店列表",
+	"id": 57327
+}

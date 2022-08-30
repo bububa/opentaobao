@@ -1,8 +1,4 @@
 {
-	"id": 10961,
-	"name": "taobao.simba.rpt.campaignbase.get",
-	"apiChineseName": "推广计划报表基础数据对象",
-	"description": "推广计划报表基础数据对象",
 	"requestParams": [
 		{
 			"name": "subway_token",
@@ -64,5 +60,9 @@
 			"type": "String",
 			"description": "推广计划查询结果"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.campaignbase.get",
+	"apiChineseName": "推广计划报表基础数据对象",
+	"description": "推广计划报表基础数据对象",
+	"id": 10961
 }

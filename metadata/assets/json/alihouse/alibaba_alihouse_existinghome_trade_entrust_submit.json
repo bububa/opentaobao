@@ -1,0 +1,125 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_community_id",
+					"type": "String",
+					"description": "外部小区ID"
+				},
+				{
+					"name": "outer_entrust_id",
+					"type": "String",
+					"description": "外部委托ID"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "outer_broker_id",
+					"type": "String",
+					"description": "外部经纪人ID"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1-新房，2-二手房 3-租房"
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "经营主体ID"
+				},
+				{
+					"name": "rent_vouchers",
+					"type": "String[]",
+					"description": "租房凭证"
+				},
+				{
+					"name": "trade_biz_type",
+					"type": "Number",
+					"description": "交易业务类型，1-B2C，2-C2C，3-寄租"
+				},
+				{
+					"name": "agreement_id",
+					"type": "Number",
+					"description": "模版id"
+				},
+				{
+					"name": "natural_merchant_open_id",
+					"type": "Number",
+					"description": "房东自然人主体id"
+				},
+				{
+					"name": "entrust_status",
+					"type": "Number",
+					"description": "委托状态"
+				},
+				{
+					"name": "enterprise_merchant_open_id",
+					"type": "Number",
+					"description": "寄租模式下-企业B房东主体ID "
+				},
+				{
+					"name": "collection_type",
+					"type": "Number",
+					"description": "收款模式 是\t交易类型不为空，必填 1-直收   （默认值） 2-代收"
+				},
+				{
+					"name": "send_rent_charge_model",
+					"type": "String",
+					"description": "寄租收费模式 1、房东承担寄租服务费 2、租客承担门店服务费 3、租客承担门店服务费+房东承担寄租服务费"
+				},
+				{
+					"name": "landlord_type",
+					"type": "Number",
+					"description": "寄租-房源房东类型  交易类型不为空，房源房东类型 1、企业B房东 2、自然人主体"
+				},
+				{
+					"name": "instead_merchant_open_id",
+					"type": "Number",
+					"description": "代收主体id 当收款模式为代收是必填"
+				}
+			],
+			"name": "sync_update_trade_entrust_dto",
+			"type": "SyncUpdateTradeEntrustDTO",
+			"description": "更新交易委托实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回值"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.trade.entrust.submit",
+	"apiChineseName": "交易委托信息更新接口",
+	"description": "交易委托信息更新接口",
+	"id": 57680
+}

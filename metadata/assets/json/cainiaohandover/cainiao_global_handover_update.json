@@ -1,21 +1,17 @@
 {
-	"id": 46426,
-	"name": "cainiao.global.handover.update",
-	"apiChineseName": "修改交接单",
-	"description": "提供给ISV通过该接口修改交接单",
 	"requestParams": [
 		{
-			"name": "user_info",
-			"type": "UserInfoDto",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "top_user_key",
 					"type": "String",
 					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
 				}
-			]
+			],
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "weight_unit",
@@ -39,14 +35,8 @@
 			"description": "大包备注"
 		},
 		{
-			"name": "return_info",
-			"type": "ReturnerDto",
-			"description": "退件信息",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "退件地址",
 					"subParams": [
 						{
 							"name": "zip_code",
@@ -89,7 +79,10 @@
 							"description": "国家",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "退件地址"
 				},
 				{
 					"name": "email",
@@ -116,17 +109,14 @@
 					"type": "Number",
 					"description": "AE后台维护的退件地址ID"
 				}
-			]
+			],
+			"name": "return_info",
+			"type": "ReturnerDto",
+			"description": "退件信息"
 		},
 		{
-			"name": "pickup_info",
-			"type": "PickupDto",
-			"description": "揽收信息",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "揽收地址",
 					"subParams": [
 						{
 							"name": "zip_code",
@@ -169,7 +159,10 @@
 							"description": "国家",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "揽收地址"
 				},
 				{
 					"name": "email",
@@ -196,7 +189,10 @@
 					"type": "Number",
 					"description": "AE后台维护的发件地址ID"
 				}
-			]
+			],
+			"name": "pickup_info",
+			"type": "PickupDto",
+			"description": "揽收信息"
 		},
 		{
 			"name": "type",
@@ -213,8 +209,8 @@
 			"name": "order_code_list",
 			"type": "String[]",
 			"description": "要创建交接单的小包编码集合，数量上限200",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "locale",
@@ -224,15 +220,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HsfResult",
-			"description": "请求结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "OpenHandoverUpdateResponse",
-					"description": "响应数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "result",
@@ -240,7 +229,11 @@
 							"description": "更新结果",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "OpenHandoverUpdateResponse",
+					"description": "响应数据",
+					"required": true
 				},
 				{
 					"name": "error_msg",
@@ -260,7 +253,14 @@
 					"description": "请求处理是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "cainiao.global.handover.update",
+	"apiChineseName": "修改交接单",
+	"description": "提供给ISV通过该接口修改交接单",
+	"id": 46426
 }

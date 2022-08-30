@@ -1,15 +1,6 @@
 {
-	"id": 27765,
-	"name": "alibaba.einvoice.unitorder.check",
-	"apiChineseName": "服务商订购单上传核对",
-	"description": "开票服务商回传收到的订购单用于电子发票平台核对",
 	"requestParams": [
 		{
-			"name": "orders",
-			"type": "SimpleUnitOrder[]",
-			"description": "订购单列表",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -28,7 +19,12 @@
 					"description": "状态-0:待部署,1:部署,2:变更,3:释放",
 					"required": true
 				}
-			]
+			],
+			"name": "orders",
+			"type": "SimpleUnitOrder[]",
+			"description": "订购单列表",
+			"maxListSize": 1000,
+			"required": true
 		},
 		{
 			"name": "begin",
@@ -49,5 +45,9 @@
 			"type": "Boolean",
 			"description": "上传结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.unitorder.check",
+	"apiChineseName": "服务商订购单上传核对",
+	"description": "开票服务商回传收到的订购单用于电子发票平台核对",
+	"id": 27765
 }

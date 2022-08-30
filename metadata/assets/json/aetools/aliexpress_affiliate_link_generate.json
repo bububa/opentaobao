@@ -1,8 +1,4 @@
 {
-	"id": 45804,
-	"name": "aliexpress.affiliate.link.generate",
-	"apiChineseName": "联盟推广链接生成",
-	"description": "AE联盟推广链接生成接口",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -30,9 +26,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -47,16 +40,8 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "PromotionLinkResultDto",
-					"description": "返回结果明细信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "promotion_links",
-							"type": "PromotionLink[]",
-							"description": "推广链接列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "promotion_link",
@@ -70,7 +55,11 @@
 									"description": "原始链接或者值",
 									"required": true
 								}
-							]
+							],
+							"name": "promotion_links",
+							"type": "PromotionLink[]",
+							"description": "推广链接列表",
+							"required": true
 						},
 						{
 							"name": "total_result_count",
@@ -84,9 +73,20 @@
 							"description": "推广者TrackingId",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "PromotionLinkResultDto",
+					"description": "返回结果明细信息",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.link.generate",
+	"apiChineseName": "联盟推广链接生成",
+	"description": "AE联盟推广链接生成接口",
+	"id": 45804
 }

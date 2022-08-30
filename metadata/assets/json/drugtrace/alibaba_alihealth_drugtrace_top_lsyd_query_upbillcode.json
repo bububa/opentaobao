@@ -1,8 +1,4 @@
 {
-	"id": 52560,
-	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.upbillcode",
-	"apiChineseName": "通过一个码，查询这个码对应的上游企业出库单的单据号",
-	"description": "一个查询上游出库单号的接口。企业在扫码入库时，接口通过扫到的码判定这个码对应的上游企业所属的出库单据号",
 	"requestParams": [
 		{
 			"name": "code",
@@ -17,97 +13,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model_list",
-					"type": "BillUpstreamDTO[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "from_user_name",
 							"type": "String",
-							"description": "发货企业名称",
-							"required": true
+							"description": "发货企业名称"
 						},
 						{
 							"name": "bill_time",
 							"type": "Date",
-							"description": "单据时间",
-							"required": true
+							"description": "单据时间"
 						},
 						{
 							"name": "ref_user_id",
 							"type": "String",
-							"description": "货主",
-							"required": true
+							"description": "货主"
 						},
 						{
 							"name": "from_user_id",
 							"type": "String",
-							"description": "发货企业ID",
-							"required": true
+							"description": "发货企业ID"
 						},
 						{
 							"name": "bill_type",
 							"type": "String",
-							"description": "单据类型",
-							"required": true
+							"description": "单据类型"
 						},
 						{
 							"name": "to_user_name",
 							"type": "String",
-							"description": "收货企业名称",
-							"required": true
+							"description": "收货企业名称"
 						},
 						{
 							"name": "bill_code",
 							"type": "String",
-							"description": "单据号",
-							"required": true
+							"description": "单据号"
 						},
 						{
 							"name": "to_user_id",
 							"type": "String",
-							"description": "收货企业ID",
-							"required": true
+							"description": "收货企业ID"
 						},
 						{
 							"name": "to_ref_user_id",
 							"type": "String",
-							"description": "收货企业REF_ENT_ID",
-							"required": true
+							"description": "收货企业REF_ENT_ID"
 						},
 						{
 							"name": "from_ref_user_id",
 							"type": "String",
-							"description": "发货企业REF_ENT_ID",
-							"required": true
+							"description": "发货企业REF_ENT_ID"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "BillUpstreamDTO[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.upbillcode",
+	"apiChineseName": "通过一个码，查询这个码对应的上游企业出库单的单据号",
+	"description": "一个查询上游出库单号的接口。企业在扫码入库时，接口通过扫到的码判定这个码对应的上游企业所属的出库单据号",
+	"id": 52560
 }

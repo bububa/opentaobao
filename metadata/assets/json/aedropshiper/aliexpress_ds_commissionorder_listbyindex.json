@@ -1,0 +1,232 @@
+{
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "record count of each page, 1 - 50"
+		},
+		{
+			"name": "start_query_index_id",
+			"type": "String",
+			"description": "Query index start value: if not passed, You can only check the first page"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "page number"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "Start time, PST time",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "End time, PST time",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "Order status: Payment Completed(Buyer paid successfully), Buyer Confirmed Receipt(This status only change when :Buyer confirms receipt and settlement task begins which is manually executed by our operation team)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "max_query_index_id",
+					"type": "String",
+					"description": "max query index start value: if not passed, You can only check the first page"
+				},
+				{
+					"name": "current_record_count",
+					"type": "Number",
+					"description": "current record count"
+				},
+				{
+					"subParams": [
+						{
+							"name": "commission_rate",
+							"type": "String",
+							"description": "commission rate"
+						},
+						{
+							"name": "order_number",
+							"type": "Number",
+							"description": "order number"
+						},
+						{
+							"name": "finished_amount",
+							"type": "String",
+							"description": "finished amount of the order, unit cent"
+						},
+						{
+							"name": "is_affiliate_product",
+							"type": "String",
+							"description": "is affiliate product"
+						},
+						{
+							"name": "is_new_buyer",
+							"type": "String",
+							"description": "is new buyer"
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "item title"
+						},
+						{
+							"name": "effect_detail_status",
+							"type": "String",
+							"description": "Additional order status, eg: full refund order, antispam order"
+						},
+						{
+							"name": "estimated_incentive_finished_commission",
+							"type": "String",
+							"description": "estimated commission for finished incentive order"
+						},
+						{
+							"name": "estimated_incentive_paid_commission",
+							"type": "String",
+							"description": "estimated commission for paid incentive order"
+						},
+						{
+							"name": "publisher_id",
+							"type": "Number",
+							"description": "publisher id"
+						},
+						{
+							"name": "is_hot_product",
+							"type": "String",
+							"description": "is hot product"
+						},
+						{
+							"name": "parent_order_number",
+							"type": "Number",
+							"description": "parent order number"
+						},
+						{
+							"name": "item_detail_url",
+							"type": "String",
+							"description": "item detail url"
+						},
+						{
+							"name": "created_time",
+							"type": "String",
+							"description": "created time of this order"
+						},
+						{
+							"name": "publisher_settled_currency",
+							"type": "String",
+							"description": "publisher settled currency"
+						},
+						{
+							"name": "ship_to_country",
+							"type": "String",
+							"description": "product shipping country"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "order id"
+						},
+						{
+							"name": "item_main_image_url",
+							"type": "String",
+							"description": "item main image url"
+						},
+						{
+							"name": "paid_time",
+							"type": "String",
+							"description": "paid time"
+						},
+						{
+							"name": "item_count",
+							"type": "String",
+							"description": "item count"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "item id"
+						},
+						{
+							"name": "effect_status",
+							"type": "String",
+							"description": "effect status"
+						},
+						{
+							"name": "estimated_finished_commission",
+							"type": "String",
+							"description": "estimated commission for finished order"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "sub order id"
+						},
+						{
+							"name": "estimated_paid_commission",
+							"type": "Number",
+							"description": "estimated commission for paid order"
+						},
+						{
+							"name": "finished_time",
+							"type": "String",
+							"description": "Order finish time"
+						},
+						{
+							"name": "paid_amount",
+							"type": "Number",
+							"description": "payment amount of the order, unit cent"
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "category id"
+						},
+						{
+							"name": "incentive_commission_rate",
+							"type": "String",
+							"description": "incentive commission rate"
+						}
+					],
+					"name": "orders",
+					"type": "TrafficOrderEffectDTO[]",
+					"description": "orders object list"
+				},
+				{
+					"name": "min_query_index_id",
+					"type": "String",
+					"description": "min query index start value: if not passed, You can only check the first page"
+				},
+				{
+					"name": "current_page_no",
+					"type": "Number",
+					"description": "current page number"
+				}
+			],
+			"name": "result",
+			"type": "TrafficOrderResultDTO",
+			"description": "result object"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "System Error"
+		},
+		{
+			"name": "rsp_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.ds.commissionorder.listbyindex",
+	"apiChineseName": "联盟订单分页查询",
+	"description": "联盟订单分页查询",
+	"id": 60454
+}

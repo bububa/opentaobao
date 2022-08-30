@@ -1,0 +1,87 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部主键",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "业务id",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "类型(1:楼盘 2:房源 3:文章 4:视频 5:评测 6:banner 7:品牌 8:抽奖 9:二手房小区 10:其他 11:租房 12:内容 13: \"交易商品\" 14: 二手房委托云主题 15: 租房委托云主题",
+							"required": true
+						},
+						{
+							"name": "outer_project_id",
+							"type": "String",
+							"description": "外部小区id"
+						},
+						{
+							"name": "project_type",
+							"type": "Number",
+							"description": "10-集中式模式 11-分散式模式  \t"
+						},
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "排序",
+							"required": true
+						}
+					],
+					"name": "theme_detail_excels",
+					"type": "EtcThemeDetailExcelDTO[]",
+					"description": "手动导入的商品信息",
+					"required": true
+				}
+			],
+			"name": "etc_theme_dto",
+			"type": "EtcThemeDTO",
+			"description": "请求云主题参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.admin.theme.hot.update",
+	"apiChineseName": "云主题热更新数据集",
+	"description": "云主题更新",
+	"id": 62347
+}

@@ -4,6 +4,8 @@ package film
 type FCodeMerchantSendCodeRq struct {
 	// 外部业务用户id
 	OutUid string `json:"out_uid,omitempty" xml:"out_uid,omitempty"`
+	// 发券码商品mixId
+	MixId string `json:"mix_id,omitempty" xml:"mix_id,omitempty"`
 	// 外部商户发码的外部业务号
 	ExtOrderId string `json:"ext_order_id,omitempty" xml:"ext_order_id,omitempty"`
 	// 外部下单时间
@@ -18,8 +20,6 @@ type FCodeMerchantSendCodeRq struct {
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
 	// 淘宝用户ID列表，用|分割
 	UserIdList string `json:"user_id_list,omitempty" xml:"user_id_list,omitempty"`
-	// 发券码商品mixId
-	MixId string `json:"mix_id,omitempty" xml:"mix_id,omitempty"`
 	// 每个用户发码的数量
 	EachNum int64 `json:"each_num,omitempty" xml:"each_num,omitempty"`
 	// 发码总数

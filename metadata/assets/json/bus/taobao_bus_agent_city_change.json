@@ -1,13 +1,6 @@
 {
-	"id": 25727,
-	"name": "taobao.bus.agent.city.change",
-	"apiChineseName": "城市变更",
-	"description": "代理商通知城市变更，比如可售变为不可售等",
 	"requestParams": [
 		{
-			"name": "param_city_change_r_q",
-			"type": "CityChangeRq",
-			"description": "城市变更请求对象",
 			"subParams": [
 				{
 					"name": "agent_id",
@@ -16,10 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "list",
-					"type": "BusCityChangeDto[]",
-					"description": "城市列表属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "type_no",
@@ -45,9 +34,16 @@
 							"description": "城市名",
 							"required": true
 						}
-					]
+					],
+					"name": "list",
+					"type": "BusCityChangeDto[]",
+					"description": "城市列表属性",
+					"required": true
 				}
-			]
+			],
+			"name": "param_city_change_r_q",
+			"type": "CityChangeRq",
+			"description": "城市变更请求对象"
 		}
 	],
 	"responseParams": [
@@ -66,5 +62,9 @@
 			"type": "String",
 			"description": "异常描述"
 		}
-	]
+	],
+	"name": "taobao.bus.agent.city.change",
+	"apiChineseName": "城市变更",
+	"description": "代理商通知城市变更，比如可售变为不可售等",
+	"id": 25727
 }

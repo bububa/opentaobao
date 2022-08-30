@@ -46,6 +46,8 @@ type OrderInfo struct {
 	DriverName string `json:"driver_name,omitempty" xml:"driver_name,omitempty"`
 	// 号码保护中间号（如无号码保护，为司机真实手机号）
 	DriverPhone string `json:"driver_phone,omitempty" xml:"driver_phone,omitempty"`
+	// 司机唯一标识
+	DriverId string `json:"driver_id,omitempty" xml:"driver_id,omitempty"`
 	// 司机真实手机号
 	DriverPhoneReal string `json:"driver_phone_real,omitempty" xml:"driver_phone_real,omitempty"`
 	// 司机车型
@@ -88,4 +90,6 @@ type OrderInfo struct {
 	DriverOrderCount int64 `json:"driver_order_count,omitempty" xml:"driver_order_count,omitempty"`
 	// 实际行驶时长（分钟）
 	NormalTime int64 `json:"normal_time,omitempty" xml:"normal_time,omitempty"`
+	// 是否允许修改目的地
+	AllowModifyDest bool `json:"allow_modify_dest,omitempty" xml:"allow_modify_dest,omitempty"`
 }

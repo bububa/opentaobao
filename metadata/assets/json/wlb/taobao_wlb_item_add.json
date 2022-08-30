@@ -1,8 +1,4 @@
 {
-	"id": 10633,
-	"name": "taobao.wlb.item.add",
-	"apiChineseName": "添加单个物流宝商品",
-	"description": "添加物流宝商品，支持物流宝子商品和属性添加",
 	"requestParams": [
 		{
 			"name": "name",
@@ -119,5 +115,9 @@
 			"type": "Json",
 			"description": "新增的商品"
 		}
-	]
+	],
+	"name": "taobao.wlb.item.add",
+	"apiChineseName": "添加单个物流宝商品",
+	"description": "添加物流宝商品，支持物流宝子商品和属性添加",
+	"id": 10633
 }

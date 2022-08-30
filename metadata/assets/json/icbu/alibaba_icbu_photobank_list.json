@@ -1,8 +1,4 @@
 {
-	"id": 24459,
-	"name": "alibaba.icbu.photobank.list",
-	"apiChineseName": "国际站图片银行查询接口",
-	"description": "国际站图片银行查询接口",
 	"requestParams": [
 		{
 			"name": "current_page",
@@ -32,15 +28,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "pagination_query_list",
-			"type": "PaginationQueryList",
-			"description": "图片查询结果",
 			"subParams": [
 				{
-					"name": "list",
-					"type": "PhotobankImageDo[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "url",
@@ -90,9 +79,20 @@
 							"description": "111111",
 							"required": true
 						}
-					]
+					],
+					"name": "list",
+					"type": "PhotobankImageDo[]",
+					"description": "list",
+					"required": true
 				}
-			]
+			],
+			"name": "pagination_query_list",
+			"type": "PaginationQueryList",
+			"description": "图片查询结果"
 		}
-	]
+	],
+	"name": "alibaba.icbu.photobank.list",
+	"apiChineseName": "国际站图片银行查询接口",
+	"description": "国际站图片银行查询接口",
+	"id": 24459
 }

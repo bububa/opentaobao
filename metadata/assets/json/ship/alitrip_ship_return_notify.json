@@ -1,13 +1,6 @@
 {
-	"id": 48054,
-	"name": "alitrip.ship.return.notify",
-	"apiChineseName": "船票退票退款回填接口",
-	"description": "此接口为接入商调用飞猪接口回填退票状态，飞猪平台给用户进行退票退款。飞猪平台保证数据幂等。",
 	"requestParams": [
 		{
-			"name": "confirm_refund_r_q",
-			"type": "ShipAgentConfirmRefundRq",
-			"description": "退票请求入参",
 			"subParams": [
 				{
 					"name": "agent_ext_attr",
@@ -75,7 +68,10 @@
 					"type": "String",
 					"description": "乘客Id"
 				}
-			]
+			],
+			"name": "confirm_refund_r_q",
+			"type": "ShipAgentConfirmRefundRq",
+			"description": "退票请求入参"
 		}
 	],
 	"responseParams": [
@@ -94,5 +90,9 @@
 			"type": "Boolean",
 			"description": "结果"
 		}
-	]
+	],
+	"name": "alitrip.ship.return.notify",
+	"apiChineseName": "船票退票退款回填接口",
+	"description": "此接口为接入商调用飞猪接口回填退票状态，飞猪平台给用户进行退票退款。飞猪平台保证数据幂等。",
+	"id": 48054
 }

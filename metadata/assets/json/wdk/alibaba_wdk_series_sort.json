@@ -1,13 +1,6 @@
 {
-	"id": 47563,
-	"name": "alibaba.wdk.series.sort",
-	"apiChineseName": "系列品-商品排序",
-	"description": "系列品商品变更-商品排序",
 	"requestParams": [
 		{
-			"name": "sort",
-			"type": "SeriesSortRequest",
-			"description": "自定义排序请求",
 			"subParams": [
 				{
 					"name": "series_id",
@@ -16,6 +9,7 @@
 				},
 				{
 					"name": "industry_attr_list",
+					"type": "String",
 					"description": "有序行业属性对：行业属性key，属性值"
 				},
 				{
@@ -23,40 +17,43 @@
 					"type": "String",
 					"description": "行业类型"
 				}
-			]
+			],
+			"name": "sort",
+			"type": "SeriesSortRequest",
+			"description": "自定义排序请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "系列品重置默认商品成功结果",
-					"required": true
+					"description": "系列品重置默认商品成功结果"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误详情",
-					"required": true
+					"description": "错误详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.series.sort",
+	"apiChineseName": "系列品-商品排序",
+	"description": "系列品商品变更-商品排序",
+	"id": 47563
 }

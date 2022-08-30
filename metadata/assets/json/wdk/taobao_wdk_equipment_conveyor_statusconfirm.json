@@ -1,8 +1,4 @@
 {
-	"id": 31183,
-	"name": "taobao.wdk.equipment.conveyor.statusconfirm",
-	"apiChineseName": "悬挂链状态回传确认",
-	"description": "悬挂链状态回传确认",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -17,29 +13,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopWcsResult",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopWcsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.statusconfirm",
+	"apiChineseName": "悬挂链状态回传确认",
+	"description": "悬挂链状态回传确认",
+	"id": 31183
 }

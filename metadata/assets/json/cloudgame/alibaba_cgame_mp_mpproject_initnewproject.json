@@ -1,0 +1,163 @@
+{
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备Id， 可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "调用者的userid，若有userAccessToken,可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_token",
+			"type": "String",
+			"description": "目前没有使用，可以传空值",
+			"required": true
+		},
+		{
+			"name": "user_access_token",
+			"type": "String",
+			"description": "登录后获取的accessToken",
+			"required": true
+		},
+		{
+			"name": "instance_id",
+			"type": "String",
+			"description": "ecs上的实例id,可以传空值",
+			"required": true
+		},
+		{
+			"name": "game_id",
+			"type": "String",
+			"description": "项目所在平台上的gameid",
+			"required": true
+		},
+		{
+			"name": "game_project_key",
+			"type": "String",
+			"description": "projectKey",
+			"required": true
+		},
+		{
+			"name": "customer_unique_id",
+			"type": "String",
+			"description": "customer unique id",
+			"required": true
+		},
+		{
+			"name": "customer_env",
+			"type": "String",
+			"description": "customer platform env",
+			"required": true
+		},
+		{
+			"name": "customer_project_id",
+			"type": "String",
+			"description": "customer project id",
+			"required": true
+		},
+		{
+			"name": "check_user_token",
+			"type": "Number",
+			"description": "是否检查userToken，目前都是0",
+			"required": true
+		},
+		{
+			"name": "only_one_block",
+			"type": "Number",
+			"description": "是否只有一个block，目前都是1",
+			"required": true
+		},
+		{
+			"name": "default_mp_block_id",
+			"type": "Number",
+			"description": "缺省的blockid,默认是0",
+			"required": true
+		},
+		{
+			"name": "mp_project_id",
+			"type": "Number",
+			"description": "mpprojectid,默认是0",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "0"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "sucess"
+				},
+				{
+					"subParams": [
+						{
+							"name": "config_key",
+							"type": "String",
+							"description": "user在mp上的accountid"
+						},
+						{
+							"name": "customer_unique_id",
+							"type": "String",
+							"description": "user的acesstoken"
+						},
+						{
+							"name": "custome_id",
+							"type": "Number",
+							"description": "customer id"
+						},
+						{
+							"name": "custome_env",
+							"type": "String",
+							"description": "customer platform env"
+						},
+						{
+							"name": "customer_project_id",
+							"type": "String",
+							"description": "customer project id"
+						},
+						{
+							"name": "check_user_token",
+							"type": "Number",
+							"description": "是否检查userToken，目前都是0"
+						},
+						{
+							"name": "only_one_block",
+							"type": "Number",
+							"description": "是否只有一个block，目前都是1"
+						},
+						{
+							"name": "default_mp_block_id",
+							"type": "Number",
+							"description": "缺省的blockid"
+						},
+						{
+							"name": "mp_project_id",
+							"type": "Number",
+							"description": "mpprojectid"
+						}
+					],
+					"name": "data",
+					"type": "MpProjectConfigDTO",
+					"description": "login session"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.cgame.mp.mpproject.initnewproject",
+	"apiChineseName": "创建新的mpproject",
+	"description": "发送消息给游戏",
+	"id": 61310
+}

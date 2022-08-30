@@ -1,8 +1,4 @@
 {
-	"id": 21696,
-	"name": "taobao.subuser.dutys.get",
-	"apiChineseName": "获取指定账户的所有职务信息列表",
-	"description": "通过主账号Nick获取该账户下的所有职务信息，职务信息中包括职务ID、职务名称以及职务等级（通过主账号登陆只能获取属于该主账号下的职务信息）",
 	"requestParams": [
 		{
 			"name": "user_nick",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "dutys",
-			"type": "Duty []",
-			"description": "职务信息",
 			"subParams": [
 				{
 					"name": "duty_id",
@@ -32,7 +25,14 @@
 					"type": "Number",
 					"description": "职务级别"
 				}
-			]
+			],
+			"name": "dutys",
+			"type": "Duty []",
+			"description": "职务信息"
 		}
-	]
+	],
+	"name": "taobao.subuser.dutys.get",
+	"apiChineseName": "获取指定账户的所有职务信息列表",
+	"description": "通过主账号Nick获取该账户下的所有职务信息，职务信息中包括职务ID、职务名称以及职务等级（通过主账号登陆只能获取属于该主账号下的职务信息）",
+	"id": 21696
 }

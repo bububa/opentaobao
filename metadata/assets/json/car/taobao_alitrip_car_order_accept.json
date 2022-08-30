@@ -1,14 +1,6 @@
 {
-	"id": 26037,
-	"name": "taobao.alitrip.car.order.accept",
-	"apiChineseName": "确认接单",
-	"description": "用来接收服务商确认接单信息",
 	"requestParams": [
 		{
-			"name": "param_order_accept",
-			"type": "OrderAccept",
-			"description": "确认订单请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "confirm_type",
@@ -63,40 +55,44 @@
 					"type": "Number",
 					"description": "接单时间毫秒数"
 				}
-			]
+			],
+			"name": "param_order_accept",
+			"type": "OrderAccept",
+			"description": "确认订单请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误码 0成功 其它见文档",
-					"required": true
+					"description": "错误码 0成功 其它见文档"
 				},
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "其它数据",
-					"required": true
+					"type": "String",
+					"description": "其它数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "message_code",
 					"type": "Number",
-					"description": "错误码 0成功 其它见文档",
-					"required": true
+					"description": "错误码 0成功 其它见文档"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.accept",
+	"apiChineseName": "确认接单",
+	"description": "用来接收服务商确认接单信息",
+	"id": 26037
 }

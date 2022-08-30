@@ -1,8 +1,4 @@
 {
-	"id": 10950,
-	"name": "taobao.simba.login.authsign.get",
-	"apiChineseName": "获取登陆权限签名",
-	"description": "获取登陆权限签名",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "登陆签名"
 		}
-	]
+	],
+	"name": "taobao.simba.login.authsign.get",
+	"apiChineseName": "获取登陆权限签名",
+	"description": "获取登陆权限签名",
+	"id": 10950
 }

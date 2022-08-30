@@ -1,8 +1,4 @@
 {
-	"id": 40657,
-	"name": "aliexpress.offer.ds.product.simplequery",
-	"apiChineseName": "Dropshipper查询单个商品的简易信息",
-	"description": "提供给Dropshipper的通过商品ID查找商品简易信息（包括SKU-价格/库存、产品状态等）的接口，只有特定买家可以使用",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -32,15 +28,8 @@
 			"description": "库存"
 		},
 		{
-			"name": "aeop_ae_product_s_k_us",
-			"type": "AeopAeProductSku []",
-			"description": "商品的SKU信息",
 			"subParams": [
 				{
-					"name": "aeop_s_k_u_property_list",
-					"type": "AeopSkuProperty[]",
-					"description": "SKU属性对象列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_property_id",
@@ -66,7 +55,11 @@
 							"description": "属性值自定义名称",
 							"required": true
 						}
-					]
+					],
+					"name": "aeop_s_k_u_property_list",
+					"type": "AeopSkuProperty[]",
+					"description": "SKU属性对象列表",
+					"required": true
 				},
 				{
 					"name": "s_k_u_available_stock",
@@ -122,12 +115,19 @@
 					"description": "最少起批的数量",
 					"required": true
 				}
-			]
+			],
+			"name": "aeop_ae_product_s_k_us",
+			"type": "AeopAeProductSku []",
+			"description": "商品的SKU信息"
 		},
 		{
 			"name": "product_status_type",
 			"type": "String",
 			"description": "产品的状态"
 		}
-	]
+	],
+	"name": "aliexpress.offer.ds.product.simplequery",
+	"apiChineseName": "Dropshipper查询单个商品的简易信息",
+	"description": "提供给Dropshipper的通过商品ID查找商品简易信息（包括SKU-价格/库存、产品状态等）的接口，只有特定买家可以使用",
+	"id": 40657
 }

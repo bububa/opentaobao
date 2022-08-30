@@ -1,8 +1,4 @@
 {
-	"id": 39450,
-	"name": "alibaba.happytrip.taxi.provider.account.balance",
-	"apiChineseName": "供应商渠道余额",
-	"description": "查询不同供应商不同渠道账户余额",
 	"requestParams": [
 		{
 			"name": "cost_center",
@@ -18,9 +14,6 @@
 			"description": "错误码"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "数据",
 			"subParams": [
 				{
 					"name": "balance",
@@ -29,10 +22,6 @@
 					"required": true
 				},
 				{
-					"name": "management",
-					"type": "Managers[]",
-					"description": "管理员列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "tel",
@@ -46,7 +35,11 @@
 							"description": "联系人名称",
 							"required": true
 						}
-					]
+					],
+					"name": "management",
+					"type": "Managers[]",
+					"description": "管理员列表",
+					"required": true
 				},
 				{
 					"name": "usage_month",
@@ -54,12 +47,19 @@
 					"description": "本月已用金额",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "数据"
 		},
 		{
 			"name": "errmsg",
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.provider.account.balance",
+	"apiChineseName": "供应商渠道余额",
+	"description": "查询不同供应商不同渠道账户余额",
+	"id": 39450
 }

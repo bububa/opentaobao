@@ -1,13 +1,6 @@
 {
-	"id": 46490,
-	"name": "alibaba.tax.invoice.sync.ledger",
-	"apiChineseName": "同步底账数据",
-	"description": "接收第三方服务（如：票易通）同步过来的底账发票数据",
 	"requestParams": [
 		{
-			"name": "param_sync_ledger_invoice_request",
-			"type": "SyncLedgerInvoiceRequest",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "amount",
@@ -31,6 +24,11 @@
 					"description": "校验码"
 				},
 				{
+					"name": "check_certify_time",
+					"type": "Date",
+					"description": "勾选时间"
+				},
+				{
 					"name": "cipher_text",
 					"type": "String",
 					"description": "密码区"
@@ -42,9 +40,6 @@
 					"required": true
 				},
 				{
-					"name": "input_invoice_line_d_t_o_list",
-					"type": "InputInvoiceLineLedgerDto[]",
-					"description": "发票行",
 					"subParams": [
 						{
 							"name": "amount",
@@ -91,7 +86,10 @@
 							"type": "String",
 							"description": "税率"
 						}
-					]
+					],
+					"name": "input_invoice_line_d_t_o_list",
+					"type": "InputInvoiceLineLedgerDto[]",
+					"description": "发票行"
 				},
 				{
 					"name": "invoice_code",
@@ -121,6 +119,11 @@
 					"type": "String",
 					"description": "发票类型",
 					"required": true
+				},
+				{
+					"name": "check_certify_status",
+					"type": "String",
+					"description": "勾选状态"
 				},
 				{
 					"name": "machine_code",
@@ -187,16 +190,6 @@
 					"description": "所属期"
 				},
 				{
-					"name": "check_certify_time",
-					"type": "Date",
-					"description": "勾选时间"
-				},
-				{
-					"name": "check_certify_status",
-					"type": "String",
-					"description": "勾选状态"
-				},
-				{
 					"name": "effective_tax_amount",
 					"type": "String",
 					"description": "有效税额"
@@ -206,7 +199,10 @@
 					"type": "String",
 					"description": "认证方式标识"
 				}
-			]
+			],
+			"name": "param_sync_ledger_invoice_request",
+			"type": "SyncLedgerInvoiceRequest",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
@@ -225,5 +221,9 @@
 			"type": "Boolean",
 			"description": "true/false"
 		}
-	]
+	],
+	"name": "alibaba.tax.invoice.sync.ledger",
+	"apiChineseName": "同步底账数据",
+	"description": "接收第三方服务（如：票易通）同步过来的底账发票数据",
+	"id": 46490
 }

@@ -1,8 +1,4 @@
 {
-	"id": 41032,
-	"name": "alibaba.ib.shenjing.visitor.pad.getqrcodelink",
-	"apiChineseName": "pad获取二维码",
-	"description": "pad获取二维码链接。扫码录入人脸。",
 	"requestParams": [
 		{
 			"name": "term_id",
@@ -41,5 +37,9 @@
 			"type": "String",
 			"description": "request_id"
 		}
-	]
+	],
+	"name": "alibaba.ib.shenjing.visitor.pad.getqrcodelink",
+	"apiChineseName": "pad获取二维码",
+	"description": "pad获取二维码链接。扫码录入人脸。",
+	"id": 41032
 }

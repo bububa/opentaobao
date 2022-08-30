@@ -14,6 +14,10 @@ type PayChannel struct {
 	PayAttributes string `json:"pay_attributes,omitempty" xml:"pay_attributes,omitempty"`
 	// 口碑优惠信息，是一个json数组
 	KoubeiCouponInfo string `json:"koubei_coupon_info,omitempty" xml:"koubei_coupon_info,omitempty"`
+	// 支付渠道类型 1.默认 10-支付宝 20-微信支付 30-积分支付 40-储值卡支付 50-银行卡支付。有支付渠道的情况下，必填。 必须是翱象支持的支付渠道，否则报错。
+	PayChannelType int64 `json:"pay_channel_type,omitempty" xml:"pay_channel_type,omitempty"`
+	// 当前支付渠道的支付金额，单位分。有支付渠道的情况下，必填。
+	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
 	// 所属淘宝主订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 当前渠道付款金额(分)

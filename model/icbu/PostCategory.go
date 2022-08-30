@@ -8,7 +8,7 @@ type PostCategory struct {
 	ChildIds []int64 `json:"child_ids,omitempty" xml:"child_ids>int64,omitempty"`
 	// 类目名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 类目的中文名称
+	// 类目的中文名
 	CnName string `json:"cn_name,omitempty" xml:"cn_name,omitempty"`
 	// 类目层级
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`

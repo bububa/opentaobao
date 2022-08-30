@@ -1,8 +1,4 @@
 {
-	"id": 29287,
-	"name": "taobao.omniorder.storecollect.consume",
-	"apiChineseName": "全渠道门店自提核销订单",
-	"description": "全渠道门店自提核销订单",
 	"requestParams": [
 		{
 			"name": "code",
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "核销错误信息"
 		}
-	]
+	],
+	"name": "taobao.omniorder.storecollect.consume",
+	"apiChineseName": "全渠道门店自提核销订单",
+	"description": "全渠道门店自提核销订单",
+	"id": 29287
 }

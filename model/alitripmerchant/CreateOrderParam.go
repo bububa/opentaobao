@@ -30,6 +30,12 @@ type CreateOrderParam struct {
 	RpName string `json:"rp_name,omitempty" xml:"rp_name,omitempty"`
 	// 活动标识字段
 	OfferSourceChannel string `json:"offer_source_channel,omitempty" xml:"offer_source_channel,omitempty"`
+	// 活动id
+	OfferId string `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
+	// rpcode
+	RpCode string `json:"rp_code,omitempty" xml:"rp_code,omitempty"`
+	// 代金券id
+	VoucherId string `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 	// 外部outRoomId
 	OutRoomId int64 `json:"out_room_id,omitempty" xml:"out_room_id,omitempty"`
 	// 宝贝ID
@@ -52,4 +58,8 @@ type CreateOrderParam struct {
 	RateId int64 `json:"rate_id,omitempty" xml:"rate_id,omitempty"`
 	// 支付类型
 	PaymentType int64 `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
+	// 优惠券实例id
+	CouponInstanceId int64 `json:"coupon_instance_id,omitempty" xml:"coupon_instance_id,omitempty"`
+	// 是否同意向境外提供个人信息
+	DataExportAgreement bool `json:"data_export_agreement,omitempty" xml:"data_export_agreement,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21989,
-	"name": "taobao.tmc.user.cancel",
-	"apiChineseName": "取消用户的消息服务",
-	"description": "取消用户的消息服务",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -22,5 +18,9 @@
 			"type": "Boolean",
 			"description": "是否成功,如果为false并且没有错误码，表示删除的用户不存在。"
 		}
-	]
+	],
+	"name": "taobao.tmc.user.cancel",
+	"apiChineseName": "取消用户的消息服务",
+	"description": "取消用户的消息服务",
+	"id": 21989
 }

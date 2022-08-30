@@ -1,8 +1,4 @@
 {
-	"id": 42961,
-	"name": "alibaba.ailabs.iot.device.list.update.notify",
-	"apiChineseName": "设备列表更新通知",
-	"description": "用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知",
 	"requestParams": [
 		{
 			"name": "token",
@@ -24,29 +20,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "附加信息",
-					"required": true
+					"description": "附加信息"
 				},
 				{
 					"name": "status_code",
 					"type": "Number",
-					"description": "请求响应码，200代表成功",
-					"required": true
+					"description": "请求响应码，200代表成功"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "设备列表更新通知是否成功",
-					"required": true
+					"description": "设备列表更新通知是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.device.list.update.notify",
+	"apiChineseName": "设备列表更新通知",
+	"description": "用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知",
+	"id": 42961
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26074,
-	"name": "taobao.xhotel.order.alipayface.cancel",
-	"apiChineseName": "线下信用住订单取消",
-	"description": "提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "返回描述"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.alipayface.cancel",
+	"apiChineseName": "线下信用住订单取消",
+	"description": "提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消",
+	"id": 26074
 }

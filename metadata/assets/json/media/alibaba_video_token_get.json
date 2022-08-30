@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "size_limit",
+			"type": "Number",
+			"description": "上传大小限制(单位：字节)，最大不超过2G",
+			"required": true
+		},
+		{
+			"name": "expiration",
+			"type": "Number",
+			"description": "token超时时间，毫秒，比如1ms超时，参数就填1",
+			"required": true
+		},
+		{
+			"name": "mime_limit",
+			"type": "String",
+			"description": "上传文件类型限制，可空，有默认文件类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "upload_token",
+			"type": "String",
+			"description": "上传token"
+		}
+	],
+	"name": "alibaba.video.token.get",
+	"apiChineseName": "获取上传token",
+	"description": "获取上传token",
+	"id": 61575
+}

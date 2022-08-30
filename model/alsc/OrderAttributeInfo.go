@@ -8,10 +8,10 @@ type OrderAttributeInfo struct {
 	CookingMethodsInfoList []AttachInfo `json:"cooking_methods_info_list,omitempty" xml:"cooking_methods_info_list>attach_info,omitempty"`
 	// 单品配料明细
 	IngredientsInfoList []AttachInfo `json:"ingredients_info_list,omitempty" xml:"ingredients_info_list>attach_info,omitempty"`
-	// 服务费明细
-	ServiceFeeInfoList []ServiceFeeInfo `json:"service_fee_info_list,omitempty" xml:"service_fee_info_list>service_fee_info,omitempty"`
 	// 其他附加费，如餐盒等等
 	OtherInfoList []AttachInfo `json:"other_info_list,omitempty" xml:"other_info_list>attach_info,omitempty"`
+	// 服务费明细
+	ServiceFeeInfoList []ServiceFeeInfo `json:"service_fee_info_list,omitempty" xml:"service_fee_info_list>service_fee_info,omitempty"`
 	// 属性所属组:ORDER 订单类，SUBORDER 子订单类
 	AttrGroup string `json:"attr_group,omitempty" xml:"attr_group,omitempty"`
 	// 业务ID,取值与属性所属组对应

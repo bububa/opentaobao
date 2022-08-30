@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "bill_pay_item_id",
+					"type": "Number",
+					"description": "1",
+					"required": true
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "relation_item_biz_type",
+					"type": "Number",
+					"description": "1",
+					"required": true
+				}
+			],
+			"name": "sync_house_trade_item_dto",
+			"type": "SyncHouseTradeItemDTO",
+			"description": "交易商品实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值对象"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.rent.trade.bind.item",
+	"apiChineseName": "交易绑定商品",
+	"description": "交易绑定商品",
+	"id": 62943
+}

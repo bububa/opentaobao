@@ -2,12 +2,14 @@ package charity
 
 // ThreehoursResult 结构体
 type ThreehoursResult struct {
-	// 消息
+	// 结果码
+	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 是否失败
+	Fail string `json:"fail,omitempty" xml:"fail,omitempty"`
+	// 信息
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
-	// 错误码
-	Code int64 `json:"code,omitempty" xml:"code,omitempty"`
-	// 结果
-	Data *UserActionSyncResult `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
-	Success bool `json:"success,omitempty" xml:"success,omitempty"`
+	Success string `json:"success,omitempty" xml:"success,omitempty"`
+	// 结果
+	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 }

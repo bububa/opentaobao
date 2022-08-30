@@ -1,8 +1,4 @@
 {
-	"id": 42009,
-	"name": "alibaba.health.vaccin.notice.order.create",
-	"apiChineseName": "支付宝医疗健康疫苗预约创建",
-	"description": "支付宝医疗健康疫苗预约创建",
 	"requestParams": [
 		{
 			"name": "sex",
@@ -24,6 +20,12 @@
 			"name": "alipay_user_id",
 			"type": "String",
 			"description": "支付宝用户id",
+			"required": true
+		},
+		{
+			"name": "vaccine_info",
+			"type": "String",
+			"description": "疫苗信息",
 			"required": true
 		},
 		{
@@ -49,6 +51,11 @@
 			"required": true
 		},
 		{
+			"name": "age_type",
+			"type": "Number",
+			"description": "年龄类型(1-宝宝2-成人)"
+		},
+		{
 			"name": "address",
 			"type": "String",
 			"description": "接种点地址",
@@ -65,17 +72,6 @@
 			"type": "String",
 			"description": "预约时间",
 			"required": true
-		},
-		{
-			"name": "vaccine_info",
-			"type": "String",
-			"description": "疫苗信息",
-			"required": true
-		},
-		{
-			"name": "age_type",
-			"type": "Number",
-			"description": "年龄类型(1-宝宝2-成人)"
 		},
 		{
 			"name": "order_detail_url",
@@ -120,5 +116,9 @@
 			"type": "Boolean",
 			"description": "结果集"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.order.create",
+	"apiChineseName": "支付宝医疗健康疫苗预约创建",
+	"description": "支付宝医疗健康疫苗预约创建",
+	"id": 42009
 }

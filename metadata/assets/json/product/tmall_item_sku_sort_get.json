@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "String",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误标识"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误信息集合"
+				},
+				{
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "Number",
+							"description": "属性项ID"
+						},
+						{
+							"name": "property_value",
+							"type": "String",
+							"description": "属性项名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "属性值ID"
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "属性值文本"
+								}
+							],
+							"name": "sale_prop_value_sorts",
+							"type": "SalePropValueSort[]",
+							"description": "属性值列表"
+						}
+					],
+					"name": "model",
+					"type": "ItemSalePropSort[]",
+					"description": "属性排序结果信息"
+				}
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.item.sku.sort.get",
+	"apiChineseName": "sku销售属性顺序获取",
+	"description": "sku销售属性顺序获取",
+	"id": 60015
+}

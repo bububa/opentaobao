@@ -1,27 +1,14 @@
 {
-	"id": 30615,
-	"name": "alibaba.mj.oc.calldispatcher",
-	"apiChineseName": "呼叫运力",
-	"description": "定时达呼叫运力接口",
 	"requestParams": [
 		{
-			"name": "call_dispatcher_d_t_o",
-			"type": "CallDispatcherDto",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "code_info_list",
-					"type": "CodeInfoDto[]",
-					"description": "包裹信息",
 					"subParams": [
 						{
-							"name": "goods_list",
-							"type": "CodeGoodsDto[]",
-							"description": "商品信息",
 							"subParams": [
 								{
 									"name": "quantity",
-									"type": "String",
+									"type": "BigDecimal",
 									"description": "数量"
 								},
 								{
@@ -35,7 +22,10 @@
 									"description": "zi单号",
 									"required": true
 								}
-							]
+							],
+							"name": "goods_list",
+							"type": "CodeGoodsDto[]",
+							"description": "商品信息"
 						},
 						{
 							"name": "package_code",
@@ -44,9 +34,6 @@
 							"required": true
 						},
 						{
-							"name": "send_info",
-							"type": "DeliveryCustomDto",
-							"description": "寄件信息",
 							"subParams": [
 								{
 									"name": "name",
@@ -69,9 +56,6 @@
 									"description": "电话"
 								},
 								{
-									"name": "address_info",
-									"type": "DeliveryAddressDto",
-									"description": "详细信息",
 									"subParams": [
 										{
 											"name": "province",
@@ -108,11 +92,20 @@
 											"type": "String",
 											"description": "邮编"
 										}
-									]
+									],
+									"name": "address_info",
+									"type": "DeliveryAddressDto",
+									"description": "详细信息"
 								}
-							]
+							],
+							"name": "send_info",
+							"type": "DeliveryCustomDto",
+							"description": "寄件信息"
 						}
-					]
+					],
+					"name": "code_info_list",
+					"type": "CodeInfoDto[]",
+					"description": "包裹信息"
 				},
 				{
 					"name": "parent_no",
@@ -121,9 +114,6 @@
 					"required": true
 				},
 				{
-					"name": "receive_info",
-					"type": "DeliveryCustomDto",
-					"description": "收货信息",
 					"subParams": [
 						{
 							"name": "name",
@@ -146,9 +136,6 @@
 							"description": "电话"
 						},
 						{
-							"name": "address_info",
-							"type": "DeliveryAddressDto",
-							"description": "地址",
 							"subParams": [
 								{
 									"name": "province",
@@ -185,66 +172,72 @@
 									"type": "String",
 									"description": "邮编"
 								}
-							]
+							],
+							"name": "address_info",
+							"type": "DeliveryAddressDto",
+							"description": "地址"
 						}
-					]
+					],
+					"name": "receive_info",
+					"type": "DeliveryCustomDto",
+					"description": "收货信息"
 				}
-			]
+			],
+			"name": "call_dispatcher_d_t_o",
+			"type": "CallDispatcherDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDO",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CallDispatcherResponse",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "parent_no",
 							"type": "String",
-							"description": "parentNo",
-							"required": true
+							"description": "parentNo"
 						},
 						{
-							"name": "resp_list",
-							"type": "CallDispatcherRespDo[]",
-							"description": "respList",
-							"required": true,
 							"subParams": [
 								{
 									"name": "short_id",
 									"type": "String",
-									"description": "shortId",
-									"required": true
+									"description": "shortId"
 								},
 								{
 									"name": "got_code",
 									"type": "String",
-									"description": "gotCode",
-									"required": true
+									"description": "gotCode"
 								},
 								{
 									"name": "package_code",
 									"type": "String",
-									"description": "packageCode",
-									"required": true
+									"description": "packageCode"
 								},
 								{
 									"name": "fulfill_plan_id",
 									"type": "Number",
-									"description": "fulfillPlanId",
-									"required": true
+									"description": "fulfillPlanId"
 								}
-							]
+							],
+							"name": "resp_list",
+							"type": "CallDispatcherRespDo[]",
+							"description": "respList"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CallDispatcherResponse",
+					"description": "data"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mj.oc.calldispatcher",
+	"apiChineseName": "呼叫运力",
+	"description": "定时达呼叫运力接口",
+	"id": 30615
 }

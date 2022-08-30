@@ -1,13 +1,6 @@
 {
-	"id": 56562,
-	"name": "alibaba.alihealth.druguse.query",
-	"apiChineseName": "合理用药规则查询",
-	"description": "查询用户购买的药品命中的风险规则",
 	"requestParams": [
 		{
-			"name": "command",
-			"type": "SafeMedicationReqCommand",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "order_id",
@@ -15,9 +8,6 @@
 					"description": "关联订单"
 				},
 				{
-					"name": "patient",
-					"type": "Patient",
-					"description": "患者，启用特殊人群规则情况下必传",
 					"subParams": [
 						{
 							"name": "gender",
@@ -49,7 +39,10 @@
 							"type": "String[]",
 							"description": "人群标签"
 						}
-					]
+					],
+					"name": "patient",
+					"type": "Patient",
+					"description": "患者，启用特殊人群规则情况下必传"
 				},
 				{
 					"name": "scene_name",
@@ -58,20 +51,10 @@
 					"required": true
 				},
 				{
-					"name": "prescription_items",
-					"type": "PrescriptionItem[]",
-					"description": "处方项，包括药品、用法用量以及购买量",
-					"required": true,
 					"subParams": [
 						{
-							"name": "dosage",
-							"type": "Dosage",
-							"description": "用法用量，启用用法用量规则的条件下必传",
 							"subParams": [
 								{
-									"name": "items",
-									"type": "DosageItem[]",
-									"description": "用法用量",
 									"subParams": [
 										{
 											"name": "unit",
@@ -85,22 +68,25 @@
 										},
 										{
 											"name": "value",
-											"type": "Number",
+											"type": "BigDecimal",
 											"description": "使用量"
 										}
-									]
+									],
+									"name": "items",
+									"type": "DosageItem[]",
+									"description": "用法用量"
 								},
 								{
 									"name": "way",
 									"type": "String",
 									"description": "用法"
 								}
-							]
+							],
+							"name": "dosage",
+							"type": "Dosage",
+							"description": "用法用量，启用用法用量规则的条件下必传"
 						},
 						{
-							"name": "buy_amount",
-							"type": "BuyAmount",
-							"description": "购买数量，启用限购的规则条件下必传",
 							"subParams": [
 								{
 									"name": "buy_amount",
@@ -117,13 +103,12 @@
 									"type": "Number",
 									"description": "历史购买量。历史购买量需要包含本次购买量，不传的话则不做周期限购"
 								}
-							]
+							],
+							"name": "buy_amount",
+							"type": "BuyAmount",
+							"description": "购买数量，启用限购的规则条件下必传"
 						},
 						{
-							"name": "drug",
-							"type": "Drug",
-							"description": "购买的药品",
-							"required": true,
 							"subParams": [
 								{
 									"name": "common_name",
@@ -147,9 +132,6 @@
 									"description": "生产厂家"
 								},
 								{
-									"name": "ingredients",
-									"type": "Ingredients[]",
-									"description": "成分",
 									"subParams": [
 										{
 											"name": "unit",
@@ -166,7 +148,10 @@
 											"type": "String",
 											"description": "成分名"
 										}
-									]
+									],
+									"name": "ingredients",
+									"type": "Ingredients[]",
+									"description": "成分"
 								},
 								{
 									"name": "spu_id",
@@ -198,14 +183,19 @@
 									"type": "String",
 									"description": "规格详情"
 								}
-							]
+							],
+							"name": "drug",
+							"type": "Drug",
+							"description": "购买的药品",
+							"required": true
 						}
-					]
+					],
+					"name": "prescription_items",
+					"type": "PrescriptionItem[]",
+					"description": "处方项，包括药品、用法用量以及购买量",
+					"required": true
 				},
 				{
-					"name": "diags",
-					"type": "Diag[]",
-					"description": "诊断信息，启用适应症和禁忌症规则下必传",
 					"subParams": [
 						{
 							"name": "code",
@@ -217,7 +207,10 @@
 							"type": "String",
 							"description": "诊断名"
 						}
-					]
+					],
+					"name": "diags",
+					"type": "Diag[]",
+					"description": "诊断信息，启用适应症和禁忌症规则下必传"
 				},
 				{
 					"name": "tenant_code",
@@ -225,144 +218,130 @@
 					"description": "租户名",
 					"required": true
 				}
-			]
+			],
+			"name": "command",
+			"type": "SafeMedicationReqCommand",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "成功与否",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
-				},
-				{
-					"name": "datas",
-					"type": "BaseRule[]",
-					"description": "结果集",
-					"required": true,
 					"subParams": [
 						{
 							"name": "level",
 							"type": "Number",
-							"description": "级别规则",
-							"required": true
+							"description": "级别规则"
 						},
 						{
 							"name": "detail",
 							"type": "String",
-							"description": "规则的详细数据",
-							"required": true
+							"description": "规则的详细数据"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "提示文案",
-							"required": true
+							"description": "提示文案"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "周期限购：CycleLimitRule，单次限购规则：SingleLimitRule，频次规则：FreqDosageRule， 每日剂量规则：DailyDosageRule，单次剂量规则：SingleDosageRule ，用法规则：WayDosageRule ，重复用药规则：RepetitionRule ，特殊年龄规则：AgeSpecialCrowdRule ，人群标签规则：UserLabelSpecialCrowdRule ，性别诊断冲突规则则：GenderSpecialCrowdRule ，适应症规则：IndicationRule ，相互作用规则：InteractionRule ，禁忌症规则：ContraIndicationRule",
-							"required": true
+							"description": "周期限购：CycleLimitRule，单次限购规则：SingleLimitRule，频次规则：FreqDosageRule， 每日剂量规则：DailyDosageRule，单次剂量规则：SingleDosageRule ，用法规则：WayDosageRule ，重复用药规则：RepetitionRule ，特殊年龄规则：AgeSpecialCrowdRule ，人群标签规则：UserLabelSpecialCrowdRule ，性别诊断冲突规则则：GenderSpecialCrowdRule ，适应症规则：IndicationRule ，相互作用规则：InteractionRule ，禁忌症规则：ContraIndicationRule"
 						},
 						{
 							"name": "spu_id",
 							"type": "String",
-							"description": "spuid",
-							"required": true
+							"description": "spuid"
 						},
 						{
 							"name": "threshold",
 							"type": "String",
-							"description": "每次剂量上线（命中每日剂量规则+单次剂量规则）",
-							"required": true
+							"description": "每次剂量上线（命中每日剂量规则+单次剂量规则）"
 						},
 						{
 							"name": "suggested_freq",
 							"type": "String",
-							"description": "建议的每日使用频次，如2-3（命中频次规则）",
-							"required": true
+							"description": "建议的每日使用频次，如2-3（命中频次规则）"
 						},
 						{
 							"name": "suggested_way",
 							"type": "String",
-							"description": "建议的用法， 如：口服（命中用法规则）",
-							"required": true
+							"description": "建议的用法， 如：口服（命中用法规则）"
 						},
 						{
 							"name": "common_name",
 							"type": "String",
-							"description": "药品通用名",
-							"required": true
+							"description": "药品通用名"
 						},
 						{
 							"name": "other_common_name",
 							"type": "String",
-							"description": "药品通用名（重复用药+相互作用规则）",
-							"required": true
+							"description": "药品通用名（重复用药+相互作用规则）"
 						},
 						{
 							"name": "forbidden_age",
 							"type": "String",
-							"description": "禁用的年龄区间，单位是天，比如0-1000（命中特殊年龄规则）",
-							"required": true
+							"description": "禁用的年龄区间，单位是天，比如0-1000（命中特殊年龄规则）"
 						},
 						{
 							"name": "forbidden_user",
 							"type": "String",
-							"description": "禁用的人群（命中特殊人群规则）",
-							"required": true
+							"description": "禁用的人群（命中特殊人群规则）"
 						},
 						{
 							"name": "gender",
 							"type": "String",
-							"description": "性别（命中性别诊断冲突规则）",
-							"required": true
+							"description": "性别（命中性别诊断冲突规则）"
 						},
 						{
 							"name": "diag_code",
 							"type": "String",
-							"description": "诊断码（命中性别诊断冲突规则）",
-							"required": true
+							"description": "诊断码（命中性别诊断冲突规则）"
 						},
 						{
 							"name": "diags",
 							"type": "String",
-							"description": "诊断（命中适应症规则）",
-							"required": true
+							"description": "诊断（命中适应症规则）"
 						},
 						{
 							"name": "forbidden_diags",
 							"type": "String",
-							"description": "跟该药冲突的诊断码， 如N19.x00（（命中禁忌症规则））",
-							"required": true
+							"description": "跟该药冲突的诊断码， 如N19.x00（（命中禁忌症规则））"
 						},
 						{
 							"name": "limit_threshold",
 							"type": "Number",
-							"description": "限购上限制（命中周期限购+单次限购规则）",
-							"required": true
+							"description": "限购上限制（命中周期限购+单次限购规则）"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "BaseRule[]",
+					"description": "结果集"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.druguse.query",
+	"apiChineseName": "合理用药规则查询",
+	"description": "查询用户购买的药品命中的风险规则",
+	"id": 56562
 }

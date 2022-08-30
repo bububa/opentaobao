@@ -1,8 +1,4 @@
 {
-	"id": 50234,
-	"name": "alibaba.wdkorder.sharestock.order.get",
-	"apiChineseName": "猫超商户订单拉取",
-	"description": "商户拉取猫超订单数据",
 	"requestParams": [
 		{
 			"name": "tb_order_id",
@@ -13,151 +9,152 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MaochaoOrderQueryResult",
-			"description": "调用结果",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
-				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "返回码说明",
-					"required": true
+					"description": "返回码说明"
 				},
 				{
-					"name": "sub_order_list",
-					"type": "MaochaoWdkOrderDto[]",
-					"description": "子订单列表",
-					"required": true,
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
 					"subParams": [
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "buy_amount_stock",
 							"type": "String",
-							"description": "库存单位购买数量",
-							"required": true
+							"description": "库存单位购买数量"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店ID",
-							"required": true
+							"description": "经营店ID"
 						},
 						{
 							"name": "sale_unit",
 							"type": "String",
-							"description": "销售单位",
-							"required": true
+							"description": "销售单位"
 						},
 						{
 							"name": "stock_unit",
 							"type": "String",
-							"description": "库存单位",
-							"required": true
+							"description": "库存单位"
 						},
 						{
 							"name": "sell_unit",
 							"type": "String",
-							"description": "非标品售卖单位",
-							"required": true
+							"description": "非标品售卖单位"
 						},
 						{
 							"name": "ns_quantity",
 							"type": "String",
-							"description": "非标品购买数量",
-							"required": true
+							"description": "非标品购买数量"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "购买数量",
-							"required": true
+							"description": "购买数量"
 						},
 						{
 							"name": "auction_id",
 							"type": "String",
-							"description": "商品id",
-							"required": true
+							"description": "商品id"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商户编码",
-							"required": true
+							"description": "商户编码"
 						},
 						{
 							"name": "biz_sub_order_id",
 							"type": "Number",
-							"description": "五道口子订单ID",
-							"required": true
+							"description": "五道口子订单ID"
 						},
 						{
 							"name": "tb_sub_order_id",
 							"type": "Number",
-							"description": "主站子订单ID",
-							"required": true
+							"description": "主站子订单ID"
 						},
 						{
 							"name": "tb_order_id",
 							"type": "Number",
-							"description": "主站订单ID",
-							"required": true
+							"description": "主站订单ID"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "五道口订单ID",
-							"required": true
+							"description": "五道口订单ID"
 						},
 						{
 							"name": "auction_price",
 							"type": "Number",
-							"description": "商品价格",
-							"required": true
+							"description": "商品价格"
 						},
 						{
 							"name": "auction_title",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店ID",
-							"required": true
+							"description": "渠道店ID"
 						},
 						{
 							"name": "attributes",
-							"type": "Json",
-							"description": "子订单扩展字段, 订单商品采购价数据purchase_price",
-							"required": true
+							"type": "String",
+							"description": "子订单扩展字段, 订单商品采购价数据purchase_price"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "purchase_rebate_ratio",
+							"type": "String",
+							"description": "返利比例"
+						},
+						{
+							"name": "purchase_rebate",
+							"type": "Boolean",
+							"description": "是否进货返利"
+						},
+						{
+							"name": "un_rebate_ratio",
+							"type": "String",
+							"description": "不退货返利比例"
 						}
-					]
+					],
+					"name": "sub_order_list",
+					"type": "MaochaoWdkOrderDto[]",
+					"description": "子订单列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MaochaoOrderQueryResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdkorder.sharestock.order.get",
+	"apiChineseName": "猫超商户订单拉取",
+	"description": "商户拉取猫超订单数据",
+	"id": 50234
 }

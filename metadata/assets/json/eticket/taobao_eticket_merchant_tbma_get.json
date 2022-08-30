@@ -1,14 +1,6 @@
 {
-	"id": 28157,
-	"name": "taobao.eticket.merchant.tbma.get",
-	"apiChineseName": "码商查询淘宝码接口",
-	"description": "码商查询淘宝码接口",
 	"requestParams": [
 		{
-			"name": "query_tb_ma_callback_req",
-			"type": "QueryTbMaCallbackReq",
-			"description": "查询淘宝码请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "code",
@@ -16,26 +8,19 @@
 					"description": "淘宝码值",
 					"required": true
 				}
-			]
+			],
+			"name": "query_tb_ma_callback_req",
+			"type": "QueryTbMaCallbackReq",
+			"description": "查询淘宝码请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "QueryTbMaCallbackResp",
-			"description": "respBody",
 			"subParams": [
 				{
-					"name": "certificate",
-					"type": "CertificateDto",
-					"description": "certificateDTO",
-					"required": true,
 					"subParams": [
 						{
-							"name": "attributes",
-							"type": "Attributes",
-							"description": "attributes",
-							"required": true,
 							"subParams": [
 								{
 									"name": "item_id",
@@ -43,7 +28,11 @@
 									"description": "itemId",
 									"required": true
 								}
-							]
+							],
+							"name": "attributes",
+							"type": "Attributes",
+							"description": "attributes",
+							"required": true
 						},
 						{
 							"name": "available_num",
@@ -111,9 +100,16 @@
 							"description": "usedNum",
 							"required": true
 						}
-					]
+					],
+					"name": "certificate",
+					"type": "CertificateDto",
+					"description": "certificateDTO",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "QueryTbMaCallbackResp",
+			"description": "respBody"
 		},
 		{
 			"name": "ret_code",
@@ -125,5 +121,9 @@
 			"type": "String",
 			"description": "subMsg"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.tbma.get",
+	"apiChineseName": "码商查询淘宝码接口",
+	"description": "码商查询淘宝码接口",
+	"id": 28157
 }

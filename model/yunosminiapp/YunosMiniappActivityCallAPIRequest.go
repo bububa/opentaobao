@@ -12,10 +12,10 @@ import (
 // 用于小程序调用活动接口
 type YunosMiniappActivityCallAPIRequest struct {
 	model.Params
-	// 设备id
-	_deviceId string
 	// 活动id
 	_activityId string
+	// 设备id
+	_deviceId string
 	// 请求选项
 	_options *Options
 }
@@ -41,19 +41,6 @@ func (r YunosMiniappActivityCallAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetDeviceId is DeviceId Setter
-// 设备id
-func (r *YunosMiniappActivityCallAPIRequest) SetDeviceId(_deviceId string) error {
-	r._deviceId = _deviceId
-	r.Set("device_id", _deviceId)
-	return nil
-}
-
-// GetDeviceId DeviceId Getter
-func (r YunosMiniappActivityCallAPIRequest) GetDeviceId() string {
-	return r._deviceId
-}
-
 // SetActivityId is ActivityId Setter
 // 活动id
 func (r *YunosMiniappActivityCallAPIRequest) SetActivityId(_activityId string) error {
@@ -65,6 +52,19 @@ func (r *YunosMiniappActivityCallAPIRequest) SetActivityId(_activityId string) e
 // GetActivityId ActivityId Getter
 func (r YunosMiniappActivityCallAPIRequest) GetActivityId() string {
 	return r._activityId
+}
+
+// SetDeviceId is DeviceId Setter
+// 设备id
+func (r *YunosMiniappActivityCallAPIRequest) SetDeviceId(_deviceId string) error {
+	r._deviceId = _deviceId
+	r.Set("device_id", _deviceId)
+	return nil
+}
+
+// GetDeviceId DeviceId Getter
+func (r YunosMiniappActivityCallAPIRequest) GetDeviceId() string {
+	return r._deviceId
 }
 
 // SetOptions is Options Setter

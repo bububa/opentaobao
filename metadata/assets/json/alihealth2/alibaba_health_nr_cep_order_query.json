@@ -1,8 +1,4 @@
 {
-	"id": 56347,
-	"name": "alibaba.health.nr.cep.order.query",
-	"apiChineseName": "订单详情查询接口",
-	"description": "订单详情查询接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,171 +9,149 @@
 	],
 	"responseParams": [
 		{
-			"name": "response_result",
-			"type": "ResponseResult",
-			"description": "返回值",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "TopOrderDetailDto",
-					"description": "订单详情对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cep_order_id",
 							"type": "Number",
-							"description": "孔雀翎订单号",
-							"required": true
+							"description": "孔雀翎订单号"
 						},
 						{
 							"name": "cep_shop_code",
 							"type": "String",
-							"description": "孔雀翎店铺编码",
-							"required": true
+							"description": "孔雀翎店铺编码"
 						},
 						{
 							"name": "buyer_name",
 							"type": "String",
-							"description": "买家姓名",
-							"required": true
+							"description": "买家姓名"
 						},
 						{
 							"name": "buyer_phone",
 							"type": "String",
-							"description": "买家电话",
-							"required": true
+							"description": "买家电话"
 						},
 						{
 							"name": "addr_province",
 							"type": "String",
-							"description": "收货地址，省",
-							"required": true
+							"description": "收货地址，省"
 						},
 						{
 							"name": "addr_city",
 							"type": "String",
-							"description": "收货地址，市",
-							"required": true
+							"description": "收货地址，市"
 						},
 						{
 							"name": "addr_district",
 							"type": "String",
-							"description": "收货地址，区",
-							"required": true
+							"description": "收货地址，区"
 						},
 						{
 							"name": "addr_detail",
 							"type": "String",
-							"description": "收货地址，详细信息",
-							"required": true
+							"description": "收货地址，详细信息"
 						},
 						{
 							"name": "addr_longitude",
 							"type": "Number",
-							"description": "收货地址，经度，高德",
-							"required": true
+							"description": "收货地址，经度，高德"
 						},
 						{
 							"name": "addr_latitude",
 							"type": "Number",
-							"description": "收货地址，纬度，高德",
-							"required": true
+							"description": "收货地址，纬度，高德"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态（1已支付；2已接单；3已完成；4已取消）",
-							"required": true
+							"description": "订单状态（1已支付；2已接单；3已完成；4已取消）"
 						},
 						{
 							"name": "refund_status",
 							"type": "Number",
-							"description": "退款状态（0未申请退款，默认值；1已申请退款；2同意退款；3拒绝退款；4已取消退款）",
-							"required": true
+							"description": "退款状态（0未申请退款，默认值；1已申请退款；2同意退款；3拒绝退款；4已取消退款）"
 						},
 						{
 							"name": "delivery_status",
 							"type": "Number",
-							"description": "物流状态（0未申请退款，默认值；1已申请退款；2同意退款；3拒绝退款；4已取消退款）",
-							"required": true
+							"description": "物流状态（0未申请退款，默认值；1已申请退款；2同意退款；3拒绝退款；4已取消退款）"
 						},
 						{
 							"name": "expect_time",
 							"type": "Date",
-							"description": "期望送达时间",
-							"required": true
+							"description": "期望送达时间"
 						},
 						{
 							"name": "express_number",
 							"type": "String",
-							"description": "物流单号",
-							"required": true
+							"description": "物流单号"
 						},
 						{
 							"name": "express_name",
 							"type": "String",
-							"description": "物流名称",
-							"required": true
+							"description": "物流名称"
 						},
 						{
 							"name": "express_code",
 							"type": "String",
-							"description": "物流编码",
-							"required": true
+							"description": "物流编码"
 						},
 						{
-							"name": "items",
-							"type": "TopOrderGoodsDto[]",
-							"description": "商品集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "goods_code",
 									"type": "String",
-									"description": "商品编码",
-									"required": true
+									"description": "商品编码"
 								},
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "商品数量",
-									"required": true
+									"description": "商品数量"
 								},
 								{
 									"name": "goods_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								}
-							]
+							],
+							"name": "items",
+							"type": "TopOrderGoodsDto[]",
+							"description": "商品集合"
 						},
 						{
 							"name": "o2o_order_no",
 							"type": "String",
-							"description": "o2o订单号",
-							"required": true
+							"description": "o2o订单号"
 						}
-					]
+					],
+					"name": "result",
+					"type": "TopOrderDetailDto",
+					"description": "订单详情对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "response_result",
+			"type": "ResponseResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.health.nr.cep.order.query",
+	"apiChineseName": "订单详情查询接口",
+	"description": "订单详情查询接口",
+	"id": 56347
 }

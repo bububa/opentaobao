@@ -1,0 +1,280 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "用户code"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "popup_type",
+									"type": "Number",
+									"description": "抽奖类型"
+								},
+								{
+									"name": "popup_do_text",
+									"type": "String",
+									"description": "弹窗点击文本"
+								},
+								{
+									"name": "popup_title",
+									"type": "String",
+									"description": "标题"
+								},
+								{
+									"name": "popup_sub_text",
+									"type": "String",
+									"description": "文本"
+								},
+								{
+									"name": "top_title",
+									"type": "String",
+									"description": "头部标题"
+								},
+								{
+									"name": "offer_id",
+									"type": "String",
+									"description": "活动id"
+								},
+								{
+									"name": "popup_exit_text",
+									"type": "String",
+									"description": "弹窗文本"
+								},
+								{
+									"name": "popup_text",
+									"type": "String",
+									"description": "文本"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题"
+								}
+							],
+							"name": "activity_draw_popup",
+							"type": "ActivityDrawPopupVo",
+							"description": "抽奖弹屏"
+						},
+						{
+							"subParams": [
+								{
+									"name": "pop_up_redirect_url",
+									"type": "String",
+									"description": "弹屏跳转链接"
+								},
+								{
+									"name": "pop_up_url",
+									"type": "String",
+									"description": "弹屏图片"
+								},
+								{
+									"name": "offer_id",
+									"type": "Number",
+									"description": "活动id"
+								}
+							],
+							"name": "pop_up",
+							"type": "PopUpVo",
+							"description": "活动弹窗"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "弹屏类型"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "condition_amount",
+											"type": "String",
+											"description": "使用门槛"
+										},
+										{
+											"name": "discount_amount",
+											"type": "String",
+											"description": "面额"
+										},
+										{
+											"name": "coupon_template_id",
+											"type": "Number",
+											"description": "优惠券模板id"
+										},
+										{
+											"name": "coupon_name",
+											"type": "String",
+											"description": "优惠券名称"
+										},
+										{
+											"name": "condition_desc",
+											"type": "String",
+											"description": "使用条件描述"
+										},
+										{
+											"name": "detail_desc",
+											"type": "String",
+											"description": "详细描述"
+										},
+										{
+											"name": "expired_time_day",
+											"type": "Number",
+											"description": "领取优惠券后的过期时间"
+										},
+										{
+											"name": "expired_time_hour",
+											"type": "Number",
+											"description": "领取优惠券后的过期时间"
+										},
+										{
+											"name": "expired_time_min",
+											"type": "Number",
+											"description": "领取优惠券后的过期时间"
+										},
+										{
+											"name": "book_start_time",
+											"type": "String",
+											"description": "优惠券预订开始时间"
+										},
+										{
+											"name": "book_end_time",
+											"type": "String",
+											"description": "优惠券预订结束时间"
+										},
+										{
+											"name": "check_in_time",
+											"type": "String",
+											"description": "允许入住开始时间"
+										},
+										{
+											"name": "check_out_time",
+											"type": "String",
+											"description": "允许入住结束时间"
+										},
+										{
+											"name": "total_amount",
+											"type": "Number",
+											"description": "优惠券总数量"
+										},
+										{
+											"name": "received_amount",
+											"type": "Number",
+											"description": "已领取数量"
+										},
+										{
+											"name": "left_amount",
+											"type": "Number",
+											"description": "优惠券剩余数量"
+										},
+										{
+											"name": "status",
+											"type": "String",
+											"description": "关联状态"
+										},
+										{
+											"name": "relate_activity_id_list",
+											"type": "Number[]",
+											"description": "关联活动id"
+										},
+										{
+											"subParams": [
+												{
+													"name": "replace_rp_code",
+													"type": "String",
+													"description": "代替后商品"
+												},
+												{
+													"name": "orig_rp_code",
+													"type": "String",
+													"description": "原价商品"
+												}
+											],
+											"name": "replace_rp_code",
+											"type": "ReplaceRpCode",
+											"description": "关联商品"
+										},
+										{
+											"name": "expired_time",
+											"type": "String",
+											"description": "优惠券过期时间"
+										},
+										{
+											"name": "coupon_type",
+											"type": "String",
+											"description": "优惠券类型"
+										}
+									],
+									"name": "coupon_template_v_o_list",
+									"type": "DisplayCouponTemplateVo[]",
+									"description": "优惠券模板"
+								},
+								{
+									"name": "pm_activity_id",
+									"type": "Number",
+									"description": "活动id"
+								},
+								{
+									"name": "home_page_popup",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "details_page_picture",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "coupon_activity_pop_up",
+							"type": "CouponActivityPopUpVo",
+							"description": "优惠券弹屏"
+						}
+					],
+					"name": "content",
+					"type": "PopUpInfoVO",
+					"description": "返回结果"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.marketing.popup",
+	"apiChineseName": "营销弹屏",
+	"description": "星河=活动营销弹屏",
+	"id": 57217
+}

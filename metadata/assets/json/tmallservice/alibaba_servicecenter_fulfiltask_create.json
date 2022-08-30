@@ -1,15 +1,11 @@
 {
-	"id": 55625,
-	"name": "alibaba.servicecenter.fulfiltask.create",
-	"apiChineseName": "合单生成核销单",
-	"description": "服务对工单进行合单，合单的结果是生成核销单",
 	"requestParams": [
 		{
 			"name": "workcard_ids",
 			"type": "Number[]",
 			"description": "工单id列表",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "outer_id",
@@ -20,35 +16,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "fulfil_task_id",
 					"type": "Number",
-					"description": "核销单id",
-					"required": true
+					"description": "核销单id"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.servicecenter.fulfiltask.create",
+	"apiChineseName": "合单生成核销单",
+	"description": "服务对工单进行合单，合单的结果是生成核销单",
+	"id": 55625
 }

@@ -1,13 +1,6 @@
 {
-	"id": 45010,
-	"name": "alibaba.alihealth.outflow.frequency.saveorupdate",
-	"apiChineseName": "处方外流-药品频次同步接口",
-	"description": "处方外流-药品频次同步接口",
 	"requestParams": [
 		{
-			"name": "frequency_request",
-			"type": "FrequencyRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "freq_times",
@@ -34,40 +27,43 @@
 					"type": "String",
 					"description": "渠道类型（非空）"
 				}
-			]
+			],
+			"name": "frequency_request",
+			"type": "FrequencyRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "service_result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "errMessage",
-					"required": true
+					"description": "errMessage"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据对象",
-					"required": true
+					"description": "返回数据对象"
 				}
-			]
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.outflow.frequency.saveorupdate",
+	"apiChineseName": "处方外流-药品频次同步接口",
+	"description": "处方外流-药品频次同步接口",
+	"id": 45010
 }

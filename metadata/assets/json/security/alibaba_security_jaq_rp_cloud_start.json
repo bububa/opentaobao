@@ -1,8 +1,4 @@
 {
-	"id": 31248,
-	"name": "alibaba.security.jaq.rp.cloud.start",
-	"apiChineseName": "实人认证云开始认证",
-	"description": "聚安全实人认证开始",
 	"requestParams": [
 		{
 			"name": "verify_token",
@@ -11,40 +7,11 @@
 			"required": true
 		},
 		{
-			"name": "client_info",
-			"type": "RpClientInfo",
-			"description": "客户端信息，如果是服务端接入，里面的参数可为空",
-			"required": true,
 			"subParams": [
 				{
-					"name": "os_version",
+					"name": "app_key_info",
 					"type": "String",
-					"description": "os版本号"
-				},
-				{
-					"name": "umid_token",
-					"type": "String",
-					"description": "umid_token"
-				},
-				{
-					"name": "wua_token",
-					"type": "String",
-					"description": "无线端用于风控的token"
-				},
-				{
-					"name": "ip",
-					"type": "String",
-					"description": "ip地址"
-				},
-				{
-					"name": "timestamp_info",
-					"type": "String",
-					"description": "时间戳"
-				},
-				{
-					"name": "wua",
-					"type": "String",
-					"description": "无线端用于风控的wua数据"
+					"description": "appKey"
 				},
 				{
 					"name": "app_name",
@@ -57,19 +24,9 @@
 					"description": "应用版本"
 				},
 				{
-					"name": "session_id",
+					"name": "available_memory",
 					"type": "String",
-					"description": "session_id"
-				},
-				{
-					"name": "os_name",
-					"type": "String",
-					"description": "客户端OS名称"
-				},
-				{
-					"name": "device_id",
-					"type": "String",
-					"description": "原始设备号"
+					"description": "剩余内存"
 				},
 				{
 					"name": "client_type",
@@ -77,33 +34,34 @@
 					"description": "客户端类别"
 				},
 				{
-					"name": "app_key_info",
+					"name": "cpu_arch",
 					"type": "String",
-					"description": "appKey"
+					"description": "架构"
 				},
 				{
-					"name": "rp_sdk_version",
+					"name": "device_id",
 					"type": "String",
-					"description": "认证SDK版本号"
-				},
-				{
-					"name": "rp_sdk_name",
-					"type": "String",
-					"description": "认证SDK名字"
+					"description": "原始设备号"
 				},
 				{
 					"name": "extend_map",
+					"type": "String",
 					"description": "xxx"
 				},
 				{
-					"name": "liveness_sdk_version",
+					"name": "ip",
 					"type": "String",
-					"description": "活体sdk版本"
+					"description": "ip地址"
 				},
 				{
 					"name": "liveness_sdk_name",
 					"type": "String",
 					"description": "活体sdk名字"
+				},
+				{
+					"name": "liveness_sdk_version",
+					"type": "String",
+					"description": "活体sdk版本"
 				},
 				{
 					"name": "manufacturer",
@@ -116,19 +74,29 @@
 					"description": "手机型号"
 				},
 				{
-					"name": "cpu_arch",
+					"name": "os_name",
 					"type": "String",
-					"description": "架构"
+					"description": "客户端OS名称"
 				},
 				{
-					"name": "total_memory",
+					"name": "os_version",
 					"type": "String",
-					"description": "总内存"
+					"description": "os版本号"
 				},
 				{
-					"name": "available_memory",
+					"name": "rp_sdk_name",
 					"type": "String",
-					"description": "剩余内存"
+					"description": "认证SDK名字"
+				},
+				{
+					"name": "rp_sdk_version",
+					"type": "String",
+					"description": "认证SDK版本号"
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "session_id"
 				},
 				{
 					"name": "support_neon",
@@ -136,11 +104,40 @@
 					"description": "支持"
 				},
 				{
+					"name": "timestamp_info",
+					"type": "String",
+					"description": "时间戳"
+				},
+				{
+					"name": "total_memory",
+					"type": "String",
+					"description": "总内存"
+				},
+				{
 					"name": "umid",
 					"type": "String",
 					"description": "umid"
+				},
+				{
+					"name": "umid_token",
+					"type": "String",
+					"description": "umid_token"
+				},
+				{
+					"name": "wua",
+					"type": "String",
+					"description": "无线端用于风控的wua数据"
+				},
+				{
+					"name": "wua_token",
+					"type": "String",
+					"description": "无线端用于风控的token"
 				}
-			]
+			],
+			"name": "client_info",
+			"type": "RpClientInfo",
+			"description": "客户端信息，如果是服务端接入，里面的参数可为空",
+			"required": true
 		},
 		{
 			"name": "extra_data",
@@ -150,153 +147,135 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RpStartResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "biz",
 					"type": "String",
-					"description": "biz",
-					"required": true
+					"description": "biz"
 				},
 				{
 					"name": "extra_info",
 					"type": "String",
-					"description": "extraInfo",
-					"required": true
+					"description": "extraInfo"
 				},
 				{
 					"name": "source",
 					"type": "String",
-					"description": "source",
-					"required": true
+					"description": "source"
 				},
 				{
-					"name": "steps",
-					"type": "RpStepItem[]",
-					"description": "steps",
-					"required": true,
 					"subParams": [
 						{
 							"name": "json_assist",
 							"type": "String",
-							"description": "jsonAssist",
-							"required": true
+							"description": "jsonAssist"
 						},
 						{
-							"name": "properties",
-							"type": "RpStepProperty[]",
-							"description": "properties",
-							"required": true,
 							"subParams": [
 								{
 									"name": "optional",
 									"type": "Boolean",
-									"description": "optional",
-									"required": true
+									"description": "optional"
 								},
 								{
-									"name": "property",
-									"type": "RpProperty",
-									"description": "property",
-									"required": true,
 									"subParams": [
 										{
 											"name": "code",
 											"type": "Number",
-											"description": "code",
-											"required": true
+											"description": "code"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "name",
-											"required": true
+											"description": "name"
 										}
-									]
+									],
+									"name": "property",
+									"type": "RpProperty",
+									"description": "property"
 								}
-							]
+							],
+							"name": "properties",
+							"type": "RpStepProperty[]",
+							"description": "properties"
 						},
 						{
-							"name": "step_type",
-							"type": "RpStepType",
-							"description": "stepType",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "Number",
-									"description": "code",
-									"required": true
+									"description": "code"
 								},
 								{
 									"name": "desc",
 									"type": "String",
-									"description": "desc",
-									"required": true
+									"description": "desc"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "name",
-									"required": true
+									"description": "name"
 								}
-							]
+							],
+							"name": "step_type",
+							"type": "RpStepType",
+							"description": "stepType"
 						}
-					]
+					],
+					"name": "steps",
+					"type": "RpStepItem[]",
+					"description": "steps"
 				},
 				{
-					"name": "upload_token",
-					"type": "StsUploadToken",
-					"description": "uploadToken",
-					"required": true,
 					"subParams": [
 						{
 							"name": "access_key_id",
 							"type": "String",
-							"description": "accessKeyId",
-							"required": true
+							"description": "accessKeyId"
 						},
 						{
 							"name": "access_key_secret",
 							"type": "String",
-							"description": "accessKeySecret",
-							"required": true
+							"description": "accessKeySecret"
 						},
 						{
 							"name": "bucket_name",
 							"type": "String",
-							"description": "bucketName",
-							"required": true
+							"description": "bucketName"
 						},
 						{
 							"name": "end_point",
 							"type": "String",
-							"description": "endPoint",
-							"required": true
+							"description": "endPoint"
 						},
 						{
 							"name": "expiration",
 							"type": "String",
-							"description": "expiration",
-							"required": true
+							"description": "expiration"
 						},
 						{
 							"name": "path",
 							"type": "String",
-							"description": "path",
-							"required": true
+							"description": "path"
 						},
 						{
 							"name": "token",
 							"type": "String",
-							"description": "token",
-							"required": true
+							"description": "token"
 						}
-					]
+					],
+					"name": "upload_token",
+					"type": "StsUploadToken",
+					"description": "uploadToken"
 				}
-			]
+			],
+			"name": "data",
+			"type": "RpStartResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.cloud.start",
+	"apiChineseName": "实人认证云开始认证",
+	"description": "聚安全实人认证开始",
+	"id": 31248
 }

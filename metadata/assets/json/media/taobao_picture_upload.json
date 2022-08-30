@@ -1,16 +1,10 @@
 {
-	"id": 140,
-	"name": "taobao.picture.upload",
-	"apiChineseName": "上传单张图片",
-	"description": "图片空间上传接口",
 	"requestParams": [
 		{
 			"name": "picture_category_id",
 			"type": "Number",
 			"description": "图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类",
-			"required": true,
-			"maxValue": 9223372036854775807,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "img",
@@ -42,9 +36,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "picture",
-			"type": "Picture",
-			"description": "当前上传的一张图片信息",
 			"subParams": [
 				{
 					"name": "picture_id",
@@ -87,6 +78,11 @@
 					"description": "图片是否删除的标记"
 				},
 				{
+					"name": "client_type",
+					"type": "String",
+					"description": "图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布"
+				},
+				{
 					"name": "created",
 					"type": "Date",
 					"description": "图片的创建时间"
@@ -95,13 +91,15 @@
 					"name": "modified",
 					"type": "Date",
 					"description": "图片的修改时间"
-				},
-				{
-					"name": "client_type",
-					"type": "String",
-					"description": "图片上传的来源，有电脑版本宝贝发布，手机版本宝贝发布"
 				}
-			]
+			],
+			"name": "picture",
+			"type": "Picture",
+			"description": "当前上传的一张图片信息"
 		}
-	]
+	],
+	"name": "taobao.picture.upload",
+	"apiChineseName": "上传单张图片",
+	"description": "图片空间上传接口",
+	"id": 140
 }

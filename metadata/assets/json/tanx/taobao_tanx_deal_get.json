@@ -1,8 +1,4 @@
 {
-	"id": 24235,
-	"name": "taobao.tanx.deal.get",
-	"apiChineseName": "对外部dsp提供交易id查询接口",
-	"description": "对外部dsp提供交易id查询接口",
 	"requestParams": [
 		{
 			"name": "dsp_id",
@@ -46,14 +42,8 @@
 			"description": "查询结果"
 		},
 		{
-			"name": "result",
-			"type": "DealInfoDTO",
-			"description": "查询结果",
 			"subParams": [
 				{
-					"name": "addresses",
-					"type": "DicDTO[]",
-					"description": "11",
 					"subParams": [
 						{
 							"name": "code",
@@ -65,7 +55,10 @@
 							"type": "String",
 							"description": "数据项值"
 						}
-					]
+					],
+					"name": "addresses",
+					"type": "DicDTO[]",
+					"description": "11"
 				},
 				{
 					"name": "deal_id",
@@ -122,7 +115,14 @@
 					"type": "String[]",
 					"description": "100"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DealInfoDTO",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "taobao.tanx.deal.get",
+	"apiChineseName": "对外部dsp提供交易id查询接口",
+	"description": "对外部dsp提供交易id查询接口",
+	"id": 24235
 }

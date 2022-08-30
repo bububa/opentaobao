@@ -1,8 +1,4 @@
 {
-	"id": 32226,
-	"name": "alibaba.campus.acl.cancelpermiitemfromrole",
-	"apiChineseName": "取消角色和权限之间的关系",
-	"description": "取消角色和权限之间的关系",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -22,10 +18,11 @@
 			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "RoleReq",
-			"description": "系统自动生成",
-			"required": true,
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id(不填默认appCode)"
+		},
+		{
 			"subParams": [
 				{
 					"name": "role_id",
@@ -33,65 +30,63 @@
 					"description": "角色id",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "RoleReq",
+			"description": "系统自动生成",
+			"required": true
 		},
 		{
-			"name": "param2",
-			"type": "PermissionReq[]",
-			"description": "系统自动生成",
-			"required": true,
-			"maxListSize": 1000,
 			"subParams": [
 				{
 					"name": "priv_key",
 					"type": "String",
 					"description": "权限key"
 				}
-			]
-		},
-		{
-			"name": "user_id",
-			"type": "String",
-			"description": "操作人id(不填默认appCode)"
+			],
+			"name": "param2",
+			"type": "PermissionReq[]",
+			"description": "系统自动生成",
+			"maxListSize": 1000,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "接口返回结果",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "接口错误描述",
-					"required": true
-				},
-				{
-					"name": "error_level",
-					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "接口返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "接口错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.cancelpermiitemfromrole",
+	"apiChineseName": "取消角色和权限之间的关系",
+	"description": "取消角色和权限之间的关系",
+	"id": 32226
 }

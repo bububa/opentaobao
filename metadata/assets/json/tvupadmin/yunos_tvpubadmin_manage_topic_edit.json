@@ -1,8 +1,4 @@
 {
-	"id": 30404,
-	"name": "yunos.tvpubadmin.manage.topic.edit",
-	"apiChineseName": "编辑专题",
-	"description": "编辑专题",
 	"requestParams": [
 		{
 			"name": "topic_json",
@@ -12,41 +8,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "retCode",
-					"required": true
+					"description": "retCode"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "object",
-					"required": true
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.manage.topic.edit",
+	"apiChineseName": "编辑专题",
+	"description": "编辑专题",
+	"id": 30404
 }

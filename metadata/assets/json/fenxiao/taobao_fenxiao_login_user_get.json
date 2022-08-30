@@ -1,13 +1,6 @@
 {
-	"id": 10781,
-	"name": "taobao.fenxiao.login.user.get",
-	"apiChineseName": "获取分销用户登录信息",
-	"description": "获取用户登录信息",
 	"responseParams": [
 		{
-			"name": "login_user",
-			"type": "LoginUser",
-			"description": "登录用户信息",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -29,7 +22,14 @@
 					"type": "Date",
 					"description": "入驻时间"
 				}
-			]
+			],
+			"name": "login_user",
+			"type": "LoginUser",
+			"description": "登录用户信息"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.login.user.get",
+	"apiChineseName": "获取分销用户登录信息",
+	"description": "获取用户登录信息",
+	"id": 10781
 }

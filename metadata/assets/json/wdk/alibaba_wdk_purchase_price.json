@@ -1,13 +1,6 @@
 {
-	"id": 44087,
-	"name": "alibaba.wdk.purchase.price",
-	"apiChineseName": "rt回传采购价",
-	"description": "猫超共享库存项目-rt回传采购价",
 	"requestParams": [
 		{
-			"name": "wdk_open_purchase_price",
-			"type": "WdkOpenPurchasePrice",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "store_id",
@@ -22,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "wdk_open_purchase_price_subs",
-					"type": "Wdkopenpurchasepricesubs[]",
-					"description": "子单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "confirm",
@@ -63,9 +52,21 @@
 							"description": "淘系子订单号，必填",
 							"required": true
 						}
-					]
+					],
+					"name": "wdk_open_purchase_price_subs",
+					"type": "Wdkopenpurchasepricesubs[]",
+					"description": "子单信息",
+					"required": true
+				},
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "渠道标识45=猫超，100=共享零售"
 				}
-			]
+			],
+			"name": "wdk_open_purchase_price",
+			"type": "WdkOpenPurchasePrice",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -84,5 +85,9 @@
 			"type": "Boolean",
 			"description": "true"
 		}
-	]
+	],
+	"name": "alibaba.wdk.purchase.price",
+	"apiChineseName": "rt回传采购价",
+	"description": "猫超共享库存项目-rt回传采购价",
+	"id": 44087
 }

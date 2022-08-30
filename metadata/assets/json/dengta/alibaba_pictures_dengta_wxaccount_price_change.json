@@ -1,8 +1,4 @@
 {
-	"id": 38245,
-	"name": "alibaba.pictures.dengta.wxaccount.price.change",
-	"apiChineseName": "微信公众号价格变化通知",
-	"description": "微信公众号推广价格变更通知接口",
 	"requestParams": [
 		{
 			"name": "account_id",
@@ -64,15 +60,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiGeneralResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "message",
-					"type": "ReturnMessage",
-					"description": "message",
-					"required": true,
 					"subParams": [
 						{
 							"name": "dev",
@@ -86,7 +75,11 @@
 							"description": "cust",
 							"required": true
 						}
-					]
+					],
+					"name": "message",
+					"type": "ReturnMessage",
+					"description": "message",
+					"required": true
 				},
 				{
 					"name": "trace_id",
@@ -106,7 +99,14 @@
 					"description": "code",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiGeneralResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.pictures.dengta.wxaccount.price.change",
+	"apiChineseName": "微信公众号价格变化通知",
+	"description": "微信公众号推广价格变更通知接口",
+	"id": 38245
 }

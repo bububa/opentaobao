@@ -1,8 +1,4 @@
 {
-	"id": 23565,
-	"name": "tmall.product.schema.get",
-	"apiChineseName": "产品信息获取schema获取",
-	"description": "产品信息获取接口schema形式返回",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "产品信息数据。schema形式"
 		}
-	]
+	],
+	"name": "tmall.product.schema.get",
+	"apiChineseName": "产品信息获取schema获取",
+	"description": "产品信息获取接口schema形式返回",
+	"id": 23565
 }

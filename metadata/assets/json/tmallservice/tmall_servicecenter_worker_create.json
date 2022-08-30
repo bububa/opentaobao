@@ -1,18 +1,8 @@
 {
-	"id": 30001,
-	"name": "tmall.servicecenter.worker.create",
-	"apiChineseName": "服务商工人信息创建",
-	"description": "服务商工人信息创建",
 	"requestParams": [
 		{
-			"name": "worker_dto",
-			"type": "WorkerDto",
-			"description": "11",
 			"subParams": [
 				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "工人居住地址",
 					"subParams": [
 						{
 							"name": "address_detail",
@@ -24,7 +14,10 @@
 							"type": "String[]",
 							"description": "省/市/区/街道"
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "工人居住地址"
 				},
 				{
 					"name": "identity_id",
@@ -57,16 +50,16 @@
 					"description": "111"
 				},
 				{
-					"name": "service_areas",
-					"type": "DivisionDto[]",
-					"description": "1111",
 					"subParams": [
 						{
 							"name": "division_names",
 							"type": "String[]",
 							"description": "1"
 						}
-					]
+					],
+					"name": "service_areas",
+					"type": "DivisionDto[]",
+					"description": "1111"
 				},
 				{
 					"name": "service_types",
@@ -118,14 +111,14 @@
 					"type": "String",
 					"description": "网点编码"
 				}
-			]
+			],
+			"name": "worker_dto",
+			"type": "WorkerDto",
+			"description": "11"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -163,7 +156,14 @@
 					"description": "value",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.create",
+	"apiChineseName": "服务商工人信息创建",
+	"description": "服务商工人信息创建",
+	"id": 30001
 }

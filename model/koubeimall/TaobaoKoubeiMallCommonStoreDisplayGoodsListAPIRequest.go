@@ -12,14 +12,12 @@ import (
 // 提供查询口碑商圈内的门店推荐菜信息
 type TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest struct {
 	model.Params
-	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-	_dataSetId string
-	// 门店ID
-	_storeId string
 	// 商圈ID
 	_mallId string
-	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
-	_displayChannel string
+	// 门店ID
+	_storeId string
+	// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+	_dataSetId string
 	// 口碑城市编码（示例：杭州市330100）
 	_cityCode string
 	// 经度（终端设备地理位置）
@@ -30,6 +28,8 @@ type TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest struct {
 	_terminalType string
 	// 支付宝/口碑/淘宝app版本号
 	_appVersion string
+	// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
+	_displayChannel string
 }
 
 // NewTaobaoKoubeiMallCommonStoreDisplayGoodsListRequest 初始化TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest对象
@@ -53,17 +53,17 @@ func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetApiParams() ur
 	return params
 }
 
-// SetDataSetId is DataSetId Setter
-// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
-func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetDataSetId(_dataSetId string) error {
-	r._dataSetId = _dataSetId
-	r.Set("data_set_id", _dataSetId)
+// SetMallId is MallId Setter
+// 商圈ID
+func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetMallId(_mallId string) error {
+	r._mallId = _mallId
+	r.Set("mall_id", _mallId)
 	return nil
 }
 
-// GetDataSetId DataSetId Getter
-func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetDataSetId() string {
-	return r._dataSetId
+// GetMallId MallId Getter
+func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetMallId() string {
+	return r._mallId
 }
 
 // SetStoreId is StoreId Setter
@@ -79,30 +79,17 @@ func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetStoreId() stri
 	return r._storeId
 }
 
-// SetMallId is MallId Setter
-// 商圈ID
-func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetMallId(_mallId string) error {
-	r._mallId = _mallId
-	r.Set("mall_id", _mallId)
+// SetDataSetId is DataSetId Setter
+// 身份ID，识别合作方身份（可联系口碑综合体业务获取）
+func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetDataSetId(_dataSetId string) error {
+	r._dataSetId = _dataSetId
+	r.Set("data_set_id", _dataSetId)
 	return nil
 }
 
-// GetMallId MallId Getter
-func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetMallId() string {
-	return r._mallId
-}
-
-// SetDisplayChannel is DisplayChannel Setter
-// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
-func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetDisplayChannel(_displayChannel string) error {
-	r._displayChannel = _displayChannel
-	r.Set("display_channel", _displayChannel)
-	return nil
-}
-
-// GetDisplayChannel DisplayChannel Getter
-func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetDisplayChannel() string {
-	return r._displayChannel
+// GetDataSetId DataSetId Getter
+func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetDataSetId() string {
+	return r._dataSetId
 }
 
 // SetCityCode is CityCode Setter
@@ -168,4 +155,17 @@ func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetAppVersion(_a
 // GetAppVersion AppVersion Getter
 func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetAppVersion() string {
 	return r._appVersion
+}
+
+// SetDisplayChannel is DisplayChannel Setter
+// 展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）
+func (r *TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) SetDisplayChannel(_displayChannel string) error {
+	r._displayChannel = _displayChannel
+	r.Set("display_channel", _displayChannel)
+	return nil
+}
+
+// GetDisplayChannel DisplayChannel Getter
+func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetDisplayChannel() string {
+	return r._displayChannel
 }

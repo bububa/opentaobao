@@ -1,14 +1,6 @@
 {
-	"id": 41336,
-	"name": "alibaba.scbp.target.ad.plan.product.list.get",
-	"apiChineseName": "定向推广-获取推广计划产品列表",
-	"description": "定向推广-获取推广计划产品列表",
 	"requestParams": [
 		{
-			"name": "top_p4p_quick_product_query",
-			"type": "TopP4pQuickProductQuery",
-			"description": "TopP4pQuickProductQuery",
-			"required": true,
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -28,72 +20,67 @@
 					"description": "每页返回多少行",
 					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_quick_product_query",
+			"type": "TopP4pQuickProductQuery",
+			"description": "TopP4pQuickProductQuery",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "product_list",
-			"type": "TopP4pQuickCampaignProductView []",
-			"description": "TopP4pQuickCampaignProductView",
 			"subParams": [
 				{
-					"name": "effect7d",
-					"type": "Effect7d",
-					"description": "商品最近7天效果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ctr",
 							"type": "String",
-							"description": "点击率",
-							"required": true
+							"description": "点击率"
 						},
 						{
 							"name": "cpc",
 							"type": "String",
-							"description": "平均点击花费",
-							"required": true
+							"description": "平均点击花费"
 						},
 						{
 							"name": "cost",
 							"type": "String",
-							"description": "消耗金额，单位元",
-							"required": true
+							"description": "消耗金额，单位元"
 						},
 						{
 							"name": "click",
 							"type": "String",
-							"description": "点击量",
-							"required": true
+							"description": "点击量"
 						},
 						{
 							"name": "impr",
 							"type": "String",
-							"description": "曝光量",
-							"required": true
+							"description": "曝光量"
 						}
-					]
+					],
+					"name": "effect7d",
+					"type": "Effect7d",
+					"description": "商品最近7天效果数据"
 				},
 				{
 					"name": "product_name",
 					"type": "String",
-					"description": "商品名",
-					"required": true
+					"description": "商品名"
 				},
 				{
 					"name": "product_id",
 					"type": "Number",
-					"description": "商品ID",
-					"required": true
+					"description": "商品ID"
 				},
 				{
 					"name": "display_status",
 					"type": "Number",
-					"description": "产品状态（0暂停，1推广中，-2商品下架）",
-					"required": true
+					"description": "产品状态（0暂停，1推广中，-2商品下架）"
 				}
-			]
+			],
+			"name": "product_list",
+			"type": "TopP4pQuickCampaignProductView []",
+			"description": "TopP4pQuickCampaignProductView"
 		},
 		{
 			"name": "total_page",
@@ -105,5 +92,9 @@
 			"type": "Number",
 			"description": "总个数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.product.list.get",
+	"apiChineseName": "定向推广-获取推广计划产品列表",
+	"description": "定向推广-获取推广计划产品列表",
+	"id": 41336
 }

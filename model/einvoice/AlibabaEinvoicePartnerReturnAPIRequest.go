@@ -12,34 +12,34 @@ import (
 // 开票商返回开票结果数据
 type AlibabaEinvoicePartnerReturnAPIRequest struct {
 	model.Params
-	// 电商平台身份标识码，TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
-	_platformCode string
-	// 开票金额
-	_invoiceAmount string
+	// 防伪码
+	_antiFakeCode string
 	// 发票密文，密码区的字符串
 	_ciphertext string
-	// 收款方税务登记证号
-	_payeeRegisterNo string
-	// 二维码
-	_qrCode string
+	// 税控设备编号(新版电子发票有)
+	_deviceNo string
 	// erp自定义单据号
 	_erpTid string
 	// 文件类型(pdf,jpg,png)
 	_fileDataType string
-	// 发票号码
-	_invoiceNo string
-	// 发票日期
-	_invoiceDate string
-	// 流水号
-	_serialNo string
-	// 防伪码
-	_antiFakeCode string
-	// 税控设备编号(新版电子发票有)
-	_deviceNo string
+	// 开票金额
+	_invoiceAmount string
 	// 发票代码
 	_invoiceCode string
+	// 发票日期
+	_invoiceDate string
+	// 发票号码
+	_invoiceNo string
+	// 收款方税务登记证号
+	_payeeRegisterNo string
+	// 电商平台身份标识码，TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
+	_platformCode string
 	// 电商平台对应的订单号
 	_platformTid string
+	// 二维码
+	_qrCode string
+	// 流水号
+	_serialNo string
 	// 开票结果"success"或者"fail"
 	_createResult string
 	// 错误码
@@ -75,30 +75,17 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetPlatformCode is PlatformCode Setter
-// 电商平台身份标识码，TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformCode(_platformCode string) error {
-	r._platformCode = _platformCode
-	r.Set("platform_code", _platformCode)
+// SetAntiFakeCode is AntiFakeCode Setter
+// 防伪码
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
+	r._antiFakeCode = _antiFakeCode
+	r.Set("anti_fake_code", _antiFakeCode)
 	return nil
 }
 
-// GetPlatformCode PlatformCode Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPlatformCode() string {
-	return r._platformCode
-}
-
-// SetInvoiceAmount is InvoiceAmount Setter
-// 开票金额
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
-	r._invoiceAmount = _invoiceAmount
-	r.Set("invoice_amount", _invoiceAmount)
-	return nil
-}
-
-// GetInvoiceAmount InvoiceAmount Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceAmount() string {
-	return r._invoiceAmount
+// GetAntiFakeCode AntiFakeCode Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetAntiFakeCode() string {
+	return r._antiFakeCode
 }
 
 // SetCiphertext is Ciphertext Setter
@@ -114,30 +101,17 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetCiphertext() string {
 	return r._ciphertext
 }
 
-// SetPayeeRegisterNo is PayeeRegisterNo Setter
-// 收款方税务登记证号
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
-	r._payeeRegisterNo = _payeeRegisterNo
-	r.Set("payee_register_no", _payeeRegisterNo)
+// SetDeviceNo is DeviceNo Setter
+// 税控设备编号(新版电子发票有)
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetDeviceNo(_deviceNo string) error {
+	r._deviceNo = _deviceNo
+	r.Set("device_no", _deviceNo)
 	return nil
 }
 
-// GetPayeeRegisterNo PayeeRegisterNo Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPayeeRegisterNo() string {
-	return r._payeeRegisterNo
-}
-
-// SetQrCode is QrCode Setter
-// 二维码
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetQrCode(_qrCode string) error {
-	r._qrCode = _qrCode
-	r.Set("qr_code", _qrCode)
-	return nil
-}
-
-// GetQrCode QrCode Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetQrCode() string {
-	return r._qrCode
+// GetDeviceNo DeviceNo Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetDeviceNo() string {
+	return r._deviceNo
 }
 
 // SetErpTid is ErpTid Setter
@@ -166,69 +140,17 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetFileDataType() string {
 	return r._fileDataType
 }
 
-// SetInvoiceNo is InvoiceNo Setter
-// 发票号码
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
-	r._invoiceNo = _invoiceNo
-	r.Set("invoice_no", _invoiceNo)
+// SetInvoiceAmount is InvoiceAmount Setter
+// 开票金额
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
+	r._invoiceAmount = _invoiceAmount
+	r.Set("invoice_amount", _invoiceAmount)
 	return nil
 }
 
-// GetInvoiceNo InvoiceNo Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceNo() string {
-	return r._invoiceNo
-}
-
-// SetInvoiceDate is InvoiceDate Setter
-// 发票日期
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
-	r._invoiceDate = _invoiceDate
-	r.Set("invoice_date", _invoiceDate)
-	return nil
-}
-
-// GetInvoiceDate InvoiceDate Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceDate() string {
-	return r._invoiceDate
-}
-
-// SetSerialNo is SerialNo Setter
-// 流水号
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetSerialNo(_serialNo string) error {
-	r._serialNo = _serialNo
-	r.Set("serial_no", _serialNo)
-	return nil
-}
-
-// GetSerialNo SerialNo Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetSerialNo() string {
-	return r._serialNo
-}
-
-// SetAntiFakeCode is AntiFakeCode Setter
-// 防伪码
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
-	r._antiFakeCode = _antiFakeCode
-	r.Set("anti_fake_code", _antiFakeCode)
-	return nil
-}
-
-// GetAntiFakeCode AntiFakeCode Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetAntiFakeCode() string {
-	return r._antiFakeCode
-}
-
-// SetDeviceNo is DeviceNo Setter
-// 税控设备编号(新版电子发票有)
-func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetDeviceNo(_deviceNo string) error {
-	r._deviceNo = _deviceNo
-	r.Set("device_no", _deviceNo)
-	return nil
-}
-
-// GetDeviceNo DeviceNo Getter
-func (r AlibabaEinvoicePartnerReturnAPIRequest) GetDeviceNo() string {
-	return r._deviceNo
+// GetInvoiceAmount InvoiceAmount Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceAmount() string {
+	return r._invoiceAmount
 }
 
 // SetInvoiceCode is InvoiceCode Setter
@@ -244,6 +166,58 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
 }
 
+// SetInvoiceDate is InvoiceDate Setter
+// 发票日期
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
+	r._invoiceDate = _invoiceDate
+	r.Set("invoice_date", _invoiceDate)
+	return nil
+}
+
+// GetInvoiceDate InvoiceDate Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceDate() string {
+	return r._invoiceDate
+}
+
+// SetInvoiceNo is InvoiceNo Setter
+// 发票号码
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
+	r._invoiceNo = _invoiceNo
+	r.Set("invoice_no", _invoiceNo)
+	return nil
+}
+
+// GetInvoiceNo InvoiceNo Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetInvoiceNo() string {
+	return r._invoiceNo
+}
+
+// SetPayeeRegisterNo is PayeeRegisterNo Setter
+// 收款方税务登记证号
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+	r._payeeRegisterNo = _payeeRegisterNo
+	r.Set("payee_register_no", _payeeRegisterNo)
+	return nil
+}
+
+// GetPayeeRegisterNo PayeeRegisterNo Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPayeeRegisterNo() string {
+	return r._payeeRegisterNo
+}
+
+// SetPlatformCode is PlatformCode Setter
+// 电商平台身份标识码，TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformCode(_platformCode string) error {
+	r._platformCode = _platformCode
+	r.Set("platform_code", _platformCode)
+	return nil
+}
+
+// GetPlatformCode PlatformCode Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPlatformCode() string {
+	return r._platformCode
+}
+
 // SetPlatformTid is PlatformTid Setter
 // 电商平台对应的订单号
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformTid(_platformTid string) error {
@@ -255,6 +229,32 @@ func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetPlatformTid(_platformTid str
 // GetPlatformTid PlatformTid Getter
 func (r AlibabaEinvoicePartnerReturnAPIRequest) GetPlatformTid() string {
 	return r._platformTid
+}
+
+// SetQrCode is QrCode Setter
+// 二维码
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetQrCode(_qrCode string) error {
+	r._qrCode = _qrCode
+	r.Set("qr_code", _qrCode)
+	return nil
+}
+
+// GetQrCode QrCode Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetQrCode() string {
+	return r._qrCode
+}
+
+// SetSerialNo is SerialNo Setter
+// 流水号
+func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetSerialNo(_serialNo string) error {
+	r._serialNo = _serialNo
+	r.Set("serial_no", _serialNo)
+	return nil
+}
+
+// GetSerialNo SerialNo Getter
+func (r AlibabaEinvoicePartnerReturnAPIRequest) GetSerialNo() string {
+	return r._serialNo
 }
 
 // SetCreateResult is CreateResult Setter

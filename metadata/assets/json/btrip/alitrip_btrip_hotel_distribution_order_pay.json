@@ -1,14 +1,13 @@
 {
-	"id": 56183,
-	"name": "alitrip.btrip.hotel.distribution.order.pay",
-	"apiChineseName": "商旅酒店分销订单支付",
-	"description": "商旅酒店分销订单支付",
 	"requestParams": [
 		{
-			"name": "param_btrip_hotel_order_operate_rq",
-			"type": "BtripHotelOrderOperateRq",
-			"description": "通知商旅支付成功接口参数",
 			"subParams": [
+				{
+					"name": "btrip_order_id",
+					"type": "Number",
+					"description": "商旅订单id",
+					"required": true
+				},
 				{
 					"name": "dis_order_id",
 					"type": "String",
@@ -26,14 +25,11 @@
 					"type": "String",
 					"description": "供应商标识",
 					"required": true
-				},
-				{
-					"name": "btrip_order_id",
-					"type": "Number",
-					"description": "商旅订单id",
-					"required": true
 				}
-			]
+			],
+			"name": "param_btrip_hotel_order_operate_rq",
+			"type": "BtripHotelOrderOperateRq",
+			"description": "通知商旅支付成功接口参数"
 		}
 	],
 	"responseParams": [
@@ -52,5 +48,9 @@
 			"type": "String",
 			"description": "支付结果返回信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.hotel.distribution.order.pay",
+	"apiChineseName": "商旅酒店分销订单支付",
+	"description": "商旅酒店分销订单支付",
+	"id": 56183
 }

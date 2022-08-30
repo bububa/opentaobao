@@ -1,14 +1,6 @@
 {
-	"id": 45771,
-	"name": "alibaba.alsc.crm.rule.queryjoinmrule",
-	"apiChineseName": "查询品牌下的成为会员规则",
-	"description": "查询品牌下的成为会员规则",
 	"requestParams": [
 		{
-			"name": "param_plan_rule_query_open_req",
-			"type": "PlanRuleQueryOpenReq",
-			"description": "系统自动生成",
-			"required": true,
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -21,106 +13,101 @@
 					"description": "最后更新时间"
 				},
 				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
 					"name": "deleted",
 					"type": "Boolean",
 					"description": "是否包括已删除的数据",
 					"required": true
-				},
-				{
-					"name": "out_brand_id",
-					"type": "String",
-					"description": "外部品牌ID"
 				}
-			]
+			],
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "系统自动生成",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "JoinMemRuleOpenInfo",
-					"description": "入会渠道规则",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deleted",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "follow_wechat_support",
 							"type": "Boolean",
-							"description": "关注公众号成为会员",
-							"required": true
+							"description": "关注公众号成为会员"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "join_member_dish_support",
 							"type": "Boolean",
-							"description": "购买指定菜品成为会员",
-							"required": true
+							"description": "购买指定菜品成为会员"
 						},
 						{
 							"name": "mobile_register_support",
 							"type": "Boolean",
-							"description": "手机号注册成为会员",
-							"required": true
+							"description": "手机号注册成为会员"
 						},
 						{
 							"name": "pay_join_support",
 							"type": "Boolean",
-							"description": "支付成为会员",
-							"required": true
+							"description": "支付成为会员"
 						},
 						{
 							"name": "scan_order_support",
 							"type": "Boolean",
-							"description": "扫码点餐成为会员",
-							"required": true
+							"description": "扫码点餐成为会员"
 						}
-					]
+					],
+					"name": "result",
+					"type": "JoinMemRuleOpenInfo",
+					"description": "入会渠道规则"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.rule.queryjoinmrule",
+	"apiChineseName": "查询品牌下的成为会员规则",
+	"description": "查询品牌下的成为会员规则",
+	"id": 45771
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28671,
-	"name": "taobao.market.picture.getuserpictures",
-	"apiChineseName": "读取用户上传图片",
-	"description": "商家通过用户信息，获取用户上传的",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -12,35 +8,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "data",
-					"required": true
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "suc",
 					"type": "Boolean",
-					"description": "suc",
-					"required": true
+					"description": "suc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.market.picture.getuserpictures",
+	"apiChineseName": "读取用户上传图片",
+	"description": "商家通过用户信息，获取用户上传的",
+	"id": 28671
 }

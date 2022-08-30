@@ -32,10 +32,16 @@ type TmallServicecenterWorkcardReserveAPIRequest struct {
 	_serviceStoreCode string
 	// 门店名称
 	_serviceStoreName string
+	// 原因desc
+	_reasonDesc string
 	// 工单id
 	_workcardId int64
+	// 请求来源类型
+	_type int64
 	// 核销单id
 	_fulfilTaskId int64
+	// 原因code
+	_reasonCode int64
 }
 
 // NewTmallServicecenterWorkcardReserveRequest 初始化TmallServicecenterWorkcardReserveAPIRequest对象
@@ -189,6 +195,19 @@ func (r TmallServicecenterWorkcardReserveAPIRequest) GetServiceStoreName() strin
 	return r._serviceStoreName
 }
 
+// SetReasonDesc is ReasonDesc Setter
+// 原因desc
+func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReasonDesc(_reasonDesc string) error {
+	r._reasonDesc = _reasonDesc
+	r.Set("reason_desc", _reasonDesc)
+	return nil
+}
+
+// GetReasonDesc ReasonDesc Getter
+func (r TmallServicecenterWorkcardReserveAPIRequest) GetReasonDesc() string {
+	return r._reasonDesc
+}
+
 // SetWorkcardId is WorkcardId Setter
 // 工单id
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetWorkcardId(_workcardId int64) error {
@@ -202,6 +221,19 @@ func (r TmallServicecenterWorkcardReserveAPIRequest) GetWorkcardId() int64 {
 	return r._workcardId
 }
 
+// SetType is Type Setter
+// 请求来源类型
+func (r *TmallServicecenterWorkcardReserveAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TmallServicecenterWorkcardReserveAPIRequest) GetType() int64 {
+	return r._type
+}
+
 // SetFulfilTaskId is FulfilTaskId Setter
 // 核销单id
 func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
@@ -213,4 +245,17 @@ func (r *TmallServicecenterWorkcardReserveAPIRequest) SetFulfilTaskId(_fulfilTas
 // GetFulfilTaskId FulfilTaskId Getter
 func (r TmallServicecenterWorkcardReserveAPIRequest) GetFulfilTaskId() int64 {
 	return r._fulfilTaskId
+}
+
+// SetReasonCode is ReasonCode Setter
+// 原因code
+func (r *TmallServicecenterWorkcardReserveAPIRequest) SetReasonCode(_reasonCode int64) error {
+	r._reasonCode = _reasonCode
+	r.Set("reason_code", _reasonCode)
+	return nil
+}
+
+// GetReasonCode ReasonCode Getter
+func (r TmallServicecenterWorkcardReserveAPIRequest) GetReasonCode() int64 {
+	return r._reasonCode
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25037,
-	"name": "taobao.cloudpush.message.ios",
-	"apiChineseName": "百川云推送发送消息给ios",
-	"description": "百川云推送发送消息给iOS设备.",
 	"requestParams": [
 		{
 			"name": "body",
@@ -39,5 +35,9 @@
 			"type": "Boolean",
 			"description": "请求是否成功."
 		}
-	]
+	],
+	"name": "taobao.cloudpush.message.ios",
+	"apiChineseName": "百川云推送发送消息给ios",
+	"description": "百川云推送发送消息给iOS设备.",
+	"id": 25037
 }

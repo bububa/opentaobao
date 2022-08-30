@@ -1,8 +1,4 @@
 {
-	"id": 42564,
-	"name": "youku.ott.pay.order.deleteorder",
-	"apiChineseName": "退订应用中心支付订单",
-	"description": "应用中心sdk连续包月退订接口",
 	"requestParams": [
 		{
 			"name": "buyer",
@@ -47,35 +43,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvOrderResultDto",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "qcode_url",
 					"type": "String",
-					"description": "qcodeUrl",
-					"required": true
+					"description": "qcodeUrl"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "出错信息",
-					"required": true
+					"description": "出错信息"
 				},
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "cp发起删除的订单号",
-					"required": true
+					"description": "cp发起删除的订单号"
 				},
 				{
 					"name": "cp_order_no",
 					"type": "String",
-					"description": "cp连续包月原始订单号",
-					"required": true
+					"description": "cp连续包月原始订单号"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvOrderResultDto",
+			"description": "data"
 		}
-	]
+	],
+	"name": "youku.ott.pay.order.deleteorder",
+	"apiChineseName": "退订应用中心支付订单",
+	"description": "应用中心sdk连续包月退订接口",
+	"id": 42564
 }

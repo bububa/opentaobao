@@ -1,8 +1,4 @@
 {
-	"id": 54968,
-	"name": "alibaba.wdk.reverse.reversedetail",
-	"apiChineseName": "退款详情",
-	"description": "退款详情",
 	"requestParams": [
 		{
 			"name": "reverse_id",
@@ -13,273 +9,234 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ReverseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "model",
-					"type": "LoadReverseResponse",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "wdk单号",
-							"required": true
+							"description": "wdk单号"
 						},
 						{
 							"name": "biz_order_ids",
 							"type": "Number[]",
-							"description": "wdk单号list",
-							"required": true
+							"description": "wdk单号list"
 						},
 						{
 							"name": "create_channel",
 							"type": "Number",
-							"description": "退款渠道",
-							"required": true
+							"description": "退款渠道"
 						},
 						{
 							"name": "create_date",
 							"type": "Date",
-							"description": "发起时间",
-							"required": true
+							"description": "发起时间"
 						},
 						{
 							"name": "create_memo",
 							"type": "String",
-							"description": "发起备注",
-							"required": true
+							"description": "发起备注"
 						},
 						{
 							"name": "end_date",
 							"type": "Date",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "end_reason",
 							"type": "String",
-							"description": "最终原因",
-							"required": true
+							"description": "最终原因"
 						},
 						{
 							"name": "ender",
 							"type": "String",
-							"description": "终结人",
-							"required": true
+							"description": "终结人"
 						},
 						{
 							"name": "fetch_order_id",
 							"type": "Number",
-							"description": "退货取货单ID",
-							"required": true
+							"description": "退货取货单ID"
 						},
 						{
 							"name": "main_biz_order_id",
 							"type": "Number",
-							"description": "wdk主单号",
-							"required": true
+							"description": "wdk主单号"
 						},
 						{
 							"name": "main_out_order_id",
 							"type": "String",
-							"description": "外部主单号",
-							"required": true
+							"description": "外部主单号"
 						},
 						{
 							"name": "modified_memo",
 							"type": "String",
-							"description": "修正备注",
-							"required": true
+							"description": "修正备注"
 						},
 						{
 							"name": "modified_reason_id",
 							"type": "Number",
-							"description": "修正原因ID",
-							"required": true
+							"description": "修正原因ID"
 						},
 						{
 							"name": "modified_reason_text",
 							"type": "String",
-							"description": "修正原因描述",
-							"required": true
+							"description": "修正原因描述"
 						},
 						{
 							"name": "out_biz_order_ids",
 							"type": "String[]",
-							"description": "外部单号list",
-							"required": true
+							"description": "外部单号list"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部单号",
-							"required": true
+							"description": "外部单号"
 						},
 						{
 							"name": "proofs",
 							"type": "String[]",
-							"description": "凭证图片",
-							"required": true
+							"description": "凭证图片"
 						},
 						{
 							"name": "reason_id",
 							"type": "Number",
-							"description": "发起原因ID",
-							"required": true
+							"description": "发起原因ID"
 						},
 						{
 							"name": "reason_tags",
 							"type": "String[]",
-							"description": "原因标签",
-							"required": true
+							"description": "原因标签"
 						},
 						{
 							"name": "reason_text",
 							"type": "String",
-							"description": "发起原因描述",
-							"required": true
+							"description": "发起原因描述"
 						},
 						{
 							"name": "refund_amount",
 							"type": "Number",
-							"description": "退款金额",
-							"required": true
+							"description": "退款金额"
 						},
 						{
-							"name": "refund_channel_list",
-							"type": "RefundChannelVo[]",
-							"description": "RefundChannelVo",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
 									"type": "Number",
-									"description": "可退金额(单位分)",
-									"required": true
+									"description": "可退金额(单位分)"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "渠道吗",
-									"required": true
+									"description": "渠道吗"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "渠道名",
-									"required": true
+									"description": "渠道名"
 								},
 								{
 									"name": "pay_code",
 									"type": "String",
-									"description": "付款吗",
-									"required": true
+									"description": "付款吗"
 								},
 								{
 									"name": "refunded_amount",
 									"type": "Number",
-									"description": "已退金额 (单位分)",
-									"required": true
+									"description": "已退金额 (单位分)"
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "渠道退款状态",
-									"required": true
+									"description": "渠道退款状态"
 								},
 								{
 									"name": "unique_id",
 									"type": "String",
-									"description": "渠道幂等ID",
-									"required": true
+									"description": "渠道幂等ID"
 								}
-							]
+							],
+							"name": "refund_channel_list",
+							"type": "RefundChannelVo[]",
+							"description": "RefundChannelVo"
 						},
 						{
 							"name": "request_id",
 							"type": "String",
-							"description": "请求id",
-							"required": true
+							"description": "请求id"
 						},
 						{
 							"name": "reverse_id",
 							"type": "Number",
-							"description": "退款单id",
-							"required": true
+							"description": "退款单id"
 						},
 						{
 							"name": "reverse_ids",
 							"type": "Number[]",
-							"description": "退款单ids",
-							"required": true
+							"description": "退款单ids"
 						},
 						{
 							"name": "reverse_status",
 							"type": "Number",
-							"description": "退款单状态",
-							"required": true
+							"description": "退款单状态"
 						},
 						{
 							"name": "reverse_status_str",
 							"type": "String",
-							"description": "退款单状态",
-							"required": true
+							"description": "退款单状态"
 						},
 						{
 							"name": "reverse_type",
 							"type": "Number",
-							"description": "退款类型",
-							"required": true
+							"description": "退款类型"
 						},
 						{
 							"name": "reverse_type_str",
 							"type": "String",
-							"description": "退款类型",
-							"required": true
+							"description": "退款类型"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家id",
-							"required": true
+							"description": "卖家id"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "门店id",
-							"required": true
+							"description": "门店id"
 						},
 						{
 							"name": "weight",
 							"type": "Boolean",
-							"description": "是否称重品",
-							"required": true
+							"description": "是否称重品"
 						}
-					]
+					],
+					"name": "model",
+					"type": "LoadReverseResponse",
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.reverse.reversedetail",
+	"apiChineseName": "退款详情",
+	"description": "退款详情",
+	"id": 54968
 }

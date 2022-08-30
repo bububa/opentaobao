@@ -1,14 +1,6 @@
 {
-	"id": 53593,
-	"name": "alitrip.btrip.supplychain.vehicle.search",
-	"apiChineseName": "【商旅】用车订单搜索",
-	"description": "【商旅】用车订单搜索",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiSearchRq",
-			"description": "出参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "all_apply",
@@ -76,426 +68,382 @@
 					"type": "Number",
 					"description": "1、老版本2、isv对外版本"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiSearchRq",
+			"description": "出参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "module_list",
-					"type": "OpenApiVehicleOrderRs[]",
-					"description": "用车订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "订单创建时间",
-							"required": true
+							"description": "订单创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "订单更新时间",
-							"required": true
+							"description": "订单更新时间"
 						},
 						{
 							"name": "passenger_name",
 							"type": "String",
-							"description": "乘客名称",
-							"required": true
+							"description": "乘客名称"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "商旅企业id",
-							"required": true
+							"description": "商旅企业id"
 						},
 						{
 							"name": "corp_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
-							"description": "预定人名称",
-							"required": true
+							"description": "预定人名称"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "预定人id（第三方用户Id）",
-							"required": true
+							"description": "预定人id（第三方用户Id）"
 						},
 						{
 							"name": "dept_id",
 							"type": "Number",
-							"description": "用户所在部门id",
-							"required": true
+							"description": "用户所在部门id"
 						},
 						{
 							"name": "dept_name",
 							"type": "String",
-							"description": "用户所在部门名称",
-							"required": true
+							"description": "用户所在部门名称"
 						},
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "商旅系统审批单id",
-							"required": true
+							"description": "商旅系统审批单id"
 						},
 						{
 							"name": "apply_show_id",
 							"type": "String",
-							"description": "商旅审批单展示id(非审批api对接企业)",
-							"required": true
+							"description": "商旅审批单展示id(非审批api对接企业)"
 						},
 						{
 							"name": "real_from_address",
 							"type": "String",
-							"description": "真实出发地",
-							"required": true
+							"description": "真实出发地"
 						},
 						{
 							"name": "real_to_address",
 							"type": "String",
-							"description": "真实到达地",
-							"required": true
+							"description": "真实到达地"
 						},
 						{
 							"name": "real_from_city_name",
 							"type": "String",
-							"description": "实际出发城市",
-							"required": true
+							"description": "实际出发城市"
 						},
 						{
 							"name": "real_to_city_name",
 							"type": "String",
-							"description": "实际到达城市",
-							"required": true
+							"description": "实际到达城市"
 						},
 						{
 							"name": "from_address",
 							"type": "String",
-							"description": "出发地",
-							"required": true
+							"description": "出发地"
 						},
 						{
 							"name": "to_address",
 							"type": "String",
-							"description": "目的地",
-							"required": true
+							"description": "目的地"
 						},
 						{
 							"name": "from_city_name",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "to_city_name",
 							"type": "String",
-							"description": "目的城市",
-							"required": true
+							"description": "目的城市"
 						},
 						{
 							"name": "memo",
 							"type": "String",
-							"description": "打车事由",
-							"required": true
+							"description": "打车事由"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消",
-							"required": true
+							"description": "订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消"
 						},
 						{
 							"name": "car_level",
 							"type": "Number",
-							"description": "类型级别：1经济型、2舒适型、3豪华型",
-							"required": true
+							"description": "类型级别：1经济型、2舒适型、3豪华型"
 						},
 						{
 							"name": "car_info",
 							"type": "String",
-							"description": "车辆类型",
-							"required": true
+							"description": "车辆类型"
 						},
 						{
 							"name": "estimate_price",
 							"type": "String",
-							"description": "订单预估价格",
-							"required": true
+							"description": "订单预估价格"
 						},
 						{
 							"name": "publish_time",
 							"type": "Date",
-							"description": "乘客发布用车时间",
-							"required": true
+							"description": "乘客发布用车时间"
 						},
 						{
 							"name": "taken_time",
 							"type": "Date",
-							"description": "乘客上车时间",
-							"required": true
+							"description": "乘客上车时间"
 						},
 						{
 							"name": "driver_confirm_time",
 							"type": "Date",
-							"description": "司机到达目的地时间",
-							"required": true
+							"description": "司机到达目的地时间"
 						},
 						{
 							"name": "cancel_time",
 							"type": "Date",
-							"description": "取消时间",
-							"required": true
+							"description": "取消时间"
 						},
 						{
 							"name": "pay_time",
 							"type": "Date",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "travel_distance",
 							"type": "String",
-							"description": "行驶公里数",
-							"required": true
+							"description": "行驶公里数"
 						},
 						{
 							"name": "service_type",
 							"type": "Number",
-							"description": "打车服务类型 1:出租车, 2:专车, 3:快车",
-							"required": true
+							"description": "打车服务类型 1:出租车, 2:专车, 3:快车"
 						},
 						{
 							"name": "business_category",
 							"type": "String",
-							"description": "用车原因：TRAVEL: 差旅, TRAFFIC: 市内交通, WORK: 加班, OTHER: 其它",
-							"required": true
+							"description": "用车原因：TRAVEL: 差旅, TRAFFIC: 市内交通, WORK: 加班, OTHER: 其它"
 						},
 						{
 							"name": "cost_center_id",
 							"type": "Number",
-							"description": "商旅成本中心id",
-							"required": true
+							"description": "商旅成本中心id"
 						},
 						{
 							"name": "cost_center_number",
 							"type": "String",
-							"description": "成本中心编号",
-							"required": true
+							"description": "成本中心编号"
 						},
 						{
 							"name": "invoice_id",
 							"type": "Number",
-							"description": "商旅发票id",
-							"required": true
+							"description": "商旅发票id"
 						},
 						{
 							"name": "invoice_title",
 							"type": "String",
-							"description": "发票抬头",
-							"required": true
+							"description": "发票抬头"
 						},
 						{
 							"name": "project_code",
 							"type": "String",
-							"description": "项目编号",
-							"required": true
+							"description": "项目编号"
 						},
 						{
 							"name": "project_title",
 							"type": "String",
-							"description": "项目名称",
-							"required": true
+							"description": "项目名称"
 						},
 						{
-							"name": "price_info_list",
-							"type": "OpenPriceInfo[]",
-							"description": "价目详情列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "price",
 									"type": "String",
-									"description": "价格",
-									"required": true
+									"description": "企业支付金额"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "资金流向:1:支出，2:收入",
-									"required": true
+									"description": "资金流向:1:支出，2:收入"
 								},
 								{
 									"name": "category",
 									"type": "String",
-									"description": "交易类型：用车支付, 服务费, 用车取消后收费, 用车退款, 用车赔付",
-									"required": true
+									"description": "交易类型（废弃）：用车支付, 服务费, 用车取消后收费, 用车退款, 用车赔付"
 								},
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存",
-									"required": true
+									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "流水创建时间",
-									"required": true
+									"description": "流水创建时间"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "出行人，多个用‘,’分割",
-									"required": true
+									"description": "出行人，多个用‘,’分割"
 								},
 								{
 									"name": "trade_id",
 									"type": "String",
-									"description": "订单交易流水号",
-									"required": true
+									"description": "订单交易流水号"
+								},
+								{
+									"name": "category_type",
+									"type": "Number",
+									"description": "交易类目类型1-飞机，2-酒店，3-火车，4-用车"
+								},
+								{
+									"name": "category_code",
+									"type": "Number",
+									"description": "交易类目编码"
+								},
+								{
+									"name": "person_price",
+									"type": "String",
+									"description": "个人支付金额"
 								}
-							]
+							],
+							"name": "price_info_list",
+							"type": "OpenPriceInfo[]",
+							"description": "价目详情列表"
 						},
 						{
 							"name": "thirdpart_itinerary_id",
 							"type": "String",
-							"description": "第三方行程id",
-							"required": true
+							"description": "第三方行程id"
 						},
 						{
-							"name": "user_affiliate_list",
-							"type": "OpenUserAffiliateDo[]",
-							"description": "出行人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "出行人ID（第三方用户Id）",
-									"required": true
+									"description": "出行人ID（第三方用户Id）"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "出行人名称",
-									"required": true
+									"description": "出行人名称"
 								}
-							]
+							],
+							"name": "user_affiliate_list",
+							"type": "OpenUserAffiliateDo[]",
+							"description": "出行人列表"
 						},
 						{
 							"name": "user_confirm",
 							"type": "Number",
-							"description": "用户确认状态：0未确认；1已确认；2有异议；3系统检查不合理",
-							"required": true
+							"description": "用户确认状态：0未确认；1已确认；2有异议；3系统检查不合理"
 						},
 						{
 							"name": "provider",
 							"type": "Number",
-							"description": "服务商：2滴滴；3:曹操；4:首汽；5:阳光。可能会有其他服务商的增加。",
-							"required": true
+							"description": "服务商：2滴滴；3:曹操；4:首汽；5:阳光。可能会有其他服务商的增加。"
 						},
 						{
 							"name": "thirdpart_apply_id",
 							"type": "String",
-							"description": "第三方申请单ID",
-							"required": true
+							"description": "第三方申请单ID"
 						},
 						{
 							"name": "btrip_title",
 							"type": "String",
-							"description": "申请单名称",
-							"required": true
+							"description": "申请单名称"
 						},
 						{
 							"name": "cost_center_name",
 							"type": "String",
-							"description": "成本中心名称",
-							"required": true
+							"description": "成本中心名称"
 						},
 						{
 							"name": "is_special",
 							"type": "Boolean",
-							"description": "是否特殊订单",
-							"required": true
+							"description": "是否特殊订单"
 						},
 						{
 							"name": "special_types",
 							"type": "String[]",
-							"description": "特殊订单类型；v_sp_t_1:用车里程，v_sp_t_2:实际下车点，v_sp_t_3:用车金额，v_sp_t_4:用车次数，v_sp_t_5:跨城订单",
-							"required": true
+							"description": "特殊订单类型；v_sp_t_1:用车里程，v_sp_t_2:实际下车点，v_sp_t_3:用车金额，v_sp_t_4:用车次数，v_sp_t_5:跨城订单"
 						},
 						{
 							"name": "project_id",
 							"type": "Number",
-							"description": "项目id",
-							"required": true
+							"description": "项目id"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "OpenApiVehicleOrderRs[]",
+					"description": "用车订单列表"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
-					"name": "page_info",
-					"type": "PageInfoRs",
-					"description": "分页相关信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页大小",
-							"required": true
+							"description": "每页大小"
 						},
 						{
 							"name": "total_number",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						}
-					]
+					],
+					"name": "page_info",
+					"type": "PageInfoRs",
+					"description": "分页相关信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.vehicle.search",
+	"apiChineseName": "【商旅】用车订单搜索",
+	"description": "【商旅】用车订单搜索",
+	"id": 53593
 }

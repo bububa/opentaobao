@@ -1,14 +1,6 @@
 {
-	"id": 39662,
-	"name": "aliexpress.trade.ds.order.get",
-	"apiChineseName": "买家查询订单详情",
-	"description": "买家查询订单详情，用于dropshipper",
 	"requestParams": [
 		{
-			"name": "single_order_query",
-			"type": "AeopSingleOrderQuery",
-			"description": "订单查询条件",
-			"required": true,
 			"subParams": [
 				{
 					"name": "order_id",
@@ -16,14 +8,15 @@
 					"description": "订单id",
 					"required": true
 				}
-			]
+			],
+			"name": "single_order_query",
+			"type": "AeopSingleOrderQuery",
+			"description": "订单查询条件",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AeopOrderInfo",
-			"description": "订单信息",
 			"subParams": [
 				{
 					"name": "gmt_create",
@@ -44,10 +37,6 @@
 					"required": true
 				},
 				{
-					"name": "order_amount",
-					"type": "SimpleMoney",
-					"description": "订单金额",
-					"required": true,
 					"subParams": [
 						{
 							"name": "amount",
@@ -61,13 +50,13 @@
 							"description": "币种",
 							"required": true
 						}
-					]
+					],
+					"name": "order_amount",
+					"type": "SimpleMoney",
+					"description": "订单金额",
+					"required": true
 				},
 				{
-					"name": "child_order_list",
-					"type": "AeopChildOrderInfo[]",
-					"description": "子订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "product_id",
@@ -76,10 +65,6 @@
 							"required": true
 						},
 						{
-							"name": "product_price",
-							"type": "SimpleMoney",
-							"description": "商品价格",
-							"required": true,
 							"subParams": [
 								{
 									"name": "amount",
@@ -93,7 +78,11 @@
 									"description": "币种",
 									"required": true
 								}
-							]
+							],
+							"name": "product_price",
+							"type": "SimpleMoney",
+							"description": "商品价格",
+							"required": true
 						},
 						{
 							"name": "product_name",
@@ -107,13 +96,13 @@
 							"description": "商品数量",
 							"required": true
 						}
-					]
+					],
+					"name": "child_order_list",
+					"type": "AeopChildOrderInfo[]",
+					"description": "子订单列表",
+					"required": true
 				},
 				{
-					"name": "logistics_info_list",
-					"type": "AeopOrderLogisticsInfo[]",
-					"description": "订单物流信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "logistics_no",
@@ -127,13 +116,13 @@
 							"description": "物流服务",
 							"required": true
 						}
-					]
+					],
+					"name": "logistics_info_list",
+					"type": "AeopOrderLogisticsInfo[]",
+					"description": "订单物流信息列表",
+					"required": true
 				},
 				{
-					"name": "store_info",
-					"type": "AeopStoreInfo",
-					"description": "店铺信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_id",
@@ -153,9 +142,20 @@
 							"description": "店铺地址",
 							"required": true
 						}
-					]
+					],
+					"name": "store_info",
+					"type": "AeopStoreInfo",
+					"description": "店铺信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "AeopOrderInfo",
+			"description": "订单信息"
 		}
-	]
+	],
+	"name": "aliexpress.trade.ds.order.get",
+	"apiChineseName": "买家查询订单详情",
+	"description": "买家查询订单详情，用于dropshipper",
+	"id": 39662
 }

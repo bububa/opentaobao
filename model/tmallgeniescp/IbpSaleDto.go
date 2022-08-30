@@ -2,6 +2,8 @@ package tmallgeniescp
 
 // IbpSaleDto 结构体
 type IbpSaleDto struct {
+	// 关键日期值
+	KeyFigureDate string `json:"key_figure_date,omitempty" xml:"key_figure_date,omitempty"`
 	// 渠道号
 	ChannelId string `json:"channel_id,omitempty" xml:"channel_id,omitempty"`
 	// 物料号
@@ -10,8 +12,6 @@ type IbpSaleDto struct {
 	ExtendJson string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
 	// 租户
 	Tenant string `json:"tenant,omitempty" xml:"tenant,omitempty"`
-	// 关键日期值
-	KeyFigureDate string `json:"key_figure_date,omitempty" xml:"key_figure_date,omitempty"`
 	// 渠道类型
 	ChannelType string `json:"channel_type,omitempty" xml:"channel_type,omitempty"`
 	// 激活数量

@@ -1,8 +1,4 @@
 {
-	"id": 52137,
-	"name": "taobao.opentrade.customization.refund.enable",
-	"apiChineseName": "定制订单设置允许仅退款",
-	"description": "定制订单设置允许仅退款",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "是否设置成功"
 		}
-	]
+	],
+	"name": "taobao.opentrade.customization.refund.enable",
+	"apiChineseName": "定制订单设置允许仅退款",
+	"description": "定制订单设置允许仅退款",
+	"id": 52137
 }

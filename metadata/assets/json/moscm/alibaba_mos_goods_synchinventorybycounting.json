@@ -1,14 +1,6 @@
 {
-	"id": 35787,
-	"name": "alibaba.mos.goods.synchinventorybycounting",
-	"apiChineseName": "以盘点方式调整库存：传入商品实际库存",
-	"description": "以盘点方式调整库存：传入商品实际库存\n盘点单自动判断数量增减",
 	"requestParams": [
 		{
-			"name": "param_counting_info_dto",
-			"type": "CountingInfoDto",
-			"description": "专柜信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "counter_id",
@@ -16,23 +8,22 @@
 					"description": "专柜id"
 				},
 				{
-					"name": "remarks",
-					"type": "String",
-					"description": "备注信息（必填）"
-				},
-				{
 					"name": "out_counter_id",
 					"type": "String",
 					"description": "外部专柜id(两个专柜号至少填写一个。如果同时填写，以counterId为准)"
+				},
+				{
+					"name": "remarks",
+					"type": "String",
+					"description": "备注信息（必填）"
 				}
-			]
+			],
+			"name": "param_counting_info_dto",
+			"type": "CountingInfoDto",
+			"description": "专柜信息",
+			"required": true
 		},
 		{
-			"name": "counting_item_dto",
-			"type": "CountingItemDto[]",
-			"description": "盘点库存项（最大列表长度：20）",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "out_id",
@@ -54,22 +45,30 @@
 					"type": "String",
 					"description": "计量单位"
 				}
-			]
+			],
+			"name": "counting_item_dto",
+			"type": "CountingItemDto[]",
+			"description": "盘点库存项（最大列表长度：20）",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回盘点单号",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "返回数据",
-					"required": true
+					"description": "返回数据"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回盘点单号"
 		}
-	]
+	],
+	"name": "alibaba.mos.goods.synchinventorybycounting",
+	"apiChineseName": "以盘点方式调整库存：传入商品实际库存",
+	"description": "以盘点方式调整库存：传入商品实际库存\n盘点单自动判断数量增减",
+	"id": 35787
 }

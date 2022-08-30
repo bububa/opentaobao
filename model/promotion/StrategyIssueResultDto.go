@@ -18,8 +18,6 @@ type StrategyIssueResultDto struct {
 	BenefitCode string `json:"benefit_code,omitempty" xml:"benefit_code,omitempty"`
 	// 生效结束时间
 	EffectiveEnd string `json:"effective_end,omitempty" xml:"effective_end,omitempty"`
-	// 用户昵称
-	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 展示门槛
 	DisplayStartFee string `json:"display_start_fee,omitempty" xml:"display_start_fee,omitempty"`
 	// 面额单位
@@ -34,10 +32,10 @@ type StrategyIssueResultDto struct {
 	BenefitTitle string `json:"benefit_title,omitempty" xml:"benefit_title,omitempty"`
 	// 权益类型名称
 	BenefitTypeName string `json:"benefit_type_name,omitempty" xml:"benefit_type_name,omitempty"`
-	// 用户类型
-	UserType string `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 相对生效时间单位
 	IntervalTimeUnit string `json:"interval_time_unit,omitempty" xml:"interval_time_unit,omitempty"`
+	// 素材
+	Material string `json:"material,omitempty" xml:"material,omitempty"`
 	// 生效结束时间戳
 	EffectiveEndTimestamp int64 `json:"effective_end_timestamp,omitempty" xml:"effective_end_timestamp,omitempty"`
 	// 中奖记录id

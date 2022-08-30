@@ -1,8 +1,4 @@
 {
-	"id": 22884,
-	"name": "taobao.jds.trades.statistics.get",
-	"apiChineseName": "获取订单数量统计结果",
-	"description": "获取订单数量统计结果",
 	"requestParams": [
 		{
 			"name": "date",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "status_infos",
-			"type": "TradeStat []",
-			"description": "订单状态计数值",
 			"subParams": [
 				{
 					"name": "status",
@@ -27,7 +20,14 @@
 					"type": "Number",
 					"description": "数量"
 				}
-			]
+			],
+			"name": "status_infos",
+			"type": "TradeStat []",
+			"description": "订单状态计数值"
 		}
-	]
+	],
+	"name": "taobao.jds.trades.statistics.get",
+	"apiChineseName": "获取订单数量统计结果",
+	"description": "获取订单数量统计结果",
+	"id": 22884
 }

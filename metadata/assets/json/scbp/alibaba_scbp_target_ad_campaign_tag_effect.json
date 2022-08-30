@@ -1,13 +1,6 @@
 {
-	"id": 41332,
-	"name": "alibaba.scbp.target.ad.campaign.tag.effect",
-	"apiChineseName": "定向推广-获取推广计划定向效果数据",
-	"description": "定向推广-获取推广计划定向效果数据",
 	"requestParams": [
 		{
-			"name": "top_p4p_quick_effect_query",
-			"type": "TopP4pQuickEffectQuery",
-			"description": "效果数据",
 			"subParams": [
 				{
 					"name": "campaign_title",
@@ -40,63 +33,63 @@
 					"type": "Number",
 					"description": "区间 只能为1 7 30"
 				}
-			]
+			],
+			"name": "top_p4p_quick_effect_query",
+			"type": "TopP4pQuickEffectQuery",
+			"description": "效果数据"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "effect_list",
-			"type": "TopP4pQuickTagEffectView []",
-			"description": "定向标签数据",
 			"subParams": [
 				{
 					"name": "tag_id",
 					"type": "String",
-					"description": "标签id(潜在访问偏好和潜在采购意向返回的是类目id，店铺老客和优选人群返回的是字符串)",
-					"required": true
+					"description": "标签id(潜在访问偏好和潜在采购意向返回的是类目id，店铺老客和优选人群返回的是字符串)"
 				},
 				{
 					"name": "tag_name",
 					"type": "String",
-					"description": "标签名字",
-					"required": true
+					"description": "标签名字"
 				},
 				{
 					"name": "cpc",
 					"type": "String",
-					"description": "平均点击出价",
-					"required": true
+					"description": "平均点击出价"
 				},
 				{
 					"name": "ctr",
 					"type": "String",
-					"description": "点击率",
-					"required": true
+					"description": "点击率"
 				},
 				{
 					"name": "cost",
 					"type": "String",
-					"description": "消耗金额，单位元",
-					"required": true
+					"description": "消耗金额，单位元"
 				},
 				{
 					"name": "click_cnt",
 					"type": "String",
-					"description": "点击数",
-					"required": true
+					"description": "点击数"
 				},
 				{
 					"name": "impression_cnt",
 					"type": "String",
-					"description": "曝光量",
-					"required": true
+					"description": "曝光量"
 				}
-			]
+			],
+			"name": "effect_list",
+			"type": "TopP4pQuickTagEffectView []",
+			"description": "定向标签数据"
 		},
 		{
 			"name": "total_num",
 			"type": "Number",
 			"description": "总条数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.campaign.tag.effect",
+	"apiChineseName": "定向推广-获取推广计划定向效果数据",
+	"description": "定向推广-获取推广计划定向效果数据",
+	"id": 41332
 }

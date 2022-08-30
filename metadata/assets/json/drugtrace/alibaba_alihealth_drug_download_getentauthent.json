@@ -1,8 +1,4 @@
 {
-	"id": 44037,
-	"name": "alibaba.alihealth.drug.download.getentauthent",
-	"apiChineseName": "获取授权企业列表",
-	"description": "D2D数据落地获取授权企业列表",
 	"requestParams": [
 		{
 			"name": "auth_begin_date",
@@ -17,61 +13,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "auth_list",
-					"type": "Model[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "auth_ref_ent_id",
 							"type": "String",
-							"description": "企业ID",
-							"required": true
+							"description": "企业ID"
 						},
 						{
 							"name": "ent_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "授权企业ID",
-							"required": true
+							"description": "授权企业ID"
 						},
 						{
 							"name": "auth_date",
 							"type": "String",
-							"description": "授权日期",
-							"required": true
+							"description": "授权日期"
 						}
-					]
+					],
+					"name": "auth_list",
+					"type": "Model[]",
+					"description": "list"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "issuccess",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.download.getentauthent",
+	"apiChineseName": "获取授权企业列表",
+	"description": "D2D数据落地获取授权企业列表",
+	"id": 44037
 }

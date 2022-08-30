@@ -1,8 +1,4 @@
 {
-	"id": 10594,
-	"name": "taobao.promotion.meal.get",
-	"apiChineseName": "搭配套餐查询",
-	"description": "搭配套餐查询。每个卖家最多创建50个搭配套餐，所以查询不会分页，会将所有的满足状态的搭配套餐全部查出。该接口不会校验商品的下架或库存为0，查询结果的状态表明搭配套餐在数据库中的状态，商品的状态请isv自己验证。在卖家后台页面点击查看会触发数据库状态的修改。",
 	"requestParams": [
 		{
 			"name": "meal_id",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "meal_list",
-			"type": "Meal []",
-			"description": "搭配套餐列表。",
 			"subParams": [
 				{
 					"name": "meal_id",
@@ -56,7 +49,14 @@
 					"type": "String",
 					"description": "套餐状态。有效：VALID;失效：INVALID(有效套餐为可使用的套餐,无效套餐为套餐中有商品下架或库存为0时)。"
 				}
-			]
+			],
+			"name": "meal_list",
+			"type": "Meal []",
+			"description": "搭配套餐列表。"
 		}
-	]
+	],
+	"name": "taobao.promotion.meal.get",
+	"apiChineseName": "搭配套餐查询",
+	"description": "搭配套餐查询。每个卖家最多创建50个搭配套餐，所以查询不会分页，会将所有的满足状态的搭配套餐全部查出。该接口不会校验商品的下架或库存为0，查询结果的状态表明搭配套餐在数据库中的状态，商品的状态请isv自己验证。在卖家后台页面点击查看会触发数据库状态的修改。",
+	"id": 10594
 }

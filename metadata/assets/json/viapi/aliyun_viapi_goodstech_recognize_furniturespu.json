@@ -1,8 +1,4 @@
 {
-	"id": 50736,
-	"name": "aliyun.viapi.goodstech.recognize.furniturespu",
-	"apiChineseName": "家居SPU识别",
-	"description": "对输入的家居模型图进行分类，目前类别数可达70类。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -32,9 +28,6 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "predprobability",
@@ -54,7 +47,14 @@
 					"description": "预测的类目置信概率",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.goodstech.recognize.furniturespu",
+	"apiChineseName": "家居SPU识别",
+	"description": "对输入的家居模型图进行分类，目前类别数可达70类。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50736
 }

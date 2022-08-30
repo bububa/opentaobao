@@ -1,13 +1,6 @@
 {
-	"id": 45240,
-	"name": "taobao.qimen.warehouseinfo.synchronize",
-	"apiChineseName": "仓库同步接口",
-	"description": "仓库同步接口",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
-			"description": "请求报文",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -20,9 +13,6 @@
 					"description": "货主名称，string（50）"
 				},
 				{
-					"name": "warehouseInfos",
-					"type": "WarehouseInfos[]",
-					"description": "仓库信息",
 					"subParams": [
 						{
 							"name": "warehouseCode",
@@ -79,16 +69,19 @@
 							"type": "String",
 							"description": "仓库状态，string（20）"
 						}
-					]
+					],
+					"name": "warehouseInfos",
+					"type": "WarehouseInfos[]",
+					"description": "仓库信息"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request",
+			"description": "请求报文"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
-			"description": "响应报文",
 			"subParams": [
 				{
 					"name": "flag",
@@ -109,10 +102,6 @@
 					"required": true
 				},
 				{
-					"name": "warehouseInfos",
-					"type": "WarehouseInfo[]",
-					"description": "仓库信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "warehouseCode",
@@ -120,9 +109,20 @@
 							"description": "仓库编码，string（50）",
 							"required": true
 						}
-					]
+					],
+					"name": "warehouseInfos",
+					"type": "WarehouseInfo[]",
+					"description": "仓库信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response",
+			"description": "响应报文"
 		}
-	]
+	],
+	"name": "taobao.qimen.warehouseinfo.synchronize",
+	"apiChineseName": "仓库同步接口",
+	"description": "仓库同步接口",
+	"id": 45240
 }

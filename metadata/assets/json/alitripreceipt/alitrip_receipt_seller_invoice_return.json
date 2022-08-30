@@ -1,13 +1,6 @@
 {
-	"id": 51538,
-	"name": "alitrip.receipt.seller.invoice.return",
-	"apiChineseName": "飞猪发票商家回调接口",
-	"description": "飞猪发票回调接口",
 	"requestParams": [
 		{
-			"name": "receipt_do",
-			"type": "ReceiptDo",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "receipt_amount",
@@ -61,7 +54,10 @@
 					"type": "Number",
 					"description": "发票状态1成功0失败-1取消订单"
 				}
-			]
+			],
+			"name": "receipt_do",
+			"type": "ReceiptDo",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
@@ -80,5 +76,9 @@
 			"type": "String",
 			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alitrip.receipt.seller.invoice.return",
+	"apiChineseName": "飞猪发票商家回调接口",
+	"description": "飞猪发票回调接口",
+	"id": 51538
 }

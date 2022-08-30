@@ -1,8 +1,4 @@
 {
-	"id": 21682,
-	"name": "taobao.simba.keywordsbyadgroupid.get",
-	"apiChineseName": "取得一个推广组的所有关键词",
-	"description": "取得一个推广组的所有关键词",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "Keyword []",
-			"description": "取得的关键词列表",
 			"subParams": [
 				{
 					"name": "nick",
@@ -54,7 +47,7 @@
 				{
 					"name": "is_default_price",
 					"type": "Boolean",
-					"description": "是否使用推广组默认出价，true-是；false-否；"
+					"description": "是否使用推广组默认出价，恒为false"
 				},
 				{
 					"name": "audit_status",
@@ -94,14 +87,21 @@
 				{
 					"name": "mobile_is_default_price",
 					"type": "Number",
-					"description": "无线上是否采用PC*无线溢价的出价模式（1：是，0：否）"
+					"description": "是否使用推广组默认出价，恒为0"
 				},
 				{
 					"name": "max_mobile_price",
 					"type": "Number",
 					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "取得的关键词列表"
 		}
-	]
+	],
+	"name": "taobao.simba.keywordsbyadgroupid.get",
+	"apiChineseName": "取得一个推广组的所有关键词",
+	"description": "取得一个推广组的所有关键词",
+	"id": 21682
 }

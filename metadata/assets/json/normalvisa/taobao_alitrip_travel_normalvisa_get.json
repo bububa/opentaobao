@@ -1,8 +1,4 @@
 {
-	"id": 27018,
-	"name": "taobao.alitrip.travel.normalvisa.get",
-	"apiChineseName": "获取签证记录",
-	"description": "用于获取普通签证的记录信息",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
@@ -12,103 +8,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "NormalVisaInfo[]",
-					"description": "结果",
-					"required": true,
 					"subParams": [
-						{
-							"name": "country_id",
-							"type": "String",
-							"description": "国家id，国家编码详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.retXmq\u0026treeId=79\u0026articleId=104840\u0026docType=1",
-							"required": true
-						},
 						{
 							"name": "normal_visa_type",
 							"type": "Number",
-							"description": "1:贴纸签  2:电子签  3:面试",
-							"required": true
+							"description": "1:贴纸签  2:电子签  3:面试"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010",
-							"required": true
+							"description": "无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "amount",
 							"type": "Number",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "auction_price",
 							"type": "String",
-							"description": "单价",
-							"required": true
+							"description": "单价"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "标题",
-							"required": true
-						},
-						{
-							"name": "seller_nick",
-							"type": "String",
-							"description": "卖家昵称",
-							"required": true
+							"description": "标题"
 						},
 						{
 							"name": "end_status",
 							"type": "Boolean",
-							"description": "是否达到中止状态",
-							"required": true
-						},
-						{
-							"name": "buyer_nick",
-							"type": "String",
-							"description": "买家昵称",
-							"required": true
+							"description": "是否达到中止状态"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "status_desc",
 							"type": "String",
-							"description": "无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010",
-							"required": true
+							"description": "无办理人信息：1001 办理人已填写：1002 已收到资料: 1003 已审核完成: 1004 已送签:1005 结果已返回: 1006 已预约面试: 1007 处理中:1008 已中止办理：1010"
 						},
 						{
 							"name": "need_fill_contact",
 							"type": "Boolean",
-							"description": "是否需要商家代填",
-							"required": true
+							"description": "是否需要商家代填"
+						},
+						{
+							"name": "country_id",
+							"type": "String",
+							"description": "国家id，国家编码详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.retXmq\u0026treeId=79\u0026articleId=104840\u0026docType=1"
+						},
+						{
+							"name": "openuid",
+							"type": "String",
+							"description": "买家ID"
 						}
-					]
+					],
+					"name": "results",
+					"type": "NormalVisaInfo[]",
+					"description": "结果"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "结果数目",
-					"required": true
+					"description": "结果数目"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.alitrip.travel.normalvisa.get",
+	"apiChineseName": "获取签证记录",
+	"description": "用于获取普通签证的记录信息",
+	"id": 27018
 }

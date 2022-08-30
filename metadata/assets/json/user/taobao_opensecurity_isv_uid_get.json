@@ -1,8 +1,4 @@
 {
-	"id": 24673,
-	"name": "taobao.opensecurity.isv.uid.get",
-	"apiChineseName": "获取open security uid for isv",
-	"description": "根据 open_uid 获取 open_uid_isv 用于同一个 isv的多个app间数据关联",
 	"requestParams": [
 		{
 			"name": "open_uid",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "open security tbUserId for ISV，淘宝账号对ISV级别的唯一open security ID，用于同一个ISV多个Appkey间数据共享。"
 		}
-	]
+	],
+	"name": "taobao.opensecurity.isv.uid.get",
+	"apiChineseName": "获取open security uid for isv",
+	"description": "根据 open_uid 获取 open_uid_isv 用于同一个 isv的多个app间数据关联",
+	"id": 24673
 }

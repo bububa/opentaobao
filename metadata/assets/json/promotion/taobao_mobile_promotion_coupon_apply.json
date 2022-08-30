@@ -1,8 +1,4 @@
 {
-	"id": 25903,
-	"name": "taobao.mobile.promotion.coupon.apply",
-	"apiChineseName": "优惠券领取(手淘专用)",
-	"description": "优惠券领取",
 	"requestParams": [
 		{
 			"name": "trace_id",
@@ -31,9 +27,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "coupon_apply_result",
-			"type": "CouponApplyResult",
-			"description": "优惠券领取结果",
 			"subParams": [
 				{
 					"name": "trace_id",
@@ -45,7 +38,14 @@
 					"type": "Boolean",
 					"description": "领取结果，领取成功为true，否则为false"
 				}
-			]
+			],
+			"name": "coupon_apply_result",
+			"type": "CouponApplyResult",
+			"description": "优惠券领取结果"
 		}
-	]
+	],
+	"name": "taobao.mobile.promotion.coupon.apply",
+	"apiChineseName": "优惠券领取(手淘专用)",
+	"description": "优惠券领取",
+	"id": 25903
 }

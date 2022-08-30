@@ -1,8 +1,4 @@
 {
-	"id": 25396,
-	"name": "taobao.de.activity.delivery.addr.confirm",
-	"apiChineseName": "用户收件地址确认",
-	"description": "用户收件地址确认",
 	"requestParams": [
 		{
 			"name": "serial_number",
@@ -19,16 +15,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "update_delivery_address_vo",
-			"type": "UpdateDeliveryAddressVO",
-			"description": "更新或确认收件地址",
 			"subParams": [
 				{
 					"name": "update_address",
 					"type": "Boolean",
 					"description": "是否成功更新或确认地址"
 				}
-			]
+			],
+			"name": "update_delivery_address_vo",
+			"type": "UpdateDeliveryAddressVO",
+			"description": "更新或确认收件地址"
 		}
-	]
+	],
+	"name": "taobao.de.activity.delivery.addr.confirm",
+	"apiChineseName": "用户收件地址确认",
+	"description": "用户收件地址确认",
+	"id": 25396
 }

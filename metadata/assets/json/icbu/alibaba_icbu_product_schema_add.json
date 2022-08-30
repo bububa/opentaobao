@@ -1,14 +1,6 @@
 {
-	"id": 50071,
-	"name": "alibaba.icbu.product.schema.add",
-	"apiChineseName": "（新）商品发布新接口",
-	"description": "提供发布ICBU商品的入口",
 	"requestParams": [
 		{
-			"name": "param_product_top_publish_request",
-			"type": "ProductTopPublishRequest",
-			"description": "发布入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cat_id",
@@ -25,7 +17,11 @@
 					"type": "String",
 					"description": "商品的具体数据信息"
 				}
-			]
+			],
+			"name": "param_product_top_publish_request",
+			"type": "ProductTopPublishRequest",
+			"description": "发布入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "String",
 			"description": "错误追踪码，请务必打印在日志中，后续排查问题请提交此错误追踪码"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.schema.add",
+	"apiChineseName": "（新）商品发布新接口",
+	"description": "提供发布ICBU商品的入口",
+	"id": 50071
 }

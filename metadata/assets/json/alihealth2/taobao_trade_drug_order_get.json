@@ -1,8 +1,4 @@
 {
-	"id": 28976,
-	"name": "taobao.trade.drug.order.get",
-	"apiChineseName": "查看订单详情",
-	"description": "商家查看订单详情",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,129 +9,114 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "TakeoutThirdOrder",
-					"description": "TakeoutThirdOrder订单数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_pay_fee",
 							"type": "Number",
-							"description": "实际支付金额",
-							"required": true
+							"description": "实际支付金额"
 						},
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "店铺id",
-							"required": true
+							"description": "店铺id"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "faild_reason",
 							"type": "String",
-							"description": "订单失败原因",
-							"required": true
+							"description": "订单失败原因"
 						},
 						{
-							"name": "goods_list",
-							"type": "GoodsList[]",
-							"description": "订单商品",
-							"required": true,
 							"subParams": [
 								{
 									"name": "real_price",
 									"type": "String",
-									"description": "实际价格",
-									"required": true
+									"description": "实际价格"
 								},
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "商品数量",
-									"required": true
+									"description": "商品数量"
 								},
 								{
 									"name": "goods_code",
 									"type": "String",
-									"description": "商品外部编码",
-									"required": true
+									"description": "商品外部编码"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "is_promotion",
 									"type": "Boolean",
-									"description": "是否是优惠商品",
-									"required": true
+									"description": "是否是优惠商品"
 								},
 								{
 									"name": "promotion_status",
 									"type": "Number",
-									"description": "0 未优惠 1 已优惠",
-									"required": true
+									"description": "0 未优惠 1 已优惠"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商品ID",
-									"required": true
+									"description": "商品ID"
 								},
 								{
 									"name": "promotion_type",
 									"type": "Number",
-									"description": "优惠类型",
-									"required": true
+									"description": "优惠类型"
 								},
 								{
 									"name": "promotion_name",
 									"type": "String",
-									"description": "优惠名称",
-									"required": true
+									"description": "优惠名称"
 								},
 								{
 									"name": "promotion",
 									"type": "Boolean",
-									"description": "是否是优惠商品",
-									"required": true
+									"description": "是否是优惠商品"
 								}
-							]
+							],
+							"name": "goods_list",
+							"type": "GoodsList[]",
+							"description": "订单商品"
 						}
-					]
+					],
+					"name": "result",
+					"type": "TakeoutThirdOrder",
+					"description": "TakeoutThirdOrder订单数据"
 				},
 				{
 					"name": "exception",
-					"type": "Json",
-					"description": "异常信息",
-					"required": true
+					"type": "String",
+					"description": "异常信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.trade.drug.order.get",
+	"apiChineseName": "查看订单详情",
+	"description": "商家查看订单详情",
+	"id": 28976
 }

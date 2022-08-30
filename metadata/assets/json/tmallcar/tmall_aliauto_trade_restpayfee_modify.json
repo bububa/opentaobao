@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "target_actual_pay_fee",
+					"type": "Number",
+					"description": "期望改到的实付金额，单位分",
+					"required": true
+				},
+				{
+					"name": "sub_pay_order_id",
+					"type": "Number",
+					"description": "子支付单id",
+					"required": true
+				}
+			],
+			"name": "command",
+			"type": "ModifyRestPaymentCommand",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误code"
+				}
+			],
+			"name": "result",
+			"type": "AliAutoResult",
+			"description": "出参"
+		}
+	],
+	"name": "tmall.aliauto.trade.restpayfee.modify",
+	"apiChineseName": "分阶段订单尾款改价",
+	"description": "汽车商家通过此api修改整车分阶段订单的尾款金额",
+	"id": 57907
+}

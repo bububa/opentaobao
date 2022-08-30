@@ -1,8 +1,4 @@
 {
-	"id": 26678,
-	"name": "alibaba.aliqin.ta.number.singlecallbyvoice",
-	"apiChineseName": "根据号码tts单呼",
-	"description": "根据号码语音单呼",
 	"requestParams": [
 		{
 			"name": "called_num",
@@ -30,9 +26,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "model",
@@ -58,7 +51,14 @@
 					"description": "系统自动生成",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.ta.number.singlecallbyvoice",
+	"apiChineseName": "根据号码tts单呼",
+	"description": "根据号码语音单呼",
+	"id": 26678
 }

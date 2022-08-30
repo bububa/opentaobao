@@ -1,13 +1,6 @@
 {
-	"id": 41493,
-	"name": "alibaba.ele.fengniao.chainstore.update",
-	"apiChineseName": "修改门店信息接口",
-	"description": "修改门店的经纬度，文本地址，电话，门店名",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "position_source",
@@ -54,7 +47,10 @@
 					"type": "String",
 					"description": "商户code"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -63,5 +59,9 @@
 			"type": "String",
 			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.chainstore.update",
+	"apiChineseName": "修改门店信息接口",
+	"description": "修改门店的经纬度，文本地址，电话，门店名",
+	"id": 41493
 }

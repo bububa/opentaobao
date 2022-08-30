@@ -1,13 +1,6 @@
 {
-	"id": 45982,
-	"name": "alibaba.alsc.crm.card.bindcard",
-	"apiChineseName": "绑定物理卡",
-	"description": "将会员卡和实例物理卡绑定在一起",
 	"requestParams": [
 		{
-			"name": "param_bind_physical_card_open_req",
-			"type": "BindPhysicalCardOpenReq",
-			"description": "请求参数",
 			"subParams": [
 				{
 					"name": "out_brand_id",
@@ -58,46 +51,48 @@
 					"type": "String",
 					"description": "卡号"
 				}
-			]
+			],
+			"name": "param_bind_physical_card_open_req",
+			"type": "BindPhysicalCardOpenReq",
+			"description": "请求参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "业务成功状态",
-					"required": true
+					"description": "业务成功状态"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.bindcard",
+	"apiChineseName": "绑定物理卡",
+	"description": "将会员卡和实例物理卡绑定在一起",
+	"id": 45982
 }

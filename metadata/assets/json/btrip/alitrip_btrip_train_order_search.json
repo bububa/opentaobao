@@ -1,13 +1,6 @@
 {
-	"id": 29575,
-	"name": "alitrip.btrip.train.order.search",
-	"apiChineseName": "获取火车票订单列表",
-	"description": "第三方OA厂商获取自己的火车票数据",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenSearchRq",
-			"description": "请求",
 			"subParams": [
 				{
 					"name": "start_time",
@@ -60,326 +53,283 @@
 					"type": "Date",
 					"description": "修改结束时间"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenSearchRq",
+			"description": "请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResultSupport",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "train_order_list",
-					"type": "OpenTrainOrderRs[]",
-					"description": "火车票订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "corp_id",
 							"type": "String",
-							"description": "企业Id",
-							"required": true
+							"description": "企业Id"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "更新时间",
-							"required": true
+							"description": "更新时间"
 						},
 						{
 							"name": "corp_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
-							"description": "用户名称",
-							"required": true
+							"description": "用户名称"
 						},
 						{
 							"name": "depart_id",
 							"type": "String",
-							"description": "部门id",
-							"required": true
+							"description": "部门id"
 						},
 						{
 							"name": "depart_name",
 							"type": "String",
-							"description": "部门名称",
-							"required": true
+							"description": "部门名称"
 						},
 						{
 							"name": "apply_id",
 							"type": "Number",
-							"description": "申请单id",
-							"required": true
+							"description": "申请单id"
 						},
 						{
 							"name": "contact_name",
 							"type": "String",
-							"description": "联系人名称",
-							"required": true
+							"description": "联系人名称"
 						},
 						{
 							"name": "contact_phone",
 							"type": "String",
-							"description": "联系人电话",
-							"required": true
+							"description": "联系人电话"
 						},
 						{
 							"name": "dep_station",
 							"type": "String",
-							"description": "出发站",
-							"required": true
+							"description": "出发站"
 						},
 						{
 							"name": "arr_station",
 							"type": "String",
-							"description": "到达站",
-							"required": true
+							"description": "到达站"
 						},
 						{
 							"name": "dep_time",
 							"type": "Date",
-							"description": "出发时间",
-							"required": true
+							"description": "出发时间"
 						},
 						{
 							"name": "arr_time",
 							"type": "Date",
-							"description": "到达时间",
-							"required": true
+							"description": "到达时间"
 						},
 						{
 							"name": "train_number",
 							"type": "String",
-							"description": "车次",
-							"required": true
+							"description": "车次"
 						},
 						{
 							"name": "train_type",
 							"type": "String",
-							"description": "车次类型",
-							"required": true
+							"description": "车次类型"
 						},
 						{
 							"name": "seat_type",
 							"type": "String",
-							"description": "座位类型",
-							"required": true
+							"description": "座位类型"
 						},
 						{
 							"name": "run_time",
 							"type": "String",
-							"description": "运行时长",
-							"required": true
+							"description": "运行时长"
 						},
 						{
 							"name": "dep_city",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "ticket_no12306",
 							"type": "String",
-							"description": "12306票号",
-							"required": true
+							"description": "12306票号"
 						},
 						{
 							"name": "arr_city",
 							"type": "String",
-							"description": "到达城市",
-							"required": true
+							"description": "到达城市"
 						},
 						{
 							"name": "rider_name",
 							"type": "String",
-							"description": "乘客姓名",
-							"required": true
+							"description": "乘客姓名"
 						},
 						{
 							"name": "ticket_count",
 							"type": "Number",
-							"description": "票的数量",
-							"required": true
+							"description": "票的数量"
 						},
 						{
-							"name": "price_info_list",
-							"type": "OpenPriceInfo[]",
-							"description": "价目信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pay_type",
 									"type": "Number",
-									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存",
-									"required": true
+									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存"
 								},
 								{
 									"name": "category",
 									"type": "String",
-									"description": "消费类型",
-									"required": true
+									"description": "消费类型"
 								},
 								{
 									"name": "type",
 									"type": "Number",
-									"description": "资金流向:1:支出，2:收入",
-									"required": true
+									"description": "资金流向:1:支出，2:收入"
 								},
 								{
 									"name": "price",
 									"type": "String",
-									"description": "价格",
-									"required": true
+									"description": "价格"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Date",
-									"description": "流水创建时间",
-									"required": true
+									"description": "流水创建时间"
 								},
 								{
 									"name": "alipay_trade_no",
 									"type": "String",
-									"description": "支付流水号",
-									"required": true
+									"description": "支付流水号"
 								},
 								{
 									"name": "passenger_name",
 									"type": "String",
-									"description": "乘车人，多个用‘,’分割",
-									"required": true
+									"description": "乘车人，多个用‘,’分割"
 								},
 								{
 									"name": "trade_id",
 									"type": "String",
-									"description": "订单交易流水号",
-									"required": true
+									"description": "订单交易流水号"
 								}
-							]
+							],
+							"name": "price_info_list",
+							"type": "OpenPriceInfo[]",
+							"description": "价目信息"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "订单状态：0待支付,1出票中,2已关闭(未支付，已经关闭),3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已经邮寄了,9出票失败,10改签失败,11退票失败",
-							"required": true
+							"description": "订单状态：0待支付,1出票中,2已关闭(未支付，已经关闭),3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已经邮寄了,9出票失败,10改签失败,11退票失败"
 						},
 						{
-							"name": "cost_center",
-							"type": "OpenCostCenterDo",
-							"description": "成本中心对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "成本中心名称",
-									"required": true
+									"description": "成本中心名称"
 								},
 								{
 									"name": "number",
 									"type": "String",
-									"description": "成本中心编号",
-									"required": true
+									"description": "成本中心编号"
 								},
 								{
 									"name": "corp_id",
 									"type": "String",
-									"description": "企业Id",
-									"required": true
+									"description": "企业Id"
 								}
-							]
+							],
+							"name": "cost_center",
+							"type": "OpenCostCenterDo",
+							"description": "成本中心对象"
 						},
 						{
-							"name": "invoice",
-							"type": "OpenInvoiceDo",
-							"description": "发票信息对象",
-							"required": true,
 							"subParams": [
 								{
 									"name": "title",
 									"type": "String",
-									"description": "发票抬头",
-									"required": true
+									"description": "发票抬头"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "商旅发票id",
-									"required": true
+									"description": "商旅发票id"
 								}
-							]
+							],
+							"name": "invoice",
+							"type": "OpenInvoiceDo",
+							"description": "发票信息对象"
 						},
 						{
 							"name": "thirdpart_itinerary_id",
 							"type": "String",
-							"description": "第三方行程id",
-							"required": true
+							"description": "第三方行程id"
 						},
 						{
-							"name": "user_affiliate_list",
-							"type": "OpenUserAffiliateDo[]",
-							"description": "出行人列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "user_id",
 									"type": "String",
-									"description": "出行人ID",
-									"required": true
+									"description": "出行人ID"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "出行人名称",
-									"required": true
+									"description": "出行人名称"
 								}
-							]
+							],
+							"name": "user_affiliate_list",
+							"type": "OpenUserAffiliateDo[]",
+							"description": "出行人列表"
 						}
-					]
+					],
+					"name": "train_order_list",
+					"type": "OpenTrainOrderRs[]",
+					"description": "火车票订单列表"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResultSupport",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alitrip.btrip.train.order.search",
+	"apiChineseName": "获取火车票订单列表",
+	"description": "第三方OA厂商获取自己的火车票数据",
+	"id": 29575
 }

@@ -1,5 +1,5 @@
 {
-  "id": 21183,
   "name": "AliOS支付API",
-  "pkg": "aliospay"
+  "pkg": "aliospay",
+  "id": 21183
 }

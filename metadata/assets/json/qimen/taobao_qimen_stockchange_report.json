@@ -1,17 +1,8 @@
 {
-	"id": 25996,
-	"name": "taobao.qimen.stockchange.report",
-	"apiChineseName": "库存异动通知接口",
-	"description": "WMS调用奇门的接口,将库存异动信息信息回传给ERP",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "StockChangeReportRequest",
 			"subParams": [
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "item",
 					"subParams": [
 						{
 							"name": "ownerCode",
@@ -90,9 +81,6 @@
 							"description": "异动时间(YYYY-MM-DD HH:MM:SS)"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "batchs",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -124,7 +112,10 @@
 									"type": "Number",
 									"description": "异动数量(要求batchs节点下所有的异动数量之和等于orderline中的异动数量)"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "batchs"
 						},
 						{
 							"name": "remark",
@@ -136,20 +127,23 @@
 							"type": "String",
 							"description": "isLocked"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "item"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "StockChangeReportRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -169,7 +163,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.stockchange.report",
+	"apiChineseName": "库存异动通知接口",
+	"description": "WMS调用奇门的接口,将库存异动信息信息回传给ERP",
+	"id": 25996
 }

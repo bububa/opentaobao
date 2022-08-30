@@ -1,14 +1,6 @@
 {
-	"id": 41998,
-	"name": "alibaba.wdk.marketing.open.darunfa.activity.sku.sync",
-	"apiChineseName": "营销商品数据同步",
-	"description": "大润发营销商品数据同步",
 	"requestParams": [
 		{
-			"name": "activity_sku_list",
-			"type": "DrfTxdActivitySkuBo[]",
-			"description": "淘鲜达活动商品信息",
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "activity_version_id",
@@ -122,13 +114,11 @@
 					"type": "Number",
 					"description": "淘鲜达活动Id"
 				}
-			]
-		},
-		{
-			"name": "version_id",
-			"type": "Number",
-			"description": "数据版本Id",
-			"required": true
+			],
+			"name": "activity_sku_list",
+			"type": "DrfTxdActivitySkuBo[]",
+			"description": "淘鲜达活动商品信息",
+			"maxListSize": 200
 		},
 		{
 			"name": "activity_id",
@@ -140,65 +130,67 @@
 			"name": "shop_id",
 			"type": "String",
 			"description": "活动对应的门店Id"
+		},
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "数据版本Id",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "返回结果信息",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "SyncActivitySkuResultBo[]",
-					"description": "123",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pool_id",
 							"type": "Number",
-							"description": "商品池ID",
-							"required": true
+							"description": "商品池ID"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "promotion_id",
 							"type": "String",
-							"description": "活动Id",
-							"required": true
+							"description": "活动Id"
 						},
 						{
 							"name": "version_id",
 							"type": "Number",
-							"description": "版本Id",
-							"required": true
+							"description": "版本Id"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "SyncActivitySkuResultBo[]",
+					"description": "123"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "123123",
-					"required": true
+					"description": "123123"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "123123",
-					"required": true
+					"description": "123123"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "123123",
-					"required": true
+					"description": "123123"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "返回结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.darunfa.activity.sku.sync",
+	"apiChineseName": "营销商品数据同步",
+	"description": "大润发营销商品数据同步",
+	"id": 41998
 }

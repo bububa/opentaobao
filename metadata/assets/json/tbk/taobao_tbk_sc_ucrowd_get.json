@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "人群标签id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态，0:待生效，1:生效，2:失效"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "人群描述"
+						},
+						{
+							"name": "ucrowd_type",
+							"type": "Number",
+							"description": "人群类型，1:社群"
+						},
+						{
+							"name": "external_crowd_code",
+							"type": "String",
+							"description": "外部人群编码"
+						},
+						{
+							"name": "ucrowd_name",
+							"type": "String",
+							"description": "人群标签名称"
+						},
+						{
+							"name": "update_time",
+							"type": "Date",
+							"description": "更新时间"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "ucrowd_id",
+							"type": "Number",
+							"description": "人群标签id"
+						},
+						{
+							"name": "member_size",
+							"type": "Number",
+							"description": "覆盖会员数量"
+						}
+					],
+					"name": "ucrowd",
+					"type": "CrowdDto",
+					"description": "人群"
+				}
+			],
+			"name": "data",
+			"type": "RpcResult",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.ucrowd.get",
+	"apiChineseName": "淘宝客-服务商-获取人群标签",
+	"description": "服务商使用。支持淘宝客通过入参人群标签id，获得人群信息，包括人群名称描述及覆盖会员数。",
+	"id": 53874
+}

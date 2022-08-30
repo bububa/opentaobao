@@ -1,8 +1,4 @@
 {
-	"id": 22763,
-	"name": "taobao.jipiao.agent.order.search",
-	"apiChineseName": "【机票代理商订单】订单搜索",
-	"description": "卖家根据条件查询淘宝订单id列表",
 	"requestParams": [
 		{
 			"name": "begin_time",
@@ -52,9 +48,6 @@
 			"description": "失败时的错误信息"
 		},
 		{
-			"name": "search_result",
-			"type": "SearchOrderResult",
-			"description": "机票订单搜索返回结果对象",
 			"subParams": [
 				{
 					"name": "order_ids",
@@ -71,7 +64,14 @@
 					"type": "Boolean",
 					"description": "是否还有下一页，即满足搜索条件的订单数是否还有下一个分页"
 				}
-			]
+			],
+			"name": "search_result",
+			"type": "SearchOrderResult",
+			"description": "机票订单搜索返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.jipiao.agent.order.search",
+	"apiChineseName": "【机票代理商订单】订单搜索",
+	"description": "卖家根据条件查询淘宝订单id列表",
+	"id": 22763
 }

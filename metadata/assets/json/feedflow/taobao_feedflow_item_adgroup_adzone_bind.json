@@ -1,15 +1,6 @@
 {
-	"id": 43296,
-	"name": "taobao.feedflow.item.adgroup.adzone.bind",
-	"apiChineseName": "信息流单元内绑定资源位",
-	"description": "信息流单元内绑定资源位",
 	"requestParams": [
 		{
-			"name": "bind_adzone_list",
-			"type": "AdzoneBindDto[]",
-			"description": "新增的绑定资源位",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "adzone_id",
@@ -23,7 +14,12 @@
 					"description": "溢价比例 1-300",
 					"required": true
 				}
-			]
+			],
+			"name": "bind_adzone_list",
+			"type": "AdzoneBindDto[]",
+			"description": "新增的绑定资源位",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "adgroup_id",
@@ -34,23 +30,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
+					"description": "调用是否成功,true-成功，false-失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.adgroup.adzone.bind",
+	"apiChineseName": "信息流单元内绑定资源位",
+	"description": "信息流单元内绑定资源位",
+	"id": 43296
 }

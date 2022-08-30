@@ -1,17 +1,8 @@
 {
-	"id": 27143,
-	"name": "taobao.qimen.stockout.confirm",
-	"apiChineseName": "出库单确认接口",
-	"description": "货品出库后，WMS将状态回传给ERP",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
 			"subParams": [
 				{
-					"name": "deliveryOrder",
-					"type": "DeliveryOrder",
-					"description": "deliveryOrder",
 					"subParams": [
 						{
 							"name": "totalOrderLines",
@@ -86,12 +77,12 @@
 							"type": "String",
 							"description": "出库单确认其他出库单的子类型，用于 orderType设置为其他 出库单时设置"
 						}
-					]
+					],
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "deliveryOrder"
 				},
 				{
-					"name": "packages",
-					"type": "Package[]",
-					"description": "packages",
 					"subParams": [
 						{
 							"name": "logisticsName",
@@ -134,9 +125,6 @@
 							"description": "包裹体积(升)"
 						},
 						{
-							"name": "packageMaterialList",
-							"type": "PackageMaterial[]",
-							"description": "packageMaterialList",
 							"subParams": [
 								{
 									"name": "type",
@@ -148,12 +136,12 @@
 									"type": "Number",
 									"description": "包材的数量"
 								}
-							]
+							],
+							"name": "packageMaterialList",
+							"type": "PackageMaterial[]",
+							"description": "packageMaterialList"
 						},
 						{
-							"name": "items",
-							"type": "Item[]",
-							"description": "items",
 							"subParams": [
 								{
 									"name": "itemCode",
@@ -172,14 +160,17 @@
 									"description": "包裹内该商品的数量",
 									"required": true
 								}
-							]
+							],
+							"name": "items",
+							"type": "Item[]",
+							"description": "items"
 						}
-					]
+					],
+					"name": "packages",
+					"type": "Package[]",
+					"description": "packages"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "orderLines",
 					"subParams": [
 						{
 							"name": "outBizCode",
@@ -239,9 +230,6 @@
 							"description": "生产批号"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "batchs",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -273,7 +261,10 @@
 									"type": "Number",
 									"description": "实发数量"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "batchs"
 						},
 						{
 							"name": "unit",
@@ -281,31 +272,34 @@
 							"description": "单位"
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "snList",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "snList"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "orderLines"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Struct",
 			"subParams": [
 				{
 					"name": "flag",
@@ -325,7 +319,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Struct"
 		}
-	]
+	],
+	"name": "taobao.qimen.stockout.confirm",
+	"apiChineseName": "出库单确认接口",
+	"description": "货品出库后，WMS将状态回传给ERP",
+	"id": 27143
 }

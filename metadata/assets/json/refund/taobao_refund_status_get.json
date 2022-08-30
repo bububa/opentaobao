@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				}
+			],
+			"name": "query_param",
+			"type": "RefundQueryByOrderIdRequest",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "退款单id"
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "淘宝交易单号"
+						},
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "子订单号"
+						},
+						{
+							"name": "modified",
+							"type": "String",
+							"description": "更新时间。格式:yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+						}
+					],
+					"name": "result_list",
+					"type": "QueryRefundStatusResponse[]",
+					"description": "数组对象"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码，没有表示无异常"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result_package",
+			"type": "ResultSet",
+			"description": "出参对象"
+		}
+	],
+	"name": "taobao.refund.status.get",
+	"apiChineseName": "查询退款状态",
+	"description": "根据主订单或者子订单id查询退款状态,入参传入主订单或者子订单号1.如果当传入子订单时，返回子订单最后一笔退款单的状态,如果子订单申请退款退款返回空list.2.如果传传入主订单，则返回主订单下所有子订单的最后一笔退款单状态，如果对应的子订单没有生成退款单，则对应子订单对应数据返回。",
+	"id": 55487
+}

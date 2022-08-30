@@ -1,8 +1,4 @@
 {
-	"id": 50719,
-	"name": "taobao.sebp.organization.getorderinfo",
-	"apiChineseName": "淘小铺机构订单信息",
-	"description": "淘小铺合作机构获取机构订单信息，用于机构结算使用",
 	"requestParams": [
 		{
 			"name": "modify_date",
@@ -28,213 +24,184 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
-					"name": "module",
-					"type": "PageInfo",
-					"description": "结果信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "pages",
 							"type": "Number",
-							"description": "总页数",
-							"required": true
+							"description": "总页数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "页大小",
-							"required": true
+							"description": "页大小"
 						},
 						{
-							"name": "list",
-							"type": "OrganizationInviteInfoVo[]",
-							"description": "订单信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "refund_fee",
 									"type": "Number",
-									"description": "退款金额（单位：分）",
-									"required": true
+									"description": "退款金额（单位：分）"
 								},
 								{
 									"name": "commission_fee",
 									"type": "Number",
-									"description": "佣金金额（单位：分）",
-									"required": true
+									"description": "佣金金额（单位：分）"
 								},
 								{
 									"name": "modify_date",
 									"type": "String",
-									"description": "订单修改日期",
-									"required": true
+									"description": "订单修改日期"
 								},
 								{
 									"name": "pay_time",
 									"type": "Number",
-									"description": "订单付款时间",
-									"required": true
+									"description": "订单付款时间"
 								},
 								{
 									"name": "auction_title",
 									"type": "String",
-									"description": "商品标题",
-									"required": true
+									"description": "商品标题"
 								},
 								{
 									"name": "encrypt_buyer_id",
 									"type": "String",
-									"description": "加密后的买家ID",
-									"required": true
+									"description": "加密后的买家ID"
 								},
 								{
 									"name": "gmt_create",
 									"type": "Number",
-									"description": "订单创建时间",
-									"required": true
+									"description": "订单创建时间"
 								},
 								{
 									"name": "encrypt_distributor_id",
 									"type": "String",
-									"description": "加密后的分销商ID",
-									"required": true
+									"description": "加密后的分销商ID"
 								},
 								{
 									"name": "auction_id",
 									"type": "Number",
-									"description": "商品ID",
-									"required": true
+									"description": "商品ID"
 								},
 								{
 									"name": "delegate",
 									"type": "Number",
-									"description": "订单类型，0-自购，1-代下单，2-分享购买",
-									"required": true
+									"description": "订单类型，0-自购，1-代下单，2-分享购买"
 								},
 								{
 									"name": "encrypt_invitor_id",
 									"type": "String",
-									"description": "加密后的分销商上级ID",
-									"required": true
+									"description": "加密后的分销商上级ID"
 								},
 								{
 									"name": "succ_date",
 									"type": "String",
-									"description": "订单确认收货日期",
-									"required": true
+									"description": "订单确认收货日期"
 								},
 								{
 									"name": "buy_amount",
 									"type": "Number",
-									"description": "购买数量",
-									"required": true
+									"description": "购买数量"
 								},
 								{
 									"name": "biz_order_id",
 									"type": "Number",
-									"description": "子订单ID",
-									"required": true
+									"description": "子订单ID"
 								},
 								{
 									"name": "total_fee",
 									"type": "Number",
-									"description": "付款金额（单位：分）",
-									"required": true
+									"description": "付款金额（单位：分）"
 								},
 								{
 									"name": "auction_type",
 									"type": "Number",
-									"description": "商品类型，0-普通商品，1-高佣商品",
-									"required": true
+									"description": "商品类型，0-普通商品，1-高佣商品"
 								},
 								{
 									"name": "mord_prov",
 									"type": "String",
-									"description": "收货人省份",
-									"required": true
+									"description": "收货人省份"
 								},
 								{
 									"name": "mord_city",
 									"type": "String",
-									"description": "收货人城市",
-									"required": true
+									"description": "收货人城市"
 								},
 								{
 									"name": "mord_area",
 									"type": "String",
-									"description": "收货人区域",
-									"required": true
+									"description": "收货人区域"
 								},
 								{
 									"name": "encrypt_item_tag",
 									"type": "String",
-									"description": "加密后的订单商品标",
-									"required": true
+									"description": "加密后的订单商品标"
 								},
 								{
 									"name": "rule_id",
 									"type": "Number",
-									"description": "订单规则ID",
-									"required": true
+									"description": "订单规则ID"
 								},
 								{
 									"name": "org_commission_fee",
 									"type": "Number",
-									"description": "特殊，非掌柜佣金",
-									"required": true
+									"description": "特殊，非掌柜佣金"
 								},
 								{
 									"name": "sku_id",
 									"type": "Number",
-									"description": "sku id",
-									"required": true
+									"description": "sku id"
 								},
 								{
 									"name": "encrypt_mord_mobile_phone",
 									"type": "String",
-									"description": "加密收货人手机号",
-									"required": true
+									"description": "加密收货人手机号"
 								}
-							]
+							],
+							"name": "list",
+							"type": "OrganizationInviteInfoVo[]",
+							"description": "订单信息"
 						},
 						{
 							"name": "page_num",
 							"type": "Number",
-							"description": "第几页",
-							"required": true
+							"description": "第几页"
 						}
-					]
+					],
+					"name": "module",
+					"type": "PageInfo",
+					"description": "结果信息"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.sebp.organization.getorderinfo",
+	"apiChineseName": "淘小铺机构订单信息",
+	"description": "淘小铺合作机构获取机构订单信息，用于机构结算使用",
+	"id": 50719
 }

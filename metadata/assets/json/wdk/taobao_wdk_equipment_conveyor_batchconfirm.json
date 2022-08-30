@@ -1,8 +1,4 @@
 {
-	"id": 31448,
-	"name": "taobao.wdk.equipment.conveyor.batchconfirm",
-	"apiChineseName": "五道口悬挂链信息批量确认",
-	"description": "批量消息确认",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -18,29 +14,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopWcsResult",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopWcsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.wdk.equipment.conveyor.batchconfirm",
+	"apiChineseName": "五道口悬挂链信息批量确认",
+	"description": "批量消息确认",
+	"id": 31448
 }

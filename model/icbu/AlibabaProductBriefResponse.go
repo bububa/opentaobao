@@ -4,35 +4,37 @@ package icbu
 type AlibabaProductBriefResponse struct {
 	// 关键词
 	Keywords []string `json:"keywords,omitempty" xml:"keywords>string,omitempty"`
-	// 混淆后的商品ID
-	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 分组名称
 	GroupName string `json:"group_name,omitempty" xml:"group_name,omitempty"`
-	// 商品名称
-	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// 商品状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 商品类型
+	// 商品名称
+	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
+	// sourcing或者wholesale
 	ProductType string `json:"product_type,omitempty" xml:"product_type,omitempty"`
-	// 语种
+	// english
 	Language string `json:"language,omitempty" xml:"language,omitempty"`
-	// Y为上架状态
+	// Y表示上架，N表示下架
 	Display string `json:"display,omitempty" xml:"display,omitempty"`
-	// 最近一次修改时间
-	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// james
 	OwnerMemberDisplayName string `json:"owner_member_display_name,omitempty" xml:"owner_member_display_name,omitempty"`
 	// https://www.alibaba.com/product-detail/Eco-Friendly-100-Biodegradable-Cornstarch-Trash_60832548452.html?spm=a2700.galleryofferlist.normalList.12.6c612db4ueHAW2&fullFirstScreen=true
 	PcDetailUrl string `json:"pc_detail_url,omitempty" xml:"pc_detail_url,omitempty"`
 	// 2020-12-22 12:00:00
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 商品ID
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 2020-12-22 12:00:00
+	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// CK001
+	RedModel string `json:"red_model,omitempty" xml:"red_model,omitempty"`
+	// 产品混淆id
+	ProductId string `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 分组ID
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
+	// 商品明文ID
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商品的主图
 	MainImage *MainImage `json:"main_image,omitempty" xml:"main_image,omitempty"`
-	// 类目ID
+	// 1234
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// true
 	IsSpecific bool `json:"is_specific,omitempty" xml:"is_specific,omitempty"`

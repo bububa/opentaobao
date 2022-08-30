@@ -1,27 +1,6 @@
 {
-	"id": 46139,
-	"name": "alitrip.tuan.hotel.item.sku.update",
-	"apiChineseName": "酒店团购套餐商品SKU更新和新增",
-	"description": "商户对发布的宝贝套餐价格库存信息进行更新，对于已存在的sku，未进行传递则不会进行覆盖。skuId必须为已存在的skuId，暂不支持库存类型的更改。因发布页改造升级，2020.03.05将下线此接口的新增SKU功能，更新SKU功能将保留，但商户2020.03.05后须前往发布页进行宝贝更新后，方可调用本接口。对于日历库存宝贝日历维度的价格和库存数据的更新，此接口存在调用超时的问题，不推荐使用，若有诉求，请使用alitrip.tuan.hotel.item.sku.calendar.update接口（该接口提供增量更新能力），接口地址为https://open.taobao.com/api.htm?docId=48160\u0026docType=2\u0026scopeId=12326",
 	"requestParams": [
 		{
-			"name": "item_id",
-			"type": "Number",
-			"description": "宝贝ID",
-			"required": true
-		},
-		{
-			"name": "cat_id",
-			"type": "Number",
-			"description": "宝贝所属类目",
-			"required": true
-		},
-		{
-			"name": "item_sku_list",
-			"type": "TopTuanItemSkuVO[]",
-			"description": "关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。",
-			"required": true,
-			"maxListSize": 15,
 			"subParams": [
 				{
 					"name": "night_count",
@@ -62,9 +41,6 @@
 					"description": "商家编码"
 				},
 				{
-					"name": "calendar_info",
-					"type": "TopSkuCalendarInfo",
-					"description": "套餐日历库存价格信息，日历库存需完整填写，普通库存请将此项设置为空，示例:(\"calendar_info\": { })",
 					"subParams": [
 						{
 							"name": "end",
@@ -72,9 +48,6 @@
 							"description": "日历库存的结束时间，日历库存必填"
 						},
 						{
-							"name": "diff",
-							"type": "TopSkuDailyInfo[]",
-							"description": "日历库存价格信息，日历库存必填",
 							"subParams": [
 								{
 									"name": "d",
@@ -91,14 +64,20 @@
 									"type": "Number",
 									"description": "库存，日历库存必填"
 								}
-							]
+							],
+							"name": "diff",
+							"type": "TopSkuDailyInfo[]",
+							"description": "日历库存价格信息，日历库存必填"
 						},
 						{
 							"name": "begin",
 							"type": "String",
 							"description": "日历库存的开始时间，日历库存必填"
 						}
-					]
+					],
+					"name": "calendar_info",
+					"type": "TopSkuCalendarInfo",
+					"description": "套餐日历库存价格信息，日历库存需完整填写，普通库存请将此项设置为空，示例:(\"calendar_info\": { })"
 				},
 				{
 					"name": "sku_id",
@@ -111,7 +90,24 @@
 					"type": "Number",
 					"description": "使用次数"
 				}
-			]
+			],
+			"name": "item_sku_list",
+			"type": "TopTuanItemSkuVO[]",
+			"description": "关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。",
+			"maxListSize": 15,
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝ID",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "宝贝所属类目",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -126,34 +122,26 @@
 			"description": "卖家ID"
 		},
 		{
-			"name": "top_item_sku_base_info_list",
-			"type": "TopItemSkuBaseInfo []",
-			"description": "商品的sku列表",
 			"subParams": [
 				{
 					"name": "sku_name",
 					"type": "String",
-					"description": "sku名称",
-					"required": true
+					"description": "sku名称"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "商家编码",
-					"required": true
+					"description": "商家编码"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "skuId",
-					"required": true
+					"description": "skuId"
 				}
-			]
-		},
-		{
-			"name": "message",
-			"type": "String",
-			"description": "错误信息"
+			],
+			"name": "top_item_sku_base_info_list",
+			"type": "TopItemSkuBaseInfo []",
+			"description": "商品的sku列表"
 		},
 		{
 			"name": "msg_code",
@@ -164,6 +152,15 @@
 			"name": "status",
 			"type": "Boolean",
 			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alitrip.tuan.hotel.item.sku.update",
+	"apiChineseName": "酒店团购套餐商品SKU更新和新增",
+	"description": "商户对发布的宝贝套餐价格库存信息进行更新，对于已存在的sku，未进行传递则不会进行覆盖。skuId必须为已存在的skuId，暂不支持库存类型的更改。因发布页改造升级，2020.03.05将下线此接口的新增SKU功能，更新SKU功能将保留，但商户2020.03.05后须前往发布页进行宝贝更新后，方可调用本接口。对于日历库存宝贝日历维度的价格和库存数据的更新，此接口存在调用超时的问题，不推荐使用，若有诉求，请使用alitrip.tuan.hotel.item.sku.calendar.update接口（该接口提供增量更新能力），接口地址为https://open.taobao.com/api.htm?docId=48160\u0026docType=2\u0026scopeId=12326",
+	"id": 46139
 }

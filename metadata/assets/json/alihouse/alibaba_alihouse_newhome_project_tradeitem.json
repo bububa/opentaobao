@@ -1,0 +1,152 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部私域楼盘id",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "品类型 1-安心置业 2-特价房 3-0元购 4-大额电商券 5-认购商品 6-楼栋 7-户型 8-房源 9-预存金 10-购房优惠",
+					"required": true
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "优惠类型"
+				},
+				{
+					"name": "outer_tid",
+					"type": "String",
+					"description": "品外部唯一码",
+					"required": true
+				},
+				{
+					"name": "audit_status",
+					"type": "Number",
+					"description": "审核状态",
+					"required": true
+				},
+				{
+					"name": "is_electric_sign",
+					"type": "Number",
+					"description": "是否电子签约"
+				},
+				{
+					"name": "is_verify_confirm",
+					"type": "Number",
+					"description": "是否核销确认"
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "合同主体id"
+				},
+				{
+					"name": "elec_signature_id",
+					"type": "Number",
+					"description": "电子签章id"
+				},
+				{
+					"name": "elec_agreement_id",
+					"type": "Number",
+					"description": "电子协议id"
+				},
+				{
+					"name": "verify_valid_date",
+					"type": "Number",
+					"description": "核销有效期(相对时间)"
+				},
+				{
+					"name": "channel_telephone",
+					"type": "String",
+					"description": "渠道电话"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				},
+				{
+					"name": "verify_deadline",
+					"type": "String",
+					"description": "核销有效期(绝对时间)"
+				},
+				{
+					"name": "is_async_sell",
+					"type": "Number",
+					"description": "是否异步销控 0-否 1-是"
+				},
+				{
+					"subParams": [
+						{
+							"name": "single_item_limit",
+							"type": "Number",
+							"description": "商品级别限购: 一个商品ID, 同一用户限制能下单次数"
+						},
+						{
+							"name": "single_sku_limit",
+							"type": "Number",
+							"description": "SKU级别限购: 一个商品SKUid, 同一用户限制能下单次数"
+						}
+					],
+					"name": "limit_extend",
+					"type": "GoodsLimitDto",
+					"description": "限购信息"
+				},
+				{
+					"name": "bank_card_id",
+					"type": "Number",
+					"description": "结算账户ID"
+				}
+			],
+			"name": "goods_dto",
+			"type": "GoodsDto",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.tradeitem",
+	"apiChineseName": "新房品同步",
+	"description": "新房品同步",
+	"id": 60938
+}

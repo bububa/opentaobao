@@ -1,19 +1,8 @@
 {
-	"id": 42161,
-	"name": "taobao.rdc.aligenius.warehouse.reverse.uploading",
-	"apiChineseName": "销退单上传",
-	"description": "主要用于商家上传仓库销退单信息",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WarehouseReverseUploadingDto",
-			"description": "参数",
 			"subParams": [
 				{
-					"name": "uploading_reverse_d_t_o_list",
-					"type": "UploadingReverseDto[]",
-					"description": "销退单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "extra",
@@ -21,10 +10,6 @@
 							"description": "扩展字段，JSONObject格式"
 						},
 						{
-							"name": "goods_item_d_t_o_list",
-							"type": "WarehouseReverseGoodsItemDto[]",
-							"description": "商品行列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "extra",
@@ -109,7 +94,11 @@
 									"type": "String",
 									"description": "货品行ID"
 								}
-							]
+							],
+							"name": "goods_item_d_t_o_list",
+							"type": "WarehouseReverseGoodsItemDto[]",
+							"description": "商品行列表",
+							"required": true
 						},
 						{
 							"name": "warehouse_name",
@@ -187,9 +176,16 @@
 							"type": "String",
 							"description": "销退单ID"
 						}
-					]
+					],
+					"name": "uploading_reverse_d_t_o_list",
+					"type": "UploadingReverseDto[]",
+					"description": "销退单列表",
+					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WarehouseReverseUploadingDto",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
@@ -208,5 +204,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.warehouse.reverse.uploading",
+	"apiChineseName": "销退单上传",
+	"description": "主要用于商家上传仓库销退单信息",
+	"id": 42161
 }

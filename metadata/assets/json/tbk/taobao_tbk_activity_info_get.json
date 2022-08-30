@@ -1,9 +1,11 @@
 {
-	"id": 48340,
-	"name": "taobao.tbk.activity.info.get",
-	"apiChineseName": "淘宝客-推广者-官方活动转链",
-	"description": "支持入参推广位和官方活动会场ID，获取活动信息和推广链接，包含推广长链接、短链接、淘口令、微信推广二维码地址等。改该API支持二方、三方类型的转链。官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取。",
 	"requestParams": [
+		{
+			"name": "activity_material_id",
+			"type": "String",
+			"description": "官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取",
+			"required": true
+		},
 		{
 			"name": "adzone_id",
 			"type": "Number",
@@ -21,12 +23,6 @@
 			"description": "渠道关系id"
 		},
 		{
-			"name": "activity_material_id",
-			"type": "String",
-			"description": "官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取",
-			"required": true
-		},
-		{
 			"name": "union_id",
 			"type": "String",
 			"description": "自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道"
@@ -34,65 +30,60 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "wx_qrcode_url",
 					"type": "String",
-					"description": "【本地化】微信推广二维码地址",
-					"required": true
+					"description": "【本地化】微信推广二维码地址"
 				},
 				{
 					"name": "click_url",
 					"type": "String",
-					"description": "淘客推广长链",
-					"required": true
+					"description": "淘客推广长链"
 				},
 				{
 					"name": "short_click_url",
 					"type": "String",
-					"description": "淘客推广短链",
-					"required": true
+					"description": "淘客推广短链"
 				},
 				{
 					"name": "terminal_type",
 					"type": "String",
-					"description": "投放平台, 1-PC 2-无线",
-					"required": true
+					"description": "投放平台, 1-PC 2-无线"
 				},
 				{
 					"name": "material_oss_url",
 					"type": "String",
-					"description": "物料素材下载地址",
-					"required": true
+					"description": "物料素材下载地址"
 				},
 				{
 					"name": "page_name",
 					"type": "String",
-					"description": "会场名称",
-					"required": true
+					"description": "会场名称"
 				},
 				{
 					"name": "page_start_time",
 					"type": "String",
-					"description": "活动开始时间",
-					"required": true
+					"description": "活动开始时间"
 				},
 				{
 					"name": "page_end_time",
 					"type": "String",
-					"description": "活动结束时间",
-					"required": true
+					"description": "活动结束时间"
 				},
 				{
 					"name": "wx_miniprogram_path",
 					"type": "String",
-					"description": "【本地化】微信小程序路径",
-					"required": true
+					"description": "【本地化】微信小程序路径"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.tbk.activity.info.get",
+	"apiChineseName": "淘宝客-推广者-官方活动转链",
+	"description": "支持入参推广位和官方活动会场ID，获取活动信息和推广链接，包含推广长链接、短链接、淘口令、微信推广二维码地址等。改该API支持二方、三方类型的转链。官方活动会场ID，从淘宝客后台“我要推广-活动推广”中获取。",
+	"id": 48340
 }

@@ -1,14 +1,17 @@
 {
-	"id": 48147,
-	"name": "tmall.traceplatform.ticket.order.upload",
-	"apiChineseName": "上传小票数据",
-	"description": "upsertOrderBySeller",
 	"requestParams": [
 		{
-			"name": "ticket_order",
-			"type": "TicketOrderUpdator",
-			"description": "上传小票参数",
 			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "子订单号"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名"
+				},
 				{
 					"name": "agent_name",
 					"type": "String",
@@ -28,16 +31,6 @@
 					"name": "agent_pay_time",
 					"type": "Date",
 					"description": "买手付款时间"
-				},
-				{
-					"name": "biz_order_id",
-					"type": "Number",
-					"description": "子订单号"
-				},
-				{
-					"name": "brand_name",
-					"type": "String",
-					"description": "品牌名"
 				},
 				{
 					"name": "locker",
@@ -69,34 +62,38 @@
 					"type": "String[]",
 					"description": "小票截图"
 				}
-			]
+			],
+			"name": "ticket_order",
+			"type": "TicketOrderUpdator",
+			"description": "上传小票参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "参数code",
-					"required": true
+					"description": "参数code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "参数msg",
-					"required": true
+					"description": "参数msg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "参数success",
-					"required": true
+					"description": "参数success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.ticket.order.upload",
+	"apiChineseName": "上传小票数据",
+	"description": "upsertOrderBySeller",
+	"id": 48147
 }

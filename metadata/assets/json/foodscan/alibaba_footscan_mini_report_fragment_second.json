@@ -1,8 +1,4 @@
 {
-	"id": 50513,
-	"name": "alibaba.footscan.mini.report.fragment.second",
-	"apiChineseName": "第二只脚生成报告接口",
-	"description": "第二只脚生成报告接口",
 	"requestParams": [
 		{
 			"name": "token",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "req_data",
-			"type": "FilePackageBasicReq",
-			"description": "请求数据",
-			"required": true,
 			"subParams": [
 				{
 					"name": "scan_id",
@@ -52,48 +44,51 @@
 					"description": "第三张图片的文件名",
 					"required": true
 				}
-			]
+			],
+			"name": "req_data",
+			"type": "FilePackageBasicReq",
+			"description": "请求数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "服务出参",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
-					"name": "data",
-					"type": "Data",
-					"description": "返回i数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "scan_id",
 							"type": "String",
-							"description": "扫描ID",
-							"required": true
+							"description": "扫描ID"
 						},
 						{
 							"name": "is_zero",
 							"type": "Boolean",
-							"description": "测量结果为0",
-							"required": true
+							"description": "测量结果为0"
 						}
-					]
+					],
+					"name": "data",
+					"type": "Data",
+					"description": "返回i数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参"
 		}
-	]
+	],
+	"name": "alibaba.footscan.mini.report.fragment.second",
+	"apiChineseName": "第二只脚生成报告接口",
+	"description": "第二只脚生成报告接口",
+	"id": 50513
 }

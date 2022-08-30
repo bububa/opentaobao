@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest struct {
 	model.Params
 	// adgroup主键数组（批量最多支持200个）
-	_adgroupIds []int64
+	_adgroupIds []string
 	// 昵称
 	_nick string
 }
@@ -41,14 +41,14 @@ func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetApiParams() url.Val
 
 // SetAdgroupIds is AdgroupIds Setter
 // adgroup主键数组（批量最多支持200个）
-func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
+func (r *TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) SetAdgroupIds(_adgroupIds []string) error {
 	r._adgroupIds = _adgroupIds
 	r.Set("adgroup_ids", _adgroupIds)
 	return nil
 }
 
 // GetAdgroupIds AdgroupIds Getter
-func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetAdgroupIds() []int64 {
+func (r TaobaoSimbaAdgroupMobilediscountDeleteAPIRequest) GetAdgroupIds() []string {
 	return r._adgroupIds
 }
 

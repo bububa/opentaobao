@@ -1,14 +1,6 @@
 {
-	"id": 49265,
-	"name": "cainiao.cntec.item.change.message",
-	"apiChineseName": "商品变更消息",
-	"description": "供货商商品信息变更消息",
 	"requestParams": [
 		{
-			"name": "item_change_message",
-			"type": "SupplyItemChangeMessage",
-			"description": "供应商商品变更信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "product_codes",
@@ -22,40 +14,44 @@
 					"description": "供应商门店，最大20个",
 					"required": true
 				}
-			]
+			],
+			"name": "item_change_message",
+			"type": "SupplyItemChangeMessage",
+			"description": "供应商商品变更信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "调用返回的result结构体",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "是否成功接受到请求",
-					"required": true
+					"description": "是否成功接受到请求"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "调用返回的result结构体"
 		}
-	]
+	],
+	"name": "cainiao.cntec.item.change.message",
+	"apiChineseName": "商品变更消息",
+	"description": "供货商商品信息变更消息",
+	"id": 49265
 }

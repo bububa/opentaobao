@@ -1,8 +1,4 @@
 {
-	"id": 21256,
-	"name": "taobao.simba.keywords.changed.get",
-	"apiChineseName": "分页获取修改过的关键词ID、宝贝id、修改时间",
-	"description": "分页获取修改过的关键词ID、宝贝id、修改时间",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,22 +14,16 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "返回的每页数据量大小,默认200最大1000",
-			"maxValue": 1000,
-			"minValue": 1
+			"description": "返回的每页数据量大小,默认200最大1000"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "返回的第几页数据，默认为1",
-			"minValue": 1
+			"description": "返回的第几页数据，默认为1"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "keywords",
-			"type": "KeywordPage",
-			"description": "关键词分页对象",
 			"subParams": [
 				{
 					"name": "page_size",
@@ -51,9 +41,6 @@
 					"description": "所查询的数据总数，只有当返回第一页数据时有值，当要求返回的数据非第一页时，此返回值无效"
 				},
 				{
-					"name": "keyword_list",
-					"type": "Keyword[]",
-					"description": "关键词列表",
 					"subParams": [
 						{
 							"name": "nick",
@@ -61,54 +48,9 @@
 							"description": "主人昵称"
 						},
 						{
-							"name": "campaign_id",
-							"type": "Number",
-							"description": "推广计划id"
-						},
-						{
-							"name": "adgroup_id",
-							"type": "Number",
-							"description": "推广组id"
-						},
-						{
 							"name": "keyword_id",
 							"type": "Number",
 							"description": "关键词id"
-						},
-						{
-							"name": "word",
-							"type": "String",
-							"description": "关键词"
-						},
-						{
-							"name": "max_price",
-							"type": "Number",
-							"description": "关键词出价，单位为分，不能小于5"
-						},
-						{
-							"name": "is_default_price",
-							"type": "Boolean",
-							"description": "是否使用推广组默认出价，true-是；false-否；"
-						},
-						{
-							"name": "audit_status",
-							"type": "String",
-							"description": "审核状态： \u003cbr/\u003eaudit_wait-待审核；\u003cbr/\u003eaudit_pass-审核通过(上线)；\u003cbr/\u003eaudit_reject-审核拒绝；\u003cbr/\u003eaudit_offline-审核直接下线；\u003cbr/\u003e默认为 audit_pass。"
-						},
-						{
-							"name": "audit_desc",
-							"type": "String",
-							"description": "审核拒绝原因描述"
-						},
-						{
-							"name": "is_garbage",
-							"type": "Boolean",
-							"description": "是否是垃圾词，false-不是；true-是；垃圾词是近期无点击的词"
-						},
-						{
-							"name": "create_time",
-							"type": "Date",
-							"description": "创建时间"
 						},
 						{
 							"name": "modified_time",
@@ -116,18 +58,23 @@
 							"description": "最后修改时间"
 						},
 						{
-							"name": "qscore",
-							"type": "String",
-							"description": "词质量得分"
-						},
-						{
-							"name": "match_scope",
-							"type": "String",
-							"description": "匹配模式"
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "推广组id"
 						}
-					]
+					],
+					"name": "keyword_list",
+					"type": "Keyword[]",
+					"description": "关键词列表"
 				}
-			]
+			],
+			"name": "keywords",
+			"type": "KeywordPage",
+			"description": "关键词分页对象"
 		}
-	]
+	],
+	"name": "taobao.simba.keywords.changed.get",
+	"apiChineseName": "分页获取修改过的关键词ID、宝贝id、修改时间",
+	"description": "分页获取修改过的关键词ID、宝贝id、修改时间",
+	"id": 21256
 }

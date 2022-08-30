@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "有SKU情况下必填；无SKU情况下为空（同一个itemid不可以同时既传有sku又传空的情况）"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP货品id（包括组合货品和原子货品）",
+							"required": true
+						}
+					],
+					"name": "item_mappings",
+					"type": "ItemMapping[]",
+					"description": "商货品关联列表",
+					"required": true
+				}
+			],
+			"name": "item_mapping_update_request",
+			"type": "ItemMappingUpdateAsyncRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "有SKU情况下必填；无SKU情况下为空（同一个itemid不可以同时既传有sku又传空的情况）"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP货品id（包括组合货品和原子货品）"
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "响应码"
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "响应信息"
+						}
+					],
+					"name": "data",
+					"type": "DataDetail[]",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=接收失败，1=接收成功"
+				}
+			],
+			"name": "item_mapping_update_response",
+			"type": "ItemMappingUpdateAsyncResponse",
+			"description": "请求出参"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.itemmapping.update.async",
+	"apiChineseName": "创建/更新商货品关联关系",
+	"description": "创建/更新商货品关联关系",
+	"id": 63306
+}

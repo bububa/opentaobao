@@ -1,8 +1,4 @@
 {
-	"id": 32404,
-	"name": "taobao.apple.newuser.activate.notify",
-	"apiChineseName": "新用户激活通知接口",
-	"description": "资和信主动通知激活结果",
 	"requestParams": [
 		{
 			"name": "result_code",
@@ -15,9 +11,6 @@
 			"description": "处理结果中文描述"
 		},
 		{
-			"name": "main_data",
-			"type": "AppleTopActivateNotifyDo",
-			"description": "主业务参数",
 			"subParams": [
 				{
 					"name": "card_no",
@@ -59,7 +52,10 @@
 					"type": "String",
 					"description": "电子卡密码"
 				}
-			]
+			],
+			"name": "main_data",
+			"type": "AppleTopActivateNotifyDo",
+			"description": "主业务参数"
 		}
 	],
 	"responseParams": [
@@ -73,5 +69,9 @@
 			"type": "String",
 			"description": "处理结果码"
 		}
-	]
+	],
+	"name": "taobao.apple.newuser.activate.notify",
+	"apiChineseName": "新用户激活通知接口",
+	"description": "资和信主动通知激活结果",
+	"id": 32404
 }

@@ -1,13 +1,6 @@
 {
-	"id": 41491,
-	"name": "alibaba.ele.fengniao.chainstore.contract.cancel",
-	"apiChineseName": "门店解约接口",
-	"description": "调用成功后，门店和蜂鸟解除物流合同，不能再使用此门店推单",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "app_id",
@@ -24,7 +17,10 @@
 					"type": "String[]",
 					"description": "门店code"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "msg"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.chainstore.contract.cancel",
+	"apiChineseName": "门店解约接口",
+	"description": "调用成功后，门店和蜂鸟解除物流合同，不能再使用此门店推单",
+	"id": 41491
 }

@@ -1,8 +1,4 @@
 {
-	"id": 44413,
-	"name": "alibaba.icbu.product.batch.update.display",
-	"apiChineseName": "商品批量上下架接口",
-	"description": "给国际站的三方服务商提供批量上下架接口",
 	"requestParams": [
 		{
 			"name": "new_display",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "本次操作是否成功，true表示成功，false表示失败"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.batch.update.display",
+	"apiChineseName": "商品批量上下架接口",
+	"description": "给国际站的三方服务商提供批量上下架接口",
+	"id": 44413
 }

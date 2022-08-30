@@ -1,8 +1,4 @@
 {
-	"id": 53326,
-	"name": "alibaba.legal.case.entrust.get",
-	"apiChineseName": "委托",
-	"description": "获取委托案件的基本信息",
 	"requestParams": [
 		{
 			"name": "entrust_id",
@@ -13,129 +9,114 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ServiceResult",
-			"description": "alinkappserver系统返回的通用结果类",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "EntrustModel",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
-							"name": "attachment_list",
-							"type": "FileModel[]",
-							"description": "附件",
-							"required": true,
 							"subParams": [
 								{
 									"name": "key",
 									"type": "String",
-									"description": "文件key",
-									"required": true
+									"description": "文件key"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "文件名",
-									"required": true
+									"description": "文件名"
 								}
-							]
+							],
+							"name": "attachment_list",
+							"type": "FileModel[]",
+							"description": "附件"
 						},
 						{
 							"name": "case_ids",
 							"type": "Number[]",
-							"description": "案件ids",
-							"required": true
+							"description": "案件ids"
 						},
 						{
 							"name": "deadline",
 							"type": "Date",
-							"description": "调解截止时间",
-							"required": true
+							"description": "调解截止时间"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
 							"name": "entrust_code",
 							"type": "String",
-							"description": "委托编号",
-							"required": true
+							"description": "委托编号"
 						},
 						{
 							"name": "entrust_party",
 							"type": "String",
-							"description": "委托方名称",
-							"required": true
+							"description": "委托方名称"
 						},
 						{
 							"name": "entrust_people",
 							"type": "String",
-							"description": "委托人",
-							"required": true
+							"description": "委托人"
 						},
 						{
 							"name": "entrust_time",
 							"type": "Date",
-							"description": "委托时间",
-							"required": true
+							"description": "委托时间"
 						},
 						{
 							"name": "entrust_types",
 							"type": "String[]",
-							"description": "委托项",
-							"required": true
+							"description": "委托项"
 						},
 						{
 							"name": "lvms_entrust_code",
 							"type": "String",
-							"description": "lvms委托编号",
-							"required": true
+							"description": "lvms委托编号"
 						},
 						{
 							"name": "main_lawyer",
 							"type": "String",
-							"description": "主要负责律师",
-							"required": true
+							"description": "主要负责律师"
 						},
 						{
 							"name": "suggest",
 							"type": "String",
-							"description": "策略和建议",
-							"required": true
+							"description": "策略和建议"
 						},
 						{
 							"name": "supplier_code",
 							"type": "String",
-							"description": "供应商编号",
-							"required": true
+							"description": "供应商编号"
 						},
 						{
 							"name": "supplier_name",
 							"type": "String",
-							"description": "供应商名称",
-							"required": true
+							"description": "供应商名称"
 						}
-					]
+					],
+					"name": "content",
+					"type": "EntrustModel",
+					"description": "content"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "error",
-					"required": true
+					"description": "error"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
 		}
-	]
+	],
+	"name": "alibaba.legal.case.entrust.get",
+	"apiChineseName": "委托",
+	"description": "获取委托案件的基本信息",
+	"id": 53326
 }

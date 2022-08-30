@@ -18,10 +18,10 @@ type TaobaoBusTvmrefundorderSetAPIRequest struct {
 	_insuranceRefundDetails []InsuranceRefundDetail
 	// 飞猪订单号
 	_alitripOrderId string
-	// 退款原因
-	_refundReason string
 	// 批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可
 	_refundBatchNo string
+	// 退款原因
+	_refundReason string
 	// 退款金额（单位分） 票金额
 	_refundAmount int64
 }
@@ -86,19 +86,6 @@ func (r TaobaoBusTvmrefundorderSetAPIRequest) GetAlitripOrderId() string {
 	return r._alitripOrderId
 }
 
-// SetRefundReason is RefundReason Setter
-// 退款原因
-func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundReason(_refundReason string) error {
-	r._refundReason = _refundReason
-	r.Set("refund_reason", _refundReason)
-	return nil
-}
-
-// GetRefundReason RefundReason Getter
-func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundReason() string {
-	return r._refundReason
-}
-
 // SetRefundBatchNo is RefundBatchNo Setter
 // 批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可
 func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundBatchNo(_refundBatchNo string) error {
@@ -110,6 +97,19 @@ func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundBatchNo(_refundBatchNo s
 // GetRefundBatchNo RefundBatchNo Getter
 func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundBatchNo() string {
 	return r._refundBatchNo
+}
+
+// SetRefundReason is RefundReason Setter
+// 退款原因
+func (r *TaobaoBusTvmrefundorderSetAPIRequest) SetRefundReason(_refundReason string) error {
+	r._refundReason = _refundReason
+	r.Set("refund_reason", _refundReason)
+	return nil
+}
+
+// GetRefundReason RefundReason Getter
+func (r TaobaoBusTvmrefundorderSetAPIRequest) GetRefundReason() string {
+	return r._refundReason
 }
 
 // SetRefundAmount is RefundAmount Setter

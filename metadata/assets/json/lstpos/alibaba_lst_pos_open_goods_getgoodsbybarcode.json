@@ -1,8 +1,4 @@
 {
-	"id": 32948,
-	"name": "alibaba.lst.pos.open.goods.getgoodsbybarcode",
-	"apiChineseName": "ISV条码库查询接口",
-	"description": "ISV条码库查询接口",
 	"requestParams": [
 		{
 			"name": "barcode",
@@ -13,67 +9,62 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果对象",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息描述",
-					"required": true
+					"description": "错误信息描述"
 				},
 				{
-					"name": "module",
-					"type": "GoodsDto",
-					"description": "接口具体返回的业务数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "spec",
 							"type": "String",
-							"description": "规格",
-							"required": true
+							"description": "规格"
 						},
 						{
 							"name": "shot_title",
 							"type": "String",
-							"description": "简称",
-							"required": true
+							"description": "简称"
 						},
 						{
 							"name": "reserve_price",
 							"type": "Number",
-							"description": "零售价，单位为分",
-							"required": true
+							"description": "零售价，单位为分"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "商品标题",
-							"required": true
+							"description": "商品标题"
 						},
 						{
 							"name": "bar_code",
 							"type": "String",
-							"description": "商品条码,唯一",
-							"required": true
+							"description": "商品条码,唯一"
 						}
-					]
+					],
+					"name": "module",
+					"type": "GoodsDto",
+					"description": "接口具体返回的业务数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "业务错误码",
-					"required": true
+					"description": "业务错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果对象"
 		}
-	]
+	],
+	"name": "alibaba.lst.pos.open.goods.getgoodsbybarcode",
+	"apiChineseName": "ISV条码库查询接口",
+	"description": "ISV条码库查询接口",
+	"id": 32948
 }

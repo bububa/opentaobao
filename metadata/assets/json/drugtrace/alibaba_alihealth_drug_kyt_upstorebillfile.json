@@ -1,8 +1,4 @@
 {
-	"id": 41268,
-	"name": "alibaba.alihealth.drug.kyt.upstorebillfile",
-	"apiChineseName": "上传零售出入库单(上传文件)",
-	"description": "上传零售出入库单(上传文件)",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -84,26 +80,10 @@
 			"name": "response_success",
 			"type": "Boolean",
 			"description": "返回接口"
-		},
-		{
-			"name": "model",
-			"type": "String",
-			"description": "返回ID"
-		},
-		{
-			"name": "msg_code",
-			"type": "String",
-			"description": "请求编码"
-		},
-		{
-			"name": "msg_info",
-			"type": "String",
-			"description": "请求描述"
-		},
-		{
-			"name": "response_success",
-			"type": "Boolean",
-			"description": "返回接口"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.upstorebillfile",
+	"apiChineseName": "上传零售出入库单(上传文件)",
+	"description": "上传零售出入库单(上传文件)",
+	"id": 41268
 }

@@ -16,12 +16,12 @@ type TaobaoXhotelInfoListGetAPIRequest struct {
 	_pid string
 	// 城市code
 	_cityCode int64
+	// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
+	_shid int64
 	// 分页参数：当前页数，从1开始计数。<br/>默认值：1
 	_currentPage int64
 	// 分页参数：每页酒店数量。最小值1，最大值为50。默认值：20
 	_pageSize int64
-	// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
-	_shid int64
 }
 
 // NewTaobaoXhotelInfoListGetRequest 初始化TaobaoXhotelInfoListGetAPIRequest对象
@@ -71,6 +71,19 @@ func (r TaobaoXhotelInfoListGetAPIRequest) GetCityCode() int64 {
 	return r._cityCode
 }
 
+// SetShid is Shid Setter
+// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
+func (r *TaobaoXhotelInfoListGetAPIRequest) SetShid(_shid int64) error {
+	r._shid = _shid
+	r.Set("shid", _shid)
+	return nil
+}
+
+// GetShid Shid Getter
+func (r TaobaoXhotelInfoListGetAPIRequest) GetShid() int64 {
+	return r._shid
+}
+
 // SetCurrentPage is CurrentPage Setter
 // 分页参数：当前页数，从1开始计数。<br/>默认值：1
 func (r *TaobaoXhotelInfoListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
@@ -95,17 +108,4 @@ func (r *TaobaoXhotelInfoListGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoXhotelInfoListGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetShid is Shid Setter
-// 标准酒店id，如果需要查询单条酒店的信息，需要传入此参数
-func (r *TaobaoXhotelInfoListGetAPIRequest) SetShid(_shid int64) error {
-	r._shid = _shid
-	r.Set("shid", _shid)
-	return nil
-}
-
-// GetShid Shid Getter
-func (r TaobaoXhotelInfoListGetAPIRequest) GetShid() int64 {
-	return r._shid
 }

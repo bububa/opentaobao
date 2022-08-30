@@ -1,8 +1,4 @@
 {
-	"id": 29200,
-	"name": "alitrip.btrip.invoice.get",
-	"apiChineseName": "获取用户可用发票列表",
-	"description": "差旅申请用户获取可用发票列表",
 	"requestParams": [
 		{
 			"name": "corp_id",
@@ -19,49 +15,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BtriphomeResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "invoice_list",
-					"type": "InvoiceList[]",
-					"description": "module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "title",
 							"type": "String",
-							"description": "title",
-							"required": true
+							"description": "title"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						}
-					]
+					],
+					"name": "invoice_list",
+					"type": "InvoiceList[]",
+					"description": "module"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "resultMsg",
-					"required": true
+					"description": "resultMsg"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "resultCode",
-					"required": true
+					"description": "resultCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.btrip.invoice.get",
+	"apiChineseName": "获取用户可用发票列表",
+	"description": "差旅申请用户获取可用发票列表",
+	"id": 29200
 }

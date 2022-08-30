@@ -1,15 +1,11 @@
 {
-	"id": 10,
-	"name": "taobao.products.get",
-	"apiChineseName": "获取产品列表",
-	"description": "根据淘宝会员帐号搜索所有产品信息，推荐使用taobao.products.search\n注意：支持分页，每页最多返回100条,默认值为40,页码从1开始，默认为第一页",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用\",\"分隔",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "nick",
@@ -30,9 +26,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "products",
-			"type": "Product []",
-			"description": "返回具体信息为入参fields请求的字段信息",
 			"subParams": [
 				{
 					"name": "name",
@@ -70,9 +63,6 @@
 					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 				},
 				{
-					"name": "product_prop_imgs",
-					"type": "ProductPropImg[]",
-					"description": "产品的属性图片.比如说黄色对应的产品图片,绿色对应的产品图片。fields中设置为product_prop_imgs.id、 product_prop_imgs.props、product_prop_imgs.url、product_prop_imgs.position等形式就会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -109,7 +99,10 @@
 							"type": "Date",
 							"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 						}
-					]
+					],
+					"name": "product_prop_imgs",
+					"type": "ProductPropImg[]",
+					"description": "产品的属性图片.比如说黄色对应的产品图片,绿色对应的产品图片。fields中设置为product_prop_imgs.id、 product_prop_imgs.props、product_prop_imgs.url、product_prop_imgs.position等形式就会返回相应的字段"
 				},
 				{
 					"name": "status",
@@ -167,9 +160,6 @@
 					"description": "产品的销售属性字符串列表.格式同props_str(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\u0026quot;:\u0026quot;被转换为：\u0026quot;#cln#\u0026quot;;  分号\u0026quot;;\u0026quot;被转换为：\u0026quot;#scln#\u0026quot;\u003c/font\u003e)"
 				},
 				{
-					"name": "product_imgs",
-					"type": "ProductImg[]",
-					"description": "产品的子图片.目前最多支持4张。fields中设置为product_imgs.id、product_imgs.url、product_imgs.position 等形式就会返回相应的字段",
 					"subParams": [
 						{
 							"name": "id",
@@ -201,9 +191,19 @@
 							"type": "Date",
 							"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 						}
-					]
+					],
+					"name": "product_imgs",
+					"type": "ProductImg[]",
+					"description": "产品的子图片.目前最多支持4张。fields中设置为product_imgs.id、product_imgs.url、product_imgs.position 等形式就会返回相应的字段"
 				}
-			]
+			],
+			"name": "products",
+			"type": "Product []",
+			"description": "返回具体信息为入参fields请求的字段信息"
 		}
-	]
+	],
+	"name": "taobao.products.get",
+	"apiChineseName": "获取产品列表",
+	"description": "根据淘宝会员帐号搜索所有产品信息，推荐使用taobao.products.search\n注意：支持分页，每页最多返回100条,默认值为40,页码从1开始，默认为第一页",
+	"id": 10
 }

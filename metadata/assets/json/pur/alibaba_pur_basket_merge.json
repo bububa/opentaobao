@@ -1,13 +1,6 @@
 {
-	"id": 49500,
-	"name": "alibaba.pur.basket.merge",
-	"apiChineseName": "合并购物车",
-	"description": "采购商城接入第三方商家合并购物车接口服务",
 	"requestParams": [
 		{
-			"name": "param_mall_merge_cart_request_d_t_o",
-			"type": "MallMergeCartRequestDto",
-			"description": "合并购物车入参",
 			"subParams": [
 				{
 					"name": "app_code",
@@ -16,10 +9,12 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "MallItemDto[]",
-					"description": "合并的商品行",
 					"subParams": [
+						{
+							"name": "contract_code",
+							"type": "String",
+							"description": "合同单号"
+						},
 						{
 							"name": "currency_code",
 							"type": "String",
@@ -97,17 +92,15 @@
 							"required": true
 						},
 						{
-							"name": "contract_code",
-							"type": "String",
-							"description": "合同单号"
-						},
-						{
 							"name": "item_url",
 							"type": "String",
 							"description": "产品详情链接",
 							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "MallItemDto[]",
+					"description": "合并的商品行"
 				},
 				{
 					"name": "order_id",
@@ -121,40 +114,43 @@
 					"description": "用户加密id",
 					"required": true
 				}
-			]
+			],
+			"name": "param_mall_merge_cart_request_d_t_o",
+			"type": "MallMergeCartRequestDto",
+			"description": "合并购物车入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "redirect_url",
 					"type": "String",
-					"description": "https://",
-					"required": true
+					"description": "https://"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.basket.merge",
+	"apiChineseName": "合并购物车",
+	"description": "采购商城接入第三方商家合并购物车接口服务",
+	"id": 49500
 }

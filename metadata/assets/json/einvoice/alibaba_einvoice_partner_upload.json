@@ -1,8 +1,4 @@
 {
-	"id": 36181,
-	"name": "alibaba.einvoice.partner.upload",
-	"apiChineseName": "服务商发票上传接口（非授权）",
-	"description": "服务商发票上传接口（非授权）",
 	"requestParams": [
 		{
 			"name": "normal_invoice_no",
@@ -87,5 +83,9 @@
 			"type": "Boolean",
 			"description": "上传结果"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.partner.upload",
+	"apiChineseName": "服务商发票上传接口（非授权）",
+	"description": "服务商发票上传接口（非授权）",
+	"id": 36181
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42561,
-	"name": "youku.ott.pay.order.authpay",
-	"apiChineseName": "委托代扣服务",
-	"description": "应用中心sdk连续包月委托代扣服务",
 	"requestParams": [
 		{
 			"name": "buyer",
@@ -36,41 +32,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "TvOrderResultDto",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "qcode_url",
 					"type": "String",
-					"description": "qcodeUrl",
-					"required": true
+					"description": "qcodeUrl"
 				},
 				{
 					"name": "version_code",
 					"type": "String",
-					"description": "版本号",
-					"required": true
+					"description": "版本号"
 				},
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "cp本次订单号",
-					"required": true
+					"description": "cp本次订单号"
 				},
 				{
 					"name": "cp_order_no",
 					"type": "String",
-					"description": "cp原始订单号",
-					"required": true
+					"description": "cp原始订单号"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "data",
+			"type": "TvOrderResultDto",
+			"description": "data"
 		}
-	]
+	],
+	"name": "youku.ott.pay.order.authpay",
+	"apiChineseName": "委托代扣服务",
+	"description": "应用中心sdk连续包月委托代扣服务",
+	"id": 42561
 }

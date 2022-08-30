@@ -1,14 +1,6 @@
 {
-	"id": 27177,
-	"name": "taobao.elife.lifecard.query",
-	"apiChineseName": "查询交易结果",
-	"description": "卖家在交易状态不明的情况下, 查询交易结果.",
 	"requestParams": [
 		{
-			"name": "query_request",
-			"type": "ConsumeRequest",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "outer_store_id",
@@ -41,7 +33,11 @@
 					"type": "String",
 					"description": "收银员号"
 				}
-			]
+			],
+			"name": "query_request",
+			"type": "ConsumeRequest",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -70,5 +66,9 @@
 			"type": "Number",
 			"description": "inflateAmount"
 		}
-	]
+	],
+	"name": "taobao.elife.lifecard.query",
+	"apiChineseName": "查询交易结果",
+	"description": "卖家在交易状态不明的情况下, 查询交易结果.",
+	"id": 27177
 }

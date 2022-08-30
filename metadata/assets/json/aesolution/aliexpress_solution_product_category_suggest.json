@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "product title",
+			"required": true
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "language",
+			"required": true
+		},
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "product main image"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "id_path",
+					"type": "Number[]",
+					"description": "category id path"
+				},
+				{
+					"name": "name_path",
+					"type": "String[]",
+					"description": "category name path"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "category name"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "category id"
+				}
+			],
+			"name": "suggest_category_list",
+			"type": "SuggestCategory []",
+			"description": "suggest category list, order by priority"
+		}
+	],
+	"name": "aliexpress.solution.product.category.suggest",
+	"apiChineseName": "Suggest product categories",
+	"description": "Suggest product categories by title and image.",
+	"id": 61331
+}

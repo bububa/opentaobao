@@ -58,7 +58,7 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	_operator string
 	// 父rpcode，使用场景：当一个rp发布变价rate的时候，用于下单时候传递约定的rpcode给外部
 	_parentRpCode string
-	// 更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,,     super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标
+	// 更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,    super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标, free-room 表示免房商品
 	_tagJson string
 	// 协议保留房提前x小时自动确认时间 比如设置为6 那么从入住当日24点往前推6小时即18:00以前可以自动确认有房，否则是待确认
 	_allotmentReleaseTime string
@@ -80,17 +80,21 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	_memberDiscountCal string
 	// 卖点
 	_benefits string
-	// 活动类型。1通兑, 4:超级房券
+	// 活动类型。1通兑 4超级房券 8直连免房
 	_activityType string
 	// 入住人限制
 	_guestLimit string
 	// 在线预约关联关系推送，priceRuleNumber：加价规则序号
 	_onlineBookingBindingInfo string
+	// rp的权益信息。1. 额外积分 2. 优惠价格 3. 套餐权益 4.行政礼遇
+	_rights string
+	// 商业化充值类型 seller充值到卖家 hotel充值到门店
+	_freeRoomChargeDstRole string
 	// -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
 	_breakfastCount int64
 	// 最小入住天数（1-90）。默认1,小时房RP请设置为1
 	_minDays int64
-	// 最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1
+	// 最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1,个别卖家支持180
 	_maxDays int64
 	// 首日入住房间数（1-99）。默认1。【废弃】
 	_minAmount int64
@@ -453,7 +457,7 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetParentRpCode() string {
 }
 
 // SetTagJson is TagJson Setter
-// 更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,,     super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标
+// 更新RP时的 打标和去标 需求, 0 就是 去标, 1 就是打标,    key的含义:    non-direct-RP 表示非直连RP,    super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。   base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan,       ebk-tail-room-RP 表示 ebk尾房rate plan级别标, free-room 表示免房商品
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetTagJson(_tagJson string) error {
 	r._tagJson = _tagJson
 	r.Set("tag_json", _tagJson)
@@ -596,7 +600,7 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetBenefits() string {
 }
 
 // SetActivityType is ActivityType Setter
-// 活动类型。1通兑, 4:超级房券
+// 活动类型。1通兑 4超级房券 8直连免房
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetActivityType(_activityType string) error {
 	r._activityType = _activityType
 	r.Set("activity_type", _activityType)
@@ -634,6 +638,32 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetOnlineBookingBindingInfo() stri
 	return r._onlineBookingBindingInfo
 }
 
+// SetRights is Rights Setter
+// rp的权益信息。1. 额外积分 2. 优惠价格 3. 套餐权益 4.行政礼遇
+func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRights(_rights string) error {
+	r._rights = _rights
+	r.Set("rights", _rights)
+	return nil
+}
+
+// GetRights Rights Getter
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRights() string {
+	return r._rights
+}
+
+// SetFreeRoomChargeDstRole is FreeRoomChargeDstRole Setter
+// 商业化充值类型 seller充值到卖家 hotel充值到门店
+func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetFreeRoomChargeDstRole(_freeRoomChargeDstRole string) error {
+	r._freeRoomChargeDstRole = _freeRoomChargeDstRole
+	r.Set("free_room_charge_dst_role", _freeRoomChargeDstRole)
+	return nil
+}
+
+// GetFreeRoomChargeDstRole FreeRoomChargeDstRole Getter
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetFreeRoomChargeDstRole() string {
+	return r._freeRoomChargeDstRole
+}
+
 // SetBreakfastCount is BreakfastCount Setter
 // -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCount(_breakfastCount int64) error {
@@ -661,7 +691,7 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMinDays() int64 {
 }
 
 // SetMaxDays is MaxDays Setter
-// 最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1
+// 最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1,个别卖家支持180
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMaxDays(_maxDays int64) error {
 	r._maxDays = _maxDays
 	r.Set("max_days", _maxDays)

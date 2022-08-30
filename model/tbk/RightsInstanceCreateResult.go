@@ -10,4 +10,6 @@ type RightsInstanceCreateResult struct {
 	VegasCode string `json:"vegas_code,omitempty" xml:"vegas_code,omitempty"`
 	// 创建完成后资金账户可用资金，单位元，保留2位小数
 	AvailableFee string `json:"available_fee,omitempty" xml:"available_fee,omitempty"`
+	// 媒体针对此商品今日剩余可领取淘礼金数量
+	ItemTodayNumLeft int64 `json:"item_today_num_left,omitempty" xml:"item_today_num_left,omitempty"`
 }

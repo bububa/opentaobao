@@ -12,12 +12,12 @@ import (
 // 作废一张已开具的纸票，开票日期在当月，产生逆向时作废即可，开票日期跨月则冲红蓝票
 type AlibabaEinvoicePaperInvalidAPIRequest struct {
 	model.Params
+	// 作废操作人
+	_invalidOperator string
 	// 发票代码，空白作废时必填
 	_invoiceCode string
 	// 发票号码，空白作废时必填
 	_invoiceNo string
-	// 作废操作人
-	_invalidOperator string
 	// 销售方纳税人识别号
 	_payeeRegisterNo string
 	// 开票流水号
@@ -47,6 +47,19 @@ func (r AlibabaEinvoicePaperInvalidAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetInvalidOperator is InvalidOperator Setter
+// 作废操作人
+func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidOperator(_invalidOperator string) error {
+	r._invalidOperator = _invalidOperator
+	r.Set("invalid_operator", _invalidOperator)
+	return nil
+}
+
+// GetInvalidOperator InvalidOperator Getter
+func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidOperator() string {
+	return r._invalidOperator
+}
+
 // SetInvoiceCode is InvoiceCode Setter
 // 发票代码，空白作废时必填
 func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceCode(_invoiceCode string) error {
@@ -71,19 +84,6 @@ func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvoiceNo(_invoiceNo string) 
 // GetInvoiceNo InvoiceNo Getter
 func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvoiceNo() string {
 	return r._invoiceNo
-}
-
-// SetInvalidOperator is InvalidOperator Setter
-// 作废操作人
-func (r *AlibabaEinvoicePaperInvalidAPIRequest) SetInvalidOperator(_invalidOperator string) error {
-	r._invalidOperator = _invalidOperator
-	r.Set("invalid_operator", _invalidOperator)
-	return nil
-}
-
-// GetInvalidOperator InvalidOperator Getter
-func (r AlibabaEinvoicePaperInvalidAPIRequest) GetInvalidOperator() string {
-	return r._invalidOperator
 }
 
 // SetPayeeRegisterNo is PayeeRegisterNo Setter

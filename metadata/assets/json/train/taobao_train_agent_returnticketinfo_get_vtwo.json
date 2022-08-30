@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		},
+		{
+			"name": "sub_order_id",
+			"type": "Number",
+			"description": "淘宝子订单号",
+			"required": true
+		},
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝主订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "offline_refund_type",
+			"type": "Number",
+			"description": "退票类型：10：跑腿退"
+		},
+		{
+			"name": "certificate_url_list",
+			"type": "String []",
+			"description": "证件照图片列表"
+		},
+		{
+			"name": "sub_order_id",
+			"type": "Number",
+			"description": "淘宝子订单号"
+		},
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝主订单号"
+		},
+		{
+			"name": "offline_return",
+			"type": "Boolean",
+			"description": "是否线下票退票"
+		},
+		{
+			"name": "certificate_type",
+			"type": "Number",
+			"description": "证件类型"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "查询返回状态"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "vip_errand_return_price",
+			"type": "Number",
+			"description": "线下票跑腿费"
+		},
+		{
+			"name": "refund_deadline",
+			"type": "String",
+			"description": "退票处理截止时间"
+		},
+		{
+			"name": "attribute",
+			"type": "String",
+			"description": "预留字段"
+		}
+	],
+	"name": "taobao.train.agent.returnticketinfo.get.vtwo",
+	"apiChineseName": "代理商获取退票详情回调",
+	"description": "代理商获取退票详情回调",
+	"id": 58774
+}

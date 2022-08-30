@@ -1,14 +1,6 @@
 {
-	"id": 36868,
-	"name": "alibaba.wdk.sku.channelsku.update",
-	"apiChineseName": "更新渠道商品",
-	"description": "批量更新渠道商品，商家通过Top接入",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "ChannelSkuDo[]",
-			"description": "请求参数",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "sale_spec",
@@ -57,6 +49,11 @@
 					"description": "出货仓"
 				},
 				{
+					"name": "customer_merchant_code",
+					"type": "String",
+					"description": "客户的商家编码 比如盒小马"
+				},
+				{
 					"name": "sale_before_purchase",
 					"type": "Boolean",
 					"description": "是否支持先销后采（默认false）"
@@ -82,75 +79,75 @@
 					"description": "时间戳，时间的毫秒数"
 				},
 				{
-					"name": "customer_merchant_code",
-					"type": "String",
-					"description": "客户的商家编码 比如盒小马"
-				},
-				{
 					"name": "online_sale_flag",
 					"type": "Number",
 					"description": "是否在线上露出，0不露出，1露出"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "ChannelSkuDo[]",
+			"description": "请求参数",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResults",
-			"description": "调用结果",
 			"subParams": [
 				{
-					"name": "models",
-					"type": "ApiResult[]",
-					"description": "单个商品返回结果集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "model",
 							"type": "String",
-							"description": "单个商品",
-							"required": true
-						},
-						{
-							"name": "success",
-							"type": "Boolean",
-							"description": "是否成功",
-							"required": true
+							"description": "单个商品"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "errMsg",
-							"required": true
+							"description": "errMsg"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否成功"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "errCode",
-							"required": true
+							"description": "errCode"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					],
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "单个商品返回结果集合"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.channelsku.update",
+	"apiChineseName": "更新渠道商品",
+	"description": "批量更新渠道商品，商家通过Top接入",
+	"id": 36868
 }

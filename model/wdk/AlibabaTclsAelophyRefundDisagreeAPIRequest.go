@@ -16,6 +16,8 @@ type AlibabaTclsAelophyRefundDisagreeAPIRequest struct {
 	_refundId string
 	// 拒绝原因
 	_rejectReason string
+	// 渠道来源
+	_orderFrom int64
 }
 
 // NewAlibabaTclsAelophyRefundDisagreeRequest 初始化AlibabaTclsAelophyRefundDisagreeAPIRequest对象
@@ -63,4 +65,17 @@ func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetRejectReason(_rejectReas
 // GetRejectReason RejectReason Getter
 func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRejectReason() string {
 	return r._rejectReason
+}
+
+// SetOrderFrom is OrderFrom Setter
+// 渠道来源
+func (r *AlibabaTclsAelophyRefundDisagreeAPIRequest) SetOrderFrom(_orderFrom int64) error {
+	r._orderFrom = _orderFrom
+	r.Set("order_from", _orderFrom)
+	return nil
+}
+
+// GetOrderFrom OrderFrom Getter
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetOrderFrom() int64 {
+	return r._orderFrom
 }

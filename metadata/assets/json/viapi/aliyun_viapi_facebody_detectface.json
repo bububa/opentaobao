@@ -1,8 +1,4 @@
 {
-	"id": 50727,
-	"name": "aliyun.viapi.facebody.detectface",
-	"apiChineseName": "人脸检测定位",
-	"description": "输入图片之后，在人脸检测定位返回结果的基础上，识别各个检测人脸的四种属性，返回性别（男/女）、年龄、表情（笑/不笑）、眼镜（戴/不戴）；并可返回人脸的1024维深度学习特征、(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
 			"name": "image_url",
@@ -23,9 +19,6 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "face_probability_list",
@@ -69,7 +62,14 @@
 					"description": "左右两个瞳孔的中心点坐标和半径，每个人脸6个浮点数，顺序是[left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radis]",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.facebody.detectface",
+	"apiChineseName": "人脸检测定位",
+	"description": "输入图片之后，在人脸检测定位返回结果的基础上，识别各个检测人脸的四种属性，返回性别（男/女）、年龄、表情（笑/不笑）、眼镜（戴/不戴）；并可返回人脸的1024维深度学习特征、(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50727
 }

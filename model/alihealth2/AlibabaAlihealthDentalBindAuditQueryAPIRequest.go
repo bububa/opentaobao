@@ -13,7 +13,7 @@ import (
 type AlibabaAlihealthDentalBindAuditQueryAPIRequest struct {
 	model.Params
 	// 绑定ID列表
-	_bindIds []int64
+	_bindIds []string
 }
 
 // NewAlibabaAlihealthDentalBindAuditQueryRequest 初始化AlibabaAlihealthDentalBindAuditQueryAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetApiParams() url.Value
 
 // SetBindIds is BindIds Setter
 // 绑定ID列表
-func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []int64) error {
+func (r *AlibabaAlihealthDentalBindAuditQueryAPIRequest) SetBindIds(_bindIds []string) error {
 	r._bindIds = _bindIds
 	r.Set("bind_ids", _bindIds)
 	return nil
 }
 
 // GetBindIds BindIds Getter
-func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []int64 {
+func (r AlibabaAlihealthDentalBindAuditQueryAPIRequest) GetBindIds() []string {
 	return r._bindIds
 }

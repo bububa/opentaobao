@@ -1,8 +1,4 @@
 {
-	"id": 25720,
-	"name": "taobao.wlb.wms.inventory.query",
-	"apiChineseName": "菜鸟商品库存查询",
-	"description": "支持按汇总（不分批次和渠道的总的库存数量）、渠道、批次三类方式查询商品实时库存",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -77,14 +73,8 @@
 			"description": "总数"
 		},
 		{
-			"name": "item_list",
-			"type": "WmsInventoryQueryItemlist []",
-			"description": "商品详情列表",
 			"subParams": [
 				{
-					"name": "item",
-					"type": "WmsInventoryQueryItem",
-					"description": "商品详情",
 					"subParams": [
 						{
 							"name": "store_code",
@@ -131,9 +121,19 @@
 							"type": "Number",
 							"description": "锁库存数量"
 						}
-					]
+					],
+					"name": "item",
+					"type": "WmsInventoryQueryItem",
+					"description": "商品详情"
 				}
-			]
+			],
+			"name": "item_list",
+			"type": "WmsInventoryQueryItemlist []",
+			"description": "商品详情列表"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.inventory.query",
+	"apiChineseName": "菜鸟商品库存查询",
+	"description": "支持按汇总（不分批次和渠道的总的库存数量）、渠道、批次三类方式查询商品实时库存",
+	"id": 25720
 }

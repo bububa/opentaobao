@@ -2,22 +2,26 @@ package campus
 
 // Contents 结构体
 type Contents struct {
-	// 同businessId
-	Code string `json:"code,omitempty" xml:"code,omitempty"`
-	// 创建者
-	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
-	// 修改时间
-	Modifier string `json:"modifier,omitempty" xml:"modifier,omitempty"`
 	// 楼宇名称
 	BuildingName string `json:"building_name,omitempty" xml:"building_name,omitempty"`
 	// 修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 同businessId
+	Code string `json:"code,omitempty" xml:"code,omitempty"`
+	// 创建者
+	Creator string `json:"creator,omitempty" xml:"creator,omitempty"`
 	// 分类编码
 	TypeCode string `json:"type_code,omitempty" xml:"type_code,omitempty"`
+	// 修改时间
+	Modifier string `json:"modifier,omitempty" xml:"modifier,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 楼层名称
 	FloorName string `json:"floor_name,omitempty" xml:"floor_name,omitempty"`
+	// heightStr
+	Height string `json:"height,omitempty" xml:"height,omitempty"`
+	// areaStr
+	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 分类名称
 	TypeName string `json:"type_name,omitempty" xml:"type_name,omitempty"`
 	// 园区编码
@@ -30,20 +34,12 @@ type Contents struct {
 	FtId string `json:"ft_id,omitempty" xml:"ft_id,omitempty"`
 	// uuid
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
-	// heightStr
-	Height string `json:"height,omitempty" xml:"height,omitempty"`
-	// areaStr
-	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 1室内，2室外，3 逻辑, 4 虚拟
 	CategoryName string `json:"category_name,omitempty" xml:"category_name,omitempty"`
-	// 状态,0为停用,1为启用
-	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// id
-	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
-	// 空间种类，1室内，2室外，3 逻辑
-	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
 	// 公司id
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
+	// 状态,0为停用,1为启用
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 楼宇id
 	BuildingId int64 `json:"building_id,omitempty" xml:"building_id,omitempty"`
 	// 针对同一位置的同业务poi设置group_id
@@ -52,6 +48,10 @@ type Contents struct {
 	CampusId int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
 	// 分类id
 	TypeId int64 `json:"type_id,omitempty" xml:"type_id,omitempty"`
+	// id
+	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 空间种类，1室内，2室外，3 逻辑
+	Category int64 `json:"category,omitempty" xml:"category,omitempty"`
 	// 楼层id
 	FloorId int64 `json:"floor_id,omitempty" xml:"floor_id,omitempty"`
 	// 地图楼层id

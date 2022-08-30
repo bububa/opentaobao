@@ -22,10 +22,10 @@ type RefundFlightSegmentVo struct {
 	MarketingAirline string `json:"marketing_airline,omitempty" xml:"marketing_airline,omitempty"`
 	// 市场方航班号
 	MarketingFlightNumber string `json:"marketing_flight_number,omitempty" xml:"marketing_flight_number,omitempty"`
-	// 执行航班号
-	OperatingFlightNumber string `json:"operating_flight_number,omitempty" xml:"operating_flight_number,omitempty"`
 	// 执行方航班号
 	OperatingAirline string `json:"operating_airline,omitempty" xml:"operating_airline,omitempty"`
+	// 执行航班号
+	OperatingFlightNumber string `json:"operating_flight_number,omitempty" xml:"operating_flight_number,omitempty"`
 	// 航段ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 行程序号

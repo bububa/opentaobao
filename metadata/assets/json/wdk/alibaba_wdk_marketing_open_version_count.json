@@ -1,8 +1,4 @@
 {
-	"id": 41996,
-	"name": "alibaba.wdk.marketing.open.version.count",
-	"apiChineseName": "版本数量查询",
-	"description": "版本数量查询",
 	"requestParams": [
 		{
 			"name": "version_id",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WdkMarketOpenResult",
-			"description": "查询结果",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询结果",
-					"required": true
+					"description": "查询结果"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "版本同步数量",
-					"required": true
+					"description": "版本同步数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.open.version.count",
+	"apiChineseName": "版本数量查询",
+	"description": "版本数量查询",
+	"id": 41996
 }

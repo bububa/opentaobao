@@ -1,8 +1,4 @@
 {
-	"id": 29291,
-	"name": "alibaba.aliqin.fc.iot.useroscontrol",
-	"apiChineseName": "物联卡用户管理停开机功能",
-	"description": "物联网针对用户级管理停开支持",
 	"requestParams": [
 		{
 			"name": "iccid",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "停开结果描述",
-					"required": true
+					"description": "停开结果描述"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "停开结果编码",
-					"required": true
+					"description": "停开结果编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "描述信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.iot.useroscontrol",
+	"apiChineseName": "物联卡用户管理停开机功能",
+	"description": "物联网针对用户级管理停开支持",
+	"id": 29291
 }

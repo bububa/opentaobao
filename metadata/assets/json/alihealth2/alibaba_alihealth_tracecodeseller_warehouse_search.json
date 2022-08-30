@@ -1,8 +1,4 @@
 {
-	"id": 38013,
-	"name": "alibaba.alihealth.tracecodeseller.warehouse.search",
-	"apiChineseName": "查询仓库api",
-	"description": "查询仓库api",
 	"requestParams": [
 		{
 			"name": "appkey",
@@ -31,81 +27,74 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "msg_code",
-					"type": "String",
-					"description": "msgCode",
-					"required": true
-				},
-				{
-					"name": "msg_info",
-					"type": "String",
-					"description": "msgInfo",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "PageInfoDto",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "totalNum",
-							"required": true
+							"description": "totalNum"
 						},
 						{
-							"name": "results",
-							"type": "Result[]",
-							"description": "result",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								},
 								{
 									"name": "detail",
 									"type": "String",
-									"description": "detail",
-									"required": true
+									"description": "detail"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "name",
-									"required": true
+									"description": "name"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "code",
-									"required": true
+									"description": "code"
 								}
-							]
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "result"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "page",
-							"required": true
+							"description": "page"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "pageSize",
-							"required": true
+							"description": "pageSize"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "model"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.warehouse.search",
+	"apiChineseName": "查询仓库api",
+	"description": "查询仓库api",
+	"id": 38013
 }

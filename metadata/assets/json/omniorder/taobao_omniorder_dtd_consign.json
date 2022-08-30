@@ -1,8 +1,4 @@
 {
-	"id": 31869,
-	"name": "taobao.omniorder.dtd.consign",
-	"apiChineseName": "门店自送发货",
-	"description": "该接口触发门店自送发货，推进淘系订单状态为发货，为消费者发送核销码短信，并将物流信息写入订单",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -27,5 +23,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "taobao.omniorder.dtd.consign",
+	"apiChineseName": "门店自送发货",
+	"description": "该接口触发门店自送发货，推进淘系订单状态为发货，为消费者发送核销码短信，并将物流信息写入订单",
+	"id": 31869
 }

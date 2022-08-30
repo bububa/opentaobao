@@ -1,8 +1,4 @@
 {
-	"id": 49315,
-	"name": "alibaba.ascp.uop.supplier.consignorder.notify.received",
-	"apiChineseName": "商家仓物流发货推单接单回告",
-	"description": "ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息",
 	"requestParams": [
 		{
 			"name": "supplier_id",
@@ -20,33 +16,44 @@
 			"name": "biz_time",
 			"type": "Date",
 			"description": "业务请求时间"
+		},
+		{
+			"name": "business_model",
+			"type": "String",
+			"description": "一盘货业务模式，默认为0代表商家仓商家配，为1代表商家仓自营配 (为1时会强制校验配CP和单号必须与取号时一致，且多包裹必须一次性发货)"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "consignorder_notify_received_response",
-			"type": "ResultWrapper",
-			"description": "返回值包装,result为返回具体消息内容",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回是否成功",
-					"required": true
+					"description": "返回是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否retry"
 				}
-			]
+			],
+			"name": "consignorder_notify_received_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
 		}
-	]
+	],
+	"name": "alibaba.ascp.uop.supplier.consignorder.notify.received",
+	"apiChineseName": "商家仓物流发货推单接单回告",
+	"description": "ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息",
+	"id": 49315
 }

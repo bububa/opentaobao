@@ -1,0 +1,89 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "time_type",
+					"type": "String",
+					"description": "时效类型 0:自定义时效； 1：订购期有效；为0时，开始时间和结束时间必传",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "投放的小程序链接",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "投放的小程序id",
+					"required": true
+				},
+				{
+					"name": "card_id",
+					"type": "Number",
+					"description": "要投放的卡片id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "投放计划名字",
+					"required": true
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "要投放的场景id",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "投放计划开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "投放计划结束时间"
+				},
+				{
+					"name": "card_data",
+					"type": "String",
+					"description": "卡片对应的动态表单字段信息"
+				}
+			],
+			"name": "order_request",
+			"type": "DistributionOrderSaveOpenRequest",
+			"description": "投放计划信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "order_error_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "order_error_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "model",
+			"type": "Number",
+			"description": "预创建成功的投放计划id"
+		}
+	],
+	"name": "taobao.miniapp.distribution.order.precreate",
+	"apiChineseName": "代商家预创建投放计划",
+	"description": "帮助商家，预创建小程序的投放计划，预创建的投放计划，在商家确认以后，则会生效可用。",
+	"id": 56926
+}

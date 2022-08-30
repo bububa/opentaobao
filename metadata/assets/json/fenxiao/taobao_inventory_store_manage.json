@@ -1,8 +1,4 @@
 {
-	"id": 21611,
-	"name": "taobao.inventory.store.manage",
-	"apiChineseName": "创建或更新仓库",
-	"description": "创建商家仓或者更新商家仓信息",
 	"requestParams": [
 		{
 			"name": "operate_type",
@@ -40,12 +36,6 @@
 			"required": true
 		},
 		{
-			"name": "address_area_name",
-			"type": "String",
-			"description": "仓库区域名，可更新",
-			"required": true
-		},
-		{
 			"name": "contact",
 			"type": "String",
 			"description": "联系人，可更新"
@@ -59,33 +49,26 @@
 			"name": "postcode",
 			"type": "Number",
 			"description": "邮编，可更新"
+		},
+		{
+			"name": "address_area_name",
+			"type": "String",
+			"description": "仓库区域名，可更新",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "store_list",
-			"type": "Store []",
-			"description": "返回结果",
 			"subParams": [
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "联系电话"
+				},
 				{
 					"name": "store_code",
 					"type": "String",
 					"description": "商家的仓库编码，不允许重复"
-				},
-				{
-					"name": "store_name",
-					"type": "String",
-					"description": "商家的仓库名称"
-				},
-				{
-					"name": "store_type",
-					"type": "String",
-					"description": "仓库类型"
-				},
-				{
-					"name": "alias_name",
-					"type": "String",
-					"description": "仓库简称"
 				},
 				{
 					"name": "address",
@@ -93,9 +76,14 @@
 					"description": "仓库的物理地址"
 				},
 				{
-					"name": "address_area_name",
+					"name": "store_type",
 					"type": "String",
-					"description": "仓库对应的淘宝区域"
+					"description": "仓库类型"
+				},
+				{
+					"name": "post_code",
+					"type": "String",
+					"description": "邮编"
 				},
 				{
 					"name": "contact",
@@ -103,16 +91,28 @@
 					"description": "联系人"
 				},
 				{
-					"name": "phone",
+					"name": "store_name",
 					"type": "String",
-					"description": "联系电话"
+					"description": "商家的仓库名称"
 				},
 				{
-					"name": "post_code",
+					"name": "address_area_name",
 					"type": "String",
-					"description": "邮编"
+					"description": "仓库对应的淘宝区域"
+				},
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "仓库简称"
 				}
-			]
+			],
+			"name": "store_list",
+			"type": "Store []",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.inventory.store.manage",
+	"apiChineseName": "创建或更新仓库",
+	"description": "创建商家仓或者更新商家仓信息",
+	"id": 21611
 }

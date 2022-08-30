@@ -1,86 +1,76 @@
 {
-	"id": 28216,
-	"name": "tmall.servicecenter.task.queryrefund",
-	"apiChineseName": "查询任务类工单是否退款",
-	"description": "查询任务类工单是否退款",
 	"requestParams": [
 		{
 			"name": "workcard_list",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "工单id列表",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "单次请求是否成功处理",
-					"required": true
+					"description": "单次请求是否成功处理"
 				},
 				{
-					"name": "value",
-					"type": "RefundWorkCardTo",
-					"description": "value",
-					"required": true,
 					"subParams": [
 						{
 							"name": "existing_failure",
 							"type": "Boolean",
-							"description": "existingFailure",
-							"required": true
+							"description": "existingFailure"
 						},
 						{
 							"name": "failure_list",
 							"type": "Number[]",
-							"description": "failureList",
-							"required": true
+							"description": "failureList"
 						},
 						{
 							"name": "not_existing_list",
 							"type": "Number[]",
-							"description": "notExistingList",
-							"required": true
+							"description": "notExistingList"
 						},
 						{
 							"name": "refund_list",
 							"type": "Number[]",
-							"description": "refundList",
-							"required": true
+							"description": "refundList"
 						}
-					]
+					],
+					"name": "value",
+					"type": "RefundWorkCardTo",
+					"description": "value"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.task.queryrefund",
+	"apiChineseName": "查询任务类工单是否退款",
+	"description": "查询任务类工单是否退款",
+	"id": 28216
 }

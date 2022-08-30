@@ -1,8 +1,4 @@
 {
-	"id": 24555,
-	"name": "taobao.wlb.wms.order.cancel.notify",
-	"apiChineseName": "单据取消接口",
-	"description": "单据取消接口",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "错误详细"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.order.cancel.notify",
+	"apiChineseName": "单据取消接口",
+	"description": "单据取消接口",
+	"id": 24555
 }

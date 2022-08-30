@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "预警单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "biz_id的业务类型， 为1，则bizId为工单id biz_type=2 则表示预警单为运营动态配置的规则产生的预警，对应biz_id为工单id"
+		},
+		{
+			"name": "level",
+			"type": "String",
+			"description": "预警级别，1、预警 2、警告 3、严重"
+		},
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务类型"
+		},
+		{
+			"name": "biz_id",
+			"type": "Number",
+			"description": "业务实体id，参考 biz_type"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "处理备注"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "预警单主键id ，反馈处理进度和备注时需要回传此ID"
+		},
+		{
+			"name": "gmt_create",
+			"type": "Date",
+			"description": "服务预警单创建时间，格式如：2021-11-06 13:12:11"
+		},
+		{
+			"name": "rule_id",
+			"type": "String",
+			"description": "预警规则id，对应一种业务触发的条件"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "预警提示内容，如请及时处理即将超出6小时时未回传工人信息的服务工单，详情如下：父订单编号：XXX，服务子订单：XXX，服务工单号：XXX"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "预警状态 0、已生成 1、已预警 2、已收到 3、已读 4、处理中 5、已处理"
+		}
+	],
+	"name": "tmall.servicecenter.servicemonitormessage.info",
+	"apiChineseName": "服务预警单查询接口",
+	"description": "服务预警单查询接口,用于查询预警单最新状态",
+	"id": 60702
+}

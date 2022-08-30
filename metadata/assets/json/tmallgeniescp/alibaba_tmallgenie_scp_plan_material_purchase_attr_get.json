@@ -1,8 +1,4 @@
 {
-	"id": 55417,
-	"name": "alibaba.tmallgenie.scp.plan.material.purchase.attr.get",
-	"apiChineseName": "物料的采购属性查询",
-	"description": "物料的采购属性查询",
 	"requestParams": [
 		{
 			"name": "request_extend_json",
@@ -12,79 +8,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果msg",
-					"required": true
+					"description": "结果msg"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一ID",
-					"required": true
+					"description": "请求唯一ID"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果code",
-					"required": true
+					"description": "结果code"
 				},
 				{
-					"name": "data_list",
-					"type": "LTMopMqpDTO[]",
-					"description": "对象列表",
-					"required": true,
 					"subParams": [
+						{
+							"name": "location_code",
+							"type": "String",
+							"description": "供应商编码"
+						},
 						{
 							"name": "materiel_code",
 							"type": "String",
-							"description": "物料编码",
-							"required": true
+							"description": "物料编码"
 						},
 						{
 							"name": "extend_json",
 							"type": "String",
-							"description": "扩展字段",
-							"required": true
+							"description": "扩展字段"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "租户",
-							"required": true
+							"description": "租户"
 						},
 						{
 							"name": "mpq",
 							"type": "String",
-							"description": "mpq",
-							"required": true
+							"description": "mpq"
 						},
 						{
 							"name": "moq",
 							"type": "String",
-							"description": "moq",
-							"required": true
+							"description": "moq"
 						},
 						{
 							"name": "lead_time",
 							"type": "String",
-							"description": "leadtime",
-							"required": true
-						},
-						{
-							"name": "location_code",
-							"type": "String",
-							"description": "供应商编码",
-							"required": true
+							"description": "leadtime"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "LTMopMqpDTO[]",
+					"description": "对象列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.material.purchase.attr.get",
+	"apiChineseName": "物料的采购属性查询",
+	"description": "物料的采购属性查询",
+	"id": 55417
 }

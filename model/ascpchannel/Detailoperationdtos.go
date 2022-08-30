@@ -2,9 +2,9 @@ package ascpchannel
 
 // Detailoperationdtos 结构体
 type Detailoperationdtos struct {
-	// 销售市场、IPM 1000,考拉前端 6500
+	// 销售市场、IPM：1000
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
-	// 库存数量
+	// 库存总量
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 协议ID
 	TradeInvId string `json:"trade_inv_id,omitempty" xml:"trade_inv_id,omitempty"`

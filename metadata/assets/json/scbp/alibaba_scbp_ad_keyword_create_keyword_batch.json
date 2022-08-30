@@ -1,9 +1,25 @@
 {
-	"id": 55194,
-	"name": "alibaba.scbp.ad.keyword.create.keyword.batch",
-	"apiChineseName": "关键词添加",
-	"description": "关键词添加",
 	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
 		{
 			"name": "campaign_id",
 			"type": "Number",
@@ -11,16 +27,8 @@
 			"required": true
 		},
 		{
-			"name": "keyword_query",
-			"type": "KeywordQuery",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "keyword_list",
-					"type": "KeywordInfo[]",
-					"description": "请求实体集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "word",
@@ -37,56 +45,45 @@
 							"type": "Number",
 							"description": "状态"
 						}
-					]
-				}
-			]
-		},
-		{
-			"name": "top_context",
-			"type": "TopContextDto",
-			"description": "用户信息",
-			"required": true,
-			"subParams": [
-				{
-					"name": "product_line_id",
-					"type": "Number",
-					"description": "产品线id",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品id",
+					],
+					"name": "keyword_list",
+					"type": "KeywordInfo[]",
+					"description": "请求实体集合",
 					"required": true
 				}
-			]
+			],
+			"name": "keyword_query",
+			"type": "KeywordQuery",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result_list",
-			"type": "ErrorKeyword []",
-			"description": "返回错误集合",
 			"subParams": [
 				{
 					"name": "keyword",
 					"type": "String",
-					"description": "关键词",
-					"required": true
+					"description": "关键词"
 				},
 				{
 					"name": "type",
 					"type": "String",
-					"description": "类型",
-					"required": true
+					"description": "类型"
 				},
 				{
 					"name": "repeat_keyword",
 					"type": "String",
-					"description": "重复关键词",
-					"required": true
+					"description": "重复关键词"
 				}
-			]
+			],
+			"name": "result_list",
+			"type": "ErrorKeyword []",
+			"description": "返回错误集合"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.create.keyword.batch",
+	"apiChineseName": "关键词添加",
+	"description": "关键词添加",
+	"id": 55194
 }

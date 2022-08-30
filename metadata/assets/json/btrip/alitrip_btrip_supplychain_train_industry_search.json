@@ -1,13 +1,6 @@
 {
-	"id": 56223,
-	"name": "alitrip.btrip.supplychain.train.industry.search",
-	"apiChineseName": "火车票行业搜索接口",
-	"description": "【商旅】火车票行业搜索接口",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "TrainSearchRq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "arr_area_code",
@@ -70,268 +63,234 @@
 					"description": "企业corpId",
 					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "TrainSearchRq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "出参",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "TrainSearchRs",
-					"description": "火车行业查询返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "arr_city",
 							"type": "String",
-							"description": "到达城市",
-							"required": true
+							"description": "到达城市"
 						},
 						{
 							"name": "arr_location",
 							"type": "String",
-							"description": "到达站",
-							"required": true
+							"description": "到达站"
 						},
 						{
 							"name": "dep_city",
 							"type": "String",
-							"description": "出发城市",
-							"required": true
+							"description": "出发城市"
 						},
 						{
 							"name": "dep_date",
 							"type": "String",
-							"description": "出发日期",
-							"required": true
+							"description": "出发日期"
 						},
 						{
 							"name": "dep_location",
 							"type": "String",
-							"description": "出发站",
-							"required": true
+							"description": "出发站"
 						},
 						{
 							"name": "has_more_train",
 							"type": "Boolean",
-							"description": "是否有更多车次",
-							"required": true
+							"description": "是否有更多车次"
 						},
 						{
 							"name": "show_trans_guide",
 							"type": "Boolean",
-							"description": "是否展示中转引导",
-							"required": true
+							"description": "是否展示中转引导"
 						},
 						{
-							"name": "trains",
-							"type": "TrainStationVo[]",
-							"description": "直达车次列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "arr_day_tag",
 									"type": "String",
-									"description": "次日",
-									"required": true
+									"description": "次日"
 								},
 								{
 									"name": "arr_time",
 									"type": "String",
-									"description": "到达时间",
-									"required": true
+									"description": "到达时间"
 								},
 								{
 									"name": "arr_time_full",
 									"type": "String",
-									"description": "完整到达时间,",
-									"required": true
+									"description": "完整到达时间,"
 								},
 								{
 									"name": "arrive_station",
 									"type": "String",
-									"description": "到达车站站名,",
-									"required": true
+									"description": "到达车站站名,"
 								},
 								{
 									"name": "arrive_station_code",
 									"type": "String",
-									"description": "到达车站三字码,",
-									"required": true
+									"description": "到达车站三字码,"
 								},
 								{
 									"name": "cost_time",
 									"type": "String",
-									"description": "耗时,",
-									"required": true
+									"description": "耗时,"
 								},
 								{
 									"name": "cost_time_int",
 									"type": "Number",
-									"description": "耗时,分钟",
-									"required": true
+									"description": "耗时,分钟"
 								},
 								{
 									"name": "dep_time",
 									"type": "String",
-									"description": "出发时间,",
-									"required": true
+									"description": "出发时间,"
 								},
 								{
 									"name": "dep_time_full",
 									"type": "String",
-									"description": "完整出发时间",
-									"required": true
+									"description": "完整出发时间"
 								},
 								{
 									"name": "depart_station",
 									"type": "String",
-									"description": "出发车站站名,",
-									"required": true
+									"description": "出发车站站名,"
 								},
 								{
 									"name": "depart_station_code",
 									"type": "String",
-									"description": "出发车站三字码,",
-									"required": true
+									"description": "出发车站三字码,"
 								},
 								{
 									"name": "end_station",
 									"type": "Number",
-									"description": "是否终点站",
-									"required": true
+									"description": "是否终点站"
 								},
 								{
 									"name": "has_more_train",
 									"type": "Boolean",
-									"description": "是否有更多车次",
-									"required": true
+									"description": "是否有更多车次"
 								},
 								{
 									"name": "has_stock",
 									"type": "Boolean",
-									"description": "是否有票, 0:无票，1:有票",
-									"required": true
+									"description": "是否有票, 0:无票，1:有票"
 								},
 								{
 									"name": "pre_sell_date_str",
 									"type": "String",
-									"description": "预售期",
-									"required": true
+									"description": "预售期"
 								},
 								{
 									"name": "price",
 									"type": "Number",
-									"description": "列表页用户显示的坐席名称对应的价格。",
-									"required": true
+									"description": "列表页用户显示的坐席名称对应的价格。"
 								},
 								{
 									"name": "revival_train",
 									"type": "Boolean",
-									"description": "是否是复兴号",
-									"required": true
+									"description": "是否是复兴号"
 								},
 								{
-									"name": "seat_types",
-									"type": "SeatVo[]",
-									"description": "坐席列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "houbu_price",
 											"type": "Number",
-											"description": "候补价",
-											"required": true
+											"description": "候补价"
 										},
 										{
 											"name": "price",
 											"type": "Number",
-											"description": "价格",
-											"required": true
+											"description": "价格"
 										},
 										{
 											"name": "seat_name",
 											"type": "String",
-											"description": "名称",
-											"required": true
+											"description": "名称"
 										},
 										{
 											"name": "seat_type",
 											"type": "Number",
-											"description": "类型",
-											"required": true
+											"description": "类型"
 										},
 										{
 											"name": "sleeper_price",
 											"type": "Number",
-											"description": "下铺价",
-											"required": true
+											"description": "下铺价"
 										},
 										{
 											"name": "stock",
 											"type": "Number",
-											"description": "库存",
-											"required": true
+											"description": "库存"
 										}
-									]
+									],
+									"name": "seat_types",
+									"type": "SeatVo[]",
+									"description": "坐席列表"
 								},
 								{
 									"name": "show_id_icon",
 									"type": "Boolean",
-									"description": "是否支持身份",
-									"required": true
+									"description": "是否支持身份"
 								},
 								{
 									"name": "silence_compartment",
 									"type": "Boolean",
-									"description": "是否是静音车厢",
-									"required": true
+									"description": "是否是静音车厢"
 								},
 								{
 									"name": "start_station",
 									"type": "Number",
-									"description": "是否始发站",
-									"required": true
+									"description": "是否始发站"
 								},
 								{
 									"name": "train_no",
 									"type": "String",
-									"description": "列车车次",
-									"required": true
+									"description": "列车车次"
 								},
 								{
 									"name": "train_type",
 									"type": "Number",
-									"description": "列车类型的编号。1=普快, 2=新空普快, 3=普客, 4=快速, 5=新空普客, 6=城际高速, 7=动车组, 8=高速动车, 9=新空快速, 10=新空特快, 11=特快, 12=新空直达",
-									"required": true
+									"description": "列车类型的编号。1=普快, 2=新空普快, 3=普客, 4=快速, 5=新空普客, 6=城际高速, 7=动车组, 8=高速动车, 9=新空快速, 10=新空特快, 11=特快, 12=新空直达"
 								}
-							]
+							],
+							"name": "trains",
+							"type": "TrainStationVo[]",
+							"description": "直达车次列表"
 						}
-					]
+					],
+					"name": "module",
+					"type": "TrainSearchRs",
+					"description": "火车行业查询返回结果"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "成功标识",
-					"required": true
+					"description": "成功标识"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alitrip.btrip.supplychain.train.industry.search",
+	"apiChineseName": "火车票行业搜索接口",
+	"description": "【商旅】火车票行业搜索接口",
+	"id": 56223
 }

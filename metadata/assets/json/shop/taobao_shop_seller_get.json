@@ -1,8 +1,4 @@
 {
-	"id": 42908,
-	"name": "taobao.shop.seller.get",
-	"apiChineseName": "卖家店铺基础信息查询",
-	"description": "获取卖家店铺的基本信息",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "shop",
-			"type": "Shop",
-			"description": "店铺信息",
 			"subParams": [
 				{
 					"name": "sid",
@@ -32,7 +25,14 @@
 					"type": "String",
 					"description": "店标地址。返回相对路径，可以用\"http://logo.taobao.com/shop-logo\"来拼接成绝对路径"
 				}
-			]
+			],
+			"name": "shop",
+			"type": "Shop",
+			"description": "店铺信息"
 		}
-	]
+	],
+	"name": "taobao.shop.seller.get",
+	"apiChineseName": "卖家店铺基础信息查询",
+	"description": "获取卖家店铺的基本信息",
+	"id": 42908
 }

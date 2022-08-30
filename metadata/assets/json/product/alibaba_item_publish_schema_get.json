@@ -1,8 +1,4 @@
 {
-	"id": 53943,
-	"name": "alibaba.item.publish.schema.get",
-	"apiChineseName": "获取商品发布规则信息",
-	"description": "新商品发布，获取商品发布规则信息",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -49,5 +45,9 @@
 			"type": "String",
 			"description": "商品发布规则信息，XML格式."
 		}
-	]
+	],
+	"name": "alibaba.item.publish.schema.get",
+	"apiChineseName": "获取商品发布规则信息",
+	"description": "新商品发布，获取商品发布规则信息",
+	"id": 53943
 }

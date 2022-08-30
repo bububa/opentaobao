@@ -1,13 +1,6 @@
 {
-	"id": 55242,
-	"name": "alibaba.lsy.crm.activity.data.update",
-	"apiChineseName": "私域导购数据回流接口",
-	"description": "私域导购数据回流接口",
 	"requestParams": [
 		{
-			"name": "req_d_t_o",
-			"type": "NrtCrmActivityStatisticsDataReq",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "date",
@@ -50,34 +43,38 @@
 					"description": "导购员id",
 					"required": true
 				}
-			]
+			],
+			"name": "req_d_t_o",
+			"type": "NrtCrmActivityStatisticsDataReq",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "err_code",
-					"required": true
+					"description": "err_code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.lsy.crm.activity.data.update",
+	"apiChineseName": "私域导购数据回流接口",
+	"description": "私域导购数据回流接口",
+	"id": 55242
 }

@@ -1,0 +1,316 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "arr_city_code",
+					"type": "String",
+					"description": "出发城市",
+					"required": true
+				},
+				{
+					"name": "async_create_order_mode",
+					"type": "Boolean",
+					"description": "是否异步创单"
+				},
+				{
+					"name": "auto_pay",
+					"type": "byte",
+					"description": "是否自动支付"
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "预订人名字",
+					"required": true
+				},
+				{
+					"name": "buyer_unique_key",
+					"type": "String",
+					"description": "预订人员工号",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "contact_email",
+							"type": "String",
+							"description": "联系优先"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人名字",
+							"required": true
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "联系手机号",
+							"required": true
+						}
+					],
+					"name": "contact_info",
+					"type": "ContactInfoDto",
+					"description": "联系人信息",
+					"required": true
+				},
+				{
+					"name": "dep_city_code",
+					"type": "String",
+					"description": "出发城市",
+					"required": true
+				},
+				{
+					"name": "dep_date",
+					"type": "String",
+					"description": "出发日期",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "arr_airport_code",
+							"type": "String",
+							"description": "到达机场",
+							"required": true
+						},
+						{
+							"name": "arr_city_code",
+							"type": "String",
+							"description": "到达城市",
+							"required": true
+						},
+						{
+							"name": "cabin",
+							"type": "String",
+							"description": "舱位",
+							"required": true
+						},
+						{
+							"name": "dep_airport_code",
+							"type": "String",
+							"description": "出发机场",
+							"required": true
+						},
+						{
+							"name": "dep_city_code",
+							"type": "String",
+							"description": "出发城市",
+							"required": true
+						},
+						{
+							"name": "dep_date",
+							"type": "String",
+							"description": "出发日期",
+							"required": true
+						},
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "航班号",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "segment_number",
+							"type": "String",
+							"description": "航段序号"
+						},
+						{
+							"name": "seg_secret_params",
+							"type": "String",
+							"description": "航段核对参数"
+						},
+						{
+							"name": "invoice_type",
+							"type": "Number",
+							"description": "行程单类型",
+							"required": true
+						}
+					],
+					"name": "flight_segment_list",
+					"type": "BookFlightSegmentDto[]",
+					"description": "航段列表",
+					"required": true
+				},
+				{
+					"name": "order_attr",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "2000",
+					"required": true
+				},
+				{
+					"name": "receipt_address",
+					"type": "String",
+					"description": "邮寄地址"
+				},
+				{
+					"name": "receipt_target",
+					"type": "Number",
+					"description": "发票邮寄类型"
+				},
+				{
+					"name": "receipt_title",
+					"type": "String",
+					"description": "发票抬头"
+				},
+				{
+					"name": "order_params",
+					"type": "String",
+					"description": "搜索下单参数"
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "birthday",
+							"type": "String",
+							"description": "生日（非身份证必选）"
+						},
+						{
+							"name": "cert_no",
+							"type": "String",
+							"description": "证件号",
+							"required": true
+						},
+						{
+							"name": "cert_type",
+							"type": "String",
+							"description": "证件类型",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名字",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "乘机人手机号"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "乘客类型",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "员工ID",
+							"required": true
+						}
+					],
+					"name": "traveler_info_list",
+					"type": "TravelerInfo[]",
+					"description": "出行人",
+					"required": true
+				},
+				{
+					"name": "trip_type",
+					"type": "Number",
+					"description": "航程类型",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "外部订单ID",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_create_order_rq",
+			"type": "BtripFlightCreateOrderRq",
+			"description": "提交订单参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝流水"
+						},
+						{
+							"name": "btrip_order_id",
+							"type": "Number",
+							"description": "商旅订单号"
+						},
+						{
+							"name": "last_pay_time",
+							"type": "Date",
+							"description": "最迟支付时间"
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "订单状态"
+						},
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "外部订单ID"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "总支付价格"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightCreateOrderRs",
+					"description": "创单返回信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果代码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果提示问题"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "下单"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.order.create",
+	"apiChineseName": "商旅机票分销-创建订单",
+	"description": "商旅机票分销创建订单接口",
+	"id": 57482
+}

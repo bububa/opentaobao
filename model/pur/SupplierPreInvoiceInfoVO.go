@@ -8,6 +8,10 @@ import (
 type SupplierPreInvoiceInfoVO struct {
 	// 预发票行信息
 	InvoiceItemList []SupplierPreInvoiceItem `json:"invoice_item_list,omitempty" xml:"invoice_item_list>supplier_pre_invoice_item,omitempty"`
+	// 发票附件
+	Attachment []*model.File `json:"attachment,omitempty" xml:"attachment>*model.File,omitempty"`
+	// 关闭原因
+	CloseReason string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
 	// 应付发票状态
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 应付发票备注
@@ -20,8 +24,6 @@ type SupplierPreInvoiceInfoVO struct {
 	Payee string `json:"payee,omitempty" xml:"payee,omitempty"`
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
-	// 关闭原因
-	CloseReason string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
 	// 价税合计
 	TotalAmount string `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 税额合计
@@ -66,6 +68,4 @@ type SupplierPreInvoiceInfoVO struct {
 	SupplierName string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
 	// 供应商编码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
-	// 发票附件
-	Attachment *model.File `json:"attachment,omitempty" xml:"attachment,omitempty"`
 }

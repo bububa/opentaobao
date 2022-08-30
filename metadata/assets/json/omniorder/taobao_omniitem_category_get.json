@@ -1,8 +1,4 @@
 {
-	"id": 30891,
-	"name": "taobao.omniitem.category.get",
-	"apiChineseName": "全渠道商品轻发布类目信息",
-	"description": "全渠道商品轻发布类目信息",
 	"requestParams": [
 		{
 			"name": "category_id",
@@ -12,69 +8,64 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "datas",
-					"type": "OmniItemCategoryDto[]",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "category_name",
 							"type": "String",
-							"description": "类目名称",
-							"required": true
+							"description": "类目名称"
 						},
 						{
 							"name": "cid",
 							"type": "Number",
-							"description": "类目cid",
-							"required": true
+							"description": "类目cid"
 						},
 						{
-							"name": "props",
-							"type": "OmniItemCategoryPropDto[]",
-							"description": "props",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
 									"type": "String",
-									"description": "销售属性名称",
-									"required": true
+									"description": "销售属性名称"
 								},
 								{
 									"name": "pid",
 									"type": "Number",
-									"description": "pid",
-									"required": true
+									"description": "pid"
 								}
-							]
+							],
+							"name": "props",
+							"type": "OmniItemCategoryPropDto[]",
+							"description": "props"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "OmniItemCategoryDto[]",
+					"description": "data"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.omniitem.category.get",
+	"apiChineseName": "全渠道商品轻发布类目信息",
+	"description": "全渠道商品轻发布类目信息",
+	"id": 30891
 }

@@ -1,0 +1,167 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "wechat_name",
+					"type": "String",
+					"description": "微信昵称"
+				},
+				{
+					"name": "guider_id",
+					"type": "Number",
+					"description": "导购员ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "摊位ID",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份:红星/居然"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				}
+			],
+			"name": "req_d_t_o",
+			"type": "NrtCrmCreateCustomerReq",
+			"description": "入参DTO"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "certificate_end_time",
+							"type": "Date",
+							"description": "有效结束时间"
+						},
+						{
+							"name": "certificate_start_time",
+							"type": "Date",
+							"description": "有效开始时间"
+						},
+						{
+							"name": "certificate_code",
+							"type": "String",
+							"description": "电子凭证编码"
+						},
+						{
+							"name": "open_id",
+							"type": "Number",
+							"description": "会员openId-废弃"
+						},
+						{
+							"subParams": [
+								{
+									"name": "effective_end_time",
+									"type": "String",
+									"description": "有效结束时间"
+								},
+								{
+									"name": "effective_start_time",
+									"type": "String",
+									"description": "有效开始时间"
+								},
+								{
+									"name": "face_value",
+									"type": "String",
+									"description": "面额"
+								},
+								{
+									"name": "start_fee",
+									"type": "String",
+									"description": "门槛"
+								},
+								{
+									"name": "benefit_code",
+									"type": "String",
+									"description": "券Code"
+								},
+								{
+									"name": "benefit_name",
+									"type": "String",
+									"description": "券名称"
+								},
+								{
+									"name": "template_code",
+									"type": "String",
+									"description": "券模板实例Code"
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "券发放错误Code"
+								},
+								{
+									"name": "error_msg",
+									"type": "String",
+									"description": "券发放错误信息"
+								},
+								{
+									"name": "template_id",
+									"type": "String",
+									"description": "券模板实例ID"
+								}
+							],
+							"name": "coupon_list",
+							"type": "NrtCrmBenefitDto[]",
+							"description": "券信息集合"
+						},
+						{
+							"name": "open_id_str",
+							"type": "String",
+							"description": "加密后的会员ID"
+						}
+					],
+					"name": "data",
+					"type": "NrtRecordDTO",
+					"description": "出参对象"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.lsy.crm.customer.add.new",
+	"apiChineseName": "导购域留资接口",
+	"description": "导购域提供留资入口",
+	"id": 57473
+}

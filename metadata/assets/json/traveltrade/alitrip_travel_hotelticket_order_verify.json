@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"name": "extend_params",
+			"type": "Json",
+			"description": "扩展参数"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "系统商订单号"
+		},
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "凭证码",
+					"required": true
+				},
+				{
+					"name": "use_date",
+					"type": "String",
+					"description": "使用时间：yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "certificate_id",
+					"type": "String",
+					"description": "证件号"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "凭证类型 1：票码， 2：券码",
+					"required": true
+				},
+				{
+					"name": "usage_nums",
+					"type": "Number",
+					"description": "票或券 核销使用数量",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型：1：门票， 2：酒店",
+					"required": true
+				}
+			],
+			"name": "vouchers",
+			"type": "HotelTicketVerifyVoucherDTO",
+			"description": "凭证信息"
+		},
+		{
+			"name": "fliggy_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.travel.hotelticket.order.verify",
+	"apiChineseName": "订单核销通知",
+	"description": "订单核销通知",
+	"id": 62577
+}

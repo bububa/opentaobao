@@ -1,8 +1,4 @@
 {
-	"id": 24988,
-	"name": "alibaba.scbp.ad.keyword.price.update",
-	"apiChineseName": "关键词改价",
-	"description": "关键词改价",
 	"requestParams": [
 		{
 			"name": "ad_keyword",
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "修改关键词价格是否成功"
 		}
-	]
+	],
+	"name": "alibaba.scbp.ad.keyword.price.update",
+	"apiChineseName": "关键词改价",
+	"description": "关键词改价",
+	"id": 24988
 }

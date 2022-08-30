@@ -1,27 +1,17 @@
 {
-	"id": 10814,
-	"name": "taobao.sellercenter.subuser.permissions.roles.get",
-	"apiChineseName": "查询指定的子账号的权限和角色信息",
-	"description": "查询指定的子账号的被直接赋予的权限信息和角色信息。\u003cbr/\u003e返回对象中包括直接赋予子账号的权限点信息、被赋予的角色以及角色的对应权限点信息。",
 	"requestParams": [
 		{
 			"name": "nick",
 			"type": "String",
 			"description": "子账号昵称(子账号标识)",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "subuser_permission",
-			"type": "SubUserPermission",
-			"description": "子账号被所拥有的权限",
 			"subParams": [
 				{
-					"name": "permissions",
-					"type": "Permission[]",
-					"description": "子账号被直接赋予的权限点列表",
 					"subParams": [
 						{
 							"name": "permission_code",
@@ -43,12 +33,12 @@
 							"type": "Number",
 							"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 						}
-					]
+					],
+					"name": "permissions",
+					"type": "Permission[]",
+					"description": "子账号被直接赋予的权限点列表"
 				},
 				{
-					"name": "roles",
-					"type": "Role[]",
-					"description": "子账号被赋予的角色信息(Role)列表。列表中的角色对象只有role_id，role_name，permissions信息",
 					"subParams": [
 						{
 							"name": "role_id",
@@ -81,9 +71,6 @@
 							"description": "修改时间"
 						},
 						{
-							"name": "permissions",
-							"type": "Permission[]",
-							"description": "所拥有权限",
 							"subParams": [
 								{
 									"name": "permission_code",
@@ -105,11 +92,24 @@
 									"type": "Number",
 									"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 								}
-							]
+							],
+							"name": "permissions",
+							"type": "Permission[]",
+							"description": "所拥有权限"
 						}
-					]
+					],
+					"name": "roles",
+					"type": "Role[]",
+					"description": "子账号被赋予的角色信息(Role)列表。列表中的角色对象只有role_id，role_name，permissions信息"
 				}
-			]
+			],
+			"name": "subuser_permission",
+			"type": "SubUserPermission",
+			"description": "子账号被所拥有的权限"
 		}
-	]
+	],
+	"name": "taobao.sellercenter.subuser.permissions.roles.get",
+	"apiChineseName": "查询指定的子账号的权限和角色信息",
+	"description": "查询指定的子账号的被直接赋予的权限信息和角色信息。\u003cbr/\u003e返回对象中包括直接赋予子账号的权限点信息、被赋予的角色以及角色的对应权限点信息。",
+	"id": 10814
 }

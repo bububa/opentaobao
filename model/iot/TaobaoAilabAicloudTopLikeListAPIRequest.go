@@ -12,14 +12,14 @@ import (
 // 列出收藏列表
 type TaobaoAilabAicloudTopLikeListAPIRequest struct {
 	model.Params
-	// 扩展信息，用于存放APP类型等
-	_ext string
-	// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-	_utdId string
-	// 用户ID，此处传入第三方账户体系的用户id
-	_userId string
 	// 账户体系隔离
 	_schema string
+	// 用户ID，此处传入第三方账户体系的用户id
+	_userId string
+	// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
+	_utdId string
+	// 扩展信息，用于存放APP类型等
+	_ext string
 	// 收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目
 	_param1 string
 	// 页码 从0起
@@ -49,30 +49,17 @@ func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetExt is Ext Setter
-// 扩展信息，用于存放APP类型等
-func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetExt(_ext string) error {
-	r._ext = _ext
-	r.Set("ext", _ext)
+// SetSchema is Schema Setter
+// 账户体系隔离
+func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetSchema(_schema string) error {
+	r._schema = _schema
+	r.Set("schema", _schema)
 	return nil
 }
 
-// GetExt Ext Getter
-func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetExt() string {
-	return r._ext
-}
-
-// SetUtdId is UtdId Setter
-// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUtdId(_utdId string) error {
-	r._utdId = _utdId
-	r.Set("utd_id", _utdId)
-	return nil
-}
-
-// GetUtdId UtdId Getter
-func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetUtdId() string {
-	return r._utdId
+// GetSchema Schema Getter
+func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetSchema() string {
+	return r._schema
 }
 
 // SetUserId is UserId Setter
@@ -88,17 +75,30 @@ func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetUserId() string {
 	return r._userId
 }
 
-// SetSchema is Schema Setter
-// 账户体系隔离
-func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetSchema(_schema string) error {
-	r._schema = _schema
-	r.Set("schema", _schema)
+// SetUtdId is UtdId Setter
+// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
+func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetUtdId(_utdId string) error {
+	r._utdId = _utdId
+	r.Set("utd_id", _utdId)
 	return nil
 }
 
-// GetSchema Schema Getter
-func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetSchema() string {
-	return r._schema
+// GetUtdId UtdId Getter
+func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetUtdId() string {
+	return r._utdId
+}
+
+// SetExt is Ext Setter
+// 扩展信息，用于存放APP类型等
+func (r *TaobaoAilabAicloudTopLikeListAPIRequest) SetExt(_ext string) error {
+	r._ext = _ext
+	r.Set("ext", _ext)
+	return nil
+}
+
+// GetExt Ext Getter
+func (r TaobaoAilabAicloudTopLikeListAPIRequest) GetExt() string {
+	return r._ext
 }
 
 // SetParam1 is Param1 Setter

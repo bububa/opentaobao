@@ -1,8 +1,4 @@
 {
-	"id": 27125,
-	"name": "cainiao.waybill.ii.search",
-	"apiChineseName": "查询面单服务订购及面单使用情况",
-	"description": "获取发货地\u0026CP开通状态\u0026账户的使用情况",
 	"requestParams": [
 		{
 			"name": "cp_code",
@@ -12,181 +8,178 @@
 	],
 	"responseParams": [
 		{
-			"name": "waybill_apply_subscription_cols",
-			"type": "WaybillApplySubscriptionInfo []",
-			"description": "CP网点信息及对应的商家的发货信息",
 			"subParams": [
 				{
-					"name": "branch_account_cols",
-					"type": "WaybillBranchAccount[]",
-					"description": "CP网点信息及对应的商家的发货信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "allocated_quantity",
 							"type": "Number",
-							"description": "已用面单数量",
-							"required": true
+							"description": "已用面单数量"
 						},
 						{
 							"name": "branch_code",
 							"type": "String",
-							"description": "网点Code",
-							"required": true
+							"description": "网点Code"
 						},
 						{
 							"name": "branch_name",
 							"type": "String",
-							"description": "网点名称",
-							"required": true
+							"description": "网点名称"
 						},
 						{
 							"name": "branch_status",
 							"type": "Number",
-							"description": "网点状态",
-							"required": true
+							"description": "网点状态"
 						},
 						{
 							"name": "cancel_quantity",
 							"type": "Number",
-							"description": "取消的面单总数",
-							"required": true
+							"description": "取消的面单总数"
 						},
 						{
 							"name": "print_quantity",
 							"type": "Number",
-							"description": "已经打印的面单总数",
-							"required": true
+							"description": "已经打印的面单总数"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "电子面单余额数量",
-							"required": true
+							"description": "电子面单余额数量"
 						},
 						{
-							"name": "shipp_address_cols",
-							"type": "AddressDto[]",
-							"description": "当前网点下的发货地址",
-							"required": true,
 							"subParams": [
 								{
 									"name": "detail",
 									"type": "String",
-									"description": "详细地址",
-									"required": true
+									"description": "详细地址"
 								},
 								{
 									"name": "district",
 									"type": "String",
-									"description": "区名称（三级地址）",
-									"required": true
+									"description": "区名称（三级地址）"
 								},
 								{
 									"name": "city",
 									"type": "String",
-									"description": "市名称（二级地址）",
-									"required": true
+									"description": "市名称（二级地址）"
 								},
 								{
 									"name": "province",
 									"type": "String",
-									"description": "省名称（一级地址）",
-									"required": true
+									"description": "省名称（一级地址）"
 								},
 								{
 									"name": "town",
 									"type": "String",
-									"description": "街道\\镇名称（四级地址）",
-									"required": true
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "waybill_address_id",
+									"type": "String",
+									"description": "订购关系id"
 								}
-							]
+							],
+							"name": "shipp_address_cols",
+							"type": "AddressDto[]",
+							"description": "当前网点下的发货地址"
 						},
 						{
-							"name": "service_info_cols",
-							"type": "ServiceInfoDto[]",
-							"description": "可用的服务信息列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "service_name",
 									"type": "String",
-									"description": "服务名称",
-									"required": true
+									"description": "服务名称"
 								},
 								{
 									"name": "service_code",
 									"type": "String",
-									"description": "服务编码",
-									"required": true
+									"description": "服务编码"
 								},
 								{
-									"name": "service_attributes",
-									"type": "ServiceAttributeDto[]",
-									"description": "服务属性定义",
-									"required": true,
 									"subParams": [
 										{
 											"name": "attribute_code",
 											"type": "String",
-											"description": "属性的值，用户实际传入的值",
-											"required": true
+											"description": "属性的值，用户实际传入的值"
 										},
 										{
 											"name": "attribute_name",
 											"type": "String",
-											"description": "属性的名称，可以用于前端的展示",
-											"required": true
+											"description": "属性的名称，可以用于前端的展示"
 										},
 										{
 											"name": "attribute_type",
 											"type": "String",
-											"description": "属性的类型，可能值有 [number, string, enum]",
-											"required": true
+											"description": "属性的类型，可能值有 [number, string, enum]"
 										},
 										{
 											"name": "type_desc",
 											"type": "String",
-											"description": "枚举类型的枚举值，key为用户选中的需要传值的数据，value为对应的描述，可以作为前端的展示",
-											"required": true
+											"description": "枚举类型的枚举值，key为用户选中的需要传值的数据，value为对应的描述，可以作为前端的展示"
 										}
-									]
+									],
+									"name": "service_attributes",
+									"type": "ServiceAttributeDto[]",
+									"description": "服务属性定义"
 								},
 								{
 									"name": "service_desc",
 									"type": "String",
-									"description": "服务的官方描述，可以用作前端展示",
-									"required": true
+									"description": "服务的官方描述，可以用作前端展示"
 								},
 								{
 									"name": "required",
 									"type": "Boolean",
-									"description": "该服务是否为必选服务",
-									"required": true
+									"description": "该服务是否为必选服务"
 								}
-							]
+							],
+							"name": "service_info_cols",
+							"type": "ServiceInfoDto[]",
+							"description": "可用的服务信息列表"
 						},
 						{
 							"name": "segment_code",
 							"type": "String",
-							"description": "号段信息",
-							"required": true
+							"description": "号段信息"
+						},
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌code"
+						},
+						{
+							"name": "customer_code_list",
+							"type": "String[]",
+							"description": "月结卡号列表"
+						},
+						{
+							"name": "customer_code_map",
+							"type": "String",
+							"description": "月结卡号map，key为shipp_address_cols.waybill_address_id,value为月结卡号。jsonString"
 						}
-					]
+					],
+					"name": "branch_account_cols",
+					"type": "WaybillBranchAccount[]",
+					"description": "CP网点信息及对应的商家的发货信息"
 				},
 				{
 					"name": "cp_code",
 					"type": "String",
-					"description": "物流服务商ID",
-					"required": true
+					"description": "物流服务商ID"
 				},
 				{
 					"name": "cp_type",
 					"type": "Number",
-					"description": "物流服务商业务类型 1：直营 2：加盟 3：落地配 4：直营带网点",
-					"required": true
+					"description": "物流服务商业务类型 1：直营 2：加盟 3：落地配 4：直营带网点"
 				}
-			]
+			],
+			"name": "waybill_apply_subscription_cols",
+			"type": "WaybillApplySubscriptionInfo []",
+			"description": "CP网点信息及对应的商家的发货信息"
 		}
-	]
+	],
+	"name": "cainiao.waybill.ii.search",
+	"apiChineseName": "查询面单服务订购及面单使用情况",
+	"description": "获取发货地\u0026CP开通状态\u0026账户的使用情况",
+	"id": 27125
 }

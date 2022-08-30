@@ -1,13 +1,6 @@
 {
-	"id": 33371,
-	"name": "alibaba.campus.space.group.getspacegroupwithattr",
-	"apiChineseName": "空间分组id查业务属性实例",
-	"description": "空间分组id查业务属性实例",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "操作用户上下文",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -30,7 +23,10 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文"
 		},
 		{
 			"name": "group_id",
@@ -41,183 +37,159 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "SpaceGroup",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "isDelete",
-							"required": true
+							"description": "isDelete"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "code",
-							"required": true
+							"description": "code"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "description",
-							"required": true
+							"description": "description"
 						},
 						{
 							"name": "floor_id",
 							"type": "Number",
-							"description": "floorId",
-							"required": true
+							"description": "floorId"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "floorName",
-							"required": true
+							"description": "floorName"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "campusId",
-							"required": true
+							"description": "campusId"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "typeId",
-							"required": true
+							"description": "typeId"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "campusName",
-							"required": true
+							"description": "campusName"
 						},
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "typeName",
-							"required": true
+							"description": "typeName"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "typeCode",
-							"required": true
+							"description": "typeCode"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "building_id",
 							"type": "Number",
-							"description": "buildingId",
-							"required": true
+							"description": "buildingId"
 						},
 						{
 							"name": "building_name",
 							"type": "String",
-							"description": "buildingName",
-							"required": true
+							"description": "buildingName"
 						},
 						{
-							"name": "attrs",
-							"type": "TypeAttrInstance[]",
-							"description": "attrs",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type_attr_ref_id",
 									"type": "Number",
-									"description": "typeAttrRefId",
-									"required": true
+									"description": "typeAttrRefId"
 								},
 								{
 									"name": "attr_name",
 									"type": "String",
-									"description": "attrName",
-									"required": true
+									"description": "attrName"
 								},
 								{
 									"name": "attr_code",
 									"type": "String",
-									"description": "attrCode",
-									"required": true
+									"description": "attrCode"
 								},
 								{
 									"name": "value",
 									"type": "String",
-									"description": "value",
-									"required": true
+									"description": "value"
 								},
 								{
 									"name": "value_type",
 									"type": "String",
-									"description": "valueType",
-									"required": true
+									"description": "valueType"
 								},
 								{
 									"name": "uuid",
 									"type": "String",
-									"description": "uuid",
-									"required": true
+									"description": "uuid"
 								}
-							]
+							],
+							"name": "attrs",
+							"type": "TypeAttrInstance[]",
+							"description": "attrs"
 						}
-					]
+					],
+					"name": "content",
+					"type": "SpaceGroup",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.group.getspacegroupwithattr",
+	"apiChineseName": "空间分组id查业务属性实例",
+	"description": "空间分组id查业务属性实例",
+	"id": 33371
 }

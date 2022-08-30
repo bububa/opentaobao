@@ -1,13 +1,6 @@
 {
-	"id": 24617,
-	"name": "taobao.wlb.wms.inventory.lack.upload",
-	"apiChineseName": "缺货通知",
-	"description": "缺货通知",
 	"requestParams": [
 		{
-			"name": "content",
-			"type": "WlbWmsInventoryLackUpload",
-			"description": "缺货通知信息",
 			"subParams": [
 				{
 					"name": "create_time",
@@ -35,9 +28,6 @@
 					"description": "仓库编码"
 				},
 				{
-					"name": "item_list",
-					"type": "ItemListWlbWmsInventoryLackUpload[]",
-					"description": "商品信息列表",
 					"subParams": [
 						{
 							"name": "reason",
@@ -59,16 +49,19 @@
 							"type": "Number",
 							"description": "商品缺货数量"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "ItemListWlbWmsInventoryLackUpload[]",
+					"description": "商品信息列表"
 				}
-			]
+			],
+			"name": "content",
+			"type": "WlbWmsInventoryLackUpload",
+			"description": "缺货通知信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "WlbWmsInventoryLackUploadResp",
-			"description": "缺货回告",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -85,7 +78,14 @@
 					"type": "Boolean",
 					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "WlbWmsInventoryLackUploadResp",
+			"description": "缺货回告"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.inventory.lack.upload",
+	"apiChineseName": "缺货通知",
+	"description": "缺货通知",
+	"id": 24617
 }

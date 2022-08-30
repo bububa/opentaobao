@@ -1,8 +1,4 @@
 {
-	"id": 29838,
-	"name": "taobao.alitrip.ie.agent.refund.refuse",
-	"apiChineseName": "拒绝退票申请",
-	"description": "卖家拒绝退票退票申请",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RefuseRefundTicketRs",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "apiErrorMsg",
-					"required": true
+					"description": "apiErrorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "apiErrorCode",
-					"required": true
+					"description": "apiErrorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RefuseRefundTicketRs",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.refund.refuse",
+	"apiChineseName": "拒绝退票申请",
+	"description": "卖家拒绝退票退票申请",
+	"id": 29838
 }

@@ -1,28 +1,24 @@
 {
-	"id": 55691,
-	"name": "taobao.alitrip.axin.trans.pay.img.upload",
-	"apiChineseName": "上传图片到支付宝图片空间接口",
-	"description": "阿信供销平台-上传图片到支付宝图片空间接口",
 	"requestParams": [
 		{
-			"name": "axin_pay_img_upload_d_t_o",
-			"type": "AxinPayImgUploadDto",
-			"description": "上传图片到支付宝图片空间接口入参",
-			"required": true,
 			"subParams": [
-				{
-					"name": "image_type",
-					"type": "String",
-					"description": "图片类型",
-					"required": true
-				},
 				{
 					"name": "file_name",
 					"type": "String",
 					"description": "文件名",
 					"required": true
+				},
+				{
+					"name": "image_type",
+					"type": "String",
+					"description": "图片类型",
+					"required": true
 				}
-			]
+			],
+			"name": "axin_pay_img_upload_d_t_o",
+			"type": "AxinPayImgUploadDto",
+			"description": "上传图片到支付宝图片空间接口入参",
+			"required": true
 		},
 		{
 			"name": "img_contents",
@@ -33,55 +29,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "need_retry",
 					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
+					"description": "是否需要重试"
 				},
 				{
 					"name": "info_msg",
 					"type": "String",
-					"description": "提示信息",
-					"required": true
+					"description": "提示信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "data",
-					"type": "AxinPayImgUploadResDTO",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
 							"name": "img_id",
 							"type": "String",
-							"description": "图片id",
-							"required": true
+							"description": "图片id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinPayImgUploadResDTO",
+					"description": "返回素材id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.pay.img.upload",
+	"apiChineseName": "上传图片到支付宝图片空间接口",
+	"description": "阿信供销平台-上传图片到支付宝图片空间接口",
+	"id": 55691
 }

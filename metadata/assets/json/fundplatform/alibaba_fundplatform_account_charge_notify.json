@@ -1,14 +1,6 @@
 {
-	"id": 30286,
-	"name": "alibaba.fundplatform.account.charge.notify",
-	"apiChineseName": "账户充值成功通知",
-	"description": "通知外部业务方充值成功",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Struct",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "account_id",
@@ -46,7 +38,11 @@
 					"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
 					"required": true
 				}
-			]
+			],
+			"name": "request",
+			"type": "Struct",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -65,5 +61,9 @@
 			"type": "Boolean",
 			"description": "处理结果"
 		}
-	]
+	],
+	"name": "alibaba.fundplatform.account.charge.notify",
+	"apiChineseName": "账户充值成功通知",
+	"description": "通知外部业务方充值成功",
+	"id": 30286
 }

@@ -1,13 +1,6 @@
 {
-	"id": 49923,
-	"name": "alibaba.mozi.vds.tenant.api.service.pagesubadmins",
-	"apiChineseName": "分页查询租户子管理员",
-	"description": "分页查询租户子管理员",
 	"requestParams": [
 		{
-			"name": "par0",
-			"type": "PageTenantSubAdminsRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "return_total_size",
@@ -30,84 +23,80 @@
 					"type": "Number",
 					"description": "一页的条目"
 				}
-			]
+			],
+			"name": "par0",
+			"type": "PageTenantSubAdminsRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageTenantSubAdminsResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "总条数",
-					"required": true
+					"description": "总条数"
 				},
 				{
-					"name": "datas",
-					"type": "TenantAdmin[]",
-					"description": "data数据",
-					"required": true,
 					"subParams": [
+						{
+							"name": "employee_name",
+							"type": "String",
+							"description": "人员名"
+						},
 						{
 							"name": "employee_code",
 							"type": "String",
-							"description": "人员code",
-							"required": true
+							"description": "人员code"
 						},
 						{
 							"name": "primary",
 							"type": "Boolean",
-							"description": "是否为管理员",
-							"required": true
-						},
-						{
-							"name": "employee_name",
-							"type": "String",
-							"description": "人员名",
-							"required": true
+							"description": "是否为管理员"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "TenantAdmin[]",
+					"description": "data数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页的条目数",
-					"required": true
+					"description": "页的条目数"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页数",
-					"required": true
+					"description": "当前页数"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "responseMessage",
-					"required": true
+					"description": "responseMessage"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "responseCode",
-					"required": true
+					"description": "responseCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageTenantSubAdminsResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.mozi.vds.tenant.api.service.pagesubadmins",
+	"apiChineseName": "分页查询租户子管理员",
+	"description": "分页查询租户子管理员",
+	"id": 49923
 }

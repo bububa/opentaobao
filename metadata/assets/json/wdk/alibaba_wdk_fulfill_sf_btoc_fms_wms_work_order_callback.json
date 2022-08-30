@@ -1,13 +1,6 @@
 {
-	"id": 52087,
-	"name": "alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback",
-	"apiChineseName": "顺丰仓作业回传",
-	"description": "顺丰仓作业单回传接口",
 	"requestParams": [
 		{
-			"name": "callback_order",
-			"type": "SfB2CFmsCallbackOrder",
-			"description": "作业单回传对象",
 			"subParams": [
 				{
 					"name": "status_change_time",
@@ -34,14 +27,8 @@
 					"required": true
 				},
 				{
-					"name": "callback_units",
-					"type": "SfB2CFmsCallbackUnit[]",
-					"description": "作业单元",
 					"subParams": [
 						{
-							"name": "callback_contents",
-							"type": "SfB2CFmsCallbackContent[]",
-							"description": "作业内容",
 							"subParams": [
 								{
 									"name": "sku_code",
@@ -74,9 +61,6 @@
 									"description": "作业内容单号"
 								},
 								{
-									"name": "packages",
-									"type": "ExpressPackage[]",
-									"description": "快递包裹信息",
 									"subParams": [
 										{
 											"name": "express_com_code",
@@ -113,21 +97,27 @@
 											"type": "String",
 											"description": "包裹重量（单位g）"
 										}
-									]
+									],
+									"name": "packages",
+									"type": "ExpressPackage[]",
+									"description": "快递包裹信息"
 								}
-							]
+							],
+							"name": "callback_contents",
+							"type": "SfB2CFmsCallbackContent[]",
+							"description": "作业内容"
 						},
 						{
 							"name": "work_order_unit_id",
 							"type": "String",
 							"description": "作业单元单号"
 						}
-					]
+					],
+					"name": "callback_units",
+					"type": "SfB2CFmsCallbackUnit[]",
+					"description": "作业单元"
 				},
 				{
-					"name": "operator",
-					"type": "Operator",
-					"description": "操作员",
 					"subParams": [
 						{
 							"name": "operator_code",
@@ -139,17 +129,18 @@
 							"type": "String",
 							"description": "操作员姓名"
 						}
-					]
+					],
+					"name": "operator",
+					"type": "Operator",
+					"description": "操作员"
 				}
-			]
+			],
+			"name": "callback_order",
+			"type": "SfB2CFmsCallbackOrder",
+			"description": "作业单回传对象"
 		}
 	],
 	"responseParams": [
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否成功"
-		},
 		{
 			"name": "resp_message",
 			"type": "String",
@@ -159,6 +150,15 @@
 			"name": "resp_code",
 			"type": "String",
 			"description": "响应code(SUCCESS:回传成功； SYSTEM_ERROR :系统异常； PARAM_ERROR :参数错误； BUSINESS_ERROR:业务异常；)"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback",
+	"apiChineseName": "顺丰仓作业回传",
+	"description": "顺丰仓作业单回传接口",
+	"id": 52087
 }

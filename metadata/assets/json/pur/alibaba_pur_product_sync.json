@@ -1,15 +1,6 @@
 {
-	"id": 42134,
-	"name": "alibaba.pur.product.sync",
-	"apiChineseName": "同步产品",
-	"description": "同步产品",
 	"requestParams": [
 		{
-			"name": "access_product_dtos",
-			"type": "AccessProductDto[]",
-			"description": "产品对象",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "source_category_name",
@@ -125,9 +116,6 @@
 					"required": true
 				},
 				{
-					"name": "product_attr_value_list",
-					"type": "AccessProductAttrValueDto[]",
-					"description": "产品属性",
 					"subParams": [
 						{
 							"name": "attr_en_name",
@@ -159,7 +147,10 @@
 							"type": "String",
 							"description": "是否关键属性y/n"
 						}
-					]
+					],
+					"name": "product_attr_value_list",
+					"type": "AccessProductAttrValueDto[]",
+					"description": "产品属性"
 				},
 				{
 					"name": "front_category_id",
@@ -177,40 +168,45 @@
 					"type": "String",
 					"description": "产品跳转链接"
 				}
-			]
+			],
+			"name": "access_product_dtos",
+			"type": "AccessProductDto[]",
+			"description": "产品对象",
+			"maxListSize": 20,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回提示信息",
-					"required": true
+					"description": "返回提示信息"
 				},
 				{
 					"name": "error",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "ret_value",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.product.sync",
+	"apiChineseName": "同步产品",
+	"description": "同步产品",
+	"id": 42134
 }

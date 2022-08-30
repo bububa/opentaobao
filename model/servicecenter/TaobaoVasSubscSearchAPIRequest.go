@@ -22,12 +22,12 @@ type TaobaoVasSubscSearchAPIRequest struct {
 	_endDeadline string
 	// 淘宝会员名
 	_nick string
+	// 订购记录状态，1=有效 2=过期 空=全部
+	_status int64
 	// 一页包含的记录数
 	_pageSize int64
 	// 页码
 	_pageNo int64
-	// 订购记录状态，1=有效 2=过期 空=全部
-	_status int64
 	// 是否自动续费，true=自动续费 false=非自动续费 空=全部
 	_autosub bool
 	// 是否到期提醒，true=到期提醒 false=非到期提醒 空=全部
@@ -120,6 +120,19 @@ func (r TaobaoVasSubscSearchAPIRequest) GetNick() string {
 	return r._nick
 }
 
+// SetStatus is Status Setter
+// 订购记录状态，1=有效 2=过期 空=全部
+func (r *TaobaoVasSubscSearchAPIRequest) SetStatus(_status int64) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoVasSubscSearchAPIRequest) GetStatus() int64 {
+	return r._status
+}
+
 // SetPageSize is PageSize Setter
 // 一页包含的记录数
 func (r *TaobaoVasSubscSearchAPIRequest) SetPageSize(_pageSize int64) error {
@@ -144,19 +157,6 @@ func (r *TaobaoVasSubscSearchAPIRequest) SetPageNo(_pageNo int64) error {
 // GetPageNo PageNo Getter
 func (r TaobaoVasSubscSearchAPIRequest) GetPageNo() int64 {
 	return r._pageNo
-}
-
-// SetStatus is Status Setter
-// 订购记录状态，1=有效 2=过期 空=全部
-func (r *TaobaoVasSubscSearchAPIRequest) SetStatus(_status int64) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoVasSubscSearchAPIRequest) GetStatus() int64 {
-	return r._status
 }
 
 // SetAutosub is Autosub Setter

@@ -1,0 +1,125 @@
+{
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "开放平台appId",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "contact_name",
+									"type": "String",
+									"description": "联系人姓名"
+								},
+								{
+									"name": "contact_number",
+									"type": "String",
+									"description": "联系电话"
+								},
+								{
+									"name": "contact_position",
+									"type": "String",
+									"description": "联系人岗位"
+								}
+							],
+							"name": "contact_person_list",
+							"type": "ContactPerson[]",
+							"description": "联系人列表"
+						},
+						{
+							"name": "merchant_login_id",
+							"type": "String",
+							"description": "客户登陆账号"
+						}
+					],
+					"name": "client",
+					"type": "Client",
+					"description": "客户数据"
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展字段,这里可支持扩展，但是需要报备"
+				},
+				{
+					"name": "generation_time",
+					"type": "Date",
+					"description": "数据生成时间",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话",
+					"required": true
+				},
+				{
+					"name": "record_contents",
+					"type": "String",
+					"description": "录入信息",
+					"required": true
+				},
+				{
+					"name": "record_id",
+					"type": "String",
+					"description": "外部数据记录唯一id",
+					"required": true
+				},
+				{
+					"name": "recorder",
+					"type": "String",
+					"description": "录入人",
+					"required": true
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务代码",
+					"required": true
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型：电话 PHONE, 预约上门APPOINTMENT_TO_DOOR, 未预约上门 NO_APPOINTMENT_TO_DOOR,  培训服务 TRAIN, 在线拜访 VISIT_ONLINE, 其他 OTHER;",
+					"required": true
+				}
+			],
+			"name": "param_third_party_client_data_params",
+			"type": "ThirdPartyClientDataParams",
+			"description": "要回写的数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "return_code",
+			"type": "Number",
+			"description": "错误代码"
+		},
+		{
+			"name": "return_data",
+			"type": "Boolean",
+			"description": "数据写入结果 true为成功"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "服务调用结果"
+		}
+	],
+	"name": "alibaba.seller.vendor.write.client",
+	"apiChineseName": "客户动态回写",
+	"description": "客户动态开放API接口，外部服务商回写数据",
+	"id": 57592
+}

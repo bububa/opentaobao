@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "logistics_order_id",
+							"type": "String",
+							"description": "shipment order id",
+							"required": true
+						},
+						{
+							"name": "shipped_type",
+							"type": "String",
+							"description": "type of report dispatch",
+							"required": true
+						}
+					],
+					"name": "report_shipped_list",
+					"type": "ReportShippedDTO[]",
+					"description": "report shipped list",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "ReportShippedRequestDTO",
+			"description": "param",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "logistics_order_id",
+					"type": "String",
+					"description": "shipment order id"
+				},
+				{
+					"name": "shipped_type",
+					"type": "String",
+					"description": "type of report dispatch-Status including: all shipments (all), part of the delivery (part)"
+				}
+			],
+			"name": "data",
+			"type": "ReportShippedDTO []",
+			"description": "response info"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "is success"
+		},
+		{
+			"name": "error_result_message",
+			"type": "String",
+			"description": "error message"
+		},
+		{
+			"name": "error_result_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.local.logistics.report.shipped",
+	"apiChineseName": "report as shipped",
+	"description": "report as shipped",
+	"id": 61143
+}

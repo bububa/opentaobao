@@ -13,7 +13,7 @@ import (
 type TaobaoLogisticsTraceSearchAPIRequest struct {
 	model.Params
 	// 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
-	_subTid []int64
+	_subTid []string
 	// 淘宝交易号，请勿传非淘宝交易号
 	_tid int64
 	// 表明是否是拆单，默认值0，1表示拆单
@@ -43,14 +43,14 @@ func (r TaobaoLogisticsTraceSearchAPIRequest) GetApiParams() url.Values {
 
 // SetSubTid is SubTid Setter
 // 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
-func (r *TaobaoLogisticsTraceSearchAPIRequest) SetSubTid(_subTid []int64) error {
+func (r *TaobaoLogisticsTraceSearchAPIRequest) SetSubTid(_subTid []string) error {
 	r._subTid = _subTid
 	r.Set("sub_tid", _subTid)
 	return nil
 }
 
 // GetSubTid SubTid Getter
-func (r TaobaoLogisticsTraceSearchAPIRequest) GetSubTid() []int64 {
+func (r TaobaoLogisticsTraceSearchAPIRequest) GetSubTid() []string {
 	return r._subTid
 }
 

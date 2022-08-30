@@ -1,14 +1,6 @@
 {
-	"id": 43247,
-	"name": "taobao.feedflow.item.crowd.page",
-	"apiChineseName": "分页查询单品单元下人群列表",
-	"description": "分页查询单品单元下人群列表",
 	"requestParams": [
 		{
-			"name": "crowd_query",
-			"type": "CrowdQueryDto",
-			"description": "查询条件",
-			"required": true,
 			"subParams": [
 				{
 					"name": "target_type_list",
@@ -45,154 +37,140 @@
 					"type": "Number",
 					"description": "计划id"
 				}
-			]
+			],
+			"name": "crowd_query",
+			"type": "CrowdQueryDto",
+			"description": "查询条件",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "返回结果对象",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
-					"name": "crowds",
-					"type": "CrowdDto[]",
-					"description": "人群列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "crowd_id",
 							"type": "Number",
-							"description": "人群id",
-							"required": true
+							"description": "人群id"
 						},
 						{
 							"name": "crowd_name",
 							"type": "String",
-							"description": "人群名称",
-							"required": true
+							"description": "人群名称"
 						},
 						{
 							"name": "crowd_desc",
 							"type": "String",
-							"description": "人群描述",
-							"required": true
+							"description": "人群描述"
 						},
 						{
 							"name": "price",
 							"type": "Number",
-							"description": "人群出价，单位：分",
-							"required": true
+							"description": "人群出价，单位：分"
 						},
 						{
 							"name": "campaign_id",
 							"type": "Number",
-							"description": "计划id",
-							"required": true
+							"description": "计划id"
 						},
 						{
 							"name": "adgroup_id",
 							"type": "Number",
-							"description": "单元id",
-							"required": true
+							"description": "单元id"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "人群状态",
-							"required": true
+							"description": "人群状态"
 						},
 						{
-							"name": "target_label",
-							"type": "LabelDto",
-							"description": "标签结构",
-							"required": true,
 							"subParams": [
 								{
 									"name": "label_id",
 									"type": "Number",
-									"description": "标签id",
-									"required": true
+									"description": "标签id"
 								},
 								{
 									"name": "target_id",
 									"type": "Number",
-									"description": "定向id",
-									"required": true
+									"description": "定向id"
 								},
 								{
 									"name": "target_type",
 									"type": "String",
-									"description": "定向类型",
-									"required": true
+									"description": "定向类型"
 								},
 								{
 									"name": "label_name",
 									"type": "String",
-									"description": "标签名称",
-									"required": true
+									"description": "标签名称"
 								},
 								{
 									"name": "label_desc",
 									"type": "String",
-									"description": "标签描述",
-									"required": true
+									"description": "标签描述"
 								},
 								{
 									"name": "label_value",
 									"type": "String",
-									"description": "标签值",
-									"required": true
+									"description": "标签值"
 								},
 								{
-									"name": "options",
-									"type": "OptionDto[]",
-									"description": "选项结构",
-									"required": true,
 									"subParams": [
 										{
 											"name": "option_name",
 											"type": "String",
-											"description": "选项名称",
-											"required": true
+											"description": "选项名称"
 										},
 										{
 											"name": "option_value",
 											"type": "String",
-											"description": "选项值",
-											"required": true
+											"description": "选项值"
 										},
 										{
 											"name": "option_desc",
 											"type": "String",
-											"description": "选项描述",
-											"required": true
+											"description": "选项描述"
 										}
-									]
+									],
+									"name": "options",
+									"type": "OptionDto[]",
+									"description": "选项结构"
 								}
-							]
+							],
+							"name": "target_label",
+							"type": "LabelDto",
+							"description": "标签结构"
 						}
-					]
+					],
+					"name": "crowds",
+					"type": "CrowdDto[]",
+					"description": "人群列表"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功,true-成功，false-失败",
-					"required": true
+					"description": "调用是否成功,true-成功，false-失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.crowd.page",
+	"apiChineseName": "分页查询单品单元下人群列表",
+	"description": "分页查询单品单元下人群列表",
+	"id": 43247
 }

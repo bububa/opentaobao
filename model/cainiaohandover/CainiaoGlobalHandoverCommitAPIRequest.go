@@ -18,12 +18,18 @@ type CainiaoGlobalHandoverCommitAPIRequest struct {
 	_remark string
 	// 重量单位，克:g, 千克:kg，默认g
 	_weightUnit string
-	// 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)
+	// 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)、self_send(自送)
 	_type string
 	// ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 	_client string
 	// 多语言
 	_locale string
+	// 预约交货方式（bigbag：大包预约，batch：批次预约））
+	_appointmentType string
+	// 国内运单号（交接单类型type为self_post(自寄)时必填）
+	_domesticTrackingNo string
+	// 国内物流公司名称（交接单类型type为self_post(自寄)时必填）
+	_domesticLogisticsCompany string
 	// 用户信息
 	_userInfo *UserInfoDto
 	// 退件信息
@@ -36,6 +42,8 @@ type CainiaoGlobalHandoverCommitAPIRequest struct {
 	_handoverOrderId int64
 	// 扩展字段
 	_features *Features
+	// 国内物流公司id（交接单类型type为self_post(自寄)时必填）
+	_domesticLogisticsCompanyId int64
 }
 
 // NewCainiaoGlobalHandoverCommitRequest 初始化CainiaoGlobalHandoverCommitAPIRequest对象
@@ -99,7 +107,7 @@ func (r CainiaoGlobalHandoverCommitAPIRequest) GetWeightUnit() string {
 }
 
 // SetType is Type Setter
-// 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)
+// 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)、self_send(自送)
 func (r *CainiaoGlobalHandoverCommitAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)
@@ -135,6 +143,45 @@ func (r *CainiaoGlobalHandoverCommitAPIRequest) SetLocale(_locale string) error 
 // GetLocale Locale Getter
 func (r CainiaoGlobalHandoverCommitAPIRequest) GetLocale() string {
 	return r._locale
+}
+
+// SetAppointmentType is AppointmentType Setter
+// 预约交货方式（bigbag：大包预约，batch：批次预约））
+func (r *CainiaoGlobalHandoverCommitAPIRequest) SetAppointmentType(_appointmentType string) error {
+	r._appointmentType = _appointmentType
+	r.Set("appointment_type", _appointmentType)
+	return nil
+}
+
+// GetAppointmentType AppointmentType Getter
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetAppointmentType() string {
+	return r._appointmentType
+}
+
+// SetDomesticTrackingNo is DomesticTrackingNo Setter
+// 国内运单号（交接单类型type为self_post(自寄)时必填）
+func (r *CainiaoGlobalHandoverCommitAPIRequest) SetDomesticTrackingNo(_domesticTrackingNo string) error {
+	r._domesticTrackingNo = _domesticTrackingNo
+	r.Set("domestic_tracking_no", _domesticTrackingNo)
+	return nil
+}
+
+// GetDomesticTrackingNo DomesticTrackingNo Getter
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetDomesticTrackingNo() string {
+	return r._domesticTrackingNo
+}
+
+// SetDomesticLogisticsCompany is DomesticLogisticsCompany Setter
+// 国内物流公司名称（交接单类型type为self_post(自寄)时必填）
+func (r *CainiaoGlobalHandoverCommitAPIRequest) SetDomesticLogisticsCompany(_domesticLogisticsCompany string) error {
+	r._domesticLogisticsCompany = _domesticLogisticsCompany
+	r.Set("domestic_logistics_company", _domesticLogisticsCompany)
+	return nil
+}
+
+// GetDomesticLogisticsCompany DomesticLogisticsCompany Getter
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetDomesticLogisticsCompany() string {
+	return r._domesticLogisticsCompany
 }
 
 // SetUserInfo is UserInfo Setter
@@ -213,4 +260,17 @@ func (r *CainiaoGlobalHandoverCommitAPIRequest) SetFeatures(_features *Features)
 // GetFeatures Features Getter
 func (r CainiaoGlobalHandoverCommitAPIRequest) GetFeatures() *Features {
 	return r._features
+}
+
+// SetDomesticLogisticsCompanyId is DomesticLogisticsCompanyId Setter
+// 国内物流公司id（交接单类型type为self_post(自寄)时必填）
+func (r *CainiaoGlobalHandoverCommitAPIRequest) SetDomesticLogisticsCompanyId(_domesticLogisticsCompanyId int64) error {
+	r._domesticLogisticsCompanyId = _domesticLogisticsCompanyId
+	r.Set("domestic_logistics_company_id", _domesticLogisticsCompanyId)
+	return nil
+}
+
+// GetDomesticLogisticsCompanyId DomesticLogisticsCompanyId Getter
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetDomesticLogisticsCompanyId() int64 {
+	return r._domesticLogisticsCompanyId
 }

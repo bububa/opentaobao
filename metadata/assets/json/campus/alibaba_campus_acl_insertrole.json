@@ -1,8 +1,4 @@
 {
-	"id": 32221,
-	"name": "alibaba.campus.acl.insertrole",
-	"apiChineseName": "新增角色",
-	"description": "新增角色",
 	"requestParams": [
 		{
 			"name": "company_id",
@@ -20,6 +16,11 @@
 			"type": "Number",
 			"description": "园区id",
 			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id(不填默认appCode)"
 		},
 		{
 			"name": "role_desc",
@@ -42,50 +43,44 @@
 			"type": "String",
 			"description": "角色唯一ID,统一ROLE_开头,不填默认生成ROLE_UUID(32位随机数)",
 			"required": true
-		},
-		{
-			"name": "user_id",
-			"type": "String",
-			"description": "操作人id(不填默认appCode)"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RoleRsp",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				},
 				{
 					"name": "role_id",
 					"type": "String",
-					"description": "角色id",
-					"required": true
+					"description": "角色id"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RoleRsp",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.insertrole",
+	"apiChineseName": "新增角色",
+	"description": "新增角色",
+	"id": 32221
 }

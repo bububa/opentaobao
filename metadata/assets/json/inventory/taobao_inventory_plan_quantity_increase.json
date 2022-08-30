@@ -1,14 +1,6 @@
 {
-	"id": 54909,
-	"name": "taobao.inventory.plan.quantity.increase",
-	"apiChineseName": "计划库存的增量编辑",
-	"description": "计划库存的增量编辑",
 	"requestParams": [
 		{
-			"name": "plan_inv_adjust_top",
-			"type": "PlanInvAdjustTopDto",
-			"description": "增量编辑计划库存入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "item_id",
@@ -23,10 +15,6 @@
 					"required": true
 				},
 				{
-					"name": "adjust_detail_list",
-					"type": "PlanInvAdjustTopDetailDto[]",
-					"description": "计划库存增量编辑的详细信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "operate_code",
@@ -46,7 +34,11 @@
 							"description": "要调整的库存值，负数代表调低库存，正数代表调高库存",
 							"required": true
 						}
-					]
+					],
+					"name": "adjust_detail_list",
+					"type": "PlanInvAdjustTopDetailDto[]",
+					"description": "计划库存增量编辑的详细信息",
+					"required": true
 				},
 				{
 					"name": "sku_id",
@@ -54,54 +46,56 @@
 					"description": "设置计划的品的skuid。对于货品，是0.",
 					"required": true
 				}
-			]
+			],
+			"name": "plan_inv_adjust_top",
+			"type": "PlanInvAdjustTopDto",
+			"description": "增量编辑计划库存入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BatchResult",
-			"description": "批量返回结果",
 			"subParams": [
 				{
 					"name": "success_result_map",
-					"type": "Json",
-					"description": "成功的结果",
-					"required": true
+					"type": "String",
+					"description": "成功的结果"
 				},
 				{
 					"name": "error_result_map",
-					"type": "Json",
-					"description": "失败的结果",
-					"required": true
+					"type": "String",
+					"description": "失败的结果"
 				},
 				{
-					"name": "result_code",
-					"type": "ResultCode",
-					"description": "有一个失败，整体失败",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "结果码",
-							"required": true
+							"description": "结果码"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "结果id",
-							"required": true
+							"description": "结果id"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "结果描述",
-							"required": true
+							"description": "结果描述"
 						}
-					]
+					],
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "有一个失败，整体失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BatchResult",
+			"description": "批量返回结果"
 		}
-	]
+	],
+	"name": "taobao.inventory.plan.quantity.increase",
+	"apiChineseName": "计划库存的增量编辑",
+	"description": "计划库存的增量编辑",
+	"id": 54909
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42808,
-	"name": "tmall.mc.device.circle.check",
-	"apiChineseName": "云码设备圈选情况查询",
-	"description": "云码设备圈选情况查询",
 	"requestParams": [
 		{
 			"name": "outer_code",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "TaskDto []",
-			"description": "设备相关投放计划",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "投放计划id",
-					"required": true
+					"description": "投放计划id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "投放计划名称",
-					"required": true
+					"description": "投放计划名称"
 				},
 				{
 					"name": "start_time",
 					"type": "Date",
-					"description": "开始时间",
-					"required": true
+					"description": "开始时间"
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "结束时间",
-					"required": true
+					"description": "结束时间"
 				}
-			]
+			],
+			"name": "results",
+			"type": "TaskDto []",
+			"description": "设备相关投放计划"
 		}
-	]
+	],
+	"name": "tmall.mc.device.circle.check",
+	"apiChineseName": "云码设备圈选情况查询",
+	"description": "云码设备圈选情况查询",
+	"id": 42808
 }

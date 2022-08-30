@@ -1,14 +1,6 @@
 {
-	"id": 45774,
-	"name": "alibaba.alsc.crm.rule.level.querylevelrule",
-	"apiChineseName": "查询会员等级规则",
-	"description": "查询会员等级规则",
 	"requestParams": [
 		{
-			"name": "plan_rule_query_request",
-			"type": "PlanRuleQueryOpenReq",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "deleted",
@@ -41,20 +33,17 @@
 					"type": "String",
 					"description": "上次最有一个ID"
 				}
-			]
+			],
+			"name": "plan_rule_query_request",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "会员等级规则",
 			"subParams": [
 				{
-					"name": "result_list",
-					"type": "LevelRuleOpenInfo[]",
-					"description": "会员等级规则",
-					"required": true,
 					"subParams": [
 						{
 							"name": "level_id",
@@ -122,7 +111,11 @@
 							"description": "扩展字段",
 							"required": true
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "LevelRuleOpenInfo[]",
+					"description": "会员等级规则",
+					"required": true
 				},
 				{
 					"name": "page_size",
@@ -166,7 +159,14 @@
 					"description": "业务执行是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "会员等级规则"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.rule.level.querylevelrule",
+	"apiChineseName": "查询会员等级规则",
+	"description": "查询会员等级规则",
+	"id": 45774
 }

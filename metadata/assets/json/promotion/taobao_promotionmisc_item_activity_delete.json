@@ -1,15 +1,10 @@
 {
-	"id": 22261,
-	"name": "taobao.promotionmisc.item.activity.delete",
-	"apiChineseName": "删除无条件单品优惠活动",
-	"description": "删除无条件单品优惠活动",
 	"requestParams": [
 		{
 			"name": "activity_id",
 			"type": "Number",
 			"description": "活动id。",
-			"required": true,
-			"minValue": 0
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -18,5 +13,9 @@
 			"type": "Boolean",
 			"description": "是否成功删除活动。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.item.activity.delete",
+	"apiChineseName": "删除无条件单品优惠活动",
+	"description": "删除无条件单品优惠活动",
+	"id": 22261
 }

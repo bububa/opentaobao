@@ -1,8 +1,4 @@
 {
-	"id": 42643,
-	"name": "wdk.wms.pick.medicine.checksell",
-	"apiChineseName": "联营商药品柜核销",
-	"description": "联营商药品柜核销",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -17,23 +13,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MedicineResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MedicineResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "wdk.wms.pick.medicine.checksell",
+	"apiChineseName": "联营商药品柜核销",
+	"description": "联营商药品柜核销",
+	"id": 42643
 }

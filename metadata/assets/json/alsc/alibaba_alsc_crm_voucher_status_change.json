@@ -1,13 +1,6 @@
 {
-	"id": 46230,
-	"name": "alibaba.alsc.crm.voucher.status.change",
-	"apiChineseName": "优惠券状态更改",
-	"description": "核销优惠券",
 	"requestParams": [
 		{
-			"name": "param_voucher_status_change_open_req",
-			"type": "VoucherStatusChangeOpenReq",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -80,68 +73,67 @@
 					"type": "String[]",
 					"description": "待核销点数，数组下标和券id对齐"
 				}
-			]
+			],
+			"name": "param_voucher_status_change_open_req",
+			"type": "VoucherStatusChangeOpenReq",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "VoucherUsingOpenInfo",
-					"description": "核销返回结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "voucher_status_list",
-							"type": "VoucherStatus[]",
-							"description": "1",
-							"required": true,
 							"subParams": [
-								{
-									"name": "voucher_id",
-									"type": "String",
-									"description": "优惠券实例ID/反核销回补ID",
-									"required": true
-								},
 								{
 									"name": "is_success",
 									"type": "Boolean",
-									"description": "是否成功",
-									"required": true
+									"description": "是否成功"
+								},
+								{
+									"name": "voucher_id",
+									"type": "String",
+									"description": "优惠券实例ID/反核销回补ID"
 								}
-							]
+							],
+							"name": "voucher_status_list",
+							"type": "VoucherStatus[]",
+							"description": "1"
 						}
-					]
+					],
+					"name": "result",
+					"type": "VoucherUsingOpenInfo",
+					"description": "核销返回结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果显示",
-					"required": true
+					"description": "结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.voucher.status.change",
+	"apiChineseName": "优惠券状态更改",
+	"description": "核销优惠券",
+	"id": 46230
 }

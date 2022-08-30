@@ -1,8 +1,4 @@
 {
-	"id": 33686,
-	"name": "tmall.servicecenter.servicestore.createservicestorecoverservice",
-	"apiChineseName": "新增网点覆盖的服务",
-	"description": "新增网点覆盖的服务，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点覆盖的服务已存在，会新增失败。\n网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -31,9 +27,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -71,7 +64,14 @@
 					"description": "是否成功",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.servicestore.createservicestorecoverservice",
+	"apiChineseName": "新增网点覆盖的服务",
+	"description": "新增网点覆盖的服务，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点覆盖的服务已存在，会新增失败。\n网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌",
+	"id": 33686
 }

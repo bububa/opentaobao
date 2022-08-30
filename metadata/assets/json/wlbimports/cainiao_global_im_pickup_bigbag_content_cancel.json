@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "bigbag_id",
+					"type": "Number",
+					"description": "大包id",
+					"required": true
+				}
+			],
+			"name": "bigbag_cancel_request",
+			"type": "BigbagCancelRequest",
+			"description": "大包取消请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "响应是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网略异常码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常提示"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cancel_flag",
+							"type": "Boolean",
+							"description": "取消是否成功"
+						}
+					],
+					"name": "bigbag_cancel_response",
+					"type": "BigbagCancelResponse",
+					"description": "响应业务对象"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "响应体"
+		}
+	],
+	"name": "cainiao.global.im.pickup.bigbag.content.cancel",
+	"apiChineseName": "进口大包取消",
+	"description": "进口大包取消",
+	"id": 59971
+}

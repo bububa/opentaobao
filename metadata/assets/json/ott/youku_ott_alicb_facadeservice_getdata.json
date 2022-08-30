@@ -1,15 +1,11 @@
 {
-	"id": 29910,
-	"name": "youku.ott.alicb.facadeservice.getdata",
-	"apiChineseName": "影视SDK获取设备能力值",
-	"description": "影视SDK获取设备能力值",
 	"requestParams": [
 		{
 			"name": "service_list",
 			"type": "String[]",
 			"description": "能力维度",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "uuid",
@@ -35,5 +31,9 @@
 			"type": "Json",
 			"description": "设备能力JSON"
 		}
-	]
+	],
+	"name": "youku.ott.alicb.facadeservice.getdata",
+	"apiChineseName": "影视SDK获取设备能力值",
+	"description": "影视SDK获取设备能力值",
+	"id": 29910
 }

@@ -1,14 +1,6 @@
 {
-	"id": 56316,
-	"name": "aliexpress.ascp.fro.query",
-	"apiChineseName": "AliExpress销退单查询API",
-	"description": "AE履约销退单查询接口",
 	"requestParams": [
 		{
-			"name": "fulfillment_reverse_order_query",
-			"type": "FulfillmentReverseOrderQueryDto",
-			"description": "dto",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -36,138 +28,126 @@
 					"type": "Number",
 					"description": "分页大小"
 				}
-			]
+			],
+			"name": "fulfillment_reverse_order_query",
+			"type": "FulfillmentReverseOrderQueryDto",
+			"description": "dto",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageQueryResult",
-			"description": "DTO",
 			"subParams": [
 				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "DTO",
-					"required": true,
 					"subParams": [
 						{
 							"name": "trade_order_no",
 							"type": "String",
-							"description": "用户订单号",
-							"required": true
+							"description": "用户订单号"
 						},
 						{
 							"name": "fulfillment_order_no",
 							"type": "String",
-							"description": "履约单号",
-							"required": true
+							"description": "履约单号"
 						},
 						{
 							"name": "original_lbx_no",
 							"type": "String",
-							"description": "原物流单号",
-							"required": true
+							"description": "原物流单号"
 						},
 						{
 							"name": "lbx_no",
 							"type": "String",
-							"description": "物流单号",
-							"required": true
+							"description": "物流单号"
 						},
 						{
 							"name": "receiver_name",
 							"type": "String",
-							"description": "收货人姓名",
-							"required": true
+							"description": "收货人姓名"
 						},
 						{
 							"name": "receiver_mobile",
 							"type": "String",
-							"description": "收货人手机",
-							"required": true
+							"description": "收货人手机"
 						},
 						{
 							"name": "shipping_provider_name",
 							"type": "String",
-							"description": "物流公司",
-							"required": true
+							"description": "物流公司"
 						},
 						{
 							"name": "tracking_number",
 							"type": "String",
-							"description": "运单号",
-							"required": true
+							"description": "运单号"
 						},
 						{
 							"name": "return_order_create_time",
 							"type": "Number",
-							"description": "退货下单时间戳",
-							"required": true
+							"description": "退货下单时间戳"
 						},
 						{
 							"name": "return_order_inbound_time",
 							"type": "Number",
-							"description": "退货入库时间戳",
-							"required": true
+							"description": "退货入库时间戳"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						},
 						{
 							"name": "order_type",
 							"type": "String",
-							"description": "退货类型",
-							"required": true
+							"description": "退货类型"
 						},
 						{
 							"name": "extend_fields",
-							"type": "Json",
-							"description": "扩展字段",
-							"required": true
+							"type": "String",
+							"description": "扩展字段"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "DTO"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "分页页码",
-					"required": true
+					"description": "分页页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "分页大小",
-					"required": true
+					"description": "分页大小"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "查询结果总数",
-					"required": true
+					"description": "查询结果总数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "DTO"
 		}
-	]
+	],
+	"name": "aliexpress.ascp.fro.query",
+	"apiChineseName": "AliExpress销退单查询API",
+	"description": "AE履约销退单查询接口",
+	"id": 56316
 }

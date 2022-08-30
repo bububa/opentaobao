@@ -1,8 +1,4 @@
 {
-	"id": 25214,
-	"name": "taobao.vmarket.eticket.package.base.get",
-	"apiChineseName": "获取包基本信息",
-	"description": "获取包基本信息",
 	"requestParams": [
 		{
 			"name": "package_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PackageResult",
-			"description": "查询结果",
 			"subParams": [
 				{
 					"name": "code",
@@ -33,9 +26,6 @@
 					"description": "操作结果信息"
 				},
 				{
-					"name": "package_base",
-					"type": "PackageBase",
-					"description": "包基本信息",
 					"subParams": [
 						{
 							"name": "bill_type",
@@ -127,9 +117,19 @@
 							"type": "String",
 							"description": "核销码商名字"
 						}
-					]
+					],
+					"name": "package_base",
+					"type": "PackageBase",
+					"description": "包基本信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PackageResult",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.package.base.get",
+	"apiChineseName": "获取包基本信息",
+	"description": "获取包基本信息",
+	"id": 25214
 }

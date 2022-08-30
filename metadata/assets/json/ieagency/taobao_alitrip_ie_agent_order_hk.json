@@ -1,8 +1,4 @@
 {
-	"id": 24309,
-	"name": "taobao.alitrip.ie.agent.order.hk",
-	"apiChineseName": "【国际机票】手工预定回填PNR",
-	"description": "代理商通过手工预定PNR，并回填。",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -10,14 +6,13 @@
 			"description": "代理商ID"
 		},
 		{
-			"name": "write_back_pnr_v_o",
-			"type": "IeWriteBackPnrVO",
-			"description": "回填pnr信息",
 			"subParams": [
 				{
-					"name": "book_pnr_vos",
-					"type": "IeBookPnrVo[]",
-					"description": "预定订单pnr信息",
+					"name": "book_order_id",
+					"type": "Number",
+					"description": "预定订单ID"
+				},
+				{
 					"subParams": [
 						{
 							"name": "id",
@@ -25,24 +20,25 @@
 							"description": "pnr id"
 						},
 						{
-							"name": "pnr_type",
-							"type": "String",
-							"description": "pnr类型"
-						},
-						{
 							"name": "pnr_no",
 							"type": "String",
 							"description": "pnr值",
 							"required": true
+						},
+						{
+							"name": "pnr_type",
+							"type": "String",
+							"description": "pnr类型"
 						}
-					]
-				},
-				{
-					"name": "book_order_id",
-					"type": "Number",
-					"description": "预定订单ID"
+					],
+					"name": "book_pnr_vos",
+					"type": "IeBookPnrVo[]",
+					"description": "预定订单pnr信息"
 				}
-			]
+			],
+			"name": "write_back_pnr_v_o",
+			"type": "IeWriteBackPnrVO",
+			"description": "回填pnr信息"
 		}
 	],
 	"responseParams": [
@@ -51,5 +47,9 @@
 			"type": "Boolean",
 			"description": "是否回填成功true：成功 false:失败"
 		}
-	]
+	],
+	"name": "taobao.alitrip.ie.agent.order.hk",
+	"apiChineseName": "【国际机票】手工预定回填PNR",
+	"description": "代理商通过手工预定PNR，并回填。",
+	"id": 24309
 }

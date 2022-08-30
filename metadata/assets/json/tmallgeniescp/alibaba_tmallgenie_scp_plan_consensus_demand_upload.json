@@ -1,18 +1,8 @@
 {
-	"id": 53246,
-	"name": "alibaba.tmallgenie.scp.plan.consensus.demand.upload",
-	"apiChineseName": "20-IBP共识需求回传接口",
-	"description": "IBP共识需求回传接口",
 	"requestParams": [
 		{
-			"name": "consensus_demand_request",
-			"type": "ConsensusDemandRequest",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "consensus_demand_param_d_t_o_list",
-					"type": "ConsensusDemandParamDto[]",
-					"description": "入参对象列表",
 					"subParams": [
 						{
 							"name": "prd_id",
@@ -48,41 +38,48 @@
 							"type": "String",
 							"description": "元素扩展参数"
 						}
-					]
+					],
+					"name": "consensus_demand_param_d_t_o_list",
+					"type": "ConsensusDemandParamDto[]",
+					"description": "入参对象列表"
 				},
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "consensus_demand_request",
+			"type": "ConsensusDemandRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "suc",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.consensus.demand.upload",
+	"apiChineseName": "20-IBP共识需求回传接口",
+	"description": "IBP共识需求回传接口",
+	"id": 53246
 }

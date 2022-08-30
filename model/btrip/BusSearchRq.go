@@ -30,4 +30,8 @@ type BusSearchRq struct {
 	ShowNoSell int64 `json:"show_no_sell,omitempty" xml:"show_no_sell,omitempty"`
 	// 标准出发站编码
 	StandardFromStationId int64 `json:"standard_from_station_id,omitempty" xml:"standard_from_station_id,omitempty"`
+	// 当前页
+	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
+	// 每页大小
+	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 }

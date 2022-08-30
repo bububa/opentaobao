@@ -1,8 +1,4 @@
 {
-	"id": 29275,
-	"name": "taobao.bus.historyorder.get",
-	"apiChineseName": "历史订单查询（对账）",
-	"description": "历史订单查询，对账接口",
 	"requestParams": [
 		{
 			"name": "from_date",
@@ -46,186 +42,177 @@
 			"description": "errorMsg 错误原因"
 		},
 		{
-			"name": "buso_main_order_history_page_v_o",
-			"type": "BusoMainOrderHistoryPageVo",
-			"description": "busoMainOrderHistoryPageVO 订单详情",
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success true 成功  false失败"
+		},
+		{
 			"subParams": [
 				{
-					"name": "buso_main_order_history_v_o_list",
-					"type": "Busomainorderhistoryvolist[]",
-					"description": "busoMainOrderHistoryVOList",
-					"required": true,
 					"subParams": [
-						{
-							"name": "refund_amount",
-							"type": "Number",
-							"description": "refundAmount 退款金额（分）",
-							"required": true
-						},
 						{
 							"name": "last_place_name",
 							"type": "String",
-							"description": "lastPlaceName 目的地",
-							"required": true
+							"description": "lastPlaceName 目的地"
 						},
 						{
 							"name": "schedule_id",
 							"type": "String",
-							"description": "scheduleId 车次id",
-							"required": true
+							"description": "scheduleId 车次id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "gmtCreate 订单创建时间",
-							"required": true
+							"description": "gmtCreate 订单创建时间"
 						},
 						{
 							"name": "start_city_name",
 							"type": "String",
-							"description": "startCityName 出发城市",
-							"required": true
+							"description": "startCityName 出发城市"
 						},
 						{
 							"name": "issue_time",
 							"type": "String",
-							"description": "issueTime 出票时间",
-							"required": true
+							"description": "issueTime 出票时间"
 						},
 						{
 							"name": "agent_id",
 							"type": "Number",
-							"description": "agentId 代理商编号",
-							"required": true
+							"description": "agentId 代理商编号"
 						},
 						{
 							"name": "can_refund",
 							"type": "Number",
-							"description": "canRefund 是否可退 1 可退 0 不可退",
-							"required": true
+							"description": "canRefund 是否可退 1 可退 0 不可退"
 						},
 						{
 							"name": "main_order_id",
 							"type": "Number",
-							"description": "mainOrderId 飞猪订单号",
-							"required": true
+							"description": "mainOrderId 飞猪订单号"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "orderStatus 订单状态. 10：初始状态，15:订单可见；41:订单完成待打款给卖家；70：交易成功 80:交易关闭",
-							"required": true
+							"description": "orderStatus 订单状态. 10：初始状态，15:订单可见；41:订单完成待打款给卖家；70：交易成功 80:交易关闭"
 						},
 						{
 							"name": "pay_time",
 							"type": "String",
-							"description": "payTime 支付时间",
-							"required": true
+							"description": "payTime 支付时间"
 						},
 						{
 							"name": "discount_amount",
 							"type": "Number",
-							"description": "discountAmount 折扣优惠价格",
-							"required": true
+							"description": "discountAmount 折扣优惠价格"
 						},
 						{
 							"name": "agent_order_id",
 							"type": "String",
-							"description": "agentOrderId 代理商订单号",
-							"required": true
+							"description": "agentOrderId 代理商订单号"
 						},
 						{
 							"name": "start_time",
 							"type": "String",
-							"description": "startTime 出发时间",
-							"required": true
+							"description": "startTime 出发时间"
+						},
+						{
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "refundAmount 退款金额（分）"
 						},
 						{
 							"name": "end_city_name",
 							"type": "String",
-							"description": "endCityName 到达城市",
-							"required": true
+							"description": "endCityName 到达城市"
 						},
 						{
 							"name": "arrive_station_name",
 							"type": "String",
-							"description": "arriveStationName 到达站名称",
-							"required": true
+							"description": "arriveStationName 到达站名称"
 						},
 						{
 							"name": "pay_status",
 							"type": "Number",
-							"description": "payStatus 支付状态 \t支付状态(10:初始支付状态,20:创建担保交易成功,30:买家付款成功,60:已打款给卖家,100:关闭已支付订单成功,101:关闭未支付订单成功)",
-							"required": true
+							"description": "payStatus 支付状态 \t支付状态(10:初始支付状态,20:创建担保交易成功,30:买家付款成功,60:已打款给卖家,100:关闭已支付订单成功,101:关闭未支付订单成功)"
 						},
 						{
 							"name": "ticket_count",
 							"type": "Number",
-							"description": "ticketCount 票数",
-							"required": true
+							"description": "ticketCount 票数"
 						},
 						{
 							"name": "bus_number",
 							"type": "String",
-							"description": "busNumber 车次编号",
-							"required": true
+							"description": "busNumber 车次编号"
 						},
 						{
 							"name": "start_station_name",
 							"type": "String",
-							"description": "startStationName 出发车站",
-							"required": true
+							"description": "startStationName 出发车站"
 						},
 						{
 							"name": "total_price",
 							"type": "Number",
-							"description": "totalPrice 总价",
-							"required": true
+							"description": "totalPrice 总价"
 						},
 						{
 							"name": "refund_status",
 							"type": "Number",
-							"description": "refundStatus 退款状态:0 无申请 10-初始 20-无需退款 40-退款成功",
-							"required": true
+							"description": "refundStatus 退款状态:0 无申请 10-初始 20-无需退款 40-退款成功"
 						},
 						{
 							"name": "ext_attr",
 							"type": "String",
-							"description": "extAttr json格式的扩展信息，如自助机支付方式等",
-							"required": true
+							"description": "extAttr json格式的扩展信息，如自助机支付方式等"
 						},
 						{
 							"name": "order_model",
 							"type": "Number",
-							"description": "orderModel 1 自助机 0 线上订单",
-							"required": true
+							"description": "orderModel 1 自助机 0 线上订单"
 						},
 						{
 							"name": "alipay_trade_id",
 							"type": "String",
-							"description": "alipayTradeId 支付宝交易号",
-							"required": true
+							"description": "alipayTradeId 支付宝交易号"
+						},
+						{
+							"name": "trade_source",
+							"type": "String",
+							"description": "订单来源 window:窗口  self:自助机"
+						},
+						{
+							"name": "pay_mode",
+							"type": "String",
+							"description": "支付方式：alipay：支付宝 wechat：微信"
+						},
+						{
+							"name": "machine_number",
+							"type": "String",
+							"description": "自助机机器编号"
 						}
-					]
+					],
+					"name": "buso_main_order_history_v_o_list",
+					"type": "Busomainorderhistoryvolist[]",
+					"description": "busoMainOrderHistoryVOList"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "currentPage 当前多少页",
-					"required": true
+					"description": "currentPage 当前多少页"
 				},
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "totalSize 总条目",
-					"required": true
+					"description": "totalSize 总条目"
 				}
-			]
-		},
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "success true 成功  false失败"
+			],
+			"name": "buso_main_order_history_page_v_o",
+			"type": "BusoMainOrderHistoryPageVo",
+			"description": "busoMainOrderHistoryPageVO 订单详情"
 		}
-	]
+	],
+	"name": "taobao.bus.historyorder.get",
+	"apiChineseName": "历史订单查询（对账）",
+	"description": "历史订单查询，对账接口",
+	"id": 29275
 }

@@ -1,21 +1,19 @@
 {
-	"id": 33985,
-	"name": "alibaba.idle.recycle.order.query",
-	"apiChineseName": "闲鱼回收订单查询V1",
-	"description": "查询回收订单",
 	"requestParams": [
 		{
 			"name": "biz_order_id",
 			"type": "Number",
 			"description": "订单号",
 			"required": true
+		},
+		{
+			"name": "recycle_supplier_id",
+			"type": "Number",
+			"description": "手淘商家的淘宝账号id"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_msg",
@@ -30,10 +28,6 @@
 					"required": true
 				},
 				{
-					"name": "module",
-					"type": "Serializable",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_key",
@@ -280,10 +274,39 @@
 							"type": "String",
 							"description": "xydk:闲鱼代扣，信用订单使用",
 							"required": true
+						},
+						{
+							"name": "ship_mail_no",
+							"type": "String",
+							"description": "回收订单对应的快递单号",
+							"required": true
+						},
+						{
+							"name": "apprize_id_list",
+							"type": "String",
+							"description": "多笔估价场景，订单纬度对应的多笔估价集合",
+							"required": true
+						},
+						{
+							"name": "spu_id_list",
+							"type": "String",
+							"description": "多笔估价场景，订单纬度对应的多笔spuId集合",
+							"required": true
 						}
-					]
+					],
+					"name": "module",
+					"type": "Serializable",
+					"description": "订单信息",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.recycle.order.query",
+	"apiChineseName": "闲鱼回收订单查询V1",
+	"description": "查询回收订单",
+	"id": 33985
 }

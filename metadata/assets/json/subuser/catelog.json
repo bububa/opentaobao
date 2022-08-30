@@ -1,5 +1,5 @@
 {
-  "id": 10123,
   "name": "子账号管理API",
-  "pkg": "subuser"
+  "pkg": "subuser",
+  "id": 10123
 }

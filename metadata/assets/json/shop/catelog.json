@@ -1,5 +1,5 @@
 {
-  "id": 9,
   "name": "店铺API",
-  "pkg": "shop"
+  "pkg": "shop",
+  "id": 9
 }

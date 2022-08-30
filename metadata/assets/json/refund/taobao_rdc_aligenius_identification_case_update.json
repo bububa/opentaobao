@@ -1,14 +1,6 @@
 {
-	"id": 46785,
-	"name": "taobao.rdc.aligenius.identification.case.update",
-	"apiChineseName": "鉴定工单信息同步",
-	"description": "同步商家鉴定工单信息",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "SyncIdentifyRefundCaseDto",
-			"description": "请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "detail_order_id",
@@ -51,60 +43,61 @@
 					"type": "String",
 					"description": "扩展属性，json格式"
 				}
-			]
+			],
+			"name": "param",
+			"type": "SyncIdentifyRefundCaseDto",
+			"description": "请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "Resultdata",
-					"description": "resultData",
-					"required": true,
 					"subParams": [
 						{
 							"name": "result_tips",
 							"type": "String",
-							"description": "数据消费结果提示信息",
-							"required": true
+							"description": "数据消费结果提示信息"
 						},
 						{
 							"name": "result_code",
 							"type": "String",
-							"description": "CONSUME_FINISH_SUCCESS",
-							"required": true
+							"description": "CONSUME_FINISH_SUCCESS"
 						},
 						{
 							"name": "consume_status",
 							"type": "String",
-							"description": "数据消费状态",
-							"required": true
+							"description": "数据消费状态"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.identification.case.update",
+	"apiChineseName": "鉴定工单信息同步",
+	"description": "同步商家鉴定工单信息",
+	"id": 46785
 }

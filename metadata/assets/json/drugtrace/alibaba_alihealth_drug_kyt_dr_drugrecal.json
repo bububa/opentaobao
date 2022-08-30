@@ -1,8 +1,4 @@
 {
-	"id": 43313,
-	"name": "alibaba.alihealth.drug.kyt.dr.drugrecal",
-	"apiChineseName": "疫苗药品召回",
-	"description": "生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -24,145 +20,127 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model_list",
-					"type": "Model[]",
-					"description": "召回信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "prepn_type_desc",
 							"type": "String",
-							"description": "药品剂型",
-							"required": true
+							"description": "药品剂型"
 						},
 						{
 							"name": "recall_end_date",
 							"type": "String",
-							"description": "召回结束时间",
-							"required": true
+							"description": "召回结束时间"
 						},
 						{
 							"name": "product_batch_nos",
 							"type": "String",
-							"description": "药品批次编号",
-							"required": true
+							"description": "药品批次编号"
 						},
 						{
 							"name": "prodcut_ent_name",
 							"type": "String",
-							"description": "药品生产企业名称",
-							"required": true
+							"description": "药品生产企业名称"
 						},
 						{
 							"name": "approve_no",
 							"type": "String",
-							"description": "药品批准文号",
-							"required": true
+							"description": "药品批准文号"
 						},
 						{
 							"name": "physic_name",
 							"type": "String",
-							"description": "药品通用名称",
-							"required": true
+							"description": "药品通用名称"
 						},
 						{
 							"name": "recall_range",
 							"type": "String",
-							"description": "召回范围(0全国1省2市)",
-							"required": true
+							"description": "召回范围(0全国1省2市)"
 						},
 						{
 							"name": "recall_open",
 							"type": "String",
-							"description": "是否向消费者公开(1公开0不公开)",
-							"required": true
+							"description": "是否向消费者公开(1公开0不公开)"
 						},
 						{
 							"name": "recall_audit_status",
 							"type": "String",
-							"description": "批准状态(0未批准1已批准)",
-							"required": true
+							"description": "批准状态(0未批准1已批准)"
 						},
 						{
 							"name": "pkg_spec",
 							"type": "String",
-							"description": "包装规格",
-							"required": true
+							"description": "包装规格"
 						},
 						{
 							"name": "prepn_spec",
 							"type": "String",
-							"description": "制剂规格",
-							"required": true
+							"description": "制剂规格"
 						},
 						{
 							"name": "recall_info_id",
 							"type": "String",
-							"description": "召回ID",
-							"required": true
+							"description": "召回ID"
 						},
 						{
 							"name": "ent_name",
 							"type": "String",
-							"description": "召回企业名称",
-							"required": true
+							"description": "召回企业名称"
 						},
 						{
 							"name": "recall_nature",
 							"type": "String",
-							"description": "召回性质(1实施召回2模拟召回)",
-							"required": true
+							"description": "召回性质(1实施召回2模拟召回)"
 						},
 						{
 							"name": "recall_reason",
 							"type": "String",
-							"description": "召回原因",
-							"required": true
+							"description": "召回原因"
 						},
 						{
 							"name": "recall_bill_type",
 							"type": "String",
-							"description": "召回单类型(1主动召回2责令召回)",
-							"required": true
+							"description": "召回单类型(1主动召回2责令召回)"
 						},
 						{
 							"name": "recall_status",
 							"type": "String",
-							"description": "召回状态(0未召回1召回中2召回结束)",
-							"required": true
+							"description": "召回状态(0未召回1召回中2召回结束)"
 						},
 						{
 							"name": "recall_level",
 							"type": "String",
-							"description": "召回级别(1一级2二级3三级)",
-							"required": true
+							"description": "召回级别(1一级2二级3三级)"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "召回信息列表"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "服务返回编码",
-					"required": true
+					"description": "服务返回编码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "服务返回信息",
-					"required": true
+					"description": "服务返回信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.drugrecal",
+	"apiChineseName": "疫苗药品召回",
+	"description": "生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；",
+	"id": 43313
 }

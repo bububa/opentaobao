@@ -1,18 +1,8 @@
 {
-	"id": 40204,
-	"name": "tmall.traceplatform.cts.info.upload",
-	"apiChineseName": "CTS提交溯源信息",
-	"description": "cts上传溯源信息",
 	"requestParams": [
 		{
-			"name": "trace_info",
-			"type": "CtsInfo",
-			"description": "入参traceInfo",
 			"subParams": [
 				{
-					"name": "carriage",
-					"type": "CtsCarriage",
-					"description": "托运",
 					"subParams": [
 						{
 							"name": "begin",
@@ -34,12 +24,12 @@
 							"type": "Date",
 							"description": "托运结束时间"
 						}
-					]
+					],
+					"name": "carriage",
+					"type": "CtsCarriage",
+					"description": "托运"
 				},
 				{
-					"name": "completed_ngtc",
-					"type": "CtsNgtc",
-					"description": "成品证书",
 					"subParams": [
 						{
 							"name": "report_no",
@@ -51,12 +41,12 @@
 							"type": "String",
 							"description": "ngtc证书防伪码"
 						}
-					]
+					],
+					"name": "completed_ngtc",
+					"type": "CtsNgtc",
+					"description": "成品证书"
 				},
 				{
-					"name": "delivery",
-					"type": "CtsDelivery",
-					"description": "国内物流",
 					"subParams": [
 						{
 							"name": "company_name",
@@ -73,12 +63,12 @@
 							"type": "Date",
 							"description": "发件时间"
 						}
-					]
+					],
+					"name": "delivery",
+					"type": "CtsDelivery",
+					"description": "国内物流"
 				},
 				{
-					"name": "diamond_ngtc",
-					"type": "CtsNgtc",
-					"description": "裸钻证书",
 					"subParams": [
 						{
 							"name": "report_no",
@@ -90,7 +80,10 @@
 							"type": "String",
 							"description": "ngtc证书防伪码"
 						}
-					]
+					],
+					"name": "diamond_ngtc",
+					"type": "CtsNgtc",
+					"description": "裸钻证书"
 				},
 				{
 					"name": "item_id",
@@ -108,9 +101,6 @@
 					"description": "商品ID"
 				},
 				{
-					"name": "ring",
-					"type": "CtsRing",
-					"description": "戒托信息",
 					"subParams": [
 						{
 							"name": "completed_time",
@@ -151,12 +141,12 @@
 							"type": "String",
 							"description": "戒托子订单号"
 						}
-					]
+					],
+					"name": "ring",
+					"type": "CtsRing",
+					"description": "戒托信息"
 				},
 				{
-					"name": "shipment",
-					"type": "CtsShipment",
-					"description": "国内报关",
 					"subParams": [
 						{
 							"name": "begin",
@@ -173,7 +163,10 @@
 							"type": "String",
 							"description": "报关单号"
 						}
-					]
+					],
+					"name": "shipment",
+					"type": "CtsShipment",
+					"description": "国内报关"
 				},
 				{
 					"name": "sub_order_no",
@@ -185,14 +178,14 @@
 					"type": "String",
 					"description": "溯源码"
 				}
-			]
+			],
+			"name": "trace_info",
+			"type": "CtsInfo",
+			"description": "入参traceInfo"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
@@ -209,7 +202,14 @@
 					"type": "Boolean",
 					"description": "是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.traceplatform.cts.info.upload",
+	"apiChineseName": "CTS提交溯源信息",
+	"description": "cts上传溯源信息",
+	"id": 40204
 }

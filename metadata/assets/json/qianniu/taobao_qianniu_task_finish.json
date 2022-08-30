@@ -1,8 +1,4 @@
 {
-	"id": 22596,
-	"name": "taobao.qianniu.task.finish",
-	"apiChineseName": "完成轻任务",
-	"description": "由任务执行者调用",
 	"requestParams": [
 		{
 			"name": "task_id",
@@ -22,5 +18,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.qianniu.task.finish",
+	"apiChineseName": "完成轻任务",
+	"description": "由任务执行者调用",
+	"id": 22596
 }

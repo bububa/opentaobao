@@ -13,7 +13,7 @@ import (
 type TaobaoQimenItemsMarkingAPIRequest struct {
 	model.Params
 	// 线上商品ID，long，必填
-	_itemIds []int64
+	_itemIds []string
 	// 操作类型，string（50），ADD=打标，DELETE=去标，必填
 	_actionType string
 	// 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
@@ -45,14 +45,14 @@ func (r TaobaoQimenItemsMarkingAPIRequest) GetApiParams() url.Values {
 
 // SetItemIds is ItemIds Setter
 // 线上商品ID，long，必填
-func (r *TaobaoQimenItemsMarkingAPIRequest) SetItemIds(_itemIds []int64) error {
+func (r *TaobaoQimenItemsMarkingAPIRequest) SetItemIds(_itemIds []string) error {
 	r._itemIds = _itemIds
 	r.Set("item_ids", _itemIds)
 	return nil
 }
 
 // GetItemIds ItemIds Getter
-func (r TaobaoQimenItemsMarkingAPIRequest) GetItemIds() []int64 {
+func (r TaobaoQimenItemsMarkingAPIRequest) GetItemIds() []string {
 	return r._itemIds
 }
 

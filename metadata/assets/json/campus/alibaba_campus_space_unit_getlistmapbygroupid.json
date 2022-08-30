@@ -1,14 +1,6 @@
 {
-	"id": 31925,
-	"name": "alibaba.campus.space.unit.getlistmapbygroupid",
-	"apiChineseName": "新增查询多个分组ID各自相关的空间单元信息",
-	"description": "新增查询多个分组ID各自相关的空间单元信息\nHSF接口名称：\tcom.alibaba.campus.api.space.service.top.SpaceUnitApiTopService\nHSF方法名称：\tgetListMapByGroupIds",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "用户环境",
-			"required": true,
 			"subParams": [
 				{
 					"name": "campus_code",
@@ -26,65 +18,67 @@
 					"description": "园区ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "用户环境",
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "SpaceUnitQuery",
-			"description": "查询封装",
-			"required": true,
 			"subParams": [
 				{
 					"name": "ids",
 					"type": "Number[]",
 					"description": "分组ID集合"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "SpaceUnitQuery",
+			"description": "查询封装",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MapResult",
-			"description": "result",
 			"subParams": [
+				{
+					"name": "content",
+					"type": "String",
+					"description": "content"
+				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
-				},
-				{
-					"name": "content",
-					"type": "Json",
-					"description": "content",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MapResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.unit.getlistmapbygroupid",
+	"apiChineseName": "新增查询多个分组ID各自相关的空间单元信息",
+	"description": "新增查询多个分组ID各自相关的空间单元信息\nHSF接口名称：\tcom.alibaba.campus.api.space.service.top.SpaceUnitApiTopService\nHSF方法名称：\tgetListMapByGroupIds",
+	"id": 31925
 }

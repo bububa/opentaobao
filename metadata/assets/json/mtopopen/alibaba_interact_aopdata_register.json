@@ -1,14 +1,6 @@
 {
-	"id": 26148,
-	"name": "alibaba.interact.aopdata.register",
-	"apiChineseName": "资源位数据推送接口",
-	"description": "提供给isv，查询以及推送浮层资源位的三方活动数据",
 	"requestParams": [
 		{
-			"name": "param_top_isv_decorate_param",
-			"type": "TopIsvDecorateParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_id",
@@ -24,6 +16,7 @@
 				},
 				{
 					"name": "business_params",
+					"type": "String",
 					"description": "{\"action\":\"update\",\"image_url\":\"http://xx.cdn\",\"click_url\":\"http://xxx.play.m.jaeapp.com\"}，action为update，代表新增(image_url以及click_url必传)。action=get，代表获得商家设置的活动，image_url以及click_url不用填写。action＝del,代表将活动从资源位撤下",
 					"required": true
 				},
@@ -38,46 +31,49 @@
 					"description": "目前必须填0，代表店铺中宝箱资源位",
 					"required": true
 				}
-			]
+			],
+			"name": "param_top_isv_decorate_param",
+			"type": "TopIsvDecorateParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "xx",
-					"required": true
+					"type": "String",
+					"description": "xx"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "xxx失败",
-					"required": true
+					"description": "xxx失败"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "xxx失败",
-					"required": true
+					"description": "xxx失败"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用成功",
-					"required": true
+					"description": "接口调用成功"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "跟踪请求使用",
-					"required": true
+					"description": "跟踪请求使用"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.interact.aopdata.register",
+	"apiChineseName": "资源位数据推送接口",
+	"description": "提供给isv，查询以及推送浮层资源位的三方活动数据",
+	"id": 26148
 }

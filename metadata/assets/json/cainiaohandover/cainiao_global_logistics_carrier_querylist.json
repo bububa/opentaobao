@@ -1,8 +1,4 @@
 {
-	"id": 54281,
-	"name": "cainiao.global.logistics.carrier.querylist",
-	"apiChineseName": "实际承运商查询",
-	"description": "查询出所有的实际承运商",
 	"requestParams": [
 		{
 			"name": "locale",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DubboResult",
-			"description": "1",
 			"subParams": [
 				{
 					"name": "success",
@@ -35,16 +28,8 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "AeopActualCarrierResponse",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "courier_list",
-							"type": "Courierlist[]",
-							"description": "实际承运商",
-							"required": true,
 							"subParams": [
 								{
 									"name": "courier_name",
@@ -58,11 +43,26 @@
 									"description": "承运商code",
 									"required": true
 								}
-							]
+							],
+							"name": "courier_list",
+							"type": "Courierlist[]",
+							"description": "实际承运商",
+							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "AeopActualCarrierResponse",
+					"description": "返回数据",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "DubboResult",
+			"description": "1"
 		}
-	]
+	],
+	"name": "cainiao.global.logistics.carrier.querylist",
+	"apiChineseName": "实际承运商查询",
+	"description": "查询出所有的实际承运商",
+	"id": 54281
 }

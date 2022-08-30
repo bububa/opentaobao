@@ -1,8 +1,4 @@
 {
-	"id": 10953,
-	"name": "taobao.simba.rpt.adgroupkeywordbase.get",
-	"apiChineseName": "推广组下的词基础报表数据查询(明细数据不分类型查询)",
-	"description": "推广组下的词基础报表数据查询(明细数据不分类型查询)",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -70,5 +66,9 @@
 			"type": "String",
 			"description": "词基础数据返回结果"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.adgroupkeywordbase.get",
+	"apiChineseName": "推广组下的词基础报表数据查询(明细数据不分类型查询)",
+	"description": "推广组下的词基础报表数据查询(明细数据不分类型查询)",
+	"id": 10953
 }

@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "appointment_order_id",
+					"type": "Number",
+					"description": "预约单id",
+					"required": true
+				}
+			],
+			"name": "appointment_order_cancel_requset",
+			"type": "AppointmentOrderCancelRequset",
+			"description": "预约单取消请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "result",
+							"type": "Boolean",
+							"description": "取消是否成功"
+						}
+					],
+					"name": "appointment_cancle_reponse",
+					"type": "AppointmentCancleReponse",
+					"description": "响应业务对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "响应是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码"
+				},
+				{
+					"name": "internal_error_code",
+					"type": "String",
+					"description": "网略异常码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常提示"
+				}
+			],
+			"name": "hsf_result",
+			"type": "HsfResult",
+			"description": "响应体"
+		}
+	],
+	"name": "cainiao.global.im.pickup.appointment.order.cancel",
+	"apiChineseName": "首公里揽收-取消预约单",
+	"description": "首公里揽收-取消预约单创建",
+	"id": 60752
+}

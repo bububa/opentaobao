@@ -1,31 +1,24 @@
 {
-	"id": 25299,
-	"name": "alibaba.icbu.product.group.get",
-	"apiChineseName": "分组信息获取",
-	"description": "分组信息获取",
 	"requestParams": [
+		{
+			"name": "extra_context",
+			"type": "Json",
+			"description": "补充信息"
+		},
 		{
 			"name": "group_id",
 			"type": "Number",
 			"description": "分组ID，传-1获得所有一级分组",
 			"required": true
-		},
-		{
-			"name": "extra_context",
-			"type": "Json",
-			"description": "补充信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "product_group",
-			"type": "ProductGroup",
-			"description": "分组信息",
 			"subParams": [
 				{
-					"name": "parent_id",
-					"type": "Number",
-					"description": "上级分组ID"
+					"name": "children_id_list",
+					"type": "Number[]",
+					"description": "下级分组ID列表"
 				},
 				{
 					"name": "group_id",
@@ -38,16 +31,23 @@
 					"description": "分组名称"
 				},
 				{
-					"name": "children_id_list",
-					"type": "Number[]",
-					"description": "下级分组ID列表"
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父节点id，父节点处在分组树的一级"
 				},
 				{
 					"name": "parent_id2",
 					"type": "Number",
 					"description": "父节点id，父节点处在分组树的二级"
 				}
-			]
+			],
+			"name": "product_group",
+			"type": "ProductGroup",
+			"description": "分组信息"
 		}
-	]
+	],
+	"name": "alibaba.icbu.product.group.get",
+	"apiChineseName": "分组信息获取",
+	"description": "分组信息获取",
+	"id": 25299
 }

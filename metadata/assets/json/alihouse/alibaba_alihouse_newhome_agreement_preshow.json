@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "协议ID",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "1-协议 2-签章",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "值"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.agreement.preshow",
+	"apiChineseName": "预览地址获取接口",
+	"description": "预览地址获取接口",
+	"id": 62529
+}

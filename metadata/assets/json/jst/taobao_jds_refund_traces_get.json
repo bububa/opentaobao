@@ -1,22 +1,15 @@
 {
-	"id": 23845,
-	"name": "taobao.jds.refund.traces.get",
-	"apiChineseName": "获取单条退款跟踪详情",
-	"description": "获取聚石塔数据共享的交易全链路的退款信息",
 	"requestParams": [
 		{
 			"name": "refund_id",
 			"type": "Number",
 			"description": "淘宝的退款编号",
-			"required": true,
-			"minValue": 1
+			"minValue": 1,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "traces",
-			"type": "RefundTrace []",
-			"description": "退款跟踪列表",
 			"subParams": [
 				{
 					"name": "tid",
@@ -48,12 +41,19 @@
 					"type": "Number",
 					"description": "退款编号"
 				}
-			]
+			],
+			"name": "traces",
+			"type": "RefundTrace []",
+			"description": "退款跟踪列表"
 		},
 		{
 			"name": "user_status",
 			"type": "String",
 			"description": "用户在全链路系统中的状态(比如是否存在)"
 		}
-	]
+	],
+	"name": "taobao.jds.refund.traces.get",
+	"apiChineseName": "获取单条退款跟踪详情",
+	"description": "获取聚石塔数据共享的交易全链路的退款信息",
+	"id": 23845
 }

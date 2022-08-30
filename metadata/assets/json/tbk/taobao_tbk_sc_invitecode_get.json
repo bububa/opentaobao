@@ -1,8 +1,4 @@
 {
-	"id": 38046,
-	"name": "taobao.tbk.sc.invitecode.get",
-	"apiChineseName": "淘宝客-公用-私域用户邀请码生成",
-	"description": "私域用户管理(即渠道管理或会员运营管理)功能中，通过此API可生成淘宝客自身的邀请码。",
 	"requestParams": [
 		{
 			"name": "relation_id",
@@ -24,17 +20,20 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "inviter_code",
 					"type": "String",
-					"description": "邀请码",
-					"required": true
+					"description": "邀请码"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "data"
 		}
-	]
+	],
+	"name": "taobao.tbk.sc.invitecode.get",
+	"apiChineseName": "淘宝客-公用-私域用户邀请码生成",
+	"description": "私域用户管理(即渠道管理或会员运营管理)功能中，通过此API可生成淘宝客自身的邀请码。",
+	"id": 38046
 }

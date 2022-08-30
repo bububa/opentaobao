@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest struct {
 	model.Params
 	// 需要修改出价的人群包id,批量传入时用,分割
-	_adgroupCrowdIds []int64
+	_adgroupCrowdIds []string
 	// 被操作者的淘宝昵称
 	_nick string
 	// 推广单元id
@@ -45,14 +45,14 @@ func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetApiParams() url.Valu
 
 // SetAdgroupCrowdIds is AdgroupCrowdIds Setter
 // 需要修改出价的人群包id,批量传入时用,分割
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []string) error {
 	r._adgroupCrowdIds = _adgroupCrowdIds
 	r.Set("adgroup_crowd_ids", _adgroupCrowdIds)
 	return nil
 }
 
 // GetAdgroupCrowdIds AdgroupCrowdIds Getter
-func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupCrowdIds() []int64 {
+func (r TaobaoSimbaSerchcrowdStateBatchUpdateAPIRequest) GetAdgroupCrowdIds() []string {
 	return r._adgroupCrowdIds
 }
 

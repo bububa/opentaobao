@@ -1,15 +1,11 @@
 {
-	"id": 47799,
-	"name": "taobao.miniapp.template.updateapp",
-	"apiChineseName": "更新实例化应用",
-	"description": "商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "app_id",
@@ -77,19 +73,23 @@
 			"description": "小程序app_id"
 		},
 		{
-			"name": "pre_view_url",
-			"type": "String",
-			"description": "当前新生成的预览版本的链接，仅当前商家有权限预览。"
-		},
-		{
 			"name": "app_version",
 			"type": "String",
 			"description": "当前新生成的预览版本号"
+		},
+		{
+			"name": "pre_view_url",
+			"type": "String",
+			"description": "当前新生成的预览版本的链接，仅当前商家有权限预览。"
 		},
 		{
 			"name": "app_alias",
 			"type": "String",
 			"description": "小程序简称"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.updateapp",
+	"apiChineseName": "更新实例化应用",
+	"description": "商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本",
+	"id": 47799
 }

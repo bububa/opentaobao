@@ -10,10 +10,10 @@ type TopTravelItem struct {
 	Extend string `json:"extend,omitempty" xml:"extend,omitempty"`
 	// 商品创建时间
 	Created string `json:"created,omitempty" xml:"created,omitempty"`
-	// 商家编码
+	// outerId
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
-	// skuid
+	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
 }

@@ -1,39 +1,31 @@
 {
-	"id": 42670,
-	"name": "alibaba.ailabs.tvs.device.list",
-	"apiChineseName": "获取TVS设备列表",
-	"description": "获取用户所绑定的TVS设备列表",
 	"responseParams": [
 		{
-			"name": "devices",
-			"type": "Data []",
-			"description": "设备信息列表",
 			"subParams": [
 				{
 					"name": "name",
 					"type": "String",
-					"description": "设备名称",
-					"required": true
+					"description": "设备名称"
 				},
 				{
 					"name": "activate_time",
 					"type": "String",
-					"description": "设备激活时间",
-					"required": true
+					"description": "设备激活时间"
 				},
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "TVS服务给予设备的唯一标识",
-					"required": true
+					"description": "TVS服务给予设备的唯一标识"
 				},
 				{
 					"name": "dsn",
 					"type": "String",
-					"description": "厂商给定的设备硬件标识",
-					"required": true
+					"description": "厂商给定的设备硬件标识"
 				}
-			]
+			],
+			"name": "devices",
+			"type": "Data []",
+			"description": "设备信息列表"
 		},
 		{
 			"name": "status_code",
@@ -50,5 +42,9 @@
 			"type": "Boolean",
 			"description": "服务请求是否成功。"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.tvs.device.list",
+	"apiChineseName": "获取TVS设备列表",
+	"description": "获取用户所绑定的TVS设备列表",
+	"id": 42670
 }

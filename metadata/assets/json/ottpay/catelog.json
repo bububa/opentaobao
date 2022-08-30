@@ -1,5 +1,5 @@
 {
-  "id": 21048,
   "name": "ott支付",
-  "pkg": "ottpay"
+  "pkg": "ottpay",
+  "id": 21048
 }

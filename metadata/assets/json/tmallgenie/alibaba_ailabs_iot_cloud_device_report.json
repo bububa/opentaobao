@@ -1,14 +1,6 @@
 {
-	"id": 48926,
-	"name": "alibaba.ailabs.iot.cloud.device.report",
-	"apiChineseName": "天猫精灵云云接入设备状态、事件上报接口",
-	"description": "承接天猫精灵云云接入设备的状态、事件上报",
 	"requestParams": [
 		{
-			"name": "cloud_report_param",
-			"type": "CloudReportParam",
-			"description": "上报总入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "payload",
@@ -70,9 +62,14 @@
 				},
 				{
 					"name": "extension",
+					"type": "String",
 					"description": "保留业务字段"
 				}
-			]
+			],
+			"name": "cloud_report_param",
+			"type": "CloudReportParam",
+			"description": "上报总入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -81,5 +78,9 @@
 			"type": "Boolean",
 			"description": "返回值，是否上报成功"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.iot.cloud.device.report",
+	"apiChineseName": "天猫精灵云云接入设备状态、事件上报接口",
+	"description": "承接天猫精灵云云接入设备的状态、事件上报",
+	"id": 48926
 }

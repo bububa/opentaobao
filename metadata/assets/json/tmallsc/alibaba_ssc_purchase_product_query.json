@@ -1,0 +1,35 @@
+{
+	"responseParams": [
+		{
+			"name": "display_msg",
+			"type": "String",
+			"description": "错误展示信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "服务产品id"
+				},
+				{
+					"name": "product_title",
+					"type": "String",
+					"description": "服务产品名称"
+				}
+			],
+			"name": "service_products",
+			"type": "ServiceProduct []",
+			"description": "服务产品list"
+		}
+	],
+	"name": "alibaba.ssc.purchase.product.query",
+	"apiChineseName": "查询已采购的服务产品",
+	"description": "查询已采购的服务产品",
+	"id": 62410
+}

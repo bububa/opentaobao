@@ -1,16 +1,10 @@
 {
-	"id": 35382,
-	"name": "taobao.messageaccount.messsage.normal.send",
-	"apiChineseName": "下行普通消息",
-	"description": "消息号下行单个普通消息",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "NormalMessageDto",
-			"description": "下行普通消息",
 			"subParams": [
 				{
 					"name": "content",
+					"type": "String",
 					"description": "内容"
 				},
 				{
@@ -28,7 +22,10 @@
 					"type": "String",
 					"description": "类型"
 				}
-			]
+			],
+			"name": "param",
+			"type": "NormalMessageDto",
+			"description": "下行普通消息"
 		}
 	],
 	"responseParams": [
@@ -37,5 +34,9 @@
 			"type": "String",
 			"description": "model"
 		}
-	]
+	],
+	"name": "taobao.messageaccount.messsage.normal.send",
+	"apiChineseName": "下行普通消息",
+	"description": "消息号下行单个普通消息",
+	"id": 35382
 }

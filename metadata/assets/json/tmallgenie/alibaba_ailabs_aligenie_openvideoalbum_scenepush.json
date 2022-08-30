@@ -1,8 +1,4 @@
 {
-	"id": 52199,
-	"name": "alibaba.ailabs.aligenie.openvideoalbum.scenepush",
-	"apiChineseName": "视频专辑场景接入接口",
-	"description": "视频专辑场景接入接口",
 	"requestParams": [
 		{
 			"name": "scene_type",
@@ -15,10 +11,6 @@
 			"description": "如果场景是1 此处为应用id"
 		},
 		{
-			"name": "param_list",
-			"type": "RawVideoAlbum[]",
-			"description": "视频合辑数据",
-			"maxListSize": 200,
 			"subParams": [
 				{
 					"name": "v_cover_url",
@@ -49,7 +41,7 @@
 				{
 					"name": "charge_type",
 					"type": "Number",
-					"description": "付费类型 0-免费、1-VIP免费、2-整本专辑售卖"
+					"description": "付费类型 0-免费、1-VIP免费、2-整本专辑售卖、3-超级会员"
 				},
 				{
 					"name": "collect_count",
@@ -93,6 +85,7 @@
 				},
 				{
 					"name": "extend_info",
+					"type": "String",
 					"description": "扩展字段"
 				},
 				{
@@ -202,8 +195,42 @@
 					"name": "valid_start_time",
 					"type": "Number",
 					"description": "生效时间,unix时间戳,单位:毫秒,为空则立即生效"
+				},
+				{
+					"name": "is_education",
+					"type": "Boolean",
+					"description": "是否教育内容"
+				},
+				{
+					"name": "course_type",
+					"type": "Number",
+					"description": "课程形式见类目文档"
+				},
+				{
+					"name": "grade_stag_id",
+					"type": "String",
+					"description": "学段见类目文档"
+				},
+				{
+					"name": "course_id",
+					"type": "String",
+					"description": "学科见类目文档"
+				},
+				{
+					"name": "book_version_id",
+					"type": "String",
+					"description": "版本见类目文档"
+				},
+				{
+					"name": "textbook_id",
+					"type": "String",
+					"description": "教材见类目文档"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "RawVideoAlbum[]",
+			"description": "视频合辑数据",
+			"maxListSize": 200
 		}
 	],
 	"responseParams": [
@@ -217,5 +244,9 @@
 			"type": "String",
 			"description": "描述"
 		}
-	]
+	],
+	"name": "alibaba.ailabs.aligenie.openvideoalbum.scenepush",
+	"apiChineseName": "视频专辑场景接入接口",
+	"description": "视频专辑场景接入接口",
+	"id": 52199
 }

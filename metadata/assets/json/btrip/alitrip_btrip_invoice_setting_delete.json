@@ -1,14 +1,6 @@
 {
-	"id": 53613,
-	"name": "alitrip.btrip.invoice.setting.delete",
-	"apiChineseName": "发票删除",
-	"description": "发票删除",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenInvoiceDeleteRq",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -27,7 +19,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenInvoiceDeleteRq",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -46,5 +42,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.invoice.setting.delete",
+	"apiChineseName": "发票删除",
+	"description": "发票删除",
+	"id": 53613
 }

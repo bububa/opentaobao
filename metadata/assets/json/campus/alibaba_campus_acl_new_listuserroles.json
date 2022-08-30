@@ -1,13 +1,6 @@
 {
-	"id": 37486,
-	"name": "alibaba.campus.acl.new.listuserroles",
-	"apiChineseName": "查询并标记用户选择的角色",
-	"description": "查询并标记用户选择的角色",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -24,12 +17,12 @@
 					"type": "Number",
 					"description": "园区id"
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
-			"name": "param",
-			"type": "UserRoleQueryParam",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "app_keys",
@@ -46,72 +39,70 @@
 					"type": "Boolean",
 					"description": "是否支持有效期过滤"
 				}
-			]
+			],
+			"name": "param",
+			"type": "UserRoleQueryParam",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "SysRoleVo[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "String",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "role_name",
 							"type": "String",
-							"description": "roleName",
-							"required": true
+							"description": "roleName"
 						},
 						{
 							"name": "granted",
 							"type": "String",
-							"description": "是否被用户选择",
-							"required": true
+							"description": "是否被用户选择"
 						},
 						{
 							"name": "dept_name",
 							"type": "String",
-							"description": "园区名称",
-							"required": true
+							"description": "园区名称"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "SysRoleVo[]",
+					"description": "content"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.listuserroles",
+	"apiChineseName": "查询并标记用户选择的角色",
+	"description": "查询并标记用户选择的角色",
+	"id": 37486
 }

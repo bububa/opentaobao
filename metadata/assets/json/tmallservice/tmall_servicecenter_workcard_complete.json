@@ -1,8 +1,4 @@
 {
-	"id": 45966,
-	"name": "tmall.servicecenter.workcard.complete",
-	"apiChineseName": "工单完结",
-	"description": "工单完结",
 	"requestParams": [
 		{
 			"name": "workcard_id",
@@ -38,29 +34,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FulfilplatformResult",
-			"description": "响应结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "响应码",
-					"required": true
+					"description": "响应码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "响应信息",
-					"required": true
+					"description": "响应信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "响应结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.complete",
+	"apiChineseName": "工单完结",
+	"description": "工单完结",
+	"id": 45966
 }

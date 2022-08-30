@@ -1,8 +1,4 @@
 {
-	"id": 40284,
-	"name": "alibaba.einvoice.income.token.return",
-	"apiChineseName": "服务商回传税号token",
-	"description": "服务商回传税号token，用来勾选抵扣认证",
 	"requestParams": [
 		{
 			"name": "area",
@@ -52,5 +48,9 @@
 			"type": "Boolean",
 			"description": "result接口是否调用成功"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.income.token.return",
+	"apiChineseName": "服务商回传税号token",
+	"description": "服务商回传税号token，用来勾选抵扣认证",
+	"id": 40284
 }

@@ -1,25 +1,21 @@
 {
-	"id": 51,
-	"name": "taobao.refunds.apply.get",
-	"apiChineseName": "查询买家申请的退款列表",
-	"description": "查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee",
-			"required": true,
-			"maxListSize": 20
-		},
-		{
-			"name": "status",
-			"type": "String",
-			"description": "退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。\u003cbr/\u003eWAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) \u003cbr/\u003eWAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) \u003cbr/\u003eWAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) \u003cbr/\u003eSELLER_REFUSE_BUYER(卖家拒绝退款) \u003cbr/\u003eCLOSED(退款关闭) \u003cbr/\u003eSUCCESS(退款成功)"
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "seller_nick",
 			"type": "String",
 			"description": "卖家昵称"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。\u003cbr/\u003eWAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) \u003cbr/\u003eWAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) \u003cbr/\u003eWAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) \u003cbr/\u003eSELLER_REFUSE_BUYER(卖家拒绝退款) \u003cbr/\u003eCLOSED(退款关闭) \u003cbr/\u003eSUCCESS(退款成功)"
 		},
 		{
 			"name": "type",
@@ -29,22 +25,21 @@
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "页码。传入值为 1 代表第一页，传入值为 2 代表第二页，依此类推。默认返回的数据是从第一页开始",
-			"minValue": 1
+			"description": "页码。传入值为 1 代表第一页，传入值为 2 代表第二页，依此类推。默认返回的数据是从第一页开始"
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "每页条数。取值范围:大于零的整数; 默认值:40;最大值:100",
-			"maxValue": 100,
-			"minValue": 1
+			"description": "每页条数。取值范围:大于零的整数; 默认值:40;最大值:100"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "refunds",
-			"type": "Refund []",
-			"description": "搜索到的退款信息列表",
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的交易信息总数"
+		},
+		{
 			"subParams": [
 				{
 					"name": "refund_id",
@@ -57,11 +52,6 @@
 					"description": "淘宝交易单号"
 				},
 				{
-					"name": "total_fee",
-					"type": "String",
-					"description": "交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
-				},
-				{
 					"name": "buyer_nick",
 					"type": "String",
 					"description": "买家昵称"
@@ -72,14 +62,19 @@
 					"description": "卖家昵称"
 				},
 				{
-					"name": "created",
-					"type": "Date",
-					"description": "退款申请时间。格式:yyyy-MM-dd HH:mm:ss"
+					"name": "total_fee",
+					"type": "String",
+					"description": "交易总金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "status",
 					"type": "String",
 					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "退款申请时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "refund_fee",
@@ -90,13 +85,20 @@
 					"name": "title",
 					"type": "String",
 					"description": "商品标题"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家openUid"
 				}
-			]
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "搜索到的交易信息总数"
+			],
+			"name": "refunds",
+			"type": "Refund []",
+			"description": "搜索到的退款信息列表"
 		}
-	]
+	],
+	"name": "taobao.refunds.apply.get",
+	"apiChineseName": "查询买家申请的退款列表",
+	"description": "查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型",
+	"id": 51
 }

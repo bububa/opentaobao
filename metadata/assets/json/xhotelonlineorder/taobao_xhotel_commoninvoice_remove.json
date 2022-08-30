@@ -1,19 +1,15 @@
 {
-	"id": 29561,
-	"name": "taobao.xhotel.commoninvoice.remove",
-	"apiChineseName": "常用发票信息删除接口",
-	"description": "常用发票信息删除接口",
 	"requestParams": [
-		{
-			"name": "invoice_id",
-			"type": "Number",
-			"description": "发票id",
-			"required": true
-		},
 		{
 			"name": "user_nick",
 			"type": "String",
 			"description": "用户名",
+			"required": true
+		},
+		{
+			"name": "invoice_id",
+			"type": "Number",
+			"description": "发票id",
 			"required": true
 		}
 	],
@@ -33,5 +29,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "taobao.xhotel.commoninvoice.remove",
+	"apiChineseName": "常用发票信息删除接口",
+	"description": "常用发票信息删除接口",
+	"id": 29561
 }

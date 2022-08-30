@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子订单号",
+					"required": true
+				},
+				{
+					"name": "fail_reason",
+					"type": "String",
+					"description": "出票失败原因",
+					"required": true
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "主单号",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "BookTicketFailRQ",
+			"description": "rq",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回msg"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.order.fail",
+	"apiChineseName": "出票失败",
+	"description": "出票失败",
+	"id": 60357
+}

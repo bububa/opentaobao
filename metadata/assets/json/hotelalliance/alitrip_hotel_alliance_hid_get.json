@@ -1,14 +1,6 @@
 {
-	"id": 49754,
-	"name": "alitrip.hotel.alliance.hid.get",
-	"apiChineseName": "获取联盟hid",
-	"description": "获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询",
 	"requestParams": [
 		{
-			"name": "alliance_info_request",
-			"type": "AllianceInfoRequest",
-			"description": "查询入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "query_day",
@@ -20,48 +12,51 @@
 					"type": "Number",
 					"description": "签约类型-0:融合；1:直签。"
 				}
-			]
+			],
+			"name": "alliance_info_request",
+			"type": "AllianceInfoRequest",
+			"description": "查询入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "hms_top_result_set",
-			"type": "HmsTopResultSet",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "AllianceInfoResult",
-					"description": "返回module",
-					"required": true,
 					"subParams": [
 						{
 							"name": "alliance_hids",
 							"type": "Number[]",
-							"description": "菲住hid列表",
-							"required": true
+							"description": "菲住hid列表"
 						}
-					]
+					],
+					"name": "result",
+					"type": "AllianceInfoResult",
+					"description": "返回module"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "操作是否成功",
-					"required": true
+					"description": "操作是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alitrip.hotel.alliance.hid.get",
+	"apiChineseName": "获取联盟hid",
+	"description": "获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询",
+	"id": 49754
 }

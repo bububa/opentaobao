@@ -8,6 +8,8 @@ type EvalDetail struct {
 	EvalSender string `json:"eval_sender,omitempty" xml:"eval_sender,omitempty"`
 	// 最后一次评价的时间
 	EvalTime string `json:"eval_time,omitempty" xml:"eval_time,omitempty"`
+	// 接收评价的消费者用户ID
+	OpenUid string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
 	// 评价的发送时间
 	SendTime string `json:"send_time,omitempty" xml:"send_time,omitempty"`
 	// 评分：0-非常满意；1-满意；2-一般；3-不满意；4-非常不满意

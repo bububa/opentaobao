@@ -1,8 +1,4 @@
 {
-	"id": 32042,
-	"name": "alitrip.travel.poi.search",
-	"apiChineseName": "POI信息查询",
-	"description": "POI信息查询，用于商品更新使用",
 	"requestParams": [
 		{
 			"name": "id",
@@ -24,23 +20,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "Poi []",
-			"description": "POI详情",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "POI对应id",
-					"required": true
+					"description": "POI对应id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "POI对应名称",
-					"required": true
+					"description": "POI对应名称"
 				}
-			]
+			],
+			"name": "results",
+			"type": "Poi []",
+			"description": "POI详情"
 		}
-	]
+	],
+	"name": "alitrip.travel.poi.search",
+	"apiChineseName": "POI信息查询",
+	"description": "POI信息查询，用于商品更新使用",
+	"id": 32042
 }

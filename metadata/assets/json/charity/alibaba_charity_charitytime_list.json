@@ -1,0 +1,149 @@
+{
+	"requestParams": [
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "授权码"
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "最大条数，大于2000取2000"
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "发放公益时查询开始时间，包含"
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "发放公益时查询截止时间，不包含"
+		},
+		{
+			"name": "fetches",
+			"type": "String",
+			"description": "额外取的数据域，ACTIVITY_BASE:活动信息"
+		},
+		{
+			"name": "user_key",
+			"type": "String",
+			"description": "用户ID"
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型"
+		},
+		{
+			"name": "create_start_time",
+			"type": "Date",
+			"description": "产生公益时查询开始时间，包含"
+		},
+		{
+			"name": "create_end_time",
+			"type": "Date",
+			"description": "产生公益时查询截止时间，不包含"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误内容"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "返回码 200成功 403无权限"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功  \t"
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "记录id"
+				},
+				{
+					"name": "charity_type",
+					"type": "String",
+					"description": "SPREAD_PUBLIC_WELFARE:公益传播,OFFLINE_PUBLIC_WELFARE:线下公益,PAN_PUBLIC_WELFARE:互联网公益,PUBLIC_DONATION::公益捐赠,WALK_DONATION:益起来,ENVIRONMENTAL_PROTECTION:ENVIRONMENTAL_PROTECTION"
+				},
+				{
+					"name": "charity_type_name",
+					"type": "String",
+					"description": "公益类型名"
+				},
+				{
+					"name": "charity_time",
+					"type": "Number",
+					"description": "公益时，单位 分钟，6就是0.1公益时，60是1公益时"
+				},
+				{
+					"name": "approve_date",
+					"type": "Date",
+					"description": "获得公益时的时间"
+				},
+				{
+					"name": "main_title",
+					"type": "String",
+					"description": "标题  \t"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "副标题"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "活动标题"
+						},
+						{
+							"name": "summary",
+							"type": "String",
+							"description": "活动摘要"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "活动内容"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						}
+					],
+					"name": "activity",
+					"type": "ActivityDTO",
+					"description": "活动"
+				},
+				{
+					"name": "gmt_create_time",
+					"type": "Date",
+					"description": "公益时产生时间"
+				}
+			],
+			"name": "data",
+			"type": "CharityTimeDTO []",
+			"description": "公益时记录列表"
+		}
+	],
+	"name": "alibaba.charity.charitytime.list",
+	"apiChineseName": "授权用户的公益时记录查询",
+	"description": "查询授权用户的公益时记录",
+	"id": 58544
+}

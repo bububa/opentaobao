@@ -1,8 +1,4 @@
 {
-	"id": 43310,
-	"name": "alibaba.alihealth.drug.kyt.dr.billcheck",
-	"apiChineseName": "疫苗追溯验证",
-	"description": "各级疾控在入库完成后，需要做追溯信息验证",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -30,105 +26,94 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "bill_time",
 							"type": "Date",
-							"description": "单据日期",
-							"required": true
+							"description": "单据日期"
 						},
 						{
 							"name": "bill_type",
 							"type": "Number",
-							"description": "单据类型",
-							"required": true
+							"description": "单据类型"
 						},
 						{
 							"name": "matched_count",
 							"type": "Number",
-							"description": "追溯验证数量",
-							"required": true
+							"description": "追溯验证数量"
 						},
 						{
 							"name": "user_name",
 							"type": "String",
-							"description": "收发货企业名称",
-							"required": true
+							"description": "收发货企业名称"
 						},
 						{
 							"name": "matched_rate_show",
 							"type": "String",
-							"description": "验证率",
-							"required": true
+							"description": "验证率"
 						},
 						{
 							"name": "bill_code",
 							"type": "String",
-							"description": "单据编号",
-							"required": true
+							"description": "单据编号"
 						},
 						{
-							"name": "detail_info_list",
-							"type": "DetailInfoList[]",
-							"description": "码验证信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "批次编号",
-									"required": true
+									"description": "批次编号"
 								},
 								{
 									"name": "drug_info",
 									"type": "String",
-									"description": "药品信息",
-									"required": true
+									"description": "药品信息"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "追溯码",
-									"required": true
+									"description": "追溯码"
 								},
 								{
 									"name": "code_is_matched",
 									"type": "String",
-									"description": "验证状态， 1 已验证 ； 其他是未验证",
-									"required": true
+									"description": "验证状态， 1 已验证 ； 其他是未验证"
 								}
-							]
+							],
+							"name": "detail_info_list",
+							"type": "DetailInfoList[]",
+							"description": "码验证信息"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "服务返回码",
-					"required": true
+					"description": "服务返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "服务返回信息",
-					"required": true
+					"description": "服务返回信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.billcheck",
+	"apiChineseName": "疫苗追溯验证",
+	"description": "各级疾控在入库完成后，需要做追溯信息验证",
+	"id": 43310
 }

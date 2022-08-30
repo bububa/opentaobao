@@ -1,8 +1,4 @@
 {
-	"id": 45807,
-	"name": "aliexpress.affiliate.order.get",
-	"apiChineseName": "AE流量订单详情获取API",
-	"description": "联盟推广订单效果获取API",
 	"requestParams": [
 		{
 			"name": "app_signature",
@@ -22,9 +18,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -39,10 +32,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficOrderResultDto",
-					"description": "返回结果明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_record_count",
@@ -51,10 +40,6 @@
 							"required": true
 						},
 						{
-							"name": "orders",
-							"type": "Order[]",
-							"description": "订单内容明细",
-							"required": true,
 							"subParams": [
 								{
 									"name": "commission_rate",
@@ -241,12 +226,33 @@
 									"type": "String",
 									"description": "是否为联盟商品：N/Y",
 									"required": true
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "国家标：global、ru_site、es_site、it_site",
+									"required": true
 								}
-							]
+							],
+							"name": "orders",
+							"type": "Order[]",
+							"description": "订单内容明细",
+							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficOrderResultDto",
+					"description": "返回结果明细",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.order.get",
+	"apiChineseName": "AE流量订单详情获取API",
+	"description": "联盟推广订单效果获取API",
+	"id": 45807
 }

@@ -30,7 +30,7 @@ type TvmBusLineInfo struct {
 	StartStationAddress string `json:"start_station_address,omitempty" xml:"start_station_address,omitempty"`
 	// 车型
 	BusType string `json:"bus_type,omitempty" xml:"bus_type,omitempty"`
-	// 出发省份码
+	// 出发省份，
 	StartProvinceCode string `json:"start_province_code,omitempty" xml:"start_province_code,omitempty"`
 	// 出发城市码
 	StartCityCode string `json:"start_city_code,omitempty" xml:"start_city_code,omitempty"`

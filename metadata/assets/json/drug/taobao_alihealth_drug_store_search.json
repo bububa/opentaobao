@@ -1,8 +1,4 @@
 {
-	"id": 30610,
-	"name": "taobao.alihealth.drug.store.search",
-	"apiChineseName": "药品店内搜索",
-	"description": "提供给千牛智能客服，在阿里健康O2O店铺内搜索药品",
 	"requestParams": [
 		{
 			"name": "keyword",
@@ -28,109 +24,97 @@
 	],
 	"responseParams": [
 		{
-			"name": "model",
-			"type": "O2OInShopSearchResponse",
-			"description": "model",
 			"subParams": [
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
-					"name": "item_list",
-					"type": "Itemlist[]",
-					"description": "itemList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "rx",
 							"type": "Boolean",
-							"description": "rx",
-							"required": true
+							"description": "rx"
 						},
 						{
 							"name": "back_cate",
 							"type": "Number",
-							"description": "backCate",
-							"required": true
+							"description": "backCate"
 						},
 						{
 							"name": "item_id",
 							"type": "String",
-							"description": "itemId",
-							"required": true
+							"description": "itemId"
 						},
 						{
 							"name": "is_o2o",
 							"type": "String",
-							"description": "isO2O",
-							"required": true
+							"description": "isO2O"
 						},
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "itemName",
-							"required": true
+							"description": "itemName"
 						},
 						{
 							"name": "list_pic_url",
 							"type": "String",
-							"description": "listPicUrl",
-							"required": true
+							"description": "listPicUrl"
 						},
 						{
 							"name": "ori_price",
 							"type": "String",
-							"description": "oriPrice",
-							"required": true
+							"description": "oriPrice"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "price",
-							"required": true
+							"description": "price"
 						},
 						{
 							"name": "symptom",
 							"type": "String",
-							"description": "symptom",
-							"required": true
+							"description": "symptom"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "quantity",
-							"required": true
+							"description": "quantity"
 						},
 						{
 							"name": "delivery_time",
 							"type": "String",
-							"description": "deliveryTime",
-							"required": true
+							"description": "deliveryTime"
 						},
 						{
 							"name": "at_limit",
 							"type": "Number",
-							"description": "atLimit",
-							"required": true
+							"description": "atLimit"
 						},
 						{
 							"name": "delivery_type",
 							"type": "Number",
-							"description": "deliveryType",
-							"required": true
+							"description": "deliveryType"
 						},
 						{
 							"name": "delivery_type_desc",
 							"type": "String",
-							"description": "deliveryTypeDesc",
-							"required": true
+							"description": "deliveryTypeDesc"
 						}
-					]
+					],
+					"name": "item_list",
+					"type": "Itemlist[]",
+					"description": "itemList"
 				}
-			]
+			],
+			"name": "model",
+			"type": "O2OInShopSearchResponse",
+			"description": "model"
 		}
-	]
+	],
+	"name": "taobao.alihealth.drug.store.search",
+	"apiChineseName": "药品店内搜索",
+	"description": "提供给千牛智能客服，在阿里健康O2O店铺内搜索药品",
+	"id": 30610
 }

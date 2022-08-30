@@ -2,10 +2,6 @@ package pur
 
 // SupplierPreInvoiceItem 结构体
 type SupplierPreInvoiceItem struct {
-	// 发票行总金额
-	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
-	// 规格型号
-	Spec string `json:"spec,omitempty" xml:"spec,omitempty"`
 	// 关闭原因
 	LineCloseReason string `json:"line_close_reason,omitempty" xml:"line_close_reason,omitempty"`
 	// 行状态
@@ -22,8 +18,12 @@ type SupplierPreInvoiceItem struct {
 	TaxCode string `json:"tax_code,omitempty" xml:"tax_code,omitempty"`
 	// 发票行税额
 	TaxAmount string `json:"tax_amount,omitempty" xml:"tax_amount,omitempty"`
+	// 发票行总金额
+	Amount string `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 发票行数量
 	InvoiceLineQuantity string `json:"invoice_line_quantity,omitempty" xml:"invoice_line_quantity,omitempty"`
+	// 规格型号
+	Spec string `json:"spec,omitempty" xml:"spec,omitempty"`
 	// 货物或服务名称
 	GoodsName string `json:"goods_name,omitempty" xml:"goods_name,omitempty"`
 	// 货物或服务id

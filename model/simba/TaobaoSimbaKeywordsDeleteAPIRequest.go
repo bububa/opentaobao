@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaKeywordsDeleteAPIRequest struct {
 	model.Params
 	// 关键词Id数组，最多100个
-	_keywordIds []int64
+	_keywordIds []string
 	// 主人昵称
 	_nick string
 	// 推广计划Id
@@ -43,14 +43,14 @@ func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetApiParams() url.Values {
 
 // SetKeywordIds is KeywordIds Setter
 // 关键词Id数组，最多100个
-func (r *TaobaoSimbaKeywordsDeleteAPIRequest) SetKeywordIds(_keywordIds []int64) error {
+func (r *TaobaoSimbaKeywordsDeleteAPIRequest) SetKeywordIds(_keywordIds []string) error {
 	r._keywordIds = _keywordIds
 	r.Set("keyword_ids", _keywordIds)
 	return nil
 }
 
 // GetKeywordIds KeywordIds Getter
-func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetKeywordIds() []int64 {
+func (r TaobaoSimbaKeywordsDeleteAPIRequest) GetKeywordIds() []string {
 	return r._keywordIds
 }
 

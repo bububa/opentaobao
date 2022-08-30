@@ -1,8 +1,4 @@
 {
-	"id": 10799,
-	"name": "taobao.simba.adgroupids.deleted.get",
-	"apiChineseName": "获取删除的推广组ID",
-	"description": "获取删除的推广组ID",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,15 +14,12 @@
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "返回的每页数据量大小,默认200最大1000",
-			"maxValue": 1000,
-			"minValue": 1
+			"description": "返回的每页数据量大小,默认200最大1000"
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "返回的第几页数据，默认为1",
-			"minValue": 1
+			"description": "返回的第几页数据，默认为1"
 		}
 	],
 	"responseParams": [
@@ -35,5 +28,9 @@
 			"type": "Number []",
 			"description": "推广组ID列表"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroupids.deleted.get",
+	"apiChineseName": "获取删除的推广组ID",
+	"description": "获取删除的推广组ID",
+	"id": 10799
 }

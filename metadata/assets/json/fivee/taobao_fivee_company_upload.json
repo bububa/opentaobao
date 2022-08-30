@@ -1,8 +1,4 @@
 {
-	"id": 42258,
-	"name": "taobao.fivee.company.upload",
-	"apiChineseName": "上传商信息接口",
-	"description": "资质共享平台上传资质证照",
 	"requestParams": [
 		{
 			"name": "param_bucode",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "param_company",
-			"type": "Company",
-			"description": "商家证照信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "established_date",
@@ -22,9 +14,6 @@
 					"description": "成立时间"
 				},
 				{
-					"name": "licences",
-					"type": "Licence[]",
-					"description": "证照信息",
 					"subParams": [
 						{
 							"name": "certification_body",
@@ -64,7 +53,10 @@
 							"type": "String[]",
 							"description": "下载地址列表"
 						}
-					]
+					],
+					"name": "licences",
+					"type": "Licence[]",
+					"description": "证照信息"
 				},
 				{
 					"name": "name",
@@ -88,7 +80,11 @@
 					"type": "Number[]",
 					"description": "关系类型：1.制造商 2.供应商"
 				}
-			]
+			],
+			"name": "param_company",
+			"type": "Company",
+			"description": "商家证照信息",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -112,5 +108,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.fivee.company.upload",
+	"apiChineseName": "上传商信息接口",
+	"description": "资质共享平台上传资质证照",
+	"id": 42258
 }

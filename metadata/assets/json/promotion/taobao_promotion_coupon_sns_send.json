@@ -1,8 +1,4 @@
 {
-	"id": 22623,
-	"name": "taobao.promotion.coupon.sns.send",
-	"apiChineseName": "微淘粉丝店铺优惠券发放接口",
-	"description": "通过接口批量发放店铺优惠券（每次只能发送100张，只能发给当前授权卖家店铺的微淘粉丝），发送成功则返回为空，发送失败则返回失败的买家列表和发送成功的买家和优惠券的number。注：如果所有买家都发放失败的话，is_success也为true，建议调用者根据返回的集合判断是否送入的买家都发放成功了",
 	"requestParams": [
 		{
 			"name": "coupon_id",
@@ -14,15 +10,17 @@
 			"name": "buyer_nick",
 			"type": "String[]",
 			"description": "买家昵称用半角','号分割",
-			"required": true,
 			"maxListSize": 100
+		},
+		{
+			"name": "open_uids",
+			"type": "String[]",
+			"description": "asd",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "failure_buyers",
-			"type": "ErrorMessage []",
-			"description": "没有发送成功的买家",
 			"subParams": [
 				{
 					"name": "buyer_nick",
@@ -33,13 +31,18 @@
 					"name": "reason",
 					"type": "String",
 					"description": "发送失败的原因"
+				},
+				{
+					"name": "open_uid",
+					"type": "String",
+					"description": "asas"
 				}
-			]
+			],
+			"name": "failure_buyers",
+			"type": "ErrorMessage []",
+			"description": "没有发送成功的买家"
 		},
 		{
-			"name": "coupon_results",
-			"type": "CouponResult []",
-			"description": "发送成功的买家的昵称和优惠券的number",
 			"subParams": [
 				{
 					"name": "coupon_number",
@@ -50,8 +53,20 @@
 					"name": "buyer_nick",
 					"type": "String",
 					"description": "张三"
+				},
+				{
+					"name": "open_uid",
+					"type": "String",
+					"description": "asasa"
 				}
-			]
+			],
+			"name": "coupon_results",
+			"type": "CouponResult []",
+			"description": "发送成功的买家的昵称和优惠券的number"
 		}
-	]
+	],
+	"name": "taobao.promotion.coupon.sns.send",
+	"apiChineseName": "微淘粉丝店铺优惠券发放接口",
+	"description": "通过接口批量发放店铺优惠券（每次只能发送100张，只能发给当前授权卖家店铺的微淘粉丝），发送成功则返回为空，发送失败则返回失败的买家列表和发送成功的买家和优惠券的number。注：如果所有买家都发放失败的话，is_success也为true，建议调用者根据返回的集合判断是否送入的买家都发放成功了",
+	"id": 22623
 }

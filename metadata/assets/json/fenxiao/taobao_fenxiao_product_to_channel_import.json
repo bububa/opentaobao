@@ -1,8 +1,4 @@
 {
-	"id": 33028,
-	"name": "taobao.fenxiao.product.to.channel.import",
-	"apiChineseName": "产品导入到渠道",
-	"description": "支持供应商将已有产品导入到某个渠道销售",
 	"requestParams": [
 		{
 			"name": "channel",
@@ -16,5 +12,9 @@
 			"description": "要导入的产品id",
 			"required": true
 		}
-	]
+	],
+	"name": "taobao.fenxiao.product.to.channel.import",
+	"apiChineseName": "产品导入到渠道",
+	"description": "支持供应商将已有产品导入到某个渠道销售",
+	"id": 33028
 }

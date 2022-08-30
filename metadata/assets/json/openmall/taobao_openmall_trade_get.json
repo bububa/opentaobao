@@ -1,8 +1,4 @@
 {
-	"id": 50808,
-	"name": "taobao.openmall.trade.get",
-	"apiChineseName": "查询订单详情",
-	"description": "查询订单详情",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -19,355 +15,302 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopTradeDetailVo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "alipay_no",
 					"type": "String",
-					"description": "支付宝交易号",
-					"required": true
+					"description": "支付宝交易号"
 				},
 				{
 					"name": "buyer_channel",
 					"type": "String",
-					"description": "下单用户渠道",
-					"required": true
+					"description": "下单用户渠道"
 				},
 				{
 					"name": "buyer_channel_id",
 					"type": "String",
-					"description": "下单用户渠道openid",
-					"required": true
+					"description": "下单用户渠道openid"
 				},
 				{
 					"name": "buyer_memo",
 					"type": "String",
-					"description": "买家备注",
-					"required": true
+					"description": "买家备注"
 				},
 				{
 					"name": "consign_time",
 					"type": "Date",
-					"description": "卖家发货时间。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "卖家发货时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "distributor",
 					"type": "String",
-					"description": "下单媒体渠道",
-					"required": true
+					"description": "下单媒体渠道"
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间 。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间 。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "est_con_time",
 					"type": "String",
-					"description": "商家的预计发货时间",
-					"required": true
+					"description": "商家的预计发货时间"
 				},
 				{
 					"name": "has_post_fee",
 					"type": "Boolean",
-					"description": "是否包含邮费",
-					"required": true
+					"description": "是否包含邮费"
 				},
 				{
 					"name": "mark_desc",
 					"type": "String",
-					"description": "订单出现异常问题的时候，给予用户的描述,没有异常的时候，此值为空",
-					"required": true
+					"description": "订单出现异常问题的时候，给予用户的描述,没有异常的时候，此值为空"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
 				},
 				{
 					"name": "num",
 					"type": "Number",
-					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。",
-					"required": true
+					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。"
 				},
 				{
 					"name": "num_iid",
 					"type": "Number",
-					"description": "商品数字编号",
-					"required": true
+					"description": "商品数字编号"
 				},
 				{
-					"name": "orders",
-					"type": "TopOrderVo[]",
-					"description": "订单列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "consign_time",
 							"type": "String",
-							"description": "子订单发货时间，当卖家对订单进行了多次发货，子订单的发货时间和主订单的发货时间可能不一样了，那么就需要以子订单的时间为准。（没有进行多次发货的订单，主订单的发货时间和子订单的发货时间都一样）",
-							"required": true
+							"description": "子订单发货时间，当卖家对订单进行了多次发货，子订单的发货时间和主订单的发货时间可能不一样了，那么就需要以子订单的时间为准。（没有进行多次发货的订单，主订单的发货时间和子订单的发货时间都一样）"
 						},
 						{
 							"name": "end_time",
 							"type": "Date",
-							"description": "子订单的交易结束时间说明：子订单有单独的结束时间，与主订单的结束时间可能有所不同，在有退款发起的时候或者是主订单分阶段付款的时候，子订单的结束时间会早于主订单的结束时间，所以开放这个字段便于订单结束状态的判断",
-							"required": true
+							"description": "子订单的交易结束时间说明：子订单有单独的结束时间，与主订单的结束时间可能有所不同，在有退款发起的时候或者是主订单分阶段付款的时候，子订单的结束时间会早于主订单的结束时间，所以开放这个字段便于订单结束状态的判断"
 						},
 						{
 							"name": "estimate_con_time",
 							"type": "String",
-							"description": "子订单预计发货时间",
-							"required": true
+							"description": "子订单预计发货时间"
 						},
 						{
 							"name": "item_memo",
 							"type": "String",
-							"description": "商品备注",
-							"required": true
+							"description": "商品备注"
 						},
 						{
 							"name": "num",
 							"type": "Number",
-							"description": "购买数量。取值范围:大于零的整数",
-							"required": true
+							"description": "购买数量。取值范围:大于零的整数"
 						},
 						{
 							"name": "num_iid",
 							"type": "Number",
-							"description": "商品数字ID",
-							"required": true
+							"description": "商品数字ID"
 						},
 						{
 							"name": "oid",
 							"type": "Number",
-							"description": "子订单编号",
-							"required": true
+							"description": "子订单编号"
 						},
 						{
 							"name": "outer_sku_id",
 							"type": "String",
-							"description": "外部网店自己定义的Sku编号",
-							"required": true
+							"description": "外部网店自己定义的Sku编号"
 						},
 						{
 							"name": "payment",
 							"type": "String",
-							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。对于多子订单的交易，计算公式如下：payment = price * num + adjust_fee - discount_fee ；单子订单交易，payment与主订单的payment一致，对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。",
-							"required": true
+							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。对于多子订单的交易，计算公式如下：payment = price * num + adjust_fee - discount_fee ；单子订单交易，payment与主订单的payment一致，对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。"
 						},
 						{
 							"name": "price",
 							"type": "String",
-							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-							"required": true
+							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 						},
 						{
 							"name": "refund_id",
 							"type": "Number",
-							"description": "最近退款ID",
-							"required": true
+							"description": "最近退款ID"
 						},
 						{
 							"name": "refund_status",
 							"type": "String",
-							"description": "退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)",
-							"required": true
-						},
-						{
-							"name": "sku_properties_name",
-							"type": "String",
-							"description": "SKU的值。如：机身颜色:黑色;手机套餐:官方标配",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "订单状态。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易，暂无) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用，暂无) TRADE_FINISHED(交易成功) TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易) PAY_PENDING(国际信用卡支付付款确认中，暂无)",
-							"required": true
-						},
-						{
-							"name": "title",
-							"type": "String",
-							"description": "商品标题",
-							"required": true
-						},
-						{
-							"name": "total_fee",
-							"type": "String",
-							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-							"required": true
+							"description": "退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
 						},
 						{
 							"name": "is_sh_ship",
 							"type": "Boolean",
-							"description": "是否发货",
-							"required": true
+							"description": "是否发货"
+						},
+						{
+							"name": "sku_properties_name",
+							"type": "String",
+							"description": "SKU的值。如：机身颜色:黑色;手机套餐:官方标配"
 						},
 						{
 							"name": "sku_id",
 							"type": "String",
-							"description": "商品SKUID",
-							"required": true
+							"description": "商品SKUID"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易，暂无) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用，暂无) TRADE_FINISHED(交易成功) TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易) PAY_PENDING(国际信用卡支付付款确认中，暂无)"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 						},
 						{
 							"name": "logistics_company",
 							"type": "String",
-							"description": "物流公司名称",
-							"required": true
+							"description": "物流公司名称"
 						},
 						{
 							"name": "invoice_no",
 							"type": "String",
-							"description": "子订单包裹运输号",
-							"required": true
+							"description": "子订单包裹运输号"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "TopOrderVo[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "pay_time",
 					"type": "Date",
-					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。",
-					"required": true
+					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。"
 				},
 				{
 					"name": "payment",
 					"type": "String",
-					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "post_fee",
 					"type": "String",
-					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "price",
 					"type": "String",
-					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分",
-					"required": true
+					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分"
 				},
 				{
 					"name": "receiver_address",
 					"type": "String",
-					"description": "收货人的详细地址",
-					"required": true
+					"description": "收货人的详细地址"
 				},
 				{
 					"name": "receiver_city",
 					"type": "String",
-					"description": "收货人的所在城市 注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面 建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市",
-					"required": true
+					"description": "收货人的所在城市 注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面 建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市"
 				},
 				{
 					"name": "receiver_country",
 					"type": "String",
-					"description": "收货人国籍",
-					"required": true
+					"description": "收货人国籍"
 				},
 				{
 					"name": "receiver_district",
 					"type": "String",
-					"description": "收货人的所在地区 注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面 建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市",
-					"required": true
+					"description": "收货人的所在地区 注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面 建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市"
 				},
 				{
 					"name": "receiver_mobile",
 					"type": "String",
-					"description": "收货人手机号",
-					"required": true
+					"description": "收货人手机号"
 				},
 				{
 					"name": "receiver_name",
 					"type": "String",
-					"description": "收货人姓名",
-					"required": true
+					"description": "收货人姓名"
 				},
 				{
 					"name": "receiver_phone",
 					"type": "String",
-					"description": "收货人电话",
-					"required": true
+					"description": "收货人电话"
 				},
 				{
 					"name": "receiver_state",
 					"type": "String",
-					"description": "收货人的所在省份",
-					"required": true
+					"description": "收货人的所在省份"
 				},
 				{
 					"name": "receiver_town",
 					"type": "String",
-					"description": "收货人街道地址",
-					"required": true
+					"description": "收货人街道地址"
 				},
 				{
 					"name": "receiver_zip",
 					"type": "String",
-					"description": "收货人的邮编",
-					"required": true
+					"description": "收货人的邮编"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "商家",
-					"required": true
+					"description": "商家"
 				},
 				{
 					"name": "shipping_type",
 					"type": "String",
-					"description": "创建交易时的物流方式（交易完成前，物流方式有可能改变，但系统里的这个字段一直不变）。可选值：free(卖家包邮),post(平邮),express(快递)",
-					"required": true
+					"description": "创建交易时的物流方式（交易完成前，物流方式有可能改变，但系统里的这个字段一直不变）。可选值：free(卖家包邮),post(平邮),express(快递)"
 				},
 				{
 					"name": "sid",
 					"type": "String",
-					"description": "运单号，订单实际物流单号取 orders中的invoice_no和logistics_company",
-					"required": true
+					"description": "运单号，订单实际物流单号取 orders中的invoice_no和logistics_company"
 				},
 				{
 					"name": "status",
 					"type": "String",
-					"description": "交易状态。可选值: * TRADE_NO_CREATE_PAY(没有创建支付宝交易，暂无) * WAIT_BUYER_PAY(等待买家付款) * SELLER_CONSIGNED_PART(卖家部分发货，暂无) * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) * TRADE_BUYER_SIGNED(买家已签收,货到付款专用，暂无) * TRADE_FINISHED(交易成功) * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易) * PAY_PENDING(国际信用卡支付付款确认中，暂无) * WAIT_PRE_AUTH_CONFIRM(0元购合约中，暂无) * PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
-					"required": true
+					"description": "交易状态。可选值: * TRADE_NO_CREATE_PAY(没有创建支付宝交易，暂无) * WAIT_BUYER_PAY(等待买家付款) * SELLER_CONSIGNED_PART(卖家部分发货，暂无) * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) * TRADE_BUYER_SIGNED(买家已签收,货到付款专用，暂无) * TRADE_FINISHED(交易成功) * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易) * PAY_PENDING(国际信用卡支付付款确认中，暂无) * WAIT_PRE_AUTH_CONFIRM(0元购合约中，暂无) * PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)"
 				},
 				{
 					"name": "tid",
 					"type": "String",
-					"description": "淘宝交易单号",
-					"required": true
+					"description": "淘宝交易单号"
 				},
 				{
 					"name": "title",
 					"type": "String",
-					"description": "交易标题，以店铺名作为此标题的值。注:taobao.trades.get接口返回的Trade中的title是商品名称",
-					"required": true
+					"description": "交易标题，以店铺名作为此标题的值。注:taobao.trades.get接口返回的Trade中的title是商品名称"
 				},
 				{
 					"name": "total_fee",
 					"type": "String",
-					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "trade_memo",
 					"type": "String",
-					"description": "交易备注。",
-					"required": true
+					"description": "交易备注。"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopTradeDetailVo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.trade.get",
+	"apiChineseName": "查询订单详情",
+	"description": "查询订单详情",
+	"id": 50808
 }

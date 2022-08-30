@@ -1,20 +1,16 @@
 {
-	"id": 22852,
-	"name": "taobao.fenxiao.dealer.requisitionorder.create",
-	"apiChineseName": "创建经销采购申请",
-	"description": "创建经销采购申请",
 	"requestParams": [
-		{
-			"name": "logistics_type",
-			"type": "String",
-			"description": "配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货"
-		},
 		{
 			"name": "order_detail",
 			"type": "String[]",
 			"description": "采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）",
-			"required": true,
-			"maxListSize": 50
+			"maxListSize": 50,
+			"required": true
+		},
+		{
+			"name": "logistics_type",
+			"type": "String",
+			"description": "配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货"
 		},
 		{
 			"name": "province",
@@ -71,5 +67,9 @@
 			"type": "Number",
 			"description": "经销采购申请编号"
 		}
-	]
+	],
+	"name": "taobao.fenxiao.dealer.requisitionorder.create",
+	"apiChineseName": "创建经销采购申请",
+	"description": "创建经销采购申请",
+	"id": 22852
 }

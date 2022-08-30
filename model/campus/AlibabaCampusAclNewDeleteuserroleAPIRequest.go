@@ -13,7 +13,7 @@ import (
 type AlibabaCampusAclNewDeleteuserroleAPIRequest struct {
 	model.Params
 	// 角色id
-	_roleIds []int64
+	_roleIds []string
 	// 用户账号
 	_userId string
 	// 系统入参
@@ -43,14 +43,14 @@ func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetApiParams() url.Values {
 
 // SetRoleIds is RoleIds Setter
 // 角色id
-func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []int64) error {
+func (r *AlibabaCampusAclNewDeleteuserroleAPIRequest) SetRoleIds(_roleIds []string) error {
 	r._roleIds = _roleIds
 	r.Set("role_ids", _roleIds)
 	return nil
 }
 
 // GetRoleIds RoleIds Getter
-func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetRoleIds() []int64 {
+func (r AlibabaCampusAclNewDeleteuserroleAPIRequest) GetRoleIds() []string {
 	return r._roleIds
 }
 

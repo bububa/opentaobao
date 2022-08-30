@@ -1,8 +1,4 @@
 {
-	"id": 41007,
-	"name": "alibaba.alihealth.drug.kyt.uploadb2cbill",
-	"apiChineseName": "快易通零售B2C",
-	"description": "快易通零售B2C单据上传",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -51,8 +47,8 @@
 			"name": "trace_codes",
 			"type": "String[]",
 			"description": "追溯码[多个时用逗号分开]",
-			"required": true,
-			"maxListSize": 2000
+			"maxListSize": 2000,
+			"required": true
 		},
 		{
 			"name": "order_source",
@@ -81,5 +77,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.uploadb2cbill",
+	"apiChineseName": "快易通零售B2C",
+	"description": "快易通零售B2C单据上传",
+	"id": 41007
 }

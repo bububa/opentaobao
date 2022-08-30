@@ -12,12 +12,12 @@ import (
 // 修改关键词状态
 type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest struct {
 	model.Params
+	// 用户信息
+	_topContext *TopContextDto
 	// 计划id
 	_campaignId int64
 	// 更新数据
 	_keywordUpdateQuery *KeywordUpdateQuery
-	// 用户信息
-	_topContext *TopContextDto
 }
 
 // NewAlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest 初始化AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest对象
@@ -39,6 +39,19 @@ func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetApiParams() u
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetTopContext is TopContext Setter
+// 用户信息
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
+	r._topContext = _topContext
+	r.Set("top_context", _topContext)
+	return nil
+}
+
+// GetTopContext TopContext Getter
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetTopContext() *TopContextDto {
+	return r._topContext
 }
 
 // SetCampaignId is CampaignId Setter
@@ -65,17 +78,4 @@ func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetKeywordUpdat
 // GetKeywordUpdateQuery KeywordUpdateQuery Getter
 func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetKeywordUpdateQuery() *KeywordUpdateQuery {
 	return r._keywordUpdateQuery
-}
-
-// SetTopContext is TopContext Setter
-// 用户信息
-func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) SetTopContext(_topContext *TopContextDto) error {
-	r._topContext = _topContext
-	r.Set("top_context", _topContext)
-	return nil
-}
-
-// GetTopContext TopContext Getter
-func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIRequest) GetTopContext() *TopContextDto {
-	return r._topContext
 }

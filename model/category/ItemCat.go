@@ -2,7 +2,7 @@ package category
 
 // ItemCat 结构体
 type ItemCat struct {
-	// Feature对象列表<br/>目前已有的属性：<br/>若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许
+	// Feature对象列表目前已有的属性：若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许
 	Features []Feature `json:"features,omitempty" xml:"features>feature,omitempty"`
 	// 类目名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`

@@ -1,8 +1,4 @@
 {
-	"id": 31194,
-	"name": "tmall.exchange.get",
-	"apiChineseName": "获取单笔换货详情",
-	"description": "获取单笔换货详情",
 	"requestParams": [
 		{
 			"name": "dispute_id",
@@ -14,15 +10,12 @@
 			"name": "fields",
 			"type": "String[]",
 			"description": "返回字段。目前支持dispute_id, bizorder_id, num, buyer_nick, status, created, modified, reason, title, buyer_logistic_no, seller_logistic_no, bought_sku, exchange_sku, buyer_address, address, buyer_phone, buyer_logistic_name, seller_logistic_name, alipay_no, buyer_name, seller_nick",
-			"required": true,
-			"maxListSize": 100
+			"maxListSize": 100,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ExchangeBaseResponse",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
@@ -43,10 +36,6 @@
 					"required": true
 				},
 				{
-					"name": "exchange",
-					"type": "Exchange",
-					"description": "换货单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "buyer_logistic_no",
@@ -233,10 +222,33 @@
 							"type": "String",
 							"description": "attributes",
 							"required": true
+						},
+						{
+							"name": "oaid",
+							"type": "String",
+							"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+							"required": true
+						},
+						{
+							"name": "buyer_open_uid",
+							"type": "String",
+							"description": "买家openId",
+							"required": true
 						}
-					]
+					],
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "换货单详情",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ExchangeBaseResponse",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "tmall.exchange.get",
+	"apiChineseName": "获取单笔换货详情",
+	"description": "获取单笔换货详情",
+	"id": 31194
 }

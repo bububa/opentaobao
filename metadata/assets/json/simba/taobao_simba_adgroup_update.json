@@ -1,8 +1,4 @@
 {
-	"id": 10539,
-	"name": "taobao.simba.adgroup.update",
-	"apiChineseName": "更新一个推广组的信息",
-	"description": "更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价",
 	"requestParams": [
 		{
 			"name": "use_nonsearch_default_price",
@@ -40,9 +36,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "adgroup",
-			"type": "ADGroup",
-			"description": "被修改的推广组",
 			"subParams": [
 				{
 					"name": "nick",
@@ -109,7 +102,14 @@
 					"type": "Date",
 					"description": "最后修改时间"
 				}
-			]
+			],
+			"name": "adgroup",
+			"type": "ADGroup",
+			"description": "被修改的推广组"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroup.update",
+	"apiChineseName": "更新一个推广组的信息",
+	"description": "更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价",
+	"id": 10539
 }

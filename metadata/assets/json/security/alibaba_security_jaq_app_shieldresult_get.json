@@ -1,8 +1,4 @@
 {
-	"id": 25665,
-	"name": "alibaba.security.jaq.app.shieldresult.get",
-	"apiChineseName": "用户查询加固结果",
-	"description": "用户通过alibaba.security.jaq.app.shield接口提交应用加固后,通过该接口查询加固结果,下载加固包",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ShieldResult",
-			"description": "应用加固结果",
 			"subParams": [
 				{
 					"name": "task_status",
@@ -23,9 +16,6 @@
 					"description": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
 				},
 				{
-					"name": "app_list",
-					"type": "ChannelAppInfo[]",
-					"description": "加固后的应用列表(任务完成时才返回)  普通加固时只有1个文件，多渠道加固时每个渠道1个文件",
 					"subParams": [
 						{
 							"name": "channel",
@@ -37,12 +27,12 @@
 							"type": "String",
 							"description": "加固后的APP下载地址"
 						}
-					]
+					],
+					"name": "app_list",
+					"type": "ChannelAppInfo[]",
+					"description": "加固后的应用列表(任务完成时才返回)  普通加固时只有1个文件，多渠道加固时每个渠道1个文件"
 				},
 				{
-					"name": "obfuscate_result",
-					"type": "ObfuscateResult",
-					"description": "混淆率计算返回结果",
 					"subParams": [
 						{
 							"name": "total_classes",
@@ -79,7 +69,10 @@
 							"type": "String",
 							"description": "总混淆率"
 						}
-					]
+					],
+					"name": "obfuscate_result",
+					"type": "ObfuscateResult",
+					"description": "混淆率计算返回结果"
 				},
 				{
 					"name": "error_msg",
@@ -91,7 +84,14 @@
 					"type": "String",
 					"description": "混淆后的map文件的地址"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ShieldResult",
+			"description": "应用加固结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.app.shieldresult.get",
+	"apiChineseName": "用户查询加固结果",
+	"description": "用户通过alibaba.security.jaq.app.shield接口提交应用加固后,通过该接口查询加固结果,下载加固包",
+	"id": 25665
 }

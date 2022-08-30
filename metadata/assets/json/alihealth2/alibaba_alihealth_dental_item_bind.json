@@ -1,15 +1,6 @@
 {
-	"id": 43392,
-	"name": "alibaba.alihealth.dental.item.bind",
-	"apiChineseName": "ISV绑定外部门店id和外部商品id",
-	"description": "ISV绑定外部门店id和外部商品id",
 	"requestParams": [
 		{
-			"name": "bind_list",
-			"type": "StoreItemRelRequest[]",
-			"description": "bind_list",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "sp_store_id",
@@ -40,7 +31,12 @@
 					"type": "Number",
 					"description": "是否支持夜诊所，0不支持，1支持"
 				}
-			]
+			],
+			"name": "bind_list",
+			"type": "StoreItemRelRequest[]",
+			"description": "bind_list",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "type",
@@ -51,55 +47,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MtopResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "store_item_rel_vo_list",
-					"type": "StoreItemRelVo[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sp_item_id",
 							"type": "String",
-							"description": "isvm商品ID",
-							"required": true
+							"description": "isvm商品ID"
 						},
 						{
 							"name": "sp_store_id",
 							"type": "String",
-							"description": "isv门店ID",
-							"required": true
+							"description": "isv门店ID"
 						},
 						{
 							"name": "bind_id",
 							"type": "Number",
-							"description": "绑定ID",
-							"required": true
+							"description": "绑定ID"
 						}
-					]
+					],
+					"name": "store_item_rel_vo_list",
+					"type": "StoreItemRelVo[]",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "200",
-					"required": true
+					"description": "200"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true",
-					"required": true
+					"description": "true"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.dental.item.bind",
+	"apiChineseName": "ISV绑定外部门店id和外部商品id",
+	"description": "ISV绑定外部门店id和外部商品id",
+	"id": 43392
 }

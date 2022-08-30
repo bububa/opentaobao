@@ -1,13 +1,44 @@
 {
-	"id": 26200,
-	"name": "alibaba.security.jaq.spamregisterprevention.result.fetch.new",
-	"apiChineseName": "获取虚假注册保护结果",
-	"description": "获取虚假注册保护结果",
 	"requestParams": [
 		{
-			"name": "phone_number",
+			"name": "id_number",
 			"type": "String",
-			"description": "关联账号的手机号。手机号码的格式为国家码-手机号的格式，如中国手机号86-13088889999或美国手机号001-9096185426，如果不加国家码都视为中国手机号码【phone_number ,email, (user_id,id_type)三种必选其一】"
+			"description": "账号绑定的身份证号"
+		},
+		{
+			"name": "sdk_token",
+			"type": "String",
+			"description": "接入无线保镖安全组件后从服务端获取的token"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "账号绑定的注册的地址"
+		},
+		{
+			"name": "agent",
+			"type": "String",
+			"description": "发送HTTP请求的代理"
+		},
+		{
+			"name": "bank_card_number",
+			"type": "String",
+			"description": "账号绑定的银行卡号"
+		},
+		{
+			"name": "company_name",
+			"type": "String",
+			"description": "账号绑定的公司名字"
+		},
+		{
+			"name": "cookie",
+			"type": "String",
+			"description": "Cookie"
+		},
+		{
+			"name": "register_url",
+			"type": "String",
+			"description": "当前操作的页面URL。Source为1，2时，该参数必选"
 		},
 		{
 			"name": "email",
@@ -15,9 +46,9 @@
 			"description": "关联账号的email。 【phone_number ,email, (user_id,id_type)三种必选其一】"
 		},
 		{
-			"name": "user_id",
+			"name": "extend_data",
 			"type": "String",
-			"description": "账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】"
+			"description": "扩展字段。json格式的字符串，根据具体情况而定"
 		},
 		{
 			"name": "id_type",
@@ -31,30 +62,9 @@
 			"required": true
 		},
 		{
-			"name": "source",
-			"type": "Number",
-			"description": "登录来源。1：PC网页；2：移动网页；3：APP;4:其它",
-			"required": true
-		},
-		{
-			"name": "register_url",
+			"name": "js_token",
 			"type": "String",
-			"description": "当前操作的页面URL。Source为1，2时，该参数必选"
-		},
-		{
-			"name": "agent",
-			"type": "String",
-			"description": "发送HTTP请求的代理"
-		},
-		{
-			"name": "cookie",
-			"type": "String",
-			"description": "Cookie"
-		},
-		{
-			"name": "session_id",
-			"type": "String",
-			"description": "Session id"
+			"description": "接入JS后获取的token"
 		},
 		{
 			"name": "mac_address",
@@ -62,44 +72,9 @@
 			"description": "硬件信息"
 		},
 		{
-			"name": "referer",
+			"name": "phone_number",
 			"type": "String",
-			"description": "上一跳信息"
-		},
-		{
-			"name": "nick_name",
-			"type": "String",
-			"description": "账号绑定的呢称"
-		},
-		{
-			"name": "company_name",
-			"type": "String",
-			"description": "账号绑定的公司名字"
-		},
-		{
-			"name": "address",
-			"type": "String",
-			"description": "账号绑定的注册的地址"
-		},
-		{
-			"name": "id_number",
-			"type": "String",
-			"description": "账号绑定的身份证号"
-		},
-		{
-			"name": "bank_card_number",
-			"type": "String",
-			"description": "账号绑定的银行卡号"
-		},
-		{
-			"name": "js_token",
-			"type": "String",
-			"description": "接入JS后获取的token"
-		},
-		{
-			"name": "sdk_token",
-			"type": "String",
-			"description": "接入无线保镖安全组件后从服务端获取的token"
+			"description": "关联账号的手机号。手机号码的格式为国家码-手机号的格式，如中国手机号86-13088889999或美国手机号001-9096185426，如果不加国家码都视为中国手机号码【phone_number ,email, (user_id,id_type)三种必选其一】"
 		},
 		{
 			"name": "protocol_version",
@@ -108,114 +83,124 @@
 			"required": true
 		},
 		{
-			"name": "extend_data",
+			"name": "referer",
 			"type": "String",
-			"description": "扩展字段。json格式的字符串，根据具体情况而定"
+			"description": "上一跳信息"
+		},
+		{
+			"name": "session_id",
+			"type": "String",
+			"description": "Session id"
+		},
+		{
+			"name": "source",
+			"type": "Number",
+			"description": "登录来源。1：PC网页；2：移动网页；3：APP;4:其它",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "账号的全局唯一标识，为了提高准确率，建议带上该字段。【phone_number ,email, (user_id,id_type)三种必选其一】"
+		},
+		{
+			"name": "nick_name",
+			"type": "String",
+			"description": "账号绑定的呢称"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "jaq_account_risk_result",
-			"type": "JaqAccountRiskResult",
-			"description": "账号风控返回结果",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "JaqAccountRiskData",
-					"description": "风控结果的真正数据内容",
-					"required": true,
 					"subParams": [
 						{
-							"name": "detail",
-							"type": "JaqAccountRiskDetailItem[]",
-							"description": "详情列表",
-							"required": true,
+							"subParams": [
+								{
+									"name": "captcha_client_need_info",
+									"type": "String",
+									"description": "发起端上验证需要的信息"
+								},
+								{
+									"name": "captcha_type",
+									"type": "Number",
+									"description": "推荐的验证类型,0-放行 1-短信下行 2-语音验证 3-滑动验证 4-实人认证  32-综合（滑动＋语音） 9-阻断"
+								}
+							],
+							"name": "captcha_check_data",
+							"type": "CaptchaCheckData",
+							"description": "触发验证所需的信息"
+						},
+						{
 							"subParams": [
 								{
 									"name": "decision",
 									"type": "Number",
-									"description": "决定，0：可以接受；1：应该拒绝；2：需要人工审查",
-									"required": true
+									"description": "决定，0：可以接受；1：应该拒绝；2：需要人工审查"
 								},
 								{
 									"name": "id",
 									"type": "String",
-									"description": "rule id",
-									"required": true
+									"description": "rule id"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "rule name",
-									"required": true
+									"description": "rule name"
 								},
 								{
 									"name": "score",
 									"type": "Number",
-									"description": "rule name",
-									"required": true
+									"description": "rule name"
 								}
-							]
+							],
+							"name": "detail",
+							"type": "JaqAccountRiskDetailItem[]",
+							"description": "详情列表"
 						},
 						{
 							"name": "event_id",
 							"type": "String",
-							"description": "事件id",
-							"required": true
+							"description": "事件id"
 						},
 						{
 							"name": "final_decision",
 							"type": "Number",
-							"description": "最终决定。0：可以接受；1：应该拒绝；2：需要人工审核",
-							"required": true
-						},
-						{
-							"name": "final_score",
-							"type": "Number",
-							"description": "最终得分",
-							"required": true
-						},
-						{
-							"name": "user_id",
-							"type": "String",
-							"description": "注册用户id",
-							"required": true
+							"description": "最终决定。0：可以接受；1：应该拒绝；2：需要人工审核"
 						},
 						{
 							"name": "final_desc",
 							"type": "String",
-							"description": "综合风险描述",
-							"required": true
+							"description": "综合风险描述"
 						},
 						{
-							"name": "captcha_check_data",
-							"type": "CaptchaCheckData",
-							"description": "触发验证所需的信息",
-							"required": true,
-							"subParams": [
-								{
-									"name": "captcha_type",
-									"type": "Number",
-									"description": "推荐的验证类型,0-放行 1-短信下行 2-语音验证 3-滑动验证 4-实人认证  32-综合（滑动＋语音） 9-阻断",
-									"required": true
-								},
-								{
-									"name": "captcha_client_need_info",
-									"type": "String",
-									"description": "发起端上验证需要的信息",
-									"required": true
-								}
-							]
+							"name": "final_score",
+							"type": "Number",
+							"description": "最终得分"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "注册用户id"
 						},
 						{
 							"name": "umid",
 							"type": "String",
-							"description": "umid",
-							"required": true
+							"description": "umid"
 						}
-					]
+					],
+					"name": "data",
+					"type": "JaqAccountRiskData",
+					"description": "风控结果的真正数据内容"
 				}
-			]
+			],
+			"name": "jaq_account_risk_result",
+			"type": "JaqAccountRiskResult",
+			"description": "账号风控返回结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.spamregisterprevention.result.fetch.new",
+	"apiChineseName": "获取虚假注册保护结果",
+	"description": "获取虚假注册保护结果",
+	"id": 26200
 }

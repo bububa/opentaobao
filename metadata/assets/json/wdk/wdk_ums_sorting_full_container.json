@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "user_account",
+					"type": "String",
+					"description": "用户"
+				},
+				{
+					"name": "container_code",
+					"type": "String",
+					"description": "容器"
+				},
+				{
+					"name": "detail_id_list",
+					"type": "Number[]",
+					"description": "明细id"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓code"
+				}
+			],
+			"name": "param0",
+			"type": "DpsScanContainerMtopRequest",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "UmsResult",
+			"description": "返回值"
+		}
+	],
+	"name": "wdk.ums.sorting.full.container",
+	"apiChineseName": "dps分货-满箱",
+	"description": "dps分货-满箱",
+	"id": 60089
+}

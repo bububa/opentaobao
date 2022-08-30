@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录认证"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "用户在公众号下的标识信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "card_id",
+							"type": "String",
+							"description": "微信公众号会员卡模板 id"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "用户会员卡 卡号"
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "当前用户在微信公众号下的OpenId"
+						},
+						{
+							"name": "timestamp",
+							"type": "String",
+							"description": "当前时间戳 (秒)"
+						},
+						{
+							"name": "signature",
+							"type": "String",
+							"description": "加密签名"
+						},
+						{
+							"name": "nonce_str",
+							"type": "String",
+							"description": "加密随机字符串"
+						}
+					],
+					"name": "content",
+					"type": "MemberCardParamVO",
+					"description": "添加会员参数对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.card.parm.query",
+	"apiChineseName": "微信会员卡添加",
+	"description": "微信会员卡添加参数获取",
+	"id": 60813
+}

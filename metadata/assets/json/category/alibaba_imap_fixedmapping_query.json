@@ -1,8 +1,4 @@
 {
-	"id": 47660,
-	"name": "alibaba.imap.fixedmapping.query",
-	"apiChineseName": "查询两个渠道之间的固定映射关系，不通过算法兜底",
-	"description": "查询两个渠道之间的固定映射关系，不通过算法兜底",
 	"requestParams": [
 		{
 			"name": "password",
@@ -38,115 +34,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "top_imap_union_category_path_do_list",
-					"type": "TopImapUnionCategoryPathDo[]",
-					"description": "list参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "l5_cat_id",
 							"type": "Number",
-							"description": "五级类目ID",
-							"required": true
+							"description": "五级类目ID"
 						},
 						{
 							"name": "leaf_cat_name",
 							"type": "String",
-							"description": "叶子类目名称",
-							"required": true
+							"description": "叶子类目名称"
 						},
 						{
 							"name": "l3_cat_id",
 							"type": "Number",
-							"description": "三级类目ID",
-							"required": true
+							"description": "三级类目ID"
 						},
 						{
 							"name": "leaf",
 							"type": "Boolean",
-							"description": "是否叶子类目",
-							"required": true
+							"description": "是否叶子类目"
 						},
 						{
 							"name": "leaf_cat_id",
 							"type": "Number",
-							"description": "叶子类目ID",
-							"required": true
+							"description": "叶子类目ID"
 						},
 						{
 							"name": "l1_cat_id",
 							"type": "Number",
-							"description": "一级类目ID",
-							"required": true
+							"description": "一级类目ID"
 						},
 						{
 							"name": "l4_cat_name",
 							"type": "String",
-							"description": "四级类目名称",
-							"required": true
+							"description": "四级类目名称"
 						},
 						{
 							"name": "l2_cat_name",
 							"type": "String",
-							"description": "二级类目名称",
-							"required": true
+							"description": "二级类目名称"
 						},
 						{
 							"name": "l3_cat_name",
 							"type": "String",
-							"description": "三级类目名称",
-							"required": true
+							"description": "三级类目名称"
 						},
 						{
 							"name": "l4_cat_id",
 							"type": "Number",
-							"description": "四级类目ID",
-							"required": true
+							"description": "四级类目ID"
 						},
 						{
 							"name": "l5_cat_name",
 							"type": "String",
-							"description": "五级类目名称",
-							"required": true
+							"description": "五级类目名称"
 						},
 						{
 							"name": "l2_cat_id",
 							"type": "Number",
-							"description": "二级类目ID",
-							"required": true
+							"description": "二级类目ID"
 						},
 						{
 							"name": "l1_cat_name",
 							"type": "String",
-							"description": "一级类目名称",
-							"required": true
+							"description": "一级类目名称"
 						},
 						{
 							"name": "channel_id",
 							"type": "Number",
-							"description": "渠道ID",
-							"required": true
+							"description": "渠道ID"
 						}
-					]
+					],
+					"name": "top_imap_union_category_path_do_list",
+					"type": "TopImapUnionCategoryPathDo[]",
+					"description": "list参数"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.imap.fixedmapping.query",
+	"apiChineseName": "查询两个渠道之间的固定映射关系，不通过算法兜底",
+	"description": "查询两个渠道之间的固定映射关系，不通过算法兜底",
+	"id": 47660
 }

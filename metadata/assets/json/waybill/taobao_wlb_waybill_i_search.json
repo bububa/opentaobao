@@ -1,33 +1,23 @@
 {
-	"id": 23870,
-	"name": "taobao.wlb.waybill.i.search",
-	"apiChineseName": "查询面单服务订购及面单使用情况v1.0",
-	"description": "获取发货地\u0026CP开通状态\u0026账户的使用情况",
 	"requestParams": [
 		{
-			"name": "waybill_apply_request",
-			"type": "WaybillApplyRequest",
-			"description": "查询网点信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "cp_code",
 					"type": "String",
 					"description": "物流服务商ID"
 				}
-			]
+			],
+			"name": "waybill_apply_request",
+			"type": "WaybillApplyRequest",
+			"description": "查询网点信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "subscribtions",
-			"type": "WaybillApplySubscriptionInfo []",
-			"description": "订购关系",
 			"subParams": [
 				{
-					"name": "branch_account_cols",
-					"type": "WaybillBranchAccount[]",
-					"description": "CP网点信息及对应的商家的发货信息",
 					"subParams": [
 						{
 							"name": "seller_id",
@@ -35,9 +25,6 @@
 							"description": "商家ID"
 						},
 						{
-							"name": "shipp_address_cols",
-							"type": "WaybillAddress[]",
-							"description": "当前网点下的发货地址",
 							"subParams": [
 								{
 									"name": "area",
@@ -69,7 +56,10 @@
 									"type": "Number",
 									"description": "waybill 地址记录ID(非地址库ID)"
 								}
-							]
+							],
+							"name": "shipp_address_cols",
+							"type": "WaybillAddress[]",
+							"description": "当前网点下的发货地址"
 						},
 						{
 							"name": "quantity",
@@ -101,7 +91,10 @@
 							"type": "String",
 							"description": "网点名称"
 						}
-					]
+					],
+					"name": "branch_account_cols",
+					"type": "WaybillBranchAccount[]",
+					"description": "CP网点信息及对应的商家的发货信息"
 				},
 				{
 					"name": "cp_type",
@@ -113,7 +106,14 @@
 					"type": "String",
 					"description": "物流服务商ID"
 				}
-			]
+			],
+			"name": "subscribtions",
+			"type": "WaybillApplySubscriptionInfo []",
+			"description": "订购关系"
 		}
-	]
+	],
+	"name": "taobao.wlb.waybill.i.search",
+	"apiChineseName": "查询面单服务订购及面单使用情况v1.0",
+	"description": "获取发货地\u0026CP开通状态\u0026账户的使用情况",
+	"id": 23870
 }

@@ -1,0 +1,117 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间。时间戳。 毫秒",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "【必传】要选择进行铺货的店铺宝贝 itemId",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "要选择进行铺货的店铺宝贝 skuId， 如果没有sku就不传"
+				},
+				{
+					"name": "logistics_cost_template_id",
+					"type": "Number",
+					"description": "运费模板id，如果要修改则需要传"
+				},
+				{
+					"name": "distribute_price",
+					"type": "Number",
+					"description": "通用分销价格，卖给分销商的价格， 单位 分。 如果需要修改则需要传",
+					"required": true
+				},
+				{
+					"name": "distribute_currency",
+					"type": "String",
+					"description": "币种",
+					"required": true
+				},
+				{
+					"name": "retail_price",
+					"type": "Number",
+					"description": "建议零售价。 建议分销商卖给消费者的价格， 单位 分。 非必传"
+				},
+				{
+					"name": "retail_currency",
+					"type": "String",
+					"description": "币种"
+				}
+			],
+			"name": "update_item_distribution_request",
+			"type": "UpdateItemDistributionRequest",
+			"description": "更新商品分销入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "执行结果"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码"
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误描述"
+						}
+					],
+					"name": "data",
+					"type": "DistributionResponse",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功。调用成功之后，需要看data里面的success，才能知道业务处理是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "操作码"
+				}
+			],
+			"name": "update_item_distribution_response",
+			"type": "SaveItemDistributionResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.item.distribution.update",
+	"apiChineseName": "更新商品分销内容",
+	"description": "更新商品分销内容",
+	"id": 60861
+}

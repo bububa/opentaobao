@@ -2,14 +2,14 @@ package damai
 
 // TopSearchProjectParam 结构体
 type TopSearchProjectParam struct {
-	// 搜索关键字
-	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
 	// 一级分类名，支持多个（之间是OR关系），以"|"隔开。演唱会,音乐会,话剧歌剧,舞蹈芭蕾,曲苑杂坛,体育比赛,度假休闲,儿童亲子,旅游演艺,韩流地带,动漫,旅游展览
 	CategoryName string `json:"category_name,omitempty" xml:"category_name,omitempty"`
 	// 关联艺人姓名（之间是OR关系），以"|"隔开
 	ArtistName string `json:"artist_name,omitempty" xml:"artist_name,omitempty"`
 	// 子分类，支持多个（之间是OR关系），以"|"隔开           一级分类对应子分类如下，演唱会:(摇滚,民族,流行,音乐节,其他) 音乐会:(声乐及合唱,室内乐及古乐,独奏,管弦乐,其他) 话剧歌剧:(儿童剧,歌剧,歌舞剧,话剧,音乐剧) 舞蹈芭蕾:(舞剧,舞蹈,芭蕾) 曲苑杂坛:(戏曲,杂技,相声,马戏,魔术,其他) 体育比赛:(冰雪,搏击运动,格斗,球类运动,田径,电竞,篮球,网球,赛车,足球,其它竞技,其他) 度假休闲:(主题公园,代金券,展会,度假村,温泉,游览线路,滑雪,特色体验,风景区)
 	SubCategoryName string `json:"sub_category_name,omitempty" xml:"sub_category_name,omitempty"`
+	// 搜索关键字
+	Keyword string `json:"keyword,omitempty" xml:"keyword,omitempty"`
 	// 过滤城市名，支持多个（之间是OR关系），以"|"隔开
 	FilterCityName string `json:"filter_city_name,omitempty" xml:"filter_city_name,omitempty"`
 	// 开始日期，格式yyyy-MM-dd

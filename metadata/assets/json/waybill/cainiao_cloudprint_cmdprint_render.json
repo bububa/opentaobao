@@ -1,26 +1,10 @@
 {
-	"id": 34750,
-	"name": "cainiao.cloudprint.cmdprint.render",
-	"apiChineseName": "生成打印机渲染命令（通过打印机命令打印）",
-	"description": "isv 进行无线打印，需要将渲染数据传给打印机，通过生成打印机命令的方式能够最大限度的减少移动设备和打印机之间通信数据量。",
 	"requestParams": [
 		{
-			"name": "params",
-			"type": "CmdRenderParams",
-			"description": "参数对象",
-			"required": true,
 			"subParams": [
 				{
-					"name": "document",
-					"type": "RenderDocument",
-					"description": "需要打印的文档，包括模板地址、打印数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "contents",
-							"type": "RenderContent[]",
-							"description": "包含的区域列表。对于有自定义区的文档，content会包含两条，即第一条是标准模板区域内容、第二条是自定义区域内容",
-							"required": true,
 							"subParams": [
 								{
 									"name": "print_data",
@@ -54,9 +38,17 @@
 									"type": "String",
 									"description": "附加数据(用于修改数据)"
 								}
-							]
+							],
+							"name": "contents",
+							"type": "RenderContent[]",
+							"description": "包含的区域列表。对于有自定义区的文档，content会包含两条，即第一条是标准模板区域内容、第二条是自定义区域内容",
+							"required": true
 						}
-					]
+					],
+					"name": "document",
+					"type": "RenderDocument",
+					"description": "需要打印的文档，包括模板地址、打印数据",
+					"required": true
 				},
 				{
 					"name": "printer_name",
@@ -77,9 +69,6 @@
 					"required": true
 				},
 				{
-					"name": "config",
-					"type": "RenderConfig",
-					"description": "打印配置",
 					"subParams": [
 						{
 							"name": "orientation",
@@ -101,9 +90,16 @@
 							"type": "Boolean",
 							"description": "上联logo"
 						}
-					]
+					],
+					"name": "config",
+					"type": "RenderConfig",
+					"description": "打印配置"
 				}
-			]
+			],
+			"name": "params",
+			"type": "CmdRenderParams",
+			"description": "参数对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -127,5 +123,9 @@
 			"type": "String",
 			"description": "指令集编码方式：origin-原串 gzip-采用gzip压缩并base64编码"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.cmdprint.render",
+	"apiChineseName": "生成打印机渲染命令（通过打印机命令打印）",
+	"description": "isv 进行无线打印，需要将渲染数据传给打印机，通过生成打印机命令的方式能够最大限度的减少移动设备和打印机之间通信数据量。",
+	"id": 34750
 }

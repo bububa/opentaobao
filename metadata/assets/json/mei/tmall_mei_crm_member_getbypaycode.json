@@ -1,8 +1,4 @@
 {
-	"id": 30027,
-	"name": "tmall.mei.crm.member.getbypaycode",
-	"apiChineseName": "支付码获取会员信息",
-	"description": "通过支付码获取会员信息",
 	"requestParams": [
 		{
 			"name": "pay_code",
@@ -13,55 +9,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDTO",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "total",
-					"required": true
+					"description": "total"
 				},
 				{
-					"name": "result",
-					"type": "MemberAccountDTO",
-					"description": "result",
-					"required": true,
 					"subParams": [
 						{
 							"name": "mix_mobile",
 							"type": "String",
-							"description": "mixMobile，只有有权限的才有值",
-							"required": true
+							"description": "mixMobile，只有有权限的才有值"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "buyerNick，只有有权限的才有值",
-							"required": true
+							"description": "buyerNick，只有有权限的才有值"
 						},
 						{
 							"name": "clear_mobile",
 							"type": "String",
-							"description": "明文手机号，只有有权限的才有值",
-							"required": true
+							"description": "明文手机号，只有有权限的才有值"
 						}
-					]
+					],
+					"name": "result",
+					"type": "MemberAccountDTO",
+					"description": "result"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.mei.crm.member.getbypaycode",
+	"apiChineseName": "支付码获取会员信息",
+	"description": "通过支付码获取会员信息",
+	"id": 30027
 }

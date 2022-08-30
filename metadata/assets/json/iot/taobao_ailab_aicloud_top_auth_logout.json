@@ -1,8 +1,4 @@
 {
-	"id": 33123,
-	"name": "taobao.ailab.aicloud.top.auth.logout",
-	"apiChineseName": "登出",
-	"description": "登出",
 	"requestParams": [
 		{
 			"name": "user_id",
@@ -34,5 +30,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.auth.logout",
+	"apiChineseName": "登出",
+	"description": "登出",
+	"id": 33123
 }

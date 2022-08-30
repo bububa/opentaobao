@@ -1,8 +1,4 @@
 {
-	"id": 30637,
-	"name": "alibaba.wdk.ums.handling.get",
-	"apiChineseName": "加工单-回流单（新接口）",
-	"description": "加工单-回流单（新接口）",
 	"requestParams": [
 		{
 			"name": "warehouse_code",
@@ -12,125 +8,111 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UtmsResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "list",
-					"type": "BomProcessDTO[]",
-					"description": "list",
-					"required": true,
 					"subParams": [
-						{
-							"name": "occurrence_date",
-							"type": "Date",
-							"description": "加工日期",
-							"required": true
-						},
-						{
-							"name": "warehouse_code",
-							"type": "String",
-							"description": "店仓code，指的是库调对象，对应一个物理店或仓编码",
-							"required": true
-						},
-						{
-							"name": "uuid",
-							"type": "String",
-							"description": "唯一识别码",
-							"required": true
-						},
 						{
 							"name": "dept_code",
 							"type": "String",
-							"description": "部门编码",
-							"required": true
+							"description": "部门编码"
+						},
+						{
+							"name": "occurrence_date",
+							"type": "Date",
+							"description": "加工日期"
 						},
 						{
 							"name": "occurrence_type",
 							"type": "String",
-							"description": "加工类型",
-							"required": true
+							"description": "加工类型"
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "店仓code，指的是库调对象，对应一个物理店或仓编码"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "唯一识别码"
 						},
 						{
 							"name": "bom_process_code",
 							"type": "String",
-							"description": "单据编码",
-							"required": true
+							"description": "单据编码"
 						},
 						{
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "quantity"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode"
+								},
+								{
+									"name": "cabinet_code",
+									"type": "String",
+									"description": "cabinetCode"
+								}
+							],
 							"name": "product_item_infos",
 							"type": "BomItemInfos[]",
-							"description": "productItemInfos",
-							"required": true,
-							"subParams": [
-								{
-									"name": "quantity",
-									"type": "String",
-									"description": "quantity",
-									"required": true
-								},
-								{
-									"name": "item_code",
-									"type": "String",
-									"description": "itemCode",
-									"required": true
-								},
-								{
-									"name": "cabinet_code",
-									"type": "String",
-									"description": "cabinetCode",
-									"required": true
-								}
-							]
+							"description": "productItemInfos"
 						},
 						{
-							"name": "material_item_infos",
-							"type": "BomItemInfos[]",
-							"description": "materialItemInfos",
-							"required": true,
 							"subParams": [
 								{
 									"name": "quantity",
 									"type": "String",
-									"description": "quantity",
-									"required": true
+									"description": "quantity"
 								},
 								{
 									"name": "item_code",
 									"type": "String",
-									"description": "itemCode",
-									"required": true
+									"description": "itemCode"
 								},
 								{
 									"name": "cabinet_code",
 									"type": "String",
-									"description": "cabinetCode",
-									"required": true
+									"description": "cabinetCode"
 								}
-							]
+							],
+							"name": "material_item_infos",
+							"type": "BomItemInfos[]",
+							"description": "materialItemInfos"
 						}
-					]
+					],
+					"name": "list",
+					"type": "BomProcessDTO[]",
+					"description": "list"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.ums.handling.get",
+	"apiChineseName": "加工单-回流单（新接口）",
+	"description": "加工单-回流单（新接口）",
+	"id": 30637
 }

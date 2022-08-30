@@ -1,13 +1,6 @@
 {
-	"id": 36173,
-	"name": "alibaba.wdk.trade.refund.query",
-	"apiChineseName": "外部渠道查询退货订单详情接口",
-	"description": "该接口提供给外部渠道商家，比如欧尚外卖等查询退货订单详情，里面包含退货进度等信息。",
 	"requestParams": [
 		{
-			"name": "refund_goods_query_request",
-			"type": "RefundGoodsQueryRequest",
-			"description": "查询请求",
 			"subParams": [
 				{
 					"name": "refund_goods_id",
@@ -21,14 +14,14 @@
 					"description": "门店id",
 					"required": true
 				}
-			]
+			],
+			"name": "refund_goods_query_request",
+			"type": "RefundGoodsQueryRequest",
+			"description": "查询请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "refund_goods_query_result",
-			"type": "RefundGoodsQueryResult",
-			"description": "查询结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -97,10 +90,6 @@
 					"required": true
 				},
 				{
-					"name": "refund_goods_sub_order_detail_list",
-					"type": "RefundGoodsSubOrderDetail[]",
-					"description": "退货子订单详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_biz_order_id",
@@ -216,9 +205,20 @@
 							"description": "Init(0,\"初始状态\"),NoTakeGoods(1, \"无需取货\"),FailTakeGoods(2, \"取货失败\"),Timeout(3, \"超时关闭\"),EnterDock(4, \"已入站\");",
 							"required": true
 						}
-					]
+					],
+					"name": "refund_goods_sub_order_detail_list",
+					"type": "RefundGoodsSubOrderDetail[]",
+					"description": "退货子订单详情",
+					"required": true
 				}
-			]
+			],
+			"name": "refund_goods_query_result",
+			"type": "RefundGoodsQueryResult",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.trade.refund.query",
+	"apiChineseName": "外部渠道查询退货订单详情接口",
+	"description": "该接口提供给外部渠道商家，比如欧尚外卖等查询退货订单详情，里面包含退货进度等信息。",
+	"id": 36173
 }

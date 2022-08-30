@@ -1,13 +1,6 @@
 {
-	"id": 51048,
-	"name": "taobao.ailab.aicloud.top.message.push",
-	"apiChineseName": "天猫精灵消息中心广播推送消息接口",
-	"description": "天猫精灵运营平台消息能力开放广播接口，主要开放给b端用户，用户可调用接口进行广播推送，将消息推送到天猫精灵设备或者天猫精灵APP中。",
 	"requestParams": [
 		{
-			"name": "message_broadcast_request",
-			"type": "MessageBroadcastRequest",
-			"description": "消息推送请求",
 			"subParams": [
 				{
 					"name": "message_template_id",
@@ -21,33 +14,33 @@
 					"description": "消息模板id",
 					"required": true
 				}
-			]
-		},
-		{
-			"name": "user_info_context",
-			"type": "OpsRequestUserInfoContext",
-			"description": "当前用户信息"
+			],
+			"name": "message_broadcast_request",
+			"type": "MessageBroadcastRequest",
+			"description": "消息推送请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpsCommonResult",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "错误码，0为成功，其余为失败",
-					"required": true
+					"description": "错误码，0为成功，其余为失败"
 				},
 				{
 					"name": "ret_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpsCommonResult",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.message.push",
+	"apiChineseName": "天猫精灵消息中心广播推送消息接口",
+	"description": "天猫精灵运营平台消息能力开放广播接口，主要开放给b端用户，用户可调用接口进行广播推送，将消息推送到天猫精灵设备或者天猫精灵APP中。",
+	"id": 51048
 }

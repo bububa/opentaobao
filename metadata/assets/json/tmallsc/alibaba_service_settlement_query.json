@@ -1,8 +1,4 @@
 {
-	"id": 43721,
-	"name": "alibaba.service.settlement.query",
-	"apiChineseName": "服务平台结算单明细查询服务",
-	"description": "给服务商提供结算单明细查询功能",
 	"requestParams": [
 		{
 			"name": "gmt_create_start",
@@ -62,213 +58,184 @@
 	],
 	"responseParams": [
 		{
-			"name": "settlement_detail_query_result",
-			"type": "FulfilplatformResult",
-			"description": "结算明细查询结果",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "true：成功；false：失败",
-					"required": true
-				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "result_data",
-					"type": "PagedResult",
-					"description": "每页数据信息",
-					"required": true,
+					"name": "success",
+					"type": "Boolean",
+					"description": "true：成功；false：失败"
+				},
+				{
 					"subParams": [
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页条数",
-							"required": true
+							"description": "每页条数"
 						},
 						{
-							"name": "data_list",
-							"type": "Datalist[]",
-							"description": "结算明细list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "workcard_id",
 									"type": "Number",
-									"description": "工单ID",
-									"required": true
+									"description": "工单ID"
 								},
 								{
 									"name": "workcard_sequence",
 									"type": "Number",
-									"description": "工单多次作业时的批次号",
-									"required": true
+									"description": "工单多次作业时的批次号"
 								},
 								{
 									"name": "transfer_amount",
 									"type": "Number",
-									"description": "转帐金额，单位分",
-									"required": true
+									"description": "转帐金额，单位分"
 								},
 								{
 									"name": "in_user_alipay_account_id",
 									"type": "String",
-									"description": "入款方支付宝账号",
-									"required": true
+									"description": "入款方支付宝账号"
 								},
 								{
 									"name": "service_trade_order_id",
 									"type": "Number",
-									"description": "交易服务子订单ID",
-									"required": true
+									"description": "交易服务子订单ID"
 								},
 								{
 									"name": "currency",
 									"type": "String",
-									"description": "货币类型 人民币(CNY)",
-									"required": true
+									"description": "货币类型 人民币(CNY)"
 								},
 								{
 									"name": "id",
 									"type": "String",
-									"description": "账单ID",
-									"required": true
+									"description": "账单ID"
 								},
 								{
 									"name": "out_user_nick",
 									"type": "String",
-									"description": "出款方nick",
-									"required": true
+									"description": "出款方nick"
 								},
 								{
 									"name": "action",
 									"type": "String",
-									"description": "触发本次打款的动作类型。serviceOrder-tradeSuccess: 商家扣款到中间账户；serviceOrder-cancel: 退款;huijin-commision: 门店抽佣;huijin-store-transfer: 转账给门店",
-									"required": true
+									"description": "触发本次打款的动作类型。serviceOrder-tradeSuccess: 商家扣款到中间账户；serviceOrder-cancel: 退款;huijin-commision: 门店抽佣;huijin-store-transfer: 转账给门店"
 								},
 								{
 									"name": "out_user_alipay_account_id",
 									"type": "String",
-									"description": "出款方支付宝账号",
-									"required": true
+									"description": "出款方支付宝账号"
 								},
 								{
 									"name": "in_user_nick",
 									"type": "String",
-									"description": "入款方nick",
-									"required": true
+									"description": "入款方nick"
 								},
 								{
 									"name": "master_trade_order_id",
 									"type": "Number",
-									"description": "交易实物订单号",
-									"required": true
+									"description": "交易实物订单号"
 								},
 								{
 									"name": "seller_nick",
 									"type": "String",
-									"description": "卖家nick",
-									"required": true
+									"description": "卖家nick"
 								},
 								{
 									"name": "out_user_role",
 									"type": "String",
-									"description": "出款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台",
-									"required": true
+									"description": "出款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台"
 								},
 								{
 									"name": "status",
 									"type": "String",
-									"description": "状态；销帐：FINISH ;未销账:ONGOING",
-									"required": true
+									"description": "状态；销帐：FINISH ;未销账:ONGOING"
 								},
 								{
 									"name": "service_store_code",
 									"type": "String",
-									"description": "门店Code",
-									"required": true
+									"description": "门店Code"
 								},
 								{
 									"name": "alipay_order_id",
 									"type": "String",
-									"description": "支付宝交易订单号",
-									"required": true
+									"description": "支付宝交易订单号"
 								},
 								{
 									"name": "parent_trade_order_id",
 									"type": "Number",
-									"description": "交易主订单号",
-									"required": true
+									"description": "交易主订单号"
 								},
 								{
 									"name": "pay_time",
-									"type": "Number",
-									"description": "创建时间，单位毫秒",
-									"required": true
+									"type": "String",
+									"description": "支付时间"
 								},
 								{
 									"name": "in_user_role",
 									"type": "String",
-									"description": "入款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台",
-									"required": true
+									"description": "入款方用户角色 BUYER:买家 SELLER:卖家, STORE：门店, TP：服务商, PLATFORM：平台"
 								},
 								{
 									"name": "create_time",
-									"type": "Number",
-									"description": "创建时间，单位毫秒",
-									"required": true
+									"type": "String",
+									"description": "创建时间"
 								},
 								{
 									"name": "service_order_id",
 									"type": "Number",
-									"description": "服务单号",
-									"required": true
+									"description": "服务单号"
 								},
 								{
 									"name": "service_store_name",
 									"type": "String",
-									"description": "门店名称",
-									"required": true
+									"description": "门店名称"
 								},
 								{
 									"name": "attributes",
 									"type": "String",
-									"description": "扩展信息；json格式",
-									"required": true
+									"description": "扩展信息；json格式"
 								},
 								{
 									"name": "service_store_id",
 									"type": "Number",
-									"description": "门店Id",
-									"required": true
+									"description": "门店Id"
 								},
 								{
 									"name": "comment",
 									"type": "String",
-									"description": "打款备注",
-									"required": true
+									"description": "打款备注"
 								}
-							]
+							],
+							"name": "data_list",
+							"type": "Datalist[]",
+							"description": "结算明细list"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "PagedResult",
+					"description": "每页数据信息"
 				}
-			]
+			],
+			"name": "settlement_detail_query_result",
+			"type": "FulfilplatformResult",
+			"description": "结算明细查询结果"
 		}
-	]
+	],
+	"name": "alibaba.service.settlement.query",
+	"apiChineseName": "服务平台结算单明细查询服务",
+	"description": "给服务商提供结算单明细查询功能",
+	"id": 43721
 }

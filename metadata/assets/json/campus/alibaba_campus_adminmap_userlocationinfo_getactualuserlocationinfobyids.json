@@ -1,14 +1,6 @@
 {
-	"id": 33584,
-	"name": "alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids",
-	"apiChineseName": "根据userId(支持单个或批量)获取用户实时位置信息",
-	"description": "根据userId(支持单个或批量)获取用户实时位置信息 \nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：getActualUserLocationInfoByIds",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "环境参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "company_id",
@@ -21,12 +13,13 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "环境参数",
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "UserLocationInfoQuery",
-			"description": "查询参数",
 			"subParams": [
 				{
 					"name": "user_id",
@@ -38,138 +31,125 @@
 					"type": "String[]",
 					"description": "用户id集合"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "UserLocationInfoQuery",
+			"description": "查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "UserLocationInfo[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "identity_type",
 							"type": "Number",
-							"description": "描述identity的种类,1代表传入的是userid,此种情况identity为空,2代表mac地址,3代表支付宝id",
-							"required": true
+							"description": "描述identity的种类,1代表传入的是userid,此种情况identity为空,2代表mac地址,3代表支付宝id"
 						},
 						{
 							"name": "identity",
 							"type": "String",
-							"description": "用户身份信息,mac地址或者支付宝id或者其他",
-							"required": true
+							"description": "用户身份信息,mac地址或者支付宝id或者其他"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "geometry",
 							"type": "String",
-							"description": "结构",
-							"required": true
+							"description": "结构"
 						},
 						{
 							"name": "source",
 							"type": "Number",
-							"description": "来源",
-							"required": true
+							"description": "来源"
 						},
 						{
 							"name": "geo_floor_id",
 							"type": "Number",
-							"description": "高德楼层id",
-							"required": true
+							"description": "高德楼层id"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "园区id",
-							"required": true
+							"description": "园区id"
 						},
 						{
 							"name": "space_unit_id",
 							"type": "String",
-							"description": "空间单元id",
-							"required": true
+							"description": "空间单元id"
 						},
 						{
 							"name": "lat",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "lng",
 							"type": "String",
-							"description": "进度",
-							"required": true
+							"description": "进度"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "用户id",
-							"required": true
+							"description": "用户id"
 						},
 						{
 							"name": "s_r_i_d",
 							"type": "Number",
-							"description": "坐标系EPSG code",
-							"required": true
+							"description": "坐标系EPSG code"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "UserLocationInfo[]",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids",
+	"apiChineseName": "根据userId(支持单个或批量)获取用户实时位置信息",
+	"description": "根据userId(支持单个或批量)获取用户实时位置信息 \nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：getActualUserLocationInfoByIds",
+	"id": 33584
 }

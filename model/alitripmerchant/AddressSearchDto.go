@@ -16,4 +16,6 @@ type AddressSearchDto struct {
 	CountryCode int64 `json:"country_code,omitempty" xml:"country_code,omitempty"`
 	// 城市编码
 	CityCode int64 `json:"city_code,omitempty" xml:"city_code,omitempty"`
+	// 酒店详情
+	HotelDetails *HotelDetails `json:"hotel_details,omitempty" xml:"hotel_details,omitempty"`
 }

@@ -1,13 +1,13 @@
 {
-	"id": 25199,
-	"name": "alibaba.scbp.account.daycost.get",
-	"apiChineseName": "查询今日消耗",
-	"description": "查询今日消耗",
 	"responseParams": [
 		{
 			"name": "day_cost",
 			"type": "String",
 			"description": "返回今日消耗，单位元，两位小数"
 		}
-	]
+	],
+	"name": "alibaba.scbp.account.daycost.get",
+	"apiChineseName": "查询今日消耗",
+	"description": "查询今日消耗",
+	"id": 25199
 }

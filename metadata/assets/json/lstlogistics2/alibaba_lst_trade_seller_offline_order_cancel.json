@@ -1,14 +1,6 @@
 {
-	"id": 51631,
-	"name": "alibaba.lst.trade.seller.offline.order.cancel",
-	"apiChineseName": "供应商-线下订单-取消接口",
-	"description": "供应商线下订单数据上传之后取消",
 	"requestParams": [
 		{
-			"name": "offline_order_cancal_param",
-			"type": "LstOfflineOrderCancalParam",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "buyer_mobile",
@@ -22,40 +14,44 @@
 					"description": "外部主订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "offline_order_cancal_param",
+			"type": "LstOfflineOrderCancalParam",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "是否取消成功",
-					"required": true
+					"description": "是否取消成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.seller.offline.order.cancel",
+	"apiChineseName": "供应商-线下订单-取消接口",
+	"description": "供应商线下订单数据上传之后取消",
+	"id": 51631
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25126,
-	"name": "taobao.baichuan.openaccount.resetcode.check",
-	"apiChineseName": "百川验证找回密码验证码",
-	"description": "百川验证找回密码验证码",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.openaccount.resetcode.check",
+	"apiChineseName": "百川验证找回密码验证码",
+	"description": "百川验证找回密码验证码",
+	"id": 25126
 }

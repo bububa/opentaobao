@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业Id",
+			"required": true
+		},
+		{
+			"name": "sub_type_no",
+			"type": "String",
+			"description": "药品子类编码"
+		},
+		{
+			"name": "blind_file_start_date",
+			"type": "String",
+			"description": "盲底文件上传开始时间（yyyy-MM-dd）",
+			"required": true
+		},
+		{
+			"name": "blind_file_end_date",
+			"type": "String",
+			"description": "盲底文件上传结束时间（yyyy-MM-dd）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "batch_no",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "produce_date",
+							"type": "String",
+							"description": "生产日期（yyyy-MM-dd HH:mm:ss）"
+						},
+						{
+							"name": "expire_date",
+							"type": "String",
+							"description": "有效期至（yyyy-MM-dd HH:mm:ss）"
+						}
+					],
+					"name": "blind_file_batch_info_dto_list",
+					"type": "BlindFileBatchInfoDto[]",
+					"description": "返回的批次列表信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "提示码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "提示信息"
+				}
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
+		}
+	],
+	"name": "alibaba.alihealth.drugcode.drugfactory.blindfile.getbatchinfo",
+	"apiChineseName": "获取盲底文件中的批次信息",
+	"description": "获取盲底文件中的批次信息",
+	"id": 57859
+}

@@ -12,18 +12,18 @@ import (
 // 纸质发票结果回传
 type AlibabaEinvoicePaperReturnAPIRequest struct {
 	model.Params
-	// 发票密文，密码区的字符串
-	_ciphertext string
-	// 发票号码
-	_invoiceNo string
-	// 发票日期
-	_invoiceDate string
 	// 防伪码
 	_antiFakeCode string
+	// 发票密文，密码区的字符串
+	_ciphertext string
 	// 税控设备编号(新版电子发票有)
 	_deviceNo string
 	// 发票代码
 	_invoiceCode string
+	// 发票日期
+	_invoiceDate string
+	// 发票号码
+	_invoiceNo string
 	// 开票结果"success"或者"fail"
 	_createResult string
 	// 错误码
@@ -55,45 +55,6 @@ func (r AlibabaEinvoicePaperReturnAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetCiphertext is Ciphertext Setter
-// 发票密文，密码区的字符串
-func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCiphertext(_ciphertext string) error {
-	r._ciphertext = _ciphertext
-	r.Set("ciphertext", _ciphertext)
-	return nil
-}
-
-// GetCiphertext Ciphertext Getter
-func (r AlibabaEinvoicePaperReturnAPIRequest) GetCiphertext() string {
-	return r._ciphertext
-}
-
-// SetInvoiceNo is InvoiceNo Setter
-// 发票号码
-func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
-	r._invoiceNo = _invoiceNo
-	r.Set("invoice_no", _invoiceNo)
-	return nil
-}
-
-// GetInvoiceNo InvoiceNo Getter
-func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceNo() string {
-	return r._invoiceNo
-}
-
-// SetInvoiceDate is InvoiceDate Setter
-// 发票日期
-func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
-	r._invoiceDate = _invoiceDate
-	r.Set("invoice_date", _invoiceDate)
-	return nil
-}
-
-// GetInvoiceDate InvoiceDate Getter
-func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceDate() string {
-	return r._invoiceDate
-}
-
 // SetAntiFakeCode is AntiFakeCode Setter
 // 防伪码
 func (r *AlibabaEinvoicePaperReturnAPIRequest) SetAntiFakeCode(_antiFakeCode string) error {
@@ -105,6 +66,19 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetAntiFakeCode(_antiFakeCode str
 // GetAntiFakeCode AntiFakeCode Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetAntiFakeCode() string {
 	return r._antiFakeCode
+}
+
+// SetCiphertext is Ciphertext Setter
+// 发票密文，密码区的字符串
+func (r *AlibabaEinvoicePaperReturnAPIRequest) SetCiphertext(_ciphertext string) error {
+	r._ciphertext = _ciphertext
+	r.Set("ciphertext", _ciphertext)
+	return nil
+}
+
+// GetCiphertext Ciphertext Getter
+func (r AlibabaEinvoicePaperReturnAPIRequest) GetCiphertext() string {
+	return r._ciphertext
 }
 
 // SetDeviceNo is DeviceNo Setter
@@ -131,6 +105,32 @@ func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceCode(_invoiceCode strin
 // GetInvoiceCode InvoiceCode Getter
 func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceCode() string {
 	return r._invoiceCode
+}
+
+// SetInvoiceDate is InvoiceDate Setter
+// 发票日期
+func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceDate(_invoiceDate string) error {
+	r._invoiceDate = _invoiceDate
+	r.Set("invoice_date", _invoiceDate)
+	return nil
+}
+
+// GetInvoiceDate InvoiceDate Getter
+func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceDate() string {
+	return r._invoiceDate
+}
+
+// SetInvoiceNo is InvoiceNo Setter
+// 发票号码
+func (r *AlibabaEinvoicePaperReturnAPIRequest) SetInvoiceNo(_invoiceNo string) error {
+	r._invoiceNo = _invoiceNo
+	r.Set("invoice_no", _invoiceNo)
+	return nil
+}
+
+// GetInvoiceNo InvoiceNo Getter
+func (r AlibabaEinvoicePaperReturnAPIRequest) GetInvoiceNo() string {
+	return r._invoiceNo
 }
 
 // SetCreateResult is CreateResult Setter

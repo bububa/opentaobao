@@ -1,8 +1,4 @@
 {
-	"id": 31529,
-	"name": "alitrip.travel.trade.serviceinfo.write",
-	"apiChineseName": "订单服务信息写入接口",
-	"description": "订单服务信息写入接口",
 	"requestParams": [
 		{
 			"name": "tip_value",
@@ -19,35 +15,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码信息",
-					"required": true
+					"description": "错误码信息"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误详细信息",
-					"required": true
+					"description": "错误详细信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否操作成功",
-					"required": true
+					"description": "是否操作成功"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "订单标注服务信息是否成功",
-					"required": true
+					"description": "订单标注服务信息是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.travel.trade.serviceinfo.write",
+	"apiChineseName": "订单服务信息写入接口",
+	"description": "订单服务信息写入接口",
+	"id": 31529
 }

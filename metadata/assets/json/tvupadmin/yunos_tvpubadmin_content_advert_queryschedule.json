@@ -1,8 +1,4 @@
 {
-	"id": 28600,
-	"name": "yunos.tvpubadmin.content.advert.queryschedule",
-	"apiChineseName": "广告牌照管控查询",
-	"description": "广告牌照管控查询",
 	"requestParams": [
 		{
 			"name": "range",
@@ -46,85 +42,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "PaginationDO",
-			"description": "具体数据信息",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "page_no",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "单页数量",
-					"required": true
+					"description": "单页数量"
 				},
 				{
-					"name": "list",
-					"type": "AdvertScheduleDO[]",
-					"description": "内容列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "range",
 							"type": "Number",
-							"description": "查询类型",
-							"required": true
+							"description": "查询类型"
 						},
 						{
 							"name": "bcp_id",
 							"type": "Number",
-							"description": "播控ID",
-							"required": true
+							"description": "播控ID"
 						},
 						{
 							"name": "device_model",
 							"type": "String",
-							"description": "设备型号",
-							"required": true
+							"description": "设备型号"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "UUID",
-							"required": true
+							"description": "UUID"
 						},
 						{
 							"name": "site_type",
 							"type": "Number",
-							"description": "广告类型",
-							"required": true
+							"description": "广告类型"
 						},
 						{
 							"name": "start",
 							"type": "Date",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "end",
 							"type": "Date",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						}
-					]
+					],
+					"name": "list",
+					"type": "AdvertScheduleDO[]",
+					"description": "内容列表"
 				}
-			]
+			],
+			"name": "object",
+			"type": "PaginationDO",
+			"description": "具体数据信息"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.advert.queryschedule",
+	"apiChineseName": "广告牌照管控查询",
+	"description": "广告牌照管控查询",
+	"id": 28600
 }

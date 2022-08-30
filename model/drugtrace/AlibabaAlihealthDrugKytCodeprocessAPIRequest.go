@@ -18,13 +18,13 @@ type AlibabaAlihealthDrugKytCodeprocessAPIRequest struct {
 	_endDate string
 	// 上传标识
 	_uploadFlag string
-	// 处理状态
+	// 处理状态(所有状态 A ,待处理  1 ,处理成功  3 ,处理失败  4)
 	_processFlag string
 	// 批次号
 	_produceBatchNo string
-	// 查询标识
+	// 查询标识(处理状态查询 传0 , 关联关系个修改 传1)
 	_queryFlag string
-	// 药品类型
+	// 药品类型（所有药品  A ，未分类 9， 特殊药品原料药  1， 特殊药品制  2， 普通药品	3）
 	_physicType string
 	// 生产企业ID
 	_prodSeqNo string
@@ -32,10 +32,10 @@ type AlibabaAlihealthDrugKytCodeprocessAPIRequest struct {
 	_drugEntBaseInfoId string
 	// 包装规格
 	_pkgSpec string
-	// 客户端
-	_clientType string
 	// 企业ID
 	_refEntId string
+	// 客户端
+	_clientType string
 	// 页数
 	_page int64
 	// 条数
@@ -103,7 +103,7 @@ func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetUploadFlag() string {
 }
 
 // SetProcessFlag is ProcessFlag Setter
-// 处理状态
+// 处理状态(所有状态 A ,待处理  1 ,处理成功  3 ,处理失败  4)
 func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetProcessFlag(_processFlag string) error {
 	r._processFlag = _processFlag
 	r.Set("process_flag", _processFlag)
@@ -129,7 +129,7 @@ func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetProduceBatchNo() string
 }
 
 // SetQueryFlag is QueryFlag Setter
-// 查询标识
+// 查询标识(处理状态查询 传0 , 关联关系个修改 传1)
 func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetQueryFlag(_queryFlag string) error {
 	r._queryFlag = _queryFlag
 	r.Set("query_flag", _queryFlag)
@@ -142,7 +142,7 @@ func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetQueryFlag() string {
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型
+// 药品类型（所有药品  A ，未分类 9， 特殊药品原料药  1， 特殊药品制  2， 普通药品	3）
 func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetPhysicType(_physicType string) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)
@@ -193,19 +193,6 @@ func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetPkgSpec() string {
 	return r._pkgSpec
 }
 
-// SetClientType is ClientType Setter
-// 客户端
-func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetClientType(_clientType string) error {
-	r._clientType = _clientType
-	r.Set("client_type", _clientType)
-	return nil
-}
-
-// GetClientType ClientType Getter
-func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetClientType() string {
-	return r._clientType
-}
-
 // SetRefEntId is RefEntId Setter
 // 企业ID
 func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetRefEntId(_refEntId string) error {
@@ -217,6 +204,19 @@ func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetRefEntId(_refEntId str
 // GetRefEntId RefEntId Getter
 func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetRefEntId() string {
 	return r._refEntId
+}
+
+// SetClientType is ClientType Setter
+// 客户端
+func (r *AlibabaAlihealthDrugKytCodeprocessAPIRequest) SetClientType(_clientType string) error {
+	r._clientType = _clientType
+	r.Set("client_type", _clientType)
+	return nil
+}
+
+// GetClientType ClientType Getter
+func (r AlibabaAlihealthDrugKytCodeprocessAPIRequest) GetClientType() string {
+	return r._clientType
 }
 
 // SetPage is Page Setter

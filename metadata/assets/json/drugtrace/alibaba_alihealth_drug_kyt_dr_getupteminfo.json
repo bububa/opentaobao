@@ -1,8 +1,4 @@
 {
-	"id": 46666,
-	"name": "alibaba.alihealth.drug.kyt.dr.getupteminfo",
-	"apiChineseName": "获取上游温度信息（疫苗）",
-	"description": "根据追溯码及企业ID获取上游运输及存储温度信息（疫苗）",
 	"requestParams": [
 		{
 			"name": "code",
@@ -19,93 +15,84 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "list",
-							"type": "VaTemperatureBillResultDTO[]",
-							"description": "返回结果列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "min_value",
 									"type": "String",
-									"description": "最小温度值",
-									"required": true
+									"description": "最小温度值"
 								},
 								{
 									"name": "equipment_code",
 									"type": "String",
-									"description": "设备编号",
-									"required": true
+									"description": "设备编号"
 								},
 								{
 									"name": "max_value",
 									"type": "String",
-									"description": "最大温度值",
-									"required": true
+									"description": "最大温度值"
 								},
 								{
 									"name": "upload_ent_name",
 									"type": "String",
-									"description": "上传企业名称",
-									"required": true
+									"description": "上传企业名称"
 								},
 								{
 									"name": "equipment_name",
 									"type": "String",
-									"description": "设备名称",
-									"required": true
+									"description": "设备名称"
 								},
 								{
 									"name": "bill_code",
 									"type": "String",
-									"description": "单据编号",
-									"required": true
+									"description": "单据编号"
 								},
 								{
 									"name": "time",
 									"type": "String",
-									"description": "时间",
-									"required": true
+									"description": "时间"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "温度类型：存储温度/运输温度u",
-									"required": true
+									"description": "温度类型：存储温度/运输温度u"
 								}
-							]
+							],
+							"name": "list",
+							"type": "VaTemperatureBillResultDTO[]",
+							"description": "返回结果列表"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.dr.getupteminfo",
+	"apiChineseName": "获取上游温度信息（疫苗）",
+	"description": "根据追溯码及企业ID获取上游运输及存储温度信息（疫苗）",
+	"id": 46666
 }

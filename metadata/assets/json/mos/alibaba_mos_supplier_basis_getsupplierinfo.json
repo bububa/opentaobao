@@ -1,8 +1,4 @@
 {
-	"id": 47127,
-	"name": "alibaba.mos.supplier.basis.getsupplierinfo",
-	"apiChineseName": "获取供应商基础信息",
-	"description": "基于供应商id获取供应商基础脱敏信息",
 	"requestParams": [
 		{
 			"name": "supplier_id",
@@ -12,217 +8,187 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "JsonResponse",
-			"description": "返回数据",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "SupplierBasisInfoDto",
-					"description": "返回dto",
-					"required": true,
 					"subParams": [
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "类型名",
-							"required": true
+							"description": "类型名"
 						},
 						{
 							"name": "approval_status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "business_scope",
 							"type": "String",
-							"description": "经营范围",
-							"required": true
+							"description": "经营范围"
 						},
 						{
 							"name": "cert_record_id",
 							"type": "String",
-							"description": "ocr认证id",
-							"required": true
+							"description": "ocr认证id"
 						},
 						{
 							"name": "change_type",
 							"type": "Number",
-							"description": "变更类型：0-资质变更，1-主体变更",
-							"required": true
+							"description": "变更类型：0-资质变更，1-主体变更"
 						},
 						{
 							"name": "company_name",
 							"type": "String",
-							"description": "公司名称",
-							"required": true
+							"description": "公司名称"
 						},
 						{
 							"name": "company_nature",
 							"type": "Number",
-							"description": "公司性质，0：企业，1：个人",
-							"required": true
+							"description": "公司性质，0：企业，1：个人"
 						},
 						{
 							"name": "company_type",
 							"type": "String",
-							"description": "公司类型",
-							"required": true
+							"description": "公司类型"
 						},
 						{
 							"name": "end_time",
 							"type": "Number",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "establish_date",
 							"type": "String",
-							"description": "公司成立日期",
-							"required": true
+							"description": "公司成立日期"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "对象id",
-							"required": true
+							"description": "对象id"
 						},
 						{
 							"name": "offset",
 							"type": "Number",
-							"description": "分页-offset",
-							"required": true
+							"description": "分页-offset"
 						},
 						{
 							"name": "operate_id",
 							"type": "String",
-							"description": "操作人id",
-							"required": true
+							"description": "操作人id"
 						},
 						{
 							"name": "operate_name",
 							"type": "String",
-							"description": "操作人name",
-							"required": true
+							"description": "操作人name"
 						},
 						{
 							"name": "operating_end",
 							"type": "String",
-							"description": "经营期限结束日期",
-							"required": true
+							"description": "经营期限结束日期"
 						},
 						{
 							"name": "operating_start",
 							"type": "String",
-							"description": "经营期限开始日期",
-							"required": true
+							"description": "经营期限开始日期"
 						},
 						{
 							"name": "operator_id",
 							"type": "String",
-							"description": "操作人id",
-							"required": true
+							"description": "操作人id"
 						},
 						{
 							"name": "operator_name",
 							"type": "String",
-							"description": "操作人name",
-							"required": true
+							"description": "操作人name"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "当前页",
-							"required": true
+							"description": "当前页"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "页数",
-							"required": true
+							"description": "页数"
 						},
 						{
 							"name": "process_instance_id",
 							"type": "String",
-							"description": "审批流instanceId， 冪等用",
-							"required": true
+							"description": "审批流instanceId， 冪等用"
 						},
 						{
 							"name": "registered_capital",
 							"type": "String",
-							"description": "注册资本",
-							"required": true
+							"description": "注册资本"
 						},
 						{
 							"name": "relation_id",
 							"type": "String",
-							"description": "幂等id",
-							"required": true
+							"description": "幂等id"
 						},
 						{
 							"name": "source",
 							"type": "Number",
-							"description": "供应商来源， 0：招商平台，1：供应商平台，2：初始化",
-							"required": true
+							"description": "供应商来源， 0：招商平台，1：供应商平台，2：初始化"
 						},
 						{
 							"name": "start_time",
 							"type": "Number",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "supplier_id",
 							"type": "String",
-							"description": "供应商id",
-							"required": true
+							"description": "供应商id"
 						},
 						{
 							"name": "supplier_status",
 							"type": "Number",
-							"description": "供应商状态，0：未入库，1：已入库，2：已转正",
-							"required": true
+							"description": "供应商状态，0：未入库，1：已入库，2：已转正"
 						}
-					]
+					],
+					"name": "data",
+					"type": "SupplierBasisInfoDto",
+					"description": "返回dto"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "报错code",
-					"required": true
+					"description": "报错code"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "报错信息",
-					"required": true
+					"description": "报错信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "ts",
 					"type": "Number",
-					"description": "ts",
-					"required": true
+					"description": "ts"
 				}
-			]
+			],
+			"name": "result",
+			"type": "JsonResponse",
+			"description": "返回数据"
 		}
-	]
+	],
+	"name": "alibaba.mos.supplier.basis.getsupplierinfo",
+	"apiChineseName": "获取供应商基础信息",
+	"description": "基于供应商id获取供应商基础脱敏信息",
+	"id": 47127
 }

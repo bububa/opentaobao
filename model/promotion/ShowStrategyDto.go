@@ -4,6 +4,8 @@ package promotion
 type ShowStrategyDto struct {
 	// 投放计划规则
 	ShowRules []ShowRuleDto `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
+	// 投放计划维度核销数据
+	ShowBenefitInstances []ShowBenefitInstanceDto `json:"show_benefit_instances,omitempty" xml:"show_benefit_instances>show_benefit_instance_dto,omitempty"`
 	// 投放模式
 	Mode string `json:"mode,omitempty" xml:"mode,omitempty"`
 	// 投放计划code

@@ -1,8 +1,4 @@
 {
-	"id": 54763,
-	"name": "alitrip.merchant.galaxy.order.book",
-	"apiChineseName": "星河-订单预订接口",
-	"description": "为星河酒店解决方案的C端用户提供酒店预订能力",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -17,10 +13,6 @@
 			"required": true
 		},
 		{
-			"name": "order_param",
-			"type": "CreateOrderParam",
-			"description": "预订参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "breakfast_name",
@@ -151,9 +143,6 @@
 					"description": "价格名称"
 				},
 				{
-					"name": "guest_by_room_dtos",
-					"type": "GuestByRoomDto[]",
-					"description": "多房间参数",
 					"subParams": [
 						{
 							"name": "contact_first_name",
@@ -182,17 +171,49 @@
 						},
 						{
 							"name": "child_ages",
-							"type": "Number[]",
+							"type": "String[]",
 							"description": "儿童年龄数组"
 						}
-					]
+					],
+					"name": "guest_by_room_dtos",
+					"type": "GuestByRoomDto[]",
+					"description": "多房间参数"
 				},
 				{
 					"name": "offer_source_channel",
 					"type": "String",
 					"description": "活动标识字段"
+				},
+				{
+					"name": "offer_id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "coupon_instance_id",
+					"type": "Number",
+					"description": "优惠券实例id"
+				},
+				{
+					"name": "rp_code",
+					"type": "String",
+					"description": "rpcode"
+				},
+				{
+					"name": "voucher_id",
+					"type": "String",
+					"description": "代金券id"
+				},
+				{
+					"name": "data_export_agreement",
+					"type": "Boolean",
+					"description": "是否同意向境外提供个人信息"
 				}
-			]
+			],
+			"name": "order_param",
+			"type": "CreateOrderParam",
+			"description": "预订参数",
+			"required": true
 		},
 		{
 			"name": "order_code",
@@ -207,85 +228,77 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "content",
-					"type": "PayParamResult",
-					"description": "预订返回",
-					"required": true,
 					"subParams": [
 						{
 							"name": "pay_sign",
 							"type": "String",
-							"description": "签名",
-							"required": true
+							"description": "签名"
 						},
 						{
 							"name": "sign_type",
 							"type": "String",
-							"description": "签名方式",
-							"required": true
+							"description": "签名方式"
 						},
 						{
 							"name": "package_str",
 							"type": "String",
-							"description": "数据包",
-							"required": true
+							"description": "数据包"
 						},
 						{
 							"name": "nonce_str",
 							"type": "String",
-							"description": "随机字符串",
-							"required": true
+							"description": "随机字符串"
 						},
 						{
 							"name": "time_stamp",
 							"type": "String",
-							"description": "时间戳",
-							"required": true
+							"description": "时间戳"
 						},
 						{
 							"name": "app_id",
 							"type": "String",
-							"description": "小程序id",
-							"required": true
+							"description": "小程序id"
 						},
 						{
 							"name": "book_result",
 							"type": "Boolean",
-							"description": "预订结果",
-							"required": true
+							"description": "预订结果"
 						},
 						{
 							"name": "order_code",
 							"type": "String",
-							"description": "订单编号",
-							"required": true
+							"description": "订单编号"
 						}
-					]
+					],
+					"name": "content",
+					"type": "PayParamResult",
+					"description": "预订返回"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.order.book",
+	"apiChineseName": "星河-订单预订接口",
+	"description": "为星河酒店解决方案的C端用户提供酒店预订能力",
+	"id": 54763
 }

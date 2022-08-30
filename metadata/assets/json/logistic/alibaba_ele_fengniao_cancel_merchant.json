@@ -1,14 +1,6 @@
 {
-	"id": 39570,
-	"name": "alibaba.ele.fengniao.cancel.merchant",
-	"apiChineseName": "商户取消",
-	"description": "商户取消配送",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "Param",
-			"description": "参数param",
-			"required": true,
 			"subParams": [
 				{
 					"name": "app_id",
@@ -42,7 +34,11 @@
 					"type": "Number",
 					"description": "取消原因code  1:用户取消"
 				}
-			]
+			],
+			"name": "param",
+			"type": "Param",
+			"description": "参数param",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -51,5 +47,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "alibaba.ele.fengniao.cancel.merchant",
+	"apiChineseName": "商户取消",
+	"description": "商户取消配送",
+	"id": 39570
 }

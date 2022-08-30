@@ -1,8 +1,4 @@
 {
-	"id": 26971,
-	"name": "taobao.baichuan.item.unsubscribe",
-	"apiChineseName": "单个删除订阅关系",
-	"description": "删除单个商品订阅关系",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,51 +9,49 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "result_list",
-					"type": "ResultMeta[]",
-					"description": "返回按resultCode分为多个返回部分",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "Number",
-							"description": "返回码",
-							"required": true
+							"description": "返回码"
 						},
 						{
 							"name": "msg",
 							"type": "String",
-							"description": "返回码对应的文案",
-							"required": true
+							"description": "返回码对应的文案"
 						},
 						{
-							"name": "data",
-							"type": "ResultData",
-							"description": "商品id列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "商品个数",
-									"required": true
+									"description": "商品个数"
 								},
 								{
 									"name": "item_list",
 									"type": "Number[]",
-									"description": "商品列表",
-									"required": true
+									"description": "商品列表"
 								}
-							]
+							],
+							"name": "data",
+							"type": "ResultData",
+							"description": "商品id列表"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "返回按resultCode分为多个返回部分"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.baichuan.item.unsubscribe",
+	"apiChineseName": "单个删除订阅关系",
+	"description": "删除单个商品订阅关系",
+	"id": 26971
 }

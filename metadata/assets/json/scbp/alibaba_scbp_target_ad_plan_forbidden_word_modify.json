@@ -1,14 +1,6 @@
 {
-	"id": 41341,
-	"name": "alibaba.scbp.target.ad.plan.forbidden.word.modify",
-	"apiChineseName": "定向推广-新增或删除屏蔽词",
-	"description": "定向推广-新增或删除屏蔽词",
 	"requestParams": [
 		{
-			"name": "top_p4p_quick_forbidden_word",
-			"type": "TopP4pQuickForbiddenWordDto",
-			"description": "TopP4pQuickForbiddenWord",
-			"required": true,
 			"subParams": [
 				{
 					"name": "forbidden_word",
@@ -28,7 +20,11 @@
 					"description": "定向推广计划ID",
 					"required": true
 				}
-			]
+			],
+			"name": "top_p4p_quick_forbidden_word",
+			"type": "TopP4pQuickForbiddenWordDto",
+			"description": "TopP4pQuickForbiddenWord",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -37,5 +33,9 @@
 			"type": "Boolean",
 			"description": "true修改成功，fasle修改失败"
 		}
-	]
+	],
+	"name": "alibaba.scbp.target.ad.plan.forbidden.word.modify",
+	"apiChineseName": "定向推广-新增或删除屏蔽词",
+	"description": "定向推广-新增或删除屏蔽词",
+	"id": 41341
 }

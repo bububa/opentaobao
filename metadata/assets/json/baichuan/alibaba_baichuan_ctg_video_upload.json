@@ -1,8 +1,4 @@
 {
-	"id": 28689,
-	"name": "alibaba.baichuan.ctg.video.upload",
-	"apiChineseName": "提供优酷的短视频入淘API",
-	"description": "提供优酷的短视频入淘API",
 	"requestParams": [
 		{
 			"name": "app",
@@ -17,15 +13,15 @@
 			"required": true
 		},
 		{
-			"name": "tb_uid",
-			"type": "String",
-			"description": "优酷道长绑定的淘宝账号ID",
-			"required": true
-		},
-		{
 			"name": "video_id",
 			"type": "String",
 			"description": "视频VID，若为多个视频，则支持分组上传多个VID",
+			"required": true
+		},
+		{
+			"name": "tb_uid",
+			"type": "String",
+			"description": "优酷道长绑定的淘宝账号ID",
 			"required": true
 		},
 		{
@@ -71,29 +67,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CtgResponse",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CtgResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.ctg.video.upload",
+	"apiChineseName": "提供优酷的短视频入淘API",
+	"description": "提供优酷的短视频入淘API",
+	"id": 28689
 }

@@ -16,10 +16,10 @@ type AlibabaCampusAclGrantpermiitemstouserAPIRequest struct {
 	_priv []PermissionReq
 	// 系统id
 	_systemId string
-	// 用户id
-	_empId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 用户id
+	_empId string
 	// 公司id不填统一默认生成SYS_000
 	_companyId int64
 	// 园区id
@@ -73,19 +73,6 @@ func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetEmpId is EmpId Setter
-// 用户id
-func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetEmpId(_empId string) error {
-	r._empId = _empId
-	r.Set("emp_id", _empId)
-	return nil
-}
-
-// GetEmpId EmpId Getter
-func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetEmpId() string {
-	return r._empId
-}
-
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
 func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetUserId(_userId string) error {
@@ -97,6 +84,19 @@ func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetUserId(_userId stri
 // GetUserId UserId Getter
 func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetEmpId is EmpId Setter
+// 用户id
+func (r *AlibabaCampusAclGrantpermiitemstouserAPIRequest) SetEmpId(_empId string) error {
+	r._empId = _empId
+	r.Set("emp_id", _empId)
+	return nil
+}
+
+// GetEmpId EmpId Getter
+func (r AlibabaCampusAclGrantpermiitemstouserAPIRequest) GetEmpId() string {
+	return r._empId
 }
 
 // SetCompanyId is CompanyId Setter

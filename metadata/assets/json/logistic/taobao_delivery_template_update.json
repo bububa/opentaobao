@@ -1,8 +1,4 @@
 {
-	"id": 10919,
-	"name": "taobao.delivery.template.update",
-	"apiChineseName": "修改运费模板",
-	"description": "修改运费模板",
 	"requestParams": [
 		{
 			"name": "name",
@@ -63,5 +59,9 @@
 			"type": "Boolean",
 			"description": "表示修改是否成功"
 		}
-	]
+	],
+	"name": "taobao.delivery.template.update",
+	"apiChineseName": "修改运费模板",
+	"description": "修改运费模板",
+	"id": 10919
 }

@@ -1,14 +1,6 @@
 {
-	"id": 25584,
-	"name": "taobao.crm.exchange.activity.create",
-	"apiChineseName": "创建积分兑换活动",
-	"description": "创建针对积分兑换类型的活动",
 	"requestParams": [
 		{
-			"name": "exchange_activity_create_dto",
-			"type": "ExchangeActivityCreateDto",
-			"description": "创建积分兑换活动",
-			"required": true,
 			"subParams": [
 				{
 					"name": "exclude_area",
@@ -56,7 +48,11 @@
 					"description": "商品一口价",
 					"required": true
 				}
-			]
+			],
+			"name": "exchange_activity_create_dto",
+			"type": "ExchangeActivityCreateDto",
+			"description": "创建积分兑换活动",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -75,5 +71,9 @@
 			"type": "Boolean",
 			"description": "接口调用成功"
 		}
-	]
+	],
+	"name": "taobao.crm.exchange.activity.create",
+	"apiChineseName": "创建积分兑换活动",
+	"description": "创建针对积分兑换类型的活动",
+	"id": 25584
 }

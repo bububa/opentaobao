@@ -16,10 +16,10 @@ type AlibabaCampusAclUpdategrantroletouserAPIRequest struct {
 	_role []RoleReq
 	// 系统id
 	_systemId string
-	// 用户账号
-	_accountId string
 	// 操作人id(不填默认appCode)
 	_userId string
+	// 用户账号
+	_accountId string
 	// 公司id
 	_companyId int64
 	// 园区id
@@ -73,19 +73,6 @@ func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetSystemId() string {
 	return r._systemId
 }
 
-// SetAccountId is AccountId Setter
-// 用户账号
-func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetAccountId(_accountId string) error {
-	r._accountId = _accountId
-	r.Set("account_id", _accountId)
-	return nil
-}
-
-// GetAccountId AccountId Getter
-func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetAccountId() string {
-	return r._accountId
-}
-
 // SetUserId is UserId Setter
 // 操作人id(不填默认appCode)
 func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetUserId(_userId string) error {
@@ -97,6 +84,19 @@ func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetUserId(_userId stri
 // GetUserId UserId Getter
 func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetUserId() string {
 	return r._userId
+}
+
+// SetAccountId is AccountId Setter
+// 用户账号
+func (r *AlibabaCampusAclUpdategrantroletouserAPIRequest) SetAccountId(_accountId string) error {
+	r._accountId = _accountId
+	r.Set("account_id", _accountId)
+	return nil
+}
+
+// GetAccountId AccountId Getter
+func (r AlibabaCampusAclUpdategrantroletouserAPIRequest) GetAccountId() string {
+	return r._accountId
 }
 
 // SetCompanyId is CompanyId Setter

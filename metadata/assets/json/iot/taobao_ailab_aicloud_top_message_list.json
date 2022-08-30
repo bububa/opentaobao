@@ -1,8 +1,4 @@
 {
-	"id": 33442,
-	"name": "taobao.ailab.aicloud.top.message.list",
-	"apiChineseName": "获取留言列表",
-	"description": "根据指定参数获取留言列表",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -37,79 +33,72 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo错误码信息，成功返回null",
-					"required": true
+					"description": "msgInfo错误码信息，成功返回null"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "models",
-					"type": "Model[]",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "source",
 							"type": "String",
-							"description": "source",
-							"required": true
+							"description": "source"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "type",
-							"required": true
+							"description": "type"
 						},
 						{
 							"name": "content",
 							"type": "String",
-							"description": "content",
-							"required": true
+							"description": "content"
 						},
 						{
 							"name": "url",
 							"type": "String",
-							"description": "url",
-							"required": true
+							"description": "url"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "gmtCreate",
-							"required": true
+							"description": "gmtCreate"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "String",
-							"description": "gmtModified",
-							"required": true
+							"description": "gmtModified"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "status",
-							"required": true
+							"description": "status"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						}
-					]
+					],
+					"name": "models",
+					"type": "Model[]",
+					"description": "model"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.message.list",
+	"apiChineseName": "获取留言列表",
+	"description": "根据指定参数获取留言列表",
+	"id": 33442
 }

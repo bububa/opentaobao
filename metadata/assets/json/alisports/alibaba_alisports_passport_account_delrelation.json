@@ -1,8 +1,4 @@
 {
-	"id": 38652,
-	"name": "alibaba.alisports.passport.account.delrelation",
-	"apiChineseName": "阿里体育会员系统--取消三方关联接口",
-	"description": "阿里体育会员系统--取消三方关联接口",
 	"requestParams": [
 		{
 			"name": "alisp_app_key",
@@ -51,5 +47,9 @@
 			"type": "String",
 			"description": "alisp_data"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.delrelation",
+	"apiChineseName": "阿里体育会员系统--取消三方关联接口",
+	"description": "阿里体育会员系统--取消三方关联接口",
+	"id": 38652
 }

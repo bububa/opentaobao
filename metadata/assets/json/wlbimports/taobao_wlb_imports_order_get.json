@@ -1,8 +1,4 @@
 {
-	"id": 24548,
-	"name": "taobao.wlb.imports.order.get",
-	"apiChineseName": "物流订单获取",
-	"description": "一般进口物流订单获取",
 	"requestParams": [
 		{
 			"name": "trade_id",
@@ -37,9 +33,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "orders",
-			"type": "LocOrder []",
-			"description": "物流订单信息",
 			"subParams": [
 				{
 					"name": "shipping_fee",
@@ -96,12 +89,19 @@
 					"type": "String",
 					"description": "订单状态中文描述"
 				}
-			]
+			],
+			"name": "orders",
+			"type": "LocOrder []",
+			"description": "物流订单信息"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "搜索到的总数量"
 		}
-	]
+	],
+	"name": "taobao.wlb.imports.order.get",
+	"apiChineseName": "物流订单获取",
+	"description": "一般进口物流订单获取",
+	"id": 24548
 }

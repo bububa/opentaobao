@@ -1,8 +1,4 @@
 {
-	"id": 28592,
-	"name": "yunos.tvpubadmin.device.updateappstatus",
-	"apiChineseName": "更新应用版本审核状态",
-	"description": "更新应用版本审核状态",
 	"requestParams": [
 		{
 			"name": "version_id",
@@ -32,5 +28,9 @@
 			"type": "Boolean",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.updateappstatus",
+	"apiChineseName": "更新应用版本审核状态",
+	"description": "更新应用版本审核状态",
+	"id": 28592
 }

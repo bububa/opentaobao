@@ -1,19 +1,15 @@
 {
-	"id": 21534,
-	"name": "taobao.crm.grademkt.member.detail.create",
-	"apiChineseName": "会员等级营销-创建商品等级营销明细",
-	"description": "创建商品等级营销明细",
 	"requestParams": [
-		{
-			"name": "feather",
-			"type": "String",
-			"description": "扩展字段",
-			"required": true
-		},
 		{
 			"name": "parameter",
 			"type": "String",
 			"description": "创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281",
+			"required": true
+		},
+		{
+			"name": "feather",
+			"type": "String",
+			"description": "扩展字段",
 			"required": true
 		}
 	],
@@ -23,5 +19,9 @@
 			"type": "Boolean",
 			"description": "json格式"
 		}
-	]
+	],
+	"name": "taobao.crm.grademkt.member.detail.create",
+	"apiChineseName": "会员等级营销-创建商品等级营销明细",
+	"description": "创建商品等级营销明细",
+	"id": 21534
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51873,
-	"name": "alibaba.icbu.category.schema.level.get",
-	"apiChineseName": "(新)层级属性获取",
-	"description": "将表单中层级属性的子属性返回",
 	"requestParams": [
 		{
 			"name": "cat_id",
@@ -22,41 +18,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "层级属性的下一级属性结构",
-					"required": true
+					"description": "层级属性的下一级属性结构"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "用于排查系统错误",
-					"required": true
+					"description": "用于排查系统错误"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "alibaba.icbu.category.schema.level.get",
+	"apiChineseName": "(新)层级属性获取",
+	"description": "将表单中层级属性的子属性返回",
+	"id": 51873
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21197,
-	"name": "taobao.caipiao.present.stat.get",
-	"apiChineseName": "获取卖家按天统计的彩票赠送数据",
-	"description": "查询卖家一段时间内按天统计的彩票赠送数据，只支持查询90天以内的数据.",
 	"requestParams": [
 		{
 			"name": "days",
@@ -17,9 +13,6 @@
 			"description": "查询的结果集大小"
 		},
 		{
-			"name": "results",
-			"type": "LotteryWangcaiPresentStat []",
-			"description": "查询的结果集",
 			"subParams": [
 				{
 					"name": "date_id",
@@ -46,7 +39,14 @@
 					"type": "Number",
 					"description": "当日赠送彩票的金额"
 				}
-			]
+			],
+			"name": "results",
+			"type": "LotteryWangcaiPresentStat []",
+			"description": "查询的结果集"
 		}
-	]
+	],
+	"name": "taobao.caipiao.present.stat.get",
+	"apiChineseName": "获取卖家按天统计的彩票赠送数据",
+	"description": "查询卖家一段时间内按天统计的彩票赠送数据，只支持查询90天以内的数据.",
+	"id": 21197
 }

@@ -24,6 +24,8 @@ type AlibabaLatourStrategyShowAPIRequest struct {
 	_strategyCode string
 	// 当面账户类型
 	_userType string
+	// openid
+	_openid string
 	// 每页权益数
 	_pageSize int64
 	// 当面分页
@@ -38,6 +40,10 @@ type AlibabaLatourStrategyShowAPIRequest struct {
 	_filterEmptyInventory bool
 	// 过滤人群
 	_filterCrowd bool
+	// 是否需要投放计划维度的权益核销实例
+	_withStrategyInstance bool
+	// 是否需要权益维度的权益核销实例
+	_withBenefitInstance bool
 }
 
 // NewAlibabaLatourStrategyShowRequest 初始化AlibabaLatourStrategyShowAPIRequest对象
@@ -139,6 +145,19 @@ func (r AlibabaLatourStrategyShowAPIRequest) GetUserType() string {
 	return r._userType
 }
 
+// SetOpenid is Openid Setter
+// openid
+func (r *AlibabaLatourStrategyShowAPIRequest) SetOpenid(_openid string) error {
+	r._openid = _openid
+	r.Set("openid", _openid)
+	return nil
+}
+
+// GetOpenid Openid Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetOpenid() string {
+	return r._openid
+}
+
 // SetPageSize is PageSize Setter
 // 每页权益数
 func (r *AlibabaLatourStrategyShowAPIRequest) SetPageSize(_pageSize int64) error {
@@ -228,4 +247,30 @@ func (r *AlibabaLatourStrategyShowAPIRequest) SetFilterCrowd(_filterCrowd bool) 
 // GetFilterCrowd FilterCrowd Getter
 func (r AlibabaLatourStrategyShowAPIRequest) GetFilterCrowd() bool {
 	return r._filterCrowd
+}
+
+// SetWithStrategyInstance is WithStrategyInstance Setter
+// 是否需要投放计划维度的权益核销实例
+func (r *AlibabaLatourStrategyShowAPIRequest) SetWithStrategyInstance(_withStrategyInstance bool) error {
+	r._withStrategyInstance = _withStrategyInstance
+	r.Set("with_strategy_instance", _withStrategyInstance)
+	return nil
+}
+
+// GetWithStrategyInstance WithStrategyInstance Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetWithStrategyInstance() bool {
+	return r._withStrategyInstance
+}
+
+// SetWithBenefitInstance is WithBenefitInstance Setter
+// 是否需要权益维度的权益核销实例
+func (r *AlibabaLatourStrategyShowAPIRequest) SetWithBenefitInstance(_withBenefitInstance bool) error {
+	r._withBenefitInstance = _withBenefitInstance
+	r.Set("with_benefit_instance", _withBenefitInstance)
+	return nil
+}
+
+// GetWithBenefitInstance WithBenefitInstance Getter
+func (r AlibabaLatourStrategyShowAPIRequest) GetWithBenefitInstance() bool {
+	return r._withBenefitInstance
 }

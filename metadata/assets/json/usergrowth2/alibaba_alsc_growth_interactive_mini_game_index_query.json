@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "String",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景",
+					"required": true
+				},
+				{
+					"name": "game_acc_id",
+					"type": "String",
+					"description": "游戏账号id",
+					"required": true
+				},
+				{
+					"name": "collection_ids",
+					"type": "String[]",
+					"description": "组建集id集合",
+					"required": true
+				}
+			],
+			"name": "mini_game_index_request",
+			"type": "MiniGameIndexRequest",
+			"description": "小游戏首页请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链路id"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "String",
+							"description": "资产id"
+						},
+						{
+							"name": "property_name",
+							"type": "String",
+							"description": "资产名称"
+						},
+						{
+							"name": "property_biz_type",
+							"type": "String",
+							"description": "资产业务类型"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "资产值"
+						}
+					],
+					"name": "property_list",
+					"type": "PropertyDTO[]",
+					"description": "资产集合"
+				}
+			],
+			"name": "data",
+			"type": "MiniGameIndexDTO",
+			"description": "服务端返回数据"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.mini.game.index.query",
+	"apiChineseName": "小游戏首页查询接口",
+	"description": "小游戏首页查询接口",
+	"id": 63404
+}

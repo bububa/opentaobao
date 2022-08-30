@@ -1,8 +1,4 @@
 {
-	"id": 21684,
-	"name": "taobao.simba.keywordscat.qscore.get",
-	"apiChineseName": "取得一个推广组的所有关键词和类目出价的质量得分",
-	"description": "取得一个推广组的所有关键词和类目出价的质量得分列表",
 	"requestParams": [
 		{
 			"name": "nick",
@@ -18,14 +14,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "qscore",
-			"type": "Qscore",
-			"description": "类目出价和词的质量得分对象",
 			"subParams": [
 				{
-					"name": "keyword_qscore_list",
-					"type": "KeywordQscore[]",
-					"description": "词质量得分列表",
 					"subParams": [
 						{
 							"name": "nick",
@@ -56,35 +46,25 @@
 							"name": "qscore",
 							"type": "String",
 							"description": "质量总分"
-						},
-						{
-							"name": "rele_score",
-							"type": "String",
-							"description": "相关性"
-						},
-						{
-							"name": "cvr_score",
-							"type": "String",
-							"description": "买家体验分"
-						},
-						{
-							"name": "cust_score",
-							"type": "String",
-							"description": "基础分"
-						},
-						{
-							"name": "creative_score",
-							"type": "String",
-							"description": "创意得分"
 						}
-					]
+					],
+					"name": "keyword_qscore_list",
+					"type": "KeywordQscore[]",
+					"description": "词质量得分列表"
 				},
 				{
 					"name": "catmatch_qscore",
 					"type": "String",
 					"description": "类目出价质量得分"
 				}
-			]
+			],
+			"name": "qscore",
+			"type": "Qscore",
+			"description": "类目出价和词的质量得分对象"
 		}
-	]
+	],
+	"name": "taobao.simba.keywordscat.qscore.get",
+	"apiChineseName": "取得一个推广组的所有关键词和类目出价的质量得分",
+	"description": "取得一个推广组的所有关键词和类目出价的质量得分列表",
+	"id": 21684
 }

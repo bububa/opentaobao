@@ -14,6 +14,8 @@ type TmallAliautoReceiptStateUpdateAPIRequest struct {
 	model.Params
 	// FINISH:服务完成
 	_status string
+	// 上门服务时指定门店ID
+	_outerStoreId string
 	// 服务工单id
 	_receiptId int64
 }
@@ -50,6 +52,19 @@ func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetStatus(_status string) err
 // GetStatus Status Getter
 func (r TmallAliautoReceiptStateUpdateAPIRequest) GetStatus() string {
 	return r._status
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 上门服务时指定门店ID
+func (r *TmallAliautoReceiptStateUpdateAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r TmallAliautoReceiptStateUpdateAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }
 
 // SetReceiptId is ReceiptId Setter

@@ -1,0 +1,100 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "old_community_outer_id",
+					"type": "String",
+					"description": "老小区外部id",
+					"required": true
+				},
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "小区外部id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "e_code",
+					"type": "String",
+					"description": "ecode编码"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，业务类型，1-新房，2-二手房，3-租房，4房屋",
+					"required": true
+				},
+				{
+					"name": "house_model",
+					"type": "Number",
+					"description": "租房业务模式 10-集中式模式 11-分散式模式"
+				},
+				{
+					"name": "house_type",
+					"type": "Number",
+					"description": "0-正常房源 1-临时房源（交易专用）"
+				},
+				{
+					"name": "is_async",
+					"type": "Number",
+					"description": "是否异步，0同步，1异步",
+					"required": true
+				},
+				{
+					"name": "is_change_community",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "entrust_outer_id",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "sync_change_house_info_dto",
+			"type": "SyncChangeHouseInfoDTO",
+			"description": "实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "123"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.change.community",
+	"apiChineseName": "房屋、房源变更所属小区",
+	"description": "房屋、房源变更所属小区",
+	"id": 62211
+}

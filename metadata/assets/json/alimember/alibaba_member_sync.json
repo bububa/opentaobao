@@ -1,14 +1,6 @@
 {
-	"id": 46517,
-	"name": "alibaba.member.sync",
-	"apiChineseName": "会员信息同步",
-	"description": "会员信息同步",
 	"requestParams": [
 		{
-			"name": "sync_member",
-			"type": "SyncMemberDto",
-			"description": "会员同步信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "birthday",
@@ -94,15 +86,21 @@
 					"name": "email",
 					"type": "String",
 					"description": "邮箱"
+				},
+				{
+					"name": "uid_type",
+					"type": "String",
+					"description": "授权账号类型，主账号/子账号"
 				}
-			]
+			],
+			"name": "sync_member",
+			"type": "SyncMemberDto",
+			"description": "会员同步信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
@@ -116,7 +114,14 @@
 					"description": "message，返回信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.member.sync",
+	"apiChineseName": "会员信息同步",
+	"description": "会员信息同步",
+	"id": 46517
 }

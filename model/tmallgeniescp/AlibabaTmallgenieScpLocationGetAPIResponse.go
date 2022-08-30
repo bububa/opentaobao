@@ -24,8 +24,8 @@ type AlibabaTmallgenieScpLocationGetAPIResponseModel struct {
 	DataList []AlibabaTmallgenieScpLocationGetData `json:"data_list,omitempty" xml:"data_list>alibaba_tmallgenie_scp_location_get_data,omitempty"`
 	// 返回描述
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
-	// 返回码
-	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 请求序列号
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
+	// 返回码
+	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 }

@@ -1,8 +1,4 @@
 {
-	"id": 53390,
-	"name": "alibaba.tmallgenie.scp.plan.feedback.oem.upload",
-	"apiChineseName": "14-供应商反馈（OEM）同步接口",
-	"description": "供应商反馈（OEM）同步接口",
 	"requestParams": [
 		{
 			"name": "request_extend_json",
@@ -12,73 +8,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "参数msg",
-					"required": true
+					"description": "参数msg"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一ID",
-					"required": true
+					"description": "请求唯一ID"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "参数code",
-					"required": true
+					"description": "参数code"
 				},
 				{
-					"name": "data_list",
-					"type": "SupplierFeedbackDto[]",
-					"description": "返回对象list",
-					"required": true,
 					"subParams": [
 						{
 							"name": "extend_json",
 							"type": "String",
-							"description": "扩展参数",
-							"required": true
+							"description": "扩展参数"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "租户",
-							"required": true
+							"description": "租户"
 						},
 						{
 							"name": "key_figure_date",
 							"type": "Date",
-							"description": "关键值日期",
-							"required": true
+							"description": "关键值日期"
 						},
 						{
 							"name": "commit_qty",
 							"type": "String",
-							"description": "承诺反馈数量",
-							"required": true
+							"description": "承诺反馈数量"
 						},
 						{
 							"name": "loc_id",
 							"type": "String",
-							"description": "地点",
-							"required": true
+							"description": "地点"
 						},
 						{
 							"name": "prd_id",
 							"type": "String",
-							"description": "物料号",
-							"required": true
+							"description": "物料号"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "SupplierFeedbackDto[]",
+					"description": "返回对象list"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.feedback.oem.upload",
+	"apiChineseName": "14-供应商反馈（OEM）同步接口",
+	"description": "供应商反馈（OEM）同步接口",
+	"id": 53390
 }

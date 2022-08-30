@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅超标审批单号",
+					"required": true
+				},
+				{
+					"name": "thirdparty_flow_id",
+					"type": "String",
+					"description": "第三方流程实例id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "审批单状态，1：同意 2：拒绝",
+					"required": true
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "审批人第三方用户id，多值逗号分隔",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "审批意见"
+				},
+				{
+					"name": "biz_category",
+					"type": "Number",
+					"description": "审批单业务类型，3：超标审批，5：机票改签审批，6：机票退票审批，默认为超标审批"
+				}
+			],
+			"name": "rq",
+			"type": "BtripExceedApplyRq",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BtripApplyResult",
+			"description": "出参"
+		}
+	],
+	"name": "alitrip.btrip.corpop.exceedapply.sync",
+	"apiChineseName": "第三方超标审批结果回传",
+	"description": "第三方审批单推送到企业后，企业审批结束，将审批结果回传给阿里商旅",
+	"id": 57098
+}

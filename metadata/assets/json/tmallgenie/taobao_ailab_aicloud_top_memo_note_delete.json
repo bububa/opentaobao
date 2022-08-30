@@ -1,8 +1,4 @@
 {
-	"id": 36789,
-	"name": "taobao.ailab.aicloud.top.memo.note.delete",
-	"apiChineseName": "天猫精灵备忘录删除",
-	"description": "删除天猫精灵用户设置的备忘录",
 	"requestParams": [
 		{
 			"name": "schema",
@@ -35,73 +31,67 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "服务的结果封装",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题",
-					"required": true
+					"description": "附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题"
 				},
 				{
 					"name": "status_code",
 					"type": "Number",
-					"description": "调用返回码",
-					"required": true
+					"description": "调用返回码"
 				},
 				{
-					"name": "note",
-					"type": "Note",
-					"description": "服务的实际返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						},
 						{
 							"name": "memo_id",
 							"type": "Number",
-							"description": "memo_ID",
-							"required": true
+							"description": "memo_ID"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "memo状态",
-							"required": true
+							"description": "memo状态"
 						},
 						{
 							"name": "content",
 							"type": "String",
-							"description": "记事本内容",
-							"required": true
+							"description": "记事本内容"
 						},
 						{
 							"name": "topic",
 							"type": "String",
-							"description": "记事本主题",
-							"required": true
+							"description": "记事本主题"
 						}
-					]
+					],
+					"name": "note",
+					"type": "Note",
+					"description": "服务的实际返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "服务的结果封装"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.memo.note.delete",
+	"apiChineseName": "天猫精灵备忘录删除",
+	"description": "删除天猫精灵用户设置的备忘录",
+	"id": 36789
 }

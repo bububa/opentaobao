@@ -1,8 +1,4 @@
 {
-	"id": 38014,
-	"name": "alibaba.alihealth.tracecodeseller.channel.search",
-	"apiChineseName": "查询渠道商api",
-	"description": "查询渠道商api",
 	"requestParams": [
 		{
 			"name": "skey_code",
@@ -17,6 +13,12 @@
 			"required": true
 		},
 		{
+			"name": "out_in_type",
+			"type": "Number",
+			"description": "0 出库 2 入库",
+			"required": true
+		},
+		{
 			"name": "page",
 			"type": "Number",
 			"description": "第几页",
@@ -27,103 +29,88 @@
 			"type": "Number",
 			"description": "每页几条",
 			"required": true
-		},
-		{
-			"name": "out_in_type",
-			"type": "Number",
-			"description": "0 出库 2 入库",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "PageInfo",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "totalNum",
-							"required": true
+							"description": "totalNum"
 						},
 						{
-							"name": "results",
-							"type": "Result[]",
-							"description": "result",
-							"required": true,
 							"subParams": [
 								{
 									"name": "area_desc",
 									"type": "String",
-									"description": "区县",
-									"required": true
+									"description": "区县"
 								},
 								{
 									"name": "city_desc",
 									"type": "String",
-									"description": "cityDesc",
-									"required": true
+									"description": "cityDesc"
 								},
 								{
 									"name": "user_name",
 									"type": "String",
-									"description": "userName",
-									"required": true
+									"description": "userName"
 								},
 								{
 									"name": "merchant_id",
 									"type": "String",
-									"description": "城市",
-									"required": true
+									"description": "城市"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "自定义编码",
-									"required": true
+									"description": "自定义编码"
 								},
 								{
 									"name": "prov_desc",
 									"type": "String",
-									"description": "自定义编码",
-									"required": true
+									"description": "自定义编码"
 								}
-							]
+							],
+							"name": "results",
+							"type": "Result[]",
+							"description": "result"
 						},
 						{
 							"name": "page",
 							"type": "Number",
-							"description": "page",
-							"required": true
+							"description": "page"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "pageSize",
-							"required": true
+							"description": "pageSize"
 						}
-					]
+					],
+					"name": "model",
+					"type": "PageInfo",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.tracecodeseller.channel.search",
+	"apiChineseName": "查询渠道商api",
+	"description": "查询渠道商api",
+	"id": 38014
 }

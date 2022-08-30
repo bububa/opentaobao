@@ -16,6 +16,8 @@ type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	_reserveDate string
 	// 支付宝用户id
 	_alipayUserId string
+	// 疫苗信息
+	_vaccineInfo string
 	// 外部渠道用户id
 	_outerUserId string
 	// 预约id
@@ -30,8 +32,6 @@ type AlibabaHealthVaccinNoticeOrderCreateAPIRequest struct {
 	_povStoreName string
 	// 预约时间
 	_reserveTime string
-	// 疫苗信息
-	_vaccineInfo string
 	// 支付宝消息通知跳转订单详情链接
 	_orderDetailUrl string
 	// 地区名字
@@ -93,6 +93,19 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetAlipayUserId(_alipay
 // GetAlipayUserId AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetAlipayUserId() string {
 	return r._alipayUserId
+}
+
+// SetVaccineInfo is VaccineInfo Setter
+// 疫苗信息
+func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetVaccineInfo(_vaccineInfo string) error {
+	r._vaccineInfo = _vaccineInfo
+	r.Set("vaccine_info", _vaccineInfo)
+	return nil
+}
+
+// GetVaccineInfo VaccineInfo Getter
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetVaccineInfo() string {
+	return r._vaccineInfo
 }
 
 // SetOuterUserId is OuterUserId Setter
@@ -184,19 +197,6 @@ func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetReserveTime(_reserve
 // GetReserveTime ReserveTime Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetReserveTime() string {
 	return r._reserveTime
-}
-
-// SetVaccineInfo is VaccineInfo Setter
-// 疫苗信息
-func (r *AlibabaHealthVaccinNoticeOrderCreateAPIRequest) SetVaccineInfo(_vaccineInfo string) error {
-	r._vaccineInfo = _vaccineInfo
-	r.Set("vaccine_info", _vaccineInfo)
-	return nil
-}
-
-// GetVaccineInfo VaccineInfo Getter
-func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetVaccineInfo() string {
-	return r._vaccineInfo
 }
 
 // SetOrderDetailUrl is OrderDetailUrl Setter

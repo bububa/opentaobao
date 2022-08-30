@@ -1,0 +1,62 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家ID"
+						},
+						{
+							"name": "native_brand_logo",
+							"type": "String",
+							"description": "卖家logo"
+						},
+						{
+							"name": "native_open_member",
+							"type": "String",
+							"description": "nativeOpenMember"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "seller_name",
+							"type": "String",
+							"description": "商家名称"
+						}
+					],
+					"name": "data",
+					"type": "NrtCrmSellerInfoDTO",
+					"description": "DTO"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.lsy.crm.activity.sellerinfo",
+	"apiChineseName": "商家信息推送",
+	"description": "本地团商家信息推送",
+	"id": 61500
+}

@@ -1,8 +1,4 @@
 {
-	"id": 51580,
-	"name": "taobao.openmall.refund.message.submit",
-	"apiChineseName": "提交退款单留言",
-	"description": "OpenMall业务提交退款单留言",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -17,15 +13,14 @@
 			"required": true
 		},
 		{
-			"name": "refund_message",
-			"type": "RefundMessage",
-			"description": "提交留言结构",
-			"required": true,
 			"subParams": [
 				{
-					"name": "refund_message_pics",
-					"type": "RefundMessagePic[]",
-					"description": "上传凭证图片，不超过3张",
+					"name": "refund_message",
+					"type": "String",
+					"description": "退款留言详情，不超过180个字符",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "desc",
@@ -42,15 +37,16 @@
 							"type": "String",
 							"description": "使用taobao.openmall.refund.image.upload得到的上传token"
 						}
-					]
-				},
-				{
-					"name": "refund_message",
-					"type": "String",
-					"description": "退款留言详情，不超过180个字符",
-					"required": true
+					],
+					"name": "refund_message_pics",
+					"type": "RefundMessagePic[]",
+					"description": "上传凭证图片，不超过3张"
 				}
-			]
+			],
+			"name": "refund_message",
+			"type": "RefundMessage",
+			"description": "提交留言结构",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -59,5 +55,9 @@
 			"type": "Boolean",
 			"description": "提交结果"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.message.submit",
+	"apiChineseName": "提交退款单留言",
+	"description": "OpenMall业务提交退款单留言",
+	"id": 51580
 }

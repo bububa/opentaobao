@@ -1,8 +1,4 @@
 {
-	"id": 28610,
-	"name": "yunos.tvpubadmin.content.app.queryapp",
-	"apiChineseName": "查询应用信息",
-	"description": "查询应用信息",
 	"requestParams": [
 		{
 			"name": "query",
@@ -17,5 +13,9 @@
 			"type": "String",
 			"description": "Result\u003cAppInfo\u003e"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.app.queryapp",
+	"apiChineseName": "查询应用信息",
+	"description": "查询应用信息",
+	"id": 28610
 }

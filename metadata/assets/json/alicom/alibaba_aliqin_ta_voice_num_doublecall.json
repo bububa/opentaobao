@@ -1,8 +1,4 @@
 {
-	"id": 28968,
-	"name": "alibaba.aliqin.ta.voice.num.doublecall",
-	"apiChineseName": "聚石塔语音双呼接口",
-	"description": "根据传入的主叫号码与被叫号码，由系统依次向主叫号码与被叫号码发起呼叫，双方都应答后，开始一对一通话并开始计费。使用前需要在阿里大于管理中心添加呼叫双方的显示号码。",
 	"requestParams": [
 		{
 			"name": "session_time_out",
@@ -41,9 +37,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BizResult",
-			"description": "接口返回参数",
 			"subParams": [
 				{
 					"name": "err_code",
@@ -65,7 +58,14 @@
 					"type": "String",
 					"description": "返回信息描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "接口返回参数"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.ta.voice.num.doublecall",
+	"apiChineseName": "聚石塔语音双呼接口",
+	"description": "根据传入的主叫号码与被叫号码，由系统依次向主叫号码与被叫号码发起呼叫，双方都应答后，开始一对一通话并开始计费。使用前需要在阿里大于管理中心添加呼叫双方的显示号码。",
+	"id": 28968
 }

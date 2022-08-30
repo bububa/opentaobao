@@ -1,14 +1,6 @@
 {
-	"id": 52346,
-	"name": "alibaba.idle.appraise.spu.register.modify",
-	"apiChineseName": "验货宝服务商spu挂载",
-	"description": "闲鱼接收回收商spu模板挂载信息",
 	"requestParams": [
 		{
-			"name": "idle_appraise_spu_register4_top_dto",
-			"type": "IdleAppraiseSpuRegister4TopDTO",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "action_type",
@@ -38,40 +30,44 @@
 					"type": "Number",
 					"description": "spuId"
 				}
-			]
+			],
+			"name": "idle_appraise_spu_register4_top_dto",
+			"type": "IdleAppraiseSpuRegister4TopDTO",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "errCode",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否挂载成功",
-					"required": true
+					"description": "errCode"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "errMsg",
-					"required": true
+					"description": "errMsg"
 				},
 				{
 					"name": "module",
 					"type": "Number",
-					"description": "spu挂载信息后台状态，0在线，-1删除，1测试中。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。",
-					"required": true
+					"description": "spu挂载信息后台状态，0在线，-1删除，1测试中。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否挂载成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.appraise.spu.register.modify",
+	"apiChineseName": "验货宝服务商spu挂载",
+	"description": "闲鱼接收回收商spu模板挂载信息",
+	"id": 52346
 }

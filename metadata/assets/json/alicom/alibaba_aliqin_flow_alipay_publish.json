@@ -1,8 +1,4 @@
 {
-	"id": 30199,
-	"name": "alibaba.aliqin.flow.alipay.publish",
-	"apiChineseName": "流量钱包流量发放-面向支付宝用户",
-	"description": "用户淘宝流量钱包商家给支付宝用户发放流量",
 	"requestParams": [
 		{
 			"name": "alipay_id",
@@ -50,5 +46,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.flow.alipay.publish",
+	"apiChineseName": "流量钱包流量发放-面向支付宝用户",
+	"description": "用户淘宝流量钱包商家给支付宝用户发放流量",
+	"id": 30199
 }

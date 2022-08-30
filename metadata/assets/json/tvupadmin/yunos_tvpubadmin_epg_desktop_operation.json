@@ -1,8 +1,4 @@
 {
-	"id": 30365,
-	"name": "yunos.tvpubadmin.epg.desktop.operation",
-	"apiChineseName": "影视桌面运营通用接口",
-	"description": "影视桌面运营通用接口",
 	"requestParams": [
 		{
 			"name": "entity_type",
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "具体返回结果"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.epg.desktop.operation",
+	"apiChineseName": "影视桌面运营通用接口",
+	"description": "影视桌面运营通用接口",
+	"id": 30365
 }

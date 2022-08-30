@@ -1,20 +1,8 @@
 {
-	"id": 39411,
-	"name": "alibaba.wdk.marketing.expire.promotion.create",
-	"apiChineseName": "短保优惠创建",
-	"description": "过期优惠优惠信息录入",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ExpirePromotionBo",
-			"description": "创建短保优惠",
-			"required": true,
 			"subParams": [
 				{
-					"name": "period_infos",
-					"type": "ExpirePeriodInfo[]",
-					"description": "短保时间段信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "promotion_value",
@@ -40,7 +28,11 @@
 							"description": "外部商家id",
 							"required": true
 						}
-					]
+					],
+					"name": "period_infos",
+					"type": "ExpirePeriodInfo[]",
+					"description": "短保时间段信息",
+					"required": true
 				},
 				{
 					"name": "shop_ids",
@@ -60,7 +52,11 @@
 					"description": "商品skucode",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ExpirePromotionBo",
+			"description": "创建短保优惠",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -70,53 +66,46 @@
 			"description": "message"
 		},
 		{
-			"name": "datas",
-			"type": "T []",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "merchant_code",
 					"type": "String",
-					"description": "商家code",
-					"required": true
+					"description": "商家code"
 				},
 				{
 					"name": "sku_code",
 					"type": "String",
-					"description": "商品skucode",
-					"required": true
+					"description": "商品skucode"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品itemId",
-					"required": true
+					"description": "商品itemId"
 				},
 				{
 					"name": "shop_id",
 					"type": "String",
-					"description": "门店id",
-					"required": true
+					"description": "门店id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "T []",
+			"description": "data"
 		},
 		{
 			"name": "fail_code",
@@ -128,5 +117,9 @@
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.expire.promotion.create",
+	"apiChineseName": "短保优惠创建",
+	"description": "过期优惠优惠信息录入",
+	"id": 39411
 }

@@ -1,8 +1,4 @@
 {
-	"id": 28589,
-	"name": "yunos.tvpubadmin.device.tvid",
-	"apiChineseName": "查询终端信息",
-	"description": "通过UUID查询终端信息",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -13,95 +9,85 @@
 	],
 	"responseParams": [
 		{
-			"name": "object",
-			"type": "DeviceInfoDo",
-			"description": "object",
 			"subParams": [
 				{
 					"name": "uuid",
 					"type": "String",
-					"description": "uuid",
-					"required": true
+					"description": "uuid"
 				},
 				{
 					"name": "tvid",
 					"type": "String",
-					"description": "tvid",
-					"required": true
+					"description": "tvid"
 				},
 				{
 					"name": "brand_id",
 					"type": "Number",
-					"description": "brandId",
-					"required": true
+					"description": "brandId"
 				},
 				{
 					"name": "brand_name",
 					"type": "String",
-					"description": "brandName",
-					"required": true
+					"description": "brandName"
 				},
 				{
 					"name": "device_model",
 					"type": "String",
-					"description": "deviceModel",
-					"required": true
+					"description": "deviceModel"
 				},
 				{
 					"name": "terminal_type",
 					"type": "String",
-					"description": "terminalType",
-					"required": true
+					"description": "terminalType"
 				},
 				{
 					"name": "eth_mac",
 					"type": "String",
-					"description": "ethMac",
-					"required": true
+					"description": "ethMac"
 				},
 				{
 					"name": "wlan_mac",
 					"type": "String",
-					"description": "wlanMac",
-					"required": true
+					"description": "wlanMac"
 				},
 				{
 					"name": "active_time",
 					"type": "Date",
-					"description": "activeTime",
-					"required": true
+					"description": "activeTime"
 				},
 				{
 					"name": "user_active_time",
 					"type": "Date",
-					"description": "userActiveTime",
-					"required": true
+					"description": "userActiveTime"
 				},
 				{
 					"name": "last_login_time",
 					"type": "Date",
-					"description": "lastLoginTime",
-					"required": true
+					"description": "lastLoginTime"
 				},
 				{
 					"name": "created_at",
 					"type": "Date",
-					"description": "createdAt",
-					"required": true
+					"description": "createdAt"
 				},
 				{
 					"name": "updated_at",
 					"type": "Date",
-					"description": "updatedAt",
-					"required": true
+					"description": "updatedAt"
 				},
 				{
 					"name": "system_version",
 					"type": "String",
-					"description": "systemVersion",
-					"required": true
+					"description": "systemVersion"
 				}
-			]
+			],
+			"name": "object",
+			"type": "DeviceInfoDo",
+			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.device.tvid",
+	"apiChineseName": "查询终端信息",
+	"description": "通过UUID查询终端信息",
+	"id": 28589
 }

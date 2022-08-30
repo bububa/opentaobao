@@ -1,8 +1,4 @@
 {
-	"id": 27966,
-	"name": "alibaba.einvoice.invoiceapply.get",
-	"apiChineseName": "获取商家的开票申请",
-	"description": "开票服务商接收到商家发起的开票申请消息后，调用此接口拉取商家详细的开票申请内容",
 	"requestParams": [
 		{
 			"name": "apply_id",
@@ -13,156 +9,137 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "UserInvoiceApplyDTO",
-			"description": "开票申请查询结果",
 			"subParams": [
 				{
 					"name": "apply_id",
 					"type": "String",
-					"description": "开票申请id",
-					"required": true
+					"description": "开票申请id"
 				},
 				{
 					"name": "invoice_amount",
 					"type": "String",
-					"description": "开票金额",
-					"required": true
+					"description": "开票金额"
 				},
 				{
 					"name": "payee_register_no",
 					"type": "String",
-					"description": "税号，表示商家是为此税号的账单开票",
-					"required": true
+					"description": "税号，表示商家是为此税号的账单开票"
 				},
 				{
 					"name": "company_name",
 					"type": "String",
-					"description": "企业名称",
-					"required": true
+					"description": "企业名称"
 				},
 				{
 					"name": "bank",
 					"type": "String",
-					"description": "申请企业开户行",
-					"required": true
+					"description": "申请企业开户行"
 				},
 				{
 					"name": "bank_account",
 					"type": "String",
-					"description": "申请企业开户账号",
-					"required": true
+					"description": "申请企业开户账号"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票",
-					"required": true
+					"description": "申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票"
 				},
 				{
 					"name": "receiver_address",
 					"type": "String",
-					"description": "商家收货地址",
-					"required": true
+					"description": "商家收货地址"
 				},
 				{
 					"name": "receiver_name",
 					"type": "String",
-					"description": "商家收货人",
-					"required": true
+					"description": "商家收货人"
 				},
 				{
 					"name": "receiver_phone",
 					"type": "String",
-					"description": "商家收货电话",
-					"required": true
+					"description": "商家收货电话"
 				},
 				{
 					"name": "sender_name",
 					"type": "String",
-					"description": "服务商发货人",
-					"required": true
+					"description": "服务商发货人"
 				},
 				{
 					"name": "sender_phone",
 					"type": "String",
-					"description": "服务商发货人电话",
-					"required": true
+					"description": "服务商发货人电话"
 				},
 				{
 					"name": "sender_logistics_company",
 					"type": "String",
-					"description": "服务商发货物流",
-					"required": true
+					"description": "服务商发货物流"
 				},
 				{
 					"name": "sender_logistics_no",
 					"type": "String",
-					"description": "服务商发货快递单号",
-					"required": true
+					"description": "服务商发货快递单号"
 				},
 				{
-					"name": "invoice_type",
-					"type": "Number",
-					"description": "发票类型：1:增值税普通发票，2:增值税专用发票",
-					"required": true
-				},
-				{
-					"name": "invoice_item_list",
-					"type": "UserInvoiceItemDTO[]",
-					"description": "开票明细列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "item_type",
 							"type": "Number",
-							"description": "商品类型：1. 税控单元，2.开票日账单",
-							"required": true
+							"description": "商品类型：1. 税控单元，2.开票日账单"
 						},
 						{
 							"name": "amount",
 							"type": "String",
-							"description": "商品金额",
-							"required": true
+							"description": "商品金额"
 						},
 						{
 							"name": "bill_date",
 							"type": "String",
-							"description": "订单日",
-							"required": true
+							"description": "订单日"
 						}
-					]
+					],
+					"name": "invoice_item_list",
+					"type": "UserInvoiceItemDTO[]",
+					"description": "开票明细列表"
+				},
+				{
+					"name": "invoice_type",
+					"type": "Number",
+					"description": "发票类型：1:增值税普通发票，2:增值税专用发票"
 				},
 				{
 					"name": "invoice_payee_register_no",
 					"type": "String",
-					"description": "购方票面税号",
-					"required": true
+					"description": "购方票面税号"
 				},
 				{
 					"name": "invoice_address",
 					"type": "String",
-					"description": "购方票面地址",
-					"required": true
+					"description": "购方票面地址"
 				},
 				{
 					"name": "invoice_phone",
 					"type": "String",
-					"description": "购方票面电话",
-					"required": true
+					"description": "购方票面电话"
 				}
-			]
+			],
+			"name": "result",
+			"type": "UserInvoiceApplyDTO",
+			"description": "开票申请查询结果"
 		},
 		{
 			"name": "total_count",
 			"type": "Number",
 			"description": "totalCount"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.invoiceapply.get",
+	"apiChineseName": "获取商家的开票申请",
+	"description": "开票服务商接收到商家发起的开票申请消息后，调用此接口拉取商家详细的开票申请内容",
+	"id": 27966
 }

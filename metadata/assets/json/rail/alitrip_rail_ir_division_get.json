@@ -1,8 +1,4 @@
 {
-	"id": 47363,
-	"name": "alitrip.rail.ir.division.get",
-	"apiChineseName": "国际火车票标准城市查询",
-	"description": "国际火车票提供给代理商用于查询标准城市信息，全部城市数据量209530条，含除中国大陆以外的全部海外区域。\n代理商通过分页查询的方式，拉取飞猪平台方全部境外标准城市，用于自身城市与飞猪平台城市的映射。",
 	"requestParams": [
 		{
 			"name": "agent_id",
@@ -31,217 +27,187 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "RailResultList",
-			"description": "返回对象",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "String",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "module_list",
-					"type": "RailDivisionRS[]",
-					"description": "城市列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "prov_name",
 							"type": "String",
-							"description": "省份城市",
-							"required": true
+							"description": "省份城市"
 						},
 						{
 							"name": "prov_name_en",
 							"type": "String",
-							"description": "省份城市英文",
-							"required": true
+							"description": "省份城市英文"
 						},
 						{
 							"name": "prov_id",
 							"type": "Number",
-							"description": "省份id",
-							"required": true
+							"description": "省份id"
 						},
 						{
 							"name": "country_name_en",
 							"type": "String",
-							"description": "国家名称英文",
-							"required": true
+							"description": "国家名称英文"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "国家名称",
-							"required": true
+							"description": "国家名称"
 						},
 						{
 							"name": "country_id",
 							"type": "Number",
-							"description": "国家id",
-							"required": true
+							"description": "国家id"
 						},
 						{
 							"name": "continent_name_en",
 							"type": "String",
-							"description": "洲名称英文",
-							"required": true
+							"description": "洲名称英文"
 						},
 						{
 							"name": "continent_name",
 							"type": "String",
-							"description": "洲名称",
-							"required": true
+							"description": "洲名称"
 						},
 						{
 							"name": "continent_id",
 							"type": "Number",
-							"description": "洲id，id树层级展开",
-							"required": true
+							"description": "洲id，id树层级展开"
 						},
 						{
 							"name": "city_code3",
 							"type": "String",
-							"description": "城市三字码",
-							"required": true
+							"description": "城市三字码"
 						},
 						{
 							"name": "capital_flag",
 							"type": "Number",
-							"description": "是否是首都",
-							"required": true
+							"description": "是否是首都"
 						},
 						{
 							"name": "abroad",
 							"type": "Number",
-							"description": "国内或者国际 0表示国内,1表示国际",
-							"required": true
+							"description": "国内或者国际 0表示国内,1表示国际"
 						},
 						{
 							"name": "py",
 							"type": "String",
-							"description": "简拼",
-							"required": true
+							"description": "简拼"
 						},
 						{
 							"name": "pinyin",
 							"type": "String",
-							"description": "拼音",
-							"required": true
+							"description": "拼音"
 						},
 						{
 							"name": "timezoneid",
 							"type": "String",
-							"description": "时区",
-							"required": true
+							"description": "时区"
 						},
 						{
 							"name": "country_code2",
 							"type": "String",
-							"description": "国家二字码(ISO 3166-1 alpha-2)",
-							"required": true
+							"description": "国家二字码(ISO 3166-1 alpha-2)"
 						},
 						{
 							"name": "latitude",
 							"type": "String",
-							"description": "纬度",
-							"required": true
+							"description": "纬度"
 						},
 						{
 							"name": "longitude",
 							"type": "String",
-							"description": "经度",
-							"required": true
+							"description": "经度"
 						},
 						{
 							"name": "parent_id",
 							"type": "Number",
-							"description": "父级ID",
-							"required": true
+							"description": "父级ID"
 						},
 						{
 							"name": "level",
 							"type": "Number",
-							"description": "层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区",
-							"required": true
+							"description": "层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区"
 						},
 						{
 							"name": "name_en",
 							"type": "String",
-							"description": "英文名",
-							"required": true
+							"description": "英文名"
 						},
 						{
 							"name": "name_abbr",
 							"type": "String",
-							"description": "简称",
-							"required": true
+							"description": "简称"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "名称",
-							"required": true
+							"description": "名称"
 						},
 						{
 							"name": "district_name_en",
 							"type": "String",
-							"description": "区名称英文",
-							"required": true
+							"description": "区名称英文"
 						},
 						{
 							"name": "district_name",
 							"type": "String",
-							"description": "区名称",
-							"required": true
+							"description": "区名称"
 						},
 						{
 							"name": "district_id",
 							"type": "Number",
-							"description": "区id",
-							"required": true
+							"description": "区id"
 						},
 						{
 							"name": "city_name_en",
 							"type": "String",
-							"description": "城市名称英文",
-							"required": true
+							"description": "城市名称英文"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "城市名称",
-							"required": true
+							"description": "城市名称"
 						},
 						{
 							"name": "city_id",
 							"type": "Number",
-							"description": "城市id",
-							"required": true
+							"description": "城市id"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "区域id",
-							"required": true
+							"description": "区域id"
 						}
-					]
+					],
+					"name": "module_list",
+					"type": "RailDivisionRS[]",
+					"description": "城市列表"
 				}
-			]
+			],
+			"name": "result",
+			"type": "RailResultList",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "alitrip.rail.ir.division.get",
+	"apiChineseName": "国际火车票标准城市查询",
+	"description": "国际火车票提供给代理商用于查询标准城市信息，全部城市数据量209530条，含除中国大陆以外的全部海外区域。\n代理商通过分页查询的方式，拉取飞猪平台方全部境外标准城市，用于自身城市与飞猪平台城市的映射。",
+	"id": 47363
 }

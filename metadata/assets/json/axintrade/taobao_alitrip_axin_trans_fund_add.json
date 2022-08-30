@@ -1,13 +1,6 @@
 {
-	"id": 55695,
-	"name": "taobao.alitrip.axin.trans.fund.add",
-	"apiChineseName": "创建资金单接口",
-	"description": "创建资金单",
 	"requestParams": [
 		{
-			"name": "axin_fund_create_d_t_o",
-			"type": "AxinFundCreateDto",
-			"description": "创建资金单接口入参",
 			"subParams": [
 				{
 					"name": "payer_alipay_id",
@@ -106,10 +99,6 @@
 					"required": true
 				},
 				{
-					"name": "ext_user_info",
-					"type": "ExtUserInfoDto",
-					"description": "买家实名信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "ext_user_cert_no",
@@ -129,7 +118,11 @@
 							"description": "指定买家支付宝实名姓名",
 							"required": true
 						}
-					]
+					],
+					"name": "ext_user_info",
+					"type": "ExtUserInfoDto",
+					"description": "买家实名信息",
+					"required": true
 				},
 				{
 					"name": "subject",
@@ -142,102 +135,95 @@
 					"type": "Number",
 					"description": "交易渠道,1-借记,2-贷记"
 				}
-			]
+			],
+			"name": "axin_fund_create_d_t_o",
+			"type": "AxinFundCreateDto",
+			"description": "创建资金单接口入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "need_retry",
-					"type": "Boolean",
-					"description": "是否需要重试",
-					"required": true
-				},
-				{
-					"name": "info_msg",
-					"type": "String",
-					"description": "接口提示信息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "data",
-					"type": "AxinFundCreateResDto",
-					"description": "返回素材id",
-					"required": true,
 					"subParams": [
 						{
-							"name": "fund_id",
+							"name": "alipay_body",
 							"type": "String",
-							"description": "资金单ID",
-							"required": true
+							"description": "支付宝返回的拼接串"
 						},
 						{
 							"name": "app_id",
 							"type": "String",
-							"description": "阿信支付宝账号appID",
-							"required": true
+							"description": "阿信支付宝账号appID"
 						},
 						{
-							"name": "alipay_body",
+							"name": "fund_id",
 							"type": "String",
-							"description": "支付宝返回的拼接串",
-							"required": true
+							"description": "资金单ID"
 						},
 						{
 							"name": "merchant_order_no",
 							"type": "String",
-							"description": "商户原始订单号，最大长度限制32位",
-							"required": true
+							"description": "商户原始订单号，最大长度限制32位"
 						},
 						{
 							"name": "out_trade_no",
 							"type": "String",
-							"description": "商户订单号，由商家自定义",
-							"required": true
+							"description": "商户订单号，由商家自定义"
 						},
 						{
 							"name": "seller_id",
 							"type": "String",
-							"description": "收款支付宝账号对应的支付宝唯一用户号",
-							"required": true
+							"description": "收款支付宝账号对应的支付宝唯一用户号"
 						},
 						{
 							"name": "total_amount",
 							"type": "String",
-							"description": "该笔订单的资金总额，单位为RMB-Yuan",
-							"required": true
+							"description": "该笔订单的资金总额，单位为RMB-Yuan"
 						},
 						{
 							"name": "trade_no",
 							"type": "String",
-							"description": "该交易在支付宝系统中的交易流水号",
-							"required": true
+							"description": "该交易在支付宝系统中的交易流水号"
 						}
-					]
+					],
+					"name": "data",
+					"type": "AxinFundCreateResDto",
+					"description": "返回素材id"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "接口提示信息"
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.alitrip.axin.trans.fund.add",
+	"apiChineseName": "创建资金单接口",
+	"description": "创建资金单",
+	"id": 55695
 }

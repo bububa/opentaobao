@@ -1,8 +1,4 @@
 {
-	"id": 43276,
-	"name": "taobao.feedflow.item.campaign.get",
-	"apiChineseName": "通过计划id查询计划",
-	"description": "通过计划id查询计划",
 	"requestParams": [
 		{
 			"name": "campagin_id",
@@ -13,129 +9,115 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
-					"name": "result",
-					"type": "CampaignDto",
-					"description": "计划信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "campaign_id",
 							"type": "Number",
-							"description": "计划id",
-							"required": true
+							"description": "计划id"
 						},
 						{
 							"name": "campaign_name",
 							"type": "String",
-							"description": "计划名称",
-							"required": true
+							"description": "计划名称"
 						},
 						{
 							"name": "day_budget",
 							"type": "Number",
-							"description": "单日预算 单位分",
-							"required": true
+							"description": "单日预算 单位分"
 						},
 						{
-							"name": "launch_area_list",
-							"type": "LaunchAreaDto[]",
-							"description": "投放地域",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "Number",
-									"description": "地域的code",
-									"required": true
+									"description": "地域的code"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "地域名称",
-									"required": true
+									"description": "地域名称"
 								}
-							]
+							],
+							"name": "launch_area_list",
+							"type": "LaunchAreaDto[]",
+							"description": "投放地域"
 						},
 						{
-							"name": "launch_period_list",
-							"type": "LaunchPeriodDto[]",
-							"description": "折扣列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "time_span_list",
-									"type": "TimeSpanDto[]",
-									"description": "列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "discount",
 											"type": "Number",
-											"description": "折扣比例",
-											"required": true
+											"description": "折扣比例"
 										},
 										{
 											"name": "time",
 											"type": "String",
-											"description": "折扣时间段",
-											"required": true
+											"description": "折扣时间段"
 										}
-									]
+									],
+									"name": "time_span_list",
+									"type": "TimeSpanDto[]",
+									"description": "列表"
 								}
-							]
+							],
+							"name": "launch_period_list",
+							"type": "LaunchPeriodDto[]",
+							"description": "折扣列表"
 						},
 						{
-							"name": "launch_time",
-							"type": "LaunchTimeDto",
-							"description": "投放时间",
-							"required": true,
 							"subParams": [
 								{
 									"name": "begin_time",
 									"type": "Date",
-									"description": "开始时间",
-									"required": true
+									"description": "开始时间"
 								},
 								{
 									"name": "end_time",
 									"type": "Date",
-									"description": "结束时间",
-									"required": true
+									"description": "结束时间"
 								},
 								{
 									"name": "launch_forever",
 									"type": "Boolean",
-									"description": "是否永久有效",
-									"required": true
+									"description": "是否永久有效"
 								}
-							]
+							],
+							"name": "launch_time",
+							"type": "LaunchTimeDto",
+							"description": "投放时间"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "PAUSE(\"投放暂停\"),START(\"投放开始\"),ERMINATE(\"投放停止\"),ABNORMAL(投放异常\"),WAIT(\"投放等待中\"),DELETE(\"删除\")",
-							"required": true
+							"description": "PAUSE(\"投放暂停\"),START(\"投放开始\"),ERMINATE(\"投放停止\"),ABNORMAL(投放异常\"),WAIT(\"投放等待中\"),DELETE(\"删除\")"
 						}
-					]
+					],
+					"name": "result",
+					"type": "CampaignDto",
+					"description": "计划信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.campaign.get",
+	"apiChineseName": "通过计划id查询计划",
+	"description": "通过计划id查询计划",
+	"id": 43276
 }

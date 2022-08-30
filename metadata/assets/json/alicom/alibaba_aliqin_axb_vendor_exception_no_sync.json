@@ -1,8 +1,4 @@
 {
-	"id": 38346,
-	"name": "alibaba.aliqin.axb.vendor.exception.no.sync",
-	"apiChineseName": "中心化供应商异常号码状态同步接口",
-	"description": "用于中心化供应商同步异常号码",
 	"requestParams": [
 		{
 			"name": "secret_no",
@@ -27,29 +23,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息,OK代表受理成功",
-					"required": true
+					"description": "错误信息,OK代表受理成功"
 				},
 				{
 					"name": "module",
 					"type": "Boolean",
-					"description": "module",
-					"required": true
+					"description": "module"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码,OK代表受理成功",
-					"required": true
+					"description": "错误码,OK代表受理成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.axb.vendor.exception.no.sync",
+	"apiChineseName": "中心化供应商异常号码状态同步接口",
+	"description": "用于中心化供应商同步异常号码",
+	"id": 38346
 }

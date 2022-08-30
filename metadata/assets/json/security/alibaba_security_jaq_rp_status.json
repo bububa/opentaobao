@@ -1,8 +1,4 @@
 {
-	"id": 26881,
-	"name": "alibaba.security.jaq.rp.status",
-	"apiChineseName": "聚安全实人认证查询状态接口",
-	"description": "聚安全实人认证查询状态接口",
 	"requestParams": [
 		{
 			"name": "account_id",
@@ -29,9 +25,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "RpStatusResultBo",
-			"description": "状态信息",
 			"subParams": [
 				{
 					"name": "biz",
@@ -52,10 +45,32 @@
 					"required": true
 				},
 				{
+					"subParams": [
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "level",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						}
+					],
 					"name": "cur_grade",
 					"type": "RpGradeBo",
 					"description": "实人等级",
-					"required": true,
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "level",
@@ -75,39 +90,13 @@
 							"description": "描述",
 							"required": true
 						}
-					]
-				},
-				{
+					],
 					"name": "require_grade",
 					"type": "RpGradeBo",
 					"description": "要求达到的实人等级",
-					"required": true,
-					"subParams": [
-						{
-							"name": "level",
-							"type": "Number",
-							"description": "level",
-							"required": true
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "名称",
-							"required": true
-						},
-						{
-							"name": "desc",
-							"type": "String",
-							"description": "描述",
-							"required": true
-						}
-					]
+					"required": true
 				},
 				{
-					"name": "rp_audit_details",
-					"type": "RpAuditDetailsBos",
-					"description": "审核详细信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "audit_finish_time",
@@ -122,10 +111,6 @@
 							"required": true
 						},
 						{
-							"name": "comparison_details",
-							"type": "RpAuditComparisonDetailBos[]",
-							"description": "比对审核结论",
-							"required": true,
 							"subParams": [
 								{
 									"name": "score",
@@ -134,10 +119,32 @@
 									"required": true
 								},
 								{
+									"subParams": [
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									],
 									"name": "value",
 									"type": "RpAuditValueBo",
 									"description": "比对结论",
-									"required": true,
+									"required": true
+								},
+								{
 									"subParams": [
 										{
 											"name": "desc",
@@ -157,41 +164,19 @@
 											"description": "code",
 											"required": true
 										}
-									]
-								},
-								{
+									],
 									"name": "result_type",
 									"type": "RpAuditTypeBo",
 									"description": "比对项",
-									"required": true,
-									"subParams": [
-										{
-											"name": "desc",
-											"type": "String",
-											"description": "desc",
-											"required": true
-										},
-										{
-											"name": "name",
-											"type": "String",
-											"description": "name",
-											"required": true
-										},
-										{
-											"name": "code",
-											"type": "Number",
-											"description": "code",
-											"required": true
-										}
-									]
+									"required": true
 								}
-							]
+							],
+							"name": "comparison_details",
+							"type": "RpAuditComparisonDetailBos[]",
+							"description": "比对审核结论",
+							"required": true
 						},
 						{
-							"name": "material_details",
-							"type": "RpAuditMaterialDetailBos[]",
-							"description": "材料审核结论",
-							"required": true,
 							"subParams": [
 								{
 									"name": "suggestion",
@@ -241,15 +226,19 @@
 									"description": "材料类别",
 									"required": true
 								}
-							]
+							],
+							"name": "material_details",
+							"type": "RpAuditMaterialDetailBos[]",
+							"description": "材料审核结论",
+							"required": true
 						}
-					]
+					],
+					"name": "rp_audit_details",
+					"type": "RpAuditDetailsBos",
+					"description": "审核详细信息",
+					"required": true
 				},
 				{
-					"name": "rp_audit_status",
-					"type": "RpAuditStatusBo",
-					"description": "审核状态信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "desc",
@@ -269,7 +258,11 @@
 							"description": "code",
 							"required": true
 						}
-					]
+					],
+					"name": "rp_audit_status",
+					"type": "RpAuditStatusBo",
+					"description": "审核状态信息",
+					"required": true
 				},
 				{
 					"name": "review_type",
@@ -277,7 +270,14 @@
 					"description": "复核类型",
 					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "RpStatusResultBo",
+			"description": "状态信息"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.rp.status",
+	"apiChineseName": "聚安全实人认证查询状态接口",
+	"description": "聚安全实人认证查询状态接口",
+	"id": 26881
 }

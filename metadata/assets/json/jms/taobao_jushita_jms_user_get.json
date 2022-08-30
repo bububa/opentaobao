@@ -1,8 +1,4 @@
 {
-	"id": 25343,
-	"name": "taobao.jushita.jms.user.get",
-	"apiChineseName": "查询某个用户是否同步消息",
-	"description": "查询某个用户是否同步消息，只支持单个查询",
 	"requestParams": [
 		{
 			"name": "user_nick",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "ons_user",
-			"type": "TmcUser",
-			"description": "同步的用户信息",
 			"subParams": [
 				{
 					"name": "user_nick",
@@ -42,7 +35,14 @@
 					"type": "Date",
 					"description": "用户最后开通时间"
 				}
-			]
+			],
+			"name": "ons_user",
+			"type": "TmcUser",
+			"description": "同步的用户信息"
 		}
-	]
+	],
+	"name": "taobao.jushita.jms.user.get",
+	"apiChineseName": "查询某个用户是否同步消息",
+	"description": "查询某个用户是否同步消息，只支持单个查询",
+	"id": 25343
 }

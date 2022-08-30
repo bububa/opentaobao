@@ -1,14 +1,6 @@
 {
-	"id": 49907,
-	"name": "alibaba.ascp.industry.uop.supplier.consignoder",
-	"apiChineseName": "商家推单",
-	"description": "商家推单",
 	"requestParams": [
 		{
-			"name": "erp_normal_consign_order_request",
-			"type": "Erpnormalconsignorderrequest",
-			"description": "发货主单信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "delivery_order_code",
@@ -46,10 +38,6 @@
 					"description": "订单来源平台编码,TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、PDD=拼多多、RRSLJ=日日顺乐家、MSJ=美食杰、UGO=优品购、OTHER=其他"
 				},
 				{
-					"name": "receiver_info",
-					"type": "Receiverinfo",
-					"description": "收件人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "receiver_zip_code",
@@ -87,6 +75,12 @@
 							"required": true
 						},
 						{
+							"name": "receiver_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
 							"name": "receiver_name",
 							"type": "String",
 							"description": "收件人",
@@ -112,20 +106,14 @@
 							"name": "receiver_email",
 							"type": "String",
 							"description": "邮箱"
-						},
-						{
-							"name": "receiver_detail_address",
-							"type": "String",
-							"description": "详细地址",
-							"required": true
 						}
-					]
+					],
+					"name": "receiver_info",
+					"type": "Receiverinfo",
+					"description": "收件人信息",
+					"required": true
 				},
 				{
-					"name": "sender_info",
-					"type": "Senderinfo",
-					"description": "发件人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sender_zip_code",
@@ -163,6 +151,12 @@
 							"required": true
 						},
 						{
+							"name": "sender_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
 							"name": "sender_name",
 							"type": "String",
 							"description": "发件人",
@@ -178,20 +172,14 @@
 							"name": "sender_phone",
 							"type": "String",
 							"description": "固定电话"
-						},
-						{
-							"name": "sender_detail_address",
-							"type": "String",
-							"description": "详细地址",
-							"required": true
 						}
-					]
+					],
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "发件人信息",
+					"required": true
 				},
 				{
-					"name": "refunder_info",
-					"type": "Refunderinfo",
-					"description": "退货人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "refunder_country",
@@ -224,6 +212,12 @@
 							"required": true
 						},
 						{
+							"name": "refunder_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
 							"name": "refunder_name",
 							"type": "String",
 							"description": "退货人",
@@ -244,14 +238,12 @@
 							"name": "refunder_zip_code",
 							"type": "String",
 							"description": "邮编"
-						},
-						{
-							"name": "refunder_detail_address",
-							"type": "String",
-							"description": "详细地址",
-							"required": true
 						}
-					]
+					],
+					"name": "refunder_info",
+					"type": "Refunderinfo",
+					"description": "退货人信息",
+					"required": true
 				},
 				{
 					"name": "logistics_name",
@@ -270,47 +262,6 @@
 					"required": true
 				},
 				{
-					"name": "remark",
-					"type": "String",
-					"description": "备注"
-				},
-				{
-					"name": "delivery_time",
-					"type": "String",
-					"description": "发货时间 格式 yyyy-MM-dd HH:mm:ss",
-					"required": true
-				},
-				{
-					"name": "feature",
-					"type": "String",
-					"description": "扩展字段JSON串 twoStageTms:是否二段单 0 否 ,1 是"
-				},
-				{
-					"name": "pick_up_info",
-					"type": "Pickupinfo",
-					"description": "集货信息",
-					"subParams": [
-						{
-							"name": "is_completed",
-							"type": "String",
-							"description": "集货是否完成 Y 是,N 否"
-						},
-						{
-							"name": "is_canceled",
-							"type": "String",
-							"description": "集货是否取消 Y 是,N 否"
-						},
-						{
-							"name": "pick_up_nos",
-							"type": "String",
-							"description": "集货发货单号列表（用,分隔）"
-						}
-					]
-				},
-				{
-					"name": "consign_order_item_list",
-					"type": "Consignorderitemlist[]",
-					"description": "发货子单信息",
 					"subParams": [
 						{
 							"name": "order_source_code",
@@ -342,9 +293,6 @@
 							"description": "货品重量(kg)"
 						},
 						{
-							"name": "package_detail_list",
-							"type": "Packagedetaillist[]",
-							"description": "包件明细( 包件为包裹信息)",
 							"subParams": [
 								{
 									"name": "package_volume",
@@ -366,7 +314,10 @@
 									"type": "String",
 									"description": "扩展字段JSON串"
 								}
-							]
+							],
+							"name": "package_detail_list",
+							"type": "Packagedetaillist[]",
+							"description": "包件明细( 包件为包裹信息)"
 						},
 						{
 							"name": "install_type",
@@ -401,7 +352,48 @@
 							"description": "货品数量",
 							"required": true
 						}
-					]
+					],
+					"name": "consign_order_item_list",
+					"type": "Consignorderitemlist[]",
+					"description": "发货子单信息"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "发货时间 格式 yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段JSON串 twoStageTms:是否二段单 0 否 ,1 是"
+				},
+				{
+					"subParams": [
+						{
+							"name": "is_completed",
+							"type": "String",
+							"description": "集货是否完成 Y 是,N 否"
+						},
+						{
+							"name": "is_canceled",
+							"type": "String",
+							"description": "集货是否取消 Y 是,N 否"
+						},
+						{
+							"name": "pick_up_nos",
+							"type": "String",
+							"description": "集货发货单号列表（用,分隔）"
+						}
+					],
+					"name": "pick_up_info",
+					"type": "Pickupinfo",
+					"description": "集货信息"
 				},
 				{
 					"name": "operator",
@@ -413,22 +405,29 @@
 					"type": "String",
 					"description": "操作时间 格式 yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "erp_normal_consign_order_request",
+			"type": "Erpnormalconsignorderrequest",
+			"description": "发货主单信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "Data",
-			"description": "商家推送天猫信息后，由天猫回传的字段",
 			"subParams": [
 				{
 					"name": "express_code",
 					"type": "String",
-					"description": "送装物流单号",
-					"required": true
+					"description": "送装物流单号"
 				}
-			]
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "商家推送天猫信息后，由天猫回传的字段"
 		}
-	]
+	],
+	"name": "alibaba.ascp.industry.uop.supplier.consignoder",
+	"apiChineseName": "商家推单",
+	"description": "商家推单",
+	"id": 49907
 }

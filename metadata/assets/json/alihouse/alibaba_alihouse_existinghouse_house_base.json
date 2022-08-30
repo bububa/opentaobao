@@ -1,0 +1,255 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_community_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "outer_house_base_id",
+					"type": "String",
+					"description": "外部房屋id",
+					"required": true
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "外部公司id"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
+				},
+				{
+					"name": "e_code",
+					"type": "String",
+					"description": "e码",
+					"required": true
+				},
+				{
+					"name": "building_no",
+					"type": "String",
+					"description": "楼栋号",
+					"required": true
+				},
+				{
+					"name": "unit_no",
+					"type": "String",
+					"description": "户室号",
+					"required": true
+				},
+				{
+					"name": "room_no",
+					"type": "String",
+					"description": "房间号",
+					"required": true
+				},
+				{
+					"name": "room",
+					"type": "Number",
+					"description": "房屋室数",
+					"required": true
+				},
+				{
+					"name": "hall",
+					"type": "Number",
+					"description": "房屋厅数",
+					"required": true
+				},
+				{
+					"name": "toilet",
+					"type": "Number",
+					"description": "卫生间数",
+					"required": true
+				},
+				{
+					"name": "kitchen",
+					"type": "Number",
+					"description": "厨房数",
+					"required": true
+				},
+				{
+					"name": "balcony",
+					"type": "Number",
+					"description": "阳台数",
+					"required": true
+				},
+				{
+					"name": "inside_area",
+					"type": "String",
+					"description": "室内面积",
+					"required": true
+				},
+				{
+					"name": "building_area",
+					"type": "String",
+					"description": "建筑面积"
+				},
+				{
+					"name": "floor",
+					"type": "Number",
+					"description": "所在楼层",
+					"required": true
+				},
+				{
+					"name": "total_floor",
+					"type": "Number",
+					"description": "总楼层数",
+					"required": true
+				},
+				{
+					"name": "fitment",
+					"type": "Number",
+					"description": "装修情况",
+					"required": true
+				},
+				{
+					"name": "heating_type",
+					"type": "Number",
+					"description": "供暖类型（0-未知 1-自采暖 2-集中供暖 3-无供暖）",
+					"required": true
+				},
+				{
+					"name": "direction",
+					"type": "Number",
+					"description": "朝向",
+					"required": true
+				},
+				{
+					"name": "house_type_structure",
+					"type": "Number",
+					"description": "户型结构",
+					"required": true
+				},
+				{
+					"name": "parking_type",
+					"type": "Number",
+					"description": "车位"
+				},
+				{
+					"name": "water_type",
+					"type": "Number",
+					"description": "用水"
+				},
+				{
+					"name": "power_type",
+					"type": "Number",
+					"description": "用电"
+				},
+				{
+					"name": "gas_type",
+					"type": "Number",
+					"description": "燃气"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "房屋外部id",
+							"required": true
+						},
+						{
+							"name": "outer_picture_id",
+							"type": "String",
+							"description": "外部图片id",
+							"required": true
+						},
+						{
+							"name": "outer_house_base_id",
+							"type": "String",
+							"description": "外部户型id",
+							"required": true
+						},
+						{
+							"name": "order_tag",
+							"type": "Number",
+							"description": "图片顺序",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "图片类型",
+							"required": true
+						},
+						{
+							"name": "pic_data",
+							"type": "String",
+							"description": "图片url全路径",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "图片说明",
+							"required": true
+						},
+						{
+							"name": "is_deleted",
+							"type": "Number",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "is_focus",
+							"type": "Number",
+							"description": "是否焦点图",
+							"required": true
+						},
+						{
+							"name": "is_cover",
+							"type": "Number",
+							"description": "是否封面图",
+							"required": true
+						}
+					],
+					"name": "pictures",
+					"type": "ProjectPictureDTO[]",
+					"description": "图片信息"
+				}
+			],
+			"name": "house_base",
+			"type": "HouseBaseDTO",
+			"description": "基础房屋信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "结果集"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.existinghouse.house.base",
+	"apiChineseName": "（租房）同步房屋信息",
+	"description": "房屋信息上翻",
+	"id": 59719
+}

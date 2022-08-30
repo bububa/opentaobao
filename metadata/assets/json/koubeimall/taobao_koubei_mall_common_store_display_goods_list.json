@@ -1,35 +1,25 @@
 {
-	"id": 49826,
-	"name": "taobao.koubei.mall.common.store.display.goods.list",
-	"apiChineseName": "查询门店推荐菜信息",
-	"description": "提供查询口碑商圈内的门店推荐菜信息",
 	"requestParams": [
 		{
-			"name": "data_set_id",
+			"name": "mall_id",
 			"type": "String",
-			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
-			"required": true,
-			"maxLength": 32
+			"description": "商圈ID",
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "store_id",
 			"type": "String",
 			"description": "门店ID",
-			"required": true,
-			"maxLength": 32
+			"maxLength": 32,
+			"required": true
 		},
 		{
-			"name": "mall_id",
+			"name": "data_set_id",
 			"type": "String",
-			"description": "商圈ID",
-			"required": true,
-			"maxLength": 32
-		},
-		{
-			"name": "display_channel",
-			"type": "String",
-			"description": "展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）",
-			"maxLength": 32
+			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
+			"maxLength": 32,
+			"required": true
 		},
 		{
 			"name": "city_code",
@@ -60,143 +50,133 @@
 			"type": "String",
 			"description": "支付宝/口碑/淘宝app版本号",
 			"maxLength": 32
+		},
+		{
+			"name": "display_channel",
+			"type": "String",
+			"description": "展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）",
+			"maxLength": 32
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "API接口返回的result模型",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "API请求全链路追踪ID",
-					"required": true
+					"description": "API请求全链路追踪ID"
 				},
 				{
-					"name": "data",
-					"type": "DisplayGoodsDTO",
-					"description": "API返回的推荐菜data模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "has_picture",
 							"type": "Boolean",
-							"description": "是否有图模式。true：有图，false：无图",
-							"required": true
+							"description": "是否有图模式。true：有图，false：无图"
 						},
 						{
 							"name": "goods_count",
 							"type": "Number",
-							"description": "推荐菜数量",
-							"required": true
+							"description": "推荐菜数量"
 						},
 						{
-							"name": "goods_detail_infos",
-							"type": "GoodsDetailInfo[]",
-							"description": "带图片的推荐菜详情模型",
-							"required": true,
 							"subParams": [
 								{
 									"name": "goods_detail_desc",
 									"type": "String",
-									"description": "菜品描述",
-									"required": true
+									"description": "菜品描述"
 								},
 								{
 									"name": "goods_detail_score",
 									"type": "String",
-									"description": "菜品质量分",
-									"required": true
+									"description": "菜品质量分"
 								},
 								{
-									"name": "picture",
-									"type": "Picture",
-									"description": "图片模型",
-									"required": true,
 									"subParams": [
 										{
 											"name": "picture_url",
 											"type": "String",
-											"description": "图片链接",
-											"required": true
+											"description": "图片链接"
 										},
 										{
 											"name": "picture_name",
 											"type": "String",
-											"description": "图片名称",
-											"required": true
+											"description": "图片名称"
 										}
-									]
+									],
+									"name": "picture",
+									"type": "Picture",
+									"description": "图片模型"
 								},
 								{
 									"name": "goods_detail_price",
 									"type": "String",
-									"description": "展示商品价格",
-									"required": true
+									"description": "展示商品价格"
 								},
 								{
 									"name": "goods_detail_tags",
 									"type": "String[]",
-									"description": "菜品标签",
-									"required": true
+									"description": "菜品标签"
 								},
 								{
 									"name": "goods_detail_name",
 									"type": "String",
-									"description": "展示图片名称",
-									"required": true
+									"description": "展示图片名称"
 								}
-							]
+							],
+							"name": "goods_detail_infos",
+							"type": "GoodsDetailInfo[]",
+							"description": "带图片的推荐菜详情模型"
 						},
 						{
 							"name": "goods_title",
 							"type": "String",
-							"description": "标题：推荐菜",
-							"required": true
+							"description": "标题：推荐菜"
 						},
 						{
 							"name": "goods_desc",
 							"type": "String",
-							"description": "无图模式，菜品文案",
-							"required": true
+							"description": "无图模式，菜品文案"
 						}
-					]
+					],
+					"name": "data",
+					"type": "DisplayGoodsDTO",
+					"description": "API返回的推荐菜data模型"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "error",
-					"type": "TribeError",
-					"description": "错误信息，success=false时，返回相关错误信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "view",
 							"type": "String",
-							"description": "错误信息可读性描述",
-							"required": true
+							"description": "错误信息可读性描述"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误码",
-							"required": true
+							"description": "错误码"
 						},
 						{
 							"name": "message",
 							"type": "String",
-							"description": "错误信息描述",
-							"required": true
+							"description": "错误信息描述"
 						}
-					]
+					],
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息，success=false时，返回相关错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "API接口返回的result模型"
 		}
-	]
+	],
+	"name": "taobao.koubei.mall.common.store.display.goods.list",
+	"apiChineseName": "查询门店推荐菜信息",
+	"description": "提供查询口碑商圈内的门店推荐菜信息",
+	"id": 49826
 }

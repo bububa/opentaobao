@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "投放业务，RECYCLE_3C（回收），RECYCLE_TENDER（寄拍）",
+					"required": true
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "SPU ID",
+					"required": true
+				}
+			],
+			"name": "spu_questionnaire_top_qry",
+			"type": "SpuQuestionnaireTopQry",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "spu_id",
+							"type": "Number",
+							"description": "SPUID"
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "投放业务，RECYCLE_3C（回收），RECYCLE_TENDER（寄拍）"
+						},
+						{
+							"name": "online_version",
+							"type": "String",
+							"description": "在线版本号"
+						},
+						{
+							"name": "online_questionnaire",
+							"type": "String",
+							"description": "在线问卷内容"
+						},
+						{
+							"name": "pre_version",
+							"type": "String",
+							"description": "预发布版本号"
+						},
+						{
+							"name": "pre_questionnaire",
+							"type": "String",
+							"description": "预发布问卷"
+						}
+					],
+					"name": "data",
+					"type": "QuestionnaireInfoTopVO",
+					"description": "结果数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.template.ques.get",
+	"apiChineseName": "获取SPU最新版本问卷",
+	"description": "获取SPU最新版本问卷",
+	"id": 63103
+}

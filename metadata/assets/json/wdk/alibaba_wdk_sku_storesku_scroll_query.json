@@ -1,8 +1,4 @@
 {
-	"id": 43209,
-	"name": "alibaba.wdk.sku.storesku.scroll.query",
-	"apiChineseName": "门店商品批量查询接口",
-	"description": "提供门店商品批量查询接口",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -17,193 +13,167 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiScrollPageResult",
-			"description": "请求结果",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "门店商品总数",
-					"required": true
+					"description": "门店商品总数"
 				},
 				{
 					"name": "scroll_id",
 					"type": "String",
-					"description": "游标",
-					"required": true
+					"description": "游标"
 				},
 				{
 					"name": "page_count",
 					"type": "Number",
-					"description": "页码数",
-					"required": true
+					"description": "页码数"
 				},
 				{
-					"name": "model_list",
-					"type": "WdkOpenMerchantStoreSkuDo[]",
-					"description": "门店商品模型",
-					"required": true,
 					"subParams": [
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "商家编码"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "经营店ID",
-							"required": true
+							"description": "经营店ID"
 						},
 						{
 							"name": "supplier_no",
 							"type": "String",
-							"description": "供应商code",
-							"required": true
+							"description": "供应商code"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "商品名称",
-							"required": true
+							"description": "商品名称"
 						},
 						{
 							"name": "short_title",
 							"type": "String",
-							"description": "商品简称",
-							"required": true
+							"description": "商品简称"
 						},
 						{
 							"name": "life_status",
 							"type": "String",
-							"description": "商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡",
-							"required": true
+							"description": "商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡"
 						},
 						{
 							"name": "barcode",
 							"type": "String",
-							"description": "条码",
-							"required": true
+							"description": "条码"
 						},
 						{
 							"name": "sku_price",
 							"type": "Number",
-							"description": "商品（渠道）价格",
-							"required": true
+							"description": "商品（渠道）价格"
 						},
 						{
 							"name": "member_price",
 							"type": "Number",
-							"description": "会员价",
-							"required": true
+							"description": "会员价"
 						},
 						{
 							"name": "business_type",
 							"type": "Number",
-							"description": "业务类型",
-							"required": true
+							"description": "业务类型"
 						},
 						{
 							"name": "online_sale_flag",
 							"type": "Number",
-							"description": "APP可售",
-							"required": true
+							"description": "APP可售"
 						},
 						{
 							"name": "channel_code",
 							"type": "Number",
-							"description": "渠道类型",
-							"required": true
+							"description": "渠道类型"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "线上渠道店code",
-							"required": true
+							"description": "线上渠道店code"
 						},
 						{
 							"name": "sale_spec",
 							"type": "String",
-							"description": "商品销售单位对应的含量表达；APP展示重要字段，体现售卖单位中含有的商品数量，通常描述为“550g/份”等样式。填字符串。",
-							"required": true
+							"description": "商品销售单位对应的含量表达；APP展示重要字段，体现售卖单位中含有的商品数量，通常描述为“550g/份”等样式。填字符串。"
 						},
 						{
 							"name": "processing_time",
 							"type": "Number",
-							"description": "加工时间",
-							"required": true
+							"description": "加工时间"
 						},
 						{
 							"name": "test_flag",
 							"type": "Number",
-							"description": "是否测试商品",
-							"required": true
+							"description": "是否测试商品"
 						},
 						{
 							"name": "service_flag",
 							"type": "Number",
-							"description": "是否服务商品",
-							"required": true
+							"description": "是否服务商品"
 						},
 						{
 							"name": "back_cat_code",
 							"type": "String",
-							"description": "标准类目编码",
-							"required": true
+							"description": "标准类目编码"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "修改时间",
-							"required": true
+							"description": "修改时间"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "WdkOpenMerchantStoreSkuDo[]",
+					"description": "门店商品模型"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页条目数",
-					"required": true
+					"description": "每页条目数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "页码索引",
-					"required": true
+					"description": "页码索引"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiScrollPageResult",
+			"description": "请求结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.sku.storesku.scroll.query",
+	"apiChineseName": "门店商品批量查询接口",
+	"description": "提供门店商品批量查询接口",
+	"id": 43209
 }

@@ -12,14 +12,14 @@ type PerformSettingDto struct {
 	SeatSelectTypeList []int64 `json:"seat_select_type_list,omitempty" xml:"seat_select_type_list>int64,omitempty"`
 	// 证件类型("身份证"-"id_card","护照"-"passport","港澳居民来往内地通行证"-"hk_macao_pass","台湾居民来往大陆通行证"-"taiwan_compatriot_card","士兵／军官"-"soldier_officer_card")
 	CardType string `json:"card_type,omitempty" xml:"card_type,omitempty"`
+	// 场次id
+	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
 	// 一单一证 0：不是，1：是
 	IsOneOrderOneCard int64 `json:"is_one_order_one_card,omitempty" xml:"is_one_order_one_card,omitempty"`
 	// 一票一证 0：不是，1：是
 	IsOneTicketOneCard int64 `json:"is_one_ticket_one_card,omitempty" xml:"is_one_ticket_one_card,omitempty"`
 	// 是否实名制入场 0：不是，1：是
 	IsRealNameEnter int64 `json:"is_real_name_enter,omitempty" xml:"is_real_name_enter,omitempty"`
-	// 场次id
-	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
 	// 销售设置 0开票 1预售
 	SaleType int64 `json:"sale_type,omitempty" xml:"sale_type,omitempty"`
 }

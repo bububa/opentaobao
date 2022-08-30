@@ -1,14 +1,92 @@
 {
-	"id": 55660,
-	"name": "alibaba.pur.supplier.asncreate",
-	"apiChineseName": "asn创建",
-	"description": "asn创建",
 	"requestParams": [
 		{
-			"name": "asn",
-			"type": "SupplierAsnInfoVO",
-			"description": "asn头信息",
 			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "line_close_reason",
+							"type": "String",
+							"description": "关闭原因"
+						},
+						{
+							"name": "line_status",
+							"type": "String",
+							"description": "asn行状态"
+						},
+						{
+							"name": "line_remark",
+							"type": "String",
+							"description": "asn行备注"
+						},
+						{
+							"name": "cass",
+							"type": "String",
+							"description": "木箱号"
+						},
+						{
+							"name": "container_no",
+							"type": "String",
+							"description": "集装箱号"
+						},
+						{
+							"name": "packing_list_no",
+							"type": "String",
+							"description": "装箱单号"
+						},
+						{
+							"name": "delivery_amount",
+							"type": "String",
+							"description": "发货金额"
+						},
+						{
+							"name": "delivery_qty",
+							"type": "String",
+							"description": "发货数量"
+						},
+						{
+							"name": "procurement_method",
+							"type": "String",
+							"description": "购买方式"
+						},
+						{
+							"name": "shipping_batch_no",
+							"type": "String",
+							"description": "发货批次号",
+							"required": true
+						},
+						{
+							"name": "source_po_line_num",
+							"type": "String",
+							"description": "asn来源订单行号"
+						},
+						{
+							"name": "source_po_no",
+							"type": "String",
+							"description": "asn来源订单号"
+						},
+						{
+							"name": "is_po_source",
+							"type": "String",
+							"description": "根据订单发货标识",
+							"required": true
+						},
+						{
+							"name": "asn_line_num",
+							"type": "String",
+							"description": "asn单行编号",
+							"required": true
+						},
+						{
+							"name": "delay_reason",
+							"type": "String",
+							"description": "延期原因"
+						}
+					],
+					"name": "asn_item_list",
+					"type": "SupplierAsnItem[]",
+					"description": "asn行信息"
+				},
 				{
 					"name": "close_reason",
 					"type": "String",
@@ -131,114 +209,34 @@
 					"type": "String",
 					"description": "供应商编码",
 					"required": true
-				},
-				{
-					"name": "asn_item_list",
-					"type": "SupplierAsnItem[]",
-					"description": "asn行信息",
-					"subParams": [
-						{
-							"name": "line_close_reason",
-							"type": "String",
-							"description": "关闭原因"
-						},
-						{
-							"name": "line_status",
-							"type": "String",
-							"description": "asn行状态"
-						},
-						{
-							"name": "line_remark",
-							"type": "String",
-							"description": "asn行备注"
-						},
-						{
-							"name": "cass",
-							"type": "String",
-							"description": "木箱号"
-						},
-						{
-							"name": "container_no",
-							"type": "String",
-							"description": "集装箱号"
-						},
-						{
-							"name": "packing_list_no",
-							"type": "String",
-							"description": "装箱单号"
-						},
-						{
-							"name": "delivery_amount",
-							"type": "String",
-							"description": "发货金额"
-						},
-						{
-							"name": "delivery_qty",
-							"type": "String",
-							"description": "发货数量"
-						},
-						{
-							"name": "procurement_method",
-							"type": "String",
-							"description": "购买方式"
-						},
-						{
-							"name": "shipping_batch_no",
-							"type": "String",
-							"description": "发货批次号",
-							"required": true
-						},
-						{
-							"name": "source_po_line_num",
-							"type": "String",
-							"description": "asn来源订单行号"
-						},
-						{
-							"name": "source_po_no",
-							"type": "String",
-							"description": "asn来源订单号"
-						},
-						{
-							"name": "is_po_source",
-							"type": "String",
-							"description": "根据订单发货标识",
-							"required": true
-						},
-						{
-							"name": "asn_line_num",
-							"type": "String",
-							"description": "asn单行编号",
-							"required": true
-						},
-						{
-							"name": "delay_reason",
-							"type": "String",
-							"description": "延期原因"
-						}
-					]
 				}
-			]
+			],
+			"name": "asn",
+			"type": "SupplierAsnInfoVO",
+			"description": "asn头信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "获取url的出参",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "返回内容",
-					"required": true
+					"description": "返回内容"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参"
 		}
-	]
+	],
+	"name": "alibaba.pur.supplier.asncreate",
+	"apiChineseName": "asn创建",
+	"description": "asn创建",
+	"id": 55660
 }

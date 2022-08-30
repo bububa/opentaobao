@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误码信息"
+						},
+						{
+							"name": "mes_code",
+							"type": "String",
+							"description": "错误码标识"
+						}
+					],
+					"name": "error_codes",
+					"type": "ErrorCode[]",
+					"description": "错误码集合"
+				},
+				{
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "Number",
+							"description": "属性ID"
+						},
+						{
+							"name": "property_value",
+							"type": "String",
+							"description": "属性文本"
+						},
+						{
+							"subParams": [
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "属性值ID"
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "属性文本"
+								},
+								{
+									"name": "is_new",
+									"type": "Boolean",
+									"description": "是否新品"
+								}
+							],
+							"name": "sale_prop_value_status_list",
+							"type": "SalePropValueStatus[]",
+							"description": "属性状态集合"
+						}
+					],
+					"name": "model",
+					"type": "ItemSalePropNew[]",
+					"description": "sku标新信息集合"
+				}
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.item.sku.new.get",
+	"apiChineseName": "查询sku销售属性标新信息",
+	"description": "查询sku销售属性标新信息",
+	"id": 60017
+}

@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "company_ids",
+			"type": "Number",
+			"description": "厂牌id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "result msg"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "result code"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "结果"
+		},
+		{
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "厂牌id"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "厂牌名称"
+				}
+			],
+			"name": "company_list",
+			"type": "CompanyDto []",
+			"description": "厂牌信息"
+		}
+	],
+	"name": "xiami.content.company.info.get",
+	"apiChineseName": "获取厂牌信息",
+	"description": "获取厂牌信息",
+	"id": 61550
+}

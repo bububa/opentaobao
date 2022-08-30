@@ -1,8 +1,4 @@
 {
-	"id": 45997,
-	"name": "tmall.servicecenter.workcard.signin",
-	"apiChineseName": "服务商确认工人签到成功",
-	"description": "服务商确认工人签到成功。需要服务商自己保证工人是在现场服务中。否则虚假回传签到而引起的后续问题全部由服务商自己承担",
 	"requestParams": [
 		{
 			"name": "outer_id",
@@ -22,29 +18,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": ".",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "."
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.signin",
+	"apiChineseName": "服务商确认工人签到成功",
+	"description": "服务商确认工人签到成功。需要服务商自己保证工人是在现场服务中。否则虚假回传签到而引起的后续问题全部由服务商自己承担",
+	"id": 45997
 }

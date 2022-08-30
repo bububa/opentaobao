@@ -12,10 +12,10 @@ import (
 // 创建商品等级营销明细
 type TaobaoCrmGrademktMemberDetailCreateAPIRequest struct {
 	model.Params
-	// 扩展字段
-	_feather string
 	// 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
 	_parameter string
+	// 扩展字段
+	_feather string
 }
 
 // NewTaobaoCrmGrademktMemberDetailCreateRequest 初始化TaobaoCrmGrademktMemberDetailCreateAPIRequest对象
@@ -39,19 +39,6 @@ func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiParams() url.Values
 	return params
 }
 
-// SetFeather is Feather Setter
-// 扩展字段
-func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetFeather(_feather string) error {
-	r._feather = _feather
-	r.Set("feather", _feather)
-	return nil
-}
-
-// GetFeather Feather Getter
-func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetFeather() string {
-	return r._feather
-}
-
 // SetParameter is Parameter Setter
 // 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
 func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetParameter(_parameter string) error {
@@ -63,4 +50,17 @@ func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetParameter(_parameter 
 // GetParameter Parameter Getter
 func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetParameter() string {
 	return r._parameter
+}
+
+// SetFeather is Feather Setter
+// 扩展字段
+func (r *TaobaoCrmGrademktMemberDetailCreateAPIRequest) SetFeather(_feather string) error {
+	r._feather = _feather
+	r.Set("feather", _feather)
+	return nil
+}
+
+// GetFeather Feather Getter
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetFeather() string {
+	return r._feather
 }

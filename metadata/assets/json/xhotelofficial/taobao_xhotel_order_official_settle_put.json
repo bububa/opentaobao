@@ -1,8 +1,4 @@
 {
-	"id": 26071,
-	"name": "taobao.xhotel.order.official.settle.put",
-	"apiChineseName": "官网信用住结账接口",
-	"description": "用于酒店官网信用住商家结账调用",
 	"requestParams": [
 		{
 			"name": "tid",
@@ -53,10 +49,6 @@
 			"description": "备注"
 		},
 		{
-			"name": "room_settle_info_list",
-			"type": "RoomSettleInfo[]",
-			"description": "房间明细列表",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "room_no",
@@ -98,7 +90,11 @@
 					"type": "String",
 					"description": "房间状态；1:未入住（担保且需扣款）；2:取消成功（卖家取消；担保noshow且双方协商一致不扣款）；3:已入住"
 				}
-			]
+			],
+			"name": "room_settle_info_list",
+			"type": "RoomSettleInfo[]",
+			"description": "房间明细列表",
+			"maxListSize": 20
 		},
 		{
 			"name": "contain_guarantee",
@@ -122,5 +118,9 @@
 			"type": "String",
 			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.xhotel.order.official.settle.put",
+	"apiChineseName": "官网信用住结账接口",
+	"description": "用于酒店官网信用住商家结账调用",
+	"id": 26071
 }

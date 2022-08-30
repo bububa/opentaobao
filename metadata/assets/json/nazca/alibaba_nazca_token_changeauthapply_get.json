@@ -1,8 +1,4 @@
 {
-	"id": 28646,
-	"name": "alibaba.nazca.token.changeauthapply.get",
-	"apiChineseName": "根据token获取变更认证申请信息",
-	"description": "根据token获取变更认证申请信息",
 	"requestParams": [
 		{
 			"name": "token",
@@ -12,97 +8,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ActionResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error",
 					"type": "String",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
-					"name": "ret_value",
-					"type": "ChangeAuthApplyDo",
-					"description": "retValue",
-					"required": true,
 					"subParams": [
 						{
 							"name": "autherized",
 							"type": "Boolean",
-							"description": "是否认证",
-							"required": true
+							"description": "是否认证"
 						},
 						{
 							"name": "enterprise_name",
 							"type": "String",
-							"description": "企业名称",
-							"required": true
+							"description": "企业名称"
 						},
 						{
 							"name": "license",
 							"type": "String",
-							"description": "营业执照号",
-							"required": true
+							"description": "营业执照号"
 						},
 						{
 							"name": "organization",
 							"type": "String",
-							"description": "组织机构代码",
-							"required": true
+							"description": "组织机构代码"
 						},
 						{
 							"name": "platform_user_id",
 							"type": "String",
-							"description": "客户在1688的唯一标识",
-							"required": true
+							"description": "客户在1688的唯一标识"
 						},
 						{
 							"name": "return_url",
 							"type": "String",
-							"description": "页面跳转同步通知URL",
-							"required": true
+							"description": "页面跳转同步通知URL"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "认证状态",
-							"required": true
+							"description": "认证状态"
 						},
 						{
 							"name": "three_cert_number",
 							"type": "String",
-							"description": "统一社会信用代码",
-							"required": true
+							"description": "统一社会信用代码"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "证件类型 1：旧版三证 2：新版三证合一",
-							"required": true
+							"description": "证件类型 1：旧版三证 2：新版三证合一"
 						}
-					]
+					],
+					"name": "ret_value",
+					"type": "ChangeAuthApplyDo",
+					"description": "retValue"
 				},
 				{
 					"name": "sub_error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.nazca.token.changeauthapply.get",
+	"apiChineseName": "根据token获取变更认证申请信息",
+	"description": "根据token获取变更认证申请信息",
+	"id": 28646
 }

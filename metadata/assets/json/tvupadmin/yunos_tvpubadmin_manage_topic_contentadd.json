@@ -1,8 +1,4 @@
 {
-	"id": 30402,
-	"name": "yunos.tvpubadmin.manage.topic.contentadd",
-	"apiChineseName": "专题新增内容",
-	"description": "专题新增内容",
 	"requestParams": [
 		{
 			"name": "content_json",
@@ -12,41 +8,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "ret_code",
 					"type": "Number",
-					"description": "retCode",
-					"required": true
+					"description": "retCode"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "object",
 					"type": "String",
-					"description": "object",
-					"required": true
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.manage.topic.contentadd",
+	"apiChineseName": "专题新增内容",
+	"description": "专题新增内容",
+	"id": 30402
 }

@@ -6,10 +6,10 @@ type CustomAreaResult struct {
 	Keys []KeyResult `json:"keys,omitempty" xml:"keys>key_result,omitempty"`
 	// customAreaUrl
 	CustomAreaUrl string `json:"custom_area_url,omitempty" xml:"custom_area_url,omitempty"`
-	// 标准模板url
-	StandardTemplateUrl string `json:"standard_template_url,omitempty" xml:"standard_template_url,omitempty"`
 	// 自定义区名称
 	CustomAreaName string `json:"custom_area_name,omitempty" xml:"custom_area_name,omitempty"`
+	// 标准模板url
+	StandardTemplateUrl string `json:"standard_template_url,omitempty" xml:"standard_template_url,omitempty"`
 	// customAreaId
 	CustomAreaId int64 `json:"custom_area_id,omitempty" xml:"custom_area_id,omitempty"`
 	// 标准模板名称

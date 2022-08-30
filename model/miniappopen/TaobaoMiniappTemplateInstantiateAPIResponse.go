@@ -30,10 +30,10 @@ type TaobaoMiniappTemplateInstantiateAPIResponseModel struct {
 	AppDescription string `json:"app_description,omitempty" xml:"app_description,omitempty"`
 	// 小程序icon
 	AppIcon string `json:"app_icon,omitempty" xml:"app_icon,omitempty"`
-	// 当前新生成的预览版本的链接，仅当前商家有权限预览。
-	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 当前新生成的预览版本号
 	AppVersion string `json:"app_version,omitempty" xml:"app_version,omitempty"`
+	// 当前新生成的预览版本的链接，仅当前商家有权限预览。
+	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 小程序简称。在小程序Loading动画、首页标题、「更多」菜单标题上优先展示简称。
 	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
 }

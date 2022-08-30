@@ -1,8 +1,4 @@
 {
-	"id": 30292,
-	"name": "alibaba.aliqin.flow.alipay.isbindingtbaccount",
-	"apiChineseName": "判断支付宝用户是否绑定淘宝账号",
-	"description": "判断支付宝用户是否绑定淘宝账号",
 	"requestParams": [
 		{
 			"name": "alipay_id",
@@ -32,5 +28,9 @@
 			"type": "String",
 			"description": "errorMsg"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.flow.alipay.isbindingtbaccount",
+	"apiChineseName": "判断支付宝用户是否绑定淘宝账号",
+	"description": "判断支付宝用户是否绑定淘宝账号",
+	"id": 30292
 }

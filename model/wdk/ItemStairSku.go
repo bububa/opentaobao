@@ -8,4 +8,6 @@ type ItemStairSku struct {
 	ExchangePrice int64 `json:"exchange_price,omitempty" xml:"exchange_price,omitempty"`
 	// 换购商品总数限制
 	ExchangeTotalLimit int64 `json:"exchange_total_limit,omitempty" xml:"exchange_total_limit,omitempty"`
+	// 换购商品每单可换购数量限制
+	ExchangeOrderLimit int64 `json:"exchange_order_limit,omitempty" xml:"exchange_order_limit,omitempty"`
 }

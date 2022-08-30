@@ -1,8 +1,4 @@
 {
-	"id": 30525,
-	"name": "yunos.osupdate.deviceservice.searchmodels",
-	"apiChineseName": "根据关键词检索设备型号",
-	"description": "根据关键词检索设备型号",
 	"requestParams": [
 		{
 			"name": "parent_id",
@@ -17,23 +13,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "model_list",
-			"type": "DeviceEntryDTO []",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "String",
-					"description": "id",
-					"required": true
+					"description": "id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "name",
-					"required": true
+					"description": "name"
 				}
-			]
+			],
+			"name": "model_list",
+			"type": "DeviceEntryDTO []",
+			"description": "data"
 		}
-	]
+	],
+	"name": "yunos.osupdate.deviceservice.searchmodels",
+	"apiChineseName": "根据关键词检索设备型号",
+	"description": "根据关键词检索设备型号",
+	"id": 30525
 }

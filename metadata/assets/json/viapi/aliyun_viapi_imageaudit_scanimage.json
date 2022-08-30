@@ -1,14 +1,6 @@
 {
-	"id": 50649,
-	"name": "aliyun.viapi.imageaudit.scanimage",
-	"apiChineseName": "绿网-内容安全",
-	"description": "绿网-内容安全技术是基于阿里云视觉分析技术和深度识别技术，并经过在阿里经济体内和云上客户的多领域、多场景的广泛应用和不断优化，可提供风险和治理领域的图像识别、定位、检索等全面服务能力，不仅可以降低色情、涉恐、涉政、广告、垃圾信息等违规风险，而且能大幅度降低人工审核成本。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
 	"requestParams": [
 		{
-			"name": "tasks",
-			"type": "Task[]",
-			"description": "系统自动生成",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "data_id",
@@ -35,7 +27,11 @@
 					"type": "Number",
 					"description": "最大截帧数量"
 				}
-			]
+			],
+			"name": "tasks",
+			"type": "Task[]",
+			"description": "系统自动生成",
+			"maxListSize": 999
 		},
 		{
 			"name": "scenes",
@@ -51,15 +47,8 @@
 			"description": "请求ID"
 		},
 		{
-			"name": "data_list",
-			"type": "Data",
-			"description": "系统自动生成",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "Result[]",
-					"description": "图片检测结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data_id",
@@ -80,10 +69,6 @@
 							"required": true
 						},
 						{
-							"name": "sub_results",
-							"type": "SubResult[]",
-							"description": "单张图片的检测结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "suggestion",
@@ -116,10 +101,6 @@
 									"required": true
 								},
 								{
-									"name": "frames",
-									"type": "Frame[]",
-									"description": "如果待检测图片因为过长被截断，该参数返回截断后的每一帧图像的临时访问地址，供您参考。具体结构描述见Frame",
-									"required": true,
 									"subParams": [
 										{
 											"name": "rate",
@@ -133,13 +114,13 @@
 											"description": "被截断的图片的临时访问url，地址有效期是5分钟",
 											"required": true
 										}
-									]
+									],
+									"name": "frames",
+									"type": "Frame[]",
+									"description": "如果待检测图片因为过长被截断，该参数返回截断后的每一帧图像的临时访问地址，供您参考。具体结构描述见Frame",
+									"required": true
 								},
 								{
-									"name": "hint_words_info_list",
-									"type": "HintWordsInfo[]",
-									"description": "图片中含有广告时，返回图片中广告文字命中的风险关键词信息。格式为数组，具体结构描述见HintWordsInfo。 说明 仅适用于ad场景。 示例值： \"hintWordsInfo\":[{\"context\":\"敏感词\"}]",
-									"required": true,
 									"subParams": [
 										{
 											"name": "context",
@@ -147,13 +128,13 @@
 											"description": "图片中文字命中的风险关键词内容",
 											"required": true
 										}
-									]
+									],
+									"name": "hint_words_info_list",
+									"type": "HintWordsInfo[]",
+									"description": "图片中含有广告时，返回图片中广告文字命中的风险关键词信息。格式为数组，具体结构描述见HintWordsInfo。 说明 仅适用于ad场景。 示例值： \"hintWordsInfo\":[{\"context\":\"敏感词\"}]",
+									"required": true
 								},
 								{
-									"name": "program_code_data_list",
-									"type": "ProgramCodeData[]",
-									"description": "图片中含有小程序码时，返回小程序码的位置信息，具体结构描述见ProgramCodeData。说明 仅适用于qrcode场景，且已通过工单联系我们开通了小程序码识别",
-									"required": true,
 									"subParams": [
 										{
 											"name": "x",
@@ -179,13 +160,13 @@
 											"description": "小程序码区域高度",
 											"required": true
 										}
-									]
+									],
+									"name": "program_code_data_list",
+									"type": "ProgramCodeData[]",
+									"description": "图片中含有小程序码时，返回小程序码的位置信息，具体结构描述见ProgramCodeData。说明 仅适用于qrcode场景，且已通过工单联系我们开通了小程序码识别",
+									"required": true
 								},
 								{
-									"name": "logo_data_list",
-									"type": "LogoData[]",
-									"description": "图片中含有logo时，返回识别出来的logo信息，具体结构描述见LogoData。 说明 仅适用于logo场景",
-									"required": true,
 									"subParams": [
 										{
 											"name": "type",
@@ -223,19 +204,15 @@
 											"description": "logo区域高度",
 											"required": true
 										}
-									]
+									],
+									"name": "logo_data_list",
+									"type": "LogoData[]",
+									"description": "图片中含有logo时，返回识别出来的logo信息，具体结构描述见LogoData。 说明 仅适用于logo场景",
+									"required": true
 								},
 								{
-									"name": "sface_data_list",
-									"type": "SfaceData[]",
-									"description": "图片中包含暴恐识涉政内容时，返回识别出来的暴恐涉政信息，具体结构描述见SfaceData。 说明 仅适用于terrorism和sface场景。关于该参数在sface场景中的具体内容，请参见敏感人脸检测",
-									"required": true,
 									"subParams": [
 										{
-											"name": "faces",
-											"type": "Face[]",
-											"description": "识别出的人脸信息，具体结构描述见face",
-											"required": true,
 											"subParams": [
 												{
 													"name": "id",
@@ -255,7 +232,11 @@
 													"description": "相似人物的名称",
 													"required": true
 												}
-											]
+											],
+											"name": "faces",
+											"type": "Face[]",
+											"description": "识别出的人脸信息，具体结构描述见face",
+											"required": true
 										},
 										{
 											"name": "heihght",
@@ -281,13 +262,32 @@
 											"description": "以图片左上角为坐标原点，人脸区域左上角到y轴距离",
 											"required": true
 										}
-									]
+									],
+									"name": "sface_data_list",
+									"type": "SfaceData[]",
+									"description": "图片中包含暴恐识涉政内容时，返回识别出来的暴恐涉政信息，具体结构描述见SfaceData。 说明 仅适用于terrorism和sface场景。关于该参数在sface场景中的具体内容，请参见敏感人脸检测",
+									"required": true
 								}
-							]
+							],
+							"name": "sub_results",
+							"type": "SubResult[]",
+							"description": "单张图片的检测结果",
+							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "Result[]",
+					"description": "图片检测结果",
+					"required": true
 				}
-			]
+			],
+			"name": "data_list",
+			"type": "Data",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "aliyun.viapi.imageaudit.scanimage",
+	"apiChineseName": "绿网-内容安全",
+	"description": "绿网-内容安全技术是基于阿里云视觉分析技术和深度识别技术，并经过在阿里经济体内和云上客户的多领域、多场景的广泛应用和不断优化，可提供风险和治理领域的图像识别、定位、检索等全面服务能力，不仅可以降低色情、涉恐、涉政、广告、垃圾信息等违规风险，而且能大幅度降低人工审核成本。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"id": 50649
 }

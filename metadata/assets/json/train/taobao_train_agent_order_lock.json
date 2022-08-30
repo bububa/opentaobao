@@ -1,0 +1,234 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "from_station_name",
+							"type": "String",
+							"description": "出发站名称",
+							"required": true
+						},
+						{
+							"name": "inter_change_station_telecode",
+							"type": "String",
+							"description": "中转站编码"
+						},
+						{
+							"name": "inter_change_station_name",
+							"type": "String",
+							"description": "中转站名称"
+						},
+						{
+							"name": "train_code",
+							"type": "String",
+							"description": "车次编码",
+							"required": true
+						},
+						{
+							"name": "ttp_order_id",
+							"type": "Number",
+							"description": "主单号",
+							"required": true
+						},
+						{
+							"name": "seat_type_code",
+							"type": "String",
+							"description": "坐席编码",
+							"required": true
+						},
+						{
+							"name": "seat_type_name",
+							"type": "String",
+							"description": "座席名称",
+							"required": true
+						},
+						{
+							"name": "real_ticket_price",
+							"type": "Number",
+							"description": "真实票价",
+							"required": true
+						},
+						{
+							"name": "to_station_name",
+							"type": "String",
+							"description": "到达站名称",
+							"required": true
+						},
+						{
+							"name": "from_station_telecode",
+							"type": "String",
+							"description": "出发站编码",
+							"required": true
+						},
+						{
+							"name": "vip_custom_type",
+							"type": "Number",
+							"description": "定制票类型(0:不指定坐席 1:下铺 2:下铺or中铺 3:过道 4:靠窗)"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子单号",
+							"required": true
+						},
+						{
+							"name": "train_date",
+							"type": "String",
+							"description": "车次日期",
+							"required": true
+						},
+						{
+							"name": "segment_id",
+							"type": "Number",
+							"description": "程ID"
+						},
+						{
+							"name": "from_time",
+							"type": "String",
+							"description": "出发时间",
+							"required": true
+						},
+						{
+							"name": "segment_index",
+							"type": "Number",
+							"description": "程 序号"
+						},
+						{
+							"name": "seat_no",
+							"type": "String",
+							"description": "座席号",
+							"required": true
+						},
+						{
+							"name": "to_station_telecode",
+							"type": "String",
+							"description": "到达站编码",
+							"required": true
+						},
+						{
+							"name": "to_time",
+							"type": "String",
+							"description": "到达时间",
+							"required": true
+						},
+						{
+							"name": "sequence_no",
+							"type": "String",
+							"description": "12306订单号"
+						},
+						{
+							"name": "batch_no",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "coach_no",
+							"type": "String",
+							"description": "车厢号",
+							"required": true
+						},
+						{
+							"name": "ticket_type_code",
+							"type": "String",
+							"description": "票类型（1 成人票 2 儿童 3 学生 4 残、军）",
+							"required": true
+						}
+					],
+					"name": "tickets",
+					"type": "TicketDTO[]",
+					"description": "票信息",
+					"required": true
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "主单号",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "LockOrderRQ",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"subParams": [
+						{
+							"name": "lock_last_time",
+							"type": "String",
+							"description": "锁单最晚有效时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘车人姓名"
+								},
+								{
+									"name": "passenger_type_code",
+									"type": "String",
+									"description": "乘车人类型编码（1 成人 2 儿童 3 学生 4 残、军）"
+								},
+								{
+									"name": "certificate_type_code",
+									"type": "String",
+									"description": "证件类型（1 身份证 C 港澳通行证 G 台胞证 B 护照）"
+								},
+								{
+									"name": "certificate_no",
+									"type": "String",
+									"description": "证件号"
+								},
+								{
+									"name": "ttp_sub_order_id",
+									"type": "Number",
+									"description": "ttp子单号"
+								}
+							],
+							"name": "ticket_infos",
+							"type": "TicketInfoDTO[]",
+							"description": "票信息"
+						},
+						{
+							"name": "contact_mobile_no",
+							"type": "String",
+							"description": "乘车人余留联系方式"
+						}
+					],
+					"name": "module",
+					"type": "LockOrderRS",
+					"description": "锁单rs"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回msg"
+				}
+			],
+			"name": "result",
+			"type": "TapResult",
+			"description": "rs"
+		}
+	],
+	"name": "taobao.train.agent.order.lock",
+	"apiChineseName": "锁单",
+	"description": "锁单",
+	"id": 60355
+}

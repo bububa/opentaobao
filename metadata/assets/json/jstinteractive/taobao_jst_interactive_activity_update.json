@@ -1,8 +1,4 @@
 {
-	"id": 53890,
-	"name": "taobao.jst.interactive.activity.update",
-	"apiChineseName": "互动任务活动修改接口",
-	"description": "互动任务活动修改接口",
 	"requestParams": [
 		{
 			"name": "mini_app_id",
@@ -32,5 +28,9 @@
 			"type": "Boolean",
 			"description": "修改结果"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.activity.update",
+	"apiChineseName": "互动任务活动修改接口",
+	"description": "互动任务活动修改接口",
+	"id": 53890
 }

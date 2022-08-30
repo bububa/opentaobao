@@ -14,12 +14,12 @@ type TaobaoTbkShopRecommendGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表
 	_fields string
-	// 卖家Id
-	_userId int64
 	// 返回数量，默认20，最大值40
 	_count int64
 	// 链接形式：1：PC，2：无线，默认：１
 	_platform int64
+	// 卖家Id
+	_userId int64
 }
 
 // NewTaobaoTbkShopRecommendGetRequest 初始化TaobaoTbkShopRecommendGetAPIRequest对象
@@ -56,19 +56,6 @@ func (r TaobaoTbkShopRecommendGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
-// SetUserId is UserId Setter
-// 卖家Id
-func (r *TaobaoTbkShopRecommendGetAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r TaobaoTbkShopRecommendGetAPIRequest) GetUserId() int64 {
-	return r._userId
-}
-
 // SetCount is Count Setter
 // 返回数量，默认20，最大值40
 func (r *TaobaoTbkShopRecommendGetAPIRequest) SetCount(_count int64) error {
@@ -93,4 +80,17 @@ func (r *TaobaoTbkShopRecommendGetAPIRequest) SetPlatform(_platform int64) error
 // GetPlatform Platform Getter
 func (r TaobaoTbkShopRecommendGetAPIRequest) GetPlatform() int64 {
 	return r._platform
+}
+
+// SetUserId is UserId Setter
+// 卖家Id
+func (r *TaobaoTbkShopRecommendGetAPIRequest) SetUserId(_userId int64) error {
+	r._userId = _userId
+	r.Set("user_id", _userId)
+	return nil
+}
+
+// GetUserId UserId Getter
+func (r TaobaoTbkShopRecommendGetAPIRequest) GetUserId() int64 {
+	return r._userId
 }

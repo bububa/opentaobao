@@ -1,13 +1,6 @@
 {
-	"id": 51548,
-	"name": "alitrip.receipt.seller.invoice.red",
-	"apiChineseName": "飞猪发票冲红",
-	"description": "飞猪发票创建",
 	"requestParams": [
 		{
-			"name": "red_receipt_param",
-			"type": "RedReceiptParam",
-			"description": "入参对象",
 			"subParams": [
 				{
 					"name": "receipt_title_type",
@@ -76,6 +69,7 @@
 				},
 				{
 					"name": "ext_map",
+					"type": "String",
 					"description": "扩展参数"
 				},
 				{
@@ -93,7 +87,10 @@
 					"type": "String",
 					"description": "接收人手机号"
 				}
-			]
+			],
+			"name": "red_receipt_param",
+			"type": "RedReceiptParam",
+			"description": "入参对象"
 		}
 	],
 	"responseParams": [
@@ -112,5 +109,9 @@
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alitrip.receipt.seller.invoice.red",
+	"apiChineseName": "飞猪发票冲红",
+	"description": "飞猪发票创建",
+	"id": 51548
 }

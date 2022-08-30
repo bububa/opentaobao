@@ -1,8 +1,4 @@
 {
-	"id": 47559,
-	"name": "aliexpress.social.country.get",
-	"apiChineseName": "获取国家列表",
-	"description": "获取目前AE支持的国家列表",
 	"requestParams": [
 		{
 			"name": "language",
@@ -12,15 +8,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ItemPickPagingResult",
-			"description": "ItemPickPagingResult",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "CountryDto[]",
-					"description": "返回数据集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -40,7 +29,11 @@
 							"description": "国家CODE",
 							"required": true
 						}
-					]
+					],
+					"name": "results",
+					"type": "CountryDto[]",
+					"description": "返回数据集合",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -60,7 +53,14 @@
 					"description": "错误信息",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "ItemPickPagingResult"
 		}
-	]
+	],
+	"name": "aliexpress.social.country.get",
+	"apiChineseName": "获取国家列表",
+	"description": "获取目前AE支持的国家列表",
+	"id": 47559
 }

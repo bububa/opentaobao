@@ -1,97 +1,86 @@
 {
-	"id": 54759,
-	"name": "alibaba.tmallgenie.scp.plan.current.rawpo.get",
-	"apiChineseName": "二级物料-PO数据同步",
-	"description": "二级物料-PO数据同步（WO-W[TL])",
 	"requestParams": [
 		{
-			"name": "param_request",
-			"type": "AbstractRequest",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "request_extend_json",
 					"type": "String",
 					"description": "扩展参数"
 				}
-			]
+			],
+			"name": "param_request",
+			"type": "AbstractRequest",
+			"description": "系统自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "结果msg",
-					"required": true
+					"description": "结果msg"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "请求唯一id",
-					"required": true
+					"description": "请求唯一id"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果code",
-					"required": true
+					"description": "结果code"
 				},
 				{
-					"name": "data_list",
-					"type": "IbpPurchaseOrderDto[]",
-					"description": "返回对象封装",
-					"required": true,
 					"subParams": [
 						{
 							"name": "plan_quantity",
 							"type": "Number",
-							"description": "计划数量",
-							"required": true
+							"description": "计划数量"
 						},
 						{
 							"name": "materiel_code",
 							"type": "String",
-							"description": "二级物料-物料编码",
-							"required": true
+							"description": "二级物料-物料编码"
 						},
 						{
 							"name": "location_code",
 							"type": "String",
-							"description": "二级物料-供应商loc",
-							"required": true
+							"description": "二级物料-供应商loc"
 						},
 						{
 							"name": "extend_json",
 							"type": "String",
-							"description": "扩展参数",
-							"required": true
+							"description": "扩展参数"
 						},
 						{
 							"name": "tenant",
 							"type": "String",
-							"description": "租户",
-							"required": true
+							"description": "租户"
 						},
 						{
 							"name": "key_figure_date",
 							"type": "Date",
-							"description": "关键日期值",
-							"required": true
+							"description": "关键日期值"
 						},
 						{
 							"name": "location_code_to",
 							"type": "String",
-							"description": "二级物料-分仓目的仓code",
-							"required": true
+							"description": "二级物料-分仓目的仓code"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "IbpPurchaseOrderDto[]",
+					"description": "返回对象封装"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.plan.current.rawpo.get",
+	"apiChineseName": "二级物料-PO数据同步",
+	"description": "二级物料-PO数据同步（WO-W[TL])",
+	"id": 54759
 }

@@ -58,6 +58,8 @@ type OpenApiTrainOrderRs struct {
 	ProjectCode string `json:"project_code,omitempty" xml:"project_code,omitempty"`
 	// 项目名称
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
+	// 第三方项目id
+	ThirdPartProjectId string `json:"third_part_project_id,omitempty" xml:"third_part_project_id,omitempty"`
 	// 火车票订单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商旅申请单id

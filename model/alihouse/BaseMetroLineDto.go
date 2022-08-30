@@ -2,6 +2,8 @@ package alihouse
 
 // BaseMetroLineDto 结构体
 type BaseMetroLineDto struct {
+	// 站点出口经纬度
+	ExitPoi string `json:"exit_poi,omitempty" xml:"exit_poi,omitempty"`
 	// 所属商圈
 	BusinessDistrict string `json:"business_district,omitempty" xml:"business_district,omitempty"`
 	// 站点编号
@@ -22,10 +24,10 @@ type BaseMetroLineDto struct {
 	GaodeLongitude string `json:"gaode_longitude,omitempty" xml:"gaode_longitude,omitempty"`
 	// 是否删除 0 否 1是（默认0）
 	IsDeleted string `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
-	// 站点出口经纬度
-	ExitPoi string `json:"exit_poi,omitempty" xml:"exit_poi,omitempty"`
 	// 站所属区域
 	AreaId int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
 	// 城市代码
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
+	// 数据源类型（1-新房 2-二手房）
+	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
 }

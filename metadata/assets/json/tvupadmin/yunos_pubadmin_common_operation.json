@@ -1,15 +1,5 @@
 {
-	"id": 31216,
-	"name": "yunos.pubadmin.common.operation",
-	"apiChineseName": "内部迎客松通用服务",
-	"description": "内部迎客松通用服务",
 	"requestParams": [
-		{
-			"name": "parameter",
-			"type": "String",
-			"description": "入参json串",
-			"required": true
-		},
 		{
 			"name": "interface_name",
 			"type": "String",
@@ -21,6 +11,12 @@
 			"type": "String",
 			"description": "方法名",
 			"required": true
+		},
+		{
+			"name": "parameter",
+			"type": "String",
+			"description": "入参json串",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -29,5 +25,9 @@
 			"type": "String",
 			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "yunos.pubadmin.common.operation",
+	"apiChineseName": "内部迎客松通用服务",
+	"description": "内部迎客松通用服务",
+	"id": 31216
 }

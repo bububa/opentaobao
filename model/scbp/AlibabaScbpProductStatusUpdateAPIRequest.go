@@ -13,7 +13,7 @@ import (
 type AlibabaScbpProductStatusUpdateAPIRequest struct {
 	model.Params
 	// 产品ID列表
-	_productIdList []int64
+	_productIdList []string
 	// enabled:开启,disabled:暂停
 	_status string
 }
@@ -41,14 +41,14 @@ func (r AlibabaScbpProductStatusUpdateAPIRequest) GetApiParams() url.Values {
 
 // SetProductIdList is ProductIdList Setter
 // 产品ID列表
-func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdList []int64) error {
+func (r *AlibabaScbpProductStatusUpdateAPIRequest) SetProductIdList(_productIdList []string) error {
 	r._productIdList = _productIdList
 	r.Set("product_id_list", _productIdList)
 	return nil
 }
 
 // GetProductIdList ProductIdList Getter
-func (r AlibabaScbpProductStatusUpdateAPIRequest) GetProductIdList() []int64 {
+func (r AlibabaScbpProductStatusUpdateAPIRequest) GetProductIdList() []string {
 	return r._productIdList
 }
 

@@ -1,17 +1,8 @@
 {
-	"id": 25989,
-	"name": "taobao.qimen.returnorder.create",
-	"apiChineseName": "退货入库单创建接口",
-	"description": "ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就是该接口是从入库单接口中单独剥离出来的，专门处理退货引起的入 库操作",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "ReturnOrderCreateRequest",
 			"subParams": [
 				{
-					"name": "returnOrder",
-					"type": "ReturnOrder",
-					"description": "退货单信息",
 					"subParams": [
 						{
 							"name": "returnOrderCode",
@@ -73,9 +64,6 @@
 							"description": "买家昵称"
 						},
 						{
-							"name": "senderInfo",
-							"type": "SenderInfo",
-							"description": "发件人信息",
 							"subParams": [
 								{
 									"name": "company",
@@ -142,7 +130,10 @@
 									"description": "详细地址",
 									"required": true
 								}
-							]
+							],
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息"
 						},
 						{
 							"name": "remark",
@@ -169,12 +160,12 @@
 							"type": "String",
 							"description": "卖家名称"
 						}
-					]
+					],
+					"name": "returnOrder",
+					"type": "ReturnOrder",
+					"description": "退货单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -240,16 +231,16 @@
 							"description": "生产批号"
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "sn列表",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn编码"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表"
 						},
 						{
 							"name": "orderFlag",
@@ -263,20 +254,23 @@
 							"description": "退货原因",
 							"required": true
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "ReturnOrderCreateRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -302,7 +296,13 @@
 					"description": "仓储系统退货单编码",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.returnorder.create",
+	"apiChineseName": "退货入库单创建接口",
+	"description": "ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就是该接口是从入库单接口中单独剥离出来的，专门处理退货引起的入 库操作",
+	"id": 25989
 }

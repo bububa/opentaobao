@@ -1,8 +1,4 @@
 {
-	"id": 47349,
-	"name": "alibaba.health.nr.logistics.deliveryno.update",
-	"apiChineseName": "上传订单同城快递单号",
-	"description": "上传订单同城快递单号",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -34,5 +30,9 @@
 			"type": "Boolean",
 			"description": "更新成功"
 		}
-	]
+	],
+	"name": "alibaba.health.nr.logistics.deliveryno.update",
+	"apiChineseName": "上传订单同城快递单号",
+	"description": "上传订单同城快递单号",
+	"id": 47349
 }

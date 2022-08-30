@@ -13,7 +13,7 @@ import (
 type AlibabaScbpShowcaseAddproductAPIRequest struct {
 	model.Params
 	// 需要添加的产品ids
-	_productIdList []int64
+	_productIdList []string
 }
 
 // NewAlibabaScbpShowcaseAddproductRequest 初始化AlibabaScbpShowcaseAddproductAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaScbpShowcaseAddproductAPIRequest) GetApiParams() url.Values {
 
 // SetProductIdList is ProductIdList Setter
 // 需要添加的产品ids
-func (r *AlibabaScbpShowcaseAddproductAPIRequest) SetProductIdList(_productIdList []int64) error {
+func (r *AlibabaScbpShowcaseAddproductAPIRequest) SetProductIdList(_productIdList []string) error {
 	r._productIdList = _productIdList
 	r.Set("product_id_list", _productIdList)
 	return nil
 }
 
 // GetProductIdList ProductIdList Getter
-func (r AlibabaScbpShowcaseAddproductAPIRequest) GetProductIdList() []int64 {
+func (r AlibabaScbpShowcaseAddproductAPIRequest) GetProductIdList() []string {
 	return r._productIdList
 }

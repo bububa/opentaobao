@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单ID",
+			"required": true
+		},
+		{
+			"name": "pic_url_list",
+			"type": "String",
+			"description": "鉴定结果图片列表"
+		},
+		{
+			"name": "pass_evaluation",
+			"type": "Boolean",
+			"description": "是否鉴定通过",
+			"required": true
+		},
+		{
+			"name": "fail_reason",
+			"type": "String",
+			"description": "鉴定不通过时的原因编码"
+		},
+		{
+			"name": "extend_info",
+			"type": "Json",
+			"description": "扩展参数，品牌回传鉴定附加信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误原因文案"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误原因"
+				}
+			],
+			"name": "ssc_result",
+			"type": "Result",
+			"description": "结果对象"
+		}
+	],
+	"name": "alibaba.servicecenter.workcard.evaluate",
+	"apiChineseName": "服务商售后鉴定服务",
+	"description": "服务商售后鉴定服务,提供给服务商针对售后场景上门鉴定服务，鉴定成功则服务商完成履约，鉴定失败则取消工单",
+	"id": 59076
+}

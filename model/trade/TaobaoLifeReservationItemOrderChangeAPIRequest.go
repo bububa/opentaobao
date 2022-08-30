@@ -12,16 +12,20 @@ import (
 // 生服购后预约单外部发起变更，例如改期、取消。目前体检场景，用户会直接联系ISV改期/取消，因此开放给ISV这块的能力
 type TaobaoLifeReservationItemOrderChangeAPIRequest struct {
 	model.Params
-	// 淘宝主单号
-	_tradeNo string
-	// 凭证ID
+	// 凭证ID。与预约单号二选一，优先级低
 	_ticketId string
-	// 改期：MODIFY   取消：CANCEL
+	// 改期：MODIFY ；取消：CANCEL；推进履约：PUSH_FULFILLMENT
 	_action string
 	// 改期必填，格式：yyyy-MM-dd HH:mm。时分固定00:00
 	_reserveStartTime string
 	// 改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59
 	_reserveEndTime string
+	// 目标履约状态。 枚举值：PREPARING,PREPARED,PROCESSING,PROCESSED,DELIVERING,FINISHED。详以接入文档中描述的场景对接
+	_targetFulfillmentStatus string
+	// 预约单号。与凭证ID二选一，优先级高
+	_reservationOrderId string
+	// 扩展信息
+	_extInfo *CommonKeyValue
 }
 
 // NewTaobaoLifeReservationItemOrderChangeRequest 初始化TaobaoLifeReservationItemOrderChangeAPIRequest对象
@@ -45,21 +49,8 @@ func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetApiParams() url.Value
 	return params
 }
 
-// SetTradeNo is TradeNo Setter
-// 淘宝主单号
-func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTradeNo(_tradeNo string) error {
-	r._tradeNo = _tradeNo
-	r.Set("trade_no", _tradeNo)
-	return nil
-}
-
-// GetTradeNo TradeNo Getter
-func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetTradeNo() string {
-	return r._tradeNo
-}
-
 // SetTicketId is TicketId Setter
-// 凭证ID
+// 凭证ID。与预约单号二选一，优先级低
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTicketId(_ticketId string) error {
 	r._ticketId = _ticketId
 	r.Set("ticket_id", _ticketId)
@@ -72,7 +63,7 @@ func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetTicketId() string {
 }
 
 // SetAction is Action Setter
-// 改期：MODIFY   取消：CANCEL
+// 改期：MODIFY ；取消：CANCEL；推进履约：PUSH_FULFILLMENT
 func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetAction(_action string) error {
 	r._action = _action
 	r.Set("action", _action)
@@ -108,4 +99,43 @@ func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReserveEndTime(_rese
 // GetReserveEndTime ReserveEndTime Getter
 func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetReserveEndTime() string {
 	return r._reserveEndTime
+}
+
+// SetTargetFulfillmentStatus is TargetFulfillmentStatus Setter
+// 目标履约状态。 枚举值：PREPARING,PREPARED,PROCESSING,PROCESSED,DELIVERING,FINISHED。详以接入文档中描述的场景对接
+func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetTargetFulfillmentStatus(_targetFulfillmentStatus string) error {
+	r._targetFulfillmentStatus = _targetFulfillmentStatus
+	r.Set("target_fulfillment_status", _targetFulfillmentStatus)
+	return nil
+}
+
+// GetTargetFulfillmentStatus TargetFulfillmentStatus Getter
+func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetTargetFulfillmentStatus() string {
+	return r._targetFulfillmentStatus
+}
+
+// SetReservationOrderId is ReservationOrderId Setter
+// 预约单号。与凭证ID二选一，优先级高
+func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetReservationOrderId(_reservationOrderId string) error {
+	r._reservationOrderId = _reservationOrderId
+	r.Set("reservation_order_id", _reservationOrderId)
+	return nil
+}
+
+// GetReservationOrderId ReservationOrderId Getter
+func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetReservationOrderId() string {
+	return r._reservationOrderId
+}
+
+// SetExtInfo is ExtInfo Setter
+// 扩展信息
+func (r *TaobaoLifeReservationItemOrderChangeAPIRequest) SetExtInfo(_extInfo *CommonKeyValue) error {
+	r._extInfo = _extInfo
+	r.Set("ext_info", _extInfo)
+	return nil
+}
+
+// GetExtInfo ExtInfo Getter
+func (r TaobaoLifeReservationItemOrderChangeAPIRequest) GetExtInfo() *CommonKeyValue {
+	return r._extInfo
 }

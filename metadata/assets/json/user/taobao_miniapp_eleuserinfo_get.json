@@ -1,8 +1,4 @@
 {
-	"id": 55602,
-	"name": "taobao.miniapp.eleuserinfo.get",
-	"apiChineseName": "获取饿了么用户信息",
-	"description": "获取饿了么用户信息",
 	"requestParams": [
 		{
 			"name": "biz_scence",
@@ -17,35 +13,35 @@
 			"description": "traceId"
 		},
 		{
-			"name": "result",
-			"type": "EleUicInfo",
-			"description": "1",
 			"subParams": [
 				{
 					"name": "avatar",
 					"type": "String",
-					"description": "头像",
-					"required": true
+					"description": "头像"
 				},
 				{
 					"name": "nick",
 					"type": "String",
-					"description": "昵称",
-					"required": true
+					"description": "昵称"
 				},
 				{
 					"name": "phone",
 					"type": "String",
-					"description": "电话",
-					"required": true
+					"description": "电话"
 				},
 				{
 					"name": "open_id",
 					"type": "String",
-					"description": "openId",
-					"required": true
+					"description": "openId"
 				}
-			]
+			],
+			"name": "result",
+			"type": "EleUicInfo",
+			"description": "1"
 		}
-	]
+	],
+	"name": "taobao.miniapp.eleuserinfo.get",
+	"apiChineseName": "获取饿了么用户信息",
+	"description": "获取饿了么用户信息",
+	"id": 55602
 }

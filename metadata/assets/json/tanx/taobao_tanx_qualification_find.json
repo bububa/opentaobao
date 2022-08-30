@@ -1,8 +1,4 @@
 {
-	"id": 24265,
-	"name": "taobao.tanx.qualification.find",
-	"apiChineseName": "资质查询接口",
-	"description": "资质查询接口",
 	"requestParams": [
 		{
 			"name": "member_id",
@@ -35,9 +31,6 @@
 			"required": true
 		},
 		{
-			"name": "query",
-			"type": "QualificationQuery",
-			"description": "广告主资质查询dto",
 			"subParams": [
 				{
 					"name": "start_time_begin",
@@ -124,7 +117,10 @@
 					"type": "Number[]",
 					"description": "资质元素id"
 				}
-			]
+			],
+			"name": "query",
+			"type": "QualificationQuery",
+			"description": "广告主资质查询dto"
 		}
 	],
 	"responseParams": [
@@ -134,9 +130,6 @@
 			"description": "是否成功"
 		},
 		{
-			"name": "qualification_list",
-			"type": "QualificationDto []",
-			"description": "返回的资质内容dto",
 			"subParams": [
 				{
 					"name": "urls",
@@ -238,12 +231,19 @@
 					"type": "Date",
 					"description": "排查时间"
 				}
-			]
+			],
+			"name": "qualification_list",
+			"type": "QualificationDto []",
+			"description": "返回的资质内容dto"
 		},
 		{
 			"name": "count",
 			"type": "String",
 			"description": "查询返回总条数"
 		}
-	]
+	],
+	"name": "taobao.tanx.qualification.find",
+	"apiChineseName": "资质查询接口",
+	"description": "资质查询接口",
+	"id": 24265
 }

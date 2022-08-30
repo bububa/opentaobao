@@ -1,0 +1,218 @@
+{
+	"requestParams": [
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"subParams": [
+				{
+					"name": "latest_arrival_time",
+					"type": "Date",
+					"description": "最晚到店时间"
+				},
+				{
+					"name": "earliest_arrival_time",
+					"type": "Date",
+					"description": "最早到店时间"
+				}
+			],
+			"name": "hotel_arrival_time",
+			"type": "HotelArrivalTime",
+			"description": "到店时间",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "customer_type",
+					"type": "Number",
+					"description": "入住人类型1. 成人 2. 儿童"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "first_name",
+					"type": "String",
+					"description": "英文名"
+				},
+				{
+					"name": "last_name",
+					"type": "String",
+					"description": "英文姓"
+				}
+			],
+			"name": "customers",
+			"type": "CustomerDto[]",
+			"description": "入住人信息",
+			"maxListSize": 999
+		},
+		{
+			"subParams": [
+				{
+					"name": "contact_email",
+					"type": "String",
+					"description": "联系人邮箱"
+				},
+				{
+					"name": "contact_mobile",
+					"type": "String",
+					"description": "联系人手机号",
+					"required": true
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人姓名",
+					"required": true
+				},
+				{
+					"name": "contact_tel",
+					"type": "String",
+					"description": "联系人固定电话"
+				}
+			],
+			"name": "hotel_contact",
+			"type": "ContactInfoApiDto",
+			"description": "联系人信息"
+		},
+		{
+			"name": "total_room_price",
+			"type": "Number",
+			"description": "总房价（单位分）",
+			"required": true
+		},
+		{
+			"name": "room_number",
+			"type": "Number",
+			"description": "房间数",
+			"required": true
+		},
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "离店日期",
+			"required": true
+		},
+		{
+			"name": "check_in",
+			"type": "Date",
+			"description": "入住日期",
+			"required": true
+		},
+		{
+			"name": "rate_plan_id",
+			"type": "Number",
+			"description": "售卖政策id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "srid",
+			"type": "Number",
+			"description": "标准房型ID",
+			"required": true
+		},
+		{
+			"name": "hotel_name",
+			"type": "String",
+			"description": "酒店名称"
+		},
+		{
+			"name": "shid",
+			"type": "Number",
+			"description": "标准酒店id",
+			"required": true
+		},
+		{
+			"name": "outer_order_id",
+			"type": "String",
+			"description": "外部订单号",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商ID",
+			"required": true
+		},
+		{
+			"name": "promotion_total_price",
+			"type": "Number",
+			"description": "总优惠金额"
+		},
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市代码"
+		},
+		{
+			"name": "create_key",
+			"type": "String",
+			"description": "订单验证返回的key",
+			"required": true
+		},
+		{
+			"name": "number_of_adults_per_room",
+			"type": "Number",
+			"description": "每间房入住人数"
+		},
+		{
+			"name": "total_cny_room_price",
+			"type": "Number",
+			"description": "人民币总价格"
+		},
+		{
+			"name": "currency_code",
+			"type": "String",
+			"description": "币种"
+		},
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "阿信订单id"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.order.create",
+	"apiChineseName": "酒店分销订单创建服务-阿信",
+	"description": "提供酒店分销订单创建服务",
+	"id": 56904
+}

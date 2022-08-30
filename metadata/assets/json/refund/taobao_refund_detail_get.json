@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需要返回的字段。目前支持有：allowedOperations,refund_version",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "refund_version",
+					"type": "Number",
+					"description": "退款版本号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "operation_code",
+							"type": "String",
+							"description": "操作编码"
+						},
+						{
+							"name": "tips",
+							"type": "String",
+							"description": "操作提示文案"
+						}
+					],
+					"name": "allowed_operations",
+					"type": "Operation[]",
+					"description": "退款当前可以执行的操作"
+				},
+				{
+					"subParams": [
+						{
+							"name": "operation_code",
+							"type": "String",
+							"description": "操作编码"
+						},
+						{
+							"name": "tips",
+							"type": "String",
+							"description": "操作提示文案"
+						}
+					],
+					"name": "not_allowed_operations",
+					"type": "Operation[]",
+					"description": "退款当前不可以执行的操作"
+				}
+			],
+			"name": "detail",
+			"type": "RefundDetail",
+			"description": "退款详情"
+		}
+	],
+	"name": "taobao.refund.detail.get",
+	"apiChineseName": "退款详情页渲染",
+	"description": "退款详情页渲染",
+	"id": 64018
+}

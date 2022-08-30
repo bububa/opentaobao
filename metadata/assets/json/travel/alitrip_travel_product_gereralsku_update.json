@@ -1,14 +1,6 @@
 {
-	"id": 43502,
-	"name": "alitrip.travel.product.gereralsku.update",
-	"apiChineseName": "(供销)船票通用类目sku新增\u0026编辑API",
-	"description": "发布SKU信息（如果properties重复 则更新）",
 	"requestParams": [
 		{
-			"name": "alias",
-			"type": "PropertyAliasInfo[]",
-			"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "properties",
@@ -20,13 +12,13 @@
 					"type": "String",
 					"description": "属性别名"
 				}
-			]
+			],
+			"name": "alias",
+			"type": "PropertyAliasInfo[]",
+			"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改",
+			"maxListSize": 20
 		},
 		{
-			"name": "properties",
-			"type": "CatPropInfo[]",
-			"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "vid",
@@ -38,7 +30,11 @@
 					"type": "String",
 					"description": "属性VID，调用taobao.itempropvalues.get取得"
 				}
-			]
+			],
+			"name": "properties",
+			"type": "CatPropInfo[]",
+			"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对",
+			"maxListSize": 20
 		},
 		{
 			"name": "item_id",
@@ -62,10 +58,6 @@
 			"description": "商家编码"
 		},
 		{
-			"name": "date_list",
-			"type": "DateInventoryAndPrice[]",
-			"description": "SKU的销售价格库存，日历商品使用",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "price",
@@ -82,46 +74,49 @@
 					"type": "Date",
 					"description": "销售日期"
 				}
-			]
+			],
+			"name": "date_list",
+			"type": "DateInventoryAndPrice[]",
+			"description": "SKU的销售价格库存，日历商品使用",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopTravelItem",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "sku创建日期",
-					"required": true
+					"description": "sku创建日期"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "sku修改日期",
-					"required": true
+					"description": "sku修改日期"
 				},
 				{
 					"name": "sku_id",
 					"type": "Number",
-					"description": "skuId",
-					"required": true
+					"description": "skuId"
 				},
 				{
 					"name": "outer_id",
 					"type": "Number",
-					"description": "outId",
-					"required": true
+					"description": "outId"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "itemId",
-					"required": true
+					"description": "itemId"
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alitrip.travel.product.gereralsku.update",
+	"apiChineseName": "(供销)船票通用类目sku新增\u0026编辑API",
+	"description": "发布SKU信息（如果properties重复 则更新）",
+	"id": 43502
 }

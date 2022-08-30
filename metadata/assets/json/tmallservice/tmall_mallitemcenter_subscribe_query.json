@@ -1,13 +1,6 @@
 {
-	"id": 42770,
-	"name": "tmall.mallitemcenter.subscribe.query",
-	"apiChineseName": "天猫服务订购信息查询接口",
-	"description": "查询商家服务订购信息",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "Spb2bOderQuery",
-			"description": "入参query",
 			"subParams": [
 				{
 					"name": "start_date",
@@ -69,116 +62,107 @@
 					"type": "Boolean",
 					"description": "是否查询新供给ssc订购数据"
 				}
-			]
+			],
+			"name": "query",
+			"type": "Spb2bOderQuery",
+			"description": "入参query"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "ResultData",
-					"description": "返回结果model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "total_count",
 							"type": "Number",
-							"description": "总条数",
-							"required": true
+							"description": "总条数"
 						},
 						{
 							"name": "page_size",
 							"type": "Number",
-							"description": "每页个数",
-							"required": true
+							"description": "每页个数"
 						},
 						{
-							"name": "one_paged_data_list",
-							"type": "SubscribeMerchantDto[]",
-							"description": "结果列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "tech_phone",
 									"type": "String",
-									"description": "技术电话",
-									"required": true
+									"description": "技术电话"
 								},
 								{
 									"name": "operator_phone",
 									"type": "String",
-									"description": "操作人电话",
-									"required": true
+									"description": "操作人电话"
 								},
 								{
 									"name": "after_sale_phone",
 									"type": "String",
-									"description": "售后电话",
-									"required": true
+									"description": "售后电话"
 								},
 								{
 									"name": "subscribe_order_id",
 									"type": "Number",
-									"description": "订购单主键id",
-									"required": true
+									"description": "订购单主键id"
 								},
 								{
 									"name": "spu_id",
 									"type": "Number",
-									"description": "spuid",
-									"required": true
+									"description": "spuid"
 								},
 								{
 									"name": "service_code",
 									"type": "String",
-									"description": "服务cide",
-									"required": true
+									"description": "服务cide"
 								},
 								{
 									"name": "subscriber_nick",
 									"type": "String",
-									"description": "订购者昵称",
-									"required": true
+									"description": "订购者昵称"
 								},
 								{
 									"name": "seller_type",
 									"type": "String",
-									"description": "卖家类型",
-									"required": true
+									"description": "卖家类型"
 								}
-							]
+							],
+							"name": "one_paged_data_list",
+							"type": "SubscribeMerchantDto[]",
+							"description": "结果列表"
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "ResultData",
+					"description": "返回结果model"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "error_type",
 					"type": "Number",
-					"description": "错误类型",
-					"required": true
+					"description": "错误类型"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否正常",
-					"required": true
+					"description": "是否正常"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "tmall.mallitemcenter.subscribe.query",
+	"apiChineseName": "天猫服务订购信息查询接口",
+	"description": "查询商家服务订购信息",
+	"id": 42770
 }

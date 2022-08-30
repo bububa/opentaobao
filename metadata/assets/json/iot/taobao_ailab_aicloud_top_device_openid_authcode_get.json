@@ -1,15 +1,5 @@
 {
-	"id": 41250,
-	"name": "taobao.ailab.aicloud.top.device.openid.authcode.get",
-	"apiChineseName": "获取openid设备通用授权码",
-	"description": "获取openid设备通用授权码",
 	"requestParams": [
-		{
-			"name": "open_id",
-			"type": "String",
-			"description": "淘宝openid",
-			"required": true
-		},
 		{
 			"name": "schema",
 			"type": "String",
@@ -25,33 +15,40 @@
 			"name": "ext",
 			"type": "String",
 			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "淘宝openid",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "AiCloudResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo错误码信息，成功返回null",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "String",
-					"description": "是否成功",
-					"required": true
+					"description": "msgInfo错误码信息，成功返回null"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "设备授权码，后续流程中所述的auth code",
-					"required": true
+					"description": "设备授权码，后续流程中所述的auth code"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "taobao.ailab.aicloud.top.device.openid.authcode.get",
+	"apiChineseName": "获取openid设备通用授权码",
+	"description": "获取openid设备通用授权码",
+	"id": 41250
 }

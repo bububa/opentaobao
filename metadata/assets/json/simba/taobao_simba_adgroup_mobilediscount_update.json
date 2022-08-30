@@ -1,15 +1,11 @@
 {
-	"id": 25656,
-	"name": "taobao.simba.adgroup.mobilediscount.update",
-	"apiChineseName": "对推广组进行单独移动溢价",
-	"description": "对推广组进行单独移动溢价",
 	"requestParams": [
 		{
 			"name": "adgroup_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)",
-			"required": true,
-			"maxListSize": 200
+			"maxListSize": 200,
+			"required": true
 		},
 		{
 			"name": "mobile_discount",
@@ -39,5 +35,9 @@
 			"type": "String",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "taobao.simba.adgroup.mobilediscount.update",
+	"apiChineseName": "对推广组进行单独移动溢价",
+	"description": "对推广组进行单独移动溢价",
+	"id": 25656
 }

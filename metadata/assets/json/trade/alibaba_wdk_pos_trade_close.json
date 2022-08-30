@@ -1,13 +1,6 @@
 {
-	"id": 44000,
-	"name": "alibaba.wdk.pos.trade.close",
-	"apiChineseName": "轻pos品牌营销关单接口",
-	"description": "轻pos品牌营销场景，提供关单接口给外部商家",
 	"requestParams": [
 		{
-			"name": "close_request",
-			"type": "FastBuyPosCloseRequest",
-			"description": "关单请求",
 			"subParams": [
 				{
 					"name": "out_order_id",
@@ -25,40 +18,43 @@
 					"type": "String",
 					"description": "外部门店编码"
 				}
-			]
+			],
+			"name": "close_request",
+			"type": "FastBuyPosCloseRequest",
+			"description": "关单请求"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "FastBuyPosCloseResult",
-			"description": "关单结果",
 			"subParams": [
 				{
 					"name": "result_result",
 					"type": "Number",
-					"description": "关单结果状态: 1为成功,2为失败",
-					"required": true
+					"description": "关单结果状态: 1为成功,2为失败"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功",
-					"required": true
+					"description": "接口调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "FastBuyPosCloseResult",
+			"description": "关单结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.pos.trade.close",
+	"apiChineseName": "轻pos品牌营销关单接口",
+	"description": "轻pos品牌营销场景，提供关单接口给外部商家",
+	"id": 44000
 }

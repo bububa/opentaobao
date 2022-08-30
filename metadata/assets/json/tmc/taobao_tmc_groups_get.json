@@ -1,8 +1,4 @@
 {
-	"id": 21981,
-	"name": "taobao.tmc.groups.get",
-	"apiChineseName": "获取自定义用户分组列表",
-	"description": "获取自定义用户分组列表",
 	"requestParams": [
 		{
 			"name": "group_names",
@@ -13,34 +9,35 @@
 		{
 			"name": "page_no",
 			"type": "Number",
-			"description": "页码",
-			"minValue": 1
+			"description": "页码"
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
-			"description": "每页返回多少个分组",
-			"maxValue": 100,
-			"minValue": 1
+			"description": "每页返回多少个分组"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "groups",
-			"type": "TmcGroup []",
-			"description": "dasdasd",
 			"subParams": [
 				{
 					"name": "name",
 					"type": "String",
 					"description": "分组名称"
 				}
-			]
+			],
+			"name": "groups",
+			"type": "TmcGroup []",
+			"description": "dasdasd"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "分组总数"
 		}
-	]
+	],
+	"name": "taobao.tmc.groups.get",
+	"apiChineseName": "获取自定义用户分组列表",
+	"description": "获取自定义用户分组列表",
+	"id": 21981
 }

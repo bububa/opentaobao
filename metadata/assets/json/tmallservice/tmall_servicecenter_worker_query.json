@@ -1,8 +1,4 @@
 {
-	"id": 30506,
-	"name": "tmall.servicecenter.worker.query",
-	"apiChineseName": "工人信息查询",
-	"description": "查询服务商对应的工人信息",
 	"requestParams": [
 		{
 			"name": "identity_id",
@@ -12,155 +8,136 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
-					"name": "value",
-					"type": "WorkerDto",
-					"description": "value",
-					"required": true,
 					"subParams": [
 						{
-							"name": "address",
-							"type": "AddressDto",
-							"description": "address",
-							"required": true,
 							"subParams": [
 								{
 									"name": "address_detail",
 									"type": "String",
-									"description": "addressDetail",
-									"required": true
+									"description": "addressDetail"
 								},
 								{
 									"name": "address_names",
 									"type": "String[]",
-									"description": "addressNames",
-									"required": true
+									"description": "addressNames"
 								}
-							]
+							],
+							"name": "address",
+							"type": "AddressDto",
+							"description": "address"
 						},
 						{
 							"name": "identity_id",
 							"type": "String",
-							"description": "identityId",
-							"required": true
+							"description": "identityId"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						},
 						{
 							"name": "phone",
 							"type": "Number",
-							"description": "phone",
-							"required": true
+							"description": "phone"
 						},
 						{
 							"name": "provider_id",
 							"type": "Number",
-							"description": "providerId",
-							"required": true
+							"description": "providerId"
 						},
 						{
 							"name": "provider_name",
 							"type": "String",
-							"description": "providerName",
-							"required": true
+							"description": "providerName"
 						},
 						{
 							"name": "register_time",
 							"type": "Date",
-							"description": "registerTime",
-							"required": true
+							"description": "registerTime"
 						},
 						{
-							"name": "service_areas",
-							"type": "DivisionDto[]",
-							"description": "serviceAreas",
-							"required": true,
 							"subParams": [
 								{
 									"name": "division_names",
 									"type": "String[]",
-									"description": "divisionNames",
-									"required": true
+									"description": "divisionNames"
 								}
-							]
+							],
+							"name": "service_areas",
+							"type": "DivisionDto[]",
+							"description": "serviceAreas"
 						},
 						{
 							"name": "service_types",
 							"type": "String[]",
-							"description": "serviceTypes",
-							"required": true
+							"description": "serviceTypes"
 						},
 						{
 							"name": "work_type",
 							"type": "String",
-							"description": "workType",
-							"required": true
+							"description": "workType"
 						},
 						{
 							"name": "handheld_card_pic",
 							"type": "String",
-							"description": "handheldCardPic",
-							"required": true
+							"description": "handheldCardPic"
 						},
 						{
 							"name": "photo",
 							"type": "String",
-							"description": "photo",
-							"required": true
+							"description": "photo"
 						},
 						{
 							"name": "id_card_pic_back",
 							"type": "String",
-							"description": "idCardPicBack",
-							"required": true
+							"description": "idCardPicBack"
 						},
 						{
 							"name": "id_card_pic",
 							"type": "String",
-							"description": "idCardPic",
-							"required": true
+							"description": "idCardPic"
 						}
-					]
+					],
+					"name": "value",
+					"type": "WorkerDto",
+					"description": "value"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.worker.query",
+	"apiChineseName": "工人信息查询",
+	"description": "查询服务商对应的工人信息",
+	"id": 30506
 }

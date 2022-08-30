@@ -1,8 +1,4 @@
 {
-	"id": 42626,
-	"name": "tmall.servicecenter.workcard.verifycode.resend",
-	"apiChineseName": "重发核销码",
-	"description": "重发核销码",
 	"requestParams": [
 		{
 			"name": "workcard_id",
@@ -17,29 +13,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.workcard.verifycode.resend",
+	"apiChineseName": "重发核销码",
+	"description": "重发核销码",
+	"id": 42626
 }

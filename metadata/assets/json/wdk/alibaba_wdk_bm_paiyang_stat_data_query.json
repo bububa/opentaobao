@@ -1,14 +1,6 @@
 {
-	"id": 54894,
-	"name": "alibaba.wdk.bm.paiyang.stat.data.query",
-	"apiChineseName": "派样统计数据查询",
-	"description": "派样统计数据查询",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "PaiyangStatDataParam",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "shop_code",
@@ -42,150 +34,136 @@
 					"type": "Number",
 					"description": "分页页大小"
 				}
-			]
+			],
+			"name": "param",
+			"type": "PaiyangStatDataParam",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BmPageResult",
-			"description": "出参对象",
 			"subParams": [
 				{
 					"name": "current",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总条数",
-					"required": true
+					"description": "总条数"
 				},
 				{
-					"name": "data",
-					"type": "PaiyangStatDataResult[]",
-					"description": "对应data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "stat_date",
 							"type": "Date",
-							"description": "统计时间",
-							"required": true
+							"description": "统计时间"
 						},
 						{
 							"name": "activity_id",
 							"type": "String",
-							"description": "活动id",
-							"required": true
+							"description": "活动id"
 						},
 						{
 							"name": "activity_name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "template_code",
 							"type": "String",
-							"description": "优惠券id",
-							"required": true
+							"description": "优惠券id"
 						},
 						{
 							"name": "coupon_name",
 							"type": "String",
-							"description": "优惠券名称",
-							"required": true
+							"description": "优惠券名称"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "商家编码"
 						},
 						{
 							"name": "merchant_name",
 							"type": "String",
-							"description": "商家名称",
-							"required": true
+							"description": "商家名称"
 						},
 						{
 							"name": "subsidiary_code",
 							"type": "String",
-							"description": "子公司编码",
-							"required": true
+							"description": "子公司编码"
 						},
 						{
 							"name": "subsidiary_name",
 							"type": "String",
-							"description": "子公司名称",
-							"required": true
+							"description": "子公司名称"
 						},
 						{
 							"name": "shop_code",
 							"type": "String",
-							"description": "经营店编码",
-							"required": true
+							"description": "经营店编码"
 						},
 						{
 							"name": "shop_name",
 							"type": "String",
-							"description": "经营点名称",
-							"required": true
+							"description": "经营点名称"
 						},
 						{
 							"name": "barcode_list",
 							"type": "String",
-							"description": "69码列表",
-							"required": true
+							"description": "69码列表"
 						},
 						{
 							"name": "pos_use_cpn_cnt1d",
 							"type": "String",
-							"description": "当天使用优惠券张数",
-							"required": true
+							"description": "当天使用优惠券张数"
 						},
 						{
 							"name": "ds",
 							"type": "String",
-							"description": "按天分区字段",
-							"required": true
+							"description": "按天分区字段"
 						}
-					]
+					],
+					"name": "data",
+					"type": "PaiyangStatDataResult[]",
+					"description": "对应data"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功",
-					"required": true
+					"description": "成功"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "总页数",
-					"required": true
+					"description": "总页数"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页大小",
-					"required": true
+					"description": "页大小"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BmPageResult",
+			"description": "出参对象"
 		}
-	]
+	],
+	"name": "alibaba.wdk.bm.paiyang.stat.data.query",
+	"apiChineseName": "派样统计数据查询",
+	"description": "派样统计数据查询",
+	"id": 54894
 }

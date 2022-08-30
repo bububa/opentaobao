@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id"
+		},
+		{
+			"name": "purchase_order_id",
+			"type": "Number",
+			"description": "采购单号"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "退款原因"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "resource_channel",
+			"type": "String",
+			"description": "资源渠道"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "refund_order_id",
+							"type": "Number",
+							"description": "退款单号"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额"
+						}
+					],
+					"name": "data",
+					"type": "HotelOrderRefundResApiDto",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.alitrip.travel.axin.hotel.order.refund",
+	"apiChineseName": "阿信酒店分销订单退款API",
+	"description": "阿信酒店分销订单退款",
+	"id": 56486
+}

@@ -1,0 +1,168 @@
+{
+	"requestParams": [
+		{
+			"name": "sc_item_id",
+			"type": "String",
+			"description": "货品ID",
+			"required": true
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓编码"
+		},
+		{
+			"name": "inventory_type",
+			"type": "String[]",
+			"description": "库存类型",
+			"maxListSize": 999
+		},
+		{
+			"name": "activity_type",
+			"type": "String",
+			"description": "单据类型"
+		},
+		{
+			"name": "sdate",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "edate",
+			"type": "String",
+			"description": "结束时间"
+		},
+		{
+			"name": "page_index",
+			"type": "String",
+			"description": "查询页"
+		},
+		{
+			"name": "page_size",
+			"type": "String",
+			"description": "单页记录数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "String",
+					"description": "查询页"
+				},
+				{
+					"name": "page_size",
+					"type": "String",
+					"description": "单页记录数"
+				},
+				{
+					"name": "total_count",
+					"type": "String",
+					"description": "总记录数"
+				},
+				{
+					"name": "current_page_count",
+					"type": "String",
+					"description": "当前页数"
+				},
+				{
+					"name": "total_page",
+					"type": "String",
+					"description": "总页数"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "inventory_type",
+									"type": "String",
+									"description": "库存类型（包含在仓，不包含在途和物流差异"
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "货品编码"
+								},
+								{
+									"name": "change_quantity",
+									"type": "String",
+									"description": "库存出入库数量"
+								},
+								{
+									"name": "sc_item_id",
+									"type": "String",
+									"description": "货品ID"
+								},
+								{
+									"name": "erp_order_code",
+									"type": "String",
+									"description": "ERP单号"
+								},
+								{
+									"name": "activity_type",
+									"type": "String",
+									"description": "单据类型"
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "变动日期（格式YYYY-MM-DD HH:MI:SS）"
+								},
+								{
+									"name": "op_order_id",
+									"type": "String",
+									"description": "业务主单号"
+								},
+								{
+									"name": "op_sub_order_id",
+									"type": "String",
+									"description": "业务子单号"
+								},
+								{
+									"name": "store_code",
+									"type": "String",
+									"description": "仓编码"
+								},
+								{
+									"name": "wms_order_code",
+									"type": "String",
+									"description": "物流LBX号"
+								},
+								{
+									"name": "sub_trade_id",
+									"type": "String",
+									"description": "淘系交易子单"
+								},
+								{
+									"name": "trade_id",
+									"type": "String",
+									"description": "淘系交易主单"
+								},
+								{
+									"name": "day_surplus_quantity",
+									"type": "String",
+									"description": "每日库存结余数量"
+								}
+							],
+							"name": "bussiness_inventory_log",
+							"type": "BussinessInventoryLog",
+							"description": "明细"
+						}
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "流水信息\u003c明细\u003e"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "taobao.inv.turnover.query",
+	"apiChineseName": "业务库存流水查询",
+	"description": "业务库存流水",
+	"id": 55880
+}

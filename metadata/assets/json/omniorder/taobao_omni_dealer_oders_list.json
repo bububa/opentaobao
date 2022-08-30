@@ -1,14 +1,6 @@
 {
-	"id": 51963,
-	"name": "taobao.omni.dealer.oders.list",
-	"apiChineseName": "全渠道经销商订单列表",
-	"description": "全渠道经销商订单列表查询",
 	"requestParams": [
 		{
-			"name": "query_param",
-			"type": "QueryOmniOrderRequest",
-			"description": "参数对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "end_created",
@@ -42,60 +34,61 @@
 					"type": "String",
 					"description": "订单状态，可选值：WAIT_BUYER_PAY(等待买家付款), WAIT_SELLER_SEND_GOODS(等待卖家发货), SELLER_CONSIGNED_PART(卖家部分发货), WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货]), TRADE_BUYER_SIGNED(买家已签收（货到付款专用）), TRADE_FINISHED(交易成功), TRADE_CLOSED(交易关闭), TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭), TRADE_NO_CREATE_PAY(没有创建外部交易（支付宝交易）)"
 				}
-			]
+			],
+			"name": "query_param",
+			"type": "QueryOmniOrderRequest",
+			"description": "参数对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResult",
-			"description": "分页结果",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总记录数",
-					"required": true
+					"description": "总记录数"
 				},
 				{
 					"name": "curr_page",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
-					"name": "datas",
-					"type": "Data[]",
-					"description": "订单列表",
-					"required": true,
 					"subParams": [
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id"
+						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "主订单id",
-							"required": true
+							"description": "主订单id"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部系统订单id",
-							"required": true
-						},
-						{
-							"name": "seller_id",
-							"type": "Number",
-							"description": "卖家id",
-							"required": true
+							"description": "外部系统订单id"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "Data[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "页大小，每页多少条记录",
-					"required": true
+					"description": "页大小，每页多少条记录"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResult",
+			"description": "分页结果"
 		}
-	]
+	],
+	"name": "taobao.omni.dealer.oders.list",
+	"apiChineseName": "全渠道经销商订单列表",
+	"description": "全渠道经销商订单列表查询",
+	"id": 51963
 }

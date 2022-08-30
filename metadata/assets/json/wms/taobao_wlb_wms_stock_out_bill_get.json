@@ -1,8 +1,4 @@
 {
-	"id": 25680,
-	"name": "taobao.wlb.wms.stock.out.bill.get",
-	"apiChineseName": "通过订单号获取单个出库单发货信息",
-	"description": "通过订单号获取单个出库单发货信息",
 	"requestParams": [
 		{
 			"name": "order_code",
@@ -17,9 +13,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "stock_out_info",
-			"type": "CainiaoStockOutBillStockoutinfo",
-			"description": "出库信息",
 			"subParams": [
 				{
 					"name": "order_code",
@@ -47,14 +40,8 @@
 					"description": "入库单状态"
 				},
 				{
-					"name": "package_info_list",
-					"type": "CainiaoStockOutBillPackageinfolist[]",
-					"description": "包裹信息列表，包含每个包裹使用的快递信息",
 					"subParams": [
 						{
-							"name": "package_info",
-							"type": "CainiaoStockOutBillPackageinfo",
-							"description": "包裹信息",
 							"subParams": [
 								{
 									"name": "tms_code",
@@ -92,14 +79,8 @@
 									"description": "包裹高度，单位：毫米"
 								},
 								{
-									"name": "package_item_list",
-									"type": "CainiaoStockOutBillPackageitemlist[]",
-									"description": "包裹里面的商品信息列表",
 									"subParams": [
 										{
-											"name": "package_item",
-											"type": "CainiaoStockOutBillPackageitem",
-											"description": "1",
 											"subParams": [
 												{
 													"name": "order_item_id",
@@ -126,23 +107,29 @@
 													"type": "Number",
 													"description": "数量"
 												}
-											]
+											],
+											"name": "package_item",
+											"type": "CainiaoStockOutBillPackageitem",
+											"description": "1"
 										}
-									]
+									],
+									"name": "package_item_list",
+									"type": "CainiaoStockOutBillPackageitemlist[]",
+									"description": "包裹里面的商品信息列表"
 								}
-							]
+							],
+							"name": "package_info",
+							"type": "CainiaoStockOutBillPackageinfo",
+							"description": "包裹信息"
 						}
-					]
+					],
+					"name": "package_info_list",
+					"type": "CainiaoStockOutBillPackageinfolist[]",
+					"description": "包裹信息列表，包含每个包裹使用的快递信息"
 				},
 				{
-					"name": "order_item_list",
-					"type": "CainiaoStockOutBillOrderitemlist[]",
-					"description": "订单商品列表",
 					"subParams": [
 						{
-							"name": "order_item",
-							"type": "CainiaoStockOutBillOrderitem",
-							"description": "订单商品信息",
 							"subParams": [
 								{
 									"name": "order_item_id",
@@ -165,14 +152,8 @@
 									"description": "通知数量"
 								},
 								{
-									"name": "inventory_item_list",
-									"type": "CainiaoStockOutBillInventoryitemlist[]",
-									"description": "商品属性列表",
 									"subParams": [
 										{
-											"name": "inventory_item",
-											"type": "CainiaoStockOutBillInventoryitem",
-											"description": "商品属性",
 											"subParams": [
 												{
 													"name": "inventory_type",
@@ -209,15 +190,34 @@
 													"type": "String",
 													"description": "批次号"
 												}
-											]
+											],
+											"name": "inventory_item",
+											"type": "CainiaoStockOutBillInventoryitem",
+											"description": "商品属性"
 										}
-									]
+									],
+									"name": "inventory_item_list",
+									"type": "CainiaoStockOutBillInventoryitemlist[]",
+									"description": "商品属性列表"
 								}
-							]
+							],
+							"name": "order_item",
+							"type": "CainiaoStockOutBillOrderitem",
+							"description": "订单商品信息"
 						}
-					]
+					],
+					"name": "order_item_list",
+					"type": "CainiaoStockOutBillOrderitemlist[]",
+					"description": "订单商品列表"
 				}
-			]
+			],
+			"name": "stock_out_info",
+			"type": "CainiaoStockOutBillStockoutinfo",
+			"description": "出库信息"
 		}
-	]
+	],
+	"name": "taobao.wlb.wms.stock.out.bill.get",
+	"apiChineseName": "通过订单号获取单个出库单发货信息",
+	"description": "通过订单号获取单个出库单发货信息",
+	"id": 25680
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21728,
-	"name": "taobao.inventory.initial.item",
-	"apiChineseName": "商品库存初始化",
-	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家仓商品初始化在各个仓中库存",
 	"requestParams": [
 		{
 			"name": "sc_item_id",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "tip_infos",
-			"type": "TipInfo []",
-			"description": "提示信息",
 			"subParams": [
 				{
 					"name": "info",
@@ -33,7 +26,14 @@
 					"type": "String",
 					"description": "商品id"
 				}
-			]
+			],
+			"name": "tip_infos",
+			"type": "TipInfo []",
+			"description": "提示信息"
 		}
-	]
+	],
+	"name": "taobao.inventory.initial.item",
+	"apiChineseName": "商品库存初始化",
+	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家仓商品初始化在各个仓中库存",
+	"id": 21728
 }

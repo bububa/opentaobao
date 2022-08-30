@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部退票单号",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_order_operate_common_rq",
+			"type": "BtripFlightOrderOperateCommonRq",
+			"description": "获取退票单详情入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "分销外部订单号"
+						},
+						{
+							"name": "dis_sub_order_id",
+							"type": "String",
+							"description": "分销外部退票单号"
+						},
+						{
+							"name": "btrip_order_id",
+							"type": "Number",
+							"description": "商旅订单号"
+						},
+						{
+							"name": "btrip_sub_order_id",
+							"type": "Number",
+							"description": "商旅退票单号"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退票金额"
+						},
+						{
+							"name": "refund_price",
+							"type": "Number",
+							"description": "退票金额"
+						},
+						{
+							"name": "is_voluntary",
+							"type": "byte",
+							"description": "是否是自愿退票"
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "退票原因"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态"
+						},
+						{
+							"subParams": [
+								{
+									"name": "refund_fee",
+									"type": "String",
+									"description": "退票手续费"
+								},
+								{
+									"name": "refund_price",
+									"type": "Number",
+									"description": "退票金额"
+								},
+								{
+									"name": "alipay_trade_no",
+									"type": "Number",
+									"description": "支付宝交易订单号"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "退款状态"
+								}
+							],
+							"name": "refund_fee_list",
+							"type": "RefundFeeInfo[]",
+							"description": "退票费用列表"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightRefundDetailRs",
+					"description": "退票详情返回信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应信息"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.refund.newdetail",
+	"apiChineseName": "商旅机票退票详情接口V2",
+	"description": "商旅机票退票详情接口V2",
+	"id": 63085
+}

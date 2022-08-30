@@ -1,8 +1,4 @@
 {
-	"id": 30014,
-	"name": "alibaba.alink.device.unify.status.get",
-	"apiChineseName": "查询设备标准属性最新状态",
-	"description": "查询设备最新标准属性状态",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -46,7 +39,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.device.unify.status.get",
+	"apiChineseName": "查询设备标准属性最新状态",
+	"description": "查询设备最新标准属性状态",
+	"id": 30014
 }

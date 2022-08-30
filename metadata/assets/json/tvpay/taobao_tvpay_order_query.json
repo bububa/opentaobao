@@ -1,8 +1,4 @@
 {
-	"id": 26215,
-	"name": "taobao.tvpay.order.query",
-	"apiChineseName": "tv支付查询订单状态",
-	"description": "tv支付查询订单状态",
 	"requestParams": [
 		{
 			"name": "device_id",
@@ -14,6 +10,11 @@
 			"name": "from",
 			"type": "String",
 			"description": "来源"
+		},
+		{
+			"name": "license",
+			"type": "String",
+			"description": "牌照方"
 		},
 		{
 			"name": "biz_order_id",
@@ -40,64 +41,56 @@
 			"name": "out_order_no",
 			"type": "String",
 			"description": "外部订单号"
-		},
-		{
-			"name": "license",
-			"type": "String",
-			"description": "牌照方"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultDo",
-			"description": "Top返回对象",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "状态码",
-					"required": true
+					"description": "状态码"
 				},
 				{
-					"name": "data",
-					"type": "QueryPayResultResultDo",
-					"description": "结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "fund_money",
 							"type": "String",
-							"description": "支付资金组成情况",
-							"required": true
+							"description": "支付资金组成情况"
 						},
 						{
 							"name": "fund_money_code",
 							"type": "String",
-							"description": "支付资金组成情况",
-							"required": true
+							"description": "支付资金组成情况"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "订单状态",
-							"required": true
+							"description": "订单状态"
 						}
-					]
+					],
+					"name": "data",
+					"type": "QueryPayResultResultDo",
+					"description": "结构体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "消息",
-					"required": true
+					"description": "消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象"
 		}
-	]
+	],
+	"name": "taobao.tvpay.order.query",
+	"apiChineseName": "tv支付查询订单状态",
+	"description": "tv支付查询订单状态",
+	"id": 26215
 }

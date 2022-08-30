@@ -1,13 +1,6 @@
 {
-	"id": 28683,
-	"name": "tmall.car.lease.tailpaymentback",
-	"apiChineseName": "尾款处置方案回传",
-	"description": "尾款处置方案回传",
 	"requestParams": [
 		{
-			"name": "tail_payment_d_t_o",
-			"type": "TailPaymentDto",
-			"description": "尾款方案",
 			"subParams": [
 				{
 					"name": "buyer_id",
@@ -41,64 +34,63 @@
 					"type": "Number",
 					"description": "尾款金额，单位分，如果是购买车辆，一次性支付尾款必填"
 				}
-			]
+			],
+			"name": "tail_payment_d_t_o",
+			"type": "TailPaymentDto",
+			"description": "尾款方案"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "cost_time",
 					"type": "Number",
-					"description": "costTime",
-					"required": true
+					"description": "costTime"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "gmt_current_time",
 					"type": "Number",
-					"description": "gmtCurrentTime",
-					"required": true
+					"description": "gmtCurrentTime"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "object",
 					"type": "Boolean",
-					"description": "object",
-					"required": true
+					"description": "object"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.car.lease.tailpaymentback",
+	"apiChineseName": "尾款处置方案回传",
+	"description": "尾款处置方案回传",
+	"id": 28683
 }

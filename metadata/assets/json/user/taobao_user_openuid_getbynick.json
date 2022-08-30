@@ -1,0 +1,33 @@
+{
+	"requestParams": [
+		{
+			"name": "buyer_nicks",
+			"type": "String",
+			"description": "买家nick列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家openuid"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家nick"
+				}
+			],
+			"name": "open_uids",
+			"type": "OpenUidInfo []",
+			"description": "买家uid对象"
+		}
+	],
+	"name": "taobao.user.openuid.getbynick",
+	"apiChineseName": "根据买家nick获取买家openuid",
+	"description": "根据买家nick获取买家openuid，最大查询30个",
+	"id": 63724
+}

@@ -1,15 +1,11 @@
 {
-	"id": 52965,
-	"name": "taobao.miniapp.template.offlineapp",
-	"apiChineseName": "下线实例化应用",
-	"description": "对指定的实例化小程序进行下线,需要指定clients和app_version",
 	"requestParams": [
 		{
 			"name": "clients",
 			"type": "String[]",
 			"description": "要下线的投放端,目前可投放： taobao(淘宝),tmall(天猫)",
-			"required": true,
-			"maxListSize": 999
+			"maxListSize": 999,
+			"required": true
 		},
 		{
 			"name": "app_id",
@@ -32,34 +28,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "offline_results",
-			"type": "MiniappInstanceAppOfflineDto []",
-			"description": "各端的下线结果",
+			"name": "app_id",
+			"type": "String",
+			"description": "下线的appId"
+		},
+		{
 			"subParams": [
 				{
 					"name": "client",
 					"type": "String",
-					"description": "端信息",
-					"required": true
+					"description": "端信息"
 				},
 				{
 					"name": "fail_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
-		},
-		{
-			"name": "app_id",
-			"type": "String",
-			"description": "下线的appId"
+			],
+			"name": "offline_results",
+			"type": "MiniappInstanceAppOfflineDto []",
+			"description": "各端的下线结果"
 		}
-	]
+	],
+	"name": "taobao.miniapp.template.offlineapp",
+	"apiChineseName": "下线实例化应用",
+	"description": "对指定的实例化小程序进行下线,需要指定clients和app_version",
+	"id": 52965
 }

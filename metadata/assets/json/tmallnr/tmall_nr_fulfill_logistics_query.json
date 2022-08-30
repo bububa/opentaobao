@@ -1,8 +1,4 @@
 {
-	"id": 36949,
-	"name": "tmall.nr.fulfill.logistics.query",
-	"apiChineseName": "定时送和极速达配送物流信息查询",
-	"description": "发布定时送\u0026极速达物流信息查询服务",
 	"requestParams": [
 		{
 			"name": "main_order_id",
@@ -17,21 +13,10 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "NrResult",
-			"description": "返回对象",
 			"subParams": [
 				{
-					"name": "result_data",
-					"type": "NrTimingFulfillDetailQueryRespDto",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
-							"name": "nr_delivery_brief_status_d_t_o",
-							"type": "NrDeliveryBriefStatusDto",
-							"description": "当前状态",
-							"required": true,
 							"subParams": [
 								{
 									"name": "logistics_time",
@@ -81,13 +66,13 @@
 									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]",
 									"required": true
 								}
-							]
+							],
+							"name": "nr_delivery_brief_status_d_t_o",
+							"type": "NrDeliveryBriefStatusDto",
+							"description": "当前状态",
+							"required": true
 						},
 						{
-							"name": "nr_delivery_brief_status_d_t_os",
-							"type": "NrDeliveryBriefStatusDto[]",
-							"description": "历史状态",
-							"required": true,
 							"subParams": [
 								{
 									"name": "logistics_status",
@@ -137,9 +122,17 @@
 									"description": "logisticsTime",
 									"required": true
 								}
-							]
+							],
+							"name": "nr_delivery_brief_status_d_t_os",
+							"type": "NrDeliveryBriefStatusDto[]",
+							"description": "历史状态",
+							"required": true
 						}
-					]
+					],
+					"name": "result_data",
+					"type": "NrTimingFulfillDetailQueryRespDto",
+					"description": "返回数据",
+					"required": true
 				},
 				{
 					"name": "error_message",
@@ -159,7 +152,14 @@
 					"description": "isSuccess",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回对象"
 		}
-	]
+	],
+	"name": "tmall.nr.fulfill.logistics.query",
+	"apiChineseName": "定时送和极速达配送物流信息查询",
+	"description": "发布定时送\u0026极速达物流信息查询服务",
+	"id": 36949
 }

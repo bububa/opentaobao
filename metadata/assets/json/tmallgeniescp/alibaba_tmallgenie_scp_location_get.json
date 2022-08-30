@@ -1,8 +1,4 @@
 {
-	"id": 53192,
-	"name": "alibaba.tmallgenie.scp.location.get",
-	"apiChineseName": "2-IBP查询CDC和RDC数据接口",
-	"description": "天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口",
 	"requestParams": [
 		{
 			"name": "request_extend_json",
@@ -17,51 +13,50 @@
 			"description": "返回描述"
 		},
 		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求序列号"
+		},
+		{
 			"name": "result_code",
 			"type": "String",
 			"description": "返回码"
 		},
 		{
-			"name": "data_list",
-			"type": "Data []",
-			"description": "数据集合",
 			"subParams": [
+				{
+					"name": "extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				},
 				{
 					"name": "tenant",
 					"type": "String",
-					"description": "租户",
-					"required": true
-				},
-				{
-					"name": "location_name",
-					"type": "String",
-					"description": "CDC或者RDC名称",
-					"required": true
+					"description": "租户"
 				},
 				{
 					"name": "location_type",
 					"type": "String",
-					"description": "CDC或者RDC类型",
-					"required": true
+					"description": "CDC或者RDC类型"
+				},
+				{
+					"name": "location_name",
+					"type": "String",
+					"description": "CDC或者RDC名称"
 				},
 				{
 					"name": "location_code",
 					"type": "String",
-					"description": "地点编码",
-					"required": true
-				},
-				{
-					"name": "extend_json",
-					"type": "String",
-					"description": "扩展参数",
-					"required": true
+					"description": "地点编码"
 				}
-			]
-		},
-		{
-			"name": "trace_id",
-			"type": "String",
-			"description": "请求序列号"
+			],
+			"name": "data_list",
+			"type": "Data []",
+			"description": "数据集合"
 		}
-	]
+	],
+	"name": "alibaba.tmallgenie.scp.location.get",
+	"apiChineseName": "2-IBP查询CDC和RDC数据接口",
+	"description": "天猫精灵供应链-计划域-IBP查询CDC和RDC数据接口",
+	"id": 53192
 }

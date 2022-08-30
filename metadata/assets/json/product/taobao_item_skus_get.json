@@ -1,15 +1,11 @@
 {
-	"id": 30,
-	"name": "taobao.item.skus.get",
-	"apiChineseName": "根据商品ID列表获取SKU信息",
-	"description": "* 获取多个商品下的所有sku\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "num_iids",
@@ -20,9 +16,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "skus",
-			"type": "Sku []",
-			"description": "Sku列表",
 			"subParams": [
 				{
 					"name": "sku_id",
@@ -45,6 +38,11 @@
 					"description": "sku的销售属性组合字符串（颜色，大小，等等，可通过类目API获取某类目下的销售属性）,格式是p1:v1;p2:v2"
 				},
 				{
+					"name": "properties_name",
+					"type": "String",
+					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2……"
+				},
+				{
 					"name": "quantity",
 					"type": "Number",
 					"description": "属于这个sku的商品的数量，"
@@ -53,6 +51,11 @@
 					"name": "price",
 					"type": "String",
 					"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
 				},
 				{
 					"name": "created",
@@ -67,12 +70,7 @@
 				{
 					"name": "status",
 					"type": "String",
-					"description": "sku状态。 normal:正常 ；delete:删除,淘宝天猫此字段无效"
-				},
-				{
-					"name": "properties_name",
-					"type": "String",
-					"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2\u0026hellip;\u0026hellip;"
+					"description": "sku状态。 normal:正常 ；delete:删除"
 				},
 				{
 					"name": "sku_spec_id",
@@ -80,16 +78,18 @@
 					"description": "表示SKu上的产品规格信息"
 				},
 				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
-				},
-				{
 					"name": "barcode",
 					"type": "String",
 					"description": "商品级别的条形码"
 				}
-			]
+			],
+			"name": "skus",
+			"type": "Sku []",
+			"description": "Sku列表"
 		}
-	]
+	],
+	"name": "taobao.item.skus.get",
+	"apiChineseName": "根据商品ID列表获取SKU信息",
+	"description": "* 获取多个商品下的所有sku\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 30
 }

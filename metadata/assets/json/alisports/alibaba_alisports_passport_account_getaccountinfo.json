@@ -1,8 +1,4 @@
 {
-	"id": 28574,
-	"name": "alibaba.alisports.passport.account.getaccountinfo",
-	"apiChineseName": "获取会员信息",
-	"description": "获取阿里体育会员信息",
 	"requestParams": [
 		{
 			"name": "need_detail",
@@ -61,5 +57,9 @@
 			"type": "Json",
 			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.alisports.passport.account.getaccountinfo",
+	"apiChineseName": "获取会员信息",
+	"description": "获取阿里体育会员信息",
+	"id": 28574
 }

@@ -1,8 +1,4 @@
 {
-	"id": 51838,
-	"name": "taobao.jst.interactive.point.decrease",
-	"apiChineseName": "互动积分扣减接口",
-	"description": "扣减用户的互动积分",
 	"requestParams": [
 		{
 			"name": "amount",
@@ -19,14 +15,18 @@
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "调用是否成功"
-		},
-		{
 			"name": "amount",
 			"type": "Number",
 			"description": "用户积分总额"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
 		}
-	]
+	],
+	"name": "taobao.jst.interactive.point.decrease",
+	"apiChineseName": "互动积分扣减接口",
+	"description": "扣减用户的互动积分",
+	"id": 51838
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43549,
-	"name": "alibaba.lst.trade.refund.order.get",
-	"apiChineseName": "零售通退款订单查询",
-	"description": "零售通退款订单查询",
 	"requestParams": [
 		{
 			"name": "refund_id",
@@ -37,29 +33,30 @@
 			"description": "退款完成时间"
 		},
 		{
-			"name": "sub_orders",
-			"type": "RefundSubOrderInfo []",
-			"description": "子订单退款信息列表",
 			"subParams": [
 				{
 					"name": "refund_count",
 					"type": "Number",
-					"description": "退款数量",
-					"required": true
+					"description": "退款数量"
 				},
 				{
 					"name": "refund_payment",
 					"type": "Number",
-					"description": "退款金额，单位分",
-					"required": true
+					"description": "退款金额，单位分"
 				},
 				{
 					"name": "sub_order_id",
 					"type": "Number",
-					"description": "子订单id",
-					"required": true
+					"description": "子订单id"
 				}
-			]
+			],
+			"name": "sub_orders",
+			"type": "RefundSubOrderInfo []",
+			"description": "子订单退款信息列表"
 		}
-	]
+	],
+	"name": "alibaba.lst.trade.refund.order.get",
+	"apiChineseName": "零售通退款订单查询",
+	"description": "零售通退款订单查询",
+	"id": 43549
 }

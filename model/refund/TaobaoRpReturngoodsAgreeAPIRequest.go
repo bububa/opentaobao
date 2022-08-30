@@ -12,20 +12,20 @@ import (
 // 卖家同意退货，支持淘宝和天猫的订单。
 type TaobaoRpReturngoodsAgreeAPIRequest struct {
 	model.Params
-	// 卖家姓名，淘宝退款为必填项。
-	_name string
-	// 卖家提供的退货地址，淘宝退款为必填项。
-	_address string
-	// 卖家提供的退货地址的邮编，淘宝退款为必填项。
-	_post string
-	// 卖家座机，淘宝退款为必填项。
-	_tel string
-	// 卖家手机，淘宝退款为必填项。
-	_mobile string
-	// 卖家退货留言，天猫退款为必填项。
-	_remark string
 	// 售中：onsale，售后：aftersale，天猫退款为必填项。
 	_refundPhase string
+	// 卖家退货留言，天猫退款为必填项。
+	_remark string
+	// 卖家提供的退货地址，淘宝退款为必填项。
+	_address string
+	// 卖家手机，淘宝退款为必填项。
+	_mobile string
+	// 卖家提供的退货地址的邮编，淘宝退款为必填项。
+	_post string
+	// 卖家姓名，淘宝退款为必填项。
+	_name string
+	// 卖家座机，淘宝退款为必填项。
+	_tel string
 	// 退款编号
 	_refundId int64
 	// 退款版本号，天猫退款为必填项。
@@ -59,69 +59,17 @@ func (r TaobaoRpReturngoodsAgreeAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
-// SetName is Name Setter
-// 卖家姓名，淘宝退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
+// SetRefundPhase is RefundPhase Setter
+// 售中：onsale，售后：aftersale，天猫退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetRefundPhase(_refundPhase string) error {
+	r._refundPhase = _refundPhase
+	r.Set("refund_phase", _refundPhase)
 	return nil
 }
 
-// GetName Name Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetName() string {
-	return r._name
-}
-
-// SetAddress is Address Setter
-// 卖家提供的退货地址，淘宝退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetAddress(_address string) error {
-	r._address = _address
-	r.Set("address", _address)
-	return nil
-}
-
-// GetAddress Address Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetAddress() string {
-	return r._address
-}
-
-// SetPost is Post Setter
-// 卖家提供的退货地址的邮编，淘宝退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetPost(_post string) error {
-	r._post = _post
-	r.Set("post", _post)
-	return nil
-}
-
-// GetPost Post Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetPost() string {
-	return r._post
-}
-
-// SetTel is Tel Setter
-// 卖家座机，淘宝退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetTel(_tel string) error {
-	r._tel = _tel
-	r.Set("tel", _tel)
-	return nil
-}
-
-// GetTel Tel Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetTel() string {
-	return r._tel
-}
-
-// SetMobile is Mobile Setter
-// 卖家手机，淘宝退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetMobile(_mobile string) error {
-	r._mobile = _mobile
-	r.Set("mobile", _mobile)
-	return nil
-}
-
-// GetMobile Mobile Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetMobile() string {
-	return r._mobile
+// GetRefundPhase RefundPhase Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRefundPhase() string {
+	return r._refundPhase
 }
 
 // SetRemark is Remark Setter
@@ -137,17 +85,69 @@ func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRemark() string {
 	return r._remark
 }
 
-// SetRefundPhase is RefundPhase Setter
-// 售中：onsale，售后：aftersale，天猫退款为必填项。
-func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetRefundPhase(_refundPhase string) error {
-	r._refundPhase = _refundPhase
-	r.Set("refund_phase", _refundPhase)
+// SetAddress is Address Setter
+// 卖家提供的退货地址，淘宝退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetAddress(_address string) error {
+	r._address = _address
+	r.Set("address", _address)
 	return nil
 }
 
-// GetRefundPhase RefundPhase Getter
-func (r TaobaoRpReturngoodsAgreeAPIRequest) GetRefundPhase() string {
-	return r._refundPhase
+// GetAddress Address Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetAddress() string {
+	return r._address
+}
+
+// SetMobile is Mobile Setter
+// 卖家手机，淘宝退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetMobile(_mobile string) error {
+	r._mobile = _mobile
+	r.Set("mobile", _mobile)
+	return nil
+}
+
+// GetMobile Mobile Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetMobile() string {
+	return r._mobile
+}
+
+// SetPost is Post Setter
+// 卖家提供的退货地址的邮编，淘宝退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetPost(_post string) error {
+	r._post = _post
+	r.Set("post", _post)
+	return nil
+}
+
+// GetPost Post Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetPost() string {
+	return r._post
+}
+
+// SetName is Name Setter
+// 卖家姓名，淘宝退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// GetName Name Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetName() string {
+	return r._name
+}
+
+// SetTel is Tel Setter
+// 卖家座机，淘宝退款为必填项。
+func (r *TaobaoRpReturngoodsAgreeAPIRequest) SetTel(_tel string) error {
+	r._tel = _tel
+	r.Set("tel", _tel)
+	return nil
+}
+
+// GetTel Tel Getter
+func (r TaobaoRpReturngoodsAgreeAPIRequest) GetTel() string {
+	return r._tel
 }
 
 // SetRefundId is RefundId Setter

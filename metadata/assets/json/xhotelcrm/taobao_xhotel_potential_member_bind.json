@@ -1,8 +1,4 @@
 {
-	"id": 34020,
-	"name": "taobao.xhotel.potential.member.bind",
-	"apiChineseName": "飞猪酒店商家会员绑定",
-	"description": "支持互通商家发起会员绑定",
 	"requestParams": [
 		{
 			"name": "first_name",
@@ -78,5 +74,9 @@
 			"type": "Boolean",
 			"description": "添加操作是否成功"
 		}
-	]
+	],
+	"name": "taobao.xhotel.potential.member.bind",
+	"apiChineseName": "飞猪酒店商家会员绑定",
+	"description": "支持互通商家发起会员绑定",
+	"id": 34020
 }

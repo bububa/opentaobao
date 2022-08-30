@@ -1,8 +1,4 @@
 {
-	"id": 51652,
-	"name": "alibaba.alihealth.drug.kyt.destbill.list",
-	"apiChineseName": "直调单据查询",
-	"description": "为药企提供直调单据查询功能",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -32,115 +28,102 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回result",
 			"subParams": [
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model_list",
-					"type": "Model[]",
-					"description": "接口返回model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "drug_type",
 							"type": "String",
-							"description": "药品类型",
-							"required": true
+							"description": "药品类型"
 						},
 						{
 							"name": "from_user_name",
 							"type": "String",
-							"description": "发货单位",
-							"required": true
+							"description": "发货单位"
 						},
 						{
 							"name": "ass_ref_ent_id",
 							"type": "String",
-							"description": "委托企业ref_ent_id",
-							"required": true
+							"description": "委托企业ref_ent_id"
 						},
 						{
 							"name": "dest_ent_name",
 							"type": "String",
-							"description": "直调收货企业",
-							"required": true
+							"description": "直调收货企业"
 						},
 						{
 							"name": "ass_ent_name",
 							"type": "String",
-							"description": "委托企业名称",
-							"required": true
+							"description": "委托企业名称"
 						},
 						{
 							"name": "dis_ref_ent_id",
 							"type": "String",
-							"description": "配送企业ref_ent_id",
-							"required": true
+							"description": "配送企业ref_ent_id"
 						},
 						{
 							"name": "bill_id",
 							"type": "String",
-							"description": "单据ID",
-							"required": true
+							"description": "单据ID"
 						},
 						{
 							"name": "ass_ent_id",
 							"type": "String",
-							"description": "委托企业ent_id",
-							"required": true
+							"description": "委托企业ent_id"
 						},
 						{
 							"name": "dis_ent_id",
 							"type": "String",
-							"description": "配送企业ent_id",
-							"required": true
+							"description": "配送企业ent_id"
 						},
 						{
 							"name": "to_user_name",
 							"type": "String",
-							"description": "收货企业名称",
-							"required": true
+							"description": "收货企业名称"
 						},
 						{
 							"name": "dis_ent_name",
 							"type": "String",
-							"description": "配送企业名称",
-							"required": true
+							"description": "配送企业名称"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "审核状态，1：未审核；2：审核通过；3：审核失败",
-							"required": true
+							"description": "审核状态，1：未审核；2：审核通过；3：审核失败"
 						},
 						{
 							"name": "bill_code",
 							"type": "String",
-							"description": "单据编号",
-							"required": true
+							"description": "单据编号"
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "接口返回model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回result"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.destbill.list",
+	"apiChineseName": "直调单据查询",
+	"description": "为药企提供直调单据查询功能",
+	"id": 51652
 }

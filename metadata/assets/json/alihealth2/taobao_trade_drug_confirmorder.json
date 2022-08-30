@@ -1,8 +1,4 @@
 {
-	"id": 26467,
-	"name": "taobao.trade.drug.confirmorder",
-	"apiChineseName": "阿里健康020接单",
-	"description": "阿里健康020接单",
 	"requestParams": [
 		{
 			"name": "delivery_id",
@@ -28,41 +24,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "LifeResultDo",
-			"description": "life的返回值",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "RT",
-					"required": true
+					"description": "RT"
 				},
 				{
 					"name": "info",
 					"type": "String",
-					"description": "描述信息",
-					"required": true
+					"description": "描述信息"
 				},
 				{
 					"name": "ret_code",
 					"type": "String",
-					"description": "1代表成功！",
-					"required": true
+					"description": "1代表成功！"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是不是成功！",
-					"required": true
+					"description": "是不是成功！"
 				}
-			]
+			],
+			"name": "result",
+			"type": "LifeResultDo",
+			"description": "life的返回值"
 		}
-	]
+	],
+	"name": "taobao.trade.drug.confirmorder",
+	"apiChineseName": "阿里健康020接单",
+	"description": "阿里健康020接单",
+	"id": 26467
 }

@@ -1,9 +1,5 @@
 package btrip
 
-import (
-	"github.com/bububa/opentaobao/model"
-)
-
 // HotelDto 结构体
 type HotelDto struct {
 	// 房间列表
@@ -61,7 +57,7 @@ type HotelDto struct {
 	// 酒店标准ID
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 状态，0,营业中；-1，筹建中；-2，暂停营业；-3，已停业；默认为0
-	Status *model.File `json:"status,omitempty" xml:"status,omitempty"`
+	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否是客栈
 	BnbHotel bool `json:"bnb_hotel,omitempty" xml:"bnb_hotel,omitempty"`
 }

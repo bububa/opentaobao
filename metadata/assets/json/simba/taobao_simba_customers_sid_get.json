@@ -1,27 +1,25 @@
 {
-	"id": 29157,
-	"name": "taobao.simba.customers.sid.get",
-	"apiChineseName": "查看功能权限",
-	"description": "查询用户是否拥有某个功能权限",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SidVo",
-			"description": "权限列表及是否有权限",
 			"subParams": [
 				{
 					"name": "creative_img_upload",
 					"type": "Boolean",
-					"description": "当前用户是否有创意本地上传试用功能",
-					"required": true
+					"description": "当前用户是否有创意本地上传试用功能"
 				},
 				{
 					"name": "is_new_b_p_user",
 					"type": "Boolean",
-					"description": "当前用户是否新版直通车用户",
-					"required": true
+					"description": "当前用户是否新版直通车用户"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SidVo",
+			"description": "权限列表及是否有权限"
 		}
-	]
+	],
+	"name": "taobao.simba.customers.sid.get",
+	"apiChineseName": "查看功能权限",
+	"description": "查询用户是否拥有某个功能权限",
+	"id": 29157
 }

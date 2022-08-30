@@ -1,0 +1,99 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "report",
+					"type": "String",
+					"description": "质检报告",
+					"required": true
+				},
+				{
+					"name": "schedule_date",
+					"type": "String",
+					"description": "上拍场次日期"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "外部码"
+				},
+				{
+					"name": "schedule_number",
+					"type": "String",
+					"description": "场次编码（两位数值）"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "动作类型:add：上传，update：更新",
+					"required": true
+				},
+				{
+					"name": "source_type",
+					"type": "String",
+					"description": "货源类型，RECYCLE（回收）, OTHER（其他，服务商自有）"
+				}
+			],
+			"name": "param0",
+			"type": "TenderItemUploadCmd",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单ID"
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "类目"
+						}
+					],
+					"name": "data",
+					"type": "TenderItemUploadVO",
+					"description": "商品信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.tender.btob.item.upload",
+	"apiChineseName": "暗拍发布/编辑B2B商品",
+	"description": "暗拍发布/编辑B2B商品",
+	"id": 61360
+}

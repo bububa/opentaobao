@@ -12,12 +12,12 @@ import (
 // 查询大包详情
 type CainiaoGlobalHandoverContentQueryAPIRequest struct {
 	model.Params
+	// 交接物物流订单编码,和交接物运单号参数可以任选其一即可
+	_orderCode string
 	// 交接物运单号，和交接物物流订单编码参数任选其一即可
 	_trackingNumber string
 	// 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 	_client string
-	// 交接物物流订单编码,和交接物运单号参数可以任选其一即可
-	_orderCode string
 	// 多语言
 	_locale string
 	// 用户信息
@@ -45,6 +45,19 @@ func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetApiParams() url.Values {
 	return params
 }
 
+// SetOrderCode is OrderCode Setter
+// 交接物物流订单编码,和交接物运单号参数可以任选其一即可
+func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("order_code", _orderCode)
+	return nil
+}
+
+// GetOrderCode OrderCode Getter
+func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}
+
 // SetTrackingNumber is TrackingNumber Setter
 // 交接物运单号，和交接物物流订单编码参数任选其一即可
 func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetTrackingNumber(_trackingNumber string) error {
@@ -69,19 +82,6 @@ func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetClient(_client string) 
 // GetClient Client Getter
 func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetClient() string {
 	return r._client
-}
-
-// SetOrderCode is OrderCode Setter
-// 交接物物流订单编码,和交接物运单号参数可以任选其一即可
-func (r *CainiaoGlobalHandoverContentQueryAPIRequest) SetOrderCode(_orderCode string) error {
-	r._orderCode = _orderCode
-	r.Set("order_code", _orderCode)
-	return nil
-}
-
-// GetOrderCode OrderCode Getter
-func (r CainiaoGlobalHandoverContentQueryAPIRequest) GetOrderCode() string {
-	return r._orderCode
 }
 
 // SetLocale is Locale Setter

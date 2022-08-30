@@ -4,10 +4,6 @@ package alsc
 type CustomerCreateOpenReq struct {
 	// 标签列表
 	TagIdList []string `json:"tag_id_list,omitempty" xml:"tag_id_list>string,omitempty"`
-	// 外部ID
-	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
-	// 外部ID类型
-	OuterType string `json:"outer_type,omitempty" xml:"outer_type,omitempty"`
 	// 会员地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 生日
@@ -30,6 +26,10 @@ type CustomerCreateOpenReq struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 操作人ID
 	OperatorId string `json:"operator_id,omitempty" xml:"operator_id,omitempty"`
+	// 外部ID
+	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+	// 外部ID类型
+	OuterType string `json:"outer_type,omitempty" xml:"outer_type,omitempty"`
 	// 固定电话
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
 	// 备注

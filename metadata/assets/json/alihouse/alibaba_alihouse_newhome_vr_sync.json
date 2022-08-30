@@ -1,8 +1,4 @@
 {
-	"id": 55912,
-	"name": "alibaba.alihouse.newhome.vr.sync",
-	"apiChineseName": "VR关系数据同步",
-	"description": "对接易居VR关系数据迁移",
 	"requestParams": [
 		{
 			"name": "extracted_code",
@@ -42,35 +38,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "户型ID",
-					"required": true
+					"description": "户型ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.vr.sync",
+	"apiChineseName": "VR关系数据同步",
+	"description": "对接易居VR关系数据迁移",
+	"id": 55912
 }

@@ -2,10 +2,10 @@ package drugtrace
 
 // MaterialsDetectionDto 结构体
 type MaterialsDetectionDto struct {
-	// 药材图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
-	MaterialsPictures []string `json:"materials_pictures,omitempty" xml:"materials_pictures>string,omitempty"`
 	// 药材检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;
 	InspectionReportPictures []string `json:"inspection_report_pictures,omitempty" xml:"inspection_report_pictures>string,omitempty"`
+	// 药材图片（上传图片）图片建议尺寸：height: 310px;width: 670px;
+	MaterialsPictures []string `json:"materials_pictures,omitempty" xml:"materials_pictures>string,omitempty"`
 	// 农药残留检测
 	PesticidesDetection string `json:"pesticides_detection,omitempty" xml:"pesticides_detection,omitempty"`
 	// 重金属及有害元素检测

@@ -1,14 +1,6 @@
 {
-	"id": 44872,
-	"name": "alibaba.wdk.series.edit",
-	"apiChineseName": "系列品变更-更新系列",
-	"description": "系列品变更-更新系列",
 	"requestParams": [
 		{
-			"name": "series",
-			"type": "SkuSeriesEditRequest",
-			"description": "商品系列修改请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "series_desc",
@@ -28,40 +20,44 @@
 					"description": "系列编码",
 					"required": true
 				}
-			]
+			],
+			"name": "series",
+			"type": "SkuSeriesEditRequest",
+			"description": "商品系列修改请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "调用结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "商品系列更新成功结果",
-					"required": true
+					"description": "商品系列更新成功结果"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误详情",
-					"required": true
+					"description": "错误详情"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.series.edit",
+	"apiChineseName": "系列品变更-更新系列",
+	"description": "系列品变更-更新系列",
+	"id": 44872
 }

@@ -1,8 +1,4 @@
 {
-	"id": 21438,
-	"name": "tmall.product.specs.get",
-	"apiChineseName": "获取产品的规格信息",
-	"description": "按product_id或品牌下载产品规格，返回一组的产品规格信息。",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -10,36 +6,23 @@
 			"description": "产品的ID。这个不能和properties和cat_id同时起效果\u003cbr\u003e\nproperties 和cat_id 均不传时，该参数必传。"
 		},
 		{
-			"name": "properties",
-			"type": "String",
-			"description": "关键属性的字符串，pid:vid;pid:vid\n该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。\u003cbr\u003eproduct_id 不传时该参数必传"
-		},
-		{
 			"name": "cat_id",
 			"type": "Number",
 			"description": "类目的ID号，该id必须和properties同时传入。\n而且只有当product_id不传入的时候才起效果。\u003cbr\u003e product_id不传时，该参数必传"
+		},
+		{
+			"name": "properties",
+			"type": "String",
+			"description": "关键属性的字符串，pid:vid;pid:vid\n该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。\u003cbr\u003eproduct_id 不传时该参数必传"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "product_specs",
-			"type": "ProductSpec []",
-			"description": "返回一组产品规格信息。",
 			"subParams": [
 				{
 					"name": "spec_id",
 					"type": "Number",
 					"description": "产品规格ID。"
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "1:表示可以使用的数据，也就是审核通过的。\u003cbr/\u003e3：表示等待小二审核的产品规格，这个数据暂时还不能使用，要等待审核通过后，才能使用。"
-				},
-				{
-					"name": "brand_id",
-					"type": "Number",
-					"description": "产品品牌id"
 				},
 				{
 					"name": "product_id",
@@ -52,14 +35,14 @@
 					"description": "产品规格的销售属性组合。格式为：pid:vid;pid:vid。其中：pid是销售属性id，vid是销售属性值id。如果该类目品牌下面没有销售属性，可以不用填写。销售属性通过tmall.brandcat.salespro.get接口获取。"
 				},
 				{
-					"name": "custome_props_name",
-					"type": "String",
-					"description": "用户输入的属性值存放位置，例如可输入的销售属性，当用户获取pid vid后，应该先从spec_props_alias中获取，然后通过类目属性获取，获取不到，可以通过这个字段获取。"
-				},
-				{
 					"name": "spec_props_alias",
 					"type": "String",
 					"description": "销售属性值别名。格式为：pid1:vid1:别名1;pid2:vid2:别名2。其中：pid是销售属性id，vid是销售属性值id。别名长度不可以超过30个字符。目前只有颜色销售属性支持别名。"
+				},
+				{
+					"name": "custome_props_name",
+					"type": "String",
+					"description": "用户输入的属性值存放位置，例如可输入的销售属性，当用户获取pid vid后，应该先从spec_props_alias中获取，然后通过类目属性获取，获取不到，可以通过这个字段获取。"
 				},
 				{
 					"name": "pic_url",
@@ -67,9 +50,31 @@
 					"description": "产品的主图片地址。绝对地址，格式：http://host/image_path。"
 				},
 				{
-					"name": "certified_pics",
-					"type": "CertPicInfo[]",
-					"description": "认证图片列表",
+					"name": "status",
+					"type": "Number",
+					"description": "1:表示可以使用的数据，也就是审核通过的。\u003cbr/\u003e3：表示等待小二审核的产品规格，这个数据暂时还不能使用，要等待审核通过后，才能使用。"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "产品规格条形码，支持EAN-13格式。"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "产品品牌id"
+				},
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品货号"
+				},
+				{
+					"name": "market_time",
+					"type": "Date",
+					"description": "上市时间"
+				},
+				{
 					"subParams": [
 						{
 							"name": "cert_type",
@@ -81,24 +86,19 @@
 							"type": "String",
 							"description": "认证图片的url地址"
 						}
-					]
-				},
-				{
-					"name": "barcode",
-					"type": "String",
-					"description": "产品规格条形码，支持EAN-13格式。"
-				},
-				{
-					"name": "product_code",
-					"type": "String",
-					"description": "产品货号"
-				},
-				{
-					"name": "market_time",
-					"type": "Date",
-					"description": "上市时间"
+					],
+					"name": "certified_pics",
+					"type": "CertPicInfo[]",
+					"description": "认证图片列表"
 				}
-			]
+			],
+			"name": "product_specs",
+			"type": "ProductSpec []",
+			"description": "返回一组产品规格信息。"
 		}
-	]
+	],
+	"name": "tmall.product.specs.get",
+	"apiChineseName": "获取产品的规格信息",
+	"description": "按product_id或品牌下载产品规格，返回一组的产品规格信息。",
+	"id": 21438
 }

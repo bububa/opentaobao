@@ -7,7 +7,7 @@ type KcSearchQuestionQuery struct {
 	// context列表
 	ContextList []int64 `json:"context_list,omitempty" xml:"context_list>int64,omitempty"`
 	// 视角列表
-	Views []int64 `json:"views,omitempty" xml:"views>int64,omitempty"`
+	Views []string `json:"views,omitempty" xml:"views>string,omitempty"`
 	// 类目id列表
 	CategoryIdList []int64 `json:"category_id_list,omitempty" xml:"category_id_list>int64,omitempty"`
 	// 搜索字段

@@ -1,13 +1,6 @@
 {
-	"id": 35293,
-	"name": "alibaba.campus.adminmap.poiinfo.getlistbygroup",
-	"apiChineseName": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
-	"description": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
 	"requestParams": [
 		{
-			"name": "context",
-			"type": "WorkBenchContext",
-			"description": "上下文",
 			"subParams": [
 				{
 					"name": "app_code",
@@ -26,12 +19,12 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "上下文"
 		},
 		{
-			"name": "query",
-			"type": "SpaceUnitQuery",
-			"description": "查询对象",
 			"subParams": [
 				{
 					"name": "group_code",
@@ -66,192 +59,170 @@
 					"type": "Number",
 					"description": "类型id"
 				}
-			]
+			],
+			"name": "query",
+			"type": "SpaceUnitQuery",
+			"description": "查询对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ListResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "PoiInfo[]",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "geo_floor_id",
 							"type": "Number",
-							"description": "高德楼层id",
-							"required": true
+							"description": "高德楼层id"
 						},
 						{
 							"name": "ft_id",
 							"type": "String",
-							"description": "ftId",
-							"required": true
+							"description": "ftId"
 						},
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "uuid",
-							"required": true
+							"description": "uuid"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "空间单元名称",
-							"required": true
+							"description": "空间单元名称"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "园区名称",
-							"required": true
+							"description": "园区名称"
 						},
 						{
 							"name": "campus_code",
 							"type": "String",
-							"description": "园区编码",
-							"required": true
+							"description": "园区编码"
 						},
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "类型名称",
-							"required": true
+							"description": "类型名称"
 						},
 						{
 							"name": "floor_id",
 							"type": "Number",
-							"description": "楼层id",
-							"required": true
+							"description": "楼层id"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "面积",
-							"required": true
+							"description": "面积"
 						},
 						{
 							"name": "height",
 							"type": "String",
-							"description": "高度",
-							"required": true
+							"description": "高度"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "楼层名",
-							"required": true
+							"description": "楼层名"
 						},
 						{
 							"name": "category",
 							"type": "Number",
-							"description": "category",
-							"required": true
+							"description": "category"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "类型编码",
-							"required": true
+							"description": "类型编码"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "类型id",
-							"required": true
+							"description": "类型id"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "园区id",
-							"required": true
+							"description": "园区id"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "building_id",
 							"type": "Number",
-							"description": "楼宇id",
-							"required": true
+							"description": "楼宇id"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "company_id",
 							"type": "Number",
-							"description": "园区id",
-							"required": true
+							"description": "园区id"
 						},
 						{
 							"name": "building_name",
 							"type": "String",
-							"description": "楼宇名称",
-							"required": true
+							"description": "楼宇名称"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "businessId",
-							"required": true
+							"description": "businessId"
 						}
-					]
+					],
+					"name": "contents",
+					"type": "PoiInfo[]",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "totalCount",
-					"required": true
+					"description": "totalCount"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ListResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.adminmap.poiinfo.getlistbygroup",
+	"apiChineseName": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
+	"description": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
+	"id": 35293
 }

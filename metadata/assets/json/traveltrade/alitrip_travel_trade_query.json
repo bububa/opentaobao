@@ -1,8 +1,4 @@
 {
-	"id": 28564,
-	"name": "alitrip.travel.trade.query",
-	"apiChineseName": "飞猪度假-订单详情查询接口",
-	"description": "飞猪度假订单详情查询接口",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "first_result",
-			"type": "TopTripOrderResult",
-			"description": "交易主订单详情",
 			"subParams": [
 				{
 					"name": "order_id",
@@ -60,10 +53,6 @@
 					"required": true
 				},
 				{
-					"name": "pay_info",
-					"type": "PayInfo",
-					"description": "主订单支付信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "alipay_no",
@@ -101,13 +90,13 @@
 							"description": "分阶段付款的订单状态，目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)",
 							"required": true
 						}
-					]
+					],
+					"name": "pay_info",
+					"type": "PayInfo",
+					"description": "主订单支付信息",
+					"required": true
 				},
 				{
-					"name": "seller_info",
-					"type": "SellerInfo",
-					"description": "卖家信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "seller_can_rate",
@@ -163,13 +152,13 @@
 							"description": "卖家店铺名称",
 							"required": true
 						}
-					]
+					],
+					"name": "seller_info",
+					"type": "SellerInfo",
+					"description": "卖家信息",
+					"required": true
 				},
 				{
-					"name": "buyer_info",
-					"type": "BuyerInfo",
-					"description": "买家信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "buyer_email",
@@ -201,13 +190,13 @@
 							"description": "买家是否已评价",
 							"required": true
 						}
-					]
+					],
+					"name": "buyer_info",
+					"type": "BuyerInfo",
+					"description": "买家信息",
+					"required": true
 				},
 				{
-					"name": "promotion_details",
-					"type": "PromotionDetail[]",
-					"description": "主、子订单优惠信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "discount_fee",
@@ -239,13 +228,13 @@
 							"description": "优惠信息的名称",
 							"required": true
 						}
-					]
+					],
+					"name": "promotion_details",
+					"type": "PromotionDetail[]",
+					"description": "主、子订单优惠信息",
+					"required": true
 				},
 				{
-					"name": "sub_orders",
-					"type": "SubOrderInfo[]",
-					"description": "主订单包含的各个子订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "adjust_fee",
@@ -260,10 +249,6 @@
 							"required": true
 						},
 						{
-							"name": "buy_item_info",
-							"type": "BuyItemInfo",
-							"description": "购买的商品信息（商品、sku信息，单价、数量、出行日期等信息）",
-							"required": true,
 							"subParams": [
 								{
 									"name": "category_ext_infos",
@@ -348,14 +333,26 @@
 									"type": "String",
 									"description": "商品类目相关的扩展信息，JSON格式。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107548",
 									"required": true
+								},
+								{
+									"name": "fs_end_time",
+									"type": "String",
+									"description": "场次开始时间",
+									"required": true
+								},
+								{
+									"name": "fs_start_time",
+									"type": "String",
+									"description": "场次结束时间",
+									"required": true
 								}
-							]
+							],
+							"name": "buy_item_info",
+							"type": "BuyItemInfo",
+							"description": "购买的商品信息（商品、sku信息，单价、数量、出行日期等信息）",
+							"required": true
 						},
 						{
-							"name": "contactor",
-							"type": "TravellerInfo",
-							"description": "联系人/取件人信息。通用联系人信息，没有配置度假出行人模板的商品订单（如wifi电话卡等类目），从这里获取联系人或取件人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "extend_attributes_json",
@@ -477,7 +474,11 @@
 									"description": "名（拼音）",
 									"required": true
 								}
-							]
+							],
+							"name": "contactor",
+							"type": "TravellerInfo",
+							"description": "联系人/取件人信息。通用联系人信息，没有配置度假出行人模板的商品订单（如wifi电话卡等类目），从这里获取联系人或取件人信息",
+							"required": true
 						},
 						{
 							"name": "discount_fee",
@@ -546,10 +547,6 @@
 							"required": true
 						},
 						{
-							"name": "travellers",
-							"type": "TravellerInfo[]",
-							"description": "出行人信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "name",
@@ -671,7 +668,11 @@
 									"description": "商家自定义的个性化出行人信息，JSON格式。支持的key列表详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107550",
 									"required": true
 								}
-							]
+							],
+							"name": "travellers",
+							"type": "TravellerInfo[]",
+							"description": "出行人信息",
+							"required": true
 						},
 						{
 							"name": "sub_order_id_string",
@@ -691,7 +692,11 @@
 							"description": "二次确认状态，1、待商家确认 2、确认不通过 3、确认通过 4、过期未确认 5、买家申请退款成功 6、票号验证",
 							"required": true
 						}
-					]
+					],
+					"name": "sub_orders",
+					"type": "SubOrderInfo[]",
+					"description": "主订单包含的各个子订单信息",
+					"required": true
 				},
 				{
 					"name": "order_with_depo",
@@ -706,10 +711,6 @@
 					"required": true
 				},
 				{
-					"name": "score_details",
-					"type": "ScoreDetail[]",
-					"description": "评价对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "content",
@@ -729,7 +730,11 @@
 							"description": "评价维度",
 							"required": true
 						}
-					]
+					],
+					"name": "score_details",
+					"type": "ScoreDetail[]",
+					"description": "评价对象",
+					"required": true
 				},
 				{
 					"name": "cancel_reason",
@@ -743,7 +748,14 @@
 					"description": "评价xxxx",
 					"required": true
 				}
-			]
+			],
+			"name": "first_result",
+			"type": "TopTripOrderResult",
+			"description": "交易主订单详情"
 		}
-	]
+	],
+	"name": "alitrip.travel.trade.query",
+	"apiChineseName": "飞猪度假-订单详情查询接口",
+	"description": "飞猪度假订单详情查询接口",
+	"id": 28564
 }

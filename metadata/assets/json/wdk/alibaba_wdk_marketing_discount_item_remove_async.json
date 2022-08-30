@@ -1,15 +1,6 @@
 {
-	"id": 38636,
-	"name": "alibaba.wdk.marketing.discount.item.remove.async",
-	"apiChineseName": "特价批量移除商品",
-	"description": "特价批量移除商品",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ItemDiscountSku[]",
-			"description": "sku信息",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "sku_code",
@@ -17,12 +8,14 @@
 					"description": "商品的skuCode",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ItemDiscountSku[]",
+			"description": "sku信息",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "param1",
-			"type": "CommonActivityParam",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "out_act_id",
@@ -35,7 +28,10 @@
 					"description": "活动Id",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "version",
@@ -46,43 +42,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "处理结果",
-					"required": true
+					"description": "处理结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "datas",
-					"type": "ItemDiscountSku[]",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "sku编码",
-							"required": true
+							"description": "sku编码"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "ItemDiscountSku[]",
+					"description": "结果数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.discount.item.remove.async",
+	"apiChineseName": "特价批量移除商品",
+	"description": "特价批量移除商品",
+	"id": 38636
 }

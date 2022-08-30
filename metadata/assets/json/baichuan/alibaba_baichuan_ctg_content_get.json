@@ -1,8 +1,4 @@
 {
-	"id": 27956,
-	"name": "alibaba.baichuan.ctg.content.get",
-	"apiChineseName": "百川内容平台内容获取",
-	"description": "百川内容平台内容获取",
 	"requestParams": [
 		{
 			"name": "delivery_id",
@@ -47,70 +43,65 @@
 			"description": "errorCode"
 		},
 		{
-			"name": "data_list",
-			"type": "Data []",
-			"description": "data",
 			"subParams": [
 				{
 					"name": "title",
 					"type": "String",
-					"description": "title",
-					"required": true
+					"description": "title"
 				},
 				{
 					"name": "publish_time",
 					"type": "Date",
-					"description": "publishTime",
-					"required": true
+					"description": "publishTime"
 				},
 				{
 					"name": "source",
 					"type": "String",
-					"description": "source",
-					"required": true
+					"description": "source"
 				},
 				{
 					"name": "summary",
 					"type": "String",
-					"description": "summary",
-					"required": true
+					"description": "summary"
 				},
 				{
 					"name": "cover_url",
 					"type": "String",
-					"description": "coverUrl",
-					"required": true
+					"description": "coverUrl"
 				},
 				{
 					"name": "content_url",
 					"type": "String",
-					"description": "contentUrl",
-					"required": true
+					"description": "contentUrl"
 				},
 				{
 					"name": "thumbnails",
 					"type": "String",
-					"description": "paths",
-					"required": true
+					"description": "paths"
 				},
 				{
 					"name": "org_source",
 					"type": "String",
-					"description": "org_source",
-					"required": true
+					"description": "org_source"
 				},
 				{
 					"name": "nick",
 					"type": "String",
-					"description": "nick",
-					"required": true
+					"description": "nick"
 				}
-			]
+			],
+			"name": "data_list",
+			"type": "Data []",
+			"description": "data"
 		},
 		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "success"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.ctg.content.get",
+	"apiChineseName": "百川内容平台内容获取",
+	"description": "百川内容平台内容获取",
+	"id": 27956
 }

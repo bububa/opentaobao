@@ -1,13 +1,6 @@
 {
-	"id": 46115,
-	"name": "alibaba.wdk.coupon.template.terminate",
-	"apiChineseName": "优惠券模版终止",
-	"description": "优惠券模版终止",
 	"requestParams": [
 		{
-			"name": "param_coupon_template_terminate_request",
-			"type": "CouponTemplateTerminateRequest",
-			"description": "参数",
 			"subParams": [
 				{
 					"name": "source_id",
@@ -15,9 +8,6 @@
 					"description": "ump模板ID"
 				},
 				{
-					"name": "user_info",
-					"type": "UserInfo",
-					"description": "用户信息",
 					"subParams": [
 						{
 							"name": "source",
@@ -34,42 +24,48 @@
 							"type": "String",
 							"description": "用户名"
 						}
-					]
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息"
 				}
-			]
+			],
+			"name": "param_coupon_template_terminate_request",
+			"type": "CouponTemplateTerminateRequest",
+			"description": "参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "model",
-					"type": "Json",
-					"description": "返回",
-					"required": true
+					"type": "String",
+					"description": "返回"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功标志",
-					"required": true
+					"description": "成功标志"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.coupon.template.terminate",
+	"apiChineseName": "优惠券模版终止",
+	"description": "优惠券模版终止",
+	"id": 46115
 }

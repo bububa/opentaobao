@@ -1,8 +1,4 @@
 {
-	"id": 24848,
-	"name": "taobao.open.account.list",
-	"apiChineseName": "OpenAccount账号信息查询",
-	"description": "OpenAccount账号信息查询",
 	"requestParams": [
 		{
 			"name": "open_account_ids",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "datas",
-			"type": "OpenaccountObject []",
-			"description": "返回信息",
 			"subParams": [
 				{
 					"name": "message",
@@ -29,9 +22,6 @@
 					"description": "返回信息"
 				},
 				{
-					"name": "data",
-					"type": "OpenAccount",
-					"description": "返回数据",
 					"subParams": [
 						{
 							"name": "login_id",
@@ -183,7 +173,10 @@
 							"type": "Number",
 							"description": "TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;"
 						}
-					]
+					],
+					"name": "data",
+					"type": "OpenAccount",
+					"description": "返回数据"
 				},
 				{
 					"name": "successful",
@@ -195,7 +188,14 @@
 					"type": "Number",
 					"description": "错误码"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "OpenaccountObject []",
+			"description": "返回信息"
 		}
-	]
+	],
+	"name": "taobao.open.account.list",
+	"apiChineseName": "OpenAccount账号信息查询",
+	"description": "OpenAccount账号信息查询",
+	"id": 24848
 }

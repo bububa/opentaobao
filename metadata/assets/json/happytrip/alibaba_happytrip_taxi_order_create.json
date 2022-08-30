@@ -1,8 +1,4 @@
 {
-	"id": 28366,
-	"name": "alibaba.happytrip.taxi.order.create",
-	"apiChineseName": "用户叫车",
-	"description": "用户根据需要发起叫车请求，在发起请求之前必须事先获得order id.",
 	"requestParams": [
 		{
 			"name": "uid",
@@ -142,6 +138,21 @@
 			"name": "passenger_number",
 			"type": "Number",
 			"description": "乘车人数，允许拼车时该参数不为空"
+		},
+		{
+			"name": "add_price",
+			"type": "String",
+			"description": "加价（元）"
+		},
+		{
+			"name": "start_poi_id",
+			"type": "String",
+			"description": "出发地高德POI ID"
+		},
+		{
+			"name": "end_poi_id",
+			"type": "String",
+			"description": "目的地高德POI ID"
 		}
 	],
 	"responseParams": [
@@ -151,15 +162,8 @@
 			"description": "错误码"
 		},
 		{
-			"name": "data",
-			"type": "OrderCreateResult",
-			"description": "订单创建结果",
 			"subParams": [
 				{
-					"name": "order",
-					"type": "OrderInfo",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
@@ -293,13 +297,13 @@
 							"description": "成本中心代码，用于区分不同的分账账号",
 							"required": true
 						}
-					]
+					],
+					"name": "order",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true
 				},
 				{
-					"name": "price",
-					"type": "PriceInfo",
-					"description": "价格信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "estimate",
@@ -307,14 +311,25 @@
 							"description": "预估车费",
 							"required": true
 						}
-					]
+					],
+					"name": "price",
+					"type": "PriceInfo",
+					"description": "价格信息",
+					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "OrderCreateResult",
+			"description": "订单创建结果"
 		},
 		{
 			"name": "errmsg",
 			"type": "String",
 			"description": "错误信息"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.create",
+	"apiChineseName": "用户叫车",
+	"description": "用户根据需要发起叫车请求，在发起请求之前必须事先获得order id.",
+	"id": 28366
 }

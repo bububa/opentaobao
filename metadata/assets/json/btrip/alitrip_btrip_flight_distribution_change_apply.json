@@ -1,0 +1,189 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_voluntary",
+					"type": "Number",
+					"description": "是否自愿",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "arr_city",
+							"type": "String",
+							"description": "到达城市编码",
+							"required": true
+						},
+						{
+							"name": "cabin",
+							"type": "String",
+							"description": "舱位"
+						},
+						{
+							"name": "dep_city",
+							"type": "String",
+							"description": "出发城市编码",
+							"required": true
+						},
+						{
+							"name": "dep_date",
+							"type": "String",
+							"description": "出发日期",
+							"required": true
+						},
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "改签航班号",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "change_fee",
+									"type": "Number",
+									"description": "改签费"
+								},
+								{
+									"name": "origin_flight_no",
+									"type": "String",
+									"description": "原航班号",
+									"required": true
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客姓名",
+									"required": true
+								},
+								{
+									"name": "upgrade_fee",
+									"type": "Number",
+									"description": "升舱费用"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户编号",
+									"required": true
+								}
+							],
+							"name": "passenger_info_list",
+							"type": "PassengerCabinInfo[]",
+							"description": "改签乘客信息列表",
+							"required": true
+						}
+					],
+					"name": "modify_flight_info_list",
+					"type": "ModifyFlightInfo[]",
+					"description": "改签航班信息",
+					"required": true
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "分销外部订单号",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "改签原因",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "分销子渠道，通常为corpId",
+					"required": true
+				},
+				{
+					"name": "dis_sub_order_id",
+					"type": "String",
+					"description": "分销外部改签单号",
+					"required": true
+				}
+			],
+			"name": "param_btrip_flight_modify_apply_rq",
+			"type": "BtripFlightModifyApplyRq",
+			"description": "改签申请入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "change_fee",
+							"type": "Number",
+							"description": "改签费用"
+						},
+						{
+							"name": "dis_order_id",
+							"type": "String",
+							"description": "分销外部订单号"
+						},
+						{
+							"name": "status",
+							"type": "byte",
+							"description": "改签单状态"
+						},
+						{
+							"name": "dis_sub_order_id",
+							"type": "String",
+							"description": "分销外部改签单号"
+						},
+						{
+							"name": "upgrade_fee",
+							"type": "Number",
+							"description": "升舱费"
+						},
+						{
+							"name": "can_pay",
+							"type": "Boolean",
+							"description": "能否支付"
+						},
+						{
+							"name": "deadline_time",
+							"type": "String",
+							"description": "支付截止时间"
+						},
+						{
+							"name": "btrip_sub_order_id",
+							"type": "Number",
+							"description": "商旅改签申请单号"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightModifyApplyRs",
+					"description": "返回模块"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误编码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.change.apply",
+	"apiChineseName": "商旅机票改签申请",
+	"description": "商旅机票改签申请",
+	"id": 57653
+}

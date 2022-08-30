@@ -1,13 +1,6 @@
 {
-	"id": 44226,
-	"name": "alibaba.alicom.order.preauthorize.create",
-	"apiChineseName": "业务办理结果",
-	"description": "授授权:签约结果通知",
 	"requestParams": [
 		{
-			"name": "pre_authorize_model",
-			"type": "PreAuthorizeModel",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "ext",
@@ -34,14 +27,14 @@
 					"type": "String",
 					"description": "授权水号"
 				}
-			]
+			],
+			"name": "pre_authorize_model",
+			"type": "PreAuthorizeModel",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "success",
@@ -67,7 +60,14 @@
 					"description": "数据结果",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alicom.order.preauthorize.create",
+	"apiChineseName": "业务办理结果",
+	"description": "授授权:签约结果通知",
+	"id": 44226
 }

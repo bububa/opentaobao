@@ -1,0 +1,513 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "店铺id",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				}
+			],
+			"name": "policy_task_query_d_t_o",
+			"type": "PolicyTaskQueryDto",
+			"description": "进度请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "policy_process_type",
+							"type": "Number",
+							"description": "政策进度类型"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改日期"
+						},
+						{
+							"name": "agent_id",
+							"type": "Number",
+							"description": "店铺id"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建日期"
+						},
+						{
+							"name": "success_amount",
+							"type": "Number",
+							"description": "成功数量"
+						},
+						{
+							"name": "agent_sub_id",
+							"type": "Number",
+							"description": "操作人id"
+						},
+						{
+							"name": "agent_sub_nick",
+							"type": "String",
+							"description": "操作人昵称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间"
+								},
+								{
+									"name": "agent_id",
+									"type": "Number",
+									"description": "店铺id"
+								},
+								{
+									"name": "policy_code",
+									"type": "String",
+									"description": "政策代码"
+								},
+								{
+									"name": "code_share_airline",
+									"type": "String",
+									"description": "共享航司二字码"
+								},
+								{
+									"name": "down",
+									"type": "Number",
+									"description": "下浮"
+								},
+								{
+									"name": "create_pnr_limit",
+									"type": "Number",
+									"description": "紧张阈值"
+								},
+								{
+									"name": "code_share",
+									"type": "Number",
+									"description": "支持共享航班"
+								},
+								{
+									"subParams": [
+										{
+											"name": "carry_rule",
+											"type": "Number",
+											"description": "进位规则"
+										},
+										{
+											"name": "lowest_price",
+											"type": "Number",
+											"description": "最低结算价"
+										},
+										{
+											"name": "cal_fare_method",
+											"type": "Number",
+											"description": "票面价算法"
+										},
+										{
+											"subParams": [
+												{
+													"name": "down_fare",
+													"type": "Number",
+													"description": "直减金额"
+												},
+												{
+													"name": "down_percent",
+													"type": "Number",
+													"description": "直减比例"
+												},
+												{
+													"name": "validate_cabin",
+													"type": "Number",
+													"description": "验舱"
+												},
+												{
+													"name": "fare_cabin",
+													"type": "String",
+													"description": "指定舱位"
+												},
+												{
+													"name": "flight_index",
+													"type": "String",
+													"description": "行程索引"
+												}
+											],
+											"name": "flight_price_values",
+											"type": "FlightPriceDto[]",
+											"description": "按航段调运价"
+										},
+										{
+											"name": "bid_fee",
+											"type": "Number",
+											"description": "竞价空间"
+										},
+										{
+											"name": "bid_method",
+											"type": "Number",
+											"description": "竞价方式"
+										},
+										{
+											"name": "commission",
+											"type": "Number",
+											"description": "代理费率"
+										},
+										{
+											"name": "return_price",
+											"type": "Number",
+											"description": "留钱"
+										}
+									],
+									"name": "price",
+									"type": "PriceDto",
+									"description": "价格控制"
+								},
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "降落机场"
+								},
+								{
+									"name": "up",
+									"type": "Number",
+									"description": "上浮"
+								},
+								{
+									"name": "airline",
+									"type": "String",
+									"description": "航空公司二字码"
+								},
+								{
+									"subParams": [
+										{
+											"name": "return_stock",
+											"type": "Number",
+											"description": "退票是否还库存"
+										},
+										{
+											"name": "stock_limit",
+											"type": "Number",
+											"description": "库存限制"
+										},
+										{
+											"name": "stock_num",
+											"type": "Number",
+											"description": "库存数量"
+										}
+									],
+									"name": "stock",
+									"type": "StockDto",
+									"description": "库存"
+								},
+								{
+									"name": "account_code",
+									"type": "String",
+									"description": "大客户编码"
+								},
+								{
+									"name": "policy_source",
+									"type": "Number",
+									"description": "政策来源"
+								},
+								{
+									"name": "float_unit",
+									"type": "Number",
+									"description": "浮动单位"
+								},
+								{
+									"name": "fare_sources",
+									"type": "String[]",
+									"description": "运价渠道"
+								},
+								{
+									"name": "fare_price",
+									"type": "Number",
+									"description": "票面价（元）"
+								},
+								{
+									"name": "pata",
+									"type": "Number",
+									"description": "pata"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间"
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "到达机场"
+								},
+								{
+									"name": "create_pnr",
+									"type": "Number",
+									"description": "是否订位"
+								},
+								{
+									"name": "trip_type",
+									"type": "Number",
+									"description": "行程类型"
+								},
+								{
+									"subParams": [
+										{
+											"name": "sale_time",
+											"type": "String",
+											"description": "销售时间"
+										},
+										{
+											"name": "advance_day",
+											"type": "String",
+											"description": "提前订座天数"
+										},
+										{
+											"subParams": [
+												{
+													"name": "start",
+													"type": "Date",
+													"description": "开始日期"
+												},
+												{
+													"name": "end",
+													"type": "Date",
+													"description": "结束日期"
+												}
+											],
+											"name": "sale_dates",
+											"type": "DatePairDto[]",
+											"description": "销售日期"
+										},
+										{
+											"name": "stay_day",
+											"type": "String",
+											"description": "停留天数"
+										}
+									],
+									"name": "sale",
+									"type": "SaleDto",
+									"description": "销售限制"
+								},
+								{
+									"name": "fare_basis",
+									"type": "String",
+									"description": "farebasis"
+								},
+								{
+									"subParams": [
+										{
+											"name": "age_limit",
+											"type": "String",
+											"description": "年龄限制"
+										},
+										{
+											"name": "documents_limit",
+											"type": "String",
+											"description": "身份地域限制"
+										},
+										{
+											"name": "pax_num",
+											"type": "String",
+											"description": "任务限制"
+										},
+										{
+											"name": "product_code",
+											"type": "Number",
+											"description": "产品类型"
+										},
+										{
+											"name": "documents_type",
+											"type": "String[]",
+											"description": "证件类型"
+										}
+									],
+									"name": "passenger",
+									"type": "PassengerDto",
+									"description": "乘客限制"
+								},
+								{
+									"name": "err_code",
+									"type": "String",
+									"description": "错误代码"
+								},
+								{
+									"name": "policy_type",
+									"type": "Number",
+									"description": "政策类型"
+								},
+								{
+									"name": "is_white",
+									"type": "Number",
+									"description": "舱位条件"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "舱等"
+										},
+										{
+											"subParams": [
+												{
+													"name": "start",
+													"type": "Date",
+													"description": "开始日期"
+												},
+												{
+													"name": "end",
+													"type": "Date",
+													"description": "结束日期"
+												}
+											],
+											"name": "allow_travel_dates",
+											"type": "DatePairDto[]",
+											"description": "可售航班日期"
+										},
+										{
+											"name": "flight_index",
+											"type": "Number",
+											"description": "行程索引"
+										},
+										{
+											"subParams": [
+												{
+													"name": "start",
+													"type": "Date",
+													"description": "开始日期"
+												},
+												{
+													"name": "end",
+													"type": "Date",
+													"description": "结束日期"
+												}
+											],
+											"name": "restrict_travel_dates",
+											"type": "DatePairDto[]",
+											"description": "不可售航班日期"
+										},
+										{
+											"name": "allow_travel_time",
+											"type": "String",
+											"description": "可售航班时间"
+										},
+										{
+											"name": "day_weeks",
+											"type": "String[]",
+											"description": "班期限制"
+										},
+										{
+											"name": "allow_flight_num",
+											"type": "String",
+											"description": "可售航班号"
+										},
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "舱位"
+										},
+										{
+											"name": "restrict_flight_num",
+											"type": "String",
+											"description": "不可售航班号"
+										}
+									],
+									"name": "flights",
+									"type": "FlightDTO[]",
+									"description": "行程限制"
+								},
+								{
+									"name": "office_no",
+									"type": "String",
+									"description": "商家配置号"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "政策状态"
+								},
+								{
+									"name": "err_msg",
+									"type": "String",
+									"description": "错误信息"
+								}
+							],
+							"name": "error_policy_list",
+							"type": "PolicyResponseDto[]",
+							"description": "错误信息"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "失败excel的地址"
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "总数量"
+						},
+						{
+							"name": "policy_type",
+							"type": "Number",
+							"description": "政策类型"
+						},
+						{
+							"name": "fail_amount",
+							"type": "Number",
+							"description": "失败数量"
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "属性信息"
+						},
+						{
+							"name": "task_status",
+							"type": "Number",
+							"description": "任务状态：0，未开始；1，执行中；2，上传执行完成；3，删除执行完成；4，任务执行完成"
+						},
+						{
+							"name": "task_id",
+							"type": "Number",
+							"description": "任务id"
+						}
+					],
+					"name": "data",
+					"type": "PolicyCreateResponseDto",
+					"description": "创建\u0026删除结果参数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因"
+				}
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
+		}
+	],
+	"name": "alitrip.policy.process",
+	"apiChineseName": "政策进度查询",
+	"description": "上传特殊类型的单程/往返政策",
+	"id": 56973
+}

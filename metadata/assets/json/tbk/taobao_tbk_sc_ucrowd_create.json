@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "ucrowd_type",
+			"type": "Number",
+			"description": "人群类型，1:社群",
+			"required": true
+		},
+		{
+			"name": "external_crowd_code",
+			"type": "String",
+			"description": "人群外部编码，只能包含：字母、数字、下划线（以字母、数字开头），最大128字符"
+		},
+		{
+			"name": "ucrowd_name",
+			"type": "String",
+			"description": "人群名称，最大32字符",
+			"required": true
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "人群描述，最大100字符"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "ucrowd_id",
+					"type": "Number",
+					"description": "人群标签id"
+				}
+			],
+			"name": "data",
+			"type": "RpcResult",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.ucrowd.create",
+	"apiChineseName": "淘宝客-服务商-创建人群标签",
+	"description": "服务商使用。可为淘宝客创建会员人群标签，获得人群id，人群id可用于物料评估推荐等场景。",
+	"id": 53867
+}

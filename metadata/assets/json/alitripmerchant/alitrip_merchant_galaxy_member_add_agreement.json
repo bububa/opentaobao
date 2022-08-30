@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "微信code(实时获取)"
+		},
+		{
+			"name": "privacy_agreement",
+			"type": "Boolean",
+			"description": "隐私协议枚举type"
+		},
+		{
+			"name": "data_export_agreement",
+			"type": "Boolean",
+			"description": "会员协议枚举"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.member.add.agreement",
+	"apiChineseName": "添加用户协议记录接口",
+	"description": "记录用户是否授权协议",
+	"id": 62132
+}

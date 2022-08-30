@@ -14,12 +14,18 @@ type InspectionReport struct {
 	QuoteId string `json:"quote_id,omitempty" xml:"quote_id,omitempty"`
 	// 对此商品的质检描述
 	Summary string `json:"summary,omitempty" xml:"summary,omitempty"`
-	// 特别说明，Json串,一个字符串存储特别说明的文字描述,一个字符串列表存储上传的图片url:json形式:
+	// *      * Json串:desc存储特别说明的文字描述,images存储上传的图片url;      * 形如:      * {      *   "desc":"desc",      *   "images":[      *      "imageUrl1",      *      "imageUrl2"      *   ]      * };
 	Explanation string `json:"explanation,omitempty" xml:"explanation,omitempty"`
+	// 设备imei号
+	Imei string `json:"imei,omitempty" xml:"imei,omitempty"`
 	// 价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
 	// 订单，orderId优先，与quote_id任选其一
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 手淘商家的淘宝账号id，通过 spuId 和 recycleSupplierId 定位到唯一的回收模板
+	RecycleSupplierId int64 `json:"recycle_supplier_id,omitempty" xml:"recycle_supplier_id,omitempty"`
+	// 质检类型（1第一次直接;2二次复检）
+	AppraiseType int64 `json:"appraise_type,omitempty" xml:"appraise_type,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

@@ -8,8 +8,6 @@ type TopHomeItemDto struct {
 	Images []ItemImageDto `json:"images,omitempty" xml:"images>item_image_dto,omitempty"`
 	// SKU
 	Skus []SkuDto `json:"skus,omitempty" xml:"skus>sku_dto,omitempty"`
-	// features
-	Features string `json:"features,omitempty" xml:"features,omitempty"`
 	// 摊位ID
 	BoothId string `json:"booth_id,omitempty" xml:"booth_id,omitempty"`
 	// 创建时间
@@ -18,6 +16,8 @@ type TopHomeItemDto struct {
 	DealerCode string `json:"dealer_code,omitempty" xml:"dealer_code,omitempty"`
 	// 描述
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
+	// features
+	Features string `json:"features,omitempty" xml:"features,omitempty"`
 	// 卖场ID
 	MallId string `json:"mall_id,omitempty" xml:"mall_id,omitempty"`
 	// 商家编码

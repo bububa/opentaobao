@@ -1,13 +1,6 @@
 {
-	"id": 51542,
-	"name": "taobao.alitrip.car.order.agent.cancel",
-	"apiChineseName": "司机或客服取消订单",
-	"description": "司机或客服取消订单后通知飞猪订单取消",
 	"requestParams": [
 		{
-			"name": "param_order_cancel",
-			"type": "OrderCancel",
-			"description": "取消对象",
 			"subParams": [
 				{
 					"name": "order_id",
@@ -34,7 +27,10 @@
 					"type": "Number",
 					"description": "取消类别(14:司机取消订单 15:商家客服取消订单)"
 				}
-			]
+			],
+			"name": "param_order_cancel",
+			"type": "OrderCancel",
+			"description": "取消对象"
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "Number",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.agent.cancel",
+	"apiChineseName": "司机或客服取消订单",
+	"description": "司机或客服取消订单后通知飞猪订单取消",
+	"id": 51542
 }

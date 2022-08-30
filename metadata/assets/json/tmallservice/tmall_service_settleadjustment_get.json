@@ -1,8 +1,4 @@
 {
-	"id": 27438,
-	"name": "tmall.service.settleadjustment.get",
-	"apiChineseName": "查询结算调整单单条记录",
-	"description": "提供给服务商通过结算调整单id获取结算调整单信息",
 	"requestParams": [
 		{
 			"name": "id",
@@ -13,117 +9,104 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data_module",
-					"type": "SettleAdjustmentResponse",
-					"description": "dataModule",
-					"required": true,
 					"subParams": [
+						{
+							"name": "comments",
+							"type": "String",
+							"description": "comments"
+						},
 						{
 							"name": "cost",
 							"type": "Number",
-							"description": "cost，单位分",
-							"required": true
+							"description": "cost，单位分"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "description",
-							"required": true
-						},
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "id",
-							"required": true
-						},
-						{
-							"name": "picture_urls",
-							"type": "String",
-							"description": "pictureUrls，多条已冒号分隔",
-							"required": true
-						},
-						{
-							"name": "price_factors",
-							"type": "String",
-							"description": "priceFactors",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "调整单状态 待商家确认:1, 商家已确认:2,  待小二判定:3,  小二判定有效:4,  小二判定无效:5,  小二无法判定:6, 服务商取消:7, 超时确认:8, 完成:9",
-							"required": true
-						},
-						{
-							"name": "workcard_id",
-							"type": "Number",
-							"description": "工单ID",
-							"required": true
-						},
-						{
-							"name": "comments",
-							"type": "String",
-							"description": "comments",
-							"required": true
+							"description": "description"
 						},
 						{
 							"name": "create_time",
 							"type": "Date",
-							"description": "gmtCreate",
-							"required": true
+							"description": "gmtCreate"
 						},
 						{
 							"name": "modified_time",
 							"type": "Date",
-							"description": "gmtModified",
-							"required": true
+							"description": "gmtModified"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id"
+						},
+						{
+							"name": "picture_urls",
+							"type": "String",
+							"description": "pictureUrls，多条已冒号分隔"
+						},
+						{
+							"name": "price_factors",
+							"type": "String",
+							"description": "priceFactors"
 						},
 						{
 							"name": "service_order_id",
 							"type": "Number",
-							"description": "serviceOrderId",
-							"required": true
+							"description": "serviceOrderId"
+						},
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "工单ID"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "调整单状态 待商家确认:1, 商家已确认:2,  待小二判定:3,  小二判定有效:4,  小二判定无效:5,  小二无法判定:6, 服务商取消:7, 超时确认:8, 完成:9"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "调整单类型",
-							"required": true
+							"description": "调整单类型"
 						}
-					]
+					],
+					"name": "data_module",
+					"type": "SettleAdjustmentResponse",
+					"description": "dataModule"
 				},
 				{
-					"name": "error_message",
-					"type": "ErrorMessage",
-					"description": "errorMessage",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "errorMsg",
-							"required": true
+							"description": "errorMsg"
 						}
-					]
+					],
+					"name": "error_message",
+					"type": "ErrorMessage",
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success，成功true，失败false",
-					"required": true
+					"description": "success，成功true，失败false"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.service.settleadjustment.get",
+	"apiChineseName": "查询结算调整单单条记录",
+	"description": "提供给服务商通过结算调整单id获取结算调整单信息",
+	"id": 27438
 }

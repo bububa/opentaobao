@@ -1,8 +1,4 @@
 {
-	"id": 42447,
-	"name": "alibaba.aliyunindep.digitalsms.createtemplate",
-	"apiChineseName": "数字短信模板创建",
-	"description": "数字短信模板创建，给阿里云一方产品使用，类型：9",
 	"requestParams": [
 		{
 			"name": "template_name",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "template_contents",
-			"type": "DigitalSmsTemplateContentDto[]",
-			"description": "系统自动生成",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "file_suffix",
@@ -41,7 +32,12 @@
 					"description": "文件二进制数组转base64，转的时候指定编码格式为UTF-8",
 					"required": true
 				}
-			]
+			],
+			"name": "template_contents",
+			"type": "DigitalSmsTemplateContentDto[]",
+			"description": "系统自动生成",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "apply_remark",
@@ -52,35 +48,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "返回信息描述",
-					"required": true
+					"description": "返回信息描述"
 				},
 				{
 					"name": "model",
 					"type": "String",
-					"description": "模板code",
-					"required": true
+					"description": "模板code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "alibaba.aliyunindep.digitalsms.createtemplate",
+	"apiChineseName": "数字短信模板创建",
+	"description": "数字短信模板创建，给阿里云一方产品使用，类型：9",
+	"id": 42447
 }

@@ -1,14 +1,6 @@
 {
-	"id": 37065,
-	"name": "tmall.servicecenter.tp.funds.recover.query",
-	"apiChineseName": "服务商资金权益逆向扣回的查询接口",
-	"description": "服务商资金权益逆向扣回的查询接口",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "TpFundsRecoverQuery",
-			"description": "query入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "biz_order_id",
@@ -16,60 +8,61 @@
 					"description": "订单ID",
 					"required": true
 				}
-			]
+			],
+			"name": "query",
+			"type": "TpFundsRecoverQuery",
+			"description": "query入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultBase",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "value",
-					"type": "TpFundsRecoverResultDo",
-					"description": "value",
-					"required": true,
 					"subParams": [
 						{
 							"name": "actual_recover_amount",
 							"type": "Number",
-							"description": "实际扣回金额，单位分",
-							"required": true
+							"description": "实际扣回金额，单位分"
 						},
 						{
 							"name": "to_recover_amount",
 							"type": "Number",
-							"description": "应扣回金额，单位分",
-							"required": true
+							"description": "应扣回金额，单位分"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "Number",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						}
-					]
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "查询接口是否OK",
-					"required": true
+					],
+					"name": "value",
+					"type": "TpFundsRecoverResultDo",
+					"description": "value"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询接口是否OK"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.servicecenter.tp.funds.recover.query",
+	"apiChineseName": "服务商资金权益逆向扣回的查询接口",
+	"description": "服务商资金权益逆向扣回的查询接口",
+	"id": 37065
 }

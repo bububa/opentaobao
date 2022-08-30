@@ -1,5 +1,5 @@
 {
-  "id": 20906,
   "name": "阿里健康追溯码",
-  "pkg": "drugtrace"
+  "pkg": "drugtrace",
+  "id": 20906
 }

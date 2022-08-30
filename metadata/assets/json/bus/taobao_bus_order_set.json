@@ -1,18 +1,8 @@
 {
-	"id": 27569,
-	"name": "taobao.bus.order.set",
-	"apiChineseName": "汽车票下单接口",
-	"description": "提供给汽车票商家进行下单",
 	"requestParams": [
 		{
-			"name": "param_b2_b_create_order_r_q",
-			"type": "B2BCreateOrderRq",
-			"description": "下单参数",
 			"subParams": [
 				{
-					"name": "b2_b_fetch_holder_info",
-					"type": "B2BFetchHolderInfo",
-					"description": "取票人",
 					"subParams": [
 						{
 							"name": "fetch_cert_number",
@@ -34,12 +24,12 @@
 							"type": "String",
 							"description": "取票人姓名"
 						}
-					]
+					],
+					"name": "b2_b_fetch_holder_info",
+					"type": "B2BFetchHolderInfo",
+					"description": "取票人"
 				},
 				{
-					"name": "b2b_bus_line_info",
-					"type": "B2BBusLineInfo",
-					"description": "车次信息",
 					"subParams": [
 						{
 							"name": "dep_time",
@@ -76,12 +66,12 @@
 							"type": "String",
 							"description": "到达站名"
 						}
-					]
+					],
+					"name": "b2b_bus_line_info",
+					"type": "B2BBusLineInfo",
+					"description": "车次信息"
 				},
 				{
-					"name": "passengers",
-					"type": "PassengerVo[]",
-					"description": "乘客信息",
 					"subParams": [
 						{
 							"name": "rider_cert_number",
@@ -108,7 +98,10 @@
 							"type": "Number",
 							"description": "票价"
 						}
-					]
+					],
+					"name": "passengers",
+					"type": "PassengerVo[]",
+					"description": "乘客信息"
 				},
 				{
 					"name": "ticket_count",
@@ -120,7 +113,10 @@
 					"type": "Number",
 					"description": "总价"
 				}
-			]
+			],
+			"name": "param_b2_b_create_order_r_q",
+			"type": "B2BCreateOrderRq",
+			"description": "下单参数"
 		}
 	],
 	"responseParams": [
@@ -149,5 +145,9 @@
 			"type": "Boolean",
 			"description": "是否下单成功"
 		}
-	]
+	],
+	"name": "taobao.bus.order.set",
+	"apiChineseName": "汽车票下单接口",
+	"description": "提供给汽车票商家进行下单",
+	"id": 27569
 }

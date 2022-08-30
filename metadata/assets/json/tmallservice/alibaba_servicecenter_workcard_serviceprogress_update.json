@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "pic_url_list",
+			"type": "String[]",
+			"description": "图片列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "extend_info",
+			"type": "Json",
+			"description": "扩展参数"
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "请求节点的动作描述，唯一标识一个节点",
+			"required": true
+		},
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "真实服务商nick，仅限isv服务商调用时使用"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.servicecenter.workcard.serviceprogress.update",
+	"apiChineseName": "更新服务进度",
+	"description": "提供给外部合作服务商更新服务进度的接口",
+	"id": 59950
+}

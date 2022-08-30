@@ -1,0 +1,130 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "call_door_pick_up",
+					"type": "Boolean",
+					"description": "预约上门收件"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "cpCode",
+					"required": true
+				},
+				{
+					"name": "door_pick_up_end_time",
+					"type": "String",
+					"description": "预约上门截止时间"
+				},
+				{
+					"name": "door_pick_up_time",
+					"type": "String",
+					"description": "预约上门时间"
+				},
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "扩展信息，json String"
+				},
+				{
+					"name": "logistics_services",
+					"type": "String",
+					"description": "物流服务， json String"
+				},
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "快递产品编码"
+				},
+				{
+					"name": "total_height",
+					"type": "Number",
+					"description": "客户订单货物总高，单位厘米"
+				},
+				{
+					"name": "total_length",
+					"type": "Number",
+					"description": "订单货物总长,单位厘米"
+				},
+				{
+					"name": "total_width",
+					"type": "Number",
+					"description": "订单货物总宽，单位厘米"
+				},
+				{
+					"subParams": [
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "包裹高，单位厘米"
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "包裹长，单位厘米"
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "体积, 单位 ml"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "面单号",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重量,单位 g"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "包裹宽，单位厘米"
+						}
+					],
+					"name": "waybill_info",
+					"type": "WaybillOrderConfirmWaybillInfo[]",
+					"description": "物流单号信息",
+					"required": true
+				},
+				{
+					"name": "total_volume",
+					"type": "Number",
+					"description": "货物总体积，单位立方厘米"
+				},
+				{
+					"name": "total_weight",
+					"type": "Number",
+					"description": "货物总重量，单位g"
+				}
+			],
+			"name": "param_waybill_order_confirm_request",
+			"type": "WaybillOrderConfirmRequest",
+			"description": "订单确认信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "面单号",
+					"required": true
+				}
+			],
+			"name": "confirm_response",
+			"type": "WaybillOrderConfirmResponse []",
+			"description": "确认结果"
+		}
+	],
+	"name": "cainiao.waybill.ii.confirm",
+	"apiChineseName": "物流订单确认接口",
+	"description": "物流订单确认",
+	"id": 58086
+}

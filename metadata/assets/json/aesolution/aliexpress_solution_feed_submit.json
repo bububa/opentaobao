@@ -1,8 +1,4 @@
 {
-	"id": 44004,
-	"name": "aliexpress.solution.feed.submit",
-	"apiChineseName": "aliexpress.solution.feed.submit",
-	"description": "API for merchants to submit feed data. Please note for each seller, the recommended number of feeds submitted for each operation_type every 24 hours should be lee than 150, otherwise significant delay might be encountered for processing the feed.",
 	"requestParams": [
 		{
 			"name": "operation_type",
@@ -11,11 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "item_list",
-			"type": "SingleItemRequestDto[]",
-			"description": "item list, maximum size: 2000.",
-			"required": true,
-			"maxListSize": 2000,
 			"subParams": [
 				{
 					"name": "item_content",
@@ -29,7 +20,17 @@
 					"description": "The id of the item_content, which could be defined by the seller. item_content_id should be unique among all the items in item_list.This field also appears in the API:aliexpress.solution.feed.query, which is regarding the convenience for the sellers to match the item_execuation_result with the item_content.",
 					"required": true
 				}
-			]
+			],
+			"name": "item_list",
+			"type": "SingleItemRequestDto[]",
+			"description": "item list, maximum size: 2000.",
+			"maxListSize": 2000,
+			"required": true
+		},
+		{
+			"name": "developer_features",
+			"type": "String",
+			"description": "More information of the request."
 		}
 	],
 	"responseParams": [
@@ -38,5 +39,9 @@
 			"type": "Number",
 			"description": "job id,which is for querying the job response later."
 		}
-	]
+	],
+	"name": "aliexpress.solution.feed.submit",
+	"apiChineseName": "aliexpress.solution.feed.submit",
+	"description": "API for merchants to submit feed data. Please note for each seller, the recommended number of feeds submitted for each operation_type every 24 hours should be lee than 150, otherwise significant delay might be encountered for processing the feed.",
+	"id": 44004
 }

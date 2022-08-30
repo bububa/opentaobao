@@ -1,13 +1,13 @@
 {
-	"id": 54745,
-	"name": "alibaba.item.publish.market.get",
-	"apiChineseName": "获取商家可发布商品的市场信息",
-	"description": "获取商家可发布商品的市场信息",
 	"responseParams": [
 		{
 			"name": "markets",
 			"type": "String",
 			"description": "商家可发布的市场列表,多个以逗号(,)分隔"
 		}
-	]
+	],
+	"name": "alibaba.item.publish.market.get",
+	"apiChineseName": "获取商家可发布商品的市场信息",
+	"description": "获取商家可发布商品的市场信息",
+	"id": 54745
 }

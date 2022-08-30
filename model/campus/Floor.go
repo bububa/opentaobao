@@ -2,6 +2,10 @@ package campus
 
 // Floor 结构体
 type Floor struct {
+	// 面积
+	Area string `json:"area,omitempty" xml:"area,omitempty"`
+	// 高度
+	Height string `json:"height,omitempty" xml:"height,omitempty"`
 	// description
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// buildingName
@@ -22,10 +26,6 @@ type Floor struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// uuid
 	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
-	// 面积
-	Area string `json:"area,omitempty" xml:"area,omitempty"`
-	// 高度
-	Height string `json:"height,omitempty" xml:"height,omitempty"`
 	// 高度
 	HeightStr string `json:"height_str,omitempty" xml:"height_str,omitempty"`
 	// 面积

@@ -1,8 +1,4 @@
 {
-	"id": 38596,
-	"name": "alibaba.gpu.update.schema.get",
-	"apiChineseName": "获取产品编辑schema规则的接口",
-	"description": "获取产品编辑schema规则的接口",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -23,5 +19,9 @@
 			"type": "String",
 			"description": "参数产品ID对应的产品更新规则"
 		}
-	]
+	],
+	"name": "alibaba.gpu.update.schema.get",
+	"apiChineseName": "获取产品编辑schema规则的接口",
+	"description": "获取产品编辑schema规则的接口",
+	"id": 38596
 }

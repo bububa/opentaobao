@@ -1,0 +1,89 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"subParams": [
+				{
+					"name": "email",
+					"type": "String",
+					"description": "认证邮箱"
+				},
+				{
+					"name": "password",
+					"type": "String",
+					"description": "认证密码"
+				},
+				{
+					"name": "user_register_type",
+					"type": "String",
+					"description": "用户注册类型"
+				},
+				{
+					"name": "accepted_tand_c",
+					"type": "String",
+					"description": "是否接受会员协议"
+				},
+				{
+					"name": "optin_all",
+					"type": "Boolean",
+					"description": "是否是否勾选ALL和SMSALL收取优惠邮件"
+				},
+				{
+					"name": "data_export_agreement",
+					"type": "Boolean",
+					"description": "是否同意向境外提供个人信息"
+				}
+			],
+			"name": "derby_authentication_param",
+			"type": "DerbyAuthenticationParam",
+			"description": "德比认证会员信息入参"
+		},
+		{
+			"name": "scene_source",
+			"type": "String",
+			"description": "场景来源，记录什么场景调用什么接口"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "试单结果"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "携带优惠券试单结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.member.login.derby",
+	"apiChineseName": "小程序通过德比登入（会员认证）",
+	"description": "会员认证(德比切换接口，包含授权接口)   返回认证及授权状态",
+	"id": 62145
+}

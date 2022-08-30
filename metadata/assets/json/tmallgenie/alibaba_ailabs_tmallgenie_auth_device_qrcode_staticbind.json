@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "设备唯一标识，如mac或sn"
+		},
+		{
+			"name": "product_key",
+			"type": "String",
+			"description": "产品唯一标识，星空平台产品pk"
+		},
+		{
+			"name": "digest",
+			"type": "String",
+			"description": "签名摘要"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备uuid"
+						},
+						{
+							"name": "user_open_id",
+							"type": "String",
+							"description": "精灵用户openid"
+						}
+					],
+					"name": "result",
+					"type": "AuthResultVo",
+					"description": "响应结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.qrcode.staticbind",
+	"apiChineseName": "静态二维码绑定",
+	"description": "静态二维码绑定",
+	"id": 57741
+}

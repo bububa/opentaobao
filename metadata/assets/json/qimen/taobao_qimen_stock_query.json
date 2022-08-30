@@ -1,12 +1,6 @@
 {
-	"id": 27271,
-	"name": "taobao.qimen.stock.query",
-	"apiChineseName": "库存查询接口（多条件）",
-	"description": "ERP调用奇门的接口,查询商品的库存量",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "StockQueryRequest",
 			"subParams": [
 				{
 					"name": "warehouseCode",
@@ -71,13 +65,13 @@
 					"type": "String",
 					"description": "备注"
 				}
-			]
+			],
+			"name": "request",
+			"type": "StockQueryRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "StockQueryResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -104,10 +98,6 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "商品的库存信息列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "warehouseCode",
@@ -181,9 +171,19 @@
 							"description": "产品的国际标准条码（69码）",
 							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品的库存信息列表",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "StockQueryResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.stock.query",
+	"apiChineseName": "库存查询接口（多条件）",
+	"description": "ERP调用奇门的接口,查询商品的库存量",
+	"id": 27271
 }

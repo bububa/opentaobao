@@ -1,14 +1,6 @@
 {
-	"id": 53605,
-	"name": "alitrip.btrip.open.cost.center.new",
-	"apiChineseName": "新增成本中心",
-	"description": "新增成本中心",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenCostCenterSaveRq",
-			"description": "入参对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "alipay_no",
@@ -49,22 +41,25 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenCostCenterSaveRq",
+			"description": "入参对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "module",
-			"type": "OpenCostCenterSaveRs",
-			"description": "成本中心对象",
 			"subParams": [
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "商旅横版中心id",
-					"required": true
+					"description": "商旅横版中心id"
 				}
-			]
+			],
+			"name": "module",
+			"type": "OpenCostCenterSaveRs",
+			"description": "成本中心对象"
 		},
 		{
 			"name": "result_code",
@@ -76,5 +71,9 @@
 			"type": "String",
 			"description": "结果描述"
 		}
-	]
+	],
+	"name": "alitrip.btrip.open.cost.center.new",
+	"apiChineseName": "新增成本中心",
+	"description": "新增成本中心",
+	"id": 53605
 }

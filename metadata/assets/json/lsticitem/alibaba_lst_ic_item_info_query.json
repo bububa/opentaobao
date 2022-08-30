@@ -1,13 +1,6 @@
 {
-	"id": 47318,
-	"name": "alibaba.lst.ic.item.info.query",
-	"apiChineseName": "商品信息查询",
-	"description": "查询商品信息",
 	"requestParams": [
 		{
-			"name": "query",
-			"type": "LstItemListParam",
-			"description": "零售通商品查询参数",
 			"subParams": [
 				{
 					"name": "gmt_create_start",
@@ -70,194 +63,172 @@
 					"type": "Number",
 					"description": "页码。取值范围:大于零的整数;默认值为1，即返回第一页数据。"
 				}
-			]
+			],
+			"name": "query",
+			"type": "LstItemListParam",
+			"description": "零售通商品查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PagedResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "查询总数",
-					"required": true
+					"description": "查询总数"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "每页条数",
-					"required": true
+					"description": "每页条数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回成功与否",
-					"required": true
+					"description": "返回成功与否"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "失败原因",
-					"required": true
+					"description": "失败原因"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "失败code",
-					"required": true
+					"description": "失败code"
 				},
 				{
 					"name": "page",
 					"type": "Number",
-					"description": "当前页码",
-					"required": true
+					"description": "当前页码"
 				},
 				{
-					"name": "content_list",
-					"type": "TopLstItemDto[]",
-					"description": "商品集合",
-					"required": true,
 					"subParams": [
 						{
 							"name": "item_type",
 							"type": "String",
-							"description": "商品类型（售卖属性） normal：通常品 gift：赠品（比如买a送a，买a送b，送的商品就是赠品",
-							"required": true
+							"description": "商品类型（售卖属性） normal：通常品 gift：赠品（比如买a送a，买a送b，送的商品就是赠品"
 						},
 						{
 							"name": "brand_name",
 							"type": "String",
-							"description": "品牌名",
-							"required": true
+							"description": "品牌名"
 						},
 						{
 							"name": "data_type",
 							"type": "String",
-							"description": "单品类型（单品自身属性） normal：普通品（可以售卖） combine：组合品（作为组套商品进行售卖） zengpin：赠品（非标品，只能作为赠品，不能上架售卖） mixed：混箱品",
-							"required": true
+							"description": "单品类型（单品自身属性） normal：普通品（可以售卖） combine：组合品（作为组套商品进行售卖） zengpin：赠品（非标品，只能作为赠品，不能上架售卖） mixed：混箱品"
 						},
 						{
 							"name": "cspu_id",
 							"type": "String",
-							"description": "单品编码",
-							"required": true
+							"description": "单品编码"
 						},
 						{
 							"name": "cargo_number",
 							"type": "String",
-							"description": "商家货号/商家商品编码",
-							"required": true
+							"description": "商家货号/商家商品编码"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "商品Id",
-							"required": true
+							"description": "商品Id"
 						},
 						{
 							"name": "unit",
 							"type": "String",
-							"description": "单位",
-							"required": true
+							"description": "单位"
 						},
 						{
 							"name": "modify_time",
 							"type": "String",
-							"description": "商品修改时间",
-							"required": true
+							"description": "商品修改时间"
 						},
 						{
 							"name": "on_sale_time",
 							"type": "String",
-							"description": "最新上架时间",
-							"required": true
+							"description": "最新上架时间"
 						},
 						{
 							"name": "create_time",
 							"type": "String",
-							"description": "商品创建时间",
-							"required": true
+							"description": "商品创建时间"
 						},
 						{
 							"name": "item_status",
 							"type": "String",
-							"description": "cancel：撤销 no_pass_audit：审核不通过 on_sale：上架销售中 un_sale_waiting_audit：下架待审核 waiting_audit：待审核 waiting_choose：审核通过，待上架",
-							"required": true
+							"description": "cancel：撤销 no_pass_audit：审核不通过 on_sale：上架销售中 un_sale_waiting_audit：下架待审核 waiting_audit：待审核 waiting_choose：审核通过，待上架"
 						},
 						{
 							"name": "second_category_name",
 							"type": "String",
-							"description": "二级类目名字",
-							"required": true
+							"description": "二级类目名字"
 						},
 						{
 							"name": "full_item_title",
 							"type": "String",
-							"description": "长标题",
-							"required": true
+							"description": "长标题"
 						},
 						{
 							"name": "warehouse_type",
 							"type": "String",
-							"description": "仓库类型supplier：虚仓；cainiao：实仓",
-							"required": true
+							"description": "仓库类型supplier：虚仓；cainiao：实仓"
 						},
 						{
 							"name": "second_category_id",
 							"type": "String",
-							"description": "二级类目Id",
-							"required": true
+							"description": "二级类目Id"
 						},
 						{
 							"name": "bar_code_list",
 							"type": "String[]",
-							"description": "条码列表",
-							"required": true
+							"description": "条码列表"
 						},
 						{
 							"name": "short_item_title",
 							"type": "String",
-							"description": "短标题",
-							"required": true
+							"description": "短标题"
 						},
 						{
 							"name": "img_list",
 							"type": "String[]",
-							"description": "图片列表",
-							"required": true
+							"description": "图片列表"
 						},
 						{
-							"name": "available_stock_list",
-							"type": "Stock[]",
-							"description": "库存集合",
-							"required": true,
 							"subParams": [
 								{
 									"name": "warehouse_code",
 									"type": "String",
-									"description": "仓库编码",
-									"required": true
+									"description": "仓库编码"
 								},
 								{
 									"name": "warehouse_name",
 									"type": "String",
-									"description": "仓库名称",
-									"required": true
+									"description": "仓库名称"
 								},
 								{
 									"name": "stock_amount",
 									"type": "Number",
-									"description": "可售库存数量",
-									"required": true
+									"description": "可售库存数量"
 								}
-							]
+							],
+							"name": "available_stock_list",
+							"type": "Stock[]",
+							"description": "库存集合"
 						}
-					]
+					],
+					"name": "content_list",
+					"type": "TopLstItemDto[]",
+					"description": "商品集合"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PagedResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.lst.ic.item.info.query",
+	"apiChineseName": "商品信息查询",
+	"description": "查询商品信息",
+	"id": 47318
 }

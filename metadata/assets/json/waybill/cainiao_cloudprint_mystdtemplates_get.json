@@ -1,87 +1,81 @@
 {
-	"id": 26758,
-	"name": "cainiao.cloudprint.mystdtemplates.get",
-	"apiChineseName": "获取用户使用的菜鸟电子面单模板信息",
-	"description": "获取用户使用的菜鸟电子面单",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "datas",
-					"type": "UserTemplateResult[]",
-					"description": "所有cp的数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cp_code",
 							"type": "String",
-							"description": "cp编码",
-							"required": true
+							"description": "cp编码"
 						},
 						{
-							"name": "user_std_templates",
-							"type": "UserTemplateDo[]",
-							"description": "用户使用的模板数据",
-							"required": true,
 							"subParams": [
 								{
-									"name": "keys",
-									"type": "KeyResult[]",
-									"description": "keys",
-									"required": true,
 									"subParams": [
 										{
 											"name": "key_name",
 											"type": "String",
-											"description": "key的名称",
-											"required": true
+											"description": "key的名称"
 										}
-									]
+									],
+									"name": "keys",
+									"type": "KeyResult[]",
+									"description": "keys"
 								},
 								{
 									"name": "user_std_template_url",
 									"type": "String",
-									"description": "用户使用模板的url",
-									"required": true
+									"description": "用户使用模板的url"
 								},
 								{
 									"name": "user_std_template_id",
 									"type": "Number",
-									"description": "用户使用模板的id",
-									"required": true
+									"description": "用户使用模板的id"
 								},
 								{
 									"name": "user_std_template_name",
 									"type": "String",
-									"description": "用户使用模板名称",
-									"required": true
+									"description": "用户使用模板名称"
+								},
+								{
+									"name": "brand_code",
+									"type": "String",
+									"description": "品牌 code"
 								}
-							]
+							],
+							"name": "user_std_templates",
+							"type": "UserTemplateDo[]",
+							"description": "用户使用的模板数据"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "UserTemplateResult[]",
+					"description": "所有cp的数据"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.mystdtemplates.get",
+	"apiChineseName": "获取用户使用的菜鸟电子面单模板信息",
+	"description": "获取用户使用的菜鸟电子面单",
+	"id": 26758
 }

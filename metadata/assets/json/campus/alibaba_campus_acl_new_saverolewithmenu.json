@@ -1,13 +1,6 @@
 {
-	"id": 37482,
-	"name": "alibaba.campus.acl.new.saverolewithmenu",
-	"apiChineseName": "保存角色级联保存角色和权限的关系",
-	"description": "保存角色级联保存角色和权限的关系",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -26,12 +19,12 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
-			"name": "sys_role_d_t_o",
-			"type": "SysRoleDto",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "role_desc",
@@ -69,47 +62,50 @@
 					"type": "Number",
 					"description": "角色主键id"
 				}
-			]
+			],
+			"name": "sys_role_d_t_o",
+			"type": "SysRoleDto",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "tree_node_ids",
 			"type": "String[]",
 			"description": "菜单id,权限id",
-			"required": true,
-			"maxListSize": 500
+			"maxListSize": 500,
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "接口返回结果",
 			"subParams": [
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "接口返回实际内容",
-					"required": true
+					"type": "String",
+					"description": "接口返回实际内容"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.saverolewithmenu",
+	"apiChineseName": "保存角色级联保存角色和权限的关系",
+	"description": "保存角色级联保存角色和权限的关系",
+	"id": 37482
 }

@@ -1,12 +1,6 @@
 {
-	"id": 29217,
-	"name": "taobao.qimen.order.callback",
-	"apiChineseName": "配送拦截接口",
-	"description": "配送拦截",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "OrderCallbackRequestDO",
 			"subParams": [
 				{
 					"name": "warehouseCode",
@@ -33,13 +27,13 @@
 					"type": "String",
 					"description": "运单号"
 				}
-			]
+			],
+			"name": "request",
+			"type": "OrderCallbackRequestDO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "OrderCallbackResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -59,7 +53,13 @@
 					"description": "响应信息,invalid appkey,string(100),,",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "OrderCallbackResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.order.callback",
+	"apiChineseName": "配送拦截接口",
+	"description": "配送拦截",
+	"id": 29217
 }

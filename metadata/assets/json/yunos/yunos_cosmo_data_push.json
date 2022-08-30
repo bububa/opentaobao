@@ -1,8 +1,4 @@
 {
-	"id": 31701,
-	"name": "yunos.cosmo.data.push",
-	"apiChineseName": "COSMO-PUSH模式数据接入",
-	"description": "YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -19,29 +15,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DpResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DpResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "yunos.cosmo.data.push",
+	"apiChineseName": "COSMO-PUSH模式数据接入",
+	"description": "YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入",
+	"id": 31701
 }

@@ -1,13 +1,6 @@
 {
-	"id": 33695,
-	"name": "tmall.workcard.identify",
-	"apiChineseName": "工单核销",
-	"description": "工单核销，当工单完成以后，通过调用此接口核销\n可以按照多维度核销工单，\n电器预约安装按照工单维度核销，必选字段workcard_id,buyer_id,identify_code，可选字段attrs，通过扩展字段attrs回传机器码，格式{sn:'机器码'}",
 	"requestParams": [
 		{
-			"name": "verify_request_d_t_o",
-			"type": "VerifyRequestDto",
-			"description": "核销dto",
 			"subParams": [
 				{
 					"name": "parent_order_id",
@@ -54,52 +47,53 @@
 					"type": "Number",
 					"description": "子订单id"
 				}
-			]
+			],
+			"name": "verify_request_d_t_o",
+			"type": "VerifyRequestDto",
+			"description": "核销dto"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "errorMsg",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "Number",
-					"description": "errorCode",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
-					"name": "value",
-					"type": "Json",
-					"description": "返回void",
-					"required": true
-				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "返回void"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.workcard.identify",
+	"apiChineseName": "工单核销",
+	"description": "工单核销，当工单完成以后，通过调用此接口核销\n可以按照多维度核销工单，\n电器预约安装按照工单维度核销，必选字段workcard_id,buyer_id,identify_code，可选字段attrs，通过扩展字段attrs回传机器码，格式{sn:'机器码'}",
+	"id": 33695
 }

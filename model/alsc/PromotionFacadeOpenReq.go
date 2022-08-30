@@ -6,10 +6,10 @@ type PromotionFacadeOpenReq struct {
 	StatusList []string `json:"status_list,omitempty" xml:"status_list>string,omitempty"`
 	// 品牌ID
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 外部品牌ID
-	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 最后修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 外部品牌ID
+	OutBrandId string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
 	// 最后时间
 	LastId string `json:"last_id,omitempty" xml:"last_id,omitempty"`
 	// 促销ID

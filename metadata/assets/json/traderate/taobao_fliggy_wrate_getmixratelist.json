@@ -1,13 +1,6 @@
 {
-	"id": 48881,
-	"name": "taobao.fliggy.wrate.getmixratelist",
-	"apiChineseName": "飞猪通用评价接口",
-	"description": "飞猪评价通用接口",
 	"requestParams": [
 		{
-			"name": "param_top_get_mix_rate_list_param",
-			"type": "TopGetMixRateListParam",
-			"description": "评论列表查询参数",
 			"subParams": [
 				{
 					"name": "biz_type",
@@ -34,174 +27,156 @@
 					"type": "String",
 					"description": "筛选条件JSON"
 				}
-			]
+			],
+			"name": "param_top_get_mix_rate_list_param",
+			"type": "TopGetMixRateListParam",
+			"description": "评论列表查询参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "GetMixRateListResult",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "has_next_page",
 							"type": "Number",
-							"description": "是否下一页",
-							"required": true
+							"description": "是否下一页"
 						},
 						{
-							"name": "item_statistic",
-							"type": "ItemStatisticVo",
-							"description": "评价统计信息",
-							"required": true,
 							"subParams": [
-								{
-									"name": "rate_cnt",
-									"type": "Number",
-									"description": "评论数量",
-									"required": true
-								},
-								{
-									"name": "tab_infos",
-									"type": "TabInfo[]",
-									"description": "tab筛选信息",
-									"required": true,
-									"subParams": [
-										{
-											"name": "attitude",
-											"type": "Number",
-											"description": "属性（正面负面）",
-											"required": true
-										},
-										{
-											"name": "is_click",
-											"type": "Boolean",
-											"description": "会否选中",
-											"required": true
-										},
-										{
-											"name": "tab_code",
-											"type": "String",
-											"description": "tab筛选信息Code，查询时使用",
-											"required": true
-										},
-										{
-											"name": "tab_detail",
-											"type": "String",
-											"description": "包含的数量",
-											"required": true
-										},
-										{
-											"name": "tab_name",
-											"type": "String",
-											"description": "tab名称",
-											"required": true
-										}
-									]
-								},
-								{
-									"name": "total_score",
-									"type": "String",
-									"description": "总评分",
-									"required": true
-								},
 								{
 									"name": "rank_desc",
 									"type": "String",
-									"description": "评分描述信息",
-									"required": true
+									"description": "评分描述信息"
+								},
+								{
+									"name": "rate_cnt",
+									"type": "Number",
+									"description": "评论数量"
 								},
 								{
 									"name": "score_detail",
 									"type": "String",
-									"description": "子评分项信息",
-									"required": true
+									"description": "子评分项信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "attitude",
+											"type": "Number",
+											"description": "属性（正面负面）"
+										},
+										{
+											"name": "is_click",
+											"type": "Boolean",
+											"description": "会否选中"
+										},
+										{
+											"name": "tab_code",
+											"type": "String",
+											"description": "tab筛选信息Code，查询时使用"
+										},
+										{
+											"name": "tab_detail",
+											"type": "String",
+											"description": "包含的数量"
+										},
+										{
+											"name": "tab_name",
+											"type": "String",
+											"description": "tab名称"
+										}
+									],
+									"name": "tab_infos",
+									"type": "TabInfo[]",
+									"description": "tab筛选信息"
+								},
+								{
+									"name": "total_score",
+									"type": "String",
+									"description": "总评分"
 								}
-							]
+							],
+							"name": "item_statistic",
+							"type": "ItemStatisticVo",
+							"description": "评价统计信息"
 						},
 						{
-							"name": "mix_rates",
-							"type": "MixRateVo[]",
-							"description": "评价明细信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "content",
 									"type": "String",
-									"description": "正文内容",
-									"required": true
+									"description": "正文内容"
 								},
 								{
 									"name": "gmt_create",
 									"type": "String",
-									"description": "创建时间",
-									"required": true
+									"description": "创建时间"
 								},
 								{
 									"name": "picture_urls",
 									"type": "String[]",
-									"description": "图片信息",
-									"required": true
+									"description": "图片信息"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "正文摘要",
-									"required": true
-								},
-								{
-									"name": "user_icon",
-									"type": "String",
-									"description": "用户头像",
-									"required": true
-								},
-								{
-									"name": "user_nick",
-									"type": "String",
-									"description": "用户昵称",
-									"required": true
+									"description": "正文摘要"
 								},
 								{
 									"name": "total_score",
 									"type": "Number",
-									"description": "总评分",
-									"required": true
+									"description": "总评分"
+								},
+								{
+									"name": "user_icon",
+									"type": "String",
+									"description": "用户头像"
+								},
+								{
+									"name": "user_nick",
+									"type": "String",
+									"description": "用户昵称"
 								}
-							]
+							],
+							"name": "mix_rates",
+							"type": "MixRateVo[]",
+							"description": "评价明细信息"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "是否成功",
-							"required": true
+							"description": "是否成功"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总数量",
-							"required": true
+							"description": "总数量"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						}
-					]
+					],
+					"name": "model",
+					"type": "GetMixRateListResult",
+					"description": "返回对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.fliggy.wrate.getmixratelist",
+	"apiChineseName": "飞猪通用评价接口",
+	"description": "飞猪评价通用接口",
+	"id": 48881
 }

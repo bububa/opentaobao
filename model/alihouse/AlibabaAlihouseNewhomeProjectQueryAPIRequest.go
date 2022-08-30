@@ -14,6 +14,8 @@ type AlibabaAlihouseNewhomeProjectQueryAPIRequest struct {
 	model.Params
 	// 外部楼盘/小区id
 	_outerId string
+	// 商品id
+	_itemId string
 }
 
 // NewAlibabaAlihouseNewhomeProjectQueryRequest 初始化AlibabaAlihouseNewhomeProjectQueryAPIRequest对象
@@ -48,4 +50,17 @@ func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetOuterId(_outerId strin
 // GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetItemId is ItemId Setter
+// 商品id
+func (r *AlibabaAlihouseNewhomeProjectQueryAPIRequest) SetItemId(_itemId string) error {
+	r._itemId = _itemId
+	r.Set("item_id", _itemId)
+	return nil
+}
+
+// GetItemId ItemId Getter
+func (r AlibabaAlihouseNewhomeProjectQueryAPIRequest) GetItemId() string {
+	return r._itemId
 }

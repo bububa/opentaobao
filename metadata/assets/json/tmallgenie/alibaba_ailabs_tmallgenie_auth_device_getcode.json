@@ -1,0 +1,23 @@
+{
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "authcode"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.auth.device.getcode",
+	"apiChineseName": "获取authcode",
+	"description": "获取绑定的authcode",
+	"id": 57738
+}

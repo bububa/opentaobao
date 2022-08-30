@@ -1,34 +1,11 @@
 {
-	"id": 45866,
-	"name": "alibaba.alsc.crm.recharge.charge.update",
-	"apiChineseName": "储值充值",
-	"description": "顾客储值账户充值",
 	"requestParams": [
 		{
-			"name": "param_recharge_open_req",
-			"type": "RechargeOpenReq",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
-					"name": "brand_id",
-					"type": "String",
-					"description": "SaaS品牌ID(不能和outbrandid同时为空)"
-				},
-				{
-					"name": "out_brand_id",
-					"type": "String",
-					"description": "外部品牌ID(不能和brandid同时为空)"
-				},
-				{
-					"name": "shop_id",
-					"type": "String",
-					"description": "SaaS门店ID(不能和outshopid同时为空)"
-				},
-				{
-					"name": "out_shop_id",
-					"type": "String",
-					"description": "外部门店id(不能和shopid同时为空)"
+					"name": "biz_date",
+					"type": "Date",
+					"description": "时间，选填，不填就以平台为准"
 				},
 				{
 					"name": "card_id",
@@ -48,6 +25,28 @@
 					"description": "赠储值"
 				},
 				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "SaaS品牌ID(不能和outbrandid同时为空)"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人ID(SaaS Id)",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "SaaS门店ID(不能和outshopid同时为空)"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部交易单号id(外部调用方保证在isv内部是唯一，可以是paymentItemId)",
+					"required": true
+				},
+				{
 					"name": "pre_value",
 					"type": "Number",
 					"description": "预储"
@@ -56,17 +55,6 @@
 					"name": "real_value",
 					"type": "Number",
 					"description": "实储值"
-				},
-				{
-					"name": "biz_date",
-					"type": "Date",
-					"description": "时间，选填，不填就以平台为准"
-				},
-				{
-					"name": "outer_order_id",
-					"type": "String",
-					"description": "外部交易单号id(外部调用方保证在isv内部是唯一，可以是paymentItemId)",
-					"required": true
 				},
 				{
 					"name": "remark",
@@ -86,15 +74,19 @@
 					"required": true
 				},
 				{
-					"name": "operator_id",
-					"type": "String",
-					"description": "操作人ID(SaaS Id)",
-					"required": true
-				},
-				{
 					"name": "out_pay_id",
 					"type": "String",
 					"description": "外部支付单id"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店id(不能和shopid同时为空)"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
 				},
 				{
 					"name": "biz_channel",
@@ -104,208 +96,187 @@
 				},
 				{
 					"name": "ext_info",
+					"type": "String",
 					"description": "支付方式需要按照标准格式传入"
 				}
-			]
+			],
+			"name": "param_recharge_open_req",
+			"type": "RechargeOpenReq",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "RechargeAccountFlowDetailOpenInfo",
-					"description": "业务数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "account_id",
 							"type": "String",
-							"description": "储值账户id",
-							"required": true
+							"description": "储值账户id"
 						},
 						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "账户类型"
+								},
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "账户值"
+								}
+							],
 							"name": "affected_property_list",
 							"type": "RechargeAccountPropertyOpenInfo[]",
-							"description": "操作储值资产信息列表",
-							"required": true,
+							"description": "操作储值资产信息列表"
+						},
+						{
 							"subParams": [
 								{
 									"name": "type",
 									"type": "String",
-									"description": "账户类型",
-									"required": true
+									"description": "账户类型"
 								},
 								{
 									"name": "value",
 									"type": "Number",
-									"description": "账户值",
-									"required": true
+									"description": "账户值"
 								}
-							]
-						},
-						{
+							],
 							"name": "after_property_list",
 							"type": "RechargeAccountPropertyOpenInfo[]",
-							"description": "操作后储值资产信息列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "type",
-									"type": "String",
-									"description": "账户类型",
-									"required": true
-								},
-								{
-									"name": "value",
-									"type": "Number",
-									"description": "账户值",
-									"required": true
-								}
-							]
+							"description": "操作后储值资产信息列表"
 						},
 						{
-							"name": "before_property_list",
-							"type": "RechargeAccountPropertyOpenInfo[]",
-							"description": "操作前储值资产信息列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type",
 									"type": "String",
-									"description": "账户类型",
-									"required": true
+									"description": "账户类型"
 								},
 								{
 									"name": "value",
 									"type": "Number",
-									"description": "账户值",
-									"required": true
+									"description": "账户值"
 								}
-							]
+							],
+							"name": "before_property_list",
+							"type": "RechargeAccountPropertyOpenInfo[]",
+							"description": "操作前储值资产信息列表"
 						},
 						{
 							"name": "brand_id",
 							"type": "String",
-							"description": "品牌Id",
-							"required": true
+							"description": "品牌Id"
 						},
 						{
 							"name": "current_value",
 							"type": "Number",
-							"description": "交易后剩余总金额",
-							"required": true
+							"description": "交易后剩余总金额"
 						},
 						{
-							"name": "ext_info",
-							"type": "Extinfo",
-							"description": "扩展信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "empty",
 									"type": "Boolean",
-									"description": "1",
-									"required": true
+									"description": "1"
 								}
-							]
+							],
+							"name": "ext_info",
+							"type": "Extinfo",
+							"description": "扩展信息"
 						},
 						{
 							"name": "flow_id",
 							"type": "String",
-							"description": "储值账户流水id",
-							"required": true
+							"description": "储值账户流水id"
 						},
 						{
 							"name": "flow_type",
 							"type": "String",
-							"description": "储值相关的交易类型",
-							"required": true
+							"description": "储值相关的交易类型"
 						},
 						{
 							"name": "operator",
 							"type": "String",
-							"description": "操作人ID",
-							"required": true
+							"description": "操作人ID"
 						},
 						{
 							"name": "operator_name",
 							"type": "String",
-							"description": "操作人",
-							"required": true
+							"description": "操作人"
 						},
 						{
 							"name": "order_src",
 							"type": "Number",
-							"description": "外部订单来源",
-							"required": true
+							"description": "外部订单来源"
 						},
 						{
 							"name": "order_time",
 							"type": "Date",
-							"description": "交易时间",
-							"required": true
+							"description": "交易时间"
 						},
 						{
 							"name": "order_value",
 							"type": "Number",
-							"description": "交易总金额，增加为正数，减少为负数",
-							"required": true
+							"description": "交易总金额，增加为正数，减少为负数"
 						},
 						{
 							"name": "outer_order_id",
 							"type": "String",
-							"description": "外部交易单号id",
-							"required": true
+							"description": "外部交易单号id"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "备注",
-							"required": true
+							"description": "备注"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "交易门店ID",
-							"required": true
+							"description": "交易门店ID"
 						},
 						{
 							"name": "shop_name",
 							"type": "String",
-							"description": "交易门店名称",
-							"required": true
+							"description": "交易门店名称"
 						}
-					]
+					],
+					"name": "result",
+					"type": "RechargeAccountFlowDetailOpenInfo",
+					"description": "业务数据"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.recharge.charge.update",
+	"apiChineseName": "储值充值",
+	"description": "顾客储值账户充值",
+	"id": 45866
 }

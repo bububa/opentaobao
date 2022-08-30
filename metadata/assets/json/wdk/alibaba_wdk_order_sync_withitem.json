@@ -1,19 +1,8 @@
 {
-	"id": 41364,
-	"name": "alibaba.wdk.order.sync.withitem",
-	"apiChineseName": "订单和商品同步接口",
-	"description": "轻pos,将订单和商品的信息一起传到盒马这边，进行创单和添加商品处理。",
 	"requestParams": [
 		{
-			"name": "pos_order_and_item_sync",
-			"type": "PosOrderAndItemSyncDo",
-			"description": "商家传过来的交易和商品信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "item_infos",
-					"type": "ItemInfo[]",
-					"description": "商品信息",
 					"subParams": [
 						{
 							"name": "life_status",
@@ -162,18 +151,14 @@
 							"type": "Number",
 							"description": "均重"
 						}
-					]
+					],
+					"name": "item_infos",
+					"type": "ItemInfo[]",
+					"description": "商品信息"
 				},
 				{
-					"name": "order_info",
-					"type": "OrderInfoDo",
-					"description": "订单流水信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "pay_channels",
-							"type": "ReceiptPayChannelDo[]",
-							"description": "小票付款渠道",
 							"subParams": [
 								{
 									"name": "pay_amount",
@@ -218,12 +203,12 @@
 									"type": "String",
 									"description": "外部支付单号"
 								}
-							]
+							],
+							"name": "pay_channels",
+							"type": "ReceiptPayChannelDo[]",
+							"description": "小票付款渠道"
 						},
 						{
-							"name": "sub_orders",
-							"type": "SubOrderInfoDo[]",
-							"description": "商品明细",
 							"subParams": [
 								{
 									"name": "unit",
@@ -314,7 +299,10 @@
 									"type": "String",
 									"description": "渠道店id"
 								}
-							]
+							],
+							"name": "sub_orders",
+							"type": "SubOrderInfoDo[]",
+							"description": "商品明细"
 						},
 						{
 							"name": "order_from",
@@ -416,16 +404,21 @@
 							"type": "String",
 							"description": "阿里userID"
 						}
-					]
+					],
+					"name": "order_info",
+					"type": "OrderInfoDo",
+					"description": "订单流水信息",
+					"required": true
 				}
-			]
+			],
+			"name": "pos_order_and_item_sync",
+			"type": "PosOrderAndItemSyncDo",
+			"description": "商家传过来的交易和商品信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "调用返回的结果",
 			"subParams": [
 				{
 					"name": "model",
@@ -451,7 +444,14 @@
 					"description": "调用接口返回成功失败",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用返回的结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.order.sync.withitem",
+	"apiChineseName": "订单和商品同步接口",
+	"description": "轻pos,将订单和商品的信息一起传到盒马这边，进行创单和添加商品处理。",
+	"id": 41364
 }

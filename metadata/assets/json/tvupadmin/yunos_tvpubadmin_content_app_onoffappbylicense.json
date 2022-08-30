@@ -1,8 +1,4 @@
 {
-	"id": 28609,
-	"name": "yunos.tvpubadmin.content.app.onoffappbylicense",
-	"apiChineseName": "应用上下架操作",
-	"description": "应用上下架操作",
 	"requestParams": [
 		{
 			"name": "on_off_app",
@@ -17,5 +13,9 @@
 			"type": "Boolean",
 			"description": "true/false"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.app.onoffappbylicense",
+	"apiChineseName": "应用上下架操作",
+	"description": "应用上下架操作",
+	"id": 28609
 }

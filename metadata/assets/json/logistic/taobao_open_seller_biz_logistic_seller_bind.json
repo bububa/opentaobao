@@ -1,0 +1,14 @@
+{
+	"requestParams": [
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "淘宝测试店铺Nick",
+			"required": true
+		}
+	],
+	"name": "taobao.open.seller.biz.logistic.seller.bind",
+	"apiChineseName": "店铺授权发货注册（催发货）",
+	"description": "店铺授权发货注册（催发货）",
+	"id": 57300
+}

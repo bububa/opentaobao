@@ -1,26 +1,7 @@
 {
-	"id": 38633,
-	"name": "alibaba.wdk.marketing.itempool.item.add.async",
-	"apiChineseName": "商品池新增商品",
-	"description": "新分组模型下新增商品",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "ItemPoolSku[]",
-			"description": "阶梯商品信息",
-			"maxListSize": 20,
 			"subParams": [
-				{
-					"name": "sku_code",
-					"type": "String",
-					"description": "商品编码",
-					"required": true
-				},
-				{
-					"name": "logic_group_number",
-					"type": "Number",
-					"description": "商家阶梯下分组序号"
-				},
 				{
 					"name": "fix_price",
 					"type": "Number",
@@ -37,6 +18,22 @@
 					"description": "减钱【分】"
 				},
 				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "商家阶梯下分组序号"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "is_decrease_money",
+					"type": "Boolean",
+					"description": "是否减钱"
+				},
+				{
 					"name": "is_discount_rate",
 					"type": "Boolean",
 					"description": "是否打折"
@@ -45,18 +42,14 @@
 					"name": "is_fix_price",
 					"type": "Boolean",
 					"description": "是否一口价"
-				},
-				{
-					"name": "is_decrease_money",
-					"type": "Boolean",
-					"description": "是否减钱"
 				}
-			]
+			],
+			"name": "param0",
+			"type": "ItemPoolSku[]",
+			"description": "阶梯商品信息",
+			"maxListSize": 20
 		},
 		{
-			"name": "param1",
-			"type": "CommonActivityParam",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "out_act_id",
@@ -69,7 +62,10 @@
 					"description": "活动Id",
 					"required": true
 				}
-			]
+			],
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成"
 		},
 		{
 			"name": "version",
@@ -80,55 +76,52 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MarketResult",
-			"description": "结果信息",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "处理结果",
-					"required": true
+					"description": "处理结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "datas",
-					"type": "ItemPoolSku[]",
-					"description": "结果数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_name",
 							"type": "String",
-							"description": "sku名称",
-							"required": true
+							"description": "sku名称"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "sku编码",
-							"required": true
+							"description": "sku编码"
 						},
 						{
 							"name": "logic_group_number",
 							"type": "Number",
-							"description": "商家阶梯下分组序号",
-							"required": true
+							"description": "商家阶梯下分组序号"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "ItemPoolSku[]",
+					"description": "结果数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alibaba.wdk.marketing.itempool.item.add.async",
+	"apiChineseName": "商品池新增商品",
+	"description": "新分组模型下新增商品",
+	"id": 38633
 }

@@ -21,5 +21,5 @@ type TmallTraderateFeedsGetAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回评价信息
-	TmallRateInfo *TmallRateInfo `json:"tmall_rate_info,omitempty" xml:"tmall_rate_info,omitempty"`
+	TmallRateInfo *TmallTraderateFeedsGetModel `json:"tmall_rate_info,omitempty" xml:"tmall_rate_info,omitempty"`
 }

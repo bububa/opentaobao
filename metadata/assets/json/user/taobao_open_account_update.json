@@ -1,14 +1,6 @@
 {
-	"id": 24820,
-	"name": "taobao.open.account.update",
-	"apiChineseName": "Open Account数据更新",
-	"description": "Open Account数据更新",
 	"requestParams": [
 		{
-			"name": "param_list",
-			"type": "OpenAccount[]",
-			"description": "Open Account",
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "login_id",
@@ -145,14 +137,15 @@
 					"type": "Number",
 					"description": "TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;"
 				}
-			]
+			],
+			"name": "param_list",
+			"type": "OpenAccount[]",
+			"description": "Open Account",
+			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "datas",
-			"type": "OpenaccountVoid []",
-			"description": "update是否成功",
 			"subParams": [
 				{
 					"name": "message",
@@ -169,7 +162,14 @@
 					"type": "Number",
 					"description": "错误码"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "OpenaccountVoid []",
+			"description": "update是否成功"
 		}
-	]
+	],
+	"name": "taobao.open.account.update",
+	"apiChineseName": "Open Account数据更新",
+	"description": "Open Account数据更新",
+	"id": 24820
 }

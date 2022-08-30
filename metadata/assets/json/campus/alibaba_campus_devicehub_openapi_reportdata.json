@@ -1,13 +1,6 @@
 {
-	"id": 46701,
-	"name": "alibaba.campus.devicehub.openapi.reportdata",
-	"apiChineseName": "设备数据上报",
-	"description": "设备数据上报",
 	"requestParams": [
 		{
-			"name": "device_event_data",
-			"type": "DeviceReportEventDTO",
-			"description": "自动生成",
 			"subParams": [
 				{
 					"name": "id_type",
@@ -16,7 +9,7 @@
 				},
 				{
 					"name": "data",
-					"type": "null[]",
+					"type": "String[]",
 					"description": "数据"
 				},
 				{
@@ -44,52 +37,53 @@
 					"type": "String",
 					"description": "设备ID"
 				}
-			]
+			],
+			"name": "device_event_data",
+			"type": "DeviceReportEventDTO",
+			"description": "自动生成"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "自动生成",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误code",
-					"required": true
+					"description": "错误code"
 				},
 				{
 					"name": "error_ext_info",
-					"type": "Json",
-					"description": "错误描述",
-					"required": true
+					"type": "String",
+					"description": "错误描述"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "自动生成"
 		}
-	]
+	],
+	"name": "alibaba.campus.devicehub.openapi.reportdata",
+	"apiChineseName": "设备数据上报",
+	"description": "设备数据上报",
+	"id": 46701
 }

@@ -1,14 +1,6 @@
 {
-	"id": 40363,
-	"name": "alibaba.campus.core.employee.modifyemployee",
-	"apiChineseName": "修改员工基本信息",
-	"description": "根据用户ID和公司ID更新员工基本信息（头像、性别、昵称）",
 	"requestParams": [
 		{
-			"name": "work_bench_context",
-			"type": "WorkBenchContext",
-			"description": "WorkBenchContext",
-			"required": true,
 			"subParams": [
 				{
 					"name": "user_id",
@@ -50,13 +42,13 @@
 					"type": "String",
 					"description": "调用者的IP"
 				}
-			]
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "WorkBenchContext",
+			"required": true
 		},
 		{
-			"name": "employee_dto",
-			"type": "EmployeeDto",
-			"description": "EmployeeDto",
-			"required": true,
 			"subParams": [
 				{
 					"name": "birthday",
@@ -188,7 +180,11 @@
 					"type": "String",
 					"description": "手机"
 				}
-			]
+			],
+			"name": "employee_dto",
+			"type": "EmployeeDto",
+			"description": "EmployeeDto",
+			"required": true
 		},
 		{
 			"name": "account_id",
@@ -199,41 +195,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "请求响应",
 			"subParams": [
 				{
 					"name": "content",
-					"type": "Json",
-					"description": "内容",
-					"required": true
+					"type": "String",
+					"description": "内容"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id,TOP自带,无需关注",
-					"required": true
+					"description": "请求id,TOP自带,无需关注"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否请求成功",
-					"required": true
+					"description": "是否请求成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "请求响应"
 		}
-	]
+	],
+	"name": "alibaba.campus.core.employee.modifyemployee",
+	"apiChineseName": "修改员工基本信息",
+	"description": "根据用户ID和公司ID更新员工基本信息（头像、性别、昵称）",
+	"id": 40363
 }

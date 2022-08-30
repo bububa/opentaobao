@@ -1,13 +1,13 @@
 {
-	"id": 27322,
-	"name": "alibaba.einvoice.serialno.generate",
-	"apiChineseName": "获取统一开票流水号",
-	"description": "erp调用开票请求时需要一个开票流水号，此接口就提供了统一的开票流水号，避免了不同系统的冲突",
 	"responseParams": [
 		{
 			"name": "serial_no",
 			"type": "String",
 			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.serialno.generate",
+	"apiChineseName": "获取统一开票流水号",
+	"description": "erp调用开票请求时需要一个开票流水号，此接口就提供了统一的开票流水号，避免了不同系统的冲突",
+	"id": 27322
 }

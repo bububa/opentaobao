@@ -1,13 +1,6 @@
 {
-	"id": 49940,
-	"name": "alibaba.mozi.vds.tenant.api.service.matchempcodes",
-	"apiChineseName": "校验组-员工是否匹配",
-	"description": "校验组-员工是否匹配",
 	"requestParams": [
 		{
-			"name": "par0",
-			"type": "MatchWithEmployeeRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "employee_codes",
@@ -27,52 +20,53 @@
 					"description": "组code",
 					"required": true
 				}
-			]
+			],
+			"name": "par0",
+			"type": "MatchWithEmployeeRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "MatchWithEmployeeResult",
-			"description": "出参",
 			"subParams": [
 				{
 					"name": "unmatched_employee_codes",
 					"type": "String[]",
-					"description": "未匹配上的人员code",
-					"required": true
+					"description": "未匹配上的人员code"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "matched_employee_codes",
 					"type": "String[]",
-					"description": "匹配上的人员code",
-					"required": true
+					"description": "匹配上的人员code"
 				},
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "responseMessage",
-					"required": true
+					"description": "responseMessage"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "responseCode",
-					"required": true
+					"description": "responseCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "MatchWithEmployeeResult",
+			"description": "出参"
 		}
-	]
+	],
+	"name": "alibaba.mozi.vds.tenant.api.service.matchempcodes",
+	"apiChineseName": "校验组-员工是否匹配",
+	"description": "校验组-员工是否匹配",
+	"id": 49940
 }

@@ -1,8 +1,4 @@
 {
-	"id": 43366,
-	"name": "taobao.simba.salestar.adgroup.add",
-	"apiChineseName": "(新)创建一个推广组",
-	"description": "创建一个推广组",
 	"requestParams": [
 		{
 			"name": "campaign_id",
@@ -20,8 +16,8 @@
 			"name": "title",
 			"type": "String",
 			"description": "创意标题，最多20个汉字",
-			"required": true,
-			"maxLength": 40
+			"maxLength": 40,
+			"required": true
 		},
 		{
 			"name": "img_url",
@@ -32,9 +28,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "adgroup",
-			"type": "ADGroup",
-			"description": "新增加的推广组",
 			"subParams": [
 				{
 					"name": "campaign_id",
@@ -81,7 +74,14 @@
 					"type": "Date",
 					"description": "最后修改时间"
 				}
-			]
+			],
+			"name": "adgroup",
+			"type": "ADGroup",
+			"description": "新增加的推广组"
 		}
-	]
+	],
+	"name": "taobao.simba.salestar.adgroup.add",
+	"apiChineseName": "(新)创建一个推广组",
+	"description": "创建一个推广组",
+	"id": 43366
 }

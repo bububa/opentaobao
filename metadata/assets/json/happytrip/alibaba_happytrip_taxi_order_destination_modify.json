@@ -1,8 +1,4 @@
 {
-	"id": 51020,
-	"name": "alibaba.happytrip.taxi.order.destination.modify",
-	"apiChineseName": "修改目的地",
-	"description": "通知ISV修改订单信息",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -32,6 +28,11 @@
 			"name": "end_address",
 			"type": "String",
 			"description": "目的地详细地址(最多100个字)"
+		},
+		{
+			"name": "end_poi_id",
+			"type": "String",
+			"description": "高德POI唯一标识"
 		}
 	],
 	"responseParams": [
@@ -45,5 +46,9 @@
 			"type": "String",
 			"description": "错误描述"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.destination.modify",
+	"apiChineseName": "修改目的地",
+	"description": "通知ISV修改订单信息",
+	"id": 51020
 }

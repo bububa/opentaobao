@@ -1,13 +1,6 @@
 {
-	"id": 56184,
-	"name": "alitrip.btrip.hotel.distribution.order.create",
-	"apiChineseName": "商旅酒店分销-创建订单",
-	"description": "商旅酒店分销-创建订单",
 	"requestParams": [
 		{
-			"name": "param_btrip_hotel_create_order_rq",
-			"type": "BtripHotelCreateOrderRq",
-			"description": "创建订单请求入参",
 			"subParams": [
 				{
 					"name": "buyer_name",
@@ -40,6 +33,12 @@
 					"required": true
 				},
 				{
+					"name": "customers",
+					"type": "String",
+					"description": "入住人信息",
+					"required": true
+				},
+				{
 					"name": "dis_order_id",
 					"type": "String",
 					"description": "分销平台订单id",
@@ -51,10 +50,6 @@
 					"description": "最早到店时间"
 				},
 				{
-					"name": "hotel_contact",
-					"type": "BtripHotelContactDto",
-					"description": "订单联系人信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "email",
@@ -72,7 +67,11 @@
 							"type": "String",
 							"description": "入住人电话"
 						}
-					]
+					],
+					"name": "hotel_contact",
+					"type": "BtripHotelContactDto",
+					"description": "订单联系人信息",
+					"required": true
 				},
 				{
 					"name": "item_id",
@@ -126,52 +125,59 @@
 					"required": true
 				},
 				{
-					"name": "customers",
-					"description": "入住人信息",
-					"required": true
+					"name": "corp_pay_price",
+					"type": "Number",
+					"description": "订单总价中企业支付部分"
+				},
+				{
+					"name": "person_pay_price",
+					"type": "Number",
+					"description": "订单总价中个人支付部分"
 				}
-			]
+			],
+			"name": "param_btrip_hotel_create_order_rq",
+			"type": "BtripHotelCreateOrderRq",
+			"description": "创建订单请求入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "HisvResult",
-			"description": "创单返回结果",
 			"subParams": [
 				{
-					"name": "module",
-					"type": "BtripHotelCreateOrderRs",
-					"description": "创单返回结果数据对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "btrip_order_id",
 							"type": "Number",
-							"description": "商旅订单id",
-							"required": true
+							"description": "商旅订单id"
 						},
 						{
 							"name": "supplier_order_id",
 							"type": "String",
-							"description": "供应商订单id",
-							"required": true
+							"description": "供应商订单id"
 						}
-					]
+					],
+					"name": "module",
+					"type": "BtripHotelCreateOrderRs",
+					"description": "创单返回结果数据对象"
 				},
 				{
 					"name": "result_code",
 					"type": "Number",
-					"description": "创单返回结果码",
-					"required": true
+					"description": "创单返回结果码"
 				},
 				{
 					"name": "result_msg",
 					"type": "String",
-					"description": "创单返回提示信息",
-					"required": true
+					"description": "创单返回提示信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "创单返回结果"
 		}
-	]
+	],
+	"name": "alitrip.btrip.hotel.distribution.order.create",
+	"apiChineseName": "商旅酒店分销-创建订单",
+	"description": "商旅酒店分销-创建订单",
+	"id": 56184
 }

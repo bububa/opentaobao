@@ -1,0 +1,41 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": " 打印机 id",
+					"required": true
+				}
+			],
+			"name": "printer",
+			"type": "CloudPrinterVerifyCodeRequest",
+			"description": "请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "server_error_code",
+					"type": "String",
+					"description": "错误码，0 表示正常"
+				},
+				{
+					"name": "describe",
+					"type": "String",
+					"description": "描述"
+				}
+			],
+			"name": "result",
+			"type": "IsvResult",
+			"description": "返回值"
+		}
+	],
+	"name": "cainiao.waybill.cloudprint.netprint.verifycode",
+	"apiChineseName": "打印验证码",
+	"description": "打印获取验证码",
+	"id": 61722
+}

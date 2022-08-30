@@ -1,0 +1,112 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "corp_pay_price",
+					"type": "Number",
+					"description": "企业支付金额，单位分"
+				},
+				{
+					"name": "dis_order_id",
+					"type": "String",
+					"description": "外部订单ID"
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "商旅订单号"
+				},
+				{
+					"name": "personal_pay_price",
+					"type": "Number",
+					"description": "个人支付金额，单位分"
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道"
+				},
+				{
+					"name": "total_pay_price",
+					"type": "Number",
+					"description": "总支付价格"
+				}
+			],
+			"name": "param_btrip_flight_pay_order_rq",
+			"type": "BtripFlightPayOrderRq",
+			"description": "支付参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "actual_pay_price",
+							"type": "Number",
+							"description": "实际支付总金额(分)"
+						},
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝流水号（现付支付宝不为空）"
+						},
+						{
+							"name": "fail_code",
+							"type": "String",
+							"description": "失败类型"
+						},
+						{
+							"name": "fail_reason",
+							"type": "String",
+							"description": "失败原因"
+						},
+						{
+							"name": "last_pay_time",
+							"type": "Date",
+							"description": "最迟支付时间"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态"
+						}
+					],
+					"name": "module",
+					"type": "BtripFlightPayOrderRs",
+					"description": "支付响应信息"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "响应错误码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "响应提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "支付结果"
+				}
+			],
+			"name": "result",
+			"type": "HisvResult",
+			"description": "响应结果"
+		}
+	],
+	"name": "alitrip.btrip.flight.distribution.order.pay",
+	"apiChineseName": "商旅机票分销-订单支付",
+	"description": "商旅机票分销订单支付",
+	"id": 57585
+}

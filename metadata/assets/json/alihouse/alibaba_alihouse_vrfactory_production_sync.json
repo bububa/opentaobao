@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 1-是 0-否",
+					"required": true
+				},
+				{
+					"name": "outer_house_id",
+					"type": "String",
+					"description": "外部房源ID"
+				},
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部小区ID",
+					"required": true
+				},
+				{
+					"name": "extracted_code",
+					"type": "String",
+					"description": "提取码",
+					"required": true
+				},
+				{
+					"name": "source_type",
+					"type": "Number",
+					"description": "类型:新房-1，二手房-2"
+				},
+				{
+					"name": "outer_layout_id",
+					"type": "String",
+					"description": "外部户型ID"
+				},
+				{
+					"name": "outer_layout_tid",
+					"type": "String",
+					"description": "外部货户型ID"
+				}
+			],
+			"name": "project_vr_build_data_dto",
+			"type": "ProjectVrBuildDataDto",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回唯一ID"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.vrfactory.production.sync",
+	"apiChineseName": "vr生产数据上翻",
+	"description": "vr生产数据上翻",
+	"id": 57890
+}

@@ -1,8 +1,4 @@
 {
-	"id": 41204,
-	"name": "alibaba.westcrm.grade.get",
-	"apiChineseName": "获取等级列表",
-	"description": "获取会员卡等级列表",
 	"requestParams": [
 		{
 			"name": "campus_id",
@@ -12,49 +8,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "DataResult",
-			"description": "返回对象封装",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
-					"name": "code",
-					"type": "Number",
-					"description": "参数code",
-					"required": true
-				},
-				{
-					"name": "data_list",
-					"type": "Data[]",
-					"description": "返回参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "grade_num",
 							"type": "Number",
-							"description": "等级列表",
-							"required": true
+							"description": "等级列表"
 						},
 						{
 							"name": "grade_name",
 							"type": "String",
-							"description": "等级名称",
-							"required": true
+							"description": "等级名称"
 						},
 						{
 							"name": "grade_id",
 							"type": "Number",
-							"description": "等级id",
-							"required": true
+							"description": "等级id"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "返回参数"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装"
 		}
-	]
+	],
+	"name": "alibaba.westcrm.grade.get",
+	"apiChineseName": "获取等级列表",
+	"description": "获取会员卡等级列表",
+	"id": 41204
 }

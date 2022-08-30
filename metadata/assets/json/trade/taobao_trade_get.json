@@ -1,8 +1,4 @@
 {
-	"id": 47,
-	"name": "taobao.trade.get",
-	"apiChineseName": "获取单笔交易的部分信息(性能高)",
-	"description": "获取单笔交易的部分信息\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "trade",
-			"type": "Trade",
-			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息",
 			"subParams": [
 				{
 					"name": "seller_nick",
@@ -164,9 +157,6 @@
 					"description": "买家是否已评价。可选值:true(已评价),false(未评价)。如买家只评价未打分，此字段仍返回false"
 				},
 				{
-					"name": "service_tags",
-					"type": "LogisticsTag[]",
-					"description": "物流标签",
 					"subParams": [
 						{
 							"name": "order_id",
@@ -174,9 +164,6 @@
 							"description": "主订单或子订单的订单号"
 						},
 						{
-							"name": "logistic_service_tag_list",
-							"type": "LogisticServiceTag[]",
-							"description": "服务标签",
 							"subParams": [
 								{
 									"name": "service_tag",
@@ -188,9 +175,15 @@
 									"type": "String",
 									"description": "消费者选快递请直接判断service_tag是否包含companyCode。而不要判断service_type"
 								}
-							]
+							],
+							"name": "logistic_service_tag_list",
+							"type": "LogisticServiceTag[]",
+							"description": "服务标签"
 						}
-					]
+					],
+					"name": "service_tags",
+					"type": "LogisticsTag[]",
+					"description": "物流标签"
 				},
 				{
 					"name": "o2o",
@@ -223,9 +216,6 @@
 					"description": "导购宝提货方式，inshop：店内提货，online：线上发货"
 				},
 				{
-					"name": "orders",
-					"type": "Order[]",
-					"description": "订单列表",
 					"subParams": [
 						{
 							"name": "item_meal_name",
@@ -999,8 +989,81 @@
 							"name": "service_outer_id",
 							"type": "String",
 							"description": "服务供应链-服务商外部编码"
+						},
+						{
+							"name": "expand_card_expand_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单权益金分摊金额（单位为分）"
+						},
+						{
+							"name": "expand_card_basic_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单本金分摊金额（单位为分）"
+						},
+						{
+							"name": "seller_display_nick",
+							"type": "String",
+							"description": "卖家展示昵称"
+						},
+						{
+							"name": "buyer_display_nick",
+							"type": "String",
+							"description": "买家展示昵称"
+						},
+						{
+							"name": "lijian",
+							"type": "String",
+							"description": "预售订单立减金额"
+						},
+						{
+							"name": "auto_flow",
+							"type": "String",
+							"description": "优仓业务场景下 1（自动流转）/0（非自动流转）"
+						},
+						{
+							"name": "trade_fulfillment_type",
+							"type": "Number",
+							"description": "订单履约类型"
+						},
+						{
+							"name": "distribute_status",
+							"type": "String",
+							"description": "订单是有代发订单，为空表示该订单暂无代发单据，distribute-该子订单有已分配代发单据，cancel-订单的代发单据都已取消，"
+						},
+						{
+							"name": "pro_ct",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
+						},
+						{
+							"name": "has_gift",
+							"type": "Boolean",
+							"description": "是否含有赠品"
+						},
+						{
+							"name": "is_free_gift",
+							"type": "Boolean",
+							"description": "是否是赠品订单"
+						},
+						{
+							"name": "gift_mids",
+							"type": "String",
+							"description": "赠品关联的id，主品订单下此字段表示赠品订单id，赠品订单表示主品订单id"
+						},
+						{
+							"name": "is_idle",
+							"type": "String",
+							"description": "是否为闲鱼订单，1是，0否"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
 						}
-					]
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表"
 				},
 				{
 					"name": "eticket_service_addr",
@@ -1018,11 +1081,18 @@
 					"description": "天猫国际计税优惠金额"
 				},
 				{
-					"name": "pmtp",
+					"name": "buyer_open_uid",
 					"type": "String",
-					"description": "透出前置营销工具"
+					"description": "买家OpenUid"
 				}
-			]
+			],
+			"name": "trade",
+			"type": "Trade",
+			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息"
 		}
-	]
+	],
+	"name": "taobao.trade.get",
+	"apiChineseName": "获取单笔交易的部分信息(性能高)",
+	"description": "获取单笔交易的部分信息\n\u003cbr/\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e",
+	"id": 47
 }

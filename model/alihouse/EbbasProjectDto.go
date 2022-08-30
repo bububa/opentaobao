@@ -5,17 +5,19 @@ type EbbasProjectDto struct {
 	// 楼盘别名
 	AliasNames []string `json:"alias_names,omitempty" xml:"alias_names>string,omitempty"`
 	// 标签码
-	TagCodes []int64 `json:"tag_codes,omitempty" xml:"tag_codes>int64,omitempty"`
+	TagCodes []string `json:"tag_codes,omitempty" xml:"tag_codes>string,omitempty"`
 	// 物业类型,多选
-	EstateTypes []int64 `json:"estate_types,omitempty" xml:"estate_types>int64,omitempty"`
+	EstateTypes []string `json:"estate_types,omitempty" xml:"estate_types>string,omitempty"`
 	// 产权年限码
-	PropertyRightsYearsCodes []int64 `json:"property_rights_years_codes,omitempty" xml:"property_rights_years_codes>int64,omitempty"`
+	PropertyRightsYearsCodes []string `json:"property_rights_years_codes,omitempty" xml:"property_rights_years_codes>string,omitempty"`
+	// 装修类型，参见枚举
+	DecorationStandardCodes []string `json:"decoration_standard_codes,omitempty" xml:"decoration_standard_codes>string,omitempty"`
 	// 建筑类别
-	BuildingCategorys []int64 `json:"building_categorys,omitempty" xml:"building_categorys>int64,omitempty"`
+	BuildingCategorys []string `json:"building_categorys,omitempty" xml:"building_categorys>string,omitempty"`
 	// 建筑类型
-	BuildingTypes []int64 `json:"building_types,omitempty" xml:"building_types>int64,omitempty"`
+	BuildingTypes []string `json:"building_types,omitempty" xml:"building_types>string,omitempty"`
 	// 房屋类型
-	HouseTypes []int64 `json:"house_types,omitempty" xml:"house_types>int64,omitempty"`
+	HouseTypes []string `json:"house_types,omitempty" xml:"house_types>string,omitempty"`
 	// 周边商业
 	PeripheralBusiness []string `json:"peripheral_business,omitempty" xml:"peripheral_business>string,omitempty"`
 	// 周边景观
@@ -38,8 +40,6 @@ type EbbasProjectDto struct {
 	Layouts []SyncProjectLayoutDto `json:"layouts,omitempty" xml:"layouts>sync_project_layout_dto,omitempty"`
 	// 图片对象列表
 	Pictures []ProjectPictureDto `json:"pictures,omitempty" xml:"pictures>project_picture_dto,omitempty"`
-	// 装修类型，参见枚举
-	DecorationStandardCodes []int64 `json:"decoration_standard_codes,omitempty" xml:"decoration_standard_codes>int64,omitempty"`
 	// 楼盘ecode
 	ECode string `json:"e_code,omitempty" xml:"e_code,omitempty"`
 	// 外部id
@@ -180,6 +180,10 @@ type EbbasProjectDto struct {
 	DirectSale string `json:"direct_sale,omitempty" xml:"direct_sale,omitempty"`
 	// 车位总数描述
 	ParkingNumberDesc string `json:"parking_number_desc,omitempty" xml:"parking_number_desc,omitempty"`
+	// 功能区id
+	FunctionId string `json:"function_id,omitempty" xml:"function_id,omitempty"`
+	// 外部项目店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 1-EBBAS 2-开发商 3-ETC 默认2
 	Source int64 `json:"source,omitempty" xml:"source,omitempty"`
 	// 1-新房楼盘 2-小区  默认1-新房
@@ -206,6 +210,14 @@ type EbbasProjectDto struct {
 	UndergroundParkingNumber int64 `json:"underground_parking_number,omitempty" xml:"underground_parking_number,omitempty"`
 	// 楼盘销售状态
 	ProjectSalesStatus int64 `json:"project_sales_status,omitempty" xml:"project_sales_status,omitempty"`
+	// 城市ID-临时
+	TempCityId int64 `json:"temp_city_id,omitempty" xml:"temp_city_id,omitempty"`
+	// 区域ID-临时
+	TempAreaId int64 `json:"temp_area_id,omitempty" xml:"temp_area_id,omitempty"`
+	// 功能区ID-临时
+	TempFunctionId int64 `json:"temp_function_id,omitempty" xml:"temp_function_id,omitempty"`
+	// 板块ID-临时
+	TempModuleId int64 `json:"temp_module_id,omitempty" xml:"temp_module_id,omitempty"`
 	// 是否为测试楼盘 true-是测试楼盘
 	IsTest bool `json:"is_test,omitempty" xml:"is_test,omitempty"`
 }

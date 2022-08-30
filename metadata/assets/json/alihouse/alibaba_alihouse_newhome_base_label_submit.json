@@ -1,14 +1,6 @@
 {
-	"id": 56032,
-	"name": "alibaba.alihouse.newhome.base.label.submit",
-	"apiChineseName": "提交标签库",
-	"description": "提交标签库",
 	"requestParams": [
 		{
-			"name": "labels",
-			"type": "BaseLabelDto[]",
-			"description": "标签列表",
-			"maxListSize": 999,
 			"subParams": [
 				{
 					"name": "parent_business",
@@ -49,41 +41,50 @@
 					"name": "parent_business_id",
 					"type": "String",
 					"description": "父级业务ID"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型0-新房 1-二手房"
 				}
-			]
+			],
+			"name": "labels",
+			"type": "BaseLabelDto[]",
+			"description": "标签列表",
+			"maxListSize": 999
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.base.label.submit",
+	"apiChineseName": "提交标签库",
+	"description": "提交标签库",
+	"id": 56032
 }

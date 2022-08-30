@@ -1,8 +1,4 @@
 {
-	"id": 51135,
-	"name": "cainiao.data.logistics.delivery.aging.predict",
-	"apiChineseName": "配送物流时效预测",
-	"description": "时效和服务预期是商家发货时比较关注的信息，也是选择快递公司的一个重要参考（除去长期合作合同因素）。所以，在商家发货时给商家提供线路时效预估能帮助商家选择更好的快递公司，且对消费者来说也能整体提升体验。\n\n日常，展示具体的预测时效数值\n\n大促期间，展示预测的时效区间",
 	"requestParams": [
 		{
 			"name": "send_city_name",
@@ -61,23 +57,25 @@
 	],
 	"responseParams": [
 		{
-			"name": "datas",
-			"type": "Data []",
-			"description": "列表类型返回",
 			"subParams": [
 				{
 					"name": "company_id",
 					"type": "String",
-					"description": "快递公司id",
-					"required": true
+					"description": "快递公司id"
 				},
 				{
 					"name": "delivery_period",
 					"type": "String",
-					"description": "配送时效。字符串，ISV拿到直接展示，不要做处理",
-					"required": true
+					"description": "配送时效。字符串，ISV拿到直接展示，不要做处理"
 				}
-			]
+			],
+			"name": "datas",
+			"type": "Data []",
+			"description": "列表类型返回"
 		}
-	]
+	],
+	"name": "cainiao.data.logistics.delivery.aging.predict",
+	"apiChineseName": "配送物流时效预测",
+	"description": "时效和服务预期是商家发货时比较关注的信息，也是选择快递公司的一个重要参考（除去长期合作合同因素）。所以，在商家发货时给商家提供线路时效预估能帮助商家选择更好的快递公司，且对消费者来说也能整体提升体验。\n\n日常，展示具体的预测时效数值\n\n大促期间，展示预测的时效区间",
+	"id": 51135
 }

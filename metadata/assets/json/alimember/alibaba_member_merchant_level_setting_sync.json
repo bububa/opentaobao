@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "uid_type",
+					"type": "String",
+					"description": "main主账号 sub子账号",
+					"required": true
+				},
+				{
+					"name": "level_type",
+					"type": "Number",
+					"description": "1行为等级 2成长值等级",
+					"required": true
+				},
+				{
+					"name": "level_to_growth",
+					"type": "String",
+					"description": "level_type=2时，必须传递；"
+				}
+			],
+			"name": "sync_level_setting_dto",
+			"type": "SyncLevelSettingDTO",
+			"description": "商家等级信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "务端系统异错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.member.merchant.level.setting.sync",
+	"apiChineseName": "商家等级列表同步配置",
+	"description": "商家等级列表同步配置",
+	"id": 63274
+}

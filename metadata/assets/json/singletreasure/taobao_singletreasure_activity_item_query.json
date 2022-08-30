@@ -1,8 +1,4 @@
 {
-	"id": 31365,
-	"name": "taobao.singletreasure.activity.item.query",
-	"apiChineseName": "查询活动下的优惠信息",
-	"description": "分页查询活动下的商品优惠信息",
 	"requestParams": [
 		{
 			"name": "activity_id",
@@ -25,169 +21,147 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PageResultDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "系统信息",
-					"required": true
+					"description": "系统信息"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
-					"name": "data_list",
-					"type": "ItemDetailInfo[]",
-					"description": "查询结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "limit_check",
 							"type": "Number",
-							"description": "限购数",
-							"required": true
+							"description": "限购数"
 						},
 						{
 							"name": "free_post",
 							"type": "Boolean",
-							"description": "是否包邮",
-							"required": true
+							"description": "是否包邮"
 						},
 						{
 							"name": "end_time",
 							"type": "String",
-							"description": "活动结束时间",
-							"required": true
+							"description": "活动结束时间"
 						},
 						{
 							"name": "exclude_areas",
 							"type": "String",
-							"description": "不包邮地区",
-							"required": true
+							"description": "不包邮地区"
 						},
 						{
 							"name": "is_discard_fen",
 							"type": "Boolean",
-							"description": "抹分与否",
-							"required": true
+							"description": "抹分与否"
 						},
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "活动 id",
-							"required": true
+							"description": "活动 id"
 						},
 						{
 							"name": "start_time",
 							"type": "String",
-							"description": "活动开始时间",
-							"required": true
+							"description": "活动开始时间"
 						},
 						{
 							"name": "discount_type",
 							"type": "Number",
-							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱",
-							"required": true
+							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "活动名称",
-							"required": true
+							"description": "活动名称"
 						},
 						{
 							"name": "mk_discount",
 							"type": "Number",
-							"description": "猫客对应折扣",
-							"required": true
+							"description": "猫客对应折扣"
 						},
 						{
 							"name": "promotion_level",
 							"type": "Number",
-							"description": "优惠类型，1 为商品级优惠，3 为 SKU 级优惠",
-							"required": true
+							"description": "优惠类型，1 为商品级优惠，3 为 SKU 级优惠"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态，-1 删除，0 暂停，1 征程",
-							"required": true
+							"description": "状态，-1 删除，0 暂停，1 征程"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "宝贝 id",
-							"required": true
+							"description": "宝贝 id"
 						},
 						{
 							"name": "discount",
 							"type": "Number",
-							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱",
-							"required": true
+							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱"
 						},
 						{
 							"name": "price",
 							"type": "Number",
-							"description": "价格",
-							"required": true
+							"description": "价格"
 						},
 						{
 							"name": "is_math_floor",
 							"type": "Boolean",
-							"description": "是否取整",
-							"required": true
+							"description": "是否取整"
 						},
 						{
 							"name": "crowd_id",
 							"type": "String",
-							"description": "对应的人群 id",
-							"required": true
+							"description": "对应的人群 id"
 						},
 						{
 							"name": "detail_id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "sku_id",
 							"type": "Number",
-							"description": "skuId",
-							"required": true
+							"description": "skuId"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "ItemDetailInfo[]",
+					"description": "查询结果"
 				},
 				{
 					"name": "page_number",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "系统编码",
-					"required": true
+					"description": "系统编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统执行成功与否",
-					"required": true
+					"description": "系统执行成功与否"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "返回数量个数",
-					"required": true
+					"description": "返回数量个数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PageResultDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.singletreasure.activity.item.query",
+	"apiChineseName": "查询活动下的优惠信息",
+	"description": "分页查询活动下的商品优惠信息",
+	"id": 31365
 }

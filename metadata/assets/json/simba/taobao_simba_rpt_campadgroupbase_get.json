@@ -1,8 +1,4 @@
 {
-	"id": 10957,
-	"name": "taobao.simba.rpt.campadgroupbase.get",
-	"apiChineseName": "推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型)",
-	"description": "推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型)",
 	"requestParams": [
 		{
 			"name": "subway_token",
@@ -64,5 +60,9 @@
 			"type": "String",
 			"description": "推广计划下推广组的基础数据列表"
 		}
-	]
+	],
+	"name": "taobao.simba.rpt.campadgroupbase.get",
+	"apiChineseName": "推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型)",
+	"description": "推广计划下的推广组报表基础数据查询(只有汇总数据，无分类类型)",
+	"id": 10957
 }

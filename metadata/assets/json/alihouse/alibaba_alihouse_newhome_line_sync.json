@@ -1,14 +1,6 @@
 {
-	"id": 55954,
-	"name": "alibaba.alihouse.newhome.line.sync",
-	"apiChineseName": "环线数据同步",
-	"description": "环线数据同步",
 	"requestParams": [
 		{
-			"name": "base_loop_line_dto",
-			"type": "BaseLoopLineDto",
-			"description": "环线入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "loop_line_name",
@@ -48,41 +40,50 @@
 					"name": "is_deleted",
 					"type": "String",
 					"description": "是否删除 1 是 0 否"
+				},
+				{
+					"name": "source_type",
+					"type": "Number",
+					"description": "数据源类型（1-新房 2-二手房）"
 				}
-			]
+			],
+			"name": "base_loop_line_dto",
+			"type": "BaseLoopLineDto",
+			"description": "环线入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "外部ID",
-					"required": true
+					"description": "外部ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.line.sync",
+	"apiChineseName": "环线数据同步",
+	"description": "环线数据同步",
+	"id": 55954
 }

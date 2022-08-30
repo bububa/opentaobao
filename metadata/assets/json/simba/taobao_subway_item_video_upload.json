@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "账号昵称"
+		},
+		{
+			"name": "video_url",
+			"type": "String",
+			"description": "video的url"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "itemId"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "视频类型，1是方视频"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "size_type",
+					"type": "Number",
+					"description": "视频类型"
+				},
+				{
+					"name": "state_desc",
+					"type": "String",
+					"description": "视频状态描述"
+				},
+				{
+					"name": "video_id",
+					"type": "Number",
+					"description": "视频ID"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "视频宽度"
+				},
+				{
+					"name": "state",
+					"type": "Number",
+					"description": "视频状态码"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "视频高度"
+				},
+				{
+					"name": "ratio",
+					"type": "String",
+					"description": "视频比例"
+				}
+			],
+			"name": "result",
+			"type": "VideoFeedDTO",
+			"description": "视频信息"
+		}
+	],
+	"name": "taobao.subway.item.video.upload",
+	"apiChineseName": "创意视频上传",
+	"description": "为用户提供视频上传的功能",
+	"id": 56048
+}

@@ -1,0 +1,116 @@
+{
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "scp单号",
+			"required": true
+		},
+		{
+			"name": "package_quantity",
+			"type": "Number",
+			"description": "包裹数量",
+			"required": true
+		},
+		{
+			"name": "owner_id",
+			"type": "Number",
+			"description": "货主ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "scp单号"
+						},
+						{
+							"name": "package_quantity",
+							"type": "Number",
+							"description": "包裹数量"
+						},
+						{
+							"subParams": [
+								{
+									"name": "mail_no",
+									"type": "String",
+									"description": "运单号"
+								},
+								{
+									"subParams": [
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "货品ID"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "货品数量"
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "货品编码"
+										},
+										{
+											"name": "uid",
+											"type": "String",
+											"description": "货品唯一ID（预留给商家使用）"
+										}
+									],
+									"name": "item_info_list",
+									"type": "HiErpItemInfo[]",
+									"description": "货品模型"
+								}
+							],
+							"name": "package_info_list",
+							"type": "Integer[]",
+							"description": "包裹模型"
+						},
+						{
+							"name": "out_order_code",
+							"type": "String",
+							"description": "外部订单号"
+						}
+					],
+					"name": "result",
+					"type": "HiErpTakeMailNoResp",
+					"description": "取号返回结果模型"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "通常用于success为true时的页面提示"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "false：失败    true：成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码，通常用于success字段值为false时"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因，通常用于success字段值为false时"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.tianmao.lanpei.logistics.mailno",
+	"apiChineseName": "阿里巴巴.天猫家装.揽配.物流.获取运单号",
+	"description": "阿里巴巴.天猫家装.揽配.物流.获取运单号",
+	"id": 61788
+}

@@ -1,13 +1,6 @@
 {
-	"id": 43683,
-	"name": "alibaba.damai.maitix.project.distribution.querylist",
-	"apiChineseName": "分销项目列表查询（已过时，不推荐使用）",
-	"description": "分销项目列表查询接口（已过时，不推荐使用）",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "error_code",
@@ -28,16 +21,8 @@
 					"required": true
 				},
 				{
-					"name": "model_list",
-					"type": "ProjectInfoDto[]",
-					"description": "项目信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "city",
-							"type": "IdNameDto",
-							"description": "演出城市",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -51,7 +36,11 @@
 									"description": "城市名称",
 									"required": true
 								}
-							]
+							],
+							"name": "city",
+							"type": "IdNameDto",
+							"description": "演出城市",
+							"required": true
 						},
 						{
 							"name": "classify_code",
@@ -66,10 +55,6 @@
 							"required": true
 						},
 						{
-							"name": "country",
-							"type": "IdNameDto",
-							"description": "国家",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -83,7 +68,11 @@
 									"description": "国家名称",
 									"required": true
 								}
-							]
+							],
+							"name": "country",
+							"type": "IdNameDto",
+							"description": "国家",
+							"required": true
 						},
 						{
 							"name": "introduce",
@@ -98,10 +87,6 @@
 							"required": true
 						},
 						{
-							"name": "perform_info_list",
-							"type": "PerformInfoDto[]",
-							"description": "场次",
-							"required": true,
 							"subParams": [
 								{
 									"name": "change_reason",
@@ -134,10 +119,6 @@
 									"required": true
 								},
 								{
-									"name": "perform_setting",
-									"type": "PerformSettingDto",
-									"description": "场次设置",
-									"required": true,
 									"subParams": [
 										{
 											"name": "card_type",
@@ -181,7 +162,11 @@
 											"description": "场次id",
 											"required": true
 										}
-									]
+									],
+									"name": "perform_setting",
+									"type": "PerformSettingDto",
+									"description": "场次设置",
+									"required": true
 								},
 								{
 									"name": "perform_status",
@@ -196,10 +181,6 @@
 									"required": true
 								},
 								{
-									"name": "price_info_list",
-									"type": "PriceInfoDto[]",
-									"description": "价格",
-									"required": true,
 									"subParams": [
 										{
 											"name": "max_stock",
@@ -214,10 +195,6 @@
 											"required": true
 										},
 										{
-											"name": "price",
-											"type": "Money",
-											"description": "票价",
-											"required": true,
 											"subParams": [
 												{
 													"name": "cent",
@@ -225,7 +202,11 @@
 													"description": "票价 单位：分",
 													"required": true
 												}
-											]
+											],
+											"name": "price",
+											"type": "Money",
+											"description": "票价",
+											"required": true
 										},
 										{
 											"name": "price_id",
@@ -257,7 +238,11 @@
 											"description": "是否可售 true可售 false不可售",
 											"required": true
 										}
-									]
+									],
+									"name": "price_info_list",
+									"type": "PriceInfoDto[]",
+									"description": "价格",
+									"required": true
 								},
 								{
 									"name": "remark",
@@ -289,7 +274,11 @@
 									"description": "场次有效期规则 每周周几可以",
 									"required": true
 								}
-							]
+							],
+							"name": "perform_info_list",
+							"type": "PerformInfoDto[]",
+							"description": "场次",
+							"required": true
 						},
 						{
 							"name": "poster_url",
@@ -322,10 +311,6 @@
 							"required": true
 						},
 						{
-							"name": "province",
-							"type": "IdNameDto",
-							"description": "省",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -339,7 +324,11 @@
 									"description": "省名称",
 									"required": true
 								}
-							]
+							],
+							"name": "province",
+							"type": "IdNameDto",
+							"description": "省",
+							"required": true
 						},
 						{
 							"name": "remark",
@@ -390,10 +379,6 @@
 							"required": true
 						},
 						{
-							"name": "venue",
-							"type": "VenueDTO",
-							"description": "场馆",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -425,9 +410,17 @@
 									"description": "场馆地址",
 									"required": true
 								}
-							]
+							],
+							"name": "venue",
+							"type": "VenueDTO",
+							"description": "场馆",
+							"required": true
 						}
-					]
+					],
+					"name": "model_list",
+					"type": "ProjectInfoDto[]",
+					"description": "项目信息",
+					"required": true
 				},
 				{
 					"name": "success",
@@ -435,7 +428,14 @@
 					"description": "接口返回是否成功 true成功 false失败",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.project.distribution.querylist",
+	"apiChineseName": "分销项目列表查询（已过时，不推荐使用）",
+	"description": "分销项目列表查询接口（已过时，不推荐使用）",
+	"id": 43683
 }

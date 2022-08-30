@@ -1,8 +1,4 @@
 {
-	"id": 27336,
-	"name": "alibaba.alihealth.examination.reserve.report",
-	"apiChineseName": "体检机构对接_体检报告查询",
-	"description": "体检机构对接_体检报告获取",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -52,5 +48,9 @@
 			"type": "String",
 			"description": "文件数据流"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.report",
+	"apiChineseName": "体检机构对接_体检报告查询",
+	"description": "体检机构对接_体检报告获取",
+	"id": 27336
 }

@@ -16,10 +16,10 @@ type TaobaoTvpayAccessDataGetAPIRequest struct {
 	_deviceId string
 	// 来源
 	_from string
-	// 订单id
-	_outOrderNo string
 	// 账号客户端版本
 	_accountClientVersion string
+	// 订单id
+	_outOrderNo string
 }
 
 // NewTaobaoTvpayAccessDataGetRequest 初始化TaobaoTvpayAccessDataGetAPIRequest对象
@@ -69,19 +69,6 @@ func (r TaobaoTvpayAccessDataGetAPIRequest) GetFrom() string {
 	return r._from
 }
 
-// SetOutOrderNo is OutOrderNo Setter
-// 订单id
-func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) error {
-	r._outOrderNo = _outOrderNo
-	r.Set("out_order_no", _outOrderNo)
-	return nil
-}
-
-// GetOutOrderNo OutOrderNo Getter
-func (r TaobaoTvpayAccessDataGetAPIRequest) GetOutOrderNo() string {
-	return r._outOrderNo
-}
-
 // SetAccountClientVersion is AccountClientVersion Setter
 // 账号客户端版本
 func (r *TaobaoTvpayAccessDataGetAPIRequest) SetAccountClientVersion(_accountClientVersion string) error {
@@ -93,4 +80,17 @@ func (r *TaobaoTvpayAccessDataGetAPIRequest) SetAccountClientVersion(_accountCli
 // GetAccountClientVersion AccountClientVersion Getter
 func (r TaobaoTvpayAccessDataGetAPIRequest) GetAccountClientVersion() string {
 	return r._accountClientVersion
+}
+
+// SetOutOrderNo is OutOrderNo Setter
+// 订单id
+func (r *TaobaoTvpayAccessDataGetAPIRequest) SetOutOrderNo(_outOrderNo string) error {
+	r._outOrderNo = _outOrderNo
+	r.Set("out_order_no", _outOrderNo)
+	return nil
+}
+
+// GetOutOrderNo OutOrderNo Getter
+func (r TaobaoTvpayAccessDataGetAPIRequest) GetOutOrderNo() string {
+	return r._outOrderNo
 }

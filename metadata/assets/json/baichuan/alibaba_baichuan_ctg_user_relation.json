@@ -1,8 +1,4 @@
 {
-	"id": 28747,
-	"name": "alibaba.baichuan.ctg.user.relation",
-	"apiChineseName": "用户",
-	"description": "提供给优酷查询道长和淘宝账户的绑定关系",
 	"requestParams": [
 		{
 			"name": "app",
@@ -22,49 +18,47 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回的整体结果",
 			"subParams": [
 				{
 					"name": "module",
 					"type": "Number",
-					"description": "返回结果，数值型，1：代表已绑定达人身份，2代表未绑定达人身份",
-					"required": true
+					"description": "返回结果，数值型，1：代表已绑定达人身份，2代表未绑定达人身份"
 				},
 				{
 					"name": "error_detail",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "error_code",
-					"type": "ErrorCode",
-					"description": "错误码结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "message",
 							"type": "String",
-							"description": "详细错误信息",
-							"required": true
+							"description": "详细错误信息"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "错误码",
-							"required": true
+							"description": "错误码"
 						}
-					]
+					],
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "错误码结构体"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "返回成功与否",
-					"required": true
+					"description": "返回成功与否"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回的整体结果"
 		}
-	]
+	],
+	"name": "alibaba.baichuan.ctg.user.relation",
+	"apiChineseName": "用户",
+	"description": "提供给优酷查询道长和淘宝账户的绑定关系",
+	"id": 28747
 }

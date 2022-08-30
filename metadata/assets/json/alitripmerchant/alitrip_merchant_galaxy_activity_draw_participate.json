@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录信息"
+		},
+		{
+			"name": "offer_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "good_send_type",
+							"type": "Number",
+							"description": "奖品发放类型"
+						},
+						{
+							"name": "good_name",
+							"type": "String",
+							"description": "奖品名称"
+						},
+						{
+							"name": "good_image",
+							"type": "String",
+							"description": "奖品图片"
+						},
+						{
+							"name": "participate_status",
+							"type": "Number",
+							"description": "活动参与状态，中奖，未中奖"
+						},
+						{
+							"name": "good_type",
+							"type": "Number",
+							"description": "奖品类型"
+						},
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "奖品id"
+						},
+						{
+							"name": "good_amount",
+							"type": "Number",
+							"description": "奖品数量"
+						},
+						{
+							"name": "record_id",
+							"type": "Number",
+							"description": "参与结果记录id"
+						}
+					],
+					"name": "content",
+					"type": "ActivityParticipateVo",
+					"description": "返回类型"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.draw.participate",
+	"apiChineseName": "星河-幸运抽奖活动参与",
+	"description": "雅高小程序幸运抽奖活动页面用户进行抽奖，根据活动规则返回抽奖结果",
+	"id": 57045
+}

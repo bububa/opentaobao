@@ -1,13 +1,6 @@
 {
-	"id": 26977,
-	"name": "taobao.baichuan.items.unsubscribe.by.condition",
-	"apiChineseName": "根据条件删除订阅关系",
-	"description": "根据条件删除订阅关系",
 	"requestParams": [
 		{
-			"name": "condition",
-			"type": "Condition",
-			"description": "删除条件",
 			"subParams": [
 				{
 					"name": "start_time",
@@ -35,56 +28,57 @@
 					"type": "Date",
 					"description": "结束时间"
 				}
-			]
+			],
+			"name": "condition",
+			"type": "Condition",
+			"description": "删除条件"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "result_list",
-					"type": "ResultMeta[]",
-					"description": "分返回码返回结果",
-					"required": true,
 					"subParams": [
 						{
-							"name": "data",
-							"type": "ResultData",
-							"description": "返回的结果",
-							"required": true,
 							"subParams": [
 								{
 									"name": "count",
 									"type": "Number",
-									"description": "删除订阅关系的个数，由于接口有数量限制，故 根据count==0来判断是否全部删除完毕",
-									"required": true
+									"description": "删除订阅关系的个数，由于接口有数量限制，故 根据count==0来判断是否全部删除完毕"
 								},
 								{
 									"name": "data_list",
 									"type": "Number[]",
-									"description": "具体的商品id",
-									"required": true
+									"description": "具体的商品id"
 								}
-							]
+							],
+							"name": "data",
+							"type": "ResultData",
+							"description": "返回的结果"
 						},
 						{
 							"name": "code",
 							"type": "Number",
-							"description": "返回码",
-							"required": true
+							"description": "返回码"
 						},
 						{
 							"name": "msg",
 							"type": "String",
-							"description": "返回码对应文案",
-							"required": true
+							"description": "返回码对应文案"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "分返回码返回结果"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "taobao.baichuan.items.unsubscribe.by.condition",
+	"apiChineseName": "根据条件删除订阅关系",
+	"description": "根据条件删除订阅关系",
+	"id": 26977
 }

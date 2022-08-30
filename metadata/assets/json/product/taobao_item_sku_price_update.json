@@ -1,15 +1,10 @@
 {
-	"id": 10928,
-	"name": "taobao.item.sku.price.update",
-	"apiChineseName": "更新商品SKU的价格",
-	"description": "更新商品SKU的价格",
 	"requestParams": [
 		{
 			"name": "num_iid",
 			"type": "Number",
 			"description": "Sku所属商品数字id，可通过 taobao.item.get 获取",
-			"required": true,
-			"minValue": 0
+			"required": true
 		},
 		{
 			"name": "properties",
@@ -20,8 +15,7 @@
 		{
 			"name": "quantity",
 			"type": "Number",
-			"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数",
-			"minValue": 0
+			"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
 		},
 		{
 			"name": "price",
@@ -34,14 +28,14 @@
 			"description": "Sku的商家外部id"
 		},
 		{
-			"name": "item_price",
-			"type": "Price",
-			"description": "sku所属商品的价格。当用户更新sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够更新成功"
-		},
-		{
 			"name": "lang",
 			"type": "String",
 			"description": "Sku文字的版本。可选值:zh_HK(繁体),zh_CN(简体);默认值:zh_CN"
+		},
+		{
+			"name": "item_price",
+			"type": "Price",
+			"description": "sku所属商品的价格。当用户更新sku，使商品价格不属于sku价格之间的时候，用于修改商品的价格，使sku能够更新成功"
 		},
 		{
 			"name": "ignorewarning",
@@ -51,15 +45,7 @@
 	],
 	"responseParams": [
 		{
-			"name": "sku",
-			"type": "Sku",
-			"description": "商品SKU信息（只包含num_iid和modified）",
 			"subParams": [
-				{
-					"name": "sku_id",
-					"type": "Number",
-					"description": "sku的id"
-				},
 				{
 					"name": "iid",
 					"type": "String",
@@ -74,8 +60,20 @@
 					"name": "modified",
 					"type": "String",
 					"description": "sku最后修改日期 时间格式：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "sku的id"
 				}
-			]
+			],
+			"name": "sku",
+			"type": "Sku",
+			"description": "商品SKU信息（只包含num_iid和modified）"
 		}
-	]
+	],
+	"name": "taobao.item.sku.price.update",
+	"apiChineseName": "更新商品SKU的价格",
+	"description": "更新商品SKU的价格",
+	"id": 10928
 }

@@ -10,12 +10,12 @@ type ServiceSubscribe struct {
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
 	// 过期时间
 	GmtExpiry string `json:"gmt_expiry,omitempty" xml:"gmt_expiry,omitempty"`
+	// 将要被使用的那条质检订单的价格
+	FuturePrice string `json:"future_price,omitempty" xml:"future_price,omitempty"`
 	// 订购总数
 	AllNum int64 `json:"all_num,omitempty" xml:"all_num,omitempty"`
 	// 已经使用的数量
 	UsedNum int64 `json:"used_num,omitempty" xml:"used_num,omitempty"`
-	// 将要被使用的那条质检订单的价格
-	FuturePrice float64 `json:"future_price,omitempty" xml:"future_price,omitempty"`
 	// 将要被消耗的质检订单ID
 	FutureSubId int64 `json:"future_sub_id,omitempty" xml:"future_sub_id,omitempty"`
 	// 可用数量

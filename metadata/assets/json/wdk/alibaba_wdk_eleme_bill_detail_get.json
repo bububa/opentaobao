@@ -1,14 +1,6 @@
 {
-	"id": 44162,
-	"name": "alibaba.wdk.eleme.bill.detail.get",
-	"apiChineseName": "饿了么对账单查询，带订单明细",
-	"description": "查询饿了么对账单信息，带订单明细",
 	"requestParams": [
 		{
-			"name": "ele_bill_request",
-			"type": "EleBillRequest",
-			"description": "对账单查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page",
@@ -28,184 +20,175 @@
 					"description": "渠道店id",
 					"required": true
 				}
-			]
+			],
+			"name": "ele_bill_request",
+			"type": "EleBillRequest",
+			"description": "对账单查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "EleBillBo",
-					"description": "账单信息",
-					"required": true,
 					"subParams": [
 						{
-							"name": "date",
-							"type": "String",
-							"description": "账单日期，时间戳",
-							"required": true
-						},
-						{
-							"name": "shop_id",
-							"type": "String",
-							"description": "渠道店id",
-							"required": true
-						},
-						{
-							"name": "order_list",
-							"type": "EleOrderInfoBo[]",
-							"description": "订单列表",
-							"required": true,
 							"subParams": [
 								{
-									"name": "order_detail_fee",
-									"type": "OrderDetailFee",
-									"description": "订单费用明细",
-									"required": true,
 									"subParams": [
 										{
 											"name": "zhongbao_call_fee",
 											"type": "String",
-											"description": "众包呼单费",
-											"required": true
+											"description": "众包呼单费"
 										},
 										{
 											"name": "cold_box_fee",
 											"type": "String",
-											"description": "冷链加工费",
-											"required": true
+											"description": "冷链加工费"
 										},
 										{
 											"name": "user_fee",
 											"type": "String",
-											"description": "用户实付",
-											"required": true
+											"description": "用户实付"
 										},
 										{
 											"name": "commission",
 											"type": "String",
-											"description": "实收佣金",
-											"required": true
+											"description": "实收佣金"
 										},
 										{
 											"name": "agent_rate",
 											"type": "String",
-											"description": "代理商补贴",
-											"required": true
+											"description": "代理商补贴"
 										},
 										{
 											"name": "platform_rate",
 											"type": "String",
-											"description": "平台补贴",
-											"required": true
+											"description": "平台补贴"
 										},
 										{
 											"name": "shop_rate",
 											"type": "String",
-											"description": "商户补贴",
-											"required": true
+											"description": "商户补贴"
 										},
 										{
 											"name": "send_fee",
 											"type": "String",
-											"description": "配送费",
-											"required": true
+											"description": "配送费"
 										},
 										{
 											"name": "package_fee",
 											"type": "String",
-											"description": "餐盒费",
-											"required": true
+											"description": "餐盒费"
 										},
 										{
 											"name": "product_fee",
 											"type": "String",
-											"description": "商品金额",
-											"required": true
+											"description": "商品金额"
+										},
+										{
+											"name": "pay_channel_fee",
+											"type": "String",
+											"description": "渠道费"
+										},
+										{
+											"name": "pay_channel_rate",
+											"type": "String",
+											"description": "渠道费率"
 										}
-									]
+									],
+									"name": "order_detail_fee",
+									"type": "OrderDetailFee",
+									"description": "订单费用明细"
 								},
 								{
 									"name": "responsible_party",
 									"type": "String",
-									"description": "损失承担方",
-									"required": true
+									"description": "损失承担方"
 								},
 								{
 									"name": "amount",
 									"type": "String",
-									"description": "金额",
-									"required": true
+									"description": "金额"
 								},
 								{
 									"name": "trade_create_time",
 									"type": "String",
-									"description": "账务时间",
-									"required": true
+									"description": "账务时间"
 								},
 								{
 									"name": "order_create_time",
 									"type": "String",
-									"description": "下单时间",
-									"required": true
+									"description": "下单时间"
 								},
 								{
 									"name": "pay_entity",
 									"type": "String",
-									"description": "实际付款主体",
-									"required": true
+									"description": "实际付款主体"
 								},
 								{
 									"name": "ele_order_id",
 									"type": "String",
-									"description": "饿了么订单id",
-									"required": true
+									"description": "饿了么订单id"
 								},
 								{
 									"name": "order_id",
 									"type": "String",
-									"description": "订单id",
-									"required": true
+									"description": "订单id"
 								},
 								{
 									"name": "order_from",
 									"type": "String",
-									"description": "订单来源",
-									"required": true
+									"description": "订单来源"
 								},
 								{
 									"name": "order_index",
 									"type": "String",
-									"description": "订单序号",
-									"required": true
+									"description": "订单序号"
 								}
-							]
+							],
+							"name": "order_list",
+							"type": "EleOrderInfoBo[]",
+							"description": "订单列表"
+						},
+						{
+							"name": "date",
+							"type": "String",
+							"description": "账单日期，时间戳"
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店id"
 						}
-					]
+					],
+					"name": "model",
+					"type": "EleBillBo",
+					"description": "账单信息"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.eleme.bill.detail.get",
+	"apiChineseName": "饿了么对账单查询，带订单明细",
+	"description": "查询饿了么对账单信息，带订单明细",
+	"id": 44162
 }

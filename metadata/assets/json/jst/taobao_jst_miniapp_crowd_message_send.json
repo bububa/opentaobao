@@ -1,8 +1,4 @@
 {
-	"id": 53419,
-	"name": "taobao.jst.miniapp.crowd.message.send",
-	"apiChineseName": "小程序活动短信发送",
-	"description": "小程序活动短信发送",
 	"requestParams": [
 		{
 			"name": "sign_name",
@@ -45,5 +41,9 @@
 			"type": "Number",
 			"description": "发送成功"
 		}
-	]
+	],
+	"name": "taobao.jst.miniapp.crowd.message.send",
+	"apiChineseName": "小程序活动短信发送",
+	"description": "小程序活动短信发送",
+	"id": 53419
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26232,
-	"name": "tmall.item.update.simpleschema.get",
-	"apiChineseName": "官网同购编辑商品的get接口",
-	"description": "官网同购编辑商品的get接口",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -26,5 +22,9 @@
 			"type": "String",
 			"description": "商品信息"
 		}
-	]
+	],
+	"name": "tmall.item.update.simpleschema.get",
+	"apiChineseName": "官网同购编辑商品的get接口",
+	"description": "官网同购编辑商品的get接口",
+	"id": 26232
 }

@@ -1,13 +1,6 @@
 {
-	"id": 32128,
-	"name": "alibaba.wdk.item.storeskustatus.update",
-	"apiChineseName": "修改门店商品状态",
-	"description": "五道口商品 修改门店商品状态",
 	"requestParams": [
 		{
-			"name": "bean",
-			"type": "UpdateStoreSkuLifeStatusRequestBean",
-			"description": "bean",
 			"subParams": [
 				{
 					"name": "org_code",
@@ -38,34 +31,38 @@
 					"type": "String",
 					"description": "渠道编码"
 				}
-			]
+			],
+			"name": "bean",
+			"type": "UpdateStoreSkuLifeStatusRequestBean",
+			"description": "bean"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.wdk.item.storeskustatus.update",
+	"apiChineseName": "修改门店商品状态",
+	"description": "五道口商品 修改门店商品状态",
+	"id": 32128
 }

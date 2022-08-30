@@ -1,0 +1,212 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前页码，从1开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID"
+				},
+				{
+					"name": "bill_start_date",
+					"type": "Number",
+					"description": "账单开始时间，默认系统时间前一天"
+				},
+				{
+					"name": "bill_end_date",
+					"type": "Number",
+					"description": "账单结束时间，默认系统时间前一天"
+				}
+			],
+			"name": "daily_request",
+			"type": "BillDailyQueryRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小"
+				},
+				{
+					"name": "page_count",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总记录数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码"
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店ID"
+						},
+						{
+							"name": "order_from",
+							"type": "String",
+							"description": "订单来源"
+						},
+						{
+							"name": "settle_biz_id",
+							"type": "String",
+							"description": "明细单据唯一结算标识"
+						},
+						{
+							"name": "bill_date",
+							"type": "String",
+							"description": "账单日期"
+						},
+						{
+							"name": "settle_amount",
+							"type": "BigDecimal",
+							"description": "商家应收金额，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "sku_amount",
+							"type": "BigDecimal",
+							"description": "商品总金额"
+						},
+						{
+							"name": "charge_base_amount",
+							"type": "BigDecimal",
+							"description": "计费基数"
+						},
+						{
+							"name": "package_amount",
+							"type": "BigDecimal",
+							"description": "商户应收包装费总额，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "send_amount",
+							"type": "BigDecimal",
+							"description": "商户应收总运费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "merchant_subsidy_amount",
+							"type": "BigDecimal",
+							"description": "商户补贴总金额，正负号存在渠道差异"
+						},
+						{
+							"name": "plat_subsidy_amount",
+							"type": "BigDecimal",
+							"description": "平台营销补贴费用，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "brand_subsidy_amount",
+							"type": "BigDecimal",
+							"description": "品牌营销补贴费用，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "agent_subsidy_amount",
+							"type": "BigDecimal",
+							"description": "代理商营销补贴费用，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "channel_commission_amount",
+							"type": "BigDecimal",
+							"description": "技术服务费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "base_logistics_amount",
+							"type": "BigDecimal",
+							"description": "基础物流费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "added_value_amount",
+							"type": "BigDecimal",
+							"description": "增值服务费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "other_fee_amount",
+							"type": "BigDecimal",
+							"description": "其它服务费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "handle_fee_amount",
+							"type": "BigDecimal",
+							"description": "手续费，正号代表收入，负号代表支出"
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "其它费用"
+						},
+						{
+							"name": "platform_voucher_subsidy_fee",
+							"type": "BigDecimal",
+							"description": "平台红包补贴"
+						},
+						{
+							"name": "merchant_voucher_subsidy_fee",
+							"type": "BigDecimal",
+							"description": "商家承担红包补贴费用"
+						},
+						{
+							"name": "plat_package_fee",
+							"type": "BigDecimal",
+							"description": "平台包装费"
+						},
+						{
+							"name": "user_pay_amount",
+							"type": "BigDecimal",
+							"description": "用户实付金额"
+						}
+					],
+					"name": "model",
+					"type": "BillDailyDTO[]",
+					"description": "业务结果集"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiPageResults",
+			"description": "结果对象"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.bill.daily.query",
+	"apiChineseName": "账单日汇总接口",
+	"description": "账单日汇总接口",
+	"id": 60073
+}

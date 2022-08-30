@@ -18,6 +18,10 @@ type TaobaoPromotionBenefitActivitySendAPIRequest struct {
 	_platNick string
 	// 混淆的接收者id
 	_mixReceiverId string
+	// ouid
+	_ouid string
+	// openid
+	_uid string
 	// 单个权益发放请求
 	_sendRequest *BenefitSingleSendRequest
 	// 非混淆的接收者id
@@ -82,6 +86,32 @@ func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetMixReceiverId(_mixRece
 // GetMixReceiverId MixReceiverId Getter
 func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetMixReceiverId() string {
 	return r._mixReceiverId
+}
+
+// SetOuid is Ouid Setter
+// ouid
+func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetOuid(_ouid string) error {
+	r._ouid = _ouid
+	r.Set("ouid", _ouid)
+	return nil
+}
+
+// GetOuid Ouid Getter
+func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetOuid() string {
+	return r._ouid
+}
+
+// SetUid is Uid Setter
+// openid
+func (r *TaobaoPromotionBenefitActivitySendAPIRequest) SetUid(_uid string) error {
+	r._uid = _uid
+	r.Set("uid", _uid)
+	return nil
+}
+
+// GetUid Uid Getter
+func (r TaobaoPromotionBenefitActivitySendAPIRequest) GetUid() string {
+	return r._uid
 }
 
 // SetSendRequest is SendRequest Setter

@@ -1,0 +1,41 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_content",
+			"type": "String",
+			"description": "212",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "isvId",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
+		}
+	],
+	"name": "alibaba.alihealth.medicalbase.hos.syncnew",
+	"apiChineseName": "直连医院上传接口",
+	"description": "直连医院上传接口",
+	"id": 59748
+}

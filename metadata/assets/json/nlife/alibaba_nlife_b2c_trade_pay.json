@@ -1,8 +1,4 @@
 {
-	"id": 28161,
-	"name": "alibaba.nlife.b2c.trade.pay",
-	"apiChineseName": "零售+平台支付订单",
-	"description": "零售+平台支付接口，外部商户调用此接口告知零售+支付结果，保持订单状态同步",
 	"requestParams": [
 		{
 			"name": "trade_no",
@@ -11,40 +7,6 @@
 			"maxLength": 64
 		},
 		{
-			"name": "picking_up",
-			"type": "String",
-			"description": "提货方式：    LOGISTICS(\"物流发货\"),     SELF_DELIVERY(\"门店自提\");",
-			"required": true
-		},
-		{
-			"name": "consignee",
-			"type": "String",
-			"description": "收货人",
-			"maxLength": 64
-		},
-		{
-			"name": "consignee_phone_num",
-			"type": "String",
-			"description": "收货人电话",
-			"maxLength": 32
-		},
-		{
-			"name": "consignee_address",
-			"type": "String",
-			"description": "收货人地址",
-			"maxLength": 256
-		},
-		{
-			"name": "gmt_payment",
-			"type": "Date",
-			"description": "ISV处支付时间",
-			"required": true
-		},
-		{
-			"name": "fund_bill_list",
-			"type": "FundBill[]",
-			"description": "支付资金各渠道列表",
-			"maxListSize": 100,
 			"subParams": [
 				{
 					"name": "id",
@@ -95,7 +57,41 @@
 					"type": "String",
 					"description": "附加数据，在查询订单中原样返回"
 				}
-			]
+			],
+			"name": "fund_bill_list",
+			"type": "FundBill[]",
+			"description": "支付资金各渠道列表",
+			"maxListSize": 100
+		},
+		{
+			"name": "picking_up",
+			"type": "String",
+			"description": "提货方式：    LOGISTICS(\"物流发货\"),     SELF_DELIVERY(\"门店自提\");",
+			"required": true
+		},
+		{
+			"name": "consignee",
+			"type": "String",
+			"description": "收货人",
+			"maxLength": 64
+		},
+		{
+			"name": "consignee_phone_num",
+			"type": "String",
+			"description": "收货人电话",
+			"maxLength": 32
+		},
+		{
+			"name": "consignee_address",
+			"type": "String",
+			"description": "收货人地址",
+			"maxLength": 256
+		},
+		{
+			"name": "gmt_payment",
+			"type": "Date",
+			"description": "ISV处支付时间",
+			"required": true
 		},
 		{
 			"name": "out_trade_no",
@@ -116,14 +112,18 @@
 	],
 	"responseParams": [
 		{
-			"name": "extend_params",
-			"type": "String",
-			"description": "扩展参数"
-		},
-		{
 			"name": "gmt_payment",
 			"type": "Date",
 			"description": "gmtPayment"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数"
 		}
-	]
+	],
+	"name": "alibaba.nlife.b2c.trade.pay",
+	"apiChineseName": "零售+平台支付订单",
+	"description": "零售+平台支付接口，外部商户调用此接口告知零售+支付结果，保持订单状态同步",
+	"id": 28161
 }

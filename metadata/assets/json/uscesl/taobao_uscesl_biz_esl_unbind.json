@@ -1,8 +1,4 @@
 {
-	"id": 39107,
-	"name": "taobao.uscesl.biz.esl.unbind",
-	"apiChineseName": "电子价签解绑接口",
-	"description": "电子价签解绑接口",
 	"requestParams": [
 		{
 			"name": "esl_bar_code",
@@ -29,5 +25,9 @@
 			"type": "Json",
 			"description": "result.sucess表示本次调用是否成功，true或false"
 		}
-	]
+	],
+	"name": "taobao.uscesl.biz.esl.unbind",
+	"apiChineseName": "电子价签解绑接口",
+	"description": "电子价签解绑接口",
+	"id": 39107
 }

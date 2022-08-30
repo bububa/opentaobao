@@ -1,8 +1,4 @@
 {
-	"id": 50589,
-	"name": "alibaba.alihealth.drugcode.applycert",
-	"apiChineseName": "申请证书为对接方",
-	"description": "申请证书 为对接方(当前是药厂和中心化系统)",
 	"requestParams": [
 		{
 			"name": "serial_num",
@@ -37,43 +33,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResultModel",
-			"description": "和三方交互最外层model对象",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "SysCertDto",
-					"description": "证书信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "cert_sn",
 							"type": "String",
-							"description": "证书序列号",
-							"required": true
+							"description": "证书序列号"
 						},
 						{
 							"name": "cert",
 							"type": "String",
-							"description": "证书公钥",
-							"required": true
+							"description": "证书公钥"
 						}
-					]
+					],
+					"name": "model",
+					"type": "SysCertDto",
+					"description": "证书信息"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作信息",
-					"required": true
+					"description": "操作信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugcode.applycert",
+	"apiChineseName": "申请证书为对接方",
+	"description": "申请证书 为对接方(当前是药厂和中心化系统)",
+	"id": 50589
 }

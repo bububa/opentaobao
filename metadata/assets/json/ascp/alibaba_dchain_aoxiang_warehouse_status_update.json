@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "erp_warehouse_code",
+					"type": "String",
+					"description": "资源编码，string（50)    货主下唯一主键 仓资源或者配资源的唯一编码（会员ID+仓ID/配ID）",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态：0=停用；1=启用",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				}
+			],
+			"name": "warehouse_status_update_request",
+			"type": "WarehouseStatusUpdateRequest",
+			"description": "启用/停用仓资源入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "warehouse_status_update_response",
+			"type": "WarehouseStatusUpdateResponse",
+			"description": "启用/停用仓资源出参"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.warehouse.status.update",
+	"apiChineseName": "启用/停用仓资源",
+	"description": "启用/停用仓资源",
+	"id": 63259
+}

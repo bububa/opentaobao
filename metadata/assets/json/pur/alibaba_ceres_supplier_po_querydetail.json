@@ -1,8 +1,4 @@
 {
-	"id": 38502,
-	"name": "alibaba.ceres.supplier.po.querydetail",
-	"apiChineseName": "采购供应商订单明细查询接口",
-	"description": "采购供应商订单明细查询接口",
 	"requestParams": [
 		{
 			"name": "po_no",
@@ -13,285 +9,249 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SupplierPoDetailDto",
-			"description": "返回消息体",
 			"subParams": [
 				{
 					"name": "supplier_name",
 					"type": "String",
-					"description": "供应商名称",
-					"required": true
+					"description": "供应商名称"
 				},
 				{
 					"name": "po_no",
 					"type": "String",
-					"description": "订单编号",
-					"required": true
+					"description": "订单编号"
 				},
 				{
 					"name": "supplier_contact",
 					"type": "String",
-					"description": "联系人",
-					"required": true
+					"description": "联系人"
 				},
 				{
 					"name": "supplier_mobile",
 					"type": "String",
-					"description": "联系人电话",
-					"required": true
+					"description": "联系人电话"
 				},
 				{
 					"name": "effect_time",
 					"type": "Date",
-					"description": "订单生效日期",
-					"required": true
+					"description": "订单生效日期"
 				},
 				{
 					"name": "ou_name",
 					"type": "String",
-					"description": "需方",
-					"required": true
+					"description": "需方"
 				},
 				{
 					"name": "ou_code",
 					"type": "String",
-					"description": "需方(代号)",
-					"required": true
+					"description": "需方(代号)"
 				},
 				{
 					"name": "contract_no",
 					"type": "String",
-					"description": "合同编号",
-					"required": true
+					"description": "合同编号"
 				},
 				{
 					"name": "buyer_name",
 					"type": "String",
-					"description": "采购员姓名",
-					"required": true
+					"description": "采购员姓名"
 				},
 				{
 					"name": "buy_mobile",
 					"type": "String",
-					"description": "采购员电话",
-					"required": true
+					"description": "采购员电话"
 				},
 				{
 					"name": "pr_no",
 					"type": "String",
-					"description": "PR单号",
-					"required": true
+					"description": "PR单号"
 				},
 				{
 					"name": "comments",
 					"type": "String",
-					"description": "注意事项",
-					"required": true
+					"description": "注意事项"
 				},
 				{
-					"name": "po_line_list",
-					"type": "Polinelist[]",
-					"description": "订单行列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "goods_name",
 							"type": "String",
-							"description": "物品名称",
-							"required": true
+							"description": "物品名称"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "规格",
-							"required": true
+							"description": "规格"
 						},
 						{
 							"name": "uom",
 							"type": "String",
-							"description": "单位",
-							"required": true
+							"description": "单位"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "tax_rate",
 							"type": "String",
-							"description": "税率",
-							"required": true
+							"description": "税率"
 						},
 						{
 							"name": "is_wht_related",
 							"type": "String",
-							"description": "是否涉及预提所得税",
-							"required": true
+							"description": "是否涉及预提所得税"
 						},
 						{
 							"name": "tax_price",
 							"type": "String",
-							"description": "含税单价",
-							"required": true
+							"description": "含税单价"
 						},
 						{
 							"name": "currency_code",
 							"type": "String",
-							"description": "币种",
-							"required": true
+							"description": "币种"
 						},
 						{
 							"name": "tax_amount",
 							"type": "String",
-							"description": "含税总价",
-							"required": true
+							"description": "含税总价"
 						},
 						{
 							"name": "delivery_location",
 							"type": "String",
-							"description": "收货地址",
-							"required": true
+							"description": "收货地址"
 						},
 						{
 							"name": "need_by_date",
 							"type": "String",
-							"description": "期望交付日期",
-							"required": true
+							"description": "期望交付日期"
 						},
 						{
 							"name": "need_by_date_end",
 							"type": "String",
-							"description": "期望交付日期",
-							"required": true
+							"description": "期望交付日期"
 						},
 						{
 							"name": "receiver",
 							"type": "String",
-							"description": "收货人",
-							"required": true
+							"description": "收货人"
 						},
 						{
 							"name": "receiver_phone",
 							"type": "String",
-							"description": "收货人电话",
-							"required": true
+							"description": "收货人电话"
 						},
 						{
 							"name": "receiver_mobile",
 							"type": "String",
-							"description": "收货人手机",
-							"required": true
+							"description": "收货人手机"
 						},
 						{
 							"name": "line_num",
 							"type": "Number",
-							"description": "lineNum",
-							"required": true
+							"description": "lineNum"
 						},
 						{
 							"name": "additional_info",
 							"type": "String",
-							"description": "additionalInfo",
-							"required": true
+							"description": "additionalInfo"
 						},
 						{
 							"name": "exchange_rate",
 							"type": "String",
-							"description": "订单行商品报价币种和订单头币种之间的汇率",
-							"required": true
+							"description": "订单行商品报价币种和订单头币种之间的汇率"
 						},
 						{
 							"name": "goods_currency_code",
 							"type": "String",
-							"description": "订单行商品报价币种",
-							"required": true
+							"description": "订单行商品报价币种"
 						},
 						{
-							"name": "item_list",
-							"type": "Polinestructureitemdtolist[]",
-							"description": "BOM节点列表，节点之间使用父节点id维护层级关系",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "节点id",
-									"required": true
+									"description": "节点id"
 								},
 								{
 									"name": "parent_id",
 									"type": "Number",
-									"description": "父节点id，为空则表示该节点是根节点",
-									"required": true
+									"description": "父节点id，为空则表示该节点是根节点"
 								},
 								{
 									"name": "item_name",
 									"type": "String",
-									"description": "节点名称",
-									"required": true
+									"description": "节点名称"
 								},
 								{
 									"name": "cost_type",
 									"type": "String",
-									"description": "ITEM_PRICE：物料价格，BOM_COST：BOM COST，OTHER_COST_TOTAL：其他费用小计，PROFIT_COST：利润，OEM_COST：代工费用，MAINTENANCE_COST：维保费用，LOGISTICS_COST：物流费用，INSTALLATION_COST：上架安装费用，TARIFF_TAX：关税税费，SALES_TAX：销售税税费，VAT_TAX：增值税税费",
-									"required": true
+									"description": "ITEM_PRICE：物料价格，BOM_COST：BOM COST，OTHER_COST_TOTAL：其他费用小计，PROFIT_COST：利润，OEM_COST：代工费用，MAINTENANCE_COST：维保费用，LOGISTICS_COST：物流费用，INSTALLATION_COST：上架安装费用，TARIFF_TAX：关税税费，SALES_TAX：销售税税费，VAT_TAX：增值税税费"
 								},
 								{
 									"name": "charge_unit",
 									"type": "String",
-									"description": "计价单位",
-									"required": true
+									"description": "计价单位"
 								},
 								{
 									"name": "unit_price",
 									"type": "String",
-									"description": "单价",
-									"required": true
+									"description": "单价"
 								},
 								{
 									"name": "unit_currency",
 									"type": "String",
-									"description": "单价币种",
-									"required": true
+									"description": "单价币种"
 								},
 								{
 									"name": "amount",
 									"type": "String",
-									"description": "金额",
-									"required": true
+									"description": "金额"
 								},
 								{
 									"name": "currency",
 									"type": "String",
-									"description": "金额币种",
-									"required": true
+									"description": "金额币种"
 								},
 								{
 									"name": "exchange_rate",
 									"type": "String",
-									"description": "汇率",
-									"required": true
+									"description": "汇率"
 								},
 								{
 									"name": "quantity",
 									"type": "String",
-									"description": "数量",
-									"required": true
+									"description": "数量"
 								},
 								{
 									"name": "expense_param",
 									"type": "String",
-									"description": "参数",
-									"required": true
+									"description": "参数"
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "Polinestructureitemdtolist[]",
+							"description": "BOM节点列表，节点之间使用父节点id维护层级关系"
 						}
-					]
+					],
+					"name": "po_line_list",
+					"type": "Polinelist[]",
+					"description": "订单行列表"
+				},
+				{
+					"name": "cpo_no",
+					"type": "String",
+					"description": "cpoNo"
 				}
-			]
+			],
+			"name": "result",
+			"type": "SupplierPoDetailDto",
+			"description": "返回消息体"
 		}
-	]
+	],
+	"name": "alibaba.ceres.supplier.po.querydetail",
+	"apiChineseName": "采购供应商订单明细查询接口",
+	"description": "采购供应商订单明细查询接口",
+	"id": 38502
 }

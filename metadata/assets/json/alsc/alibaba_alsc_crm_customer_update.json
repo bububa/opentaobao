@@ -1,26 +1,7 @@
 {
-	"id": 45840,
-	"name": "alibaba.alsc.crm.customer.update",
-	"apiChineseName": "更新顾客信息",
-	"description": "更新顾客信息",
 	"requestParams": [
 		{
-			"name": "param_customer_update_open_req",
-			"type": "CustomerUpdateOpenReq",
-			"description": "修改顾客参数",
-			"required": true,
 			"subParams": [
-				{
-					"name": "customer_id",
-					"type": "String",
-					"description": "顾客ID",
-					"required": true
-				},
-				{
-					"name": "brand_id",
-					"type": "String",
-					"description": "品牌ID 外部品牌id  2选1"
-				},
 				{
 					"name": "address",
 					"type": "String",
@@ -32,12 +13,24 @@
 					"description": "生日"
 				},
 				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID 外部品牌id  2选1"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客ID",
+					"required": true
+				},
+				{
 					"name": "email",
 					"type": "String",
 					"description": "邮箱"
 				},
 				{
 					"name": "ext_info",
+					"type": "String",
 					"description": "扩展信息"
 				},
 				{
@@ -105,46 +98,49 @@
 					"type": "Number",
 					"description": "0顾客，1会员"
 				}
-			]
+			],
+			"name": "param_customer_update_open_req",
+			"type": "CustomerUpdateOpenReq",
+			"description": "修改顾客参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "result",
 					"type": "String",
-					"description": "更新是否成功",
-					"required": true
+					"description": "更新是否成功"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.customer.update",
+	"apiChineseName": "更新顾客信息",
+	"description": "更新顾客信息",
+	"id": 45840
 }

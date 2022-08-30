@@ -1,13 +1,6 @@
 {
-	"id": 36855,
-	"name": "alibaba.price.promotion.item.add",
-	"apiChineseName": "新增档期商品",
-	"description": "批量新增档期活动商品",
 	"requestParams": [
 		{
-			"name": "promotion_content",
-			"type": "PromotionContent",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "customer_merchant_code",
@@ -15,9 +8,6 @@
 					"description": "客户商家编码"
 				},
 				{
-					"name": "promotion_sku_list",
-					"type": "PromotionSku[]",
-					"description": "sku列表",
 					"subParams": [
 						{
 							"name": "sku_code",
@@ -59,7 +49,10 @@
 							"type": "Number",
 							"description": "时间戳"
 						}
-					]
+					],
+					"name": "promotion_sku_list",
+					"type": "PromotionSku[]",
+					"description": "sku列表"
 				},
 				{
 					"name": "customer_code",
@@ -86,66 +79,65 @@
 					"type": "String",
 					"description": "进售价类型"
 				}
-			]
+			],
+			"name": "promotion_content",
+			"type": "PromotionContent",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"name": "code",
+					"type": "Number",
+					"description": "编码"
 				},
 				{
-					"name": "data",
-					"type": "PromotionContentResult",
-					"description": "结果内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "error_message_list",
 							"type": "String[]",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "sku_code_unique_id_str",
 							"type": "String",
-							"description": "唯一标示",
-							"required": true
+							"description": "唯一标示"
 						}
-					]
-				},
-				{
-					"name": "code",
-					"type": "Number",
-					"description": "编码",
-					"required": true
-				},
-				{
-					"name": "total_record",
-					"type": "Number",
-					"description": "数量",
-					"required": true
+					],
+					"name": "data",
+					"type": "PromotionContentResult",
+					"description": "结果内容"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "succ_and_not_null",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "total_record",
+					"type": "Number",
+					"description": "数量"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.price.promotion.item.add",
+	"apiChineseName": "新增档期商品",
+	"description": "批量新增档期活动商品",
+	"id": 36855
 }

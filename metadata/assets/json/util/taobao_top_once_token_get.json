@@ -1,30 +1,31 @@
 {
-	"id": 55747,
-	"name": "taobao.top.once.token.get",
-	"apiChineseName": "网关一次性token获取",
-	"description": "网关一次性token获取",
 	"requestParams": [
 		{
 			"name": "sec_token",
 			"type": "String",
-			"description": "sec_token"
+			"description": "sec_token",
+			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "token",
-			"type": "String",
-			"description": "token"
-		},
 		{
 			"name": "result_code",
 			"type": "String",
 			"description": "响应编码"
 		},
 		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
 			"name": "result_msg",
 			"type": "String",
 			"description": "失败详情"
 		}
-	]
+	],
+	"name": "taobao.top.once.token.get",
+	"apiChineseName": "网关一次性token获取",
+	"description": "网关一次性token获取，对接文档:",
+	"id": 55747
 }

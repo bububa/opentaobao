@@ -2,14 +2,14 @@ package promotion
 
 // CommonItemActivity 结构体
 type CommonItemActivity struct {
-	// 活动名称，不能超过32字符
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 活动描述，不能超过100字符
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
-	// 活动开始时间
-	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 活动结束时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
+	// 活动名称，不能超过32字符
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 活动开始时间
+	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 人群标签值
 	UserTag string `json:"user_tag,omitempty" xml:"user_tag,omitempty"`
 	// 优惠活动ID

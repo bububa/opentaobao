@@ -1,15 +1,13 @@
 {
-	"id": 55529,
-	"name": "alibaba.tcls.aelophy.refund.csapply",
-	"apiChineseName": "商家代客售后提交逆向申请",
-	"description": "商家代客售后提交逆向申请",
 	"requestParams": [
 		{
-			"name": "refund_cs_apply_d_t_o",
-			"type": "RefundCsApplyDto",
-			"description": "逆向申请入参",
-			"required": true,
 			"subParams": [
+				{
+					"name": "reason_id",
+					"type": "Number",
+					"description": "退款原因id",
+					"required": true
+				},
 				{
 					"name": "out_order_id",
 					"type": "String",
@@ -38,41 +36,40 @@
 					"name": "memo",
 					"type": "String",
 					"description": "备注说明"
-				},
-				{
-					"name": "reason_id",
-					"type": "Number",
-					"description": "退款原因id",
-					"required": true
 				}
-			]
+			],
+			"name": "refund_cs_apply_d_t_o",
+			"type": "RefundCsApplyDto",
+			"description": "逆向申请入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "根据站点名称查询产品",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品"
 		}
-	]
+	],
+	"name": "alibaba.tcls.aelophy.refund.csapply",
+	"apiChineseName": "商家代客售后提交逆向申请",
+	"description": "商家代客售后提交逆向申请",
+	"id": 55529
 }

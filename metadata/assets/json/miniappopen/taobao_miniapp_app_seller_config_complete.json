@@ -1,8 +1,4 @@
 {
-	"id": 51768,
-	"name": "taobao.miniapp.app.seller.config.complete",
-	"apiChineseName": "商家完成小程序相关配置",
-	"description": "通过该接口告知平台商家已经完成小程序相关的必要设置，可进行后续操作。主要用于小部件、客服插件等场景。",
 	"requestParams": [
 		{
 			"name": "app_id",
@@ -22,5 +18,9 @@
 			"type": "Boolean",
 			"description": "操作成功与否"
 		}
-	]
+	],
+	"name": "taobao.miniapp.app.seller.config.complete",
+	"apiChineseName": "商家完成小程序相关配置",
+	"description": "通过该接口告知平台商家已经完成小程序相关的必要设置，可进行后续操作。主要用于小部件、客服插件等场景。",
+	"id": 51768
 }

@@ -22,8 +22,8 @@ type TaobaoAlitripIeAgentOrderSearchAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 订单列表
 	BaseOrderVos []IeBaseOrderVo `json:"base_order_vos,omitempty" xml:"base_order_vos>ie_base_order_vo,omitempty"`
-	// 请求成功标识
-	QuerySuccess bool `json:"query_success,omitempty" xml:"query_success,omitempty"`
 	// 是否可以翻页查询
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+	// 请求成功标识
+	QuerySuccess bool `json:"query_success,omitempty" xml:"query_success,omitempty"`
 }

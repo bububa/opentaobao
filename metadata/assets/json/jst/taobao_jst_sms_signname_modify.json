@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sign_name",
+					"type": "String",
+					"description": "要修改的签名,不能修改签名",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "请输入签名用途（必填）、企业官网链接（可提升通过率）",
+					"required": true
+				},
+				{
+					"name": "sign_source",
+					"type": "Number",
+					"description": "0--企事业单位的全程或简称   1--已备案网站  2--已上线APP  3--公众号或小程序 4--电商平台店铺名 5--已注册商标名",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小"
+						},
+						{
+							"name": "file_suffix",
+							"type": "String",
+							"description": "文件后缀名"
+						},
+						{
+							"name": "file_contents",
+							"type": "String",
+							"description": "文件Base64转码后的字符串"
+						}
+					],
+					"name": "sign_file_list",
+					"type": "SmsFileContentDTO[]",
+					"description": "上传的证明文件"
+				}
+			],
+			"name": "modify_sms_sign_request",
+			"type": "TopModifySmsSignRequest",
+			"description": "修改签名入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "错误CODE"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "失败原因"
+		}
+	],
+	"name": "taobao.jst.sms.signname.modify",
+	"apiChineseName": "淘宝短信签名修改",
+	"description": "淘宝短信签名修改，只能修改还未被审核的签名。",
+	"id": 60273
+}

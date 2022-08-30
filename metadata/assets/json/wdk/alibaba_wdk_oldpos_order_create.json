@@ -1,18 +1,8 @@
 {
-	"id": 39544,
-	"name": "alibaba.wdk.oldpos.order.create",
-	"apiChineseName": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
-	"description": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
 	"requestParams": [
 		{
-			"name": "pos_order_create_request",
-			"type": "PosOrderCreateRequest",
-			"description": "入参",
 			"subParams": [
 				{
-					"name": "sub_order_d_o_list",
-					"type": "PosSubOrderDo[]",
-					"description": "子订单列表",
 					"subParams": [
 						{
 							"name": "stock_unit",
@@ -69,7 +59,10 @@
 							"type": "String",
 							"description": "商品名称"
 						}
-					]
+					],
+					"name": "sub_order_d_o_list",
+					"type": "PosSubOrderDo[]",
+					"description": "子订单列表"
 				},
 				{
 					"name": "pay_time",
@@ -97,9 +90,6 @@
 					"description": "会员卡号"
 				},
 				{
-					"name": "pay_channel_list",
-					"type": "PosPayChannel[]",
-					"description": "支付方式",
 					"subParams": [
 						{
 							"name": "pay_amount",
@@ -111,73 +101,75 @@
 							"type": "String",
 							"description": "支付方式编码，盒马给出了常见支付方式的编码"
 						}
-					]
+					],
+					"name": "pay_channel_list",
+					"type": "PosPayChannel[]",
+					"description": "支付方式"
 				},
 				{
 					"name": "old_data",
 					"type": "Number",
 					"description": "兼容老接口的数据"
 				}
-			]
+			],
+			"name": "pos_order_create_request",
+			"type": "PosOrderCreateRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PosOrderCreateResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "结果msg",
-					"required": true
+					"description": "结果msg"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "main_order_id",
 					"type": "Number",
-					"description": "mainOrderId",
-					"required": true
+					"description": "mainOrderId"
 				},
 				{
 					"name": "out_order_id",
 					"type": "String",
-					"description": "outOrderId",
-					"required": true
+					"description": "outOrderId"
 				},
 				{
-					"name": "sub_order_d_o_list",
-					"type": "PosSubOrderResult[]",
-					"description": "subOrderDOList",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sub_order_id",
 							"type": "Number",
-							"description": "subOrderId",
-							"required": true
+							"description": "subOrderId"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "outOrderId",
-							"required": true
+							"description": "outOrderId"
 						}
-					]
+					],
+					"name": "sub_order_d_o_list",
+					"type": "PosSubOrderResult[]",
+					"description": "subOrderDOList"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PosOrderCreateResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.oldpos.order.create",
+	"apiChineseName": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
+	"description": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
+	"id": 39544
 }

@@ -1,8 +1,4 @@
 {
-	"id": 25444,
-	"name": "alibaba.aliqin.fc.tts.num.singlecall",
-	"apiChineseName": "文本转语音通知",
-	"description": "向指定手机号码发起单向呼叫，将文本模板内容转化为语音播放给被叫方。使用前需要在阿里大于管理中心添加去电显示号码与文本转语音模板。",
 	"requestParams": [
 		{
 			"name": "extend",
@@ -35,9 +31,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BizResult",
-			"description": "接口返回参数",
 			"subParams": [
 				{
 					"name": "err_code",
@@ -59,7 +52,14 @@
 					"type": "String",
 					"description": "返回信息描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "BizResult",
+			"description": "接口返回参数"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.fc.tts.num.singlecall",
+	"apiChineseName": "文本转语音通知",
+	"description": "向指定手机号码发起单向呼叫，将文本模板内容转化为语音播放给被叫方。使用前需要在阿里大于管理中心添加去电显示号码与文本转语音模板。",
+	"id": 25444
 }

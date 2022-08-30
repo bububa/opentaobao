@@ -1,13 +1,6 @@
 {
-	"id": 45862,
-	"name": "alibaba.alsc.crm.recharge.accountflows.get",
-	"apiChineseName": "分页查询储值流水",
-	"description": "增加分页查询储值流水接口",
 	"requestParams": [
 		{
-			"name": "param_page_query_account_flows_open_req",
-			"type": "PageQueryAccountFlowsOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -20,6 +13,11 @@
 					"description": "卡id"
 				},
 				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "会员id"
+				},
+				{
 					"name": "end_time",
 					"type": "Date",
 					"description": "结束时间"
@@ -28,6 +26,21 @@
 					"name": "flow_types",
 					"type": "String",
 					"description": "流水类型"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单ID"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和shopid同时为空)"
 				},
 				{
 					"name": "page_no",
@@ -51,216 +64,174 @@
 					"description": "开始时间"
 				},
 				{
-					"name": "customer_id",
-					"type": "String",
-					"description": "会员id"
-				},
-				{
-					"name": "out_shop_id",
-					"type": "String",
-					"description": "外部门店ID(不能和shopid同时为空)"
-				},
-				{
-					"name": "out_brand_id",
-					"type": "String",
-					"description": "外部品牌ID(不能和brandid同时为空)"
-				},
-				{
-					"name": "out_order_id",
-					"type": "String",
-					"description": "外部订单ID"
-				},
-				{
 					"name": "biz_channel",
 					"type": "String",
 					"description": "CS是辰森，KRY是客如云"
 				}
-			]
+			],
+			"name": "param_page_query_account_flows_open_req",
+			"type": "PageQueryAccountFlowsOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonPageResult",
-			"description": "分页返回模型",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
 					"name": "current_page",
 					"type": "Number",
-					"description": "当前页码（原样传出）",
-					"required": true
+					"description": "当前页码（原样传出）"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "当前每页显示数量（原样传出）",
-					"required": true
+					"description": "当前每页显示数量（原样传出）"
 				},
 				{
-					"name": "result_list",
-					"type": "PageQueryAccountFlowsOpenInfo[]",
-					"description": "业务参数",
-					"required": true,
 					"subParams": [
 						{
 							"name": "account_id",
 							"type": "String",
-							"description": "储值账户id",
-							"required": true
-						},
-						{
-							"name": "current_value",
-							"type": "Number",
-							"description": "交易后剩余总金额",
-							"required": true
-						},
-						{
-							"name": "deleted",
-							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
-						},
-						{
-							"name": "flow_id",
-							"type": "String",
-							"description": "储值账户流水id",
-							"required": true
-						},
-						{
-							"name": "flow_type",
-							"type": "String",
-							"description": "储值相关的交易类型",
-							"required": true
-						},
-						{
-							"name": "gmt_create",
-							"type": "Date",
-							"description": "创建时间",
-							"required": true
-						},
-						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "更新时间",
-							"required": true
-						},
-						{
-							"name": "operator",
-							"type": "String",
-							"description": "操作人ID",
-							"required": true
-						},
-						{
-							"name": "operator_name",
-							"type": "String",
-							"description": "操作人",
-							"required": true
-						},
-						{
-							"name": "order_src",
-							"type": "Number",
-							"description": "外部订单来源",
-							"required": true
-						},
-						{
-							"name": "order_time",
-							"type": "Date",
-							"description": "交易时间",
-							"required": true
-						},
-						{
-							"name": "order_value",
-							"type": "Number",
-							"description": "交易总金额，增加为正数，减少为负数",
-							"required": true
-						},
-						{
-							"name": "outer_order_id",
-							"type": "String",
-							"description": "外部交易单号id",
-							"required": true
-						},
-						{
-							"name": "remark",
-							"type": "String",
-							"description": "理由",
-							"required": true
-						},
-						{
-							"name": "shop_id",
-							"type": "String",
-							"description": "交易门店ID",
-							"required": true
-						},
-						{
-							"name": "shop_name",
-							"type": "String",
-							"description": "交易门店名称",
-							"required": true
+							"description": "储值账户id"
 						},
 						{
 							"name": "create_by",
 							"type": "String",
-							"description": "创建者",
-							"required": true
+							"description": "创建者"
+						},
+						{
+							"name": "current_value",
+							"type": "Number",
+							"description": "交易后剩余总金额"
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否删除"
+						},
+						{
+							"name": "flow_id",
+							"type": "String",
+							"description": "储值账户流水id"
+						},
+						{
+							"name": "flow_type",
+							"type": "String",
+							"description": "储值相关的交易类型"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间"
+						},
+						{
+							"name": "operator",
+							"type": "String",
+							"description": "操作人ID"
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作人"
+						},
+						{
+							"name": "order_src",
+							"type": "Number",
+							"description": "外部订单来源"
+						},
+						{
+							"name": "order_time",
+							"type": "Date",
+							"description": "交易时间"
+						},
+						{
+							"name": "order_value",
+							"type": "Number",
+							"description": "交易总金额，增加为正数，减少为负数"
+						},
+						{
+							"name": "outer_order_id",
+							"type": "String",
+							"description": "外部交易单号id"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "理由"
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "交易门店ID"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "交易门店名称"
 						},
 						{
 							"name": "update_by",
 							"type": "String",
-							"description": "更新者",
-							"required": true
+							"description": "更新者"
 						},
 						{
 							"name": "gift_value",
 							"type": "Number",
-							"description": "赠送金额",
-							"required": true
+							"description": "赠送金额"
 						},
 						{
 							"name": "outer_pay_id",
 							"type": "String",
-							"description": "外部支付订单id",
-							"required": true
+							"description": "外部支付订单id"
 						},
 						{
 							"name": "ext_info",
-							"type": "Json",
-							"description": "支付方式需要按照标准格式传入",
-							"required": true
+							"type": "String",
+							"description": "支付方式需要按照标准格式传入"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "PageQueryAccountFlowsOpenInfo[]",
+					"description": "业务参数"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				},
 				{
 					"name": "total_size",
 					"type": "Number",
-					"description": "总共记录数",
-					"required": true
+					"description": "总共记录数"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.recharge.accountflows.get",
+	"apiChineseName": "分页查询储值流水",
+	"description": "增加分页查询储值流水接口",
+	"id": 45862
 }

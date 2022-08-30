@@ -1,8 +1,4 @@
 {
-	"id": 25121,
-	"name": "taobao.baichuan.payresult.query",
-	"apiChineseName": "百川支付完成回调",
-	"description": "百川支付完成回调",
 	"requestParams": [
 		{
 			"name": "name",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "name"
 		}
-	]
+	],
+	"name": "taobao.baichuan.payresult.query",
+	"apiChineseName": "百川支付完成回调",
+	"description": "百川支付完成回调",
+	"id": 25121
 }

@@ -1,21 +1,7 @@
 {
-	"id": 31193,
-	"name": "taobao.alitrip.totoro.auxproduct.push",
-	"apiChineseName": "廉航辅营产品投放",
-	"description": "廉航辅营产品投放接口",
 	"requestParams": [
 		{
-			"name": "push_aux_products_rq",
-			"type": "PushAuxProductsRq",
-			"description": "廉航辅营产品推送请求",
-			"required": true,
 			"subParams": [
-				{
-					"name": "cid",
-					"type": "String",
-					"description": "接口身份标识用户名（渠道唯一标识）",
-					"required": true
-				},
 				{
 					"name": "channel_id",
 					"type": "Number",
@@ -29,15 +15,8 @@
 					"required": true
 				},
 				{
-					"name": "product_items",
-					"type": "AuxProductItemApiBean[]",
-					"description": "廉航辅营产品",
-					"required": true,
 					"subParams": [
 						{
-							"name": "baggage",
-							"type": "BaggageApiBean",
-							"description": "行李说明，当productType=4为必传",
 							"subParams": [
 								{
 									"name": "height",
@@ -69,7 +48,10 @@
 									"type": "Boolean",
 									"description": "是否所有行李重量"
 								}
-							]
+							],
+							"name": "baggage",
+							"type": "BaggageApiBean",
+							"description": "行李说明，当productType=4为必传"
 						},
 						{
 							"name": "counter_price",
@@ -83,9 +65,6 @@
 							"required": true
 						},
 						{
-							"name": "service",
-							"type": "ServiceApiBean",
-							"description": "辅营产品服务说明,仅当productType=1或productType=2为必传",
 							"subParams": [
 								{
 									"name": "service_time_type",
@@ -117,7 +96,10 @@
 									"type": "String",
 									"description": "服务时间开始 HHmm，serviceTimeType为2时必填"
 								}
-							]
+							],
+							"name": "service",
+							"type": "ServiceApiBean",
+							"description": "辅营产品服务说明,仅当productType=1或productType=2为必传"
 						},
 						{
 							"name": "online_price",
@@ -126,9 +108,6 @@
 							"required": true
 						},
 						{
-							"name": "sales_rule",
-							"type": "SalesRuleApiBean",
-							"description": "辅营产品销售规则",
 							"subParams": [
 								{
 									"name": "cabin",
@@ -266,13 +245,12 @@
 									"type": "String",
 									"description": "库存规则，当stockType=1或stockType=2时必填。"
 								}
-							]
+							],
+							"name": "sales_rule",
+							"type": "SalesRuleApiBean",
+							"description": "辅营产品销售规则"
 						},
 						{
-							"name": "refund_rule",
-							"type": "AuxRefundApiBean",
-							"description": "辅营产品退改规则",
-							"required": true,
 							"subParams": [
 								{
 									"name": "can_refund_independent",
@@ -310,7 +288,11 @@
 									"description": "退规则。 最多允许200个字符。 禁止空格等特殊符号。",
 									"required": true
 								}
-							]
+							],
+							"name": "refund_rule",
+							"type": "AuxRefundApiBean",
+							"description": "辅营产品退改规则",
+							"required": true
 						},
 						{
 							"name": "product_name",
@@ -336,9 +318,6 @@
 							"required": true
 						},
 						{
-							"name": "seat",
-							"type": "SeatApiBean",
-							"description": "选座说明，当productType=3或8 为必传",
 							"subParams": [
 								{
 									"name": "seat_area",
@@ -350,11 +329,28 @@
 									"type": "Number",
 									"description": "排次 1:前排，2:中排，3:后排"
 								}
-							]
+							],
+							"name": "seat",
+							"type": "SeatApiBean",
+							"description": "选座说明，当productType=3或8 为必传"
 						}
-					]
+					],
+					"name": "product_items",
+					"type": "AuxProductItemApiBean[]",
+					"description": "廉航辅营产品",
+					"required": true
+				},
+				{
+					"name": "cid",
+					"type": "String",
+					"description": "接口身份标识用户名（渠道唯一标识）",
+					"required": true
 				}
-			]
+			],
+			"name": "push_aux_products_rq",
+			"type": "PushAuxProductsRq",
+			"description": "廉航辅营产品推送请求",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -373,5 +369,9 @@
 			"type": "Boolean",
 			"description": "是否操作成功"
 		}
-	]
+	],
+	"name": "taobao.alitrip.totoro.auxproduct.push",
+	"apiChineseName": "廉航辅营产品投放",
+	"description": "廉航辅营产品投放接口",
+	"id": 31193
 }

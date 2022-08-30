@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "图片名，可包含扩展名，与上传后返回的图片名一致。最长50个字符，不允许/,\\,:,*,?,\",\u003c,\u003e,|,;这些特殊字符。",
+			"required": true
+		},
+		{
+			"name": "file_data",
+			"type": "byte[]",
+			"description": "图片的二进制流。允许png、jpg、gif图片格式,3M以内。",
+			"required": true
+		},
+		{
+			"name": "folder_id",
+			"type": "Number",
+			"description": "指定传入的文件夹id，根文件夹为0",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "file_id",
+					"type": "Number",
+					"description": "图片文件id"
+				},
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "图片名"
+				},
+				{
+					"name": "folder_id",
+					"type": "Number",
+					"description": "所属文件夹id"
+				},
+				{
+					"name": "biz_status",
+					"type": "String",
+					"description": "审核状态。\"AUDITING\":审核中, FROZEN:被冻结 ,\"NORMAL\":正常\""
+				},
+				{
+					"name": "deleted_status",
+					"type": "String",
+					"description": "\"NORMAL\":正常，\"RECYCLED\":回收站中"
+				},
+				{
+					"name": "full_url",
+					"type": "String",
+					"description": "图片完整链接，直接通过这个链接可以访问图片"
+				},
+				{
+					"name": "pixel",
+					"type": "String",
+					"description": "分辨率，格式:长x宽，如450x150"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "图片的大小，单位为字节"
+				},
+				{
+					"name": "extension_name",
+					"type": "String",
+					"description": "图片扩展名"
+				},
+				{
+					"name": "compress_picture_url",
+					"type": "String",
+					"description": "缩略图地址"
+				}
+			],
+			"name": "picture",
+			"type": "TopPictureDTO",
+			"description": "图片信息"
+		}
+	],
+	"name": "alibaba.tjb.picture.upload",
+	"apiChineseName": "淘特图片空间上传单张图片",
+	"description": "淘特图片空间上传单张图片",
+	"id": 62247
+}

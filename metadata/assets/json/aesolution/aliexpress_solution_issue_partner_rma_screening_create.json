@@ -1,14 +1,6 @@
 {
-	"id": 41477,
-	"name": "aliexpress.solution.issue.partner.rma.screening.create",
-	"apiChineseName": "aliexpress.solution.issue.partner.rma.screening.create",
-	"description": "Receives information about screening results from after sales partners",
 	"requestParams": [
 		{
-			"name": "screening_result_creation_request",
-			"type": "RmaScreeningCreationRequest",
-			"description": "Screening result creation request",
-			"required": true,
 			"subParams": [
 				{
 					"name": "result",
@@ -39,7 +31,11 @@
 					"description": "Values: CUSTOMER_FAULT, GIVE_UP_UNSEALED, GIVE_UP_SEALED, DOA_SEALED_QUALITY_ISSUE, DOA_SEALED_NO_QUALITY_ISSUE",
 					"required": true
 				}
-			]
+			],
+			"name": "screening_result_creation_request",
+			"type": "RmaScreeningCreationRequest",
+			"description": "Screening result creation request",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -53,5 +49,9 @@
 			"type": "String",
 			"description": "error description"
 		}
-	]
+	],
+	"name": "aliexpress.solution.issue.partner.rma.screening.create",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.screening.create",
+	"description": "Receives information about screening results from after sales partners",
+	"id": 41477
 }

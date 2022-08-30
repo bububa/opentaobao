@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "succeeded",
+							"type": "Boolean",
+							"description": "游戏删除是否成功",
+							"required": true
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "游戏删除任务ID",
+							"required": true
+						}
+					],
+					"name": "result",
+					"type": "DeleteAppCommandResult",
+					"description": "游戏删除结果",
+					"required": true
+				}
+			],
+			"name": "req_param",
+			"type": "AppDeletionCallbackRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "游戏是否成功"
+		}
+	],
+	"name": "alibaba.cgame.content.distribution.app.deletion.update",
+	"apiChineseName": "游戏删除回调",
+	"description": "游戏删除回调",
+	"id": 59530
+}

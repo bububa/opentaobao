@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "服务交易订单号",
+			"required": true
+		},
+		{
+			"name": "epoc_file_data",
+			"type": "String",
+			"description": "电子保单文件数据"
+		},
+		{
+			"name": "epoc_file_name",
+			"type": "String",
+			"description": "电子保单文件名"
+		},
+		{
+			"name": "tc_file_data",
+			"type": "String",
+			"description": "t\u0026c文件数据"
+		},
+		{
+			"name": "tc_file_name",
+			"type": "String",
+			"description": "t\u0026c文件名"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "系统异常时，返回相应的错误编码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "系统异常时，返回相应的错误文本"
+				}
+			],
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.servicecenter.spserviceorder.epoc.upload",
+	"apiChineseName": "电子保单文件上传接口",
+	"description": "电子保单文件上传接口",
+	"id": 61995
+}

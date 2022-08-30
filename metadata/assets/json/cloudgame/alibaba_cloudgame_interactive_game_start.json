@@ -1,0 +1,300 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mix_game_id",
+					"type": "String",
+					"description": "游戏id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "主播用户id",
+					"required": true
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间id",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "验签token",
+					"required": true
+				}
+			],
+			"name": "start_game_request",
+			"type": "StartGameRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回状态码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "mix_game_id",
+									"type": "String",
+									"description": "游戏id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "游戏名称"
+								},
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "主播id"
+								},
+								{
+									"name": "total_player_num",
+									"type": "Number",
+									"description": "支持玩家数量"
+								},
+								{
+									"name": "player_num",
+									"type": "Number",
+									"description": "当前玩家数量"
+								}
+							],
+							"name": "game",
+							"type": "OpenGameDTO",
+							"description": "游戏详情"
+						},
+						{
+							"name": "room_id",
+							"type": "Number",
+							"description": "房间id"
+						},
+						{
+							"name": "game_session",
+							"type": "String",
+							"description": "游戏会话id"
+						},
+						{
+							"name": "join_code",
+							"type": "String",
+							"description": "联机码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "玩家id"
+								},
+								{
+									"name": "player_index",
+									"type": "String",
+									"description": "位置索引"
+								}
+							],
+							"name": "player_list",
+							"type": "OpenGamePlayerDTO[]",
+							"description": "玩家列表"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"subParams": [
+								{
+									"name": "mix_game_id",
+									"type": "String",
+									"description": "编码后的游戏ID"
+								},
+								{
+									"name": "game_session",
+									"type": "String",
+									"description": " 会话ID"
+								},
+								{
+									"name": "game_token",
+									"type": "String",
+									"description": "游戏token"
+								},
+								{
+									"name": "queue_state_desc",
+									"type": "String",
+									"description": "游戏状态描述"
+								},
+								{
+									"name": "link_mark",
+									"type": "String",
+									"description": "会话状态备注"
+								},
+								{
+									"name": "mix_user_id",
+									"type": "String",
+									"description": "用户id"
+								},
+								{
+									"name": "sched_type",
+									"type": "String",
+									"description": "调度类型"
+								},
+								{
+									"name": "join_code",
+									"type": "String[]",
+									"description": "联机码"
+								},
+								{
+									"name": "queue_state",
+									"type": "Number",
+									"description": "会话状态"
+								},
+								{
+									"name": "user_level",
+									"type": "Number",
+									"description": "用户等级"
+								},
+								{
+									"name": "vip_level",
+									"type": "Number",
+									"description": "vip等级"
+								},
+								{
+									"name": "host",
+									"type": "Boolean",
+									"description": "是否是主控"
+								},
+								{
+									"name": "force_h264",
+									"type": "Boolean",
+									"description": "是否是强制264"
+								},
+								{
+									"name": "polling_interval",
+									"type": "Number",
+									"description": "轮询时间间隔"
+								},
+								{
+									"subParams": [
+										{
+											"name": "type",
+											"type": "String",
+											"description": "H5或者Native的访问点"
+										},
+										{
+											"name": "provider",
+											"type": "String",
+											"description": "后端的isv类型"
+										},
+										{
+											"name": "ws_server",
+											"type": "String",
+											"description": "websocket 域名 H5"
+										},
+										{
+											"name": "ws_port",
+											"type": "String",
+											"description": "websocket 端口 H5"
+										},
+										{
+											"name": "ws_token",
+											"type": "String",
+											"description": "websocket token"
+										},
+										{
+											"name": "isp",
+											"type": "String",
+											"description": "isp"
+										},
+										{
+											"name": "region_id",
+											"type": "String",
+											"description": "region_id"
+										},
+										{
+											"name": "area_id",
+											"type": "Number",
+											"description": "area_id"
+										},
+										{
+											"name": "h5_domain",
+											"type": "String",
+											"description": "h5_domain"
+										}
+									],
+									"name": "endpoints",
+									"type": "GameEndPoint[]",
+									"description": "串流信息"
+								},
+								{
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name"
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "类型"
+										},
+										{
+											"name": "isp",
+											"type": "String",
+											"description": "isp"
+										},
+										{
+											"name": "web_socket_domain",
+											"type": "String",
+											"description": "webSocketDomain"
+										},
+										{
+											"name": "web_socket_port",
+											"type": "Number",
+											"description": "webSocketPort"
+										},
+										{
+											"name": "ws_token",
+											"type": "String",
+											"description": "wsToken"
+										}
+									],
+									"name": "endpoint_server",
+									"type": "EndpointServerDTO[]",
+									"description": "h5servier地址"
+								}
+							],
+							"name": "slot",
+							"type": "GetSlotResponse",
+							"description": "联机信息"
+						}
+					],
+					"name": "data",
+					"type": "StartGameResponse",
+					"description": "返回结果"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.cloudgame.interactive.game.start",
+	"apiChineseName": "云游戏场景互动开始游戏",
+	"description": "开始游戏",
+	"id": 62210
+}

@@ -1,8 +1,4 @@
 {
-	"id": 27500,
-	"name": "cainiao.cloudprint.templates.migrate",
-	"apiChineseName": "云打印模板迁移接口",
-	"description": "云打印模板迁移接口",
 	"requestParams": [
 		{
 			"name": "tempalte_id",
@@ -22,87 +18,79 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "CustomAreaResult",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
 							"name": "custom_area_id",
 							"type": "Number",
-							"description": "自定义区id",
-							"required": true
-						},
-						{
-							"name": "custom_area_url",
-							"type": "String",
-							"description": "自定义区url",
-							"required": true
-						},
-						{
-							"name": "keys",
-							"type": "KeyResult[]",
-							"description": "变量",
-							"required": true,
-							"subParams": [
-								{
-									"name": "key_name",
-									"type": "String",
-									"description": "变量名称",
-									"required": true
-								}
-							]
-						},
-						{
-							"name": "standard_template_id",
-							"type": "Number",
-							"description": "标准模板名称",
-							"required": true
-						},
-						{
-							"name": "standard_template_url",
-							"type": "String",
-							"description": "标准模板url",
-							"required": true
+							"description": "自定义区id"
 						},
 						{
 							"name": "custom_area_name",
 							"type": "String",
-							"description": "自定义区名称",
-							"required": true
+							"description": "自定义区名称"
+						},
+						{
+							"name": "custom_area_url",
+							"type": "String",
+							"description": "自定义区url"
+						},
+						{
+							"subParams": [
+								{
+									"name": "key_name",
+									"type": "String",
+									"description": "变量名称"
+								}
+							],
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "变量"
+						},
+						{
+							"name": "standard_template_id",
+							"type": "Number",
+							"description": "标准模板名称"
+						},
+						{
+							"name": "standard_template_url",
+							"type": "String",
+							"description": "标准模板url"
 						},
 						{
 							"name": "user_template_id",
 							"type": "Number",
-							"description": "用户模板id，等同于mystdtemplates.get中返回的用户模板id",
-							"required": true
+							"description": "用户模板id，等同于mystdtemplates.get中返回的用户模板id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "CustomAreaResult",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.templates.migrate",
+	"apiChineseName": "云打印模板迁移接口",
+	"description": "云打印模板迁移接口",
+	"id": 27500
 }

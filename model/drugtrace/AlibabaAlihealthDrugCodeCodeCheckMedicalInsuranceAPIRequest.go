@@ -19,6 +19,8 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
 	model.Params
 	// 码列表
 	_codes []string
+	// 平台返回的终端id
+	_terminalEntId string
 	// 行政区域
 	_bureauName string
 	// 终端id
@@ -27,8 +29,6 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest struct {
 	_terminalType string
 	// 核销类型(1012100：核销；1012900：退库)
 	_cType string
-	// 平台返回的终端id
-	_terminalEntId string
 }
 
 // NewAlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest 初始化AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest对象
@@ -63,6 +63,19 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCodes(_
 // GetCodes Codes Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCodes() []string {
 	return r._codes
+}
+
+// SetTerminalEntId is TerminalEntId Setter
+// 平台返回的终端id
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalEntId(_terminalEntId string) error {
+	r._terminalEntId = _terminalEntId
+	r.Set("terminal_ent_id", _terminalEntId)
+	return nil
+}
+
+// GetTerminalEntId TerminalEntId Getter
+func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalEntId() string {
+	return r._terminalEntId
 }
 
 // SetBureauName is BureauName Setter
@@ -115,17 +128,4 @@ func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetCType(_
 // GetCType CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetCType() string {
 	return r._cType
-}
-
-// SetTerminalEntId is TerminalEntId Setter
-// 平台返回的终端id
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) SetTerminalEntId(_terminalEntId string) error {
-	r._terminalEntId = _terminalEntId
-	r.Set("terminal_ent_id", _terminalEntId)
-	return nil
-}
-
-// GetTerminalEntId TerminalEntId Getter
-func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIRequest) GetTerminalEntId() string {
-	return r._terminalEntId
 }

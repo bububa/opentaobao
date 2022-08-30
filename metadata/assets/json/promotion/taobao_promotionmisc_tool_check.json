@@ -1,15 +1,11 @@
 {
-	"id": 21644,
-	"name": "taobao.promotionmisc.tool.check",
-	"apiChineseName": "UMP工具检测",
-	"description": "UMP工具检测。ISV通过该接口检测（通过taobao.ump.tool.add）创建的UMP工具（tool）是否符合规范，如果不符合，则返回错误信息和对应的解决方案的；工具检测通过后才可以提交工具审核邮件，提交工具审核时，需提供该接口的返回值。",
 	"requestParams": [
 		{
 			"name": "tool_id",
 			"type": "Number",
 			"description": "工具ID, taobao.ump.tool.add成功后返回的id。",
-			"required": true,
-			"minValue": 10
+			"minValue": 10,
+			"required": true
 		},
 		{
 			"name": "meta_allow",
@@ -19,9 +15,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "check_tool_module",
-			"type": "CheckToolModule",
-			"description": "工具审核结果。",
 			"subParams": [
 				{
 					"name": "is_pass",
@@ -43,7 +36,10 @@
 					"type": "String",
 					"description": "工具审核的URL，工具检测通过后，ISV需要把该URL和工具基本信息一起提交UMP工具技术审核。"
 				}
-			]
+			],
+			"name": "check_tool_module",
+			"type": "CheckToolModule",
+			"description": "工具审核结果。"
 		},
 		{
 			"name": "is_success",
@@ -55,5 +51,9 @@
 			"type": "String",
 			"description": "接口调用错误信息描述。"
 		}
-	]
+	],
+	"name": "taobao.promotionmisc.tool.check",
+	"apiChineseName": "UMP工具检测",
+	"description": "UMP工具检测。ISV通过该接口检测（通过taobao.ump.tool.add）创建的UMP工具（tool）是否符合规范，如果不符合，则返回错误信息和对应的解决方案的；工具检测通过后才可以提交工具审核邮件，提交工具审核时，需提供该接口的返回值。",
+	"id": 21644
 }

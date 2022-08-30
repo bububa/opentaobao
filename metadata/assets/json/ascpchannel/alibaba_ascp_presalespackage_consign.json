@@ -1,13 +1,6 @@
 {
-	"id": 54844,
-	"name": "alibaba.ascp.presalespackage.consign",
-	"apiChineseName": "预售预包尾款推单发货",
-	"description": "预售预包尾款发货后推单处理",
 	"requestParams": [
 		{
-			"name": "request_params",
-			"type": "Requestparams",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "remark",
@@ -32,34 +25,38 @@
 					"description": "金额",
 					"required": true
 				}
-			]
+			],
+			"name": "request_params",
+			"type": "Requestparams",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ErpPresaleFinalPayResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "服务调用成功",
-					"required": true
+					"description": "服务调用成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ErpPresaleFinalPayResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.ascp.presalespackage.consign",
+	"apiChineseName": "预售预包尾款推单发货",
+	"description": "预售预包尾款发货后推单处理",
+	"id": 54844
 }

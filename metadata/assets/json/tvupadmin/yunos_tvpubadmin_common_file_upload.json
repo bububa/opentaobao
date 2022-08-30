@@ -1,8 +1,4 @@
 {
-	"id": 30406,
-	"name": "yunos.tvpubadmin.common.file.upload",
-	"apiChineseName": "文件上传API",
-	"description": "文件上传服务",
 	"requestParams": [
 		{
 			"name": "bytes",
@@ -36,5 +32,9 @@
 			"type": "String",
 			"description": "上传后的文件地址"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.common.file.upload",
+	"apiChineseName": "文件上传API",
+	"description": "文件上传服务",
+	"id": 30406
 }

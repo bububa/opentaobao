@@ -40,6 +40,14 @@ type HotelDetailRateDto struct {
 	RateId int64 `json:"rate_id,omitempty" xml:"rate_id,omitempty"`
 	// rpId
 	RpId int64 `json:"rp_id,omitempty" xml:"rp_id,omitempty"`
+	// 取消政策
+	BtripHotelCancelPolicyDTO *BtripHotelCancelPolicyDto `json:"btrip_hotel_cancel_policy_d_t_o,omitempty" xml:"btrip_hotel_cancel_policy_d_t_o,omitempty"`
+	// 取整后每日均价
+	DailyPriceFormatYuan int64 `json:"daily_price_format_yuan,omitempty" xml:"daily_price_format_yuan,omitempty"`
+	// 界面展示价格
+	DailyPriceView int64 `json:"daily_price_view,omitempty" xml:"daily_price_view,omitempty"`
 	// 是否即时确认，可忽略
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
+	// 是否支持专票
+	SupportSpecialInvoice bool `json:"support_special_invoice,omitempty" xml:"support_special_invoice,omitempty"`
 }

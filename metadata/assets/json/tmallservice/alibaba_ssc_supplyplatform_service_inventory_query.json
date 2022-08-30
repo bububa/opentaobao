@@ -1,8 +1,4 @@
 {
-	"id": 49150,
-	"name": "alibaba.ssc.supplyplatform.service.inventory.query",
-	"apiChineseName": "服务库存查询",
-	"description": "查询服务库存。需要保存服务容量成功后，才能进行查询，参数中的provider信息（provider_id和provider_type）与alibaba.ssc.supplyplatform.servicecapacity.save接口中保持一致。",
 	"requestParams": [
 		{
 			"name": "start_day",
@@ -31,41 +27,40 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "value",
-					"type": "Json",
-					"description": "json字符串。key是时间片，格式为yyyy-MM-dd或yyyy-MM-dd HH:mm-HH:mm，value是当前库存值",
-					"required": true
+					"type": "String",
+					"description": "json字符串。key是时间片，格式为yyyy-MM-dd或yyyy-MM-dd HH:mm-HH:mm，value是当前库存值"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "对外展示的错误信息",
-					"required": true
+					"description": "对外展示的错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.ssc.supplyplatform.service.inventory.query",
+	"apiChineseName": "服务库存查询",
+	"description": "查询服务库存。需要保存服务容量成功后，才能进行查询，参数中的provider信息（provider_id和provider_type）与alibaba.ssc.supplyplatform.servicecapacity.save接口中保持一致。",
+	"id": 49150
 }

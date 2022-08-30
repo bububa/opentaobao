@@ -1,13 +1,6 @@
 {
-	"id": 46026,
-	"name": "alibaba.damai.maitix.opengateway.perform.status.query",
-	"apiChineseName": "分销状态查询接口queryPerformStatusByPerformId",
-	"description": "queryPerformStatusByPerformId",
 	"requestParams": [
 		{
-			"name": "dis_perform_status_query_param",
-			"type": "DisPerformStatusQueryDto",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "perform_id",
@@ -20,104 +13,97 @@
 					"type": "Boolean",
 					"description": "是否查询场次对应的票品状态"
 				}
-			]
+			],
+			"name": "dis_perform_status_query_param",
+			"type": "DisPerformStatusQueryDto",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OpenResult",
-			"description": "查询结果",
 			"subParams": [
 				{
-					"name": "error_code",
-					"type": "String",
-					"description": "参数errorCode",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "参数errorMsg",
-					"required": true
-				},
-				{
 					"name": "ext_map",
-					"type": "Json",
-					"description": "参数extMap",
-					"required": true
-				},
-				{
-					"name": "model",
-					"type": "DisStatusDto",
-					"description": "参数model",
-					"required": true,
-					"subParams": [
-						{
-							"name": "project_id",
-							"type": "Number",
-							"description": "项目id",
-							"required": true
-						},
-						{
-							"name": "perform_id",
-							"type": "Number",
-							"description": "场次id",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "1-可售 0不可售",
-							"required": true
-						},
-						{
-							"name": "dis_ticket_item_status_d_t_o_list",
-							"type": "DisTicketItemStatusDto[]",
-							"description": "票品状态列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "project_id",
-									"type": "Number",
-									"description": "项目id",
-									"required": true
-								},
-								{
-									"name": "perform_id",
-									"type": "Number",
-									"description": "场次id",
-									"required": true
-								},
-								{
-									"name": "ticket_item_id",
-									"type": "Number",
-									"description": "票品id",
-									"required": true
-								},
-								{
-									"name": "status",
-									"type": "Number",
-									"description": "票品状态",
-									"required": true
-								},
-								{
-									"name": "sub_status",
-									"type": "Number",
-									"description": "票品子状态",
-									"required": true
-								}
-							]
-						}
-					]
+					"type": "String",
+					"description": "参数extMap"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "参数success",
-					"required": true
+					"description": "参数success"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "参数errorCode"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "1-可售 0不可售"
+						},
+						{
+							"name": "perform_id",
+							"type": "Number",
+							"description": "场次id"
+						},
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "project_id",
+									"type": "Number",
+									"description": "项目id"
+								},
+								{
+									"name": "perform_id",
+									"type": "Number",
+									"description": "场次id"
+								},
+								{
+									"name": "ticket_item_id",
+									"type": "Number",
+									"description": "票品id"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "票品状态"
+								},
+								{
+									"name": "sub_status",
+									"type": "Number",
+									"description": "票品子状态"
+								}
+							],
+							"name": "dis_ticket_item_status_d_t_o_list",
+							"type": "DisTicketItemStatusDto[]",
+							"description": "票品状态列表"
+						}
+					],
+					"name": "model",
+					"type": "DisStatusDto",
+					"description": "参数model"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "参数errorMsg"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OpenResult",
+			"description": "查询结果"
 		}
-	]
+	],
+	"name": "alibaba.damai.maitix.opengateway.perform.status.query",
+	"apiChineseName": "分销状态查询接口queryPerformStatusByPerformId",
+	"description": "queryPerformStatusByPerformId",
+	"id": 46026
 }

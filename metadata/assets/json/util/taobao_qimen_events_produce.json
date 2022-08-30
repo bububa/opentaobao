@@ -1,20 +1,8 @@
 {
-	"id": 28677,
-	"name": "taobao.qimen.events.produce",
-	"apiChineseName": "批量发送奇门事件",
-	"description": "批量发送消息",
 	"requestParams": [
 		{
-			"name": "messages",
-			"type": "QimenEvent[]",
-			"description": "奇门事件列表, 最多50条",
-			"required": true,
-			"maxListSize": 50,
 			"subParams": [
 				{
-					"name": "event",
-					"type": "Event",
-					"description": "奇门事件对象",
 					"subParams": [
 						{
 							"name": "tid",
@@ -23,15 +11,15 @@
 							"required": true
 						},
 						{
+							"name": "ext",
+							"type": "String",
+							"description": "扩展属性"
+						},
+						{
 							"name": "status",
 							"type": "String",
 							"description": "事件状态，如QIMEN_ERP_TRANSFER，QIMEN_ERP_CHECK",
 							"required": true
-						},
-						{
-							"name": "ext",
-							"type": "String",
-							"description": "扩展属性"
 						},
 						{
 							"name": "platform",
@@ -48,9 +36,17 @@
 							"type": "String",
 							"description": "外部商家名称。必须同时填写platform"
 						}
-					]
+					],
+					"name": "event",
+					"type": "Event",
+					"description": "奇门事件对象"
 				}
-			]
+			],
+			"name": "messages",
+			"type": "QimenEvent[]",
+			"description": "奇门事件列表, 最多50条",
+			"maxListSize": 50,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -60,29 +56,30 @@
 			"description": "是否全部成功"
 		},
 		{
-			"name": "results",
-			"type": "QimenResult []",
-			"description": "发送结果，与发送时的参数顺序一致。如果is_all_success为true时，不用校验result是否成功",
 			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "results",
+			"type": "QimenResult []",
+			"description": "发送结果，与发送时的参数顺序一致。如果is_all_success为true时，不用校验result是否成功"
 		}
-	]
+	],
+	"name": "taobao.qimen.events.produce",
+	"apiChineseName": "批量发送奇门事件",
+	"description": "批量发送消息",
+	"id": 28677
 }

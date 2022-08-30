@@ -1,0 +1,18 @@
+{
+	"requestParams": [
+		{
+			"name": "last_pay_time",
+			"type": "String",
+			"description": "当日订单最晚截单时间， 当日可发货订单最晚的支付时间 24小时制 格式：HH:mm"
+		},
+		{
+			"name": "last_delivery_time",
+			"type": "String",
+			"description": "当日仓库最晚出库时间 当日可发货订单最晚的出库时间 24小时制 格式：HH:mm"
+		}
+	],
+	"name": "taobao.open.seller.biz.logistic.time.rule",
+	"apiChineseName": "商家自定义发货时效",
+	"description": "服务商回传商家自定义发货时效",
+	"id": 57299
+}

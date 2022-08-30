@@ -1,8 +1,4 @@
 {
-	"id": 27341,
-	"name": "tmall.item.dapei.template.query",
-	"apiChineseName": "搭配查询接口",
-	"description": "根据条件获取搭配内容",
 	"requestParams": [
 		{
 			"name": "title",
@@ -22,99 +18,89 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "DapeiDO[]",
-					"description": "firstResult",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "title",
-							"required": true
+							"description": "title"
 						},
 						{
 							"name": "desc",
 							"type": "String",
-							"description": "desc",
-							"required": true
+							"description": "desc"
 						},
 						{
 							"name": "url",
 							"type": "String",
-							"description": "url",
-							"required": true
+							"description": "url"
 						},
 						{
-							"name": "items",
-							"type": "DapeiTemplateItem[]",
-							"description": "items",
-							"required": true,
 							"subParams": [
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "itemId",
-									"required": true
+									"description": "itemId"
 								},
 								{
 									"name": "img",
 									"type": "String",
-									"description": "img",
-									"required": true
+									"description": "img"
 								}
-							]
+							],
+							"name": "items",
+							"type": "DapeiTemplateItem[]",
+							"description": "items"
 						}
-					]
+					],
+					"name": "results",
+					"type": "DapeiDO[]",
+					"description": "firstResult"
 				},
 				{
 					"name": "error",
 					"type": "Boolean",
-					"description": "error",
-					"required": true
+					"description": "error"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "total_results",
 					"type": "Number",
-					"description": "totalResults",
-					"required": true
+					"description": "totalResults"
 				},
 				{
 					"name": "total_page",
 					"type": "Number",
-					"description": "totalPage",
-					"required": true
+					"description": "totalPage"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "pageIndex",
-					"required": true
+					"description": "pageIndex"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "tmall.item.dapei.template.query",
+	"apiChineseName": "搭配查询接口",
+	"description": "根据条件获取搭配内容",
+	"id": 27341
 }

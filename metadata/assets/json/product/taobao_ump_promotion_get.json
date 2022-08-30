@@ -1,8 +1,4 @@
 {
-	"id": 11039,
-	"name": "taobao.ump.promotion.get",
-	"apiChineseName": "商品优惠详情查询",
-	"description": "商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。",
 	"requestParams": [
 		{
 			"name": "item_id",
@@ -13,15 +9,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "promotions",
-			"type": "PromotionDisplayTop",
-			"description": "优惠详细信息",
 			"subParams": [
 				{
-					"name": "promotion_in_item",
-					"type": "PromotionInItem[]",
-					"description": "单品级优惠信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "promotion_id",
@@ -83,13 +72,13 @@
 							"description": "sku价格对应的id（保证二者顺序相同）",
 							"required": true
 						}
-					]
+					],
+					"name": "promotion_in_item",
+					"type": "PromotionInItem[]",
+					"description": "单品级优惠信息",
+					"required": true
 				},
 				{
-					"name": "promotion_in_shop",
-					"type": "PromotionInShop[]",
-					"description": "店铺级优惠信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "name",
@@ -109,9 +98,20 @@
 							"description": "优惠详情描述。",
 							"required": true
 						}
-					]
+					],
+					"name": "promotion_in_shop",
+					"type": "PromotionInShop[]",
+					"description": "店铺级优惠信息",
+					"required": true
 				}
-			]
+			],
+			"name": "promotions",
+			"type": "PromotionDisplayTop",
+			"description": "优惠详细信息"
 		}
-	]
+	],
+	"name": "taobao.ump.promotion.get",
+	"apiChineseName": "商品优惠详情查询",
+	"description": "商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。",
+	"id": 11039
 }

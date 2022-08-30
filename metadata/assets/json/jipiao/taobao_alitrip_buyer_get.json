@@ -1,14 +1,6 @@
 {
-	"id": 26565,
-	"name": "taobao.alitrip.buyer.get",
-	"apiChineseName": "敏感信息查询",
-	"description": "针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。",
 	"requestParams": [
 		{
-			"name": "request_axb",
-			"type": "RequestAxbDo",
-			"description": "敏感信息查询请求参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "req_content",
@@ -40,7 +32,11 @@
 					"description": "订单号",
 					"required": true
 				}
-			]
+			],
+			"name": "request_axb",
+			"type": "RequestAxbDo",
+			"description": "敏感信息查询请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -54,5 +50,9 @@
 			"type": "Date",
 			"description": "有效期"
 		}
-	]
+	],
+	"name": "taobao.alitrip.buyer.get",
+	"apiChineseName": "敏感信息查询",
+	"description": "针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。",
+	"id": 26565
 }

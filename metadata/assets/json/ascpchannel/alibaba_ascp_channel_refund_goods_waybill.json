@@ -1,14 +1,6 @@
 {
-	"id": 55728,
-	"name": "alibaba.ascp.channel.refund.goods.waybill",
-	"apiChineseName": "淘外分销退货回传物流单号",
-	"description": "淘外分销退货回传物流单号",
 	"requestParams": [
 		{
-			"name": "refund_way_bill_req",
-			"type": "ExternalRefundGoodsWaybillRequest",
-			"description": "请求",
-			"required": true,
 			"subParams": [
 				{
 					"name": "out_refund_no",
@@ -38,34 +30,39 @@
 					"description": "物流单号",
 					"required": true
 				}
-			]
+			],
+			"name": "refund_way_bill_req",
+			"type": "ExternalRefundGoodsWaybillRequest",
+			"description": "请求",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "alibaba.ascp.channel.refund.goods.waybill",
+	"apiChineseName": "淘外分销退货回传物流单号",
+	"description": "淘外分销退货回传物流单号",
+	"id": 55728
 }

@@ -1,8 +1,4 @@
 {
-	"id": 42008,
-	"name": "alibaba.health.vaccin.notice.order.sign",
-	"apiChineseName": "福州疫苗签到成功通知",
-	"description": "福州疫苗用户签到成功记录",
 	"requestParams": [
 		{
 			"name": "alipay_user_id",
@@ -38,5 +34,9 @@
 			"type": "Boolean",
 			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.health.vaccin.notice.order.sign",
+	"apiChineseName": "福州疫苗签到成功通知",
+	"description": "福州疫苗用户签到成功记录",
+	"id": 42008
 }

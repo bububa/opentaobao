@@ -1,44 +1,10 @@
 {
-	"id": 22466,
-	"name": "taobao.rp.returngoods.agree",
-	"apiChineseName": "卖家同意退货",
-	"description": "卖家同意退货，支持淘宝和天猫的订单。",
 	"requestParams": [
 		{
 			"name": "refund_id",
 			"type": "Number",
 			"description": "退款编号",
 			"required": true
-		},
-		{
-			"name": "name",
-			"type": "String",
-			"description": "卖家姓名，淘宝退款为必填项。"
-		},
-		{
-			"name": "address",
-			"type": "String",
-			"description": "卖家提供的退货地址，淘宝退款为必填项。"
-		},
-		{
-			"name": "post",
-			"type": "String",
-			"description": "卖家提供的退货地址的邮编，淘宝退款为必填项。"
-		},
-		{
-			"name": "tel",
-			"type": "String",
-			"description": "卖家座机，淘宝退款为必填项。"
-		},
-		{
-			"name": "mobile",
-			"type": "String",
-			"description": "卖家手机，淘宝退款为必填项。"
-		},
-		{
-			"name": "remark",
-			"type": "String",
-			"description": "卖家退货留言，天猫退款为必填项。"
 		},
 		{
 			"name": "refund_phase",
@@ -51,9 +17,39 @@
 			"description": "退款版本号，天猫退款为必填项。"
 		},
 		{
+			"name": "remark",
+			"type": "String",
+			"description": "卖家退货留言，天猫退款为必填项。"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "卖家提供的退货地址，淘宝退款为必填项。"
+		},
+		{
 			"name": "seller_address_id",
 			"type": "Number",
 			"description": "卖家收货地址编号，天猫淘宝退款都为必填项。"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "卖家手机，淘宝退款为必填项。"
+		},
+		{
+			"name": "post",
+			"type": "String",
+			"description": "卖家提供的退货地址的邮编，淘宝退款为必填项。"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "卖家姓名，淘宝退款为必填项。"
+		},
+		{
+			"name": "tel",
+			"type": "String",
+			"description": "卖家座机，淘宝退款为必填项。"
 		},
 		{
 			"name": "post_fee_bear_role",
@@ -72,5 +68,9 @@
 			"type": "Boolean",
 			"description": "操作成功"
 		}
-	]
+	],
+	"name": "taobao.rp.returngoods.agree",
+	"apiChineseName": "卖家同意退货",
+	"description": "卖家同意退货，支持淘宝和天猫的订单。",
+	"id": 22466
 }

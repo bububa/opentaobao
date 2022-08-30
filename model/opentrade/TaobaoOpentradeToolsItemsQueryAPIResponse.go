@@ -22,4 +22,6 @@ type TaobaoOpentradeToolsItemsQueryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 已绑定的商品ID列表
 	ItemIds []int64 `json:"item_ids,omitempty" xml:"item_ids>int64,omitempty"`
+	// 总商品数
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

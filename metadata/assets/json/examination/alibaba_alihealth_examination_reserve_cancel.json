@@ -1,8 +1,4 @@
 {
-	"id": 27339,
-	"name": "alibaba.alihealth.examination.reserve.cancel",
-	"apiChineseName": "体检机构对接_预约取消",
-	"description": "体检机构对接_体检取消",
 	"requestParams": [
 		{
 			"name": "merchant_code",
@@ -42,9 +38,6 @@
 			"description": "200:取消成功，状态变为已取消;800:取消失败，状态变为取消预约中；700：取消失败状态从取消预约中变为已到检；600取消失败，状态从取消预约中变为已预约"
 		},
 		{
-			"name": "revision_info",
-			"type": "RevisionInfo",
-			"description": "返回状态码不是600或者700时，不需要返回此字段",
 			"subParams": [
 				{
 					"name": "reserve_date",
@@ -58,12 +51,19 @@
 					"description": "返回状态码600和700 需要此值",
 					"required": true
 				}
-			]
+			],
+			"name": "revision_info",
+			"type": "RevisionInfo",
+			"description": "返回状态码不是600或者700时，不需要返回此字段"
 		},
 		{
 			"name": "message",
 			"type": "String",
 			"description": "返回结果描述"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.examination.reserve.cancel",
+	"apiChineseName": "体检机构对接_预约取消",
+	"description": "体检机构对接_体检取消",
+	"id": 27339
 }

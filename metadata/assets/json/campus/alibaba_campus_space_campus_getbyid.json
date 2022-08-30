@@ -1,14 +1,6 @@
 {
-	"id": 32380,
-	"name": "alibaba.campus.space.campus.getbyid",
-	"apiChineseName": "根据园区id获取园区信息",
-	"description": "根据园区id获取园区信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.CampusApiTopService\nHSF方法名称：getCampusById",
 	"requestParams": [
 		{
-			"name": "param0",
-			"type": "WorkBenchContext",
-			"description": "园区ID",
-			"required": true,
 			"subParams": [
 				{
 					"name": "campus_code",
@@ -26,7 +18,11 @@
 					"description": "园区ID",
 					"required": true
 				}
-			]
+			],
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "园区ID",
+			"required": true
 		},
 		{
 			"name": "param1",
@@ -36,187 +32,162 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "content",
-					"type": "Campus",
-					"description": "content",
-					"required": true,
 					"subParams": [
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Date",
-							"description": "gmtCreate",
-							"required": true
+							"description": "gmtCreate"
 						},
 						{
 							"name": "gmt_modified",
 							"type": "Date",
-							"description": "gmtModified",
-							"required": true
+							"description": "gmtModified"
 						},
 						{
 							"name": "creator",
 							"type": "String",
-							"description": "creator",
-							"required": true
+							"description": "creator"
 						},
 						{
 							"name": "modifier",
 							"type": "String",
-							"description": "modifier",
-							"required": true
+							"description": "modifier"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "是否删除，0未删除，1删除",
-							"required": true
+							"description": "是否删除，0未删除，1删除"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "来源，0自建 1租赁",
-							"required": true
+							"description": "来源，0自建 1租赁"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "状态，0停用，1启用",
-							"required": true
+							"description": "状态，0停用，1启用"
 						},
 						{
 							"name": "area",
 							"type": "BigDecimal",
-							"description": "面积",
-							"required": true
+							"description": "面积"
 						},
 						{
 							"name": "order_no",
 							"type": "Number",
-							"description": "排序号",
-							"required": true
+							"description": "排序号"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "地址信息",
-							"required": true
+							"description": "地址信息"
 						},
 						{
 							"name": "city_code",
 							"type": "String",
-							"description": "城市编码",
-							"required": true
+							"description": "城市编码"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "城市名称",
-							"required": true
+							"description": "城市名称"
 						},
 						{
 							"name": "province_code",
 							"type": "String",
-							"description": "省份编码",
-							"required": true
+							"description": "省份编码"
 						},
 						{
 							"name": "province_name",
 							"type": "String",
-							"description": "省份名称",
-							"required": true
+							"description": "省份名称"
 						},
 						{
 							"name": "country_code",
 							"type": "String",
-							"description": "国家编码",
-							"required": true
+							"description": "国家编码"
 						},
 						{
 							"name": "country_name",
 							"type": "String",
-							"description": "国家名称",
-							"required": true
+							"description": "国家名称"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "园区编码",
-							"required": true
+							"description": "园区编码"
 						},
 						{
 							"name": "en_name",
 							"type": "String",
-							"description": "园区英文名称",
-							"required": true
+							"description": "园区英文名称"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "园区名称",
-							"required": true
+							"description": "园区名称"
 						},
 						{
 							"name": "company_name",
 							"type": "String",
-							"description": "所属公司名称",
-							"required": true
+							"description": "所属公司名称"
 						},
 						{
 							"name": "company_id",
 							"type": "Number",
-							"description": "所属公司ID",
-							"required": true
+							"description": "所属公司ID"
 						},
 						{
 							"name": "indoor_area",
 							"type": "String",
-							"description": "室内面积",
-							"required": true
+							"description": "室内面积"
 						}
-					]
+					],
+					"name": "content",
+					"type": "Campus",
+					"description": "content"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "requestId",
-					"required": true
+					"description": "requestId"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "errorLevel",
-					"required": true
+					"description": "errorLevel"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.space.campus.getbyid",
+	"apiChineseName": "根据园区id获取园区信息",
+	"description": "根据园区id获取园区信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.CampusApiTopService\nHSF方法名称：getCampusById",
+	"id": 32380
 }

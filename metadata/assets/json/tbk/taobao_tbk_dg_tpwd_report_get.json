@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "tao_password",
+			"type": "String",
+			"description": "待查询的口令",
+			"required": true
+		},
+		{
+			"name": "adzone_id",
+			"type": "String",
+			"description": "mm_xxx_xxx_xxx的第3段数字",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "hour_pv",
+					"type": "Number",
+					"description": "截止查询时刻近1小时回流pv"
+				},
+				{
+					"name": "hour_uv",
+					"type": "Number",
+					"description": "截止查询时刻近1小时回流uv"
+				},
+				{
+					"name": "uv",
+					"type": "Number",
+					"description": "今日截止查询时刻累计uv"
+				},
+				{
+					"name": "pv",
+					"type": "Number",
+					"description": "今日截止查询时刻累计pv"
+				}
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.tbk.dg.tpwd.report.get",
+	"apiChineseName": "淘宝客-推广者-淘口令回流数据查询",
+	"description": "淘宝客获取单个淘口令的回流PV、UV数据。",
+	"id": 56693
+}

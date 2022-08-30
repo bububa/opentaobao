@@ -1,8 +1,4 @@
 {
-	"id": 26685,
-	"name": "alibaba.aliqin.ta.number.singlecallbytts",
-	"apiChineseName": "根据号码tts单呼",
-	"description": "将语音验证码和语音通知发布至聚石塔渠道",
 	"requestParams": [
 		{
 			"name": "called_num",
@@ -30,29 +26,30 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "model",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功，失败",
-					"required": true
+					"description": "成功，失败"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.aliqin.ta.number.singlecallbytts",
+	"apiChineseName": "根据号码tts单呼",
+	"description": "将语音验证码和语音通知发布至聚石塔渠道",
+	"id": 26685
 }

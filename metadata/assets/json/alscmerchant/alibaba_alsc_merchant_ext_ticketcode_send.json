@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "口碑订单号",
+					"required": true
+				},
+				{
+					"name": "ticket_request_id",
+					"type": "String",
+					"description": "请求id，唯一标识一次请求"
+				},
+				{
+					"name": "valid_start",
+					"type": "Date",
+					"description": "券生效时间,默认为口碑商品配置生效时间"
+				},
+				{
+					"name": "valid_end",
+					"type": "Date",
+					"description": "券过期时间,默认为口碑商品配置失效时间"
+				},
+				{
+					"name": "send_token",
+					"type": "String",
+					"description": "口碑发码通知透传码商，码商需要跟发码通知获取到的参数一致",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "num",
+							"type": "String",
+							"description": "码的可核销份数",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "凭证码值，必填"
+						},
+						{
+							"name": "ticket_id",
+							"type": "String",
+							"description": "本地生活凭证id(奇门发码通知中的ticketId)，必填"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "支持核销的三方url"
+						}
+					],
+					"name": "external_ticket_codes",
+					"type": "ExternalTicketCode[]",
+					"description": "需要发送的码列表，其中code表示串码码值，num表示码的可核销份数",
+					"required": true
+				},
+				{
+					"name": "send_order_no",
+					"type": "String",
+					"description": "口碑商品发货单号",
+					"required": true
+				},
+				{
+					"name": "deliver_code_success",
+					"type": "String",
+					"description": "三方异步发码是否成功,值为success 代表发码成功,external_ticket_codes 不能为空,fail代表三方发码失败,本地侧凭证发放状态推进到发码失败",
+					"required": true
+				}
+			],
+			"name": "send_request",
+			"type": "ExternalTicketSendRequest",
+			"description": "外部券异步发码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ticket_request_id",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "该字段用于描述本次返回中的业务属性，现有：BIZ_ALREADY_SUCCESS（幂等业务码）。"
+		}
+	],
+	"name": "alibaba.alsc.merchant.ext.ticketcode.send",
+	"apiChineseName": "异步发码",
+	"description": "外部券异步发码",
+	"id": 53177
+}

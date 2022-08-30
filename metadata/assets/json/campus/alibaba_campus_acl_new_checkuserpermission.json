@@ -1,13 +1,6 @@
 {
-	"id": 37469,
-	"name": "alibaba.campus.acl.new.checkuserpermission",
-	"apiChineseName": "校验用户是否有权限",
-	"description": "校验用户是否有权限",
 	"requestParams": [
 		{
-			"name": "workbenchcontext",
-			"type": "WorkBenchContext",
-			"description": "系统入参",
 			"subParams": [
 				{
 					"name": "system_id",
@@ -27,13 +20,12 @@
 					"description": "园区id",
 					"required": true
 				}
-			]
+			],
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参"
 		},
 		{
-			"name": "check_user_permission_param",
-			"type": "CheckUserPermissionParam",
-			"description": "接口入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "hierarchical_check_permission_group",
@@ -62,40 +54,44 @@
 					"type": "Boolean",
 					"description": "是否用户拥有菜单，就认为用户级联拥有菜单下的权限"
 				}
-			]
+			],
+			"name": "check_user_permission_param",
+			"type": "CheckUserPermissionParam",
+			"description": "接口入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "PojoResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "content",
 					"type": "Boolean",
-					"description": "接口返回结果",
-					"required": true
+					"description": "接口返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.new.checkuserpermission",
+	"apiChineseName": "校验用户是否有权限",
+	"description": "校验用户是否有权限",
+	"id": 37469
 }

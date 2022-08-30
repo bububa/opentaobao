@@ -18,4 +18,8 @@ type HotelSearchListRq struct {
 	Order int64 `json:"order,omitempty" xml:"order,omitempty"`
 	// 排序方向，1-升序 or 0-降序
 	Dir int64 `json:"dir,omitempty" xml:"dir,omitempty"`
+	// 第几页
+	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+	// 分页大小，不能超过50
+	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 }

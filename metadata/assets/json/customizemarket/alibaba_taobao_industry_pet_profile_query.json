@@ -1,0 +1,124 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "pet_nick",
+					"type": "String",
+					"description": "宠物名称"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				}
+			],
+			"name": "profile_query",
+			"type": "ProfileQuery",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_status",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "参数错误"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "501"
+		},
+		{
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页面"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总行数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "宠物档案id"
+						},
+						{
+							"name": "pet_nick",
+							"type": "String",
+							"description": "宠物nick"
+						},
+						{
+							"name": "pet_type",
+							"type": "String",
+							"description": "宠物种类类型"
+						},
+						{
+							"name": "pet_type_name",
+							"type": "String",
+							"description": "宠物种类名"
+						},
+						{
+							"name": "pet_birthday",
+							"type": "String",
+							"description": "宠物生日，年-月-日"
+						},
+						{
+							"name": "pet_sex",
+							"type": "Number",
+							"description": "宠物性别：1男 2 女"
+						},
+						{
+							"name": "pet_nobaby",
+							"type": "Number",
+							"description": "是否绝育：0否，1 是 2 未知"
+						},
+						{
+							"name": "pet_image",
+							"type": "String",
+							"description": "宠物头像"
+						},
+						{
+							"name": "pet_pics",
+							"type": "String",
+							"description": "宠物保险照片"
+						}
+					],
+					"name": "data",
+					"type": "PetProfileDTO[]",
+					"description": "数据"
+				}
+			],
+			"name": "object",
+			"type": "BasePageBean",
+			"description": "数据"
+		}
+	],
+	"name": "alibaba.taobao.industry.pet.profile.query",
+	"apiChineseName": "用户宠物列表查询",
+	"description": "用户宠物列表查询",
+	"id": 62678
+}

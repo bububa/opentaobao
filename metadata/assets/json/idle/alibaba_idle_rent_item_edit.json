@@ -1,31 +1,8 @@
 {
-	"id": 45075,
-	"name": "alibaba.idle.rent.item.edit",
-	"apiChineseName": "租赁商品编辑",
-	"description": "发布闲鱼租赁商品",
 	"requestParams": [
 		{
-			"name": "param_rent_item_d_t_o",
-			"type": "RentItemDto",
-			"description": "商品信息",
-			"required": true,
 			"subParams": [
 				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "要更新的商品id",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "状态，可选值为0（表示上架），-2（表示下架），不填默认为0"
-				},
-				{
-					"name": "address",
-					"type": "AddressDto",
-					"description": "地址信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "area",
@@ -45,7 +22,11 @@
 							"description": "省",
 							"required": true
 						}
-					]
+					],
+					"name": "address",
+					"type": "AddressDto",
+					"description": "地址信息",
+					"required": true
 				},
 				{
 					"name": "cat_id",
@@ -65,9 +46,12 @@
 					"description": "标签"
 				},
 				{
-					"name": "item_sku_list",
-					"type": "ItemSkuDto[]",
-					"description": "sku",
+					"name": "item_id",
+					"type": "Number",
+					"description": "要更新的商品id",
+					"required": true
+				},
+				{
 					"subParams": [
 						{
 							"name": "price",
@@ -75,9 +59,6 @@
 							"description": "sku价格，单位分，有sku时必填"
 						},
 						{
-							"name": "prop_list",
-							"type": "ItemPvPairDto[]",
-							"description": "sku属性，有sku时必填且不可为空",
 							"subParams": [
 								{
 									"name": "prop_text",
@@ -89,26 +70,38 @@
 									"type": "String",
 									"description": "sku属性值名称，有sku属性信息时不可为空"
 								}
-							]
+							],
+							"name": "prop_list",
+							"type": "ItemPvPairDto[]",
+							"description": "sku属性，有sku时必填且不可为空"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
 							"description": "sku库存，有sku时必填"
 						}
-					]
+					],
+					"name": "item_sku_list",
+					"type": "ItemSkuDto[]",
+					"description": "sku"
 				},
 				{
-					"name": "media",
-					"type": "MediaDto",
-					"description": "商品图片",
-					"required": true,
 					"subParams": [
 						{
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "图片id",
+									"required": true
+								}
+							],
 							"name": "images",
 							"type": "ImageInfoDto[]",
 							"description": "商品主图列表",
-							"required": true,
+							"required": true
+						},
+						{
 							"subParams": [
 								{
 									"name": "id",
@@ -116,29 +109,19 @@
 									"description": "图片id",
 									"required": true
 								}
-							]
-						},
-						{
+							],
 							"name": "prop_images",
 							"type": "ImageInfoDto[]",
 							"description": "商品详情图片列表",
-							"required": true,
-							"subParams": [
-								{
-									"name": "id",
-									"type": "Number",
-									"description": "图片id",
-									"required": true
-								}
-							]
+							"required": true
 						}
-					]
+					],
+					"name": "media",
+					"type": "MediaDto",
+					"description": "商品图片",
+					"required": true
 				},
 				{
-					"name": "price_info",
-					"type": "PriceDto",
-					"description": "价格信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "deposit",
@@ -164,12 +147,13 @@
 							"description": "日结算价格，单位分",
 							"required": true
 						}
-					]
+					],
+					"name": "price_info",
+					"type": "PriceDto",
+					"description": "价格信息",
+					"required": true
 				},
 				{
-					"name": "prop_pairs",
-					"type": "ItemPvPairDto[]",
-					"description": "类目属性对",
 					"subParams": [
 						{
 							"name": "prop_text",
@@ -181,7 +165,10 @@
 							"type": "String",
 							"description": "类目属性值名称，有类目属性信息必填"
 						}
-					]
+					],
+					"name": "prop_pairs",
+					"type": "ItemPvPairDto[]",
+					"description": "类目属性对"
 				},
 				{
 					"name": "quantity",
@@ -189,9 +176,6 @@
 					"description": "库存，无sku信息时必选"
 				},
 				{
-					"name": "standard_equipments",
-					"type": "EquipmentDto[]",
-					"description": "标配信息",
 					"subParams": [
 						{
 							"name": "name",
@@ -203,7 +187,15 @@
 							"type": "String",
 							"description": "标配值，多为数量"
 						}
-					]
+					],
+					"name": "standard_equipments",
+					"type": "EquipmentDto[]",
+					"description": "标配信息"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态，可选值为0（表示上架），-2（表示下架），不填默认为0"
 				},
 				{
 					"name": "title",
@@ -227,40 +219,44 @@
 					"type": "Boolean",
 					"description": "true表示包邮，false表示不包邮"
 				}
-			]
+			],
+			"name": "param_rent_item_d_t_o",
+			"type": "RentItemDto",
+			"description": "商品信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopResult",
-			"description": "系统自动生成",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "是否更新成功",
-					"required": true
+					"description": "是否更新成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成"
 		}
-	]
+	],
+	"name": "alibaba.idle.rent.item.edit",
+	"apiChineseName": "租赁商品编辑",
+	"description": "发布闲鱼租赁商品",
+	"id": 45075
 }

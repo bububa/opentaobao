@@ -1,8 +1,4 @@
 {
-	"id": 27722,
-	"name": "yunos.tvscreen.launcher.get",
-	"apiChineseName": "一体机桌面",
-	"description": "LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务",
 	"requestParams": [
 		{
 			"name": "property",
@@ -24,717 +20,604 @@
 			"description": "headers"
 		},
 		{
-			"name": "model",
-			"type": "LauncherDo",
-			"description": "model",
 			"subParams": [
 				{
-					"name": "items",
-					"type": "Items[]",
-					"description": "桌面坑位",
-					"required": true,
 					"subParams": [
 						{
 							"name": "position",
 							"type": "Number",
-							"description": "坑位号",
-							"required": true
+							"description": "坑位号"
 						},
 						{
 							"name": "anime_type",
 							"type": "String",
-							"description": "动画类型",
-							"required": true
+							"description": "动画类型"
 						},
 						{
 							"name": "main_title",
 							"type": "String",
-							"description": "主标题",
-							"required": true
+							"description": "主标题"
 						},
 						{
-							"name": "note_btns",
-							"type": "Notebtns[]",
-							"description": "便签按钮",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type",
 									"type": "String",
-									"description": "便签类型",
-									"required": true
+									"description": "便签类型"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "便签名称",
-									"required": true
+									"description": "便签名称"
 								},
 								{
 									"name": "sort",
 									"type": "Number",
-									"description": "排序",
-									"required": true
+									"description": "排序"
 								}
-							]
+							],
+							"name": "note_btns",
+							"type": "Notebtns[]",
+							"description": "便签按钮"
 						},
 						{
 							"name": "pic_pops",
-							"type": "Json[]",
-							"description": "爆米花图",
-							"required": true
+							"type": "String[]",
+							"description": "爆米花图"
 						},
 						{
 							"name": "pic_url1",
-							"type": "Json",
-							"description": "前景图标",
-							"required": true
+							"type": "String",
+							"description": "前景图标"
 						},
 						{
 							"name": "pic_url2",
-							"type": "Json",
-							"description": "动画图标",
-							"required": true
+							"type": "String",
+							"description": "动画图标"
 						},
 						{
 							"name": "pic_url",
-							"type": "Json",
-							"description": "背景图标",
-							"required": true
+							"type": "String",
+							"description": "背景图标"
 						},
 						{
-							"name": "pic_corner",
-							"type": "PicCornerDo",
-							"description": "角标图",
-							"required": true,
 							"subParams": [
 								{
 									"name": "type",
 									"type": "String",
-									"description": "角标类型",
-									"required": true
+									"description": "角标类型"
 								},
 								{
 									"name": "url",
 									"type": "String",
-									"description": "角标地址",
-									"required": true
+									"description": "角标地址"
 								},
 								{
 									"name": "text",
 									"type": "String",
-									"description": "角标文案",
-									"required": true
+									"description": "角标文案"
 								}
-							]
+							],
+							"name": "pic_corner",
+							"type": "PicCornerDo",
+							"description": "角标图"
 						},
 						{
 							"name": "summary",
 							"type": "String",
-							"description": "摘要看点",
-							"required": true
+							"description": "摘要看点"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "坑位类型",
-							"required": true
+							"description": "坑位类型"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "坑位名称",
-							"required": true
+							"description": "坑位名称"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "内容坑位ID",
-							"required": true
+							"description": "内容坑位ID"
 						},
 						{
-							"name": "item_list",
-							"type": "Itemlist[]",
-							"description": "坑位列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "坑位ID",
-									"required": true
+									"description": "坑位ID"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "坑位名称",
-									"required": true
+									"description": "坑位名称"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "坑位类型",
-									"required": true
+									"description": "坑位类型"
 								},
 								{
 									"name": "summary",
 									"type": "String",
-									"description": "摘要看点",
-									"required": true
+									"description": "摘要看点"
 								},
 								{
-									"name": "pic_corner",
-									"type": "PicCornerDo",
-									"description": "角标图",
-									"required": true,
 									"subParams": [
 										{
 											"name": "type",
 											"type": "String",
-											"description": "角标类型",
-											"required": true
+											"description": "角标类型"
 										},
 										{
 											"name": "url",
 											"type": "String",
-											"description": "角标地址",
-											"required": true
+											"description": "角标地址"
 										},
 										{
 											"name": "text",
 											"type": "String",
-											"description": "角标文案",
-											"required": true
+											"description": "角标文案"
 										}
-									]
+									],
+									"name": "pic_corner",
+									"type": "PicCornerDo",
+									"description": "角标图"
 								},
 								{
 									"name": "pic_url",
-									"type": "Json",
-									"description": "背景图标",
-									"required": true
+									"type": "String",
+									"description": "背景图标"
 								},
 								{
 									"name": "pic_url2",
-									"type": "Json",
-									"description": "动画图标",
-									"required": true
+									"type": "String",
+									"description": "动画图标"
 								},
 								{
 									"name": "pic_url1",
-									"type": "Json",
-									"description": "前景图标",
-									"required": true
+									"type": "String",
+									"description": "前景图标"
 								},
 								{
 									"name": "pic_pops",
-									"type": "Json[]",
-									"description": "爆米花图",
-									"required": true
+									"type": "String[]",
+									"description": "爆米花图"
 								},
 								{
-									"name": "note_btns",
-									"type": "Notebtns[]",
-									"description": "便签按钮",
-									"required": true,
 									"subParams": [
 										{
 											"name": "sort",
 											"type": "Number",
-											"description": "排序",
-											"required": true
+											"description": "排序"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "便签名称",
-											"required": true
+											"description": "便签名称"
 										},
 										{
 											"name": "type",
 											"type": "String",
-											"description": "便签类型",
-											"required": true
+											"description": "便签类型"
 										}
-									]
+									],
+									"name": "note_btns",
+									"type": "Notebtns[]",
+									"description": "便签按钮"
 								},
 								{
 									"name": "main_title",
 									"type": "String",
-									"description": "主标题",
-									"required": true
+									"description": "主标题"
 								},
 								{
 									"name": "anime_type",
 									"type": "String",
-									"description": "动画类型",
-									"required": true
+									"description": "动画类型"
 								},
 								{
-									"name": "entry",
-									"type": "ItemEntryDo",
-									"description": "功能入口",
-									"required": true,
 									"subParams": [
 										{
 											"name": "extra",
-											"type": "Json",
-											"description": "行为扩展",
-											"required": true
+											"type": "String",
+											"description": "行为扩展"
 										},
 										{
 											"name": "action",
 											"type": "String",
-											"description": "跳转行为",
-											"required": true
+											"description": "跳转行为"
 										},
 										{
 											"name": "sort",
 											"type": "Number",
-											"description": "排序",
-											"required": true
+											"description": "排序"
 										},
 										{
 											"name": "pic_url",
 											"type": "String",
-											"description": "入口图标",
-											"required": true
+											"description": "入口图标"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "入口名称",
-											"required": true
+											"description": "入口名称"
 										},
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "入口ID",
-											"required": true
+											"description": "入口ID"
 										}
-									]
+									],
+									"name": "entry",
+									"type": "ItemEntryDo",
+									"description": "功能入口"
 								},
 								{
-									"name": "chart",
-									"type": "MetaChartDo",
-									"description": "排行榜",
-									"required": true,
 									"subParams": [
 										{
 											"name": "titles",
-											"type": "Json[]",
-											"description": "排行标题",
-											"required": true
+											"type": "String[]",
+											"description": "排行标题"
 										},
 										{
 											"name": "type",
 											"type": "String",
-											"description": "排行类型",
-											"required": true
+											"description": "排行类型"
 										}
-									]
+									],
+									"name": "chart",
+									"type": "MetaChartDo",
+									"description": "排行榜"
 								},
 								{
-									"name": "entry_list",
-									"type": "Entrylist[]",
-									"description": "类目入口",
-									"required": true,
 									"subParams": [
 										{
 											"name": "id",
 											"type": "Number",
-											"description": "入口ID",
-											"required": true
+											"description": "入口ID"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "入口名称",
-											"required": true
+											"description": "入口名称"
 										},
 										{
 											"name": "pic_url",
 											"type": "String",
-											"description": "入口图标",
-											"required": true
+											"description": "入口图标"
 										},
 										{
 											"name": "sort",
 											"type": "Number",
-											"description": "排序",
-											"required": true
+											"description": "排序"
 										},
 										{
 											"name": "action",
 											"type": "String",
-											"description": "跳转行为",
-											"required": true
+											"description": "跳转行为"
 										},
 										{
 											"name": "extra",
-											"type": "Json",
-											"description": "行为扩展",
-											"required": true
+											"type": "String",
+											"description": "行为扩展"
 										}
-									]
+									],
+									"name": "entry_list",
+									"type": "Entrylist[]",
+									"description": "类目入口"
 								},
 								{
 									"name": "extra",
-									"type": "Json",
-									"description": "行为扩展",
-									"required": true
+									"type": "String",
+									"description": "行为扩展"
 								},
 								{
 									"name": "action",
 									"type": "String",
-									"description": "跳转行为",
-									"required": true
+									"description": "跳转行为"
 								},
 								{
 									"name": "pic_title",
 									"type": "String",
-									"description": "picTitle",
-									"required": true
+									"description": "picTitle"
 								},
 								{
 									"name": "channel_id",
 									"type": "Number",
-									"description": "轮播频道ID",
-									"required": true
+									"description": "轮播频道ID"
 								},
 								{
 									"name": "show_type",
 									"type": "String",
-									"description": "显示方式",
-									"required": true
+									"description": "显示方式"
 								},
 								{
 									"name": "position",
 									"type": "Number",
-									"description": "坑位号",
-									"required": true
+									"description": "坑位号"
 								},
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "桌面坑位ID",
-									"required": true
+									"description": "桌面坑位ID"
 								},
 								{
 									"name": "display_type",
 									"type": "String",
-									"description": "展示方式",
-									"required": true
+									"description": "展示方式"
 								},
 								{
 									"name": "verify_code",
 									"type": "String",
-									"description": "坑位校验码",
-									"required": true
+									"description": "坑位校验码"
 								},
 								{
 									"name": "sub_titles",
 									"type": "String[]",
-									"description": "副标题",
-									"required": true
+									"description": "副标题"
 								},
 								{
 									"name": "entry_style",
 									"type": "Number",
-									"description": "入口风格",
-									"required": true
+									"description": "入口风格"
 								},
 								{
 									"name": "pic_map",
-									"type": "Json",
-									"description": "背景图标",
-									"required": true
+									"type": "String",
+									"description": "背景图标"
 								},
 								{
 									"name": "rule_ids",
-									"type": "Json[]",
-									"description": "待推荐主题",
-									"required": true
+									"type": "String[]",
+									"description": "待推荐主题"
 								},
 								{
 									"name": "rule_id",
 									"type": "Number",
-									"description": "推荐主题",
-									"required": true
+									"description": "推荐主题"
 								},
 								{
 									"name": "rec_app_id",
 									"type": "Number",
-									"description": "推荐场景",
-									"required": true
+									"description": "推荐场景"
 								},
 								{
 									"name": "rec_type",
 									"type": "Number",
-									"description": "推荐类型,0:运营自主推荐,1:纯个性化推荐,2:主题个性化推荐",
-									"required": true
+									"description": "推荐类型,0:运营自主推荐,1:纯个性化推荐,2:主题个性化推荐"
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "Itemlist[]",
+							"description": "坑位列表"
 						},
 						{
 							"name": "cycle_time",
 							"type": "Number",
-							"description": "轮询时间",
-							"required": true
+							"description": "轮询时间"
 						},
 						{
 							"name": "verify_code",
 							"type": "String",
-							"description": "坑位校验码",
-							"required": true
+							"description": "坑位校验码"
 						},
 						{
 							"name": "display_type",
 							"type": "String",
-							"description": "展示方式",
-							"required": true
+							"description": "展示方式"
 						},
 						{
 							"name": "item_id",
 							"type": "Number",
-							"description": "桌面坑位ID",
-							"required": true
+							"description": "桌面坑位ID"
 						},
 						{
-							"name": "entry",
-							"type": "ItemEntryDo",
-							"description": "功能入口",
-							"required": true,
 							"subParams": [
 								{
 									"name": "extra",
-									"type": "Json",
-									"description": "行为扩展",
-									"required": true
+									"type": "String",
+									"description": "行为扩展"
 								},
 								{
 									"name": "action",
 									"type": "String",
-									"description": "跳转行为",
-									"required": true
+									"description": "跳转行为"
 								},
 								{
 									"name": "sort",
 									"type": "Number",
-									"description": "排序",
-									"required": true
+									"description": "排序"
 								},
 								{
 									"name": "pic_url",
 									"type": "String",
-									"description": "入口图标",
-									"required": true
+									"description": "入口图标"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "入口名称",
-									"required": true
+									"description": "入口名称"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "入口ID",
-									"required": true
+									"description": "入口ID"
 								}
-							]
+							],
+							"name": "entry",
+							"type": "ItemEntryDo",
+							"description": "功能入口"
 						},
 						{
 							"name": "pic_title",
 							"type": "String",
-							"description": "标题图",
-							"required": true
+							"description": "标题图"
 						},
 						{
-							"name": "chart",
-							"type": "MetaChartDo",
-							"description": "排行榜",
-							"required": true,
 							"subParams": [
 								{
 									"name": "titles",
-									"type": "Json[]",
-									"description": "排行标题",
-									"required": true
+									"type": "String[]",
+									"description": "排行标题"
 								},
 								{
 									"name": "type",
 									"type": "String",
-									"description": "排行类型",
-									"required": true
+									"description": "排行类型"
 								}
-							]
+							],
+							"name": "chart",
+							"type": "MetaChartDo",
+							"description": "排行榜"
 						},
 						{
-							"name": "entry_list",
-							"type": "Entrylist[]",
-							"description": "类目入口",
-							"required": true,
 							"subParams": [
 								{
 									"name": "extra",
-									"type": "Json",
-									"description": "行为扩展",
-									"required": true
+									"type": "String",
+									"description": "行为扩展"
 								},
 								{
 									"name": "action",
 									"type": "String",
-									"description": "跳转行为",
-									"required": true
+									"description": "跳转行为"
 								},
 								{
 									"name": "sort",
 									"type": "Number",
-									"description": "排序",
-									"required": true
+									"description": "排序"
 								},
 								{
 									"name": "pic_url",
 									"type": "String",
-									"description": "入口图标",
-									"required": true
+									"description": "入口图标"
 								},
 								{
 									"name": "name",
 									"type": "String",
-									"description": "入口名称",
-									"required": true
+									"description": "入口名称"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "入口ID",
-									"required": true
+									"description": "入口ID"
 								}
-							]
+							],
+							"name": "entry_list",
+							"type": "Entrylist[]",
+							"description": "类目入口"
 						},
 						{
 							"name": "extra",
-							"type": "Json",
-							"description": "行为扩展",
-							"required": true
+							"type": "String",
+							"description": "行为扩展"
 						},
 						{
 							"name": "action",
 							"type": "String",
-							"description": "跳转行为",
-							"required": true
+							"description": "跳转行为"
 						},
 						{
 							"name": "channel_id",
 							"type": "Number",
-							"description": "轮播频道ID",
-							"required": true
+							"description": "轮播频道ID"
 						},
 						{
 							"name": "show_type",
 							"type": "String",
-							"description": "显示方式",
-							"required": true
+							"description": "显示方式"
 						},
 						{
 							"name": "sub_titles",
 							"type": "String[]",
-							"description": "副标题",
-							"required": true
+							"description": "副标题"
 						},
 						{
 							"name": "entry_style",
 							"type": "Number",
-							"description": "入口风格",
-							"required": true
+							"description": "入口风格"
 						},
 						{
 							"name": "pic_map",
-							"type": "Json",
-							"description": "背景图标",
-							"required": true
+							"type": "String",
+							"description": "背景图标"
 						},
 						{
 							"name": "rule_ids",
-							"type": "Json[]",
-							"description": "待推荐主题",
-							"required": true
+							"type": "String[]",
+							"description": "待推荐主题"
 						},
 						{
 							"name": "rule_id",
 							"type": "Number",
-							"description": "推荐主题",
-							"required": true
+							"description": "推荐主题"
 						},
 						{
 							"name": "rec_app_id",
 							"type": "Number",
-							"description": "推荐场景",
-							"required": true
+							"description": "推荐场景"
 						},
 						{
 							"name": "rec_type",
 							"type": "Number",
-							"description": "推荐类型,0:运营自主推荐,1:纯个性化推荐,2:主题个性化推荐",
-							"required": true
+							"description": "推荐类型,0:运营自主推荐,1:纯个性化推荐,2:主题个性化推荐"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Items[]",
+					"description": "桌面坑位"
 				},
 				{
-					"name": "property",
-					"type": "PropertyDo",
-					"description": "设备属性",
-					"required": true,
 					"subParams": [
 						{
 							"name": "data",
-							"type": "Json",
-							"description": "属性键值对",
-							"required": true
+							"type": "String",
+							"description": "属性键值对"
 						},
 						{
 							"name": "verify_code",
 							"type": "String",
-							"description": "属性校验码",
-							"required": true
+							"description": "属性校验码"
 						}
-					]
+					],
+					"name": "property",
+					"type": "PropertyDo",
+					"description": "设备属性"
 				},
 				{
-					"name": "version",
-					"type": "VersionDo",
-					"description": "桌面配置",
-					"required": true,
 					"subParams": [
 						{
 							"name": "entry_size",
 							"type": "Number",
-							"description": "图标规格",
-							"required": true
+							"description": "图标规格"
 						},
 						{
 							"name": "launcher_code",
 							"type": "String",
-							"description": "桌面标识",
-							"required": true
+							"description": "桌面标识"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "桌面名称",
-							"required": true
+							"description": "桌面名称"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "桌面ID",
-							"required": true
+							"description": "桌面ID"
 						}
-					]
+					],
+					"name": "version",
+					"type": "VersionDo",
+					"description": "桌面配置"
 				}
-			]
+			],
+			"name": "model",
+			"type": "LauncherDo",
+			"description": "model"
 		},
 		{
 			"name": "http_status_code",
@@ -746,5 +629,9 @@
 			"type": "Json",
 			"description": "业务扩展"
 		}
-	]
+	],
+	"name": "yunos.tvscreen.launcher.get",
+	"apiChineseName": "一体机桌面",
+	"description": "LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务",
+	"id": 27722
 }

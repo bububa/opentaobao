@@ -1,8 +1,4 @@
 {
-	"id": 40483,
-	"name": "alibaba.einvoice.paper.print",
-	"apiChineseName": "纸票打印接口",
-	"description": "打印一张已开具成功的纸票",
 	"requestParams": [
 		{
 			"name": "dialog_setting_flag",
@@ -41,5 +37,9 @@
 			"type": "Boolean",
 			"description": "调用结果，打印结果tmc消息alibaba_invoice_PaperOpsReturn异步通知"
 		}
-	]
+	],
+	"name": "alibaba.einvoice.paper.print",
+	"apiChineseName": "纸票打印接口",
+	"description": "打印一张已开具成功的纸票",
+	"id": 40483
 }

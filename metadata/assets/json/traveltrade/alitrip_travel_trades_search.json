@@ -1,8 +1,4 @@
 {
-	"id": 28558,
-	"name": "alitrip.travel.trades.search",
-	"apiChineseName": "飞猪度假-订单列表搜索接口",
-	"description": "订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。",
 	"requestParams": [
 		{
 			"name": "page_size",
@@ -53,5 +49,9 @@
 			"type": "String []",
 			"description": "主订单id列表（string类型）"
 		}
-	]
+	],
+	"name": "alitrip.travel.trades.search",
+	"apiChineseName": "飞猪度假-订单列表搜索接口",
+	"description": "订单列表搜索接口：以订单创建、结束时间、订单状态为搜索条件，搜索过滤出满足条件的卖家订单列表。",
+	"id": 28558
 }

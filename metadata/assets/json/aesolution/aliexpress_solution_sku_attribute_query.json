@@ -1,13 +1,6 @@
 {
-	"id": 39669,
-	"name": "aliexpress.solution.sku.attribute.query",
-	"apiChineseName": "Query the sku attribute information belonged to a specific category",
-	"description": "Query the sku attribute information belonged to a specific category, customized for oversea merchants.",
 	"requestParams": [
 		{
-			"name": "query_sku_attribute_info_request",
-			"type": "SkuAttributeInfoQueryRequest",
-			"description": "input parameters",
 			"subParams": [
 				{
 					"name": "aliexpress_category_id",
@@ -19,20 +12,16 @@
 					"type": "String",
 					"description": "merchant's category ID"
 				}
-			]
+			],
+			"name": "query_sku_attribute_info_request",
+			"type": "SkuAttributeInfoQueryRequest",
+			"description": "input parameters"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "SkuAttributeInfoQueryResponse",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "supporting_sku_attribute_list",
-					"type": "SupportedSkuAttributeDto[]",
-					"description": "supported sku attribute lis",
-					"required": true,
 					"subParams": [
 						{
 							"name": "aliexpress_sku_name",
@@ -47,10 +36,6 @@
 							"required": true
 						},
 						{
-							"name": "aliexpress_sku_value_list",
-							"type": "SkuValueSimplifiedInfoDto[]",
-							"description": "aliexpress sku value list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "aliexpress_sku_value_name",
@@ -58,7 +43,11 @@
 									"description": "aliexpress sku value name",
 									"required": true
 								}
-							]
+							],
+							"name": "aliexpress_sku_value_list",
+							"type": "SkuValueSimplifiedInfoDto[]",
+							"description": "aliexpress sku value list",
+							"required": true
 						},
 						{
 							"name": "support_customized_name",
@@ -72,13 +61,13 @@
 							"description": "whether the corresponding aliexpress_sku_name support customized picture",
 							"required": true
 						}
-					]
+					],
+					"name": "supporting_sku_attribute_list",
+					"type": "SupportedSkuAttributeDto[]",
+					"description": "supported sku attribute lis",
+					"required": true
 				},
 				{
-					"name": "supporting_common_attribute_list",
-					"type": "SupportedCommonAttributeDto[]",
-					"description": "common attributes under a specific category",
-					"required": true,
 					"subParams": [
 						{
 							"name": "aliexpress_common_attribute_name_id",
@@ -99,10 +88,6 @@
 							"required": true
 						},
 						{
-							"name": "aliexpress_common_attribute_value_list",
-							"type": "CommonAttributeValueInfoDto[]",
-							"description": "aliexpress common attribute value list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "aliexpress_common_attribute_value_id",
@@ -116,11 +101,26 @@
 									"description": "aliexpress common attribute value",
 									"required": true
 								}
-							]
+							],
+							"name": "aliexpress_common_attribute_value_list",
+							"type": "CommonAttributeValueInfoDto[]",
+							"description": "aliexpress common attribute value list",
+							"required": true
 						}
-					]
+					],
+					"name": "supporting_common_attribute_list",
+					"type": "SupportedCommonAttributeDto[]",
+					"description": "common attributes under a specific category",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "SkuAttributeInfoQueryResponse",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.sku.attribute.query",
+	"apiChineseName": "Query the sku attribute information belonged to a specific category",
+	"description": "Query the sku attribute information belonged to a specific category, customized for oversea merchants.",
+	"id": 39669
 }

@@ -1,0 +1,70 @@
+{
+	"requestParams": [
+		{
+			"name": "password_content",
+			"type": "String",
+			"description": "需要解析的淘口令",
+			"required": true
+		},
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "广告位ID，mm_xx_xx_xx pid三段式中的第三段",
+			"required": true
+		},
+		{
+			"name": "dx",
+			"type": "String",
+			"description": "1表示商品转通用计划链接，其他值或不传表示优先转营销计划链接"
+		},
+		{
+			"name": "site_id",
+			"type": "Number",
+			"description": "备案的网站id, mm_xx_xx_xx pid三段式中的第二段",
+			"required": true
+		},
+		{
+			"name": "ucrowd_id",
+			"type": "Number",
+			"description": "会员人群ID，用于统计人群推广效果"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "num_iid",
+					"type": "String",
+					"description": "商品Id"
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "商品淘客转链链接"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "店铺卖家ID"
+				},
+				{
+					"name": "origin_url",
+					"type": "String",
+					"description": "入参淘口令对应原始链接"
+				},
+				{
+					"name": "origin_pid",
+					"type": "String",
+					"description": "入参淘口令推广链接中的pid，如果不属于当前调用的推广者则展示“0”"
+				}
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "data"
+		}
+	],
+	"name": "taobao.tbk.sc.tpwd.convert",
+	"apiChineseName": "淘宝客-服务商-淘口令解析\u0026转链",
+	"description": "支持通过淘口令解析商品id，并提供对应的淘客转链接",
+	"id": 43873
+}

@@ -12,12 +12,12 @@ import (
 // 通用用户抽奖次数限制
 type TaobaoDegoperationGetByEventkeyAPIRequest struct {
 	model.Params
+	// info
+	_degAccessToken string
 	// 活动后台配置appkey
 	_degAppKey string
 	// 活动后台配置eventkey
 	_eventKey string
-	// info
-	_degAccessToken string
 }
 
 // NewTaobaoDegoperationGetByEventkeyRequest 初始化TaobaoDegoperationGetByEventkeyAPIRequest对象
@@ -39,6 +39,19 @@ func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetApiParams() url.Values {
 		params.Set(k, v.String())
 	}
 	return params
+}
+
+// SetDegAccessToken is DegAccessToken Setter
+// info
+func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAccessToken(_degAccessToken string) error {
+	r._degAccessToken = _degAccessToken
+	r.Set("deg_access_token", _degAccessToken)
+	return nil
+}
+
+// GetDegAccessToken DegAccessToken Getter
+func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetDegAccessToken() string {
+	return r._degAccessToken
 }
 
 // SetDegAppKey is DegAppKey Setter
@@ -65,17 +78,4 @@ func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetEventKey(_eventKey string
 // GetEventKey EventKey Getter
 func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetEventKey() string {
 	return r._eventKey
-}
-
-// SetDegAccessToken is DegAccessToken Setter
-// info
-func (r *TaobaoDegoperationGetByEventkeyAPIRequest) SetDegAccessToken(_degAccessToken string) error {
-	r._degAccessToken = _degAccessToken
-	r.Set("deg_access_token", _degAccessToken)
-	return nil
-}
-
-// GetDegAccessToken DegAccessToken Getter
-func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetDegAccessToken() string {
-	return r._degAccessToken
 }

@@ -1,8 +1,4 @@
 {
-	"id": 41413,
-	"name": "alibaba.alihealth.drug.kyt.updatebillinfo",
-	"apiChineseName": "零售端平台单据更新",
-	"description": "零售端平台单据更新",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -71,5 +67,9 @@
 			"type": "Boolean",
 			"description": "返回是否成功"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.updatebillinfo",
+	"apiChineseName": "零售端平台单据更新",
+	"description": "零售端平台单据更新",
+	"id": 41413
 }

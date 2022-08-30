@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店编码",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码：2 美团，3 饿了么，26 京东到家，31 翱象淘鲜达，32 翱象共享库存",
+					"required": true
+				},
+				{
+					"name": "online_sale_flag",
+					"type": "Number",
+					"description": "是否渠道可售 1可售（上架）0：不可售（下架）",
+					"required": true
+				}
+			],
+			"name": "channel_sku_update_status_req",
+			"type": "ChannelSkuUpdateStatusReq",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口返回结果成功失败"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用接口返回错误信息"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用接口返回错误bian ma"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用接口返回结果"
+		}
+	],
+	"name": "alibaba.ax.channel.sku.status.update",
+	"apiChineseName": "翱象渠道商品上下架接口",
+	"description": "翱象渠道商品上下架接口",
+	"id": 59956
+}

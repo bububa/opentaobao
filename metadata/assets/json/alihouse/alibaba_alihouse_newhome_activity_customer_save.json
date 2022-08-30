@@ -1,0 +1,136 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "team_name",
+							"type": "String",
+							"description": "团队名称"
+						},
+						{
+							"name": "employee_name",
+							"type": "String",
+							"description": "顾问名称"
+						},
+						{
+							"name": "customer_cert_no",
+							"type": "String",
+							"description": "客户身份证",
+							"required": true
+						},
+						{
+							"name": "is_deleted",
+							"type": "Number",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "outer_employee_id",
+							"type": "String",
+							"description": "外部顾问员工id"
+						},
+						{
+							"name": "customer_mobile",
+							"type": "String",
+							"description": "客户姓名",
+							"required": true
+						},
+						{
+							"name": "customer_name",
+							"type": "String",
+							"description": "客户手机号",
+							"required": true
+						},
+						{
+							"name": "outer_customer_id",
+							"type": "String",
+							"description": "外部客户id",
+							"required": true
+						}
+					],
+					"name": "customer_infos",
+					"type": "ActivityCustomerInfoDTO[]",
+					"description": "客户信息集合",
+					"required": true
+				},
+				{
+					"name": "outer_sales_activity_id",
+					"type": "String",
+					"description": "外部销售活动id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "请求时间版本"
+				},
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				}
+			],
+			"name": "activity_customer_save_dto",
+			"type": "ActivityCustomerSaveDTO",
+			"description": "保存属性"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_customer_id",
+							"type": "String",
+							"description": "外部客户id"
+						},
+						{
+							"name": "is_deleted",
+							"type": "Number",
+							"description": "是否删除"
+						},
+						{
+							"name": "fail_reason",
+							"type": "String",
+							"description": "错误原因"
+						}
+					],
+					"name": "data",
+					"type": "ActivityCustomerErrHandlerResultDTO[]",
+					"description": "处理失败客户集合"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回报文属性"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.activity.customer.save",
+	"apiChineseName": "销售活动批量保存定向用户",
+	"description": "销售活动批量保存定向用户",
+	"id": 62500
+}

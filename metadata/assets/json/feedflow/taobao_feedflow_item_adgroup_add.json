@@ -1,14 +1,6 @@
 {
-	"id": 43281,
-	"name": "taobao.feedflow.item.adgroup.add",
-	"apiChineseName": "信息流增加单元",
-	"description": "信息流增加单元",
 	"requestParams": [
 		{
-			"name": "adgroup",
-			"type": "AdgroupDto",
-			"description": "单元信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "adgroup_name",
@@ -17,9 +9,6 @@
 					"required": true
 				},
 				{
-					"name": "adzone_list",
-					"type": "AdzoneBindDto[]",
-					"description": "资源类位表",
 					"subParams": [
 						{
 							"name": "adzone_id",
@@ -31,7 +20,10 @@
 							"type": "Number",
 							"description": "溢价"
 						}
-					]
+					],
+					"name": "adzone_list",
+					"type": "AdzoneBindDto[]",
+					"description": "资源类位表"
 				},
 				{
 					"name": "campaign_id",
@@ -40,10 +32,6 @@
 					"required": true
 				},
 				{
-					"name": "crowd_list",
-					"type": "CrowdDto[]",
-					"description": "定向人群",
-					"required": true,
 					"subParams": [
 						{
 							"name": "crowd_desc",
@@ -62,9 +50,6 @@
 							"required": true
 						},
 						{
-							"name": "target_label",
-							"type": "LabelDto",
-							"description": "定向",
 							"subParams": [
 								{
 									"name": "label_id",
@@ -79,10 +64,6 @@
 									"required": true
 								},
 								{
-									"name": "options",
-									"type": "OptionDto[]",
-									"description": "选项结构",
-									"required": true,
 									"subParams": [
 										{
 											"name": "option_value",
@@ -90,7 +71,11 @@
 											"description": "标签值",
 											"required": true
 										}
-									]
+									],
+									"name": "options",
+									"type": "OptionDto[]",
+									"description": "选项结构",
+									"required": true
 								},
 								{
 									"name": "target_id",
@@ -104,14 +89,18 @@
 									"description": "定向类型",
 									"required": true
 								}
-							]
+							],
+							"name": "target_label",
+							"type": "LabelDto",
+							"description": "定向"
 						}
-					]
+					],
+					"name": "crowd_list",
+					"type": "CrowdDto[]",
+					"description": "定向人群",
+					"required": true
 				},
 				{
-					"name": "intelligent_bid",
-					"type": "IntelligentBidDto",
-					"description": "智能调价",
 					"subParams": [
 						{
 							"name": "open",
@@ -128,7 +117,10 @@
 							"type": "Number",
 							"description": "人群策略 1:促进进店 2:促进成交"
 						}
-					]
+					],
+					"name": "intelligent_bid",
+					"type": "IntelligentBidDto",
+					"description": "智能调价"
 				},
 				{
 					"name": "item_id",
@@ -136,34 +128,39 @@
 					"description": "商品id",
 					"required": true
 				}
-			]
+			],
+			"name": "adgroup",
+			"type": "AdgroupDto",
+			"description": "单元信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "message",
 					"type": "String",
-					"description": "信息",
-					"required": true
+					"description": "信息"
 				},
 				{
 					"name": "result",
 					"type": "Number",
-					"description": "单元id",
-					"required": true
+					"description": "单元id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "taobao.feedflow.item.adgroup.add",
+	"apiChineseName": "信息流增加单元",
+	"description": "信息流增加单元",
+	"id": 43281
 }

@@ -1,8 +1,4 @@
 {
-	"id": 27244,
-	"name": "taobao.daogoubao.order.statistics.total",
-	"apiChineseName": "销售订单总额统计",
-	"description": "对接千牛端数字中心",
 	"requestParams": [
 		{
 			"name": "debug_id",
@@ -17,35 +13,35 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderStatisticsResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "tqdj_order_num",
 					"type": "Number",
-					"description": "tqdj_order_num",
-					"required": true
+					"description": "tqdj_order_num"
 				},
 				{
 					"name": "take_order_num",
 					"type": "Number",
-					"description": "take_order_num",
-					"required": true
+					"description": "take_order_num"
 				},
 				{
 					"name": "home_order_num",
 					"type": "Number",
-					"description": "home_order_num",
-					"required": true
+					"description": "home_order_num"
 				},
 				{
 					"name": "step_order_num",
 					"type": "Number",
-					"description": "step_order_num",
-					"required": true
+					"description": "step_order_num"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderStatisticsResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.daogoubao.order.statistics.total",
+	"apiChineseName": "销售订单总额统计",
+	"description": "对接千牛端数字中心",
+	"id": 27244
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26800,
-	"name": "cainiao.cloudprint.customares.get",
-	"apiChineseName": "获取商家的自定义区模板信息",
-	"description": "供isv使用，获取商家的自定义区的模板信息",
 	"requestParams": [
 		{
 			"name": "template_id",
@@ -13,63 +9,59 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "结果",
 			"subParams": [
 				{
-					"name": "error_code",
-					"type": "String",
-					"description": "系统自动生成",
-					"required": true
-				},
-				{
-					"name": "error_message",
-					"type": "String",
-					"description": "系统自动生成",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "系统自动生成",
-					"required": true
-				},
-				{
-					"name": "datas",
-					"type": "CustomAreaResult[]",
-					"description": "数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "custom_area_id",
 							"type": "Number",
-							"description": "自定义区id",
-							"required": true
+							"description": "自定义区id"
 						},
 						{
 							"name": "custom_area_url",
 							"type": "String",
-							"description": "自定义区url",
-							"required": true
+							"description": "自定义区url"
 						},
 						{
-							"name": "keys",
-							"type": "KeyResult[]",
-							"description": "keys",
-							"required": true,
 							"subParams": [
 								{
 									"name": "key_name",
 									"type": "String",
-									"description": "key名称",
-									"required": true
+									"description": "key名称"
 								}
-							]
+							],
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "keys"
 						}
-					]
+					],
+					"name": "datas",
+					"type": "CustomAreaResult[]",
+					"description": "数据"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统自动生成"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "cainiao.cloudprint.customares.get",
+	"apiChineseName": "获取商家的自定义区模板信息",
+	"description": "供isv使用，获取商家的自定义区的模板信息",
+	"id": 26800
 }

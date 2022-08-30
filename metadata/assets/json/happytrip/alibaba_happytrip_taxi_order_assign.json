@@ -1,8 +1,4 @@
 {
-	"id": 56444,
-	"name": "alibaba.happytrip.taxi.order.assign",
-	"apiChineseName": "订单指派",
-	"description": "通知供应商订单指派成功",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -22,5 +18,9 @@
 			"type": "String",
 			"description": "错误描述"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.order.assign",
+	"apiChineseName": "订单指派",
+	"description": "通知供应商订单指派成功",
+	"id": 56444
 }

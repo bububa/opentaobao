@@ -1,8 +1,4 @@
 {
-	"id": 41033,
-	"name": "alibaba.ib.shenjing.visitor.pad.opendoor",
-	"apiChineseName": "访客发起开门",
-	"description": "访客PAD端录入完人脸后，可以点击开门按钮开门。",
 	"requestParams": [
 		{
 			"name": "id",
@@ -17,6 +13,11 @@
 	],
 	"responseParams": [
 		{
+			"name": "result_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
 			"name": "content",
 			"type": "Boolean",
 			"description": "业务处理结果"
@@ -27,19 +28,18 @@
 			"description": "请求request_id"
 		},
 		{
-			"name": "result_success",
-			"type": "Boolean",
-			"description": "是否成功"
-		},
-		{
-			"name": "result_code",
-			"type": "String",
-			"description": "状态码"
-		},
-		{
 			"name": "result_msg",
 			"type": "String",
 			"description": "状态描述"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
-	]
+	],
+	"name": "alibaba.ib.shenjing.visitor.pad.opendoor",
+	"apiChineseName": "访客发起开门",
+	"description": "访客PAD端录入完人脸后，可以点击开门按钮开门。",
+	"id": 41033
 }

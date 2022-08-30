@@ -1,8 +1,4 @@
 {
-	"id": 22554,
-	"name": "taobao.tmc.user.get",
-	"apiChineseName": "获取用户已开通消息",
-	"description": "查询指定用户开通的消息通道和组",
 	"requestParams": [
 		{
 			"name": "fields",
@@ -14,8 +10,8 @@
 			"name": "nick",
 			"type": "String",
 			"description": "用户昵称",
-			"required": true,
-			"maxLength": 100
+			"maxLength": 100,
+			"required": true
 		},
 		{
 			"name": "user_platform",
@@ -25,34 +21,21 @@
 	],
 	"responseParams": [
 		{
-			"name": "tmc_user",
-			"type": "TmcUser",
-			"description": "开通的用户数据",
 			"subParams": [
 				{
-					"name": "user_platform",
-					"type": "String",
-					"description": "用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户"
+					"name": "created",
+					"type": "Date",
+					"description": "用户首次开通时间"
 				},
 				{
-					"name": "user_nick",
+					"name": "group_name",
 					"type": "String",
-					"description": "用户昵称"
-				},
-				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "用户ID"
+					"description": "接收用户消息的组名"
 				},
 				{
 					"name": "is_valid",
 					"type": "Boolean",
 					"description": "用户授权是否有效，true表示授权有效，false表示授权过期"
-				},
-				{
-					"name": "created",
-					"type": "Date",
-					"description": "用户首次开通时间"
 				},
 				{
 					"name": "modified",
@@ -65,11 +48,28 @@
 					"description": "用户开通的消息类型列表。如果为空表示应用开通的所有类型"
 				},
 				{
-					"name": "group_name",
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID"
+				},
+				{
+					"name": "user_nick",
 					"type": "String",
-					"description": "接收用户消息的组名"
+					"description": "用户昵称"
+				},
+				{
+					"name": "user_platform",
+					"type": "String",
+					"description": "用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户"
 				}
-			]
+			],
+			"name": "tmc_user",
+			"type": "TmcUser",
+			"description": "开通的用户数据"
 		}
-	]
+	],
+	"name": "taobao.tmc.user.get",
+	"apiChineseName": "获取用户已开通消息",
+	"description": "查询指定用户开通的消息通道和组",
+	"id": 22554
 }

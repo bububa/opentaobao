@@ -8,6 +8,8 @@ type BuyGiftActivitySkuOperateRequest struct {
 	CreatorId string `json:"creator_id,omitempty" xml:"creator_id,omitempty"`
 	// 操作人Name
 	CreatorName string `json:"creator_name,omitempty" xml:"creator_name,omitempty"`
+	// 外部erp活动id
+	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
 	// 操作活动的ID
 	ActId int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
 }

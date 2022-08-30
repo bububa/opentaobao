@@ -1,0 +1,103 @@
+{
+	"requestParams": [
+		{
+			"name": "material_url",
+			"type": "String",
+			"description": "素材url",
+			"required": true
+		},
+		{
+			"name": "stat_date",
+			"type": "Date",
+			"description": "统计日期",
+			"required": true
+		},
+		{
+			"name": "cost",
+			"type": "Number",
+			"description": "消耗"
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "文件md5",
+			"required": true
+		},
+		{
+			"name": "device_os",
+			"type": "Number",
+			"description": "操作系统"
+		},
+		{
+			"name": "material_code",
+			"type": "String",
+			"description": "素材编码"
+		},
+		{
+			"name": "other_media",
+			"type": "String",
+			"description": "其他媒体"
+		},
+		{
+			"name": "ad_placement",
+			"type": "String",
+			"description": "资源位"
+		},
+		{
+			"name": "click",
+			"type": "Number",
+			"description": "点击",
+			"required": true
+		},
+		{
+			"name": "exposure",
+			"type": "Number",
+			"description": "曝光",
+			"required": true
+		},
+		{
+			"name": "media_code",
+			"type": "String",
+			"description": "媒体",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "数据处理成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "successful",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		}
+	],
+	"name": "taobao.usergrowth.ad.material.data.sync",
+	"apiChineseName": "素材投放效果数据回传",
+	"description": "创意维度广告效果数据回传",
+	"id": 59526
+}

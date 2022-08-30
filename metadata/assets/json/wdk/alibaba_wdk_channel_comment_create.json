@@ -1,14 +1,6 @@
 {
-	"id": 43696,
-	"name": "alibaba.wdk.channel.comment.create",
-	"apiChineseName": "差评导入",
-	"description": "差评导入",
 	"requestParams": [
 		{
-			"name": "comment_create_info",
-			"type": "CommentCreateInfo",
-			"description": "差评信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "out_comment_id",
@@ -103,28 +95,34 @@
 					"type": "String",
 					"description": "差评回评"
 				}
-			]
+			],
+			"name": "comment_create_info",
+			"type": "CommentCreateInfo",
+			"description": "差评信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_result",
-			"type": "ApiResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.wdk.channel.comment.create",
+	"apiChineseName": "差评导入",
+	"description": "差评导入",
+	"id": 43696
 }

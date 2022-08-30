@@ -1,8 +1,4 @@
 {
-	"id": 25270,
-	"name": "taobao.open.account.token.validate",
-	"apiChineseName": "open account token验证",
-	"description": "open account token验证",
 	"requestParams": [
 		{
 			"name": "param_token",
@@ -13,49 +9,17 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "OpenAccountTokenValidateResult",
-			"description": "验证成功返回token中的信息",
 			"subParams": [
 				{
-					"name": "data",
-					"type": "TokenInfo",
-					"description": "token中的数据",
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
 					"subParams": [
 						{
-							"name": "timestamp",
-							"type": "Number",
-							"description": "时间戳"
-						},
-						{
-							"name": "open_account_id",
-							"type": "Number",
-							"description": "open account id"
-						},
-						{
-							"name": "isv_account_id",
-							"type": "String",
-							"description": "isv自己账号的唯一id"
-						},
-						{
-							"name": "uuid",
-							"type": "String",
-							"description": "用于防重放的唯一id"
-						},
-						{
-							"name": "login_state_expire_in",
-							"type": "Number",
-							"description": "ISV APP的登录态时长"
-						},
-						{
-							"name": "ext",
-							"type": "TokenInfoExt",
-							"description": "token info扩展信息",
 							"subParams": [
 								{
-									"name": "open_account",
-									"type": "OpenAccount",
-									"description": "open account当前token info中open account id对应的open account信息",
 									"subParams": [
 										{
 											"name": "login_id",
@@ -71,6 +35,11 @@
 											"name": "alipay_id",
 											"type": "String",
 											"description": "支付宝的帐号标识"
+										},
+										{
+											"name": "create_app_key",
+											"type": "String",
+											"description": "创建帐号的App Key"
 										},
 										{
 											"name": "locale",
@@ -96,6 +65,11 @@
 											"name": "avatar_url",
 											"type": "String",
 											"description": "头像url"
+										},
+										{
+											"name": "domain_id",
+											"type": "Number",
+											"description": "数据域"
 										},
 										{
 											"name": "bank_card_owner_name",
@@ -158,16 +132,6 @@
 											"description": "账号状态：1、启用，2、删除，3、禁用"
 										},
 										{
-											"name": "gmt_create",
-											"type": "Date",
-											"description": "记录创建时间"
-										},
-										{
-											"name": "gmt_modified",
-											"type": "Date",
-											"description": "记录上次更新时间"
-										},
-										{
 											"name": "version",
 											"type": "Number",
 											"description": "记录的版本号"
@@ -207,16 +171,87 @@
 											"type": "Number",
 											"description": "TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;"
 										}
-									]
+									],
+									"name": "open_account",
+									"type": "OpenAccount",
+									"description": "open account当前token info中open account id对应的open account信息"
 								},
 								{
+									"subParams": [
+										{
+											"name": "access_token",
+											"type": "String",
+											"description": "access_token"
+										},
+										{
+											"name": "nick",
+											"type": "String",
+											"description": "nick"
+										},
+										{
+											"name": "avatar_url",
+											"type": "String",
+											"description": "avatarUrl"
+										},
+										{
+											"name": "id",
+											"type": "String",
+											"description": "id"
+										},
+										{
+											"name": "platform_type",
+											"type": "Number",
+											"description": "三方平台类型"
+										},
+										{
+											"name": "open_id",
+											"type": "String",
+											"description": "三方平台的openId"
+										},
+										{
+											"name": "union_id",
+											"type": "String",
+											"description": "三方平台的unionId"
+										}
+									],
 									"name": "oauth_other_info",
-									"type": "Json",
-									"description": "授权登录后返回的信息"
+									"type": "OAuthOtherInfo",
+									"description": "oauthOtherInfo"
 								}
-							]
+							],
+							"name": "ext",
+							"type": "TokenInfoExt",
+							"description": "token info扩展信息"
+						},
+						{
+							"name": "isv_account_id",
+							"type": "String",
+							"description": "isv自己账号的唯一id"
+						},
+						{
+							"name": "login_state_expire_in",
+							"type": "Number",
+							"description": "ISV APP的登录态时长"
+						},
+						{
+							"name": "open_account_id",
+							"type": "Number",
+							"description": "open account id"
+						},
+						{
+							"name": "timestamp",
+							"type": "Number",
+							"description": "时间戳"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "用于防重放的唯一id"
 						}
-					]
+					],
+					"name": "data",
+					"type": "TokenInfo",
+					"description": "token中的数据"
 				},
 				{
 					"name": "message",
@@ -227,13 +262,15 @@
 					"name": "successful",
 					"type": "Boolean",
 					"description": "是否成功"
-				},
-				{
-					"name": "code",
-					"type": "Number",
-					"description": "错误码"
 				}
-			]
+			],
+			"name": "data",
+			"type": "OpenAccountTokenValidateResult",
+			"description": "验证成功返回token中的信息"
 		}
-	]
+	],
+	"name": "taobao.open.account.token.validate",
+	"apiChineseName": "open account token验证",
+	"description": "open account token验证",
+	"id": 25270
 }

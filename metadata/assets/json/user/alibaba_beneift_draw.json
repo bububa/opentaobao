@@ -1,8 +1,4 @@
 {
-	"id": 45569,
-	"name": "alibaba.beneift.draw",
-	"apiChineseName": "抽奖接口",
-	"description": "抽奖接口",
 	"requestParams": [
 		{
 			"name": "ename",
@@ -48,5 +44,9 @@
 			"type": "String",
 			"description": "奖品id"
 		}
-	]
+	],
+	"name": "alibaba.beneift.draw",
+	"apiChineseName": "抽奖接口",
+	"description": "抽奖接口",
+	"id": 45569
 }

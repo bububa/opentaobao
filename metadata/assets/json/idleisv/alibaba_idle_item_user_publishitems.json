@@ -1,0 +1,183 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "category_ids",
+					"type": "Number[]",
+					"description": "类目集"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页号"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小"
+				},
+				{
+					"name": "status",
+					"type": "String[]",
+					"description": "商品状态 0:在线 1售出"
+				}
+			],
+			"name": "param_item_page_query",
+			"type": "ItemPageQuery",
+			"description": "查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "category_id",
+							"type": "String",
+							"description": "商品类目"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称（不唯一且用户可以自己更改）"
+						},
+						{
+							"name": "channel_cat_id",
+							"type": "String",
+							"description": "渠道类目ID"
+						},
+						{
+							"name": "img_urls",
+							"type": "String[]",
+							"description": "商品图片"
+						},
+						{
+							"name": "reserve_price",
+							"type": "String",
+							"description": "商品价格"
+						},
+						{
+							"name": "auction_type",
+							"type": "String",
+							"description": "商品类型： b 一口价；a 拍卖"
+						},
+						{
+							"subParams": [
+								{
+									"name": "bid_item_id",
+									"type": "Number",
+									"description": "拍卖商品id(与闲鱼商品id item_id不是同一个)"
+								},
+								{
+									"name": "bid_start_time",
+									"type": "Number",
+									"description": "拍卖开始时间,毫秒时间戳(精度为分钟)"
+								},
+								{
+									"name": "bid_end_time",
+									"type": "Number",
+									"description": "拍卖结束时间,毫秒时间戳(精度为分钟)"
+								},
+								{
+									"name": "current_bid_price",
+									"type": "Number",
+									"description": "当前出价金额, 最高出价, 单位分(起拍价使用reserve_price)"
+								},
+								{
+									"name": "bid_count",
+									"type": "Number",
+									"description": "总出价次数"
+								}
+							],
+							"name": "bid_data",
+							"type": "IdleItemApiBidDo",
+							"description": "拍卖业务数据"
+						},
+						{
+							"name": "item_biz_type",
+							"type": "Number",
+							"description": "业务模式 0不入仓，1入仓，2 C2C; （经常会新增，具体参见接入文档）"
+						},
+						{
+							"name": "sp_biz_type",
+							"type": "String",
+							"description": "1 服务商商品业务分类，手机:1, 潮品:2, 家电:3, 乐器:8, 3C数码:9, 奢品:16, 母婴:17, 美妆:18, 文玩/珠宝:19, 潮玩:20, 家居:21"
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "行政区划Id(城市编码)，最小行政单位code，若是地区级别，则为地区级别的id；否则为城市级别的id(long型，6位)"
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "商品原价, 单位：元(最大99999999)"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态，可选值为0（表示上架），-2（表示下架），-1（表示删除），99（其他）"
+						},
+						{
+							"name": "stuff_status",
+							"type": "Number",
+							"description": "商品新旧程度, 值为-1～100的整数，例如100代表全新，95代表95新，-1比较特殊代表准新"
+						},
+						{
+							"name": "encryption_seller_id",
+							"type": "String",
+							"description": "加密的卖家id"
+						}
+					],
+					"name": "item_list",
+					"type": "IdleItemApiDo[]",
+					"description": "商品列表"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "next_page",
+					"type": "Boolean",
+					"description": "是否有下一页"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总结果数"
+				}
+			],
+			"name": "result",
+			"type": "TopPageResult",
+			"description": "查询结果"
+		}
+	],
+	"name": "alibaba.idle.item.user.publishitems",
+	"apiChineseName": "发布的商品列表",
+	"description": "为服务商的卖家提供发布的闲鱼商品列表",
+	"id": 56245
+}

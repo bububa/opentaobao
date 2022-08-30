@@ -1,13 +1,6 @@
 {
-	"id": 30774,
-	"name": "alibaba.wdk.order.refund.list",
-	"apiChineseName": "五道口交易退款批量查询",
-	"description": "按照条件查询退款数据",
 	"requestParams": [
 		{
-			"name": "batch_query_refund_request",
-			"type": "BatchQueryRefundRequest",
-			"description": "查询条件",
 			"subParams": [
 				{
 					"name": "end_time",
@@ -67,308 +60,287 @@
 					"type": "String",
 					"description": "aelophy 翱象商家必填"
 				}
-			]
+			],
+			"name": "batch_query_refund_request",
+			"type": "BatchQueryRefundRequest",
+			"description": "查询条件"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "OrderSyncRefundListResult",
-			"description": "结果内容",
 			"subParams": [
 				{
-					"name": "orders",
-					"type": "OrderSyncRefundDto[]",
-					"description": "退款单集合",
-					"required": true,
+					"name": "next_index",
+					"type": "Number",
+					"description": "下一页"
+				},
+				{
 					"subParams": [
 						{
 							"name": "buy_amount_stock",
 							"type": "String",
-							"description": "库存单位购买数量",
-							"required": true
+							"description": "库存单位购买数量"
 						},
 						{
 							"name": "item_code",
 							"type": "Number",
-							"description": "商品skucode",
-							"required": true
+							"description": "商品skucode"
 						},
 						{
 							"name": "ns_quantity",
 							"type": "String",
-							"description": "非标品购买数量",
-							"required": true
+							"description": "非标品购买数量"
 						},
 						{
 							"name": "operator_id",
 							"type": "String",
-							"description": "操作人id",
-							"required": true
+							"description": "操作人id"
 						},
 						{
 							"name": "operator_name",
 							"type": "String",
-							"description": "操作人name",
-							"required": true
+							"description": "操作人name"
 						},
 						{
 							"name": "origin_order_id",
 							"type": "Number",
-							"description": "盒马子订单号",
-							"required": true
+							"description": "盒马子订单号"
 						},
 						{
 							"name": "origin_parent_id",
 							"type": "Number",
-							"description": "盒马主订单号",
-							"required": true
+							"description": "盒马主订单号"
 						},
 						{
 							"name": "pick_amount_stock",
 							"type": "String",
-							"description": "库存单位拣货数量",
-							"required": true
+							"description": "库存单位拣货数量"
 						},
 						{
 							"name": "quantity",
 							"type": "Number",
-							"description": "原购买数量",
-							"required": true
+							"description": "原购买数量"
 						},
 						{
 							"name": "refund_amount",
 							"type": "Number",
-							"description": "退款金额",
-							"required": true
+							"description": "退款金额"
 						},
 						{
-							"name": "refund_channel_list",
-							"type": "OrderSyncRefundChannel[]",
-							"description": "退款渠道",
-							"required": true,
 							"subParams": [
 								{
 									"name": "refund_amount",
 									"type": "Number",
-									"description": "退款金额",
-									"required": true
+									"description": "退款金额"
 								},
 								{
 									"name": "refund_channel",
 									"type": "Number",
-									"description": "退款渠道，0-付款码支付，1-盒马在线码－普通支付（pos），2-盒马在线码－免密协议支付（pos），3-银联刷卡（旧pos），4-现金（pos），5-支付宝离线码（pos），6-支付宝快捷支付（app），7-支付平台, 8-国际支付宝, 9-支付宝当面付, 10-网商银行信任付, 11-支付宝, 12-支付宝, 13-网商银行融易收, 14-现金, 15-银行卡, 16-支票, 17-三江购物券, 18-三江赊销，19-三江会员卡，20-三江储值卡，21-三江储值卡退卡，22-人人乐钱包, 23-人人乐提货卡",
-									"required": true
+									"description": "退款渠道，0-付款码支付，1-盒马在线码－普通支付（pos），2-盒马在线码－免密协议支付（pos），3-银联刷卡（旧pos），4-现金（pos），5-支付宝离线码（pos），6-支付宝快捷支付（app），7-支付平台, 8-国际支付宝, 9-支付宝当面付, 10-网商银行信任付, 11-支付宝, 12-支付宝, 13-网商银行融易收, 14-现金, 15-银行卡, 16-支票, 17-三江购物券, 18-三江赊销，19-三江会员卡，20-三江储值卡，21-三江储值卡退卡，22-人人乐钱包, 23-人人乐提货卡"
 								},
 								{
 									"name": "refund_order_id",
 									"type": "String",
-									"description": "退款id",
-									"required": true
+									"description": "退款id"
 								}
-							]
+							],
+							"name": "refund_channel_list",
+							"type": "OrderSyncRefundChannel[]",
+							"description": "退款渠道"
 						},
 						{
 							"name": "refund_order_id",
 							"type": "Number",
-							"description": "退款id",
-							"required": true
+							"description": "退款id"
 						},
 						{
 							"name": "refund_quantity",
 							"type": "String",
-							"description": "退款数量",
-							"required": true
+							"description": "退款数量"
 						},
 						{
 							"name": "refund_time",
 							"type": "Date",
-							"description": "退款时间",
-							"required": true
+							"description": "退款时间"
 						},
 						{
 							"name": "refund_type",
 							"type": "Number",
-							"description": "1:自助退款,2:客户当面拒收,3:补差退款,4:拒单退款,5:代退款,6:无法联系到客户退款,7:无货签收退款",
-							"required": true
+							"description": "1:自助退款,2:客户当面拒收,3:补差退款,4:拒单退款,5:代退款,6:无法联系到客户退款,7:无货签收退款"
 						},
 						{
 							"name": "sell_unit",
 							"type": "String",
-							"description": "非标品单位",
-							"required": true
+							"description": "非标品单位"
 						},
 						{
 							"name": "store_id",
 							"type": "String",
-							"description": "店铺码",
-							"required": true
+							"description": "店铺码"
 						},
 						{
 							"name": "tb_biz_order_id",
 							"type": "Number",
-							"description": "淘系子订单号",
-							"required": true
+							"description": "淘系子订单号"
 						},
 						{
 							"name": "batch_time",
 							"type": "Date",
-							"description": "批次时间",
-							"required": true
+							"description": "批次时间"
 						},
 						{
 							"name": "order_client",
 							"type": "Number",
-							"description": "2-APP, 3-POS,1-其他",
-							"required": true
+							"description": "2-APP, 3-POS,1-其他"
 						},
 						{
 							"name": "actual_pick_quantity",
 							"type": "String",
-							"description": "实际取货数量",
-							"required": true
+							"description": "实际取货数量"
 						},
 						{
 							"name": "actual_refund_quantity",
 							"type": "String",
-							"description": "实际退款数量",
-							"required": true
+							"description": "实际退款数量"
 						},
 						{
 							"name": "promise_status",
 							"type": "String",
-							"description": "履约的状态",
-							"required": true
+							"description": "履约的状态"
 						},
 						{
 							"name": "refund_post_fee",
 							"type": "Number",
-							"description": "退款的运费，单位分",
-							"required": true
+							"description": "退款的运费，单位分"
 						},
 						{
 							"name": "stock_unit",
 							"type": "String",
-							"description": "销售单位",
-							"required": true
+							"description": "库存单位"
 						},
 						{
 							"name": "sale_unit",
 							"type": "String",
-							"description": "库存单位",
-							"required": true
+							"description": "销售单位"
 						},
 						{
 							"name": "tb_biz_parent_id",
 							"type": "Number",
-							"description": "淘系主订单号",
-							"required": true
+							"description": "淘系主订单号"
 						},
 						{
 							"name": "attributes",
-							"type": "Json",
-							"description": "attributes",
-							"required": true
+							"type": "String",
+							"description": "attributes"
 						},
 						{
 							"name": "trade_attributes",
-							"type": "Json",
-							"description": "java.util.Map",
-							"required": true
+							"type": "String",
+							"description": "java.util.Map"
 						},
 						{
 							"name": "sku_code",
 							"type": "String",
-							"description": "商品skucode",
-							"required": true
+							"description": "商品skucode"
 						},
 						{
 							"name": "open_uid",
 							"type": "String",
-							"description": "open_uid",
-							"required": true
+							"description": "open_uid"
 						},
 						{
 							"name": "order_from",
 							"type": "Number",
-							"description": "渠道来源 3：饿了么 4：盒马",
-							"required": true
+							"description": "渠道来源 3：饿了么 4：盒马"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "外部子订单id",
-							"required": true
+							"description": "外部子订单id"
 						},
 						{
 							"name": "out_mian_order_id",
 							"type": "String",
-							"description": "外部主订单id",
-							"required": true
+							"description": "外部主订单id"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "渠道店id",
-							"required": true
+							"description": "渠道店id"
 						},
 						{
 							"name": "out_sku_code",
 							"type": "String",
-							"description": "外部skuCode",
-							"required": true
+							"description": "外部skuCode"
 						},
 						{
 							"name": "dispute_type",
 							"type": "Number",
-							"description": "纠纷类型 1：售中 2：售后",
-							"required": true
+							"description": "纠纷类型 1：售中 2：售后"
 						},
 						{
 							"name": "out_refund_id",
 							"type": "String",
-							"description": "外部退款id",
-							"required": true
+							"description": "外部退款id"
 						},
 						{
 							"name": "out_shop_id",
 							"type": "String",
-							"description": "外部门店id",
-							"required": true
+							"description": "外部门店id"
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退单状态 APPLY：申请，待审核，REFUSE：审核拒绝，AGREE：审核同意（退款中），SUCCESS：退款成功，CANCEL：取消申请，PLATFROM_DEAL：平台仲裁中，FAILED：退款失败"
+						},
+						{
+							"name": "refund_sale_quantity",
+							"type": "Number",
+							"description": "退款销售数量"
+						},
+						{
+							"name": "biz_main_refund_id",
+							"type": "String",
+							"description": "退款业务单号"
+						},
+						{
+							"name": "out_main_refund_id",
+							"type": "String",
+							"description": "外部退款单号"
 						}
-					]
-				},
-				{
-					"name": "next_index",
-					"type": "Number",
-					"description": "下一页",
-					"required": true
+					],
+					"name": "orders",
+					"type": "OrderSyncRefundDto[]",
+					"description": "退款单集合"
 				},
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "接口返回码",
-					"required": true
+					"description": "接口返回码"
 				},
 				{
 					"name": "return_msg",
 					"type": "String",
-					"description": "结果信息",
-					"required": true
-				},
-				{
-					"name": "total_number",
-					"type": "Number",
-					"description": "返回本查询条件下的数据总数。仅在传入page_index=0时返回,在其他情况下返回0",
-					"required": true
+					"description": "结果信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功。调用方需要根据该字段判断是否成功，如果失败进行重试",
-					"required": true
+					"description": "是否成功。调用方需要根据该字段判断是否成功，如果失败进行重试"
+				},
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "返回本查询条件下的数据总数。仅在传入page_index=0时返回,在其他情况下返回0"
 				}
-			]
+			],
+			"name": "result",
+			"type": "OrderSyncRefundListResult",
+			"description": "结果内容"
 		}
-	]
+	],
+	"name": "alibaba.wdk.order.refund.list",
+	"apiChineseName": "五道口交易退款批量查询",
+	"description": "按照条件查询退款数据",
+	"id": 30774
 }

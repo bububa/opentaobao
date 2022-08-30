@@ -4,6 +4,8 @@ package alsc
 type PageQueryAccountFlowsOpenInfo struct {
 	// 储值账户id
 	AccountId string `json:"account_id,omitempty" xml:"account_id,omitempty"`
+	// 创建者
+	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
 	// 储值账户流水id
 	FlowId string `json:"flow_id,omitempty" xml:"flow_id,omitempty"`
 	// 储值相关的交易类型
@@ -26,8 +28,6 @@ type PageQueryAccountFlowsOpenInfo struct {
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
 	// 交易门店名称
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
-	// 创建者
-	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
 	// 更新者
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
 	// 外部支付订单id

@@ -1,8 +1,4 @@
 {
-	"id": 28595,
-	"name": "yunos.tvpubadmin.content.show.setexemptaudit",
-	"apiChineseName": "迎客松节目设置免审开关",
-	"description": "迎客松节目设置免审开关",
 	"requestParams": [
 		{
 			"name": "show_long_id",
@@ -29,5 +25,9 @@
 			"type": "Boolean",
 			"description": "设置免审"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.show.setexemptaudit",
+	"apiChineseName": "迎客松节目设置免审开关",
+	"description": "迎客松节目设置免审开关",
+	"id": 28595
 }

@@ -38,6 +38,8 @@ type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	_pickupFinishTime string
 	// 上门揽收时间 pickup_door节点时必填
 	_pickupDoorTime string
+	// 扩展属性
+	_extendInfo string
 	// 体积 单位 立方毫米
 	_volume int64
 	// 重量 单位 克
@@ -46,6 +48,8 @@ type TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest struct {
 	_logisticsOrderId int64
 	// 金额 单位分
 	_cost int64
+	// 是否更新新物流数据
+	_newLogistics bool
 }
 
 // NewTmallServicecenterWorkcardLogisticsorderUpdateRequest 初始化TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest对象
@@ -238,6 +242,19 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetPickupDoorT
 	return r._pickupDoorTime
 }
 
+// SetExtendInfo is ExtendInfo Setter
+// 扩展属性
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetExtendInfo(_extendInfo string) error {
+	r._extendInfo = _extendInfo
+	r.Set("extend_info", _extendInfo)
+	return nil
+}
+
+// GetExtendInfo ExtendInfo Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetExtendInfo() string {
+	return r._extendInfo
+}
+
 // SetVolume is Volume Setter
 // 体积 单位 立方毫米
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetVolume(_volume int64) error {
@@ -288,4 +305,17 @@ func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetCost(_cost
 // GetCost Cost Getter
 func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetCost() int64 {
 	return r._cost
+}
+
+// SetNewLogistics is NewLogistics Setter
+// 是否更新新物流数据
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetNewLogistics(_newLogistics bool) error {
+	r._newLogistics = _newLogistics
+	r.Set("new_logistics", _newLogistics)
+	return nil
+}
+
+// GetNewLogistics NewLogistics Getter
+func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetNewLogistics() bool {
+	return r._newLogistics
 }

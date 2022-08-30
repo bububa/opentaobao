@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "data_str",
+					"type": "String",
+					"description": "场景入口对应的素材动态表单值，必须符合表单的要求。每个场景、入口卡片都拥有不同的限制，请通过开发者控制台查看具体的表单字段要求。"
+				},
+				{
+					"name": "p_params_value_str",
+					"type": "String",
+					"description": "对应页面的页面参数值map，如果没有任何参数值，请传入空map",
+					"required": true
+				},
+				{
+					"name": "path",
+					"type": "String",
+					"description": "当前素材，对应的页面路径。必须为已经在开发者控制台-页面录入菜单下，已经录入过的页面路径之一。",
+					"required": true
+				},
+				{
+					"name": "q_params_value_str",
+					"type": "String",
+					"description": "对应页面的全局参数值map，如果没有任何参数值，请传入空map",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "对应的可投放的小程序id",
+					"required": true
+				},
+				{
+					"name": "card_id",
+					"type": "Number",
+					"description": "素材适用的入口样式卡片id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "素材的名字，主要用于方便商家辨识素材",
+					"required": true
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "素材适用的入口场景id",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "要修改的素材id",
+					"required": true
+				}
+			],
+			"name": "material_request",
+			"type": "MiniAppEntranceMaterialBizOpenDTO",
+			"description": "投放入口素材信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "material_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "material_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否修改成功"
+		},
+		{
+			"name": "material_error_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.miniapp.distribution.material.update",
+	"apiChineseName": "小程序投放 --- 更新投放素材",
+	"description": "修改已录入的投放素材信息。",
+	"id": 56933
+}

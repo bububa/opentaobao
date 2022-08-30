@@ -1,14 +1,6 @@
 {
-	"id": 55948,
-	"name": "alibaba.alihouse.newhome.picture.sync",
-	"apiChineseName": "图片数据同步",
-	"description": "图片数据同步",
 	"requestParams": [
 		{
-			"name": "project_picture_data",
-			"type": "ProjectPictureDto",
-			"description": "数据",
-			"required": true,
 			"subParams": [
 				{
 					"name": "is_deleted",
@@ -53,41 +45,80 @@
 					"type": "String",
 					"description": "图片唯一ID",
 					"required": true
+				},
+				{
+					"name": "source_type",
+					"type": "Number",
+					"description": "数据源类型（1-新房 2-二手房）"
+				},
+				{
+					"name": "is_focus",
+					"type": "Number",
+					"description": "是否焦点图 1-是 0-否"
+				},
+				{
+					"name": "is_cover",
+					"type": "Number",
+					"description": "是否封面图 1-是 0-否"
+				},
+				{
+					"name": "outer_house_id",
+					"type": "String",
+					"description": "1111"
+				},
+				{
+					"name": "outer_house_base_id",
+					"type": "String",
+					"description": "2222"
+				},
+				{
+					"name": "outer_layout_tid",
+					"type": "String",
+					"description": "11111"
+				},
+				{
+					"name": "outer_building_id",
+					"type": "String",
+					"description": "22222"
 				}
-			]
+			],
+			"name": "project_picture_data",
+			"type": "ProjectPictureDto",
+			"description": "数据",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "data",
 					"type": "String",
-					"description": "图片外部ID",
-					"required": true
+					"description": "图片外部ID"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihouse.newhome.picture.sync",
+	"apiChineseName": "图片数据同步",
+	"description": "图片数据同步",
+	"id": 55948
 }

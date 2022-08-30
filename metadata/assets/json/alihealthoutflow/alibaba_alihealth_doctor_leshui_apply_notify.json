@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "action",
+					"type": "String",
+					"description": "审核事件类型",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appKey"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "apply_batch_num",
+					"type": "String",
+					"description": "申请单编号",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "扩展信息(JSON格式)"
+				}
+			],
+			"name": "param",
+			"type": "ApplyTaxNoticeRequest",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "通知成功"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "调用成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误message"
+				}
+			],
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.doctor.leshui.apply.notify",
+	"apiChineseName": "申请单审核结果通知",
+	"description": "申请单审核结果通知",
+	"id": 59382
+}

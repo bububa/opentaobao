@@ -24,6 +24,10 @@ type TvmPassengerVo struct {
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
 	// 保险费 (单位分)
 	InsurePrice int64 `json:"insure_price,omitempty" xml:"insure_price,omitempty"`
+	// 乘客类型：0：成人，1：儿童，2：携童
+	TicketType int64 `json:"ticket_type,omitempty" xml:"ticket_type,omitempty"`
+	// 折扣类型：1：特殊证件，2：特殊线路，3其他。如果是折扣票必须填写
+	DiscountType int64 `json:"discount_type,omitempty" xml:"discount_type,omitempty"`
 	// 是否带有儿童
 	HasChildren bool `json:"has_children,omitempty" xml:"has_children,omitempty"`
 }

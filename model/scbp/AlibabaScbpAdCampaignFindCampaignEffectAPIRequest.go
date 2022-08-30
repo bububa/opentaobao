@@ -13,7 +13,7 @@ import (
 type AlibabaScbpAdCampaignFindCampaignEffectAPIRequest struct {
 	model.Params
 	// 计划id集合
-	_campaignIdList []int64
+	_campaignIdList []string
 	// 开始时间
 	_beginDate string
 	// 结束时间
@@ -45,14 +45,14 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetApiParams() url.Va
 
 // SetCampaignIdList is CampaignIdList Setter
 // 计划id集合
-func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetCampaignIdList(_campaignIdList []int64) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) SetCampaignIdList(_campaignIdList []string) error {
 	r._campaignIdList = _campaignIdList
 	r.Set("campaign_id_list", _campaignIdList)
 	return nil
 }
 
 // GetCampaignIdList CampaignIdList Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetCampaignIdList() []int64 {
+func (r AlibabaScbpAdCampaignFindCampaignEffectAPIRequest) GetCampaignIdList() []string {
 	return r._campaignIdList
 }
 

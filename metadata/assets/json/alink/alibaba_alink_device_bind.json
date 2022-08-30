@@ -1,8 +1,4 @@
 {
-	"id": 28313,
-	"name": "alibaba.alink.device.bind",
-	"apiChineseName": "绑定设备",
-	"description": "阿里智能解绑设备",
 	"requestParams": [
 		{
 			"name": "uuid",
@@ -12,9 +8,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopServiceResult",
-			"description": "结果",
 			"subParams": [
 				{
 					"name": "data",
@@ -46,7 +39,14 @@
 					"description": "详细描述",
 					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果"
 		}
-	]
+	],
+	"name": "alibaba.alink.device.bind",
+	"apiChineseName": "绑定设备",
+	"description": "阿里智能解绑设备",
+	"id": 28313
 }

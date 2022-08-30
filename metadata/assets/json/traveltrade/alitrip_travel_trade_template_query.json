@@ -1,8 +1,4 @@
 {
-	"id": 31528,
-	"name": "alitrip.travel.trade.template.query",
-	"apiChineseName": "订单服务详情模版查询",
-	"description": "通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息",
 	"requestParams": [
 		{
 			"name": "is_new",
@@ -18,15 +14,8 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "订单服务标注模版获取结果",
 			"subParams": [
 				{
-					"name": "first_result",
-					"type": "OrderTipInfoResult",
-					"description": "订单服务标注模版获取结果详情",
-					"required": true,
 					"subParams": [
 						{
 							"name": "is_new",
@@ -35,10 +24,6 @@
 							"required": true
 						},
 						{
-							"name": "template_info",
-							"type": "OrderTemplateInfo",
-							"description": "模版详情",
-							"required": true,
 							"subParams": [
 								{
 									"name": "category_id",
@@ -47,10 +32,6 @@
 									"required": true
 								},
 								{
-									"name": "model_list",
-									"type": "OrderTipFormInfo[]",
-									"description": "填充字段列表",
-									"required": true,
 									"subParams": [
 										{
 											"name": "accept_types",
@@ -71,10 +52,6 @@
 											"required": true
 										},
 										{
-											"name": "options",
-											"type": "OrderTipOptionInfo[]",
-											"description": "选择项, 当type = select / selects 的时候存在",
-											"required": true,
 											"subParams": [
 												{
 													"name": "text",
@@ -88,13 +65,13 @@
 													"description": "select对应的value值",
 													"required": true
 												}
-											]
+											],
+											"name": "options",
+											"type": "OrderTipOptionInfo[]",
+											"description": "选择项, 当type = select / selects 的时候存在",
+											"required": true
 										},
 										{
-											"name": "rule",
-											"type": "OrderTipRuleInfo",
-											"description": "字段匹配规则",
-											"required": true,
 											"subParams": [
 												{
 													"name": "msg",
@@ -114,7 +91,11 @@
 													"description": "字段是否必须",
 													"required": true
 												}
-											]
+											],
+											"name": "rule",
+											"type": "OrderTipRuleInfo",
+											"description": "字段匹配规则",
+											"required": true
 										},
 										{
 											"name": "title",
@@ -140,7 +121,11 @@
 											"description": "字段对应的值，多选值",
 											"required": true
 										}
-									]
+									],
+									"name": "model_list",
+									"type": "OrderTipFormInfo[]",
+									"description": "填充字段列表",
+									"required": true
 								},
 								{
 									"name": "template_id",
@@ -154,7 +139,11 @@
 									"description": "模版对应版本",
 									"required": true
 								}
-							]
+							],
+							"name": "template_info",
+							"type": "OrderTemplateInfo",
+							"description": "模版详情",
+							"required": true
 						},
 						{
 							"name": "view_template_url",
@@ -162,9 +151,20 @@
 							"description": "查看模版链接",
 							"required": true
 						}
-					]
+					],
+					"name": "first_result",
+					"type": "OrderTipInfoResult",
+					"description": "订单服务标注模版获取结果详情",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "订单服务标注模版获取结果"
 		}
-	]
+	],
+	"name": "alitrip.travel.trade.template.query",
+	"apiChineseName": "订单服务详情模版查询",
+	"description": "通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息",
+	"id": 31528
 }

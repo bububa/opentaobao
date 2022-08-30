@@ -1,8 +1,4 @@
 {
-	"id": 44747,
-	"name": "alibaba.mos.bunk.bunkinfo.querybunk",
-	"apiChineseName": "根据合同号查询铺位信息",
-	"description": "根据合同号查询铺位信息",
 	"requestParams": [
 		{
 			"name": "store_no",
@@ -24,121 +20,107 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "全链路追踪id",
-					"required": true
+					"description": "全链路追踪id"
 				},
 				{
 					"name": "total",
 					"type": "Number",
-					"description": "总量",
-					"required": true
+					"description": "总量"
 				},
 				{
-					"name": "data_list",
-					"type": "BunkSimpleDto[]",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_no",
 							"type": "String",
-							"description": "门店号",
-							"required": true
+							"description": "门店号"
 						},
 						{
 							"name": "acreage",
 							"type": "String",
-							"description": "铺位面积",
-							"required": true
+							"description": "铺位面积"
 						},
 						{
 							"name": "type",
 							"type": "Number",
-							"description": "铺位类型",
-							"required": true
+							"description": "铺位类型"
 						},
 						{
 							"name": "number",
 							"type": "String",
-							"description": "铺位编号",
-							"required": true
+							"description": "铺位编号"
 						},
 						{
 							"name": "cp_id",
 							"type": "String",
-							"description": "铺位ID",
-							"required": true
+							"description": "铺位ID"
 						},
 						{
 							"name": "contract_code",
 							"type": "String",
-							"description": "合同号",
-							"required": true
+							"description": "合同号"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "楼层名称",
-							"required": true
+							"description": "楼层名称"
 						},
 						{
 							"name": "floor_id",
 							"type": "String",
-							"description": "楼层ID",
-							"required": true
+							"description": "楼层ID"
 						},
 						{
 							"name": "contract_id",
 							"type": "String",
-							"description": "合同系统编号",
-							"required": true
+							"description": "合同系统编号"
 						}
-					]
+					],
+					"name": "data_list",
+					"type": "BunkSimpleDto[]",
+					"description": "返回数据"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "调用是否成功",
-					"required": true
+					"description": "调用是否成功"
 				},
 				{
 					"name": "err_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "extra",
-					"type": "Json",
-					"description": "其他",
-					"required": true
+					"type": "String",
+					"description": "其他"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "result_code",
-					"type": "Json",
-					"description": "结果码",
-					"required": true
+					"type": "String",
+					"description": "结果码"
 				},
 				{
 					"name": "titles",
 					"type": "String[]",
-					"description": "结果标题",
-					"required": true
+					"description": "结果标题"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.mos.bunk.bunkinfo.querybunk",
+	"apiChineseName": "根据合同号查询铺位信息",
+	"description": "根据合同号查询铺位信息",
+	"id": 44747
 }

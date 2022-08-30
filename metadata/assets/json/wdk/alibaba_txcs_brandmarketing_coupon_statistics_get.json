@@ -1,14 +1,6 @@
 {
-	"id": 43862,
-	"name": "alibaba.txcs.brandmarketing.coupon.statistics.get",
-	"apiChineseName": "品牌营销导购员券推广统计数据回流",
-	"description": "请求券统计数据回流",
 	"requestParams": [
 		{
-			"name": "coupon_statistics_param_do",
-			"type": "CouponStatisticsParamDO",
-			"description": "请求信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "page_index",
@@ -33,102 +25,96 @@
 					"type": "String[]",
 					"description": "品牌名称数组"
 				}
-			]
+			],
+			"name": "coupon_statistics_param_do",
+			"type": "CouponStatisticsParamDO",
+			"description": "请求信息",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "api_page_result",
-			"type": "ApiPageResult",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "has_next",
 					"type": "Boolean",
-					"description": "是否还有下一页",
-					"required": true
+					"description": "是否还有下一页"
 				},
 				{
 					"name": "page_index",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "page_size",
 					"type": "Number",
-					"description": "每页记录数",
-					"required": true
+					"description": "每页记录数"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
-					"name": "models",
-					"type": "CouponStatisticsResultDO[]",
-					"description": "返回内容",
-					"required": true,
 					"subParams": [
 						{
 							"name": "use_coupon_count",
 							"type": "Number",
-							"description": "核券量",
-							"required": true
+							"description": "核券量"
 						},
 						{
 							"name": "send_coupon_count",
 							"type": "Number",
-							"description": "发券量",
-							"required": true
+							"description": "发券量"
 						},
 						{
 							"name": "coupon_id",
 							"type": "String",
-							"description": "券id",
-							"required": true
+							"description": "券id"
 						},
 						{
 							"name": "coupon_name",
 							"type": "String",
-							"description": "券名称",
-							"required": true
+							"description": "券名称"
 						},
 						{
 							"name": "guide_id",
 							"type": "String",
-							"description": "导购员id",
-							"required": true
-						},
-						{
-							"name": "statistics_date",
-							"type": "String",
-							"description": "日期",
-							"required": true
+							"description": "导购员id"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "业务标识",
-							"required": true
+							"description": "业务标识"
+						},
+						{
+							"name": "statistics_date",
+							"type": "String",
+							"description": "日期"
 						}
-					]
+					],
+					"name": "models",
+					"type": "CouponStatisticsResultDO[]",
+					"description": "返回内容"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "api_page_result",
+			"type": "ApiPageResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.txcs.brandmarketing.coupon.statistics.get",
+	"apiChineseName": "品牌营销导购员券推广统计数据回流",
+	"description": "请求券统计数据回流",
+	"id": 43862
 }

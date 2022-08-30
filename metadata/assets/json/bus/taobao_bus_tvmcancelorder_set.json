@@ -1,8 +1,4 @@
 {
-	"id": 28961,
-	"name": "taobao.bus.tvmcancelorder.set",
-	"apiChineseName": "线下自助机未付款取消订单",
-	"description": "自助机汽车票未付款取消订单",
 	"requestParams": [
 		{
 			"name": "alitrip_order_id",
@@ -27,5 +23,9 @@
 			"type": "Boolean",
 			"description": "true代表成功 false 代表失败"
 		}
-	]
+	],
+	"name": "taobao.bus.tvmcancelorder.set",
+	"apiChineseName": "线下自助机未付款取消订单",
+	"description": "自助机汽车票未付款取消订单",
+	"id": 28961
 }

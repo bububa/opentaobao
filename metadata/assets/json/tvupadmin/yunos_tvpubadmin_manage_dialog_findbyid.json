@@ -1,8 +1,4 @@
 {
-	"id": 30396,
-	"name": "yunos.tvpubadmin.manage.dialog.findbyid",
-	"apiChineseName": "根据id查询全局弹窗",
-	"description": "根据id查询全局弹窗",
 	"requestParams": [
 		{
 			"name": "id",
@@ -16,5 +12,9 @@
 			"type": "String",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.manage.dialog.findbyid",
+	"apiChineseName": "根据id查询全局弹窗",
+	"description": "根据id查询全局弹窗",
+	"id": 30396
 }

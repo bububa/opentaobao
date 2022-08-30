@@ -1,17 +1,8 @@
 {
-	"id": 25995,
-	"name": "taobao.qimen.entryorder.confirm",
-	"apiChineseName": "入库单确认接口",
-	"description": "WMS调用接口，回传入库单信息;",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "EntryOrderConfirmRequest",
 			"subParams": [
 				{
-					"name": "entryOrder",
-					"type": "EntryOrder",
-					"description": "入库单信息",
 					"subParams": [
 						{
 							"name": "orderCode",
@@ -125,12 +116,12 @@
 							"description": "店铺编码",
 							"required": true
 						}
-					]
+					],
+					"name": "entryOrder",
+					"type": "EntryOrder",
+					"description": "入库单信息"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "订单信息",
 					"subParams": [
 						{
 							"name": "outBizCode",
@@ -202,9 +193,6 @@
 							"description": "批次编码"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "批次信息",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -236,7 +224,10 @@
 									"type": "Number",
 									"description": "实收数量(要求batchs节点下所有的实收数量之和等于orderline中的实收数量)"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次信息"
 						},
 						{
 							"name": "remark",
@@ -249,31 +240,76 @@
 							"description": "单位"
 						},
 						{
-							"name": "snList",
-							"type": "SnList",
-							"description": "sn列表",
 							"subParams": [
 								{
 									"name": "sn",
 									"type": "String[]",
 									"description": "sn编码"
 								}
-							]
+							],
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
+				},
+				{
+					"subParams": [
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "actualQty",
+							"type": "String",
+							"description": "实收数量"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "单据行号"
+						}
+					],
+					"name": "totalOrders",
+					"type": "TotalOrder[]",
+					"description": "分批次入库的最后一次回传"
 				}
-			]
+			],
+			"name": "request",
+			"type": "EntryOrderConfirmRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -293,7 +329,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.entryorder.confirm",
+	"apiChineseName": "入库单确认接口",
+	"description": "WMS调用接口，回传入库单信息;",
+	"id": 25995
 }

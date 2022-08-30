@@ -1,14 +1,6 @@
 {
-	"id": 25576,
-	"name": "taobao.openim.tribe.dismiss",
-	"apiChineseName": "OPENIM群解散",
-	"description": "OPENIM群解散",
 	"requestParams": [
 		{
-			"name": "user",
-			"type": "OpenImUser",
-			"description": "用户信息",
-			"required": true,
 			"subParams": [
 				{
 					"name": "uid",
@@ -27,7 +19,11 @@
 					"description": "账户appkey",
 					"required": true
 				}
-			]
+			],
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true
 		},
 		{
 			"name": "tribe_id",
@@ -42,5 +38,9 @@
 			"type": "Number",
 			"description": "群服务code"
 		}
-	]
+	],
+	"name": "taobao.openim.tribe.dismiss",
+	"apiChineseName": "OPENIM群解散",
+	"description": "OPENIM群解散",
+	"id": 25576
 }

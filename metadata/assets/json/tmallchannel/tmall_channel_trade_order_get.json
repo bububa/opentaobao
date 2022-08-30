@@ -1,8 +1,4 @@
 {
-	"id": 35412,
-	"name": "tmall.channel.trade.order.get",
-	"apiChineseName": "通过主采购单号查询采购单",
-	"description": "通过主采购单号查询采购单",
 	"requestParams": [
 		{
 			"name": "main_purchase_order_no",
@@ -98,102 +94,88 @@
 			"description": "付款时间"
 		},
 		{
-			"name": "sub_order_list",
-			"type": "TopChannelSubPurchaseOrderDto []",
-			"description": "子采购单列表",
 			"subParams": [
 				{
 					"name": "sub_purchase_order_no",
 					"type": "Number",
-					"description": "子采购单单号",
-					"required": true
+					"description": "子采购单单号"
 				},
 				{
 					"name": "merchant_code",
 					"type": "String",
-					"description": "商家编码",
-					"required": true
+					"description": "商家编码"
 				},
 				{
 					"name": "product_id",
 					"type": "Number",
-					"description": "产品id",
-					"required": true
+					"description": "产品id"
 				},
 				{
 					"name": "sku",
 					"type": "String",
-					"description": "sku信息",
-					"required": true
+					"description": "sku信息"
 				},
 				{
 					"name": "product_number",
 					"type": "String",
-					"description": "产品编码",
-					"required": true
+					"description": "产品编码"
 				},
 				{
 					"name": "product_title",
 					"type": "String",
-					"description": "产品标题",
-					"required": true
+					"description": "产品标题"
 				},
 				{
 					"name": "product_price",
 					"type": "Number",
-					"description": "产品价格",
-					"required": true
+					"description": "产品价格"
 				},
 				{
 					"name": "buy_amount",
 					"type": "Number",
-					"description": "购买数量",
-					"required": true
+					"description": "购买数量"
 				},
 				{
 					"name": "pay_status",
 					"type": "Number",
-					"description": "支付状态",
-					"required": true
+					"description": "支付状态"
 				},
 				{
 					"name": "logistics_status",
 					"type": "Number",
-					"description": "子采购单的物流状态",
-					"required": true
+					"description": "子采购单的物流状态"
 				},
 				{
 					"name": "end_time",
 					"type": "Date",
-					"description": "交易完成时间",
-					"required": true
+					"description": "交易完成时间"
 				}
-			]
+			],
+			"name": "sub_order_list",
+			"type": "TopChannelSubPurchaseOrderDto []",
+			"description": "子采购单列表"
 		},
 		{
-			"name": "channel_logistics_order",
-			"type": "TopChannelLogisticsOrderDto",
-			"description": "物流单信息",
 			"subParams": [
 				{
 					"name": "logistics_order_no",
 					"type": "String",
-					"description": "物流单号",
-					"required": true
+					"description": "物流单号"
 				},
 				{
 					"name": "logistics_company_code",
 					"type": "String",
-					"description": "物流公司编号",
-					"required": true
+					"description": "物流公司编号"
 				},
 				{
 					"name": "logistics_company_name",
 					"type": "String",
-					"description": "物流公司名称",
-					"required": true
+					"description": "物流公司名称"
 				}
-			]
+			],
+			"name": "channel_logistics_order",
+			"type": "TopChannelLogisticsOrderDto",
+			"description": "物流单信息"
 		},
 		{
 			"name": "schema",
@@ -201,23 +183,25 @@
 			"description": "解析描述"
 		},
 		{
-			"name": "top_purchase_pay_order",
-			"type": "TopPurchasePayOrderDto",
-			"description": "支付信息",
 			"subParams": [
 				{
 					"name": "pay_order_id",
 					"type": "String",
-					"description": "支付流水编号",
-					"required": true
+					"description": "支付流水编号"
 				},
 				{
 					"name": "pay_fee",
 					"type": "Number",
-					"description": "支付金额",
-					"required": true
+					"description": "支付金额"
 				}
-			]
+			],
+			"name": "top_purchase_pay_order",
+			"type": "TopPurchasePayOrderDto",
+			"description": "支付信息"
 		}
-	]
+	],
+	"name": "tmall.channel.trade.order.get",
+	"apiChineseName": "通过主采购单号查询采购单",
+	"description": "通过主采购单号查询采购单",
+	"id": 35412
 }

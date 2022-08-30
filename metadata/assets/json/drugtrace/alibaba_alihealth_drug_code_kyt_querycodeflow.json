@@ -1,8 +1,4 @@
 {
-	"id": 55900,
-	"name": "alibaba.alihealth.drug.code.kyt.querycodeflow",
-	"apiChineseName": "码流向查询",
-	"description": "追溯码流向查询",
 	"requestParams": [
 		{
 			"name": "ref_ent_id",
@@ -54,215 +50,196 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
-					"name": "model",
-					"type": "Model",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "追溯码",
-							"required": true
+							"description": "追溯码"
 						},
 						{
-							"name": "code_query_flows",
-							"type": "CodeQueryFlows[]",
-							"description": "流向信息，如没有下游企业数据查看权限，部分数据会显示为空，发送授权邀请后可以正常显示",
-							"required": true,
 							"subParams": [
 								{
 									"name": "from_ass_ref_entname",
 									"type": "String",
-									"description": "入库单委托单位",
-									"required": true
+									"description": "入库单委托单位"
 								},
 								{
 									"name": "out_date",
 									"type": "String",
-									"description": "出库日期",
-									"required": true
+									"description": "出库日期"
 								},
 								{
 									"name": "ent_name",
 									"type": "String",
-									"description": "企业名称",
-									"required": true
+									"description": "企业名称"
 								},
 								{
 									"name": "to_ass_ref_ent_name",
 									"type": "String",
-									"description": "出库单委托单位",
-									"required": true
+									"description": "出库单委托单位"
 								},
 								{
 									"name": "level",
 									"type": "String",
-									"description": "级别，0：生产，1：一级经销商，2：二级经销商，3：三级经销商",
-									"required": true
+									"description": "级别，0：生产，1：一级经销商，2：二级经销商，3：三级经销商"
 								},
 								{
 									"name": "in_date",
 									"type": "String",
-									"description": "入库日期",
-									"required": true
+									"description": "入库日期"
 								},
 								{
 									"name": "out_type",
 									"type": "String",
-									"description": "出库单类型",
-									"required": true
+									"description": "出库单类型"
 								},
 								{
 									"name": "to_ass_ref_ent_id",
 									"type": "String",
-									"description": "出库单委托企业ID",
-									"required": true
+									"description": "出库单委托企业ID"
 								},
 								{
 									"name": "ent_type",
 									"type": "String",
-									"description": "企业类型",
-									"required": true
+									"description": "企业类型"
 								},
 								{
 									"name": "authority",
 									"type": "String",
-									"description": "是否授权",
-									"required": true
+									"description": "是否授权"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业ID",
-									"required": true
+									"description": "企业ID"
 								},
 								{
 									"name": "ent_type_code",
 									"type": "String",
-									"description": "企业类型code",
-									"required": true
+									"description": "企业类型code"
 								},
 								{
 									"name": "region",
 									"type": "String",
-									"description": "行政区域",
-									"required": true
+									"description": "行政区域"
 								},
 								{
 									"name": "in_type",
 									"type": "String",
-									"description": "入库类型",
-									"required": true
+									"description": "入库类型"
 								},
 								{
 									"name": "from_ass_ref_ent_id",
 									"type": "String",
-									"description": "入库委托企业ID",
-									"required": true
+									"description": "入库委托企业ID"
+								},
+								{
+									"name": "flag",
+									"type": "String",
+									"description": "疑似单据存在异常， 为空或否：不存在异常   是：存在异常"
 								}
-							]
+							],
+							"name": "code_query_flows",
+							"type": "CodeQueryFlows[]",
+							"description": "流向信息，如没有下游企业数据查看权限，部分数据会显示为空，发送授权邀请后可以正常显示"
 						},
 						{
-							"name": "drug_info",
-							"type": "DrugInfo",
-							"description": "药品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "expiry_date",
 									"type": "String",
-									"description": "有效期",
-									"required": true
+									"description": "有效期"
 								},
 								{
 									"name": "drug_base_info_id",
 									"type": "String",
-									"description": "药品目录ID",
-									"required": true
+									"description": "药品目录ID"
 								},
 								{
 									"name": "production_date",
 									"type": "String",
-									"description": "生产日期",
-									"required": true
+									"description": "生产日期"
 								},
 								{
 									"name": "pkg_spec",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品ID",
-									"required": true
+									"description": "药品ID"
 								},
 								{
 									"name": "production_batch",
 									"type": "String",
-									"description": "生产批号",
-									"required": true
+									"description": "生产批号"
 								},
 								{
 									"name": "drug_name",
 									"type": "String",
-									"description": "药品名称",
-									"required": true
+									"description": "药品名称"
 								},
 								{
 									"name": "license_number",
 									"type": "String",
-									"description": "批准文号",
-									"required": true
+									"description": "批准文号"
 								},
 								{
 									"name": "prepn_type",
 									"type": "String",
-									"description": "制剂类型",
-									"required": true
+									"description": "制剂类型"
 								},
 								{
 									"name": "specifications",
 									"type": "String",
-									"description": "规格",
-									"required": true
+									"description": "规格"
 								},
 								{
 									"name": "manufacturer",
 									"type": "String",
-									"description": "生产企业",
-									"required": true
+									"description": "生产企业"
 								}
-							]
+							],
+							"name": "drug_info",
+							"type": "DrugInfo",
+							"description": "药品信息"
+						},
+						{
+							"name": "parent_code",
+							"type": "String",
+							"description": "父码"
 						}
-					]
+					],
+					"name": "model",
+					"type": "Model",
+					"description": "model"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.code.kyt.querycodeflow",
+	"apiChineseName": "码流向查询",
+	"description": "追溯码流向查询",
+	"id": 55900
 }

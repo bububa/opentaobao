@@ -1,13 +1,6 @@
 {
-	"id": 51171,
-	"name": "taobao.alitrip.car.order.refund",
-	"apiChineseName": "用户投诉达成一致后给用户退款",
-	"description": "用户投诉后，供应商客服与客户沟通达成一致后通知飞猪给客户退款。退款金额以接口回调金额为准。",
 	"requestParams": [
 		{
-			"name": "param_order_refund",
-			"type": "OrderRefund",
-			"description": "退款对象",
 			"subParams": [
 				{
 					"name": "refund_fee",
@@ -39,7 +32,10 @@
 					"type": "String",
 					"description": "供应商编号"
 				}
-			]
+			],
+			"name": "param_order_refund",
+			"type": "OrderRefund",
+			"description": "退款对象"
 		}
 	],
 	"responseParams": [
@@ -58,5 +54,9 @@
 			"type": "Number",
 			"description": "错误码"
 		}
-	]
+	],
+	"name": "taobao.alitrip.car.order.refund",
+	"apiChineseName": "用户投诉达成一致后给用户退款",
+	"description": "用户投诉后，供应商客服与客户沟通达成一致后通知飞猪给客户退款。退款金额以接口回调金额为准。",
+	"id": 51171
 }

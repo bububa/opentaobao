@@ -1,8 +1,4 @@
 {
-	"id": 42736,
-	"name": "tmall.mallitemcenter.serviceproduct.query",
-	"apiChineseName": "天猫服务商服务产品查询",
-	"description": "查询天猫服务的服务商发布的服务产品",
 	"requestParams": [
 		{
 			"name": "id",
@@ -27,111 +23,99 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
-					"name": "result_data_list",
-					"type": "Resultdata[]",
-					"description": "返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "create_time",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "服务产品title",
-							"required": true
+							"description": "服务产品title"
 						},
 						{
 							"name": "service_product_content",
 							"type": "String",
-							"description": "服务产品介绍",
-							"required": true
+							"description": "服务产品介绍"
 						},
 						{
 							"name": "service_product_id",
 							"type": "Number",
-							"description": "服务产品id",
-							"required": true
+							"description": "服务产品id"
 						},
 						{
-							"name": "simple_service_sku_list",
-							"type": "SimpleServiceSkuDtOs[]",
-							"description": "服务产品sku列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "code",
 									"type": "String",
-									"description": "服务skuCode",
-									"required": true
+									"description": "服务skuCode"
 								},
 								{
 									"name": "display_name",
 									"type": "String",
-									"description": "服务sku名称",
-									"required": true
+									"description": "服务sku名称"
 								}
-							]
+							],
+							"name": "simple_service_sku_list",
+							"type": "SimpleServiceSkuDtOs[]",
+							"description": "服务产品sku列表"
 						},
 						{
 							"name": "service_code",
 							"type": "String",
-							"description": "服务名称",
-							"required": true
+							"description": "服务名称"
 						},
 						{
 							"name": "service_product_status",
 							"type": "Number",
-							"description": "服务产品状态",
-							"required": true
+							"description": "服务产品状态"
 						},
 						{
 							"name": "service_product_type",
 							"type": "Number",
-							"description": "服务产品类型",
-							"required": true
+							"description": "服务产品类型"
 						}
-					]
+					],
+					"name": "result_data_list",
+					"type": "Resultdata[]",
+					"description": "返回数据"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "system_error",
 					"type": "Boolean",
-					"description": "系统是否异常",
-					"required": true
+					"description": "系统是否异常"
 				},
 				{
 					"name": "business_check_fail",
 					"type": "Boolean",
-					"description": "业务校验是否正常",
-					"required": true
+					"description": "业务校验是否正常"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "tmall.mallitemcenter.serviceproduct.query",
+	"apiChineseName": "天猫服务商服务产品查询",
+	"description": "查询天猫服务的服务商发布的服务产品",
+	"id": 42736
 }

@@ -1,53 +1,31 @@
 {
-	"id": 21709,
-	"name": "taobao.bill.accounts.get",
-	"apiChineseName": "查询费用科目信息(限自研商家)",
-	"description": "查询费用账户信息",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "aids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "需要获取的科目ID",
 			"maxListSize": 200
 		}
 	],
 	"responseParams": [
 		{
-			"name": "accounts",
-			"type": "Account []",
-			"description": "返回的科目信息",
 			"subParams": [
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
 				{
 					"name": "account_id",
 					"type": "Number",
 					"description": "费用科目编号"
-				},
-				{
-					"name": "account_name",
-					"type": "String",
-					"description": "费用科目名称"
-				},
-				{
-					"name": "account_code",
-					"type": "String",
-					"description": "费用科目编码"
-				},
-				{
-					"name": "account_type",
-					"type": "Number",
-					"description": "费用科目类型:1-虚拟账户 2-交易 3-交易佣金 4-服务费 5-天猫积分 6-其他"
-				},
-				{
-					"name": "related_order",
-					"type": "Number",
-					"description": "是否订单相关:0-订单无关 1-订单相关"
 				},
 				{
 					"name": "status",
@@ -55,21 +33,43 @@
 					"description": "状态:0-不可用 1-可用"
 				},
 				{
-					"name": "gmt_create",
-					"type": "Date",
-					"description": "创建时间"
+					"name": "account_code",
+					"type": "String",
+					"description": "费用科目编码"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
 					"description": "修改时间"
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "费用科目类型:1-虚拟账户 2-交易 3-交易佣金 4-服务费 5-天猫积分 6-其他"
+				},
+				{
+					"name": "account_name",
+					"type": "String",
+					"description": "费用科目名称"
+				},
+				{
+					"name": "related_order",
+					"type": "Number",
+					"description": "是否订单相关:0-订单无关 1-订单相关"
 				}
-			]
+			],
+			"name": "accounts",
+			"type": "Account []",
+			"description": "返回的科目信息"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "返回记录行数"
 		}
-	]
+	],
+	"name": "taobao.bill.accounts.get",
+	"apiChineseName": "查询费用科目信息(限自研商家)",
+	"description": "查询费用账户信息",
+	"id": 21709
 }

@@ -1,8 +1,4 @@
 {
-	"id": 26765,
-	"name": "cainiao.waybill.ii.product",
-	"apiChineseName": "商家查询物流商产品类型接口",
-	"description": "商家可以查询物流商的产品类型和服务能力。",
 	"requestParams": [
 		{
 			"name": "cp_code",
@@ -13,43 +9,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "product_types",
-			"type": "WaybillProductType []",
-			"description": "返回值",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "产品code",
-					"required": true
+					"description": "产品code"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "产品名称",
-					"required": true
+					"description": "产品名称"
 				},
 				{
-					"name": "service_types",
-					"type": "WaybillServiceType[]",
-					"description": "物流服务",
-					"required": true,
 					"subParams": [
 						{
 							"name": "code",
 							"type": "String",
-							"description": "code",
-							"required": true
+							"description": "code"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "name",
-							"required": true
+							"description": "name"
 						}
-					]
+					],
+					"name": "service_types",
+					"type": "WaybillServiceType[]",
+					"description": "物流服务"
 				}
-			]
+			],
+			"name": "product_types",
+			"type": "WaybillProductType []",
+			"description": "返回值"
 		}
-	]
+	],
+	"name": "cainiao.waybill.ii.product",
+	"apiChineseName": "商家查询物流商产品类型接口",
+	"description": "商家可以查询物流商的产品类型和服务能力。",
+	"id": 26765
 }

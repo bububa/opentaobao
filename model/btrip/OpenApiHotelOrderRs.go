@@ -50,6 +50,8 @@ type OpenApiHotelOrderRs struct {
 	ProjectTitle string `json:"project_title,omitempty" xml:"project_title,omitempty"`
 	// 项目code
 	ProjectCode string `json:"project_code,omitempty" xml:"project_code,omitempty"`
+	// 第三方项目id
+	ThirdpartProjectId string `json:"thirdpart_project_id,omitempty" xml:"thirdpart_project_id,omitempty"`
 	// 订单id
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商旅申请单id
@@ -68,4 +70,6 @@ type OpenApiHotelOrderRs struct {
 	Invoice *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
 	// 项目id
 	ProjectId int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
+	// 酒店开票支持类型：11 仅支持增值税普通发票 12 支持增值税专用发票和增值税普通发票
+	HotelSupportVatInvoiceType int64 `json:"hotel_support_vat_invoice_type,omitempty" xml:"hotel_support_vat_invoice_type,omitempty"`
 }

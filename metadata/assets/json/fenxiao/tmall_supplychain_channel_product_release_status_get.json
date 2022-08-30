@@ -1,8 +1,4 @@
 {
-	"id": 49544,
-	"name": "tmall.supplychain.channel.product.release.status.get",
-	"apiChineseName": "产品铺货状态查询",
-	"description": "巴拿马战役渠道产品状态查询",
 	"requestParams": [
 		{
 			"name": "product_id",
@@ -19,43 +15,42 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultDto",
-			"description": "异步获取历史数据接口返回结果",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "执行结果",
-					"required": true
+					"description": "执行结果"
 				},
 				{
-					"name": "module",
-					"type": "TopProductStatusResult",
-					"description": "查询结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "release",
 							"type": "Boolean",
-							"description": "产品铺货状态",
-							"required": true
+							"description": "产品铺货状态"
 						}
-					]
+					],
+					"name": "module",
+					"type": "TopProductStatusResult",
+					"description": "查询结果"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果"
 		}
-	]
+	],
+	"name": "tmall.supplychain.channel.product.release.status.get",
+	"apiChineseName": "产品铺货状态查询",
+	"description": "巴拿马战役渠道产品状态查询",
+	"id": 49544
 }

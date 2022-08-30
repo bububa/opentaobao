@@ -22,8 +22,8 @@ type TmallItemVipSchemaAddAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 商品发布成功_商品id
 	AddItemResult string `json:"add_item_result,omitempty" xml:"add_item_result,omitempty"`
-	// sku与outerId映射信息
-	SkuMapJson string `json:"sku_map_json,omitempty" xml:"sku_map_json,omitempty"`
 	// 发布商品操作成功时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+	// sku与outerId映射信息
+	SkuMapJson string `json:"sku_map_json,omitempty" xml:"sku_map_json,omitempty"`
 }

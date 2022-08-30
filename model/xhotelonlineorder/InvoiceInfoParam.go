@@ -14,10 +14,10 @@ type InvoiceInfoParam struct {
 	RoomNum string `json:"room_num,omitempty" xml:"room_num,omitempty"`
 	// 需要发票时间(格式yyyy-MM-dd HH:mm:ss)
 	WantTime string `json:"want_time,omitempty" xml:"want_time,omitempty"`
-	// 酒店外部订单号(从查询pms账单接口中获取)
-	OutOrderNum string `json:"out_order_num,omitempty" xml:"out_order_num,omitempty"`
 	// 用户名
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
+	// 酒店外部订单号(从查询pms账单接口中获取)
+	OutOrderNum string `json:"out_order_num,omitempty" xml:"out_order_num,omitempty"`
 	// 实际房费(分)
 	InvoiceRoomPrice int64 `json:"invoice_room_price,omitempty" xml:"invoice_room_price,omitempty"`
 	// 实际杂费(分)

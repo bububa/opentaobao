@@ -1,8 +1,4 @@
 {
-	"id": 49201,
-	"name": "taobao.place.storerelatesub.get",
-	"apiChineseName": "门店和子门店关系查找",
-	"description": "门店和子门店关系查找",
 	"requestParams": [
 		{
 			"name": "store_id",
@@ -27,109 +23,97 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "TopBatchResultDo",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "other",
-					"type": "Json",
-					"description": "其他信息",
-					"required": true
+					"type": "String",
+					"description": "其他信息"
 				},
 				{
 					"name": "total_num",
 					"type": "Number",
-					"description": "结果总数",
-					"required": true
+					"description": "结果总数"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "result_list",
-					"type": "T[]",
-					"description": "结果列表",
-					"required": true,
 					"subParams": [
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "门店Id",
-							"required": true
+							"description": "门店Id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "门店名称",
-							"required": true
+							"description": "门店名称"
 						},
 						{
 							"name": "sub_name",
 							"type": "String",
-							"description": "门店分名称",
-							"required": true
+							"description": "门店分名称"
 						},
 						{
 							"name": "address",
 							"type": "String",
-							"description": "详细地址",
-							"required": true
+							"description": "详细地址"
 						},
 						{
 							"name": "prov_name",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "city_name",
 							"type": "String",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "district_name",
 							"type": "String",
-							"description": "区",
-							"required": true
+							"description": "区"
 						},
 						{
 							"name": "prov_code",
 							"type": "Number",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "city_code",
 							"type": "Number",
-							"description": "市",
-							"required": true
+							"description": "市"
 						},
 						{
 							"name": "district_code",
 							"type": "Number",
-							"description": "区",
-							"required": true
+							"description": "区"
 						}
-					]
+					],
+					"name": "result_list",
+					"type": "T[]",
+					"description": "结果列表"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.place.storerelatesub.get",
+	"apiChineseName": "门店和子门店关系查找",
+	"description": "门店和子门店关系查找",
+	"id": 49201
 }

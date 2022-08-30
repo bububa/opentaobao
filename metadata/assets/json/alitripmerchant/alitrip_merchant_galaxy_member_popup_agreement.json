@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "微信用户标识"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "show_privacy_agreement",
+							"type": "Boolean",
+							"description": "隐私协议"
+						},
+						{
+							"name": "show_data_export_agreement",
+							"type": "Boolean",
+							"description": "境外输出个人信息协议"
+						}
+					],
+					"name": "content",
+					"type": "UserAgreementVO",
+					"description": "用户是否唤起协议弹窗"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果集"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.member.popup.agreement",
+	"apiChineseName": "小程序唤起协议弹窗",
+	"description": "用户进入小程序后，根据用户是否授权协议，判断是否唤起协议弹窗",
+	"id": 62133
+}

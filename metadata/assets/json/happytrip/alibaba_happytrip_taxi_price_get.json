@@ -1,8 +1,4 @@
 {
-	"id": 28367,
-	"name": "alibaba.happytrip.taxi.price.get",
-	"apiChineseName": "获取价格预估信息",
-	"description": "打车价格预估",
 	"requestParams": [
 		{
 			"name": "flat",
@@ -88,9 +84,6 @@
 			"description": "错误代码"
 		},
 		{
-			"name": "data",
-			"type": "PriceModel []",
-			"description": "价格预估模型",
 			"subParams": [
 				{
 					"name": "start_price",
@@ -153,10 +146,6 @@
 					"required": true
 				},
 				{
-					"name": "line_info",
-					"type": "LineInfo",
-					"description": "线路信息，线路为专线时不为空",
-					"required": true,
 					"subParams": [
 						{
 							"name": "from_location_name",
@@ -170,14 +159,25 @@
 							"description": "目的位置名称",
 							"required": true
 						}
-					]
+					],
+					"name": "line_info",
+					"type": "LineInfo",
+					"description": "线路信息，线路为专线时不为空",
+					"required": true
 				}
-			]
+			],
+			"name": "data",
+			"type": "PriceModel []",
+			"description": "价格预估模型"
 		},
 		{
 			"name": "errmsg",
 			"type": "String",
 			"description": "错误消息"
 		}
-	]
+	],
+	"name": "alibaba.happytrip.taxi.price.get",
+	"apiChineseName": "获取价格预估信息",
+	"description": "打车价格预估",
+	"id": 28367
 }

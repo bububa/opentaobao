@@ -1,8 +1,4 @@
 {
-	"id": 38979,
-	"name": "taobao.item.update.delisting.tmall",
-	"apiChineseName": "taobao.item.update.delisting.tmall",
-	"description": "* 单个商品下架\u003cbr/\u003e    * 输入的num_iid必须属于当前会话用户",
 	"requestParams": [
 		{
 			"name": "num_iid",
@@ -13,9 +9,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "item",
-			"type": "Item",
-			"description": "返回商品更新信息：返回的结果是:num_iid和modified",
 			"subParams": [
 				{
 					"name": "iid",
@@ -32,7 +25,14 @@
 					"type": "Date",
 					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
 				}
-			]
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "返回商品更新信息：返回的结果是:num_iid和modified"
 		}
-	]
+	],
+	"name": "taobao.item.update.delisting.tmall",
+	"apiChineseName": "taobao.item.update.delisting.tmall",
+	"description": "* 单个商品下架\u003cbr/\u003e    * 输入的num_iid必须属于当前会话用户",
+	"id": 38979
 }

@@ -1,19 +1,8 @@
 {
-	"id": 55598,
-	"name": "alibaba.idle.consignmentii.order.perform",
-	"apiChineseName": "寄卖V2订单履约",
-	"description": "寄卖V2订单履约，服务商同步订单信息，驱动交易流转",
 	"requestParams": [
 		{
-			"name": "consignment_v2_order_syn_dto",
-			"type": "ConsignmentV2OrderSynDto",
-			"description": "同步参数",
-			"required": true,
 			"subParams": [
 				{
-					"name": "attribute",
-					"type": "Attribute",
-					"description": "不同的状态传递不同参数",
 					"subParams": [
 						{
 							"name": "pay_order_id",
@@ -29,6 +18,11 @@
 							"name": "seller_2_ac_mail_no",
 							"type": "String",
 							"description": "上门取件订单号"
+						},
+						{
+							"name": "max_deal_amt",
+							"type": "String",
+							"description": "寄卖估价区间，分号分隔上下限"
 						},
 						{
 							"name": "reference_recycle_price",
@@ -74,13 +68,11 @@
 							"name": "mail_no",
 							"type": "String",
 							"description": "上门取件运单号"
-						},
-						{
-							"name": "max_deal_amt",
-							"type": "String",
-							"description": "寄卖估价区间，分号分隔上下限"
 						}
-					]
+					],
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "不同的状态传递不同参数"
 				},
 				{
 					"name": "order_sub_status",
@@ -106,34 +98,39 @@
 					"description": "下单环境",
 					"required": true
 				}
-			]
+			],
+			"name": "consignment_v2_order_syn_dto",
+			"type": "ConsignmentV2OrderSynDto",
+			"description": "同步参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "alibaba.idle.consignmentii.order.perform",
+	"apiChineseName": "寄卖V2订单履约",
+	"description": "寄卖V2订单履约，服务商同步订单信息，驱动交易流转",
+	"id": 55598
 }

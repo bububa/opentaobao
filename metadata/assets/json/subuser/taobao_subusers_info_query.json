@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "site",
+			"type": "Number",
+			"description": "站点信息，淘宝天猫传0，1688传3",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "子账号Id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "子账号当前状态 1正常 -1删除  2冻结"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "子账号所属的主账号的唯一标识"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "子账号用户名"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "主账号昵称"
+				}
+			],
+			"name": "result",
+			"type": "SubUserDO",
+			"description": "子账号对象，如果为空，说明没查到该子账号"
+		}
+	],
+	"name": "taobao.subusers.info.query",
+	"apiChineseName": "根据当前子账号登陆态，获取该子账号基本信息",
+	"description": "根据当前子账号登陆态，获取该子账号基本信息",
+	"id": 61341
+}

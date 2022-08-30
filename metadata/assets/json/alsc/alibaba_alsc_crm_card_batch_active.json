@@ -1,13 +1,6 @@
 {
-	"id": 45812,
-	"name": "alibaba.alsc.crm.card.batch.active",
-	"apiChineseName": "批量激活卡",
-	"description": "批量激活卡",
 	"requestParams": [
 		{
-			"name": "param_batch_active_card_open_req",
-			"type": "BatchActiveCardOpenReq",
-			"description": "请求对象",
 			"subParams": [
 				{
 					"name": "brand_id",
@@ -48,60 +41,60 @@
 					"type": "String",
 					"description": "门店id"
 				}
-			]
+			],
+			"name": "param_batch_active_card_open_req",
+			"type": "BatchActiveCardOpenReq",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "成功状态",
-					"required": true
+					"description": "成功状态"
 				},
 				{
-					"name": "result",
-					"type": "BatchActiveCardOpenInfo",
-					"description": "结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "all_success",
 							"type": "Boolean",
-							"description": "是否全部激活成功",
-							"required": true
+							"description": "是否全部激活成功"
 						},
 						{
 							"name": "result_map",
-							"type": "Json",
-							"description": "结果 \u003c KEY：Id  VALUE：描述（SUCCESS-通过） \u003e",
-							"required": true
+							"type": "String",
+							"description": "结果 \u003c KEY：Id  VALUE：描述（SUCCESS-通过） \u003e"
 						}
-					]
+					],
+					"name": "result",
+					"type": "BatchActiveCardOpenInfo",
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "错误结果显示",
-					"required": true
+					"description": "错误结果显示"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.card.batch.active",
+	"apiChineseName": "批量激活卡",
+	"description": "批量激活卡",
+	"id": 45812
 }

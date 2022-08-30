@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "店铺id",
+					"required": true
+				}
+			],
+			"name": "compare_flow_data_query_d_t_o",
+			"type": "CompareFlowDataQueryDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "返回错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回的错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "agent_id",
+							"type": "Number",
+							"description": "店铺id"
+						},
+						{
+							"name": "current_amount",
+							"type": "Number",
+							"description": "当日已使用量"
+						},
+						{
+							"name": "total_limit",
+							"type": "Number",
+							"description": "当日分配给商家的总调用量"
+						}
+					],
+					"name": "data",
+					"type": "CompareFlowDataReponseDTO",
+					"description": "返回的信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回信息"
+		}
+	],
+	"name": "alitrip.policy.domfare.flowdata",
+	"apiChineseName": "比价工具流量详情",
+	"description": "比价工具流量详情",
+	"id": 61468
+}

@@ -1,8 +1,4 @@
 {
-	"id": 25717,
-	"name": "alibaba.security.jaq.wsgriskdata.report",
-	"apiChineseName": "无线保镖SDK风控数据上报",
-	"description": "无线保镖sdk根据用户的需要，上报数据到聚安全云端",
 	"requestParams": [
 		{
 			"name": "wua",
@@ -18,61 +14,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "jaq_wsg_risk_report_result",
-			"type": "JaqWsgReportResult",
-			"description": "无线保镖sdk上报数据的返回结果",
 			"subParams": [
-				{
-					"name": "token",
-					"type": "String",
-					"description": "生成的token",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
-					"name": "jaq_dispatch_param",
-					"type": "JaqDispatchParam",
-					"description": "安全验证前向化下发参数结构体",
-					"required": true,
 					"subParams": [
 						{
 							"name": "event_id",
 							"type": "String",
-							"description": "事件ID",
-							"required": true
+							"description": "事件ID"
 						},
 						{
 							"name": "protocol_version",
 							"type": "String",
-							"description": "协议版本号",
-							"required": true
+							"description": "协议版本号"
 						},
 						{
 							"name": "rtken",
 							"type": "String",
-							"description": "下发的软token密文",
-							"required": true
+							"description": "下发的软token密文"
 						},
 						{
 							"name": "rtken_index",
 							"type": "String",
-							"description": "下发的软token索引",
-							"required": true
+							"description": "下发的软token索引"
 						}
-					]
+					],
+					"name": "jaq_dispatch_param",
+					"type": "JaqDispatchParam",
+					"description": "安全验证前向化下发参数结构体"
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "生成的token"
 				}
-			]
+			],
+			"name": "jaq_wsg_risk_report_result",
+			"type": "JaqWsgReportResult",
+			"description": "无线保镖sdk上报数据的返回结果"
 		}
-	]
+	],
+	"name": "alibaba.security.jaq.wsgriskdata.report",
+	"apiChineseName": "无线保镖SDK风控数据上报",
+	"description": "无线保镖sdk根据用户的需要，上报数据到聚安全云端",
+	"id": 25717
 }

@@ -1,13 +1,6 @@
 {
-	"id": 42707,
-	"name": "aliexpress.solution.order.info.get",
-	"apiChineseName": "get order detail info",
-	"description": "get order detail info",
 	"requestParams": [
 		{
-			"name": "param1",
-			"type": "OrderDetailQuery",
-			"description": "param",
 			"subParams": [
 				{
 					"name": "ext_info_bit_flag",
@@ -19,14 +12,14 @@
 					"type": "Number",
 					"description": "Order id"
 				}
-			]
+			],
+			"name": "param1",
+			"type": "OrderDetailQuery",
+			"description": "param"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "BaseResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_message",
@@ -47,16 +40,8 @@
 					"required": true
 				},
 				{
-					"name": "data",
-					"type": "GlobalAeopTpOrderDetailDto",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "buyer_info",
-							"type": "GlobalAeopTpPersonDto",
-							"description": "buyer info",
-							"required": true,
 							"subParams": [
 								{
 									"name": "login_id",
@@ -82,7 +67,11 @@
 									"description": "country/region",
 									"required": true
 								}
-							]
+							],
+							"name": "buyer_info",
+							"type": "GlobalAeopTpPersonDto",
+							"description": "buyer info",
+							"required": true
 						},
 						{
 							"name": "gmt_modified",
@@ -91,10 +80,6 @@
 							"required": true
 						},
 						{
-							"name": "receipt_address",
-							"type": "GlobalAeopTpAddressDto",
-							"description": "receipt address",
-							"required": true,
 							"subParams": [
 								{
 									"name": "fax_area",
@@ -192,7 +177,11 @@
 									"description": "localized address, currently only used in Russia",
 									"required": true
 								}
-							]
+							],
+							"name": "receipt_address",
+							"type": "GlobalAeopTpAddressDto",
+							"description": "receipt address",
+							"required": true
 						},
 						{
 							"name": "gmt_trade_end",
@@ -213,10 +202,6 @@
 							"required": true
 						},
 						{
-							"name": "logistics_amount",
-							"type": "GlobalMoneyStr",
-							"description": "logistics amount",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cent",
@@ -243,10 +228,6 @@
 									"required": true
 								},
 								{
-									"name": "currency",
-									"type": "Currency",
-									"description": "Currency description",
-									"required": true,
 									"subParams": [
 										{
 											"name": "default_fraction_digits",
@@ -278,9 +259,17 @@
 											"description": "Display name of the currency",
 											"required": true
 										}
-									]
+									],
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true
 								}
-							]
+							],
+							"name": "logistics_amount",
+							"type": "GlobalMoneyStr",
+							"description": "logistics amount",
+							"required": true
 						},
 						{
 							"name": "memo",
@@ -295,10 +284,6 @@
 							"required": true
 						},
 						{
-							"name": "order_msg_list",
-							"type": "GlobalAeopTpOrderMsgDto[]",
-							"description": "Order Message list(deprecated)",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -402,13 +387,13 @@
 									"description": "receiver last name",
 									"required": true
 								}
-							]
+							],
+							"name": "order_msg_list",
+							"type": "GlobalAeopTpOrderMsgDto[]",
+							"description": "Order Message list(deprecated)",
+							"required": true
 						},
 						{
-							"name": "child_order_ext_info_list",
-							"type": "GlobalAeopTpOrderProductInfoDto[]",
-							"description": "child order ext info list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "quantity",
@@ -417,10 +402,6 @@
 									"required": true
 								},
 								{
-									"name": "unit_price",
-									"type": "GlobalMoneyStr",
-									"description": "product unit price",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -447,10 +428,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -482,9 +459,17 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "unit_price",
+									"type": "GlobalMoneyStr",
+									"description": "product unit price",
+									"required": true
 								},
 								{
 									"name": "sku",
@@ -510,13 +495,13 @@
 									"description": "Leaf category Id of the product",
 									"required": true
 								}
-							]
+							],
+							"name": "child_order_ext_info_list",
+							"type": "GlobalAeopTpOrderProductInfoDto[]",
+							"description": "child order ext info list",
+							"required": true
 						},
 						{
-							"name": "issue_info",
-							"type": "GlobalAeopTpIssueInfoDto",
-							"description": "issue info",
-							"required": true,
 							"subParams": [
 								{
 									"name": "issue_model",
@@ -536,13 +521,13 @@
 									"description": "issue creation time",
 									"required": true
 								}
-							]
+							],
+							"name": "issue_info",
+							"type": "GlobalAeopTpIssueInfoDto",
+							"description": "issue info",
+							"required": true
 						},
 						{
-							"name": "refund_info",
-							"type": "GlobalAeopTpRefundInfoDto",
-							"description": "refund info",
-							"required": true,
 							"subParams": [
 								{
 									"name": "refund_reason",
@@ -557,10 +542,6 @@
 									"required": true
 								},
 								{
-									"name": "refund_coupon_amt",
-									"type": "GlobalMoneyStr",
-									"description": "refund coupon amount",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -587,10 +568,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -622,15 +599,19 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "refund_coupon_amt",
+									"type": "GlobalMoneyStr",
+									"description": "refund coupon amount",
+									"required": true
 								},
 								{
-									"name": "refund_cash_amt",
-									"type": "GlobalMoneyStr",
-									"description": "refund cash amount",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -657,10 +638,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -692,9 +669,17 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "refund_cash_amt",
+									"type": "GlobalMoneyStr",
+									"description": "refund cash amount",
+									"required": true
 								},
 								{
 									"name": "refund_type",
@@ -708,7 +693,11 @@
 									"description": "refund time",
 									"required": true
 								}
-							]
+							],
+							"name": "refund_info",
+							"type": "GlobalAeopTpRefundInfoDto",
+							"description": "refund info",
+							"required": true
 						},
 						{
 							"name": "settlement_currency",
@@ -717,10 +706,6 @@
 							"required": true
 						},
 						{
-							"name": "logistic_info_list",
-							"type": "GlobalAeopTpLogisticInfoDto[]",
-							"description": "logistics info",
-							"required": true,
 							"subParams": [
 								{
 									"name": "logistics_no",
@@ -776,7 +761,11 @@
 									"description": "receive status。(default:initial value; received:; not_received; suspected_received)",
 									"required": true
 								}
-							]
+							],
+							"name": "logistic_info_list",
+							"type": "GlobalAeopTpLogisticInfoDto[]",
+							"description": "logistics info",
+							"required": true
 						},
 						{
 							"name": "pay_amount_by_settlement_cur",
@@ -809,10 +798,6 @@
 							"required": true
 						},
 						{
-							"name": "order_amount",
-							"type": "GlobalMoneyStr",
-							"description": "order amount",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cent",
@@ -839,10 +824,6 @@
 									"required": true
 								},
 								{
-									"name": "currency",
-									"type": "Currency",
-									"description": "Currency description",
-									"required": true,
 									"subParams": [
 										{
 											"name": "default_fraction_digits",
@@ -874,9 +855,17 @@
 											"description": "Display name of the currency",
 											"required": true
 										}
-									]
+									],
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true
 								}
-							]
+							],
+							"name": "order_amount",
+							"type": "GlobalMoneyStr",
+							"description": "order amount",
+							"required": true
 						},
 						{
 							"name": "seller_signer_fullname",
@@ -897,10 +886,6 @@
 							"required": true
 						},
 						{
-							"name": "init_oder_amount",
-							"type": "GlobalMoneyStr",
-							"description": "order amount",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cent",
@@ -927,10 +912,6 @@
 									"required": true
 								},
 								{
-									"name": "currency",
-									"type": "Currency",
-									"description": "Currency description",
-									"required": true,
 									"subParams": [
 										{
 											"name": "default_fraction_digits",
@@ -962,15 +943,19 @@
 											"description": "Display name of the currency",
 											"required": true
 										}
-									]
+									],
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true
 								}
-							]
+							],
+							"name": "init_oder_amount",
+							"type": "GlobalMoneyStr",
+							"description": "order amount",
+							"required": true
 						},
 						{
-							"name": "opr_log_dto_list",
-							"type": "GlobalAeopTpOperationLogDto[]",
-							"description": "operation details list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "id",
@@ -1020,13 +1005,13 @@
 									"description": "order creation time",
 									"required": true
 								}
-							]
+							],
+							"name": "opr_log_dto_list",
+							"type": "GlobalAeopTpOperationLogDto[]",
+							"description": "operation details list",
+							"required": true
 						},
 						{
-							"name": "child_order_list",
-							"type": "GlobalAeopTpChildOrderDto[]",
-							"description": "child order list",
-							"required": true,
 							"subParams": [
 								{
 									"name": "snapshot_id",
@@ -1041,10 +1026,6 @@
 									"required": true
 								},
 								{
-									"name": "logistics_amount",
-									"type": "GlobalMoneyStr",
-									"description": "logistics amount",
-									"required": true,
 									"subParams": [
 										{
 											"name": "currency_code",
@@ -1071,10 +1052,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "display_name",
@@ -1106,9 +1083,17 @@
 													"description": "The default minimum accuracy of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "logistics_amount",
+									"type": "GlobalMoneyStr",
+									"description": "logistics amount",
+									"required": true
 								},
 								{
 									"name": "goods_prepare_time",
@@ -1129,10 +1114,6 @@
 									"required": true
 								},
 								{
-									"name": "refund_info",
-									"type": "GlobalAeopTpRefundInfoDto",
-									"description": "refund info",
-									"required": true,
 									"subParams": [
 										{
 											"name": "refund_reason",
@@ -1147,33 +1128,83 @@
 											"required": true
 										},
 										{
+											"subParams": [
+												{
+													"subParams": [
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "currency_code",
+															"type": "String",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "symbol",
+															"type": "String",
+															"description": "Symbol of the currency",
+															"required": true
+														},
+														{
+															"name": "display_name",
+															"type": "String",
+															"description": "Display name of the currency",
+															"required": true
+														}
+													],
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
+													"required": true
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "Cent",
+													"required": true
+												},
+												{
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "amount_str",
+													"type": "String",
+													"description": "Amount",
+													"required": true
+												}
+											],
 											"name": "refund_coupon_amt",
 											"type": "GlobalMoneyStr",
 											"description": "refund coupon amount",
-											"required": true,
+											"required": true
+										},
+										{
 											"subParams": [
 												{
-													"name": "currency",
-													"type": "Currency",
-													"description": "Currency description",
-													"required": true,
 													"subParams": [
 														{
-															"name": "default_fraction_digits",
-															"type": "Number",
-															"description": "The default minimum accuracy of the currency",
-															"required": true
-														},
-														{
-															"name": "numeric_code",
-															"type": "Number",
-															"description": "Numeric code of the currency",
-															"required": true
-														},
-														{
-															"name": "currency_code",
+															"name": "display_name",
 															"type": "String",
-															"description": "Currency code",
+															"description": "Display name of the currency",
 															"required": true
 														},
 														{
@@ -1183,23 +1214,33 @@
 															"required": true
 														},
 														{
-															"name": "display_name",
+															"name": "currency_code",
 															"type": "String",
-															"description": "Display name of the currency",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
 															"required": true
 														}
-													]
-												},
-												{
-													"name": "cent",
-													"type": "Number",
-													"description": "Cent",
+													],
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
 													"required": true
 												},
 												{
-													"name": "cent_factor",
-													"type": "Number",
-													"description": "The factor to the smallest currency unit",
+													"name": "amount_str",
+													"type": "String",
+													"description": "Amount",
 													"required": true
 												},
 												{
@@ -1209,82 +1250,22 @@
 													"required": true
 												},
 												{
-													"name": "amount_str",
-													"type": "String",
-													"description": "Amount",
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "Cent",
 													"required": true
 												}
-											]
-										},
-										{
+											],
 											"name": "refund_cash_amt",
 											"type": "GlobalMoneyStr",
 											"description": "refund cash amount",
-											"required": true,
-											"subParams": [
-												{
-													"name": "currency",
-													"type": "Currency",
-													"description": "Currency description",
-													"required": true,
-													"subParams": [
-														{
-															"name": "display_name",
-															"type": "String",
-															"description": "Display name of the currency",
-															"required": true
-														},
-														{
-															"name": "symbol",
-															"type": "String",
-															"description": "Symbol of the currency",
-															"required": true
-														},
-														{
-															"name": "currency_code",
-															"type": "String",
-															"description": "Currency code",
-															"required": true
-														},
-														{
-															"name": "numeric_code",
-															"type": "Number",
-															"description": "Numeric code of the currency",
-															"required": true
-														},
-														{
-															"name": "default_fraction_digits",
-															"type": "Number",
-															"description": "The default minimum accuracy of the currency",
-															"required": true
-														}
-													]
-												},
-												{
-													"name": "amount_str",
-													"type": "String",
-													"description": "Amount",
-													"required": true
-												},
-												{
-													"name": "currency_code",
-													"type": "String",
-													"description": "Currency code",
-													"required": true
-												},
-												{
-													"name": "cent_factor",
-													"type": "Number",
-													"description": "The factor to the smallest currency unit",
-													"required": true
-												},
-												{
-													"name": "cent",
-													"type": "Number",
-													"description": "Cent",
-													"required": true
-												}
-											]
+											"required": true
 										},
 										{
 											"name": "refund_type",
@@ -1298,7 +1279,11 @@
 											"description": "refund time",
 											"required": true
 										}
-									]
+									],
+									"name": "refund_info",
+									"type": "GlobalAeopTpRefundInfoDto",
+									"description": "refund info",
+									"required": true
 								},
 								{
 									"name": "product_unit",
@@ -1343,10 +1328,6 @@
 									"required": true
 								},
 								{
-									"name": "init_order_amt",
-									"type": "GlobalMoneyStr",
-									"description": "order amount",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -1373,10 +1354,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -1408,15 +1385,19 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "init_order_amt",
+									"type": "GlobalMoneyStr",
+									"description": "order amount",
+									"required": true
 								},
 								{
-									"name": "child_issue_info",
-									"type": "GlobalAeopTpIssueInfoDto",
-									"description": "child issue info",
-									"required": true,
 									"subParams": [
 										{
 											"name": "issue_time",
@@ -1436,7 +1417,11 @@
 											"description": "issue model",
 											"required": true
 										}
-									]
+									],
+									"name": "child_issue_info",
+									"type": "GlobalAeopTpIssueInfoDto",
+									"description": "child issue info",
+									"required": true
 								},
 								{
 									"name": "logistics_service_name",
@@ -1445,22 +1430,10 @@
 									"required": true
 								},
 								{
-									"name": "loan_info",
-									"type": "GlobalAeopTpLoanInfoDto",
-									"description": "order loan info",
-									"required": true,
 									"subParams": [
 										{
-											"name": "loan_amount",
-											"type": "GlobalMoneyStr",
-											"description": "loan amount",
-											"required": true,
 											"subParams": [
 												{
-													"name": "currency",
-													"type": "Currency",
-													"description": "Currency description",
-													"required": true,
 													"subParams": [
 														{
 															"name": "display_name",
@@ -1492,7 +1465,11 @@
 															"description": "The default minimum accuracy of the currency",
 															"required": true
 														}
-													]
+													],
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
+													"required": true
 												},
 												{
 													"name": "cent_factor",
@@ -1518,7 +1495,11 @@
 													"description": "Cent",
 													"required": true
 												}
-											]
+											],
+											"name": "loan_amount",
+											"type": "GlobalMoneyStr",
+											"description": "loan amount",
+											"required": true
 										},
 										{
 											"name": "loan_time",
@@ -1526,7 +1507,11 @@
 											"description": "loan time",
 											"required": true
 										}
-									]
+									],
+									"name": "loan_info",
+									"type": "GlobalAeopTpLoanInfoDto",
+									"description": "order loan info",
+									"required": true
 								},
 								{
 									"name": "product_snap_url",
@@ -1589,10 +1574,6 @@
 									"required": true
 								},
 								{
-									"name": "product_price",
-									"type": "GlobalMoneyStr",
-									"description": "product price",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -1619,10 +1600,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -1654,9 +1631,17 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "product_price",
+									"type": "GlobalMoneyStr",
+									"description": "product price",
+									"required": true
 								},
 								{
 									"name": "product_name",
@@ -1683,16 +1668,78 @@
 									"required": true
 								},
 								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										}
+									],
 									"name": "child_order_discount_info",
 									"type": "GlobalMoneyStr",
 									"description": "discount amount of child order",
-									"required": true,
+									"required": true
+								},
+								{
 									"subParams": [
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "default_fraction_digits",
@@ -1724,7 +1771,11 @@
 													"description": "Display name of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										},
 										{
 											"name": "cent_factor",
@@ -1750,95 +1801,17 @@
 											"description": "currency code",
 											"required": true
 										}
-									]
-								},
-								{
+									],
 									"name": "child_order_adjust_amount",
 									"type": "GlobalMoneyStr",
 									"description": "An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the \"Adjust price\"  button in order management backend.",
-									"required": true,
-									"subParams": [
-										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
-											"subParams": [
-												{
-													"name": "default_fraction_digits",
-													"type": "Number",
-													"description": "The default minimum accuracy of the currency",
-													"required": true
-												},
-												{
-													"name": "numeric_code",
-													"type": "Number",
-													"description": "Numeric code of the currency",
-													"required": true
-												},
-												{
-													"name": "currency_code",
-													"type": "String",
-													"description": "Currency code",
-													"required": true
-												},
-												{
-													"name": "symbol",
-													"type": "String",
-													"description": "Symbol of the currency",
-													"required": true
-												},
-												{
-													"name": "display_name",
-													"type": "String",
-													"description": "Display name of the currency",
-													"required": true
-												}
-											]
-										},
-										{
-											"name": "cent_factor",
-											"type": "Number",
-											"description": "The factor to the smallest currency unit",
-											"required": true
-										},
-										{
-											"name": "amount",
-											"type": "String",
-											"description": "Amount",
-											"required": true
-										},
-										{
-											"name": "cent",
-											"type": "Number",
-											"description": "cent",
-											"required": true
-										},
-										{
-											"name": "currency_code",
-											"type": "String",
-											"description": "currency code",
-											"required": true
-										}
-									]
+									"required": true
 								},
 								{
-									"name": "child_order_discount_detail_list",
-									"type": "GlobalAeopTpSaleDiscountInfo[]",
-									"description": "discount detail list for each child order",
-									"required": true,
 									"subParams": [
 										{
-											"name": "discount_detail",
-											"type": "GlobalMoneyStr",
-											"description": "discount detail",
-											"required": true,
 											"subParams": [
 												{
-													"name": "currency",
-													"type": "Currency",
-													"description": "currency details",
-													"required": true,
 													"subParams": [
 														{
 															"name": "default_fraction_digits",
@@ -1870,7 +1843,11 @@
 															"description": "Display name of the currency",
 															"required": true
 														}
-													]
+													],
+													"name": "currency",
+													"type": "Currency",
+													"description": "currency details",
+													"required": true
 												},
 												{
 													"name": "cent_factor",
@@ -1896,7 +1873,11 @@
 													"description": "currency code",
 													"required": true
 												}
-											]
+											],
+											"name": "discount_detail",
+											"type": "GlobalMoneyStr",
+											"description": "discount detail",
+											"required": true
 										},
 										{
 											"name": "promotion_owner",
@@ -1916,9 +1897,17 @@
 											"description": "promotion ID",
 											"required": true
 										}
-									]
+									],
+									"name": "child_order_discount_detail_list",
+									"type": "GlobalAeopTpSaleDiscountInfo[]",
+									"description": "discount detail list for each child order",
+									"required": true
 								}
-							]
+							],
+							"name": "child_order_list",
+							"type": "GlobalAeopTpChildOrderDto[]",
+							"description": "child order list",
+							"required": true
 						},
 						{
 							"name": "gmt_create",
@@ -1939,16 +1928,8 @@
 							"required": true
 						},
 						{
-							"name": "loan_info",
-							"type": "GlobalAeopTpLoanInfoDto",
-							"description": "loan info",
-							"required": true,
 							"subParams": [
 								{
-									"name": "loan_amount",
-									"type": "GlobalMoneyStr",
-									"description": "loan amount",
-									"required": true,
 									"subParams": [
 										{
 											"name": "cent",
@@ -1975,10 +1956,6 @@
 											"required": true
 										},
 										{
-											"name": "currency",
-											"type": "Currency",
-											"description": "Currency description",
-											"required": true,
 											"subParams": [
 												{
 													"name": "display_name",
@@ -2010,9 +1987,17 @@
 													"description": "The default minimum accuracy of the currency",
 													"required": true
 												}
-											]
+											],
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true
 										}
-									]
+									],
+									"name": "loan_amount",
+									"type": "GlobalMoneyStr",
+									"description": "loan amount",
+									"required": true
 								},
 								{
 									"name": "loan_time",
@@ -2020,7 +2005,11 @@
 									"description": "loan time",
 									"required": true
 								}
-							]
+							],
+							"name": "loan_info",
+							"type": "GlobalAeopTpLoanInfoDto",
+							"description": "loan info",
+							"required": true
 						},
 						{
 							"name": "order_status",
@@ -2059,10 +2048,6 @@
 							"required": true
 						},
 						{
-							"name": "escrow_fee",
-							"type": "GlobalMoneyStr",
-							"description": "escrow fee (deprecated)",
-							"required": true,
 							"subParams": [
 								{
 									"name": "cent",
@@ -2089,10 +2074,6 @@
 									"required": true
 								},
 								{
-									"name": "currency",
-									"type": "Currency",
-									"description": "Currency description",
-									"required": true,
 									"subParams": [
 										{
 											"name": "default_fraction_digits",
@@ -2124,9 +2105,17 @@
 											"description": "Display name of the currency",
 											"required": true
 										}
-									]
+									],
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true
 								}
-							]
+							],
+							"name": "escrow_fee",
+							"type": "GlobalMoneyStr",
+							"description": "escrow fee (deprecated)",
+							"required": true
 						},
 						{
 							"name": "cpf_number",
@@ -2141,16 +2130,8 @@
 							"required": true
 						},
 						{
-							"name": "order_discount_info",
-							"type": "GlobalMoneyStr",
-							"description": "Order discount total amount (sum of the platform and seller discounts)",
-							"required": true,
 							"subParams": [
 								{
-									"name": "currency",
-									"type": "Currency",
-									"description": "Currency description",
-									"required": true,
 									"subParams": [
 										{
 											"name": "display_name",
@@ -2182,7 +2163,11 @@
 											"description": "The default minimum accuracy of the currency",
 											"required": true
 										}
-									]
+									],
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true
 								},
 								{
 									"name": "cent_factor",
@@ -2208,7 +2193,11 @@
 									"description": "Cent",
 									"required": true
 								}
-							]
+							],
+							"name": "order_discount_info",
+							"type": "GlobalMoneyStr",
+							"description": "Order discount total amount (sum of the platform and seller discounts)",
+							"required": true
 						},
 						{
 							"name": "offline_pickup_point_code",
@@ -2216,9 +2205,20 @@
 							"description": "pickup point code of the specific order",
 							"required": true
 						}
-					]
+					],
+					"name": "data",
+					"type": "GlobalAeopTpOrderDetailDto",
+					"description": "data",
+					"required": true
 				}
-			]
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "aliexpress.solution.order.info.get",
+	"apiChineseName": "get order detail info",
+	"description": "get order detail info",
+	"id": 42707
 }

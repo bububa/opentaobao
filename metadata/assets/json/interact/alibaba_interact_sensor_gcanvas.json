@@ -1,13 +1,13 @@
 {
-	"id": 23862,
-	"name": "alibaba.interact.sensor.gcanvas",
-	"apiChineseName": "gcanvas",
-	"description": "gcanvas 功能",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "result=0"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.gcanvas",
+	"apiChineseName": "gcanvas",
+	"description": "gcanvas 功能",
+	"id": 23862
 }

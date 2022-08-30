@@ -1,9 +1,10 @@
 {
-	"id": 39867,
-	"name": "alibaba.idle.item.media.add",
-	"apiChineseName": "图片上传",
-	"description": "上传图片",
 	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "废弃，不用再输入"
+		},
 		{
 			"name": "media_data",
 			"type": "byte[]",
@@ -15,44 +16,39 @@
 			"type": "Number",
 			"description": "类型：0 - 图片 ，仅支持图片",
 			"required": true
-		},
-		{
-			"name": "user_nick",
-			"type": "String",
-			"description": "废弃，不用再输入"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "EasyResultDto",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "data",
 					"type": "String",
-					"description": "上传成功的文件id",
-					"required": true
+					"description": "上传成功的文件id"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "成功与否",
-					"required": true
+					"description": "成功与否"
 				}
-			]
+			],
+			"name": "result",
+			"type": "EasyResultDto",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.idle.item.media.add",
+	"apiChineseName": "图片上传",
+	"description": "上传图片",
+	"id": 39867
 }

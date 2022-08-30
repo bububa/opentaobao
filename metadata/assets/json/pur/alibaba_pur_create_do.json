@@ -1,0 +1,341 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "contact_person",
+					"type": "String",
+					"description": "发货联系人"
+				},
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "delivery_date",
+					"type": "Date",
+					"description": "发货时间",
+					"required": true
+				},
+				{
+					"name": "delivery_type",
+					"type": "String",
+					"description": "配送类型"
+				},
+				{
+					"name": "distribution",
+					"type": "Boolean",
+					"description": "是否涉及配送"
+				},
+				{
+					"name": "ext_str",
+					"type": "String",
+					"description": "拓展字段"
+				},
+				{
+					"subParams": [
+						{
+							"name": "address_info",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "订单编号",
+							"required": true
+						},
+						{
+							"name": "biz_id",
+							"type": "String",
+							"description": "饿了么行id"
+						},
+						{
+							"name": "category_code",
+							"type": "String",
+							"description": "采购类目"
+						},
+						{
+							"name": "category_use",
+							"type": "String",
+							"description": "用途code"
+						},
+						{
+							"name": "company_code",
+							"type": "String",
+							"description": "公司code"
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "delivery_by_detail",
+							"type": "Boolean",
+							"description": "是否按明细"
+						},
+						{
+							"name": "delivery_unit",
+							"type": "String",
+							"description": "发运单位"
+						},
+						{
+							"name": "demander",
+							"type": "String",
+							"description": "实际需求方"
+						},
+						{
+							"name": "expense_month",
+							"type": "Date",
+							"description": "费用归属期间"
+						},
+						{
+							"name": "expense_month_end",
+							"type": "Date",
+							"description": "费用归属结束时间"
+						},
+						{
+							"name": "expense_month_start",
+							"type": "Date",
+							"description": "费用归属开始时间"
+						},
+						{
+							"name": "ext_str",
+							"type": "String",
+							"description": "拓展字段"
+						},
+						{
+							"name": "item_description",
+							"type": "String",
+							"description": "需求说明"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "订单行id",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "物品名称"
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "购买方式,如按数量,按金额"
+						},
+						{
+							"name": "phone_no",
+							"type": "String",
+							"description": "联系方式"
+						},
+						{
+							"name": "purchase_org_id",
+							"type": "Number",
+							"description": "组织id"
+						},
+						{
+							"name": "quantity_delivered",
+							"type": "String",
+							"description": "发货数量/金额",
+							"required": true
+						},
+						{
+							"name": "receive_unit",
+							"type": "String",
+							"description": "接收单位"
+						},
+						{
+							"name": "receiver",
+							"type": "String",
+							"description": "接收人"
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格属性"
+						},
+						{
+							"name": "settlement_date",
+							"type": "Date",
+							"description": "结算日期（结构化发货才需要）"
+						},
+						{
+							"name": "supplier_id",
+							"type": "Number",
+							"description": "供应商id"
+						},
+						{
+							"name": "tax_code",
+							"type": "String",
+							"description": "税码"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价"
+						},
+						{
+							"name": "uom",
+							"type": "String",
+							"description": "计价单位"
+						},
+						{
+							"name": "structure_item",
+							"type": "Json",
+							"description": "结构化信息"
+						}
+					],
+					"name": "list",
+					"type": "DeliveryItemTopDTO[]",
+					"description": "发货明细"
+				},
+				{
+					"name": "logistics_company",
+					"type": "String",
+					"description": "物流公司"
+				},
+				{
+					"name": "logistics_number",
+					"type": "String",
+					"description": "物流编号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "acceptance_material_list",
+							"type": "String[]",
+							"description": "验收材料"
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "订单单号"
+						},
+						{
+							"name": "invoice_file_list",
+							"type": "String[]",
+							"description": "电子发票"
+						},
+						{
+							"name": "tax_information_gst_list",
+							"type": "String[]",
+							"description": "gst"
+						},
+						{
+							"name": "tax_information_wht_list",
+							"type": "String[]",
+							"description": "wht"
+						}
+					],
+					"name": "material_information",
+					"type": "MaterialInformationTopDto[]",
+					"description": "验收材料/税务信息"
+				},
+				{
+					"name": "no_approval_required",
+					"type": "Boolean",
+					"description": "是否免审"
+				},
+				{
+					"name": "phone_no",
+					"type": "String",
+					"description": "联系方式"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "source_id",
+					"type": "String",
+					"description": "饿了么头id",
+					"required": true
+				},
+				{
+					"name": "source_type",
+					"type": "String",
+					"description": "来源"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户id"
+				}
+			],
+			"name": "delivery_top_d_t_o",
+			"type": "DeliveryTopDTO",
+			"description": "发货单"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "ext_str",
+					"type": "String",
+					"description": "拓展字段"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "发货单id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ext_str",
+							"type": "String",
+							"description": "拓展字段"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "饿了么行id"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "生成的发货行id"
+						}
+					],
+					"name": "id_relation_list",
+					"type": "RelationTopDto[]",
+					"description": "行映射关系"
+				},
+				{
+					"name": "number",
+					"type": "String",
+					"description": "发货单号"
+				}
+			],
+			"name": "content_list",
+			"type": "ResultTopDto []",
+			"description": "返回结果"
+		},
+		{
+			"name": "error_level",
+			"type": "Number",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.pur.create.do",
+	"apiChineseName": "top创建DO/RT接口",
+	"description": "创建发货单,先创建DO，异步创建RT",
+	"id": 61842
+}

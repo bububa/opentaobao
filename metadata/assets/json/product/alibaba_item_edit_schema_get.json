@@ -1,8 +1,4 @@
 {
-	"id": 53967,
-	"name": "alibaba.item.edit.schema.get",
-	"apiChineseName": "商品编辑获取schema信息",
-	"description": "商品编辑时，获取商品规则信息",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -28,5 +24,9 @@
 			"type": "String",
 			"description": "商品已有规则信息，XML格式."
 		}
-	]
+	],
+	"name": "alibaba.item.edit.schema.get",
+	"apiChineseName": "商品编辑获取schema信息",
+	"description": "商品编辑时，获取商品规则信息",
+	"id": 53967
 }

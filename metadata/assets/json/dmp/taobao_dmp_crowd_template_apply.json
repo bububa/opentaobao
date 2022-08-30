@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务线编码，引力魔方：displayDefault",
+					"required": true
+				}
+			],
+			"name": "api_context",
+			"type": "ApiContextDTO",
+			"description": "请求体",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "topic_id",
+					"type": "Number",
+					"description": "榜单id",
+					"required": true
+				},
+				{
+					"name": "context_params",
+					"type": "String",
+					"description": "算法推荐模版context"
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "模版id",
+					"required": true
+				}
+			],
+			"name": "template_context",
+			"type": "TemplateContextDTO",
+			"description": "采纳模版context"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "生成的人群id"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.dmp.crowd.template.apply",
+	"apiChineseName": "人群模版采纳并生成人群API",
+	"description": "人群模版采纳并生成人群API",
+	"id": 61645
+}

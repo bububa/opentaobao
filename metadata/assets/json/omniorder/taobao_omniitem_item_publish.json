@@ -1,13 +1,6 @@
 {
-	"id": 30890,
-	"name": "taobao.omniitem.item.publish",
-	"apiChineseName": "全渠道门店商品轻发布",
-	"description": "全渠道门店商品轻发布",
 	"requestParams": [
 		{
-			"name": "light_publish_info",
-			"type": "ItemLightPublishDto",
-			"description": "发布商品信息",
 			"subParams": [
 				{
 					"name": "barcode",
@@ -21,21 +14,27 @@
 					"required": true
 				},
 				{
+					"name": "desc",
+					"type": "String",
+					"description": "商品描述",
+					"required": true
+				},
+				{
 					"name": "extend_attr",
 					"type": "String",
 					"description": "扩展字段"
 				},
 				{
-					"name": "images",
-					"type": "ItemLightPublishImageDto[]",
-					"description": "商品图片，最少1张，最多5张",
 					"subParams": [
 						{
 							"name": "url",
 							"type": "String",
 							"description": "图片空间URL"
 						}
-					]
+					],
+					"name": "images",
+					"type": "ItemLightPublishImageDto[]",
+					"description": "商品图片，最少1张，最多5张"
 				},
 				{
 					"name": "operator",
@@ -59,10 +58,6 @@
 					"required": true
 				},
 				{
-					"name": "skus",
-					"type": "ItemLightPublishSkuDto[]",
-					"description": "sku信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "sku_barcode",
@@ -86,10 +81,6 @@
 							"required": true
 						},
 						{
-							"name": "sale_props",
-							"type": "ItemLightPublishSalePropDto[]",
-							"description": "sku销售属性",
-							"required": true,
 							"subParams": [
 								{
 									"name": "pid",
@@ -103,14 +94,22 @@
 									"description": "销售属性值",
 									"required": true
 								}
-							]
+							],
+							"name": "sale_props",
+							"type": "ItemLightPublishSalePropDto[]",
+							"description": "sku销售属性",
+							"required": true
 						},
 						{
 							"name": "sku_outer_id",
 							"type": "String",
 							"description": "sku商家编码"
 						}
-					]
+					],
+					"name": "skus",
+					"type": "ItemLightPublishSkuDto[]",
+					"description": "sku信息",
+					"required": true
 				},
 				{
 					"name": "subtitle",
@@ -123,14 +122,11 @@
 					"type": "String",
 					"description": "商品标题",
 					"required": true
-				},
-				{
-					"name": "desc",
-					"type": "String",
-					"description": "商品描述",
-					"required": true
 				}
-			]
+			],
+			"name": "light_publish_info",
+			"type": "ItemLightPublishDto",
+			"description": "发布商品信息"
 		},
 		{
 			"name": "operate_type",
@@ -141,125 +137,111 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
-					"name": "data",
-					"type": "ItemLightPublishResult",
-					"description": "data",
-					"required": true,
 					"subParams": [
 						{
-							"name": "item_id",
-							"type": "Number",
-							"description": "新建的itemId",
-							"required": true
-						},
-						{
-							"name": "sku_ids",
-							"type": "Json",
-							"description": "新建的skuId信息，json格式的map，key为新建的skuId，value为入参对应的outerId和barcode",
-							"required": true
-						},
-						{
-							"name": "duplicate_infos",
-							"type": "ItemSkuDuplicateInfo[]",
-							"description": "重复商品信息",
-							"required": true,
 							"subParams": [
 								{
 									"name": "barcode",
 									"type": "String",
-									"description": "barcode",
-									"required": true
+									"description": "barcode"
 								},
 								{
-									"name": "duplicate_details",
-									"type": "ItemSkuDuplicateDetail[]",
-									"description": "重复商品详情列表，如果重复商品过多，目前只展示部分",
-									"required": true,
 									"subParams": [
 										{
 											"name": "barcode",
 											"type": "String",
-											"description": "barcode",
-											"required": true
+											"description": "barcode"
 										},
 										{
 											"name": "item_id",
 											"type": "Number",
-											"description": "itemId",
-											"required": true
+											"description": "itemId"
 										},
 										{
 											"name": "outer_id",
 											"type": "String",
-											"description": "outerId",
-											"required": true
+											"description": "outerId"
 										},
 										{
 											"name": "sku_barcode",
 											"type": "String",
-											"description": "skuBarcode",
-											"required": true
+											"description": "skuBarcode"
 										},
 										{
 											"name": "sku_id",
 											"type": "Number",
-											"description": "skuId",
-											"required": true
+											"description": "skuId"
 										},
 										{
 											"name": "sku_outer_id",
 											"type": "String",
-											"description": "skuOuterId",
-											"required": true
+											"description": "skuOuterId"
 										}
-									]
+									],
+									"name": "duplicate_details",
+									"type": "ItemSkuDuplicateDetail[]",
+									"description": "重复商品详情列表，如果重复商品过多，目前只展示部分"
 								},
 								{
 									"name": "duplicate_size",
 									"type": "Number",
-									"description": "duplicateSize",
-									"required": true
+									"description": "duplicateSize"
 								},
 								{
 									"name": "outer_id",
 									"type": "String",
-									"description": "outerId",
-									"required": true
+									"description": "outerId"
 								},
 								{
 									"name": "sku_barcode",
 									"type": "String",
-									"description": "skuBarcode",
-									"required": true
+									"description": "skuBarcode"
 								},
 								{
 									"name": "sku_outer_id",
 									"type": "String",
-									"description": "skuOuterId",
-									"required": true
+									"description": "skuOuterId"
 								}
-							]
+							],
+							"name": "duplicate_infos",
+							"type": "ItemSkuDuplicateInfo[]",
+							"description": "重复商品信息"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "新建的itemId"
+						},
+						{
+							"name": "sku_ids",
+							"type": "String",
+							"description": "新建的skuId信息，json格式的map，key为新建的skuId，value为入参对应的outerId和barcode"
 						}
-					]
+					],
+					"name": "data",
+					"type": "ItemLightPublishResult",
+					"description": "data"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ItemLightPublishResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "taobao.omniitem.item.publish",
+	"apiChineseName": "全渠道门店商品轻发布",
+	"description": "全渠道门店商品轻发布",
+	"id": 30890
 }

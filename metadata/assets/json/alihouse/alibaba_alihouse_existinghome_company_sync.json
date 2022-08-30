@@ -1,0 +1,152 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "company_logo",
+					"type": "String",
+					"description": "公司logo"
+				},
+				{
+					"name": "company_license_status",
+					"type": "Number",
+					"description": "是否长期有效 1-是 0-否"
+				},
+				{
+					"name": "company_license_expire_time",
+					"type": "String",
+					"description": "营业执照过期时间"
+				},
+				{
+					"name": "company_license_photo",
+					"type": "String",
+					"description": "营业执照图片",
+					"required": true
+				},
+				{
+					"name": "company_legal_person",
+					"type": "String",
+					"description": "法定代表人",
+					"required": true
+				},
+				{
+					"name": "company_license_no",
+					"type": "String",
+					"description": "营业执照编号",
+					"required": true
+				},
+				{
+					"name": "company_name_short",
+					"type": "String",
+					"description": "公司简称",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "外部公司ID",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否删除 1-是 0-否"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址",
+					"required": true
+				},
+				{
+					"name": "gaode_latitude",
+					"type": "String",
+					"description": "高德纬度",
+					"required": true
+				},
+				{
+					"name": "gaode_longitude",
+					"type": "String",
+					"description": "高德经度",
+					"required": true
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系电话",
+					"required": true
+				},
+				{
+					"name": "contact_man",
+					"type": "String",
+					"description": "联系人",
+					"required": true
+				},
+				{
+					"name": "company_certificate_photo",
+					"type": "String",
+					"description": "备案证明图片"
+				},
+				{
+					"name": "company_certificate_no",
+					"type": "String",
+					"description": "备案证明编号"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试 0-否 1-是"
+				}
+			],
+			"name": "company_dto",
+			"type": "CompanyDto",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.company.sync",
+	"apiChineseName": "二手房公司同步接口",
+	"description": "二手房公司同步接口",
+	"id": 56778
+}

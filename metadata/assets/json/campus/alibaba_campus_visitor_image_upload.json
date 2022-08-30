@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id"
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id"
+		},
+		{
+			"name": "none_string",
+			"type": "String",
+			"description": "无意义参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "String",
+					"description": "内容"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "出参"
+		}
+	],
+	"name": "alibaba.campus.visitor.image.upload",
+	"apiChineseName": "访客大厅图片上传及查看",
+	"description": "访客大厅图片上传及查看",
+	"id": 63588
+}

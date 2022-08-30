@@ -4,7 +4,7 @@ package aesolution
 type PostProductRequestDto struct {
 	// marketing images for product. Currently supported 2 types: 1 represents 3:4 rectangle(resolution at least 750*1000) image while 2 represents 1:1 square image(Resolution at least 800*800). The image url needs to be obtained via uploading the image through Aliexpress API: aliexpress.photobank.redefining.uploadimageforsdk(https://developers.aliexpress.com/en/doc.htm?docId=30186&docType=2)
 	MarketingImages []MarketImageDto `json:"marketing_images,omitempty" xml:"marketing_images>market_image_dto,omitempty"`
-	// Main image that represents the product. The url should be accesible and there is a meximum of 6 pictures. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186&docType=2
+	// Main image that represents the product. The url should be accesible and there is a maximum of 6 pictures. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186&docType=2
 	MainImageUrlsList []string `json:"main_image_urls_list,omitempty" xml:"main_image_urls_list>string,omitempty"`
 	// There are 4 types of how to fill in the content of each element in this attribute list. 1). When filling in the standard dropdown/multi-dropdown attributes, fill in "aliexpress_attribute_name_id" and "aliexpress_attribute_value_id"(For multi-dropdown, splitting them into multiple elements) 2). When filling in the attributes in which the value needs to be manually entered, fill in "aliexpress_attribute_name_id" and "attribute_value" in the element. 3). There exists a special kind of "aliexpress_attribute_value_id" of which the value represents for "Other". When encoutering this scenario, please fill in "aliexpress_attribute_name_id", "aliexpress_attribute_value_id" and "attribute_value". 4). Besides the three types mentioned above, if the seller would like to fully customized all the atttributes, fill in "attribute name" and "attribute_value" in the element.
 	AttributeList []AttributeDto `json:"attribute_list,omitempty" xml:"attribute_list>attribute_dto,omitempty"`
@@ -16,6 +16,8 @@ type PostProductRequestDto struct {
 	MultiLanguageDescriptionList []SingleLanguageDescriptionDto `json:"multi_language_description_list,omitempty" xml:"multi_language_description_list>single_language_description_dto,omitempty"`
 	// extra params. Configured some special products
 	ExtraParams string `json:"extra_params,omitempty" xml:"extra_params,omitempty"`
+	// More information about the request.
+	DeveloperFeatures string `json:"developer_features,omitempty" xml:"developer_features,omitempty"`
 	// Deprecated. Please use aliexpress_category_id
 	CategoryId string `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// merchant's brand name
@@ -24,7 +26,7 @@ type PostProductRequestDto struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// indicate when the inventory of a specific product will be deducted. place_order_withhold: the inventory is deducted just after the order is placed by customer. payment_success_deduct: the stock is deducted after the payment is done successfully by the customer.
 	InventoryDeductionStrategy string `json:"inventory_deduction_strategy,omitempty" xml:"inventory_deduction_strategy,omitempty"`
-	// Deprecated. Please use  multi_language_subject_list. 1-128 length, support multi language. Check the field "language" to find the supported languages.
+	// Deprecated. Please use  multi_language_subject_list. 1-218 length, support multi language. Check the field "language" to find the supported languages.
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// Deprecated, please use product description, support html format and multi languages. Check the field language to find the supported languages.
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
@@ -36,11 +38,11 @@ type PostProductRequestDto struct {
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
 	// Aliexpress leaf category ID obtained through https://developers.aliexpress.com/en/doc.htm?docId=46042&docType=2
 	AliexpressCategoryId int64 `json:"aliexpress_category_id,omitempty" xml:"aliexpress_category_id,omitempty"`
-	// Package height measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
+	// Package height measured in centimeters (cm). Maximum 700 cm, minumum: 1cm
 	PackageHeight int64 `json:"package_height,omitempty" xml:"package_height,omitempty"`
-	// Package length, measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
+	// Package length, measured in centimeters (cm). Maximum 700 cm, minumum: 1cm
 	PackageLength int64 `json:"package_length,omitempty" xml:"package_length,omitempty"`
-	// Package width measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
+	// Package width measured in centimeters (cm). Maximum 700 cm, minumum: 1cm
 	PackageWidth int64 `json:"package_width,omitempty" xml:"package_width,omitempty"`
 	// multi country price configuration
 	MultiCountryPriceConfiguration *MultiCountryPriceConfigurationDto `json:"multi_country_price_configuration,omitempty" xml:"multi_country_price_configuration,omitempty"`

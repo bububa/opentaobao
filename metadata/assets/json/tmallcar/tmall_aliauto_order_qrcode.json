@@ -1,0 +1,42 @@
+{
+	"requestParams": [
+		{
+			"name": "item_and_sku_num_list",
+			"type": "String",
+			"description": "商品id和数量组合列表"
+		},
+		{
+			"name": "outer_shop_id",
+			"type": "String",
+			"description": "门店自定义编码"
+		},
+		{
+			"name": "receipt_id",
+			"type": "Number",
+			"description": "工单id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "附加参数"
+				},
+				{
+					"name": "qr_code_img_url",
+					"type": "String",
+					"description": "确认订单页二维码"
+				}
+			],
+			"name": "data",
+			"type": "ConfirmOrderQrCode4IsvDto",
+			"description": "返回的数据实体"
+		}
+	],
+	"name": "tmall.aliauto.order.qrcode",
+	"apiChineseName": "根据商品id列表获取可扫描下单二维码",
+	"description": "根据商品id列表获取可扫描下单二维码",
+	"id": 57210
+}

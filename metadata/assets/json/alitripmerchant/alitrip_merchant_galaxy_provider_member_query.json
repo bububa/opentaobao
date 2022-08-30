@@ -1,8 +1,4 @@
 {
-	"id": 56612,
-	"name": "alitrip.merchant.galaxy.provider.member.query",
-	"apiChineseName": "提供会员查询接口",
-	"description": "星河产品=提供会查询服务",
 	"requestParams": [
 		{
 			"name": "tenant_key",
@@ -11,10 +7,6 @@
 			"required": true
 		},
 		{
-			"name": "query_member_param",
-			"type": "QueryMemberParam",
-			"description": "查询参数",
-			"required": true,
 			"subParams": [
 				{
 					"name": "signature",
@@ -36,72 +28,71 @@
 					"type": "String",
 					"description": "应用id"
 				}
-			]
+			],
+			"name": "query_member_param",
+			"type": "QueryMemberParam",
+			"description": "查询参数",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Response",
-			"description": "默认描述",
 			"subParams": [
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
-					"name": "provider_member_vo",
-					"type": "ProviderMemberVo",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "card_type",
 							"type": "String",
-							"description": "卡类型",
-							"required": true
+							"description": "卡类型"
 						},
 						{
 							"name": "card_tier",
 							"type": "String",
-							"description": "卡等级",
-							"required": true
+							"description": "卡等级"
 						},
 						{
 							"name": "card_number",
 							"type": "String",
-							"description": "卡号",
-							"required": true
+							"description": "卡号"
 						},
 						{
 							"name": "member_id",
 							"type": "String",
-							"description": "会员id",
-							"required": true
+							"description": "会员id"
 						},
 						{
 							"name": "register_type",
 							"type": "String",
-							"description": "注册类型",
-							"required": true
+							"description": "注册类型"
 						}
-					]
+					],
+					"name": "provider_member_vo",
+					"type": "ProviderMemberVo",
+					"description": "返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
 		}
-	]
+	],
+	"name": "alitrip.merchant.galaxy.provider.member.query",
+	"apiChineseName": "提供会员查询接口",
+	"description": "星河产品=提供会查询服务",
+	"id": 56612
 }

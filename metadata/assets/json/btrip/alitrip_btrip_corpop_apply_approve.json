@@ -1,13 +1,6 @@
 {
-	"id": 53592,
-	"name": "alitrip.btrip.corpop.apply.approve",
-	"apiChineseName": "【商旅】更新审批单状态",
-	"description": "【商旅】更新审批单状态",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenApiUpdateApplyRq",
-			"description": "请求对象",
 			"subParams": [
 				{
 					"name": "thirdpart_apply_id",
@@ -55,7 +48,10 @@
 					"description": "1、老版本2、isv对外版本",
 					"required": true
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenApiUpdateApplyRq",
+			"description": "请求对象"
 		}
 	],
 	"responseParams": [
@@ -79,5 +75,9 @@
 			"type": "Boolean",
 			"description": "成功标识"
 		}
-	]
+	],
+	"name": "alitrip.btrip.corpop.apply.approve",
+	"apiChineseName": "【商旅】更新审批单状态",
+	"description": "【商旅】更新审批单状态",
+	"id": 53592
 }

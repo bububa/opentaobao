@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "经销商子订单id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区名称"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "市名称"
+						},
+						{
+							"name": "complete_address",
+							"type": "String",
+							"description": "完整地址"
+						},
+						{
+							"name": "consignee_full_name",
+							"type": "String",
+							"description": "收件人"
+						},
+						{
+							"name": "contact_id",
+							"type": "Number",
+							"description": "地址id"
+						},
+						{
+							"name": "division_code",
+							"type": "Number",
+							"description": "区code"
+						},
+						{
+							"name": "fixed_phone",
+							"type": "String",
+							"description": "固定电话"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "移动电话"
+						},
+						{
+							"name": "post_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省名称"
+						}
+					],
+					"name": "data",
+					"type": "ScbRefundAddressDTO",
+					"description": "经销商订单退货地址"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "经销商订单退货地址"
+		}
+	],
+	"name": "taobao.omni.dealer.oders.refund.address",
+	"apiChineseName": "经销商查询逆向退货地址",
+	"description": "经销商查询逆向退货地址",
+	"id": 63525
+}

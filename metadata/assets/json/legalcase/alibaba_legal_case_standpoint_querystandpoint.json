@@ -1,0 +1,113 @@
+{
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "口径搜索关键字"
+		},
+		{
+			"name": "supplier_id",
+			"type": "String",
+			"description": "供应商id"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页"
+						},
+						{
+							"subParams": [
+								{
+									"name": "defense_caliber",
+									"type": "String",
+									"description": "答辩口径"
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "生成时间"
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "口径id"
+								},
+								{
+									"subParams": [
+										{
+											"name": "title",
+											"type": "String",
+											"description": "标题值"
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "属性值"
+										}
+									],
+									"name": "options",
+									"type": "Option[]",
+									"description": "扩展属性列表"
+								},
+								{
+									"name": "standpoint_desc",
+									"type": "String",
+									"description": "口径描述"
+								}
+							],
+							"name": "datas",
+							"type": "StandpointSearchDto[]",
+							"description": "返回列表"
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数"
+						}
+					],
+					"name": "content",
+					"type": "Page",
+					"description": "返回内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.legal.case.standpoint.querystandpoint",
+	"apiChineseName": "主动查询口径",
+	"description": "为法宝侧提供主动查询口径功能,有利于规范外部律师答辩口径.",
+	"id": 57792
+}

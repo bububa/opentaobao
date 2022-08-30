@@ -1,8 +1,4 @@
 {
-	"id": 32435,
-	"name": "taobao.tmallgenie.hotelplayerpause",
-	"apiChineseName": "天猫精灵酒店播放暂停",
-	"description": "酒店推送指令给天猫精灵停止播放音乐",
 	"requestParams": [
 		{
 			"name": "room_no",
@@ -26,5 +22,9 @@
 			"type": "String",
 			"description": "message"
 		}
-	]
+	],
+	"name": "taobao.tmallgenie.hotelplayerpause",
+	"apiChineseName": "天猫精灵酒店播放暂停",
+	"description": "酒店推送指令给天猫精灵停止播放音乐",
+	"id": 32435
 }

@@ -1,8 +1,4 @@
 {
-	"id": 53414,
-	"name": "taobao.jst.miniapp.crowd.create",
-	"apiChineseName": "小程序活动创建",
-	"description": "小程序活动创建",
 	"requestParams": [
 		{
 			"name": "end_date",
@@ -40,5 +36,9 @@
 			"type": "Number",
 			"description": "状态码"
 		}
-	]
+	],
+	"name": "taobao.jst.miniapp.crowd.create",
+	"apiChineseName": "小程序活动创建",
+	"description": "小程序活动创建",
+	"id": 53414
 }

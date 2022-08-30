@@ -18,6 +18,8 @@ type TmallPromotionCouponQueryAPIRequest struct {
 	_buyerId string
 	// buyer_id、buyer_nick至少填一个， 都填写以id为准
 	_buyerNick string
+	// 扩展字段
+	_extra string
 }
 
 // NewTmallPromotionCouponQueryRequest 初始化TmallPromotionCouponQueryAPIRequest对象
@@ -78,4 +80,17 @@ func (r *TmallPromotionCouponQueryAPIRequest) SetBuyerNick(_buyerNick string) er
 // GetBuyerNick BuyerNick Getter
 func (r TmallPromotionCouponQueryAPIRequest) GetBuyerNick() string {
 	return r._buyerNick
+}
+
+// SetExtra is Extra Setter
+// 扩展字段
+func (r *TmallPromotionCouponQueryAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r TmallPromotionCouponQueryAPIRequest) GetExtra() string {
+	return r._extra
 }

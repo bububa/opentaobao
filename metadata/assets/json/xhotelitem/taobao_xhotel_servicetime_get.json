@@ -1,8 +1,4 @@
 {
-	"id": 39194,
-	"name": "taobao.xhotel.servicetime.get",
-	"apiChineseName": "查询实体对应的服务时间数据",
-	"description": "通过实体来获取对应的服务时间数据",
 	"requestParams": [
 		{
 			"name": "hid",
@@ -13,175 +9,152 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultSet",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "results",
-					"type": "Json[]",
-					"description": "results",
-					"required": true
-				},
-				{
-					"name": "total_results",
-					"type": "Number",
-					"description": "totalResults",
-					"required": true
-				},
-				{
-					"name": "has_next",
-					"type": "Boolean",
-					"description": "hasNext",
-					"required": true
-				},
-				{
-					"name": "exception",
-					"type": "Json",
-					"description": "exception",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "errorCode",
-					"required": true
-				},
-				{
-					"name": "warn_message",
-					"type": "String",
-					"description": "warnMessage",
-					"required": true
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "errorMsg",
-					"required": true
-				},
-				{
-					"name": "first_results",
-					"type": "ServiceTimeDataDo[]",
-					"description": "firstResult",
-					"required": true,
 					"subParams": [
 						{
 							"name": "supplier",
 							"type": "String",
-							"description": "supplier",
-							"required": true
+							"description": "supplier"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "卖家nick",
-							"required": true
+							"description": "卖家nick"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家id",
-							"required": true
+							"description": "卖家id"
 						},
 						{
 							"name": "business_type",
 							"type": "String",
-							"description": "业务类型：1卖家；2supplier;3酒店",
-							"required": true
+							"description": "业务类型：1卖家；2supplier;3酒店"
 						},
 						{
 							"name": "business_id",
 							"type": "Number",
-							"description": "业务id",
-							"required": true
+							"description": "业务id"
 						},
 						{
 							"name": "time_zone_name",
 							"type": "String",
-							"description": "timeZoneName",
-							"required": true
+							"description": "timeZoneName"
 						},
 						{
 							"name": "order_confirm_type",
 							"type": "Number",
-							"description": "1: 当日订单, 2:次日及以后订单",
-							"required": true
+							"description": "1: 当日订单, 2:次日及以后订单"
 						},
 						{
 							"name": "display_item_in_nonworking_time",
 							"type": "Number",
-							"description": "是否在非工作时间显示商品 1:显示, 2:不显示",
-							"required": true
+							"description": "是否在非工作时间显示商品 1:显示, 2:不显示"
 						},
 						{
 							"name": "friday_confirm_local_time",
 							"type": "String",
-							"description": "周五服务时间（当地时间）",
-							"required": true
+							"description": "周五服务时间（当地时间）"
 						},
 						{
 							"name": "monday_confirm_local_time",
 							"type": "String",
-							"description": "周一服务时间（当地时间）",
-							"required": true
+							"description": "周一服务时间（当地时间）"
 						},
 						{
 							"name": "tuesday_confirm_local_time",
 							"type": "String",
-							"description": "周二服务时间（当地时间）",
-							"required": true
+							"description": "周二服务时间（当地时间）"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "id",
-							"required": true
+							"description": "id"
 						},
 						{
 							"name": "wednesday_confirm_local_time",
 							"type": "String",
-							"description": "周三服务时间（当地时间）",
-							"required": true
+							"description": "周三服务时间（当地时间）"
 						},
 						{
 							"name": "saturday_confirm_local_time",
 							"type": "String",
-							"description": "周六服务时间（当地时间）",
-							"required": true
+							"description": "周六服务时间（当地时间）"
 						},
 						{
 							"name": "operator",
 							"type": "String",
-							"description": "operator",
-							"required": true
+							"description": "operator"
 						},
 						{
 							"name": "sunday_confirm_local_time",
 							"type": "String",
-							"description": "周日服务时间（当地时间）",
-							"required": true
+							"description": "周日服务时间（当地时间）"
 						},
 						{
 							"name": "thursday_confirm_local_time",
 							"type": "String",
-							"description": "周四服务时间（当地时间）",
-							"required": true
+							"description": "周四服务时间（当地时间）"
 						},
 						{
 							"name": "gmt_create",
-							"type": "Json",
-							"description": "创建时间",
-							"required": true
+							"type": "String",
+							"description": "创建时间"
 						},
 						{
 							"name": "gmt_modified",
-							"type": "Json",
-							"description": "最后修改时间",
-							"required": true
+							"type": "String",
+							"description": "最后修改时间"
 						}
-					]
+					],
+					"name": "first_results",
+					"type": "ServiceTimeDataDo[]",
+					"description": "firstResult"
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "totalResults"
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "hasNext"
+				},
+				{
+					"name": "exception",
+					"type": "String",
+					"description": "exception"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode"
+				},
+				{
+					"name": "warn_message",
+					"type": "String",
+					"description": "warnMessage"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg"
+				},
+				{
+					"name": "results",
+					"type": "String[]",
+					"description": "results"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.xhotel.servicetime.get",
+	"apiChineseName": "查询实体对应的服务时间数据",
+	"description": "通过实体来获取对应的服务时间数据",
+	"id": 39194
 }

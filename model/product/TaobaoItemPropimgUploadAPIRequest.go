@@ -16,12 +16,12 @@ type TaobaoItemPropimgUploadAPIRequest struct {
 	_properties string
 	// 商品数字ID，必选
 	_numIid int64
-	// 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-	_image *model.File
 	// 属性图片ID。如果是新增不需要填写
 	_id int64
 	// 图片位置
 	_position int64
+	// 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
+	_image *model.File
 }
 
 // NewTaobaoItemPropimgUploadRequest 初始化TaobaoItemPropimgUploadAPIRequest对象
@@ -71,19 +71,6 @@ func (r TaobaoItemPropimgUploadAPIRequest) GetNumIid() int64 {
 	return r._numIid
 }
 
-// SetImage is Image Setter
-// 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-func (r *TaobaoItemPropimgUploadAPIRequest) SetImage(_image *model.File) error {
-	r._image = _image
-	r.Set("image", _image)
-	return nil
-}
-
-// GetImage Image Getter
-func (r TaobaoItemPropimgUploadAPIRequest) GetImage() *model.File {
-	return r._image
-}
-
 // SetId is Id Setter
 // 属性图片ID。如果是新增不需要填写
 func (r *TaobaoItemPropimgUploadAPIRequest) SetId(_id int64) error {
@@ -108,4 +95,17 @@ func (r *TaobaoItemPropimgUploadAPIRequest) SetPosition(_position int64) error {
 // GetPosition Position Getter
 func (r TaobaoItemPropimgUploadAPIRequest) GetPosition() int64 {
 	return r._position
+}
+
+// SetImage is Image Setter
+// 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
+func (r *TaobaoItemPropimgUploadAPIRequest) SetImage(_image *model.File) error {
+	r._image = _image
+	r.Set("image", _image)
+	return nil
+}
+
+// GetImage Image Getter
+func (r TaobaoItemPropimgUploadAPIRequest) GetImage() *model.File {
+	return r._image
 }

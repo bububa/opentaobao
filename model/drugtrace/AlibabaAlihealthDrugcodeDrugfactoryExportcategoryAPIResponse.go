@@ -22,8 +22,8 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportcategoryAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 导出的药品目录
 	Model []ProductDto `json:"model,omitempty" xml:"model>product_dto,omitempty"`
-	// 操作码
-	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 操作说明
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	// 操作码
+	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 }

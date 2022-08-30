@@ -1,0 +1,192 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "is_open_pos",
+					"type": "Number",
+					"description": "是否开通POS 1-是 0-否",
+					"required": true
+				},
+				{
+					"name": "agreement_id",
+					"type": "Number",
+					"description": "协议ID",
+					"required": true
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "主体ID",
+					"required": true
+				},
+				{
+					"name": "settlement_type",
+					"type": "Number",
+					"description": "结算类型",
+					"required": true
+				},
+				{
+					"name": "discount_valid_time",
+					"type": "String",
+					"description": "优惠时间",
+					"required": true
+				},
+				{
+					"name": "discount_mode",
+					"type": "Number",
+					"description": "优惠模式",
+					"required": true
+				},
+				{
+					"name": "discount_time_type",
+					"type": "Number",
+					"description": "优惠时间类型",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘ID",
+					"required": true
+				},
+				{
+					"name": "outer_activity_id",
+					"type": "String",
+					"description": "外部活动ID",
+					"required": true
+				},
+				{
+					"name": "signature_id",
+					"type": "Number",
+					"description": "签章ID",
+					"required": true
+				},
+				{
+					"name": "settle_id",
+					"type": "Number",
+					"description": "结算账户ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "ratio",
+							"type": "String",
+							"description": "比例",
+							"required": true
+						},
+						{
+							"name": "account_contact_line",
+							"type": "String",
+							"description": "联行号",
+							"required": true
+						},
+						{
+							"name": "account_bank_name",
+							"type": "String",
+							"description": "开户行名称",
+							"required": true
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "银行账号",
+							"required": true
+						},
+						{
+							"name": "account_name",
+							"type": "String",
+							"description": "账户名",
+							"required": true
+						},
+						{
+							"name": "outer_division_id",
+							"type": "String",
+							"description": "外部分账ID",
+							"required": true
+						},
+						{
+							"name": "account_type",
+							"type": "String",
+							"description": "账户类型",
+							"required": true
+						}
+					],
+					"name": "account_division_list",
+					"type": "AccountDivisionRuleDto[]",
+					"description": "分账数据"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "is_confirm_guest",
+					"type": "Number",
+					"description": "是否确客"
+				},
+				{
+					"name": "contact",
+					"type": "String",
+					"description": "小二联系方式"
+				}
+			],
+			"name": "business_activity_data_dto",
+			"type": "BusinessActivityDataDto",
+			"description": "数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "主体ID"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.project.activity.sync",
+	"apiChineseName": "电商券数据同步",
+	"description": "电商券数据同步",
+	"id": 58598
+}

@@ -1,8 +1,4 @@
 {
-	"id": 56171,
-	"name": "taobao.recycle.ofnpreredpacket.tpdeductsuccess",
-	"apiChineseName": "回收商同步前置补贴红包的代扣成功事件",
-	"description": "回收商-\u003e天猫后端，同步前置补贴红包的代扣成功事件",
 	"requestParams": [
 		{
 			"name": "deduct_amount",
@@ -17,61 +13,57 @@
 	],
 	"responseParams": [
 		{
-			"name": "data",
-			"type": "OfnPreRedPacketActionDTO",
-			"description": "操作",
 			"subParams": [
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "状态。初始化=1，重试中=2，失败=3，成功=4",
-					"required": true
+					"description": "状态。初始化=1，重试中=2，失败=3，成功=4"
 				},
 				{
 					"name": "action_type",
 					"type": "Number",
-					"description": "操作类型。1=天猫发预付红包；2=天猫发尾款红包；3=天猫扣回红包；4=回收商扣回红包",
-					"required": true
+					"description": "操作类型。1=天猫发预付红包；2=天猫发尾款红包；3=天猫扣回红包；4=回收商扣回红包"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "修改时间",
-					"required": true
+					"description": "修改时间"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "主键",
-					"required": true
+					"description": "主键"
 				},
 				{
-					"name": "after_fund_record_list",
-					"type": "OfnPreRedPacketFundRecordDto[]",
-					"description": "资金池的记录",
-					"required": true,
 					"subParams": [
 						{
 							"name": "change_amount",
 							"type": "Number",
-							"description": "资产编号",
-							"required": true
+							"description": "资产编号"
 						},
 						{
 							"name": "fund_id",
 							"type": "Number",
-							"description": "变化金额",
-							"required": true
+							"description": "变化金额"
 						}
-					]
+					],
+					"name": "after_fund_record_list",
+					"type": "OfnPreRedPacketFundRecordDto[]",
+					"description": "资金池的记录"
 				}
-			]
+			],
+			"name": "data",
+			"type": "OfnPreRedPacketActionDTO",
+			"description": "操作"
 		}
-	]
+	],
+	"name": "taobao.recycle.ofnpreredpacket.tpdeductsuccess",
+	"apiChineseName": "回收商同步前置补贴红包的代扣成功事件",
+	"description": "回收商-\u003e天猫后端，同步前置补贴红包的代扣成功事件",
+	"id": 56171
 }

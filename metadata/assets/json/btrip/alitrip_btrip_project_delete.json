@@ -1,14 +1,6 @@
 {
-	"id": 53608,
-	"name": "alitrip.btrip.project.delete",
-	"apiChineseName": "删除项目",
-	"description": "删除项目",
 	"requestParams": [
 		{
-			"name": "rq",
-			"type": "OpenProjectRq",
-			"description": "请求对象",
-			"required": true,
 			"subParams": [
 				{
 					"name": "corp_id",
@@ -27,7 +19,11 @@
 					"type": "Number",
 					"description": "商旅开放平台传2"
 				}
-			]
+			],
+			"name": "rq",
+			"type": "OpenProjectRq",
+			"description": "请求对象",
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -46,5 +42,9 @@
 			"type": "String",
 			"description": "结果信息"
 		}
-	]
+	],
+	"name": "alitrip.btrip.project.delete",
+	"apiChineseName": "删除项目",
+	"description": "删除项目",
+	"id": 53608
 }

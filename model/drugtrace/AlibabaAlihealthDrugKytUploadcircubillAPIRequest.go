@@ -15,7 +15,7 @@ type AlibabaAlihealthDrugKytUploadcircubillAPIRequest struct {
 	model.Params
 	// 单据编号【同一个企业不能上传相同单据号】
 	_billCode string
-	// 单据时间（扫码时间）
+	// 单据时间（扫码时间、出入库时间）
 	_billTime string
 	// 货主企业（单据的所有者，上传人）【注意：该入参是ref_ent_id，不是ent_id】
 	_refUserId string
@@ -33,43 +33,43 @@ type AlibabaAlihealthDrugKytUploadcircubillAPIRequest struct {
 	_operIcName string
 	// 单据文件体【bas64字符串】，看对接文档中的代码示例，示例中有相应说明。
 	_fileContent string
-	// 单据名称
+	// 单据文件名
 	_uploadFileName string
 	// 客户端类型【暂定都写2】
 	_clientType string
-	// （协同平台数据合规）是否验证，0：未通过验证，1：已验证
-	_xtIsCheck string
-	// （协同平台数据合规）未验证通过原因【验证未通过时填写】
-	_xtCheckCode string
-	// （协同平台数据合规）未验证通过原因描述【验证未通过时填写】
-	_xtCheckCodeDesc string
-	// （协同平台数据合规）药品列表Json："codeCount":         药品数量 "commDrugId":     国家药品唯一标识 "exprieDate":         生产日期 "physicInfo":          药品信息 "pkgSpec":           包状规格 "prepnCount":       制剂数量 "produceBatchNo":生产批次 "produceDate":      生产日期
-	_drugListJson string
-	// （协同平台数据合规）单据委托企业refEntId
-	_assRefEntId string
-	// （协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】
-	_disEntId string
-	// （协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】
-	_disRefEntId string
-	// （协同平台数据合规）收货人【必选】
-	_toPerson string
-	// （协同平台数据合规）发货人【必选】
-	_fromPerson string
-	// （协同平台数据合规）订货单编号【可选】
-	_orderCode string
-	// （协同平台数据合规）发货单编号【必选】
-	_fromBillCode string
-	// （协同平台数据合规）收货地址【必选】
-	_toAddress string
-	// （协同平台数据合规）发货地址【必选】
+	// 发货地址【必选】
 	_fromAddress string
-	// （协同平台数据合规）单据委托企业entId
+	// 收货地址【必选】
+	_toAddress string
+	// 发货单编号【必选】
+	_fromBillCode string
+	// 订货单编号【可选】
+	_orderCode string
+	// 发货人【特药时必选】
+	_fromPerson string
+	// 收货人【特药时必选】
+	_toPerson string
+	// 药品配送企业【填写 ref_ent_Id，与dis_ent_id属性选填一个就行】
+	_disRefEntId string
+	// 药品配送企业【填写 ent_Id】
+	_disEntId string
+	// 是否验证，0：未通过验证，1：已验证
+	_xtIsCheck string
+	// 未验证通过原因【验证未通过时填写】
+	_xtCheckCode string
+	// 未验证通过原因描述【验证未通过时填写】
+	_xtCheckCodeDesc string
+	// 药品列表【可不填写，不填写时会通过码进行计算】Json："codeCount":         药品数量 "commDrugId":     国家药品唯一标识 "exprieDate":         生产日期 "physicInfo":          药品信息 "pkgSpec":           包状规格 "prepnCount":       制剂数量 "produceBatchNo":生产批次 "produceDate":      生产日期
+	_drugListJson string
+	// 单据委托企业【填写 ref_ent_Id，与ass_ent_id属性选填一个就行】
+	_assRefEntId string
+	// 单据委托企业【填写 ent_Id】
 	_assEntId string
 	// 单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】
 	_billType int64
-	// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
+	// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药【可以随便填写，单据上传后会以实际为准】
 	_physicType int64
-	// （协同平台数据合规）应收货总数量
+	// 应收货总数量
 	_quReceivable int64
 }
 
@@ -108,7 +108,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetBillCode() string {
 }
 
 // SetBillTime is BillTime Setter
-// 单据时间（扫码时间）
+// 单据时间（扫码时间、出入库时间）
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetBillTime(_billTime string) error {
 	r._billTime = _billTime
 	r.Set("bill_time", _billTime)
@@ -225,7 +225,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFileContent() strin
 }
 
 // SetUploadFileName is UploadFileName Setter
-// 单据名称
+// 单据文件名
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetUploadFileName(_uploadFileName string) error {
 	r._uploadFileName = _uploadFileName
 	r.Set("upload_file_name", _uploadFileName)
@@ -250,8 +250,112 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetClientType() string
 	return r._clientType
 }
 
+// SetFromAddress is FromAddress Setter
+// 发货地址【必选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromAddress(_fromAddress string) error {
+	r._fromAddress = _fromAddress
+	r.Set("from_address", _fromAddress)
+	return nil
+}
+
+// GetFromAddress FromAddress Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromAddress() string {
+	return r._fromAddress
+}
+
+// SetToAddress is ToAddress Setter
+// 收货地址【必选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetToAddress(_toAddress string) error {
+	r._toAddress = _toAddress
+	r.Set("to_address", _toAddress)
+	return nil
+}
+
+// GetToAddress ToAddress Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetToAddress() string {
+	return r._toAddress
+}
+
+// SetFromBillCode is FromBillCode Setter
+// 发货单编号【必选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromBillCode(_fromBillCode string) error {
+	r._fromBillCode = _fromBillCode
+	r.Set("from_bill_code", _fromBillCode)
+	return nil
+}
+
+// GetFromBillCode FromBillCode Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromBillCode() string {
+	return r._fromBillCode
+}
+
+// SetOrderCode is OrderCode Setter
+// 订货单编号【可选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetOrderCode(_orderCode string) error {
+	r._orderCode = _orderCode
+	r.Set("order_code", _orderCode)
+	return nil
+}
+
+// GetOrderCode OrderCode Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetOrderCode() string {
+	return r._orderCode
+}
+
+// SetFromPerson is FromPerson Setter
+// 发货人【特药时必选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromPerson(_fromPerson string) error {
+	r._fromPerson = _fromPerson
+	r.Set("from_person", _fromPerson)
+	return nil
+}
+
+// GetFromPerson FromPerson Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromPerson() string {
+	return r._fromPerson
+}
+
+// SetToPerson is ToPerson Setter
+// 收货人【特药时必选】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetToPerson(_toPerson string) error {
+	r._toPerson = _toPerson
+	r.Set("to_person", _toPerson)
+	return nil
+}
+
+// GetToPerson ToPerson Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetToPerson() string {
+	return r._toPerson
+}
+
+// SetDisRefEntId is DisRefEntId Setter
+// 药品配送企业【填写 ref_ent_Id，与dis_ent_id属性选填一个就行】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetDisRefEntId(_disRefEntId string) error {
+	r._disRefEntId = _disRefEntId
+	r.Set("dis_ref_ent_id", _disRefEntId)
+	return nil
+}
+
+// GetDisRefEntId DisRefEntId Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetDisRefEntId() string {
+	return r._disRefEntId
+}
+
+// SetDisEntId is DisEntId Setter
+// 药品配送企业【填写 ent_Id】
+func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetDisEntId(_disEntId string) error {
+	r._disEntId = _disEntId
+	r.Set("dis_ent_id", _disEntId)
+	return nil
+}
+
+// GetDisEntId DisEntId Getter
+func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetDisEntId() string {
+	return r._disEntId
+}
+
 // SetXtIsCheck is XtIsCheck Setter
-// （协同平台数据合规）是否验证，0：未通过验证，1：已验证
+// 是否验证，0：未通过验证，1：已验证
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetXtIsCheck(_xtIsCheck string) error {
 	r._xtIsCheck = _xtIsCheck
 	r.Set("xt_is_check", _xtIsCheck)
@@ -264,7 +368,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetXtIsCheck() string 
 }
 
 // SetXtCheckCode is XtCheckCode Setter
-// （协同平台数据合规）未验证通过原因【验证未通过时填写】
+// 未验证通过原因【验证未通过时填写】
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetXtCheckCode(_xtCheckCode string) error {
 	r._xtCheckCode = _xtCheckCode
 	r.Set("xt_check_code", _xtCheckCode)
@@ -277,7 +381,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetXtCheckCode() strin
 }
 
 // SetXtCheckCodeDesc is XtCheckCodeDesc Setter
-// （协同平台数据合规）未验证通过原因描述【验证未通过时填写】
+// 未验证通过原因描述【验证未通过时填写】
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetXtCheckCodeDesc(_xtCheckCodeDesc string) error {
 	r._xtCheckCodeDesc = _xtCheckCodeDesc
 	r.Set("xt_check_code_desc", _xtCheckCodeDesc)
@@ -290,7 +394,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetXtCheckCodeDesc() s
 }
 
 // SetDrugListJson is DrugListJson Setter
-// （协同平台数据合规）药品列表Json："codeCount":         药品数量 "commDrugId":     国家药品唯一标识 "exprieDate":         生产日期 "physicInfo":          药品信息 "pkgSpec":           包状规格 "prepnCount":       制剂数量 "produceBatchNo":生产批次 "produceDate":      生产日期
+// 药品列表【可不填写，不填写时会通过码进行计算】Json："codeCount":         药品数量 "commDrugId":     国家药品唯一标识 "exprieDate":         生产日期 "physicInfo":          药品信息 "pkgSpec":           包状规格 "prepnCount":       制剂数量 "produceBatchNo":生产批次 "produceDate":      生产日期
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetDrugListJson(_drugListJson string) error {
 	r._drugListJson = _drugListJson
 	r.Set("drug_list_json", _drugListJson)
@@ -303,7 +407,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetDrugListJson() stri
 }
 
 // SetAssRefEntId is AssRefEntId Setter
-// （协同平台数据合规）单据委托企业refEntId
+// 单据委托企业【填写 ref_ent_Id，与ass_ent_id属性选填一个就行】
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetAssRefEntId(_assRefEntId string) error {
 	r._assRefEntId = _assRefEntId
 	r.Set("ass_ref_ent_id", _assRefEntId)
@@ -315,112 +419,8 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetAssRefEntId() strin
 	return r._assRefEntId
 }
 
-// SetDisEntId is DisEntId Setter
-// （协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetDisEntId(_disEntId string) error {
-	r._disEntId = _disEntId
-	r.Set("dis_ent_id", _disEntId)
-	return nil
-}
-
-// GetDisEntId DisEntId Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetDisEntId() string {
-	return r._disEntId
-}
-
-// SetDisRefEntId is DisRefEntId Setter
-// （协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetDisRefEntId(_disRefEntId string) error {
-	r._disRefEntId = _disRefEntId
-	r.Set("dis_ref_ent_id", _disRefEntId)
-	return nil
-}
-
-// GetDisRefEntId DisRefEntId Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetDisRefEntId() string {
-	return r._disRefEntId
-}
-
-// SetToPerson is ToPerson Setter
-// （协同平台数据合规）收货人【必选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetToPerson(_toPerson string) error {
-	r._toPerson = _toPerson
-	r.Set("to_person", _toPerson)
-	return nil
-}
-
-// GetToPerson ToPerson Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetToPerson() string {
-	return r._toPerson
-}
-
-// SetFromPerson is FromPerson Setter
-// （协同平台数据合规）发货人【必选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromPerson(_fromPerson string) error {
-	r._fromPerson = _fromPerson
-	r.Set("from_person", _fromPerson)
-	return nil
-}
-
-// GetFromPerson FromPerson Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromPerson() string {
-	return r._fromPerson
-}
-
-// SetOrderCode is OrderCode Setter
-// （协同平台数据合规）订货单编号【可选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetOrderCode(_orderCode string) error {
-	r._orderCode = _orderCode
-	r.Set("order_code", _orderCode)
-	return nil
-}
-
-// GetOrderCode OrderCode Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetOrderCode() string {
-	return r._orderCode
-}
-
-// SetFromBillCode is FromBillCode Setter
-// （协同平台数据合规）发货单编号【必选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromBillCode(_fromBillCode string) error {
-	r._fromBillCode = _fromBillCode
-	r.Set("from_bill_code", _fromBillCode)
-	return nil
-}
-
-// GetFromBillCode FromBillCode Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromBillCode() string {
-	return r._fromBillCode
-}
-
-// SetToAddress is ToAddress Setter
-// （协同平台数据合规）收货地址【必选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetToAddress(_toAddress string) error {
-	r._toAddress = _toAddress
-	r.Set("to_address", _toAddress)
-	return nil
-}
-
-// GetToAddress ToAddress Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetToAddress() string {
-	return r._toAddress
-}
-
-// SetFromAddress is FromAddress Setter
-// （协同平台数据合规）发货地址【必选】
-func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetFromAddress(_fromAddress string) error {
-	r._fromAddress = _fromAddress
-	r.Set("from_address", _fromAddress)
-	return nil
-}
-
-// GetFromAddress FromAddress Getter
-func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetFromAddress() string {
-	return r._fromAddress
-}
-
 // SetAssEntId is AssEntId Setter
-// （协同平台数据合规）单据委托企业entId
+// 单据委托企业【填写 ent_Id】
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetAssEntId(_assEntId string) error {
 	r._assEntId = _assEntId
 	r.Set("ass_ent_id", _assEntId)
@@ -446,7 +446,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetBillType() int64 {
 }
 
 // SetPhysicType is PhysicType Setter
-// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药
+// 药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药【可以随便填写，单据上传后会以实际为准】
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetPhysicType(_physicType int64) error {
 	r._physicType = _physicType
 	r.Set("physic_type", _physicType)
@@ -459,7 +459,7 @@ func (r AlibabaAlihealthDrugKytUploadcircubillAPIRequest) GetPhysicType() int64 
 }
 
 // SetQuReceivable is QuReceivable Setter
-// （协同平台数据合规）应收货总数量
+// 应收货总数量
 func (r *AlibabaAlihealthDrugKytUploadcircubillAPIRequest) SetQuReceivable(_quReceivable int64) error {
 	r._quReceivable = _quReceivable
 	r.Set("qu_receivable", _quReceivable)

@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "当前用户的所属业务类型编码，优品\u0026开放平台业务 默认使用 IDLE_TOP",
+					"required": true
+				}
+			],
+			"name": "user_permit_cmd",
+			"type": "UserPermitCmd",
+			"description": "撤销用户授权请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "处理结果"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "处理结果"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.idle.user.permit.revoke",
+	"apiChineseName": "删除服务商与卖家之间的订单消息绑定关系",
+	"description": "删除服务商与卖家之间的订单消息绑定关系，删除后不再发送消息",
+	"id": 60010
+}

@@ -22,18 +22,18 @@ type FliggyContentRequest struct {
 	ParentId string `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 内容正文
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
+	// 视频封面url
+	VideoCoverUrl string `json:"video_cover_url,omitempty" xml:"video_cover_url,omitempty"`
+	// 视频url
+	VideoUrl string `json:"video_url,omitempty" xml:"video_url,omitempty"`
 	// 其它特征
 	Feature string `json:"feature,omitempty" xml:"feature,omitempty"`
 	// 文章类型
 	ArticleType string `json:"article_type,omitempty" xml:"article_type,omitempty"`
 	// 文章ID
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// 分类
-	Category string `json:"category,omitempty" xml:"category,omitempty"`
-	// 视频封面url
-	VideoCoverUrl string `json:"video_cover_url,omitempty" xml:"video_cover_url,omitempty"`
-	// 视频url
-	VideoUrl string `json:"video_url,omitempty" xml:"video_url,omitempty"`
 	// 用户icon
 	UserIcon string `json:"user_icon,omitempty" xml:"user_icon,omitempty"`
+	// 分类
+	Category string `json:"category,omitempty" xml:"category,omitempty"`
 }

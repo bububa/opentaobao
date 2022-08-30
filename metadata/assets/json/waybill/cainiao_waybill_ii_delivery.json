@@ -1,0 +1,37 @@
+{
+	"requestParams": [
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "物流供应商编码"
+		},
+		{
+			"name": "delivery_action",
+			"type": "Number",
+			"description": "派送类型，1:通知派送； -1: 通知退回"
+		},
+		{
+			"name": "waybill_code",
+			"type": "String",
+			"description": "面单号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "面单号"
+				}
+			],
+			"name": "confirm_response",
+			"type": "WaybillOrderConfirmResponse",
+			"description": "确认结果"
+		}
+	],
+	"name": "cainiao.waybill.ii.delivery",
+	"apiChineseName": "派件通知接口",
+	"description": "极效前置场景下的使用此接口，通知进行派件",
+	"id": 58834
+}

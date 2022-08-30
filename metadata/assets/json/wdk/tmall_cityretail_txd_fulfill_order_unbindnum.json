@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "source_order_id",
+			"type": "String",
+			"description": "淘鲜达交易单号",
+			"required": true
+		},
+		{
+			"name": "sub_id",
+			"type": "String",
+			"description": "订阅关系id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "result_data",
+					"type": "Boolean",
+					"description": "返回结果"
+				}
+			],
+			"name": "result",
+			"type": "WorkResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "tmall.cityretail.txd.fulfill.order.unbindnum",
+	"apiChineseName": "淘鲜达虚拟号服务解绑接口",
+	"description": "淘鲜达虚拟号解绑服务接口，通过订阅关系id进行解绑。",
+	"id": 58281
+}

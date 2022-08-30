@@ -1,88 +1,78 @@
 {
-	"id": 43330,
-	"name": "taobao.simba.keyword.findbyids",
-	"apiChineseName": "（新）根据一堆关键词ids获取关键词",
-	"description": "根据一个关键词Id列表取得一组关键词",
 	"requestParams": [
 		{
 			"name": "bidword_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "关键词ids",
 			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
-			"name": "results",
-			"type": "SiriusBidwordDto []",
-			"description": "整体的返回值",
 			"subParams": [
 				{
 					"name": "mobile_bid_price",
 					"type": "Number",
-					"description": "关键词无线渠道出价分",
-					"required": true
+					"description": "关键词无线渠道出价分"
 				},
 				{
 					"name": "garbage_status",
 					"type": "Number",
-					"description": "垃圾词状态1 为垃圾词，0 为正常词",
-					"required": true
+					"description": "垃圾词状态1 为垃圾词，0 为正常词"
 				},
 				{
 					"name": "match_scope",
 					"type": "Number",
-					"description": "匹配方式1 精准匹配，4广泛匹配",
-					"required": true
+					"description": "匹配方式1 精准匹配，4广泛匹配"
 				},
 				{
 					"name": "adgroup_id",
 					"type": "Number",
-					"description": "推广单元id",
-					"required": true
+					"description": "推广单元id"
 				},
 				{
 					"name": "campaign_id",
 					"type": "Number",
-					"description": "推广计划id",
-					"required": true
+					"description": "推广计划id"
 				},
 				{
 					"name": "word",
 					"type": "String",
-					"description": "关键词原词",
-					"required": true
+					"description": "关键词原词"
 				},
 				{
 					"name": "audit_reason",
 					"type": "String",
-					"description": "关键词审核拒绝原因，当且仅当audit_status为审核拒绝时有效",
-					"required": true
+					"description": "关键词审核拒绝原因，当且仅当audit_status为审核拒绝时有效"
 				},
 				{
 					"name": "audit_status",
 					"type": "Number",
-					"description": "审核原因0 -1 待处理，1审核通过，其他审核拒绝",
-					"required": true
+					"description": "审核原因0 -1 待处理，1审核通过，其他审核拒绝"
 				},
 				{
 					"name": "plan_delete_time",
 					"type": "Date",
-					"description": "关键词计划删除时间，仅当garbage_status=1时有效",
-					"required": true
+					"description": "关键词计划删除时间，仅当garbage_status=1时有效"
 				},
 				{
 					"name": "bidword_id",
 					"type": "Number",
-					"description": "关键词id",
-					"required": true
+					"description": "关键词id"
 				}
-			]
+			],
+			"name": "results",
+			"type": "SiriusBidwordDto []",
+			"description": "整体的返回值"
 		},
 		{
 			"name": "error_msg",
 			"type": "String",
 			"description": "错误原因"
 		}
-	]
+	],
+	"name": "taobao.simba.keyword.findbyids",
+	"apiChineseName": "（新）根据一堆关键词ids获取关键词",
+	"description": "根据一个关键词Id列表取得一组关键词",
+	"id": 43330
 }

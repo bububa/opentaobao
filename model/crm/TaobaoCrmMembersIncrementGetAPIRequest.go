@@ -16,10 +16,10 @@ type TaobaoCrmMembersIncrementGetAPIRequest struct {
 	_startModify string
 	// 卖家修改会员信息的时间终点.如果不填写此字段,默认为当前时间.
 	_endModify string
-	// 会员等级
-	_grade int64
 	// 每页显示的会员数，page_size的值不能超过100，最小值要大于1
 	_pageSize int64
+	// 会员等级
+	_grade int64
 	// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1
 	_currentPage int64
 }
@@ -71,19 +71,6 @@ func (r TaobaoCrmMembersIncrementGetAPIRequest) GetEndModify() string {
 	return r._endModify
 }
 
-// SetGrade is Grade Setter
-// 会员等级
-func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetGrade(_grade int64) error {
-	r._grade = _grade
-	r.Set("grade", _grade)
-	return nil
-}
-
-// GetGrade Grade Getter
-func (r TaobaoCrmMembersIncrementGetAPIRequest) GetGrade() int64 {
-	return r._grade
-}
-
 // SetPageSize is PageSize Setter
 // 每页显示的会员数，page_size的值不能超过100，最小值要大于1
 func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetPageSize(_pageSize int64) error {
@@ -95,6 +82,19 @@ func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetPageSize(_pageSize int64) er
 // GetPageSize PageSize Getter
 func (r TaobaoCrmMembersIncrementGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetGrade is Grade Setter
+// 会员等级
+func (r *TaobaoCrmMembersIncrementGetAPIRequest) SetGrade(_grade int64) error {
+	r._grade = _grade
+	r.Set("grade", _grade)
+	return nil
+}
+
+// GetGrade Grade Getter
+func (r TaobaoCrmMembersIncrementGetAPIRequest) GetGrade() int64 {
+	return r._grade
 }
 
 // SetCurrentPage is CurrentPage Setter

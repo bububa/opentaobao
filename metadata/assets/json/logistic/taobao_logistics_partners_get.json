@@ -1,8 +1,4 @@
 {
-	"id": 271,
-	"name": "taobao.logistics.partners.get",
-	"apiChineseName": "查询支持起始地到目的地范围的物流公司",
-	"description": "查询物流公司信息（可以查询目的地可不可达情况）",
 	"requestParams": [
 		{
 			"name": "source_id",
@@ -32,9 +28,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "logistics_partners",
-			"type": "LogisticsPartner []",
-			"description": "查询揽送范围之内的物流公司信息",
 			"subParams": [
 				{
 					"name": "cover_remark",
@@ -47,9 +40,6 @@
 					"description": "不可送达的说明信息"
 				},
 				{
-					"name": "carriage",
-					"type": "CarriageDetail",
-					"description": "物流公司揽收和资费详细信息",
 					"subParams": [
 						{
 							"name": "got_time",
@@ -91,12 +81,12 @@
 							"type": "String",
 							"description": "破损赔付"
 						}
-					]
+					],
+					"name": "carriage",
+					"type": "CarriageDetail",
+					"description": "物流公司揽收和资费详细信息"
 				},
 				{
-					"name": "partner",
-					"type": "PartnerDetail",
-					"description": "物流公司详细信息",
 					"subParams": [
 						{
 							"name": "account_no",
@@ -133,9 +123,19 @@
 							"type": "String",
 							"description": "运单号验证正则表达式"
 						}
-					]
+					],
+					"name": "partner",
+					"type": "PartnerDetail",
+					"description": "物流公司详细信息"
 				}
-			]
+			],
+			"name": "logistics_partners",
+			"type": "LogisticsPartner []",
+			"description": "查询揽送范围之内的物流公司信息"
 		}
-	]
+	],
+	"name": "taobao.logistics.partners.get",
+	"apiChineseName": "查询支持起始地到目的地范围的物流公司",
+	"description": "查询物流公司信息（可以查询目的地可不可达情况）",
+	"id": 271
 }

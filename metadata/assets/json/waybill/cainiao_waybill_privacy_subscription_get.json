@@ -1,69 +1,60 @@
 {
-	"id": 51146,
-	"name": "cainiao.waybill.privacy.subscription.get",
-	"apiChineseName": "隐私面单商家订购查询",
-	"description": "ISV查询商家是否订购隐私面单",
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "error_code_list",
 					"type": "String[]",
-					"description": "错误code列表",
-					"required": true
+					"description": "错误code列表"
 				},
 				{
 					"name": "failure",
 					"type": "Boolean",
-					"description": "是否失败",
-					"required": true
+					"description": "是否失败"
 				},
 				{
 					"name": "one_error_info",
 					"type": "String",
-					"description": "第一个错误",
-					"required": true
+					"description": "第一个错误"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "subscription",
 					"type": "Boolean",
-					"description": "商家是否订购",
-					"required": true
+					"description": "商家是否订购"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "系统自动生成",
-					"required": true
+					"description": "系统自动生成"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_info_list",
 					"type": "String[]",
-					"description": "错误列表",
-					"required": true
+					"description": "错误列表"
 				},
 				{
 					"name": "object_id",
 					"type": "String",
-					"description": "系统信息",
-					"required": true
+					"description": "系统信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "cainiao.waybill.privacy.subscription.get",
+	"apiChineseName": "隐私面单商家订购查询",
+	"description": "ISV查询商家是否订购隐私面单",
+	"id": 51146
 }

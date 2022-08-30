@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录标识"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "奖品ID"
+						},
+						{
+							"name": "offer_id",
+							"type": "Number",
+							"description": "活动ID"
+						},
+						{
+							"name": "image",
+							"type": "String",
+							"description": "奖品图片"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "奖品名称"
+						},
+						{
+							"name": "goods_status",
+							"type": "Number",
+							"description": "奖品状态"
+						},
+						{
+							"subParams": [
+								{
+									"name": "receiver_address",
+									"type": "String",
+									"description": "收货人地址"
+								},
+								{
+									"name": "receiver_phone",
+									"type": "String",
+									"description": "收货人电话"
+								},
+								{
+									"name": "receiver_name",
+									"type": "String",
+									"description": "收货人姓名"
+								}
+							],
+							"name": "activity_draw_goods_post_info",
+							"type": "ActivityDrawGoodsPostInfoVo",
+							"description": "奖品邮寄信息"
+						},
+						{
+							"name": "record_id",
+							"type": "String",
+							"description": "记录ID"
+						}
+					],
+					"name": "contents",
+					"type": "ActivityDrawUserGoodsVo[]",
+					"description": "奖品信息数据"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.activity.goods.query",
+	"apiChineseName": "营销抽奖-用户奖品查询",
+	"description": "星河产品-提供营销抽奖奖品查询服务",
+	"id": 57184
+}

@@ -1,12 +1,6 @@
 {
-	"id": 29362,
-	"name": "taobao.qimen.combineitem.delete",
-	"apiChineseName": "组合货品删除接口",
-	"description": "组合货品删除",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "RequestDO",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -18,13 +12,13 @@
 					"type": "String",
 					"description": "奇门仓储字段,C123,string(50),,"
 				}
-			]
+			],
+			"name": "request",
+			"type": "RequestDO"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ResponseDO",
 			"subParams": [
 				{
 					"name": "flag",
@@ -44,7 +38,13 @@
 					"description": "响应信息,invalid appkey,string(100),,",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ResponseDO"
 		}
-	]
+	],
+	"name": "taobao.qimen.combineitem.delete",
+	"apiChineseName": "组合货品删除接口",
+	"description": "组合货品删除",
+	"id": 29362
 }

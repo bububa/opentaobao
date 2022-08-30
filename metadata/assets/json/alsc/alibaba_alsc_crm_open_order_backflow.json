@@ -1,13 +1,6 @@
 {
-	"id": 51640,
-	"name": "alibaba.alsc.crm.open.order.backflow",
-	"apiChineseName": "订单回流接口",
-	"description": "回流isv订单接口",
 	"requestParams": [
 		{
-			"name": "param_order_backflow_open_req",
-			"type": "OrderBackflowOpenReq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "action",
@@ -23,12 +16,10 @@
 				},
 				{
 					"name": "ext_info",
+					"type": "String",
 					"description": "扩展"
 				},
 				{
-					"name": "invoice_info",
-					"type": "InvoiceInfo",
-					"description": "发票信息",
 					"subParams": [
 						{
 							"name": "invoice",
@@ -45,12 +36,12 @@
 							"type": "String",
 							"description": "纳税人识别码"
 						}
-					]
+					],
+					"name": "invoice_info",
+					"type": "InvoiceInfo",
+					"description": "发票信息"
 				},
 				{
-					"name": "logistical_info",
-					"type": "LogisticalInfo",
-					"description": "物流信息",
 					"subParams": [
 						{
 							"name": "arrive_time",
@@ -72,7 +63,10 @@
 							"type": "String",
 							"description": "联系人手机"
 						}
-					]
+					],
+					"name": "logistical_info",
+					"type": "LogisticalInfo",
+					"description": "物流信息"
 				},
 				{
 					"name": "operator_id",
@@ -80,10 +74,6 @@
 					"description": "操作人"
 				},
 				{
-					"name": "order_info",
-					"type": "OrderInfo",
-					"description": "订单信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "active_time",
@@ -106,9 +96,6 @@
 							"description": "订单更新时间"
 						},
 						{
-							"name": "item_list",
-							"type": "Item[]",
-							"description": "商品信息",
 							"subParams": [
 								{
 									"name": "actual_fee",
@@ -165,7 +152,10 @@
 									"type": "String",
 									"description": "二级分类"
 								}
-							]
+							],
+							"name": "item_list",
+							"type": "Item[]",
+							"description": "商品信息"
 						},
 						{
 							"name": "memo",
@@ -183,46 +173,43 @@
 							"description": "订单状态:  WAIT_PAY(\"WAIT_PAY\", \"订单待支付\"),  PAID(\"PAID\", \"订单已支付\"),  SUCCESS(\"SUCCESS\", \"订单完成\"),  CLOSED(\"CLOSED\", \"已关闭\"),  REFUND(\"REFUND\", \"订单已退款\");"
 						},
 						{
+							"subParams": [
+								{
+									"name": "email",
+									"type": "String",
+									"description": "邮箱"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "nick_name",
+									"type": "String",
+									"description": "昵称"
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "手机号"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "用户类型：  WECHAT-微信  ALIPAY-支付宝OTHER-其他"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户userId（支付宝ID/微信ID）"
+								}
+							],
 							"name": "out_buyer",
 							"type": "OrderUser",
-							"description": "外部买家基础信息",
-							"subParams": [
-								{
-									"name": "email",
-									"type": "String",
-									"description": "邮箱"
-								},
-								{
-									"name": "name",
-									"type": "String",
-									"description": "名称"
-								},
-								{
-									"name": "nick_name",
-									"type": "String",
-									"description": "昵称"
-								},
-								{
-									"name": "phone",
-									"type": "String",
-									"description": "手机号"
-								},
-								{
-									"name": "type",
-									"type": "String",
-									"description": "用户类型：  WECHAT-微信  ALIPAY-支付宝OTHER-其他"
-								},
-								{
-									"name": "user_id",
-									"type": "String",
-									"description": "用户userId（支付宝ID/微信ID）"
-								}
-							]
+							"description": "外部买家基础信息"
 						},
 						{
-							"name": "out_seller",
-							"type": "OrderUser",
-							"description": "外部卖家基础信息",
 							"subParams": [
 								{
 									"name": "email",
@@ -254,7 +241,10 @@
 									"type": "String",
 									"description": "用户userId（支付宝ID/微信ID）"
 								}
-							]
+							],
+							"name": "out_seller",
+							"type": "OrderUser",
+							"description": "外部卖家基础信息"
 						},
 						{
 							"name": "outer_order_id",
@@ -281,17 +271,15 @@
 							"type": "String",
 							"description": "履约方式"
 						}
-					]
+					],
+					"name": "order_info",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true
 				},
 				{
-					"name": "payment_info_list",
-					"type": "PaymentInfo[]",
-					"description": "支付信息",
 					"subParams": [
 						{
-							"name": "fee_detail_list",
-							"type": "FeeDetail[]",
-							"description": "费用明细",
 							"subParams": [
 								{
 									"name": "amount",
@@ -308,7 +296,10 @@
 									"type": "String",
 									"description": "MERCHANT_ADJUST  商家调整  PLATFORM_PROM  平台优惠  MERCHANT_PROM  商家优惠  CHARGE  储值  POINT  积分  OTHER  其他"
 								}
-							]
+							],
+							"name": "fee_detail_list",
+							"type": "FeeDetail[]",
+							"description": "费用明细"
 						},
 						{
 							"name": "order_total_amount",
@@ -316,9 +307,6 @@
 							"description": "订单总金额"
 						},
 						{
-							"name": "out_payer",
-							"type": "OrderUser",
-							"description": "外部付款方基础信息",
 							"subParams": [
 								{
 									"name": "email",
@@ -350,7 +338,10 @@
 									"type": "String",
 									"description": "用户userId（支付宝ID/微信ID）"
 								}
-							]
+							],
+							"name": "out_payer",
+							"type": "OrderUser",
+							"description": "外部付款方基础信息"
 						},
 						{
 							"name": "out_payment_no",
@@ -387,12 +378,12 @@
 							"type": "Number",
 							"description": "付款方实付金额"
 						}
-					]
+					],
+					"name": "payment_info_list",
+					"type": "PaymentInfo[]",
+					"description": "支付信息"
 				},
 				{
-					"name": "refund_info_list",
-					"type": "RefundInfo[]",
-					"description": "退款信息",
 					"subParams": [
 						{
 							"name": "refund_amount",
@@ -400,9 +391,6 @@
 							"description": "退款金额"
 						},
 						{
-							"name": "refund_item_list",
-							"type": "Item[]",
-							"description": "退款商品",
 							"subParams": [
 								{
 									"name": "actual_fee",
@@ -449,7 +437,10 @@
 									"type": "String",
 									"description": "数量"
 								}
-							]
+							],
+							"name": "refund_item_list",
+							"type": "Item[]",
+							"description": "退款商品"
 						},
 						{
 							"name": "refund_pay_no",
@@ -476,7 +467,10 @@
 							"type": "String",
 							"description": "退款单号，必填"
 						}
-					]
+					],
+					"name": "refund_info_list",
+					"type": "RefundInfo[]",
+					"description": "退款信息"
 				},
 				{
 					"name": "request_id",
@@ -515,46 +509,48 @@
 					"type": "String",
 					"description": "订单类型-餐饮-RESTAURANT  生服-LIFE_SERVICE"
 				}
-			]
+			],
+			"name": "param_order_backflow_open_req",
+			"type": "OrderBackflowOpenReq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CommonResult",
-			"description": "接口结果",
 			"subParams": [
 				{
 					"name": "biz_success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "result",
 					"type": "Boolean",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "result_code",
 					"type": "String",
-					"description": "结果码",
-					"required": true
+					"description": "结果码"
 				},
 				{
 					"name": "result_desc",
 					"type": "String",
-					"description": "结果详情",
-					"required": true
+					"description": "结果详情"
 				},
 				{
 					"name": "result_view",
 					"type": "String",
-					"description": "结果描述",
-					"required": true
+					"description": "结果描述"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果"
 		}
-	]
+	],
+	"name": "alibaba.alsc.crm.open.order.backflow",
+	"apiChineseName": "订单回流接口",
+	"description": "回流isv订单接口",
+	"id": 51640
 }

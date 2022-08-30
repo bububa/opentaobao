@@ -1,8 +1,4 @@
 {
-	"id": 28850,
-	"name": "yunos.tvpubadmin.content.show.getlist",
-	"apiChineseName": "节目审核获取节目列表",
-	"description": "节目审核获取节目列表",
 	"requestParams": [
 		{
 			"name": "ext_type",
@@ -84,5 +80,9 @@
 			"type": "String",
 			"description": "object"
 		}
-	]
+	],
+	"name": "yunos.tvpubadmin.content.show.getlist",
+	"apiChineseName": "节目审核获取节目列表",
+	"description": "节目审核获取节目列表",
+	"id": 28850
 }

@@ -1,13 +1,13 @@
 {
-	"id": 23753,
-	"name": "alibaba.interact.sensor.blow",
-	"apiChineseName": "吹气",
-	"description": "客户端吹气",
 	"responseParams": [
 		{
 			"name": "result",
 			"type": "String",
 			"description": "return=0 表示成功"
 		}
-	]
+	],
+	"name": "alibaba.interact.sensor.blow",
+	"apiChineseName": "吹气",
+	"description": "客户端吹气",
+	"id": 23753
 }

@@ -1,8 +1,4 @@
 {
-	"id": 41387,
-	"name": "alibaba.health.nr.logistics.query",
-	"apiChineseName": "阿里健康新零售物流详情接口",
-	"description": "对阿里健康o2o对接的商户提供查询物流单详情的能力",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -13,97 +9,87 @@
 	],
 	"responseParams": [
 		{
-			"name": "response_result",
-			"type": "ResponseResult",
-			"description": "返回结果",
 			"subParams": [
 				{
-					"name": "result",
-					"type": "LogisticsDetail",
-					"description": "返回结果",
-					"required": true,
 					"subParams": [
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单id",
-							"required": true
+							"description": "订单id"
 						},
 						{
 							"name": "logistics_status",
 							"type": "Number",
-							"description": "物流状态",
-							"required": true
+							"description": "物流状态"
 						},
 						{
 							"name": "logistics_name",
 							"type": "String",
-							"description": "物流商",
-							"required": true
+							"description": "物流商"
 						},
 						{
 							"name": "send_time",
 							"type": "Date",
-							"description": "配送单下单时间",
-							"required": true
+							"description": "配送单下单时间"
 						},
 						{
 							"name": "confirm_time",
 							"type": "Date",
-							"description": "配送单确认时间",
-							"required": true
+							"description": "配送单确认时间"
 						},
 						{
 							"name": "cancel_time",
 							"type": "Date",
-							"description": "配送单取消时间",
-							"required": true
+							"description": "配送单取消时间"
 						},
 						{
 							"name": "fetch_time",
 							"type": "Date",
-							"description": "骑手取货时间",
-							"required": true
+							"description": "骑手取货时间"
 						},
 						{
 							"name": "complete_time",
 							"type": "Date",
-							"description": "配送完成时间",
-							"required": true
+							"description": "配送完成时间"
 						},
 						{
 							"name": "dispatcher_name",
 							"type": "String",
-							"description": "骑手姓名",
-							"required": true
+							"description": "骑手姓名"
 						},
 						{
 							"name": "dispatcher_mobile",
 							"type": "String",
-							"description": "骑手电话",
-							"required": true
+							"description": "骑手电话"
 						}
-					]
+					],
+					"name": "result",
+					"type": "LogisticsDetail",
+					"description": "返回结果"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功（true 成功，false 失败）",
-					"required": true
+					"description": "是否成功（true 成功，false 失败）"
 				}
-			]
+			],
+			"name": "response_result",
+			"type": "ResponseResult",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "alibaba.health.nr.logistics.query",
+	"apiChineseName": "阿里健康新零售物流详情接口",
+	"description": "对阿里健康o2o对接的商户提供查询物流单详情的能力",
+	"id": 41387
 }

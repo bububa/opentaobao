@@ -1,14 +1,5 @@
 {
-	"id": 137,
-	"name": "taobao.picture.category.get",
-	"apiChineseName": "获取图片分类信息",
-	"description": "获取图片分类信息",
 	"requestParams": [
-		{
-			"name": "type",
-			"type": "String",
-			"description": "1"
-		},
 		{
 			"name": "picture_category_id",
 			"type": "Number",
@@ -18,6 +9,11 @@
 			"name": "picture_category_name",
 			"type": "String",
 			"description": "图片分类名，不支持模糊查询"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "1"
 		},
 		{
 			"name": "parent_id",
@@ -32,9 +28,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "picture_categories",
-			"type": "PictureCategory []",
-			"description": "图片分类",
 			"subParams": [
 				{
 					"name": "picture_category_id",
@@ -47,9 +40,19 @@
 					"description": "图片分类名"
 				},
 				{
+					"name": "position",
+					"type": "Number",
+					"description": "图片分类排序"
+				},
+				{
 					"name": "type",
 					"type": "String",
 					"description": "图片分类型别，sys-fixture代表店铺装修分类(系统分类)，sys-auction代表宝贝图片分类(系统分类)，user-define代表用户自定义分类"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "分类下的图片数"
 				},
 				{
 					"name": "created",
@@ -62,16 +65,18 @@
 					"description": "图片分类的修改时间"
 				},
 				{
-					"name": "position",
-					"type": "Number",
-					"description": "图片分类排序"
-				},
-				{
 					"name": "parent_id",
 					"type": "Number",
 					"description": "一级分类的parent_id为0\u003cbr/\u003e二级分类的则为其父分类的picture_category_id"
 				}
-			]
+			],
+			"name": "picture_categories",
+			"type": "PictureCategory []",
+			"description": "图片分类"
 		}
-	]
+	],
+	"name": "taobao.picture.category.get",
+	"apiChineseName": "获取图片分类信息",
+	"description": "获取图片分类信息",
+	"id": 137
 }

@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "ticket_task_id",
+			"type": "String",
+			"description": "凭证任务单Id",
+			"maxLength": 19,
+			"required": true
+		},
+		{
+			"name": "ticket_request_id",
+			"type": "String",
+			"description": "请求的唯一requestId",
+			"required": true
+		},
+		{
+			"name": "buyer_id",
+			"type": "String",
+			"description": "购买商品的买家userId((纯数字))",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "can_retry",
+			"type": "Boolean",
+			"description": "是否需要重试(返回true时重试)"
+		},
+		{
+			"name": "ticket_task_id",
+			"type": "String",
+			"description": "凭证任务单Id"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "错误编码/success/fail"
+		}
+	],
+	"name": "alibaba.alsc.merchant.ext.ticket.cancel",
+	"apiChineseName": "凭证作废",
+	"description": "isv调用银行接口超时导致凭证信息同步失败,触发关单处理,调用作废接口",
+	"id": 57545
+}

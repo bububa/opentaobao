@@ -1,0 +1,117 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求流水号, 长度不能超过64, 相同的请求流水会被幂等",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "change_quantity",
+							"type": "Number",
+							"description": "正数表示增加期货, 负数表示减少期货",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品id",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						}
+					],
+					"name": "items",
+					"type": "FutureItem[]",
+					"description": "请求明细，数量不能超过10",
+					"required": true
+				}
+			],
+			"name": "future_stock_req_dto",
+			"type": "FutureStockReqDTO",
+			"description": "请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链路跟踪id, 用于排查问题"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "当前请求是否成功-所有明细都成功才算成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "货品id"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码, 编码以\"ALIHEALTH.BC.5\"开头时表示当前品仓的操作处于未知状态, 后继可通过同样的请求流水号来获取最终结果"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "real_change_quantity",
+					"type": "Number",
+					"description": "期货实际已减少数量"
+				},
+				{
+					"name": "can_change_quantity",
+					"type": "Number",
+					"description": "期货理论可减少数量"
+				}
+			],
+			"name": "errors",
+			"type": "FutureItemError []",
+			"description": "错误列表"
+		},
+		{
+			"name": "can_retry",
+			"type": "Boolean",
+			"description": "请求是否可重试"
+		},
+		{
+			"name": "error_no",
+			"type": "String",
+			"description": "错误编码, 编码以\"ALIHEALTH.BC.5\"开头时表示当前品仓的操作处于未知状态, 后继可通过同样的请求流水号来获取最终结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.alihealth.bc.future.stock.update",
+	"apiChineseName": "供应商更新期货库存",
+	"description": "供应商更新期货库存",
+	"id": 61822
+}

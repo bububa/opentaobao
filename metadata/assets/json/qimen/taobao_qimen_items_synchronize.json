@@ -1,12 +1,6 @@
 {
-	"id": 27262,
-	"name": "taobao.qimen.items.synchronize",
-	"apiChineseName": "商品同步接口 (批量)",
-	"description": "ERP调用奇门的接口,批量同步商品信息给WMS",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "ItemsSynchronizeRequest",
 			"subParams": [
 				{
 					"name": "actionType",
@@ -27,9 +21,6 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "Item[]",
-					"description": "同步的商品信息",
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -315,20 +306,23 @@
 							"type": "String",
 							"description": "是否液体, Y/N,  (默认为N)"
 						}
-					]
+					],
+					"name": "items",
+					"type": "Item[]",
+					"description": "同步的商品信息"
 				},
 				{
 					"name": "extendProps",
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "ItemsSynchronizeRequest"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "ItemsSynchronizeResponse",
 			"subParams": [
 				{
 					"name": "flag",
@@ -349,10 +343,6 @@
 					"required": true
 				},
 				{
-					"name": "items",
-					"type": "BatchItemSynItem[]",
-					"description": "商品同步批量接口中单商品信息",
-					"required": true,
 					"subParams": [
 						{
 							"name": "itemCode",
@@ -366,9 +356,19 @@
 							"description": "出错信息",
 							"required": true
 						}
-					]
+					],
+					"name": "items",
+					"type": "BatchItemSynItem[]",
+					"description": "商品同步批量接口中单商品信息",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "ItemsSynchronizeResponse"
 		}
-	]
+	],
+	"name": "taobao.qimen.items.synchronize",
+	"apiChineseName": "商品同步接口 (批量)",
+	"description": "ERP调用奇门的接口,批量同步商品信息给WMS",
+	"id": 27262
 }

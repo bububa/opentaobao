@@ -5,7 +5,7 @@ import (
 	"github.com/bububa/opentaobao/model/simba"
 )
 
-// TaobaoSimbaCreativeUpdate 修改创意与
+// TaobaoSimbaCreativeUpdate 修改创意
 // taobao.simba.creative.update
 //
 // 更新一个创意的信息，可以设置创意标题、创意图片

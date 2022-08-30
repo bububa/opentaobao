@@ -1,0 +1,320 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "It's sales order id and a 16-digit number To confirm logistics service provider in the order such as Cainiao, Pegaki, Frenet, Delivery Hub, etc.",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "first_name",
+							"type": "String",
+							"description": "first name of sender"
+						},
+						{
+							"name": "last_name",
+							"type": "String",
+							"description": "last name of sender"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "sender's country"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "sender's state"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "sender's city"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "sender's district and street"
+						},
+						{
+							"name": "address_number",
+							"type": "String",
+							"description": "sender's street number"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "zip code of ship from place",
+							"required": true
+						},
+						{
+							"name": "cellphone",
+							"type": "String",
+							"description": "cell phone of sender"
+						},
+						{
+							"name": "federal_tax_id",
+							"type": "String",
+							"description": "cnpj of the seller and it will be filled by the platform automatcially"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "email of sender"
+						}
+					],
+					"name": "sender_address",
+					"type": "AddressTopDTO",
+					"description": "origin address",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "invoice_added",
+							"type": "Boolean",
+							"description": "Whether a seller has added invoice to transaction order. If a seller doesn't provide invoice, Correios will be the only available shipment option. This is mainly to remind sellers of adding invoice before shipment",
+							"required": true
+						}
+					],
+					"name": "extension",
+					"type": "ExtensionTopDTO",
+					"description": "extension",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "first_name",
+							"type": "String",
+							"description": "first name of receiver"
+						},
+						{
+							"name": "last_name",
+							"type": "String",
+							"description": "last name of receiver"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "receiver's country"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "receiver's state"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "receiver's city"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "receiver's district and street"
+						},
+						{
+							"name": "address_number",
+							"type": "String",
+							"description": "receiver's street number"
+						},
+						{
+							"name": "zip_code",
+							"type": "String",
+							"description": "zip code of ship to place",
+							"required": true
+						},
+						{
+							"name": "cellphone",
+							"type": "String",
+							"description": "cell phone of receiver"
+						},
+						{
+							"name": "federal_tax_id",
+							"type": "String",
+							"description": "CPF of the buyer. Senders can find it on sales order"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "email of receiver"
+						}
+					],
+					"name": "receipt_address",
+					"type": "AddressTopDTO",
+					"description": "destination address",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "Quantity of a sku in the order. It's used to calculate the total number of products in a parcel",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "Total weight of a SKU in its original packaging. Default unit: kilograms",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "AE sku_id to identify a unit of sku"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "Actual dimension of a sku in its original packaging. Default unit: centimeters",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "Price of a sku. It's used to compose total product value of the parcel",
+							"required": true
+						}
+					],
+					"name": "products",
+					"type": "ProductTopDTO[]",
+					"description": "product list",
+					"required": true
+				}
+			],
+			"name": "param1",
+			"type": "QueryShippingMethodRequestTopDTO",
+			"description": "method query object"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "Weight of the parcel in the shipment order Default unit: kilograms"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "Width of the parcel in the shipment order Default unit: centimeters"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "Height of the parcel in the shipment order Default unit: centimeters"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "Length of the parcel in the shipment order Default unit: centimeters"
+						},
+						{
+							"name": "product_total_price",
+							"type": "String",
+							"description": "price of all SKUs in the parcel"
+						},
+						{
+							"name": "parcel_type",
+							"type": "String",
+							"description": "Parcel type including ENVELOPE, BOX, BAG, TUBE, PALLET and you should input it when creating a shipment order"
+						}
+					],
+					"name": "parcel",
+					"type": "ParcelDTO",
+					"description": "parcel"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_channel_id",
+							"type": "String",
+							"description": "Logistics provider Id of the shipping order such as 1-Cainiao, 2-Pegaki, 3-Frenet, 4-Delivery Hub, etc."
+						},
+						{
+							"name": "logistics_channel_name",
+							"type": "String",
+							"description": "Logistics provider of the shipping order such as Cainiao, Pegaki, Frenet, Delivery Hub, etc."
+						},
+						{
+							"name": "delivery_method_id",
+							"type": "String",
+							"description": "shipping method id of Logistics service such as Loggi Express, Correios Sedex, etc."
+						},
+						{
+							"name": "delivery_method_name",
+							"type": "String",
+							"description": "Devlivery provider type such as express/standard, pac/sedex."
+						},
+						{
+							"name": "delivery_provider_name",
+							"type": "String",
+							"description": "Delivery provider name"
+						},
+						{
+							"name": "delivery_cost",
+							"type": "Number",
+							"description": "estimated shipping cost based on dimension and weight of a parcel"
+						},
+						{
+							"name": "delivery_estimate_days",
+							"type": "Number",
+							"description": "delivery time on working days"
+						}
+					],
+					"name": "delivery_options",
+					"type": "AELogisticsShippingMethodDTO[]",
+					"description": "delivery option list"
+				},
+				{
+					"name": "query_id",
+					"type": "String",
+					"description": "query id, if the value is not empty, please fill it in create order api"
+				}
+			],
+			"name": "data",
+			"type": "QueryShippingMethodResponseDTO",
+			"description": "method data"
+		},
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "is success"
+		},
+		{
+			"name": "error_result_message",
+			"type": "String",
+			"description": "error message"
+		},
+		{
+			"name": "error_result_code",
+			"type": "String",
+			"description": "error code"
+		}
+	],
+	"name": "aliexpress.local.logistics.shipping.method.query",
+	"apiChineseName": "query shipping method",
+	"description": "query shipping method",
+	"id": 61141
+}

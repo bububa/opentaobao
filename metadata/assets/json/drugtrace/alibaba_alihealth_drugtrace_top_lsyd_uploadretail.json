@@ -1,8 +1,4 @@
 {
-	"id": 52554,
-	"name": "alibaba.alihealth.drugtrace.top.lsyd.uploadretail",
-	"apiChineseName": "零售单据上传接口",
-	"description": "快易通多融零售上传接口",
 	"requestParams": [
 		{
 			"name": "bill_code",
@@ -19,13 +15,13 @@
 		{
 			"name": "bill_type",
 			"type": "Number",
-			"description": "单据类型[321,零售出库][322,疫苗接种]",
+			"description": "单据类型[321,零售出库][322,疫苗接种][116,消费者退货入库]",
 			"required": true
 		},
 		{
 			"name": "physic_type",
 			"type": "Number",
-			"description": "药品类型[2,特药，3,普药]"
+			"description": "药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】"
 		},
 		{
 			"name": "ref_user_id",
@@ -51,9 +47,9 @@
 		{
 			"name": "trace_codes",
 			"type": "String[]",
-			"description": "20位追溯码（多个时用半角逗号分隔）",
-			"required": true,
-			"maxListSize": 2000
+			"description": "追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"maxListSize": 3500,
+			"required": true
 		},
 		{
 			"name": "customer_id_type",
@@ -117,5 +113,9 @@
 			"type": "Boolean",
 			"description": "操作是否成功(true 成功 ,false失败)"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.uploadretail",
+	"apiChineseName": "零售单据上传接口",
+	"description": "快易通多融零售上传接口",
+	"id": 52554
 }

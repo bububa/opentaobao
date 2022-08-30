@@ -4,14 +4,14 @@ package alihouse
 type BaseRegionDto struct {
 	// 高德围栏
 	Fencing string `json:"fencing,omitempty" xml:"fencing,omitempty"`
-	// 名称全称
-	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 高德中心纬度
 	GaodeLatitude string `json:"gaode_latitude,omitempty" xml:"gaode_latitude,omitempty"`
 	// 高德中心经度
 	GaodeLongitude string `json:"gaode_longitude,omitempty" xml:"gaode_longitude,omitempty"`
 	// 名称简称
 	NameSimple string `json:"name_simple,omitempty" xml:"name_simple,omitempty"`
+	// 名称全称
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 名称拼音全字母
 	NamePinyin string `json:"name_pinyin,omitempty" xml:"name_pinyin,omitempty"`
 	// 名称拼音首字母
@@ -26,4 +26,6 @@ type BaseRegionDto struct {
 	RegionId int64 `json:"region_id,omitempty" xml:"region_id,omitempty"`
 	// 父级ID
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
+	// 数据源类型（1-新房 2-二手房）
+	SourceType int64 `json:"source_type,omitempty" xml:"source_type,omitempty"`
 }

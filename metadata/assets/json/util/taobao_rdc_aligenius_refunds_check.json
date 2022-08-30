@@ -1,14 +1,6 @@
 {
-	"id": 29161,
-	"name": "taobao.rdc.aligenius.refunds.check",
-	"apiChineseName": "退款信息审核",
-	"description": "根据退款信息，对退款单进行审核",
 	"requestParams": [
 		{
-			"name": "param",
-			"type": "RefundCheckDto",
-			"description": "入参",
-			"required": true,
 			"subParams": [
 				{
 					"name": "refund_id",
@@ -48,34 +40,39 @@
 					"type": "Number",
 					"description": "退款金额"
 				}
-			]
+			],
+			"name": "param",
+			"type": "RefundCheckDto",
+			"description": "入参",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_info",
 					"type": "String",
-					"description": "errorInfo",
-					"required": true
+					"description": "errorInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "taobao.rdc.aligenius.refunds.check",
+	"apiChineseName": "退款信息审核",
+	"description": "根据退款信息，对退款单进行审核",
+	"id": 29161
 }

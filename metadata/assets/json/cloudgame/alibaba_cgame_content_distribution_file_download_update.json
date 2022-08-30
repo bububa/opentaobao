@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "succeeded",
+							"type": "Boolean",
+							"description": "文件下载是否成功"
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "文件下载任务ID"
+						},
+						{
+							"name": "failure_reason",
+							"type": "String",
+							"description": "文件下载失败原因"
+						}
+					],
+					"name": "result",
+					"type": "DownloadFileCommandResult",
+					"description": "文件下载结果"
+				}
+			],
+			"name": "req_param",
+			"type": "FileDownloadCallbackRequest",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "文件下载是否成功"
+		}
+	],
+	"name": "alibaba.cgame.content.distribution.file.download.update",
+	"apiChineseName": "文件下载回调",
+	"description": "提供内容服务器更新文件下载状态的能力",
+	"id": 57320
+}

@@ -6,6 +6,8 @@ type ReturnApplyPassenge struct {
 	ReturnTicketSegment []ReturnTicketSegment `json:"return_ticket_segment,omitempty" xml:"return_ticket_segment>return_ticket_segment,omitempty"`
 	// 乘机人姓名
 	PassengerName string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
+	// 优惠后票面价
+	DiscountTicketPrice int64 `json:"discount_ticket_price,omitempty" xml:"discount_ticket_price,omitempty"`
 	// 人ID
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 乘机人类型
@@ -16,8 +18,6 @@ type ReturnApplyPassenge struct {
 	RefundMoney int64 `json:"refund_money,omitempty" xml:"refund_money,omitempty"`
 	// 票价信息(分)
 	TicketPrice int64 `json:"ticket_price,omitempty" xml:"ticket_price,omitempty"`
-	// 优惠后票面价
-	DiscountTicketPrice int64 `json:"discount_ticket_price,omitempty" xml:"discount_ticket_price,omitempty"`
 	// 优惠券金额
 	VoucherPrice int64 `json:"voucher_price,omitempty" xml:"voucher_price,omitempty"`
 }

@@ -1,13 +1,6 @@
 {
-	"id": 54046,
-	"name": "alibaba.middle.claimsbill.receive",
-	"apiChineseName": "国际化中台服务域接收理赔账单",
-	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔打款的处理后，将该打款结果返回至服务域",
 	"requestParams": [
 		{
-			"name": "claims_bill_dto",
-			"type": "ClaimsBillDto",
-			"description": "理赔账单实体",
 			"subParams": [
 				{
 					"name": "service_work_order_id",
@@ -40,51 +33,54 @@
 					"description": "支付时间"
 				},
 				{
-					"name": "extension_map",
-					"type": "Extensionmap",
-					"description": "预留扩展Map",
 					"subParams": [
 						{
 							"name": "extension_map_fir",
 							"type": "String",
 							"description": "预留扩展Map1"
 						}
-					]
+					],
+					"name": "extension_map",
+					"type": "Extensionmap",
+					"description": "预留扩展Map"
 				}
-			]
+			],
+			"name": "claims_bill_dto",
+			"type": "ClaimsBillDto",
+			"description": "理赔账单实体"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "结果实体类",
 			"subParams": [
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统调用结果",
-					"required": true
+					"description": "系统调用结果"
 				},
 				{
 					"name": "data",
 					"type": "Boolean",
-					"description": "业务结果",
-					"required": true
+					"description": "业务结果"
 				},
 				{
 					"name": "repeated",
 					"type": "Boolean",
-					"description": "是否重复",
-					"required": true
+					"description": "是否重复"
 				},
 				{
 					"name": "retry",
 					"type": "Boolean",
-					"description": "是否重试",
-					"required": true
+					"description": "是否重试"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果实体类"
 		}
-	]
+	],
+	"name": "alibaba.middle.claimsbill.receive",
+	"apiChineseName": "国际化中台服务域接收理赔账单",
+	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔打款的处理后，将该打款结果返回至服务域",
+	"id": 54046
 }

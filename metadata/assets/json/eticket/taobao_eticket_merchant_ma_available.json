@@ -1,8 +1,4 @@
 {
-	"id": 27157,
-	"name": "taobao.eticket.merchant.ma.available",
-	"apiChineseName": "电子凭证核销前校验接口",
-	"description": "商家验码之前的调用接口，用来判断是否可以进行核销操作",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -46,17 +42,16 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_body",
-			"type": "ConsumeMaCallbackResp",
-			"description": "回复结果",
 			"subParams": [
 				{
 					"name": "attribute_map",
-					"type": "Json",
-					"description": "业务回复KV",
-					"required": true
+					"type": "String",
+					"description": "业务回复KV"
 				}
-			]
+			],
+			"name": "resp_body",
+			"type": "ConsumeMaCallbackResp",
+			"description": "回复结果"
 		},
 		{
 			"name": "ret_code",
@@ -68,5 +63,9 @@
 			"type": "String",
 			"description": "子结果信息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.available",
+	"apiChineseName": "电子凭证核销前校验接口",
+	"description": "商家验码之前的调用接口，用来判断是否可以进行核销操作",
+	"id": 27157
 }

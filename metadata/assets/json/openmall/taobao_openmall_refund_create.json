@@ -1,8 +1,4 @@
 {
-	"id": 50838,
-	"name": "taobao.openmall.refund.create",
-	"apiChineseName": "创建OpenMall退款单",
-	"description": "创建OpenMall退款单\n如存在未完结的退款单，则返回该退款单ID",
 	"requestParams": [
 		{
 			"name": "distributor",
@@ -58,5 +54,9 @@
 			"type": "String",
 			"description": "退款单状态"
 		}
-	]
+	],
+	"name": "taobao.openmall.refund.create",
+	"apiChineseName": "创建OpenMall退款单",
+	"description": "创建OpenMall退款单\n如存在未完结的退款单，则返回该退款单ID",
+	"id": 50838
 }

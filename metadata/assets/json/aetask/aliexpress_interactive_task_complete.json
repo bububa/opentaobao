@@ -1,8 +1,4 @@
 {
-	"id": 53415,
-	"name": "aliexpress.interactive.task.complete",
-	"apiChineseName": "任务完成接口",
-	"description": "用户完成任务",
 	"requestParams": [
 		{
 			"name": "task_instance_id",
@@ -19,47 +15,45 @@
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "接口返回model",
 			"subParams": [
 				{
 					"name": "result",
 					"type": "String",
-					"description": "结果",
-					"required": true
+					"description": "结果"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
 		}
-	]
+	],
+	"name": "aliexpress.interactive.task.complete",
+	"apiChineseName": "任务完成接口",
+	"description": "用户完成任务",
+	"id": 53415
 }

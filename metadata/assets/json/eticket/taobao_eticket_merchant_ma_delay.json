@@ -1,8 +1,4 @@
 {
-	"id": 30531,
-	"name": "taobao.eticket.merchant.ma.delay",
-	"apiChineseName": "凭证延期",
-	"description": "订单延期",
 	"requestParams": [
 		{
 			"name": "biz_type",
@@ -54,5 +50,9 @@
 			"type": "String",
 			"description": "错误消息"
 		}
-	]
+	],
+	"name": "taobao.eticket.merchant.ma.delay",
+	"apiChineseName": "凭证延期",
+	"description": "订单延期",
+	"id": 30531
 }

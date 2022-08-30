@@ -8,8 +8,8 @@ type AlibabaWdkOrderListResult struct {
 	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 	// 接口返回码描述
 	ReturnMsg string `json:"return_msg,omitempty" xml:"return_msg,omitempty"`
-	// 返回本查询条件下的数据总数。仅在传入page_index=0时返回,在其他情况下返回0
-	TotalNumber int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
 	// 返回下一查询页的序号。如果返回值是-1，则无下一页。数据拉取完成。
 	NextIndex int64 `json:"next_index,omitempty" xml:"next_index,omitempty"`
+	// 返回本查询条件下的数据总数。仅在传入page_index=0时返回,在其他情况下返回0
+	TotalNumber int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
 }

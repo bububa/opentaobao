@@ -1,13 +1,6 @@
 {
-	"id": 41855,
-	"name": "alibaba.mozi.fusion.create.employee.account",
-	"apiChineseName": "创建MOZI自建人员和账号",
-	"description": "创建MOZI自建人员和账号",
 	"requestParams": [
 		{
-			"name": "employee_account",
-			"type": "CreateTenantEmployeeAndAccountRequest",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "tenant_id",
@@ -22,6 +15,7 @@
 				},
 				{
 					"name": "request_meta_data",
+					"type": "String",
 					"description": "请求附加消息"
 				},
 				{
@@ -98,78 +92,75 @@
 					"type": "String",
 					"description": "头像的完整URL"
 				}
-			]
+			],
+			"name": "employee_account",
+			"type": "CreateTenantEmployeeAndAccountRequest",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CreateTenantEmployeeAndAccountResult",
-			"description": "result",
 			"subParams": [
 				{
 					"name": "response_message",
 					"type": "String",
-					"description": "返回状态描述",
-					"required": true
+					"description": "返回状态描述"
 				},
 				{
 					"name": "response_meta_data",
-					"type": "Json",
-					"description": "返回附加信息",
-					"required": true
+					"type": "String",
+					"description": "返回附加信息"
 				},
 				{
 					"name": "response_code",
 					"type": "String",
-					"description": "返回的状态码",
-					"required": true
+					"description": "返回的状态码"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求的UUID",
-					"required": true
+					"description": "请求的UUID"
 				},
 				{
-					"name": "data",
-					"type": "EmployeeAccount",
-					"description": "返回的人员和账号的绑定对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "account_id",
 							"type": "Number",
-							"description": "账号ID",
-							"required": true
+							"description": "账号ID"
 						},
 						{
 							"name": "employee_code",
 							"type": "String",
-							"description": "员工code",
-							"required": true
+							"description": "员工code"
 						},
 						{
 							"name": "account_namespace",
 							"type": "String",
-							"description": "账号类型",
-							"required": true
+							"description": "账号类型"
 						},
 						{
 							"name": "account_code",
 							"type": "String",
-							"description": "账号名",
-							"required": true
+							"description": "账号名"
 						}
-					]
+					],
+					"name": "data",
+					"type": "EmployeeAccount",
+					"description": "返回的人员和账号的绑定对象"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CreateTenantEmployeeAndAccountResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.mozi.fusion.create.employee.account",
+	"apiChineseName": "创建MOZI自建人员和账号",
+	"description": "创建MOZI自建人员和账号",
+	"id": 41855
 }

@@ -1,0 +1,123 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ref_ent_id（码申请企业）",
+			"required": true
+		},
+		{
+			"name": "begin_time",
+			"type": "String",
+			"description": "开始时间（最大查询区间一年）",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "截至时间（最大查询区间一年）",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码（不区分新码、旧码）"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页数（默认一页20条）",
+			"required": true
+		},
+		{
+			"name": "drug_ent_base_info_id",
+			"type": "String",
+			"description": "药品ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "主键"
+						},
+						{
+							"name": "oper_ic_code",
+							"type": "String",
+							"description": "操作人"
+						},
+						{
+							"name": "oper_date",
+							"type": "Date",
+							"description": "操作时间"
+						},
+						{
+							"name": "piats_code_old",
+							"type": "String",
+							"description": "旧码"
+						},
+						{
+							"name": "piats_code_new",
+							"type": "String",
+							"description": "新码"
+						},
+						{
+							"name": "code_level",
+							"type": "Number",
+							"description": "码级别"
+						},
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "企业ID"
+						},
+						{
+							"name": "drug_ent_base_info_id",
+							"type": "String",
+							"description": "药品ID"
+						}
+					],
+					"name": "data",
+					"type": "LogCodeReplaceDTO[]",
+					"description": "返回列表"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页数"
+				}
+			],
+			"name": "model",
+			"type": "ToolPage",
+			"description": "返回对象"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "调用是否成功(true 成功 false 失败)"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.codereplacelog",
+	"apiChineseName": "码替换记录查询",
+	"description": "码替换记录查询",
+	"id": 62481
+}

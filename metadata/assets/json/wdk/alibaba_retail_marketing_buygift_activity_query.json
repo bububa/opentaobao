@@ -1,0 +1,157 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "活动ID"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "erp外部活动id"
+				}
+			],
+			"name": "param0",
+			"type": "BuyGiftActivityQueryRequest",
+			"description": "买赠活动查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "买赠活动类型"
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "act_id",
+					"type": "String",
+					"description": "营销活动ID"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述"
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "weekdays",
+					"type": "String[]",
+					"description": "活动周几生效"
+				},
+				{
+					"name": "every_day_periods",
+					"type": "String[]",
+					"description": "活动每天生效时间段"
+				},
+				{
+					"name": "terminals",
+					"type": "String[]",
+					"description": "优惠适用场景:1:APP  2:POS"
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID"
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人姓名"
+				},
+				{
+					"name": "store_ids",
+					"type": "String[]",
+					"description": "门店列表"
+				},
+				{
+					"name": "outer_store_ids",
+					"type": "String[]",
+					"description": "外部门店列表"
+				},
+				{
+					"name": "member_crowd_codes",
+					"type": "String[]",
+					"description": "人群编码,saas平台人群编码:NEW_USER: 新用户, OLD_USER：老用户，LIGHT_NEW_USER：闪购新客"
+				},
+				{
+					"subParams": [
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动总限购"
+						},
+						{
+							"name": "daily_total_limit_cnt",
+							"type": "Number",
+							"description": "每日总限购"
+						},
+						{
+							"name": "user_total_limit_cnt",
+							"type": "Number",
+							"description": "用户总限购"
+						},
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "用户每日限购"
+						},
+						{
+							"name": "order_limit_cnt",
+							"type": "Number",
+							"description": "每单限购"
+						}
+					],
+					"name": "limit",
+					"type": "LimitDTO",
+					"description": "限购信息"
+				}
+			],
+			"name": "data",
+			"type": "BuyGiftPromotionActivityDTO",
+			"description": "买赠活动查询结果"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "成功标识"
+		},
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "err_number",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "alibaba.retail.marketing.buygift.activity.query",
+	"apiChineseName": "查询单品买赠活动【同城零售】",
+	"description": "查询单品买赠活动【同城零售】",
+	"id": 60027
+}

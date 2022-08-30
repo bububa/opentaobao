@@ -1,13 +1,6 @@
 {
-	"id": 35634,
-	"name": "alitrip.hotel.rate.getmixratelist.get",
-	"apiChineseName": "酒店评论接口",
-	"description": "酒店评论接口",
 	"requestParams": [
 		{
-			"name": "param_get_mix_rate_list_param",
-			"type": "GetMixRateListParam",
-			"description": "评论参数",
 			"subParams": [
 				{
 					"name": "item_id",
@@ -47,718 +40,612 @@
 					"type": "String",
 					"description": "酒店评论类型筛选"
 				}
-			]
+			],
+			"name": "param_get_mix_rate_list_param",
+			"type": "GetMixRateListParam",
+			"description": "评论参数"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "Result",
-			"description": "result",
 			"subParams": [
 				{
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "empty"
+						}
+					],
 					"name": "biz_ext_map",
 					"type": "Bizextmap",
-					"description": "bizExtMap",
-					"required": true,
-					"subParams": [
-						{
-							"name": "empty",
-							"type": "Boolean",
-							"description": "empty",
-							"required": true
-						}
-					]
+					"description": "bizExtMap"
 				},
 				{
-					"name": "headers",
-					"type": "Headers",
-					"description": "headers",
-					"required": true,
 					"subParams": [
 						{
 							"name": "empty",
 							"type": "Boolean",
-							"description": "empty",
-							"required": true
+							"description": "empty"
 						}
-					]
+					],
+					"name": "headers",
+					"type": "Headers",
+					"description": "headers"
 				},
 				{
 					"name": "http_status_code",
 					"type": "Number",
-					"description": "httpStatusCode",
-					"required": true
+					"description": "httpStatusCode"
 				},
 				{
 					"name": "mapping_code",
 					"type": "String",
-					"description": "mappingCode",
-					"required": true
+					"description": "mappingCode"
 				},
 				{
-					"name": "model",
-					"type": "GetMixRateListResult",
-					"description": "model",
-					"required": true,
 					"subParams": [
 						{
-							"name": "attributes",
-							"type": "Attributes",
-							"description": "附加属性",
-							"required": true,
 							"subParams": [
 								{
 									"name": "key",
 									"type": "String",
-									"description": "key",
-									"required": true
+									"description": "key"
 								}
-							]
+							],
+							"name": "attributes",
+							"type": "Attributes",
+							"description": "附加属性"
 						},
 						{
 							"name": "config_info",
 							"type": "String",
-							"description": "页面布局信息",
-							"required": true
+							"description": "页面布局信息"
 						},
 						{
 							"name": "debug_info",
 							"type": "String",
-							"description": "debugInfo",
-							"required": true
+							"description": "debugInfo"
 						},
 						{
 							"name": "degrade",
 							"type": "Boolean",
-							"description": "degrade",
-							"required": true
+							"description": "degrade"
 						},
 						{
 							"name": "err_code",
 							"type": "String",
-							"description": "errCode",
-							"required": true
+							"description": "errCode"
 						},
 						{
 							"name": "err_msg",
 							"type": "String",
-							"description": "errMsg",
-							"required": true
+							"description": "errMsg"
 						},
 						{
 							"name": "has_next_page",
 							"type": "Number",
-							"description": "是否可以向下翻页，0不可以，1可以",
-							"required": true
+							"description": "是否可以向下翻页，0不可以，1可以"
 						},
 						{
 							"name": "host_name",
 							"type": "String",
-							"description": "服务器主机名称，排查问题使用",
-							"required": true
+							"description": "服务器主机名称，排查问题使用"
 						},
 						{
-							"name": "item_statistic",
-							"type": "ItemStatisticVo",
-							"description": "统计项",
-							"required": true,
 							"subParams": [
 								{
 									"name": "best_item",
 									"type": "String",
-									"description": "最佳得分项",
-									"required": true
+									"description": "最佳得分项"
 								},
 								{
 									"name": "is_five_grade",
 									"type": "Number",
-									"description": "五分制标记, 1为五分制， 0为十分制",
-									"required": true
+									"description": "五分制标记, 1为五分制， 0为十分制"
 								},
 								{
 									"name": "rate_cnt",
 									"type": "Number",
-									"description": "评论总数",
-									"required": true
+									"description": "评论总数"
 								},
 								{
 									"name": "rate_pic_cnt",
 									"type": "Number",
-									"description": "有图的评论总数",
-									"required": true
+									"description": "有图的评论总数"
 								},
 								{
 									"name": "recommend_str",
 									"type": "String",
-									"description": "推荐率",
-									"required": true
+									"description": "推荐率"
 								},
 								{
-									"name": "room_tab_infos",
-									"type": "TabInfo[]",
-									"description": "tab信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "attitude",
 											"type": "Number",
-											"description": "标签的态度 1好 0中性 -1 差",
-											"required": true
+											"description": "标签的态度 1好 0中性 -1 差"
 										},
 										{
 											"name": "is_click",
 											"type": "Boolean",
-											"description": "tab是否点击",
-											"required": true
+											"description": "tab是否点击"
 										},
 										{
 											"name": "tab_code",
 											"type": "String",
-											"description": "tab编码",
-											"required": true
+											"description": "tab编码"
 										},
 										{
 											"name": "tab_detail",
 											"type": "String",
-											"description": "tab下的统计数据",
-											"required": true
+											"description": "tab下的统计数据"
 										},
 										{
 											"name": "tab_id",
 											"type": "Number",
-											"description": "tabId",
-											"required": true
+											"description": "tabId"
 										},
 										{
 											"name": "tab_name",
 											"type": "String",
-											"description": "tab名称",
-											"required": true
+											"description": "tab名称"
 										},
 										{
 											"name": "tab_track",
 											"type": "String",
-											"description": "tab对应的埋点名",
-											"required": true
+											"description": "tab对应的埋点名"
 										},
 										{
 											"name": "type",
 											"type": "Number",
-											"description": "标签的类型 0正常 1热词 2房型 3度假",
-											"required": true
+											"description": "标签的类型 0正常 1热词 2房型 3度假"
 										}
-									]
+									],
+									"name": "room_tab_infos",
+									"type": "TabInfo[]",
+									"description": "tab信息"
 								},
 								{
 									"name": "score_desc",
 									"type": "String",
-									"description": "评分描述： 非常好",
-									"required": true
+									"description": "评分描述： 非常好"
 								},
 								{
 									"name": "score_detail",
 									"type": "String",
-									"description": "评分详情，json格式",
-									"required": true
+									"description": "评分详情，json格式"
 								},
 								{
-									"name": "score_infos",
-									"type": "ScoreInfo[]",
-									"description": "不同分数的数量",
-									"required": true,
 									"subParams": [
 										{
 											"name": "count",
 											"type": "Number",
-											"description": "count",
-											"required": true
+											"description": "count"
 										},
 										{
 											"name": "desc",
 											"type": "String",
-											"description": "desc",
-											"required": true
+											"description": "desc"
 										},
 										{
 											"name": "label",
 											"type": "String",
-											"description": "label",
-											"required": true
+											"description": "label"
 										},
 										{
 											"name": "score",
 											"type": "String",
-											"description": "score",
-											"required": true
+											"description": "score"
 										}
-									]
+									],
+									"name": "score_infos",
+									"type": "ScoreInfo[]",
+									"description": "不同分数的数量"
 								},
 								{
 									"name": "score_level",
 									"type": "Number",
-									"description": "评分星级",
-									"required": true
+									"description": "评分星级"
 								},
 								{
 									"name": "source",
 									"type": "Number",
-									"description": "source来源 0自采 1共享 21agoda 22艺龙 23tripAdvisor",
-									"required": true
+									"description": "source来源 0自采 1共享 21agoda 22艺龙 23tripAdvisor"
 								},
 								{
-									"name": "tab_infos",
-									"type": "TabInfo[]",
-									"description": "tab信息",
-									"required": true,
 									"subParams": [
 										{
 											"name": "attitude",
 											"type": "Number",
-											"description": "attitude",
-											"required": true
+											"description": "attitude"
 										},
 										{
 											"name": "is_click",
 											"type": "Boolean",
-											"description": "isClick",
-											"required": true
+											"description": "isClick"
 										},
 										{
 											"name": "tab_code",
 											"type": "String",
-											"description": "tabCode",
-											"required": true
+											"description": "tabCode"
 										},
 										{
 											"name": "tab_detail",
 											"type": "String",
-											"description": "tabDetail",
-											"required": true
+											"description": "tabDetail"
 										},
 										{
 											"name": "tab_id",
 											"type": "Number",
-											"description": "tabId",
-											"required": true
+											"description": "tabId"
 										},
 										{
 											"name": "tab_name",
 											"type": "String",
-											"description": "tabName",
-											"required": true
+											"description": "tabName"
 										},
 										{
 											"name": "tab_track",
 											"type": "String",
-											"description": "tabTrack",
-											"required": true
+											"description": "tabTrack"
 										},
 										{
 											"name": "type",
 											"type": "Number",
-											"description": "type",
-											"required": true
+											"description": "type"
 										}
-									]
+									],
+									"name": "tab_infos",
+									"type": "TabInfo[]",
+									"description": "tab信息"
 								},
 								{
 									"name": "tab_show_lines",
 									"type": "Number",
-									"description": "热词显示的行数",
-									"required": true
+									"description": "热词显示的行数"
 								},
 								{
 									"name": "total_score",
 									"type": "String",
-									"description": "总评分",
-									"required": true
+									"description": "总评分"
 								},
 								{
 									"name": "travel_item_id",
 									"type": "Number",
-									"description": "旅游商品信息id",
-									"required": true
+									"description": "旅游商品信息id"
 								},
 								{
 									"name": "travel_item_info",
 									"type": "String",
-									"description": "旅游商品信息",
-									"required": true
+									"description": "旅游商品信息"
 								},
 								{
 									"name": "trip_advate_cnt",
 									"type": "Number",
-									"description": "tripAdv评论数",
-									"required": true
+									"description": "tripAdv评论数"
 								}
-							]
+							],
+							"name": "item_statistic",
+							"type": "ItemStatisticVo",
+							"description": "统计项"
 						},
 						{
-							"name": "mix_rates",
-							"type": "MixRateVo[]",
-							"description": "商品评论列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "agree_count",
 									"type": "Number",
-									"description": "顶数量",
-									"required": true
+									"description": "顶数量"
 								},
 								{
 									"name": "agree_user_ids",
 									"type": "Number[]",
-									"description": "所有顶过的所有用户id",
-									"required": true
+									"description": "所有顶过的所有用户id"
 								},
 								{
 									"name": "biz_type",
 									"type": "Number",
-									"description": "业务类型",
-									"required": true
+									"description": "业务类型"
 								},
 								{
 									"name": "content",
 									"type": "String",
-									"description": "content",
-									"required": true
+									"description": "content"
 								},
 								{
 									"name": "disagree_count",
 									"type": "Number",
-									"description": "踩数量",
-									"required": true
+									"description": "踩数量"
 								},
 								{
 									"name": "disagree_user_ids",
 									"type": "Number[]",
-									"description": "所有踩过的所有用户id",
-									"required": true
+									"description": "所有踩过的所有用户id"
 								},
 								{
 									"name": "gmt_create",
 									"type": "String",
-									"description": "gmtCreate",
-									"required": true
+									"description": "gmtCreate"
 								},
 								{
 									"name": "id",
 									"type": "Number",
-									"description": "id",
-									"required": true
+									"description": "id"
 								},
 								{
 									"name": "item_id",
 									"type": "Number",
-									"description": "旅游商品id，对应于ItemRateDO中的travelItemId",
-									"required": true
+									"description": "旅游商品id，对应于ItemRateDO中的travelItemId"
 								},
 								{
 									"name": "item_info",
 									"type": "String",
-									"description": "旅游商品信息",
-									"required": true
+									"description": "旅游商品信息"
 								},
 								{
 									"name": "item_rate_id",
 									"type": "Number",
-									"description": "商品评论ID",
-									"required": true
+									"description": "商品评论ID"
 								},
 								{
-									"name": "item_replies",
-									"type": "ItemRateReplyVo[]",
-									"description": "所有商品评论回复",
-									"required": true,
 									"subParams": [
 										{
 											"name": "content",
 											"type": "String",
-											"description": "内容",
-											"required": true
+											"description": "内容"
 										},
 										{
 											"name": "gmt_create",
 											"type": "String",
-											"description": "评论时间",
-											"required": true
+											"description": "评论时间"
 										},
 										{
 											"name": "interval_day",
 											"type": "Number",
-											"description": "intervalDay",
-											"required": true
+											"description": "intervalDay"
 										},
 										{
 											"name": "media_info",
 											"type": "String",
-											"description": "图片信息,图片URL的list",
-											"required": true
+											"description": "图片信息,图片URL的list"
 										},
 										{
 											"name": "parent_id",
 											"type": "Number",
-											"description": "回复的是那一条，如果是回复主评为0，否则为追评id，组成树形结构",
-											"required": true
+											"description": "回复的是那一条，如果是回复主评为0，否则为追评id，组成树形结构"
 										},
 										{
-											"name": "parent_info",
-											"type": "ParentInfo",
-											"description": "被回复人的冗余信息",
-											"required": true,
 											"subParams": [
 												{
 													"name": "user_id",
 													"type": "Number",
-													"description": "脱敏后的userId",
-													"required": true
+													"description": "脱敏后的userId"
 												},
 												{
 													"name": "user_nick",
 													"type": "String",
-													"description": "脱敏后的用户名字",
-													"required": true
+													"description": "脱敏后的用户名字"
 												}
-											]
+											],
+											"name": "parent_info",
+											"type": "ParentInfo",
+											"description": "被回复人的冗余信息"
 										},
 										{
 											"name": "reply_id",
 											"type": "Number",
-											"description": "replyId",
-											"required": true
+											"description": "replyId"
 										},
 										{
 											"name": "reply_type",
 											"type": "Number",
-											"description": "恢复类型",
-											"required": true
+											"description": "恢复类型"
 										},
 										{
 											"name": "user_id",
 											"type": "Number",
-											"description": "脱敏后的userId",
-											"required": true
+											"description": "脱敏后的userId"
 										},
 										{
 											"name": "user_nick",
 											"type": "String",
-											"description": "脱敏后的用户名字",
-											"required": true
+											"description": "脱敏后的用户名字"
 										}
-									]
+									],
+									"name": "item_replies",
+									"type": "ItemRateReplyVo[]",
+									"description": "所有商品评论回复"
 								},
 								{
-									"name": "like",
-									"type": "LikeTargetCount",
-									"description": "点赞数据",
-									"required": true,
 									"subParams": [
 										{
 											"name": "count",
 											"type": "Number",
-											"description": "count",
-											"required": true
+											"description": "count"
 										},
 										{
 											"name": "target_id",
 											"type": "Number",
-											"description": "targetId",
-											"required": true
+											"description": "targetId"
 										},
 										{
 											"name": "voted",
 											"type": "Boolean",
-											"description": "voted",
-											"required": true
+											"description": "voted"
 										}
-									]
+									],
+									"name": "like",
+									"type": "LikeTargetCount",
+									"description": "点赞数据"
 								},
 								{
 									"name": "media_info",
 									"type": "String",
-									"description": "mediaInfo",
-									"required": true
+									"description": "mediaInfo"
 								},
 								{
 									"name": "order_id",
 									"type": "Number",
-									"description": "预定id",
-									"required": true
+									"description": "预定id"
 								},
 								{
 									"name": "order_info",
 									"type": "String",
-									"description": "预定信息",
-									"required": true
+									"description": "预定信息"
 								},
 								{
 									"name": "picture_urls",
 									"type": "String[]",
-									"description": "图片链接",
-									"required": true
+									"description": "图片链接"
 								},
 								{
 									"name": "poi_str",
 									"type": "String",
-									"description": "POI固定文本",
-									"required": true
+									"description": "POI固定文本"
 								},
 								{
 									"name": "redirect_url",
 									"type": "String",
-									"description": "跳转链接",
-									"required": true
+									"description": "跳转链接"
 								},
 								{
 									"name": "reply_count",
 									"type": "Number",
-									"description": "回复数量",
-									"required": true
+									"description": "回复数量"
 								},
 								{
 									"name": "score_detail",
 									"type": "String",
-									"description": "scoreDetail",
-									"required": true
+									"description": "scoreDetail"
 								},
 								{
 									"name": "sku",
 									"type": "String",
-									"description": "取件方式:邮寄;套餐类型:7天 4GB 3G流量+无限 2G流量",
-									"required": true
+									"description": "取件方式:邮寄;套餐类型:7天 4GB 3G流量+无限 2G流量"
 								},
 								{
 									"name": "source",
 									"type": "Number",
-									"description": "点评来源",
-									"required": true
+									"description": "点评来源"
 								},
 								{
 									"name": "source_type_name",
 									"type": "String",
-									"description": "点评来源名称",
-									"required": true
+									"description": "点评来源名称"
 								},
 								{
 									"name": "split_line_content",
 									"type": "String",
-									"description": "以上点评来自TripAdvisor.",
-									"required": true
+									"description": "以上点评来自TripAdvisor."
 								},
 								{
 									"name": "status",
 									"type": "Number",
-									"description": "状态",
-									"required": true
+									"description": "状态"
 								},
 								{
 									"name": "tag_info",
 									"type": "String",
-									"description": "标签",
-									"required": true
+									"description": "标签"
 								},
 								{
 									"name": "title",
 									"type": "String",
-									"description": "标题",
-									"required": true
+									"description": "标题"
 								},
 								{
 									"name": "total_score",
 									"type": "Number",
-									"description": "总分",
-									"required": true
+									"description": "总分"
 								},
 								{
 									"name": "travel_name",
 									"type": "String",
-									"description": "行程名称",
-									"required": true
+									"description": "行程名称"
 								},
 								{
 									"name": "travel_sub_item_id",
 									"type": "Number",
-									"description": "航旅标准商品子类型id",
-									"required": true
+									"description": "航旅标准商品子类型id"
 								},
 								{
 									"name": "travel_sub_item_info",
 									"type": "String",
-									"description": "航旅标准商品子类型id",
-									"required": true
+									"description": "航旅标准商品子类型id"
 								},
 								{
 									"name": "trip_guid_id",
 									"type": "Number",
-									"description": "行程ID",
-									"required": true
+									"description": "行程ID"
 								},
 								{
 									"name": "ttid",
 									"type": "String",
-									"description": "ttid",
-									"required": true
+									"description": "ttid"
 								},
 								{
 									"name": "user_icon",
 									"type": "String",
-									"description": "用户头像",
-									"required": true
+									"description": "用户头像"
 								},
 								{
 									"name": "user_id",
 									"type": "Number",
-									"description": "脱敏后的用户id",
-									"required": true
+									"description": "脱敏后的用户id"
 								},
 								{
 									"name": "user_nick",
 									"type": "String",
-									"description": "脱敏后的用户名字",
-									"required": true
+									"description": "脱敏后的用户名字"
 								},
 								{
 									"name": "user_star",
 									"type": "Number",
-									"description": "用户星级",
-									"required": true
+									"description": "用户星级"
 								}
-							]
+							],
+							"name": "mix_rates",
+							"type": "MixRateVo[]",
+							"description": "商品评论列表"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "success",
-							"required": true
+							"description": "success"
 						},
 						{
 							"name": "total_num",
 							"type": "Number",
-							"description": "总记录数",
-							"required": true
+							"description": "总记录数"
 						}
-					]
+					],
+					"name": "model",
+					"type": "GetMixRateListResult",
+					"description": "model"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "msgCode",
-					"required": true
+					"description": "msgCode"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "msgInfo",
-					"required": true
+					"description": "msgInfo"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
-			]
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alitrip.hotel.rate.getmixratelist.get",
+	"apiChineseName": "酒店评论接口",
+	"description": "酒店评论接口",
+	"id": 35634
 }

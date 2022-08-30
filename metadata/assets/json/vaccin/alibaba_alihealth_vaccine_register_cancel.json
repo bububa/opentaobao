@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "register_id",
+					"type": "String",
+					"description": "cdc侧的登记单id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "健康侧的用户支付宝id",
+					"required": true
+				},
+				{
+					"name": "cancel_time",
+					"type": "String",
+					"description": "取消登记时间，会校验格式 yyyy-MM-dd HH:mm:ss",
+					"required": true
+				}
+			],
+			"name": "top_request",
+			"type": "CancelVcRegisterRequest",
+			"description": "无",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "是否取消成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误提示"
+				}
+			],
+			"name": "result",
+			"type": "MtopResult",
+			"description": "无"
+		}
+	],
+	"name": "alibaba.alihealth.vaccine.register.cancel",
+	"apiChineseName": "取消登记",
+	"description": "取消登记",
+	"id": 58793
+}

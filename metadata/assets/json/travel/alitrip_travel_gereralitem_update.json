@@ -1,13 +1,6 @@
 {
-	"id": 32043,
-	"name": "alitrip.travel.gereralitem.update",
-	"apiChineseName": "除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新）",
-	"description": "除度假线路、门票以外的商品维护接口；目前该接口支持以下类目；\n（123740001：客栈周边交通服务、125038002：旅行设备/GPS/相机租赁、50018298：船票、124084006：酒店商品升级差价、125228016：预约卡券、50011954：旅游服务、50012913：酒店优惠券、50214003：旅游会员卡/酒店会员卡、50012917：巴士/地铁/交通卡/一卡通、50134002：代客烧香/还愿、50026091：境外火车票、123742001：客栈周边餐饮服务、50019817：海外套餐（该类目已废弃）、125210016：团建/outing、124212017：其他预定、50025888：机场行李托运取送寄存、50025831：旅游年票/年卡、124142009：旅游商品升级差价/押金、123744001：客栈周边其他服务、50012762：广深口岸港澳送关服务、50025880：旅行拍照/婚纱摄影、123166001：酒店餐饮美食（该类目已废弃）、50668002：手绘地图/明信片、50024210：旅游购物/纪念品、50024208：酒店用品、50024215：购物折扣卡券、50025878：酒店SPA/足浴/温泉、50024212：旅游必备品、123738001：客栈周边票务服务、123164002：游泳健身（该类目已废弃）、50686003：机票增值产品、123164001：酒店SPA（该类目已废弃）、124832008：美食卡券/酒店餐饮卡券、125408001：旅游定制服务、50018112：旅行社/网站优惠券、124258004：酒店客房优惠券（该类目已废弃）、50104001：机场周边停车位、124730002：内机机场/火车站送关服务、124090010：其他）",
 	"requestParams": [
 		{
-			"name": "base_info",
-			"type": "BaseInfo",
-			"description": "必填，商品基本信息",
 			"subParams": [
 				{
 					"name": "approve_status",
@@ -31,6 +24,7 @@
 				},
 				{
 					"name": "exts_map",
+					"type": "String",
 					"description": "商品的补充描述，不同类目所设置值不一样，根据类目配置模版来决定传值；目前仅演艺类目使用，模版：145632032=showStart#演出开始时间#3#20@showEnd#演出结束时间#3#20"
 				},
 				{
@@ -69,9 +63,6 @@
 					"description": "品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。"
 				},
 				{
-					"name": "props",
-					"type": "CatPropInfo[]",
-					"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
 					"subParams": [
 						{
 							"name": "pid",
@@ -83,7 +74,10 @@
 							"type": "String",
 							"description": "属性VID，调用taobao.itempropvalues.get取得"
 						}
-					]
+					],
+					"name": "props",
+					"type": "CatPropInfo[]",
+					"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。"
 				},
 				{
 					"name": "prov",
@@ -156,14 +150,12 @@
 					"type": "Number",
 					"description": "最晚收客时间:分钟。仅个别类目支持"
 				}
-			]
+			],
+			"name": "base_info",
+			"type": "BaseInfo",
+			"description": "必填，商品基本信息"
 		},
 		{
-			"name": "booking_rules",
-			"type": "BookingRuleInfo[]",
-			"description": "必填，预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
-			"required": true,
-			"maxListSize": 20,
 			"subParams": [
 				{
 					"name": "rule_desc",
@@ -177,18 +169,16 @@
 					"description": "fee_included：费用包含，跟团游必填； fee_excluded：费用不含，所有类目必填； order_info：预定须知； extra_cost：其他费用，预留；",
 					"required": true
 				}
-			]
+			],
+			"name": "booking_rules",
+			"type": "BookingRuleInfo[]",
+			"description": "必填，预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
+			"maxListSize": 20,
+			"required": true
 		},
 		{
-			"name": "date_sku_info_list",
-			"type": "DateSkuInfo[]",
-			"description": "更新sku信息，仅限日历商品使用",
-			"maxListSize": 500,
 			"subParams": [
 				{
-					"name": "alias",
-					"type": "PropertyAliasInfo[]",
-					"description": "sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改",
 					"subParams": [
 						{
 							"name": "properties",
@@ -200,12 +190,12 @@
 							"type": "String",
 							"description": "属性具体别名值"
 						}
-					]
+					],
+					"name": "alias",
+					"type": "PropertyAliasInfo[]",
+					"description": "sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改"
 				},
 				{
-					"name": "date_list",
-					"type": "DateInventoryAndPrice[]",
-					"description": "SKU的销售价格库存，日历商品使用",
 					"subParams": [
 						{
 							"name": "date",
@@ -222,7 +212,10 @@
 							"type": "Number",
 							"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
 						}
-					]
+					],
+					"name": "date_list",
+					"type": "DateInventoryAndPrice[]",
+					"description": "SKU的销售价格库存，日历商品使用"
 				},
 				{
 					"name": "outer_id",
@@ -230,9 +223,6 @@
 					"description": "sku商品编码"
 				},
 				{
-					"name": "properties",
-					"type": "CatPropInfo[]",
-					"description": "SKU销售属性列表,若未填写,其他sku信息不会生效；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
 					"subParams": [
 						{
 							"name": "pid",
@@ -244,14 +234,18 @@
 							"type": "String",
 							"description": "属性VID，调用taobao.itempropvalues.get取得"
 						}
-					]
+					],
+					"name": "properties",
+					"type": "CatPropInfo[]",
+					"description": "SKU销售属性列表,若未填写,其他sku信息不会生效；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。"
 				}
-			]
+			],
+			"name": "date_sku_info_list",
+			"type": "DateSkuInfo[]",
+			"description": "更新sku信息，仅限日历商品使用",
+			"maxListSize": 500
 		},
 		{
-			"name": "item_ele_cert_info",
-			"type": "ItemEleCertInfo",
-			"description": "新版电子凭证信息。如果传递了此参数，则sales_info中旧版电子凭证信息将被忽略，否则电子凭证信息将以旧版电子凭证参数为准。如果新、旧版参数都没传，则该商品不支持电子凭证",
 			"subParams": [
 				{
 					"name": "auto_refund_rate",
@@ -288,12 +282,12 @@
 					"type": "Number",
 					"description": "必填，核销门店库id"
 				}
-			]
+			],
+			"name": "item_ele_cert_info",
+			"type": "ItemEleCertInfo",
+			"description": "新版电子凭证信息。如果传递了此参数，则sales_info中旧版电子凭证信息将被忽略，否则电子凭证信息将以旧版电子凭证参数为准。如果新、旧版参数都没传，则该商品不支持电子凭证"
 		},
 		{
-			"name": "item_refund_info",
-			"type": "ItemRefundInfo",
-			"description": "选填，退款规则结构",
 			"subParams": [
 				{
 					"name": "refund_regulations",
@@ -305,35 +299,14 @@
 					"type": "Number",
 					"description": "退改规则类型，0为标准，1为自定义 2为不支持退改规则。不传默认为0"
 				}
-			]
+			],
+			"name": "item_refund_info",
+			"type": "ItemRefundInfo",
+			"description": "选填，退款规则结构"
 		},
 		{
-			"name": "poi",
-			"type": "Poi",
-			"description": "poi信息，个别类目必填，如演艺类目下场馆信息",
 			"subParams": [
 				{
-					"name": "id",
-					"type": "Number",
-					"description": "POI对应ID"
-				},
-				{
-					"name": "name",
-					"type": "String",
-					"description": "POI对应的名称"
-				}
-			]
-		},
-		{
-			"name": "common_sku_list",
-			"type": "NoDateSkuInfo[]",
-			"description": "更新sku信息，仅限非日历（普通）商品使用",
-			"maxListSize": 500,
-			"subParams": [
-				{
-					"name": "alias",
-					"type": "PropertyAliasInfo[]",
-					"description": "sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改",
 					"subParams": [
 						{
 							"name": "properties",
@@ -345,7 +318,10 @@
 							"type": "String",
 							"description": "属性具体别名值"
 						}
-					]
+					],
+					"name": "alias",
+					"type": "PropertyAliasInfo[]",
+					"description": "sku销售属性别名；如套餐1  需要调整成其他  需要在这里修改"
 				},
 				{
 					"name": "outer_id",
@@ -358,9 +334,6 @@
 					"description": "Sku的销售价格。单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）"
 				},
 				{
-					"name": "properties",
-					"type": "CatPropInfo[]",
-					"description": "SKU销售属性列表,若未填写,其他sku信息不会生效；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
 					"subParams": [
 						{
 							"name": "pid",
@@ -372,41 +345,66 @@
 							"type": "String",
 							"description": "属性VID，调用taobao.itempropvalues.get取得"
 						}
-					]
+					],
+					"name": "properties",
+					"type": "CatPropInfo[]",
+					"description": "SKU销售属性列表,若未填写,其他sku信息不会生效；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。"
 				},
 				{
 					"name": "quantity",
 					"type": "Number",
 					"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
 				}
-			]
+			],
+			"name": "common_sku_list",
+			"type": "NoDateSkuInfo[]",
+			"description": "更新sku信息，仅限非日历（普通）商品使用",
+			"maxListSize": 500
+		},
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "POI对应ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "POI对应的名称"
+				}
+			],
+			"name": "poi",
+			"type": "Poi",
+			"description": "poi信息，个别类目必填，如演艺类目下场馆信息"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "travel_item",
-			"type": "TopTravelItem",
-			"description": "商品发布结果",
 			"subParams": [
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "商品创建时间",
-					"required": true
+					"description": "商品创建时间"
 				},
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "商品id",
-					"required": true
+					"description": "商品id"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "商品修改时间",
-					"required": true
+					"description": "商品修改时间"
 				}
-			]
+			],
+			"name": "travel_item",
+			"type": "TopTravelItem",
+			"description": "商品发布结果"
 		}
-	]
+	],
+	"name": "alitrip.travel.gereralitem.update",
+	"apiChineseName": "除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新）",
+	"description": "除度假线路、门票以外的商品维护接口；目前该接口支持以下类目；\n（123740001：客栈周边交通服务、125038002：旅行设备/GPS/相机租赁、50018298：船票、124084006：酒店商品升级差价、125228016：预约卡券、50011954：旅游服务、50012913：酒店优惠券、50214003：旅游会员卡/酒店会员卡、50012917：巴士/地铁/交通卡/一卡通、50134002：代客烧香/还愿、50026091：境外火车票、123742001：客栈周边餐饮服务、50019817：海外套餐（该类目已废弃）、125210016：团建/outing、124212017：其他预定、50025888：机场行李托运取送寄存、50025831：旅游年票/年卡、124142009：旅游商品升级差价/押金、123744001：客栈周边其他服务、50012762：广深口岸港澳送关服务、50025880：旅行拍照/婚纱摄影、123166001：酒店餐饮美食（该类目已废弃）、50668002：手绘地图/明信片、50024210：旅游购物/纪念品、50024208：酒店用品、50024215：购物折扣卡券、50025878：酒店SPA/足浴/温泉、50024212：旅游必备品、123738001：客栈周边票务服务、123164002：游泳健身（该类目已废弃）、50686003：机票增值产品、123164001：酒店SPA（该类目已废弃）、124832008：美食卡券/酒店餐饮卡券、125408001：旅游定制服务、50018112：旅行社/网站优惠券、124258004：酒店客房优惠券（该类目已废弃）、50104001：机场周边停车位、124730002：内机机场/火车站送关服务、124090010：其他）",
+	"id": 32043
 }

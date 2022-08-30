@@ -1,8 +1,4 @@
 {
-	"id": 45802,
-	"name": "aliexpress.affiliate.order.list",
-	"apiChineseName": "AE推广者订单批量获取接口",
-	"description": "AE联盟推广者订单分页查询接口",
 	"requestParams": [
 		{
 			"name": "start_time",
@@ -50,9 +46,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "resp_result",
-			"type": "ResponseDto",
-			"description": "返回结果",
 			"subParams": [
 				{
 					"name": "resp_code",
@@ -67,10 +60,6 @@
 					"required": true
 				},
 				{
-					"name": "result",
-					"type": "TrafficOrderResultDto",
-					"description": "返回结果明细",
-					"required": true,
 					"subParams": [
 						{
 							"name": "current_page_no",
@@ -85,10 +74,6 @@
 							"required": true
 						},
 						{
-							"name": "orders",
-							"type": "Order[]",
-							"description": "订单列表",
-							"required": true,
 							"subParams": [
 								{
 									"name": "order_number",
@@ -154,6 +139,12 @@
 									"name": "is_affiliate_product",
 									"type": "String",
 									"description": "是否为联盟商品:Y或者N",
+									"required": true
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "国家标：global、ru_site、es_site、it_site",
 									"required": true
 								},
 								{
@@ -276,7 +267,11 @@
 									"description": "物流国家",
 									"required": true
 								}
-							]
+							],
+							"name": "orders",
+							"type": "Order[]",
+							"description": "订单列表",
+							"required": true
 						},
 						{
 							"name": "total_page_no",
@@ -290,9 +285,20 @@
 							"description": "总记录数",
 							"required": true
 						}
-					]
+					],
+					"name": "result",
+					"type": "TrafficOrderResultDto",
+					"description": "返回结果明细",
+					"required": true
 				}
-			]
+			],
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果"
 		}
-	]
+	],
+	"name": "aliexpress.affiliate.order.list",
+	"apiChineseName": "AE推广者订单批量获取接口",
+	"description": "AE联盟推广者订单分页查询接口",
+	"id": 45802
 }

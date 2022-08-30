@@ -1,13 +1,6 @@
 {
-	"id": 42022,
-	"name": "taobao.bus.agent.refund.confirm",
-	"apiChineseName": "汽车票退票和退款二合一接口",
-	"description": "1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。",
 	"requestParams": [
 		{
-			"name": "param_agent_confirm_return_and_refund_r_q",
-			"type": "AgentConfirmReturnAndRefundRq",
-			"description": "入参",
 			"subParams": [
 				{
 					"name": "agent_order_id",
@@ -86,8 +79,21 @@
 					"name": "agent_return_mode",
 					"type": "String",
 					"description": "offline:线下退票;online:线上退票"
+				},
+				{
+					"name": "refund_scene",
+					"type": "String",
+					"description": "退票场景，common:普通退款场景 force: 不可抗力"
+				},
+				{
+					"name": "refund_scene_official_reason_code",
+					"type": "String",
+					"description": "通知用户退票原因"
 				}
-			]
+			],
+			"name": "param_agent_confirm_return_and_refund_r_q",
+			"type": "AgentConfirmReturnAndRefundRq",
+			"description": "入参"
 		}
 	],
 	"responseParams": [
@@ -106,5 +112,9 @@
 			"type": "Boolean",
 			"description": "退票回调是否收到"
 		}
-	]
+	],
+	"name": "taobao.bus.agent.refund.confirm",
+	"apiChineseName": "汽车票退票和退款二合一接口",
+	"description": "1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。",
+	"id": 42022
 }

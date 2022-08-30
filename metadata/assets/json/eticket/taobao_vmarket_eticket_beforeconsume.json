@@ -1,8 +1,4 @@
 {
-	"id": 11043,
-	"name": "taobao.vmarket.eticket.beforeconsume",
-	"apiChineseName": "电子凭证验码前置确认",
-	"description": "商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作",
 	"requestParams": [
 		{
 			"name": "order_id",
@@ -45,9 +41,14 @@
 			"description": "1:可以进行核销码操作"
 		},
 		{
-			"name": "item_title",
-			"type": "String",
-			"description": "商品标题"
+			"name": "valid_ends",
+			"type": "Date",
+			"description": "有效期结束时间"
+		},
+		{
+			"name": "valid_start",
+			"type": "Date",
+			"description": "有效期开始时间"
 		},
 		{
 			"name": "left_num",
@@ -60,19 +61,14 @@
 			"description": "扩展字段，暂时预留为0，没有任何意义"
 		},
 		{
+			"name": "item_title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
 			"name": "order_id",
 			"type": "Number",
 			"description": "订单ID"
-		},
-		{
-			"name": "valid_start",
-			"type": "Date",
-			"description": "有效期开始时间"
-		},
-		{
-			"name": "valid_ends",
-			"type": "Date",
-			"description": "有效期结束时间"
 		},
 		{
 			"name": "item_type",
@@ -84,5 +80,9 @@
 			"type": "Number",
 			"description": "当前码剩余可核销数量"
 		}
-	]
+	],
+	"name": "taobao.vmarket.eticket.beforeconsume",
+	"apiChineseName": "电子凭证验码前置确认",
+	"description": "商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作",
+	"id": 11043
 }

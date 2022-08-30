@@ -1,8 +1,4 @@
 {
-	"id": 41171,
-	"name": "alibaba.alihealth.drug.kyt.drugcodes",
-	"apiChineseName": "药品是否赋码",
-	"description": "药品是否赋码",
 	"requestParams": [
 		{
 			"name": "ref_ent_name",
@@ -29,62 +25,60 @@
 			"required": true
 		},
 		{
-			"name": "pkg_spec",
-			"type": "String",
-			"description": "包装规格"
-		},
-		{
 			"name": "prepn_spec",
 			"type": "String",
 			"description": "制剂规格",
 			"required": true
+		},
+		{
+			"name": "pkg_spec",
+			"type": "String",
+			"description": "包装规格"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "ResultModel",
-			"description": "监控宝推送网站监控信息，返回结果",
 			"subParams": [
 				{
-					"name": "model",
-					"type": "DrugCode",
-					"description": "返回对象",
-					"required": true,
 					"subParams": [
 						{
 							"name": "has_code",
 							"type": "Boolean",
-							"description": "是否有码",
-							"required": true
+							"description": "是否有码"
 						},
 						{
 							"name": "pkg_spec_list",
 							"type": "String[]",
-							"description": "包装规格",
-							"required": true
+							"description": "包装规格"
 						}
-					]
+					],
+					"name": "model",
+					"type": "DrugCode",
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回值",
-					"required": true
+					"description": "返回值"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
-			]
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
 		}
-	]
+	],
+	"name": "alibaba.alihealth.drug.kyt.drugcodes",
+	"apiChineseName": "药品是否赋码",
+	"description": "药品是否赋码",
+	"id": 41171
 }

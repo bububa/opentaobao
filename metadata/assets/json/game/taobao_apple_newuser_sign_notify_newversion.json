@@ -1,8 +1,4 @@
 {
-	"id": 41455,
-	"name": "taobao.apple.newuser.sign.notify.newversion",
-	"apiChineseName": "新用户签约结果通知接口v2",
-	"description": "资和信主动通知签约结果",
 	"requestParams": [
 		{
 			"name": "result_code",
@@ -16,9 +12,6 @@
 			"description": "结果信息说明"
 		},
 		{
-			"name": "main_data",
-			"type": "AppleTopNewSignNotifyDo",
-			"description": "业务参数",
 			"subParams": [
 				{
 					"name": "tut",
@@ -60,7 +53,10 @@
 					"type": "String",
 					"description": "商户上送tUCI"
 				}
-			]
+			],
+			"name": "main_data",
+			"type": "AppleTopNewSignNotifyDo",
+			"description": "业务参数"
 		}
 	],
 	"responseParams": [
@@ -74,5 +70,9 @@
 			"type": "String",
 			"description": "处理结果码"
 		}
-	]
+	],
+	"name": "taobao.apple.newuser.sign.notify.newversion",
+	"apiChineseName": "新用户签约结果通知接口v2",
+	"description": "资和信主动通知签约结果",
+	"id": 41455
 }

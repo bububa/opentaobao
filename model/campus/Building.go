@@ -4,6 +4,8 @@ package campus
 type Building struct {
 	// 所属公司名称
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
+	// 面积
+	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 所属园区Code
 	CampusCode string `json:"campus_code,omitempty" xml:"campus_code,omitempty"`
 	// 所属园区名称
@@ -18,8 +20,6 @@ type Building struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// gmtModified
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// 面积
-	Area string `json:"area,omitempty" xml:"area,omitempty"`
 	// 所属公司
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`
 	// 状态，0停用，1启用

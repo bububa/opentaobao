@@ -4,6 +4,8 @@ package alsc
 type GrowRuleOpenInfo struct {
 	// 不同等级消费获取成长值规则模型
 	LevelConsumeGrowRuleOpenInfoList []LevelConsumeGrowRuleOpenInfo `json:"level_consume_grow_rule_open_info_list,omitempty" xml:"level_consume_grow_rule_open_info_list>level_consume_grow_rule_open_info,omitempty"`
+	// 创建人
+	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
 	// 扩展信息
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 创建时间
@@ -12,8 +14,6 @@ type GrowRuleOpenInfo struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 规则id
 	GrowRuleId string `json:"grow_rule_id,omitempty" xml:"grow_rule_id,omitempty"`
-	// 创建人
-	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`
 	// 更新人
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`
 	// 普通消费能否获取成长值

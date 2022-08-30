@@ -1,12 +1,6 @@
 {
-	"id": 27728,
-	"name": "taobao.qimen.combineitem.query",
-	"apiChineseName": "组合货品关系查询接口",
-	"description": "组合货品关系查询",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "ownerCode",
@@ -23,13 +17,13 @@
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -50,10 +44,6 @@
 					"required": true
 				},
 				{
-					"name": "combItems",
-					"type": "CombItem[]",
-					"description": "奇门仓储字段",
-					"required": true,
 					"subParams": [
 						{
 							"name": "itemId",
@@ -67,9 +57,19 @@
 							"description": "奇门仓储字段",
 							"required": true
 						}
-					]
+					],
+					"name": "combItems",
+					"type": "CombItem[]",
+					"description": "奇门仓储字段",
+					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.combineitem.query",
+	"apiChineseName": "组合货品关系查询接口",
+	"description": "组合货品关系查询",
+	"id": 27728
 }

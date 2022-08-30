@@ -12,10 +12,10 @@ import (
 // 根据角色id查询权限
 type AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest struct {
 	model.Params
-	// 角色id
-	_roleId int64
 	// 系统参数
 	_workbenchcontext *WorkBenchContext
+	// 角色id
+	_roleId int64
 	// 是否查询全部类型权限
 	_allPermission bool
 }
@@ -41,19 +41,6 @@ func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetApiParams() ur
 	return params
 }
 
-// SetRoleId is RoleId Setter
-// 角色id
-func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetRoleId(_roleId int64) error {
-	r._roleId = _roleId
-	r.Set("role_id", _roleId)
-	return nil
-}
-
-// GetRoleId RoleId Getter
-func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetRoleId() int64 {
-	return r._roleId
-}
-
 // SetWorkbenchcontext is Workbenchcontext Setter
 // 系统参数
 func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
@@ -65,6 +52,19 @@ func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetWorkbenchcont
 // GetWorkbenchcontext Workbenchcontext Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetWorkbenchcontext() *WorkBenchContext {
 	return r._workbenchcontext
+}
+
+// SetRoleId is RoleId Setter
+// 角色id
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) SetRoleId(_roleId int64) error {
+	r._roleId = _roleId
+	r.Set("role_id", _roleId)
+	return nil
+}
+
+// GetRoleId RoleId Getter
+func (r AlibabaCampusAclNewGetrolewithmenutreenodesAPIRequest) GetRoleId() int64 {
+	return r._roleId
 }
 
 // SetAllPermission is AllPermission Setter

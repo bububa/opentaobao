@@ -1,13 +1,24 @@
 {
-	"id": 50607,
-	"name": "taobao.travel.ticket.order.verify",
-	"apiChineseName": "飞猪门票核销通知",
-	"description": "系统商通过TOP接口调用通知飞猪门票核销情况",
 	"requestParams": [
+		{
+			"name": "check_num",
+			"type": "Number",
+			"description": "核销次数"
+		},
 		{
 			"name": "order_id",
 			"type": "Number",
 			"description": "下单订单ID"
+		},
+		{
+			"name": "return_num",
+			"type": "Number",
+			"description": "门票取消数量"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "门票总共允许核销次数"
 		},
 		{
 			"name": "out_order_id",
@@ -15,10 +26,11 @@
 			"description": "外部订单ID"
 		},
 		{
-			"name": "voucher_infos",
-			"type": "VoucherInfoDto[]",
-			"description": "使用凭证信息",
-			"maxListSize": 999,
+			"name": "confirm_code",
+			"type": "String",
+			"description": "(新接入使用voucher_infos)用户短信会收到的确认号"
+		},
+		{
 			"subParams": [
 				{
 					"name": "confirm_code",
@@ -35,7 +47,11 @@
 					"type": "String",
 					"description": "凭证使用时间，格式:yyyy-MM-dd HH:mm:ss"
 				}
-			]
+			],
+			"name": "voucher_infos",
+			"type": "VoucherInfoDto[]",
+			"description": "使用凭证信息",
+			"maxListSize": 999
 		},
 		{
 			"name": "write_off_type",
@@ -47,7 +63,11 @@
 		{
 			"name": "is_success",
 			"type": "Boolean",
-			"description": "正确返回true"
+			"description": "成功状态true or false"
 		}
-	]
+	],
+	"name": "taobao.travel.ticket.order.verify",
+	"apiChineseName": "飞猪门票核销通知",
+	"description": "系统商通过TOP接口调用通知飞猪门票核销情况",
+	"id": 50607
 }

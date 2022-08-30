@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "权限是否存在"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.message.subscription.query",
+	"apiChineseName": "查询用户是否有模版ID权限",
+	"description": "只是查询用户是否拥有权限ID",
+	"id": 57108
+}

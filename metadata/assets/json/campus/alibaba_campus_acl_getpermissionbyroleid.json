@@ -1,8 +1,4 @@
 {
-	"id": 32234,
-	"name": "alibaba.campus.acl.getpermissionbyroleid",
-	"apiChineseName": "根据角色Id查询权限",
-	"description": "根据角色查询权限",
 	"requestParams": [
 		{
 			"name": "system_id",
@@ -17,92 +13,85 @@
 			"required": true
 		},
 		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id"
+		},
+		{
 			"name": "role_id",
 			"type": "String",
 			"description": "角色id",
 			"required": true
-		},
-		{
-			"name": "company_id",
-			"type": "Number",
-			"description": "公司id"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "result",
-			"type": "CollectionResult",
-			"description": "result",
 			"subParams": [
 				{
-					"name": "contents",
-					"type": "PermissionVo[]",
-					"description": "接口返回数据",
-					"required": true,
 					"subParams": [
 						{
 							"name": "priv_key",
 							"type": "String",
-							"description": "权限健",
-							"required": true
+							"description": "权限健"
 						},
 						{
 							"name": "priv_vaue",
 							"type": "String",
-							"description": "权限值",
-							"required": true
+							"description": "权限值"
 						},
 						{
 							"name": "priv_type",
 							"type": "String",
-							"description": "权限类型",
-							"required": true
+							"description": "权限类型"
 						},
 						{
 							"name": "priv_name",
 							"type": "String",
-							"description": "权限名称",
-							"required": true
+							"description": "权限名称"
 						},
 						{
 							"name": "effective_time",
 							"type": "Date",
-							"description": "生效开始时间",
-							"required": true
+							"description": "生效开始时间"
 						},
 						{
 							"name": "expire_time",
 							"type": "Date",
-							"description": "生效过期时间",
-							"required": true
+							"description": "生效过期时间"
 						}
-					]
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误描述",
-					"required": true
-				},
-				{
-					"name": "error_level",
-					"type": "String",
-					"description": "错误级别",
-					"required": true
+					],
+					"name": "contents",
+					"type": "PermissionVo[]",
+					"description": "接口返回数据"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别"
 				}
-			]
+			],
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result"
 		}
-	]
+	],
+	"name": "alibaba.campus.acl.getpermissionbyroleid",
+	"apiChineseName": "根据角色Id查询权限",
+	"description": "根据角色查询权限",
+	"id": 32234
 }

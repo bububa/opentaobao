@@ -12,6 +12,8 @@ type BtripHotelCreateOrderRq struct {
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
 	// 创单Key值，试单结果返回
 	CreateOrderKey string `json:"create_order_key,omitempty" xml:"create_order_key,omitempty"`
+	// 入住人信息
+	Customers string `json:"customers,omitempty" xml:"customers,omitempty"`
 	// 分销平台订单id
 	DisOrderId string `json:"dis_order_id,omitempty" xml:"dis_order_id,omitempty"`
 	// 最早到店时间
@@ -22,8 +24,6 @@ type BtripHotelCreateOrderRq struct {
 	SubChannel string `json:"sub_channel,omitempty" xml:"sub_channel,omitempty"`
 	// 供应商标识码
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`
-	// 入住人信息
-	Customers string `json:"customers,omitempty" xml:"customers,omitempty"`
 	// 订单联系人信息
 	HotelContact *BtripHotelContactDto `json:"hotel_contact,omitempty" xml:"hotel_contact,omitempty"`
 	// 商旅商品唯一标识
@@ -38,4 +38,8 @@ type BtripHotelCreateOrderRq struct {
 	TotalPromotion int64 `json:"total_promotion,omitempty" xml:"total_promotion,omitempty"`
 	// 总房价
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`
+	// 订单总价中企业支付部分
+	CorpPayPrice int64 `json:"corp_pay_price,omitempty" xml:"corp_pay_price,omitempty"`
+	// 订单总价中个人支付部分
+	PersonPayPrice int64 `json:"person_pay_price,omitempty" xml:"person_pay_price,omitempty"`
 }

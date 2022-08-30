@@ -14,6 +14,8 @@ type Receiverinfo struct {
 	ReceiverArea string `json:"receiver_area,omitempty" xml:"receiver_area,omitempty"`
 	// 村镇
 	ReceiveTown string `json:"receive_town,omitempty" xml:"receive_town,omitempty"`
+	// 详细地址
+	ReceiverDetailAddress string `json:"receiver_detail_address,omitempty" xml:"receiver_detail_address,omitempty"`
 	// 收件人
 	ReceiverName string `json:"receiver_name,omitempty" xml:"receiver_name,omitempty"`
 	// 手机号
@@ -25,8 +27,6 @@ type Receiverinfo struct {
 	// 邮箱
 	ReceiverEmail string `json:"receiver_email,omitempty" xml:"receiver_email,omitempty"`
 	// 详细地址
-	ReceiverDetailAddress string `json:"receiver_detail_address,omitempty" xml:"receiver_detail_address,omitempty"`
-	// 详细地址
 	ReceiverAddress string `json:"receiver_address,omitempty" xml:"receiver_address,omitempty"`
 	// 城镇
 	ReceiverTown string `json:"receiver_town,omitempty" xml:"receiver_town,omitempty"`
@@ -34,6 +34,8 @@ type Receiverinfo struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 邮编
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
+	// 固定电话
+	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
 	// 移动电话
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 省份
@@ -46,6 +48,6 @@ type Receiverinfo struct {
 	Town string `json:"town,omitempty" xml:"town,omitempty"`
 	// 详细地址
 	DetailAddress string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
-	// 固定电话
-	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
+	// 收件人地址ID
+	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 }

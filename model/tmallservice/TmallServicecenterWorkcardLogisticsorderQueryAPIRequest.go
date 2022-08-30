@@ -14,6 +14,8 @@ type TmallServicecenterWorkcardLogisticsorderQueryAPIRequest struct {
 	model.Params
 	// 物流单号
 	_logisticsOrderId int64
+	// 是否查询新物流，不填默认查原有物流
+	_newLogistics bool
 }
 
 // NewTmallServicecenterWorkcardLogisticsorderQueryRequest 初始化TmallServicecenterWorkcardLogisticsorderQueryAPIRequest对象
@@ -48,4 +50,17 @@ func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) SetLogisticsOr
 // GetLogisticsOrderId LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) GetLogisticsOrderId() int64 {
 	return r._logisticsOrderId
+}
+
+// SetNewLogistics is NewLogistics Setter
+// 是否查询新物流，不填默认查原有物流
+func (r *TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) SetNewLogistics(_newLogistics bool) error {
+	r._newLogistics = _newLogistics
+	r.Set("new_logistics", _newLogistics)
+	return nil
+}
+
+// GetNewLogistics NewLogistics Getter
+func (r TmallServicecenterWorkcardLogisticsorderQueryAPIRequest) GetNewLogistics() bool {
+	return r._newLogistics
 }

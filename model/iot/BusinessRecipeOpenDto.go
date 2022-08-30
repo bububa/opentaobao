@@ -20,10 +20,10 @@ type BusinessRecipeOpenDto struct {
 	BusinessRecipeId int64 `json:"business_recipe_id,omitempty" xml:"business_recipe_id,omitempty"`
 	// 菜谱功能类型 1 普通食谱 2 智能食谱
 	FunctionType int64 `json:"function_type,omitempty" xml:"function_type,omitempty"`
+	// 食谱图片
+	RecipeImage *ImageUrlDto `json:"recipe_image,omitempty" xml:"recipe_image,omitempty"`
 	// 食谱时间，单位秒
 	RecipeTime int64 `json:"recipe_time,omitempty" xml:"recipe_time,omitempty"`
 	// 食谱视频
 	RecipeVideo *VideoUrlDto `json:"recipe_video,omitempty" xml:"recipe_video,omitempty"`
-	// 食谱图片
-	RecipeImage *ImageUrlDto `json:"recipe_image,omitempty" xml:"recipe_image,omitempty"`
 }

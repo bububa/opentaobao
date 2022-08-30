@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部楼盘id",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "Number",
+					"description": "是否解除",
+					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
+				},
+				{
+					"name": "outer_sales_activity_id",
+					"type": "String",
+					"description": "外部销售活动id",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "预存金淘宝商品id",
+					"required": true
+				}
+			],
+			"name": "pre_deposit_gold_dto",
+			"type": "PreDepositGoldDTO",
+			"description": "绑定预存金商品属性"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否保存成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回报文属性"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.activity.deposit.bind",
+	"apiChineseName": "销售活动绑定预存金商品id",
+	"description": "销售活动绑定预存金商品id",
+	"id": 62499
+}

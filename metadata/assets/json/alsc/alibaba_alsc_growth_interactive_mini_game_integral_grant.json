@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "积分发放数量"
+				},
+				{
+					"name": "act_id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"name": "game_acc_id",
+					"type": "String",
+					"description": "游戏账号"
+				},
+				{
+					"name": "collection_ids",
+					"type": "String[]",
+					"description": "组建集id集合"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id(幂等id)"
+				},
+				{
+					"name": "property_id",
+					"type": "String",
+					"description": "资产id"
+				}
+			],
+			"name": "mini_game_grant_integral_request",
+			"type": "MiniGameGrantIntegralRequest",
+			"description": "小游戏积分发放请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "account_value",
+					"type": "Number",
+					"description": "账户值"
+				}
+			],
+			"name": "data",
+			"type": "MiniGameGrantIntegralDTO",
+			"description": "积分发放返回对象"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链路id"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.mini.game.integral.grant",
+	"apiChineseName": "本地生活用户增长互动小游戏积分发放",
+	"description": "本地生活用户增长互动小游戏积分发放",
+	"id": 63518
+}

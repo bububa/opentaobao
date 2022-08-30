@@ -1,12 +1,6 @@
 {
-	"id": 27380,
-	"name": "taobao.qimen.orderexception.report",
-	"apiChineseName": "订单异常通知接口",
-	"description": "WMS调用奇门的接口,当WMS接收到ERP的发货指令时，由于种种原因（5.1.5说明了各种异常场景）可能无法完成发货。WMS通过调用此接口，通知ERP具体异常情况",
 	"requestParams": [
 		{
-			"name": "request",
-			"type": "Request",
 			"subParams": [
 				{
 					"name": "messageId",
@@ -59,9 +53,6 @@
 					"description": "奇门仓储字段"
 				},
 				{
-					"name": "orderLines",
-					"type": "OrderLine[]",
-					"description": "奇门仓储字段",
 					"subParams": [
 						{
 							"name": "orderLineNo",
@@ -219,9 +210,6 @@
 							"description": "奇门仓储字段"
 						},
 						{
-							"name": "batchs",
-							"type": "Batch[]",
-							"description": "奇门仓储字段",
 							"subParams": [
 								{
 									"name": "batchCode",
@@ -258,7 +246,10 @@
 									"type": "String",
 									"description": "奇门仓储字段"
 								}
-							]
+							],
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "奇门仓储字段"
 						},
 						{
 							"name": "payNo",
@@ -340,7 +331,10 @@
 							"type": "String",
 							"description": "奇门仓储字段"
 						}
-					]
+					],
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "奇门仓储字段"
 				},
 				{
 					"name": "remark",
@@ -352,13 +346,13 @@
 					"type": "Map",
 					"description": "扩展属性"
 				}
-			]
+			],
+			"name": "request",
+			"type": "Request"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "response",
-			"type": "Response",
 			"subParams": [
 				{
 					"name": "flag",
@@ -378,7 +372,13 @@
 					"description": "响应信息",
 					"required": true
 				}
-			]
+			],
+			"name": "response",
+			"type": "Response"
 		}
-	]
+	],
+	"name": "taobao.qimen.orderexception.report",
+	"apiChineseName": "订单异常通知接口",
+	"description": "WMS调用奇门的接口,当WMS接收到ERP的发货指令时，由于种种原因（5.1.5说明了各种异常场景）可能无法完成发货。WMS通过调用此接口，通知ERP具体异常情况",
+	"id": 27380
 }

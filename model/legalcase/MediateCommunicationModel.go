@@ -12,8 +12,6 @@ type MediateCommunicationModel struct {
 	ContactPeople string `json:"contact_people,omitempty" xml:"contact_people,omitempty"`
 	// 调解联系时间
 	ContactTime string `json:"contact_time,omitempty" xml:"contact_time,omitempty"`
-	// 调解金额
-	MediateAmount string `json:"mediate_amount,omitempty" xml:"mediate_amount,omitempty"`
 	// 调解阶段
 	Phase string `json:"phase,omitempty" xml:"phase,omitempty"`
 	// 备注
@@ -26,6 +24,8 @@ type MediateCommunicationModel struct {
 	Solution string `json:"solution,omitempty" xml:"solution,omitempty"`
 	// id新增不用
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
+	// 调解金额
+	MediateAmount *BigDecimal `json:"mediate_amount,omitempty" xml:"mediate_amount,omitempty"`
 	// 卖家是否要求积极应诉
 	SellerAskRespondent bool `json:"seller_ask_respondent,omitempty" xml:"seller_ask_respondent,omitempty"`
 }

@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_valid",
+					"type": "Number",
+					"description": "是否生效 1-生效 0-失效",
+					"required": true
+				},
+				{
+					"name": "agreement_content",
+					"type": "String",
+					"description": "协议内容",
+					"required": true
+				},
+				{
+					"name": "agreement_name",
+					"type": "String",
+					"description": "协议名称",
+					"required": true
+				},
+				{
+					"name": "is_template",
+					"type": "Number",
+					"description": "是否使用模板 1-是 0-否",
+					"required": true
+				},
+				{
+					"name": "agreement_type",
+					"type": "Number",
+					"description": "协议类型",
+					"required": true
+				},
+				{
+					"name": "outer_agreement_id",
+					"type": "String",
+					"description": "外部协议ID",
+					"required": true
+				},
+				{
+					"name": "merchant_open_id",
+					"type": "Number",
+					"description": "公司进件ID"
+				}
+			],
+			"name": "existing_home_electric_agreement_dto",
+			"type": "ExistingHomeElectricAgreementDto",
+			"description": "数据结构",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "预览URL"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.agreement.sync",
+	"apiChineseName": "二手房电子协议数据同步",
+	"description": "二手房电子协议数据同步",
+	"id": 57247
+}

@@ -1,15 +1,11 @@
 {
-	"id": 24512,
-	"name": "taobao.tae.accounts.get",
-	"apiChineseName": "tae查询费用科目信息",
-	"description": "tae查询费用科目信息",
 	"requestParams": [
 		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段",
-			"required": true,
-			"maxListSize": 20
+			"maxListSize": 20,
+			"required": true
 		},
 		{
 			"name": "aids",
@@ -20,9 +16,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "accounts",
-			"type": "TopAccountDto []",
-			"description": "返回的科目信息",
 			"subParams": [
 				{
 					"name": "related_order",
@@ -64,12 +57,19 @@
 					"type": "String",
 					"description": "费用科目名称"
 				}
-			]
+			],
+			"name": "accounts",
+			"type": "TopAccountDto []",
+			"description": "返回的科目信息"
 		},
 		{
 			"name": "total_results",
 			"type": "Number",
 			"description": "返回记录行数"
 		}
-	]
+	],
+	"name": "taobao.tae.accounts.get",
+	"apiChineseName": "tae查询费用科目信息",
+	"description": "tae查询费用科目信息",
+	"id": 24512
 }

@@ -18,6 +18,8 @@ type AlibabaBaichuanCtgToutiaoContentData struct {
 	OrgSource string `json:"org_source,omitempty" xml:"org_source,omitempty"`
 	// 达人nick
 	Nick string `json:"nick,omitempty" xml:"nick,omitempty"`
+	// 淘宝达人id
+	TbUid string `json:"tb_uid,omitempty" xml:"tb_uid,omitempty"`
 	// 微博大V账户id
 	WbUid string `json:"wb_uid,omitempty" xml:"wb_uid,omitempty"`
 	// 内容创建时间
@@ -32,6 +34,4 @@ type AlibabaBaichuanCtgToutiaoContentData struct {
 	ItemUrlList string `json:"item_url_list,omitempty" xml:"item_url_list,omitempty"`
 	// 内容id
 	ContentId string `json:"content_id,omitempty" xml:"content_id,omitempty"`
-	// 淘宝达人id
-	TbUid string `json:"tb_uid,omitempty" xml:"tb_uid,omitempty"`
 }
