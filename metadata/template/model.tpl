@@ -9,7 +9,7 @@ import (
 // {{ .Name }} 结构体
 type {{ .Name }} struct {
 {{- range $v := .Params }}
-    // {{ $v.Desc }}
+    // {{ replace $v.Desc '\x00' '' }}
     {{- if and (eq $v.IsList true) }}
     {{ $v.Name }}   {{ $v.Type }} `json:"{{ $v.ParamKey }},omitempty" xml:"{{ $v.ParamKey }}>{{ $v.SnakeType }},omitempty"`
     {{- else }}

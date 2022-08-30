@@ -13,6 +13,7 @@ import (
 	"text/template"
 
 	"github.com/bububa/opentaobao/metadata"
+	"github.com/bububa/opentaobao/metadata/util"
 )
 
 // Gen 生成SDK入口
@@ -284,6 +285,7 @@ func genApi(templatePath string, apiPath string, tpl metadata.ApiTpl) error {
 		return err
 	}
 	defer fd.Close()
+	tmpl.Funcs(util.FuncMap)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }
@@ -355,6 +357,7 @@ func genModel(templatePath string, modelPath string, tpl metadata.TplModel) erro
 	defer fd.Close()
 	tpl.ImportModel = tpl.NeedImportModel()
 	metadata.AlignTplParams(tpl.Params)
+	tmpl.Funcs(util.FuncMap)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }

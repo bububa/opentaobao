@@ -178,6 +178,8 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 			"DTo": "Dto",
 			"DO":  "Do",
 			"RS":  "Rs",
+			"VO":  "Vo",
+			"RQ":  "Rq",
 		}
 		for fromSuffix, toSuffix := range replaceMp {
 			if strings.HasSuffix(paramType, fromSuffix) {

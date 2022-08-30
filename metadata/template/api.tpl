@@ -8,7 +8,7 @@ import (
 // {{ .Name }} {{ .ChineseName }} 
 // {{ .ApiName }}
 //
-{{ .Desc }}
+{{ replace .Desc '\x00', '' }}
 func {{ .Name }}(clt *core.SDKClient, req *{{ .Pkg }}.{{ .Name }}APIRequest, session string) (*{{ .Pkg }}.{{ .Name }}APIResponse, error) {
     var resp {{ .Pkg }}.{{ .Name }}APIResponse
     err := clt.Post(req, &resp, session)
