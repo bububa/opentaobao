@@ -13,12 +13,13 @@ import (
 func TestJSONFormatHmac(t *testing.T) {
 	appKey := os.Getenv("APPKEY")
 	secret := os.Getenv("SECRET")
+	testURL := os.Getenv("TEST_TBK_LINK")
 	clt := core.NewSDKClient(appKey, secret)
 	clt.SetDebug(true)
 	clt.SetAPIFormat(model.JSON)
 	clt.SetSignMethod(model.HMAC)
 	req := tbkModel.NewTaobaoTbkTpwdCreateRequest()
-	req.SetUrl("https://s.click.taobao.com/GKQEZlu")
+	req.SetUrl(testURL)
 	req.SetText("test tpwd create")
 	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
 	if err != nil {
@@ -31,12 +32,13 @@ func TestJSONFormatHmac(t *testing.T) {
 func TestJSONFormatMd5(t *testing.T) {
 	appKey := os.Getenv("APPKEY")
 	secret := os.Getenv("SECRET")
+	testURL := os.Getenv("TEST_TBK_LINK")
 	clt := core.NewSDKClient(appKey, secret)
 	clt.SetDebug(true)
 	clt.SetAPIFormat(model.JSON)
 	clt.SetSignMethod(model.MD5)
 	req := tbkModel.NewTaobaoTbkTpwdCreateRequest()
-	req.SetUrl("https://s.click.taobao.com/GKQEZlu")
+	req.SetUrl(testURL)
 	req.SetText("test tpwd create")
 	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
 	if err != nil {

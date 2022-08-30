@@ -25,4 +25,6 @@ jobs:
       env:
         APPKEY: ${{ secrets.APPKEY }}
         SECRET: ${{ secrets.APP_SECRET }}
+        TEST_TBK_LINK: ${{ secrets.TEST_TBK_LINK }}
+        TEST_NUM_IIDS: ${{ secrets.TEST_NUM_IIDS }}
       run: go test -v ./...
