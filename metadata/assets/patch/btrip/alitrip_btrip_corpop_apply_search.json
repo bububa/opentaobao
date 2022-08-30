@@ -1,0 +1,346 @@
+{
+  "requestParams": [
+    {
+      "subParams": [
+        {
+          "name": "all_apply",
+          "type": "Boolean",
+          "description": "false:未报销的申请单"
+        },
+        {
+          "name": "corp_id",
+          "type": "String",
+          "description": "第三方企业id",
+          "required": true
+        },
+        {
+          "name": "depart_id",
+          "type": "String",
+          "description": "申请人所在部门id"
+        },
+        {
+          "name": "end_time",
+          "type": "Date",
+          "description": "结束时间"
+        },
+        {
+          "name": "gmt_modified",
+          "type": "Date",
+          "description": "更新时间大于等于此时间的审批单"
+        },
+        {
+          "name": "only_shang_lv_apply",
+          "type": "Boolean",
+          "description": "true:商旅申请单"
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "description": "页数，从1开始"
+        },
+        {
+          "name": "page_size",
+          "type": "Number",
+          "description": "每页返回数量，默认10，最多50"
+        },
+        {
+          "name": "start_time",
+          "type": "Date",
+          "description": "开始时间"
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "description": "申请人Id（第三方用户id）"
+        },
+        {
+          "name": "version",
+          "type": "Number",
+          "description": "1、老版本2、isv对外版本"
+        },
+        {
+          "name": "type",
+          "type": "Number",
+          "description": "申请单提交类型，1代提交 2本人提交 注意：当申请单为代提交时，申请单提交人自己无法为自己下单"
+        },
+        {
+          "name": "union_no",
+          "type": "String",
+          "description": "第三方关联单号"
+        }
+      ],
+      "name": "rq",
+      "type": "OpenIsvSearchRQ",
+      "description": "请求对象",
+      "required": true
+    }
+  ],
+  "responseParams": [
+    {
+      "subParams": [
+        {
+          "subParams": [
+            {
+              "name": "apply_show_id",
+              "type": "String",
+              "description": "商旅审批展示id"
+            },
+            {
+              "name": "id",
+              "type": "Number",
+              "description": "商旅审批单id"
+            },
+            {
+              "name": "gmt_create",
+              "type": "Date",
+              "description": "创建时间"
+            },
+            {
+              "name": "gmt_modified",
+              "type": "Date",
+              "description": "更新时间"
+            },
+            {
+              "name": "thirdpart_id",
+              "type": "String",
+              "description": "第三方审批单id,如果非第三方审批单则为空"
+            },
+            {
+              "name": "corp_id",
+              "type": "String",
+              "description": "商旅企业id"
+            },
+            {
+              "name": "user_id",
+              "type": "String",
+              "description": "申请人Id（第三方用户id）"
+            },
+            {
+              "name": "depart_id",
+              "type": "String",
+              "description": "申请人所在部门id"
+            },
+            {
+              "name": "corp_name",
+              "type": "String",
+              "description": "企业名称"
+            },
+            {
+              "name": "user_name",
+              "type": "String",
+              "description": "用户名称"
+            },
+            {
+              "name": "depart_name",
+              "type": "String",
+              "description": "部门名称"
+            },
+            {
+              "name": "trip_day",
+              "type": "Number",
+              "description": "出差天数"
+            },
+            {
+              "name": "trip_cause",
+              "type": "String",
+              "description": "出差事由"
+            },
+            {
+              "name": "trip_title",
+              "type": "String",
+              "description": "申请单标题"
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "description": "申请单状态：0申请 1同意 2拒绝 3转交 4取消 5修改已同意 6撤销已同意 7修改审批中 8已同意(修改被拒绝) 9撤销审批中 10已同意(撤销被拒绝) 11已同意(修改被取消) 12已同意(撤销被取消)"
+            },
+            {
+              "name": "status_desc",
+              "type": "String",
+              "description": "审批单状态描述"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "trip_way",
+                  "type": "Number",
+                  "description": "行程方式：0单程 1往返"
+                },
+                {
+                  "name": "itinerary_id",
+                  "type": "String",
+                  "description": "行程id"
+                },
+                {
+                  "name": "traffic_type",
+                  "type": "Number",
+                  "description": "交通方式：0飞机 1火车 2汽车 3其他 4用车 5不限 6仅飞机 7仅火车 8仅汽车，当酒店时，arr_city可能为空"
+                },
+                {
+                  "name": "dep_city",
+                  "type": "String",
+                  "description": "出发城市"
+                },
+                {
+                  "name": "arr_city",
+                  "type": "String",
+                  "description": "到达城市"
+                },
+                {
+                  "name": "cost_center_name",
+                  "type": "String",
+                  "description": "成本中心"
+                },
+                {
+                  "name": "invoice_name",
+                  "type": "String",
+                  "description": "发票抬头"
+                },
+                {
+                  "name": "dep_date",
+                  "type": "Date",
+                  "description": "出发日期"
+                },
+                {
+                  "name": "arr_date",
+                  "type": "Date",
+                  "description": "到达日期"
+                },
+                {
+                  "name": "project_code",
+                  "type": "String",
+                  "description": "项目代码"
+                },
+                {
+                  "name": "project_title",
+                  "type": "String",
+                  "description": "项目名称"
+                }
+              ],
+              "name": "itinerary_list",
+              "type": "OpenItineraryInfo[]",
+              "description": "行程列表"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "user_id",
+                  "type": "String",
+                  "description": "同行人Id（第三方用户id）"
+                },
+                {
+                  "name": "user_name",
+                  "type": "String",
+                  "description": "用户名称"
+                }
+              ],
+              "name": "traveler_list",
+              "type": "OpenUserInfo[]",
+              "description": "出行人列表"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "order",
+                  "type": "Number",
+                  "description": "审批人顺序"
+                },
+                {
+                  "name": "user_name",
+                  "type": "String",
+                  "description": "审批人名称"
+                },
+                {
+                  "name": "user_id",
+                  "type": "String",
+                  "description": "审批人id（第三方用户id）"
+                },
+                {
+                  "name": "status",
+                  "type": "Number",
+                  "description": "审批状态：0审批中 1已同意 2已拒绝 3已转交，4已取消 5已终止 6发起审批 7评论"
+                },
+                {
+                  "name": "status_desc",
+                  "type": "String",
+                  "description": "审批状态描述"
+                },
+                {
+                  "name": "note",
+                  "type": "String",
+                  "description": "审批意见"
+                },
+                {
+                  "name": "operate_time",
+                  "type": "Date",
+                  "description": "操作时间"
+                }
+              ],
+              "name": "approver_list",
+              "type": "OpenApproverInfo[]",
+              "description": "approverList"
+            },
+            {
+              "name": "flow_code",
+              "type": "String",
+              "description": "流程编码"
+            },
+            {
+              "name": "thirdpart_business_id",
+              "type": "String",
+              "description": "第三方业务id"
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "description": "申请单提交类型，1代提交 2本人提交 注意：当申请单为代提交时，申请单提交人自己无法为自己下单"
+            },
+            {
+              "name": "union_no",
+              "type": "String",
+              "description": "第三方关联单号"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "user_name",
+                  "type": "String",
+                  "description": "用户名称"
+                }
+              ],
+              "name": "external_traveler_list",
+              "type": "OpenUserInfo[]",
+              "description": "外部出行人列表"
+            }
+          ],
+          "name": "module_list",
+          "type": "OpenIsvApplyRs[]",
+          "description": "审批单列表"
+        },
+        {
+          "name": "result_code",
+          "type": "Number",
+          "description": "错误信息"
+        },
+        {
+          "name": "result_msg",
+          "type": "String",
+          "description": "错误码"
+        },
+        {
+          "name": "is_success",
+          "type": "Boolean",
+          "description": "成功标识"
+        }
+      ],
+      "name": "result",
+      "type": "HisvResult",
+      "description": "服务出参"
+    }
+  ],
+  "name": "alitrip.btrip.corpop.apply.search",
+  "apiChineseName": "【商旅】搜索审批单列表",
+  "description": "【商旅】搜索审批单列表",
+  "id": 53598
+}

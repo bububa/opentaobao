@@ -11,5 +11,5 @@ type Page struct {
 	// 分页信息
 	PagingVo *PagingVO `json:"paging_vo,omitempty" xml:"paging_vo,omitempty"`
 	// 分页信息
-	Paging *PagingVo `json:"paging,omitempty" xml:"paging,omitempty"`
+	Paging *PagingVO `json:"paging,omitempty" xml:"paging,omitempty"`
 }

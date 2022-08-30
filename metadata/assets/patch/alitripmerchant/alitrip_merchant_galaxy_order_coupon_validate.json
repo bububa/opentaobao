@@ -1,0 +1,800 @@
+{
+  "requestParams": [
+    {
+      "name": "tenant_key",
+      "type": "String",
+      "description": "租户标识"
+    },
+    {
+      "name": "token",
+      "type": "String",
+      "description": "用户登录标识"
+    },
+    {
+      "subParams": [
+        {
+          "name": "coupon_template_id_list",
+          "type": "Number[]",
+          "description": "优惠券模板id集合"
+        },
+        {
+          "subParams": [
+            {
+              "subParams": [
+                {
+                  "name": "child_ages",
+                  "type": "String[]",
+                  "description": "每个儿童的年龄"
+                },
+                {
+                  "name": "child_roomer_number",
+                  "type": "Number",
+                  "description": "未成年人数"
+                },
+                {
+                  "name": "adult_roomer_number",
+                  "type": "Number",
+                  "description": "成人数"
+                },
+                {
+                  "name": "roomer_number",
+                  "type": "Number",
+                  "description": "总入住人数"
+                },
+                {
+                  "name": "contact_last_name",
+                  "type": "String",
+                  "description": "名"
+                },
+                {
+                  "name": "contact_first_name",
+                  "type": "String",
+                  "description": "姓"
+                }
+              ],
+              "name": "guest_by_room_dtos",
+              "type": "GuestByRoomDto[]",
+              "description": "多房价数据状态"
+            },
+            {
+              "name": "payment_type",
+              "type": "Number",
+              "description": "支付类型"
+            },
+            {
+              "name": "rate_id",
+              "type": "Number",
+              "description": "价格的rateId"
+            },
+            {
+              "name": "total_price",
+              "type": "String",
+              "description": "总价格"
+            },
+            {
+              "name": "gid",
+              "type": "Number",
+              "description": "宝贝id"
+            },
+            {
+              "name": "check_out_date",
+              "type": "String",
+              "description": "离店时间"
+            },
+            {
+              "name": "check_in_date",
+              "type": "String",
+              "description": "入住时间"
+            },
+            {
+              "name": "rp_id",
+              "type": "Number",
+              "description": "价格id"
+            },
+            {
+              "name": "out_room_id",
+              "type": "Number",
+              "description": "飞猪外部房型id"
+            },
+            {
+              "name": "hotel_id",
+              "type": "String",
+              "description": "外部酒店id"
+            },
+            {
+              "name": "hid",
+              "type": "Number",
+              "description": "内部酒店id"
+            }
+          ],
+          "name": "discount_param",
+          "type": "ValidateOrderParam",
+          "description": "优惠价的试单相关参数透传"
+        },
+        {
+          "subParams": [
+            {
+              "subParams": [
+                {
+                  "name": "child_ages",
+                  "type": "String[]",
+                  "description": "每个儿童的年龄"
+                },
+                {
+                  "name": "child_roomer_number",
+                  "type": "Number",
+                  "description": "未成年人数"
+                },
+                {
+                  "name": "adult_roomer_number",
+                  "type": "Number",
+                  "description": "成人数"
+                },
+                {
+                  "name": "roomer_number",
+                  "type": "Number",
+                  "description": "总入住人数"
+                },
+                {
+                  "name": "contact_last_name",
+                  "type": "String",
+                  "description": "名"
+                },
+                {
+                  "name": "contact_first_name",
+                  "type": "String",
+                  "description": "姓"
+                }
+              ],
+              "name": "guest_by_room_dtos",
+              "type": "GuestByRoomDto[]",
+              "description": "多房价数据状态"
+            },
+            {
+              "name": "check_out_date",
+              "type": "String",
+              "description": "离店时间"
+            },
+            {
+              "name": "check_in_date",
+              "type": "String",
+              "description": "入住时间"
+            },
+            {
+              "name": "rp_id",
+              "type": "Number",
+              "description": "价格id"
+            },
+            {
+              "name": "out_room_id",
+              "type": "Number",
+              "description": "飞猪外部房型id"
+            },
+            {
+              "name": "hotel_id",
+              "type": "String",
+              "description": "外部酒店id"
+            },
+            {
+              "name": "hid",
+              "type": "Number",
+              "description": "内部酒店id"
+            },
+            {
+              "name": "payment_type",
+              "type": "Number",
+              "description": "支付类型"
+            },
+            {
+              "name": "rate_id",
+              "type": "Number",
+              "description": "价格的rateId"
+            },
+            {
+              "name": "total_price",
+              "type": "String",
+              "description": "总价格"
+            },
+            {
+              "name": "gid",
+              "type": "Number",
+              "description": "宝贝id"
+            }
+          ],
+          "name": "no_discount_param",
+          "type": "ValidateOrderParam",
+          "description": "原价的试单相关参数透传"
+        },
+        {
+          "name": "voucher_id",
+          "type": "String",
+          "description": "代金券id"
+        }
+      ],
+      "name": "coupon_param",
+      "type": "CouponParam",
+      "description": "使用优惠券的入参"
+    }
+  ],
+  "responseParams": [
+    {
+      "subParams": [
+        {
+          "name": "success",
+          "type": "Boolean",
+          "description": "成功"
+        },
+        {
+          "name": "error_msg",
+          "type": "String",
+          "description": "错误信息"
+        },
+        {
+          "name": "error_code",
+          "type": "String",
+          "description": "错误码"
+        },
+        {
+          "subParams": [
+            {
+              "subParams": [
+                {
+                  "name": "status",
+                  "type": "String",
+                  "description": "优惠券状态"
+                },
+                {
+                  "name": "expired_time_min",
+                  "type": "String",
+                  "description": "过期时间"
+                },
+                {
+                  "name": "detail_desc",
+                  "type": "String",
+                  "description": "详细描述"
+                },
+                {
+                  "name": "condition_desc",
+                  "type": "String",
+                  "description": "使用条件描述"
+                },
+                {
+                  "name": "coupon_name",
+                  "type": "String",
+                  "description": "优惠券名称"
+                },
+                {
+                  "name": "condition_amount",
+                  "type": "String",
+                  "description": "使用门槛"
+                },
+                {
+                  "name": "discount_amount",
+                  "type": "String",
+                  "description": "面额(减免额度)"
+                },
+                {
+                  "name": "instance_id",
+                  "type": "Number",
+                  "description": "优惠券实例id"
+                },
+                {
+                  "name": "coupon_type",
+                  "type": "String",
+                  "description": "折扣券"
+                }
+              ],
+              "name": "coupon_info_v_o",
+              "type": "CouponInfoVO",
+              "description": "优惠券实例对象"
+            },
+            {
+              "subParams": [
+                {
+                  "name": "status",
+                  "type": "String",
+                  "description": "优惠券状态"
+                },
+                {
+                  "name": "expired_time_min",
+                  "type": "String",
+                  "description": "过期时间"
+                },
+                {
+                  "name": "detail_desc",
+                  "type": "String",
+                  "description": "详细描述"
+                },
+                {
+                  "name": "condition_desc",
+                  "type": "String",
+                  "description": "使用条件描述"
+                },
+                {
+                  "name": "coupon_name",
+                  "type": "String",
+                  "description": "优惠券名称"
+                },
+                {
+                  "name": "condition_amount",
+                  "type": "String",
+                  "description": "使用门槛"
+                },
+                {
+                  "name": "discount_amount",
+                  "type": "String",
+                  "description": "面额(减免额度)"
+                },
+                {
+                  "name": "instance_id",
+                  "type": "Number",
+                  "description": "优惠券实例id"
+                },
+                {
+                  "name": "coupon_type",
+                  "type": "String",
+                  "description": "优惠券类型"
+                }
+              ],
+              "name": "instance_v_o_list",
+              "type": "CouponInfoVO[]",
+              "description": "优惠券实例列表"
+            },
+            {
+              "subParams": [
+                {
+                  "subParams": [
+                    {
+                      "name": "really_price",
+                      "type": "String",
+                      "description": "每日价格"
+                    },
+                    {
+                      "name": "date",
+                      "type": "String",
+                      "description": "日期"
+                    },
+                    {
+                      "name": "out_really_price",
+                      "type": "String",
+                      "description": "外币每日价格"
+                    }
+                  ],
+                  "name": "daily_price_list",
+                  "type": "DailyPrice[]",
+                  "description": "每日价格列表"
+                },
+                {
+                  "name": "is_amount_changed",
+                  "type": "Boolean",
+                  "description": "价格发生变化"
+                },
+                {
+                  "name": "order_code",
+                  "type": "String",
+                  "description": "订单编号"
+                },
+                {
+                  "name": "amount_changed_display",
+                  "type": "String",
+                  "description": "价格变化"
+                },
+                {
+                  "name": "total_tax",
+                  "type": "String",
+                  "description": "总税价"
+                },
+                {
+                  "name": "total_price_exclude_tax",
+                  "type": "String",
+                  "description": "总价不含税"
+                },
+                {
+                  "name": "total_amount",
+                  "type": "String",
+                  "description": "实际需要支付金额，含税"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "cancel_policy_type",
+                      "type": "Number",
+                      "description": "取消政策类型"
+                    },
+                    {
+                      "name": "cancel_policy_desc",
+                      "type": "String",
+                      "description": "取消政策描述"
+                    },
+                    {
+                      "name": "cancel_policy_name",
+                      "type": "String",
+                      "description": "取消政策名称"
+                    }
+                  ],
+                  "name": "cancel_policy",
+                  "type": "CancelPolicy",
+                  "description": "取消政策"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "day",
+                      "type": "Date",
+                      "description": "日期"
+                    },
+                    {
+                      "name": "day_str",
+                      "type": "String",
+                      "description": "日期字符串格式"
+                    },
+                    {
+                      "name": "price",
+                      "type": "Number",
+                      "description": "不含税价格"
+                    },
+                    {
+                      "name": "tax",
+                      "type": "Number",
+                      "description": "每天的税，单位分"
+                    },
+                    {
+                      "name": "breakfast_count",
+                      "type": "Number",
+                      "description": "早餐数量"
+                    },
+                    {
+                      "name": "breakfast_name",
+                      "type": "String",
+                      "description": "早餐名称"
+                    },
+                    {
+                      "name": "out_price",
+                      "type": "Number",
+                      "description": "外币不含税价格"
+                    },
+                    {
+                      "name": "out_tax",
+                      "type": "Number",
+                      "description": "外币每天的税，单位分"
+                    }
+                  ],
+                  "name": "dining_policy_list",
+                  "type": "DailyInfo[]",
+                  "description": "每日价格列表"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "markup_price",
+                      "type": "Number",
+                      "description": "加价金额"
+                    },
+                    {
+                      "name": "markup_desc",
+                      "type": "String",
+                      "description": "加价描述"
+                    },
+                    {
+                      "subParams": [
+                        {
+                          "name": "daily_price",
+                          "type": "String",
+                          "description": "实际加价金额"
+                        },
+                        {
+                          "name": "date",
+                          "type": "String",
+                          "description": "加价日期"
+                        }
+                      ],
+                      "name": "daily_markup_price_list",
+                      "type": "DailyMarkupPrice[]",
+                      "description": "每日加价信息"
+                    },
+                    {
+                      "name": "total_markup_price",
+                      "type": "Number",
+                      "description": "加价金额总和"
+                    }
+                  ],
+                  "name": "markup_info",
+                  "type": "MarkupInfoVo",
+                  "description": "加价信息"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "total_amount",
+                      "type": "String",
+                      "description": "外币支付金额，含税"
+                    },
+                    {
+                      "name": "total_price",
+                      "type": "String",
+                      "description": "外币基础价格,不包含税费等"
+                    },
+                    {
+                      "name": "total_tax",
+                      "type": "String",
+                      "description": "外币总税价"
+                    },
+                    {
+                      "subParams": [
+                        {
+                          "name": "date",
+                          "type": "String",
+                          "description": "日期"
+                        },
+                        {
+                          "name": "really_price",
+                          "type": "String",
+                          "description": "不含税价格"
+                        },
+                        {
+                          "name": "out_really_price",
+                          "type": "String",
+                          "description": "不含税外币价格"
+                        }
+                      ],
+                      "name": "daily_price_list",
+                      "type": "DailyPrice[]",
+                      "description": "外币每日价格"
+                    },
+                    {
+                      "name": "currency",
+                      "type": "String",
+                      "description": "外币币种"
+                    }
+                  ],
+                  "name": "foreign_currency",
+                  "type": "ForeignCurrencyDTO",
+                  "description": "外币信息"
+                },
+                {
+                  "name": "foreign_currency_payment",
+                  "type": "Boolean",
+                  "description": "是否为外币支付"
+                }
+              ],
+              "name": "discount_d_t_o",
+              "type": "ValidateResultVo",
+              "description": "折扣价试单结果"
+            },
+            {
+              "subParams": [
+                {
+                  "subParams": [
+                    {
+                      "name": "really_price",
+                      "type": "String",
+                      "description": "每日价格"
+                    },
+                    {
+                      "name": "date",
+                      "type": "String",
+                      "description": "日期"
+                    },
+                    {
+                      "name": "out_really_price",
+                      "type": "String",
+                      "description": "外币每日价格"
+                    }
+                  ],
+                  "name": "daily_price_list",
+                  "type": "DailyPrice[]",
+                  "description": "每日价格列表"
+                },
+                {
+                  "name": "is_amount_changed",
+                  "type": "Boolean",
+                  "description": "价格发生变化"
+                },
+                {
+                  "name": "order_code",
+                  "type": "String",
+                  "description": "订单编号"
+                },
+                {
+                  "name": "amount_changed_display",
+                  "type": "String",
+                  "description": "价格变化"
+                },
+                {
+                  "name": "total_tax",
+                  "type": "String",
+                  "description": "总税价"
+                },
+                {
+                  "name": "total_price_exclude_tax",
+                  "type": "String",
+                  "description": "总价不含税"
+                },
+                {
+                  "name": "total_amount",
+                  "type": "String",
+                  "description": "实际需要支付金额，含税"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "breakfast_name",
+                      "type": "String",
+                      "description": "早餐名称"
+                    },
+                    {
+                      "name": "breakfast_count",
+                      "type": "Number",
+                      "description": "早餐数量"
+                    },
+                    {
+                      "name": "tax",
+                      "type": "Number",
+                      "description": "每天的税"
+                    },
+                    {
+                      "name": "price",
+                      "type": "Number",
+                      "description": "不含税价格"
+                    },
+                    {
+                      "name": "day_str",
+                      "type": "String",
+                      "description": "String化日期"
+                    },
+                    {
+                      "name": "day",
+                      "type": "Date",
+                      "description": "日期"
+                    },
+                    {
+                      "name": "out_tax",
+                      "type": "Number",
+                      "description": "外币每天的税"
+                    },
+                    {
+                      "name": "out_price",
+                      "type": "Number",
+                      "description": "外币不含税价格"
+                    }
+                  ],
+                  "name": "dining_policy_list",
+                  "type": "DailyInfo[]",
+                  "description": "每日价格列表"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "cancel_policy_type",
+                      "type": "Number",
+                      "description": "取消政策类型"
+                    },
+                    {
+                      "name": "cancel_policy_desc",
+                      "type": "String",
+                      "description": "取消政策描述"
+                    },
+                    {
+                      "name": "cancel_policy_name",
+                      "type": "String",
+                      "description": "取消政策名字"
+                    }
+                  ],
+                  "name": "cancel_policy",
+                  "type": "CancelPolicy",
+                  "description": "取消政策"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "markup_price",
+                      "type": "Number",
+                      "description": "加价金额"
+                    },
+                    {
+                      "name": "markup_desc",
+                      "type": "String",
+                      "description": "加价描述"
+                    },
+                    {
+                      "subParams": [
+                        {
+                          "name": "daily_price",
+                          "type": "String",
+                          "description": "加价金额"
+                        },
+                        {
+                          "name": "date",
+                          "type": "String",
+                          "description": "加价日期"
+                        }
+                      ],
+                      "name": "daily_markup_price_list",
+                      "type": "DailyMarkupPrice[]",
+                      "description": "每日加价信息"
+                    },
+                    {
+                      "name": "total_markup_price",
+                      "type": "Number",
+                      "description": "加价金额总和"
+                    }
+                  ],
+                  "name": "markup_info",
+                  "type": "MarkupInfoVo",
+                  "description": "加价信息"
+                },
+                {
+                  "subParams": [
+                    {
+                      "name": "total_amount",
+                      "type": "String",
+                      "description": "外币支付金额，含税"
+                    },
+                    {
+                      "name": "total_price",
+                      "type": "String",
+                      "description": "外币基础价格,不包含税费等"
+                    },
+                    {
+                      "name": "total_tax",
+                      "type": "String",
+                      "description": "外币总税价"
+                    },
+                    {
+                      "subParams": [
+                        {
+                          "name": "date",
+                          "type": "String",
+                          "description": "日期"
+                        },
+                        {
+                          "name": "really_price",
+                          "type": "String",
+                          "description": "不含税价格"
+                        },
+                        {
+                          "name": "out_really_price",
+                          "type": "String",
+                          "description": "不含税外币价格"
+                        }
+                      ],
+                      "name": "daily_price_list",
+                      "type": "DailyPrice[]",
+                      "description": "外币每日价格"
+                    },
+                    {
+                      "name": "currency",
+                      "type": "String",
+                      "description": "币种"
+                    }
+                  ],
+                  "name": "foreign_currency",
+                  "type": "ForeignCurrencyDTO",
+                  "description": "外币信息"
+                },
+                {
+                  "name": "foreign_currency_payment",
+                  "type": "Boolean",
+                  "description": "是否为外币支付"
+                }
+              ],
+              "name": "no_discount_d_t_o",
+              "type": "ValidateResultVo",
+              "description": "原价试单结果"
+            }
+          ],
+          "name": "content",
+          "type": "CouponValidateOrderDto",
+          "description": "试单结果"
+        }
+      ],
+      "name": "result",
+      "type": "Response",
+      "description": "携带优惠券试单结果"
+    }
+  ],
+  "name": "alitrip.merchant.galaxy.order.coupon.validate",
+  "apiChineseName": "携带券的试单接口",
+  "description": "试单时可以使用优惠券，返回一个原价，一个折扣价",
+  "id": 57829
+}
