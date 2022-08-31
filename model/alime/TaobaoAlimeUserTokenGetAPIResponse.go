@@ -24,6 +24,6 @@ type TaobaoAlimeUserTokenGetAPIResponseModel struct {
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
 	// 响应消息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 响应编码(由于"code"为top保留字，用code0以示区分，文档中均以code说明)，code == 0为成功，其它为失败
+	// 响应编码(由于&#34;code&#34;为top保留字，用code0以示区分，文档中均以code说明)，code == 0为成功，其它为失败
 	Code0 int64 `json:"code0,omitempty" xml:"code0,omitempty"`
 }

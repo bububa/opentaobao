@@ -36,7 +36,7 @@ type DeviceApiQuery struct {
 	SpaceId int64 `json:"space_id,omitempty" xml:"space_id,omitempty"`
 	// 楼宇id
 	BuildingId int64 `json:"building_id,omitempty" xml:"building_id,omitempty"`
-	// 0->在线 1->离线 2->故障
+	// 0-&gt;在线 1-&gt;离线 2-&gt;故障
 	RunStatus int64 `json:"run_status,omitempty" xml:"run_status,omitempty"`
 	// 是否启用
 	BeRun bool `json:"be_run,omitempty" xml:"be_run,omitempty"`

@@ -34,7 +34,7 @@ type AlibabaAlscMerchantExtTicketQueryAPIResponseModel struct {
 	BrandLogo string `json:"brand_logo,omitempty" xml:"brand_logo,omitempty"`
 	// 凭证模版品牌名
 	BrandName string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
-	// 凭证模版业务类型("SERV_INDUSTRY","生服","CATERING","餐饮","MALL""商圈")
+	// 凭证模版业务类型(&#34;SERV_INDUSTRY&#34;,&#34;生服&#34;,&#34;CATERING&#34;,&#34;餐饮&#34;,&#34;MALL&#34;&#34;商圈&#34;)
 	TicketTemplateType string `json:"ticket_template_type,omitempty" xml:"ticket_template_type,omitempty"`
 	// 凭证模版业务名称
 	TicketTemplateName string `json:"ticket_template_name,omitempty" xml:"ticket_template_name,omitempty"`

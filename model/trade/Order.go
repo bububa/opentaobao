@@ -6,7 +6,7 @@ type Order struct {
 	OuterIid string `json:"outer_iid,omitempty" xml:"outer_iid,omitempty"`
 	// 子订单编号
 	Oid string `json:"oid,omitempty" xml:"oid,omitempty"`
-	// 订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: <ul><li>TRADE_NO_CREATE_PAY(没有创建支付宝交易) <li>WAIT_BUYER_PAY(等待买家付款) <li>WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) <li>WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) <li>TRADE_BUYER_SIGNED(买家已签收,货到付款专用) <li>TRADE_FINISHED(交易成功) <li>TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) <li>TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)<li>PAY_PENDING(国际信用卡支付付款确认中)
+	// 订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: &lt;ul&gt;&lt;li&gt;TRADE_NO_CREATE_PAY(没有创建支付宝交易) &lt;li&gt;WAIT_BUYER_PAY(等待买家付款) &lt;li&gt;WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) &lt;li&gt;WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) &lt;li&gt;TRADE_BUYER_SIGNED(买家已签收,货到付款专用) &lt;li&gt;TRADE_FINISHED(交易成功) &lt;li&gt;TRADE_CLOSED(付款以后用户退款成功，交易自动关闭) &lt;li&gt;TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)&lt;li&gt;PAY_PENDING(国际信用卡支付付款确认中)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分
 	Price string `json:"price,omitempty" xml:"price,omitempty"`
@@ -232,7 +232,7 @@ type Order struct {
 	STariffFee string `json:"s_tariff_fee,omitempty" xml:"s_tariff_fee,omitempty"`
 	// 时效服务身份，如tmallPromise代表天猫时效承诺
 	TimingPromise string `json:"timing_promise,omitempty" xml:"timing_promise,omitempty"`
-	// 时效服务字段，服务字段，会有多个服务值，以英文半角逗号&quot;,&quot;切割
+	// 时效服务字段，服务字段，会有多个服务值，以英文半角逗号&amp;quot;,&amp;quot;切割
 	PromiseService string `json:"promise_service,omitempty" xml:"promise_service,omitempty"`
 	// 预计送达时间
 	EsDate string `json:"es_date,omitempty" xml:"es_date,omitempty"`

@@ -24,6 +24,6 @@ type BatchQueryRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 单页大小，不超过200，必填
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 渠道来源，3：饿了么  4：盒马&淘鲜达 18:大润发飞牛  19:欧尚外卖  20：商家自有渠道 ，必填
+	// 渠道来源，3：饿了么  4：盒马&amp;淘鲜达 18:大润发飞牛  19:欧尚外卖  20：商家自有渠道 ，必填
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 }

@@ -10,7 +10,7 @@ import (
 // taobao.item.skus.get
 //
 // * 获取多个商品下的所有sku
-// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
+// &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=itemapi&#34; target=&#34;_blank&#34;&gt;点击查看更多商品API说明&lt;/a&gt;&lt;/strong&gt;
 type TaobaoItemSkusGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。

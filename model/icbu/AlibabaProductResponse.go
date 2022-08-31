@@ -24,7 +24,7 @@ type AlibabaProductResponse struct {
 	Display string `json:"display,omitempty" xml:"display,omitempty"`
 	// 产品负责人显示名，由firstname和lastname拼接组成
 	OwnerMemberDisplayName string `json:"owner_member_display_name,omitempty" xml:"owner_member_display_name,omitempty"`
-	// *      * SKU价           SKU_PRICE("sku_price"),     *      * 阶梯价           LADDER_PRICE("ladder_price"),     *      * fob价: 单一区间fob价           FOB_PRICE("fob_price");
+	// *      * SKU价           SKU_PRICE(&#34;sku_price&#34;),     *      * 阶梯价           LADDER_PRICE(&#34;ladder_price&#34;),     *      * fob价: 单一区间fob价           FOB_PRICE(&#34;fob_price&#34;);
 	PriceType string `json:"price_type,omitempty" xml:"price_type,omitempty"`
 	// https://www.alibaba.com/product-detail/Short-Umbrella-Girls-Black-Lace-Polka_1600107214049.html?spm=a2700.galleryofferlist.normalList.12.6c612db4ueHAW2
 	PcDetailUrl string `json:"pc_detail_url,omitempty" xml:"pc_detail_url,omitempty"`

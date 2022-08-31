@@ -14,7 +14,7 @@ type InspectionReport struct {
 	QuoteId string `json:"quote_id,omitempty" xml:"quote_id,omitempty"`
 	// 对此商品的质检描述
 	Summary string `json:"summary,omitempty" xml:"summary,omitempty"`
-	// *      * Json串:desc存储特别说明的文字描述,images存储上传的图片url;      * 形如:      * {      *   "desc":"desc",      *   "images":[      *      "imageUrl1",      *      "imageUrl2"      *   ]      * };
+	// *      * Json串:desc存储特别说明的文字描述,images存储上传的图片url;      * 形如:      * {      *   &#34;desc&#34;:&#34;desc&#34;,      *   &#34;images&#34;:[      *      &#34;imageUrl1&#34;,      *      &#34;imageUrl2&#34;      *   ]      * };
 	Explanation string `json:"explanation,omitempty" xml:"explanation,omitempty"`
 	// 设备imei号
 	Imei string `json:"imei,omitempty" xml:"imei,omitempty"`

@@ -8,7 +8,7 @@ type AdStrategyInfoTopDto struct {
 	InitDmpCrowdIdList []int64 `json:"init_dmp_crowd_id_list,omitempty" xml:"init_dmp_crowd_id_list>int64,omitempty"`
 	// 模板列表
 	InitTemplateIdList []int64 `json:"init_template_id_list,omitempty" xml:"init_template_id_list>int64,omitempty"`
-	// 拉新快场景中的新客定义，支持"1,365","1,500"等
+	// 拉新快场景中的新客定义，支持&#34;1,365&#34;,&#34;1,500&#34;等
 	BehaviorWindowsList []string `json:"behavior_windows_list,omitempty" xml:"behavior_windows_list>string,omitempty"`
 	// 子场景
 	MarketScene string `json:"market_scene,omitempty" xml:"market_scene,omitempty"`

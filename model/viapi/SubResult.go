@@ -6,7 +6,7 @@ type SubResult struct {
 	OcrDataList []string `json:"ocr_data_list,omitempty" xml:"ocr_data_list>string,omitempty"`
 	// 如果待检测图片因为过长被截断，该参数返回截断后的每一帧图像的临时访问地址，供您参考。具体结构描述见Frame
 	Frames []Frame `json:"frames,omitempty" xml:"frames>frame,omitempty"`
-	// 图片中含有广告时，返回图片中广告文字命中的风险关键词信息。格式为数组，具体结构描述见HintWordsInfo。 说明 仅适用于ad场景。 示例值： "hintWordsInfo":[{"context":"敏感词"}]
+	// 图片中含有广告时，返回图片中广告文字命中的风险关键词信息。格式为数组，具体结构描述见HintWordsInfo。 说明 仅适用于ad场景。 示例值： &#34;hintWordsInfo&#34;:[{&#34;context&#34;:&#34;敏感词&#34;}]
 	HintWordsInfoList []HintWordsInfo `json:"hint_words_info_list,omitempty" xml:"hint_words_info_list>hint_words_info,omitempty"`
 	// 图片中含有小程序码时，返回小程序码的位置信息，具体结构描述见ProgramCodeData。说明 仅适用于qrcode场景，且已通过工单联系我们开通了小程序码识别
 	ProgramCodeDataList []ProgramCodeData `json:"program_code_data_list,omitempty" xml:"program_code_data_list>program_code_data,omitempty"`

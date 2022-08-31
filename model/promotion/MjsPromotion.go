@@ -34,7 +34,7 @@ type MjsPromotion struct {
 	DecreaseAmount int64 `json:"decrease_amount,omitempty" xml:"decrease_amount,omitempty"`
 	// 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
 	DiscountRate int64 `json:"discount_rate,omitempty" xml:"discount_rate,omitempty"`
-	// 礼品id，当is_send_gift为true时，该值才有意义。<br/>1）只有填写真实的淘宝商品id时，才能生成物流单，并且在确定订单的页面上可以点击该商品名称跳转到商品详情页面。2）当礼物为实物商品时(有宝贝id),礼物必须为上架商品,不能为虚拟商品,不能为拍卖商品,不能有sku,不符合条件的,不做为礼物。
+	// 礼品id，当is_send_gift为true时，该值才有意义。&lt;br/&gt;1）只有填写真实的淘宝商品id时，才能生成物流单，并且在确定订单的页面上可以点击该商品名称跳转到商品详情页面。2）当礼物为实物商品时(有宝贝id),礼物必须为上架商品,不能为虚拟商品,不能为拍卖商品,不能有sku,不符合条件的,不做为礼物。
 	GiftId int64 `json:"gift_id,omitempty" xml:"gift_id,omitempty"`
 	// 是否有满元条件。
 	IsAmountOver bool `json:"is_amount_over,omitempty" xml:"is_amount_over,omitempty"`

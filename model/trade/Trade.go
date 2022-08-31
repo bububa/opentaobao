@@ -106,9 +106,9 @@ type Trade struct {
 	AdjustFee string `json:"adjust_fee,omitempty" xml:"adjust_fee,omitempty"`
 	// 交易内部来源。WAP(手机);HITAO(嗨淘);TOP(TOP平台);TAOBAO(普通淘宝);JHS(聚划算)一笔订单可能同时有以上多个标记，则以逗号分隔
 	TradeFrom string `json:"trade_from,omitempty" xml:"trade_from,omitempty"`
-	// 收货人的所在城市<br/>注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面<br/>建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
+	// 收货人的所在城市&lt;br/&gt;注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面&lt;br/&gt;建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
 	ReceiverCity string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
-	// 收货人的所在地区<br/>注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面<br/>建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
+	// 收货人的所在地区&lt;br/&gt;注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面&lt;br/&gt;建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市
 	ReceiverDistrict string `json:"receiver_district,omitempty" xml:"receiver_district,omitempty"`
 	// 导购宝=crm
 	O2o string `json:"o2o,omitempty" xml:"o2o,omitempty"`
@@ -242,7 +242,7 @@ type Trade struct {
 	MTariffFee string `json:"m_tariff_fee,omitempty" xml:"m_tariff_fee,omitempty"`
 	// 时效服务身份，如tmallPromise代表天猫时效承诺
 	TimingPromise string `json:"timing_promise,omitempty" xml:"timing_promise,omitempty"`
-	// 时效服务字段，服务字段，会有多个服务值，以英文半角逗号","切割
+	// 时效服务字段，服务字段，会有多个服务值，以英文半角逗号&#34;,&#34;切割
 	PromiseService string `json:"promise_service,omitempty" xml:"promise_service,omitempty"`
 	// 物流截单时间，分钟
 	CutoffMinutes string `json:"cutoff_minutes,omitempty" xml:"cutoff_minutes,omitempty"`
@@ -290,7 +290,7 @@ type Trade struct {
 	ExpandcardInfo string `json:"expandcard_info,omitempty" xml:"expandcard_info,omitempty"`
 	// 透出的额外信息
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
-	// 收货地址有变更，返回"1"
+	// 收货地址有变更，返回&#34;1&#34;
 	Lm string `json:"lm,omitempty" xml:"lm,omitempty"`
 	// 同城购订单来源
 	BrandLightShopSource string `json:"brand_light_shop_source,omitempty" xml:"brand_light_shop_source,omitempty"`

@@ -9,7 +9,7 @@ import (
 // TaobaoItemSkuAddAPIRequest 添加SKU API请求
 // taobao.item.sku.add
 //
-// 新增一个sku到num_iid指定的商品中 <br/>传入的iid所对应的商品必须属于当前会话的用户
+// 新增一个sku到num_iid指定的商品中 &lt;br/&gt;传入的iid所对应的商品必须属于当前会话的用户
 type TaobaoItemSkuAddAPIRequest struct {
 	model.Params
 	// Sku属性串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。

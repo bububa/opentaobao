@@ -9,7 +9,7 @@ import (
 // TmallServicecenterWorkcardStatusUpdateAPIRequest 服务商反馈服务的执行情况 API请求
 // tmall.servicecenter.workcard.status.update
 //
-// 1 如果服务商受理了此服务，修改合同状态为：已受理=3<br/>2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10<br/>3 如果服务商执行了此服务，修改合同状态为：已执行=4<br/>4 如果服务商执行服务成功，修改合同状态为：已完成=5<br/>5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账
+// 1 如果服务商受理了此服务，修改合同状态为：已受理=3&lt;br/&gt;2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10&lt;br/&gt;3 如果服务商执行了此服务，修改合同状态为：已执行=4&lt;br/&gt;4 如果服务商执行服务成功，修改合同状态为：已完成=5&lt;br/&gt;5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账
 type TmallServicecenterWorkcardStatusUpdateAPIRequest struct {
 	model.Params
 	// 一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况

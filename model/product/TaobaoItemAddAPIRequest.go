@@ -14,7 +14,7 @@ import (
 // 商品的类目和商品的价格、sku的价格都有一定的相关性（具体的关系要通过类目属性查询接口获得）
 // 商品的运费承担方式和邮费设置有相关性，卖家承担运费不用设置邮费，买家承担运费需要设置邮费
 // 当关键属性值选择了“其他”的时候，需要输入input_pids和input_str商品才能添加成功。
-// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
+// &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=itemapi&#34; target=&#34;_blank&#34;&gt;点击查看更多商品API说明&lt;/a&gt;&lt;/strong&gt;
 type TaobaoItemAddAPIRequest struct {
 	model.Params
 	// 此字段已经废弃，不再使用
@@ -339,7 +339,7 @@ func (r TaobaoItemAddAPIRequest) GetSkuHdLength() string {
 }
 
 // SetSkuHdHeight is SkuHdHeight Setter
-// 家装建材类目，商品SKU的高度，单位为cm，部分类目必选。 天猫和淘宝格式不同。天猫：可选值为："0-15", "15-25", "25-50", "50-60", "60-80", "80-120", "120-160", "160-200"。 数据和SKU一一对应，用,分隔，格式如：15-25,25-50,25-50。 淘宝：正整数，单位为cm,格式如：20,30,30
+// 家装建材类目，商品SKU的高度，单位为cm，部分类目必选。 天猫和淘宝格式不同。天猫：可选值为：&#34;0-15&#34;, &#34;15-25&#34;, &#34;25-50&#34;, &#34;50-60&#34;, &#34;60-80&#34;, &#34;80-120&#34;, &#34;120-160&#34;, &#34;160-200&#34;。 数据和SKU一一对应，用,分隔，格式如：15-25,25-50,25-50。 淘宝：正整数，单位为cm,格式如：20,30,30
 func (r *TaobaoItemAddAPIRequest) SetSkuHdHeight(_skuHdHeight string) error {
 	r._skuHdHeight = _skuHdHeight
 	r.Set("sku_hd_height", _skuHdHeight)
@@ -365,7 +365,7 @@ func (r TaobaoItemAddAPIRequest) GetSkuHdLampQuantity() string {
 }
 
 // SetInputStr is InputStr Setter
-// 用户自行输入的子属性名和属性值，结构:"父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....",如：“耐克;耐克系列;科比系列;科比系列;2K5,Nike乔丹鞋;乔丹系列;乔丹鞋系列;乔丹鞋系列;json5”，多个自定义属性用','分割，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过3999字节。此处不可以使用“其他”、“其它”和“其她”这三个词。
+// 用户自行输入的子属性名和属性值，结构:&#34;父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....&#34;,如：“耐克;耐克系列;科比系列;科比系列;2K5,Nike乔丹鞋;乔丹系列;乔丹鞋系列;乔丹鞋系列;json5”，多个自定义属性用&#39;,&#39;分割，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过3999字节。此处不可以使用“其他”、“其它”和“其她”这三个词。
 func (r *TaobaoItemAddAPIRequest) SetInputStr(_inputStr string) error {
 	r._inputStr = _inputStr
 	r.Set("input_str", _inputStr)
@@ -378,7 +378,7 @@ func (r TaobaoItemAddAPIRequest) GetInputStr() string {
 }
 
 // SetInputPids is InputPids Setter
-// 用户自行输入的类目属性ID串，结构："pid1,pid2,pid3"，如："20000"（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
+// 用户自行输入的类目属性ID串，结构：&#34;pid1,pid2,pid3&#34;，如：&#34;20000&#34;（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
 func (r *TaobaoItemAddAPIRequest) SetInputPids(_inputPids string) error {
 	r._inputPids = _inputPids
 	r.Set("input_pids", _inputPids)
@@ -430,7 +430,7 @@ func (r TaobaoItemAddAPIRequest) GetSkuPrices() string {
 }
 
 // SetSkuOuterIds is SkuOuterIds Setter
-// Sku的外部id串，结构如：1234,1342,… sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是","(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
+// Sku的外部id串，结构如：1234,1342,… sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是&#34;,&#34;(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
 func (r *TaobaoItemAddAPIRequest) SetSkuOuterIds(_skuOuterIds string) error {
 	r._skuOuterIds = _skuOuterIds
 	r.Set("sku_outer_ids", _skuOuterIds)
@@ -885,7 +885,7 @@ func (r TaobaoItemAddAPIRequest) GetFreightPayer() string {
 }
 
 // SetSellerCids is SellerCids Setter
-// 商品所属的店铺类目列表。按逗号分隔。结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。
+// 商品所属的店铺类目列表。按逗号分隔。结构:&#34;,cid1,cid2,...,&#34;，如果店铺类目存在二级类目，必须传入子类目cids。
 func (r *TaobaoItemAddAPIRequest) SetSellerCids(_sellerCids string) error {
 	r._sellerCids = _sellerCids
 	r.Set("seller_cids", _sellerCids)
@@ -911,7 +911,7 @@ func (r TaobaoItemAddAPIRequest) GetListTime() string {
 }
 
 // SetPropertyAlias is PropertyAlias Setter
-// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过800个字符，如"123:333:你好"，引号内的是10个字符。
+// 属性值别名。如pid:vid:别名;pid1:vid1:别名1 ，其中：pid是属性id vid是属性值id。总长度不超过800个字符，如&#34;123:333:你好&#34;，引号内的是10个字符。
 func (r *TaobaoItemAddAPIRequest) SetPropertyAlias(_propertyAlias string) error {
 	r._propertyAlias = _propertyAlias
 	r.Set("property_alias", _propertyAlias)
@@ -924,7 +924,7 @@ func (r TaobaoItemAddAPIRequest) GetPropertyAlias() string {
 }
 
 // SetLang is Lang Setter
-// 商品文字的字符集。繁体传入"zh_HK"，简体传入"zh_CN"，不传默认为简体
+// 商品文字的字符集。繁体传入&#34;zh_HK&#34;，简体传入&#34;zh_CN&#34;，不传默认为简体
 func (r *TaobaoItemAddAPIRequest) SetLang(_lang string) error {
 	r._lang = _lang
 	r.Set("lang", _lang)
@@ -1067,7 +1067,7 @@ func (r TaobaoItemAddAPIRequest) GetQualification() string {
 }
 
 // SetFeatures is Features Setter
-// 宝贝特征值，格式为：【key1:value1;key2:value2;key3:value3;】，key和value用【:】分隔，key&value之间用【;】分隔，只有在Top支持的特征值才能保存到宝贝上，目前支持的Key列表为：mysize_tp
+// 宝贝特征值，格式为：【key1:value1;key2:value2;key3:value3;】，key和value用【:】分隔，key&amp;value之间用【;】分隔，只有在Top支持的特征值才能保存到宝贝上，目前支持的Key列表为：mysize_tp
 func (r *TaobaoItemAddAPIRequest) SetFeatures(_features string) error {
 	r._features = _features
 	r.Set("features", _features)
@@ -1171,7 +1171,7 @@ func (r TaobaoItemAddAPIRequest) GetBrokerage() string {
 }
 
 // SetBizCode is BizCode Setter
-// 业务身份编码。淘小铺编码为"taobao-taoxiaopu"
+// 业务身份编码。淘小铺编码为&#34;taobao-taoxiaopu&#34;
 func (r *TaobaoItemAddAPIRequest) SetBizCode(_bizCode string) error {
 	r._bizCode = _bizCode
 	r.Set("biz_code", _bizCode)
@@ -1483,7 +1483,7 @@ func (r TaobaoItemAddAPIRequest) GetPostageId() int64 {
 }
 
 // SetAuctionPoint is AuctionPoint Setter
-// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
+// 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是&gt;0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是&gt;0的整数，最高值不超过500，即50%
 func (r *TaobaoItemAddAPIRequest) SetAuctionPoint(_auctionPoint int64) error {
 	r._auctionPoint = _auctionPoint
 	r.Set("auction_point", _auctionPoint)

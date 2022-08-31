@@ -34,7 +34,7 @@ type ItemDto struct {
 	SavedMoney string `json:"saved_money,omitempty" xml:"saved_money,omitempty"`
 	// 描述：节省X元
 	SavedMoneyInfo string `json:"saved_money_info,omitempty" xml:"saved_money_info,omitempty"`
-	// 销量 “已售xxx份”，销量大于9999："已售XX万份"
+	// 销量 “已售xxx份”，销量大于9999：&#34;已售XX万份&#34;
 	SalesInfo string `json:"sales_info,omitempty" xml:"sales_info,omitempty"`
 	// 商品可售库存
 	SellableQuantity string `json:"sellable_quantity,omitempty" xml:"sellable_quantity,omitempty"`

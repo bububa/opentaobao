@@ -22,8 +22,8 @@ type ProductBaseInfo struct {
 	TripMaxDays int64 `json:"trip_max_days,omitempty" xml:"trip_max_days,omitempty"`
 	// 必填，产品类型。目前仅支持 6-国际邮轮  9-境内邮轮
 	ItemType int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
-	// 旅游日程-晚数，必须大于等于0，且小于等于旅游日程-天数。 这里注意下，trip_max_days（旅游日程-天数）>=accom_nights（旅游日程-晚数）>=hotel_days（住宿晚数）
+	// 旅游日程-晚数，必须大于等于0，且小于等于旅游日程-天数。 这里注意下，trip_max_days（旅游日程-天数）&gt;=accom_nights（旅游日程-晚数）&gt;=hotel_days（住宿晚数）
 	AccomNights int64 `json:"accom_nights,omitempty" xml:"accom_nights,omitempty"`
-	// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具->出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
+	// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-&gt;出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
 	TravellerTemplateId int64 `json:"traveller_template_id,omitempty" xml:"traveller_template_id,omitempty"`
 }

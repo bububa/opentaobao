@@ -42,7 +42,7 @@ func (r TaobaoOcTradetraceAlertsGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetAbnormalType is AbnormalType Setter
-// 异常类型代码：发货回写淘宝异常=1，商家系统漏单提醒=2，发货超时提醒=3，物流寄送超时=4，买家签收超时=5，物流中转异常=6，退货寄回异常=7，订单追回提醒=8"。
+// 异常类型代码：发货回写淘宝异常=1，商家系统漏单提醒=2，发货超时提醒=3，物流寄送超时=4，买家签收超时=5，物流中转异常=6，退货寄回异常=7，订单追回提醒=8&#34;。
 func (r *TaobaoOcTradetraceAlertsGetAPIRequest) SetAbnormalType(_abnormalType int64) error {
 	r._abnormalType = _abnormalType
 	r.Set("abnormal_type", _abnormalType)

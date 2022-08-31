@@ -10,7 +10,7 @@ import (
 // taobao.trade.get
 //
 // 获取单笔交易的部分信息
-// <br/><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a>
+// &lt;br/&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=tradeapi&#34; target=&#34;_blank&#34;&gt;点击查看更多交易API说明&lt;/a&gt;
 type TaobaoTradeGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoTradeGetAPIResponseModel

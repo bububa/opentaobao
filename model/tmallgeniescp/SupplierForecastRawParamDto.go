@@ -14,6 +14,6 @@ type SupplierForecastRawParamDto struct {
 	LocationCode string `json:"location_code,omitempty" xml:"location_code,omitempty"`
 	// 二级物料-物料编码
 	PrdId string `json:"prd_id,omitempty" xml:"prd_id,omitempty"`
-	// 地点 - 成品供应商仓库&二级物料中央仓
+	// 地点 - 成品供应商仓库&amp;二级物料中央仓
 	LocationCodeTo string `json:"location_code_to,omitempty" xml:"location_code_to,omitempty"`
 }

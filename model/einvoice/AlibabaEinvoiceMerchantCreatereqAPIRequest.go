@@ -161,7 +161,7 @@ func (r AlibabaEinvoiceMerchantCreatereqAPIRequest) GetPayeeOperator() string {
 }
 
 // SetInvoiceAmount is InvoiceAmount Setter
-// 开票金额； <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
+// 开票金额； &lt;span style=&#34;color:red;font-weight: bold;&#34;&gt;当开红票时，该字段为负数&lt;/span&gt;
 func (r *AlibabaEinvoiceMerchantCreatereqAPIRequest) SetInvoiceAmount(_invoiceAmount string) error {
 	r._invoiceAmount = _invoiceAmount
 	r.Set("invoice_amount", _invoiceAmount)
@@ -291,7 +291,7 @@ func (r AlibabaEinvoiceMerchantCreatereqAPIRequest) GetPayerBankaccount() string
 }
 
 // SetSumPrice is SumPrice Setter
-// 合计金额(新版中为必传) <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
+// 合计金额(新版中为必传) &lt;span style=&#34;color:red;font-weight: bold;&#34;&gt;当开红票时，该字段为负数&lt;/span&gt;
 func (r *AlibabaEinvoiceMerchantCreatereqAPIRequest) SetSumPrice(_sumPrice string) error {
 	r._sumPrice = _sumPrice
 	r.Set("sum_price", _sumPrice)
@@ -408,7 +408,7 @@ func (r AlibabaEinvoiceMerchantCreatereqAPIRequest) GetPayeeAddress() string {
 }
 
 // SetSumTax is SumTax Setter
-// 合计税额 <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
+// 合计税额 &lt;span style=&#34;color:red;font-weight: bold;&#34;&gt;当开红票时，该字段为负数&lt;/span&gt;
 func (r *AlibabaEinvoiceMerchantCreatereqAPIRequest) SetSumTax(_sumTax string) error {
 	r._sumTax = _sumTax
 	r.Set("sum_tax", _sumTax)

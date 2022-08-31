@@ -10,8 +10,8 @@ import (
 // taobao.onebp.dkx.crowd.crowd.findcrowdgroups
 //
 // 获取人群组
-// 入参1示例：{"biz_code":"adStrategyDkx"}
-// 入参2示例：{ "market_scene": "ad_strategy_laxin"}
+// 入参1示例：{&#34;biz_code&#34;:&#34;adStrategyDkx&#34;}
+// 入参2示例：{ &#34;market_scene&#34;: &#34;ad_strategy_laxin&#34;}
 type TaobaoOnebpDkxCrowdCrowdFindcrowdgroupsAPIRequest struct {
 	model.Params
 	// 请求体

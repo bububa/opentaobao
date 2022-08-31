@@ -88,7 +88,7 @@ type TaobaoTbkScMaterialTemporaryOptionalMapData struct {
 	YsylTljSendTime string `json:"ysyl_tlj_send_time,omitempty" xml:"ysyl_tlj_send_time,omitempty"`
 	// 预售有礼-推广链接
 	YsylClickUrl string `json:"ysyl_click_url,omitempty" xml:"ysyl_click_url,omitempty"`
-	// 预售有礼-佣金比例(预售有礼活动享受的推广佣金比例，注：推广该活动有特殊分成规则，请详见：https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=9334376 ）
+	// 预售有礼-佣金比例(预售有礼活动享受的推广佣金比例，注：推广该活动有特殊分成规则，请详见：https://tbk.bbs.taobao.com/detail.html?appId=45301&amp;postId=9334376 ）
 	YsylCommissionRate string `json:"ysyl_commission_rate,omitempty" xml:"ysyl_commission_rate,omitempty"`
 	// 预售有礼-预估淘礼金(元)
 	YsylTljFace string `json:"ysyl_tlj_face,omitempty" xml:"ysyl_tlj_face,omitempty"`

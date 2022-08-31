@@ -32,12 +32,12 @@ type RefundGoodsSubOrderDetail struct {
 	ItemIu string `json:"item_iu,omitempty" xml:"item_iu,omitempty"`
 	// 商品销售单位
 	ItemBu string `json:"item_bu,omitempty" xml:"item_bu,omitempty"`
-	// 退货类型(1:"闪退";2: "标准")
+	// 退货类型(1:&#34;闪退&#34;;2: &#34;标准&#34;)
 	RefundSpeedType int64 `json:"refund_speed_type,omitempty" xml:"refund_speed_type,omitempty"`
 	// 是否称重商品 1：是，0:否
 	WeightItem int64 `json:"weight_item,omitempty" xml:"weight_item,omitempty"`
-	// Create(10, "已发起退货"),SellerAgree(20, "卖家已同意"),OperatorAccept(30, "配送员已接单"),OperatorReceive(40, "配送员已取货"),Finish(50, "退货结束");
+	// Create(10, &#34;已发起退货&#34;),SellerAgree(20, &#34;卖家已同意&#34;),OperatorAccept(30, &#34;配送员已接单&#34;),OperatorReceive(40, &#34;配送员已取货&#34;),Finish(50, &#34;退货结束&#34;);
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
-	// Init(0,"初始状态"),NoTakeGoods(1, "无需取货"),FailTakeGoods(2, "取货失败"),Timeout(3, "超时关闭"),EnterDock(4, "已入站");
+	// Init(0,&#34;初始状态&#34;),NoTakeGoods(1, &#34;无需取货&#34;),FailTakeGoods(2, &#34;取货失败&#34;),Timeout(3, &#34;超时关闭&#34;),EnterDock(4, &#34;已入站&#34;);
 	FinishType int64 `json:"finish_type,omitempty" xml:"finish_type,omitempty"`
 }

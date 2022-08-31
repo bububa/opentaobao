@@ -6,7 +6,7 @@ type LstThirdPartMainShipOrderDto struct {
 	Details []LstThirdPartDetailShipOrderDto `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_dto,omitempty"`
 	// 签收时间
 	SignTime string `json:"sign_time,omitempty" xml:"sign_time,omitempty"`
-	// 发货单状态：NEW --->新建，LOAD_WAIT--->待装车，LOAD_SUCCESS--->已装车，SIGN_SUCCESS--->签收，SIGN_PART_SUCCESS--->部分签收，SIGN_FAILED--->拒签，CANCEL--->取消
+	// 发货单状态：NEW ---&gt;新建，LOAD_WAIT---&gt;待装车，LOAD_SUCCESS---&gt;已装车，SIGN_SUCCESS---&gt;签收，SIGN_PART_SUCCESS---&gt;部分签收，SIGN_FAILED---&gt;拒签，CANCEL---&gt;取消
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 外部订单ID
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`

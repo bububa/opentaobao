@@ -16,7 +16,7 @@ type OrderInfo struct {
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
 	// pos点餐：POS_ORDER  扫码点餐：CODE_ORDER  线上点餐到店（美团）:MEITUAN_ONLINE  线上点餐到店（口碑）:KOUBEI_ONLINE  线上点餐到店（其他）:OTHER_ONLINE  到家外卖（美团）:MEITUAN_TAKEOUT  到家外卖（饿了么）:ELEME_TAKEOUT  其他:OTHER
 	OrderSource string `json:"order_source,omitempty" xml:"order_source,omitempty"`
-	// 订单状态:  WAIT_PAY("WAIT_PAY", "订单待支付"),  PAID("PAID", "订单已支付"),  SUCCESS("SUCCESS", "订单完成"),  CLOSED("CLOSED", "已关闭"),  REFUND("REFUND", "订单已退款");
+	// 订单状态:  WAIT_PAY(&#34;WAIT_PAY&#34;, &#34;订单待支付&#34;),  PAID(&#34;PAID&#34;, &#34;订单已支付&#34;),  SUCCESS(&#34;SUCCESS&#34;, &#34;订单完成&#34;),  CLOSED(&#34;CLOSED&#34;, &#34;已关闭&#34;),  REFUND(&#34;REFUND&#34;, &#34;订单已退款&#34;);
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 外部订单号
 	OuterOrderId string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`

@@ -6,7 +6,7 @@ type CustomerSaveOpenReq struct {
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
 	// saas品牌id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 渠道  crm_back(1, "CRM后台"),  pos(2, "POS"),  mobile_shop(3, "个人中心"),  wechat(4, "微信"),  alipay(5, "支付宝"),所有pos端传2
+	// 渠道  crm_back(1, &#34;CRM后台&#34;),  pos(2, &#34;POS&#34;),  mobile_shop(3, &#34;个人中心&#34;),  wechat(4, &#34;微信&#34;),  alipay(5, &#34;支付宝&#34;),所有pos端传2
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 手机号
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`

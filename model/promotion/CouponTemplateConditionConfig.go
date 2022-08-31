@@ -16,7 +16,7 @@ type CouponTemplateConditionConfig struct {
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 	// 门槛件数
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
-	// 券的使用范围 COUPON_RANGE_STORE(1, "rangeShop", "店铺券"), COUPON_RANGE_ITEM(2, "rangeItem", "商品券"), COUPON_RANGE_CATEGORY(3, "rangeCategory", "品类券"), COUPON_RANGE_SELLER(307,"rangeSeller", "卖家券"),
+	// 券的使用范围 COUPON_RANGE_STORE(1, &#34;rangeShop&#34;, &#34;店铺券&#34;), COUPON_RANGE_ITEM(2, &#34;rangeItem&#34;, &#34;商品券&#34;), COUPON_RANGE_CATEGORY(3, &#34;rangeCategory&#34;, &#34;品类券&#34;), COUPON_RANGE_SELLER(307,&#34;rangeSeller&#34;, &#34;卖家券&#34;),
 	RangeType int64 `json:"range_type,omitempty" xml:"range_type,omitempty"`
 	// 人群信息
 	UserCrowdConfig *CouponTemplateUserCrowdConfig `json:"user_crowd_config,omitempty" xml:"user_crowd_config,omitempty"`

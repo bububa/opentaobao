@@ -68,7 +68,7 @@ func (r TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) GetDealerOrde
 }
 
 // SetSupplierMemoFlag is SupplierMemoFlag Setter
-// 旗子的标记，必选。<br/>1-5之间的数字。<br/>非1-5之间，都采用1作为默认。<br/>1:红色<br/>2:黄色<br/>3:绿色<br/>4:蓝色<br/>5:粉红色
+// 旗子的标记，必选。&lt;br/&gt;1-5之间的数字。&lt;br/&gt;非1-5之间，都采用1作为默认。&lt;br/&gt;1:红色&lt;br/&gt;2:黄色&lt;br/&gt;3:绿色&lt;br/&gt;4:蓝色&lt;br/&gt;5:粉红色
 func (r *TaobaoFenxiaoDealerRequisitionorderRemarkUpdateAPIRequest) SetSupplierMemoFlag(_supplierMemoFlag int64) error {
 	r._supplierMemoFlag = _supplierMemoFlag
 	r.Set("supplier_memo_flag", _supplierMemoFlag)

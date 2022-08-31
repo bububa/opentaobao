@@ -2,11 +2,11 @@ package idle
 
 // Attribute 结构体
 type Attribute struct {
-	// 结构化一级结论枚举值 新品：'CERTIFIED_FLAW'：真货有瑕疵；'CERTIFIED_NO_FLAW'：真货无瑕疵；'FAKE'：假货。 二手：'CERTIFIED_FLAW'：真货有瑕疵；'FAKE'：假货 主状态为4 ac已收货后，服务商调用履约接口传入
+	// 结构化一级结论枚举值 新品：&#39;CERTIFIED_FLAW&#39;：真货有瑕疵；&#39;CERTIFIED_NO_FLAW&#39;：真货无瑕疵；&#39;FAKE&#39;：假货。 二手：&#39;CERTIFIED_FLAW&#39;：真货有瑕疵；&#39;FAKE&#39;：假货 主状态为4 ac已收货后，服务商调用履约接口传入
 	Conclusion1 string `json:"conclusion1,omitempty" xml:"conclusion1,omitempty"`
-	// 结构化二级结论枚举值 新品：无需该字段 二手：'SELLER_FAULT'：卖家责任；'SELLER_NO_FAULT'：卖家无责 主状态为4 ac已收货后，服务商调用履约接口传入
+	// 结构化二级结论枚举值 新品：无需该字段 二手：&#39;SELLER_FAULT&#39;：卖家责任；&#39;SELLER_NO_FAULT&#39;：卖家无责 主状态为4 ac已收货后，服务商调用履约接口传入
 	Conclusion2 string `json:"conclusion2,omitempty" xml:"conclusion2,omitempty"`
-	// 成色，奢侈品类需要填写" example="99新"。主状态为4 ac已收货后，服务商调用履约接口传入
+	// 成色，奢侈品类需要填写&#34; example=&#34;99新&#34;。主状态为4 ac已收货后，服务商调用履约接口传入
 	Degree string `json:"degree,omitempty" xml:"degree,omitempty"`
 	// 鉴定报告URL地址。主状态为4 ac已收货后，服务商调用履约接口传入
 	ReportUrl string `json:"report_url,omitempty" xml:"report_url,omitempty"`
@@ -80,10 +80,10 @@ type Attribute struct {
 	RecycleSupplierId string `json:"recycle_supplier_id,omitempty" xml:"recycle_supplier_id,omitempty"`
 	// 商家收到货品时间
 	IsvReceiveTime string `json:"isv_receive_time,omitempty" xml:"isv_receive_time,omitempty"`
-	// 质检型号名称（若存在不一致情况，需要了解实际检测的质检型号，若实际型号在已挂载的spuid中则传spuid，否则传"其他"）
+	// 质检型号名称（若存在不一致情况，需要了解实际检测的质检型号，若实际型号在已挂载的spuid中则传spuid，否则传&#34;其他&#34;）
 	RealModel string `json:"real_model,omitempty" xml:"real_model,omitempty"`
 	// 提交型号和质检型号是否一致
 	SpuMatch string `json:"spu_match,omitempty" xml:"spu_match,omitempty"`
-	// order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME("质检员未上门取件"), SELLER_CAN_NOT_CONTACT("用户无法联系"), SELLER_NOT_COME_STORE_AT_TIME("用户未按时到店"), CANCEL_BY_SELLER_DEMAND("用户要求不回收了"), QA_NOT_QUALIFIED("不符合服务商质检要求"), OTHER("其他原因")
+	// order_status=103、101时候填写 关闭原因code。QA_STAFF_NOT_VISIT_HOME(&#34;质检员未上门取件&#34;), SELLER_CAN_NOT_CONTACT(&#34;用户无法联系&#34;), SELLER_NOT_COME_STORE_AT_TIME(&#34;用户未按时到店&#34;), CANCEL_BY_SELLER_DEMAND(&#34;用户要求不回收了&#34;), QA_NOT_QUALIFIED(&#34;不符合服务商质检要求&#34;), OTHER(&#34;其他原因&#34;)
 	CloseReasonCode string `json:"close_reason_code,omitempty" xml:"close_reason_code,omitempty"`
 }

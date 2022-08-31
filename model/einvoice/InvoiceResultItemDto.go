@@ -2,7 +2,7 @@ package einvoice
 
 // InvoiceResultItemDto 结构体
 type InvoiceResultItemDto struct {
-	// 数量，最多6位小数。  折扣行此参数不能传，非折扣行必传。存在则需>0
+	// 数量，最多6位小数。  折扣行此参数不能传，非折扣行必传。存在则需&gt;0
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 单价（不含税），格式为2位小数。最大支持6位小数，不足2位小数时需转化为2位小数格式。折扣行此参数不能传，非折扣行必传
 	Price string `json:"price,omitempty" xml:"price,omitempty"`

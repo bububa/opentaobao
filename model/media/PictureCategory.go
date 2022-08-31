@@ -14,7 +14,7 @@ type PictureCategory struct {
 	PictureCategoryId int64 `json:"picture_category_id,omitempty" xml:"picture_category_id,omitempty"`
 	// 图片分类排序
 	Position int64 `json:"position,omitempty" xml:"position,omitempty"`
-	// 一级分类的parent_id为0<br/>二级分类的则为其父分类的picture_category_id
+	// 一级分类的parent_id为0&lt;br/&gt;二级分类的则为其父分类的picture_category_id
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 分类下的图片数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`

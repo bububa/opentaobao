@@ -68,7 +68,7 @@ func (r AlitripTravelPoiSearchAPIRequest) GetId() int64 {
 }
 
 // SetType is Type Setter
-// POI类型；1->机场,2->火车站,3->汽车站,4->酒店,5->景点,6->购物，7->美食，9->玩乐，10->阿里旅行服务站，11->服务，100->其他
+// POI类型；1-&gt;机场,2-&gt;火车站,3-&gt;汽车站,4-&gt;酒店,5-&gt;景点,6-&gt;购物，7-&gt;美食，9-&gt;玩乐，10-&gt;阿里旅行服务站，11-&gt;服务，100-&gt;其他
 func (r *AlitripTravelPoiSearchAPIRequest) SetType(_type int64) error {
 	r._type = _type
 	r.Set("type", _type)

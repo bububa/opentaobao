@@ -104,7 +104,7 @@ func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetTid() int64 {
 }
 
 // SetSenderId is SenderId Setter
-// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<font color='red'>如果为空，取的卖家的默认取货地址</font>如果service_code不为空，默认使用service_code如果service_code为空，sender_id不为空，使用sender_id对应的地址发货如果service_code与sender_id都为空，使用默认地址发货
+// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。&lt;font color=&#39;red&#39;&gt;如果为空，取的卖家的默认取货地址&lt;/font&gt;如果service_code不为空，默认使用service_code如果service_code为空，sender_id不为空，使用sender_id对应的地址发货如果service_code与sender_id都为空，使用默认地址发货
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetSenderId(_senderId int64) error {
 	r._senderId = _senderId
 	r.Set("sender_id", _senderId)
@@ -117,7 +117,7 @@ func (r TaobaoLogisticsOrderShengxianConfirmAPIRequest) GetSenderId() int64 {
 }
 
 // SetCancelId is CancelId Setter
-// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<br><font color='red'>如果为空，取的卖家的默认退货地址</font><br>
+// 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。&lt;br&gt;&lt;font color=&#39;red&#39;&gt;如果为空，取的卖家的默认退货地址&lt;/font&gt;&lt;br&gt;
 func (r *TaobaoLogisticsOrderShengxianConfirmAPIRequest) SetCancelId(_cancelId int64) error {
 	r._cancelId = _cancelId
 	r.Set("cancel_id", _cancelId)

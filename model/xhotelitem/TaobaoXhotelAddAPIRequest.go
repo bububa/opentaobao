@@ -345,7 +345,7 @@ func (r TaobaoXhotelAddAPIRequest) GetDescription() string {
 }
 
 // SetPics is Pics Setter
-// 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图（主图只能有一个，如果有多个或者没有，则会报错）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多是能是10张。
+// 酒店图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://123.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;},{&#34;url&#34;:&#34;http://456.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;,&#34;type&#34;:&#34;公共区域&#34;,&#34;attribute&#34;:&#34;全景图&#34;},{&#34;url&#34;:&#34;http://789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;}] 其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图（主图只能有一个，如果有多个或者没有，则会报错）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多是能是10张。
 func (r *TaobaoXhotelAddAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -358,7 +358,7 @@ func (r TaobaoXhotelAddAPIRequest) GetPics() string {
 }
 
 // SetBrand is Brand Setter
-// 酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH&docType=1&articleId=120180
+// 酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH&amp;docType=1&amp;articleId=120180
 func (r *TaobaoXhotelAddAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
 	r.Set("brand", _brand)
@@ -462,7 +462,7 @@ func (r TaobaoXhotelAddAPIRequest) GetSettlementCurrency() string {
 }
 
 // SetStandardAmuseFacilities is StandardAmuseFacilities Setter
-// 标准娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 标准娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardAmuseFacilities(_standardAmuseFacilities string) error {
 	r._standardAmuseFacilities = _standardAmuseFacilities
 	r.Set("standard_amuse_facilities", _standardAmuseFacilities)
@@ -475,7 +475,7 @@ func (r TaobaoXhotelAddAPIRequest) GetStandardAmuseFacilities() string {
 }
 
 // SetStandardRoomFacilities is StandardRoomFacilities Setter
-// 标准房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 标准房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardRoomFacilities(_standardRoomFacilities string) error {
 	r._standardRoomFacilities = _standardRoomFacilities
 	r.Set("standard_room_facilities", _standardRoomFacilities)
@@ -488,7 +488,7 @@ func (r TaobaoXhotelAddAPIRequest) GetStandardRoomFacilities() string {
 }
 
 // SetStandardHotelService is StandardHotelService Setter
-// 标准酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 标准酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelService(_standardHotelService string) error {
 	r._standardHotelService = _standardHotelService
 	r.Set("standard_hotel_service", _standardHotelService)
@@ -501,7 +501,7 @@ func (r TaobaoXhotelAddAPIRequest) GetStandardHotelService() string {
 }
 
 // SetStandardHotelFacilities is StandardHotelFacilities Setter
-// 标准酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 标准酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardHotelFacilities(_standardHotelFacilities string) error {
 	r._standardHotelFacilities = _standardHotelFacilities
 	r.Set("standard_hotel_facilities", _standardHotelFacilities)
@@ -514,7 +514,7 @@ func (r TaobaoXhotelAddAPIRequest) GetStandardHotelFacilities() string {
 }
 
 // SetStandardBookingNotice is StandardBookingNotice Setter
-// 标准预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 标准预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelAddAPIRequest) SetStandardBookingNotice(_standardBookingNotice string) error {
 	r._standardBookingNotice = _standardBookingNotice
 	r.Set("standard_booking_notice", _standardBookingNotice)

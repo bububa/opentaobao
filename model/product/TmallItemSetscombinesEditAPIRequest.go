@@ -9,7 +9,7 @@ import (
 // TmallItemSetscombinesEditAPIRequest 普通商品转套装商品&套装商品编辑接口 API请求
 // tmall.item.setscombines.edit
 //
-// 普通商品转套装商品&套装商品编辑接口
+// 普通商品转套装商品&amp;套装商品编辑接口
 type TmallItemSetscombinesEditAPIRequest struct {
 	model.Params
 	// 商品ID

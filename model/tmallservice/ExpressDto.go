@@ -16,7 +16,7 @@ type ExpressDto struct {
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 打印免单信息
 	PrintInfo string `json:"print_info,omitempty" xml:"print_info,omitempty"`
-	// 物品信息明细 字符串格式为：json 串 例子： [{ "name": "大衣,毛衣", "count": 1 }, { "name": "裤子", "count": 2 }]
+	// 物品信息明细 字符串格式为：json 串 例子： [{ &#34;name&#34;: &#34;大衣,毛衣&#34;, &#34;count&#34;: 1 }, { &#34;name&#34;: &#34;裤子&#34;, &#34;count&#34;: 2 }]
 	GoodsInfo string `json:"goods_info,omitempty" xml:"goods_info,omitempty"`
 	// 预约开始时间
 	ReserveEndTime string `json:"reserve_end_time,omitempty" xml:"reserve_end_time,omitempty"`

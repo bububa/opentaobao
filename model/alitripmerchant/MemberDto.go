@@ -3,7 +3,7 @@ package alitripmerchant
 // MemberDto 结构体
 type MemberDto struct {
 	// 会员权益走马灯
-	MemberRightCarousels []MemberRightCarouselVO `json:"member_right_carousels,omitempty" xml:"member_right_carousels>member_right_carousel_vo,omitempty"`
+	MemberRightCarousels []MemberRightCarouselVo `json:"member_right_carousels,omitempty" xml:"member_right_carousels>member_right_carousel_vo,omitempty"`
 	// 用户id
 	TenantUserId string `json:"tenant_user_id,omitempty" xml:"tenant_user_id,omitempty"`
 	// 微信头像

@@ -9,7 +9,7 @@ import (
 // TaobaoFenxiaoProductUpdateAPIRequest 更新产品 API请求
 // taobao.fenxiao.product.update
 //
-// 更新分销平台产品数据，不传更新数据返回失败<br><br/>1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。<br>
+// 更新分销平台产品数据，不传更新数据返回失败&lt;br&gt;&lt;br/&gt;1. 对sku进行增、删操作时，原有的sku_ids字段会被忽略，请使用sku_properties和sku_properties_del。&lt;br&gt;
 type TaobaoFenxiaoProductUpdateAPIRequest struct {
 	model.Params
 	// 运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）。
@@ -331,7 +331,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuIds() string {
 }
 
 // SetSkuCostPrices is SkuCostPrices Setter
-// sku采购价格，单位元，例："10.50,11.00,20.50"，字段必须和上面的sku_ids或sku_properties保持一致。
+// sku采购价格，单位元，例：&#34;10.50,11.00,20.50&#34;，字段必须和上面的sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuCostPrices(_skuCostPrices string) error {
 	r._skuCostPrices = _skuCostPrices
 	r.Set("sku_cost_prices", _skuCostPrices)
@@ -344,7 +344,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuCostPrices() string {
 }
 
 // SetSkuQuantitys is SkuQuantitys Setter
-// sku库存，单位元，例："10,20,30"，字段必须和sku_ids或sku_properties保持一致。
+// sku库存，单位元，例：&#34;10,20,30&#34;，字段必须和sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuQuantitys(_skuQuantitys string) error {
 	r._skuQuantitys = _skuQuantitys
 	r.Set("sku_quantitys", _skuQuantitys)
@@ -357,7 +357,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuQuantitys() string {
 }
 
 // SetSkuOuterIds is SkuOuterIds Setter
-// sku商家编码 ，单位元，例："S1000,S1002,S1003"，字段必须和上面的id或sku_properties保持一致，如果没有可以写成",,"
+// sku商家编码 ，单位元，例：&#34;S1000,S1002,S1003&#34;，字段必须和上面的id或sku_properties保持一致，如果没有可以写成&#34;,,&#34;
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuOuterIds(_skuOuterIds string) error {
 	r._skuOuterIds = _skuOuterIds
 	r.Set("sku_outer_ids", _skuOuterIds)
@@ -370,7 +370,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuOuterIds() string {
 }
 
 // SetSkuStandardPrices is SkuStandardPrices Setter
-// sku采购基准价，单位元，例："10.50,11.00,20.50"，字段必须和上面的sku_ids或sku_properties保持一致。
+// sku采购基准价，单位元，例：&#34;10.50,11.00,20.50&#34;，字段必须和上面的sku_ids或sku_properties保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuStandardPrices(_skuStandardPrices string) error {
 	r._skuStandardPrices = _skuStandardPrices
 	r.Set("sku_standard_prices", _skuStandardPrices)
@@ -383,7 +383,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuStandardPrices() string {
 }
 
 // SetSkuProperties is SkuProperties Setter
-// sku属性。格式:pid:vid;pid:vid,表示一组属性如:1627207:3232483;1630696:3284570,表示一组:机身颜色:军绿色;手机套餐:一电一充。多组之间用逗号“,”区分。(属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid)<br/>通过此字段可新增和更新sku。若传入此值将忽略sku_ids字段。sku其他字段与此值保持一致。
+// sku属性。格式:pid:vid;pid:vid,表示一组属性如:1627207:3232483;1630696:3284570,表示一组:机身颜色:军绿色;手机套餐:一电一充。多组之间用逗号“,”区分。(属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid)&lt;br/&gt;通过此字段可新增和更新sku。若传入此值将忽略sku_ids字段。sku其他字段与此值保持一致。
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetSkuProperties(_skuProperties string) error {
 	r._skuProperties = _skuProperties
 	r.Set("sku_properties", _skuProperties)
@@ -409,7 +409,7 @@ func (r TaobaoFenxiaoProductUpdateAPIRequest) GetSkuPropertiesDel() string {
 }
 
 // SetIsAuthz is IsAuthz Setter
-// 产品是否需要授权isAuthz:yes|no <br/>yes:需要授权 <br/>no:不需要授权
+// 产品是否需要授权isAuthz:yes|no &lt;br/&gt;yes:需要授权 &lt;br/&gt;no:不需要授权
 func (r *TaobaoFenxiaoProductUpdateAPIRequest) SetIsAuthz(_isAuthz string) error {
 	r._isAuthz = _isAuthz
 	r.Set("is_authz", _isAuthz)

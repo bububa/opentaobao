@@ -32,7 +32,7 @@ type Wordscorelist struct {
 	Pscore string `json:"pscore,omitempty" xml:"pscore,omitempty"`
 	// 相关性，同kwscore
 	Relescore string `json:"relescore,omitempty" xml:"relescore,omitempty"`
-	// 广告类型  单品： &quot;tbuad&quot;; 店铺： &quot;addp&quot;;
+	// 广告类型  单品： &amp;quot;tbuad&amp;quot;; 店铺： &amp;quot;addp&amp;quot;;
 	AdType string `json:"ad_type,omitempty" xml:"ad_type,omitempty"`
 	// 词id
 	KeywordId int64 `json:"keyword_id,omitempty" xml:"keyword_id,omitempty"`

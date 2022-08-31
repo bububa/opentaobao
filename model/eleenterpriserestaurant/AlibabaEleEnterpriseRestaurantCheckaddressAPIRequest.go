@@ -53,7 +53,7 @@ func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetErestaurantId()
 }
 
 // SetAddresses is Addresses Setter
-// [{"longitude": 1, "latitude": 2}], json 字符串, 每个元素是 一个 dict{longitude, latitude, …} 其他字段原样返回
+// [{&#34;longitude&#34;: 1, &#34;latitude&#34;: 2}], json 字符串, 每个元素是 一个 dict{longitude, latitude, …} 其他字段原样返回
 func (r *AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) SetAddresses(_addresses string) error {
 	r._addresses = _addresses
 	r.Set("addresses", _addresses)

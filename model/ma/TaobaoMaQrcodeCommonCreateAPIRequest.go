@@ -91,7 +91,7 @@ func (r TaobaoMaQrcodeCommonCreateAPIRequest) GetName() string {
 }
 
 // SetChannelName is ChannelName Setter
-// 二维码需要布点的位置，方便用户在码平台上可以区分看到不同布点的扫码数据情况；列表值，用半角','号分割，单个渠道名不能超过16字符。
+// 二维码需要布点的位置，方便用户在码平台上可以区分看到不同布点的扫码数据情况；列表值，用半角&#39;,&#39;号分割，单个渠道名不能超过16字符。
 func (r *TaobaoMaQrcodeCommonCreateAPIRequest) SetChannelName(_channelName string) error {
 	r._channelName = _channelName
 	r.Set("channel_name", _channelName)

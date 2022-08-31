@@ -22,7 +22,7 @@ type User struct {
 	AlipayBind string `json:"alipay_bind,omitempty" xml:"alipay_bind,omitempty"`
 	// 用户的全站vip信息，可取值如下：c(普通会员),asso_vip(荣誉会员)，vip1,vip2,vip3,vip4,vip5,vip6(六个等级的正式vip会员)，共8种取值，其中asso_vip是由vip会员衰退而成，与主站上的vip0对应。
 	VipInfo string `json:"vip_info,omitempty" xml:"vip_info,omitempty"`
-	// 用户参与垂直市场类型。shoes表示鞋城垂直市场用户，3C表示3C垂直市场用户。多个类型之间用&quot;,&quot;分隔。如：一个用户既是3C用户又是鞋城用户，那么这个字段返回就是&quot;3C,shoes&quot;。如果用户不是垂直市场用户，此字段返回为&quot;&quot;。
+	// 用户参与垂直市场类型。shoes表示鞋城垂直市场用户，3C表示3C垂直市场用户。多个类型之间用&amp;quot;,&amp;quot;分隔。如：一个用户既是3C用户又是鞋城用户，那么这个字段返回就是&amp;quot;3C,shoes&amp;quot;。如果用户不是垂直市场用户，此字段返回为&amp;quot;&amp;quot;。
 	VerticalMarket string `json:"vertical_market,omitempty" xml:"vertical_market,omitempty"`
 	// 用户数字ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`

@@ -40,7 +40,7 @@ func (r AlibabaTjbPictureFolderCreateAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFolderName is FolderName Setter
-// 文件夹名称，最长50个字符，仅可输入中英文、数字及!@#%^&()-=_+.,~`特殊字符。
+// 文件夹名称，最长50个字符，仅可输入中英文、数字及!@#%^&amp;()-=_+.,~`特殊字符。
 func (r *AlibabaTjbPictureFolderCreateAPIRequest) SetFolderName(_folderName string) error {
 	r._folderName = _folderName
 	r.Set("folder_name", _folderName)

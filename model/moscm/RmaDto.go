@@ -8,9 +8,9 @@ type RmaDto struct {
 	ExpressNo string `json:"express_no,omitempty" xml:"express_no,omitempty"`
 	// 快递公司名称
 	ExpressName string `json:"express_name,omitempty" xml:"express_name,omitempty"`
-	// 单据类型，可选值：GOODRETURN（退货）, GOODEXCHANGE（换货）,仅退款（"RETURN"）;
+	// 单据类型，可选值：GOODRETURN（退货）, GOODEXCHANGE（换货）,仅退款（&#34;RETURN&#34;）;
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
-	// 单据状态，可选值：CREATED("已创建"),  INBOUND("已收货同意退款"),  NOTINBOUND("已收货不同意退款"),REFUNDED("已退款"),COMPLETED("已完成"),Obsolete("已作废");
+	// 单据状态，可选值：CREATED(&#34;已创建&#34;),  INBOUND(&#34;已收货同意退款&#34;),  NOTINBOUND(&#34;已收货不同意退款&#34;),REFUNDED(&#34;已退款&#34;),COMPLETED(&#34;已完成&#34;),Obsolete(&#34;已作废&#34;);
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 最后更新时间
 	LastUpdated string `json:"last_updated,omitempty" xml:"last_updated,omitempty"`

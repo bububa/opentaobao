@@ -48,7 +48,7 @@ type CardOpenInfo struct {
 	OptPlanId string `json:"opt_plan_id,omitempty" xml:"opt_plan_id,omitempty"`
 	// 会员计划ID
 	PlanId string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
-	// SOLD("SOLD", "已出售"),     ACTIVED("ACTIVED", "已激活"),     STOP("STOP", "已停用"),     INVALID("INVALID", "已作废"),     EXPIRED("EXPIRED", "已过期"),     REFUND("REFUND", "已退卡")
+	// SOLD(&#34;SOLD&#34;, &#34;已出售&#34;),     ACTIVED(&#34;ACTIVED&#34;, &#34;已激活&#34;),     STOP(&#34;STOP&#34;, &#34;已停用&#34;),     INVALID(&#34;INVALID&#34;, &#34;已作废&#34;),     EXPIRED(&#34;EXPIRED&#34;, &#34;已过期&#34;),     REFUND(&#34;REFUND&#34;, &#34;已退卡&#34;)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 修改人
 	UpdateBy string `json:"update_by,omitempty" xml:"update_by,omitempty"`

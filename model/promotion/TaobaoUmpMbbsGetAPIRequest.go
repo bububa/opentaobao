@@ -38,7 +38,7 @@ func (r TaobaoUmpMbbsGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetType is Type Setter
-// 积木块类型。如果该字段为空表示查出所有类型的<br/>现在有且仅有如下几种：resource,condition,action,target
+// 积木块类型。如果该字段为空表示查出所有类型的&lt;br/&gt;现在有且仅有如下几种：resource,condition,action,target
 func (r *TaobaoUmpMbbsGetAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

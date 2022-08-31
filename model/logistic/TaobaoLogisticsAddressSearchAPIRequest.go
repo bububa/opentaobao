@@ -38,7 +38,7 @@ func (r TaobaoLogisticsAddressSearchAPIRequest) GetApiParams() url.Values {
 }
 
 // SetRdef is Rdef Setter
-// 可选，参数列表如下：<br><font color='red'>no_def:查询非默认地址<br>get_def:查询默认取货地址，也即对应卖家后台地址库中发货地址（send_def暂不起作用）<br>cancel_def:查询默认退货地址<br>缺省此参数时，查询所有当前用户的地址库</font>
+// 可选，参数列表如下：&lt;br&gt;&lt;font color=&#39;red&#39;&gt;no_def:查询非默认地址&lt;br&gt;get_def:查询默认取货地址，也即对应卖家后台地址库中发货地址（send_def暂不起作用）&lt;br&gt;cancel_def:查询默认退货地址&lt;br&gt;缺省此参数时，查询所有当前用户的地址库&lt;/font&gt;
 func (r *TaobaoLogisticsAddressSearchAPIRequest) SetRdef(_rdef string) error {
 	r._rdef = _rdef
 	r.Set("rdef", _rdef)

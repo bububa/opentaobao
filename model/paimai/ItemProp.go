@@ -40,7 +40,7 @@ type ItemProp struct {
 	Multi bool `json:"multi,omitempty" xml:"multi,omitempty"`
 	// 是否允许别名。可选值：true（是），false（否）
 	IsAllowAlias bool `json:"is_allow_alias,omitempty" xml:"is_allow_alias,omitempty"`
-	// 在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。<b>对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。</b>
+	// 在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。&lt;b&gt;对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。&lt;/b&gt;
 	IsInputProp bool `json:"is_input_prop,omitempty" xml:"is_input_prop,omitempty"`
 	// 是否度量衡属性项
 	IsTaosir bool `json:"is_taosir,omitempty" xml:"is_taosir,omitempty"`

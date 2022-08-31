@@ -4,7 +4,7 @@ package wlb
 type WlbOrderItem struct {
 	// 订单商品用户昵称
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
-	// INVENTORY_TYPE_SELL 可销库存<br/>INVENTORY_TYPE_IMPERFECTIONS 残次库存<br/>INVENTORY_TYPE_FREEZE 冻结库存<br/>INVENTORY_TYPE_ON_PASSAGE 在途库存<br/>INVENTORY_TYPE_ENGINE_DAMAGE 机损<br/>INVENTORY_TYPE_BOX_DAMAGE 箱损
+	// INVENTORY_TYPE_SELL 可销库存&lt;br/&gt;INVENTORY_TYPE_IMPERFECTIONS 残次库存&lt;br/&gt;INVENTORY_TYPE_FREEZE 冻结库存&lt;br/&gt;INVENTORY_TYPE_ON_PASSAGE 在途库存&lt;br/&gt;INVENTORY_TYPE_ENGINE_DAMAGE 机损&lt;br/&gt;INVENTORY_TYPE_BOX_DAMAGE 箱损
 	InventoryType string `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 物流宝订单编码
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
@@ -20,7 +20,7 @@ type WlbOrderItem struct {
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 货主nick
 	ProviderTpNick string `json:"provider_tp_nick,omitempty" xml:"provider_tp_nick,omitempty"`
-	// 物流宝订单确认状态：<br/>NO_NEED_CONFIRM--不需要确认<br/>WAIT_CONFIRM--待确认<br/>CONFIRMED--已确认
+	// 物流宝订单确认状态：&lt;br/&gt;NO_NEED_CONFIRM--不需要确认&lt;br/&gt;WAIT_CONFIRM--待确认&lt;br/&gt;CONFIRMED--已确认
 	ConfirmStatus string `json:"confirm_status,omitempty" xml:"confirm_status,omitempty"`
 	// 订单商品备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`

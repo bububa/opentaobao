@@ -137,7 +137,7 @@ func (r AlitripGrouptourProductUploadAPIRequest) GetSubTitles() []string {
 }
 
 // SetSellerCids is SellerCids Setter
-// 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
+// 关联商品与店铺类目 结构:&#34;cid1,cid2,...,&#34;。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
 func (r *AlitripGrouptourProductUploadAPIRequest) SetSellerCids(_sellerCids []string) error {
 	r._sellerCids = _sellerCids
 	r.Set("seller_cids", _sellerCids)
@@ -423,7 +423,7 @@ func (r AlitripGrouptourProductUploadAPIRequest) GetRefundType() int64 {
 }
 
 // SetTravellerTemplateId is TravellerTemplateId Setter
-// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具->出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
+// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-&gt;出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
 func (r *AlitripGrouptourProductUploadAPIRequest) SetTravellerTemplateId(_travellerTemplateId int64) error {
 	r._travellerTemplateId = _travellerTemplateId
 	r.Set("traveller_template_id", _travellerTemplateId)
@@ -475,7 +475,7 @@ func (r AlitripGrouptourProductUploadAPIRequest) GetPackageOperation() int64 {
 }
 
 // SetGroupTourType is GroupTourType Setter
-// 必填，线路的“细分类型”属性：1-普通跟团游、2-半自由行、3-私家团；不填默认值设置为"1-普通跟团游"。
+// 必填，线路的“细分类型”属性：1-普通跟团游、2-半自由行、3-私家团；不填默认值设置为&#34;1-普通跟团游&#34;。
 func (r *AlitripGrouptourProductUploadAPIRequest) SetGroupTourType(_groupTourType int64) error {
 	r._groupTourType = _groupTourType
 	r.Set("group_tour_type", _groupTourType)

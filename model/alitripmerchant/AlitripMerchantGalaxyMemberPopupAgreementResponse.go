@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyMemberPopupAgreementResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 用户是否唤起协议弹窗
-	Content *UserAgreementVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *UserAgreementVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

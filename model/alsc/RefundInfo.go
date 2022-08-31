@@ -6,7 +6,7 @@ type RefundInfo struct {
 	RefundItemList []Item `json:"refund_item_list,omitempty" xml:"refund_item_list>item,omitempty"`
 	// 退款流水号（支付宝单号、微信单号、三方单号）
 	RefundPayNo string `json:"refund_pay_no,omitempty" xml:"refund_pay_no,omitempty"`
-	// 退款状态：  INITIAL("INITIAL", "退款初始状态"),  PROCESSING("PROCESSING", "处理中状态"),  SUCCESS("SUCCESS", "退款成功状态"),  FAIL("FAIL", "退款失败状态");
+	// 退款状态：  INITIAL(&#34;INITIAL&#34;, &#34;退款初始状态&#34;),  PROCESSING(&#34;PROCESSING&#34;, &#34;处理中状态&#34;),  SUCCESS(&#34;SUCCESS&#34;, &#34;退款成功状态&#34;),  FAIL(&#34;FAIL&#34;, &#34;退款失败状态&#34;);
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款时间
 	RefundTime string `json:"refund_time,omitempty" xml:"refund_time,omitempty"`

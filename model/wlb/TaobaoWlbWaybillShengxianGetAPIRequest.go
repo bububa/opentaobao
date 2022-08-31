@@ -102,7 +102,7 @@ func (r TaobaoWlbWaybillShengxianGetAPIRequest) GetServiceCode() string {
 }
 
 // SetOrderChannelsType is OrderChannelsType Setter
-// 订单渠道： 淘宝平台订单："TB"; 天猫平台订单："TM"; 京东："JD"; 拍拍："PP"; 易迅平台订单："YX"; 一号店平台订单："YHD"; 当当网平台订单："DD"; EBAY："EBAY"; QQ网购："QQ"; 苏宁："SN"; 国美："GM"; 唯品会："WPH"; 聚美："Jm"; 乐峰："LF"; 蘑菇街："MGJ"; 聚尚："JS"; 银泰："YT"; VANCL："VANCL"; 邮乐："YL"; 优购："YG"; 拍鞋："PX"; 1688平台："1688";
+// 订单渠道： 淘宝平台订单：&#34;TB&#34;; 天猫平台订单：&#34;TM&#34;; 京东：&#34;JD&#34;; 拍拍：&#34;PP&#34;; 易迅平台订单：&#34;YX&#34;; 一号店平台订单：&#34;YHD&#34;; 当当网平台订单：&#34;DD&#34;; EBAY：&#34;EBAY&#34;; QQ网购：&#34;QQ&#34;; 苏宁：&#34;SN&#34;; 国美：&#34;GM&#34;; 唯品会：&#34;WPH&#34;; 聚美：&#34;Jm&#34;; 乐峰：&#34;LF&#34;; 蘑菇街：&#34;MGJ&#34;; 聚尚：&#34;JS&#34;; 银泰：&#34;YT&#34;; VANCL：&#34;VANCL&#34;; 邮乐：&#34;YL&#34;; 优购：&#34;YG&#34;; 拍鞋：&#34;PX&#34;; 1688平台：&#34;1688&#34;;
 func (r *TaobaoWlbWaybillShengxianGetAPIRequest) SetOrderChannelsType(_orderChannelsType string) error {
 	r._orderChannelsType = _orderChannelsType
 	r.Set("order_channels_type", _orderChannelsType)

@@ -30,9 +30,9 @@ type Item struct {
 	SellerCids string `json:"seller_cids,omitempty" xml:"seller_cids,omitempty"`
 	// 商品属性 格式：pid:vid;pid:vid
 	Props string `json:"props,omitempty" xml:"props,omitempty"`
-	// 用户自行输入的类目属性ID串。结构：&quot;pid1,pid2,pid3&quot;，如：&quot;20000&quot;（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
+	// 用户自行输入的类目属性ID串。结构：&amp;quot;pid1,pid2,pid3&amp;quot;，如：&amp;quot;20000&amp;quot;（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
 	InputPids string `json:"input_pids,omitempty" xml:"input_pids,omitempty"`
-	// 用户自行输入的子属性名和属性值，结构:&quot;父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....&quot;,如：&ldquo;耐克;耐克系列;科比系列;科比系列;2K5&rdquo;，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过 3999字节。
+	// 用户自行输入的子属性名和属性值，结构:&amp;quot;父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....&amp;quot;,如：&amp;ldquo;耐克;耐克系列;科比系列;科比系列;2K5&amp;rdquo;，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过 3999字节。
 	InputStr string `json:"input_str,omitempty" xml:"input_str,omitempty"`
 	// 商品描述, 字数要大于5个字节，小于25000个字节
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
@@ -84,7 +84,7 @@ type Item struct {
 	TemplateId string `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 商品卖点信息，天猫商家使用字段，最长150个字符。
 	SellPoint string `json:"sell_point,omitempty" xml:"sell_point,omitempty"`
-	// 商品属性名称。标识着props内容里面的pid和vid所对应的名称。格式为：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2&hellip;&hellip;(<strong>注：</strong><font color="red">属性名称中的冒号&quot;:&quot;被转换为：&quot;#cln#&quot;;  分号&quot;;&quot;被转换为：&quot;#scln#&quot;</font>)
+	// 商品属性名称。标识着props内容里面的pid和vid所对应的名称。格式为：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2&amp;hellip;&amp;hellip;(&lt;strong&gt;注：&lt;/strong&gt;&lt;font color=&#34;red&#34;&gt;属性名称中的冒号&amp;quot;:&amp;quot;被转换为：&amp;quot;#cln#&amp;quot;;  分号&amp;quot;;&amp;quot;被转换为：&amp;quot;#scln#&amp;quot;&lt;/font&gt;)
 	PropsName string `json:"props_name,omitempty" xml:"props_name,omitempty"`
 	// 消保类型，多个类型以,分割。可取以下值：2：假一赔三；4：7天无理由退换货；taobao.items.search和taobao.items.vip.search专用
 	PromotedService string `json:"promoted_service,omitempty" xml:"promoted_service,omitempty"`
@@ -110,7 +110,7 @@ type Item struct {
 	Qualification string `json:"qualification,omitempty" xml:"qualification,omitempty"`
 	// 发货时间信息
 	DeliveryTime string `json:"delivery_time,omitempty" xml:"delivery_time,omitempty"`
-	// 全球购商品发货地，发货地现在有两种类型：&ldquo;国内&rdquo;和&ldquo;海外及港澳台&rdquo;，参数值为1时代表&ldquo;国内&rdquo;，值为2时代表&ldquo;海外及港澳台&rdquo;
+	// 全球购商品发货地，发货地现在有两种类型：&amp;ldquo;国内&amp;rdquo;和&amp;ldquo;海外及港澳台&amp;rdquo;，参数值为1时代表&amp;ldquo;国内&amp;rdquo;，值为2时代表&amp;ldquo;海外及港澳台&amp;rdquo;
 	GlobalStockDeliveryPlace string `json:"global_stock_delivery_place,omitempty" xml:"global_stock_delivery_place,omitempty"`
 	// 商品3:4比例主图
 	MainPic34 string `json:"main_pic34,omitempty" xml:"main_pic34,omitempty"`
@@ -142,7 +142,7 @@ type Item struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// 返点比例
 	AuctionPoint int64 `json:"auction_point,omitempty" xml:"auction_point,omitempty"`
-	// 商品所属卖家的信用等级数，1表示1心，2表示2心&hellip;&hellip;，只有调用商品搜索:taobao.items.get和taobao.items.search的时候才能返回
+	// 商品所属卖家的信用等级数，1表示1心，2表示2心&amp;hellip;&amp;hellip;，只有调用商品搜索:taobao.items.get和taobao.items.search的时候才能返回
 	Score int64 `json:"score,omitempty" xml:"score,omitempty"`
 	// 商品30天交易量，只有调用商品搜索:taobao.items.get和taobao.items.search的时候才能返回
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`

@@ -126,7 +126,7 @@ func (r TaobaoXhotelOrderOfficialQualificationGetAPIRequest) GetIdNumber() strin
 }
 
 // SetDailyPriceInfo is DailyPriceInfo Setter
-// 每日房价,json格式 ，如果是多间房，则是每日多间房总房价(可选)      * eg:{"day":"2015-08-12","price":48800},      {"day":"2015-08-13","price":48800}
+// 每日房价,json格式 ，如果是多间房，则是每日多间房总房价(可选)      * eg:{&#34;day&#34;:&#34;2015-08-12&#34;,&#34;price&#34;:48800},      {&#34;day&#34;:&#34;2015-08-13&#34;,&#34;price&#34;:48800}
 func (r *TaobaoXhotelOrderOfficialQualificationGetAPIRequest) SetDailyPriceInfo(_dailyPriceInfo string) error {
 	r._dailyPriceInfo = _dailyPriceInfo
 	r.Set("daily_price_info", _dailyPriceInfo)

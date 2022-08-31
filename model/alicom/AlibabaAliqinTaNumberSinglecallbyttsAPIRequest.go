@@ -83,7 +83,7 @@ func (r AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) GetTtsCode() string {
 }
 
 // SetParams is Params Setter
-// 上下文参数,tts模板含有变量的, 此参数需填写。示例:{"date":"2015年 " ,"name":"测试","extend":"回传参数"} date、name 为模板里的变量名作为key,extend为扩展信息作为回传参数的key
+// 上下文参数,tts模板含有变量的, 此参数需填写。示例:{&#34;date&#34;:&#34;2015年 &#34; ,&#34;name&#34;:&#34;测试&#34;,&#34;extend&#34;:&#34;回传参数&#34;} date、name 为模板里的变量名作为key,extend为扩展信息作为回传参数的key
 func (r *AlibabaAliqinTaNumberSinglecallbyttsAPIRequest) SetParams(_params string) error {
 	r._params = _params
 	r.Set("params", _params)

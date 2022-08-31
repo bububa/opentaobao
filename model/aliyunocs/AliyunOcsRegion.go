@@ -4,7 +4,7 @@ package aliyunocs
 type AliyunOcsRegion struct {
 	// cn-hangzhou
 	RegionId string `json:"RegionId,omitempty" xml:"RegionId,omitempty"`
-	// "B,D"
+	// &#34;B,D&#34;
 	ZoneIds string `json:"ZoneIds,omitempty" xml:"ZoneIds,omitempty"`
 	// 杭州
 	LocalName string `json:"LocalName,omitempty" xml:"LocalName,omitempty"`

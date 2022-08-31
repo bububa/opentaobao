@@ -40,7 +40,7 @@ func (r YunosServiceCmnsCoaDeviceIsonlineAPIRequest) GetApiParams() url.Values {
 }
 
 // SetType is Type Setter
-// 设备id类型，取值"uuid"或者"imei"或者"deviceToken"
+// 设备id类型，取值&#34;uuid&#34;或者&#34;imei&#34;或者&#34;deviceToken&#34;
 func (r *YunosServiceCmnsCoaDeviceIsonlineAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

@@ -61,7 +61,7 @@ func (r TaobaoAlitripTravelProductBaseAddAPIRequest) GetItineraries() []ItemItin
 }
 
 // SetBookingRules is BookingRules Setter
-// 必填，预定规则结构。示例： [{  "rule_type": "fee_excluded",  "rule_desc": "费用包含描述"},{  "rule_type": "fee_included",  "rule_desc": "费用不含描述"},{  "rule_type": "order_info",  "rule_desc": "预定须知描述"}]
+// 必填，预定规则结构。示例： [{  &#34;rule_type&#34;: &#34;fee_excluded&#34;,  &#34;rule_desc&#34;: &#34;费用包含描述&#34;},{  &#34;rule_type&#34;: &#34;fee_included&#34;,  &#34;rule_desc&#34;: &#34;费用不含描述&#34;},{  &#34;rule_type&#34;: &#34;order_info&#34;,  &#34;rule_desc&#34;: &#34;预定须知描述&#34;}]
 func (r *TaobaoAlitripTravelProductBaseAddAPIRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
 	r._bookingRules = _bookingRules
 	r.Set("booking_rules", _bookingRules)

@@ -38,7 +38,7 @@ func (r AliexpressLocalLogisticsOrderCreateAPIRequest) GetApiParams() url.Values
 }
 
 // SetParam1 is Param1 Setter
-// create logistics order's param
+// create logistics order&#39;s param
 func (r *AliexpressLocalLogisticsOrderCreateAPIRequest) SetParam1(_param1 *CreateOrderRequestTopDto) error {
 	r._param1 = _param1
 	r.Set("param1", _param1)

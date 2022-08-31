@@ -6,7 +6,7 @@ type PromotionFacadeOpenInfoList struct {
 	ItemSelectedOpenInfoList []ItemSelectedOpenInfoList `json:"item_selected_open_info_list,omitempty" xml:"item_selected_open_info_list>item_selected_open_info_list,omitempty"`
 	// 圈选门店
 	ShopSelectedOpenInfoList []ShopSelectedOpenInfoList `json:"shop_selected_open_info_list,omitempty" xml:"shop_selected_open_info_list>shop_selected_open_info_list,omitempty"`
-	// 可用时段  0000101（星期五，星期天）       [{"days":"0000101","startTime":"08:00:00","endTime":"11:59:59"},       {"days":"0010101","startTime":"08:00:00","endTime":"11:59:59"}]
+	// 可用时段  0000101（星期五，星期天）       [{&#34;days&#34;:&#34;0000101&#34;,&#34;startTime&#34;:&#34;08:00:00&#34;,&#34;endTime&#34;:&#34;11:59:59&#34;},       {&#34;days&#34;:&#34;0010101&#34;,&#34;startTime&#34;:&#34;08:00:00&#34;,&#34;endTime&#34;:&#34;11:59:59&#34;}]
 	AvailableTime string `json:"available_time,omitempty" xml:"available_time,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
@@ -30,7 +30,7 @@ type PromotionFacadeOpenInfoList struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// *      * 满量促销           TYPE_FULL_AMOUNT,      *      * 满额促销           TYPE_FULL_CAPACITY,      *      * 买赠活动           TYPE_BOUGHT_GIFT;
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
-	// 扩展字段  isAdded:是否叠加,isVoucherShared:是否与优惠券共享,giftGoodsIdList:赠品类似、活动商品,privilegeCondition:权益条件(类型type:         满量 "type":"FULL_AMOUNT","name":"num", "value":"3"         满额 "type":"FULL_CAPACITY", "name":"money","value":"300"         下一份 "type":"NEXT", "name":"num","value":"3"         加价购),privilegeType:权益类型(一口价"type":"FIXPRICE","name":"money","value":"3000"         减免"type":"DECREASE","name":"money","value":"10"         减低价"type":"REDUCE_LOW_PRICE","name":"","value":""         折扣："type":"DISCOUNT","name":"discount","value":"80"         赠品 "type":"GIFT", "name":"num", "value":"2")
+	// 扩展字段  isAdded:是否叠加,isVoucherShared:是否与优惠券共享,giftGoodsIdList:赠品类似、活动商品,privilegeCondition:权益条件(类型type:         满量 &#34;type&#34;:&#34;FULL_AMOUNT&#34;,&#34;name&#34;:&#34;num&#34;, &#34;value&#34;:&#34;3&#34;         满额 &#34;type&#34;:&#34;FULL_CAPACITY&#34;, &#34;name&#34;:&#34;money&#34;,&#34;value&#34;:&#34;300&#34;         下一份 &#34;type&#34;:&#34;NEXT&#34;, &#34;name&#34;:&#34;num&#34;,&#34;value&#34;:&#34;3&#34;         加价购),privilegeType:权益类型(一口价&#34;type&#34;:&#34;FIXPRICE&#34;,&#34;name&#34;:&#34;money&#34;,&#34;value&#34;:&#34;3000&#34;         减免&#34;type&#34;:&#34;DECREASE&#34;,&#34;name&#34;:&#34;money&#34;,&#34;value&#34;:&#34;10&#34;         减低价&#34;type&#34;:&#34;REDUCE_LOW_PRICE&#34;,&#34;name&#34;:&#34;&#34;,&#34;value&#34;:&#34;&#34;         折扣：&#34;type&#34;:&#34;DISCOUNT&#34;,&#34;name&#34;:&#34;discount&#34;,&#34;value&#34;:&#34;80&#34;         赠品 &#34;type&#34;:&#34;GIFT&#34;, &#34;name&#34;:&#34;num&#34;, &#34;value&#34;:&#34;2&#34;)
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 创建人
 	CreateBy string `json:"create_by,omitempty" xml:"create_by,omitempty"`

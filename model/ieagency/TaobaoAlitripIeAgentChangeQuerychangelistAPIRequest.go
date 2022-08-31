@@ -54,7 +54,7 @@ func (r TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) GetApiParams() url.
 }
 
 // SetChangeBizStatusEnum is ChangeBizStatusEnum Setter
-// WAITING_CONFIRM(10, "卖家待确认"),CONFIRMED(20, "卖家已确认"),WAITING_ISSUE(30, "卖家待出票"),FROZEN_ORDER(40, "出票超时冻结"),ISSUE_SUCCESS(50, "出票成功"),CHECKING_FAILURE(60,"验真失败"),CHECKING_SUCCCESS(61,"验真成功"),REFUSED(70, "卖家已拒绝")
+// WAITING_CONFIRM(10, &#34;卖家待确认&#34;),CONFIRMED(20, &#34;卖家已确认&#34;),WAITING_ISSUE(30, &#34;卖家待出票&#34;),FROZEN_ORDER(40, &#34;出票超时冻结&#34;),ISSUE_SUCCESS(50, &#34;出票成功&#34;),CHECKING_FAILURE(60,&#34;验真失败&#34;),CHECKING_SUCCCESS(61,&#34;验真成功&#34;),REFUSED(70, &#34;卖家已拒绝&#34;)
 func (r *TaobaoAlitripIeAgentChangeQuerychangelistAPIRequest) SetChangeBizStatusEnum(_changeBizStatusEnum string) error {
 	r._changeBizStatusEnum = _changeBizStatusEnum
 	r.Set("change_biz_status_enum", _changeBizStatusEnum)

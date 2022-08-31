@@ -6,7 +6,7 @@ type CnskuDto struct {
 	CombRelationDTOList []CnskuRelationDto `json:"comb_relation_d_t_o_list,omitempty" xml:"comb_relation_d_t_o_list>cnsku_relation_dto,omitempty"`
 	// 套装货品关系列表
 	SuiteGoodsRelationList []CnskuSuiteGoodsRelationDto `json:"suite_goods_relation_list,omitempty" xml:"suite_goods_relation_list>cnsku_suite_goods_relation_dto,omitempty"`
-	// 需要向featureMap中增加的属性列表（新增&更新接口使用）
+	// 需要向featureMap中增加的属性列表（新增&amp;更新接口使用）
 	UpdateFeatureMap string `json:"update_feature_map,omitempty" xml:"update_feature_map,omitempty"`
 	// 货品编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`

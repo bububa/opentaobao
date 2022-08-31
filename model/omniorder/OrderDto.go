@@ -20,9 +20,9 @@ type OrderDto struct {
 	SellerId int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
 	// 支付订单id
 	PayOrderId int64 `json:"pay_order_id,omitempty" xml:"pay_order_id,omitempty"`
-	// 支付状态：1 - 未冻结/未付款 ->等待买家付款 2 - 已冻结/已付款 ->等待卖家发货 4 - 已退款 ->交易关闭 6 - 已转交易 -> 交易成功 7 - 没有创建外部交易(支付宝交易) 8 - 交易被淘宝关闭 9 - 不可付款
+	// 支付状态：1 - 未冻结/未付款 -&gt;等待买家付款 2 - 已冻结/已付款 -&gt;等待卖家发货 4 - 已退款 -&gt;交易关闭 6 - 已转交易 -&gt; 交易成功 7 - 没有创建外部交易(支付宝交易) 8 - 交易被淘宝关闭 9 - 不可付款
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
-	// 物流状态：1 - 未发货 -> 等待卖家发货, 2 - 已发货 -> 等待买家确认收货, 3 - 已收货 -> 交易成功, 4 - 已经退货 -> 交易失败, 5 - 部分收货 -> 交易成功, 6 - 部分发货中, 8 - 还未创建物流订单, 9 - 配货中,目前周期购已经使用到
+	// 物流状态：1 - 未发货 -&gt; 等待卖家发货, 2 - 已发货 -&gt; 等待买家确认收货, 3 - 已收货 -&gt; 交易成功, 4 - 已经退货 -&gt; 交易失败, 5 - 部分收货 -&gt; 交易成功, 6 - 部分发货中, 8 - 还未创建物流订单, 9 - 配货中,目前周期购已经使用到
 	LogisticsStatus int64 `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
 	// 商品id
 	AuctionId int64 `json:"auction_id,omitempty" xml:"auction_id,omitempty"`

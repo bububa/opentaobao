@@ -10,7 +10,7 @@ import (
 // taobao.istore.areas.get
 //
 // 查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
-// <a href="http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html">http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html</a>
+// &lt;a href=&#34;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&#34;&gt;http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html&lt;/a&gt;
 type TaobaoIstoreAreasGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
@@ -39,7 +39,7 @@ func (r TaobaoIstoreAreasGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFields is Fields Setter
-// 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
+// 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用&#34;,&#34;分隔.如:id,type,name,parent_id,zip.
 func (r *TaobaoIstoreAreasGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)

@@ -4,7 +4,7 @@ package xhotelonlineorder
 type RoomSettleInfo struct {
 	// 房间号
 	RoomNo string `json:"room_no,omitempty" xml:"room_no,omitempty"`
-	// 房间杂费明细 （当房间杂费存在时候，此值不能空。格式与原有杂费格式otherFeeDetail的格式相同）eg;{"洗衣费":5000,"水吧":10000,"优惠":1000}
+	// 房间杂费明细 （当房间杂费存在时候，此值不能空。格式与原有杂费格式otherFeeDetail的格式相同）eg;{&#34;洗衣费&#34;:5000,&#34;水吧&#34;:10000,&#34;优惠&#34;:1000}
 	RoomOtherFeeDetail string `json:"room_other_fee_detail,omitempty" xml:"room_other_fee_detail,omitempty"`
 	// 房间check out时间
 	RoomCheckOut string `json:"room_check_out,omitempty" xml:"room_check_out,omitempty"`

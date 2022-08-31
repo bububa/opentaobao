@@ -151,7 +151,7 @@ func (r AlibabaEinvoiceBillSyncAPIRequest) GetSumPrice() string {
 }
 
 // SetPlatform is Platform Setter
-// 调用平台，用于区分同一个税号下多个店铺来源["TB:淘宝","ALIPAY:支付宝","TM:天猫","JD:京东","DD:当当","PP:拍拍","YX:易讯","EBAY:ebay","QQ:QQ网购","AMAZON:亚马逊","SN:苏宁","GM:国美","WPH:唯品会","JM:聚美","LF:乐蜂","MGJ:蘑菇街","JS:聚尚","PX:拍鞋","YT:银泰","YHD:1号店","VANCL:凡客","YL:邮乐","YG:优购","1688:阿里巴巴","POS:POS门店","ELEME:饿了么","OTHER:其他"]
+// 调用平台，用于区分同一个税号下多个店铺来源[&#34;TB:淘宝&#34;,&#34;ALIPAY:支付宝&#34;,&#34;TM:天猫&#34;,&#34;JD:京东&#34;,&#34;DD:当当&#34;,&#34;PP:拍拍&#34;,&#34;YX:易讯&#34;,&#34;EBAY:ebay&#34;,&#34;QQ:QQ网购&#34;,&#34;AMAZON:亚马逊&#34;,&#34;SN:苏宁&#34;,&#34;GM:国美&#34;,&#34;WPH:唯品会&#34;,&#34;JM:聚美&#34;,&#34;LF:乐蜂&#34;,&#34;MGJ:蘑菇街&#34;,&#34;JS:聚尚&#34;,&#34;PX:拍鞋&#34;,&#34;YT:银泰&#34;,&#34;YHD:1号店&#34;,&#34;VANCL:凡客&#34;,&#34;YL:邮乐&#34;,&#34;YG:优购&#34;,&#34;1688:阿里巴巴&#34;,&#34;POS:POS门店&#34;,&#34;ELEME:饿了么&#34;,&#34;OTHER:其他&#34;]
 func (r *AlibabaEinvoiceBillSyncAPIRequest) SetPlatform(_platform string) error {
 	r._platform = _platform
 	r.Set("platform", _platform)

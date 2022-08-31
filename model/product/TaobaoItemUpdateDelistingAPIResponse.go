@@ -9,7 +9,7 @@ import (
 // TaobaoItemUpdateDelistingAPIResponse 商品下架 API返回值
 // taobao.item.update.delisting
 //
-// * 单个商品下架<br/>    * 输入的num_iid必须属于当前会话用户
+// * 单个商品下架&lt;br/&gt;    * 输入的num_iid必须属于当前会话用户
 type TaobaoItemUpdateDelistingAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemUpdateDelistingAPIResponseModel

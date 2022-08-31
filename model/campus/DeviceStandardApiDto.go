@@ -46,7 +46,7 @@ type DeviceStandardApiDto struct {
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 空间单元id
 	SpaceId int64 `json:"space_id,omitempty" xml:"space_id,omitempty"`
-	// 设备运行状态。0->在线 1->离线 2->故障
+	// 设备运行状态。0-&gt;在线 1-&gt;离线 2-&gt;故障
 	RunStatus int64 `json:"run_status,omitempty" xml:"run_status,omitempty"`
 	// 公司id
 	CompanyId int64 `json:"company_id,omitempty" xml:"company_id,omitempty"`

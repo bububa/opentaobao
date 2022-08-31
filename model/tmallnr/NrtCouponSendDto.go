@@ -6,7 +6,7 @@ type NrtCouponSendDto struct {
 	OpenId string `json:"open_id,omitempty" xml:"open_id,omitempty"`
 	// 业务code
 	BizCode string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
-	// {"key","value"}
+	// {&#34;key&#34;,&#34;value&#34;}
 	Extra string `json:"extra,omitempty" xml:"extra,omitempty"`
 	// 渠道
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`

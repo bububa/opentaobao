@@ -30,6 +30,6 @@ type TaobaoTraderatesGetResults struct {
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 物流服务评分
 	LogisticsServiceScore int64 `json:"logistics_service_score,omitempty" xml:"logistics_service_score,omitempty"`
-	// 评价信息是否用于记分，<br/>可取值：true(参与记分)和false(不参与记分)
+	// 评价信息是否用于记分，&lt;br/&gt;可取值：true(参与记分)和false(不参与记分)
 	ValidScore bool `json:"valid_score,omitempty" xml:"valid_score,omitempty"`
 }

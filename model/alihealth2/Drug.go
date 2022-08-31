@@ -16,7 +16,7 @@ type Drug struct {
 	UnitOfPerUnit string `json:"unit_of_per_unit,omitempty" xml:"unit_of_per_unit,omitempty"`
 	// 国药准字号
 	ApprovalNumber string `json:"approval_number,omitempty" xml:"approval_number,omitempty"`
-	// 药品类型（WESTERN_PRESCRIPTION_MEDICINE(1,"处方药-西药"),     CHINESE_PRESCRIPTION_MEDICINE(2, "处方药-中成药"),     WESTERN_OTC(3, "OTC-西药"),     CHINESE_OTC(4, "OTC-中成药"),     PIECES(5, "饮片")）
+	// 药品类型（WESTERN_PRESCRIPTION_MEDICINE(1,&#34;处方药-西药&#34;),     CHINESE_PRESCRIPTION_MEDICINE(2, &#34;处方药-中成药&#34;),     WESTERN_OTC(3, &#34;OTC-西药&#34;),     CHINESE_OTC(4, &#34;OTC-中成药&#34;),     PIECES(5, &#34;饮片&#34;)）
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 规格详情
 	Norm string `json:"norm,omitempty" xml:"norm,omitempty"`

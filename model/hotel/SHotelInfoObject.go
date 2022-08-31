@@ -20,13 +20,13 @@ type SHotelInfoObject struct {
 	OpeningTime string `json:"opening_time,omitempty" xml:"opening_time,omitempty"`
 	// 酒店装修时间
 	DecorateTime string `json:"decorate_time,omitempty" xml:"decorate_time,omitempty"`
-	// 电话，包括三种类型：<br/>1.固定电话，例如：0086-010-85322688<br/>2.移动电话，例如：13869696363<br/>3.400或800电话，例如：0086-4006123928
+	// 电话，包括三种类型：&lt;br/&gt;1.固定电话，例如：0086-010-85322688&lt;br/&gt;2.移动电话，例如：13869696363&lt;br/&gt;3.400或800电话，例如：0086-4006123928
 	Tel string `json:"tel,omitempty" xml:"tel,omitempty"`
 	// 评分
 	RateScore string `json:"rate_score,omitempty" xml:"rate_score,omitempty"`
 	// 酒店描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
-	// 图片url，多张图片使用","隔开
+	// 图片url，多张图片使用&#34;,&#34;隔开
 	PicUrls string `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
 	// 酒店设施
 	HotelFacilities string `json:"hotel_facilities,omitempty" xml:"hotel_facilities,omitempty"`

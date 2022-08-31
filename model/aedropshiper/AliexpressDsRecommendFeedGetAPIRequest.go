@@ -104,7 +104,7 @@ func (r AliexpressDsRecommendFeedGetAPIRequest) GetSort() string {
 }
 
 // SetCategoryId is CategoryId Setter
-// Category ID, you can get category ID via "get category" API https://developers.aliexpress.com/en/doc.htm?docId=45801&docType=2
+// Category ID, you can get category ID via &#34;get category&#34; API https://developers.aliexpress.com/en/doc.htm?docId=45801&amp;docType=2
 func (r *AliexpressDsRecommendFeedGetAPIRequest) SetCategoryId(_categoryId string) error {
 	r._categoryId = _categoryId
 	r.Set("category_id", _categoryId)
@@ -117,7 +117,7 @@ func (r AliexpressDsRecommendFeedGetAPIRequest) GetCategoryId() string {
 }
 
 // SetFeedName is FeedName Setter
-// feed name, eg. "DS bestseller"
+// feed name, eg. &#34;DS bestseller&#34;
 func (r *AliexpressDsRecommendFeedGetAPIRequest) SetFeedName(_feedName string) error {
 	r._feedName = _feedName
 	r.Set("feed_name", _feedName)

@@ -16,6 +16,6 @@ type ParcelDto struct {
 	ProductTotalPrice string `json:"product_total_price,omitempty" xml:"product_total_price,omitempty"`
 	// Parcel type including ENVELOPE, BOX, BAG, TUBE, PALLET and you should input it when creating a shipment order
 	ParcelType string `json:"parcel_type,omitempty" xml:"parcel_type,omitempty"`
-	// number of the parcel and there's only one parcel
+	// number of the parcel and there&#39;s only one parcel
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

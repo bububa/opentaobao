@@ -45,7 +45,7 @@ func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetApiParams() url.Values {
 }
 
 // SetTradeNo is TradeNo Setter
-// 喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  > 商户支付流水号。
+// 喵街交易流水号。与商户支付流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号  &gt; 商户支付流水号。
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetTradeNo(_tradeNo string) error {
 	r._tradeNo = _tradeNo
 	r.Set("trade_no", _tradeNo)
@@ -58,7 +58,7 @@ func (r AlibabaMosOnsiteTradeQueryAPIRequest) GetTradeNo() string {
 }
 
 // SetOutTradeNo is OutTradeNo Setter
-// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 >  商户支付流水号。
+// 原支付请求的商户支付流水号。与喵街交易流水号两者至少要填写一个。如果均有，优先级为喵街交易流水号 &gt;  商户支付流水号。
 func (r *AlibabaMosOnsiteTradeQueryAPIRequest) SetOutTradeNo(_outTradeNo string) error {
 	r._outTradeNo = _outTradeNo
 	r.Set("out_trade_no", _outTradeNo)

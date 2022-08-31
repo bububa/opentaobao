@@ -13,7 +13,7 @@ import (
 type AlibabaPurSupplierInvoicecreateAPIRequest struct {
 	model.Params
 	// 预发票头信息
-	_invoice *SupplierPreInvoiceInfoVO
+	_invoice *SupplierPreInvoiceInfoVo
 }
 
 // NewAlibabaPurSupplierInvoicecreateRequest 初始化AlibabaPurSupplierInvoicecreateAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetApiParams() url.Values {
 
 // SetInvoice is Invoice Setter
 // 预发票头信息
-func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVO) error {
+func (r *AlibabaPurSupplierInvoicecreateAPIRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVo) error {
 	r._invoice = _invoice
 	r.Set("invoice", _invoice)
 	return nil
 }
 
 // GetInvoice Invoice Getter
-func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetInvoice() *SupplierPreInvoiceInfoVO {
+func (r AlibabaPurSupplierInvoicecreateAPIRequest) GetInvoice() *SupplierPreInvoiceInfoVo {
 	return r._invoice
 }

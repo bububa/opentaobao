@@ -87,7 +87,7 @@ func (r TaobaoFenxiaoProductGradepriceUpdateAPIRequest) GetTradeType() string {
 }
 
 // SetTargetType is TargetType Setter
-// 选择折扣方式：GRADE（按等级进行设置）;DISCITUTOR(按分销商进行设置）。例如"GRADE,DISTRIBUTOR"
+// 选择折扣方式：GRADE（按等级进行设置）;DISCITUTOR(按分销商进行设置）。例如&#34;GRADE,DISTRIBUTOR&#34;
 func (r *TaobaoFenxiaoProductGradepriceUpdateAPIRequest) SetTargetType(_targetType string) error {
 	r._targetType = _targetType
 	r.Set("target_type", _targetType)

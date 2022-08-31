@@ -6,7 +6,7 @@ type RoamingMessage struct {
 	ContentList []RoamingMessageItem `json:"content_list,omitempty" xml:"content_list>roaming_message_item,omitempty"`
 	// 消息时间（UTC时间）
 	Time int64 `json:"time,omitempty" xml:"time,omitempty"`
-	// 消息方向。user1 -> user2 = 0 , user2->user1 = 1
+	// 消息方向。user1 -&gt; user2 = 0 , user2-&gt;user1 = 1
 	Direction int64 `json:"direction,omitempty" xml:"direction,omitempty"`
 	// 消息唯一ID
 	Uuid int64 `json:"uuid,omitempty" xml:"uuid,omitempty"`

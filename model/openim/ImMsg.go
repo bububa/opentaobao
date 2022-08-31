@@ -10,7 +10,7 @@ type ImMsg struct {
 	ToAppkey string `json:"to_appkey,omitempty" xml:"to_appkey,omitempty"`
 	// 消息发送者
 	FromUser string `json:"from_user,omitempty" xml:"from_user,omitempty"`
-	// json map，媒体信息属性。根据msgtype变化。0(文本):填空即可。 1(图片):需要图片格式，{"type":"jpg"}或{"type":"gif"}。   2(语音): 需要文件格式和语音长度信息{"type":"amr","playtime":5}
+	// json map，媒体信息属性。根据msgtype变化。0(文本):填空即可。 1(图片):需要图片格式，{&#34;type&#34;:&#34;jpg&#34;}或{&#34;type&#34;:&#34;gif&#34;}。   2(语音): 需要文件格式和语音长度信息{&#34;type&#34;:&#34;amr&#34;,&#34;playtime&#34;:5}
 	MediaAttr string `json:"media_attr,omitempty" xml:"media_attr,omitempty"`
 	// 消息类型。0:文本消息。1:图片消息，只支持jpg、gif。2:语音消息，只支持amr。8:地理位置信息。
 	MsgType int64 `json:"msg_type,omitempty" xml:"msg_type,omitempty"`

@@ -36,9 +36,9 @@ type SalesRuleApiBean struct {
 	StockRule string `json:"stock_rule,omitempty" xml:"stock_rule,omitempty"`
 	// 例外舱位等级,单选 0:头等,1:商务，2:经济，3:全部 适用和例外二选一填写
 	ExceptCabinClass int64 `json:"except_cabin_class,omitempty" xml:"except_cabin_class,omitempty"`
-	// 最晚购买时间，航班起飞前n小时 (计划起飞时间-当前时间)>=n小时
+	// 最晚购买时间，航班起飞前n小时 (计划起飞时间-当前时间)&gt;=n小时
 	LatestBuyTime int64 `json:"latest_buy_time,omitempty" xml:"latest_buy_time,omitempty"`
-	// 最早购买时间，航班起飞前n小时 (计划起飞时间-当前时间)<=n小时 如无限制，请填写9000
+	// 最早购买时间，航班起飞前n小时 (计划起飞时间-当前时间)&lt;=n小时 如无限制，请填写9000
 	EarlistBuyTime int64 `json:"earlist_buy_time,omitempty" xml:"earlist_buy_time,omitempty"`
 	// 适用舱位等级,单选 0:头等,1:商务，2:经济，3:全部 适用和例外二选一填写
 	CabinClass int64 `json:"cabin_class,omitempty" xml:"cabin_class,omitempty"`

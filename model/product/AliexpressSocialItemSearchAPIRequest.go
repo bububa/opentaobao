@@ -189,7 +189,7 @@ func (r AliexpressSocialItemSearchAPIRequest) GetCurrency() string {
 }
 
 // SetLocale is Locale Setter
-// locale,格式为language+"_"+country
+// locale,格式为language+&#34;_&#34;+country
 func (r *AliexpressSocialItemSearchAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
 	r.Set("locale", _locale)

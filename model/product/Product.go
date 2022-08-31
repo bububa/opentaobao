@@ -20,7 +20,7 @@ type Product struct {
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
 	// 修改时间.格式:yyyy-mm-dd hh:mm:ss
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
-	// 用户自定义属性,结构：pid1:value1;pid2:value2 例如：&ldquo;20000:优衣库&rdquo;，表示&ldquo;品牌:优衣库&rdquo;
+	// 用户自定义属性,结构：pid1:value1;pid2:value2 例如：&amp;ldquo;20000:优衣库&amp;rdquo;，表示&amp;ldquo;品牌:优衣库&amp;rdquo;
 	CustomerProps string `json:"customer_props,omitempty" xml:"customer_props,omitempty"`
 	// 销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。
 	PropertyAlias string `json:"property_alias,omitempty" xml:"property_alias,omitempty"`
@@ -32,11 +32,11 @@ type Product struct {
 	CatName string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
 	// 产品的关键属性列表.格式：pid:vid;pid:vid
 	Props string `json:"props,omitempty" xml:"props,omitempty"`
-	// 产品的关键属性字符串列表.比如:品牌:诺基亚;型号:N73(<strong>注：</strong><font color="red">属性名称中的冒号&quot;:&quot;被转换为：&quot;#cln#&quot;;  分号&quot;;&quot;被转换为：&quot;#scln#&quot;</font>)
+	// 产品的关键属性字符串列表.比如:品牌:诺基亚;型号:N73(&lt;strong&gt;注：&lt;/strong&gt;&lt;font color=&#34;red&#34;&gt;属性名称中的冒号&amp;quot;:&amp;quot;被转换为：&amp;quot;#cln#&amp;quot;;  分号&amp;quot;;&amp;quot;被转换为：&amp;quot;#scln#&amp;quot;&lt;/font&gt;)
 	PropsStr string `json:"props_str,omitempty" xml:"props_str,omitempty"`
-	// 产品的非关键属性字符串列表.格式同props_str(<strong>注：</strong><font color="red">属性名称中的冒号&quot;:&quot;被转换为：&quot;#cln#&quot;;  分号&quot;;&quot;被转换为：&quot;#scln#&quot;</font>)
+	// 产品的非关键属性字符串列表.格式同props_str(&lt;strong&gt;注：&lt;/strong&gt;&lt;font color=&#34;red&#34;&gt;属性名称中的冒号&amp;quot;:&amp;quot;被转换为：&amp;quot;#cln#&amp;quot;;  分号&amp;quot;;&amp;quot;被转换为：&amp;quot;#scln#&amp;quot;&lt;/font&gt;)
 	BindsStr string `json:"binds_str,omitempty" xml:"binds_str,omitempty"`
-	// 产品的销售属性字符串列表.格式同props_str(<strong>注：</strong><font color="red">属性名称中的冒号&quot;:&quot;被转换为：&quot;#cln#&quot;;  分号&quot;;&quot;被转换为：&quot;#scln#&quot;</font>)
+	// 产品的销售属性字符串列表.格式同props_str(&lt;strong&gt;注：&lt;/strong&gt;&lt;font color=&#34;red&#34;&gt;属性名称中的冒号&amp;quot;:&amp;quot;被转换为：&amp;quot;#cln#&amp;quot;;  分号&amp;quot;;&amp;quot;被转换为：&amp;quot;#scln#&amp;quot;&lt;/font&gt;)
 	SalePropsStr string `json:"sale_props_str,omitempty" xml:"sale_props_str,omitempty"`
 	// 产品卖点描述，长度限制20个汉字
 	SellPt string `json:"sell_pt,omitempty" xml:"sell_pt,omitempty"`

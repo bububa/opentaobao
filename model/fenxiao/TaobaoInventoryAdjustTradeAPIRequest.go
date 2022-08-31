@@ -83,7 +83,7 @@ func (r TaobaoInventoryAdjustTradeAPIRequest) GetBizUniqueCode() string {
 }
 
 // SetItems is Items Setter
-// 商品初始库存信息： [{ "TBOrderCode”:”淘宝交易号”,"TBSubOrderCode ":"淘宝子交易单号,赠品可以不填","”isGift”:”TRUE或者FALSE,是否赠品”,storeCode":"商家仓库编码"," scItemId ":"商品后端ID","scItemCode":"商品商家编码"," originScItemId ":"原商品ID","inventoryType":"","quantity":"111","isComplete":"TRUE或者FALSE，是否全部确认出库"}]
+// 商品初始库存信息： [{ &#34;TBOrderCode”:”淘宝交易号”,&#34;TBSubOrderCode &#34;:&#34;淘宝子交易单号,赠品可以不填&#34;,&#34;”isGift”:”TRUE或者FALSE,是否赠品”,storeCode&#34;:&#34;商家仓库编码&#34;,&#34; scItemId &#34;:&#34;商品后端ID&#34;,&#34;scItemCode&#34;:&#34;商品商家编码&#34;,&#34; originScItemId &#34;:&#34;原商品ID&#34;,&#34;inventoryType&#34;:&#34;&#34;,&#34;quantity&#34;:&#34;111&#34;,&#34;isComplete&#34;:&#34;TRUE或者FALSE，是否全部确认出库&#34;}]
 func (r *TaobaoInventoryAdjustTradeAPIRequest) SetItems(_items string) error {
 	r._items = _items
 	r.Set("items", _items)

@@ -74,7 +74,7 @@ func (r TaobaoXhotelOrderFutureInfoPutAPIRequest) GetHotelCode() string {
 }
 
 // SetContext is Context Setter
-// 字段详细介绍参见 https://open.alitrip.com/docs/doc.htm?docType=1&articleId=106153
+// 字段详细介绍参见 https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=106153
 func (r *TaobaoXhotelOrderFutureInfoPutAPIRequest) SetContext(_context string) error {
 	r._context = _context
 	r.Set("context", _context)

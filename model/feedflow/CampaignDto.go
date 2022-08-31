@@ -8,7 +8,7 @@ type CampaignDto struct {
 	LaunchAreaList []LaunchAreaDto `json:"launch_area_list,omitempty" xml:"launch_area_list>launch_area_dto,omitempty"`
 	// 计划名称
 	CampaignName string `json:"campaign_name,omitempty" xml:"campaign_name,omitempty"`
-	// PAUSE("投放暂停"),START("投放开始"),ERMINATE("投放停止"),ABNORMAL(投放异常"),WAIT("投放等待中"),DELETE("删除")
+	// PAUSE(&#34;投放暂停&#34;),START(&#34;投放开始&#34;),ERMINATE(&#34;投放停止&#34;),ABNORMAL(投放异常&#34;),WAIT(&#34;投放等待中&#34;),DELETE(&#34;删除&#34;)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 投放时间
 	LaunchTime *LaunchTimeDto `json:"launch_time,omitempty" xml:"launch_time,omitempty"`

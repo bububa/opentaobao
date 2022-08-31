@@ -353,7 +353,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetDescription() string {
 }
 
 // SetHotelFacilities is HotelFacilities Setter
-// 酒店设施。json格式示例值：{"free Wi-Fi in all rooms":"true","massage":"true","meetingRoom":"true"}目前支持维护的设施枚举有：free Wi-Fi in all rooms 所有房间设有免费无线网络;meetingRoom 会议室;massage  按摩室;fitnessClub 健身房;bar 酒吧;cafe 咖啡厅;frontDeskSafe 前台贵重物品保险柜wifi 无线上网公共区域;casino 娱乐场/棋牌室;restaurant 餐厅;smoking area 吸烟区;Business Facilities 商务设施
+// 酒店设施。json格式示例值：{&#34;free Wi-Fi in all rooms&#34;:&#34;true&#34;,&#34;massage&#34;:&#34;true&#34;,&#34;meetingRoom&#34;:&#34;true&#34;}目前支持维护的设施枚举有：free Wi-Fi in all rooms 所有房间设有免费无线网络;meetingRoom 会议室;massage  按摩室;fitnessClub 健身房;bar 酒吧;cafe 咖啡厅;frontDeskSafe 前台贵重物品保险柜wifi 无线上网公共区域;casino 娱乐场/棋牌室;restaurant 餐厅;smoking area 吸烟区;Business Facilities 商务设施
 func (r *TaobaoXhotelUpdateAPIRequest) SetHotelFacilities(_hotelFacilities string) error {
 	r._hotelFacilities = _hotelFacilities
 	r.Set("hotel_facilities", _hotelFacilities)
@@ -366,7 +366,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetHotelFacilities() string {
 }
 
 // SetService is Service Setter
-// 酒店基础服务。json格式示例值：{"receiveForeignGuests":"true","morningCall":"true","breakfast":"true"}目前支持维护的设施枚举有：receiveForeignGuests 接待外宾;morningCall 叫醒服务; breakfast  早餐服务; airportShuttle 接机服务; luggageClaim 行李寄存; rentCar 租车; HourRoomService24 24小时客房服务; airportTransfer 酒店/机场接送; dryCleaning 干洗; expressCheckInCheckOut 快速入住/退房登记; custodyServices 保管服务
+// 酒店基础服务。json格式示例值：{&#34;receiveForeignGuests&#34;:&#34;true&#34;,&#34;morningCall&#34;:&#34;true&#34;,&#34;breakfast&#34;:&#34;true&#34;}目前支持维护的设施枚举有：receiveForeignGuests 接待外宾;morningCall 叫醒服务; breakfast  早餐服务; airportShuttle 接机服务; luggageClaim 行李寄存; rentCar 租车; HourRoomService24 24小时客房服务; airportTransfer 酒店/机场接送; dryCleaning 干洗; expressCheckInCheckOut 快速入住/退房登记; custodyServices 保管服务
 func (r *TaobaoXhotelUpdateAPIRequest) SetService(_service string) error {
 	r._service = _service
 	r.Set("service", _service)
@@ -379,7 +379,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetService() string {
 }
 
 // SetRoomFacilities is RoomFacilities Setter
-// 房间的基础设施。json格式示例值：{"bathtub":"true","bathPub":"true"}目前支持维护的设施枚举有：bathtub 独立卫浴;bathPub 公共卫浴
+// 房间的基础设施。json格式示例值：{&#34;bathtub&#34;:&#34;true&#34;,&#34;bathPub&#34;:&#34;true&#34;}目前支持维护的设施枚举有：bathtub 独立卫浴;bathPub 公共卫浴
 func (r *TaobaoXhotelUpdateAPIRequest) SetRoomFacilities(_roomFacilities string) error {
 	r._roomFacilities = _roomFacilities
 	r.Set("room_facilities", _roomFacilities)
@@ -392,7 +392,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetRoomFacilities() string {
 }
 
 // SetPics is Pics Setter
-// 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
+// 酒店图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://123.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;},{&#34;url&#34;:&#34;http://456.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;,&#34;type&#34;:&#34;公共区域&#34;,&#34;attribute&#34;:&#34;全景图&#34;},{&#34;url&#34;:&#34;http://789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
 func (r *TaobaoXhotelUpdateAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -405,7 +405,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetPics() string {
 }
 
 // SetBrand is Brand Setter
-// 酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH&docType=1&articleId=120180
+// 酒店品牌。取值为数字。枚举见链接：https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.S16vXH&amp;docType=1&amp;articleId=120180
 func (r *TaobaoXhotelUpdateAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
 	r.Set("brand", _brand)
@@ -431,7 +431,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetPostalCode() string {
 }
 
 // SetHotelPolicies is HotelPolicies Setter
-// 酒店入住政策(针对国际酒店，儿童及加床信息)格式：{"children_age_from":"2","children_age_to":"3","children_stay_free":"True","infant_age":"1","min_guest_age":"4"}
+// 酒店入住政策(针对国际酒店，儿童及加床信息)格式：{&#34;children_age_from&#34;:&#34;2&#34;,&#34;children_age_to&#34;:&#34;3&#34;,&#34;children_stay_free&#34;:&#34;True&#34;,&#34;infant_age&#34;:&#34;1&#34;,&#34;min_guest_age&#34;:&#34;4&#34;}
 func (r *TaobaoXhotelUpdateAPIRequest) SetHotelPolicies(_hotelPolicies string) error {
 	r._hotelPolicies = _hotelPolicies
 	r.Set("hotel_policies", _hotelPolicies)
@@ -548,7 +548,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetSettlementCurrency() string {
 }
 
 // SetStandardBookingNotice is StandardBookingNotice Setter
-// 资源方酒店预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 资源方酒店预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelUpdateAPIRequest) SetStandardBookingNotice(_standardBookingNotice string) error {
 	r._standardBookingNotice = _standardBookingNotice
 	r.Set("standard_booking_notice", _standardBookingNotice)
@@ -561,7 +561,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetStandardBookingNotice() string {
 }
 
 // SetStandardHotelFacilities is StandardHotelFacilities Setter
-// 资源方酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 资源方酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelUpdateAPIRequest) SetStandardHotelFacilities(_standardHotelFacilities string) error {
 	r._standardHotelFacilities = _standardHotelFacilities
 	r.Set("standard_hotel_facilities", _standardHotelFacilities)
@@ -574,7 +574,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetStandardHotelFacilities() string {
 }
 
 // SetStandardHotelService is StandardHotelService Setter
-// 资源方酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 资源方酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelUpdateAPIRequest) SetStandardHotelService(_standardHotelService string) error {
 	r._standardHotelService = _standardHotelService
 	r.Set("standard_hotel_service", _standardHotelService)
@@ -587,7 +587,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetStandardHotelService() string {
 }
 
 // SetStandardRoomFacilities is StandardRoomFacilities Setter
-// 资源方房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 资源方房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelUpdateAPIRequest) SetStandardRoomFacilities(_standardRoomFacilities string) error {
 	r._standardRoomFacilities = _standardRoomFacilities
 	r.Set("standard_room_facilities", _standardRoomFacilities)
@@ -600,7 +600,7 @@ func (r TaobaoXhotelUpdateAPIRequest) GetStandardRoomFacilities() string {
 }
 
 // SetStandardAmuseFacilities is StandardAmuseFacilities Setter
-// 资源方娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&articleId=108891
+// 资源方娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=108891
 func (r *TaobaoXhotelUpdateAPIRequest) SetStandardAmuseFacilities(_standardAmuseFacilities string) error {
 	r._standardAmuseFacilities = _standardAmuseFacilities
 	r.Set("standard_amuse_facilities", _standardAmuseFacilities)

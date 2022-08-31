@@ -28,6 +28,6 @@ type AeItemBaseInfoDto struct {
 	ProductId int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
 	// ID of the category of the product
 	CategoryId int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
-	// Seller's master account ID
+	// Seller&#39;s master account ID
 	OwnerMemberSeqLong int64 `json:"owner_member_seq_long,omitempty" xml:"owner_member_seq_long,omitempty"`
 }

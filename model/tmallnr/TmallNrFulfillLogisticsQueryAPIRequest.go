@@ -9,7 +9,7 @@ import (
 // TmallNrFulfillLogisticsQueryAPIRequest 定时送和极速达配送物流信息查询 API请求
 // tmall.nr.fulfill.logistics.query
 //
-// 发布定时送&极速达物流信息查询服务
+// 发布定时送&amp;极速达物流信息查询服务
 type TmallNrFulfillLogisticsQueryAPIRequest struct {
 	model.Params
 	// 业务标识，dss标识定时送业务；jsd表示极速达业务

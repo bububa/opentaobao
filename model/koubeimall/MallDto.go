@@ -6,7 +6,7 @@ type MallDto struct {
 	MallLogo string `json:"mall_logo,omitempty" xml:"mall_logo,omitempty"`
 	// 商圈名称
 	MallName string `json:"mall_name,omitempty" xml:"mall_name,omitempty"`
-	// 商圈联系方式，多个电话用英文","分隔符（包含手机、座机电话）
+	// 商圈联系方式，多个电话用英文&#34;,&#34;分隔符（包含手机、座机电话）
 	ContactInfo string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
 	// 商圈封面
 	MallCover string `json:"mall_cover,omitempty" xml:"mall_cover,omitempty"`
@@ -18,7 +18,7 @@ type MallDto struct {
 	BusinessTime string `json:"business_time,omitempty" xml:"business_time,omitempty"`
 	// 商圈类目，包含：购物中心、步行街、特色街区、火车站、百货、机场等
 	CategoryName string `json:"category_name,omitempty" xml:"category_name,omitempty"`
-	// 商圈标签，多个标签用英文","分隔符
+	// 商圈标签，多个标签用英文&#34;,&#34;分隔符
 	MallLabel string `json:"mall_label,omitempty" xml:"mall_label,omitempty"`
 	// 距离
 	Distance string `json:"distance,omitempty" xml:"distance,omitempty"`

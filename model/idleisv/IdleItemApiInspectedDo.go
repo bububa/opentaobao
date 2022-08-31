@@ -2,7 +2,7 @@ package idleisv
 
 // IdleItemApiInspectedDo 结构体
 type IdleItemApiInspectedDo struct {
-	// 验货报告url链接(长度<=300)
+	// 验货报告url链接(长度&lt;=300)
 	InspectReport string `json:"inspect_report,omitempty" xml:"inspect_report,omitempty"`
 	// 已验货入仓城市
 	WareHouseCity string `json:"ware_house_city,omitempty" xml:"ware_house_city,omitempty"`

@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyCouponValidListResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 优惠券实例
-	Content *WeChatCouponVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *WeChatCouponVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

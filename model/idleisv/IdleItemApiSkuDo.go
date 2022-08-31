@@ -4,7 +4,7 @@ package idleisv
 type IdleItemApiSkuDo struct {
 	// 销售属性列表(最多2个销售属性,每一个的属性值个数为2～10)
 	PropertyList []IdleItemApiPvPairDo `json:"property_list,omitempty" xml:"property_list>idle_item_api_pv_pair_do,omitempty"`
-	// 外部商家标识(商品编码对接ERP等)(长度<=30)
+	// 外部商家标识(商品编码对接ERP等)(长度&lt;=30)
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// skuId
 	SkuId int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`

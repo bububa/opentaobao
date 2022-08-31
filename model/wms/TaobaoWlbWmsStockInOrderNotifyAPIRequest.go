@@ -206,7 +206,7 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetTmsServiceName() string {
 }
 
 // SetTmsOrderCode is TmsOrderCode Setter
-// 运单号&托运单号 1)	入库单支持多运单号录入 2)	销退场景下如果是拒收（非妥投运单）由ERP填充原运单号
+// 运单号&amp;托运单号 1)	入库单支持多运单号录入 2)	销退场景下如果是拒收（非妥投运单）由ERP填充原运单号
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetTmsOrderCode(_tmsOrderCode string) error {
 	r._tmsOrderCode = _tmsOrderCode
 	r.Set("tms_order_code", _tmsOrderCode)

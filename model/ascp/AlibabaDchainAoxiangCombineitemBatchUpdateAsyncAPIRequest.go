@@ -9,7 +9,7 @@ import (
 // AlibabaDchainAoxiangCombineitemBatchUpdateAsyncAPIRequest 组合货品新建&更新 API请求
 // alibaba.dchain.aoxiang.combineitem.batch.update.async
 //
-// 组合货品新建&更新
+// 组合货品新建&amp;更新
 type AlibabaDchainAoxiangCombineitemBatchUpdateAsyncAPIRequest struct {
 	model.Params
 	// 请求入参

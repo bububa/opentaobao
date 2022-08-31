@@ -30,7 +30,7 @@ type TaobaoTbkDgNewuserOrderGetMapData struct {
 	ActivityType string `json:"activity_type,omitempty" xml:"activity_type,omitempty"`
 	// 活动id
 	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
-	// 日期，格式为"20180202"
+	// 日期，格式为&#34;20180202&#34;
 	BizDate string `json:"biz_date,omitempty" xml:"biz_date,omitempty"`
 	// 绑卡日期，仅适用于手淘拉新
 	BindCardTime string `json:"bind_card_time,omitempty" xml:"bind_card_time,omitempty"`

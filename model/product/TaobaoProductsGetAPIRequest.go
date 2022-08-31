@@ -45,7 +45,7 @@ func (r TaobaoProductsGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFields is Fields Setter
-// 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔
+// 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用&#34;,&#34;分隔
 func (r *TaobaoProductsGetAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)

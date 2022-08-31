@@ -59,7 +59,7 @@ func (r AlibabaAliqinFcTtsNumSinglecallAPIRequest) GetExtend() string {
 }
 
 // SetTtsParam is TtsParam Setter
-// 文本转语音（TTS）模板变量，传参规则{"key"："value"}，key的名字须和TTS模板中的变量名一致，多个变量之间以逗号隔开，示例：{"name":"xiaoming","code":"1234"}
+// 文本转语音（TTS）模板变量，传参规则{&#34;key&#34;：&#34;value&#34;}，key的名字须和TTS模板中的变量名一致，多个变量之间以逗号隔开，示例：{&#34;name&#34;:&#34;xiaoming&#34;,&#34;code&#34;:&#34;1234&#34;}
 func (r *AlibabaAliqinFcTtsNumSinglecallAPIRequest) SetTtsParam(_ttsParam string) error {
 	r._ttsParam = _ttsParam
 	r.Set("tts_param", _ttsParam)

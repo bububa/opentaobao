@@ -9,7 +9,7 @@ import (
 // TaobaoVasOrderSearchAPIRequest 订单记录导出 API请求
 // taobao.vas.order.search
 //
-// 用于ISV查询自己名下的应用及收费项目的订单记录（已付款订单）。<br/>建议用于查询前一日的历史记录，不适合用作实时数据查询。<br/>现在只能查询90天以内的数据<br/>该接口限制每分钟所有appkey调用总和只能有800次。
+// 用于ISV查询自己名下的应用及收费项目的订单记录（已付款订单）。&lt;br/&gt;建议用于查询前一日的历史记录，不适合用作实时数据查询。&lt;br/&gt;现在只能查询90天以内的数据&lt;br/&gt;该接口限制每分钟所有appkey调用总和只能有800次。
 type TaobaoVasOrderSearchAPIRequest struct {
 	model.Params
 	// 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码

@@ -2,11 +2,11 @@ package xhotelitem
 
 // AddOwnerParam 结构体
 type AddOwnerParam struct {
-	// 房东头像地址，大小不超过3M，格式格式限制"png", "jpg", "jpeg"
+	// 房东头像地址，大小不超过3M，格式格式限制&#34;png&#34;, &#34;jpg&#34;, &#34;jpeg&#34;
 	AvatarUrl string `json:"avatar_url,omitempty" xml:"avatar_url,omitempty"`
 	// 房东的生日（年-月-日 00:00:00）
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
-	// 国内固定传"China"；国外必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
+	// 国内固定传&#34;China&#34;；国外必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// 房东介绍，长度限制2048个字符
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
@@ -14,11 +14,11 @@ type AddOwnerParam struct {
 	Email string `json:"email,omitempty" xml:"email,omitempty"`
 	// 性别，M-男性,F-女性，U-未知
 	Gender string `json:"gender,omitempty" xml:"gender,omitempty"`
-	// 爱好，用英文逗号分割 如"游泳,爬山"
+	// 爱好，用英文逗号分割 如&#34;游泳,爬山&#34;
 	Hobbies string `json:"hobbies,omitempty" xml:"hobbies,omitempty"`
 	// 身份证号
 	IdNumber string `json:"id_number,omitempty" xml:"id_number,omitempty"`
-	// 房东标签，英文逗号分割，如"超赞,有爱"
+	// 房东标签，英文逗号分割，如&#34;超赞,有爱&#34;
 	Labels string `json:"labels,omitempty" xml:"labels,omitempty"`
 	// 经营资质执照类型对应的名称，执照类型1（身份证）：身份证姓名；执照类型2（护照）：护照姓名；执照类型3（营业执照）：企业名称
 	LicenseName string `json:"license_name,omitempty" xml:"license_name,omitempty"`
@@ -36,7 +36,7 @@ type AddOwnerParam struct {
 	RealContact string `json:"real_contact,omitempty" xml:"real_contact,omitempty"`
 	// 实名认证姓名
 	RealName string `json:"real_name,omitempty" xml:"real_name,omitempty"`
-	// 房东故事，json串，可以传图片和文本： {"pics":[""],"content":""}
+	// 房东故事，json串，可以传图片和文本： {&#34;pics&#34;:[&#34;&#34;],&#34;content&#34;:&#34;&#34;}
 	Story string `json:"story,omitempty" xml:"story,omitempty"`
 	// 固定电话。移动电话号码与固定电话号码二者必须填一个
 	Telephone string `json:"telephone,omitempty" xml:"telephone,omitempty"`

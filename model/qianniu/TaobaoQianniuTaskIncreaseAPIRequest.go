@@ -40,7 +40,7 @@ func (r TaobaoQianniuTaskIncreaseAPIRequest) GetApiParams() url.Values {
 }
 
 // SetTasks is Tasks Setter
-// 任务列表，JSON格式，例如： tasks =[{ "receiver_uid" : 123, "receiver_nick" : "nick"}, { "receiver_uid" : 456, "receiver_nick" : "nick2"} ]
+// 任务列表，JSON格式，例如： tasks =[{ &#34;receiver_uid&#34; : 123, &#34;receiver_nick&#34; : &#34;nick&#34;}, { &#34;receiver_uid&#34; : 456, &#34;receiver_nick&#34; : &#34;nick2&#34;} ]
 func (r *TaobaoQianniuTaskIncreaseAPIRequest) SetTasks(_tasks string) error {
 	r._tasks = _tasks
 	r.Set("tasks", _tasks)

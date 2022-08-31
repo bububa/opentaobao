@@ -4,7 +4,7 @@ package ascp
 type BindingConsignOrderGiftRequest struct {
 	// 主单包含的子单
 	SubTradeOrders []SubTradeOrder `json:"sub_trade_orders,omitempty" xml:"sub_trade_orders>sub_trade_order,omitempty"`
-	// 分销类型（不传代表非分销场景） 枚举值： (1, "直营和分销全参与"),  (2, "仅直营参与"),  (3, "仅分销参与"),  (4, "指定分销店铺");
+	// 分销类型（不传代表非分销场景） 枚举值： (1, &#34;直营和分销全参与&#34;),  (2, &#34;仅直营参与&#34;),  (3, &#34;仅分销参与&#34;),  (4, &#34;指定分销店铺&#34;);
 	DistributionType string `json:"distribution_type,omitempty" xml:"distribution_type,omitempty"`
 	// 订单来源平台编码,TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、MIA=蜜芽、GW=商家官网、CT=村淘、YJWD=云集微店、PDD=拼多多、 DYXD=抖音小店、KS=快手、OTHERS=其他
 	SourcePlatformCode string `json:"source_platform_code,omitempty" xml:"source_platform_code,omitempty"`
@@ -14,7 +14,7 @@ type BindingConsignOrderGiftRequest struct {
 	ConsignOrderCode string `json:"consign_order_code,omitempty" xml:"consign_order_code,omitempty"`
 	// 买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
-	// 订单产品类型,必填，不传默认0，枚举值：  (0, "全量产品类型"), (1,"普通产品类型(代表除预售下沉提前发货产品类型以外的类型）"), (2, "预售下沉提前发货产品类型"), (3, "普通预售产品类型");
+	// 订单产品类型,必填，不传默认0，枚举值：  (0, &#34;全量产品类型&#34;), (1,&#34;普通产品类型(代表除预售下沉提前发货产品类型以外的类型）&#34;), (2, &#34;预售下沉提前发货产品类型&#34;), (3, &#34;普通预售产品类型&#34;);
 	ProductType string `json:"product_type,omitempty" xml:"product_type,omitempty"`
 	// 仓库编码
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`

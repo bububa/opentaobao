@@ -9,10 +9,10 @@ import (
 // TaobaoOcTradetagsGetAPIResponse 根据订单查询订单标签 API返回值
 // taobao.oc.tradetags.get
 //
-// 根据订单查询订单标签。<br/>
-// 返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。<br/>
-// 官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明<br/>
-// 主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865<br/>
+// 根据订单查询订单标签。&lt;br/&gt;
+// 返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。&lt;br/&gt;
+// 官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明&lt;br/&gt;
+// 主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865&lt;br/&gt;
 type TaobaoOcTradetagsGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoOcTradetagsGetAPIResponseModel

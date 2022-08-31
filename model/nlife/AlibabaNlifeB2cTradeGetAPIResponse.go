@@ -28,13 +28,13 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	RefundList []Refund `json:"refund_list,omitempty" xml:"refund_list>refund,omitempty"`
 	// 物流状态列表
 	LogisticsStatusList []LogisticsStatus `json:"logistics_status_list,omitempty" xml:"logistics_status_list>logistics_status,omitempty"`
-	// 订单创建渠道，   API("经由零售+平台API创建"),     POS("经由零售+平台收银系统创建"),     TAOBAO("经由淘宝/天猫创建");
+	// 订单创建渠道，   API(&#34;经由零售+平台API创建&#34;),     POS(&#34;经由零售+平台收银系统创建&#34;),     TAOBAO(&#34;经由淘宝/天猫创建&#34;);
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 渠道数据，JSON
 	ChannelData string `json:"channel_data,omitempty" xml:"channel_data,omitempty"`
 	// 买家ID
 	BuyerId string `json:"buyer_id,omitempty" xml:"buyer_id,omitempty"`
-	// 买家类型： TAOBAO_OPENID("经阿里百川淘宝登陆获取到的用户ID"),     ALIPAY_OPENID("经蚂蚁金服开放平台支付宝App登陆获得的用户ID"),     WECHAT_OPENID("经微信开放平台微信App登陆获得的用户id"),     PHONE_NUMBER("通过手机号码登陆"),     APP_USERID("商户自由的用户ID"),     ANONYMOUS_USER("匿名用户");
+	// 买家类型： TAOBAO_OPENID(&#34;经阿里百川淘宝登陆获取到的用户ID&#34;),     ALIPAY_OPENID(&#34;经蚂蚁金服开放平台支付宝App登陆获得的用户ID&#34;),     WECHAT_OPENID(&#34;经微信开放平台微信App登陆获得的用户id&#34;),     PHONE_NUMBER(&#34;通过手机号码登陆&#34;),     APP_USERID(&#34;商户自由的用户ID&#34;),     ANONYMOUS_USER(&#34;匿名用户&#34;);
 	BuyerIdType string `json:"buyer_id_type,omitempty" xml:"buyer_id_type,omitempty"`
 	// 商户自有的会员卡号
 	OutCardNo string `json:"out_card_no,omitempty" xml:"out_card_no,omitempty"`
@@ -42,7 +42,7 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	OrderBody string `json:"order_body,omitempty" xml:"order_body,omitempty"`
 	// 导购员ID
 	SalesId string `json:"sales_id,omitempty" xml:"sales_id,omitempty"`
-	// 提货方式:   LOGISTICS("物流发货"),     SELF_DELIVERY("门店自提");
+	// 提货方式:   LOGISTICS(&#34;物流发货&#34;),     SELF_DELIVERY(&#34;门店自提&#34;);
 	PickingUp string `json:"picking_up,omitempty" xml:"picking_up,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
@@ -52,9 +52,9 @@ type AlibabaNlifeB2cTradeGetAPIResponseModel struct {
 	GmtCancel string `json:"gmt_cancel,omitempty" xml:"gmt_cancel,omitempty"`
 	// payStatus
 	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
-	// 退款状态:    REFUNED("已全额退款"),     REFUNDED_PART("已部分退货");
+	// 退款状态:    REFUNED(&#34;已全额退款&#34;),     REFUNDED_PART(&#34;已部分退货&#34;);
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
-	// 物流状态:    WAIT_FOR_CONSIGN("有待发货商品"),     WAIT_FOR_SIGN("全部商品已发货"),     SIGNED("全部商品已签收"),     REJECTED("全部商品已拒收");
+	// 物流状态:    WAIT_FOR_CONSIGN(&#34;有待发货商品&#34;),     WAIT_FOR_SIGN(&#34;全部商品已发货&#34;),     SIGNED(&#34;全部商品已签收&#34;),     REJECTED(&#34;全部商品已拒收&#34;);
 	LogisticsStatus string `json:"logistics_status,omitempty" xml:"logistics_status,omitempty"`
 	// 扩展参数 JSON
 	ExtendParams string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`

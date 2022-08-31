@@ -2,7 +2,7 @@ package aliqin
 
 // AlibabaAliqinFcIotCardStatusResult 结构体
 type AlibabaAliqinFcIotCardStatusResult struct {
-	// "MsisdnStatus":"卡状态","MSISDN":"MSISDN号","ICCID":"ICCID号"
+	// &#34;MsisdnStatus&#34;:&#34;卡状态&#34;,&#34;MSISDN&#34;:&#34;MSISDN号&#34;,&#34;ICCID&#34;:&#34;ICCID号&#34;
 	Model string `json:"model,omitempty" xml:"model,omitempty"`
 	// 1.成功；2.失败
 	Code string `json:"code,omitempty" xml:"code,omitempty"`

@@ -10,7 +10,7 @@ type PaymentInfo struct {
 	PayChannel string `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
 	// 现金-CASH,  代扣-DEDUCT,  银行卡支付-BANK,  储值-STOREDVALUE,  微信-WECHAT,  支付宝 -ALIPAY,  积分-POINTS,  线下券-VOUCHER,  其他方式-OTHER;
 	PayMethod string `json:"pay_method,omitempty" xml:"pay_method,omitempty"`
-	// 支付状态：  INITIAL("INITIAL", "初始状态"),  WAIT_PAY("WAIT_PAY", "待支付状态"),  SUCCESS("SUCCESS", "支付成功状态"),  CANCEL("CANCEL", "支付冲正状态"),  CLOSE("CLOSE", "关闭状态");
+	// 支付状态：  INITIAL(&#34;INITIAL&#34;, &#34;初始状态&#34;),  WAIT_PAY(&#34;WAIT_PAY&#34;, &#34;待支付状态&#34;),  SUCCESS(&#34;SUCCESS&#34;, &#34;支付成功状态&#34;),  CANCEL(&#34;CANCEL&#34;, &#34;支付冲正状态&#34;),  CLOSE(&#34;CLOSE&#34;, &#34;关闭状态&#34;);
 	PaymentStatus string `json:"payment_status,omitempty" xml:"payment_status,omitempty"`
 	// 支付时间
 	PaymentTime string `json:"payment_time,omitempty" xml:"payment_time,omitempty"`

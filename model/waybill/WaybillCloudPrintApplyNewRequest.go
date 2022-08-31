@@ -4,7 +4,7 @@ package waybill
 type WaybillCloudPrintApplyNewRequest struct {
 	// 请求面单信息，数量限制为10
 	TradeOrderInfoDtos []TradeOrderInfoDto `json:"trade_order_info_dtos,omitempty" xml:"trade_order_info_dtos>trade_order_info_dto,omitempty"`
-	// <a href="http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj&treeId=17&articleId=105085&docType=1#1">物流公司Code</a>，长度小于20
+	// &lt;a href=&#34;http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj&amp;treeId=17&amp;articleId=105085&amp;docType=1#1&#34;&gt;物流公司Code&lt;/a&gt;，长度小于20
 	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
 	// 目前仅顺丰支持此字段，传入快递产品编码
 	ProductCode string `json:"product_code,omitempty" xml:"product_code,omitempty"`

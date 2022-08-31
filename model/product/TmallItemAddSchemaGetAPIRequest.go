@@ -44,7 +44,7 @@ func (r TmallItemAddSchemaGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetType is Type Setter
-// 发布商品类型，一口价填“b”，拍卖填"a"
+// 发布商品类型，一口价填“b”，拍卖填&#34;a&#34;
 func (r *TmallItemAddSchemaGetAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

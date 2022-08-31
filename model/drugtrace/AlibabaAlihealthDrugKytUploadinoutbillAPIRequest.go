@@ -9,8 +9,8 @@ import (
 // AlibabaAlihealthDrugKytUploadinoutbillAPIRequest 企业上传出入库信息 API请求
 // alibaba.alihealth.drug.kyt.uploadinoutbill
 //
-// 企业上传出入库信息，包括101, "生产入库"；102, "采购入库"；103, "退货入库"；104, "调拨入库"；106, "零头入库"；107, "供应入库"；108, "召回入库"；110,"赠品入库"；111,"盘盈入库"；112,"报废入库"；113,"其他入库"
-// 201, "销售出库"；202, "退货出库"；203, "调拨出库"；204, "返工出库"；205, "销毁出库"；206, "抽检出库"；207, "直调出库"；208, "生产出库"；209, "供应出库"；211, "召回出库"；212,"赠品出库"；214,"盘亏出库"；215,"损坏出库"；216,"报废出库"；217,"其他出库"；237, "直调退货"。
+// 企业上传出入库信息，包括101, &#34;生产入库&#34;；102, &#34;采购入库&#34;；103, &#34;退货入库&#34;；104, &#34;调拨入库&#34;；106, &#34;零头入库&#34;；107, &#34;供应入库&#34;；108, &#34;召回入库&#34;；110,&#34;赠品入库&#34;；111,&#34;盘盈入库&#34;；112,&#34;报废入库&#34;；113,&#34;其他入库&#34;
+// 201, &#34;销售出库&#34;；202, &#34;退货出库&#34;；203, &#34;调拨出库&#34;；204, &#34;返工出库&#34;；205, &#34;销毁出库&#34;；206, &#34;抽检出库&#34;；207, &#34;直调出库&#34;；208, &#34;生产出库&#34;；209, &#34;供应出库&#34;；211, &#34;召回出库&#34;；212,&#34;赠品出库&#34;；214,&#34;盘亏出库&#34;；215,&#34;损坏出库&#34;；216,&#34;报废出库&#34;；217,&#34;其他出库&#34;；237, &#34;直调退货&#34;。
 // 不包括对个人的零售出库，疫苗接种，领药出库。
 // 本接口与uploadcircubill接口的主要区别的，本接口入参中直接上传追溯码（多个码时用逗号分隔）。uploadcircubill接口入参中，需要上传码的单据文件（用扫码枪生成的xml文件），一般情况下使用uploadcircubill接口上传单据文件。
 type AlibabaAlihealthDrugKytUploadinoutbillAPIRequest struct {
@@ -427,7 +427,7 @@ func (r AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) GetXtCheckCodeDesc() s
 }
 
 // SetDrugListJson is DrugListJson Setter
-// 药品列表Json："codeCount": 药品数量 "commDrugId": 国家药品唯一标识 "exprieDate": 生产日期 "physicInfo": 药品信息 "pkgSpec": 包状规格 "prepnCount": 制剂数量 "produceBatchNo":生产批次 "produceDate": 生产日期
+// 药品列表Json：&#34;codeCount&#34;: 药品数量 &#34;commDrugId&#34;: 国家药品唯一标识 &#34;exprieDate&#34;: 生产日期 &#34;physicInfo&#34;: 药品信息 &#34;pkgSpec&#34;: 包状规格 &#34;prepnCount&#34;: 制剂数量 &#34;produceBatchNo&#34;:生产批次 &#34;produceDate&#34;: 生产日期
 func (r *AlibabaAlihealthDrugKytUploadinoutbillAPIRequest) SetDrugListJson(_drugListJson string) error {
 	r._drugListJson = _drugListJson
 	r.Set("drug_list_json", _drugListJson)

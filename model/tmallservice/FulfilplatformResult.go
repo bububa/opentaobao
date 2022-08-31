@@ -14,7 +14,7 @@ type FulfilplatformResult struct {
 	ErrorName string `json:"error_name,omitempty" xml:"error_name,omitempty"`
 	// 错误类型
 	ErrorType string `json:"error_type,omitempty" xml:"error_type,omitempty"`
-	// 物流类型 消费者--> 商家 STAGE1；商家--->消费者  STAGE2
+	// 物流类型 消费者--&gt; 商家 STAGE1；商家---&gt;消费者  STAGE2
 	StageType string `json:"stage_type,omitempty" xml:"stage_type,omitempty"`
 	// 核销单id
 	ResultData int64 `json:"result_data,omitempty" xml:"result_data,omitempty"`

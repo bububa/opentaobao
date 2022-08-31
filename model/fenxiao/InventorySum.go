@@ -10,7 +10,7 @@ type InventorySum struct {
 	ScItemCode string `json:"sc_item_code,omitempty" xml:"sc_item_code,omitempty"`
 	// 总预扣数量
 	ReserveQuantity int64 `json:"reserve_quantity,omitempty" xml:"reserve_quantity,omitempty"`
-	// 库存类型：<br/>1：正常 <br/>2：损坏 <br/>3：冻结 <br/>10：质押 <br/>11-20:商家自定义
+	// 库存类型：&lt;br/&gt;1：正常 &lt;br/&gt;2：损坏 &lt;br/&gt;3：冻结 &lt;br/&gt;10：质押 &lt;br/&gt;11-20:商家自定义
 	InventoryType int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
 	// 商品后端ID，如果有传sc_item_code,参数可以为0
 	ScItemId int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`

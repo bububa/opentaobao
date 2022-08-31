@@ -108,7 +108,7 @@ func (r TaobaoSimbaRptAdgroupbaseGetAPIRequest) GetEndTime() string {
 }
 
 // SetSearchType is SearchType Setter
-// 报表类型（搜索：SEARCH,类目出价：CAT,<br/>定向投放：NOSEARCH）可以一次取多个例如：SEARCH,CAT
+// 报表类型（搜索：SEARCH,类目出价：CAT,&lt;br/&gt;定向投放：NOSEARCH）可以一次取多个例如：SEARCH,CAT
 func (r *TaobaoSimbaRptAdgroupbaseGetAPIRequest) SetSearchType(_searchType string) error {
 	r._searchType = _searchType
 	r.Set("search_type", _searchType)

@@ -18,7 +18,7 @@ type KeywordResultDto struct {
 	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
 	// 曝光量
 	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
-	// 推广时长，单位小时，保留一位小数，例如13.5表示13.5小时，小于1小时返回<1
+	// 推广时长，单位小时，保留一位小数，例如13.5表示13.5小时，小于1小时返回&lt;1
 	OnlineTime string `json:"online_time,omitempty" xml:"online_time,omitempty"`
 	// 出价，单位元，保留一位小数, 例如3.5表示3.5元
 	Price string `json:"price,omitempty" xml:"price,omitempty"`

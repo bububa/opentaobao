@@ -243,7 +243,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetStartTime() string {
 }
 
 // SetEndTime is EndTime Setter
-// 产品每日结束销售时间,当end_time<start_time时，表示end_time为第二天，此时附加限制end_time<=06:00:00并且start_time>=12:00:00,表明可售时间从当天12点到次日的凌晨6点（扩展此信息主要为了描述尾房的rp）注意start_time一定是当天的时间。尾房18：00起可售
+// 产品每日结束销售时间,当end_time&lt;start_time时，表示end_time为第二天，此时附加限制end_time&lt;=06:00:00并且start_time&gt;=12:00:00,表明可售时间从当天12点到次日的凌晨6点（扩展此信息主要为了描述尾房的rp）注意start_time一定是当天的时间。尾房18：00起可售
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetEndTime(_endTime string) error {
 	r._endTime = _endTime
 	r.Set("end_time", _endTime)
@@ -256,7 +256,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetEndTime() string {
 }
 
 // SetCancelPolicy is CancelPolicy Setter
-// 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100>Y>=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100>Y>=0（不超过10条）。1.表示任意退{"cancelPolicyType":1};2.表示不能退{"cancelPolicyType":2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{"cancelPolicyType":4,"policyInfo":{"48":10,"24":20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{"cancelPolicyType":5,"policyInfo":{"timeBefore":6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{"cancelPolicyType":6,"policyInfo":{"14":1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间,多间夜扣款。阶梯退手续费限制请查看https://hot.bbs.taobao.com/detail.html?postId=8892814
+// 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100&gt;Y&gt;=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100&gt;Y&gt;=0（不超过10条）。1.表示任意退{&#34;cancelPolicyType&#34;:1};2.表示不能退{&#34;cancelPolicyType&#34;:2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{&#34;cancelPolicyType&#34;:4,&#34;policyInfo&#34;:{&#34;48&#34;:10,&#34;24&#34;:20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{&#34;cancelPolicyType&#34;:5,&#34;policyInfo&#34;:{&#34;timeBefore&#34;:6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{&#34;cancelPolicyType&#34;:6,&#34;policyInfo&#34;:{&#34;14&#34;:1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间,多间夜扣款。阶梯退手续费限制请查看https://hot.bbs.taobao.com/detail.html?postId=8892814
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetCancelPolicy(_cancelPolicy string) error {
 	r._cancelPolicy = _cancelPolicy
 	r.Set("cancel_policy", _cancelPolicy)
@@ -308,7 +308,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetMemberLevel() string {
 }
 
 // SetChannel is Channel Setter
-// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪 O:钉钉商旅 A:集团内部商旅 M:无线专享价 V:度假。如果只投放飞猪，改字段不用填写或者只填H；如果有多个用","分开。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
+// 销售渠道。如需开通，需要申请权限。目前支持的渠道有 H:飞猪 O:钉钉商旅 A:集团内部商旅 M:无线专享价 V:度假。如果只投放飞猪，改字段不用填写或者只填H；如果有多个用&#34;,&#34;分开。如果需要投放其他渠道，请联系飞猪运营或者技术支持。
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetChannel(_channel string) error {
 	r._channel = _channel
 	r.Set("channel", _channel)
@@ -347,7 +347,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetCancelBeforeHour() string {
 }
 
 // SetBreakfastCal is BreakfastCal Setter
-// 在添加rateplan时，同时新增早餐日历。date：说明这条记录的早餐政策breakfast_count：这一天早餐的数量。>=-1,<=99。如果date为空，那么会去读取startDate和endDate（格式都为"yyyy-MM-dd"），即早餐正常属于一个时间段。-1为状态早餐，和最终绑定的几人价有关，如果是一人价那么就是我一份早餐，二人价就是两份早餐。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+// 在添加rateplan时，同时新增早餐日历。date：说明这条记录的早餐政策breakfast_count：这一天早餐的数量。&gt;=-1,&lt;=99。如果date为空，那么会去读取startDate和endDate（格式都为&#34;yyyy-MM-dd&#34;），即早餐正常属于一个时间段。-1为状态早餐，和最终绑定的几人价有关，如果是一人价那么就是我一份早餐，二人价就是两份早餐。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetBreakfastCal(_breakfastCal string) error {
 	r._breakfastCal = _breakfastCal
 	r.Set("breakfast_cal", _breakfastCal)
@@ -360,7 +360,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetBreakfastCal() string {
 }
 
 // SetCancelPolicyCal is CancelPolicyCal Setter
-// 在新增rateplan的同时新增取消政策日历。 json格式。 date：日历的某一天，格式为"yyyy-MM-dd" cancel_policy：日历某一天的价格政策。格式和限制同cancel_policy。 如果date为空，那么会读取startDate和endDate（格式都为"yyyy-MM-dd"），即取消政策属于某一个时间段。 注意：支付类型为预付，那么可以使用所有的退订类型，但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。阶梯退手续费限制请查看https://hot.bbs.taobao.com/detail.html?postId=8892814
+// 在新增rateplan的同时新增取消政策日历。 json格式。 date：日历的某一天，格式为&#34;yyyy-MM-dd&#34; cancel_policy：日历某一天的价格政策。格式和限制同cancel_policy。 如果date为空，那么会读取startDate和endDate（格式都为&#34;yyyy-MM-dd&#34;），即取消政策属于某一个时间段。 注意：支付类型为预付，那么可以使用所有的退订类型，但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。阶梯退手续费限制请查看https://hot.bbs.taobao.com/detail.html?postId=8892814
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetCancelPolicyCal(_cancelPolicyCal string) error {
 	r._cancelPolicyCal = _cancelPolicyCal
 	r.Set("cancel_policy_cal", _cancelPolicyCal)
@@ -373,7 +373,7 @@ func (r TaobaoXhotelRateplanAddAPIRequest) GetCancelPolicyCal() string {
 }
 
 // SetGuaranteeCal is GuaranteeCal Setter
-// 在新增rateplan的同时，新增担保日历。date：担保日历的某一天。guarantee:担保政策。其中有两个属性：guaranteeType,guaranteeStartTime。 guaranteeType的可选值同guaranteeType字段，详见guaranteeType字段。guaranteeStartTime格式为"HH:mm"。如果date为空，那么会读取startDate和endDate（格式都为"yyyy-MM-dd"），即担保政策属于某一个时间段。（如果设置了峰时担保类型，那么峰时担保时间不能为空，并且必须大于等于8点）。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
+// 在新增rateplan的同时，新增担保日历。date：担保日历的某一天。guarantee:担保政策。其中有两个属性：guaranteeType,guaranteeStartTime。 guaranteeType的可选值同guaranteeType字段，详见guaranteeType字段。guaranteeStartTime格式为&#34;HH:mm&#34;。如果date为空，那么会读取startDate和endDate（格式都为&#34;yyyy-MM-dd&#34;），即担保政策属于某一个时间段。（如果设置了峰时担保类型，那么峰时担保时间不能为空，并且必须大于等于8点）。请注意，该字段仅能维护从当前时间开始，10年以内的数据，如果超过10年，会报错。
 func (r *TaobaoXhotelRateplanAddAPIRequest) SetGuaranteeCal(_guaranteeCal string) error {
 	r._guaranteeCal = _guaranteeCal
 	r.Set("guarantee_cal", _guaranteeCal)

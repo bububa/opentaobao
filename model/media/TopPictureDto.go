@@ -4,9 +4,9 @@ package media
 type TopPictureDto struct {
 	// 图片名
 	FileName string `json:"file_name,omitempty" xml:"file_name,omitempty"`
-	// 审核状态。"AUDITING":审核中, FROZEN:被冻结 ,"NORMAL":正常"
+	// 审核状态。&#34;AUDITING&#34;:审核中, FROZEN:被冻结 ,&#34;NORMAL&#34;:正常&#34;
 	BizStatus string `json:"biz_status,omitempty" xml:"biz_status,omitempty"`
-	// "NORMAL":正常，"RECYCLED":回收站中
+	// &#34;NORMAL&#34;:正常，&#34;RECYCLED&#34;:回收站中
 	DeletedStatus string `json:"deleted_status,omitempty" xml:"deleted_status,omitempty"`
 	// 图片完整链接，直接通过这个链接可以访问图片
 	FullUrl string `json:"full_url,omitempty" xml:"full_url,omitempty"`

@@ -12,11 +12,11 @@ import (
 // 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
 //
 // 上传的html示例代码为：
-// &lt;form action=&quot;http://upload.cloud.tmall.com/api/proxy/upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
-// 	上传token: &lt;input type=&quot;text&quot; name=&quot;Authorization&quot; value=&quot;&quot; /&gt;&lt;br/&gt;
-// 	上传文件:&lt;input type=&quot;file&quot; name=&quot;content&quot; /&gt;&lt;br/&gt;
-// 	&lt;input type=&quot;submit&quot; value=&quot;Submit &quot;/&gt;
-// &lt;/form&gt;
+// &amp;lt;form action=&amp;quot;http://upload.cloud.tmall.com/api/proxy/upload&amp;quot; method=&amp;quot;post&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;
+// 	上传token: &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;Authorization&amp;quot; value=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;br/&amp;gt;
+// 	上传文件:&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;content&amp;quot; /&amp;gt;&amp;lt;br/&amp;gt;
+// 	&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit &amp;quot;/&amp;gt;
+// &amp;lt;/form&amp;gt;
 type TaobaoMiniappCloudPictureTokenAPIRequest struct {
 	model.Params
 	// 请求参数

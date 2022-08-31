@@ -16,6 +16,6 @@ type Ticket struct {
 	CreateUserId int64 `json:"create_user_id,omitempty" xml:"create_user_id,omitempty"`
 	// 如果产品规格，需要商家审核，为商家审核用户ID
 	AuditSellerId int64 `json:"audit_seller_id,omitempty" xml:"audit_seller_id,omitempty"`
-	// 1, "商家确认"<br/>2, "商家拒绝"<br/>3, "小二确认"<br/>4, "小二拒绝"<br/>5, "待商家处理"<br/>6, "商家审核超时"<br/>7, "待小二审核"<br/>9, "品牌商确认"<br/>10, "免审通过"<br/>14, "免审拒绝"
+	// 1, &#34;商家确认&#34;&lt;br/&gt;2, &#34;商家拒绝&#34;&lt;br/&gt;3, &#34;小二确认&#34;&lt;br/&gt;4, &#34;小二拒绝&#34;&lt;br/&gt;5, &#34;待商家处理&#34;&lt;br/&gt;6, &#34;商家审核超时&#34;&lt;br/&gt;7, &#34;待小二审核&#34;&lt;br/&gt;9, &#34;品牌商确认&#34;&lt;br/&gt;10, &#34;免审通过&#34;&lt;br/&gt;14, &#34;免审拒绝&#34;
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 }

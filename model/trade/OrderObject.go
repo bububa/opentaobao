@@ -12,7 +12,7 @@ type OrderObject struct {
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 用户备注
 	UserMem string `json:"user_mem,omitempty" xml:"user_mem,omitempty"`
-	// 订单履约状态	ACCEPTED 接单  	REJECTED 拒单  	CANCELED 取消订单  	SHIPPING 揽收（配送中）  	REFUSED 用户拒收  	SHIPPED  	TIMEOUTSHIPPED 超时签收  	RESHIPPED 二次妥投  	OUTOFSTOCK 缺货出  	FOODPROCESSDONE 加工完成  	PACKAGED 打包完成  	REFUNDED 逆向终态（已取货入站&退款完成）
+	// 订单履约状态	ACCEPTED 接单  	REJECTED 拒单  	CANCELED 取消订单  	SHIPPING 揽收（配送中）  	REFUSED 用户拒收  	SHIPPED  	TIMEOUTSHIPPED 超时签收  	RESHIPPED 二次妥投  	OUTOFSTOCK 缺货出  	FOODPROCESSDONE 加工完成  	PACKAGED 打包完成  	REFUNDED 逆向终态（已取货入站&amp;退款完成）
 	OrderFulfillStatus string `json:"order_fulfill_status,omitempty" xml:"order_fulfill_status,omitempty"`
 	// 门店标识
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`

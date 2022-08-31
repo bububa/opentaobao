@@ -9,7 +9,7 @@ import (
 // TaobaoFenxiaoProductAddAPIRequest 添加产品 API请求
 // taobao.fenxiao.product.add
 //
-// 添加分销平台产品数据。业务逻辑与分销系统前台页面一致。<br/><br/>    * 产品图片默认为空<br/>    * 产品发布后默认为下架状态
+// 添加分销平台产品数据。业务逻辑与分销系统前台页面一致。&lt;br/&gt;&lt;br/&gt;    * 产品图片默认为空&lt;br/&gt;    * 产品发布后默认为下架状态
 type TaobaoFenxiaoProductAddAPIRequest struct {
 	model.Params
 	// 产品名称，长度不超过60个字节。
@@ -344,7 +344,7 @@ func (r TaobaoFenxiaoProductAddAPIRequest) GetTradeType() string {
 }
 
 // SetIsAuthz is IsAuthz Setter
-// 添加产品时，添加入参isAuthz:yes|no <br/>yes:需要授权 <br/>no:不需要授权 <br/>默认是需要授权
+// 添加产品时，添加入参isAuthz:yes|no &lt;br/&gt;yes:需要授权 &lt;br/&gt;no:不需要授权 &lt;br/&gt;默认是需要授权
 func (r *TaobaoFenxiaoProductAddAPIRequest) SetIsAuthz(_isAuthz string) error {
 	r._isAuthz = _isAuthz
 	r.Set("is_authz", _isAuthz)

@@ -2,9 +2,9 @@ package waybill
 
 // TradeOrderInfoDto 结构体
 type TradeOrderInfoDto struct {
-	// 物流服务值（详见https://support-cnkuaidi.taobao.com/doc.htm#?docId=106156&docType=1，如无特殊服务请置空）
+	// 物流服务值（详见https://support-cnkuaidi.taobao.com/doc.htm#?docId=106156&amp;docType=1，如无特殊服务请置空）
 	LogisticsServices string `json:"logistics_services,omitempty" xml:"logistics_services,omitempty"`
-	// <a href="http://open.taobao.com/docs/doc.htm?docType=1&articleId=105086&treeId=17&platformId=17#6">请求ID</a>
+	// &lt;a href=&#34;http://open.taobao.com/docs/doc.htm?docType=1&amp;articleId=105086&amp;treeId=17&amp;platformId=17#6&#34;&gt;请求ID&lt;/a&gt;
 	ObjectId string `json:"object_id,omitempty" xml:"object_id,omitempty"`
 	// 云打印标准模板URL（组装云打印结果使用，值格式http://cloudprint.cainiao.com/template/standard/${模板ID}）
 	TemplateUrl string `json:"template_url,omitempty" xml:"template_url,omitempty"`

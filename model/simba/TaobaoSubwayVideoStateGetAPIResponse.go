@@ -20,6 +20,6 @@ type TaobaoSubwayVideoStateGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"subway_video_state_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 1, "等待转码"     2, "转码中"     3, "转码失败"     4, "等待审核"     5, "未通过审核"     6, "通过审核"     7, "已删除"     8, "不符合规范"
+	// 1, &#34;等待转码&#34;     2, &#34;转码中&#34;     3, &#34;转码失败&#34;     4, &#34;等待审核&#34;     5, &#34;未通过审核&#34;     6, &#34;通过审核&#34;     7, &#34;已删除&#34;     8, &#34;不符合规范&#34;
 	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 }

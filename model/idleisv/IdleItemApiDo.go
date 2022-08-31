@@ -16,13 +16,13 @@ type IdleItemApiDo struct {
 	ItemTags []string `json:"item_tags,omitempty" xml:"item_tags>string,omitempty"`
 	// 商品白底图
 	WhiteBgImgUrls []string `json:"white_bg_img_urls,omitempty" xml:"white_bg_img_urls>string,omitempty"`
-	// 商品描述(长度<=5000)
+	// 商品描述(长度&lt;=5000)
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 商品原价, 单位：元(最大99999999)
 	OriginalPrice string `json:"original_price,omitempty" xml:"original_price,omitempty"`
 	// 商品售价, 单位：元(最大99999999)
 	ReservePrice string `json:"reserve_price,omitempty" xml:"reserve_price,omitempty"`
-	// 商品标题(长度<=30)
+	// 商品标题(长度&lt;=30)
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 邮费, 单位：元(最大99999999)
 	TransportFee string `json:"transport_fee,omitempty" xml:"transport_fee,omitempty"`
@@ -36,7 +36,7 @@ type IdleItemApiDo struct {
 	CategoryId string `json:"category_id,omitempty" xml:"category_id,omitempty"`
 	// 渠道类目id
 	ChannelCatId string `json:"channel_cat_id,omitempty" xml:"channel_cat_id,omitempty"`
-	// 验货报告url链接(长度<=300)
+	// 验货报告url链接(长度&lt;=300)
 	InspectReport string `json:"inspect_report,omitempty" xml:"inspect_report,omitempty"`
 	// 服务商商品业务分类，手机:1, 潮品:2, 家电:3, 乐器:8, 3C数码:9, 奢品:16, 母婴:17, 美妆:18, 文玩/珠宝:19, 潮玩:20, 家居:21
 	SpBizType string `json:"sp_biz_type,omitempty" xml:"sp_biz_type,omitempty"`

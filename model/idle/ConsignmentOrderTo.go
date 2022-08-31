@@ -2,7 +2,7 @@ package idle
 
 // ConsignmentOrderTo 结构体
 type ConsignmentOrderTo struct {
-	// 订单创建时间，格式为"yyyy-MM-dd HH:mm:ss"
+	// 订单创建时间，格式为&#34;yyyy-MM-dd HH:mm:ss&#34;
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 支付方式。1:支付宝现金 2：天猫红包
 	IdlePayType string `json:"idle_pay_type,omitempty" xml:"idle_pay_type,omitempty"`
@@ -36,7 +36,7 @@ type ConsignmentOrderTo struct {
 	ApprizeId string `json:"apprize_id,omitempty" xml:"apprize_id,omitempty"`
 	// 卖家真实姓名
 	SellerRealName string `json:"seller_real_name,omitempty" xml:"seller_real_name,omitempty"`
-	// 取件时间，格式为"yyyy-MM-dd HH:mm:ss"
+	// 取件时间，格式为&#34;yyyy-MM-dd HH:mm:ss&#34;
 	ShipTime string `json:"ship_time,omitempty" xml:"ship_time,omitempty"`
 	// 取件类型 1：顺丰 2：上门取件
 	ShipType string `json:"ship_type,omitempty" xml:"ship_type,omitempty"`

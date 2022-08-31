@@ -10,7 +10,7 @@ type DistributionSaleProduct struct {
 	ProductSkuList []ProductSku `json:"product_sku_list,omitempty" xml:"product_sku_list>product_sku,omitempty"`
 	// product image list
 	ImageUrlList []string `json:"image_url_list,omitempty" xml:"image_url_list>string,omitempty"`
-	// product description html，<br /> It is the transferred string, the applicable party needs to reverse the string
+	// product description html，&lt;br /&gt; It is the transferred string, the applicable party needs to reverse the string
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// product detail Url
 	DetailUrl string `json:"detail_url,omitempty" xml:"detail_url,omitempty"`

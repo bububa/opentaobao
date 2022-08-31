@@ -2,7 +2,7 @@ package traveltrade
 
 // BuyItemInfo 结构体
 type BuyItemInfo struct {
-	// 商品类目相关的扩展信息（不再推荐使用，建议使用category_ext_infos_json替代）。KV对形式，多个KV对以英文封号分隔，k1:v1;k2:v2。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&articleId=107548
+	// 商品类目相关的扩展信息（不再推荐使用，建议使用category_ext_infos_json替代）。KV对形式，多个KV对以英文封号分隔，k1:v1;k2:v2。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=107548
 	CategoryExtInfos string `json:"category_ext_infos,omitempty" xml:"category_ext_infos,omitempty"`
 	// 商品标题
 	ItemTitle string `json:"item_title,omitempty" xml:"item_title,omitempty"`
@@ -18,7 +18,7 @@ type BuyItemInfo struct {
 	TripStartDate string `json:"trip_start_date,omitempty" xml:"trip_start_date,omitempty"`
 	// 商品图片
 	ItemImage string `json:"item_image,omitempty" xml:"item_image,omitempty"`
-	// 商品类目相关的扩展信息，JSON格式。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&articleId=107548
+	// 商品类目相关的扩展信息，JSON格式。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1&amp;articleId=107548
 	CategoryExtInfosJson string `json:"category_ext_infos_json,omitempty" xml:"category_ext_infos_json,omitempty"`
 	// 场次开始时间
 	FsEndTime string `json:"fs_end_time,omitempty" xml:"fs_end_time,omitempty"`

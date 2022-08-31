@@ -18,7 +18,7 @@ type AlibabaProductBriefResponse struct {
 	Display string `json:"display,omitempty" xml:"display,omitempty"`
 	// james
 	OwnerMemberDisplayName string `json:"owner_member_display_name,omitempty" xml:"owner_member_display_name,omitempty"`
-	// https://www.alibaba.com/product-detail/Eco-Friendly-100-Biodegradable-Cornstarch-Trash_60832548452.html?spm=a2700.galleryofferlist.normalList.12.6c612db4ueHAW2&fullFirstScreen=true
+	// https://www.alibaba.com/product-detail/Eco-Friendly-100-Biodegradable-Cornstarch-Trash_60832548452.html?spm=a2700.galleryofferlist.normalList.12.6c612db4ueHAW2&amp;fullFirstScreen=true
 	PcDetailUrl string `json:"pc_detail_url,omitempty" xml:"pc_detail_url,omitempty"`
 	// 2020-12-22 12:00:00
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`

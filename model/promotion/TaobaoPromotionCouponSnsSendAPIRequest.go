@@ -42,7 +42,7 @@ func (r TaobaoPromotionCouponSnsSendAPIRequest) GetApiParams() url.Values {
 }
 
 // SetBuyerNick is BuyerNick Setter
-// 买家昵称用半角','号分割
+// 买家昵称用半角&#39;,&#39;号分割
 func (r *TaobaoPromotionCouponSnsSendAPIRequest) SetBuyerNick(_buyerNick []string) error {
 	r._buyerNick = _buyerNick
 	r.Set("buyer_nick", _buyerNick)

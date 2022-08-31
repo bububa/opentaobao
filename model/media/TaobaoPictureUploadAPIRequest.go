@@ -61,7 +61,7 @@ func (r TaobaoPictureUploadAPIRequest) GetImageInputTitle() string {
 }
 
 // SetTitle is Title Setter
-// 图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加"(1)";标题末尾已经有"(数字)"了，则数字加1
+// 图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加&#34;(1)&#34;;标题末尾已经有&#34;(数字)&#34;了，则数字加1
 func (r *TaobaoPictureUploadAPIRequest) SetTitle(_title string) error {
 	r._title = _title
 	r.Set("title", _title)

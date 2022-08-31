@@ -10,7 +10,7 @@ type PayChannel struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// promotionCardInfo
 	PromotionCardInfo string `json:"promotion_card_info,omitempty" xml:"promotion_card_info,omitempty"`
-	// "扩展属性，根据payType不同，可存放相关内容。MAP<String,String>的json化字符串子订单列表,key列表 "btn"  // 银行卡凭证号,bank_trade_no "bmi"  // 银行卡商户号,bank_merchant_id "bti"  // 银行卡终端号,bank_term_id "brn"  // 银行卡系统参考号,bank_ref_no "damt" // 优惠金额，discount_amount "tno"  // 支付工具号tool_no "tsn"  // 支付工具流水号，tool_serail_no"
+	// &#34;扩展属性，根据payType不同，可存放相关内容。MAP&lt;String,String&gt;的json化字符串子订单列表,key列表 &#34;btn&#34;  // 银行卡凭证号,bank_trade_no &#34;bmi&#34;  // 银行卡商户号,bank_merchant_id &#34;bti&#34;  // 银行卡终端号,bank_term_id &#34;brn&#34;  // 银行卡系统参考号,bank_ref_no &#34;damt&#34; // 优惠金额，discount_amount &#34;tno&#34;  // 支付工具号tool_no &#34;tsn&#34;  // 支付工具流水号，tool_serail_no&#34;
 	PayAttributes string `json:"pay_attributes,omitempty" xml:"pay_attributes,omitempty"`
 	// 口碑优惠信息，是一个json数组
 	KoubeiCouponInfo string `json:"koubei_coupon_info,omitempty" xml:"koubei_coupon_info,omitempty"`

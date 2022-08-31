@@ -6,7 +6,7 @@ type AiCloudResult struct {
 	Uuids []string `json:"uuids,omitempty" xml:"uuids>string,omitempty"`
 	// 对话流列表数据
 	Models []string `json:"models,omitempty" xml:"models>string,omitempty"`
-	// List<Map<String, Object>>数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值
+	// List&lt;Map&lt;String, Object&gt;&gt;数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值
 	ModelList []string `json:"model_list,omitempty" xml:"model_list>string,omitempty"`
 	// model
 	Likes []Like `json:"likes,omitempty" xml:"likes>like,omitempty"`

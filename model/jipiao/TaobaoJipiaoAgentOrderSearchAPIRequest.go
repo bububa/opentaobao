@@ -76,7 +76,7 @@ func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetEndTime() string {
 }
 
 // SetExtra is Extra Setter
-// 扩展字段:<br/>needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
+// 扩展字段:&lt;br/&gt;needFilterAutobook：默认true。待出票状态下，会根据此值过滤掉自动出票状态下订单，以防止重复出票的问题。对于精选票，此值需要设置成false，并由API使用者保证不会重复出票。
 func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetExtra(_extra string) error {
 	r._extra = _extra
 	r.Set("extra", _extra)
@@ -89,7 +89,7 @@ func (r TaobaoJipiaoAgentOrderSearchAPIRequest) GetExtra() string {
 }
 
 // SetStatus is Status Setter
-// 订单状态，默认为空，查询所有状态的订单<br/>1:待确认<br/>2:待出票<br/>3:强制成功<br/>4:未付款<br/>5:预订成功<br/>6:已失效
+// 订单状态，默认为空，查询所有状态的订单&lt;br/&gt;1:待确认&lt;br/&gt;2:待出票&lt;br/&gt;3:强制成功&lt;br/&gt;4:未付款&lt;br/&gt;5:预订成功&lt;br/&gt;6:已失效
 func (r *TaobaoJipiaoAgentOrderSearchAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)

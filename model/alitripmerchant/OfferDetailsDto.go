@@ -41,7 +41,7 @@ type OfferDetailsDto struct {
 	// offerId
 	OfferId int64 `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
 	// 抽奖活动
-	ActivityLuckyDraw *ActivityLuckyDrawVO `json:"activity_lucky_draw,omitempty" xml:"activity_lucky_draw,omitempty"`
+	ActivityLuckyDraw *ActivityLuckyDrawVo `json:"activity_lucky_draw,omitempty" xml:"activity_lucky_draw,omitempty"`
 	// 弹屏信息
 	PopUpInfo *PopUpInfo `json:"pop_up_info,omitempty" xml:"pop_up_info,omitempty"`
 }

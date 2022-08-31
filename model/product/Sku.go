@@ -14,7 +14,7 @@ type Sku struct {
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
 	// sku状态。 normal:正常 ；delete:删除,淘宝天猫此字段无效
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2&hellip;&hellip;
+	// sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2&amp;hellip;&amp;hellip;
 	PropertiesName string `json:"properties_name,omitempty" xml:"properties_name,omitempty"`
 	// sku级别发货时间
 	SkuDeliveryTime string `json:"sku_delivery_time,omitempty" xml:"sku_delivery_time,omitempty"`

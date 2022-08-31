@@ -60,7 +60,7 @@ type DeliveryOrder struct {
 	PreDeliveryOrderId string `json:"pre_delivery_order_id,omitempty" xml:"pre_delivery_order_id,omitempty"`
 	// 订单标记(用字符串格式来表示订单标记列表:例如COD=货到付款;LIMIT=限时配 送;PRESELL=预 售;COMPLAIN=已投诉;SPLIT=拆单;EXCHANGE=换货;VISIT=上门;MODIFYTRANSPORT=是否 可改配送方式;CONSIGN = 物流宝代理发货;SELLER_AFFORD=是否卖家承担运费;FENXIAO=分销订 单)
 	OrderFlag string `json:"order_flag,omitempty" xml:"order_flag,omitempty"`
-	// 订单来源平台编码(TB=淘宝、TM=天猫、MAOCHAO =天猫超市、TMGJZY = 天猫国际直营、PTTMKLDJK = 天猫国际、TMYPDQ = 天猫优品、JD=京东、DD=当当、PP=拍拍、YX= 易讯、 EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂 、MGJ=蘑菇街、 JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、 MIA=蜜芽、KLZY = 猫享&考拉自营、OTHER=其他(只传英文编码))
+	// 订单来源平台编码(TB=淘宝、TM=天猫、MAOCHAO =天猫超市、TMGJZY = 天猫国际直营、PTTMKLDJK = 天猫国际、TMYPDQ = 天猫优品、JD=京东、DD=当当、PP=拍拍、YX= 易讯、 EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂 、MGJ=蘑菇街、 JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、 MIA=蜜芽、KLZY = 猫享&amp;考拉自营、OTHER=其他(只传英文编码))
 	SourcePlatformCode string `json:"source_platform_code,omitempty" xml:"source_platform_code,omitempty"`
 	// 订单来源平台名称
 	SourcePlatformName string `json:"source_platform_name,omitempty" xml:"source_platform_name,omitempty"`

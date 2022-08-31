@@ -9,7 +9,7 @@ import (
 // AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest 查询物流运力列表 API请求
 // alibaba.onetouch.logistics.express.logistics.product.list
 //
-// 查询物流产品&揽收仓库列表
+// 查询物流产品&amp;揽收仓库列表
 type AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest struct {
 	model.Params
 }

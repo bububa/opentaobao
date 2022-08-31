@@ -6,7 +6,7 @@ type RecycleRefundDetailDto struct {
 	OpTimeout string `json:"op_timeout,omitempty" xml:"op_timeout,omitempty"`
 	// 订单号
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
-	// 状态(1, "买家已经申请退款，等待卖家同意"),  (2, "卖家已经同意退货退款，等待买家退货"), --该状态下卖家已经提供退货地址，同意退货退款和发送地址是同时的  (3, "买家已经退货，等待卖家确认收货"),  (4, "退款关闭"),  (5, "退款成功"), --仅退款情况下是从状态1变更到5，同意退款和退款是同时的  (6, "卖家拒绝退款"),  (7, "等待买家确认重新邮寄的货物"),--如补寄等情形，一般不会出现  (8, "等待卖家确认退货地址")
+	// 状态(1, &#34;买家已经申请退款，等待卖家同意&#34;),  (2, &#34;卖家已经同意退货退款，等待买家退货&#34;), --该状态下卖家已经提供退货地址，同意退货退款和发送地址是同时的  (3, &#34;买家已经退货，等待卖家确认收货&#34;),  (4, &#34;退款关闭&#34;),  (5, &#34;退款成功&#34;), --仅退款情况下是从状态1变更到5，同意退款和退款是同时的  (6, &#34;卖家拒绝退款&#34;),  (7, &#34;等待买家确认重新邮寄的货物&#34;),--如补寄等情形，一般不会出现  (8, &#34;等待卖家确认退货地址&#34;)
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款状态描述
 	RefundStatusDesc string `json:"refund_status_desc,omitempty" xml:"refund_status_desc,omitempty"`

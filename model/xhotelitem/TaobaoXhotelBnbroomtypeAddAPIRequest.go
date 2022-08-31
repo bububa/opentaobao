@@ -160,7 +160,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetApiParams() url.Values {
 }
 
 // SetPics is Pics Setter
-// 房源图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
+// 房源图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://taobao.com/123.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;},{&#34;url&#34;:&#34;http://taobao.com/456.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;},{&#34;url&#34;:&#34;http://taobao.com/789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetPics(_pics []BnbPictureDto) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -316,7 +316,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetSurroundInfo() string {
 }
 
 // SetActivitiesAllowed is ActivitiesAllowed Setter
-// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1  ，最多500字符
+// 详见“允许活动”：https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1  ，最多500字符
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetActivitiesAllowed(_activitiesAllowed string) error {
 	r._activitiesAllowed = _activitiesAllowed
 	r.Set("activities_allowed", _activitiesAllowed)
@@ -459,7 +459,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetRealTel() string {
 }
 
 // SetService is Service Setter
-// 设施服务。json格式示例值：{"24152":true,"24149":true,"24150":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
+// 设施服务。json格式示例值：{&#34;24152&#34;:true,&#34;24149&#34;:true,&#34;24150&#34;:true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetService(_service string) error {
 	r._service = _service
 	r.Set("service", _service)
@@ -485,7 +485,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetOuterId() string {
 }
 
 // SetBedInfo is BedInfo Setter
-// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
+// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&amp;docType=1&amp;articleId=108347
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBedInfo(_bedInfo string) error {
 	r._bedInfo = _bedInfo
 	r.Set("bed_info", _bedInfo)
@@ -511,7 +511,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetExtraFee() string {
 }
 
 // SetStandardRoomFacilities is StandardRoomFacilities Setter
-// 标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362&docType=1
+// 标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetStandardRoomFacilities(_standardRoomFacilities string) error {
 	r._standardRoomFacilities = _standardRoomFacilities
 	r.Set("standard_room_facilities", _standardRoomFacilities)
@@ -589,7 +589,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetDecorateLevel() int64 {
 }
 
 // SetBnbBookingTime is BnbBookingTime Setter
-// 民宿入住要求&附加信息
+// 民宿入住要求&amp;附加信息
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDto) error {
 	r._bnbBookingTime = _bnbBookingTime
 	r.Set("bnb_booking_time", _bnbBookingTime)
@@ -680,7 +680,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHasFrontDesk() int64 {
 }
 
 // SetGuestAge is GuestAge Setter
-// 是否接待儿童、老人；成年人必接待，详见“可接待客人”https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+// 是否接待儿童、老人；成年人必接待，详见“可接待客人”https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetGuestAge(_guestAge int64) error {
 	r._guestAge = _guestAge
 	r.Set("guest_age", _guestAge)
@@ -732,7 +732,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetStatus() *model.File {
 }
 
 // SetGuestGender is GuestGender Setter
-// 0：不限制，1：只限男性，2：只限女性'
+// 0：不限制，1：只限男性，2：只限女性&#39;
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetGuestGender(_guestGender int64) error {
 	r._guestGender = _guestGender
 	r.Set("guest_gender", _guestGender)
@@ -823,7 +823,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetHouseSize() int64 {
 }
 
 // SetProductType is ProductType Setter
-// 房源类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+// 房源类型,见https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetProductType(_productType int64) error {
 	r._productType = _productType
 	r.Set("product_type", _productType)
@@ -862,7 +862,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetCharge() *BnbChargeDto {
 }
 
 // SetDecorateStyle is DecorateStyle Setter
-// 装修风格https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+// 装修风格https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetDecorateStyle(_decorateStyle int64) error {
 	r._decorateStyle = _decorateStyle
 	r.Set("decorate_style", _decorateStyle)
@@ -888,7 +888,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetSupportcredit() int64 {
 }
 
 // SetCleaningFrequency is CleaningFrequency Setter
-// “打扫类型1(1客1扫/换),2(1天1扫/换),https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+// “打扫类型1(1客1扫/换),2(1天1扫/换),https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetCleaningFrequency(_cleaningFrequency int64) error {
 	r._cleaningFrequency = _cleaningFrequency
 	r.Set("cleaning_frequency", _cleaningFrequency)
@@ -914,7 +914,7 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetLocation() *BnbLocationDto {
 }
 
 // SetScenicFeature is ScenicFeature Setter
-// 风景类型(枚举)https://fliggy.open.taobao.com/doc.htm?docId=120148&docType=1
+// 风景类型(枚举)https://fliggy.open.taobao.com/doc.htm?docId=120148&amp;docType=1
 func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetScenicFeature(_scenicFeature int64) error {
 	r._scenicFeature = _scenicFeature
 	r.Set("scenic_feature", _scenicFeature)

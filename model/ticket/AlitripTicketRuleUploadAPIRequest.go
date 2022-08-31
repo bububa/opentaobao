@@ -369,7 +369,7 @@ func (r AlitripTicketRuleUploadAPIRequest) GetVisitorLimitType() int64 {
 }
 
 // SetAutoRefundSupport is AutoRefundSupport Setter
-// 可选，是否支持自动退款，0或为空时表示不支持。0-不支持，1-只支持"售中自动退款"，2-只支持"过期未使用自动退款"，3-同时支持"售中自动退款"和"过期未使用自动退款"
+// 可选，是否支持自动退款，0或为空时表示不支持。0-不支持，1-只支持&#34;售中自动退款&#34;，2-只支持&#34;过期未使用自动退款&#34;，3-同时支持&#34;售中自动退款&#34;和&#34;过期未使用自动退款&#34;
 func (r *AlitripTicketRuleUploadAPIRequest) SetAutoRefundSupport(_autoRefundSupport int64) error {
 	r._autoRefundSupport = _autoRefundSupport
 	r.Set("auto_refund_support", _autoRefundSupport)

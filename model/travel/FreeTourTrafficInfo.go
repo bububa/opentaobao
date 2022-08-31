@@ -24,7 +24,7 @@ type FreeTourTrafficInfo struct {
 	Day int64 `json:"day,omitempty" xml:"day,omitempty"`
 	// 是否直飞，飞机选填，1-直飞；0-不是直飞
 	NonStop int64 `json:"non_stop,omitempty" xml:"non_stop,omitempty"`
-	// 第几组交通信息，请必传，不传可能导致商品详情页交通信息不展示。每一组交通信息包含一组去程交通和返程交通，当在页> 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交>通信息group=1，第二组交通信息group取值为2，以此类推
+	// 第几组交通信息，请必传，不传可能导致商品详情页交通信息不展示。每一组交通信息包含一组去程交通和返程交通，当在页&gt; 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交&gt;通信息group=1，第二组交通信息group取值为2，以此类推
 	Group int64 `json:"group,omitempty" xml:"group,omitempty"`
 	// 是否经停
 	StopOver bool `json:"stop_over,omitempty" xml:"stop_over,omitempty"`

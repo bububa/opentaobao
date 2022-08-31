@@ -12,7 +12,7 @@ type ItemListQuery struct {
 	Subject string `json:"subject,omitempty" xml:"subject,omitempty"`
 	// Reasons for product offline: expire_offline; user_offline; violate_offline; punish_offline; and degrade_offline.
 	WsDisplay string `json:"ws_display,omitempty" xml:"ws_display,omitempty"`
-	// Whether having national quotation. "y" for yes, "n" for no.
+	// Whether having national quotation. &#34;y&#34; for yes, &#34;n&#34; for no.
 	HaveNationalQuote string `json:"have_national_quote,omitempty" xml:"have_national_quote,omitempty"`
 	// Search for products created after a specific time, format: yyyy-MM-dd hh:mm:ss
 	GmtCreateStart string `json:"gmt_create_start,omitempty" xml:"gmt_create_start,omitempty"`

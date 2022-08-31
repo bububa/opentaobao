@@ -4,7 +4,7 @@ package travel
 type ItemBaseInfo struct {
 	// 商品亮点
 	SubTitles []string `json:"sub_titles,omitempty" xml:"sub_titles>string,omitempty"`
-	// ["xxxx","xxxxx"]
+	// [&#34;xxxx&#34;,&#34;xxxxx&#34;]
 	PicUrls []string `json:"pic_urls,omitempty" xml:"pic_urls>string,omitempty"`
 	// 商品标签
 	ItemTagContent string `json:"item_tag_content,omitempty" xml:"item_tag_content,omitempty"`

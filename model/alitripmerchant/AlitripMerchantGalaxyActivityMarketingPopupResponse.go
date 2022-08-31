@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyActivityMarketingPopupResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 返回结果
-	Content *PopUpInfoVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *PopUpInfoVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

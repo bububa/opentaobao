@@ -4,7 +4,7 @@ package lsttrade
 type LstTopOrderDto struct {
 	// 订单创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 订单状态,等待买家付款   "waitbuyerpay";       *      * 等待卖家发货  "waitsellersend";       *      * 等待买家收货  "waitbuyerreceive";       *      * 交易成功   "success";       *      * 交易取消    "cancel";       *      * 已收货未结算  "confirm_goods_but_not_fund";       *      * [1688新新交易4.0] 已收货   "confirm_goods";
+	// 订单状态,等待买家付款   &#34;waitbuyerpay&#34;;       *      * 等待卖家发货  &#34;waitsellersend&#34;;       *      * 等待买家收货  &#34;waitbuyerreceive&#34;;       *      * 交易成功   &#34;success&#34;;       *      * 交易取消    &#34;cancel&#34;;       *      * 已收货未结算  &#34;confirm_goods_but_not_fund&#34;;       *      * [1688新新交易4.0] 已收货   &#34;confirm_goods&#34;;
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 单位
 	Unit string `json:"unit,omitempty" xml:"unit,omitempty"`
@@ -36,7 +36,7 @@ type LstTopOrderDto struct {
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 商家业代id
 	OuterOperatorId string `json:"outer_operator_id,omitempty" xml:"outer_operator_id,omitempty"`
-	// 订单状态,等待买家付款   "waitbuyerpay";       *      * 等待卖家发货  "waitsellersend";       *      * 等待买家收货  "waitbuyerreceive";       *      * 交易成功   "success";       *      * 交易取消    "cancel";       *      * 已收货未结算  "confirm_goods_but_not_fund";       *      * [1688新新交易4.0] 已收货   "confirm_goods";
+	// 订单状态,等待买家付款   &#34;waitbuyerpay&#34;;       *      * 等待卖家发货  &#34;waitsellersend&#34;;       *      * 等待买家收货  &#34;waitbuyerreceive&#34;;       *      * 交易成功   &#34;success&#34;;       *      * 交易取消    &#34;cancel&#34;;       *      * 已收货未结算  &#34;confirm_goods_but_not_fund&#34;;       *      * [1688新新交易4.0] 已收货   &#34;confirm_goods&#34;;
 	MainOrderStatus string `json:"main_order_status,omitempty" xml:"main_order_status,omitempty"`
 	// 仓库code
 	WarehouseCode string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
@@ -46,7 +46,7 @@ type LstTopOrderDto struct {
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 零售通业代id
 	LstYdId string `json:"lst_yd_id,omitempty" xml:"lst_yd_id,omitempty"`
-	// 赠品订单对应的活动订单id，多个使用英文逗号','分割
+	// 赠品订单对应的活动订单id，多个使用英文逗号&#39;,&#39;分割
 	ActSubOrderIds string `json:"act_sub_order_ids,omitempty" xml:"act_sub_order_ids,omitempty"`
 	// 批次单
 	GroupId string `json:"group_id,omitempty" xml:"group_id,omitempty"`

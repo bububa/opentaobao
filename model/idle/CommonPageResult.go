@@ -3,7 +3,7 @@ package idle
 // CommonPageResult 结构体
 type CommonPageResult struct {
 	// 商品数据
-	Data []TenderItemListVO `json:"data,omitempty" xml:"data>tender_item_list_vo,omitempty"`
+	Data []TenderItemListVo `json:"data,omitempty" xml:"data>tender_item_list_vo,omitempty"`
 	// 异常编码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 异常信息

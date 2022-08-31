@@ -6,7 +6,7 @@ type VoucherTemplateOpenInfo struct {
 	ItemSelectedOpenInfoList []ItemSelectedOpenInfo `json:"item_selected_open_info_list,omitempty" xml:"item_selected_open_info_list>item_selected_open_info,omitempty"`
 	// 1
 	ShopSelectedOpenInfoList []ShopSelectedOpenInfo `json:"shop_selected_open_info_list,omitempty" xml:"shop_selected_open_info_list>shop_selected_open_info,omitempty"`
-	// {\"type\":0,\"settings\":[{\"dayStartTime\":\"00:00\",\"dayEndTime\":\"23:59\",\"week\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7
+	// {\&#34;type\&#34;:0,\&#34;settings\&#34;:[{\&#34;dayStartTime\&#34;:\&#34;00:00\&#34;,\&#34;dayEndTime\&#34;:\&#34;23:59\&#34;,\&#34;week\&#34;:[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7
 	AvailableTime string `json:"available_time,omitempty" xml:"available_time,omitempty"`
 	// 使用说明
 	Description string `json:"description,omitempty" xml:"description,omitempty"`

@@ -72,7 +72,7 @@ func (r AlibabaEleEnterpriseCartnewSaveAPIRequest) GetLatitude() string {
 }
 
 // SetFood is Food Setter
-// [[{\"id\": 1526467414,\"new_specs\": [{\"name\": \"规格\",\"value\": \"那么大鲜柠特饮(雪碧) 660ml\"}],\"attrs\": [{\"name\": \"可选小食\",\"value\": \"金黄脆薯格\"}],\"quantity\": 2}]]
+// [[{\&#34;id\&#34;: 1526467414,\&#34;new_specs\&#34;: [{\&#34;name\&#34;: \&#34;规格\&#34;,\&#34;value\&#34;: \&#34;那么大鲜柠特饮(雪碧) 660ml\&#34;}],\&#34;attrs\&#34;: [{\&#34;name\&#34;: \&#34;可选小食\&#34;,\&#34;value\&#34;: \&#34;金黄脆薯格\&#34;}],\&#34;quantity\&#34;: 2}]]
 func (r *AlibabaEleEnterpriseCartnewSaveAPIRequest) SetFood(_food string) error {
 	r._food = _food
 	r.Set("food", _food)

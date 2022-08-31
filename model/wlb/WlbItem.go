@@ -10,9 +10,9 @@ type WlbItem struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 商家编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
-	// 标记，用逗号隔开的字符串。<br/>BIT_HAS_AUTHORIZE 第1位 是否有授权规则;<br/>BATCH  第2位 是否有批次规则；<br/>SYNCHRONIZATION 第3位 是否有同步规则。
+	// 标记，用逗号隔开的字符串。&lt;br/&gt;BIT_HAS_AUTHORIZE 第1位 是否有授权规则;&lt;br/&gt;BATCH  第2位 是否有批次规则；&lt;br/&gt;SYNCHRONIZATION 第3位 是否有同步规则。
 	Flag string `json:"flag,omitempty" xml:"flag,omitempty"`
-	// 商品类型：<br/>NORMAL--普通类型;<br/>COMBINE--组合商品;<br/>DISTRIBUTION--分销商品;<br/>默认为NORMAL
+	// 商品类型：&lt;br/&gt;NORMAL--普通类型;&lt;br/&gt;COMBINE--组合商品;&lt;br/&gt;DISTRIBUTION--分销商品;&lt;br/&gt;默认为NORMAL
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 商品备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
@@ -40,7 +40,7 @@ type WlbItem struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 商品所有人淘宝ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
-	// 父item的id，当item为物流宝子商品时，parent_id必填,否则不必填<br/>可通过父ID来得知商品的关系。
+	// 父item的id，当item为物流宝子商品时，parent_id必填,否则不必填&lt;br/&gt;可通过父ID来得知商品的关系。
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 发布版本号，用来同步商
 	PublishVersion int64 `json:"publish_version,omitempty" xml:"publish_version,omitempty"`
@@ -58,7 +58,7 @@ type WlbItem struct {
 	Volume int64 `json:"volume,omitempty" xml:"volume,omitempty"`
 	// 价格
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
-	// 是不是sku商品<br/>值为true或false
+	// 是不是sku商品&lt;br/&gt;值为true或false
 	IsSku bool `json:"is_sku,omitempty" xml:"is_sku,omitempty"`
 	// 是否易碎
 	IsFriable bool `json:"is_friable,omitempty" xml:"is_friable,omitempty"`

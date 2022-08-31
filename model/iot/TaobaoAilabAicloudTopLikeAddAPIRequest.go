@@ -143,7 +143,7 @@ func (r TaobaoAilabAicloudTopLikeAddAPIRequest) GetItemId() string {
 }
 
 // SetContent is Content Setter
-// 内容，必须要是一个json格式：{"song":"走过1999","singer":"张学友","album":"走过1999"}
+// 内容，必须要是一个json格式：{&#34;song&#34;:&#34;走过1999&#34;,&#34;singer&#34;:&#34;张学友&#34;,&#34;album&#34;:&#34;走过1999&#34;}
 func (r *TaobaoAilabAicloudTopLikeAddAPIRequest) SetContent(_content string) error {
 	r._content = _content
 	r.Set("content", _content)

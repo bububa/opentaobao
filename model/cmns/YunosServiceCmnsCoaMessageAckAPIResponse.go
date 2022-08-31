@@ -24,6 +24,6 @@ type YunosServiceCmnsCoaMessageAckAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 接口调用成功
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 接口调用成功返回信息<br/>0:未到达 1：已到达
+	// 接口调用成功返回信息&lt;br/&gt;0:未到达 1：已到达
 	Data int64 `json:"data,omitempty" xml:"data,omitempty"`
 }

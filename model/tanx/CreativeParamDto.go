@@ -10,7 +10,7 @@ type CreativeParamDto struct {
 	AdboardType string `json:"adboard_type,omitempty" xml:"adboard_type,omitempty"`
 	// 敏感词类目
 	SensitiveType string `json:"sensitive_type,omitempty" xml:"sensitive_type,omitempty"`
-	// 创意代码。creative_package_format为5, dis_type=2时，对应的值为标准json，支持的字段为：adwords,clickUrl,imgUrl,landingType,price,promoprice,sell,title如：{&quot;clickUrl&quot;:&quot;http://click.mz.simba.taobao.com/&quot;,&quot;title&quot;:&quot;老板电器旗舰店&mdash;钜惠风暴席卷月！&quot;,&quot;promoprice&quot;:&quot;188.88&quot;,&quot;sell&quot;:&quot;56&quot;, &quot;adwords&quot;:&quot;精选店铺，优惠无止尽！&quot;}
+	// 创意代码。creative_package_format为5, dis_type=2时，对应的值为标准json，支持的字段为：adwords,clickUrl,imgUrl,landingType,price,promoprice,sell,title如：{&amp;quot;clickUrl&amp;quot;:&amp;quot;http://click.mz.simba.taobao.com/&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;老板电器旗舰店&amp;mdash;钜惠风暴席卷月！&amp;quot;,&amp;quot;promoprice&amp;quot;:&amp;quot;188.88&amp;quot;,&amp;quot;sell&amp;quot;:&amp;quot;56&amp;quot;, &amp;quot;adwords&amp;quot;:&amp;quot;精选店铺，优惠无止尽！&amp;quot;}
 	AdboardData string `json:"adboard_data,omitempty" xml:"adboard_data,omitempty"`
 	// 目标地址
 	DestinationUrl string `json:"destination_url,omitempty" xml:"destination_url,omitempty"`

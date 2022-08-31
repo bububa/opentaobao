@@ -37,7 +37,7 @@ type RateVo struct {
 	// 早餐数量
 	BreakfastCount int64 `json:"breakfast_count,omitempty" xml:"breakfast_count,omitempty"`
 	// 凌晨房信息
-	DawnBookingVo *DawnBookingVO `json:"dawn_booking_vo,omitempty" xml:"dawn_booking_vo,omitempty"`
+	DawnBookingVo *DawnBookingVo `json:"dawn_booking_vo,omitempty" xml:"dawn_booking_vo,omitempty"`
 	// 是否即时确认
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
 }

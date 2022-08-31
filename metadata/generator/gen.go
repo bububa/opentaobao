@@ -228,6 +228,7 @@ func getDoc(catelogPath string, catelogPatchPath string, filename string) (metad
 	if err != nil {
 		return doc, err
 	}
+	docBytes = util.PrintableBytes(docBytes)
 	buf := new(bytes.Buffer)
 	if err := json.Compact(buf, docBytes); err != nil {
 		return doc, err
@@ -285,7 +286,6 @@ func genApi(templatePath string, apiPath string, tpl metadata.ApiTpl) error {
 		return err
 	}
 	defer fd.Close()
-	tmpl.Funcs(util.FuncMap)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }
@@ -357,7 +357,6 @@ func genModel(templatePath string, modelPath string, tpl metadata.TplModel) erro
 	defer fd.Close()
 	tpl.ImportModel = tpl.NeedImportModel()
 	metadata.AlignTplParams(tpl.Params)
-	tmpl.Funcs(util.FuncMap)
 	tmpl.Execute(fd, tpl)
 	return gofmt(targetFile)
 }

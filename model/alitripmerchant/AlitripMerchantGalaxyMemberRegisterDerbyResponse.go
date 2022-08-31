@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyMemberRegisterDerbyResponse struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 试单结果
-	Content *RegisterProgressVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *RegisterProgressVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

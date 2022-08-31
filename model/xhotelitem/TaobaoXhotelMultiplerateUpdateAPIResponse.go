@@ -21,6 +21,6 @@ type TaobaoXhotelMultiplerateUpdateAPIResponseModel struct {
 	XMLName xml.Name `xml:"xhotel_multiplerate_update_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// gid-rpid-occupancy-lengthofstay<br/>商品ID-房价ID-入住人数-连住天数
+	// gid-rpid-occupancy-lengthofstay&lt;br/&gt;商品ID-房价ID-入住人数-连住天数
 	GidAndRpidOccupancyLengthofstay string `json:"gid_and_rpid_occupancy_lengthofstay,omitempty" xml:"gid_and_rpid_occupancy_lengthofstay,omitempty"`
 }

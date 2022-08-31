@@ -10,8 +10,8 @@ import (
 // taobao.items.inventory.get
 //
 // 获取当前用户作为卖家的仓库中的商品列表，并能根据传入的搜索条件对仓库中的商品列表进行过滤
-// 只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取<br/>
-// <strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
+// 只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get获取&lt;br/&gt;
+// &lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=itemapi&#34; target=&#34;_blank&#34;&gt;点击查看更多商品API说明&lt;/a&gt;&lt;/strong&gt;
 type TaobaoItemsInventoryGetAPIRequest struct {
 	model.Params
 	// 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。<br> 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。
@@ -66,7 +66,7 @@ func (r TaobaoItemsInventoryGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFields is Fields Setter
-// 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。<br> 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。
+// 需返回的字段列表。可选值为 Item 商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru, list_time,price,has_discount,has_invoice,has_warranty,has_showcase, modified,delist_time,postage_id,seller_cids,outer_id；字段之间用“,”分隔。&lt;br&gt; 不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get。
 func (r *TaobaoItemsInventoryGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
@@ -92,7 +92,7 @@ func (r TaobaoItemsInventoryGetAPIRequest) GetQ() string {
 }
 
 // SetBanner is Banner Setter
-// 分类字段。可选值:<br>regular_shelved(定时上架)<br>never_on_shelf(从未上架)<br>off_shelf(我下架的)<br><font color='red'>for_shelved(等待所有上架)<br>sold_out(全部卖完)<br>violation_off_shelf(违规下架的)<br>默认查询for_shelved(等待所有上架)这个状态的商品<br></font>注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)
+// 分类字段。可选值:&lt;br&gt;regular_shelved(定时上架)&lt;br&gt;never_on_shelf(从未上架)&lt;br&gt;off_shelf(我下架的)&lt;br&gt;&lt;font color=&#39;red&#39;&gt;for_shelved(等待所有上架)&lt;br&gt;sold_out(全部卖完)&lt;br&gt;violation_off_shelf(违规下架的)&lt;br&gt;默认查询for_shelved(等待所有上架)这个状态的商品&lt;br&gt;&lt;/font&gt;注：for_shelved(等待所有上架)=regular_shelved(定时上架)+never_on_shelf(从未上架)+off_shelf(我下架的)
 func (r *TaobaoItemsInventoryGetAPIRequest) SetBanner(_banner string) error {
 	r._banner = _banner
 	r.Set("banner", _banner)
@@ -105,7 +105,7 @@ func (r TaobaoItemsInventoryGetAPIRequest) GetBanner() string {
 }
 
 // SetSellerCids is SellerCids Setter
-// 卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(<font color="red">注：目前最多支持32个ID号传入</font>)
+// 卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(&lt;font color=&#34;red&#34;&gt;注：目前最多支持32个ID号传入&lt;/font&gt;)
 func (r *TaobaoItemsInventoryGetAPIRequest) SetSellerCids(_sellerCids string) error {
 	r._sellerCids = _sellerCids
 	r.Set("seller_cids", _sellerCids)

@@ -12,6 +12,6 @@ type ParcelTopDto struct {
 	Weight string `json:"weight,omitempty" xml:"weight,omitempty"`
 	// Height of the parcel in the shipment order. Default unit: centimeters
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
-	// number of the parcel and there's only one parcel
+	// number of the parcel and there&#39;s only one parcel
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

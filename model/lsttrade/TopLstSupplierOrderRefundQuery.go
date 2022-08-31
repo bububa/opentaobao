@@ -4,7 +4,7 @@ package lsttrade
 type TopLstSupplierOrderRefundQuery struct {
 	// 退款申请时间（起始）
 	ApplyEndTime string `json:"apply_end_time,omitempty" xml:"apply_end_time,omitempty"`
-	// 退款状态，等待卖家同意("waitselleragree"), 退款成功("refundsuccess"), 退款关闭("refundclose"), 待买家修改("waitbuyermodify"), 等待买家退货("waitbuyersend"), 等待卖家确认收货("waitsellerreceive");
+	// 退款状态，等待卖家同意(&#34;waitselleragree&#34;), 退款成功(&#34;refundsuccess&#34;), 退款关闭(&#34;refundclose&#34;), 待买家修改(&#34;waitbuyermodify&#34;), 等待买家退货(&#34;waitbuyersend&#34;), 等待卖家确认收货(&#34;waitsellerreceive&#34;);
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款单id
 	RefundId string `json:"refund_id,omitempty" xml:"refund_id,omitempty"`

@@ -13,7 +13,7 @@ import (
 type TaobaoTrainAgentOrderLockAPIRequest struct {
 	model.Params
 	// 入参
-	_param *LockOrderRQ
+	_param *LockOrderRq
 }
 
 // NewTaobaoTrainAgentOrderLockRequest 初始化TaobaoTrainAgentOrderLockAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoTrainAgentOrderLockAPIRequest) GetApiParams() url.Values {
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaoTrainAgentOrderLockAPIRequest) SetParam(_param *LockOrderRQ) error {
+func (r *TaobaoTrainAgentOrderLockAPIRequest) SetParam(_param *LockOrderRq) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoTrainAgentOrderLockAPIRequest) GetParam() *LockOrderRQ {
+func (r TaobaoTrainAgentOrderLockAPIRequest) GetParam() *LockOrderRq {
 	return r._param
 }

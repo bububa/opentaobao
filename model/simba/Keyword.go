@@ -8,7 +8,7 @@ type Keyword struct {
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 关键词
 	Word string `json:"word,omitempty" xml:"word,omitempty"`
-	// 审核状态： <br/>audit_wait-待审核；<br/>audit_pass-审核通过(上线)；<br/>audit_reject-审核拒绝；<br/>audit_offline-审核直接下线；<br/>默认为 audit_pass。
+	// 审核状态： &lt;br/&gt;audit_wait-待审核；&lt;br/&gt;audit_pass-审核通过(上线)；&lt;br/&gt;audit_reject-审核拒绝；&lt;br/&gt;audit_offline-审核直接下线；&lt;br/&gt;默认为 audit_pass。
 	AuditStatus string `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
 	// 审核拒绝原因描述
 	AuditDesc string `json:"audit_desc,omitempty" xml:"audit_desc,omitempty"`

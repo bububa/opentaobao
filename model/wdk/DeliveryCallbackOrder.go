@@ -6,7 +6,7 @@ type DeliveryCallbackOrder struct {
 	RefusedOrderDetails []DeliveryCallbackOrderDetail `json:"refused_order_details,omitempty" xml:"refused_order_details>delivery_callback_order_detail,omitempty"`
 	// 作业单号
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`
-	// 作业状态变更类型：SHIP("揽收"),SIGN("妥投"),SIGN_ERROR("配送异常"),REFUSE("拒收")
+	// 作业状态变更类型：SHIP(&#34;揽收&#34;),SIGN(&#34;妥投&#34;),SIGN_ERROR(&#34;配送异常&#34;),REFUSE(&#34;拒收&#34;)
 	StatusChangeType string `json:"status_change_type,omitempty" xml:"status_change_type,omitempty"`
 	// 作业状态变更时间
 	StatusChangeTime string `json:"status_change_time,omitempty" xml:"status_change_time,omitempty"`

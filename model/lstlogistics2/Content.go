@@ -16,7 +16,7 @@ type Content struct {
 	DriverMobile string `json:"driver_mobile,omitempty" xml:"driver_mobile,omitempty"`
 	// 司机
 	DriverName string `json:"driver_name,omitempty" xml:"driver_name,omitempty"`
-	// * 发货单状态 * NEW          ---> 新建 * LOAD_WAIT    ---> 待装车 * LOAD_SUCCESS  ---> 已装车 * SIGN_SUCCESS  ---> 签收、部分签收 * SIGN_FAILED   ---> 拒签 * CANCEL        ---> 取消
+	// * 发货单状态 * NEW          ---&gt; 新建 * LOAD_WAIT    ---&gt; 待装车 * LOAD_SUCCESS  ---&gt; 已装车 * SIGN_SUCCESS  ---&gt; 签收、部分签收 * SIGN_FAILED   ---&gt; 拒签 * CANCEL        ---&gt; 取消
 	ShipStatus string `json:"ship_status,omitempty" xml:"ship_status,omitempty"`
 	// 出库时间
 	OutBoundTime string `json:"out_bound_time,omitempty" xml:"out_bound_time,omitempty"`

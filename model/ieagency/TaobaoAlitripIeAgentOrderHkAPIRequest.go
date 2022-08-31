@@ -15,7 +15,7 @@ type TaobaoAlitripIeAgentOrderHkAPIRequest struct {
 	// 代理商ID
 	_agentId int64
 	// 回填pnr信息
-	_writeBackPnrVO *IeWriteBackPnrVO
+	_writeBackPnrVO *IeWriteBackPnrVo
 }
 
 // NewTaobaoAlitripIeAgentOrderHkRequest 初始化TaobaoAlitripIeAgentOrderHkAPIRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetAgentId() int64 {
 
 // SetWriteBackPnrVO is WriteBackPnrVO Setter
 // 回填pnr信息
-func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetWriteBackPnrVO(_writeBackPnrVO *IeWriteBackPnrVO) error {
+func (r *TaobaoAlitripIeAgentOrderHkAPIRequest) SetWriteBackPnrVO(_writeBackPnrVO *IeWriteBackPnrVo) error {
 	r._writeBackPnrVO = _writeBackPnrVO
 	r.Set("write_back_pnr_v_o", _writeBackPnrVO)
 	return nil
 }
 
 // GetWriteBackPnrVO WriteBackPnrVO Getter
-func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetWriteBackPnrVO() *IeWriteBackPnrVO {
+func (r TaobaoAlitripIeAgentOrderHkAPIRequest) GetWriteBackPnrVO() *IeWriteBackPnrVo {
 	return r._writeBackPnrVO
 }

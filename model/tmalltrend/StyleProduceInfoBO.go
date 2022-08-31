@@ -2,7 +2,7 @@ package tmalltrend
 
 // StyleProduceInfoBO 结构体
 type StyleProduceInfoBO struct {
-	// 款式生产信息同步目的，枚举，INSERT("新增"), UPDATE("更新"), OFFLINE("下线");
+	// 款式生产信息同步目的，枚举，INSERT(&#34;新增&#34;), UPDATE(&#34;更新&#34;), OFFLINE(&#34;下线&#34;);
 	SyncPurpose string `json:"sync_purpose,omitempty" xml:"sync_purpose,omitempty"`
 	// 生产价格区间
 	ProducePriceRange string `json:"produce_price_range,omitempty" xml:"produce_price_range,omitempty"`

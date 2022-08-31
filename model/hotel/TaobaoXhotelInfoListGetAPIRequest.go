@@ -85,7 +85,7 @@ func (r TaobaoXhotelInfoListGetAPIRequest) GetShid() int64 {
 }
 
 // SetCurrentPage is CurrentPage Setter
-// 分页参数：当前页数，从1开始计数。<br/>默认值：1
+// 分页参数：当前页数，从1开始计数。&lt;br/&gt;默认值：1
 func (r *TaobaoXhotelInfoListGetAPIRequest) SetCurrentPage(_currentPage int64) error {
 	r._currentPage = _currentPage
 	r.Set("current_page", _currentPage)

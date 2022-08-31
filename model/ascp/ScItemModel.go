@@ -26,7 +26,7 @@ type ScItemModel struct {
 	CategoryName string `json:"category_name,omitempty" xml:"category_name,omitempty"`
 	// 货品主图URL
 	PicPath string `json:"pic_path,omitempty" xml:"pic_path,omitempty"`
-	// 存储条件。NORMAL： 常温 COOL： 阴凉 5°C-12°C FRESHNESS：保鲜 0°C-4°C REEFER：冷藏 -18°C-0°C THERMOSTATIC：恒温 18°C-25°C FROZEN：冷冻 <-18°C COOL_AND_DRY：阴凉干燥 5°C-25°C,相对湿度65%以下
+	// 存储条件。NORMAL： 常温 COOL： 阴凉 5°C-12°C FRESHNESS：保鲜 0°C-4°C REEFER：冷藏 -18°C-0°C THERMOSTATIC：恒温 18°C-25°C FROZEN：冷冻 &lt;-18°C COOL_AND_DRY：阴凉干燥 5°C-25°C,相对湿度65%以下
 	StorageEnvironment string `json:"storage_environment,omitempty" xml:"storage_environment,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`

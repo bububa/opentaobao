@@ -48,7 +48,7 @@ func (r TaobaoTbkDgNewuserOrderSumAPIRequest) GetApiParams() url.Values {
 }
 
 // SetActivityId is ActivityId Setter
-// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=8599277
+// 活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301&amp;postId=8599277
 func (r *TaobaoTbkDgNewuserOrderSumAPIRequest) SetActivityId(_activityId string) error {
 	r._activityId = _activityId
 	r.Set("activity_id", _activityId)

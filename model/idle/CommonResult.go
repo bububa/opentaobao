@@ -7,7 +7,7 @@ type CommonResult struct {
 	// 异常描述
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 结果数据
-	Data *QuestionnaireInfoTopVO `json:"data,omitempty" xml:"data,omitempty"`
+	Data *QuestionnaireInfoTopVo `json:"data,omitempty" xml:"data,omitempty"`
 	// 请求结果
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

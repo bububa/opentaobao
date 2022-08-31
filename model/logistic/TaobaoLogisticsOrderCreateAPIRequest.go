@@ -149,7 +149,7 @@ func (r TaobaoLogisticsOrderCreateAPIRequest) GetLogisType() string {
 }
 
 // SetOrderType is OrderType Setter
-// 物流发货类型：1-普通订单<br/>不填为默认类型 1-普通订单
+// 物流发货类型：1-普通订单&lt;br/&gt;不填为默认类型 1-普通订单
 func (r *TaobaoLogisticsOrderCreateAPIRequest) SetOrderType(_orderType int64) error {
 	r._orderType = _orderType
 	r.Set("order_type", _orderType)

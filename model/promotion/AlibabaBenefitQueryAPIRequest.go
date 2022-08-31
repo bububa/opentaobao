@@ -74,7 +74,7 @@ func (r AlibabaBenefitQueryAPIRequest) GetAwardType() string {
 }
 
 // SetAppName is AppName Setter
-// 商家来源身份标识（"promotion-"+appId）
+// 商家来源身份标识（&#34;promotion-&#34;+appId）
 func (r *AlibabaBenefitQueryAPIRequest) SetAppName(_appName string) error {
 	r._appName = _appName
 	r.Set("app_name", _appName)

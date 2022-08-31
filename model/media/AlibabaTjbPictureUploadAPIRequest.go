@@ -42,7 +42,7 @@ func (r AlibabaTjbPictureUploadAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFileName is FileName Setter
-// 图片名，可包含扩展名，与上传后返回的图片名一致。最长50个字符，不允许/,\,:,*,?,",<,>,|,;这些特殊字符。
+// 图片名，可包含扩展名，与上传后返回的图片名一致。最长50个字符，不允许/,\,:,*,?,&#34;,&lt;,&gt;,|,;这些特殊字符。
 func (r *AlibabaTjbPictureUploadAPIRequest) SetFileName(_fileName string) error {
 	r._fileName = _fileName
 	r.Set("file_name", _fileName)

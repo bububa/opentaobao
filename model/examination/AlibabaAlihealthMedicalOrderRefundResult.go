@@ -9,5 +9,5 @@ type AlibabaAlihealthMedicalOrderRefundResult struct {
 	// 返回信息
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// 返回数据
-	Data *OrderRefundVO `json:"data,omitempty" xml:"data,omitempty"`
+	Data *OrderRefundVo `json:"data,omitempty" xml:"data,omitempty"`
 }

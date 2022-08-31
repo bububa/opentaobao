@@ -2,7 +2,7 @@ package product
 
 // ItemDescModule 结构体
 type ItemDescModule struct {
-	// 一个List<String>的Json串，里面是模块引导提示，不超过3条（isv提交时可忽略不传）
+	// 一个List&lt;String&gt;的Json串，里面是模块引导提示，不超过3条（isv提交时可忽略不传）
 	Intros string `json:"intros,omitempty" xml:"intros,omitempty"`
 	// 淘宝图片空间的地址链接，示例模板，最多不超过三个（isv提交时可忽略不传）
 	TplUrls string `json:"tpl_urls,omitempty" xml:"tpl_urls,omitempty"`

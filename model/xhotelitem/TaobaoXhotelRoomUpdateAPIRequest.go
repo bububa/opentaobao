@@ -150,7 +150,7 @@ func (r TaobaoXhotelRoomUpdateAPIRequest) GetReceiptInfo() string {
 }
 
 // SetInventory is Inventory Setter
-// 房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{"date":2011-01-28,"quota":10,"al_quota":2,"sp_quota":3}]
+// 房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{&#34;date&#34;:2011-01-28,&#34;quota&#34;:10,&#34;al_quota&#34;:2,&#34;sp_quota&#34;:3}]
 func (r *TaobaoXhotelRoomUpdateAPIRequest) SetInventory(_inventory string) error {
 	r._inventory = _inventory
 	r.Set("inventory", _inventory)

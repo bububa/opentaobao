@@ -75,7 +75,7 @@ func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetAppSignature()
 }
 
 // SetCategoryId is CategoryId Setter
-// 类目 ID 如何获取category_id，请参考，https://open.taobao.com/api.htm?docId=45801&docType=2&scopeId=17063
+// 类目 ID 如何获取category_id，请参考，https://open.taobao.com/api.htm?docId=45801&amp;docType=2&amp;scopeId=17063
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetCategoryId(_categoryId string) error {
 	r._categoryId = _categoryId
 	r.Set("category_id", _categoryId)
@@ -114,7 +114,7 @@ func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetPromotionEndTi
 }
 
 // SetPromotionName is PromotionName Setter
-// 主题活动的名称，如何获取主题活动，请参考"get featuredpromo info" API. 固定主题：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）
+// 主题活动的名称，如何获取主题活动，请参考&#34;get featuredpromo info&#34; API. 固定主题：高佣品（Hot Product）、新品（New Arrival）、热销商品（Best Seller）、每周尖货（weeklydeals）
 func (r *AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) SetPromotionName(_promotionName string) error {
 	r._promotionName = _promotionName
 	r.Set("promotion_name", _promotionName)

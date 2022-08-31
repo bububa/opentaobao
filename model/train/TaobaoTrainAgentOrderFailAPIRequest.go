@@ -13,7 +13,7 @@ import (
 type TaobaoTrainAgentOrderFailAPIRequest struct {
 	model.Params
 	// rq
-	_param *BookTicketFailRQ
+	_param *BookTicketFailRq
 }
 
 // NewTaobaoTrainAgentOrderFailRequest 初始化TaobaoTrainAgentOrderFailAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoTrainAgentOrderFailAPIRequest) GetApiParams() url.Values {
 
 // SetParam is Param Setter
 // rq
-func (r *TaobaoTrainAgentOrderFailAPIRequest) SetParam(_param *BookTicketFailRQ) error {
+func (r *TaobaoTrainAgentOrderFailAPIRequest) SetParam(_param *BookTicketFailRq) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoTrainAgentOrderFailAPIRequest) GetParam() *BookTicketFailRQ {
+func (r TaobaoTrainAgentOrderFailAPIRequest) GetParam() *BookTicketFailRq {
 	return r._param
 }

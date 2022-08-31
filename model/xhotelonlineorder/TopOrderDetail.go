@@ -4,9 +4,9 @@ package xhotelonlineorder
 type TopOrderDetail struct {
 	// 关联子订单对象
 	TopRelationOrders []string `json:"top_relation_orders,omitempty" xml:"top_relation_orders>string,omitempty"`
-	// List<TopDailyInfo>
+	// List&lt;TopDailyInfo&gt;
 	TopDailyInfos []TopDailyInfo `json:"top_daily_infos,omitempty" xml:"top_daily_infos>top_daily_info,omitempty"`
-	// List<TopOrderGuest>
+	// List&lt;TopOrderGuest&gt;
 	TopOrderGuests []TopOrderGuest `json:"top_order_guests,omitempty" xml:"top_order_guests>top_order_guest,omitempty"`
 	// rp名称
 	RpName string `json:"rp_name,omitempty" xml:"rp_name,omitempty"`

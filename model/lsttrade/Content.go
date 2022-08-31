@@ -8,7 +8,7 @@ type Content struct {
 	Discription string `json:"discription,omitempty" xml:"discription,omitempty"`
 	// 退款原因
 	ApplyReason string `json:"apply_reason,omitempty" xml:"apply_reason,omitempty"`
-	// 退款状态，等待卖家同意("waitselleragree"), 退款成功("refundsuccess"), 退款关闭("refundclose"), 待买家修改("waitbuyermodify"), 等待买家退货("waitbuyersend"), 等待卖家确认收货("waitsellerreceive");
+	// 退款状态，等待卖家同意(&#34;waitselleragree&#34;), 退款成功(&#34;refundsuccess&#34;), 退款关闭(&#34;refundclose&#34;), 待买家修改(&#34;waitbuyermodify&#34;), 等待买家退货(&#34;waitbuyersend&#34;), 等待卖家确认收货(&#34;waitsellerreceive&#34;);
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 退款完成时间
 	GmtCompleted string `json:"gmt_completed,omitempty" xml:"gmt_completed,omitempty"`

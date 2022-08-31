@@ -8,19 +8,19 @@ type WlbOrderDetail struct {
 	OperateType string `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 	// 订单编码
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
-	// 订单来源:<br/>产生物流订单的原因，比如:<br/><br/>订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS
+	// 订单来源:&lt;br/&gt;产生物流订单的原因，比如:&lt;br/&gt;&lt;br/&gt;订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS
 	OrderSource string `json:"order_source,omitempty" xml:"order_source,omitempty"`
 	// 对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用
 	OrderSourceCode string `json:"order_source_code,omitempty" xml:"order_source_code,omitempty"`
-	// 1:正常订单: NARMAL<br/>2:退货订单: RETURN<br/>3:换货订单: CHANGE
+	// 1:正常订单: NARMAL&lt;br/&gt;2:退货订单: RETURN&lt;br/&gt;3:换货订单: CHANGE
 	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
-	// (1)其它:    OTHER<br/>(2)淘宝交易: TAOBAO<br/>(3)301:调拨: ALLOCATION<br/>(4)401:盘点:CHECK<br/>(5)501:销售采购:PRUCHASE
+	// (1)其它:    OTHER&lt;br/&gt;(2)淘宝交易: TAOBAO&lt;br/&gt;(3)301:调拨: ALLOCATION&lt;br/&gt;(4)401:盘点:CHECK&lt;br/&gt;(5)501:销售采购:PRUCHASE
 	OrderSubType string `json:"order_sub_type,omitempty" xml:"order_sub_type,omitempty"`
 	// 卖家NICK
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 	// 仓库编码
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
-	// 物流状态，<br/>订单已创建：0<br/>订单已取消: -1<br/>订单关闭:-3<br/>下发中: 10<br/>已下发: 11<br/>接收方拒签 :-100<br/>已发货:100<br/>签收成功:200
+	// 物流状态，&lt;br/&gt;订单已创建：0&lt;br/&gt;订单已取消: -1&lt;br/&gt;订单关闭:-3&lt;br/&gt;下发中: 10&lt;br/&gt;已下发: 11&lt;br/&gt;接收方拒签 :-100&lt;br/&gt;已发货:100&lt;br/&gt;签收成功:200
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`

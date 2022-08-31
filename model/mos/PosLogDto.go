@@ -8,7 +8,7 @@ type PosLogDto struct {
 	OperStep string `json:"oper_step,omitempty" xml:"oper_step,omitempty"`
 	// 外部订单号
 	OutTradeNo string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
-	// pos机类型:POS("大POS"), SHOPPE(" 单品开票"), COUNTER("专柜自收银"), CLOUDPOS("云POS");
+	// pos机类型:POS(&#34;大POS&#34;), SHOPPE(&#34; 单品开票&#34;), COUNTER(&#34;专柜自收银&#34;), CLOUDPOS(&#34;云POS&#34;);
 	PosType string `json:"pos_type,omitempty" xml:"pos_type,omitempty"`
 	// pos机版本号
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
@@ -46,7 +46,7 @@ type PosLogDto struct {
 	ApiUrl string `json:"api_url,omitempty" xml:"api_url,omitempty"`
 	// 收银机号
 	PosNo string `json:"pos_no,omitempty" xml:"pos_no,omitempty"`
-	// OPER("步骤"), REMOTESERVICE(" 远程服务调用"), TRANS("传输日志"), DEFAULT("默认");
+	// OPER(&#34;步骤&#34;), REMOTESERVICE(&#34; 远程服务调用&#34;), TRANS(&#34;传输日志&#34;), DEFAULT(&#34;默认&#34;);
 	LogType string `json:"log_type,omitempty" xml:"log_type,omitempty"`
 	// 收银员
 	Cashier string `json:"cashier,omitempty" xml:"cashier,omitempty"`

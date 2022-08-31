@@ -9,7 +9,7 @@ import (
 // TaobaoFenxiaoProductsGetAPIRequest 查询产品列表 API请求
 // taobao.fenxiao.products.get
 //
-// 查询供应商的产品数据。<br/><br/>    * 入参传入pids将优先查询，即只按这个条件查询。<br/>    *入参传入sku_number将优先查询(没有传入pids)，即只按这个条件查询(最多显示50条)<br/>    * 入参fields传skus将查询sku的数据，不传该参数默认不查询，返回产品的其它信息。<br/>    * 入参fields传入images将查询多图数据，不传只返回主图数据。<br/>    * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）<br/>    * 查询结果按照产品发布时间倒序，即时间近的数据在前。
+// 查询供应商的产品数据。&lt;br/&gt;&lt;br/&gt;    * 入参传入pids将优先查询，即只按这个条件查询。&lt;br/&gt;    *入参传入sku_number将优先查询(没有传入pids)，即只按这个条件查询(最多显示50条)&lt;br/&gt;    * 入参fields传skus将查询sku的数据，不传该参数默认不查询，返回产品的其它信息。&lt;br/&gt;    * 入参fields传入images将查询多图数据，不传只返回主图数据。&lt;br/&gt;    * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）&lt;br/&gt;    * 查询结果按照产品发布时间倒序，即时间近的数据在前。
 type TaobaoFenxiaoProductsGetAPIRequest struct {
 	model.Params
 	// 商家编码
@@ -136,7 +136,7 @@ func (r TaobaoFenxiaoProductsGetAPIRequest) GetSkuNumber() string {
 }
 
 // SetIsAuthz is IsAuthz Setter
-// 查询产品列表时，查询入参“是否需要授权”<br/>yes:需要授权 <br/>no:不需要授权
+// 查询产品列表时，查询入参“是否需要授权”&lt;br/&gt;yes:需要授权 &lt;br/&gt;no:不需要授权
 func (r *TaobaoFenxiaoProductsGetAPIRequest) SetIsAuthz(_isAuthz string) error {
 	r._isAuthz = _isAuthz
 	r.Set("is_authz", _isAuthz)

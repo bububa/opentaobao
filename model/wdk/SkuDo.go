@@ -242,9 +242,9 @@ type SkuDo struct {
 	AllowAppSale int64 `json:"allow_app_sale,omitempty" xml:"allow_app_sale,omitempty"`
 	// 门店来控制本门店是否在app上让该商品可见，? 1可见? 0不可见
 	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
-	// 禁收时限；收货日期-商品生产日期<限收时限 才允许收货。建议淘鲜达商家填默认值为保质期天数。或按进口商品保质期天数的2/3、非进口商品的1/2填写
+	// 禁收时限；收货日期-商品生产日期&lt;限收时限 才允许收货。建议淘鲜达商家填默认值为保质期天数。或按进口商品保质期天数的2/3、非进口商品的1/2填写
 	ForbidReceiveDays int64 `json:"forbid_receive_days,omitempty" xml:"forbid_receive_days,omitempty"`
-	// 商品生产日期+保质期-当前日期<禁售时限，不能出库销售。建议淘鲜达商家填默认值0。
+	// 商品生产日期+保质期-当前日期&lt;禁售时限，不能出库销售。建议淘鲜达商家填默认值0。
 	ForbidSalesDays int64 `json:"forbid_sales_days,omitempty" xml:"forbid_sales_days,omitempty"`
 	// 库存监控报表中，剩余天数少于该天数时需要预警，建议淘鲜达商家填默认值0
 	WarnDays int64 `json:"warn_days,omitempty" xml:"warn_days,omitempty"`
@@ -276,6 +276,6 @@ type SkuDo struct {
 	SaleFlagForQuery int64 `json:"sale_flag_for_query,omitempty" xml:"sale_flag_for_query,omitempty"`
 	// 是否清空会员价, 1清空会员价（操作之后没有会员价），0不清空会员价
 	CleanSkuMemberPrice int64 `json:"clean_sku_member_price,omitempty" xml:"clean_sku_member_price,omitempty"`
-	// 修改条码策略，默认为策略3。<br/>如商品现有主条码barcode1、非主条码barcode2<br/>1、新增barcodes指定了新的主条码barcode3,会将原主条码barcde1改为非主条码,最终商品有三个条码,即:非主条码barcde1、非主条码barcode2、主条码barcode3<br/> 2、删除barcodes对应条码，除了主条码<br/> 3、替换主条码 则会将现有主条码删除,新增指定主条码,只认barcodes中第一个条码，商品最终结果条码个数为两个条码:非主条码barcode2、主条码barcode3<br/> 4、除主条码外,所有条码替换为指定barcodes,不支持主条码修改。如果barcodes中为barcode3,barcode4,则商品最终条码为:主条码barcode1,非barcode3,barcode4。其中非主条码barcode2被删除
+	// 修改条码策略，默认为策略3。&lt;br/&gt;如商品现有主条码barcode1、非主条码barcode2&lt;br/&gt;1、新增barcodes指定了新的主条码barcode3,会将原主条码barcde1改为非主条码,最终商品有三个条码,即:非主条码barcde1、非主条码barcode2、主条码barcode3&lt;br/&gt; 2、删除barcodes对应条码，除了主条码&lt;br/&gt; 3、替换主条码 则会将现有主条码删除,新增指定主条码,只认barcodes中第一个条码，商品最终结果条码个数为两个条码:非主条码barcode2、主条码barcode3&lt;br/&gt; 4、除主条码外,所有条码替换为指定barcodes,不支持主条码修改。如果barcodes中为barcode3,barcode4,则商品最终条码为:主条码barcode1,非barcode3,barcode4。其中非主条码barcode2被删除
 	BarcodeUpdateType int64 `json:"barcode_update_type,omitempty" xml:"barcode_update_type,omitempty"`
 }

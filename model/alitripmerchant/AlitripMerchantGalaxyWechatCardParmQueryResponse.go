@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyWechatCardParmQueryResponse struct {
 	// 错误消息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 添加会员参数对象
-	Content *MemberCardParamVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *MemberCardParamVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

@@ -8,10 +8,10 @@ type CouponTemplateCommonConfig struct {
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
 	// 优惠券名称
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 优惠券发放方式 ANONYMOUS("anonymous","匿名券"), REGISTERED("registered","记名券"),
+	// 优惠券发放方式 ANONYMOUS(&#34;anonymous&#34;,&#34;匿名券&#34;), REGISTERED(&#34;registered&#34;,&#34;记名券&#34;),
 	SendType string `json:"send_type,omitempty" xml:"send_type,omitempty"`
-	// 模板状态 NORMAL(1, "有效"), DELETE(-1, "删除"), ENDING(0, "结束领取"), NOUSE(-2, "无效"), WDK_COUPON_DRAFT(-999, "草稿"),
+	// 模板状态 NORMAL(1, &#34;有效&#34;), DELETE(-1, &#34;删除&#34;), ENDING(0, &#34;结束领取&#34;), NOUSE(-2, &#34;无效&#34;), WDK_COUPON_DRAFT(-999, &#34;草稿&#34;),
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 优惠券类型 UNIT_PRICE(10,"unitPrice","单品定价券"), FULL_AMOUNT_REDUCE(11, "fullAmountReduce", "满元减券"), FULL_AMOUNT_DISCOUNT(12, "fullAmountDiscount", "满元折券"), FULL_COUNT_REDUCE(13, "fullCountReduce", "满件减券"), FULL_COUNT_DISCOUNT(14, "fullCountDiscount", "满件折券"), VOUCHER(15, "voucher", "抵用券"),
+	// 优惠券类型 UNIT_PRICE(10,&#34;unitPrice&#34;,&#34;单品定价券&#34;), FULL_AMOUNT_REDUCE(11, &#34;fullAmountReduce&#34;, &#34;满元减券&#34;), FULL_AMOUNT_DISCOUNT(12, &#34;fullAmountDiscount&#34;, &#34;满元折券&#34;), FULL_COUNT_REDUCE(13, &#34;fullCountReduce&#34;, &#34;满件减券&#34;), FULL_COUNT_DISCOUNT(14, &#34;fullCountDiscount&#34;, &#34;满件折券&#34;), VOUCHER(15, &#34;voucher&#34;, &#34;抵用券&#34;),
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 }

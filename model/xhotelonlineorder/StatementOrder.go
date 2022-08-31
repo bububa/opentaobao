@@ -24,7 +24,7 @@ type StatementOrder struct {
 	OtherFee string `json:"other_fee,omitempty" xml:"other_fee,omitempty"`
 	// 结算日期
 	SettleDate string `json:"settle_date,omitempty" xml:"settle_date,omitempty"`
-	// 分账状态 (0, "未分账"),(1, "分账成功"),(3, "分账失败"), (2, "无需分账"),(4,"预处理成功");
+	// 分账状态 (0, &#34;未分账&#34;),(1, &#34;分账成功&#34;),(3, &#34;分账失败&#34;), (2, &#34;无需分账&#34;),(4,&#34;预处理成功&#34;);
 	SettleStatus string `json:"settle_status,omitempty" xml:"settle_status,omitempty"`
 	// 入住时间
 	CheckIn string `json:"check_in,omitempty" xml:"check_in,omitempty"`

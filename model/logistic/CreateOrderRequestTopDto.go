@@ -16,7 +16,7 @@ type CreateOrderRequestTopDto struct {
 	Parcel *ParcelTopDto `json:"parcel,omitempty" xml:"parcel,omitempty"`
 	// Delivery option id selected by a sender
 	DeliveryMethodId int64 `json:"delivery_method_id,omitempty" xml:"delivery_method_id,omitempty"`
-	// It's sales order id and a 16-digit number. There will be mapping between trade order and shipment order
+	// It&#39;s sales order id and a 16-digit number. There will be mapping between trade order and shipment order
 	TradeOrderId int64 `json:"trade_order_id,omitempty" xml:"trade_order_id,omitempty"`
 	// receiver address
 	ReceiptAddress *AddressTopDto `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`

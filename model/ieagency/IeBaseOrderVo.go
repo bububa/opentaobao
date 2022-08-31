@@ -28,7 +28,7 @@ type IeBaseOrderVo struct {
 	InboundArrTime string `json:"inbound_arr_time,omitempty" xml:"inbound_arr_time,omitempty"`
 	// 回程出发日期
 	InboundDepTime string `json:"inbound_dep_time,omitempty" xml:"inbound_dep_time,omitempty"`
-	// 订单状态(Init:初始状态,BookSuccess:"预定成功,PaySuccess:付款成功,TicketSuccess:订单成功,Close:订单关闭)
+	// 订单状态(Init:初始状态,BookSuccess:&#34;预定成功,PaySuccess:付款成功,TicketSuccess:订单成功,Close:订单关闭)
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 出发到达日期
 	OutboundArrTime string `json:"outbound_arr_time,omitempty" xml:"outbound_arr_time,omitempty"`

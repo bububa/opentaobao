@@ -4,7 +4,7 @@ package xhotelitem
 type Rate struct {
 	// 名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 价格和库存信息。<br/>A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。<br/>B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复<br/>C:price 价格 int类型 取值范围1-99999999 单位为分<br/>D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
+	// 价格和库存信息。&lt;br/&gt;A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。&lt;br/&gt;B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复&lt;br/&gt;C:price 价格 int类型 取值范围1-99999999 单位为分&lt;br/&gt;D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
 	InventoryPrice string `json:"inventory_price,omitempty" xml:"inventory_price,omitempty"`
 	// 创建时间
 	CreatedTime string `json:"created_time,omitempty" xml:"created_time,omitempty"`
@@ -12,7 +12,7 @@ type Rate struct {
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
 	// 结构化的库存和开关,   	 date 日期 	 price 价格 int 类型, 取值范围1-99999999 单位为分  	 quota 普通库存 int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开)  	 alQuota 协议保留房库存  int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) 	 genAlQuota 普通保留房库存, int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) 	 rateSwitch  date日期的价格开关, 值为true时,表示当天价格开, false表示价格关
 	InvPriceWithSwitch string `json:"inv_price_with_switch,omitempty" xml:"inv_price_with_switch,omitempty"`
-	// rate 维度下特殊标签含义 json: {"ebk-tail-room-Rate":1}, key:ebk-tail-room-Rate 表示rate维度ebk尾房标
+	// rate 维度下特殊标签含义 json: {&#34;ebk-tail-room-Rate&#34;:1}, key:ebk-tail-room-Rate 表示rate维度ebk尾房标
 	TagJson string `json:"tag_json,omitempty" xml:"tag_json,omitempty"`
 	// 酒店商品id
 	Gid int64 `json:"gid,omitempty" xml:"gid,omitempty"`

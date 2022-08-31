@@ -10,6 +10,6 @@ type TaobaoUsceslBizLightUpResult struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// true或者false
 	IsSuccess string `json:"is_success,omitempty" xml:"is_success,omitempty"`
-	// 返回执行码，>=0表示成功
+	// 返回执行码，&gt;=0表示成功
 	ReturnCode int64 `json:"return_code,omitempty" xml:"return_code,omitempty"`
 }
