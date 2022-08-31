@@ -14,9 +14,9 @@ type AgentConfirmBookRq struct {
 	FetchTicketsNumber string `json:"fetch_tickets_number,omitempty" xml:"fetch_tickets_number,omitempty"`
 	// 取票密码
 	FetchTicketsPwd string `json:"fetch_tickets_pwd,omitempty" xml:"fetch_tickets_pwd,omitempty"`
-	// 短信内容。商家如有特殊定制，则需要严格按照参数返回json格式数据。{"driverContactPhone":"18611330989","identificationCode","988838389","ticketInstructions":"套票使用说明"} driverContactPhone:司机联系电话 identificationCode:乘车验证码 ticketInstructions:门票使用说明（仅供门票+车票 类型商品使用，非必填，默认为“凭身份证入园”）
+	// 短信内容。商家如有特殊定制，则需要严格按照参数返回json格式数据。{&#34;driverContactPhone&#34;:&#34;18611330989&#34;,&#34;identificationCode&#34;,&#34;988838389&#34;,&#34;ticketInstructions&#34;:&#34;套票使用说明&#34;} driverContactPhone:司机联系电话 identificationCode:乘车验证码 ticketInstructions:门票使用说明（仅供门票+车票 类型商品使用，非必填，默认为“凭身份证入园”）
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
-	// 座位号，多个座位号以","分隔
+	// 座位号，多个座位号以&#34;,&#34;分隔
 	RiderSeatNumbers string `json:"rider_seat_numbers,omitempty" xml:"rider_seat_numbers,omitempty"`
 	// 检票口
 	TicketWicket string `json:"ticket_wicket,omitempty" xml:"ticket_wicket,omitempty"`

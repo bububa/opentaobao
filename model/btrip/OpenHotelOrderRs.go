@@ -40,7 +40,7 @@ type OpenHotelOrderRs struct {
 	OrderStatusDesc string `json:"order_status_desc,omitempty" xml:"order_status_desc,omitempty"`
 	// 订单类型描述
 	OrderTypeDesc string `json:"order_type_desc,omitempty" xml:"order_type_desc,omitempty"`
-	// 入住顾客，多个用','分割
+	// 入住顾客，多个用&#39;,&#39;分割
 	Guest string `json:"guest,omitempty" xml:"guest,omitempty"`
 	// 第三方行程id
 	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`

@@ -8,7 +8,7 @@ type RefundGoodsCreateRequest struct {
 	SubBizOrderId string `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
 	// 门店标识
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
-	// 取货类型（"FETCH_HOME"：上门；"ON_SHOP"：到店；"NONE"：无需取）
+	// 取货类型（&#34;FETCH_HOME&#34;：上门；&#34;ON_SHOP&#34;：到店；&#34;NONE&#34;：无需取）
 	RefundFetchType string `json:"refund_fetch_type,omitempty" xml:"refund_fetch_type,omitempty"`
 	// 主订单号
 	MainBizOrderId string `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`

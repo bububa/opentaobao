@@ -13,7 +13,7 @@ import (
 type TaobaoTrainAgentOrderIgnoreAPIRequest struct {
 	model.Params
 	// rq
-	_param0 *IgnoreOrderRQ
+	_param0 *IgnoreOrderRq
 }
 
 // NewTaobaoTrainAgentOrderIgnoreRequest 初始化TaobaoTrainAgentOrderIgnoreAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoTrainAgentOrderIgnoreAPIRequest) GetApiParams() url.Values {
 
 // SetParam0 is Param0 Setter
 // rq
-func (r *TaobaoTrainAgentOrderIgnoreAPIRequest) SetParam0(_param0 *IgnoreOrderRQ) error {
+func (r *TaobaoTrainAgentOrderIgnoreAPIRequest) SetParam0(_param0 *IgnoreOrderRq) error {
 	r._param0 = _param0
 	r.Set("param0", _param0)
 	return nil
 }
 
 // GetParam0 Param0 Getter
-func (r TaobaoTrainAgentOrderIgnoreAPIRequest) GetParam0() *IgnoreOrderRQ {
+func (r TaobaoTrainAgentOrderIgnoreAPIRequest) GetParam0() *IgnoreOrderRq {
 	return r._param0
 }

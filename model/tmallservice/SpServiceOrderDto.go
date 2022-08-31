@@ -14,7 +14,7 @@ type SpServiceOrderDto struct {
 	GmtEffect string `json:"gmt_effect,omitempty" xml:"gmt_effect,omitempty"`
 	// 状态编码：create(创建)、effect(生效)、closed(关闭)、finish(完成)
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
-	// 履约类型:1, "到店"2, "到家"3, "寄送"
+	// 履约类型:1, &#34;到店&#34;2, &#34;到家&#34;3, &#34;寄送&#34;
 	FulfilTypeCode string `json:"fulfil_type_code,omitempty" xml:"fulfil_type_code,omitempty"`
 	// 取消的份数
 	RefundServiceCount int64 `json:"refund_service_count,omitempty" xml:"refund_service_count,omitempty"`

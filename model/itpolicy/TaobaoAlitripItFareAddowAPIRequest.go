@@ -286,7 +286,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetSaleAirline() string {
 }
 
 // SetAddressOption is AddressOption Setter
-// 城市/机场选项，默认为城市1、可以填写：“机场",“城市”2、定义始发地/目的地/中转点，输入为机场，还是城市。3、如：此项输入机场，则始发地、目的地必须输入机场三字码
+// 城市/机场选项，默认为城市1、可以填写：“机场&#34;,“城市”2、定义始发地/目的地/中转点，输入为机场，还是城市。3、如：此项输入机场，则始发地、目的地必须输入机场三字码
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetAddressOption(_addressOption string) error {
 	r._addressOption = _addressOption
 	r.Set("addressOption", _addressOption)
@@ -351,7 +351,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetTransitLand() string {
 }
 
 // SetCabin is Cabin Setter
-// 舱位， 用","表示航段的分割。 1、舱位代码。每段只允许录入一个舱位代码，若全程舱位一致则可以只录入一个
+// 舱位， 用&#34;,&#34;表示航段的分割。 1、舱位代码。每段只允许录入一个舱位代码，若全程舱位一致则可以只录入一个
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetCabin(_cabin string) error {
 	r._cabin = _cabin
 	r.Set("cabin", _cabin)
@@ -507,7 +507,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetGv2ChildRule() string {
 }
 
 // SetNationality is Nationality Setter
-// 国籍，可录入多个用","隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
+// 国籍，可录入多个用&#34;,&#34;隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetNationality(_nationality string) error {
 	r._nationality = _nationality
 	r.Set("nationality", _nationality)
@@ -520,7 +520,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetNationality() string {
 }
 
 // SetExcludeNationality is ExcludeNationality Setter
-// 除外国籍，可录入多个用","隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
+// 除外国籍，可录入多个用&#34;,&#34;隔开表示或的关系 1、可录入国家二字代码，为空表示不限制，最多录20个 *默认为空，不输入为不限制
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetExcludeNationality(_excludeNationality string) error {
 	r._excludeNationality = _excludeNationality
 	r.Set("excludeNationality", _excludeNationality)
@@ -559,7 +559,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetAdultTax() string {
 }
 
 // SetChildPrice is ChildPrice Setter
-// 儿童价，1、可不输入，空表示不适用儿童价 2、可输入大于0的正整数及百分比，输入百分比时，成人价格必须录入 例如：2000或70%。 3. 百分比计算的数值，个位向上取整 当"乘客类型"输入非“普通”（成人）时，此项输入无效。
+// 儿童价，1、可不输入，空表示不适用儿童价 2、可输入大于0的正整数及百分比，输入百分比时，成人价格必须录入 例如：2000或70%。 3. 百分比计算的数值，个位向上取整 当&#34;乘客类型&#34;输入非“普通”（成人）时，此项输入无效。
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetChildPrice(_childPrice string) error {
 	r._childPrice = _childPrice
 	r.Set("childPrice", _childPrice)
@@ -767,7 +767,7 @@ func (r TaobaoAlitripItFareAddowAPIRequest) GetIsNoShowCanReissue4Dep() string {
 }
 
 // SetLuggageRule4Dep is LuggageRule4Dep Setter
-// （后期字段，预留）,去程行李额规定,可输入1-23,1-23 中间用","隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
+// （后期字段，预留）,去程行李额规定,可输入1-23,1-23 中间用&#34;,&#34;隔开，表示第一程和第二程（中转）支持行李额为1PC，23KG。若某段为空表示该段按照航空公司规定执行，逗号不可缺少；若不提供免费行李额直接输入空
 func (r *TaobaoAlitripItFareAddowAPIRequest) SetLuggageRule4Dep(_luggageRule4Dep string) error {
 	r._luggageRule4Dep = _luggageRule4Dep
 	r.Set("luggageRule4Dep", _luggageRule4Dep)

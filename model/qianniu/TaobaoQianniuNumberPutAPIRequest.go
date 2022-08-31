@@ -38,7 +38,7 @@ func (r TaobaoQianniuNumberPutAPIRequest) GetApiParams() url.Values {
 }
 
 // SetData is Data Setter
-// 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
+// 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:&#34;****&#34;,value:&#34;****&#34;}分别是用户的userid，数据的名称，以及数据的值。
 func (r *TaobaoQianniuNumberPutAPIRequest) SetData(_data string) error {
 	r._data = _data
 	r.Set("data", _data)

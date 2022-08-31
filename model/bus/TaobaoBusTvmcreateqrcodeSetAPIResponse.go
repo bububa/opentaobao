@@ -20,9 +20,9 @@ type TaobaoBusTvmcreateqrcodeSetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_tvmcreateqrcode_set_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// errorCode      错误码 及其 描述 ("PAYED_OR_CANCEL_FAIL_NOT_CREATE_QRCODE", "已支付/取消/失败订单不能创建二维码"),     ("PAYED_OR_CANCEL_FAIL_NOT_CREATE_SCAN_CODE", "已支付/取消/失败订单不能创建条形码"),     ("CREATE_QRCODE_ERROR", "创建二维码失败"),     ("DISABLE_QRCODE_ERROR", "失效二维码失败"),     ("CREATE_SCANCODE_ERROR", "扫码失败"),     ("CREATE_SCANCODE_PROCESSING", "扫码处理中")
+	// errorCode      错误码 及其 描述 (&#34;PAYED_OR_CANCEL_FAIL_NOT_CREATE_QRCODE&#34;, &#34;已支付/取消/失败订单不能创建二维码&#34;),     (&#34;PAYED_OR_CANCEL_FAIL_NOT_CREATE_SCAN_CODE&#34;, &#34;已支付/取消/失败订单不能创建条形码&#34;),     (&#34;CREATE_QRCODE_ERROR&#34;, &#34;创建二维码失败&#34;),     (&#34;DISABLE_QRCODE_ERROR&#34;, &#34;失效二维码失败&#34;),     (&#34;CREATE_SCANCODE_ERROR&#34;, &#34;扫码失败&#34;),     (&#34;CREATE_SCANCODE_PROCESSING&#34;, &#34;扫码处理中&#34;)
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-	// errorMsg     错误码 及其 描述 ("PAYED_OR_CANCEL_FAIL_NOT_CREATE_QRCODE", "已支付/取消/失败订单不能创建二维码"),     ("PAYED_OR_CANCEL_FAIL_NOT_CREATE_SCAN_CODE", "已支付/取消/失败订单不能创建条形码"),     ("CREATE_QRCODE_ERROR", "创建二维码失败"),     ("DISABLE_QRCODE_ERROR", "失效二维码失败"),     ("CREATE_SCANCODE_ERROR", "扫码失败"),     ("CREATE_SCANCODE_PROCESSING", "扫码处理中")
+	// errorMsg     错误码 及其 描述 (&#34;PAYED_OR_CANCEL_FAIL_NOT_CREATE_QRCODE&#34;, &#34;已支付/取消/失败订单不能创建二维码&#34;),     (&#34;PAYED_OR_CANCEL_FAIL_NOT_CREATE_SCAN_CODE&#34;, &#34;已支付/取消/失败订单不能创建条形码&#34;),     (&#34;CREATE_QRCODE_ERROR&#34;, &#34;创建二维码失败&#34;),     (&#34;DISABLE_QRCODE_ERROR&#34;, &#34;失效二维码失败&#34;),     (&#34;CREATE_SCANCODE_ERROR&#34;, &#34;扫码失败&#34;),     (&#34;CREATE_SCANCODE_PROCESSING&#34;, &#34;扫码处理中&#34;)
 	ResultMsg string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 	// qrCode 二维码连接
 	QrCode string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`

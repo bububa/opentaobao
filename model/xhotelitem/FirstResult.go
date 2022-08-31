@@ -40,7 +40,7 @@ type FirstResult struct {
 	Vendor string `json:"vendor,omitempty" xml:"vendor,omitempty"`
 	// 货币类型（编码,字母编码）,hid 维度支持的币种信息,目前只能 add 时添加，不支持 update时更新,,如果DB中是null ，则默认是人民币 CNY
 	CurrencyCodeName string `json:"currency_code_name,omitempty" xml:"currency_code_name,omitempty"`
-	// 酒店维度特殊标签含义, json: {"pure-direct-hotel":0,"direct-manual-order-hotel":1,"ebk-direct-hotel":0,"non-direct-hotel":1,"allow-dingding-business-travel-hotel":1,"willing-dingding-bussiness-travel-hotel":0,"calendar-room-package-hotel":1,"dijiajiajia-hotel":0,"ebk-number-of-confirm-room-hotel":1} , key含义: pure-direct-hotel 表示纯直连酒店, direct-manual-order-hotel 和 ebk-direct-hotel 和 non-direct-hotel 这三个key对应value都是0 . direct-manual-order-hotel 表示 人工承接失败订单的酒店标签。如果某个直连酒店打了该标签，那么直连下单失败以后，允许人工承接订单，由人工跟进 . ebk-direct-hotel 表示 ebk直连酒店标。如果某个酒店打了该标签，那么这个酒店下允许通过ebk发布直连rp . non-direct-hotel 表示 卖家非直连酒店标签。如果某个酒店打了该标签，那么该酒店下单不会走直连交易。 allow-dingding-business-travel-hotel 表示 允许进入阿里商旅渠道（钉钉）售卖信用住的单体酒店 willing-dingding-bussiness-travel-hotel 表示 已签协议愿意加入阿里商旅渠道售卖信用住的单体酒店 . calendar-room-package-hotel 表示 酒店可以参加日历房套餐活动包括创建，修改，删除活动信息（高星集团GMV项目） dijiajiajia-hotel 表示 底价加价酒店权限标。只有打了该标的酒店才允许维护底价加价规则和包房rp . ebk-number-of-confirm-room-hotel 表示ebk确认订单，是否要输入外部确认号 . nonstandard-project-hotel 表示该酒店是否参加非标项目
+	// 酒店维度特殊标签含义, json: {&#34;pure-direct-hotel&#34;:0,&#34;direct-manual-order-hotel&#34;:1,&#34;ebk-direct-hotel&#34;:0,&#34;non-direct-hotel&#34;:1,&#34;allow-dingding-business-travel-hotel&#34;:1,&#34;willing-dingding-bussiness-travel-hotel&#34;:0,&#34;calendar-room-package-hotel&#34;:1,&#34;dijiajiajia-hotel&#34;:0,&#34;ebk-number-of-confirm-room-hotel&#34;:1} , key含义: pure-direct-hotel 表示纯直连酒店, direct-manual-order-hotel 和 ebk-direct-hotel 和 non-direct-hotel 这三个key对应value都是0 . direct-manual-order-hotel 表示 人工承接失败订单的酒店标签。如果某个直连酒店打了该标签，那么直连下单失败以后，允许人工承接订单，由人工跟进 . ebk-direct-hotel 表示 ebk直连酒店标。如果某个酒店打了该标签，那么这个酒店下允许通过ebk发布直连rp . non-direct-hotel 表示 卖家非直连酒店标签。如果某个酒店打了该标签，那么该酒店下单不会走直连交易。 allow-dingding-business-travel-hotel 表示 允许进入阿里商旅渠道（钉钉）售卖信用住的单体酒店 willing-dingding-bussiness-travel-hotel 表示 已签协议愿意加入阿里商旅渠道售卖信用住的单体酒店 . calendar-room-package-hotel 表示 酒店可以参加日历房套餐活动包括创建，修改，删除活动信息（高星集团GMV项目） dijiajiajia-hotel 表示 底价加价酒店权限标。只有打了该标的酒店才允许维护底价加价规则和包房rp . ebk-number-of-confirm-room-hotel 表示ebk确认订单，是否要输入外部确认号 . nonstandard-project-hotel 表示该酒店是否参加非标项目
 	TagJson string `json:"tag_json,omitempty" xml:"tag_json,omitempty"`
 	// 酒店对应的旺旺号
 	AliNick string `json:"ali_nick,omitempty" xml:"ali_nick,omitempty"`
@@ -88,7 +88,7 @@ type FirstResult struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 淘宝标准酒店信息
 	SHotel *SHotel `json:"s_hotel,omitempty" xml:"s_hotel,omitempty"`
-	// hotel匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&ldquo;YES&rdquo; 6：卖家已确认，确认&ldquo;NO&rdquo; 7:已系统匹配，但是匹配重复，待人工确认
+	// hotel匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&amp;ldquo;YES&amp;rdquo; 6：卖家已确认，确认&amp;ldquo;NO&amp;rdquo; 7:已系统匹配，但是匹配重复，待人工确认
 	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 0:国内;1:国外
 	Domestic int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`

@@ -80,7 +80,7 @@ type QTask struct {
 	MetadataId int64 `json:"metadata_id,omitempty" xml:"metadata_id,omitempty"`
 	// 当前任务的评论数
 	CommentCount int64 `json:"comment_count,omitempty" xml:"comment_count,omitempty"`
-	// 任务&ldquo;已读&rdquo;、&ldquo;未读&rdquo;状态，0：已读，1：未读
+	// 任务&amp;ldquo;已读&amp;rdquo;、&amp;ldquo;未读&amp;rdquo;状态，0：已读，1：未读
 	ReadStatus int64 `json:"read_status,omitempty" xml:"read_status,omitempty"`
 	// 关联的任务元数据
 	Meta *QTaskMetadata `json:"meta,omitempty" xml:"meta,omitempty"`

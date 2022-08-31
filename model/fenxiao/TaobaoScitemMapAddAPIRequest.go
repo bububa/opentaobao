@@ -98,7 +98,7 @@ func (r TaobaoScitemMapAddAPIRequest) GetScItemId() int64 {
 }
 
 // SetNeedCheck is NeedCheck Setter
-// 默认值为false<br/>true:进行高级校验,前端商品或SKU的商家编码必须与后端商品的商家编码一致，否则会拒绝关联<br/>false:不进行高级校验
+// 默认值为false&lt;br/&gt;true:进行高级校验,前端商品或SKU的商家编码必须与后端商品的商家编码一致，否则会拒绝关联&lt;br/&gt;false:不进行高级校验
 func (r *TaobaoScitemMapAddAPIRequest) SetNeedCheck(_needCheck bool) error {
 	r._needCheck = _needCheck
 	r.Set("need_check", _needCheck)

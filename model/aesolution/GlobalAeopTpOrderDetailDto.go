@@ -12,7 +12,7 @@ type GlobalAeopTpOrderDetailDto struct {
 	OprLogDtoList []GlobalAeopTpOperationLogDto `json:"opr_log_dto_list,omitempty" xml:"opr_log_dto_list>global_aeop_tp_operation_log_dto,omitempty"`
 	// child order list
 	ChildOrderList []GlobalAeopTpChildOrderDto `json:"child_order_list,omitempty" xml:"child_order_list>global_aeop_tp_child_order_dto,omitempty"`
-	// modified time, it's US pacific time
+	// modified time, it&#39;s US pacific time
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// Order end time
 	GmtTradeEnd string `json:"gmt_trade_end,omitempty" xml:"gmt_trade_end,omitempty"`

@@ -13,6 +13,7 @@ import (
 	"text/template"
 
 	"github.com/bububa/opentaobao/metadata"
+	"github.com/bububa/opentaobao/metadata/util"
 )
 
 // Gen 生成SDK入口
@@ -227,6 +228,7 @@ func getDoc(catelogPath string, catelogPatchPath string, filename string) (metad
 	if err != nil {
 		return doc, err
 	}
+	docBytes = util.PrintableBytes(docBytes)
 	buf := new(bytes.Buffer)
 	if err := json.Compact(buf, docBytes); err != nil {
 		return doc, err

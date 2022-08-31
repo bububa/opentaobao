@@ -13,7 +13,7 @@ import (
 type AlitripBtripCorpopCommonapplyGetAPIRequest struct {
 	model.Params
 	// 请求入参
-	_rq *OpenIsvSearchRQ
+	_rq *OpenIsvSearchRq
 }
 
 // NewAlitripBtripCorpopCommonapplyGetRequest 初始化AlitripBtripCorpopCommonapplyGetAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlitripBtripCorpopCommonapplyGetAPIRequest) GetApiParams() url.Values {
 
 // SetRq is Rq Setter
 // 请求入参
-func (r *AlitripBtripCorpopCommonapplyGetAPIRequest) SetRq(_rq *OpenIsvSearchRQ) error {
+func (r *AlitripBtripCorpopCommonapplyGetAPIRequest) SetRq(_rq *OpenIsvSearchRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripCorpopCommonapplyGetAPIRequest) GetRq() *OpenIsvSearchRQ {
+func (r AlitripBtripCorpopCommonapplyGetAPIRequest) GetRq() *OpenIsvSearchRq {
 	return r._rq
 }

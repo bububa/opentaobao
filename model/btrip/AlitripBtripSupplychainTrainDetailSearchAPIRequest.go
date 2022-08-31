@@ -13,7 +13,7 @@ import (
 type AlitripBtripSupplychainTrainDetailSearchAPIRequest struct {
 	model.Params
 	// 请求对象
-	_rq *OpenApiSearchDetailRQ
+	_rq *OpenApiSearchDetailRq
 }
 
 // NewAlitripBtripSupplychainTrainDetailSearchRequest 初始化AlitripBtripSupplychainTrainDetailSearchAPIRequest对象
@@ -39,13 +39,13 @@ func (r AlitripBtripSupplychainTrainDetailSearchAPIRequest) GetApiParams() url.V
 
 // SetRq is Rq Setter
 // 请求对象
-func (r *AlitripBtripSupplychainTrainDetailSearchAPIRequest) SetRq(_rq *OpenApiSearchDetailRQ) error {
+func (r *AlitripBtripSupplychainTrainDetailSearchAPIRequest) SetRq(_rq *OpenApiSearchDetailRq) error {
 	r._rq = _rq
 	r.Set("rq", _rq)
 	return nil
 }
 
 // GetRq Rq Getter
-func (r AlitripBtripSupplychainTrainDetailSearchAPIRequest) GetRq() *OpenApiSearchDetailRQ {
+func (r AlitripBtripSupplychainTrainDetailSearchAPIRequest) GetRq() *OpenApiSearchDetailRq {
 	return r._rq
 }

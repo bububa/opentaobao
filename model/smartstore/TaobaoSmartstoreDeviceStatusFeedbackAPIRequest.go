@@ -42,7 +42,7 @@ func (r TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) GetApiParams() url.Value
 }
 
 // SetStatus is Status Setter
-// ONLINE_WITH_CONTENT("ONLINE_WITH_CONTENT", "设备在线"), OFFLINE("OFFLINE", "设备断线");
+// ONLINE_WITH_CONTENT(&#34;ONLINE_WITH_CONTENT&#34;, &#34;设备在线&#34;), OFFLINE(&#34;OFFLINE&#34;, &#34;设备断线&#34;);
 func (r *TaobaoSmartstoreDeviceStatusFeedbackAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)

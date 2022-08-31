@@ -22,6 +22,6 @@ type BatchQueryRefundRequest struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 页大小，必填
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 渠道来源 3：饿了么 4：盒马&淘鲜达 20：商家自有渠道，必填
+	// 渠道来源 3：饿了么 4：盒马&amp;淘鲜达 20：商家自有渠道，必填
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 }

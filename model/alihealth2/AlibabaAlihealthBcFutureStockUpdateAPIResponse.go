@@ -24,7 +24,7 @@ type AlibabaAlihealthBcFutureStockUpdateAPIResponseModel struct {
 	Errors []FutureItemError `json:"errors,omitempty" xml:"errors>future_item_error,omitempty"`
 	// 链路跟踪id, 用于排查问题
 	TraceId string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
-	// 错误编码, 编码以"ALIHEALTH.BC.5"开头时表示当前品仓的操作处于未知状态, 后继可通过同样的请求流水号来获取最终结果
+	// 错误编码, 编码以&#34;ALIHEALTH.BC.5&#34;开头时表示当前品仓的操作处于未知状态, 后继可通过同样的请求流水号来获取最终结果
 	ErrorNo string `json:"error_no,omitempty" xml:"error_no,omitempty"`
 	// 错误描述
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`

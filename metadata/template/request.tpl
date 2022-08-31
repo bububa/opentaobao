@@ -9,7 +9,7 @@ import (
 // {{ .Name }}APIRequest {{ .ChineseName }} API请求
 // {{ .ApiName }}
 // 
-{{ .Desc }}
+{{ html .Desc }}
 type {{ .Name }}APIRequest struct {
     model.Params
 {{- range $v := .RequestParams }}
@@ -41,7 +41,7 @@ func (r {{ .Name }}APIRequest) GetApiParams() url.Values {
 
 {{- range $v := .RequestParams }}
 // Set{{ $v.Name }} is {{ $v.Name }} Setter
-// {{ $v.Desc }}
+// {{ html $v.Desc }}
 func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
     r._{{ $v.Label }} = _{{ $v.Label }}
     r.Set("{{ $v.ParamKey }}", _{{ $v.Label }})

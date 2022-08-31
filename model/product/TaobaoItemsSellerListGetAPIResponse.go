@@ -10,7 +10,7 @@ import (
 // taobao.items.seller.list.get
 //
 // 批量获取商品详细信息
-// <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
+// &lt;br/&gt;&lt;strong&gt;&lt;a href=&#34;https://console.open.taobao.com/dingWeb.htm?from=itemapi&#34; target=&#34;_blank&#34;&gt;点击查看更多商品API说明&lt;/a&gt;&lt;/strong&gt;
 type TaobaoItemsSellerListGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemsSellerListGetAPIResponseModel

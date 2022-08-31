@@ -3,7 +3,7 @@ package aliexpress
 // OffsitePublishPostEntity 结构体
 type OffsitePublishPostEntity struct {
 	// 图片列表，类型为1时不可为空
-	ImageInfos []OffsitePostImageVO `json:"image_infos,omitempty" xml:"image_infos>offsite_post_image_vo,omitempty"`
+	ImageInfos []OffsitePostImageVo `json:"image_infos,omitempty" xml:"image_infos>offsite_post_image_vo,omitempty"`
 	// 商品id
 	ProductIds []int64 `json:"product_ids,omitempty" xml:"product_ids>int64,omitempty"`
 	// 帖子话题
@@ -21,5 +21,5 @@ type OffsitePublishPostEntity struct {
 	// 币种
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 视频参数，类型为2时不可为空
-	VideoInfo *OffsitePostVideoVO `json:"video_info,omitempty" xml:"video_info,omitempty"`
+	VideoInfo *OffsitePostVideoVo `json:"video_info,omitempty" xml:"video_info,omitempty"`
 }

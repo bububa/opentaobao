@@ -21,7 +21,7 @@ type AlitripBusInsuranceRecommendAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 保险产品列表
-	InsProductList []InsuranceProductVO `json:"ins_product_list,omitempty" xml:"ins_product_list>insurance_product_vo,omitempty"`
+	InsProductList []InsuranceProductVo `json:"ins_product_list,omitempty" xml:"ins_product_list>insurance_product_vo,omitempty"`
 	// 接口业务成功时为空
 	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 	// 错误信息

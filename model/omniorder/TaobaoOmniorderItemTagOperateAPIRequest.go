@@ -83,7 +83,7 @@ func (r TaobaoOmniorderItemTagOperateAPIRequest) GetStatus() int64 {
 }
 
 // SetOmniSetting is OmniSetting Setter
-// 分单&接单设置
+// 分单&amp;接单设置
 func (r *TaobaoOmniorderItemTagOperateAPIRequest) SetOmniSetting(_omniSetting *OmniSettingDto) error {
 	r._omniSetting = _omniSetting
 	r.Set("omni_setting", _omniSetting)

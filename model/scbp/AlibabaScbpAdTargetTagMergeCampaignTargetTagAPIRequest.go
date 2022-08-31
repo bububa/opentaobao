@@ -42,7 +42,7 @@ func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) GetApiParams() u
 }
 
 // SetData is Data Setter
-// 标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{"crowd":{"del":[{"tagId":3595769030}]}}   修改：{"crowd":{"mod":[{"optionValue":"high_potential_order_user","bidRate":"151"}]}} 增加：{"crowd":{"add":[{"optionValue":"user_area_CA","bidRate":"133"}]}}
+// 标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{&#34;crowd&#34;:{&#34;del&#34;:[{&#34;tagId&#34;:3595769030}]}}   修改：{&#34;crowd&#34;:{&#34;mod&#34;:[{&#34;optionValue&#34;:&#34;high_potential_order_user&#34;,&#34;bidRate&#34;:&#34;151&#34;}]}} 增加：{&#34;crowd&#34;:{&#34;add&#34;:[{&#34;optionValue&#34;:&#34;user_area_CA&#34;,&#34;bidRate&#34;:&#34;133&#34;}]}}
 func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagAPIRequest) SetData(_data string) error {
 	r._data = _data
 	r.Set("data", _data)

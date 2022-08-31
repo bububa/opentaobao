@@ -21,5 +21,5 @@ type TaobaoDeActivityDeliveryAddrConfirmAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 更新或确认收件地址
-	UpdateDeliveryAddressVo *UpdateDeliveryAddressVO `json:"update_delivery_address_vo,omitempty" xml:"update_delivery_address_vo,omitempty"`
+	UpdateDeliveryAddressVo *UpdateDeliveryAddressVo `json:"update_delivery_address_vo,omitempty" xml:"update_delivery_address_vo,omitempty"`
 }

@@ -163,7 +163,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetItemDesc() string {
 }
 
 // SetQtStandard is QtStandard Setter
-// 质检标准<br/>status=3 时必须非空
+// 质检标准&lt;br/&gt;status=3 时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtStandard(_qtStandard string) error {
 	r._qtStandard = _qtStandard
 	r.Set("qt_standard", _qtStandard)
@@ -176,7 +176,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetQtStandard() string {
 }
 
 // SetReportUrl is ReportUrl Setter
-// 质检报告源文件url<br/>status状态为3时必须非空
+// 质检报告源文件url&lt;br/&gt;status状态为3时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetReportUrl(_reportUrl string) error {
 	r._reportUrl = _reportUrl
 	r.Set("report_url", _reportUrl)
@@ -241,7 +241,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetGmtReport() string {
 }
 
 // SetGmtExpiry is GmtExpiry Setter
-// 质检有效到期时间，一般为一年有效期<br/>status状态为3时必须非空
+// 质检有效到期时间，一般为一年有效期&lt;br/&gt;status状态为3时必须非空
 func (r *TaobaoQtReportUpdateAPIRequest) SetGmtExpiry(_gmtExpiry string) error {
 	r._gmtExpiry = _gmtExpiry
 	r.Set("gmt_expiry", _gmtExpiry)
@@ -254,7 +254,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetGmtExpiry() string {
 }
 
 // SetQtType is QtType Setter
-// (1L, "聚划算"),<br/>(2L, "消保"),<br/>(3L, "分销"),<br/>(4L, "抽检"),<br/>(5L, "良无限线下数据"),<br/>(6L, "入驻/续签商城"),<br/>(7L, "买家质检维权"),<br/>(8L, "实地验证"),<br/>(9L, "淘宝买家订单商品鉴定"),<br/>(10L,"假一赔三");
+// (1L, &#34;聚划算&#34;),&lt;br/&gt;(2L, &#34;消保&#34;),&lt;br/&gt;(3L, &#34;分销&#34;),&lt;br/&gt;(4L, &#34;抽检&#34;),&lt;br/&gt;(5L, &#34;良无限线下数据&#34;),&lt;br/&gt;(6L, &#34;入驻/续签商城&#34;),&lt;br/&gt;(7L, &#34;买家质检维权&#34;),&lt;br/&gt;(8L, &#34;实地验证&#34;),&lt;br/&gt;(9L, &#34;淘宝买家订单商品鉴定&#34;),&lt;br/&gt;(10L,&#34;假一赔三&#34;);
 func (r *TaobaoQtReportUpdateAPIRequest) SetQtType(_qtType int64) error {
 	r._qtType = _qtType
 	r.Set("qt_type", _qtType)
@@ -267,7 +267,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetQtType() int64 {
 }
 
 // SetStatus is Status Setter
-// 0:已提交申请<br/>1:已收到样品<br/>2:已出检测结果<br/>3.已出具报告
+// 0:已提交申请&lt;br/&gt;1:已收到样品&lt;br/&gt;2:已出检测结果&lt;br/&gt;3.已出具报告
 func (r *TaobaoQtReportUpdateAPIRequest) SetStatus(_status int64) error {
 	r._status = _status
 	r.Set("status", _status)
@@ -293,7 +293,7 @@ func (r TaobaoQtReportUpdateAPIRequest) GetNumIid() int64 {
 }
 
 // SetIsPassed is IsPassed Setter
-// 只有status=3时赋值, <br/>0:未通过1:通过 空代表未判定
+// 只有status=3时赋值, &lt;br/&gt;0:未通过1:通过 空代表未判定
 func (r *TaobaoQtReportUpdateAPIRequest) SetIsPassed(_isPassed bool) error {
 	r._isPassed = _isPassed
 	r.Set("is_passed", _isPassed)

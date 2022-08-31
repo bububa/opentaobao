@@ -12,6 +12,6 @@ type UserInfoDto struct {
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 	// 菜鸟地址ID，针对电商平台加密订单场景使用，淘系订单使用oaid，非淘使用caid。
 	Caid string `json:"caid,omitempty" xml:"caid,omitempty"`
-	// 发货地址需要通过<a href="http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk&treeId=17&articleId=104860&docType=1">search接口</a>
+	// 发货地址需要通过&lt;a href=&#34;http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk&amp;treeId=17&amp;articleId=104860&amp;docType=1&#34;&gt;search接口&lt;/a&gt;
 	Address *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
 }

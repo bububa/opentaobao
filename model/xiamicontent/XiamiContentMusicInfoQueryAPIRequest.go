@@ -19,7 +19,7 @@ type XiamiContentMusicInfoQueryAPIRequest struct {
 	// 排序,默认按照最新排序 1最新 2本周最热 3本月最热
 	_orderBy int64
 	// 分页信息
-	_page *PagingVO
+	_page *PagingVo
 }
 
 // NewXiamiContentMusicInfoQueryRequest 初始化XiamiContentMusicInfoQueryAPIRequest对象
@@ -84,13 +84,13 @@ func (r XiamiContentMusicInfoQueryAPIRequest) GetOrderBy() int64 {
 
 // SetPage is Page Setter
 // 分页信息
-func (r *XiamiContentMusicInfoQueryAPIRequest) SetPage(_page *PagingVO) error {
+func (r *XiamiContentMusicInfoQueryAPIRequest) SetPage(_page *PagingVo) error {
 	r._page = _page
 	r.Set("page", _page)
 	return nil
 }
 
 // GetPage Page Getter
-func (r XiamiContentMusicInfoQueryAPIRequest) GetPage() *PagingVO {
+func (r XiamiContentMusicInfoQueryAPIRequest) GetPage() *PagingVo {
 	return r._page
 }

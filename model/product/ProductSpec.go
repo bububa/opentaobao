@@ -20,7 +20,7 @@ type ProductSpec struct {
 	MarketTime string `json:"market_time,omitempty" xml:"market_time,omitempty"`
 	// 产品规格ID。
 	SpecId int64 `json:"spec_id,omitempty" xml:"spec_id,omitempty"`
-	// 1:表示可以使用的数据，也就是审核通过的。<br/>3：表示等待小二审核的产品规格，这个数据暂时还不能使用，要等待审核通过后，才能使用。
+	// 1:表示可以使用的数据，也就是审核通过的。&lt;br/&gt;3：表示等待小二审核的产品规格，这个数据暂时还不能使用，要等待审核通过后，才能使用。
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 产品品牌id
 	BrandId int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`

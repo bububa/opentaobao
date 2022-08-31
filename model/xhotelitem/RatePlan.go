@@ -34,7 +34,7 @@ type RatePlan struct {
 	ExtendInfo3 string `json:"extend_info3,omitempty" xml:"extend_info3,omitempty"`
 	// 每日开始担保时间
 	GuaranteeStartTime string `json:"guarantee_start_time,omitempty" xml:"guarantee_start_time,omitempty"`
-	// 会员等级。支持多个等级","分隔
+	// 会员等级。支持多个等级&#34;,&#34;分隔
 	MemberLevel string `json:"member_level,omitempty" xml:"member_level,omitempty"`
 	// 销售渠道，目前制定一了一种A-集团协议
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
@@ -44,7 +44,7 @@ type RatePlan struct {
 	DeadlineTime string `json:"deadline_time,omitempty" xml:"deadline_time,omitempty"`
 	// 协议保留房提前确认时间
 	AllotmentReleaseTime string `json:"allotment_release_time,omitempty" xml:"allotment_release_time,omitempty"`
-	// rp维度的发票信息,type:1.酒店提供发票；2.卖家提供发票,desc:发票描叙，比如：卖家包邮提供发票,格式为：{"type":1;"desc":""}
+	// rp维度的发票信息,type:1.酒店提供发票；2.卖家提供发票,desc:发票描叙，比如：卖家包邮提供发票,格式为：{&#34;type&#34;:1;&#34;desc&#34;:&#34;&#34;}
 	InvoiceContent string `json:"invoice_content,omitempty" xml:"invoice_content,omitempty"`
 	// key的含义:    non-direct-RP 表示非直连RP,      super-could-price-change-RP 表示rp的super标，打上这个tag，表明这个rateplan下单的时候支持变价，商家系统直接放开价格校验。      base-could-derived-RP 表示base rateplan标签，打上了这个tag，表明这是一个base的rateplan，基于该rateplan可以衍生出子rateplan  .        ebk-tail-room-RP 表示 ebk尾房rate plan级别标
 	TagJson string `json:"tag_json,omitempty" xml:"tag_json,omitempty"`

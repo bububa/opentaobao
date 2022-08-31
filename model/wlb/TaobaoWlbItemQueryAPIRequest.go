@@ -93,7 +93,7 @@ func (r TaobaoWlbItemQueryAPIRequest) GetItemCode() string {
 }
 
 // SetIsSku is IsSku Setter
-// 是否是最小库存单元，只有最小库存单元的商品才可以有库存,值只能给"true","false"来表示;  若值不在范围内，则按true处理
+// 是否是最小库存单元，只有最小库存单元的商品才可以有库存,值只能给&#34;true&#34;,&#34;false&#34;来表示;  若值不在范围内，则按true处理
 func (r *TaobaoWlbItemQueryAPIRequest) SetIsSku(_isSku string) error {
 	r._isSku = _isSku
 	r.Set("is_sku", _isSku)

@@ -97,7 +97,7 @@ func (r TaobaoRefundsReceiveGetAPIRequest) GetBuyerNick() string {
 }
 
 // SetType is Type Setter
-// 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，<a href="http://open.taobao.com/doc/detail.htm?id=102855" target="_blank">查看可选值</a>
+// 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，&lt;a href=&#34;http://open.taobao.com/doc/detail.htm?id=102855&#34; target=&#34;_blank&#34;&gt;查看可选值&lt;/a&gt;
 func (r *TaobaoRefundsReceiveGetAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

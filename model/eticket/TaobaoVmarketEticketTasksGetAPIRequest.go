@@ -59,7 +59,7 @@ func (r TaobaoVmarketEticketTasksGetAPIRequest) GetSellerId() int64 {
 }
 
 // SetType is Type Setter
-// 返回结果类型:<br/>1:返回通知失败的订单<br/>2.返回通知成功回调失败的订单
+// 返回结果类型:&lt;br/&gt;1:返回通知失败的订单&lt;br/&gt;2.返回通知成功回调失败的订单
 func (r *TaobaoVmarketEticketTasksGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
 	r.Set("type", _type)

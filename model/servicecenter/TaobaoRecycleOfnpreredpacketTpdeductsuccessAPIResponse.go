@@ -9,7 +9,7 @@ import (
 // TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse 回收商同步前置补贴红包的代扣成功事件 API返回值
 // taobao.recycle.ofnpreredpacket.tpdeductsuccess
 //
-// 回收商->天猫后端，同步前置补贴红包的代扣成功事件
+// 回收商-&gt;天猫后端，同步前置补贴红包的代扣成功事件
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse struct {
 	model.CommonResponse
 	TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponseModel

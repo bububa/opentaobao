@@ -40,7 +40,7 @@ func (r AlitripTravelTradeServiceinfoWriteAPIRequest) GetApiParams() url.Values 
 }
 
 // SetTipValue is TipValue Setter
-// 根据模版要求传递对应的订单服务信息，当涉及多值时，用英文分号隔开";"，目前api暂时不支持文件上传，只支持链接；链接必须外网能访问
+// 根据模版要求传递对应的订单服务信息，当涉及多值时，用英文分号隔开&#34;;&#34;，目前api暂时不支持文件上传，只支持链接；链接必须外网能访问
 func (r *AlitripTravelTradeServiceinfoWriteAPIRequest) SetTipValue(_tipValue string) error {
 	r._tipValue = _tipValue
 	r.Set("tip_value", _tipValue)

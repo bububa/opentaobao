@@ -2,7 +2,7 @@ package mos
 
 // SettleInvoiceDto 结构体
 type SettleInvoiceDto struct {
-	// 发票类型 SPECIAL("专票")，ORDINARY("普票")
+	// 发票类型 SPECIAL(&#34;专票&#34;)，ORDINARY(&#34;普票&#34;)
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
 	// 发票行号
 	InvoicelineNo string `json:"invoiceline_no,omitempty" xml:"invoiceline_no,omitempty"`

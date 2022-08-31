@@ -68,7 +68,7 @@ func (r AlibabaAilabUserTokenGetAPIRequest) GetSchemaKey() string {
 }
 
 // SetCallBackUrl is CallBackUrl Setter
-// 用户点击同意授权，则会有授权结果：success/fail，此结果通过 callBackUrl 回调给三方 如果授权账号重复授权给已授权的淘宝账号，幂等返回成功 url 的调用是 表单 post 的方式， request body success example: merchantUserId=xxx&result=success request body fail example: merchantUserId=xxx&result=fail
+// 用户点击同意授权，则会有授权结果：success/fail，此结果通过 callBackUrl 回调给三方 如果授权账号重复授权给已授权的淘宝账号，幂等返回成功 url 的调用是 表单 post 的方式， request body success example: merchantUserId=xxx&amp;result=success request body fail example: merchantUserId=xxx&amp;result=fail
 func (r *AlibabaAilabUserTokenGetAPIRequest) SetCallBackUrl(_callBackUrl string) error {
 	r._callBackUrl = _callBackUrl
 	r.Set("call_back_url", _callBackUrl)

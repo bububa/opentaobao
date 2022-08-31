@@ -8,7 +8,7 @@ type DrfTxdActivityBo struct {
 	PoolRules string `json:"pool_rules,omitempty" xml:"pool_rules,omitempty"`
 	// 商家人群编码
 	MerchantCrowdCode string `json:"merchant_crowd_code,omitempty" xml:"merchant_crowd_code,omitempty"`
-	// 1--pos,2--App;1,2--pos&App
+	// 1--pos,2--App;1,2--pos&amp;App
 	Terminals string `json:"terminals,omitempty" xml:"terminals,omitempty"`
 	// 门店Id
 	StoreIds string `json:"store_ids,omitempty" xml:"store_ids,omitempty"`
@@ -20,7 +20,7 @@ type DrfTxdActivityBo struct {
 	PromotionId string `json:"promotion_id,omitempty" xml:"promotion_id,omitempty"`
 	// 商品池阶梯规则
 	StairRules string `json:"stair_rules,omitempty" xml:"stair_rules,omitempty"`
-	// 周期生效配置，weekdays：星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]；every_day_periods：每天的什么时间阶段搞活动,精确到秒单位,最多支持5段 例如:03:00:00_05:00:00，示例：{"weekdays":[1,2,3,4,5,6,7],"every_day_periods":["03:00:00_05:00:00","18:00:00_21:00:00"]}
+	// 周期生效配置，weekdays：星期几搞活动 [1:Mon;2:Tues;3:Wed;4:Thur;5:Fri;6:Sat;7:Sun]；every_day_periods：每天的什么时间阶段搞活动,精确到秒单位,最多支持5段 例如:03:00:00_05:00:00，示例：{&#34;weekdays&#34;:[1,2,3,4,5,6,7],&#34;every_day_periods&#34;:[&#34;03:00:00_05:00:00&#34;,&#34;18:00:00_21:00:00&#34;]}
 	PeriodConfig string `json:"period_config,omitempty" xml:"period_config,omitempty"`
 	// 封顶金额，单位：分
 	CellingAmount int64 `json:"celling_amount,omitempty" xml:"celling_amount,omitempty"`

@@ -4,7 +4,7 @@ package omniorder
 type StoreCollectConfig struct {
 	// 当activity为true时返回，活动结束时间
 	ActivityEndTime string `json:"activity_end_time,omitempty" xml:"activity_end_time,omitempty"`
-	// 接单时间段，格式为 "09:00-12:00", "" 表示一直开启
+	// 接单时间段，格式为 &#34;09:00-12:00&#34;, &#34;&#34; 表示一直开启
 	WorkingTime string `json:"working_time,omitempty" xml:"working_time,omitempty"`
 	// 当activity为true时返回,活动开始时间
 	ActivityStartTime string `json:"activity_start_time,omitempty" xml:"activity_start_time,omitempty"`

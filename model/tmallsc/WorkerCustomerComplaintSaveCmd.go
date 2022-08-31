@@ -16,7 +16,7 @@ type WorkerCustomerComplaintSaveCmd struct {
 	StartTime string `json:"start_time,omitempty" xml:"start_time,omitempty"`
 	// 整改完成时间
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
-	// 扩展字段，json对象字符串，如：{"serviceCode":"浴霸安装"}
+	// 扩展字段，json对象字符串，如：{&#34;serviceCode&#34;:&#34;浴霸安装&#34;}
 	ExtendInfo string `json:"extend_info,omitempty" xml:"extend_info,omitempty"`
 	// 工单号
 	WorkcardId int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`

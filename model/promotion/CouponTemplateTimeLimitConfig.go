@@ -6,7 +6,7 @@ type CouponTemplateTimeLimitConfig struct {
 	EndValidTime string `json:"end_valid_time,omitempty" xml:"end_valid_time,omitempty"`
 	// 优惠券开始时间
 	StartValidTime string `json:"start_valid_time,omitempty" xml:"start_valid_time,omitempty"`
-	// 优惠券有效时间类型 RANGE(1,"开始/结束时间"), DURATION(2,"固定时长"),BETWEEN(4, "发放后X-Y天失效")
+	// 优惠券有效时间类型 RANGE(1,&#34;开始/结束时间&#34;), DURATION(2,&#34;固定时长&#34;),BETWEEN(4, &#34;发放后X-Y天失效&#34;)
 	ValidTimeType int64 `json:"valid_time_type,omitempty" xml:"valid_time_type,omitempty"`
 	// 优惠券有效时长，单位为秒（固定有效时长的优惠券）
 	ValidityPeriod int64 `json:"validity_period,omitempty" xml:"validity_period,omitempty"`

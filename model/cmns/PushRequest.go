@@ -2,7 +2,7 @@ package cmns
 
 // PushRequest 结构体
 type PushRequest struct {
-	// 消息内容, 为json字符串,格式详见http://open.yunos.com/doc/detail?spm=a2c01.7698725.0002.40.ZNPFOJ&documentId=102975
+	// 消息内容, 为json字符串,格式详见http://open.yunos.com/doc/detail?spm=a2c01.7698725.0002.40.ZNPFOJ&amp;documentId=102975
 	Msg string `json:"msg,omitempty" xml:"msg,omitempty"`
 	// 业务应用appKey,top调用不需要传此参数
 	BizAppKey string `json:"biz_app_key,omitempty" xml:"biz_app_key,omitempty"`

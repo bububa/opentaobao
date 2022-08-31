@@ -18,7 +18,7 @@ type MultiCabinClassInfo struct {
 	Discount string `json:"discount,omitempty" xml:"discount,omitempty"`
 	// 优惠金额
 	PromotionPrice string `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
-	// {"key":"value"} 备注
+	// {&#34;key&#34;:&#34;value&#34;} 备注
 	Memo string `json:"memo,omitempty" xml:"memo,omitempty"`
 	// 加密参数,包含agentId 登下单需要用到的参数信息
 	OrderParams string `json:"order_params,omitempty" xml:"order_params,omitempty"`

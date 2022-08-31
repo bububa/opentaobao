@@ -82,7 +82,7 @@ func (r AlibabaNlifeB2cTradePayAPIRequest) GetTradeNo() string {
 }
 
 // SetPickingUp is PickingUp Setter
-// 提货方式：    LOGISTICS("物流发货"),     SELF_DELIVERY("门店自提");
+// 提货方式：    LOGISTICS(&#34;物流发货&#34;),     SELF_DELIVERY(&#34;门店自提&#34;);
 func (r *AlibabaNlifeB2cTradePayAPIRequest) SetPickingUp(_pickingUp string) error {
 	r._pickingUp = _pickingUp
 	r.Set("picking_up", _pickingUp)

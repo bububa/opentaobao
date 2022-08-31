@@ -1,6 +1,20 @@
 package util
 
-import "strings"
+import (
+	"strings"
+	"unicode"
+)
+
+// PrintableString removes non-graphic characters from the given string.
+// Removable characters are the ones for which unicode.IsGraphic() returns false.
+func PrintableString(s string) string {
+	return strings.Map(func(r rune) rune {
+		if unicode.IsGraphic(r) {
+			return r
+		}
+		return -1
+	}, s)
+}
 
 // UpperCamelCase converts a string into camel case starting with a upper case letter.
 func UpperCamelCase(s string) string {

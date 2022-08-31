@@ -53,7 +53,7 @@ func (r TaobaoOcApRuleCreateAPIRequest) GetDivisionRule() []int64 {
 }
 
 // SetExtAttributes is ExtAttributes Setter
-// 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
+// 规则描述相关扩展信息，divisonRule的值包含（&#34;byAmount&#34; 或者 &#34;byPercentage&#34;），excutionPeriod的值包含（ &#34;month&#34; 或者 &#34;day&#34; 或者 &#34;now&#34;）
 func (r *TaobaoOcApRuleCreateAPIRequest) SetExtAttributes(_extAttributes string) error {
 	r._extAttributes = _extAttributes
 	r.Set("ext_attributes", _extAttributes)

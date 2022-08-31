@@ -12,7 +12,7 @@ type XRoomType struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 面积
 	Area string `json:"area,omitempty" xml:"area,omitempty"`
-	// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {&quot;bar&quot;:false,&quot;catv&quot;:false,&quot;ddd&quot;:false,&quot;idd&quot;:false,&quot;pubtoilet&quot;:false,&quot;toilet&quot;:false}
+	// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {&amp;quot;bar&amp;quot;:false,&amp;quot;catv&amp;quot;:false,&amp;quot;ddd&amp;quot;:false,&amp;quot;idd&amp;quot;:false,&amp;quot;pubtoilet&amp;quot;:false,&amp;quot;toilet&amp;quot;:false}
 	Service string `json:"service,omitempty" xml:"service,omitempty"`
 	// 宽带服务。A,B,C,D。分别代表： A：无宽带，B：免费宽带，C：收费宽带，D：部分收费宽带
 	Internet string `json:"internet,omitempty" xml:"internet,omitempty"`
@@ -32,9 +32,9 @@ type XRoomType struct {
 	Extend string `json:"extend,omitempty" xml:"extend,omitempty"`
 	// 卖家房型英文名称
 	NameE string `json:"name_e,omitempty" xml:"name_e,omitempty"`
-	// 酒店数据状态：匹配成功；待匹配；待审核；审核失败；疑似错误；请注意：只有状态为&ldquo;匹配成功&rdquo;才是正常状态。其他状态都不会上架商品。
+	// 酒店数据状态：匹配成功；待匹配；待审核；审核失败；疑似错误；请注意：只有状态为&amp;ldquo;匹配成功&amp;rdquo;才是正常状态。其他状态都不会上架商品。
 	DataConfirmStr string `json:"data_confirm_str,omitempty" xml:"data_confirm_str,omitempty"`
-	// 房型维度下特殊标签含义 json: {"non-direct-roomType":1} , key:non-direct-roomType 表示非直连房型
+	// 房型维度下特殊标签含义 json: {&#34;non-direct-roomType&#34;:1} , key:non-direct-roomType 表示非直连房型
 	TagJson string `json:"tag_json,omitempty" xml:"tag_json,omitempty"`
 	// 飞猪门店id
 	Hid int64 `json:"hid,omitempty" xml:"hid,omitempty"`
@@ -42,7 +42,7 @@ type XRoomType struct {
 	Rid int64 `json:"rid,omitempty" xml:"rid,omitempty"`
 	// 房源状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// 匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&ldquo;YES&rdquo; 6：卖家已确认，确认&ldquo;NO&rdquo; 7:已系统匹配，但是匹配重复，待人工确认
+	// 匹配状态: 0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认&amp;ldquo;YES&amp;rdquo; 6：卖家已确认，确认&amp;ldquo;NO&amp;rdquo; 7:已系统匹配，但是匹配重复，待人工确认
 	MatchStatus int64 `json:"match_status,omitempty" xml:"match_status,omitempty"`
 	// 最大入住人数
 	MaxOccupancy int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`

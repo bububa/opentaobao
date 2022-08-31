@@ -53,7 +53,7 @@ func (r TmallItemDescModulesGetAPIRequest) GetUsrId() string {
 }
 
 // SetCatId is CatId Setter
-// 淘宝后台发布商品的叶子类目id，可通过taobao.itemcats.get查到。api 访问地址http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.CFhhk4&path=cid:3-apiId:122
+// 淘宝后台发布商品的叶子类目id，可通过taobao.itemcats.get查到。api 访问地址http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.CFhhk4&amp;path=cid:3-apiId:122
 func (r *TmallItemDescModulesGetAPIRequest) SetCatId(_catId int64) error {
 	r._catId = _catId
 	r.Set("cat_id", _catId)

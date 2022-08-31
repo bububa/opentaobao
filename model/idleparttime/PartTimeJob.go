@@ -44,7 +44,7 @@ type PartTimeJob struct {
 	JobId int64 `json:"job_id,omitempty" xml:"job_id,omitempty"`
 	// 岗位是否新增, 0: 是 1: 否
 	IsAdd int64 `json:"is_add,omitempty" xml:"is_add,omitempty"`
-	// 是否显示"取消报名" 0: 显示 1: 不显示
+	// 是否显示&#34;取消报名&#34; 0: 显示 1: 不显示
 	ShowCancel int64 `json:"show_cancel,omitempty" xml:"show_cancel,omitempty"`
 	// 是否可以主动联系商家, 0: 可以, 1: 不可以
 	ContactMerchant int64 `json:"contact_merchant,omitempty" xml:"contact_merchant,omitempty"`

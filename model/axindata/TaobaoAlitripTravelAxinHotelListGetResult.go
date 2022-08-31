@@ -7,7 +7,7 @@ type TaobaoAlitripTravelAxinHotelListGetResult struct {
 	// 错误码
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 分页对象
-	Data *PageVO `json:"data,omitempty" xml:"data,omitempty"`
+	Data *PageVo `json:"data,omitempty" xml:"data,omitempty"`
 	// 是否成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

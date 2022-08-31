@@ -2,9 +2,9 @@ package idle
 
 // AppraiseOrderInfoDto 结构体
 type AppraiseOrderInfoDto struct {
-	// 鉴定商发货给买家的单号 主状态>=7，验货中心已发货时填写
+	// 鉴定商发货给买家的单号 主状态&gt;=7，验货中心已发货时填写
 	Ac2buyerMailNo string `json:"ac2buyer_mail_no,omitempty" xml:"ac2buyer_mail_no,omitempty"`
-	// 逆向流程鉴定商发货给卖家的单号 逆向流程中，主状态>=103卖家已发货后发起逆向时填写
+	// 逆向流程鉴定商发货给卖家的单号 逆向流程中，主状态&gt;=103卖家已发货后发起逆向时填写
 	Ac2sellerMailNo string `json:"ac2seller_mail_no,omitempty" xml:"ac2seller_mail_no,omitempty"`
 	// 服务商appkey
 	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
@@ -12,7 +12,7 @@ type AppraiseOrderInfoDto struct {
 	BizOrderId string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 品牌Id
 	BrandId string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
-	// 买家收货地址。主状态>=6，买家确认购买时填写
+	// 买家收货地址。主状态&gt;=6，买家确认购买时填写
 	BuyerAddress string `json:"buyer_address,omitempty" xml:"buyer_address,omitempty"`
 	// 买家支付宝ID，用于卖家责任时赔付买家 逆向流程中，主状态105鉴定为赝品时填写
 	BuyerAlipayUserId string `json:"buyer_alipay_user_id,omitempty" xml:"buyer_alipay_user_id,omitempty"`
@@ -24,19 +24,19 @@ type AppraiseOrderInfoDto struct {
 	BuyerCloseReason string `json:"buyer_close_reason,omitempty" xml:"buyer_close_reason,omitempty"`
 	// 买家村庄
 	BuyerCountry string `json:"buyer_country,omitempty" xml:"buyer_country,omitempty"`
-	// 买家手机号。主状态>=6，买家确认购买时有值
+	// 买家手机号。主状态&gt;=6，买家确认购买时有值
 	BuyerPhone string `json:"buyer_phone,omitempty" xml:"buyer_phone,omitempty"`
 	// 买家省份
 	BuyerProvince string `json:"buyer_province,omitempty" xml:"buyer_province,omitempty"`
-	// 买家收货姓名。主状态>=6，买家确认购买时有值
+	// 买家收货姓名。主状态&gt;=6，买家确认购买时有值
 	BuyerReceiptName string `json:"buyer_receipt_name,omitempty" xml:"buyer_receipt_name,omitempty"`
-	// 类目聚合场景,如"YHB_3C"
+	// 类目聚合场景,如&#34;YHB_3C&#34;
 	CateAggScene string `json:"cate_agg_scene,omitempty" xml:"cate_agg_scene,omitempty"`
 	// 渠道
 	Channel string `json:"channel,omitempty" xml:"channel,omitempty"`
 	// 预留 JSON 格式渠道业务数据
 	ChannelData string `json:"channel_data,omitempty" xml:"channel_data,omitempty"`
-	// 订单环境 'online'：线上环境；'pre'：测试环境
+	// 订单环境 &#39;online&#39;：线上环境；&#39;pre&#39;：测试环境
 	Env string `json:"env,omitempty" xml:"env,omitempty"`
 	// 订单创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
@@ -46,11 +46,11 @@ type AppraiseOrderInfoDto struct {
 	IdleAppraiseScene string `json:"idle_appraise_scene,omitempty" xml:"idle_appraise_scene,omitempty"`
 	// 商品详情页
 	ItemDetailInfo string `json:"item_detail_info,omitempty" xml:"item_detail_info,omitempty"`
-	// 订单主状态。(主状态,子状态,状态说明)示例如下： ("1", "1", "买家拍下未付款") ("2", "1", "买家拍下已付款") ("3", "1", "卖家已发货") 等。详情参考对接文档
+	// 订单主状态。(主状态,子状态,状态说明)示例如下： (&#34;1&#34;, &#34;1&#34;, &#34;买家拍下未付款&#34;) (&#34;2&#34;, &#34;1&#34;, &#34;买家拍下已付款&#34;) (&#34;3&#34;, &#34;1&#34;, &#34;卖家已发货&#34;) 等。详情参考对接文档
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 订单子状态，说明见order_status
 	OrderSubStatus string `json:"order_sub_status,omitempty" xml:"order_sub_status,omitempty"`
-	// 卖家发货给验货中心的单号。主状态>=3，卖家已发货时有值
+	// 卖家发货给验货中心的单号。主状态&gt;=3，卖家已发货时有值
 	Seller2acMailNo string `json:"seller2ac_mail_no,omitempty" xml:"seller2ac_mail_no,omitempty"`
 	// 卖家区
 	SellerArea string `json:"seller_area,omitempty" xml:"seller_area,omitempty"`
@@ -60,13 +60,13 @@ type AppraiseOrderInfoDto struct {
 	SellerCloseReason string `json:"seller_close_reason,omitempty" xml:"seller_close_reason,omitempty"`
 	// 卖家村庄
 	SellerCountry string `json:"seller_country,omitempty" xml:"seller_country,omitempty"`
-	// 卖家手机号码。逆向流程中，主状态>=102卖家已发货后发起逆向时有值
+	// 卖家手机号码。逆向流程中，主状态&gt;=102卖家已发货后发起逆向时有值
 	SellerPhone string `json:"seller_phone,omitempty" xml:"seller_phone,omitempty"`
 	// 卖家省份
 	SellerProvince string `json:"seller_province,omitempty" xml:"seller_province,omitempty"`
-	// 逆向流程卖家收货地址。逆向流程中，主状态>=102卖家已发货后发起逆向时有值
+	// 逆向流程卖家收货地址。逆向流程中，主状态&gt;=102卖家已发货后发起逆向时有值
 	SellerReceiptAddress string `json:"seller_receipt_address,omitempty" xml:"seller_receipt_address,omitempty"`
-	// 卖家收货姓名，逆向退货用。逆向流程中，主状态>=102卖家已发货后发起逆向时有值
+	// 卖家收货姓名，逆向退货用。逆向流程中，主状态&gt;=102卖家已发货后发起逆向时有值
 	SellerReceiptName string `json:"seller_receipt_name,omitempty" xml:"seller_receipt_name,omitempty"`
 	// spuId
 	SpuId string `json:"spu_id,omitempty" xml:"spu_id,omitempty"`

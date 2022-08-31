@@ -238,7 +238,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetPropertyAlias() string {
 }
 
 // SetSellerCids is SellerCids Setter
-// 重新关联商品与店铺类目，结构:",cid1,cid2,...,"，如果店铺类目存在二级类目，必须传入子类目cids。
+// 重新关联商品与店铺类目，结构:&#34;,cid1,cid2,...,&#34;，如果店铺类目存在二级类目，必须传入子类目cids。
 func (r *TaobaoItemPriceUpdateAPIRequest) SetSellerCids(_sellerCids string) error {
 	r._sellerCids = _sellerCids
 	r.Set("seller_cids", _sellerCids)
@@ -277,7 +277,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetPicPath() string {
 }
 
 // SetAutoFill is AutoFill Setter
-// 代充商品类型。只有少数类目下的商品可以标记上此字段，具体哪些类目可以上传可以通过taobao.itemcat.features.get获得。在代充商品的类目下，不传表示不标记商品类型（交易搜索中就不能通过标记搜到相关的交易了）。可选类型： <br/>no_mark(不做类型标记) <br/>time_card(点卡软件代充) <br/>fee_card(话费软件代充)
+// 代充商品类型。只有少数类目下的商品可以标记上此字段，具体哪些类目可以上传可以通过taobao.itemcat.features.get获得。在代充商品的类目下，不传表示不标记商品类型（交易搜索中就不能通过标记搜到相关的交易了）。可选类型： &lt;br/&gt;no_mark(不做类型标记) &lt;br/&gt;time_card(点卡软件代充) &lt;br/&gt;fee_card(话费软件代充)
 func (r *TaobaoItemPriceUpdateAPIRequest) SetAutoFill(_autoFill string) error {
 	r._autoFill = _autoFill
 	r.Set("auto_fill", _autoFill)
@@ -342,7 +342,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetIgnorewarning() string {
 }
 
 // SetInputPids is InputPids Setter
-// 用户自行输入的类目属性ID串，结构："pid1,pid2,pid3"，如："20000"（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
+// 用户自行输入的类目属性ID串，结构：&#34;pid1,pid2,pid3&#34;，如：&#34;20000&#34;（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
 func (r *TaobaoItemPriceUpdateAPIRequest) SetInputPids(_inputPids string) error {
 	r._inputPids = _inputPids
 	r.Set("input_pids", _inputPids)
@@ -394,7 +394,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetSkuProperties() string {
 }
 
 // SetSkuOuterIds is SkuOuterIds Setter
-// Sku的外部id串，结构如：1234,1342,… sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是","(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
+// Sku的外部id串，结构如：1234,1342,… sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，如果没有sku_outer_ids也要写上这个参数，入参是&#34;,&#34;(这个是两个sku的示列，逗号数应该是sku个数减1)；该参数最大长度是512个字节
 func (r *TaobaoItemPriceUpdateAPIRequest) SetSkuOuterIds(_skuOuterIds string) error {
 	r._skuOuterIds = _skuOuterIds
 	r.Set("sku_outer_ids", _skuOuterIds)
@@ -407,7 +407,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetSkuOuterIds() string {
 }
 
 // SetInputStr is InputStr Setter
-// 用户自行输入的子属性名和属性值，结构:"父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....",如：“耐克;耐克系列;科比系列;科比系列;2K5,Nike乔丹鞋;乔丹系列;乔丹鞋系列;乔丹鞋系列;json5”，多个自定义属性用','分割，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过3999字节。此处不可以使用“其他”、“其它”和“其她”这三个词。
+// 用户自行输入的子属性名和属性值，结构:&#34;父属性值;一级子属性名;一级子属性值;二级子属性名;自定义输入值,....&#34;,如：“耐克;耐克系列;科比系列;科比系列;2K5,Nike乔丹鞋;乔丹系列;乔丹鞋系列;乔丹鞋系列;json5”，多个自定义属性用&#39;,&#39;分割，input_str需要与input_pids一一对应，注：通常一个类目下用户可输入的关键属性不超过1个。所有属性别名加起来不能超过3999字节。此处不可以使用“其他”、“其它”和“其她”这三个词。
 func (r *TaobaoItemPriceUpdateAPIRequest) SetInputStr(_inputStr string) error {
 	r._inputStr = _inputStr
 	r.Set("input_str", _inputStr)
@@ -537,7 +537,7 @@ func (r TaobaoItemPriceUpdateAPIRequest) GetImage() *model.File {
 }
 
 // SetAuctionPoint is AuctionPoint Setter
-// 商品的积分返点比例。如：5 表示返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
+// 商品的积分返点比例。如：5 表示返点比例0.5%. 注意：返点比例必须是&gt;0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是&gt;0的整数，注意此时该字段值依旧必须是&gt;0的整数，最高值不超过500，即50%
 func (r *TaobaoItemPriceUpdateAPIRequest) SetAuctionPoint(_auctionPoint int64) error {
 	r._auctionPoint = _auctionPoint
 	r.Set("auction_point", _auctionPoint)

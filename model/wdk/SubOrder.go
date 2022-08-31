@@ -12,7 +12,7 @@ type SubOrder struct {
 	HandlingType string `json:"handling_type,omitempty" xml:"handling_type,omitempty"`
 	// 盒马子单号
 	SubBizOrderId string `json:"sub_biz_order_id,omitempty" xml:"sub_biz_order_id,omitempty"`
-	// 促销信息(json格式)。例如:[{"activity_id":"1234","activity_name":"五一促销","activity_type":1,"activity_desc":"优惠卡券"}]
+	// 促销信息(json格式)。例如:[{&#34;activity_id&#34;:&#34;1234&#34;,&#34;activity_name&#34;:&#34;五一促销&#34;,&#34;activity_type&#34;:1,&#34;activity_desc&#34;:&#34;优惠卡券&#34;}]
 	PromotionInfo string `json:"promotion_info,omitempty" xml:"promotion_info,omitempty"`
 	// 门店编码
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`

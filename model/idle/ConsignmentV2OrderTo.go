@@ -34,7 +34,7 @@ type ConsignmentV2OrderTo struct {
 	Degree string `json:"degree,omitempty" xml:"degree,omitempty"`
 	// 下单环境
 	Env string `json:"env,omitempty" xml:"env,omitempty"`
-	// 订单创建时间，格式为"yyyy-MM-dd HH:mm:ss"
+	// 订单创建时间，格式为&#34;yyyy-MM-dd HH:mm:ss&#34;
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 订单一级状态
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`

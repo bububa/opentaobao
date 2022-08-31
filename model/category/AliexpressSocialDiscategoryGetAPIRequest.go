@@ -38,7 +38,7 @@ func (r AliexpressSocialDiscategoryGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetLocale is Locale Setter
-// Locale值，格式为language+"_"+country
+// Locale值，格式为language+&#34;_&#34;+country
 func (r *AliexpressSocialDiscategoryGetAPIRequest) SetLocale(_locale string) error {
 	r._locale = _locale
 	r.Set("locale", _locale)

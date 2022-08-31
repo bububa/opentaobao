@@ -64,7 +64,7 @@ func (r TaobaoXhotelOrderAlipayfaceCreateAPIRequest) GetApiParams() url.Values {
 }
 
 // SetGuests is Guests Setter
-// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &lt Guest &gt guests)赋值; 对于.net等其他版本SDK可以通过将List &lt Guest&gt结构数据转为json串赋值.
+// 入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List &amp;lt Guest &amp;gt guests)赋值; 对于.net等其他版本SDK可以通过将List &amp;lt Guest&amp;gt结构数据转为json串赋值.
 func (r *TaobaoXhotelOrderAlipayfaceCreateAPIRequest) SetGuests(_guests []Guest) error {
 	r._guests = _guests
 	r.Set("guests", _guests)

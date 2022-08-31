@@ -123,7 +123,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetFloor() string {
 }
 
 // SetBedType is BedType Setter
-// 床型。必填，按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&docType=1&articleId=105610
+// 床型。必填，按链接中床型列表定义值存储 http://open.taobao.com/docs/doc.htm?&amp;docType=1&amp;articleId=105610
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetBedType(_bedType string) error {
 	r._bedType = _bedType
 	r.Set("bed_type", _bedType)
@@ -162,7 +162,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetInternet() string {
 }
 
 // SetService is Service Setter
-// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}
+// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {&#34;bar&#34;:false,&#34;catv&#34;:false,&#34;ddd&#34;:false,&#34;idd&#34;:false,&#34;pubtoilet&#34;:false,&#34;toilet&#34;:false}
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetService(_service string) error {
 	r._service = _service
 	r.Set("service", _service)
@@ -227,7 +227,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetHotelCode() string {
 }
 
 // SetPics is Pics Setter
-// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。要求：无logo、水印、边框、人物，不模糊，不重复，不歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
+// 房型图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://taobao.com/123.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;},{&#34;url&#34;:&#34;http://taobao.com/456.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;},{&#34;url&#34;:&#34;http://taobao.com/789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。要求：无logo、水印、边框、人物，不模糊，不重复，不歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -266,7 +266,7 @@ func (r TaobaoXhotelRoomtypeUpdateAPIRequest) GetOperator() string {
 }
 
 // SetBedInfo is BedInfo Setter
-// main_bed_type母床型,sub_bed_type子床型。详情参见文档： https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.yN2mES&docType=1&articleId=118712&previewCode=1DABB73EA935608455E203BA06CF3566
+// main_bed_type母床型,sub_bed_type子床型。详情参见文档： https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.yN2mES&amp;docType=1&amp;articleId=118712&amp;previewCode=1DABB73EA935608455E203BA06CF3566
 func (r *TaobaoXhotelRoomtypeUpdateAPIRequest) SetBedInfo(_bedInfo string) error {
 	r._bedInfo = _bedInfo
 	r.Set("bed_info", _bedInfo)

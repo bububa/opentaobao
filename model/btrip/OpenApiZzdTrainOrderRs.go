@@ -12,7 +12,7 @@ type OpenApiZzdTrainOrderRs struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 订单状态：-1, "订单初始化,此状态订单对用户不可见" 0, "待支付" 1, "出票中" 2, "已关闭" 3, "有改签单" 4, "有退票单" 5, "出票完成" 6, "退票申请中" 7, "改签申请中" 9, "出票失败" 10, "改签失败" 11, "退票失败";
+	// 订单状态：-1, &#34;订单初始化,此状态订单对用户不可见&#34; 0, &#34;待支付&#34; 1, &#34;出票中&#34; 2, &#34;已关闭&#34; 3, &#34;有改签单&#34; 4, &#34;有退票单&#34; 5, &#34;出票完成&#34; 6, &#34;退票申请中&#34; 7, &#34;改签申请中&#34; 9, &#34;出票失败&#34; 10, &#34;改签失败&#34; 11, &#34;退票失败&#34;;
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 申请单标题
 	ApplyTitle string `json:"apply_title,omitempty" xml:"apply_title,omitempty"`

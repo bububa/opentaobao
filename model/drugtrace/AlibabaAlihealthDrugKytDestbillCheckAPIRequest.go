@@ -68,7 +68,7 @@ func (r AlibabaAlihealthDrugKytDestbillCheckAPIRequest) GetBillCode() string {
 }
 
 // SetCheckType is CheckType Setter
-// 审核状态，'Y'审批通过 'N' 审批不通过
+// 审核状态，&#39;Y&#39;审批通过 &#39;N&#39; 审批不通过
 func (r *AlibabaAlihealthDrugKytDestbillCheckAPIRequest) SetCheckType(_checkType string) error {
 	r._checkType = _checkType
 	r.Set("check_type", _checkType)

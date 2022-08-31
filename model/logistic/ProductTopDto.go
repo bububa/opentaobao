@@ -14,6 +14,6 @@ type ProductTopDto struct {
 	Height string `json:"height,omitempty" xml:"height,omitempty"`
 	// AE sku_id to identify a unit of sku
 	SkuId string `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
-	// Quantity of a sku in the order. It's used to calculate the total number of products in a parcel
+	// Quantity of a sku in the order. It&#39;s used to calculate the total number of products in a parcel
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
 }

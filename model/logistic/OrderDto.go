@@ -4,7 +4,7 @@ package logistic
 type OrderDto struct {
 	// products
 	Products []ProductDto `json:"products,omitempty" xml:"products>product_dto,omitempty"`
-	// Shipment order id created. AE will save relationship with logistics provider's shipment order_id
+	// Shipment order id created. AE will save relationship with logistics provider&#39;s shipment order_id
 	LogisticsOrderId string `json:"logistics_order_id,omitempty" xml:"logistics_order_id,omitempty"`
 	// Logistics provider Id of the shipping order such as 1-Cainiao, 2-Pegaki, 3-Frenet, 4-Delivery Hub, etc.
 	LogisticsChannelOrderId string `json:"logistics_channel_order_id,omitempty" xml:"logistics_channel_order_id,omitempty"`
@@ -22,7 +22,7 @@ type OrderDto struct {
 	LogisticsChannelName string `json:"logistics_channel_name,omitempty" xml:"logistics_channel_name,omitempty"`
 	// parcel
 	Parcel *ParcelDto `json:"parcel,omitempty" xml:"parcel,omitempty"`
-	// It's sales order id and a 16-digit number. There will be mapping between trade order and shipment order
+	// It&#39;s sales order id and a 16-digit number. There will be mapping between trade order and shipment order
 	TradeOrderId int64 `json:"trade_order_id,omitempty" xml:"trade_order_id,omitempty"`
 	// receiver
 	ReceiptAddress *AddressDto `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`

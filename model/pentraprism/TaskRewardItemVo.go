@@ -4,7 +4,7 @@ package pentraprism
 type TaskRewardItemVo struct {
 	// 奖励发放图标
 	Icon string `json:"icon,omitempty" xml:"icon,omitempty"`
-	// 激励模式 用于展示 "NONE"表示无激励
+	// 激励模式 用于展示 &#34;NONE&#34;表示无激励
 	Mode string `json:"mode,omitempty" xml:"mode,omitempty"`
 	// 总库存格式化带单位 万/亿
 	OwnCountText string `json:"own_count_text,omitempty" xml:"own_count_text,omitempty"`

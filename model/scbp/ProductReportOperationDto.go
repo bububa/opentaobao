@@ -4,7 +4,7 @@ package scbp
 type ProductReportOperationDto struct {
 	// 产品名称或产品ID(模糊搜索)
 	Key string `json:"key,omitempty" xml:"key,omitempty"`
-	// 获取明细数据（"true"/"false"）,如果为"true"则为明细数据
+	// 获取明细数据（&#34;true&#34;/&#34;false&#34;）,如果为&#34;true&#34;则为明细数据
 	GetDetailData string `json:"get_detail_data,omitempty" xml:"get_detail_data,omitempty"`
 	// 开始时间(yyyy-MM-dd)
 	DateBegin string `json:"date_begin,omitempty" xml:"date_begin,omitempty"`

@@ -350,7 +350,7 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetBrand() string {
 }
 
 // SetFacilities is Facilities Setter
-// 酒店设施。json格式示例值：{"24152":true,"24149":true,"24150":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类
+// 酒店设施。json格式示例值：{&#34;24152&#34;:true,&#34;24149&#34;:true,&#34;24150&#34;:true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetFacilities(_facilities string) error {
 	r._facilities = _facilities
 	r.Set("facilities", _facilities)
@@ -363,7 +363,7 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetFacilities() string {
 }
 
 // SetStandardHotelFacilities is StandardHotelFacilities Setter
-// 标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362&docType=1
+// 标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362&amp;docType=1
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetStandardHotelFacilities(_standardHotelFacilities string) error {
 	r._standardHotelFacilities = _standardHotelFacilities
 	r.Set("standard_hotel_facilities", _standardHotelFacilities)
@@ -376,7 +376,7 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetStandardHotelFacilities() string {
 }
 
 // SetBnbBookingTime is BnbBookingTime Setter
-// 入住要求&附加信息
+// 入住要求&amp;附加信息
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDto) error {
 	r._bnbBookingTime = _bnbBookingTime
 	r.Set("bnb_booking_time", _bnbBookingTime)
@@ -480,7 +480,7 @@ func (r TaobaoXhotelBnbhouseAddAPIRequest) GetStatus() *model.File {
 }
 
 // SetGuestGender is GuestGender Setter
-// 可接待客人性别 0：不限制，1：只限男性，2：只限女性'
+// 可接待客人性别 0：不限制，1：只限男性，2：只限女性&#39;
 func (r *TaobaoXhotelBnbhouseAddAPIRequest) SetGuestGender(_guestGender int64) error {
 	r._guestGender = _guestGender
 	r.Set("guest_gender", _guestGender)

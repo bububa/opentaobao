@@ -30,7 +30,7 @@ type VoucherOpenInfo struct {
 	ItemCoverage string `json:"item_coverage,omitempty" xml:"item_coverage,omitempty"`
 	// 适用商品范围 值：ALL，PART_AVAILABLE * 说明：全部门店可用，部分门店可用
 	ShopCoverage string `json:"shop_coverage,omitempty" xml:"shop_coverage,omitempty"`
-	// {\"type\":0,\"settings\":[{\"dayStartTime\":\"00:00\",\"dayEndTime\":\"23:59\",\"week\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7
+	// {\&#34;type\&#34;:0,\&#34;settings\&#34;:[{\&#34;dayStartTime\&#34;:\&#34;00:00\&#34;,\&#34;dayEndTime\&#34;:\&#34;23:59\&#34;,\&#34;week\&#34;:[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7
 	AvailableTime string `json:"available_time,omitempty" xml:"available_time,omitempty"`
 	// 扩展字段,包含了礼品券的信息
 	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`

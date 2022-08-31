@@ -14,7 +14,7 @@ type TopTradeCreateDo struct {
 	BuyerPhone string `json:"buyer_phone,omitempty" xml:"buyer_phone,omitempty"`
 	// 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
 	Distributor string `json:"distributor,omitempty" xml:"distributor,omitempty"`
-	// 收货地址的区域码，从taobao.areas.get接口获取区域码，文档地址：https://open.taobao.com/api.htm?spm=a219a.7386653.0.0.77e7669aoxOfiV&source=search&docId=59&docType=2
+	// 收货地址的区域码，从taobao.areas.get接口获取区域码，文档地址：https://open.taobao.com/api.htm?spm=a219a.7386653.0.0.77e7669aoxOfiV&amp;source=search&amp;docId=59&amp;docType=2
 	Divisioncode string `json:"divisioncode,omitempty" xml:"divisioncode,omitempty"`
 	// 计划采购金额（单位元），如最终订单成交价与期望金额不同则直接关单采购失败，计算方式：运费+商品成本价
 	ExpectOrderFee string `json:"expect_order_fee,omitempty" xml:"expect_order_fee,omitempty"`

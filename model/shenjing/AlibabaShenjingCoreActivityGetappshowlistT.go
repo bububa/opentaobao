@@ -8,7 +8,7 @@ type AlibabaShenjingCoreActivityGetappshowlistT struct {
 	ActDetailUrl string `json:"act_detail_url,omitempty" xml:"act_detail_url,omitempty"`
 	// 活动的内容
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
-	// 发布状态  "draft":"草稿","wait":"待发布",  "underway":"进行中",  "over":"已结束",  "insertingcoil":"已下线"
+	// 发布状态  &#34;draft&#34;:&#34;草稿&#34;,&#34;wait&#34;:&#34;待发布&#34;,  &#34;underway&#34;:&#34;进行中&#34;,  &#34;over&#34;:&#34;已结束&#34;,  &#34;insertingcoil&#34;:&#34;已下线&#34;
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 活动展示结束时间
 	ViewEndTime string `json:"view_end_time,omitempty" xml:"view_end_time,omitempty"`

@@ -36,7 +36,7 @@ type Dispute struct {
 	GoodStatus string `json:"good_status,omitempty" xml:"good_status,omitempty"`
 	// 纠纷单修改时间
 	Modified string `json:"modified,omitempty" xml:"modified,omitempty"`
-	// 退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自&quot;http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81&quot;
+	// 退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自&amp;quot;http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81&amp;quot;
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 退款原因
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
@@ -50,7 +50,7 @@ type Dispute struct {
 	SellerLogisticName string `json:"seller_logistic_name,omitempty" xml:"seller_logistic_name,omitempty"`
 	// 卖家发货物流单号（换货）
 	SellerLogisticNo string `json:"seller_logistic_no,omitempty" xml:"seller_logistic_no,omitempty"`
-	// 逆向纠纷状态。其中，仅退款/退货退款的状态为：(1, "买家已经申请退款，等待卖家同意"),(2, "卖家已经同意退款，等待买家退货"),(3, "买家已经退货，等待卖家确认收货"),(4, "退款关闭"),(5, "退款成功"),(6, "卖家拒绝退款”),(7, "等待买家确认重新邮寄的货物"),(8, "等待卖家确认退货地址")；换货的状态为：(1, "换货待处理"),(2, "待买家退货"),(3, "买家已退货，待收货"),(4, "换货关闭"),(5, "换货成功"),(6, "待买家修改"),(12, "待发出换货商品"),(13, "待买家收货"),(14, "请退款")
+	// 逆向纠纷状态。其中，仅退款/退货退款的状态为：(1, &#34;买家已经申请退款，等待卖家同意&#34;),(2, &#34;卖家已经同意退款，等待买家退货&#34;),(3, &#34;买家已经退货，等待卖家确认收货&#34;),(4, &#34;退款关闭&#34;),(5, &#34;退款成功&#34;),(6, &#34;卖家拒绝退款”),(7, &#34;等待买家确认重新邮寄的货物&#34;),(8, &#34;等待卖家确认退货地址&#34;)；换货的状态为：(1, &#34;换货待处理&#34;),(2, &#34;待买家退货&#34;),(3, &#34;买家已退货，待收货&#34;),(4, &#34;换货关闭&#34;),(5, &#34;换货成功&#34;),(6, &#34;待买家修改&#34;),(12, &#34;待发出换货商品&#34;),(13, &#34;待买家收货&#34;),(14, &#34;请退款&#34;)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 超时时间
 	TimeOut string `json:"time_out,omitempty" xml:"time_out,omitempty"`

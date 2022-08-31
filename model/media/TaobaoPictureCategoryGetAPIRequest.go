@@ -98,7 +98,7 @@ func (r TaobaoPictureCategoryGetAPIRequest) GetPictureCategoryId() int64 {
 }
 
 // SetParentId is ParentId Setter
-// 取二级分类时设置为对应父分类id<br/>取一级分类时父分类id设为0<br/>取全部分类的时候不设或设为-1
+// 取二级分类时设置为对应父分类id&lt;br/&gt;取一级分类时父分类id设为0&lt;br/&gt;取全部分类的时候不设或设为-1
 func (r *TaobaoPictureCategoryGetAPIRequest) SetParentId(_parentId int64) error {
 	r._parentId = _parentId
 	r.Set("parent_id", _parentId)

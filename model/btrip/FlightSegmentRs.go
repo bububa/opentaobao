@@ -30,7 +30,7 @@ type FlightSegmentRs struct {
 	MarketingAirline string `json:"marketing_airline,omitempty" xml:"marketing_airline,omitempty"`
 	// 市场方航班号(如：KA5809)
 	MarketingFlightNo string `json:"marketing_flight_no,omitempty" xml:"marketing_flight_no,omitempty"`
-	// 经停城市，多个值使用","分隔
+	// 经停城市，多个值使用&#34;,&#34;分隔
 	StopCity string `json:"stop_city,omitempty" xml:"stop_city,omitempty"`
 	// 到达数字日期(yyyyMMdd)
 	ArrDateInt int64 `json:"arr_date_int,omitempty" xml:"arr_date_int,omitempty"`

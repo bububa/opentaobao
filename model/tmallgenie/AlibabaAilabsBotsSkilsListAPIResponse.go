@@ -20,6 +20,6 @@ type AlibabaAilabsBotsSkilsListAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_ailabs_bots_skils_list_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// {        "skillId": 209,        "invocationName": "中文先生",        "name": "测试34",        "serviceProviders": [          {            "icon": "//arplatform.alicdn.com/images/3/1498910818259.png",            "name": "provider1",          }        ],        "botId": 10,        "iconImgUrl": "//arplatform.alicdn.com/images/244/1501764397807.png",        "longDesc": "中文先生是学中文的好帮手。查中文、查成语、听故事样样行。"      }
+	// {        &#34;skillId&#34;: 209,        &#34;invocationName&#34;: &#34;中文先生&#34;,        &#34;name&#34;: &#34;测试34&#34;,        &#34;serviceProviders&#34;: [          {            &#34;icon&#34;: &#34;//arplatform.alicdn.com/images/3/1498910818259.png&#34;,            &#34;name&#34;: &#34;provider1&#34;,          }        ],        &#34;botId&#34;: 10,        &#34;iconImgUrl&#34;: &#34;//arplatform.alicdn.com/images/244/1501764397807.png&#34;,        &#34;longDesc&#34;: &#34;中文先生是学中文的好帮手。查中文、查成语、听故事样样行。&#34;      }
 	Result *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
 }

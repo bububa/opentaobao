@@ -18,7 +18,7 @@ type ItemPoolPromotionActivityDto struct {
 	LogicGroups []LogicGroupDto `json:"logic_groups,omitempty" xml:"logic_groups>logic_group_dto,omitempty"`
 	// 阶梯分组
 	StairGroups []StairGroupDto `json:"stair_groups,omitempty" xml:"stair_groups>stair_group_dto,omitempty"`
-	// 商品池活动类型 AMOUNT_DECREASE("amount_decrease", "满元减"),     AMOUNT_DISCOUNT("amount_discount", "满元折"),     COUNT_DECREASE("count_decrease", "满件减"),     COUNT_DISCOUNT("count_discount", "满件折"),     COUNT_N_FIXED_PRICE("count_n_fixed_price", "满N件第N件一口价"),     COUNT_N_DISCOUNT("count_n_discount", "满N件第N件Y折"),     AMOUNT_EXCHANGE("amount_exchange", "满元换购"),     COUNT_EXCHANGE("count_exchange", "满件换购"),     COUNT_ALL_FIXED_PRICE("count_all_fixed_price", "X元Y件"),
+	// 商品池活动类型 AMOUNT_DECREASE(&#34;amount_decrease&#34;, &#34;满元减&#34;),     AMOUNT_DISCOUNT(&#34;amount_discount&#34;, &#34;满元折&#34;),     COUNT_DECREASE(&#34;count_decrease&#34;, &#34;满件减&#34;),     COUNT_DISCOUNT(&#34;count_discount&#34;, &#34;满件折&#34;),     COUNT_N_FIXED_PRICE(&#34;count_n_fixed_price&#34;, &#34;满N件第N件一口价&#34;),     COUNT_N_DISCOUNT(&#34;count_n_discount&#34;, &#34;满N件第N件Y折&#34;),     AMOUNT_EXCHANGE(&#34;amount_exchange&#34;, &#34;满元换购&#34;),     COUNT_EXCHANGE(&#34;count_exchange&#34;, &#34;满件换购&#34;),     COUNT_ALL_FIXED_PRICE(&#34;count_all_fixed_price&#34;, &#34;X元Y件&#34;),
 	ItemPoolDiscountType string `json:"item_pool_discount_type,omitempty" xml:"item_pool_discount_type,omitempty"`
 	// 外部订单号
 	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`

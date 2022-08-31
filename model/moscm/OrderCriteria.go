@@ -4,7 +4,7 @@ package moscm
 type OrderCriteria struct {
 	// 订单号
 	OrderNumbers []string `json:"order_numbers,omitempty" xml:"order_numbers>string,omitempty"`
-	// 未支付(“UNPAID”),已支付("PAID"),部分发货("PARTDISTRIBUTION"),全部发货("ALLDISTRIBUTION"),取消("CANCEL")
+	// 未支付(“UNPAID”),已支付(&#34;PAID&#34;),部分发货(&#34;PARTDISTRIBUTION&#34;),全部发货(&#34;ALLDISTRIBUTION&#34;),取消(&#34;CANCEL&#34;)
 	Status []string `json:"status,omitempty" xml:"status>string,omitempty"`
 	// 银泰专柜Id
 	CounterId string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`

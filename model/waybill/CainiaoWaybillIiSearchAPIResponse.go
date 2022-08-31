@@ -9,7 +9,7 @@ import (
 // CainiaoWaybillIiSearchAPIResponse 查询面单服务订购及面单使用情况 API返回值
 // cainiao.waybill.ii.search
 //
-// 获取发货地&CP开通状态&账户的使用情况
+// 获取发货地&amp;CP开通状态&amp;账户的使用情况
 type CainiaoWaybillIiSearchAPIResponse struct {
 	model.CommonResponse
 	CainiaoWaybillIiSearchAPIResponseModel

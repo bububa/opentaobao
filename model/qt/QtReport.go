@@ -34,7 +34,7 @@ type QtReport struct {
 	QtType int64 `json:"qt_type,omitempty" xml:"qt_type,omitempty"`
 	// 样本宝贝id
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
-	// 质检报告状态<br/> 0:已提交申请 1:已收到样品 2:已出检测结果 3.已出具报告
+	// 质检报告状态&lt;br/&gt; 0:已提交申请 1:已收到样品 2:已出检测结果 3.已出具报告
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否合格
 	IsPassed bool `json:"is_passed,omitempty" xml:"is_passed,omitempty"`

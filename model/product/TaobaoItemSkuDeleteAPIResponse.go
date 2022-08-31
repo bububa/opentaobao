@@ -9,7 +9,7 @@ import (
 // TaobaoItemSkuDeleteAPIResponse 删除SKU API返回值
 // taobao.item.sku.delete
 //
-// 删除一个sku的数据<br/>需要删除的sku通过属性properties进行匹配查找
+// 删除一个sku的数据&lt;br/&gt;需要删除的sku通过属性properties进行匹配查找
 type TaobaoItemSkuDeleteAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemSkuDeleteAPIResponseModel

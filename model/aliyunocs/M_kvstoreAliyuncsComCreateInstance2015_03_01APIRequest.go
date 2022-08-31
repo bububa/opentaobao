@@ -56,7 +56,7 @@ func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetApiParams() u
 }
 
 // SetInstanceName is InstanceName Setter
-// 实例昵称长度为2-128个字符，以大小写英文字母或中文开头，不支持字符@/:="<>{[]}和空格
+// 实例昵称长度为2-128个字符，以大小写英文字母或中文开头，不支持字符@/:=&#34;&lt;&gt;{[]}和空格
 func (r *M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) SetInstanceName(_instanceName string) error {
 	r._instanceName = _instanceName
 	r.Set("InstanceName", _instanceName)

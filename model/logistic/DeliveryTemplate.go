@@ -16,9 +16,9 @@ type DeliveryTemplate struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 模块ID
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
-	// 可选值：0,1,2,3<br>,说明如下<br>1)买家承担运费的模版<br>0：买家承担服务费<br>1: 卖家承担服务费<br>2)卖家承担运费的模版<br>2:卖家承担运费的模版（集市），卖家承担服务费<br>3:卖家承担运费的模版（天猫），卖家承担服务费<br>
+	// 可选值：0,1,2,3&lt;br&gt;,说明如下&lt;br&gt;1)买家承担运费的模版&lt;br&gt;0：买家承担服务费&lt;br&gt;1: 卖家承担服务费&lt;br&gt;2)卖家承担运费的模版&lt;br&gt;2:卖家承担运费的模版（集市），卖家承担服务费&lt;br&gt;3:卖家承担运费的模版（天猫），卖家承担服务费&lt;br&gt;
 	Assumer int64 `json:"assumer,omitempty" xml:"assumer,omitempty"`
-	// 可选值：0<br/>说明：<br/>0:表示按宝贝件数计算运费<br/><br/><br/><br/>1:表示按宝贝重量计算运费<br/><br/><br/><br/>3:表示按宝贝体积计算运费
+	// 可选值：0&lt;br/&gt;说明：&lt;br/&gt;0:表示按宝贝件数计算运费&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;1:表示按宝贝重量计算运费&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;3:表示按宝贝体积计算运费
 	Valuation int64 `json:"valuation,omitempty" xml:"valuation,omitempty"`
 	// 该模板上设置的卖家发货地址区域ID，如：address为浙江省杭州市西湖去文三路XX号那么这个consign_area_id的值就是西湖区的ID
 	ConsignAreaId int64 `json:"consign_area_id,omitempty" xml:"consign_area_id,omitempty"`

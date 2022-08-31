@@ -24,7 +24,7 @@ type OpenApiZzdFlightOrderRs struct {
 	ThirdPartApplyId string `json:"third_part_apply_id,omitempty" xml:"third_part_apply_id,omitempty"`
 	// 审批单名称
 	ApplyTitle string `json:"apply_title,omitempty" xml:"apply_title,omitempty"`
-	// 订单状态：0, "待支付";1, "出票中";2, "已关闭";3,"有改签单";4, "有退票单";5, "出票成功";6, "退票申请中";7, "改签申请中";10, "订单关闭";
+	// 订单状态：0, &#34;待支付&#34;;1, &#34;出票中&#34;;2, &#34;已关闭&#34;;3,&#34;有改签单&#34;;4, &#34;有退票单&#34;;5, &#34;出票成功&#34;;6, &#34;退票申请中&#34;;7, &#34;改签申请中&#34;;10, &#34;订单关闭&#34;;
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
@@ -48,7 +48,7 @@ type OpenApiZzdFlightOrderRs struct {
 	ThirdpartItineraryId string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
 	// 行程id
 	ItineraryNo string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
-	// '交易类型：1:机票预订，2:机票改签，3:保险费，4:行程单邮寄费，6：机票退票手续费，101：预订退款，102:改签退款，103:保险退款，104:行程单邮寄退款，105：机票赔付，106:机票改签服务费
+	// &#39;交易类型：1:机票预订，2:机票改签，3:保险费，4:行程单邮寄费，6：机票退票手续费，101：预订退款，102:改签退款，103:保险退款，104:行程单邮寄退款，105：机票赔付，106:机票改签服务费
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 资金流向:1:支出，2:收入
 	TradeAction int64 `json:"trade_action,omitempty" xml:"trade_action,omitempty"`
@@ -58,7 +58,7 @@ type OpenApiZzdFlightOrderRs struct {
 	ApplyId int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 0:企业支付，1:个人支付
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
-	// 结算方式：1：个人现付，2:企业现付,4:企业月结，8、企业预存'
+	// 结算方式：1：个人现付，2:企业现付,4:企业月结，8、企业预存&#39;
 	SettleType int64 `json:"settle_type,omitempty" xml:"settle_type,omitempty"`
 	// 总结算金额（分）
 	Amount int64 `json:"amount,omitempty" xml:"amount,omitempty"`

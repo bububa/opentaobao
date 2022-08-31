@@ -337,7 +337,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetDescription() string {
 }
 
 // SetHotelPolicies is HotelPolicies Setter
-// 酒店入住政策，{"10003":"仅2岁以上儿童可随同入住"}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=10、code=10003,value为文字描述
+// 酒店入住政策，{&#34;10003&#34;:&#34;仅2岁以上儿童可随同入住&#34;}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=10、code=10003,value为文字描述
 func (r *TaobaoXhotelHouseAddAPIRequest) SetHotelPolicies(_hotelPolicies string) error {
 	r._hotelPolicies = _hotelPolicies
 	r.Set("hotel_policies", _hotelPolicies)
@@ -350,7 +350,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetHotelPolicies() string {
 }
 
 // SetHotelFacilities is HotelFacilities Setter
-// 酒店设施。json格式示例值：{"24152":true,"24149":true,"24150":true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类
+// 酒店设施。json格式示例值：{&#34;24152&#34;:true,&#34;24149&#34;:true,&#34;24150&#34;:true}，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=20的分类
 func (r *TaobaoXhotelHouseAddAPIRequest) SetHotelFacilities(_hotelFacilities string) error {
 	r._hotelFacilities = _hotelFacilities
 	r.Set("hotel_facilities", _hotelFacilities)
@@ -363,7 +363,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetHotelFacilities() string {
 }
 
 // SetService is Service Setter
-// 酒店服务。json格式示例值：{"24058":"可以接待外宾","24198":"叫醒服务","24200":"洗衣服务"}，key-24101为属性编码，value-为"true"时表示有该属性，为文字时表示具体描述，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
+// 酒店服务。json格式示例值：{&#34;24058&#34;:&#34;可以接待外宾&#34;,&#34;24198&#34;:&#34;叫醒服务&#34;,&#34;24200&#34;:&#34;洗衣服务&#34;}，key-24101为属性编码，value-为&#34;true&#34;时表示有该属性，为文字时表示具体描述，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
 func (r *TaobaoXhotelHouseAddAPIRequest) SetService(_service string) error {
 	r._service = _service
 	r.Set("service", _service)
@@ -376,7 +376,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetService() string {
 }
 
 // SetRoomFacilities is RoomFacilities Setter
-// 房间设施。json格式示例值：{"24101": true,"24091": true,"24095": true}，key-24101为属性编码，value-为"true"时表示有该属性，为文字时表示具体描述，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
+// 房间设施。json格式示例值：{&#34;24101&#34;: true,&#34;24091&#34;: true,&#34;24095&#34;: true}，key-24101为属性编码，value-为&#34;true&#34;时表示有该属性，为文字时表示具体描述，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=40的分类
 func (r *TaobaoXhotelHouseAddAPIRequest) SetRoomFacilities(_roomFacilities string) error {
 	r._roomFacilities = _roomFacilities
 	r.Set("room_facilities", _roomFacilities)
@@ -389,7 +389,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetRoomFacilities() string {
 }
 
 // SetPics is Pics Setter
-// 酒店图片只支持远程图片，格式如下：[{"url":"http://123.jpg","ismain":"false","type":"大堂","attribute":"普通图"},{"url":"http://456.jpg","ismain":"true","type":"公共区域","attribute":"全景图"},{"url":"http://789.jpg","ismain":"false","type":"大堂","attribute":"普通图"}] 其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图（主图只能有一个，如果有多个或者没有，则会报错）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多是能是10张。
+// 酒店图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://123.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;},{&#34;url&#34;:&#34;http://456.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;,&#34;type&#34;:&#34;公共区域&#34;,&#34;attribute&#34;:&#34;全景图&#34;},{&#34;url&#34;:&#34;http://789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;,&#34;type&#34;:&#34;大堂&#34;,&#34;attribute&#34;:&#34;普通图&#34;}] 其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图（主图只能有一个，如果有多个或者没有，则会报错）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多是能是10张。
 func (r *TaobaoXhotelHouseAddAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -402,7 +402,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetPics() string {
 }
 
 // SetBrand is Brand Setter
-// 酒店品牌。取值为数字。枚举如下（只给出top30，如果不满足，请联系去啊接口人）：    ruJia("1", "rujiakuaijie", "如家快捷", 1),    qiTian("2", "7 days", "7天连锁", 1),    hanTing("3", "Hanting Inns & Hotels", "汉庭酒店", 1),    geLinHaoTai("4", "Green Tree Inn", "格林豪泰", 1),    jinJiang("5", "Jinjiang Inn", "锦江之星", 1),    su8("6", "Super 8", "速8", 1),    moTai("7", "Motel", "莫泰", 1),    zhouji("8", "InterContinental", "洲际", 4),    budint("9", "Pod Inn", "布丁", 1),    jiuJiu("10", "jiujiuliansuo", "99连锁", 1),    piaoHome("11", "Piao Home Inn", "飘HOME", 1),    juzi("12", "Orange Hotels", "桔子酒店", 1),    yibai("13", "yibai", "易佰", 1),    weiyena("14","weiyena","维也纳",2),    huangguanjiari("15", "huangguanjiari", "皇冠假日", 4),    xidawu("16", "xidawu", "喜达屋", 3),    chengshiBJ("17", "chengshibianjie", "城市便捷", 1),    shagnKeYou("18", "shagnkeyou", "尚客优", 1),    jinjiang("19", "jinjiang", "锦江酒店", 3),    wendemu("20", "Hawthorn Suites", "温德姆", 4),    yibisi("21", "Ibis Hotels", "宜必思", 1),    wanhao("22", "JM Hoteles", "万豪", 4),    yijia365("23", "yijia365", "驿家365", 1),    shoulv("24", "shoulvjituan", "首旅建国", 3),    kaiyuan("25", "New Century Hotel", "开元大酒店", 4),    yagao("26", "yagao", "雅高", 3),    daisi("27", "daisi", "戴斯", 3),    jinling("28", "jinlingliansuo", "金陵", 4),    xianggelila("29", "Shangri-La City Hotels", "香格里拉", 4),    xierdun("30", "Hilton", "希尔顿", 4),
+// 酒店品牌。取值为数字。枚举如下（只给出top30，如果不满足，请联系去啊接口人）：    ruJia(&#34;1&#34;, &#34;rujiakuaijie&#34;, &#34;如家快捷&#34;, 1),    qiTian(&#34;2&#34;, &#34;7 days&#34;, &#34;7天连锁&#34;, 1),    hanTing(&#34;3&#34;, &#34;Hanting Inns &amp; Hotels&#34;, &#34;汉庭酒店&#34;, 1),    geLinHaoTai(&#34;4&#34;, &#34;Green Tree Inn&#34;, &#34;格林豪泰&#34;, 1),    jinJiang(&#34;5&#34;, &#34;Jinjiang Inn&#34;, &#34;锦江之星&#34;, 1),    su8(&#34;6&#34;, &#34;Super 8&#34;, &#34;速8&#34;, 1),    moTai(&#34;7&#34;, &#34;Motel&#34;, &#34;莫泰&#34;, 1),    zhouji(&#34;8&#34;, &#34;InterContinental&#34;, &#34;洲际&#34;, 4),    budint(&#34;9&#34;, &#34;Pod Inn&#34;, &#34;布丁&#34;, 1),    jiuJiu(&#34;10&#34;, &#34;jiujiuliansuo&#34;, &#34;99连锁&#34;, 1),    piaoHome(&#34;11&#34;, &#34;Piao Home Inn&#34;, &#34;飘HOME&#34;, 1),    juzi(&#34;12&#34;, &#34;Orange Hotels&#34;, &#34;桔子酒店&#34;, 1),    yibai(&#34;13&#34;, &#34;yibai&#34;, &#34;易佰&#34;, 1),    weiyena(&#34;14&#34;,&#34;weiyena&#34;,&#34;维也纳&#34;,2),    huangguanjiari(&#34;15&#34;, &#34;huangguanjiari&#34;, &#34;皇冠假日&#34;, 4),    xidawu(&#34;16&#34;, &#34;xidawu&#34;, &#34;喜达屋&#34;, 3),    chengshiBJ(&#34;17&#34;, &#34;chengshibianjie&#34;, &#34;城市便捷&#34;, 1),    shagnKeYou(&#34;18&#34;, &#34;shagnkeyou&#34;, &#34;尚客优&#34;, 1),    jinjiang(&#34;19&#34;, &#34;jinjiang&#34;, &#34;锦江酒店&#34;, 3),    wendemu(&#34;20&#34;, &#34;Hawthorn Suites&#34;, &#34;温德姆&#34;, 4),    yibisi(&#34;21&#34;, &#34;Ibis Hotels&#34;, &#34;宜必思&#34;, 1),    wanhao(&#34;22&#34;, &#34;JM Hoteles&#34;, &#34;万豪&#34;, 4),    yijia365(&#34;23&#34;, &#34;yijia365&#34;, &#34;驿家365&#34;, 1),    shoulv(&#34;24&#34;, &#34;shoulvjituan&#34;, &#34;首旅建国&#34;, 3),    kaiyuan(&#34;25&#34;, &#34;New Century Hotel&#34;, &#34;开元大酒店&#34;, 4),    yagao(&#34;26&#34;, &#34;yagao&#34;, &#34;雅高&#34;, 3),    daisi(&#34;27&#34;, &#34;daisi&#34;, &#34;戴斯&#34;, 3),    jinling(&#34;28&#34;, &#34;jinlingliansuo&#34;, &#34;金陵&#34;, 4),    xianggelila(&#34;29&#34;, &#34;Shangri-La City Hotels&#34;, &#34;香格里拉&#34;, 4),    xierdun(&#34;30&#34;, &#34;Hilton&#34;, &#34;希尔顿&#34;, 4),
 func (r *TaobaoXhotelHouseAddAPIRequest) SetBrand(_brand string) error {
 	r._brand = _brand
 	r.Set("brand", _brand)
@@ -428,7 +428,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetPostalCode() string {
 }
 
 // SetBookingNotice is BookingNotice Setter
-// 预订须知。json格式，示例:{"10001":"14:00","10002":"12:00","10005":"清洁福50元","10006":"请准备好您的身份证件，我需要登记 不允许吸烟"},预订须知，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&docType=1&articleId=108416&previewCode=987A11324A278EF679E24102BA30D426 中type=10的分类
+// 预订须知。json格式，示例:{&#34;10001&#34;:&#34;14:00&#34;,&#34;10002&#34;:&#34;12:00&#34;,&#34;10005&#34;:&#34;清洁福50元&#34;,&#34;10006&#34;:&#34;请准备好您的身份证件，我需要登记 不允许吸烟&#34;},预订须知，key取值参见 https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.vSVPks&amp;docType=1&amp;articleId=108416&amp;previewCode=987A11324A278EF679E24102BA30D426 中type=10的分类
 func (r *TaobaoXhotelHouseAddAPIRequest) SetBookingNotice(_bookingNotice string) error {
 	r._bookingNotice = _bookingNotice
 	r.Set("booking_notice", _bookingNotice)
@@ -506,7 +506,7 @@ func (r TaobaoXhotelHouseAddAPIRequest) GetSettlementCurrency() string {
 }
 
 // SetOwnerInfo is OwnerInfo Setter
-// 房东信息,{"outerId: 外部房东ID,": "xxxx", "nickName": "张三", "avatarUrl": "http://test.com/1.jpg", "telephone": "0571-1234567", "mobilePhone": "12334567678", "email":"test@test.com", "gender": "F", "avgConfirmTime": 30, "responseRate": 100, "description": "房东太懒,什么也没有填", "birthday":"2018-01-01", "qualifacation": 1, "bloodType": 1, "profession":"交互设计师", "country":"CN", "province":"420000", "city":"421200", "real_name_status": true, "validate":"1,2,4,8","confirmRate": 98} JSON字段描述: outerId: 商家房东ID, nickName: 房东昵称, avatarUrl: 房东头像地址, telephone: 固定电话, mobilePhone: 移动电话, email: 邮箱地址, gender: 性别 M男性， F女性， avgConfirmTime: 平均确认时间, 单位分钟, responseRate: 房东回复率, description: 房东介绍, birthday:生日，格式yyyy-MM-dd, qualifacation:学历,1:小学,2:初中,3:高中,4:本科,5:硕士,6:博士,7:博士后,0:其他, profession: 职业 country: 国家code province: 省code city: 城市code realNameStatus: 实名认证状态, true已认证 validate: 认证情况:1:身份验证,2:头像验证,4:手机验证,8:邮箱验证,二进制各位代表含义, bloodType: 血型: 0未知,1:A型,2:B型,3:AB型,4:O型;confirmRate: 订单接单率，0-100
+// 房东信息,{&#34;outerId: 外部房东ID,&#34;: &#34;xxxx&#34;, &#34;nickName&#34;: &#34;张三&#34;, &#34;avatarUrl&#34;: &#34;http://test.com/1.jpg&#34;, &#34;telephone&#34;: &#34;0571-1234567&#34;, &#34;mobilePhone&#34;: &#34;12334567678&#34;, &#34;email&#34;:&#34;test@test.com&#34;, &#34;gender&#34;: &#34;F&#34;, &#34;avgConfirmTime&#34;: 30, &#34;responseRate&#34;: 100, &#34;description&#34;: &#34;房东太懒,什么也没有填&#34;, &#34;birthday&#34;:&#34;2018-01-01&#34;, &#34;qualifacation&#34;: 1, &#34;bloodType&#34;: 1, &#34;profession&#34;:&#34;交互设计师&#34;, &#34;country&#34;:&#34;CN&#34;, &#34;province&#34;:&#34;420000&#34;, &#34;city&#34;:&#34;421200&#34;, &#34;real_name_status&#34;: true, &#34;validate&#34;:&#34;1,2,4,8&#34;,&#34;confirmRate&#34;: 98} JSON字段描述: outerId: 商家房东ID, nickName: 房东昵称, avatarUrl: 房东头像地址, telephone: 固定电话, mobilePhone: 移动电话, email: 邮箱地址, gender: 性别 M男性， F女性， avgConfirmTime: 平均确认时间, 单位分钟, responseRate: 房东回复率, description: 房东介绍, birthday:生日，格式yyyy-MM-dd, qualifacation:学历,1:小学,2:初中,3:高中,4:本科,5:硕士,6:博士,7:博士后,0:其他, profession: 职业 country: 国家code province: 省code city: 城市code realNameStatus: 实名认证状态, true已认证 validate: 认证情况:1:身份验证,2:头像验证,4:手机验证,8:邮箱验证,二进制各位代表含义, bloodType: 血型: 0未知,1:A型,2:B型,3:AB型,4:O型;confirmRate: 订单接单率，0-100
 func (r *TaobaoXhotelHouseAddAPIRequest) SetOwnerInfo(_ownerInfo string) error {
 	r._ownerInfo = _ownerInfo
 	r.Set("owner_info", _ownerInfo)

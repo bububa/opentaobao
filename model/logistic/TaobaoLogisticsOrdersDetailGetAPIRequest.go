@@ -62,7 +62,7 @@ func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFields is Fields Setter
-// 需返回的字段列表.可选值:Shipping 物流数据结构中所有字段.fileds中可以指定返回以上任意一个或者多个字段,以","分隔.
+// 需返回的字段列表.可选值:Shipping 物流数据结构中所有字段.fileds中可以指定返回以上任意一个或者多个字段,以&#34;,&#34;分隔.
 func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetFields(_fields string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
@@ -205,7 +205,7 @@ func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetTid() int64 {
 }
 
 // SetPageNo is PageNo Setter
-// 页码.该字段没传 或 值<1 ,则默认page_no为1
+// 页码.该字段没传 或 值&lt;1 ,则默认page_no为1
 func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetPageNo(_pageNo int64) error {
 	r._pageNo = _pageNo
 	r.Set("page_no", _pageNo)
@@ -218,7 +218,7 @@ func (r TaobaoLogisticsOrdersDetailGetAPIRequest) GetPageNo() int64 {
 }
 
 // SetPageSize is PageSize Setter
-// 每页条数.该字段没传 或 值<1 ，则默认page_size为40
+// 每页条数.该字段没传 或 值&lt;1 ，则默认page_size为40
 func (r *TaobaoLogisticsOrdersDetailGetAPIRequest) SetPageSize(_pageSize int64) error {
 	r._pageSize = _pageSize
 	r.Set("page_size", _pageSize)

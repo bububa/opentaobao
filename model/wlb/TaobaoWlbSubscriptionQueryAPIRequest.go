@@ -42,7 +42,7 @@ func (r TaobaoWlbSubscriptionQueryAPIRequest) GetApiParams() url.Values {
 }
 
 // SetStatus is Status Setter
-// 状态 <br/>AUDITING 1-待审核; <br/>CANCEL 2-撤销 ;<br/>CHECKED 3-审核通过 ;<br/>FAILED 4-审核未通过 ;<br/>SYNCHRONIZING 5-同步中;<br/>只允许输入上面指定的值，且可以为空，为空时查询所有状态。若输错了，则按AUDITING处理。
+// 状态 &lt;br/&gt;AUDITING 1-待审核; &lt;br/&gt;CANCEL 2-撤销 ;&lt;br/&gt;CHECKED 3-审核通过 ;&lt;br/&gt;FAILED 4-审核未通过 ;&lt;br/&gt;SYNCHRONIZING 5-同步中;&lt;br/&gt;只允许输入上面指定的值，且可以为空，为空时查询所有状态。若输错了，则按AUDITING处理。
 func (r *TaobaoWlbSubscriptionQueryAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)

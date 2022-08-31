@@ -62,7 +62,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetApiParams() url.Values {
 }
 
 // SetContactName is ContactName Setter
-// 联系人姓名<br/><font color='red'>长度不可超过20个字节</font>
+// 联系人姓名&lt;br/&gt;&lt;font color=&#39;red&#39;&gt;长度不可超过20个字节&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetContactName(_contactName string) error {
 	r._contactName = _contactName
 	r.Set("contact_name", _contactName)
@@ -101,7 +101,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetCity() string {
 }
 
 // SetCountry is Country Setter
-// 区、县<br/><br><font color='red'>如果所在地区是海外的可以为空，否则为必参</font>
+// 区、县&lt;br/&gt;&lt;br&gt;&lt;font color=&#39;red&#39;&gt;如果所在地区是海外的可以为空，否则为必参&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCountry(_country string) error {
 	r._country = _country
 	r.Set("country", _country)
@@ -127,7 +127,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetAddr() string {
 }
 
 // SetZipCode is ZipCode Setter
-// 地区邮政编码<br/><br><font color='red'>如果所在地区是海外的可以为空，否则为必参</font>
+// 地区邮政编码&lt;br/&gt;&lt;br&gt;&lt;font color=&#39;red&#39;&gt;如果所在地区是海外的可以为空，否则为必参&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetZipCode(_zipCode string) error {
 	r._zipCode = _zipCode
 	r.Set("zip_code", _zipCode)
@@ -153,7 +153,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetPhone() string {
 }
 
 // SetMobilePhone is MobilePhone Setter
-// 手机号码，手机与电话必需有一个 <br><font color='red'>手机号码不能超过20位</font>
+// 手机号码，手机与电话必需有一个 &lt;br&gt;&lt;font color=&#39;red&#39;&gt;手机号码不能超过20位&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMobilePhone(_mobilePhone string) error {
 	r._mobilePhone = _mobilePhone
 	r.Set("mobile_phone", _mobilePhone)
@@ -166,7 +166,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetMobilePhone() string {
 }
 
 // SetSellerCompany is SellerCompany Setter
-// 公司名称,<br/><br><font color='red'>公司名称长能不能超过20字节</font>
+// 公司名称,&lt;br/&gt;&lt;br&gt;&lt;font color=&#39;red&#39;&gt;公司名称长能不能超过20字节&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetSellerCompany(_sellerCompany string) error {
 	r._sellerCompany = _sellerCompany
 	r.Set("seller_company", _sellerCompany)
@@ -179,7 +179,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetSellerCompany() string {
 }
 
 // SetMemo is Memo Setter
-// 备注,<br><font color='red'>备注不能超过256字节</font>
+// 备注,&lt;br&gt;&lt;font color=&#39;red&#39;&gt;备注不能超过256字节&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetMemo(_memo string) error {
 	r._memo = _memo
 	r.Set("memo", _memo)
@@ -205,7 +205,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetContactId() int64 {
 }
 
 // SetGetDef is GetDef Setter
-// 默认取货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认取货地址，撤消原默认取货地址</font>
+// 默认取货地址。&lt;br&gt;&lt;br/&gt;&lt;font color=&#39;red&#39;&gt;选择此项(true)，将当前地址设为默认取货地址，撤消原默认取货地址&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetGetDef(_getDef bool) error {
 	r._getDef = _getDef
 	r.Set("get_def", _getDef)
@@ -218,7 +218,7 @@ func (r TaobaoLogisticsAddressModifyAPIRequest) GetGetDef() bool {
 }
 
 // SetCancelDef is CancelDef Setter
-// 默认退货地址。<br><br/><font color='red'>选择此项(true)，将当前地址设为默认退货地址，撤消原默认退货地址</font>
+// 默认退货地址。&lt;br&gt;&lt;br/&gt;&lt;font color=&#39;red&#39;&gt;选择此项(true)，将当前地址设为默认退货地址，撤消原默认退货地址&lt;/font&gt;
 func (r *TaobaoLogisticsAddressModifyAPIRequest) SetCancelDef(_cancelDef bool) error {
 	r._cancelDef = _cancelDef
 	r.Set("cancel_def", _cancelDef)

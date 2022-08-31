@@ -8,7 +8,7 @@ type Subs struct {
 	CalledNo string `json:"called_no,omitempty" xml:"called_no,omitempty"`
 	// 短信通道方式SMS_INTERCEPT(拦截推送阿里)，SMS_NORMAL_SEND(正常现网下发)，SMS_DROP(拦截丢弃)
 	SmsChannel string `json:"sms_channel,omitempty" xml:"sms_channel,omitempty"`
-	// 呼叫类型MASTER(A->X->B), CALLED(B->X->A), SMS_SENDER, SMS_RECEIVER
+	// 呼叫类型MASTER(A-&gt;X-&gt;B), CALLED(B-&gt;X-&gt;A), SMS_SENDER, SMS_RECEIVER
 	CallType string `json:"call_type,omitempty" xml:"call_type,omitempty"`
 	// 录音类型，mp3/wav
 	RecType string `json:"rec_type,omitempty" xml:"rec_type,omitempty"`

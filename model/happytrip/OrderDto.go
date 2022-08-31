@@ -16,7 +16,7 @@ type OrderDto struct {
 	BuyerUserName string `json:"buyer_user_name,omitempty" xml:"buyer_user_name,omitempty"`
 	// 订单预计关闭时间
 	CloseTime string `json:"close_time,omitempty" xml:"close_time,omitempty"`
-	// 订单当前状态  -1, "未知状态"  1, "预定中"  2, "已取消"  3, "待付款"  4, "已付款"  5, "已删除"  6, "已完成"  7, "已关闭"  8, "已预订"  9, "已变更"  10, "预定失败"
+	// 订单当前状态  -1, &#34;未知状态&#34;  1, &#34;预定中&#34;  2, &#34;已取消&#34;  3, &#34;待付款&#34;  4, &#34;已付款&#34;  5, &#34;已删除&#34;  6, &#34;已完成&#34;  7, &#34;已关闭&#34;  8, &#34;已预订&#34;  9, &#34;已变更&#34;  10, &#34;预定失败&#34;
 	CurrentStatus string `json:"current_status,omitempty" xml:"current_status,omitempty"`
 	// 订单当前状态描述 （参考current_status）
 	CurrentStatusDesc string `json:"current_status_desc,omitempty" xml:"current_status_desc,omitempty"`
@@ -42,7 +42,7 @@ type OrderDto struct {
 	OutOrderStatusDesc string `json:"out_order_status_desc,omitempty" xml:"out_order_status_desc,omitempty"`
 	// 关联的差旅申请单的数据同步关联id
 	OuterTravelHeadId string `json:"outer_travel_head_id,omitempty" xml:"outer_travel_head_id,omitempty"`
-	// 支付状态  -1, "未知状态"  1, "未付款"  2, "待付款"  3, "已付款"  4, "支付超时"
+	// 支付状态  -1, &#34;未知状态&#34;  1, &#34;未付款&#34;  2, &#34;待付款&#34;  3, &#34;已付款&#34;  4, &#34;支付超时&#34;
 	PayStatus string `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 支付状态描述
 	PayStatusDesc string `json:"pay_status_desc,omitempty" xml:"pay_status_desc,omitempty"`
@@ -68,7 +68,7 @@ type OrderDto struct {
 	Id int64 `json:"id,omitempty" xml:"id,omitempty"`
 	// 线上线下标记0线下 1线上
 	OnlineFlag int64 `json:"online_flag,omitempty" xml:"online_flag,omitempty"`
-	// 订单一级类型 (一级类型，一级类型描述，二级类型，二级类型描述)  (-1, "未知", -1, "未知")  (4, "机票", 24, "飞猪国内机票")  (4, "机票", 47, "飞猪国际机票")  (4, "机票", 48, "飞猪国际询价单机票")  (4, "机票", 49, "GT国际机票")  (5, "酒店", 14, "飞猪国内酒店")  (5, "酒店", 34, "HRS国际酒店")  (6, "用车", 23, "国内用车")
+	// 订单一级类型 (一级类型，一级类型描述，二级类型，二级类型描述)  (-1, &#34;未知&#34;, -1, &#34;未知&#34;)  (4, &#34;机票&#34;, 24, &#34;飞猪国内机票&#34;)  (4, &#34;机票&#34;, 47, &#34;飞猪国际机票&#34;)  (4, &#34;机票&#34;, 48, &#34;飞猪国际询价单机票&#34;)  (4, &#34;机票&#34;, 49, &#34;GT国际机票&#34;)  (5, &#34;酒店&#34;, 14, &#34;飞猪国内酒店&#34;)  (5, &#34;酒店&#34;, 34, &#34;HRS国际酒店&#34;)  (6, &#34;用车&#34;, 23, &#34;国内用车&#34;)
 	OrderClassId int64 `json:"order_class_id,omitempty" xml:"order_class_id,omitempty"`
 	// 订单二级类型 定义参考一级类型
 	OrderClassSecondId int64 `json:"order_class_second_id,omitempty" xml:"order_class_second_id,omitempty"`

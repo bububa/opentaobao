@@ -110,7 +110,7 @@ func (r TaobaoJstSmsMessageDirectBatchsendAPIRequest) GetRecNum() string {
 }
 
 // SetSmsContent is SmsContent Setter
-// 模板参数替换方式："[{\"msg\":\"hello1\",\"date\":\"2021-12-03\"},{\"msg\":\"hello2\",\"date\":\"2021-12-04\"},{\"msg\":\"hello3\",\"date\":\"2021-12-05\"}]"
+// 模板参数替换方式：&#34;[{\&#34;msg\&#34;:\&#34;hello1\&#34;,\&#34;date\&#34;:\&#34;2021-12-03\&#34;},{\&#34;msg\&#34;:\&#34;hello2\&#34;,\&#34;date\&#34;:\&#34;2021-12-04\&#34;},{\&#34;msg\&#34;:\&#34;hello3\&#34;,\&#34;date\&#34;:\&#34;2021-12-05\&#34;}]&#34;
 func (r *TaobaoJstSmsMessageDirectBatchsendAPIRequest) SetSmsContent(_smsContent string) error {
 	r._smsContent = _smsContent
 	r.Set("sms_content", _smsContent)

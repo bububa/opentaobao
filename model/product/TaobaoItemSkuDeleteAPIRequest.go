@@ -9,7 +9,7 @@ import (
 // TaobaoItemSkuDeleteAPIRequest 删除SKU API请求
 // taobao.item.sku.delete
 //
-// 删除一个sku的数据<br/>需要删除的sku通过属性properties进行匹配查找
+// 删除一个sku的数据&lt;br/&gt;需要删除的sku通过属性properties进行匹配查找
 type TaobaoItemSkuDeleteAPIRequest struct {
 	model.Params
 	// Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充

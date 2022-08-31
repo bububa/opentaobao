@@ -12,7 +12,7 @@ type RefundOrderQueryListRq struct {
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
 	// 【必填】分页大小
 	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-	// 申请单状态(WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款"))
+	// 申请单状态(WAIT(1,&#34;待处理&#34;), AGREED(2, &#34;已同意&#34;),REFUSE(3, &#34;已拒绝&#34;),PROCESS(6, &#34;已受理&#34;), SUCCESS(7, &#34;已退款&#34;))
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 飞猪订单ID
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`

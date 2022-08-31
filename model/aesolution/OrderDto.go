@@ -32,9 +32,9 @@ type OrderDto struct {
 	GmtUpdate string `json:"gmt_update,omitempty" xml:"gmt_update,omitempty"`
 	// Last order delivery time
 	GmtSendGoodsTime string `json:"gmt_send_goods_time,omitempty" xml:"gmt_send_goods_time,omitempty"`
-	// order pay time (The gmtPaysuccess field has the same meaning in the order details.)it's US Pacific time
+	// order pay time (The gmtPaysuccess field has the same meaning in the order details.)it&#39;s US Pacific time
 	GmtPayTime string `json:"gmt_pay_time,omitempty" xml:"gmt_pay_time,omitempty"`
-	// order create time,it's US Pacific time
+	// order create time,it&#39;s US Pacific time
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// fund status (NOT_PAY; PAY_SUCCESS; WAIT_SELLER_CHECK)
 	FundStatus string `json:"fund_status,omitempty" xml:"fund_status,omitempty"`

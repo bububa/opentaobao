@@ -74,7 +74,7 @@ func (r TaobaoRefundsApplyGetAPIRequest) GetSellerNick() string {
 }
 
 // SetStatus is Status Setter
-// 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。<br/>WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) <br/>WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) <br/>WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) <br/>SELLER_REFUSE_BUYER(卖家拒绝退款) <br/>CLOSED(退款关闭) <br/>SUCCESS(退款成功)
+// 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。&lt;br/&gt;WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) &lt;br/&gt;WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) &lt;br/&gt;WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) &lt;br/&gt;SELLER_REFUSE_BUYER(卖家拒绝退款) &lt;br/&gt;CLOSED(退款关闭) &lt;br/&gt;SUCCESS(退款成功)
 func (r *TaobaoRefundsApplyGetAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)
@@ -87,7 +87,7 @@ func (r TaobaoRefundsApplyGetAPIRequest) GetStatus() string {
 }
 
 // SetType is Type Setter
-// 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery的2种类型的数据。<br/>fixed(一口价) <br/>auction(拍卖) <br/>guarantee_trade(一口价、拍卖) <br/>independent_simple_trade(旺店入门版交易) <br/>independent_shop_trade(旺店标准版交易) <br/>auto_delivery(自动发货) <br/>ec(直冲) <br/>cod(货到付款) <br/>fenxiao(分销) <br/>game_equipment(游戏装备) <br/>shopex_trade(ShopEX交易) <br/>netcn_trade(万网交易) <br/>external_trade(统一外部交易)
+// 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery的2种类型的数据。&lt;br/&gt;fixed(一口价) &lt;br/&gt;auction(拍卖) &lt;br/&gt;guarantee_trade(一口价、拍卖) &lt;br/&gt;independent_simple_trade(旺店入门版交易) &lt;br/&gt;independent_shop_trade(旺店标准版交易) &lt;br/&gt;auto_delivery(自动发货) &lt;br/&gt;ec(直冲) &lt;br/&gt;cod(货到付款) &lt;br/&gt;fenxiao(分销) &lt;br/&gt;game_equipment(游戏装备) &lt;br/&gt;shopex_trade(ShopEX交易) &lt;br/&gt;netcn_trade(万网交易) &lt;br/&gt;external_trade(统一外部交易)
 func (r *TaobaoRefundsApplyGetAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)

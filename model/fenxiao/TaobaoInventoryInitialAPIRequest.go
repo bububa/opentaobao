@@ -54,7 +54,7 @@ func (r TaobaoInventoryInitialAPIRequest) GetStoreCode() string {
 }
 
 // SetItems is Items Setter
-// 商品初始库存信息： [{"scItemId":"商品后端ID，如果有传scItemCode,参数可以为0","scItemCode":"商品商家编码","inventoryType":"库存类型  1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义","quantity":"数量"}]
+// 商品初始库存信息： [{&#34;scItemId&#34;:&#34;商品后端ID，如果有传scItemCode,参数可以为0&#34;,&#34;scItemCode&#34;:&#34;商品商家编码&#34;,&#34;inventoryType&#34;:&#34;库存类型  1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义&#34;,&#34;quantity&#34;:&#34;数量&#34;}]
 func (r *TaobaoInventoryInitialAPIRequest) SetItems(_items string) error {
 	r._items = _items
 	r.Set("items", _items)

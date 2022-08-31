@@ -25,5 +25,5 @@ type AlibabaAlihealthRxCaPrescribeSignedStatusSaveAPIResponseModel struct {
 	// 错误信息
 	ExceptionMessage string `json:"exception_message,omitempty" xml:"exception_message,omitempty"`
 	// 出参
-	Data *YwxCommonVO `json:"data,omitempty" xml:"data,omitempty"`
+	Data *YwxCommonVo `json:"data,omitempty" xml:"data,omitempty"`
 }

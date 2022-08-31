@@ -4,7 +4,7 @@ package scbp
 type ProductRecommendQueryDto struct {
 	// TESTING：新发产品 HOT：优质转化品 WIN： 橱窗产品 PRE： 优先推广品 HIGH_VIDEO_PROD：优质视频品 PRODTAG_HOTSALE,PRODTAG_STRENGTH: 优品 SITE_NEW: 平台新品 DIRECT_PROD: 行业定征新品
 	TagList []string `json:"tag_list,omitempty" xml:"tag_list>string,omitempty"`
-	// 优品必填"or"
+	// 优品必填&#34;or&#34;
 	TagQueryType string `json:"tag_query_type,omitempty" xml:"tag_query_type,omitempty"`
 	// 新品必填：“NEW_PROD”
 	SubType string `json:"sub_type,omitempty" xml:"sub_type,omitempty"`

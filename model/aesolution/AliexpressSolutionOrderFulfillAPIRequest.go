@@ -48,7 +48,7 @@ func (r AliexpressSolutionOrderFulfillAPIRequest) GetApiParams() url.Values {
 }
 
 // SetServiceName is ServiceName Setter
-// Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120&page=1&toread=1#tpc for the detailed list of logistics services supported by the platform.)
+// Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120&amp;page=1&amp;toread=1#tpc for the detailed list of logistics services supported by the platform.)
 func (r *AliexpressSolutionOrderFulfillAPIRequest) SetServiceName(_serviceName string) error {
 	r._serviceName = _serviceName
 	r.Set("service_name", _serviceName)

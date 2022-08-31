@@ -8,7 +8,7 @@ type RefundGoodsQueryResult struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 取货类型（"FETCH_HOME"：上门；"ON_SHOP"：到店；"NONE"：无需取）
+	// 取货类型（&#34;FETCH_HOME&#34;：上门；&#34;ON_SHOP&#34;：到店；&#34;NONE&#34;：无需取）
 	RefundFetchType string `json:"refund_fetch_type,omitempty" xml:"refund_fetch_type,omitempty"`
 	// 买家id
 	BuyerId string `json:"buyer_id,omitempty" xml:"buyer_id,omitempty"`

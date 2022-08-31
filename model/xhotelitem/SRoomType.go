@@ -6,7 +6,7 @@ type SRoomType struct {
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 楼层
 	Floor string `json:"floor,omitempty" xml:"floor,omitempty"`
-	// 宽带服务<br/>"0","有线上网(免费),<br/>"1","有线上网(无)",<br/>"2","有线上网(收费)",<br/>"3","有线上网(部分有且免费)",<br/>"4","有线上网(部分有且收费)"
+	// 宽带服务&lt;br/&gt;&#34;0&#34;,&#34;有线上网(免费),&lt;br/&gt;&#34;1&#34;,&#34;有线上网(无)&#34;,&lt;br/&gt;&#34;2&#34;,&#34;有线上网(收费)&#34;,&lt;br/&gt;&#34;3&#34;,&#34;有线上网(部分有且免费)&#34;,&lt;br/&gt;&#34;4&#34;,&#34;有线上网(部分有且收费)&#34;
 	Internet string `json:"internet,omitempty" xml:"internet,omitempty"`
 	// pic_url
 	PicUrl string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
@@ -20,9 +20,9 @@ type SRoomType struct {
 	CreatedTime string `json:"created_time,omitempty" xml:"created_time,omitempty"`
 	// 修改时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
-	// 窗型，枚举类型<br/>0, 无窗,<br/>1, 有窗;
+	// 窗型，枚举类型&lt;br/&gt;0, 无窗,&lt;br/&gt;1, 有窗;
 	WindowType string `json:"window_type,omitempty" xml:"window_type,omitempty"`
-	// 床型。json格式：[{"bedType":"大床","bedSize":"1.5m"},{"bedType":"双床","bedSize":"1.2m"}]
+	// 床型。json格式：[{&#34;bedType&#34;:&#34;大床&#34;,&#34;bedSize&#34;:&#34;1.5m&#34;},{&#34;bedType&#34;:&#34;双床&#34;,&#34;bedSize&#34;:&#34;1.2m&#34;}]
 	Bed string `json:"bed,omitempty" xml:"bed,omitempty"`
 	// 匹配的标准房型
 	Srid int64 `json:"srid,omitempty" xml:"srid,omitempty"`

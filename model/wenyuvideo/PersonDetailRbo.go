@@ -10,7 +10,7 @@ type PersonDetailRbo struct {
 	OccupationList []string `json:"occupation_list,omitempty" xml:"occupation_list>string,omitempty"`
 	// 人物性质：牛人,拍客,网络红人
 	PersonKindList []string `json:"person_kind_list,omitempty" xml:"person_kind_list>string,omitempty"`
-	// 组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{'id':20349,'name':'张宇凡'},{'id':35994,'name':'袁泉'}]
+	// 组合成员，如果人物是一个组合，则允许设置下面的成员，人员也是一人物记录。输出格式[{&#39;id&#39;:20349,&#39;name&#39;:&#39;张宇凡&#39;},{&#39;id&#39;:35994,&#39;name&#39;:&#39;袁泉&#39;}]
 	MemberList []string `json:"member_list,omitempty" xml:"member_list>string,omitempty"`
 	// 人物相关视频推荐
 	RefShows []ShowBaseRbo `json:"ref_shows,omitempty" xml:"ref_shows>show_base_rbo,omitempty"`

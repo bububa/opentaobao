@@ -34,7 +34,7 @@ type IeRefundTicketVo struct {
 	RefundStatus int64 `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 实际退还买家
 	RefundToUserMoney int64 `json:"refund_to_user_money,omitempty" xml:"refund_to_user_money,omitempty"`
-	// 自愿申请:0,非自愿退票(不可抗力):1,自愿退票（我要改变行程计划、我不想飞）:2,自愿退票（填错名字、选错日期、选错航班）:3,自愿退票（生病了无法乘机（无二甲医院证明））:4,非自愿退票（航班延误或取消、航班时刻变更等航司原因）:5,非自愿退票（身体原因且有二级甲等医院<含>以上的医院证明）:6,非自愿退票（旅客拒签或其他不可抗力因素）:7
+	// 自愿申请:0,非自愿退票(不可抗力):1,自愿退票（我要改变行程计划、我不想飞）:2,自愿退票（填错名字、选错日期、选错航班）:3,自愿退票（生病了无法乘机（无二甲医院证明））:4,非自愿退票（航班延误或取消、航班时刻变更等航司原因）:5,非自愿退票（身体原因且有二级甲等医院&lt;含&gt;以上的医院证明）:6,非自愿退票（旅客拒签或其他不可抗力因素）:7
 	ApplyType int64 `json:"apply_type,omitempty" xml:"apply_type,omitempty"`
 	// 订单id
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`

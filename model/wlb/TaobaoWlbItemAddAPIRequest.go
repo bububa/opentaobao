@@ -130,7 +130,7 @@ func (r TaobaoWlbItemAddAPIRequest) GetRemark() string {
 }
 
 // SetType is Type Setter
-// NORMAL--普通商品<br/>COMBINE--组合商品<br/>DISTRIBUTION--分销
+// NORMAL--普通商品&lt;br/&gt;COMBINE--组合商品&lt;br/&gt;DISTRIBUTION--分销
 func (r *TaobaoWlbItemAddAPIRequest) SetType(_type string) error {
 	r._type = _type
 	r.Set("type", _type)
@@ -156,7 +156,7 @@ func (r TaobaoWlbItemAddAPIRequest) GetIsSku() string {
 }
 
 // SetProNameList is ProNameList Setter
-// 属性名列表,目前支持的属性：<br/>毛重:GWeight	<br/>净重:Nweight<br/>皮重: Tweight<br/>自定义属性：<br/>paramkey1<br/>paramkey2<br/>paramkey3<br/>paramkey4
+// 属性名列表,目前支持的属性：&lt;br/&gt;毛重:GWeight	&lt;br/&gt;净重:Nweight&lt;br/&gt;皮重: Tweight&lt;br/&gt;自定义属性：&lt;br/&gt;paramkey1&lt;br/&gt;paramkey2&lt;br/&gt;paramkey3&lt;br/&gt;paramkey4
 func (r *TaobaoWlbItemAddAPIRequest) SetProNameList(_proNameList string) error {
 	r._proNameList = _proNameList
 	r.Set("pro_name_list", _proNameList)
@@ -169,7 +169,7 @@ func (r TaobaoWlbItemAddAPIRequest) GetProNameList() string {
 }
 
 // SetProValueList is ProValueList Setter
-// 属性值列表：<br/>10,8
+// 属性值列表：&lt;br/&gt;10,8
 func (r *TaobaoWlbItemAddAPIRequest) SetProValueList(_proValueList string) error {
 	r._proValueList = _proValueList
 	r.Set("pro_value_list", _proValueList)

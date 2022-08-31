@@ -2,7 +2,7 @@ package btrip
 
 // PassengerQuantityRq 结构体
 type PassengerQuantityRq struct {
-	// 乘客类型;ADT:"普通成人", CHD:"儿童", STU:"留学生", LABOR:"劳工", MIGRANT:"新移民", MARINER:"海员", OLD:"老人", YOUNG:"青年", INFANT:"婴儿", OTHER:"特殊身份"
+	// 乘客类型;ADT:&#34;普通成人&#34;, CHD:&#34;儿童&#34;, STU:&#34;留学生&#34;, LABOR:&#34;劳工&#34;, MIGRANT:&#34;新移民&#34;, MARINER:&#34;海员&#34;, OLD:&#34;老人&#34;, YOUNG:&#34;青年&#34;, INFANT:&#34;婴儿&#34;, OTHER:&#34;特殊身份&#34;
 	PassengerType string `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
 	// 人员数量
 	Quantity int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`

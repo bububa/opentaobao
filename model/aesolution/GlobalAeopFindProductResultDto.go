@@ -14,7 +14,7 @@ type GlobalAeopFindProductResultDto struct {
 	MultiLanguageDescriptionList []GlobalDescription `json:"multi_language_description_list,omitempty" xml:"multi_language_description_list>global_description,omitempty"`
 	// Required when is_pack_sell equals to true. It means weight to be correspondingly added. Range value: 0.001-500.000, reserving three decimal places and applying scale; Unit: kilogram(s). Please refer to the field is_pack_sell for details.
 	AddWeight string `json:"add_weight,omitempty" xml:"add_weight,omitempty"`
-	// the Currency code. "USD" will be used as the default value if this information is not provided; Currency code is mandatory for Russian sellers and Spanish sellers. For Russian sellers, RUB should be filled in while EUR for Spanish sellers.
+	// the Currency code. &#34;USD&#34; will be used as the default value if this information is not provided; Currency code is mandatory for Russian sellers and Spanish sellers. For Russian sellers, RUB should be filled in while EUR for Spanish sellers.
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
 	// Deprecated, please use multi_language_description_list
 	Detail string `json:"detail,omitempty" xml:"detail,omitempty"`
@@ -58,7 +58,7 @@ type GlobalAeopFindProductResultDto struct {
 	FreightTemplateId int64 `json:"freight_template_id,omitempty" xml:"freight_template_id,omitempty"`
 	// Group ID that the product belongs to.
 	GroupId int64 `json:"group_id,omitempty" xml:"group_id,omitempty"`
-	// Number of piece(s) in each pack. In case of packing sale,lotNum>1, and in case of unpacking sale, lotNum=1.
+	// Number of piece(s) in each pack. In case of packing sale,lotNum&gt;1, and in case of unpacking sale, lotNum=1.
 	LotNum int64 `json:"lot_num,omitempty" xml:"lot_num,omitempty"`
 	// Out of date, please ignore.
 	OwnerMemberSeq int64 `json:"owner_member_seq,omitempty" xml:"owner_member_seq,omitempty"`

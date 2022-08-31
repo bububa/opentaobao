@@ -2,7 +2,7 @@ package security
 
 // ScanAppInfo 结构体
 type ScanAppInfo struct {
-	// 任务处理完成后的反向通知回调地址,请不要使用ip地址,可能会无法回调,dataType=1时必填,通知为GET请求,请求URL: callbackUrl+"?item_id=xxx&task_status=1"; item_id为应用加固/风险扫描接口返回的任务ID; task_status为任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时; 对于应用加固,接收到通知后如果task_status为1则可通过对应的查询接口查询加固/扫描结果; 对于应用风险扫描,如果task_status为1,3,4均可通过对应查询接口查询到结果,但不包括失败的扫描项的结果
+	// 任务处理完成后的反向通知回调地址,请不要使用ip地址,可能会无法回调,dataType=1时必填,通知为GET请求,请求URL: callbackUrl+&#34;?item_id=xxx&amp;task_status=1&#34;; item_id为应用加固/风险扫描接口返回的任务ID; task_status为任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时; 对于应用加固,接收到通知后如果task_status为1则可通过对应的查询接口查询加固/扫描结果; 对于应用风险扫描,如果task_status为1,3,4均可通过对应查询接口查询到结果,但不包括失败的扫描项的结果
 	CallbackUrl string `json:"callback_url,omitempty" xml:"callback_url,omitempty"`
 	// APP数据  dataType=1时填写 App包的下载地址;  dataType=2时填写 App包的md5值
 	Data string `json:"data,omitempty" xml:"data,omitempty"`

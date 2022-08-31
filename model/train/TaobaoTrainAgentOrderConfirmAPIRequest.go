@@ -13,7 +13,7 @@ import (
 type TaobaoTrainAgentOrderConfirmAPIRequest struct {
 	model.Params
 	// 入参
-	_param *BookTicketConfirmRQ
+	_param *BookTicketConfirmRq
 }
 
 // NewTaobaoTrainAgentOrderConfirmRequest 初始化TaobaoTrainAgentOrderConfirmAPIRequest对象
@@ -39,13 +39,13 @@ func (r TaobaoTrainAgentOrderConfirmAPIRequest) GetApiParams() url.Values {
 
 // SetParam is Param Setter
 // 入参
-func (r *TaobaoTrainAgentOrderConfirmAPIRequest) SetParam(_param *BookTicketConfirmRQ) error {
+func (r *TaobaoTrainAgentOrderConfirmAPIRequest) SetParam(_param *BookTicketConfirmRq) error {
 	r._param = _param
 	r.Set("param", _param)
 	return nil
 }
 
 // GetParam Param Getter
-func (r TaobaoTrainAgentOrderConfirmAPIRequest) GetParam() *BookTicketConfirmRQ {
+func (r TaobaoTrainAgentOrderConfirmAPIRequest) GetParam() *BookTicketConfirmRq {
 	return r._param
 }

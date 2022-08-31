@@ -10,7 +10,7 @@ type OpenApiZzdHotelOrderRs struct {
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-	// 订单状态：1, "等待确认";2, "等待付款"; 3, "预订成功";4, "申请退款";5, "退款成功";6, "已关闭";0,"点击详情查看状态";7, "结账成功"; 8, "支付成功";
+	// 订单状态：1, &#34;等待确认&#34;;2, &#34;等待付款&#34;; 3, &#34;预订成功&#34;;4, &#34;申请退款&#34;;5, &#34;退款成功&#34;;6, &#34;已关闭&#34;;0,&#34;点击详情查看状态&#34;;7, &#34;结账成功&#34;; 8, &#34;支付成功&#34;;
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 申请单标题
 	ApplyTitle string `json:"apply_title,omitempty" xml:"apply_title,omitempty"`
@@ -72,11 +72,11 @@ type OpenApiZzdHotelOrderRs struct {
 	OrderId int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 资金流向:1:支出，2:收入
 	TradeAction int64 `json:"trade_action,omitempty" xml:"trade_action,omitempty"`
-	// 交易类型：1:酒店费用，2,："酒店订单服务费"，101:酒店退款'，102,："酒店赔付"
+	// 交易类型：1:酒店费用，2,：&#34;酒店订单服务费&#34;，101:酒店退款&#39;，102,：&#34;酒店赔付&#34;
 	TradeType int64 `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
 	// 差标
 	TravelStandardAmount int64 `json:"travel_standard_amount,omitempty" xml:"travel_standard_amount,omitempty"`
-	// 订单类型：1：全额支付、5：到店支付、6：信用住',
+	// 订单类型：1：全额支付、5：到店支付、6：信用住&#39;,
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 酒店信息
 	HotelInfoDo *HotelInfoDo `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`

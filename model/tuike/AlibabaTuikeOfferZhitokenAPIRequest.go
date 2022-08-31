@@ -121,7 +121,7 @@ func (r AlibabaTuikeOfferZhitokenAPIRequest) GetSource() string {
 }
 
 // SetLeftBtnText is LeftBtnText Setter
-// 左按钮文案，可以为空，默认为"取消"
+// 左按钮文案，可以为空，默认为&#34;取消&#34;
 func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetLeftBtnText(_leftBtnText string) error {
 	r._leftBtnText = _leftBtnText
 	r.Set("left_btn_text", _leftBtnText)
@@ -147,7 +147,7 @@ func (r AlibabaTuikeOfferZhitokenAPIRequest) GetLeftBtnLink() string {
 }
 
 // SetRightBtnText is RightBtnText Setter
-// 右按钮文案，可以为空，默认为"确定"
+// 右按钮文案，可以为空，默认为&#34;确定&#34;
 func (r *AlibabaTuikeOfferZhitokenAPIRequest) SetRightBtnText(_rightBtnText string) error {
 	r._rightBtnText = _rightBtnText
 	r.Set("right_btn_text", _rightBtnText)

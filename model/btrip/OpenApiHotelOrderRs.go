@@ -34,7 +34,7 @@ type OpenApiHotelOrderRs struct {
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
 	// 房型
 	RoomType string `json:"room_type,omitempty" xml:"room_type,omitempty"`
-	// 入住顾客，多个用','分割
+	// 入住顾客，多个用&#39;,&#39;分割
 	Guest string `json:"guest,omitempty" xml:"guest,omitempty"`
 	// 订单类型描述
 	OrderTypeDesc string `json:"order_type_desc,omitempty" xml:"order_type_desc,omitempty"`

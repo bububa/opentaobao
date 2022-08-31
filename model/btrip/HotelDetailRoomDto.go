@@ -14,7 +14,7 @@ type HotelDetailRoomDto struct {
 	Floor string `json:"floor,omitempty" xml:"floor,omitempty"`
 	// 房间名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 宽带服务，"0","有线上网(免费),"1","有线上网(无)","2","有线上网(收费)","3","有线上网(部分有且免费)","4","有线上网(部分有且收费)"
+	// 宽带服务，&#34;0&#34;,&#34;有线上网(免费),&#34;1&#34;,&#34;有线上网(无)&#34;,&#34;2&#34;,&#34;有线上网(收费)&#34;,&#34;3&#34;,&#34;有线上网(部分有且免费)&#34;,&#34;4&#34;,&#34;有线上网(部分有且收费)&#34;
 	NetworkService string `json:"network_service,omitempty" xml:"network_service,omitempty"`
 	// 图片
 	Pics string `json:"pics,omitempty" xml:"pics,omitempty"`

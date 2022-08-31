@@ -136,7 +136,7 @@ func (r TaobaoXhotelHouseRoomtypeAddAPIRequest) GetInternet() string {
 }
 
 // SetService is Service Setter
-// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {"bar":false,"catv":false,"ddd":false,"idd":false,"pubtoilet":false,"toilet":false}
+// 设施服务。JSON格式。 value值true有此服务，false没有。 bar：吧台，catv：有线电视，ddd：国内长途电话，idd：国际长途电话，toilet：独立卫生间，pubtoliet：公共卫生间。 如： {&#34;bar&#34;:false,&#34;catv&#34;:false,&#34;ddd&#34;:false,&#34;idd&#34;:false,&#34;pubtoilet&#34;:false,&#34;toilet&#34;:false}
 func (r *TaobaoXhotelHouseRoomtypeAddAPIRequest) SetService(_service string) error {
 	r._service = _service
 	r.Set("service", _service)
@@ -201,7 +201,7 @@ func (r TaobaoXhotelHouseRoomtypeAddAPIRequest) GetOutHid() string {
 }
 
 // SetPics is Pics Setter
-// 房型图片只支持远程图片，格式如下：[{"url":"http://taobao.com/123.jpg","ismain":"true"},{"url":"http://taobao.com/456.jpg","ismain":"false"},{"url":"http://taobao.com/789.jpg","ismain":"false"}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
+// 房型图片只支持远程图片，格式如下：[{&#34;url&#34;:&#34;http://taobao.com/123.jpg&#34;,&#34;ismain&#34;:&#34;true&#34;},{&#34;url&#34;:&#34;http://taobao.com/456.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;},{&#34;url&#34;:&#34;http://taobao.com/789.jpg&#34;,&#34;ismain&#34;:&#34;false&#34;}]其中url是远程图片的访问地址（URL地址必须是合法的，否则会报错），main是是否为主图。只能设置一张图片为主图。
 func (r *TaobaoXhotelHouseRoomtypeAddAPIRequest) SetPics(_pics string) error {
 	r._pics = _pics
 	r.Set("pics", _pics)
@@ -253,7 +253,7 @@ func (r TaobaoXhotelHouseRoomtypeAddAPIRequest) GetHouseModel() string {
 }
 
 // SetBedInfo is BedInfo Setter
-// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&docType=1&articleId=108347
+// 床信息: bedType:床型, desc: 床型名, width:床宽, length：床长, bedNum: 床数。床型取值见链接https://open.alitrip.com/docs/doc.htm?spm=0.0.0.0.4zBOVn&amp;docType=1&amp;articleId=108347
 func (r *TaobaoXhotelHouseRoomtypeAddAPIRequest) SetBedInfo(_bedInfo string) error {
 	r._bedInfo = _bedInfo
 	r.Set("bed_info", _bedInfo)

@@ -55,7 +55,7 @@ func (r TmallItemSizemappingTemplateUpdateAPIRequest) GetTemplateName() string {
 }
 
 // SetTemplateContent is TemplateContent Setter
-// 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
+// 尺码表模板内容，格式为&#34;尺码值:维度名称:数值,尺码值:维度名称:数值&#34;。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
 func (r *TmallItemSizemappingTemplateUpdateAPIRequest) SetTemplateContent(_templateContent string) error {
 	r._templateContent = _templateContent
 	r.Set("template_content", _templateContent)

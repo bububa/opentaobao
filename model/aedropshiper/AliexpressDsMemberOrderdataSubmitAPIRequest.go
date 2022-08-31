@@ -102,7 +102,7 @@ func (r AliexpressDsMemberOrderdataSubmitAPIRequest) GetPaytime() string {
 }
 
 // SetAeSkuInfo is AeSkuInfo Setter
-// AE product SKU information, SKU key-value pair: "200000182:193;200007763:201336100"
+// AE product SKU information, SKU key-value pair: &#34;200000182:193;200007763:201336100&#34;
 func (r *AliexpressDsMemberOrderdataSubmitAPIRequest) SetAeSkuInfo(_aeSkuInfo string) error {
 	r._aeSkuInfo = _aeSkuInfo
 	r.Set("ae_sku_info", _aeSkuInfo)

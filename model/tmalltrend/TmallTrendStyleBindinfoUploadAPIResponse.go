@@ -9,7 +9,7 @@ import (
 // TmallTrendStyleBindinfoUploadAPIResponse 趋势词&款式绑定信息同步API API返回值
 // tmall.trend.style.bindinfo.upload
 //
-// 趋势词&款式(服饰行业)绑定信息同步至平台
+// 趋势词&amp;款式(服饰行业)绑定信息同步至平台
 type TmallTrendStyleBindinfoUploadAPIResponse struct {
 	model.CommonResponse
 	TmallTrendStyleBindinfoUploadAPIResponseModel
@@ -20,7 +20,7 @@ type TmallTrendStyleBindinfoUploadAPIResponseModel struct {
 	XMLName xml.Name `xml:"tmall_trend_style_bindinfo_upload_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 趋势词&款式关联信息同步处理结果描述
+	// 趋势词&amp;款式关联信息同步处理结果描述
 	Value string `json:"value,omitempty" xml:"value,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`

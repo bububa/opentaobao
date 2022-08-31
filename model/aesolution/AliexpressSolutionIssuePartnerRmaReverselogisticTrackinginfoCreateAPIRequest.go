@@ -38,7 +38,7 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIReq
 }
 
 // SetLogisticsOrderCreationRequest is LogisticsOrderCreationRequest Setter
-// Logistic's order creation request
+// Logistic&#39;s order creation request
 func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateAPIRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
 	r._logisticsOrderCreationRequest = _logisticsOrderCreationRequest
 	r.Set("logistics_order_creation_request", _logisticsOrderCreationRequest)

@@ -8,7 +8,7 @@ import (
 // AlibabaDchainAoxiangCombineitemBatchUpdateAsync 组合货品新建&更新
 // alibaba.dchain.aoxiang.combineitem.batch.update.async
 //
-// 组合货品新建&更新
+// 组合货品新建&amp;更新
 func AlibabaDchainAoxiangCombineitemBatchUpdateAsync(clt *core.SDKClient, req *ascp.AlibabaDchainAoxiangCombineitemBatchUpdateAsyncAPIRequest, session string) (*ascp.AlibabaDchainAoxiangCombineitemBatchUpdateAsyncAPIResponse, error) {
 	var resp ascp.AlibabaDchainAoxiangCombineitemBatchUpdateAsyncAPIResponse
 	err := clt.Post(req, &resp, session)

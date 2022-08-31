@@ -7,7 +7,7 @@ type PriceDetailDto struct {
 	// 房型图片集合
 	Pics []string `json:"pics,omitempty" xml:"pics>string,omitempty"`
 	// 房型设施
-	FacilityGroupList []FacilityListVO `json:"facility_group_list,omitempty" xml:"facility_group_list>facility_list_vo,omitempty"`
+	FacilityGroupList []FacilityListVo `json:"facility_group_list,omitempty" xml:"facility_group_list>facility_list_vo,omitempty"`
 	// 总价格
 	TotalPrice string `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// 总税费

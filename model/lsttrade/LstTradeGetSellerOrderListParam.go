@@ -6,7 +6,7 @@ type LstTradeGetSellerOrderListParam struct {
 	BuyerMemberId string `json:"buyer_member_id,omitempty" xml:"buyer_member_id,omitempty"`
 	// 订单状态
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
-	// 退款状态，支持：     "waitselleragree"(等待卖家同意),     "refundsuccess"(退款成功),     "refundclose"(退款关闭),     "waitbuyermodify"(待买家修改),     "waitbuyersend"(等待买家退货),     "waitsellerreceive"(等待卖家确认收货)
+	// 退款状态，支持：     &#34;waitselleragree&#34;(等待卖家同意),     &#34;refundsuccess&#34;(退款成功),     &#34;refundclose&#34;(退款关闭),     &#34;waitbuyermodify&#34;(待买家修改),     &#34;waitbuyersend&#34;(等待买家退货),     &#34;waitsellerreceive&#34;(等待卖家确认收货)
 	RefundStatus string `json:"refund_status,omitempty" xml:"refund_status,omitempty"`
 	// 交易订单时间
 	TradeEndTime string `json:"trade_end_time,omitempty" xml:"trade_end_time,omitempty"`

@@ -32,7 +32,7 @@ type TopDpRefundDetailDo struct {
 	PurchaseOrderId int64 `json:"purchase_order_id,omitempty" xml:"purchase_order_id,omitempty"`
 	// 退款流程类型：4：未发货退款；1：已发货仅退款；2：已发货退货退款；3：售后仅退款；5：物流拒收；6：售后退货退款
 	RefundFlowType int64 `json:"refund_flow_type,omitempty" xml:"refund_flow_type,omitempty"`
-	// 超时类型：<br/>1：供应商同意退款/同意退货超时；<br/>2：供应商确认收货超时
+	// 超时类型：&lt;br/&gt;1：供应商同意退款/同意退货超时；&lt;br/&gt;2：供应商确认收货超时
 	ToType int64 `json:"to_type,omitempty" xml:"to_type,omitempty"`
 	// 前台消费者订单对应的退款详情
 	BuyerRefund *BuyerRefund `json:"buyer_refund,omitempty" xml:"buyer_refund,omitempty"`

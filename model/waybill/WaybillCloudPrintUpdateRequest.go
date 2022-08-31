@@ -4,7 +4,7 @@ package waybill
 type WaybillCloudPrintUpdateRequest struct {
 	// 物流公司CODE
 	CpCode string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
-	// 物流服务内容<a href="http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.eK8aZm&treeId=17&articleId=26765&docType=2">链接</a>
+	// 物流服务内容&lt;a href=&#34;http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.eK8aZm&amp;treeId=17&amp;articleId=26765&amp;docType=2&#34;&gt;链接&lt;/a&gt;
 	LogisticsServices string `json:"logistics_services,omitempty" xml:"logistics_services,omitempty"`
 	// 模板URL
 	TemplateUrl string `json:"template_url,omitempty" xml:"template_url,omitempty"`

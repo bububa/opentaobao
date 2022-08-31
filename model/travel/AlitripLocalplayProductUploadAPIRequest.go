@@ -145,7 +145,7 @@ func (r AlitripLocalplayProductUploadAPIRequest) GetSubTitles() []string {
 }
 
 // SetSellerCids is SellerCids Setter
-// 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
+// 关联商品与店铺类目 结构:&#34;cid1,cid2,...,&#34;。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
 func (r *AlitripLocalplayProductUploadAPIRequest) SetSellerCids(_sellerCids []string) error {
 	r._sellerCids = _sellerCids
 	r.Set("seller_cids", _sellerCids)
@@ -405,7 +405,7 @@ func (r AlitripLocalplayProductUploadAPIRequest) GetRefundType() int64 {
 }
 
 // SetTravellerTemplateId is TravellerTemplateId Setter
-// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具->出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
+// 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-&gt;出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
 func (r *AlitripLocalplayProductUploadAPIRequest) SetTravellerTemplateId(_travellerTemplateId int64) error {
 	r._travellerTemplateId = _travellerTemplateId
 	r.Set("traveller_template_id", _travellerTemplateId)

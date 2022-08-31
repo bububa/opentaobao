@@ -28,7 +28,7 @@ type GlobalAeopTpChildOrderDto struct {
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// SKU code
 	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
-	// SELLER_SEND_GOODS" or "WAREHOUSE_SEND_GOODS"
+	// SELLER_SEND_GOODS&#34; or &#34;WAREHOUSE_SEND_GOODS&#34;
 	SendGoodsOperator string `json:"send_goods_operator,omitempty" xml:"send_goods_operator,omitempty"`
 	// fund status (NOT_PAY；PAY_SUCCESS)
 	FundStatus string `json:"fund_status,omitempty" xml:"fund_status,omitempty"`
@@ -72,6 +72,6 @@ type GlobalAeopTpChildOrderDto struct {
 	ProductPrice *GlobalMoneyStr `json:"product_price,omitempty" xml:"product_price,omitempty"`
 	// discount amount of child order
 	ChildOrderDiscountInfo *GlobalMoneyStr `json:"child_order_discount_info,omitempty" xml:"child_order_discount_info,omitempty"`
-	// An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the "Adjust price"  button in order management backend.
+	// An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the &#34;Adjust price&#34;  button in order management backend.
 	ChildOrderAdjustAmount *GlobalMoneyStr `json:"child_order_adjust_amount,omitempty" xml:"child_order_adjust_amount,omitempty"`
 }

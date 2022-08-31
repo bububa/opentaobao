@@ -8,7 +8,7 @@ import (
 // AlibabaOnetouchLogisticsExpressLogisticsProductList 查询物流运力列表
 // alibaba.onetouch.logistics.express.logistics.product.list
 //
-// 查询物流产品&揽收仓库列表
+// 查询物流产品&amp;揽收仓库列表
 func AlibabaOnetouchLogisticsExpressLogisticsProductList(clt *core.SDKClient, req *icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIRequest, session string) (*icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIResponse, error) {
 	var resp icbulogistics.AlibabaOnetouchLogisticsExpressLogisticsProductListAPIResponse
 	err := clt.Post(req, &resp, session)

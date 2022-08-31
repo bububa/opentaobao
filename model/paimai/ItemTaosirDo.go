@@ -2,7 +2,7 @@ package paimai
 
 // ItemTaosirDo 结构体
 type ItemTaosirDo struct {
-	// 卖家可选单位List<单位id，单位名>
+	// 卖家可选单位List&lt;单位id，单位名&gt;
 	StdUnitList []Feature `json:"std_unit_list,omitempty" xml:"std_unit_list>feature,omitempty"`
 	// 表达式元素list
 	ExprElList []ItemTaoSirElDo `json:"expr_el_list,omitempty" xml:"expr_el_list>item_tao_sir_el_do,omitempty"`

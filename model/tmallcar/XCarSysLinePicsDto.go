@@ -6,7 +6,7 @@ type XCarSysLinePicsDto struct {
 	ColorName string `json:"color_name,omitempty" xml:"color_name,omitempty"`
 	// 具体颜色色值，除整体外观外，其他不区分颜色，所以没有色值 比如 FFFF000FFF
 	ColorValue string `json:"color_value,omitempty" xml:"color_value,omitempty"`
-	// 图片列表List<URL>，最多100张,json格式 比如： ["www.baoud.com","www.alibb.com","www.accww.com"]
+	// 图片列表List&lt;URL&gt;，最多100张,json格式 比如： [&#34;www.baoud.com&#34;,&#34;www.alibb.com&#34;,&#34;www.accww.com&#34;]
 	Pics string `json:"pics,omitempty" xml:"pics,omitempty"`
 	// 品牌属性id
 	BrandPid int64 `json:"brand_pid,omitempty" xml:"brand_pid,omitempty"`

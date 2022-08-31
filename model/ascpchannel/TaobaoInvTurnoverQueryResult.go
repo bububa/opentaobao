@@ -2,7 +2,7 @@ package ascpchannel
 
 // TaobaoInvTurnoverQueryResult 结构体
 type TaobaoInvTurnoverQueryResult struct {
-	// 流水信息<明细>
+	// 流水信息&lt;明细&gt;
 	DataList []TaobaoInvTurnoverQueryData `json:"data_list,omitempty" xml:"data_list>taobao_inv_turnover_query_data,omitempty"`
 	// 查询页
 	PageIndex string `json:"page_index,omitempty" xml:"page_index,omitempty"`

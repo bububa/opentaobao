@@ -10,7 +10,7 @@ type CreateBillDto struct {
 	PayeeCountry string `json:"payee_country,omitempty" xml:"payee_country,omitempty"`
 	// 支付币种，国际标准的3位简码
 	CurrencyCode string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
-	// //BANK("普通银行账号") ,     //SPECIAL_CN_BANK("专用银行账号"),     //ALIPAY("支付宝"),     //OTHER("第三方支付")
+	// //BANK(&#34;普通银行账号&#34;) ,     //SPECIAL_CN_BANK(&#34;专用银行账号&#34;),     //ALIPAY(&#34;支付宝&#34;),     //OTHER(&#34;第三方支付&#34;)
 	PayChannels string `json:"pay_channels,omitempty" xml:"pay_channels,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`

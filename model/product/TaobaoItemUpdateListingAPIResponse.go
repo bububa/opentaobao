@@ -9,7 +9,7 @@ import (
 // TaobaoItemUpdateListingAPIResponse 一口价商品上架 API返回值
 // taobao.item.update.listing
 //
-// * 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户
+// * 单个商品上架&lt;br/&gt;* 输入的num_iid必须属于当前会话用户
 type TaobaoItemUpdateListingAPIResponse struct {
 	model.CommonResponse
 	TaobaoItemUpdateListingAPIResponseModel

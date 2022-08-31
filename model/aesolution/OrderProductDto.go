@@ -10,7 +10,7 @@ type OrderProductDto struct {
 	ShowStatus string `json:"show_status,omitempty" xml:"show_status,omitempty"`
 	// Last delivery time
 	SendGoodsTime string `json:"send_goods_time,omitempty" xml:"send_goods_time,omitempty"`
-	// Shipper type. "SELLER_SEND_GOODS": seller shipping; "WAREHOUSE_SEND_GOODS": warehouse delivery
+	// Shipper type. &#34;SELLER_SEND_GOODS&#34;: seller shipping; &#34;WAREHOUSE_SEND_GOODS&#34;: warehouse delivery
 	SendGoodsOperator string `json:"send_goods_operator,omitempty" xml:"send_goods_operator,omitempty"`
 	// product unit
 	ProductUnit string `json:"product_unit,omitempty" xml:"product_unit,omitempty"`

@@ -2,7 +2,7 @@ package travel
 
 // PontusTravelItemSaleInfo 结构体
 type PontusTravelItemSaleInfo struct {
-	// 关联商品与店铺类目 结构:&quot;,cid1,cid2,...,&quot;，如果店铺类目存在二级类目，必须传入子类目cids。  支持的最大列表长度为：256； 关于如何获取cid，请参考该接口：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
+	// 关联商品与店铺类目 结构:&amp;quot;,cid1,cid2,...,&amp;quot;，如果店铺类目存在二级类目，必须传入子类目cids。  支持的最大列表长度为：256； 关于如何获取cid，请参考该接口：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
 	SellerCids []string `json:"seller_cids,omitempty" xml:"seller_cids>string,omitempty"`
 	// 预约商品必填，普通商品不填。预约商品开始时间，格式：yyyy-MM-dd HH:mm
 	BcStartDate string `json:"bc_start_date,omitempty" xml:"bc_start_date,omitempty"`

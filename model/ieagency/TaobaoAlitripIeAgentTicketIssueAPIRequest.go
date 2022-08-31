@@ -15,7 +15,7 @@ type TaobaoAlitripIeAgentTicketIssueAPIRequest struct {
 	// 代理商id
 	_agentId int64
 	// 出票信息
-	_issueTicketVO *IeIssueTicketVO
+	_issueTicketVO *IeIssueTicketVo
 }
 
 // NewTaobaoAlitripIeAgentTicketIssueRequest 初始化TaobaoAlitripIeAgentTicketIssueAPIRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetAgentId() int64 {
 
 // SetIssueTicketVO is IssueTicketVO Setter
 // 出票信息
-func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetIssueTicketVO(_issueTicketVO *IeIssueTicketVO) error {
+func (r *TaobaoAlitripIeAgentTicketIssueAPIRequest) SetIssueTicketVO(_issueTicketVO *IeIssueTicketVo) error {
 	r._issueTicketVO = _issueTicketVO
 	r.Set("issue_ticket_v_o", _issueTicketVO)
 	return nil
 }
 
 // GetIssueTicketVO IssueTicketVO Getter
-func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetIssueTicketVO() *IeIssueTicketVO {
+func (r TaobaoAlitripIeAgentTicketIssueAPIRequest) GetIssueTicketVO() *IeIssueTicketVo {
 	return r._issueTicketVO
 }

@@ -12,7 +12,7 @@ type PontusTravelItemSkuInfo struct {
 	OuterSkuId string `json:"outer_sku_id,omitempty" xml:"outer_sku_id,omitempty"`
 	// 套餐描述
 	PackageDesc string `json:"package_desc,omitempty" xml:"package_desc,omitempty"`
-	// 套餐操作仅限于删除[delete]和修改[modify]&quot;, 该操作修改的是套餐的名称和outer_sku_id
+	// 套餐操作仅限于删除[delete]和修改[modify]&amp;quot;, 该操作修改的是套餐的名称和outer_sku_id
 	PackageOperation string `json:"package_operation,omitempty" xml:"package_operation,omitempty"`
 	// package_operation 为midofy时，outer_sku_id将被该值覆盖
 	UpdateOuterSkuId string `json:"update_outer_sku_id,omitempty" xml:"update_outer_sku_id,omitempty"`

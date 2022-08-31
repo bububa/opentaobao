@@ -13,7 +13,7 @@ import (
 type AlitripTuanHotelItemSkuCalendarUpdateAPIRequest struct {
 	model.Params
 	// 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
-	_itemSkuList []TopTuanItemSkuVO
+	_itemSkuList []TopTuanItemSkuVo
 	// 宝贝ID
 	_itemId int64
 	// 宝贝所属类目
@@ -43,14 +43,14 @@ func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiParams() url.Valu
 
 // SetItemSkuList is ItemSkuList Setter
 // 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
-func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
+func (r *AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVo) error {
 	r._itemSkuList = _itemSkuList
 	r.Set("item_sku_list", _itemSkuList)
 	return nil
 }
 
 // GetItemSkuList ItemSkuList Getter
-func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVO {
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetItemSkuList() []TopTuanItemSkuVo {
 	return r._itemSkuList
 }
 

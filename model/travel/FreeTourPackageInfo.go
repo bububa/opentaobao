@@ -22,7 +22,7 @@ type FreeTourPackageInfo struct {
 	OutProductId string `json:"out_product_id,omitempty" xml:"out_product_id,omitempty"`
 	// 必填，套餐名称
 	PackageName string `json:"package_name,omitempty" xml:"package_name,omitempty"`
-	// 发布商品时必填。套餐对应的目的地，套餐对应的目的地必须是商品的目的地的子集，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称 ）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性 批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124>）会根据映射关系自动转换成飞猪标准地址
+	// 发布商品时必填。套餐对应的目的地，套餐对应的目的地必须是商品的目的地的子集，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称 ）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性 批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124&gt;）会根据映射关系自动转换成飞猪标准地址
 	ToLocations string `json:"to_locations,omitempty" xml:"to_locations,omitempty"`
 	// 门票说明
 	ScenicDesc string `json:"scenic_desc,omitempty" xml:"scenic_desc,omitempty"`

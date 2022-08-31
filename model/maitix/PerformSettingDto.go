@@ -10,7 +10,7 @@ type PerformSettingDto struct {
 	TakeTicketTypes []int64 `json:"take_ticket_types,omitempty" xml:"take_ticket_types>int64,omitempty"`
 	// 选座类型0-立即购买 1-选座购买,当是有座项目并且是列表有1.就可以h5选座
 	SeatSelectTypeList []int64 `json:"seat_select_type_list,omitempty" xml:"seat_select_type_list>int64,omitempty"`
-	// 证件类型("身份证"-"id_card","护照"-"passport","港澳居民来往内地通行证"-"hk_macao_pass","台湾居民来往大陆通行证"-"taiwan_compatriot_card","士兵／军官"-"soldier_officer_card")
+	// 证件类型(&#34;身份证&#34;-&#34;id_card&#34;,&#34;护照&#34;-&#34;passport&#34;,&#34;港澳居民来往内地通行证&#34;-&#34;hk_macao_pass&#34;,&#34;台湾居民来往大陆通行证&#34;-&#34;taiwan_compatriot_card&#34;,&#34;士兵／军官&#34;-&#34;soldier_officer_card&#34;)
 	CardType string `json:"card_type,omitempty" xml:"card_type,omitempty"`
 	// 场次id
 	PerformId int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`

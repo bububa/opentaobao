@@ -10,7 +10,7 @@ type RecKeywordDto struct {
 	BuyCount string `json:"buy_count,omitempty" xml:"buy_count,omitempty"`
 	// 搜索热度[1-6]
 	SearchCount string `json:"search_count,omitempty" xml:"search_count,omitempty"`
-	// 客户是否已经将该词添加到外贸直通车后台的出价列表中，取值'Y‘和'N’
+	// 客户是否已经将该词添加到外贸直通车后台的出价列表中，取值&#39;Y‘和&#39;N’
 	IsAdded string `json:"is_added,omitempty" xml:"is_added,omitempty"`
 	// 底价，单位元，一位小数
 	BasePrice string `json:"base_price,omitempty" xml:"base_price,omitempty"`

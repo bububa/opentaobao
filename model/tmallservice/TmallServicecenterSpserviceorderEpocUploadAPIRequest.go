@@ -72,7 +72,7 @@ func (r TmallServicecenterSpserviceorderEpocUploadAPIRequest) GetEpocFileName() 
 }
 
 // SetTcFileData is TcFileData Setter
-// t&c文件数据
+// t&amp;c文件数据
 func (r *TmallServicecenterSpserviceorderEpocUploadAPIRequest) SetTcFileData(_tcFileData string) error {
 	r._tcFileData = _tcFileData
 	r.Set("tc_file_data", _tcFileData)
@@ -85,7 +85,7 @@ func (r TmallServicecenterSpserviceorderEpocUploadAPIRequest) GetTcFileData() st
 }
 
 // SetTcFileName is TcFileName Setter
-// t&c文件名
+// t&amp;c文件名
 func (r *TmallServicecenterSpserviceorderEpocUploadAPIRequest) SetTcFileName(_tcFileName string) error {
 	r._tcFileName = _tcFileName
 	r.Set("tc_file_name", _tcFileName)

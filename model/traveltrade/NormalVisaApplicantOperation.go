@@ -14,7 +14,7 @@ type NormalVisaApplicantOperation struct {
 	EtaInfo *NormalVisaEtaInfo `json:"eta_info,omitempty" xml:"eta_info,omitempty"`
 	// 特殊必填，上传该申请人 签证结果寄回物流信息。当status值为1013（已寄回结果）时，必填
 	LogisticsInfo *NormalVisaLogisticsInfo `json:"logistics_info,omitempty" xml:"logistics_info,omitempty"`
-	// 必填，申请人状态推进，本次操作需要推进到的目标状态。具体状态值枚举及推进流程详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.fYvMkZ&docType=1&articleId=108046&previewCode=9D5F931C2254C7B3FE16B8DB7F9CECB4
+	// 必填，申请人状态推进，本次操作需要推进到的目标状态。具体状态值枚举及推进流程详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.fYvMkZ&amp;docType=1&amp;articleId=108046&amp;previewCode=9D5F931C2254C7B3FE16B8DB7F9CECB4
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 特殊必填，上传该申请人 预约面试信息。当status值为1007（已预约面试）时 必填
 	AppointmentInfo *NormalVisaAppointmentInfo `json:"appointment_info,omitempty" xml:"appointment_info,omitempty"`

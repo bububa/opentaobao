@@ -9,7 +9,7 @@ import (
 // TaobaoItemUpdateListingTmallAPIRequest taobao.item.update.listing天猫分流 API请求
 // taobao.item.update.listing.tmall
 //
-// * 单个商品上架<br/>* 输入的num_iid必须属于当前会话用户
+// * 单个商品上架&lt;br/&gt;* 输入的num_iid必须属于当前会话用户
 type TaobaoItemUpdateListingTmallAPIRequest struct {
 	model.Params
 	// 商品数字ID，该参数必须

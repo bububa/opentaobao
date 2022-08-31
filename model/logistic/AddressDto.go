@@ -6,19 +6,19 @@ type AddressDto struct {
 	FirstName string `json:"first_name,omitempty" xml:"first_name,omitempty"`
 	// last name of receiver
 	LastName string `json:"last_name,omitempty" xml:"last_name,omitempty"`
-	// receiver's city
+	// receiver&#39;s city
 	City string `json:"city,omitempty" xml:"city,omitempty"`
-	// receiver's federal_tax_id
+	// receiver&#39;s federal_tax_id
 	FederalTaxId string `json:"federal_tax_id,omitempty" xml:"federal_tax_id,omitempty"`
-	// receiver's country
+	// receiver&#39;s country
 	Country string `json:"country,omitempty" xml:"country,omitempty"`
 	// zip code of ship to place
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
-	// receiver's State
+	// receiver&#39;s State
 	State string `json:"state,omitempty" xml:"state,omitempty"`
-	// receiver's district and street
+	// receiver&#39;s district and street
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// receiver's street number
+	// receiver&#39;s street number
 	AddressNumber string `json:"address_number,omitempty" xml:"address_number,omitempty"`
 	// email of receiver
 	Email string `json:"email,omitempty" xml:"email,omitempty"`

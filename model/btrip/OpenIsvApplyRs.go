@@ -70,7 +70,7 @@ type OpenIsvApplyRs struct {
 	BudgetMerge int64 `json:"budget_merge,omitempty" xml:"budget_merge,omitempty"`
 	// 0：不限制出行人，1：限申请单内的出行人。注意：不限出行人，实际出行人也不限制差标
 	LimitTraveler int64 `json:"limit_traveler,omitempty" xml:"limit_traveler,omitempty"`
-	// 同时预订(机票&火车票)规则。1：就高；2：就低。
+	// 同时预订(机票&amp;火车票)规则。1：就高；2：就低。
 	TogetherBookRule int64 `json:"together_book_rule,omitempty" xml:"together_book_rule,omitempty"`
 	// 酒店合住规则
 	HotelShare *HotelShareInfo `json:"hotel_share,omitempty" xml:"hotel_share,omitempty"`

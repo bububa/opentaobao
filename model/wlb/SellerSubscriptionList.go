@@ -12,9 +12,9 @@ type SellerSubscriptionList struct {
 	ServiceCode string `json:"service_code,omitempty" xml:"service_code,omitempty"`
 	// 服务名
 	ServiceName string `json:"service_name,omitempty" xml:"service_name,omitempty"`
-	// 服务类型，<br/>STORE 1-仓储、<br/>TMS 2-TMS、<br/>PACKAGE 3-包装服务<br/>SUPPLIER 4-供货<br/>INSTALL 5-安装<br/>COMPLEX_SERVICE 100-综合服务
+	// 服务类型，&lt;br/&gt;STORE 1-仓储、&lt;br/&gt;TMS 2-TMS、&lt;br/&gt;PACKAGE 3-包装服务&lt;br/&gt;SUPPLIER 4-供货&lt;br/&gt;INSTALL 5-安装&lt;br/&gt;COMPLEX_SERVICE 100-综合服务
 	ServiceType string `json:"service_type,omitempty" xml:"service_type,omitempty"`
-	// 状态<br/>AUDITING 1-待审核<br/>CANCEL 2-撤销<br/>CHECKED 3-审核通过<br/>FAILED 4-审核未通过<br/>SYNCHRONIZING 5-同步中
+	// 状态&lt;br/&gt;AUDITING 1-待审核&lt;br/&gt;CANCEL 2-撤销&lt;br/&gt;CHECKED 3-审核通过&lt;br/&gt;FAILED 4-审核未通过&lt;br/&gt;SYNCHRONIZING 5-同步中
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
 	// 创建时间
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
@@ -34,7 +34,7 @@ type SellerSubscriptionList struct {
 	ProviderUserId int64 `json:"provider_user_id,omitempty" xml:"provider_user_id,omitempty"`
 	// 服务ID
 	ServiceId int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
-	// 父定购ID<br/>可通过该字段来得之服务上下级关系。<br/>例定购了仓储服务，下又有TMS服务。<br/>该字段保存仓储服务ID。
+	// 父定购ID&lt;br/&gt;可通过该字段来得之服务上下级关系。&lt;br/&gt;例定购了仓储服务，下又有TMS服务。&lt;br/&gt;该字段保存仓储服务ID。
 	ParentId int64 `json:"parent_id,omitempty" xml:"parent_id,omitempty"`
 	// 联系人地址信息
 	WlbPartnerAddress *AddressInfo `json:"wlb_partner_address,omitempty" xml:"wlb_partner_address,omitempty"`

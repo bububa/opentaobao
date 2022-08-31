@@ -12,7 +12,7 @@ type DrfB2CCallbackOrder struct {
 	StatusChangeType string `json:"status_change_type,omitempty" xml:"status_change_type,omitempty"`
 	// 节点编码
 	NodeCode string `json:"node_code,omitempty" xml:"node_code,omitempty"`
-	// 作业单类型： BATCH("批次"),  ORDER("物流单
+	// 作业单类型： BATCH(&#34;批次&#34;),  ORDER(&#34;物流单
 	WorkOrderType string `json:"work_order_type,omitempty" xml:"work_order_type,omitempty"`
 	// 作业单号
 	WorkOrderId string `json:"work_order_id,omitempty" xml:"work_order_id,omitempty"`

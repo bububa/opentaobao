@@ -22,11 +22,11 @@ type BusLineInfoVo struct {
 	LastDepartTime string `json:"last_depart_time,omitempty" xml:"last_depart_time,omitempty"`
 	// 到达城市
 	LastPlaceName string `json:"last_place_name,omitempty" xml:"last_place_name,omitempty"`
-	// 实名制校验规则,'|'分隔,例如2|3|4；1 不需要进行实名制校验；2 订单内乘客身份证不能重复；3 当天同一班次乘客身份证限购1张票；4 同一取票人身份证当天限购3张票；5 同一乘车人身份证1天在该网站只能买1张票；6 取票人的姓名、证件信息必须在乘车人中
+	// 实名制校验规则,&#39;|&#39;分隔,例如2|3|4；1 不需要进行实名制校验；2 订单内乘客身份证不能重复；3 当天同一班次乘客身份证限购1张票；4 同一取票人身份证当天限购3张票；5 同一乘车人身份证1天在该网站只能买1张票；6 取票人的姓名、证件信息必须在乘车人中
 	RealNameGrade string `json:"real_name_grade,omitempty" xml:"real_name_grade,omitempty"`
 	// 标准城市名称
 	StandardCityName string `json:"standard_city_name,omitempty" xml:"standard_city_name,omitempty"`
-	// 路线信息（途径站："廊坊,天津"）
+	// 路线信息（途径站：&#34;廊坊,天津&#34;）
 	ViaStation string `json:"via_station,omitempty" xml:"via_station,omitempty"`
 	// 车次id
 	BusNoId int64 `json:"bus_no_id,omitempty" xml:"bus_no_id,omitempty"`

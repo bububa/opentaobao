@@ -22,15 +22,15 @@ type BuildingDto struct {
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 楼栋号
 	BuildingNo string `json:"building_no,omitempty" xml:"building_no,omitempty"`
-	// 几梯（单层） >=0
+	// 几梯（单层） �&gt;=0
 	ElevatorNo int64 `json:"elevator_no,omitempty" xml:"elevator_no,omitempty"`
-	// 几户（单层） >0
+	// 几户（单层） �&gt;0
 	HouseholdNo int64 `json:"household_no,omitempty" xml:"household_no,omitempty"`
-	// 单元数 >0
+	// 单元数 &gt;0
 	Units int64 `json:"units,omitempty" xml:"units,omitempty"`
-	// 层数 >0
+	// 层数 �&gt;0
 	Floors int64 `json:"floors,omitempty" xml:"floors,omitempty"`
-	// 户数 >0
+	// 户数 �&gt;0
 	Rooms int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
 	// 货商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`

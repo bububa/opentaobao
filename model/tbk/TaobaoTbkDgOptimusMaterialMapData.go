@@ -68,9 +68,9 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	MaochaoPlayEndTime string `json:"maochao_play_end_time,omitempty" xml:"maochao_play_end_time,omitempty"`
 	// 猫超玩法信息-活动开始时间，精确到毫秒
 	MaochaoPlayStartTime string `json:"maochao_play_start_time,omitempty" xml:"maochao_play_start_time,omitempty"`
-	// 猫超玩法信息-折扣条件，价格百分数存储，件数按数量存储。可以有多个折扣条件，与折扣字段对应，','分割
+	// 猫超玩法信息-折扣条件，价格百分数存储，件数按数量存储。可以有多个折扣条件，与折扣字段对应，&#39;,&#39;分割
 	MaochaoPlayConditions string `json:"maochao_play_conditions,omitempty" xml:"maochao_play_conditions,omitempty"`
-	// 猫超玩法信息-折扣，折扣按照百分数存储，其余按照单位分存储。可以有多个折扣，','分割
+	// 猫超玩法信息-折扣，折扣按照百分数存储，其余按照单位分存储。可以有多个折扣，&#39;,&#39;分割
 	MaochaoPlayDiscounts string `json:"maochao_play_discounts,omitempty" xml:"maochao_play_discounts,omitempty"`
 	// 猫超玩法信息-玩法类型，2:折扣(满n件折扣),5:减钱(满n元减m元)
 	MaochaoPlayDiscountType string `json:"maochao_play_discount_type,omitempty" xml:"maochao_play_discount_type,omitempty"`
@@ -98,7 +98,7 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	PresaleDeposit string `json:"presale_deposit,omitempty" xml:"presale_deposit,omitempty"`
 	// 预售有礼-淘礼金使用开始时间
 	YsylTljUseStartTime string `json:"ysyl_tlj_use_start_time,omitempty" xml:"ysyl_tlj_use_start_time,omitempty"`
-	// 预售有礼-佣金比例（ 预售有礼活动享受的推广佣金比例，注：推广该活动有特殊分成规则，请详见：https://tbk.bbs.taobao.com/detail.html?appId=45301&postId=9334376 ）
+	// 预售有礼-佣金比例（ 预售有礼活动享受的推广佣金比例，注：推广该活动有特殊分成规则，请详见：https://tbk.bbs.taobao.com/detail.html?appId=45301&amp;postId=9334376 ）
 	YsylCommissionRate string `json:"ysyl_commission_rate,omitempty" xml:"ysyl_commission_rate,omitempty"`
 	// 预售有礼-淘礼金发放时间
 	YsylTljSendTime string `json:"ysyl_tlj_send_time,omitempty" xml:"ysyl_tlj_send_time,omitempty"`

@@ -18,7 +18,7 @@ type AddressResult struct {
 	ZipCode string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
 	// 电话号码,手机与电话必需有一个
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`
-	// 手机号码，手机与电话必需有一个 <br/>手机号码不能超过20位
+	// 手机号码，手机与电话必需有一个 &lt;br/&gt;手机号码不能超过20位
 	MobilePhone string `json:"mobile_phone,omitempty" xml:"mobile_phone,omitempty"`
 	// 公司名称,
 	SellerCompany string `json:"seller_company,omitempty" xml:"seller_company,omitempty"`

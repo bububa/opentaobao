@@ -10,6 +10,6 @@ type InsuranceRecommendRq struct {
 	StationName string `json:"station_name,omitempty" xml:"station_name,omitempty"`
 	// 出发省份
 	ProvinceName string `json:"province_name,omitempty" xml:"province_name,omitempty"`
-	// 渠道来源：self->自助机机具;window->窗口
+	// 渠道来源：self-&gt;自助机机具;window-&gt;窗口
 	TradeSource string `json:"trade_source,omitempty" xml:"trade_source,omitempty"`
 }

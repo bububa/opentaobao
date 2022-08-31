@@ -101,7 +101,7 @@ func (r AlibabaAliqinFcSmsNumSendAPIRequest) GetSmsFreeSignName() string {
 }
 
 // SetSmsParam is SmsParam Setter
-// 短信模板变量，传参规则{"key":"value"}，key的名字须和申请模板中的变量名一致，多个变量之间以逗号隔开。示例：针对模板“验证码${code}，您正在进行${product}身份验证，打死不要告诉别人哦！”，传参时需传入{"code":"1234","product":"alidayu"}
+// 短信模板变量，传参规则{&#34;key&#34;:&#34;value&#34;}，key的名字须和申请模板中的变量名一致，多个变量之间以逗号隔开。示例：针对模板“验证码${code}，您正在进行${product}身份验证，打死不要告诉别人哦！”，传参时需传入{&#34;code&#34;:&#34;1234&#34;,&#34;product&#34;:&#34;alidayu&#34;}
 func (r *AlibabaAliqinFcSmsNumSendAPIRequest) SetSmsParam(_smsParam string) error {
 	r._smsParam = _smsParam
 	r.Set("sms_param", _smsParam)

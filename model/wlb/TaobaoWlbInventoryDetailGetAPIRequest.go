@@ -42,7 +42,7 @@ func (r TaobaoWlbInventoryDetailGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetInventoryTypeList is InventoryTypeList Setter
-// 库存类型列表，值包括：<br/>VENDIBLE--可销售库存<br/>FREEZE--冻结库存<br/>ONWAY--在途库存<br/>DEFECT--残次品库存<br/>ENGINE_DAMAGE--机损<br/>BOX_DAMAGE--箱损<br/>EXPIRATION--过保
+// 库存类型列表，值包括：&lt;br/&gt;VENDIBLE--可销售库存&lt;br/&gt;FREEZE--冻结库存&lt;br/&gt;ONWAY--在途库存&lt;br/&gt;DEFECT--残次品库存&lt;br/&gt;ENGINE_DAMAGE--机损&lt;br/&gt;BOX_DAMAGE--箱损&lt;br/&gt;EXPIRATION--过保
 func (r *TaobaoWlbInventoryDetailGetAPIRequest) SetInventoryTypeList(_inventoryTypeList []string) error {
 	r._inventoryTypeList = _inventoryTypeList
 	r.Set("inventory_type_list", _inventoryTypeList)

@@ -42,7 +42,7 @@ func (r TmallBrandItemCouponProtectAPIRequest) GetApiParams() url.Values {
 }
 
 // SetProtectionPeriod is ProtectionPeriod Setter
-// 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
+// 店铺优惠券新品保护期档次:PERIOD_0D(&#34;0天&#34;),     PERIOD_7D(&#34;7天&#34;),     PERIOD_14D(&#34;14天&#34;),     PERIOD_21D(&#34;21天&#34;)
 func (r *TmallBrandItemCouponProtectAPIRequest) SetProtectionPeriod(_protectionPeriod string) error {
 	r._protectionPeriod = _protectionPeriod
 	r.Set("protection_period", _protectionPeriod)

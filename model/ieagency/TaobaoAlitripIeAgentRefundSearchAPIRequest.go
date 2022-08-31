@@ -74,7 +74,7 @@ func (r TaobaoAlitripIeAgentRefundSearchAPIRequest) GetCreateEndTime() string {
 }
 
 // SetRefundStatus is RefundStatus Setter
-// WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款");
+// WAIT(1,&#34;待处理&#34;), AGREED(2, &#34;已同意&#34;),REFUSE(3, &#34;已拒绝&#34;),PROCESS(6, &#34;已受理&#34;), SUCCESS(7, &#34;已退款&#34;);
 func (r *TaobaoAlitripIeAgentRefundSearchAPIRequest) SetRefundStatus(_refundStatus int64) error {
 	r._refundStatus = _refundStatus
 	r.Set("refund_status", _refundStatus)

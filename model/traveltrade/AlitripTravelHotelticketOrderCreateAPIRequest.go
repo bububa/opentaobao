@@ -48,7 +48,7 @@ func (r AlitripTravelHotelticketOrderCreateAPIRequest) GetApiParams() url.Values
 }
 
 // SetExtendParams is ExtendParams Setter
-// 扩展参数 支持的key: ["hotelName" : "酒店名称", "roomName" : "房型名称", "productName" : "产品名称",  "desc" : "描述"] value字符长度不超过100
+// 扩展参数 支持的key: [&#34;hotelName&#34; : &#34;酒店名称&#34;, &#34;roomName&#34; : &#34;房型名称&#34;, &#34;productName&#34; : &#34;产品名称&#34;,  &#34;desc&#34; : &#34;描述&#34;] value字符长度不超过100
 func (r *AlitripTravelHotelticketOrderCreateAPIRequest) SetExtendParams(_extendParams string) error {
 	r._extendParams = _extendParams
 	r.Set("extend_params", _extendParams)

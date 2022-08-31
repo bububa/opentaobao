@@ -72,7 +72,7 @@ func (r TmallCarLeaseFreedownpaymentPutAPIRequest) GetPreStartTime() string {
 }
 
 // SetTimeRangeList is TimeRangeList Setter
-// 活动时间范围节点(json格式字符串)：<br/> 开始时间(startTime),格式：yyyy.MM.dd HH:mm:ss <br/>  结束时间(endTime),格式：yyyy.MM.dd HH:mm:ss <br/>  名额(amount)
+// 活动时间范围节点(json格式字符串)：&lt;br/&gt; 开始时间(startTime),格式：yyyy.MM.dd HH:mm:ss &lt;br/&gt;  结束时间(endTime),格式：yyyy.MM.dd HH:mm:ss &lt;br/&gt;  名额(amount)
 func (r *TmallCarLeaseFreedownpaymentPutAPIRequest) SetTimeRangeList(_timeRangeList string) error {
 	r._timeRangeList = _timeRangeList
 	r.Set("time_range_list", _timeRangeList)

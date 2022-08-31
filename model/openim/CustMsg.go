@@ -4,7 +4,7 @@ package openim
 type CustMsg struct {
 	// 接受者userid列表，单次发送用户数小于100
 	ToUsers []string `json:"to_users,omitempty" xml:"to_users>string,omitempty"`
-	// apns推送的附带数据。客户端收到apns消息后，可以从apns结构体的"d"字段中取出该内容。aps.size() + apns_param.size() < 200
+	// apns推送的附带数据。客户端收到apns消息后，可以从apns结构体的&#34;d&#34;字段中取出该内容。aps.size() + apns_param.size() &lt; 200
 	ApnsParam string `json:"apns_param,omitempty" xml:"apns_param,omitempty"`
 	// 发送的自定义数据，sdk默认无法解析消息，该数据需要客户端自己解析
 	Data string `json:"data,omitempty" xml:"data,omitempty"`
@@ -14,7 +14,7 @@ type CustMsg struct {
 	ToAppkey string `json:"to_appkey,omitempty" xml:"to_appkey,omitempty"`
 	// 发送方userid
 	FromUser string `json:"from_user,omitempty" xml:"from_user,omitempty"`
-	// apns推送时，里面的aps结构体json字符串，aps.alert为必填字段。本字段为可选，若为空，则表示不进行apns推送。aps.size() + apns_param.size() < 200
+	// apns推送时，里面的aps结构体json字符串，aps.alert为必填字段。本字段为可选，若为空，则表示不进行apns推送。aps.size() + apns_param.size() &lt; 200
 	Aps string `json:"aps,omitempty" xml:"aps,omitempty"`
 	// 可以指定发送方的显示昵称，默认为空，自动使用发送方用户id作为nick
 	FromNick string `json:"from_nick,omitempty" xml:"from_nick,omitempty"`

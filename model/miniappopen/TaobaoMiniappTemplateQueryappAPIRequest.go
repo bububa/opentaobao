@@ -68,7 +68,7 @@ func (r TaobaoMiniappTemplateQueryappAPIRequest) GetPageSize() int64 {
 }
 
 // SetPageNum is PageNum Setter
-// 分页号,>=1
+// 分页号,&gt;=1
 func (r *TaobaoMiniappTemplateQueryappAPIRequest) SetPageNum(_pageNum int64) error {
 	r._pageNum = _pageNum
 	r.Set("page_num", _pageNum)

@@ -9,7 +9,7 @@ import (
 // TaobaoItemSkuUpdateAPIRequest 更新SKU信息 API请求
 // taobao.item.sku.update
 //
-// *更新一个sku的数据 <br/>*需要更新的sku通过属性properties进行匹配查找 <br/>*商品的数量和价格必须大于等于0 <br/>*sku记录会更新到指定的num_iid对应的商品中 <br/>*num_iid对应的商品必须属于当前的会话用户
+// *更新一个sku的数据 &lt;br/&gt;*需要更新的sku通过属性properties进行匹配查找 &lt;br/&gt;*商品的数量和价格必须大于等于0 &lt;br/&gt;*sku记录会更新到指定的num_iid对应的商品中 &lt;br/&gt;*num_iid对应的商品必须属于当前的会话用户
 type TaobaoItemSkuUpdateAPIRequest struct {
 	model.Params
 	// Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充。<br/>如果包含自定义属性，则格式为pid:vid;pid2:vid2;$pText:vText , 其中$pText:vText为自定义属性。限制：其中$pText的’$’前缀不能少，且pText和vText文本中不可以存在 冒号:和分号;以及逗号，
@@ -52,7 +52,7 @@ func (r TaobaoItemSkuUpdateAPIRequest) GetApiParams() url.Values {
 }
 
 // SetProperties is Properties Setter
-// Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充。<br/>如果包含自定义属性，则格式为pid:vid;pid2:vid2;$pText:vText , 其中$pText:vText为自定义属性。限制：其中$pText的’$’前缀不能少，且pText和vText文本中不可以存在 冒号:和分号;以及逗号，
+// Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充。&lt;br/&gt;如果包含自定义属性，则格式为pid:vid;pid2:vid2;$pText:vText , 其中$pText:vText为自定义属性。限制：其中$pText的’$’前缀不能少，且pText和vText文本中不可以存在 冒号:和分号;以及逗号，
 func (r *TaobaoItemSkuUpdateAPIRequest) SetProperties(_properties string) error {
 	r._properties = _properties
 	r.Set("properties", _properties)

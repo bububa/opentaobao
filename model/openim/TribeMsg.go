@@ -4,11 +4,11 @@ package openim
 type TribeMsg struct {
 	// 当at_flag=1时，必须指定at的用户
 	Atmembers []User `json:"atmembers,omitempty" xml:"atmembers>user,omitempty"`
-	// 自定义push提醒参数，格式为json字符串，该参数为空时，采用系统默认的push；设置该参数时，json字符串必选包含至少包含指定的三个key，"d", "sound", "title"
+	// 自定义push提醒参数，格式为json字符串，该参数为空时，采用系统默认的push；设置该参数时，json字符串必选包含至少包含指定的三个key，&#34;d&#34;, &#34;sound&#34;, &#34;title&#34;
 	CustomPush string `json:"custom_push,omitempty" xml:"custom_push,omitempty"`
-	// 格式为json字符串， 当消息类型为图片或语音时该参数为必选项，用于描述图片，语音的属性； 该参数json格式必须符合msg_type的要求；当消息类型为图片时，格式必须符合如下样例 ： {“height”：10, "width":10, "type":"jpg"}，当前支持3三种图片类型，gif, jpg,jpeg； 当消息类型为语音时，必须符合如下样例：{“playtime”:10,”type”:”amr”}，语音的type只支持arm
+	// 格式为json字符串， 当消息类型为图片或语音时该参数为必选项，用于描述图片，语音的属性； 该参数json格式必须符合msg_type的要求；当消息类型为图片时，格式必须符合如下样例 ： {“height”：10, &#34;width&#34;:10, &#34;type&#34;:&#34;jpg&#34;}，当前支持3三种图片类型，gif, jpg,jpeg； 当消息类型为语音时，必须符合如下样例：{“playtime”:10,”type”:”amr”}，语音的type只支持arm
 	MediaAttrs string `json:"media_attrs,omitempty" xml:"media_attrs,omitempty"`
-	// 文本消息最大长度是4K，图片最大为500K。消息内容格式根据type确定。当type为文本时，内容为文本字符串；当类型为图片或语音时，内容为图片和语音的二进制base64编码生成的字符串；当类型为自定义消息时，内容必须为就送字符串格式，该字符串必须包含header字符，即{"header":{"summary":},...}
+	// 文本消息最大长度是4K，图片最大为500K。消息内容格式根据type确定。当type为文本时，内容为文本字符串；当类型为图片或语音时，内容为图片和语音的二进制base64编码生成的字符串；当类型为自定义消息时，内容必须为就送字符串格式，该字符串必须包含header字符，即{&#34;header&#34;:{&#34;summary&#34;:},...}
 	MsgContent string `json:"msg_content,omitempty" xml:"msg_content,omitempty"`
 	// 是否是at消息， 0表示不是at消息，1表示at指定的用户，2表示at群里所有人
 	AtFlag int64 `json:"at_flag,omitempty" xml:"at_flag,omitempty"`

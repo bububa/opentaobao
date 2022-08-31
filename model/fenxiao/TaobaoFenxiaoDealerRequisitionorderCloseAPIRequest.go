@@ -68,7 +68,7 @@ func (r TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) GetDealerOrderId() i
 }
 
 // SetReason is Reason Setter
-// 关闭原因：<br/>1：长时间无法联系到分销商，取消交易。<br/>2：分销商错误提交申请，取消交易。<br/>3：缺货，近段时间都无法发货。<br/>4：分销商恶意提交申请单。<br/>5：其他原因。
+// 关闭原因：&lt;br/&gt;1：长时间无法联系到分销商，取消交易。&lt;br/&gt;2：分销商错误提交申请，取消交易。&lt;br/&gt;3：缺货，近段时间都无法发货。&lt;br/&gt;4：分销商恶意提交申请单。&lt;br/&gt;5：其他原因。
 func (r *TaobaoFenxiaoDealerRequisitionorderCloseAPIRequest) SetReason(_reason int64) error {
 	r._reason = _reason
 	r.Set("reason", _reason)

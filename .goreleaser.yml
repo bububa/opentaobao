@@ -13,14 +13,12 @@ builds:
     binary: downloader
     goos:
       - linux
-      - windows
       - darwin
   - main: ./metadata/generator
     id: "generator"
     binary: generator
     goos:
       - linux
-      - windows
       - darwin
 archives:
   - replacements:

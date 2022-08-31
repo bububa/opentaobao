@@ -24,6 +24,6 @@ type YunosServiceCmnsCoaMessageCancelAPIResponseModel struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 返回状态 200表示调用成功
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
-	// true:撤回成功<br/>false:撤回失败
+	// true:撤回成功&lt;br/&gt;false:撤回失败
 	Data bool `json:"data,omitempty" xml:"data,omitempty"`
 }

@@ -38,7 +38,7 @@ func (r AlibabaMydataSelfProductDateGetAPIRequest) GetApiParams() url.Values {
 }
 
 // SetStatisticsType is StatisticsType Setter
-// 统计周期类型，可以为"day"，"week"，"month"
+// 统计周期类型，可以为&#34;day&#34;，&#34;week&#34;，&#34;month&#34;
 func (r *AlibabaMydataSelfProductDateGetAPIRequest) SetStatisticsType(_statisticsType string) error {
 	r._statisticsType = _statisticsType
 	r.Set("statistics_type", _statisticsType)

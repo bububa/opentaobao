@@ -20,6 +20,6 @@ type AlibabaAliqinFlowWalletChargeRuleAPIResponseModel struct {
 	XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_charge_rule_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// {"error":"true","msg":"返回信息"}
+	// {&#34;error&#34;:&#34;true&#34;,&#34;msg&#34;:&#34;返回信息&#34;}
 	Charge string `json:"charge,omitempty" xml:"charge,omitempty"`
 }

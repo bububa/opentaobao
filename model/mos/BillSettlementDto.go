@@ -12,7 +12,7 @@ type BillSettlementDto struct {
 	TaxRate string `json:"tax_rate,omitempty" xml:"tax_rate,omitempty"`
 	// 业务细类代码
 	BizSubModuleCode string `json:"biz_sub_module_code,omitempty" xml:"biz_sub_module_code,omitempty"`
-	// 发票类型 SPECIAL("专票")，ORDINARY("普票")
+	// 发票类型 SPECIAL(&#34;专票&#34;)，ORDINARY(&#34;普票&#34;)
 	InvoiceType string `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
 	// 供应商id（可空）
 	SupplierNo string `json:"supplier_no,omitempty" xml:"supplier_no,omitempty"`

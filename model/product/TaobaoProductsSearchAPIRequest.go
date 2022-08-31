@@ -9,12 +9,12 @@ import (
 // TaobaoProductsSearchAPIRequest 搜索产品信息 API请求
 // taobao.products.search
 //
-// 只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。<br/>二种方式搜索所有产品信息(二种至少传一种): <br/>
-// 传入关键字q搜索<br/>
-// 传入cid和props搜索<br/>
-// 返回值支持:product_id,name,pic_path,cid,props,price,tsc<br/>
-// 当用户指定了cid并且cid为垂直市场（3C电器城、鞋城）的类目id时，默认只返回小二确认<br/>的产品。如果用户没有指定cid，或cid为普通的类目，默认返回商家确认或小二确认的产<br/>品。如果用户自定了status字段，以指定的status类型为准。
-// <br/>新增一：
+// 只有天猫商家发布商品时才需要用到，并非商品搜索api，当前暂不提供商品搜索api。&lt;br/&gt;二种方式搜索所有产品信息(二种至少传一种): &lt;br/&gt;
+// 传入关键字q搜索&lt;br/&gt;
+// 传入cid和props搜索&lt;br/&gt;
+// 返回值支持:product_id,name,pic_path,cid,props,price,tsc&lt;br/&gt;
+// 当用户指定了cid并且cid为垂直市场（3C电器城、鞋城）的类目id时，默认只返回小二确认&lt;br/&gt;的产品。如果用户没有指定cid，或cid为普通的类目，默认返回商家确认或小二确认的产&lt;br/&gt;品。如果用户自定了status字段，以指定的status类型为准。
+// &lt;br/&gt;新增一：
 //    传入suite_items_str 按规格搜索套装产品。
 //    返回字段增加suite_items_str,is_suite_effecitve支持。
 type TaobaoProductsSearchAPIRequest struct {
@@ -67,7 +67,7 @@ func (r TaobaoProductsSearchAPIRequest) GetApiParams() url.Values {
 }
 
 // SetFields is Fields Setter
-// 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用","分隔.新增字段status(product的当前状态)
+// 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用&#34;,&#34;分隔.新增字段status(product的当前状态)
 func (r *TaobaoProductsSearchAPIRequest) SetFields(_fields []string) error {
 	r._fields = _fields
 	r.Set("fields", _fields)
@@ -93,7 +93,7 @@ func (r TaobaoProductsSearchAPIRequest) GetQ() string {
 }
 
 // SetProps is Props Setter
-// 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid <br/>,再用taobao.itempropvalues.get取得vid.
+// 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid &lt;br/&gt;,再用taobao.itempropvalues.get取得vid.
 func (r *TaobaoProductsSearchAPIRequest) SetProps(_props string) error {
 	r._props = _props
 	r.Set("props", _props)
@@ -106,7 +106,7 @@ func (r TaobaoProductsSearchAPIRequest) GetProps() string {
 }
 
 // SetStatus is Status Setter
-// 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。
+// 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用&#34;,&#34;分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入&#34;3&#34;,只要商家确认的传入&#34;0&#34;，既要小二确认又要商家确认的传入&#34;0,3&#34;。目前只支持者两种类型的状态搜索，输入其他状态无效。
 func (r *TaobaoProductsSearchAPIRequest) SetStatus(_status string) error {
 	r._status = _status
 	r.Set("status", _status)

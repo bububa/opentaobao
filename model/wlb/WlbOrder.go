@@ -6,13 +6,13 @@ type WlbOrder struct {
 	OperateType string `json:"operate_type,omitempty" xml:"operate_type,omitempty"`
 	// 订单编码
 	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
-	// 订单来源:<br/>产生物流订单的原因，比如:<br/><br/>订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS
+	// 订单来源:&lt;br/&gt;产生物流订单的原因，比如:&lt;br/&gt;&lt;br/&gt;订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS
 	OrderSource string `json:"order_source,omitempty" xml:"order_source,omitempty"`
 	// 对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用
 	OrderSourceCode string `json:"order_source_code,omitempty" xml:"order_source_code,omitempty"`
 	// 1:正常订单: NORMAL2:退货订单: RETURN3:换货订单: CHANGE
 	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
-	// (1)其它:    OTHER<br/>(2)淘宝交易: TAOBAO<br/>(3)301:调拨: ALLOCATION<br/>(4)401:盘点:CHECK<br/>(5)501:销售采购:PRUCHASE
+	// (1)其它:    OTHER&lt;br/&gt;(2)淘宝交易: TAOBAO&lt;br/&gt;(3)301:调拨: ALLOCATION&lt;br/&gt;(4)401:盘点:CHECK&lt;br/&gt;(5)501:销售采购:PRUCHASE
 	OrderSubType string `json:"order_sub_type,omitempty" xml:"order_sub_type,omitempty"`
 	// 卖家NICK
 	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
@@ -90,7 +90,7 @@ type WlbOrder struct {
 	ReceivableAmount int64 `json:"receivable_amount,omitempty" xml:"receivable_amount,omitempty"`
 	// cod服务费
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
-	// 订单取消状态：<br/>1-取消中； <br/>2-取消失败；<br/>3-取消完成
+	// 订单取消状态：&lt;br/&gt;1-取消中； &lt;br/&gt;2-取消失败；&lt;br/&gt;3-取消完成
 	CancelOrderStatus int64 `json:"cancel_order_status,omitempty" xml:"cancel_order_status,omitempty"`
 	// 发货速度 ， 101-当日达， 102-次晨达， 103-次日达
 	ScheduleSpeed int64 `json:"schedule_speed,omitempty" xml:"schedule_speed,omitempty"`

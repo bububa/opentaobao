@@ -38,6 +38,6 @@ type TopHotelPromotion struct {
 	RuleTarget int64 `json:"rule_target,omitempty" xml:"rule_target,omitempty"`
 	// 出资方是否卖家还是平台
 	InvestorType int64 `json:"investor_type,omitempty" xml:"investor_type,omitempty"`
-	// 是否"积分加钱购"类型活动
+	// 是否&#34;积分加钱购&#34;类型活动
 	IntegralActivity bool `json:"integral_activity,omitempty" xml:"integral_activity,omitempty"`
 }

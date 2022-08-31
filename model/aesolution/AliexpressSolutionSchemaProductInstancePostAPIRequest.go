@@ -40,7 +40,7 @@ func (r AliexpressSolutionSchemaProductInstancePostAPIRequest) GetApiParams() ur
 }
 
 // SetProductInstanceRequest is ProductInstanceRequest Setter
-// Product instance data. The relative parameters description in schema json String are same as "aliexpress.solution.product.post" .Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
+// Product instance data. The relative parameters description in schema json String are same as &#34;aliexpress.solution.product.post&#34; .Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&amp;docType=2
 func (r *AliexpressSolutionSchemaProductInstancePostAPIRequest) SetProductInstanceRequest(_productInstanceRequest string) error {
 	r._productInstanceRequest = _productInstanceRequest
 	r.Set("product_instance_request", _productInstanceRequest)

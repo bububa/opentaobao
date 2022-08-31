@@ -10,8 +10,8 @@ import (
 // taobao.onebp.dkx.report.report.account.realtime
 //
 // 获取账户实时报表
-// 入参1示例：{"biz_code":"adStrategyDkx"}
-// 入参2示例：{     "log_date_list": [  "2021-09-23"     ]   }
+// 入参1示例：{&#34;biz_code&#34;:&#34;adStrategyDkx&#34;}
+// 入参2示例：{     &#34;log_date_list&#34;: [  &#34;2021-09-23&#34;     ]   }
 type TaobaoOnebpDkxReportReportAccountRealtimeAPIResponse struct {
 	model.CommonResponse
 	TaobaoOnebpDkxReportReportAccountRealtimeAPIResponseModel

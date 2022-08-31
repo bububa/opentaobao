@@ -314,7 +314,7 @@ func (r PushAliyuncsComPushNotification2015_03_18APIRequest) GetAppId() int64 {
 }
 
 // SetDeviceType is DeviceType Setter
-// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType&amp;1=1; Andriod设备:deviceType&amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);
+// 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType&amp;amp;1=1; Andriod设备:deviceType&amp;amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);
 func (r *PushAliyuncsComPushNotification2015_03_18APIRequest) SetDeviceType(_deviceType int64) error {
 	r._deviceType = _deviceType
 	r.Set("DeviceType", _deviceType)

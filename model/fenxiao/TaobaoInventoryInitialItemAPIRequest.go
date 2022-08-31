@@ -41,7 +41,7 @@ func (r TaobaoInventoryInitialItemAPIRequest) GetApiParams() url.Values {
 }
 
 // SetStoreInventorys is StoreInventorys Setter
-// 商品初始库存信息： [{"storeCode":"必选,商家仓库编号","inventoryType":"可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1","quantity":"必选,数量"}]
+// 商品初始库存信息： [{&#34;storeCode&#34;:&#34;必选,商家仓库编号&#34;,&#34;inventoryType&#34;:&#34;可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1&#34;,&#34;quantity&#34;:&#34;必选,数量&#34;}]
 func (r *TaobaoInventoryInitialItemAPIRequest) SetStoreInventorys(_storeInventorys string) error {
 	r._storeInventorys = _storeInventorys
 	r.Set("store_inventorys", _storeInventorys)

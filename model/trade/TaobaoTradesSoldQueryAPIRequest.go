@@ -55,7 +55,7 @@ func (r TaobaoTradesSoldQueryAPIRequest) GetQueryList() []OrderQuery {
 }
 
 // SetScene is Scene Setter
-// 业务场景编码。不同场景，策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(客服咨询)、1002(售后服务)，<a href="https://open.taobao.com/doc.htm?docId=120186&docType=1" target="_blank">详情点击</a>
+// 业务场景编码。不同场景，策略不同。请根据产品功能选择相应的场景编号。可选的场景：1001(客服咨询)、1002(售后服务)，&lt;a href=&#34;https://open.taobao.com/doc.htm?docId=120186&amp;docType=1&#34; target=&#34;_blank&#34;&gt;详情点击&lt;/a&gt;
 func (r *TaobaoTradesSoldQueryAPIRequest) SetScene(_scene string) error {
 	r._scene = _scene
 	r.Set("scene", _scene)

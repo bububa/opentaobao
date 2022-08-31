@@ -40,7 +40,7 @@ func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetApiParams() url.
 }
 
 // SetSchemaFullUpdateRequest is SchemaFullUpdateRequest Setter
-// Product full update request. To learn how to generate the content, please refer to https://developers.aliexpress.com/en/doc.htm?docId=109760&docType=1.  Be aware that the aliexpress_product_id field should be replaced by the product ID belonged to the seller.
+// Product full update request. To learn how to generate the content, please refer to https://developers.aliexpress.com/en/doc.htm?docId=109760&amp;docType=1.  Be aware that the aliexpress_product_id field should be replaced by the product ID belonged to the seller.
 func (r *AliexpressSolutionSchemaProductFullUpdateAPIRequest) SetSchemaFullUpdateRequest(_schemaFullUpdateRequest string) error {
 	r._schemaFullUpdateRequest = _schemaFullUpdateRequest
 	r.Set("schema_full_update_request", _schemaFullUpdateRequest)

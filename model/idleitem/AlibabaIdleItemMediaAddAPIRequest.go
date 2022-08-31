@@ -55,7 +55,7 @@ func (r AlibabaIdleItemMediaAddAPIRequest) GetUserNick() string {
 }
 
 // SetMediaData is MediaData Setter
-// 多媒体文件字节流，图片<5M,视频<8M
+// 多媒体文件字节流，图片&lt;5M,视频&lt;8M
 func (r *AlibabaIdleItemMediaAddAPIRequest) SetMediaData(_mediaData *model.File) error {
 	r._mediaData = _mediaData
 	r.Set("media_data", _mediaData)

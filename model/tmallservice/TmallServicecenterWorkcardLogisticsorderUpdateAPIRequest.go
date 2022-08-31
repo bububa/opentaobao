@@ -165,7 +165,7 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) GetGotCode() s
 }
 
 // SetGoodsInfo is GoodsInfo Setter
-// 1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ "name": "上衣", "count": 1 }, { "name": "裤子", "count": 2 }]
+// 1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ &#34;name&#34;: &#34;上衣&#34;, &#34;count&#34;: 1 }, { &#34;name&#34;: &#34;裤子&#34;, &#34;count&#34;: 2 }]
 func (r *TmallServicecenterWorkcardLogisticsorderUpdateAPIRequest) SetGoodsInfo(_goodsInfo string) error {
 	r._goodsInfo = _goodsInfo
 	r.Set("goods_info", _goodsInfo)

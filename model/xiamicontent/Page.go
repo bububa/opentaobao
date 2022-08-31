@@ -9,7 +9,7 @@ type Page struct {
 	// 数量
 	Count int64 `json:"count,omitempty" xml:"count,omitempty"`
 	// 分页信息
-	PagingVo *PagingVO `json:"paging_vo,omitempty" xml:"paging_vo,omitempty"`
+	PagingVo *PagingVo `json:"paging_vo,omitempty" xml:"paging_vo,omitempty"`
 	// 分页信息
-	Paging *PagingVO `json:"paging,omitempty" xml:"paging,omitempty"`
+	Paging *PagingVo `json:"paging,omitempty" xml:"paging,omitempty"`
 }

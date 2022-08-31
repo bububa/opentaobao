@@ -59,7 +59,7 @@ func (r TaobaoXhotelEntityConfigAPIRequest) GetEntityCode() string {
 }
 
 // SetConfigData is ConfigData Setter
-// 格式为：[{"invoice_status":"1"},{"invoice_has":"1"},{"invoice_canvat":"1"},{"invoice_provider":"2"},{"invoice_channel":"1"},{"invoice_payer":"1"},{"invoice_type":"1,2,3"},{"invoice_desc":"测试发票描叙123"}]  key-value形式的配置信息其中invoice_status为发票状态，取值为0(无效),1(有效);invoice_has是否能开发票，1(能),0(不能);invoice_canvat是否能提供增值税专用发票1(能),0(不能)；invoice_provider发票提供方1(酒店提供),2(卖家邮寄)；invoice_channel开票渠道，目前仅支持1(线下开具)；invoice_payer邮费承担方，1(卖家承担)，2(买家承担-邮费到付);invoice_type开票类型 1(代订房费),2(旅游费) 3(差旅费) 4(卖家提供Email版收据)  如果多个请以英文逗号隔开，例如1,2,3。invoice_desc发票补充说明，如果没有可以填写无，长度不要超过20字符。该接口是全量更新的形式，每次更新必须要携带这些节点信息，如果想失效掉该rp上的发票信息，那么可以将invoice_status设置为0。
+// 格式为：[{&#34;invoice_status&#34;:&#34;1&#34;},{&#34;invoice_has&#34;:&#34;1&#34;},{&#34;invoice_canvat&#34;:&#34;1&#34;},{&#34;invoice_provider&#34;:&#34;2&#34;},{&#34;invoice_channel&#34;:&#34;1&#34;},{&#34;invoice_payer&#34;:&#34;1&#34;},{&#34;invoice_type&#34;:&#34;1,2,3&#34;},{&#34;invoice_desc&#34;:&#34;测试发票描叙123&#34;}]  key-value形式的配置信息其中invoice_status为发票状态，取值为0(无效),1(有效);invoice_has是否能开发票，1(能),0(不能);invoice_canvat是否能提供增值税专用发票1(能),0(不能)；invoice_provider发票提供方1(酒店提供),2(卖家邮寄)；invoice_channel开票渠道，目前仅支持1(线下开具)；invoice_payer邮费承担方，1(卖家承担)，2(买家承担-邮费到付);invoice_type开票类型 1(代订房费),2(旅游费) 3(差旅费) 4(卖家提供Email版收据)  如果多个请以英文逗号隔开，例如1,2,3。invoice_desc发票补充说明，如果没有可以填写无，长度不要超过20字符。该接口是全量更新的形式，每次更新必须要携带这些节点信息，如果想失效掉该rp上的发票信息，那么可以将invoice_status设置为0。
 func (r *TaobaoXhotelEntityConfigAPIRequest) SetConfigData(_configData string) error {
 	r._configData = _configData
 	r.Set("config_data", _configData)

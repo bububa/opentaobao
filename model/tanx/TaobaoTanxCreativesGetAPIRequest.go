@@ -113,7 +113,7 @@ func (r TaobaoTanxCreativesGetAPIRequest) GetPage() int64 {
 }
 
 // SetType is Type Setter
-// 所选创意的类型。1-->普通类型, 2-->视频贴片, 0 -->优先查询普通类型,无结果则查询视频贴片类型
+// 所选创意的类型。1--&gt;普通类型, 2--&gt;视频贴片, 0 --&gt;优先查询普通类型,无结果则查询视频贴片类型
 func (r *TaobaoTanxCreativesGetAPIRequest) SetType(_type int64) error {
 	r._type = _type
 	r.Set("type", _type)

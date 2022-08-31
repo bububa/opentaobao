@@ -12,7 +12,7 @@ type HotelOrderDirectInfo struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-	// xml内容格式字符串，详细参考 http://open.taobao.com/docs/doc.htm?spm=a219a.7629140.0.0.2gmWOz&treeId=191&articleId=106152&docType=1
+	// xml内容格式字符串，详细参考 http://open.taobao.com/docs/doc.htm?spm=a219a.7629140.0.0.2gmWOz&amp;treeId=191&amp;articleId=106152&amp;docType=1
 	Context string `json:"context,omitempty" xml:"context,omitempty"`
 	// json格式的扩展字段
 	Extensions string `json:"extensions,omitempty" xml:"extensions,omitempty"`

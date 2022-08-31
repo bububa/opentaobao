@@ -8,7 +8,7 @@ import (
 // TaobaoItemUpdateDelisting 商品下架
 // taobao.item.update.delisting
 //
-// * 单个商品下架<br/>    * 输入的num_iid必须属于当前会话用户
+// * 单个商品下架&lt;br/&gt;    * 输入的num_iid必须属于当前会话用户
 func TaobaoItemUpdateDelisting(clt *core.SDKClient, req *product.TaobaoItemUpdateDelistingAPIRequest, session string) (*product.TaobaoItemUpdateDelistingAPIResponse, error) {
 	var resp product.TaobaoItemUpdateDelistingAPIResponse
 	err := clt.Post(req, &resp, session)

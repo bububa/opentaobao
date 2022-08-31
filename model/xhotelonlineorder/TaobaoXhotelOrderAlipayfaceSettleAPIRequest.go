@@ -148,7 +148,7 @@ func (r TaobaoXhotelOrderAlipayfaceSettleAPIRequest) GetCheckOut() string {
 }
 
 // SetOtherFeeDetail is OtherFeeDetail Setter
-// 杂费明细,如果otherFee>0则该字段必须设置,并和杂费金额相吻合
+// 杂费明细,如果otherFee&gt;0则该字段必须设置,并和杂费金额相吻合
 func (r *TaobaoXhotelOrderAlipayfaceSettleAPIRequest) SetOtherFeeDetail(_otherFeeDetail string) error {
 	r._otherFeeDetail = _otherFeeDetail
 	r.Set("other_fee_detail", _otherFeeDetail)

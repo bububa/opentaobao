@@ -8,7 +8,7 @@ type UserInfoRq struct {
 	Position string `json:"position,omitempty" xml:"position,omitempty"`
 	// 用户真实姓名（注册签约时必填）
 	RealName string `json:"real_name,omitempty" xml:"real_name,omitempty"`
-	// 英文姓名请用"/"分隔，中间不能含有空格。顺序：姓/名(last_name/first_name))
+	// 英文姓名请用&#34;/&#34;分隔，中间不能含有空格。顺序：姓/名(last_name/first_name))
 	RealNameEn string `json:"real_name_en,omitempty" xml:"real_name_en,omitempty"`
 	// 联系电话
 	Phone string `json:"phone,omitempty" xml:"phone,omitempty"`

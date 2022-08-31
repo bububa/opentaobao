@@ -53,7 +53,7 @@ func (r AlitripPlatformDivisionsGetdivisionbynameAPIRequest) GetName() string {
 }
 
 // SetLevel is Level Setter
-// 行政区划级别ALL(0, "全部"),  	CONTINENT(1, "大洲"),  	COUNTRY(2, "国家"),  	PROVINCE(3, "省份"),  	CITY(4, "城市"),  	DISTRICT(5, "区县"),  	STREET(6, "街道")
+// 行政区划级别ALL(0, &#34;全部&#34;),  	CONTINENT(1, &#34;大洲&#34;),  	COUNTRY(2, &#34;国家&#34;),  	PROVINCE(3, &#34;省份&#34;),  	CITY(4, &#34;城市&#34;),  	DISTRICT(5, &#34;区县&#34;),  	STREET(6, &#34;街道&#34;)
 func (r *AlitripPlatformDivisionsGetdivisionbynameAPIRequest) SetLevel(_level int64) error {
 	r._level = _level
 	r.Set("level", _level)

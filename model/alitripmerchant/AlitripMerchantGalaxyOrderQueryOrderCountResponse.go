@@ -7,7 +7,7 @@ type AlitripMerchantGalaxyOrderQueryOrderCountResponse struct {
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 	// 返回实体
-	Content *OrderCountVO `json:"content,omitempty" xml:"content,omitempty"`
+	Content *OrderCountVo `json:"content,omitempty" xml:"content,omitempty"`
 	// 成功
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

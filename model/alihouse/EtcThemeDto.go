@@ -16,7 +16,7 @@ type EtcThemeDto struct {
 	CityCodes string `json:"city_codes,omitempty" xml:"city_codes,omitempty"`
 	// 详情头图
 	DetailImage string `json:"detail_image,omitempty" xml:"detail_image,omitempty"`
-	// 是否在头图展示标题与副标题 1：不展示 2：展示
+	// 是否在头图展示标题与副标题 1：不展示 2：展示 �
 	DetailShowTitle string `json:"detail_show_title,omitempty" xml:"detail_show_title,omitempty"`
 	// 详情色值
 	DetailColorVal string `json:"detail_color_val,omitempty" xml:"detail_color_val,omitempty"`
@@ -24,9 +24,9 @@ type EtcThemeDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 数据来源
 	DetailDataSource int64 `json:"detail_data_source,omitempty" xml:"detail_data_source,omitempty"`
-	// 是否展示筛选器 1展示 0不展示
+	// 是否展示筛选器 �1展示 0不展示
 	DetailSelectorIsShow int64 `json:"detail_selector_is_show,omitempty" xml:"detail_selector_is_show,omitempty"`
-	// 主题模板id（cardType为主题详情卡片）
+	// 主题模板id（cardType为主题详情卡片） �
 	DetailThemeTemplateId int64 `json:"detail_theme_template_id,omitempty" xml:"detail_theme_template_id,omitempty"`
 	// 是否展示留资组件（0: 否 1：是）
 	DetailShowFetchInfoComponent int64 `json:"detail_show_fetch_info_component,omitempty" xml:"detail_show_fetch_info_component,omitempty"`

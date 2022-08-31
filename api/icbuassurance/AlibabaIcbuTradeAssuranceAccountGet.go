@@ -8,7 +8,7 @@ import (
 // AlibabaIcbuTradeAssuranceAccountGet icbu信保账户信息
 // alibaba.icbu.trade.assurance.account.get
 //
-// icbu交易信用保障开通状态&额度信息查询
+// icbu交易信用保障开通状态&amp;额度信息查询
 func AlibabaIcbuTradeAssuranceAccountGet(clt *core.SDKClient, req *icbuassurance.AlibabaIcbuTradeAssuranceAccountGetAPIRequest, session string) (*icbuassurance.AlibabaIcbuTradeAssuranceAccountGetAPIResponse, error) {
 	var resp icbuassurance.AlibabaIcbuTradeAssuranceAccountGetAPIResponse
 	err := clt.Post(req, &resp, session)

@@ -9,7 +9,7 @@ import (
 // AlibabaAlihealthMedicalOrderRefuseAPIRequest 三方机构通知平台"医生拒诊" API请求
 // alibaba.alihealth.medical.order.refuse
 //
-// 三方机构通知平台"医生拒诊"
+// 三方机构通知平台&#34;医生拒诊&#34;
 type AlibabaAlihealthMedicalOrderRefuseAPIRequest struct {
 	model.Params
 	// 请求入参

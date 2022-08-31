@@ -4,7 +4,7 @@ package wlb
 type WlbInventory struct {
 	// 仓库编码，关联到仓库类型服务的编码非托管库存(卖家自己管理的库存，物流宝不可见又称自有库存)的所在仓库编码: STORE_SYS_PRIVATE
 	StoreCode string `json:"store_code,omitempty" xml:"store_code,omitempty"`
-	// VENDIBLE--可销售库存<br/>FREEZE--冻结库存<br/>ONWAY--在途库存<br/>DEFECT--残次品库存
+	// VENDIBLE--可销售库存&lt;br/&gt;FREEZE--冻结库存&lt;br/&gt;ONWAY--在途库存&lt;br/&gt;DEFECT--残次品库存
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 货主ID
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`

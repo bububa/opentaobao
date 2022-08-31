@@ -9,7 +9,7 @@ import (
 // TaobaoProductAddAPIRequest 上传一个产品，不包括产品非主图和属性图片 API请求
 // taobao.product.add
 //
-// 获取类目ID，必需是叶子类目ID；调用taobao.itemcats.get.v2获取 <br/>传入关键属性,结构:pid:vid;pid:vid.调用taobao.itemprops.get.v2获取pid,<br/>调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.<br/>新增：套装产品发布，目前支持单件多个即 A*2 形式的套装
+// 获取类目ID，必需是叶子类目ID；调用taobao.itemcats.get.v2获取 &lt;br/&gt;传入关键属性,结构:pid:vid;pid:vid.调用taobao.itemprops.get.v2获取pid,&lt;br/&gt;调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.&lt;br/&gt;新增：套装产品发布，目前支持单件多个即 A*2 形式的套装
 type TaobaoProductAddAPIRequest struct {
 	model.Params
 	// 产品名称,最大30个字符.
@@ -116,7 +116,7 @@ func (r TaobaoProductAddAPIRequest) GetProps() string {
 }
 
 // SetBinds is Binds Setter
-// 非关键属性结构:pid:vid;pid:vid.<br>非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性;<br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font>
+// 非关键属性结构:pid:vid;pid:vid.&lt;br&gt;非关键属性&lt;font color=red&gt;不包含&lt;/font&gt;关键属性、销售属性、用户自定义属性、商品属性;&lt;br&gt;调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.&lt;br&gt;&lt;font color=red&gt;注:支持最大长度为512字节&lt;/font&gt;
 func (r *TaobaoProductAddAPIRequest) SetBinds(_binds string) error {
 	r._binds = _binds
 	r.Set("binds", _binds)
@@ -142,7 +142,7 @@ func (r TaobaoProductAddAPIRequest) GetSaleProps() string {
 }
 
 // SetCustomerProps is CustomerProps Setter
-// 用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”<br><font color=red>注：包含所有自定义属性的传入</font>
+// 用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”&lt;br&gt;&lt;font color=red&gt;注：包含所有自定义属性的传入&lt;/font&gt;
 func (r *TaobaoProductAddAPIRequest) SetCustomerProps(_customerProps string) error {
 	r._customerProps = _customerProps
 	r.Set("customer_props", _customerProps)

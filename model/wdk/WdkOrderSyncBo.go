@@ -24,7 +24,7 @@ type WdkOrderSyncBo struct {
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 五道口订单ID
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
-	// 订单来源, 如 TAOBAO (4, "TC自营渠道"),
+	// 订单来源, 如 TAOBAO (4, &#34;TC自营渠道&#34;),
 	OrderFrom int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
 	// 用户订单支付金额,分
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
@@ -34,9 +34,9 @@ type WdkOrderSyncBo struct {
 	DiscountFee int64 `json:"discount_fee,omitempty" xml:"discount_fee,omitempty"`
 	// 订单配送费,分
 	PostFee int64 `json:"post_fee,omitempty" xml:"post_fee,omitempty"`
-	// 订单状态,如PAID_DONE(2, "已付款"), TRADE_SUCCESS(6, "交易成功")
+	// 订单状态,如PAID_DONE(2, &#34;已付款&#34;), TRADE_SUCCESS(6, &#34;交易成功&#34;)
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
-	// 配送方式, 如InTime(1, "即时达"), SetTime(2, "定时达"),TopSpeed(3,"极速达"),NoNeedSend(4,"无需配送")
+	// 配送方式, 如InTime(1, &#34;即时达&#34;), SetTime(2, &#34;定时达&#34;),TopSpeed(3,&#34;极速达&#34;),NoNeedSend(4,&#34;无需配送&#34;)
 	ArriveType int64 `json:"arrive_type,omitempty" xml:"arrive_type,omitempty"`
 	// 商家优惠分摊
 	DiscountMerchantFee int64 `json:"discount_merchant_fee,omitempty" xml:"discount_merchant_fee,omitempty"`

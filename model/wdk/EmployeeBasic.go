@@ -8,7 +8,7 @@ type EmployeeBasic struct {
 	AccountName string `json:"account_name,omitempty" xml:"account_name,omitempty"`
 	// 民事纠纷金额
 	AmountOfCivilDisputes string `json:"amount_of_civil_disputes,omitempty" xml:"amount_of_civil_disputes,omitempty"`
-	// 附件* {"身份证-正面":"url"}
+	// 附件* {&#34;身份证-正面&#34;:&#34;url&#34;}
 	Attachment string `json:"attachment,omitempty" xml:"attachment,omitempty"`
 	// 银行账号
 	BankAccount string `json:"bank_account,omitempty" xml:"bank_account,omitempty"`

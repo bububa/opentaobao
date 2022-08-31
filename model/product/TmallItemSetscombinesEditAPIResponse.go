@@ -9,7 +9,7 @@ import (
 // TmallItemSetscombinesEditAPIResponse 普通商品转套装商品&套装商品编辑接口 API返回值
 // tmall.item.setscombines.edit
 //
-// 普通商品转套装商品&套装商品编辑接口
+// 普通商品转套装商品&amp;套装商品编辑接口
 type TmallItemSetscombinesEditAPIResponse struct {
 	model.CommonResponse
 	TmallItemSetscombinesEditAPIResponseModel

@@ -258,7 +258,7 @@ func (r AlibabaEinvoicePartnerReturnAPIRequest) GetSerialNo() string {
 }
 
 // SetCreateResult is CreateResult Setter
-// 开票结果"success"或者"fail"
+// 开票结果&#34;success&#34;或者&#34;fail&#34;
 func (r *AlibabaEinvoicePartnerReturnAPIRequest) SetCreateResult(_createResult string) error {
 	r._createResult = _createResult
 	r.Set("create_result", _createResult)

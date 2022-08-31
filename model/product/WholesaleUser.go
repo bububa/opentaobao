@@ -4,7 +4,7 @@ package product
 type WholesaleUser struct {
 	// user id
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// user's company address用户公司地址
+	// user&#39;s company address用户公司地址
 	CompAddress string `json:"comp_address,omitempty" xml:"comp_address,omitempty"`
 	// company country公司所在国家
 	CompCountry string `json:"comp_country,omitempty" xml:"comp_country,omitempty"`

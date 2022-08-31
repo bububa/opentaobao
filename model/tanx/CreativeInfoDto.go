@@ -2,19 +2,19 @@ package tanx
 
 // CreativeInfoDto 结构体
 type CreativeInfoDto struct {
-	// 创意的类目，多个值用逗号&ldquo;，&rdquo;分隔
+	// 创意的类目，多个值用逗号&amp;ldquo;，&amp;rdquo;分隔
 	CreativeCategoryId string `json:"creative_category_id,omitempty" xml:"creative_category_id,omitempty"`
 	// 创意尺寸，长高中间用小写英文x
 	CreativeSize string `json:"creative_size,omitempty" xml:"creative_size,omitempty"`
 	// 创意存储地址
 	CreativeUrl string `json:"creative_url,omitempty" xml:"creative_url,omitempty"`
-	// 广告主Id，多值使用&ldquo;,&rdquo;分隔
+	// 广告主Id，多值使用&amp;ldquo;,&amp;rdquo;分隔
 	AdvertiserIds string `json:"advertiser_ids,omitempty" xml:"advertiser_ids,omitempty"`
 	// 创意支持的apiFramework协议,1:VPAID1.0;2:VPAID2.0;3:MARID-1;4:ORMMA;5:1MRAID-2,只能单选，不能多选
 	ApiFramework string `json:"api_framework,omitempty" xml:"api_framework,omitempty"`
 	// (选填)中间跳转地址（比如DSP的点击服务器地址），但跳转后的最终地址必须和click_url一致。
 	ClickThroughUrl string `json:"click_through_url,omitempty" xml:"click_through_url,omitempty"`
-	// (选填)点击监控地址，最多3个，多个值用逗号&ldquo;，&rdquo;分隔
+	// (选填)点击监控地址，最多3个，多个值用逗号&amp;ldquo;，&amp;rdquo;分隔
 	ClickTrackUrl string `json:"click_track_url,omitempty" xml:"click_track_url,omitempty"`
 	// 广告跳转的最终目标页面地址
 	ClickUrl string `json:"click_url,omitempty" xml:"click_url,omitempty"`

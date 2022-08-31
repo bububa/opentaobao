@@ -83,7 +83,7 @@ func (r AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) GetVoiceCode() string 
 }
 
 // SetParams is Params Setter
-// 上下文参数 示例:{"extend":"回传参数"} extend为扩展信息作为回传参数的key
+// 上下文参数 示例:{&#34;extend&#34;:&#34;回传参数&#34;} extend为扩展信息作为回传参数的key
 func (r *AlibabaAliqinTaNumberSinglecallbyvoiceAPIRequest) SetParams(_params string) error {
 	r._params = _params
 	r.Set("params", _params)

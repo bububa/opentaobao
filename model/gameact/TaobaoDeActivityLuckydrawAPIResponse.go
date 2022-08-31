@@ -21,7 +21,7 @@ type TaobaoDeActivityLuckydrawAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 中奖奖品
-	AwardVO *AwardVO `json:"award_v_o,omitempty" xml:"award_v_o,omitempty"`
+	AwardVO *AwardVo `json:"award_v_o,omitempty" xml:"award_v_o,omitempty"`
 	// 数娱积分/金牌余额
 	TotalAmount int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 	// 可用抽奖次数
