@@ -124,6 +124,11 @@
 							"name": "is_test",
 							"type": "Number",
 							"description": "是否测试（0-否 1-是）"
+						},
+						{
+							"name": "contact_info",
+							"type": "String",
+							"description": "联系信息"
 						}
 					],
 					"name": "data",

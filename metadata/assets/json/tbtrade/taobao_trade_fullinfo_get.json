@@ -1,0 +1,2759 @@
+{
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易编号",
+			"required": true
+		},
+		{
+			"name": "include_oaid",
+			"type": "String",
+			"description": "include_oaid"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家OpenUid"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "交易标题，以店铺名作为此标题的值。注:taobao.trades.get接口返回的Trade中的title是商品名称"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据 可选值 fixed(一口价) auction(拍卖) guarantee_trade(一口价、拍卖) auto_delivery(自动发货) independent_simple_trade(旺店入门版交易) independent_shop_trade(旺店标准版交易) ec(直冲) cod(货到付款) fenxiao(分销) game_equipment(游戏装备) shopex_trade(ShopEX交易) netcn_trade(万网交易) external_trade(统一外部交易)o2o_offlinetrade（O2O交易）step (万人团)nopaid(无付款订单)pre_auth_type(预授权0元购机交易)"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "sid",
+					"type": "String",
+					"description": "物流运单号"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易编号 (父订单的交易编号)"
+				},
+				{
+					"name": "acookie_id",
+					"type": "String",
+					"description": "Acookie订单唯一ID。"
+				},
+				{
+					"name": "seller_rate",
+					"type": "Boolean",
+					"description": "卖家是否已评价。可选值:true(已评价),false(未评价)"
+				},
+				{
+					"name": "buyer_rate",
+					"type": "Boolean",
+					"description": "买家是否已评价。可选值:true(已评价),false(未评价)。如买家只评价未打分，此字段仍返回false"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "交易状态。可选值:    * TRADE_NO_CREATE_PAY(没有创建支付宝交易)    * WAIT_BUYER_PAY(等待买家付款)    * SELLER_CONSIGNED_PART(卖家部分发货)    * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)    * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)    * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)    * TRADE_FINISHED(交易成功)    * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)    * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)    * PAY_PENDING(国际信用卡支付付款确认中)    * WAIT_PRE_AUTH_CONFIRM(0元购合约中)\t* PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)"
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "discount_fee",
+					"type": "String",
+					"description": "建议使用trade.promotion_details查询系统优惠系统优惠金额（如打折，VIP，满就送等），精确到2位小数，单位：元。如：200.07，表示：200元7分"
+				},
+				{
+					"name": "adjust_fee",
+					"type": "String",
+					"description": "卖家手工调整金额，精确到2位小数，单位：元。如：200.07，表示：200元7分。来源于订单价格修改，如果有多笔子订单的时候，这个为0，单笔的话则跟[order].adjust_fee一样"
+				},
+				{
+					"name": "post_fee",
+					"type": "String",
+					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间 。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "consign_time",
+					"type": "Date",
+					"description": "卖家发货时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "received_payment",
+					"type": "String",
+					"description": "卖家实际收到的支付宝打款金额（由于子订单可以部分确认收货，这个金额会随着子订单的确认收货而不断增加，交易成功后等于买家实付款减去退款金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "commission_fee",
+					"type": "String",
+					"description": "交易佣金。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "buyer_memo",
+					"type": "String",
+					"description": "买家备注（与淘宝网上订单的买家备注对应，只有买家才能查看该字段）"
+				},
+				{
+					"name": "seller_memo",
+					"type": "String",
+					"description": "卖家备注（与淘宝网上订单的卖家备注对应，只有卖家才能查看该字段）"
+				},
+				{
+					"name": "buyer_area",
+					"type": "String",
+					"description": "买家下单的地区"
+				},
+				{
+					"name": "alipay_no",
+					"type": "String",
+					"description": "支付宝交易号，如：2009112081173831"
+				},
+				{
+					"name": "buyer_message",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"name": "pic_path",
+					"type": "String",
+					"description": "商品图片绝对途径"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字编号"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分"
+				},
+				{
+					"name": "cod_fee",
+					"type": "String",
+					"description": "货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分。"
+				},
+				{
+					"name": "cod_status",
+					"type": "String",
+					"description": "货到付款物流状态。初始状态 NEW_CREATED,接单成功 ACCEPTED_BY_COMPANY,接单失败 REJECTED_BY_COMPANY,接单超时 RECIEVE_TIMEOUT,揽收成功 TAKEN_IN_SUCCESS,揽收失败 TAKEN_IN_FAILED,揽收超时 TAKEN_TIMEOUT,签收成功 SIGN_IN,签收失败 REJECTED_BY_OTHER_SIDE,订单等待发送给物流公司 WAITING_TO_BE_SENT,用户取消物流订单 CANCELED"
+				},
+				{
+					"name": "buyer_cod_fee",
+					"type": "String",
+					"description": "买家货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分"
+				},
+				{
+					"name": "seller_cod_fee",
+					"type": "String",
+					"description": "卖家货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分。卖家不承担服务费的订单：未发货的订单获取服务费为0，发货后就能获取到正确值。"
+				},
+				{
+					"name": "express_agency_fee",
+					"type": "String",
+					"description": "快递代收款。精确到2位小数;单位:元。如:212.07，表示:212元7分"
+				},
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "创建交易时的物流方式（交易完成前，物流方式有可能改变，但系统里的这个字段一直不变）。可选值：free(卖家包邮),post(平邮),express(快递),ems(EMS),virtual(虚拟发货)，25(次日必达)，26(预约配送),seller(商家自配送),instant(即时配送)。"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。"
+				},
+				{
+					"name": "point_fee",
+					"type": "Number",
+					"description": "买家使用积分,下单时生成，且一直不变。格式:100;单位:个."
+				},
+				{
+					"name": "real_point_fee",
+					"type": "Number",
+					"description": "买家实际使用积分（扣除部分退款使用的积分），交易完成后生成（交易成功或关闭），交易未完成时该字段值为0。格式:100;单位:个"
+				},
+				{
+					"name": "buyer_obtain_point_fee",
+					"type": "Number",
+					"description": "买家获得积分,返点的积分。格式:100;单位:个。返点的积分要交易成功之后才能获得。"
+				},
+				{
+					"name": "buyer_alipay_no",
+					"type": "String",
+					"description": "买家支付宝账号"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收货人的姓名"
+				},
+				{
+					"name": "receiver_country",
+					"type": "String",
+					"description": "收货人国籍"
+				},
+				{
+					"name": "receiver_state",
+					"type": "String",
+					"description": "收货人的所在省份"
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收货人的所在城市\u003cbr/\u003e注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面\u003cbr/\u003e建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市"
+				},
+				{
+					"name": "receiver_district",
+					"type": "String",
+					"description": "收货人的所在地区\u003cbr/\u003e注：因为国家对于城市和地区的划分的有：省直辖市和省直辖县级行政区（区级别的）划分的，淘宝这边根据这个差异保存在不同字段里面比如：广东广州：广州属于一个直辖市是放在的receiver_city的字段里面；而河南济源：济源属于省直辖县级行政区划分，是区级别的，放在了receiver_district里面\u003cbr/\u003e建议：程序依赖于城市字段做物流等判断的操作，最好加一个判断逻辑：如果返回值里面只有receiver_district参数，该参数作为城市"
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "收货人街道地址"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收货人的详细地址"
+				},
+				{
+					"name": "receiver_zip",
+					"type": "String",
+					"description": "收货人的邮编"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收货人的手机号码"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收货人的电话号码"
+				},
+				{
+					"name": "buyer_email",
+					"type": "String",
+					"description": "买家邮件地址"
+				},
+				{
+					"name": "seller_alipay_no",
+					"type": "String",
+					"description": "卖家支付宝账号"
+				},
+				{
+					"name": "seller_mobile",
+					"type": "String",
+					"description": "卖家手机"
+				},
+				{
+					"name": "seller_phone",
+					"type": "String",
+					"description": "卖家电话"
+				},
+				{
+					"name": "seller_name",
+					"type": "String",
+					"description": "卖家姓名"
+				},
+				{
+					"name": "seller_email",
+					"type": "String",
+					"description": "卖家邮件地址"
+				},
+				{
+					"name": "available_confirm_fee",
+					"type": "String",
+					"description": "交易中剩余的确认收货金额（这个金额会随着子订单确认收货而不断减少，交易成功后会变为零）。精确到2位小数;单位:元。如:200.07，表示:200 元7分"
+				},
+				{
+					"name": "has_post_fee",
+					"type": "Boolean",
+					"description": "是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)"
+				},
+				{
+					"name": "timeout_action_time",
+					"type": "Date",
+					"description": "超时到期时间。格式:yyyy-MM-dd HH:mm:ss。业务规则：前提条件：只有在买家已付款，卖家已发货的情况下才有效如果申请了退款，那么超时会落在子订单上；比如说3笔ABC，A申请了，那么返回的是BC的列表, 主定单不存在如果没有申请过退款，那么超时会挂在主定单上；比如ABC，返回主定单，ABC的超时和主定单相同"
+				},
+				{
+					"name": "snapshot_url",
+					"type": "String",
+					"description": "交易快照地址"
+				},
+				{
+					"name": "trade_memo",
+					"type": "String",
+					"description": "交易备注。"
+				},
+				{
+					"name": "promotion",
+					"type": "String",
+					"description": "交易促销详细信息"
+				},
+				{
+					"name": "is_3D",
+					"type": "Boolean",
+					"description": "是否3D交易"
+				},
+				{
+					"name": "is_lgtype",
+					"type": "Boolean",
+					"description": "是否保障速递，如果为true，则为保障速递订单，使用线下联系发货接口发货，如果未false，则该订单非保障速递，根据卖家设置的订单流转规则可使用物流宝或者常规物流发货。"
+				},
+				{
+					"name": "is_brand_sale",
+					"type": "Boolean",
+					"description": "表示是否是品牌特卖（常规特卖，不包括特卖惠和特实惠）订单，如果是返回true，如果不是返回false。当此字段与is_force_wlb均为true时，订单强制物流宝发货。"
+				},
+				{
+					"name": "is_force_wlb",
+					"type": "Boolean",
+					"description": "订单是否强制使用物流宝发货。当此字段与is_brand_sale均为true时，订单强制物流宝发货。此字段为false时，该订单根据流转规则设置可以使用物流宝或者常规方式发货"
+				},
+				{
+					"name": "buyer_flag",
+					"type": "Number",
+					"description": "买家备注旗帜（与淘宝网上订单的买家备注旗帜对应，只有买家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5"
+				},
+				{
+					"name": "seller_flag",
+					"type": "Number",
+					"description": "卖家备注旗帜（与淘宝网上订单的卖家备注旗帜对应，只有卖家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5"
+				},
+				{
+					"name": "credit_card_fee",
+					"type": "String",
+					"description": "使用信用卡支付金额数"
+				},
+				{
+					"name": "step_trade_status",
+					"type": "String",
+					"description": "分阶段付款的订单状态（例如万人团订单等），目前有四个返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)，FRONT_PAID_FRONT_FORFEITED（预售定金罚没）"
+				},
+				{
+					"name": "step_paid_fee",
+					"type": "String",
+					"description": "分阶段付款的已付金额（万人团订单已付金额）"
+				},
+				{
+					"name": "eticket_ext",
+					"type": "String",
+					"description": "电子凭证的垂直信息"
+				},
+				{
+					"name": "mark_desc",
+					"type": "String",
+					"description": "订单出现异常问题的时候，给予用户的描述,没有异常的时候，此值为空"
+				},
+				{
+					"name": "has_yfx",
+					"type": "Boolean",
+					"description": "订单中是否包含运费险订单，如果包含运费险订单返回true，不包含运费险订单，返回false"
+				},
+				{
+					"name": "yfx_fee",
+					"type": "String",
+					"description": "订单的运费险，单位为元"
+				},
+				{
+					"name": "yfx_id",
+					"type": "String",
+					"description": "运费险支付号"
+				},
+				{
+					"name": "yfx_type",
+					"type": "String",
+					"description": "运费险类型"
+				},
+				{
+					"name": "send_time",
+					"type": "String",
+					"description": "订单将在此时间前发出，主要用于预售订单"
+				},
+				{
+					"name": "can_rate",
+					"type": "Boolean",
+					"description": "买家可以通过此字段查询是否当前交易可以评论，can_rate=true可以评价，false则不能评价。"
+				},
+				{
+					"name": "seller_can_rate",
+					"type": "Boolean",
+					"description": "卖家是否可以对订单进行评价"
+				},
+				{
+					"name": "is_part_consign",
+					"type": "Boolean",
+					"description": "是否是多次发货的订单如果卖家对订单进行多次发货，则为true否则为false"
+				},
+				{
+					"name": "is_daixiao",
+					"type": "Boolean",
+					"description": "表示订单交易是否含有对应的代销采购单。如果该订单中存在一个对应的代销采购单，那么该值为true；反之，该值为false。"
+				},
+				{
+					"name": "is_wt",
+					"type": "Boolean",
+					"description": "表示订单交易是否网厅订单。 如果该订单是网厅订单，那么该值为true；反之，该值为false。"
+				},
+				{
+					"name": "arrive_interval",
+					"type": "Number",
+					"description": "物流到货时效，单位天"
+				},
+				{
+					"name": "arrive_cut_time",
+					"type": "String",
+					"description": "物流到货时效截单时间，格式 HH:mm"
+				},
+				{
+					"name": "consign_interval",
+					"type": "Number",
+					"description": "物流发货时效，单位小时"
+				},
+				{
+					"name": "o2o",
+					"type": "String",
+					"description": "导购宝=crm"
+				},
+				{
+					"name": "o2o_guide_id",
+					"type": "String",
+					"description": "导购员id"
+				},
+				{
+					"name": "o2o_guide_name",
+					"type": "String",
+					"description": "导购员名称"
+				},
+				{
+					"name": "o2o_shop_id",
+					"type": "String",
+					"description": "导购员门店id"
+				},
+				{
+					"name": "o2o_shop_name",
+					"type": "String",
+					"description": "导购门店名称"
+				},
+				{
+					"name": "o2o_delivery",
+					"type": "String",
+					"description": "导购宝提货方式，inshop：店内提货，online：线上发货"
+				},
+				{
+					"name": "o2o_out_trade_id",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "shop_code",
+					"type": "String",
+					"description": "线下自提门店编码"
+				},
+				{
+					"name": "hk_en_name",
+					"type": "String",
+					"description": "拼音名"
+				},
+				{
+					"name": "hk_flight_no",
+					"type": "String",
+					"description": "航班号"
+				},
+				{
+					"name": "hk_china_name",
+					"type": "String",
+					"description": "中文名"
+				},
+				{
+					"name": "hk_card_code",
+					"type": "String",
+					"description": "证件号码"
+				},
+				{
+					"name": "hk_card_type",
+					"type": "String",
+					"description": "证件类型001代表港澳通行证类型、002代表入台证003代表护照"
+				},
+				{
+					"name": "hk_flight_date",
+					"type": "String",
+					"description": "航班飞行时间"
+				},
+				{
+					"name": "hk_gender",
+					"type": "String",
+					"description": "性别M: 男性，F: 女性"
+				},
+				{
+					"name": "hk_birthday",
+					"type": "String",
+					"description": "出生日期"
+				},
+				{
+					"name": "hk_pickup",
+					"type": "String",
+					"description": "提货地点"
+				},
+				{
+					"name": "hk_pickup_id",
+					"type": "String",
+					"description": "提货地点id"
+				},
+				{
+					"name": "est_con_time",
+					"type": "String",
+					"description": "商家的预计发货时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "pic_path",
+							"type": "String",
+							"description": "商品图片的绝对路径"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "商品数字ID"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品的最小库存单位Sku的id.可以通过taobao.item.sku.get获取详细的Sku信息"
+						},
+						{
+							"name": "outer_iid",
+							"type": "String",
+							"description": "商家外部编码(可与商家外部系统对接)。外部商家自己定义的商品Item的id，可以通过taobao.items.custom.get获取商品的Item的信息"
+						},
+						{
+							"name": "outer_sku_id",
+							"type": "String",
+							"description": "外部网店自己定义的Sku编号"
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: \u003cul\u003e\u003cli\u003eTRADE_NO_CREATE_PAY(没有创建支付宝交易) \u003c/li\u003e\u003cli\u003eWAIT_BUYER_PAY(等待买家付款) \u003c/li\u003e\u003cli\u003eWAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) \u003c/li\u003e\u003cli\u003eWAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) \u003c/li\u003e\u003cli\u003eTRADE_BUYER_SIGNED(买家已签收,货到付款专用) \u003c/li\u003e\u003cli\u003eTRADE_FINISHED(交易成功) \u003c/li\u003e\u003cli\u003eTRADE_CLOSED(付款以后用户退款成功，交易自动关闭) \u003c/li\u003e\u003cli\u003eTRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)\u003c/li\u003e\u003cli\u003ePAY_PENDING(国际信用卡支付付款确认中)\u003c/li\u003e\u003c/ul\u003e"
+						},
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "子订单编号"
+						},
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。对于多子订单的交易，计算公式如下：payment = price * num + adjust_fee - discount_fee ；单子订单交易，payment与主订单的payment一致，对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。"
+						},
+						{
+							"name": "discount_fee",
+							"type": "String",
+							"description": "子订单级订单优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "adjust_fee",
+							"type": "String",
+							"description": "手工调整金额.格式为:1.01;单位:元;精确到小数点后两位."
+						},
+						{
+							"name": "divide_order_fee",
+							"type": "String",
+							"description": "分摊之后的实付金额"
+						},
+						{
+							"name": "part_mjz_discount",
+							"type": "String",
+							"description": "优惠分摊"
+						},
+						{
+							"name": "sku_properties_name",
+							"type": "String",
+							"description": "SKU的值。如：机身颜色:黑色;手机套餐:官方标配"
+						},
+						{
+							"name": "item_meal_id",
+							"type": "Number",
+							"description": "套餐ID"
+						},
+						{
+							"name": "item_meal_name",
+							"type": "String",
+							"description": "套餐的值。如：M8原装电池:便携支架:M8专用座充:莫凡保护袋"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "购买数量。取值范围:大于零的整数"
+						},
+						{
+							"name": "snapshot_url",
+							"type": "String",
+							"description": "订单快照URL"
+						},
+						{
+							"name": "timeout_action_time",
+							"type": "Date",
+							"description": "订单超时到期时间。格式:yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "item_memo",
+							"type": "String",
+							"description": "商品备注"
+						},
+						{
+							"name": "buyer_rate",
+							"type": "Boolean",
+							"description": "买家是否已评价。可选值：true(已评价)，false(未评价)"
+						},
+						{
+							"name": "seller_rate",
+							"type": "Boolean",
+							"description": "卖家是否已评价。可选值：true(已评价)，false(未评价)"
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "最近退款ID"
+						},
+						{
+							"name": "seller_type",
+							"type": "String",
+							"description": "卖家类型，可选值为：B（商城商家），C（普通卖家）"
+						},
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "交易商品对应的类目ID"
+						},
+						{
+							"name": "is_oversold",
+							"type": "Boolean",
+							"description": "是否超卖"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "子订单的交易结束时间说明：子订单有单独的结束时间，与主订单的结束时间可能有所不同，在有退款发起的时候或者是主订单分阶段付款的时候，子订单的结束时间会早于主订单的结束时间，所以开放这个字段便于订单结束状态的判断"
+						},
+						{
+							"name": "order_from",
+							"type": "String",
+							"description": "子订单来源,如jhs(聚划算)、taobao(淘宝)、wap(无线)"
+						},
+						{
+							"name": "is_service_order",
+							"type": "Boolean",
+							"description": "是否是服务订单，是返回true，否返回false。"
+						},
+						{
+							"name": "consign_time",
+							"type": "String",
+							"description": "子订单发货时间，当卖家对订单进行了多次发货，子订单的发货时间和主订单的发货时间可能不一样了，那么就需要以子订单的时间为准。（没有进行多次发货的订单，主订单的发货时间和子订单的发货时间都一样）"
+						},
+						{
+							"name": "shipping_type",
+							"type": "String",
+							"description": "子订单的运送方式（卖家对订单进行多次发货之后，一个主订单下的子订单的运送方式可能不同，用order.shipping_type来区分子订单的运送方式）"
+						},
+						{
+							"name": "logistics_company",
+							"type": "String",
+							"description": "子订单发货的快递公司名称"
+						},
+						{
+							"name": "invoice_no",
+							"type": "String",
+							"description": "子订单所在包裹的运单号"
+						},
+						{
+							"name": "bind_oid",
+							"type": "Number",
+							"description": "捆绑的子订单号，表示该子订单要和捆绑的子订单一起发货，用于卖家子订单捆绑发货"
+						},
+						{
+							"name": "is_daixiao",
+							"type": "Boolean",
+							"description": "表示订单交易是否含有对应的代销采购单。如果该订单中存在一个对应的代销采购单，那么该值为true；反之，该值为false。"
+						},
+						{
+							"name": "ticket_outer_id",
+							"type": "String",
+							"description": "对应门票有效期的外部id"
+						},
+						{
+							"name": "ticket_expdate_key",
+							"type": "String",
+							"description": "门票有效期的key"
+						},
+						{
+							"name": "is_www",
+							"type": "Boolean",
+							"description": "子订单是否是www订单"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "发货的仓库编码"
+						},
+						{
+							"name": "tmser_spu_code",
+							"type": "String",
+							"description": "支持家装类物流的类型"
+						},
+						{
+							"name": "sub_order_tax_fee",
+							"type": "String",
+							"description": "天猫国际官网直供子订单关税税费"
+						},
+						{
+							"name": "sub_order_tax_rate",
+							"type": "String",
+							"description": "天猫国际官网直供子订单关税税率"
+						},
+						{
+							"name": "et_ser_time",
+							"type": "String",
+							"description": "天猫汽车服务预约时间"
+						},
+						{
+							"name": "et_shop_name",
+							"type": "String",
+							"description": "电子凭证预约门店地址"
+						},
+						{
+							"name": "et_verified_shop_name",
+							"type": "String",
+							"description": "电子凭证核销门店地址"
+						},
+						{
+							"name": "et_plate_number",
+							"type": "String",
+							"description": "车牌号码"
+						},
+						{
+							"name": "estimate_con_time",
+							"type": "String",
+							"description": "子订单预计发货时间"
+						},
+						{
+							"name": "bind_oids",
+							"type": "String",
+							"description": "bind_oid字段的升级，支持返回绑定的多个子订单，多个子订单以半角逗号分隔"
+						},
+						{
+							"name": "zhengji_status",
+							"type": "String",
+							"description": "征集预售订单征集状态：1（征集中），2（征集成功），3（征集失败）"
+						},
+						{
+							"name": "md_qualification",
+							"type": "String",
+							"description": "免单资格属性"
+						},
+						{
+							"name": "md_fee",
+							"type": "String",
+							"description": "免单金额"
+						},
+						{
+							"name": "customization",
+							"type": "String",
+							"description": "定制信息"
+						},
+						{
+							"name": "inv_type",
+							"type": "String",
+							"description": "库存类型：6为在途"
+						},
+						{
+							"name": "is_sh_ship",
+							"type": "Boolean",
+							"description": "是否发货"
+						},
+						{
+							"name": "shipper",
+							"type": "String",
+							"description": "仓储信息"
+						},
+						{
+							"name": "f_type",
+							"type": "String",
+							"description": "订单履行类型，如喵鲜生极速达（jsd）"
+						},
+						{
+							"name": "f_status",
+							"type": "String",
+							"description": "订单履行状态，如喵鲜生极速达：分单完成"
+						},
+						{
+							"name": "f_term",
+							"type": "String",
+							"description": "单履行内容，如喵鲜生极速达：storeId,phone"
+						},
+						{
+							"name": "combo_id",
+							"type": "String",
+							"description": "天猫搭配宝"
+						},
+						{
+							"name": "order_attr",
+							"type": "String",
+							"description": "子订单扩展属性:\u003cbr/\u003e is_free_down_payment:是否免首付：true：是，false：否，可选字段\u003cbr/\u003e car_back_payment:返还免首付金额，单位：分，\u003cbr/\u003e car_ref_activity_id:服务商传入活动ID，依赖外部服务商传入；\u003cbr/\u003e"
+						},
+						{
+							"name": "assembly_rela",
+							"type": "String",
+							"description": "assemblyRela"
+						},
+						{
+							"name": "assembly_price",
+							"type": "String",
+							"description": "assemblyPrice"
+						},
+						{
+							"name": "assembly_item",
+							"type": "String",
+							"description": "assemblyItem"
+						},
+						{
+							"name": "sub_order_tax_promotion_fee",
+							"type": "String",
+							"description": "天猫国际子订单计税优惠金额"
+						},
+						{
+							"name": "down_payment",
+							"type": "String",
+							"description": "downPayment"
+						},
+						{
+							"name": "down_payment_ratio",
+							"type": "String",
+							"description": "downPaymentRatio"
+						},
+						{
+							"name": "month_payment",
+							"type": "String",
+							"description": "monthPayment"
+						},
+						{
+							"name": "tail_payment",
+							"type": "String",
+							"description": "tailPayment"
+						},
+						{
+							"name": "installment_num",
+							"type": "String",
+							"description": "installmentNum"
+						},
+						{
+							"name": "penalty",
+							"type": "String",
+							"description": "penalty"
+						},
+						{
+							"name": "service_fee",
+							"type": "String",
+							"description": "serviceFee"
+						},
+						{
+							"name": "car_taker",
+							"type": "String",
+							"description": "carTaker"
+						},
+						{
+							"name": "car_taker_phone",
+							"type": "String",
+							"description": "carTakerPhone"
+						},
+						{
+							"name": "car_taker_id",
+							"type": "String",
+							"description": "carTakerID"
+						},
+						{
+							"name": "car_store_code",
+							"type": "String",
+							"description": "carStoreCode"
+						},
+						{
+							"name": "car_store_name",
+							"type": "String",
+							"description": "carStoreName"
+						},
+						{
+							"name": "out_unique_id",
+							"type": "String",
+							"description": "outUniqueId"
+						},
+						{
+							"name": "ws_bank_apply_no",
+							"type": "String",
+							"description": "wsBankApplyNo"
+						},
+						{
+							"name": "oid_str",
+							"type": "String",
+							"description": "oidStr"
+						},
+						{
+							"name": "fqg_num",
+							"type": "Number",
+							"description": "花呗分期期数"
+						},
+						{
+							"name": "is_fqg_s_fee",
+							"type": "Boolean",
+							"description": "是否商家承担手续费"
+						},
+						{
+							"name": "tax_free",
+							"type": "Boolean",
+							"description": "天猫国际订单是否包税"
+						},
+						{
+							"name": "tax_coupon_discount",
+							"type": "String",
+							"description": "天猫国际订单包税金额"
+						},
+						{
+							"name": "nr_reduce_inv_fail",
+							"type": "String",
+							"description": "nrReduceInvFail"
+						},
+						{
+							"name": "nr_outer_iid",
+							"type": "String",
+							"description": "新零售商家端商品唯一编号"
+						},
+						{
+							"name": "bind_oids_all_status",
+							"type": "String",
+							"description": "bind_oids字段的升级，在交易成功和交易关闭状态下也能获取到，支持返回绑定的多个子订单，多个子订单以半角逗号分隔"
+						},
+						{
+							"subParams": [
+								{
+									"name": "day_sort_val",
+									"type": "Number",
+									"description": "daySortVal"
+								},
+								{
+									"name": "hour_sort_val",
+									"type": "Number",
+									"description": "hourSortVal"
+								}
+							],
+							"name": "sort_info",
+							"type": "SortInfo",
+							"description": "sortInfo"
+						},
+						{
+							"name": "o2o_guide_id",
+							"type": "String",
+							"description": "导购员Id"
+						},
+						{
+							"name": "o2o_guide_name",
+							"type": "String",
+							"description": "导购员名称"
+						},
+						{
+							"name": "o2o_shop_id",
+							"type": "String",
+							"description": "门店Id"
+						},
+						{
+							"name": "o2o_shop_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "云店交易链路，为tmall.daogoubao.cloudstore时表示云店链路"
+						},
+						{
+							"name": "cloud_store",
+							"type": "String",
+							"description": "云店标记为1，且bizCode不为tmall.daogoubao.cloudstore时，为旗舰店订单"
+						},
+						{
+							"name": "hj_settle_no_commission",
+							"type": "String",
+							"description": "云店是否扣拥"
+						},
+						{
+							"name": "order_taking",
+							"type": "String",
+							"description": "云店接单标记"
+						},
+						{
+							"name": "cloud_store_token",
+							"type": "String",
+							"description": "云店改价用token"
+						},
+						{
+							"name": "cloud_store_bind_pos",
+							"type": "String",
+							"description": "云店pos单号"
+						},
+						{
+							"name": "retail_store_id",
+							"type": "String",
+							"description": "天猫未来店线下店铺 ID"
+						},
+						{
+							"name": "out_item_id",
+							"type": "String",
+							"description": "天猫未来店外部 ERP 商品 ID"
+						},
+						{
+							"name": "rt_omni_outer_sc_id",
+							"type": "String",
+							"description": "新零售全渠道订单：商家自有货品编码"
+						},
+						{
+							"name": "rt_omni_sc_id",
+							"type": "String",
+							"description": "新零售全渠道订单：后端货品ID"
+						},
+						{
+							"name": "modify_address",
+							"type": "String",
+							"description": "有值表示买家修改了地址；1表示付款后改地址；2表示付款前改地址"
+						},
+						{
+							"name": "ti_modify_address_time",
+							"type": "String",
+							"description": "买家修改地址时间"
+						},
+						{
+							"name": "credit_buy",
+							"type": "String",
+							"description": "有值表示信用购订单；1表示信用购一期；2表示信用购二期；3表示信用购三期"
+						},
+						{
+							"name": "s_tariff_fee",
+							"type": "String",
+							"description": "子订单商家代缴税费"
+						},
+						{
+							"name": "timing_promise",
+							"type": "String",
+							"description": "时效服务身份，如tmallPromise代表天猫时效承诺"
+						},
+						{
+							"name": "promise_service",
+							"type": "String",
+							"description": "时效服务字段，服务字段，会有多个服务值，以英文半角逗号\",\"切割"
+						},
+						{
+							"name": "es_date",
+							"type": "String",
+							"description": "预计送达时间"
+						},
+						{
+							"name": "es_range",
+							"type": "String",
+							"description": "预计配送时间段"
+						},
+						{
+							"name": "os_date",
+							"type": "String",
+							"description": "预约配送，用户预约时间"
+						},
+						{
+							"name": "os_range",
+							"type": "String",
+							"description": "预约配送，用户预约时间段"
+						},
+						{
+							"name": "cutoff_minutes",
+							"type": "String",
+							"description": "物流截单时间，分钟"
+						},
+						{
+							"name": "es_time",
+							"type": "String",
+							"description": "物流时效，相对时间，单位是天"
+						},
+						{
+							"name": "delivery_time",
+							"type": "String",
+							"description": "最晚发货时间"
+						},
+						{
+							"name": "collect_time",
+							"type": "String",
+							"description": "最晚揽收时间"
+						},
+						{
+							"name": "dispatch_time",
+							"type": "String",
+							"description": "最晚派送时间"
+						},
+						{
+							"name": "sign_time",
+							"type": "String",
+							"description": "最晚签收时间"
+						},
+						{
+							"name": "promise_end_time",
+							"type": "String",
+							"description": "信用购履约结束时间"
+						},
+						{
+							"name": "os_activity_id",
+							"type": "String",
+							"description": "前N有礼活动id"
+						},
+						{
+							"name": "os_fg_item_id",
+							"type": "String",
+							"description": "前N有礼奖品的商品id"
+						},
+						{
+							"name": "os_gift_count",
+							"type": "String",
+							"description": "前N有礼获得奖品的数量"
+						},
+						{
+							"name": "os_sort_num",
+							"type": "String",
+							"description": "前N有礼中奖名次，获得奖品的订单才会有该字段"
+						},
+						{
+							"name": "propoint",
+							"type": "String",
+							"description": "使用淘金币的数量，以分为单位，和订单标propoint中间那一段一样"
+						},
+						{
+							"name": "is_kaola",
+							"type": "Boolean",
+							"description": "是否是考拉商品订单"
+						},
+						{
+							"name": "special_refund_type",
+							"type": "String",
+							"description": "特殊的退款类型，比如直播返现、价保"
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "透出的额外信息"
+						},
+						{
+							"name": "is_devalue_fee",
+							"type": "Boolean",
+							"description": "子订单优惠贬值"
+						},
+						{
+							"name": "brand_light_shop_store_id",
+							"type": "String",
+							"description": "同城购渠道店id"
+						},
+						{
+							"name": "brand_light_shop_source",
+							"type": "String",
+							"description": "同城购订单来源"
+						},
+						{
+							"name": "service_order_type",
+							"type": "String",
+							"description": "服务供应链-服务订单类型,1:主子挂载；2：双主挂载；3：单独售卖"
+						},
+						{
+							"name": "service_outer_id",
+							"type": "String",
+							"description": "服务供应链-服务商外部编码"
+						},
+						{
+							"name": "expand_card_expand_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单权益金分摊金额（单位为元）"
+						},
+						{
+							"name": "expand_card_basic_price_used_suborder",
+							"type": "String",
+							"description": "购物金核销子订单本金分摊金额（单位为元）"
+						},
+						{
+							"name": "lijian",
+							"type": "String",
+							"description": "预售订单立减金额"
+						},
+						{
+							"name": "auto_flow",
+							"type": "String",
+							"description": "优仓业务场景下 1（自动流转）/0（非自动流转）"
+						},
+						{
+							"name": "trade_fulfillment_type",
+							"type": "Number",
+							"description": "订单履约类型"
+						},
+						{
+							"name": "distribute_status",
+							"type": "String",
+							"description": "订单是有代发订单，为空表示该订单暂无代发单据，distribute-该子订单有已分配代发单据，cancel-订单的代发单据都已取消，"
+						},
+						{
+							"name": "is_idle",
+							"type": "String",
+							"description": "是否为闲鱼订单，1是，0否"
+						},
+						{
+							"name": "gift_mids",
+							"type": "String",
+							"description": "赠品关联的id，主品订单下此字段表示赠品订单id，赠品订单表示主品订单id"
+						},
+						{
+							"name": "is_free_gift",
+							"type": "Boolean",
+							"description": "是否是赠品订单"
+						},
+						{
+							"name": "has_gift",
+							"type": "Boolean",
+							"description": "是否含有赠品"
+						},
+						{
+							"name": "promise_collect_time",
+							"type": "String",
+							"description": "承诺/最晚揽收时间"
+						},
+						{
+							"name": "is_force_dc",
+							"type": "Boolean",
+							"description": "表示该子订单会ascp会自动流转到菜鸟仓发货"
+						},
+						{
+							"name": "b2b_daixiao",
+							"type": "String",
+							"description": "订单是否属于b2b代销"
+						},
+						{
+							"subParams": [
+								{
+									"name": "transport_type",
+									"type": "String",
+									"description": "发货方式（小写）"
+								}
+							],
+							"name": "ship_info",
+							"type": "ShipInfo[]",
+							"description": "发货信息，目前只记录了发货方式"
+						}
+					],
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "交易的主订单或子订单号"
+						},
+						{
+							"name": "promotion_name",
+							"type": "String",
+							"description": "优惠信息的名称"
+						},
+						{
+							"name": "discount_fee",
+							"type": "String",
+							"description": "优惠金额（免运费、限时打折时为空）,单位：元"
+						},
+						{
+							"name": "gift_item_name",
+							"type": "String",
+							"description": "满就送商品时，所送商品的名称"
+						},
+						{
+							"name": "gift_item_id",
+							"type": "String",
+							"description": "赠品的宝贝id"
+						},
+						{
+							"name": "gift_item_num",
+							"type": "String",
+							"description": "满就送礼物的礼物数量"
+						},
+						{
+							"name": "promotion_desc",
+							"type": "String",
+							"description": "优惠活动的描述"
+						},
+						{
+							"name": "promotion_id",
+							"type": "String",
+							"description": "优惠id，(由营销工具id、优惠活动id和优惠详情id组成，结构为：营销工具id-优惠活动id_优惠详情id，如mjs-123024_211143）"
+						},
+						{
+							"name": "kd_discount_fee",
+							"type": "String",
+							"description": "分摊优惠金额（免运费、限时打折时为空）,单位：元"
+						},
+						{
+							"name": "kd_child_discount_fee",
+							"type": "String",
+							"description": "若优惠项在主订单上，返回子订单的分摊信息"
+						}
+					],
+					"name": "promotion_details",
+					"type": "PromotionDetail[]",
+					"description": "优惠详情"
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "主订单或子订单的订单号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "service_tag",
+									"type": "String",
+									"description": "物流服务下的标签属性,多个标签之间有\";\"分隔"
+								},
+								{
+									"name": "service_type",
+									"type": "String",
+									"description": "消费者选快递请直接判断service_tag是否包含companyCode。而不要判断service_type"
+								}
+							],
+							"name": "logistic_service_tag_list",
+							"type": "LogisticServiceTag[]",
+							"description": "服务标签"
+						}
+					],
+					"name": "service_tags",
+					"type": "LogisticsTag[]",
+					"description": "物流标签"
+				},
+				{
+					"subParams": [
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "虚拟服务子订单订单号"
+						},
+						{
+							"name": "item_oid",
+							"type": "Number",
+							"description": "服务所属的交易订单号。如果服务为一年包换，则item_oid这笔订单享受改服务的保护"
+						},
+						{
+							"name": "service_id",
+							"type": "Number",
+							"description": "服务数字id"
+						},
+						{
+							"name": "service_detail_url",
+							"type": "String",
+							"description": "服务详情的URL地址"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "购买数量，取值范围为大于0的整数"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "服务价格，精确到小数点后两位：单位:元"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "服务子订单总费用"
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称"
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "最近退款的id"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称"
+						},
+						{
+							"name": "pic_path",
+							"type": "String",
+							"description": "服务图片地址"
+						},
+						{
+							"name": "tmser_spu_code",
+							"type": "String",
+							"description": "支持家装类物流的类型"
+						},
+						{
+							"name": "et_ser_time",
+							"type": "String",
+							"description": "天猫汽车预约服务时间"
+						},
+						{
+							"name": "et_shop_name",
+							"type": "String",
+							"description": "电子凭证预约门店地址"
+						},
+						{
+							"name": "et_verified_shop_name",
+							"type": "String",
+							"description": "电子凭证核销门店地址"
+						},
+						{
+							"name": "et_plate_number",
+							"type": "String",
+							"description": "车牌号"
+						},
+						{
+							"name": "oid_str",
+							"type": "String",
+							"description": "虚拟服务子订单订单号(String类型)"
+						},
+						{
+							"name": "apple_care_email",
+							"type": "String",
+							"description": "appleCareEmail"
+						},
+						{
+							"name": "apple_care_mpn",
+							"type": "String",
+							"description": "appleCareMPN"
+						},
+						{
+							"name": "service_outer_id",
+							"type": "String",
+							"description": "服务供应链-服务商外部编码标"
+						},
+						{
+							"name": "service_order_type",
+							"type": "String",
+							"description": "服务供应链-服务订单类型,1:主子挂载；2：双主挂载；3：单独售卖"
+						},
+						{
+							"name": "ext_service_biz_id",
+							"type": "String",
+							"description": "服务订单与实物订单关联关系"
+						}
+					],
+					"name": "service_orders",
+					"type": "ServiceOrder[]",
+					"description": "服务子订单列表"
+				},
+				{
+					"name": "trade_from",
+					"type": "String",
+					"description": "交易内部来源。WAP(手机);HITAO(嗨淘);TOP(TOP平台);TAOBAO(普通淘宝);JHS(聚划算)一笔订单可能同时有以上多个标记，则以逗号分隔"
+				},
+				{
+					"name": "trade_source",
+					"type": "String",
+					"description": "交易外部来源：ownshop(商家官网)"
+				},
+				{
+					"name": "zero_purchase",
+					"type": "Boolean",
+					"description": "在返回的trade对象上专门增加一个字段zero_purchase来区分，这个为true的就是0元购机预授权交易"
+				},
+				{
+					"name": "alipay_point",
+					"type": "Number",
+					"description": "付款时使用的支付宝积分的额度,单位分，比如返回1，则为1分钱"
+				},
+				{
+					"name": "pcc_af",
+					"type": "Number",
+					"description": "天猫点券卡实付款金额,单位分"
+				},
+				{
+					"subParams": [
+						{
+							"name": "before_enable_flag",
+							"type": "Number",
+							"description": "enable前扩展标识位"
+						},
+						{
+							"name": "before_close_flag",
+							"type": "Number",
+							"description": "关闭订单前扩展标识位"
+						},
+						{
+							"name": "before_pay_flag",
+							"type": "Number",
+							"description": "付款前扩展标识位"
+						},
+						{
+							"name": "before_ship_flag",
+							"type": "Number",
+							"description": "发货前扩展标识位"
+						},
+						{
+							"name": "before_confirm_flag",
+							"type": "Number",
+							"description": "确认收货前扩展标识位"
+						},
+						{
+							"name": "before_rate_flag",
+							"type": "Number",
+							"description": "评价前扩展标识位"
+						},
+						{
+							"name": "before_refund_flag",
+							"type": "Number",
+							"description": "退款前扩展标识位"
+						},
+						{
+							"name": "before_modify_flag",
+							"type": "Number",
+							"description": "修改前扩展标识位"
+						},
+						{
+							"name": "third_party_status",
+							"type": "Number",
+							"description": "第三方状态，第三方自由定义"
+						},
+						{
+							"name": "extra_data",
+							"type": "String",
+							"description": "第三方个性化数据"
+						},
+						{
+							"name": "ext_attributes",
+							"type": "String",
+							"description": "attributes标记"
+						}
+					],
+					"name": "trade_ext",
+					"type": "TradeExt",
+					"description": "交易扩展表信息"
+				},
+				{
+					"name": "order_tax_fee",
+					"type": "String",
+					"description": "天猫国际官网直供主订单关税税费"
+				},
+				{
+					"name": "et_ser_time",
+					"type": "String",
+					"description": "天猫汽车服务预约时间"
+				},
+				{
+					"name": "et_shop_name",
+					"type": "String",
+					"description": "电子凭证预约门店地址"
+				},
+				{
+					"name": "et_verified_shop_name",
+					"type": "String",
+					"description": "电子凭证核销门店地址"
+				},
+				{
+					"name": "et_plate_number",
+					"type": "String",
+					"description": "车牌号码"
+				},
+				{
+					"name": "o2o_snatch_status",
+					"type": "String",
+					"description": "抢单状态\u003cbr/\u003e0,未处理待分发;1,抢单中;2,已抢单;3,已发货;-1,超时;-2,处理异常;-3,匹配失败;-4,取消抢单;-5,退款取消;-9,逻辑删除"
+				},
+				{
+					"name": "is_sh_ship",
+					"type": "Boolean",
+					"description": "是否屏蔽发货"
+				},
+				{
+					"name": "eticket_service_addr",
+					"type": "String",
+					"description": "天猫电子凭证家装"
+				},
+				{
+					"name": "et_type",
+					"type": "String",
+					"description": "电子凭证扫码购-扫码支付订单type"
+				},
+				{
+					"name": "market",
+					"type": "String",
+					"description": "垂直市场"
+				},
+				{
+					"name": "obs",
+					"type": "String",
+					"description": "门店预约自提订单标"
+				},
+				{
+					"name": "et_shop_id",
+					"type": "Number",
+					"description": "扫码购关联门店"
+				},
+				{
+					"name": "paid_coupon_fee",
+					"type": "String",
+					"description": "满返红包的金额；如果没有满返红包，则值为 0.00"
+				},
+				{
+					"name": "shop_pick",
+					"type": "String",
+					"description": "线下门店自提"
+				},
+				{
+					"name": "rx_audit_status",
+					"type": "String",
+					"description": "处方药审核状态"
+				},
+				{
+					"name": "es_date",
+					"type": "String",
+					"description": "yyyyMMdd"
+				},
+				{
+					"name": "es_range",
+					"type": "String",
+					"description": "hh:mm-hh:mm"
+				},
+				{
+					"name": "os_date",
+					"type": "String",
+					"description": "yyyyMMdd"
+				},
+				{
+					"name": "os_range",
+					"type": "String",
+					"description": "hh:mm-hh:mm"
+				},
+				{
+					"name": "coupon_fee",
+					"type": "Number",
+					"description": "100"
+				},
+				{
+					"name": "post_gate_declare",
+					"type": "Boolean",
+					"description": "邮关订单"
+				},
+				{
+					"name": "cross_bonded_declare",
+					"type": "Boolean",
+					"description": "跨境订单"
+				},
+				{
+					"name": "trade_attr",
+					"type": "String",
+					"description": "主订单扩展属性;payCurrency:HKD(港币)、TWD(台币)"
+				},
+				{
+					"name": "top_hold",
+					"type": "Number",
+					"description": "TOP拦截标识，0不拦截，1拦截"
+				},
+				{
+					"name": "omni_attr",
+					"type": "String",
+					"description": "星盘标识字段"
+				},
+				{
+					"name": "omni_param",
+					"type": "String",
+					"description": "星盘业务字段"
+				},
+				{
+					"name": "assembly",
+					"type": "String",
+					"description": "assembly"
+				},
+				{
+					"name": "forbid_consign",
+					"type": "Number",
+					"description": "聚划算一起买字段"
+				},
+				{
+					"name": "identity",
+					"type": "String",
+					"description": "采购订单标识"
+				},
+				{
+					"name": "team_buy_hold",
+					"type": "Number",
+					"description": "天猫拼团拦截标示"
+				},
+				{
+					"name": "share_group_hold",
+					"type": "Number",
+					"description": "分享购拦截"
+				},
+				{
+					"name": "ofp_hold",
+					"type": "Number",
+					"description": "天猫国际拦截"
+				},
+				{
+					"name": "o2o_step_trade_detail",
+					"type": "String",
+					"description": "组装O2O多阶段尾款订单的明细数据 总阶段数，当前阶数，阶段金额（单位：分），支付状态，例如 3_1_100_paid ; 3_2_2000_nopaid"
+				},
+				{
+					"name": "o2o_step_order_id",
+					"type": "String",
+					"description": "特权定金订单的尾款订单ID"
+				},
+				{
+					"name": "o2o_et_order_id",
+					"type": "String",
+					"description": "分阶段订单的特权定金订单ID"
+				},
+				{
+					"name": "o2o_voucher_price",
+					"type": "String",
+					"description": "分阶段订单的特权定金抵扣金额，单位：分"
+				},
+				{
+					"name": "order_tax_promotion_fee",
+					"type": "String",
+					"description": "天猫国际计税优惠金额"
+				},
+				{
+					"name": "delay_create_delivery",
+					"type": "Number",
+					"description": "聚划算火拼标记"
+				},
+				{
+					"name": "tid_str",
+					"type": "String",
+					"description": "tidStr"
+				},
+				{
+					"name": "toptype",
+					"type": "Number",
+					"description": "top定义订单类型"
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "包含的交易服务类型"
+				},
+				{
+					"name": "o2o_service_mobile",
+					"type": "String",
+					"description": "o2oServiceMobile"
+				},
+				{
+					"name": "o2o_service_name",
+					"type": "String",
+					"description": "o2oServiceName"
+				},
+				{
+					"name": "o2o_service_state",
+					"type": "String",
+					"description": "o2oServiceState"
+				},
+				{
+					"name": "o2o_service_city",
+					"type": "String",
+					"description": "o2oServiceCity"
+				},
+				{
+					"name": "o2o_service_district",
+					"type": "String",
+					"description": "o2oServiceDistrict"
+				},
+				{
+					"name": "o2o_service_town",
+					"type": "String",
+					"description": "o2oServiceTown"
+				},
+				{
+					"name": "o2o_service_address",
+					"type": "String",
+					"description": "o2oServiceAddress"
+				},
+				{
+					"name": "o2o_step_trade_detail_new",
+					"type": "String",
+					"description": "o2oStepTradeDetailNew"
+				},
+				{
+					"name": "o2o_xiaopiao",
+					"type": "String",
+					"description": "o2oXiaopiao"
+				},
+				{
+					"name": "o2o_contract",
+					"type": "String",
+					"description": "o2oContract"
+				},
+				{
+					"name": "recharge_fee",
+					"type": "String",
+					"description": "rechargeFee"
+				},
+				{
+					"name": "retail_store_code",
+					"type": "String",
+					"description": "retailStoreCode"
+				},
+				{
+					"name": "retail_out_order_id",
+					"type": "String",
+					"description": "retailOutOrderId"
+				},
+				{
+					"name": "platform_subsidy_fee",
+					"type": "String",
+					"description": "platformSubsidyFee"
+				},
+				{
+					"name": "nr_offline",
+					"type": "String",
+					"description": "nrOffline"
+				},
+				{
+					"name": "wtt_param",
+					"type": "String",
+					"description": "网厅订单垂直表信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "trade_id",
+							"type": "Number",
+							"description": "主交易号"
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "Number",
+							"description": "子交易号"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "货品仓储id"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货品仓储code"
+						},
+						{
+							"name": "need_consign_num",
+							"type": "Number",
+							"description": "应发数量"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "如是菜鸟仓，则将菜鸟仓的区域仓code进行填充，如是商家仓发货则填充SC"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "子订单类型:标示该子交易单来源交易，还是BMS增加的，枚举值(00=交易，10=BMS绑定)"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品的最小库存单位Sku的id"
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "商品数字编号"
+						},
+						{
+							"name": "consign_type",
+							"type": "String",
+							"description": "发货类型 CN=菜鸟发货,SC的商家仓发货"
+						},
+						{
+							"name": "combine_item_id",
+							"type": "String",
+							"description": "组合货品ID"
+						},
+						{
+							"name": "combine_item_code",
+							"type": "String",
+							"description": "组合货品Code"
+						},
+						{
+							"name": "item_ratio",
+							"type": "Number",
+							"description": "组合货品比例"
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "货品BarCode"
+						},
+						{
+							"name": "delivery_cps",
+							"type": "String",
+							"description": "择配信息"
+						},
+						{
+							"name": "biz_delivery_code",
+							"type": "String",
+							"description": "推荐配送erp编码"
+						},
+						{
+							"name": "biz_store_code",
+							"type": "String",
+							"description": "仓商家编码"
+						},
+						{
+							"name": "biz_sd_type",
+							"type": "String",
+							"description": "仓配建议类型"
+						},
+						{
+							"name": "send_country",
+							"type": "String",
+							"description": "服务决策的发货地，国家"
+						},
+						{
+							"name": "send_state",
+							"type": "String",
+							"description": "服务决策的发货地，省份"
+						},
+						{
+							"name": "send_city",
+							"type": "String",
+							"description": "服务决策的发货地，城市"
+						},
+						{
+							"name": "send_district",
+							"type": "String",
+							"description": "服务决策的发货地，地区"
+						},
+						{
+							"name": "send_town",
+							"type": "String",
+							"description": "服务决策的发货地，街道地址"
+						},
+						{
+							"name": "send_division_code",
+							"type": "String",
+							"description": "服务决策的发货地最小地址编码"
+						},
+						{
+							"name": "black_delivery_cps",
+							"type": "String",
+							"description": "服务决策的快递黑名单列表"
+						},
+						{
+							"name": "white_delivery_cps",
+							"type": "String",
+							"description": "服务决策的快递白名单列表"
+						}
+					],
+					"name": "logistics_infos",
+					"type": "LogisticsInfo[]",
+					"description": "子单物流发货信息"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "sellerNick"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "buyerNick"
+				},
+				{
+					"name": "nr_store_order_id",
+					"type": "String",
+					"description": "nrStoreOrderId"
+				},
+				{
+					"name": "nr_shop_id",
+					"type": "String",
+					"description": "门店 ID"
+				},
+				{
+					"name": "nr_shop_name",
+					"type": "String",
+					"description": "门店名称"
+				},
+				{
+					"name": "nr_shop_guide_id",
+					"type": "String",
+					"description": "导购员ID"
+				},
+				{
+					"name": "nr_shop_guide_name",
+					"type": "String",
+					"description": "导购员名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "day_sort_val",
+							"type": "Number",
+							"description": "daySortVal"
+						},
+						{
+							"name": "hour_sort_val",
+							"type": "Number",
+							"description": "hourSortVal"
+						}
+					],
+					"name": "sort_info",
+					"type": "SortInfo",
+					"description": "sortInfo"
+				},
+				{
+					"name": "sorted",
+					"type": "Number",
+					"description": "1已排序 2不排序"
+				},
+				{
+					"name": "nr_no_handle",
+					"type": "String",
+					"description": "一小时达不处理订单"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "为tmall.daogoubao.cloudstore时表示云店链路"
+				},
+				{
+					"name": "cloud_store",
+					"type": "String",
+					"description": "为1，且bizCode不为tmall.daogoubao.cloudstore时，为旗舰店订单"
+				},
+				{
+					"name": "is_gift",
+					"type": "Boolean",
+					"description": "暂不公开"
+				},
+				{
+					"name": "donee_nick",
+					"type": "String",
+					"description": "暂不公开"
+				},
+				{
+					"name": "donee_open_uid",
+					"type": "String",
+					"description": "暂不公开"
+				},
+				{
+					"name": "suning_shop_code",
+					"type": "String",
+					"description": "苏宁自提门店code"
+				},
+				{
+					"name": "suning_shop_valid",
+					"type": "Number",
+					"description": "苏宁自提门店是否有效"
+				},
+				{
+					"name": "allow_appkeys",
+					"type": "String",
+					"description": "允许的appkey，逗号分隔"
+				},
+				{
+					"name": "new_presell",
+					"type": "Boolean",
+					"description": "是否预售"
+				},
+				{
+					"name": "you_xiang",
+					"type": "Boolean",
+					"description": "是否优享"
+				},
+				{
+					"name": "retail_store_id",
+					"type": "String",
+					"description": "天猫未来店线下店铺 ID"
+				},
+				{
+					"name": "is_istore",
+					"type": "Boolean",
+					"description": "区分istore订单和普通订单"
+				},
+				{
+					"name": "ua",
+					"type": "String",
+					"description": "区分istore订单来源"
+				},
+				{
+					"name": "linkedmall_ext_info",
+					"type": "String",
+					"description": "linkedmall透传参数"
+				},
+				{
+					"name": "pay_channel",
+					"type": "String",
+					"description": "支付渠道：0 用户主动支付 1 系统代扣 2 保险赔付"
+				},
+				{
+					"name": "rt_omni_send_type",
+					"type": "String",
+					"description": "新零售全渠道订单：订单类型，自提订单：pickUp，电商发货：tmall，门店发货（配送、骑手）：storeSend"
+				},
+				{
+					"name": "rt_omni_store_id",
+					"type": "String",
+					"description": "新零售全渠道订单：发货门店ID"
+				},
+				{
+					"name": "rt_omni_outer_store_id",
+					"type": "String",
+					"description": "新零售全渠道订单：商家自有发货门店编码"
+				},
+				{
+					"name": "tcps_start",
+					"type": "String",
+					"description": "同城预约配送开始时间"
+				},
+				{
+					"name": "tcps_code",
+					"type": "String",
+					"description": "同城业务类型,com.tmall.dsd:定时送,storeDsd-fn-3-1:淘速达3公里蜂鸟配送"
+				},
+				{
+					"name": "tcps_end",
+					"type": "String",
+					"description": "同城预约配送结束时间"
+				},
+				{
+					"name": "m_tariff_fee",
+					"type": "String",
+					"description": "主订单商家代缴税费"
+				},
+				{
+					"name": "timing_promise",
+					"type": "String",
+					"description": "时效服务身份，如tmallPromise代表天猫时效承诺"
+				},
+				{
+					"name": "promise_service",
+					"type": "String",
+					"description": "时效服务字段，服务字段，会有多个服务值，以英文半角逗号\",\"切割"
+				},
+				{
+					"name": "cutoff_minutes",
+					"type": "String",
+					"description": "物流截单时间，分钟"
+				},
+				{
+					"name": "es_time",
+					"type": "String",
+					"description": "物流时效，相对时间，单位是天"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "最晚发货时间，日期"
+				},
+				{
+					"name": "collect_time",
+					"type": "String",
+					"description": "最晚揽收时间，日期"
+				},
+				{
+					"name": "dispatch_time",
+					"type": "String",
+					"description": "最晚派送时间，日期"
+				},
+				{
+					"name": "sign_time",
+					"type": "String",
+					"description": "最晚签收时间，日期"
+				},
+				{
+					"name": "outer_partner_member_id",
+					"type": "String",
+					"description": "外部会员id"
+				},
+				{
+					"name": "root_cat",
+					"type": "String",
+					"description": "叶子分类"
+				},
+				{
+					"name": "gifting",
+					"type": "String",
+					"description": "1-gifting订单"
+				},
+				{
+					"name": "gifting_takeout",
+					"type": "String",
+					"description": "1-coffee gifting订单"
+				},
+				{
+					"name": "oi_date",
+					"type": "String",
+					"description": "预约安装时间"
+				},
+				{
+					"name": "oi_range",
+					"type": "String",
+					"description": "预约安装时间段"
+				},
+				{
+					"name": "hold_install",
+					"type": "String",
+					"description": "暂不安装"
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "订单来源"
+				},
+				{
+					"name": "easy_home_city_type",
+					"type": "String",
+					"description": "同城站类型"
+				},
+				{
+					"name": "nr_deposit_order_id",
+					"type": "String",
+					"description": "同城站关联订单号"
+				},
+				{
+					"name": "nr_store_code",
+					"type": "String",
+					"description": "摊位id"
+				},
+				{
+					"name": "propoint",
+					"type": "String",
+					"description": "使用淘金币的数量，以分为单位，和订单标propoint中间那一段一样，没有返回null"
+				},
+				{
+					"name": "zqs_order_tag",
+					"type": "String",
+					"description": "是否周期送订单"
+				},
+				{
+					"name": "txp_freezer_id",
+					"type": "String",
+					"description": "天鲜配冰柜id"
+				},
+				{
+					"name": "txp_receive_method",
+					"type": "String",
+					"description": "天鲜配自提方式"
+				},
+				{
+					"subParams": [
+						{
+							"name": "basic_price",
+							"type": "String",
+							"description": "买卡订单本金"
+						},
+						{
+							"name": "expand_price",
+							"type": "String",
+							"description": "买卡订单权益金"
+						},
+						{
+							"name": "basic_price_used",
+							"type": "String",
+							"description": "用卡订单使用的本金"
+						},
+						{
+							"name": "expand_price_used",
+							"type": "String",
+							"description": "用卡订单使用的权益金"
+						}
+					],
+					"name": "expandcard_info",
+					"type": "ExpandCardInfo",
+					"description": "购物金信息输出"
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "透出的额外信息"
+				},
+				{
+					"name": "lm",
+					"type": "String",
+					"description": "收货地址有变更，返回\"1\""
+				},
+				{
+					"name": "brand_light_shop_source",
+					"type": "String",
+					"description": "同城购订单来源"
+				},
+				{
+					"name": "brand_light_shop_store_id",
+					"type": "String",
+					"description": "同城购渠道店id"
+				},
+				{
+					"name": "is_wmly",
+					"type": "String",
+					"description": "标识完美履约订单"
+				},
+				{
+					"name": "omni_package",
+					"type": "String",
+					"description": "全渠道包裹信息"
+				},
+				{
+					"name": "ncz_ext_attr",
+					"type": "String",
+					"description": "新康众扩展数据"
+				},
+				{
+					"name": "invoice_detail_pay",
+					"type": "String",
+					"description": "苹果发票详情"
+				},
+				{
+					"name": "invoice_detail_mid_refund",
+					"type": "String",
+					"description": "苹果发票详情"
+				},
+				{
+					"name": "invoice_detail_after_refund",
+					"type": "String",
+					"description": "苹果发票详情"
+				},
+				{
+					"name": "expand_card_basic_price",
+					"type": "String",
+					"description": "买卡订单本金"
+				},
+				{
+					"name": "expand_card_expand_price",
+					"type": "String",
+					"description": "买卡订单权益金"
+				},
+				{
+					"name": "expand_card_basic_price_used",
+					"type": "String",
+					"description": "用卡订单所用的本金"
+				},
+				{
+					"name": "expand_card_expand_price_used",
+					"type": "String",
+					"description": "用卡订单所用的权益金"
+				},
+				{
+					"name": "delivery_cps",
+					"type": "String",
+					"description": "配送cp"
+				},
+				{
+					"name": "asdp_biz_type",
+					"type": "String",
+					"description": "业务身份"
+				},
+				{
+					"name": "is_openmall",
+					"type": "Boolean",
+					"description": "是否是Openmall订单"
+				},
+				{
+					"name": "v_logistics_create",
+					"type": "Boolean",
+					"description": "是否是码上收订单"
+				},
+				{
+					"name": "q_r_pay",
+					"type": "Boolean",
+					"description": "是否是非物流订单"
+				},
+				{
+					"name": "order_follow_id",
+					"type": "String",
+					"description": "关联下单订单"
+				},
+				{
+					"name": "asdp_ads",
+					"type": "String",
+					"description": "送货上门标"
+				},
+				{
+					"name": "ob_tag",
+					"type": "String",
+					"description": "消费者催发货标识，lg表示消费者做过催发货"
+				},
+				{
+					"name": "general_new_presell",
+					"type": "Boolean",
+					"description": "通用的是否预售，默认是false，需要传general_new_presell参数才能真正识别是否是预售订单"
+				},
+				{
+					"name": "drug_register",
+					"type": "String",
+					"description": "是否疫情登记的订单。0=未登记，1=已登记"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "分阶段支付单Id"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态"
+						},
+						{
+							"name": "step_no",
+							"type": "Number",
+							"description": "支付顺序"
+						},
+						{
+							"name": "step_channel_no",
+							"type": "String",
+							"description": "支付宝交易号"
+						},
+						{
+							"name": "step_instrument_code",
+							"type": "String",
+							"description": "支付方式"
+						},
+						{
+							"name": "step_actual_pay_fee",
+							"type": "String",
+							"description": "支付金额"
+						}
+					],
+					"name": "step_pay_details",
+					"type": "StepPayDetail[]",
+					"description": "分阶段支付详情"
+				},
+				{
+					"subParams": [
+						{
+							"name": "delivery_tips",
+							"type": "String",
+							"description": "提示文案"
+						},
+						{
+							"name": "delivery_process",
+							"type": "String",
+							"description": "流程状态"
+						},
+						{
+							"name": "detail_order_id",
+							"type": "String",
+							"description": "订单id"
+						}
+					],
+					"name": "agree_refund_checks",
+					"type": "AgreeRefundCheck[]",
+					"description": "同意退款检查标识字段"
+				},
+				{
+					"subParams": [
+						{
+							"name": "detailed_address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "division_code",
+							"type": "String",
+							"description": "行政区编码"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "电话号码"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务类型"
+						}
+					],
+					"name": "address_details",
+					"type": "AddressDetail[]",
+					"description": "阶段地址详情字段"
+				},
+				{
+					"name": "stage_address_type",
+					"type": "String",
+					"description": "阶段收货地址标识字段"
+				},
+				{
+					"name": "og_id",
+					"type": "String",
+					"description": "订单分组ID"
+				},
+				{
+					"name": "promise_sign_time",
+					"type": "String",
+					"description": "承诺/最晚送达时间"
+				},
+				{
+					"name": "tmall_coupon_fee",
+					"type": "Number",
+					"description": "天猫商家使用，订单使用的红包信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "plan_id",
+							"type": "Number",
+							"description": "计划id"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "交易订单号"
+						},
+						{
+							"name": "curr_phase",
+							"type": "Number",
+							"description": "发货期数"
+						},
+						{
+							"name": "out_logistics_id",
+							"type": "String",
+							"description": "外部物流单号"
+						},
+						{
+							"name": "prepare_time_begin",
+							"type": "Date",
+							"description": "备货期开始时间"
+						},
+						{
+							"name": "ship_time_begin",
+							"type": "Date",
+							"description": "计划发货时间"
+						},
+						{
+							"name": "actual_ship_time",
+							"type": "Date",
+							"description": "实际发货时间"
+						},
+						{
+							"name": "goods_num",
+							"type": "Number",
+							"description": "发货商品数量"
+						},
+						{
+							"name": "plan_status",
+							"type": "Number",
+							"description": "计划状态"
+						},
+						{
+							"name": "plan_refund_status",
+							"type": "Number",
+							"description": "计划退款状态"
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收货人姓名"
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "收货人手机号"
+						},
+						{
+							"name": "receiver_phone",
+							"type": "String",
+							"description": "收货人电话"
+						},
+						{
+							"name": "receiver_address",
+							"type": "String",
+							"description": "收货详细地址"
+						},
+						{
+							"name": "oaid",
+							"type": "String",
+							"description": "aid"
+						},
+						{
+							"name": "privacy_num",
+							"type": "String",
+							"description": "隐私号"
+						},
+						{
+							"name": "privacy_expire_time",
+							"type": "Date",
+							"description": "隐私号过期时间"
+						},
+						{
+							"name": "receiver_town",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "receiver_district",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "receiver_city",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "receiver_state",
+							"type": "String",
+							"description": "收货地址"
+						},
+						{
+							"name": "receiver_country",
+							"type": "String",
+							"description": "收货地址"
+						}
+					],
+					"name": "delivery_plan",
+					"type": "DeliveryPlan[]",
+					"description": "交付计划"
+				},
+				{
+					"name": "omnichannel_param",
+					"type": "String",
+					"description": "全渠道订单相关字段"
+				},
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "入参fields字段必须包含receiver_name、receiver_address、created、receiver_mobile、receiver_phone 5个字段，否则无法生成oaid。"
+				},
+				{
+					"name": "is_cycle_buy",
+					"type": "Boolean",
+					"description": "是否是周期购订单"
+				},
+				{
+					"name": "scenario_group",
+					"type": "String",
+					"description": "淘鲜达生鲜半日达"
+				},
+				{
+					"name": "play_type",
+					"type": "String",
+					"description": "拼团玩法垂直标"
+				},
+				{
+					"name": "is_force_dc",
+					"type": "Boolean",
+					"description": "ascp会自动流转到菜鸟仓发货"
+				}
+			],
+			"name": "trade",
+			"type": "Trade",
+			"description": "交易主订单信息"
+		}
+	],
+	"name": "taobao.trade.fullinfo.get",
+	"apiChineseName": "获取单笔交易的详细信息",
+	"description": "获取单笔交易的详细信息\n\u003cbr/\u003e1. 只有单笔订单的情况下Trade数据结构中才包含商品相关的信息 \n\u003cbr/\u003e2. 获取到的Order中的payment字段在单笔子订单时包含物流费用，多笔子订单时不包含物流费用\n\u003cbr/\u003e3. 获取红包金额使用字段：tmall_coupon_fee（天猫商家订单使用的红包金额）\n\u003cbr/\u003e4. 请按需获取字段，减少TOP系统的压力\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=tradeapi\" target=\"_blank\"\u003e点击查看更多交易API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 54
+}

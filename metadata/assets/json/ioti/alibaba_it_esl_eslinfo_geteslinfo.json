@@ -1,0 +1,78 @@
+{
+	"requestParams": [
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "mac",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "esl_success",
+			"type": "Boolean",
+			"description": "成功标识"
+		},
+		{
+			"name": "esl_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "lastseen",
+					"type": "Number",
+					"description": "最后上报时间"
+				},
+				{
+					"name": "esl_mac",
+					"type": "String",
+					"description": "mac"
+				},
+				{
+					"name": "esl_model_name",
+					"type": "String",
+					"description": "价签型号"
+				},
+				{
+					"name": "firmware_version",
+					"type": "Number",
+					"description": "固件型号"
+				},
+				{
+					"name": "ap_mac",
+					"type": "String",
+					"description": "上传来的ap"
+				},
+				{
+					"name": "battery_level",
+					"type": "Number",
+					"description": "电池电量"
+				},
+				{
+					"name": "battery_voltage",
+					"type": "Number",
+					"description": "电池电压"
+				},
+				{
+					"name": "ap_rssi",
+					"type": "Number",
+					"description": "ap上次上报的最强rssi值"
+				}
+			],
+			"name": "content",
+			"type": "EslTopEngineAssetsDO",
+			"description": "数据"
+		},
+		{
+			"name": "esl_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.it.esl.eslinfo.geteslinfo",
+	"apiChineseName": "厂测查询价签当前信息",
+	"description": "工厂对生产出的电子价签进行全流程功能测试，查询价签当前上报的信息",
+	"id": 62967
+}

@@ -13,7 +13,7 @@ import (
 type TaobaoWlbImportsResourceTransferstoreGetAPIRequest struct {
 	model.Params
 	// 商品前台叶子类目ID
-	_cids []int64
+	_cids []string
 	// 通过taobao.wlb.imports.resource.get接口查询出来的资源ID
 	_resourceId int64
 	// 卖家发货地址的区域ID，如果不填则为默认发货地址ID
@@ -35,24 +35,27 @@ func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCids is Cids Setter
 // 商品前台叶子类目ID
-func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []int64) error {
+func (r *TaobaoWlbImportsResourceTransferstoreGetAPIRequest) SetCids(_cids []string) error {
 	r._cids = _cids
 	r.Set("cids", _cids)
 	return nil
 }
 
 // GetCids Cids Getter
-func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetCids() []int64 {
+func (r TaobaoWlbImportsResourceTransferstoreGetAPIRequest) GetCids() []string {
 	return r._cids
 }
 

@@ -15,44 +15,37 @@
 						{
 							"name": "ref_ent_id",
 							"type": "String",
-							"description": "企业唯一标识【ref_ent_id】（单据上传时的货主企业ref_user_id就是填这个字段）",
-							"required": true
+							"description": "企业唯一标识【ref_ent_id】（单据上传时的货主企业ref_user_id就是填这个字段）"
 						},
 						{
 							"name": "ent_id",
 							"type": "String",
-							"description": "企业ID【ent_id】（单据上传时的收发货企业id就是填这个字段）",
-							"required": true
+							"description": "企业ID【ent_id】（单据上传时的收发货企业id就是填这个字段）"
 						},
 						{
 							"name": "network_type",
 							"type": "String",
-							"description": "入网标识【0非入网;1开头代表入网企业;200代表入驻码上放心的企业】",
-							"required": true
+							"description": "入网标识【0非入网;1开头代表入网企业;200代表入驻码上放心的企业】"
 						}
 					],
 					"name": "model",
 					"type": "PUserEntInfoDto",
-					"description": "返回对象",
-					"required": true
+					"description": "返回对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "返回信息",
-					"required": true
+					"description": "返回信息"
 				},
 				{
 					"name": "response_success",
 					"type": "Boolean",
-					"description": "是否响应成功",
-					"required": true
+					"description": "是否响应成功"
 				}
 			],
 			"name": "result",

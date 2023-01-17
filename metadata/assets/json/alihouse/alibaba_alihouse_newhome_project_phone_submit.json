@@ -26,6 +26,11 @@
 			"name": "project_phone_dto",
 			"type": "ProjectPhoneDto",
 			"description": "楼盘电话"
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店ID"
 		}
 	],
 	"responseParams": [

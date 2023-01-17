@@ -1,0 +1,97 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "外部ID"
+				},
+				{
+					"name": "target_type",
+					"type": "Number",
+					"description": "外部类型"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态"
+				},
+				{
+					"name": "fitup_type",
+					"type": "Number",
+					"description": "装修类型"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID（为了找小B使用）"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
+				}
+			],
+			"name": "astore_shop_config",
+			"type": "AstoreShopConfigDTO",
+			"description": "装修配置信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "id"
+						},
+						{
+							"name": "shop_url",
+							"type": "String",
+							"description": "链接"
+						},
+						{
+							"name": "decoration_url",
+							"type": "String",
+							"description": "装修入口地址"
+						},
+						{
+							"name": "decoration_name",
+							"type": "String",
+							"description": "装修的名称"
+						}
+					],
+					"name": "data",
+					"type": "AstoreRespDTO",
+					"description": "返回的结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "处理完成后的消息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误/成功码"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果体"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.shopconfig.astore.sync",
+	"apiChineseName": "天猫好房店铺装修-Astore上翻",
+	"description": "天猫好房店铺装修-Astore上翻",
+	"id": 64854
+}

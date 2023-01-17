@@ -33,12 +33,15 @@ func (r AlibabaAlscMerchantExtTicketCancelAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscMerchantExtTicketCancelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscMerchantExtTicketCancelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscMerchantExtTicketCancelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTicketTaskId is TicketTaskId Setter

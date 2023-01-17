@@ -29,12 +29,15 @@ func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkSeriesDefaultskuResetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSeriesSku is SeriesSku Setter

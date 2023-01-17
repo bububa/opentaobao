@@ -35,12 +35,15 @@ func (r AlibabaIcbuPhotobankUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuPhotobankUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIcbuPhotobankUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIcbuPhotobankUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetExtraContext is ExtraContext Setter

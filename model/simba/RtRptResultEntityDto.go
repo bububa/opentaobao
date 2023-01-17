@@ -60,4 +60,6 @@ type RtRptResultEntityDto struct {
 	Bidwordid string `json:"bidwordid,omitempty" xml:"bidwordid,omitempty"`
 	// 创意id
 	Creativeid string `json:"creativeid,omitempty" xml:"creativeid,omitempty"`
+	// 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外
+	Traffictype string `json:"traffictype,omitempty" xml:"traffictype,omitempty"`
 }

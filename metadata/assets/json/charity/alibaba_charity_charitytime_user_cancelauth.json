@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "user_key",
+					"type": "String",
+					"description": "用户唯一标识",
+					"required": true
+				}
+			],
+			"name": "cancel_auth_hsf_request",
+			"type": "CancelAuthHsfRequest",
+			"description": "参数对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "响应值 非200表示接口请求有误"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "true:成功"
+				}
+			],
+			"name": "result",
+			"type": "CsrResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.charitytime.user.cancelauth",
+	"apiChineseName": "取消用户授权",
+	"description": "取消用户授权",
+	"id": 64981
+}

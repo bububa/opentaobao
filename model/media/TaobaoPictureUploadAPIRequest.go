@@ -39,12 +39,15 @@ func (r TaobaoPictureUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPictureUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoPictureUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoPictureUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetImageInputTitle is ImageInputTitle Setter

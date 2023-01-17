@@ -1,0 +1,91 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店名称"
+				},
+				{
+					"name": "source_type",
+					"type": "Number",
+					"description": "1-新房楼盘 2-小区"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "etc版本号"
+				},
+				{
+					"name": "outer_ids",
+					"type": "String[]",
+					"description": "外部主键ID"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "默认0  1添加标签 -1去除标签"
+				},
+				{
+					"name": "item_tag_codes",
+					"type": "String[]",
+					"description": "打到IC标，如果业务有db 比如楼盘会存db feature字段"
+				}
+			],
+			"name": "item_tag_request_dto",
+			"type": "ItemTagRequestDTO",
+			"description": " 打标结构体"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误消息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "has_success",
+							"type": "Boolean",
+							"description": "是否全部成功"
+						},
+						{
+							"name": "failed_outer_ids",
+							"type": "String[]",
+							"description": "失败的外部ID列表"
+						}
+					],
+					"name": "data",
+					"type": "ItemTagResultDTO",
+					"description": "返回值"
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功请求"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.item.tag.submit",
+	"apiChineseName": "ETC上翻商品打标接口",
+	"description": "ETC上翻商品打标接口",
+	"id": 63905
+}

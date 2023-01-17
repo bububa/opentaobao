@@ -10,4 +10,6 @@ type RelationBindingDto struct {
 	OuterTid string `json:"outer_tid,omitempty" xml:"outer_tid,omitempty"`
 	// 外部私域楼盘ID
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
+	// 货所属外部项目店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 }

@@ -38,4 +38,8 @@ type BuildingDto struct {
 	SalesStatus int64 `json:"sales_status,omitempty" xml:"sales_status,omitempty"`
 	// 类型 1-安心置业 2-特价房 3-0元购  4-大额电商券 5-认购商品 6-楼栋  7-户型  8-房源
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
+	// 是否为货 0-非货 1-货
+	IsCargo int64 `json:"is_cargo,omitempty" xml:"is_cargo,omitempty"`
+	// 是否有电梯 0-否 1-是
+	IsElevator int64 `json:"is_elevator,omitempty" xml:"is_elevator,omitempty"`
 }

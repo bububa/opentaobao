@@ -76,6 +76,12 @@
 			"type": "Number",
 			"description": "创意id",
 			"required": true
+		},
+		{
+			"name": "hot_event",
+			"type": "Number",
+			"description": "热点事件",
+			"required": true
 		}
 	],
 	"responseParams": [

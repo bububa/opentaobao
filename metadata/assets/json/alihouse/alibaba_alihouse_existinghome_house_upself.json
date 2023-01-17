@@ -26,6 +26,11 @@
 			"name": "is_async",
 			"type": "Number",
 			"description": "是否异步，0同步，1异步"
+		},
+		{
+			"name": "etc_version",
+			"type": "Number",
+			"description": "ms级时间戳"
 		}
 	],
 	"responseParams": [

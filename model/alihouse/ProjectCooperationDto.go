@@ -20,6 +20,8 @@ type ProjectCooperationDto struct {
 	OuterActivityId string `json:"outer_activity_id,omitempty" xml:"outer_activity_id,omitempty"`
 	// KA楼盘ID
 	KaOuterId string `json:"ka_outer_id,omitempty" xml:"ka_outer_id,omitempty"`
+	// 外部门店ID
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 状态 0-无效 1-有效
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否优先展示 0-否 1-是

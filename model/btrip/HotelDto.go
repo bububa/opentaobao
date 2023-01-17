@@ -36,7 +36,7 @@ type HotelDto struct {
 	RateScore string `json:"rate_score,omitempty" xml:"rate_score,omitempty"`
 	// 服务设施
 	ServicesStr string `json:"services_str,omitempty" xml:"services_str,omitempty"`
-	// 星级
+	// 档次
 	Star string `json:"star,omitempty" xml:"star,omitempty"`
 	// 供应商ID
 	SupplierCode string `json:"supplier_code,omitempty" xml:"supplier_code,omitempty"`

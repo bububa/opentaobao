@@ -6,6 +6,38 @@ type DataDetail struct {
 	Detail []DetailItem `json:"detail,omitempty" xml:"detail>detail_item,omitempty"`
 	// 0=全部失败，1=全部成功，2=部分成功
 	Result string `json:"result,omitempty" xml:"result,omitempty"`
+	// ERP发货单号
+	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 订单发货地，省份
+	SendProvince string `json:"send_province,omitempty" xml:"send_province,omitempty"`
+	// 订单发货地，所在城市
+	SendCity string `json:"send_city,omitempty" xml:"send_city,omitempty"`
+	// 订单发货地，所在地区
+	SendDistrict string `json:"send_district,omitempty" xml:"send_district,omitempty"`
+	// 订单发货地，街道地址
+	SendTown string `json:"send_town,omitempty" xml:"send_town,omitempty"`
+	// 订单发货地地址编码（先识别编码，如果识别失败，解析地址）
+	SendDivisionCode string `json:"send_division_code,omitempty" xml:"send_division_code,omitempty"`
+	// 主交易单号
+	TradeId string `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
+	// 子交易单号
+	SubTradeId string `json:"sub_trade_id,omitempty" xml:"sub_trade_id,omitempty"`
+	// 订单类型 枚举： FENXIAO=分销订单 ，默认店铺零售订单。
+	OrderFlag string `json:"order_flag,omitempty" xml:"order_flag,omitempty"`
+	// 订单收货地，省份
+	ReceiveProvince string `json:"receive_province,omitempty" xml:"receive_province,omitempty"`
+	// 订单收货地，所在城市
+	ReceiveCity string `json:"receive_city,omitempty" xml:"receive_city,omitempty"`
+	// 订单收货地，所在地区
+	ReceiveDistrict string `json:"receive_district,omitempty" xml:"receive_district,omitempty"`
+	// 订单收货地，街道地址
+	ReceiveTown string `json:"receive_town,omitempty" xml:"receive_town,omitempty"`
+	// 订单收货地地址编码（先识别编码，如果识别失败，解析地址）
+	ReceiveDivisionCode string `json:"receive_division_code,omitempty" xml:"receive_division_code,omitempty"`
+	// 黑名单配品牌list,例：SF,YTO,STO
+	BlackDeliveryCps string `json:"black_delivery_cps,omitempty" xml:"black_delivery_cps,omitempty"`
+	// 白名单配品牌list,例：SF,YTO,STO
+	WhiteDeliveryCps string `json:"white_delivery_cps,omitempty" xml:"white_delivery_cps,omitempty"`
 	// ERP货品id
 	ScItemId string `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 响应码

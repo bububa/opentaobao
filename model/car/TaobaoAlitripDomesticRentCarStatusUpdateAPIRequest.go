@@ -20,6 +20,8 @@ type TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest struct {
 	_providerId string
 	// 车牌号
 	_carNumber string
+	// JSON扩展值
+	_extra string
 	// 121-用车中（用户取车成功） 122-待结算（用户还车成功）
 	_status int64
 }
@@ -37,12 +39,15 @@ func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetThirdOrderId is ThirdOrderId Setter
@@ -95,6 +100,19 @@ func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetCarNumber(_carNu
 // GetCarNumber CarNumber Getter
 func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetCarNumber() string {
 	return r._carNumber
+}
+
+// SetExtra is Extra Setter
+// JSON扩展值
+func (r *TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r TaobaoAlitripDomesticRentCarStatusUpdateAPIRequest) GetExtra() string {
+	return r._extra
 }
 
 // SetStatus is Status Setter

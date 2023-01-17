@@ -29,12 +29,15 @@ func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaLsyCrmActivityUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNrtUpdateActivityReq is NrtUpdateActivityReq Setter

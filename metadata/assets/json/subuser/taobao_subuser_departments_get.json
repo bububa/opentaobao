@@ -16,14 +16,14 @@
 					"description": "部门ID"
 				},
 				{
-					"name": "parent_id",
-					"type": "Number",
-					"description": "当前部门的父部门ID"
-				},
-				{
 					"name": "department_name",
 					"type": "String",
 					"description": "部门名称"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "当前部门的父部门ID"
 				},
 				{
 					"name": "sub_user_ids",

@@ -24,6 +24,8 @@ type BaseSupportingDto struct {
 	WalkingDistance string `json:"walking_distance,omitempty" xml:"walking_distance,omitempty"`
 	// 车行距离(单位：米)
 	CarDistance string `json:"car_distance,omitempty" xml:"car_distance,omitempty"`
+	// 外部项目店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 1-新房楼盘 2-小区 3-公寓
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 0-无效 1-有效

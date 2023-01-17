@@ -1,6 +1,11 @@
 {
 	"requestParams": [
 		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
 			"name": "campaign_id",
 			"type": "Number",
 			"description": "推广计划Id",
@@ -8,37 +13,26 @@
 		},
 		{
 			"name": "search_channels",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索",
 			"maxListSize": 10,
-			"maxValue": 128,
-			"minValue": 0,
 			"required": true
 		},
 		{
 			"name": "nonsearch_channels",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向",
-			"maxListSize": 10,
-			"maxValue": 128,
-			"minValue": 0
+			"maxListSize": 10
 		},
 		{
 			"name": "outside_discount",
 			"type": "Number",
-			"description": "已经废弃",
-			"maxValue": 200,
-			"minValue": 1
+			"description": "已经废弃"
 		},
 		{
 			"name": "mobile_discount",
 			"type": "Number",
 			"description": "已经废弃"
-		},
-		{
-			"name": "nick",
-			"type": "String",
-			"description": "主人昵称"
 		}
 	],
 	"responseParams": [
@@ -55,9 +49,24 @@
 					"description": "推广计划ID"
 				},
 				{
+					"name": "search_channels",
+					"type": "Number[]",
+					"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。"
+				},
+				{
+					"name": "nonsearch_channels",
+					"type": "Number[]",
+					"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。？"
+				},
+				{
 					"name": "outside_discount",
 					"type": "Number",
-					"description": "已经废弃了"
+					"description": "已经废弃"
+				},
+				{
+					"name": "mobile_discount",
+					"type": "Number",
+					"description": "已经废弃"
 				},
 				{
 					"name": "create_time",
@@ -68,21 +77,6 @@
 					"name": "modified_time",
 					"type": "Date",
 					"description": "最后修改时间"
-				},
-				{
-					"name": "search_channels",
-					"type": "Number[]",
-					"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，7、无线站内搜索；9:无线站外搜索"
-				},
-				{
-					"name": "nonsearch_channels",
-					"type": "Number[]",
-					"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。2、站内定向；4、站外定向；8、无线站内定向；10、无线站外定向"
-				},
-				{
-					"name": "mobile_discount",
-					"type": "Number",
-					"description": "已经废弃了"
 				}
 			],
 			"name": "campaign_platform",

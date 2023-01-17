@@ -12,12 +12,12 @@ import (
 // 提供给商家在发货之前做截单处理，输入物流商编码和收发货地址进行可达判定，目前支持国内主流的物流服务商, 支持快运和快递两种类型
 type CainiaoReachableBatchjudgeAPIRequest struct {
 	model.Params
-	// 调用方对象
-	_clientInfo *ClientInfoDto
 	// 1:快递 2:快运
 	_addressType int64
 	// 收发信息
 	_data *RoutingReachableBatchRequestDto
+	// 调用方对象
+	_clientInfo *ClientInfoDto
 }
 
 // NewCainiaoReachableBatchjudgeRequest 初始化CainiaoReachableBatchjudgeAPIRequest对象
@@ -33,25 +33,15 @@ func (r CainiaoReachableBatchjudgeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoReachableBatchjudgeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoReachableBatchjudgeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetClientInfo is ClientInfo Setter
-// 调用方对象
-func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *ClientInfoDto) error {
-	r._clientInfo = _clientInfo
-	r.Set("client_info", _clientInfo)
-	return nil
-}
-
-// GetClientInfo ClientInfo Getter
-func (r CainiaoReachableBatchjudgeAPIRequest) GetClientInfo() *ClientInfoDto {
-	return r._clientInfo
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoReachableBatchjudgeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAddressType is AddressType Setter
@@ -78,4 +68,17 @@ func (r *CainiaoReachableBatchjudgeAPIRequest) SetData(_data *RoutingReachableBa
 // GetData Data Getter
 func (r CainiaoReachableBatchjudgeAPIRequest) GetData() *RoutingReachableBatchRequestDto {
 	return r._data
+}
+
+// SetClientInfo is ClientInfo Setter
+// 调用方对象
+func (r *CainiaoReachableBatchjudgeAPIRequest) SetClientInfo(_clientInfo *ClientInfoDto) error {
+	r._clientInfo = _clientInfo
+	r.Set("client_info", _clientInfo)
+	return nil
+}
+
+// GetClientInfo ClientInfo Getter
+func (r CainiaoReachableBatchjudgeAPIRequest) GetClientInfo() *ClientInfoDto {
+	return r._clientInfo
 }

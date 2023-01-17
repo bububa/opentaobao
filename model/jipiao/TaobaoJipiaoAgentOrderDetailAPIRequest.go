@@ -12,6 +12,8 @@ import (
 // 根据淘宝系统订单号获取订单详情信息
 type TaobaoJipiaoAgentOrderDetailAPIRequest struct {
 	model.Params
+	// 淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询
+	_orderIds []string
 }
 
 // NewTaobaoJipiaoAgentOrderDetailRequest 初始化TaobaoJipiaoAgentOrderDetailAPIRequest对象
@@ -27,10 +29,26 @@ func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetOrderIds is OrderIds Setter
+// 淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询
+func (r *TaobaoJipiaoAgentOrderDetailAPIRequest) SetOrderIds(_orderIds []string) error {
+	r._orderIds = _orderIds
+	r.Set("order_ids", _orderIds)
+	return nil
+}
+
+// GetOrderIds OrderIds Getter
+func (r TaobaoJipiaoAgentOrderDetailAPIRequest) GetOrderIds() []string {
+	return r._orderIds
 }

@@ -33,12 +33,15 @@ func (r TmallNrOrderQueryJstAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrOrderQueryJstAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallNrOrderQueryJstAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallNrOrderQueryJstAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizIdentity is BizIdentity Setter

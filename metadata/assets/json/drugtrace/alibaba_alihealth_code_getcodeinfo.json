@@ -1,0 +1,254 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业refEntId",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "physic_name",
+					"type": "String",
+					"description": "药品通用名称"
+				},
+				{
+					"name": "physic_name_en",
+					"type": "String",
+					"description": "药品英文名称"
+				},
+				{
+					"name": "prod_name",
+					"type": "String",
+					"description": "药品商品名称 "
+				},
+				{
+					"name": "cfda_drug_id",
+					"type": "String",
+					"description": "国家药品标识码 "
+				},
+				{
+					"name": "sdc_code",
+					"type": "String",
+					"description": "药品本位码 "
+				},
+				{
+					"name": "prepn_type_desc",
+					"type": "String",
+					"description": "剂型 "
+				},
+				{
+					"name": "prepn_spec",
+					"type": "String",
+					"description": "制剂规格"
+				},
+				{
+					"name": "pkg_spec",
+					"type": "String",
+					"description": "包装规格 "
+				},
+				{
+					"name": "pkg_num",
+					"type": "Number",
+					"description": "包装转换比 "
+				},
+				{
+					"name": "exprie_life",
+					"type": "Number",
+					"description": "药品有效期 "
+				},
+				{
+					"name": "exprie_unit",
+					"type": "Number",
+					"description": "药品有效期单位"
+				},
+				{
+					"name": "expiry_term",
+					"type": "String",
+					"description": "药品有效期"
+				},
+				{
+					"name": "approval_licence_no",
+					"type": "String",
+					"description": "药品批准文号"
+				},
+				{
+					"name": "approval_licence_expiry",
+					"type": "Date",
+					"description": "药品批准文号有效期 "
+				},
+				{
+					"name": "production_date",
+					"type": "String",
+					"description": "药品生产日期  "
+				},
+				{
+					"name": "expiry_date",
+					"type": "String",
+					"description": "药品有效期截止日期"
+				},
+				{
+					"name": "production_batch",
+					"type": "String",
+					"description": "药品生产批号 "
+				},
+				{
+					"name": "import_reg_cert",
+					"type": "String",
+					"description": "进口药品注册证号"
+				},
+				{
+					"name": "import_reg_cert_validity",
+					"type": "Date",
+					"description": "进口药品注册证有效期"
+				},
+				{
+					"name": "import_app_cert",
+					"type": "String",
+					"description": "进口药品批件号 "
+				},
+				{
+					"name": "import_app_cert_validity",
+					"type": "Date",
+					"description": "进口药品批件有效期"
+				},
+				{
+					"name": "drug_registration_classfication",
+					"type": "Number",
+					"description": "药品注册分类"
+				},
+				{
+					"name": "national_essential_drugs_flag",
+					"type": "Number",
+					"description": "国家基本药物标识 "
+				},
+				{
+					"name": "controlled_drug_management_type",
+					"type": "Number",
+					"description": "特殊药品管理分类 "
+				},
+				{
+					"name": "otc_flag",
+					"type": "Number",
+					"description": "处方药标识 "
+				},
+				{
+					"subParams": [
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "上市许可持有人名称"
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "统一社会信用代码（上市许可持有人） "
+						}
+					],
+					"name": "authorizer_ent_info",
+					"type": "BaseEntInfoDTO",
+					"description": "厂商信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "生产企业/生产厂名称 "
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "统一社会信用代码（药品生产企业/生产厂）"
+						}
+					],
+					"name": "produce_ent_info",
+					"type": "BaseEntInfoDTO",
+					"description": "生产企业信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "分包装厂名称 "
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "统一社会信用代码（分包装厂） "
+						}
+					],
+					"name": "pack_ent_info",
+					"type": "BaseEntInfoDTO",
+					"description": "分包装厂"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "进口药品代理企业名称"
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "统一社会信用代码（进口药品代理企业）"
+						}
+					],
+					"name": "agent_ent_info",
+					"type": "BaseEntInfoDTO",
+					"description": "代理企业"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "零售药店名称"
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "统一社会信用代码（零售药店）"
+						}
+					],
+					"name": "retail_ent_info",
+					"type": "BaseEntInfoDTO",
+					"description": "零售企业信息"
+				},
+				{
+					"name": "code_status",
+					"type": "String",
+					"description": "S:已售出"
+				}
+			],
+			"name": "model",
+			"type": "DrugEntUseDto",
+			"description": "码信息类"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "接口调用状态"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "接口调用状态码"
+		}
+	],
+	"name": "alibaba.alihealth.code.getcodeinfo",
+	"apiChineseName": "码查询功能",
+	"description": "码查询功能",
+	"id": 64867
+}

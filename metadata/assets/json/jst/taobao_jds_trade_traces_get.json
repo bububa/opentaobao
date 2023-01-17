@@ -11,24 +11,19 @@
 		{
 			"subParams": [
 				{
-					"name": "tid",
-					"type": "Number",
-					"description": "交易tid"
+					"name": "action_time",
+					"type": "Date",
+					"description": "动作发生的时间"
+				},
+				{
+					"name": "app_title",
+					"type": "String",
+					"description": "应用标题"
 				},
 				{
 					"name": "order_ids",
 					"type": "String",
 					"description": "子订单的id列表,以逗号分割"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "回流的订单状态"
-				},
-				{
-					"name": "action_time",
-					"type": "Date",
-					"description": "动作发生的时间"
 				},
 				{
 					"name": "remark",
@@ -41,9 +36,14 @@
 					"description": "卖家的淘宝nick"
 				},
 				{
-					"name": "app_title",
+					"name": "status",
 					"type": "String",
-					"description": "应用标题"
+					"description": "回流的订单状态"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易tid"
 				}
 			],
 			"name": "traces",

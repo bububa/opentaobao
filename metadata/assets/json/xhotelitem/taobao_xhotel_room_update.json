@@ -6,6 +6,18 @@
 			"description": "废弃，使用out_rid"
 		},
 		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "卖家房型ID",
+			"maxLength": 50
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请",
+			"maxLength": 50
+		},
+		{
 			"name": "title",
 			"type": "String",
 			"description": "废弃，宝贝名称展示在店铺里",
@@ -55,18 +67,6 @@
 			"name": "inventory",
 			"type": "String",
 			"description": "房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{\"date\":2011-01-28,\"quota\":10,\"al_quota\":2,\"sp_quota\":3}]"
-		},
-		{
-			"name": "vendor",
-			"type": "String",
-			"description": "系统商，一般不填写，使用须申请",
-			"maxLength": 50
-		},
-		{
-			"name": "out_rid",
-			"type": "String",
-			"description": "卖家房型ID",
-			"maxLength": 50
 		},
 		{
 			"name": "room_switch_cal",

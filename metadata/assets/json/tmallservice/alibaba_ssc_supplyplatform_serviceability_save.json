@@ -20,21 +20,21 @@
 			"name": "fulfil_type_list",
 			"type": "String[]",
 			"description": "目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写",
-			"maxListSize": 20,
+			"maxListSize": 100,
 			"required": true
 		},
 		{
 			"name": "service_sku_code_list",
 			"type": "String[]",
 			"description": "服务sku，具体的sku列表可以从服务商工作台的类目树获取",
-			"maxListSize": 20,
+			"maxListSize": 150,
 			"required": true
 		},
 		{
 			"name": "area_code_list",
 			"type": "Number[]",
 			"description": "菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填",
-			"maxListSize": 20
+			"maxListSize": 5000
 		}
 	],
 	"responseParams": [

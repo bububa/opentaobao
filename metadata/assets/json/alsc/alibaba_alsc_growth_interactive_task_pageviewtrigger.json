@@ -1,0 +1,176 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "account_plan",
+					"type": "String",
+					"description": "账号转换方案 当不传的时候，不做账号转换"
+				},
+				{
+					"name": "action_code",
+					"type": "String",
+					"description": "行为编码",
+					"required": true
+				},
+				{
+					"name": "alipay_third_mini_program",
+					"type": "Boolean",
+					"description": "是否是支付宝三方小程序"
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道"
+				},
+				{
+					"name": "city_id",
+					"type": "String",
+					"description": "城市id"
+				},
+				{
+					"name": "client",
+					"type": "String",
+					"description": "端来源"
+				},
+				{
+					"name": "client_user_type",
+					"type": "String",
+					"description": "端用户类型"
+				},
+				{
+					"name": "collection_id",
+					"type": "String",
+					"description": "任务集id",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": " 纬度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "meet_result_token",
+					"type": "String",
+					"description": "风控token"
+				},
+				{
+					"name": "mini_app",
+					"type": "Boolean",
+					"description": "是否是小程序"
+				},
+				{
+					"name": "mission_id",
+					"type": "String",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "mission_x_id",
+					"type": "String",
+					"description": "任务xid",
+					"required": true
+				},
+				{
+					"name": "page_from",
+					"type": "String",
+					"description": "页面来源 如果任务后台配置了，则需要填，不然任务推进不了"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id"
+				},
+				{
+					"name": "share_id",
+					"type": "String",
+					"description": "shareId"
+				},
+				{
+					"name": "sync",
+					"type": "Boolean",
+					"description": "是否同步",
+					"required": true
+				},
+				{
+					"name": "ua",
+					"type": "String",
+					"description": "微信）风控参数"
+				},
+				{
+					"name": "umi_token",
+					"type": "String",
+					"description": "微信）风控参数"
+				},
+				{
+					"name": "union_id",
+					"type": "String",
+					"description": "微信）风控参数"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "view_time",
+					"type": "String",
+					"description": "浏览时间 如果任务后台配置了，则需要填，不然任务推进不了。"
+				},
+				{
+					"name": "user_id_type",
+					"type": "String",
+					"description": "用户id类型 账号类型，0表示淘宝账号，25表示饿了么账号",
+					"required": true
+				}
+			],
+			"name": "page_view_request",
+			"type": "PageViewRequest",
+			"description": "打点入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回编码 0代表成功"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否打点成功"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "打点返回"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.task.pageviewtrigger",
+	"apiChineseName": "浏览打点接口",
+	"description": "浏览打点接口",
+	"id": 65174
+}

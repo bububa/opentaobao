@@ -5,8 +5,7 @@
 				{
 					"name": "seller_id",
 					"type": "String",
-					"description": "商家id",
-					"required": true
+					"description": "商家id"
 				},
 				{
 					"name": "express_code",

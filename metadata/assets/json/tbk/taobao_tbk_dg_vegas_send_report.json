@@ -14,8 +14,7 @@
 		{
 			"name": "activity_id",
 			"type": "Number",
-			"description": "红包活动id：1462",
-			"required": true
+			"description": "已下线，后续不需要填写"
 		},
 		{
 			"name": "page_no",

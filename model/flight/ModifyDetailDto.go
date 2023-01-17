@@ -30,4 +30,8 @@ type ModifyDetailDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 佣金;单位:分
 	Commission int64 `json:"commission,omitempty" xml:"commission,omitempty"`
+	// 0:&#34;原路退回&#34;,1:&#34;退银行卡&#34;,2:&#34;原路退回+退银行卡&#34;
+	RefundWayType int64 `json:"refund_way_type,omitempty" xml:"refund_way_type,omitempty"`
+	//    1:&#34;单程&#34;,     2:&#34;往返&#34;,     3:&#34;多程&#34;
+	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 }

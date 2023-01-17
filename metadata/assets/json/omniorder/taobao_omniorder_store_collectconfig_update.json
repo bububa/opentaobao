@@ -1,6 +1,12 @@
 {
 	"requestParams": [
 		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
 			"subParams": [
 				{
 					"name": "activity_end_time",
@@ -34,26 +40,20 @@
 			"type": "StoreCollectConfig",
 			"description": "门店自提配置",
 			"required": true
-		},
-		{
-			"name": "store_id",
-			"type": "Number",
-			"description": "门店ID",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Json",
-					"description": "返回素材id"
-				},
-				{
 					"name": "message",
 					"type": "String",
 					"description": "message"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "code",

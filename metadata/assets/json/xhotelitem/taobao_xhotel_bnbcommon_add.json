@@ -1,0 +1,25 @@
+{
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "String",
+			"description": "参数"
+		},
+		{
+			"name": "scene",
+			"type": "String",
+			"description": "业务场景"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "String",
+			"description": "success"
+		}
+	],
+	"name": "taobao.xhotel.bnbcommon.add",
+	"apiChineseName": "通用调用top接口",
+	"description": "通用调用top接口",
+	"id": 64728
+}

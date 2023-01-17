@@ -29,12 +29,15 @@ func (r AlitripCarInvoiceConfirmAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripCarInvoiceConfirmAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripCarInvoiceConfirmAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripCarInvoiceConfirmAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReceiptDo is ReceiptDo Setter

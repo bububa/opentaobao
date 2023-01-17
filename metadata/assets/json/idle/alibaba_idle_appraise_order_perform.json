@@ -71,6 +71,11 @@
 					"type": "String",
 					"description": "见order_status字段说明",
 					"required": true
+				},
+				{
+					"name": "trigger_event",
+					"type": "String",
+					"description": "3.0 必填"
 				}
 			],
 			"name": "appraise_order_syn_dto",

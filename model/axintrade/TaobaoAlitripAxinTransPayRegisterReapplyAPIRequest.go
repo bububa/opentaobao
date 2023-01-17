@@ -30,12 +30,15 @@ func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripAxinTransPayRegisterReapplyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAxinPayRegisterCreateDTO is AxinPayRegisterCreateDTO Setter

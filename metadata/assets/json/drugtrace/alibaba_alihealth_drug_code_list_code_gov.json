@@ -46,308 +46,259 @@
 						{
 							"name": "msg_code",
 							"type": "String",
-							"description": "表示成功",
-							"required": true
-						},
-						{
-							"name": "package_level",
-							"type": "Number",
-							"description": "码包装层级",
-							"required": true
+							"description": "表示成功"
 						},
 						{
 							"subParams": [
 								{
 									"name": "produce_date",
 									"type": "Date",
-									"description": "码生产日期",
-									"required": true
+									"description": "码生产日期"
 								},
 								{
 									"name": "produce_batch_no",
 									"type": "String",
-									"description": "码批次号",
-									"required": true
+									"description": "码批次号"
 								},
 								{
 									"name": "produce_info_id",
 									"type": "String",
-									"description": "码生产信息id",
-									"required": true
+									"description": "码生产信息id"
 								},
 								{
 									"name": "pkg_ratio",
 									"type": "String",
-									"description": "包装比例",
-									"required": true
+									"description": "包装比例"
 								},
 								{
 									"subParams": [
 										{
 											"name": "batch_no",
 											"type": "String",
-											"description": "批次号",
-											"required": true
+											"description": "批次号"
 										},
 										{
 											"name": "produce_date",
 											"type": "Date",
-											"description": "生产日期",
-											"required": true
+											"description": "生产日期"
 										},
 										{
 											"name": "expire_date",
 											"type": "String",
-											"description": "有效期至",
-											"required": true
+											"description": "有效期至"
 										},
 										{
 											"name": "pkg_amount",
 											"type": "String",
-											"description": "最小包装数量",
-											"required": true
+											"description": "最小包装数量"
 										}
 									],
 									"name": "produce_info_list",
 									"type": "ProduceInfoDto[]",
-									"description": "生产信息集合",
-									"required": true
+									"description": "生产信息集合"
 								}
 							],
 							"name": "code_produce_info_d_t_o",
 							"type": "CodeProduceInfoDto",
-							"description": "码生产信息对象",
-							"required": true
+							"description": "码生产信息对象"
 						},
 						{
 							"subParams": [
 								{
 									"name": "drug_ent_base_id",
 									"type": "String",
-									"description": "药品信息id",
-									"required": true
+									"description": "药品信息id"
 								},
 								{
 									"name": "drug_ent_base_info_id",
 									"type": "String",
-									"description": "药品基本信息id",
-									"required": true
+									"description": "药品基本信息id"
 								},
 								{
 									"name": "approval_licence_no",
 									"type": "String",
-									"description": "批准文号",
-									"required": true
+									"description": "批准文号"
 								},
 								{
 									"name": "physic_name",
 									"type": "String",
-									"description": "药品名称",
-									"required": true
+									"description": "药品名称"
 								},
 								{
 									"name": "physic_type_desc",
 									"type": "String",
-									"description": "药品类型描述",
-									"required": true
+									"description": "药品类型描述"
 								},
 								{
 									"name": "pkg_spec_crit",
 									"type": "String",
-									"description": "包装规格",
-									"required": true
+									"description": "包装规格"
 								},
 								{
 									"name": "prepn_spec",
 									"type": "String",
-									"description": "制剂规格",
-									"required": true
+									"description": "制剂规格"
 								},
 								{
 									"name": "prepn_type_desc",
 									"type": "String",
-									"description": "剂型描述",
-									"required": true
+									"description": "剂型描述"
 								},
 								{
 									"name": "exprie",
 									"type": "String",
-									"description": "有效期长度",
-									"required": true
+									"description": "有效期长度"
 								},
 								{
 									"name": "prod_name",
 									"type": "String",
-									"description": "商品名称",
-									"required": true
+									"description": "商品名称"
 								},
 								{
 									"name": "pkg_num",
 									"type": "Number",
-									"description": "包装数量",
-									"required": true
+									"description": "包装数量"
 								},
 								{
 									"name": "sdc_code",
 									"type": "String",
-									"description": "批准文号",
-									"required": true
+									"description": "批准文号"
 								},
 								{
 									"name": "prepn_unit_desc",
 									"type": "String",
-									"description": "制剂单位类型描述",
-									"required": true
+									"description": "制剂单位类型描述"
 								},
 								{
 									"name": "prod_code",
 									"type": "String",
-									"description": "药品子类编码",
-									"required": true
+									"description": "药品子类编码"
 								},
 								{
 									"name": "physic_code",
 									"type": "String",
-									"description": "药品编码",
-									"required": true
+									"description": "药品编码"
 								},
 								{
 									"name": "physic_detail_type",
 									"type": "Number",
-									"description": "药品详细类型",
-									"required": true
+									"description": "药品详细类型"
 								}
 							],
 							"name": "drug_ent_base_d_t_o",
 							"type": "DrugEntBaseDto",
-							"description": "药品基本信息对象",
-							"required": true
+							"description": "药品基本信息对象"
 						},
 						{
 							"subParams": [
 								{
 									"name": "org_code",
 									"type": "String",
-									"description": "机构编码",
-									"required": true
+									"description": "机构编码"
 								},
 								{
 									"name": "ent_name",
 									"type": "String",
-									"description": "原企业名称",
-									"required": true
+									"description": "原企业名称"
 								},
 								{
 									"name": "ent_name_new",
 									"type": "String",
-									"description": "新企业名称",
-									"required": true
+									"description": "新企业名称"
 								},
 								{
 									"name": "ref_ent_id",
 									"type": "String",
-									"description": "企业refid",
-									"required": true
+									"description": "企业refid"
 								},
 								{
 									"name": "ent_id",
 									"type": "String",
-									"description": "企业id",
-									"required": true
+									"description": "企业id"
 								}
 							],
 							"name": "p_user_ent_d_t_o",
 							"type": "PUserEntDto",
-							"description": "企业信息对象",
-							"required": true
+							"description": "企业信息对象"
 						},
 						{
 							"subParams": [
 								{
 									"name": "verification_type",
 									"type": "String",
-									"description": "追溯码状态",
-									"required": true
+									"description": "追溯码状态"
 								},
 								{
 									"name": "last_biz_date",
 									"type": "String",
-									"description": "最后业务日期",
-									"required": true
+									"description": "最后业务日期"
 								},
 								{
 									"name": "code",
 									"type": "String",
-									"description": "码",
-									"required": true
+									"description": "码"
 								},
 								{
 									"name": "check_count",
 									"type": "Number",
-									"description": "医保核销次数",
-									"required": true
+									"description": "医保核销次数"
 								},
 								{
 									"name": "include_produce_code_count",
 									"type": "Number",
-									"description": "父码下子码的数量",
-									"required": true
+									"description": "父码下子码的数量"
 								},
 								{
 									"name": "code_status_num",
 									"type": "String",
-									"description": "码状态",
-									"required": true
+									"description": "码状态"
 								}
 							],
 							"name": "code_status_type_d_t_o",
 							"type": "CodeStatusTypeDto",
-							"description": "追溯码状态对象",
-							"required": true
+							"description": "追溯码状态对象"
+						},
+						{
+							"name": "package_level",
+							"type": "Number",
+							"description": "码包装层级"
 						},
 						{
 							"subParams": [
 								{
 									"name": "pkg_ratio",
 									"type": "String",
-									"description": "包装比例",
-									"required": true
+									"description": "包装比例"
 								}
 							],
 							"name": "code_active_info_list_api_d_t_o",
 							"type": "CodeActiveInfoListApiDto",
-							"description": "码激活信息",
-							"required": true
+							"description": "码激活信息"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "追溯码",
-							"required": true
+							"description": "追溯码"
 						}
 					],
 					"name": "models",
 					"type": "CodeFullInfoDto[]",
-					"description": "内层大对象",
-					"required": true
+					"description": "内层大对象"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息码",
-					"required": true
+					"description": "消息码"
 				},
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "消息提示内容",
-					"required": true
+					"description": "消息提示内容"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "查询成功失败标记",
-					"required": true
+					"description": "查询成功失败标记"
 				}
 			],
 			"name": "result",

@@ -7,6 +7,11 @@
 			"required": true
 		},
 		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
+		},
+		{
 			"name": "ouid",
 			"type": "String",
 			"description": "买家ID"
@@ -15,11 +20,6 @@
 			"name": "openid",
 			"type": "String",
 			"description": "买家ID"
-		},
-		{
-			"name": "nick",
-			"type": "String",
-			"description": "昵称"
 		}
 	],
 	"responseParams": [

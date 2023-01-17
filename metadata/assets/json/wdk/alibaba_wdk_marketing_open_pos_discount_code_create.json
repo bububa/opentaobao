@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "discount_rate",
+					"type": "Number",
+					"description": "折扣率 范围(0,100) 比如78折传78，8折传80。对应 discountType=7时必传"
+				},
+				{
+					"name": "expire_time",
+					"type": "String",
+					"description": "过期时间。不传默认为当前时间+90天。最大支持有效期为90天后。"
+				},
+				{
+					"name": "discount_price",
+					"type": "Number",
+					"description": "一口价。单位分。对应 discountType=8 时必传"
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "折扣码类型, 7为折扣率码，8为一口价码",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				}
+			],
+			"name": "unique_discount_code_request",
+			"type": "UniqueDiscountCodeRequest",
+			"description": "请求信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "唯一码"
+						},
+						{
+							"name": "expire_time",
+							"type": "String",
+							"description": "过期时间"
+						}
+					],
+					"name": "data",
+					"type": "UniqueDiscountCodeBO",
+					"description": "唯一码信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true--成功，false--失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误提示信息"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息"
+		}
+	],
+	"name": "alibaba.wdk.marketing.open.pos.discount.code.create",
+	"apiChineseName": "pos一物一码创建",
+	"description": "pos一物一码创建",
+	"id": 64532
+}

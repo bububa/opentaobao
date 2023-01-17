@@ -29,12 +29,15 @@ func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoGameDeliveryvoucherWatchAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam0 is Param0 Setter

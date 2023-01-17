@@ -29,12 +29,15 @@ func (r YunosTvpubadminManageTopicEditAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminManageTopicEditAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosTvpubadminManageTopicEditAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosTvpubadminManageTopicEditAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTopicJson is TopicJson Setter

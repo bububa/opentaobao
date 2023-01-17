@@ -33,7 +33,7 @@
 				}
 			],
 			"name": "results",
-			"type": "Poi []",
+			"type": "POI []",
 			"description": "POI详情"
 		}
 	],

@@ -9,6 +9,11 @@
 			"name": "item_id",
 			"type": "String",
 			"description": "商品id"
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "门店ID"
 		}
 	],
 	"responseParams": [

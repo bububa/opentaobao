@@ -29,12 +29,15 @@ func (r AlibabaAscpChannelRefundCancelAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAscpChannelRefundCancelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAscpChannelRefundCancelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAscpChannelRefundCancelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCancelRefundOrderRequest is CancelRefundOrderRequest Setter

@@ -33,12 +33,15 @@ func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthExaminationInvoiceInfoNotifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReserveNumber is ReserveNumber Setter

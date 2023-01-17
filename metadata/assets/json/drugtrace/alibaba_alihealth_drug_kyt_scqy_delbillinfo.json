@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业唯一标识",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据号",
+			"required": true
+		},
+		{
+			"name": "delete_reason",
+			"type": "String",
+			"description": "删除原因",
+			"required": true
+		},
+		{
+			"name": "mobile_phone",
+			"type": "String",
+			"description": "删除人手机号",
+			"required": true
+		},
+		{
+			"name": "owner_ref_user_id",
+			"type": "String",
+			"description": "当单据是代理企业上传的，需要填写代理企业的refEntId"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "models",
+					"type": "String",
+					"description": "内层对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "状态值"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "响应结果"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.delbillinfo",
+	"apiChineseName": "根据单据号删除单据",
+	"description": "根据单据号删除单据",
+	"id": 64390
+}

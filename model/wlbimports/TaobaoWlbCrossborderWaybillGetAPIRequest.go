@@ -10,7 +10,8 @@ import (
 // taobao.wlb.crossborder.waybill.get
 //
 // 【TOF】欧洲供应商PDF格式电子面单渲染下发
-//  需求链接：https://aone.alibaba-inc.com/req/21210808
+//
+//	需求链接：https://aone.alibaba-inc.com/req/21210808
 type TaobaoWlbCrossborderWaybillGetAPIRequest struct {
 	model.Params
 	// 菜鸟物流单号
@@ -30,12 +31,15 @@ func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbCrossborderWaybillGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderCode is OrderCode Setter

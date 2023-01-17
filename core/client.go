@@ -1,11 +1,9 @@
 package core
 
 import (
-	"bytes"
 	"crypto/hmac"
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
 	"hash"
 	"io"
 	"mime/multipart"
@@ -15,6 +13,7 @@ import (
 	"strings"
 
 	"github.com/bububa/opentaobao/core/internal/debug"
+	"github.com/bububa/opentaobao/metadata/util"
 	"github.com/bububa/opentaobao/model"
 )
 
@@ -80,7 +79,8 @@ func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session strin
 	commonReq.SetSession(session)
 	commonReq.SetAPIFormat(c.apiFormat)
 	commonReq.SetSignMethod(c.signMethod)
-	params := c.sign(commonReq, req)
+	params := util.GetUrlValues()
+	c.sign(params, commonReq, req)
 
 	var err error
 	if req.NeedMultipart() {
@@ -88,6 +88,7 @@ func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session strin
 	} else {
 		err = c.post(params, resp)
 	}
+	util.PutUrlValues(params)
 	return err
 }
 
@@ -126,8 +127,9 @@ func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 
 // postMultipart post multipart/form
 func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp model.IResponse) error {
-	var buf bytes.Buffer
-	mw := multipart.NewWriter(&buf)
+	buf := util.GetBufferPool()
+	defer util.PutBufferPool(buf)
+	mw := multipart.NewWriter(buf)
 	for k := range req {
 		var (
 			fw  io.Writer
@@ -156,7 +158,7 @@ func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp mode
 		reqUrl = SANDBOX_GATEWAY
 	}
 	debug.PrintPostJSONRequest(reqUrl, req.Encode(), c.debug)
-	httpReq, err := http.NewRequest("POST", reqUrl, &buf)
+	httpReq, err := http.NewRequest("POST", reqUrl, buf)
 	httpReq.Header.Add("Content-Type", mw.FormDataContentType())
 	if err != nil {
 		return err
@@ -188,7 +190,7 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 	if c.sandbox {
 		reqUrl = SANDBOX_GATEWAY
 	}
-	reqUrl = fmt.Sprintf("%s?%s", reqUrl, req.Encode())
+	reqUrl = util.StringsJoin(reqUrl, "?", req.Encode())
 	debug.PrintGetRequest(reqUrl, c.debug)
 	httpReq, err := http.NewRequest("GET", reqUrl, nil)
 	if err != nil {
@@ -217,21 +219,15 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 
 // sign 生成签名
 // 支持md5, hmac
-func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url.Values {
-	ret := url.Values{}
-	commonParams := commonReq.GetParams()
-	reqParams := req.GetApiParams()
-	keys := make([]string, 0, len(commonParams)+len(reqParams))
-	for k, v := range commonParams {
+func (c *SDKClient) sign(ret url.Values, commonReq *model.CommonRequest, req model.IRequest) {
+	commonReq.GetParams(ret)
+	req.GetApiParams(ret)
+	keys := make([]string, 0, len(ret))
+	for k := range ret {
 		keys = append(keys, k)
-		ret.Set(k, v)
-	}
-	for k := range reqParams {
-		keys = append(keys, k)
-		ret.Set(k, reqParams.Get(k))
 	}
 	sort.Strings(keys)
-	query := new(bytes.Buffer)
+	query := util.GetBufferPool()
 	if commonReq.SignMethod == model.MD5 {
 		query.WriteString(c.secret)
 	}
@@ -252,7 +248,7 @@ func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url
 		panic("missing sign_method")
 	}
 	io.Copy(h, query)
+	util.PutBufferPool(query)
 	sign := strings.ToUpper(hex.EncodeToString(h.Sum(nil)))
 	ret.Set("sign", sign)
-	return ret
 }

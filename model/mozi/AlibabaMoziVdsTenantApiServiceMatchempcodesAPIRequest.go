@@ -29,12 +29,15 @@ func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMoziVdsTenantApiServiceMatchempcodesAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPar0 is Par0 Setter

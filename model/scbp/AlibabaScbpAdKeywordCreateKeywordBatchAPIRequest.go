@@ -33,12 +33,15 @@ func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpAdKeywordCreateKeywordBatchAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTopContext is TopContext Setter

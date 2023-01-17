@@ -31,12 +31,15 @@ func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiMethodN
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripTravelNormalvisaUpdatepersonstautsAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNormalVisaUpdateUnitList is NormalVisaUpdateUnitList Setter

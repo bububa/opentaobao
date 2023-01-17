@@ -24,12 +24,12 @@ type TaobaoVmarketEticketStoreGetAPIResponseModel struct {
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
 	// 商户名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 区
+	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 所在城市
 	City string `json:"city,omitempty" xml:"city,omitempty"`
 	// 省份
 	Province string `json:"province,omitempty" xml:"province,omitempty"`
-	// 区
-	District string `json:"district,omitempty" xml:"district,omitempty"`
 	// 联系电话
 	Contract string `json:"contract,omitempty" xml:"contract,omitempty"`
 	// 自有卖家导入门店的时候，可以把自己系统门店信息的主键或者唯一key传入，用于快速匹配

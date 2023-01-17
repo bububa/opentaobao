@@ -121,6 +121,21 @@
 					"name": "version",
 					"type": "Number",
 					"description": "请求时间戳，精确到毫秒"
+				},
+				{
+					"name": "edit_audit_status",
+					"type": "Number",
+					"description": "金牌顾问编辑的审核状态"
+				},
+				{
+					"name": "region_receptive_status",
+					"type": "Number",
+					"description": "区域接待状态0-不可接待 1-可接待"
+				},
+				{
+					"name": "certification_services",
+					"type": "String[]",
+					"description": "1-区域认证小B"
 				}
 			],
 			"name": "advisers",

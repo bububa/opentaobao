@@ -161,6 +161,11 @@
 							"name": "purchase_limitation_once",
 							"type": "Number",
 							"description": "项目单次限购数量"
+						},
+						{
+							"name": "damai_item_id",
+							"type": "Number",
+							"description": "大麦商品id"
 						}
 					],
 					"name": "model",

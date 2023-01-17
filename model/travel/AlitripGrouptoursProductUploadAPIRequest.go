@@ -94,12 +94,15 @@ func (r AlitripGrouptoursProductUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripGrouptoursProductUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripGrouptoursProductUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripGrouptoursProductUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItineraries is Itineraries Setter

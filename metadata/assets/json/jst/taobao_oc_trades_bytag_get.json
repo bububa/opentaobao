@@ -1,25 +1,25 @@
 {
 	"requestParams": [
 		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "分页大小"
-		},
-		{
-			"name": "tag_type",
-			"type": "Number",
-			"description": "标签类型，1官方，2自定义",
-			"required": true
-		},
-		{
 			"name": "page",
 			"type": "Number",
 			"description": "当前页"
 		},
 		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
 			"name": "tag_name",
 			"type": "String",
 			"description": "标签名称",
+			"required": true
+		},
+		{
+			"name": "tag_type",
+			"type": "Number",
+			"description": "标签类型，1官方，2自定义",
 			"required": true
 		}
 	],

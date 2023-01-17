@@ -7,14 +7,14 @@
 		},
 		{
 			"name": "s_message_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "处理成功的消息ID列表 最大 200个ID",
 			"maxListSize": 200,
 			"required": true
 		},
 		{
 			"name": "f_message_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "处理失败的消息ID列表--已废弃，无需传此字段",
 			"maxListSize": 200
 		}

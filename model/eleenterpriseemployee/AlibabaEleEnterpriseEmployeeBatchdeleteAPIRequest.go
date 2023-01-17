@@ -29,12 +29,15 @@ func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEleEnterpriseEmployeeBatchdeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEmployeeNos is EmployeeNos Setter

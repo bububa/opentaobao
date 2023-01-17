@@ -4,6 +4,8 @@ package wdk
 type RefundApplyInfo struct {
 	// 逆向子单列表
 	SubRefundOrders []SubRefundOrder `json:"sub_refund_orders,omitempty" xml:"sub_refund_orders>sub_refund_order,omitempty"`
+	// 退款图片清单
+	RefundPics []string `json:"refund_pics,omitempty" xml:"refund_pics>string,omitempty"`
 	// 外部主单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 外部渠道店ID(与shop_id必选其一)
@@ -14,6 +16,8 @@ type RefundApplyInfo struct {
 	RefundReason string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
 	// 渠道店id(与out_shop_id必选其一)
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 退款备注、或问题描述等补充性文本
+	RefundNote string `json:"refund_note,omitempty" xml:"refund_note,omitempty"`
 	// 申请退款金额，单位：分
 	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 退的运费

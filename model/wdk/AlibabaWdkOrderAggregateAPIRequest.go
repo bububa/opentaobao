@@ -29,12 +29,15 @@ func (r AlibabaWdkOrderAggregateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkOrderAggregateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkOrderAggregateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkOrderAggregateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderAggregateQueryRequest is OrderAggregateQueryRequest Setter

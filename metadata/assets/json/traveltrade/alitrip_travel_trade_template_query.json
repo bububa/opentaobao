@@ -20,142 +20,120 @@
 						{
 							"name": "is_new",
 							"type": "Boolean",
-							"description": "是否是最新的模版，如果订单没有标注模版，则默认取最新的模版数据；如果订单有标注模版，则取对应的模版信息；",
-							"required": true
+							"description": "是否是最新的模版，如果订单没有标注模版，则默认取最新的模版数据；如果订单有标注模版，则取对应的模版信息；"
 						},
 						{
 							"subParams": [
 								{
 									"name": "category_id",
 									"type": "Number",
-									"description": "模版对应的类目ID",
-									"required": true
+									"description": "模版对应的类目ID"
 								},
 								{
 									"subParams": [
 										{
 											"name": "accept_types",
 											"type": "String[]",
-											"description": "字段可接收数据类型",
-											"required": true
+											"description": "字段可接收数据类型"
 										},
 										{
 											"name": "desc",
 											"type": "String",
-											"description": "字段具体描述",
-											"required": true
+											"description": "字段具体描述"
 										},
 										{
 											"name": "max_num",
 											"type": "Number",
-											"description": "最大数量 (如最大文件上传数量, 最大图片上传数量等)",
-											"required": true
+											"description": "最大数量 (如最大文件上传数量, 最大图片上传数量等)"
 										},
 										{
 											"subParams": [
 												{
 													"name": "text",
 													"type": "String",
-													"description": "select对应的text值",
-													"required": true
+													"description": "select对应的text值"
 												},
 												{
 													"name": "value",
 													"type": "String",
-													"description": "select对应的value值",
-													"required": true
+													"description": "select对应的value值"
 												}
 											],
 											"name": "options",
 											"type": "OrderTipOptionInfo[]",
-											"description": "选择项, 当type = select / selects 的时候存在",
-											"required": true
+											"description": "选择项, 当type = select / selects 的时候存在"
 										},
 										{
 											"subParams": [
 												{
 													"name": "msg",
 													"type": "String",
-													"description": "字段描述",
-													"required": true
+													"description": "字段描述"
 												},
 												{
 													"name": "regex",
 													"type": "String",
-													"description": "字段正则表达式，字段值必须和正则匹配，否则上传服务信息会报错",
-													"required": true
+													"description": "字段正则表达式，字段值必须和正则匹配，否则上传服务信息会报错"
 												},
 												{
 													"name": "require",
 													"type": "Boolean",
-													"description": "字段是否必须",
-													"required": true
+													"description": "字段是否必须"
 												}
 											],
 											"name": "rule",
 											"type": "OrderTipRuleInfo",
-											"description": "字段匹配规则",
-											"required": true
+											"description": "字段匹配规则"
 										},
 										{
 											"name": "title",
 											"type": "String",
-											"description": "字段中文名称",
-											"required": true
+											"description": "字段中文名称"
 										},
 										{
 											"name": "name",
 											"type": "String",
-											"description": "字段属性名，在做服务信息回传时需要用到的KEY",
-											"required": true
+											"description": "字段属性名，在做服务信息回传时需要用到的KEY"
 										},
 										{
 											"name": "value",
 											"type": "String",
-											"description": "字段对应的值，单选值",
-											"required": true
+											"description": "字段对应的值，单选值"
 										},
 										{
 											"name": "values",
 											"type": "String[]",
-											"description": "字段对应的值，多选值",
-											"required": true
+											"description": "字段对应的值，多选值"
 										}
 									],
 									"name": "model_list",
 									"type": "OrderTipFormInfo[]",
-									"description": "填充字段列表",
-									"required": true
+									"description": "填充字段列表"
 								},
 								{
 									"name": "template_id",
 									"type": "Number",
-									"description": "模版对应ID",
-									"required": true
+									"description": "模版对应ID"
 								},
 								{
 									"name": "version",
 									"type": "Number",
-									"description": "模版对应版本",
-									"required": true
+									"description": "模版对应版本"
 								}
 							],
 							"name": "template_info",
 							"type": "OrderTemplateInfo",
-							"description": "模版详情",
-							"required": true
+							"description": "模版详情"
 						},
 						{
 							"name": "view_template_url",
 							"type": "String",
-							"description": "查看模版链接",
-							"required": true
+							"description": "查看模版链接"
 						}
 					],
 					"name": "first_result",
 					"type": "OrderTipInfoResult",
-					"description": "订单服务标注模版获取结果详情",
-					"required": true
+					"description": "订单服务标注模版获取结果详情"
 				}
 			],
 			"name": "result",

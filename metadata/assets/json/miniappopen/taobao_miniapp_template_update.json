@@ -37,70 +37,59 @@
 				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "err_message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"subParams": [
 						{
 							"name": "app_description",
 							"type": "String",
-							"description": "应用描述",
-							"required": true
+							"description": "应用描述"
 						},
 						{
 							"name": "app_icon",
 							"type": "String",
-							"description": "应用icon",
-							"required": true
+							"description": "应用icon"
 						},
 						{
 							"name": "app_name",
 							"type": "String",
-							"description": "应用名称",
-							"required": true
+							"description": "应用名称"
 						},
 						{
 							"name": "appkey",
 							"type": "String",
-							"description": "top appkey",
-							"required": true
+							"description": "top appkey"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "应用id",
-							"required": true
-						},
-						{
-							"name": "online_version",
-							"type": "String",
-							"description": "线上版本",
-							"required": true
+							"description": "应用id"
 						},
 						{
 							"name": "online_code",
 							"type": "String",
-							"description": "线上码",
-							"required": true
+							"description": "线上码"
+						},
+						{
+							"name": "online_version",
+							"type": "String",
+							"description": "线上版本"
 						}
 					],
 					"name": "model",
 					"type": "MiniAppEntityTemplateDto",
-					"description": "model",
-					"required": true
+					"description": "model"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
 			],
 			"name": "result",

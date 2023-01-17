@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部房源id",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1-新房，2-二手房，3-租房，默认为2",
+					"required": true
+				},
+				{
+					"name": "house_type",
+					"type": "Number",
+					"description": "0-正常房源 1-临时房源（交易专用）",
+					"required": true
+				},
+				{
+					"name": "house_model",
+					"type": "Number",
+					"description": "租房业务模式"
+				},
+				{
+					"name": "entrust_outer_id",
+					"type": "String",
+					"description": "委托房源外部房源id"
+				},
+				{
+					"name": "scene",
+					"type": "Number",
+					"description": "公私域区分 1公域 2私域",
+					"required": true
+				}
+			],
+			"name": "house",
+			"type": "DeleteHouseDTO",
+			"description": "房源信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.house.delete.house",
+	"apiChineseName": "删除房源",
+	"description": "删除房源",
+	"id": 64655
+}

@@ -29,12 +29,15 @@ func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaLegalCaseStandpointFeedbackAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFeedbackRequestModel is FeedbackRequestModel Setter

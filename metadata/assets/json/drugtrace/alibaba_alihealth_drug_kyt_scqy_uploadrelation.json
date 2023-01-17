@@ -1,0 +1,135 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "oper_ic_code",
+					"type": "String",
+					"description": "操作的icCode"
+				},
+				{
+					"name": "user_cert",
+					"type": "String",
+					"description": "用户证书"
+				},
+				{
+					"name": "prod_code",
+					"type": "String",
+					"description": "生产码"
+				},
+				{
+					"name": "ent_name",
+					"type": "String",
+					"description": "企业名"
+				},
+				{
+					"name": "oper_ic_name",
+					"type": "String",
+					"description": "操作员姓名"
+				},
+				{
+					"name": "upload_flag",
+					"type": "String",
+					"description": "上传标记"
+				},
+				{
+					"name": "upload_file_name",
+					"type": "String",
+					"description": "上传文件的文件名（建议填写一个，用于后面查询）",
+					"required": true
+				},
+				{
+					"name": "crt_date",
+					"type": "String",
+					"description": "上传日期(格式 2018-09-18)"
+				},
+				{
+					"name": "ent_seq_no",
+					"type": "String",
+					"description": "上传文件的企业ID",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "1药  3中药饮片  5医疗器材"
+				}
+			],
+			"name": "save_code_relation",
+			"type": "SaveCodeRelationType",
+			"description": "关联关系文件信息"
+		},
+		{
+			"name": "affirm_flag",
+			"type": "String",
+			"description": "affirmFlag"
+		},
+		{
+			"name": "file_content",
+			"type": "String",
+			"description": "fileContent(可不添)"
+		},
+		{
+			"name": "file_content_string",
+			"type": "String",
+			"description": "加密之后的文件内容字符串",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "上传文件的企业ID",
+			"required": true
+		},
+		{
+			"name": "client_type",
+			"type": "String",
+			"description": "客户端类型"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "response_message",
+							"type": "String",
+							"description": "结果信息"
+						},
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "结果标记"
+						}
+					],
+					"name": "model",
+					"type": "SaveCodeRelationResultDto",
+					"description": "model"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.uploadrelation",
+	"apiChineseName": "关联关系上传",
+	"description": "关联关系上传",
+	"id": 64474
+}

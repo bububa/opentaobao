@@ -1,40 +1,16 @@
 {
 	"requestParams": [
 		{
-			"name": "query_start_date",
-			"type": "Date",
-			"description": "开始时间",
+			"name": "fields",
+			"type": "String[]",
+			"description": "传入需要返回的字段,参见Bill结构体",
+			"maxListSize": 20,
 			"required": true
-		},
-		{
-			"name": "p_trade_id",
-			"type": "Number",
-			"description": "交易编号"
-		},
-		{
-			"name": "trade_id",
-			"type": "Number",
-			"description": "子订单编号"
-		},
-		{
-			"name": "page_size",
-			"type": "Number",
-			"description": "每页大小,默认40条,可选范围 ：40~100"
 		},
 		{
 			"name": "query_date_type",
 			"type": "Number",
 			"description": "查询条件中的时间类型:1-交易订单完成时间biz_time 2-支付宝扣款时间pay_time 如果不填默认为2即根据支付时间查询,查询的结果会根据该时间倒排序"
-		},
-		{
-			"name": "current_page",
-			"type": "Number",
-			"description": "页数,建议不要超过100页,越大性能越低,有可能会超时"
-		},
-		{
-			"name": "item_id",
-			"type": "Number",
-			"description": "科目编号"
 		},
 		{
 			"name": "query_end_date",
@@ -43,11 +19,35 @@
 			"required": true
 		},
 		{
-			"name": "fields",
-			"type": "String[]",
-			"description": "传入需要返回的字段,参见Bill结构体",
-			"maxListSize": 20,
+			"name": "p_trade_id",
+			"type": "Number",
+			"description": "交易编号"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "科目编号"
+		},
+		{
+			"name": "query_start_date",
+			"type": "Date",
+			"description": "开始时间",
 			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "页数,建议不要超过100页,越大性能越低,有可能会超时"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小,默认40条,可选范围 ：40~100"
+		},
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "子订单编号"
 		}
 	],
 	"responseParams": [
@@ -64,9 +64,14 @@
 		{
 			"subParams": [
 				{
-					"name": "total_amount",
+					"name": "status",
 					"type": "Number",
-					"description": "账单金额,退款时返回的是负数"
+					"description": "0-未支付,1-支付成功,2-支付失败"
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "记账时间"
 				},
 				{
 					"name": "gmt_modified",
@@ -74,29 +79,9 @@
 					"description": "修改时间"
 				},
 				{
-					"name": "gmt_create",
-					"type": "Date",
-					"description": "创建时间"
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "0-未支付,1-支付成功,2-支付失败"
-				},
-				{
 					"name": "order_id",
 					"type": "String",
 					"description": "交易子订单编号"
-				},
-				{
-					"name": "biz_time",
-					"type": "Date",
-					"description": "业务时间,订单交易完成的时间"
-				},
-				{
-					"name": "amount",
-					"type": "Number",
-					"description": "账单金额,退款时返回的是负数"
 				},
 				{
 					"name": "alipay_notice",
@@ -104,39 +89,9 @@
 					"description": "支付宝备注"
 				},
 				{
-					"name": "alipay_outno",
-					"type": "String",
-					"description": "支付宝商户订单号"
-				},
-				{
-					"name": "obj_alipay_id",
-					"type": "String",
-					"description": "目标支付宝账户编号"
-				},
-				{
-					"name": "trade_id",
-					"type": "String",
-					"description": "交易订单编号"
-				},
-				{
-					"name": "alipay_id",
-					"type": "String",
-					"description": "支付宝账户编号"
-				},
-				{
-					"name": "account_id",
-					"type": "Number",
-					"description": "科目编号"
-				},
-				{
-					"name": "alipay_mail",
-					"type": "String",
-					"description": "支付宝账户名称"
-				},
-				{
-					"name": "obj_alipay_mail",
-					"type": "String",
-					"description": "目标支付宝账户名称"
+					"name": "biz_time",
+					"type": "Date",
+					"description": "业务时间,订单交易完成的时间"
 				},
 				{
 					"name": "pay_time",
@@ -144,14 +99,54 @@
 					"description": "支付时间,收取佣金时支付宝的扣款时间"
 				},
 				{
+					"name": "amount",
+					"type": "Number",
+					"description": "账单金额,退款时返回的是负数"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易订单编号"
+				},
+				{
+					"name": "alipay_outno",
+					"type": "String",
+					"description": "支付宝商户订单号"
+				},
+				{
+					"name": "alipay_mail",
+					"type": "String",
+					"description": "支付宝账户名称"
+				},
+				{
 					"name": "bid",
 					"type": "Number",
 					"description": "账单编号"
 				},
 				{
-					"name": "book_time",
-					"type": "Date",
-					"description": "记账时间"
+					"name": "alipay_id",
+					"type": "String",
+					"description": "支付宝账户编号"
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "账单金额,退款时返回的是负数"
+				},
+				{
+					"name": "obj_alipay_id",
+					"type": "String",
+					"description": "目标支付宝账户编号"
+				},
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "科目编号"
 				},
 				{
 					"name": "num_iid",

@@ -33,12 +33,15 @@ func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCampusSpaceUnitGetbyidAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam0 is Param0 Setter

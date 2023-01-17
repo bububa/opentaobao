@@ -41,12 +41,15 @@ func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEinvoiceMerchantBindcompanyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterId is OuterId Setter

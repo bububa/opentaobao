@@ -33,12 +33,15 @@ func (r TmallNrOrderLogisInfoAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrOrderLogisInfoAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallNrOrderLogisInfoAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallNrOrderLogisInfoAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMainOrderIds is MainOrderIds Setter

@@ -8,8 +8,6 @@ type IdentifyAuthResultDto struct {
 	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
 	// 鉴权结果消息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 鉴权结果消息英文
-	ErrorMsgEn string `json:"error_msg_en,omitempty" xml:"error_msg_en,omitempty"`
-	// 业务流水id
-	EventTraceId string `json:"event_trace_id,omitempty" xml:"event_trace_id,omitempty"`
+	// 用户信息
+	User *UserDto `json:"user,omitempty" xml:"user,omitempty"`
 }

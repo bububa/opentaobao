@@ -8,6 +8,8 @@ type AppraiseOrderSynDto struct {
 	OrderStatus string `json:"order_status,omitempty" xml:"order_status,omitempty"`
 	// 见order_status字段说明
 	OrderSubStatus string `json:"order_sub_status,omitempty" xml:"order_sub_status,omitempty"`
+	// 3.0 必填
+	TriggerEvent string `json:"trigger_event,omitempty" xml:"trigger_event,omitempty"`
 	// 根据订单状态不同，传递不同的内容
 	Attribute *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
 }

@@ -7,15 +7,15 @@
 			"required": true
 		},
 		{
-			"name": "xml",
-			"type": "String",
-			"description": "子属性的schema xml",
-			"required": true
-		},
-		{
 			"name": "prop_id",
 			"type": "Number",
 			"description": "属性id",
+			"required": true
+		},
+		{
+			"name": "xml",
+			"type": "String",
+			"description": "子属性的schema xml",
 			"required": true
 		}
 	],

@@ -1,0 +1,137 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "本地门店id，长度32位",
+					"required": true
+				},
+				{
+					"name": "ticket_code",
+					"type": "String",
+					"description": "券码code",
+					"required": true
+				}
+			],
+			"name": "consult_request",
+			"type": "TicketConsultTopRequest",
+			"description": "券码咨询请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "处理结果是否成功，true为成功，false为失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码，success=false时有效"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_phone",
+							"type": "String",
+							"description": "脱敏手机号，例：*******4139。如果商品类目未开放电话组件，不返回数据"
+						},
+						{
+							"name": "available_quantity",
+							"type": "Number",
+							"description": "剩余可核销数量。团购举例：购买2份团购券，已核销了1份，该属性返回1；次卡举例：购买了3次卡，已核销1次，该属性返回2"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ticket_id",
+									"type": "String",
+									"description": "凭证ID。核销接口入参"
+								},
+								{
+									"name": "ticket_name",
+									"type": "String",
+									"description": "下单时的商品名称"
+								},
+								{
+									"name": "total_amount",
+									"type": "Number",
+									"description": "凭证金额，单位分。如果是团购，为单份凭证的金额；如果是N次次卡，则为N次卡的总金额，N 对应quantity值"
+								},
+								{
+									"name": "real_amount",
+									"type": "Number",
+									"description": "商户实收金额（抽佣前），单位分。团购和次卡场景，解释同total_amount。公式：凭证金额-实收金额=商户优惠金额"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "团购场景，固定为1，购买多份与此值无关；次卡场景，例如3次卡，该属性返回3"
+								},
+								{
+									"name": "ticket_code",
+									"type": "String",
+									"description": "凭证券码。仅入参券码对应的凭证会返回该值，其余凭证此属性无返回值"
+								}
+							],
+							"name": "ticket_info_list",
+							"type": "TicketInfo[]",
+							"description": "券码所属订单下，可使用的凭证（同商品）列表"
+						},
+						{
+							"name": "buyer_id",
+							"type": "String",
+							"description": "混淆后的用户uid。查询订单接口用"
+						},
+						{
+							"name": "alsc_order_no",
+							"type": "String",
+							"description": "本地订单-主单号。长度：19位"
+						},
+						{
+							"name": "alsc_sub_order_no",
+							"type": "String",
+							"description": "本地订单-子单号。长度：19位"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "口碑商品id"
+						},
+						{
+							"name": "out_item_id",
+							"type": "String",
+							"description": "外部商品id"
+						}
+					],
+					"name": "value",
+					"type": "TicketConsultResponse",
+					"description": "结构体"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误文案，success=false时有效"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.alsc.daodian.ticket.consult",
+	"apiChineseName": "券码预览",
+	"description": "券码预览",
+	"id": 64157
+}

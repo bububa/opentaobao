@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "derby_method",
+			"type": "String",
+			"description": "回调方法",
+			"required": true
+		},
+		{
+			"name": "derby_body",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.change.callback",
+	"apiChineseName": "v5.0德比付费会员卡通知",
+	"description": "v5.0德比付费会员卡通知",
+	"id": 64499
+}

@@ -29,12 +29,15 @@ func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMjMosFundCreatebillAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMjMosFundCreatebillAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBillDto is BillDto Setter

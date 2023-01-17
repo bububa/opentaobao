@@ -31,12 +31,15 @@ func (r AlitripTripvpAgentOrderIssueAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripTripvpAgentOrderIssueAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripTripvpAgentOrderIssueAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripTripvpAgentOrderIssueAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAgentId is AgentId Setter

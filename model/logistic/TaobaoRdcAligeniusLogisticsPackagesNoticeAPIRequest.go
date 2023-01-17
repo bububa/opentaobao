@@ -9,7 +9,7 @@ import (
 // TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest 物流多包裹通知 API请求
 // taobao.rdc.aligenius.logistics.packages.notice
 //
-// 订单发货之后，如果订单拆包、补发、赠品等场景，需要将多余包裹信息触达消费者
+// 订单发货之后，如果订单拆包、补发、赠品等场景，需要将多余包裹信息触达消费者, 大促会降级
 type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest struct {
 	model.Params
 	// 请求入参
@@ -29,12 +29,15 @@ func (r TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoRdcAligeniusLogisticsPackagesNoticeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamLogisticsNoticeDTO is ParamLogisticsNoticeDTO Setter

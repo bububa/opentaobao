@@ -14,12 +14,12 @@ type TaobaoOmniorderAllocatedinfoSyncAPIRequest struct {
 	model.Params
 	// 门店的分单列表
 	_subOrderList []StoreAllocatedResult
+	// 跟踪Id
+	_traceId string
 	// 分单状态，如： 等待中(Waiting)，已分单(Allocated)，分单失败(AllocateFail)
 	_status string
 	// 分单结果消息, 如果status为AllocateFail, 则表示失败的理由.
 	_message string
-	// 跟踪Id
-	_traceId string
 	// 淘宝交易主订单ID
 	_tid int64
 	// 1231243213213
@@ -39,12 +39,15 @@ func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSubOrderList is SubOrderList Setter
@@ -58,6 +61,19 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetSubOrderList(_subOrderLi
 // GetSubOrderList SubOrderList Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetSubOrderList() []StoreAllocatedResult {
 	return r._subOrderList
+}
+
+// SetTraceId is TraceId Setter
+// 跟踪Id
+func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTraceId(_traceId string) error {
+	r._traceId = _traceId
+	r.Set("trace_id", _traceId)
+	return nil
+}
+
+// GetTraceId TraceId Getter
+func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetTraceId() string {
+	return r._traceId
 }
 
 // SetStatus is Status Setter
@@ -84,19 +100,6 @@ func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetMessage(_message string)
 // GetMessage Message Getter
 func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetMessage() string {
 	return r._message
-}
-
-// SetTraceId is TraceId Setter
-// 跟踪Id
-func (r *TaobaoOmniorderAllocatedinfoSyncAPIRequest) SetTraceId(_traceId string) error {
-	r._traceId = _traceId
-	r.Set("trace_id", _traceId)
-	return nil
-}
-
-// GetTraceId TraceId Getter
-func (r TaobaoOmniorderAllocatedinfoSyncAPIRequest) GetTraceId() string {
-	return r._traceId
 }
 
 // SetTid is Tid Setter

@@ -1,0 +1,355 @@
+{
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values"
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "叶子类目ID，如果只传cid，则只返回一级属性,通过taobao.itemcats.get获得叶子类目ID",
+			"required": true
+		},
+		{
+			"name": "pid",
+			"type": "Number",
+			"description": "属性id (取类目属性时，传pid，不用同时传PID和parent_pid)"
+		},
+		{
+			"name": "parent_pid",
+			"type": "Number",
+			"description": "父属性ID"
+		},
+		{
+			"name": "is_key_prop",
+			"type": "Boolean",
+			"description": "是否关键属性。可选值:true(是),false(否)"
+		},
+		{
+			"name": "is_sale_prop",
+			"type": "Boolean",
+			"description": "是否销售属性。可选值:true(是),false(否)"
+		},
+		{
+			"name": "is_color_prop",
+			"type": "Boolean",
+			"description": "是否颜色属性。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)"
+		},
+		{
+			"name": "is_enum_prop",
+			"type": "Boolean",
+			"description": "是否枚举属性。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)。如果返回true，属性值是下拉框选择输入，如果返回false，属性值是用户自行手工输入。"
+		},
+		{
+			"name": "is_input_prop",
+			"type": "Boolean",
+			"description": "在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否) (删除的属性不会匹配和返回这个条件)"
+		},
+		{
+			"name": "is_item_prop",
+			"type": "Boolean",
+			"description": "是否商品属性，这个属性只能放于发布商品时使用。可选值:true(是),false(否)"
+		},
+		{
+			"name": "child_path",
+			"type": "String",
+			"description": "类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "获取类目的类型：1代表集市、2代表天猫"
+		},
+		{
+			"name": "attr_keys",
+			"type": "String[]",
+			"description": "属性的Key，支持多条，以“,”分隔",
+			"maxListSize": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "last_modified",
+			"type": "Date",
+			"description": "最近修改时间(只有取全量或增量的时候会返回该字段)。格式:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"subParams": [
+				{
+					"name": "pid",
+					"type": "Number",
+					"description": "属性 ID 例：品牌的PID=20000"
+				},
+				{
+					"name": "parent_pid",
+					"type": "Number",
+					"description": "上级属性ID"
+				},
+				{
+					"name": "parent_vid",
+					"type": "Number",
+					"description": "上级属性值ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "属性名"
+				},
+				{
+					"name": "is_key_prop",
+					"type": "Boolean",
+					"description": "是否关键属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "is_sale_prop",
+					"type": "Boolean",
+					"description": "是否销售属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "is_color_prop",
+					"type": "Boolean",
+					"description": "是否颜色属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "is_enum_prop",
+					"type": "Boolean",
+					"description": "是否是可枚举属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "is_input_prop",
+					"type": "Boolean",
+					"description": "在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。\u003cb\u003e对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。\u003c/b\u003e"
+				},
+				{
+					"name": "is_item_prop",
+					"type": "Boolean",
+					"description": "是否商品属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "must",
+					"type": "Boolean",
+					"description": "发布产品或商品时是否为必选属性。可选值:true(是),false(否)"
+				},
+				{
+					"name": "multi",
+					"type": "Boolean",
+					"description": "发布产品或商品时是否可以多选。可选值:true(是),false(否)"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态。可选值:normal(正常),deleted(删除)"
+				},
+				{
+					"name": "child_template",
+					"type": "String",
+					"description": "子属性的模板（卖家自行输入属性时需要用到）"
+				},
+				{
+					"name": "sort_order",
+					"type": "Number",
+					"description": "排列序号。取值范围:大于零的整排列序号。取值范围:大于零的整数"
+				},
+				{
+					"name": "is_allow_alias",
+					"type": "Boolean",
+					"description": "是否允许别名。可选值：true（是），false（否）"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "类目ID"
+						},
+						{
+							"name": "pid",
+							"type": "Number",
+							"description": "属性 ID"
+						},
+						{
+							"name": "vid",
+							"type": "Number",
+							"description": "属性值ID"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "属性值"
+						},
+						{
+							"name": "prop_name",
+							"type": "String",
+							"description": "属性名"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
+						},
+						{
+							"name": "name_alias",
+							"type": "String",
+							"description": "属性值别名"
+						},
+						{
+							"name": "is_parent",
+							"type": "Boolean",
+							"description": "是否为父类目属性"
+						},
+						{
+							"name": "sort_order",
+							"type": "Number",
+							"description": "排列序号。取值范围:大于零的整数"
+						},
+						{
+							"subParams": [
+								{
+									"name": "attr_value",
+									"type": "String",
+									"description": "属性值"
+								},
+								{
+									"name": "attr_key",
+									"type": "String",
+									"description": "属性键"
+								}
+							],
+							"name": "features",
+							"type": "Feature[]",
+							"description": "属性值feature"
+						}
+					],
+					"name": "prop_values",
+					"type": "PropValue[]",
+					"description": "属性值"
+				},
+				{
+					"subParams": [
+						{
+							"name": "attr_key",
+							"type": "String",
+							"description": "属性键"
+						},
+						{
+							"name": "attr_value",
+							"type": "String",
+							"description": "属性值"
+						}
+					],
+					"name": "features",
+					"type": "Feature[]",
+					"description": "属性的feature列表"
+				},
+				{
+					"name": "is_taosir",
+					"type": "Boolean",
+					"description": "是否度量衡属性项"
+				},
+				{
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "时间类型：0表示非时间，1表示时间点，2表示时间范围"
+						},
+						{
+							"name": "precision",
+							"type": "Number",
+							"description": "数值小数点精度"
+						},
+						{
+							"subParams": [
+								{
+									"name": "attr_key",
+									"type": "String",
+									"description": "属性键"
+								},
+								{
+									"name": "attr_value",
+									"type": "String",
+									"description": "属性值"
+								}
+							],
+							"name": "std_unit_list",
+							"type": "StdUnit[]",
+							"description": "卖家可选单位List\u003c单位id，单位名\u003e"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "0 - 类型为label元素，只用于展示，不用于组装value_name；\u003cbr/\u003e1 - 类型为label元素，用于展示，用于组装value_name；\u003cbr/\u003e2 - 类型为输入狂元素，主要用于卖家输入数据. 卖家填写完后需要重新设置该元素的文本数据；"
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "显示文本"
+								},
+								{
+									"name": "is_show_label",
+									"type": "Boolean",
+									"description": "是否只用于显示的文本元素"
+								},
+								{
+									"name": "is_label",
+									"type": "Boolean",
+									"description": "是否文本元素，用于显示也用于组装value_name，比如：操作符"
+								},
+								{
+									"name": "is_input",
+									"type": "Boolean",
+									"description": "是否输入框"
+								}
+							],
+							"name": "expr_el_list",
+							"type": "ExprEl[]",
+							"description": "表达式元素list"
+						}
+					],
+					"name": "taosir_do",
+					"type": "ItemTaosirDO",
+					"description": "度量衡相关信息"
+				},
+				{
+					"name": "is_material",
+					"type": "Boolean",
+					"description": "是否是材质 属性项"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "need_content_number",
+									"type": "Boolean",
+									"description": "当前材质值，是否需要填写含量值。比如：棉 是需要填写含量值，而牛皮 是不需要填写含量值的"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "材质值名称"
+								}
+							],
+							"name": "materials",
+							"type": "ItemMateriaValueDO[]",
+							"description": "材质值列表"
+						}
+					],
+					"name": "material_do",
+					"type": "ItemMaterialProp",
+					"description": "材质属性信息"
+				}
+			],
+			"name": "item_props",
+			"type": "ItemProp []",
+			"description": "商品属性"
+		}
+	],
+	"name": "taobao.itemprops.get",
+	"apiChineseName": "获取标准商品类目属性",
+	"description": "通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性值prop_values。",
+	"id": 121
+}

@@ -1,6 +1,20 @@
 {
 	"requestParams": [
 		{
+			"name": "biz_order_ids",
+			"type": "String[]",
+			"description": "子订单号列表。最多100个",
+			"maxListSize": 100,
+			"required": true
+		},
+		{
+			"name": "seqs",
+			"type": "String[]",
+			"description": "周期序号。必须与子订单列表对应",
+			"maxListSize": 100,
+			"required": true
+		},
+		{
 			"name": "worker_mobile",
 			"type": "Number",
 			"description": "工人手机号",
@@ -17,20 +31,6 @@
 			"type": "String",
 			"description": "调用来源",
 			"required": true
-		},
-		{
-			"name": "biz_order_ids",
-			"type": "Number[]",
-			"description": "子订单号列表。最多100个",
-			"maxListSize": 100,
-			"required": true
-		},
-		{
-			"name": "seqs",
-			"type": "Number[]",
-			"description": "周期序号。必须与子订单列表对应",
-			"maxListSize": 100,
-			"required": true
 		}
 	],
 	"responseParams": [
@@ -39,38 +39,32 @@
 				{
 					"name": "error_code",
 					"type": "Number",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
-					"description": "gmtCreate",
-					"required": true
+					"description": "gmtCreate"
 				},
 				{
 					"name": "gmt_modified",
 					"type": "Date",
-					"description": "gmtModified",
-					"required": true
+					"description": "gmtModified"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "values",
 					"type": "Number[]",
-					"description": "任务id列表",
-					"required": true
+					"description": "任务id列表"
 				}
 			],
 			"name": "result",

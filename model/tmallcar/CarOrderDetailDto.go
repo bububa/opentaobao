@@ -26,4 +26,8 @@ type CarOrderDetailDto struct {
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 支付单
 	PayOrder *CarPayOrderDto `json:"pay_order,omitempty" xml:"pay_order,omitempty"`
+	// 订单sku信息
+	Sku *TradeItemSkuDto `json:"sku,omitempty" xml:"sku,omitempty"`
+	// 订单商品信息（子订单有效）
+	Item *TradeItemDto `json:"item,omitempty" xml:"item,omitempty"`
 }

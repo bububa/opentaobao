@@ -14,14 +14,14 @@ type MiniAppEntityTemplateDto struct {
 	AppIcon string `json:"app_icon,omitempty" xml:"app_icon,omitempty"`
 	// 线上正式版本的链接，所有消费者可访问。
 	OnlineUrl string `json:"online_url,omitempty" xml:"online_url,omitempty"`
+	// 应用简称
+	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
 	// 应用id
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// 线上版本
-	OnlineVersion string `json:"online_version,omitempty" xml:"online_version,omitempty"`
 	// 线上码
 	OnlineCode string `json:"online_code,omitempty" xml:"online_code,omitempty"`
-	// 小部件别名
-	AppAlias string `json:"app_alias,omitempty" xml:"app_alias,omitempty"`
+	// 线上版本
+	OnlineVersion string `json:"online_version,omitempty" xml:"online_version,omitempty"`
 	// 预览码
 	PreViewUrl string `json:"pre_view_url,omitempty" xml:"pre_view_url,omitempty"`
 	// 小部件版本

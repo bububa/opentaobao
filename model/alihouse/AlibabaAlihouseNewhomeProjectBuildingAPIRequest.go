@@ -6,10 +6,10 @@ import (
 	"github.com/bububa/opentaobao/model"
 )
 
-// AlibabaAlihouseNewhomeProjectBuildingAPIRequest 新房楼栋同步 API请求
+// AlibabaAlihouseNewhomeProjectBuildingAPIRequest 楼栋同步 API请求
 // alibaba.alihouse.newhome.project.building
 //
-// 新房楼栋同步
+// 楼栋同步
 type AlibabaAlihouseNewhomeProjectBuildingAPIRequest struct {
 	model.Params
 	// 楼栋请求实体
@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectBuildingAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBuildingDto is BuildingDto Setter

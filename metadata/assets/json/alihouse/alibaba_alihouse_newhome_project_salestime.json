@@ -43,12 +43,17 @@
 						{
 							"name": "pre_sale_permit_id",
 							"type": "String",
-							"description": "预售证编号"
+							"description": "预售证外部id"
 						},
 						{
 							"name": "pre_sale_permit_time",
 							"type": "String",
 							"description": "预售时间"
+						},
+						{
+							"name": "pre_sale_permit_no",
+							"type": "String",
+							"description": "预售证编号"
 						}
 					],
 					"name": "pre_permit_d_t_o_list",
@@ -186,6 +191,138 @@
 					"name": "outer_store_id",
 					"type": "String",
 					"description": "外部项目店id"
+				},
+				{
+					"name": "developer_due_time",
+					"type": "String",
+					"description": "预计交房时间"
+				},
+				{
+					"name": "frozen_price",
+					"type": "String",
+					"description": "冻资金额"
+				},
+				{
+					"name": "frozen_bank",
+					"type": "String",
+					"description": "冻资银行"
+				},
+				{
+					"name": "public_plan",
+					"type": "String",
+					"description": "公示方案"
+				},
+				{
+					"subParams": [
+						{
+							"name": "has_existence_talent",
+							"type": "Number",
+							"description": "有无人才优惠 (0-无 1-有)"
+						},
+						{
+							"name": "has_shortlisted",
+							"type": "Number",
+							"description": "有无入围条件 (0-无 1-有)"
+						},
+						{
+							"name": "total_house_number",
+							"type": "Number",
+							"description": "全部房源套数"
+						},
+						{
+							"name": "talent_house_number",
+							"type": "Number",
+							"description": "人才房源套数"
+						},
+						{
+							"name": "no_room_house_number",
+							"type": "Number",
+							"description": "无房房源套数"
+						},
+						{
+							"name": "yes_room_house_number",
+							"type": "Number",
+							"description": "有房房源套数"
+						},
+						{
+							"name": "talent_shortlisted",
+							"type": "String",
+							"description": "人才入围条件"
+						},
+						{
+							"name": "no_room_shortlisted",
+							"type": "String",
+							"description": "无房入围条件"
+						},
+						{
+							"name": "yes_room_shortlisted",
+							"type": "String",
+							"description": "有房入围条件"
+						},
+						{
+							"name": "total_shortlisted_number",
+							"type": "Number",
+							"description": "全部入围人数"
+						},
+						{
+							"name": "talent_shortlisted_number",
+							"type": "Number",
+							"description": "人才入围人数"
+						},
+						{
+							"name": "no_room_shortlisted_number",
+							"type": "Number",
+							"description": "无房入围人数"
+						},
+						{
+							"name": "total_success_rate",
+							"type": "String",
+							"description": "总体中签率"
+						},
+						{
+							"name": "talent_success_rate",
+							"type": "String",
+							"description": "人才中签率"
+						},
+						{
+							"name": "no_room_success_rate",
+							"type": "String",
+							"description": "无房中签率"
+						},
+						{
+							"name": "yes_room_success_rate",
+							"type": "String",
+							"description": "有房中签率"
+						},
+						{
+							"name": "yes_room_shortlisted_number",
+							"type": "Number",
+							"description": "有房入围人数"
+						}
+					],
+					"name": "lottery_ratio_d_t_o",
+					"type": "LotteryRatioDTO",
+					"description": "摇号比例信息"
+				},
+				{
+					"name": "opening_layout_range",
+					"type": "String",
+					"description": "开盘户型范围"
+				},
+				{
+					"name": "layout_area_range",
+					"type": "String",
+					"description": "户型面积区间"
+				},
+				{
+					"name": "outer_tid_list",
+					"type": "String[]",
+					"description": "外部楼栋id列表"
+				},
+				{
+					"name": "opening_building_range",
+					"type": "String",
+					"description": "开盘楼栋范围"
 				}
 			],
 			"name": "project_sales_time_dto",

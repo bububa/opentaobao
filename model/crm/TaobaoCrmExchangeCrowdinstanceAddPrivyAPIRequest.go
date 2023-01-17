@@ -12,10 +12,10 @@ import (
 // 向活动人群实例中增加买家
 type TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest struct {
 	model.Params
-	// 操作原因
-	_reason string
 	// ouid
 	_ouid string
+	// 操作原因
+	_reason string
 	// 人群实例ID
 	_crowdInstanceId int64
 }
@@ -33,25 +33,15 @@ func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetReason is Reason Setter
-// 操作原因
-func (r *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) SetReason(_reason string) error {
-	r._reason = _reason
-	r.Set("reason", _reason)
-	return nil
-}
-
-// GetReason Reason Getter
-func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetReason() string {
-	return r._reason
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuid is Ouid Setter
@@ -65,6 +55,19 @@ func (r *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) SetOuid(_ouid string)
 // GetOuid Ouid Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetOuid() string {
 	return r._ouid
+}
+
+// SetReason is Reason Setter
+// 操作原因
+func (r *TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) SetReason(_reason string) error {
+	r._reason = _reason
+	r.Set("reason", _reason)
+	return nil
+}
+
+// GetReason Reason Getter
+func (r TaobaoCrmExchangeCrowdinstanceAddPrivyAPIRequest) GetReason() string {
+	return r._reason
 }
 
 // SetCrowdInstanceId is CrowdInstanceId Setter

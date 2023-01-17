@@ -39,12 +39,15 @@ func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthTracecodesellerCodeActiveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFileName is FileName Setter

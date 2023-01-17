@@ -29,12 +29,15 @@ func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpKeywordMatchedProductsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAdKeyword is AdKeyword Setter

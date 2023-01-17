@@ -29,12 +29,15 @@ func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetApiMethodNa
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAilabsTmallgenieAuthDeviceValidauthcodeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAuthcode is Authcode Setter

@@ -29,12 +29,15 @@ func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaDamaiMaitixEticketDistributionQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam is Param Setter

@@ -9,19 +9,19 @@
 		},
 		{
 			"name": "aids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "需要获取的科目ID",
 			"maxListSize": 20
 		}
 	],
 	"responseParams": [
 		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "返回记录行数"
+		},
+		{
 			"subParams": [
-				{
-					"name": "related_order",
-					"type": "Number",
-					"description": "是否订单相关:0-订单无关 1-订单相关"
-				},
 				{
 					"name": "gmt_create",
 					"type": "Date",
@@ -56,16 +56,16 @@
 					"name": "account_name",
 					"type": "String",
 					"description": "费用科目名称"
+				},
+				{
+					"name": "related_order",
+					"type": "Number",
+					"description": "是否订单相关:0-订单无关 1-订单相关"
 				}
 			],
 			"name": "accounts",
 			"type": "TopAccountDto []",
 			"description": "返回的科目信息"
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "返回记录行数"
 		}
 	],
 	"name": "taobao.tae.accounts.get",

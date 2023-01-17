@@ -5,10 +5,10 @@ import (
 	"github.com/bububa/opentaobao/model/alihouse"
 )
 
-// AlibabaAlihouseNewhomeProjectTradeitem 新房品同步
+// AlibabaAlihouseNewhomeProjectTradeitem 新二品同步
 // alibaba.alihouse.newhome.project.tradeitem
 //
-// 新房品同步
+// 新二品同步
 func AlibabaAlihouseNewhomeProjectTradeitem(clt *core.SDKClient, req *alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIRequest, session string) (*alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIResponse, error) {
 	var resp alihouse.AlibabaAlihouseNewhomeProjectTradeitemAPIResponse
 	err := clt.Post(req, &resp, session)

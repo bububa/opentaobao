@@ -14,52 +14,44 @@
 						{
 							"name": "custom_area_id",
 							"type": "Number",
-							"description": "自定义区id",
-							"required": true
+							"description": "自定义区id"
 						},
 						{
 							"name": "custom_area_url",
 							"type": "String",
-							"description": "自定义区内容的URL",
-							"required": true
+							"description": "自定义区内容的URL"
 						},
 						{
 							"subParams": [
 								{
 									"name": "key_name",
 									"type": "String",
-									"description": "动态key的名称",
-									"required": true
+									"description": "动态key的名称"
 								}
 							],
 							"name": "keys",
 							"type": "KeyResult[]",
-							"description": "keys",
-							"required": true
+							"description": "keys"
 						}
 					],
 					"name": "data",
 					"type": "CustomAreaSingleResult",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
 			],
 			"name": "result",

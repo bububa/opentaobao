@@ -42,12 +42,15 @@ func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetServiceStore is ServiceStore Setter

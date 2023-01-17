@@ -35,12 +35,15 @@ func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCloudpushNoticeAndroidAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSummary is Summary Setter

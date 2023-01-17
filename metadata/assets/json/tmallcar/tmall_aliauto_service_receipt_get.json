@@ -13,136 +13,114 @@
 				{
 					"name": "code",
 					"type": "String",
-					"description": "返回的执行状态吗",
-					"required": true
+					"description": "返回的执行状态吗"
 				},
 				{
 					"subParams": [
 						{
 							"name": "address",
 							"type": "String",
-							"description": "具体地址",
-							"required": true
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "市",
-							"required": true
-						},
-						{
-							"name": "county",
-							"type": "String",
-							"description": "区",
-							"required": true
-						},
-						{
-							"name": "mobile",
-							"type": "String",
-							"description": "手机号",
-							"required": true
-						},
-						{
-							"name": "province",
-							"type": "String",
-							"description": "省",
-							"required": true
-						},
-						{
-							"name": "store_name",
-							"type": "String",
-							"description": "店铺名称",
-							"required": true
-						},
-						{
-							"name": "town",
-							"type": "String",
-							"description": "古荡街道",
-							"required": true
-						},
-						{
-							"name": "user_name",
-							"type": "String",
-							"description": "消费者名称",
-							"required": true
-						},
-						{
-							"name": "receipt_id",
-							"type": "Number",
-							"description": "工单号",
-							"required": true
+							"description": "具体地址"
 						},
 						{
 							"name": "brand",
 							"type": "String",
-							"description": "品牌",
-							"required": true
+							"description": "品牌"
 						},
 						{
 							"name": "choose_problems",
 							"type": "String",
-							"description": "选择问题列表，多个问题以英文逗号分隔",
-							"required": true
-						},
-						{
-							"name": "problem_desc_pics",
-							"type": "String",
-							"description": "问题描述图片列表，多个图片以英文逗号分隔",
-							"required": true
-						},
-						{
-							"name": "remark",
-							"type": "String",
-							"description": "用户备注",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "工单状态： SUBMIT:预约成功，待服务 CANCEL:已取消 FINISH:服务已完成",
-							"required": true
-						},
-						{
-							"name": "extension",
-							"type": "Json",
-							"description": "工单附加信息",
-							"required": true
+							"description": "选择问题列表，多个问题以英文逗号分隔"
 						},
 						{
 							"name": "chosen_outer_store_id",
 							"type": "String",
-							"description": "选定的门店ID",
-							"required": true
+							"description": "选定的门店ID"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "county",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "extension",
+							"type": "String",
+							"description": "工单附加信息"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "problem_desc_pics",
+							"type": "String",
+							"description": "问题描述图片列表，多个图片以英文逗号分隔"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "receipt_id",
+							"type": "Number",
+							"description": "工单号"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "用户备注"
 						},
 						{
 							"name": "service_type",
 							"type": "String",
-							"description": "DOOR2DOOR:上门服务，INSTORE:到店服务",
-							"required": true
+							"description": "DOOR2DOOR:上门服务，INSTORE:到店服务"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "工单状态： SUBMIT:预约成功，待服务 CANCEL:已取消 FINISH:服务已完成"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "古荡街道"
 						},
 						{
 							"name": "type",
 							"type": "String",
-							"description": "GUARANTEE:维修，INSTALL:安装",
-							"required": true
+							"description": "GUARANTEE:维修，INSTALL:安装"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "消费者名称"
 						}
 					],
 					"name": "data",
 					"type": "ServiceReceiptInfo4IsvDto",
-					"description": "返回的数据实体",
-					"required": true
+					"description": "返回的数据实体"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
+					"description": "是否执行成功"
 				}
 			],
 			"name": "result",

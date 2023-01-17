@@ -12,7 +12,7 @@ import (
 // 单品券高效转链API
 type TaobaoTbkPrivilegeGetAPIRequest struct {
 	model.Params
-	// 渠道关系ID，仅适用于渠道推广场景
+	// 渠道关系ID，仅适用于渠道推广场景（如是主站选品推广场景，必须入参该字段，且bizSceneId字段需入参2-消费者比价场景，否则二次转链失败）
 	_relationId string
 	// 会员运营ID
 	_specialId string
@@ -22,12 +22,16 @@ type TaobaoTbkPrivilegeGetAPIRequest struct {
 	_xid string
 	// 商品ID
 	_itemId string
+	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+	_promotionType string
+	// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
+	_bizSceneId string
 	// 推广位id，mm_xx_xx_xx pid三段式中的第三段
 	_adzoneId int64
-	// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
-	_siteId int64
 	// 1：PC，2：无线，默认：１
 	_platform int64
+	// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
+	_siteId int64
 	// 会员人群ID，用于统计人群推广效果
 	_ucrowdId int64
 	// 是否获取前N件佣金 ,0-否，1-是,其他值-否
@@ -49,16 +53,19 @@ func (r TaobaoTbkPrivilegeGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkPrivilegeGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRelationId is RelationId Setter
-// 渠道关系ID，仅适用于渠道推广场景
+// 渠道关系ID，仅适用于渠道推广场景（如是主站选品推广场景，必须入参该字段，且bizSceneId字段需入参2-消费者比价场景，否则二次转链失败）
 func (r *TaobaoTbkPrivilegeGetAPIRequest) SetRelationId(_relationId string) error {
 	r._relationId = _relationId
 	r.Set("relation_id", _relationId)
@@ -122,6 +129,32 @@ func (r TaobaoTbkPrivilegeGetAPIRequest) GetItemId() string {
 	return r._itemId
 }
 
+// SetPromotionType is PromotionType Setter
+// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+func (r *TaobaoTbkPrivilegeGetAPIRequest) SetPromotionType(_promotionType string) error {
+	r._promotionType = _promotionType
+	r.Set("promotion_type", _promotionType)
+	return nil
+}
+
+// GetPromotionType PromotionType Getter
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetPromotionType() string {
+	return r._promotionType
+}
+
+// SetBizSceneId is BizSceneId Setter
+// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
+func (r *TaobaoTbkPrivilegeGetAPIRequest) SetBizSceneId(_bizSceneId string) error {
+	r._bizSceneId = _bizSceneId
+	r.Set("biz_scene_id", _bizSceneId)
+	return nil
+}
+
+// GetBizSceneId BizSceneId Getter
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetBizSceneId() string {
+	return r._bizSceneId
+}
+
 // SetAdzoneId is AdzoneId Setter
 // 推广位id，mm_xx_xx_xx pid三段式中的第三段
 func (r *TaobaoTbkPrivilegeGetAPIRequest) SetAdzoneId(_adzoneId int64) error {
@@ -135,19 +168,6 @@ func (r TaobaoTbkPrivilegeGetAPIRequest) GetAdzoneId() int64 {
 	return r._adzoneId
 }
 
-// SetSiteId is SiteId Setter
-// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
-func (r *TaobaoTbkPrivilegeGetAPIRequest) SetSiteId(_siteId int64) error {
-	r._siteId = _siteId
-	r.Set("site_id", _siteId)
-	return nil
-}
-
-// GetSiteId SiteId Getter
-func (r TaobaoTbkPrivilegeGetAPIRequest) GetSiteId() int64 {
-	return r._siteId
-}
-
 // SetPlatform is Platform Setter
 // 1：PC，2：无线，默认：１
 func (r *TaobaoTbkPrivilegeGetAPIRequest) SetPlatform(_platform int64) error {
@@ -159,6 +179,19 @@ func (r *TaobaoTbkPrivilegeGetAPIRequest) SetPlatform(_platform int64) error {
 // GetPlatform Platform Getter
 func (r TaobaoTbkPrivilegeGetAPIRequest) GetPlatform() int64 {
 	return r._platform
+}
+
+// SetSiteId is SiteId Setter
+// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
+func (r *TaobaoTbkPrivilegeGetAPIRequest) SetSiteId(_siteId int64) error {
+	r._siteId = _siteId
+	r.Set("site_id", _siteId)
+	return nil
+}
+
+// GetSiteId SiteId Getter
+func (r TaobaoTbkPrivilegeGetAPIRequest) GetSiteId() int64 {
+	return r._siteId
 }
 
 // SetUcrowdId is UcrowdId Setter

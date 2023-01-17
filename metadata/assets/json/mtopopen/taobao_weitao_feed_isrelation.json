@@ -1,15 +1,15 @@
 {
 	"requestParams": [
 		{
-			"name": "fans_nick",
-			"type": "String",
-			"description": "要查询的粉丝的淘宝昵称",
-			"required": true
-		},
-		{
 			"name": "seller_nick",
 			"type": "String",
 			"description": "要查询的公共账号的淘宝昵称",
+			"required": true
+		},
+		{
+			"name": "fans_nick",
+			"type": "String",
+			"description": "要查询的粉丝的淘宝昵称",
 			"required": true
 		}
 	],

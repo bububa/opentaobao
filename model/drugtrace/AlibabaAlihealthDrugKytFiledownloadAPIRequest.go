@@ -35,12 +35,15 @@ func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugKytFiledownloadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefUserId is RefUserId Setter

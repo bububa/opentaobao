@@ -35,12 +35,15 @@ func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlisportsPassportOauthTokenvalidateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetToken is Token Setter

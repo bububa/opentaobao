@@ -41,12 +41,15 @@ func (r AlibabaInteractActivityApplyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractActivityApplyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaInteractActivityApplyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaInteractActivityApplyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBenefitType is BenefitType Setter

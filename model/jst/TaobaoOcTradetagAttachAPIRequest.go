@@ -37,12 +37,15 @@ func (r TaobaoOcTradetagAttachAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOcTradetagAttachAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOcTradetagAttachAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOcTradetagAttachAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTagName is TagName Setter

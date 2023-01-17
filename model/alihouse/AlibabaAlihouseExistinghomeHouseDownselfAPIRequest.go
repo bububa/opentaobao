@@ -22,6 +22,8 @@ type AlibabaAlihouseExistinghomeHouseDownselfAPIRequest struct {
 	_businessType int64
 	// 是否异步，0同步，1异步
 	_isAsync int64
+	// ms级时间戳
+	_etcVersion int64
 }
 
 // NewAlibabaAlihouseExistinghomeHouseDownselfRequest 初始化AlibabaAlihouseExistinghomeHouseDownselfAPIRequest对象
@@ -37,12 +39,15 @@ func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCommunityOuterId is CommunityOuterId Setter
@@ -108,4 +113,17 @@ func (r *AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) SetIsAsync(_isAsync
 // GetIsAsync IsAsync Getter
 func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetIsAsync() int64 {
 	return r._isAsync
+}
+
+// SetEtcVersion is EtcVersion Setter
+// ms级时间戳
+func (r *AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) SetEtcVersion(_etcVersion int64) error {
+	r._etcVersion = _etcVersion
+	r.Set("etc_version", _etcVersion)
+	return nil
+}
+
+// GetEtcVersion EtcVersion Getter
+func (r AlibabaAlihouseExistinghomeHouseDownselfAPIRequest) GetEtcVersion() int64 {
+	return r._etcVersion
 }

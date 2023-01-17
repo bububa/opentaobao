@@ -77,7 +77,7 @@
 						{
 							"name": "stuff_status",
 							"type": "Number",
-							"description": "商品新旧程度, 值为0-100的整数，例如100代表全新，95代表95新"
+							"description": "商品新旧程度, 值为-1-100的整数，例如100代表全新，-1代表准新，95代表95新"
 						},
 						{
 							"name": "title",
@@ -309,7 +309,7 @@
 						{
 							"name": "sp_guarantee",
 							"type": "String",
-							"description": "商品服务标签，用逗号分隔  ||  1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证"
+							"description": "[废弃中]商品服务标签，用逗号分隔  ||  1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证"
 						},
 						{
 							"subParams": [
@@ -332,6 +332,23 @@
 							"name": "distribution_data",
 							"type": "IdleItemDistributionDO",
 							"description": "国际分销业务独有数据"
+						},
+						{
+							"subParams": [
+								{
+									"name": "support_sdr_policy",
+									"type": "Boolean",
+									"description": "是否支持七天无理由"
+								},
+								{
+									"name": "support_nfr_policy",
+									"type": "Boolean",
+									"description": "是否支持描述不符包邮退"
+								}
+							],
+							"name": "after_sales_data",
+							"type": "IdleItemApiAfterSalesDO",
+							"description": "售后服务信息"
 						}
 					],
 					"name": "data",

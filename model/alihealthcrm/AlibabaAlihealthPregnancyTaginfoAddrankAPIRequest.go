@@ -31,12 +31,15 @@ func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthPregnancyTaginfoAddrankAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTagCode is TagCode Setter

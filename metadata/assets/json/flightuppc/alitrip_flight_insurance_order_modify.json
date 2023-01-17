@@ -1,0 +1,114 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ticket_price",
+									"type": "String",
+									"description": "票价"
+								},
+								{
+									"name": "company_name",
+									"type": "String",
+									"description": "航司名称"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市"
+								},
+								{
+									"name": "policy_no",
+									"type": "String",
+									"description": "子保单号"
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "起飞时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "到达时间"
+								}
+							],
+							"name": "ins_order_segment",
+							"type": "InsOrderAirTicketSegmentDTO",
+							"description": "航段信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件编号"
+								},
+								{
+									"name": "cert_type",
+									"type": "Number",
+									"description": "证件类型"
+								},
+								{
+									"name": "cert_name",
+									"type": "String",
+									"description": "证件名字"
+								}
+							],
+							"name": "ins_person",
+							"type": "InsPersonDTO",
+							"description": "被保人"
+						}
+					],
+					"name": "insureds",
+					"type": "InsPersonAndAirSegmentDTO[]",
+					"description": "保险信息列表"
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "保险订单号"
+				}
+			],
+			"name": "ins_reverse_order_req",
+			"type": "InsReverseOrderReq",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_msg_for_client",
+			"type": "String",
+			"description": "错误信息（调用成功时该字段为空）"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.flight.insurance.order.modify",
+	"apiChineseName": "保险订单批改申请",
+	"description": "保险订单批改申请",
+	"id": 64919
+}

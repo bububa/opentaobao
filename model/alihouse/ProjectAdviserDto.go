@@ -4,6 +4,8 @@ package alihouse
 type ProjectAdviserDto struct {
 	// 中文标签
 	Tags []string `json:"tags,omitempty" xml:"tags>string,omitempty"`
+	// 1-区域认证小B
+	CertificationServices []string `json:"certification_services,omitempty" xml:"certification_services>string,omitempty"`
 	// 外部公司ID
 	OuterCompanyId string `json:"outer_company_id,omitempty" xml:"outer_company_id,omitempty"`
 	// 姓名
@@ -54,6 +56,10 @@ type ProjectAdviserDto struct {
 	Profession string `json:"profession,omitempty" xml:"profession,omitempty"`
 	// 从业资格备案信息地址
 	AgentEmployNumberUrl string `json:"agent_employ_number_url,omitempty" xml:"agent_employ_number_url,omitempty"`
+	// 身份标识
+	Identity string `json:"identity,omitempty" xml:"identity,omitempty"`
+	// 外部门店ID
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 门店名称
 	ShopName string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
 	// 公司简称
@@ -82,7 +88,7 @@ type ProjectAdviserDto struct {
 	BrokerAttach *ProjectAdviserAttachDto `json:"broker_attach,omitempty" xml:"broker_attach,omitempty"`
 	// 经纪人教育水平
 	Education int64 `json:"education,omitempty" xml:"education,omitempty"`
-	// 经纪人类型，3-社区志愿者 4-客服，不填默认为经纪人
+	// 经纪人类型，3-社区志愿者 4-客服，5-委托管家（无忧卖房） 6-委托客服（无忧卖房） 7-公寓管家 8-交易员；不填默认为经纪人
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 诚信状态1-优秀 2-诚信
 	SincerityStatus int64 `json:"sincerity_status,omitempty" xml:"sincerity_status,omitempty"`
@@ -104,6 +110,10 @@ type ProjectAdviserDto struct {
 	IsReceiveCustomer int64 `json:"is_receive_customer,omitempty" xml:"is_receive_customer,omitempty"`
 	// 请求时间戳，精确到毫秒
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+	// 金牌顾问编辑的审核状态
+	EditAuditStatus int64 `json:"edit_audit_status,omitempty" xml:"edit_audit_status,omitempty"`
+	// 区域接待状态0-不可接待 1-可接待
+	RegionReceptiveStatus int64 `json:"region_receptive_status,omitempty" xml:"region_receptive_status,omitempty"`
 	// 是否拥有淘宝账号
 	HasTbAccount bool `json:"has_tb_account,omitempty" xml:"has_tb_account,omitempty"`
 }

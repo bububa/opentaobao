@@ -32,6 +32,11 @@
 							"type": "Number",
 							"description": "报名人数上限",
 							"required": true
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店ID"
 						}
 					],
 					"name": "case_field_activity_project_dto",

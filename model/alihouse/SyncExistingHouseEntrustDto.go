@@ -68,6 +68,8 @@ type SyncExistingHouseEntrustDto struct {
 	MerchantOpenId string `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
 	// 寄租收费模式	1、房东承担寄租服务费 2、租客承担门店服务费 3、租客承担门店服务费+房东承担寄租服务费
 	SendRentChargeModel string `json:"send_rent_charge_model,omitempty" xml:"send_rent_charge_model,omitempty"`
+	// 角色列表，英文逗号分隔，委托角色 1首付 2 实勘 3 委托
+	RoleList string `json:"role_list,omitempty" xml:"role_list,omitempty"`
 	// 核验码状态 0未通过 1通过
 	HouseCheckStatus int64 `json:"house_check_status,omitempty" xml:"house_check_status,omitempty"`
 	// 委托状态

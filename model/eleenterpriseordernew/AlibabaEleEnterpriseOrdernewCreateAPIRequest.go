@@ -57,12 +57,15 @@ func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEleEnterpriseOrdernewCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLongitude is Longitude Setter

@@ -29,12 +29,15 @@ func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthOutflowVisitinfoSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSyncVisitInfoRequest is SyncVisitInfoRequest Setter

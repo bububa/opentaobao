@@ -96,8 +96,12 @@ type TenderOrderInfoDto struct {
 	BuyerPayTime string `json:"buyer_pay_time,omitempty" xml:"buyer_pay_time,omitempty"`
 	// 商品id/质检报告ID
 	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// 返现金额，单位：分
+	CashFee string `json:"cash_fee,omitempty" xml:"cash_fee,omitempty"`
 	// 拍场订单Id
 	TenderOrderId int64 `json:"tender_order_id,omitempty" xml:"tender_order_id,omitempty"`
 	// 服务费(分)
 	ServiceFee int64 `json:"service_fee,omitempty" xml:"service_fee,omitempty"`
+	// 是否为返现订单
+	CashOrder bool `json:"cash_order,omitempty" xml:"cash_order,omitempty"`
 }

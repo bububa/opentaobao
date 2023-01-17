@@ -1,0 +1,291 @@
+{
+	"requestParams": [
+		{
+			"name": "last_max_shid",
+			"type": "Number",
+			"description": "上次查询最大shid",
+			"required": true
+		},
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市代码",
+			"required": true
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "每次查询限制条数",
+			"required": true
+		},
+		{
+			"name": "distributor_tid",
+			"type": "Number",
+			"description": "分销商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店id"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "标准酒店名称"
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址"
+								},
+								{
+									"name": "services",
+									"type": "String",
+									"description": "服务"
+								},
+								{
+									"name": "longtitude",
+									"type": "String",
+									"description": "经度"
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度"
+								},
+								{
+									"name": "rate_number",
+									"type": "Number",
+									"description": "评论数"
+								},
+								{
+									"name": "hotel_tel",
+									"type": "String",
+									"description": "酒店电话"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "酒店特色"
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市编码"
+								},
+								{
+									"name": "star",
+									"type": "String",
+									"description": "酒店档次"
+								},
+								{
+									"name": "opening_time",
+									"type": "String",
+									"description": "开业时间"
+								},
+								{
+									"name": "hotel_facilities",
+									"type": "String",
+									"description": "酒店设施"
+								},
+								{
+									"name": "brand",
+									"type": "String",
+									"description": "酒店品牌"
+								},
+								{
+									"name": "hotel_type",
+									"type": "Number",
+									"description": "酒店类型（0-标准酒店 1-标准客栈）"
+								},
+								{
+									"name": "pet_info",
+									"type": "String",
+									"description": "宠物信息"
+								},
+								{
+									"name": "decorate_time",
+									"type": "String",
+									"description": "装修时间"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述"
+								},
+								{
+									"name": "check_info",
+									"type": "String",
+									"description": "入住须知"
+								},
+								{
+									"name": "booking_info",
+									"type": "String",
+									"description": "预定须知"
+								},
+								{
+									"subParams": [
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "标准房型id"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "标准房型名称"
+										},
+										{
+											"name": "floor",
+											"type": "String",
+											"description": "楼层"
+										},
+										{
+											"name": "network_service",
+											"type": "String",
+											"description": "宽带服务（\"0\",\"有线上网(免费),\"1\",\"有线上网(无)\",\"2\",\"有线上网(收费)\",\"3\",\"有线上网(部分有且免费)\",\"4\",\"有线上网(部分有且收费)\"）"
+										},
+										{
+											"name": "facility",
+											"type": "String",
+											"description": "设施"
+										},
+										{
+											"name": "max_occupancy",
+											"type": "Number",
+											"description": "最大入住人数"
+										},
+										{
+											"name": "area",
+											"type": "String",
+											"description": "面积"
+										},
+										{
+											"name": "window_type",
+											"type": "String",
+											"description": "窗型（0, 无窗,1, 有窗;）"
+										},
+										{
+											"name": "bed_type",
+											"type": "String",
+											"description": "床型"
+										},
+										{
+											"name": "bed_type_desc",
+											"type": "String",
+											"description": "床型描述"
+										},
+										{
+											"name": "status",
+											"type": "Number",
+											"description": "状态（0 - 正常 ，-1 删除 ，-4 失效）"
+										},
+										{
+											"subParams": [
+												{
+													"subParams": [
+														{
+															"name": "desc",
+															"type": "String",
+															"description": "描述"
+														},
+														{
+															"name": "bed_type",
+															"type": "String",
+															"description": "床型0-大床1-双床2-单人床"
+														},
+														{
+															"name": "bed_num",
+															"type": "Number",
+															"description": "数量"
+														},
+														{
+															"name": "width",
+															"type": "String",
+															"description": "床宽"
+														},
+														{
+															"name": "length",
+															"type": "String",
+															"description": "床长"
+														}
+													],
+													"name": "bed_info_d_t_o_list",
+													"type": "BedInfoDTO[]",
+													"description": "床型详细信息"
+												}
+											],
+											"name": "bed_group_d_t_o_list",
+											"type": "BedGroupDTO[]",
+											"description": "床型 BedGroupDTO 之间是 或的关系，group 内部的 BedInfoDTO 是 与的关系"
+										}
+									],
+									"name": "std_room_type_list",
+									"type": "StdRoomType[]",
+									"description": "标准房型列表"
+								},
+								{
+									"name": "rate_score",
+									"type": "String",
+									"description": "评分"
+								}
+							],
+							"name": "data_list",
+							"type": "StdHotelVO[]",
+							"description": "数据列表"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "总记录数"
+						},
+						{
+							"name": "max_date_id",
+							"type": "Number",
+							"description": "上次返回最大酒店id"
+						}
+					],
+					"name": "data",
+					"type": "PageDTO",
+					"description": "数据对象"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功"
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResultApiDTO",
+			"description": "接口应答对象"
+		}
+	],
+	"name": "taobao.alitrip.travel.fsc.hotel.list.query",
+	"apiChineseName": "标准酒店信息查询-供销平台",
+	"description": "供销平台标准酒店信息列表查询",
+	"id": 58827
+}

@@ -91,6 +91,11 @@
 											"name": "create_time",
 											"type": "Date",
 											"description": "createTime"
+										},
+										{
+											"name": "outer_id_sku",
+											"type": "String",
+											"description": "商家对应的sku的外部编码"
 										}
 									],
 									"name": "order_d_t_os",

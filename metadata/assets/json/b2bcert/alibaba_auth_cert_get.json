@@ -18,27 +18,23 @@
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "data",
-					"required": true
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
 			],
 			"name": "result",

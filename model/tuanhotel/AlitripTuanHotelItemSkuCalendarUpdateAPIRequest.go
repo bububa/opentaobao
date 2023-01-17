@@ -33,12 +33,15 @@ func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripTuanHotelItemSkuCalendarUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemSkuList is ItemSkuList Setter

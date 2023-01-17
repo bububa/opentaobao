@@ -21,6 +21,61 @@
 					"description": "日期"
 				},
 				{
+					"name": "directtransaction",
+					"type": "String",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "String",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "String",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "String",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "String",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "String",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "directcarttotal",
+					"type": "String",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirectcarttotal",
+					"type": "String",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "carttotal",
+					"type": "String",
+					"description": "购物车总数"
+				},
+				{
 					"name": "impression",
 					"type": "String",
 					"description": "impression"
@@ -51,39 +106,9 @@
 					"description": "cpm"
 				},
 				{
-					"name": "roi",
-					"type": "String",
-					"description": "投入产出比"
-				},
-				{
-					"name": "coverage",
-					"type": "String",
-					"description": "点击转化率"
-				},
-				{
-					"name": "directtransactionshipping",
-					"type": "String",
-					"description": "直接成交笔数"
-				},
-				{
-					"name": "indirecttransactionshipping",
-					"type": "String",
-					"description": "间接成交笔数"
-				},
-				{
 					"name": "transactionshippingtotal",
 					"type": "String",
 					"description": "总成交笔数"
-				},
-				{
-					"name": "directtransaction",
-					"type": "String",
-					"description": "直接成交金额"
-				},
-				{
-					"name": "indirecttransaction",
-					"type": "String",
-					"description": "间接成交金额"
 				},
 				{
 					"name": "transactiontotal",
@@ -91,34 +116,14 @@
 					"description": "总成交金额"
 				},
 				{
-					"name": "favshoptotal",
-					"type": "String",
-					"description": "收藏店铺数"
-				},
-				{
-					"name": "favitemtotal",
-					"type": "String",
-					"description": "收藏宝贝数"
-				},
-				{
 					"name": "favtotal",
 					"type": "String",
 					"description": "总收藏数"
 				},
 				{
-					"name": "directcarttotal",
+					"name": "traffictype",
 					"type": "String",
-					"description": "直接购物车数"
-				},
-				{
-					"name": "indirectcarttotal",
-					"type": "String",
-					"description": "间接购物车数"
-				},
-				{
-					"name": "carttotal",
-					"type": "String",
-					"description": "购物车总数"
+					"description": "流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外"
 				}
 			],
 			"name": "results",

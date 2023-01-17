@@ -29,12 +29,15 @@ func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthAlgoMedicationSafetyGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamSolutionRequestTopSupport is ParamSolutionRequestTopSupport Setter

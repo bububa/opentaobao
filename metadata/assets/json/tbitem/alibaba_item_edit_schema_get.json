@@ -1,0 +1,32 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务扩展参数，需与平台约定好"
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "制定返回schema中field字段列表，可用于裁剪返回的schema信息。不填则为全部field",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品已有规则信息，XML格式."
+		}
+	],
+	"name": "alibaba.item.edit.schema.get",
+	"apiChineseName": "商品编辑获取schema信息",
+	"description": "商品编辑时，获取商品规则信息",
+	"id": 53967
+}

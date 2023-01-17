@@ -1,4 +1,4 @@
 // Package admarket 包含ALIOS广告平台相关方法
 //
-// https://open.taobao.com/API.htm?docId=37669&docType=2
+// https://open.taobao.com/API.htm?docType=2&docId=37669
 package admarket

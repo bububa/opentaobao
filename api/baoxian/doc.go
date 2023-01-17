@@ -1,4 +1,4 @@
 // Package baoxian 包含保险API相关方法
 //
-// https://open.taobao.com/API.htm?docId=37741&docType=2
+// https://open.taobao.com/API.htm?docType=2&docId=37741
 package baoxian

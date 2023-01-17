@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "发票抬头"
+						},
+						{
+							"name": "tax_i_d",
+							"type": "String",
+							"description": "税号"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherReceiptAutoVO[]",
+					"description": "返回类型"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "抬头自匹配接口返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.receipt.details.auto",
+	"apiChineseName": "v5.0付费会员卡开票抬头自匹配",
+	"description": "v5.0付费会员卡开票抬头自匹配",
+	"id": 65010
+}

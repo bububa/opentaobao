@@ -112,6 +112,26 @@
 									"name": "confirm_code",
 									"type": "String",
 									"description": "酒店确认号"
+								},
+								{
+									"name": "hour_room",
+									"type": "Boolean",
+									"description": "是否小时房"
+								},
+								{
+									"name": "check_in_time",
+									"type": "String",
+									"description": "小时房已选入住时间"
+								},
+								{
+									"name": "check_out_time",
+									"type": "String",
+									"description": "小时房已选离店时间"
+								},
+								{
+									"name": "hourage",
+									"type": "Number",
+									"description": "小时房连住时长"
 								}
 							],
 							"name": "order_fulfill_info",

@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmOpenAssertVerifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamPropertyVerifyOpenReq is ParamPropertyVerifyOpenReq Setter

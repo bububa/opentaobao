@@ -3,20 +3,19 @@
 		{
 			"subParams": [
 				{
-					"name": "benefit_type",
-					"type": "String",
-					"description": "权益类型"
-				},
-				{
 					"name": "benefit_id",
 					"type": "Number",
-					"description": "权益id"
+					"description": "权益id（步骤3必填）"
 				},
 				{
-					"name": "step",
+					"name": "benefit_type",
+					"type": "String",
+					"description": "权益类型（步骤2,3必填）"
+				},
+				{
+					"name": "config_id",
 					"type": "Number",
-					"description": "选择器步骤,步骤1：不需要填写其他参数，获取拥有的权益类型列表；步骤2：需填写权益类型benefit_type字段，获取该权益类型下的权益列表；步骤3：必填benefit_id，获取对应权益的信息",
-					"required": true
+					"description": "新权益类型id"
 				},
 				{
 					"name": "exclude_options",
@@ -24,9 +23,10 @@
 					"description": "需要过滤的option"
 				},
 				{
-					"name": "config_id",
+					"name": "step",
 					"type": "Number",
-					"description": "新权益类型id:1支付宝红包,2优酷会员卡,3不定面额红包,4流量钱包,5淘话费,6淘金币"
+					"description": "选择器步骤可选1,2,3，1：展示卖家能够选择的权益类型2：必填BenefitType，展示卖家该种类型下的权益3：必填BenefitType和benefitId，展示卖家该权益的详情",
+					"required": true
 				}
 			],
 			"name": "query",
@@ -37,58 +37,28 @@
 	],
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "接口调用是否成功"
-		},
-		{
 			"subParams": [
+				{
+					"name": "benefit_name",
+					"type": "String",
+					"description": "权益名称"
+				},
 				{
 					"name": "benefit_type",
 					"type": "String",
 					"description": "权益类型"
 				},
 				{
+					"name": "benefit_type_long",
+					"type": "Number",
+					"description": "权益类型id"
+				},
+				{
 					"subParams": [
-						{
-							"name": "start_time",
-							"type": "Date",
-							"description": "开始时间"
-						},
-						{
-							"name": "relate_activity_num",
-							"type": "Number",
-							"description": "关联活动数"
-						},
-						{
-							"name": "status",
-							"type": "Number",
-							"description": "状态"
-						},
 						{
 							"name": "benefit_id",
 							"type": "Number",
 							"description": "权益id"
-						},
-						{
-							"name": "out_object_id",
-							"type": "String",
-							"description": "外部关联id（如支付宝红包模板id）"
-						},
-						{
-							"name": "end_time",
-							"type": "Date",
-							"description": "结束时间"
-						},
-						{
-							"name": "valid_total_num",
-							"type": "Number",
-							"description": "可用总数"
-						},
-						{
-							"name": "out_object_name",
-							"type": "String",
-							"description": "外部关联名称"
 						},
 						{
 							"name": "denomination",
@@ -96,29 +66,59 @@
 							"description": "面额"
 						},
 						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
 							"name": "extend_feature",
-							"type": "Json",
+							"type": "String",
 							"description": "扩展信息"
+						},
+						{
+							"name": "out_object_id",
+							"type": "String",
+							"description": "外部关联id（如支付宝红包模板id）"
+						},
+						{
+							"name": "out_object_name",
+							"type": "String",
+							"description": "外部关联名称"
+						},
+						{
+							"name": "relate_activity_num",
+							"type": "Number",
+							"description": "关联活动数"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "开始时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "valid_total_num",
+							"type": "Number",
+							"description": "可用总数"
 						}
 					],
 					"name": "pack_detail_list",
 					"type": "BenefitTemplateVo[]",
 					"description": "详情list"
-				},
-				{
-					"name": "benefit_name",
-					"type": "String",
-					"description": "权益名称"
-				},
-				{
-					"name": "benefit_type_long",
-					"type": "Number",
-					"description": "权益类型id"
 				}
 			],
 			"name": "benefit_list",
 			"type": "BenefitSelectorVo []",
 			"description": "权益列表信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
 		}
 	],
 	"name": "taobao.promotion.benefit.selector",

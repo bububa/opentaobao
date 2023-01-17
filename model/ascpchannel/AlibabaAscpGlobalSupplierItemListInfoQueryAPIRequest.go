@@ -29,12 +29,15 @@ func (r AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAscpGlobalSupplierItemListInfoQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSupplyProductPageQuery is SupplyProductPageQuery Setter

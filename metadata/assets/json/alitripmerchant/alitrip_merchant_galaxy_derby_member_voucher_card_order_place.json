@@ -1,0 +1,121 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"subParams": [
+				{
+					"name": "paid_in_amount",
+					"type": "String",
+					"description": "实付金额"
+				},
+				{
+					"name": "voucher_card_code",
+					"type": "String",
+					"description": "商品权益编码"
+				},
+				{
+					"name": "voucher_card_category",
+					"type": "String",
+					"description": "商品类型APLUSP:Premium卡。APLUSB:Basic卡。"
+				},
+				{
+					"name": "accepted_tand_c",
+					"type": "String",
+					"description": "是否接受会员条款(必选)"
+				},
+				{
+					"name": "optin_all",
+					"type": "String",
+					"description": "是否勾选邮箱条款"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id(传了就是已存在订单，重复唤起支付)"
+				},
+				{
+					"name": "optin_s_m_s_a_l_l",
+					"type": "Boolean",
+					"description": "是否勾选短信条款"
+				}
+			],
+			"name": "derby_voucher_card_pay_d_t_o",
+			"type": "DerbyVoucherCardPayDTO",
+			"description": "商品参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "time_stamp",
+							"type": "String",
+							"description": "时间戳"
+						},
+						{
+							"name": "nonce_str",
+							"type": "String",
+							"description": "随机字符串"
+						},
+						{
+							"name": "packag",
+							"type": "String",
+							"description": "支付认证"
+						},
+						{
+							"name": "pay_sign",
+							"type": "String",
+							"description": "签名"
+						},
+						{
+							"name": "sign_type",
+							"type": "String",
+							"description": "签名方式"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardPurchasableVO",
+					"description": "可购权益卡实体类"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.order.place",
+	"apiChineseName": "德比付费会员卡下单",
+	"description": "德比付费会员卡下单",
+	"id": 63869
+}

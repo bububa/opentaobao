@@ -44,6 +44,12 @@ type PriceInfoDto struct {
 	Tag string `json:"tag,omitempty" xml:"tag,omitempty"`
 	// 优惠券类型
 	CouponType string `json:"coupon_type,omitempty" xml:"coupon_type,omitempty"`
+	// 权益券类型
+	Category string `json:"category,omitempty" xml:"category,omitempty"`
+	// APLUSP
+	VoucherCardCategory string `json:"voucher_card_category,omitempty" xml:"voucher_card_category,omitempty"`
+	// 划线价
+	UnderscorePrice string `json:"underscore_price,omitempty" xml:"underscore_price,omitempty"`
 	// 是否担保商品
 	IsGuarantee int64 `json:"is_guarantee,omitempty" xml:"is_guarantee,omitempty"`
 	// 库存剩余数量
@@ -84,8 +90,14 @@ type PriceInfoDto struct {
 	DiscountAmount int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
 	// 代金券信息
 	VoucherInfo *VoucherVo `json:"voucher_info,omitempty" xml:"voucher_info,omitempty"`
+	// 折扣百分比
+	DiscountOff int64 `json:"discount_off,omitempty" xml:"discount_off,omitempty"`
+	// 0 立即预订/1 前去购买,
+	BookingOrBuy int64 `json:"booking_or_buy,omitempty" xml:"booking_or_buy,omitempty"`
 	// 是否是会员房
 	MemberRoom bool `json:"member_room,omitempty" xml:"member_room,omitempty"`
 	// 是否是副会员房
 	MemberRoomV2 bool `json:"member_room_v2,omitempty" xml:"member_room_v2,omitempty"`
+	// 是否为权益商品房型
+	IsDerbyVoucherRoom bool `json:"is_derby_voucher_room,omitempty" xml:"is_derby_voucher_room,omitempty"`
 }

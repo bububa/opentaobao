@@ -16,14 +16,14 @@ type CainiaoEndpointLockerTopOrderWithholdAPIRequest struct {
 	_companyCode string
 	// 柜子id
 	_guiId string
-	// 开放用户id
-	_openUserId string
-	// 扩展字段
-	_extra string
 	// 柜子订单编码
 	_orderCode string
 	// 运单号
 	_mailNo string
+	// 开放用户id
+	_openUserId string
+	// 扩展字段
+	_extra string
 	// 订单类型(0-取件业务，1-寄件业务，2-派样业务)
 	_orderType int64
 	// 代扣金额（全额），单位：分
@@ -43,12 +43,15 @@ func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCompanyCode is CompanyCode Setter
@@ -77,32 +80,6 @@ func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetGuiId() string {
 	return r._guiId
 }
 
-// SetOpenUserId is OpenUserId Setter
-// 开放用户id
-func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetOpenUserId(_openUserId string) error {
-	r._openUserId = _openUserId
-	r.Set("open_user_id", _openUserId)
-	return nil
-}
-
-// GetOpenUserId OpenUserId Getter
-func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetOpenUserId() string {
-	return r._openUserId
-}
-
-// SetExtra is Extra Setter
-// 扩展字段
-func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetExtra(_extra string) error {
-	r._extra = _extra
-	r.Set("extra", _extra)
-	return nil
-}
-
-// GetExtra Extra Getter
-func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetExtra() string {
-	return r._extra
-}
-
 // SetOrderCode is OrderCode Setter
 // 柜子订单编码
 func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetOrderCode(_orderCode string) error {
@@ -127,6 +104,32 @@ func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetMailNo(_mailNo stri
 // GetMailNo MailNo Getter
 func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetMailNo() string {
 	return r._mailNo
+}
+
+// SetOpenUserId is OpenUserId Setter
+// 开放用户id
+func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetOpenUserId(_openUserId string) error {
+	r._openUserId = _openUserId
+	r.Set("open_user_id", _openUserId)
+	return nil
+}
+
+// GetOpenUserId OpenUserId Getter
+func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetOpenUserId() string {
+	return r._openUserId
+}
+
+// SetExtra is Extra Setter
+// 扩展字段
+func (r *CainiaoEndpointLockerTopOrderWithholdAPIRequest) SetExtra(_extra string) error {
+	r._extra = _extra
+	r.Set("extra", _extra)
+	return nil
+}
+
+// GetExtra Extra Getter
+func (r CainiaoEndpointLockerTopOrderWithholdAPIRequest) GetExtra() string {
+	return r._extra
 }
 
 // SetOrderType is OrderType Setter

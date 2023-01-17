@@ -24,9 +24,9 @@ type FlightDto struct {
 	CabinClass string `json:"cabin_class,omitempty" xml:"cabin_class,omitempty"`
 	// 禁止航班号
 	RestrictFlightNum string `json:"restrict_flight_num,omitempty" xml:"restrict_flight_num,omitempty"`
-	// 第二程可售航班号
+	// 第二段可售航班号
 	AllowFlightNum2 string `json:"allow_flight_num2,omitempty" xml:"allow_flight_num2,omitempty"`
-	// 第二程不可售航班号
+	// 第二段不可售航班号
 	RestrictFlightNum2 string `json:"restrict_flight_num2,omitempty" xml:"restrict_flight_num2,omitempty"`
 	// 行程类型标记：0，单程；1，往返
 	FlightIndex int64 `json:"flight_index,omitempty" xml:"flight_index,omitempty"`

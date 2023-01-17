@@ -45,12 +45,15 @@ func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoKoubeiMallCommonItemSuperDiscountListAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDisplayChannel is DisplayChannel Setter

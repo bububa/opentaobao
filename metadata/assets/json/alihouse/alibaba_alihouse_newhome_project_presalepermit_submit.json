@@ -88,9 +88,9 @@
 					"description": "外部楼盘ID"
 				},
 				{
-					"name": "pre_sale_build",
-					"type": "String",
-					"description": "预售楼幢"
+					"name": "outer_building_ids",
+					"type": "String[]",
+					"description": "预售楼幢外部id列表"
 				},
 				{
 					"name": "outer_store_id",
@@ -99,7 +99,7 @@
 				}
 			],
 			"name": "pre_sale_permit_dto",
-			"type": "ProjectPreSalePermitDto",
+			"type": "PreSalePermitDTO",
 			"description": "预售证对象"
 		}
 	],

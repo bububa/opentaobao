@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "main_status",
+					"type": "String",
+					"description": "主状态",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "子状态"
+				},
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "服务商appkey",
+					"required": true
+				},
+				{
+					"name": "attribute",
+					"type": "String",
+					"description": "额外属性信息"
+				},
+				{
+					"name": "sub_status",
+					"type": "String",
+					"description": "子状态",
+					"required": true
+				}
+			],
+			"name": "car_consignment_param",
+			"type": "CarConsignmentParam",
+			"description": "履约参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "perform_error",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "transform_success",
+					"type": "Boolean",
+					"description": "请求成功"
+				}
+			],
+			"name": "result",
+			"type": "CarConsignmentResult",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.trade.car.perform",
+	"apiChineseName": "二手车寄卖履约接口",
+	"description": "二手车寄卖履约接口",
+	"id": 64335
+}

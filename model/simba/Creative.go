@@ -20,7 +20,7 @@ type Creative struct {
 	SecondImgOriginUrl string `json:"second_img_origin_url,omitempty" xml:"second_img_origin_url,omitempty"`
 	// 广审批准文号
 	AdExaminationCode string `json:"ad_examination_code,omitempty" xml:"ad_examination_code,omitempty"`
-	//
+	// 视频url
 	VideoUrl string `json:"video_url,omitempty" xml:"video_url,omitempty"`
 	// 推广计划Id
 	CampaignId int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
@@ -30,6 +30,6 @@ type Creative struct {
 	CreativeId int64 `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
 	// 创意图片类型,1-主图,2-副图,3-自定义图片
 	ImgType int64 `json:"img_type,omitempty" xml:"img_type,omitempty"`
-	//
+	// 视频id
 	VideoId int64 `json:"video_id,omitempty" xml:"video_id,omitempty"`
 }

@@ -10,6 +10,8 @@ type ItemPoolActivity struct {
 	ShopIds []string `json:"shop_ids,omitempty" xml:"shop_ids>string,omitempty"`
 	// 逻辑分组规则
 	LogicGroupRules []OpenLogicGroupRule `json:"logic_group_rules,omitempty" xml:"logic_group_rules>open_logic_group_rule,omitempty"`
+	// 自定义同步渠道配置
+	ChannelConfigList []ChannelConfig `json:"channel_config_list,omitempty" xml:"channel_config_list>channel_config,omitempty"`
 	// 商家活动id
 	OutActId string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
 	// 活动名称
@@ -42,4 +44,6 @@ type ItemPoolActivity struct {
 	ExcludeSingle bool `json:"exclude_single,omitempty" xml:"exclude_single,omitempty"`
 	// 是否是类目优惠
 	IsCategory bool `json:"is_category,omitempty" xml:"is_category,omitempty"`
+	// 是否自定义渠道同步
+	ByChannel bool `json:"by_channel,omitempty" xml:"by_channel,omitempty"`
 }

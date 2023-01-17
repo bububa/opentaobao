@@ -241,7 +241,7 @@
 						}
 					],
 					"name": "ae_multimedia_info_dto",
-					"type": "AeItemSkuInfoDTO",
+					"type": "AeMultimediaInfoDTO",
 					"description": "Multimedia information"
 				},
 				{
@@ -283,7 +283,7 @@
 						}
 					],
 					"name": "package_info_dto",
-					"type": "AeMultimediaInfoDTO",
+					"type": "PackageInfoDTO",
 					"description": "Package information"
 				},
 				{
@@ -300,7 +300,7 @@
 						}
 					],
 					"name": "logistics_info_dto",
-					"type": "PackageInfoDTO",
+					"type": "LogisticsInfoDTO",
 					"description": "Logistics information"
 				},
 				{
@@ -342,7 +342,7 @@
 						}
 					],
 					"name": "ae_item_properties",
-					"type": "LogisticsInfoDTO[]",
+					"type": "AeItemProperty[]",
 					"description": "Attribute information"
 				},
 				{
@@ -374,7 +374,7 @@
 						}
 					],
 					"name": "ae_store_info",
-					"type": "AeItemProperty",
+					"type": "AeStoreInfo",
 					"description": "Store Information"
 				},
 				{

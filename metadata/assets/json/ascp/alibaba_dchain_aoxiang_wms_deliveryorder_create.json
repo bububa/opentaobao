@@ -265,8 +265,7 @@
 								{
 									"name": "name",
 									"type": "String",
-									"description": "姓名",
-									"required": true
+									"description": "姓名"
 								},
 								{
 									"name": "zip_code",
@@ -281,8 +280,7 @@
 								{
 									"name": "mobile",
 									"type": "String",
-									"description": "移动电话",
-									"required": true
+									"description": "移动电话"
 								},
 								{
 									"name": "email",
@@ -297,14 +295,12 @@
 								{
 									"name": "province",
 									"type": "String",
-									"description": "省份",
-									"required": true
+									"description": "省份"
 								},
 								{
 									"name": "city",
 									"type": "String",
-									"description": "城市",
-									"required": true
+									"description": "城市"
 								},
 								{
 									"name": "area",
@@ -319,8 +315,7 @@
 								{
 									"name": "detail_address",
 									"type": "String",
-									"description": "详细地址",
-									"required": true
+									"description": "详细地址"
 								},
 								{
 									"name": "oaid",

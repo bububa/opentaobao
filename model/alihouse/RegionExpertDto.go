@@ -12,4 +12,6 @@ type RegionExpertDto struct {
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// 版本号
 	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
+	// 负责业务1-新房 2-二手房
+	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
 }

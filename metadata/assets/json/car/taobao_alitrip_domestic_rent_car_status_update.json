@@ -27,6 +27,11 @@
 			"name": "car_number",
 			"type": "String",
 			"description": "车牌号"
+		},
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "JSON扩展值"
 		}
 	],
 	"responseParams": [

@@ -31,12 +31,15 @@ func (r TaobaoAplatformWeakgetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAplatformWeakgetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAplatformWeakgetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAplatformWeakgetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamRichClientInfo is ParamRichClientInfo Setter

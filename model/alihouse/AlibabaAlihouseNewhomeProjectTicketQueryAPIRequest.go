@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectTicketQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetQueryDto is QueryDto Setter

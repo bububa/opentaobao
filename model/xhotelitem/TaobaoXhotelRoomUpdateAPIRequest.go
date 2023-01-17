@@ -12,6 +12,10 @@ import (
 // 此接口用于更新一个酒店商品，根据传入的gid更新商品信息，该商品必须为对应的发布者才能执行更新操作。如果对应的商品在酒店系统中不存在，则会返回错误提示。
 type TaobaoXhotelRoomUpdateAPIRequest struct {
 	model.Params
+	// 卖家房型ID
+	_outRid string
+	// 系统商，一般不填写，使用须申请
+	_vendor string
 	// 废弃，宝贝名称展示在店铺里
 	_title string
 	// 废弃，房型购买须知展示在PC购物路径
@@ -26,10 +30,6 @@ type TaobaoXhotelRoomUpdateAPIRequest struct {
 	_receiptInfo string
 	// 房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{"date":2011-01-28,"quota":10,"al_quota":2,"sp_quota":3}]
 	_inventory string
-	// 系统商，一般不填写，使用须申请
-	_vendor string
-	// 卖家房型ID
-	_outRid string
 	// 房型库存开关。 1，开；2，关
 	_roomSwitchCal string
 	// 超预定库存截止时间
@@ -63,12 +63,41 @@ func (r TaobaoXhotelRoomUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetOutRid is OutRid Setter
+// 卖家房型ID
+func (r *TaobaoXhotelRoomUpdateAPIRequest) SetOutRid(_outRid string) error {
+	r._outRid = _outRid
+	r.Set("out_rid", _outRid)
+	return nil
+}
+
+// GetOutRid OutRid Getter
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetOutRid() string {
+	return r._outRid
+}
+
+// SetVendor is Vendor Setter
+// 系统商，一般不填写，使用须申请
+func (r *TaobaoXhotelRoomUpdateAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelRoomUpdateAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetTitle is Title Setter
@@ -160,32 +189,6 @@ func (r *TaobaoXhotelRoomUpdateAPIRequest) SetInventory(_inventory string) error
 // GetInventory Inventory Getter
 func (r TaobaoXhotelRoomUpdateAPIRequest) GetInventory() string {
 	return r._inventory
-}
-
-// SetVendor is Vendor Setter
-// 系统商，一般不填写，使用须申请
-func (r *TaobaoXhotelRoomUpdateAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetVendor() string {
-	return r._vendor
-}
-
-// SetOutRid is OutRid Setter
-// 卖家房型ID
-func (r *TaobaoXhotelRoomUpdateAPIRequest) SetOutRid(_outRid string) error {
-	r._outRid = _outRid
-	r.Set("out_rid", _outRid)
-	return nil
-}
-
-// GetOutRid OutRid Getter
-func (r TaobaoXhotelRoomUpdateAPIRequest) GetOutRid() string {
-	return r._outRid
 }
 
 // SetRoomSwitchCal is RoomSwitchCal Setter

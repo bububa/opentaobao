@@ -1,0 +1,170 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sn_no",
+					"type": "String",
+					"description": "序列号",
+					"required": true
+				}
+			],
+			"name": "controller_query",
+			"type": "ControllerQuery",
+			"description": "查询参数类"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "业务成功标识"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sn_no",
+							"type": "String",
+							"description": "序列号"
+						},
+						{
+							"name": "device_name",
+							"type": "String",
+							"description": "控制器名称"
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "门禁点id"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "门禁点名称"
+										}
+									],
+									"name": "guard",
+									"type": "Guard",
+									"description": "guard"
+								},
+								{
+									"subParams": [
+										{
+											"name": "kind",
+											"type": "String",
+											"description": "设备子类"
+										},
+										{
+											"name": "port_type",
+											"type": "String",
+											"description": "电平量信号输入"
+										},
+										{
+											"name": "port",
+											"type": "byte",
+											"description": "端口号  \t"
+										},
+										{
+											"name": "sub_device_name",
+											"type": "String",
+											"description": "子设备名称"
+										},
+										{
+											"name": "direction",
+											"type": "String",
+											"description": "出"
+										},
+										{
+											"name": "sub_device_id",
+											"type": "String",
+											"description": "xxx"
+										}
+									],
+									"name": "input_list",
+									"type": "SubDeviceDTO[]",
+									"description": "设备"
+								},
+								{
+									"subParams": [
+										{
+											"name": "kind",
+											"type": "String",
+											"description": "设备子类"
+										},
+										{
+											"name": "port_type",
+											"type": "String",
+											"description": "电平量信号输入"
+										},
+										{
+											"name": "port",
+											"type": "byte",
+											"description": "端口号"
+										},
+										{
+											"name": "sub_device_name",
+											"type": "String",
+											"description": "子设备名称"
+										},
+										{
+											"name": "direction",
+											"type": "String",
+											"description": "进"
+										},
+										{
+											"name": "sub_device_id",
+											"type": "String",
+											"description": "xxx"
+										}
+									],
+									"name": "output_list",
+									"type": "SubDeviceDTO[]",
+									"description": "子设备"
+								}
+							],
+							"name": "config_list",
+							"type": "GuardConfigDTO[]",
+							"description": "guardConfigList"
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "控制器设备id"
+						}
+					],
+					"name": "content",
+					"type": "ControllerDTO",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "结果对象"
+		}
+	],
+	"name": "alibaba.campus.guard.controller.configsync",
+	"apiChineseName": "门禁控制器配置项同步",
+	"description": "门禁控制器配置项同步",
+	"id": 64115
+}

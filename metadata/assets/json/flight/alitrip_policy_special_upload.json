@@ -108,7 +108,7 @@
 						{
 							"name": "create_pnr",
 							"type": "Number",
-							"description": "是否订位：1，平台订位；0，平台不订位；2，紧张订位"
+							"description": "是否订位：1，平台订位；0，平台不订位；2，紧张订位；3，紧张停售"
 						},
 						{
 							"name": "dep_airport",
@@ -190,12 +190,12 @@
 								{
 									"name": "allow_flight_num2",
 									"type": "String",
-									"description": "第二程可售航班号"
+									"description": "第二段可售航班号"
 								},
 								{
 									"name": "restrict_flight_num2",
 									"type": "String",
-									"description": "第二程不可售航班号"
+									"description": "第二段不可售航班号"
 								}
 							],
 							"name": "flights",
@@ -240,6 +240,21 @@
 									"name": "lowest_price",
 									"type": "Number",
 									"description": "最低票面价，单位为分"
+								},
+								{
+									"name": "child_sale_type",
+									"type": "Number",
+									"description": "1：儿童成人同价或Y50取低且使用儿童税费 2：儿童成人同价同税 3：儿童自定义价格或Y50取低且使用儿童税费  4：儿童不可销售（仅学生，青年，老年票，小团允许选择）5：儿童成人同价同税或Y50且使用儿童税费取低 6：儿童成人同价使用儿童税费 "
+								},
+								{
+									"name": "child_fixed_price",
+									"type": "Number",
+									"description": "儿童票面价，单位：分"
+								},
+								{
+									"name": "baggage",
+									"type": "Number",
+									"description": "行李有无：0：无行李 ； 1：有行李 ； null：走平台默认行李额"
 								}
 							],
 							"name": "price",
@@ -284,7 +299,7 @@
 								{
 									"name": "sale_mode_code",
 									"type": "Number",
-									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装"
+									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装；6，花呗卖家版；"
 								},
 								{
 									"name": "goods_market",
@@ -370,6 +385,16 @@
 							"name": "create_pnr_limit",
 							"type": "Number",
 							"description": "外放舱位数量小于等于阈值时订位或停售"
+						},
+						{
+							"name": "transit_airport",
+							"type": "String",
+							"description": "中转点"
+						},
+						{
+							"name": "direct_transfer_type",
+							"type": "Number",
+							"description": "直达中转：0，直达；1，中转"
 						}
 					],
 					"name": "policy_list",

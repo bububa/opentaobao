@@ -31,12 +31,15 @@ func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCrmGrademktMemberDetailCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParameter is Parameter Setter

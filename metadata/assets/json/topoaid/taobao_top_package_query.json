@@ -1,0 +1,106 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "query_role",
+					"type": "String",
+					"description": "用户包裹的身份，淘宝账号/收件人",
+					"required": true
+				},
+				{
+					"name": "order_show_app",
+					"type": "Number",
+					"description": "1-淘宝端",
+					"required": true
+				},
+				{
+					"name": "station_type",
+					"type": "String",
+					"description": "末端类型",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户的唯一标识",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "客服场景:CUSTOM，可查询已取件15天内和未取件包裹，收件场景：RECEIVE，仅可查询未取件包裹",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数，从1开始",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				}
+			],
+			"name": "query_package_list_request",
+			"type": "QueryPackageListRequest",
+			"description": "查询用户的包裹列表"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "privacy_order",
+					"type": "Boolean",
+					"description": "是否为隐私订单"
+				},
+				{
+					"name": "secret_no",
+					"type": "String",
+					"description": "订单隐私号"
+				},
+				{
+					"name": "secret_no_expire_time",
+					"type": "Date",
+					"description": "隐私号过期时间"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人手机号,如果用户未授权手机号则不返回"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司代码"
+				},
+				{
+					"name": "station_type",
+					"type": "String",
+					"description": "代收点类型"
+				}
+			],
+			"name": "data",
+			"type": "PackageInfo []",
+			"description": "包裹信息列表"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "面单总数量"
+		}
+	],
+	"name": "taobao.top.package.query",
+	"apiChineseName": "淘系包裹查询",
+	"description": "淘系包裹查询",
+	"id": 64223
+}

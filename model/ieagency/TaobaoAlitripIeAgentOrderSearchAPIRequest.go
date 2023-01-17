@@ -45,12 +45,15 @@ func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripIeAgentOrderSearchAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBeginTime is BeginTime Setter

@@ -1,9 +1,9 @@
 {
 	"requestParams": [
 		{
-			"name": "reason",
+			"name": "ouid",
 			"type": "String",
-			"description": "操作原因",
+			"description": "ouid",
 			"required": true
 		},
 		{
@@ -13,9 +13,9 @@
 			"required": true
 		},
 		{
-			"name": "ouid",
+			"name": "reason",
 			"type": "String",
-			"description": "ouid",
+			"description": "操作原因",
 			"required": true
 		}
 	],

@@ -29,12 +29,15 @@ func (r AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) GetApiMethodN
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseExistinghomeHouseChangeCommunityAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSyncChangeHouseInfoDto is SyncChangeHouseInfoDto Setter

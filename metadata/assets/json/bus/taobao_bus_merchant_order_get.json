@@ -1,9 +1,56 @@
 {
 	"requestParams": [
 		{
-			"name": "order_id",
-			"type": "String",
-			"description": "飞猪订单号或商家订单号，多个以“,”分割",
+			"subParams": [
+				{
+					"name": "agent_order_ids",
+					"type": "String",
+					"description": "商家订单号，多个使用英文逗号进行分隔"
+				},
+				{
+					"name": "complete_order_date_interval",
+					"type": "String",
+					"description": "订单完成日期区间，格式：yyyyMMdd"
+				},
+				{
+					"name": "complete_refund_date_interval",
+					"type": "String",
+					"description": "退票完成日期区间，，格式：yyyyMMdd"
+				},
+				{
+					"name": "create_order_date_interval",
+					"type": "String",
+					"description": "订单创建日期区间，格式：yyyyMMdd"
+				},
+				{
+					"name": "create_refund_date_interval",
+					"type": "String",
+					"description": "申请退票日期区间，，格式：yyyyMMdd"
+				},
+				{
+					"name": "order_ids",
+					"type": "String",
+					"description": "飞猪订单号，多个使用英文逗号进行分隔"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页码从1开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量最大为100，超过100会有超时"
+				},
+				{
+					"name": "refund_apply_ids",
+					"type": "String",
+					"description": "退票申请id,多个使用英文逗号进行分隔"
+				}
+			],
+			"name": "param_agent_query_order_r_q",
+			"type": "AgentQueryOrderRQ",
+			"description": "入参",
 			"required": true
 		}
 	],
@@ -13,161 +60,344 @@
 				{
 					"subParams": [
 						{
-							"name": "main_order_id",
+							"name": "apply_type",
 							"type": "Number",
-							"description": "飞猪订单号"
+							"description": "0-用户申请1-商家申请2-二次退款"
 						},
 						{
-							"name": "agent_order_id",
-							"type": "String",
-							"description": "商家订单号"
-						},
-						{
-							"name": "order_status",
+							"name": "refund_ticket_amount",
 							"type": "Number",
-							"description": "订单状态，待支付：01；已取消：02；待出票：03；出票成功：04；已关闭：05"
+							"description": "退票款金额，单位分"
 						},
 						{
-							"name": "alipay_trade_id",
+							"name": "refund_time",
+							"type": "Date",
+							"description": "退款时间"
+						},
+						{
+							"name": "refund_reason",
 							"type": "String",
-							"description": "商家侧支付宝流水号"
+							"description": "退票原因"
 						},
 						{
-							"name": "total_price",
+							"name": "refund_total_amount",
 							"type": "Number",
-							"description": "总金额，单位分"
+							"description": "退款总金额，单位分"
 						},
 						{
-							"name": "start_station",
-							"type": "String",
-							"description": "出发站"
-						},
-						{
-							"name": "end_station",
-							"type": "String",
-							"description": "到达站"
-						},
-						{
-							"name": "ticket_count",
+							"name": "refund_status",
 							"type": "Number",
-							"description": "票数"
+							"description": "退票状态：1：新申请 2：代理商处理中 3：同意 4：拒绝 5:已退款"
 						},
 						{
-							"name": "gmt_create",
+							"name": "ext_attr",
 							"type": "String",
-							"description": "创建时间"
+							"description": "扩展属性"
 						},
 						{
-							"name": "issue_time",
-							"type": "String",
-							"description": "出票时间"
-						},
-						{
-							"name": "pay_time",
-							"type": "String",
-							"description": "支付时间"
-						},
-						{
-							"name": "is_self_sale_order",
-							"type": "Boolean",
-							"description": "是否是阿斯兰模式"
-						},
-						{
-							"name": "is_wechat",
-							"type": "Boolean",
-							"description": "是否是微信渠道"
-						},
-						{
-							"name": "trans_type",
-							"type": "String",
-							"description": "交易类型"
+							"name": "apply_id",
+							"type": "Number",
+							"description": "退票申请id"
 						},
 						{
 							"subParams": [
 								{
-									"name": "agent_route_id",
+									"name": "agent_ticket_id",
+									"type": "String",
+									"description": "商家票id"
+								},
+								{
+									"name": "service_charge",
 									"type": "Number",
-									"description": "商家路线id"
+									"description": "商家服务费"
 								},
 								{
-									"name": "bus_number",
+									"name": "rider_seat_number",
 									"type": "String",
-									"description": "车次编号"
+									"description": "座位号"
 								},
 								{
-									"name": "end_time",
-									"type": "Date",
-									"description": "预计到达时间"
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单号"
 								},
 								{
-									"name": "start_time",
-									"type": "Date",
-									"description": "出发时间"
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价，单位分"
 								},
 								{
-									"name": "depard_date",
+									"name": "rider_name",
 									"type": "String",
-									"description": "发车时间"
-								},
-								{
-									"name": "last_place_name",
-									"type": "String",
-									"description": "目的地"
-								},
-								{
-									"name": "arrive_station_name",
-									"type": "String",
-									"description": "终点站"
-								},
-								{
-									"name": "end_city_name",
-									"type": "String",
-									"description": "目的城市"
-								},
-								{
-									"name": "start_station_address",
-									"type": "String",
-									"description": "出发站地址"
-								},
-								{
-									"name": "start_station_name",
-									"type": "String",
-									"description": "出发站"
-								},
-								{
-									"name": "start_city_name",
-									"type": "String",
-									"description": "出发城市"
+									"description": "乘客姓名"
 								}
 							],
-							"name": "bus_line_info",
-							"type": "MerchantBusLineInfo",
-							"description": "车次信息"
+							"name": "bus_ticket_info",
+							"type": "MerchantBusTicketInfo",
+							"description": "票信息"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "退票申请创建时间"
+						},
+						{
+							"name": "commission_charge_amount",
+							"type": "Number",
+							"description": "退票手续费，单位分"
+						},
+						{
+							"name": "agree_or_refuse_time",
+							"type": "Date",
+							"description": "同意/拒绝时间"
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请时间"
+						},
+						{
+							"name": "refuse_reason",
+							"type": "String",
+							"description": "拒绝原因"
+						},
+						{
+							"name": "refund_service_charge_amount",
+							"type": "Number",
+							"description": "退商家服务费金额，单位分"
 						}
 					],
-					"name": "merchant_bus_order_info_list",
-					"type": "Merchantbusorderinfo[]",
-					"description": "订单详情集合"
+					"name": "refund_apply_info_list",
+					"type": "MerchantBusRefundApplyInfo[]",
+					"description": "退票申请列表"
 				},
 				{
-					"name": "is_success",
-					"type": "Boolean",
-					"description": "是否成功"
-				},
-				{
-					"name": "error_code",
+					"name": "agent_order_id",
 					"type": "String",
-					"description": "错误码"
+					"description": "商家订单号"
 				},
 				{
-					"name": "error_msg",
+					"name": "alipay_trade_id",
 					"type": "String",
-					"description": "错误信息"
+					"description": "支付流水号"
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "飞猪订单号"
+				},
+				{
+					"name": "tp_order_id",
+					"type": "String",
+					"description": "淘宝订单号"
 				}
 			],
-			"name": "param_agent_query_order_r_p",
-			"type": "AgentQueryOrderRp",
-			"description": "出参"
+			"name": "refund_order_infos",
+			"type": "MerchantBusRefundOrderInfo []",
+			"description": "退票订单列表"
+		},
+		{
+			"name": "error_msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"subParams": [
+				{
+					"name": "end_station",
+					"type": "String",
+					"description": "到达站点"
+				},
+				{
+					"name": "ticket_count",
+					"type": "Number",
+					"description": "票数量"
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "票总价，单位分"
+				},
+				{
+					"name": "issue_time",
+					"type": "String",
+					"description": "出票时间"
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "支付时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "商家票id"
+						},
+						{
+							"name": "service_charge",
+							"type": "Number",
+							"description": "商家服务费，单位分"
+						},
+						{
+							"name": "rider_seat_number",
+							"type": "String",
+							"description": "坐席号"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子订单号"
+						},
+						{
+							"name": "ticket_price",
+							"type": "Number",
+							"description": "票价，单位分"
+						},
+						{
+							"name": "rider_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "ticket_type",
+							"type": "Number",
+							"description": "0-全票(成人) 1-半票（儿童） 2-免票（携童）"
+						}
+					],
+					"name": "bus_ticket_info_list",
+					"type": "MerchantBusTicketInfo[]",
+					"description": "票信息列表"
+				},
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "代理商订单号"
+				},
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "订单状态：1-待支付；2-已取消；3-待出票；4-出票成功；5-已关闭"
+				},
+				{
+					"name": "alipay_trade_id",
+					"type": "String",
+					"description": "支付流水号"
+				},
+				{
+					"name": "is_self_sale_order",
+					"type": "Boolean",
+					"description": "自营订单"
+				},
+				{
+					"name": "is_wechat",
+					"type": "Boolean",
+					"description": "微信订单"
+				},
+				{
+					"subParams": [
+						{
+							"name": "last_place_name",
+							"type": "String",
+							"description": "目的地"
+						},
+						{
+							"name": "arrive_station_name",
+							"type": "String",
+							"description": "到达站点"
+						},
+						{
+							"name": "depart_date",
+							"type": "String",
+							"description": "出发日期"
+						},
+						{
+							"name": "bus_number",
+							"type": "String",
+							"description": "车牌号"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "出发时间"
+						},
+						{
+							"name": "schedule_id",
+							"type": "String",
+							"description": "班次id"
+						},
+						{
+							"name": "start_station_name",
+							"type": "String",
+							"description": "出发站名称"
+						}
+					],
+					"name": "bus_line_info",
+					"type": "MerchantBusLineInfo",
+					"description": "班次信息"
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "创建时间"
+				},
+				{
+					"name": "trans_type",
+					"type": "String",
+					"description": "业务类型：普通巴士，旅游巴士"
+				},
+				{
+					"subParams": [
+						{
+							"name": "fetch_phone",
+							"type": "String",
+							"description": "取票电话"
+						},
+						{
+							"name": "fetch_ticket_name",
+							"type": "String",
+							"description": "取票人信息"
+						}
+					],
+					"name": "bus_fetch_holder_info",
+					"type": "MerchantBusFetchHolderInfo",
+					"description": "取票人信息"
+				},
+				{
+					"name": "start_station",
+					"type": "String",
+					"description": "出发站点"
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "飞猪订单号"
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "淘宝订单号"
+				}
+			],
+			"name": "order_infos",
+			"type": "MerchantBusOrderInfo []",
+			"description": "订单信息列表"
+		},
+		{
+			"name": "error_msg_desc",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "业务接口是否成功"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "根据总数进行分页查询"
 		}
 	],
 	"name": "taobao.bus.merchant.order.get",

@@ -29,12 +29,15 @@ func (r AlitripBtripCorpopApplyGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripCorpopApplyGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripBtripCorpopApplyGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripBtripCorpopApplyGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRq is Rq Setter

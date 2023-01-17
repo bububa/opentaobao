@@ -10,4 +10,6 @@ type TopRefreshReqDto struct {
 	GrantType string `json:"grant_type,omitempty" xml:"grant_type,omitempty"`
 	// refreshToken
 	RefreshToken string `json:"refresh_token,omitempty" xml:"refresh_token,omitempty"`
+	// 设备uuid
+	Uuid string `json:"uuid,omitempty" xml:"uuid,omitempty"`
 }

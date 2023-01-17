@@ -81,7 +81,7 @@
 							"subParams": [
 								{
 									"name": "refund_fee",
-									"type": "String",
+									"type": "Number",
 									"description": "退票手续费"
 								},
 								{
@@ -91,7 +91,7 @@
 								},
 								{
 									"name": "alipay_trade_no",
-									"type": "Number",
+									"type": "String",
 									"description": "支付宝交易订单号"
 								},
 								{

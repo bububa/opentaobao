@@ -31,12 +31,15 @@ func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallTxcsFinanceInvoiceInputAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetInvoiceInputDTO1 is InvoiceInputDTO1 Setter

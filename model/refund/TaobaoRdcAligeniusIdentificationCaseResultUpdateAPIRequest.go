@@ -29,12 +29,15 @@ func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam is Param Setter

@@ -10,7 +10,8 @@ import (
 // taobao.wlb.crossborder.waybill.get
 //
 // 【TOF】欧洲供应商PDF格式电子面单渲染下发
-//  需求链接：https://aone.alibaba-inc.com/req/21210808
+//
+//	需求链接：https://aone.alibaba-inc.com/req/21210808
 type TaobaoWlbCrossborderWaybillGetAPIResponse struct {
 	model.CommonResponse
 	TaobaoWlbCrossborderWaybillGetAPIResponseModel

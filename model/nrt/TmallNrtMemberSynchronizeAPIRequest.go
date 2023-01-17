@@ -29,12 +29,15 @@ func (r TmallNrtMemberSynchronizeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrtMemberSynchronizeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallNrtMemberSynchronizeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallNrtMemberSynchronizeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNrtMemberDto is NrtMemberDto Setter

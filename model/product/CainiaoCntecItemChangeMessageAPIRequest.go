@@ -29,12 +29,15 @@ func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoCntecItemChangeMessageAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemChangeMessage is ItemChangeMessage Setter

@@ -13,7 +13,7 @@ import (
 type AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest struct {
 	model.Params
 	// 入参
-	_tradeSubscribeDetailSaveTopRequest *TradeSubscribeDetailSaveTopRequest
+	_tradeSubscribeDetailExecuteTopRequest *TradeSubscribeDetailExecuteTopRequest
 }
 
 // NewAlibabaAlihealthVaccineTradeSubscribeDetailSaveRequest 初始化AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest对象
@@ -29,23 +29,26 @@ func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetApiMethodN
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetTradeSubscribeDetailSaveTopRequest is TradeSubscribeDetailSaveTopRequest Setter
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetTradeSubscribeDetailExecuteTopRequest is TradeSubscribeDetailExecuteTopRequest Setter
 // 入参
-func (r *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) SetTradeSubscribeDetailSaveTopRequest(_tradeSubscribeDetailSaveTopRequest *TradeSubscribeDetailSaveTopRequest) error {
-	r._tradeSubscribeDetailSaveTopRequest = _tradeSubscribeDetailSaveTopRequest
-	r.Set("trade_subscribe_detail_save_top_request", _tradeSubscribeDetailSaveTopRequest)
+func (r *AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) SetTradeSubscribeDetailExecuteTopRequest(_tradeSubscribeDetailExecuteTopRequest *TradeSubscribeDetailExecuteTopRequest) error {
+	r._tradeSubscribeDetailExecuteTopRequest = _tradeSubscribeDetailExecuteTopRequest
+	r.Set("trade_subscribe_detail_execute_top_request", _tradeSubscribeDetailExecuteTopRequest)
 	return nil
 }
 
-// GetTradeSubscribeDetailSaveTopRequest TradeSubscribeDetailSaveTopRequest Getter
-func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetTradeSubscribeDetailSaveTopRequest() *TradeSubscribeDetailSaveTopRequest {
-	return r._tradeSubscribeDetailSaveTopRequest
+// GetTradeSubscribeDetailExecuteTopRequest TradeSubscribeDetailExecuteTopRequest Getter
+func (r AlibabaAlihealthVaccineTradeSubscribeDetailSaveAPIRequest) GetTradeSubscribeDetailExecuteTopRequest() *TradeSubscribeDetailExecuteTopRequest {
+	return r._tradeSubscribeDetailExecuteTopRequest
 }

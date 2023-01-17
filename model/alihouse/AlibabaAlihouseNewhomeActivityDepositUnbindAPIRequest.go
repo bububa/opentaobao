@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeActivityDepositUnbindAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPreDepositGoldUnbindDto is PreDepositGoldUnbindDto Setter

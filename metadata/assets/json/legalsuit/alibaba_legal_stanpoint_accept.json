@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"name": "standpoint_ids",
+			"type": "String",
+			"description": "采纳口径id字符串"
+		},
+		{
+			"name": "busi_id",
+			"type": "String",
+			"description": "业务实体ID"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "工号"
+		},
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "状态code"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "返回内容"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "状态描述"
+		}
+	],
+	"name": "alibaba.legal.stanpoint.accept",
+	"apiChineseName": "采纳口径",
+	"description": "采纳口径",
+	"id": 64370
+}

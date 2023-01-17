@@ -29,12 +29,15 @@ func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpTargetAdPlanForbiddenWordModifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTopP4pQuickForbiddenWord is TopP4pQuickForbiddenWord Setter

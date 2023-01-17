@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "卖家id"
+				},
+				{
+					"name": "service_outer_ids",
+					"type": "String[]",
+					"description": "服务外部编码"
+				}
+			],
+			"name": "service_price_query_request",
+			"type": "ServicePriceQueryRequest",
+			"description": "查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对用户展示的错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "service_outer_id",
+									"type": "String",
+									"description": "服务外部编码"
+								},
+								{
+									"name": "consumer_price",
+									"type": "Number",
+									"description": "原价"
+								},
+								{
+									"name": "edu_price",
+									"type": "Number",
+									"description": "教育优惠价格"
+								}
+							],
+							"name": "service_price_lines",
+							"type": "ServicePriceLine[]",
+							"description": "服务价格记录行"
+						}
+					],
+					"name": "value",
+					"type": "ServicePriceQueryResponse",
+					"description": "结果对象"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统内部错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统内部错误信息CODE"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.ssc.business.serviceprice.query",
+	"apiChineseName": "苹果查询服务供给报价",
+	"description": "苹果查询服务供给报价",
+	"id": 63796
+}

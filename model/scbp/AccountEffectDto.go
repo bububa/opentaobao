@@ -12,14 +12,14 @@ type AccountEffectDto struct {
 	Cost string `json:"cost,omitempty" xml:"cost,omitempty"`
 	// 推广时长
 	OnlineMin string `json:"online_min,omitempty" xml:"online_min,omitempty"`
-	// 曝光
-	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
-	// 点击率
-	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
-	// 平均点击花费
-	ClickCostAvg string `json:"click_cost_avg,omitempty" xml:"click_cost_avg,omitempty"`
-	// 单位小时，保留一位小数，例如13.5表示13.5小时
-	OnlineTime string `json:"online_time,omitempty" xml:"online_time,omitempty"`
 	// 点击量
 	ClickCnt string `json:"click_cnt,omitempty" xml:"click_cnt,omitempty"`
+	// 平均点击花费
+	ClickCostAvg string `json:"click_cost_avg,omitempty" xml:"click_cost_avg,omitempty"`
+	// 点击率
+	Ctr string `json:"ctr,omitempty" xml:"ctr,omitempty"`
+	// 曝光
+	ImpressionCnt string `json:"impression_cnt,omitempty" xml:"impression_cnt,omitempty"`
+	// 单位小时，保留一位小数，例如13.5表示13.5小时
+	OnlineTime string `json:"online_time,omitempty" xml:"online_time,omitempty"`
 }

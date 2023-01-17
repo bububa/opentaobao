@@ -211,6 +211,41 @@
 							"name": "supplier_charge_fee_cent",
 							"type": "Number",
 							"description": "服务商应收实时分账金额，分。仅当交易成功或者卖家无责买家不买 这两个状态有效，其余为0。当保证金被罚没的状态时，不会实时分账而是线下结算，所以只有上述两个状态有值。"
+						},
+						{
+							"name": "actual_paid_fee_cent",
+							"type": "Number",
+							"description": "买家实付金额，单位：分"
+						},
+						{
+							"name": "buyer_confirm_receipt_timeout",
+							"type": "String",
+							"description": "2022-10-01 00:00:00"
+						},
+						{
+							"name": "seller_confirm_back_address_time",
+							"type": "String",
+							"description": "2022-10-01 00:00:00"
+						},
+						{
+							"name": "yhb_version",
+							"type": "String",
+							"description": "验货宝订单流程版本"
+						},
+						{
+							"name": "yhb3_bill_state",
+							"type": "String",
+							"description": "验货宝 3.0 支付订单状态"
+						},
+						{
+							"name": "yhb3_fee_state",
+							"type": "String",
+							"description": "验货宝 3.0 验货费增值服务订单状态"
+						},
+						{
+							"name": "yhb3_dispute_state",
+							"type": "String",
+							"description": "验货宝 3.0 纠纷单状态"
 						}
 					],
 					"name": "module",

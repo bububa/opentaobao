@@ -18,9 +18,9 @@ type TaobaoTradesSoldHistoryGetAPIRequest struct {
 	model.Params
 	// 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。rx_audit_status=0,处方药未审核
 	_fields string
-	// 查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss
+	// 查询三个月之前交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss
 	_startCreated string
-	// 查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
+	// 查询三个月之前交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
 	_endCreated string
 	// 交易状态（<a href="http://open.taobao.com/doc/detail.htm?id=102856" target="_blank">查看可选值</a>），默认查询所有交易状态的数据，除了默认值外每次只能查询一种状态。
 	_status string
@@ -55,12 +55,15 @@ func (r TaobaoTradesSoldHistoryGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTradesSoldHistoryGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTradesSoldHistoryGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTradesSoldHistoryGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFields is Fields Setter
@@ -77,7 +80,7 @@ func (r TaobaoTradesSoldHistoryGetAPIRequest) GetFields() string {
 }
 
 // SetStartCreated is StartCreated Setter
-// 查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss
+// 查询三个月之前交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoTradesSoldHistoryGetAPIRequest) SetStartCreated(_startCreated string) error {
 	r._startCreated = _startCreated
 	r.Set("start_created", _startCreated)
@@ -90,7 +93,7 @@ func (r TaobaoTradesSoldHistoryGetAPIRequest) GetStartCreated() string {
 }
 
 // SetEndCreated is EndCreated Setter
-// 查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
+// 查询三个月之前交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss
 func (r *TaobaoTradesSoldHistoryGetAPIRequest) SetEndCreated(_endCreated string) error {
 	r._endCreated = _endCreated
 	r.Set("end_created", _endCreated)

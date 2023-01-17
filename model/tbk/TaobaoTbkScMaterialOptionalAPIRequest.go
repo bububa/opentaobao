@@ -44,6 +44,10 @@ type TaobaoTbkScMaterialOptionalAPIRequest struct {
 	_specialId string
 	// 本地化业务入参-分页唯一标识，非首页的请求必传，值为上一页返回结果中的page_result_key字段值
 	_pageResultKey string
+	// 1-动态ID转链场景，2-消费者比价场景（不填默认为1）
+	_bizSceneId string
+	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+	_promotionType string
 	// 商品筛选(特定媒体支持)-店铺dsr评分。筛选大于等于当前设置的店铺dsr评分的商品0-50000之间
 	_startDsr int64
 	// 页大小，默认20，1~100
@@ -111,12 +115,15 @@ func (r TaobaoTbkScMaterialOptionalAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScMaterialOptionalAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScMaterialOptionalAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScMaterialOptionalAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUcrowdRankItems is UcrowdRankItems Setter
@@ -325,6 +332,32 @@ func (r *TaobaoTbkScMaterialOptionalAPIRequest) SetPageResultKey(_pageResultKey 
 // GetPageResultKey PageResultKey Getter
 func (r TaobaoTbkScMaterialOptionalAPIRequest) GetPageResultKey() string {
 	return r._pageResultKey
+}
+
+// SetBizSceneId is BizSceneId Setter
+// 1-动态ID转链场景，2-消费者比价场景（不填默认为1）
+func (r *TaobaoTbkScMaterialOptionalAPIRequest) SetBizSceneId(_bizSceneId string) error {
+	r._bizSceneId = _bizSceneId
+	r.Set("biz_scene_id", _bizSceneId)
+	return nil
+}
+
+// GetBizSceneId BizSceneId Getter
+func (r TaobaoTbkScMaterialOptionalAPIRequest) GetBizSceneId() string {
+	return r._bizSceneId
+}
+
+// SetPromotionType is PromotionType Setter
+// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+func (r *TaobaoTbkScMaterialOptionalAPIRequest) SetPromotionType(_promotionType string) error {
+	r._promotionType = _promotionType
+	r.Set("promotion_type", _promotionType)
+	return nil
+}
+
+// GetPromotionType PromotionType Getter
+func (r TaobaoTbkScMaterialOptionalAPIRequest) GetPromotionType() string {
+	return r._promotionType
 }
 
 // SetStartDsr is StartDsr Setter

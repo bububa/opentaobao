@@ -1,0 +1,471 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "marketing_airline",
+					"type": "String[]",
+					"description": "市场航司"
+				},
+				{
+					"name": "operating_flight_no",
+					"type": "String[]",
+					"description": "承运航班号"
+				},
+				{
+					"name": "dep_airport_code",
+					"type": "String[]",
+					"description": "起飞机场"
+				},
+				{
+					"name": "only_init",
+					"type": "Boolean",
+					"description": "是否查询可确认意向单",
+					"required": true
+				},
+				{
+					"name": "marketing_flight_no",
+					"type": "String[]",
+					"description": "市场航班号"
+				},
+				{
+					"name": "dep_time_end",
+					"type": "Date",
+					"description": "截止起飞时间",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数",
+					"required": true
+				},
+				{
+					"name": "arr_airport_code",
+					"type": "String[]",
+					"description": "抵达机场"
+				},
+				{
+					"name": "dep_time_start",
+					"type": "Date",
+					"description": "开始起飞时间",
+					"required": true
+				},
+				{
+					"name": "operating_airline",
+					"type": "String[]",
+					"description": "承运航司"
+				}
+			],
+			"name": "intention_list_request_dto",
+			"type": "IntentionListRequestDTO",
+			"description": "入参对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "baby_car",
+													"type": "String",
+													"description": "婴儿车描述"
+												},
+												{
+													"name": "baggage_all_weight",
+													"type": "Boolean",
+													"description": "托运行李重量是否表示总重量(所有件总量)"
+												},
+												{
+													"name": "baggage_free_pcs",
+													"type": "Number",
+													"description": "免费行李件数"
+												},
+												{
+													"name": "baggage_size",
+													"type": "String",
+													"description": "行李尺寸"
+												},
+												{
+													"name": "baggage_weight",
+													"type": "Number",
+													"description": "行李重量"
+												},
+												{
+													"name": "carry_bag_all_weight",
+													"type": "Boolean",
+													"description": "手提行李是否总重量"
+												},
+												{
+													"name": "carry_bag_free_pcs",
+													"type": "Number",
+													"description": "手提行李件数"
+												},
+												{
+													"name": "carry_bag_size",
+													"type": "String",
+													"description": "手提行李尺寸"
+												},
+												{
+													"name": "carry_bag_weight",
+													"type": "Number",
+													"description": "手提行李重量"
+												},
+												{
+													"name": "excess_instruction",
+													"type": "String",
+													"description": "超规行李说明"
+												},
+												{
+													"name": "od_index",
+													"type": "Number",
+													"description": "航程下标 1开始"
+												},
+												{
+													"name": "passenger_type",
+													"type": "Number",
+													"description": "乘机人类型，1成人2儿童3婴儿"
+												},
+												{
+													"name": "segment_index",
+													"type": "Number",
+													"description": "航段下标 1开始"
+												},
+												{
+													"name": "total_pcs",
+													"type": "Number",
+													"description": "手提和托运行李总件数，国内专用"
+												},
+												{
+													"name": "total_weight",
+													"type": "Number",
+													"description": "手提和托运行李总重量，国内专用"
+												},
+												{
+													"name": "weight_unit",
+													"type": "String",
+													"description": "重量单位"
+												}
+											],
+											"name": "baggage_b_o_list",
+											"type": "BaggageDTO[]",
+											"description": "行李业务对象集合"
+										}
+									],
+									"name": "baggage_item",
+									"type": "BaggageItemDTO",
+									"description": "行李单元"
+								}
+							],
+							"name": "baggage_rule",
+							"type": "BaggageRuleDTO",
+							"description": "行李"
+						},
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国内国际"
+						},
+						{
+							"subParams": [
+								{
+									"name": "airway",
+									"type": "String",
+									"description": "航司"
+								},
+								{
+									"name": "arr_airport_code",
+									"type": "String",
+									"description": "抵达机场"
+								},
+								{
+									"name": "dep_airport_code",
+									"type": "String",
+									"description": "起飞机场"
+								},
+								{
+									"name": "dep_date_time",
+									"type": "Date",
+									"description": "第一段起飞时间"
+								},
+								{
+									"subParams": [
+										{
+											"name": "arr_airport",
+											"type": "String",
+											"description": "抵达机场"
+										},
+										{
+											"name": "arr_city",
+											"type": "String",
+											"description": "抵达城市"
+										},
+										{
+											"name": "arr_time",
+											"type": "Date",
+											"description": "抵达时间"
+										},
+										{
+											"subParams": [
+												{
+													"name": "passenger_type",
+													"type": "Number",
+													"description": "乘机人类型，1成人2儿童3婴儿"
+												},
+												{
+													"name": "cabin",
+													"type": "String",
+													"description": "舱位"
+												},
+												{
+													"name": "cabin_class",
+													"type": "String",
+													"description": "舱等"
+												}
+											],
+											"name": "cabin_info_list",
+											"type": "CabinInfoDTO[]",
+											"description": "舱位信息"
+										},
+										{
+											"name": "dep_airport",
+											"type": "String",
+											"description": "起飞机场"
+										},
+										{
+											"name": "dep_city",
+											"type": "String",
+											"description": "起飞城市"
+										},
+										{
+											"name": "dep_time",
+											"type": "Date",
+											"description": "起飞时间"
+										},
+										{
+											"name": "marketing_airline",
+											"type": "String",
+											"description": "市场航司"
+										},
+										{
+											"name": "marketing_flight_no",
+											"type": "String",
+											"description": "市场航班号"
+										},
+										{
+											"name": "od_index",
+											"type": "String",
+											"description": "航程下标"
+										},
+										{
+											"name": "operating_airline",
+											"type": "String",
+											"description": "承运航司"
+										},
+										{
+											"name": "operating_flight_no",
+											"type": "String",
+											"description": "承运航班号"
+										},
+										{
+											"name": "segment_index",
+											"type": "String",
+											"description": "航段下标"
+										}
+									],
+									"name": "segment_infos",
+									"type": "SegmentInfoDTO[]",
+									"description": "航段信息"
+								}
+							],
+							"name": "flight_info",
+							"type": "FlightInfoDTO",
+							"description": "航班信息"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键"
+						},
+						{
+							"subParams": [
+								{
+									"name": "build_price",
+									"type": "Number",
+									"description": "机建（分）"
+								},
+								{
+									"name": "nums",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "oil_price",
+									"type": "Number",
+									"description": "燃油（分）"
+								},
+								{
+									"name": "passenger_type",
+									"type": "Number",
+									"description": "乘机人类型,1成人2儿童3婴儿"
+								},
+								{
+									"name": "sale_price",
+									"type": "Number",
+									"description": "销售价"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票面价"
+								}
+							],
+							"name": "passenger_item_infos",
+							"type": "PassengerInfosDTO[]",
+							"description": "乘机人信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"subParams": [
+												{
+													"name": "currency",
+													"type": "String",
+													"description": "币种"
+												},
+												{
+													"name": "descs",
+													"type": "String",
+													"description": "描述"
+												},
+												{
+													"name": "end_time",
+													"type": "Number",
+													"description": "截止时间"
+												},
+												{
+													"name": "fee",
+													"type": "Number",
+													"description": "费用（分）"
+												},
+												{
+													"name": "od_index",
+													"type": "Number",
+													"description": "航程下标"
+												},
+												{
+													"name": "passenger_type",
+													"type": "Number",
+													"description": "乘机人类型,1成人2儿童3婴儿"
+												},
+												{
+													"name": "penalty_support_type",
+													"type": "Number",
+													"description": "规则支持情况，0不支持，1结构化，2非结构化，3支持"
+												},
+												{
+													"name": "penalty_type",
+													"type": "Number",
+													"description": "规则类型，0退票费用，1同舱改期费用，2误机罚金，3其他，4升舱费用，5已使用航段扣减金额，6退税费用，7签转，8特殊说明"
+												},
+												{
+													"name": "percent",
+													"type": "Number",
+													"description": "百分比"
+												},
+												{
+													"name": "segment_index",
+													"type": "Number",
+													"description": "航段下标"
+												},
+												{
+													"name": "start_time",
+													"type": "Number",
+													"description": "开始时间"
+												},
+												{
+													"name": "ticket_segments_status",
+													"type": "Number",
+													"description": "航段状态2标准半程已使用,3部分已使用,4全程未使用"
+												},
+												{
+													"name": "time_unit",
+													"type": "Number",
+													"description": "时间单位，0小时，1天，默认0小时"
+												}
+											],
+											"name": "penalty_b_o_list",
+											"type": "PenaltyDTO[]",
+											"description": "退改签规则集合"
+										}
+									],
+									"name": "penalty_item",
+									"type": "PenaltyItemDTO",
+									"description": "退改签规则单元"
+								}
+							],
+							"name": "penalty_rule",
+							"type": "PenaltyRuleDTO",
+							"description": "退改签规则"
+						},
+						{
+							"name": "total_build_price",
+							"type": "Number",
+							"description": "总机建费(分)"
+						},
+						{
+							"name": "total_oil_price",
+							"type": "Number",
+							"description": "总燃油费(分)"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "总价格(分)"
+						}
+					],
+					"name": "data",
+					"type": "T[]",
+					"description": "数据集合"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "成功失败"
+				},
+				{
+					"name": "total",
+					"type": "String",
+					"description": "总数"
+				}
+			],
+			"name": "result",
+			"type": "PageDTO",
+			"description": "分页对象"
+		}
+	],
+	"name": "alitrip.agent.flight.intention.list",
+	"apiChineseName": "意向单列表",
+	"description": "意向单列表",
+	"id": 64664
+}

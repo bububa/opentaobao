@@ -158,8 +158,7 @@
 						{
 							"name": "logistics_code",
 							"type": "String",
-							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通 (ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHER=其他;只传英文编码)",
-							"required": true
+							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通 (ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHER=其他;只传英文编码)"
 						},
 						{
 							"name": "logistics_name",
@@ -169,8 +168,7 @@
 						{
 							"name": "express_code",
 							"type": "String",
-							"description": "运单号",
-							"required": true
+							"description": "运单号"
 						},
 						{
 							"name": "package_code",
@@ -271,20 +269,17 @@
 						{
 							"name": "order_source_code",
 							"type": "String",
-							"description": "平台交易订单编码",
-							"required": true
+							"description": "平台交易订单编码"
 						},
 						{
 							"name": "sub_source_code",
 							"type": "String",
-							"description": "平台交易子订单编码",
-							"required": true
+							"description": "平台交易子订单编码"
 						},
 						{
 							"name": "item_code",
 							"type": "String",
-							"description": "商品编码",
-							"required": true
+							"description": "商品编码"
 						},
 						{
 							"name": "item_id",

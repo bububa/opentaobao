@@ -14,6 +14,6 @@ type SaleDto struct {
 	SaleTime string `json:"sale_time,omitempty" xml:"sale_time,omitempty"`
 	// 只能输入A-B的格式，AB都是0-365之间的整数。往返航班之间的停留天数，以天数为单位，默认不限制。空表示默认
 	StayDay string `json:"stay_day,omitempty" xml:"stay_day,omitempty"`
-	// 销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装
+	// 销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装；6，花呗卖家版；
 	SaleModeCode int64 `json:"sale_mode_code,omitempty" xml:"sale_mode_code,omitempty"`
 }

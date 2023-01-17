@@ -13,6 +13,11 @@
 					"type": "String",
 					"description": "楼盘描述介绍",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
 				}
 			],
 			"name": "project_update_item_info_dto",

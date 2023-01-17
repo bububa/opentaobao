@@ -33,12 +33,15 @@ func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkCartCouponExpireUserQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRuleId is RuleId Setter

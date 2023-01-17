@@ -140,6 +140,11 @@
 									"name": "waybill_no",
 									"type": "String",
 									"description": "快递号"
+								},
+								{
+									"name": "doc_no",
+									"type": "String",
+									"description": "关联单据号"
 								}
 							],
 							"name": "head",

@@ -69,9 +69,8 @@
 			"subParams": [
 				{
 					"name": "attribute_map",
-					"type": "Json",
-					"description": "系统自动生成",
-					"required": true
+					"type": "String",
+					"description": "系统自动生成"
 				}
 			],
 			"name": "resp_body",

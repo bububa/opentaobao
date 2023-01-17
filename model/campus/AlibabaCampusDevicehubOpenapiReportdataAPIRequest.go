@@ -12,7 +12,7 @@ import (
 // 设备数据上报
 type AlibabaCampusDevicehubOpenapiReportdataAPIRequest struct {
 	model.Params
-	// 自动生成
+	// 设备数据上报信息
 	_deviceEventData *DeviceReportEventDto
 }
 
@@ -29,16 +29,19 @@ func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCampusDevicehubOpenapiReportdataAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDeviceEventData is DeviceEventData Setter
-// 自动生成
+// 设备数据上报信息
 func (r *AlibabaCampusDevicehubOpenapiReportdataAPIRequest) SetDeviceEventData(_deviceEventData *DeviceReportEventDto) error {
 	r._deviceEventData = _deviceEventData
 	r.Set("device_event_data", _deviceEventData)

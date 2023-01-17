@@ -1,0 +1,183 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业唯一标识",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String[]",
+			"description": "服务时间",
+			"maxListSize": 1000,
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String",
+			"description": "码列表【多个码用逗号分隔的字符串。要求数量在1000个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "code_status",
+									"type": "String",
+									"description": "码状态（I核注O核销A激活C注销E错误码）"
+								}
+							],
+							"name": "code_status_type_d_t_o",
+							"type": "CodeStatusTypeDto",
+							"description": "码对象"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "追溯码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "企业id"
+								},
+								{
+									"name": "ent_name",
+									"type": "String",
+									"description": "企业名称"
+								}
+							],
+							"name": "p_user_ent_d_t_o",
+							"type": "PUserEntDto",
+							"description": "企业信息对象"
+						},
+						{
+							"name": "package_level",
+							"type": "String",
+							"description": "码包装层级，1代表最小包装。如：申请的包装比例是1:5:10, 对应的包装等级就是 3、2、1，代表大包装、中包装、小包装"
+						},
+						{
+							"subParams": [
+								{
+									"name": "physic_type_desc",
+									"type": "String",
+									"description": "药品类型描述"
+								},
+								{
+									"name": "physic_name",
+									"type": "String",
+									"description": "药品名称"
+								},
+								{
+									"name": "exprie",
+									"type": "String",
+									"description": "有效期"
+								},
+								{
+									"name": "drug_ent_base_info_id",
+									"type": "String",
+									"description": "药品id"
+								},
+								{
+									"name": "approval_licence_no",
+									"type": "String",
+									"description": "批准文号"
+								},
+								{
+									"name": "pkg_spec_crit",
+									"type": "String",
+									"description": "包装规格"
+								},
+								{
+									"name": "prepn_spec",
+									"type": "String",
+									"description": "制剂规格"
+								},
+								{
+									"name": "prepn_type_desc",
+									"type": "String",
+									"description": "剂型描述"
+								},
+								{
+									"name": "pkg_num",
+									"type": "String",
+									"description": "小包下的制剂数量"
+								}
+							],
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDto",
+							"description": "药品基本信息对象"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "produce_date_str",
+											"type": "String",
+											"description": "生产日期"
+										},
+										{
+											"name": "pkg_amount",
+											"type": "String",
+											"description": "最小包装数量"
+										},
+										{
+											"name": "expire_date",
+											"type": "String",
+											"description": "有效期至"
+										},
+										{
+											"name": "batch_no",
+											"type": "String",
+											"description": "批次号"
+										}
+									],
+									"name": "produce_info_list",
+									"type": "ProduceInfoDto[]",
+									"description": "生产信息集合"
+								}
+							],
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDto",
+							"description": "码生产信息对象"
+						}
+					],
+					"name": "models",
+					"type": "CodeFullInfoDto[]",
+					"description": "内层大对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "查询成功失败标记"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.code.kyt.wes.querycode",
+	"apiChineseName": "wes查询追溯码信息",
+	"description": "此接口针对有码药品，提供可通过追溯码获取该药品的基础信息和生产信息；\n核查平台优先过滤非8开头的，长度非20位数字的码信息。",
+	"id": 65437
+}

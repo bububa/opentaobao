@@ -238,6 +238,11 @@
 							"name": "instead_merchant_open_id",
 							"type": "Number",
 							"description": "代收主体id 当收款模式为代收是必填"
+						},
+						{
+							"name": "role_list",
+							"type": "String",
+							"description": "角色列表，英文逗号分隔，委托角色 1首付 2 实勘 3 委托"
 						}
 					],
 					"name": "entrust",
@@ -467,8 +472,7 @@
 				{
 					"name": "ecode",
 					"type": "String",
-					"description": "房源E码",
-					"required": true
+					"description": "房源E码"
 				},
 				{
 					"name": "community_outer_id",
@@ -722,6 +726,16 @@
 					"name": "item_id",
 					"type": "Number",
 					"description": "货的商品id"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "ms级时间戳"
+				},
+				{
+					"name": "floor_desc",
+					"type": "String",
+					"description": "所在楼层描述"
 				}
 			],
 			"name": "house",

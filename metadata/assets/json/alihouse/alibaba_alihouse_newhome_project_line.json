@@ -1,9 +1,14 @@
 {
 	"requestParams": [
 		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店ID"
+		},
+		{
 			"name": "outer_id",
 			"type": "String",
-			"description": "外部id",
+			"description": "外部楼盘ID",
 			"required": true
 		},
 		{

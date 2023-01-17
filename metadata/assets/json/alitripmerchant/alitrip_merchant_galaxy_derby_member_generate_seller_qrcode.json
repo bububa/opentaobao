@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "用户code",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "返回实体内容"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.generate.seller.qrcode",
+	"apiChineseName": "生成臻享卡德比分销二维码",
+	"description": "生成臻享卡德比分销二维码",
+	"id": 65259
+}

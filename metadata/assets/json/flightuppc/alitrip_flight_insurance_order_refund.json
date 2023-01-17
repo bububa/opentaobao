@@ -1,0 +1,134 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ticket_price",
+									"type": "String",
+									"description": "票价",
+									"required": true
+								},
+								{
+									"name": "company_name",
+									"type": "String",
+									"description": "航司名称"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市",
+									"required": true
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市",
+									"required": true
+								},
+								{
+									"name": "flight_no",
+									"type": "String",
+									"description": "航班号",
+									"required": true
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号",
+									"required": true
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "出发时间",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "到达时间",
+									"required": true
+								},
+								{
+									"name": "policy_no",
+									"type": "String",
+									"description": "子保单号",
+									"required": true
+								}
+							],
+							"name": "ins_order_segment",
+							"type": "InsOrderAirTicketSegmentDTO",
+							"description": "航段信息",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件编号",
+									"required": true
+								},
+								{
+									"name": "cert_type",
+									"type": "Number",
+									"description": "证件类型",
+									"required": true
+								},
+								{
+									"name": "cert_name",
+									"type": "String",
+									"description": "证件名字",
+									"required": true
+								}
+							],
+							"name": "ins_person",
+							"type": "InsPersonDTO",
+							"description": "被保人",
+							"required": true
+						}
+					],
+					"name": "insureds",
+					"type": "InsPersonAndAirSegmentDTO[]",
+					"description": "保险信息列表",
+					"required": true
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "保险订单号",
+					"required": true
+				}
+			],
+			"name": "ins_refund_order_req",
+			"type": "InsReverseOrderReq",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_msg_for_client",
+			"type": "String",
+			"description": "错误信息（调用成功时该字段为空）"
+		},
+		{
+			"name": "tp_order_id",
+			"type": "Number",
+			"description": "保险订单号，，即tcOrderId"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.flight.insurance.order.refund",
+	"apiChineseName": "保险订单退保",
+	"description": "保险订单退保",
+	"id": 64862
+}

@@ -18,6 +18,8 @@ type AlitripMerchantGalaxyActivityMarketingPopupAPIRequest struct {
 	_token string
 	// 用户code
 	_code string
+	// 版本，适配灰度发布
+	_version string
 }
 
 // NewAlitripMerchantGalaxyActivityMarketingPopupRequest 初始化AlitripMerchantGalaxyActivityMarketingPopupAPIRequest对象
@@ -33,12 +35,15 @@ func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter
@@ -78,4 +83,17 @@ func (r *AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) SetCode(_code st
 // GetCode Code Getter
 func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetCode() string {
 	return r._code
+}
+
+// SetVersion is Version Setter
+// 版本，适配灰度发布
+func (r *AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) SetVersion(_version string) error {
+	r._version = _version
+	r.Set("version", _version)
+	return nil
+}
+
+// GetVersion Version Getter
+func (r AlitripMerchantGalaxyActivityMarketingPopupAPIRequest) GetVersion() string {
+	return r._version
 }

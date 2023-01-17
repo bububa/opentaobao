@@ -252,8 +252,13 @@
 						}
 					],
 					"name": "pay_channels",
-					"type": "RefundPayChannel[]",
+					"type": "PayChannel[]",
 					"description": "支付渠道"
+				},
+				{
+					"name": "refund_reason_type",
+					"type": "Number",
+					"description": "退款原因类型：10-整单全缺;11-订单部分缺;12-商家侧发起的退款(商家拒单); 13-用户侧发起的退款(用户逆向申请);15-用户拒收"
 				}
 			],
 			"name": "refund_complete_info",

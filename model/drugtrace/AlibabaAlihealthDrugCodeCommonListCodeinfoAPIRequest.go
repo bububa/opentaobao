@@ -14,6 +14,8 @@ type AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest struct {
 	model.Params
 	// 追溯码
 	_codeList []string
+	// 验证权限企业id
+	_authRefEntId string
 	// 企业refEntId
 	_refEntId string
 	// 标示医院业务
@@ -30,8 +32,6 @@ type AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest struct {
 	_bureauName string
 	// 错误信息
 	_errorMessage string
-	// 验证权限企业id
-	_authRefEntId string
 }
 
 // NewAlibabaAlihealthDrugCodeCommonListCodeinfoRequest 初始化AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest对象
@@ -47,12 +47,15 @@ func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCodeList is CodeList Setter
@@ -66,6 +69,19 @@ func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetCodeList(_code
 // GetCodeList CodeList Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetCodeList() []string {
 	return r._codeList
+}
+
+// SetAuthRefEntId is AuthRefEntId Setter
+// 验证权限企业id
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetAuthRefEntId(_authRefEntId string) error {
+	r._authRefEntId = _authRefEntId
+	r.Set("auth_ref_ent_id", _authRefEntId)
+	return nil
+}
+
+// GetAuthRefEntId AuthRefEntId Getter
+func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetAuthRefEntId() string {
+	return r._authRefEntId
 }
 
 // SetRefEntId is RefEntId Setter
@@ -170,17 +186,4 @@ func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetErrorMessage(_
 // GetErrorMessage ErrorMessage Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetErrorMessage() string {
 	return r._errorMessage
-}
-
-// SetAuthRefEntId is AuthRefEntId Setter
-// 验证权限企业id
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) SetAuthRefEntId(_authRefEntId string) error {
-	r._authRefEntId = _authRefEntId
-	r.Set("auth_ref_ent_id", _authRefEntId)
-	return nil
-}
-
-// GetAuthRefEntId AuthRefEntId Getter
-func (r AlibabaAlihealthDrugCodeCommonListCodeinfoAPIRequest) GetAuthRefEntId() string {
-	return r._authRefEntId
 }

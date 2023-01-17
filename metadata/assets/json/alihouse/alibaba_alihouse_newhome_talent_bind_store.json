@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "target_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "talent_id",
+					"type": "String",
+					"description": "达人号"
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "账号类型",
+					"required": true
+				},
+				{
+					"name": "is_change_binding",
+					"type": "Number",
+					"description": "是否换绑"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "测试标"
+				},
+				{
+					"name": "alipay_life_ids",
+					"type": "String",
+					"description": "支付宝生活号id"
+				},
+				{
+					"name": "bind_type",
+					"type": "Number",
+					"description": "1-绑定淘宝直播达人号  2-绑定支付宝直播主播号 默认为1（兼容，之后必填）"
+				}
+			],
+			"name": "store_talent_list",
+			"type": "StoreTalentDTO",
+			"description": "aaa",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"subParams": [
+				{
+					"name": "target_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "talent_id",
+					"type": "String",
+					"description": "达人号"
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "账号类型"
+				},
+				{
+					"name": "is_success",
+					"type": "Number",
+					"description": "是否绑定成功"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误原因"
+				}
+			],
+			"name": "data",
+			"type": "StoreTalentBindingResponseDTO []",
+			"description": "绑定关系结果列表"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "aaa"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "aa"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.talent.bind.store",
+	"apiChineseName": "达人号门店关系绑定",
+	"description": "达人号门店关系绑定",
+	"id": 64175
+}

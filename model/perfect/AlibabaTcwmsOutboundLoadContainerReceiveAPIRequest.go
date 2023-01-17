@@ -29,12 +29,15 @@ func (r AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTcwmsOutboundLoadContainerReceiveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLoadReceiveRequest is LoadReceiveRequest Setter

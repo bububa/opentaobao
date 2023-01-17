@@ -29,12 +29,15 @@ func (r TmallCrmMemberFrontUnbindPrivyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCrmMemberFrontUnbindPrivyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallCrmMemberFrontUnbindPrivyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallCrmMemberFrontUnbindPrivyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuid is Ouid Setter

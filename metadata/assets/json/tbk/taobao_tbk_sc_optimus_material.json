@@ -644,6 +644,43 @@
 					"name": "activity_id",
 					"type": "String",
 					"description": "合作伙伴单单补ID，用作“年货节超级单单补”活动合作伙伴奖励统计依据"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sp_cid",
+							"type": "String",
+							"description": "定向计划活动ID"
+						},
+						{
+							"name": "sp_name",
+							"type": "String",
+							"description": "定向计划名称"
+						},
+						{
+							"name": "sp_rate",
+							"type": "String",
+							"description": "定向佣金率"
+						},
+						{
+							"name": "sp_lock_status",
+							"type": "String",
+							"description": "定向是否锁佣，0=不锁佣 1=锁佣"
+						},
+						{
+							"name": "sp_apply_link",
+							"type": "String",
+							"description": "定向计划申请链接"
+						},
+						{
+							"name": "sp_status",
+							"type": "String",
+							"description": "定向计划是否可用 1-可用 0-不可用"
+						}
+					],
+					"name": "sp_campaign_list",
+					"type": "SpCampaign[]",
+					"description": "定向计划集合"
 				}
 			],
 			"name": "result_list",

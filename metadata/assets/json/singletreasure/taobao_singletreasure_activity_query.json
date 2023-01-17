@@ -3,18 +3,6 @@
 		{
 			"subParams": [
 				{
-					"name": "page_size",
-					"type": "Number",
-					"description": "页码,最大为50",
-					"required": true
-				},
-				{
-					"name": "page_number",
-					"type": "Number",
-					"description": "页数，从1开始",
-					"required": true
-				},
-				{
 					"subParams": [
 						{
 							"name": "activity_id",
@@ -35,6 +23,18 @@
 					"name": "query",
 					"type": "ActivityInfoListQueryDto",
 					"description": "查询条件请求体"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页码,最大为50",
+					"required": true
+				},
+				{
+					"name": "page_number",
+					"type": "Number",
+					"description": "页数，从1开始",
+					"required": true
 				}
 			],
 			"name": "query",
@@ -49,124 +49,104 @@
 				{
 					"name": "message",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"subParams": [
 						{
 							"name": "free_post",
 							"type": "Boolean",
-							"description": "是否包邮",
-							"required": true
+							"description": "是否包邮"
 						},
 						{
 							"name": "created_time",
 							"type": "String",
-							"description": "创建时间",
-							"required": true
+							"description": "创建时间"
 						},
 						{
 							"name": "end_time",
 							"type": "String",
-							"description": "活动结束时间",
-							"required": true
+							"description": "活动结束时间"
 						},
 						{
 							"name": "exclude_areas",
 							"type": "String",
-							"description": "不包邮地区",
-							"required": true
+							"description": "不包邮地区"
 						},
 						{
 							"name": "start_time",
 							"type": "String",
-							"description": "活动开始时间",
-							"required": true
+							"description": "活动开始时间"
 						},
 						{
 							"name": "activity_id",
 							"type": "Number",
-							"description": "套餐 id",
-							"required": true
+							"description": "套餐 id"
 						},
 						{
 							"name": "discount_type",
 							"type": "Number",
-							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱",
-							"required": true
+							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱"
 						},
 						{
 							"name": "description",
 							"type": "String",
-							"description": "套餐描述",
-							"required": true
+							"description": "套餐描述"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家 id",
-							"required": true
+							"description": "卖家 id"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "套餐名称",
-							"required": true
+							"description": "套餐名称"
 						},
 						{
 							"name": "crowd_id",
 							"type": "String",
-							"description": "活动对应生效的人群 id",
-							"required": true
+							"description": "活动对应生效的人群 id"
 						},
 						{
 							"name": "promotion_level",
 							"type": "Number",
-							"description": "优惠类型，3 为 SKU 级优惠类型，1 为商品级优惠类型",
-							"required": true
+							"description": "优惠类型，3 为 SKU 级优惠类型，1 为商品级优惠类型"
 						},
 						{
 							"name": "activity_status",
 							"type": "Number",
-							"description": "活动状态",
-							"required": true
+							"description": "活动状态"
 						}
 					],
 					"name": "data_list",
 					"type": "ActivityInfo[]",
-					"description": "查询结果",
-					"required": true
+					"description": "查询结果"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "系统执行是否成功",
-					"required": true
+					"description": "系统执行是否成功"
 				},
 				{
 					"name": "page_number",
 					"type": "Number",
-					"description": "页码",
-					"required": true
+					"description": "页码"
 				},
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "总数",
-					"required": true
+					"description": "总数"
 				},
 				{
 					"name": "size",
 					"type": "Number",
-					"description": "返回结果个数",
-					"required": true
+					"description": "返回结果个数"
 				}
 			],
 			"name": "result",

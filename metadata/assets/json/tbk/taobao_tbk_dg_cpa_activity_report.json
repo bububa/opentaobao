@@ -74,6 +74,11 @@
 									"name": "query_type",
 									"type": "Number",
 									"description": "数据类型:1预估 2结算"
+								},
+								{
+									"name": "ext_info",
+									"type": "String",
+									"description": "活动相关数据信息"
 								}
 							],
 							"name": "results",

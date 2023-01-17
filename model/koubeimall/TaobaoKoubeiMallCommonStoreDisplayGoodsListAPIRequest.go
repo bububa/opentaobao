@@ -45,12 +45,15 @@ func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoKoubeiMallCommonStoreDisplayGoodsListAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMallId is MallId Setter

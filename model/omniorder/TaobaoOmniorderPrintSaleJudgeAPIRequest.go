@@ -29,12 +29,15 @@ func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOmniorderPrintSaleJudgeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSubUid is SubUid Setter

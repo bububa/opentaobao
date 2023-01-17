@@ -1,0 +1,188 @@
+{
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键字"
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页号"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户id"
+		},
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "返回状态"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "standpoint_desc",
+							"type": "String",
+							"description": "观点描述"
+						},
+						{
+							"name": "defense_caliber",
+							"type": "String",
+							"description": "口径"
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "创建时间"
+						},
+						{
+							"name": "scenes_strucct",
+							"type": "String",
+							"description": "场景结构"
+						},
+						{
+							"name": "scenes_name",
+							"type": "String",
+							"description": "场景名称"
+						},
+						{
+							"name": "creater_worker_no",
+							"type": "String",
+							"description": "创建者"
+						},
+						{
+							"name": "scenes_id",
+							"type": "Number",
+							"description": "场景id"
+						},
+						{
+							"name": "standpoint_labels",
+							"type": "String[]",
+							"description": "口径标签"
+						},
+						{
+							"subParams": [
+								{
+									"name": "title",
+									"type": "String",
+									"description": "扩展字段标题"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "扩展字段值"
+								},
+								{
+									"subParams": [
+										{
+											"name": "file_id",
+											"type": "Number",
+											"description": "文件中心id"
+										},
+										{
+											"name": "file_name",
+											"type": "String",
+											"description": "文件名称"
+										},
+										{
+											"name": "file_type",
+											"type": "String",
+											"description": "文件类型"
+										},
+										{
+											"name": "preview_url",
+											"type": "String",
+											"description": "预览地址"
+										},
+										{
+											"name": "download_url",
+											"type": "String",
+											"description": "下载地址"
+										}
+									],
+									"name": "file_values",
+									"type": "FileDto[]",
+									"description": "文件对象"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "类型"
+								}
+							],
+							"name": "options",
+							"type": "Option[]",
+							"description": "options"
+						},
+						{
+							"name": "label",
+							"type": "String",
+							"description": "label"
+						},
+						{
+							"name": "table_str",
+							"type": "String[]",
+							"description": "table信息"
+						},
+						{
+							"name": "table_schema",
+							"type": "String",
+							"description": "tableSchema"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id"
+						}
+					],
+					"name": "data",
+					"type": "StandpointOutPutDto[]",
+					"description": "口径对象"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "100"
+				}
+			],
+			"name": "content",
+			"type": "Page",
+			"description": "分页对象"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "系统错误"
+		}
+	],
+	"name": "alibaba.legal.standpoint.query",
+	"apiChineseName": "口径查询",
+	"description": "口径查询",
+	"id": 64369
+}

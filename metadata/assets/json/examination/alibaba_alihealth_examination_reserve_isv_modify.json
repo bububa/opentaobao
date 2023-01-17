@@ -38,14 +38,14 @@
 					"description": "errCode"
 				},
 				{
-					"name": "err_message",
-					"type": "String",
-					"description": "errMessage"
-				},
-				{
 					"name": "success",
 					"type": "Boolean",
 					"description": "success"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage"
 				}
 			],
 			"name": "result",

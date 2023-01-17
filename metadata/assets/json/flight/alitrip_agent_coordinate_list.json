@@ -1,0 +1,150 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "start_index",
+					"type": "Number",
+					"description": "开始页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "协同单状态列表，0:“待分配”，1:“待处理”，2:“处理中”，3:“已完结”，4:“已拒绝”，5:“已关闭”，6:“待验收”，7:“预约处理”"
+				},
+				{
+					"name": "case_type_list",
+					"type": "String[]",
+					"description": "协同单类型列表，1, \"加订婴童\"； 2, \"加订婴童待出票\"； 3, \"自营履约系统转人工\"； 4, \"正向履约返现转人工\"； 5, \"催出票\"； 6, \"催退票\"； 7, \"催改签回填\"； 8, \"拦截出票\"； 9, \"系统主动二次回填\"； 10, \"商家主动二次回填\"； 13, \"追款\"； 11, \"改名/改证件询价\"； 12, \"改名/改证件\"； 4, \"补退\"； 15, \"宠物托运\"； 16, \"特殊餐食\"； 17, \"轮椅/担架\"； 18, \"婴儿摇篮\"； 19, \"加订行李\"； 20, \"航变清Q转人工\"； 22,\"无法出票\"； 23,\"线下编码预定\"； 24,\"申请关闭验真\"； 25, \"拦截改签\"； 26, \"催改签出票\"；"
+				},
+				{
+					"name": "create_gmt_begin",
+					"type": "Date",
+					"description": "创建时间起点"
+				},
+				{
+					"name": "create_gmt_end",
+					"type": "Date",
+					"description": "创建时间终点"
+				},
+				{
+					"name": "correlation_out_order_id",
+					"type": "String",
+					"description": "飞猪订单号"
+				},
+				{
+					"name": "domestic_intl",
+					"type": "Number",
+					"description": "1:国内，2:国际",
+					"required": true
+				}
+			],
+			"name": "coordination_list_request_dto",
+			"type": "CoordinationListRequestDTO",
+			"description": "协同单列表查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "协同单ID"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "case_type",
+							"type": "Number",
+							"description": "协同单问题类型：1, \"加订婴童\"； 2, \"加订婴童待出票\"； 3, \"自营履约系统转人工\"； 4, \"正向履约返现转人工\"； 5, \"催出票\"； 6, \"催退票\"； 7, \"催改签回填\"； 8, \"拦截出票\"； 9, \"系统主动二次回填\"； 10, \"商家主动二次回填\"； 13, \"追款\"； 11, \"改名/改证件询价\"； 12, \"改名/改证件\"； 14, \"补退\"； 15, \"宠物托运\"； 16, \"特殊餐食\"； 17, \"轮椅/担架\"； 18, \"婴儿摇篮\"； 19, \"加订行李\"； 20, \"航变清Q转人工\"； 22,\"无法出票\"； 23,\"线下编码预定\"； 24,\"申请关闭验真\"； 25, \"拦截改签\"； 26, \"催改签出票\"；"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "协同单状态"
+						},
+						{
+							"name": "current_follower_name",
+							"type": "String",
+							"description": "跟进人名称"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题"
+						},
+						{
+							"name": "serve_deadline",
+							"type": "Date",
+							"description": "协同履约截止时间"
+						},
+						{
+							"name": "urge",
+							"type": "Number",
+							"description": "是否催促过，0:未催促，1:已催促"
+						},
+						{
+							"name": "correlation_out_order_id",
+							"type": "String",
+							"description": "飞猪订单号"
+						},
+						{
+							"name": "correlation_biz_type",
+							"type": "Number",
+							"description": "1:出票,2:退票,3:改签,4:航变"
+						}
+					],
+					"name": "data_list",
+					"type": "T[]",
+					"description": "结果集"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标示"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码:000:系统异常, 001:请求参数不合法, 002:权限不足, 003:操作失败, 004:流量管控"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "PageDTO",
+			"description": "协同单列表查询结果"
+		}
+	],
+	"name": "alitrip.agent.coordinate.list",
+	"apiChineseName": "慧飞商家协同单列表查询接口",
+	"description": "慧飞商家协同单列表查询接口",
+	"id": 64433
+}

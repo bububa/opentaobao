@@ -28,10 +28,10 @@ type TmallExchangeReceiveGetAPIResponseModel struct {
 	ErrorCodes string `json:"error_codes,omitempty" xml:"error_codes,omitempty"`
 	// 错误信息
 	ErrorMsg string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
-	// 所有符合查询条件的换货单的数量
-	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 当前页的换货单数量
 	PageResults int64 `json:"page_results,omitempty" xml:"page_results,omitempty"`
+	// 所有符合查询条件的换货单的数量
+	TotalResults int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 	// 是否还有下一页
 	HasNext bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 }

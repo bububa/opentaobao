@@ -6,6 +6,11 @@
 			"description": "分销商ID 。"
 		},
 		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID"
+		},
+		{
 			"name": "start_modified",
 			"type": "Date",
 			"description": "设置开始时间。空为不设置。"
@@ -16,19 +21,14 @@
 			"description": "设置结束时间,空为不设置。"
 		},
 		{
-			"name": "page_no",
-			"type": "Number",
-			"description": "页码（大于0的整数，默认1）"
-		},
-		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "每页记录数（默认20，最大50）"
 		},
 		{
-			"name": "product_id",
+			"name": "page_no",
 			"type": "Number",
-			"description": "产品ID"
+			"description": "页码（大于0的整数，默认1）"
 		}
 	],
 	"responseParams": [

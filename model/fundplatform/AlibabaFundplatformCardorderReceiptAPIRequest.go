@@ -31,12 +31,15 @@ func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaFundplatformCardorderReceiptAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOwnSign is OwnSign Setter

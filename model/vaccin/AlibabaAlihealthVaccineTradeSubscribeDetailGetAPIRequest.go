@@ -29,12 +29,15 @@ func (r AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) GetApiMethodNa
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthVaccineTradeSubscribeDetailGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTradeSubscribeDetailQueryTopRequest is TradeSubscribeDetailQueryTopRequest Setter

@@ -208,6 +208,53 @@
 					"name": "data_export_agreement",
 					"type": "Boolean",
 					"description": "是否同意向境外提供个人信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "category",
+							"type": "String",
+							"description": "类型"
+						},
+						{
+							"name": "discount_off",
+							"type": "Number",
+							"description": "折扣百分比"
+						},
+						{
+							"name": "room_type_code",
+							"type": "String",
+							"description": "房型srId"
+						},
+						{
+							"name": "rate_plan_code",
+							"type": "String",
+							"description": "房型rpCode"
+						},
+						{
+							"name": "is_derby_voucher_room",
+							"type": "Boolean",
+							"description": "是否为权益商品"
+						},
+						{
+							"name": "member_voucher_card_id",
+							"type": "String",
+							"description": "权益卡卡号"
+						},
+						{
+							"name": "member_voucher_id",
+							"type": "String",
+							"description": "权益券id"
+						}
+					],
+					"name": "derby_voucher_universal_d_t_o",
+					"type": "DerbyVoucherUniversalDTO",
+					"description": "权益券相关参数"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "1"
 				}
 			],
 			"name": "order_param",

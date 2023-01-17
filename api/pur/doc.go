@@ -1,4 +1,4 @@
 // Package pur 包含信息平台-采购相关方法
 //
-// https://open.taobao.com/API.htm?docId=38501&docType=2
+// https://open.taobao.com/API.htm?docType=2&docId=38501
 package pur

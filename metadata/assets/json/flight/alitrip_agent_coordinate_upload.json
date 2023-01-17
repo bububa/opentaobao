@@ -1,0 +1,43 @@
+{
+	"requestParams": [
+		{
+			"name": "file_content",
+			"type": "byte[]",
+			"description": "附件Byte[]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "附件地址"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "协同单接口返回结果"
+		}
+	],
+	"name": "alitrip.agent.coordinate.upload",
+	"apiChineseName": "协同单附件凭证上传",
+	"description": "协同单附件凭证上传",
+	"id": 64822
+}

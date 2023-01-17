@@ -66,6 +66,11 @@
 					"description": "最后修改时间"
 				},
 				{
+					"name": "creative_id",
+					"type": "Number",
+					"description": "创意id"
+				},
+				{
 					"name": "img_type",
 					"type": "Number",
 					"description": "创意图片类型,1-主图,2-副图,3-自定义图片"
@@ -74,11 +79,6 @@
 					"name": "second_img_origin_url",
 					"type": "String",
 					"description": "使用副图作为创意的原始副图图片URL后缀"
-				},
-				{
-					"name": "creative_id",
-					"type": "Number",
-					"description": "创意id"
 				}
 			],
 			"name": "creatives",

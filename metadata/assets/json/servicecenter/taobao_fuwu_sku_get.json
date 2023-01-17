@@ -22,46 +22,21 @@
 					"description": "服务code"
 				},
 				{
-					"name": "article_name",
-					"type": "String",
-					"description": "服务名称"
-				},
-				{
-					"name": "pict_url",
-					"type": "String",
-					"description": "服务图片地址"
-				},
-				{
 					"name": "article_commment",
 					"type": "String",
 					"description": "服务简介"
 				},
 				{
-					"name": "nick",
-					"type": "String",
-					"description": "用户淘宝nick"
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码"
-				},
-				{
-					"name": "error_msg",
-					"type": "String",
-					"description": "错误消息"
-				},
-				{
 					"subParams": [
 						{
-							"name": "item_code",
+							"name": "actual_price",
 							"type": "String",
-							"description": "收费项目code"
+							"description": "需要支付的价格，单位：元"
 						},
 						{
-							"name": "item_name",
-							"type": "String",
-							"description": "收费项目名称"
+							"name": "can_sub",
+							"type": "Boolean",
+							"description": "用户是否可以购买"
 						},
 						{
 							"name": "cyc_num",
@@ -74,9 +49,24 @@
 							"description": "1-年，2-月，3-日。对于周期型和周期计量型返回。"
 						},
 						{
-							"name": "quantity",
-							"type": "Number",
-							"description": "数量。对于周期计量型返回计量数。"
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误文案"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "收费项目code"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "收费项目名称"
 						},
 						{
 							"name": "origin_price",
@@ -89,29 +79,39 @@
 							"description": "优惠，单位：元"
 						},
 						{
-							"name": "actual_price",
-							"type": "String",
-							"description": "需要支付的价格，单位：元"
-						},
-						{
-							"name": "can_sub",
-							"type": "Boolean",
-							"description": "用户是否可以购买"
-						},
-						{
-							"name": "error_code",
-							"type": "String",
-							"description": "错误码"
-						},
-						{
-							"name": "error_msg",
-							"type": "String",
-							"description": "错误文案"
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量。对于周期计量型返回计量数。"
 						}
 					],
 					"name": "article_item_view_units",
 					"type": "ArticleItemViewUnit[]",
 					"description": "sku详情列表"
+				},
+				{
+					"name": "article_name",
+					"type": "String",
+					"description": "服务名称"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "用户淘宝nick"
+				},
+				{
+					"name": "pict_url",
+					"type": "String",
+					"description": "服务图片地址"
 				}
 			],
 			"name": "result",

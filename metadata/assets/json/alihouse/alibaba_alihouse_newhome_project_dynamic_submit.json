@@ -44,6 +44,11 @@
 					"name": "status",
 					"type": "Number",
 					"description": "状态 0-无效 1-有效"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
 				}
 			],
 			"name": "project_dynamics",

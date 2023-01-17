@@ -29,12 +29,15 @@ func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEleEnterpriseEmployeeBatchupdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEnterpriseDatas is EnterpriseDatas Setter

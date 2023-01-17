@@ -1,0 +1,300 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "Number",
+					"description": "服务商id"
+				}
+			],
+			"name": "query",
+			"type": "ConsignmentOrderQuery",
+			"description": "查询订单入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "appkey",
+							"type": "String",
+							"description": "appkey"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单主状态"
+						},
+						{
+							"name": "order_sub_status",
+							"type": "String",
+							"description": "订单子状态"
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "卖家id"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称"
+						},
+						{
+							"name": "seller_alipay_user_id",
+							"type": "String",
+							"description": "卖家支付宝昵称"
+						},
+						{
+							"name": "seller_alipay_account",
+							"type": "String",
+							"description": "卖家支付宝账户"
+						},
+						{
+							"name": "apprize_amount",
+							"type": "String",
+							"description": "估价金额"
+						},
+						{
+							"name": "seller_address",
+							"type": "String",
+							"description": "卖家地址"
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家手机"
+						},
+						{
+							"name": "ship_time",
+							"type": "String",
+							"description": "上门时间"
+						},
+						{
+							"name": "seller_real_name",
+							"type": "String",
+							"description": "卖家真实姓名"
+						},
+						{
+							"name": "apprize_id",
+							"type": "String",
+							"description": "估价id"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "村"
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "订单渠道"
+						},
+						{
+							"name": "sub_channel",
+							"type": "String",
+							"description": "子渠道"
+						},
+						{
+							"name": "channel_data",
+							"type": "String",
+							"description": "渠道下存储的数据"
+						},
+						{
+							"name": "rate_grade",
+							"type": "String",
+							"description": "评价等级 1 好评,0 默认中评"
+						},
+						{
+							"name": "rate_content",
+							"type": "String",
+							"description": "评价内容"
+						},
+						{
+							"name": "seller_close_reason",
+							"type": "String",
+							"description": "卖家取消订单原因"
+						},
+						{
+							"name": "buyer_close_reason",
+							"type": "String",
+							"description": "买家关闭订单原因"
+						},
+						{
+							"name": "env",
+							"type": "String",
+							"description": "订单产生环境"
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "service_rule",
+							"type": "String",
+							"description": "服务费规则"
+						},
+						{
+							"name": "ship_mail_no",
+							"type": "String",
+							"description": "上门取件物流单号"
+						},
+						{
+							"name": "summary",
+							"type": "String",
+							"description": "质检结果简述"
+						},
+						{
+							"name": "report_url",
+							"type": "String",
+							"description": "质检报告url"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "成色"
+						},
+						{
+							"name": "consignment_service_fee",
+							"type": "String",
+							"description": "服务费"
+						},
+						{
+							"name": "consignment_pay_amount",
+							"type": "String",
+							"description": "服务商实际支付金额"
+						},
+						{
+							"name": "qa_amount",
+							"type": "String",
+							"description": "质检价格"
+						},
+						{
+							"name": "consignment_max_deal_amt",
+							"type": "String",
+							"description": "用户出价"
+						},
+						{
+							"name": "reference_recycle_price",
+							"type": "String",
+							"description": "参考回收价"
+						},
+						{
+							"name": "seller_receipt_address_id",
+							"type": "String",
+							"description": "逆向退回地址id"
+						},
+						{
+							"name": "seller_receipt_address",
+							"type": "String",
+							"description": "逆向退回地址 详细信息"
+						},
+						{
+							"name": "refund_mail_no",
+							"type": "String",
+							"description": "退回运单号"
+						},
+						{
+							"name": "seller_receipt_phone",
+							"type": "String",
+							"description": "逆向退回卖家手机号"
+						},
+						{
+							"name": "seller_receipt_name",
+							"type": "String",
+							"description": "逆向退回卖家姓名"
+						},
+						{
+							"name": "reverse_service_fee",
+							"type": "String",
+							"description": "逆向处理费"
+						},
+						{
+							"name": "spu_id",
+							"type": "String",
+							"description": "spuId"
+						},
+						{
+							"name": "ship_type",
+							"type": "String",
+							"description": "订单发货类型，1:邮寄，2:上门，3:到店"
+						},
+						{
+							"name": "station_id",
+							"type": "String",
+							"description": "门店地址id"
+						}
+					],
+					"name": "module",
+					"type": "ConsignmentV2OrderTO",
+					"description": "返回结果"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.idle.car.order.query",
+	"apiChineseName": "二手车寄卖查询订单接口",
+	"description": "二手车寄卖查询订单接口",
+	"id": 64471
+}

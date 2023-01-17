@@ -43,12 +43,15 @@ func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScPublisherInfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRelationApp is RelationApp Setter

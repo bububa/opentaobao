@@ -37,12 +37,15 @@ func (r TaobaoCrmMembersIncrementGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCrmMembersIncrementGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCrmMembersIncrementGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCrmMembersIncrementGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStartModify is StartModify Setter

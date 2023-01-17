@@ -29,12 +29,15 @@ func (r TaobaoFeedflowItemAdgroupModifyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupModifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFeedflowItemAdgroupModifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFeedflowItemAdgroupModifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAdgroup is Adgroup Setter

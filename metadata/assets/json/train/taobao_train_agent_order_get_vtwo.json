@@ -15,14 +15,19 @@
 	],
 	"responseParams": [
 		{
-			"name": "ttp_order_id",
-			"type": "Number",
-			"description": "ttp_order_id"
+			"name": "address",
+			"type": "String",
+			"description": "保险邮件地址"
 		},
 		{
-			"name": "is_success",
+			"name": "company_name",
+			"type": "String",
+			"description": "如果是公司发票，需要公司名称，如果不需要公司名称，返回no"
+		},
+		{
+			"name": "mailing",
 			"type": "Boolean",
-			"description": "返回错误。"
+			"description": "是否需要保险邮件地址"
 		},
 		{
 			"name": "main_order_id",
@@ -30,11 +35,121 @@
 			"description": "主订单id"
 		},
 		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "1-已付款，2-关闭，3-成功"
+		},
+		{
+			"name": "relation_name",
+			"type": "String",
+			"description": "联系人姓名"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回错误。"
+		},
+		{
+			"name": "telephone",
+			"type": "String",
+			"description": "移动电话"
+		},
+		{
 			"subParams": [
+				{
+					"name": "birthday",
+					"type": "String",
+					"description": "乘客生日"
+				},
+				{
+					"name": "certificate_num",
+					"type": "String",
+					"description": "证件编号"
+				},
+				{
+					"name": "certificate_type",
+					"type": "String",
+					"description": "证件类型，0:身份证 1:护照 4:港澳通行证 5:台湾通行证"
+				},
+				{
+					"name": "from_station",
+					"type": "String",
+					"description": "出发站"
+				},
+				{
+					"name": "from_time",
+					"type": "String",
+					"description": "出发时间"
+				},
+				{
+					"name": "insurance_price",
+					"type": "Number",
+					"description": "保险价格，精确到分，例如10元，输入1000。"
+				},
+				{
+					"name": "insurance_unit_price",
+					"type": "Number",
+					"description": "保险的单一价格"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "乘客姓名"
+				},
+				{
+					"name": "passenger_type",
+					"type": "Number",
+					"description": "0:成人 1:儿童 2：学生"
+				},
+				{
+					"name": "seat",
+					"type": "Number",
+					"description": "坐席"
+				},
+				{
+					"name": "sub_order_id",
+					"type": "String",
+					"description": "淘宝火车票子订单id."
+				},
+				{
+					"name": "tag",
+					"type": "Number",
+					"description": "1:单程票"
+				},
+				{
+					"name": "ticket_price",
+					"type": "Number",
+					"description": "单张票价(不包含保险价格),例如100元,输出为10000,精确到分."
+				},
+				{
+					"name": "to_station",
+					"type": "String",
+					"description": "到达站"
+				},
+				{
+					"name": "to_time",
+					"type": "String",
+					"description": "到站时间"
+				},
+				{
+					"name": "train_num",
+					"type": "String",
+					"description": "车次"
+				},
 				{
 					"subParams": [
 						{
-							"name": "card",
+							"name": "school_province",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "school_name",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "depart_ment",
 							"type": "String",
 							"description": "demo"
 						},
@@ -44,7 +159,7 @@
 							"description": "demo"
 						},
 						{
-							"name": "depart_ment",
+							"name": "student_no",
 							"type": "String",
 							"description": "demo"
 						},
@@ -59,22 +174,12 @@
 							"description": "demo"
 						},
 						{
+							"name": "card",
+							"type": "String",
+							"description": "demo"
+						},
+						{
 							"name": "from_city",
-							"type": "String",
-							"description": "demo"
-						},
-						{
-							"name": "school_name",
-							"type": "String",
-							"description": "demo"
-						},
-						{
-							"name": "school_province",
-							"type": "String",
-							"description": "demo"
-						},
-						{
-							"name": "student_no",
 							"type": "String",
 							"description": "demo"
 						},
@@ -89,99 +194,9 @@
 					"description": "学生信息"
 				},
 				{
-					"name": "sub_order_id",
-					"type": "String",
-					"description": "淘宝火车票子订单id."
-				},
-				{
-					"name": "from_station",
-					"type": "String",
-					"description": "出发站"
-				},
-				{
-					"name": "from_time",
-					"type": "String",
-					"description": "出发时间"
-				},
-				{
-					"name": "to_station",
-					"type": "String",
-					"description": "到达站"
-				},
-				{
-					"name": "seat",
-					"type": "Number",
-					"description": "坐席"
-				},
-				{
-					"name": "train_num",
-					"type": "String",
-					"description": "车次"
-				},
-				{
-					"name": "passenger_name",
-					"type": "String",
-					"description": "乘客姓名"
-				},
-				{
-					"name": "certificate_num",
-					"type": "String",
-					"description": "证件编号"
-				},
-				{
-					"name": "certificate_type",
-					"type": "String",
-					"description": "证件类型，0:身份证 1:护照 4:港澳通行证 5:台湾通行证"
-				},
-				{
-					"name": "insurance_price",
-					"type": "Number",
-					"description": "保险价格，精确到分，例如10元，输入1000。"
-				},
-				{
-					"name": "ticket_price",
-					"type": "Number",
-					"description": "单张票价(不包含保险价格),例如100元,输出为10000,精确到分."
-				},
-				{
-					"name": "birthday",
-					"type": "String",
-					"description": "乘客生日"
-				},
-				{
-					"name": "to_time",
-					"type": "String",
-					"description": "到站时间"
-				},
-				{
-					"name": "tag",
-					"type": "Number",
-					"description": "1:单程票"
-				},
-				{
-					"name": "insurance_unit_price",
-					"type": "Number",
-					"description": "保险的单一价格"
-				},
-				{
-					"name": "passenger_type",
-					"type": "Number",
-					"description": "0:成人 1:儿童 2：学生"
-				},
-				{
 					"name": "segment_index",
 					"type": "Number",
 					"description": "segmentIndex"
-				},
-				{
-					"name": "nationality",
-					"type": "String",
-					"description": "国籍"
-				},
-				{
-					"name": "nationality_code",
-					"type": "String",
-					"description": "国籍代码"
 				},
 				{
 					"name": "valid_until",
@@ -189,9 +204,19 @@
 					"description": "证件有效期"
 				},
 				{
+					"name": "nationality_code",
+					"type": "String",
+					"description": "国家code"
+				},
+				{
+					"name": "nationality",
+					"type": "String",
+					"description": "国家名称"
+				},
+				{
 					"name": "gender",
 					"type": "String",
-					"description": "性别  1:男  0:女"
+					"description": "性别 1：男 0：女"
 				},
 				{
 					"name": "telephone",
@@ -200,7 +225,8 @@
 				},
 				{
 					"name": "real_ticket_price",
-					"type": "Number"
+					"type": "Number",
+					"description": "实际票价(不包含保险价格),例如100元,输出为10000,精确到分."
 				}
 			],
 			"name": "tickets",
@@ -213,39 +239,14 @@
 			"description": "整个订单的总价,包括每张票价及保险价格,价格精确到分,例如100元,输出为10000."
 		},
 		{
-			"name": "telephone",
-			"type": "String",
-			"description": "移动电话"
-		},
-		{
-			"name": "mailing",
-			"type": "Boolean",
-			"description": "是否需要保险邮件地址"
-		},
-		{
-			"name": "address",
-			"type": "String",
-			"description": "保险邮件地址"
-		},
-		{
-			"name": "relation_name",
-			"type": "String",
-			"description": "联系人姓名"
-		},
-		{
-			"name": "company_name",
-			"type": "String",
-			"description": "如果是公司发票，需要公司名称，如果不需要公司名称，返回no"
-		},
-		{
-			"name": "order_status",
-			"type": "Number",
-			"description": "1-已付款，2-关闭，3-成功"
-		},
-		{
 			"name": "latest_issue_time",
 			"type": "Date",
 			"description": "最晚出票时间"
+		},
+		{
+			"name": "ttp_order_id",
+			"type": "Number",
+			"description": "ttp_order_id"
 		},
 		{
 			"name": "order_type",
@@ -336,6 +337,38 @@
 			"name": "refund_by_passenger",
 			"type": "Boolean",
 			"description": "是否需要乘车人退款 true:需要 false:不需要"
+		},
+		{
+			"subParams": [
+				{
+					"name": "custom_type",
+					"type": "String",
+					"description": "定制类型"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "定制数量"
+				},
+				{
+					"name": "carriage_custom",
+					"type": "String[]",
+					"description": "定制车厢号"
+				},
+				{
+					"name": "seat_custom",
+					"type": "String",
+					"description": "定制坐席号"
+				},
+				{
+					"name": "accept_no_vip_custom",
+					"type": "Number",
+					"description": "是否接受非定制,0不接受,1接受"
+				}
+			],
+			"name": "vip_custom_list",
+			"type": "VipCustomResultItem []",
+			"description": "vip定制信息"
 		}
 	],
 	"name": "taobao.train.agent.order.get.vtwo",

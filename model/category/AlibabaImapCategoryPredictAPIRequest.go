@@ -10,8 +10,8 @@ import (
 // alibaba.imap.category.predict
 //
 // * 类目预测接口
-//      * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId
-//      * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList
+//   - 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId
+//   - 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList
 type AlibabaImapCategoryPredictAPIRequest struct {
 	model.Params
 	// 账号信息
@@ -33,12 +33,15 @@ func (r AlibabaImapCategoryPredictAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaImapCategoryPredictAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaImapCategoryPredictAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaImapCategoryPredictAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFixedMappingAppInfo is FixedMappingAppInfo Setter

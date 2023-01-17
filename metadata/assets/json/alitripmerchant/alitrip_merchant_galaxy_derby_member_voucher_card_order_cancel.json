@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单状态code"
+				},
+				{
+					"name": "fk_token",
+					"type": "String",
+					"description": "模拟token"
+				}
+			],
+			"name": "derby_voucher_card_cancel_d_t_o",
+			"type": "DerbyVoucherCardCancelDTO",
+			"description": "取消订单参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "订单取消成功"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.order.cancel",
+	"apiChineseName": "取消订单",
+	"description": "德比付费会员卡订单取消",
+	"id": 64168
+}

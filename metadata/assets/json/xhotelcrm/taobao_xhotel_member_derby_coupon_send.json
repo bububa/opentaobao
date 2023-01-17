@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "member_card_no",
+					"type": "String",
+					"description": "会员卡号",
+					"required": true
+				},
+				{
+					"name": "coupon_end_date",
+					"type": "Date",
+					"description": "券有效期截止时间",
+					"required": true
+				},
+				{
+					"name": "coupon_instance_id",
+					"type": "String",
+					"description": "券实例ID",
+					"required": true
+				},
+				{
+					"name": "coupon_start_date",
+					"type": "Date",
+					"description": "券有效期开始时间",
+					"required": true
+				}
+			],
+			"name": "param",
+			"type": "SendCouponParam",
+			"description": "入参模型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "false"
+				},
+				{
+					"name": "err_code",
+					"type": "Boolean",
+					"description": "S_SYS_EXCEPTION"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统异常"
+				}
+			],
+			"name": "result",
+			"type": "MsdResult",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.xhotel.member.derby.coupon.send",
+	"apiChineseName": "发券",
+	"description": "发券",
+	"id": 64489
+}

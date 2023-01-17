@@ -31,12 +31,15 @@ func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoMiniappCloudStoreListfileAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEnv is Env Setter

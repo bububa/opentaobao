@@ -18,12 +18,12 @@ type TaobaoProductUpdateAPIRequest struct {
 	_binds string
 	// 销售属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid
 	_saleProps string
+	// 产品名称.最大不超过30个字符
+	_name string
 	// 产品市场价.精确到2位小数;单位为元.如:200.07
 	_price string
 	// 产品描述.最大不超过25000个字符
 	_desc string
-	// 产品名称.最大不超过30个字符
-	_name string
 	// 自定义非关键属性
 	_nativeUnkeyprops string
 	// 产品ID
@@ -47,12 +47,15 @@ func (r TaobaoProductUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoProductUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoProductUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoProductUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterId is OuterId Setter
@@ -94,6 +97,19 @@ func (r TaobaoProductUpdateAPIRequest) GetSaleProps() string {
 	return r._saleProps
 }
 
+// SetName is Name Setter
+// 产品名称.最大不超过30个字符
+func (r *TaobaoProductUpdateAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// GetName Name Getter
+func (r TaobaoProductUpdateAPIRequest) GetName() string {
+	return r._name
+}
+
 // SetPrice is Price Setter
 // 产品市场价.精确到2位小数;单位为元.如:200.07
 func (r *TaobaoProductUpdateAPIRequest) SetPrice(_price string) error {
@@ -118,19 +134,6 @@ func (r *TaobaoProductUpdateAPIRequest) SetDesc(_desc string) error {
 // GetDesc Desc Getter
 func (r TaobaoProductUpdateAPIRequest) GetDesc() string {
 	return r._desc
-}
-
-// SetName is Name Setter
-// 产品名称.最大不超过30个字符
-func (r *TaobaoProductUpdateAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
-	return nil
-}
-
-// GetName Name Getter
-func (r TaobaoProductUpdateAPIRequest) GetName() string {
-	return r._name
 }
 
 // SetNativeUnkeyprops is NativeUnkeyprops Setter

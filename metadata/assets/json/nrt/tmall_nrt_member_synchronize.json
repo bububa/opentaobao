@@ -86,26 +86,22 @@
 				{
 					"name": "biz_code",
 					"type": "String",
-					"description": "业务code",
-					"required": true
+					"description": "业务code"
 				},
 				{
 					"name": "open_id",
 					"type": "String",
-					"description": "加密后的taoId",
-					"required": true
+					"description": "加密后的taoId"
 				},
 				{
 					"name": "out_member_id",
 					"type": "String",
-					"description": "外部会员ID",
-					"required": true
+					"description": "外部会员ID"
 				},
 				{
 					"name": "seller_id",
 					"type": "Number",
-					"description": "sellerid",
-					"required": true
+					"description": "sellerid"
 				}
 			],
 			"name": "data",

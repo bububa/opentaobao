@@ -31,12 +31,15 @@ func (r TaobaoOpenimTribeQuitAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribeQuitAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOpenimTribeQuitAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOpenimTribeQuitAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUser is User Setter

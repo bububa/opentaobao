@@ -4,6 +4,8 @@ package drugtrace
 type BillInOutDetailDto struct {
 	// 单据详情
 	BillChkInOutDetailListDTOList []Billchkinoutdetaillistdtolist `json:"bill_chk_in_out_detail_list_d_t_o_list,omitempty" xml:"bill_chk_in_out_detail_list_d_t_o_list>billchkinoutdetaillistdtolist,omitempty"`
+	// 单据中的码
+	Codes []string `json:"codes,omitempty" xml:"codes>string,omitempty"`
 	// 修改时间
 	ModDate string `json:"mod_date,omitempty" xml:"mod_date,omitempty"`
 	// 处理时间

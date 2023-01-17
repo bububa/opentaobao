@@ -6,6 +6,8 @@ type TicketingDetailDto struct {
 	IssueList []IssueList `json:"issue_list,omitempty" xml:"issue_list>issue_list,omitempty"`
 	// 订单标签
 	Tags []string `json:"tags,omitempty" xml:"tags>string,omitempty"`
+	// 行李
+	BaggageList []BaggageDto `json:"baggage_list,omitempty" xml:"baggage_list>baggage_dto,omitempty"`
 	// 飞猪订单号
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
 	// 支付时间
@@ -18,6 +20,10 @@ type TicketingDetailDto struct {
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 退改签规则
 	RefundModifyRule string `json:"refund_modify_rule,omitempty" xml:"refund_modify_rule,omitempty"`
+	// 意向单id
+	IntentionId string `json:"intention_id,omitempty" xml:"intention_id,omitempty"`
+	// 支付成功后30分钟内出票
+	SlaDesc string `json:"sla_desc,omitempty" xml:"sla_desc,omitempty"`
 	// 店铺id
 	AgentId int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
 	// 国内国际标识
@@ -26,4 +32,6 @@ type TicketingDetailDto struct {
 	Commission int64 `json:"commission,omitempty" xml:"commission,omitempty"`
 	// 订单状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
+	//    1:&#34;单程&#34;,     2:&#34;往返&#34;,     3:&#34;多程&#34;
+	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 }

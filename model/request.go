@@ -83,35 +83,31 @@ func (c *CommonRequest) SetSignMethod(method SignMethod) {
 }
 
 // GetParams 转换通用请求参数为map[string]string
-func (c CommonRequest) GetParams() map[string]string {
-	params := map[string]string{
-		"method":      c.Method,
-		"app_key":     c.AppKey,
-		"sign_method": c.SignMethod,
-		"timestamp":   c.Timestamp,
-		"format":      c.Format,
-		"v":           c.V,
-	}
+func (c CommonRequest) GetParams(params url.Values) {
+	params.Set("method", c.Method)
+	params.Set("app_key", c.AppKey)
+	params.Set("sign_method", c.SignMethod)
+	params.Set("timestamp", c.Timestamp)
+	params.Set("format", c.Format)
+	params.Set("v", c.V)
 	if c.TargetAppKey != "" {
-		params["target_app_key"] = c.TargetAppKey
+		params.Set("target_app_key", c.TargetAppKey)
 	}
 	if c.Session != "" {
-		params["session"] = c.Session
+		params.Set("session", c.Session)
 	}
 	if c.PartnerId != "" {
-		params["partner_id"] = c.PartnerId
+		params.Set("partner_id", c.PartnerId)
 	}
 	if c.Format == JSON {
-		params["simplify"] = "true"
+		params.Set("simplify", "true")
 	}
-
-	return params
 }
 
 // IRequest is API Request interace
 type IRequest interface {
 	GetApiMethodName() string
-	GetApiParams() url.Values
+	GetApiParams(url.Values)
 	NeedMultipart() bool
-	GetRawParams() map[string]*ParamValue
+	GetRawParams() Params
 }

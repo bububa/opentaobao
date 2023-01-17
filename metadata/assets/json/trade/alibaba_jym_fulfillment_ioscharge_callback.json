@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "vendor_order_no",
+					"type": "String",
+					"description": "商家订单号",
+					"required": true
+				},
+				{
+					"name": "failed_code",
+					"type": "String",
+					"description": "失败的错误码"
+				},
+				{
+					"name": "jym_order_no",
+					"type": "String",
+					"description": "交易猫订单号",
+					"required": true
+				},
+				{
+					"name": "vendor_id",
+					"type": "String",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "vendor_order_status",
+					"type": "String",
+					"description": "商家订单状态",
+					"required": true
+				},
+				{
+					"name": "vendor_order_snap",
+					"type": "String",
+					"description": "商家订单快照"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "vendor_order_success_time",
+					"type": "String",
+					"description": "商家订单充值成功时间,格式yyyyMMddHHmmss"
+				},
+				{
+					"name": "failed_reason",
+					"type": "String",
+					"description": "失败原因"
+				}
+			],
+			"name": "ios_charge_callback_request_dto",
+			"type": "IOSChargeCallbackRequestDTO",
+			"description": "充值回调请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "failed_code",
+			"type": "String",
+			"description": "失败错误码"
+		},
+		{
+			"name": "jym_order_success",
+			"type": "String",
+			"description": "交易猫订单是否成功，true-成功，false-失败"
+		},
+		{
+			"name": "failed_reason",
+			"type": "String",
+			"description": "失败原因描述"
+		}
+	],
+	"name": "alibaba.jym.fulfillment.ioscharge.callback",
+	"apiChineseName": "代充充值回调",
+	"description": "代充充值回调",
+	"id": 62702
+}

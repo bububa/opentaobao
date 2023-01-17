@@ -11,6 +11,16 @@
 			"type": "Number",
 			"description": "0 失效 1 有效",
 			"required": true
+		},
+		{
+			"name": "outer_project_id",
+			"type": "String",
+			"description": "外部楼盘id（不可多值）"
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店id"
 		}
 	],
 	"responseParams": [

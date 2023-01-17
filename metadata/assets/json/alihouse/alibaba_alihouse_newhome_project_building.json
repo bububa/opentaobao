@@ -5,8 +5,7 @@
 				{
 					"name": "e_code",
 					"type": "String",
-					"description": "楼栋E码",
-					"required": true
+					"description": "楼栋E码"
 				},
 				{
 					"name": "title",
@@ -27,32 +26,27 @@
 				{
 					"name": "elevator_no",
 					"type": "Number",
-					"description": "几梯（单层） \u0000\u003e=0",
-					"required": true
+					"description": "几梯（单层） \u0000\u003e=0"
 				},
 				{
 					"name": "household_no",
 					"type": "Number",
-					"description": "几户（单层） \u0000\u003e0",
-					"required": true
+					"description": "几户（单层） \u0000\u003e0"
 				},
 				{
 					"name": "units",
 					"type": "Number",
-					"description": "单元数 \u003e0",
-					"required": true
+					"description": "单元数 \u003e0"
 				},
 				{
 					"name": "floors",
 					"type": "Number",
-					"description": "层数 \u0000\u003e0",
-					"required": true
+					"description": "层数 \u0000\u003e0"
 				},
 				{
 					"name": "rooms",
 					"type": "Number",
-					"description": "户数 \u0000\u003e0",
-					"required": true
+					"description": "户数 \u0000\u003e0"
 				},
 				{
 					"name": "outer_tid",
@@ -63,8 +57,7 @@
 				{
 					"name": "item_id",
 					"type": "Number",
-					"description": "货商品id",
-					"required": true
+					"description": "货商品id"
 				},
 				{
 					"name": "outer_id",
@@ -136,8 +129,17 @@
 				{
 					"name": "building_no",
 					"type": "String",
-					"description": "楼栋号",
-					"required": true
+					"description": "楼栋号"
+				},
+				{
+					"name": "is_cargo",
+					"type": "Number",
+					"description": "是否为货 0-非货 1-货"
+				},
+				{
+					"name": "is_elevator",
+					"type": "Number",
+					"description": "是否有电梯 0-否 1-是"
 				}
 			],
 			"name": "building_dto",
@@ -176,7 +178,7 @@
 		}
 	],
 	"name": "alibaba.alihouse.newhome.project.building",
-	"apiChineseName": "新房楼栋同步",
-	"description": "新房楼栋同步",
+	"apiChineseName": "楼栋同步",
+	"description": "楼栋同步",
 	"id": 62496
 }

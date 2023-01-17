@@ -16,6 +16,11 @@
 		{
 			"subParams": [
 				{
+					"name": "match_scope",
+					"type": "String",
+					"description": "匹配模式： 1 精确匹配，4 广泛匹配"
+				},
+				{
 					"name": "nick",
 					"type": "String",
 					"description": "主人昵称"
@@ -43,12 +48,12 @@
 				{
 					"name": "max_price",
 					"type": "Number",
-					"description": "关键词出价，单位为分，不能小于5"
+					"description": "关键词计算机出价出价，单位为分"
 				},
 				{
 					"name": "is_default_price",
 					"type": "Boolean",
-					"description": "是否使用推广组默认出价，true-是；false-否；"
+					"description": "已经废弃，当前返回值永远是false"
 				},
 				{
 					"name": "audit_status",
@@ -76,19 +81,14 @@
 					"description": "最后修改时间"
 				},
 				{
-					"name": "match_scope",
-					"type": "String",
-					"description": "匹配模式"
-				},
-				{
 					"name": "mobile_is_default_price",
 					"type": "Number",
-					"description": "无线上是否采用PC*无线溢价的出价模式（1：是，0：否）"
+					"description": "已经废弃，当前返回值永远是0 表示不启用无线默认出价"
 				},
 				{
 					"name": "max_mobile_price",
 					"type": "Number",
-					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
+					"description": "无线出价，单位为分"
 				}
 			],
 			"name": "keywords",

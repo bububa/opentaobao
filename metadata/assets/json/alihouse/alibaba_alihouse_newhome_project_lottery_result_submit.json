@@ -1,0 +1,118 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型 1意向登记表 2摇号结果表",
+					"required": true
+				},
+				{
+					"name": "outer_project_id",
+					"type": "String",
+					"description": "外部楼盘ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "lottery_num",
+							"type": "String",
+							"description": "摇号编号"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "摇号姓名"
+						},
+						{
+							"name": "sort_num",
+							"type": "String",
+							"description": "选房序号 摇号结果表才有数据"
+						},
+						{
+							"name": "identity_card",
+							"type": "String",
+							"description": "身份证"
+						}
+					],
+					"name": "project_lottery_result_d_t_o_list",
+					"type": "ProjectLotteryResultDTO[]",
+					"description": "摇号结果DTO"
+				},
+				{
+					"name": "outer_sales_time_id",
+					"type": "String",
+					"description": "外部分期ID",
+					"required": true
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "外部版本号",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部摇号结果ID",
+					"required": true
+				},
+				{
+					"name": "delete_flag",
+					"type": "Boolean",
+					"description": "是否删除",
+					"required": true
+				}
+			],
+			"name": "project_lottery_result_param",
+			"type": "ProjectLotteryResultParam",
+			"description": "摇号结果入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息体"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.project.lottery.result.submit",
+	"apiChineseName": "楼盘摇号结果提交",
+	"description": "楼盘摇号结果提交",
+	"id": 64165
+}

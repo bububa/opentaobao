@@ -29,7 +29,7 @@
 						{
 							"name": "orderType",
 							"type": "String",
-							"description": "单据类型(THRK=退货入库;HHRK=换货入库;只传英文编码)"
+							"description": "单据类型(THRK=退货入库;HHRK=换货入库;WTJTHRK=无头件退货入库;只传英文编码)"
 						},
 						{
 							"name": "orderConfirmTime",
@@ -291,7 +291,8 @@
 				}
 			],
 			"name": "request",
-			"type": "ReturnOrderConfirmRequest"
+			"type": "ReturnOrderConfirmRequest",
+			"description": "请求内容"
 		}
 	],
 	"responseParams": [
@@ -317,7 +318,8 @@
 				}
 			],
 			"name": "response",
-			"type": "Response"
+			"type": "Response",
+			"description": "响应内容"
 		}
 	],
 	"name": "taobao.qimen.returnorder.confirm",

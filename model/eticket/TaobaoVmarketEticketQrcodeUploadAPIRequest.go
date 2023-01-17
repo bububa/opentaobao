@@ -12,10 +12,10 @@ import (
 // 电子凭证的码商可以通过这个接口，上传他们发送的二维码图片
 type TaobaoVmarketEticketQrcodeUploadAPIRequest struct {
 	model.Params
-	// 码商ID
-	_codeMerchantId int64
 	// 上传的图片byte[]  小于300K，图片尺寸400*400以内
 	_imgBytes *model.File
+	// 码商ID
+	_codeMerchantId int64
 }
 
 // NewTaobaoVmarketEticketQrcodeUploadRequest 初始化TaobaoVmarketEticketQrcodeUploadAPIRequest对象
@@ -31,25 +31,15 @@ func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetCodeMerchantId is CodeMerchantId Setter
-// 码商ID
-func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerchantId int64) error {
-	r._codeMerchantId = _codeMerchantId
-	r.Set("code_merchant_id", _codeMerchantId)
-	return nil
-}
-
-// GetCodeMerchantId CodeMerchantId Getter
-func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetCodeMerchantId() int64 {
-	return r._codeMerchantId
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetImgBytes is ImgBytes Setter
@@ -63,4 +53,17 @@ func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetImgBytes(_imgBytes *mode
 // GetImgBytes ImgBytes Getter
 func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetImgBytes() *model.File {
 	return r._imgBytes
+}
+
+// SetCodeMerchantId is CodeMerchantId Setter
+// 码商ID
+func (r *TaobaoVmarketEticketQrcodeUploadAPIRequest) SetCodeMerchantId(_codeMerchantId int64) error {
+	r._codeMerchantId = _codeMerchantId
+	r.Set("code_merchant_id", _codeMerchantId)
+	return nil
+}
+
+// GetCodeMerchantId CodeMerchantId Getter
+func (r TaobaoVmarketEticketQrcodeUploadAPIRequest) GetCodeMerchantId() int64 {
+	return r._codeMerchantId
 }

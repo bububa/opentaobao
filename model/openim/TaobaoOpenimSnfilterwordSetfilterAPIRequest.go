@@ -33,12 +33,15 @@ func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOpenimSnfilterwordSetfilterAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreator is Creator Setter

@@ -19,8 +19,7 @@
 				{
 					"name": "pay_status",
 					"type": "Number",
-					"description": "1-未付款，2-已付款，4-已退款，6-交易成功，8-交易关闭",
-					"required": true
+					"description": "1-未付款，2-已付款，4-已退款，6-交易成功，8-交易关闭"
 				}
 			],
 			"name": "result",

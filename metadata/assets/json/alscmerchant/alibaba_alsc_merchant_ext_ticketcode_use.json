@@ -8,16 +8,6 @@
 					"description": "特殊可选 核销份数，次卡业务必填、非次卡业务选填， 非次卡场景表示核销同一订单下的同类凭证的个数"
 				},
 				{
-					"name": "order_no",
-					"type": "String",
-					"description": "特殊可选 口碑订单号，使用外部凭证码核销时必填"
-				},
-				{
-					"name": "code_type",
-					"type": "String",
-					"description": "特殊可选 凭证码类型,INTERNAL_CODE(内部凭证码),EXTERNAL_CODE(外部凭证码),默认INTERNAL_CODE,外部券场景必填"
-				},
-				{
 					"name": "ticket_request_id",
 					"type": "String",
 					"description": "外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）"
@@ -45,8 +35,29 @@
 				{
 					"name": "ticket_id",
 					"type": "String",
-					"description": "本地侧凭证id，如果是三方码值核销传参ticketId,则该参数必须",
-					"required": true
+					"description": "本地侧凭证id，如果是三方码值核销传参ticketId,则该参数必须"
+				},
+				{
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "码的可核销份数"
+						},
+						{
+							"name": "ticket_code",
+							"type": "String",
+							"description": "凭证码值，必填"
+						},
+						{
+							"name": "ticket_id",
+							"type": "String",
+							"description": "本地生活凭证id(奇门发码通知中的ticketId)，必填"
+						}
+					],
+					"name": "ticket_infos",
+					"type": "TicketInfo[]",
+					"description": "需要发送的码列表，其中code表示串码码值，num表示码的可核销份数"
 				}
 			],
 			"name": "use_request",
@@ -59,12 +70,12 @@
 		{
 			"name": "order_no",
 			"type": "String",
-			"description": "凭证码所属的订单id"
+			"description": "口碑子订单号, 即alsc_sub_order_no //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "original_price",
 			"type": "String",
-			"description": "用户购买时商品的原价，单位为元，精确到小数点后两位"
+			"description": "用户购买时商品的原价，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "biz_code",
@@ -74,52 +85,52 @@
 		{
 			"name": "current_price",
 			"type": "String",
-			"description": "用户购买时商品的现价，单位为元，精确到小数点后两位"
+			"description": "用户购买时商品的现价，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "discount_amount",
 			"type": "String",
-			"description": "商家优惠金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家优惠金额"
+			"description": "商家优惠金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家优惠金额 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "invoice_amount",
 			"type": "String",
-			"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总开票金额"
+			"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总开票金额 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "use_shop_id",
 			"type": "String",
-			"description": "券核销门店ID"
+			"description": "券核销门店ID //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "item_alias",
 			"type": "String",
-			"description": "凭证对应商品别名，在口碑商品创建时候设置"
+			"description": "凭证对应商品别名，在口碑商品创建时候设置 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "use_shop_name",
 			"type": "String",
-			"description": "券核销门店名称"
+			"description": "券核销门店名称 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "item_id",
 			"type": "String",
-			"description": "口碑商品ID"
+			"description": "口碑商品ID //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "receipt_amount",
 			"type": "String",
-			"description": "商家实收金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家实收金额"
+			"description": "商家实收金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家实收金额 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "item_name",
 			"type": "String",
-			"description": "用户购买时商品的名称"
+			"description": "用户购买时商品的名称 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "ticket_trans_id",
 			"type": "String",
-			"description": "核销流水号"
+			"description": "核销流水号 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "use_date",
@@ -129,7 +140,7 @@
 		{
 			"name": "voucher_id",
 			"type": "String",
-			"description": "凭证码对应的凭证资产id"
+			"description": "凭证码对应的凭证资产id //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "ticket_request_id",
@@ -139,7 +150,7 @@
 		{
 			"name": "buyer_pay_amount",
 			"type": "String",
-			"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总实际支付金额"
+			"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总实际支付金额 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"subParams": [
@@ -156,42 +167,47 @@
 				{
 					"name": "buyer_pay_amount",
 					"type": "String",
-					"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位"
+					"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 				},
 				{
 					"name": "receipt_amount",
 					"type": "String",
-					"description": "商家实收金额，单位为元，精确到小数点后两位"
+					"description": "商家实收金额，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 				},
 				{
 					"name": "discount_amount",
 					"type": "String",
-					"description": "商家优惠金额，单位为元，精确到小数点后两位"
+					"description": "商家优惠金额，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 				},
 				{
 					"name": "merchant_subsidy_amount",
 					"type": "String",
-					"description": "口碑补贴金额，单位为元，精确到小数点后两位"
+					"description": "口碑补贴金额，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
 				},
 				{
 					"name": "invoice_amount",
 					"type": "String",
-					"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位"
+					"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位 //****** 20220922后对接的服务商，不支持该字段 ******"
+				},
+				{
+					"name": "ticket_id",
+					"type": "String",
+					"description": "对应的凭证id"
 				}
 			],
 			"name": "ticket_use_details",
 			"type": "MerchantTicketUseDetail []",
-			"description": "非次卡一次性核销多份场景，被核销的凭证明细信息"
+			"description": "一次性核销多份场景，被核销的凭证明细信息"
 		},
 		{
 			"name": "merchant_subsidy_amount",
 			"type": "String",
-			"description": "口碑补贴金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总口碑补贴金额"
+			"description": "口碑补贴金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总口碑补贴金额 //****** 20220922后对接的服务商，不支持该字段 ******"
 		},
 		{
 			"name": "ticket_code",
 			"type": "String",
-			"description": "12位的券码，券码为纯数字，且唯一不重复"
+			"description": "12位的券码，券码为纯数字，且唯一不重复 //****** 20220922后对接的服务商，不支持该字段 ******"
 		}
 	],
 	"name": "alibaba.alsc.merchant.ext.ticketcode.use",

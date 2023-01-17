@@ -33,12 +33,15 @@ func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallItemDapeiTemplateQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTitle is Title Setter

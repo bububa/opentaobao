@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "action",
+					"type": "String",
+					"description": "API名称"
+				},
+				{
+					"name": "front_app_key",
+					"type": "String",
+					"description": "前端APPKEY"
+				},
+				{
+					"name": "account_token",
+					"type": "String",
+					"description": "登录态token"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
+				}
+			],
+			"name": "request_param",
+			"type": "HavanaUserIdQueryRequest",
+			"description": "入参model"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ttl",
+							"type": "Number",
+							"description": "缓存时间"
+						},
+						{
+							"name": "session_state",
+							"type": "Number",
+							"description": "账号状态"
+						},
+						{
+							"name": "account_domain",
+							"type": "Number",
+							"description": "账号域"
+						},
+						{
+							"name": "account_id",
+							"type": "String",
+							"description": "账号id"
+						}
+					],
+					"name": "data",
+					"type": "HavanaUserIdQueryResponseVo",
+					"description": "返回数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果码描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.cloudgame.openid.query",
+	"apiChineseName": "咖哒用户ID查询",
+	"description": "云游戏业务需要提供查询用户信息的TOP能力",
+	"id": 65044
+}

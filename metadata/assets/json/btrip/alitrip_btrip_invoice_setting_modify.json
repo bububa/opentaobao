@@ -79,6 +79,11 @@
 			"name": "result_msg",
 			"type": "String",
 			"description": "结果信息"
+		},
+		{
+			"name": "success_flag",
+			"type": "Boolean",
+			"description": "请求是否成功"
 		}
 	],
 	"name": "alitrip.btrip.invoice.setting.modify",

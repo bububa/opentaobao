@@ -1,16 +1,16 @@
 {
 	"requestParams": [
 		{
+			"name": "img_bytes",
+			"type": "byte[]",
+			"description": "上传的图片byte[]  小于300K，图片尺寸400*400以内",
+			"required": true
+		},
+		{
 			"name": "code_merchant_id",
 			"type": "Number",
 			"description": "码商ID",
 			"maxLength": 32,
-			"required": true
-		},
-		{
-			"name": "img_bytes",
-			"type": "byte[]",
-			"description": "上传的图片byte[]  小于300K，图片尺寸400*400以内",
 			"required": true
 		}
 	],

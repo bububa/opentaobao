@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "third_id",
+			"type": "String",
+			"description": "用户数字id",
+			"required": true
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "身份证号的hashCode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "验证是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "错误码"
+		}
+	],
+	"name": "taobao.paimai.auctioncat.nft.checknftuseridentify",
+	"apiChineseName": "根据用户数字id和身份证号校验该用户是否已实名认证成功",
+	"description": "根据用户数字id和身份证号校验该用户是否已实名认证成功",
+	"id": 64511
+}

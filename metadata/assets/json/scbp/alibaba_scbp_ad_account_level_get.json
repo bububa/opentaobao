@@ -5,14 +5,12 @@
 				{
 					"name": "level_score",
 					"type": "Number",
-					"description": "levelScore",
-					"required": true
+					"description": "levelScore"
 				},
 				{
 					"name": "growth_level",
 					"type": "String",
-					"description": "growthLevel",
-					"required": true
+					"description": "growthLevel"
 				}
 			],
 			"name": "cust_level_dto",

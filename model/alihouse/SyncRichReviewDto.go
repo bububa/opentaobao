@@ -12,6 +12,8 @@ type SyncRichReviewDto struct {
 	ReviewJson string `json:"review_json,omitempty" xml:"review_json,omitempty"`
 	// 发布时间
 	PublishTime string `json:"publish_time,omitempty" xml:"publish_time,omitempty"`
+	// 外部门店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 城市id
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 业务类型，1新房，2小区

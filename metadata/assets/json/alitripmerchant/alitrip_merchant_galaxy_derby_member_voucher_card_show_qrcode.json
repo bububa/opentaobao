@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "123",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "100",
+			"required": true
+		},
+		{
+			"name": "card_number",
+			"type": "String",
+			"description": "卡号",
+			"required": true
+		},
+		{
+			"name": "member_voucher_card_i_d",
+			"type": "String",
+			"description": "权益卡号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "qrcode",
+							"type": "String",
+							"description": "base64"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherIdentityQrcodeVO",
+					"description": "1com.fliggy.merchant.unicorn.api.derbyVoucherCard.vo.DerbyVoucherIdentityQrcodeVO"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "500"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "response"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.show.qrcode",
+	"apiChineseName": "会员权益卡身份识别二维码图片",
+	"description": "会员权益卡身份识别二维码图片",
+	"id": 64137
+}

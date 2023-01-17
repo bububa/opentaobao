@@ -1,0 +1,84 @@
+{
+	"requestParams": [
+		{
+			"name": "openid",
+			"type": "String",
+			"description": "openid"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "openid"
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "appKey"
+		},
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "sku",
+					"type": "Number",
+					"description": "skuId"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "购买数量"
+				},
+				{
+					"name": "out_key",
+					"type": "String",
+					"description": "url中的自定义参数"
+				}
+			],
+			"name": "param",
+			"type": "InteractiveTopItemParam",
+			"description": "商品信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果code"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "结果数据"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.fc.mallx.interaction.ai.pic.list",
+	"apiChineseName": "花园ai作画定制查询",
+	"description": "花园ai作画定制查询",
+	"id": 65074
+}

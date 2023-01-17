@@ -29,12 +29,15 @@ func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkCouponTemplateQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamCouponTemplateQueryRequest is ParamCouponTemplateQueryRequest Setter

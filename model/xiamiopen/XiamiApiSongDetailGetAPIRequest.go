@@ -29,12 +29,15 @@ func (r XiamiApiSongDetailGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r XiamiApiSongDetailGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r XiamiApiSongDetailGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r XiamiApiSongDetailGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSongIds is SongIds Setter

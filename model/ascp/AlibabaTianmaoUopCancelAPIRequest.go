@@ -29,12 +29,15 @@ func (r AlibabaTianmaoUopCancelAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTianmaoUopCancelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTianmaoUopCancelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTianmaoUopCancelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetHiErpCloseDto is HiErpCloseDto Setter

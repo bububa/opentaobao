@@ -122,6 +122,11 @@
 					"name": "outer_sub_id",
 					"type": "String",
 					"description": "比如楼盘下的货品id，小区小的房源id"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
 				}
 			],
 			"name": "video",

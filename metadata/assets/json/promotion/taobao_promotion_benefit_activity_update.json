@@ -5,6 +5,23 @@
 				{
 					"subParams": [
 						{
+							"name": "benefit_id",
+							"type": "Number",
+							"description": "权益ID"
+						},
+						{
+							"name": "benefit_type",
+							"type": "String",
+							"description": "权益类型"
+						}
+					],
+					"name": "add_detail_vos",
+					"type": "ActivityBenefitDetailVo[]",
+					"description": "活动关联的权益信息，可以从权益选择器API中获取"
+				},
+				{
+					"subParams": [
+						{
 							"name": "activity_url",
 							"type": "String",
 							"description": "ISV活动的活动地址"
@@ -42,23 +59,6 @@
 					"name": "delete_detail_vos",
 					"type": "DeleteActivityBenefitDetailVo[]",
 					"description": "需要删除的已经关联的权益"
-				},
-				{
-					"subParams": [
-						{
-							"name": "benefit_type",
-							"type": "String",
-							"description": "权益类型"
-						},
-						{
-							"name": "benefit_id",
-							"type": "Number",
-							"description": "权益ID"
-						}
-					],
-					"name": "add_detail_vos",
-					"type": "ActivityBenefitDetailVo[]",
-					"description": "活动关联的权益信息列表，可以从权益选择器API中获取"
 				}
 			],
 			"name": "update_request",

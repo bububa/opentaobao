@@ -12,6 +12,8 @@ type ProjectVrBuildDataDto struct {
 	OuterLayoutId string `json:"outer_layout_id,omitempty" xml:"outer_layout_id,omitempty"`
 	// 外部货户型ID
 	OuterLayoutTid string `json:"outer_layout_tid,omitempty" xml:"outer_layout_tid,omitempty"`
+	// 外部门店ID
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 是否删除 1-是 0-否
 	IsDeleted int64 `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
 	// 类型:新房-1，二手房-2

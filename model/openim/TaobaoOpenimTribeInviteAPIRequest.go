@@ -33,12 +33,15 @@ func (r TaobaoOpenimTribeInviteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenimTribeInviteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOpenimTribeInviteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOpenimTribeInviteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMembers is Members Setter

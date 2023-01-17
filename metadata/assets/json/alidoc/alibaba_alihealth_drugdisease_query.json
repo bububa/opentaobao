@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "spu_ids",
+					"type": "String",
+					"description": "spu列表，多个逗号",
+					"required": true
+				},
+				{
+					"name": "tenant",
+					"type": "String",
+					"description": "租户",
+					"required": true
+				}
+			],
+			"name": "spu_disease_query_dto",
+			"type": "SpuDiseaseQueryDTO",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "spu_id",
+					"type": "String",
+					"description": "spuid"
+				},
+				{
+					"subParams": [
+						{
+							"name": "disease_name",
+							"type": "String",
+							"description": "诊断名称"
+						},
+						{
+							"name": "disease_code",
+							"type": "String",
+							"description": "诊断code"
+						}
+					],
+					"name": "disease_list",
+					"type": "DiseaseInfo[]",
+					"description": "诊断信息"
+				}
+			],
+			"name": "data",
+			"type": "DrugDiseaseMappingDTO []",
+			"description": "返回值"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihealth.drugdisease.query",
+	"apiChineseName": "药品诊断查询",
+	"description": "药品诊断查询",
+	"id": 64440
+}

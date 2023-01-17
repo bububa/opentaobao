@@ -29,16 +29,18 @@ func (r TaobaoQimenCombineitemDeleteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenCombineitemDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQimenCombineitemDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQimenCombineitemDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRequest is Request Setter
-//
 func (r *TaobaoQimenCombineitemDeleteAPIRequest) SetRequest(_request *RequestDo) error {
 	r._request = _request
 	r.Set("request", _request)

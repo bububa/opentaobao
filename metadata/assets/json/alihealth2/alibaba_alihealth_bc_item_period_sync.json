@@ -1,0 +1,129 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应商ID",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "sc_item_name",
+							"type": "String",
+							"description": "货品名称"
+						},
+						{
+							"subParams": [
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "expire_date",
+									"type": "String",
+									"description": "失效日期",
+									"required": true
+								},
+								{
+									"name": "produce_no",
+									"type": "String",
+									"description": "生产批号",
+									"required": true
+								}
+							],
+							"name": "sub_items",
+							"type": "ValidityPeriodSubItem[]",
+							"description": "请求子明细",
+							"required": true
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品ID",
+							"required": true
+						},
+						{
+							"name": "approval_number",
+							"type": "String",
+							"description": "批准文号",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "manufacturer",
+							"type": "String",
+							"description": "生产企业",
+							"required": true
+						}
+					],
+					"name": "items",
+					"type": "ValidityPeriodItem[]",
+					"description": "请求明细",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				}
+			],
+			"name": "validity_period_sync_req_dto",
+			"type": "ValidityPeriodSyncReqDTO",
+			"description": "请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链路跟踪id, 用于排查问题"
+		},
+		{
+			"name": "can_retry",
+			"type": "Boolean",
+			"description": "请求是否可重试"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "当前请求是否成功-所有明细都成功才算成功"
+		},
+		{
+			"name": "error_no",
+			"type": "String",
+			"description": "错误编码, 编码以\"ALIHEALTH.BC.5\"开头时表示当前品仓的操作处于未知状态, 后继可通过同样的请求流水号来获取最终结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.alihealth.bc.item.period.sync",
+	"apiChineseName": "代销品效期同步",
+	"description": "代销品效期同步",
+	"id": 64933
+}

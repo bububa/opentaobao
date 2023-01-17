@@ -5,7 +5,6 @@
 			"type": "Number[]",
 			"description": "会员需要删除的分组",
 			"maxListSize": 10,
-			"minValue": 1,
 			"required": true
 		},
 		{

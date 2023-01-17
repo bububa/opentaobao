@@ -65,6 +65,23 @@
 			"required": true
 		},
 		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID[企业自已系统的药品ID]"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
+			"maxListSize": 3500,
+			"required": true
+		},
+		{
 			"name": "client_type",
 			"type": "String",
 			"description": "调用方类型[必须填2]",
@@ -111,21 +128,44 @@
 			"description": "监督人证件号【销毁出库时填写】"
 		},
 		{
-			"name": "warehouse_id",
+			"name": "from_address",
 			"type": "String",
-			"description": "仓号"
+			"description": "发货地址"
 		},
 		{
-			"name": "drug_id",
+			"name": "to_address",
 			"type": "String",
-			"description": "药品ID[企业自已系统的药品ID]"
+			"description": "收货地址"
 		},
 		{
-			"name": "trace_codes",
-			"type": "String[]",
-			"description": "追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】",
-			"maxListSize": 3500,
-			"required": true
+			"name": "from_bill_code",
+			"type": "String",
+			"description": "发货单编号"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "订货单编号【可选】"
+		},
+		{
+			"name": "from_person",
+			"type": "String",
+			"description": "发货人"
+		},
+		{
+			"name": "to_person",
+			"type": "String",
+			"description": "收货人"
+		},
+		{
+			"name": "dis_ref_ent_id",
+			"type": "String",
+			"description": "药品配送ref_enti_d企业"
+		},
+		{
+			"name": "dis_ent_id",
+			"type": "String",
+			"description": "药品配送企业ent_Id出库单"
 		},
 		{
 			"name": "qu_receivable",
@@ -156,46 +196,6 @@
 			"name": "ass_ref_ent_id",
 			"type": "String",
 			"description": "单据委托企业refEntId"
-		},
-		{
-			"name": "dis_ent_id",
-			"type": "String",
-			"description": "药品配送企业ent_Id出库单"
-		},
-		{
-			"name": "dis_ref_ent_id",
-			"type": "String",
-			"description": "药品配送ref_enti_d企业"
-		},
-		{
-			"name": "to_person",
-			"type": "String",
-			"description": "收货人"
-		},
-		{
-			"name": "from_person",
-			"type": "String",
-			"description": "发货人"
-		},
-		{
-			"name": "order_code",
-			"type": "String",
-			"description": "订货单编号【可选】"
-		},
-		{
-			"name": "from_bill_code",
-			"type": "String",
-			"description": "发货单编号"
-		},
-		{
-			"name": "to_address",
-			"type": "String",
-			"description": "收货地址"
-		},
-		{
-			"name": "from_address",
-			"type": "String",
-			"description": "发货地址"
 		},
 		{
 			"name": "ass_ent_id",

@@ -39,12 +39,15 @@ func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTrainAgentExpressSetVtwoAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetExpressId is ExpressId Setter

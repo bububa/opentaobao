@@ -83,26 +83,22 @@
 								{
 									"name": "logistics_code",
 									"type": "String",
-									"description": "实际发货的配编码",
-									"required": true
+									"description": "实际发货的配编码"
 								},
 								{
 									"name": "express_code",
 									"type": "String",
-									"description": "运单号",
-									"required": true
+									"description": "运单号"
 								},
 								{
 									"name": "item_code",
 									"type": "String",
-									"description": "货品编码",
-									"required": true
+									"description": "货品编码"
 								},
 								{
 									"name": "quantity",
 									"type": "Number",
-									"description": "发货数量",
-									"required": true
+									"description": "发货数量"
 								}
 							],
 							"name": "packages",

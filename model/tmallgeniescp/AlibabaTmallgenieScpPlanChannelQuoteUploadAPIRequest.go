@@ -29,12 +29,15 @@ func (r AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTmallgenieScpPlanChannelQuoteUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNetDemandRequest is NetDemandRequest Setter

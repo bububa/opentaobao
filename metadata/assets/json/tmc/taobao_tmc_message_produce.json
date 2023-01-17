@@ -8,6 +8,11 @@
 			"required": true
 		},
 		{
+			"name": "target_group",
+			"type": "String",
+			"description": "目标分组，一般为default"
+		},
+		{
 			"name": "topic",
 			"type": "String",
 			"description": "消息类型",
@@ -33,21 +38,16 @@
 			"maxLength": 1048576
 		},
 		{
-			"name": "media_content4",
-			"type": "byte[]",
-			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
-			"maxLength": 1048576
-		},
-		{
 			"name": "media_content5",
 			"type": "byte[]",
 			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
 			"maxLength": 1048576
 		},
 		{
-			"name": "target_group",
-			"type": "String",
-			"description": "目标分组，一般为default"
+			"name": "media_content4",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
+			"maxLength": 1048576
 		},
 		{
 			"name": "delay_millis",

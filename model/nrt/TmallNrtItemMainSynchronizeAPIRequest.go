@@ -45,12 +45,15 @@ func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallNrtItemMainSynchronizeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProps is Props Setter

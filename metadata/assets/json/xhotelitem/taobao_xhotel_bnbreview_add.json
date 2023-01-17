@@ -1,0 +1,112 @@
+{
+	"requestParams": [
+		{
+			"name": "check_in_time",
+			"type": "String",
+			"description": "入住时间",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "Number",
+			"description": "评论来源ID，38-小猪 39-爱彼迎",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片地址"
+				}
+			],
+			"name": "pic_info_list",
+			"type": "ReviewPicInfo",
+			"description": "图片地址"
+		},
+		{
+			"name": "rid",
+			"type": "Number",
+			"description": "飞猪侧房源ID",
+			"required": true
+		},
+		{
+			"name": "gmt_create",
+			"type": "Date",
+			"description": "创建时间",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "评论内容",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "用户名称",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "Number",
+			"description": "外部评论id",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "score",
+					"type": "String",
+					"description": "评分，10分制，Double类型得，2-非常差 4-差 6-一般 8-好 10-非常好",
+					"required": true
+				},
+				{
+					"name": "dimension_id",
+					"type": "Number",
+					"description": "纬度id，1-地理位置 2-清洁程度 3-服务比较 4-性价比",
+					"required": true
+				}
+			],
+			"name": "score_detail",
+			"type": "ReviewDetailInfo",
+			"description": "评分细分",
+			"required": true
+		},
+		{
+			"name": "total_score",
+			"type": "String",
+			"description": "总评分,Double类型得",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "状态，成功true，失败false"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "响应信息"
+				}
+			],
+			"name": "result",
+			"type": "BnbResult",
+			"description": "调用返回结果"
+		}
+	],
+	"name": "taobao.xhotel.bnbreview.add",
+	"apiChineseName": "对外开放评论接口",
+	"description": "对外开放评论接口",
+	"id": 64415
+}

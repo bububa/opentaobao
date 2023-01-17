@@ -1,0 +1,25 @@
+{
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "商品图片的id，和商品相对应（主图id默认为0）"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
+				}
+			],
+			"name": "item_img",
+			"type": "ItemImg",
+			"description": "商品图片结构"
+		}
+	],
+	"name": "taobao.item.img.delete",
+	"apiChineseName": "删除商品图片",
+	"description": "删除商品图片",
+	"id": 24
+}

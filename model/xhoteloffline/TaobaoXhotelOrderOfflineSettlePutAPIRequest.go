@@ -59,12 +59,15 @@ func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelOrderOfflineSettlePutAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRoomSettleInfoList is RoomSettleInfoList Setter

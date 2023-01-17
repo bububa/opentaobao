@@ -129,14 +129,12 @@
 				{
 					"name": "warehouse_id",
 					"type": "Number",
-					"description": "仓id",
-					"required": true
+					"description": "仓id"
 				},
 				{
 					"name": "warehouse_name",
 					"type": "String",
-					"description": "仓名称",
-					"required": true
+					"description": "仓名称"
 				}
 			],
 			"name": "warehouse_info",

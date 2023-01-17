@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "ticket_use_trans_id",
+					"type": "String",
+					"description": "凭证核销流水id"
+				},
+				{
+					"name": "biz_date",
+					"type": "String",
+					"description": "业务发生时间，为空取调用时间"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "ticket_id",
+					"type": "String",
+					"description": "口碑凭证id",
+					"required": true
+				}
+			],
+			"name": "ticket_reverse_top_request",
+			"type": "TicketReverseTopRequest",
+			"description": "凭证冲正请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "处理结果是否成功，true为成功，false为失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码，success=false时有效"
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否可重试，success=false时有效"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误文案，success=false时有效"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.alsc.daodian.ticket.reserve",
+	"apiChineseName": "外部券冲正",
+	"description": "外部券冲正",
+	"id": 64150
+}

@@ -97,6 +97,11 @@
 					"name": "voucher_id",
 					"type": "String",
 					"description": "套餐代金券id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
 				}
 			],
 			"name": "list_search_param",

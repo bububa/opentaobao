@@ -29,12 +29,15 @@ func (r AliexpressAffiliateCategoryGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressAffiliateCategoryGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressAffiliateCategoryGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressAffiliateCategoryGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAppSignature is AppSignature Setter

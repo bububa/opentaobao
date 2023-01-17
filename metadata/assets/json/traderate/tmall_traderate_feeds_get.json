@@ -11,92 +11,78 @@
 		{
 			"subParams": [
 				{
-					"name": "user_nick",
+					"name": "append_content",
 					"type": "String",
-					"description": "表示评价者的昵称",
-					"required": true
-				},
-				{
-					"name": "content",
-					"type": "String",
-					"description": "评价内容",
-					"required": true
-				},
-				{
-					"name": "comment_time",
-					"type": "Date",
-					"description": "评价时间",
-					"required": true
+					"description": "追加评价内容"
 				},
 				{
 					"subParams": [
 						{
-							"name": "tag_name",
-							"type": "String",
-							"description": "表示标签的名称",
-							"required": true
-						},
-						{
 							"name": "posi",
 							"type": "Boolean",
-							"description": "表示标签的极性，正极true，负极false",
-							"required": true
+							"description": "表示标签的极性，正极true，负极false"
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "表示标签的名称"
 						}
 					],
 					"name": "tags",
 					"type": "Tags[]",
-					"description": "原始评价对应的标签列表",
-					"required": true
+					"description": "原始评价对应的标签列表"
 				},
 				{
-					"name": "has_negtv",
-					"type": "Boolean",
-					"description": "原始评价是否含有负向标签",
-					"required": true
-				},
-				{
-					"name": "append_content",
+					"name": "content",
 					"type": "String",
-					"description": "追加评价内容",
-					"required": true
-				},
-				{
-					"name": "append_time",
-					"type": "Date",
-					"description": "追加评价时间",
-					"required": true
+					"description": "评价内容"
 				},
 				{
 					"subParams": [
 						{
-							"name": "tag_name",
-							"type": "String",
-							"description": "表示标签的名称",
-							"required": true
-						},
-						{
 							"name": "posi",
 							"type": "Boolean",
-							"description": "表示标签的极性，正极true，负极false",
-							"required": true
+							"description": "表示标签的极性，正极true，负极false"
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "表示标签的名称"
 						}
 					],
 					"name": "append_tags",
 					"type": "Tags[]",
-					"description": "追加评价中带有的语义标签列表",
-					"required": true
+					"description": "追加评价中带有的语义标签列表"
+				},
+				{
+					"name": "append_time",
+					"type": "Date",
+					"description": "追加评价时间"
 				},
 				{
 					"name": "append_has_negtv",
 					"type": "Boolean",
-					"description": "追评中是否含有负向标签",
-					"required": true
+					"description": "追评中是否含有负向标签"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "表示评价者的昵称"
+				},
+				{
+					"name": "has_negtv",
+					"type": "Boolean",
+					"description": "原始评价是否含有负向标签"
+				},
+				{
+					"name": "comment_time",
+					"type": "Date",
+					"description": "评价时间"
 				},
 				{
 					"name": "ouid",
 					"type": "String",
-					"description": "ouid",
-					"required": true
+					"description": "ouid"
 				}
 			],
 			"name": "tmall_rate_info",

@@ -1,6 +1,13 @@
 {
 	"requestParams": [
 		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示个数",
+			"maxLength": 100,
+			"required": true
+		},
+		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "当前页码",
@@ -8,28 +15,24 @@
 			"required": true
 		},
 		{
-			"name": "page_size",
+			"name": "tag_id",
 			"type": "Number",
-			"description": "每页显示个数",
-			"maxLength": 100,
-			"maxValue": 100,
-			"minValue": 1,
-			"required": true
+			"description": "标签ID"
 		},
 		{
 			"name": "tag_name",
 			"type": "String",
 			"description": "标签名称，查询时可选项"
-		},
-		{
-			"name": "tag_id",
-			"type": "Number",
-			"description": "标签ID"
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "总记录数"
+				},
 				{
 					"subParams": [
 						{
@@ -61,11 +64,6 @@
 					"name": "tag_list",
 					"type": "PromotionTag[]",
 					"description": "标签结果列表"
-				},
-				{
-					"name": "total_results",
-					"type": "Number",
-					"description": "总记录数"
 				}
 			],
 			"name": "query_result",

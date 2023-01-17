@@ -12,7 +12,9 @@ import (
 // 上下架楼盘
 type AlibabaAlihouseNewhomeProjectLineAPIRequest struct {
 	model.Params
-	// 外部id
+	// 外部门店ID
+	_outerStoreId string
+	// 外部楼盘ID
 	_outerId string
 	// 0-下架 1-上架
 	_type *model.File
@@ -31,16 +33,32 @@ func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店ID
+func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeProjectLineAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }
 
 // SetOuterId is OuterId Setter
-// 外部id
+// 外部楼盘ID
 func (r *AlibabaAlihouseNewhomeProjectLineAPIRequest) SetOuterId(_outerId string) error {
 	r._outerId = _outerId
 	r.Set("outer_id", _outerId)

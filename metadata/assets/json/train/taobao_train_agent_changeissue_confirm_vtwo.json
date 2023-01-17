@@ -1,0 +1,181 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "issue_fail_code",
+					"type": "Number",
+					"description": "改签失败出票回填code"
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id"
+				},
+				{
+					"name": "change_from_station",
+					"type": "String",
+					"description": "改签票出发站"
+				},
+				{
+					"name": "change_apply_id",
+					"type": "Number",
+					"description": "改签申请单id"
+				},
+				{
+					"name": "change_settlement_mode",
+					"type": "Number",
+					"description": "改签结算方式 0现金 1电子 "
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "淘宝主单单号"
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "支付宝交易流水号"
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "ttp单号"
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "change_to_station",
+					"type": "String",
+					"description": "改签票到达站"
+				},
+				{
+					"name": "issue_status",
+					"type": "Number",
+					"description": "出票状态 1成功 2失败",
+					"required": true
+				},
+				{
+					"name": "sequence_no",
+					"type": "String",
+					"description": "改签票123N6订单号"
+				},
+				{
+					"name": "change_from_date_time",
+					"type": "String",
+					"description": "改签票发车时间"
+				},
+				{
+					"name": "change_to_date_time",
+					"type": "String",
+					"description": "改签票到达时间"
+				},
+				{
+					"name": "change_train_date",
+					"type": "String",
+					"description": "改签票发车日期"
+				},
+				{
+					"name": "change_train_code",
+					"type": "String",
+					"description": "改签票车次号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "change_seat_type_name",
+							"type": "String",
+							"description": "改签票坐席类型名"
+						},
+						{
+							"name": "change_apply_id",
+							"type": "Number",
+							"description": "改签申请单id"
+						},
+						{
+							"name": "handing_fee",
+							"type": "Number",
+							"description": "改签手续费"
+						},
+						{
+							"name": "change_seat_type_code",
+							"type": "String",
+							"description": "改签票坐席类型code"
+						},
+						{
+							"name": "change_seat_no",
+							"type": "String",
+							"description": "改签票坐席号"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子单单号"
+						},
+						{
+							"name": "change_coach_no",
+							"type": "String",
+							"description": "改签票车厢号"
+						},
+						{
+							"name": "ticket_type_code",
+							"type": "String",
+							"description": "票类型code"
+						},
+						{
+							"name": "change_coach_name",
+							"type": "String",
+							"description": "改签票车厢名"
+						},
+						{
+							"name": "ticket_type_name",
+							"type": "String",
+							"description": "票类型名称"
+						},
+						{
+							"name": "change_ticket_price",
+							"type": "String",
+							"description": "改签票票价"
+						}
+					],
+					"name": "change_tickets",
+					"type": "ChangeTicketDTO[]",
+					"description": "改签票信息列表"
+				},
+				{
+					"name": "issue_fail_msg",
+					"type": "String",
+					"description": "改签出票失败msg"
+				}
+			],
+			"name": "change_issue_rq",
+			"type": "ChangeIssueRQ",
+			"description": "改签出票回填入参rq",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "出票回填结果"
+		},
+		{
+			"name": "fail_message",
+			"type": "String",
+			"description": "回填失败原因"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "回填失败code"
+		}
+	],
+	"name": "taobao.train.agent.changeissue.confirm.vtwo",
+	"apiChineseName": "火车票代理商接口-跑腿改签出票回填-含鉴权校验",
+	"description": "火车票代理商接口-跑腿改签出票回填-含鉴权校验",
+	"id": 65466
+}

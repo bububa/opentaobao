@@ -42,12 +42,15 @@ func (r AlitripTravelGereralitemUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripTravelGereralitemUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripTravelGereralitemUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripTravelGereralitemUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBookingRules is BookingRules Setter

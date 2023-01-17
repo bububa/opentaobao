@@ -1,0 +1,124 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "voucher_card_category",
+			"type": "String",
+			"description": "商品枚举（DerbyVoucherCardOrderProductMinTypeEnum）  APLUSP:p卡 APLUSB：b卡"
+		},
+		{
+			"name": "check_goods_off_shelf",
+			"type": "Boolean",
+			"description": "接口用于查询商品是否下架，需要缓存"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "need_register",
+							"type": "Boolean",
+							"description": "是否需要注册 true需要 false不需要"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "权益卡名称（备用字段，暂时无用）"
+						},
+						{
+							"name": "price",
+							"type": "BigDecimal",
+							"description": "权益卡原价"
+						},
+						{
+							"name": "sale_price",
+							"type": "BigDecimal",
+							"description": "权益卡售卖价 （为空则选原价）"
+						},
+						{
+							"name": "count_down_time",
+							"type": "Number",
+							"description": "权益到期时间搓"
+						},
+						{
+							"name": "voucher_card_code",
+							"type": "String",
+							"description": "权益卡商品编码（下单要用）"
+						},
+						{
+							"name": "card_image",
+							"type": "String",
+							"description": "权益卡图片"
+						},
+						{
+							"name": "voucher_card_category",
+							"type": "String",
+							"description": "权益卡规格 DerbyVoucherCardOrderProductMinTypeEnum code"
+						},
+						{
+							"name": "voucher_card_category_name",
+							"type": "String",
+							"description": "权益卡规格 DerbyVoucherCardOrderProductMinTypeEnum desc"
+						},
+						{
+							"name": "product_type",
+							"type": "String",
+							"description": "商品名称 accor_paid_membership_card雅高付费会员卡 code"
+						},
+						{
+							"name": "product_type_name",
+							"type": "String",
+							"description": "商品名称 accor_paid_membership_card雅高付费会员卡 desc"
+						},
+						{
+							"name": "product_count",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "price_desc",
+							"type": "String",
+							"description": "优惠的原因"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardPurchasableVO",
+					"description": "可购权益卡实体类"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.purchasable.query",
+	"apiChineseName": "德比付费会员卡可购查询",
+	"description": "德比付费会员卡可购查询",
+	"id": 63768
+}

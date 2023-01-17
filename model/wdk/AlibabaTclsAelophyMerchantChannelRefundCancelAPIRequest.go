@@ -29,12 +29,15 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiMethodNam
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTclsAelophyMerchantChannelRefundCancelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefundCancelInfo is RefundCancelInfo Setter

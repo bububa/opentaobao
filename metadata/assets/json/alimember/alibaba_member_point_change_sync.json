@@ -72,8 +72,7 @@
 				{
 					"name": "total_point",
 					"type": "String",
-					"description": "变更后的成长值",
-					"required": true
+					"description": "变更后的成长值"
 				}
 			],
 			"name": "sync_member_point_change_dto",

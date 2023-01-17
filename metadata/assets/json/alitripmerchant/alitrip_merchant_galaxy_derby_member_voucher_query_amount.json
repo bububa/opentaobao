@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功/失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "card_amount",
+							"type": "String",
+							"description": "用户臻享卡数量"
+						}
+					],
+					"name": "content",
+					"type": "DerbyMemberVO",
+					"description": "实体类"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.query.amount",
+	"apiChineseName": "查询用户拥有的臻享卡数量",
+	"description": "查询用户拥有的臻享卡数量",
+	"id": 64257
+}

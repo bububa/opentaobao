@@ -15,6 +15,11 @@
 			"name": "code",
 			"type": "String",
 			"description": "用户code"
+		},
+		{
+			"name": "version",
+			"type": "String",
+			"description": "版本，适配灰度发布"
 		}
 	],
 	"responseParams": [

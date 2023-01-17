@@ -1,10 +1,27 @@
 {
 	"requestParams": [
 		{
-			"name": "memo",
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单id,必须填写"
+		},
+		{
+			"name": "total_room_fee",
+			"type": "Number",
+			"description": "房费总额(必须大于0)。结账时请按订单原价发起结账卖家优惠由飞猪平台发起扣减",
+			"required": true
+		},
+		{
+			"name": "other_fee",
+			"type": "Number",
+			"description": "杂费总额(不能为负数)",
+			"required": true
+		},
+		{
+			"name": "other_fee_detail",
 			"type": "String",
-			"description": "备注",
-			"maxLength": 512
+			"description": "杂费明细,如果otherFee\u003e0则该字段必须设置,并和杂费金额相吻合",
+			"maxLength": 1024
 		},
 		{
 			"name": "out_id",
@@ -15,19 +32,6 @@
 			"name": "room_no",
 			"type": "String",
 			"description": "入住房间号"
-		},
-		{
-			"name": "other_fee",
-			"type": "Number",
-			"description": "杂费总额(不能为负数)",
-			"required": true
-		},
-		{
-			"name": "total_room_fee",
-			"type": "Number",
-			"description": "房费总额(必须大于0)。结账时请按订单原价发起结账卖家优惠由飞猪平台发起扣减",
-			"minValue": 0,
-			"required": true
 		},
 		{
 			"name": "daily_price_info",
@@ -41,16 +45,10 @@
 			"required": true
 		},
 		{
-			"name": "tid",
-			"type": "Number",
-			"description": "淘宝订单id,必须填写",
-			"minValue": 0
-		},
-		{
-			"name": "other_fee_detail",
+			"name": "memo",
 			"type": "String",
-			"description": "杂费明细,如果otherFee\u003e0则该字段必须设置,并和杂费金额相吻合",
-			"maxLength": 1024
+			"description": "备注",
+			"maxLength": 512
 		},
 		{
 			"subParams": [
@@ -75,14 +73,14 @@
 					"description": "房间杂费明细 （当房间杂费存在时候，此值不能空。格式与原有杂费格式otherFeeDetail的格式相同）eg;{\"洗衣费\":5000,\"水吧\":10000,\"优惠\":1000}"
 				},
 				{
-					"name": "room_check_out",
-					"type": "Date",
-					"description": "房间check out时间"
-				},
-				{
 					"name": "room_check_in",
 					"type": "Date",
 					"description": "房间check in 时间"
+				},
+				{
+					"name": "room_check_out",
+					"type": "Date",
+					"description": "房间check out时间"
 				},
 				{
 					"name": "daily_price_info",

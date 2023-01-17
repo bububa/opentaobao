@@ -29,12 +29,15 @@ func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMjOcCalldispatcherAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMjOcCalldispatcherAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCallDispatcherDTO is CallDispatcherDTO Setter

@@ -33,12 +33,15 @@ func (r AlibabaCampusVisitorImageUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusVisitorImageUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCampusVisitorImageUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCampusVisitorImageUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNoneString is NoneString Setter

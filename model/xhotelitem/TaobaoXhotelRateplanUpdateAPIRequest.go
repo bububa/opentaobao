@@ -14,14 +14,14 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	model.Params
 	// 在淘宝搜索页面展示的房价名称；（添加RP时为必须）。注意该名称不要包含早餐相关信息，如果想维护早餐信息，请设置breakfast_count字段即可。
 	_name string
+	// RP的英文名称
+	_englishName string
 	// 产品每日开始销售时间，start_time一定为当天时间
 	_startTime string
 	// 产品每日开始销售时间，start_time一定为当天时间
 	_endTime string
 	// 退订政策字段，是个json串，参考示例值设置改字段的值。允许变更/取消：在XX年XX月XX日XX时前取消收取Y%的手续费，100>Y>=0允许变更/取消：在入住前X小时前取消收取Y%的手续费，100>Y>=0（不超过10条）。1.表示任意退{"cancelPolicyType":1};2.表示不能退{"cancelPolicyType":2};4.从入住当天24点往前推X小时前取消收取Y%手续费，否则不可取消{"cancelPolicyType":4,"policyInfo":{"48":10,"24":20}}表示，从入住日24点往前推提前至少48小时取消，收取10%的手续费，从入住日24点往前推提前至少24小时取消，收取20%的手续费;5.从24点往前推多少小时可退{"cancelPolicyType":5,"policyInfo":{"timeBefore":6}}表示从入住日24点往前推至少6个小时即入住日18点前可免费取消;6.从入住日24点往前推，至少提前小时数扣取首晚房费{"cancelPolicyType":6,"policyInfo":{"14":1}}表示入住日24点往前推14小时，即入住日10点前取消收取首晚房费。 注意：支付类型为预付，那么可以使用所有的退订类型,但是必须是非担保；支付类型为面付或者信任住并且是无担保，那么只能使用1类型的退订；支付类型为面付或者信任住并且为担保，那么只能使用2,5类型的退订；支付类型为在线预约，那么只能使用1,2,5类型的退改。如果支付类型是面付或者信任住并且为担保，那么如果传了4或者6的退订，那么会强制转成类型5。支持多段时间、多间夜扣款
 	_cancelPolicy string
-	// RP的英文名称
-	_englishName string
 	// 分时担保每日开始担保时间。 （如果设置了峰时担保类型，那么峰时担保时间不能为空，并且必须大于等于8点）
 	_guaranteeStartTime string
 	// 双方映射后的会员等级。如需开通，需要申请权限，取值范围为：1,2,3,4,5,none。比如飞猪F3对应商家V4,则传4.（如果有疑问请联系对接技术支持）
@@ -90,6 +90,8 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	_rights string
 	// 商业化充值类型 seller充值到卖家 hotel充值到门店
 	_freeRoomChargeDstRole string
+	// 不推荐使用，使用ratePlanCode来标识要修改的RP
+	_rpid int64
 	// -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
 	_breakfastCount int64
 	// 最小入住天数（1-90）。默认1,小时房RP请设置为1
@@ -132,8 +134,6 @@ type TaobaoXhotelRateplanUpdateAPIRequest struct {
 	_companyAssist int64
 	// 会员价支持标识,1表示支持会员价规则
 	_memDiscFlag int64
-	// 不推荐使用，使用ratePlanCode来标识要修改的RP
-	_rpid int64
 }
 
 // NewTaobaoXhotelRateplanUpdateRequest 初始化TaobaoXhotelRateplanUpdateAPIRequest对象
@@ -149,12 +149,15 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateplanUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetName is Name Setter
@@ -168,6 +171,19 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetName(_name string) error {
 // GetName Name Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetName() string {
 	return r._name
+}
+
+// SetEnglishName is EnglishName Setter
+// RP的英文名称
+func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEnglishName(_englishName string) error {
+	r._englishName = _englishName
+	r.Set("english_name", _englishName)
+	return nil
+}
+
+// GetEnglishName EnglishName Getter
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetEnglishName() string {
+	return r._englishName
 }
 
 // SetStartTime is StartTime Setter
@@ -207,19 +223,6 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetCancelPolicy(_cancelPolicy str
 // GetCancelPolicy CancelPolicy Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetCancelPolicy() string {
 	return r._cancelPolicy
-}
-
-// SetEnglishName is EnglishName Setter
-// RP的英文名称
-func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetEnglishName(_englishName string) error {
-	r._englishName = _englishName
-	r.Set("english_name", _englishName)
-	return nil
-}
-
-// GetEnglishName EnglishName Getter
-func (r TaobaoXhotelRateplanUpdateAPIRequest) GetEnglishName() string {
-	return r._englishName
 }
 
 // SetGuaranteeStartTime is GuaranteeStartTime Setter
@@ -664,6 +667,19 @@ func (r TaobaoXhotelRateplanUpdateAPIRequest) GetFreeRoomChargeDstRole() string 
 	return r._freeRoomChargeDstRole
 }
 
+// SetRpid is Rpid Setter
+// 不推荐使用，使用ratePlanCode来标识要修改的RP
+func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpid(_rpid int64) error {
+	r._rpid = _rpid
+	r.Set("rpid", _rpid)
+	return nil
+}
+
+// GetRpid Rpid Getter
+func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRpid() int64 {
+	return r._rpid
+}
+
 // SetBreakfastCount is BreakfastCount Setter
 // -1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）
 func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetBreakfastCount(_breakfastCount int64) error {
@@ -935,17 +951,4 @@ func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetMemDiscFlag(_memDiscFlag int64
 // GetMemDiscFlag MemDiscFlag Getter
 func (r TaobaoXhotelRateplanUpdateAPIRequest) GetMemDiscFlag() int64 {
 	return r._memDiscFlag
-}
-
-// SetRpid is Rpid Setter
-// 不推荐使用，使用ratePlanCode来标识要修改的RP
-func (r *TaobaoXhotelRateplanUpdateAPIRequest) SetRpid(_rpid int64) error {
-	r._rpid = _rpid
-	r.Set("rpid", _rpid)
-	return nil
-}
-
-// GetRpid Rpid Getter
-func (r TaobaoXhotelRateplanUpdateAPIRequest) GetRpid() int64 {
-	return r._rpid
 }

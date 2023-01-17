@@ -9,6 +9,11 @@
 			"name": "version",
 			"type": "Number",
 			"description": "版本号，请求时间戳"
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店ID"
 		}
 	],
 	"responseParams": [

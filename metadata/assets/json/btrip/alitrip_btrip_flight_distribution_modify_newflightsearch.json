@@ -54,13 +54,13 @@
 							"required": true
 						},
 						{
-							"name": "dep_airport",
+							"name": "dep_city",
 							"type": "String",
 							"description": "出发机场三字码",
 							"required": true
 						},
 						{
-							"name": "arr_airport",
+							"name": "arr_city",
 							"type": "String",
 							"description": "到达机场三字码",
 							"required": true

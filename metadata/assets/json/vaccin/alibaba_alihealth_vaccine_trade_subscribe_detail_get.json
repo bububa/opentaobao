@@ -119,12 +119,12 @@
 						{
 							"name": "period_tag",
 							"type": "Number",
-							"description": "预约时段 1上午，2下午"
+							"description": "预约时段 1:上午/2:下午"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "预约单状态"
+							"description": "平台预约单状态"
 						},
 						{
 							"name": "actual_pay_fee",
@@ -140,26 +140,26 @@
 					"name": "detail_top_dto_list",
 					"type": "TradeVaccineSubscribeDetailTopDTO[]",
 					"description": "预约单模型"
-				},
-				{
-					"name": "biz_success",
-					"type": "Boolean",
-					"description": "业务成功状态"
-				},
-				{
-					"name": "biz_code",
-					"type": "String",
-					"description": "业务报错code"
-				},
-				{
-					"name": "biz_message",
-					"type": "String",
-					"description": "业务报错消息"
 				}
 			],
 			"name": "data",
 			"type": "TradeVaccineSubscribeDetailTopResult",
 			"description": "预约详情响应"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "业务成功状态"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务报错code"
+		},
+		{
+			"name": "biz_message",
+			"type": "String",
+			"description": "业务报错消息"
 		}
 	],
 	"name": "alibaba.alihealth.vaccine.trade.subscribe.detail.get",

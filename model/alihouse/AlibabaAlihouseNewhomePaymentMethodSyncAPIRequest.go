@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomePaymentMethodSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPaymentModeReqDto is PaymentModeReqDto Setter

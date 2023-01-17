@@ -31,12 +31,15 @@ func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoJstInteractiveTaskQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMcGwSourceMiniAppId is McGwSourceMiniAppId Setter

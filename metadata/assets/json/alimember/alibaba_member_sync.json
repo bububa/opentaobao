@@ -20,8 +20,7 @@
 				{
 					"name": "mobile",
 					"type": "String",
-					"description": "手机号，海外手机格式 1-993333",
-					"required": true
+					"description": "手机号，海外手机格式 1-993333"
 				},
 				{
 					"name": "outer_member_id",

@@ -1,13 +1,6 @@
 {
 	"requestParams": [
 		{
-			"name": "biz_code",
-			"type": "String",
-			"description": "物流服务方代码，生鲜配送：YXSR",
-			"maxLength": 64,
-			"required": true
-		},
-		{
 			"name": "delivery_type",
 			"type": "String",
 			"description": "物流服务类型。冷链：602，常温：502",
@@ -15,21 +8,9 @@
 			"required": true
 		},
 		{
-			"name": "sender_address_id",
+			"name": "biz_code",
 			"type": "String",
-			"description": "商家淘宝地址信息ID",
-			"maxLength": 64
-		},
-		{
-			"name": "service_code",
-			"type": "String",
-			"description": "仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)",
-			"maxLength": 128
-		},
-		{
-			"name": "order_channels_type",
-			"type": "String",
-			"description": "订单渠道： 淘宝平台订单：\"TB\"; 天猫平台订单：\"TM\"; 京东：\"JD\"; 拍拍：\"PP\"; 易迅平台订单：\"YX\"; 一号店平台订单：\"YHD\"; 当当网平台订单：\"DD\"; EBAY：\"EBAY\"; QQ网购：\"QQ\"; 苏宁：\"SN\"; 国美：\"GM\"; 唯品会：\"WPH\"; 聚美：\"Jm\"; 乐峰：\"LF\"; 蘑菇街：\"MGJ\"; 聚尚：\"JS\"; 银泰：\"YT\"; VANCL：\"VANCL\"; 邮乐：\"YL\"; 优购：\"YG\"; 拍鞋：\"PX\"; 1688平台：\"1688\";",
+			"description": "物流服务方代码，生鲜配送：YXSR",
 			"maxLength": 64,
 			"required": true
 		},
@@ -45,6 +26,25 @@
 			"type": "String",
 			"description": "预留扩展字段",
 			"maxLength": 512
+		},
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)",
+			"maxLength": 128
+		},
+		{
+			"name": "sender_address_id",
+			"type": "String",
+			"description": "商家淘宝地址信息ID",
+			"maxLength": 64
+		},
+		{
+			"name": "order_channels_type",
+			"type": "String",
+			"description": "订单渠道： 淘宝平台订单：\"TB\"; 天猫平台订单：\"TM\"; 京东：\"JD\"; 拍拍：\"PP\"; 易迅平台订单：\"YX\"; 一号店平台订单：\"YHD\"; 当当网平台订单：\"DD\"; EBAY：\"EBAY\"; QQ网购：\"QQ\"; 苏宁：\"SN\"; 国美：\"GM\"; 唯品会：\"WPH\"; 聚美：\"Jm\"; 乐峰：\"LF\"; 蘑菇街：\"MGJ\"; 聚尚：\"JS\"; 银泰：\"YT\"; VANCL：\"VANCL\"; 邮乐：\"YL\"; 优购：\"YG\"; 拍鞋：\"PX\"; 1688平台：\"1688\";",
+			"maxLength": 64,
+			"required": true
 		}
 	],
 	"responseParams": [
@@ -56,14 +56,9 @@
 		{
 			"subParams": [
 				{
-					"name": "waybill_code",
+					"name": "time",
 					"type": "String",
-					"description": "获取的所有电子面单号，以“;”分隔"
-				},
-				{
-					"name": "short_address",
-					"type": "String",
-					"description": "大头笔"
+					"description": "预计到达时间"
 				},
 				{
 					"name": "alias",
@@ -71,9 +66,14 @@
 					"description": "简称"
 				},
 				{
-					"name": "time",
+					"name": "short_address",
 					"type": "String",
-					"description": "预计到达时间"
+					"description": "大头笔"
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易号"
 				},
 				{
 					"name": "feature",
@@ -81,9 +81,9 @@
 					"description": "预留扩展字段"
 				},
 				{
-					"name": "trade_id",
+					"name": "waybill_code",
 					"type": "String",
-					"description": "交易号"
+					"description": "获取的所有电子面单号，以“;”分隔"
 				}
 			],
 			"name": "fresh_waybill",

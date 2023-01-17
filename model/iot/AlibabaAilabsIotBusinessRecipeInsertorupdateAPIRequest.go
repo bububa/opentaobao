@@ -29,12 +29,15 @@ func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAilabsIotBusinessRecipeInsertorupdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBusinessRecipeOpenParam is ParamBusinessRecipeOpenParam Setter

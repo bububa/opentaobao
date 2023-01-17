@@ -31,12 +31,15 @@ func (r TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallCityretailTxdFulfillOrderUnbindnumAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSourceOrderId is SourceOrderId Setter

@@ -1,0 +1,56 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "birthday",
+					"type": "Date",
+					"description": "出生年月或者预产期",
+					"required": true
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "性别"
+				},
+				{
+					"name": "profile_id",
+					"type": "Number",
+					"description": "授权id",
+					"required": true
+				},
+				{
+					"name": "baby_type",
+					"type": "Number",
+					"description": "宝贝类型",
+					"required": true
+				}
+			],
+			"name": "yxy_baby_profile_cmd",
+			"type": "YxyBabyProfileCmd",
+			"description": "回流的档案数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_status",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "msg_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	],
+	"name": "tmall.industry.baby.authprofile.backflow",
+	"apiChineseName": "孕校云回流档案",
+	"description": "孕校云回流档案",
+	"id": 64455
+}

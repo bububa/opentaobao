@@ -6,6 +6,8 @@ import (
 
 // StdRoomType 结构体
 type StdRoomType struct {
+	// 床型 BedGroupDTO 之间是 或的关系，group 内部的 BedInfoDTO 是 与的关系
+	BedGroupDTOList []BedGroupDto `json:"bed_group_d_t_o_list,omitempty" xml:"bed_group_d_t_o_list>bed_group_dto,omitempty"`
 	// 标准房型名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 楼层

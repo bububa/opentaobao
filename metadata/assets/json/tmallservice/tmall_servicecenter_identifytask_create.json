@@ -25,26 +25,22 @@
 				{
 					"name": "display_msg",
 					"type": "String",
-					"description": "展示信息",
-					"required": true
+					"description": "展示信息"
 				},
 				{
 					"name": "result_data",
 					"type": "Number",
-					"description": "生层的核销单id",
-					"required": true
+					"description": "生层的核销单id"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "消息代码",
-					"required": true
+					"description": "消息代码"
 				}
 			],
 			"name": "result",

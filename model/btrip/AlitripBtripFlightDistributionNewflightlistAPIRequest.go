@@ -29,12 +29,15 @@ func (r AlitripBtripFlightDistributionNewflightlistAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightDistributionNewflightlistAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripBtripFlightDistributionNewflightlistAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripBtripFlightDistributionNewflightlistAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamFlightSearchListRQ is ParamFlightSearchListRQ Setter

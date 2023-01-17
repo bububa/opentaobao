@@ -11,8 +11,8 @@ import (
 //
 // 查询卡模板列表(支持数据下行)
 // 当传递了数据下行参数:
-//      * isDeleted,lastMaxId,gmtModified,num时,进行数据下行处理,返回结果不带分页信息
-//      * 否则分页查询卡模板,返回结果带有分页信息
+//   - isDeleted,lastMaxId,gmtModified,num时,进行数据下行处理,返回结果不带分页信息
+//   - 否则分页查询卡模板,返回结果带有分页信息
 type AlibabaAlscCrmCardPagetmpAPIRequest struct {
 	model.Params
 	// 请求结果
@@ -32,12 +32,15 @@ func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmCardPagetmpAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamPullCardTemplateOpenReq is ParamPullCardTemplateOpenReq Setter

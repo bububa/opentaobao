@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "case_id",
+					"type": "Number",
+					"description": "协同单Id",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "备注信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "附件名称"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "附件地址"
+						}
+					],
+					"name": "file_info_dto_list",
+					"type": "UploadFileInfoDTO[]",
+					"description": "附件列表"
+				}
+			],
+			"name": "goback_dto",
+			"type": "GoBackDTO",
+			"description": "驳回请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "协同单驳回返回结果"
+		}
+	],
+	"name": "alitrip.agent.coordinate.goback",
+	"apiChineseName": "协同单驳回",
+	"description": "协同单驳回",
+	"id": 64897
+}

@@ -20,148 +20,124 @@
 		{
 			"subParams": [
 				{
-					"name": "down_reason",
+					"name": "receipt_other_type_desc",
 					"type": "String",
-					"description": "商品下架原因",
-					"required": true
-				},
-				{
-					"name": "vendor",
-					"type": "String",
-					"description": "卖家渠道",
-					"required": true
-				},
-				{
-					"name": "out_rid",
-					"type": "String",
-					"description": "out_rid",
-					"required": true
-				},
-				{
-					"name": "gid",
-					"type": "Number",
-					"description": "gid酒店商品id",
-					"required": true
-				},
-				{
-					"name": "iid",
-					"type": "Number",
-					"description": "iid淘宝商品id",
-					"required": true
-				},
-				{
-					"name": "hid",
-					"type": "Number",
-					"description": "hid酒店id",
-					"required": true
-				},
-				{
-					"name": "rid",
-					"type": "Number",
-					"description": "rid房型id",
-					"required": true
-				},
-				{
-					"name": "title",
-					"type": "String",
-					"description": "宝贝名称",
-					"required": true
-				},
-				{
-					"name": "guide",
-					"type": "String",
-					"description": "购买须知",
-					"required": true
-				},
-				{
-					"name": "desc",
-					"type": "String",
-					"description": "宝贝描述",
-					"required": true
-				},
-				{
-					"name": "pic_urls",
-					"type": "String",
-					"description": "酒店商品图片Url。多个url用逗号隔开",
-					"required": true
-				},
-				{
-					"name": "has_receipt",
-					"type": "Boolean",
-					"description": "酒店商品是否提供发票",
-					"required": true
+					"description": "发票类型为其他时的发票描述,不能超过30个汉字，60个字符"
 				},
 				{
 					"name": "receipt_type",
 					"type": "String",
-					"description": "发票类型。A,B。分别代表： A:酒店住宿发票,B:其他",
-					"required": true
+					"description": "发票类型。A,B。分别代表： A:酒店住宿发票,B:其他"
 				},
 				{
-					"name": "receipt_other_type_desc",
+					"name": "has_receipt",
+					"type": "Boolean",
+					"description": "酒店商品是否提供发票"
+				},
+				{
+					"name": "pic_urls",
 					"type": "String",
-					"description": "发票类型为其他时的发票描述,不能超过30个汉字，60个字符",
-					"required": true
+					"description": "酒店商品图片Url。多个url用逗号隔开"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "宝贝描述"
+				},
+				{
+					"name": "guide",
+					"type": "String",
+					"description": "购买须知"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "宝贝名称"
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "rid房型id"
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "hid酒店id"
+				},
+				{
+					"name": "iid",
+					"type": "Number",
+					"description": "iid淘宝商品id"
+				},
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "gid酒店商品id"
 				},
 				{
 					"name": "receipt_info",
 					"type": "String",
-					"description": "发票说明，不能超过100个汉字,200个字符。",
-					"required": true
+					"description": "发票说明，不能超过100个汉字,200个字符。"
 				},
 				{
 					"name": "inventory",
 					"type": "String",
-					"description": "库存日历",
-					"required": true
+					"description": "库存日历"
 				},
 				{
 					"name": "status",
 					"type": "Number",
-					"description": "宝贝状态。1：上架。2：下架。3：删除",
-					"required": true
+					"description": "宝贝状态。1：上架。2：下架。3：删除"
 				},
 				{
 					"name": "recommend",
 					"type": "Boolean",
-					"description": "橱窗推荐",
-					"required": true
+					"description": "橱窗推荐"
 				},
 				{
 					"name": "created_time",
 					"type": "Date",
-					"description": "创建时间",
-					"required": true
+					"description": "创建时间"
 				},
 				{
 					"name": "modified_time",
 					"type": "Date",
-					"description": "修改时间",
-					"required": true
+					"description": "修改时间"
 				},
 				{
 					"name": "extend_info1",
 					"type": "String",
-					"description": "extend_info1",
-					"required": true
+					"description": "extend_info1"
 				},
 				{
 					"name": "extend_info2",
 					"type": "String",
-					"description": "extend_info2",
-					"required": true
+					"description": "extend_info2"
 				},
 				{
 					"name": "extend_info3",
 					"type": "String",
-					"description": "extend_info3",
-					"required": true
+					"description": "extend_info3"
+				},
+				{
+					"name": "vendor",
+					"type": "String",
+					"description": "卖家渠道"
+				},
+				{
+					"name": "out_rid",
+					"type": "String",
+					"description": "out_rid"
+				},
+				{
+					"name": "down_reason",
+					"type": "String",
+					"description": "商品下架原因"
 				},
 				{
 					"name": "switch_calendar",
 					"type": "String",
-					"description": "switchCalendar",
-					"required": true
+					"description": "switchCalendar"
 				}
 			],
 			"name": "room",

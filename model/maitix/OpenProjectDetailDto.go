@@ -58,4 +58,6 @@ type OpenProjectDetailDto struct {
 	SubClassifyCode int64 `json:"sub_classify_code,omitempty" xml:"sub_classify_code,omitempty"`
 	// 项目单次限购数量
 	PurchaseLimitationOnce int64 `json:"purchase_limitation_once,omitempty" xml:"purchase_limitation_once,omitempty"`
+	// 大麦商品id
+	DamaiItemId int64 `json:"damai_item_id,omitempty" xml:"damai_item_id,omitempty"`
 }

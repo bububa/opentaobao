@@ -1,0 +1,190 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备ID"
+						},
+						{
+							"name": "ip",
+							"type": "String",
+							"description": "ip地址"
+						},
+						{
+							"name": "mac",
+							"type": "String",
+							"description": "设备MAC地址"
+						},
+						{
+							"name": "platform",
+							"type": "String",
+							"description": "客户端平台"
+						},
+						{
+							"name": "platform_version",
+							"type": "String",
+							"description": "客户端平台版本"
+						},
+						{
+							"name": "prod_version",
+							"type": "String",
+							"description": "客户端应用版本"
+						},
+						{
+							"name": "product",
+							"type": "String",
+							"description": "客户端应用(淘宝、口碑独客、支付宝tab…)"
+						},
+						{
+							"name": "schema_platform",
+							"type": "String",
+							"description": "新零售店铺跳转链接:透传给投承做补全新零售店铺链接时使用"
+						},
+						{
+							"name": "ttid",
+							"type": "String",
+							"description": "格式: xxx@taobao_ios_5.0.1"
+						},
+						{
+							"name": "user_agent",
+							"type": "String",
+							"description": "特征字符串"
+						}
+					],
+					"name": "device_info",
+					"type": "DeviceInfo",
+					"description": "设备号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市区域码"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区县区域码"
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": " 纬度"
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "location_type",
+							"type": "String",
+							"description": "位置类型(默认实时)"
+						},
+						{
+							"name": "poi_id",
+							"type": "String",
+							"description": "poiId"
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": " poiName"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省区域码"
+						}
+					],
+					"name": "location_infos",
+					"type": "LocationInfo[]",
+					"description": "位置信息"
+				},
+				{
+					"name": "mission_collection_id",
+					"type": "Number",
+					"description": "任务集id",
+					"required": true
+				},
+				{
+					"name": "mission_def_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "mission_x_id",
+					"type": "String",
+					"description": "任务xid",
+					"required": true
+				},
+				{
+					"name": "sort_group_id",
+					"type": "String",
+					"description": "排序分组id，目前井冈山业务使用，任务分组"
+				},
+				{
+					"subParams": [
+						{
+							"name": "site",
+							"type": "String",
+							"description": "账号类型，0表示淘宝账号，25表示饿了么账号",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户ID",
+							"required": true
+						}
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息"
+				}
+			],
+			"name": "mission_receive_query",
+			"type": "MissionReceiveQuery",
+			"description": "任务领取入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回编码"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "实例id"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.task.receivetask",
+	"apiChineseName": "领取任务",
+	"description": "领取任务",
+	"id": 65173
+}

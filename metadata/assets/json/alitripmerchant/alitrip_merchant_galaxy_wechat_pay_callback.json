@@ -1,0 +1,59 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "call_back_json",
+			"type": "String",
+			"description": "回调参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码，SUCCESS为清算机构接收成功，其他错误码为失败。"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "返回信息，如非空，为错误原因。"
+						}
+					],
+					"name": "content",
+					"type": "WechatCallbackResponse",
+					"description": "微信要求的返回类"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.wechat.pay.callback",
+	"apiChineseName": "微信支付回调",
+	"description": "微信支付回调",
+	"id": 63913
+}

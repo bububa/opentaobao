@@ -31,12 +31,15 @@ func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEleEnterpriseRestaurantCheckaddressAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetErestaurantId is ErestaurantId Setter

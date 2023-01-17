@@ -29,12 +29,15 @@ func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripBtripFlightDistributionChangeNewpayAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBtripFlightModifyPayRq is ParamBtripFlightModifyPayRq Setter

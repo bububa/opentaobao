@@ -17,6 +17,16 @@
 			"description": "企业自定义编号"
 		},
 		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间"
+		},
+		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页大小",
@@ -27,16 +37,6 @@
 			"type": "Number",
 			"description": "页码",
 			"required": true
-		},
-		{
-			"name": "begin_date",
-			"type": "String",
-			"description": "开始时间"
-		},
-		{
-			"name": "end_date",
-			"type": "String",
-			"description": "结束时间"
 		}
 	],
 	"responseParams": [
@@ -104,7 +104,7 @@
 								{
 									"name": "partner_type",
 									"type": "String",
-									"description": "类型"
+									"description": "企业类型（1: 生产企业  2: 批发企业  3: 医疗机构  4: 零售企业  5: 物流企业  7: 上市许可持有人  8: 中央随机化系统提供商  110: 政府系统)"
 								},
 								{
 									"name": "partner_ent_id",

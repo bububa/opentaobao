@@ -31,12 +31,15 @@ func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEleEnterpriseRestaurantGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetGeo is Geo Setter

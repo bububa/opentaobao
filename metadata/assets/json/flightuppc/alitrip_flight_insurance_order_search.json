@@ -1,0 +1,298 @@
+{
+	"requestParams": [
+		{
+			"name": "out_order_id",
+			"type": "Number",
+			"description": "外部订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ins_person_id",
+							"type": "Number",
+							"description": "被保人id"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间"
+						},
+						{
+							"name": "tc_order_id",
+							"type": "Number",
+							"description": "保险订单号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "tc_order_id",
+									"type": "Number",
+									"description": "保险订单号"
+								},
+								{
+									"name": "id_card_no",
+									"type": "String",
+									"description": "idCardNo(md5脱敏)"
+								},
+								{
+									"name": "policy_no",
+									"type": "String",
+									"description": "子保单号"
+								},
+								{
+									"name": "id_card_type",
+									"type": "Number",
+									"description": "idCardType"
+								},
+								{
+									"name": "out_order_id",
+									"type": "Number",
+									"description": "外部订单号"
+								}
+							],
+							"name": "ins_order_open_person",
+							"type": "InsOrderOpenPersonDTO",
+							"description": "被保人信息"
+						},
+						{
+							"name": "policy_no",
+							"type": "String",
+							"description": "子保单号"
+						},
+						{
+							"name": "is_enable",
+							"type": "Boolean",
+							"description": "订单是否有效"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "保险价格"
+						},
+						{
+							"name": "claim_apply_time",
+							"type": "Date",
+							"description": "claimApplyTime"
+						},
+						{
+							"name": "product_no",
+							"type": "String",
+							"description": "保险产品编号"
+						},
+						{
+							"name": "item_source_tag",
+							"type": "Number",
+							"description": "itemSourceTag"
+						},
+						{
+							"name": "claim_fee",
+							"type": "Number",
+							"description": "claimFee"
+						},
+						{
+							"name": "ins_company",
+							"type": "String",
+							"description": "保司名称"
+						},
+						{
+							"name": "claim_success_time",
+							"type": "Date",
+							"description": "claimSuccessTime"
+						},
+						{
+							"name": "effective_end_time",
+							"type": "Date",
+							"description": "effectiveEndTime"
+						},
+						{
+							"name": "ins_segment_id",
+							"type": "Number",
+							"description": "insSegmentId"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"subParams": [
+								{
+									"name": "tc_order_id",
+									"type": "Number",
+									"description": "保险订单号"
+								},
+								{
+									"name": "company_name",
+									"type": "String",
+									"description": "航司名称"
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市"
+								},
+								{
+									"name": "policy_no",
+									"type": "String",
+									"description": "子保单号"
+								},
+								{
+									"name": "segment_no",
+									"type": "String",
+									"description": "航段编号"
+								},
+								{
+									"name": "out_order_id",
+									"type": "Number",
+									"description": "外部订单号"
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "出发时间"
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "到达时间"
+								},
+								{
+									"name": "attribute",
+									"type": "String",
+									"description": "attribute"
+								}
+							],
+							"name": "ins_order_open_segment",
+							"type": "InsOrderOpenSegmentDTO",
+							"description": "航段信息"
+						},
+						{
+							"name": "effective_start_time",
+							"type": "Date",
+							"description": "effectiveStartTime"
+						},
+						{
+							"name": "out_order_id",
+							"type": "Number",
+							"description": "外部订单号"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "子保单状态"
+						}
+					],
+					"name": "ins_order_detail_list",
+					"type": "InsOrderOpenDetailDTO[]",
+					"description": "订单详情列表"
+				},
+				{
+					"name": "tc_order_id",
+					"type": "Number",
+					"description": "保险订单号"
+				},
+				{
+					"name": "policy_detail_url",
+					"type": "String",
+					"description": "保单详情页地址"
+				},
+				{
+					"name": "policy_no",
+					"type": "String",
+					"description": "保单号"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "保险产品名称"
+				},
+				{
+					"name": "features",
+					"type": "String",
+					"description": "features"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "保险供应方id"
+				},
+				{
+					"name": "copies",
+					"type": "Number",
+					"description": "保险份数"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "保险价格"
+				},
+				{
+					"name": "out_order_id",
+					"type": "Number",
+					"description": "外部订单号"
+				},
+				{
+					"name": "product_no",
+					"type": "String",
+					"description": "保险产品编号"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "保险订单状态"
+				},
+				{
+					"name": "premium_id",
+					"type": "Number",
+					"description": "保险产品id"
+				}
+			],
+			"name": "ins_orders",
+			"type": "InsOrderOpenDTO []",
+			"description": "保险订单"
+		},
+		{
+			"name": "err_msg_for_client",
+			"type": "String",
+			"description": "错误信息，调用成功是该字段为空"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		}
+	],
+	"name": "alitrip.flight.insurance.order.search",
+	"apiChineseName": "查询保险订单详情",
+	"description": "查询保险订单详情",
+	"id": 64860
+}

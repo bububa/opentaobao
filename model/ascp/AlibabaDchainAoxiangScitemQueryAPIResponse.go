@@ -21,5 +21,5 @@ type AlibabaDchainAoxiangScitemQueryAPIResponseModel struct {
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 返回结构体
-	QueryScitemResponse *QueryScItemResponse `json:"query_scitem_response,omitempty" xml:"query_scitem_response,omitempty"`
+	QueryScitemResponse *TopResponse `json:"query_scitem_response,omitempty" xml:"query_scitem_response,omitempty"`
 }

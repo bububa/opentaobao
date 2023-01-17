@@ -98,6 +98,8 @@ type FlightInfoDto struct {
 	TransferInfo *TransferInfo `json:"transfer_info,omitempty" xml:"transfer_info,omitempty"`
 	// 票面价
 	Price int64 `json:"price,omitempty" xml:"price,omitempty"`
+	// 舱位基准价
+	BasicCabinPrice int64 `json:"basic_cabin_price,omitempty" xml:"basic_cabin_price,omitempty"`
 	// 是否共享
 	IsShare bool `json:"is_share,omitempty" xml:"is_share,omitempty"`
 	// 是否经停

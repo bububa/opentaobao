@@ -1,0 +1,35 @@
+{
+	"requestParams": [
+		{
+			"name": "site_id",
+			"type": "Number",
+			"description": "网站ID",
+			"required": true
+		},
+		{
+			"name": "adzone_name",
+			"type": "String",
+			"description": "广告位名称，最大长度64字符",
+			"maxLength": 64,
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "完整的pid"
+				}
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "MapData"
+		}
+	],
+	"name": "taobao.tbk.sc.adzone.create",
+	"apiChineseName": "淘宝客-服务商-创建推广者位",
+	"description": "提供淘宝客创建广告位",
+	"id": 34751
+}

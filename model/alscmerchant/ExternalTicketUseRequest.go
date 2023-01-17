@@ -2,12 +2,10 @@ package alscmerchant
 
 // ExternalTicketUseRequest 结构体
 type ExternalTicketUseRequest struct {
+	// 需要发送的码列表，其中code表示串码码值，num表示码的可核销份数
+	TicketInfos []TicketInfo `json:"ticket_infos,omitempty" xml:"ticket_infos>ticket_info,omitempty"`
 	// 特殊可选 核销份数，次卡业务必填、非次卡业务选填， 非次卡场景表示核销同一订单下的同类凭证的个数
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
-	// 特殊可选 口碑订单号，使用外部凭证码核销时必填
-	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
-	// 特殊可选 凭证码类型,INTERNAL_CODE(内部凭证码),EXTERNAL_CODE(外部凭证码),默认INTERNAL_CODE,外部券场景必填
-	CodeType string `json:"code_type,omitempty" xml:"code_type,omitempty"`
 	// 外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）
 	TicketRequestId string `json:"ticket_request_id,omitempty" xml:"ticket_request_id,omitempty"`
 	// 核销的口碑门店id(门店同步API中的alsc_store_id)，目前是必填。只有加白的合作方法可以不填写

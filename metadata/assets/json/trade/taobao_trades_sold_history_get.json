@@ -9,12 +9,12 @@
 		{
 			"name": "start_created",
 			"type": "Date",
-			"description": "查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss"
+			"description": "查询三个月之前交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss"
 		},
 		{
 			"name": "end_created",
 			"type": "Date",
-			"description": "查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss"
+			"description": "查询三个月之前交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss"
 		},
 		{
 			"name": "status",

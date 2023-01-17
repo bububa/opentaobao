@@ -415,6 +415,16 @@
 							"name": "derby_special_field",
 							"type": "DerbySpecialField",
 							"description": "德比返回体中提取的参数"
+						},
+						{
+							"name": "derby_email_id",
+							"type": "String",
+							"description": "德比[查询用户信息]接口-[contactMedium]节点中的[id]"
+						},
+						{
+							"name": "fast_track_eligibility",
+							"type": "Boolean",
+							"description": "快速升级资格"
 						}
 					],
 					"name": "content",

@@ -37,12 +37,15 @@ func (r TmallServicecenterFulfiltaskInsuranceActionAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterFulfiltaskInsuranceActionAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallServicecenterFulfiltaskInsuranceActionAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallServicecenterFulfiltaskInsuranceActionAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTaskAction is TaskAction Setter

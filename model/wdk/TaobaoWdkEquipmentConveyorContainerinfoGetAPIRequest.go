@@ -35,12 +35,15 @@ func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWdkEquipmentConveyorContainerinfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetContainerCode is ContainerCode Setter

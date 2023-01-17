@@ -12,10 +12,10 @@ import (
 // 获取搜索人群用户可添加人群信息
 type TaobaoSimbaSearchtagtemplateGetAPIRequest struct {
 	model.Params
-	// 被操作者的淘宝昵称
-	_nick string
 	// 子帐号nick
 	_subNick string
+	// 被操作者的淘宝昵称
+	_nick string
 }
 
 // NewTaobaoSimbaSearchtagtemplateGetRequest 初始化TaobaoSimbaSearchtagtemplateGetAPIRequest对象
@@ -31,25 +31,15 @@ func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetNick is Nick Setter
-// 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetNick() string {
-	return r._nick
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSubNick is SubNick Setter
@@ -63,4 +53,17 @@ func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetSubNick(_subNick string) 
 // GetSubNick SubNick Getter
 func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetSubNick() string {
 	return r._subNick
+}
+
+// SetNick is Nick Setter
+// 被操作者的淘宝昵称
+func (r *TaobaoSimbaSearchtagtemplateGetAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TaobaoSimbaSearchtagtemplateGetAPIRequest) GetNick() string {
+	return r._nick
 }

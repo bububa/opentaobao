@@ -41,12 +41,15 @@ func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaRptTargetingtagbaseGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNick is Nick Setter

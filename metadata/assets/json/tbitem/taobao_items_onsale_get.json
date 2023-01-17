@@ -1,0 +1,238 @@
+{
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需返回的字段列表。可选值：Item商品结构体中的以下字段： approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru,list_time,price,has_discount,has_invoice,has_warranty,has_showcase,modified,delist_time,postage_id,seller_cids,outer_id,sold_quantity ；字段之间用“,”分隔。不支持其他字段，如果需要获取其他字段数据，调用taobao.item.seller.get 获取。",
+			"required": true
+		},
+		{
+			"name": "q",
+			"type": "String",
+			"description": "搜索字段。搜索商品的title。"
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "商品类目ID。ItemCat中的cid字段。可以通过taobao.itemcats.get取到"
+		},
+		{
+			"name": "seller_cids",
+			"type": "String",
+			"description": "卖家店铺内自定义类目ID。多个之间用“,”分隔。可以根据taobao.sellercats.list.get获得.(\u003cfont color=\"red\"\u003e注：目前最多支持32个ID号传入\u003c/font\u003e)"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数。默认值为1,即默认返回第一页数据。用此接口获取数据时，当翻页获取的条数（page_no*page_size）超过10万,为了保护后台搜索引擎，接口将报错。所以请大家尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数。取值范围:大于零的整数;最大值：200；默认值：40。用此接口获取数据时，当翻页获取的条数（page_no*page_size）超过2万,为了保护后台搜索引擎，接口将报错。所以请大家尽可能的细化自己的搜索条件，例如根据修改时间分段获取商品"
+		},
+		{
+			"name": "order_by",
+			"type": "String",
+			"description": "排序方式。格式为column:asc/desc ，column可选值:list_time(上架时间),delist_time(下架时间),num(商品数量)，modified(最近修改时间)，sold_quantity（商品销量）,;默认上架时间降序(即最新上架排在前面)。如按照上架时间降序排序方式为list_time:desc"
+		},
+		{
+			"name": "has_discount",
+			"type": "Boolean",
+			"description": "是否参与会员折扣。可选值：true，false。默认不过滤该条件"
+		},
+		{
+			"name": "has_showcase",
+			"type": "Boolean",
+			"description": "是否橱窗推荐。 可选值：true，false。默认不过滤该条件"
+		},
+		{
+			"name": "is_taobao",
+			"type": "Boolean",
+			"description": "商品是否在淘宝显示"
+		},
+		{
+			"name": "is_ex",
+			"type": "Boolean",
+			"description": "商品是否在外部网店显示"
+		},
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "起始的修改时间"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "结束的修改时间"
+		},
+		{
+			"name": "is_cspu",
+			"type": "Boolean",
+			"description": "是否挂接了达尔文标准产品体系"
+		},
+		{
+			"name": "is_combine",
+			"type": "Boolean",
+			"description": "组合商品"
+		},
+		{
+			"name": "auction_type",
+			"type": "String",
+			"description": "商品类型：a-拍卖,b-一口价"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到符合条件的结果总数"
+		},
+		{
+			"subParams": [
+				{
+					"name": "approve_status",
+					"type": "String",
+					"description": "商品上传后的状态。onsale出售中，instock库中"
+				},
+				{
+					"name": "iid",
+					"type": "String",
+					"description": "商品iid"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题,不能超过60字节"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "商品类型(fixed:一口价;auction:拍卖)注：取消团购"
+				},
+				{
+					"name": "cid",
+					"type": "Number",
+					"description": "商品所属的叶子类目 id"
+				},
+				{
+					"name": "seller_cids",
+					"type": "String",
+					"description": "商品所属的店铺内卖家自定义类目列表"
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "商品主图片地址"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品数量"
+				},
+				{
+					"name": "props",
+					"type": "String",
+					"description": "商品属性 格式：pid:vid;pid:vid"
+				},
+				{
+					"name": "valid_thru",
+					"type": "Number",
+					"description": "有效期,7或者14（默认是7天）"
+				},
+				{
+					"name": "list_time",
+					"type": "Date",
+					"description": "上架时间（格式：yyyy-MM-dd HH:mm:ss）"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格，格式：5.00；单位：元；精确到：分"
+				},
+				{
+					"name": "has_discount",
+					"type": "Boolean",
+					"description": "支持会员打折,true/false"
+				},
+				{
+					"name": "has_invoice",
+					"type": "Boolean",
+					"description": "是否有发票,true/false"
+				},
+				{
+					"name": "has_warranty",
+					"type": "Boolean",
+					"description": "是否有保修,true/false"
+				},
+				{
+					"name": "has_showcase",
+					"type": "Boolean",
+					"description": "橱窗推荐,true/false"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
+				},
+				{
+					"name": "delist_time",
+					"type": "Date",
+					"description": "下架时间（格式：yyyy-MM-dd HH:mm:ss）"
+				},
+				{
+					"name": "postage_id",
+					"type": "Number",
+					"description": "宝贝所属的运费模板ID，如果没有返回则说明没有使用运费模板"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家外部编码(可与商家外部系统对接)。需要授权才能获取。"
+				},
+				{
+					"name": "is_ex",
+					"type": "Boolean",
+					"description": "是否在外部网店显示"
+				},
+				{
+					"name": "is_virtual",
+					"type": "Boolean",
+					"description": "虚拟商品的状态字段"
+				},
+				{
+					"name": "is_taobao",
+					"type": "Boolean",
+					"description": "是否在淘宝显示"
+				},
+				{
+					"name": "sold_quantity",
+					"type": "Number",
+					"description": "商品销量"
+				},
+				{
+					"name": "is_cspu",
+					"type": "Boolean",
+					"description": "是否为达尔文挂接成功了的商品"
+				}
+			],
+			"name": "items",
+			"type": "Item []",
+			"description": "搜索到的商品列表，具体字段根据设定的fields决定，不包括desc字段"
+		}
+	],
+	"name": "taobao.items.onsale.get",
+	"apiChineseName": "获取当前会话用户出售中的商品列表",
+	"description": "获取当前用户作为卖家的出售中的商品列表，并能根据传入的搜索条件对出售中的商品列表进行过滤\n只能获得商品的部分信息，商品的详细信息请通过taobao.item.seller.get 获取\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",
+	"id": 18
+}

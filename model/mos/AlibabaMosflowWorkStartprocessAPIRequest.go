@@ -31,12 +31,15 @@ func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMosflowWorkStartprocessAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetVariables is Variables Setter

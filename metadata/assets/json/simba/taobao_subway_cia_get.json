@@ -18,38 +18,32 @@
 				{
 					"name": "target_click",
 					"type": "Number",
-					"description": "目标点击量",
-					"required": true
+					"description": "目标点击量"
 				},
 				{
 					"name": "bid_target_type",
 					"type": "Number",
-					"description": "出价偏好（3:促进收藏加购，4:促进点击，5:促进成交）",
-					"required": true
+					"description": "出价偏好（3:促进收藏加购，4:促进点击，5:促进成交）"
 				},
 				{
 					"name": "max_premium",
 					"type": "Number",
-					"description": "最高溢价比例",
-					"required": true
+					"description": "最高溢价比例"
 				},
 				{
 					"name": "is_circulation",
 					"type": "Boolean",
-					"description": "是否自动流转",
-					"required": true
+					"description": "是否自动流转"
 				},
 				{
 					"name": "is_smart_bidding",
 					"type": "Boolean",
-					"description": "是否开启智能出价",
-					"required": true
+					"description": "是否开启智能出价"
 				},
 				{
 					"name": "ad_group_id",
 					"type": "Number",
-					"description": "推广组id",
-					"required": true
+					"description": "推广组id"
 				}
 			],
 			"name": "result",

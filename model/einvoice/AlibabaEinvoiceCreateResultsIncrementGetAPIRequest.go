@@ -12,14 +12,14 @@ import (
 // 增量开票结果获取
 type AlibabaEinvoiceCreateResultsIncrementGetAPIRequest struct {
 	model.Params
-	// 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
-	_status string
-	// 起始查询时间
-	_startModified string
-	// 收款方税务登记证号
-	_payeeRegisterNo string
 	// 终止查询时间
 	_endModified string
+	// 收款方税务登记证号
+	_payeeRegisterNo string
+	// 起始查询时间
+	_startModified string
+	// 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
+	_status string
 	// 页面大小(不能超过200)
 	_pageSize int64
 	// 显示的页码
@@ -39,38 +39,28 @@ func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetStatus is Status Setter
-// 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
-func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetEndModified is EndModified Setter
+// 终止查询时间
+func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetEndModified(_endModified string) error {
+	r._endModified = _endModified
+	r.Set("end_modified", _endModified)
 	return nil
 }
 
-// GetStatus Status Getter
-func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStatus() string {
-	return r._status
-}
-
-// SetStartModified is StartModified Setter
-// 起始查询时间
-func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStartModified(_startModified string) error {
-	r._startModified = _startModified
-	r.Set("start_modified", _startModified)
-	return nil
-}
-
-// GetStartModified StartModified Getter
-func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStartModified() string {
-	return r._startModified
+// GetEndModified EndModified Getter
+func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetEndModified() string {
+	return r._endModified
 }
 
 // SetPayeeRegisterNo is PayeeRegisterNo Setter
@@ -86,17 +76,30 @@ func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetPayeeRegisterNo()
 	return r._payeeRegisterNo
 }
 
-// SetEndModified is EndModified Setter
-// 终止查询时间
-func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetEndModified(_endModified string) error {
-	r._endModified = _endModified
-	r.Set("end_modified", _endModified)
+// SetStartModified is StartModified Setter
+// 起始查询时间
+func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStartModified(_startModified string) error {
+	r._startModified = _startModified
+	r.Set("start_modified", _startModified)
 	return nil
 }
 
-// GetEndModified EndModified Getter
-func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetEndModified() string {
-	return r._endModified
+// GetStartModified StartModified Getter
+func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStartModified() string {
+	return r._startModified
+}
+
+// SetStatus is Status Setter
+// 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r AlibabaEinvoiceCreateResultsIncrementGetAPIRequest) GetStatus() string {
+	return r._status
 }
 
 // SetPageSize is PageSize Setter

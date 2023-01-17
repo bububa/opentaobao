@@ -12,4 +12,6 @@ type UpdateStoreSkuLifeStatusRequestBean struct {
 	LifeStatus string `json:"life_status,omitempty" xml:"life_status,omitempty"`
 	// 渠道编码
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 淘鲜达半日达项目新增，0 表示上架，1表示下架，当更新淘鲜达半日达渠道品上下架时，该字段必传
+	OnlineSaleFlag int64 `json:"online_sale_flag,omitempty" xml:"online_sale_flag,omitempty"`
 }

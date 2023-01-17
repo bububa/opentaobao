@@ -80,6 +80,16 @@
 					"name": "refund_type",
 					"type": "Number",
 					"description": "退款类型，1:仅退款。2.仅退货。3.退货退款"
+				},
+				{
+					"name": "refund_note",
+					"type": "String",
+					"description": "退款备注、或问题描述等补充性文本"
+				},
+				{
+					"name": "refund_pics",
+					"type": "String[]",
+					"description": "退款图片清单"
 				}
 			],
 			"name": "refund_apply_info",

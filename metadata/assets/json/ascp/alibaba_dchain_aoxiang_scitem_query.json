@@ -255,7 +255,7 @@
 				}
 			],
 			"name": "query_scitem_response",
-			"type": "QueryScItemResponse",
+			"type": "TopResponse",
 			"description": "返回结构体"
 		}
 	],

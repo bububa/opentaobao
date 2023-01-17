@@ -9,23 +9,28 @@
 	],
 	"responseParams": [
 		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "订单编号"
+		},
+		{
 			"subParams": [
 				{
 					"subParams": [
 						{
-							"name": "order_item_id",
-							"type": "Json",
-							"description": "ERP订单明细编码或者子交易单号"
-						},
-						{
-							"name": "item_qty",
-							"type": "Number",
-							"description": "通知仓库此订单明细的商品应发数量"
-						},
-						{
-							"name": "cn_order_code",
+							"name": "store_code",
 							"type": "String",
-							"description": "菜鸟订单编码 当订单路由到菜鸟仓发货时，生成此单号。等待路由仓或由商家仓发货的订单，此单号为空。格式LBX+数字"
+							"description": "仓库编码 当订单路由到菜鸟仓发货时输出菜鸟仓编码。等待路由仓或由商家仓发货的订单，此内容为空。"
 						},
 						{
 							"name": "rout_status",
@@ -33,9 +38,19 @@
 							"description": "订单路由状态 状态值： WAIT_ROUTE 待路由仓 ROUTE_TO_CN 路由到菜鸟仓发货 ROUTE_TO_ERP 路由到商家仓发货。 STOP_ROUTE 终止分仓，如订单已取消时，不再发货。 注：待路由仓状态表示未做路由，不确定由哪个仓库发货，可与5分钟后再次查询"
 						},
 						{
-							"name": "store_code",
+							"name": "cn_order_code",
 							"type": "String",
-							"description": "仓库编码 当订单路由到菜鸟仓发货时输出菜鸟仓编码。等待路由仓或由商家仓发货的订单，此内容为空。"
+							"description": "菜鸟订单编码 当订单路由到菜鸟仓发货时，生成此单号。等待路由仓或由商家仓发货的订单，此单号为空。格式LBX+数字"
+						},
+						{
+							"name": "item_qty",
+							"type": "Number",
+							"description": "通知仓库此订单明细的商品应发数量"
+						},
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "ERP订单明细编码或者子交易单号"
 						}
 					],
 					"name": "item",
@@ -51,21 +66,6 @@
 			"name": "wl_success",
 			"type": "Boolean",
 			"description": "是否成功"
-		},
-		{
-			"name": "wl_error_code",
-			"type": "String",
-			"description": "错误信息"
-		},
-		{
-			"name": "wl_error_msg",
-			"type": "String",
-			"description": "错误信息"
-		},
-		{
-			"name": "order_code",
-			"type": "String",
-			"description": "订单编号"
 		}
 	],
 	"name": "taobao.wms.order.warehouse.route.get",

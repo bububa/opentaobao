@@ -24,6 +24,8 @@ type CustomerEntrustSellingDto struct {
 	HouseSize string `json:"house_size,omitempty" xml:"house_size,omitempty"`
 	// 装修
 	Decoration string `json:"decoration,omitempty" xml:"decoration,omitempty"`
+	// 联系信息
+	ContactInfo string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
 	// 业务模式（1-无忧卖房 2-普通卖房）
 	BusiType int64 `json:"busi_type,omitempty" xml:"busi_type,omitempty"`
 	// 小区ID

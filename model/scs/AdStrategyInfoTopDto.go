@@ -4,10 +4,6 @@ package scs
 type AdStrategyInfoTopDto struct {
 	// 商品列表，小于等于10个
 	ItemIds []int64 `json:"item_ids,omitempty" xml:"item_ids>int64,omitempty"`
-	// 达摩盘人群列表
-	InitDmpCrowdIdList []int64 `json:"init_dmp_crowd_id_list,omitempty" xml:"init_dmp_crowd_id_list>int64,omitempty"`
-	// 模板列表
-	InitTemplateIdList []int64 `json:"init_template_id_list,omitempty" xml:"init_template_id_list>int64,omitempty"`
 	// 拉新快场景中的新客定义，支持&#34;1,365&#34;,&#34;1,500&#34;等
 	BehaviorWindowsList []string `json:"behavior_windows_list,omitempty" xml:"behavior_windows_list>string,omitempty"`
 	// 子场景

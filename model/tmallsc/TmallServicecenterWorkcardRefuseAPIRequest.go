@@ -29,12 +29,15 @@ func (r TmallServicecenterWorkcardRefuseAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkcardRefuseAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallServicecenterWorkcardRefuseAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallServicecenterWorkcardRefuseAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBuyerRefuseAcceptRequest is BuyerRefuseAcceptRequest Setter

@@ -30,7 +30,7 @@ type IdleItemApiDo struct {
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 商品类型： b 一口价；a 拍卖
 	AuctionType string `json:"auction_type,omitempty" xml:"auction_type,omitempty"`
-	// 商品服务标签，用逗号分隔 || 1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证
+	// [废弃中]商品服务标签，用逗号分隔 || 1：100%验货；2：正品鉴别；3：七天包退；4：一年质保；5：48小时发货；7：质量问题包退；8：一物一证
 	SpGuarantee string `json:"sp_guarantee,omitempty" xml:"sp_guarantee,omitempty"`
 	// 商品类目Id,手机: 50025386（long型，一般8～10位）
 	CategoryId string `json:"category_id,omitempty" xml:"category_id,omitempty"`
@@ -68,6 +68,8 @@ type IdleItemApiDo struct {
 	TemplateId int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
 	// 拍卖业务数据(不传入则不修改)
 	BidData *IdleItemApiBidDo `json:"bid_data,omitempty" xml:"bid_data,omitempty"`
+	// 售后服务信息
+	AfterSalesData *IdleItemApiAfterSalesDo `json:"after_sales_data,omitempty" xml:"after_sales_data,omitempty"`
 	// 商品状态，可选值为0（表示在线），1（表示售出下架）-2（表示下架），-1（表示删除），99（其他）
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 交易方式, 仅在线交易: 0,仅线下交易: 1,线上OR线下交易: 2（int型，1位）

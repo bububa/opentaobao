@@ -29,12 +29,15 @@ func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAliqinFcVoiceNumCancelcallAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCallId is CallId Setter

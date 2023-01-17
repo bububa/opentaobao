@@ -12,16 +12,16 @@ import (
 // 订单延期
 type TaobaoEticketMerchantMaDelayAPIRequest struct {
 	model.Params
+	// 扩展
+	_attributeMap string
+	// 请求ID，调用方保证惟一
+	_requestId string
 	// 延期时间
 	_endDate string
 	// 码
 	_code string
 	// 订单号
 	_outerId string
-	// 扩展
-	_attributeMap string
-	// 请求ID，调用方保证惟一
-	_requestId string
 	// 业务类型
 	_bizType int64
 }
@@ -39,12 +39,41 @@ func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoEticketMerchantMaDelayAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetAttributeMap is AttributeMap Setter
+// 扩展
+func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetAttributeMap(_attributeMap string) error {
+	r._attributeMap = _attributeMap
+	r.Set("attribute_map", _attributeMap)
+	return nil
+}
+
+// GetAttributeMap AttributeMap Getter
+func (r TaobaoEticketMerchantMaDelayAPIRequest) GetAttributeMap() string {
+	return r._attributeMap
+}
+
+// SetRequestId is RequestId Setter
+// 请求ID，调用方保证惟一
+func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetRequestId(_requestId string) error {
+	r._requestId = _requestId
+	r.Set("request_id", _requestId)
+	return nil
+}
+
+// GetRequestId RequestId Getter
+func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRequestId() string {
+	return r._requestId
 }
 
 // SetEndDate is EndDate Setter
@@ -84,32 +113,6 @@ func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetOuterId(_outerId string) err
 // GetOuterId OuterId Getter
 func (r TaobaoEticketMerchantMaDelayAPIRequest) GetOuterId() string {
 	return r._outerId
-}
-
-// SetAttributeMap is AttributeMap Setter
-// 扩展
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetAttributeMap(_attributeMap string) error {
-	r._attributeMap = _attributeMap
-	r.Set("attribute_map", _attributeMap)
-	return nil
-}
-
-// GetAttributeMap AttributeMap Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetAttributeMap() string {
-	return r._attributeMap
-}
-
-// SetRequestId is RequestId Setter
-// 请求ID，调用方保证惟一
-func (r *TaobaoEticketMerchantMaDelayAPIRequest) SetRequestId(_requestId string) error {
-	r._requestId = _requestId
-	r.Set("request_id", _requestId)
-	return nil
-}
-
-// GetRequestId RequestId Getter
-func (r TaobaoEticketMerchantMaDelayAPIRequest) GetRequestId() string {
-	return r._requestId
 }
 
 // SetBizType is BizType Setter

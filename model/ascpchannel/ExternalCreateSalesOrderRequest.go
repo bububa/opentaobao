@@ -14,6 +14,8 @@ type ExternalCreateSalesOrderRequest struct {
 	SubChannelCode string `json:"sub_channel_code,omitempty" xml:"sub_channel_code,omitempty"`
 	// 授权渠道(市场)
 	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+	// 扩展字段
+	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 收货人信息
 	Receiver *ExternalReceiverRequest `json:"receiver,omitempty" xml:"receiver,omitempty"`
 	// 发货人

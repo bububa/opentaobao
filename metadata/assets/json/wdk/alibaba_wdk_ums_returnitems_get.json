@@ -15,50 +15,42 @@
 						{
 							"name": "count",
 							"type": "String",
-							"description": "数量",
-							"required": true
+							"description": "数量"
 						},
 						{
 							"name": "cabinet_code",
 							"type": "String",
-							"description": "库位号，退货库位号",
-							"required": true
+							"description": "库位号，退货库位号"
 						},
 						{
 							"name": "item_code",
 							"type": "String",
-							"description": "商品code",
-							"required": true
+							"description": "商品code"
 						},
 						{
 							"name": "warehouse_code",
 							"type": "String",
-							"description": "warehouseCode",
-							"required": true
+							"description": "warehouseCode"
 						}
 					],
 					"name": "list",
 					"type": "ErpReturnItemDto[]",
-					"description": "list",
-					"required": true
+					"description": "list"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				},
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
 			],
 			"name": "result",

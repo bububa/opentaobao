@@ -12,4 +12,6 @@ type VoucherOrderDetailVo struct {
 	PriceDetailDto *VoucherHotelVo `json:"price_detail_dto,omitempty" xml:"price_detail_dto,omitempty"`
 	// 房间信息详情
 	OrderRoomDetail *PriceDetailDto `json:"order_room_detail,omitempty" xml:"order_room_detail,omitempty"`
+	// 权益商品相关展示信息
+	DerbyVoucherInfo *DerbyVoucherInfo `json:"derby_voucher_info,omitempty" xml:"derby_voucher_info,omitempty"`
 }

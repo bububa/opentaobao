@@ -29,12 +29,15 @@ func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMoziAclRoleRemovePermissionsAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRemovePermissionsFromRole is RemovePermissionsFromRole Setter

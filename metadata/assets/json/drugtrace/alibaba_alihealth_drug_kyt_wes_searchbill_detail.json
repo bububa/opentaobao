@@ -1,0 +1,200 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业refEntId",
+			"required": true
+		},
+		{
+			"name": "license_token",
+			"type": "String",
+			"description": "licenseToken",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "billCode",
+			"required": true
+		},
+		{
+			"name": "show_code",
+			"type": "String",
+			"description": "是否显示单据中的码( 1：显示    0：不显示 )",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "mod_date",
+							"type": "String",
+							"description": "修改时间"
+						},
+						{
+							"name": "process_date",
+							"type": "String",
+							"description": "处理时间"
+						},
+						{
+							"name": "bill_time",
+							"type": "String",
+							"description": "单据日期"
+						},
+						{
+							"name": "to_user_id",
+							"type": "String",
+							"description": "收货企业id"
+						},
+						{
+							"name": "to_ent_name",
+							"type": "String",
+							"description": "收货企业名称"
+						},
+						{
+							"name": "from_user_id",
+							"type": "String",
+							"description": "发货企业id"
+						},
+						{
+							"name": "from_ent_name",
+							"type": "String",
+							"description": "发货企业名称"
+						},
+						{
+							"name": "bill_type_name",
+							"type": "String",
+							"description": "单据类型名称"
+						},
+						{
+							"name": "bill_type",
+							"type": "String",
+							"description": "单据类型"
+						},
+						{
+							"name": "bill_code",
+							"type": "String",
+							"description": "单据号码"
+						},
+						{
+							"subParams": [
+								{
+									"name": "expired_date",
+									"type": "String",
+									"description": "有效期至"
+								},
+								{
+									"name": "produce_ent_name",
+									"type": "String",
+									"description": "生产企业名称"
+								},
+								{
+									"name": "prod_code",
+									"type": "String",
+									"description": "子类编码"
+								},
+								{
+									"name": "product_code",
+									"type": "String",
+									"description": "子类编码前7位"
+								},
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期"
+								},
+								{
+									"name": "product_batch_no",
+									"type": "String",
+									"description": "批次号"
+								},
+								{
+									"name": "drug_ent_base_info_id",
+									"type": "String",
+									"description": "药品id"
+								},
+								{
+									"name": "physic_name",
+									"type": "String",
+									"description": "药品名称"
+								},
+								{
+									"name": "preparations_unit",
+									"type": "String",
+									"description": "制剂单位"
+								},
+								{
+									"name": "temp_pkg_spec",
+									"type": "String",
+									"description": "包装规格"
+								},
+								{
+									"name": "min_preparations_count",
+									"type": "String",
+									"description": "最小制剂数量"
+								},
+								{
+									"name": "min_pkg_count",
+									"type": "String",
+									"description": "最小包装数量"
+								},
+								{
+									"name": "physic_type_name",
+									"type": "String",
+									"description": "药品类型名称"
+								},
+								{
+									"name": "physic_type",
+									"type": "String",
+									"description": "药品类型编码"
+								},
+								{
+									"name": "approve_no",
+									"type": "String",
+									"description": "国药准字"
+								}
+							],
+							"name": "bill_chk_in_out_detail_list_d_t_o_list",
+							"type": "Billchkinoutdetaillistdtolist[]",
+							"description": "单据详情"
+						},
+						{
+							"name": "codes",
+							"type": "String[]",
+							"description": "单据中的码"
+						}
+					],
+					"name": "model",
+					"type": "BillInOutDetailDto",
+					"description": "对象模型信息"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "成功失败"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.wes.searchbill.detail",
+	"apiChineseName": "查询单据详情",
+	"description": "根据单据号码查询码单据详情和码信息",
+	"id": 65505
+}

@@ -4,36 +4,30 @@
 			"name": "activity_id",
 			"type": "Number",
 			"description": "优惠活动ID",
-			"minValue": 1,
 			"required": true
 		},
 		{
 			"name": "detail_id",
 			"type": "Number",
 			"description": "优惠详情ID",
-			"minValue": 1,
 			"required": true
 		},
 		{
 			"name": "item_id",
 			"type": "Number",
 			"description": "商品ID",
-			"minValue": 1,
 			"required": true
 		},
 		{
 			"name": "promotion_type",
 			"type": "Number",
 			"description": "优惠类型，只有两种可选值：0-减钱；1-打折",
-			"maxValue": 1,
-			"minValue": 0,
 			"required": true
 		},
 		{
 			"name": "promotion_value",
 			"type": "Number",
 			"description": "优惠力度，其值的解释方式由promotion_type定义：当为减钱时解释成减钱数量，如：900表示减9元；当为打折时解释成打折折扣，如：900表示打9折",
-			"minValue": 1,
 			"required": true
 		}
 	],

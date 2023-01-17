@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "经纪人ID",
+					"required": true
+				},
+				{
+					"name": "identity",
+					"type": "String",
+					"description": "身份信息",
+					"required": true
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型",
+					"required": true
+				}
+			],
+			"name": "identity_info",
+			"type": "IdentityInfoDTO",
+			"description": "身份信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "Boolean",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回信息"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.identifying.sync",
+	"apiChineseName": "登陆标识信息同步",
+	"description": "登陆标识信息同步",
+	"id": 64917
+}

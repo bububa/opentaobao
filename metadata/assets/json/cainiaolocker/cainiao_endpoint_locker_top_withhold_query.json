@@ -7,15 +7,15 @@
 			"required": true
 		},
 		{
-			"name": "open_user_id",
-			"type": "String",
-			"description": "开放用户Id",
-			"required": true
-		},
-		{
 			"name": "order_type",
 			"type": "Number",
 			"description": "柜子业务：0-取件业务，1-寄件业务，2-派样业务，3-小件员约柜（在约期内仅能使用一次）4-小件员租柜（在约期内可反复使用）",
+			"required": true
+		},
+		{
+			"name": "open_user_id",
+			"type": "String",
+			"description": "开放用户Id",
 			"required": true
 		}
 	],
@@ -25,20 +25,17 @@
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				}
 			],
 			"name": "result",

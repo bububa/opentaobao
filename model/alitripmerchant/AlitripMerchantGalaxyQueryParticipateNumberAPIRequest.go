@@ -33,12 +33,15 @@ func (r AlitripMerchantGalaxyQueryParticipateNumberAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyQueryParticipateNumberAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripMerchantGalaxyQueryParticipateNumberAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripMerchantGalaxyQueryParticipateNumberAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTenantKey is TenantKey Setter

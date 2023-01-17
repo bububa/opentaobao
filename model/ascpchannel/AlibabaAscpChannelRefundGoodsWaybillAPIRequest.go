@@ -29,12 +29,15 @@ func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAscpChannelRefundGoodsWaybillAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefundWayBillReq is RefundWayBillReq Setter

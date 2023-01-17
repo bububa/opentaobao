@@ -14,10 +14,10 @@ type TaobaoTmallgenieHotelwelcomeAPIRequest struct {
 	model.Params
 	// 房间号
 	_roomNo string
-	// 模板ID
-	_templateId string
 	// 模板变量
 	_templateVariable string
+	// 模板ID
+	_templateId string
 	// 酒店ID
 	_hotelId int64
 }
@@ -35,12 +35,15 @@ func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRoomNo is RoomNo Setter
@@ -56,19 +59,6 @@ func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetRoomNo() string {
 	return r._roomNo
 }
 
-// SetTemplateId is TemplateId Setter
-// 模板ID
-func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateId(_templateId string) error {
-	r._templateId = _templateId
-	r.Set("template_id", _templateId)
-	return nil
-}
-
-// GetTemplateId TemplateId Getter
-func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateId() string {
-	return r._templateId
-}
-
 // SetTemplateVariable is TemplateVariable Setter
 // 模板变量
 func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateVariable(_templateVariable string) error {
@@ -80,6 +70,19 @@ func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateVariable(_templateVa
 // GetTemplateVariable TemplateVariable Getter
 func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateVariable() string {
 	return r._templateVariable
+}
+
+// SetTemplateId is TemplateId Setter
+// 模板ID
+func (r *TaobaoTmallgenieHotelwelcomeAPIRequest) SetTemplateId(_templateId string) error {
+	r._templateId = _templateId
+	r.Set("template_id", _templateId)
+	return nil
+}
+
+// GetTemplateId TemplateId Getter
+func (r TaobaoTmallgenieHotelwelcomeAPIRequest) GetTemplateId() string {
+	return r._templateId
 }
 
 // SetHotelId is HotelId Setter

@@ -43,12 +43,15 @@ func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthTracecodesellerBillUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSkeyCode is SkeyCode Setter

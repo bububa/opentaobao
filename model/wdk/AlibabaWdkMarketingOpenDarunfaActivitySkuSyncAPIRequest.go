@@ -35,12 +35,15 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetApiMethodNam
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetActivitySkuList is ActivitySkuList Setter

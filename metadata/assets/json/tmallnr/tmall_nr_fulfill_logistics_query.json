@@ -21,136 +21,114 @@
 								{
 									"name": "logistics_time",
 									"type": "String",
-									"description": "状态产生时间",
-									"required": true
+									"description": "状态产生时间"
 								},
 								{
 									"name": "fail_code",
 									"type": "String",
-									"description": "取件失败的code",
-									"required": true
+									"description": "取件失败的code"
 								},
 								{
 									"name": "fail_reason",
 									"type": "String",
-									"description": "取件失败的原因",
-									"required": true
+									"description": "取件失败的原因"
 								},
 								{
 									"name": "deliverer_phone",
 									"type": "String",
-									"description": "快递员电话",
-									"required": true
+									"description": "快递员电话"
 								},
 								{
 									"name": "deliverer_name",
 									"type": "String",
-									"description": "快递员姓名",
-									"required": true
+									"description": "快递员姓名"
 								},
 								{
 									"name": "sp_name",
 									"type": "String",
-									"description": "服务商的cp",
-									"required": true
+									"description": "服务商的cp"
 								},
 								{
 									"name": "logistics_status_name",
 									"type": "String",
-									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]",
-									"required": true
+									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]"
 								},
 								{
 									"name": "logistics_status",
 									"type": "String",
-									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]",
-									"required": true
+									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]"
 								}
 							],
 							"name": "nr_delivery_brief_status_d_t_o",
 							"type": "NrDeliveryBriefStatusDto",
-							"description": "当前状态",
-							"required": true
+							"description": "当前状态"
 						},
 						{
 							"subParams": [
 								{
 									"name": "logistics_status",
 									"type": "String",
-									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]",
-									"required": true
+									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]"
 								},
 								{
 									"name": "logistics_status_name",
 									"type": "String",
-									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]",
-									"required": true
+									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]"
 								},
 								{
 									"name": "sp_name",
 									"type": "String",
-									"description": "spName",
-									"required": true
+									"description": "spName"
 								},
 								{
 									"name": "deliverer_name",
 									"type": "String",
-									"description": "delivererName",
-									"required": true
+									"description": "delivererName"
 								},
 								{
 									"name": "deliverer_phone",
 									"type": "String",
-									"description": "delivererPhone",
-									"required": true
+									"description": "delivererPhone"
 								},
 								{
 									"name": "fail_reason",
 									"type": "String",
-									"description": "failReason",
-									"required": true
+									"description": "failReason"
 								},
 								{
 									"name": "fail_code",
 									"type": "String",
-									"description": "failCode",
-									"required": true
+									"description": "failCode"
 								},
 								{
 									"name": "logistics_time",
 									"type": "String",
-									"description": "logisticsTime",
-									"required": true
+									"description": "logisticsTime"
 								}
 							],
 							"name": "nr_delivery_brief_status_d_t_os",
 							"type": "NrDeliveryBriefStatusDto[]",
-							"description": "历史状态",
-							"required": true
+							"description": "历史状态"
 						}
 					],
 					"name": "result_data",
 					"type": "NrTimingFulfillDetailQueryRespDto",
-					"description": "返回数据",
-					"required": true
+					"description": "返回数据"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "is_success",
 					"type": "Boolean",
-					"description": "isSuccess",
-					"required": true
+					"description": "isSuccess"
 				}
 			],
 			"name": "result",

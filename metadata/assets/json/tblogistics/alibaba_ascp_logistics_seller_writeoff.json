@@ -1,0 +1,34 @@
+{
+	"requestParams": [
+		{
+			"name": "lp_order_id",
+			"type": "Number",
+			"description": "所要核销的核销物流单ID，在alibaba.ascp.logistics.seller.orders.get中获取。",
+			"required": true
+		},
+		{
+			"name": "receive_code",
+			"type": "String",
+			"description": "核销码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否核销成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "操作结果"
+		}
+	],
+	"name": "alibaba.ascp.logistics.seller.writeoff",
+	"apiChineseName": "商家配送核销",
+	"description": "商家配送核销",
+	"id": 64846
+}

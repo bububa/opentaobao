@@ -29,12 +29,15 @@ func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoBanamadpcItemEditRenderAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemId is ItemId Setter

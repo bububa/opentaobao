@@ -29,12 +29,15 @@ func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAilabsIotDeviceControlNotifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNotifyControlParams is NotifyControlParams Setter

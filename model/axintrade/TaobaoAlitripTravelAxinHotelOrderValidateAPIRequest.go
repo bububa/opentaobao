@@ -53,12 +53,15 @@ func (r TaobaoAlitripTravelAxinHotelOrderValidateAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelAxinHotelOrderValidateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripTravelAxinHotelOrderValidateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripTravelAxinHotelOrderValidateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCheckIn is CheckIn Setter

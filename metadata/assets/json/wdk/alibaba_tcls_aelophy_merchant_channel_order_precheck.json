@@ -1,0 +1,122 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店ID",
+					"required": true
+				},
+				{
+					"name": "geo",
+					"type": "String",
+					"description": "配送地址经纬度",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "CartScene = 购物车场景 / PostOrderScene = 进入支付场景",
+					"required": true
+				},
+				{
+					"name": "time_slice_date",
+					"type": "String",
+					"description": "选择时间片日期, PostOrderScene场景必填"
+				},
+				{
+					"name": "time_slice",
+					"type": "String",
+					"description": "选择时间片时间段, PostOrderScene场景必填"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "BigDecimal",
+							"description": "加购数量",
+							"required": true
+						},
+						{
+							"name": "line_instances",
+							"type": "String",
+							"description": "商品履约线路"
+						}
+					],
+					"name": "sku_list",
+					"type": "PromiseSkuInfo[]",
+					"description": "购买商品列表",
+					"required": true
+				}
+			],
+			"name": "pre_check_request",
+			"type": "PreCheckRequest",
+			"description": "前置校验入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "返回码说明"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "ext",
+							"type": "String",
+							"description": "履约前置校验扩展数据"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "can_fulfill",
+									"type": "Boolean",
+									"description": "是否可作业"
+								}
+							],
+							"name": "product_list",
+							"type": "PreCheckProductResponse[]",
+							"description": "商品是否可作业信息"
+						}
+					],
+					"name": "model",
+					"type": "PreCheckResponse",
+					"description": "商品校验结果返回对象"
+				}
+			],
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.tcls.aelophy.merchant.channel.order.precheck",
+	"apiChineseName": "前置校验商品是否可下单作业",
+	"description": "前置校验商品是否可下单作业",
+	"id": 65024
+}

@@ -51,6 +51,31 @@
 					"name": "retail_currency",
 					"type": "String",
 					"description": "币种"
+				},
+				{
+					"name": "level1_price",
+					"type": "Number",
+					"description": "1级分销价格"
+				},
+				{
+					"name": "level2_price",
+					"type": "Number",
+					"description": "2级分销价格"
+				},
+				{
+					"name": "level3_price",
+					"type": "Number",
+					"description": "3级分销价格"
+				},
+				{
+					"name": "level4_price",
+					"type": "Number",
+					"description": "4级分销价格"
+				},
+				{
+					"name": "level5_price",
+					"type": "Number",
+					"description": "5级分销价格"
 				}
 			],
 			"name": "update_item_distribution_request",

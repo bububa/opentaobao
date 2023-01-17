@@ -11,6 +11,11 @@
 			"type": "String",
 			"description": "楼盘e码",
 			"required": true
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店ID"
 		}
 	],
 	"responseParams": [

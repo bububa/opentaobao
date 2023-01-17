@@ -6,6 +6,8 @@ type TaobaoTbkDgOptimusMaterialMapData struct {
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
 	// 商品信息-商品关联词
 	WordList []WordMapData `json:"word_list,omitempty" xml:"word_list>word_map_data,omitempty"`
+	// 定向计划集合
+	SpCampaignList []SpCampaign `json:"sp_campaign_list,omitempty" xml:"sp_campaign_list>sp_campaign,omitempty"`
 	// 店铺信息-店铺名称
 	ShopTitle string `json:"shop_title,omitempty" xml:"shop_title,omitempty"`
 	// 优惠券信息-优惠券起用门槛，满X元可用。如：满299元减20元

@@ -29,12 +29,15 @@ func (r AlibabaWdkUmsOutboundProcessGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkUmsOutboundProcessGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkUmsOutboundProcessGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkUmsOutboundProcessGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetWarehouseCode is WarehouseCode Setter

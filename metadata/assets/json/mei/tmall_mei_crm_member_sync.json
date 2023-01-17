@@ -26,16 +26,6 @@
 			"description": "该次同步的版本信息（建议使用时间戳）"
 		},
 		{
-			"name": "mix_nick",
-			"type": "String",
-			"description": "混淆昵称"
-		},
-		{
-			"name": "nick",
-			"type": "String",
-			"description": "昵称"
-		},
-		{
 			"name": "level_point",
 			"type": "String",
 			"description": "成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传"
@@ -49,6 +39,16 @@
 			"name": "level_type",
 			"type": "Number",
 			"description": "1(表示传统等级模式), 2(成长值等级模式)"
+		},
+		{
+			"name": "mix_nick",
+			"type": "String",
+			"description": "混淆昵称"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
 		}
 	],
 	"responseParams": [

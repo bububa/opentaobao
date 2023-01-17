@@ -1,0 +1,85 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源"
+				},
+				{
+					"name": "wt_biz_type",
+					"type": "String",
+					"description": "业务类型"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "要办理的商品ID",
+					"required": true
+				},
+				{
+					"name": "account",
+					"type": "String",
+					"description": "要办理的账号",
+					"required": true
+				}
+			],
+			"name": "distribute_trade_msg_model",
+			"type": "DistributeTradeMsgModel",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"subParams": [
+						{
+							"name": "protocol_sequence_id",
+							"type": "String",
+							"description": "协议查询流水id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "protocol",
+									"type": "String",
+									"description": "协议"
+								}
+							],
+							"name": "protocol_list",
+							"type": "ProtocolList[]",
+							"description": "协议列表"
+						}
+					],
+					"name": "model",
+					"type": "ProtocolInfo",
+					"description": "协议列表"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.alicom.vt.distribute.queryprotocol",
+	"apiChineseName": "通信业务外放协议查询",
+	"description": "通信业务外放协议查询",
+	"id": 64178
+}

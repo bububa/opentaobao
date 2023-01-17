@@ -4,6 +4,11 @@
 			"name": "outer_dynamic_id",
 			"type": "String",
 			"description": "外部动态ID"
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "外部门店ID"
 		}
 	],
 	"responseParams": [

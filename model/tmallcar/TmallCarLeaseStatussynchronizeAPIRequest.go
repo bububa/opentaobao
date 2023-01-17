@@ -37,12 +37,15 @@ func (r TmallCarLeaseStatussynchronizeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarLeaseStatussynchronizeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallCarLeaseStatussynchronizeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallCarLeaseStatussynchronizeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefuseReason is RefuseReason Setter

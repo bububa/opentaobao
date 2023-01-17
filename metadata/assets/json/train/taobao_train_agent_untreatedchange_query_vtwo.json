@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "淘宝主单单号"
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "ttp单号"
+				}
+			],
+			"name": "query_untreated_change_rq",
+			"type": "QueryUntreatedChangeRQ",
+			"description": "查询待处理改签列表rq",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "untreated_change_order_num",
+			"type": "Number",
+			"description": "待处理改签单数量"
+		},
+		{
+			"name": "untreated_change_apply_ids",
+			"type": "String",
+			"description": "待处理改签申请单列表"
+		}
+	],
+	"name": "taobao.train.agent.untreatedchange.query.vtwo",
+	"apiChineseName": "火车票代理商接口-查询待处理改签单列表-含鉴权校验",
+	"description": "火车票代理商接口-查询待处理改签单列表-含鉴权校验",
+	"id": 65468
+}

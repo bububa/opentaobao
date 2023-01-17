@@ -29,12 +29,15 @@ func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoJushitaJmsUserDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUserNick is UserNick Setter

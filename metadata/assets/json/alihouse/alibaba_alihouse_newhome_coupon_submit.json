@@ -58,6 +58,11 @@
 					"name": "activity_type",
 					"type": "Number",
 					"description": "活动类型0-专车 2-往返"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id，项目店和渠道标准店必传"
 				}
 			],
 			"name": "coupon_dto",

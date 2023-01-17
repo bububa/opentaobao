@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_outer_id",
+					"type": "String",
+					"description": "业务ID申请证书编号时记录 回调传入"
+				},
+				{
+					"name": "copyright_owner_number",
+					"type": "String",
+					"description": "著作权人证件号"
+				},
+				{
+					"name": "certificate_pic",
+					"type": "String",
+					"description": "证书图片下载地址"
+				},
+				{
+					"name": "certificate_number",
+					"type": "String",
+					"description": "证书号"
+				},
+				{
+					"name": "copyright_owner_name",
+					"type": "String",
+					"description": "著作权人姓名"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "证书申请号 申请证书编号时记录 回调传入"
+				},
+				{
+					"name": "certificate_release_time",
+					"type": "Date",
+					"description": "证书颁发时间"
+				}
+			],
+			"name": "nft_certificate_apply_callback_dto",
+			"type": "NftCertificateApplyCallbackDTO",
+			"description": "dto"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求ID 方便排查问题记录"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true/false 是否成功"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "fail_message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "taobao.paimai.nft.certificate.applycallback",
+	"apiChineseName": "数字藏品版权证书申请结果回调",
+	"description": "数字藏品版权证书申请结果回调",
+	"id": 64733
+}

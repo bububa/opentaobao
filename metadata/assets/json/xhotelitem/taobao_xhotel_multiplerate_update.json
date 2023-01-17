@@ -1,9 +1,14 @@
 {
 	"requestParams": [
 		{
-			"name": "gid",
+			"name": "rpid",
 			"type": "Number",
-			"description": "废弃，使用out_rid"
+			"description": "废弃，使用rate_plan_code"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "价格状态。0为不可售；1为可售，默认可售"
 		},
 		{
 			"name": "out_rid",
@@ -11,25 +16,9 @@
 			"description": "卖家房型ID"
 		},
 		{
-			"name": "rpid",
-			"type": "Number",
-			"description": "废弃，使用rate_plan_code"
-		},
-		{
-			"name": "rate_plan_code",
+			"name": "rate_switch_cal",
 			"type": "String",
-			"description": "卖家自己系统的房价code"
-		},
-		{
-			"name": "name",
-			"type": "String",
-			"description": "废弃"
-		},
-		{
-			"name": "occupancy",
-			"type": "Number",
-			"description": "入住人数(范围1~10)",
-			"required": true
+			"description": "价格开关 date：开关状态控制的那一天；rate_status：开关状态(0，关闭；1，打开); checkin_status：入住开关(0，关闭；1，打开)；checkout_status：离店开关 (0，关闭；1，打开)"
 		},
 		{
 			"name": "lengthofstay",
@@ -38,14 +27,10 @@
 			"required": true
 		},
 		{
-			"name": "inventory_price",
-			"type": "String",
-			"description": "价格和库存信息。 A:use_room_inventory:是否使用房型共享库存，可选值 true false ,false时：使用房价专有库存，此时要求价格和库存必填。 B:date 日期必须为 T---T+180 日内的日期（T为当天），且不能重复 C:price 价格 int类型 取值范围1-99999999 单位为分 D:quota 库存 int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) tax为税费，addBed为加床价，addPerson为加人价1,若连住大于1，price请推送总价"
-		},
-		{
-			"name": "rate_switch_cal",
-			"type": "String",
-			"description": "价格开关 date：开关状态控制的那一天；rate_status：开关状态(0，关闭；1，打开); checkin_status：入住开关(0，关闭；1，打开)；checkout_status：离店开关 (0，关闭；1，打开)"
+			"name": "occupancy",
+			"type": "Number",
+			"description": "入住人数(范围1~10)",
+			"required": true
 		},
 		{
 			"name": "currency_code",
@@ -53,9 +38,24 @@
 			"description": "币种.CNY为人民币"
 		},
 		{
-			"name": "status",
+			"name": "rate_plan_code",
+			"type": "String",
+			"description": "卖家自己系统的房价code"
+		},
+		{
+			"name": "inventory_price",
+			"type": "String",
+			"description": "价格和库存信息。 A:use_room_inventory:是否使用房型共享库存，可选值 true false ,false时：使用房价专有库存，此时要求价格和库存必填。 B:date 日期必须为 T---T+180 日内的日期（T为当天），且不能重复 C:price 价格 int类型 取值范围1-99999999 单位为分 D:quota 库存 int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) tax为税费，addBed为加床价，addPerson为加人价1,若连住大于1，price请推送总价"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "废弃"
+		},
+		{
+			"name": "gid",
 			"type": "Number",
-			"description": "价格状态。0为不可售；1为可售，默认可售"
+			"description": "废弃，使用out_rid"
 		},
 		{
 			"name": "vendor",
@@ -65,16 +65,12 @@
 		{
 			"name": "childnum",
 			"type": "Number",
-			"description": "儿童人数",
-			"maxValue": 10,
-			"minValue": 1
+			"description": "儿童人数"
 		},
 		{
 			"name": "infantnum",
 			"type": "Number",
-			"description": "婴儿人数",
-			"maxValue": 10,
-			"minValue": 1
+			"description": "婴儿人数"
 		},
 		{
 			"name": "lock_end_time",

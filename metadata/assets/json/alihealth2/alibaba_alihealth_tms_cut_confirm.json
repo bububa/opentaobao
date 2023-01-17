@@ -1,0 +1,76 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "extend_item",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tms_codes",
+							"type": "String[]",
+							"description": "运单号"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "拦截状态 2 拦截成功 3拦截失败"
+						}
+					],
+					"name": "confirm_items",
+					"type": "TmsCutResultConfirmItem[]",
+					"description": "回传数组"
+				}
+			],
+			"name": "tms_cut_result_confirm_request",
+			"type": "TmsCutResultConfirmRequest",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.tms.cut.confirm",
+	"apiChineseName": "配拦截失败CP确认结果并回告",
+	"description": "配拦截失败CP确认结果并回告",
+	"id": 64833
+}

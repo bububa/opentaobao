@@ -51,7 +51,7 @@
 					"subParams": [
 						{
 							"name": "alipay_trade_no",
-							"type": "Number",
+							"type": "String",
 							"description": "支付宝流水号（现付支付宝不为空）"
 						},
 						{

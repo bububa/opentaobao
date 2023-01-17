@@ -29,12 +29,15 @@ func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthMedicalbaseHosSyncnewAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizContent is BizContent Setter

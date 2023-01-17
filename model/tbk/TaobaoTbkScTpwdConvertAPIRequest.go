@@ -16,6 +16,8 @@ type TaobaoTbkScTpwdConvertAPIRequest struct {
 	_passwordContent string
 	// 1表示商品转通用计划链接，其他值或不传表示优先转营销计划链接
 	_dx string
+	// 渠道id
+	_relationId string
 	// 广告位ID，mm_xx_xx_xx pid三段式中的第三段
 	_adzoneId int64
 	// 备案的网站id, mm_xx_xx_xx pid三段式中的第二段
@@ -37,12 +39,15 @@ func (r TaobaoTbkScTpwdConvertAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScTpwdConvertAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScTpwdConvertAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScTpwdConvertAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPasswordContent is PasswordContent Setter
@@ -69,6 +74,19 @@ func (r *TaobaoTbkScTpwdConvertAPIRequest) SetDx(_dx string) error {
 // GetDx Dx Getter
 func (r TaobaoTbkScTpwdConvertAPIRequest) GetDx() string {
 	return r._dx
+}
+
+// SetRelationId is RelationId Setter
+// 渠道id
+func (r *TaobaoTbkScTpwdConvertAPIRequest) SetRelationId(_relationId string) error {
+	r._relationId = _relationId
+	r.Set("relation_id", _relationId)
+	return nil
+}
+
+// GetRelationId RelationId Getter
+func (r TaobaoTbkScTpwdConvertAPIRequest) GetRelationId() string {
+	return r._relationId
 }
 
 // SetAdzoneId is AdzoneId Setter

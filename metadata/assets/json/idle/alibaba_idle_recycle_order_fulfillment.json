@@ -37,27 +37,27 @@
 						{
 							"name": "agreement_no",
 							"type": "String",
-							"description": "order_status=1时传递支付宝的签约号"
+							"description": "字段已废弃，order_status=1时传递支付宝的签约号"
 						},
 						{
 							"name": "alipay_user_id",
 							"type": "String",
-							"description": "order_status=1时传递,支付宝用户id"
+							"description": "字段已废弃，order_status=1时传递,支付宝用户id"
 						},
 						{
 							"name": "arrearage_link",
 							"type": "String",
-							"description": "order_status=104时传递用户还款链接"
+							"description": "字段已废弃，order_status=104时传递用户还款链接"
 						},
 						{
 							"name": "quantity",
 							"type": "String",
-							"description": "业务定义的数量,order_status=5时候传递"
+							"description": "业务场景定义的数量，如旧衣回收重量,order_status=3时候传递，具体含义根据不同业务场景决定"
 						},
 						{
 							"name": "alipay_trade_no",
 							"type": "String",
-							"description": "支付宝交易号，在支付预付款和尾款时分别提供相应打款的交易号"
+							"description": "支付宝交易号，在支付预付款(推送status=8)和推送(status=5)分别提供相应打款的交易号"
 						},
 						{
 							"name": "contact_name",

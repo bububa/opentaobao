@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmOpenPointOperateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamPointOperateOpenReq is ParamPointOperateOpenReq Setter

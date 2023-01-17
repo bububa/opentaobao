@@ -1,0 +1,9 @@
+package alihouse
+
+// TagsRequestDto 结构体
+type TagsRequestDto struct {
+	// 标列表
+	AddTags []string `json:"add_tags,omitempty" xml:"add_tags>string,omitempty"`
+	// 商品id
+	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+}

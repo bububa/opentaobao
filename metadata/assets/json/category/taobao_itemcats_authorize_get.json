@@ -14,6 +14,80 @@
 				{
 					"subParams": [
 						{
+							"name": "cid",
+							"type": "Number",
+							"description": "商品所属类目ID"
+						},
+						{
+							"name": "parent_cid",
+							"type": "Number",
+							"description": "父类目ID=0时，代表的是一级的类目"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
+						},
+						{
+							"name": "sort_order",
+							"type": "Number",
+							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
+						},
+						{
+							"name": "is_parent",
+							"type": "Boolean",
+							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
+						}
+					],
+					"name": "item_cats",
+					"type": "ItemCat[]",
+					"description": "商品类目结构"
+				},
+				{
+					"subParams": [
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "商品所属类目ID"
+						},
+						{
+							"name": "parent_cid",
+							"type": "Number",
+							"description": "父类目ID=0时，代表的是一级的类目"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
+						},
+						{
+							"name": "sort_order",
+							"type": "Number",
+							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
+						},
+						{
+							"name": "is_parent",
+							"type": "Boolean",
+							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
+						}
+					],
+					"name": "xinpin_item_cats",
+					"type": "ItemCat[]",
+					"description": "商品类目结构"
+				},
+				{
+					"subParams": [
+						{
 							"name": "vid",
 							"type": "Number",
 							"description": "对应属性的 pid:vid 串中的vid"
@@ -36,125 +110,7 @@
 					],
 					"name": "brands",
 					"type": "Brand[]",
-					"description": "品牌列表"
-				},
-				{
-					"subParams": [
-						{
-							"name": "cid",
-							"type": "Number",
-							"description": "商品所属类目ID"
-						},
-						{
-							"name": "parent_cid",
-							"type": "Number",
-							"description": "父类目ID=0时，代表的是一级的类目"
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "类目名称"
-						},
-						{
-							"name": "is_parent",
-							"type": "Boolean",
-							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "状态。可选值:normal(正常),deleted(删除)"
-						},
-						{
-							"name": "sort_order",
-							"type": "Number",
-							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
-						},
-						{
-							"subParams": [
-								{
-									"name": "attr_key",
-									"type": "String",
-									"description": "属性键"
-								},
-								{
-									"name": "attr_value",
-									"type": "String",
-									"description": "属性值"
-								}
-							],
-							"name": "features",
-							"type": "Feature[]",
-							"description": "Feature对象列表目前已有的属性：若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许"
-						},
-						{
-							"name": "taosir_cat",
-							"type": "Boolean",
-							"description": "是否度量衡类目"
-						}
-					],
-					"name": "item_cats",
-					"type": "ItemCat[]",
-					"description": "类目列表"
-				},
-				{
-					"subParams": [
-						{
-							"name": "cid",
-							"type": "Number",
-							"description": "商品所属类目ID"
-						},
-						{
-							"name": "parent_cid",
-							"type": "Number",
-							"description": "父类目ID=0时，代表的是一级的类目"
-						},
-						{
-							"name": "name",
-							"type": "String",
-							"description": "类目名称"
-						},
-						{
-							"name": "is_parent",
-							"type": "Boolean",
-							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "状态。可选值:normal(正常),deleted(删除)"
-						},
-						{
-							"name": "sort_order",
-							"type": "Number",
-							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
-						},
-						{
-							"subParams": [
-								{
-									"name": "attr_key",
-									"type": "String",
-									"description": "属性键"
-								},
-								{
-									"name": "attr_value",
-									"type": "String",
-									"description": "属性值"
-								}
-							],
-							"name": "features",
-							"type": "Feature[]",
-							"description": "Feature对象列表目前已有的属性：若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许"
-						},
-						{
-							"name": "taosir_cat",
-							"type": "Boolean",
-							"description": "是否度量衡类目"
-						}
-					],
-					"name": "xinpin_item_cats",
-					"type": "ItemCat[]",
-					"description": "商品类目结构"
+					"description": "品牌"
 				}
 			],
 			"name": "seller_authorize",

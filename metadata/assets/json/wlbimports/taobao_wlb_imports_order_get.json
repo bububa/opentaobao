@@ -35,19 +35,19 @@
 		{
 			"subParams": [
 				{
+					"name": "carrier",
+					"type": "String",
+					"description": "物流承运商"
+				},
+				{
 					"name": "shipping_fee",
 					"type": "Number",
 					"description": "运费"
 				},
 				{
-					"name": "tracking_no",
+					"name": "status_code",
 					"type": "String",
-					"description": "物流运单号"
-				},
-				{
-					"name": "trade_id",
-					"type": "Number",
-					"description": "交易订单号"
+					"description": "物流订单状态编码"
 				},
 				{
 					"name": "order_code",
@@ -55,14 +55,14 @@
 					"description": "物流订单号"
 				},
 				{
-					"name": "carrier",
-					"type": "String",
-					"description": "物流承运商"
+					"name": "trade_id",
+					"type": "Number",
+					"description": "交易订单号"
 				},
 				{
-					"name": "status_code",
+					"name": "tracking_no",
 					"type": "String",
-					"description": "物流订单状态编码"
+					"description": "物流运单号"
 				},
 				{
 					"name": "customs_fee",

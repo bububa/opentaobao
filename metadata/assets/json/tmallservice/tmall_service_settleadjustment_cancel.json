@@ -21,26 +21,22 @@
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "errorCode",
-							"required": true
+							"description": "errorCode"
 						},
 						{
 							"name": "error_msg",
 							"type": "String",
-							"description": "errorMsg",
-							"required": true
+							"description": "errorMsg"
 						}
 					],
 					"name": "error_message",
 					"type": "ErrorMessage",
-					"description": "errorMessage",
-					"required": true
+					"description": "errorMessage"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
 			],
 			"name": "result",

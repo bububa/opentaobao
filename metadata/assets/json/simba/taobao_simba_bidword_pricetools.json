@@ -1,6 +1,12 @@
 {
 	"requestParams": [
 		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广单元id",
+			"required": true
+		},
+		{
 			"name": "bidword_id",
 			"type": "Number",
 			"description": "关键词id",
@@ -15,12 +21,6 @@
 			"name": "type",
 			"type": "Number",
 			"description": "出价目标 ，1：争取排名；2：提升展现；3：提示点击；4：提升转化",
-			"required": true
-		},
-		{
-			"name": "adgroup_id",
-			"type": "Number",
-			"description": "推广单元id",
 			"required": true
 		}
 	],

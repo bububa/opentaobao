@@ -13,6 +13,60 @@
 	],
 	"responseParams": [
 		{
+			"subParams": [
+				{
+					"name": "is_virtual_tp",
+					"type": "Boolean",
+					"description": "是否虚拟物流商"
+				},
+				{
+					"name": "service_type",
+					"type": "Number",
+					"description": "服务类型"
+				},
+				{
+					"name": "tp_name",
+					"type": "String",
+					"description": "物流商名称"
+				},
+				{
+					"name": "tp_code",
+					"type": "String",
+					"description": "物流商编码"
+				}
+			],
+			"name": "install_list",
+			"type": "PartnerNew []",
+			"description": "安装服务商列表"
+		},
+		{
+			"subParams": [
+				{
+					"name": "is_virtual_tp",
+					"type": "Boolean",
+					"description": "是否虚拟物流商"
+				},
+				{
+					"name": "service_type",
+					"type": "Number",
+					"description": "服务类型"
+				},
+				{
+					"name": "tp_name",
+					"type": "String",
+					"description": "物流商名称"
+				},
+				{
+					"name": "tp_code",
+					"type": "String",
+					"description": "物流商编码"
+				}
+			],
+			"name": "server_list",
+			"type": "PartnerNew []",
+			"description": "物流配送服务商对象列表"
+		},
+		{
 			"name": "is_success",
 			"type": "Boolean",
 			"description": "接口查询成功或者失败"
@@ -21,60 +75,6 @@
 			"name": "result_info",
 			"type": "String",
 			"description": "查询返回信息，如果失败，存储错误信息"
-		},
-		{
-			"subParams": [
-				{
-					"name": "tp_code",
-					"type": "String",
-					"description": "物流商编码"
-				},
-				{
-					"name": "tp_name",
-					"type": "String",
-					"description": "物流商名称"
-				},
-				{
-					"name": "is_virtual_tp",
-					"type": "Boolean",
-					"description": "是否虚拟物流商"
-				},
-				{
-					"name": "service_type",
-					"type": "Number",
-					"description": "服务类型"
-				}
-			],
-			"name": "server_list",
-			"type": "PartnerNew []",
-			"description": "物流配送服务商对象列表"
-		},
-		{
-			"subParams": [
-				{
-					"name": "tp_code",
-					"type": "String",
-					"description": "物流商编码"
-				},
-				{
-					"name": "tp_name",
-					"type": "String",
-					"description": "物流商名称"
-				},
-				{
-					"name": "is_virtual_tp",
-					"type": "Boolean",
-					"description": "是否虚拟物流商"
-				},
-				{
-					"name": "service_type",
-					"type": "Number",
-					"description": "服务类型"
-				}
-			],
-			"name": "install_list",
-			"type": "PartnerNew []",
-			"description": "安装服务商列表"
 		}
 	],
 	"name": "taobao.wlb.order.jzpartner.query",

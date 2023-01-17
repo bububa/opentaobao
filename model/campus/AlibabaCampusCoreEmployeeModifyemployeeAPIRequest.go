@@ -33,12 +33,15 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCampusCoreEmployeeModifyemployeeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAccountId is AccountId Setter

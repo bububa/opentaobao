@@ -13,9 +13,9 @@ import (
 type TmallServicecenterMsfTasksUpdateAPIRequest struct {
 	model.Params
 	// 子订单号列表。最多100个
-	_bizOrderIds []int64
+	_bizOrderIds []string
 	// 周期序号。必须与子订单列表对应
-	_seqs []int64
+	_seqs []string
 	// 服务编码
 	_serviceCode string
 	// 调用来源
@@ -37,37 +37,40 @@ func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizOrderIds is BizOrderIds Setter
 // 子订单号列表。最多100个
-func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds []int64) error {
+func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetBizOrderIds(_bizOrderIds []string) error {
 	r._bizOrderIds = _bizOrderIds
 	r.Set("biz_order_ids", _bizOrderIds)
 	return nil
 }
 
 // GetBizOrderIds BizOrderIds Getter
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetBizOrderIds() []int64 {
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetBizOrderIds() []string {
 	return r._bizOrderIds
 }
 
 // SetSeqs is Seqs Setter
 // 周期序号。必须与子订单列表对应
-func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []int64) error {
+func (r *TmallServicecenterMsfTasksUpdateAPIRequest) SetSeqs(_seqs []string) error {
 	r._seqs = _seqs
 	r.Set("seqs", _seqs)
 	return nil
 }
 
 // GetSeqs Seqs Getter
-func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSeqs() []int64 {
+func (r TmallServicecenterMsfTasksUpdateAPIRequest) GetSeqs() []string {
 	return r._seqs
 }
 

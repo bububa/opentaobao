@@ -103,12 +103,15 @@ func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbWmsSkuUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemId is ItemId Setter

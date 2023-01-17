@@ -20,6 +20,16 @@ type TaobaoBusMerchantOrderGetAPIResponseModel struct {
 	XMLName xml.Name `xml:"bus_merchant_order_get_response"`
 	// 平台颁发的每次请求访问的唯一标识
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
-	// 出参
-	ParamAgentQueryOrderRP *AgentQueryOrderRp `json:"param_agent_query_order_r_p,omitempty" xml:"param_agent_query_order_r_p,omitempty"`
+	// 退票订单列表
+	RefundOrderInfos []MerchantBusRefundOrderInfo `json:"refund_order_infos,omitempty" xml:"refund_order_infos>merchant_bus_refund_order_info,omitempty"`
+	// 订单信息列表
+	OrderInfos []MerchantBusOrderInfo `json:"order_infos,omitempty" xml:"order_infos>merchant_bus_order_info,omitempty"`
+	// 错误码
+	ErrorMsgCode string `json:"error_msg_code,omitempty" xml:"error_msg_code,omitempty"`
+	// 错误描述
+	ErrorMsgDesc string `json:"error_msg_desc,omitempty" xml:"error_msg_desc,omitempty"`
+	// 根据总数进行分页查询
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 业务接口是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

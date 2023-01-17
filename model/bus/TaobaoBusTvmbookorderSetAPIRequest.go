@@ -18,10 +18,10 @@ type TaobaoBusTvmbookorderSetAPIRequest struct {
 	_alitripOrderId string
 	// 出票时间 2017-03-03 11:22:33
 	_bookTime string
-	// 取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）
-	_payMode string
 	// 取票人手机号
 	_fetchPhone string
+	// 取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）
+	_payMode string
 	// 检票口
 	_ticketGate string
 	// true代表出票成功；false代表出票失败
@@ -43,12 +43,15 @@ func (r TaobaoBusTvmbookorderSetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBusTvmbookorderSetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoBusTvmbookorderSetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoBusTvmbookorderSetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPassengers is Passengers Setter
@@ -90,19 +93,6 @@ func (r TaobaoBusTvmbookorderSetAPIRequest) GetBookTime() string {
 	return r._bookTime
 }
 
-// SetPayMode is PayMode Setter
-// 取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）
-func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPayMode(_payMode string) error {
-	r._payMode = _payMode
-	r.Set("pay_mode", _payMode)
-	return nil
-}
-
-// GetPayMode PayMode Getter
-func (r TaobaoBusTvmbookorderSetAPIRequest) GetPayMode() string {
-	return r._payMode
-}
-
 // SetFetchPhone is FetchPhone Setter
 // 取票人手机号
 func (r *TaobaoBusTvmbookorderSetAPIRequest) SetFetchPhone(_fetchPhone string) error {
@@ -114,6 +104,19 @@ func (r *TaobaoBusTvmbookorderSetAPIRequest) SetFetchPhone(_fetchPhone string) e
 // GetFetchPhone FetchPhone Getter
 func (r TaobaoBusTvmbookorderSetAPIRequest) GetFetchPhone() string {
 	return r._fetchPhone
+}
+
+// SetPayMode is PayMode Setter
+// 取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）
+func (r *TaobaoBusTvmbookorderSetAPIRequest) SetPayMode(_payMode string) error {
+	r._payMode = _payMode
+	r.Set("pay_mode", _payMode)
+	return nil
+}
+
+// GetPayMode PayMode Getter
+func (r TaobaoBusTvmbookorderSetAPIRequest) GetPayMode() string {
+	return r._payMode
 }
 
 // SetTicketGate is TicketGate Setter

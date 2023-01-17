@@ -43,12 +43,15 @@ func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoMiniappTemplateUpdateappAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetClients is Clients Setter

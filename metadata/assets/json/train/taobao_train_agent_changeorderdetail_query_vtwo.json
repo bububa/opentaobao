@@ -1,0 +1,284 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "change_apply_id",
+					"type": "Number",
+					"description": "改签申请单id",
+					"required": true
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "淘宝主单id"
+				},
+				{
+					"name": "ttp_order_id",
+					"type": "Number",
+					"description": "ttp单号"
+				}
+			],
+			"name": "query_change_detail_rq",
+			"type": "QueryChangeDetailRQ",
+			"description": "查询改签订单详情rq",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "乘车人姓名"
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id"
+				},
+				{
+					"name": "change_apply_id",
+					"type": "Number",
+					"description": "改签申请单id"
+				},
+				{
+					"name": "original_seat_no",
+					"type": "String",
+					"description": "原票坐席号"
+				},
+				{
+					"name": "original_seat_type_code",
+					"type": "String",
+					"description": "原票坐席类型code"
+				},
+				{
+					"name": "original_seat_type_name",
+					"type": "String",
+					"description": "原票坐席类型名称"
+				},
+				{
+					"name": "certificate_no",
+					"type": "String",
+					"description": "证件号"
+				},
+				{
+					"name": "certificate_type_name",
+					"type": "String",
+					"description": "证件类型名称"
+				},
+				{
+					"name": "certificate_type_code",
+					"type": "String",
+					"description": "证件类型code"
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子单单号"
+				},
+				{
+					"name": "original_ticket_price",
+					"type": "String",
+					"description": "原票票价(分)"
+				},
+				{
+					"name": "ticket_type_code",
+					"type": "Number",
+					"description": "票类型code"
+				},
+				{
+					"name": "original_coach_name",
+					"type": "String",
+					"description": "原票车厢名称"
+				},
+				{
+					"name": "ticket_type_name",
+					"type": "String",
+					"description": "票类型名称"
+				},
+				{
+					"name": "original_coach_no",
+					"type": "String",
+					"description": "原票车厢号"
+				},
+				{
+					"name": "change_seat_type_code",
+					"type": "String",
+					"description": "改签票坐席类型code"
+				},
+				{
+					"name": "change_seat_type_name",
+					"type": "String",
+					"description": "改签票坐席类型名称"
+				},
+				{
+					"name": "pre_ticket_price",
+					"type": "Number",
+					"description": "用户提交改签票价(卧铺、儿童票都是按最高票价提交)"
+				}
+			],
+			"name": "change_apply_sub_orders",
+			"type": "ChangeApplySubOrderDTO []",
+			"description": "改签子单列表"
+		},
+		{
+			"subParams": [
+				{
+					"name": "tp_id",
+					"type": "Number",
+					"description": "淘宝主单单号"
+				},
+				{
+					"name": "original_to_station_code",
+					"type": "String",
+					"description": "原票到达站三字码"
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id"
+				},
+				{
+					"name": "change_ticket_type",
+					"type": "Number",
+					"description": "改签票类型 0:改签 1:变更到站"
+				},
+				{
+					"name": "change_apply_id",
+					"type": "Number",
+					"description": "改签申请单id"
+				},
+				{
+					"name": "change_from_station",
+					"type": "String",
+					"description": "改签票出发站名称"
+				},
+				{
+					"name": "original_sequence_no",
+					"type": "String",
+					"description": "原票123N6订单号"
+				},
+				{
+					"name": "settlement_mode",
+					"type": "Number",
+					"description": "现金结算标示 0:现金结算 1:电子结算"
+				},
+				{
+					"name": "change_from_station_code",
+					"type": "String",
+					"description": "改签票出发站三字码"
+				},
+				{
+					"name": "change_to_station",
+					"type": "String",
+					"description": "改签票到达站名称"
+				},
+				{
+					"name": "change_issue_timeout",
+					"type": "String",
+					"description": "改签出票超时时间"
+				},
+				{
+					"name": "original_from_date_time",
+					"type": "String",
+					"description": "原票发车时间"
+				},
+				{
+					"name": "change_to_date_time",
+					"type": "String",
+					"description": "改签票达到时间"
+				},
+				{
+					"name": "original_train_code",
+					"type": "String",
+					"description": "原票车次号"
+				},
+				{
+					"name": "original_train_date",
+					"type": "String",
+					"description": "原票发车日期"
+				},
+				{
+					"name": "original_from_station",
+					"type": "String",
+					"description": "原票出发站名称"
+				},
+				{
+					"name": "change_to_station_code",
+					"type": "String",
+					"description": "改签票达到站三字码"
+				},
+				{
+					"name": "original_to_station",
+					"type": "String",
+					"description": "原票达到站名称"
+				},
+				{
+					"name": "original_from_station_code",
+					"type": "String",
+					"description": "原票出发站三字码"
+				},
+				{
+					"name": "change_type",
+					"type": "Number",
+					"description": "改签类型 0:低改高 1:平改 2:高改低"
+				},
+				{
+					"name": "original_to_date_time",
+					"type": "String",
+					"description": "原票到达时间"
+				},
+				{
+					"name": "ticket_price_all",
+					"type": "Number",
+					"description": "整单票价总金额"
+				},
+				{
+					"name": "ttp_id",
+					"type": "Number",
+					"description": "ttp单号"
+				},
+				{
+					"name": "change_from_date_time",
+					"type": "String",
+					"description": "改签票发车时间"
+				},
+				{
+					"name": "change_train_date",
+					"type": "String",
+					"description": "改签票发车日期"
+				},
+				{
+					"name": "ticket_total_num",
+					"type": "Number",
+					"description": "票数量"
+				},
+				{
+					"name": "change_train_code",
+					"type": "String",
+					"description": "改签票车次号"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "改签申请单状态"
+				}
+			],
+			"name": "change_apply_order",
+			"type": "ChangeApplyOrderDTO",
+			"description": "改签申请单主单"
+		}
+	],
+	"name": "taobao.train.agent.changeorderdetail.query.vtwo",
+	"apiChineseName": "火车票代理商接口-查询跑腿改签订单详情-含鉴权校验",
+	"description": "火车票代理商接口-查询跑腿改签订单详情-含鉴权校验",
+	"id": 65477
+}

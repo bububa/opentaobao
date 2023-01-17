@@ -31,12 +31,15 @@ func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaLstPosOpenCashierSynccashierdataAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCashierFlowDTOList is CashierFlowDTOList Setter

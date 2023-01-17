@@ -1,11 +1,6 @@
 {
 	"requestParams": [
 		{
-			"name": "bid",
-			"type": "Number",
-			"description": "虚拟账户流水编号"
-		},
-		{
 			"name": "fields",
 			"type": "String[]",
 			"description": "需要返回的字段:参见BookBill结构体",
@@ -34,19 +29,9 @@
 					"description": "操作金额"
 				},
 				{
-					"name": "book_time",
-					"type": "Date",
-					"description": "记账时间"
-				},
-				{
-					"name": "taobao_alipay_id",
-					"type": "String",
-					"description": "流水的淘宝支付宝id"
-				},
-				{
-					"name": "account_id",
+					"name": "journal_type",
 					"type": "Number",
-					"description": "虚拟账户科目编号"
+					"description": "流水类型:101-可用金充值;102-可用金扣除;103-冻结;104-解冻;105-冻结金充值;106-冻结金扣除"
 				},
 				{
 					"name": "gmt_create",
@@ -54,19 +39,29 @@
 					"description": "创建时间"
 				},
 				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "虚拟账户科目编号"
+				},
+				{
 					"name": "description",
 					"type": "String",
 					"description": "备注"
 				},
 				{
-					"name": "journal_type",
-					"type": "Number",
-					"description": "流水类型:101-可用金充值;102-可用金扣除;103-冻结;104-解冻;105-冻结金充值;106-冻结金扣除"
+					"name": "taobao_alipay_id",
+					"type": "String",
+					"description": "流水的淘宝支付宝id"
 				},
 				{
 					"name": "other_alipay_id",
 					"type": "String",
 					"description": "流水的商家支付宝id"
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "记账时间"
 				},
 				{
 					"name": "bid",

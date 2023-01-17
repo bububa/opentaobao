@@ -133,8 +133,16 @@
 					"description": "item"
 				},
 				{
-					"name": "extendProps",
-					"type": "Map",
+					"subParams": [
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "sn编码支持多sn",
+							"required": true
+						}
+					],
+					"name": "snList",
+					"type": "SnList[]",
 					"description": "扩展属性"
 				}
 			],

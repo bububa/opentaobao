@@ -29,12 +29,15 @@ func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressSolutionIssuePartnerRmaStateUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRmaStateUpdateRequest is RmaStateUpdateRequest Setter

@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmCustomerVoucherListAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCustomerVoucherFullOpenReq is CustomerVoucherFullOpenReq Setter

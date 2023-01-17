@@ -31,12 +31,15 @@ func (r YunosAdAuditCreativeAddAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosAdAuditCreativeAddAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosAdAuditCreativeAddAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosAdAuditCreativeAddAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMemberId is MemberId Setter

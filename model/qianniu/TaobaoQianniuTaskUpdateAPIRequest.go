@@ -14,12 +14,12 @@ type TaobaoQianniuTaskUpdateAPIRequest struct {
 	model.Params
 	// 子任务状态，由业务方自定义
 	_subStatus string
+	// 状态值，多个以逗号分隔
+	_status string
 	// 任务标签
 	_tag string
 	// 任务备注。当memo_mode为1时，memo将采用追加方式。
 	_memo string
-	// 状态值，多个以逗号分隔
-	_status string
 	// 应用自定义参数
 	_bizParam string
 	// 任务ID
@@ -49,12 +49,15 @@ func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSubStatus is SubStatus Setter
@@ -68,6 +71,19 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetSubStatus(_subStatus string) erro
 // GetSubStatus SubStatus Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetSubStatus() string {
 	return r._subStatus
+}
+
+// SetStatus is Status Setter
+// 状态值，多个以逗号分隔
+func (r *TaobaoQianniuTaskUpdateAPIRequest) SetStatus(_status string) error {
+	r._status = _status
+	r.Set("status", _status)
+	return nil
+}
+
+// GetStatus Status Getter
+func (r TaobaoQianniuTaskUpdateAPIRequest) GetStatus() string {
+	return r._status
 }
 
 // SetTag is Tag Setter
@@ -94,19 +110,6 @@ func (r *TaobaoQianniuTaskUpdateAPIRequest) SetMemo(_memo string) error {
 // GetMemo Memo Getter
 func (r TaobaoQianniuTaskUpdateAPIRequest) GetMemo() string {
 	return r._memo
-}
-
-// SetStatus is Status Setter
-// 状态值，多个以逗号分隔
-func (r *TaobaoQianniuTaskUpdateAPIRequest) SetStatus(_status string) error {
-	r._status = _status
-	r.Set("status", _status)
-	return nil
-}
-
-// GetStatus Status Getter
-func (r TaobaoQianniuTaskUpdateAPIRequest) GetStatus() string {
-	return r._status
 }
 
 // SetBizParam is BizParam Setter

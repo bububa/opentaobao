@@ -9,7 +9,7 @@ import (
 // TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse 物流多包裹通知 API返回值
 // taobao.rdc.aligenius.logistics.packages.notice
 //
-// 订单发货之后，如果订单拆包、补发、赠品等场景，需要将多余包裹信息触达消费者
+// 订单发货之后，如果订单拆包、补发、赠品等场景，需要将多余包裹信息触达消费者, 大促会降级
 type TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponse struct {
 	model.CommonResponse
 	TaobaoRdcAligeniusLogisticsPackagesNoticeAPIResponseModel

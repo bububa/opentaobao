@@ -29,12 +29,15 @@ func (r AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) GetApiMethodNa
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCloudgameInteractiveGamePlayerStatusGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUserGameStatusGetRequest is UserGameStatusGetRequest Setter

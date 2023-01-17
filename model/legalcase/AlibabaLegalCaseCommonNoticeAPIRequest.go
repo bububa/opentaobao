@@ -35,12 +35,15 @@ func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaLegalCaseCommonNoticeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetType is Type Setter

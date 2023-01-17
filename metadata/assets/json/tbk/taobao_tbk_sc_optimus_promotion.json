@@ -19,7 +19,7 @@
 		{
 			"name": "promotion_id",
 			"type": "Number",
-			"description": "官方提供的权益物料Id。有价券-37104、大额店铺券-37116，更多权益物料id敬请期待！",
+			"description": "官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！",
 			"required": true
 		},
 		{

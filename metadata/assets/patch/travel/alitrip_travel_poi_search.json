@@ -1,0 +1,44 @@
+{
+  "requestParams": [
+    {
+      "name": "id",
+      "type": "Number",
+      "description": "POI信息ID；"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "description": "POI信息名称",
+      "required": true
+    },
+    {
+      "name": "type",
+      "type": "Number",
+      "description": "POI类型；1-\u003e机场,2-\u003e火车站,3-\u003e汽车站,4-\u003e酒店,5-\u003e景点,6-\u003e购物，7-\u003e美食，9-\u003e玩乐，10-\u003e阿里旅行服务站，11-\u003e服务，100-\u003e其他",
+      "required": true
+    }
+  ],
+  "responseParams": [
+    {
+      "subParams": [
+        {
+          "name": "id",
+          "type": "Number",
+          "description": "POI对应id"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "description": "POI对应名称"
+        }
+      ],
+      "name": "results",
+      "type": "Poi []",
+      "description": "POI详情"
+    }
+  ],
+  "name": "alitrip.travel.poi.search",
+  "apiChineseName": "POI信息查询",
+  "description": "POI信息查询，用于商品更新使用",
+  "id": 32042
+}

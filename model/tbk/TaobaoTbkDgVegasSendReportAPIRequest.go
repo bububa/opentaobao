@@ -16,7 +16,7 @@ type TaobaoTbkDgVegasSendReportAPIRequest struct {
 	_bizDate string
 	// 渠道关系id
 	_relationId int64
-	// 红包活动id：1462
+	// 已下线，后续不需要填写
 	_activityId int64
 	// 页码
 	_pageNo int64
@@ -37,12 +37,15 @@ func (r TaobaoTbkDgVegasSendReportAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkDgVegasSendReportAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkDgVegasSendReportAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkDgVegasSendReportAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizDate is BizDate Setter
@@ -72,7 +75,7 @@ func (r TaobaoTbkDgVegasSendReportAPIRequest) GetRelationId() int64 {
 }
 
 // SetActivityId is ActivityId Setter
-// 红包活动id：1462
+// 已下线，后续不需要填写
 func (r *TaobaoTbkDgVegasSendReportAPIRequest) SetActivityId(_activityId int64) error {
 	r._activityId = _activityId
 	r.Set("activity_id", _activityId)

@@ -29,12 +29,15 @@ func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosTvpubadminContentChildRecoitemOfflineAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRecItemId is RecItemId Setter

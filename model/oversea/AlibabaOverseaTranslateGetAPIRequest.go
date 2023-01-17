@@ -33,12 +33,15 @@ func (r AlibabaOverseaTranslateGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaOverseaTranslateGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaOverseaTranslateGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaOverseaTranslateGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetText is Text Setter

@@ -29,12 +29,15 @@ func (r AlibabaSellerVendorServiceProcessAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSellerVendorServiceProcessAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSellerVendorServiceProcessAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSellerVendorServiceProcessAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderNum is OrderNum Setter

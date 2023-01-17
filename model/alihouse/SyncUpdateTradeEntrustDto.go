@@ -14,6 +14,10 @@ type SyncUpdateTradeEntrustDto struct {
 	OuterBrokerId string `json:"outer_broker_id,omitempty" xml:"outer_broker_id,omitempty"`
 	// 寄租收费模式 1、房东承担寄租服务费 2、租客承担门店服务费 3、租客承担门店服务费+房东承担寄租服务费
 	SendRentChargeModel string `json:"send_rent_charge_model,omitempty" xml:"send_rent_charge_model,omitempty"`
+	// 房源地址
+	Address string `json:"address,omitempty" xml:"address,omitempty"`
+	// 房产证地址
+	OwnershipAddress string `json:"ownership_address,omitempty" xml:"ownership_address,omitempty"`
 	// 业务类型，1-新房，2-二手房 3-租房
 	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
 	// 经营主体ID
@@ -34,4 +38,6 @@ type SyncUpdateTradeEntrustDto struct {
 	LandlordType int64 `json:"landlord_type,omitempty" xml:"landlord_type,omitempty"`
 	// 代收主体id 当收款模式为代收是必填
 	InsteadMerchantOpenId int64 `json:"instead_merchant_open_id,omitempty" xml:"instead_merchant_open_id,omitempty"`
+	// ms级时间戳
+	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
 }

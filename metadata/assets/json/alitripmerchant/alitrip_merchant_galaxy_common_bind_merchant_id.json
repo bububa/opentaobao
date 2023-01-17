@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "merchant_id",
+					"type": "String",
+					"description": "1",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "binding_merchant_id_user_dto",
+			"type": "BindingMerchantIdUserDto",
+			"description": "状态",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.common.bind.merchant.id",
+	"apiChineseName": "绑定用户和merchantID",
+	"description": "绑定用户和merchantID",
+	"id": 64952
+}

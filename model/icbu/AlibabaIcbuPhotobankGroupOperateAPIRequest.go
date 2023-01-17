@@ -29,12 +29,15 @@ func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIcbuPhotobankGroupOperateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPhotoGroupOperationRequest is PhotoGroupOperationRequest Setter

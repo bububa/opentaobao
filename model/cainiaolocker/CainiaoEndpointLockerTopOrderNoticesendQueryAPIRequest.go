@@ -14,10 +14,10 @@ type CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest struct {
 	model.Params
 	// 站点id
 	_stationId string
-	// 收件人手机号
-	_getterPhone string
 	// 运单号
 	_mailNo string
+	// 收件人手机号
+	_getterPhone string
 }
 
 // NewCainiaoEndpointLockerTopOrderNoticesendQueryRequest 初始化CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest对象
@@ -33,12 +33,15 @@ func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStationId is StationId Setter
@@ -54,19 +57,6 @@ func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetStationId() s
 	return r._stationId
 }
 
-// SetGetterPhone is GetterPhone Setter
-// 收件人手机号
-func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetGetterPhone(_getterPhone string) error {
-	r._getterPhone = _getterPhone
-	r.Set("getter_phone", _getterPhone)
-	return nil
-}
-
-// GetGetterPhone GetterPhone Getter
-func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetGetterPhone() string {
-	return r._getterPhone
-}
-
 // SetMailNo is MailNo Setter
 // 运单号
 func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetMailNo(_mailNo string) error {
@@ -78,4 +68,17 @@ func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetMailNo(_mail
 // GetMailNo MailNo Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetMailNo() string {
 	return r._mailNo
+}
+
+// SetGetterPhone is GetterPhone Setter
+// 收件人手机号
+func (r *CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) SetGetterPhone(_getterPhone string) error {
+	r._getterPhone = _getterPhone
+	r.Set("getter_phone", _getterPhone)
+	return nil
+}
+
+// GetGetterPhone GetterPhone Getter
+func (r CainiaoEndpointLockerTopOrderNoticesendQueryAPIRequest) GetGetterPhone() string {
+	return r._getterPhone
 }

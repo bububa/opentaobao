@@ -1,16 +1,6 @@
 {
 	"requestParams": [
 		{
-			"name": "extend",
-			"type": "String",
-			"description": "公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用"
-		},
-		{
-			"name": "tts_param",
-			"type": "Json",
-			"description": "文本转语音（TTS）模板变量，传参规则{\"key\"：\"value\"}，key的名字须和TTS模板中的变量名一致，多个变量之间以逗号隔开，示例：{\"name\":\"xiaoming\",\"code\":\"1234\"}"
-		},
-		{
 			"name": "called_num",
 			"type": "String",
 			"description": "被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500",
@@ -27,20 +17,30 @@
 			"type": "String",
 			"description": "TTS模板ID，传入的模板必须是在阿里大于“管理中心-语音TTS模板管理”中的可用模板",
 			"required": true
+		},
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用"
+		},
+		{
+			"name": "tts_param",
+			"type": "Json",
+			"description": "文本转语音（TTS）模板变量，传参规则{\"key\"：\"value\"}，key的名字须和TTS模板中的变量名一致，多个变量之间以逗号隔开，示例：{\"name\":\"xiaoming\",\"code\":\"1234\"}"
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "err_code",
-					"type": "String",
-					"description": "错误码"
-				},
-				{
 					"name": "model",
 					"type": "String",
 					"description": "返回结果"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息描述"
 				},
 				{
 					"name": "success",
@@ -48,9 +48,9 @@
 					"description": "true表示成功，false表示失败"
 				},
 				{
-					"name": "msg",
+					"name": "err_code",
 					"type": "String",
-					"description": "返回信息描述"
+					"description": "错误码"
 				}
 			],
 			"name": "result",

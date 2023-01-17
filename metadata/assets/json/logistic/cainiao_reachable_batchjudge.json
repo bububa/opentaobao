@@ -1,19 +1,6 @@
 {
 	"requestParams": [
 		{
-			"subParams": [
-				{
-					"name": "description",
-					"type": "String",
-					"description": "调用时自定义描述信息"
-				}
-			],
-			"name": "client_info",
-			"type": "ClientInfoDto",
-			"description": "调用方对象",
-			"required": true
-		},
-		{
 			"name": "address_type",
 			"type": "Number",
 			"description": "1:快递 2:快运",
@@ -138,16 +125,45 @@
 			"type": "RoutingReachableBatchRequestDto",
 			"description": "收发信息",
 			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "description",
+					"type": "String",
+					"description": "调用时自定义描述信息"
+				}
+			],
+			"name": "client_info",
+			"type": "ClientInfoDto",
+			"description": "调用方对象",
+			"required": true
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
+					"subParams": [
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误信息"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						}
+					],
+					"name": "one_error_info",
+					"type": "ErrorInfo",
+					"description": "请求错误信息"
+				},
+				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "请求是否成功",
-					"required": true
+					"description": "请求是否成功"
 				},
 				{
 					"subParams": [
@@ -158,84 +174,54 @@
 										{
 											"name": "error_message",
 											"type": "String",
-											"description": "错误信息",
-											"required": true
+											"description": "错误信息"
 										},
 										{
 											"name": "error_code",
 											"type": "String",
-											"description": "错误码",
-											"required": true
+											"description": "错误码"
 										}
 									],
 									"name": "error_info",
 									"type": "ErrorInfo",
-									"description": "单个结果是否异常",
-									"required": true
+									"description": "单个结果是否异常"
 								},
 								{
 									"name": "success",
 									"type": "Boolean",
-									"description": "单个结果是否成功",
-									"required": true
+									"description": "单个结果是否成功"
 								},
 								{
 									"subParams": [
 										{
 											"name": "interrupt_reason",
 											"type": "String",
-											"description": "阻断原因",
-											"required": true
+											"description": "阻断原因"
 										},
 										{
 											"name": "interrupt_apply_waybill_code",
 											"type": "Boolean",
-											"description": "是否阻断 true:阻断  false:可达",
-											"required": true
+											"description": "是否阻断 true:阻断  false:可达"
 										}
 									],
 									"name": "module",
 									"type": "ReachableDto",
-									"description": "可达信息",
-									"required": true
+									"description": "可达信息"
 								},
 								{
 									"name": "object_id",
 									"type": "String",
-									"description": "与入参地址列表中单项objectId对应",
-									"required": true
+									"description": "与入参地址列表中单项objectId对应"
 								}
 							],
 							"name": "result_list",
 							"type": "ReachableServiceWaybillResponseDto[]",
-							"description": "结果列表",
-							"required": true
+							"description": "结果列表"
 						}
 					],
 					"name": "module",
 					"type": "ReachableServiceWaybillForTopResponseDto",
-					"description": "返回信息",
-					"required": true
-				},
-				{
-					"subParams": [
-						{
-							"name": "error_message",
-							"type": "String",
-							"description": "错误信息",
-							"required": true
-						},
-						{
-							"name": "error_code",
-							"type": "String",
-							"description": "错误码",
-							"required": true
-						}
-					],
-					"name": "one_error_info",
-					"type": "ErrorInfo",
-					"description": "请求错误信息",
-					"required": true
+					"description": "返回信息"
 				}
 			],
 			"name": "result",

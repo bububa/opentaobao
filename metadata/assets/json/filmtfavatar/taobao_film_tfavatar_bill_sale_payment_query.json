@@ -47,40 +47,34 @@
 				{
 					"name": "return_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"subParams": [
 						{
 							"name": "data",
 							"type": "String",
-							"description": "数据: 包含: 淘宝订单ID,系统商订单号,付款时间,核销时间,影院ID,影院名称,卖品名称,卖品内容,卖品来源,卖品结算单价,卖品数量,实际结算金额,卖品结算总价,影院卖品补贴,订单状态,退款状态,会员卡标识,备注,是否后结算,",
-							"required": true
+							"description": "数据: 包含: 淘宝订单ID,系统商订单号,付款时间,核销时间,影院ID,影院名称,卖品名称,卖品内容,卖品来源,卖品结算单价,卖品数量,实际结算金额,卖品结算总价,影院卖品补贴,订单状态,退款状态,会员卡标识,备注,是否后结算,"
 						},
 						{
 							"name": "count",
 							"type": "Number",
-							"description": "数据数量",
-							"required": true
+							"description": "数据数量"
 						}
 					],
 					"name": "return_value",
 					"type": "ReturnValue",
-					"description": "返回参数",
-					"required": true
+					"description": "返回参数"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "return_message",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				}
 			],
 			"name": "result",

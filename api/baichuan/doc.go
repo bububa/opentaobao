@@ -1,4 +1,4 @@
 // Package baichuan 包含百川相关方法
 //
-// https://open.taobao.com/API.htm?docId=31057&docType=2
+// https://open.taobao.com/API.htm?docType=2&docId=31057
 package baichuan

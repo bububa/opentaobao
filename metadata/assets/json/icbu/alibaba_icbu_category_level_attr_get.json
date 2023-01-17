@@ -3,20 +3,20 @@
 		{
 			"subParams": [
 				{
-					"name": "cat_id",
-					"type": "Number",
-					"description": "必填；要查询的属性值所属发布类目",
-					"required": true
-				},
-				{
 					"name": "attr_id",
-					"type": "Number[]",
+					"type": "String[]",
 					"description": "类目属性id，放到数组第一个位置"
 				},
 				{
 					"name": "value_id",
 					"type": "Number",
 					"description": "属性值id, 不同取值范围时的查询策略如下:  \u003c=0：列出当前类目属性的所有属性值  \u003e0：指定当前类目属性的某一个属性值，列出该属性值下的子属性和该子属性的所有属性值"
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "必填；要查询的属性值所属发布类目",
+					"required": true
 				}
 			],
 			"name": "attribute_value_request",
@@ -29,27 +29,23 @@
 			"subParams": [
 				{
 					"name": "values",
-					"type": "Json",
-					"description": "List\u003cMap\u003cString,Object\u003e\u003e  列表中每个元素的key-value说明如下:  id: 值id  name：值名称  leaf: 此key存在且为true代表当前节点下已无下层属性,这种情况下前端不需再在当前节点上提供弹出下级菜单之类的操作",
-					"required": true
+					"type": "String",
+					"description": "List\u003cMap\u003cString,Object\u003e\u003e  列表中每个元素的key-value说明如下:  id: 值id  name：值名称  leaf: 此key存在且为true代表当前节点下已无下层属性,这种情况下前端不需再在当前节点上提供弹出下级菜单之类的操作"
 				},
 				{
 					"name": "property_cn_name",
 					"type": "String",
-					"description": "propertyId对应的属性中文名",
-					"required": true
+					"description": "propertyId对应的属性中文名"
 				},
 				{
 					"name": "property_en_name",
 					"type": "String",
-					"description": "propertyId对应的属性英文名",
-					"required": true
+					"description": "propertyId对应的属性英文名"
 				},
 				{
 					"name": "property_id",
 					"type": "Number",
-					"description": "返回值所在的属性id，如入参valueId为0，则与入参的attrId一致，否则为所选属性值的下层属性id",
-					"required": true
+					"description": "返回值所在的属性id，如入参valueId为0，则与入参的attrId一致，否则为所选属性值的下层属性id"
 				}
 			],
 			"name": "result_list",

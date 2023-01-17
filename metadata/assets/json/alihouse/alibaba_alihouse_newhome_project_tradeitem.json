@@ -5,8 +5,7 @@
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "外部私域楼盘id",
-					"required": true
+					"description": "外部私域楼盘id"
 				},
 				{
 					"name": "item_id",
@@ -45,7 +44,7 @@
 				{
 					"name": "is_verify_confirm",
 					"type": "Number",
-					"description": "是否核销确认"
+					"description": "是否商家确客"
 				},
 				{
 					"name": "merchant_open_id",
@@ -108,6 +107,53 @@
 					"name": "bank_card_id",
 					"type": "Number",
 					"description": "结算账户ID"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "0-非测试 1-测试"
+				},
+				{
+					"name": "outer_consultant_ids",
+					"type": "String[]",
+					"description": "服务者id列表"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "版本号(时间戳)"
+				},
+				{
+					"name": "is_user_verify_confirm",
+					"type": "Number",
+					"description": "是否用户确客"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1新房，2二手房 3租房"
+				},
+				{
+					"name": "is_all_house",
+					"type": "Number",
+					"description": "是否房源 -1无关联 0部分关联 1全部"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "委托房源所属小区外部id"
+						},
+						{
+							"name": "outer_house_id",
+							"type": "String",
+							"description": "房源外部id"
+						}
+					],
+					"name": "outer_houses",
+					"type": "GoodsHouseDTO[]",
+					"description": "外部委托房源列表"
 				}
 			],
 			"name": "goods_dto",
@@ -146,7 +192,7 @@
 		}
 	],
 	"name": "alibaba.alihouse.newhome.project.tradeitem",
-	"apiChineseName": "新房品同步",
-	"description": "新房品同步",
+	"apiChineseName": "新二品同步",
+	"description": "新二品同步",
 	"id": 60938
 }

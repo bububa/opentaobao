@@ -2,6 +2,8 @@ package train
 
 // OrderTicketInfo 结构体
 type OrderTicketInfo struct {
+	// 出票结果定制信息列表
+	VipCustomResultList []VipCustomTicketConfirmItem `json:"vip_custom_result_list,omitempty" xml:"vip_custom_result_list>vip_custom_ticket_confirm_item,omitempty"`
 	// 座位号
 	SeatNum string `json:"seat_num,omitempty" xml:"seat_num,omitempty"`
 	// 车次

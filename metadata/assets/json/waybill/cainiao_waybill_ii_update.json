@@ -158,14 +158,14 @@
 	],
 	"responseParams": [
 		{
-			"name": "waybill_code",
-			"type": "String",
-			"description": "面单号"
-		},
-		{
 			"name": "print_data",
 			"type": "String",
 			"description": "模板内容"
+		},
+		{
+			"name": "waybill_code",
+			"type": "String",
+			"description": "面单号"
 		}
 	],
 	"name": "cainiao.waybill.ii.update",

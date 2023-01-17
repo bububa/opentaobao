@@ -44,12 +44,15 @@ func (r TaobaoInventoryAdjustExternalAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoInventoryAdjustExternalAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoInventoryAdjustExternalAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoInventoryAdjustExternalAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizUniqueCode is BizUniqueCode Setter

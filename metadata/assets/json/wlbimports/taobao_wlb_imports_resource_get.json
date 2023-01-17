@@ -11,34 +11,34 @@
 				{
 					"name": "detail_address",
 					"type": "String",
-					"description": "详细地址"
+					"description": "详细地址，只需填写买家具体的收货地址"
 				},
 				{
 					"name": "street",
 					"type": "String",
-					"description": "街道"
-				},
-				{
-					"name": "province",
-					"type": "String",
-					"description": "省级别",
-					"required": true
+					"description": "街道信息"
 				},
 				{
 					"name": "district",
 					"type": "String",
-					"description": "区、县级别"
-				},
-				{
-					"name": "country",
-					"type": "String",
-					"description": "国级别",
-					"required": true
+					"description": "区县地址信息，city和district不能同时为空"
 				},
 				{
 					"name": "city",
 					"type": "String",
-					"description": "市级别"
+					"description": "市地址信息，city和district不能同时为空"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省地址信息",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家地址信息",
+					"required": true
 				}
 			],
 			"name": "to_address",
@@ -50,6 +50,26 @@
 	"responseParams": [
 		{
 			"subParams": [
+				{
+					"name": "res_id",
+					"type": "Number",
+					"description": "资源ID"
+				},
+				{
+					"name": "res_code",
+					"type": "String",
+					"description": "资源代码"
+				},
+				{
+					"name": "resource_name",
+					"type": "String",
+					"description": "魔方天下美国线"
+				},
+				{
+					"name": "delivery_time",
+					"type": "Number",
+					"description": "时效，单位（小时）"
+				},
 				{
 					"subParams": [
 						{
@@ -76,26 +96,6 @@
 					"name": "delivery_price",
 					"type": "DeliveryPrice",
 					"description": "服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元"
-				},
-				{
-					"name": "delivery_time",
-					"type": "Number",
-					"description": "时效，单位（小时）"
-				},
-				{
-					"name": "res_code",
-					"type": "String",
-					"description": "资源代码"
-				},
-				{
-					"name": "res_id",
-					"type": "Number",
-					"description": "资源ID"
-				},
-				{
-					"name": "resource_name",
-					"type": "String",
-					"description": "魔方天下美国线"
 				}
 			],
 			"name": "resources",

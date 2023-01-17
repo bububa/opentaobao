@@ -20,6 +20,8 @@ type StoreProcessConfirmRequest struct {
 	OrderCompleteTime string `json:"orderCompleteTime,omitempty" xml:"orderCompleteTime,omitempty"`
 	// 备注
 	Remark string `json:"remark,omitempty" xml:"remark,omitempty"`
+	// 仓库编码,统仓统配等无需ERP指定仓储编码的情况填OTHER
+	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 实际作业总数量
 	ActualQty int64 `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
 	// 扩展属性

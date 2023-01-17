@@ -266,6 +266,16 @@
 							"name": "tags",
 							"type": "String[]",
 							"description": "订单标签:REASSURING_TICKET:安心票"
+						},
+						{
+							"name": "refund_way_type",
+							"type": "Number",
+							"description": "0:\"原路退回\",1:\"退银行卡\",2:\"原路退回+退银行卡\""
+						},
+						{
+							"name": "trip_type",
+							"type": "Number",
+							"description": "   1:\"单程\",     2:\"往返\",     3:\"多程\""
 						}
 					],
 					"name": "data",

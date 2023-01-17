@@ -29,12 +29,15 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderDiagnoseurlGetAPIRequest) 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderDiagnoseurlGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderDiagnoseurlGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthExaminationReportDiagnoseOrderDiagnoseurlGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam is Param Setter

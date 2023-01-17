@@ -29,12 +29,15 @@ func (r AlibabaPurSupplierAsncreateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaPurSupplierAsncreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaPurSupplierAsncreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaPurSupplierAsncreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAsn is Asn Setter

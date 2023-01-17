@@ -31,304 +31,255 @@
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误编码",
-					"required": true
+					"description": "错误编码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否取消成功",
-					"required": true
+					"description": "是否取消成功"
 				},
 				{
 					"subParams": [
 						{
 							"name": "discount_fee",
 							"type": "Number",
-							"description": "优惠金额",
-							"required": true
+							"description": "优惠金额"
 						},
 						{
 							"name": "user_nick",
 							"type": "String",
-							"description": "用户昵称",
-							"required": true
+							"description": "用户昵称"
 						},
 						{
 							"name": "order_status",
 							"type": "String",
-							"description": "订单状态\tPAID_DONE 已付款  \tACCEPT_ORDER 已接单  \tPICK_ORDER 已拣货  \tSHIPPED 已发货  \tTRADE_SUCCESS 交易成功  \tTRADE_CLOSE 交易关闭",
-							"required": true
+							"description": "订单状态\tPAID_DONE 已付款  \tACCEPT_ORDER 已接单  \tPICK_ORDER 已拣货  \tSHIPPED 已发货  \tTRADE_SUCCESS 交易成功  \tTRADE_CLOSE 交易关闭"
 						},
 						{
 							"name": "pay_time",
 							"type": "Date",
-							"description": "支付时间",
-							"required": true
+							"description": "支付时间"
 						},
 						{
 							"name": "origin_fee",
 							"type": "Number",
-							"description": "订单原金额",
-							"required": true
+							"description": "订单原金额"
 						},
 						{
 							"name": "user_mem",
 							"type": "String",
-							"description": "用户备注",
-							"required": true
+							"description": "用户备注"
 						},
 						{
 							"name": "order_fulfill_status",
 							"type": "String",
-							"description": "订单履约状态\tACCEPTED 接单  \tREJECTED 拒单  \tCANCELED 取消订单  \tSHIPPING 揽收（配送中）  \tREFUSED 用户拒收  \tSHIPPED  \tTIMEOUTSHIPPED 超时签收  \tRESHIPPED 二次妥投  \tOUTOFSTOCK 缺货出  \tFOODPROCESSDONE 加工完成  \tPACKAGED 打包完成  \tREFUNDED 逆向终态（已取货入站\u0026退款完成）",
-							"required": true
+							"description": "订单履约状态\tACCEPTED 接单  \tREJECTED 拒单  \tCANCELED 取消订单  \tSHIPPING 揽收（配送中）  \tREFUSED 用户拒收  \tSHIPPED  \tTIMEOUTSHIPPED 超时签收  \tRESHIPPED 二次妥投  \tOUTOFSTOCK 缺货出  \tFOODPROCESSDONE 加工完成  \tPACKAGED 打包完成  \tREFUNDED 逆向终态（已取货入站\u0026退款完成）"
 						},
 						{
 							"subParams": [
 								{
 									"name": "deliverer_code",
 									"type": "String",
-									"description": "配送人员编码",
-									"required": true
+									"description": "配送人员编码"
 								},
 								{
 									"name": "deliverer_phone",
 									"type": "String",
-									"description": "配送人员电话",
-									"required": true
+									"description": "配送人员电话"
 								},
 								{
 									"name": "deliverer_name",
 									"type": "String",
-									"description": "配送人员姓名",
-									"required": true
+									"description": "配送人员姓名"
 								},
 								{
 									"name": "pickup_end_time",
 									"type": "Date",
-									"description": "拣货结束时间",
-									"required": true
+									"description": "拣货结束时间"
 								},
 								{
 									"name": "pickup_start_time",
 									"type": "Date",
-									"description": "拣货开始时间",
-									"required": true
+									"description": "拣货开始时间"
 								},
 								{
 									"name": "batch_end_time",
 									"type": "Date",
-									"description": "批次结束时间",
-									"required": true
+									"description": "批次结束时间"
 								},
 								{
 									"name": "batch_start_time",
 									"type": "Date",
-									"description": "批次开始时间",
-									"required": true
+									"description": "批次开始时间"
 								},
 								{
 									"name": "sign_time",
 									"type": "Date",
-									"description": "签收时间",
-									"required": true
+									"description": "签收时间"
 								},
 								{
 									"name": "dispatch_end_time",
 									"type": "Date",
-									"description": "配送结束时间",
-									"required": true
+									"description": "配送结束时间"
 								},
 								{
 									"name": "dispatch_start_time",
 									"type": "Date",
-									"description": "配送开始时间",
-									"required": true
+									"description": "配送开始时间"
 								},
 								{
 									"name": "package_end_time",
 									"type": "Date",
-									"description": "打包结束时间",
-									"required": true
+									"description": "打包结束时间"
 								},
 								{
 									"name": "package_start_time",
 									"type": "Date",
-									"description": "打包开始时间",
-									"required": true
+									"description": "打包开始时间"
 								},
 								{
 									"name": "sign_memo",
 									"type": "String",
-									"description": "签收备注",
-									"required": true
+									"description": "签收备注"
 								}
 							],
 							"name": "deliverer",
 							"type": "OrderDeliverer",
-							"description": "配送人员信息",
-							"required": true
+							"description": "配送人员信息"
 						},
 						{
 							"name": "pay_fee",
 							"type": "Number",
-							"description": "实际支付金额",
-							"required": true
+							"description": "实际支付金额"
 						},
 						{
 							"name": "shop_id",
 							"type": "String",
-							"description": "门店标识",
-							"required": true
+							"description": "门店标识"
 						},
 						{
 							"name": "user_id",
 							"type": "String",
-							"description": "买家标识",
-							"required": true
+							"description": "买家标识"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "业务订单标识",
-							"required": true
+							"description": "业务订单标识"
 						},
 						{
 							"subParams": [
 								{
 									"name": "delivery_fee",
 									"type": "Number",
-									"description": "配送费用金额",
-									"required": true
+									"description": "配送费用金额"
 								}
 							],
 							"name": "delivery",
 							"type": "OrderDelivery",
-							"description": "收货人信息",
-							"required": true
+							"description": "收货人信息"
 						},
 						{
 							"name": "merchant_code",
 							"type": "String",
-							"description": "商家编码",
-							"required": true
+							"description": "商家编码"
 						},
 						{
 							"subParams": [
 								{
 									"name": "sale_unit",
 									"type": "String",
-									"description": "销售单位（非标品）",
-									"required": true
+									"description": "销售单位（非标品）"
 								},
 								{
 									"name": "order_fulfill_status",
 									"type": "String",
-									"description": "订单履约状态",
-									"required": true
+									"description": "订单履约状态"
 								},
 								{
 									"name": "sale_quantity",
 									"type": "Number",
-									"description": "销售数量",
-									"required": true
+									"description": "销售数量"
 								},
 								{
 									"name": "sku_name",
 									"type": "String",
-									"description": "sku名称",
-									"required": true
+									"description": "sku名称"
 								},
 								{
 									"name": "sale_price",
 									"type": "Number",
-									"description": "销售单价",
-									"required": true
+									"description": "销售单价"
 								},
 								{
 									"name": "biz_order_id",
 									"type": "String",
-									"description": "业务订单标识",
-									"required": true
+									"description": "业务订单标识"
 								},
 								{
 									"name": "order_status",
 									"type": "String",
-									"description": "订单状态",
-									"required": true
+									"description": "订单状态"
 								},
 								{
 									"name": "merchant_code",
 									"type": "String",
-									"description": "商家编码",
-									"required": true
+									"description": "商家编码"
 								},
 								{
 									"name": "handling",
 									"type": "Boolean",
-									"description": "是否加工",
-									"required": true
+									"description": "是否加工"
 								},
 								{
 									"name": "sku_code",
 									"type": "String",
-									"description": "sku编码",
-									"required": true
+									"description": "sku编码"
 								},
 								{
 									"name": "handling_type",
 									"type": "String",
-									"description": "加工方式",
-									"required": true
+									"description": "加工方式"
 								},
 								{
 									"name": "out_order_id",
 									"type": "String",
-									"description": "外部关联订单标识",
-									"required": true
+									"description": "外部关联订单标识"
 								},
 								{
 									"name": "origin_fee",
 									"type": "Number",
-									"description": "订单金额",
-									"required": true
+									"description": "订单金额"
 								},
 								{
 									"name": "cancel_node_type",
 									"type": "String",
-									"description": "取消时的作业节点:WAREHOUSE和DELIVERY_DOCK",
-									"required": true
+									"description": "取消时的作业节点:WAREHOUSE和DELIVERY_DOCK"
 								},
 								{
 									"name": "cancel_result_code",
 									"type": "String",
-									"description": "取消结果: SUCCESS-已拦截，FAILURE-未拦截，SYSTEM_ERROR-系统异常，PARAM_ERROR-参数错误，BUSINESS_ERROR-业务异常",
-									"required": true
+									"description": "取消结果: SUCCESS-已拦截，FAILURE-未拦截，SYSTEM_ERROR-系统异常，PARAM_ERROR-参数错误，BUSINESS_ERROR-业务异常"
 								}
 							],
 							"name": "sub_orders",
 							"type": "Suborders[]",
-							"description": "子订单",
-							"required": true
+							"description": "子订单"
 						},
 						{
 							"name": "out_order_id",
 							"type": "String",
-							"description": "业务订单标识",
-							"required": true
+							"description": "业务订单标识"
 						}
 					],
 					"name": "result",
 					"type": "OrderObject",
-					"description": "取消的订单",
-					"required": true
+					"description": "取消的订单"
 				}
 			],
 			"name": "result",

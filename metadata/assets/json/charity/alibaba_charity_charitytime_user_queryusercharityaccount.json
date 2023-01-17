@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id 必传",
+					"required": true
+				},
+				{
+					"name": "user_key",
+					"type": "String",
+					"description": "第三方userKey 必传",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appkey 必传",
+					"required": true
+				}
+			],
+			"name": "query_charity_time_top_api_hsf_request",
+			"type": "QueryCharityTimeTopApiHsfRequest",
+			"description": "请求对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "消息"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "状态码：200表示正常，非200表示异常"
+				},
+				{
+					"subParams": [
+						{
+							"name": "charity_time_minutes",
+							"type": "Number",
+							"description": "公益时：分钟"
+						},
+						{
+							"name": "charity_time_hours",
+							"type": "BigDecimal",
+							"description": "公益时：小时"
+						}
+					],
+					"name": "data",
+					"type": "SumUserCharityTimeTopApiHsfResponse",
+					"description": "公益时查询结果"
+				}
+			],
+			"name": "result",
+			"type": "CsrResult",
+			"description": "响应对象"
+		}
+	],
+	"name": "alibaba.charity.charitytime.user.queryusercharityaccount",
+	"apiChineseName": "查询用户公益账户",
+	"description": "查询用户公益账户",
+	"id": 64985
+}

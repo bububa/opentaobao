@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "String",
+			"description": "openid",
+			"required": true
+		},
+		{
+			"name": "param1",
+			"type": "Number",
+			"description": "渠道ID",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID"
+				}
+			],
+			"name": "order_dto",
+			"type": "OrderDTO",
+			"description": "订单信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "文案"
+						},
+						{
+							"name": "target_url",
+							"type": "String",
+							"description": "跳转链接"
+						}
+					],
+					"name": "button",
+					"type": "Button",
+					"description": "按钮素材"
+				},
+				{
+					"subParams": [
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "宽度"
+						},
+						{
+							"name": "icon_url",
+							"type": "String",
+							"description": "图片链接"
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "高度"
+						}
+					],
+					"name": "image",
+					"type": "Image",
+					"description": "图片素材"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "副标题"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "金币权益素材"
+		}
+	],
+	"name": "taobao.coin.award.delivery",
+	"apiChineseName": "淘金币奖励投放",
+	"description": "淘金币奖励投放",
+	"id": 65356
+}

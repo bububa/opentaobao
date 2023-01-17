@@ -29,12 +29,15 @@ func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthAlidocDrugStoreUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDrugStoreUpdateTopRequest is DrugStoreUpdateTopRequest Setter

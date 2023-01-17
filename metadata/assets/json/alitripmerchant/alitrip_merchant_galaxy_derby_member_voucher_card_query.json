@@ -1,0 +1,265 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "member_voucher_card_i_d",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "member_voucher_card_i_d",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "voucher_card_category",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "end_date",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "qr_code_i_d_image",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "1"
+								},
+								{
+									"name": "type_name",
+									"type": "String",
+									"description": "aa"
+								},
+								{
+									"name": "type_url",
+									"type": "String",
+									"description": "aa"
+								}
+							],
+							"name": "derby_voucher_count_v_os",
+							"type": "DerbyVoucherCountVO[]",
+							"description": "1"
+						},
+						{
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "discount_off",
+									"type": "Number",
+									"description": "1"
+								},
+								{
+									"name": "voucher_pic",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "onoffline",
+									"type": "Boolean",
+									"description": "1"
+								},
+								{
+									"name": "short_des",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "long_des",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "1"
+								},
+								{
+									"name": "voucher_ids",
+									"type": "String[]",
+									"description": "1"
+								},
+								{
+									"name": "end_date",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "derby_voucher_polymerization_v_os",
+							"type": "DerbyVoucherCountVO[]",
+							"description": "1"
+						},
+						{
+							"subParams": [
+								{
+									"name": "member_voucher_i_d",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "discount_off",
+									"type": "Number",
+									"description": "1"
+								},
+								{
+									"name": "voucher_pic",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "onoffline",
+									"type": "Boolean",
+									"description": "1"
+								},
+								{
+									"name": "short_des",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "long_des",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "used_date",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "q_r_code_image",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "end_date",
+									"type": "String",
+									"description": "1"
+								},
+								{
+									"name": "voucher_code",
+									"type": "String",
+									"description": "1"
+								}
+							],
+							"name": "vouchers",
+							"type": "DerbyVoucherPolymerizationVO[]",
+							"description": "1"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardVO[]",
+					"description": "1"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "1"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.query",
+	"apiChineseName": "德比付费会员卡查询",
+	"description": "德比付费会员卡查询",
+	"id": 63745
+}

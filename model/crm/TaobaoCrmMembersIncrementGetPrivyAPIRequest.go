@@ -16,10 +16,10 @@ type TaobaoCrmMembersIncrementGetPrivyAPIRequest struct {
 	_startModify string
 	// 卖家修改会员信息的时间终点.如果不填写此字段,默认为当前时间.
 	_endModify string
-	// 会员等级
-	_grade int64
 	// 每页显示的会员数，page_size的值不能超过100，最小值要大于1
 	_pageSize int64
+	// 会员等级
+	_grade int64
 	// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1
 	_currentPage int64
 }
@@ -37,12 +37,15 @@ func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStartModify is StartModify Setter
@@ -71,19 +74,6 @@ func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetEndModify() string {
 	return r._endModify
 }
 
-// SetGrade is Grade Setter
-// 会员等级
-func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) SetGrade(_grade int64) error {
-	r._grade = _grade
-	r.Set("grade", _grade)
-	return nil
-}
-
-// GetGrade Grade Getter
-func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetGrade() int64 {
-	return r._grade
-}
-
 // SetPageSize is PageSize Setter
 // 每页显示的会员数，page_size的值不能超过100，最小值要大于1
 func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) SetPageSize(_pageSize int64) error {
@@ -95,6 +85,19 @@ func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) SetPageSize(_pageSize int6
 // GetPageSize PageSize Getter
 func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetGrade is Grade Setter
+// 会员等级
+func (r *TaobaoCrmMembersIncrementGetPrivyAPIRequest) SetGrade(_grade int64) error {
+	r._grade = _grade
+	r.Set("grade", _grade)
+	return nil
+}
+
+// GetGrade Grade Getter
+func (r TaobaoCrmMembersIncrementGetPrivyAPIRequest) GetGrade() int64 {
+	return r._grade
 }
 
 // SetCurrentPage is CurrentPage Setter

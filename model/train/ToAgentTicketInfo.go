@@ -22,13 +22,13 @@ type ToAgentTicketInfo struct {
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
 	// 到站时间
 	ToTime string `json:"to_time,omitempty" xml:"to_time,omitempty"`
-	// 国籍
-	Nationality string `json:"nationality,omitempty" xml:"nationality,omitempty"`
-	// 国籍代码
-	NationalityCode string `json:"nationality_code,omitempty" xml:"nationality_code,omitempty"`
 	// 证件有效期
 	ValidUntil string `json:"valid_until,omitempty" xml:"valid_until,omitempty"`
-	// 性别  1:男  0:女
+	// 国家code
+	NationalityCode string `json:"nationality_code,omitempty" xml:"nationality_code,omitempty"`
+	// 国家名称
+	Nationality string `json:"nationality,omitempty" xml:"nationality,omitempty"`
+	// 性别 1：男 0：女
 	Gender string `json:"gender,omitempty" xml:"gender,omitempty"`
 	// 联系人电话
 	Telephone string `json:"telephone,omitempty" xml:"telephone,omitempty"`
@@ -48,6 +48,6 @@ type ToAgentTicketInfo struct {
 	PassengerType int64 `json:"passenger_type,omitempty" xml:"passenger_type,omitempty"`
 	// segmentIndex
 	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
-	//
+	// 实际票价(不包含保险价格),例如100元,输出为10000,精确到分.
 	RealTicketPrice int64 `json:"real_ticket_price,omitempty" xml:"real_ticket_price,omitempty"`
 }

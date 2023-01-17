@@ -15,7 +15,7 @@
 				{
 					"name": "prod_code",
 					"type": "String",
-					"description": "生产码"
+					"description": "上传关联关系的药品子类编码"
 				},
 				{
 					"name": "ent_name",
@@ -72,7 +72,7 @@
 		{
 			"name": "file_content_string",
 			"type": "String",
-			"description": "加密之后的文件内容字符串",
+			"description": "加密之后的文件内容字符串（先把文件内容用java的zip类压缩然后转base64）",
 			"required": true
 		},
 		{

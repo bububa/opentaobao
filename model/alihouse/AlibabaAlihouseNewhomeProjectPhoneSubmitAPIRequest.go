@@ -12,6 +12,8 @@ import (
 // 提交楼盘电话
 type AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest struct {
 	model.Params
+	// 外部门店ID
+	_outerStoreId string
 	// 楼盘电话
 	_projectPhoneDto *ProjectPhoneDto
 }
@@ -29,12 +31,28 @@ func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店ID
+func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }
 
 // SetProjectPhoneDto is ProjectPhoneDto Setter

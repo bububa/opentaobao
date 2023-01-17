@@ -31,12 +31,15 @@ func (r TaobaoFiveeInnerproductPublishAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFiveeInnerproductPublishAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFiveeInnerproductPublishAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBucode is ParamBucode Setter

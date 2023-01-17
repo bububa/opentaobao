@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，必填参数",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "要操作的SKU的数字ID，可选。如果不填默认修改宝贝的库存，如果填上则修改该SKU的库存"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "SKU的商家编码，可选参数。如果不填则默认修改宝贝的库存，如果填了则按照商家编码搜索出对应的SKU并修改库存。当sku_id和本字段都填写时以sku_id为准搜索对应SKU"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "库存修改值，必选。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "iid",
+					"type": "String",
+					"description": "商品id(注意：iid近期即将废弃，请用num_iid参数)"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品数量"
+				},
+				{
+					"subParams": [
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "sku的id"
+						},
+						{
+							"name": "modified",
+							"type": "String",
+							"description": "sku最后修改日期 时间格式：yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "属于这个sku的商品的数量，"
+						}
+					],
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段"
+				}
+			],
+			"name": "item",
+			"type": "Item",
+			"description": "iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified"
+		}
+	],
+	"name": "taobao.item.quantity.update",
+	"apiChineseName": "宝贝/SKU库存修改",
+	"description": "提供按照全量或增量形式修改宝贝/SKU库存的功能",
+	"id": 10591
+}

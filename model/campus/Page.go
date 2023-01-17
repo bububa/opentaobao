@@ -8,6 +8,8 @@ type Page struct {
 	Results []string `json:"results,omitempty" xml:"results>string,omitempty"`
 	// 分页集合
 	ResultList []DeviceStandardApiDto `json:"result_list,omitempty" xml:"result_list>device_standard_api_dto,omitempty"`
+	// 结果
+	Result []string `json:"result,omitempty" xml:"result>string,omitempty"`
 	// 总计数
 	Total int64 `json:"total,omitempty" xml:"total,omitempty"`
 	// 每页大小

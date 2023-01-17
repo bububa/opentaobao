@@ -1,0 +1,96 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "main_user_nick",
+					"type": "String",
+					"description": "主账号昵称",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "Number",
+					"description": "电话号码",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试 0-非测试 1-测试"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "etc版本号",
+					"required": true
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "昵称",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "子账号角色类型",
+					"required": true
+				},
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "外部id 由角色类型决定id类型",
+					"required": true
+				},
+				{
+					"name": "job_status",
+					"type": "Number",
+					"description": "入离职状态 0-未知 1-在职 2-离职"
+				},
+				{
+					"name": "identity",
+					"type": "String",
+					"description": "默认密码"
+				}
+			],
+			"name": "sub_account_req_dto",
+			"type": "SubAccountReqDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "入驻是否成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.sub.account.bind",
+	"apiChineseName": "子账号入驻",
+	"description": "子账号入驻",
+	"id": 64700
+}

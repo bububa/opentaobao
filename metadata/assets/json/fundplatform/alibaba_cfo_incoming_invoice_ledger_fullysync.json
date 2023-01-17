@@ -1,0 +1,427 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "account_type",
+					"type": "String",
+					"description": "账户类型。进项：AP，销项：AR"
+				},
+				{
+					"name": "amount_with_tax",
+					"type": "String",
+					"description": "含税金额"
+				},
+				{
+					"name": "amount_without_tax",
+					"type": "String",
+					"description": "不含税金额"
+				},
+				{
+					"name": "auth_remark",
+					"type": "String",
+					"description": "认证备注"
+				},
+				{
+					"name": "auth_status",
+					"type": "String",
+					"description": "认证状态"
+				},
+				{
+					"name": "auth_style",
+					"type": "String",
+					"description": "认证方式 "
+				},
+				{
+					"name": "auth_tax_period",
+					"type": "String",
+					"description": "认证所属期"
+				},
+				{
+					"name": "auth_use",
+					"type": "String",
+					"description": "抵扣用途"
+				},
+				{
+					"name": "biz_order_no",
+					"type": "String",
+					"description": "业务单号"
+				},
+				{
+					"name": "buyer_address_tel",
+					"type": "String",
+					"description": "购方地址电话"
+				},
+				{
+					"name": "buyer_bank_account",
+					"type": "String",
+					"description": "购方银行账号"
+				},
+				{
+					"name": "buyer_bank_info",
+					"type": "String",
+					"description": "购方开户行名称 账号"
+				},
+				{
+					"name": "buyer_bank_name",
+					"type": "String",
+					"description": "购方银行名称"
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "购方名称"
+				},
+				{
+					"name": "buyer_tax_no",
+					"type": "String",
+					"description": "购方税号"
+				},
+				{
+					"name": "check_code",
+					"type": "String",
+					"description": "校验码"
+				},
+				{
+					"name": "cipher_text",
+					"type": "String",
+					"description": "密文"
+				},
+				{
+					"name": "cipher_text_q_r_code",
+					"type": "String",
+					"description": "二维密文"
+				},
+				{
+					"name": "date_issued",
+					"type": "String",
+					"description": "开票日期"
+				},
+				{
+					"subParams": [
+						{
+							"name": "amount_with_tax",
+							"type": "String",
+							"description": "含税金额"
+						},
+						{
+							"name": "amount_without_tax",
+							"type": "String",
+							"description": "不含税金额"
+						},
+						{
+							"name": "deductions",
+							"type": "String",
+							"description": "扣除额"
+						},
+						{
+							"name": "goods_tax_no",
+							"type": "String",
+							"description": "税收分类编码"
+						},
+						{
+							"name": "goods_tax_no_version",
+							"type": "String",
+							"description": "编码版本号"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量"
+						},
+						{
+							"name": "specifications",
+							"type": "String",
+							"description": "规格型号"
+						},
+						{
+							"name": "tax_amount",
+							"type": "String",
+							"description": "税额"
+						},
+						{
+							"name": "tax_pre",
+							"type": "String",
+							"description": "是否享受税收优惠政策"
+						},
+						{
+							"name": "tax_pre_con",
+							"type": "String",
+							"description": "享受税收优惠政策内容"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						},
+						{
+							"name": "toll_end_date",
+							"type": "String",
+							"description": "通行日期止"
+						},
+						{
+							"name": "toll_start_date",
+							"type": "String",
+							"description": "通行日期起"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "数量单位"
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价"
+						},
+						{
+							"name": "zero_tax",
+							"type": "String",
+							"description": "零税率标志"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "项目名称"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "项目编码"
+						}
+					],
+					"name": "details",
+					"type": "PytLedgerInvoiceLineRequest[]",
+					"description": "发票行信息"
+				},
+				{
+					"name": "effective_tax_amount",
+					"type": "String",
+					"description": "有效税额"
+				},
+				{
+					"name": "el_confirm_date",
+					"type": "String",
+					"description": "认证业务日期"
+				},
+				{
+					"name": "el_sync_time",
+					"type": "String",
+					"description": "底账同步时间"
+				},
+				{
+					"name": "extended_attrs",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "invoice_code",
+					"type": "String",
+					"description": "发票代码"
+				},
+				{
+					"name": "invoice_color",
+					"type": "String",
+					"description": "红蓝票标记"
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票类型"
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票号码"
+				},
+				{
+					"name": "invoice_source",
+					"type": "String",
+					"description": "国税发票来源"
+				},
+				{
+					"name": "invoice_style_type",
+					"type": "String",
+					"description": "发票样式"
+				},
+				{
+					"name": "issuer",
+					"type": "String",
+					"description": "开票人"
+				},
+				{
+					"name": "machine_code",
+					"type": "String",
+					"description": "机器编码"
+				},
+				{
+					"name": "no_auth_reason",
+					"type": "String",
+					"description": "不抵扣原因"
+				},
+				{
+					"name": "original_invoice_code",
+					"type": "String",
+					"description": "原始发票代码"
+				},
+				{
+					"name": "original_invoice_no",
+					"type": "String",
+					"description": "原始发票号码"
+				},
+				{
+					"name": "payee",
+					"type": "String",
+					"description": "付款人"
+				},
+				{
+					"name": "pdf_url",
+					"type": "String",
+					"description": "PDF文件地址"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "reverse_amount_with_tax",
+					"type": "String",
+					"description": "被红冲含税金额"
+				},
+				{
+					"name": "reverse_amount_without_tax",
+					"type": "String",
+					"description": "被红冲不含税金额"
+				},
+				{
+					"name": "reverse_flag",
+					"type": "String",
+					"description": "红冲状态"
+				},
+				{
+					"name": "reverse_tax_amount",
+					"type": "String",
+					"description": "被红冲税额"
+				},
+				{
+					"name": "reviewer",
+					"type": "String",
+					"description": "审核人"
+				},
+				{
+					"name": "sale_list_file_flag",
+					"type": "String",
+					"description": "发是否有销货清单"
+				},
+				{
+					"name": "seller_address",
+					"type": "String",
+					"description": "销方地址"
+				},
+				{
+					"name": "seller_address_tel",
+					"type": "String",
+					"description": "销方地址电话"
+				},
+				{
+					"name": "seller_bank_account",
+					"type": "String",
+					"description": "销方银行账号"
+				},
+				{
+					"name": "seller_bank_info",
+					"type": "String",
+					"description": "销方开户行名称 账号"
+				},
+				{
+					"name": "seller_bank_name",
+					"type": "String",
+					"description": "销方银行名称"
+				},
+				{
+					"name": "seller_name",
+					"type": "String",
+					"description": "销方名称"
+				},
+				{
+					"name": "seller_tax_no",
+					"type": "String",
+					"description": "销方税号"
+				},
+				{
+					"name": "seller_tel",
+					"type": "String",
+					"description": "销方电话"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "系统来源"
+				},
+				{
+					"name": "special_type",
+					"type": "String",
+					"description": "发票特殊类型标识"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态"
+				},
+				{
+					"name": "tax_amount",
+					"type": "String",
+					"description": "税额"
+				},
+				{
+					"name": "tax_invoice_source",
+					"type": "String",
+					"description": "国税发票来源"
+				},
+				{
+					"name": "tax_rate",
+					"type": "String",
+					"description": "税率"
+				},
+				{
+					"name": "send_time",
+					"type": "Number",
+					"description": "发送时间错",
+					"required": true
+				}
+			],
+			"name": "param_pyt_ledger_sync_request",
+			"type": "PytLedgerSyncRequest",
+			"description": "底账同步请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "response_msg",
+					"type": "String",
+					"description": "响应消息"
+				},
+				{
+					"name": "succeeded",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "同步是否是否成功"
+		}
+	],
+	"name": "alibaba.cfo.incoming.invoice.ledger.fullysync",
+	"apiChineseName": "票易通全量底账数据同步",
+	"description": "票易通全量底账数据同步",
+	"id": 65164
+}

@@ -234,7 +234,7 @@
 								{
 									"name": "flight_cabins",
 									"type": "String",
-									"description": "机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱"
+									"description": "国内机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
 								},
 								{
 									"name": "economy_discount",
@@ -282,6 +282,16 @@
 									"name": "reserve_type",
 									"type": "Number",
 									"description": "限制差标类型。0-不限差标，1-限制差标"
+								},
+								{
+									"name": "international_flight_cabins",
+									"type": "String",
+									"description": "国际机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
+								},
+								{
+									"name": "premium_economy_discount",
+									"type": "Number",
+									"description": "超级经济舱折扣。1到10的整数"
 								}
 							],
 							"name": "traveler_list",
@@ -328,7 +338,7 @@
 								{
 									"name": "flight_cabins",
 									"type": "String",
-									"description": "机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱"
+									"description": "国内机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
 								},
 								{
 									"name": "economy_discount",
@@ -381,6 +391,16 @@
 									"name": "user_name",
 									"type": "String",
 									"description": "用户名称"
+								},
+								{
+									"name": "international_flight_cabins",
+									"type": "String",
+									"description": "国际机票舱等，多值逗号分隔。F：头等舱，C：商务舱，Y：经济舱，P：超级经济舱"
+								},
+								{
+									"name": "premium_economy_discount",
+									"type": "Number",
+									"description": "超级经济舱折扣。1到10的整数"
 								}
 							],
 							"name": "external_traveler_list",

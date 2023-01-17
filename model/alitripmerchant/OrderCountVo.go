@@ -14,6 +14,8 @@ type OrderCountVo struct {
 	CheckInDate string `json:"check_in_date,omitempty" xml:"check_in_date,omitempty"`
 	// 订单id
 	OrderId string `json:"order_id,omitempty" xml:"order_id,omitempty"`
+	// 订单类型 OrderTypeEnum枚举 calendar_room:日历房订单。paid_membership_card：付费会员卡订单
+	OrderType string `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 倒计时开始时间
 	PayRemainTime int64 `json:"pay_remain_time,omitempty" xml:"pay_remain_time,omitempty"`
 }

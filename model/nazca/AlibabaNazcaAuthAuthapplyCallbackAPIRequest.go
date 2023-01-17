@@ -29,12 +29,15 @@ func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaNazcaAuthAuthapplyCallbackAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAuthApplyDoneCallbackDo is AuthApplyDoneCallbackDo Setter

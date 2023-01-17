@@ -270,6 +270,11 @@
 					"name": "message",
 					"type": "String",
 					"description": "返回提示信息"
+				},
+				{
+					"name": "product_url",
+					"type": "String",
+					"description": "返回的产品链接"
 				}
 			],
 			"name": "result",

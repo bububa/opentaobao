@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"name": "app_key_n",
+			"type": "String",
+			"description": "appKey",
+			"required": true
+		},
+		{
+			"name": "base_ent_name",
+			"type": "String",
+			"description": "数据所有者企业名称",
+			"required": true
+		},
+		{
+			"name": "bill_ent_name",
+			"type": "String",
+			"description": "单据所有者企业名称"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "下游模式填2 集团模式填3",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据号"
+		},
+		{
+			"name": "bill_type_flag",
+			"type": "String",
+			"description": "单据标识 入库填写I 出库填写O"
+		},
+		{
+			"name": "re_upload",
+			"type": "String",
+			"description": "是否需要重传 1代表需要 0代表不需要",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码；当有code时候billEntname  bill_code  bill_type_flag可以不填，优先根据code判定"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "诊断原因"
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			],
+			"name": "result",
+			"type": "DataEntTaskResultDto",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihealth.drug.download.dataerrordiagnosis",
+	"apiChineseName": "数据未落地诊断",
+	"description": "阿里健康-追溯码-D2D数据未落地原因诊断",
+	"id": 64688
+}

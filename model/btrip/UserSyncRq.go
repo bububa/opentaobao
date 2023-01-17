@@ -22,6 +22,8 @@ type UserSyncRq struct {
 	JobNo string `json:"job_no,omitempty" xml:"job_no,omitempty"`
 	// 第三方部门ID
 	ThirdDepartId string `json:"third_depart_id,omitempty" xml:"third_depart_id,omitempty"`
+	// 直属主管id
+	ManagerUserId string `json:"manager_user_id,omitempty" xml:"manager_user_id,omitempty"`
 	// 商旅部门ID
 	DepartId int64 `json:"depart_id,omitempty" xml:"depart_id,omitempty"`
 	// 是否离职（0 否 1是）

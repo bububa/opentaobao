@@ -33,12 +33,15 @@ func (r AlibabaWdkMerchantBrandQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMerchantBrandQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkMerchantBrandQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkMerchantBrandQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetKeyword is Keyword Setter

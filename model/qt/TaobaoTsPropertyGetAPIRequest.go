@@ -29,12 +29,15 @@ func (r TaobaoTsPropertyGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTsPropertyGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTsPropertyGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTsPropertyGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetServiceItemCode is ServiceItemCode Setter

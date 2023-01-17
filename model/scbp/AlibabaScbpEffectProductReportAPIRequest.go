@@ -29,12 +29,15 @@ func (r AlibabaScbpEffectProductReportAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpEffectProductReportAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpEffectProductReportAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpEffectProductReportAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetP4pProductReportQuery is P4pProductReportQuery Setter

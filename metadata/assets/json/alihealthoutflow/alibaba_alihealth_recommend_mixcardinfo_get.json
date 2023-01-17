@@ -1,0 +1,256 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_version",
+					"type": "String",
+					"description": "应用版本"
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市编码"
+				},
+				{
+					"name": "show_time",
+					"type": "String",
+					"description": "展示时间",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "scene_id",
+					"type": "String",
+					"description": "场景id",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道标识"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				}
+			],
+			"name": "quick_app_request",
+			"type": "QuickAppRequest",
+			"description": "请求入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "tab_name",
+											"type": "String",
+											"description": "tab名"
+										},
+										{
+											"name": "address",
+											"type": "String",
+											"description": "供应商地址"
+										},
+										{
+											"name": "client_name",
+											"type": "String",
+											"description": "客户端名"
+										},
+										{
+											"name": "origin_price",
+											"type": "String",
+											"description": "原价"
+										},
+										{
+											"name": "source",
+											"type": "String",
+											"description": "数据来源"
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "商品名"
+										},
+										{
+											"name": "tags",
+											"type": "String",
+											"description": "标签名"
+										},
+										{
+											"name": "entry_id",
+											"type": "String",
+											"description": "埋点"
+										},
+										{
+											"name": "img_url",
+											"type": "String",
+											"description": "商品图"
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "商品id"
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "现价"
+										}
+									],
+									"name": "item_in_stock_list",
+									"type": "ItemInStockVo[]",
+									"description": "疫苗卡片数据"
+								},
+								{
+									"name": "tab_name",
+									"type": "String",
+									"description": "标签名"
+								}
+							],
+							"name": "item_in_stock_card_vo_list",
+							"type": "ItemInStockCardVo[]",
+							"description": "疫苗卡片数据集合"
+						},
+						{
+							"subParams": [
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市"
+								}
+							],
+							"name": "address_vo",
+							"type": "AddressVO",
+							"description": "地址信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sub_title_color",
+									"type": "String",
+									"description": "副标题颜色"
+								},
+								{
+									"name": "button_text",
+									"type": "String",
+									"description": "按钮文案"
+								},
+								{
+									"name": "bg_img",
+									"type": "String",
+									"description": "背景图"
+								},
+								{
+									"name": "title_size",
+									"type": "String",
+									"description": "标题尺寸"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题"
+								},
+								{
+									"name": "sub_title_size",
+									"type": "String",
+									"description": "副标题尺寸"
+								},
+								{
+									"name": "jump_url",
+									"type": "String",
+									"description": "跳转链接"
+								},
+								{
+									"name": "bg_right_icon",
+									"type": "String",
+									"description": "背景图右侧图标"
+								},
+								{
+									"name": "button_text_size",
+									"type": "String",
+									"description": "按钮文案尺寸"
+								},
+								{
+									"name": "logo_img",
+									"type": "String",
+									"description": "logo图"
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "副标题"
+								},
+								{
+									"name": "title_color",
+									"type": "String",
+									"description": "标题颜色"
+								},
+								{
+									"name": "button_text_color",
+									"type": "String",
+									"description": "按钮文案颜色"
+								},
+								{
+									"name": "button_bg_color",
+									"type": "String",
+									"description": "按钮背景色"
+								}
+							],
+							"name": "quick_app_card_info_vo_list",
+							"type": "QuickAppCardInfoVo[]",
+							"description": "投放卡片"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "卡片类型，1投放卡片，2疫苗卡片"
+						}
+					],
+					"name": "data",
+					"type": "QuickAppCardWrapperVO",
+					"description": "卡片数据"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "card_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.alihealth.recommend.mixcardinfo.get",
+	"apiChineseName": "快应用混合卡片信息",
+	"description": "快应用混合卡片信息",
+	"id": 64853
+}

@@ -12,8 +12,8 @@ import (
 // 商家侧查询订单详情
 type TaobaoBusMerchantOrderGetAPIRequest struct {
 	model.Params
-	// 飞猪订单号或商家订单号，多个以“,”分割
-	_orderId string
+	// 入参
+	_paramAgentQueryOrderRQ *AgentQueryOrderRq
 }
 
 // NewTaobaoBusMerchantOrderGetRequest 初始化TaobaoBusMerchantOrderGetAPIRequest对象
@@ -29,23 +29,26 @@ func (r TaobaoBusMerchantOrderGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBusMerchantOrderGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoBusMerchantOrderGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetOrderId is OrderId Setter
-// 飞猪订单号或商家订单号，多个以“,”分割
-func (r *TaobaoBusMerchantOrderGetAPIRequest) SetOrderId(_orderId string) error {
-	r._orderId = _orderId
-	r.Set("order_id", _orderId)
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoBusMerchantOrderGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetParamAgentQueryOrderRQ is ParamAgentQueryOrderRQ Setter
+// 入参
+func (r *TaobaoBusMerchantOrderGetAPIRequest) SetParamAgentQueryOrderRQ(_paramAgentQueryOrderRQ *AgentQueryOrderRq) error {
+	r._paramAgentQueryOrderRQ = _paramAgentQueryOrderRQ
+	r.Set("param_agent_query_order_r_q", _paramAgentQueryOrderRQ)
 	return nil
 }
 
-// GetOrderId OrderId Getter
-func (r TaobaoBusMerchantOrderGetAPIRequest) GetOrderId() string {
-	return r._orderId
+// GetParamAgentQueryOrderRQ ParamAgentQueryOrderRQ Getter
+func (r TaobaoBusMerchantOrderGetAPIRequest) GetParamAgentQueryOrderRQ() *AgentQueryOrderRq {
+	return r._paramAgentQueryOrderRQ
 }

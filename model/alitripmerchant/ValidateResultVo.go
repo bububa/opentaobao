@@ -16,6 +16,8 @@ type ValidateResultVo struct {
 	TotalPriceExcludeTax string `json:"total_price_exclude_tax,omitempty" xml:"total_price_exclude_tax,omitempty"`
 	// 实际需要支付金额，含税
 	TotalAmount string `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
+	// 支付类型
+	PaymentType string `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
 	// 取消政策
 	CancelPolicy *CancelPolicy `json:"cancel_policy,omitempty" xml:"cancel_policy,omitempty"`
 	// 加价信息

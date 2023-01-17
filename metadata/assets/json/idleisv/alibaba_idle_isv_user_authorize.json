@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "auth_type",
+					"type": "String",
+					"description": "需要为用户添加的权限类型，具体类型可以参考api描述的语雀文档",
+					"required": true
+				}
+			],
+			"name": "add_user_authorization_cmd",
+			"type": "AddUserAuthorizationCmd",
+			"description": "添加用户授权信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.idle.isv.user.authorize",
+	"apiChineseName": "用户授权接口",
+	"description": "用户授权接口\n接口调用相关参考文档\nhttps://www.yuque.com/docs/share/9cd991b7-e3a3-40b6-948c-1835422d0164?# 《闲鱼优品2.0API接入说明》",
+	"id": 64319
+}

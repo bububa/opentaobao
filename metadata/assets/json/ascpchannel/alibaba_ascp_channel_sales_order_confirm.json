@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sale_order_no",
+					"type": "String",
+					"description": "渠道主单号",
+					"required": true
+				}
+			],
+			"name": "confirm_order_request",
+			"type": "ExternalConfirmSalesOrderRequest",
+			"description": "请求参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "confirm_order_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装"
+		}
+	],
+	"name": "alibaba.ascp.channel.sales.order.confirm",
+	"apiChineseName": "渠道销售单确认收货",
+	"description": "渠道销售单确认收货",
+	"id": 63774
+}

@@ -12,8 +12,8 @@ type WdkMarketOpenResult struct {
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
 	// 错误编码
 	ErrCode string `json:"err_code,omitempty" xml:"err_code,omitempty"`
-	// 版本信息
-	Data *SyncVersionBo `json:"data,omitempty" xml:"data,omitempty"`
+	// 唯一码信息
+	Data *UniqueDiscountCodeBO `json:"data,omitempty" xml:"data,omitempty"`
 	// 123123
 	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

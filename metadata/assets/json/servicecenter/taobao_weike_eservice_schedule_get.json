@@ -34,84 +34,71 @@
 				{
 					"name": "total_count",
 					"type": "Number",
-					"description": "排班记录条数（按天计算）",
-					"required": true
+					"description": "排班记录条数（按天计算）"
 				},
 				{
 					"subParams": [
 						{
 							"name": "date",
 							"type": "Date",
-							"description": "排班日期",
-							"required": true
+							"description": "排班日期"
 						},
 						{
 							"name": "string_date",
 							"type": "String",
-							"description": "排班日期字符串",
-							"required": true
+							"description": "排班日期字符串"
 						},
 						{
 							"subParams": [
 								{
 									"name": "start_time",
 									"type": "Date",
-									"description": "排班起始时间",
-									"required": true
+									"description": "排班起始时间"
 								},
 								{
 									"name": "end_time",
 									"type": "Date",
-									"description": "排班结束时间",
-									"required": true
+									"description": "排班结束时间"
 								},
 								{
 									"name": "seller_nick",
 									"type": "String",
-									"description": "商家子账号",
-									"required": true
+									"description": "商家子账号"
 								},
 								{
 									"name": "sp_nick",
 									"type": "String",
-									"description": "服务商子账号",
-									"required": true
+									"description": "服务商子账号"
 								},
 								{
 									"name": "state",
 									"type": "Number",
-									"description": "排班记录状态，1表示生效，-1表示失效",
-									"required": true
+									"description": "排班记录状态，1表示生效，-1表示失效"
 								},
 								{
 									"name": "state_des",
 									"type": "String",
-									"description": "排班记录状态描述",
-									"required": true
+									"description": "排班记录状态描述"
 								}
 							],
 							"name": "schedulings",
 							"type": "Scheduling[]",
-							"description": "一天内排班信息",
-							"required": true
+							"description": "一天内排班信息"
 						},
 						{
 							"name": "order_id",
 							"type": "Number",
-							"description": "订单ID",
-							"required": true
+							"description": "订单ID"
 						},
 						{
 							"name": "modified_time",
 							"type": "Date",
-							"description": "排班记录更新时间",
-							"required": true
+							"description": "排班记录更新时间"
 						}
 					],
 					"name": "cs_schedulings",
 					"type": "CsScheduling[]",
-					"description": "按天排班信息",
-					"required": true
+					"description": "按天排班信息"
 				}
 			],
 			"name": "result",

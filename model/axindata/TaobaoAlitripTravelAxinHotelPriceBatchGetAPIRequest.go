@@ -37,12 +37,15 @@ func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripTravelAxinHotelPriceBatchGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEndDate is EndDate Setter

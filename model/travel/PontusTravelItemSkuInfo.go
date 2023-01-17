@@ -6,17 +6,13 @@ type PontusTravelItemSkuInfo struct {
 	Prices []PontusTravelPrices `json:"prices,omitempty" xml:"prices>pontus_travel_prices,omitempty"`
 	// 套餐关联的产品元素信息
 	Products []PontusTravelProduct `json:"products,omitempty" xml:"products>pontus_travel_product,omitempty"`
-	// 套餐名称
-	PackageName string `json:"package_name,omitempty" xml:"package_name,omitempty"`
 	// 映射到具体日历价格套餐的外部商家编码
 	OuterSkuId string `json:"outer_sku_id,omitempty" xml:"outer_sku_id,omitempty"`
 	// 套餐描述
 	PackageDesc string `json:"package_desc,omitempty" xml:"package_desc,omitempty"`
-	// 套餐操作仅限于删除[delete]和修改[modify]&amp;quot;, 该操作修改的是套餐的名称和outer_sku_id
-	PackageOperation string `json:"package_operation,omitempty" xml:"package_operation,omitempty"`
-	// package_operation 为midofy时，outer_sku_id将被该值覆盖
-	UpdateOuterSkuId string `json:"update_outer_sku_id,omitempty" xml:"update_outer_sku_id,omitempty"`
-	// combos
+	// 套餐名称
+	PackageName string `json:"package_name,omitempty" xml:"package_name,omitempty"`
+	// 套餐下面对应商品元素信息 仅针对新版商品
 	Combos string `json:"combos,omitempty" xml:"combos,omitempty"`
 	// 邮轮房型名称
 	RoomTypeName string `json:"room_type_name,omitempty" xml:"room_type_name,omitempty"`

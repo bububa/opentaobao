@@ -26,6 +26,11 @@
 			"type": "String",
 			"description": "巨浪渠道id,在巨浪平台申请",
 			"required": true
+		},
+		{
+			"name": "caid_md5",
+			"type": "String",
+			"description": "md5加密后的caid列表， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本， 多个使用,分隔， 最多支持20个。"
 		}
 	],
 	"responseParams": [
@@ -62,6 +67,11 @@
 							"name": "task_id",
 							"type": "String",
 							"description": "该设备要做的大航海的任务id"
+						},
+						{
+							"name": "caid_md5",
+							"type": "String",
+							"description": "caid的md5值， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本"
 						}
 					],
 					"name": "results",

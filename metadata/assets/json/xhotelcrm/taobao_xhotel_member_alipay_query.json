@@ -1,0 +1,71 @@
+{
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "Number",
+			"description": "支付宝id",
+			"required": true
+		},
+		{
+			"name": "fpt",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "fpt",
+							"type": "String",
+							"description": "渠道"
+						},
+						{
+							"name": "status",
+							"type": "Boolean",
+							"description": "是否完成任务"
+						},
+						{
+							"name": "time",
+							"type": "String",
+							"description": "注册时间"
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "1.未注册/非支付宝端注册的会员2.未注册成功3.非新会员"
+						}
+					],
+					"name": "module",
+					"type": "MerchantMemberBindInfoVO",
+					"description": "数据"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "状态"
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "result_info",
+					"type": "String",
+					"description": "信息"
+				}
+			],
+			"name": "result",
+			"type": "HMemberResult",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.xhotel.member.alipay.query",
+	"apiChineseName": "希尔顿会员查询",
+	"description": "希尔顿会员查询",
+	"id": 64794
+}

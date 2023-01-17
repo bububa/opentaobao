@@ -29,12 +29,15 @@ func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoMiniappDistributionOrderGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderIdRequest is OrderIdRequest Setter

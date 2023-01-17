@@ -38,6 +38,11 @@
 					"type": "Number",
 					"description": "1",
 					"required": true
+				},
+				{
+					"name": "is_async",
+					"type": "Number",
+					"description": "是否需要异步"
 				}
 			],
 			"name": "sync_house_trade_item_dto",

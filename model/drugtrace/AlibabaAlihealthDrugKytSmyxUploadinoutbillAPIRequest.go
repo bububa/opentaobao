@@ -74,12 +74,15 @@ func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugKytSmyxUploadinoutbillAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTraceCodes is TraceCodes Setter

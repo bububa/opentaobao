@@ -24,6 +24,11 @@
 			"description": "商户名称"
 		},
 		{
+			"name": "district",
+			"type": "String",
+			"description": "区"
+		},
+		{
 			"name": "city",
 			"type": "String",
 			"description": "所在城市"
@@ -32,11 +37,6 @@
 			"name": "province",
 			"type": "String",
 			"description": "省份"
-		},
-		{
-			"name": "district",
-			"type": "String",
-			"description": "区"
 		},
 		{
 			"name": "contract",

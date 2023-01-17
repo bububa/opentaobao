@@ -29,12 +29,15 @@ func (r AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseExistinghomeVirtualshopSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCompanyVirtualShopDto is CompanyVirtualShopDto Setter

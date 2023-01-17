@@ -21,20 +21,17 @@
 				{
 					"name": "msg_info",
 					"type": "String",
-					"description": "操作说明",
-					"required": true
+					"description": "操作说明"
 				},
 				{
 					"name": "msg_code",
 					"type": "String",
-					"description": "操作码",
-					"required": true
+					"description": "操作码"
 				},
 				{
 					"name": "model",
 					"type": "Boolean",
-					"description": "isvId",
-					"required": true
+					"description": "isvId"
 				}
 			],
 			"name": "result",

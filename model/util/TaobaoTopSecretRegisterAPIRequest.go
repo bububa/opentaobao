@@ -12,8 +12,6 @@ import (
 // 提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
 type TaobaoTopSecretRegisterAPIRequest struct {
 	model.Params
-	// 用户id，保证唯一
-	_userId int64
 }
 
 // NewTaobaoTopSecretRegisterRequest 初始化TaobaoTopSecretRegisterAPIRequest对象
@@ -29,23 +27,13 @@ func (r TaobaoTopSecretRegisterAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTopSecretRegisterAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTopSecretRegisterAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetUserId is UserId Setter
-// 用户id，保证唯一
-func (r *TaobaoTopSecretRegisterAPIRequest) SetUserId(_userId int64) error {
-	r._userId = _userId
-	r.Set("user_id", _userId)
-	return nil
-}
-
-// GetUserId UserId Getter
-func (r TaobaoTopSecretRegisterAPIRequest) GetUserId() int64 {
-	return r._userId
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTopSecretRegisterAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
