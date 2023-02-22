@@ -68,7 +68,7 @@
 				}
 			],
 			"name": "resp_result",
-			"type": "ResponseDto",
+			"type": "TrafficFeaturedPromoResponseDto",
 			"description": "返回结果"
 		}
 	],
