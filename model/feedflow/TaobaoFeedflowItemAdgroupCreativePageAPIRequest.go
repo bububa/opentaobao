@@ -29,12 +29,15 @@ func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFeedflowItemAdgroupCreativePageAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreativeBindQuery is CreativeBindQuery Setter

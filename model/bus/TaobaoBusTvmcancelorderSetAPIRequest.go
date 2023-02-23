@@ -29,12 +29,15 @@ func (r TaobaoBusTvmcancelorderSetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBusTvmcancelorderSetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoBusTvmcancelorderSetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoBusTvmcancelorderSetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAlitripOrderId is AlitripOrderId Setter

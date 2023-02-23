@@ -46,7 +46,7 @@
 				}
 			],
 			"name": "req",
-			"type": "ConsignContractReq",
+			"type": "SignContractReq",
 			"description": "入参"
 		}
 	],

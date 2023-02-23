@@ -4,18 +4,14 @@ package category
 type PropValue struct {
 	// 属性值feature
 	Features []Feature `json:"features,omitempty" xml:"features>feature,omitempty"`
-	// 属性名
-	PropName string `json:"prop_name,omitempty" xml:"prop_name,omitempty"`
 	// 属性值
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
-	// 属性值别名
-	NameAlias string `json:"name_alias,omitempty" xml:"name_alias,omitempty"`
+	// 属性名
+	PropName string `json:"prop_name,omitempty" xml:"prop_name,omitempty"`
 	// 状态。可选值:normal(正常),deleted(删除)
 	Status string `json:"status,omitempty" xml:"status,omitempty"`
-	// 修改时间（类目增量专用）
-	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
-	// 三种枚举类型：modify，add，delete (增量类目专用)
-	ModifiedType string `json:"modified_type,omitempty" xml:"modified_type,omitempty"`
+	// 属性值别名
+	NameAlias string `json:"name_alias,omitempty" xml:"name_alias,omitempty"`
 	// 类目ID
 	Cid int64 `json:"cid,omitempty" xml:"cid,omitempty"`
 	// 属性 ID

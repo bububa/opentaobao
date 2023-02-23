@@ -29,12 +29,15 @@ func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthMedicalbaseThirdEvaluateSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEvaluateRequest is EvaluateRequest Setter

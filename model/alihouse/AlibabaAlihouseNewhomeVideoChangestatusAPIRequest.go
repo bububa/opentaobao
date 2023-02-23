@@ -14,6 +14,10 @@ type AlibabaAlihouseNewhomeVideoChangestatusAPIRequest struct {
 	model.Params
 	// 外部视频id
 	_outerId string
+	// 外部楼盘id（不可多值）
+	_outerProjectId string
+	// 外部门店id
+	_outerStoreId string
 	// 0 失效 1 有效
 	_status int64
 }
@@ -31,12 +35,15 @@ func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterId is OuterId Setter
@@ -50,6 +57,32 @@ func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterId(_outerId 
 // GetOuterId OuterId Getter
 func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetOuterId() string {
 	return r._outerId
+}
+
+// SetOuterProjectId is OuterProjectId Setter
+// 外部楼盘id（不可多值）
+func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterProjectId(_outerProjectId string) error {
+	r._outerProjectId = _outerProjectId
+	r.Set("outer_project_id", _outerProjectId)
+	return nil
+}
+
+// GetOuterProjectId OuterProjectId Getter
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetOuterProjectId() string {
+	return r._outerProjectId
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店id
+func (r *AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeVideoChangestatusAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }
 
 // SetStatus is Status Setter

@@ -28,7 +28,7 @@ type CompanyStoreDto struct {
 	GaodeLatitude string `json:"gaode_latitude,omitempty" xml:"gaode_latitude,omitempty"`
 	// 地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 门店开通业务
+	// 门店开通业务（1-新房 2-二手房 3-租房,5-交易服务 以英文逗号分隔）
 	StoreBizType string `json:"store_biz_type,omitempty" xml:"store_biz_type,omitempty"`
 	// 营业执照编号
 	CompanyLicenseNo string `json:"company_license_no,omitempty" xml:"company_license_no,omitempty"`
@@ -44,7 +44,7 @@ type CompanyStoreDto struct {
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
 	// 营业执照地址
 	CompanyLicenseUrl string `json:"company_license_url,omitempty" xml:"company_license_url,omitempty"`
-	// 门店负责业务（0-二手房 1-长租公寓 2-居间模式）
+	// 门店负责业务（0-二手房 1-长租公寓 2-居间模式 3-新房 5-交易服务）
 	PartakeBusiness string `json:"partake_business,omitempty" xml:"partake_business,omitempty"`
 	// 标准门店标签
 	TagCodes string `json:"tag_codes,omitempty" xml:"tag_codes,omitempty"`
@@ -56,6 +56,12 @@ type CompanyStoreDto struct {
 	SourceChannel string `json:"source_channel,omitempty" xml:"source_channel,omitempty"`
 	// 签约公司名称
 	SigningCompanyName string `json:"signing_company_name,omitempty" xml:"signing_company_name,omitempty"`
+	// 外部合作品牌id
+	OuterCooperateBrandIds string `json:"outer_cooperate_brand_ids,omitempty" xml:"outer_cooperate_brand_ids,omitempty"`
+	// 签约公司id
+	OuterSignCompanyId string `json:"outer_sign_company_id,omitempty" xml:"outer_sign_company_id,omitempty"`
+	// 扩展信息
+	ExtendsInfo string `json:"extends_info,omitempty" xml:"extends_info,omitempty"`
 	// 城市ID
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 门店状态
@@ -72,8 +78,14 @@ type CompanyStoreDto struct {
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 	// 0-同步，1-异步
 	IsAsync int64 `json:"is_async,omitempty" xml:"is_async,omitempty"`
-	// 门店类型
+	// 门店类型：0-二租标准店（默认）   1-新房项目店 2-渠道标准店   5-交易中心店
 	StoreType int64 `json:"store_type,omitempty" xml:"store_type,omitempty"`
 	// 商务等级（0-普通  1-公寓KA）
 	BusinessLevel int64 `json:"business_level,omitempty" xml:"business_level,omitempty"`
+	// ms级时间戳
+	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+	// 主营类目 渠道标准店必填 主营类目 1-新房 2-二手房 3-租房 5-交易服务
+	MainCategory int64 `json:"main_category,omitempty" xml:"main_category,omitempty"`
+	// 子类型
+	SubType int64 `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
 }

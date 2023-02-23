@@ -29,12 +29,15 @@ func (r AlibabaPricePromotionItemAddAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaPricePromotionItemAddAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaPricePromotionItemAddAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaPricePromotionItemAddAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPromotionContent is PromotionContent Setter

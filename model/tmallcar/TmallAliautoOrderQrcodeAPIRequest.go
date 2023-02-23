@@ -33,12 +33,15 @@ func (r TmallAliautoOrderQrcodeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoOrderQrcodeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallAliautoOrderQrcodeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallAliautoOrderQrcodeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemAndSkuNumList is ItemAndSkuNumList Setter

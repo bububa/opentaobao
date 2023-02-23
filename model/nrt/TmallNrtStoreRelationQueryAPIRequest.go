@@ -29,12 +29,15 @@ func (r TmallNrtStoreRelationQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallNrtStoreRelationQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallNrtStoreRelationQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallNrtStoreRelationQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStoreQuery is StoreQuery Setter

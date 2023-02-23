@@ -1,0 +1,61 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户 token",
+			"required": true
+		},
+		{
+			"name": "member_voucher_id",
+			"type": "String",
+			"description": "会员权益ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功/失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "200/500"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "q_r_code_image",
+							"type": "String",
+							"description": "线下权益券二维码"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherVO",
+					"description": "权益券实体类"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "线下核销券二维码返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.offline.qrcode",
+	"apiChineseName": "德比线下权益券二维码查询",
+	"description": "德比线下权益券二维码查询",
+	"id": 64062
+}

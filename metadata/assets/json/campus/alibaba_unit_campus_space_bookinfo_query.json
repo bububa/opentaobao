@@ -1,0 +1,140 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "租户id",
+					"required": true
+				}
+			],
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "work_bench_context",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "apply_end_time",
+					"type": "Date",
+					"description": "申请结束时间",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "一页大小",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "apply_start_time",
+					"type": "Date",
+					"description": "申请开始时间",
+					"required": true
+				},
+				{
+					"name": "resource_type_code",
+					"type": "String",
+					"description": "资源类型",
+					"required": true
+				}
+			],
+			"name": "get_resource_book_info_request",
+			"type": "GetResourceBookInfoRequest",
+			"description": "get_resource_book_info_request",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_status",
+			"type": "Boolean",
+			"description": "标识本次调用是否执行成功"
+		},
+		{
+			"name": "error_code_status",
+			"type": "String",
+			"description": "本次调用返回errorCode，一般为错误代码"
+		},
+		{
+			"name": "error_ext_info",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String[]",
+					"description": "结果"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页面"
+				},
+				{
+					"name": "items",
+					"type": "String",
+					"description": "返回内容"
+				}
+			],
+			"name": "content",
+			"type": "Page",
+			"description": "具体返回内容"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "本次调用返回的消息，一般为错误消息"
+		},
+		{
+			"name": "error_level",
+			"type": "String",
+			"description": "错误level"
+		}
+	],
+	"name": "alibaba.unit.campus.space.bookinfo.query",
+	"apiChineseName": "环路资源信息查询单元环境",
+	"description": "环路资源信息查询单元环境",
+	"id": 64910
+}

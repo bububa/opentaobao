@@ -29,12 +29,15 @@ func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSungariDisposeSubmitAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetInfo is Info Setter

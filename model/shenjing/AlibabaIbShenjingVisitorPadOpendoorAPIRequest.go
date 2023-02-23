@@ -31,12 +31,15 @@ func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIbShenjingVisitorPadOpendoorAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetId is Id Setter

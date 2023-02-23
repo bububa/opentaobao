@@ -212,6 +212,11 @@
 							"name": "signing_merchant_open_id",
 							"type": "Number",
 							"description": "授权的主体ID  说明： 当签约类型是授权代理人时，授权代理人ID需要必填"
+						},
+						{
+							"name": "cover_picture",
+							"type": "String",
+							"description": "房源封面图列表"
 						}
 					],
 					"name": "data",

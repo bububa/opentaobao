@@ -29,12 +29,15 @@ func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthOutflowPrescriptionCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreateRequest is CreateRequest Setter

@@ -18,10 +18,10 @@ type NrtCrmActivityDetailDto struct {
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 摊位地址
 	StoreAddress string `json:"store_address,omitempty" xml:"store_address,omitempty"`
-	// 头图
-	BannerUrl string `json:"banner_url,omitempty" xml:"banner_url,omitempty"`
 	// 有价礼包List
 	TmpSceneActivityIdList string `json:"tmp_scene_activity_id_list,omitempty" xml:"tmp_scene_activity_id_list,omitempty"`
+	// 头图
+	BannerUrl string `json:"banner_url,omitempty" xml:"banner_url,omitempty"`
 	// 留资人数
 	GuiderCustomerNum int64 `json:"guider_customer_num,omitempty" xml:"guider_customer_num,omitempty"`
 	// 总留资人数

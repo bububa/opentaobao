@@ -1,0 +1,417 @@
+{
+	"requestParams": [
+		{
+			"name": "property",
+			"type": "String",
+			"description": "property of client",
+			"required": true
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "ip of client",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "Error message when success == false",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "Error code when success == false",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "description",
+							"type": "String",
+							"description": "Description of Content Provider",
+							"required": true
+						},
+						{
+							"name": "link",
+							"type": "String",
+							"description": "Homepage URL of Content Provider",
+							"required": true
+						},
+						{
+							"name": "pub_date",
+							"type": "Date",
+							"description": "Last time the entry was modified",
+							"required": true
+						},
+						{
+							"name": "skip_days",
+							"type": "String",
+							"description": "skip days for the channel",
+							"required": true
+						},
+						{
+							"name": "skip_hours",
+							"type": "String",
+							"description": "skip hours for the channel",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "Name of Content Provider",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "album",
+									"type": "String",
+									"description": "album",
+									"required": true
+								},
+								{
+									"name": "artist",
+									"type": "String",
+									"description": "artist",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "available_language",
+											"type": "String",
+											"description": "availableLanguage",
+											"required": true
+										}
+									],
+									"name": "availablelanguages",
+									"type": "AvailableLanguageDto[]",
+									"description": "availablelanguages",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "available_subtitle",
+											"type": "String",
+											"description": "availableSubtitle",
+											"required": true
+										}
+									],
+									"name": "availablesubtitles",
+									"type": "AvailableSubtitleDto[]",
+									"description": "availablesubtitles",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "award_sand_festival",
+											"type": "String",
+											"description": "awardSandFestival",
+											"required": true
+										}
+									],
+									"name": "awardsandfestivals",
+									"type": "AwardSandFestivalDto[]",
+									"description": "awardsandfestivals",
+									"required": true
+								},
+								{
+									"name": "bit_rate",
+									"type": "String",
+									"description": "bitRate",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "character_name",
+											"type": "String",
+											"description": "characterName",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "person_id",
+											"type": "String",
+											"description": "personId",
+											"required": true
+										},
+										{
+											"name": "role",
+											"type": "String",
+											"description": "role",
+											"required": true
+										}
+									],
+									"name": "casts",
+									"type": "MemberDto[]",
+									"description": "casts",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "value",
+											"required": true
+										}
+									],
+									"name": "certifications",
+									"type": "CertificationDto[]",
+									"description": "certifications",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "character_name",
+											"type": "String",
+											"description": "characterName",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "person_id",
+											"type": "String",
+											"description": "personId",
+											"required": true
+										},
+										{
+											"name": "role",
+											"type": "String",
+											"description": "role",
+											"required": true
+										}
+									],
+									"name": "crews",
+									"type": "MemberDto[]",
+									"description": "crews",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "description",
+									"required": true
+								},
+								{
+									"name": "duration",
+									"type": "String",
+									"description": "duration",
+									"required": true
+								},
+								{
+									"name": "episode_number",
+									"type": "Number",
+									"description": "episodeNumber",
+									"required": true
+								},
+								{
+									"name": "genres",
+									"type": "String[]",
+									"description": "genres",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "image_url",
+											"type": "String",
+											"description": "imageUrl",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "type",
+											"required": true
+										}
+									],
+									"name": "images",
+									"type": "ImageDto[]",
+									"description": "images",
+									"required": true
+								},
+								{
+									"name": "procom",
+									"type": "String",
+									"description": "procom",
+									"required": true
+								},
+								{
+									"name": "program_type",
+									"type": "String",
+									"description": "programType",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "rating",
+											"type": "String",
+											"description": "rating",
+											"required": true
+										}
+									],
+									"name": "ratings",
+									"type": "RatingDto[]",
+									"description": "ratings",
+									"required": true
+								},
+								{
+									"name": "resolution",
+									"type": "String",
+									"description": "resolution",
+									"required": true
+								},
+								{
+									"name": "season_id",
+									"type": "String",
+									"description": "seasonId",
+									"required": true
+								},
+								{
+									"name": "season_number",
+									"type": "Number",
+									"description": "seasonNumber",
+									"required": true
+								},
+								{
+									"name": "series_id",
+									"type": "String",
+									"description": "seriesId",
+									"required": true
+								},
+								{
+									"name": "sub_program_type",
+									"type": "String",
+									"description": "subProgramType",
+									"required": true
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "subTitle",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "title",
+									"required": true
+								},
+								{
+									"name": "title_id",
+									"type": "String",
+									"description": "titleId",
+									"required": true
+								},
+								{
+									"name": "trailer",
+									"type": "String",
+									"description": "trailer",
+									"required": true
+								},
+								{
+									"subParams": [
+										{
+											"name": "currency",
+											"type": "String",
+											"description": "currency",
+											"required": true
+										},
+										{
+											"name": "license",
+											"type": "String",
+											"description": "license",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "price",
+											"required": true
+										},
+										{
+											"name": "quality",
+											"type": "String",
+											"description": "quality",
+											"required": true
+										}
+									],
+									"name": "viewingoptions",
+									"type": "ViewingOptionDto[]",
+									"description": "viewingoptions",
+									"required": true
+								},
+								{
+									"name": "year",
+									"type": "String",
+									"description": "year",
+									"required": true
+								}
+							],
+							"name": "item_list",
+							"type": "ItemDto[]",
+							"description": "itemList",
+							"required": true
+						}
+					],
+					"name": "model",
+					"type": "ChannelDto",
+					"description": "Metadata Info",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "Is process succeed.",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "yunos.tvscreen.lge.launcher.get",
+	"apiChineseName": "LG用桌面信息获取",
+	"description": "LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务,根据LG的需求定制输出格式",
+	"id": 33772
+}

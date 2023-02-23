@@ -29,12 +29,15 @@ func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosTvpubadminContentVideoGetauditlistAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetQuery is Query Setter

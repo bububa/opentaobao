@@ -1,0 +1,81 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sn_no",
+					"type": "String",
+					"description": "sn",
+					"required": true
+				}
+			],
+			"name": "controller_offline_request_dto",
+			"type": "ControllerOfflineRequestDTO",
+			"description": "requestParam"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求成功标识"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "200"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "门禁点ID"
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "门禁点名称"
+										}
+									],
+									"name": "guard",
+									"type": "GuardDTO",
+									"description": "guard"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "文件url"
+								}
+							],
+							"name": "guard_offline_list",
+							"type": "GuardOfflineDataDTO[]",
+							"description": "门禁点数据"
+						}
+					],
+					"name": "content",
+					"type": "ControllerOfflineDataDTO",
+					"description": "离线数据DTO"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "成功"
+				}
+			],
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.campus.guard.controller.offlinedata",
+	"apiChineseName": "点位离线数据拉取",
+	"description": "点位离线数据拉取",
+	"id": 64117
+}

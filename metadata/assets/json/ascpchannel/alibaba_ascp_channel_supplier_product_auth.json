@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "dimension_type",
+					"type": "Number",
+					"description": "授权纬度，5：经营模式 + 指定用户/6：经营模式 + 指定渠道",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "渠道产品id",
+					"required": true
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商名称，指定用户传值"
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "channel_product_auth_request",
+			"type": "ChannelProductAuthRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回值包装"
+		}
+	],
+	"name": "alibaba.ascp.channel.supplier.product.auth",
+	"apiChineseName": "供应商授权渠道产品到市场或分销商",
+	"description": "供应商授权渠道产品到市场或分销商",
+	"id": 64472
+}

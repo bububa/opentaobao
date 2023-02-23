@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "card_number",
+			"type": "String",
+			"description": "会员卡号",
+			"required": true
+		},
+		{
+			"name": "member_voucher_card_i_d",
+			"type": "String",
+			"description": "权益卡号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "card_number",
+							"type": "String",
+							"description": "会员卡号"
+						},
+						{
+							"name": "member_voucher_card_i_d",
+							"type": "String",
+							"description": "权益卡号"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardActiveVO",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.active",
+	"apiChineseName": "权益卡订单激活",
+	"description": "权益卡订单激活",
+	"id": 64087
+}

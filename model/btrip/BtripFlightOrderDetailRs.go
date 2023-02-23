@@ -26,7 +26,7 @@ type BtripFlightOrderDetailRs struct {
 	PayTime string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
 	// 商旅订单号
 	BtripOrderId int64 `json:"btrip_order_id,omitempty" xml:"btrip_order_id,omitempty"`
-	// 支付状态
+	// 支付状态：0（初始状态），1（冻结成功），3（解冻成功），5（转交易成功），9（创建交易成功），11（关闭交易成功）
 	PayStatus int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
 	// 优惠金额
 	PromotionPrice int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
@@ -34,7 +34,7 @@ type BtripFlightOrderDetailRs struct {
 	SettleAmount int64 `json:"settle_amount,omitempty" xml:"settle_amount,omitempty"`
 	// 结算类型
 	SettleType int64 `json:"settle_type,omitempty" xml:"settle_type,omitempty"`
-	// 订单状态：0初始化，1占座成功待支付，2支付成功待出票，3出票成功，4订单已取消，5订单已失败
+	// 订单状态：0（初始状态）4（处理中）5（待支付）10（失败）32（订单可支付状态）
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 总机建费用
 	TotalBuildPrice int64 `json:"total_build_price,omitempty" xml:"total_build_price,omitempty"`

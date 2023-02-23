@@ -53,12 +53,15 @@ func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelPotentialMemberBindAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFirstName is FirstName Setter

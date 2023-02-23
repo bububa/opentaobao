@@ -18,8 +18,4 @@ type PromotionDetail struct {
 	PromotionName string `json:"promotion_name,omitempty" xml:"promotion_name,omitempty"`
 	// 交易的主订单或子订单号
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
-	// 分摊优惠金额（免运费、限时打折时为空）,单位：元
-	KdDiscountFee string `json:"kd_discount_fee,omitempty" xml:"kd_discount_fee,omitempty"`
-	// 若优惠项在主订单上，返回子订单的分摊信息
-	KdChildDiscountFee string `json:"kd_child_discount_fee,omitempty" xml:"kd_child_discount_fee,omitempty"`
 }

@@ -14,10 +14,10 @@ type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 	model.Params
 	// 系统自动生成
 	_orderItemList []Orderitemlistwlbwmsstockinordernotifywl
-	// 仓库编码
-	_storeCode string
 	// 入库单据编码
 	_orderCode string
+	// 仓库编码
+	_storeCode string
 	// 可选择性文本透传至WMS，比如加工归还、委外归还、借出归还、内部归还等
 	_inboundTypeDesc string
 	// 订单标记以逗号分隔：  9:上门退货入库 13: 退货时是否收取发票，默认不收取（即没13为多选项，如1,2,8,9）
@@ -49,9 +49,9 @@ type TaobaoWlbWmsStockInOrderNotifyAPIRequest struct {
 	// 单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库
 	_orderType int64
 	// 系统自动生成
-	_receiverInfo *Receiverinfowlbwmsstockinordernotifywl
-	// 系统自动生成
 	_senderInfo *Senderinfowlbwmsstockinordernotifywl
+	// 系统自动生成
+	_receiverInfo *Receiverinfowlbwmsstockinordernotifywl
 }
 
 // NewTaobaoWlbWmsStockInOrderNotifyRequest 初始化TaobaoWlbWmsStockInOrderNotifyAPIRequest对象
@@ -67,12 +67,15 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderItemList is OrderItemList Setter
@@ -88,19 +91,6 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderItemList() []Orderitem
 	return r._orderItemList
 }
 
-// SetStoreCode is StoreCode Setter
-// 仓库编码
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetStoreCode(_storeCode string) error {
-	r._storeCode = _storeCode
-	r.Set("store_code", _storeCode)
-	return nil
-}
-
-// GetStoreCode StoreCode Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetStoreCode() string {
-	return r._storeCode
-}
-
 // SetOrderCode is OrderCode Setter
 // 入库单据编码
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCode(_orderCode string) error {
@@ -112,6 +102,19 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetOrderCode(_orderCode strin
 // GetOrderCode OrderCode Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderCode() string {
 	return r._orderCode
+}
+
+// SetStoreCode is StoreCode Setter
+// 仓库编码
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetStoreCode(_storeCode string) error {
+	r._storeCode = _storeCode
+	r.Set("store_code", _storeCode)
+	return nil
+}
+
+// GetStoreCode StoreCode Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetStoreCode() string {
+	return r._storeCode
 }
 
 // SetInboundTypeDesc is InboundTypeDesc Setter
@@ -309,19 +312,6 @@ func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetOrderType() int64 {
 	return r._orderType
 }
 
-// SetReceiverInfo is ReceiverInfo Setter
-// 系统自动生成
-func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsstockinordernotifywl) error {
-	r._receiverInfo = _receiverInfo
-	r.Set("receiver_info", _receiverInfo)
-	return nil
-}
-
-// GetReceiverInfo ReceiverInfo Getter
-func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
-	return r._receiverInfo
-}
-
 // SetSenderInfo is SenderInfo Setter
 // 系统自动生成
 func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Senderinfowlbwmsstockinordernotifywl) error {
@@ -333,4 +323,17 @@ func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetSenderInfo(_senderInfo *Se
 // GetSenderInfo SenderInfo Getter
 func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetSenderInfo() *Senderinfowlbwmsstockinordernotifywl {
 	return r._senderInfo
+}
+
+// SetReceiverInfo is ReceiverInfo Setter
+// 系统自动生成
+func (r *TaobaoWlbWmsStockInOrderNotifyAPIRequest) SetReceiverInfo(_receiverInfo *Receiverinfowlbwmsstockinordernotifywl) error {
+	r._receiverInfo = _receiverInfo
+	r.Set("receiver_info", _receiverInfo)
+	return nil
+}
+
+// GetReceiverInfo ReceiverInfo Getter
+func (r TaobaoWlbWmsStockInOrderNotifyAPIRequest) GetReceiverInfo() *Receiverinfowlbwmsstockinordernotifywl {
+	return r._receiverInfo
 }

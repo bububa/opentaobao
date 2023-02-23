@@ -35,12 +35,15 @@ func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoPlaceStoreUpdateLabelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLabelIdList is LabelIdList Setter

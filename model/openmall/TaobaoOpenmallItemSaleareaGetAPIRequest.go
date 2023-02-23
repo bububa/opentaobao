@@ -31,12 +31,15 @@ func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOpenmallItemSaleareaGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSkuIds is SkuIds Setter

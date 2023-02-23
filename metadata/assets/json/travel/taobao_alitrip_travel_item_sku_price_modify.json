@@ -6,11 +6,6 @@
 			"description": "商品id。itemId和outProductId至少填写一个"
 		},
 		{
-			"name": "out_product_id",
-			"type": "String",
-			"description": "商品 外部商家编码。itemId和outProductId至少填写一个"
-		},
-		{
 			"subParams": [
 				{
 					"name": "outer_sku_id",
@@ -21,9 +16,20 @@
 				{
 					"subParams": [
 						{
+							"name": "date",
+							"type": "Date",
+							"description": "日期。对于普通商品必填，对于预约商品该字段不填",
+							"required": true
+						},
+						{
 							"name": "operation",
 							"type": "Number",
 							"description": "日历价格库存的操作有以下三种：1-新增;2-增量更新;3-覆盖更新;4-删除。其中新增时成人价格和库存都必须大于0；增量更新只能对库存数进行修改，表示对某一天的成人或儿童新增或减少几个库存。覆盖更新能对库存和价格进行修改，表示用传入的值覆盖原有的库存和价格。删除支持删除单房差、儿童价格库存、成人价格库存，如果删除成人价格库存，则同时会把单房差和儿童价格库存也删除。"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格"
 						},
 						{
 							"name": "price_type",
@@ -35,17 +41,6 @@
 							"name": "stock",
 							"type": "Number",
 							"description": "库存"
-						},
-						{
-							"name": "price",
-							"type": "Number",
-							"description": "价格"
-						},
-						{
-							"name": "date",
-							"type": "Date",
-							"description": "日期。对于普通商品必填，对于预约商品该字段不填",
-							"required": true
 						},
 						{
 							"name": "outer_price_id",
@@ -63,6 +58,11 @@
 			"type": "PontusTravelItemSkuInfo[]",
 			"description": "商品日历价格库存套餐",
 			"maxListSize": 20
+		},
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "商品 外部商家编码。itemId和outProductId至少填写一个"
 		},
 		{
 			"name": "modify_type",

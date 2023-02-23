@@ -25,6 +25,11 @@
 					"type": "Number",
 					"description": "0-非测试 1-测试",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
 				}
 			],
 			"name": "im_receive_model_dto",

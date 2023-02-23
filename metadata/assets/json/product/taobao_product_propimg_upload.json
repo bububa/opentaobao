@@ -34,14 +34,14 @@
 		{
 			"subParams": [
 				{
-					"name": "id",
-					"type": "Number",
-					"description": "产品属性图片ID"
-				},
-				{
 					"name": "url",
 					"type": "String",
 					"description": "图片地址.(绝对地址,格式:http://host/image_path)"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "产品属性图片ID"
 				},
 				{
 					"name": "created",

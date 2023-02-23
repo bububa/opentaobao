@@ -31,12 +31,15 @@ func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugDownloadGetentauthentAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAuthBeginDate is AuthBeginDate Setter

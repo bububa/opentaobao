@@ -1,0 +1,104 @@
+{
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单号"
+		},
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "服务申请单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "query_success",
+			"type": "Boolean",
+			"description": "查询是否成功"
+		},
+		{
+			"subParams": [
+				{
+					"name": "apply_type",
+					"type": "String",
+					"description": "申请服务类型"
+				},
+				{
+					"name": "service_plan_type",
+					"type": "String",
+					"description": "理赔方案类型"
+				},
+				{
+					"name": "main_status",
+					"type": "Number",
+					"description": "售后申请单主状态"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "用户寄出快递单号"
+						},
+						{
+							"name": "seller_address_detail",
+							"type": "String",
+							"description": "卖家收件地址"
+						},
+						{
+							"name": "seller_address_phone",
+							"type": "String",
+							"description": "卖家收件电话"
+						},
+						{
+							"name": "seller_address_name",
+							"type": "String",
+							"description": "卖家人收件名"
+						}
+					],
+					"name": "attributes",
+					"type": "Attributes",
+					"description": "扩展信息"
+				},
+				{
+					"name": "service_plan_info",
+					"type": "String",
+					"description": "理赔方案信息"
+				},
+				{
+					"name": "main_order_id",
+					"type": "String",
+					"description": "正向订单号"
+				},
+				{
+					"name": "apply_info",
+					"type": "String",
+					"description": "申请信息"
+				},
+				{
+					"name": "service_biz_code",
+					"type": "String",
+					"description": "售后服务CODE"
+				},
+				{
+					"name": "sub_status",
+					"type": "Number",
+					"description": "售后申请单子状态"
+				},
+				{
+					"name": "service_scene_type",
+					"type": "String",
+					"description": "售后服务场景类型"
+				}
+			],
+			"name": "module",
+			"type": "Module",
+			"description": "查询结果"
+		}
+	],
+	"name": "alibaba.idle.tender.aftersale.order.get",
+	"apiChineseName": "闲鱼帮卖售后服务单查询",
+	"description": "闲鱼帮卖售后服务单查询",
+	"id": 64383
+}

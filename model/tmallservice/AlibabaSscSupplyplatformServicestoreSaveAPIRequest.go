@@ -29,12 +29,15 @@ func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSscSupplyplatformServicestoreSaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetServiceStoreSaveReq is ServiceStoreSaveReq Setter

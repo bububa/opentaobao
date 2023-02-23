@@ -33,12 +33,15 @@ func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoPlaceStoregroupUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetName is Name Setter

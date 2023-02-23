@@ -29,12 +29,15 @@ func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTaxInvoiceSyncLedgerAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamSyncLedgerInvoiceRequest is ParamSyncLedgerInvoiceRequest Setter

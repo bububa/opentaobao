@@ -14,12 +14,12 @@ type TaobaoXhotelRateUpdateAPIRequest struct {
 	model.Params
 	// 每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
 	_inventoryPrice string
+	// 系统商，一般不用填写，使用需要申请
+	_vendor string
 	// 商家价格计划编码
 	_rateplanCode string
 	// 商家房型ID
 	_outRid string
-	// 系统商，一般不用填写，使用需要申请
-	_vendor string
 	// 日历价格开关， date：开关状态控制的是那一天 rate_status：开关状态。0，关闭；1，打开
 	_rateSwitchCal string
 	// 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
@@ -43,12 +43,15 @@ func (r TaobaoXhotelRateUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelRateUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelRateUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetInventoryPrice is InventoryPrice Setter
@@ -62,6 +65,19 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetInventoryPrice(_inventoryPrice str
 // GetInventoryPrice InventoryPrice Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetInventoryPrice() string {
 	return r._inventoryPrice
+}
+
+// SetVendor is Vendor Setter
+// 系统商，一般不用填写，使用需要申请
+func (r *TaobaoXhotelRateUpdateAPIRequest) SetVendor(_vendor string) error {
+	r._vendor = _vendor
+	r.Set("vendor", _vendor)
+	return nil
+}
+
+// GetVendor Vendor Getter
+func (r TaobaoXhotelRateUpdateAPIRequest) GetVendor() string {
+	return r._vendor
 }
 
 // SetRateplanCode is RateplanCode Setter
@@ -88,19 +104,6 @@ func (r *TaobaoXhotelRateUpdateAPIRequest) SetOutRid(_outRid string) error {
 // GetOutRid OutRid Getter
 func (r TaobaoXhotelRateUpdateAPIRequest) GetOutRid() string {
 	return r._outRid
-}
-
-// SetVendor is Vendor Setter
-// 系统商，一般不用填写，使用需要申请
-func (r *TaobaoXhotelRateUpdateAPIRequest) SetVendor(_vendor string) error {
-	r._vendor = _vendor
-	r.Set("vendor", _vendor)
-	return nil
-}
-
-// GetVendor Vendor Getter
-func (r TaobaoXhotelRateUpdateAPIRequest) GetVendor() string {
-	return r._vendor
 }
 
 // SetRateSwitchCal is RateSwitchCal Setter

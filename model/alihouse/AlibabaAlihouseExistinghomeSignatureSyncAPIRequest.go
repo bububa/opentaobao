@@ -29,12 +29,15 @@ func (r AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseExistinghomeSignatureSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetElectricSignatureDto is ElectricSignatureDto Setter

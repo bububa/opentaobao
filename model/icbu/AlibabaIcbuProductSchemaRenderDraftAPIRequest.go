@@ -29,12 +29,15 @@ func (r AlibabaIcbuProductSchemaRenderDraftAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuProductSchemaRenderDraftAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIcbuProductSchemaRenderDraftAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIcbuProductSchemaRenderDraftAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamProductTopPublishRequest is ParamProductTopPublishRequest Setter

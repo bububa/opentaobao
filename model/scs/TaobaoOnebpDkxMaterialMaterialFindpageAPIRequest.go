@@ -31,12 +31,15 @@ func (r TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOnebpDkxMaterialMaterialFindpageAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetApiServiceContext is ApiServiceContext Setter

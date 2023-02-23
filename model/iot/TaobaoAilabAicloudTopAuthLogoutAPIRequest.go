@@ -33,12 +33,15 @@ func (r TaobaoAilabAicloudTopAuthLogoutAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopAuthLogoutAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAilabAicloudTopAuthLogoutAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAilabAicloudTopAuthLogoutAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUserId is UserId Setter

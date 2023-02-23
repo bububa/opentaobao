@@ -12,10 +12,10 @@ import (
 // 店铺小部件和模块开发的isv通用店铺券领券接口
 type AlibabaShopCouponApplyAPIRequest struct {
 	model.Params
-	// 买家的openId
-	_openId string
 	// 券的uuid
 	_uuid string
+	// 买家的openId
+	_openId string
 }
 
 // NewAlibabaShopCouponApplyRequest 初始化AlibabaShopCouponApplyAPIRequest对象
@@ -31,25 +31,15 @@ func (r AlibabaShopCouponApplyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaShopCouponApplyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaShopCouponApplyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetOpenId is OpenId Setter
-// 买家的openId
-func (r *AlibabaShopCouponApplyAPIRequest) SetOpenId(_openId string) error {
-	r._openId = _openId
-	r.Set("open_id", _openId)
-	return nil
-}
-
-// GetOpenId OpenId Getter
-func (r AlibabaShopCouponApplyAPIRequest) GetOpenId() string {
-	return r._openId
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaShopCouponApplyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetUuid is Uuid Setter
@@ -63,4 +53,17 @@ func (r *AlibabaShopCouponApplyAPIRequest) SetUuid(_uuid string) error {
 // GetUuid Uuid Getter
 func (r AlibabaShopCouponApplyAPIRequest) GetUuid() string {
 	return r._uuid
+}
+
+// SetOpenId is OpenId Setter
+// 买家的openId
+func (r *AlibabaShopCouponApplyAPIRequest) SetOpenId(_openId string) error {
+	r._openId = _openId
+	r.Set("open_id", _openId)
+	return nil
+}
+
+// GetOpenId OpenId Getter
+func (r AlibabaShopCouponApplyAPIRequest) GetOpenId() string {
+	return r._openId
 }

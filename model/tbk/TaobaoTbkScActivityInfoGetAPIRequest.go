@@ -37,12 +37,15 @@ func (r TaobaoTbkScActivityInfoGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScActivityInfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScActivityInfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScActivityInfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetActivityMaterialId is ActivityMaterialId Setter

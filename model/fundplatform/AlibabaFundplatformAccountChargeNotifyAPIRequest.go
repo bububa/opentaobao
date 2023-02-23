@@ -29,12 +29,15 @@ func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaFundplatformAccountChargeNotifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRequest is Request Setter

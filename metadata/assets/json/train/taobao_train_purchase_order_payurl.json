@@ -1,0 +1,64 @@
+{
+	"requestParams": [
+		{
+			"name": "pay_type",
+			"type": "Number",
+			"description": "支付类型(1-app,0-pc)，暂时只支持app",
+			"required": true
+		},
+		{
+			"name": "main_biz_order_id",
+			"type": "Number",
+			"description": "主订单id",
+			"required": true
+		},
+		{
+			"name": "pay_channel",
+			"type": "String",
+			"description": "支付渠道(alipay-支付宝、union-银联、cmb-中国招商银行)",
+			"required": true
+		},
+		{
+			"name": "business_type",
+			"type": "Number",
+			"description": "订单业务类型(1-正向,2-改签)",
+			"required": true
+		},
+		{
+			"name": "change_apply_id",
+			"type": "Number",
+			"description": "改签id,取自mtop.trip.train.createChangeOrder的响应{\"headers\":{},\"httpStatusCode\":200,\"model\":{\"applyId\":532585123123,\"occupyChannelType\":1,\"occupyType\":0},\"success\":true}"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "失败code"
+		},
+		{
+			"name": "inner_msg",
+			"type": "String",
+			"description": "失败msg补充"
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "支付链接地址"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "失败msg"
+		}
+	],
+	"name": "taobao.train.purchase.order.payurl",
+	"apiChineseName": "火车票采购商接口-获取支付链接",
+	"description": "火车票采购商接口-获取支付链接",
+	"id": 65161
+}

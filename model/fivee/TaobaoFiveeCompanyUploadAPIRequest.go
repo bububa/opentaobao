@@ -31,12 +31,15 @@ func (r TaobaoFiveeCompanyUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFiveeCompanyUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFiveeCompanyUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFiveeCompanyUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBucode is ParamBucode Setter

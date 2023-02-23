@@ -87,6 +87,11 @@
 					"name": "voucher_id",
 					"type": "String",
 					"description": "代金券id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
 				}
 			],
 			"name": "hotel_details_param",
@@ -702,6 +707,11 @@
 															"name": "first_live",
 															"type": "String",
 															"description": "首住"
+														},
+														{
+															"name": "is_derby_voucher_room",
+															"type": "Boolean",
+															"description": "是否为德比权益券商品"
 														}
 													],
 													"name": "price_info",
@@ -766,6 +776,36 @@
 													"name": "coupon_type",
 													"type": "String",
 													"description": "优惠券类型"
+												},
+												{
+													"name": "category",
+													"type": "String",
+													"description": "权益券类型"
+												},
+												{
+													"name": "discount_off",
+													"type": "Number",
+													"description": "折扣百分比"
+												},
+												{
+													"name": "is_derby_voucher_room",
+													"type": "Boolean",
+													"description": "是否为权益商品房型"
+												},
+												{
+													"name": "booking_or_buy",
+													"type": "Number",
+													"description": "0 立即预订/1 前去购买,"
+												},
+												{
+													"name": "voucher_card_category",
+													"type": "String",
+													"description": "APLUSP"
+												},
+												{
+													"name": "underscore_price",
+													"type": "String",
+													"description": "划线价"
 												}
 											],
 											"name": "price_info_list",

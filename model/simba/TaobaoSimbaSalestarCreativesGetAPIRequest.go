@@ -33,12 +33,15 @@ func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaSalestarCreativesGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreativeIds is CreativeIds Setter

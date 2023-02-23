@@ -31,12 +31,15 @@ func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSecurityJaqAppShieldAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAppInfo is AppInfo Setter

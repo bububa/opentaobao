@@ -18,6 +18,10 @@ type TravelerInfo struct {
 	DepAirport string `json:"dep_airport,omitempty" xml:"dep_airport,omitempty"`
 	// 到达机场三字码
 	ArrAirport string `json:"arr_airport,omitempty" xml:"arr_airport,omitempty"`
+	// 出发机场三字码
+	DepCity string `json:"dep_city,omitempty" xml:"dep_city,omitempty"`
+	// 到达机场三字码
+	ArrCity string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
 	// 乘客类型
 	Type string `json:"type,omitempty" xml:"type,omitempty"`
 	// 生日（非身份证必选）

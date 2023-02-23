@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,6 +12,7 @@ import (
 	"path/filepath"
 
 	"github.com/bububa/opentaobao/metadata"
+	"github.com/bububa/opentaobao/metadata/util"
 )
 
 // Download 下载淘宝API文档metadata
@@ -104,14 +104,13 @@ func getTbToken(clt *http.Client) (string, error) {
 
 // getApiCatelogs 获取文档目录树
 func getApiCatelogs(clt *http.Client, tbToken string) ([]metadata.ApiCatelogTree, error) {
-	resp, err := clt.Get(fmt.Sprintf(metadata.API_CATELOG_URL, url.QueryEscape(tbToken)))
+	resp, err := clt.Get(util.StringsJoin(metadata.API_CATELOG_URL, url.QueryEscape(tbToken)))
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
 	var ret metadata.ApiCatelogResponse
-	err = json.NewDecoder(resp.Body).Decode(&ret)
-	if err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&ret); err != nil {
 		return nil, err
 	}
 	if ret.IsError() {
@@ -125,7 +124,7 @@ func getApiCatelogs(clt *http.Client, tbToken string) ([]metadata.ApiCatelogTree
 
 // getDoc 获取API文档
 func getDoc(clt *http.Client, tbToken string, catelog metadata.ApiCatelog) (metadata.ApiDoc, error) {
-	resp, err := clt.Get(fmt.Sprintf(metadata.DOC_URL, catelog.Id, url.QueryEscape(tbToken)))
+	resp, err := clt.Get(metadata.DocURL(catelog.Id, url.QueryEscape(tbToken)))
 	if err != nil {
 		return metadata.ApiDoc{}, err
 	}
@@ -166,7 +165,7 @@ func saveDoc(doc metadata.ApiDoc, catelogPath string) error {
 	if err != nil {
 		return err
 	}
-	docPath := filepath.Join(catelogPath, fmt.Sprintf("%s.json", doc.Filename()))
+	docPath := filepath.Join(catelogPath, util.StringsJoin(doc.Filename(), ".json"))
 	if err := ioutil.WriteFile(docPath, buf, os.ModePerm); err != nil {
 		return err
 	}

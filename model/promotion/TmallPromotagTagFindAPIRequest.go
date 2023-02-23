@@ -14,10 +14,10 @@ type TmallPromotagTagFindAPIRequest struct {
 	model.Params
 	// 标签名称，查询时可选项
 	_tagName string
-	// 当前页码
-	_pageNo int64
 	// 每页显示个数
 	_pageSize int64
+	// 当前页码
+	_pageNo int64
 	// 标签ID
 	_tagId int64
 }
@@ -35,12 +35,15 @@ func (r TmallPromotagTagFindAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallPromotagTagFindAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallPromotagTagFindAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallPromotagTagFindAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTagName is TagName Setter
@@ -56,19 +59,6 @@ func (r TmallPromotagTagFindAPIRequest) GetTagName() string {
 	return r._tagName
 }
 
-// SetPageNo is PageNo Setter
-// 当前页码
-func (r *TmallPromotagTagFindAPIRequest) SetPageNo(_pageNo int64) error {
-	r._pageNo = _pageNo
-	r.Set("page_no", _pageNo)
-	return nil
-}
-
-// GetPageNo PageNo Getter
-func (r TmallPromotagTagFindAPIRequest) GetPageNo() int64 {
-	return r._pageNo
-}
-
 // SetPageSize is PageSize Setter
 // 每页显示个数
 func (r *TmallPromotagTagFindAPIRequest) SetPageSize(_pageSize int64) error {
@@ -80,6 +70,19 @@ func (r *TmallPromotagTagFindAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TmallPromotagTagFindAPIRequest) GetPageSize() int64 {
 	return r._pageSize
+}
+
+// SetPageNo is PageNo Setter
+// 当前页码
+func (r *TmallPromotagTagFindAPIRequest) SetPageNo(_pageNo int64) error {
+	r._pageNo = _pageNo
+	r.Set("page_no", _pageNo)
+	return nil
+}
+
+// GetPageNo PageNo Getter
+func (r TmallPromotagTagFindAPIRequest) GetPageNo() int64 {
+	return r._pageNo
 }
 
 // SetTagId is TagId Setter

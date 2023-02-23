@@ -29,12 +29,15 @@ func (r AlibabaDamaiMxOpengatewayScriptAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMxOpengatewayScriptAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaDamaiMxOpengatewayScriptAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaDamaiMxOpengatewayScriptAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetScriptInfoOpenParam is ScriptInfoOpenParam Setter

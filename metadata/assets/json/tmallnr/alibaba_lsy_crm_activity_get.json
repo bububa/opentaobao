@@ -23,200 +23,168 @@
 		{
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				},
-				{
 					"name": "err_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				},
 				{
 					"subParams": [
 						{
 							"name": "status_str",
 							"type": "String",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "end_time_str",
 							"type": "String",
-							"description": "结束时间",
-							"required": true
+							"description": "结束时间"
 						},
 						{
 							"name": "start_time_str",
 							"type": "String",
-							"description": "开始时间",
-							"required": true
+							"description": "开始时间"
 						},
 						{
 							"name": "guider_customer_num",
 							"type": "Number",
-							"description": "留资人数",
-							"required": true
+							"description": "留资人数"
 						},
 						{
 							"name": "total_customer_num",
 							"type": "Number",
-							"description": "总留资人数",
-							"required": true
+							"description": "总留资人数"
 						},
 						{
 							"name": "total_uv",
 							"type": "Number",
-							"description": "总uv",
-							"required": true
+							"description": "总uv"
 						},
 						{
 							"name": "total_pv",
 							"type": "Number",
-							"description": "总pv",
-							"required": true
+							"description": "总pv"
 						},
 						{
 							"name": "rule",
 							"type": "String",
-							"description": "规则",
-							"required": true
+							"description": "规则"
 						},
 						{
 							"name": "store_name",
 							"type": "String",
-							"description": "摊位名称",
-							"required": true
+							"description": "摊位名称"
 						},
 						{
 							"name": "store_id",
 							"type": "Number",
-							"description": "摊位id",
-							"required": true
+							"description": "摊位id"
 						},
 						{
 							"name": "guider_id",
 							"type": "Number",
-							"description": "导购员员工id",
-							"required": true
+							"description": "导购员员工id"
 						},
 						{
 							"name": "guider_name",
 							"type": "String",
-							"description": "导购员名称",
-							"required": true
+							"description": "导购员名称"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "活动标题",
-							"required": true
+							"description": "活动标题"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "活动ID",
-							"required": true
+							"description": "活动ID"
 						},
 						{
 							"name": "store_address",
 							"type": "String",
-							"description": "摊位地址",
-							"required": true
+							"description": "摊位地址"
 						},
 						{
 							"name": "status",
 							"type": "Number",
-							"description": "100:已发布，-100:失效，200:已结束",
-							"required": true
-						},
-						{
-							"name": "banner_url",
-							"type": "String",
-							"description": "头图",
-							"required": true
+							"description": "100:已发布，-100:失效，200:已结束"
 						},
 						{
 							"name": "tmp_scene_activity_id_list",
 							"type": "String",
-							"description": "有价礼包List",
-							"required": true
+							"description": "有价礼包List"
+						},
+						{
+							"name": "banner_url",
+							"type": "String",
+							"description": "头图"
 						},
 						{
 							"subParams": [
 								{
 									"name": "live_fore_show",
 									"type": "String",
-									"description": "预考链接",
-									"required": true
+									"description": "预考链接"
 								},
 								{
 									"name": "live_status",
 									"type": "Number",
-									"description": "直播间状态",
-									"required": true
+									"description": "直播间状态"
 								},
 								{
 									"name": "live_tao_pwd",
 									"type": "String",
-									"description": "淘口令",
-									"required": true
+									"description": "淘口令"
 								},
 								{
 									"name": "live_url",
 									"type": "String",
-									"description": "直播间链接",
-									"required": true
+									"description": "直播间链接"
 								},
 								{
 									"name": "live_end_time",
 									"type": "Date",
-									"description": "直播开始时间",
-									"required": true
+									"description": "直播开始时间"
 								},
 								{
 									"name": "live_start_time",
 									"type": "Date",
-									"description": "直播结束时间",
-									"required": true
+									"description": "直播结束时间"
 								},
 								{
 									"name": "live_title",
 									"type": "String",
-									"description": "直播间标题",
-									"required": true
+									"description": "直播间标题"
 								},
 								{
 									"name": "live_id",
 									"type": "Number",
-									"description": "直播间ID",
-									"required": true
+									"description": "直播间ID"
 								},
 								{
 									"name": "live_cover_url",
 									"type": "String",
-									"description": "直播间封面URL",
-									"required": true
+									"description": "直播间封面URL"
 								}
 							],
 							"name": "nrt_crm_live_d_t_o",
 							"type": "NrtCrmLiveDto",
-							"description": "直播对象",
-							"required": true
+							"description": "直播对象"
 						}
 					],
 					"name": "data",
 					"type": "NrtCrmActivityDetailDto",
-					"description": "数据",
-					"required": true
+					"description": "数据"
 				},
 				{
 					"name": "err_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				}
 			],
 			"name": "result",

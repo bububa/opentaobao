@@ -13,132 +13,111 @@
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"subParams": [
 						{
-							"name": "warehouse_code",
-							"type": "String",
-							"description": "warehouseCode",
-							"required": true
-						},
-						{
-							"name": "document_no",
-							"type": "String",
-							"description": "documentNo",
-							"required": true
-						},
-						{
-							"name": "uuid",
-							"type": "String",
-							"description": "uuid",
-							"required": true
-						},
-						{
-							"name": "occurrence_date",
-							"type": "Date",
-							"description": "occurrenceDate",
-							"required": true
-						},
-						{
-							"name": "adjust_describe",
-							"type": "String",
-							"description": "adjustDescribe",
-							"required": true
-						},
-						{
-							"name": "supplier_code",
-							"type": "String",
-							"description": "supplierCode",
-							"required": true
-						},
-						{
-							"name": "dept_code",
-							"type": "String",
-							"description": "部门编码",
-							"required": true
-						},
-						{
 							"subParams": [
-								{
-									"name": "batch_code",
-									"type": "String",
-									"description": "batchCode",
-									"required": true
-								},
 								{
 									"name": "quantity",
 									"type": "String",
-									"description": "quantity",
-									"required": true
+									"description": "quantity"
 								},
 								{
 									"name": "item_code",
 									"type": "String",
-									"description": "itemCode",
-									"required": true
+									"description": "itemCode"
+								},
+								{
+									"name": "batch_code",
+									"type": "String",
+									"description": "batchCode"
 								},
 								{
 									"name": "reason",
 									"type": "String",
-									"description": "reason",
-									"required": true
+									"description": "reason"
 								},
 								{
 									"name": "biz_order_code",
 									"type": "String",
-									"description": "bizOrderCode",
-									"required": true
+									"description": "bizOrderCode"
 								},
 								{
 									"name": "cabinet_code",
 									"type": "String",
-									"description": "cabinetCode",
-									"required": true
+									"description": "cabinetCode"
 								}
 							],
 							"name": "item_list",
 							"type": "StockChangeDetailDto[]",
-							"description": "itemList",
-							"required": true
+							"description": "itemList"
+						},
+						{
+							"name": "dept_code",
+							"type": "String",
+							"description": "部门编码"
 						},
 						{
 							"name": "remark",
 							"type": "String",
-							"description": "remark",
-							"required": true
+							"description": "remark"
+						},
+						{
+							"name": "adjust_describe",
+							"type": "String",
+							"description": "adjustDescribe"
+						},
+						{
+							"name": "occurrence_date",
+							"type": "Date",
+							"description": "occurrenceDate"
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode"
 						},
 						{
 							"name": "document_type",
 							"type": "Number",
-							"description": "单据类型",
-							"required": true
+							"description": "单据类型"
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "supplierCode"
+						},
+						{
+							"name": "document_no",
+							"type": "String",
+							"description": "documentNo"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid"
 						},
 						{
 							"name": "cost_duty_dept_code",
 							"type": "String",
-							"description": "费用承担部门（按需取）",
-							"required": true
+							"description": "费用承担部门（按需取）"
 						}
 					],
 					"name": "list",
 					"type": "StockChangeDto[]",
-					"description": "list",
-					"required": true
+					"description": "list"
 				},
 				{
 					"name": "msg",
 					"type": "String",
-					"description": "msg",
-					"required": true
+					"description": "msg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
 			],
 			"name": "result",

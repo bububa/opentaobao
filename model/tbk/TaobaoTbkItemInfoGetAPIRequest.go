@@ -16,6 +16,10 @@ type TaobaoTbkItemInfoGetAPIRequest struct {
 	_numIids string
 	// ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供
 	_ip string
+	// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
+	_bizSceneId string
+	// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+	_promotionType string
 	// 链接形式：1：PC，2：无线，默认：１
 	_platform int64
 }
@@ -33,12 +37,15 @@ func (r TaobaoTbkItemInfoGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkItemInfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkItemInfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkItemInfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNumIids is NumIids Setter
@@ -65,6 +72,32 @@ func (r *TaobaoTbkItemInfoGetAPIRequest) SetIp(_ip string) error {
 // GetIp Ip Getter
 func (r TaobaoTbkItemInfoGetAPIRequest) GetIp() string {
 	return r._ip
+}
+
+// SetBizSceneId is BizSceneId Setter
+// 1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）
+func (r *TaobaoTbkItemInfoGetAPIRequest) SetBizSceneId(_bizSceneId string) error {
+	r._bizSceneId = _bizSceneId
+	r.Set("biz_scene_id", _bizSceneId)
+	return nil
+}
+
+// GetBizSceneId BizSceneId Getter
+func (r TaobaoTbkItemInfoGetAPIRequest) GetBizSceneId() string {
+	return r._bizSceneId
+}
+
+// SetPromotionType is PromotionType Setter
+// 1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）
+func (r *TaobaoTbkItemInfoGetAPIRequest) SetPromotionType(_promotionType string) error {
+	r._promotionType = _promotionType
+	r.Set("promotion_type", _promotionType)
+	return nil
+}
+
+// GetPromotionType PromotionType Getter
+func (r TaobaoTbkItemInfoGetAPIRequest) GetPromotionType() string {
+	return r._promotionType
 }
 
 // SetPlatform is Platform Setter

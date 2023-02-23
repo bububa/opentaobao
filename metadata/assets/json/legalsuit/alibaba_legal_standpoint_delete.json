@@ -1,0 +1,45 @@
+{
+	"requestParams": [
+		{
+			"name": "refrence_id",
+			"type": "Number",
+			"description": "关联id"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "工号"
+		},
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "状态code"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "返回内容"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "状态描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.delete",
+	"apiChineseName": "删除关联口径",
+	"description": "删除关联口径",
+	"id": 64366
+}

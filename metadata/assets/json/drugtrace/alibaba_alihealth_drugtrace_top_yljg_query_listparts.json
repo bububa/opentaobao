@@ -17,6 +17,16 @@
 			"description": "企业自定义编号"
 		},
 		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间"
+		},
+		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "页大小",
@@ -27,16 +37,6 @@
 			"type": "Number",
 			"description": "页码",
 			"required": true
-		},
-		{
-			"name": "begin_date",
-			"type": "String",
-			"description": "开始时间"
-		},
-		{
-			"name": "end_date",
-			"type": "String",
-			"description": "结束时间"
 		}
 	],
 	"responseParams": [

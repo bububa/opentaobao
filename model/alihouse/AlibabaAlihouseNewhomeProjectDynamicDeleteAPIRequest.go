@@ -14,6 +14,8 @@ type AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest struct {
 	model.Params
 	// 外部动态ID
 	_outerDynamicId string
+	// 外部门店ID
+	_outerStoreId string
 }
 
 // NewAlibabaAlihouseNewhomeProjectDynamicDeleteRequest 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest对象
@@ -29,12 +31,15 @@ func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterDynamicId is OuterDynamicId Setter
@@ -48,4 +53,17 @@ func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterDynamicId
 // GetOuterDynamicId OuterDynamicId Getter
 func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterDynamicId() string {
 	return r._outerDynamicId
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店ID
+func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeProjectDynamicDeleteAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }

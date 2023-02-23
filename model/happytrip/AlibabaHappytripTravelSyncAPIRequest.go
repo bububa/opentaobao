@@ -29,12 +29,15 @@ func (r AlibabaHappytripTravelSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaHappytripTravelSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaHappytripTravelSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaHappytripTravelSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTravelHeadDto is TravelHeadDto Setter

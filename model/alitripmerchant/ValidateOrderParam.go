@@ -12,6 +12,10 @@ type ValidateOrderParam struct {
 	CheckInDate string `json:"check_in_date,omitempty" xml:"check_in_date,omitempty"`
 	// 外部酒店id
 	HotelId string `json:"hotel_id,omitempty" xml:"hotel_id,omitempty"`
+	// 1
+	RpCode string `json:"rp_code,omitempty" xml:"rp_code,omitempty"`
+	// 1
+	RoomId string `json:"room_id,omitempty" xml:"room_id,omitempty"`
 	// 支付类型
 	PaymentType int64 `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
 	// 价格的rateId

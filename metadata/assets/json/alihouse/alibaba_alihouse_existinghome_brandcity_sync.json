@@ -136,6 +136,11 @@
 					"name": "is_test",
 					"type": "Number",
 					"description": "是否为测试标 0-否 1-是"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "城市品牌类型：交易服务类型-5、二租业务类型-0"
 				}
 			],
 			"name": "company_brand_city_dto",

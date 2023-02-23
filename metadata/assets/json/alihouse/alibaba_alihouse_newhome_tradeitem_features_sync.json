@@ -1,0 +1,57 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "add_tags",
+					"type": "String[]",
+					"description": "标列表",
+					"required": true
+				}
+			],
+			"name": "tags_request_dto",
+			"type": "TagsRequestDTO",
+			"description": "请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.tradeitem.features.sync",
+	"apiChineseName": "同步品活动标",
+	"description": "同步品活动标",
+	"id": 64406
+}

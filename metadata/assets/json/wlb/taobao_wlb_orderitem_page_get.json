@@ -21,39 +21,9 @@
 		{
 			"subParams": [
 				{
-					"name": "order_code",
+					"name": "remark",
 					"type": "String",
-					"description": "物流宝订单编码"
-				},
-				{
-					"name": "item_name",
-					"type": "String",
-					"description": "订单商品名称"
-				},
-				{
-					"name": "item_code",
-					"type": "String",
-					"description": "订单商品编码"
-				},
-				{
-					"name": "plan_quantity",
-					"type": "Number",
-					"description": "计划数量"
-				},
-				{
-					"name": "real_quantity",
-					"type": "Number",
-					"description": "实际数量"
-				},
-				{
-					"name": "confirm_status",
-					"type": "String",
-					"description": "物流宝订单确认状态：\u003cbr/\u003eNO_NEED_CONFIRM--不需要确认\u003cbr/\u003eWAIT_CONFIRM--待确认\u003cbr/\u003eCONFIRMED--已确认"
-				},
-				{
-					"name": "order_id",
-					"type": "Number",
-					"description": "物流宝订单id"
+					"description": "订单商品备注"
 				},
 				{
 					"name": "id",
@@ -69,6 +39,21 @@
 					"name": "user_nick",
 					"type": "String",
 					"description": "订单商品用户昵称"
+				},
+				{
+					"name": "inventory_type",
+					"type": "String",
+					"description": "INVENTORY_TYPE_SELL 可销库存\u003cbr/\u003eINVENTORY_TYPE_IMPERFECTIONS 残次库存\u003cbr/\u003eINVENTORY_TYPE_FREEZE 冻结库存\u003cbr/\u003eINVENTORY_TYPE_ON_PASSAGE 在途库存\u003cbr/\u003eINVENTORY_TYPE_ENGINE_DAMAGE 机损\u003cbr/\u003eINVENTORY_TYPE_BOX_DAMAGE 箱损"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "物流宝订单id"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "物流宝订单编码"
 				},
 				{
 					"name": "order_sub_type",
@@ -91,6 +76,16 @@
 					"description": "物流宝订单商品的物流宝商品id"
 				},
 				{
+					"name": "item_name",
+					"type": "String",
+					"description": "订单商品名称"
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "订单商品编码"
+				},
+				{
 					"name": "provider_tp_id",
 					"type": "Number",
 					"description": "货主id"
@@ -101,19 +96,29 @@
 					"description": "货主nick"
 				},
 				{
+					"name": "plan_quantity",
+					"type": "Number",
+					"description": "计划数量"
+				},
+				{
+					"name": "real_quantity",
+					"type": "Number",
+					"description": "实际数量"
+				},
+				{
 					"name": "item_price",
 					"type": "Number",
 					"description": "商品价格"
 				},
 				{
+					"name": "confirm_status",
+					"type": "String",
+					"description": "物流宝订单确认状态：\u003cbr/\u003eNO_NEED_CONFIRM--不需要确认\u003cbr/\u003eWAIT_CONFIRM--待确认\u003cbr/\u003eCONFIRMED--已确认"
+				},
+				{
 					"name": "publish_version",
 					"type": "Number",
 					"description": "商品发布版本号"
-				},
-				{
-					"name": "remark",
-					"type": "String",
-					"description": "订单商品备注"
 				},
 				{
 					"name": "batch_remark",
@@ -129,11 +134,6 @@
 					"name": "ext_entity_id",
 					"type": "String",
 					"description": "外部实体id"
-				},
-				{
-					"name": "inventory_type",
-					"type": "String",
-					"description": "INVENTORY_TYPE_SELL 可销库存\u003cbr/\u003eINVENTORY_TYPE_IMPERFECTIONS 残次库存\u003cbr/\u003eINVENTORY_TYPE_FREEZE 冻结库存\u003cbr/\u003eINVENTORY_TYPE_ON_PASSAGE 在途库存\u003cbr/\u003eINVENTORY_TYPE_ENGINE_DAMAGE 机损\u003cbr/\u003eINVENTORY_TYPE_BOX_DAMAGE 箱损"
 				}
 			],
 			"name": "order_item_list",

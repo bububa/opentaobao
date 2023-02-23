@@ -1,0 +1,97 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "状态",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"name": "product_count",
+							"type": "String",
+							"description": "商品数量"
+						},
+						{
+							"name": "product_paid_in",
+							"type": "String",
+							"description": "实付金额"
+						},
+						{
+							"name": "order_time",
+							"type": "String",
+							"description": "下单时间"
+						},
+						{
+							"name": "product_min_type",
+							"type": "String",
+							"description": "商品类型"
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态"
+						},
+						{
+							"name": "card_status",
+							"type": "String",
+							"description": "权益卡状态"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单号"
+						},
+						{
+							"name": "product_pic",
+							"type": "String",
+							"description": "商品图片"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherCardOrdersVO[]",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.card.orders.query",
+	"apiChineseName": "查询权益卡订单列表",
+	"description": "查询权益卡订单列表",
+	"id": 64036
+}

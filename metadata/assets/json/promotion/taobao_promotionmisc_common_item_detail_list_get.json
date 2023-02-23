@@ -4,36 +4,22 @@
 			"name": "activity_id",
 			"type": "Number",
 			"description": "优惠活动ID",
-			"minValue": 1,
 			"required": true
 		},
 		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "分页页码，页码从1开始",
-			"minValue": 1,
 			"required": true
 		},
 		{
 			"name": "page_size",
 			"type": "Number",
 			"description": "分页大小，不能超过50",
-			"maxValue": 50,
-			"minValue": 1,
 			"required": true
 		}
 	],
 	"responseParams": [
-		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "是否查询成功"
-		},
-		{
-			"name": "total_count",
-			"type": "Number",
-			"description": "数据总数量"
-		},
 		{
 			"subParams": [
 				{
@@ -65,6 +51,16 @@
 			"name": "detail_list",
 			"type": "CommonItemDetail []",
 			"description": "活动详情列表"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否查询成功"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "数据总数量"
 		}
 	],
 	"name": "taobao.promotionmisc.common.item.detail.list.get",

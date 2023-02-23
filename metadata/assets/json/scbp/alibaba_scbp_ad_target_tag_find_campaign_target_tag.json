@@ -30,7 +30,7 @@
 				{
 					"name": "scope",
 					"type": "String[]",
-					"description": "crowd or region"
+					"description": "crowd or region or terminal or scene "
 				},
 				{
 					"name": "price_mode",
@@ -123,6 +123,16 @@
 					"name": "tag_ref_type",
 					"type": "Number",
 					"description": "13:地域标签 14：人群标签"
+				},
+				{
+					"name": "recommend_discount",
+					"type": "Number",
+					"description": "推荐的标签溢价值"
+				},
+				{
+					"name": "high_impr_price",
+					"type": "String",
+					"description": "高曝光竞价(单位：元)"
 				}
 			],
 			"name": "result_list",

@@ -31,12 +31,15 @@ func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWdkEquipmentConveyorConveyorinfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetWarehouseCode is WarehouseCode Setter

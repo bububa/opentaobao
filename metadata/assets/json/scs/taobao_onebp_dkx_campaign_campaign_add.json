@@ -111,16 +111,6 @@
 									"description": "商品列表，小于等于10个"
 								},
 								{
-									"name": "init_dmp_crowd_id_list",
-									"type": "Number[]",
-									"description": "达摩盘人群列表"
-								},
-								{
-									"name": "init_template_id_list",
-									"type": "Number[]",
-									"description": "模板列表"
-								},
-								{
 									"name": "behavior_windows_list",
 									"type": "String[]",
 									"description": "拉新快场景中的新客定义，支持\"1,365\",\"1,500\"等"

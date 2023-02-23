@@ -38,6 +38,10 @@ type StdHotelVo struct {
 	DecorateTime string `json:"decorate_time,omitempty" xml:"decorate_time,omitempty"`
 	// 描述
 	Description string `json:"description,omitempty" xml:"description,omitempty"`
+	// 入住须知
+	CheckInfo string `json:"check_info,omitempty" xml:"check_info,omitempty"`
+	// 预定须知
+	BookingInfo string `json:"booking_info,omitempty" xml:"booking_info,omitempty"`
 	// 标准酒店id
 	Shid int64 `json:"shid,omitempty" xml:"shid,omitempty"`
 	// 评论数

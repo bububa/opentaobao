@@ -61,12 +61,15 @@ func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaHealthVaccinNoticeOrderCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReserveDate is ReserveDate Setter

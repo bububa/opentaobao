@@ -92,10 +92,14 @@ type Serializable struct {
 	ApprizeIdList string `json:"apprize_id_list,omitempty" xml:"apprize_id_list,omitempty"`
 	// 多笔估价场景，订单纬度对应的多笔spuId集合
 	SpuIdList string `json:"spu_id_list,omitempty" xml:"spu_id_list,omitempty"`
+	// 返现金额，单位分
+	CashFee string `json:"cash_fee,omitempty" xml:"cash_fee,omitempty"`
 	// 回收场景
 	SceneType string `json:"scene_type,omitempty" xml:"scene_type,omitempty"`
 	// 取件截止时间
 	ShipTimeEnd string `json:"ship_time_end,omitempty" xml:"ship_time_end,omitempty"`
+	// 当前代扣状态：104代扣失败、105代扣成功、106代扣逾期
+	DkStatus string `json:"dk_status,omitempty" xml:"dk_status,omitempty"`
 	// 支付宝交易号
 	AlipayOrderId string `json:"alipay_order_id,omitempty" xml:"alipay_order_id,omitempty"`
 	// 金额
@@ -120,4 +124,6 @@ type Serializable struct {
 	CreditPay bool `json:"credit_pay,omitempty" xml:"credit_pay,omitempty"`
 	// 是否支付宝签约
 	ZfbDk bool `json:"zfb_dk,omitempty" xml:"zfb_dk,omitempty"`
+	// 是否为返现订单
+	CashOrder bool `json:"cash_order,omitempty" xml:"cash_order,omitempty"`
 }

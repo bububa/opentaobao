@@ -148,6 +148,11 @@
 					"name": "contact",
 					"type": "String",
 					"description": "小二联系方式"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "11111"
 				}
 			],
 			"name": "business_activity_data_dto",

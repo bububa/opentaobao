@@ -1,0 +1,210 @@
+{
+	"requestParams": [
+		{
+			"name": "old_order_id",
+			"type": "Number",
+			"description": "旧机单 ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "old_order_id",
+					"type": "String",
+					"description": "旧品主订单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "红包状态"
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "发放总金额，单位：分"
+						},
+						{
+							"name": "disburse_fee",
+							"type": "Number",
+							"description": "已打款金额，单位：分"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退回金额，单位：分"
+						},
+						{
+							"name": "freeze_fee",
+							"type": "Number",
+							"description": "已冻结金额，单位：分"
+						},
+						{
+							"name": "available_fee",
+							"type": "Number",
+							"description": "可用金额，单位：分"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "红包支付状态"
+						}
+					],
+					"name": "old_item_pre_red_packet",
+					"type": "ExternalPreRedPacketDTO",
+					"description": "旧品款预付款"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "红包状态"
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "发放总金额，单位：分"
+						},
+						{
+							"name": "disburse_fee",
+							"type": "Number",
+							"description": "已打款金额，单位：分"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退回金额，单位：分"
+						},
+						{
+							"name": "freeze_fee",
+							"type": "Number",
+							"description": "已冻结金额，单位：分"
+						},
+						{
+							"name": "available_fee",
+							"type": "Number",
+							"description": "可用金额，单位：分"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "红包支付状态"
+						}
+					],
+					"name": "old_item_end_red_packet",
+					"type": "ExternalEndRedPacketDTO",
+					"description": "旧品款尾款"
+				},
+				{
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "红包状态"
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "发放总金额，单位：分"
+						},
+						{
+							"name": "disburse_fee",
+							"type": "Number",
+							"description": "已打款金额，单位：分"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退回金额，单位：分"
+						},
+						{
+							"name": "freeze_fee",
+							"type": "Number",
+							"description": "已冻结金额，单位：分"
+						},
+						{
+							"name": "available_fee",
+							"type": "Number",
+							"description": "可用金额，单位：分"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "红包支付状态"
+						}
+					],
+					"name": "old_item_subsidy_red_packet",
+					"type": "ExternalRedPacketDTO",
+					"description": "旧品补贴红包"
+				},
+				{
+					"name": "new_order_id",
+					"type": "String",
+					"description": "新品主订单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间（设置）"
+						},
+						{
+							"name": "terminate_time",
+							"type": "String",
+							"description": "中止时间"
+						}
+					],
+					"name": "supply_activity",
+					"type": "ActivitySummaryDTO",
+					"description": "回收商活动（限时活动）信息"
+				},
+				{
+					"name": "new_item_seller_benefit_amount",
+					"type": "Number",
+					"description": "新品卖家补贴金额，单位：分"
+				},
+				{
+					"name": "new_item_platform_benefit_amount",
+					"type": "Number",
+					"description": "新品平台补贴金额，单位：分"
+				},
+				{
+					"name": "new_item_supply_benefit_amount",
+					"type": "Number",
+					"description": "新品回收商补贴金额，单位：分"
+				},
+				{
+					"name": "subsidy_status",
+					"type": "String",
+					"description": "新品补贴状态"
+				},
+				{
+					"name": "new_order_pay_status",
+					"type": "String",
+					"description": "关联的新机单状态"
+				},
+				{
+					"name": "new_order_shop_name",
+					"type": "String",
+					"description": "关联新机单店铺名称"
+				}
+			],
+			"name": "data",
+			"type": "OfnRecycleOrderSubsidyDTO",
+			"description": "回收款及补贴"
+		}
+	],
+	"name": "taobao.recycle.ofnsubsidy.old.get",
+	"apiChineseName": "回收单旧机款及补贴查询",
+	"description": "回收单旧机款及补贴查询",
+	"id": 65179
+}

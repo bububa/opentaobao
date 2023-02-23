@@ -1,0 +1,73 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司编码"
+				}
+			],
+			"name": "is_privacy_package_request",
+			"type": "IsPrivacyPackageRequest",
+			"description": "查询类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "privacy_package",
+					"type": "Boolean",
+					"description": "是否为隐私包裹"
+				},
+				{
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "收件人手机号"
+						},
+						{
+							"name": "authorize_expire_time",
+							"type": "Date",
+							"description": "授权信息过期时间"
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "用户唯一标识"
+						},
+						{
+							"name": "secret_no",
+							"type": "String",
+							"description": "虚拟号"
+						},
+						{
+							"name": "secret_expire_time",
+							"type": "Date",
+							"description": "虚拟号过期时间"
+						}
+					],
+					"name": "user_auth_infos",
+					"type": "UserAuthInfo[]",
+					"description": "用户授权信息"
+				}
+			],
+			"name": "result",
+			"type": "IsPrivacyPackageResponse",
+			"description": "结果"
+		}
+	],
+	"name": "taobao.top.package.auth.info.get",
+	"apiChineseName": "淘宝末端包裹信息获取",
+	"description": "淘宝末端包裹信息获取",
+	"id": 64221
+}

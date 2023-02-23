@@ -2,15 +2,17 @@ package campus
 
 // DeviceReportEventDto 结构体
 type DeviceReportEventDto struct {
-	// 数据
-	Data []string `json:"data,omitempty" xml:"data>string,omitempty"`
+	// 上传数据
+	Data []DeviceReportDataDto `json:"data,omitempty" xml:"data>device_report_data_dto,omitempty"`
 	// 消息唯一id
 	TransId string `json:"trans_id,omitempty" xml:"trans_id,omitempty"`
+	// 应用key
+	AppKey string `json:"app_key,omitempty" xml:"app_key,omitempty"`
 	// 来源系统
 	Source string `json:"source,omitempty" xml:"source,omitempty"`
 	// 消息版本
 	Version string `json:"version,omitempty" xml:"version,omitempty"`
-	// 设备ID
+	// 设备id
 	DeviceId string `json:"device_id,omitempty" xml:"device_id,omitempty"`
 	// 0:设备中心UUID ，1：外部id
 	IdType int64 `json:"id_type,omitempty" xml:"id_type,omitempty"`

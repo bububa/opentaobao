@@ -51,6 +51,11 @@
 			"name": "order_scene",
 			"type": "Number",
 			"description": "场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1"
+		},
+		{
+			"name": "member_group_id",
+			"type": "Number",
+			"description": "member组ID"
 		}
 	],
 	"responseParams": [
@@ -364,6 +369,11 @@
 							"name": "modified_time",
 							"type": "String",
 							"description": "订单更新时间"
+						},
+						{
+							"name": "extra_mkt_id",
+							"type": "String",
+							"description": "管理member新商品ID-B段"
 						}
 					],
 					"name": "results",

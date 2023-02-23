@@ -14,6 +14,8 @@ type ProjectDynamicDto struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 发布时间
 	PublishTime string `json:"publish_time,omitempty" xml:"publish_time,omitempty"`
+	// 外部门店ID
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 城市ID
 	CityId int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
 	// 状态 0-无效 1-有效

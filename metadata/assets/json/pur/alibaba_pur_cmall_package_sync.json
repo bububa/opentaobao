@@ -1,0 +1,78 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "security_id",
+					"type": "String",
+					"description": "套餐标识"
+				},
+				{
+					"name": "data_source",
+					"type": "String",
+					"description": "第三方商城标识",
+					"required": true
+				},
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "套餐名称",
+					"required": true
+				},
+				{
+					"name": "package_desc",
+					"type": "String",
+					"description": "套餐描述"
+				},
+				{
+					"name": "detail_info",
+					"type": "String",
+					"description": "套餐详情"
+				},
+				{
+					"name": "img_url_list",
+					"type": "String[]",
+					"description": "图片地址列表"
+				},
+				{
+					"name": "product_source_values",
+					"type": "String[]",
+					"description": "套餐关联的产品source列表",
+					"required": true
+				}
+			],
+			"name": "access_package_dto",
+			"type": "AccessPackageDTO",
+			"description": "套餐对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回提示信息"
+				},
+				{
+					"name": "package_id",
+					"type": "String",
+					"description": "套餐标识"
+				}
+			],
+			"name": "result",
+			"type": "ActionResult",
+			"description": "返回对象"
+		}
+	],
+	"name": "alibaba.pur.cmall.package.sync",
+	"apiChineseName": "套餐同步",
+	"description": "套餐同步",
+	"id": 63801
+}

@@ -12,26 +12,26 @@ import (
 // 查询卖家的会员，进行基本的查询，返回符合条件的会员列表
 type TaobaoCrmMembersGetPrivyAPIRequest struct {
 	model.Params
-	// 最早上次交易时间
-	_minLastTradeTime string
 	// 最迟上次交易时间
 	_maxLastTradeTime string
+	// 最早上次交易时间
+	_minLastTradeTime string
 	// ouid
 	_ouid string
 	// 会员等级,如果不传入值则默认为全部等级。
 	_grade int64
-	// 最小交易额,单位为元
-	_minTradeAmount float64
-	// 最大交易额，单位为元
-	_maxTradeAmount float64
-	// 最小交易量
-	_minTradeCount int64
-	// 最大交易量
-	_maxTradeCount int64
 	// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
 	_pageSize int64
 	// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为80
 	_currentPage int64
+	// 最大交易额，单位为元
+	_maxTradeAmount float64
+	// 最小交易额,单位为元
+	_minTradeAmount float64
+	// 最小交易量
+	_minTradeCount int64
+	// 最大交易量
+	_maxTradeCount int64
 }
 
 // NewTaobaoCrmMembersGetPrivyRequest 初始化TaobaoCrmMembersGetPrivyAPIRequest对象
@@ -47,25 +47,15 @@ func (r TaobaoCrmMembersGetPrivyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoCrmMembersGetPrivyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetMinLastTradeTime is MinLastTradeTime Setter
-// 最早上次交易时间
-func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
-	r._minLastTradeTime = _minLastTradeTime
-	r.Set("min_last_trade_time", _minLastTradeTime)
-	return nil
-}
-
-// GetMinLastTradeTime MinLastTradeTime Getter
-func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMinLastTradeTime() string {
-	return r._minLastTradeTime
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMaxLastTradeTime is MaxLastTradeTime Setter
@@ -79,6 +69,19 @@ func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMaxLastTradeTime(_maxLastTradeTi
 // GetMaxLastTradeTime MaxLastTradeTime Getter
 func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMaxLastTradeTime() string {
 	return r._maxLastTradeTime
+}
+
+// SetMinLastTradeTime is MinLastTradeTime Setter
+// 最早上次交易时间
+func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMinLastTradeTime(_minLastTradeTime string) error {
+	r._minLastTradeTime = _minLastTradeTime
+	r.Set("min_last_trade_time", _minLastTradeTime)
+	return nil
+}
+
+// GetMinLastTradeTime MinLastTradeTime Getter
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMinLastTradeTime() string {
+	return r._minLastTradeTime
 }
 
 // SetOuid is Ouid Setter
@@ -107,17 +110,30 @@ func (r TaobaoCrmMembersGetPrivyAPIRequest) GetGrade() int64 {
 	return r._grade
 }
 
-// SetMinTradeAmount is MinTradeAmount Setter
-// 最小交易额,单位为元
-func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMinTradeAmount(_minTradeAmount float64) error {
-	r._minTradeAmount = _minTradeAmount
-	r.Set("min_trade_amount", _minTradeAmount)
+// SetPageSize is PageSize Setter
+// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
+func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
 	return nil
 }
 
-// GetMinTradeAmount MinTradeAmount Getter
-func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMinTradeAmount() float64 {
-	return r._minTradeAmount
+// GetPageSize PageSize Getter
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为80
+func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
 }
 
 // SetMaxTradeAmount is MaxTradeAmount Setter
@@ -131,6 +147,19 @@ func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMaxTradeAmount(_maxTradeAmount f
 // GetMaxTradeAmount MaxTradeAmount Getter
 func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMaxTradeAmount() float64 {
 	return r._maxTradeAmount
+}
+
+// SetMinTradeAmount is MinTradeAmount Setter
+// 最小交易额,单位为元
+func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMinTradeAmount(_minTradeAmount float64) error {
+	r._minTradeAmount = _minTradeAmount
+	r.Set("min_trade_amount", _minTradeAmount)
+	return nil
+}
+
+// GetMinTradeAmount MinTradeAmount Getter
+func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMinTradeAmount() float64 {
+	return r._minTradeAmount
 }
 
 // SetMinTradeCount is MinTradeCount Setter
@@ -157,30 +186,4 @@ func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetMaxTradeCount(_maxTradeCount int
 // GetMaxTradeCount MaxTradeCount Getter
 func (r TaobaoCrmMembersGetPrivyAPIRequest) GetMaxTradeCount() int64 {
 	return r._maxTradeCount
-}
-
-// SetPageSize is PageSize Setter
-// 表示每页显示的会员数量,page_size的最大值不能超过100条,最小值不能低于1，
-func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoCrmMembersGetPrivyAPIRequest) GetPageSize() int64 {
-	return r._pageSize
-}
-
-// SetCurrentPage is CurrentPage Setter
-// 显示第几页的会员，如果输入的页码大于总共的页码数，例如总共10页，但是current_page的值为11，则返回空白页，最小页数为1，最大页数为80
-func (r *TaobaoCrmMembersGetPrivyAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
-	return nil
-}
-
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoCrmMembersGetPrivyAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
 }

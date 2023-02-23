@@ -6,11 +6,6 @@
 			"description": "查询修改时间段的结束时间点"
 		},
 		{
-			"name": "start_gmt_modified_time",
-			"type": "Date",
-			"description": "查询修改时间段的开始时间点"
-		},
-		{
 			"name": "logistic_no",
 			"type": "String",
 			"description": "快递单号"
@@ -39,7 +34,7 @@
 		},
 		{
 			"name": "dispute_status_array",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "换货状态，具体包括：换货待处理(1), 待买家退货(2), 买家已退货，待收货(3),  换货关闭(4), 换货成功(5), 待买家修改(6), 待发出换货商品(12), 待买家收货(13), 请退款(14)",
 			"maxListSize": 20
 		},
@@ -55,7 +50,7 @@
 		},
 		{
 			"name": "refund_id_array",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "退款单号ID列表，最多只能输入20个id",
 			"maxListSize": 20
 		},
@@ -65,6 +60,11 @@
 			"description": "页码"
 		},
 		{
+			"name": "start_gmt_modified_time",
+			"type": "Date",
+			"description": "查询修改时间段的开始时间点"
+		},
+		{
 			"name": "biz_order_id",
 			"type": "Number",
 			"description": "正向订单号"
@@ -72,173 +72,146 @@
 	],
 	"responseParams": [
 		{
-			"name": "total_results",
+			"name": "page_results",
 			"type": "Number",
-			"description": "所有符合查询条件的换货单的数量"
+			"description": "当前页的换货单数量"
 		},
 		{
 			"subParams": [
 				{
-					"name": "reason",
+					"name": "alipay_no",
 					"type": "String",
-					"description": "申请换货原因",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "当前换货单状态",
-					"required": true
-				},
-				{
-					"name": "num",
-					"type": "Number",
-					"description": "购买数",
-					"required": true
-				},
-				{
-					"name": "modified",
-					"type": "Date",
-					"description": "换货单最新修改时间",
-					"required": true
-				},
-				{
-					"name": "created",
-					"type": "Date",
-					"description": "换货单创建时间",
-					"required": true
-				},
-				{
-					"name": "title",
-					"type": "String",
-					"description": "商品名称",
-					"required": true
-				},
-				{
-					"name": "seller_logistic_no",
-					"type": "String",
-					"description": "卖家发货快递单号",
-					"required": true
-				},
-				{
-					"name": "buyer_logistic_no",
-					"type": "String",
-					"description": "买家发货快递单号",
-					"required": true
-				},
-				{
-					"name": "good_status",
-					"type": "String",
-					"description": "当前商品状态",
-					"required": true
+					"description": "支付宝ID"
 				},
 				{
 					"name": "buyer_nick",
 					"type": "String",
-					"description": "买家昵称",
-					"required": true
-				},
-				{
-					"name": "biz_order_id",
-					"type": "String",
-					"description": "正向单号ID",
-					"required": true
-				},
-				{
-					"name": "dispute_id",
-					"type": "String",
-					"description": "换货单号ID",
-					"required": true
+					"description": "买家昵称"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "卖家昵称",
-					"required": true
+					"description": "卖家昵称"
 				},
 				{
-					"name": "price",
-					"type": "String",
-					"description": "价格",
-					"required": true
+					"name": "created",
+					"type": "Date",
+					"description": "换货单创建时间"
 				},
 				{
-					"name": "alipay_no",
+					"name": "modified",
+					"type": "Date",
+					"description": "换货单最新修改时间"
+				},
+				{
+					"name": "status",
 					"type": "String",
-					"description": "支付宝ID",
-					"required": true
+					"description": "当前换货单状态"
+				},
+				{
+					"name": "good_status",
+					"type": "String",
+					"description": "当前商品状态"
 				},
 				{
 					"name": "payment",
 					"type": "String",
-					"description": "支付费用",
-					"required": true
+					"description": "支付费用"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "申请换货原因"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品名称"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "价格"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "购买数"
 				},
 				{
 					"name": "address",
 					"type": "String",
-					"description": "卖家换货地址",
-					"required": true
-				},
-				{
-					"name": "exchange_sku",
-					"type": "String",
-					"description": "买家申请换货的商品sku",
-					"required": true
-				},
-				{
-					"name": "buyer_address",
-					"type": "String",
-					"description": "买家换货地址",
-					"required": true
-				},
-				{
-					"name": "time_out",
-					"type": "String",
-					"description": "超时时间",
-					"required": true
+					"description": "卖家换货地址"
 				},
 				{
 					"name": "bought_sku",
 					"type": "String",
-					"description": "购买的商品sku",
-					"required": true
+					"description": "购买的商品sku"
+				},
+				{
+					"name": "exchange_sku",
+					"type": "String",
+					"description": "买家申请换货的商品sku"
 				},
 				{
 					"name": "buyer_logistic_name",
 					"type": "String",
-					"description": "买家发货物流公司",
-					"required": true
+					"description": "买家发货物流公司"
+				},
+				{
+					"name": "buyer_logistic_no",
+					"type": "String",
+					"description": "买家发货快递单号"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "正向单号ID"
+				},
+				{
+					"name": "dispute_id",
+					"type": "String",
+					"description": "换货单号ID"
 				},
 				{
 					"name": "seller_logistic_name",
 					"type": "String",
-					"description": "卖家发货物流公司",
-					"required": true
+					"description": "卖家发货物流公司"
+				},
+				{
+					"name": "seller_logistic_no",
+					"type": "String",
+					"description": "卖家发货快递单号"
+				},
+				{
+					"name": "buyer_address",
+					"type": "String",
+					"description": "买家换货地址"
+				},
+				{
+					"name": "time_out",
+					"type": "String",
+					"description": "超时时间"
 				},
 				{
 					"name": "buyer_phone",
 					"type": "String",
-					"description": "买家联系方式",
-					"required": true
+					"description": "买家联系方式"
 				},
 				{
 					"name": "buyer_name",
 					"type": "String",
-					"description": "buyerName",
-					"required": true
+					"description": "buyerName"
 				},
 				{
 					"name": "oaid",
 					"type": "String",
-					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
-					"required": true
+					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。"
 				},
 				{
 					"name": "buyer_open_uid",
 					"type": "String",
-					"description": "买家openId",
-					"required": true
+					"description": "买家openId"
 				}
 			],
 			"name": "results",
@@ -246,9 +219,9 @@
 			"description": "返回结果"
 		},
 		{
-			"name": "page_results",
+			"name": "total_results",
 			"type": "Number",
-			"description": "当前页的换货单数量"
+			"description": "所有符合查询条件的换货单的数量"
 		},
 		{
 			"name": "has_next",

@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"name": "ty_account",
+			"type": "String",
+			"description": "天翼账号",
+			"required": true
+		},
+		{
+			"name": "ctei",
+			"type": "String",
+			"description": "设备的ctei串码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否支持"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.ailabs.tmallgenie.sdk.device.issupportsdk",
+	"apiChineseName": "是否支持云回看新SDK",
+	"description": "是否支持云回看新SDK",
+	"id": 65188
+}

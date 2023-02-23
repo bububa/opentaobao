@@ -35,12 +35,15 @@ func (r TmallPromotagTagApplyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallPromotagTagApplyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallPromotagTagApplyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallPromotagTagApplyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEndTime is EndTime Setter

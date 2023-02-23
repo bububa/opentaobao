@@ -41,8 +41,7 @@
 		{
 			"name": "vertical_market",
 			"type": "Number",
-			"description": "传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型",
-			"minValue": 0
+			"description": "传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型"
 		},
 		{
 			"name": "customer_props",
@@ -67,64 +66,56 @@
 	],
 	"responseParams": [
 		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "结果总数"
+		},
+		{
 			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "产品名称",
-					"required": true
-				},
-				{
-					"name": "price",
-					"type": "String",
-					"description": "产品的市场价.单位为元.精确到2位小数;如:200.07",
-					"required": true
+					"description": "产品名称"
 				},
 				{
 					"name": "pic_url",
 					"type": "String",
-					"description": "产品的主图片地址.(绝对地址,格式:http://host/image_path)",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "当前状态(0 商家确认 1 屏蔽 3 小二确认 2 未确认 -1 删除)",
-					"required": true
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品ID",
-					"required": true
-				},
-				{
-					"name": "tsc",
-					"type": "String",
-					"description": "淘宝标准产品编码",
-					"required": true
+					"description": "产品的主图片地址.(绝对地址,格式:http://host/image_path)"
 				},
 				{
 					"name": "cid",
 					"type": "Number",
-					"description": "商品类目ID.必须是叶子类目ID",
-					"required": true
+					"description": "商品类目ID.必须是叶子类目ID"
 				},
 				{
 					"name": "props",
 					"type": "String",
-					"description": "产品的关键属性列表.格式：pid:vid;pid:vid",
-					"required": true
+					"description": "产品的关键属性列表.格式：pid:vid;pid:vid"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "产品的市场价.单位为元.精确到2位小数;如:200.07"
+				},
+				{
+					"name": "tsc",
+					"type": "String",
+					"description": "淘宝标准产品编码"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "当前状态(0 商家确认 1 屏蔽 3 小二确认 2 未确认 -1 删除)"
 				}
 			],
 			"name": "products",
 			"type": "Product []",
 			"description": "返回具体信息为入参fields请求的字段信息"
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "结果总数"
 		}
 	],
 	"name": "taobao.products.search",

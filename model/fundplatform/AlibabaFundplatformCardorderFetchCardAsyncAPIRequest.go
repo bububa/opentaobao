@@ -29,12 +29,15 @@ func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaFundplatformCardorderFetchCardAsyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamCardFetchAsyncRequest is ParamCardFetchAsyncRequest Setter

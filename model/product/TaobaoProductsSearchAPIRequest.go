@@ -15,8 +15,9 @@ import (
 // 返回值支持:product_id,name,pic_path,cid,props,price,tsc&lt;br/&gt;
 // 当用户指定了cid并且cid为垂直市场（3C电器城、鞋城）的类目id时，默认只返回小二确认&lt;br/&gt;的产品。如果用户没有指定cid，或cid为普通的类目，默认返回商家确认或小二确认的产&lt;br/&gt;品。如果用户自定了status字段，以指定的status类型为准。
 // &lt;br/&gt;新增一：
-//    传入suite_items_str 按规格搜索套装产品。
-//    返回字段增加suite_items_str,is_suite_effecitve支持。
+//
+//	传入suite_items_str 按规格搜索套装产品。
+//	返回字段增加suite_items_str,is_suite_effecitve支持。
 type TaobaoProductsSearchAPIRequest struct {
 	model.Params
 	// 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用","分隔.新增字段status(product的当前状态)
@@ -58,12 +59,15 @@ func (r TaobaoProductsSearchAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoProductsSearchAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoProductsSearchAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoProductsSearchAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFields is Fields Setter

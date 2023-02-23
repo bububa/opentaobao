@@ -46,27 +46,23 @@
 			"subParams": [
 				{
 					"name": "data",
-					"type": "Json",
-					"description": "data",
-					"required": true
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "success",
-					"required": true
+					"description": "success"
 				}
 			],
 			"name": "result",

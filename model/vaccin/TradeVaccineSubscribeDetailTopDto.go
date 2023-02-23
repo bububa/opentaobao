@@ -40,8 +40,8 @@ type TradeVaccineSubscribeDetailTopDto struct {
 	CancelRole string `json:"cancel_role,omitempty" xml:"cancel_role,omitempty"`
 	// 预约单主键
 	SubscribeId int64 `json:"subscribe_id,omitempty" xml:"subscribe_id,omitempty"`
-	// 预约时段 1上午，2下午
+	// 预约时段 1:上午/2:下午
 	PeriodTag int64 `json:"period_tag,omitempty" xml:"period_tag,omitempty"`
-	// 预约单状态
+	// 平台预约单状态
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 }

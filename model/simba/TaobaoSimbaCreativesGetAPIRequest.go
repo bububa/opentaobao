@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaCreativesGetAPIRequest struct {
 	model.Params
 	// 创意Id数组，最多200个
-	_creativeIds []int64
+	_creativeIds []string
 	// 主人昵称
 	_nick string
 	// 推广组Id
@@ -33,24 +33,27 @@ func (r TaobaoSimbaCreativesGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCreativesGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaCreativesGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaCreativesGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreativeIds is CreativeIds Setter
 // 创意Id数组，最多200个
-func (r *TaobaoSimbaCreativesGetAPIRequest) SetCreativeIds(_creativeIds []int64) error {
+func (r *TaobaoSimbaCreativesGetAPIRequest) SetCreativeIds(_creativeIds []string) error {
 	r._creativeIds = _creativeIds
 	r.Set("creative_ids", _creativeIds)
 	return nil
 }
 
 // GetCreativeIds CreativeIds Getter
-func (r TaobaoSimbaCreativesGetAPIRequest) GetCreativeIds() []int64 {
+func (r TaobaoSimbaCreativesGetAPIRequest) GetCreativeIds() []string {
 	return r._creativeIds
 }
 

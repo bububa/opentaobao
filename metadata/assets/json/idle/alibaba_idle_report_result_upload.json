@@ -1,0 +1,79 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trace_code",
+					"type": "String",
+					"description": "唯一码，手机传imei，奢品传溯源码"
+				},
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "产品标识，验货宝：YHB；回收：RECYCLE",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格(分)",
+					"required": true
+				},
+				{
+					"name": "report",
+					"type": "String",
+					"description": "报告内容JSON",
+					"required": true
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "SPUID",
+					"required": true
+				}
+			],
+			"name": "report_upload_top_cmd",
+			"type": "ReportUploadTopCmd",
+			"description": "参数"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.report.result.upload",
+	"apiChineseName": "服务商上传验货报告",
+	"description": "服务商上传验货报告",
+	"id": 65158
+}

@@ -26,7 +26,7 @@
 				},
 				{
 					"name": "meal_price",
-					"type": "Price",
+					"type": "String",
 					"description": "套餐一口价(单位是：分)"
 				},
 				{
@@ -35,14 +35,19 @@
 					"description": "搭配套餐商品列表。item_id为商品的id;item_show_name为商品显示名。因最多允许5个商品进行搭配，所以查询最多有5个，以json格式传出。"
 				},
 				{
-					"name": "postage_id",
-					"type": "Number",
-					"description": "普通运费模板id。若这个字段为空或0时，运费是卖家负责;若这个字段不为空，说明运费模板存在，运费是买家负责。"
+					"name": "type_postage",
+					"type": "String",
+					"description": "运费模板类型。卖家标识'SELL';买家标识'BUY'。若为'SELL'则字段postage_id为空。若为'BUY'，则postage_id为运费模板id，必有值。"
 				},
 				{
 					"name": "meal_memo",
 					"type": "String",
 					"description": "搭配套餐描述！"
+				},
+				{
+					"name": "postage_id",
+					"type": "Number",
+					"description": "普通运费模板id。若这个字段为空或0时，运费是卖家负责;若这个字段不为空，说明运费模板存在，运费是买家负责。"
 				},
 				{
 					"name": "status",

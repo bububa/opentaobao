@@ -1,0 +1,154 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "scene_id",
+					"type": "String",
+					"description": "场景id",
+					"required": true
+				},
+				{
+					"name": "show_time",
+					"type": "String",
+					"description": "卡片当前展示的时间",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道标识"
+				},
+				{
+					"name": "app_version",
+					"type": "String",
+					"description": "应用版本"
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市信息编码"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				}
+			],
+			"name": "card_request",
+			"type": "QuickAppRequest",
+			"description": "请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage"
+				},
+				{
+					"subParams": [
+						{
+							"name": "bg_img",
+							"type": "String",
+							"description": "背景图"
+						},
+						{
+							"name": "bg_right_icon",
+							"type": "String",
+							"description": "背景图右侧图标"
+						},
+						{
+							"name": "logo_img",
+							"type": "String",
+							"description": "logo图标"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题"
+						},
+						{
+							"name": "title_color",
+							"type": "String",
+							"description": "标题颜色"
+						},
+						{
+							"name": "title_size",
+							"type": "String",
+							"description": "标题字体大小"
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "副标题"
+						},
+						{
+							"name": "sub_title_color",
+							"type": "String",
+							"description": "副标题颜色"
+						},
+						{
+							"name": "sub_title_size",
+							"type": "String",
+							"description": "副标题大小"
+						},
+						{
+							"name": "button_bg_color",
+							"type": "String",
+							"description": "按钮背景颜色"
+						},
+						{
+							"name": "button_text",
+							"type": "String",
+							"description": "按钮文案"
+						},
+						{
+							"name": "button_text_color",
+							"type": "String",
+							"description": "按钮字体颜色"
+						},
+						{
+							"name": "button_text_size",
+							"type": "String",
+							"description": "按钮字体大小"
+						},
+						{
+							"name": "jump_url",
+							"type": "String",
+							"description": "跳转链接"
+						}
+					],
+					"name": "data",
+					"type": "QuickAppCardInfoVo[]",
+					"description": "返回投放数据"
+				}
+			],
+			"name": "card_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类"
+		}
+	],
+	"name": "alibaba.alihealth.recommend.cardinfo.get",
+	"apiChineseName": "快应用卡片信息",
+	"description": "快应用卡片信息",
+	"id": 64307
+}

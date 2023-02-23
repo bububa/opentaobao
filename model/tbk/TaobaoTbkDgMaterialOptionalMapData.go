@@ -4,6 +4,8 @@ package tbk
 type TaobaoTbkDgMaterialOptionalMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
+	// 定向计划集合
+	SpCampaignList []SpCampaign `json:"sp_campaign_list,omitempty" xml:"sp_campaign_list>sp_campaign,omitempty"`
 	// 优惠券信息-优惠券开始时间
 	CouponStartTime string `json:"coupon_start_time,omitempty" xml:"coupon_start_time,omitempty"`
 	// 优惠券信息-优惠券结束时间

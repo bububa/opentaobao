@@ -7,75 +7,66 @@
 			"required": true
 		},
 		{
-			"name": "getter_phone",
-			"type": "String",
-			"description": "收件人手机号"
-		},
-		{
 			"name": "mail_no",
 			"type": "String",
 			"description": "运单号",
 			"required": true
+		},
+		{
+			"name": "getter_phone",
+			"type": "String",
+			"description": "收件人手机号"
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"name": "error_desc",
+					"type": "String",
+					"description": "错误信息"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "返回码",
-					"required": true
-				},
-				{
-					"name": "error_desc",
-					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "返回码"
 				},
 				{
 					"subParams": [
 						{
-							"name": "cp_code",
-							"type": "String",
-							"description": "快递公司编码",
-							"required": true
-						},
-						{
 							"name": "getter_phone",
 							"type": "String",
-							"description": "用于返回淘系包裹脱密手机号用作数据核对",
-							"required": true
-						},
-						{
-							"name": "need_input_phone",
-							"type": "Boolean",
-							"description": "是否需要输入手机号，false-不需要，裹裹可以自己判断手机号，true-需要手动输入手机号",
-							"required": true
+							"description": "用于返回淘系包裹脱密手机号用作数据核对"
 						},
 						{
 							"name": "guoguo_send_notice_flag",
 							"type": "Boolean",
-							"description": "裹裹发送通知消息标识，false-?非裹裹发送，true-裹裹发送",
-							"required": true
+							"description": "裹裹发送通知消息标识，false-?非裹裹发送，true-裹裹发送"
 						},
 						{
 							"name": "cp_name",
 							"type": "String",
-							"description": "快递公司名称",
-							"required": true
+							"description": "快递公司名称"
+						},
+						{
+							"name": "need_input_phone",
+							"type": "Boolean",
+							"description": "是否需要输入手机号，false-不需要，裹裹可以自己判断手机号，true-需要手动输入手机号"
+						},
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "快递公司编码"
 						}
 					],
 					"name": "data",
 					"type": "Data",
-					"description": "data",
-					"required": true
+					"description": "data"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
 				}
 			],
 			"name": "result",

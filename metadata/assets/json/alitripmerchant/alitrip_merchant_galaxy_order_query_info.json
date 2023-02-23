@@ -335,6 +335,11 @@
 									"name": "city_code",
 									"type": "Number",
 									"description": "城市code"
+								},
+								{
+									"name": "limit_date",
+									"type": "String",
+									"description": "限制时间"
 								}
 							],
 							"name": "voucher_hotel",
@@ -581,6 +586,43 @@
 							"name": "order_room_detail",
 							"type": "PriceDetailDto",
 							"description": "房间信息详情"
+						},
+						{
+							"subParams": [
+								{
+									"name": "category",
+									"type": "String",
+									"description": "权益券类型"
+								},
+								{
+									"name": "discount_off",
+									"type": "Number",
+									"description": "折扣百分比"
+								},
+								{
+									"name": "member_voucher_card_id",
+									"type": "String",
+									"description": "权益卡卡号"
+								},
+								{
+									"name": "member_voucher_id",
+									"type": "String",
+									"description": "权益券id"
+								},
+								{
+									"name": "long_des",
+									"type": "String",
+									"description": "权益券使用限制描述"
+								},
+								{
+									"name": "qr_code_i_d_image",
+									"type": "String",
+									"description": "权益卡身份码"
+								}
+							],
+							"name": "derby_voucher_info",
+							"type": "DerbyVoucherInfo",
+							"description": "权益商品相关展示信息"
 						}
 					],
 					"name": "content",

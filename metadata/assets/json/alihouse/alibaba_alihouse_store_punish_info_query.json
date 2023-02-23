@@ -1,0 +1,90 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_ids",
+					"type": "String[]",
+					"description": "外部门店id列表",
+					"required": true
+				}
+			],
+			"name": "query_store_punish_dto",
+			"type": "QueryStorePunishDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "is_punish",
+									"type": "Boolean",
+									"description": "是否处罚"
+								},
+								{
+									"name": "punish_level",
+									"type": "Number",
+									"description": "处罚级别"
+								},
+								{
+									"name": "business_type",
+									"type": "Number",
+									"description": "业务类型"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "处罚类型"
+								},
+								{
+									"name": "version",
+									"type": "Number",
+									"description": "版本号"
+								}
+							],
+							"name": "punish_dtos",
+							"type": "PunishDTO[]",
+							"description": "dto"
+						}
+					],
+					"name": "data",
+					"type": "StorePunishDTO[]",
+					"description": "dto"
+				},
+				{
+					"name": "result_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.alihouse.store.punish.info.query",
+	"apiChineseName": "门店处罚信息查询",
+	"description": "门店处罚信息查询",
+	"id": 65324
+}

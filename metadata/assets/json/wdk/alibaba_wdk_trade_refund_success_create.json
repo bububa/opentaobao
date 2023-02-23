@@ -1,0 +1,113 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店编码",
+					"required": true
+				},
+				{
+					"name": "sub_biz_order_id",
+					"type": "String",
+					"description": "业务子单号",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "wdkrc",
+							"type": "String",
+							"description": "退款审核人",
+							"required": true
+						},
+						{
+							"name": "wdkrcm",
+							"type": "String",
+							"description": "退款审核备注",
+							"required": true
+						},
+						{
+							"name": "wdkrfqr",
+							"type": "String",
+							"description": "退款发起人",
+							"required": true
+						},
+						{
+							"name": "wdkdfqrrr",
+							"type": "String",
+							"description": "退款理由",
+							"required": true
+						},
+						{
+							"name": "wdkrfqrmemo",
+							"type": "String",
+							"description": "退款发起备注",
+							"required": true
+						},
+						{
+							"name": "rprid",
+							"type": "String",
+							"description": "外部退款单号",
+							"required": true
+						},
+						{
+							"name": "wdkfra",
+							"type": "String",
+							"description": "实际退货数量",
+							"required": true
+						},
+						{
+							"name": "wdkrf",
+							"type": "String",
+							"description": "实际退款金额",
+							"required": true
+						}
+					],
+					"name": "after_refund_order_info",
+					"type": "AfterRefundOrderInfo",
+					"description": "退款信息",
+					"required": true
+				}
+			],
+			"name": "refund_order_request",
+			"type": "AfterRefundOrderRequest",
+			"description": "逆向单请求对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "state",
+					"type": "Boolean",
+					"description": "接口状态"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否成功 true-成功;false-失败"
+				}
+			],
+			"name": "refund_order_result",
+			"type": "ApiResult",
+			"description": "订单返回结果"
+		}
+	],
+	"name": "alibaba.wdk.trade.refund.success.create",
+	"apiChineseName": "五道口终态逆向订单创建",
+	"description": "五道口终态逆向订单创建",
+	"id": 63486
+}

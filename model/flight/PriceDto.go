@@ -22,4 +22,10 @@ type PriceDto struct {
 	BidFee int64 `json:"bid_fee,omitempty" xml:"bid_fee,omitempty"`
 	// 竞价方式
 	BidMethod int64 `json:"bid_method,omitempty" xml:"bid_method,omitempty"`
+	// 1：儿童成人同价或Y50取低且使用儿童税费 2：儿童成人同价同税 3：儿童自定义价格或Y50取低且使用儿童税费  4：儿童不可销售（仅学生，青年，老年票，小团，学生认证票允许选择）5：儿童成人同价同税或Y50且使用儿童税费取低 6：儿童成人同价且使用儿童税费 7：使用基准运价FD/NFD/IBE+对应的儿童价格
+	ChildSaleType int64 `json:"child_sale_type,omitempty" xml:"child_sale_type,omitempty"`
+	// 儿童票面价，单位：分
+	ChildFixedPrice int64 `json:"child_fixed_price,omitempty" xml:"child_fixed_price,omitempty"`
+	// 行李有无：0：无行李 ； 1：有行李 ； null：走平台默认行
+	Baggage int64 `json:"baggage,omitempty" xml:"baggage,omitempty"`
 }

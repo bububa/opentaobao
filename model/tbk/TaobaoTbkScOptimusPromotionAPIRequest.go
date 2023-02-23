@@ -18,7 +18,7 @@ type TaobaoTbkScOptimusPromotionAPIRequest struct {
 	_pageNum int64
 	// mm_xxx_xxx_xxx的第3段数字
 	_adzoneId int64
-	// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116，更多权益物料id敬请期待！
+	// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
 	_promotionId int64
 	// mm_xxx_xxx_xxx的第2段数字
 	_siteId int64
@@ -37,12 +37,15 @@ func (r TaobaoTbkScOptimusPromotionAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScOptimusPromotionAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScOptimusPromotionAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScOptimusPromotionAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPageSize is PageSize Setter
@@ -85,7 +88,7 @@ func (r TaobaoTbkScOptimusPromotionAPIRequest) GetAdzoneId() int64 {
 }
 
 // SetPromotionId is PromotionId Setter
-// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116，更多权益物料id敬请期待！
+// 官方提供的权益物料Id。有价券-37104、大额店铺券-37116、天猫店铺券-62191、券券补-61809 更多权益物料id敬请期待！
 func (r *TaobaoTbkScOptimusPromotionAPIRequest) SetPromotionId(_promotionId int64) error {
 	r._promotionId = _promotionId
 	r.Set("promotion_id", _promotionId)

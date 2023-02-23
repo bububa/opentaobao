@@ -20,4 +20,6 @@ type BtripFlightModifyApplyRq struct {
 	SessionId string `json:"session_id,omitempty" xml:"session_id,omitempty"`
 	// 是否自愿
 	IsVoluntary int64 `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`
+	// 默认为false
+	WhetherRetry bool `json:"whether_retry,omitempty" xml:"whether_retry,omitempty"`
 }

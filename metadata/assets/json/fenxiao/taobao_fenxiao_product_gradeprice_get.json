@@ -26,14 +26,9 @@
 		{
 			"subParams": [
 				{
-					"name": "sku_id",
-					"type": "Number",
-					"description": "skuId"
-				},
-				{
-					"name": "trade_type",
-					"type": "Number",
-					"description": "模式：1-代销、2-经销"
+					"name": "price",
+					"type": "String",
+					"description": "采购价格"
 				},
 				{
 					"name": "discount_type",
@@ -46,9 +41,14 @@
 					"description": "等级ID或分销商ID"
 				},
 				{
-					"name": "price",
-					"type": "Price",
-					"description": "采购价格"
+					"name": "sku_id",
+					"type": "Number",
+					"description": "skuId"
+				},
+				{
+					"name": "trade_type",
+					"type": "Number",
+					"description": "模式：1-代销、2-经销"
 				}
 			],
 			"name": "grade_discounts",

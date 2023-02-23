@@ -236,6 +236,21 @@
 							"name": "tags",
 							"type": "String[]",
 							"description": "紧急标识:EPIDEMIC:疫情审核通过标, REASSURING_TICKET:安心票, FLIGHTCHANGE:航变审核通过标, CALCULATED:预计算, FLIGHTCHANGECANCEL:航班取消, FLIGHTCHANGEDELAY:航班延误, ILLWITHCERTIFICATE:病退, REFUSETOTAKE:航司拒载, PREVIOUSLATTERINTERFERENCE:前后段影响, OVERBOOKING:超售, AIRLINEAUTHORIZE:航司授权, CHANGENAME:改名, REPEATBUYTICKETS:重复购票, BUYWRONGTICKETS:错购, AIRLINEVIPCARDREFUND:航司金银卡退票"
+						},
+						{
+							"name": "refund_way_type",
+							"type": "Number",
+							"description": "0:\"原路退回\",1:\"退银行卡\",2:\"原路退回+退银行卡\""
+						},
+						{
+							"name": "attachment",
+							"type": "String[]",
+							"description": "xxx.xxx.xxx"
+						},
+						{
+							"name": "trip_type",
+							"type": "Number",
+							"description": "   1:\"单程\",     2:\"往返\",     3:\"多程\""
 						}
 					],
 					"name": "data",

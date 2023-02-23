@@ -15,44 +15,37 @@
 						{
 							"name": "cp_code",
 							"type": "String",
-							"description": "快递公司编码",
-							"required": true
+							"description": "快递公司编码"
 						},
 						{
 							"name": "mail_no",
 							"type": "String",
-							"description": "快递单号",
-							"required": true
+							"description": "快递单号"
 						},
 						{
 							"name": "waybill",
 							"type": "String",
-							"description": "电子面单",
-							"required": true
+							"description": "电子面单"
 						}
 					],
 					"name": "result",
 					"type": "LogisticsOrderDto",
-					"description": "物流单对象",
-					"required": true
+					"description": "物流单对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "响应结果：true-成功，false-失败",
-					"required": true
+					"description": "响应结果：true-成功，false-失败"
 				}
 			],
 			"name": "response_result",

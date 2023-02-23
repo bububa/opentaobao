@@ -5,42 +5,54 @@
 				{
 					"name": "amount",
 					"type": "Number",
-					"description": "积分发放数量"
+					"description": "积分发放数量",
+					"required": true
 				},
 				{
 					"name": "act_id",
 					"type": "String",
-					"description": "活动id"
+					"description": "活动id",
+					"required": true
 				},
 				{
 					"name": "biz_scene",
 					"type": "String",
-					"description": "业务场景"
+					"description": "业务场景",
+					"required": true
 				},
 				{
 					"name": "game_acc_id",
 					"type": "String",
-					"description": "游戏账号"
+					"description": "游戏账号，成语场景下必填"
 				},
 				{
 					"name": "collection_ids",
 					"type": "String[]",
-					"description": "组建集id集合"
+					"description": "组建集id集合",
+					"required": true
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id(幂等id)"
+					"description": "请求id(幂等id),不超过128位,相同幂等号,发放数量也要保持相同，否则会幂等异常",
+					"required": true
 				},
 				{
 					"name": "property_id",
 					"type": "String",
-					"description": "资产id"
+					"description": "资产id",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "openId，非成语场景下必填"
 				}
 			],
 			"name": "mini_game_grant_integral_request",
 			"type": "MiniGameGrantIntegralRequest",
-			"description": "小游戏积分发放请求参数"
+			"description": "小游戏积分发放请求参数",
+			"required": true
 		}
 	],
 	"responseParams": [

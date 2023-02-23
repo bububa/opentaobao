@@ -41,12 +41,15 @@ func (r AlibabaIdleParttimeNotifyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleParttimeNotifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIdleParttimeNotifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIdleParttimeNotifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMessage is Message Setter

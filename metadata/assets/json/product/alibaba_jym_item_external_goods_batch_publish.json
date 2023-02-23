@@ -167,6 +167,18 @@
 							"type": "Boolean",
 							"description": "是否支持议价",
 							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "image_url",
+									"type": "String",
+									"description": "商品图片url"
+								}
+							],
+							"name": "taobao_first_image",
+							"type": "GoodsPublishImageDTO",
+							"description": "入淘商品首图，可不传"
 						}
 					],
 					"name": "goods_list",

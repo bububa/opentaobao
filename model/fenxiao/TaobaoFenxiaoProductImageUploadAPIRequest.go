@@ -37,12 +37,15 @@ func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFenxiaoProductImageUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPicPath is PicPath Setter

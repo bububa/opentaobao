@@ -12,10 +12,10 @@ import (
 // 更新一个推广计划的投放地域
 type TaobaoSimbaCampaignAreaUpdateAPIRequest struct {
 	model.Params
-	// 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
-	_area string
 	// 主人昵称
 	_nick string
+	// 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
+	_area string
 	// 推广计划Id
 	_campaignId int64
 }
@@ -33,25 +33,15 @@ func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetArea is Area Setter
-// 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
-func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetArea(_area string) error {
-	r._area = _area
-	r.Set("area", _area)
-	return nil
-}
-
-// GetArea Area Getter
-func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetArea() string {
-	return r._area
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNick is Nick Setter
@@ -65,6 +55,19 @@ func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetNick() string {
 	return r._nick
+}
+
+// SetArea is Area Setter
+// 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
+func (r *TaobaoSimbaCampaignAreaUpdateAPIRequest) SetArea(_area string) error {
+	r._area = _area
+	r.Set("area", _area)
+	return nil
+}
+
+// GetArea Area Getter
+func (r TaobaoSimbaCampaignAreaUpdateAPIRequest) GetArea() string {
+	return r._area
 }
 
 // SetCampaignId is CampaignId Setter

@@ -8,6 +8,8 @@ type VegasCpaReportDto struct {
 	BizDate string `json:"biz_date,omitempty" xml:"biz_date,omitempty"`
 	// 媒体三段式id，当查询数据为pid维度时返回该字段
 	Pid string `json:"pid,omitempty" xml:"pid,omitempty"`
+	// 活动相关数据信息
+	ExtInfo string `json:"ext_info,omitempty" xml:"ext_info,omitempty"`
 	// 符合奖励要求的累计用户数；按入参是预估/结算，区分用户数为预估or可结算结果；
 	Union30dLxUv int64 `json:"union_30d_lx_uv,omitempty" xml:"union_30d_lx_uv,omitempty"`
 	// rid，当查询数据为rid维度时返回该字段

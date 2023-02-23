@@ -30,6 +30,11 @@
 					"name": "shop_id",
 					"type": "String",
 					"description": "渠道编码"
+				},
+				{
+					"name": "online_sale_flag",
+					"type": "Number",
+					"description": "淘鲜达半日达项目新增，0 表示上架，1表示下架，当更新淘鲜达半日达渠道品上下架时，该字段必传"
 				}
 			],
 			"name": "bean",

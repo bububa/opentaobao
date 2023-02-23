@@ -1,15 +1,15 @@
 {
 	"requestParams": [
 		{
-			"name": "open_id",
-			"type": "String",
-			"description": "买家的openId",
-			"required": true
-		},
-		{
 			"name": "uuid",
 			"type": "String",
 			"description": "券的uuid",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "买家的openId",
 			"required": true
 		}
 	],
@@ -19,20 +19,17 @@
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误描述",
-					"required": true
+					"description": "错误描述"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "操作成功或者失败",
-					"required": true
+					"description": "操作成功或者失败"
 				}
 			],
 			"name": "result",

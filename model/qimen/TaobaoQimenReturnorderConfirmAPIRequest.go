@@ -12,7 +12,7 @@ import (
 // taobao.qimen.returnorder.confirm
 type TaobaoQimenReturnorderConfirmAPIRequest struct {
 	model.Params
-	//
+	// 请求内容
 	_request *ReturnOrderConfirmRequest
 }
 
@@ -29,16 +29,19 @@ func (r TaobaoQimenReturnorderConfirmAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenReturnorderConfirmAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQimenReturnorderConfirmAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQimenReturnorderConfirmAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRequest is Request Setter
-//
+// 请求内容
 func (r *TaobaoQimenReturnorderConfirmAPIRequest) SetRequest(_request *ReturnOrderConfirmRequest) error {
 	r._request = _request
 	r.Set("request", _request)

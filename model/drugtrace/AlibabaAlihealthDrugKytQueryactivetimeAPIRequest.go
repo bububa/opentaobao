@@ -38,12 +38,15 @@ func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugKytQueryactivetimeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetResProdCodeList is ResProdCodeList Setter

@@ -77,6 +77,159 @@
 					"name": "biz_content",
 					"type": "String",
 					"description": "业务内容"
+				},
+				{
+					"name": "outer_finance_order_id",
+					"type": "String",
+					"description": "外部金融订单号"
+				},
+				{
+					"name": "manufacture_name",
+					"type": "String",
+					"description": "厂商名称"
+				},
+				{
+					"subParams": [
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "门店id"
+						},
+						{
+							"name": "shop_outer_num",
+							"type": "String",
+							"description": "门店自用编码"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "first_level_shop_name",
+							"type": "String",
+							"description": "一级经销商名称"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "门店所在省份"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "门店所在城市"
+						},
+						{
+							"name": "shop_invoice_code",
+							"type": "String",
+							"description": "经销商开票代码"
+						},
+						{
+							"name": "first_level_shop_code",
+							"type": "String",
+							"description": "一级经销商编码"
+						}
+					],
+					"name": "booking_shop_info",
+					"type": "AutoShopDTO",
+					"description": "bookingShopInfo"
+				},
+				{
+					"subParams": [
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "购车人姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "购车人手机号"
+						},
+						{
+							"name": "identity_no",
+							"type": "String",
+							"description": "购车人证号号"
+						},
+						{
+							"name": "identity_type",
+							"type": "String",
+							"description": "证件类型编码"
+						},
+						{
+							"name": "identity_type_desc",
+							"type": "String",
+							"description": "证件类型描述"
+						}
+					],
+					"name": "purchase_user_info",
+					"type": "PurchaseUserDTO",
+					"description": "购车人信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货人详细地址"
+						}
+					],
+					"name": "delivery_address",
+					"type": "DeliveryAddressDTO",
+					"description": "收货地址"
+				},
+				{
+					"subParams": [
+						{
+							"name": "loan_plan_name",
+							"type": "String",
+							"description": "金融方案名称"
+						},
+						{
+							"name": "loan_plan_en_name",
+							"type": "String",
+							"description": "金融方案英文名称"
+						},
+						{
+							"name": "periods",
+							"type": "Number",
+							"description": "期数"
+						},
+						{
+							"name": "down_payment_amount",
+							"type": "Number",
+							"description": "首付金额（单位：分）"
+						},
+						{
+							"name": "loan_amount",
+							"type": "Number",
+							"description": "申请贷款金额（单位：分）"
+						},
+						{
+							"name": "contract_interest_rate",
+							"type": "String",
+							"description": "合同利率"
+						},
+						{
+							"name": "loan_interest_rate",
+							"type": "String",
+							"description": "产品的基本利率"
+						},
+						{
+							"name": "month_payment",
+							"type": "Number",
+							"description": "月供（单位：分）"
+						},
+						{
+							"name": "down_payment_ratio",
+							"type": "String",
+							"description": "首付比例"
+						}
+					],
+					"name": "finance_info",
+					"type": "AutoFinanceDTO",
+					"description": "金融方案信息"
 				}
 			],
 			"name": "data",
@@ -92,6 +245,11 @@
 			"name": "msg_code",
 			"type": "String",
 			"description": "错误码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
 	],
 	"name": "tmall.car.finance.detail.get",

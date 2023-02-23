@@ -29,12 +29,15 @@ func (r TmallCarOrderQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallCarOrderQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallCarOrderQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallCarOrderQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTopOrderQuery is TopOrderQuery Setter

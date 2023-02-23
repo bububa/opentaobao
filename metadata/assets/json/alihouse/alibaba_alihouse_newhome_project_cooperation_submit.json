@@ -66,6 +66,11 @@
 					"name": "ka_outer_id",
 					"type": "String",
 					"description": "KA楼盘ID"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
 				}
 			],
 			"name": "project_cooperation_dto",

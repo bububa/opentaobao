@@ -1,44 +1,9 @@
 {
 	"requestParams": [
 		{
-			"name": "item_id",
-			"type": "String",
-			"description": "菜鸟商品ID"
-		},
-		{
-			"name": "store_code",
-			"type": "String",
-			"description": "仓库编码"
-		},
-		{
-			"name": "inventory_type",
+			"name": "page_size",
 			"type": "Number",
-			"description": "库存类型。 (1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存 )"
-		},
-		{
-			"name": "type",
-			"type": "Number",
-			"description": "库存查询类型 1-\t汇总库存，不区分批次和渠道 2-\t批次库存，库存按商品批次维度划分 3-\t渠道库存，库存按渠道维度划分 （当前业务不支持批次库存和渠道库存共存，批次库存无渠道属性，渠道库存无批次属性）"
-		},
-		{
-			"name": "batch_code",
-			"type": "String",
-			"description": "库存批次号，type=2时字段传值有效。 商品设置为批次管理时，商品产生批次库存。当商品为批次管理时，此字段不传值，返回所有批次库存信息。"
-		},
-		{
-			"name": "produce_date",
-			"type": "Date",
-			"description": "生产日期，type=2时字段传值有效。"
-		},
-		{
-			"name": "due_date",
-			"type": "Date",
-			"description": "失效日期，type=2时字段传值有效。"
-		},
-		{
-			"name": "channel_code",
-			"type": "String",
-			"description": "渠道编码，type=3时字段传值有效。（TB 淘系， OTHERS 其他）"
+			"description": "每页多少条，最大50条"
 		},
 		{
 			"name": "page_no",
@@ -46,16 +11,110 @@
 			"description": "分页的第几页"
 		},
 		{
-			"name": "page_size",
+			"name": "channel_code",
+			"type": "String",
+			"description": "渠道编码，type=3时字段传值有效。（TB 淘系， OTHERS 其他）"
+		},
+		{
+			"name": "due_date",
+			"type": "Date",
+			"description": "失效日期，type=2时字段传值有效。"
+		},
+		{
+			"name": "produce_date",
+			"type": "Date",
+			"description": "生产日期，type=2时字段传值有效。"
+		},
+		{
+			"name": "batch_code",
+			"type": "String",
+			"description": "库存批次号，type=2时字段传值有效。 商品设置为批次管理时，商品产生批次库存。当商品为批次管理时，此字段不传值，返回所有批次库存信息。"
+		},
+		{
+			"name": "type",
 			"type": "Number",
-			"description": "每页多少条，最大50条"
+			"description": "库存查询类型 1-\t汇总库存，不区分批次和渠道 2-\t批次库存，库存按商品批次维度划分 3-\t渠道库存，库存按渠道维度划分 （当前业务不支持批次库存和渠道库存共存，批次库存无渠道属性，渠道库存无批次属性）"
+		},
+		{
+			"name": "inventory_type",
+			"type": "Number",
+			"description": "库存类型。 (1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存 )"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码"
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "菜鸟商品ID"
 		}
 	],
 	"responseParams": [
 		{
-			"name": "wl_success",
-			"type": "Boolean",
-			"description": "是否成功"
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "lock_quantity",
+							"type": "Number",
+							"description": "锁库存数量"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存数量"
+						},
+						{
+							"name": "due_date",
+							"type": "Date",
+							"description": "失效日期，type=2时字段有返回值。"
+						},
+						{
+							"name": "produce_date",
+							"type": "Date",
+							"description": "生产日期，type=2时字段有返回值"
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "库存批次号，type=2时字段有返回值。"
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "渠道编码，type=3时字段有返回值。（TB 淘系，OTHERS 其他）"
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型(1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存 )"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓库编码"
+						}
+					],
+					"name": "item",
+					"type": "WmsInventoryQueryItem",
+					"description": "商品详情"
+				}
+			],
+			"name": "item_list",
+			"type": "WmsInventoryQueryItemlist []",
+			"description": "商品详情列表"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总数"
 		},
 		{
 			"name": "wl_error_code",
@@ -68,68 +127,9 @@
 			"description": "错误信息"
 		},
 		{
-			"name": "total_count",
-			"type": "Number",
-			"description": "总数"
-		},
-		{
-			"subParams": [
-				{
-					"subParams": [
-						{
-							"name": "store_code",
-							"type": "String",
-							"description": "仓库编码"
-						},
-						{
-							"name": "item_id",
-							"type": "String",
-							"description": "商品ID"
-						},
-						{
-							"name": "inventory_type",
-							"type": "Number",
-							"description": "库存类型(1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存 )"
-						},
-						{
-							"name": "channel_code",
-							"type": "String",
-							"description": "渠道编码，type=3时字段有返回值。（TB 淘系，OTHERS 其他）"
-						},
-						{
-							"name": "batch_code",
-							"type": "String",
-							"description": "库存批次号，type=2时字段有返回值。"
-						},
-						{
-							"name": "produce_date",
-							"type": "Date",
-							"description": "生产日期，type=2时字段有返回值"
-						},
-						{
-							"name": "due_date",
-							"type": "Date",
-							"description": "失效日期，type=2时字段有返回值。"
-						},
-						{
-							"name": "quantity",
-							"type": "Number",
-							"description": "库存数量"
-						},
-						{
-							"name": "lock_quantity",
-							"type": "Number",
-							"description": "锁库存数量"
-						}
-					],
-					"name": "item",
-					"type": "WmsInventoryQueryItem",
-					"description": "商品详情"
-				}
-			],
-			"name": "item_list",
-			"type": "WmsInventoryQueryItemlist []",
-			"description": "商品详情列表"
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
 		}
 	],
 	"name": "taobao.wlb.wms.inventory.query",

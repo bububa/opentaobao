@@ -4,8 +4,6 @@ package aedropshiper
 type AeItemSkuInfoDto struct {
 	// SKU attribute object
 	AeSkuPropertyDtos []AeSkuPropertyDto `json:"ae_sku_property_dtos,omitempty" xml:"ae_sku_property_dtos>ae_sku_property_dto,omitempty"`
-	// Video information
-	AeVideoDtos []AeVideoDto `json:"ae_video_dtos,omitempty" xml:"ae_video_dtos>ae_video_dto,omitempty"`
 	// SKU ID
 	Id string `json:"id,omitempty" xml:"id,omitempty"`
 	// SKU price. Value range: 0.01-100000; Unit: USD. Such as: 200.07, which means: 200 US dollars 7 points. Need to be in the correct price range.
@@ -20,8 +18,6 @@ type AeItemSkuInfoDto struct {
 	OfferSalePrice string `json:"offer_sale_price,omitempty" xml:"offer_sale_price,omitempty"`
 	// SKU bulk discount price
 	OfferBulkSalePrice string `json:"offer_bulk_sale_price,omitempty" xml:"offer_bulk_sale_price,omitempty"`
-	// List of main images of the product
-	ImageUrls string `json:"image_urls,omitempty" xml:"image_urls,omitempty"`
 	// The actual saleable inventory attribute of SKU is ipmSkuStock. The reasonable value range of this attribute value is 0~999999. If the product has SKU, please make sure that at least one SKU is in stock, that is, the value of ipmSkuStock is 1~999999. The range of the inventory value of the entire product latitude is 1~999999. If the skuStock attribute is set at the same time, the system will give priority to the ipmSkuStock attribute; if the ipmSkuStock attribute is not set, the system will set the inventory according to the skuStock attribute, true means 999, false means 0.
 	IpmSkuStock int64 `json:"ipm_sku_stock,omitempty" xml:"ipm_sku_stock,omitempty"`
 	// Minimum number of batches

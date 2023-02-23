@@ -4,7 +4,7 @@ package flight
 type PolicyDto struct {
 	// 行程信息
 	Flights []FlightDto `json:"flights,omitempty" xml:"flights>flight_dto,omitempty"`
-	// 排除航线
+	// 排除航线：格式为：KKK-*，*-KKK，KKK-XXX三种格式；三字码，大写；*表示全部；最多允许4000字符；多个请用英文,隔开
 	NotApplOd []string `json:"not_appl_od,omitempty" xml:"not_appl_od>string,omitempty"`
 	// 运价类型：0，FD；1，NFD；2，特殊运价；5，IBE；11，B2T；12，旗舰店；13，官网；14，大卖家
 	FareSource []string `json:"fare_source,omitempty" xml:"fare_source>string,omitempty"`
@@ -26,6 +26,8 @@ type PolicyDto struct {
 	AccountCode string `json:"account_code,omitempty" xml:"account_code,omitempty"`
 	// 用于匹配平台退改，如果填写，则只能填写精确的farebasis，不得带通配符；匹配不到，走平台默认退改
 	FareBasis string `json:"fare_basis,omitempty" xml:"fare_basis,omitempty"`
+	// 中转点
+	TransitAirport string `json:"transit_airport,omitempty" xml:"transit_airport,omitempty"`
 	// 是否订位：1，平台订位；0，平台不订位；2，紧张订位
 	CreatePnr int64 `json:"create_pnr,omitempty" xml:"create_pnr,omitempty"`
 	// 政策来源：0，手工政策；1，excel政策；2，api政策
@@ -42,6 +44,8 @@ type PolicyDto struct {
 	Pata int64 `json:"pata,omitempty" xml:"pata,omitempty"`
 	// 共享航班：0，不支持代码共享；1，支持代码共享；2，仅支持代码共享
 	CodeShare int64 `json:"code_share,omitempty" xml:"code_share,omitempty"`
+	// 直达中转：0，直达；1，中转；默认为0
+	DirectTransferType int64 `json:"direct_transfer_type,omitempty" xml:"direct_transfer_type,omitempty"`
 	// 乘客限制
 	Passenger *PassengerDto `json:"passenger,omitempty" xml:"passenger,omitempty"`
 	// 外放舱位数量小于等于阈值时订位或停售

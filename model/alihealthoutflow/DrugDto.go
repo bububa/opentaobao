@@ -66,20 +66,6 @@ type DrugDto struct {
 	DrugCommonName string `json:"drug_common_name,omitempty" xml:"drug_common_name,omitempty"`
 	// 药品分类码
 	DrugClassCode string `json:"drug_class_code,omitempty" xml:"drug_class_code,omitempty"`
-	// 用药单位
-	DoseUnit string `json:"dose_unit,omitempty" xml:"dose_unit,omitempty"`
-	// 用药数量
-	Dose string `json:"dose,omitempty" xml:"dose,omitempty"`
-	// 用法用量+医嘱
-	DoseUsageAdvice string `json:"dose_usage_advice,omitempty" xml:"dose_usage_advice,omitempty"`
-	// 药品厂家
-	Manufactures string `json:"manufactures,omitempty" xml:"manufactures,omitempty"`
-	// 商品名称
-	ProdName string `json:"prod_name,omitempty" xml:"prod_name,omitempty"`
-	// 药品数量（必选）
-	Count string `json:"count,omitempty" xml:"count,omitempty"`
-	// 核销药品单价
-	Price *BigDecimal `json:"price,omitempty" xml:"price,omitempty"`
 	// 是否允许电子处方
 	ElectricPres bool `json:"electric_pres,omitempty" xml:"electric_pres,omitempty"`
 }

@@ -55,6 +55,11 @@
 					"type": "String",
 					"description": "外部付款方式id",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
 				}
 			],
 			"name": "payment_mode_req_dto",

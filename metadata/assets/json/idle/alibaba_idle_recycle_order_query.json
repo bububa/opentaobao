@@ -16,288 +16,251 @@
 		{
 			"subParams": [
 				{
-					"name": "err_msg",
-					"type": "String",
-					"description": "errMsg",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "成功",
-					"required": true
-				},
-				{
 					"subParams": [
 						{
 							"name": "app_key",
 							"type": "String",
-							"description": "回收商appkey",
-							"required": true
+							"description": "回收商appkey"
 						},
 						{
 							"name": "biz_order_id",
 							"type": "String",
-							"description": "订单号",
-							"required": true
+							"description": "订单号"
 						},
 						{
 							"name": "order_status",
 							"type": "Number",
-							"description": "回收订单状态",
-							"required": true
+							"description": "回收订单状态"
 						},
 						{
 							"name": "buyer_id",
 							"type": "Number",
-							"description": "买家id,已脱敏处理返回0",
-							"required": true
+							"description": "买家id,已脱敏处理返回0"
 						},
 						{
 							"name": "buyer_nick",
 							"type": "String",
-							"description": "买家nick",
-							"required": true
+							"description": "买家nick"
 						},
 						{
 							"name": "seller_id",
 							"type": "Number",
-							"description": "卖家id,已脱敏处理返回0",
-							"required": true
+							"description": "卖家id,已脱敏处理返回0"
 						},
 						{
 							"name": "seller_nick",
 							"type": "String",
-							"description": "卖家nick",
-							"required": true
+							"description": "卖家nick"
 						},
 						{
 							"name": "seller_alipay_user_id",
 							"type": "String",
-							"description": "卖家支付宝id,用于回收商支付宝打款",
-							"required": true
+							"description": "卖家支付宝id,用于回收商支付宝打款"
 						},
 						{
 							"name": "seller_alipay_account",
 							"type": "String",
-							"description": "卖家支付宝账号,已脱敏",
-							"required": true
+							"description": "卖家支付宝账号,已脱敏"
 						},
 						{
 							"name": "credit_pay",
 							"type": "Boolean",
-							"description": "是否信用预付订单",
-							"required": true
+							"description": "是否信用预付订单"
 						},
 						{
 							"name": "credit_pay_amount",
 							"type": "Number",
-							"description": "信用预付金额,单位分",
-							"required": true
+							"description": "信用预付金额,单位分"
 						},
 						{
 							"name": "apprize_amount",
 							"type": "Number",
-							"description": "估价金额,单位分",
-							"required": true
+							"description": "估价金额,单位分"
 						},
 						{
 							"name": "seller_address",
 							"type": "String",
-							"description": "卖家收货地址",
-							"required": true
+							"description": "卖家收货地址"
 						},
 						{
 							"name": "seller_phone",
 							"type": "String",
-							"description": "卖家手机号码",
-							"required": true
+							"description": "卖家手机号码"
 						},
 						{
 							"name": "ship_type",
 							"type": "String",
-							"description": "取件类型 1：顺风 2：上门取件",
-							"required": true
+							"description": "取件类型 1：顺风 2：上门取件"
 						},
 						{
 							"name": "ship_time",
 							"type": "String",
-							"description": "取件时间",
-							"required": true
+							"description": "取件时间"
 						},
 						{
 							"name": "seller_real_name",
 							"type": "String",
-							"description": "卖家姓名",
-							"required": true
+							"description": "卖家姓名"
 						},
 						{
 							"name": "zfb_dk",
 							"type": "Boolean",
-							"description": "是否支付宝签约",
-							"required": true
+							"description": "是否支付宝签约"
 						},
 						{
 							"name": "zfb_dk_code",
 							"type": "String",
-							"description": "支付宝签约code",
-							"required": true
+							"description": "支付宝签约code"
 						},
 						{
 							"name": "apprize_id",
 							"type": "String",
-							"description": "估价id",
-							"required": true
+							"description": "估价id"
 						},
 						{
 							"name": "city",
 							"type": "String",
-							"description": "城市",
-							"required": true
+							"description": "城市"
 						},
 						{
 							"name": "province",
 							"type": "String",
-							"description": "省",
-							"required": true
+							"description": "省"
 						},
 						{
 							"name": "area",
 							"type": "String",
-							"description": "区",
-							"required": true
+							"description": "区"
 						},
 						{
 							"name": "country",
 							"type": "String",
-							"description": "村",
-							"required": true
+							"description": "村"
 						},
 						{
 							"name": "zm_score",
 							"type": "String",
-							"description": "芝麻分",
-							"required": true
+							"description": "芝麻分"
 						},
 						{
 							"name": "coupon_id",
 							"type": "String",
-							"description": "未来的卡券id",
-							"required": true
+							"description": "未来的卡券id"
 						},
 						{
 							"name": "coupon_fee",
 							"type": "String",
-							"description": "加价券金额",
-							"required": true
+							"description": "加价券金额"
 						},
 						{
 							"name": "coupon_rule",
 							"type": "String",
-							"description": "一、按百分比 {     \"actType\": 1,     \"beg\": \"2017-12-01 12:00:00\",     \"couponFee\": 4400,     \"couponId\": \"-2\",     \"desc\": \"满50加价10%\",     \"end\": \"2017-12-13 12:00:00\",     \"idleBizCode\": \"9\",     \"low\": 5000,     \"percent\": 0.1 }  二、按固定加价 {     \"actType\": 2,     \"beg\": \"2017-12-01 12:00:00\",     \"couponFee\": 3000,     \"couponId\": \"-3\",     \"desc\": \"满50固定加价30\",     \"end\": \"2017-12-13 12:00:00\",     \"idleBizCode\": \"9\",     \"low\": 5000,     \"addFee\": 3000 }  三、阶梯价 {     \"actType\": 3,     \"beg\": \"2017-12-21 16:00:00\",     \"couponFee\": 0,     \"couponId\": \"-5\",     \"desc\": \"阶梯价\",     \"end\": \"2019-02-31 00:00:00\",     \"idleBizCode\": \"8\",     \"low\": 0,     \"range\": [{         \"actType\": 1,         \"couponFee\": 0,         \"desc\": \"100~2000元,加价10%\",         \"low\": 10000,         \"percent\": 0.1,         \"up\": 200000     },     {         \"actType\": 1,         \"couponFee\": 0,         \"desc\": \"2000~3000元,加价20%\",         \"low\": 200000,         \"percent\": 0.2,         \"up\": 300000     },     {         \"actType\": 2,         \"addFee\": 70000,         \"couponFee\": 0,         \"desc\": \"3000元以上,加价700\",         \"low\": 300000,         \"up\": 0     }] }",
-							"required": true
+							"description": "一、按百分比 {     \"actType\": 1,     \"beg\": \"2017-12-01 12:00:00\",     \"couponFee\": 4400,     \"couponId\": \"-2\",     \"desc\": \"满50加价10%\",     \"end\": \"2017-12-13 12:00:00\",     \"idleBizCode\": \"9\",     \"low\": 5000,     \"percent\": 0.1 }  二、按固定加价 {     \"actType\": 2,     \"beg\": \"2017-12-01 12:00:00\",     \"couponFee\": 3000,     \"couponId\": \"-3\",     \"desc\": \"满50固定加价30\",     \"end\": \"2017-12-13 12:00:00\",     \"idleBizCode\": \"9\",     \"low\": 5000,     \"addFee\": 3000 }  三、阶梯价 {     \"actType\": 3,     \"beg\": \"2017-12-21 16:00:00\",     \"couponFee\": 0,     \"couponId\": \"-5\",     \"desc\": \"阶梯价\",     \"end\": \"2019-02-31 00:00:00\",     \"idleBizCode\": \"8\",     \"low\": 0,     \"range\": [{         \"actType\": 1,         \"couponFee\": 0,         \"desc\": \"100~2000元,加价10%\",         \"low\": 10000,         \"percent\": 0.1,         \"up\": 200000     },     {         \"actType\": 1,         \"couponFee\": 0,         \"desc\": \"2000~3000元,加价20%\",         \"low\": 200000,         \"percent\": 0.2,         \"up\": 300000     },     {         \"actType\": 2,         \"addFee\": 70000,         \"couponFee\": 0,         \"desc\": \"3000元以上,加价700\",         \"low\": 300000,         \"up\": 0     }] }"
 						},
 						{
 							"name": "channel",
 							"type": "String",
-							"description": "回收渠道",
-							"required": true
+							"description": "回收渠道"
 						},
 						{
 							"name": "rate_grade",
 							"type": "String",
-							"description": "1 好评,0 默认中评",
-							"required": true
+							"description": "1 好评,0 默认中评"
 						},
 						{
 							"name": "rate_content",
 							"type": "String",
-							"description": "评价内容",
-							"required": true
+							"description": "评价内容"
 						},
 						{
 							"name": "close_reason",
 							"type": "String",
-							"description": "卖家关闭订单原因",
-							"required": true
+							"description": "卖家关闭订单原因"
 						},
 						{
 							"name": "buyer_close_reason",
 							"type": "String",
-							"description": "买家关闭订单原因",
-							"required": true
+							"description": "买家关闭订单原因"
 						},
 						{
 							"name": "refund_reason",
 							"type": "String",
-							"description": "卖家申请退回原因",
-							"required": true
+							"description": "卖家申请退回原因"
 						},
 						{
 							"name": "env",
 							"type": "String",
-							"description": "onlien:线上环境  pre：测试环境",
-							"required": true
+							"description": "onlien:线上环境  pre：测试环境"
 						},
 						{
 							"name": "gmt_create",
 							"type": "String",
-							"description": "订单创建时间",
-							"required": true
+							"description": "订单创建时间"
 						},
 						{
 							"name": "zm_level",
 							"type": "String",
-							"description": "600以下为Z5，600-649为Z4，650-699为Z3，700-749为Z2，750及以上为Z1",
-							"required": true
+							"description": "600以下为Z5，600-649为Z4，650-699为Z3，700-749为Z2，750及以上为Z1"
 						},
 						{
 							"name": "idle_pay_type",
 							"type": "String",
-							"description": "1:支付宝现金 2：天猫红包",
-							"required": true
+							"description": "1:支付宝现金 2：天猫红包"
 						},
 						{
 							"name": "channel_data",
 							"type": "String",
-							"description": "渠道内的业务数据json格式 比如 ship=1 服装类的不需要发货,weight=5-15 代表服装5-15kg, userLevel=vip 代表免议价用户,sellerRealPhone 淘宝账号绑定的手机号",
-							"required": true
+							"description": "渠道内的业务数据json格式 比如 ship=1 服装类的不需要发货,weight=5-15 代表服装5-15kg, userLevel=vip 代表免议价用户,sellerRealPhone 淘宝账号绑定的手机号"
 						},
 						{
 							"name": "spu_id",
 							"type": "String",
-							"description": "spuId",
-							"required": true
+							"description": "spuId"
 						},
 						{
 							"name": "dk_type",
 							"type": "String",
-							"description": "xydk:闲鱼代扣，信用订单使用",
-							"required": true
+							"description": "xydk:闲鱼代扣，信用订单使用"
 						},
 						{
 							"name": "ship_mail_no",
 							"type": "String",
-							"description": "回收订单对应的快递单号",
-							"required": true
+							"description": "回收订单对应的快递单号"
 						},
 						{
 							"name": "apprize_id_list",
 							"type": "String",
-							"description": "多笔估价场景，订单纬度对应的多笔估价集合",
-							"required": true
+							"description": "多笔估价场景，订单纬度对应的多笔估价集合"
 						},
 						{
 							"name": "spu_id_list",
 							"type": "String",
-							"description": "多笔估价场景，订单纬度对应的多笔spuId集合",
-							"required": true
+							"description": "多笔估价场景，订单纬度对应的多笔spuId集合"
+						},
+						{
+							"name": "cash_order",
+							"type": "Boolean",
+							"description": "是否为返现订单"
+						},
+						{
+							"name": "cash_fee",
+							"type": "String",
+							"description": "返现金额，单位分"
 						}
 					],
 					"name": "module",
 					"type": "Serializable",
-					"description": "订单信息",
-					"required": true
+					"description": "订单信息"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
 				}
 			],
 			"name": "result",

@@ -8,13 +8,6 @@
 			"required": true
 		},
 		{
-			"name": "quantity",
-			"type": "Number",
-			"description": "sku产品库存，在0到1000000之间，如果不传，则库存为0",
-			"maxValue": 1000000,
-			"minValue": 0
-		},
-		{
 			"name": "standard_price",
 			"type": "String",
 			"description": "采购基准价，最大值1000000000",
@@ -26,10 +19,14 @@
 			"description": "代销采购价"
 		},
 		{
-			"name": "properties",
+			"name": "dealer_cost_price",
 			"type": "String",
-			"description": "sku属性",
-			"required": true
+			"description": "经销采购价"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "sku产品库存，在0到1000000之间，如果不传，则库存为0"
 		},
 		{
 			"name": "sku_number",
@@ -37,9 +34,10 @@
 			"description": "商家编码"
 		},
 		{
-			"name": "dealer_cost_price",
+			"name": "properties",
 			"type": "String",
-			"description": "经销采购价"
+			"description": "sku属性",
+			"required": true
 		}
 	],
 	"responseParams": [

@@ -4,6 +4,10 @@ package ascp
 type WmsOrderProcessReportRequest struct {
 	// (创建发货单)条件必填
 	OrderLines []OrderLine `json:"order_lines,omitempty" xml:"order_lines>order_line,omitempty"`
+	// 仓库出库，必接； 一个交易子单如果分批次发货，可以拆分多个发货单进行对接。 一个发货单如果分批次发货，分批次回传
+	ConfirmOrderLines []ConfirmOrderLines `json:"confirm_order_lines,omitempty" xml:"confirm_order_lines>confirm_order_lines,omitempty"`
+	// 出库包裹
+	ConfirmPackages []ConfirmPackages `json:"confirm_packages,omitempty" xml:"confirm_packages>confirm_packages,omitempty"`
 	// 业务请求ID，用于做幂等
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 订单标记 ，用字符串格式来表示订单标记列表

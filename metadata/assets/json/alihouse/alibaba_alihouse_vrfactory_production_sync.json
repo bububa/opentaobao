@@ -39,6 +39,11 @@
 					"name": "outer_layout_tid",
 					"type": "String",
 					"description": "外部货户型ID"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
 				}
 			],
 			"name": "project_vr_build_data_dto",

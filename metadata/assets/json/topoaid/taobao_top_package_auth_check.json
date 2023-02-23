@@ -1,0 +1,44 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "用户手机号"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "从context中获取的用户标识"
+				}
+			],
+			"name": "auth_scope_check_request",
+			"type": "AuthScopeCheckRequest",
+			"description": "权限校验入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "scope_names",
+					"type": "String[]",
+					"description": "授权列表"
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "授权到期时间"
+				}
+			],
+			"name": "result",
+			"type": "AuthScopeCheckResponse",
+			"description": "授权查询结果"
+		}
+	],
+	"name": "taobao.top.package.auth.check",
+	"apiChineseName": "校验用户授权关系",
+	"description": "校验用户授权关系",
+	"id": 64256
+}

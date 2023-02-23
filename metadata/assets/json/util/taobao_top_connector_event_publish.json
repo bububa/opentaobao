@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "trigger_code",
+					"type": "String",
+					"description": "事件编码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "事件内容",
+					"required": true
+				}
+			],
+			"name": "entry_list",
+			"type": "EventPublishThirdPartyEntry",
+			"description": "发布事件列表",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "trigger_code",
+							"type": "String",
+							"description": "事件编码"
+						},
+						{
+							"name": "trace_id",
+							"type": "String",
+							"description": "事件唯一ID"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "发布是否成功"
+						},
+						{
+							"name": "sub_err_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "sub_err_msg",
+							"type": "String",
+							"description": "错误内容"
+						}
+					],
+					"name": "entry_list",
+					"type": "EventPublishThirdPartyResultEntry[]",
+					"description": "发布事件结果列表"
+				}
+			],
+			"name": "result",
+			"type": "EventPublishThirdPartyResponse",
+			"description": "发布事件响应"
+		}
+	],
+	"name": "taobao.top.connector.event.publish",
+	"apiChineseName": "连接器事件发布",
+	"description": "连接器事件发布",
+	"id": 64891
+}

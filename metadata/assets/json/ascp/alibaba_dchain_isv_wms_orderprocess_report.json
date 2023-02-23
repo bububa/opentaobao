@@ -36,8 +36,18 @@
 						{
 							"name": "create_time",
 							"type": "Number",
-							"description": "创建时间（时间戳）Long，必填",
+							"description": "创建时间（时间戳-毫秒）Long，必填",
 							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "单据类型(JYCK=一般交易出库;HHCK=换货出库;BFCK=补发出库;QTCK=其他出库单)"
+						},
+						{
+							"name": "pre_order_code",
+							"type": "String",
+							"description": "原ERP发货单，条件必填（换货出库/补发出库必须有）；"
 						}
 					],
 					"name": "order",
@@ -56,8 +66,18 @@
 						{
 							"name": "operate_time",
 							"type": "Number",
-							"description": "操作时间（时间戳），必填",
+							"description": "操作时间（时间戳-毫秒），必填",
 							"required": true
+						},
+						{
+							"name": "confirm_type",
+							"type": "Number",
+							"description": "条件必填，如果多批次出库，则必填 多次发货后确认时;0表示发货单最终状态确认;1表示发货单中间状态确认"
+						},
+						{
+							"name": "logistics_type",
+							"type": "String",
+							"description": "物流方式，默认2:自己联系物流发货； 2: 自己联系物流 3: 无需物流"
 						}
 					],
 					"name": "process",
@@ -86,6 +106,11 @@
 							"name": "plan_qty",
 							"type": "Number",
 							"description": "应发货品数量，必填"
+						},
+						{
+							"name": "order_line_no",
+							"type": "String",
+							"description": "ERP发货单的单据行号"
 						}
 					],
 					"name": "order_lines",
@@ -96,6 +121,82 @@
 					"name": "order_flag",
 					"type": "String",
 					"description": "订单标记 ，用字符串格式来表示订单标记列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "source_order_code",
+							"type": "String",
+							"description": "交易主单号"
+						},
+						{
+							"name": "sub_source_order_code",
+							"type": "String",
+							"description": "交易子单号"
+						},
+						{
+							"name": "order_line_no",
+							"type": "String",
+							"description": "单据行号，与order_lines中的order_line_no需要对应"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "ERP子货品编码（可以跟接单时不一致）"
+						},
+						{
+							"name": "actual_qty",
+							"type": "Number",
+							"description": "实发数量"
+						}
+					],
+					"name": "confirm_order_lines",
+					"type": "ConfirmOrderLines[]",
+					"description": "仓库出库，必接； 一个交易子单如果分批次发货，可以拆分多个发货单进行对接。 一个发货单如果分批次发货，分批次回传"
+				},
+				{
+					"subParams": [
+						{
+							"name": "logistics_code",
+							"type": "String",
+							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通 (ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHERS=其他；只传英文编码)"
+						},
+						{
+							"name": "express_code",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "order_line_no",
+									"type": "String",
+									"description": "单据行号，与order_lines中的order_line_no需要对应"
+								},
+								{
+									"name": "sub_express_code",
+									"type": "String",
+									"description": "子件运单号，如果有子母件可填"
+								},
+								{
+									"name": "sc_item_id",
+									"type": "String",
+									"description": "包裹内ERP子货品编码"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "包裹内实发货品数量"
+								}
+							],
+							"name": "sc_items",
+							"type": "ScItems[]",
+							"description": "运单内所包含的所有货品（与翱象对接的货品编码）"
+						}
+					],
+					"name": "confirm_packages",
+					"type": "ConfirmPackages[]",
+					"description": "出库包裹"
 				}
 			],
 			"name": "order_process_report_request",

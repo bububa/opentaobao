@@ -389,6 +389,11 @@
 					"name": "pay_channels",
 					"type": "PayChannel[]",
 					"description": "支付渠道，不填会默认使用类型1，支付金额=主单的payFee"
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "订单扩展数据"
 				}
 			],
 			"name": "order_info",

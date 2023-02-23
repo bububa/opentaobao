@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeAdviserMessageNoticeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProjectAdviserDto is ProjectAdviserDto Setter

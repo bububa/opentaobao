@@ -31,12 +31,12 @@ type TaobaoFenxiaoOrdersGetAPIRequest struct {
 	_timeType string
 	// 指定返回的字段（废弃该参数） 多个字段用","分隔。  fields 如果为空：返回所有采购单对象(purchase_orders)字段。 如果不为空：返回指定采购单对象(purchase_orders)字段。  例1： sub_purchase_orders.tc_order_id 表示只返回tc_order_id 例2： sub_purchase_orders表示只返回子采购单列表
 	_fields string
+	// 采购单编号或分销流水号。 当指定此参数后，其他可选参数可以为空
+	_purchaseOrderId int64
 	// 页码。（大于0的整数。默认为1）
 	_pageNo int64
 	// 每页条数。（每页条数不超过50条）
 	_pageSize int64
-	// 采购单编号或分销流水号。 当指定此参数后，其他可选参数可以为空
-	_purchaseOrderId int64
 	// 消费者交易单号（采购单下游买家订单id）。 当在代销、寄售交易中，此单号存在。
 	_tcOrderId int64
 	// 当前查询用户的角色 当不指定时，默认为供应商 供应商：2，分销商：1
@@ -56,12 +56,15 @@ func (r TaobaoFenxiaoOrdersGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFenxiaoOrdersGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFenxiaoOrdersGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFenxiaoOrdersGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetChannelCodes is ChannelCodes Setter
@@ -155,6 +158,19 @@ func (r TaobaoFenxiaoOrdersGetAPIRequest) GetFields() string {
 	return r._fields
 }
 
+// SetPurchaseOrderId is PurchaseOrderId Setter
+// 采购单编号或分销流水号。 当指定此参数后，其他可选参数可以为空
+func (r *TaobaoFenxiaoOrdersGetAPIRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
+	r._purchaseOrderId = _purchaseOrderId
+	r.Set("purchase_order_id", _purchaseOrderId)
+	return nil
+}
+
+// GetPurchaseOrderId PurchaseOrderId Getter
+func (r TaobaoFenxiaoOrdersGetAPIRequest) GetPurchaseOrderId() int64 {
+	return r._purchaseOrderId
+}
+
 // SetPageNo is PageNo Setter
 // 页码。（大于0的整数。默认为1）
 func (r *TaobaoFenxiaoOrdersGetAPIRequest) SetPageNo(_pageNo int64) error {
@@ -179,19 +195,6 @@ func (r *TaobaoFenxiaoOrdersGetAPIRequest) SetPageSize(_pageSize int64) error {
 // GetPageSize PageSize Getter
 func (r TaobaoFenxiaoOrdersGetAPIRequest) GetPageSize() int64 {
 	return r._pageSize
-}
-
-// SetPurchaseOrderId is PurchaseOrderId Setter
-// 采购单编号或分销流水号。 当指定此参数后，其他可选参数可以为空
-func (r *TaobaoFenxiaoOrdersGetAPIRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
-	r._purchaseOrderId = _purchaseOrderId
-	r.Set("purchase_order_id", _purchaseOrderId)
-	return nil
-}
-
-// GetPurchaseOrderId PurchaseOrderId Getter
-func (r TaobaoFenxiaoOrdersGetAPIRequest) GetPurchaseOrderId() int64 {
-	return r._purchaseOrderId
 }
 
 // SetTcOrderId is TcOrderId Setter

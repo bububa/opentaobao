@@ -12,10 +12,10 @@ import (
 // 判断用户是否关注对应的公共账号
 type TaobaoWeitaoFeedIsrelationAPIRequest struct {
 	model.Params
-	// 要查询的粉丝的淘宝昵称
-	_fansNick string
 	// 要查询的公共账号的淘宝昵称
 	_sellerNick string
+	// 要查询的粉丝的淘宝昵称
+	_fansNick string
 }
 
 // NewTaobaoWeitaoFeedIsrelationRequest 初始化TaobaoWeitaoFeedIsrelationAPIRequest对象
@@ -31,25 +31,15 @@ func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetFansNick is FansNick Setter
-// 要查询的粉丝的淘宝昵称
-func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) error {
-	r._fansNick = _fansNick
-	r.Set("fans_nick", _fansNick)
-	return nil
-}
-
-// GetFansNick FansNick Getter
-func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetFansNick() string {
-	return r._fansNick
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSellerNick is SellerNick Setter
@@ -63,4 +53,17 @@ func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetSellerNick(_sellerNick string)
 // GetSellerNick SellerNick Getter
 func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetSellerNick() string {
 	return r._sellerNick
+}
+
+// SetFansNick is FansNick Setter
+// 要查询的粉丝的淘宝昵称
+func (r *TaobaoWeitaoFeedIsrelationAPIRequest) SetFansNick(_fansNick string) error {
+	r._fansNick = _fansNick
+	r.Set("fans_nick", _fansNick)
+	return nil
+}
+
+// GetFansNick FansNick Getter
+func (r TaobaoWeitaoFeedIsrelationAPIRequest) GetFansNick() string {
+	return r._fansNick
 }

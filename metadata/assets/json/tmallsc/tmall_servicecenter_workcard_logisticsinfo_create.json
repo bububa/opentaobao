@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部单据id",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "STAGE1:一阶段物流 STAGE2:二阶段物流",
+					"required": true
+				},
+				{
+					"name": "workcard_ids",
+					"type": "String",
+					"description": "逗号分隔的工单id列表",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "快递公司",
+					"required": true
+				},
+				{
+					"name": "to_address_location",
+					"type": "String",
+					"description": "目的地四级地址编码"
+				},
+				{
+					"name": "to_address_detail",
+					"type": "String",
+					"description": "目的地详细地址"
+				},
+				{
+					"name": "from_address_location",
+					"type": "String",
+					"description": "取件四级地址编码"
+				},
+				{
+					"name": "from_address_detail",
+					"type": "String",
+					"description": "取件详细地址"
+				}
+			],
+			"name": "create_logistics_order_request",
+			"type": "CreateLogisticsOrderRequest",
+			"description": "创建服务履约物流单信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "tmall.servicecenter.workcard.logisticsinfo.create",
+	"apiChineseName": "创建服务履约物流单",
+	"description": "创建服务履约物流单",
+	"id": 57195
+}

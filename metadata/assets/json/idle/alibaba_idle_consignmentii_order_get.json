@@ -233,7 +233,7 @@
 						}
 					],
 					"name": "module",
-					"type": "ConsignmentV2OrderTo",
+					"type": "ConsignmentV2OrderTO",
 					"description": "订单详情"
 				},
 				{

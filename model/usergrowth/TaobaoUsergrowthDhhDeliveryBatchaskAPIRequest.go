@@ -22,6 +22,8 @@ type TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest struct {
 	_advertisingSpaceId string
 	// 巨浪渠道id,在巨浪平台申请
 	_channel string
+	// md5加密后的caid列表， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本， 多个使用,分隔， 最多支持20个。
+	_caidMd5 string
 }
 
 // NewTaobaoUsergrowthDhhDeliveryBatchaskRequest 初始化TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest对象
@@ -37,12 +39,15 @@ func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOaidMd5 is OaidMd5 Setter
@@ -108,4 +113,17 @@ func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetChannel(_channel stri
 // GetChannel Channel Getter
 func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetChannel() string {
 	return r._channel
+}
+
+// SetCaidMd5 is CaidMd5 Setter
+// md5加密后的caid列表， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本， 多个使用,分隔， 最多支持20个。
+func (r *TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) SetCaidMd5(_caidMd5 string) error {
+	r._caidMd5 = _caidMd5
+	r.Set("caid_md5", _caidMd5)
+	return nil
+}
+
+// GetCaidMd5 CaidMd5 Getter
+func (r TaobaoUsergrowthDhhDeliveryBatchaskAPIRequest) GetCaidMd5() string {
+	return r._caidMd5
 }

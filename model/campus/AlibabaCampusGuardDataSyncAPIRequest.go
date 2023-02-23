@@ -33,12 +33,15 @@ func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaCampusGuardDataSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaCampusGuardDataSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDataType is DataType Setter

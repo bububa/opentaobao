@@ -22,6 +22,11 @@
 		{
 			"subParams": [
 				{
+					"name": "match_scope",
+					"type": "String",
+					"description": "匹配模式： 1精确匹配，4广泛匹配"
+				},
+				{
 					"name": "nick",
 					"type": "String",
 					"description": "主人昵称"
@@ -49,12 +54,12 @@
 				{
 					"name": "max_price",
 					"type": "Number",
-					"description": "关键词出价，单位为分，不能小于5"
+					"description": "关键词计算机出价，单位为分，不能小于5"
 				},
 				{
 					"name": "is_default_price",
 					"type": "Boolean",
-					"description": "是否使用推广组默认出价，true-是；false-否；"
+					"description": "当前恒为false；"
 				},
 				{
 					"name": "audit_status",
@@ -74,17 +79,12 @@
 				{
 					"name": "create_time",
 					"type": "Date",
-					"description": "创建时间"
+					"description": "关键词创建时间"
 				},
 				{
 					"name": "modified_time",
 					"type": "Date",
 					"description": "最后修改时间"
-				},
-				{
-					"name": "match_scope",
-					"type": "String",
-					"description": "匹配模式"
 				}
 			],
 			"name": "keywords",

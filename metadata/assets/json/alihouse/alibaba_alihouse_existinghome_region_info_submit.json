@@ -25,6 +25,11 @@
 							"name": "status",
 							"type": "Number",
 							"description": "经纪人状态"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店ID"
 						}
 					],
 					"name": "outer_consultant_infos",
@@ -42,6 +47,11 @@
 					"type": "Number",
 					"description": "版本号",
 					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "负责业务1-新房 2-二手房"
 				}
 			],
 			"name": "region_expert_dto",

@@ -26,9 +26,19 @@
 					"description": "图片分类名"
 				},
 				{
+					"name": "position",
+					"type": "Number",
+					"description": "图片分类排序"
+				},
+				{
 					"name": "type",
 					"type": "String",
 					"description": "图片分类型别，sys-fixture代表店铺装修分类(系统分类)，sys-auction代表宝贝图片分类(系统分类)，user-define代表用户自定义分类"
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "分类下的图片数"
 				},
 				{
 					"name": "created",
@@ -39,11 +49,6 @@
 					"name": "modified",
 					"type": "Date",
 					"description": "图片分类的修改时间"
-				},
-				{
-					"name": "position",
-					"type": "Number",
-					"description": "图片分类排序"
 				},
 				{
 					"name": "parent_id",

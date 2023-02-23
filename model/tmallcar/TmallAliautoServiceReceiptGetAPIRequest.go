@@ -29,12 +29,15 @@ func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallAliautoServiceReceiptGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReceiptId is ReceiptId Setter

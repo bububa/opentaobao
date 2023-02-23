@@ -74,6 +74,8 @@ type SyncExistingHouseDto struct {
 	UnitPrice string `json:"unit_price,omitempty" xml:"unit_price,omitempty"`
 	// 外部项目店ID
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
+	// 所在楼层描述
+	FloorDesc string `json:"floor_desc,omitempty" xml:"floor_desc,omitempty"`
 	// 房源委托信息
 	Entrust *SyncExistingHouseEntrustDto `json:"entrust,omitempty" xml:"entrust,omitempty"`
 	// 是否展示 1展示 0不展示
@@ -148,4 +150,6 @@ type SyncExistingHouseDto struct {
 	SalesStatus int64 `json:"sales_status,omitempty" xml:"sales_status,omitempty"`
 	// 货的商品id
 	ItemId int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
+	// ms级时间戳
+	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
 }

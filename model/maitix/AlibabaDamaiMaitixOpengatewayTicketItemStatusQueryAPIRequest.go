@@ -29,12 +29,15 @@ func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetApiMeth
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDisTicketItemStatusQueryParam is DisTicketItemStatusQueryParam Setter

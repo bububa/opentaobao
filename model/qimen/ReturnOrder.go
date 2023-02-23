@@ -10,7 +10,7 @@ type ReturnOrder struct {
 	WarehouseCode string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
 	// 外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不会 被重复处理)
 	OutBizCode string `json:"outBizCode,omitempty" xml:"outBizCode,omitempty"`
-	// 单据类型(THRK=退货入库;HHRK=换货入库;只传英文编码)
+	// 单据类型(THRK=退货入库;HHRK=换货入库;WTJTHRK=无头件退货入库;只传英文编码)
 	OrderType string `json:"orderType,omitempty" xml:"orderType,omitempty"`
 	// 确认入库时间(YYYY-MM-DD HH:MM:SS)
 	OrderConfirmTime string `json:"orderConfirmTime,omitempty" xml:"orderConfirmTime,omitempty"`

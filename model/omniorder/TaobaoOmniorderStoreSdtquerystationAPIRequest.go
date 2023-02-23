@@ -29,12 +29,15 @@ func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOmniorderStoreSdtquerystationAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamLong2 is ParamLong2 Setter

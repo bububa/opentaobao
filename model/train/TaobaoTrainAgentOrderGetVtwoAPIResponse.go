@@ -22,14 +22,16 @@ type TaobaoTrainAgentOrderGetVtwoAPIResponseModel struct {
 	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
 	// 火车票信息。
 	Tickets []ToAgentTicketInfo `json:"tickets,omitempty" xml:"tickets>to_agent_ticket_info,omitempty"`
-	// 移动电话
-	Telephone string `json:"telephone,omitempty" xml:"telephone,omitempty"`
+	// vip定制信息
+	VipCustomList []VipCustomResultItem `json:"vip_custom_list,omitempty" xml:"vip_custom_list>vip_custom_result_item,omitempty"`
 	// 保险邮件地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 联系人姓名
-	RelationName string `json:"relation_name,omitempty" xml:"relation_name,omitempty"`
 	// 如果是公司发票，需要公司名称，如果不需要公司名称，返回no
 	CompanyName string `json:"company_name,omitempty" xml:"company_name,omitempty"`
+	// 联系人姓名
+	RelationName string `json:"relation_name,omitempty" xml:"relation_name,omitempty"`
+	// 移动电话
+	Telephone string `json:"telephone,omitempty" xml:"telephone,omitempty"`
 	// 最晚出票时间
 	LatestIssueTime string `json:"latest_issue_time,omitempty" xml:"latest_issue_time,omitempty"`
 	// 线下票收件人姓名
@@ -46,14 +48,14 @@ type TaobaoTrainAgentOrderGetVtwoAPIResponseModel struct {
 	InterchangeStation string `json:"interchange_station,omitempty" xml:"interchange_station,omitempty"`
 	// isMultiTrip
 	IsMultiTrip string `json:"is_multi_trip,omitempty" xml:"is_multi_trip,omitempty"`
-	// ttp_order_id
-	TtpOrderId int64 `json:"ttp_order_id,omitempty" xml:"ttp_order_id,omitempty"`
 	// 主订单id
 	MainOrderId int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
-	// 整个订单的总价,包括每张票价及保险价格,价格精确到分,例如100元,输出为10000.
-	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// 1-已付款，2-关闭，3-成功
 	OrderStatus int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
+	// 整个订单的总价,包括每张票价及保险价格,价格精确到分,例如100元,输出为10000.
+	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
+	// ttp_order_id
+	TtpOrderId int64 `json:"ttp_order_id,omitempty" xml:"ttp_order_id,omitempty"`
 	// 订单类型0:默认订单类型走代理商账号；1：走12306客户绑定的账号；2：线下邮寄票
 	OrderType int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
 	// 纸质票类型: 1 靠窗,2 连坐,3 上铺,4 中铺,5 下铺,6 是否同包厢
@@ -72,10 +74,10 @@ type TaobaoTrainAgentOrderGetVtwoAPIResponseModel struct {
 	VipCustomMinSeatCount int64 `json:"vip_custom_min_seat_count,omitempty" xml:"vip_custom_min_seat_count,omitempty"`
 	// 定制票类型 1:下铺 2:下铺or中铺 3:过道 4:靠窗
 	VipCustomType int64 `json:"vip_custom_type,omitempty" xml:"vip_custom_type,omitempty"`
-	// 返回错误。
-	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否需要保险邮件地址
 	Mailing bool `json:"mailing,omitempty" xml:"mailing,omitempty"`
+	// 返回错误。
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 	// 是否需要发票
 	NeedReceipt bool `json:"need_receipt,omitempty" xml:"need_receipt,omitempty"`
 	// 是否需要乘车人退款 true:需要 false:不需要

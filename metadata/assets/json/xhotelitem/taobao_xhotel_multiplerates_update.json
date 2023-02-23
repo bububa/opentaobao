@@ -10,7 +10,7 @@
 	"responseParams": [
 		{
 			"name": "gid_and_rpid_occupancy_lengthofstay",
-			"type": "Json []",
+			"type": "String []",
 			"description": "商品id,房价id,入住人数，连住天数"
 		},
 		{

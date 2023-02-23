@@ -1,0 +1,88 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "event_id",
+					"type": "String",
+					"description": "履约事件",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "打款支付宝流水号"
+				},
+				{
+					"name": "main_order_id",
+					"type": "String",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "need_make_up_notice",
+					"type": "String",
+					"description": "提示用户需补充的申请信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "售后处理类型，见对接文档"
+						},
+						{
+							"name": "only_refund_cent",
+							"type": "Number",
+							"description": "仅退款金额(分)"
+						},
+						{
+							"name": "show_message",
+							"type": "String",
+							"description": "反馈信息"
+						},
+						{
+							"name": "refund_and_return_cent",
+							"type": "Number",
+							"description": "退货退款金额(分)"
+						}
+					],
+					"name": "service_plan_info",
+					"type": "ServicePlanInfo",
+					"description": "售后处理方案信息"
+				},
+				{
+					"name": "after_sale_apply_id",
+					"type": "String",
+					"description": "售后申请单id",
+					"required": true
+				},
+				{
+					"name": "send_back_mail_no",
+					"type": "String",
+					"description": "售后被拒绝，退回物流单号"
+				}
+			],
+			"name": "tender_after_sale_param",
+			"type": "TenderAfterSaleParam",
+			"description": "实参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "perform_error",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "transform_success",
+			"type": "Boolean",
+			"description": "是否履约成功"
+		}
+	],
+	"name": "alibaba.idle.tender.aftersale.order.perform",
+	"apiChineseName": "闲鱼帮卖售后订单履约",
+	"description": "闲鱼帮卖售后订单履约",
+	"id": 64258
+}

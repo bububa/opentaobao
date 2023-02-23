@@ -8,4 +8,6 @@ type OpenEmployeeInfo struct {
 	ThirdPartUserId string `json:"third_part_user_id,omitempty" xml:"third_part_user_id,omitempty"`
 	// 第三方员工工号。
 	ThirdPartJobNo string `json:"third_part_job_no,omitempty" xml:"third_part_job_no,omitempty"`
+	// 1:离职 0:在职
+	LeaveStatus int64 `json:"leave_status,omitempty" xml:"leave_status,omitempty"`
 }

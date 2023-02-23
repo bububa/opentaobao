@@ -127,6 +127,11 @@
 					"type": "Number",
 					"description": "1 测试数据 0 正常数据",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
 				}
 			],
 			"name": "rc",

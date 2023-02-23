@@ -29,12 +29,15 @@ func (r AlitripTravelBookinfoQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripTravelBookinfoQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripTravelBookinfoQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripTravelBookinfoQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBookinfoId is BookinfoId Setter

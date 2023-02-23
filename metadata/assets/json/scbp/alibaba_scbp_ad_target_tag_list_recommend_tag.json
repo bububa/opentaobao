@@ -1,0 +1,86 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			],
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划ID",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "is_filter_adopted_tag",
+					"type": "Boolean",
+					"description": "是否需要过滤已采纳标签"
+				},
+				{
+					"name": "query_mode",
+					"type": "String",
+					"description": "查询类型(查询推荐标签丰富信息，包含拓展信息和标签美杜莎文案（DEFAULT） 查询推荐标签扩展信息，包含基础信息和算法推荐溢价值（SIMPLE） 查询推荐标签基础信息（RAW）)"
+				}
+			],
+			"name": "recommend_query",
+			"type": "TargetTagRecommendQueryDTO",
+			"description": "推荐实体类",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "option_value",
+					"type": "String",
+					"description": "推荐标签名"
+				},
+				{
+					"name": "discount",
+					"type": "Number",
+					"description": "推荐标签溢价值"
+				},
+				{
+					"name": "score",
+					"type": "Number",
+					"description": "推荐标签分数[0-100]"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "推荐标签类型"
+				},
+				{
+					"name": "high_impr_price",
+					"type": "String",
+					"description": "高曝光竞价(单位：元)"
+				}
+			],
+			"name": "result_list",
+			"type": "TargetTagRecommendResultDTO []",
+			"description": "定向标签推荐结果"
+		}
+	],
+	"name": "alibaba.scbp.ad.target.tag.list.recommend.tag",
+	"apiChineseName": "给计划推荐标签",
+	"description": "给计划推荐标签",
+	"id": 65240
+}

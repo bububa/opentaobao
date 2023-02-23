@@ -120,7 +120,7 @@
 				{
 					"name": "type",
 					"type": "String",
-					"description": "type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]",
+					"description": "type表示图片类型，取值范围只能是：【厨房、卫生间、客厅、卧室、其他】",
 					"required": true
 				},
 				{
@@ -507,6 +507,11 @@
 			"type": "String",
 			"description": "标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362\u0026docType=1",
 			"required": true
+		},
+		{
+			"name": "bnb_extend",
+			"type": "String",
+			"description": "民宿扩展信息"
 		}
 	],
 	"responseParams": [

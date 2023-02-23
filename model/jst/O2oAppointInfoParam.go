@@ -1,9 +1,0 @@
-package jst
-
-// O2oAppointInfoParam 结构体
-type O2oAppointInfoParam struct {
-	// 预约属性名信息
-	ParamName string `json:"param_name,omitempty" xml:"param_name,omitempty"`
-	// 预约属性值信息
-	ParamValue string `json:"param_value,omitempty" xml:"param_value,omitempty"`
-}

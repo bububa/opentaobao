@@ -3,14 +3,46 @@
 		{
 			"subParams": [
 				{
-					"name": "topic",
+					"name": "collapse_key",
 					"type": "String",
-					"description": "应用订阅主题"
+					"description": "去重码,1-6位整数,0将视为不填,如果填写则同一appKey相同的去重码消息将会被去重，只保留最新的一条，请谨慎使用"
 				},
 				{
-					"name": "text",
+					"name": "data",
+					"type": "String",
+					"description": "消息内容",
+					"required": true
+				},
+				{
+					"name": "expiration",
 					"type": "Number",
-					"description": "消息是否压缩,0:二进制压缩,1:utf8文本"
+					"description": "消息过期时间,lunix时间戳,单位S,为空或不填时为当前时间的1小时后"
+				},
+				{
+					"name": "ico",
+					"type": "String",
+					"description": "消息图标"
+				},
+				{
+					"name": "important",
+					"type": "Number",
+					"description": "消息是否加密,1:加密,0:不加密"
+				},
+				{
+					"name": "parameter",
+					"type": "String",
+					"description": "消息参数,json字符串格式"
+				},
+				{
+					"name": "priority",
+					"type": "Number",
+					"description": "消息优先权"
+				},
+				{
+					"name": "program",
+					"type": "String",
+					"description": "为action或广播侦听通道，要求填写应用包名(package)",
+					"required": true
 				},
 				{
 					"subParams": [
@@ -33,35 +65,9 @@
 					"required": true
 				},
 				{
-					"name": "collapse_key",
-					"type": "String",
-					"description": "去重码,1-6位整数,0将视为不填,如果填写则同一appKey相同的去重码消息将会被去重，只保留最新的一条，请谨慎使用"
-				},
-				{
-					"name": "expiration",
+					"name": "responsetype",
 					"type": "Number",
-					"description": "消息过期时间,lunix时间戳,单位S,为空或不填时为当前时间的1小时后"
-				},
-				{
-					"name": "important",
-					"type": "Number",
-					"description": "消息是否加密,1:加密,0:不加密"
-				},
-				{
-					"name": "data",
-					"type": "String",
-					"description": "消息内容",
-					"required": true
-				},
-				{
-					"name": "ico",
-					"type": "String",
-					"description": "消息图标"
-				},
-				{
-					"name": "uri",
-					"type": "String",
-					"description": "yunos4.0专用,限制消息只有指定应用来侦听"
+					"description": "响应方式 0:无响应 4:打开应用 7:发送广播"
 				},
 				{
 					"name": "showtype",
@@ -70,31 +76,25 @@
 					"required": true
 				},
 				{
+					"name": "text",
+					"type": "Number",
+					"description": "消息是否压缩,0:二进制压缩,1:utf8文本"
+				},
+				{
 					"name": "title",
 					"type": "String",
 					"description": "消息标题",
 					"required": true
 				},
 				{
-					"name": "parameter",
+					"name": "topic",
 					"type": "String",
-					"description": "消息参数,json字符串格式"
+					"description": "应用订阅主题"
 				},
 				{
-					"name": "priority",
-					"type": "Number",
-					"description": "消息优先权"
-				},
-				{
-					"name": "program",
+					"name": "uri",
 					"type": "String",
-					"description": "为action或广播侦听通道，要求填写应用包名(package)",
-					"required": true
-				},
-				{
-					"name": "responsetype",
-					"type": "Number",
-					"description": "响应方式 0:无响应 4:打开应用 7:发送广播"
+					"description": "yunos4.0专用,限制消息只有指定应用来侦听"
 				},
 				{
 					"name": "deploy_status",
@@ -110,9 +110,9 @@
 	],
 	"responseParams": [
 		{
-			"name": "status",
+			"name": "mid",
 			"type": "Number",
-			"description": "200:消息发送成功"
+			"description": "消息ID，失败则为null"
 		},
 		{
 			"name": "message",
@@ -120,9 +120,9 @@
 			"description": "消息发送提示"
 		},
 		{
-			"name": "mid",
+			"name": "status",
 			"type": "Number",
-			"description": "消息ID，失败则为null"
+			"description": "200:消息发送成功"
 		}
 	],
 	"name": "yunos.service.cmns.coa.push",

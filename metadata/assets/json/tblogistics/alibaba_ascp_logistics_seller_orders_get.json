@@ -1,0 +1,107 @@
+{
+	"requestParams": [
+		{
+			"name": "write_off_date",
+			"type": "String",
+			"description": "核销日期"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "分页索引"
+		},
+		{
+			"name": "receive_code",
+			"type": "String",
+			"description": "收货码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "tid",
+			"type": "String",
+			"description": "淘系交易id"
+		},
+		{
+			"name": "write_off_status",
+			"type": "String",
+			"description": "1代表未核销，2代表已核销"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品Id"
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格"
+								},
+								{
+									"name": "goods_quantity",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "goods_name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "商品sku id"
+								},
+								{
+									"name": "goods_pic_id",
+									"type": "String",
+									"description": "商品图片地址"
+								}
+							],
+							"name": "goods_list",
+							"type": "WriteOffGoodsDTO[]",
+							"description": "交易单所包含的商品列表"
+						},
+						{
+							"name": "lp_order_id",
+							"type": "String",
+							"description": "核销订单Id"
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "淘宝交易Id"
+						}
+					],
+					"name": "writeoff_order_list",
+					"type": "WriteOffOrderDTO[]",
+					"description": "返回核销订单列表"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "返回值"
+		}
+	],
+	"name": "alibaba.ascp.logistics.seller.orders.get",
+	"apiChineseName": "商家配送核销订单列表查询",
+	"description": "商家配送核销订单列表查询",
+	"id": 64849
+}

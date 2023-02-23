@@ -10,6 +10,10 @@ type FinanceDetailInfoDto struct {
 	ModelName string `json:"model_name,omitempty" xml:"model_name,omitempty"`
 	// 业务内容
 	BizContent string `json:"biz_content,omitempty" xml:"biz_content,omitempty"`
+	// 外部金融订单号
+	OuterFinanceOrderId string `json:"outer_finance_order_id,omitempty" xml:"outer_finance_order_id,omitempty"`
+	// 厂商名称
+	ManufactureName string `json:"manufacture_name,omitempty" xml:"manufacture_name,omitempty"`
 	// 用户id
 	UserId int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
 	// 商品id
@@ -22,6 +26,14 @@ type FinanceDetailInfoDto struct {
 	SeriesId int64 `json:"series_id,omitempty" xml:"series_id,omitempty"`
 	// 车型id
 	ModelId int64 `json:"model_id,omitempty" xml:"model_id,omitempty"`
+	// bookingShopInfo
+	BookingShopInfo *AutoShopDto `json:"booking_shop_info,omitempty" xml:"booking_shop_info,omitempty"`
+	// 购车人信息
+	PurchaseUserInfo *PurchaseUserDto `json:"purchase_user_info,omitempty" xml:"purchase_user_info,omitempty"`
+	// 收货地址
+	DeliveryAddress *DeliveryAddressDto `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
+	// 金融方案信息
+	FinanceInfo *AutoFinanceDto `json:"finance_info,omitempty" xml:"finance_info,omitempty"`
 	// 是否支付定金
 	EarnestPaid bool `json:"earnest_paid,omitempty" xml:"earnest_paid,omitempty"`
 	// 是否有效订单

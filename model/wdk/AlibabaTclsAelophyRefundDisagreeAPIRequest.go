@@ -33,12 +33,15 @@ func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTclsAelophyRefundDisagreeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefundId is RefundId Setter

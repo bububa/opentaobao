@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "测试标",
+					"required": true
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "bail",
+					"type": "Number",
+					"description": "保证金余额",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "行业类型",
+					"required": true
+				}
+			],
+			"name": "store_bail_dto",
+			"type": "StoreBailDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "是否处理成功"
+		},
+		{
+			"name": "return_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "message"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.store.bail.sync",
+	"apiChineseName": "门店保证金余额同步",
+	"description": "门店保证金余额同步",
+	"id": 65271
+}

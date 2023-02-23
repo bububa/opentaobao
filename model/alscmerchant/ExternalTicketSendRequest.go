@@ -4,7 +4,7 @@ package alscmerchant
 type ExternalTicketSendRequest struct {
 	// 需要发送的码列表，其中code表示串码码值，num表示码的可核销份数
 	ExternalTicketCodes []ExternalTicketCode `json:"external_ticket_codes,omitempty" xml:"external_ticket_codes>external_ticket_code,omitempty"`
-	// 口碑订单号
+	// 口碑子订单号, 即alsc_sub_order_no
 	OrderNo string `json:"order_no,omitempty" xml:"order_no,omitempty"`
 	// 请求id，唯一标识一次请求
 	TicketRequestId string `json:"ticket_request_id,omitempty" xml:"ticket_request_id,omitempty"`

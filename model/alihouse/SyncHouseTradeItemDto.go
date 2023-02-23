@@ -16,4 +16,6 @@ type SyncHouseTradeItemDto struct {
 	MerchantOpenId int64 `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
 	// 1
 	RelationItemBizType int64 `json:"relation_item_biz_type,omitempty" xml:"relation_item_biz_type,omitempty"`
+	// 是否需要异步
+	IsAsync int64 `json:"is_async,omitempty" xml:"is_async,omitempty"`
 }

@@ -29,12 +29,15 @@ func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpAdKeywordDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAdKeyword is AdKeyword Setter

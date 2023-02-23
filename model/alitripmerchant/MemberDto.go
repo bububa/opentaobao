@@ -30,6 +30,8 @@ type MemberDto struct {
 	NextLevelName string `json:"next_level_name,omitempty" xml:"next_level_name,omitempty"`
 	// 德比返回的手机号
 	PhoneByDerby string `json:"phone_by_derby,omitempty" xml:"phone_by_derby,omitempty"`
+	// 德比[查询用户信息]接口-[contactMedium]节点中的[id]
+	DerbyEmailId string `json:"derby_email_id,omitempty" xml:"derby_email_id,omitempty"`
 	// 用户基本信息
 	MemberBaseInfo *MemberBaseInfoDto `json:"member_base_info,omitempty" xml:"member_base_info,omitempty"`
 	// 会员卡信息
@@ -54,4 +56,6 @@ type MemberDto struct {
 	HasWechatPublicAccountOpenId bool `json:"has_wechat_public_account_open_id,omitempty" xml:"has_wechat_public_account_open_id,omitempty"`
 	// 是否为假邮箱
 	IsFakeEmail bool `json:"is_fake_email,omitempty" xml:"is_fake_email,omitempty"`
+	// 快速升级资格
+	FastTrackEligibility bool `json:"fast_track_eligibility,omitempty" xml:"fast_track_eligibility,omitempty"`
 }

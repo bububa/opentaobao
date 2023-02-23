@@ -20,76 +20,64 @@
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息描述",
-					"required": true
+					"description": "错误信息描述"
 				},
 				{
 					"subParams": [
 						{
-							"name": "quantity",
-							"type": "String",
-							"description": "实时库存(库存实时结果(出参))",
-							"required": true
-						},
-						{
 							"name": "isv_goods_id",
 							"type": "String",
-							"description": "ISV商品Id",
-							"required": true
+							"description": "ISV商品Id"
 						},
 						{
 							"name": "goods_id",
 							"type": "Number",
-							"description": "零售通商品Id",
-							"required": true
+							"description": "零售通商品Id"
 						},
 						{
 							"name": "gmt_create",
 							"type": "Number",
-							"description": "最后修改 精确到毫秒",
-							"required": true
+							"description": "最后修改 精确到毫秒"
 						},
 						{
 							"name": "user_id",
 							"type": "Number",
-							"description": "门店对应的主账号id",
-							"required": true
+							"description": "门店对应的主账号id"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "实时库存(库存实时结果(出参))"
 						},
 						{
 							"name": "delete_flag",
 							"type": "String",
-							"description": "库存删除标志(出参) ON:删除库存(库存删除后，售卖不维护库存值)   OFF:不删除库存（售卖需要维护库存值）(缺省值)",
-							"required": true
+							"description": "库存删除标志(出参) ON:删除库存(库存删除后，售卖不维护库存值)   OFF:不删除库存（售卖需要维护库存值）(缺省值)"
 						},
 						{
 							"name": "device_type",
 							"type": "Number",
-							"description": "数据来源的设备类型   0：pos，1：自动售货机，-1：其它  缺省值：0",
-							"required": true
+							"description": "数据来源的设备类型   0：pos，1：自动售货机，-1：其它  缺省值：0"
 						},
 						{
 							"name": "hardware_id",
 							"type": "String",
-							"description": "设备物理硬件ID（自身保证唯一性）",
-							"required": true
+							"description": "设备物理硬件ID（自身保证唯一性）"
 						}
 					],
 					"name": "module_list",
 					"type": "InventoryDto[]",
-					"description": "接口具体返回的业务数据对象",
-					"required": true
+					"description": "接口具体返回的业务数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "业务错误码",
-					"required": true
+					"description": "业务错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				}
 			],
 			"name": "result",

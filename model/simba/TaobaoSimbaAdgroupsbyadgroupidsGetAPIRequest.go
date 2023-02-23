@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest struct {
 	model.Params
 	// 推广组Id列表
-	_adgroupIds []int64
+	_adgroupIds []string
 	// 主人昵称
 	_nick string
 	// 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
@@ -35,24 +35,27 @@ func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAdgroupIds is AdgroupIds Setter
 // 推广组Id列表
-func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds []int64) error {
+func (r *TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) SetAdgroupIds(_adgroupIds []string) error {
 	r._adgroupIds = _adgroupIds
 	r.Set("adgroup_ids", _adgroupIds)
 	return nil
 }
 
 // GetAdgroupIds AdgroupIds Getter
-func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetAdgroupIds() []int64 {
+func (r TaobaoSimbaAdgroupsbyadgroupidsGetAPIRequest) GetAdgroupIds() []string {
 	return r._adgroupIds
 }
 

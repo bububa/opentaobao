@@ -11,11 +11,6 @@
 			"name": "data",
 			"type": "String",
 			"description": "result"
-		},
-		{
-			"name": "data",
-			"type": "String",
-			"description": "result"
 		}
 	],
 	"name": "alibaba.security.jaq.rp.cloud.rphit",

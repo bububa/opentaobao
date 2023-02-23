@@ -32,6 +32,8 @@ type RichContentDraftDto struct {
 	Summary string `json:"summary,omitempty" xml:"summary,omitempty"`
 	// 富文本内容
 	SourceRichContent string `json:"source_rich_content,omitempty" xml:"source_rich_content,omitempty"`
+	// 外部门店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 是否原创 1 原创 0 非原创
 	Original int64 `json:"original,omitempty" xml:"original,omitempty"`
 	// 1 测试数据 0 正常数据

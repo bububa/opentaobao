@@ -10,7 +10,7 @@ type ArtistDto struct {
 	Alias string `json:"alias,omitempty" xml:"alias,omitempty"`
 	// 艺人名
 	ArtistName string `json:"artist_name,omitempty" xml:"artist_name,omitempty"`
-	// 艺人图片
+	// 艺人封面
 	ArtistLogo string `json:"artist_logo,omitempty" xml:"artist_logo,omitempty"`
 	// 艺人id
 	ArtistId int64 `json:"artist_id,omitempty" xml:"artist_id,omitempty"`

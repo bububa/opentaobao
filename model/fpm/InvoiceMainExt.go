@@ -56,4 +56,6 @@ type InvoiceMainExt struct {
 	TaxAmount string `json:"tax_amount,omitempty" xml:"tax_amount,omitempty"`
 	// 快递号
 	WaybillNo string `json:"waybill_no,omitempty" xml:"waybill_no,omitempty"`
+	// 关联单据号
+	DocNo string `json:"doc_no,omitempty" xml:"doc_no,omitempty"`
 }

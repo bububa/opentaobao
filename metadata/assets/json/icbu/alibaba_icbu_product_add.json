@@ -41,14 +41,14 @@
 		{
 			"subParams": [
 				{
-					"name": "start_quantity",
-					"type": "Number",
-					"description": "起始数量，范围是1-99999"
-				},
-				{
 					"name": "price",
 					"type": "String",
 					"description": "价格，范围是0.01-9999999.00"
+				},
+				{
+					"name": "start_quantity",
+					"type": "Number",
+					"description": "起始数量，范围是1-99999"
 				}
 			],
 			"name": "bulk_discount_prices",
@@ -130,21 +130,6 @@
 							"description": "属性ID"
 						},
 						{
-							"name": "attribute_name",
-							"type": "String",
-							"description": "属性名称"
-						},
-						{
-							"name": "value_id",
-							"type": "Number",
-							"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
-						},
-						{
-							"name": "value_name",
-							"type": "String",
-							"description": "属性值名称"
-						},
-						{
 							"name": "sku_custom_image_url",
 							"type": "String",
 							"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
@@ -153,6 +138,21 @@
 							"name": "sku_custom_value_name",
 							"type": "String",
 							"description": "作为sku属性值时，自定义属性值名称"
+						},
+						{
+							"name": "value_id",
+							"type": "Number",
+							"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String",
+							"description": "属性名称"
+						},
+						{
+							"name": "value_name",
+							"type": "String",
+							"description": "属性值名称"
 						}
 					],
 					"name": "attributes",
@@ -169,9 +169,53 @@
 									"description": "属性ID"
 								},
 								{
+									"name": "value_id",
+									"type": "Number",
+									"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "属性值名称"
+								},
+								{
 									"name": "attribute_name",
 									"type": "String",
 									"description": "属性名称"
+								},
+								{
+									"name": "sku_custom_value_name",
+									"type": "String",
+									"description": "作为sku属性值时，自定义属性值名称"
+								},
+								{
+									"name": "sku_custom_image_url",
+									"type": "String",
+									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
+								}
+							],
+							"name": "attributes",
+							"type": "ProductAttribute[]",
+							"description": "商品属性"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
+						}
+					],
+					"name": "exclude_skus",
+					"type": "SkuDetail[]",
+					"description": "需要失效的SKU的详细定义"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "attribute_id",
+									"type": "Number",
+									"description": "属性ID"
 								},
 								{
 									"name": "value_id",
@@ -184,14 +228,19 @@
 									"description": "属性值名称"
 								},
 								{
-									"name": "sku_custom_image_url",
+									"name": "attribute_name",
 									"type": "String",
-									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
+									"description": "属性名称"
 								},
 								{
 									"name": "sku_custom_value_name",
 									"type": "String",
 									"description": "作为sku属性值时，自定义属性值名称"
+								},
+								{
+									"name": "sku_custom_image_url",
+									"type": "String",
+									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
 								}
 							],
 							"name": "attributes",
@@ -234,55 +283,6 @@
 					"name": "special_skus",
 					"type": "SkuDetail[]",
 					"description": "单个SKU详细定义"
-				},
-				{
-					"subParams": [
-						{
-							"subParams": [
-								{
-									"name": "attribute_id",
-									"type": "Number",
-									"description": "属性ID"
-								},
-								{
-									"name": "attribute_name",
-									"type": "String",
-									"description": "属性名称"
-								},
-								{
-									"name": "value_id",
-									"type": "Number",
-									"description": "属性值ID，自定义属性值时ID要小于0，并且不能重复"
-								},
-								{
-									"name": "value_name",
-									"type": "String",
-									"description": "属性值名称"
-								},
-								{
-									"name": "sku_custom_image_url",
-									"type": "String",
-									"description": "作为sku属性值时，用图形来展示；必须是alibaba图片中心的图片URL，请使用API alibaba.icbu.photobank.upload 上传图片"
-								},
-								{
-									"name": "sku_custom_value_name",
-									"type": "String",
-									"description": "作为sku属性值时，自定义属性值名称"
-								}
-							],
-							"name": "attributes",
-							"type": "ProductAttribute[]",
-							"description": "商品属性"
-						},
-						{
-							"name": "price",
-							"type": "String",
-							"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
-						}
-					],
-					"name": "exclude_skus",
-					"type": "SkuDetail[]",
-					"description": "需要失效的SKU的详细定义"
 				}
 			],
 			"name": "product_sku",
@@ -298,14 +298,19 @@
 		{
 			"subParams": [
 				{
+					"name": "delivery_port",
+					"type": "String",
+					"description": "发货港口"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "发货期限"
+				},
+				{
 					"name": "fob_currency",
 					"type": "String",
 					"description": "FOB货币价格，枚举值"
-				},
-				{
-					"name": "fob_min_price",
-					"type": "String",
-					"description": "FOB最小价格"
 				},
 				{
 					"name": "fob_max_price",
@@ -313,14 +318,14 @@
 					"description": "FOB最大价格"
 				},
 				{
+					"name": "fob_min_price",
+					"type": "String",
+					"description": "FOB最小价格"
+				},
+				{
 					"name": "fob_unit_type",
 					"type": "String",
 					"description": "FOB计量单位，枚举值"
-				},
-				{
-					"name": "payment_methods",
-					"type": "String[]",
-					"description": "付款方式，枚举值"
 				},
 				{
 					"name": "min_order_quantity",
@@ -333,6 +338,16 @@
 					"description": "最小起订量计量单位，枚举值"
 				},
 				{
+					"name": "payment_methods",
+					"type": "String[]",
+					"description": "付款方式，枚举值"
+				},
+				{
+					"name": "supply_period_type",
+					"type": "String",
+					"description": "供货能力周期，枚举值"
+				},
+				{
 					"name": "supply_quantity",
 					"type": "String",
 					"description": "供货能力"
@@ -341,21 +356,6 @@
 					"name": "supply_unit_type",
 					"type": "String",
 					"description": "供货能力计量单位，枚举值"
-				},
-				{
-					"name": "supply_period_type",
-					"type": "String",
-					"description": "供货能力周期，枚举值"
-				},
-				{
-					"name": "delivery_port",
-					"type": "String",
-					"description": "发货港口"
-				},
-				{
-					"name": "delivery_time",
-					"type": "String",
-					"description": "发货期限"
 				},
 				{
 					"name": "packaging_desc",
@@ -394,34 +394,14 @@
 		{
 			"subParams": [
 				{
-					"name": "unit_type",
-					"type": "String",
-					"description": "最小计量单位，枚举值"
-				},
-				{
-					"name": "sale_type",
-					"type": "String",
-					"description": "销售方式，按件卖(normal)或者按批卖(batch)"
-				},
-				{
 					"name": "batch_number",
 					"type": "Number",
 					"description": "每批数量，当sale_type=batch时生效，范围是1-99999"
 				},
 				{
-					"name": "price",
-					"type": "String",
-					"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
-				},
-				{
-					"name": "package_size",
-					"type": "String",
-					"description": "尺寸，单位是厘米，长宽高范围是1-9999999"
-				},
-				{
-					"name": "weight",
-					"type": "String",
-					"description": "重量，单位是kg，精确到小数点后三位，范围是0.01-9999999.000"
+					"name": "handling_time",
+					"type": "Number",
+					"description": "备货期，单位是天，范围是1-60"
 				},
 				{
 					"name": "min_order_quantity",
@@ -429,14 +409,34 @@
 					"description": "最小起订量，范围是1-99999"
 				},
 				{
+					"name": "package_size",
+					"type": "String",
+					"description": "尺寸，单位是厘米，长宽高范围是1-9999999"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00"
+				},
+				{
+					"name": "sale_type",
+					"type": "String",
+					"description": "销售方式，按件卖(normal)或者按批卖(batch)"
+				},
+				{
 					"name": "shipping_line_template_id",
 					"type": "Number",
 					"description": "运费模板ID"
 				},
 				{
-					"name": "handling_time",
-					"type": "Number",
-					"description": "备货期，单位是天，范围是1-60"
+					"name": "unit_type",
+					"type": "String",
+					"description": "最小计量单位，枚举值"
+				},
+				{
+					"name": "weight",
+					"type": "String",
+					"description": "重量，单位是kg，精确到小数点后三位，范围是0.01-9999999.000"
 				},
 				{
 					"subParams": [

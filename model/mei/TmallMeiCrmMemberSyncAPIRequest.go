@@ -18,12 +18,12 @@ type TmallMeiCrmMemberSyncAPIRequest struct {
 	_mobile string
 	// 会员拓展信息
 	_extend string
+	// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
+	_levelPoint string
 	// 混淆昵称
 	_mixNick string
 	// 昵称
 	_nick string
-	// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
-	_levelPoint string
 	// 会员积分
 	_point int64
 	// 会员等级
@@ -49,12 +49,15 @@ func (r TmallMeiCrmMemberSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallMeiCrmMemberSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallMeiCrmMemberSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallMeiCrmMemberSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMobile is Mobile Setter
@@ -83,6 +86,19 @@ func (r TmallMeiCrmMemberSyncAPIRequest) GetExtend() string {
 	return r._extend
 }
 
+// SetLevelPoint is LevelPoint Setter
+// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
+func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelPoint(_levelPoint string) error {
+	r._levelPoint = _levelPoint
+	r.Set("level_point", _levelPoint)
+	return nil
+}
+
+// GetLevelPoint LevelPoint Getter
+func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelPoint() string {
+	return r._levelPoint
+}
+
 // SetMixNick is MixNick Setter
 // 混淆昵称
 func (r *TmallMeiCrmMemberSyncAPIRequest) SetMixNick(_mixNick string) error {
@@ -107,19 +123,6 @@ func (r *TmallMeiCrmMemberSyncAPIRequest) SetNick(_nick string) error {
 // GetNick Nick Getter
 func (r TmallMeiCrmMemberSyncAPIRequest) GetNick() string {
 	return r._nick
-}
-
-// SetLevelPoint is LevelPoint Setter
-// 成长值字段，支持整数或小数(小数位最多两位),当level_type=2时，level_point必传
-func (r *TmallMeiCrmMemberSyncAPIRequest) SetLevelPoint(_levelPoint string) error {
-	r._levelPoint = _levelPoint
-	r.Set("level_point", _levelPoint)
-	return nil
-}
-
-// GetLevelPoint LevelPoint Getter
-func (r TmallMeiCrmMemberSyncAPIRequest) GetLevelPoint() string {
-	return r._levelPoint
 }
 
 // SetPoint is Point Setter

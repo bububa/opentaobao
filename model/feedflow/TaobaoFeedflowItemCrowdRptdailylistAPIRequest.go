@@ -29,12 +29,15 @@ func (r TaobaoFeedflowItemCrowdRptdailylistAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFeedflowItemCrowdRptdailylistAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFeedflowItemCrowdRptdailylistAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFeedflowItemCrowdRptdailylistAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRptQueryDTO is RptQueryDTO Setter

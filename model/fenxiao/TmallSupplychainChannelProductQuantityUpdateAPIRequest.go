@@ -35,12 +35,15 @@ func (r TmallSupplychainChannelProductQuantityUpdateAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallSupplychainChannelProductQuantityUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallSupplychainChannelProductQuantityUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallSupplychainChannelProductQuantityUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetQuantity is Quantity Setter

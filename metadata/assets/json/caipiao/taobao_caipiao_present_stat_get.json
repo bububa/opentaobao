@@ -8,16 +8,21 @@
 	],
 	"responseParams": [
 		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "查询的结果集大小"
-		},
-		{
 			"subParams": [
+				{
+					"name": "present_stake",
+					"type": "Number",
+					"description": "当日赠送彩票的注数"
+				},
 				{
 					"name": "date_id",
 					"type": "Number",
 					"description": "日期"
+				},
+				{
+					"name": "present_fee",
+					"type": "Number",
+					"description": "当日赠送彩票的金额"
 				},
 				{
 					"name": "seller_id",
@@ -28,21 +33,16 @@
 					"name": "present_user",
 					"type": "Number",
 					"description": "当日赠送用户数"
-				},
-				{
-					"name": "present_stake",
-					"type": "Number",
-					"description": "当日赠送彩票的注数"
-				},
-				{
-					"name": "present_fee",
-					"type": "Number",
-					"description": "当日赠送彩票的金额"
 				}
 			],
 			"name": "results",
 			"type": "LotteryWangcaiPresentStat []",
 			"description": "查询的结果集"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "查询的结果集大小"
 		}
 	],
 	"name": "taobao.caipiao.present.stat.get",

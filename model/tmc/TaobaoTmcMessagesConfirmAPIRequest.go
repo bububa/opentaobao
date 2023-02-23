@@ -13,9 +13,9 @@ import (
 type TaobaoTmcMessagesConfirmAPIRequest struct {
 	model.Params
 	// 处理成功的消息ID列表 最大 200个ID
-	_sMessageIds []int64
+	_sMessageIds []string
 	// 处理失败的消息ID列表--已废弃，无需传此字段
-	_fMessageIds []int64
+	_fMessageIds []string
 	// 分组名称，不传代表默认分组
 	_groupName string
 }
@@ -33,37 +33,40 @@ func (r TaobaoTmcMessagesConfirmAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTmcMessagesConfirmAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTmcMessagesConfirmAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTmcMessagesConfirmAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSMessageIds is SMessageIds Setter
 // 处理成功的消息ID列表 最大 200个ID
-func (r *TaobaoTmcMessagesConfirmAPIRequest) SetSMessageIds(_sMessageIds []int64) error {
+func (r *TaobaoTmcMessagesConfirmAPIRequest) SetSMessageIds(_sMessageIds []string) error {
 	r._sMessageIds = _sMessageIds
 	r.Set("s_message_ids", _sMessageIds)
 	return nil
 }
 
 // GetSMessageIds SMessageIds Getter
-func (r TaobaoTmcMessagesConfirmAPIRequest) GetSMessageIds() []int64 {
+func (r TaobaoTmcMessagesConfirmAPIRequest) GetSMessageIds() []string {
 	return r._sMessageIds
 }
 
 // SetFMessageIds is FMessageIds Setter
 // 处理失败的消息ID列表--已废弃，无需传此字段
-func (r *TaobaoTmcMessagesConfirmAPIRequest) SetFMessageIds(_fMessageIds []int64) error {
+func (r *TaobaoTmcMessagesConfirmAPIRequest) SetFMessageIds(_fMessageIds []string) error {
 	r._fMessageIds = _fMessageIds
 	r.Set("f_message_ids", _fMessageIds)
 	return nil
 }
 
 // GetFMessageIds FMessageIds Getter
-func (r TaobaoTmcMessagesConfirmAPIRequest) GetFMessageIds() []int64 {
+func (r TaobaoTmcMessagesConfirmAPIRequest) GetFMessageIds() []string {
 	return r._fMessageIds
 }
 

@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "publish_time",
+					"type": "Date",
+					"description": "发布时间",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "target_id",
+					"type": "String",
+					"description": "目标id",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试",
+					"required": true
+				},
+				{
+					"name": "content_json",
+					"type": "String",
+					"description": "行情内容",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "毫秒级时间戳",
+					"required": true
+				}
+			],
+			"name": "existing_house_quotation_req_dto",
+			"type": "ExistingHouseQuotationReqDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否同步成功"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.quotation.sync",
+	"apiChineseName": "二手房行情数据同步",
+	"description": "二手房行情数据同步",
+	"id": 64768
+}

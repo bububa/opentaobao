@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmCardBindcardAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmCardBindcardAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmCardBindcardAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmCardBindcardAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBindPhysicalCardOpenReq is ParamBindPhysicalCardOpenReq Setter

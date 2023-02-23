@@ -54,22 +54,18 @@ type FirstResult struct {
 	StandardBookingNotice string `json:"standard_booking_notice,omitempty" xml:"standard_booking_notice,omitempty"`
 	// 资源方娱乐设施
 	StandardAmuseFacilities string `json:"standard_amuse_facilities,omitempty" xml:"standard_amuse_facilities,omitempty"`
-	// 商品下架原因
-	DownReason string `json:"down_reason,omitempty" xml:"down_reason,omitempty"`
-	// out_rid
-	OutRid string `json:"out_rid,omitempty" xml:"out_rid,omitempty"`
-	// 宝贝名称
-	Title string `json:"title,omitempty" xml:"title,omitempty"`
-	// 购买须知
-	Guide string `json:"guide,omitempty" xml:"guide,omitempty"`
-	// 宝贝描述
-	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
-	// 酒店商品图片Url。多个url用逗号隔开
-	PicUrls string `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
-	// 发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
-	ReceiptType string `json:"receipt_type,omitempty" xml:"receipt_type,omitempty"`
 	// 发票类型为其他时的发票描述,不能超过30个汉字，60个字符
 	ReceiptOtherTypeDesc string `json:"receipt_other_type_desc,omitempty" xml:"receipt_other_type_desc,omitempty"`
+	// 发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
+	ReceiptType string `json:"receipt_type,omitempty" xml:"receipt_type,omitempty"`
+	// 酒店商品图片Url。多个url用逗号隔开
+	PicUrls string `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
+	// 宝贝描述
+	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
+	// 购买须知
+	Guide string `json:"guide,omitempty" xml:"guide,omitempty"`
+	// 宝贝名称
+	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 发票说明，不能超过100个汉字,200个字符。
 	ReceiptInfo string `json:"receipt_info,omitempty" xml:"receipt_info,omitempty"`
 	// 库存日历
@@ -80,6 +76,10 @@ type FirstResult struct {
 	ExtendInfo2 string `json:"extend_info2,omitempty" xml:"extend_info2,omitempty"`
 	// extend_info3
 	ExtendInfo3 string `json:"extend_info3,omitempty" xml:"extend_info3,omitempty"`
+	// out_rid
+	OutRid string `json:"out_rid,omitempty" xml:"out_rid,omitempty"`
+	// 商品下架原因
+	DownReason string `json:"down_reason,omitempty" xml:"down_reason,omitempty"`
 	// switchCalendar
 	SwitchCalendar string `json:"switch_calendar,omitempty" xml:"switch_calendar,omitempty"`
 	// 酒店ID
@@ -106,12 +106,12 @@ type FirstResult struct {
 	HotSearch int64 `json:"hot_search,omitempty" xml:"hot_search,omitempty"`
 	// 离线数据,该酒店热卖1,非热卖0,未知-1
 	HotSale int64 `json:"hot_sale,omitempty" xml:"hot_sale,omitempty"`
-	// gid酒店商品id
-	Gid int64 `json:"gid,omitempty" xml:"gid,omitempty"`
-	// iid淘宝商品id
-	Iid int64 `json:"iid,omitempty" xml:"iid,omitempty"`
 	// rid房型id
 	Rid int64 `json:"rid,omitempty" xml:"rid,omitempty"`
+	// iid淘宝商品id
+	Iid int64 `json:"iid,omitempty" xml:"iid,omitempty"`
+	// gid酒店商品id
+	Gid int64 `json:"gid,omitempty" xml:"gid,omitempty"`
 	// 酒店商品是否提供发票
 	HasReceipt bool `json:"has_receipt,omitempty" xml:"has_receipt,omitempty"`
 	// 橱窗推荐

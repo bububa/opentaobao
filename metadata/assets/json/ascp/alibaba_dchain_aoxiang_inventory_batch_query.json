@@ -1,0 +1,143 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "业务请求时间(毫秒数)",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID",
+					"required": true
+				},
+				{
+					"name": "owner_code",
+					"type": "String",
+					"description": "货主编码；优仓分配，长度不会超过32位，不含特殊字符",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "商家货品编码",
+							"required": true
+						},
+						{
+							"name": "sc_item_type",
+							"type": "String",
+							"description": "货品类型 1 (普通) 2 (组合)",
+							"required": true
+						},
+						{
+							"name": "warehouse_codes",
+							"type": "String[]",
+							"description": "仓库编码集合",
+							"required": true
+						}
+					],
+					"name": "sc_item_list",
+					"type": "ScItem[]",
+					"description": "货品集合",
+					"required": true
+				}
+			],
+			"name": "batch_query_inventory_request",
+			"type": "BatchQueryInventoryRequest",
+			"description": "批量查询库存入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "sc_item_id",
+									"type": "String",
+									"description": "货品id"
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "货品编码"
+								},
+								{
+									"name": "warehouse_code",
+									"type": "String",
+									"description": "仓编码"
+								},
+								{
+									"name": "sale_total_count",
+									"type": "Number",
+									"description": "销售库存总数"
+								},
+								{
+									"name": "sale_occupy_count",
+									"type": "Number",
+									"description": "销售库存占用"
+								},
+								{
+									"name": "sale_remain_count",
+									"type": "Number",
+									"description": "销售库存可用"
+								}
+							],
+							"name": "detail",
+							"type": "ScItemInfo[]",
+							"description": "结果明细"
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "成功或者失败"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "返回信息"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "返回信息码"
+						}
+					],
+					"name": "data",
+					"type": "BatchQueryInventoryResult",
+					"description": "业务处理结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或者失败"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回信息码"
+				}
+			],
+			"name": "batch_query_inventory_response",
+			"type": "BatchQueryInventoryResponse",
+			"description": "返回结构体"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.inventory.batch.query",
+	"apiChineseName": "批量查询库存",
+	"description": "批量查询库存",
+	"id": 64268
+}

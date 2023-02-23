@@ -1,0 +1,189 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件号码",
+									"required": true
+								},
+								{
+									"name": "identity_type",
+									"type": "String",
+									"description": "身份类型",
+									"required": true
+								},
+								{
+									"name": "cert_name",
+									"type": "String",
+									"description": "证件名称",
+									"required": true
+								},
+								{
+									"name": "birthday",
+									"type": "Date",
+									"description": "生日，不需要传"
+								},
+								{
+									"name": "cert_type",
+									"type": "String",
+									"description": "证件类型，不需要传"
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "电话号码，不需要传"
+								}
+							],
+							"name": "stake_holders",
+							"type": "InsPersonParam[]",
+							"description": "干系人，用于保险团队联系",
+							"required": true
+						},
+						{
+							"subParams": [
+								{
+									"name": "birthday",
+									"type": "Date",
+									"description": "生日",
+									"required": true
+								},
+								{
+									"name": "cert_type",
+									"type": "String",
+									"description": "证件类型",
+									"required": true
+								},
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件编号",
+									"required": true
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "电话号码",
+									"required": true
+								},
+								{
+									"name": "cert_name",
+									"type": "String",
+									"description": "证件名称",
+									"required": true
+								}
+							],
+							"name": "insureds",
+							"type": "InsPersonParam[]",
+							"description": "被保人信息列表",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "Number",
+							"description": "外部订单号，同一个用户购买的保险的outOrderId都是一样的"
+						},
+						{
+							"name": "air_ticket_segment_list",
+							"type": "String[]",
+							"description": "航段信息列表，示例：{\"endCity\":\"成都\", \"arrCityCode\":\"510100\", \"startTime\":\"2022-10-26 13:10:00\", \"arrAirport\":\"TFU\", \"startCity\":\"珠海\", \"depAirport\":\"ZUH\", \"flightNo\":\"CA2678\", \"endTime\":\"2022-10-26 15:40:00\", \"airlineName\":\"国航\", \"depCityCode\":\"440400\", \"ticketNo\":\"123123424\"}",
+							"required": true
+						},
+						{
+							"name": "premium_id",
+							"type": "Number",
+							"description": "保险产品id",
+							"required": true
+						}
+					],
+					"name": "ins_product_params",
+					"type": "InsProductBaseParam[]",
+					"description": "投保参数列表，通过险种聚类",
+					"required": true
+				}
+			],
+			"name": "ins_apply_req",
+			"type": "InsApplyReq",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "prod_code",
+					"type": "String",
+					"description": "保险产品编码"
+				},
+				{
+					"name": "premium",
+					"type": "Number",
+					"description": "保险价格"
+				},
+				{
+					"name": "tc_order_id",
+					"type": "Number",
+					"description": "生成的保险订单号"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "out_order_id",
+					"type": "Number",
+					"description": "保险订单关联的外部订单号"
+				},
+				{
+					"name": "ins_order_id",
+					"type": "Number",
+					"description": "保险订单号"
+				},
+				{
+					"name": "prod_name",
+					"type": "String",
+					"description": "保险产品名称"
+				},
+				{
+					"name": "premium_id",
+					"type": "Number",
+					"description": "保险产品id"
+				},
+				{
+					"name": "csu_no",
+					"type": "String",
+					"description": "销售单元"
+				}
+			],
+			"name": "ins_product_result_list",
+			"type": "InsProductResult []",
+			"description": "响应体"
+		},
+		{
+			"name": "err_msg_for_client",
+			"type": "String",
+			"description": "错误信息，调用成功时该字段为空"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "out_order_id",
+			"type": "Number",
+			"description": "外部订单号"
+		}
+	],
+	"name": "alitrip.flight.insurance.order.apply",
+	"apiChineseName": "多险种批量投保",
+	"description": "多险种批量投保",
+	"id": 64855
+}

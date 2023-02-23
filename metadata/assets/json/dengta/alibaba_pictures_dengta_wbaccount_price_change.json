@@ -1,6 +1,11 @@
 {
 	"requestParams": [
 		{
+			"name": "id",
+			"type": "Number",
+			"description": "id"
+		},
+		{
 			"name": "account_id",
 			"type": "String",
 			"description": "账号id",
@@ -18,19 +23,14 @@
 			"required": true
 		},
 		{
-			"name": "origin_price",
-			"type": "String",
-			"description": "原发价"
-		},
-		{
-			"name": "id",
-			"type": "Number",
-			"description": "id"
-		},
-		{
 			"name": "transfer_price_ali",
 			"type": "String",
 			"description": "转发价格 折后价"
+		},
+		{
+			"name": "origin_price",
+			"type": "String",
+			"description": "原发价"
 		},
 		{
 			"name": "origin_price_ali",
@@ -46,38 +46,32 @@
 						{
 							"name": "dev",
 							"type": "String",
-							"description": "dev",
-							"required": true
+							"description": "dev"
 						},
 						{
 							"name": "cust",
 							"type": "String",
-							"description": "cust",
-							"required": true
+							"description": "cust"
 						}
 					],
 					"name": "message",
 					"type": "ReturnMessage",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "trace_id",
 					"type": "String",
-					"description": "traceId",
-					"required": true
+					"description": "traceId"
 				},
 				{
 					"name": "value",
 					"type": "Boolean",
-					"description": "更新结果",
-					"required": true
+					"description": "更新结果"
 				},
 				{
 					"name": "code",
 					"type": "Number",
-					"description": "code",
-					"required": true
+					"description": "code"
 				}
 			],
 			"name": "result",

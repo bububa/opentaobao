@@ -29,12 +29,15 @@ func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSecurityJaqCaptchaVerifyResultFetchAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSessionId is SessionId Setter

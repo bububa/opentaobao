@@ -1,6 +1,11 @@
 {
 	"requestParams": [
 		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
 			"name": "campaign_id",
 			"type": "Number",
 			"description": "推广计划Id",
@@ -11,11 +16,6 @@
 			"type": "String",
 			"description": "值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；",
 			"required": true
-		},
-		{
-			"name": "nick",
-			"type": "String",
-			"description": "主人昵称"
 		}
 	],
 	"responseParams": [

@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmMarketingIssueVoucherAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamIssueVoucherReq is ParamIssueVoucherReq Setter

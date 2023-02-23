@@ -51,6 +51,11 @@
 			"type": "String",
 			"description": "渠道标识，在大航海平台申请",
 			"required": true
+		},
+		{
+			"name": "caid_md5",
+			"type": "String",
+			"description": "md5加密后的caid， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本"
 		}
 	],
 	"responseParams": [

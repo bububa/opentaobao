@@ -41,12 +41,15 @@ func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthPregnancyDataSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetData is Data Setter

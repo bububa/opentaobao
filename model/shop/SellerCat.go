@@ -2,6 +2,8 @@ package shop
 
 // SellerCat 结构体
 type SellerCat struct {
+	// 创建时间。格式：yyyy-MM-dd HH:mm:ss
+	Created string `json:"created,omitempty" xml:"created,omitempty"`
 	// 卖家自定义类目名称
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 链接图片地址

@@ -3,9 +3,9 @@
 		{
 			"subParams": [
 				{
-					"name": "waybill_codes",
+					"name": "trade_order_list",
 					"type": "String[]",
-					"description": "电子面单单号"
+					"description": "需要查询的订单号"
 				},
 				{
 					"name": "cp_code",
@@ -15,12 +15,12 @@
 				{
 					"name": "query_by",
 					"type": "Number",
-					"description": "0:根据cp_code和waybil_code查询;1:根据订单号查询"
+					"description": "0:根据cp_code和waybil_code查询;1:根据订单号查询(默认根据cp_code和waybill_code查询)"
 				},
 				{
-					"name": "trade_order_list",
+					"name": "waybill_codes",
 					"type": "String[]",
-					"description": "交易订单号"
+					"description": "电子面单单号"
 				}
 			],
 			"name": "waybill_detail_query_request",
@@ -30,6 +30,11 @@
 		}
 	],
 	"responseParams": [
+		{
+			"name": "error_codes",
+			"type": "String []",
+			"description": "面单查询错误编码"
+		},
 		{
 			"name": "inexistent_waybill_codes",
 			"type": "String []",
@@ -43,133 +48,26 @@
 		{
 			"subParams": [
 				{
-					"name": "shipping_branch_code",
-					"type": "String",
-					"description": "发货网点编码"
-				},
-				{
-					"name": "create_time",
-					"type": "Date",
-					"description": "创建时间"
-				},
-				{
-					"name": "send_phone",
-					"type": "String",
-					"description": "发件人联系方式"
-				},
-				{
-					"name": "consignee_name",
-					"type": "String",
-					"description": "收件人姓名"
-				},
-				{
-					"name": "weight",
-					"type": "Number",
-					"description": "包裹体积 单位为ML(毫升)或立方厘米"
-				},
-				{
-					"name": "send_name",
-					"type": "String",
-					"description": "发件人姓名"
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "面单状态"
-				},
-				{
-					"name": "print_count",
-					"type": "Number",
-					"description": "打印次数"
-				},
-				{
-					"subParams": [
-						{
-							"name": "item_name",
-							"type": "String",
-							"description": "商品名称"
-						},
-						{
-							"name": "count",
-							"type": "Number",
-							"description": "商品数量"
-						}
-					],
-					"name": "package_items",
-					"type": "PackageItem[]",
-					"description": "包裹里面的商品类型"
-				},
-				{
-					"name": "pickup_time",
-					"type": "Date",
-					"description": "揽收时间"
-				},
-				{
-					"name": "cp_code",
-					"type": "String",
-					"description": "物流商编码CODE"
-				},
-				{
-					"name": "last_print_time",
-					"type": "Date",
-					"description": "最后一次打印时间"
-				},
-				{
-					"name": "waybill_code",
-					"type": "String",
-					"description": "电子面单信息"
-				},
-				{
-					"name": "short_address",
-					"type": "String",
-					"description": "大头笔信息"
-				},
-				{
-					"name": "sign_time",
-					"type": "Date",
-					"description": "签收时间"
-				},
-				{
-					"name": "real_user_id",
-					"type": "Number",
-					"description": "使用者ID"
-				},
-				{
-					"name": "volume",
-					"type": "Number",
-					"description": "包裹重量 单位为G(克)"
-				},
-				{
-					"name": "shipping_branch_name",
-					"type": "String",
-					"description": "发货网点信息"
-				},
-				{
-					"name": "consignee_branch_code",
-					"type": "String",
-					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）代码"
-				},
-				{
 					"name": "trade_order_list",
 					"type": "String[]",
 					"description": "交易订单列表"
 				},
 				{
-					"name": "consignee_branch_name",
-					"type": "String",
-					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）名称"
-				},
-				{
-					"name": "consignee_phone",
-					"type": "String",
-					"description": "收件人联系方式"
-				},
-				{
 					"subParams": [
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
 						{
 							"name": "area",
 							"type": "String",
 							"description": "区名称（三级地址）"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市名称（二级地址）"
 						},
 						{
 							"name": "province",
@@ -180,16 +78,6 @@
 							"name": "town",
 							"type": "String",
 							"description": "街道\\镇名称（四级地址）"
-						},
-						{
-							"name": "address_detail",
-							"type": "String",
-							"description": "详细地址"
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "市名称（二级地址）"
 						}
 					],
 					"name": "consignee_address",
@@ -197,63 +85,56 @@
 					"description": "收货人地址"
 				},
 				{
-					"subParams": [
-						{
-							"name": "area",
-							"type": "String",
-							"description": "区名称（三级地址）"
-						},
-						{
-							"name": "province",
-							"type": "String",
-							"description": "省名称（一级地址）"
-						},
-						{
-							"name": "town",
-							"type": "String",
-							"description": "街道\\镇名称（四级地址）"
-						},
-						{
-							"name": "address_detail",
-							"type": "String",
-							"description": "详细地址"
-						},
-						{
-							"name": "city",
-							"type": "String",
-							"description": "市名称（二级地址）"
-						}
-					],
-					"name": "shipping_address",
-					"type": "WaybillAddress",
-					"description": "发货地址"
+					"name": "consignee_branch_code",
+					"type": "String",
+					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）代码"
+				},
+				{
+					"name": "consignee_branch_name",
+					"type": "String",
+					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）名称"
+				},
+				{
+					"name": "consignee_name",
+					"type": "String",
+					"description": "收件人姓名"
+				},
+				{
+					"name": "consignee_phone",
+					"type": "String",
+					"description": "收件人联系方式"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流商编码CODE"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "last_print_time",
+					"type": "Date",
+					"description": "最后一次打印时间"
 				},
 				{
 					"subParams": [
 						{
-							"name": "service_value4_json",
-							"type": "String",
-							"description": "服务类型值，json格式表示"
-						},
-						{
 							"name": "service_code",
 							"type": "String",
 							"description": "服务编码"
+						},
+						{
+							"name": "service_value4_json",
+							"type": "String",
+							"description": "服务类型值，json格式表示"
 						}
 					],
 					"name": "logistics_service_list",
 					"type": "LogisticsService[]",
 					"description": "物流服务能力集合"
-				},
-				{
-					"name": "product_type",
-					"type": "String",
-					"description": "快递服务产品类型编码"
-				},
-				{
-					"name": "package_id",
-					"type": "String",
-					"description": "ERP订单号或包裹号"
 				},
 				{
 					"name": "package_center_code",
@@ -266,19 +147,138 @@
 					"description": "集包地、目的地中心名称"
 				},
 				{
+					"name": "package_id",
+					"type": "String",
+					"description": "ERP订单号或包裹号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						}
+					],
+					"name": "package_items",
+					"type": "PackageItem[]",
+					"description": "包裹里面的商品类型"
+				},
+				{
+					"name": "pickup_time",
+					"type": "Date",
+					"description": "揽收时间"
+				},
+				{
 					"name": "print_config",
 					"type": "String",
 					"description": "打印配置项"
+				},
+				{
+					"name": "print_count",
+					"type": "Number",
+					"description": "打印次数"
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "快递服务产品类型编码"
+				},
+				{
+					"name": "send_name",
+					"type": "String",
+					"description": "发件人姓名"
+				},
+				{
+					"name": "send_phone",
+					"type": "String",
+					"description": "发件人联系方式"
+				},
+				{
+					"subParams": [
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区名称（三级地址）"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市名称（二级地址）"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省名称（一级地址）"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道\\镇名称（四级地址）"
+						}
+					],
+					"name": "shipping_address",
+					"type": "WaybillAddress",
+					"description": "发货地址"
+				},
+				{
+					"name": "shipping_branch_code",
+					"type": "String",
+					"description": "发货网点编码"
+				},
+				{
+					"name": "shipping_branch_name",
+					"type": "String",
+					"description": "发货网点信息"
+				},
+				{
+					"name": "short_address",
+					"type": "String",
+					"description": "大头笔信息"
+				},
+				{
+					"name": "sign_time",
+					"type": "Date",
+					"description": "签收时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "面单状态"
+				},
+				{
+					"name": "real_user_id",
+					"type": "Number",
+					"description": "使用者ID"
+				},
+				{
+					"name": "volume",
+					"type": "Number",
+					"description": "包裹重量 单位为G(克)"
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "电子面单信息"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "包裹体积 单位为ML(毫升)或立方厘米"
 				}
 			],
 			"name": "waybill_details",
 			"type": "WaybillDetailQueryInfo []",
 			"description": "面单详情"
-		},
-		{
-			"name": "error_codes",
-			"type": "String []",
-			"description": "面单查询错误编码"
 		}
 	],
 	"name": "taobao.wlb.waybill.i.querydetail",

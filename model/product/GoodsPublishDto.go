@@ -18,6 +18,8 @@ type GoodsPublishDto struct {
 	FirstCategoryId int64 `json:"first_category_id,omitempty" xml:"first_category_id,omitempty"`
 	// 商品基本信息
 	GoodsBaseInfo *GoodsBaseInfoDto `json:"goods_base_info,omitempty" xml:"goods_base_info,omitempty"`
+	// 入淘商品首图，可不传
+	TaobaoFirstImage *GoodsPublishImageDto `json:"taobao_first_image,omitempty" xml:"taobao_first_image,omitempty"`
 	// 是否支持找回包赔
 	SupportRetrieveCompensation bool `json:"support_retrieve_compensation,omitempty" xml:"support_retrieve_compensation,omitempty"`
 	// 是否支持议价

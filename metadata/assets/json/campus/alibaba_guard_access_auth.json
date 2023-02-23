@@ -3,60 +3,65 @@
 		{
 			"subParams": [
 				{
-					"name": "app_code",
+					"name": "auth_type_enum",
 					"type": "String",
-					"description": "app_code",
+					"description": "指定鉴权类型",
 					"required": true
 				},
 				{
-					"name": "device_id",
+					"name": "properties_json",
 					"type": "String",
-					"description": "device_id",
-					"required": true
-				},
-				{
-					"name": "identif_auth_type_enum",
-					"type": "String",
-					"description": "鉴权类型",
-					"required": true
-				},
-				{
-					"name": "app_sign",
-					"type": "String",
-					"description": "app_sigin",
-					"required": true
-				},
-				{
-					"name": "time_stamp",
-					"type": "Number",
-					"description": "时间",
+					"description": "属性json",
 					"required": true
 				},
 				{
 					"subParams": [
 						{
-							"name": "user_voucher_type_enum",
-							"type": "String",
-							"description": "凭证类型",
-							"required": true
-						},
-						{
 							"name": "voucher_no",
 							"type": "String",
 							"description": "卡号",
 							"required": true
+						},
+						{
+							"name": "voucher_type_enum",
+							"type": "String",
+							"description": "xxx",
+							"required": true
 						}
 					],
-					"name": "voucher_d_t_o_list",
-					"type": "VoucherDto[]",
-					"description": "凭证",
+					"name": "voucher_list",
+					"type": "VoucherDTO[]",
+					"description": "[]",
+					"required": true
+				},
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "应用code",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "子设备ID",
+					"required": true
+				},
+				{
+					"name": "time_stamp",
+					"type": "Number",
+					"description": "时间戳",
+					"required": true
+				},
+				{
+					"name": "sign",
+					"type": "String",
+					"description": "签名",
 					"required": true
 				}
 			],
-			"name": "param_identify_auth_d_t_o",
-			"type": "IdentifyAuthDto",
-			"description": "请求",
-			"required": true
+			"name": "identify_auth_dto",
+			"type": "IdentifyAuthDTO",
+			"description": "鉴权结果DTO"
 		}
 	],
 	"responseParams": [
@@ -80,14 +85,26 @@
 							"description": "鉴权结果消息"
 						},
 						{
-							"name": "error_msg_en",
-							"type": "String",
-							"description": "鉴权结果消息英文"
-						},
-						{
-							"name": "event_trace_id",
-							"type": "String",
-							"description": "业务流水id"
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户自定义ID"
+								},
+								{
+									"name": "company_id",
+									"type": "Number",
+									"description": "公司ID"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name"
+								}
+							],
+							"name": "user",
+							"type": "UserDTO",
+							"description": "用户信息"
 						}
 					],
 					"name": "content",

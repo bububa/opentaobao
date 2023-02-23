@@ -139,6 +139,23 @@
 							"name": "encryption_seller_id",
 							"type": "String",
 							"description": "加密的卖家id"
+						},
+						{
+							"subParams": [
+								{
+									"name": "support_sdr_policy",
+									"type": "Boolean",
+									"description": "是否支持七天无理由"
+								},
+								{
+									"name": "support_nfr_policy",
+									"type": "Boolean",
+									"description": "是否支持描述不符包邮退"
+								}
+							],
+							"name": "after_sales_data",
+							"type": "IdleItemApiAfterSalesDo",
+							"description": "售后服务信息"
 						}
 					],
 					"name": "item_list",

@@ -82,7 +82,7 @@
 				{
 					"name": "store_biz_type",
 					"type": "String",
-					"description": "门店开通业务"
+					"description": "门店开通业务（1-新房 2-二手房 3-租房,5-交易服务 以英文逗号分隔）"
 				},
 				{
 					"name": "store_status",
@@ -151,7 +151,7 @@
 				{
 					"name": "partake_business",
 					"type": "String",
-					"description": "门店负责业务（0-二手房 1-长租公寓 2-居间模式）"
+					"description": "门店负责业务（0-二手房 1-长租公寓 2-居间模式 3-新房 5-交易服务）"
 				},
 				{
 					"name": "tag_codes",
@@ -181,7 +181,7 @@
 				{
 					"name": "store_type",
 					"type": "Number",
-					"description": "门店类型"
+					"description": "门店类型：0-二租标准店（默认）   1-新房项目店 2-渠道标准店   5-交易中心店"
 				},
 				{
 					"name": "source_channel",
@@ -197,6 +197,36 @@
 					"name": "signing_company_name",
 					"type": "String",
 					"description": "签约公司名称"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "ms级时间戳"
+				},
+				{
+					"name": "main_category",
+					"type": "Number",
+					"description": "主营类目 渠道标准店必填 主营类目 1-新房 2-二手房 3-租房 5-交易服务"
+				},
+				{
+					"name": "outer_cooperate_brand_ids",
+					"type": "String",
+					"description": "外部合作品牌id"
+				},
+				{
+					"name": "outer_sign_company_id",
+					"type": "String",
+					"description": "签约公司id"
+				},
+				{
+					"name": "extends_info",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "sub_type",
+					"type": "Number",
+					"description": "子类型"
 				}
 			],
 			"name": "company_store_dto",

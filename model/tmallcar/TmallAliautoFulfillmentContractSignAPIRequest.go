@@ -13,7 +13,7 @@ import (
 type TmallAliautoFulfillmentContractSignAPIRequest struct {
 	model.Params
 	// 入参
-	_req *ConsignContractReq
+	_req *SignContractReq
 }
 
 // NewTmallAliautoFulfillmentContractSignRequest 初始化TmallAliautoFulfillmentContractSignAPIRequest对象
@@ -29,23 +29,26 @@ func (r TmallAliautoFulfillmentContractSignAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoFulfillmentContractSignAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallAliautoFulfillmentContractSignAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallAliautoFulfillmentContractSignAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReq is Req Setter
 // 入参
-func (r *TmallAliautoFulfillmentContractSignAPIRequest) SetReq(_req *ConsignContractReq) error {
+func (r *TmallAliautoFulfillmentContractSignAPIRequest) SetReq(_req *SignContractReq) error {
 	r._req = _req
 	r.Set("req", _req)
 	return nil
 }
 
 // GetReq Req Getter
-func (r TmallAliautoFulfillmentContractSignAPIRequest) GetReq() *ConsignContractReq {
+func (r TmallAliautoFulfillmentContractSignAPIRequest) GetReq() *SignContractReq {
 	return r._req
 }

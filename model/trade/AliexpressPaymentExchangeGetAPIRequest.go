@@ -29,12 +29,15 @@ func (r AliexpressPaymentExchangeGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressPaymentExchangeGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressPaymentExchangeGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressPaymentExchangeGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCheckoutExchangeRequest is CheckoutExchangeRequest Setter

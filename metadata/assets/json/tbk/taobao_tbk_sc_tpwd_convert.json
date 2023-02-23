@@ -27,6 +27,11 @@
 			"name": "ucrowd_id",
 			"type": "Number",
 			"description": "会员人群ID，用于统计人群推广效果"
+		},
+		{
+			"name": "relation_id",
+			"type": "String",
+			"description": "渠道id"
 		}
 	],
 	"responseParams": [
@@ -56,6 +61,31 @@
 					"name": "origin_pid",
 					"type": "String",
 					"description": "入参淘口令推广链接中的pid，如果不属于当前调用的推广者则展示“0”"
+				},
+				{
+					"name": "biz_scene_id",
+					"type": "String",
+					"description": "1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "短口令"
+				},
+				{
+					"name": "password",
+					"type": "String",
+					"description": "长口令"
+				},
+				{
+					"name": "short_url",
+					"type": "String",
+					"description": "短链接"
+				},
+				{
+					"name": "url_type",
+					"type": "String",
+					"description": "1-单品，2-店铺，3-活动，0-其它"
 				}
 			],
 			"name": "data",

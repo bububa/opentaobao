@@ -1,0 +1,271 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id"
+						},
+						{
+							"name": "ip",
+							"type": "String",
+							"description": "ip地址"
+						},
+						{
+							"name": "mac",
+							"type": "String",
+							"description": "设备MAC地址"
+						},
+						{
+							"name": "platform",
+							"type": "String",
+							"description": "客户端平台",
+							"required": true
+						},
+						{
+							"name": "platform_version",
+							"type": "String",
+							"description": "客户端平台版本"
+						},
+						{
+							"name": "prod_version",
+							"type": "String",
+							"description": "客户端应用版本",
+							"required": true
+						},
+						{
+							"name": "product",
+							"type": "String",
+							"description": "客户端应用(淘宝、口碑独客、支付宝tab…)",
+							"required": true
+						},
+						{
+							"name": "schema_platform",
+							"type": "String",
+							"description": "新零售店铺跳转链接:透传给投承做补全新零售店铺链接时使用"
+						},
+						{
+							"name": "ttid",
+							"type": "String",
+							"description": "格式: xxx@taobao_ios_5.0.1"
+						},
+						{
+							"name": "user_agent",
+							"type": "String",
+							"description": "特征字符串"
+						}
+					],
+					"name": "device_info",
+					"type": "DeviceInfo",
+					"description": "设备信息",
+					"required": true
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市区域码"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区县区域码"
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": " 纬度",
+							"required": true
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "location_type",
+							"type": "String",
+							"description": "位置类型(默认实时)"
+						},
+						{
+							"name": "poi_id",
+							"type": "String",
+							"description": "poiId"
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": " poiName"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省区域码"
+						}
+					],
+					"name": "location_infos",
+					"type": "LocationInfo[]",
+					"description": "位置信息",
+					"required": true
+				},
+				{
+					"name": "mission_collection_id",
+					"type": "Number",
+					"description": "任务集id",
+					"required": true
+				},
+				{
+					"name": "mission_def_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "mission_instance_id",
+					"type": "Number",
+					"description": "任务实例id 领取型任务必传"
+				},
+				{
+					"name": "mission_x_id",
+					"type": "String",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "risk_param",
+					"type": "String",
+					"description": "风控参数"
+				},
+				{
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "阶段数 阶段金额值 \tcount 和sum必须要有一个有值"
+						},
+						{
+							"name": "sum",
+							"type": "String",
+							"description": "阶段金额 阶段金额值 \tcount 和sum必须要有一个有值"
+						}
+					],
+					"name": "stage",
+					"type": "Stage",
+					"description": "阶段信息",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "site",
+							"type": "String",
+							"description": "账号类型，0表示淘宝账号，25表示饿了么账号",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户ID",
+							"required": true
+						}
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息",
+					"required": true
+				}
+			],
+			"name": "reward_receive_query",
+			"type": "RewardReceiveQuery",
+			"description": "任务领奖入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "SUCCESS代表成功"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "ext",
+									"type": "String",
+									"description": "扩展参数"
+								},
+								{
+									"name": "icon",
+									"type": "String",
+									"description": "奖励图标"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "奖励名称"
+								},
+								{
+									"name": "request_id",
+									"type": "String",
+									"description": "请求id"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "奖品类型"
+								},
+								{
+									"name": "upp_prize_result",
+									"type": "String",
+									"description": "百川抽奖结果"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "奖品值"
+								}
+							],
+							"name": "r_list",
+							"type": "RewardInfoDTO[]",
+							"description": "任务列表"
+						}
+					],
+					"name": "data",
+					"type": "RewardResp",
+					"description": "发奖返回数据"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "发奖结果"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.task.receivetaskprize",
+	"apiChineseName": "任务领奖",
+	"description": "任务领奖",
+	"id": 65175
+}

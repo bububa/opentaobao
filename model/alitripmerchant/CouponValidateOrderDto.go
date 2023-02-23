@@ -10,4 +10,6 @@ type CouponValidateOrderDto struct {
 	DiscountDTO *ValidateResultVo `json:"discount_d_t_o,omitempty" xml:"discount_d_t_o,omitempty"`
 	// 原价试单结果
 	NoDiscountDTO *ValidateResultVo `json:"no_discount_d_t_o,omitempty" xml:"no_discount_d_t_o,omitempty"`
+	// 权益商品展示信息
+	DerbyVoucherInfo *DerbyVoucherInfo `json:"derby_voucher_info,omitempty" xml:"derby_voucher_info,omitempty"`
 }

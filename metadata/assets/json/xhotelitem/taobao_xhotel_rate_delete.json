@@ -22,20 +22,17 @@
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "errorMsg",
-					"required": true
+					"description": "errorMsg"
 				},
 				{
 					"name": "rateid_gid_rpid",
 					"type": "String",
-					"description": "rateid-房型id-房价id",
-					"required": true
+					"description": "rateid-房型id-房价id"
 				}
 			],
 			"name": "result",

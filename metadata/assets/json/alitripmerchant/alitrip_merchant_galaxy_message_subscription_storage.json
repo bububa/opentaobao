@@ -1,12 +1,6 @@
 {
 	"requestParams": [
 		{
-			"name": "token",
-			"type": "String",
-			"description": "token",
-			"required": true
-		},
-		{
 			"name": "template_ids",
 			"type": "String",
 			"description": "模版ID"
@@ -15,6 +9,12 @@
 			"name": "tenant_key",
 			"type": "String",
 			"description": "租户ID",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token",
 			"required": true
 		}
 	],

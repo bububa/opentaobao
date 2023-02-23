@@ -1,0 +1,71 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "交易猫商品ID",
+							"required": true
+						},
+						{
+							"name": "external_goods_id",
+							"type": "String",
+							"description": "外部商品ID，用于标识外部系统每次提交过来的商品",
+							"required": true
+						}
+					],
+					"name": "external_goods_id_list",
+					"type": "ExternalGoodsIdDTO[]",
+					"description": "批量删除商品id集合",
+					"required": true
+				},
+				{
+					"name": "external_batch_id",
+					"type": "String",
+					"description": "外部批次ID，用于幂等",
+					"required": true
+				}
+			],
+			"name": "goods_delete_command_dto",
+			"type": "GoodsDeleteCommandDTO",
+			"description": "商品批量删除接口入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "batch_id",
+					"type": "Number",
+					"description": "商品下架批次ID"
+				}
+			],
+			"name": "result",
+			"type": "GoodsBatchResultDTO",
+			"description": "商品批量删除接口返回"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alibaba.jym.item.external.goods.batch.delete",
+	"apiChineseName": "交易猫外部商家批量删除商品接口",
+	"description": "交易猫外部商家批量删除商品接口",
+	"id": 64894
+}

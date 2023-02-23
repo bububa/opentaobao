@@ -20,6 +20,8 @@ type OrderInfo struct {
 	SerialNo string `json:"serial_no,omitempty" xml:"serial_no,omitempty"`
 	// 渠道店id(与out_shop_id必选其一)
 	ShopId string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
+	// 订单扩展数据
+	Ext string `json:"ext,omitempty" xml:"ext,omitempty"`
 	// 经营店Id
 	StoreId string `json:"store_id,omitempty" xml:"store_id,omitempty"`
 	// 买家信息

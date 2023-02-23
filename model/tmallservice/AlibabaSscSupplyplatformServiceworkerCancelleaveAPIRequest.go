@@ -31,12 +31,15 @@ func (r AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSscSupplyplatformServiceworkerCancelleaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLeaveBeginAndEndList is LeaveBeginAndEndList Setter

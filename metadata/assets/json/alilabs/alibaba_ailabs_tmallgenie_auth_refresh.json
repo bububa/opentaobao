@@ -21,6 +21,11 @@
 					"name": "refresh_token",
 					"type": "String",
 					"description": "refreshToken"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "设备uuid"
 				}
 			],
 			"name": "refresh_token_request",

@@ -34,7 +34,7 @@ type BtripHotelCreateOrderRq struct {
 	RatePlanId int64 `json:"rate_plan_id,omitempty" xml:"rate_plan_id,omitempty"`
 	// 预订房间数
 	RoomNum int64 `json:"room_num,omitempty" xml:"room_num,omitempty"`
-	// 总优惠金额
+	// 总优惠金额，注:(验价时如有优惠信息，则这个字段必传)
 	TotalPromotion int64 `json:"total_promotion,omitempty" xml:"total_promotion,omitempty"`
 	// 总房价
 	TotalRoomPrice int64 `json:"total_room_price,omitempty" xml:"total_room_price,omitempty"`

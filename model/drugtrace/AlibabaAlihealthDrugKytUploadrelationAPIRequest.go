@@ -16,7 +16,7 @@ type AlibabaAlihealthDrugKytUploadrelationAPIRequest struct {
 	_affirmFlag string
 	// fileContent(可不添)
 	_fileContent string
-	// 加密之后的文件内容字符串
+	// 加密之后的文件内容字符串（先把文件内容用java的zip类压缩然后转base64）
 	_fileContentString string
 	// 上传文件的企业ID
 	_refEntId string
@@ -39,12 +39,15 @@ func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAffirmFlag is AffirmFlag Setter
@@ -74,7 +77,7 @@ func (r AlibabaAlihealthDrugKytUploadrelationAPIRequest) GetFileContent() string
 }
 
 // SetFileContentString is FileContentString Setter
-// 加密之后的文件内容字符串
+// 加密之后的文件内容字符串（先把文件内容用java的zip类压缩然后转base64）
 func (r *AlibabaAlihealthDrugKytUploadrelationAPIRequest) SetFileContentString(_fileContentString string) error {
 	r._fileContentString = _fileContentString
 	r.Set("file_content_string", _fileContentString)

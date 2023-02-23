@@ -13,9 +13,21 @@
 			"required": true
 		},
 		{
+			"name": "order_code",
+			"type": "String",
+			"description": "柜子订单编码",
+			"required": true
+		},
+		{
 			"name": "order_type",
 			"type": "Number",
 			"description": "订单类型(0-取件业务，1-寄件业务，2-派样业务)",
+			"required": true
+		},
+		{
+			"name": "mail_no",
+			"type": "String",
+			"description": "运单号",
 			"required": true
 		},
 		{
@@ -34,40 +46,25 @@
 			"name": "extra",
 			"type": "String",
 			"description": "扩展字段"
-		},
-		{
-			"name": "order_code",
-			"type": "String",
-			"description": "柜子订单编码",
-			"required": true
-		},
-		{
-			"name": "mail_no",
-			"type": "String",
-			"description": "运单号",
-			"required": true
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "success",
-					"required": true
-				},
-				{
 					"name": "error_desc",
 					"type": "String",
-					"description": "errorDesc",
-					"required": true
+					"description": "errorDesc"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "errorCode",
-					"required": true
+					"description": "errorCode"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
 				}
 			],
 			"name": "result",

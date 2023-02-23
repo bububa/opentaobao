@@ -37,12 +37,15 @@ func (r TaobaoVmarketEticketSendAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoVmarketEticketSendAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoVmarketEticketSendAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoVmarketEticketSendAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetVerifyCodes is VerifyCodes Setter

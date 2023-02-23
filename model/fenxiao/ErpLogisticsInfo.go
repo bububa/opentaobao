@@ -28,6 +28,22 @@ type ErpLogisticsInfo struct {
 	BizDeliveryCode string `json:"biz_delivery_code,omitempty" xml:"biz_delivery_code,omitempty"`
 	// 仓配建议类型
 	BizSdType string `json:"biz_sd_type,omitempty" xml:"biz_sd_type,omitempty"`
+	// 预计发货地址-最小行政地址编码
+	SendDivisionCode string `json:"send_division_code,omitempty" xml:"send_division_code,omitempty"`
+	// 预计发货地址-文案描述-国家
+	SendCountry string `json:"send_country,omitempty" xml:"send_country,omitempty"`
+	// 预计发货地址-文案描述-省份
+	SendState string `json:"send_state,omitempty" xml:"send_state,omitempty"`
+	// 预计发货地址-文案描述-城市
+	SendCity string `json:"send_city,omitempty" xml:"send_city,omitempty"`
+	// 预计发货地址-文案描述-地区
+	SendDistrict string `json:"send_district,omitempty" xml:"send_district,omitempty"`
+	// 预计发货地址-文案描述-街道/镇
+	SendTown string `json:"send_town,omitempty" xml:"send_town,omitempty"`
+	// CP黑名单，逗号分隔
+	BlackDeliveryCps string `json:"black_delivery_cps,omitempty" xml:"black_delivery_cps,omitempty"`
+	// CP白名单，逗号分隔
+	WhiteDeliveryCps string `json:"white_delivery_cps,omitempty" xml:"white_delivery_cps,omitempty"`
 	// 商品数字编号
 	NumIid int64 `json:"num_iid,omitempty" xml:"num_iid,omitempty"`
 	// 应发数量

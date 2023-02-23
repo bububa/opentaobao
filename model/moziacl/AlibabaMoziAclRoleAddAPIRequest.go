@@ -29,12 +29,15 @@ func (r AlibabaMoziAclRoleAddAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMoziAclRoleAddAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMoziAclRoleAddAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMoziAclRoleAddAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreateRoleRequest is CreateRoleRequest Setter

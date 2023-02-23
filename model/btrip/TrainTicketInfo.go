@@ -36,6 +36,8 @@ type TrainTicketInfo struct {
 	PayType int64 `json:"pay_type,omitempty" xml:"pay_type,omitempty"`
 	// 票状态
 	TicketStatus int64 `json:"ticket_status,omitempty" xml:"ticket_status,omitempty"`
+	// 第几程，0：第一程，1：第二程
+	SegmentIndex int64 `json:"segment_index,omitempty" xml:"segment_index,omitempty"`
 	// 是否改签
 	Changed bool `json:"changed,omitempty" xml:"changed,omitempty"`
 }

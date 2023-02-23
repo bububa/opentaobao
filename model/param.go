@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"sync"
 )
 
 // File 用于上传文件，对应淘宝API中byte[]类型
@@ -65,6 +66,12 @@ func NewParams() Params {
 	return p
 }
 
+func (p Params) Reset() {
+	for k := range p {
+		delete(p, k)
+	}
+}
+
 // Set 添加APIRequest参数
 func (p Params) Set(key string, value interface{}) error {
 	switch value.(type) {
@@ -78,11 +85,6 @@ func (p Params) Set(key string, value interface{}) error {
 		p[key] = NewStringParamValue(str)
 	}
 	return nil
-}
-
-// GetRawParams 返回参数map
-func (p Params) GetRawParams() map[string]*ParamValue {
-	return p
 }
 
 // NeedMultipart 判断是否需要使用form/multipart post
@@ -123,4 +125,19 @@ func AnyToString(val interface{}) (string, error) {
 		str = string(data)
 	}
 	return str, nil
+}
+
+var paramsPool = sync.Pool{
+	New: func() any {
+		return NewParams()
+	},
+}
+
+func GetParamsFromPool() Params {
+	return paramsPool.Get().(Params)
+}
+
+func PutParamsToPool(params Params) {
+	params.Reset()
+	paramsPool.Put(params)
 }

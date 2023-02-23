@@ -13,6 +13,11 @@
 	],
 	"responseParams": [
 		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "记录数"
+		},
+		{
 			"subParams": [
 				{
 					"name": "discount_id",
@@ -85,11 +90,6 @@
 			"name": "discounts",
 			"type": "Discount []",
 			"description": "折扣数据结构"
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "记录数"
 		}
 	],
 	"name": "taobao.fenxiao.discounts.get",

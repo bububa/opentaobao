@@ -29,12 +29,15 @@ func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkBmPaiyangStockQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetIsvShopStockParam is IsvShopStockParam Setter

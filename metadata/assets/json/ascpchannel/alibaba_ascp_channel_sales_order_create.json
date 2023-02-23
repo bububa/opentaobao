@@ -40,6 +40,11 @@
 							"name": "out_sub_order_no",
 							"type": "String",
 							"description": "外部子订单号, 外部一定要设置,如果外部没有,则设置为outOrderNo+productId+productSkuId"
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "扩展字段"
 						}
 					],
 					"name": "out_sub_orders",
@@ -166,6 +171,11 @@
 					"type": "String",
 					"description": "授权渠道(市场)",
 					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展字段"
 				}
 			],
 			"name": "create_order_request",

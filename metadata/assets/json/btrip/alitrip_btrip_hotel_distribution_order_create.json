@@ -116,7 +116,7 @@
 				{
 					"name": "total_promotion",
 					"type": "Number",
-					"description": "总优惠金额"
+					"description": "总优惠金额，注:(验价时如有优惠信息，则这个字段必传)"
 				},
 				{
 					"name": "total_room_price",

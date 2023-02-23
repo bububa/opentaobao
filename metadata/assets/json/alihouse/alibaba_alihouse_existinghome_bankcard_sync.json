@@ -20,8 +20,7 @@
 				{
 					"name": "bank_card_no",
 					"type": "String",
-					"description": "结算账户",
-					"required": true
+					"description": "结算账户"
 				},
 				{
 					"name": "bank_account_alias",

@@ -35,12 +35,15 @@ func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEinvoiceMerchantResultGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPayeeRegisterNo is PayeeRegisterNo Setter

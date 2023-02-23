@@ -470,12 +470,17 @@
 						{
 							"name": "platform_id",
 							"type": "Number",
-							"description": "平台ID,2:\"安卓\",3:\"苹果\",4,:\"越狱\",1:\"其他\",5:\"PC\",6:\"XBOX - 主机\""
+							"description": "平台ID,2:\"安卓\",3:\"苹果\",4,:\"越狱\",1:\"其他\",5:\"PC\",6:\"XBOX - 主机\",7:多端"
 						},
 						{
 							"name": "id",
 							"type": "Number",
 							"description": "客户端ID"
+						},
+						{
+							"name": "platform_ids",
+							"type": "String[]",
+							"description": "平台ID数组，支持多端互通的客户端必须取该字段中的元素"
 						}
 					],
 					"name": "client_info",

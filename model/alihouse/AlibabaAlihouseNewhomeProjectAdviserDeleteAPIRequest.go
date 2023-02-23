@@ -14,6 +14,8 @@ type AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest struct {
 	model.Params
 	// 外部顾问ID
 	_outerConsultantId string
+	// 外部门店ID
+	_outerStoreId string
 	// 版本号，请求时间戳
 	_version int64
 }
@@ -31,12 +33,15 @@ func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterConsultantId is OuterConsultantId Setter
@@ -50,6 +55,19 @@ func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetOuterConsultan
 // GetOuterConsultantId OuterConsultantId Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetOuterConsultantId() string {
 	return r._outerConsultantId
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店ID
+func (r *AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeProjectAdviserDeleteAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }
 
 // SetVersion is Version Setter

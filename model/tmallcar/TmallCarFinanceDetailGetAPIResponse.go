@@ -26,4 +26,6 @@ type TmallCarFinanceDetailGetAPIResponseModel struct {
 	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 	// 查询数据对象
 	Data *FinanceDetailInfoDto `json:"data,omitempty" xml:"data,omitempty"`
+	// 是否成功
+	ResultSuccess bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

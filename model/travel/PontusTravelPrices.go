@@ -2,10 +2,10 @@ package travel
 
 // PontusTravelPrices 结构体
 type PontusTravelPrices struct {
-	// 日期。对于普通商品必填，对于预约商品该字段不填
-	Date string `json:"date,omitempty" xml:"date,omitempty"`
 	// 外部商家团期ID
 	OuterPriceId string `json:"outer_price_id,omitempty" xml:"outer_price_id,omitempty"`
+	// 日期。对于普通商品必填，对于预约商品该字段不填
+	Date string `json:"date,omitempty" xml:"date,omitempty"`
 	// 价格类型。price_type 取：1-成人价，2-儿童价，3-单房差
 	PriceType int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
 	// 库存

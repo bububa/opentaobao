@@ -33,12 +33,15 @@ func (r YunosTvscreenAdminCommonOperationAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvscreenAdminCommonOperationAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosTvscreenAdminCommonOperationAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosTvscreenAdminCommonOperationAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetInterfaceName is InterfaceName Setter

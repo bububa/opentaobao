@@ -31,12 +31,15 @@ func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaLegalCaseEntrustCallbackAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetEntrustId is EntrustId Setter

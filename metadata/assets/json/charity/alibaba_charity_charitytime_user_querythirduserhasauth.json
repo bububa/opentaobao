@@ -1,0 +1,52 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "user_key",
+					"type": "String",
+					"description": "用户唯一标识",
+					"required": true
+				}
+			],
+			"name": "query_third_user_has_auth_hsf_request",
+			"type": "QueryThirdUserHasAuthHsfRequest",
+			"description": "参数对象",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "响应值"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "true:已绑定 false:未绑定"
+				}
+			],
+			"name": "result",
+			"type": "CsrResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.charitytime.user.querythirduserhasauth",
+	"apiChineseName": "查询是否绑定3小时账号",
+	"description": "查询是否绑定3小时账号",
+	"id": 64976
+}

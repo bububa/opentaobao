@@ -71,7 +71,7 @@
 				{
 					"name": "display_refund_money",
 					"type": "String",
-					"description": "订单退款总金额(单位元)",
+					"description": "订单退款总金额(单位分)",
 					"required": true
 				},
 				{

@@ -29,12 +29,15 @@ func (r CainiaoWaybillIiUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillIiUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoWaybillIiUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoWaybillIiUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamWaybillCloudPrintUpdateRequest is ParamWaybillCloudPrintUpdateRequest Setter

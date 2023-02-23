@@ -41,12 +41,15 @@ func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAuctionGovDataMonthlyGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCourtName is CourtName Setter

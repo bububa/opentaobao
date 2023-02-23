@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "case_id",
+					"type": "Number",
+					"description": "协同单id",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "拒绝原因",
+					"required": true
+				},
+				{
+					"name": "domestic_intl",
+					"type": "Number",
+					"description": "1:国内，2:国际",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "附件名称"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "附件地址"
+						}
+					],
+					"name": "file_info_dto_list",
+					"type": "UploadFileInfoDTO[]",
+					"description": "附件列表"
+				}
+			],
+			"name": "reject_dto",
+			"type": "RejectDTO",
+			"description": "协同单拒绝参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "协同单拒绝接口返回结果"
+		}
+	],
+	"name": "alitrip.agent.coordinate.reject",
+	"apiChineseName": "慧飞商家协同单拒绝接口",
+	"description": "慧飞商家协同单拒绝接口",
+	"id": 64329
+}

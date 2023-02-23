@@ -18,6 +18,8 @@ type BusinessActivityDataDto struct {
 	EndTime string `json:"end_time,omitempty" xml:"end_time,omitempty"`
 	// 小二联系方式
 	Contact string `json:"contact,omitempty" xml:"contact,omitempty"`
+	// 11111
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 是否开通POS 1-是 0-否
 	IsOpenPos int64 `json:"is_open_pos,omitempty" xml:"is_open_pos,omitempty"`
 	// 协议ID

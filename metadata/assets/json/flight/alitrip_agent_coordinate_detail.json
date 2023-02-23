@@ -1,0 +1,143 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "协同单ID",
+					"required": true
+				}
+			],
+			"name": "coordination_detail_request_dto",
+			"type": "CoordinationDetailRequestDTO",
+			"description": "查询协同单详情请求入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "协同单ID"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "case_type",
+							"type": "Number",
+							"description": "问题类型"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "协同单状态"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "协同单标题"
+						},
+						{
+							"name": "serve_deadline",
+							"type": "Date",
+							"description": "协同单截止时间"
+						},
+						{
+							"name": "urge",
+							"type": "Number",
+							"description": "是否催促标识"
+						},
+						{
+							"name": "correlation_out_order_id",
+							"type": "String",
+							"description": "飞猪订单号"
+						},
+						{
+							"name": "correlation_biz_type",
+							"type": "Number",
+							"description": "关联业务类型"
+						},
+						{
+							"name": "creator_name",
+							"type": "String",
+							"description": "创建人"
+						},
+						{
+							"name": "follower_name",
+							"type": "String",
+							"description": "跟进人"
+						},
+						{
+							"name": "request",
+							"type": "String",
+							"description": "协同请求内容"
+						},
+						{
+							"name": "reply",
+							"type": "String",
+							"description": "协同回复内容"
+						},
+						{
+							"name": "extra_info",
+							"type": "String",
+							"description": "表单内容"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "need_pay_flag",
+							"type": "Boolean",
+							"description": "是否需要支付"
+						},
+						{
+							"name": "follow_time",
+							"type": "Number",
+							"description": "跟进人时长(时间戳)"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态(0:未支付,1:已支付,2:支付取消,3:无需支付)"
+						},
+						{
+							"name": "operate_finish_time",
+							"type": "Date",
+							"description": "完结时间"
+						},
+						{
+							"name": "urger_name",
+							"type": "String",
+							"description": "催促人姓名"
+						}
+					],
+					"name": "data",
+					"type": "CaseResultDetailDTO",
+					"description": "查询协同单详情返回内容"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "查询协同单详情返回内容"
+		}
+	],
+	"name": "alitrip.agent.coordinate.detail",
+	"apiChineseName": "商家协同单查询详情",
+	"description": "商家协同单查询详情",
+	"id": 64841
+}

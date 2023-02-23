@@ -1,0 +1,60 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业refentid",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "服务校验的token",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String",
+			"description": "多个码用英文逗号分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "存在上下级关系时返回下级码"
+				},
+				{
+					"name": "parent_code",
+					"type": "String",
+					"description": "存在上下级关系时返回上级码"
+				}
+			],
+			"name": "model",
+			"type": "WesCodeRelationDTO []",
+			"description": "返回的码的结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	],
+	"name": "alibaba.alihealth.drug.code.kyt.wes.checkcoderelation",
+	"apiChineseName": "检查输入的码之间是否有上下级关系",
+	"description": "检查输入的码之间是否有上下级关系",
+	"id": 65483
+}

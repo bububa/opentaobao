@@ -29,12 +29,15 @@ func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressTradeBuyPlaceorderAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamPlaceOrderRequest4OpenApiDTO is ParamPlaceOrderRequest4OpenApiDTO Setter

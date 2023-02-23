@@ -29,12 +29,15 @@ func (r TmallAliautoMetaReceiveAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallAliautoMetaReceiveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallAliautoMetaReceiveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallAliautoMetaReceiveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCommand is Command Setter

@@ -31,12 +31,15 @@ func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAilabAicloudTopDeviceGetstatusAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam1 is Param1 Setter

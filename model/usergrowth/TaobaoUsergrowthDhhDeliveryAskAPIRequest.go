@@ -32,6 +32,8 @@ type TaobaoUsergrowthDhhDeliveryAskAPIRequest struct {
 	_advertisingSpaceId string
 	// 渠道标识，在大航海平台申请
 	_channel string
+	// md5加密后的caid， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本
+	_caidMd5 string
 }
 
 // NewTaobaoUsergrowthDhhDeliveryAskRequest 初始化TaobaoUsergrowthDhhDeliveryAskAPIRequest对象
@@ -47,12 +49,15 @@ func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProfile is Profile Setter
@@ -183,4 +188,17 @@ func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetChannel(_channel string) e
 // GetChannel Channel Getter
 func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetChannel() string {
 	return r._channel
+}
+
+// SetCaidMd5 is CaidMd5 Setter
+// md5加密后的caid， 32位小写，前面拼接上caid版本号，当前支持20220111、20211207版本
+func (r *TaobaoUsergrowthDhhDeliveryAskAPIRequest) SetCaidMd5(_caidMd5 string) error {
+	r._caidMd5 = _caidMd5
+	r.Set("caid_md5", _caidMd5)
+	return nil
+}
+
+// GetCaidMd5 CaidMd5 Getter
+func (r TaobaoUsergrowthDhhDeliveryAskAPIRequest) GetCaidMd5() string {
+	return r._caidMd5
 }

@@ -29,12 +29,15 @@ func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaSalestarKeywordsDeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBidwordIds is BidwordIds Setter

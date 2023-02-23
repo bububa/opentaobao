@@ -50,4 +50,6 @@ type CompanyBrandCityDto struct {
 	IsVirtualCompany int64 `json:"is_virtual_company,omitempty" xml:"is_virtual_company,omitempty"`
 	// 是否为测试标 0-否 1-是
 	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+	// 城市品牌类型：交易服务类型-5、二租业务类型-0
+	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 }

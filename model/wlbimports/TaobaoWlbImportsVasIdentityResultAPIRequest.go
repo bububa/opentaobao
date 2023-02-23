@@ -29,12 +29,15 @@ func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbImportsVasIdentityResultAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLgOrderCode is LgOrderCode Setter

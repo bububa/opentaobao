@@ -1,0 +1,66 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源"
+				},
+				{
+					"name": "wt_biz_type",
+					"type": "String",
+					"description": "业务类型"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "要办理的商品ID",
+					"required": true
+				},
+				{
+					"name": "account",
+					"type": "String",
+					"description": "要办理的账号",
+					"required": true
+				}
+			],
+			"name": "distribute_trade_msg_model",
+			"type": "DistributeTradeMsgModel",
+			"description": "请求对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用结果"
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "业务结果"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alicom.vt.distribute.sendcode",
+	"apiChineseName": "通信业务外放发送验证码",
+	"description": "通信业务外放发送验证码",
+	"id": 64177
+}

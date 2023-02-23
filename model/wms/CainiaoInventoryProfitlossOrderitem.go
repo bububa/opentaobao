@@ -2,8 +2,6 @@ package wms
 
 // CainiaoInventoryProfitlossOrderitem 结构体
 type CainiaoInventoryProfitlossOrderitem struct {
-	// 商品ID
-	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 	// 商家对商品的编码
 	ItemCode string `json:"item_code,omitempty" xml:"item_code,omitempty"`
 	// 库存类型 1 可销售库存（正品）  101 残次
@@ -20,4 +18,6 @@ type CainiaoInventoryProfitlossOrderitem struct {
 	ProduceArea string `json:"produce_area,omitempty" xml:"produce_area,omitempty"`
 	// 批次号
 	BatchCode string `json:"batch_code,omitempty" xml:"batch_code,omitempty"`
+	// 商品ID
+	ItemId string `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

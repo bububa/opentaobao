@@ -26,4 +26,6 @@ type AlitripBtripInvoiceSettingAddAPIResponseModel struct {
 	Result int64 `json:"result,omitempty" xml:"result,omitempty"`
 	// 结果码
 	ResultCode int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// 请求是否成功
+	SuccessFlag bool `json:"success_flag,omitempty" xml:"success_flag,omitempty"`
 }

@@ -1,0 +1,72 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "供应商渠道产品id",
+					"required": true
+				},
+				{
+					"name": "goods_id",
+					"type": "Number",
+					"description": "供应商货品id",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "供应商渠道产品skuId"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "top_bind_product_goods_request",
+			"type": "TopBindProductGoodsRequest",
+			"description": "请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功"
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "是否绑定成功"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.ascp.channel.supplier.product.goods.bind",
+	"apiChineseName": "渠道产品与货品绑定接口",
+	"description": "渠道产品与货品绑定接口",
+	"id": 65464
+}

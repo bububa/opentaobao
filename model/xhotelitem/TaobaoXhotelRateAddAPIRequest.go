@@ -12,18 +12,18 @@ import (
 // 酒店产品库rate添加
 type TaobaoXhotelRateAddAPIRequest struct {
 	model.Params
-	// 名称
-	_name string
-	// 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
-	_inventoryPrice string
-	// 卖家自己系统的Code，简称RateCode
-	_rateplanCode string
 	// 用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。
 	_vendor string
+	// 卖家自己系统的Code，简称RateCode
+	_rateplanCode string
 	// 卖家房型ID, 这是卖家自己系统中的房型ID，注意：需按照规则组合
 	_outRid string
 	// 在添加新rate时，同时添加rate开关日历。可以只设定想设定的某些天，可以不连续。date：开关状态控制的是那一天rate_status：开关状态。0，关闭；1，打开
 	_rateSwitchCal string
+	// 名称
+	_name string
+	// 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
+	_inventoryPrice string
 	// 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
 	_lockEndTime string
 	// 锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
@@ -67,51 +67,15 @@ func (r TaobaoXhotelRateAddAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateAddAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelRateAddAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetName is Name Setter
-// 名称
-func (r *TaobaoXhotelRateAddAPIRequest) SetName(_name string) error {
-	r._name = _name
-	r.Set("name", _name)
-	return nil
-}
-
-// GetName Name Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetName() string {
-	return r._name
-}
-
-// SetInventoryPrice is InventoryPrice Setter
-// 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
-func (r *TaobaoXhotelRateAddAPIRequest) SetInventoryPrice(_inventoryPrice string) error {
-	r._inventoryPrice = _inventoryPrice
-	r.Set("inventory_price", _inventoryPrice)
-	return nil
-}
-
-// GetInventoryPrice InventoryPrice Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetInventoryPrice() string {
-	return r._inventoryPrice
-}
-
-// SetRateplanCode is RateplanCode Setter
-// 卖家自己系统的Code，简称RateCode
-func (r *TaobaoXhotelRateAddAPIRequest) SetRateplanCode(_rateplanCode string) error {
-	r._rateplanCode = _rateplanCode
-	r.Set("rateplan_code", _rateplanCode)
-	return nil
-}
-
-// GetRateplanCode RateplanCode Getter
-func (r TaobaoXhotelRateAddAPIRequest) GetRateplanCode() string {
-	return r._rateplanCode
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelRateAddAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetVendor is Vendor Setter
@@ -125,6 +89,19 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetVendor(_vendor string) error {
 // GetVendor Vendor Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetVendor() string {
 	return r._vendor
+}
+
+// SetRateplanCode is RateplanCode Setter
+// 卖家自己系统的Code，简称RateCode
+func (r *TaobaoXhotelRateAddAPIRequest) SetRateplanCode(_rateplanCode string) error {
+	r._rateplanCode = _rateplanCode
+	r.Set("rateplan_code", _rateplanCode)
+	return nil
+}
+
+// GetRateplanCode RateplanCode Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetRateplanCode() string {
+	return r._rateplanCode
 }
 
 // SetOutRid is OutRid Setter
@@ -151,6 +128,32 @@ func (r *TaobaoXhotelRateAddAPIRequest) SetRateSwitchCal(_rateSwitchCal string) 
 // GetRateSwitchCal RateSwitchCal Getter
 func (r TaobaoXhotelRateAddAPIRequest) GetRateSwitchCal() string {
 	return r._rateSwitchCal
+}
+
+// SetName is Name Setter
+// 名称
+func (r *TaobaoXhotelRateAddAPIRequest) SetName(_name string) error {
+	r._name = _name
+	r.Set("name", _name)
+	return nil
+}
+
+// GetName Name Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetName() string {
+	return r._name
+}
+
+// SetInventoryPrice is InventoryPrice Setter
+// 价格和库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
+func (r *TaobaoXhotelRateAddAPIRequest) SetInventoryPrice(_inventoryPrice string) error {
+	r._inventoryPrice = _inventoryPrice
+	r.Set("inventory_price", _inventoryPrice)
+	return nil
+}
+
+// GetInventoryPrice InventoryPrice Getter
+func (r TaobaoXhotelRateAddAPIRequest) GetInventoryPrice() string {
+	return r._inventoryPrice
 }
 
 // SetLockEndTime is LockEndTime Setter

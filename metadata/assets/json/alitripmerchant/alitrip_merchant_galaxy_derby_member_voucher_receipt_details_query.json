@@ -1,0 +1,102 @@
+{
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "831232110dasdas",
+			"required": true
+		},
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "831232110",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code"
+				},
+				{
+					"subParams": [
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "receipt_status",
+							"type": "String",
+							"description": "发票状态"
+						},
+						{
+							"name": "receipt_u_r_l",
+							"type": "String",
+							"description": "发票pdf url"
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id"
+						},
+						{
+							"name": "tax_i_d",
+							"type": "String",
+							"description": "税号"
+						},
+						{
+							"name": "total_rate",
+							"type": "String",
+							"description": "总金额"
+						},
+						{
+							"name": "receipt_type",
+							"type": "String",
+							"description": "发票类型(公司/个人)"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "手机号"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherReceiptQueryVO",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "出参"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.receipt.details.query",
+	"apiChineseName": "v5.0付费会员卡开发订单开票信息查询",
+	"description": "v5.0付费会员卡开发订单开票信息查询",
+	"id": 63849
+}

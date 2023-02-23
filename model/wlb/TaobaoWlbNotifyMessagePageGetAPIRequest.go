@@ -39,12 +39,15 @@ func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbNotifyMessagePageGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMsgCode is MsgCode Setter

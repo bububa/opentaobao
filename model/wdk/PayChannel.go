@@ -18,6 +18,8 @@ type PayChannel struct {
 	PayChannelType int64 `json:"pay_channel_type,omitempty" xml:"pay_channel_type,omitempty"`
 	// 当前支付渠道的支付金额，单位分。有支付渠道的情况下，必填。
 	PayFee int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
+	// 当前支付渠道的退款金额，单位分。有支付渠道的情况下，必填。
+	RefundFee int64 `json:"refund_fee,omitempty" xml:"refund_fee,omitempty"`
 	// 所属淘宝主订单号
 	BizOrderId int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
 	// 当前渠道付款金额(分)

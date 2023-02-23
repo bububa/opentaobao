@@ -14,10 +14,10 @@ type TaobaoTmcMessageProduceAPIRequest struct {
 	model.Params
 	// 消息内容的JSON表述，必须按照topic的定义来填充
 	_content string
-	// 消息类型
-	_topic string
 	// 目标分组，一般为default
 	_targetGroup string
+	// 消息类型
+	_topic string
 	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。
 	_mediaContent *model.File
 	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
@@ -25,9 +25,9 @@ type TaobaoTmcMessageProduceAPIRequest struct {
 	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 	_mediaContent3 *model.File
 	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-	_mediaContent4 *model.File
-	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 	_mediaContent5 *model.File
+	// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
+	_mediaContent4 *model.File
 	// 延时参数 时间戳 预期发送时间
 	_delayMillis int64
 	// 提前过期 相对时间差 毫秒
@@ -47,12 +47,15 @@ func (r TaobaoTmcMessageProduceAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTmcMessageProduceAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTmcMessageProduceAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTmcMessageProduceAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetContent is Content Setter
@@ -68,19 +71,6 @@ func (r TaobaoTmcMessageProduceAPIRequest) GetContent() string {
 	return r._content
 }
 
-// SetTopic is Topic Setter
-// 消息类型
-func (r *TaobaoTmcMessageProduceAPIRequest) SetTopic(_topic string) error {
-	r._topic = _topic
-	r.Set("topic", _topic)
-	return nil
-}
-
-// GetTopic Topic Getter
-func (r TaobaoTmcMessageProduceAPIRequest) GetTopic() string {
-	return r._topic
-}
-
 // SetTargetGroup is TargetGroup Setter
 // 目标分组，一般为default
 func (r *TaobaoTmcMessageProduceAPIRequest) SetTargetGroup(_targetGroup string) error {
@@ -92,6 +82,19 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetTargetGroup(_targetGroup string) 
 // GetTargetGroup TargetGroup Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetTargetGroup() string {
 	return r._targetGroup
+}
+
+// SetTopic is Topic Setter
+// 消息类型
+func (r *TaobaoTmcMessageProduceAPIRequest) SetTopic(_topic string) error {
+	r._topic = _topic
+	r.Set("topic", _topic)
+	return nil
+}
+
+// GetTopic Topic Getter
+func (r TaobaoTmcMessageProduceAPIRequest) GetTopic() string {
+	return r._topic
 }
 
 // SetMediaContent is MediaContent Setter
@@ -133,19 +136,6 @@ func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent3() *model.File {
 	return r._mediaContent3
 }
 
-// SetMediaContent4 is MediaContent4 Setter
-// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent4(_mediaContent4 *model.File) error {
-	r._mediaContent4 = _mediaContent4
-	r.Set("media_content4", _mediaContent4)
-	return nil
-}
-
-// GetMediaContent4 MediaContent4 Getter
-func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent4() *model.File {
-	return r._mediaContent4
-}
-
 // SetMediaContent5 is MediaContent5 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
 func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent5(_mediaContent5 *model.File) error {
@@ -157,6 +147,19 @@ func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent5(_mediaContent5 *mod
 // GetMediaContent5 MediaContent5 Getter
 func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent5() *model.File {
 	return r._mediaContent5
+}
+
+// SetMediaContent4 is MediaContent4 Setter
+// 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
+func (r *TaobaoTmcMessageProduceAPIRequest) SetMediaContent4(_mediaContent4 *model.File) error {
+	r._mediaContent4 = _mediaContent4
+	r.Set("media_content4", _mediaContent4)
+	return nil
+}
+
+// GetMediaContent4 MediaContent4 Getter
+func (r TaobaoTmcMessageProduceAPIRequest) GetMediaContent4() *model.File {
+	return r._mediaContent4
 }
 
 // SetDelayMillis is DelayMillis Setter

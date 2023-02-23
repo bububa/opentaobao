@@ -49,9 +49,8 @@
 			"subParams": [
 				{
 					"name": "attribute_map",
-					"type": "Json",
-					"description": "回复业务KV",
-					"required": true
+					"type": "String",
+					"description": "回复业务KV"
 				}
 			],
 			"name": "resp_body",

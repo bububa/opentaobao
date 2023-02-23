@@ -18,6 +18,8 @@ type Order struct {
 	ShopNick string `json:"shop_nick,omitempty" xml:"shop_nick,omitempty"`
 	// ERP仓库编码,sellerId下唯一
 	ErpWarehouseCode string `json:"erp_warehouse_code,omitempty" xml:"erp_warehouse_code,omitempty"`
+	// 原ERP发货单，条件必填（换货出库/补发出库必须有）；
+	PreOrderCode string `json:"pre_order_code,omitempty" xml:"pre_order_code,omitempty"`
 	// 创建时间（时间戳）
 	CreateTime int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
 }

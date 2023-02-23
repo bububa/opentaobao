@@ -11,7 +11,7 @@ type NormalVisaApplicantOperation struct {
 	// 代填申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大)
 	ApplicantFormDataJson string `json:"applicant_form_data_json,omitempty" xml:"applicant_form_data_json,omitempty"`
 	// 特殊必填，上传该申请人 电子签结果。当该签证为电子签证且status值为1006（已收到签证结果）时 必填
-	EtaInfo *NormalVisaEtaInfo `json:"eta_info,omitempty" xml:"eta_info,omitempty"`
+	EtaInfo *NormalVisaETAInfo `json:"eta_info,omitempty" xml:"eta_info,omitempty"`
 	// 特殊必填，上传该申请人 签证结果寄回物流信息。当status值为1013（已寄回结果）时，必填
 	LogisticsInfo *NormalVisaLogisticsInfo `json:"logistics_info,omitempty" xml:"logistics_info,omitempty"`
 	// 必填，申请人状态推进，本次操作需要推进到的目标状态。具体状态值枚举及推进流程详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.fYvMkZ&amp;docType=1&amp;articleId=108046&amp;previewCode=9D5F931C2254C7B3FE16B8DB7F9CECB4

@@ -32,6 +32,8 @@ type VideoDraftDto struct {
 	Summary string `json:"summary,omitempty" xml:"summary,omitempty"`
 	// 比如楼盘下的货品id，小区小的房源id
 	OuterSubId string `json:"outer_sub_id,omitempty" xml:"outer_sub_id,omitempty"`
+	// 外部门店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 视频类型
 	VideoType int64 `json:"video_type,omitempty" xml:"video_type,omitempty"`
 	// 来源

@@ -29,12 +29,15 @@ func (r AlitripBtripFlightDistributionRefundNewprecalAPIRequest) GetApiMethodNam
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripBtripFlightDistributionRefundNewprecalAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripBtripFlightDistributionRefundNewprecalAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripBtripFlightDistributionRefundNewprecalAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBtripFlightRefundPreCalRq is ParamBtripFlightRefundPreCalRq Setter

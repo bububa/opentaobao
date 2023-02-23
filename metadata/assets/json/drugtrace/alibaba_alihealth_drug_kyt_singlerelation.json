@@ -151,7 +151,7 @@
 								{
 									"name": "status",
 									"type": "String",
-									"description": "码状态"
+									"description": "码状态（I核注O核销A激活C注销E错误码）"
 								},
 								{
 									"name": "code",

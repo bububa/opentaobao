@@ -160,6 +160,18 @@
 					"name": "ticket_no",
 					"type": "String",
 					"description": "12306票号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "custom_type",
+							"type": "String",
+							"description": "定制信息"
+						}
+					],
+					"name": "vip_custom_result_list",
+					"type": "VipCustomTicketConfirmItem[]",
+					"description": "出票结果定制信息列表"
 				}
 			],
 			"name": "ticket_info_list",

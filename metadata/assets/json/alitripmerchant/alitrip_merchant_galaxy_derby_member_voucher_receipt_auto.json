@@ -1,0 +1,68 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "tax_i_d",
+									"type": "String",
+									"description": "税号"
+								}
+							],
+							"name": "data",
+							"type": "DerbyVoucherReceiptAutoResponse[]",
+							"description": "详情"
+						}
+					],
+					"name": "content",
+					"type": "DerbyVoucherReceiptAutoVO",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "1错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.receipt.auto",
+	"apiChineseName": "德比付费会员卡开票自匹配",
+	"description": "德比付费会员卡开票自匹配",
+	"id": 63848
+}

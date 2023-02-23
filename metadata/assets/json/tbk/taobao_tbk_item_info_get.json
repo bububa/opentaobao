@@ -15,6 +15,16 @@
 			"name": "ip",
 			"type": "String",
 			"description": "ip地址，影响邮费获取，如果不传或者传入不准确，邮费无法精准提供"
+		},
+		{
+			"name": "biz_scene_id",
+			"type": "String",
+			"description": "1-动态ID转链场景，2-消费者比价场景，3-商品库导购场景（不填默认为1）"
+		},
+		{
+			"name": "promotion_type",
+			"type": "String",
+			"description": "1-自购省，2-推广赚（代理模式专属ID，代理模式必填，非代理模式不用填写该字段）"
 		}
 	],
 	"responseParams": [
@@ -224,6 +234,11 @@
 					"name": "hot_flag",
 					"type": "String",
 					"description": "是否是热门商品，0不是，1是"
+				},
+				{
+					"name": "input_num_iid",
+					"type": "String",
+					"description": "入参的（新）商品ID"
 				}
 			],
 			"name": "results",

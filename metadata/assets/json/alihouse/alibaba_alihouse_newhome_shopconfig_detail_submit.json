@@ -33,8 +33,7 @@
 				{
 					"name": "city_id",
 					"type": "Number",
-					"description": "城市ID",
-					"required": true
+					"description": "城市ID"
 				},
 				{
 					"subParams": [
@@ -78,6 +77,23 @@
 							"name": "order_no",
 							"type": "Number",
 							"description": "排序"
+						},
+						{
+							"subParams": [
+								{
+									"name": "outer_consultant_id",
+									"type": "String",
+									"description": "外部经纪人ID"
+								},
+								{
+									"name": "sort_no",
+									"type": "Number",
+									"description": "排序号"
+								}
+							],
+							"name": "excellent_broker",
+							"type": "BrokerSortDTO[]",
+							"description": "推荐经纪人排序"
 						}
 					],
 					"name": "shop_config_details",
@@ -88,6 +104,16 @@
 					"name": "is_show",
 					"type": "Number",
 					"description": "是否展示"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否为测试"
 				}
 			],
 			"name": "shop_config",

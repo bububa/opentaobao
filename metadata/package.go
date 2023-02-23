@@ -1,11 +1,12 @@
 package metadata
 
 import (
-	"bytes"
 	"encoding/json"
 
 	// 使用go 1.16以上版本的embed功能
 	_ "embed"
+
+	"github.com/bububa/opentaobao/metadata/util"
 )
 
 // PkgConfig SDK分包配置结构体
@@ -35,7 +36,8 @@ func (p PkgConfigSlice) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
 var ConflictModels []string
 
 func init() {
-	buf := new(bytes.Buffer)
+	buf := util.GetBufferPool()
+	defer util.PutBufferPool(buf)
 	if err := json.Compact(buf, pkgBytes); err != nil {
 		panic(err)
 	}
@@ -43,11 +45,11 @@ func init() {
 		panic(err)
 	}
 
-	mbuf := new(bytes.Buffer)
-	if err := json.Compact(mbuf, conflictModelsBytes); err != nil {
+	buf.Reset()
+	if err := json.Compact(buf, conflictModelsBytes); err != nil {
 		panic(err)
 	}
-	if err := json.NewDecoder(mbuf).Decode(&ConflictModels); err != nil {
+	if err := json.NewDecoder(buf).Decode(&ConflictModels); err != nil {
 		panic(err)
 	}
 }

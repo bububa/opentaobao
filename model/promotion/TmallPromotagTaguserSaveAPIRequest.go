@@ -12,12 +12,12 @@ import (
 // 给用户载体打标
 type TmallPromotagTaguserSaveAPIRequest struct {
 	model.Params
+	// 昵称
+	_nick string
 	// 用户ID
 	_ouid string
 	// 用户ID
 	_openid string
-	// 昵称
-	_nick string
 	// 标签ID
 	_tagId int64
 }
@@ -35,12 +35,28 @@ func (r TmallPromotagTaguserSaveAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallPromotagTaguserSaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallPromotagTaguserSaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallPromotagTaguserSaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetNick is Nick Setter
+// 昵称
+func (r *TmallPromotagTaguserSaveAPIRequest) SetNick(_nick string) error {
+	r._nick = _nick
+	r.Set("nick", _nick)
+	return nil
+}
+
+// GetNick Nick Getter
+func (r TmallPromotagTaguserSaveAPIRequest) GetNick() string {
+	return r._nick
 }
 
 // SetOuid is Ouid Setter
@@ -67,19 +83,6 @@ func (r *TmallPromotagTaguserSaveAPIRequest) SetOpenid(_openid string) error {
 // GetOpenid Openid Getter
 func (r TmallPromotagTaguserSaveAPIRequest) GetOpenid() string {
 	return r._openid
-}
-
-// SetNick is Nick Setter
-// 昵称
-func (r *TmallPromotagTaguserSaveAPIRequest) SetNick(_nick string) error {
-	r._nick = _nick
-	r.Set("nick", _nick)
-	return nil
-}
-
-// GetNick Nick Getter
-func (r TmallPromotagTaguserSaveAPIRequest) GetNick() string {
-	return r._nick
 }
 
 // SetTagId is TagId Setter

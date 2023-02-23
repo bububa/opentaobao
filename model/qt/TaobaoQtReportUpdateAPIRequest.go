@@ -63,12 +63,15 @@ func (r TaobaoQtReportUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQtReportUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQtReportUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQtReportUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetServcieItemCode is ServcieItemCode Setter

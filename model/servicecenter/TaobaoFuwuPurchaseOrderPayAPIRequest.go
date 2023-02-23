@@ -14,10 +14,10 @@ type TaobaoFuwuPurchaseOrderPayAPIRequest struct {
 	model.Params
 	// APPKEY，必填
 	_appkey string
-	// 外部订单号，使用该参数完成查询订单等操作，与外部订单号二选一
-	_outOrderId string
 	// 设备类型，目前只支持PC，可选
 	_deviceType string
+	// 外部订单号，使用该参数完成查询订单等操作，与外部订单号二选一
+	_outOrderId string
 	// 订单号，与外部订单号二选一
 	_orderId int64
 }
@@ -35,12 +35,15 @@ func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAppkey is Appkey Setter
@@ -56,19 +59,6 @@ func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetAppkey() string {
 	return r._appkey
 }
 
-// SetOutOrderId is OutOrderId Setter
-// 外部订单号，使用该参数完成查询订单等操作，与外部订单号二选一
-func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOutOrderId(_outOrderId string) error {
-	r._outOrderId = _outOrderId
-	r.Set("out_order_id", _outOrderId)
-	return nil
-}
-
-// GetOutOrderId OutOrderId Getter
-func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetOutOrderId() string {
-	return r._outOrderId
-}
-
 // SetDeviceType is DeviceType Setter
 // 设备类型，目前只支持PC，可选
 func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetDeviceType(_deviceType string) error {
@@ -80,6 +70,19 @@ func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetDeviceType(_deviceType string)
 // GetDeviceType DeviceType Getter
 func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetDeviceType() string {
 	return r._deviceType
+}
+
+// SetOutOrderId is OutOrderId Setter
+// 外部订单号，使用该参数完成查询订单等操作，与外部订单号二选一
+func (r *TaobaoFuwuPurchaseOrderPayAPIRequest) SetOutOrderId(_outOrderId string) error {
+	r._outOrderId = _outOrderId
+	r.Set("out_order_id", _outOrderId)
+	return nil
+}
+
+// GetOutOrderId OutOrderId Getter
+func (r TaobaoFuwuPurchaseOrderPayAPIRequest) GetOutOrderId() string {
+	return r._outOrderId
 }
 
 // SetOrderId is OrderId Setter

@@ -2,6 +2,8 @@ package alihouse
 
 // ShopConfigDetailDto 结构体
 type ShopConfigDetailDto struct {
+	// 推荐经纪人排序
+	ExcellentBroker []BrokerSortDto `json:"excellent_broker,omitempty" xml:"excellent_broker>broker_sort_dto,omitempty"`
 	// 标题
 	Title string `json:"title,omitempty" xml:"title,omitempty"`
 	// 跳转地址

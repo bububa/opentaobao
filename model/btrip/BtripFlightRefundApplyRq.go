@@ -22,7 +22,7 @@ type BtripFlightRefundApplyRq struct {
 	ItemUnitIds string `json:"item_unit_ids,omitempty" xml:"item_unit_ids,omitempty"`
 	// 会话id
 	SessionId string `json:"session_id,omitempty" xml:"session_id,omitempty"`
-	// 订单退款总金额(单位元)
+	// 订单退款总金额(单位分)
 	DisplayRefundMoney string `json:"display_refund_money,omitempty" xml:"display_refund_money,omitempty"`
 	// 是否自愿
 	IsVoluntary int64 `json:"is_voluntary,omitempty" xml:"is_voluntary,omitempty"`

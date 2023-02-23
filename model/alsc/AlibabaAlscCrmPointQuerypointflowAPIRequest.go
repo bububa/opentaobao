@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmPointQuerypointflowAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamPageQueryPointFlowOpenReq is ParamPageQueryPointFlowOpenReq Setter

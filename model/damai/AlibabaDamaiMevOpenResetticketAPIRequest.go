@@ -29,12 +29,15 @@ func (r AlibabaDamaiMevOpenResetticketAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenResetticketAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaDamaiMevOpenResetticketAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaDamaiMevOpenResetticketAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTicketIdOpenParam is TicketIdOpenParam Setter

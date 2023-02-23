@@ -29,11 +29,6 @@
 	],
 	"responseParams": [
 		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "任务列表查询结果的总数"
-		},
-		{
 			"subParams": [
 				{
 					"name": "order_id",
@@ -44,6 +39,11 @@
 			"name": "eticket_tasks",
 			"type": "EticketTask []",
 			"description": "任务列表查询结果信息"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "任务列表查询结果的总数"
 		}
 	],
 	"name": "taobao.vmarket.eticket.tasks.get",

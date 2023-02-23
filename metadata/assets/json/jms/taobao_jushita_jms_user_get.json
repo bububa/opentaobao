@@ -11,14 +11,9 @@
 		{
 			"subParams": [
 				{
-					"name": "user_nick",
-					"type": "String",
-					"description": "用户昵称"
-				},
-				{
-					"name": "user_id",
-					"type": "Number",
-					"description": "用户ID"
+					"name": "created",
+					"type": "Date",
+					"description": "用户首次开通时间"
 				},
 				{
 					"name": "is_valid",
@@ -26,14 +21,19 @@
 					"description": "用户授权是否有效，true表示授权有效，false表示授权过期"
 				},
 				{
-					"name": "created",
-					"type": "Date",
-					"description": "用户首次开通时间"
-				},
-				{
 					"name": "modified",
 					"type": "Date",
 					"description": "用户最后开通时间"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
 				}
 			],
 			"name": "ons_user",

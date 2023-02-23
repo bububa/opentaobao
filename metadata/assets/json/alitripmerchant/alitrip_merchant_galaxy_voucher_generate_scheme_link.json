@@ -1,0 +1,54 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "tenant_key",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "1111"
+		},
+		{
+			"name": "encryption_merchant_id",
+			"type": "String",
+			"description": "加密merchantId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "内容"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.voucher.generate.scheme.link",
+	"apiChineseName": "生成短信链接",
+	"description": "生成微信跳转链接scheme_link",
+	"id": 65456
+}

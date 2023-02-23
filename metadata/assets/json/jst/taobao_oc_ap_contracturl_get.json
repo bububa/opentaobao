@@ -1,9 +1,9 @@
 {
 	"responseParams": [
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "判断操作是否执行成功"
+			"name": "error_description",
+			"type": "String",
+			"description": "错误描述信息"
 		},
 		{
 			"name": "url",
@@ -11,9 +11,9 @@
 			"description": "代扣url地址"
 		},
 		{
-			"name": "error_description",
-			"type": "String",
-			"description": "错误描述信息"
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "判断操作是否执行成功"
 		}
 	],
 	"name": "taobao.oc.ap.contracturl.get",

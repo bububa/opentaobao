@@ -75,11 +75,6 @@
 						{
 							"subParams": [
 								{
-									"name": "change_fee",
-									"type": "Number",
-									"description": "改签费"
-								},
-								{
 									"name": "origin_flight_no",
 									"type": "String",
 									"description": "原航班号",
@@ -90,11 +85,6 @@
 									"type": "String",
 									"description": "用户姓名",
 									"required": true
-								},
-								{
-									"name": "upgrade_fee",
-									"type": "Number",
-									"description": "升舱费用"
 								},
 								{
 									"name": "user_id",
@@ -119,6 +109,11 @@
 					"type": "String",
 					"description": "分销子渠道，通常为corpId",
 					"required": true
+				},
+				{
+					"name": "whether_retry",
+					"type": "Boolean",
+					"description": "默认为false"
 				}
 			],
 			"name": "param_btrip_flight_modify_apply_rq",
@@ -170,6 +165,41 @@
 							"name": "btrip_sub_order_id",
 							"type": "Number",
 							"description": "商旅改签申请单号"
+						},
+						{
+							"name": "retry",
+							"type": "Boolean",
+							"description": "是否重试"
+						},
+						{
+							"name": "max_retry_times",
+							"type": "Number",
+							"description": "最大的重试次数"
+						},
+						{
+							"name": "retry_client_tips",
+							"type": "String",
+							"description": "重试时给用户提示的文案"
+						},
+						{
+							"name": "next_retry_interval",
+							"type": "Number",
+							"description": "重试的间隔时间单位ms"
+						},
+						{
+							"name": "booking_changed_total_fee",
+							"type": "Number",
+							"description": "预定后变价-用户原支付费用总金额"
+						},
+						{
+							"name": "booking_price_changed",
+							"type": "Boolean",
+							"description": "是否变价"
+						},
+						{
+							"name": "booking_origin_total_fee",
+							"type": "Number",
+							"description": "预定后变价-用户原支付费用总金额"
 						}
 					],
 					"name": "module",

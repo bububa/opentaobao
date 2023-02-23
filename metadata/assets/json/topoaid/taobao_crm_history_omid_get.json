@@ -13,8 +13,7 @@
 				{
 					"name": "omid",
 					"type": "String",
-					"description": "omid",
-					"required": true
+					"description": "omid"
 				}
 			],
 			"name": "data",

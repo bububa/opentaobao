@@ -228,6 +228,11 @@
 									"name": "sell_policy_list",
 									"type": "SellPolicyDto[]",
 									"description": "政策信息"
+								},
+								{
+									"name": "big_pnr",
+									"type": "String",
+									"description": "大编码"
 								}
 							],
 							"name": "issue_list",
@@ -263,6 +268,48 @@
 							"name": "refund_modify_rule",
 							"type": "String",
 							"description": "退改签规则"
+						},
+						{
+							"subParams": [
+								{
+									"name": "dep_arr_desc",
+									"type": "String",
+									"description": "航段"
+								},
+								{
+									"name": "passenger_type_desc",
+									"type": "String",
+									"description": "乘机人类型"
+								},
+								{
+									"name": "baggage_type_desc",
+									"type": "String",
+									"description": "行李类型"
+								},
+								{
+									"name": "rule_desc",
+									"type": "String",
+									"description": "规则描述"
+								}
+							],
+							"name": "baggage_list",
+							"type": "BaggageDTO[]",
+							"description": "行李"
+						},
+						{
+							"name": "intention_id",
+							"type": "String",
+							"description": "意向单id"
+						},
+						{
+							"name": "sla_desc",
+							"type": "String",
+							"description": "支付成功后30分钟内出票"
+						},
+						{
+							"name": "trip_type",
+							"type": "Number",
+							"description": "   1:\"单程\",     2:\"往返\",     3:\"多程\""
 						}
 					],
 					"name": "data",

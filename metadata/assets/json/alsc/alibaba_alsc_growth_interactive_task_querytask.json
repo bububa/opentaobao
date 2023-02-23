@@ -1,0 +1,509 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "biz_scence",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备ID"
+						},
+						{
+							"name": "ip",
+							"type": "String",
+							"description": "ip地址"
+						},
+						{
+							"name": "mac",
+							"type": "String",
+							"description": "设备MAC地址"
+						},
+						{
+							"name": "platform",
+							"type": "String",
+							"description": "客户端平台",
+							"required": true
+						},
+						{
+							"name": "platform_version",
+							"type": "String",
+							"description": "客户端平台版本"
+						},
+						{
+							"name": "prod_version",
+							"type": "String",
+							"description": "客户端应用版本",
+							"required": true
+						},
+						{
+							"name": "product",
+							"type": "String",
+							"description": "客户端应用(淘宝、口碑独客、支付宝tab…)",
+							"required": true
+						},
+						{
+							"name": "schema_platform",
+							"type": "String",
+							"description": "新零售店铺跳转链接:透传给投承做补全新零售店铺链接时使用"
+						},
+						{
+							"name": "ttid",
+							"type": "String",
+							"description": "格式: xxx@taobao_ios_5.0.1"
+						},
+						{
+							"name": "user_agent",
+							"type": "String",
+							"description": "特征字符串"
+						}
+					],
+					"name": "device_info",
+					"type": "DeviceInfo",
+					"description": "设备信息",
+					"required": true
+				},
+				{
+					"name": "ignore_recv_task_aladdin",
+					"type": "Boolean",
+					"description": "领取任务是否忽略投放"
+				},
+				{
+					"name": "is_self_sort",
+					"type": "Boolean",
+					"description": "是否走自定义排序"
+				},
+				{
+					"subParams": [
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市区域码"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区县区域码"
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": " 纬度",
+							"required": true
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "location_type",
+							"type": "String",
+							"description": "位置类型(默认实时)"
+						},
+						{
+							"name": "poi_id",
+							"type": "String",
+							"description": "poiId"
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": " poiName"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省区域码"
+						}
+					],
+					"name": "location_infos",
+					"type": "LocationInfo[]",
+					"description": "位置信息",
+					"required": true
+				},
+				{
+					"name": "mission_collection_id",
+					"type": "Number",
+					"description": "任务集id",
+					"required": true
+				},
+				{
+					"name": "mission_id",
+					"type": "Number",
+					"description": "任务id"
+				},
+				{
+					"name": "mission_ids",
+					"type": "Number[]",
+					"description": "任务id列表"
+				},
+				{
+					"name": "mission_x_ids",
+					"type": "String[]",
+					"description": "任务xid"
+				},
+				{
+					"name": "query_received_flag",
+					"type": "Boolean",
+					"description": "本次查询，只查已领取的任务"
+				},
+				{
+					"name": "request_data_enums",
+					"type": "String[]",
+					"description": " 控制是否展示查询任务响应结果里的某个字段"
+				},
+				{
+					"name": "show_remind",
+					"type": "Boolean",
+					"description": "是否展示提示信息（小红点）"
+				},
+				{
+					"name": "show_sublist_alone",
+					"type": "Boolean",
+					"description": "是否单独展示组合任务的子任务列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "site",
+							"type": "Number",
+							"description": "账号类型，0表示淘宝账号，25表示饿了么账号",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户ID",
+							"required": true
+						}
+					],
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息",
+					"required": true
+				}
+			],
+			"name": "mission_query",
+			"type": "MissionQuery",
+			"description": "任务查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "show",
+									"type": "Boolean",
+									"description": "是否展示红点"
+								}
+							],
+							"name": "remind_info",
+							"type": "RemindInfo",
+							"description": "提醒信息"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "ext_value",
+											"type": "String",
+											"description": "其他信息"
+										},
+										{
+											"name": "ext_type",
+											"type": "String",
+											"description": "扩展类型"
+										}
+									],
+									"name": "ext",
+									"type": "MissionExt",
+									"description": "扩展信息"
+								},
+								{
+									"name": "mission_x_id",
+									"type": "String",
+									"description": "任务xid"
+								},
+								{
+									"name": "mission_def_id",
+									"type": "Number",
+									"description": "任务定义id"
+								},
+								{
+									"name": "receive_status",
+									"type": "String",
+									"description": "任务领取状态"
+								},
+								{
+									"name": "next_stage_count",
+									"type": "Number",
+									"description": "下一个阶段"
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "子标题"
+								},
+								{
+									"subParams": [
+										{
+											"name": "action_type",
+											"type": "String",
+											"description": "行为类型"
+										},
+										{
+											"name": "action_value",
+											"type": "String",
+											"description": "行为配置"
+										}
+									],
+									"name": "action_config",
+									"type": "MissionAction",
+									"description": "行为配置"
+								},
+								{
+									"subParams": [
+										{
+											"name": "stage_count",
+											"type": "Number",
+											"description": "阶段id"
+										},
+										{
+											"subParams": [
+												{
+													"name": "ext",
+													"type": "String",
+													"description": "扩展信息"
+												},
+												{
+													"name": "icon",
+													"type": "String",
+													"description": "奖品图标"
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "奖品名称"
+												},
+												{
+													"name": "type",
+													"type": "String",
+													"description": "奖品类型"
+												},
+												{
+													"name": "value",
+													"type": "String",
+													"description": "奖品值"
+												}
+											],
+											"name": "rewards",
+											"type": "Rewards[]",
+											"description": "奖品信息"
+										},
+										{
+											"name": "reward_status",
+											"type": "String",
+											"description": "发奖状态"
+										},
+										{
+											"subParams": [
+												{
+													"name": "stage_count",
+													"type": "Number",
+													"description": "阶段数"
+												},
+												{
+													"name": "action_type",
+													"type": "String",
+													"description": "阶段类型"
+												},
+												{
+													"name": "action_subtype",
+													"type": "String",
+													"description": "阶段子类型"
+												},
+												{
+													"name": "action_sub_sub_type",
+													"type": "String",
+													"description": "阶段子类型子类型"
+												},
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "阶段id"
+												},
+												{
+													"name": "action_param",
+													"type": "String",
+													"description": "奖励配置参数"
+												},
+												{
+													"name": "stage_sum",
+													"type": "String",
+													"description": " 阶段限制汇总"
+												}
+											],
+											"name": "source_action",
+											"type": "MissionStageAction",
+											"description": "任务配置阶段action"
+										},
+										{
+											"name": "ext_info",
+											"type": "String",
+											"description": "扩展信息"
+										},
+										{
+											"name": "status",
+											"type": "String",
+											"description": "状态"
+										},
+										{
+											"name": "source_action_id",
+											"type": "Number",
+											"description": "actionid"
+										}
+									],
+									"name": "mission_stage_d_t_o_s",
+									"type": "MissionStageDTO[]",
+									"description": "任务阶段"
+								},
+								{
+									"name": "show_title",
+									"type": "String",
+									"description": "展示标题"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								},
+								{
+									"name": "mission_collection_id",
+									"type": "Number",
+									"description": "任务集id"
+								},
+								{
+									"name": "receive_type",
+									"type": "String",
+									"description": "领取类型"
+								},
+								{
+									"subParams": [
+										{
+											"name": "cycle_type",
+											"type": "String",
+											"description": "周期类型"
+										},
+										{
+											"name": "loop_task",
+											"type": "Number",
+											"description": "完成后是否继续领取 0 对应页面\"否\"选项，1 对应页面 \"是\" 选项"
+										},
+										{
+											"name": "cycle_ext",
+											"type": "String",
+											"description": "任务周期类型扩展（1 天 或固定时间下划线分割开始时间和结束时间 2017-10-01 00:00:00_2017-10-03 00:00:00）"
+										}
+									],
+									"name": "cycle_config",
+									"type": "MissionCycle",
+									"description": "任务周期配置"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "任务实例状态"
+								}
+							],
+							"name": "m_list",
+							"type": "MissionDTO[]",
+							"description": "任务列表"
+						},
+						{
+							"subParams": [
+								{
+									"subParams": [
+										{
+											"name": "child_ids",
+											"type": "Number[]",
+											"description": "子任务列表"
+										},
+										{
+											"name": "father_id",
+											"type": "Number",
+											"description": "父任务id"
+										},
+										{
+											"name": "mission_relation",
+											"type": "String",
+											"description": "任务详细关系"
+										},
+										{
+											"name": "mission_relation_type",
+											"type": "String",
+											"description": "父子关系"
+										},
+										{
+											"name": "relation_name",
+											"type": "String",
+											"description": "关系名称"
+										},
+										{
+											"name": "sub_mission_receive_count",
+											"type": "Number",
+											"description": "子任务领取限制"
+										},
+										{
+											"name": "sub_mission_show_count",
+											"type": "Number",
+											"description": "子任务展示个数"
+										}
+									],
+									"name": "relation_configs",
+									"type": "RelationConfigDTO[]",
+									"description": "任务关系配置信息"
+								}
+							],
+							"name": "collection_dto",
+							"type": "CollectionDTO",
+							"description": "任务集配置信息"
+						}
+					],
+					"name": "data",
+					"type": "MissionResp",
+					"description": "返回data"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResponse",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.task.querytask",
+	"apiChineseName": "本地生活用户增长互动任务平台查询任务",
+	"description": "本地生活用户增长互动任务平台查询任务",
+	"id": 65165
+}

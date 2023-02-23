@@ -49,23 +49,26 @@
 				{
 					"name": "subscribe_start_time",
 					"type": "Date",
-					"description": "商家预约接种开始时间",
-					"required": true
+					"description": "商家预约接种开始时间"
 				},
 				{
 					"name": "subscribe_end_time",
 					"type": "Date",
-					"description": "商家预约接种结束时间",
-					"required": true
+					"description": "商家预约接种结束时间"
 				},
 				{
 					"name": "status",
 					"type": "Number",
 					"description": "预约单状态"
+				},
+				{
+					"name": "innoculate_status",
+					"type": "Number",
+					"description": "接种状态"
 				}
 			],
-			"name": "trade_subscribe_detail_save_top_request",
-			"type": "TradeSubscribeDetailSaveTopRequest",
+			"name": "trade_subscribe_detail_execute_top_request",
+			"type": "TradeSubscribeDetailExecuteTopRequest",
 			"description": "入参",
 			"required": true
 		}

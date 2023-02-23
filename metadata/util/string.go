@@ -166,3 +166,20 @@ func stringIter(s string, callback iterFunc) {
 		callback(prev, curr, 0)
 	}
 }
+
+func StringsJoin(strs ...string) string {
+	var n int
+	for i := 0; i < len(strs); i++ {
+		n += len(strs[i])
+	}
+	if n <= 0 {
+		return ""
+	}
+	builder := GetStringsBuilder()
+	defer PutStringsBuilder(builder)
+	builder.Grow(n)
+	for _, s := range strs {
+		builder.WriteString(s)
+	}
+	return builder.String()
+}

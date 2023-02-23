@@ -38,6 +38,18 @@ type RateVo struct {
 	BreakfastCount int64 `json:"breakfast_count,omitempty" xml:"breakfast_count,omitempty"`
 	// 凌晨房信息
 	DawnBookingVo *DawnBookingVo `json:"dawn_booking_vo,omitempty" xml:"dawn_booking_vo,omitempty"`
+	// 最小连住天数
+	MinDays int64 `json:"min_days,omitempty" xml:"min_days,omitempty"`
+	// 最大连住天数
+	MaxDays int64 `json:"max_days,omitempty" xml:"max_days,omitempty"`
+	// 最大提前小时数
+	MaxAdvHours int64 `json:"max_adv_hours,omitempty" xml:"max_adv_hours,omitempty"`
+	// 小时房信息
+	HourRoomInfo *HourRoomInfo `json:"hour_room_info,omitempty" xml:"hour_room_info,omitempty"`
+	// 小时房信息
+	HourRoomInfoDto *HourRoomInfoDto `json:"hour_room_info_dto,omitempty" xml:"hour_room_info_dto,omitempty"`
 	// 是否即时确认
 	InstantConfirm bool `json:"instant_confirm,omitempty" xml:"instant_confirm,omitempty"`
+	// 是否小时房,不为空且为true时标识小时房，否则全日房
+	HourRoom bool `json:"hour_room,omitempty" xml:"hour_room,omitempty"`
 }

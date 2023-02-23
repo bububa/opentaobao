@@ -5,13 +5,13 @@
 				{
 					"name": "dis_sub_order_id",
 					"type": "String",
-					"description": "分销外部订单号",
+					"description": "分销外部改签单号",
 					"required": true
 				},
 				{
 					"name": "dis_order_id",
 					"type": "String",
-					"description": "分销外部改签单号",
+					"description": "分销外部订单号",
 					"required": true
 				},
 				{
@@ -52,7 +52,7 @@
 					"description": "返回模版"
 				},
 				{
-					"name": "result_code\t",
+					"name": "result_code",
 					"type": "String",
 					"description": "错误码"
 				},

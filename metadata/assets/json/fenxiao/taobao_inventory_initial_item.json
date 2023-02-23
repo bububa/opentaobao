@@ -17,14 +17,14 @@
 		{
 			"subParams": [
 				{
-					"name": "info",
-					"type": "String",
-					"description": "返回信息"
-				},
-				{
 					"name": "sc_item_id",
 					"type": "String",
-					"description": "商品id"
+					"description": "商品ID"
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "提示信息"
 				}
 			],
 			"name": "tip_infos",

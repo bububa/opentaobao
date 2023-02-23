@@ -16,14 +16,14 @@
 					"description": "职务ID"
 				},
 				{
-					"name": "duty_name",
-					"type": "String",
-					"description": "职务名称"
-				},
-				{
 					"name": "duty_level",
 					"type": "Number",
 					"description": "职务级别"
+				},
+				{
+					"name": "duty_name",
+					"type": "String",
+					"description": "职务名称"
 				}
 			],
 			"name": "dutys",

@@ -12,6 +12,8 @@ type AdsTargetingTagDto struct {
 	GmtCreate string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
 	// 计划修改时间
 	GmtModified string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+	// 高曝光竞价(单位：元)
+	HighImprPrice string `json:"high_impr_price,omitempty" xml:"high_impr_price,omitempty"`
 	// 标签名（标签描述为空时，取标签名）
 	Name string `json:"name,omitempty" xml:"name,omitempty"`
 	// 标签描述（标签名为空时，取标签描述）
@@ -30,6 +32,8 @@ type AdsTargetingTagDto struct {
 	ProductLineId int64 `json:"product_line_id,omitempty" xml:"product_line_id,omitempty"`
 	// 13:地域标签 14：人群标签
 	TagRefType int64 `json:"tag_ref_type,omitempty" xml:"tag_ref_type,omitempty"`
+	// 推荐的标签溢价值
+	RecommendDiscount int64 `json:"recommend_discount,omitempty" xml:"recommend_discount,omitempty"`
 	// 层级（0,1,2）
 	Level int64 `json:"level,omitempty" xml:"level,omitempty"`
 }

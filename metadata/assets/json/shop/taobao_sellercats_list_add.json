@@ -29,6 +29,11 @@
 					"name": "cid",
 					"type": "Number",
 					"description": "卖家自定义类目编号"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间。格式：yyyy-MM-dd HH:mm:ss"
 				}
 			],
 			"name": "seller_cat",

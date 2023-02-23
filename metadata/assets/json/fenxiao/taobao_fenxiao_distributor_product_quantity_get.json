@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "SKU ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "module",
+					"type": "String",
+					"description": "库存数量"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "查询结果"
+		}
+	],
+	"name": "taobao.fenxiao.distributor.product.quantity.get",
+	"apiChineseName": "分销商查询产品库存",
+	"description": "分销商查询产品库存",
+	"id": 64498
+}

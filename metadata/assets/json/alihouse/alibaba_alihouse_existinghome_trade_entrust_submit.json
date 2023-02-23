@@ -81,6 +81,21 @@
 					"name": "instead_merchant_open_id",
 					"type": "Number",
 					"description": "代收主体id 当收款模式为代收是必填"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "房源地址"
+				},
+				{
+					"name": "ownership_address",
+					"type": "String",
+					"description": "房产证地址"
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "ms级时间戳"
 				}
 			],
 			"name": "sync_update_trade_entrust_dto",

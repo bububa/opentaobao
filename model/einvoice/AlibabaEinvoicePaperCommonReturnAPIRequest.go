@@ -37,12 +37,15 @@ func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEinvoicePaperCommonReturnAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetReqIndex is ReqIndex Setter

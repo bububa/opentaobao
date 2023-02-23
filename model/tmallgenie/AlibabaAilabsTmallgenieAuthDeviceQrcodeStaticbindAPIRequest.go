@@ -33,12 +33,15 @@ func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) GetApiMetho
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAilabsTmallgenieAuthDeviceQrcodeStaticbindAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetIdentifier is Identifier Setter

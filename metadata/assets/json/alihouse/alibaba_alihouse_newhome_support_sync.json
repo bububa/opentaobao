@@ -88,6 +88,11 @@
 					"type": "Number",
 					"description": "所属城市id",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店id"
 				}
 			],
 			"name": "base_supporting_dto",

@@ -33,11 +33,6 @@
 					"required": true
 				},
 				{
-					"name": "passenger_name",
-					"type": "String",
-					"description": "乘客姓名"
-				},
-				{
 					"name": "is_voluntary",
 					"type": "Number",
 					"description": "是否是自愿改签",
@@ -53,6 +48,12 @@
 					"name": "supplier_code",
 					"type": "String",
 					"description": "供应商标识",
+					"required": true
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": " 航班搜索出来的session",
 					"required": true
 				}
 			],

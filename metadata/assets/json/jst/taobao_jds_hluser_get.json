@@ -3,14 +3,14 @@
 		{
 			"subParams": [
 				{
-					"name": "open_nodes",
-					"type": "String",
-					"description": "如果为空，则默认是X_TO_SYSTEM,X_WAIT_ALLOCATION,X_OUT_WAREHOUSE"
-				},
-				{
 					"name": "open_for_buyer",
 					"type": "String",
 					"description": "回流信息是否开通买家端展示"
+				},
+				{
+					"name": "open_nodes",
+					"type": "String",
+					"description": "如果为空，则默认是X_TO_SYSTEM,X_WAIT_ALLOCATION,X_OUT_WAREHOUSE"
 				}
 			],
 			"name": "hl_user",

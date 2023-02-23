@@ -1,52 +1,51 @@
 {
 	"requestParams": [
 		{
+			"name": "rpid",
+			"type": "Number",
+			"description": "不推荐使用，使用ratePlanCode来标识要修改的RP"
+		},
+		{
 			"name": "name",
 			"type": "String",
 			"description": "在淘宝搜索页面展示的房价名称；（添加RP时为必须）。注意该名称不要包含早餐相关信息，如果想维护早餐信息，请设置breakfast_count字段即可。",
 			"maxLength": 64
 		},
 		{
+			"name": "english_name",
+			"type": "String",
+			"description": "RP的英文名称",
+			"maxLength": 60
+		},
+		{
 			"name": "breakfast_count",
 			"type": "Number",
-			"description": "-1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）",
-			"maxValue": 99,
-			"minValue": -1
+			"description": "-1,状态早餐，和入住人数有关系，几人价就是几份早餐；0：不含早1：含单早2：含双早N：含N早（1-99可选）；（添加RP时为必须）"
 		},
 		{
 			"name": "min_days",
 			"type": "Number",
-			"description": "最小入住天数（1-90）。默认1,小时房RP请设置为1",
-			"maxValue": 90,
-			"minValue": 1
+			"description": "最小入住天数（1-90）。默认1,小时房RP请设置为1"
 		},
 		{
 			"name": "max_days",
 			"type": "Number",
-			"description": "最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1,个别卖家支持180",
-			"maxValue": 180,
-			"minValue": 1
+			"description": "最大入住天数（1-90）。默认90,信用住最大入住天数不超过9天,小时房RP请设置为1,个别卖家支持180"
 		},
 		{
 			"name": "min_amount",
 			"type": "Number",
-			"description": "首日入住房间数（1-99）。默认1。【废弃】",
-			"maxValue": 99,
-			"minValue": 1
+			"description": "首日入住房间数（1-99）。默认1。【废弃】"
 		},
 		{
 			"name": "min_adv_hours",
 			"type": "Number",
-			"description": "最小提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表必须至少提前两天预定，那么如果想预定24号入住，,必须在23号零点前下单。",
-			"maxValue": 12960,
-			"minValue": 0
+			"description": "最小提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表必须至少提前两天预定，那么如果想预定24号入住，,必须在23号零点前下单。"
 		},
 		{
 			"name": "max_adv_hours",
 			"type": "Number",
-			"description": "最大提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表最多提前两天预定，那么如果想预定24号入住，,必须在23号零点以后下单。",
-			"maxValue": 12960,
-			"minValue": 0
+			"description": "最大提前预定小时数，从入住当天的24点往前计算。例如如果这个字段设置了48，代表最多提前两天预定，那么如果想预定24号入住，,必须在23号零点以后下单。"
 		},
 		{
 			"name": "start_time",
@@ -70,12 +69,6 @@
 			"name": "status",
 			"type": "Number",
 			"description": "1：开启（默认）2：关闭。如果没传值那么默认默认值为1；（添加RP时为必须）"
-		},
-		{
-			"name": "english_name",
-			"type": "String",
-			"description": "RP的英文名称",
-			"maxLength": 60
 		},
 		{
 			"name": "guarantee_type",
@@ -320,11 +313,6 @@
 			"name": "free_room_charge_dst_role",
 			"type": "String",
 			"description": "商业化充值类型 seller充值到卖家 hotel充值到门店"
-		},
-		{
-			"name": "rpid",
-			"type": "Number",
-			"description": "不推荐使用，使用ratePlanCode来标识要修改的RP"
 		}
 	],
 	"responseParams": [

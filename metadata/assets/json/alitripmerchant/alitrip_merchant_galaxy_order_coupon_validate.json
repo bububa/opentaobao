@@ -105,6 +105,16 @@
 							"name": "hid",
 							"type": "Number",
 							"description": "内部酒店id"
+						},
+						{
+							"name": "rp_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "room_id",
+							"type": "String",
+							"description": "1"
 						}
 					],
 					"name": "discount_param",
@@ -199,6 +209,16 @@
 							"name": "gid",
 							"type": "Number",
 							"description": "宝贝id"
+						},
+						{
+							"name": "rp_code",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "room_id",
+							"type": "String",
+							"description": "1"
 						}
 					],
 					"name": "no_discount_param",
@@ -209,6 +229,43 @@
 					"name": "voucher_id",
 					"type": "String",
 					"description": "代金券id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "category",
+							"type": "String",
+							"description": "权益券类型"
+						},
+						{
+							"name": "discount_off",
+							"type": "Number",
+							"description": "折扣百分比"
+						},
+						{
+							"name": "room_type_code",
+							"type": "String",
+							"description": "房型Code"
+						},
+						{
+							"name": "rate_plan_code",
+							"type": "String",
+							"description": "价格计划Code"
+						},
+						{
+							"name": "is_derby_voucher_room",
+							"type": "Boolean",
+							"description": "是否为权益房型"
+						}
+					],
+					"name": "derby_voucher_universal_dto",
+					"type": "DerbyVoucherUniversalDTO",
+					"description": "权益券相关参数"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "区分版本"
 				}
 			],
 			"name": "coupon_param",
@@ -555,6 +612,11 @@
 									"name": "foreign_currency_payment",
 									"type": "Boolean",
 									"description": "是否为外币支付"
+								},
+								{
+									"name": "payment_type",
+									"type": "String",
+									"description": "支付类型"
 								}
 							],
 							"name": "discount_d_t_o",
@@ -776,11 +838,53 @@
 									"name": "foreign_currency_payment",
 									"type": "Boolean",
 									"description": "是否为外币支付"
+								},
+								{
+									"name": "payment_type",
+									"type": "String",
+									"description": "支付类型"
 								}
 							],
 							"name": "no_discount_d_t_o",
 							"type": "ValidateResultVo",
 							"description": "原价试单结果"
+						},
+						{
+							"subParams": [
+								{
+									"name": "category",
+									"type": "String",
+									"description": "权益券类型"
+								},
+								{
+									"name": "discount_off",
+									"type": "Number",
+									"description": "折扣百分比"
+								},
+								{
+									"name": "member_voucher_card_id",
+									"type": "String",
+									"description": "权益卡卡号"
+								},
+								{
+									"name": "member_voucher_id",
+									"type": "String",
+									"description": "权益券id"
+								},
+								{
+									"name": "long_des",
+									"type": "String",
+									"description": "权益券使用限制描述"
+								},
+								{
+									"name": "qr_code_i_d_image",
+									"type": "String",
+									"description": "权益卡身份码"
+								}
+							],
+							"name": "derby_voucher_info",
+							"type": "DerbyVoucherInfo",
+							"description": "权益商品展示信息"
 						}
 					],
 					"name": "content",

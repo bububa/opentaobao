@@ -5,7 +5,7 @@ type RefundCompleteInfo struct {
 	// 子单
 	SubRefundOrders []SubRefundOrder `json:"sub_refund_orders,omitempty" xml:"sub_refund_orders>sub_refund_order,omitempty"`
 	// 支付渠道
-	PayChannels []RefundPayChannel `json:"pay_channels,omitempty" xml:"pay_channels>refund_pay_channel,omitempty"`
+	PayChannels []PayChannel `json:"pay_channels,omitempty" xml:"pay_channels>pay_channel,omitempty"`
 	// 外部主单号
 	OutOrderId string `json:"out_order_id,omitempty" xml:"out_order_id,omitempty"`
 	// 外部渠道店ID(与shop_id必选其一)
@@ -64,4 +64,6 @@ type RefundCompleteInfo struct {
 	MerchantBaseSendFee int64 `json:"merchant_base_send_fee,omitempty" xml:"merchant_base_send_fee,omitempty"`
 	// 价格加价履约费，单位：分
 	PriceIncreasePerformanceFee int64 `json:"price_increase_performance_fee,omitempty" xml:"price_increase_performance_fee,omitempty"`
+	// 退款原因类型：10-整单全缺;11-订单部分缺;12-商家侧发起的退款(商家拒单); 13-用户侧发起的退款(用户逆向申请);15-用户拒收
+	RefundReasonType int64 `json:"refund_reason_type,omitempty" xml:"refund_reason_type,omitempty"`
 }

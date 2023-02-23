@@ -26,4 +26,6 @@ type HotelDetailsParam struct {
 	AdultNum int64 `json:"adult_num,omitempty" xml:"adult_num,omitempty"`
 	// 连住几晚
 	FewNights int64 `json:"few_nights,omitempty" xml:"few_nights,omitempty"`
+	// 版本号
+	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 }

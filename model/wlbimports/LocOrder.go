@@ -2,14 +2,14 @@ package wlbimports
 
 // LocOrder 结构体
 type LocOrder struct {
-	// 物流运单号
-	TrackingNo string `json:"tracking_no,omitempty" xml:"tracking_no,omitempty"`
-	// 物流订单号
-	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
 	// 物流承运商
 	Carrier string `json:"carrier,omitempty" xml:"carrier,omitempty"`
 	// 物流订单状态编码
 	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
+	// 物流订单号
+	OrderCode string `json:"order_code,omitempty" xml:"order_code,omitempty"`
+	// 物流运单号
+	TrackingNo string `json:"tracking_no,omitempty" xml:"tracking_no,omitempty"`
 	// 重量单位
 	WeightUnit string `json:"weight_unit,omitempty" xml:"weight_unit,omitempty"`
 	// 费用币种

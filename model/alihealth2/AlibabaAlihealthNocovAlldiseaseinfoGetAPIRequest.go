@@ -33,12 +33,15 @@ func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetApiMethodName() str
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthNocovAlldiseaseinfoGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProvince is Province Setter

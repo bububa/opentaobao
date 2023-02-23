@@ -38,20 +38,17 @@
 				{
 					"name": "client",
 					"type": "String",
-					"description": "端信息",
-					"required": true
+					"description": "端信息"
 				},
 				{
 					"name": "fail_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "String",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
 			],
 			"name": "online_results",
@@ -63,38 +60,32 @@
 				{
 					"name": "app_description",
 					"type": "String",
-					"description": "小程序描述",
-					"required": true
+					"description": "小程序描述"
 				},
 				{
 					"name": "app_name",
 					"type": "String",
-					"description": "小程序名称",
-					"required": true
+					"description": "小程序名称"
 				},
 				{
 					"name": "appkey",
 					"type": "String",
-					"description": "appkey",
-					"required": true
+					"description": "appkey"
 				},
 				{
 					"name": "app_id",
 					"type": "String",
-					"description": "小程序app_id",
-					"required": true
+					"description": "小程序app_id"
 				},
 				{
 					"name": "app_icon",
 					"type": "String",
-					"description": "小程序icon",
-					"required": true
+					"description": "小程序icon"
 				},
 				{
 					"name": "online_url",
 					"type": "String",
-					"description": "线上正式版本的链接，所有消费者可访问。",
-					"required": true
+					"description": "线上正式版本的链接，所有消费者可访问。"
 				}
 			],
 			"name": "app_info",

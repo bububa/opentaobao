@@ -29,12 +29,15 @@ func (r TaobaoMiniappDistributionMaterialCreateAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoMiniappDistributionMaterialCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoMiniappDistributionMaterialCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoMiniappDistributionMaterialCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMaterialRequest is MaterialRequest Setter

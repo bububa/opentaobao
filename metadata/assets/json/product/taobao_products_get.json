@@ -28,6 +28,41 @@
 		{
 			"subParams": [
 				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部产品ID"
+				},
+				{
+					"name": "tsc",
+					"type": "String",
+					"description": "淘宝标准产品编码"
+				},
+				{
+					"name": "cid",
+					"type": "Number",
+					"description": "商品类目ID.必须是叶子类目ID"
+				},
+				{
+					"name": "cat_name",
+					"type": "String",
+					"description": "商品类目名称"
+				},
+				{
+					"name": "props",
+					"type": "String",
+					"description": "产品的关键属性列表.格式：pid:vid;pid:vid"
+				},
+				{
+					"name": "props_str",
+					"type": "String",
+					"description": "产品的关键属性字符串列表.比如:品牌:诺基亚;型号:N73(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\":\"被转换为：\"#cln#\";  \n分号\";\"被转换为：\"#scln#\"\n\u003c/font\u003e)"
+				},
+				{
 					"name": "name",
 					"type": "String",
 					"description": "产品名称"
@@ -38,13 +73,23 @@
 					"description": "产品的非关键属性列表.格式:pid:vid;pid:vid."
 				},
 				{
+					"name": "binds_str",
+					"type": "String",
+					"description": "产品的非关键属性字符串列表.格式同props_str(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\":\"被转换为：\"#cln#\";  \n分号\";\"被转换为：\"#scln#\"\n\u003c/font\u003e)"
+				},
+				{
 					"name": "sale_props",
 					"type": "String",
 					"description": "产品的销售属性列表.格式:pid:vid;pid:vid"
 				},
 				{
+					"name": "sale_props_str",
+					"type": "String",
+					"description": "产品的销售属性字符串列表.格式同props_str(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\":\"被转换为：\"#cln#\";  \n分号\";\"被转换为：\"#scln#\"\n\u003c/font\u003e)"
+				},
+				{
 					"name": "price",
-					"type": "Price",
+					"type": "String",
 					"description": "产品的市场价.单位为元.精确到2位小数;如:200.07"
 				},
 				{
@@ -58,9 +103,46 @@
 					"description": "产品的主图片地址.(绝对地址,格式:http://host/image_path)"
 				},
 				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间.格式:yyyy-mm-dd hh:mm:ss"
+				},
+				{
 					"name": "modified",
 					"type": "Date",
 					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "当前状态(0 商家确认 1 屏蔽 3 小二确认 2 未确认 -1 删除)"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "产品图片ID"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "图片所属产品的ID"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "图片地址.(绝对地址,格式:http://host/image_path)"
+						},
+						{
+							"name": "position",
+							"type": "Number",
+							"description": "图片序号。产品里的图片展示顺序，数据越小越靠前。要求是正整数。"
+						}
+					],
+					"name": "product_imgs",
+					"type": "ProductImg[]",
+					"description": "产品的子图片.目前最多支持4张。fields中设置为product_imgs.id、product_imgs.url、product_imgs.position 等形式就会返回相应的字段"
 				},
 				{
 					"subParams": [
@@ -88,113 +170,11 @@
 							"name": "position",
 							"type": "Number",
 							"description": "图片序号。产品里的图片展示顺序，数据越小越靠前。要求是正整数。"
-						},
-						{
-							"name": "created",
-							"type": "Date",
-							"description": "添加时间.格式:yyyy-mm-dd hh:mm:ss"
-						},
-						{
-							"name": "modified",
-							"type": "Date",
-							"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 						}
 					],
 					"name": "product_prop_imgs",
 					"type": "ProductPropImg[]",
-					"description": "产品的属性图片.比如说黄色对应的产品图片,绿色对应的产品图片。fields中设置为product_prop_imgs.id、 product_prop_imgs.props、product_prop_imgs.url、product_prop_imgs.position等形式就会返回相应的字段"
-				},
-				{
-					"name": "status",
-					"type": "Number",
-					"description": "当前状态(0 商家确认 1 屏蔽 3 小二确认 2 未确认 -1 删除)"
-				},
-				{
-					"name": "product_id",
-					"type": "Number",
-					"description": "产品ID"
-				},
-				{
-					"name": "outer_id",
-					"type": "String",
-					"description": "外部产品ID"
-				},
-				{
-					"name": "created",
-					"type": "Date",
-					"description": "创建时间.格式:yyyy-mm-dd hh:mm:ss"
-				},
-				{
-					"name": "tsc",
-					"type": "String",
-					"description": "淘宝标准产品编码"
-				},
-				{
-					"name": "cid",
-					"type": "Number",
-					"description": "商品类目ID.必须是叶子类目ID"
-				},
-				{
-					"name": "cat_name",
-					"type": "String",
-					"description": "商品类目名称"
-				},
-				{
-					"name": "props",
-					"type": "String",
-					"description": "产品的关键属性列表.格式：pid:vid;pid:vid"
-				},
-				{
-					"name": "props_str",
-					"type": "String",
-					"description": "产品的关键属性字符串列表.比如:品牌:诺基亚;型号:N73(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\u0026quot;:\u0026quot;被转换为：\u0026quot;#cln#\u0026quot;;  分号\u0026quot;;\u0026quot;被转换为：\u0026quot;#scln#\u0026quot;\u003c/font\u003e)"
-				},
-				{
-					"name": "binds_str",
-					"type": "String",
-					"description": "产品的非关键属性字符串列表.格式同props_str(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\u0026quot;:\u0026quot;被转换为：\u0026quot;#cln#\u0026quot;;  分号\u0026quot;;\u0026quot;被转换为：\u0026quot;#scln#\u0026quot;\u003c/font\u003e)"
-				},
-				{
-					"name": "sale_props_str",
-					"type": "String",
-					"description": "产品的销售属性字符串列表.格式同props_str(\u003cstrong\u003e注：\u003c/strong\u003e\u003cfont color=\"red\"\u003e属性名称中的冒号\u0026quot;:\u0026quot;被转换为：\u0026quot;#cln#\u0026quot;;  分号\u0026quot;;\u0026quot;被转换为：\u0026quot;#scln#\u0026quot;\u003c/font\u003e)"
-				},
-				{
-					"subParams": [
-						{
-							"name": "id",
-							"type": "Number",
-							"description": "产品图片ID"
-						},
-						{
-							"name": "product_id",
-							"type": "Number",
-							"description": "图片所属产品的ID"
-						},
-						{
-							"name": "url",
-							"type": "String",
-							"description": "图片地址.(绝对地址,格式:http://host/image_path)"
-						},
-						{
-							"name": "position",
-							"type": "Number",
-							"description": "图片序号。产品里的图片展示顺序，数据越小越靠前。要求是正整数。"
-						},
-						{
-							"name": "created",
-							"type": "Date",
-							"description": "添加时间.格式:yyyy-mm-dd hh:mm:ss"
-						},
-						{
-							"name": "modified",
-							"type": "Date",
-							"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
-						}
-					],
-					"name": "product_imgs",
-					"type": "ProductImg[]",
-					"description": "产品的子图片.目前最多支持4张。fields中设置为product_imgs.id、product_imgs.url、product_imgs.position 等形式就会返回相应的字段"
+					"description": "产品的属性图片.比如说黄色对应的产品图片,绿色对应的产品图片。fields中设置为product_prop_imgs.id、 \u003cbr/\u003eproduct_prop_imgs.props、product_prop_imgs.url、product_prop_imgs.position等形式就会返回相应的字段"
 				}
 			],
 			"name": "products",

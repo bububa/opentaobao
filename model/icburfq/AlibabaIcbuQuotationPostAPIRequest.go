@@ -31,12 +31,15 @@ func (r AlibabaIcbuQuotationPostAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuQuotationPostAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIcbuQuotationPostAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIcbuQuotationPostAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMd5key is Md5key Setter

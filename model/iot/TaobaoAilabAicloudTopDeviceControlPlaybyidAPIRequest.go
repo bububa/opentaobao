@@ -37,12 +37,15 @@ func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAilabAicloudTopDeviceControlPlaybyidAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam1 is Param1 Setter

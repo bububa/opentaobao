@@ -31,12 +31,15 @@ func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaSalestarAdgroupUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOnlineStatus is OnlineStatus Setter

@@ -10,6 +10,8 @@ type PaymentModeReqDto struct {
 	CreatUserName string `json:"creat_user_name,omitempty" xml:"creat_user_name,omitempty"`
 	// 外部付款方式id
 	OuterPaymentId string `json:"outer_payment_id,omitempty" xml:"outer_payment_id,omitempty"`
+	// 外部门店id
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 付款方式类型
 	PaymentType int64 `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
 	// 首套最低比例

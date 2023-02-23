@@ -29,12 +29,15 @@ func (r AlibabaIdleIsvOrderCloseAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIdleIsvOrderCloseAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIdleIsvOrderCloseAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIdleIsvOrderCloseAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetIsvAppraiseIsvOrderCloseDto is IsvAppraiseIsvOrderCloseDto Setter

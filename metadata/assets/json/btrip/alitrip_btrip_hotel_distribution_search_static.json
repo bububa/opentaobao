@@ -224,7 +224,7 @@
 								{
 									"name": "star",
 									"type": "String",
-									"description": "星级"
+									"description": "档次"
 								},
 								{
 									"name": "status",

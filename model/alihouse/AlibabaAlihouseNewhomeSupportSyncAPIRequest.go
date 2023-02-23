@@ -29,12 +29,15 @@ func (r AlibabaAlihouseNewhomeSupportSyncAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeSupportSyncAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeSupportSyncAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeSupportSyncAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBaseSupportingDto is BaseSupportingDto Setter

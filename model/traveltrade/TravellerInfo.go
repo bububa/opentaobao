@@ -2,8 +2,6 @@ package traveltrade
 
 // TravellerInfo 结构体
 type TravellerInfo struct {
-	// 预留，暂时无用
-	ExtendAttributesJson string `json:"extend_attributes_json,omitempty" xml:"extend_attributes_json,omitempty"`
 	// 出生日期，格式yyyy-mm-dd
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
 	// 证件号码
@@ -38,6 +36,8 @@ type TravellerInfo struct {
 	SurnamePinyin string `json:"surname_pinyin,omitempty" xml:"surname_pinyin,omitempty"`
 	// 名（拼音）
 	GivenNamePinyin string `json:"given_name_pinyin,omitempty" xml:"given_name_pinyin,omitempty"`
+	// 预留，暂时无用
+	ExtendAttributesJson string `json:"extend_attributes_json,omitempty" xml:"extend_attributes_json,omitempty"`
 	// 证件类型。0:身份证 1:护照 2:学生证3:军官证 4:回乡证 5:台胞证 6:港澳通行证 10:警官证 11:士兵证 12:台湾通行证
 	CredentialType int64 `json:"credential_type,omitempty" xml:"credential_type,omitempty"`
 	// 性别。0-男，1-女

@@ -29,12 +29,15 @@ func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripCarOrderConfirmAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamOrderConfirm is ParamOrderConfirm Setter

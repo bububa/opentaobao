@@ -14,12 +14,12 @@ type TaobaoOcTradesBytagGetAPIRequest struct {
 	model.Params
 	// 标签名称
 	_tagName string
+	// 当前页
+	_page int64
 	// 分页大小
 	_pageSize int64
 	// 标签类型，1官方，2自定义
 	_tagType int64
-	// 当前页
-	_page int64
 }
 
 // NewTaobaoOcTradesBytagGetRequest 初始化TaobaoOcTradesBytagGetAPIRequest对象
@@ -35,12 +35,15 @@ func (r TaobaoOcTradesBytagGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOcTradesBytagGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOcTradesBytagGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOcTradesBytagGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTagName is TagName Setter
@@ -54,6 +57,19 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagName(_tagName string) error {
 // GetTagName TagName Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetTagName() string {
 	return r._tagName
+}
+
+// SetPage is Page Setter
+// 当前页
+func (r *TaobaoOcTradesBytagGetAPIRequest) SetPage(_page int64) error {
+	r._page = _page
+	r.Set("page", _page)
+	return nil
+}
+
+// GetPage Page Getter
+func (r TaobaoOcTradesBytagGetAPIRequest) GetPage() int64 {
+	return r._page
 }
 
 // SetPageSize is PageSize Setter
@@ -80,17 +96,4 @@ func (r *TaobaoOcTradesBytagGetAPIRequest) SetTagType(_tagType int64) error {
 // GetTagType TagType Getter
 func (r TaobaoOcTradesBytagGetAPIRequest) GetTagType() int64 {
 	return r._tagType
-}
-
-// SetPage is Page Setter
-// 当前页
-func (r *TaobaoOcTradesBytagGetAPIRequest) SetPage(_page int64) error {
-	r._page = _page
-	r.Set("page", _page)
-	return nil
-}
-
-// GetPage Page Getter
-func (r TaobaoOcTradesBytagGetAPIRequest) GetPage() int64 {
-	return r._page
 }

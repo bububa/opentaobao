@@ -1,0 +1,83 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "community_outer_id",
+					"type": "String",
+					"description": "外部小区id",
+					"required": true
+				},
+				{
+					"name": "ecode",
+					"type": "String",
+					"description": "房源E码",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部房源id",
+					"required": true
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务类型，1-新房，2-二手房，3-租房，默认为2"
+				},
+				{
+					"name": "house_type",
+					"type": "Number",
+					"description": "0-正常房源 1-临时房源（交易专用）"
+				},
+				{
+					"name": "is_cargo",
+					"type": "Number",
+					"description": "是否为货 0-非货,信息流 1-货\u0000商品"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部项目店ID",
+					"required": true
+				}
+			],
+			"name": "house",
+			"type": "UpdateNewHomeECodeInfoDTO",
+			"description": "房源请求体"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作结果  \t"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.ecode.update",
+	"apiChineseName": "新房货变更E码",
+	"description": "新房货变更E码",
+	"id": 65123
+}

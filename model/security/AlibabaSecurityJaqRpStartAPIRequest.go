@@ -33,12 +33,15 @@ func (r AlibabaSecurityJaqRpStartAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSecurityJaqRpStartAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSecurityJaqRpStartAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSecurityJaqRpStartAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetVerifyToken is VerifyToken Setter

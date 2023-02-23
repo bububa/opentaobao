@@ -37,13 +37,13 @@ type WorkerDto struct {
 	// 1111
 	WorkType string `json:"work_type,omitempty" xml:"work_type,omitempty"`
 	// 111
+	HandheldCardPic string `json:"handheld_card_pic,omitempty" xml:"handheld_card_pic,omitempty"`
+	// 111
 	Photo string `json:"photo,omitempty" xml:"photo,omitempty"`
 	// 11
 	IdCardPicBack string `json:"id_card_pic_back,omitempty" xml:"id_card_pic_back,omitempty"`
 	// 11
 	IdCardPic string `json:"id_card_pic,omitempty" xml:"id_card_pic,omitempty"`
-	// 111
-	HandheldCardPic string `json:"handheld_card_pic,omitempty" xml:"handheld_card_pic,omitempty"`
 	// 工人所属行业类型
 	BizType string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
 	// 覆盖的service_code列表，|隔开

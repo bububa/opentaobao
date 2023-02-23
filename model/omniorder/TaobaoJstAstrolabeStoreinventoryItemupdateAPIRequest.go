@@ -31,12 +31,15 @@ func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiMethodName()
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoJstAstrolabeStoreinventoryItemupdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStores is Stores Setter

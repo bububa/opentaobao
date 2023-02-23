@@ -32,6 +32,8 @@ type VoucherHotelVo struct {
 	CheckIn string `json:"check_in,omitempty" xml:"check_in,omitempty"`
 	// 最晚离店时间
 	CheckOut string `json:"check_out,omitempty" xml:"check_out,omitempty"`
+	// 限制时间
+	LimitDate string `json:"limit_date,omitempty" xml:"limit_date,omitempty"`
 	// 货币类型
 	Currency string `json:"currency,omitempty" xml:"currency,omitempty"`
 	// 总房价(不含税)

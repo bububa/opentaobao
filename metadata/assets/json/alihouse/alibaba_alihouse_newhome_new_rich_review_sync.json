@@ -54,6 +54,11 @@
 					"type": "String",
 					"description": "发布时间",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店id"
 				}
 			],
 			"name": "sync_rich_review_dto",

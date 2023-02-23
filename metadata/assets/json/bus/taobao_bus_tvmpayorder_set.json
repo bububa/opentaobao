@@ -25,14 +25,14 @@
 			"description": "errorMsg 错误信息"
 		},
 		{
-			"name": "is_success",
-			"type": "Boolean",
-			"description": "success true 成功 false 失败"
-		},
-		{
 			"name": "pay_time",
 			"type": "String",
 			"description": "payTime"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success true 成功 false 失败"
 		}
 	],
 	"name": "taobao.bus.tvmpayorder.set",

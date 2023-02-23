@@ -37,12 +37,15 @@ func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoVmsServiceVehicleinfoUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDeviceId is DeviceId Setter

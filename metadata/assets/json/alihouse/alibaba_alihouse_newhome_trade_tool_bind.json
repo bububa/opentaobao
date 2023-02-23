@@ -20,6 +20,11 @@
 							"name": "outer_tid",
 							"type": "String",
 							"description": "外部货id（外部唯一识别码）"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店ID"
 						}
 					],
 					"name": "outer_bind_param_dto",

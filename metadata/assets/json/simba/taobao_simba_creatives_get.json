@@ -7,7 +7,7 @@
 		},
 		{
 			"name": "creative_ids",
-			"type": "Number[]",
+			"type": "String[]",
 			"description": "创意Id数组，最多200个",
 			"maxListSize": 200
 		},
@@ -34,6 +34,11 @@
 					"name": "adgroup_id",
 					"type": "Number",
 					"description": "推广组id"
+				},
+				{
+					"name": "creative_id",
+					"type": "Number",
+					"description": "创意id"
 				},
 				{
 					"name": "title",
@@ -76,22 +81,19 @@
 					"description": "使用副图作为创意的原始副图图片URL后缀"
 				},
 				{
-					"name": "creative_id",
-					"type": "Number",
-					"description": "创意id"
-				},
-				{
 					"name": "ad_examination_code",
 					"type": "String",
 					"description": "广审批准文号"
 				},
 				{
 					"name": "video_url",
-					"type": "String"
+					"type": "String",
+					"description": "视频url"
 				},
 				{
 					"name": "video_id",
-					"type": "Number"
+					"type": "Number",
+					"description": "视频id"
 				}
 			],
 			"name": "creatives",

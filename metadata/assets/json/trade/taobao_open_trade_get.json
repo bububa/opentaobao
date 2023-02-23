@@ -17,278 +17,233 @@
 		{
 			"subParams": [
 				{
-					"name": "tid",
-					"type": "String",
-					"description": "交易编号 (父订单的交易编号)",
-					"required": true
-				},
-				{
-					"name": "num",
-					"type": "Number",
-					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。",
-					"required": true
-				},
-				{
-					"name": "num_iid",
-					"type": "Number",
-					"description": "商品数字编号",
-					"required": true
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "交易状态。可选值:    * TRADE_NO_CREATE_PAY(没有创建支付宝交易)    * WAIT_BUYER_PAY(等待买家付款)    * SELLER_CONSIGNED_PART(卖家部分发货)    * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)    * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)    * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)    * TRADE_FINISHED(交易成功)    * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)    * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)    * PAY_PENDING(国际信用卡支付付款确认中)    * WAIT_PRE_AUTH_CONFIRM(0元购合约中)\t* PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
-					"required": true
-				},
-				{
 					"name": "type",
 					"type": "String",
-					"description": "交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据 可选值 fixed(一口价) auction(拍卖) guarantee_trade(一口价、拍卖) auto_delivery(自动发货) independent_simple_trade(旺店入门版交易) independent_shop_trade(旺店标准版交易) ec(直冲) cod(货到付款) fenxiao(分销) game_equipment(游戏装备) shopex_trade(ShopEX交易) netcn_trade(万网交易) external_trade(统一外部交易)o2o_offlinetrade（O2O交易）step (万人团)nopaid(无付款订单)pre_auth_type(预授权0元购机交易)",
-					"required": true
-				},
-				{
-					"name": "price",
-					"type": "String",
-					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分",
-					"required": true
-				},
-				{
-					"name": "total_fee",
-					"type": "String",
-					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据 可选值 fixed(一口价) auction(拍卖) guarantee_trade(一口价、拍卖) auto_delivery(自动发货) independent_simple_trade(旺店入门版交易) independent_shop_trade(旺店标准版交易) ec(直冲) cod(货到付款) fenxiao(分销) game_equipment(游戏装备) shopex_trade(ShopEX交易) netcn_trade(万网交易) external_trade(统一外部交易)o2o_offlinetrade（O2O交易）step (万人团)nopaid(无付款订单)pre_auth_type(预授权0元购机交易)"
 				},
 				{
 					"name": "created",
 					"type": "Date",
-					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "交易编号 (父订单的交易编号)"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "交易状态。可选值:    * TRADE_NO_CREATE_PAY(没有创建支付宝交易)    * WAIT_BUYER_PAY(等待买家付款)    * SELLER_CONSIGNED_PART(卖家部分发货)    * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)    * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)    * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)    * TRADE_FINISHED(交易成功)    * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)    * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)    * PAY_PENDING(国际信用卡支付付款确认中)    * WAIT_PRE_AUTH_CONFIRM(0元购合约中)\t* PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)"
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字编号"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。"
 				},
 				{
 					"subParams": [
 						{
-							"name": "outer_iid",
-							"type": "String",
-							"description": "商家外部编码(可与商家外部系统对接)。外部商家自己定义的商品Item的id，可以通过taobao.items.custom.get获取商品的Item的信息",
-							"required": true
-						},
-						{
-							"name": "oid",
-							"type": "String",
-							"description": "子订单编号",
-							"required": true
-						},
-						{
-							"name": "status",
-							"type": "String",
-							"description": "订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: \u003cul\u003e\u003cli\u003eTRADE_NO_CREATE_PAY(没有创建支付宝交易) \u003cli\u003eWAIT_BUYER_PAY(等待买家付款) \u003cli\u003eWAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) \u003cli\u003eWAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) \u003cli\u003eTRADE_BUYER_SIGNED(买家已签收,货到付款专用) \u003cli\u003eTRADE_FINISHED(交易成功) \u003cli\u003eTRADE_CLOSED(付款以后用户退款成功，交易自动关闭) \u003cli\u003eTRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)\u003cli\u003ePAY_PENDING(国际信用卡支付付款确认中)",
-							"required": true
-						},
-						{
 							"name": "price",
 							"type": "String",
-							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-							"required": true
+							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 						},
 						{
 							"name": "num_iid",
 							"type": "Number",
-							"description": "商品数字ID",
-							"required": true
+							"description": "商品数字ID"
 						},
 						{
 							"name": "sku_id",
 							"type": "String",
-							"description": "商品的最小库存单位Sku的id.可以通过taobao.item.sku.get获取详细的Sku信息",
-							"required": true
+							"description": "商品的最小库存单位Sku的id.可以通过taobao.item.sku.get获取详细的Sku信息"
 						},
 						{
-							"name": "num",
-							"type": "Number",
-							"description": "购买数量。取值范围:大于零的整数",
-							"required": true
-						},
-						{
-							"name": "outer_sku_id",
+							"name": "status",
 							"type": "String",
-							"description": "外部网店自己定义的Sku编号",
-							"required": true
+							"description": "订单状态（请关注此状态，如果为TRADE_CLOSED_BY_TAOBAO状态，则不要对此订单进行发货，切记啊！）。可选值: \u003cul\u003e\u003cli\u003eTRADE_NO_CREATE_PAY(没有创建支付宝交易) \u003cli\u003eWAIT_BUYER_PAY(等待买家付款) \u003cli\u003eWAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) \u003cli\u003eWAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) \u003cli\u003eTRADE_BUYER_SIGNED(买家已签收,货到付款专用) \u003cli\u003eTRADE_FINISHED(交易成功) \u003cli\u003eTRADE_CLOSED(付款以后用户退款成功，交易自动关闭) \u003cli\u003eTRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)\u003cli\u003ePAY_PENDING(国际信用卡支付付款确认中)"
+						},
+						{
+							"name": "oid",
+							"type": "String",
+							"description": "子订单编号"
 						},
 						{
 							"name": "total_fee",
 							"type": "String",
-							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-							"required": true
+							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "购买数量。取值范围:大于零的整数"
+						},
+						{
+							"name": "outer_sku_id",
+							"type": "String",
+							"description": "外部网店自己定义的Sku编号"
+						},
+						{
+							"name": "outer_iid",
+							"type": "String",
+							"description": "商家外部编码(可与商家外部系统对接)。外部商家自己定义的商品Item的id，可以通过taobao.items.custom.get获取商品的Item的信息"
 						},
 						{
 							"name": "pic_path",
 							"type": "String",
-							"description": "商品图片的绝对路径",
-							"required": true
+							"description": "商品图片的绝对路径"
 						},
 						{
 							"name": "title",
 							"type": "String",
-							"description": "商品标题",
-							"required": true
+							"description": "商品标题"
 						},
 						{
 							"name": "customization",
 							"type": "String",
-							"description": "定制信息",
-							"required": true
+							"description": "定制信息"
 						},
 						{
 							"name": "payment",
 							"type": "String",
-							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。",
-							"required": true
+							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。"
 						},
 						{
 							"name": "discount_fee",
 							"type": "String",
-							"description": "子订单级订单优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-							"required": true
+							"description": "子订单级订单优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 						},
 						{
 							"name": "divide_order_fee",
 							"type": "String",
-							"description": "分摊之后的实付金额",
-							"required": true
+							"description": "分摊之后的实付金额"
 						},
 						{
 							"name": "part_mjz_discount",
 							"type": "String",
-							"description": "优惠分摊",
-							"required": true
+							"description": "优惠分摊"
 						}
 					],
 					"name": "orders",
 					"type": "Order[]",
-					"description": "订单列表",
-					"required": true
-				},
-				{
-					"name": "buyer_open_uid",
-					"type": "String",
-					"description": "买家的openuid,入参fields中传入buyer_nick ，才能返回",
-					"required": true
+					"description": "订单列表"
 				},
 				{
 					"name": "pay_time",
 					"type": "String",
-					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。",
-					"required": true
+					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。"
 				},
 				{
 					"name": "seller_memo",
 					"type": "String",
-					"description": "卖家备注（与淘宝网上订单的卖家备注对应，只有卖家才能查看该字段）",
-					"required": true
+					"description": "卖家备注（与淘宝网上订单的卖家备注对应，只有卖家才能查看该字段）"
 				},
 				{
 					"name": "buyer_memo",
 					"type": "String",
-					"description": "买家备注（与淘宝网上订单的买家备注对应，只有买家才能查看该字段）",
-					"required": true
+					"description": "买家备注（与淘宝网上订单的买家备注对应，只有买家才能查看该字段）"
 				},
 				{
 					"name": "post_fee",
 					"type": "String",
-					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "has_post_fee",
 					"type": "Boolean",
-					"description": "是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)",
-					"required": true
+					"description": "是否包含邮费。与available_confirm_fee同时使用。可选值:true(包含),false(不包含)"
 				},
 				{
 					"subParams": [
 						{
 							"name": "promotion_id",
 							"type": "String",
-							"description": "优惠id，(由营销工具id、优惠活动id和优惠详情id组成，结构为：营销工具id-优惠活动id_优惠详情id，如mjs-123024_211143）",
-							"required": true
+							"description": "优惠id，(由营销工具id、优惠活动id和优惠详情id组成，结构为：营销工具id-优惠活动id_优惠详情id，如mjs-123024_211143）"
 						},
 						{
 							"name": "promotion_desc",
 							"type": "String",
-							"description": "优惠活动的描述",
-							"required": true
+							"description": "优惠活动的描述"
 						},
 						{
 							"name": "gift_item_num",
 							"type": "String",
-							"description": "满就送礼物的礼物数量",
-							"required": true
+							"description": "满就送礼物的礼物数量"
 						},
 						{
 							"name": "gift_item_id",
 							"type": "String",
-							"description": "赠品的宝贝id",
-							"required": true
+							"description": "赠品的宝贝id"
 						},
 						{
 							"name": "gift_item_name",
 							"type": "String",
-							"description": "满就送商品时，所送商品的名称",
-							"required": true
+							"description": "满就送商品时，所送商品的名称"
 						},
 						{
 							"name": "discount_fee",
 							"type": "String",
-							"description": "优惠金额（免运费、限时打折时为空）,单位：元",
-							"required": true
+							"description": "优惠金额（免运费、限时打折时为空）,单位：元"
 						},
 						{
 							"name": "promotion_name",
 							"type": "String",
-							"description": "优惠信息的名称",
-							"required": true
+							"description": "优惠信息的名称"
 						},
 						{
 							"name": "id",
 							"type": "String",
-							"description": "交易的主订单或子订单号",
-							"required": true
+							"description": "交易的主订单或子订单号"
 						}
 					],
 					"name": "promotion_details",
 					"type": "PromotionDetail[]",
-					"description": "优惠详情",
-					"required": true
+					"description": "优惠详情"
 				},
 				{
 					"name": "step_trade_status",
 					"type": "String",
-					"description": "分阶段付款的订单状态（例如万人团订单等），目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)",
-					"required": true
+					"description": "分阶段付款的订单状态（例如万人团订单等），目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)"
 				},
 				{
 					"name": "step_paid_fee",
 					"type": "String",
-					"description": "分阶段付款的已付金额（万人团订单已付金额）",
-					"required": true
+					"description": "分阶段付款的已付金额（万人团订单已付金额）"
 				},
 				{
 					"name": "seller_nick",
 					"type": "String",
-					"description": "卖家昵称",
-					"required": true
+					"description": "卖家昵称"
 				},
 				{
 					"name": "payment",
 					"type": "String",
-					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分",
-					"required": true
+					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
 				},
 				{
 					"name": "modified",
 					"type": "Date",
-					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss",
-					"required": true
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家的openuid,入参fields中传入buyer_nick ，才能返回"
 				}
 			],
 			"name": "trade",

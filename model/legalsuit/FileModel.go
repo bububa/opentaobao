@@ -14,6 +14,6 @@ type FileModel struct {
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 沟通方
 	Intro string `json:"intro,omitempty" xml:"intro,omitempty"`
-	// 创建时间（不用填）
+	// 上传时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
 }

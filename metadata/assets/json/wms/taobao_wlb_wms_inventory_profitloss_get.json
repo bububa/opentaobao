@@ -11,29 +11,9 @@
 		{
 			"subParams": [
 				{
-					"name": "store_code",
-					"type": "String",
-					"description": "仓库编码"
-				},
-				{
-					"name": "cn_order_code",
-					"type": "String",
-					"description": "仓库订单编码"
-				},
-				{
-					"name": "order_type",
-					"type": "Number",
-					"description": "订单类型： 701 盘点出库 702 盘点入库"
-				},
-				{
 					"subParams": [
 						{
 							"subParams": [
-								{
-									"name": "item_id",
-									"type": "String",
-									"description": "商品ID"
-								},
 								{
 									"name": "item_code",
 									"type": "String",
@@ -73,6 +53,11 @@
 									"name": "batch_code",
 									"type": "String",
 									"description": "批次号"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
 								}
 							],
 							"name": "order_item",
@@ -83,6 +68,21 @@
 					"name": "order_item_list",
 					"type": "CainiaoInventoryProfitlossOrderitemlist[]",
 					"description": "商品信息列表"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "cn_order_code",
+					"type": "String",
+					"description": "仓库订单编码"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "订单类型： 701 盘点出库 702 盘点入库"
 				},
 				{
 					"name": "remark",

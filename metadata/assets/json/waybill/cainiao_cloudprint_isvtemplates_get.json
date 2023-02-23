@@ -7,135 +7,54 @@
 						{
 							"name": "isv_template_id",
 							"type": "Number",
-							"description": "isv模板的id",
-							"required": true
+							"description": "isv模板的id"
 						},
 						{
 							"name": "isv_template_name",
 							"type": "String",
-							"description": "isv模板的名称",
-							"required": true
+							"description": "isv模板的名称"
 						},
 						{
 							"name": "isv_template_url",
 							"type": "String",
-							"description": "isv模板的url",
-							"required": true
+							"description": "isv模板的url"
 						},
 						{
 							"subParams": [
 								{
 									"name": "key_name",
 									"type": "String",
-									"description": "key名称",
-									"required": true
+									"description": "key名称"
 								}
 							],
 							"name": "keys",
 							"type": "KeyResult[]",
-							"description": "模板的keys",
-							"required": true
+							"description": "模板的keys"
 						},
 						{
 							"name": "version",
 							"type": "String",
-							"description": "版本号",
-							"required": true
+							"description": "版本号"
 						}
 					],
 					"name": "datas",
 					"type": "CustomTemplateResult[]",
-					"description": "data",
-					"required": true
+					"description": "data"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误消息",
-					"required": true
+					"description": "错误消息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
-				}
-			],
-			"name": "result",
-			"type": "CloudPrintBaseResult",
-			"description": "result"
-		},
-		{
-			"subParams": [
-				{
-					"subParams": [
-						{
-							"name": "isv_template_id",
-							"type": "Number",
-							"description": "isv模板的id",
-							"required": true
-						},
-						{
-							"name": "isv_template_name",
-							"type": "String",
-							"description": "isv模板的名称",
-							"required": true
-						},
-						{
-							"name": "isv_template_url",
-							"type": "String",
-							"description": "isv模板的url",
-							"required": true
-						},
-						{
-							"subParams": [
-								{
-									"name": "key_name",
-									"type": "String",
-									"description": "key名称",
-									"required": true
-								}
-							],
-							"name": "keys",
-							"type": "KeyResult[]",
-							"description": "模板的keys",
-							"required": true
-						},
-						{
-							"name": "version",
-							"type": "String",
-							"description": "版本号",
-							"required": true
-						}
-					],
-					"name": "datas",
-					"type": "CustomTemplateResult[]",
-					"description": "data",
-					"required": true
-				},
-				{
-					"name": "error_code",
-					"type": "String",
-					"description": "错误码",
-					"required": true
-				},
-				{
-					"name": "error_message",
-					"type": "String",
-					"description": "错误消息",
-					"required": true
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				}
 			],
 			"name": "result",

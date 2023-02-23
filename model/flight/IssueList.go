@@ -20,6 +20,8 @@ type IssueList struct {
 	Mobile string `json:"mobile,omitempty" xml:"mobile,omitempty"`
 	// 乘机人生日
 	Birthday string `json:"birthday,omitempty" xml:"birthday,omitempty"`
+	// 大编码
+	BigPnr string `json:"big_pnr,omitempty" xml:"big_pnr,omitempty"`
 	// 证件类型
 	CertType int64 `json:"cert_type,omitempty" xml:"cert_type,omitempty"`
 	// 乘客类型

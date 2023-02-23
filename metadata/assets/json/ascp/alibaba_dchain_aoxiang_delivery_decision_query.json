@@ -1,0 +1,231 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "ERP发货单号",
+							"required": true
+						},
+						{
+							"name": "send_province",
+							"type": "String",
+							"description": "订单发货地，省份",
+							"required": true
+						},
+						{
+							"name": "send_city",
+							"type": "String",
+							"description": "订单发货地，所在城市",
+							"required": true
+						},
+						{
+							"name": "send_district",
+							"type": "String",
+							"description": "订单发货地，所在地区",
+							"required": true
+						},
+						{
+							"name": "send_town",
+							"type": "String",
+							"description": "订单发货地，街道地址"
+						},
+						{
+							"name": "send_division_code",
+							"type": "String",
+							"description": "订单发货地地址编码（先识别编码，如果识别失败，解析地址）"
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "主交易单号",
+							"required": true
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "String",
+							"description": "子交易单号",
+							"required": true
+						},
+						{
+							"name": "order_flag",
+							"type": "String",
+							"description": "订单类型 枚举： FENXIAO=分销订单 ，默认店铺零售订单。"
+						},
+						{
+							"name": "receive_province",
+							"type": "String",
+							"description": "订单收货地，省份",
+							"required": true
+						},
+						{
+							"name": "receive_city",
+							"type": "String",
+							"description": "订单收货地，所在城市",
+							"required": true
+						},
+						{
+							"name": "receive_district",
+							"type": "String",
+							"description": "订单收货地，所在地区",
+							"required": true
+						},
+						{
+							"name": "receive_town",
+							"type": "String",
+							"description": "订单收货地，街道地址"
+						},
+						{
+							"name": "receive_division_code",
+							"type": "String",
+							"description": "订单收货地地址编码（先识别编码，如果识别失败，解析地址）"
+						}
+					],
+					"name": "delivery_decision",
+					"type": "DeliveryDecision[]",
+					"description": "批量（最多可以支持50条）",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "业务请求ID，用于做幂等",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "Number",
+					"description": "ERP调翱象接口创建货品的时间戳",
+					"required": true
+				}
+			],
+			"name": "delivery_decision_query_request",
+			"type": "DeliveryDecisionQueryRequest",
+			"description": "黑白名单快递查询入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统成功失败   true|false"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "0=全部失败，1=全部成功，2=部分成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "ERP发货单号"
+						},
+						{
+							"name": "send_province",
+							"type": "String",
+							"description": "订单发货地，省份"
+						},
+						{
+							"name": "send_city",
+							"type": "String",
+							"description": "订单发货地，所在城市"
+						},
+						{
+							"name": "send_district",
+							"type": "String",
+							"description": "订单发货地，所在地区"
+						},
+						{
+							"name": "send_town",
+							"type": "String",
+							"description": "订单发货地，街道地址"
+						},
+						{
+							"name": "send_division_code",
+							"type": "String",
+							"description": "订单发货地地址编码（先识别编码，如果识别失败，解析地址）"
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "主交易单号"
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "String",
+							"description": "子交易单号"
+						},
+						{
+							"name": "order_flag",
+							"type": "String",
+							"description": "订单类型 枚举： FENXIAO=分销订单 ，默认店铺零售订单。"
+						},
+						{
+							"name": "receive_province",
+							"type": "String",
+							"description": "订单收货地，省份"
+						},
+						{
+							"name": "receive_city",
+							"type": "String",
+							"description": "订单收货地，所在城市"
+						},
+						{
+							"name": "receive_district",
+							"type": "String",
+							"description": "订单收货地，所在地区"
+						},
+						{
+							"name": "receive_town",
+							"type": "String",
+							"description": "订单收货地，街道地址"
+						},
+						{
+							"name": "receive_division_code",
+							"type": "String",
+							"description": "订单收货地地址编码（先识别编码，如果识别失败，解析地址）"
+						},
+						{
+							"name": "black_delivery_cps",
+							"type": "String",
+							"description": "黑名单配品牌list,例：SF,YTO,STO"
+						},
+						{
+							"name": "white_delivery_cps",
+							"type": "String",
+							"description": "白名单配品牌list,例：SF,YTO,STO"
+						}
+					],
+					"name": "data",
+					"type": "DataDetail[]",
+					"description": "详细信息"
+				}
+			],
+			"name": "delivery_decision_query_response",
+			"type": "DeliveryDecisionQueryResponse",
+			"description": "查询结果"
+		}
+	],
+	"name": "alibaba.dchain.aoxiang.delivery.decision.query",
+	"apiChineseName": "查询黑白名单快递",
+	"description": "查询黑白名单快递",
+	"id": 65177
+}

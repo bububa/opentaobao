@@ -42,6 +42,11 @@
 		{
 			"subParams": [
 				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
 					"name": "error_message",
 					"type": "String",
 					"description": "错误码"
@@ -50,11 +55,6 @@
 					"name": "error_code",
 					"type": "String",
 					"description": "错误码"
-				},
-				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "执行结果"
 				}
 			],
 			"name": "result",

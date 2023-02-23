@@ -1,19 +1,9 @@
 {
 	"requestParams": [
 		{
-			"name": "q",
+			"name": "auction_tag",
 			"type": "String",
-			"description": "表示搜索的关键字，例如搜索query=nike。当输入关键字为中文时，将对他进行URLEncode的UTF-8格式编码，如 耐克，那么q=%E8%80%90%E5%85%8B。"
-		},
-		{
-			"name": "cat",
-			"type": "String",
-			"description": "前台类目id，支持多选过滤，cat=catid1,catid2"
-		},
-		{
-			"name": "sort",
-			"type": "String",
-			"description": "排序类型。类型包括：s: 人气排序p: 价格从低到高;pd: 价格从高到低;d: 月销量从高到低;td: 总销量从高到低;pt: 按发布时间排序."
+			"description": "商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578"
 		},
 		{
 			"name": "brand",
@@ -21,24 +11,19 @@
 			"description": "品牌的id。支持多选过滤，brand=brand1,brand2"
 		},
 		{
-			"name": "loc",
+			"name": "cat",
 			"type": "String",
-			"description": "宝贝卖家所在地，中文gbk编码"
+			"description": "前台类目id，支持多选过滤，cat=catid1,catid2"
 		},
 		{
-			"name": "prop",
+			"name": "category",
 			"type": "String",
-			"description": "以“属性id：属性值”的形式传入;"
+			"description": "后台类目id，category=categoryId"
 		},
 		{
-			"name": "post_fee",
+			"name": "combo",
 			"type": "Number",
-			"description": "是否包邮，-1为包邮"
-		},
-		{
-			"name": "start_price",
-			"type": "Price",
-			"description": "在宝贝页面中进行价格筛选的时候，如果填写了最低价格，就会显示该字段。"
+			"description": "过滤搭配减价宝贝时，combo=1"
 		},
 		{
 			"name": "end_price",
@@ -46,29 +31,14 @@
 			"description": "在宝贝页面中进行价格筛选的时候，如果填写了最高价格，就会显示该字段。"
 		},
 		{
-			"name": "support_cod",
-			"type": "Number",
-			"description": "是否货到付款，1为货到付款"
+			"name": "loc",
+			"type": "String",
+			"description": "宝贝卖家所在地，中文gbk编码"
 		},
 		{
 			"name": "many_points",
 			"type": "Number",
 			"description": "是否多倍积分，1为多倍积分"
-		},
-		{
-			"name": "wwonline",
-			"type": "Number",
-			"description": "显示旺旺在线卖家的宝贝时，wwonline=1"
-		},
-		{
-			"name": "vip",
-			"type": "Number",
-			"description": "过滤vip宝贝时，vip=1"
-		},
-		{
-			"name": "combo",
-			"type": "Number",
-			"description": "过滤搭配减价宝贝时，combo=1"
 		},
 		{
 			"name": "miaosha",
@@ -81,21 +51,6 @@
 			"description": "是否需要spu聚合的开关:1为关闭，不传表示遵循后端聚合逻辑。默认不作spu聚合。"
 		},
 		{
-			"name": "auction_tag",
-			"type": "String",
-			"description": "商品标签。支持多选过滤,auction_tag=auction_tag1,auction_tag2,不支持天猫精品库8578"
-		},
-		{
-			"name": "spuid",
-			"type": "Number",
-			"description": "可以根据产品Id搜索属于这个spu的商品。"
-		},
-		{
-			"name": "user_id",
-			"type": "Number",
-			"description": "可以根据卖家id搜索属于该卖家的商品"
-		},
-		{
 			"name": "page_no",
 			"type": "Number",
 			"description": "页码。取值范围：大于零的整数；最大值：100；默认值：1，即默认返回第一页数据。"
@@ -106,28 +61,110 @@
 			"description": "每页条数。取值范围：大于零的整数；最大值：100；默认值：40"
 		},
 		{
-			"name": "category",
+			"name": "post_fee",
+			"type": "Number",
+			"description": "是否包邮，-1为包邮"
+		},
+		{
+			"name": "prop",
 			"type": "String",
-			"description": "后台类目id，category=categoryId"
+			"description": "以“属性id：属性值”的形式传入;"
+		},
+		{
+			"name": "q",
+			"type": "String",
+			"description": "表示搜索的关键字，例如搜索query=nike。当输入关键字为中文时，将对他进行URLEncode的UTF-8格式编码，如 耐克，那么q=%E8%80%90%E5%85%8B。"
+		},
+		{
+			"name": "sort",
+			"type": "String",
+			"description": "排序类型。类型包括：s: 人气排序p: 价格从低到高;pd: 价格从高到低;d: 月销量从高到低;td: 总销量从高到低;pt: 按发布时间排序."
+		},
+		{
+			"name": "spuid",
+			"type": "Number",
+			"description": "可以根据产品Id搜索属于这个spu的商品。"
+		},
+		{
+			"name": "start_price",
+			"type": "Price",
+			"description": "在宝贝页面中进行价格筛选的时候，如果填写了最低价格，就会显示该字段。"
+		},
+		{
+			"name": "support_cod",
+			"type": "Number",
+			"description": "是否货到付款，1为货到付款"
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "可以根据卖家id搜索属于该卖家的商品"
+		},
+		{
+			"name": "vip",
+			"type": "Number",
+			"description": "过滤vip宝贝时，vip=1"
+		},
+		{
+			"name": "wwonline",
+			"type": "Number",
+			"description": "显示旺旺在线卖家的宝贝时，wwonline=1"
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "title",
-					"type": "String",
-					"description": "搜索宝贝的标题"
+					"name": "brand_id",
+					"type": "Number",
+					"description": "搜索品牌id"
 				},
 				{
-					"name": "sold",
+					"name": "brand_name",
 					"type": "String",
-					"description": "搜索宝贝的月数量"
+					"description": "搜索品牌名字"
+				}
+			],
+			"name": "brand_list",
+			"type": "TmallBrand []",
+			"description": "品牌列表"
+		},
+		{
+			"name": "q",
+			"type": "String",
+			"description": "查询条件"
+		},
+		{
+			"subParams": [
+				{
+					"name": "fast_post_fee",
+					"type": "String",
+					"description": "邮费"
 				},
 				{
-					"name": "url",
+					"name": "is_cod",
+					"type": "Number",
+					"description": "是否货到付款"
+				},
+				{
+					"name": "is_promotion",
+					"type": "Boolean",
+					"description": "是否折扣"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "搜索宝贝的数字id"
+				},
+				{
+					"name": "location",
 					"type": "String",
-					"description": "搜索宝贝url"
+					"description": "搜索宝贝的宝贝所在地"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "搜索宝贝的卖家昵称"
 				},
 				{
 					"name": "pic_path",
@@ -136,23 +173,13 @@
 				},
 				{
 					"name": "price",
-					"type": "Price",
+					"type": "String",
 					"description": "搜索宝贝的sku最低价"
 				},
 				{
-					"name": "item_id",
-					"type": "Number",
-					"description": "搜索宝贝的数字id"
-				},
-				{
-					"name": "nick",
+					"name": "price_with_rate",
 					"type": "String",
-					"description": "搜索宝贝的卖家昵称"
-				},
-				{
-					"name": "location",
-					"type": "String",
-					"description": "搜索宝贝的宝贝所在地"
+					"description": "搜索宝贝的sku最低价的折扣价"
 				},
 				{
 					"name": "seller_loc",
@@ -165,49 +192,34 @@
 					"description": "是否免邮"
 				},
 				{
+					"name": "sold",
+					"type": "String",
+					"description": "搜索宝贝的月数量"
+				},
+				{
 					"name": "spu_id",
 					"type": "Number",
 					"description": "搜索宝贝的spuid"
 				},
 				{
-					"name": "is_cod",
-					"type": "Number",
-					"description": "是否货到付款"
+					"name": "title",
+					"type": "String",
+					"description": "搜索宝贝的标题"
 				},
 				{
-					"name": "fast_post_fee",
-					"type": "Price",
-					"description": "邮费"
+					"name": "url",
+					"type": "String",
+					"description": "搜索宝贝url"
 				},
 				{
 					"name": "user_id",
 					"type": "Number",
 					"description": "搜索宝贝的卖家数字id"
-				},
-				{
-					"name": "is_promotion",
-					"type": "Boolean",
-					"description": "是否折扣"
-				},
-				{
-					"name": "price_with_rate",
-					"type": "Price",
-					"description": "搜索宝贝的sku最低价的折扣价"
 				}
 			],
 			"name": "item_list",
 			"type": "TmallExtendSearchItem []",
 			"description": "商品列表"
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "总商品数量"
-		},
-		{
-			"name": "q",
-			"type": "String",
-			"description": "查询条件"
 		},
 		{
 			"subParams": [
@@ -227,21 +239,9 @@
 			"description": "类目列表"
 		},
 		{
-			"subParams": [
-				{
-					"name": "brand_id",
-					"type": "Number",
-					"description": "搜索品牌id"
-				},
-				{
-					"name": "brand_name",
-					"type": "String",
-					"description": "搜索品牌名字"
-				}
-			],
-			"name": "brand_list",
-			"type": "TmallBrand []",
-			"description": "品牌列表"
+			"name": "total_results",
+			"type": "Number",
+			"description": "总商品数量"
 		}
 	],
 	"name": "tmall.items.extend.search",

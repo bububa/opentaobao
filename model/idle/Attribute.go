@@ -62,15 +62,15 @@ type Attribute struct {
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
 	// order_status=104时填写卖家还欠费金额单位分
 	ArrearageFee string `json:"arrearage_fee,omitempty" xml:"arrearage_fee,omitempty"`
-	// order_status=1时传递支付宝的签约号
+	// 字段已废弃，order_status=1时传递支付宝的签约号
 	AgreementNo string `json:"agreement_no,omitempty" xml:"agreement_no,omitempty"`
-	// order_status=1时传递,支付宝用户id
+	// 字段已废弃，order_status=1时传递,支付宝用户id
 	AlipayUserId string `json:"alipay_user_id,omitempty" xml:"alipay_user_id,omitempty"`
-	// order_status=104时传递用户还款链接
+	// 字段已废弃，order_status=104时传递用户还款链接
 	ArrearageLink string `json:"arrearage_link,omitempty" xml:"arrearage_link,omitempty"`
-	// 业务定义的数量,order_status=5时候传递
+	// 业务场景定义的数量，如旧衣回收重量,order_status=3时候传递，具体含义根据不同业务场景决定
 	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
-	// 支付宝交易号，在支付预付款和尾款时分别提供相应打款的交易号
+	// 支付宝交易号，在支付预付款(推送status=8)和推送(status=5)分别提供相应打款的交易号
 	AlipayTradeNo string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
 	// 联系人姓名，上门回收填写,order_status=1
 	ContactName string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`

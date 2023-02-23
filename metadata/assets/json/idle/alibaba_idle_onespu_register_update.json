@@ -1,0 +1,75 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "pd_code",
+					"type": "String",
+					"description": "要挂载的闲鱼业务 PD 值，如：传 \"YHB\" 表示验货宝",
+					"required": true
+				},
+				{
+					"name": "scene_type",
+					"type": "String",
+					"description": "要挂载的业务场景，如：传 \"YHB_PHONE\" 表示验货宝手机类目",
+					"required": true
+				},
+				{
+					"name": "xpu_id",
+					"type": "String",
+					"description": "要挂载的 SPU id",
+					"required": true
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "挂载动作。-1（下线）；1（挂载）",
+					"required": true
+				},
+				{
+					"name": "sp_code",
+					"type": "String",
+					"description": "当前服务提供方的标识符，如 APPKEY",
+					"required": true
+				}
+			],
+			"name": "one_spu_sp_register_update_param",
+			"type": "OneSpuSpRegisterUpdateParam",
+			"description": "入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "module",
+					"type": "String",
+					"description": "返回值"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.onespu.register.update",
+	"apiChineseName": "闲鱼 ONESPU 挂载接口",
+	"description": "闲鱼 ONESPU 挂载接口",
+	"id": 65264
+}

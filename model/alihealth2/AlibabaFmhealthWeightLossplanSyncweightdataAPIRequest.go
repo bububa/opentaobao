@@ -33,12 +33,15 @@ func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaFmhealthWeightLossplanSyncweightdataAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetWeight is Weight Setter

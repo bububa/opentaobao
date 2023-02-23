@@ -6,6 +6,8 @@ type RefundDetailDto struct {
 	RefundList []RefundList `json:"refund_list,omitempty" xml:"refund_list>refund_list,omitempty"`
 	// 紧急标识:EPIDEMIC:疫情审核通过标, REASSURING_TICKET:安心票, FLIGHTCHANGE:航变审核通过标, CALCULATED:预计算, FLIGHTCHANGECANCEL:航班取消, FLIGHTCHANGEDELAY:航班延误, ILLWITHCERTIFICATE:病退, REFUSETOTAKE:航司拒载, PREVIOUSLATTERINTERFERENCE:前后段影响, OVERBOOKING:超售, AIRLINEAUTHORIZE:航司授权, CHANGENAME:改名, REPEATBUYTICKETS:重复购票, BUYWRONGTICKETS:错购, AIRLINEVIPCARDREFUND:航司金银卡退票
 	Tags []string `json:"tags,omitempty" xml:"tags>string,omitempty"`
+	// xxx.xxx.xxx
+	Attachment []string `json:"attachment,omitempty" xml:"attachment>string,omitempty"`
 	// 申请单号
 	ApplyId string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
 	// 申请原因
@@ -32,4 +34,8 @@ type RefundDetailDto struct {
 	ApplyReasonType int64 `json:"apply_reason_type,omitempty" xml:"apply_reason_type,omitempty"`
 	// 补退单标识(1是补退单)
 	Supplement int64 `json:"supplement,omitempty" xml:"supplement,omitempty"`
+	// 0:&#34;原路退回&#34;,1:&#34;退银行卡&#34;,2:&#34;原路退回+退银行卡&#34;
+	RefundWayType int64 `json:"refund_way_type,omitempty" xml:"refund_way_type,omitempty"`
+	//    1:&#34;单程&#34;,     2:&#34;往返&#34;,     3:&#34;多程&#34;
+	TripType int64 `json:"trip_type,omitempty" xml:"trip_type,omitempty"`
 }

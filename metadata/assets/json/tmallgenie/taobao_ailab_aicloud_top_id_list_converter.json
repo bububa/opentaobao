@@ -1,0 +1,120 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "idType相应的id内容",
+					"required": true
+				},
+				{
+					"name": "encode_type",
+					"type": "String",
+					"description": "编码类型，此处填写PROJECT_ID。",
+					"required": true
+				},
+				{
+					"name": "encode_key",
+					"type": "String",
+					"description": "编码类型对应的值，此处填写该产品所在项目的Project ID。请在天猫精灵AI平台的控制台中查看。",
+					"required": true
+				},
+				{
+					"name": "id_type",
+					"type": "String",
+					"description": "USER_ID/DEVICE_ID/OPEN_TAOBAO_ID",
+					"required": true
+				}
+			],
+			"name": "convert_data",
+			"type": "ConverterIdRequest",
+			"description": "入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "rt_code",
+					"type": "Number",
+					"description": "返回code"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "请求状态"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回错误信息"
+				},
+				{
+					"subParams": [
+						{
+							"subParams": [
+								{
+									"name": "id_type",
+									"type": "String",
+									"description": "id类型"
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "idType相应的id内容"
+								},
+								{
+									"name": "encode_type",
+									"type": "String",
+									"description": "编码类型"
+								},
+								{
+									"name": "encode_key",
+									"type": "String",
+									"description": "编码类型对应的值，此处填写该产品所在项目的Project ID。请在天猫精灵AI平台的控制台中查看。"
+								}
+							],
+							"name": "param",
+							"type": "ConverterIdRequest",
+							"description": "入参内容"
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "开放openId"
+						},
+						{
+							"subParams": [
+								{
+									"name": "organization_id",
+									"type": "String",
+									"description": "组织id"
+								},
+								{
+									"name": "union_id",
+									"type": "String",
+									"description": "开放unionId"
+								}
+							],
+							"name": "union_ids",
+							"type": "UnionIdInfo[]",
+							"description": "关联id"
+						}
+					],
+					"name": "rt_value",
+					"type": "OpenInfoResponse[]",
+					"description": "返回查询内容"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回体"
+		}
+	],
+	"name": "taobao.ailab.aicloud.top.id.list.converter",
+	"apiChineseName": "将淘宝openId或者设备id/用户id转换为openId",
+	"description": "将淘宝openId或者设备id/用户id转换为openId",
+	"id": 64628
+}

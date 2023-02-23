@@ -114,8 +114,7 @@
 				{
 					"name": "waybill_code",
 					"type": "String",
-					"description": "面单号",
-					"required": true
+					"description": "面单号"
 				}
 			],
 			"name": "confirm_response",

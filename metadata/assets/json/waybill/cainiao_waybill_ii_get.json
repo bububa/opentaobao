@@ -184,7 +184,7 @@
 								},
 								{
 									"name": "good_value",
-									"type": "String",
+									"type": "BigDecimal",
 									"description": "物品价值，单位元"
 								}
 							],
@@ -368,44 +368,37 @@
 				{
 					"name": "object_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
-				},
-				{
-					"name": "waybill_code",
-					"type": "String",
-					"description": "面单号, 子母件模式下为子面单号",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "print_data",
 					"type": "String",
-					"description": "云打印内容（encryptedData表示加密结果，data表示非加密结果）;模板内容,具体解释见\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj\u0026treeId=17\u0026articleId=105085\u0026docType=1#12\"\u003e链接\u003c/a\u003e",
-					"required": true
+					"description": "云打印内容（encryptedData表示加密结果，data表示非加密结果）;模板内容,具体解释见\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj\u0026treeId=17\u0026articleId=105085\u0026docType=1#12\"\u003e链接\u003c/a\u003e"
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "面单号, 子母件模式下为子面单号"
 				},
 				{
 					"name": "parent_waybill_code",
 					"type": "String",
-					"description": "子母件中的母单号，当为子母件模式时，需要此单号为实际挂载物流详情的单号，需要使用此单号进行发货，查询物流详情，非子母件，此字段为空",
-					"required": true
+					"description": "子母件中的母单号，当为子母件模式时，需要此单号为实际挂载物流详情的单号，需要使用此单号进行发货，查询物流详情，非子母件，此字段为空"
 				},
 				{
 					"name": "extra_info",
 					"type": "String",
-					"description": "拓展信息，特殊场景下使用",
-					"required": true
+					"description": "拓展信息，特殊场景下使用"
 				},
 				{
 					"name": "cp_code",
 					"type": "String",
-					"description": "cp_code，跟入参传入的cp_code保持一致",
-					"required": true
+					"description": "cp_code，跟入参传入的cp_code保持一致"
 				},
 				{
 					"name": "real_cp_code",
 					"type": "String",
-					"description": "真实取号的cp_code，在淘特官方物流等虚拟cp的场景中real_cp_code和入参中的cp_code不一样，其他场景二者一样",
-					"required": true
+					"description": "真实取号的cp_code，在淘特官方物流等虚拟cp的场景中real_cp_code和入参中的cp_code不一样，其他场景二者一样"
 				}
 			],
 			"name": "modules",

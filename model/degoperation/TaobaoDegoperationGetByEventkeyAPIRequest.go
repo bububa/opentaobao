@@ -33,12 +33,15 @@ func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoDegoperationGetByEventkeyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetDegAccessToken is DegAccessToken Setter

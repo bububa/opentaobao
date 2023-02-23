@@ -1,0 +1,232 @@
+{
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易id"
+		},
+		{
+			"name": "sender_id",
+			"type": "Number",
+			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址"
+		},
+		{
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				}
+			],
+			"name": "jz_receiver_to",
+			"type": "JzReceiverTo",
+			"description": "家装收货人信息"
+		},
+		{
+			"subParams": [
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				}
+			],
+			"name": "ins_jz_receiver_t_o",
+			"type": "JzReceiverTo",
+			"description": "家装安装服务收货人信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "公司编码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "公司名称"
+						}
+					],
+					"name": "expresses",
+					"type": "Expresses[]",
+					"description": "快递公司列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "公司编码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "公司名称"
+						},
+						{
+							"name": "is_default",
+							"type": "Boolean",
+							"description": "是否商家绑定的默认安装公司"
+						}
+					],
+					"name": "ins_tps",
+					"type": "Instps[]",
+					"description": "安装公司列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "公司编码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "公司名称"
+						}
+					],
+					"name": "lg_cps",
+					"type": "Lgcps[]",
+					"description": "物流公司列表"
+				},
+				{
+					"name": "support_delivery",
+					"type": "Boolean",
+					"description": "是否支持快递"
+				},
+				{
+					"name": "support_install",
+					"type": "Boolean",
+					"description": "是否支持安装"
+				},
+				{
+					"name": "supp_modify_ins_add",
+					"type": "Boolean",
+					"description": "是否支持修改安装地址"
+				},
+				{
+					"name": "goods_relations",
+					"type": "String",
+					"description": "商品对应的服务信息"
+				}
+			],
+			"name": "result",
+			"type": "JzTopDto",
+			"description": "结果信息"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "taobao.wlb.order.jz.query",
+	"apiChineseName": "家装业务查询物流公司api",
+	"description": "家装业务查询物流公司api",
+	"id": 26007
+}

@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "商家店铺id"
+				},
+				{
+					"name": "intention_id",
+					"type": "Number",
+					"description": "意向单id"
+				}
+			],
+			"name": "param_confirm_request_d_t_o",
+			"type": "ConfirmRequestDTO",
+			"description": "确认入参"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "结果"
+		}
+	],
+	"name": "alitrip.agent.flight.intention.confirm",
+	"apiChineseName": "意向单确认",
+	"description": "意向单确认",
+	"id": 64670
+}

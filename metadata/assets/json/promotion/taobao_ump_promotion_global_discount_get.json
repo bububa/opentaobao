@@ -3,24 +3,21 @@
 		{
 			"subParams": [
 				{
-					"name": "success",
-					"type": "Boolean",
-					"description": "是否执行成功",
-					"required": true
-				},
-				{
 					"subParams": [
 						{
 							"name": "discount",
 							"type": "Number",
-							"description": "折扣1折100，9折900",
-							"required": true
+							"description": "折扣1折100，9折900"
 						}
 					],
 					"name": "default_model",
 					"type": "SellerGlobalDiscount",
-					"description": "defaultModel",
-					"required": true
+					"description": "defaultModel"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功"
 				}
 			],
 			"name": "result",

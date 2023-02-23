@@ -12,6 +12,11 @@
 			"description": "子任务状态，由业务方自定义"
 		},
 		{
+			"name": "status",
+			"type": "String",
+			"description": "状态值，多个以逗号分隔"
+		},
+		{
 			"name": "tag",
 			"type": "String",
 			"description": "任务标签"
@@ -20,11 +25,6 @@
 			"name": "memo",
 			"type": "String",
 			"description": "任务备注。当memo_mode为1时，memo将采用追加方式。"
-		},
-		{
-			"name": "status",
-			"type": "String",
-			"description": "状态值，多个以逗号分隔"
 		},
 		{
 			"name": "remind_time",

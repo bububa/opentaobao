@@ -30,8 +30,6 @@ type CainiaoGlobalHandoverCommitAPIRequest struct {
 	_domesticTrackingNo string
 	// 国内物流公司名称（交接单类型type为self_post(自寄)时必填）
 	_domesticLogisticsCompany string
-	// 用户信息
-	_userInfo *UserInfoDto
 	// 退件信息
 	_returnInfo *ReturnerDto
 	// 揽收信息
@@ -40,6 +38,8 @@ type CainiaoGlobalHandoverCommitAPIRequest struct {
 	_weight int64
 	// 交接单id
 	_handoverOrderId int64
+	// 用户信息
+	_userInfo *UserInfoDto
 	// 扩展字段
 	_features *Features
 	// 国内物流公司id（交接单类型type为self_post(自寄)时必填）
@@ -59,12 +59,15 @@ func (r CainiaoGlobalHandoverCommitAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalHandoverCommitAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderCodeList is OrderCodeList Setter
@@ -184,19 +187,6 @@ func (r CainiaoGlobalHandoverCommitAPIRequest) GetDomesticLogisticsCompany() str
 	return r._domesticLogisticsCompany
 }
 
-// SetUserInfo is UserInfo Setter
-// 用户信息
-func (r *CainiaoGlobalHandoverCommitAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-	r._userInfo = _userInfo
-	r.Set("user_info", _userInfo)
-	return nil
-}
-
-// GetUserInfo UserInfo Getter
-func (r CainiaoGlobalHandoverCommitAPIRequest) GetUserInfo() *UserInfoDto {
-	return r._userInfo
-}
-
 // SetReturnInfo is ReturnInfo Setter
 // 退件信息
 func (r *CainiaoGlobalHandoverCommitAPIRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
@@ -247,6 +237,19 @@ func (r *CainiaoGlobalHandoverCommitAPIRequest) SetHandoverOrderId(_handoverOrde
 // GetHandoverOrderId HandoverOrderId Getter
 func (r CainiaoGlobalHandoverCommitAPIRequest) GetHandoverOrderId() int64 {
 	return r._handoverOrderId
+}
+
+// SetUserInfo is UserInfo Setter
+// 用户信息
+func (r *CainiaoGlobalHandoverCommitAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+	r._userInfo = _userInfo
+	r.Set("user_info", _userInfo)
+	return nil
+}
+
+// GetUserInfo UserInfo Getter
+func (r CainiaoGlobalHandoverCommitAPIRequest) GetUserInfo() *UserInfoDto {
+	return r._userInfo
 }
 
 // SetFeatures is Features Setter

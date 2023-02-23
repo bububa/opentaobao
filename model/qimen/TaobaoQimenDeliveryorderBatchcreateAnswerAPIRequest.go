@@ -29,16 +29,18 @@ func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRequest is Request Setter
-//
 func (r *TaobaoQimenDeliveryorderBatchcreateAnswerAPIRequest) SetRequest(_request *DeliveryOrderBatchCreateAnswerRequest) error {
 	r._request = _request
 	r.Set("request", _request)

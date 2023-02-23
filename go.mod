@@ -1,3 +1,3 @@
 module github.com/bububa/opentaobao
 
-go 1.17
+go 1.18

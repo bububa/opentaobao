@@ -1,0 +1,77 @@
+{
+	"requestParams": [
+		{
+			"name": "insurance_premium_id",
+			"type": "Number",
+			"description": "保险产品id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_msg_for_client",
+			"type": "String",
+			"description": "错误信息（调用成功时该字段为空）"
+		},
+		{
+			"subParams": [
+				{
+					"name": "sub_titles",
+					"type": "String",
+					"description": "副标题：同一保险在不同页面可以有不同副标题"
+				},
+				{
+					"name": "bubble",
+					"type": "String",
+					"description": "气泡"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "保险产品价格"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "文案"
+				},
+				{
+					"name": "interests",
+					"type": "String",
+					"description": "利益点：一个保险可以有多个利益点，如：意外保障¥500万+意外医疗¥3万；同一利益点在不同页面可以有不同描述，如：OTA页、OTA浮层、下单页、弹屏页"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "主标题"
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "保险产品名称"
+				},
+				{
+					"name": "insurance_premium_id",
+					"type": "Number",
+					"description": "保险产品唯一标识"
+				},
+				{
+					"name": "labels",
+					"type": "String",
+					"description": "标签：同一保险在不同页面可以有不同标签"
+				}
+			],
+			"name": "ins_products",
+			"type": "InsProductDTO []",
+			"description": "保险产品列表"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "alitrip.flight.insurance.product.search",
+	"apiChineseName": "搜索保险产品",
+	"description": "搜索保险产品",
+	"id": 64831
+}

@@ -33,12 +33,15 @@ func (r TmallMsfVerifyAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallMsfVerifyAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallMsfVerifyAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallMsfVerifyAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetShopId is ShopId Setter

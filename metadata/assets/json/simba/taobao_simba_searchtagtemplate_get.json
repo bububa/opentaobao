@@ -1,14 +1,14 @@
 {
 	"requestParams": [
 		{
-			"name": "nick",
-			"type": "String",
-			"description": "被操作者的淘宝昵称"
-		},
-		{
 			"name": "sub_nick",
 			"type": "String",
 			"description": "子帐号nick"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者的淘宝昵称"
 		}
 	],
 	"responseParams": [
@@ -21,68 +21,57 @@
 								{
 									"name": "tag_name",
 									"type": "String",
-									"description": "标签的名称,如男,女,10-20等",
-									"required": true
+									"description": "标签的名称,如男,女,10-20等"
 								},
 								{
 									"name": "option_group_id",
 									"type": "Number",
-									"description": "标签所属的分组id",
-									"required": true
+									"description": "标签所属的分组id"
 								},
 								{
 									"name": "dim_id",
 									"type": "Number",
-									"description": "标签所属的维度id",
-									"required": true
+									"description": "标签所属的维度id"
 								},
 								{
 									"name": "tag_id",
 									"type": "String",
-									"description": "标签id",
-									"required": true
+									"description": "标签id"
 								}
 							],
 							"name": "tag_list",
 							"type": "TagOptions[]",
-							"description": "tagList",
-							"required": true
+							"description": "tagList"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "维度名称,如性别,年龄",
-							"required": true
+							"description": "维度名称,如性别,年龄"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "维度id,如性别年龄的id",
-							"required": true
+							"description": "维度id,如性别年龄的id"
 						}
 					],
 					"name": "dim_list",
 					"type": "DimDtOs[]",
-					"description": "DimDtOs",
-					"required": true
+					"description": "DimDtOs"
 				},
 				{
 					"name": "id",
 					"type": "Number",
-					"description": "人群模版id",
-					"required": true
+					"description": "人群模版id"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "人群模版名称",
-					"required": true
+					"description": "人群模版名称"
 				},
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "人群类型",
-					"required": true
+					"description": "人群类型"
 				}
 			],
 			"name": "template_list",

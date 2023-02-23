@@ -107,7 +107,7 @@
 						{
 							"name": "create_pnr",
 							"type": "Number",
-							"description": "是否订位：1，平台订位；0，平台不订位；2，紧张订位"
+							"description": "是否订位：1，平台订位；0，平台不订位；2，紧张订位；3，紧张停售"
 						},
 						{
 							"name": "dep_airport",
@@ -288,6 +288,21 @@
 									"name": "max_price_limit",
 									"type": "Number",
 									"description": "最大票面价，单位：元"
+								},
+								{
+									"name": "child_sale_type",
+									"type": "Number",
+									"description": "1：儿童成人同价或Y50取低且使用儿童税费 2：儿童成人同价同税 3：儿童自定义价格或Y50取低且使用儿童税费  4：儿童不可销售（仅学生，青年，老年票，小团，学生认证票允许选择）5：儿童成人同价同税或Y50且使用儿童税费取低 6：儿童成人同价且使用儿童税费 7：使用基准运价FD/NFD/IBE+对应的儿童价格"
+								},
+								{
+									"name": "child_fixed_price",
+									"type": "Number",
+									"description": "儿童票面价，单位：分"
+								},
+								{
+									"name": "baggage",
+									"type": "Number",
+									"description": "行李有无：0：无行李 ； 1：有行李 ； null：走平台默认行"
 								}
 							],
 							"name": "price",
@@ -332,7 +347,7 @@
 								{
 									"name": "sale_mode_code",
 									"type": "Number",
-									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装"
+									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装；6，花呗卖家版；"
 								},
 								{
 									"name": "goods_market",
@@ -416,7 +431,7 @@
 						{
 							"name": "not_appl_od",
 							"type": "String[]",
-							"description": "排除航线"
+							"description": "排除航线：格式为：KKK-*，*-KKK，KKK-XXX三种格式；三字码，大写；*表示全部；最多允许4000字符；多个请用英文,隔开"
 						},
 						{
 							"name": "create_pnr_limit",

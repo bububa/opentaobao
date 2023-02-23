@@ -3,9 +3,20 @@
 		{
 			"subParams": [
 				{
+					"name": "appkey",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "确认扩展信息"
+				},
+				{
 					"name": "fee",
 					"type": "Number",
-					"description": "确认金额（单位：分）",
+					"description": "确认金额",
 					"required": true
 				},
 				{
@@ -15,31 +26,20 @@
 					"required": true
 				},
 				{
-					"name": "extend",
-					"type": "String",
-					"description": "确认扩展信息"
-				},
-				{
-					"name": "appkey",
-					"type": "String",
-					"description": "appkey",
-					"required": true
-				},
-				{
 					"name": "order_id",
 					"type": "Number",
 					"description": "服务市场有效订单ID"
-				},
-				{
-					"name": "out_order_id",
-					"type": "String",
-					"description": "外部订单ID"
 				},
 				{
 					"name": "out_confirm_id",
 					"type": "String",
 					"description": "外部确认账单ID",
 					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单ID"
 				}
 			],
 			"name": "param_income_confirm_d_t_o",

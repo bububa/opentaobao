@@ -29,12 +29,15 @@ func (r AlibabaTcwmsOutboundOrderCancelAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTcwmsOutboundOrderCancelAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTcwmsOutboundOrderCancelAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTcwmsOutboundOrderCancelAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOutboundCancelRequest is OutboundCancelRequest Setter

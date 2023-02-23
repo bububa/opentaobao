@@ -11,14 +11,14 @@
 		{
 			"subParams": [
 				{
-					"name": "status",
-					"type": "String",
-					"description": "状态名称"
-				},
-				{
 					"name": "count",
 					"type": "Number",
 					"description": "数量"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态名称"
 				}
 			],
 			"name": "status_infos",

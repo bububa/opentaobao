@@ -33,12 +33,15 @@ func (r TaobaoAlitripItPolicyGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripItPolicyGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripItPolicyGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripItPolicyGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetExtendAttributes is ExtendAttributes Setter

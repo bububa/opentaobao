@@ -41,12 +41,15 @@ func (r TaobaoOpentradeGroupQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOpentradeGroupQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOpentradeGroupQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOpenUserId is OpenUserId Setter

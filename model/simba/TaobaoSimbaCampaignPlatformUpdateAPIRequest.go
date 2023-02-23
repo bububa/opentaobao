@@ -13,9 +13,9 @@ import (
 type TaobaoSimbaCampaignPlatformUpdateAPIRequest struct {
 	model.Params
 	// 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
-	_searchChannels []int64
+	_searchChannels []string
 	// 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向
-	_nonsearchChannels []int64
+	_nonsearchChannels []string
 	// 主人昵称
 	_nick string
 	// 推广计划Id
@@ -39,37 +39,40 @@ func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSearchChannels is SearchChannels Setter
 // 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
-func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) SetSearchChannels(_searchChannels []int64) error {
+func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) SetSearchChannels(_searchChannels []string) error {
 	r._searchChannels = _searchChannels
 	r.Set("search_channels", _searchChannels)
 	return nil
 }
 
 // GetSearchChannels SearchChannels Getter
-func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetSearchChannels() []int64 {
+func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetSearchChannels() []string {
 	return r._searchChannels
 }
 
 // SetNonsearchChannels is NonsearchChannels Setter
 // 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向
-func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) SetNonsearchChannels(_nonsearchChannels []int64) error {
+func (r *TaobaoSimbaCampaignPlatformUpdateAPIRequest) SetNonsearchChannels(_nonsearchChannels []string) error {
 	r._nonsearchChannels = _nonsearchChannels
 	r.Set("nonsearch_channels", _nonsearchChannels)
 	return nil
 }
 
 // GetNonsearchChannels NonsearchChannels Getter
-func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetNonsearchChannels() []int64 {
+func (r TaobaoSimbaCampaignPlatformUpdateAPIRequest) GetNonsearchChannels() []string {
 	return r._nonsearchChannels
 }
 

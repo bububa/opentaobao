@@ -1,0 +1,237 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ref_ent_id（货主企业的ref_ent_id）",
+			"required": true
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始日期（没有时分秒，【单据创建时间】）",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束日期（没有时分秒，【单据创建时间】）",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型 A：全部 AI：全部入库 AO：全部出库",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据号（精确值，不支持模糊查询）"
+		},
+		{
+			"name": "drug_type",
+			"type": "String",
+			"description": "药品类型"
+		},
+		{
+			"name": "deal_status",
+			"type": "String",
+			"description": "状态  0, 处理中     3, 处理成功     4, 处理失败"
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货商"
+		},
+		{
+			"name": "to_user_id",
+			"type": "String",
+			"description": "收货商"
+		},
+		{
+			"name": "agent_ref_user_id",
+			"type": "String",
+			"description": "代理商（第三方物流企业）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总计"
+						},
+						{
+							"subParams": [
+								{
+									"name": "store_inout_seq_no",
+									"type": "String",
+									"description": "单据号"
+								},
+								{
+									"name": "physic_type",
+									"type": "String",
+									"description": "药品类型"
+								},
+								{
+									"name": "upload_file_name",
+									"type": "String",
+									"description": "上传文件名"
+								},
+								{
+									"name": "from_user_name",
+									"type": "String",
+									"description": "发货单位"
+								},
+								{
+									"name": "role_type",
+									"type": "String",
+									"description": "角色类型"
+								},
+								{
+									"name": "crt_date",
+									"type": "String",
+									"description": "上传日期"
+								},
+								{
+									"name": "ic_code",
+									"type": "String",
+									"description": "操作人标识"
+								},
+								{
+									"name": "short_file_name",
+									"type": "String",
+									"description": "文件名"
+								},
+								{
+									"name": "ref_user_name",
+									"type": "String",
+									"description": "企业名称"
+								},
+								{
+									"name": "bill_time",
+									"type": "String",
+									"description": "单据日期"
+								},
+								{
+									"name": "result_type",
+									"type": "String",
+									"description": "处理状态  0，处理中 1, 上传成功     3, 处理成功     4, 处理失败"
+								},
+								{
+									"name": "upload_flag",
+									"type": "String",
+									"description": "上传标识"
+								},
+								{
+									"name": "process_flag",
+									"type": "String",
+									"description": "处理结果表状态(暂不用)"
+								},
+								{
+									"name": "process_date",
+									"type": "String",
+									"description": "处理日期"
+								},
+								{
+									"name": "bill_code",
+									"type": "String",
+									"description": "单号号"
+								},
+								{
+									"name": "bill_type",
+									"type": "String",
+									"description": "单据类型"
+								},
+								{
+									"name": "to_user_name",
+									"type": "String",
+									"description": "收货单位"
+								},
+								{
+									"name": "from_user_id",
+									"type": "String",
+									"description": "发货单位主键"
+								},
+								{
+									"name": "from_ref_user_id",
+									"type": "String",
+									"description": "发货单位唯一标识"
+								},
+								{
+									"name": "to_user_id",
+									"type": "String",
+									"description": "收货单位主键"
+								},
+								{
+									"name": "ref_user_id",
+									"type": "String",
+									"description": "用户唯一标识"
+								},
+								{
+									"name": "to_ref_user_id",
+									"type": "String",
+									"description": "收货单位唯一标识"
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户主键"
+								},
+								{
+									"name": "process_info",
+									"type": "String",
+									"description": "处理信息"
+								}
+							],
+							"name": "result_list",
+							"type": "BillDealStatusSearchDo[]",
+							"description": "返回列表"
+						}
+					],
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "返回对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "状态值"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "响应结果"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.searchstatus",
+	"apiChineseName": "单据处理状态查询",
+	"description": "单据处理状态查询",
+	"id": 64477
+}

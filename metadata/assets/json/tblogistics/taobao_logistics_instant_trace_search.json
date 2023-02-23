@@ -1,0 +1,92 @@
+{
+	"requestParams": [
+		{
+			"name": "mail_no",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "is_split",
+			"type": "Number",
+			"description": "是否拆单"
+		},
+		{
+			"name": "sub_tid",
+			"type": "String",
+			"description": "子订单列表"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"subParams": [
+						{
+							"name": "out_sid",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"subParams": [
+								{
+									"name": "status_desc",
+									"type": "String",
+									"description": "节点描述"
+								},
+								{
+									"name": "status_time",
+									"type": "Number",
+									"description": "当前节点发生时间"
+								},
+								{
+									"name": "action",
+									"type": "String",
+									"description": "节点枚举"
+								}
+							],
+							"name": "trace_list",
+							"type": "TopLogisticsNodeDTO[]",
+							"description": "物流节点列表"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "物流公司"
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "交易单号"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "当前最新节点"
+						}
+					],
+					"name": "mail_list",
+					"type": "TopLogisticsMailDTO[]",
+					"description": "运单列表"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.logistics.instant.trace.search",
+	"apiChineseName": "物流详情查询",
+	"description": "物流详情查询",
+	"id": 64816
+}

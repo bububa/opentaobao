@@ -1,0 +1,55 @@
+{
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "byte[]",
+			"description": "多媒体字节数组",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "名称",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "类型 PHOTO 图片；FILM 视频",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "文件ID"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常描述"
+				}
+			],
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.idle.report.media.upload",
+	"apiChineseName": "验货报告上传文件",
+	"description": "服务商上传文件、图片",
+	"id": 65157
+}

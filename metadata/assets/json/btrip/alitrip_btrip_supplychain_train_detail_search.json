@@ -320,6 +320,21 @@
 									"name": "out_ticket_status",
 									"type": "String",
 									"description": "外部票状态"
+								},
+								{
+									"name": "change_train_no",
+									"type": "String",
+									"description": "改签车次号"
+								},
+								{
+									"name": "from_station_name",
+									"type": "String",
+									"description": "改签出发站"
+								},
+								{
+									"name": "to_station_name",
+									"type": "String",
+									"description": "改签到达站"
 								}
 							],
 							"name": "change_ticket_info_list",

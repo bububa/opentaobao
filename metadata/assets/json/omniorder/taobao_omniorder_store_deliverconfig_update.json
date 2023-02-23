@@ -58,14 +58,14 @@
 		{
 			"subParams": [
 				{
-					"name": "data",
-					"type": "Json",
-					"description": "返回素材id"
-				},
-				{
 					"name": "message",
 					"type": "String",
 					"description": "message"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "data"
 				},
 				{
 					"name": "code",

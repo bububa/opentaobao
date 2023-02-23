@@ -10,13 +10,12 @@ import (
 // alibaba.wdk.item.changeprice.query
 //
 // *
-//      * 按照价格变更时间段，查询会变更价格的单据的商品
-//      * 传入QueryPriceChangeTypeEnum.BASE_PRICE,返回变价时间在startTime-endTime之间的所有单据
-//      * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_START,
-//      * 返回活动开始时间在 startTime&lt;=活动开始时间&lt;endTime 之间的所有单品促销单据
-//      * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_END,
-//      * 返回活动结束时间在 startTime&lt;=活动结束时间&lt;endTime 之间的所有单品促销单据
-//
+//   - 按照价格变更时间段，查询会变更价格的单据的商品
+//   - 传入QueryPriceChangeTypeEnum.BASE_PRICE,返回变价时间在startTime-endTime之间的所有单据
+//   - 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_START,
+//   - 返回活动开始时间在 startTime&lt;=活动开始时间&lt;endTime 之间的所有单品促销单据
+//   - 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_END,
+//   - 返回活动结束时间在 startTime&lt;=活动结束时间&lt;endTime 之间的所有单品促销单据
 type AlibabaWdkItemChangepriceQueryAPIRequest struct {
 	model.Params
 	// 开始时间
@@ -42,12 +41,15 @@ func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkItemChangepriceQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStartTime is StartTime Setter

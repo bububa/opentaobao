@@ -32,6 +32,8 @@ type TaobaoTbkScOrderDetailsGetAPIRequest struct {
 	_pageNo int64
 	// 场景订单场景类型，1:常规订单，2:渠道订单，3:会员运营订单，默认为1
 	_orderScene int64
+	// member组ID
+	_memberGroupId int64
 }
 
 // NewTaobaoTbkScOrderDetailsGetRequest 初始化TaobaoTbkScOrderDetailsGetAPIRequest对象
@@ -47,12 +49,15 @@ func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPositionIndex is PositionIndex Setter
@@ -183,4 +188,17 @@ func (r *TaobaoTbkScOrderDetailsGetAPIRequest) SetOrderScene(_orderScene int64) 
 // GetOrderScene OrderScene Getter
 func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetOrderScene() int64 {
 	return r._orderScene
+}
+
+// SetMemberGroupId is MemberGroupId Setter
+// member组ID
+func (r *TaobaoTbkScOrderDetailsGetAPIRequest) SetMemberGroupId(_memberGroupId int64) error {
+	r._memberGroupId = _memberGroupId
+	r.Set("member_group_id", _memberGroupId)
+	return nil
+}
+
+// GetMemberGroupId MemberGroupId Getter
+func (r TaobaoTbkScOrderDetailsGetAPIRequest) GetMemberGroupId() int64 {
+	return r._memberGroupId
 }

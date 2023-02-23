@@ -1,0 +1,133 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "业务域 "
+				},
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "1-公司  2-城市品牌店 3-品牌  4-标准门店  5-TP运营账号 6-经纪人/置业顾问"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "同步的数据类型"
+				},
+				{
+					"name": "outer_target_type",
+					"type": "Number",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "outer_seller_id",
+					"type": "String",
+					"description": "外部商家id"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部主体id"
+						},
+						{
+							"name": "outer_type",
+							"type": "Number",
+							"description": "外部主体类型"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店id"
+						},
+						{
+							"name": "outer_seller_id",
+							"type": "String",
+							"description": "外部商家id"
+						}
+					],
+					"name": "scene_info_list",
+					"type": "AstoreSceneInfoDTO[]",
+					"description": "装修场景主体"
+				},
+				{
+					"name": "function_list",
+					"type": "String[]",
+					"description": "权限类型"
+				}
+			],
+			"name": "user_info",
+			"type": "UserPermissionInfoDTO",
+			"description": "用户信息"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1"
+				},
+				{
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_type",
+							"type": "Number",
+							"description": "1"
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "outer_seller_id",
+							"type": "String",
+							"description": "1"
+						},
+						{
+							"name": "is_success",
+							"type": "Boolean",
+							"description": "1"
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "1"
+						}
+					],
+					"name": "data",
+					"type": "AstoreSceneRespInfoDTO[]",
+					"description": "1"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "1"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "1"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "1"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.right.unbind.back",
+	"apiChineseName": "权限回流-解绑",
+	"description": "权限回流-解绑",
+	"id": 65441
+}

@@ -29,12 +29,15 @@ func (r AlibabaWdkChannelOrderCreateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkChannelOrderCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkChannelOrderCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkChannelOrderCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderInfo is OrderInfo Setter

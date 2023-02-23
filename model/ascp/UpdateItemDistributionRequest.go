@@ -22,4 +22,14 @@ type UpdateItemDistributionRequest struct {
 	DistributePrice int64 `json:"distribute_price,omitempty" xml:"distribute_price,omitempty"`
 	// 建议零售价。 建议分销商卖给消费者的价格， 单位 分。 非必传
 	RetailPrice int64 `json:"retail_price,omitempty" xml:"retail_price,omitempty"`
+	// 1级分销价格
+	Level1Price int64 `json:"level1_price,omitempty" xml:"level1_price,omitempty"`
+	// 2级分销价格
+	Level2Price int64 `json:"level2_price,omitempty" xml:"level2_price,omitempty"`
+	// 3级分销价格
+	Level3Price int64 `json:"level3_price,omitempty" xml:"level3_price,omitempty"`
+	// 4级分销价格
+	Level4Price int64 `json:"level4_price,omitempty" xml:"level4_price,omitempty"`
+	// 5级分销价格
+	Level5Price int64 `json:"level5_price,omitempty" xml:"level5_price,omitempty"`
 }

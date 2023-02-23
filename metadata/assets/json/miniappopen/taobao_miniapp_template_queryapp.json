@@ -95,6 +95,11 @@
 							"name": "appkey",
 							"type": "String",
 							"description": "appkey"
+						},
+						{
+							"name": "app_alias",
+							"type": "String",
+							"description": "应用简称"
 						}
 					],
 					"name": "app_info",

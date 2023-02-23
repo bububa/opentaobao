@@ -57,6 +57,11 @@
 					"name": "relation_cargos",
 					"type": "GoodsRelationDto[]",
 					"description": "货下挂的其他货列表 最大列表长度：100"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "货所属外部项目店id"
 				}
 			],
 			"name": "relation_binding_dto",
@@ -71,26 +76,22 @@
 				{
 					"name": "code",
 					"type": "String",
-					"description": "code",
-					"required": true
+					"description": "code"
 				},
 				{
 					"name": "message",
 					"type": "String",
-					"description": "message",
-					"required": true
+					"description": "message"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否成功",
-					"required": true
+					"description": "是否成功"
 				},
 				{
 					"name": "data",
 					"type": "Number",
-					"description": "返回素材id",
-					"required": true
+					"description": "返回素材id"
 				}
 			],
 			"name": "result",

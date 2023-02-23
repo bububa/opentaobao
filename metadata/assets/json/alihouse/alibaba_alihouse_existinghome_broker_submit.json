@@ -167,7 +167,7 @@
 				{
 					"name": "type",
 					"type": "Number",
-					"description": "经纪人类型，3-社区志愿者 4-客服，不填默认为经纪人"
+					"description": "经纪人类型，3-社区志愿者 4-客服，5-委托管家（无忧卖房） 6-委托客服（无忧卖房） 7-公寓管家 8-交易员；不填默认为经纪人"
 				},
 				{
 					"name": "sincerity_status",
@@ -187,12 +187,17 @@
 				{
 					"name": "partake_business",
 					"type": "String",
-					"description": "负责业务（0-二手房 1-长租公寓 2-居间模式）"
+					"description": "负责业务（0-二手房 1-长租公寓 2-居间模式 5-交易服务）"
 				},
 				{
 					"name": "is_test",
 					"type": "Number",
 					"description": "是否测试 0-否 1-是"
+				},
+				{
+					"name": "identity",
+					"type": "String",
+					"description": "身份标识"
 				}
 			],
 			"name": "brokers",

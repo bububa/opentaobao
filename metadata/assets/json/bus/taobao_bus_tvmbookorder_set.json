@@ -13,18 +13,6 @@
 			"required": true
 		},
 		{
-			"name": "success",
-			"type": "Boolean",
-			"description": "true代表出票成功；false代表出票失败",
-			"required": true
-		},
-		{
-			"name": "pay_mode",
-			"type": "String",
-			"description": "取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）",
-			"required": true
-		},
-		{
 			"name": "fetch_phone",
 			"type": "String",
 			"description": "取票人手机号"
@@ -86,6 +74,18 @@
 			"type": "TvmPassengerVo[]",
 			"description": "乘客票面信息",
 			"maxListSize": 20
+		},
+		{
+			"name": "pay_mode",
+			"type": "String",
+			"description": "取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "true代表出票成功；false代表出票失败",
+			"required": true
 		},
 		{
 			"name": "support_eticket",

@@ -1,0 +1,198 @@
+{
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "订单帐务详情需要返回的字段信息，可选值如下：1. TradeAmount中可指定的fields：tid,alipay_no,created,pay_time,end_time,total_fee,payment,post_fee,cod_fee,commission_fee,buyer_obtain_point_fee2. OrderAmount中可指定的fields：order_amounts.oid,order_amounts.title,order_amounts.num_iid,order_amounts.sku_properties_name,order_amounts.sku_id,order_amounts.num,order_amounts.price,order_amounts.discount_fee,order_amounts.adjust_fee,order_amounts.payment,order_amounts.promotion_name3. order_amounts(返回OrderAmount的所有内容)4. promotion_details(指定该值会返回主订单的promotion_details中除id之外的所有字段)",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易主订单编号"
+				},
+				{
+					"name": "alipay_no",
+					"type": "String",
+					"description": "支付宝交易号，如：2009112081173831"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "交易创建时间"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "交易成功时间(更新交易状态为成功的同时更新)/确认收货时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "主订单的商品金额（各子订单中商品price * num的和，不包括任何优惠信息）。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "post_fee",
+					"type": "String",
+					"description": "邮费。精确到2位小数;单位:元。如:200.07，表示:200元7分。目前只提供整笔交易的邮费，暂不提供各子订单的邮费"
+				},
+				{
+					"name": "cod_fee",
+					"type": "String",
+					"description": "货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分"
+				},
+				{
+					"name": "buyer_cod_fee",
+					"type": "String",
+					"description": "买家货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分"
+				},
+				{
+					"name": "seller_cod_fee",
+					"type": "String",
+					"description": "卖家货到付款服务费。精确到2位小数;单位:元。如:12.07，表示:12元7分"
+				},
+				{
+					"name": "express_agency_fee",
+					"type": "String",
+					"description": "快递代收款。精确到2位小数;单位:元。如:212.07，表示:212元7分"
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "主订单实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分，计算公式如下：如果主订单只有一笔子订单 payment = 子订单的实付金额 + 货到付款服务费(如果是货到付款订单) - 主订单的系统级优惠；如果主订单有多笔子订单 payment = 各子订单的实付金额之和 + 货到付款服务费(如果是货到付款订单) + 邮费 - 主订单的系统级优惠"
+				},
+				{
+					"name": "commission_fee",
+					"type": "String",
+					"description": "交易佣金。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+				},
+				{
+					"name": "buyer_obtain_point_fee",
+					"type": "String",
+					"description": "买家获得积分,返点的积分。格式:100;单位:个"
+				},
+				{
+					"subParams": [
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "子交易订单编号"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题"
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "子订单对应的商品数字id"
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "子订单对应的商品的sku_id"
+						},
+						{
+							"name": "sku_properties_name",
+							"type": "String",
+							"description": "SKU的值。如：机身颜色:黑色;手机套餐:官方标配"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "子交易订单中购买商品的数量"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "discount_fee",
+							"type": "String",
+							"description": "子订单的系统优惠金额。精确到2位小数;单位:元。如:200.07，表示:200元7分"
+						},
+						{
+							"name": "promotion_name",
+							"type": "String",
+							"description": "子订单的系统优惠的名称，对应于discount_fee的名称"
+						},
+						{
+							"name": "adjust_fee",
+							"type": "String",
+							"description": "卖家手工调整的子订单的优惠金额.格式为:1.01;单位:元;精确到小数点后两位."
+						},
+						{
+							"name": "divide_order_fee",
+							"type": "String",
+							"description": "分摊之后的实付金额"
+						},
+						{
+							"name": "part_mjz_discount",
+							"type": "String",
+							"description": "优惠分摊"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "子订单实付金额。精确到2位小数，单位:元。如:200.07，表示:200元7分。计算公式如下：payment = price * num + adjust_fee - discount_fee + post_fee(邮费，单笔子订单时子订单实付金额包含邮费，多笔子订单时不包含邮费)；对于退款成功的子订单，由于主订单的优惠分摊金额，会造成该字段可能不为0.00元。建议使用退款前的实付金额减去退款单中的实际退款金额计算。"
+						}
+					],
+					"name": "order_amounts",
+					"type": "OrderAmount[]",
+					"description": "子订单的帐务金额详情列表"
+				},
+				{
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "交易的主订单或子订单号"
+						},
+						{
+							"name": "promotion_name",
+							"type": "String",
+							"description": "优惠信息的名称"
+						},
+						{
+							"name": "discount_fee",
+							"type": "String",
+							"description": "优惠金额（免运费、限时打折时为空）,单位：元"
+						},
+						{
+							"name": "gift_item_name",
+							"type": "String",
+							"description": "满就送商品时，所送商品的名称"
+						}
+					],
+					"name": "promotion_details",
+					"type": "PromotionDetail[]",
+					"description": "主交易订单的系统级优惠详情"
+				}
+			],
+			"name": "trade_amount",
+			"type": "TradeAmount",
+			"description": "主订单的财务信息详情"
+		}
+	],
+	"name": "taobao.trade.amount.get",
+	"apiChineseName": "交易帐务查询",
+	"description": "卖家查询该笔交易的资金帐务相关的数据；\n1. 只供卖家使用，买家不可使用\n2. 可查询所有的状态的交易，但不同状态时交易的相关数据可能会有不同",
+	"id": 10481
+}

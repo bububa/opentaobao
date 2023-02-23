@@ -65,6 +65,11 @@
 							"name": "third_depart_id_list",
 							"type": "String[]",
 							"description": "部门列表，depart_id | third_depart_id | third_depart_id_list只传其一，优先级为third_depart_id_list \u003e third_depart_id \u003e depart_id"
+						},
+						{
+							"name": "manager_user_id",
+							"type": "String",
+							"description": "直属主管id"
 						}
 					],
 					"name": "user_list",

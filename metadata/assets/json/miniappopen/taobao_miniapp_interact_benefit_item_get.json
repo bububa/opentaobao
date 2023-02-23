@@ -1,0 +1,50 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "C小程序id",
+					"required": true
+				},
+				{
+					"name": "pool_id",
+					"type": "Number",
+					"description": "策略中，实物权益对应的奖池id",
+					"required": true
+				}
+			],
+			"name": "mini_app_seller_strategy_benefit_item_bind_request",
+			"type": "SellerStrategyBenefitItemBindOpenRequest",
+			"description": "查询条件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "invoke_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "invoke_err_code",
+			"type": "String",
+			"description": "失败时，对应的错误码"
+		},
+		{
+			"name": "model",
+			"type": "Number",
+			"description": "对应绑定的商品id"
+		},
+		{
+			"name": "invoke_err_message",
+			"type": "String",
+			"description": "失败时，对应的错误信息"
+		}
+	],
+	"name": "taobao.miniapp.interact.benefit.item.get",
+	"apiChineseName": "读取实物权益奖池对应绑定的专属下单商品",
+	"description": "读取实物权益奖池对应绑定的专属下单商品",
+	"id": 64725
+}

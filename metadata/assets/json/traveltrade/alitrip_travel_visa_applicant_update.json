@@ -59,7 +59,7 @@
 						}
 					],
 					"name": "eta_info",
-					"type": "NormalVisaEtaInfo",
+					"type": "NormalVisaETAInfo",
 					"description": "特殊必填，上传该申请人 电子签结果。当该签证为电子签证且status值为1006（已收到签证结果）时 必填"
 				},
 				{

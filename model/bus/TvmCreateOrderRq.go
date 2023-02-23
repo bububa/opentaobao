@@ -2,10 +2,10 @@ package bus
 
 // TvmCreateOrderRq 结构体
 type TvmCreateOrderRq struct {
-	// 乘客
-	Passengers []TvmPassengerVo `json:"passengers,omitempty" xml:"passengers>tvm_passenger_vo,omitempty"`
 	// 分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。
 	AccountInDetails []AccountInDetail `json:"account_in_details,omitempty" xml:"account_in_details>account_in_detail,omitempty"`
+	// 乘客
+	Passengers []TvmPassengerVo `json:"passengers,omitempty" xml:"passengers>tvm_passenger_vo,omitempty"`
 	// 代理商订单ID
 	AgentOrderId string `json:"agent_order_id,omitempty" xml:"agent_order_id,omitempty"`
 	// 终端机编号，每个商家终端编号要进行唯一标识
@@ -24,10 +24,10 @@ type TvmCreateOrderRq struct {
 	TotalPrice int64 `json:"total_price,omitempty" xml:"total_price,omitempty"`
 	// 班次信息
 	TvmBusLineInfo *TvmBusLineInfo `json:"tvm_bus_line_info,omitempty" xml:"tvm_bus_line_info,omitempty"`
-	// 出票超时时间(支付成功后开始计算) 单位:秒，如果商家不设置，平台默认超时时间为60天(自助机小程序订单使用)
-	IssueTimeout int64 `json:"issue_timeout,omitempty" xml:"issue_timeout,omitempty"`
 	// 支付超时时间(创建订单成功后开始计算) 单位:秒,到达指定时间后，平台进行关闭订单操作(自助机小程序订单使用)
 	PayTimeout int64 `json:"pay_timeout,omitempty" xml:"pay_timeout,omitempty"`
+	// 出票超时时间(支付成功后开始计算) 单位:秒，如果商家不设置，平台默认超时时间为60天(自助机小程序订单使用)
+	IssueTimeout int64 `json:"issue_timeout,omitempty" xml:"issue_timeout,omitempty"`
 	// 下单人联系信息
 	ContactInfo *TvmContactInfo `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
 	// true实名（传身份证）,必须传true后续进行程序强制校验

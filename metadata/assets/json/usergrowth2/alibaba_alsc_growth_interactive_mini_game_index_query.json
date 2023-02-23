@@ -17,14 +17,18 @@
 				{
 					"name": "game_acc_id",
 					"type": "String",
-					"description": "游戏账号id",
-					"required": true
+					"description": "游戏账号id,仅成语场景使用，该场景下必填"
 				},
 				{
 					"name": "collection_ids",
 					"type": "String[]",
 					"description": "组建集id集合",
 					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "openId，非成语场景使用，必填"
 				}
 			],
 			"name": "mini_game_index_request",

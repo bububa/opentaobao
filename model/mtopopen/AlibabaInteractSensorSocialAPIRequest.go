@@ -29,12 +29,15 @@ func (r AlibabaInteractSensorSocialAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorSocialAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaInteractSensorSocialAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaInteractSensorSocialAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetId is Id Setter

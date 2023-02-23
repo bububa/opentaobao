@@ -31,12 +31,15 @@ func (r AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkMarketingItempoolExcludeskucodeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParam0 is Param0 Setter

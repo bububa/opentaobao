@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "from_city",
+					"type": "String",
+					"description": "出发城市",
+					"required": true
+				},
+				{
+					"name": "to_city",
+					"type": "String",
+					"description": "目的地城市",
+					"required": true
+				},
+				{
+					"name": "from_date",
+					"type": "String",
+					"description": "发车日期，格式：yyyy-MM-dd",
+					"required": true
+				}
+			],
+			"name": "param_top_item_change_notify_r_q",
+			"type": "TopItemChangeNotifyRQ",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	],
+	"name": "taobao.bus.item.notify",
+	"apiChineseName": "汽车票城际巴士车次变更通知飞猪接口",
+	"description": "供应商线路信息变更（如价格，发车时间，新增班次）同步到飞猪销售端需要 10分钟-10个小时的时间(跟供应商线路数量,接口可支持的并发量有关)。\n为了让供应商线路信息变更能够及时体现到飞猪销售端，供应商可以在修改完自身系统的线路信息后，主动调用该接口通知飞猪，飞猪会将该线路数据进行一次同步。",
+	"id": 65541
+}

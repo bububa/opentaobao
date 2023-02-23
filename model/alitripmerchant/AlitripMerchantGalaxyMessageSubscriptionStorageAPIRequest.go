@@ -12,12 +12,12 @@ import (
 // 消息订阅中的消息模版的存储
 type AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest struct {
 	model.Params
-	// token
-	_token string
 	// 模版ID
 	_templateIds string
 	// 租户ID
 	_tenantKey string
+	// token
+	_token string
 }
 
 // NewAlitripMerchantGalaxyMessageSubscriptionStorageRequest 初始化AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest对象
@@ -33,25 +33,15 @@ func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetApiMethodN
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetToken is Token Setter
-// token
-func (r *AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) SetToken(_token string) error {
-	r._token = _token
-	r.Set("token", _token)
-	return nil
-}
-
-// GetToken Token Getter
-func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetToken() string {
-	return r._token
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTemplateIds is TemplateIds Setter
@@ -78,4 +68,17 @@ func (r *AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) SetTenantKey
 // GetTenantKey TenantKey Getter
 func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetTenantKey() string {
 	return r._tenantKey
+}
+
+// SetToken is Token Setter
+// token
+func (r *AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) SetToken(_token string) error {
+	r._token = _token
+	r.Set("token", _token)
+	return nil
+}
+
+// GetToken Token Getter
+func (r AlitripMerchantGalaxyMessageSubscriptionStorageAPIRequest) GetToken() string {
+	return r._token
 }

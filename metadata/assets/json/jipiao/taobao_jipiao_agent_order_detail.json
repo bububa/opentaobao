@@ -1,4 +1,13 @@
 {
+	"requestParams": [
+		{
+			"name": "order_ids",
+			"type": "String[]",
+			"description": "淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询",
+			"maxListSize": 1,
+			"required": true
+		}
+	],
 	"responseParams": [
 		{
 			"name": "is_success",

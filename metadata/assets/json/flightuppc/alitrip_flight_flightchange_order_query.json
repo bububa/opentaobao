@@ -1,0 +1,128 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				}
+			],
+			"name": "query_flight_change_order_req",
+			"type": "QueryFlightChangeOrderReq",
+			"description": "航变信息查询请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "old_flight_no",
+							"type": "String",
+							"description": "航班号"
+						},
+						{
+							"name": "old_flight_date",
+							"type": "String",
+							"description": "原航班日期"
+						},
+						{
+							"name": "old_depart_code",
+							"type": "String",
+							"description": "出发机场三字码"
+						},
+						{
+							"name": "old_arrive_code",
+							"type": "String",
+							"description": "到达机场三字码"
+						},
+						{
+							"name": "old_depart_time",
+							"type": "String",
+							"description": "出发时间"
+						},
+						{
+							"name": "old_arrive_time",
+							"type": "String",
+							"description": "到达时间"
+						},
+						{
+							"name": "new_flight_no",
+							"type": "String",
+							"description": "新航班号"
+						},
+						{
+							"name": "new_flight_date",
+							"type": "String",
+							"description": "新航班日期"
+						},
+						{
+							"name": "new_depart_code",
+							"type": "String",
+							"description": "新出发机场三字码"
+						},
+						{
+							"name": "new_arrive_code",
+							"type": "String",
+							"description": "新到达机场三字码"
+						},
+						{
+							"name": "new_depart_time",
+							"type": "String",
+							"description": "新出发时间"
+						},
+						{
+							"name": "new_arrive_time",
+							"type": "String",
+							"description": "新到达时间"
+						},
+						{
+							"name": "change_time",
+							"type": "String",
+							"description": "航变时间"
+						},
+						{
+							"name": "change_type",
+							"type": "Number",
+							"description": "航变类型,1为取消，2为变更"
+						},
+						{
+							"name": "change_reason",
+							"type": "String",
+							"description": "航变原因"
+						}
+					],
+					"name": "flight_change",
+					"type": "FlightChangeDTO",
+					"description": "航变信息"
+				}
+			],
+			"name": "result",
+			"type": "FlightChangeOrderDTO []",
+			"description": "航变信息查询结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用成功标志"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"name": "alitrip.flight.flightchange.order.query",
+	"apiChineseName": "订单维度航变查询",
+	"description": "订单维度航变查询",
+	"id": 65508
+}

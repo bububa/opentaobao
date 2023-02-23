@@ -22,6 +22,11 @@
 			"description": "销售属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid"
 		},
 		{
+			"name": "name",
+			"type": "String",
+			"description": "产品名称.最大不超过30个字符"
+		},
+		{
 			"name": "price",
 			"type": "String",
 			"description": "产品市场价.精确到2位小数;单位为元.如:200.07"
@@ -32,17 +37,6 @@
 			"description": "产品描述.最大不超过25000个字符"
 		},
 		{
-			"name": "image",
-			"type": "byte[]",
-			"description": "产品主图.最大500K,目前仅支持GIF,JPG",
-			"maxLength": 1048576
-		},
-		{
-			"name": "name",
-			"type": "String",
-			"description": "产品名称.最大不超过30个字符"
-		},
-		{
 			"name": "major",
 			"type": "Boolean",
 			"description": "是否是主图"
@@ -51,20 +45,26 @@
 			"name": "native_unkeyprops",
 			"type": "String",
 			"description": "自定义非关键属性"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "产品主图.最大500K,目前仅支持GIF,JPG",
+			"maxLength": 1048576
 		}
 	],
 	"responseParams": [
 		{
 			"subParams": [
 				{
-					"name": "modified",
-					"type": "Date",
-					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
-				},
-				{
 					"name": "product_id",
 					"type": "Number",
 					"description": "产品ID"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
 				}
 			],
 			"name": "product",

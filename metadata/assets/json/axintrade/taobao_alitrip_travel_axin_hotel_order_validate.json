@@ -215,6 +215,33 @@
 									"name": "exchange_rate",
 									"type": "BigDecimal",
 									"description": "汇率"
+								},
+								{
+									"name": "rp_type",
+									"type": "Number",
+									"description": "0-全日房, 1-小时房"
+								},
+								{
+									"subParams": [
+										{
+											"name": "hourage",
+											"type": "Number",
+											"description": "连住时长"
+										},
+										{
+											"name": "check_in_start",
+											"type": "String",
+											"description": "小时房可入住的最早时间"
+										},
+										{
+											"name": "last_leave_time",
+											"type": "String",
+											"description": "小时房最晚离店时间"
+										}
+									],
+									"name": "arrival_time",
+									"type": "ArrivalTimeDto",
+									"description": "小时房到店时间\u0026连住时长"
 								}
 							],
 							"name": "rate_plan_info",

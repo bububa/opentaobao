@@ -1,0 +1,104 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_entid",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "secondary_code",
+			"type": "String",
+			"description": "二级码",
+			"required": true
+		},
+		{
+			"name": "primary_codes",
+			"type": "String",
+			"description": "一级码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "secondary_code",
+							"type": "String",
+							"description": "二级码"
+						},
+						{
+							"name": "primary_codes",
+							"type": "String",
+							"description": "一级码"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "码拼箱状态"
+						},
+						{
+							"name": "info",
+							"type": "String",
+							"description": "码拼箱信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "source_code",
+									"type": "String",
+									"description": "替换码"
+								},
+								{
+									"name": "target_code",
+									"type": "String",
+									"description": "被替换码"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "拼箱状态"
+								},
+								{
+									"name": "info",
+									"type": "String",
+									"description": "拼箱信息"
+								}
+							],
+							"name": "new_code_move_packaging_result_d_t_os",
+							"type": "CodeMovePackagingResultDTO[]",
+							"description": "内层小对象"
+						}
+					],
+					"name": "model",
+					"type": "NewCodeMovePackagingResultDTO",
+					"description": "内层大对象"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询成功失败标记"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.kyt.scqy.putpackage",
+	"apiChineseName": "码拼箱",
+	"description": "码拼箱接口",
+	"id": 64578
+}

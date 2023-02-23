@@ -1,0 +1,95 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "order_show_app",
+					"type": "Number",
+					"description": "1-淘宝端",
+					"required": true
+				},
+				{
+					"name": "station_type",
+					"type": "String",
+					"description": "末端类型",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收件人手机号",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "客服场景:CUSTOM，可查询已取件15天内和未取件包裹，收件场景：RECEIVE，仅可查询未取件包裹",
+					"required": true
+				}
+			],
+			"name": "query_package_list_request",
+			"type": "QueryPackageListRequest",
+			"description": "查询包裹请求"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "privacy_order",
+					"type": "Boolean",
+					"description": "是否为隐私订单"
+				},
+				{
+					"name": "secret_no",
+					"type": "String",
+					"description": "隐私号"
+				},
+				{
+					"name": "secret_no_expire_time",
+					"type": "Date",
+					"description": "隐私号过期时间"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "快递公司编码"
+				},
+				{
+					"name": "station_type",
+					"type": "String",
+					"description": "代收点类型"
+				}
+			],
+			"name": "data",
+			"type": "PackageInfo []",
+			"description": "包裹信息"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总数量"
+		}
+	],
+	"name": "taobao.top.package.unauth.query",
+	"apiChineseName": "查询某手机号下的包裹",
+	"description": "查询某手机号下的包裹",
+	"id": 64224
+}

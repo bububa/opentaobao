@@ -14,33 +14,6 @@
 				{
 					"subParams": [
 						{
-							"name": "permission_code",
-							"type": "String",
-							"description": "注册到权限中心的code值"
-						},
-						{
-							"name": "permission_name",
-							"type": "String",
-							"description": "权限名称"
-						},
-						{
-							"name": "parent_code",
-							"type": "String",
-							"description": "父权限code"
-						},
-						{
-							"name": "is_authorize",
-							"type": "Number",
-							"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
-						}
-					],
-					"name": "permissions",
-					"type": "Permission[]",
-					"description": "子账号被直接赋予的权限点列表"
-				},
-				{
-					"subParams": [
-						{
 							"name": "role_id",
 							"type": "Number",
 							"description": "角色id"
@@ -56,26 +29,16 @@
 							"description": "角色描述"
 						},
 						{
-							"name": "seller_id",
-							"type": "Number",
-							"description": "卖家Id"
-						},
-						{
-							"name": "create_time",
-							"type": "Date",
-							"description": "创建时间"
-						},
-						{
-							"name": "modified_time",
-							"type": "Date",
-							"description": "修改时间"
-						},
-						{
 							"subParams": [
 								{
 									"name": "permission_code",
 									"type": "String",
 									"description": "注册到权限中心的code值"
+								},
+								{
+									"name": "is_authorize",
+									"type": "Number",
+									"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 								},
 								{
 									"name": "permission_name",
@@ -86,11 +49,6 @@
 									"name": "parent_code",
 									"type": "String",
 									"description": "父权限code"
-								},
-								{
-									"name": "is_authorize",
-									"type": "Number",
-									"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
 								}
 							],
 							"name": "permissions",
@@ -101,6 +59,33 @@
 					"name": "roles",
 					"type": "Role[]",
 					"description": "子账号被赋予的角色信息(Role)列表。列表中的角色对象只有role_id，role_name，permissions信息"
+				},
+				{
+					"subParams": [
+						{
+							"name": "permission_code",
+							"type": "String",
+							"description": "注册到权限中心的code值"
+						},
+						{
+							"name": "is_authorize",
+							"type": "Number",
+							"description": "1 :允许授权  2：不允许授权 6：不允许授权但默认已有权限"
+						},
+						{
+							"name": "permission_name",
+							"type": "String",
+							"description": "权限名称"
+						},
+						{
+							"name": "parent_code",
+							"type": "String",
+							"description": "父权限code"
+						}
+					],
+					"name": "permissions",
+					"type": "Permission[]",
+					"description": "子账号被直接赋予的权限点列表"
 				}
 			],
 			"name": "subuser_permission",

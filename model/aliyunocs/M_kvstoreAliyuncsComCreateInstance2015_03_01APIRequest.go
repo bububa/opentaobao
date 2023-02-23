@@ -47,12 +47,15 @@ func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r M_kvstoreAliyuncsComCreateInstance2015_03_01APIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetInstanceName is InstanceName Setter

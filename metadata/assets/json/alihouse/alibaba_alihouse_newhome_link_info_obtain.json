@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型",
+					"required": true
+				}
+			],
+			"name": "link_info_req",
+			"type": "LinkInfoReqDTO",
+			"description": "请求体",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回链接地址"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "msg",
+					"type": "Boolean",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model"
+		}
+	],
+	"name": "alibaba.alihouse.newhome.link.info.obtain",
+	"apiChineseName": "落地页获取",
+	"description": "落地页获取",
+	"id": 65348
+}

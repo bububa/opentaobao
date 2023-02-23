@@ -18,9 +18,9 @@ type WtExtResult struct {
 	PhoneOwnerName string `json:"phone_owner_name,omitempty" xml:"phone_owner_name,omitempty"`
 	// 证件号
 	CertCardNum string `json:"cert_card_num,omitempty" xml:"cert_card_num,omitempty"`
-	// authType
+	// 实人认证方式，如：V1,V2，默认V1
 	AuthType string `json:"auth_type,omitempty" xml:"auth_type,omitempty"`
-	// attr
+	// 预留属性字符串
 	Attr string `json:"attr,omitempty" xml:"attr,omitempty"`
 	// 安装地址
 	Address string `json:"address,omitempty" xml:"address,omitempty"`
@@ -44,8 +44,8 @@ type WtExtResult struct {
 	PhoneDeposit int64 `json:"phone_deposit,omitempty" xml:"phone_deposit,omitempty"`
 	// 减免 号码预存款(单位是分)
 	PhoneFreeDeposit int64 `json:"phone_free_deposit,omitempty" xml:"phone_free_deposit,omitempty"`
-	// userType
+	// 合约用户类型，0=老用户合约机，1=新用户合约机，2=新用户合约号卡，99=其它（默认）
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
-	// contractType
+	// 合约类型，合约类目， 0=机卡合约，1001=购物送，1002=阿里通信号卡合约，1003=信用购，1007=话费充值卡，1005=游戏点卡，1006=QQ点卡，99=未知（默认）
 	ContractType int64 `json:"contract_type,omitempty" xml:"contract_type,omitempty"`
 }

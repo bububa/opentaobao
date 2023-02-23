@@ -1,15 +1,15 @@
 {
 	"requestParams": [
 		{
+			"name": "history",
+			"type": "Number",
+			"description": "是否查询历史标签"
+		},
+		{
 			"name": "tid",
 			"type": "Number",
 			"description": "交易主订单id",
 			"required": true
-		},
-		{
-			"name": "history",
-			"type": "Number",
-			"description": "是否查询历史标签"
 		},
 		{
 			"name": "tag_types",
@@ -28,19 +28,14 @@
 		{
 			"subParams": [
 				{
-					"name": "gmt_modified",
-					"type": "Date",
-					"description": "记录的最新修改时间"
-				},
-				{
-					"name": "tag_type",
+					"name": "id",
 					"type": "Number",
-					"description": "标签类型       1：官方标签      2：自定义标签     3：主站只读标签"
+					"description": "订单标签记录id"
 				},
 				{
-					"name": "gmt_created",
-					"type": "Date",
-					"description": "记录的创建时间"
+					"name": "tid",
+					"type": "Number",
+					"description": "订单id"
 				},
 				{
 					"name": "tag_name",
@@ -48,14 +43,24 @@
 					"description": "标签名称"
 				},
 				{
+					"name": "tag_type",
+					"type": "Number",
+					"description": "标签类型       1：官方标签      2：自定义标签     3：主站只读标签"
+				},
+				{
 					"name": "tag_value",
 					"type": "String",
 					"description": "标签值，json格式"
 				},
 				{
-					"name": "tid",
-					"type": "Number",
-					"description": "订单id"
+					"name": "gmt_created",
+					"type": "Date",
+					"description": "记录的创建时间"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "记录的最新修改时间"
 				},
 				{
 					"name": "visible",
@@ -70,26 +75,6 @@
 							"description": "订单标签记录id"
 						},
 						{
-							"name": "gmt_modified",
-							"type": "Date",
-							"description": "记录的最新修改时间"
-						},
-						{
-							"name": "tag_type",
-							"type": "Number",
-							"description": "标签类型       1：官方标签      2：自定义标签"
-						},
-						{
-							"name": "gmt_created",
-							"type": "Date",
-							"description": "记录的创建时间"
-						},
-						{
-							"name": "visible",
-							"type": "Number",
-							"description": "该标签在消费者端是否显示,0:不显示,1：显示"
-						},
-						{
 							"name": "tid",
 							"type": "Number",
 							"description": "订单id"
@@ -100,9 +85,29 @@
 							"description": "标签名称"
 						},
 						{
+							"name": "tag_type",
+							"type": "Number",
+							"description": "标签类型       1：官方标签      2：自定义标签"
+						},
+						{
 							"name": "tag_value",
 							"type": "String",
 							"description": "标签值，json格式"
+						},
+						{
+							"name": "gmt_created",
+							"type": "Date",
+							"description": "记录的创建时间"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "记录的最新修改时间"
+						},
+						{
+							"name": "visible",
+							"type": "Number",
+							"description": "该标签在消费者端是否显示,0:不显示,1：显示"
 						}
 					],
 					"name": "history_trade_tag_relations",

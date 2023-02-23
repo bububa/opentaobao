@@ -8,9 +8,31 @@
 					"description": "0:设备中心UUID ，1：外部id"
 				},
 				{
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "温度"
+						},
+						{
+							"name": "is_alarm",
+							"type": "Boolean",
+							"description": "是否告警"
+						},
+						{
+							"name": "describe",
+							"type": "String",
+							"description": "描述信息"
+						},
+						{
+							"name": "origin_value",
+							"type": "String",
+							"description": "值"
+						}
+					],
 					"name": "data",
-					"type": "String[]",
-					"description": "数据"
+					"type": "DeviceReportDataDTO[]",
+					"description": "上传数据"
 				},
 				{
 					"name": "trans_id",
@@ -21,6 +43,11 @@
 					"name": "event_time",
 					"type": "Number",
 					"description": "消息时间戳"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "应用key"
 				},
 				{
 					"name": "source",
@@ -35,12 +62,12 @@
 				{
 					"name": "device_id",
 					"type": "String",
-					"description": "设备ID"
+					"description": "设备id"
 				}
 			],
 			"name": "device_event_data",
 			"type": "DeviceReportEventDTO",
-			"description": "自动生成"
+			"description": "设备数据上报信息"
 		}
 	],
 	"responseParams": [

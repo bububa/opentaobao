@@ -37,12 +37,15 @@ func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoEticketMerchantMaFailsendAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterId is OuterId Setter

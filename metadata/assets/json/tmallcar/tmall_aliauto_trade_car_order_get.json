@@ -204,6 +204,50 @@
 							"name": "car_delivery",
 							"type": "String",
 							"description": "交付服务地址"
+						},
+						{
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuId"
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "商家外部编码"
+								},
+								{
+									"name": "sku_info",
+									"type": "String",
+									"description": "sku名称等信息"
+								}
+							],
+							"name": "sku",
+							"type": "TradeItemSkuDTO",
+							"description": "订单sku信息"
+						},
+						{
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品id"
+								},
+								{
+									"name": "item_title",
+									"type": "String",
+									"description": "商品标题"
+								},
+								{
+									"name": "item_pict_url",
+									"type": "String",
+									"description": "商品主图片URL"
+								}
+							],
+							"name": "item",
+							"type": "TradeItemDTO",
+							"description": "订单商品信息（子订单有效）"
 						}
 					],
 					"name": "data",

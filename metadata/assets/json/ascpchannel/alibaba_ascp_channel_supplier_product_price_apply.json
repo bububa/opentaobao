@@ -1,0 +1,105 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "creator_nick",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "渠道产品id",
+					"required": true
+				},
+				{
+					"name": "advise_sale_price_low",
+					"type": "String",
+					"description": "最低限价"
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "sku_price_map",
+					"type": "String",
+					"description": "SKU渠道价"
+				},
+				{
+					"name": "advise_sale_price_high",
+					"type": "String",
+					"description": "建议零售价"
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商名称，设置专享价填写"
+				},
+				{
+					"name": "distribute_price",
+					"type": "String",
+					"description": "渠道价格(含税)"
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "product_price",
+					"type": "String",
+					"description": "渠道价格(未税)"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "top_price_apply_create_request",
+			"type": "TopPriceApplyCreateRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回值包装"
+		}
+	],
+	"name": "alibaba.ascp.channel.supplier.product.price.apply",
+	"apiChineseName": "供应商设置渠道产品价格",
+	"description": "供应商设置渠道产品价格",
+	"id": 64476
+}

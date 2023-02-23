@@ -10,6 +10,10 @@ type ActionResult struct {
 	RedirectUrl string `json:"redirect_url,omitempty" xml:"redirect_url,omitempty"`
 	// 返回提示信息
 	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// 返回的产品链接
+	ProductUrl string `json:"product_url,omitempty" xml:"product_url,omitempty"`
+	// 套餐标识
+	PackageId string `json:"package_id,omitempty" xml:"package_id,omitempty"`
 	// 返回结果
 	Content string `json:"content,omitempty" xml:"content,omitempty"`
 	// 错误码

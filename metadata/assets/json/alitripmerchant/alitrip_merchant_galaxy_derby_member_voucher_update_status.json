@@ -1,0 +1,48 @@
+{
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户id"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功/失败"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "代码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果"
+		}
+	],
+	"name": "alitrip.merchant.galaxy.derby.member.voucher.update.status",
+	"apiChineseName": "前端订单支付成功回调-修改订单状态",
+	"description": "前端订单支付成功回调-修改订单状态",
+	"id": 64063
+}

@@ -12,12 +12,12 @@ import (
 // 国际站图片银行查询接口
 type AlibabaIcbuPhotobankListAPIRequest struct {
 	model.Params
+	// 额外的上下文信息. 例如:icvId
+	_extraContext string
 	// 图片组id
 	_groupId string
 	// 存放位置 必要条件, 包括ALL_GROUP(所有目录), SUB_GROUP(指定图片组下),UNGROUP(未分组), TEMP(disable)四个值
 	_locationType string
-	// 额外的上下文信息. 例如:icvId
-	_extraContext string
 	// 当前翻页数
 	_currentPage int64
 	// 每页显示数
@@ -37,12 +37,28 @@ func (r AlibabaIcbuPhotobankListAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaIcbuPhotobankListAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaIcbuPhotobankListAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaIcbuPhotobankListAPIRequest) GetRawParams() model.Params {
+	return r.Params
+}
+
+// SetExtraContext is ExtraContext Setter
+// 额外的上下文信息. 例如:icvId
+func (r *AlibabaIcbuPhotobankListAPIRequest) SetExtraContext(_extraContext string) error {
+	r._extraContext = _extraContext
+	r.Set("extra_context", _extraContext)
+	return nil
+}
+
+// GetExtraContext ExtraContext Getter
+func (r AlibabaIcbuPhotobankListAPIRequest) GetExtraContext() string {
+	return r._extraContext
 }
 
 // SetGroupId is GroupId Setter
@@ -69,19 +85,6 @@ func (r *AlibabaIcbuPhotobankListAPIRequest) SetLocationType(_locationType strin
 // GetLocationType LocationType Getter
 func (r AlibabaIcbuPhotobankListAPIRequest) GetLocationType() string {
 	return r._locationType
-}
-
-// SetExtraContext is ExtraContext Setter
-// 额外的上下文信息. 例如:icvId
-func (r *AlibabaIcbuPhotobankListAPIRequest) SetExtraContext(_extraContext string) error {
-	r._extraContext = _extraContext
-	r.Set("extra_context", _extraContext)
-	return nil
-}
-
-// GetExtraContext ExtraContext Getter
-func (r AlibabaIcbuPhotobankListAPIRequest) GetExtraContext() string {
-	return r._extraContext
 }
 
 // SetCurrentPage is CurrentPage Setter

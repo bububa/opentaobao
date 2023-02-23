@@ -29,12 +29,15 @@ func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaScbpTargetAdPlanUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTopP4pBasicQuickCampaign is TopP4pBasicQuickCampaign Setter

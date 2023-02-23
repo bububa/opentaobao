@@ -33,12 +33,15 @@ func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetApiMethodName() stri
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoLifeReservationItemOrderConfirmAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTicketId is TicketId Setter

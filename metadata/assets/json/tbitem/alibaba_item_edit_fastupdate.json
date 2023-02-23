@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "商品类目ID。若不需要修改商品类目，则不用填写"
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "产品ID，若不需要修改关联的产品信息，则不需要填写"
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "编辑后的schema信息(增量更新，只填写需要更新的字段)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_time",
+			"type": "String",
+			"description": "商品更新时间"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品所属市场"
+		}
+	],
+	"name": "alibaba.item.edit.fastupdate",
+	"apiChineseName": "商品编辑增量更新",
+	"description": "商品编辑增量更新;\n\u003cbr/\u003e该接口编辑sku，只能更新价格、库存等信息，不能新增sku;\n\u003cbr/\u003e新增sku用全量接口alibaba.item.edit.submit，先设置销售属性;",
+	"id": 54542
+}

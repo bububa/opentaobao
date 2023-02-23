@@ -29,12 +29,15 @@ func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetApiMethodName() string
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaTmallgenieScpPlanMaterielGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRequestExtendJson is RequestExtendJson Setter

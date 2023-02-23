@@ -60,6 +60,11 @@
 									"name": "third_part_job_no",
 									"type": "String",
 									"description": "第三方员工工号。"
+								},
+								{
+									"name": "leave_status",
+									"type": "Number",
+									"description": "1:离职 0:在职"
 								}
 							],
 							"name": "items",

@@ -46,6 +46,14 @@ type SyncProjectLayoutDto struct {
 	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 外部货ID
 	OuterTid string `json:"outer_tid,omitempty" xml:"outer_tid,omitempty"`
+	// 视频封面图
+	VideoCoverImg string `json:"video_cover_img,omitempty" xml:"video_cover_img,omitempty"`
+	// 视频URL
+	VideoUrl string `json:"video_url,omitempty" xml:"video_url,omitempty"`
+	// eCode
+	ECode string `json:"e_code,omitempty" xml:"e_code,omitempty"`
+	// 外部经纪人ID
+	OuterBrokerId string `json:"outer_broker_id,omitempty" xml:"outer_broker_id,omitempty"`
 	// 是否是主力户型
 	IsMainLayout int64 `json:"is_main_layout,omitempty" xml:"is_main_layout,omitempty"`
 	// 是否有开放厨房 1-是 0-否
@@ -58,4 +66,6 @@ type SyncProjectLayoutDto struct {
 	Type int64 `json:"type,omitempty" xml:"type,omitempty"`
 	// 物业类型
 	EstateType int64 `json:"estate_type,omitempty" xml:"estate_type,omitempty"`
+	// 装修标准
+	DecorationStandard int64 `json:"decoration_standard,omitempty" xml:"decoration_standard,omitempty"`
 }

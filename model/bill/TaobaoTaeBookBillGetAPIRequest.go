@@ -15,8 +15,6 @@ type TaobaoTaeBookBillGetAPIRequest struct {
 	// 需要返回的字段:参见BookBill结构体
 	_fields []string
 	// 虚拟账户流水编号
-	_bid int64
-	// 虚拟账户流水编号
 	_id int64
 	// 虚拟账户科目编号
 	_accountId int64
@@ -35,12 +33,15 @@ func (r TaobaoTaeBookBillGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTaeBookBillGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTaeBookBillGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTaeBookBillGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFields is Fields Setter
@@ -54,19 +55,6 @@ func (r *TaobaoTaeBookBillGetAPIRequest) SetFields(_fields []string) error {
 // GetFields Fields Getter
 func (r TaobaoTaeBookBillGetAPIRequest) GetFields() []string {
 	return r._fields
-}
-
-// SetBid is Bid Setter
-// 虚拟账户流水编号
-func (r *TaobaoTaeBookBillGetAPIRequest) SetBid(_bid int64) error {
-	r._bid = _bid
-	r.Set("bid", _bid)
-	return nil
-}
-
-// GetBid Bid Getter
-func (r TaobaoTaeBookBillGetAPIRequest) GetBid() int64 {
-	return r._bid
 }
 
 // SetId is Id Setter

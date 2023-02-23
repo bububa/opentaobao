@@ -13,7 +13,7 @@ import (
 type TaobaoSimbaKeywordsbykeywordidsGetAPIRequest struct {
 	model.Params
 	// 关键词Id数组，最多200个；
-	_keywordIds []int64
+	_keywordIds []string
 	// 主人昵称
 	_nick string
 }
@@ -31,24 +31,27 @@ func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetKeywordIds is KeywordIds Setter
 // 关键词Id数组，最多200个；
-func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds []int64) error {
+func (r *TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) SetKeywordIds(_keywordIds []string) error {
 	r._keywordIds = _keywordIds
 	r.Set("keyword_ids", _keywordIds)
 	return nil
 }
 
 // GetKeywordIds KeywordIds Getter
-func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetKeywordIds() []int64 {
+func (r TaobaoSimbaKeywordsbykeywordidsGetAPIRequest) GetKeywordIds() []string {
 	return r._keywordIds
 }
 

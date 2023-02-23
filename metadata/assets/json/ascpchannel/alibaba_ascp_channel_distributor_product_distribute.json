@@ -1,0 +1,63 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "source_product_id",
+					"type": "Number",
+					"description": "渠道产品id",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				}
+			],
+			"name": "item_distribute_publish_request",
+			"type": "ItemDistributePublishRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			],
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "返回值包装"
+		}
+	],
+	"name": "alibaba.ascp.channel.distributor.product.distribute",
+	"apiChineseName": "分销商基于渠道产品铺货到商品",
+	"description": "分销商基于渠道产品铺货到商品",
+	"id": 64466
+}

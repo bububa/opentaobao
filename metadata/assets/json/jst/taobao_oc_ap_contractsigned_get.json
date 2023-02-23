@@ -1,14 +1,14 @@
 {
 	"responseParams": [
 		{
-			"name": "contract_sign",
-			"type": "Boolean",
-			"description": "是否开通"
-		},
-		{
 			"name": "error_description",
 			"type": "String",
 			"description": "调用出错描述信息"
+		},
+		{
+			"name": "contract_sign",
+			"type": "Boolean",
+			"description": "是否开通"
 		}
 	],
 	"name": "taobao.oc.ap.contractsigned.get",

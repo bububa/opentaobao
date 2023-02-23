@@ -1,0 +1,93 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "defense_caliber",
+					"type": "String",
+					"description": "口径"
+				},
+				{
+					"name": "draft_source",
+					"type": "String",
+					"description": "来源"
+				},
+				{
+					"name": "standpoint_desc",
+					"type": "String",
+					"description": "示例场景/口径描述"
+				},
+				{
+					"name": "scene_name",
+					"type": "String",
+					"description": "场景名称"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "case_no",
+					"type": "String",
+					"description": "编号"
+				},
+				{
+					"name": "case_type",
+					"type": "String",
+					"description": "类型"
+				},
+				{
+					"name": "submit_people",
+					"type": "String",
+					"description": "提交人"
+				}
+			],
+			"name": "standpoint_draft_dto",
+			"type": "StandpointDraftDto",
+			"description": "口径对象"
+		},
+		{
+			"name": "busid",
+			"type": "String",
+			"description": "busid"
+		},
+		{
+			"name": "bus_name",
+			"type": "String",
+			"description": "busName",
+			"required": true
+		},
+		{
+			"name": "input_system_code",
+			"type": "String",
+			"description": "系统标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		},
+		{
+			"name": "error_code_res",
+			"type": "Number",
+			"description": "状态code"
+		},
+		{
+			"name": "content",
+			"type": "Number",
+			"description": "返回内容"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "状态描述"
+		}
+	],
+	"name": "alibaba.legal.standpoint.insertdraft",
+	"apiChineseName": "插入草稿",
+	"description": "插入草稿",
+	"id": 64365
+}

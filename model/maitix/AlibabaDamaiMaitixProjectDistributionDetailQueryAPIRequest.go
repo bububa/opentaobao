@@ -29,12 +29,15 @@ func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaDamaiMaitixProjectDistributionDetailQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProjectId is ProjectId Setter

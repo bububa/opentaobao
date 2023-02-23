@@ -19,10 +19,10 @@ type TaobaoOcTradetagsGetAPIRequest struct {
 	_tagTypes []string
 	// 不填，则不做标签名称过滤
 	_tagNames []string
-	// 交易主订单id
-	_tid int64
 	// 是否查询历史标签
 	_history int64
+	// 交易主订单id
+	_tid int64
 }
 
 // NewTaobaoOcTradetagsGetRequest 初始化TaobaoOcTradetagsGetAPIRequest对象
@@ -38,12 +38,15 @@ func (r TaobaoOcTradetagsGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoOcTradetagsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoOcTradetagsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoOcTradetagsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetTagTypes is TagTypes Setter
@@ -72,19 +75,6 @@ func (r TaobaoOcTradetagsGetAPIRequest) GetTagNames() []string {
 	return r._tagNames
 }
 
-// SetTid is Tid Setter
-// 交易主订单id
-func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
-	r._tid = _tid
-	r.Set("tid", _tid)
-	return nil
-}
-
-// GetTid Tid Getter
-func (r TaobaoOcTradetagsGetAPIRequest) GetTid() int64 {
-	return r._tid
-}
-
 // SetHistory is History Setter
 // 是否查询历史标签
 func (r *TaobaoOcTradetagsGetAPIRequest) SetHistory(_history int64) error {
@@ -96,4 +86,17 @@ func (r *TaobaoOcTradetagsGetAPIRequest) SetHistory(_history int64) error {
 // GetHistory History Getter
 func (r TaobaoOcTradetagsGetAPIRequest) GetHistory() int64 {
 	return r._history
+}
+
+// SetTid is Tid Setter
+// 交易主订单id
+func (r *TaobaoOcTradetagsGetAPIRequest) SetTid(_tid int64) error {
+	r._tid = _tid
+	r.Set("tid", _tid)
+	return nil
+}
+
+// GetTid Tid Getter
+func (r TaobaoOcTradetagsGetAPIRequest) GetTid() int64 {
+	return r._tid
 }

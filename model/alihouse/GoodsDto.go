@@ -2,6 +2,10 @@ package alihouse
 
 // GoodsDto 结构体
 type GoodsDto struct {
+	// 服务者id列表
+	OuterConsultantIds []string `json:"outer_consultant_ids,omitempty" xml:"outer_consultant_ids>string,omitempty"`
+	// 外部委托房源列表
+	OuterHouses []GoodsHouseDto `json:"outer_houses,omitempty" xml:"outer_houses>goods_house_dto,omitempty"`
 	// 外部私域楼盘id
 	OuterId string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
 	// 品外部唯一码
@@ -22,7 +26,7 @@ type GoodsDto struct {
 	AuditStatus int64 `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
 	// 是否电子签约
 	IsElectricSign int64 `json:"is_electric_sign,omitempty" xml:"is_electric_sign,omitempty"`
-	// 是否核销确认
+	// 是否商家确客
 	IsVerifyConfirm int64 `json:"is_verify_confirm,omitempty" xml:"is_verify_confirm,omitempty"`
 	// 合同主体id
 	MerchantOpenId int64 `json:"merchant_open_id,omitempty" xml:"merchant_open_id,omitempty"`
@@ -38,4 +42,14 @@ type GoodsDto struct {
 	LimitExtend *GoodsLimitDto `json:"limit_extend,omitempty" xml:"limit_extend,omitempty"`
 	// 结算账户ID
 	BankCardId int64 `json:"bank_card_id,omitempty" xml:"bank_card_id,omitempty"`
+	// 0-非测试 1-测试
+	IsTest int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
+	// 版本号(时间戳)
+	EtcVersion int64 `json:"etc_version,omitempty" xml:"etc_version,omitempty"`
+	// 是否用户确客
+	IsUserVerifyConfirm int64 `json:"is_user_verify_confirm,omitempty" xml:"is_user_verify_confirm,omitempty"`
+	// 业务类型，1新房，2二手房 3租房
+	BusinessType int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
+	// 是否房源 -1无关联 0部分关联 1全部
+	IsAllHouse int64 `json:"is_all_house,omitempty" xml:"is_all_house,omitempty"`
 }

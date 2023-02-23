@@ -29,12 +29,15 @@ func (r TaobaoBusSeatpriceGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoBusSeatpriceGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoBusSeatpriceGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoBusSeatpriceGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamBusSeatPriceRQ is ParamBusSeatPriceRQ Setter

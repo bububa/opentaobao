@@ -84,6 +84,11 @@
 							"name": "order_id",
 							"type": "String",
 							"description": "订单id"
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "订单类型 OrderTypeEnum枚举 calendar_room:日历房订单。paid_membership_card：付费会员卡订单"
 						}
 					],
 					"name": "content",

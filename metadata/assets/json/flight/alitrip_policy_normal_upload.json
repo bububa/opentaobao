@@ -181,6 +181,16 @@
 									"name": "restrict_travel_date",
 									"type": "DatePairDto[]",
 									"description": "禁止航班日期"
+								},
+								{
+									"name": "allow_flight_num2",
+									"type": "String",
+									"description": "第二段可售航班号"
+								},
+								{
+									"name": "restrict_flight_num2",
+									"type": "String",
+									"description": "第二段不可售航班号"
 								}
 							],
 							"name": "flights",
@@ -269,7 +279,7 @@
 								{
 									"name": "sale_mode_code",
 									"type": "Number",
-									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装"
+									"description": "销售方式：0，无；1，打包销售套餐1；2，打包销售套餐2；3，打包销售套餐3；4，返现-航司运价；5，返现-销售方包装；6，花呗卖家版； "
 								},
 								{
 									"name": "goods_market",
@@ -300,7 +310,7 @@
 						{
 							"name": "not_appl_od",
 							"type": "String[]",
-							"description": "排除航线"
+							"description": "排除航线：格式为：KKK-*，*-KKK，KKK-XXX三种格式；三字码，大写；*表示全部；最多允许4000字符；多个请用英文,隔开"
 						},
 						{
 							"name": "pata",
@@ -316,6 +326,11 @@
 							"name": "code_share_airline",
 							"type": "String",
 							"description": "字符；最多200；可输入多个航司二字码,英文逗号分隔；航司二字码"
+						},
+						{
+							"name": "direct_transfer_type",
+							"type": "Number",
+							"description": "直达中转：0，直达；1，中转；默认为0"
 						}
 					],
 					"name": "policy_list",

@@ -86,20 +86,6 @@
 					"name": "isv_name",
 					"type": "String",
 					"description": "可选项，自定义渠道名称（用于创建渠道）"
-				},
-				{
-					"subParams": [
-						{
-							"name": "type",
-							"type": "String",
-							"description": "乘客类型",
-							"required": true
-						}
-					],
-					"name": "traveler_list",
-					"type": "TravelerInfo[]",
-					"description": "乘客列表",
-					"required": true
 				}
 			],
 			"name": "param_flight_search_list_r_q",
@@ -562,7 +548,7 @@
 									],
 									"name": "arr_airport_info",
 									"type": "AirportInfo",
-									"description": "出发机场信息"
+									"description": "到达机场信息"
 								},
 								{
 									"subParams": [
@@ -584,7 +570,7 @@
 									],
 									"name": "dep_airport_info",
 									"type": "AirportInfo",
-									"description": "到达机场信息"
+									"description": "出发机场信息"
 								},
 								{
 									"subParams": [
@@ -1085,6 +1071,11 @@
 									"name": "cabin_info_list",
 									"type": "MultiCabinClassInfo[]",
 									"description": "多舱位价格"
+								},
+								{
+									"name": "basic_cabin_price",
+									"type": "Number",
+									"description": "舱位基准价"
 								}
 							],
 							"name": "flight_info_list",

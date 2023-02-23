@@ -29,12 +29,15 @@ func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkScmLrpOrderPredictAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamOrderPredictQuery is ParamOrderPredictQuery Setter

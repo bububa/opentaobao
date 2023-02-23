@@ -57,12 +57,15 @@ func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripItFareBatchdeleteAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStatusList is StatusList Setter

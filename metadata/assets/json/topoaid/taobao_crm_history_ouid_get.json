@@ -13,8 +13,7 @@
 				{
 					"name": "ouid",
 					"type": "String",
-					"description": "ouid",
-					"required": true
+					"description": "ouid"
 				}
 			],
 			"name": "data",

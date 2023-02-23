@@ -28,11 +28,26 @@
 	],
 	"responseParams": [
 		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总记录数"
+		},
+		{
 			"subParams": [
 				{
-					"name": "user_nick",
-					"type": "String",
-					"description": "用户昵称"
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "rds_id",
+					"type": "Number",
+					"description": "rds的id，平台appkey会返回rds_id而不是rds_name"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0:暂停1：正常2：sessoin失效，停止3：已删除"
 				},
 				{
 					"name": "rds_name",
@@ -40,19 +55,29 @@
 					"description": "rds数据库的实例名"
 				},
 				{
-					"name": "status",
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "seller_type",
+					"type": "String",
+					"description": "卖家类型，B表示商城卖家，C表示淘宝卖家"
+				},
+				{
+					"name": "level",
 					"type": "Number",
-					"description": "0:暂停1：正常2：sessoin失效，停止3：已删除"
+					"description": "用户等级，用于区分大卖家，值越大则订单量越大"
+				},
+				{
+					"name": "hl_appkey",
+					"type": "String",
+					"description": "和数据回流绑定的appkey，用户的数据推到此appkey对应的rds后，会回传X_DOWNLOADED消息"
 				}
 			],
 			"name": "users",
 			"type": "JdpUser []",
 			"description": "用户列表"
-		},
-		{
-			"name": "total_results",
-			"type": "Number",
-			"description": "总记录数"
 		}
 	],
 	"name": "taobao.jushita.jdp.users.get",

@@ -31,12 +31,15 @@ func (r TaobaoWlbWmsConsignBillGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoWlbWmsConsignBillGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoWlbWmsConsignBillGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoWlbWmsConsignBillGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCnOrderCode is CnOrderCode Setter

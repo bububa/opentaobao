@@ -80,6 +80,11 @@
 					"name": "outer_building_id",
 					"type": "String",
 					"description": "22222"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "1111"
 				}
 			],
 			"name": "project_picture_data",

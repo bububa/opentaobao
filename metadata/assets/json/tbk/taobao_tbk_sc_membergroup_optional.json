@@ -1,0 +1,47 @@
+{
+	"requestParams": [
+		{
+			"name": "member_group_id",
+			"type": "Number",
+			"description": "member组id"
+		},
+		{
+			"name": "tb_num_ids",
+			"type": "String",
+			"description": "淘宝数字id"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "member_group_id",
+					"type": "Number",
+					"description": "组ID"
+				},
+				{
+					"name": "tb_num_ids",
+					"type": "String",
+					"description": "组内的成员ID"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "更新时间"
+				}
+			],
+			"name": "data",
+			"type": "MapData",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.tbk.sc.membergroup.optional",
+	"apiChineseName": "工具服务商member组查询、新增接口",
+	"description": "工具服务商member组查询、新增接口",
+	"id": 63718
+}

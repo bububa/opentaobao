@@ -31,12 +31,15 @@ func (r AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseExistinghomeHouseTradeQueryStatusAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCommunityOuterId is CommunityOuterId Setter

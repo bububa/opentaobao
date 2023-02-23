@@ -1,0 +1,74 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "outer_target_id",
+					"type": "String",
+					"description": "账号主体外部id",
+					"required": true
+				},
+				{
+					"name": "main_user_nick",
+					"type": "String",
+					"description": "主账号昵称",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "是否测试 0-非测试 1-测试"
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "账号类型 1-公司 2-城市品牌公司 3-品牌 4-门店 5-签约公司",
+					"required": true
+				},
+				{
+					"name": "etc_version",
+					"type": "Number",
+					"description": "etc版本号",
+					"required": true
+				}
+			],
+			"name": "main_account_req_dto",
+			"type": "MainAccountReqDTO",
+			"description": "dto",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.alihouse.existinghome.mian.user.bind",
+	"apiChineseName": "主账号入驻",
+	"description": "主账号入驻",
+	"id": 64699
+}

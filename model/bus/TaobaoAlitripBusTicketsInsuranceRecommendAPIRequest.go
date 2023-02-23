@@ -29,12 +29,15 @@ func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripBusTicketsInsuranceRecommendAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRecommendReq is RecommendReq Setter

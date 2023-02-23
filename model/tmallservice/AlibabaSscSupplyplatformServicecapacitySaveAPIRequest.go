@@ -39,12 +39,15 @@ func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSscSupplyplatformServicecapacitySaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetMode is Mode Setter

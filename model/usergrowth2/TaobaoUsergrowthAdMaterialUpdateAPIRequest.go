@@ -40,6 +40,8 @@ type TaobaoUsergrowthAdMaterialUpdateAPIRequest struct {
 	_channelId int64
 	// 创意id
 	_id int64
+	// 热点事件
+	_hotEvent int64
 }
 
 // NewTaobaoUsergrowthAdMaterialUpdateRequest 初始化TaobaoUsergrowthAdMaterialUpdateAPIRequest对象
@@ -55,12 +57,15 @@ func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterCreativeId is OuterCreativeId Setter
@@ -243,4 +248,17 @@ func (r *TaobaoUsergrowthAdMaterialUpdateAPIRequest) SetId(_id int64) error {
 // GetId Id Getter
 func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetId() int64 {
 	return r._id
+}
+
+// SetHotEvent is HotEvent Setter
+// 热点事件
+func (r *TaobaoUsergrowthAdMaterialUpdateAPIRequest) SetHotEvent(_hotEvent int64) error {
+	r._hotEvent = _hotEvent
+	r.Set("hot_event", _hotEvent)
+	return nil
+}
+
+// GetHotEvent HotEvent Getter
+func (r TaobaoUsergrowthAdMaterialUpdateAPIRequest) GetHotEvent() int64 {
+	return r._hotEvent
 }

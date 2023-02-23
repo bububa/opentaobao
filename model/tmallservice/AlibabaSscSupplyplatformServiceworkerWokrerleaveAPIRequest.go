@@ -33,12 +33,15 @@ func (r AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) GetApiMethod
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaSscSupplyplatformServiceworkerWokrerleaveAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetLeaveBeginAndEndArray is LeaveBeginAndEndArray Setter

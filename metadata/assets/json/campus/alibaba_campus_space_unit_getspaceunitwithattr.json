@@ -43,234 +43,196 @@
 						{
 							"name": "uuid",
 							"type": "String",
-							"description": "空间单元uuid",
-							"required": true
+							"description": "空间单元uuid"
 						},
 						{
 							"name": "name",
 							"type": "String",
-							"description": "空间单元名",
-							"required": true
+							"description": "空间单元名"
 						},
 						{
 							"name": "campus_name",
 							"type": "String",
-							"description": "园区名",
-							"required": true
+							"description": "园区名"
 						},
 						{
 							"name": "campus_code",
 							"type": "String",
-							"description": "园区编码",
-							"required": true
+							"description": "园区编码"
 						},
 						{
 							"name": "type_name",
 							"type": "String",
-							"description": "类型名",
-							"required": true
+							"description": "类型名"
 						},
 						{
 							"name": "floor_id",
 							"type": "Number",
-							"description": "楼层id",
-							"required": true
+							"description": "楼层id"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "areaStr"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "heightStr"
 						},
 						{
 							"name": "floor_name",
 							"type": "String",
-							"description": "楼层名",
-							"required": true
+							"description": "楼层名"
 						},
 						{
 							"name": "category",
 							"type": "Number",
-							"description": "空间种类，1室内，2室外，3 逻辑, 4 虚拟",
-							"required": true
+							"description": "空间种类，1室内，2室外，3 逻辑, 4 虚拟"
 						},
 						{
 							"name": "id",
 							"type": "Number",
-							"description": "空间单元id",
-							"required": true
+							"description": "空间单元id"
 						},
 						{
 							"name": "type_code",
 							"type": "String",
-							"description": "类型编码",
-							"required": true
+							"description": "类型编码"
 						},
 						{
 							"name": "type_id",
 							"type": "Number",
-							"description": "类型id",
-							"required": true
+							"description": "类型id"
 						},
 						{
 							"name": "campus_id",
 							"type": "Number",
-							"description": "园区id",
-							"required": true
+							"description": "园区id"
 						},
 						{
 							"name": "code",
 							"type": "String",
-							"description": "SpaceUnit的code映射到PoiInfo的BusinessId",
-							"required": true
+							"description": "SpaceUnit的code映射到PoiInfo的BusinessId"
 						},
 						{
 							"name": "is_delete",
 							"type": "Boolean",
-							"description": "是否删除",
-							"required": true
+							"description": "是否删除"
 						},
 						{
 							"name": "building_id",
 							"type": "Number",
-							"description": "楼宇id",
-							"required": true
+							"description": "楼宇id"
 						},
 						{
 							"name": "status",
 							"type": "String",
-							"description": "状态",
-							"required": true
+							"description": "状态"
 						},
 						{
 							"name": "company_id",
 							"type": "Number",
-							"description": "公司id",
-							"required": true
+							"description": "公司id"
 						},
 						{
 							"name": "building_name",
 							"type": "String",
-							"description": "楼宇名",
-							"required": true
+							"description": "楼宇名"
 						},
 						{
 							"subParams": [
 								{
 									"name": "type_attr_ref_id",
 									"type": "Number",
-									"description": "业务属性id",
-									"required": true
+									"description": "业务属性id"
 								},
 								{
 									"name": "attr_name",
 									"type": "String",
-									"description": "业务属性名",
-									"required": true
+									"description": "业务属性名"
 								},
 								{
 									"name": "attr_code",
 									"type": "String",
-									"description": "业务属性编码",
-									"required": true
+									"description": "业务属性编码"
 								},
 								{
 									"name": "value",
 									"type": "String",
-									"description": "值",
-									"required": true
+									"description": "值"
 								},
 								{
 									"name": "uuid",
 									"type": "String",
-									"description": "属性实例的uuid",
-									"required": true
+									"description": "属性实例的uuid"
 								},
 								{
 									"name": "value_type",
 									"type": "String",
-									"description": "值类型",
-									"required": true
+									"description": "值类型"
 								}
 							],
 							"name": "attrs",
 							"type": "TypeAttrInstance[]",
-							"description": "业务属性",
-							"required": true
+							"description": "业务属性"
 						},
 						{
 							"name": "ft_id",
 							"type": "String",
-							"description": "地图图元id",
-							"required": true
+							"description": "地图图元id"
 						},
 						{
 							"name": "geo_floor_id",
 							"type": "Number",
-							"description": "地图楼层id",
-							"required": true
+							"description": "地图楼层id"
 						},
 						{
 							"subParams": [
 								{
 									"name": "lng",
 									"type": "String",
-									"description": "经度",
-									"required": true
+									"description": "经度"
 								},
 								{
 									"name": "lat",
 									"type": "String",
-									"description": "纬度",
-									"required": true
+									"description": "纬度"
 								}
 							],
 							"name": "central",
 							"type": "Point",
-							"description": "中心点坐标",
-							"required": true
-						},
-						{
-							"name": "area",
-							"type": "String",
-							"description": "areaStr",
-							"required": true
-						},
-						{
-							"name": "height",
-							"type": "String",
-							"description": "heightStr",
-							"required": true
+							"description": "中心点坐标"
 						}
 					],
 					"name": "content",
 					"type": "PoiInfo",
-					"description": "返回内容",
-					"required": true
+					"description": "返回内容"
 				},
 				{
 					"name": "request_id",
 					"type": "String",
-					"description": "请求id",
-					"required": true
+					"description": "请求id"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "错误码",
-					"required": true
+					"description": "错误码"
 				},
 				{
 					"name": "error_msg",
 					"type": "String",
-					"description": "错误信息",
-					"required": true
+					"description": "错误信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "是否调用成功",
-					"required": true
+					"description": "是否调用成功"
 				},
 				{
 					"name": "error_level",
 					"type": "String",
-					"description": "错误级别",
-					"required": true
+					"description": "错误级别"
 				}
 			],
 			"name": "result",

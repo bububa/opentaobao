@@ -118,6 +118,11 @@
 					"description": "是否是可枚举属性。可选值:true(是),false(否)"
 				},
 				{
+					"name": "is_input_prop",
+					"type": "Boolean",
+					"description": "在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。\u003cb\u003e对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。\u003c/b\u003e"
+				},
+				{
 					"name": "is_item_prop",
 					"type": "Boolean",
 					"description": "是否商品属性。可选值:true(是),false(否)"
@@ -133,6 +138,26 @@
 					"description": "发布产品或商品时是否可以多选。可选值:true(是),false(否)"
 				},
 				{
+					"name": "status",
+					"type": "String",
+					"description": "状态。可选值:normal(正常),deleted(删除)"
+				},
+				{
+					"name": "child_template",
+					"type": "String",
+					"description": "子属性的模板（卖家自行输入属性时需要用到）"
+				},
+				{
+					"name": "sort_order",
+					"type": "Number",
+					"description": "排列序号。取值范围:大于零的整排列序号。取值范围:大于零的整数"
+				},
+				{
+					"name": "is_allow_alias",
+					"type": "Boolean",
+					"description": "是否允许别名。可选值：true（是），false（否）"
+				},
+				{
 					"subParams": [
 						{
 							"name": "cid",
@@ -145,11 +170,6 @@
 							"description": "属性 ID"
 						},
 						{
-							"name": "prop_name",
-							"type": "String",
-							"description": "属性名"
-						},
-						{
 							"name": "vid",
 							"type": "Number",
 							"description": "属性值ID"
@@ -158,6 +178,16 @@
 							"name": "name",
 							"type": "String",
 							"description": "属性值"
+						},
+						{
+							"name": "prop_name",
+							"type": "String",
+							"description": "属性名"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
 						},
 						{
 							"name": "name_alias",
@@ -170,70 +200,13 @@
 							"description": "是否为父类目属性"
 						},
 						{
-							"name": "status",
-							"type": "String",
-							"description": "状态。可选值:normal(正常),deleted(删除)"
-						},
-						{
 							"name": "sort_order",
 							"type": "Number",
 							"description": "排列序号。取值范围:大于零的整数"
-						},
-						{
-							"name": "modified_time",
-							"type": "Date",
-							"description": "修改时间（类目增量专用）"
-						},
-						{
-							"name": "modified_type",
-							"type": "String",
-							"description": "三种枚举类型：modify，add，delete (增量类目专用)"
-						},
-						{
-							"subParams": [
-								{
-									"name": "attr_key",
-									"type": "String",
-									"description": "属性键"
-								},
-								{
-									"name": "attr_value",
-									"type": "String",
-									"description": "属性值"
-								}
-							],
-							"name": "features",
-							"type": "Feature[]",
-							"description": "属性值feature"
 						}
 					],
 					"name": "prop_values",
 					"type": "PropValue[]"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "状态。可选值:normal(正常),deleted(删除)"
-				},
-				{
-					"name": "sort_order",
-					"type": "Number",
-					"description": "排列序号。取值范围:大于零的整排列序号。取值范围:大于零的整数"
-				},
-				{
-					"name": "child_template",
-					"type": "String",
-					"description": "子属性的模板（卖家自行输入属性时需要用到）"
-				},
-				{
-					"name": "is_allow_alias",
-					"type": "Boolean",
-					"description": "是否允许别名。可选值：true（是），false（否）"
-				},
-				{
-					"name": "is_input_prop",
-					"type": "Boolean",
-					"description": "在is_enum_prop是true的前提下，是否是卖家可以自行输入的属性（注：如果is_enum_prop返回false，该参数统一返回false）。可选值:true(是),false(否)。\u003cb\u003e对于品牌和型号属性（包括子属性）：如果用户是C卖家，则可自定义属性；如果是B卖家，则不可自定义属性，而必须要授权的属性。\u003c/b\u003e"
 				},
 				{
 					"subParams": [
@@ -259,6 +232,16 @@
 				},
 				{
 					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "时间类型：0表示非时间，1表示时间点，2表示时间范围"
+						},
+						{
+							"name": "precision",
+							"type": "Number",
+							"description": "数值小数点精度"
+						},
 						{
 							"subParams": [
 								{
@@ -307,16 +290,6 @@
 							"name": "expr_el_list",
 							"type": "ItemTaoSirElDO[]",
 							"description": "表达式元素list"
-						},
-						{
-							"name": "type",
-							"type": "Number",
-							"description": "时间类型：0表示非时间，1表示时间点，2表示时间范围"
-						},
-						{
-							"name": "precision",
-							"type": "Number",
-							"description": "数值小数点精度"
 						}
 					],
 					"name": "taosir_do",
@@ -333,14 +306,14 @@
 						{
 							"subParams": [
 								{
-									"name": "name",
-									"type": "String",
-									"description": "材质值名称"
-								},
-								{
 									"name": "need_content_number",
 									"type": "Boolean",
 									"description": "当前材质值，是否需要填写含量值。比如：棉 是需要填写含量值，而牛皮 是不需要填写含量值的"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "材质值名称"
 								}
 							],
 							"name": "materials",

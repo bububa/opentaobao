@@ -14,7 +14,7 @@ type Keyword struct {
 	AuditDesc string `json:"audit_desc,omitempty" xml:"audit_desc,omitempty"`
 	// 创建时间
 	CreateTime string `json:"create_time,omitempty" xml:"create_time,omitempty"`
-	// 匹配模式
+	// 匹配模式： 1 精确匹配，4 广泛匹配
 	MatchScope string `json:"match_scope,omitempty" xml:"match_scope,omitempty"`
 	// 词质量得分
 	Qscore string `json:"qscore,omitempty" xml:"qscore,omitempty"`

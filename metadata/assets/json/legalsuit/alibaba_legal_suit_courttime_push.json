@@ -1,0 +1,67 @@
+{
+	"requestParams": [
+		{
+			"name": "case_id",
+			"type": "Number",
+			"description": "案件id"
+		},
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托id"
+		},
+		{
+			"name": "court_time",
+			"type": "Date",
+			"description": "开庭时间"
+		},
+		{
+			"subParams": [
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "上传时间"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "文件名称"
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": " 文件id"
+				}
+			],
+			"name": "file_model",
+			"type": "FileModel",
+			"description": "文件对象"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success_res",
+			"type": "Boolean",
+			"description": "返回是否成功标志"
+		},
+		{
+			"name": "error_code_res",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "无返回值"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误消息"
+		}
+	],
+	"name": "alibaba.legal.suit.courttime.push",
+	"apiChineseName": "开庭时间推送（带附件）",
+	"description": "开庭时间推送（带附件）",
+	"id": 64793
+}

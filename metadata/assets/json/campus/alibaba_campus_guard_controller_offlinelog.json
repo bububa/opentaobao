@@ -1,0 +1,51 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "sn_no",
+					"type": "String",
+					"description": "sn",
+					"required": true
+				},
+				{
+					"name": "offline_log",
+					"type": "String",
+					"description": "离线日志JSON",
+					"required": true
+				}
+			],
+			"name": "controller_offline_request_dto",
+			"type": "ControllerOfflineRequestDTO",
+			"description": "离线数据DTO"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果判定"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "code"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result"
+		}
+	],
+	"name": "alibaba.campus.guard.controller.offlinelog",
+	"apiChineseName": "门禁控制器离线日志同步",
+	"description": "门禁控制器离线日志同步",
+	"id": 64116
+}

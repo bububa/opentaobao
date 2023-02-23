@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第3段数字",
+			"required": true
+		},
+		{
+			"subParams": [
+				{
+					"name": "offer_id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "tlj_url",
+					"type": "String",
+					"description": "淘礼金领取URL，不支持使用短链接"
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品id"
+				}
+			],
+			"name": "offer_list",
+			"type": "OfferList[]",
+			"description": "活动列表",
+			"maxListSize": 100,
+			"required": true
+		},
+		{
+			"name": "special_id",
+			"type": "String",
+			"description": "消费者对应的会员ID（会员ID或设备信息同时填时，优先使用会员ID）"
+		},
+		{
+			"name": "device_value",
+			"type": "String",
+			"description": "设备信息，加密后的值(IMEI,IDFA,OAID,MOBILE需要加密)，需用MD5加密，32位小写"
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备信息，入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)：IMEI, 或者IDFA, 或者OAID, 或者MOBILE, 或者ALIPAY_ID"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "offer_id",
+							"type": "String",
+							"description": "活动id"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "活动状态：1-符合活动要求，2-淘客无活动权限，3-用户不匹配活动，4-系统异常，5-活动不存在"
+						},
+						{
+							"name": "click_url",
+							"type": "String",
+							"description": "推广链接"
+						},
+						{
+							"name": "wx_miniprogram_path",
+							"type": "String",
+							"description": "微信小程序路径"
+						},
+						{
+							"name": "wx_qrcode_url",
+							"type": "String",
+							"description": "微信小程序码"
+						}
+					],
+					"name": "result_list",
+					"type": "Resultlist[]",
+					"description": "返回结果列表"
+				}
+			],
+			"name": "data",
+			"type": "Data",
+			"description": "返回结果"
+		}
+	],
+	"name": "taobao.tbk.rta.consumer.match",
+	"apiChineseName": "淘宝客-推广者-定向活动目标发布",
+	"description": "淘客计划向用户推送某个定向活动时，调用该接口判断用户是否符合活动目标（淘客接入前需签署协议 https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）",
+	"id": 55891
+}

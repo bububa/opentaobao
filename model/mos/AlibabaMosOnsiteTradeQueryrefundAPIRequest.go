@@ -31,12 +31,15 @@ func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMosOnsiteTradeQueryrefundAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOrderNo is OrderNo Setter

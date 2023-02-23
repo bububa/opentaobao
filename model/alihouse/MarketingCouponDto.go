@@ -12,6 +12,8 @@ type MarketingCouponDto struct {
 	ActivityName string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
 	// 外部活动ID
 	OuterActivityId string `json:"outer_activity_id,omitempty" xml:"outer_activity_id,omitempty"`
+	// 外部门店id，项目店和渠道标准店必传
+	OuterStoreId string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
 	// 券有效期
 	ValidDate int64 `json:"valid_date,omitempty" xml:"valid_date,omitempty"`
 	// 券金额

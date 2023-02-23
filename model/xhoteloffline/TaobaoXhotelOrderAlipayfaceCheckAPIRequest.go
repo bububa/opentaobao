@@ -12,10 +12,10 @@ import (
 // 接口用于校验买家是否具有使用酒店信用住的资格
 type TaobaoXhotelOrderAlipayfaceCheckAPIRequest struct {
 	model.Params
-	// 参数必填，发布到阿里旅行的酒店编码
-	_hotelCode string
 	// 证件号, 如果加密方式设置为1, 传入加密后的证件号
 	_idNumber string
+	// 参数必填，发布到阿里旅行的酒店编码
+	_hotelCode string
 	// 不清楚请留空, 用于和outHid共同定位一个酒店
 	_vendor string
 	// 入住人姓名
@@ -26,10 +26,10 @@ type TaobaoXhotelOrderAlipayfaceCheckAPIRequest struct {
 	_totalFee int64
 	// 加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;  1: SHA-1不可逆加密,  阿里旅行方面无法解析到具体信息, 只用于做信息匹配.注意加密后生成40字节长度的字符串
 	_encryptType int64
-	// 验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审
-	_type int64
 	// 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证
 	_idType int64
+	// 验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审
+	_type int64
 }
 
 // NewTaobaoXhotelOrderAlipayfaceCheckRequest 初始化TaobaoXhotelOrderAlipayfaceCheckAPIRequest对象
@@ -45,25 +45,15 @@ func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
 }
 
-// SetHotelCode is HotelCode Setter
-// 参数必填，发布到阿里旅行的酒店编码
-func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetHotelCode(_hotelCode string) error {
-	r._hotelCode = _hotelCode
-	r.Set("hotel_code", _hotelCode)
-	return nil
-}
-
-// GetHotelCode HotelCode Getter
-func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetHotelCode() string {
-	return r._hotelCode
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetIdNumber is IdNumber Setter
@@ -77,6 +67,19 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdNumber(_idNumber strin
 // GetIdNumber IdNumber Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetIdNumber() string {
 	return r._idNumber
+}
+
+// SetHotelCode is HotelCode Setter
+// 参数必填，发布到阿里旅行的酒店编码
+func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetHotelCode(_hotelCode string) error {
+	r._hotelCode = _hotelCode
+	r.Set("hotel_code", _hotelCode)
+	return nil
+}
+
+// GetHotelCode HotelCode Getter
+func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetHotelCode() string {
+	return r._hotelCode
 }
 
 // SetVendor is Vendor Setter
@@ -144,19 +147,6 @@ func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetEncryptType() int64 {
 	return r._encryptType
 }
 
-// SetType is Type Setter
-// 验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审
-func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetType(_type int64) error {
-	r._type = _type
-	r.Set("type", _type)
-	return nil
-}
-
-// GetType Type Getter
-func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetType() int64 {
-	return r._type
-}
-
 // SetIdType is IdType Setter
 // 证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证
 func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdType(_idType int64) error {
@@ -168,4 +158,17 @@ func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetIdType(_idType int64) er
 // GetIdType IdType Getter
 func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetIdType() int64 {
 	return r._idType
+}
+
+// SetType is Type Setter
+// 验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审
+func (r *TaobaoXhotelOrderAlipayfaceCheckAPIRequest) SetType(_type int64) error {
+	r._type = _type
+	r.Set("type", _type)
+	return nil
+}
+
+// GetType Type Getter
+func (r TaobaoXhotelOrderAlipayfaceCheckAPIRequest) GetType() int64 {
+	return r._type
 }

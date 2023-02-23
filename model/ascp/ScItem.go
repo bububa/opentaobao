@@ -2,16 +2,20 @@ package ascp
 
 // ScItem 结构体
 type ScItem struct {
+	// 仓库编码集合
+	WarehouseCodes []string `json:"warehouse_codes,omitempty" xml:"warehouse_codes>string,omitempty"`
 	// 仓库货品编码
 	WarehouseScItemRelation []WarehouseScItemRelation `json:"warehouse_sc_item_relation,omitempty" xml:"warehouse_sc_item_relation>warehouse_sc_item_relation,omitempty"`
 	// 采购价格
 	PurchasePrices []PurchasePrice `json:"purchase_prices,omitempty" xml:"purchase_prices>purchase_price,omitempty"`
+	// 商家货品编码
+	ScItemCode string `json:"sc_item_code,omitempty" xml:"sc_item_code,omitempty"`
+	// 货品类型 1 (普通) 2 (组合)
+	ScItemType string `json:"sc_item_type,omitempty" xml:"sc_item_type,omitempty"`
 	// ERP货品id（支持组合货品、普通货品）
 	ScItemId string `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
 	// 货品名称
 	ScItemName string `json:"sc_item_name,omitempty" xml:"sc_item_name,omitempty"`
-	// 货品商家编码
-	ScItemCode string `json:"sc_item_code,omitempty" xml:"sc_item_code,omitempty"`
 	// 货品条码
 	BarCode string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
 	// 扩展字段

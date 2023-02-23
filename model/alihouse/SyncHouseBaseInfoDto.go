@@ -26,6 +26,8 @@ type SyncHouseBaseInfoDto struct {
 	InsideArea string `json:"inside_area,omitempty" xml:"inside_area,omitempty"`
 	// 1
 	BuildingArea string `json:"building_area,omitempty" xml:"building_area,omitempty"`
+	// 房源封面图列表
+	CoverPicture string `json:"cover_picture,omitempty" xml:"cover_picture,omitempty"`
 	// 1
 	OnlineStatus int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
 	// 1

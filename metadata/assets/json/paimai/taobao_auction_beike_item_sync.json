@@ -1,0 +1,214 @@
+{
+	"requestParams": [
+		{
+			"name": "ds",
+			"type": "Number",
+			"description": "日期"
+		},
+		{
+			"subParams": [
+				{
+					"name": "ref_unit_price",
+					"type": "Number",
+					"description": "小区参考均价（单位：元）Double"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市（简称）"
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "总价（单位：元）Double"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "house_purpose",
+					"type": "String",
+					"description": "房屋用途"
+				},
+				{
+					"name": "trans_ownership",
+					"type": "String",
+					"description": "交易权属"
+				},
+				{
+					"name": "community_score",
+					"type": "Number",
+					"description": "小区评分"
+				},
+				{
+					"name": "building_time",
+					"type": "Number",
+					"description": "建成年代"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "特性"
+				},
+				{
+					"name": "property_management",
+					"type": "String",
+					"description": "物业公司"
+				},
+				{
+					"name": "community_alias",
+					"type": "String",
+					"description": "小区别名"
+				},
+				{
+					"name": "broker_tele",
+					"type": "String",
+					"description": "经纪人电话"
+				},
+				{
+					"name": "house_area",
+					"type": "Number",
+					"description": "面积"
+				},
+				{
+					"name": "house_toward",
+					"type": "String",
+					"description": "朝向"
+				},
+				{
+					"name": "floor_desc",
+					"type": "String",
+					"description": "楼层"
+				},
+				{
+					"name": "prov",
+					"type": "String",
+					"description": "省份"
+				},
+				{
+					"name": "property_unit_price",
+					"type": "Number",
+					"description": "物业费"
+				},
+				{
+					"name": "lat",
+					"type": "Number",
+					"description": "经度"
+				},
+				{
+					"name": "parking_ratio",
+					"type": "String",
+					"description": "车位比"
+				},
+				{
+					"name": "unit_price",
+					"type": "Number",
+					"description": "单价"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址"
+				},
+				{
+					"name": "lng",
+					"type": "Number",
+					"description": "纬度"
+				},
+				{
+					"name": "house_type",
+					"type": "String",
+					"description": "户型"
+				},
+				{
+					"name": "houses_for_sale",
+					"type": "Number",
+					"description": "在售房屋套数"
+				},
+				{
+					"name": "community",
+					"type": "String",
+					"description": "小区"
+				},
+				{
+					"name": "volume_rate",
+					"type": "String",
+					"description": "容积率"
+				},
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "主图url"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "id"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "商圈"
+				},
+				{
+					"name": "total_floor",
+					"type": "Number",
+					"description": "总楼层"
+				},
+				{
+					"name": "houses_for_rent",
+					"type": "Number",
+					"description": "在租房屋套数"
+				},
+				{
+					"name": "location",
+					"type": "String",
+					"description": "区位码"
+				},
+				{
+					"name": "greening_rate",
+					"type": "Number",
+					"description": "绿化率"
+				},
+				{
+					"name": "building_type",
+					"type": "String",
+					"description": "建筑类型"
+				}
+			],
+			"name": "beike_item_do",
+			"type": "BeikeItemDo",
+			"description": "无"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "结果描述"
+		},
+		{
+			"name": "value",
+			"type": "Number []",
+			"description": "成功上传的商品ID列表"
+		}
+	],
+	"name": "taobao.auction.beike.item.sync",
+	"apiChineseName": "贝壳商品同步接口",
+	"description": "贝壳商品同步接口",
+	"id": 64801
+}

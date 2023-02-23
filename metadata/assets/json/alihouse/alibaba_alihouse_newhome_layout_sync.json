@@ -181,6 +181,31 @@
 					"name": "estate_type",
 					"type": "Number",
 					"description": "物业类型"
+				},
+				{
+					"name": "video_cover_img",
+					"type": "String",
+					"description": "视频封面图"
+				},
+				{
+					"name": "video_url",
+					"type": "String",
+					"description": "视频URL"
+				},
+				{
+					"name": "e_code",
+					"type": "String",
+					"description": "eCode"
+				},
+				{
+					"name": "outer_broker_id",
+					"type": "String",
+					"description": "外部经纪人ID"
+				},
+				{
+					"name": "decoration_standard",
+					"type": "Number",
+					"description": "装修标准"
 				}
 			],
 			"name": "sync_project_layout_data",

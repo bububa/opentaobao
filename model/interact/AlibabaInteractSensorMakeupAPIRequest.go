@@ -27,10 +27,13 @@ func (r AlibabaInteractSensorMakeupAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaInteractSensorMakeupAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaInteractSensorMakeupAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaInteractSensorMakeupAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }

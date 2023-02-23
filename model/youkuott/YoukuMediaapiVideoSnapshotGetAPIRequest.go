@@ -29,12 +29,15 @@ func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YoukuMediaapiVideoSnapshotGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetVid is Vid Setter

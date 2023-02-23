@@ -29,12 +29,15 @@ func (r TmallServicecenterSpserviceorderEpocTransferAPIRequest) GetApiMethodName
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TmallServicecenterSpserviceorderEpocTransferAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TmallServicecenterSpserviceorderEpocTransferAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TmallServicecenterSpserviceorderEpocTransferAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBizOrderId is BizOrderId Setter

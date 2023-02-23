@@ -14,22 +14,22 @@ type TaobaoTaeBillsGetAPIRequest struct {
 	model.Params
 	// 传入需要返回的字段,参见Bill结构体
 	_fields []string
-	// 开始时间
-	_queryStartDate string
 	// 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
 	_queryEndDate string
-	// 交易编号
-	_pTradeId int64
-	// 子订单编号
-	_tradeId int64
-	// 每页大小,默认40条,可选范围 ：40~100
-	_pageSize int64
+	// 开始时间
+	_queryStartDate string
 	// 查询条件中的时间类型:1-交易订单完成时间biz_time 2-支付宝扣款时间pay_time 如果不填默认为2即根据支付时间查询,查询的结果会根据该时间倒排序
 	_queryDateType int64
-	// 页数,建议不要超过100页,越大性能越低,有可能会超时
-	_currentPage int64
+	// 交易编号
+	_pTradeId int64
 	// 科目编号
 	_itemId int64
+	// 页数,建议不要超过100页,越大性能越低,有可能会超时
+	_currentPage int64
+	// 每页大小,默认40条,可选范围 ：40~100
+	_pageSize int64
+	// 子订单编号
+	_tradeId int64
 }
 
 // NewTaobaoTaeBillsGetRequest 初始化TaobaoTaeBillsGetAPIRequest对象
@@ -45,12 +45,15 @@ func (r TaobaoTaeBillsGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTaeBillsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTaeBillsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTaeBillsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFields is Fields Setter
@@ -66,19 +69,6 @@ func (r TaobaoTaeBillsGetAPIRequest) GetFields() []string {
 	return r._fields
 }
 
-// SetQueryStartDate is QueryStartDate Setter
-// 开始时间
-func (r *TaobaoTaeBillsGetAPIRequest) SetQueryStartDate(_queryStartDate string) error {
-	r._queryStartDate = _queryStartDate
-	r.Set("query_start_date", _queryStartDate)
-	return nil
-}
-
-// GetQueryStartDate QueryStartDate Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetQueryStartDate() string {
-	return r._queryStartDate
-}
-
 // SetQueryEndDate is QueryEndDate Setter
 // 结束时间,限制:结束时间-开始时间不能大于1天(根据order_id或者trade_id查询除外)
 func (r *TaobaoTaeBillsGetAPIRequest) SetQueryEndDate(_queryEndDate string) error {
@@ -92,43 +82,17 @@ func (r TaobaoTaeBillsGetAPIRequest) GetQueryEndDate() string {
 	return r._queryEndDate
 }
 
-// SetPTradeId is PTradeId Setter
-// 交易编号
-func (r *TaobaoTaeBillsGetAPIRequest) SetPTradeId(_pTradeId int64) error {
-	r._pTradeId = _pTradeId
-	r.Set("p_trade_id", _pTradeId)
+// SetQueryStartDate is QueryStartDate Setter
+// 开始时间
+func (r *TaobaoTaeBillsGetAPIRequest) SetQueryStartDate(_queryStartDate string) error {
+	r._queryStartDate = _queryStartDate
+	r.Set("query_start_date", _queryStartDate)
 	return nil
 }
 
-// GetPTradeId PTradeId Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetPTradeId() int64 {
-	return r._pTradeId
-}
-
-// SetTradeId is TradeId Setter
-// 子订单编号
-func (r *TaobaoTaeBillsGetAPIRequest) SetTradeId(_tradeId int64) error {
-	r._tradeId = _tradeId
-	r.Set("trade_id", _tradeId)
-	return nil
-}
-
-// GetTradeId TradeId Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetTradeId() int64 {
-	return r._tradeId
-}
-
-// SetPageSize is PageSize Setter
-// 每页大小,默认40条,可选范围 ：40~100
-func (r *TaobaoTaeBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
-	r._pageSize = _pageSize
-	r.Set("page_size", _pageSize)
-	return nil
-}
-
-// GetPageSize PageSize Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetPageSize() int64 {
-	return r._pageSize
+// GetQueryStartDate QueryStartDate Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetQueryStartDate() string {
+	return r._queryStartDate
 }
 
 // SetQueryDateType is QueryDateType Setter
@@ -144,17 +108,17 @@ func (r TaobaoTaeBillsGetAPIRequest) GetQueryDateType() int64 {
 	return r._queryDateType
 }
 
-// SetCurrentPage is CurrentPage Setter
-// 页数,建议不要超过100页,越大性能越低,有可能会超时
-func (r *TaobaoTaeBillsGetAPIRequest) SetCurrentPage(_currentPage int64) error {
-	r._currentPage = _currentPage
-	r.Set("current_page", _currentPage)
+// SetPTradeId is PTradeId Setter
+// 交易编号
+func (r *TaobaoTaeBillsGetAPIRequest) SetPTradeId(_pTradeId int64) error {
+	r._pTradeId = _pTradeId
+	r.Set("p_trade_id", _pTradeId)
 	return nil
 }
 
-// GetCurrentPage CurrentPage Getter
-func (r TaobaoTaeBillsGetAPIRequest) GetCurrentPage() int64 {
-	return r._currentPage
+// GetPTradeId PTradeId Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetPTradeId() int64 {
+	return r._pTradeId
 }
 
 // SetItemId is ItemId Setter
@@ -168,4 +132,43 @@ func (r *TaobaoTaeBillsGetAPIRequest) SetItemId(_itemId int64) error {
 // GetItemId ItemId Getter
 func (r TaobaoTaeBillsGetAPIRequest) GetItemId() int64 {
 	return r._itemId
+}
+
+// SetCurrentPage is CurrentPage Setter
+// 页数,建议不要超过100页,越大性能越低,有可能会超时
+func (r *TaobaoTaeBillsGetAPIRequest) SetCurrentPage(_currentPage int64) error {
+	r._currentPage = _currentPage
+	r.Set("current_page", _currentPage)
+	return nil
+}
+
+// GetCurrentPage CurrentPage Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetCurrentPage() int64 {
+	return r._currentPage
+}
+
+// SetPageSize is PageSize Setter
+// 每页大小,默认40条,可选范围 ：40~100
+func (r *TaobaoTaeBillsGetAPIRequest) SetPageSize(_pageSize int64) error {
+	r._pageSize = _pageSize
+	r.Set("page_size", _pageSize)
+	return nil
+}
+
+// GetPageSize PageSize Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetPageSize() int64 {
+	return r._pageSize
+}
+
+// SetTradeId is TradeId Setter
+// 子订单编号
+func (r *TaobaoTaeBillsGetAPIRequest) SetTradeId(_tradeId int64) error {
+	r._tradeId = _tradeId
+	r.Set("trade_id", _tradeId)
+	return nil
+}
+
+// GetTradeId TradeId Getter
+func (r TaobaoTaeBillsGetAPIRequest) GetTradeId() int64 {
+	return r._tradeId
 }

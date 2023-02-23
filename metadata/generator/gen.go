@@ -27,7 +27,7 @@ func Gen(metaPath string, patchPath string, pkg string) error {
 		log.Fatalln(err)
 	}
 
-	var pkgs []ApiPkg // 生成的包，用于生成README文件
+	pkgs := make([]ApiPkg, 0, len(rd)) // 生成的包，用于生成README文件
 
 	// 遍历metadata目录
 	for _, fi := range rd {
@@ -79,7 +79,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	}
 
 	// 生成类目包 model 路径
-	catelogModelPath := filepath.Join(wd, fmt.Sprintf("./model/%s", pkgCfg.Pkg))
+	catelogModelPath := filepath.Join(wd, util.StringsJoin("./model/", pkgCfg.Pkg))
 	os.RemoveAll(catelogModelPath)
 	if err := os.MkdirAll(catelogModelPath, os.ModePerm); err != nil {
 		log.Printf("[ERR] Path:%s, %s\n", catelogModelPath, err.Error())
@@ -87,7 +87,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	}
 
 	// 生成类目包 api 路径
-	catelogApiPath := filepath.Join(wd, fmt.Sprintf("./api/%s", pkgCfg.Pkg))
+	catelogApiPath := filepath.Join(wd, util.StringsJoin("./api/", pkgCfg.Pkg))
 	os.RemoveAll(catelogApiPath)
 	if err := os.MkdirAll(catelogApiPath, os.ModePerm); err != nil {
 		log.Printf("[ERR] Path:%s, %s\n", catelogApiPath, err.Error())
@@ -147,7 +147,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 
 		// 设置返回结果的API包配置中的API文档链接
 		if apiPkg.Link == "" {
-			apiPkg.Link = fmt.Sprintf(metadata.DOC_LINK, doc.Id)
+			apiPkg.Link = metadata.DocLink(doc.Id)
 		}
 
 		// 转换API文档为SDK模版结构体

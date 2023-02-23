@@ -378,6 +378,60 @@
 													"name": "dawn_booking_dto",
 													"type": "DawnBookingDTO",
 													"description": "凌晨房信息"
+												},
+												{
+													"name": "min_days",
+													"type": "Number",
+													"description": "最小连住天数"
+												},
+												{
+													"name": "hour_room",
+													"type": "Boolean",
+													"description": "是否小时房,不为空且为true时标识小时房，否则全日房"
+												},
+												{
+													"subParams": [
+														{
+															"name": "hourage",
+															"type": "Number",
+															"description": "小时房入住时长，单位小时"
+														},
+														{
+															"name": "hour_room_check_in_start",
+															"type": "String",
+															"description": "小时房可入住开始时间，HH:mm格式"
+														},
+														{
+															"name": "hour_room_check_in_end",
+															"type": "String",
+															"description": "小时房可入住结束时间，HH:mm格式"
+														}
+													],
+													"name": "hour_room_info",
+													"type": "HourRoomInfo",
+													"description": "小时房信息"
+												},
+												{
+													"subParams": [
+														{
+															"name": "hourage",
+															"type": "Number",
+															"description": "小时房入住时长，单位小时"
+														},
+														{
+															"name": "hour_room_check_in_start",
+															"type": "String",
+															"description": "小时房可入住开始时间，HH:mm格式"
+														},
+														{
+															"name": "hour_room_check_in_end",
+															"type": "String",
+															"description": "小时房可入住结束时间，HH:mm格式"
+														}
+													],
+													"name": "hour_room_info_dto",
+													"type": "HourRoomInfoDTO",
+													"description": "小时房信息"
 												}
 											],
 											"name": "rate_list",

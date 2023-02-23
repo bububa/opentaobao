@@ -43,12 +43,15 @@ func (r AlibabaAlihealthDrugKytDrTransportuploadAPIRequest) GetApiMethodName() s
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytDrTransportuploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDrugKytDrTransportuploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDrugKytDrTransportuploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetRefEntId is RefEntId Setter

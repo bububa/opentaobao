@@ -32,7 +32,7 @@
 				},
 				{
 					"name": "item_discount",
-					"type": "Price",
+					"type": "String",
 					"description": "该商品限时折扣"
 				},
 				{

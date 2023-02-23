@@ -33,12 +33,15 @@ func (r TaobaoPromotionCouponSnsSendAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoPromotionCouponSnsSendAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoPromotionCouponSnsSendAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoPromotionCouponSnsSendAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetBuyerNick is BuyerNick Setter

@@ -1,0 +1,274 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "physic_name",
+			"type": "String",
+			"description": "药品通用名",
+			"required": true
+		},
+		{
+			"name": "approval_licence_no",
+			"type": "String",
+			"description": "批准文号"
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始日期"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束日期"
+		},
+		{
+			"name": "ent_name",
+			"type": "String",
+			"description": "企业名称"
+		},
+		{
+			"name": "package_spec",
+			"type": "String",
+			"description": "包装规格"
+		},
+		{
+			"name": "prepn_spec",
+			"type": "String",
+			"description": "制剂规格"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"subParams": [
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总计"
+						},
+						{
+							"subParams": [
+								{
+									"name": "prepn_type_desc",
+									"type": "String",
+									"description": "制剂类型描述"
+								},
+								{
+									"name": "physic_type_desc",
+									"type": "String",
+									"description": "药品类型描述"
+								},
+								{
+									"name": "physic_type",
+									"type": "Number",
+									"description": "药品类型(详见码表) 1：特殊药品原料药，2：特殊药品制剂，3：普通药品，9：未分类"
+								},
+								{
+									"name": "physic_name",
+									"type": "String",
+									"description": "药品名称"
+								},
+								{
+									"name": "prod_code",
+									"type": "String",
+									"description": "药品自类编码"
+								},
+								{
+									"name": "physic_detail_type",
+									"type": "Number",
+									"description": "药品详细类型"
+								},
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "企业主键"
+								},
+								{
+									"name": "prod_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "mod_date",
+									"type": "String",
+									"description": "修改日期"
+								},
+								{
+									"name": "ent_name",
+									"type": "String",
+									"description": "企业名称"
+								},
+								{
+									"name": "pkg_unit_desc",
+									"type": "String",
+									"description": "包装单位描述"
+								},
+								{
+									"name": "physic_detail_type_desc",
+									"type": "String",
+									"description": "药品类型详情描述"
+								},
+								{
+									"name": "prepn_unit_desc",
+									"type": "String",
+									"description": "制剂单位描述"
+								},
+								{
+									"subParams": [
+										{
+											"name": "prepn_unit",
+											"type": "String",
+											"description": "制剂单位"
+										},
+										{
+											"name": "package_spec",
+											"type": "String",
+											"description": "包装规格"
+										},
+										{
+											"subParams": [
+												{
+													"name": "code_prefix",
+													"type": "String",
+													"description": "码前缀"
+												},
+												{
+													"name": "res_code",
+													"type": "String",
+													"description": "资源码"
+												},
+												{
+													"name": "code_level",
+													"type": "String",
+													"description": "层级"
+												},
+												{
+													"name": "pkg_ratio",
+													"type": "String",
+													"description": "包装比例"
+												}
+											],
+											"name": "code_res_list",
+											"type": "CodeResList[]",
+											"description": "码列表"
+										},
+										{
+											"name": "prepn_spec",
+											"type": "String",
+											"description": "制剂规格"
+										},
+										{
+											"name": "prod_seq_no",
+											"type": "String",
+											"description": "企业药品ID"
+										},
+										{
+											"name": "approve_no",
+											"type": "String",
+											"description": "批准文号"
+										},
+										{
+											"name": "physic_detail_type",
+											"type": "String",
+											"description": "药品详情类型"
+										},
+										{
+											"name": "pack_unit",
+											"type": "String",
+											"description": "包装单位"
+										},
+										{
+											"name": "drug_ent_base_info_id",
+											"type": "String",
+											"description": "药品ID"
+										},
+										{
+											"name": "pack_unit_name",
+											"type": "String",
+											"description": "包装单位"
+										},
+										{
+											"name": "prepn_desc",
+											"type": "String",
+											"description": "制剂描述"
+										},
+										{
+											"name": "prepn_unit_name",
+											"type": "String",
+											"description": "制剂单位描述"
+										},
+										{
+											"name": "sub_type_no",
+											"type": "String",
+											"description": "子类型"
+										}
+									],
+									"name": "sub_type_list",
+									"type": "SubTypeList[]",
+									"description": "子列表"
+								}
+							],
+							"name": "result_list",
+							"type": "DrugTableDto[]",
+							"description": "返回列表"
+						},
+						{
+							"name": "page",
+							"type": "Number",
+							"description": "当前页"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小"
+						}
+					],
+					"name": "model",
+					"type": "Page",
+					"description": "返回模型"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "状态值"
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否响应成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.drugtrace.top.yljg.drugtable",
+	"apiChineseName": "查询药品目录信息",
+	"description": "查询药品目录信息",
+	"id": 64956
+}

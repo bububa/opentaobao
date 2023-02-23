@@ -16,6 +16,8 @@ type AlibabaAlihouseNewhomeProjectEcodeAPIRequest struct {
 	_outerId string
 	// 楼盘e码
 	_eCode string
+	// 外部门店ID
+	_outerStoreId string
 }
 
 // NewAlibabaAlihouseNewhomeProjectEcodeRequest 初始化AlibabaAlihouseNewhomeProjectEcodeAPIRequest对象
@@ -31,12 +33,15 @@ func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOuterId is OuterId Setter
@@ -63,4 +68,17 @@ func (r *AlibabaAlihouseNewhomeProjectEcodeAPIRequest) SetECode(_eCode string) e
 // GetECode ECode Getter
 func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetECode() string {
 	return r._eCode
+}
+
+// SetOuterStoreId is OuterStoreId Setter
+// 外部门店ID
+func (r *AlibabaAlihouseNewhomeProjectEcodeAPIRequest) SetOuterStoreId(_outerStoreId string) error {
+	r._outerStoreId = _outerStoreId
+	r.Set("outer_store_id", _outerStoreId)
+	return nil
+}
+
+// GetOuterStoreId OuterStoreId Getter
+func (r AlibabaAlihouseNewhomeProjectEcodeAPIRequest) GetOuterStoreId() string {
+	return r._outerStoreId
 }

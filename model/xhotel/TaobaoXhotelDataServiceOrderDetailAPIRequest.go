@@ -51,12 +51,15 @@ func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelDataServiceOrderDetailAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStartDate is StartDate Setter

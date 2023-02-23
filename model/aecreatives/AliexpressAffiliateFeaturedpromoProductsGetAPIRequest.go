@@ -53,12 +53,15 @@ func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetApiMethodName(
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressAffiliateFeaturedpromoProductsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAppSignature is AppSignature Setter

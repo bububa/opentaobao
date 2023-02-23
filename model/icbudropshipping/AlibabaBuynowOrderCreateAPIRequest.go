@@ -29,12 +29,15 @@ func (r AlibabaBuynowOrderCreateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaBuynowOrderCreateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaBuynowOrderCreateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaBuynowOrderCreateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamOrderCreateRequest is ParamOrderCreateRequest Setter

@@ -98,8 +98,8 @@ type PublisherOrderDto struct {
 	MarketingType string `json:"marketing_type,omitempty" xml:"marketing_type,omitempty"`
 	// 订单更新时间
 	ModifiedTime string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
-	// 管理member新商品ID后段
-	ExtraItemId string `json:"extra_item_id,omitempty" xml:"extra_item_id,omitempty"`
+	// 管理member新商品ID-B段
+	ExtraMktId string `json:"extra_mkt_id,omitempty" xml:"extra_mkt_id,omitempty"`
 	// unid(本字段不对外开放)
 	Unid string `json:"unid,omitempty" xml:"unid,omitempty"`
 	// 专用（不对外开放）

@@ -3,32 +3,29 @@
 		{
 			"subParams": [
 				{
-					"name": "gmt_modified",
-					"type": "Number",
-					"description": "修改时间"
-				},
-				{
-					"name": "gmt_create",
-					"type": "Number",
-					"description": "创建时间",
-					"required": true
-				},
-				{
-					"name": "bar_code",
+					"name": "status",
 					"type": "String",
-					"description": "商品条码,唯一"
+					"description": "商品状态 售卖中:sale 不可售卖：not sell"
 				},
 				{
-					"name": "title",
+					"name": "unit",
 					"type": "String",
-					"description": "商品标题",
-					"required": true
+					"description": "单位"
 				},
 				{
-					"name": "original_price",
-					"type": "Number",
-					"description": "进货价 ，单位为分",
-					"required": true
+					"name": "spec",
+					"type": "String",
+					"description": "规格"
+				},
+				{
+					"name": "shot_title",
+					"type": "String",
+					"description": "简称"
+				},
+				{
+					"name": "shortcut_code",
+					"type": "String",
+					"description": "快捷码(非必须)"
 				},
 				{
 					"name": "reserve_price",
@@ -37,34 +34,10 @@
 					"required": true
 				},
 				{
-					"name": "shortcut_code",
-					"type": "String",
-					"description": "快捷码(非必须)"
-				},
-				{
-					"name": "shot_title",
-					"type": "String",
-					"description": "简称"
-				},
-				{
-					"name": "spec",
-					"type": "String",
-					"description": "规格"
-				},
-				{
-					"name": "unit",
-					"type": "String",
-					"description": "单位"
-				},
-				{
-					"name": "status",
-					"type": "String",
-					"description": "商品状态 售卖中:sale 不可售卖：not sell"
-				},
-				{
-					"name": "pricing_mode",
-					"type": "String",
-					"description": "计价方式  称重商品: weigh 非称重: non weigh"
+					"name": "original_price",
+					"type": "Number",
+					"description": "进货价 ，单位为分",
+					"required": true
 				},
 				{
 					"name": "isv_category_id",
@@ -77,10 +50,37 @@
 					"description": "类目Id  1,洗涤用品; 2,家庭日用品; 3,小食品; 4,粮油调味; 5,酒水饮料; 6,速食; 7,生鲜; 8,服务性商品; 9,增值服务; 10,非商品收入;98,无码; 99,其他"
 				},
 				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "bar_code",
+					"type": "String",
+					"description": "商品条码,唯一"
+				},
+				{
 					"name": "isv_goods_id",
 					"type": "String",
 					"description": "ISV商品Id(保存商品入参用到)",
 					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "修改时间"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "pricing_mode",
+					"type": "String",
+					"description": "计价方式  称重商品: weigh 非称重: non weigh"
 				}
 			],
 			"name": "goods_d_t_o_list",
@@ -102,58 +102,49 @@
 				{
 					"name": "error_message",
 					"type": "String",
-					"description": "错误信息描述",
-					"required": true
+					"description": "错误信息描述"
 				},
 				{
 					"subParams": [
 						{
 							"name": "key",
 							"type": "String",
-							"description": "主键或唯一标识",
-							"required": true
+							"description": "主键或唯一标识"
 						},
 						{
 							"name": "error_code",
 							"type": "String",
-							"description": "错误码：0成功1失败",
-							"required": true
+							"description": "错误码：0成功1失败"
 						},
 						{
 							"name": "error_message",
 							"type": "String",
-							"description": "错误信息",
-							"required": true
+							"description": "错误信息"
 						},
 						{
 							"name": "success",
 							"type": "Boolean",
-							"description": "单个商品处理结果 true：成功，false：失败",
-							"required": true
+							"description": "单个商品处理结果 true：成功，false：失败"
 						},
 						{
 							"name": "data",
-							"type": "Json",
-							"description": "单个业务处理数据",
-							"required": true
+							"type": "String",
+							"description": "单个业务处理数据"
 						}
 					],
 					"name": "modules",
 					"type": "ErrorResult[]",
-					"description": "接口具体返回的业务数据对象",
-					"required": true
+					"description": "接口具体返回的业务数据对象"
 				},
 				{
 					"name": "error_code",
 					"type": "String",
-					"description": "业务错误码",
-					"required": true
+					"description": "业务错误码"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "接口调用是否成功 true:调用成功 false:调用失败",
-					"required": true
+					"description": "接口调用是否成功 true:调用成功 false:调用失败"
 				}
 			],
 			"name": "result",

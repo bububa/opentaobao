@@ -29,12 +29,15 @@ func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlscCrmRechargeAccountGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetParamQueryRechargeAccountOpenReq is ParamQueryRechargeAccountOpenReq Setter

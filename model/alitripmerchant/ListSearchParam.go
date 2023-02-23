@@ -36,4 +36,6 @@ type ListSearchParam struct {
 	PriceMin int64 `json:"price_min,omitempty" xml:"price_min,omitempty"`
 	// 当前页
 	PageNo int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+	// 版本号
+	Version int64 `json:"version,omitempty" xml:"version,omitempty"`
 }

@@ -35,12 +35,15 @@ func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaMjOcBigposBanksaleQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStartTime is StartTime Setter

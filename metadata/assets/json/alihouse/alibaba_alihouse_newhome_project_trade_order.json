@@ -48,6 +48,48 @@
 									"name": "jump_value",
 									"type": "String",
 									"description": "交易工具跳转地址"
+								},
+								{
+									"name": "module_id",
+									"type": "String",
+									"description": "模块ID"
+								},
+								{
+									"subParams": [
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "关联的交易商品ID"
+										},
+										{
+											"name": "order_no",
+											"type": "Number",
+											"description": "关联的交易商品的排序值"
+										},
+										{
+											"name": "item_type",
+											"type": "Number",
+											"description": "交易商品类型"
+										},
+										{
+											"name": "image_url",
+											"type": "String",
+											"description": "图片地址"
+										},
+										{
+											"name": "jump_value",
+											"type": "String",
+											"description": "跳转地址"
+										},
+										{
+											"name": "module_id",
+											"type": "String",
+											"description": "模块ID"
+										}
+									],
+									"name": "relation_trade_item",
+									"type": "ProjectTradeItemOrderDTO[]",
+									"description": "关联的商品列表"
 								}
 							],
 							"name": "trade_item_list",
@@ -66,6 +108,11 @@
 									"name": "order_no",
 									"type": "Number",
 									"description": "模块排序"
+								},
+								{
+									"name": "module_id",
+									"type": "String",
+									"description": "模块ID"
 								}
 							],
 							"name": "module_order",
@@ -93,6 +140,11 @@
 					"name": "outer_store_id",
 					"type": "String",
 					"description": "外部门店ID"
+				},
+				{
+					"name": "scene",
+					"type": "Number",
+					"description": "场景 1-店铺 2-详情页"
 				}
 			],
 			"name": "trade_order",

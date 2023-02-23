@@ -14,38 +14,32 @@
 				{
 					"name": "element_type",
 					"type": "Number",
-					"description": "资源元素类型。1-景点，2-酒店，999-其他",
-					"required": true
+					"description": "资源元素类型。1-景点，2-酒店，999-其他"
 				},
 				{
 					"name": "city",
 					"type": "String",
-					"description": "元素所在城市",
-					"required": true
+					"description": "元素所在城市"
 				},
 				{
 					"name": "name",
 					"type": "String",
-					"description": "元素名称",
-					"required": true
+					"description": "元素名称"
 				},
 				{
 					"name": "type",
 					"type": "String",
-					"description": "元素的子类型",
-					"required": true
+					"description": "元素的子类型"
 				},
 				{
 					"name": "outer_id",
 					"type": "String",
-					"description": "元素的外部商家编码",
-					"required": true
+					"description": "元素的外部商家编码"
 				},
 				{
 					"name": "desc",
 					"type": "String",
-					"description": "元素的说明描述",
-					"required": true
+					"description": "元素的说明描述"
 				}
 			],
 			"name": "results",

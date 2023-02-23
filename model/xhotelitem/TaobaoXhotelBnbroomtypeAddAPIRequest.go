@@ -68,6 +68,8 @@ type TaobaoXhotelBnbroomtypeAddAPIRequest struct {
 	_extraFee string
 	// 标准酒店服务,参考文档https://fliggy.open.taobao.com/doc.htm?docId=120362&docType=1
 	_standardRoomFacilities string
+	// 民宿扩展信息
+	_bnbExtend string
 	// 单间面积，单位平方米
 	_rentSize int64
 	// 是否支持IM聊天 0不支持 1支持
@@ -151,12 +153,15 @@ func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPics is Pics Setter
@@ -521,6 +526,19 @@ func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetStandardRoomFacilities(_standa
 // GetStandardRoomFacilities StandardRoomFacilities Getter
 func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetStandardRoomFacilities() string {
 	return r._standardRoomFacilities
+}
+
+// SetBnbExtend is BnbExtend Setter
+// 民宿扩展信息
+func (r *TaobaoXhotelBnbroomtypeAddAPIRequest) SetBnbExtend(_bnbExtend string) error {
+	r._bnbExtend = _bnbExtend
+	r.Set("bnb_extend", _bnbExtend)
+	return nil
+}
+
+// GetBnbExtend BnbExtend Getter
+func (r TaobaoXhotelBnbroomtypeAddAPIRequest) GetBnbExtend() string {
+	return r._bnbExtend
 }
 
 // SetRentSize is RentSize Setter

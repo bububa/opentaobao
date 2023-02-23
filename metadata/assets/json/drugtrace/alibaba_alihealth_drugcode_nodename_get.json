@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "追溯码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "企业名称"
+				}
+			],
+			"name": "model",
+			"type": "DrugScancodeFlowLogDTO []",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "编码"
+		}
+	],
+	"name": "alibaba.alihealth.drugcode.nodename.get",
+	"apiChineseName": "根据码获取机构名称",
+	"description": "根据码获取机构名称",
+	"id": 65069
+}

@@ -48,7 +48,7 @@ type NTbkItem struct {
 	SuperiorBrand string `json:"superior_brand,omitempty" xml:"superior_brand,omitempty"`
 	// 是否是热门商品，0不是，1是
 	HotFlag string `json:"hot_flag,omitempty" xml:"hot_flag,omitempty"`
-	// 入参的商品ID或营销ID
+	// 入参的（新）商品ID
 	InputNumIid string `json:"input_num_iid,omitempty" xml:"input_num_iid,omitempty"`
 	// 卖家类型，0表示集市，1表示商城，3表示特价版
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`

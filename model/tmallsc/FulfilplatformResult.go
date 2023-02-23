@@ -2,8 +2,6 @@ package tmallsc
 
 // FulfilplatformResult 结构体
 type FulfilplatformResult struct {
-	// 结算明细list
-	ResultDatas []Resultdata `json:"result_datas,omitempty" xml:"result_datas>resultdata,omitempty"`
 	// 错误描述
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 	// 错误码

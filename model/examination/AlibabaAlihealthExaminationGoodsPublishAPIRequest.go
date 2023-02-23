@@ -24,7 +24,7 @@ type AlibabaAlihealthExaminationGoodsPublishAPIRequest struct {
 	_goodsDesc string
 	// 最多256个字，界面对应列表文字；为空是自动取套餐的package_detail字段值
 	_targetGroup string
-	// 联调中正式上线前标签给B；联调后正式上线后标签给C
+	// 标签值给C，传错C端将无法透出
 	_label string
 	// 商品类目，1：体检 ，2：核酸，4 ：健康证
 	_categoryId string
@@ -49,12 +49,15 @@ func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetApiMethodName() st
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetPackageList is PackageList Setter
@@ -136,7 +139,7 @@ func (r AlibabaAlihealthExaminationGoodsPublishAPIRequest) GetTargetGroup() stri
 }
 
 // SetLabel is Label Setter
-// 联调中正式上线前标签给B；联调后正式上线后标签给C
+// 标签值给C，传错C端将无法透出
 func (r *AlibabaAlihealthExaminationGoodsPublishAPIRequest) SetLabel(_label string) error {
 	r._label = _label
 	r.Set("label", _label)

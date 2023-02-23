@@ -1,0 +1,58 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "case_id",
+					"type": "Number",
+					"description": "协同单ID",
+					"required": true
+				},
+				{
+					"name": "reply",
+					"type": "String",
+					"description": "协同回复内容",
+					"required": true
+				},
+				{
+					"name": "domestic_intl",
+					"type": "Number",
+					"description": "1:国内，2:国际",
+					"required": true
+				}
+			],
+			"name": "processing_dto",
+			"type": "ProcessingDTO",
+			"description": "协同单处理完成参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误原因"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				}
+			],
+			"name": "result",
+			"type": "Result",
+			"description": "协同单处理完成接口返回结果"
+		}
+	],
+	"name": "alitrip.agent.coordinate.processing",
+	"apiChineseName": "慧飞商家协同单处理完成接口",
+	"description": "慧飞商家协同单处理完成接口",
+	"id": 64330
+}

@@ -29,12 +29,15 @@ func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoQimenItemsTagQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoQimenItemsTagQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetItemIds is ItemIds Setter

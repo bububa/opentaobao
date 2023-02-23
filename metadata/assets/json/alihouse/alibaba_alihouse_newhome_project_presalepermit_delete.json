@@ -4,6 +4,17 @@
 			"name": "outer_permit_id",
 			"type": "String",
 			"description": "外部顾问ID"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "楼盘外部id",
+			"required": true
+		},
+		{
+			"name": "outer_store_id",
+			"type": "String",
+			"description": "店铺外部id"
 		}
 	],
 	"responseParams": [

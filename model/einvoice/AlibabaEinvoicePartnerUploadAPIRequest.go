@@ -55,12 +55,15 @@ func (r AlibabaEinvoicePartnerUploadAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaEinvoicePartnerUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaEinvoicePartnerUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaEinvoicePartnerUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetNormalInvoiceNo is NormalInvoiceNo Setter

@@ -1,0 +1,53 @@
+{
+	"requestParams": [
+		{
+			"name": "images",
+			"type": "String[]",
+			"description": "商品主图链接，最多5张，传入完整URL",
+			"maxListSize": 5
+		},
+		{
+			"name": "item_type",
+			"type": "String",
+			"description": "商品类型。b:一口价  a:拍卖  默认值b一口价"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务扩展参数，需与平台约定好"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "商品类目ID",
+			"required": true
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "产品ID，天猫市场(market=tmall)时必填"
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "商品条码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品发布规则信息，XML格式."
+		}
+	],
+	"name": "alibaba.item.publish.schema.get",
+	"apiChineseName": "获取商品发布规则信息",
+	"description": "新商品发布，获取商品发布规则信息",
+	"id": 53943
+}

@@ -29,12 +29,15 @@ func (r AlibabaWdkReverseRefundAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaWdkReverseRefundAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaWdkReverseRefundAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaWdkReverseRefundAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetOpenRefundReqDTO is OpenRefundReqDTO Setter

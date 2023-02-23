@@ -26,26 +26,22 @@
 				{
 					"name": "status_code",
 					"type": "String",
-					"description": "调用时错误码",
-					"required": true
+					"description": "调用时错误码"
 				},
 				{
 					"name": "data",
 					"type": "Json",
-					"description": "买家操作时需要的展示信息",
-					"required": true
+					"description": "买家操作时需要的展示信息"
 				},
 				{
 					"name": "success",
 					"type": "Boolean",
-					"description": "true表示成功，false表示失败",
-					"required": true
+					"description": "true表示成功，false表示失败"
 				},
 				{
 					"name": "status_message",
 					"type": "String",
-					"description": "调用时错误描述",
-					"required": true
+					"description": "调用时错误描述"
 				}
 			],
 			"name": "result",

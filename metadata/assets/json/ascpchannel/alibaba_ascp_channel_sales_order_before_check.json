@@ -1,0 +1,94 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品id",
+							"required": true
+						},
+						{
+							"name": "out_sub_order_no",
+							"type": "String",
+							"description": "外部子订单号"
+						}
+					],
+					"name": "out_sub_orders",
+					"type": "ExtSubOrderCheckRequest[]",
+					"description": "子订单列表",
+					"required": true
+				},
+				{
+					"subParams": [
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "地址编码",
+							"required": true
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "收货人名称"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货人地址"
+						}
+					],
+					"name": "receiver",
+					"type": "ExtOrderReceiverRequest",
+					"description": "收货人信息",
+					"required": true
+				}
+			],
+			"name": "order_check_request",
+			"type": "ExtOrderCheckRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功"
+				}
+			],
+			"name": "order_check_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容"
+		}
+	],
+	"name": "alibaba.ascp.channel.sales.order.before.check",
+	"apiChineseName": "供应链外部订单创建前校验接口",
+	"description": "供应链外部订单创建前校验接口",
+	"id": 63560
+}

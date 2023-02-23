@@ -58,6 +58,14 @@ type RateDto struct {
 	MaxDays int64 `json:"max_days,omitempty" xml:"max_days,omitempty"`
 	// 凌晨房信息
 	DawnBookingDto *DawnBookingDto `json:"dawn_booking_dto,omitempty" xml:"dawn_booking_dto,omitempty"`
+	// 最小连住天数
+	MinDays int64 `json:"min_days,omitempty" xml:"min_days,omitempty"`
+	// 小时房信息
+	HourRoomInfo *HourRoomInfo `json:"hour_room_info,omitempty" xml:"hour_room_info,omitempty"`
+	// 小时房信息
+	HourRoomInfoDto *HourRoomInfoDto `json:"hour_room_info_dto,omitempty" xml:"hour_room_info_dto,omitempty"`
 	// 是否复杂价格
 	MultiplePrice bool `json:"multiple_price,omitempty" xml:"multiple_price,omitempty"`
+	// 是否小时房,不为空且为true时标识小时房，否则全日房
+	HourRoom bool `json:"hour_room,omitempty" xml:"hour_room,omitempty"`
 }

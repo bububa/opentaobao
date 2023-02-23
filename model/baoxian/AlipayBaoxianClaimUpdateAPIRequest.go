@@ -47,12 +47,15 @@ func (r AlipayBaoxianClaimUpdateAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlipayBaoxianClaimUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlipayBaoxianClaimUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlipayBaoxianClaimUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetProgressList is ProgressList Setter

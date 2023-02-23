@@ -3,6 +3,28 @@
 		{
 			"subParams": [
 				{
+					"subParams": [
+						{
+							"name": "alipay_account",
+							"type": "String",
+							"description": "支付宝账号"
+						},
+						{
+							"name": "alipay_account_id",
+							"type": "String",
+							"description": "对应该支付宝的支付宝账号ID，注意和支付宝账号保持一致"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "单位分"
+						}
+					],
+					"name": "account_in_details",
+					"type": "AccountInDetail[]",
+					"description": "分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。"
+				},
+				{
 					"name": "agent_order_id",
 					"type": "String",
 					"description": "代理商订单ID",
@@ -17,6 +39,16 @@
 				{
 					"subParams": [
 						{
+							"name": "agent_eticket",
+							"type": "String",
+							"description": "电子票号"
+						},
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "商家票号"
+						},
+						{
 							"name": "full_price",
 							"type": "Number",
 							"description": "全票价(单位分)",
@@ -26,6 +58,11 @@
 							"name": "has_children",
 							"type": "Boolean",
 							"description": "是否带儿童"
+						},
+						{
+							"name": "insure_price",
+							"type": "Number",
+							"description": "保险费 (单位分)"
 						},
 						{
 							"name": "rider_cert_number",
@@ -57,21 +94,6 @@
 							"type": "Number",
 							"description": "该张票价 (单位分)",
 							"required": true
-						},
-						{
-							"name": "agent_eticket",
-							"type": "String",
-							"description": "电子票号"
-						},
-						{
-							"name": "agent_ticket_id",
-							"type": "String",
-							"description": "商家票号"
-						},
-						{
-							"name": "insure_price",
-							"type": "Number",
-							"description": "保险费 (单位分)"
 						},
 						{
 							"subParams": [
@@ -112,6 +134,12 @@
 					"required": true
 				},
 				{
+					"name": "real_name",
+					"type": "Boolean",
+					"description": "true实名（传身份证）,必须传true后续进行程序强制校验",
+					"required": true
+				},
+				{
 					"name": "ticket_count",
 					"type": "Number",
 					"description": "票总数量",
@@ -125,6 +153,16 @@
 				},
 				{
 					"subParams": [
+						{
+							"name": "bus_number",
+							"type": "String",
+							"description": "车次编号"
+						},
+						{
+							"name": "bus_type",
+							"type": "String",
+							"description": "车型"
+						},
 						{
 							"name": "dep_time",
 							"type": "String",
@@ -143,6 +181,11 @@
 							"required": true
 						},
 						{
+							"name": "runtime",
+							"type": "Number",
+							"description": "运行时长（分）"
+						},
+						{
 							"name": "start_city_name",
 							"type": "String",
 							"description": "出发城市(必须填写，后续程序中会进行校验)",
@@ -154,6 +197,11 @@
 							"description": "出发省份(必须填写，后续程序中会进行强制校验，参考标准区域码表)"
 						},
 						{
+							"name": "start_station_address",
+							"type": "String",
+							"description": "车站地址(必须填写，后续程序中会进行强制校验，参考标准区域码表)"
+						},
+						{
 							"name": "start_station_id",
 							"type": "String",
 							"description": "出发车站ID(必须填写，且与线上车站id能进行数据互通)"
@@ -163,6 +211,11 @@
 							"type": "String",
 							"description": "出发车站名称(必须填写，与线上售卖车站名称保持一致)",
 							"required": true
+						},
+						{
+							"name": "terminal",
+							"type": "String",
+							"description": "终点站名称"
 						},
 						{
 							"name": "to_station_city_name",
@@ -183,31 +236,6 @@
 							"name": "to_station_province_name",
 							"type": "String",
 							"description": "到达车站省份"
-						},
-						{
-							"name": "terminal",
-							"type": "String",
-							"description": "终点站名称"
-						},
-						{
-							"name": "bus_number",
-							"type": "String",
-							"description": "车次编号"
-						},
-						{
-							"name": "start_station_address",
-							"type": "String",
-							"description": "车站地址(必须填写，后续程序中会进行强制校验，参考标准区域码表)"
-						},
-						{
-							"name": "bus_type",
-							"type": "String",
-							"description": "车型"
-						},
-						{
-							"name": "runtime",
-							"type": "Number",
-							"description": "运行时长（分）"
 						},
 						{
 							"name": "start_province_code",
@@ -236,34 +264,6 @@
 					"required": true
 				},
 				{
-					"name": "real_name",
-					"type": "Boolean",
-					"description": "true实名（传身份证）,必须传true后续进行程序强制校验",
-					"required": true
-				},
-				{
-					"subParams": [
-						{
-							"name": "alipay_account",
-							"type": "String",
-							"description": "支付宝账号"
-						},
-						{
-							"name": "amount",
-							"type": "Number",
-							"description": "单位分"
-						},
-						{
-							"name": "alipay_account_id",
-							"type": "String",
-							"description": "对应该支付宝的支付宝账号ID，注意和支付宝账号保持一致"
-						}
-					],
-					"name": "account_in_details",
-					"type": "AccountInDetail[]",
-					"description": "分润账户明细列表，是个数组，有几个分账，写几个。 注意 只有需要分润到多账号才需要填，否则为空。分账总和等于订单总价。"
-				},
-				{
 					"name": "service_provider_id",
 					"type": "String",
 					"description": "渠道商支付宝ID"
@@ -274,6 +274,11 @@
 					"description": "交易场景来源 window(窗口) self(自助机）"
 				},
 				{
+					"name": "pay_timeout",
+					"type": "Number",
+					"description": "支付超时时间(创建订单成功后开始计算) 单位:秒,到达指定时间后，平台进行关闭订单操作(自助机小程序订单使用)"
+				},
+				{
 					"name": "tvm_online",
 					"type": "Boolean",
 					"description": "true:切换为自助机小程序订单;false:普通自助机订单"
@@ -282,11 +287,6 @@
 					"name": "issue_timeout",
 					"type": "Number",
 					"description": "出票超时时间(支付成功后开始计算) 单位:秒，如果商家不设置，平台默认超时时间为60天(自助机小程序订单使用)"
-				},
-				{
-					"name": "pay_timeout",
-					"type": "Number",
-					"description": "支付超时时间(创建订单成功后开始计算) 单位:秒,到达指定时间后，平台进行关闭订单操作(自助机小程序订单使用)"
 				},
 				{
 					"name": "create_deadline",

@@ -1,0 +1,49 @@
+{
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "String",
+			"description": "license",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "license_token",
+					"type": "String",
+					"description": "licenseToken"
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "状态码"
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "状态值"
+				},
+				{
+					"name": "response_success",
+					"type": "String",
+					"description": "是否响应成功"
+				}
+			],
+			"name": "result",
+			"type": "ResultModel",
+			"description": "返回结果"
+		}
+	],
+	"name": "alibaba.alihealth.drug.code.kyt.wes.getlicense",
+	"apiChineseName": "获取licenseToken",
+	"description": "获取licenseToken",
+	"id": 65470
+}

@@ -12,4 +12,6 @@ type ProjectTradeOrderDto struct {
 	Status int64 `json:"status,omitempty" xml:"status,omitempty"`
 	// 是否默认
 	IsDefault int64 `json:"is_default,omitempty" xml:"is_default,omitempty"`
+	// 场景 1-店铺 2-详情页
+	Scene int64 `json:"scene,omitempty" xml:"scene,omitempty"`
 }

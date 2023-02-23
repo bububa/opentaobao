@@ -31,12 +31,15 @@ func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiMethodName() string 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoAlitripAxinTransPayImgUploadAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetAxinPayImgUploadDTO is AxinPayImgUploadDTO Setter

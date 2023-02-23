@@ -2,10 +2,10 @@ package lstpos
 
 // InventoryDto 结构体
 type InventoryDto struct {
-	// 实时库存(库存实时结果(出参))
-	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// ISV商品Id
 	IsvGoodsId string `json:"isv_goods_id,omitempty" xml:"isv_goods_id,omitempty"`
+	// 实时库存(库存实时结果(出参))
+	Quantity string `json:"quantity,omitempty" xml:"quantity,omitempty"`
 	// 库存删除标志(出参) ON:删除库存(库存删除后，售卖不维护库存值)   OFF:不删除库存（售卖需要维护库存值）(缺省值)
 	DeleteFlag string `json:"delete_flag,omitempty" xml:"delete_flag,omitempty"`
 	// 设备物理硬件ID（自身保证唯一性）

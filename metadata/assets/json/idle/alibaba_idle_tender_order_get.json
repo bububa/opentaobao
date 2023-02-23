@@ -268,6 +268,16 @@
 							"name": "item_id",
 							"type": "String",
 							"description": "商品id/质检报告ID"
+						},
+						{
+							"name": "cash_order",
+							"type": "Boolean",
+							"description": "是否为返现订单"
+						},
+						{
+							"name": "cash_fee",
+							"type": "String",
+							"description": "返现金额，单位：分"
 						}
 					],
 					"name": "module",

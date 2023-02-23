@@ -1,0 +1,62 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "改价的商品id",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "改价价格，单位分",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "买家openId，如果有就传，后续会校验。没有的可以不用传，但是校验买家参数会跳过"
+				}
+			],
+			"name": "req",
+			"type": "SaveModifyPriceRequest",
+			"description": "请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "price_key",
+					"type": "String",
+					"description": "保存信息的参数"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true or false"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				}
+			],
+			"name": "result",
+			"type": "AbilityResponse",
+			"description": "result"
+		}
+	],
+	"name": "taobao.miniapp.advanced.tradeinfo.price.modify",
+	"apiChineseName": "高级定制商家传入改价信息",
+	"description": "高级定制商家传入改价信息",
+	"id": 63776
+}

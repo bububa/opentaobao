@@ -29,12 +29,15 @@ func (r AliexpressTradeDsOrderGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressTradeDsOrderGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressTradeDsOrderGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressTradeDsOrderGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSingleOrderQuery is SingleOrderQuery Setter

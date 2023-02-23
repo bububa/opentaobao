@@ -1,0 +1,82 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "act_id",
+					"type": "String",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "ext_params",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景",
+					"required": true
+				},
+				{
+					"name": "send_client",
+					"type": "String",
+					"description": "给哪个端发push",
+					"required": true
+				},
+				{
+					"name": "game_acc_id",
+					"type": "String",
+					"description": "游戏账号id,成语场景下必填"
+				},
+				{
+					"name": "notify_id",
+					"type": "String",
+					"description": "触达消息模板id",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "openId，非成语场景下必填"
+				}
+			],
+			"name": "push_send_request",
+			"type": "PushSendRequest",
+			"description": "push发送请求参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "链路id"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "current_timestamp",
+			"type": "Number",
+			"description": "时间戳"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	],
+	"name": "alibaba.alsc.growth.interactive.mini.game.notice.push.send",
+	"apiChineseName": "小游戏发送push",
+	"description": "小游戏发送push",
+	"id": 64320
+}

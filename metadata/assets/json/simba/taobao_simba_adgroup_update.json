@@ -1,14 +1,9 @@
 {
 	"requestParams": [
 		{
-			"name": "use_nonsearch_default_price",
+			"name": "nick",
 			"type": "String",
-			"description": "非搜索是否使用默认出价，false-不用；true-使用；默认为true;"
-		},
-		{
-			"name": "online_status",
-			"type": "String",
-			"description": "用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online"
+			"description": "主人昵称"
 		},
 		{
 			"name": "adgroup_id",
@@ -19,19 +14,22 @@
 		{
 			"name": "default_price",
 			"type": "Number",
-			"description": "默认出价，单位是分，不能小于5",
-			"minValue": 5
+			"description": "默认出价，单位是分，不能小于5"
 		},
 		{
 			"name": "nonsearch_max_price",
 			"type": "Number",
-			"description": "非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价",
-			"minValue": 5
+			"description": "非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价"
 		},
 		{
-			"name": "nick",
+			"name": "use_nonsearch_default_price",
 			"type": "String",
-			"description": "主人昵称"
+			"description": "非搜索是否使用默认出价，false-不用；true-使用；默认为true;"
+		},
+		{
+			"name": "online_status",
+			"type": "String",
+			"description": "用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online"
 		}
 	],
 	"responseParams": [

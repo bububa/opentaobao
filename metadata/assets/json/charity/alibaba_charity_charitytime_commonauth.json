@@ -1,0 +1,69 @@
+{
+	"requestParams": [
+		{
+			"subParams": [
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "三方用户昵称，建议脱敏",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "appKey",
+					"required": true
+				},
+				{
+					"name": "user_key",
+					"type": "String",
+					"description": "三方用户id",
+					"required": true
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "跳转平台的类型，会生成不同平台的uri ALIPAY：支付宝 OTHER:其他"
+				}
+			],
+			"name": "jump_address_hsf_request",
+			"type": "JumpAddressHsfRequest",
+			"description": "请求对象"
+		}
+	],
+	"responseParams": [
+		{
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "接口响应消息"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "状态码：200表示正常，非200表示异常"
+				},
+				{
+					"subParams": [
+						{
+							"name": "jump_url",
+							"type": "String",
+							"description": "跳转地址"
+						}
+					],
+					"name": "data",
+					"type": "JumpAddressHsfResponse",
+					"description": "公益时授权链接结果"
+				}
+			],
+			"name": "result",
+			"type": "CsrResult",
+			"description": "结果"
+		}
+	],
+	"name": "alibaba.charity.charitytime.commonauth",
+	"apiChineseName": "通用授权",
+	"description": "三小时和外部账号绑定通用top 返回跳转链接进行绑定",
+	"id": 64977
+}

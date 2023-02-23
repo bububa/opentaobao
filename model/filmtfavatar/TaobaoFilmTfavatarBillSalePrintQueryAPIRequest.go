@@ -42,12 +42,15 @@ func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetApiMethodName() strin
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoFilmTfavatarBillSalePrintQueryAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetIncludedOrderStatus is IncludedOrderStatus Setter

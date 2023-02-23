@@ -15,7 +15,7 @@ type TaobaoTaeAccountsGetAPIRequest struct {
 	// 需要返回的字段
 	_fields []string
 	// 需要获取的科目ID
-	_aids []int64
+	_aids []string
 }
 
 // NewTaobaoTaeAccountsGetRequest 初始化TaobaoTaeAccountsGetAPIRequest对象
@@ -31,12 +31,15 @@ func (r TaobaoTaeAccountsGetAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r TaobaoTaeAccountsGetAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r TaobaoTaeAccountsGetAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r TaobaoTaeAccountsGetAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetFields is Fields Setter
@@ -54,13 +57,13 @@ func (r TaobaoTaeAccountsGetAPIRequest) GetFields() []string {
 
 // SetAids is Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoTaeAccountsGetAPIRequest) SetAids(_aids []int64) error {
+func (r *TaobaoTaeAccountsGetAPIRequest) SetAids(_aids []string) error {
 	r._aids = _aids
 	r.Set("aids", _aids)
 	return nil
 }
 
 // GetAids Aids Getter
-func (r TaobaoTaeAccountsGetAPIRequest) GetAids() []int64 {
+func (r TaobaoTaeAccountsGetAPIRequest) GetAids() []string {
 	return r._aids
 }

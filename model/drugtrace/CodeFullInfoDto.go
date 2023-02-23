@@ -12,8 +12,6 @@ type CodeFullInfoDto struct {
 	Code string `json:"code,omitempty" xml:"code,omitempty"`
 	// 返回信息
 	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-	// 码包装层级
-	PackageLevel int64 `json:"package_level,omitempty" xml:"package_level,omitempty"`
 	// 码生产信息对象
 	CodeProduceInfoDTO *CodeProduceInfoDto `json:"code_produce_info_d_t_o,omitempty" xml:"code_produce_info_d_t_o,omitempty"`
 	// 药品基本信息对象
@@ -22,6 +20,8 @@ type CodeFullInfoDto struct {
 	PUserEntDTO *PUserEntDto `json:"p_user_ent_d_t_o,omitempty" xml:"p_user_ent_d_t_o,omitempty"`
 	// 追溯码状态对象
 	CodeStatusTypeDTO *CodeStatusTypeDto `json:"code_status_type_d_t_o,omitempty" xml:"code_status_type_d_t_o,omitempty"`
+	// 码包装层级
+	PackageLevel int64 `json:"package_level,omitempty" xml:"package_level,omitempty"`
 	// 码激活信息
 	CodeActiveInfoListApiDTO *CodeActiveInfoListApiDto `json:"code_active_info_list_api_d_t_o,omitempty" xml:"code_active_info_list_api_d_t_o,omitempty"`
 	// 结果

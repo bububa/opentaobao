@@ -13,6 +13,11 @@
 					"type": "String",
 					"description": "外部楼盘id",
 					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID"
 				}
 			],
 			"name": "project_adviser_bind_dto",

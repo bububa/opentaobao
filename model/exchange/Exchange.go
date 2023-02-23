@@ -18,8 +18,14 @@ type Exchange struct {
 	Desc string `json:"desc,omitempty" xml:"desc,omitempty"`
 	// 换货申请理由
 	Reason string `json:"reason,omitempty" xml:"reason,omitempty"`
+	// attributes
+	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 申请换货的状态：售中换货 or 售后换货
 	RefundPhase string `json:"refund_phase,omitempty" xml:"refund_phase,omitempty"`
+	// 换货商品的sku
+	ExchangeSku string `json:"exchange_sku,omitempty" xml:"exchange_sku,omitempty"`
+	// buyerAddress
+	BuyerAddress string `json:"buyer_address,omitempty" xml:"buyer_address,omitempty"`
 	// 操作场景
 	OperationContraint string `json:"operation_contraint,omitempty" xml:"operation_contraint,omitempty"`
 	// 商品名称
@@ -30,32 +36,26 @@ type Exchange struct {
 	SellerNick string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
 	// 买家昵称
 	BuyerNick string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
-	// 卖家发货快递单号
-	SellerLogisticNo string `json:"seller_logistic_no,omitempty" xml:"seller_logistic_no,omitempty"`
-	// 价格
-	Price string `json:"price,omitempty" xml:"price,omitempty"`
-	// 卖家换货地址
-	Address string `json:"address,omitempty" xml:"address,omitempty"`
-	// 商品状态
-	GoodStatus string `json:"good_status,omitempty" xml:"good_status,omitempty"`
-	// 换货商品的sku
-	ExchangeSku string `json:"exchange_sku,omitempty" xml:"exchange_sku,omitempty"`
-	// buyerAddress
-	BuyerAddress string `json:"buyer_address,omitempty" xml:"buyer_address,omitempty"`
-	// 超时时间
-	TimeOut string `json:"time_out,omitempty" xml:"time_out,omitempty"`
 	// 买家发货物流公司名称
 	BuyerLogisticName string `json:"buyer_logistic_name,omitempty" xml:"buyer_logistic_name,omitempty"`
 	// 卖家发货物流公司名称
 	SellerLogisticName string `json:"seller_logistic_name,omitempty" xml:"seller_logistic_name,omitempty"`
 	// 所购买的商品sku
 	BoughtSku string `json:"bought_sku,omitempty" xml:"bought_sku,omitempty"`
+	// 卖家发货快递单号
+	SellerLogisticNo string `json:"seller_logistic_no,omitempty" xml:"seller_logistic_no,omitempty"`
+	// 价格
+	Price string `json:"price,omitempty" xml:"price,omitempty"`
+	// 超时时间
+	TimeOut string `json:"time_out,omitempty" xml:"time_out,omitempty"`
+	// 卖家换货地址
+	Address string `json:"address,omitempty" xml:"address,omitempty"`
+	// 商品状态
+	GoodStatus string `json:"good_status,omitempty" xml:"good_status,omitempty"`
 	// 买家联系方式
 	BuyerPhone string `json:"buyer_phone,omitempty" xml:"buyer_phone,omitempty"`
 	// buyerName
 	BuyerName string `json:"buyer_name,omitempty" xml:"buyer_name,omitempty"`
-	// attributes
-	Attributes string `json:"attributes,omitempty" xml:"attributes,omitempty"`
 	// 收件人ID (Open Addressee ID)，长度在128个字符之内。
 	Oaid string `json:"oaid,omitempty" xml:"oaid,omitempty"`
 	// 买家openId

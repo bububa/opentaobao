@@ -31,12 +31,15 @@ func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetApiMethodName() 
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AliexpressSolutionSchemaProductFullUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetSchemaFullUpdateRequest is SchemaFullUpdateRequest Setter

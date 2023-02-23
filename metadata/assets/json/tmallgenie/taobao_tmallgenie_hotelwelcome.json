@@ -11,14 +11,14 @@
 			"description": "酒店ID"
 		},
 		{
-			"name": "template_id",
-			"type": "String",
-			"description": "模板ID"
-		},
-		{
 			"name": "template_variable",
 			"type": "Json",
 			"description": "模板变量"
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板ID"
 		}
 	],
 	"responseParams": [

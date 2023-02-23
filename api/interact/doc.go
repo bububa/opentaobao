@@ -1,4 +1,4 @@
 // Package interact 包含天猫互动接口相关方法
 //
-// https://open.taobao.com/API.htm?docId=25768&docType=2
+// https://open.taobao.com/API.htm?docType=2&docId=65074
 package interact

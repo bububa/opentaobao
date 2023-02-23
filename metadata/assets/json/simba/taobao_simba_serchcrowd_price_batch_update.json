@@ -18,16 +18,16 @@
 			"required": true
 		},
 		{
-			"name": "discount",
-			"type": "Number",
-			"description": "人群溢价比例，溢价范围[5,300]"
-		},
-		{
 			"name": "adgroup_crowd_ids",
 			"type": "String[]",
 			"description": "需要修改出价的人群包id,批量传入的时候用,分割",
 			"maxListSize": 20,
 			"required": true
+		},
+		{
+			"name": "discount",
+			"type": "Number",
+			"description": "人群溢价比例，溢价范围[5,300]"
 		}
 	],
 	"responseParams": [

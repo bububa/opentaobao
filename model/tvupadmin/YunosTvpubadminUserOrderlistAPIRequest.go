@@ -39,12 +39,15 @@ func (r YunosTvpubadminUserOrderlistAPIRequest) GetApiMethodName() string {
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminUserOrderlistAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r YunosTvpubadminUserOrderlistAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r YunosTvpubadminUserOrderlistAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetCreateTimeStartStr is CreateTimeStartStr Setter

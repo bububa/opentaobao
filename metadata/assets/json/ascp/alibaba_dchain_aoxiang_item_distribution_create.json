@@ -37,8 +37,7 @@
 				{
 					"name": "sc_item_id",
 					"type": "String",
-					"description": "【必传】货品id",
-					"required": true
+					"description": "【和货品编码二选一】货品id"
 				},
 				{
 					"name": "logistics_cost_template_id",
@@ -79,6 +78,36 @@
 					"type": "Number",
 					"description": "业务请求时间。时间戳。 毫秒",
 					"required": true
+				},
+				{
+					"name": "sc_item_code",
+					"type": "String",
+					"description": "【和货品ID二选一】货品编码"
+				},
+				{
+					"name": "level1_price",
+					"type": "Number",
+					"description": "1级分销价格"
+				},
+				{
+					"name": "level2_price",
+					"type": "Number",
+					"description": "2级分销价格"
+				},
+				{
+					"name": "level3_price",
+					"type": "Number",
+					"description": "3级分销价格"
+				},
+				{
+					"name": "level4_price",
+					"type": "Number",
+					"description": "4级分销价格"
+				},
+				{
+					"name": "level5_price",
+					"type": "Number",
+					"description": "5级分销价格"
 				}
 			],
 			"name": "create_item_distribution_request",

@@ -4,6 +4,8 @@ package tbk
 type TaobaoTbkScMaterialOptionalMapData struct {
 	// 商品信息-商品小图列表
 	SmallImages []string `json:"small_images,omitempty" xml:"small_images>string,omitempty"`
+	// 定向计划集合
+	SpCampaignList []SpCampaign `json:"sp_campaign_list,omitempty" xml:"sp_campaign_list>sp_campaign,omitempty"`
 	// 优惠券信息-优惠券开始时间
 	CouponStartTime string `json:"coupon_start_time,omitempty" xml:"coupon_start_time,omitempty"`
 	// 优惠券信息-优惠券开始时间
@@ -132,6 +134,8 @@ type TaobaoTbkScMaterialOptionalMapData struct {
 	ActivityId string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
 	// 榜单url
 	RankPageUrl string `json:"rank_page_url,omitempty" xml:"rank_page_url,omitempty"`
+	// 搜索类型
+	ItemSearchType string `json:"item_search_type,omitempty" xml:"item_search_type,omitempty"`
 	// 店铺信息-卖家类型。0表示集市，1表示天猫
 	UserType int64 `json:"user_type,omitempty" xml:"user_type,omitempty"`
 	// 商品信息-30天销量(饿了么卡券信息-总销量）

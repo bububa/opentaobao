@@ -29,12 +29,15 @@ func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) GetApiMetho
 }
 
 // GetApiParams IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) GetApiParams() url.Values {
-	params := url.Values{}
-	for k, v := range r.GetRawParams() {
+func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) GetApiParams(params url.Values) {
+	for k, v := range r.Params {
 		params.Set(k, v.String())
 	}
-	return params
+}
+
+// GetRawParams IRequest interface 方法, 获取API原始参数
+func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateAPIRequest) GetRawParams() model.Params {
+	return r.Params
 }
 
 // SetStore is Store Setter

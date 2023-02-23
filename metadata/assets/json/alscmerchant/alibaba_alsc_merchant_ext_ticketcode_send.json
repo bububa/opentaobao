@@ -5,7 +5,7 @@
 				{
 					"name": "order_no",
 					"type": "String",
-					"description": "口碑订单号",
+					"description": "口碑子订单号, 即alsc_sub_order_no",
 					"required": true
 				},
 				{
@@ -40,7 +40,7 @@
 						{
 							"name": "code",
 							"type": "String",
-							"description": "凭证码值，必填"
+							"description": "凭证码值，必填。核销二维码生成规则：优先用url生成，url为空，再用code生成。"
 						},
 						{
 							"name": "ticket_id",
@@ -50,7 +50,7 @@
 						{
 							"name": "url",
 							"type": "String",
-							"description": "支持核销的三方url"
+							"description": "支持核销的三方url。核销二维码生成规则：优先用url生成，url为空，再用code生成。"
 						}
 					],
 					"name": "external_ticket_codes",
