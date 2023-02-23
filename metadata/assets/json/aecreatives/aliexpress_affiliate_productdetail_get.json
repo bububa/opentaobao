@@ -317,13 +317,13 @@
 						}
 					],
 					"name": "result",
-					"type": "TrafficProductResultDto",
+					"type": "AffiliateProductResultDto",
 					"description": "返回结果明细",
 					"required": true
 				}
 			],
 			"name": "resp_result",
-			"type": "ResponseDto",
+			"type": "AffiliateProductResponseDto",
 			"description": "返回结果"
 		}
 	],
